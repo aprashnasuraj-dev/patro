@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-v09-preview/$1"
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
   ],
   "headers": [
