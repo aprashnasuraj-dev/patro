@@ -6,6 +6,7 @@ import {
   bsToAd,
   daysInBsMonth,
   bighaToSqFt,
+  calculateNepalSalaryTax2083,
   calculatePersonalTax,
   formatScaled,
   preetiToUnicode,
@@ -114,5 +115,53 @@ describe("BS ⇄ AD engine", () => {
     const ad = bsToAd({ year: 2099, month: 12, day: 30 });
     expect(adToBs(ad)).toEqual({ year: 2099, month: 12, day: 30 });
     expect(bsDateMetadata({ year: 2099, month: 1, day: 1 }).confidence).toBe("provisional-open-table");
+  });
+});
+
+
+describe("Nepal FY 2083/84 salary tax policy", () => {
+  it("uses the current unified 1/10/20/27/29 schedule", () => {
+    const result = calculateNepalSalaryTax2083({ annualSalary: "1200000" });
+    expect(result.taxScaled).toBe(30_000n * SCALE);
+  });
+
+  it("waives the first 1% band for a qualifying SSF contributor", () => {
+    const result = calculateNepalSalaryTax2083({
+      annualSalary: "1200000",
+      qualifyingSsfContributor: true,
+    });
+    expect(result.taxScaled).toBe(20_000n * SCALE);
+  });
+
+  it("uses the ordinary NPR 300k retirement cap when SSF eligibility is not claimed", () => {
+    const result = calculateNepalSalaryTax2083({
+      annualSalary: "1800000",
+      epf: "200000",
+      cit: "200000",
+    });
+    expect(result.retirementDeductionScaled).toBe(300_000n * SCALE);
+    expect(result.taxableIncomeScaled).toBe(1_500_000n * SCALE);
+    expect(result.taxScaled).toBe(60_000n * SCALE);
+  });
+
+  it("uses the NPR 500k SSF cap and insurance limits", () => {
+    const result = calculateNepalSalaryTax2083({
+      annualSalary: "2100000",
+      ssf: "550000",
+      lifeInsurance: "50000",
+      healthInsurance: "25000",
+      qualifyingSsfContributor: true,
+    });
+    expect(result.retirementDeductionScaled).toBe(500_000n * SCALE);
+    expect(result.lifeInsuranceDeductionScaled).toBe(40_000n * SCALE);
+    expect(result.healthInsuranceDeductionScaled).toBe(20_000n * SCALE);
+    expect(result.taxableIncomeScaled).toBe(1_540_000n * SCALE);
+    expect(result.taxScaled).toBe(58_000n * SCALE);
+  });
+
+  it("applies 29% only above NPR 4 million", () => {
+    const result = calculateNepalSalaryTax2083({ annualSalary: "5000000" });
+    expect(result.taxScaled).toBe(955_000n * SCALE);
+    expect(result.bands.at(-1)?.rateBps).toBe(2_900);
   });
 });
