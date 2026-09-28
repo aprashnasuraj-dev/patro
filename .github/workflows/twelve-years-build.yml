@@ -1,0 +1,53 @@
+name: Twelve Years production build
+on:
+  push:
+    branches:
+      - epub-build-20260928
+    paths:
+      - 'tools/twelve-years/**'
+      - '.github/workflows/twelve-years-build.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      DOCX_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-965c-8211-96ec-761cecc140be/raw?se=2026-09-28T00%3A52%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=5cd1e650-8c37-5cd0-b29a-e1ff10f1b83d&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A04%3A33Z&ske=2026-09-29T00%3A04%3A33Z&sks=b&skv=2026-02-06&sig=v1gYjzO6D8khKTxMeAiLtohvRJpO7QAnPIt8s9noWp4%3D'
+      IMAGES_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-c228-8211-9f03-559f6a36a5af/raw?se=2026-09-28T00%3A52%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=9639f5fe-09c2-5134-ae28-563804b98057&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T23%3A44%3A49Z&ske=2026-09-28T23%3A44%3A49Z&sks=b&skv=2026-02-06&sig=FqXJIkN2dGoVSnENmpL%2BXBIfeArqtWDSRF0Lg7RyHcQ%3D'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-docx pillow lxml
+      - name: Build EPUB and illustrated DOCX
+        run: python tools/twelve-years/build_book.py
+      - name: Run EPUBCheck 5.3.0
+        shell: bash
+        run: |
+          set +e
+          curl -L --fail --retry 3 -o /tmp/epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip
+          unzip -q /tmp/epubcheck.zip -d /tmp/epubcheck
+          java -jar /tmp/epubcheck-5.3.0/epubcheck.jar output/Twelve-Years-The-Himalayan-Tsunami-Suraj-Dahal.epub 2>&1 | tee output/epubcheck.txt
+          rc=${PIPESTATUS[0]}
+          printf '\n## EPUBCheck 5.3.0\n\n\`\`\`text\n' >> output/CHECKLIST.md
+          cat output/epubcheck.txt >> output/CHECKLIST.md
+          printf '\n\`\`\`\n' >> output/CHECKLIST.md
+          exit $rc
+      - name: Upload completed book package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Twelve-Years-final
+          path: |
+            output/Twelve-Years-The-Himalayan-Tsunami-Suraj-Dahal.epub
+            output/Twelve-Years-The-Himalayan-Tsunami-Suraj-Dahal-Illustrated.docx
+            output/CHECKLIST.md
+            output/image-placement.csv
+            output/epubcheck.txt
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7
