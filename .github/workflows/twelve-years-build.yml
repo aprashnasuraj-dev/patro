@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      DOCX_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-91b8-8211-8cb2-5804661fe57b/raw?se=2026-09-28T00%3A54%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=c7feeb81-d82f-5e9b-8a91-36751c426505&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-27T23%3A58%3A04Z&ske=2026-09-28T23%3A58%3A04Z&sks=b&skv=2026-02-06&sig=yYteEHqu38YjM%2BCse66Ufao3LXyq%2Bo9f2y4W2eIUx9U%3D'
-      IMAGES_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-b424-8211-a1d9-0370b3e7bdbc/raw?se=2026-09-28T00%3A54%3A46Z&sp=r&sv=2026-02-06&sr=b&scid=f020c55a-f4a5-5bfb-a054-a93d8242d8c2&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A00%3A12Z&ske=2026-09-29T00%3A00%3A12Z&sks=b&skv=2026-02-06&sig=b53UGthM6btgilBlpdT3jnLglg6WXg6vMzWVDa0tfnE%3D'
+      DOCX_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-3224-8211-8583-b6e43b905186/raw?se=2026-09-28T00%3A57%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=e04c7f9a-2352-5d89-8a4b-e7d85d87c5d5&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A30%3A44Z&ske=2026-09-29T00%3A30%3A44Z&sks=b&skv=2026-02-06&sig=Ae1wH6uKnDsXbWePRWd20ompm6bYmcmP3s4mG4FFEQI%3D'
+      IMAGES_URL: 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-8e74-8211-9367-2bd0f060c145/raw?se=2026-09-28T00%3A57%3A13Z&sp=r&sv=2026-02-06&sr=b&scid=54bd5d68-4834-5f5f-beda-5705c527c8cd&skoid=37f774a3-b6f2-4e56-9fdd-339e5d6e97f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A00%3A23Z&ske=2026-09-29T00%3A00%3A23Z&sks=b&skv=2026-02-06&sig=SYvJ2e9yqB4cYEWMY/GslQYFZGPTh4DHKNJ/zSeMacs%3D'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,12 +31,15 @@ jobs:
           set +e
           curl -L --fail --retry 3 -o /tmp/epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip
           unzip -q /tmp/epubcheck.zip -d /tmp/epubcheck
-          JAR="$(find /tmp/epubcheck -type f -name epubcheck.jar | head -n 1)"\n          echo "EPUBCheck jar: $JAR"\n          java -jar "$JAR" output/Twelve-Years-The-Himalayan-Tsunami-Suraj-Dahal.epub 2>&1 | tee output/epubcheck.txt
+          JAR="$(find /tmp/epubcheck -type f -name epubcheck.jar -print -quit)"
+          echo "EPUBCheck jar: $JAR"
+          test -n "$JAR" || exit 97
+          java -jar "$JAR" output/Twelve-Years-The-Himalayan-Tsunami-Suraj-Dahal.epub 2>&1 | tee output/epubcheck.txt
           rc=${PIPESTATUS[0]}
-          printf '\n## EPUBCheck 5.3.0\n\n\`\`\`text\n' >> output/CHECKLIST.md
+          printf '\n## EPUBCheck 5.3.0\n\n' >> output/CHECKLIST.md
           cat output/epubcheck.txt >> output/CHECKLIST.md
-          printf '\n\`\`\`\n' >> output/CHECKLIST.md
-          exit $rc
+          printf '\n' >> output/CHECKLIST.md
+          exit "$rc"
       - name: Upload completed book package
         if: always()
         uses: actions/upload-artifact@v4
