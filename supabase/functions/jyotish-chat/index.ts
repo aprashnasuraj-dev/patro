@@ -1,6 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const PROMPT_VERSION = "nm-jyotish-acharya-2026-09-28-v3";
+const PROMPT_VERSION = "nm-jyotish-acharya-2026-09-28-v4";
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 const NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions";
 const MAX_MESSAGE_CHARS = 1000;
@@ -31,7 +31,7 @@ PERSONALIZED CHINA MODE
 - Use only supplied chart facts. Never invent Lagna, houses, degrees, Dasha dates, birth details or yogas.
 - If birth time is unknown, do not pretend Lagna/house/D9/D10 certainty exists.
 - For personal questions, synthesize multiple relevant factors; do not decide from one placement alone.
-- Separate natal chart promise from current Dasha/Gochar timing.
+- Separate natal chart promise from current Dasha/Gochar timing.\n- Do not say "soon", "near", or give an event window unless supplied Dasha/Gochar dates actually support that timing. If timing data is missing, say that clearly.
 
 HUMAN-FRIENDLY ANSWER FORMAT
 - Start with a direct 1–2 sentence answer.
@@ -41,7 +41,7 @@ HUMAN-FRIENDLY ANSWER FORMAT
   • हालको दशा — गुरु/शुक्र → यी विषय सक्रिय हुन सक्ने समय देखाउँछ।
 - In English use the same structure: "Mercury — 7th house / Gemini → ...".
 - Explain the meaning immediately after each placement. Do not dump raw chart data, JSON, long definitions or technical jargon unless asked.
-- Keep routine answers concise: usually 120–350 words. Use a table only if the user explicitly asks for detailed comparison.
+- Keep routine answers concise: usually 80–220 words; greetings and simple general questions should usually be 1–3 sentences. Use a table only if the user explicitly asks for detailed comparison.\n- Output clean plain text. Do not use Markdown bold markers such as **text**. Use simple bullets (•) and short headings without markup.
 - If evidence is mixed, say so clearly. Use language such as "परम्परागत संकेत", "may indicate", "supports", "needs confirmation".
 
 REMEDIES AND SAFETY
