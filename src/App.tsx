@@ -7,6 +7,35 @@ import { LunarPhaseDial } from "./components/LunarPhaseDial";
 import { CalendarGrid } from "./components/CalendarGrid";
 import { NasaDrawer } from "./components/NasaDrawer";
 
+
+type FeatureLink={path:string;title:string;subtitle:string;group:string};
+const FEATURE_LINKS:FeatureLink[]=[
+ {path:"/jyotish/rashifal",title:"राशिफल · Rashifal",subtitle:"Daily, weekly, monthly · Vedic/Western · exact-birth with consent",group:"Jyotish"},
+ {path:"/aaja",title:"आज · Today",subtitle:"Daily Nepal Miti dashboard and open/closed context",group:"Daily"},
+ {path:"/tithi",title:"तिथि · Tithi",subtitle:"Traditional recurrence, fasting and observance tools",group:"Daily"},
+ {path:"/diaspora",title:"Diaspora",subtitle:"Timezone-aware Nepal calendar context abroad",group:"Daily"},
+ {path:"/card",title:"Share Cards",subtitle:"Calendar and festival sharing cards",group:"Tools"},
+ {path:"/family",title:"Family",subtitle:"Private family dates and shared events",group:"Tools"},
+ {path:"/settings/holidays",title:"Holiday Settings",subtitle:"Audience, district and closure preferences",group:"Tools"},
+ {path:"/settings/notifications",title:"Notifications",subtitle:"Private push reminder controls",group:"Tools"},
+ {path:"/my-data",title:"My Data",subtitle:"Export or remove private account data",group:"Tools"},
+ {path:"/time-machine",title:"Time Machine",subtitle:"Historical Nepal timeline",group:"Explore"},
+ {path:"/samachar",title:"समाचार · Samachar",subtitle:"Nepali news desk",group:"Explore"},
+ {path:"/fm",title:"FM Radio",subtitle:"Nepal radio directory",group:"Explore"},
+ {path:"/explore",title:"Explore",subtitle:"Discovery hub",group:"Explore"},
+ {path:"/tv",title:"Explore TV",subtitle:"Existing TV experience",group:"Explore"},
+ {path:"/on-this-day",title:"आज इतिहासमा",subtitle:"On This Day history",group:"Explore"},
+ {path:"/jyotish",title:"ज्योतिष · Jyotish",subtitle:"Existing Jyotish tools",group:"Jyotish"},
+ {path:"/developers",title:"Developers",subtitle:"Public API and embed documentation",group:"Tools"}
+];
+const FEATURE_EXACT=new Set([...FEATURE_LINKS.map(x=>x.path),"/offline","/convert","/search","/notes","/planner","/data-trust","/nepal-sambat","/astrology"]);
+function matchesFeaturePath(path:string){return FEATURE_EXACT.has(path)||["/family/","/settings/","/calendar/","/date/","/festival/","/jyotish/"].some(p=>path.startsWith(p))}
+function FeatureFrame(){
+ const path=window.location.pathname,q=new URLSearchParams({path});if(window.location.search)q.set("search",window.location.search);
+ const title=FEATURE_LINKS.find(x=>x.path===path)?.title||"Nepal Miti";
+ return <div className="feature-route-shell"><header className="feature-route-bar"><a className="feature-home-link" href="/">← Nepal Miti</a><strong>{title}</strong><span className="free-pill">Free</span></header><iframe className="feature-frame" src={"/api/v1/compat/page?"+q.toString()} title={title}/></div>
+}
+
 type Loadable<T> = {
   data: T | null;
   error: string | null;
@@ -41,6 +70,7 @@ function parseIso(iso: string): Date {
 }
 
 export default function App() {
+  if(matchesFeaturePath(window.location.pathname)) return <FeatureFrame />;
   const today = useMemo(todayInKathmandu, []);
   const [selectedDate, setSelectedDate] = useState(today);
   const [monthCursor, setMonthCursor] = useState(() => {
@@ -156,6 +186,8 @@ export default function App() {
             onSelectDate={chooseDate}
           />
         </section>
+
+        <section className="feature-hub glass-panel" aria-label="Nepal Miti features"><div className="section-heading"><div><p className="eyebrow">All features are free</p><h2>नेपाल मिति · Features</h2><p className="subheading">Calendar, Jyotish, daily-life and discovery tools from the protected backend.</p></div></div><div className="feature-grid">{FEATURE_LINKS.map(item=><a className="feature-link" href={item.path} key={item.path}><span className="feature-group">{item.group}</span><strong>{item.title}</strong><small>{item.subtitle}</small></a>)}</div></section>
 
         <footer className="app-footer">
           <span>Patro Astronomical Synchronization</span>

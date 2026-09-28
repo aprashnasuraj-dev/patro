@@ -1,0 +1,6 @@
+fastapi==0.141.1
+pydantic==2.13.5
+pydantic-settings==2.15.0
+pyswisseph==2.10.3.2
+nepali-datetime==1.0.8.5
+tzdata==2026.4

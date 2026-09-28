@@ -7,8 +7,183 @@
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/:path*"
     },
     {
+      "source": "/sw.js",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fsw.js"
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fmanifest.webmanifest"
+    },
+    {
+      "source": "/icon.svg",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Ficon.svg"
+    },
+    {
+      "source": "/style.css",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fstyle.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fapp.js"
+    },
+    {
+      "source": "/tv-hls.js",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Ftv-hls.js"
+    },
+    {
+      "source": "/nm-foundation.js",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fnm-foundation.js"
+    },
+    {
+      "source": "/nm-foundation.css",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fnm-foundation.css"
+    },
+    {
+      "source": "/nm-home.js",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fnm-home.js"
+    },
+    {
+      "source": "/nm-home.css",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2Fnm-home.css"
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-static?path=%2F.well-known%2Fassetlinks.json"
+    },
+    {
+      "source": "/embed/:path*",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-embed/:path*"
+    },
+    {
+      "source": "/ical/:path*",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/compat-ical/:path*"
+    },
+    {
+      "source": "/aaja",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tithi",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/diaspora",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/card",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/family",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/family/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/my-data",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/offline",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/developers",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jyotish",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jyotish/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/time-machine",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/samachar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fm",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/explore",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tv",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/on-this-day",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/astrology",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/convert",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/search",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/notes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/planner",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/data-trust",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nepal-sambat",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/calendar/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/date/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/festival/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/rashifal_engine.py": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/v1/cron/rashifal",
+      "schedule": "15 18 * * *"
     }
   ]
 }

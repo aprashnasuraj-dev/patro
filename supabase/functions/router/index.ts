@@ -56,6 +56,71 @@ function syncPayload(date: string, calendar: {
   };
 }
 
+
+const LEGACY_BASE = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected";
+const LEGACY_PAGES = new Set([
+  "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data",
+  "/settings/holidays","/settings/notifications","/offline","/developers",
+  "/jyotish","/jyotish/rashifal","/time-machine","/samachar","/fm","/explore",
+  "/tv","/on-this-day","/astrology","/convert","/search","/notes","/planner",
+  "/data-trust","/nepal-sambat"
+]);
+const LEGACY_PAGE_PREFIXES = ["/family/","/settings/","/calendar/","/date/","/festival/","/jyotish/"];
+const LEGACY_STATIC = new Set([
+  "/sw.js","/manifest.webmanifest","/icon.svg","/style.css","/app.js","/tv-hls.js",
+  "/nm-foundation.js","/nm-foundation.css","/nm-home.js","/nm-home.css",
+  "/.well-known/assetlinks.json"
+]);
+function legacyPageAllowed(path: string) {
+  return LEGACY_PAGES.has(path) || LEGACY_PAGE_PREFIXES.some((prefix) => path.startsWith(prefix));
+}
+function safeCompatPath(path: string) {
+  return path.startsWith("/") && !path.startsWith("//") && !path.includes("\\\\") && !path.includes("..");
+}
+async function proxyLegacy(request: Request, targetPath: string, opts: {page?: boolean; preserveQuery?: boolean} = {}) {
+  const incoming=new URL(request.url), target=new URL(LEGACY_BASE+targetPath);
+  if(opts.preserveQuery!==false && !target.search) target.search=incoming.search;
+  const headers=new Headers(request.headers); headers.delete("host"); headers.delete("content-length");
+  const init:RequestInit={method:request.method,headers,redirect:"manual"};
+  if(request.method!=="GET"&&request.method!=="HEAD") init.body=await request.arrayBuffer();
+  const upstream=await fetch(target,init), outHeaders=new Headers(upstream.headers);
+  outHeaders.delete("content-length"); outHeaders.delete("content-encoding"); outHeaders.delete("x-frame-options");
+  const ct=upstream.headers.get("content-type")||"";
+  if(opts.page&&ct.includes("text/html")){
+    outHeaders.delete("content-security-policy");
+    outHeaders.set("content-security-policy","frame-ancestors 'self'");
+    outHeaders.set("cache-control","no-store");
+    let html=await upstream.text();
+    html=html.replaceAll("/api/","/api/v1/compat-api/");
+    html=html.replace("<head>","<head><base target=\"_top\">");
+    return new Response(html,{status:upstream.status,headers:outHeaders});
+  }
+  return new Response(upstream.body,{status:upstream.status,headers:outHeaders});
+}
+app.all("/compat/page",async(c)=>{
+  const path=c.req.query("path")||"", search=c.req.query("search")||"";
+  if(!safeCompatPath(path)||!legacyPageAllowed(path)) return c.json({error:"unsupported_compat_page"},404);
+  if(search&&(!search.startsWith("?")||search.length>2048)) return c.json({error:"invalid_search"},400);
+  return proxyLegacy(c.req.raw,path+search,{page:true,preserveQuery:false});
+});
+app.all("/compat-api/*",(c)=>{const rest=c.req.param("*")||"";if(!rest||rest.includes(".."))return c.json({error:"invalid_compat_api"},400);return proxyLegacy(c.req.raw,"/api/"+rest)});
+app.all("/compat-ical/*",(c)=>{const rest=c.req.param("*")||"";if(rest.includes(".."))return c.json({error:"invalid_ical_path"},400);return proxyLegacy(c.req.raw,"/ical/"+rest)});
+app.all("/compat-embed/*",(c)=>{const rest=c.req.param("*")||"";if(rest.includes(".."))return c.json({error:"invalid_embed_path"},400);return proxyLegacy(c.req.raw,"/embed/"+rest)});
+app.all("/compat-static",(c)=>{const path=c.req.query("path")||"";if(!LEGACY_STATIC.has(path))return c.json({error:"unsupported_static_asset"},404);return proxyLegacy(c.req.raw,path,{preserveQuery:false})});
+const legacyV1=(c:any,suffix:string)=>proxyLegacy(c.req.raw,"/api/v1"+suffix);
+app.all("/today",(c)=>legacyV1(c,"/today"));
+app.all("/convert",(c)=>legacyV1(c,"/convert"));
+app.all("/festivals",(c)=>legacyV1(c,"/festivals"));
+app.all("/holidays",(c)=>legacyV1(c,"/holidays"));
+app.all("/market/latest",(c)=>legacyV1(c,"/market/latest"));
+app.all("/openapi.json",(c)=>legacyV1(c,"/openapi.json"));
+app.all("/panchang",(c)=>legacyV1(c,"/panchang"));
+app.all("/tithi/derive",(c)=>legacyV1(c,"/tithi/derive"));
+app.all("/tithi/next",(c)=>legacyV1(c,"/tithi/next"));
+app.all("/calendar/*",(c)=>legacyV1(c,"/calendar/"+(c.req.param("*")||"")));
+app.all("/rashifal/*",(c)=>{const rest=c.req.param("*")||"";if(!["metadata","universal","personalized","service-token-hash"].includes(rest))return c.json({error:"unsupported_rashifal_route"},404);return proxyLegacy(c.req.raw,"/api/rashifal/"+rest)});
+app.all("/cron/rashifal",(c)=>proxyLegacy(c.req.raw,"/api/cron/rashifal"));
+
 app.get("/health", (c) => c.json({
   status: "online",
   runtime: "Deno",
@@ -169,7 +234,7 @@ app.get("/astronomy/tithi", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health", "/sync", "/nasa/apod", "/astronomy/tithi"]
+  routes: ["/health","/sync","/nasa/apod","/astronomy/tithi","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {
