@@ -99,8 +99,14 @@ export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormali
           headers: { "Accept": "application/json" }
         });
         if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
-        data = await response.json();
-        if (data) break;
+        const rawData: any = await response.json();
+        const candidateData = Array.isArray(rawData) ? rawData[0] : rawData;
+        if (candidateData && (candidateData.hdurl || candidateData.url)) {
+          data = candidateData;
+          break;
+        }
+        data = null;
+        lastError = "NASA_EMPTY_MEDIA_URL";
       } catch (error) {
         lastError = error instanceof DOMException && error.name === "AbortError"
           ? "NASA_TIMEOUT"
