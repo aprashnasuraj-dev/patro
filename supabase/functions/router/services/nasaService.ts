@@ -101,12 +101,18 @@ export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormali
         if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
         const rawData: any = await response.json();
         const candidateData = Array.isArray(rawData) ? rawData[0] : rawData;
-        if (candidateData && (candidateData.hdurl || candidateData.url)) {
+        if (
+          candidateData &&
+          (candidateData.hdurl || candidateData.url) &&
+          String(candidateData.date || "") === targetDate
+        ) {
           data = candidateData;
           break;
         }
         data = null;
-        lastError = "NASA_EMPTY_MEDIA_URL";
+        lastError = candidateData?.date && String(candidateData.date) !== targetDate
+          ? "NASA_DATE_MISMATCH"
+          : "NASA_EMPTY_MEDIA_URL";
       } catch (error) {
         lastError = error instanceof DOMException && error.name === "AbortError"
           ? "NASA_TIMEOUT"
