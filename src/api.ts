@@ -1,4 +1,4 @@
-import type { ApodPayload, HealthPayload, SyncPayload, SyncRangePayload, TithiPayload } from "./types";
+import type { ApodPayload, CosmicDayPayload, HealthPayload, SyncPayload, SyncRangePayload, TithiPayload } from "./types";
 
 const memoryCache = new Map<string, unknown>();
 
@@ -46,6 +46,10 @@ export const api = {
 
   apod(date: string, signal?: AbortSignal) {
     return fetchJson<ApodPayload>("/api/v1/nasa/apod?date=" + encodeURIComponent(date), signal);
+  },
+
+  cosmic(date: string, signal?: AbortSignal) {
+    return fetchJson<CosmicDayPayload>("/api/v1/nasa/cosmic?date=" + encodeURIComponent(date), signal);
   },
 
   tithi(date: string, lat = 27.7172, lng = 85.324, signal?: AbortSignal) {
