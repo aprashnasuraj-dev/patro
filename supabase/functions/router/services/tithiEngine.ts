@@ -76,32 +76,26 @@ function dayOfYear(y: number, m: number, d: number) {
 
 // NOAA-style sunrise approximation (zenith 90.833°). Used only for Kshaya/Adhika
 // sunrise-day classification; Sun/Moon longitudes themselves use Astronomy Engine.
-function sunriseUtc(iso: string, lat: number, lng: number): Date | null {
+function localMidnightUtc(iso: string): Date {
   const [y,m,d] = iso.split("-").map(Number);
-  const N = dayOfYear(y,m,d);
-  const lngHour = lng / 15;
-  const t = N + ((6 - lngHour) / 24);
-  const M = (0.9856 * t) - 3.289;
-  let L = M + 1.916 * Math.sin(M * DEG) + 0.020 * Math.sin(2 * M * DEG) + 282.634;
-  L = norm360(L);
-  let RA = RAD * Math.atan(0.91764 * Math.tan(L * DEG));
-  RA = norm360(RA);
-  const Lquadrant = Math.floor(L / 90) * 90;
-  const RAquadrant = Math.floor(RA / 90) * 90;
-  RA = (RA + Lquadrant - RAquadrant) / 15;
-  const sinDec = 0.39782 * Math.sin(L * DEG);
-  const cosDec = Math.cos(Math.asin(sinDec));
-  const cosH = (Math.cos(90.833 * DEG) - sinDec * Math.sin(lat * DEG)) /
-    (cosDec * Math.cos(lat * DEG));
-  if (cosH > 1 || cosH < -1) return null;
-  const H = (360 - RAD * Math.acos(cosH)) / 15;
-  const localMean = H + RA - 0.06571 * t - 6.622;
-  const rawUT = localMean - lngHour;
-  // Preserve the UTC date rollover. For Nepal around northern summer,
-  // sunrise can fall shortly before 00:00 UTC on the previous civil date.
-  const dayOffset = Math.floor(rawUT / 24);
-  const UT = ((rawUT % 24) + 24) % 24;
-  return new Date(Date.UTC(y,m-1,d + dayOffset) + UT * 3600000);
+  // 00:00 Asia/Kathmandu = previous UTC day at 18:15.
+  return new Date(Date.UTC(y, m - 1, d) - 345 * 60_000);
+}
+
+function sunriseUtc(iso: string, lat: number, lng: number): Date | null {
+  const start = localMidnightUtc(iso);
+  const observer = new Astronomy.Observer(lat, lng, 0);
+  const rise = Astronomy.SearchRiseSet(
+    Astronomy.Body.Sun,
+    observer,
+    +1,
+    start,
+    1
+  );
+  if (!rise) return null;
+
+  const end = new Date(start.getTime() + 24 * 60 * 60_000);
+  return rise.date >= start && rise.date < end ? rise.date : null;
 }
 
 function advance(a: number, b: number) {
@@ -162,7 +156,7 @@ export function calculateAstronomicalTithi(input: TithiInput) {
       skipped_tithi_indices: skipped,
       sunrise_tithi: { previous: p, current: n, next: x },
       sunrise_utc: { previous: srPrev.toISOString(), current: srNow.toISOString(), next: srNext.toISOString() },
-      method: "sunrise-to-sunrise classification using NOAA-style sunrise approximation"
+      method: "sunrise-to-sunrise classification using Astronomy Engine rise/set search"
     };
   }
 
@@ -179,7 +173,7 @@ export function calculateAstronomicalTithi(input: TithiInput) {
     methodology: {
       longitude_engine: "Astronomy Engine 2.1.19 geocentric ecliptic longitudes",
       illumination_model: "I=(1-cos(Δθ))/2",
-      date_anchor: srNow ? "local sunrise (NOAA-style approximation)" : "12:00 Asia/Kathmandu fallback",
+      date_anchor: srNow ? "local sunrise (Astronomy Engine rise/set search)" : "12:00 Asia/Kathmandu fallback",
       precision_note: "Astronomy Engine uses analytic planetary/lunar models and is not a NASA JPL DE binary ephemeris. It is appropriate for interactive calendar computation; near-boundary ceremonial times should be cross-validated against an authoritative Panchanga or JPL-DE-based ephemeris."
     }
   };
