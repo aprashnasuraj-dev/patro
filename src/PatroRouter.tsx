@@ -3,7 +3,7 @@ import App from "./App";
 import { MediaSuite } from "./media/MediaSuite";
 import { JanmaPatroSuite } from "./jyotish/JanmaPatroSuite";
 
-const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
+const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/jyotish/rashifal", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
