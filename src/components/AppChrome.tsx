@@ -7,6 +7,7 @@ const ROUTES = [
   ["/", "Calendar · पात्रो"],
   ["/aaja", "Today · आज"],
   ["/tithi", "Tithi · तिथि"],
+  ["/tools", "Utilities · उपकरण"],
   ["/fm", "FM Radio · एफएम"],
   ["/tv", "Live TV · टिभी"],
   ["/jyotish", "Jyotish · ज्योतिष"],
@@ -119,6 +120,7 @@ export function AppChrome({ children }: { children: ReactNode }) {
           <a className="tap-target" href="/">पात्रो</a>
           <a className="tap-target" href="/fm">FM</a>
           <a className="tap-target" href="/tv">TV</a>
+          <a className="tap-target" href="/tools">उपकरण</a>
           <a className="tap-target" href="/jyotish">ज्योतिष</a>
           <a className="tap-target" href="/jyotish/janma-patro">चिना</a>
         </nav>
