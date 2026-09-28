@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 const projectRef = "pxlsmxbpgdfzjzuqtict";
 
 export default defineConfig({
+  base: "/astro/",
   plugins: [react()],
   server: {
     proxy: {
