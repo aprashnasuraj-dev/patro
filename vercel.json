@@ -6,6 +6,10 @@
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/:path*"
     },
     {
+      "source": "/api/jyotish-chat",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/jyotish-chat"
+    },
+    {
       "source": "/astro",
       "destination": "/astro/index.html"
     },
