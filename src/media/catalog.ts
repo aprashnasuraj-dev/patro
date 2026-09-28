@@ -14,6 +14,16 @@ export interface MediaItem {
   logo?: string;
   officialUrl?: string;
   scheduleUrl?: string;
+  playable?: boolean;
+  status?: string;
+  countryCode?: string;
+  countryName?: string;
+  languages?: string[];
+  languageNames?: string[];
+  quality?: string;
+  mediaType?: "hls" | "mp4" | "webm" | "auto" | string;
+  sourceStreamUrl?: string;
+  verified?: boolean;
 }
 
 export const RADIO_STATIONS: MediaItem[] = [
