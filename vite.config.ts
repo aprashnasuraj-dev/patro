@@ -16,6 +16,7 @@ export default defineConfig({
     }
   },
   build: {
+    outDir: "dist/astro",
     target: "es2022",
     sourcemap: true,
     cssCodeSplit: true
