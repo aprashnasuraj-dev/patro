@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 const projectRef = "pxlsmxbpgdfzjzuqtict";
 
 export default defineConfig({
+  base: "/astro/",
   plugins: [react()],
   server: {
     proxy: {
@@ -15,6 +16,7 @@ export default defineConfig({
     }
   },
   build: {
+    outDir: "dist/astro",
     target: "es2022",
     sourcemap: true,
     cssCodeSplit: true
