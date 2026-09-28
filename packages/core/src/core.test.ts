@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   SCALE,
+  adToBs,
+  bsDateMetadata,
+  bsToAd,
+  daysInBsMonth,
   bighaToSqFt,
   calculatePersonalTax,
   formatScaled,
@@ -81,5 +85,34 @@ describe("policy-driven tax engine", () => {
     expect(result.contributionDeductionScaled).toBe(300_000n * SCALE);
     expect(result.taxableIncomeScaled).toBe(600_000n * SCALE);
     expect(result.taxScaled).toBe(15_000n * SCALE);
+  });
+});
+
+
+describe("BS ⇄ AD engine", () => {
+  it("uses the verified BS 1970 anchor", () => {
+    expect(bsToAd({ year: 1970, month: 1, day: 1 })).toBe("1913-04-13");
+    expect(adToBs("1913-04-13")).toEqual({ year: 1970, month: 1, day: 1 });
+  });
+
+  it("matches production archive boundary samples", () => {
+    const fixtures = [
+      [{ year: 1975, month: 1, day: 1 }, "1918-04-13"],
+      [{ year: 2000, month: 1, day: 1 }, "1943-04-14"],
+      [{ year: 2083, month: 1, day: 1 }, "2026-04-14"],
+      [{ year: 2093, month: 12, day: 30 }, "2037-04-13"],
+    ] as const;
+
+    for (const [bs, ad] of fixtures) {
+      expect(bsToAd(bs)).toBe(ad);
+      expect(adToBs(ad)).toEqual(bs);
+    }
+  });
+
+  it("keeps future table rows explicit and round-trippable", () => {
+    expect(daysInBsMonth(2099, 1)).toBe(31);
+    const ad = bsToAd({ year: 2099, month: 12, day: 30 });
+    expect(adToBs(ad)).toEqual({ year: 2099, month: 12, day: 30 });
+    expect(bsDateMetadata({ year: 2099, month: 1, day: 1 }).confidence).toBe("provisional-open-table");
   });
 });
