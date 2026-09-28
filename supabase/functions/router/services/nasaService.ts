@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const NASA_API_URL = "https://api.nasa.gov/planetary/apod";
+const NASA_APOD_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
+const NASA_APOD_LEGACY_URL = "https://api.nasa.gov/planetary/apod";
 const NASA_API_KEY = Deno.env.get("NASA_API_KEY") || "DEMO_KEY";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
@@ -82,27 +83,61 @@ export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormali
   const cached = await readCache(targetDate);
   if (cached) return cached;
 
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 4000);
-
   try {
-    const url = NASA_API_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate);
-    const response = await fetch(url, {
-      signal: controller.signal,
-      headers: { "Accept": "application/json" }
-    });
-    if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
+    const candidates = [
+      NASA_APOD_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate),
+      NASA_APOD_LEGACY_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate)
+    ];
+    let data: any = null;
+    let lastError = "NASA_APOD_UNAVAILABLE";
+    for (const url of candidates) {
+      const attempt = new AbortController();
+      const timer = setTimeout(() => attempt.abort(), 6500);
+      try {
+        const response = await fetch(url, {
+          signal: attempt.signal,
+          headers: { "Accept": "application/json" }
+        });
+        if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
+        const rawData: any = await response.json();
+        const candidateData = Array.isArray(rawData) ? rawData[0] : rawData;
+        if (
+          candidateData &&
+          (candidateData.hdurl || candidateData.url) &&
+          String(candidateData.date || "") === targetDate
+        ) {
+          data = candidateData;
+          break;
+        }
+        data = null;
+        lastError = candidateData?.date && String(candidateData.date) !== targetDate
+          ? "NASA_DATE_MISMATCH"
+          : "NASA_EMPTY_MEDIA_URL";
+      } catch (error) {
+        lastError = error instanceof DOMException && error.name === "AbortError"
+          ? "NASA_TIMEOUT"
+          : String((error as Error)?.message || error);
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    if (!data) throw new Error(lastError);
 
-    const data: any = await response.json();
-    let finalUrl = String(data.url || "");
-    let finalHdUrl = String(data.hdurl || data.url || "");
     const sourceMedia: "image" | "video" = data.media_type === "video" ? "video" : "image";
+    let finalUrl = String(data.hdurl || data.url || "");
+    let finalHdUrl = String(data.hdurl || finalUrl);
 
     if (sourceMedia === "video") {
-      const id = youtubeId(finalUrl);
-      if (!id) return fallback(targetDate, "non_youtube_video");
-      finalUrl = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
-      finalHdUrl = finalUrl;
+      const suppliedThumb = String(data.hdurl || "");
+      if (suppliedThumb.startsWith("http")) {
+        finalUrl = suppliedThumb;
+        finalHdUrl = suppliedThumb;
+      } else {
+        const id = youtubeId(String(data.url || ""));
+        if (!id) return fallback(targetDate, "non_youtube_video");
+        finalUrl = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
+        finalHdUrl = finalUrl;
+      }
     }
 
     if (!finalUrl) throw new Error("NASA_EMPTY_MEDIA_URL");
@@ -122,11 +157,7 @@ export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormali
     await writeCache(targetDate, normalized);
     return normalized;
   } catch (error) {
-    const reason = error instanceof DOMException && error.name === "AbortError"
-      ? "timeout"
-      : String((error as Error)?.message || "upstream_error");
+    const reason = String((error as Error)?.message || "upstream_error");
     return fallback(targetDate, reason);
-  } finally {
-    clearTimeout(timeoutId);
   }
 }
