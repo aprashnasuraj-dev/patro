@@ -96,9 +96,12 @@ function sunriseUtc(iso: string, lat: number, lng: number): Date | null {
   if (cosH > 1 || cosH < -1) return null;
   const H = (360 - RAD * Math.acos(cosH)) / 15;
   const localMean = H + RA - 0.06571 * t - 6.622;
-  let UT = localMean - lngHour;
-  UT = ((UT % 24) + 24) % 24;
-  return new Date(Date.UTC(y,m-1,d) + UT * 3600000);
+  const rawUT = localMean - lngHour;
+  // Preserve the UTC date rollover. For Nepal around northern summer,
+  // sunrise can fall shortly before 00:00 UTC on the previous civil date.
+  const dayOffset = Math.floor(rawUT / 24);
+  const UT = ((rawUT % 24) + 24) % 24;
+  return new Date(Date.UTC(y,m-1,d + dayOffset) + UT * 3600000);
 }
 
 function advance(a: number, b: number) {
