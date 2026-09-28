@@ -1,6 +1,8 @@
 import { Hono } from "npm:hono@4.7.2";
-import { cors } from "npm:hono@4.7.2/cors";\n
+import { cors } from "npm:hono@4.7.2/cors";
+
 const app = new Hono().basePath("/functions/v1/router");
+const MAX_COMPAT_BODY_BYTES = 512_000;
 
 app.use("*", cors({
   origin: "*",
@@ -79,9 +81,22 @@ function safeCompatPath(path: string) {
 async function proxyLegacy(request: Request, targetPath: string, opts: {page?: boolean; preserveQuery?: boolean} = {}) {
   const incoming=new URL(request.url), target=new URL(LEGACY_BASE+targetPath);
   if(opts.preserveQuery!==false && !target.search) target.search=incoming.search;
-  const headers=new Headers(request.headers); headers.delete("host"); headers.delete("content-length");
+  const headers=new Headers(request.headers);
+  for (const name of ["host","content-length","connection","keep-alive","proxy-authenticate","proxy-authorization","te","trailer","transfer-encoding","upgrade","x-forwarded-host","x-forwarded-proto","x-forwarded-port"]) {
+    headers.delete(name);
+  }
   const init:RequestInit={method:request.method,headers,redirect:"manual"};
-  if(request.method!=="GET"&&request.method!=="HEAD") init.body=await request.arrayBuffer();
+  if(request.method!=="GET"&&request.method!=="HEAD") {
+    const advertised=Number(request.headers.get("content-length")||"0");
+    if(Number.isFinite(advertised)&&advertised>MAX_COMPAT_BODY_BYTES) {
+      return new Response(JSON.stringify({error:"request_too_large"}),{status:413,headers:{"content-type":"application/json","cache-control":"no-store"}});
+    }
+    const body=await request.arrayBuffer();
+    if(body.byteLength>MAX_COMPAT_BODY_BYTES) {
+      return new Response(JSON.stringify({error:"request_too_large"}),{status:413,headers:{"content-type":"application/json","cache-control":"no-store"}});
+    }
+    init.body=body;
+  }
   const upstream=await fetch(target,init), outHeaders=new Headers(upstream.headers);
   outHeaders.delete("content-length"); outHeaders.delete("content-encoding"); outHeaders.delete("x-frame-options");
   const ct=upstream.headers.get("content-type")||"";
@@ -216,19 +231,6 @@ app.get("/nasa/cosmic", async (c) => {
   });
 });
 
-app.get("/media/proxy", async (c) => {
-  const raw = c.req.query("url");
-  if (!raw) return c.json({ error: "missing_stream_url" }, 400);
-  try {
-    const { proxyMedia } = await import("./services/mediaProxy.ts");
-    return await proxyMedia(c.req.raw, raw);
-  } catch (error) {
-    const message = String((error as Error)?.message || error);
-    const status = ["invalid_stream_url", "unsupported_stream_protocol", "stream_host_not_allowed", "credentials_not_allowed"].includes(message) ? 400 : 502;
-    return c.json({ error: message }, status);
-  }
-});
-
 app.get("/astronomy/tithi", async (c) => {
   const date = c.req.query("date") || todayNepal();
   if (!validDate(date)) return c.json({ error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
@@ -259,6 +261,19 @@ app.get("/astronomy/tithi", async (c) => {
     });
   } catch (error) {
     return c.json({ error: String((error as Error)?.message || error) }, 400);
+  }
+});
+
+app.get("/media/proxy", async (c) => {
+  const raw = c.req.query("url");
+  if (!raw) return c.json({ error: "missing_stream_url" }, 400);
+  try {
+    const { proxyMedia } = await import("./services/mediaProxy.ts");
+    return await proxyMedia(c.req.raw, raw);
+  } catch (error) {
+    const message = String((error as Error)?.message || error);
+    const status = ["invalid_stream_url", "unsupported_stream_protocol", "stream_host_not_allowed", "credentials_not_allowed"].includes(message) ? 400 : 502;
+    return c.json({ error: message }, status);
   }
 });
 

@@ -8,6 +8,9 @@ const ALLOWED_HOSTS = new Set([
   "202.166.207.67"
 ]);
 
+const MAX_REDIRECTS = 3;
+const MAX_MANIFEST_BYTES = 1_048_576;
+
 function allowedUrl(raw: string) {
   let url: URL;
   try { url=new URL(raw); } catch { throw new Error("invalid_stream_url"); }
@@ -26,27 +29,66 @@ function rewriteManifest(text: string, base: URL) {
     const value=line.trim();
     if(!value || value.startsWith("#")) {
       return line.replace(/URI="([^"]+)"/g,(_match,uri:string)=>{
-        const target=new URL(uri,base);
+        const target=allowedUrl(new URL(uri,base).toString());
         return 'URI="'+proxied(target.toString())+'"';
       });
     }
-    const target=new URL(value,base);
+    const target=allowedUrl(new URL(value,base).toString());
     return proxied(target.toString());
   }).join("\n");
+}
+
+async function readTextLimited(response: Response, maxBytes: number) {
+  const declared=Number(response.headers.get("content-length")||"0");
+  if(Number.isFinite(declared)&&declared>maxBytes) throw new Error("manifest_too_large");
+  if(!response.body) return "";
+  const reader=response.body.getReader();
+  const decoder=new TextDecoder();
+  let total=0, out="";
+  while(true){
+    const {done,value}=await reader.read();
+    if(done) break;
+    total+=value.byteLength;
+    if(total>maxBytes){
+      await reader.cancel("manifest_too_large").catch(()=>{});
+      throw new Error("manifest_too_large");
+    }
+    out+=decoder.decode(value,{stream:true});
+  }
+  out+=decoder.decode();
+  return out;
+}
+
+async function fetchAllowed(target: URL, headers: Headers, signal: AbortSignal) {
+  let current=target;
+  for(let redirects=0; redirects<=MAX_REDIRECTS; redirects++){
+    const response=await fetch(current,{headers,redirect:"manual",signal});
+    if(response.status>=300&&response.status<400){
+      const location=response.headers.get("location");
+      if(!location) return response;
+      if(redirects===MAX_REDIRECTS) throw new Error("too_many_redirects");
+      current=allowedUrl(new URL(location,current).toString());
+      continue;
+    }
+    return {response, finalUrl:current};
+  }
+  throw new Error("too_many_redirects");
 }
 
 export async function proxyMedia(request: Request, raw: string) {
   const target=allowedUrl(raw);
   const headers=new Headers();
-  const range=request.headers.get("range"); if(range)headers.set("range",range);
+  const range=request.headers.get("range");
+  if(range && /^bytes=\d*-\d*(?:,\d*-\d*)?$/i.test(range)) headers.set("range",range);
   headers.set("accept",request.headers.get("accept") || "*/*");
-  headers.set("user-agent","NepaliPatroMediaProxy/1.0");
+  headers.set("user-agent","NepaliPatroMediaProxy/1.1");
   const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),15000);
-  let upstream:Response;
+  let fetched:{response:Response;finalUrl:URL}|Response;
   try {
-    upstream=await fetch(target,{headers,redirect:"follow",signal:controller.signal});
+    fetched=await fetchAllowed(target,headers,controller.signal);
   } finally { clearTimeout(timer); }
-  const finalUrl=allowedUrl(upstream.url || target.toString());
+  const upstream=fetched instanceof Response ? fetched : fetched.response;
+  const finalUrl=allowedUrl((fetched instanceof Response ? upstream.url : fetched.finalUrl.toString()) || target.toString());
   if(!upstream.ok && upstream.status!==206) return new Response("upstream_stream_error",{status:upstream.status || 502});
   const contentType=upstream.headers.get("content-type") || "";
   const manifest=contentType.includes("mpegurl") || finalUrl.pathname.toLowerCase().endsWith(".m3u8");
@@ -58,7 +100,7 @@ export async function proxyMedia(request: Request, raw: string) {
     const value=upstream.headers.get(name); if(value)outHeaders.set(name,value);
   }
   if(manifest){
-    const text=await upstream.text();
+    const text=await readTextLimited(upstream,MAX_MANIFEST_BYTES);
     outHeaders.set("content-type","application/vnd.apple.mpegurl; charset=utf-8");
     outHeaders.delete("content-length");
     return new Response(rewriteManifest(text,finalUrl),{status:upstream.status,headers:outHeaders});
