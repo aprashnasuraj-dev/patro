@@ -7,8 +7,6 @@ create table if not exists public.astronomy_calendar_map (
 
 alter table public.astronomy_calendar_map enable row level security;
 
-create index if not exists astronomy_calendar_map_source_idx
-  on public.astronomy_calendar_map (source_version);
 
 comment on table public.astronomy_calendar_map is
   'Private server-side AD/BS/Nepal-Sambat/Panchang synchronization map migrated from the existing Patro archive for the single router Edge Function.';
