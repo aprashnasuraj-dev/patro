@@ -323,9 +323,9 @@ Deno.serve(async (req: Request) => {
   const china = sanitizeChinaData(body.china_data);
   const messages = buildMessages(message, history, language, china);
 
-  const groqKey = Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || "";
+  const groqKey = Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || Deno.env.get("Groq_API") || "";
   const nvidiaKey =
-    Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || "";
+    Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api") || "";
 
   const groqModels = uniqueModels([
     Deno.env.get("GROQ_MODEL") || undefined,
