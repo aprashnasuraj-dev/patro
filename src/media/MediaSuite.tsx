@@ -3,7 +3,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { fuzzyMedia, MEDIA_CATALOG, type MediaItem, type MediaKind } from "./catalog";
 import { useMedia } from "./MediaProvider";
 
-function proxy(url:string){return url.startsWith("http://")?"/api/v1/media/proxy?url="+encodeURIComponent(url):url;}
+function proxy(url: string) {
+  const remote = url.startsWith("http://") || url.startsWith("https://");
+  return remote ? "/api/v1/media/proxy?url=" + encodeURIComponent(url) : url;
+}
 function storedFavorites(){try{return new Set<string>(JSON.parse(localStorage.getItem("patro.media.favorites")||"[]") as string[]);}catch{return new Set<string>();}}
 
 function TvPlayer({item}:{item:MediaItem}){
