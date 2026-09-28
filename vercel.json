@@ -36,6 +36,18 @@
     {
       "source": "/((?!astro(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
+    },
+    {
+      "source": "/tools/sw.js",
+      "destination": "/astro/sw.js"
+    },
+    {
+      "source": "/tools",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/astro/index.html"
     }
   ],
   "headers": [
@@ -619,6 +631,19 @@
         {
           "key": "Content-Type",
           "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/sw.js",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
