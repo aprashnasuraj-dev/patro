@@ -279,7 +279,7 @@ def doc_block_html(block):
 def xhtml_shell(title, body, epub_type=None, root_rel="../"):
     et=f' epub:type="{epub_type}"' if epub_type else ""
     return f'''<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/#" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/#" lang="en" xml:lang="en">
 <head><meta charset="utf-8"/><title>{html.escape(title)}</title><link rel="stylesheet" type="text/css" href="{root_rel}css/styles.css"/></head>
 <body{et}>{body}</body></html>'''
 def fig(n):
