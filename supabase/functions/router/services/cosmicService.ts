@@ -335,7 +335,7 @@ async function fetchInsight(date: string) {
 async function fetchTech(date: string) {
   return cached(`tech:${date.slice(0, 7)}`, "NASA Tech Transfer", date, TTL.tech, async () => {
     try {
-      const data = await fetchJson(`https://api.nasa.gov/techtransfer/patent/?space&api_key=${encodeURIComponent(NASA_API_KEY)}`);
+      const data = await fetchJson(`https://api.nasa.gov/techtransfer?patent=space&api_key=${encodeURIComponent(NASA_API_KEY)}`);
       const rows = Array.isArray(data?.results) ? data.results.slice(0, 5) : [];
       return {
         status: rows.length ? "ok" : "no_data",
