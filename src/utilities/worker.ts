@@ -1,6 +1,7 @@
 import {
   adToBs,
   bighaToSqFt,
+  calculateNepalSalaryTax2083,
   bsDateMetadata,
   bsToAd,
   formatBsDate,
@@ -20,7 +21,8 @@ type Request =
   | { id: number; type: "land-hill"; ropani: string; aana: string; paisa: string; dam: string }
   | { id: number; type: "land-terai"; bigha: string; kattha: string; dhur: string }
   | { id: number; type: "date-bs"; year: number; month: number; day: number }
-  | { id: number; type: "date-ad"; ad: string };
+  | { id: number; type: "date-ad"; ad: string }
+  | { id: number; type: "tax-2083"; annualSalary: string; ssf: string; epf: string; cit: string; lifeInsurance: string; healthInsurance: string; qualifyingSsfContributor: boolean };
 
 type Response = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
 
@@ -94,7 +96,7 @@ self.onmessage = (event: MessageEvent<Request>) => {
           metadata: bsDateMetadata(bs),
         },
       };
-    } else {
+    } else if (request.type === "date-ad") {
       const bs = adToBs(request.ad);
       response = {
         id: request.id,
@@ -104,6 +106,28 @@ self.onmessage = (event: MessageEvent<Request>) => {
           bs: formatBsDate(bs),
           parts: bs,
           metadata: bsDateMetadata(bs),
+        },
+      };
+    } else {
+      const tax = calculateNepalSalaryTax2083(request);
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          fiscalYear: tax.fiscalYear,
+          taxableIncome: tax.taxableIncome,
+          annualTax: tax.annualTax,
+          monthlyAverageTax: tax.monthlyAverageTax,
+          retirementDeduction: formatScaled(tax.retirementDeductionScaled),
+          retirementDeductionCap: formatScaled(tax.retirementDeductionCapScaled),
+          lifeInsuranceDeduction: formatScaled(tax.lifeInsuranceDeductionScaled),
+          healthInsuranceDeduction: formatScaled(tax.healthInsuranceDeductionScaled),
+          sourceVersion: tax.sourceVersion,
+          bands: tax.bands.map((band) => ({
+            rateBps: band.rateBps,
+            taxable: formatScaled(band.taxableScaled),
+            tax: formatScaled(band.taxScaled),
+          })),
         },
       };
     }
