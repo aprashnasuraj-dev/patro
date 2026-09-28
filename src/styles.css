@@ -545,7 +545,8 @@ h2 {
   background: rgba(2, 6, 23, 0.32);
 }
 
-.segmented-control button {
+.segmented-control button,
+.segmented-control a {
   min-width: 40px;
   padding: 6px 9px;
   border: 0;
@@ -555,6 +556,19 @@ h2 {
   cursor: pointer;
   font-size: 0.7rem;
   font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.segmented-control .rashifal-tab {
+  color: #fde68a;
+  border-left: 1px solid var(--line);
+  margin-left: 3px;
+}
+
+.segmented-control .rashifal-tab:hover {
+  color: #fff7d6;
+  background: rgba(253, 230, 138, 0.08);
 }
 
 .segmented-control button.active {
