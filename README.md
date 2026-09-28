@@ -22,10 +22,13 @@ There are **no Vercel Serverless Functions, Next.js route handlers or server
 components** in this branch. The earlier Python Rashifal Vercel function and its
 Python requirements were removed as part of this architecture cutover.
 
-The public GitHub repository intentionally does **not** duplicate Patro's
-proprietary compressed calendar/Panchang archive. The complete calendar adapter
-is deployed inside the existing Supabase project's `router` function and reuses
-the same archive already used by the protected Patro runtime.
+The public GitHub repository contains the complete router source, but it does
+**not** publish Patro's proprietary historical calendar rows. Those rows were
+migrated once, server-side, into the private RLS-enabled
+`astronomy_calendar_map` table in the existing Supabase project. The
+`calendarService.ts` adapter reads only that private table with the Edge
+Function service role, so the static browser bundle never receives raw archive
+data.
 
 ## Frontend
 
@@ -33,6 +36,8 @@ the same archive already used by the protected Patro runtime.
 npm install
 npm run dev
 npm run build
+
+# Vite's development proxy preserves the same relative /api/v1/* contract
 ```
 
 Production output is `dist/`. The SPA calls only these relative endpoints:
@@ -80,12 +85,16 @@ slug as `/router/*`.
 
 ## Database migration
 
-Apply the migration in:
+Apply both schema migrations:
 
-`supabase/migrations/20260928090000_astronomical_sync_apod_cache.sql`
+- `supabase/migrations/20260928090000_astronomical_sync_apod_cache.sql`
+- `supabase/migrations/20260928093000_astronomical_sync_calendar_map.sql`
 
-The table is RLS-enabled with no browser policy. Only the service-role-backed
-Edge Function reads and writes APOD cache entries.
+Both tables are RLS-enabled with no browser policy. Only the service-role-backed
+Edge Function can read/write them. In the existing production project, the
+calendar map has already been populated from the current Patro archive with
+**77,070 contiguous dates from 1826-04-11 through 2037-04-13**. That one-time
+data migration is intentionally not published in the public repository.
 
 ## Vercel
 
