@@ -26,7 +26,15 @@
       "destination": "/astro/index.html"
     },
     {
-      "source": "/((?!astro(?:/.*)?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
+      "source": "/fm",
+      "destination": "/astro"
+    },
+    {
+      "source": "/tv",
+      "destination": "/astro"
+    },
+    {
+      "source": "/((?!astro(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
   ],

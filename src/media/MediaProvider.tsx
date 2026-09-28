@@ -96,7 +96,8 @@ export function MediaProvider({children}:{children:ReactNode}) {
     const url=proxied(item.streamUrl);
     const start=async()=>{
       try{
-        if(isHls(url) && Hls.isSupported()){
+        const hlsMedia=item.codec.toLowerCase().includes("hls") || item.mediaType==="hls" || isHls(url);
+        if(hlsMedia && Hls.isSupported()){
           const hls=new Hls({enableWorker:true,lowLatencyMode:true,maxBufferLength:20});
           hlsRef.current=hls; hls.loadSource(url); hls.attachMedia(audio);
           hls.on(Hls.Events.ERROR,(_event,data)=>{
