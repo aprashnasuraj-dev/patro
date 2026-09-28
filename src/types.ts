@@ -134,3 +134,163 @@ export interface HealthPayload {
   runtime: "Deno";
   framework: "Hono";
 }
+
+export interface CosmicMediaItem {
+  nasa_id: string;
+  title: string;
+  description: string;
+  media_type: string;
+  date_created: string;
+  preview_url: string;
+  center: string;
+  keywords: string[];
+}
+
+export interface CosmicNeo {
+  id: string;
+  name: string;
+  hazardous: boolean;
+  absolute_magnitude_h: number;
+  diameter_m: number;
+  miss_distance_km: number;
+  miss_distance_au: number;
+  velocity_kph: number;
+  orbiting_body: string;
+  nasa_url: string;
+}
+
+export interface EpicImage {
+  image: string;
+  caption: string;
+  date: string;
+  centroid_coordinates: unknown;
+  image_url: string;
+}
+
+export interface EonetEvent {
+  id: string;
+  title: string;
+  closed: string | null;
+  categories: string[];
+  sources: { id: string; url: string }[];
+  geometry: unknown[];
+}
+
+export interface RoverPhoto {
+  id: string;
+  img_src: string;
+  earth_date: string;
+  sol: number | null;
+  camera: string;
+  rover: string;
+}
+
+export interface CosmicDayPayload {
+  requested_date: string;
+  generated_at: string;
+  apod: ApodPayload;
+  related_media: {
+    status: string;
+    items: CosmicMediaItem[];
+    error?: string;
+  };
+  neo: {
+    status: string;
+    count: number;
+    hazardous_count: number;
+    close_count_005_au: number;
+    closest_km: number | null;
+    items: CosmicNeo[];
+    error?: string;
+  };
+  earth: {
+    epic: {
+      status: string;
+      items: EpicImage[];
+      error?: string;
+    };
+    eonet: {
+      status: string;
+      count: number;
+      events: EonetEvent[];
+      error?: string;
+    };
+    gibs: {
+      status: string;
+      provider: string;
+      worldview_url: string;
+    };
+  };
+  mars: {
+    status: string;
+    official_api_status: string;
+    rovers: {
+      rover: string;
+      status: string;
+      photos: RoverPhoto[];
+      error?: string;
+    }[];
+    insight_weather: {
+      status: string;
+      sols: {
+        sol: string;
+        season: string | null;
+        average_temp_c: number | null;
+        min_temp_c: number | null;
+        max_temp_c: number | null;
+        pressure_pa: number | null;
+        wind_mps: number | null;
+      }[];
+      error?: string;
+    };
+  };
+  solar: {
+    status: string;
+    level: "Quiet" | "Low" | "Moderate" | "Elevated";
+    counts: { flares: number; cmes: number; storms: number };
+    max_flare_class: string | null;
+    flares: {
+      id: string;
+      class_type: string;
+      begin_time: string;
+      peak_time: string;
+      source_location: string;
+    }[];
+    cmes: {
+      id: string;
+      start_time: string;
+      source_location: string;
+      note: string;
+    }[];
+    storms: {
+      id: string;
+      start_time: string;
+      kp: unknown[];
+    }[];
+  };
+  exoplanet: {
+    status: string;
+    highlight: null | {
+      name: string;
+      host: string;
+      discovery_year: number | null;
+      discovery_method: string;
+      radius_earth: number | null;
+      mass_earth: number | null;
+      orbital_period_days: number | null;
+      distance_pc: number | null;
+    };
+    error?: string;
+  };
+  technology: {
+    status: string;
+    items: {
+      id: string;
+      title: string;
+      description: string;
+      category: string;
+    }[];
+    error?: string;
+  };
+  source_notes: Record<string, string>;
+}
