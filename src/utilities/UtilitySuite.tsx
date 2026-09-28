@@ -5,6 +5,18 @@ type Hill = { ropani: string; aana: string; paisa: string; dam: string };
 type Terai = { bigha: string; kattha: string; dhur: string };
 type DateMetadata = { confidence: "validated-project-archive" | "provisional-open-table"; source: string; note: string };
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
+type TaxResult = {
+  fiscalYear: string;
+  taxableIncome: string;
+  annualTax: string;
+  monthlyAverageTax: string;
+  retirementDeduction: string;
+  retirementDeductionCap: string;
+  lifeInsuranceDeduction: string;
+  healthInsuranceDeduction: string;
+  sourceVersion: string;
+  bands: { rateBps: number; taxable: string; tax: string }[];
+};
 type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
 
 function Field({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
@@ -25,6 +37,7 @@ export function UtilitySuite() {
   const latestTerai = useRef(0);
   const latestBsDate = useRef(0);
   const latestAdDate = useRef(0);
+  const latestTax = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -46,6 +59,17 @@ export function UtilitySuite() {
   const [adDate, setAdDate] = useState("2026-04-14");
   const [adDateResult, setAdDateResult] = useState<DateConversionResult | null>(null);
   const [dateError, setDateError] = useState("");
+  const [taxInput, setTaxInput] = useState({
+    annualSalary: "1200000",
+    ssf: "0",
+    epf: "0",
+    cit: "0",
+    lifeInsurance: "0",
+    healthInsurance: "0",
+  });
+  const [qualifyingSsfContributor, setQualifyingSsfContributor] = useState(false);
+  const [taxResult, setTaxResult] = useState<TaxResult | null>(null);
+  const [taxError, setTaxError] = useState("");
 
   useEffect(() => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
@@ -56,6 +80,7 @@ export function UtilitySuite() {
       if (!message.ok) {
         if (message.id === latestFont.current) setFontError(message.error);
         else if (message.id === latestBsDate.current || message.id === latestAdDate.current) setDateError(message.error);
+        else if (message.id === latestTax.current) setTaxError(message.error);
         else setLandError(message.error);
         return;
       }
@@ -77,6 +102,9 @@ export function UtilitySuite() {
       } else if (message.id === latestAdDate.current) {
         setAdDateResult(message.result);
         setDateError("");
+      } else if (message.id === latestTax.current) {
+        setTaxResult(message.result);
+        setTaxError("");
       }
     };
     return () => {
@@ -157,6 +185,21 @@ export function UtilitySuite() {
     return () => window.clearTimeout(timer);
   }, [adDate, workerReady]);
 
+  useEffect(() => {
+    if (!workerReady) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestTax.current = id;
+      workerRef.current?.postMessage({
+        id,
+        type: "tax-2083",
+        ...taxInput,
+        qualifyingSsfContributor,
+      });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, [taxInput, qualifyingSsfContributor, workerReady]);
+
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
     setFontInput(fontOutput);
@@ -221,6 +264,59 @@ export function UtilitySuite() {
 
         <p className="utility-note">1970–2093 is backed by the existing Patro synchronized archive; 2094–2099 remains explicitly provisional because independent future BS tables can disagree.</p>
         {dateError && <p className="utility-error" role="alert">{dateError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="tax-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">FY 2083/84 · Salary tax</p>
+            <h2 id="tax-title">Personal Income Tax Calculator</h2>
+          </div>
+          <span className="utility-badge">Current unified resident schedule</span>
+        </header>
+
+        <div className="tax-grid">
+          <article className="land-panel">
+            <h3>Annual income & retirement contributions</h3>
+            <Field label="Annual salary (NPR)" value={taxInput.annualSalary} onChange={(value) => setTaxInput((v) => ({ ...v, annualSalary: value }))} />
+            <div className="land-fields land-fields--three">
+              <Field label="SSF" value={taxInput.ssf} onChange={(value) => setTaxInput((v) => ({ ...v, ssf: value }))} />
+              <Field label="EPF" value={taxInput.epf} onChange={(value) => setTaxInput((v) => ({ ...v, epf: value }))} />
+              <Field label="CIT" value={taxInput.cit} onChange={(value) => setTaxInput((v) => ({ ...v, cit: value }))} />
+            </div>
+            <label className="utility-check">
+              <input type="checkbox" checked={qualifyingSsfContributor} onChange={(event) => setQualifyingSsfContributor(event.target.checked)} />
+              Qualifying contribution-based SSF contributor
+            </label>
+          </article>
+
+          <article className="land-panel">
+            <h3>Insurance deductions</h3>
+            <div className="land-fields">
+              <Field label="Life insurance (annual)" value={taxInput.lifeInsurance} onChange={(value) => setTaxInput((v) => ({ ...v, lifeInsurance: value }))} />
+              <Field label="Health insurance (annual)" value={taxInput.healthInsurance} onChange={(value) => setTaxInput((v) => ({ ...v, healthInsurance: value }))} />
+            </div>
+            <p className="utility-note">Caps applied by the engine: life insurance NPR 40,000; health insurance NPR 20,000. Retirement contribution cap is the lower of actual contribution, one-third of salary, and the applicable NPR 300,000 / NPR 500,000 ceiling.</p>
+          </article>
+        </div>
+
+        {taxResult && <div className="tax-result-grid">
+          <article className="utility-result"><span>Taxable income</span><strong>NPR {taxResult.taxableIncome}</strong></article>
+          <article className="utility-result"><span>Annual tax</span><strong>NPR {taxResult.annualTax}</strong></article>
+          <article className="utility-result"><span>Monthly average</span><strong>NPR {taxResult.monthlyAverageTax}</strong></article>
+          <article className="utility-result"><span>Retirement deduction</span><strong>NPR {taxResult.retirementDeduction}</strong><small>cap NPR {taxResult.retirementDeductionCap}</small></article>
+        </div>}
+
+        {taxResult && <div className="tax-band-list" aria-label="Tax band breakdown">
+          {taxResult.bands.map((band, index) => <div key={index}>
+            <span>{(band.rateBps / 100).toFixed(band.rateBps % 100 ? 2 : 0)}%</span>
+            <strong>NPR {band.tax}</strong>
+            <small>on NPR {band.taxable}</small>
+          </div>)}
+        </div>}
+
+        <p className="utility-note">This module is versioned for FY 2083/84. The first 1% band is waived only when the qualifying SSF checkbox correctly reflects the taxpayer's legal status.</p>
+        {taxError && <p className="utility-error" role="alert">{taxError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
