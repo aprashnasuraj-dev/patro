@@ -37,11 +37,7 @@ app.get("/sync", async (c) => {
   const date = c.req.query("date") || todayNepal();
   if (!validDate(date)) return c.json({ success: false, error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
 
-  const [{ getCalendarDate, getCalendarCoverage }, { calculateAstronomicalTithi }] = await Promise.all([
-    import("./services/calendarService.ts"),
-    import("./services/tithiEngine.ts")
-  ]);
-
+  const { getCalendarDate, getCalendarCoverage } = await import("./services/calendarService.ts");
   const calendar = await getCalendarDate(date);
   if (!calendar) {
     return c.json({
@@ -52,13 +48,6 @@ app.get("/sync", async (c) => {
     }, 422);
   }
 
-  const astronomy = calculateAstronomicalTithi({
-    date,
-    lat: 27.7172,
-    lng: 85.3240,
-    bsFormatted: calendar.bs.formatted,
-    nsFormatted: calendar.ns.formatted
-  });
   return c.json({
     success: true,
     query_date: date,
@@ -70,8 +59,7 @@ app.get("/sync", async (c) => {
       nepal_sambat_detail: calendar.ns
     },
     tithi: calendar.panchang.tithi,
-    archive_panchang: calendar.panchang,
-    astronomy
+    archive_panchang: calendar.panchang
   }, 200, {
     "Cache-Control": "public, max-age=60, s-maxage=3600, stale-while-revalidate=86400"
   });
