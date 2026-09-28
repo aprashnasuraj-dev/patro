@@ -24,9 +24,9 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
   { path: "/fm", title: "FM Radio", subtitle: "Nepal radio directory", group: "Explore" },
   { path: "/explore", title: "Explore", subtitle: "Discovery hub", group: "Explore" },
-  { path: "/tv", title: "Explore TV", subtitle: "Existing TV experience", group: "Explore" },
+  { path: "/tv", title: "Explore TV", subtitle: "Live TV by country, language and category", group: "Explore" },
   { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
-  { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Existing Jyotish tools", group: "Jyotish" },
+  { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Jyotish tools and guidance", group: "Jyotish" },
   { path: "/developers", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
 ];
 
