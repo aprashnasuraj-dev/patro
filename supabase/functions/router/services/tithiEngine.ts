@@ -126,13 +126,17 @@ export function calculateAstronomicalTithi(input: TithiInput) {
   if (lat < -90 || lat > 90) throw new Error("invalid_latitude");
   if (lng < -180 || lng > 180) throw new Error("invalid_longitude");
 
-  const at = nptNoon(input.date);
+  // A date-only Panchanga query is canonically anchored at local sunrise.
+  // This keeps the computed daily Tithi consistent with the civil calendar
+  // assignment used by the existing Patro archive. NPT noon is only a
+  // polar/astronomical fallback if sunrise cannot be resolved.
+  const srNow = sunriseUtc(input.date, lat, lng);
+  const at = srNow ?? nptNoon(input.date);
   const phase = phaseAt(at);
   const next = nextTithiTransition(at, phase.tithi_index);
   const prevDate = addDate(input.date, -1);
   const nextDate = addDate(input.date, 1);
   const srPrev = sunriseUtc(prevDate, lat, lng);
-  const srNow = sunriseUtc(input.date, lat, lng);
   const srNext = sunriseUtc(nextDate, lat, lng);
 
   let anomaly: any = {
@@ -172,6 +176,7 @@ export function calculateAstronomicalTithi(input: TithiInput) {
     methodology: {
       longitude_engine: "Astronomy Engine 2.1.19 geocentric ecliptic longitudes",
       illumination_model: "I=(1-cos(Δθ))/2",
+      date_anchor: srNow ? "local sunrise (NOAA-style approximation)" : "12:00 Asia/Kathmandu fallback",
       precision_note: "Astronomy Engine uses analytic planetary/lunar models and is not a NASA JPL DE binary ephemeris. It is appropriate for interactive calendar computation; near-boundary ceremonial times should be cross-validated against an authoritative Panchanga or JPL-DE-based ephemeris."
     }
   };
