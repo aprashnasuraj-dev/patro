@@ -207,6 +207,16 @@ app.get("/nasa/apod", async (c) => {
   });
 });
 
+app.get("/nasa/cosmic", async (c) => {
+  const date = c.req.query("date") || todayNepal();
+  if (!validDate(date)) return c.json({ error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
+  const { fetchCosmicDay } = await import("./services/cosmicService.ts");
+  const payload = await fetchCosmicDay(date);
+  return c.json(payload, 200, {
+    "Cache-Control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600"
+  });
+});
+
 app.get("/astronomy/tithi", async (c) => {
   const date = c.req.query("date") || todayNepal();
   if (!validDate(date)) return c.json({ error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
@@ -242,7 +252,7 @@ app.get("/astronomy/tithi", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/astronomy/tithi","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {
