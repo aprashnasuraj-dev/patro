@@ -262,6 +262,42 @@ function uniqueModels(values: Array<string | undefined>): string[] {
   return [...new Set(values.map((x) => (x || "").trim()).filter(Boolean))];
 }
 
+async function rateAllowed(req: Request): Promise<boolean> {
+  const supabaseUrl = Deno.env.get("SUPABASE_URL") || "";
+  const serviceRole = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+  if (!supabaseUrl || !serviceRole) return true;
+
+  const ip =
+    req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "shared-anonymous";
+
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(serviceRole + "|" + ip + "|jyotish-chat"),
+  );
+  const pKeyHash = [...new Uint8Array(digest)]
+    .map((x) => x.toString(16).padStart(2, "0"))
+    .join("");
+
+  try {
+    const r = await fetch(`${supabaseUrl}/rest/v1/rpc/consume_public_api_rate`, {
+      method: "POST",
+      headers: {
+        apikey: serviceRole,
+        authorization: `Bearer ${serviceRole}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ p_key_hash: pKeyHash, p_limit: 60 }),
+      signal: AbortSignal.timeout(2500),
+    });
+    if (!r.ok) return true;
+    return (await r.json()) === true;
+  } catch {
+    return true;
+  }
+}
+
 Deno.serve(async (req: Request) => {
   const requestId = crypto.randomUUID();
 
@@ -283,15 +319,23 @@ Deno.serve(async (req: Request) => {
       service: "nepal-miti-jyotish-chat",
       prompt_version: PROMPT_VERSION,
       streaming: true,
-      groq_configured: Boolean(Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY")),
+      groq_configured: Boolean(Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || Deno.env.get("Groq_API")),
       nvidia_configured: Boolean(
-        Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY")
+        Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api")
       ),
     });
   }
 
   if (req.method !== "POST") {
     return json({ error: "method_not_allowed", request_id: requestId }, 405, { allow: "GET,POST,OPTIONS" });
+  }
+
+  if (!(await rateAllowed(req))) {
+    return json(
+      { error: "rate_limit_exceeded", retry_after: "1 hour", request_id: requestId },
+      429,
+      { "retry-after": "3600" },
+    );
   }
 
   const contentLength = Number(req.headers.get("content-length") || "0");
@@ -323,9 +367,9 @@ Deno.serve(async (req: Request) => {
   const china = sanitizeChinaData(body.china_data);
   const messages = buildMessages(message, history, language, china);
 
-  const groqKey = Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || "";
+  const groqKey = Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || Deno.env.get("Groq_API") || "";
   const nvidiaKey =
-    Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || "";
+    Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api") || "";
 
   const groqModels = uniqueModels([
     Deno.env.get("GROQ_MODEL") || undefined,
@@ -348,9 +392,9 @@ Deno.serve(async (req: Request) => {
 
   const nvidiaModels = uniqueModels([
     Deno.env.get("NVIDIA_MODEL") || undefined,
-    "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-    "meta/llama-3.1-70b-instruct",
-    "meta/llama-3.3-70b-instruct",
+    "nvidia/nemotron-3-ultra-550b-a55b",
+    "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
   ]);
 
   if (nvidiaKey) {
