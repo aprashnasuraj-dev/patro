@@ -14,6 +14,7 @@ import {
   sqFtToBigha,
   sqFtToRopani,
   unicodeToPreeti,
+  utf8Bytes,
 } from "./index";
 
 describe("Preeti conversion engine", () => {
@@ -163,5 +164,15 @@ describe("Nepal FY 2083/84 salary tax policy", () => {
     const result = calculateNepalSalaryTax2083({ annualSalary: "5000000" });
     expect(result.taxScaled).toBe(955_000n * SCALE);
     expect(result.bands.at(-1)?.rateBps).toBe(2_900);
+  });
+});
+
+
+describe("UTF-8 utility", () => {
+  it("encodes Devanagari as UTF-8 bytes without single-byte truncation", () => {
+    expect(utf8Bytes("नेपाली")).toEqual([
+      224, 164, 168, 224, 165, 135, 224, 164, 170, 224, 164, 190,
+      224, 164, 178, 224, 165, 128,
+    ]);
   });
 });
