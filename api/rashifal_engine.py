@@ -24,7 +24,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 Date = date
 
 
@@ -503,6 +503,20 @@ def reading(request, sign_index=None, birth=None, prepared=None):
     scores = {k: round(sum(p["domains"][k] for p in series) / len(series), 1) for k in RULES["domain_planets"]}
     overall = round(sum(scores.values()) / len(scores), 1)
     key = f"{engine_version()}:{request.system}:{window['key']}:{sign['id']}"
+    # Evidence is deliberately compact. Daily readings expose the four intraday
+    # sample scores so the UI can show a real time-resolved pulse without
+    # bloating weekly/monthly public publications with every six-hour sample.
+    evidence = {"first_sample": details[0], "last_sample": details[-1]}
+    if window["kind"] == "daily":
+        evidence["sample_series"] = [
+            {
+                "at": instant.astimezone(NPT).isoformat(),
+                "overall": round(point["overall"], 1),
+                "domains": {k: round(point["domains"][k], 1) for k in RULES["domain_planets"]},
+            }
+            for instant, point in zip(instants, series)
+        ]
+
     # Private identity is deliberately not a hash of the birth details.
     result = {"id": hashlib.sha256(key.encode()).hexdigest()[:24] if not birth else None,
               "engine_version": engine_version(), "mode": "personalized" if birth else "universal",
@@ -515,7 +529,7 @@ def reading(request, sign_index=None, birth=None, prepared=None):
                          "sample_count": len(series), "rule_review_status": RULES["review_status"],
                          "not_implemented": ["Shadbala", "rectification", "divisional charts", "exact muhurta", "node Vedha"],
                          "missing_layers": [] if birth else ["natal chart", "Tara Bala", "Ashtakavarga", "Dasha", "natal aspects"]},
-              "evidence": {"first_sample": details[0], "last_sample": details[-1]},
+              "evidence": evidence,
               "generated_at": datetime.now(UTC).isoformat()}
     if birth:
         # Derived chart is returned only in a no-store response and never persisted.
