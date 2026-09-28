@@ -83,6 +83,7 @@ export interface TithiPayload {
   methodology: {
     longitude_engine: string;
     illumination_model: string;
+    date_anchor?: string;
     precision_note: string;
   };
 }
@@ -110,6 +111,21 @@ export interface SyncPayload {
     sunset: string | null;
     location: string;
     source: string;
+  };
+}
+
+export interface SyncRangePayload {
+  success: boolean;
+  start_date: string;
+  end_date: string;
+  requested_days: number;
+  returned_days: number;
+  days: SyncPayload[];
+  coverage: {
+    ad_start: string;
+    ad_end: string;
+    source_version: string;
+    rows: number;
   };
 }
 

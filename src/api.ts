@@ -1,4 +1,4 @@
-import type { ApodPayload, HealthPayload, SyncPayload, TithiPayload } from "./types";
+import type { ApodPayload, HealthPayload, SyncPayload, SyncRangePayload, TithiPayload } from "./types";
 
 const memoryCache = new Map<string, unknown>();
 
@@ -37,6 +37,11 @@ export const api = {
 
   sync(date: string, signal?: AbortSignal) {
     return fetchJson<SyncPayload>("/api/v1/sync?date=" + encodeURIComponent(date), signal);
+  },
+
+  syncRange(start: string, end: string, signal?: AbortSignal) {
+    const query = new URLSearchParams({ start, end });
+    return fetchJson<SyncRangePayload>("/api/v1/sync?" + query.toString(), signal);
   },
 
   apod(date: string, signal?: AbortSignal) {

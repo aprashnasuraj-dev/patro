@@ -47,6 +47,12 @@ Production output is `dist/`. The SPA calls only these relative endpoints:
 - `GET /api/v1/nasa/apod?date=YYYY-MM-DD`
 - `GET /api/v1/astronomy/tithi?date=YYYY-MM-DD&lat=27.7172&lng=85.3240`
 
+The required single-date `/sync?date=` contract remains unchanged. The SPA month
+grid additionally uses the same `/sync` route in bounded batch mode
+(`?start=YYYY-MM-DD&end=YYYY-MM-DD`, maximum 62 days) so a 42-cell calendar
+view performs one Edge Function/database range request instead of 42 individual
+requests.
+
 ## Supabase environment
 
 The `router` runtime reads:

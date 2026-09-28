@@ -60,34 +60,19 @@ function title(month: Date) {
   }).format(month);
 }
 
-async function loadWithConcurrency(
+async function loadMonthRange(
   dates: DayCell[],
-  signal: AbortSignal,
-  concurrency = 6
+  signal: AbortSignal
 ): Promise<Map<string, SyncPayload>> {
-  const result = new Map<string, SyncPayload>();
-  let cursor = 0;
+  if (dates.length === 0) return new Map();
 
-  async function worker() {
-    while (!signal.aborted) {
-      const current = cursor++;
-      if (current >= dates.length) return;
-      const day = dates[current];
-
-      try {
-        const data = await api.sync(day.iso, signal);
-        result.set(day.iso, data);
-      } catch (error) {
-        if (signal.aborted || (error as Error)?.name === "AbortError") return;
-        // An individual out-of-coverage cell should not blank the entire month.
-      }
-    }
-  }
-
-  await Promise.all(
-    Array.from({ length: Math.min(concurrency, dates.length) }, () => worker())
+  const payload = await api.syncRange(
+    dates[0].iso,
+    dates[dates.length - 1].iso,
+    signal
   );
-  return result;
+
+  return new Map(payload.days.map((day) => [day.query_date, day]));
 }
 
 export function CalendarGrid({
@@ -108,7 +93,7 @@ export function CalendarGrid({
     setLoading(true);
     setMonthError(null);
 
-    loadWithConcurrency(cells, controller.signal)
+    loadMonthRange(cells, controller.signal)
       .then((data) => {
         if (!controller.signal.aborted) {
           setEntries(data);
@@ -245,7 +230,7 @@ export function CalendarGrid({
         <span><i className="legend-dot legend-dot--today" />Today</span>
         <span><i className="legend-dot legend-dot--selected" />Selected</span>
         <span><i className="legend-dot legend-dot--special" />Purnima / Amavasya</span>
-        {loading && <span className="calendar-status">Synchronizing 42 days…</span>}
+        {loading && <span className="calendar-status">Synchronizing month…</span>}
       </div>
 
       {monthError && (

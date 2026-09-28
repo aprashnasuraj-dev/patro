@@ -74,6 +74,37 @@ export async function getCalendarDate(iso: string): Promise<CalendarSyncData | n
   return payload;
 }
 
+
+export async function getCalendarRange(
+  startIso: string,
+  endIso: string
+): Promise<CalendarSyncData[]> {
+  if (!supabase) throw new Error("missing_supabase_runtime_secrets");
+
+  const { data, error } = await supabase
+    .from("astronomy_calendar_map")
+    .select("ad_date,payload")
+    .gte("ad_date", startIso)
+    .lte("ad_date", endIso)
+    .order("ad_date", { ascending: true });
+
+  if (error) throw new Error("calendar_map_range_read_failed");
+
+  const rows: CalendarSyncData[] = [];
+  for (const row of data ?? []) {
+    if (!row?.payload) continue;
+    const payload = row.payload as CalendarSyncData;
+    rows.push(payload);
+
+    if (memory.size >= 512) {
+      const first = memory.keys().next().value;
+      if (first) memory.delete(first);
+    }
+    memory.set(String(row.ad_date), payload);
+  }
+  return rows;
+}
+
 export function getCalendarCoverage() {
   return {
     ad_start: "1826-04-11",

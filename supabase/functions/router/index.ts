@@ -27,28 +27,21 @@ function todayNepal() {
   }).format(new Date());
 }
 
-app.get("/health", (c) => c.json({
-  status: "online",
-  runtime: "Deno",
-  framework: "Hono"
-}));
+function daysInclusive(start: string, end: string) {
+  const a = Date.parse(start + "T00:00:00Z");
+  const b = Date.parse(end + "T00:00:00Z");
+  return Math.floor((b - a) / 86_400_000) + 1;
+}
 
-app.get("/sync", async (c) => {
-  const date = c.req.query("date") || todayNepal();
-  if (!validDate(date)) return c.json({ success: false, error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
-
-  const { getCalendarDate, getCalendarCoverage } = await import("./services/calendarService.ts");
-  const calendar = await getCalendarDate(date);
-  if (!calendar) {
-    return c.json({
-      success: false,
-      error: "date_outside_existing_patro_archive",
-      query_date: date,
-      coverage: getCalendarCoverage()
-    }, 422);
-  }
-
-  return c.json({
+function syncPayload(date: string, calendar: {
+  bs: { formatted: string; [key: string]: unknown };
+  ns: { formatted: string; [key: string]: unknown };
+  panchang: {
+    tithi: { number: number; en: string; ne: string; paksha: string };
+    [key: string]: unknown;
+  };
+}) {
+  return {
     success: true,
     query_date: date,
     calendars: {
@@ -60,9 +53,73 @@ app.get("/sync", async (c) => {
     },
     tithi: calendar.panchang.tithi,
     archive_panchang: calendar.panchang
-  }, 200, {
+  };
+}
+
+app.get("/health", (c) => c.json({
+  status: "online",
+  runtime: "Deno",
+  framework: "Hono"
+}));
+
+app.get("/sync", async (c) => {
+  const start = c.req.query("start");
+  const end = c.req.query("end");
+  const cacheHeaders = {
     "Cache-Control": "public, max-age=60, s-maxage=3600, stale-while-revalidate=86400"
-  });
+  };
+
+  const { getCalendarDate, getCalendarRange, getCalendarCoverage } =
+    await import("./services/calendarService.ts");
+
+  if (start != null || end != null) {
+    if (!validDate(start) || !validDate(end)) {
+      return c.json({
+        success: false,
+        error: "invalid_range",
+        expected: "start=YYYY-MM-DD&end=YYYY-MM-DD"
+      }, 400);
+    }
+
+    const count = daysInclusive(start, end);
+    if (count < 1 || count > 62) {
+      return c.json({
+        success: false,
+        error: "range_limit_exceeded",
+        max_days: 62
+      }, 400);
+    }
+
+    const calendars = await getCalendarRange(start, end);
+    const days = calendars.map((calendar) => syncPayload(calendar.ad, calendar));
+
+    return c.json({
+      success: true,
+      start_date: start,
+      end_date: end,
+      requested_days: count,
+      returned_days: days.length,
+      days,
+      coverage: getCalendarCoverage()
+    }, 200, cacheHeaders);
+  }
+
+  const date = c.req.query("date") || todayNepal();
+  if (!validDate(date)) {
+    return c.json({ success: false, error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
+  }
+
+  const calendar = await getCalendarDate(date);
+  if (!calendar) {
+    return c.json({
+      success: false,
+      error: "date_outside_existing_patro_archive",
+      query_date: date,
+      coverage: getCalendarCoverage()
+    }, 422);
+  }
+
+  return c.json(syncPayload(date, calendar), 200, cacheHeaders);
 });
 
 app.get("/nasa/apod", async (c) => {
