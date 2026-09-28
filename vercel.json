@@ -18,14 +18,6 @@
       "destination": "/api/rashifal_engine"
     },
     {
-      "source": "/fm",
-      "destination": "/astro/index.html"
-    },
-    {
-      "source": "/tv",
-      "destination": "/astro/index.html"
-    },
-    {
       "source": "/jyotish/janma-patro",
       "destination": "/astro/index.html"
     },
@@ -34,7 +26,7 @@
       "destination": "/astro/index.html"
     },
     {
-      "source": "/((?!astro(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
+      "source": "/((?!astro(?:/.*)?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
   ],
