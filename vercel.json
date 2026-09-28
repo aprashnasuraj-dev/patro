@@ -60,119 +60,119 @@
     },
     {
       "source": "/aaja",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/tithi",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/diaspora",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/card",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/family",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/family/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/my-data",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/settings/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/offline",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/developers",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/jyotish",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/jyotish/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/time-machine",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/samachar",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/fm",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/explore",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/tv",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/on-this-day",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/astrology",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/convert",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/search",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/notes",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/planner",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/data-trust",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/nepal-sambat",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/calendar/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/date/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/festival/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ],
   "functions": {

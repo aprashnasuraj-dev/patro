@@ -103,9 +103,14 @@ app.all("/compat/page",async(c)=>{
   if(search&&(!search.startsWith("?")||search.length>2048)) return c.json({error:"invalid_search"},400);
   return proxyLegacy(c.req.raw,path+search,{page:true,preserveQuery:false});
 });
-app.all("/compat-api/*",(c)=>{const rest=c.req.param("*")||"";if(!rest||rest.includes(".."))return c.json({error:"invalid_compat_api"},400);return proxyLegacy(c.req.raw,"/api/"+rest)});
-app.all("/compat-ical/*",(c)=>{const rest=c.req.param("*")||"";if(rest.includes(".."))return c.json({error:"invalid_ical_path"},400);return proxyLegacy(c.req.raw,"/ical/"+rest)});
-app.all("/compat-embed/*",(c)=>{const rest=c.req.param("*")||"";if(rest.includes(".."))return c.json({error:"invalid_embed_path"},400);return proxyLegacy(c.req.raw,"/embed/"+rest)});
+
+function tailAfter(request: Request, marker: string){
+  const path=new URL(request.url).pathname, i=path.indexOf(marker);
+  return i>=0?path.slice(i+marker.length).replace(/^[/]+/,""):"";
+}
+app.all("/compat-api/*",(c)=>{const rest=tailAfter(c.req.raw,"/compat-api/");if(!rest||rest.includes(".."))return c.json({error:"invalid_compat_api"},400);return proxyLegacy(c.req.raw,"/api/"+rest)});
+app.all("/compat-ical/*",(c)=>{const rest=tailAfter(c.req.raw,"/compat-ical/");if(rest.includes(".."))return c.json({error:"invalid_ical_path"},400);return proxyLegacy(c.req.raw,"/ical/"+rest)});
+app.all("/compat-embed/*",(c)=>{const rest=tailAfter(c.req.raw,"/compat-embed/");if(rest.includes(".."))return c.json({error:"invalid_embed_path"},400);return proxyLegacy(c.req.raw,"/embed/"+rest)});
 app.all("/compat-static",(c)=>{const path=c.req.query("path")||"";if(!LEGACY_STATIC.has(path))return c.json({error:"unsupported_static_asset"},404);return proxyLegacy(c.req.raw,path,{preserveQuery:false})});
 const legacyV1=(c:any,suffix:string)=>proxyLegacy(c.req.raw,"/api/v1"+suffix);
 app.all("/today",(c)=>legacyV1(c,"/today"));
@@ -117,8 +122,11 @@ app.all("/openapi.json",(c)=>legacyV1(c,"/openapi.json"));
 app.all("/panchang",(c)=>legacyV1(c,"/panchang"));
 app.all("/tithi/derive",(c)=>legacyV1(c,"/tithi/derive"));
 app.all("/tithi/next",(c)=>legacyV1(c,"/tithi/next"));
-app.all("/calendar/*",(c)=>legacyV1(c,"/calendar/"+(c.req.param("*")||"")));
-app.all("/rashifal/*",(c)=>{const rest=c.req.param("*")||"";if(!["metadata","universal","personalized","service-token-hash"].includes(rest))return c.json({error:"unsupported_rashifal_route"},404);return proxyLegacy(c.req.raw,"/api/rashifal/"+rest)});
+app.all("/calendar/:year/:month",(c)=>legacyV1(c,"/calendar/"+c.req.param("year")+"/"+c.req.param("month")));
+app.all("/rashifal/metadata",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/metadata"));
+app.all("/rashifal/universal",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/universal"));
+app.all("/rashifal/personalized",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/personalized"));
+app.all("/rashifal/service-token-hash",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/service-token-hash"));
 app.all("/cron/rashifal",(c)=>proxyLegacy(c.req.raw,"/api/cron/rashifal"));
 
 app.get("/health", (c) => c.json({
