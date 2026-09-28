@@ -10,7 +10,7 @@ import { CosmicExperience } from "./components/CosmicExperience";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
-  { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },
+  { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },\n  { path: "/jyotish/janma-patro", title: "जन्मपत्रो · Kundali", subtitle: "Birth chart, planetary positions, Vimshottari Dasha and 36 Guna Milan", group: "Jyotish" },
   { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
   { path: "/tithi", title: "तिथि · Tithi", subtitle: "Traditional recurrence, fasting and observance tools", group: "Daily" },
   { path: "/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Daily" },
