@@ -372,8 +372,11 @@ Deno.serve(async (req: Request) => {
     Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api") || "";
 
   const groqModels = uniqueModels([
-    Deno.env.get("GROQ_MODEL") || undefined,
+    // Free/Developer-safe production path first. Groq deprecated Llama 3.3
+    // for Free/Developer accounts in 2026; keep it only as compatibility.
     "openai/gpt-oss-120b",
+    Deno.env.get("GROQ_MODEL") || undefined,
+    "qwen/qwen3.8-27b",
     "llama-3.3-70b-versatile",
   ]);
 
