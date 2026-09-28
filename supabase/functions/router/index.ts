@@ -1,5 +1,5 @@
 import { Hono } from "npm:hono@4.7.2";
-import { cors } from "npm:hono@4.7.2/cors";
+import { cors } from "npm:hono@4.7.2/cors";\nimport { proxyMedia } from "./services/mediaProxy.ts";
 
 const app = new Hono().basePath("/functions/v1/router");
 
@@ -217,6 +217,18 @@ app.get("/nasa/cosmic", async (c) => {
   });
 });
 
+app.get("/media/proxy", async (c) => {
+  const url = c.req.query("url");
+  if (!url) return c.json({ error: "missing_stream_url" }, 400);
+  try {
+    return await proxyMedia(c.req.raw, url);
+  } catch (error) {
+    const message = String((error as Error)?.message || error);
+    const status = message.includes("not_allowed") || message.includes("invalid_") || message.includes("unsupported_") || message.includes("credentials_") ? 400 : 502;
+    return c.json({ error: message }, status);
+  }
+});
+
 app.get("/astronomy/tithi", async (c) => {
   const date = c.req.query("date") || todayNepal();
   if (!validDate(date)) return c.json({ error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
@@ -252,7 +264,7 @@ app.get("/astronomy/tithi", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {

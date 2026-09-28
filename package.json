@@ -14,7 +14,10 @@
     "typescript": "5.8.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "framer-motion": "13.4.3"
+    "framer-motion": "13.4.3",
+    "astronomy-engine": "2.1.19",
+    "hls.js": "1.7.3",
+    "html2pdf.js": "0.14.0"
   },
   "devDependencies": {
     "@types/react": "19.1.2",

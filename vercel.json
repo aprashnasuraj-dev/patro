@@ -18,6 +18,18 @@
       "destination": "/api/rashifal_engine"
     },
     {
+      "source": "/fm",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tv",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/jyotish/janma-patro",
+      "destination": "/astro/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
