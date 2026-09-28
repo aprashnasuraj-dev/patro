@@ -1,0 +1,215 @@
+import { useEffect, useRef, useState } from "react";
+
+type FontDirection = "preeti-to-unicode" | "unicode-to-preeti";
+type Hill = { ropani: string; aana: string; paisa: string; dam: string };
+type Terai = { bigha: string; kattha: string; dhur: string };
+type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
+
+function Field({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
+  return (
+    <label className="utility-field">
+      <span>{label}</span>
+      <input inputMode="decimal" value={value} onChange={(event) => onChange(event.target.value)} placeholder="0" />
+    </label>
+  );
+}
+
+export function UtilitySuite() {
+  const workerRef = useRef<Worker | null>(null);
+  const sequence = useRef(0);
+  const latestFont = useRef(0);
+  const latestSqft = useRef(0);
+  const latestHill = useRef(0);
+  const latestTerai = useRef(0);
+
+  const [online, setOnline] = useState(() => navigator.onLine);
+  const [workerReady, setWorkerReady] = useState(false);
+  const [fontDirection, setFontDirection] = useState<FontDirection>("preeti-to-unicode");
+  const [fontInput, setFontInput] = useState("g]kfn");
+  const [fontOutput, setFontOutput] = useState("नेपाल");
+  const [capitalIAsShortI, setCapitalIAsShortI] = useState(false);
+  const [fontError, setFontError] = useState("");
+
+  const [sqft, setSqft] = useState("5476");
+  const [sqftResult, setSqftResult] = useState<{ hill: Hill; terai: Terai } | null>(null);
+  const [hill, setHill] = useState({ ropani: "1", aana: "0", paisa: "0", dam: "0" });
+  const [hillResult, setHillResult] = useState<{ sqft: string; terai: Terai } | null>(null);
+  const [terai, setTerai] = useState({ bigha: "1", kattha: "0", dhur: "0" });
+  const [teraiResult, setTeraiResult] = useState<{ sqft: string; hill: Hill } | null>(null);
+  const [landError, setLandError] = useState("");
+
+  useEffect(() => {
+    const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
+    workerRef.current = worker;
+    setWorkerReady(true);
+    worker.onmessage = (event: MessageEvent<WorkerReply>) => {
+      const message = event.data;
+      if (!message.ok) {
+        setLandError(message.error);
+        setFontError(message.error);
+        return;
+      }
+      if (message.id === latestFont.current) {
+        setFontOutput(String(message.result));
+        setFontError("");
+      } else if (message.id === latestSqft.current) {
+        setSqftResult(message.result);
+        setLandError("");
+      } else if (message.id === latestHill.current) {
+        setHillResult(message.result);
+        setLandError("");
+      } else if (message.id === latestTerai.current) {
+        setTeraiResult(message.result);
+        setLandError("");
+      }
+    };
+    return () => {
+      workerRef.current = null;
+      worker.terminate();
+    };
+  }, []);
+
+  useEffect(() => {
+    const onOnline = () => setOnline(true);
+    const onOffline = () => setOnline(false);
+    window.addEventListener("online", onOnline);
+    window.addEventListener("offline", onOffline);
+    return () => {
+      window.removeEventListener("online", onOnline);
+      window.removeEventListener("offline", onOffline);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!workerReady) return;
+    const id = ++sequence.current;
+    latestFont.current = id;
+    workerRef.current?.postMessage({ id, type: "font", direction: fontDirection, input: fontInput, capitalIAsShortI });
+  }, [fontInput, fontDirection, capitalIAsShortI, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestSqft.current = id;
+      workerRef.current?.postMessage({ id, type: "land-sqft", sqft });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [sqft, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestHill.current = id;
+      workerRef.current?.postMessage({ id, type: "land-hill", ...hill });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [hill, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestTerai.current = id;
+      workerRef.current?.postMessage({ id, type: "land-terai", ...terai });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [terai, workerReady]);
+
+  const swapFont = () => {
+    setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
+    setFontInput(fontOutput);
+  };
+
+  const copy = async (text: string) => {
+    try { await navigator.clipboard.writeText(text); } catch { /* Clipboard may be blocked by browser policy. */ }
+  };
+
+  return (
+    <main className="utility-suite" aria-label="Nepali utility tools">
+      <section className="utility-hero">
+        <div>
+          <p className="eyebrow">नेपाली Utility Platform</p>
+          <h1>Offline-capable tools for Nepali text and land units</h1>
+          <p>All calculations run on this device. Font conversion is isolated in a Web Worker and land math uses scaled integer arithmetic.</p>
+        </div>
+        <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
+      </section>
+
+      <section className="utility-card" aria-labelledby="font-converter-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Text engine</p>
+            <h2 id="font-converter-title">Preeti ⇄ Unicode</h2>
+          </div>
+          <button type="button" className="utility-secondary" onClick={swapFont}>Swap direction</button>
+        </header>
+
+        <div className="utility-segmented" role="group" aria-label="Font conversion direction">
+          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => setFontDirection("preeti-to-unicode")}>Preeti → Unicode</button>
+          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => setFontDirection("unicode-to-preeti")}>Unicode → Preeti</button>
+        </div>
+
+        <div className="utility-text-grid">
+          <label>
+            <span>{fontDirection === "preeti-to-unicode" ? "Preeti input" : "Unicode input"}</span>
+            <textarea value={fontInput} onChange={(event) => setFontInput(event.target.value)} rows={9} spellCheck={false} />
+          </label>
+          <label>
+            <span>{fontDirection === "preeti-to-unicode" ? "Unicode output" : "Preeti output"}</span>
+            <textarea value={fontOutput} readOnly rows={9} spellCheck={false} />
+          </label>
+        </div>
+        <div className="utility-inline-actions">
+          <label className="utility-check"><input type="checkbox" checked={capitalIAsShortI} onChange={(event) => setCapitalIAsShortI(event.target.checked)} />Legacy capital-I short-i compatibility</label>
+          <button type="button" onClick={() => copy(fontOutput)}>Copy output</button>
+        </div>
+        {fontError && <p className="utility-error" role="alert">{fontError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="land-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Exact land math</p>
+            <h2 id="land-title">Ropani · Aana · Paisa · Dam ⇄ Bigha · Kattha · Dhur</h2>
+          </div>
+          <span className="utility-badge">1,000,000× scaled integers</span>
+        </header>
+
+        <div className="land-grid">
+          <article className="land-panel">
+            <h3>Square feet → both systems</h3>
+            <Field label="Square feet" value={sqft} onChange={setSqft} />
+            {sqftResult && <div className="utility-result">
+              <strong>{sqftResult.hill.ropani} R · {sqftResult.hill.aana} A · {sqftResult.hill.paisa} P · {sqftResult.hill.dam} D</strong>
+              <span>{sqftResult.terai.bigha} B · {sqftResult.terai.kattha} K · {sqftResult.terai.dhur} Dhur</span>
+            </div>}
+          </article>
+
+          <article className="land-panel">
+            <h3>Hill system → square feet</h3>
+            <div className="land-fields">
+              <Field label="Ropani" value={hill.ropani} onChange={(value) => setHill((v) => ({ ...v, ropani: value }))} />
+              <Field label="Aana" value={hill.aana} onChange={(value) => setHill((v) => ({ ...v, aana: value }))} />
+              <Field label="Paisa" value={hill.paisa} onChange={(value) => setHill((v) => ({ ...v, paisa: value }))} />
+              <Field label="Dam" value={hill.dam} onChange={(value) => setHill((v) => ({ ...v, dam: value }))} />
+            </div>
+            {hillResult && <div className="utility-result"><strong>{hillResult.sqft} ft²</strong><span>{hillResult.terai.bigha} B · {hillResult.terai.kattha} K · {hillResult.terai.dhur} Dhur</span></div>}
+          </article>
+
+          <article className="land-panel">
+            <h3>Terai system → square feet</h3>
+            <div className="land-fields land-fields--three">
+              <Field label="Bigha" value={terai.bigha} onChange={(value) => setTerai((v) => ({ ...v, bigha: value }))} />
+              <Field label="Kattha" value={terai.kattha} onChange={(value) => setTerai((v) => ({ ...v, kattha: value }))} />
+              <Field label="Dhur" value={terai.dhur} onChange={(value) => setTerai((v) => ({ ...v, dhur: value }))} />
+            </div>
+            {teraiResult && <div className="utility-result"><strong>{teraiResult.sqft} ft²</strong><span>{teraiResult.hill.ropani} R · {teraiResult.hill.aana} A · {teraiResult.hill.paisa} P · {teraiResult.hill.dam} D</span></div>}
+          </article>
+        </div>
+        {landError && <p className="utility-error" role="alert">{landError}</p>}
+      </section>
+    </main>
+  );
+}
