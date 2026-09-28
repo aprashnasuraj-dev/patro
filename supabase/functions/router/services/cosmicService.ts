@@ -37,6 +37,23 @@ function dateParts(iso: string) {
   return { year, month, day };
 }
 
+function shiftIsoDate(iso: string, days: number) {
+  const [year, month, day] = iso.split("-").map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function dayOffset(candidate: string, requested: string) {
+  const a = Date.parse(candidate + "T00:00:00Z");
+  const b = Date.parse(requested + "T00:00:00Z");
+  return Math.round((a - b) / 86_400_000);
+}
+
+function epicSearchWindow(date: string) {
+  return [0, -1, 1, -2, 2, -3, 3].map((offset) => shiftIsoDate(date, offset));
+}
+
 async function cached<T>(
   cacheKey: string,
   source: string,
@@ -164,23 +181,109 @@ async function fetchNeo(date: string) {
 }
 
 async function fetchEpic(date: string) {
-  return cached(`epic:${date}`, "NASA EPIC", date, TTL.epic, async () => {
-    try {
-      const data = await fetchJson(`https://epic.gsfc.nasa.gov/api/natural/date/${encodeURIComponent(date)}`);
-      const list = Array.isArray(data) ? data : [];
-      const { year, month, day } = dateParts(date);
-      const items = list.slice(0, 5).map((item: any) => ({
+  return cached(`epic-v2:${date}`, "NASA EPIC", date, TTL.epic, async () => {
+    const searchedDates = epicSearchWindow(date);
+
+    const normalize = (raw: any, imageDate: string) => {
+      const list = Array.isArray(raw) ? raw : [];
+      const { year, month, day } = dateParts(imageDate);
+      return list.slice(0, 5).map((item: any) => ({
         image: safeText(item?.image),
         caption: safeText(item?.caption, "Earth from DSCOVR EPIC"),
-        date: safeText(item?.date, date),
+        date: safeText(item?.date, imageDate),
         centroid_coordinates: item?.centroid_coordinates || null,
         image_url: item?.image
           ? `https://epic.gsfc.nasa.gov/archive/natural/${year}/${month}/${day}/png/${item.image}.png`
           : ""
-      })).filter((x: any) => x.image_url);
-      return { status: items.length ? "ok" : "no_data_for_date", items };
+      })).filter((item: any) => item.image_url);
+    };
+
+    let exactError = "";
+    try {
+      const exactRaw = await fetchJson(`https://epic.gsfc.nasa.gov/api/natural/date/${encodeURIComponent(date)}`, 5000);
+      const exactItems = normalize(exactRaw, date);
+      if (exactItems.length) {
+        return {
+          status: "ok",
+          requested_date: date,
+          image_date: date,
+          nearest_available_date: null,
+          latest_available_date: date,
+          offset_days: 0,
+          fallback_used: false,
+          searched_dates: [date],
+          items: exactItems
+        };
+      }
     } catch (error) {
-      return { status: "unavailable", items: [], error: String((error as Error)?.message || error) };
+      exactError = String((error as Error)?.message || error);
+    }
+
+    let latestAvailableDate: string | null = null;
+    try {
+      const availabilityRaw = await fetchJson("https://epic.gsfc.nasa.gov/api/natural/all", 6000);
+      const availableDates = (Array.isArray(availabilityRaw) ? availabilityRaw : [])
+        .map((entry: any) => typeof entry === "string" ? entry.slice(0, 10) : safeText(entry?.date).slice(0, 10))
+        .filter((value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value))
+        .sort((a: string, b: string) => b.localeCompare(a));
+
+      latestAvailableDate = availableDates[0] || null;
+
+      const nearest = availableDates
+        .map((candidate: string) => ({ candidate, offset: dayOffset(candidate, date) }))
+        .filter(({ offset }: { offset: number }) => Math.abs(offset) <= 3 && offset !== 0)
+        .sort((a: { offset: number }, b: { offset: number }) => {
+          const distance = Math.abs(a.offset) - Math.abs(b.offset);
+          if (distance !== 0) return distance;
+          return a.offset - b.offset;
+        })[0];
+
+      if (nearest) {
+        const nearestRaw = await fetchJson(
+          `https://epic.gsfc.nasa.gov/api/natural/date/${encodeURIComponent(nearest.candidate)}`,
+          5000
+        );
+        const nearestItems = normalize(nearestRaw, nearest.candidate);
+        if (nearestItems.length) {
+          return {
+            status: "nearest_available",
+            requested_date: date,
+            image_date: nearest.candidate,
+            nearest_available_date: nearest.candidate,
+            latest_available_date: latestAvailableDate,
+            offset_days: nearest.offset,
+            fallback_used: true,
+            searched_dates: searchedDates,
+            items: nearestItems
+          };
+        }
+      }
+
+      return {
+        status: "no_data_within_window",
+        requested_date: date,
+        image_date: null,
+        nearest_available_date: null,
+        latest_available_date: latestAvailableDate,
+        offset_days: null,
+        fallback_used: false,
+        searched_dates: searchedDates,
+        items: [],
+        ...(exactError ? { error: exactError } : {})
+      };
+    } catch (error) {
+      return {
+        status: "unavailable",
+        requested_date: date,
+        image_date: null,
+        nearest_available_date: null,
+        latest_available_date: latestAvailableDate,
+        offset_days: null,
+        fallback_used: false,
+        searched_dates: searchedDates,
+        items: [],
+        error: String((error as Error)?.message || error || exactError)
+      };
     }
   });
 }
@@ -213,31 +316,89 @@ function flareClassRank(value: string) {
 }
 
 async function fetchDonki(date: string) {
-  return cached(`donki:${date}`, "NASA CCMC DONKI", date, TTL.donki, async () => {
+  return cached(`donki-v2:${date}`, "NASA CCMC DONKI", date, TTL.donki, async () => {
+    const windowStart = shiftIsoDate(date, -2);
     const base = "https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get";
     const paths = [
-      `FLR?startDate=${date}&endDate=${date}`,
-      `CME?startDate=${date}&endDate=${date}`,
-      `GST?startDate=${date}&endDate=${date}`
+      `FLR?startDate=${windowStart}&endDate=${date}`,
+      `CME?startDate=${windowStart}&endDate=${date}`,
+      `GST?startDate=${windowStart}&endDate=${date}`
     ];
-    const settled = await Promise.allSettled(paths.map((suffix) => fetchJson(`${base}/${suffix}`)));
-    const [flareRaw, cmeRaw, stormRaw] = settled.map((r) => r.status === "fulfilled" && Array.isArray(r.value) ? r.value : []);
-    const flareClasses = flareRaw.map((x: any) => safeText(x?.classType)).filter(Boolean).sort((a: string, b: string) => flareClassRank(b) - flareClassRank(a));
+
+    const settled = await Promise.allSettled(paths.map((suffix) => fetchJson(`${base}/${suffix}`, 6000)));
+    const [flareRaw, cmeRaw, stormRaw] = settled.map((result) =>
+      result.status === "fulfilled" && Array.isArray(result.value) ? result.value : []
+    );
+
+    const flareClasses = flareRaw
+      .map((item: any) => safeText(item?.classType))
+      .filter(Boolean)
+      .sort((a: string, b: string) => flareClassRank(b) - flareClassRank(a));
     const maxFlare = flareClasses[0] || null;
-    const elevated = flareRaw.length + cmeRaw.length + stormRaw.length;
-    let level = "Quiet";
-    if (stormRaw.length || (maxFlare && flareClassRank(maxFlare) >= 400)) level = "Elevated";
-    else if (cmeRaw.length || (maxFlare && flareClassRank(maxFlare) >= 300)) level = "Moderate";
-    else if (elevated) level = "Low";
+
+    const stormKpValues = stormRaw.flatMap((storm: any) =>
+      (Array.isArray(storm?.allKpIndex) ? storm.allKpIndex : [])
+        .map((entry: any) => Number(entry?.kpIndex ?? entry?.kp ?? entry))
+        .filter((value: number) => Number.isFinite(value))
+    );
+    const maxKp = stormKpValues.length ? Math.max(...stormKpValues) : null;
+
+    const eventCount = flareRaw.length + cmeRaw.length + stormRaw.length;
+    let level: "Quiet" | "Low" | "Moderate" | "Elevated" = "Quiet";
+    if ((maxKp != null && maxKp >= 7) || (maxFlare && flareClassRank(maxFlare) >= 500)) {
+      level = "Elevated";
+    } else if (
+      (maxKp != null && maxKp >= 5) ||
+      (maxFlare && flareClassRank(maxFlare) >= 400) ||
+      cmeRaw.length >= 2
+    ) {
+      level = "Moderate";
+    } else if (eventCount) {
+      level = "Low";
+    }
 
     return {
-      status: settled.some((r) => r.status === "fulfilled") ? "ok" : "unavailable",
+      status: settled.some((result) => result.status === "fulfilled") ? "ok" : "unavailable",
       level,
-      flares: flareRaw.slice(0, 6).map((x: any) => ({ id: safeText(x?.flrID), class_type: safeText(x?.classType), begin_time: safeText(x?.beginTime), peak_time: safeText(x?.peakTime), source_location: safeText(x?.sourceLocation) })),
-      cmes: cmeRaw.slice(0, 6).map((x: any) => ({ id: safeText(x?.activityID), start_time: safeText(x?.startTime), source_location: safeText(x?.sourceLocation), note: safeText(x?.note).slice(0, 500) })),
-      storms: stormRaw.slice(0, 6).map((x: any) => ({ id: safeText(x?.gstID), start_time: safeText(x?.startTime), kp: Array.isArray(x?.allKpIndex) ? x.allKpIndex.slice(0, 8) : [] })),
+      window_start: windowStart,
+      window_end: date,
+      flares: flareRaw.slice(0, 8).map((item: any) => ({
+        id: safeText(item?.flrID),
+        class_type: safeText(item?.classType),
+        begin_time: safeText(item?.beginTime),
+        peak_time: safeText(item?.peakTime),
+        source_location: safeText(item?.sourceLocation)
+      })),
+      cmes: cmeRaw.slice(0, 8).map((item: any) => {
+        const analyses = Array.isArray(item?.cmeAnalyses) ? item.cmeAnalyses : [];
+        const analysis = analyses.find((entry: any) => entry?.isMostAccurate) || analyses[0] || {};
+        const speed = Number(analysis?.speed);
+        const halfAngle = Number(analysis?.halfAngle);
+        return {
+          id: safeText(item?.activityID),
+          start_time: safeText(item?.startTime),
+          source_location: safeText(item?.sourceLocation),
+          note: safeText(item?.note).slice(0, 500),
+          speed_kps: Number.isFinite(speed) ? speed : null,
+          half_angle_deg: Number.isFinite(halfAngle) ? halfAngle : null,
+          cme_type: safeText(analysis?.type)
+        };
+      }),
+      storms: stormRaw.slice(0, 8).map((item: any) => {
+        const kp = Array.isArray(item?.allKpIndex) ? item.allKpIndex.slice(0, 12) : [];
+        const kpValues = kp
+          .map((entry: any) => Number(entry?.kpIndex ?? entry?.kp ?? entry))
+          .filter((value: number) => Number.isFinite(value));
+        return {
+          id: safeText(item?.gstID),
+          start_time: safeText(item?.startTime),
+          max_kp: kpValues.length ? Math.max(...kpValues) : null,
+          kp
+        };
+      }),
       counts: { flares: flareRaw.length, cmes: cmeRaw.length, storms: stormRaw.length },
-      max_flare_class: maxFlare
+      max_flare_class: maxFlare,
+      max_kp: maxKp
     };
   });
 }
