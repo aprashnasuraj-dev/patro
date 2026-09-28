@@ -15,6 +15,7 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
   { path: "/tithi", title: "तिथि · Tithi", subtitle: "Traditional recurrence, fasting and observance tools", group: "Daily" },
   { path: "/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Daily" },
+  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Preeti/Unicode and exact Nepali land conversion", group: "Tools" },
   { path: "/card", title: "Share Cards", subtitle: "Calendar and festival sharing cards", group: "Tools" },
   { path: "/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
   { path: "/settings/holidays", title: "Holiday Settings", subtitle: "Audience, district and closure preferences", group: "Tools" },
