@@ -74,7 +74,7 @@ The tax engine is policy-driven rather than hard-coding an FY label. It accepts 
 - Font and land calculations execute inside `src/utilities/worker.ts`.
 - 60 ms input coalescing prevents unnecessary Worker messages during rapid typing.
 - The utility shell uses the existing Patro theme/accessibility system and is responsive down to narrow mobile widths.
-- A separately scoped service worker is registered at `/tools/sw.js`; Vercel internally serves the same built artifact as `/astro/sw.js`.
+- A separately scoped service worker is registered at `/tools/sw.js`; the production build emits a physical `dist/tools` shell from the verified `/astro` artifact so `/tools` does not depend on an HTML rewrite.
 - Static documents/scripts/styles/images/workers are cached. API traffic remains network-first except the existing calendar cache strategy.
 
 ## Agent 3 — tests and release
