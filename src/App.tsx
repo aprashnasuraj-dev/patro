@@ -240,7 +240,7 @@ export default function App() {
             <div>
               <p className="eyebrow">All features are free</p>
               <h2>नेपाल मिति · Features</h2>
-              <p className="subheading">Calendar, Jyotish, daily-life and discovery tools from the protected backend.</p>
+              <p className="subheading">Calendar, Jyotish, daily-life and discovery tools in one place.</p>
             </div>
           </div>
           <div className="feature-grid">
