@@ -197,7 +197,7 @@ async function callProvider(
   attempt: ProviderAttempt,
   messages: Array<{ role: string; content: string }>,
   requestId: string,
-): Promise<Response | null> {
+): Promise<{ response: Response | null; stopProvider: boolean }> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort("header_timeout"), HEADER_TIMEOUT_MS);
   try {
@@ -222,42 +222,52 @@ async function callProvider(
 
     if (!response.ok || !response.body) {
       const text = await response.text().catch(() => "");
+      const stopProvider =
+        response.status === 401 ||
+        response.status === 403 ||
+        response.status === 408 ||
+        response.status === 429 ||
+        response.status >= 500;
       console.warn("jyotish_chat_provider_rejected", {
         request_id: requestId,
         provider: attempt.name,
         model: attempt.model,
         status: response.status,
+        provider_fallback: stopProvider,
         detail: text.slice(0, 240),
       });
-      return null;
+      return { response: null, stopProvider };
     }
 
-    return new Response(response.body, {
-      status: 200,
-      headers: {
-        "content-type": "text/event-stream; charset=utf-8",
-        "cache-control": "no-cache, no-store",
-        "connection": "keep-alive",
-        "x-accel-buffering": "no",
-        "access-control-allow-origin": "*",
-        "x-jyotish-provider": attempt.name,
-        "x-jyotish-model": attempt.model,
-        "x-jyotish-prompt-version": PROMPT_VERSION,
-        "x-request-id": requestId,
-      },
-    });
+    return {
+      response: new Response(response.body, {
+        status: 200,
+        headers: {
+          "content-type": "text/event-stream; charset=utf-8",
+          "cache-control": "no-cache, no-store",
+          "connection": "keep-alive",
+          "x-accel-buffering": "no",
+          "access-control-allow-origin": "*",
+          "x-jyotish-provider": attempt.name,
+          "x-jyotish-model": attempt.model,
+          "x-jyotish-prompt-version": PROMPT_VERSION,
+          "x-request-id": requestId,
+        },
+      }),
+      stopProvider: false,
+    };
   } catch (error) {
     clearTimeout(timer);
     console.warn("jyotish_chat_provider_error", {
       request_id: requestId,
       provider: attempt.name,
       model: attempt.model,
+      provider_fallback: true,
       error: error instanceof Error ? error.name : "unknown",
     });
-    return null;
+    return { response: null, stopProvider: true };
   }
 }
-
 function uniqueModels(values: Array<string | undefined>): string[] {
   return [...new Set(values.map((x) => (x || "").trim()).filter(Boolean))];
 }
@@ -382,12 +392,13 @@ Deno.serve(async (req: Request) => {
 
   if (groqKey) {
     for (const model of groqModels) {
-      const response = await callProvider(
+      const attempt = await callProvider(
         { name: "groq", url: GROQ_URL, key: groqKey, model },
         messages,
         requestId,
       );
-      if (response) return response;
+      if (attempt.response) return attempt.response;
+      if (attempt.stopProvider) break;
     }
   } else {
     console.warn("jyotish_chat_provider_missing", { request_id: requestId, provider: "groq" });
@@ -402,12 +413,13 @@ Deno.serve(async (req: Request) => {
 
   if (nvidiaKey) {
     for (const model of nvidiaModels) {
-      const response = await callProvider(
+      const attempt = await callProvider(
         { name: "nvidia", url: NVIDIA_URL, key: nvidiaKey, model },
         messages,
         requestId,
       );
-      if (response) return response;
+      if (attempt.response) return attempt.response;
+      if (attempt.stopProvider) break;
     }
   } else {
     console.warn("jyotish_chat_provider_missing", { request_id: requestId, provider: "nvidia" });
