@@ -7,11 +7,7 @@
     },
     {
       "source": "/astro",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/astro/:path*",
-      "destination": "/:path*"
+      "destination": "/astro/index.html"
     },
     {
       "source": "/api/rashifal-engine",
