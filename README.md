@@ -165,8 +165,9 @@ illumination = (1 − cos Δθ) / 2
 ```
 
 Kshaya and Adhika awareness is determined by comparing Tithis at consecutive
-local sunrises. Sunrise is estimated with the standard NOAA-style 90.833°
-zenith formula. Astronomy Engine uses analytical ephemeris models rather than a
+local sunrises. Sunrise is resolved with Astronomy Engine's rise/set search for
+the requested latitude/longitude, and date-only Tithi evaluation is anchored at
+that sunrise. Astronomy Engine uses analytical ephemeris models rather than a
 NASA JPL DE binary kernel, so dates very close to a Tithi boundary should be
 cross-checked against an authoritative Panchanga or a JPL-DE-backed ephemeris
 when ceremonial minute-level precision matters.
