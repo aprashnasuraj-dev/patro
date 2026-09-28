@@ -1,3 +1,4 @@
+import qrcode from "qrcode-generator";
 import {
   adToBs,
   bighaToSqFt,
@@ -13,6 +14,7 @@ import {
   sqFtToBigha,
   sqFtToRopani,
   unicodeToPreeti,
+  utf8Bytes,
 } from "../../packages/core/src/index";
 
 type Request =
@@ -22,9 +24,12 @@ type Request =
   | { id: number; type: "land-terai"; bigha: string; kattha: string; dhur: string }
   | { id: number; type: "date-bs"; year: number; month: number; day: number }
   | { id: number; type: "date-ad"; ad: string }
-  | { id: number; type: "tax-2083"; annualSalary: string; ssf: string; epf: string; cit: string; lifeInsurance: string; healthInsurance: string; qualifyingSsfContributor: boolean };
+  | { id: number; type: "tax-2083"; annualSalary: string; ssf: string; epf: string; cit: string; lifeInsurance: string; healthInsurance: string; qualifyingSsfContributor: boolean }
+  | { id: number; type: "qr"; text: string; errorCorrectionLevel?: "L" | "M" | "Q" | "H" };
 
 type Response = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
+
+qrcode.stringToBytes = utf8Bytes;
 
 function serializeHill(value: ReturnType<typeof sqFtToRopani>) {
   return {
@@ -108,7 +113,7 @@ self.onmessage = (event: MessageEvent<Request>) => {
           metadata: bsDateMetadata(bs),
         },
       };
-    } else {
+    } else if (request.type === "tax-2083") {
       const tax = calculateNepalSalaryTax2083(request);
       response = {
         id: request.id,
@@ -128,6 +133,21 @@ self.onmessage = (event: MessageEvent<Request>) => {
             taxable: formatScaled(band.taxableScaled),
             tax: formatScaled(band.taxScaled),
           })),
+        },
+      };
+    } else {
+      const text = request.text.trim();
+      if (!text) throw new RangeError("QR text cannot be empty");
+      const qr = qrcode(0, request.errorCorrectionLevel ?? "M");
+      qr.addData(text, "Byte");
+      qr.make();
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          dataUrl: qr.createDataURL(6, 24),
+          modules: qr.getModuleCount(),
+          bytes: utf8Bytes(text).length,
         },
       };
     }
