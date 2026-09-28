@@ -193,6 +193,55 @@ type ProviderAttempt = {
   model: string;
 };
 
+function contentOnlySse(body: ReadableStream<Uint8Array>): ReadableStream<Uint8Array> {
+  const decoder = new TextDecoder();
+  const encoder = new TextEncoder();
+  let buffer = "";
+
+  const emit = (line: string, controller: { enqueue: (chunk: Uint8Array) => void }) => {
+    const trimmed = line.trim();
+    if (!trimmed || !trimmed.startsWith("data:")) return;
+    const payload = trimmed.slice(5).trim();
+    if (payload === "[DONE]") {
+      controller.enqueue(encoder.encode("data: [DONE]\n\n"));
+      return;
+    }
+    try {
+      const parsed = JSON.parse(payload);
+      const choice = parsed?.choices?.[0];
+      const content =
+        typeof choice?.delta?.content === "string"
+          ? choice.delta.content
+          : typeof choice?.message?.content === "string"
+            ? choice.message.content
+            : "";
+      if (!content) return;
+      controller.enqueue(
+        encoder.encode(
+          "data: " + JSON.stringify({ choices: [{ delta: { content } }] }) + "\n\n",
+        ),
+      );
+    } catch {
+      // Ignore malformed/provider-specific non-content SSE frames.
+    }
+  };
+
+  return body.pipeThrough(
+    new TransformStream<Uint8Array, Uint8Array>({
+      transform(chunk, controller) {
+        buffer += decoder.decode(chunk, { stream: true });
+        const lines = buffer.split(/\r?\n/);
+        buffer = lines.pop() || "";
+        for (const line of lines) emit(line, controller);
+      },
+      flush(controller) {
+        buffer += decoder.decode();
+        if (buffer) emit(buffer, controller);
+      },
+    }),
+  );
+}
+
 async function callProvider(
   attempt: ProviderAttempt,
   messages: Array<{ role: string; content: string }>,
@@ -240,7 +289,7 @@ async function callProvider(
     }
 
     return {
-      response: new Response(response.body, {
+      response: new Response(contentOnlySse(response.body), {
         status: 200,
         headers: {
           "content-type": "text/event-stream; charset=utf-8",
