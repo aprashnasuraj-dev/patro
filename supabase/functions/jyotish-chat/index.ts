@@ -283,9 +283,9 @@ Deno.serve(async (req: Request) => {
       service: "nepal-miti-jyotish-chat",
       prompt_version: PROMPT_VERSION,
       streaming: true,
-      groq_configured: Boolean(Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY")),
+      groq_configured: Boolean(Deno.env.get("GROQ_API_KEY") || Deno.env.get("GROQ_KEY") || Deno.env.get("Groq_API")),
       nvidia_configured: Boolean(
-        Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY")
+        Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api")
       ),
     });
   }
