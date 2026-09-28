@@ -26,18 +26,6 @@
       "destination": "/astro/index.html"
     },
     {
-      "source": "/tools/sw.js",
-      "destination": "/astro/sw.js"
-    },
-    {
-      "source": "/tools",
-      "destination": "/astro/index.html"
-    },
-    {
-      "source": "/tools/:path*",
-      "destination": "/astro/index.html"
-    },
-    {
       "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
