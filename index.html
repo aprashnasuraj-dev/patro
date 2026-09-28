@@ -1,16 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="ne" data-mode="dark" data-theme="slate">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b0f19" />
-    <meta
-      name="description"
-      content="Patro astronomical calendar synchronization across Gregorian, Bikram Sambat, Nepal Sambat, Tithi and NASA APOD."
-    />
-    <title>Patro · Astronomical Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="Nepali Patro: Bikram Sambat calendar, Panchang, astronomical context, FM radio, live TV and Jyotish tools." />
+    <meta name="application-name" content="Nepali Patro" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://patro-blush.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nepali Patro" />
+    <meta property="og:title" content="Nepali Patro · पात्रो, Media & Jyotish" />
+    <meta property="og:description" content="Bikram Sambat calendar, Panchang, astronomy, Nepali FM/TV and Jyotish tools in one fast web app." />
+    <meta property="og:url" content="https://patro-blush.vercel.app/" />
+    <meta name="twitter:card" content="summary" />
+    <title>Nepali Patro · नेपाली पात्रो</title>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Nepali Patro","alternateName":"नेपाली पात्रो","url":"https://patro-blush.vercel.app/","applicationCategory":"LifestyleApplication","operatingSystem":"Any","inLanguage":["ne","en"],"description":"Bikram Sambat calendar, Panchang, astronomical context, Nepali media and Jyotish tools.","offers":{"@type":"Offer","price":"0","priceCurrency":"NPR"}}
+    </script>
   </head>
   <body>
+    <noscript>Nepali Patro requires JavaScript for interactive calendar and media features.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

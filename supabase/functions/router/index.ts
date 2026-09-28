@@ -250,9 +250,22 @@ app.get("/astronomy/tithi", async (c) => {
   }
 });
 
+app.get("/media/proxy", async (c) => {
+  const raw = c.req.query("url");
+  if (!raw) return c.json({ error: "missing_stream_url" }, 400);
+  try {
+    const { proxyMedia } = await import("./services/mediaProxy.ts");
+    return await proxyMedia(c.req.raw, raw);
+  } catch (error) {
+    const message = String((error as Error)?.message || error);
+    const status = ["invalid_stream_url", "unsupported_stream_protocol", "stream_host_not_allowed", "credentials_not_allowed"].includes(message) ? 400 : 502;
+    return c.json({ error: message }, status);
+  }
+});
+
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {
