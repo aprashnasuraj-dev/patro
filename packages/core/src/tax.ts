@@ -98,3 +98,132 @@ export function calculatePersonalTax(input: PersonalTaxInput, policy: TaxPolicy)
 }
 
 export const NPR_SCALE = SCALE;
+
+
+export const NEPAL_FY_2083_84 = Object.freeze({
+  fiscalYear: "2083/84",
+  firstBandScaled: 1_000_000n * SCALE,
+  retirementCapOrdinaryScaled: 300_000n * SCALE,
+  retirementCapSsfScaled: 500_000n * SCALE,
+  lifeInsuranceCapScaled: 40_000n * SCALE,
+  healthInsuranceCapScaled: 20_000n * SCALE,
+  sourceVersion: "Finance Act 2083 / IRD natural-person rates published 22 Shrawan 2083",
+});
+
+export interface NepalSalaryTax2083Input {
+  annualSalary: DecimalInput;
+  ssf?: DecimalInput;
+  epf?: DecimalInput;
+  cit?: DecimalInput;
+  lifeInsurance?: DecimalInput;
+  healthInsurance?: DecimalInput;
+  /** Must only be true when the taxpayer qualifies for the contribution-based SSF first-band exemption. */
+  qualifyingSsfContributor?: boolean;
+}
+
+export interface TaxBandBreakdown {
+  fromScaled: bigint;
+  toScaled: bigint | null;
+  rateBps: number;
+  taxableScaled: bigint;
+  taxScaled: bigint;
+}
+
+export interface NepalSalaryTax2083Result {
+  fiscalYear: "2083/84";
+  annualSalaryScaled: bigint;
+  retirementContributionScaled: bigint;
+  retirementDeductionCapScaled: bigint;
+  retirementDeductionScaled: bigint;
+  lifeInsuranceDeductionScaled: bigint;
+  healthInsuranceDeductionScaled: bigint;
+  taxableIncomeScaled: bigint;
+  taxScaled: bigint;
+  monthlyAverageTaxScaled: bigint;
+  taxableIncome: string;
+  annualTax: string;
+  monthlyAverageTax: string;
+  bands: TaxBandBreakdown[];
+  sourceVersion: string;
+}
+
+function nonNegativeScaled(value: DecimalInput | undefined, label: string): bigint {
+  const scaled = parseScaled(value ?? 0);
+  if (scaled < 0n) throw new RangeError(`${label} cannot be negative`);
+  return scaled;
+}
+
+function progressiveBreakdown(taxableIncomeScaled: bigint, slabs: readonly TaxSlab[]): TaxBandBreakdown[] {
+  if (taxableIncomeScaled <= 0n) return [];
+  let lower = 0n;
+  const bands: TaxBandBreakdown[] = [];
+
+  for (const slab of slabs) {
+    const upper = slab.upto ?? taxableIncomeScaled;
+    const taxable = (taxableIncomeScaled < upper ? taxableIncomeScaled : upper) - lower;
+    if (taxable > 0n) {
+      bands.push({
+        fromScaled: lower,
+        toScaled: slab.upto,
+        rateBps: slab.rateBps,
+        taxableScaled: taxable,
+        taxScaled: (taxable * BigInt(slab.rateBps)) / 10_000n,
+      });
+    }
+    if (taxableIncomeScaled <= upper || slab.upto === null) break;
+    lower = upper;
+  }
+  return bands;
+}
+
+export function calculateNepalSalaryTax2083(
+  input: NepalSalaryTax2083Input,
+): NepalSalaryTax2083Result {
+  const salary = nonNegativeScaled(input.annualSalary, "Annual salary");
+  const ssf = nonNegativeScaled(input.ssf, "SSF contribution");
+  const epf = nonNegativeScaled(input.epf, "EPF contribution");
+  const cit = nonNegativeScaled(input.cit, "CIT contribution");
+  const lifeInsurance = nonNegativeScaled(input.lifeInsurance, "Life insurance");
+  const healthInsurance = nonNegativeScaled(input.healthInsurance, "Health insurance");
+
+  const qualifyingSsf = input.qualifyingSsfContributor === true;
+  const retirementContribution = ssf + epf + cit;
+  const oneThirdCap = salary / 3n;
+  const monetaryCap = qualifyingSsf
+    ? NEPAL_FY_2083_84.retirementCapSsfScaled
+    : NEPAL_FY_2083_84.retirementCapOrdinaryScaled;
+  const retirementDeduction = minBigInt(retirementContribution, oneThirdCap, monetaryCap);
+  const lifeDeduction = minBigInt(lifeInsurance, NEPAL_FY_2083_84.lifeInsuranceCapScaled);
+  const healthDeduction = minBigInt(healthInsurance, NEPAL_FY_2083_84.healthInsuranceCapScaled);
+  const totalDeductions = retirementDeduction + lifeDeduction + healthDeduction;
+  const taxable = salary > totalDeductions ? salary - totalDeductions : 0n;
+
+  const slabs: readonly TaxSlab[] = [
+    { upto: 1_000_000n * SCALE, rateBps: qualifyingSsf ? 0 : 100 },
+    { upto: 1_500_000n * SCALE, rateBps: 1_000 },
+    { upto: 2_500_000n * SCALE, rateBps: 2_000 },
+    { upto: 4_000_000n * SCALE, rateBps: 2_700 },
+    { upto: null, rateBps: 2_900 },
+  ];
+  const bands = progressiveBreakdown(taxable, slabs);
+  const tax = bands.reduce((sum, band) => sum + band.taxScaled, 0n);
+  const monthly = tax / 12n;
+
+  return {
+    fiscalYear: "2083/84",
+    annualSalaryScaled: salary,
+    retirementContributionScaled: retirementContribution,
+    retirementDeductionCapScaled: minBigInt(oneThirdCap, monetaryCap),
+    retirementDeductionScaled: retirementDeduction,
+    lifeInsuranceDeductionScaled: lifeDeduction,
+    healthInsuranceDeductionScaled: healthDeduction,
+    taxableIncomeScaled: taxable,
+    taxScaled: tax,
+    monthlyAverageTaxScaled: monthly,
+    taxableIncome: formatScaled(taxable),
+    annualTax: formatScaled(tax),
+    monthlyAverageTax: formatScaled(monthly),
+    bands,
+    sourceVersion: NEPAL_FY_2083_84.sourceVersion,
+  };
+}
