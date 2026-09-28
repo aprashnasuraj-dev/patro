@@ -24,7 +24,8 @@ interface MediaContextValue extends PlayerState {
 const MediaContext=createContext<MediaContextValue|null>(null);
 
 function proxied(url: string) {
-  return /^https?:\\/\\//i.test(url) ? "/api/v1/media/proxy?url="+encodeURIComponent(url) : url;
+  const remote = url.startsWith("http://") || url.startsWith("https://");
+  return remote ? "/api/v1/media/proxy?url=" + encodeURIComponent(url) : url;
 }
 function isHls(url: string) {
   return /\.m3u8(?:$|\?)/i.test(url);
