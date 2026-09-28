@@ -30,6 +30,10 @@
       "destination": "/astro/index.html"
     },
     {
+      "source": "/jyotish/matchmaking",
+      "destination": "/astro/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }

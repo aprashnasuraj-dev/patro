@@ -3,7 +3,7 @@ import App from "./App";
 import { MediaSuite } from "./media/MediaSuite";
 import { JanmaPatroSuite } from "./jyotish/JanmaPatroSuite";
 
-const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/jyotish/janma-patro"]);
+const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
@@ -39,6 +39,6 @@ export function PatroRouter() {
 
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
-  if (path === "/jyotish/janma-patro") return <JanmaPatroSuite />;
+  if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
   return <App />;
 }

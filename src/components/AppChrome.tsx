@@ -11,6 +11,7 @@ const ROUTES = [
   ["/tv", "Live TV · टिभी"],
   ["/jyotish", "Jyotish · ज्योतिष"],
   ["/jyotish/janma-patro", "Janma Patro · जन्मपत्रो"],
+  ["/jyotish/matchmaking", "Guna Milan · गुण मिलान"],
   ["/jyotish/rashifal", "Rashifal · राशिफल"],
   ["/time-machine", "Time Machine · समय यात्रा"],
   ["/samachar", "Samachar · समाचार"]
@@ -118,14 +119,15 @@ export function AppChrome({ children }: { children: ReactNode }) {
           <a className="tap-target" href="/">पात्रो</a>
           <a className="tap-target" href="/fm">FM</a>
           <a className="tap-target" href="/tv">TV</a>
-          <a className="tap-target" href="/jyotish">ज्योतिष</a>\n          <a className="tap-target" href="/jyotish/janma-patro">चिना</a>
+          <a className="tap-target" href="/jyotish">ज्योतिष</a>
+          <a className="tap-target" href="/jyotish/janma-patro">चिना</a>
         </nav>
 
         <div className="patro-nav-actions">
           <button
             className={"media-chip tap-target " + (media.active ? "is-live" : "")}
             type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent("patro:toggle-player"))}
+            onClick={() => window.dispatchEvent(new CustomEvent("patro:toggle-player-panel"))}
             aria-label={media.active ? "Open media player: " + media.title : "Open media player"}
           >
             <span className="live-dot" aria-hidden="true" />
