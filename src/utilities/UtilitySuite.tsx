@@ -5,6 +5,7 @@ type Hill = { ropani: string; aana: string; paisa: string; dam: string };
 type Terai = { bigha: string; kattha: string; dhur: string };
 type DateMetadata = { confidence: "validated-project-archive" | "provisional-open-table"; source: string; note: string };
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
+type QrResult = { dataUrl: string; modules: number; bytes: number };
 type TaxResult = {
   fiscalYear: string;
   taxableIncome: string;
@@ -38,6 +39,7 @@ export function UtilitySuite() {
   const latestBsDate = useRef(0);
   const latestAdDate = useRef(0);
   const latestTax = useRef(0);
+  const latestQr = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -70,6 +72,10 @@ export function UtilitySuite() {
   const [qualifyingSsfContributor, setQualifyingSsfContributor] = useState(false);
   const [taxResult, setTaxResult] = useState<TaxResult | null>(null);
   const [taxError, setTaxError] = useState("");
+  const [qrText, setQrText] = useState("नमस्ते नेपाल");
+  const [qrLevel, setQrLevel] = useState<"L" | "M" | "Q" | "H">("M");
+  const [qrResult, setQrResult] = useState<QrResult | null>(null);
+  const [qrError, setQrError] = useState("");
 
   useEffect(() => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
@@ -81,6 +87,7 @@ export function UtilitySuite() {
         if (message.id === latestFont.current) setFontError(message.error);
         else if (message.id === latestBsDate.current || message.id === latestAdDate.current) setDateError(message.error);
         else if (message.id === latestTax.current) setTaxError(message.error);
+        else if (message.id === latestQr.current) setQrError(message.error);
         else setLandError(message.error);
         return;
       }
@@ -105,6 +112,9 @@ export function UtilitySuite() {
       } else if (message.id === latestTax.current) {
         setTaxResult(message.result);
         setTaxError("");
+      } else if (message.id === latestQr.current) {
+        setQrResult(message.result);
+        setQrError("");
       }
     };
     return () => {
@@ -199,6 +209,19 @@ export function UtilitySuite() {
     }, 80);
     return () => window.clearTimeout(timer);
   }, [taxInput, qualifyingSsfContributor, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady || !qrText.trim()) {
+      setQrResult(null);
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestQr.current = id;
+      workerRef.current?.postMessage({ id, type: "qr", text: qrText, errorCorrectionLevel: qrLevel });
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, [qrText, qrLevel, workerReady]);
 
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
@@ -317,6 +340,46 @@ export function UtilitySuite() {
 
         <p className="utility-note">This module is versioned for FY 2083/84. The first 1% band is waived only when the qualifying SSF checkbox correctly reflects the taxpayer's legal status.</p>
         {taxError && <p className="utility-error" role="alert">{taxError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="qr-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Private · client-only</p>
+            <h2 id="qr-title">Devanagari QR Generator</h2>
+          </div>
+          <span className="utility-badge">UTF-8 · offline</span>
+        </header>
+
+        <div className="qr-grid">
+          <div className="qr-input-panel">
+            <label className="utility-field">
+              <span>Text / नेपाली सामग्री</span>
+              <textarea rows={8} value={qrText} onChange={(event) => setQrText(event.target.value)} placeholder="नमस्ते नेपाल" />
+            </label>
+            <label className="utility-field">
+              <span>Error correction</span>
+              <select value={qrLevel} onChange={(event) => setQrLevel(event.target.value as "L" | "M" | "Q" | "H")}>
+                <option value="L">L · ~7%</option>
+                <option value="M">M · ~15%</option>
+                <option value="Q">Q · ~25%</option>
+                <option value="H">H · ~30%</option>
+              </select>
+            </label>
+            <p className="utility-note">Generated entirely in the browser Worker using explicit UTF-8 bytes. The entered text is not transmitted.</p>
+          </div>
+
+          <div className="qr-preview" aria-live="polite">
+            {qrResult
+              ? <>
+                  <img src={qrResult.dataUrl} alt={"QR code for " + qrText.slice(0, 80)} />
+                  <div><strong>{qrResult.modules} × {qrResult.modules}</strong><span>{qrResult.bytes} UTF-8 bytes</span></div>
+                  <a className="utility-secondary qr-download" href={qrResult.dataUrl} download="nepali-qr.gif">Save QR</a>
+                </>
+              : <span>Enter text to generate a QR code.</span>}
+          </div>
+        </div>
+        {qrError && <p className="utility-error" role="alert">{qrError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
