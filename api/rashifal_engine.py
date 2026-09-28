@@ -25,6 +25,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 __version__ = "1.0.0"
+Date = date
 
 
 class Settings(BaseSettings):
