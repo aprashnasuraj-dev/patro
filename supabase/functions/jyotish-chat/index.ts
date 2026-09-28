@@ -491,11 +491,12 @@ Deno.serve(async (req: Request) => {
     Deno.env.get("NVIDIA_NIM_API_KEY") || Deno.env.get("NVIDIA_API_KEY") || Deno.env.get("NGC_API_KEY") || Deno.env.get("nvidia_api") || "";
 
   const groqModels = uniqueModels([
-    "llama-3.3-70b-versatile",
-    "llama-3.1-70b-versatile",
-    "llama-3.1-8b-instant",
-    Deno.env.get("GROQ_MODEL") || undefined,
+    // Current Free/Developer-compatible Groq roster (2026-09-28).
+    // Llama 3.3 70B and Llama 3.1 8B were shut down for this tier on 2026-08-16.
     "openai/gpt-oss-120b",
+    "qwen/qwen3.8-27b",
+    "openai/gpt-oss-20b",
+    Deno.env.get("GROQ_MODEL") || undefined,
   ]);
 
   if (groqKey) {
