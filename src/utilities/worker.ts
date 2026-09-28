@@ -1,5 +1,9 @@
 import {
+  adToBs,
   bighaToSqFt,
+  bsDateMetadata,
+  bsToAd,
+  formatBsDate,
   formatScaled,
   preetiToUnicode,
   ropaniToSqFt,
@@ -14,7 +18,9 @@ type Request =
   | { id: number; type: "font"; direction: "preeti-to-unicode" | "unicode-to-preeti"; input: string; capitalIAsShortI?: boolean }
   | { id: number; type: "land-sqft"; sqft: string }
   | { id: number; type: "land-hill"; ropani: string; aana: string; paisa: string; dam: string }
-  | { id: number; type: "land-terai"; bigha: string; kattha: string; dhur: string };
+  | { id: number; type: "land-terai"; bigha: string; kattha: string; dhur: string }
+  | { id: number; type: "date-bs"; year: number; month: number; day: number }
+  | { id: number; type: "date-ad"; ad: string };
 
 type Response = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
 
@@ -67,7 +73,7 @@ self.onmessage = (event: MessageEvent<Request>) => {
           terai: serializeTerai(sqFtScaledToBigha(total)),
         },
       };
-    } else {
+    } else if (request.type === "land-terai") {
       const total = bighaToSqFt(request);
       response = {
         id: request.id,
@@ -75,6 +81,29 @@ self.onmessage = (event: MessageEvent<Request>) => {
         result: {
           sqft: formatScaled(total),
           hill: serializeHill(sqFtScaledToRopani(total)),
+        },
+      };
+    } else if (request.type === "date-bs") {
+      const bs = { year: request.year, month: request.month, day: request.day };
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          ad: bsToAd(bs),
+          bs: formatBsDate(bs),
+          metadata: bsDateMetadata(bs),
+        },
+      };
+    } else {
+      const bs = adToBs(request.ad);
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          ad: request.ad,
+          bs: formatBsDate(bs),
+          parts: bs,
+          metadata: bsDateMetadata(bs),
         },
       };
     }
