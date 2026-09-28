@@ -2,6 +2,10 @@
   "version": 2,
   "rewrites": [
     {
+      "source": "/api/rashifal-engine",
+      "destination": "/api/rashifal_engine"
+    },
+    {
       "source": "/(.*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
@@ -521,6 +525,20 @@
           "value": "public, max-age=3600"
         }
       ]
+    },
+    {
+      "source": "/jyotish/rashifal",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
     }
-  ]
+  ],
+  "functions": {
+    "api/rashifal_engine.py": {
+      "maxDuration": 60
+    }
+  }
 }
