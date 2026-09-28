@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const NASA_APOD_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";\nconst NASA_APOD_LEGACY_URL = "https://api.nasa.gov/planetary/apod";
+const NASA_APOD_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
+const NASA_APOD_LEGACY_URL = "https://api.nasa.gov/planetary/apod";
 const NASA_API_KEY = Deno.env.get("NASA_API_KEY") || "DEMO_KEY";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
