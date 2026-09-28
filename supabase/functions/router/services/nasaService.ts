@@ -1,6 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const NASA_API_URL = "https://api.nasa.gov/planetary/apod";
+const NASA_APOD_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";\nconst NASA_APOD_LEGACY_URL = "https://api.nasa.gov/planetary/apod";
 const NASA_API_KEY = Deno.env.get("NASA_API_KEY") || "DEMO_KEY";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
@@ -86,23 +86,42 @@ export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormali
   const timeoutId = setTimeout(() => controller.abort(), 4000);
 
   try {
-    const url = NASA_API_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate);
-    const response = await fetch(url, {
-      signal: controller.signal,
-      headers: { "Accept": "application/json" }
-    });
-    if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
+    const candidates = [
+      NASA_APOD_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate),
+      NASA_APOD_LEGACY_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate)
+    ];
+    let data: any = null;
+    let lastError = "NASA_APOD_UNAVAILABLE";
+    for (const url of candidates) {
+      try {
+        const response = await fetch(url, {
+          signal: controller.signal,
+          headers: { "Accept": "application/json" }
+        });
+        if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
+        data = await response.json();
+        if (data) break;
+      } catch (error) {
+        lastError = String((error as Error)?.message || error);
+      }
+    }
+    if (!data) throw new Error(lastError);
 
-    const data: any = await response.json();
-    let finalUrl = String(data.url || "");
-    let finalHdUrl = String(data.hdurl || data.url || "");
     const sourceMedia: "image" | "video" = data.media_type === "video" ? "video" : "image";
+    let finalUrl = String(data.hdurl || data.url || "");
+    let finalHdUrl = String(data.hdurl || finalUrl);
 
     if (sourceMedia === "video") {
-      const id = youtubeId(finalUrl);
-      if (!id) return fallback(targetDate, "non_youtube_video");
-      finalUrl = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
-      finalHdUrl = finalUrl;
+      const suppliedThumb = String(data.hdurl || "");
+      if (suppliedThumb.startsWith("http")) {
+        finalUrl = suppliedThumb;
+        finalHdUrl = suppliedThumb;
+      } else {
+        const id = youtubeId(String(data.url || ""));
+        if (!id) return fallback(targetDate, "non_youtube_video");
+        finalUrl = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
+        finalHdUrl = finalUrl;
+      }
     }
 
     if (!finalUrl) throw new Error("NASA_EMPTY_MEDIA_URL");
