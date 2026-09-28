@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 type FontDirection = "preeti-to-unicode" | "unicode-to-preeti";
 type Hill = { ropani: string; aana: string; paisa: string; dam: string };
 type Terai = { bigha: string; kattha: string; dhur: string };
+type DateMetadata = { confidence: "validated-project-archive" | "provisional-open-table"; source: string; note: string };
+type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
 type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
 
 function Field({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
@@ -21,6 +23,8 @@ export function UtilitySuite() {
   const latestSqft = useRef(0);
   const latestHill = useRef(0);
   const latestTerai = useRef(0);
+  const latestBsDate = useRef(0);
+  const latestAdDate = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -37,6 +41,11 @@ export function UtilitySuite() {
   const [terai, setTerai] = useState({ bigha: "1", kattha: "0", dhur: "0" });
   const [teraiResult, setTeraiResult] = useState<{ sqft: string; hill: Hill } | null>(null);
   const [landError, setLandError] = useState("");
+  const [bsDate, setBsDate] = useState({ year: "2083", month: "1", day: "1" });
+  const [bsDateResult, setBsDateResult] = useState<DateConversionResult | null>(null);
+  const [adDate, setAdDate] = useState("2026-04-14");
+  const [adDateResult, setAdDateResult] = useState<DateConversionResult | null>(null);
+  const [dateError, setDateError] = useState("");
 
   useEffect(() => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
@@ -45,8 +54,9 @@ export function UtilitySuite() {
     worker.onmessage = (event: MessageEvent<WorkerReply>) => {
       const message = event.data;
       if (!message.ok) {
-        setLandError(message.error);
-        setFontError(message.error);
+        if (message.id === latestFont.current) setFontError(message.error);
+        else if (message.id === latestBsDate.current || message.id === latestAdDate.current) setDateError(message.error);
+        else setLandError(message.error);
         return;
       }
       if (message.id === latestFont.current) {
@@ -61,6 +71,12 @@ export function UtilitySuite() {
       } else if (message.id === latestTerai.current) {
         setTeraiResult(message.result);
         setLandError("");
+      } else if (message.id === latestBsDate.current) {
+        setBsDateResult(message.result);
+        setDateError("");
+      } else if (message.id === latestAdDate.current) {
+        setAdDateResult(message.result);
+        setDateError("");
       }
     };
     return () => {
@@ -117,6 +133,30 @@ export function UtilitySuite() {
     return () => window.clearTimeout(timer);
   }, [terai, workerReady]);
 
+  useEffect(() => {
+    if (!workerReady) return;
+    const year = Number(bsDate.year);
+    const month = Number(bsDate.month);
+    const day = Number(bsDate.day);
+    if (!Number.isInteger(year) || !Number.isInteger(month) || !Number.isInteger(day)) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestBsDate.current = id;
+      workerRef.current?.postMessage({ id, type: "date-bs", year, month, day });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [bsDate, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady || !/^\d{4}-\d{2}-\d{2}$/.test(adDate)) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestAdDate.current = id;
+      workerRef.current?.postMessage({ id, type: "date-ad", ad: adDate });
+    }, 60);
+    return () => window.clearTimeout(timer);
+  }, [adDate, workerReady]);
+
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
     setFontInput(fontOutput);
@@ -131,10 +171,56 @@ export function UtilitySuite() {
       <section className="utility-hero">
         <div>
           <p className="eyebrow">नेपाली Utility Platform</p>
-          <h1>Offline-capable tools for Nepali text and land units</h1>
-          <p>All calculations run on this device. Font conversion is isolated in a Web Worker and land math uses scaled integer arithmetic.</p>
+          <h1>Offline-capable tools for Nepali text, dates and land units</h1>
+          <p>All calculations run on this device. Text/date conversion is isolated in a Web Worker and land math uses scaled integer arithmetic.</p>
         </div>
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
+      </section>
+
+      <section className="utility-card" aria-labelledby="date-converter-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Calendar engine</p>
+            <h2 id="date-converter-title">BS ⇄ AD Date Converter</h2>
+          </div>
+          <span className="utility-badge">Anchor: 1970-01-01 BS = 1913-04-13 AD</span>
+        </header>
+
+        <div className="date-grid">
+          <article className="land-panel">
+            <h3>Bikram Sambat → Gregorian</h3>
+            <div className="land-fields land-fields--three">
+              <Field label="BS year" value={bsDate.year} onChange={(value) => setBsDate((v) => ({ ...v, year: value }))} />
+              <Field label="Month" value={bsDate.month} onChange={(value) => setBsDate((v) => ({ ...v, month: value }))} />
+              <Field label="Day" value={bsDate.day} onChange={(value) => setBsDate((v) => ({ ...v, day: value }))} />
+            </div>
+            {bsDateResult && <div className="utility-result">
+              <strong>{bsDateResult.ad} AD</strong>
+              <span>{bsDateResult.bs} BS</span>
+              <small className={"utility-provenance " + (bsDateResult.metadata.confidence === "provisional-open-table" ? "is-provisional" : "")}>
+                {bsDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
+              </small>
+            </div>}
+          </article>
+
+          <article className="land-panel">
+            <h3>Gregorian → Bikram Sambat</h3>
+            <label className="utility-field">
+              <span>AD date</span>
+              <input type="date" value={adDate} onChange={(event) => setAdDate(event.target.value)} />
+            </label>
+            {adDateResult && <div className="utility-result">
+              <strong>{adDateResult.bs} BS</strong>
+              <span>{adDateResult.ad} AD</span>
+              <small className={"utility-provenance " + (adDateResult.metadata.confidence === "provisional-open-table" ? "is-provisional" : "")}>
+                {adDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
+              </small>
+            </div>}
+          </article>
+        </div>
+
+        <p className="utility-note">1970–2093 is backed by the existing Patro synchronized archive; 2094–2099 remains explicitly provisional because independent future BS tables can disagree.</p>
+        {dateError && <p className="utility-error" role="alert">{dateError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
