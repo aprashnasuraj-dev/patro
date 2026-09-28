@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts"
