@@ -637,6 +637,7 @@ async def value_error(request, exc):
 async def internal_error(request, exc):
     return JSONResponse({"detail": "Calculation unavailable. Check service health and ephemeris configuration."}, status_code=503, headers={"Cache-Control": "no-store"})
 
+@app.get("/")
 @app.get("/api/rashifal_engine")
 def gateway(request: Request, authorization: str | None = Header(default=None)):
     op = request.query_params.get("op", "health")
@@ -656,6 +657,7 @@ def gateway(request: Request, authorization: str | None = Header(default=None)):
         return universal_batch(req)
     raise HTTPException(404, "Unknown operation")
 
+@app.post("/")
 @app.post("/api/rashifal_engine")
 async def personalized_gateway(request: Request, authorization: str | None = Header(default=None), x_rashifal_client: str | None = Header(default=None)):
     if request.query_params.get("op") != "personalized":
