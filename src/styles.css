@@ -1,0 +1,1167 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans Devanagari", sans-serif;
+  background: #0b0f19;
+  color: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #0b0f19;
+  --panel: rgba(15, 23, 42, 0.72);
+  --panel-strong: rgba(15, 23, 42, 0.9);
+  --panel-soft: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(56, 189, 248, 0.36);
+  --cyan: #38bdf8;
+  --cyan-soft: #7dd3fc;
+  --ink: #f8fafc;
+  --muted: #a7b3c4;
+  --muted-2: #718096;
+  --danger: #fca5a5;
+  --warning: #fde68a;
+  --radius-xl: 26px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button,
+input[type="date"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.66);
+  outline-offset: 3px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background: #0b0f19;
+}
+
+.hero-image {
+  position: absolute;
+  inset: -2%;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.02);
+}
+
+.hero-image--previous {
+  animation: hero-fade-out 0.9s ease forwards;
+}
+
+.hero-image--current {
+  animation: hero-fade-in 0.9s ease both;
+}
+
+.hero-image--fallback {
+  background:
+    radial-gradient(circle at 70% 18%, rgba(56, 189, 248, 0.14), transparent 28%),
+    radial-gradient(circle at 30% 72%, rgba(125, 211, 252, 0.08), transparent 32%),
+    linear-gradient(145deg, #111827, #020617 65%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 15, 25, 0.68), rgba(11, 15, 25, 0.82)),
+    rgba(11, 15, 25, 0.75);
+  backdrop-filter: blur(3px);
+}
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 18% 20%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 72% 35%, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle at 40% 76%, #fff 0 0.8px, transparent 1.2px),
+    radial-gradient(circle at 84% 82%, #fff 0 0.8px, transparent 1.2px);
+  background-size: 180px 180px, 240px 240px, 140px 140px, 210px 210px;
+}
+
+.hero-loading-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.05) 45%,
+    transparent 65%
+  );
+  animation: shimmer-bg 1.6s linear infinite;
+}
+
+.app-content {
+  width: min(1440px, calc(100% - 34px));
+  margin: 0 auto;
+  padding: 24px 0 140px;
+}
+
+.glass-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+    var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+}
+
+.dynamic-header {
+  border-radius: var(--radius-xl);
+  padding: 22px;
+}
+
+.header-title-row,
+.section-heading,
+.calendar-toolbar,
+.narrative-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--cyan-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: -0.025em;
+}
+
+.subheading {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.health-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(2, 6, 23, 0.34);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.health-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #94a3b8;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.12);
+}
+
+.health-pill--online .health-dot {
+  background: #4ade80;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.12), 0 0 14px rgba(74, 222, 128, 0.45);
+}
+
+.health-pill--offline .health-dot {
+  background: #f87171;
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.12);
+}
+
+.date-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.date-badge {
+  min-height: 92px;
+  padding: 14px 15px;
+  border: 1px solid rgba(56, 189, 248, 0.14);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(56, 189, 248, 0.11), transparent 42%),
+    rgba(2, 6, 23, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.date-badge__label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--cyan-soft);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.date-badge strong {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.35;
+}
+
+.date-badge small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.date-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.date-input-wrap {
+  display: grid;
+  gap: 4px;
+}
+
+.date-input-wrap span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.date-input-wrap input {
+  min-height: 38px;
+  padding: 7px 10px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(2, 6, 23, 0.42);
+}
+
+.icon-button,
+.secondary-button {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.055);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.icon-button {
+  width: 40px;
+  padding: 0;
+  font-size: 1.05rem;
+}
+
+.secondary-button {
+  padding: 0 13px;
+  color: var(--cyan-soft);
+  font-weight: 800;
+}
+
+.icon-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.76fr) minmax(600px, 1.6fr);
+  gap: 16px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.lunar-card,
+.calendar-card {
+  border-radius: var(--radius-xl);
+  padding: 20px;
+}
+
+.lunar-card {
+  position: sticky;
+  top: 16px;
+}
+
+.tithi-index {
+  padding: 6px 9px;
+  color: var(--cyan-soft);
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.lunar-visual-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  margin: 8px 0 2px;
+}
+
+.lunar-svg {
+  width: min(280px, 78vw);
+  filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.4));
+}
+
+.moon-halo {
+  fill: rgba(226, 232, 240, 0.03);
+  stroke: rgba(226, 232, 240, 0.08);
+  stroke-width: 2;
+}
+
+.moon-craters circle {
+  fill: #0f172a;
+}
+
+.illumination-readout {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  display: grid;
+  gap: 1px;
+  min-width: 112px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.illumination-readout strong {
+  color: var(--cyan-soft);
+  font-size: 1.25rem;
+}
+
+.illumination-readout span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.illumination-readout em {
+  margin-top: 5px;
+  color: var(--warning);
+  font-size: 0.65rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.progress-block {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(2, 6, 23, 0.3);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.progress-labels strong {
+  color: var(--ink);
+}
+
+.progress-track {
+  height: 7px;
+  margin: 8px 0 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0ea5e9, #7dd3fc);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.55);
+  transition: width 0.5s ease;
+}
+
+.progress-block small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.precision-details {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.precision-details summary {
+  color: var(--cyan-soft);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.astro-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.astro-metric {
+  min-width: 0;
+  padding: 9px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.astro-metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.62rem;
+}
+
+.astro-metric strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.anomaly-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.anomaly-chip {
+  padding: 5px 7px;
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  border-radius: 999px;
+  color: #bbf7d0;
+  background: rgba(74, 222, 128, 0.06);
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.anomaly-chip--warn {
+  color: var(--warning);
+  border-color: rgba(253, 230, 138, 0.2);
+  background: rgba(253, 230, 138, 0.07);
+}
+
+.method-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
+.calendar-toolbar {
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.calendar-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.segmented-control {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(2, 6, 23, 0.32);
+}
+
+.segmented-control button {
+  min-width: 40px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.segmented-control button.active {
+  color: #04131b;
+  background: var(--cyan);
+  box-shadow: 0 5px 14px rgba(56, 189, 248, 0.24);
+}
+
+.weekday-row,
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.weekday-row {
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.weekday-row span {
+  padding: 4px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.month-grid {
+  gap: 5px;
+}
+
+.calendar-day {
+  position: relative;
+  min-width: 0;
+  min-height: 100px;
+  padding: 8px;
+  overflow: hidden;
+  color: var(--ink);
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.045);
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.calendar-day:hover {
+  z-index: 2;
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.calendar-day--muted {
+  opacity: 0.42;
+}
+
+.calendar-day--today {
+  border-color: rgba(125, 211, 252, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.13);
+}
+
+.calendar-day--selected {
+  border-color: rgba(56, 189, 248, 0.82);
+  background:
+    linear-gradient(145deg, rgba(56, 189, 248, 0.17), rgba(56, 189, 248, 0.05)),
+    rgba(15, 23, 42, 0.82);
+  box-shadow:
+    inset 0 0 0 1px rgba(125, 211, 252, 0.15),
+    0 0 24px rgba(56, 189, 248, 0.12);
+}
+
+.calendar-day--special::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: -12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(253, 230, 138, 0.1);
+  box-shadow: 0 0 20px rgba(253, 230, 138, 0.08);
+}
+
+.day-number {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.day-secondary {
+  float: right;
+  margin-top: 2px;
+  color: var(--muted-2);
+  font-size: 0.56rem;
+  font-weight: 700;
+}
+
+.tithi-badge {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 9px;
+  padding: 3px 5px;
+  overflow: hidden;
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.06);
+  font-size: 0.59rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tithi-badge--unavailable {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.paksha-dot {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.54rem;
+}
+
+.today-marker,
+.special-marker {
+  position: absolute;
+  bottom: 6px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  font-size: 0.48rem;
+  font-weight: 850;
+}
+
+.today-marker {
+  left: 7px;
+  color: #082f49;
+  background: #7dd3fc;
+}
+
+.special-marker {
+  right: 6px;
+  color: #422006;
+  background: #fde68a;
+}
+
+.cell-skeleton {
+  display: block;
+  width: 58%;
+  height: 10px;
+  margin-top: 11px;
+  border-radius: 5px;
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 11px;
+  color: var(--muted);
+  font-size: 0.62rem;
+}
+
+.calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.legend-dot--today {
+  border-color: #7dd3fc;
+}
+
+.legend-dot--selected {
+  background: #38bdf8;
+}
+
+.legend-dot--special {
+  background: #fde68a;
+}
+
+.calendar-status {
+  margin-left: auto;
+  color: var(--cyan-soft) !important;
+}
+
+.inline-error {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 11px;
+  background: rgba(127, 29, 29, 0.16);
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.nasa-drawer {
+  position: fixed;
+  z-index: 30;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  max-width: 1400px;
+  margin: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.88);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.46);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  overflow: hidden;
+}
+
+.nasa-drawer__handle {
+  display: flex;
+  width: 100%;
+  min-height: 62px;
+  gap: 11px;
+  align-items: center;
+  padding: 10px 13px;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nasa-mark {
+  flex: 0 0 auto;
+  padding: 5px 7px;
+  color: #07111c;
+  border-radius: 7px;
+  background: #e2e8f0;
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+}
+
+.nasa-handle-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+}
+
+.nasa-handle-copy strong,
+.nasa-handle-copy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nasa-handle-copy strong {
+  font-size: 0.78rem;
+}
+
+.nasa-handle-copy small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.64rem;
+}
+
+.fallback-pill {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  color: var(--warning);
+  border: 1px solid rgba(253, 230, 138, 0.2);
+  border-radius: 999px;
+  background: rgba(253, 230, 138, 0.06);
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+.drawer-chevron {
+  color: var(--cyan-soft);
+  font-size: 1.15rem;
+}
+
+.nasa-drawer__content {
+  max-height: 0;
+  padding: 0 16px;
+  overflow: auto;
+  opacity: 0;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    padding 0.35s ease;
+}
+
+.nasa-drawer--open .nasa-drawer__content {
+  max-height: min(54vh, 520px);
+  padding: 4px 16px 18px;
+  opacity: 1;
+}
+
+.narrative-heading {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.narrative-meta {
+  display: grid;
+  gap: 3px;
+  min-width: 180px;
+  color: var(--muted);
+  text-align: right;
+  font-size: 0.64rem;
+}
+
+.narrative-copy {
+  max-width: 1080px;
+  margin: 12px 0 0;
+  color: #d7dee9;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 0;
+  color: rgba(203, 213, 225, 0.58);
+  font-size: 0.62rem;
+}
+
+.skeleton {
+  display: inline-block;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.055) 20%,
+    rgba(255, 255, 255, 0.13) 42%,
+    rgba(255, 255, 255, 0.055) 64%
+  );
+  background-size: 220% 100%;
+  animation: skeleton-wave 1.4s ease infinite;
+}
+
+.skeleton--line {
+  width: 76%;
+  height: 13px;
+  border-radius: 6px;
+}
+
+.skeleton--short {
+  width: 46%;
+}
+
+.skeleton--title {
+  width: 44%;
+  height: 23px;
+  border-radius: 8px;
+}
+
+.lunar-loading-circle {
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 32px auto;
+  border-radius: 50%;
+}
+
+.drawer-skeleton {
+  display: grid;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: scale(1.045); }
+  to { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes hero-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes skeleton-wave {
+  from { background-position: 120% 0; }
+  to { background-position: -120% 0; }
+}
+
+@keyframes shimmer-bg {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@media (max-width: 1080px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lunar-card {
+    position: static;
+  }
+
+  .lunar-card {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.8fr) minmax(300px, 1fr);
+    column-gap: 22px;
+  }
+
+  .lunar-card .section-heading,
+  .lunar-card .precision-details {
+    grid-column: 1 / -1;
+  }
+
+  .lunar-visual-wrap {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-content {
+    width: min(100% - 18px, 1440px);
+    padding-top: 9px;
+  }
+
+  .dynamic-header,
+  .lunar-card,
+  .calendar-card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .header-title-row {
+    align-items: center;
+  }
+
+  .date-badges {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .date-badge {
+    min-height: auto;
+    padding: 11px 12px;
+  }
+
+  .date-toolbar {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+  }
+
+  .date-input-wrap {
+    min-width: 0;
+  }
+
+  .date-input-wrap input {
+    width: 100%;
+  }
+
+  .date-toolbar .secondary-button {
+    grid-column: 1 / -1;
+  }
+
+  .lunar-card {
+    display: block;
+  }
+
+  .lunar-visual-wrap {
+    min-height: 270px;
+  }
+
+  .calendar-toolbar {
+    align-items: flex-start;
+  }
+
+  .calendar-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .month-grid,
+  .weekday-row {
+    gap: 3px;
+  }
+
+  .calendar-day {
+    min-height: 78px;
+    padding: 5px;
+    border-radius: 9px;
+  }
+
+  .day-number {
+    font-size: 0.9rem;
+  }
+
+  .day-secondary {
+    display: none;
+  }
+
+  .tithi-badge {
+    margin-top: 6px;
+    padding: 2px 3px;
+    font-size: 0.5rem;
+  }
+
+  .paksha-dot {
+    font-size: 0.48rem;
+  }
+
+  .today-marker {
+    display: none;
+  }
+
+  .special-marker {
+    right: 3px;
+    bottom: 3px;
+    max-width: calc(100% - 6px);
+    overflow: hidden;
+    font-size: 0.42rem;
+    text-overflow: ellipsis;
+  }
+
+  .nasa-drawer {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    border-radius: 14px;
+  }
+
+  .narrative-heading {
+    display: block;
+  }
+
+  .narrative-meta {
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .fallback-pill {
+    display: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .header-title-row {
+    display: block;
+  }
+
+  .health-pill {
+    margin-top: 10px;
+  }
+
+  .calendar-toolbar {
+    display: block;
+  }
+
+  .calendar-actions {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .calendar-day {
+    min-height: 68px;
+  }
+
+  .weekday-row span {
+    font-size: 0.56rem;
+  }
+
+  .tithi-badge {
+    max-width: 96%;
+  }
+
+  .paksha-dot,
+  .special-marker {
+    display: none;
+  }
+
+  .illumination-readout {
+    right: 3px;
+    bottom: 3px;
+  }
+
+  .astro-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
