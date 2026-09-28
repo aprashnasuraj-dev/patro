@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import type { ApodPayload, CosmicDayPayload, SyncPayload, TithiPayload } from "../types";
+import { StandUnderThisSky } from "./StandUnderThisSky";
 
 interface Props {
   sync: SyncPayload | null;
@@ -53,6 +54,7 @@ export function CosmicHero({
 }: Props) {
   const [soundOn, setSoundOn] = useState(false);
   const [sharing, setSharing] = useState(false);
+  const [skyOpen, setSkyOpen] = useState(false);
   const audioRef = useRef<AudioContext | null>(null);
   const dates = dateText(sync, selectedDate);
 
@@ -121,12 +123,12 @@ export function CosmicHero({
     setSoundOn(true);
   }
 
-  async function toggleFullscreen() {
+  async function openSkyMode() {
+    setSkyOpen(true);
     try {
       if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
-      else await document.exitFullscreen();
     } catch {
-      // Fullscreen is a progressive enhancement.
+      // The fixed cinematic overlay remains fully usable when browser fullscreen is unavailable.
     }
   }
 
@@ -217,6 +219,7 @@ export function CosmicHero({
   }
 
   return (
+    <>
     <header className="cosmic-hero glass-panel">
       <div className="cosmic-hero__topline">
         <div>
@@ -259,11 +262,21 @@ export function CosmicHero({
         <button className="secondary-button" onClick={toggleAmbient} aria-pressed={soundOn}>
           {soundOn ? "🔊 Ambient on" : "🔈 Ambient"}
         </button>
-        <button className="secondary-button" onClick={toggleFullscreen}>✦ Stand under this sky</button>
+        <button className="secondary-button" onClick={openSkyMode}>✦ Stand under this sky</button>
         <button className="secondary-button" onClick={shareCosmicCard} disabled={sharing}>
           {sharing ? "Creating card…" : "↗ Cosmic Card"}
         </button>
       </div>
     </header>
+      <StandUnderThisSky
+        open={skyOpen}
+        onClose={() => setSkyOpen(false)}
+        selectedDate={selectedDate}
+        sync={sync}
+        tithi={tithi}
+        cosmic={cosmic}
+        apod={apod}
+      />
+    </>
   );
 }

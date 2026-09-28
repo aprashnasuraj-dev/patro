@@ -205,7 +205,14 @@ export interface CosmicDayPayload {
   };
   earth: {
     epic: {
-      status: string;
+      status: "ok" | "nearest_available" | "no_data_within_window" | "unavailable";
+      requested_date: string;
+      image_date: string | null;
+      nearest_available_date: string | null;
+      latest_available_date: string | null;
+      offset_days: number | null;
+      fallback_used: boolean;
+      searched_dates: string[];
       items: EpicImage[];
       error?: string;
     };
@@ -247,8 +254,11 @@ export interface CosmicDayPayload {
   solar: {
     status: string;
     level: "Quiet" | "Low" | "Moderate" | "Elevated";
+    window_start: string;
+    window_end: string;
     counts: { flares: number; cmes: number; storms: number };
     max_flare_class: string | null;
+    max_kp: number | null;
     flares: {
       id: string;
       class_type: string;
@@ -261,10 +271,14 @@ export interface CosmicDayPayload {
       start_time: string;
       source_location: string;
       note: string;
+      speed_kps: number | null;
+      half_angle_deg: number | null;
+      cme_type: string;
     }[];
     storms: {
       id: string;
       start_time: string;
+      max_kp: number | null;
       kp: unknown[];
     }[];
   };

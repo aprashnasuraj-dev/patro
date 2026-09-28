@@ -1,6 +1,10 @@
 import type { ApodPayload, CosmicDayPayload, TithiPayload } from "../types";
+import { EpicEarthPanel } from "./EpicEarthPanel";
+import { ExoplanetHighlight } from "./ExoplanetHighlight";
 import { ExpandedCosmicPanel } from "./ExpandedCosmicPanel";
+import { MarsRoverGallery } from "./MarsRoverGallery";
 import { NeoWsOrbitViz } from "./NeoWsOrbitViz";
+import { SpaceWeatherPanel } from "./SpaceWeatherPanel";
 
 interface Props {
   data: CosmicDayPayload | null;
@@ -24,19 +28,6 @@ function culturalNote(tithi: TithiPayload | null) {
 }
 
 export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
-  if (loading && !data) {
-    return (
-      <section className="cosmic-loading glass-panel">
-        <span className="cosmic-loader" />
-        <div>
-          <p className="eyebrow">NASA + Patro</p>
-          <h2>Reading the selected sky</h2>
-          <p className="subheading">APOD, Earth, Mars, NEO and space-weather feeds are loading independently.</p>
-        </div>
-      </section>
-    );
-  }
-
   if (error && !data) {
     return (
       <section className="glass-panel cosmic-loading">
@@ -49,12 +40,24 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
     );
   }
 
-  if (!data) return null;
-
-  const epic = data.earth.epic.items[0];
-  const roverPhotos = data.mars.rovers.flatMap((rover) =>
-    rover.photos.map((photo) => ({ ...photo, roverStatus: rover.status }))
-  ).slice(0, 8);
+  if (!data) {
+    return (
+      <section className="cosmic-stack" aria-label="Loading NASA cosmic data layers">
+        <section className="cosmic-loading glass-panel">
+          <span className="cosmic-loader" />
+          <div>
+            <p className="eyebrow">NASA + Patro</p>
+            <h2>Reading the selected sky</h2>
+            <p className="subheading">Each NASA source is cached and resolved independently behind the Supabase router.</p>
+          </div>
+        </section>
+        <EpicEarthPanel epic={null} eonet={null} loading={loading} />
+        <MarsRoverGallery mars={null} requestedDate="" loading={loading} />
+        <SpaceWeatherPanel solar={null} loading={loading} />
+        <ExoplanetHighlight exoplanet={null} loading={loading} />
+      </section>
+    );
+  }
 
   return (
     <section className="cosmic-stack" aria-label="NASA cosmic data layers">
@@ -109,73 +112,14 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
         <p className="method-note">Traditional interpretation is kept separate from verified astronomical calculations. Near-boundary ceremonial timing should still be checked against an authoritative Panchanga.</p>
       </ExpandedCosmicPanel>
 
-      <ExpandedCosmicPanel
-        id="earth-space"
-        eyebrow="EPIC · EONET · Earthdata GIBS"
-        title="Earth from Space"
-        icon="◉"
-        badge={data.earth.epic.status === "ok" ? "EPIC available" : "EPIC archive gap"}
-        defaultOpen
-      >
-        <div className="earth-layout">
-          <div className="earth-visual">
-            {epic ? (
-              <>
-                <img src={epic.image_url} alt="Earth observed by DSCOVR EPIC" loading="lazy" decoding="async" />
-                <p>{epic.caption}</p>
-              </>
-            ) : (
-              <div className="archive-empty">EPIC has no full-disc image for this selected date.</div>
-            )}
-            <a className="cosmic-link-button" href={data.earth.gibs.worldview_url} target="_blank" rel="noreferrer">
-              Open this date in NASA Worldview / GIBS ↗
-            </a>
-          </div>
+      <EpicEarthPanel
+        epic={data.earth.epic}
+        eonet={data.earth.eonet}
+        worldviewUrl={data.earth.gibs.worldview_url}
+        loading={loading}
+      />
 
-          <div className="event-list">
-            <div className="mini-heading"><strong>Natural events</strong><span>{data.earth.eonet.count} on/around this date</span></div>
-            {data.earth.eonet.events.length ? data.earth.eonet.events.map((event) => (
-              <article className="event-row" key={event.id}>
-                <div><strong>{event.title}</strong><small>{event.categories.join(" · ") || "Natural event"}</small></div>
-                <span>{event.closed ? "Closed" : "Open"}</span>
-              </article>
-            )) : <p className="empty-copy">No EONET events were returned for this day.</p>}
-          </div>
-        </div>
-      </ExpandedCosmicPanel>
-
-      <ExpandedCosmicPanel
-        id="mars-day"
-        eyebrow="Mars rover archive"
-        title="Mars on This Day"
-        icon="◌"
-        badge="Archive-aware"
-      >
-        <p className="archive-notice">{data.mars.official_api_status}</p>
-        <div className="rover-grid">
-          {roverPhotos.length ? roverPhotos.map((photo, index) => (
-            <article className="rover-card" key={`${photo.id}-${index}`}>
-              <img src={photo.img_src} alt="" loading="lazy" decoding="async" />
-              <div>
-                <strong>{photo.rover}</strong>
-                <small>{photo.earth_date || data.requested_date} · {photo.camera || "NASA archive"}</small>
-                <span>{photo.roverStatus === "media_library_fallback" ? "Media Library fallback" : `Sol ${photo.sol ?? "—"}`}</span>
-              </div>
-            </article>
-          )) : <p className="empty-copy">No rover imagery was available for this date.</p>}
-        </div>
-
-        <div className="insight-strip">
-          <strong>InSight weather archive</strong>
-          <span>{data.mars.insight_weather.status.replaceAll("_", " ")}</span>
-          {data.mars.insight_weather.sols[0] && (
-            <span>
-              Sol {data.mars.insight_weather.sols[0].sol} ·
-              {data.mars.insight_weather.sols[0].average_temp_c != null ? ` ${Math.round(data.mars.insight_weather.sols[0].average_temp_c)}°C average` : " temperature unavailable"}
-            </span>
-          )}
-        </div>
-      </ExpandedCosmicPanel>
+      <MarsRoverGallery mars={data.mars} requestedDate={data.requested_date} loading={loading} />
 
       <ExpandedCosmicPanel
         id="cosmic-neighborhood"
@@ -209,52 +153,9 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
         </div>
       </ExpandedCosmicPanel>
 
-      <ExpandedCosmicPanel
-        id="solar-activity"
-        eyebrow="NASA CCMC · DONKI"
-        title="Solar Activity"
-        icon="☉"
-        badge={data.solar.level}
-      >
-        <div className="solar-meter">
-          <div className={`solar-meter__orb solar-meter__orb--${data.solar.level.toLowerCase()}`} />
-          <div>
-            <strong>{data.solar.level}</strong>
-            <span>{data.solar.counts.flares} flares · {data.solar.counts.cmes} CMEs · {data.solar.counts.storms} geomagnetic storms</span>
-            {data.solar.max_flare_class && <small>Strongest reported flare: {data.solar.max_flare_class}</small>}
-          </div>
-        </div>
-        <div className="space-weather-grid">
-          {data.solar.flares.map((flare) => <article key={flare.id || flare.begin_time}><span>Flare</span><strong>{flare.class_type || "Unclassified"}</strong><small>{flare.peak_time || flare.begin_time}</small></article>)}
-          {data.solar.cmes.map((cme) => <article key={cme.id || cme.start_time}><span>CME</span><strong>{cme.source_location || "Solar eruption"}</strong><small>{cme.start_time}</small></article>)}
-          {data.solar.storms.map((storm) => <article key={storm.id || storm.start_time}><span>Geomagnetic storm</span><strong>{storm.id || "GST"}</strong><small>{storm.start_time}</small></article>)}
-        </div>
-      </ExpandedCosmicPanel>
+      <SpaceWeatherPanel solar={data.solar} loading={loading} />
 
-      <ExpandedCosmicPanel
-        id="beyond-solar"
-        eyebrow="NASA Exoplanet Archive"
-        title="Beyond Our Solar System"
-        icon="✺"
-        badge={data.exoplanet.highlight?.discovery_year ? `Discovered ${data.exoplanet.highlight.discovery_year}` : "Archive"}
-      >
-        {data.exoplanet.highlight ? (
-          <div className="exo-card">
-            <div className="exo-orb" aria-hidden="true"><span /></div>
-            <div>
-              <p className="eyebrow">Date-linked deterministic highlight</p>
-              <h3>{data.exoplanet.highlight.name}</h3>
-              <p>Host star: {data.exoplanet.highlight.host || "—"} · Method: {data.exoplanet.highlight.discovery_method || "—"}</p>
-              <div className="fact-grid fact-grid--compact">
-                <div className="fact-card"><span>Radius</span><strong>{formatNumber(data.exoplanet.highlight.radius_earth, 2)} R⊕</strong></div>
-                <div className="fact-card"><span>Mass</span><strong>{formatNumber(data.exoplanet.highlight.mass_earth, 2)} M⊕</strong></div>
-                <div className="fact-card"><span>Orbit</span><strong>{formatNumber(data.exoplanet.highlight.orbital_period_days, 2)} d</strong></div>
-                <div className="fact-card"><span>Distance</span><strong>{formatNumber(data.exoplanet.highlight.distance_pc, 1)} pc</strong></div>
-              </div>
-            </div>
-          </div>
-        ) : <p className="empty-copy">The Exoplanet Archive did not return a highlight.</p>}
-      </ExpandedCosmicPanel>
+      <ExoplanetHighlight exoplanet={data.exoplanet} loading={loading} />
 
       <ExpandedCosmicPanel
         id="technology"
