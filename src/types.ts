@@ -111,7 +111,6 @@ export interface SyncPayload {
     location: string;
     source: string;
   };
-  astronomy: TithiPayload;
 }
 
 export interface HealthPayload {
