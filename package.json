@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run packages/core/src/core.test.ts",
+    "test:core": "vitest run packages/core/src/core.test.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -21,6 +23,10 @@
   },
   "devDependencies": {
     "@types/react": "19.1.2",
-    "@types/react-dom": "19.1.2"
-  }
+    "@types/react-dom": "19.1.2",
+    "vitest": "5.0.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
