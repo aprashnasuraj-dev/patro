@@ -44,6 +44,9 @@ export function calculateProgressiveTax(taxableIncomeScaled: bigint, slabs: read
   for (const slab of slabs) {
     const upper = slab.upto ?? taxableIncomeScaled;
     if (upper <= lower) throw new RangeError("Tax slabs must be strictly increasing");
+    if (!Number.isInteger(slab.rateBps) || slab.rateBps < 0 || slab.rateBps > 10_000) {
+      throw new RangeError("Tax slab rate must be an integer between 0 and 10,000 basis points");
+    }
     const taxableInSlab = (taxableIncomeScaled < upper ? taxableIncomeScaled : upper) - lower;
     if (taxableInSlab > 0n) {
       tax += (taxableInSlab * BigInt(slab.rateBps)) / 10_000n;
@@ -63,6 +66,12 @@ export function calculatePersonalTax(input: PersonalTaxInput, policy: TaxPolicy)
   const epf = parseScaled(input.epf ?? 0);
   const cit = parseScaled(input.cit ?? 0);
   const insurance = parseScaled(input.insuranceExemption ?? 0);
+  if ([ssf, epf, cit, insurance].some((value) => value < 0n)) {
+    throw new RangeError("Tax deductions cannot be negative");
+  }
+  if (policy.contributionDeductionCap < 0n || policy.contributionSalaryFractionNumerator < 0n || policy.contributionSalaryFractionDenominator <= 0n) {
+    throw new RangeError("Invalid contribution deduction policy");
+  }
   const contributionTotal = ssf + epf + cit;
   const salaryFractionCap =
     (salary * policy.contributionSalaryFractionNumerator) /
