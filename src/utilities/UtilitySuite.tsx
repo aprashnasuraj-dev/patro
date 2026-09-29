@@ -42,6 +42,7 @@ type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: fal
 
 type ToolId =
   | "typingtools"
+  | "nepali-typing"
   | "preetitounicode"
   | "unicodetopreeti"
   | "bstoad"
@@ -67,7 +68,18 @@ type ToolDirectoryItem = {
   group: ToolGroup;
 };
 
+const FUTURE_TYPING_TOOL: ToolDirectoryItem = {
+  id: "nepali-typing",
+  icon: "ने",
+  title: "नेपाली टाइपिङ · Nepali Typing",
+  subtitle: "Type Roman Nepali and choose from 34,571 local Devanagari suggestions without uploading your text.",
+  badge: "Typing Tools",
+  group: "typing",
+};
+const RELEASE_AT = Date.parse("2027-09-28T18:15:00Z");
+
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
+  ...(Date.now() >= RELEASE_AT ? [FUTURE_TYPING_TOOL] : []),
   { id: "preetitounicode", icon: "क", title: "Preeti → Unicode", subtitle: "Turn legacy Preeti-encoded Nepali text into searchable, copyable Unicode Nepali.", badge: "Typing Tools", group: "typing" },
   { id: "unicodetopreeti", icon: "प्री", title: "Unicode → Preeti", subtitle: "Convert modern Unicode Nepali into Preeti-compatible text for legacy documents and workflows.", badge: "Typing Tools", group: "typing" },
   { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar", group: "utility" },
@@ -84,9 +96,7 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Tools", group: "tools" },
 ];
 
-const TYPING_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "typing");
-const UTILITY_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "utility");
-const GENERAL_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "tools");
+const REMOTE_CATALOG_URL = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/tools-catalog";
 
 function toolFromLocation(): ToolId | null {
   const slug = window.location.pathname.replace(/\/+$/, "").split("/")[2] || "";
@@ -128,6 +138,7 @@ export function UtilitySuite() {
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
+  const [catalog, setCatalog] = useState<ToolDirectoryItem[]>(TOOL_DIRECTORY);
   const [selectedTool, setSelectedTool] = useState<ToolId | null>(toolFromLocation);
   const [fontDirection, setFontDirection] = useState<FontDirection>("preeti-to-unicode");
   const [fontInput, setFontInput] = useState("g]kfn");
@@ -218,6 +229,32 @@ export function UtilitySuite() {
       workerRef.current = null;
       worker.terminate();
     };
+  }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(REMOTE_CATALOG_URL, { signal: controller.signal, headers: { Accept: "application/json" } })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("catalog_unavailable")))
+      .then((body) => {
+        if (!Array.isArray(body?.items)) return;
+        const supported = new Set<ToolId>([
+          "nepali-typing","preetitounicode","unicodetopreeti","bstoad","adtobs","landconverter",
+          "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data"
+        ]);
+        const next = body.items
+          .filter((item: any) => item && supported.has(item.slug as ToolId) && item.slug !== "typingtools")
+          .map((item: any) => ({
+            id: item.slug as Exclude<ToolId, "typingtools">,
+            icon: String(item.icon || "•").slice(0, 4),
+            title: String(item.title || item.slug),
+            subtitle: String(item.subtitle || ""),
+            badge: String(item.badge || "Tools"),
+            group: item.category === "typing" ? "typing" : item.category === "utility" ? "utility" : "tools",
+          })) as ToolDirectoryItem[];
+        if (next.length) setCatalog(next);
+      })
+      .catch(() => undefined);
+    return () => controller.abort();
   }, []);
 
   useEffect(() => {
@@ -384,8 +421,11 @@ export function UtilitySuite() {
 
   const selectedFuelZone = fuel?.zones[fuelZoneIndex] ?? null;
   const selectedMeta = selectedTool && selectedTool !== "typingtools"
-    ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool) ?? null
+    ? catalog.find((tool) => tool.id === selectedTool) ?? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool) ?? null
     : null;
+  const typingTools = catalog.filter((tool) => tool.group === "typing");
+  const utilityTools = catalog.filter((tool) => tool.group === "utility");
+  const generalTools = catalog.filter((tool) => tool.group === "tools");
   const showFont = selectedTool === "preetitounicode" || selectedTool === "unicodetopreeti";
   const showDate = selectedTool === "bstoad" || selectedTool === "adtobs";
   const showCatalog = selectedTool === null;
@@ -422,7 +462,7 @@ export function UtilitySuite() {
               <a href="/tools/typingtools">View typing tools →</a>
             </div>
             <div className="utility-directory-grid">
-              {TYPING_TOOLS.map((tool) => (
+              {typingTools.map((tool) => (
                 <a className="utility-directory-card is-typing-tool" key={tool.id} href={"/tools/" + tool.id}>
                   <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                   <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
@@ -435,7 +475,7 @@ export function UtilitySuite() {
               <div><p className="eyebrow">Converters & utilities</p><h3>Date, land, finance and everyday tools</h3></div>
             </div>
             <div className="utility-directory-grid">
-              {UTILITY_TOOLS.map((tool) => (
+              {utilityTools.map((tool) => (
                 <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
                   <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                   <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
@@ -448,7 +488,7 @@ export function UtilitySuite() {
               <div><p className="eyebrow">Tools</p><h3>Calendar, sharing, family and developer tools</h3></div>
             </div>
             <div className="utility-directory-grid">
-              {GENERAL_TOOLS.map((tool) => (
+              {generalTools.map((tool) => (
                 <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
                   <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                   <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
@@ -459,7 +499,7 @@ export function UtilitySuite() {
           </>}
 
           {showTypingCatalog && <div className="utility-directory-grid">
-            {TYPING_TOOLS.map((tool) => (
+            {typingTools.map((tool) => (
               <a className="utility-directory-card is-typing-tool" key={tool.id} href={"/tools/" + tool.id}>
                 <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                 <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
