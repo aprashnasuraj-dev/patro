@@ -430,6 +430,22 @@ app.post("/contact", async (c) => {
   return c.json(result.ok ? {ok:true} : {ok:false,error:result.error}, result.status as any);
 });
 
+app.post("/tools/tithi-feed-token", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw, "router-tools-tithi-feed-token", 12))) {
+    return c.json({ ok: false, error: "rate_limit_exceeded" }, 429, { "Retry-After": "3600" });
+  }
+  const { createTithiFeedToken } = await import("./services/patroTools.ts");
+  return await createTithiFeedToken(c.req.raw);
+});
+
+app.get("/tools/tithi-feed.ics", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw, "router-tools-tithi-feed", 240))) {
+    return c.json({ ok: false, error: "rate_limit_exceeded" }, 429, { "Retry-After": "3600" });
+  }
+  const { personalTithiFeed } = await import("./services/patroTools.ts");
+  return await personalTithiFeed(c.req.raw);
+});
+
 app.get("/health", (c) => c.json({
   status: "online",
   runtime: "Deno",
@@ -635,7 +651,7 @@ app.get("/media/proxy", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/noc/fuel-prices","/radio/catalog","/radio/stream","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/noc/fuel-prices","/radio/catalog","/radio/stream","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*","/tools/tithi-feed-token","/tools/tithi-feed.ics"]
 }, 404));
 
 app.onError((error, c) => {
