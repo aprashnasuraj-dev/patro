@@ -7,6 +7,10 @@ import { ToolPage } from "./ToolPrimitives";
 import { SaitTool } from "./SaitTool";
 import { BabyNamesTool } from "./BabyNamesTool";
 import { JanmadinAkhbarTool } from "./JanmadinAkhbarTool";
+import { FutureLetterTool } from "./FutureLetterTool";
+import { VoiceTypingTool } from "./VoiceTypingTool";
+import { OcrTool } from "./OcrTool";
+import { PatroBotTool } from "./PatroBotTool";
 
 const LABELS: Record<string, { title: string; description: string }> = {
   "tithi-reminder": { title: "तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
@@ -30,6 +34,10 @@ export function PatroToolsShell({ slug }: { slug: string }) {
   if (slug === "sait") return <SaitTool />;
   if (slug === "baby-names") return <BabyNamesTool />;
   if (slug === "janmadin-akhbar") return <JanmadinAkhbarTool />;
+  if (slug === "future-letter") return <FutureLetterTool />;
+  if (slug === "voice-typing") return <VoiceTypingTool />;
+  if (slug === "ocr") return <OcrTool />;
+  if (slug === "patro-bot") return <PatroBotTool />;
 
   const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
   return (
