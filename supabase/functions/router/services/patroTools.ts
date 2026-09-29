@@ -182,3 +182,52 @@ export async function personalTithiFeed(request: Request) {
     },
   });
 }
+
+const SAIT_KIND_ALIASES: Record<string,string[]> = {
+  vivah: ["vivah","wedding","marriage","विवाह"],
+  bratabandha: ["bratabandha","bratbandha","upanayana","व्रतबन्ध"],
+  griha_pravesh: ["griha","house","home","गृह"],
+  vehicle: ["vehicle","sawari","सवारी"],
+  business: ["business","vyapar","व्यवसाय"],
+  namakaran: ["namakaran","nwaran","naming","नामकरण","न्वारन"],
+};
+
+const officialSaitQuery = z.object({
+  kind: z.enum(["vivah","bratabandha","griha_pravesh","vehicle","business","namakaran"]),
+  from: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  to: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+}).strict();
+
+export async function officialSait(request: Request) {
+  const url = new URL(request.url);
+  const parsed = officialSaitQuery.safeParse({
+    kind: url.searchParams.get("kind") || "",
+    from: url.searchParams.get("from") || "",
+    to: url.searchParams.get("to") || "",
+  });
+  if (!parsed.success || parsed.data.from > parsed.data.to) return json({ok:false,error:"invalid_query"},400);
+  const span = Math.floor((Date.parse(parsed.data.to) - Date.parse(parsed.data.from)) / 86400000) + 1;
+  if (span < 1 || span > 93) return json({ok:false,error:"range_limit",max_days:93},400);
+
+  const params = new URLSearchParams({
+    kind: "eq.sait",
+    select: "fact_date,key,value,source_title,source_url",
+    order: "fact_date.asc",
+  });
+  const endpoint = SUPABASE_URL + "/rest/v1/official_panchang_facts?" + params.toString()
+    + "&fact_date=gte." + encodeURIComponent(parsed.data.from)
+    + "&fact_date=lte." + encodeURIComponent(parsed.data.to);
+  const response = await fetch(endpoint, { headers: serviceHeaders(), signal: AbortSignal.timeout(5000) });
+  if (!response.ok) return json({ok:false,error:"official_sait_unavailable"},502);
+  const rows = await response.json() as Array<{
+    fact_date:string; key:string; value:Record<string,unknown>; source_title?:string; source_url?:string
+  }>;
+  const aliases = SAIT_KIND_ALIASES[parsed.data.kind];
+  const official = rows.filter((row) => {
+    const tz = String(row.value?.tz || "");
+    if (tz && tz !== "Asia/Kathmandu") return false;
+    const text = (row.key + " " + String(row.value?.label_ne || "") + " " + String(row.value?.label_en || "")).toLowerCase();
+    return aliases.some((alias) => text.includes(alias.toLowerCase()));
+  });
+  return json({ok:true,kind:parsed.data.kind,official},200,{"cache-control":"public, max-age=300, s-maxage=3600"});
+}
