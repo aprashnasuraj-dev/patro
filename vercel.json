@@ -170,6 +170,22 @@
       "destination": "/nepal-sambat/mandala/index.html"
     },
     {
+      "source": "/samudaya/mithila",
+      "destination": "/samudaya/mithila/index.html"
+    },
+    {
+      "source": "/samudaya/kirat",
+      "destination": "/samudaya/kirat/index.html"
+    },
+    {
+      "source": "/samudaya/hijri",
+      "destination": "/samudaya/hijri/index.html"
+    },
+    {
+      "source": "/samudaya/chakra",
+      "destination": "/samudaya/chakra/index.html"
+    },
+    {
       "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$|samudaya(?:/.*)?$|nepal-sambat/mandala/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
