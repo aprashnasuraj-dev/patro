@@ -7,6 +7,26 @@ type DateMetadata = { confidence: "validated-project-archive" | "provisional-ope
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
 type QrResult = { dataUrl: string; modules: number; bytes: number };
 type CourtFeeResult = { claimAmount: string; fee: string; bands: { label: string; amount: string; fee: string; rateBps: number | null }[] };
+type FuelZone = {
+  depots: string[];
+  petrol: number;
+  diesel: number;
+  kerosene: number;
+  atfDutyFreeUsdPerKl: number | null;
+  atfDomesticNprPerL: number | null;
+  lpgNprPerCylinder: number | null;
+};
+type FuelPayload = {
+  ok: true;
+  source: string;
+  sourceUrl: string;
+  fetchedAt: string;
+  effectiveDate: string | null;
+  freshness: "live" | "official-snapshot";
+  stale: boolean;
+  note?: string;
+  zones: FuelZone[];
+};
 type TaxResult = {
   fiscalYear: string;
   taxableIncome: string;
@@ -81,6 +101,17 @@ export function UtilitySuite() {
   const [courtClaim, setCourtClaim] = useState("500000");
   const [courtFeeResult, setCourtFeeResult] = useState<CourtFeeResult | null>(null);
   const [courtFeeError, setCourtFeeError] = useState("");
+  const [fuel, setFuel] = useState<FuelPayload | null>(() => {
+    try {
+      const raw = localStorage.getItem("patro.noc.fuel");
+      return raw ? JSON.parse(raw) as FuelPayload : null;
+    } catch {
+      return null;
+    }
+  });
+  const [fuelZoneIndex, setFuelZoneIndex] = useState(0);
+  const [fuelError, setFuelError] = useState("");
+  const [fuelLoading, setFuelLoading] = useState(false);
 
   useEffect(() => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
@@ -141,6 +172,39 @@ export function UtilitySuite() {
       window.removeEventListener("online", onOnline);
       window.removeEventListener("offline", onOffline);
     };
+  }, []);
+
+  async function loadFuelPrices() {
+    if (!navigator.onLine) {
+      setFuelError(fuel ? "Offline — showing last saved NOC data." : "Offline — no saved NOC price data is available yet.");
+      return;
+    }
+    setFuelLoading(true);
+    try {
+      const response = await fetch("/api/v1/noc/fuel-prices", {
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+      });
+      const body = await response.json() as FuelPayload | { ok?: false; error?: string };
+      if (!response.ok || !body || body.ok !== true || !("zones" in body) || !Array.isArray(body.zones) || !body.zones.length) {
+        throw new Error("error" in body && body.error ? body.error : "NOC fuel service unavailable");
+      }
+      const next = body as FuelPayload;
+      setFuel(next);
+      setFuelZoneIndex((current) => Math.min(current, Math.max(0, next.zones.length - 1)));
+      setFuelError(next.stale ? (next.note || "Official snapshot is being shown.") : "");
+      try { localStorage.setItem("patro.noc.fuel", JSON.stringify(next)); } catch { /* best-effort offline cache */ }
+    } catch (error) {
+      setFuelError((fuel ? "Using last saved data. " : "") + (error instanceof Error ? error.message : "NOC fuel service unavailable"));
+    } finally {
+      setFuelLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    void loadFuelPrices();
+    // Initial refresh only; manual refresh is available and online/offline state is shown separately.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -250,6 +314,8 @@ export function UtilitySuite() {
   const copy = async (text: string) => {
     try { await navigator.clipboard.writeText(text); } catch { /* Clipboard may be blocked by browser policy. */ }
   };
+
+  const selectedFuelZone = fuel?.zones[fuelZoneIndex] ?? null;
 
   return (
     <main className="utility-suite" aria-label="Nepali utility tools">
@@ -430,6 +496,47 @@ export function UtilitySuite() {
         </div>
         <p className="utility-note">This estimates the value-based civil court fee only. Filing, appeal, copy, execution or case-specific exemptions/fees are separate.</p>
         {courtFeeError && <p className="utility-error" role="alert">{courtFeeError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="fuel-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Nepal Oil Corporation</p>
+            <h2 id="fuel-title">Fuel Price Tracker</h2>
+          </div>
+          <button type="button" className="utility-secondary" disabled={fuelLoading || !online} onClick={() => void loadFuelPrices()}>
+            {fuelLoading ? "Refreshing…" : "Refresh NOC"}
+          </button>
+        </header>
+
+        {fuel && selectedFuelZone ? <>
+          <div className="fuel-toolbar">
+            <label className="utility-field">
+              <span>Price zone / depot group</span>
+              <select value={fuelZoneIndex} onChange={(event) => setFuelZoneIndex(Number(event.target.value))}>
+                {fuel.zones.map((zone, index) => <option value={index} key={zone.depots.join("|")}>{zone.depots.join(", ")}</option>)}
+              </select>
+            </label>
+            <span className={"utility-status " + (fuel.stale ? "is-offline" : "is-online")}>
+              {fuel.stale ? "Official snapshot · stale" : "Live NOC source"}
+            </span>
+          </div>
+
+          <div className="fuel-grid">
+            <article className="utility-result"><span>Petrol</span><strong>NPR {selectedFuelZone.petrol}/L</strong></article>
+            <article className="utility-result"><span>Diesel</span><strong>NPR {selectedFuelZone.diesel}/L</strong></article>
+            <article className="utility-result"><span>Kerosene</span><strong>NPR {selectedFuelZone.kerosene}/L</strong></article>
+            <article className="utility-result"><span>LP Gas</span><strong>{selectedFuelZone.lpgNprPerCylinder == null ? "—" : "NPR " + selectedFuelZone.lpgNprPerCylinder + "/cyl"}</strong></article>
+            <article className="utility-result"><span>ATF domestic</span><strong>{selectedFuelZone.atfDomesticNprPerL == null ? "—" : "NPR " + selectedFuelZone.atfDomesticNprPerL + "/L"}</strong></article>
+            <article className="utility-result"><span>ATF duty free</span><strong>{selectedFuelZone.atfDutyFreeUsdPerKl == null ? "—" : "USD " + selectedFuelZone.atfDutyFreeUsdPerKl + "/KL"}</strong></article>
+          </div>
+          <p className="utility-note">
+            Depots: {selectedFuelZone.depots.join(", ")}. {fuel.effectiveDate ? "Effective reference: " + fuel.effectiveDate + ". " : ""}
+            Fetched {new Date(fuel.fetchedAt).toLocaleString()}.
+            {fuel.note ? " " + fuel.note : ""}
+          </p>
+        </> : <p className="utility-note">No NOC price data saved yet. Connect once to fetch the current official source or the latest verified official snapshot.</p>}
+        {fuelError && <p className="utility-warning" role="status">{fuelError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
