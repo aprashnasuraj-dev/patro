@@ -6,6 +6,7 @@ import {
   bsToAd,
   daysInBsMonth,
   bighaToSqFt,
+  calculateCivilCourtFee,
   calculateNepalSalaryTax2083,
   calculatePersonalTax,
   formatScaled,
@@ -174,5 +175,21 @@ describe("UTF-8 utility", () => {
       224, 164, 168, 224, 165, 135, 224, 164, 170, 224, 164, 190,
       224, 164, 178, 224, 165, 128,
     ]);
+  });
+});
+
+
+describe("Nepal civil court fee", () => {
+  it("uses the NPR 500 flat first band", () => {
+    expect(calculateCivilCourtFee("10000").feeScaled).toBe(500n * SCALE);
+    expect(calculateCivilCourtFee("25000").feeScaled).toBe(500n * SCALE);
+  });
+
+  it("applies successive statutory percentages", () => {
+    expect(calculateCivilCourtFee("50000").feeScaled).toBe(1_750n * SCALE);
+    expect(calculateCivilCourtFee("100000").feeScaled).toBe(3_500n * SCALE);
+    expect(calculateCivilCourtFee("500000").feeScaled).toBe(11_500n * SCALE);
+    expect(calculateCivilCourtFee("2500000").feeScaled).toBe(41_500n * SCALE);
+    expect(calculateCivilCourtFee("3000000").feeScaled).toBe(46_500n * SCALE);
   });
 });
