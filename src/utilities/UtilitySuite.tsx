@@ -449,7 +449,7 @@ export function UtilitySuite() {
               <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing tool" : "Choose what you want to do"}</h2>
               <p>{showTypingCatalog ? "Preeti conversion stays in one converter. Nepali Typing is a separate Roman → Unicode writing tool." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
             </div>
-            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Patro home"}</a>
+            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Mero Patro home"}</a>
           </div>
 
           {showCatalog && <>
@@ -517,7 +517,7 @@ export function UtilitySuite() {
         <nav className="utility-tool-nav" aria-label="Utility navigation">
           <button type="button" onClick={() => chooseTool(null)}>← All tools</button>
           <strong>{selectedMeta?.title}</strong>
-          <a href="/">Patro home</a>
+          <a href="/">Mero Patro home</a>
         </nav>
       )}
 

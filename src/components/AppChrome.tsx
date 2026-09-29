@@ -111,9 +111,9 @@ export function AppChrome({ children }: { children: ReactNode }) {
     <div className="patro-shell">
       <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="patro-nav" aria-label="Primary navigation">
-        <a className="patro-brand tap-target" href="/" aria-label="Nepali Patro home">
+        <a className="patro-brand tap-target" href="/" aria-label="Mero Patro home">
           <span aria-hidden="true">☀</span>
-          <span><strong>नेपाली पात्रो</strong><small>Nepali Patro</small></span>
+          <span><strong>मेरो पात्रो</strong><small>Mero Patro</small></span>
         </a>
 
         <nav className="patro-nav-links" aria-label="Main sections">
