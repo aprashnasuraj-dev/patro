@@ -22,7 +22,6 @@ jobs:
             .bootstrap/patro-tools-kit.b64.01 \
             .bootstrap/patro-tools-kit.b64.02 \
             .bootstrap/patro-tools-kit.b64.03 \
-            .bootstrap/patro-tools-kit.b64.04 \
             .bootstrap/rest.part-aa \
             .bootstrap/rest.part-ab \
             .bootstrap/rest.part-ac \
@@ -30,10 +29,10 @@ jobs:
             .bootstrap/rest.part-ae \
             .bootstrap/rest.part-af \
             | base64 -d > /tmp/patro-tools-source-only.zip
-          echo "0b2e1bdcbd68b404337f8eb7b3fe0c5d8edc0735afb992035f0a361c42e6331f  /tmp/patro-tools-source-only.zip" | sha256sum -c -
           rm -rf /tmp/patro-tools-kit
           mkdir -p /tmp/patro-tools-kit
           unzip -q /tmp/patro-tools-source-only.zip -d /tmp/patro-tools-kit
+          (cd /tmp/patro-tools-kit && sha256sum -c "$GITHUB_WORKSPACE/.bootstrap/patro-tools.sha256")
           rm -rf src/patro-tools
           cp -R /tmp/patro-tools-kit/src/patro-tools src/patro-tools
           mkdir -p tests docs
