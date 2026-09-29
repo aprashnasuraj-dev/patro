@@ -10,56 +10,19 @@
   "background_color": "#FFFFFF",
   "theme_color": "#176f3b",
   "orientation": "any",
-  "categories": [
-    "productivity",
-    "lifestyle",
-    "news"
-  ],
+  "categories": ["productivity", "lifestyle", "news"],
+  "prefer_related_applications": false,
   "icons": [
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    {"src":"/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
   ],
   "shortcuts": [
-    {
-      "name": "पात्रो",
-      "short_name": "पात्रो",
-      "url": "/"
-    },
-    {
-      "name": "राशिफल",
-      "short_name": "राशिफल",
-      "url": "/jyotish/rashifal"
-    },
-    {
-      "name": "मिति रूपान्तरण",
-      "short_name": "रूपान्तरण",
-      "url": "/convert"
-    },
-    {
-      "name": "लाइभ टिभी",
-      "short_name": "TV",
-      "url": "/tv"
-    },
-    {
-      "name": "नेपाली टाइपिङ",
-      "short_name": "टाइपिङ",
-      "url": "/tools/nepali-typing"
-    }
+    {"name":"पात्रो","short_name":"पात्रो","url":"/","icons":[{"src":"/icon-192.png","sizes":"192x192"}]},
+    {"name":"राशिफल","short_name":"राशिफल","url":"/rashifal/aries/aaja"},
+    {"name":"मिति रूपान्तरण","short_name":"रूपान्तरण","url":"/convert"},
+    {"name":"लाइभ टिभी","short_name":"TV","url":"/tv"},
+    {"name":"नेपाली टाइपिङ","short_name":"टाइपिङ","url":"/tools/nepali-typing"},
+    {"name":"मेरो डायरी","short_name":"डायरी","url":"/my-diary"}
   ]
 }
