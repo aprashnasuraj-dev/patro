@@ -476,7 +476,7 @@ app.get("/radio/stream", async (c) => {
   return await radioStreamResponse(c.req.raw);
 });
 
-app.head("/radio/stream", async (c) => {
+app.on("HEAD", "/radio/stream", async (c) => {
   const { radioStreamResponse } = await import("./services/radioBrowser.ts");
   return await radioStreamResponse(c.req.raw);
 });
