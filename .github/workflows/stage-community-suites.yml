@@ -1,0 +1,134 @@
+name: Stage community-suite inputs
+on:
+  workflow_dispatch:
+  push:
+    branches: [staging/community-suite-import-20260929]
+    paths:
+      - '.github/workflows/stage-community-suites.yml'
+permissions:
+  contents: write
+jobs:
+  stage:
+    if: "!contains(github.event.head_commit.message || '', '[community-source-staged]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging/community-suite-import-20260929
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Download supplied bundles
+        env:
+          SHARE_URL: https://firestorage.ai/ja/f/FYlFhgXG9N_x
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/community-inputs
+          npm exec --yes --package=playwright@1.56.1 playwright install chromium >/dev/null
+          cat > /tmp/community-inputs/download.cjs <<'NODE'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          const path = require('path');
+          const share = process.env.SHARE_URL;
+          const wanted = ['community-suites-bundle.zip','community-frontends.zip'];
+          (async () => {
+            const browser = await chromium.launch({headless:true});
+            const ctx = await browser.newContext({acceptDownloads:true});
+            const page = await ctx.newPage();
+            await page.goto(share,{waitUntil:'domcontentloaded',timeout:60000});
+            await page.waitForTimeout(4000);
+            for (const name of wanted) {
+              let target = page.getByText(name,{exact:false}).first();
+              await target.waitFor({state:'visible',timeout:30000});
+              const clickable = target.locator('xpath=ancestor-or-self::a[1] | ancestor-or-self::button[1]').first();
+              let candidate = clickable;
+              if (await clickable.count() === 0) candidate = target;
+              const href = await candidate.getAttribute('href').catch(()=>null);
+              if (href) {
+                const url = new URL(href, page.url()).toString();
+                const response = await ctx.request.get(url,{timeout:60000});
+                if (response.ok()) {
+                  fs.writeFileSync(path.join('/tmp/community-inputs',name), await response.body());
+                  continue;
+                }
+              }
+              const dlPromise = page.waitForEvent('download',{timeout:45000});
+              await candidate.click({timeout:30000});
+              const dl = await dlPromise;
+              await dl.saveAs(path.join('/tmp/community-inputs',name));
+            }
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+          NODE_PATH="$(npm root -g):$(npm root)" npm exec --yes --package=playwright@1.56.1 node /tmp/community-inputs/download.cjs
+          unzip -t /tmp/community-inputs/community-suites-bundle.zip >/dev/null
+          unzip -t /tmp/community-inputs/community-frontends.zip >/dev/null
+      - name: Import source exactly and wire BS adapter
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/community-suites /tmp/community-frontends
+          mkdir -p /tmp/community-suites /tmp/community-frontends
+          unzip -q /tmp/community-inputs/community-suites-bundle.zip -d /tmp/community-suites
+          unzip -q /tmp/community-inputs/community-frontends.zip -d /tmp/community-frontends
+          ROOT="$(find /tmp/community-suites -maxdepth 2 -type d -name patro-tools | head -1)"
+          test -n "$ROOT"
+          for d in communities nepal-sambat core tithi-events festivals; do
+            rm -rf "src/patro-tools/$d"
+            cp -R "$ROOT/src/patro-tools/$d" "src/patro-tools/$d"
+          done
+          mkdir -p src/server db/communities db/nepal-sambat docs community-frontends
+          cp "$ROOT/db/communities/schema.sql" db/communities/schema.sql
+          cp "$ROOT/db/communities/seed.sql" db/communities/seed.sql
+          cp "$ROOT/db/nepal-sambat/schema.sql" db/nepal-sambat/schema.sql
+          cp "$ROOT/db/nepal-sambat/seed.sql" db/nepal-sambat/seed.sql
+          cp "$ROOT/db/nepal-sambat/days.csv" db/nepal-sambat/days.csv
+          cp "$ROOT/COMMUNITY-SUITES.md" docs/COMMUNITY-SUITES.md
+          if [ -f "$ROOT/NEPAL-SAMBAT.md" ]; then cp "$ROOT/NEPAL-SAMBAT.md" docs/NEPAL-SAMBAT.md; fi
+          cp "$ROOT/tests/communities.test.ts" tests/communities.test.ts
+          cp "$ROOT/tests/nepal-sambat.test.ts" tests/nepal-sambat.test.ts
+          FRONT="$(find /tmp/community-frontends -maxdepth 2 -type f -name README.md -printf '%h\n' | head -1)"
+          test -n "$FRONT"
+          rm -rf community-frontends
+          mkdir -p community-frontends
+          cp -R "$FRONT/." community-frontends/
+          cat > src/server/bs-adapter.ts <<'TS'
+          import { adToBs, bsToAd } from "../../packages/core/src/bsDate";
+          import type { BsAdapter } from "@/patro-tools/core/types";
+
+          function iso(parts: { year: number; month: number; day: number }) {
+            return `${String(parts.year).padStart(4, "0")}-${String(parts.month).padStart(2, "0")}-${String(parts.day).padStart(2, "0")}`;
+          }
+
+          export const bsAdapter: BsAdapter = {
+            toAD(bs) {
+              const [year, month, day] = bsToAd(bs).split("-").map(Number);
+              return { year, month, day };
+            },
+            toBS(ad) {
+              return adToBs(iso(ad));
+            },
+          };
+          TS
+      - name: Verify supplied engine tests unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-audit --no-fund
+          npx vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts tests/communities.test.ts tests/nepal-sambat.test.ts
+          npm run typecheck
+          npm run build
+      - name: Commit staged sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/patro-tools src/server db docs/COMMUNITY-SUITES.md docs/NEPAL-SAMBAT.md tests/communities.test.ts tests/nepal-sambat.test.ts community-frontends
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore(community): stage supplied suite sources [community-source-staged] [skip ci]"
+          git push origin HEAD:staging/community-suite-import-20260929
