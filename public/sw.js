@@ -1,4 +1,4 @@
-const VERSION = "patro-shell-v4";
+const VERSION = "patro-shell-v5-nepali-typing";
 const scopePath = new URL(self.registration.scope).pathname;
 const ENTRY = scopePath.startsWith("/tools") ? "/tools" : "/astro/";
 const SHELL = [ENTRY, "/astro/manifest.webmanifest", "/astro/icon.svg"];
@@ -17,7 +17,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== VERSION).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => key.startsWith("patro-shell-") && key !== VERSION).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
