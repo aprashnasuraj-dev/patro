@@ -6,19 +6,6 @@ type Terai = { bigha: string; kattha: string; dhur: string };
 type DateMetadata = { confidence: "validated-project-archive" | "provisional-open-table"; source: string; note: string };
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
 type QrResult = { dataUrl: string; modules: number; bytes: number };
-type CourtFeeResult = { claimAmount: string; fee: string; bands: { label: string; amount: string; fee: string; rateBps: number | null }[] };
-type VehicleRenewalResult = {
-  fiscalYear: "2083/84";
-  province: "Bagmati";
-  kind: "motorcycle" | "car";
-  engineCc: number;
-  bracket: string;
-  annualTaxNpr: string;
-  renewalFeeNpr: string;
-  governmentSubtotalNpr: string;
-  excludes: string[];
-  sourceNote: string;
-};
 type FuelZone = {
   depots: string[];
   petrol: number;
@@ -73,8 +60,6 @@ export function UtilitySuite() {
   const latestAdDate = useRef(0);
   const latestTax = useRef(0);
   const latestQr = useRef(0);
-  const latestCourtFee = useRef(0);
-  const latestVehicle = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -111,13 +96,6 @@ export function UtilitySuite() {
   const [qrLevel, setQrLevel] = useState<"L" | "M" | "Q" | "H">("M");
   const [qrResult, setQrResult] = useState<QrResult | null>(null);
   const [qrError, setQrError] = useState("");
-  const [courtClaim, setCourtClaim] = useState("500000");
-  const [courtFeeResult, setCourtFeeResult] = useState<CourtFeeResult | null>(null);
-  const [courtFeeError, setCourtFeeError] = useState("");
-  const [vehicleKind, setVehicleKind] = useState<"motorcycle" | "car">("motorcycle");
-  const [vehicleCc, setVehicleCc] = useState("150");
-  const [vehicleResult, setVehicleResult] = useState<VehicleRenewalResult | null>(null);
-  const [vehicleError, setVehicleError] = useState("");
   const [fuel, setFuel] = useState<FuelPayload | null>(() => {
     try {
       const raw = localStorage.getItem("patro.noc.fuel");
@@ -141,8 +119,6 @@ export function UtilitySuite() {
         else if (message.id === latestBsDate.current || message.id === latestAdDate.current) setDateError(message.error);
         else if (message.id === latestTax.current) setTaxError(message.error);
         else if (message.id === latestQr.current) setQrError(message.error);
-        else if (message.id === latestCourtFee.current) setCourtFeeError(message.error);
-        else if (message.id === latestVehicle.current) setVehicleError(message.error);
         else setLandError(message.error);
         return;
       }
@@ -170,12 +146,6 @@ export function UtilitySuite() {
       } else if (message.id === latestQr.current) {
         setQrResult(message.result);
         setQrError("");
-      } else if (message.id === latestCourtFee.current) {
-        setCourtFeeResult(message.result);
-        setCourtFeeError("");
-      } else if (message.id === latestVehicle.current) {
-        setVehicleResult(message.result);
-        setVehicleError("");
       }
     };
     return () => {
@@ -316,31 +286,6 @@ export function UtilitySuite() {
     }, 100);
     return () => window.clearTimeout(timer);
   }, [qrText, qrLevel, workerReady]);
-
-  useEffect(() => {
-    if (!workerReady || !courtClaim.trim()) return;
-    const timer = window.setTimeout(() => {
-      const id = ++sequence.current;
-      latestCourtFee.current = id;
-      workerRef.current?.postMessage({ id, type: "court-fee", claimAmount: courtClaim });
-    }, 80);
-    return () => window.clearTimeout(timer);
-  }, [courtClaim, workerReady]);
-
-  useEffect(() => {
-    if (!workerReady) return;
-    const engineCc = Number(vehicleCc);
-    if (!Number.isInteger(engineCc) || engineCc <= 0) {
-      setVehicleResult(null);
-      return;
-    }
-    const timer = window.setTimeout(() => {
-      const id = ++sequence.current;
-      latestVehicle.current = id;
-      workerRef.current?.postMessage({ id, type: "vehicle-2083", kind: vehicleKind, engineCc });
-    }, 80);
-    return () => window.clearTimeout(timer);
-  }, [vehicleKind, vehicleCc, workerReady]);
 
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
@@ -503,36 +448,6 @@ export function UtilitySuite() {
         {qrError && <p className="utility-error" role="alert">{qrError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="court-fee-title">
-        <header className="utility-card-head">
-          <div>
-            <p className="eyebrow">Muluki Civil Procedure Code · Chapter 6</p>
-            <h2 id="court-fee-title">Civil Court Fee Calculator</h2>
-          </div>
-          <span className="utility-badge">Value-based claim fee</span>
-        </header>
-
-        <div className="court-grid">
-          <article className="land-panel">
-            <h3>Claim amount</h3>
-            <Field label="Claim / बिगो amount (NPR)" value={courtClaim} onChange={setCourtClaim} />
-            {courtFeeResult && <div className="utility-result">
-              <span>Estimated statutory court fee</span>
-              <strong>NPR {courtFeeResult.fee}</strong>
-              <small>Claim NPR {courtFeeResult.claimAmount}</small>
-            </div>}
-          </article>
-          <article className="court-bands">
-            {courtFeeResult?.bands.map((band, index) => <div key={index}>
-              <strong>{band.rateBps === null ? "Flat" : (band.rateBps / 100) + "%"}</strong>
-              <span>{band.label}</span>
-              <small>NPR {band.fee} fee on NPR {band.amount}</small>
-            </div>)}
-          </article>
-        </div>
-        <p className="utility-note">This estimates the value-based civil court fee only. Filing, appeal, copy, execution or case-specific exemptions/fees are separate.</p>
-        {courtFeeError && <p className="utility-error" role="alert">{courtFeeError}</p>}
-      </section>
 
       <section className="utility-card" aria-labelledby="fuel-title">
         <header className="utility-card-head">
@@ -575,37 +490,6 @@ export function UtilitySuite() {
         {fuelError && <p className="utility-warning" role="status">{fuelError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="vehicle-title">
-        <header className="utility-card-head">
-          <div>
-            <p className="eyebrow">Bagmati · FY 2083/84</p>
-            <h2 id="vehicle-title">Vehicle Renewal Calculator</h2>
-          </div>
-          <span className="utility-badge">Private petrol / diesel</span>
-        </header>
-
-        <div className="vehicle-grid">
-          <article className="land-panel">
-            <label className="utility-field">
-              <span>Vehicle type</span>
-              <select value={vehicleKind} onChange={(event) => setVehicleKind(event.target.value as "motorcycle" | "car")}>
-                <option value="motorcycle">Motorcycle / scooter</option>
-                <option value="car">Car / jeep / van</option>
-              </select>
-            </label>
-            <Field label="Engine capacity (cc)" value={vehicleCc} onChange={setVehicleCc} />
-          </article>
-
-          {vehicleResult && <article className="vehicle-result">
-            <div className="utility-result"><span>Annual vehicle tax</span><strong>NPR {vehicleResult.annualTaxNpr}</strong><small>{vehicleResult.bracket}</small></div>
-            <div className="utility-result"><span>Registration renewal fee</span><strong>NPR {vehicleResult.renewalFeeNpr}</strong></div>
-            <div className="utility-result vehicle-total"><span>Government subtotal</span><strong>NPR {vehicleResult.governmentSubtotalNpr}</strong></div>
-          </article>}
-        </div>
-
-        <p className="utility-note">Current scope is Bagmati private combustion vehicles only. The subtotal excludes third-party insurance, late penalties, arrears, inspection/pollution fees, age surcharges, concessions and exemptions. EV and late-payment schedules stay disabled until their FY 2083/84 changes are independently verified.</p>
-        {vehicleError && <p className="utility-error" role="alert">{vehicleError}</p>}
-      </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
         <header className="utility-card-head">
