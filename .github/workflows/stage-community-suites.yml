@@ -35,7 +35,7 @@ jobs:
           const fs = require('fs');
           const path = require('path');
           const share = process.env.SHARE_URL;
-          const wanted = ['community-suites-bundle.zip','community-frontends.zip'];
+          const wanted = ['community-suites-bundle.zip','community-frontends.zip','nepal-sambat-suite (1).zip'];
           (async () => {
             const browser = await chromium.launch({headless:true});
             const ctx = await browser.newContext({acceptDownloads:true});
@@ -68,14 +68,16 @@ jobs:
           NODE_PATH="$PWD/node_modules" node /tmp/community-inputs/download.cjs
           unzip -t /tmp/community-inputs/community-suites-bundle.zip >/dev/null
           unzip -t /tmp/community-inputs/community-frontends.zip >/dev/null
+          unzip -t "/tmp/community-inputs/nepal-sambat-suite (1).zip" >/dev/null
       - name: Import source exactly and wire BS adapter
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf /tmp/community-suites /tmp/community-frontends
-          mkdir -p /tmp/community-suites /tmp/community-frontends
+          rm -rf /tmp/community-suites /tmp/community-frontends /tmp/nepal-sambat
+          mkdir -p /tmp/community-suites /tmp/community-frontends /tmp/nepal-sambat
           unzip -q /tmp/community-inputs/community-suites-bundle.zip -d /tmp/community-suites
           unzip -q /tmp/community-inputs/community-frontends.zip -d /tmp/community-frontends
+          unzip -q "/tmp/community-inputs/nepal-sambat-suite (1).zip" -d /tmp/nepal-sambat
           ROOT="$(find /tmp/community-suites -maxdepth 2 -type d -name patro-tools | head -1)"
           test -n "$ROOT"
           for d in communities nepal-sambat core tithi-events festivals; do
@@ -89,7 +91,9 @@ jobs:
           cp "$ROOT/db/nepal-sambat/seed.sql" db/nepal-sambat/seed.sql
           cp "$ROOT/db/nepal-sambat/days.csv" db/nepal-sambat/days.csv
           cp "$ROOT/COMMUNITY-SUITES.md" docs/COMMUNITY-SUITES.md
-          if [ -f "$ROOT/NEPAL-SAMBAT.md" ]; then cp "$ROOT/NEPAL-SAMBAT.md" docs/NEPAL-SAMBAT.md; fi
+          NSROOT="$(find /tmp/nepal-sambat -maxdepth 2 -type d -name patro-tools | head -1)"
+          test -n "$NSROOT"
+          cp "$NSROOT/NEPAL-SAMBAT.md" docs/NEPAL-SAMBAT.md
           cp "$ROOT/tests/"*.test.ts tests/
           FRONT="$(find /tmp/community-frontends -maxdepth 2 -type f -name README.md -printf '%h\n' | head -1)"
           test -n "$FRONT"
@@ -120,7 +124,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/patro-tools src/server db docs/COMMUNITY-SUITES.md docs/NEPAL-SAMBAT.md tests/communities.test.ts tests/nepal-sambat.test.ts community-frontends
+          git add src/patro-tools src/server db docs tests community-frontends
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore(community): stage supplied suite sources [community-source-staged] [skip ci]"
           git push origin HEAD:staging/community-suite-import-20260929
