@@ -1,4 +1,5 @@
 import type { PersonalTithiEvent } from "@/patro-tools/tithi-events/events";
+import type { Sealed } from "@/patro-tools/letters/crypto";
 
 const LIFE_KEY = "nepalmiti.life.v1";
 const SESSION_KEY = "nepalmiti.session.v1";
@@ -7,6 +8,17 @@ const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uONsehXk_IXPMu7PPGF1nw_4_gbD_Hm
 
 export type StoredTithiEvent = PersonalTithiEvent & {
   sourceDate: string;
+  updatedAt: number;
+};
+
+export type StoredFutureLetter = {
+  id: string;
+  recipientName: string;
+  teaser?: string;
+  openAt: string;
+  openAtLabel: string;
+  sealed: Sealed;
+  createdAt: string;
   updatedAt: number;
 };
 
@@ -27,6 +39,7 @@ export type LifeState = {
   festivalPlans: Array<Record<string, unknown>>;
   tithiEvents: StoredTithiEvent[];
   nameChecks: StoredNameCheck[];
+  futureLetters: StoredFutureLetter[];
   updatedAt: number;
   [key: string]: unknown;
 };
@@ -39,6 +52,7 @@ const EMPTY: LifeState = {
   festivalPlans: [],
   tithiEvents: [],
   nameChecks: [],
+  futureLetters: [],
   updatedAt: 0,
 };
 
@@ -58,6 +72,7 @@ export function readLife(): LifeState {
       festivalPlans: objectRows(parsed.festivalPlans),
       tithiEvents: Array.isArray(parsed.tithiEvents) ? parsed.tithiEvents as StoredTithiEvent[] : [],
       nameChecks: Array.isArray(parsed.nameChecks) ? parsed.nameChecks as StoredNameCheck[] : [],
+      futureLetters: Array.isArray(parsed.futureLetters) ? parsed.futureLetters as StoredFutureLetter[] : [],
       updatedAt: Number(parsed.updatedAt || 0),
     };
   } catch {
@@ -114,6 +129,7 @@ function mergeLife(local: LifeState, remoteRaw: unknown): LifeState {
     festivalPlans: mergeById(objectRows(remote.festivalPlans) as Array<Record<string, unknown> & {id?:string;updatedAt?:number}>, local.festivalPlans),
     tithiEvents: mergeById(Array.isArray(remote.tithiEvents) ? remote.tithiEvents as StoredTithiEvent[] : [], local.tithiEvents),
     nameChecks: mergeById(Array.isArray(remote.nameChecks) ? remote.nameChecks as StoredNameCheck[] : [], local.nameChecks),
+    futureLetters: mergeById(Array.isArray(remote.futureLetters) ? remote.futureLetters as StoredFutureLetter[] : [], local.futureLetters),
     updatedAt: Math.max(Number(remote.updatedAt || 0), Number(local.updatedAt || 0)),
   };
 }
