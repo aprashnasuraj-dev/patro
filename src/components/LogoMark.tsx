@@ -1,0 +1,11 @@
+export function LogoMark({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
+      <rect width="1000" height="1000" rx="220" fill="currentColor" />
+      <circle cx="680" cy="185" r="48" fill="#D7EDDF" />
+      <g transform="translate(170 680) scale(1 -1)">
+        <path d="M566 512V0H432V221H246V204Q246 161 228 143Q210 125 176 125Q155 125 130 138.5Q105 152 82.5 174Q60 196 45.5 221.5Q31 247 31 270Q31 296 45.5 313.5Q60 331 102 331H112V512H0V622H661V512ZM432 512H246V331H432Z" fill="white" />
+      </g>
+    </svg>
+  );
+}

@@ -21,7 +21,8 @@
     "astronomy-engine": "2.1.19",
     "hls.js": "1.7.3",
     "html2pdf.js": "0.14.0",
-    "qrcode-generator": "2.0.4"
+    "qrcode-generator": "2.0.4",
+    "lucide-react": "0.468.0"
   },
   "devDependencies": {
     "@types/react": "19.1.2",

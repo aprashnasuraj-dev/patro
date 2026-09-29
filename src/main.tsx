@@ -5,6 +5,7 @@ import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
 import { registerPatroServiceWorker } from "./pwa";
+import "./design-tokens.css";
 import "./styles.css";
 import "./cosmic.css";
 import "./swarm.css";
