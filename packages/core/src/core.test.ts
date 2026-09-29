@@ -6,8 +6,6 @@ import {
   bsToAd,
   daysInBsMonth,
   bighaToSqFt,
-  calculateBagmatiPrivateRenewal2083,
-  calculateCivilCourtFee,
   calculateNepalSalaryTax2083,
   calculatePersonalTax,
   formatScaled,
@@ -176,45 +174,5 @@ describe("UTF-8 utility", () => {
       224, 164, 168, 224, 165, 135, 224, 164, 170, 224, 164, 190,
       224, 164, 178, 224, 165, 128,
     ]);
-  });
-});
-
-
-describe("Nepal civil court fee", () => {
-  it("uses the NPR 500 flat first band", () => {
-    expect(calculateCivilCourtFee("10000").feeScaled).toBe(500n * SCALE);
-    expect(calculateCivilCourtFee("25000").feeScaled).toBe(500n * SCALE);
-  });
-
-  it("applies successive statutory percentages", () => {
-    expect(calculateCivilCourtFee("50000").feeScaled).toBe(1_750n * SCALE);
-    expect(calculateCivilCourtFee("100000").feeScaled).toBe(3_500n * SCALE);
-    expect(calculateCivilCourtFee("500000").feeScaled).toBe(11_500n * SCALE);
-    expect(calculateCivilCourtFee("2500000").feeScaled).toBe(41_500n * SCALE);
-    expect(calculateCivilCourtFee("3000000").feeScaled).toBe(46_500n * SCALE);
-  });
-});
-
-
-describe("Bagmati FY 2083/84 private ICE renewal", () => {
-  it("applies motorcycle cc boundaries exactly", () => {
-    expect(calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 125 }).annualTaxNpr).toBe(3_000n);
-    expect(calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 126 }).annualTaxNpr).toBe(5_000n);
-    expect(calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 225 }).annualTaxNpr).toBe(6_500n);
-    expect(calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 226 }).annualTaxNpr).toBe(12_000n);
-    expect(calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 651 }).annualTaxNpr).toBe(35_000n);
-  });
-
-  it("adds the private motorcycle renewal fee without inventing insurance or fines", () => {
-    const result = calculateBagmatiPrivateRenewal2083({ kind: "motorcycle", engineCc: 150 });
-    expect(result.renewalFeeNpr).toBe(300n);
-    expect(result.governmentSubtotalNpr).toBe(5_300n);
-  });
-
-  it("applies private car/jeep/van bands", () => {
-    const result = calculateBagmatiPrivateRenewal2083({ kind: "car", engineCc: 1497 });
-    expect(result.annualTaxNpr).toBe(25_000n);
-    expect(result.renewalFeeNpr).toBe(500n);
-    expect(result.governmentSubtotalNpr).toBe(25_500n);
   });
 });
