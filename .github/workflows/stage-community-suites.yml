@@ -94,6 +94,7 @@ jobs:
           NSROOT="$(find /tmp/nepal-sambat -maxdepth 2 -type d -name patro-tools | head -1)"
           test -n "$NSROOT"
           cp "$NSROOT/NEPAL-SAMBAT.md" docs/NEPAL-SAMBAT.md
+          cp "$NSROOT/immersive/nepal-sambat-mandala.html" community-frontends/nepal-sambat-mandala.html
           cp "$ROOT/tests/"*.test.ts tests/
           FRONT="$(find /tmp/community-frontends -maxdepth 2 -type f -name README.md -printf '%h\n' | head -1)"
           test -n "$FRONT"
