@@ -1,0 +1,50 @@
+name: Import Patro tools kit
+on:
+  push:
+    branches: [feat/patro-tools-a-setup]
+    paths:
+      - '.bootstrap/**'
+      - '.github/workflows/import-patro-tools-kit.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    if: "!contains(github.event.head_commit.message, 'import patro tools kit source')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode and verify kit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            .bootstrap/patro-tools-kit.b64.00 \
+            .bootstrap/patro-tools-kit.b64.01 \
+            .bootstrap/patro-tools-kit.b64.02 \
+            .bootstrap/patro-tools-kit.b64.03 \
+            .bootstrap/rest.part-aa \
+            .bootstrap/rest.part-ab \
+            .bootstrap/rest.part-ac \
+            .bootstrap/rest.part-ad \
+            .bootstrap/rest.part-ae \
+            .bootstrap/rest.part-af \
+            | base64 -d > /tmp/patro-tools-source-only.zip
+          echo "0b2e1bdcbd68b404337f8eb7b3fe0c5d8edc0735afb992035f0a361c42e6331f  /tmp/patro-tools-source-only.zip" | sha256sum -c -
+          rm -rf /tmp/patro-tools-kit
+          mkdir -p /tmp/patro-tools-kit
+          unzip -q /tmp/patro-tools-source-only.zip -d /tmp/patro-tools-kit
+          rm -rf src/patro-tools
+          cp -R /tmp/patro-tools-kit/src/patro-tools src/patro-tools
+          mkdir -p tests docs
+          cp /tmp/patro-tools-kit/tests/*.ts tests/
+          cp /tmp/patro-tools-kit/README.md docs/patro-tools-kit-README.md
+          rm -rf .bootstrap
+      - name: Commit imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(tools): import patro tools kit source"
+          git push
