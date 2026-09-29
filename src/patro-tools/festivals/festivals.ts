@@ -21,7 +21,8 @@ export interface FestivalDef {
 
 export const FESTIVALS: FestivalDef[] = [
   { id: 'ghatasthapana', name: 'घटस्थापना', aliases: ['ghatasthapana', 'घटस्थापना', 'navaratri', 'नवरात्र'], rule: { month: 6, paksha: 'shukla', tithi: 1, observance: 'udaya' } },
-  { id: 'dashain', name: 'विजया दशमी (दशैं टीका)', aliases: ['dashain', 'dasain', 'दशैं', 'दशैँ', 'tika', 'टीका', 'vijaya dashami'], rule: { month: 6, paksha: 'shukla', tithi: 10, observance: 'aparahna' } },
+  { id: 'dashain', name: 'विजया दशमी (दशैं टीका)', aliases: ['dashain', 'dasain', 'दशैं', 'दशैँ', 'tika', 'टीका', 'vijaya dashami'], rule: { month: 6, paksha: 'shukla', tithi: 10, observance: 'aparahna', prefer: 'last' } },
+  // ↑ 'last': when Dashami touches aparahna on two days, Nepal takes the later day (2026-10-21, MoHA list)
   { id: 'laxmipuja', name: 'लक्ष्मी पूजा (तिहार)', aliases: ['tihar', 'तिहार', 'laxmi puja', 'लक्ष्मी पूजा', 'diwali', 'deepawali'], rule: { month: 7, paksha: 'krishna', tithi: 15, observance: 'pradosh' } },
   { id: 'bhaitika', name: 'भाइटीका', aliases: ['bhai tika', 'bhaitika', 'भाइटीका', 'भाइ टीका'], rule: { month: 7, paksha: 'shukla', tithi: 2, observance: 'udaya' } },
   { id: 'chhath', name: 'छठ', aliases: ['chhath', 'chhat', 'छठ'], rule: { month: 7, paksha: 'shukla', tithi: 6, observance: 'udaya' } },
