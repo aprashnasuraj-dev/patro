@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
 import type { ApodPayload, CosmicDayPayload, SyncPayload, TithiPayload } from "./types";
 import { HeroCanvas } from "./components/HeroCanvas";
@@ -7,6 +7,7 @@ import { DateTravelExperience } from "./components/DateTravelExperience";
 import { LunarPhaseDial } from "./components/LunarPhaseDial";
 import { CalendarGrid } from "./components/CalendarGrid";
 import { CosmicExperience } from "./components/CosmicExperience";
+import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
@@ -45,6 +46,7 @@ function matchesFeaturePath(path: string) {
 }
 
 function FeatureFrame() {
+  const frameRef = useRef<HTMLIFrameElement | null>(null);
   const path = window.location.pathname;
   const q = new URLSearchParams({ path });
   if (window.location.search) q.set("search", window.location.search);
@@ -55,9 +57,14 @@ function FeatureFrame() {
       <header className="feature-route-bar">
         <a className="feature-home-link" href="/">← Mero Patro</a>
         <strong>{title}</strong>
+        <ReadAloudButton
+          className="secondary-button feature-read-aloud"
+          getText={() => frameRef.current?.contentDocument?.body?.innerText || title}
+          label="सुन्नुहोस्"
+        />
         <span className="free-pill">Free</span>
       </header>
-      <iframe className="feature-frame" src={"/api/v1/compat/page?" + q.toString()} title={title} />
+      <iframe ref={frameRef} className="feature-frame" src={"/api/v1/compat/page?" + q.toString()} title={title} />
     </div>
   );
 }

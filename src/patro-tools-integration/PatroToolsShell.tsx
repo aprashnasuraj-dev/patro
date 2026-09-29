@@ -1,3 +1,10 @@
+import "./patro-tools.css";
+import { TithiReminderTool } from "./TithiReminderTool";
+import { SpellCheckTool } from "./SpellCheckTool";
+import { NameCheckTool } from "./NameCheckTool";
+import { ReadAloudTool } from "./ReadAloudTool";
+import { ToolPage } from "./ToolPrimitives";
+
 const LABELS: Record<string, { title: string; description: string }> = {
   "tithi-reminder": { title: "तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
   sait: { title: "साइत", description: "आधिकारिक मिति पहिलो, गणना गरिएको मिति सम्भावित" },
@@ -7,29 +14,25 @@ const LABELS: Record<string, { title: string; description: string }> = {
   "spell-check": { title: "नेपाली हिज्जे जाँच", description: "नेपाली पाठको हिज्जे र सुझाव" },
   "voice-typing": { title: "आवाजबाट नेपाली टाइपिङ", description: "ब्राउजर वा वैकल्पिक सुरक्षित speech API" },
   ocr: { title: "नेपाली OCR", description: "तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्" },
-  "name-check": { title: "नाम जाँच", description: "नाम र नक्षत्र अक्षर मिलान" },
+  "name-check": { title: "नाम जाँच", description: "कागजातमा नामको हिज्जे र उच्चारण मिलान" },
   "read-aloud": { title: "पढेर सुनाउनुहोस्", description: "नेपाली सामग्री आवाजमा सुन्नुहोस्" },
   "patro-bot": { title: "Patro Bot", description: "पात्रो, तिथि र रिमाइन्डर सहायक" },
 };
 
 export function PatroToolsShell({ slug }: { slug: string }) {
+  if (slug === "tithi-reminder") return <TithiReminderTool />;
+  if (slug === "spell-check") return <SpellCheckTool />;
+  if (slug === "name-check") return <NameCheckTool />;
+  if (slug === "read-aloud") return <ReadAloudTool />;
+
   const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
   return (
-    <main className="utility-suite patro-tool-shell">
-      <section className="utility-hero">
-        <div>
-          <p className="eyebrow">मेरो पात्रो · नयाँ उपकरण</p>
-          <h1>{meta.title}</h1>
-          <p>{meta.description}</p>
-        </div>
-        <span className="utility-status is-online">Nepali-first · local-first</span>
+    <ToolPage title={meta.title} description={meta.description}>
+      <section className="patro-tool-card">
+        <h2>यो उपकरण अर्को integration phase मा जोडिँदैछ।</h2>
+        <p className="tool-muted">BS र पञ्चाङ्गका लागि Mero Patro को विद्यमान production engine नै प्राथमिक स्रोत रहनेछ।</p>
       </section>
-      <section className="utility-card">
-        <p className="utility-note">यो पृष्ठ चरणबद्ध एकीकरणमा छ। यसको मूल गणना Mero Patro को विद्यमान BS र पञ्चाङ्ग इन्जिनसँग जोडिएको छ।</p>
-        <a className="utility-secondary" href="/tools">← सबै उपकरण</a>
-      </section>
-    </main>
+    </ToolPage>
   );
 }
-
 export const PATRO_TOOL_SLUGS = new Set(Object.keys(LABELS));
