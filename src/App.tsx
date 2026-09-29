@@ -13,14 +13,14 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },
    { path: "/jyotish/janma-patro", title: "जन्मपत्रो · Kundali", subtitle: "Birth chart, planetary positions, Vimshottari Dasha and 36 Guna Milan", group: "Jyotish" },
   { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
-  { path: "/tithi", title: "तिथि · Tithi", subtitle: "Traditional recurrence, fasting and observance tools", group: "Daily" },
-  { path: "/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Daily" },
-  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Choose from Preeti/Unicode, BS↔AD, land, tax, QR and fuel tools", group: "Tools" },
-  { path: "/card", title: "Share Cards", subtitle: "Calendar and festival sharing cards", group: "Tools" },
-  { path: "/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
+  { path: "/tools/tithi", title: "तिथि · Tithi", subtitle: "Tithi reminders, lunar-date derivation and recurrence tools", group: "Tools" },
+  { path: "/tools/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Tools" },
+  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete Patro Plus tool directory", group: "Tools" },
+  { path: "/tools/card", title: "Share Cards", subtitle: "Create calendar, date and festival cards for sharing", group: "Tools" },
+  { path: "/tools/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
   { path: "/settings/holidays", title: "Holiday Settings", subtitle: "Audience, district and closure preferences", group: "Tools" },
   { path: "/settings/notifications", title: "Notifications", subtitle: "Private push reminder controls", group: "Tools" },
-  { path: "/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
+  { path: "/tools/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
   { path: "/time-machine", title: "Time Machine", subtitle: "Historical Nepal timeline", group: "Explore" },
   { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
   { path: "/fm", title: "FM Radio", subtitle: "Nepal radio directory", group: "Explore" },
@@ -28,11 +28,14 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/tv", title: "Explore TV", subtitle: "Live TV by country, language and category", group: "Explore" },
   { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
   { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Jyotish tools and guidance", group: "Jyotish" },
-  { path: "/developers", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
+  { path: "/tools/api", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
 ];
+
+const LEGACY_TOOL_PATHS = new Set(["/tithi", "/diaspora", "/card", "/family", "/developers", "/my-data"]);
 
 const FEATURE_EXACT = new Set([
   ...FEATURE_LINKS.map((x) => x.path),
+  ...LEGACY_TOOL_PATHS,
   "/offline", "/convert", "/search", "/notes", "/planner", "/data-trust", "/nepal-sambat", "/astrology"
 ]);
 
