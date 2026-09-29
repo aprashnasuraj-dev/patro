@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>लुङ्दर · ल्होसार पात्रो</title>
+<meta name="description" content="सोनाम, ग्याल्पो र तमु ल्होसार — काउन्टडाउन, तपाईंको ल्हो (जनावर वर्ष), डम्फु ताल र शुभकामना कार्ड। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#dce9f7" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&family=Noto+Serif+Tibetan:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #eef4fb; --ink: #1a2233; --muted: #56627a; --accent: #1f5fbf; --on-accent: #fff; --card: #ffffffcc; --line: #1a22331a;
+  --f-blue: #2f6fd6; --f-white: #fbfbf6; --f-red: #d23b32; --f-green: #2e9e5b; --f-yellow: #f2b632; }
+body { background: linear-gradient(180deg, #cfe1f6 0%, #eef4fb 38%, #f7f3ea 100%) fixed; }
+.tib { font-family: "Noto Serif Tibetan", serif; }
+.mountains { position: fixed; inset: auto 0 0 0; height: 32vh; z-index: 0; pointer-events: none; opacity: .5; }
+/* prayer flags */
+#flags { width: 100%; height: 220px; display: block; margin-top: 8px; }
+.flag { transform-box: fill-box; transform-origin: top center; animation: flut var(--d, 3s) ease-in-out infinite; }
+@keyframes flut { 0%,100% { transform: skewX(0) scaleY(1); } 50% { transform: skewX(-7deg) scaleY(.95); } }
+.mini { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-top: 14px; }
+@media (max-width: 640px) { .mini { grid-template-columns: 1fr; } }
+.mini button { display: flex; gap: 10px; align-items: center; text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px; cursor: pointer; }
+/* doors */
+.doors { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+@media (max-width: 860px) { .doors { grid-template-columns: 1fr; } }
+.door { position: relative; border-radius: 160px 160px 18px 18px; padding: 64px 22px 22px; background: var(--card); border: 1px solid var(--line); overflow: hidden; }
+.door::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 10px; background: repeating-linear-gradient(90deg, var(--f-blue) 0 20%, var(--f-white) 20% 40%, var(--f-red) 40% 60%, var(--f-green) 60% 80%, var(--f-yellow) 80% 100%); }
+.door .emo { font-size: 56px; text-align: center; }
+.door h3 { text-align: center; margin: 4px 0; font-family: "Tiro Devanagari Sanskrit", serif; font-weight: 400; font-size: 26px; }
+.door .when { text-align: center; color: var(--muted); }
+.door ul { font-size: 15px; }
+/* prayer wheel */
+.wheel-box { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 760px) { .wheel-box { grid-template-columns: 1fr; } }
+#wheel { width: 100%; max-width: 420px; aspect-ratio: 1; margin: 0 auto; display: block; }
+#wheelRot { transform-origin: 0 0; }
+.lho-results { display: grid; gap: 10px; }
+.lho-results div { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 12px; }
+.lho-results .e { font-size: 44px; text-align: center; }
+/* damphu */
+.damphu { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+@media (max-width: 640px) { .damphu { grid-template-columns: 1fr; justify-items: center; } }
+#drum { width: 180px; height: 180px; border-radius: 50%; border: 10px solid #7a4a22; background: radial-gradient(circle at 45% 40%, #fff6e2, #e9d2a6); box-shadow: inset 0 0 0 6px #c8923f, 0 12px 30px #0002; cursor: pointer; font-size: 22px; font-weight: 800; color: #7a4a22; transition: transform .08s; }
+#drum:active, #drum.hit { transform: scale(.94); }
+.beats { display: flex; gap: 10px; margin: 8px 0; }
+.beats span { width: 28px; height: 28px; border-radius: 50%; border: 3px solid var(--accent); }
+.beats span.strong { background: var(--accent); }
+.beats span.on { box-shadow: 0 0 0 6px #1f5fbf44; transform: scale(1.15); }
+</style>
+</head>
+<body>
+<svg class="mountains" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300 L0 210 L120 120 L200 180 L330 60 L430 170 L520 110 L640 200 L760 70 L880 190 L980 120 L1100 200 L1200 150 L1200 300 Z" fill="#9fb8d8"/><path d="M0 300 L0 250 L160 190 L300 240 L420 180 L560 250 L700 190 L860 250 L1000 200 L1200 250 L1200 300 Z" fill="#c7d6ea"/></svg>
+<main>
+  <div class="topbar"><div id="nav"></div><div class="row" style="display:flex;gap:8px;align-items:center"><span class="today" id="today"></span><button class="pill" id="snd" aria-pressed="false">🔕 आवाज बन्द</button></div></div>
+
+  <header>
+    <svg id="flags" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMin meet" role="img" aria-label="प्रार्थना झण्डामा आगामी ल्होसारहरू"></svg>
+    <h1>लुङ्दर <span class="tib" style="font-size:.55em;color:var(--accent)">ལོ་གསར་བཀྲ་ཤིས་བདེ་ལེགས།</span></h1>
+    <p class="lead">तामाङ, गुरुङ र शेर्पा — तीन समुदाय, तीन ल्होसार, एउटै हिमाली आकाश। मितिहरू हरेक वर्ष आफैं गणना हुन्छन्।</p>
+    <div class="hero-count" id="heroCount"></div>
+    <div class="mini" id="mini"></div>
+  </header>
+
+  <section aria-labelledby="doorsH">
+    <h2 id="doorsH">तीन ल्होसार, तीन ढोका</h2>
+    <p class="lead">हरेक ढोकाभित्र आफ्नै महिना, आफ्नै नाच, आफ्नै परिकार।</p>
+    <div class="doors" id="doors"></div>
+  </section>
+
+  <section aria-labelledby="wheelH">
+    <h2 id="wheelH">☸ माने घुमाउनुहोस् — तपाईंको ल्हो</h2>
+    <p class="lead">जन्म मिति हालेर माने (प्रार्थना चक्र) घुमाउनुहोस्। गुरुङ ल्होमा खरायोको ठाउँमा बिरालो, ड्रागनको ठाउँमा गरुड र सुँगुरको ठाउँमा मृग।</p>
+    <div class="wheel-box">
+      <svg id="wheel" viewBox="-210 -210 420 420" role="img" aria-label="१२ ल्होको माने"></svg>
+      <div class="card">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <label class="sr" for="bday">जन्म मिति</label><input type="date" id="bday" value="1995-06-15" min="1900-02-01" max="2100-12-31" />
+          <div role="tablist" id="sys" style="display:flex;gap:6px"></div>
+        </div>
+        <button class="pill" id="spin" style="margin-top:12px;font-size:18px">☸ घुमाउनुहोस्</button>
+        <div class="lho-results" id="lhoOut" aria-live="polite" style="margin-top:14px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="damH">
+    <h2 id="damH">🥁 डम्फुको ताल</h2>
+    <p class="lead">तामाङ सेलोको आधार: चार मात्राको ताल, पहिलो मात्रा बलियो। "बजाउनुहोस्" थिचेर सुन्नुहोस्, अनि सँगै डम्फुमा ठोक्नुहोस्।</p>
+    <div class="damphu card">
+      <button id="drum" aria-label="डम्फु बजाउनुहोस्">डम्फु</button>
+      <div>
+        <div class="beats" id="beats"><span class="strong"></span><span></span><span class="strong"></span><span></span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="pill" id="play">▶ ताल बजाउनुहोस्</button><label>गति <input type="range" id="bpm" min="70" max="140" value="96" /></label></div>
+        <p id="score" aria-live="polite" style="margin:10px 0 0;color:var(--muted)">आवाज खोलेपछि ताल सुनिन्छ।</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="tlH">
+    <h2 id="tlH">पर्व–पात्रो</h2>
+    <div class="grid2"><div class="tl" id="tl"></div><div class="card" id="detail" aria-live="polite"></div></div>
+  </section>
+
+  <section aria-labelledby="cardH">
+    <h2 id="cardH">🎴 ल्होसार शुभकामना कार्ड</h2>
+    <p class="lead">नाम लेख्नुहोस् — आफ्नो ल्होसहितको कार्ड बनाउनुहोस्।</p>
+    <div class="grid2">
+      <canvas class="share" id="card"></canvas>
+      <div class="card">
+        <label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label>
+        <div role="tablist" id="cardSys" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"></div>
+        <button class="pill" id="cardShare" style="margin-top:14px">⬇ सेयर / डाउनलोड</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    नियम: सोनाम ल्होसार = माघ शुक्ल प्रतिपदा; तमु ल्होसार = पुस १५ (तपाईंको वि.सं. रूपान्तरकसँग जोड्दा ठ्याक्कै); ग्याल्पो ल्होसार = तिब्बती नयाँ वर्ष (फागुन शुक्ल प्रतिपदा — "सम्भावित")। तामाङ सम्वत् = इस्वी + ८३६; शेर्पा वर्ष = इस्वी + १२७।<br>
+    स्रोत: Radio Nepal (Sonam Lhosar 2026, वर्ष २८६२), Wikipedia (Sonam/Tamu/Gyalpo Lhosar), Tamu Pariwar NY (Gurung Lho), United Sherpa Association (Losar 2153)। गुरुङ भाषाका ल्हो नामहरू समीक्षाधीन।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, fmtShort, days, today, Y, reduce } = K;
+document.getElementById('nav').innerHTML = K.nav('lhosar.html'); K.stamp(document.getElementById('today')); K.soundToggle(document.getElementById('snd'));
+const suite = S.SUITES.lhosar, rows = K.rowsFor(suite);
+const FLAG = ['--f-blue', '--f-white', '--f-red', '--f-green', '--f-yellow'].map((v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim());
+const LH = ['sonam-lhosar', 'gyalpo-lhosar', 'tamu-lhosar'];
+const next = (id) => K.nextOf(rows, id);
+
+/* ── Prayer-flag string ── */
+(() => {
+  const svg = document.getElementById('flags');
+  const N = 15, sag = (x) => 30 + 70 * Math.sin(Math.PI * x / 1200); // rope curve
+  el('path', { d: `M0 30 Q600 170 1200 30`, fill: 'none', stroke: '#6b5b45', 'stroke-width': 2 }, svg);
+  const upcoming = rows.filter((r) => r.end >= today).slice(0, 5);
+  for (let i = 0; i < N; i++) {
+    const x = 40 + i * (1120 / (N - 1)), y = sag(x) + 2, w = 66, h = 84;
+    const g = el('g', { class: 'flag', style: `--d:${2.6 + (i % 4) * .35}s;animation-delay:${-i * .21}s` }, svg);
+    el('rect', { x: x - w / 2, y, width: w, height: h, fill: FLAG[i % 5], stroke: '#00000018', rx: 2 }, g);
+    const slot = [2, 5, 8, 11, 13].indexOf(i);
+    if (slot >= 0 && upcoming[slot]) {
+      const r = upcoming[slot], dark = i % 5 === 1 || i % 5 === 4;
+      const t1 = el('text', { x, y: y + 34, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: dark ? '#1a2233' : '#fff' }, g); t1.textContent = r.festival.dev.split(' ')[0];
+      const t2 = el('text', { x, y: y + 54, 'text-anchor': 'middle', 'font-size': 12, fill: dark ? '#1a2233' : '#fff' }, g); t2.textContent = fmtShort(r.main);
+      const t3 = el('text', { x, y: y + 72, 'text-anchor': 'middle', 'font-size': 11, fill: dark ? '#1a2233' : '#fff', opacity: .85 }, g); t3.textContent = npd(Math.max(0, days(today, r.start))) + ' दिन';
+    } else {
+      const c = el('circle', { cx: x, cy: y + h / 2, r: 14, fill: 'none', stroke: i % 5 === 1 ? '#1a223355' : '#ffffff88', 'stroke-width': 2 }, g); // wind-horse medallion
+    }
+  }
+})();
+
+/* ── Hero countdown ── */
+(() => {
+  const n = LH.map(next).filter(Boolean).sort((a, b) => a.start.localeCompare(b.start))[0];
+  const d = days(today, n.start);
+  document.getElementById('heroCount').innerHTML = `<span class="n">${npd(Math.max(d, 0))}</span><div><b style="font-size:22px">${d <= 0 ? 'आज ' : 'दिनपछि '}${n.festival.dev}</b><br><span style="color:var(--muted)">${fmt(n.main)} · ${K.weekday(n.main)} ${K.badge(n.confidence)}</span></div>`;
+  document.getElementById('mini').innerHTML = LH.map((id) => { const r = next(id); const dd = days(today, r.start);
+    return `<button data-id="${id}">${K.ring(dd, 'var(--accent)', 54)}<span><b>${r.festival.dev}</b><br><small style="color:var(--muted)">${fmt(r.main)}</small></span></button>`; }).join('');
+  document.querySelectorAll('#mini button').forEach((b) => b.onclick = () => { showDetail(next(b.dataset.id)); document.getElementById('tlH').scrollIntoView({ behavior: 'smooth' }); });
+})();
+
+/* ── Three doors ── */
+(() => {
+  const lho = S.lhoFor(today);
+  const DOORS = [
+    { id: 'sonam-lhosar', who: 'तामाङ · ह्योल्मो', emo: '🥁', a: lho.tamang, era: `तामाङ सम्वत् ${npd(lho.tamang.era)}`, rule: 'माघ शुक्ल प्रतिपदा' },
+    { id: 'tamu-lhosar', who: 'गुरुङ (तमु)', emo: '🏔', a: lho.gurung, era: 'पुस १५ देखि नयाँ ल्हो', rule: 'पुस १५' },
+    { id: 'gyalpo-lhosar', who: 'शेर्पा · भोटिया', emo: '🏯', a: lho.tibetan, era: `${lho.tibetan.element.dev} ${lho.tibetan.element.genderDev} · वर्ष ${npd(lho.tibetan.era)}`, rule: 'तिब्बती नयाँ वर्ष' },
+  ];
+  document.getElementById('doors').innerHTML = DOORS.map((d) => { const r = next(d.id), f = r.festival;
+    return `<article class="door"><div class="emo" aria-hidden="true">${d.emo}</div><h3>${f.dev}</h3>
+      <div class="when">${d.who}<br>${d.rule} · अर्को: <b>${fmt(r.main)}</b></div>
+      <p style="text-align:center;margin:10px 0 0;font-size:18px">अहिले: ${d.a.emoji} <b>${d.a.dev}</b> ल्हो<br><small style="color:var(--muted)">${d.era}</small></p>
+      <ul>${(f.details || []).map((x) => `<li>${K.esc(x)}</li>`).join('')}</ul></article>`; }).join('');
+})();
+
+/* ── Prayer wheel (mane) ── */
+let sys = 'tamang', wheelAngle = 0;
+function drawWheel() {
+  const svg = document.getElementById('wheel'); svg.innerHTML = '';
+  el('circle', { r: 200, fill: '#b8872f' }, svg); el('circle', { r: 192, fill: '#f6e3b0' }, svg);
+  const rot = el('g', { id: 'wheelRot', transform: `rotate(${wheelAngle})` }, svg);
+  S.ANIMALS[sys].forEach((a, k) => {
+    const a0 = k * 30 - 15, a1 = a0 + 30, [x0, y0] = P(190, a0), [x1, y1] = P(190, a1);
+    el('path', { d: `M0 0 L${x0} ${y0} A190 190 0 0 1 ${x1} ${y1} Z`, fill: FLAG[k % 5], stroke: '#b8872f', 'stroke-width': 2, opacity: .9 }, rot);
+    const [tx, ty] = P(150, k * 30); const t = el('text', { x: tx, y: ty + 13, 'text-anchor': 'middle', 'font-size': 34 }, rot); t.textContent = a.emoji;
+    const [lx, ly] = P(108, k * 30); const l = el('text', { x: lx, y: ly + 5, 'text-anchor': 'middle', 'font-size': 13, fill: '#1a2233', 'font-weight': 700 }, rot); l.textContent = a.dev.split(' ')[0];
+  });
+  el('circle', { r: 70, fill: '#b8872f' }, svg); el('circle', { r: 62, fill: '#fff8e6' }, svg);
+  const om = el('text', { y: 16, 'text-anchor': 'middle', 'font-size': 46, class: 'tib', fill: '#b8872f' }, svg); om.textContent = 'ༀ';
+  el('polygon', { points: '0,-206 -12,-186 12,-186', fill: '#d23b32' }, svg);
+}
+function lhoResults() {
+  const r = S.lhoFor(document.getElementById('bday').value);
+  document.getElementById('lhoOut').innerHTML = [
+    ['तामाङ', r.tamang, `तामाङ सम्वत् ${npd(r.tamang.era)}`],
+    ['गुरुङ', r.gurung, 'पुस १५ मा ल्हो फेरिन्छ'],
+    ['शेर्पा/तिब्बती', r.tibetan, `${r.tibetan.element.dev} ${r.tibetan.element.genderDev} · ${r.tibetan.element.en} ${r.tibetan.en} · ${npd(r.tibetan.era)}`],
+  ].map(([w, a, s]) => `<div><span class="e" aria-hidden="true">${a.emoji}</span><span><b>${w}: ${a.dev} ल्हो</b><br><small style="color:var(--muted)">${s}</small></span></div>`).join('');
+  return r;
+}
+function spin() {
+  const r = lhoResults(), idx = r[sys].index;
+  const target = -idx * 30, turns = reduce ? 0 : 3;
+  const from = wheelAngle;
+  const end = from - (((from - target) % 360 + 360) % 360) - 360 * turns;
+  const g = document.getElementById('wheelRot'), t0 = performance.now(), dur = reduce ? 1 : 2600;
+  const step = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); const a = from + (end - from) * e; g.setAttribute('transform', `rotate(${a})`);
+    if (k < 1) requestAnimationFrame(step); else { wheelAngle = end; K.bell(660); } };
+  requestAnimationFrame(step); K.bell(440, .12);
+}
+(() => {
+  const tabs = document.getElementById('sys');
+  [['tamang', 'तामाङ'], ['gurung', 'गुरुङ'], ['tibetan', 'शेर्पा']].forEach(([k, l], i) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(i === 0)); b.textContent = l;
+    b.onclick = () => { sys = k; [...tabs.children].forEach((c) => c.setAttribute('aria-selected', String(c === b))); drawWheel(); spin(); }; tabs.appendChild(b); });
+  drawWheel(); lhoResults();
+  document.getElementById('spin').onclick = spin; document.getElementById('bday').onchange = spin;
+})();
+
+/* ── Damphu rhythm ── */
+(() => {
+  const beats = [...document.querySelectorAll('#beats span')], drumBtn = document.getElementById('drum');
+  let timer = null, k = 0, lastBeat = 0, hits = 0, good = 0;
+  const period = () => 60000 / +document.getElementById('bpm').value;
+  const tick = () => { beats.forEach((b, i) => b.classList.toggle('on', i === k % 4)); K.drum(k % 2 === 0 ? 85 : 120, k % 2 === 0 ? .6 : .3); lastBeat = performance.now(); k++; };
+  document.getElementById('play').onclick = (e) => {
+    if (timer) { clearInterval(timer); timer = null; e.target.textContent = '▶ ताल बजाउनुहोस्'; beats.forEach((b) => b.classList.remove('on')); return; }
+    k = 0; hits = good = 0; tick(); timer = setInterval(tick, period()); e.target.textContent = '■ रोक्नुहोस्';
+  };
+  document.getElementById('bpm').oninput = () => { if (timer) { clearInterval(timer); timer = setInterval(tick, period()); } };
+  const hit = () => { K.drum(95, .7); drumBtn.classList.add('hit'); setTimeout(() => drumBtn.classList.remove('hit'), 90);
+    if (!timer) return; hits++; const off = Math.min(performance.now() - lastBeat, period() - (performance.now() - lastBeat));
+    if (off < 90) good++; document.getElementById('score').textContent = `तालमा: ${npd(good)} / ${npd(hits)}` + (hits >= 8 && good / hits > .7 ? ' — स्याबास! 🎉' : ''); };
+  drumBtn.onclick = hit; addEventListener('keydown', (e) => { if (e.code === 'Space' && document.activeElement === drumBtn) { e.preventDefault(); hit(); } });
+})();
+
+/* ── Timeline ── */
+function showDetail(r) { document.getElementById('detail').innerHTML = K.detailHTML(r, 'var(--accent)'); }
+K.timeline(document.getElementById('tl'), rows, { color: '#1f5fbf', onSelect: showDetail });
+showDetail(K.nextOf(rows));
+
+/* ── Share card ── */
+(() => {
+  let cs = 'tamang';
+  const tabs = document.getElementById('cardSys');
+  [['tamang', 'तामाङ'], ['gurung', 'गुरुङ'], ['tibetan', 'शेर्पा']].forEach(([k, l], i) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('aria-selected', String(i === 0)); b.textContent = l;
+    b.onclick = () => { cs = k; [...tabs.children].forEach((c) => c.setAttribute('aria-selected', String(c === b))); draw(); }; tabs.appendChild(b); });
+  const draw = async () => {
+    try { await document.fonts.load('40px "Noto Serif Tibetan"'); await document.fonts.load('800 60px Mukta'); } catch {}
+    const lho = S.lhoFor(today), a = lho[cs];
+    const id = cs === 'tamang' ? 'sonam-lhosar' : cs === 'gurung' ? 'tamu-lhosar' : 'gyalpo-lhosar';
+    const r = next(id);
+    K.shareCard(document.getElementById('card'), {
+      bg: '#eef4fb', fg: '#1a2233', accent: '#1f5fbf', kicker: r.festival.dev, title: `${a.emoji} ${a.dev} ल्हो`,
+      sub: cs === 'tibetan' ? `${a.element.dev} ${a.element.genderDev} · ${npd(a.era)}` : cs === 'tamang' ? `तामाङ सम्वत् ${npd(a.era)}` : 'तमु ल्होसारको शुभकामना',
+      lines: [`${document.getElementById('cardName').value} को तर्फबाट`, fmt(r.main)], footer: 'लुङ्दर · ल्होसार पात्रो',
+      motif: (c, W) => { for (let i = 0; i < 10; i++) { c.fillStyle = FLAG[i % 5]; c.fillRect(i * W / 10 + 6, 40 + Math.sin(i / 3) * 10, W / 10 - 12, 80); }
+        c.fillStyle = '#1f5fbf'; c.font = '48px "Noto Serif Tibetan"'; c.textAlign = 'center'; c.fillText('ལོ་གསར་བཀྲ་ཤིས་བདེ་ལེགས།', W / 2, 290); },
+    });
+  };
+  document.getElementById('cardName').oninput = draw; draw();
+  document.getElementById('cardShare').onclick = () => K.shareCanvas(document.getElementById('card'), 'lhosar.png', 'ल्होसारको शुभकामना!');
+})();
+})();
+</script>
+</body>
+</html>
