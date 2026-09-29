@@ -44,7 +44,7 @@ export function PatroRouter() {
 
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
-  if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite />;
+  if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
   if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
   return <App />;
 }
