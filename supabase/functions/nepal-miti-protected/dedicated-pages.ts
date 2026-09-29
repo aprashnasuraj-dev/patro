@@ -20,7 +20,7 @@ export function dedicatedPage(path:string){
   }
   if(path==="/on-this-day"){
     const body='<section class="hero"><div>इतिहास</div><h1>आज इतिहासमा</h1><p>आजकै दिन नेपाल र विश्वमा भएका स्रोत-आधारित ऐतिहासिक घटना, जन्म र निधन हेर्नुहोस्।</p></section>'+
-    '<div id="historyStatus" class="status">आजको स्रोत-आधारित सूची तयार हुँदैछ।</div><section id="historyList" class="history-list" aria-live="polite"></section>';
+    '<div id="historyStatus" class="status">स्रोत पुष्टि भएका ऐतिहासिक घटना उपलब्ध भए यहाँ देखाइन्छन्।</div><section id="historyList" class="history-list" aria-live="polite"></section>';
     const script='<script>(async()=>{const s=document.getElementById("historyStatus"),l=document.getElementById("historyList");try{const d=new Date(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");const r=await fetch("/api/on-this-day?date="+m+"-"+day,{headers:{accept:"application/json"}});if(!r.ok)throw new Error("HTTP "+r.status);const j=await r.json(),rows=j.events||[];s.textContent=rows.length?rows.length+" स्रोत-आधारित र समीक्षा गरिएका घटना":"आजका लागि प्रकाशित घटना उपलब्ध छैन।";l.innerHTML=rows.map(x=>"<article class=\"history-row\"><h3>"+(x.title_ne||x.title_en||"ऐतिहासिक घटना")+"</h3><p>"+(x.summary_ne||x.summary_en||"")+"</p><small>"+(x.ad_year||"")+" · "+(x.source_name||"स्रोत समीक्षा")+"</small></article>").join("")}catch(e){s.textContent="इतिहास सूची अहिले उपलब्ध छैन। पछि फेरि प्रयास गर्नुहोस्।";l.innerHTML=""}})()</script>';
     return new Response(page("आज इतिहासमा","आजकै दिनका नेपाल र विश्व इतिहासका स्रोत-आधारित घटना, जन्म र निधन।","/on-this-day",body,script),{headers:{"content-type":"text/html; charset=utf-8","cache-control":"public, max-age=60, s-maxage=600"}});
   }
