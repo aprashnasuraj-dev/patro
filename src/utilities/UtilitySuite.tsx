@@ -55,7 +55,18 @@ type ToolId =
   | "card"
   | "family"
   | "api"
-  | "my-data";
+  | "my-data"
+  | "tithi-reminder"
+  | "sait"
+  | "baby-names"
+  | "janmadin-akhbar"
+  | "future-letter"
+  | "spell-check"
+  | "voice-typing"
+  | "ocr"
+  | "name-check"
+  | "read-aloud"
+  | "patro-bot";
 
 type ToolGroup = "typing" | "utility" | "tools";
 type ToolDirectoryItem = {
@@ -83,13 +94,24 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
   { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance", group: "utility" },
   { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR", group: "utility" },
-  { id: "fuelprice", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
+  { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
+  { id: "tithi-reminder", icon: "त", title: "तिथि रिमाइन्डर", subtitle: "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar ICS feed.", badge: "नयाँ", group: "tools" },
+  { id: "sait", icon: "शु", title: "साइत · शुभ समय", subtitle: "आधिकारिक मिति पहिलो; गणना गरिएको परिणाम ‘सम्भावित’ भनेर स्पष्ट.", badge: "नयाँ", group: "tools" },
+  { id: "baby-names", icon: "ना", title: "नक्षत्र अनुसार बच्चाको नाम", subtitle: "नक्षत्र अक्षर, न्वारन, पास्नी र खोप समयरेखा.", badge: "नयाँ", group: "tools" },
+  { id: "janmadin-akhbar", icon: "📰", title: "जन्मदिन अखबार", subtitle: "जन्म दिनको पात्रो र इतिहासबाट PNG शेयर कार्ड.", badge: "नयाँ", group: "tools" },
+  { id: "future-letter", icon: "✉", title: "भविष्यको चिठी", subtitle: "वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने निजी चिठी.", badge: "नयाँ", group: "tools" },
+  { id: "spell-check", icon: "✓", title: "नेपाली हिज्जे जाँच", subtitle: "स्थानीय नियम र वैकल्पिक AI सुझावसहित नेपाली spell check.", badge: "भाषा", group: "tools" },
+  { id: "voice-typing", icon: "🎙", title: "आवाजबाट नेपाली टाइपिङ", subtitle: "ब्राउजर speech recognition र वैकल्पिक server fallback.", badge: "भाषा", group: "tools" },
+  { id: "ocr", icon: "OCR", title: "नेपाली OCR", subtitle: "तस्बिरबाट नेपाली अक्षर; OCR engine माग्दा मात्रै load हुन्छ.", badge: "भाषा", group: "tools" },
+  { id: "name-check", icon: "नाम", title: "नाम जाँच", subtitle: "नामको सुरु अक्षर र नक्षत्र/पद मिलान हेर्नुहोस्.", badge: "ज्योतिष", group: "tools" },
+  { id: "read-aloud", icon: "🔊", title: "पढेर सुनाउनुहोस्", subtitle: "नेपाली पाठ browser voice वा उपलब्ध सुरक्षित TTS बाट सुन्नुहोस्.", badge: "Accessibility", group: "tools" },
+  { id: "patro-bot", icon: "Bot", title: "Patro Bot", subtitle: "मिति, तिथि, पात्रो र रिमाइन्डरका छोटा प्रश्नको सहायक.", badge: "नयाँ", group: "tools" },
   { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Tools", group: "tools" },
-  { id: "diaspora", icon: "🌏", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
+  { id: "diaspora", icon: "देश", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
   { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Tools", group: "tools" },
   { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Tools", group: "tools" },
-  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Nepal Miti API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
-  { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Tools", group: "tools" },
+  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Mero Patro API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
+  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Mero Patro features.", badge: "Tools", group: "tools" },
 ];
 
 const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";
@@ -238,7 +260,8 @@ export function UtilitySuite() {
         if (!Array.isArray(body?.items)) return;
         const supported = new Set<ToolId>([
           "nepali-typing","preeti-converter","bstoad","adtobs","landconverter",
-          "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data"
+          "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data",
+          "tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot"
         ]);
         const next = body.items
           .filter((item: any) => item && supported.has(item.slug as ToolId) && item.slug !== "typingtools")
@@ -449,7 +472,7 @@ export function UtilitySuite() {
               <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing tool" : "Choose what you want to do"}</h2>
               <p>{showTypingCatalog ? "Preeti conversion stays in one converter. Nepali Typing is a separate Roman → Unicode writing tool." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
             </div>
-            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Patro home"}</a>
+            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Mero Patro home"}</a>
           </div>
 
           {showCatalog && <>
@@ -517,7 +540,7 @@ export function UtilitySuite() {
         <nav className="utility-tool-nav" aria-label="Utility navigation">
           <button type="button" onClick={() => chooseTool(null)}>← All tools</button>
           <strong>{selectedMeta?.title}</strong>
-          <a href="/">Patro home</a>
+          <a href="/">Mero Patro home</a>
         </nav>
       )}
 

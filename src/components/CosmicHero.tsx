@@ -1,6 +1,8 @@
 import { useMemo, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, Volume2, VolumeX, Telescope, Share2 } from "lucide-react";
 import type { ApodPayload, CosmicDayPayload, SyncPayload, TithiPayload } from "../types";
 import { StandUnderThisSky } from "./StandUnderThisSky";
+import { ReadAloudButton } from "../patro-tools-integration/ReadAloudButton";
 
 interface Props {
   sync: SyncPayload | null;
@@ -170,7 +172,7 @@ export function CosmicHero({
 
       ctx.fillStyle = "#7dd3fc";
       ctx.font = "700 24px system-ui, sans-serif";
-      ctx.fillText("PATRO · COSMIC DAY", 72, 78);
+      ctx.fillText("MERO PATRO · COSMIC DAY", 72, 78);
       ctx.fillStyle = "#f8fafc";
       ctx.font = "800 54px system-ui, sans-serif";
       ctx.fillText(dates.ad, 72, 154);
@@ -194,9 +196,9 @@ export function CosmicHero({
 
       const blob = await canvasToBlob(canvas);
       if (!blob) return;
-      const file = new File([blob], `patro-cosmic-${selectedDate}.png`, { type: "image/png" });
+      const file = new File([blob], `mero-patro-cosmic-${selectedDate}.png`, { type: "image/png" });
       const shareData: ShareData = {
-        title: `Patro Cosmic Day · ${selectedDate}`,
+        title: `Mero Patro Cosmic Day · ${selectedDate}`,
         text: context,
         url: `${location.origin}/astro?date=${selectedDate}`
       };
@@ -224,7 +226,7 @@ export function CosmicHero({
       <div className="cosmic-hero__topline">
         <div>
           <p className="eyebrow">Living astronomical instrument · Nepal</p>
-          <h1>Patro Sky Calendar</h1>
+          <h1>खगोलीय पात्रो · Mero Patro</h1>
           <p className="cosmic-hero__apod">{apod?.title || "Synchronizing with NASA and the selected sky…"}</p>
         </div>
         <div className={"health-pill health-pill--" + health}>
@@ -246,7 +248,7 @@ export function CosmicHero({
       </div>
 
       <div className="cosmic-hero__toolbar">
-        <button className="icon-button" onClick={onPreviousDay} aria-label="Previous day">←</button>
+        <button className="icon-button" onClick={onPreviousDay} aria-label="Previous day"><ChevronLeft size={18}/></button>
         <label className="date-input-wrap cosmic-date-input">
           <span>Selected Earth date</span>
           <input
@@ -257,14 +259,15 @@ export function CosmicHero({
             onChange={(event) => event.target.value && onDateChange(event.target.value)}
           />
         </label>
-        <button className="icon-button" onClick={onNextDay} aria-label="Next day">→</button>
+        <button className="icon-button" onClick={onNextDay} aria-label="Next day"><ChevronRight size={18}/></button>
         <button className="secondary-button" onClick={onToday} disabled={selectedDate === today}>Today</button>
+        <ReadAloudButton text={`आजको मिति ${dates.bs}। ग्रेगोरियन ${dates.ad}। नेपाल संवत् ${dates.ns}। ${context}`} className="secondary-button" />
         <button className="secondary-button" onClick={toggleAmbient} aria-pressed={soundOn}>
-          {soundOn ? "🔊 Ambient on" : "🔈 Ambient"}
+          {soundOn ? <><VolumeX size={17}/> Ambient on</> : <><Volume2 size={17}/> Ambient</>}
         </button>
-        <button className="secondary-button" onClick={openSkyMode}>✦ Stand under this sky</button>
+        <button className="secondary-button" onClick={openSkyMode}><Telescope size={17}/> Stand under this sky</button>
         <button className="secondary-button" onClick={shareCosmicCard} disabled={sharing}>
-          {sharing ? "Creating card…" : "↗ Cosmic Card"}
+          {sharing ? "Creating card…" : <><Share2 size={17}/> Cosmic Card</>}
         </button>
       </div>
     </header>

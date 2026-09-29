@@ -1,19 +1,14 @@
 {
   "id": "/",
-  "name": "Nepali Patro",
-  "short_name": "Patro",
-  "description": "Bikram Sambat calendar, Panchang, Nepali media and Jyotish tools.",
+  "name": "मेरो पात्रो",
+  "short_name": "मेरो पात्रो",
+  "description": "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण र दैनिक उपयोगी सुविधा।",
   "lang": "ne",
-  "start_url": "/astro/",
-  "scope": "/astro/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay",
-    "standalone",
-    "minimal-ui"
-  ],
-  "background_color": "#0b0f19",
-  "theme_color": "#0f172a",
+  "background_color": "#FFFFFF",
+  "theme_color": "#176F3B",
   "orientation": "any",
   "categories": [
     "productivity",
@@ -22,38 +17,49 @@
   ],
   "icons": [
     {
-      "src": "/astro/icon.svg",
+      "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/astro/icon.svg",
+      "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ],
   "shortcuts": [
     {
-      "name": "Astronomical Calendar",
-      "short_name": "Calendar",
-      "url": "/astro/"
+      "name": "पात्रो",
+      "short_name": "पात्रो",
+      "url": "/"
     },
     {
-      "name": "FM Radio",
-      "short_name": "FM",
-      "url": "/fm"
+      "name": "राशिफल",
+      "short_name": "राशिफल",
+      "url": "/jyotish/rashifal"
     },
     {
-      "name": "Live TV",
+      "name": "मिति रूपान्तरण",
+      "short_name": "रूपान्तरण",
+      "url": "/convert"
+    },
+    {
+      "name": "लाइभ टिभी",
       "short_name": "TV",
       "url": "/tv"
     },
     {
-      "name": "Janma Patro",
-      "short_name": "Kundali",
-      "url": "/jyotish/janma-patro"
+      "name": "नेपाली टाइपिङ",
+      "short_name": "टाइपिङ",
+      "url": "/tools/nepali-typing"
     }
   ]
 }

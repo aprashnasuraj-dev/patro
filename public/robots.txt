@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /my-diary
+Disallow: /family
+Disallow: /my-data
+Disallow: /settings
+Sitemap: https://patro-blush.vercel.app/sitemap.xml

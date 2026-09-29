@@ -1,197 +1,165 @@
 import { FormEvent, ReactNode, useEffect, useMemo, useState } from "react";
+import {
+  CalendarDays, MoonStar, ArrowLeftRight, Tv, BookOpenText, MoreHorizontal, Search, Sun, Moon,
+  Monitor, UserRound, Newspaper, Radio, Keyboard, Wrench, Hourglass, History, Telescope, Orbit,
+  Menu, X, Cloud, ChevronRight, ListChecks
+} from "lucide-react";
+import { LogoMark } from "./LogoMark";
+import { IconButton } from "./ui";
+import { t, type UiLanguage } from "../i18n";
+import { SiteFooter } from "./SiteFooter";
+import { applyRouteSeo } from "../seo";
 
-export type ThemePreset = "slate" | "crimson" | "saffron";
-export type UiLanguage = "en" | "ne";
+type ThemeMode = "system" | "light" | "dark";
+type RouteItem = { path:string; key:Parameters<typeof t>[1]; icon:typeof CalendarDays; descriptionNe:string; descriptionEn:string };
 
-const ROUTES = [
-  ["/", "Calendar · पात्रो"],
-  ["/aaja", "Today · आज"],
-  ["/tithi", "Tithi · तिथि"],
-  ["/tools", "Utilities · उपकरण"],
-  ["/fm", "FM Radio · एफएम"],
-  ["/tv", "Live TV · टिभी"],
-  ["/jyotish", "Jyotish · ज्योतिष"],
-  ["/jyotish/janma-patro", "Janma Patro · जन्मपत्रो"],
-  ["/jyotish/matchmaking", "Guna Milan · गुण मिलान"],
-  ["/jyotish/rashifal", "Rashifal · राशिफल"],
-  ["/time-machine", "Time Machine · समय यात्रा"],
-  ["/samachar", "Samachar · समाचार"]
-] as const;
+const MORE_ITEMS: RouteItem[] = [
+  {path:"/samachar",key:"news",icon:Newspaper,descriptionNe:"विश्वसनीय स्रोतका ताजा समाचार",descriptionEn:"Latest news from supported sources"},
+  {path:"/fm",key:"radio",icon:Radio,descriptionNe:"नेपाल र विश्वका रेडियो स्टेशन",descriptionEn:"Nepal and global radio stations"},
+  {path:"/tv",key:"tv",icon:Tv,descriptionNe:"देश, भाषा र विषय अनुसार लाइभ च्यानल",descriptionEn:"Live channels by country and language"},
+  {path:"/tools/nepali-typing",key:"typing",icon:Keyboard,descriptionNe:"Roman बाट नेपाली Unicode टाइपिङ",descriptionEn:"Roman to Nepali Unicode typing"},
+  {path:"/tools",key:"tools",icon:Wrench,descriptionNe:"मिति, कर, QR, इन्धन र अन्य उपकरण",descriptionEn:"Date, tax, QR, fuel and more"},
+  {path:"/time-machine",key:"timeMachine",icon:Hourglass,descriptionNe:"इतिहासमा समय यात्रा",descriptionEn:"Travel through Nepal history"},
+  {path:"/on-this-day",key:"history",icon:History,descriptionNe:"आजको दिन इतिहासमा",descriptionEn:"Events from this day in history"},
+  {path:"/astro",key:"astro",icon:Telescope,descriptionNe:"आकाश र खगोलीय डेटा",descriptionEn:"Sky and astronomical data"},
+  {path:"/jyotish/janma-patro",key:"birthChart",icon:Orbit,descriptionNe:"जन्म विवरणबाट जन्मपत्रिका",descriptionEn:"Birth chart from birth details"}
+];
 
-function readStored<T extends string>(key: string, allowed: readonly T[], fallback: T): T {
+const COMMAND_ITEMS: RouteItem[] = [
+  {path:"/",key:"calendar",icon:CalendarDays,descriptionNe:"आज र महिनाको पात्रो",descriptionEn:"Today and month calendar"},
+  {path:"/jyotish/rashifal",key:"rashifal",icon:MoonStar,descriptionNe:"दैनिक, साप्ताहिक र मासिक राशिफल",descriptionEn:"Daily, weekly and monthly horoscope"},
+  {path:"/convert",key:"converter",icon:ArrowLeftRight,descriptionNe:"BS ↔ AD रूपान्तरण",descriptionEn:"BS ↔ AD conversion"},
+  {path:"/tv",key:"tv",icon:Tv,descriptionNe:"लाइभ टिभी",descriptionEn:"Live television"},
+  {path:"/my-diary",key:"diary",icon:BookOpenText,descriptionNe:"रिमाइन्डर र व्यक्तिगत मितिहरू",descriptionEn:"Reminders and personal dates"},
+  ...MORE_ITEMS
+];
+
+function storedLanguage(): UiLanguage {
+  try { return localStorage.getItem("patro.ui.language")==="en" ? "en" : "ne"; } catch { return "ne"; }
+}
+function storedTheme(): ThemeMode {
   try {
-    const value = window.localStorage.getItem(key) as T | null;
-    return value && allowed.includes(value) ? value : fallback;
-  } catch {
-    return fallback;
-  }
+    const v=localStorage.getItem("patro.ui.mode");
+    if(v==="dark"||v==="light"||v==="system") return v;
+  } catch {}
+  return "system";
 }
 
-export function Skeleton({ className = "", label = "Loading" }: { className?: string; label?: string }) {
-  return <span className={"ui-skeleton " + className} role="status" aria-label={label} />;
-}
+export function AppChrome({ children }: { children:ReactNode }) {
+  const [language,setLanguage]=useState<UiLanguage>(storedLanguage);
+  const [theme,setTheme]=useState<ThemeMode>(storedTheme);
+  const [searchOpen,setSearchOpen]=useState(false);
+  const [moreOpen,setMoreOpen]=useState(false);
+  const [mobileOpen,setMobileOpen]=useState(false);
+  const [query,setQuery]=useState("");
+  const [offline,setOffline]=useState(()=>!navigator.onLine);
+  const [compact,setCompact]=useState(false);
+  const [path,setPath]=useState(()=>window.location.pathname.replace(/\/+$/, "")||"/");
 
-export function AppChrome({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<UiLanguage>(() =>
-    readStored("patro.ui.language", ["en", "ne"] as const, "ne")
-  );
-  const [theme, setTheme] = useState<ThemePreset>(() =>
-    readStored("patro.ui.theme", ["slate", "crimson", "saffron"] as const, "slate")
-  );
-  const [dark, setDark] = useState(() => readStored("patro.ui.mode", ["dark", "light"] as const, "dark") === "dark");
-  const [query, setQuery] = useState("");
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [media, setMedia] = useState<{ active: boolean; title: string; muted: boolean }>({
-    active: false,
-    title: "Media idle",
-    muted: false
-  });
+  const filtered=useMemo(()=>{
+    const q=query.trim().toLowerCase();
+    const rows=COMMAND_ITEMS.map(item=>({...item,label:t(language,item.key)}));
+    if(!q) return rows.slice(0,8);
+    return rows.filter(x=>(x.label+" "+x.descriptionNe+" "+x.descriptionEn).toLowerCase().includes(q)).slice(0,10);
+  },[language,query]);
 
-  const filteredRoutes = useMemo(() => {
-    const needle = query.trim().toLowerCase();
-    if (!needle) return ROUTES.slice(0, 6);
-    return ROUTES.filter(([, label]) => label.toLowerCase().includes(needle)).slice(0, 8);
-  }, [query]);
+  useEffect(()=>{
+    document.documentElement.lang=language;
+    try{localStorage.setItem("patro.ui.language",language);}catch{}
+  },[language]);
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.dataset.mode = dark ? "dark" : "light";
-    document.documentElement.lang = language === "ne" ? "ne" : "en";
-    try {
-      localStorage.setItem("patro.ui.language", language);
-      localStorage.setItem("patro.ui.theme", theme);
-      localStorage.setItem("patro.ui.mode", dark ? "dark" : "light");
-    } catch {
-      // Storage can be unavailable in privacy mode; the UI still works for the session.
-    }
-  }, [dark, language, theme]);
+  useEffect(()=>{
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.dataset.mode=theme==="dark"?"dark":theme==="light"?"light":"system";
+    const meta=document.querySelector('meta[name="theme-color"]');
+    meta?.setAttribute("content",theme==="dark"?"#34A765":"#176F3B");
+    try{localStorage.setItem("patro.ui.mode",theme);}catch{}
+  },[theme]);
 
-  useEffect(() => {
-    const onMedia = (event: Event) => {
-      const detail = (event as CustomEvent<{ active?: boolean; title?: string; muted?: boolean }>).detail || {};
-      setMedia((current) => ({
-        active: detail.active ?? current.active,
-        title: detail.title ?? current.title,
-        muted: detail.muted ?? current.muted
-      }));
+  useEffect(()=>{
+    const onKey=(event:KeyboardEvent)=>{
+      if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();setSearchOpen(true);}
+      if(event.key==="Escape"){setSearchOpen(false);setMoreOpen(false);setMobileOpen(false);}
     };
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setSearchOpen(false);
-        return;
-      }
-      if (event.key.toLowerCase() === "m" && !event.ctrlKey && !event.metaKey && !event.altKey) {
-        const target = event.target as HTMLElement | null;
-        if (target?.matches("input, textarea, select, [contenteditable='true']")) return;
-        window.dispatchEvent(new CustomEvent("patro:toggle-mute"));
-      }
-      if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey) {
-        const target = event.target as HTMLElement | null;
-        if (target?.matches("input, textarea, select, [contenteditable='true']")) return;
-        event.preventDefault();
-        setSearchOpen(true);
-        requestAnimationFrame(() => document.getElementById("patro-quick-search")?.focus());
-      }
-    };
-    window.addEventListener("patro:media-status", onMedia);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.removeEventListener("patro:media-status", onMedia);
-      window.removeEventListener("keydown", onKey);
-    };
-  }, []);
+    const onOnline=()=>setOffline(false), onOffline=()=>setOffline(true), onScroll=()=>setCompact(window.scrollY>24);
+    window.addEventListener("keydown",onKey); window.addEventListener("online",onOnline); window.addEventListener("offline",onOffline); window.addEventListener("scroll",onScroll,{passive:true});
+    return()=>{window.removeEventListener("keydown",onKey);window.removeEventListener("online",onOnline);window.removeEventListener("offline",onOffline);window.removeEventListener("scroll",onScroll);};
+  },[]);
 
-  function submitSearch(event: FormEvent) {
-    event.preventDefault();
-    const first = filteredRoutes[0];
-    if (first) window.location.assign(first[0]);
-  }
 
-  return (
-    <div className="patro-shell">
-      <a className="skip-link" href="#main-content">Skip to content</a>
-      <header className="patro-nav" aria-label="Primary navigation">
-        <a className="patro-brand tap-target" href="/" aria-label="Nepali Patro home">
-          <span aria-hidden="true">☀</span>
-          <span><strong>नेपाली पात्रो</strong><small>Nepali Patro</small></span>
+  useEffect(()=>{
+    const sync=()=>{const next=window.location.pathname.replace(/\/+$/, "")||"/";setPath(next);applyRouteSeo(next);};
+    sync();window.addEventListener("popstate",sync);window.addEventListener("patro:navigation",sync);
+    return()=>{window.removeEventListener("popstate",sync);window.removeEventListener("patro:navigation",sync);};
+  },[]);
+
+  function submit(event:FormEvent){event.preventDefault();const first=filtered[0];if(first) location.assign(first.path);}
+  const nextTheme=()=>setTheme(v=>v==="system"?"light":v==="light"?"dark":"system");
+  const ThemeIcon=theme==="dark"?Moon:theme==="light"?Sun:Monitor;
+  const desc=(item:RouteItem)=>language==="ne"?item.descriptionNe:item.descriptionEn;
+
+  return <div className="mp-shell">
+    <a className="skip-link" href="#main-content">{language==="ne"?"मुख्य सामग्रीमा जानुहोस्":"Skip to content"}</a>
+    {offline && <div className="mp-offline" role="status">{t(language,"offline")}</div>}
+    <header className={`mp-header ${compact?"is-compact":""}`}>
+      <div className="mp-header__inner">
+        <a className="mp-brand" href="/" aria-label={language==="ne"?"मेरो पात्रो गृहपृष्ठ":"Mero Patro home"}>
+          <LogoMark size={compact?34:40}/><span><strong>मेरो पात्रो</strong><small>Mero Patro</small></span>
         </a>
-
-        <nav className="patro-nav-links" aria-label="Main sections">
-          <a className="tap-target" href="/">पात्रो</a>
-          <a className="tap-target" href="/fm">FM</a>
-          <a className="tap-target" href="/tv">TV</a>
-          <a className="tap-target" href="/tools">उपकरण</a>
-          <a className="tap-target" href="/jyotish">ज्योतिष</a>
-          <a className="tap-target" href="/jyotish/janma-patro">चिना</a>
+        <nav className="mp-primary" aria-label="Primary navigation">
+          <a href="/" aria-current={path==="/"?"page":undefined}><CalendarDays size={18}/><span>{t(language,"calendar")}</span></a>
+          <a href="/jyotish/rashifal" aria-current={path==="/jyotish/rashifal"?"page":undefined}><MoonStar size={18}/><span>{t(language,"rashifal")}</span></a>
+          <a href="/convert" aria-current={path==="/convert"?"page":undefined}><ArrowLeftRight size={18}/><span>{t(language,"converter")}</span></a>
+          <a href="/tv" aria-current={path==="/tv"?"page":undefined}><Tv size={18}/><span>{t(language,"tv")}</span></a>
+          <a href="/my-diary" aria-current={path==="/my-diary"?"page":undefined}><BookOpenText size={18}/><span>{t(language,"diary")}</span></a>
+          <button type="button" onClick={()=>setMoreOpen(v=>!v)} aria-expanded={moreOpen}><MoreHorizontal size={18}/><span>{t(language,"more")}</span></button>
         </nav>
-
-        <div className="patro-nav-actions">
-          <button
-            className={"media-chip tap-target " + (media.active ? "is-live" : "")}
-            type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent("patro:toggle-player-panel"))}
-            aria-label={media.active ? "Open media player: " + media.title : "Open media player"}
-          >
-            <span className="live-dot" aria-hidden="true" />
-            <span className="media-chip-label">{media.active ? media.title : "Media"}</span>
-            <span aria-hidden="true">{media.muted ? "🔇" : "♪"}</span>
-          </button>
-
-          <button className="tap-target iconish" type="button" onClick={() => setSearchOpen((v) => !v)} aria-label="Open quick search">
-            ⌕
-          </button>
-
-          <button
-            className="tap-target bilingual-toggle"
-            type="button"
-            onClick={() => setLanguage((v) => v === "en" ? "ne" : "en")}
-            aria-label="Toggle English and Nepali interface labels"
-          >
-            {language === "en" ? "EN" : "ने"}
-          </button>
-
-          <button
-            className="tap-target iconish"
-            type="button"
-            onClick={() => setDark((v) => !v)}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            {dark ? "☾" : "☀"}
-          </button>
-
-          <label className="theme-select" aria-label="Traditional theme preset">
-            <span className="sr-only">Theme preset</span>
-            <select value={theme} onChange={(e) => setTheme(e.target.value as ThemePreset)}>
-              <option value="slate">Deep Slate</option>
-              <option value="crimson">Crimson · रातो</option>
-              <option value="saffron">Saffron · पहेंलो</option>
-            </select>
-          </label>
+        <div className="mp-actions">
+          <IconButton label={t(language,"search")} onClick={()=>setSearchOpen(true)}><Search size={20}/></IconButton>
+          <button className="mp-language" onClick={()=>setLanguage(v=>v==="ne"?"en":"ne")} aria-label="Toggle Nepali and English">{language==="ne"?"ने | EN":"EN | ने"}</button>
+          <IconButton label={t(language,"theme")} onClick={nextTheme}><ThemeIcon size={20}/></IconButton>
+          <a className="mp-signin" href="/settings"><UserRound size={18}/><span>{t(language,"signIn")}</span></a>
+          <IconButton className="mp-mobile-menu" label={t(language,"more")} onClick={()=>setMobileOpen(true)}><Menu size={22}/></IconButton>
         </div>
+      </div>
+      {moreOpen && <div className="mp-mega" role="menu">
+        <div className="mp-mega__grid">
+          <section><h3>{language==="ne"?"मिडिया":"Media"}</h3>{MORE_ITEMS.filter(x=>["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
+          <section><h3>{language==="ne"?"उपकरण र थप":"Tools & more"}</h3>{MORE_ITEMS.filter(x=>!["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
+        </div>
+        <a className="mp-mega__all" href="/explore">{t(language,"allFeatures")} <ChevronRight size={16}/></a>
+      </div>}
+    </header>
 
-        {searchOpen && (
-          <div className="quick-search-panel" role="dialog" aria-modal="false" aria-label="Quick navigation">
-            <form onSubmit={submitSearch}>
-              <label htmlFor="patro-quick-search" className="sr-only">Search Patro features</label>
-              <input
-                id="patro-quick-search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={language === "ne" ? "फिचर खोज्नुहोस्…" : "Search features…"}
-                autoComplete="off"
-              />
-            </form>
-            <div className="quick-search-results">
-              {filteredRoutes.map(([path, label]) => (
-                <a href={path} key={path}>{label}<span aria-hidden="true">→</span></a>
-              ))}
-            </div>
-            <small>Tip: press <kbd>/</kbd> to search, <kbd>M</kbd> to mute, <kbd>Esc</kbd> to close.</small>
-          </div>
-        )}
-      </header>
+    <div id="main-content" tabIndex={-1}>{children}</div>
+    <SiteFooter language={language}/>
 
-      <div id="main-content" tabIndex={-1}>{children}</div>
-    </div>
-  );
+    <nav className="mp-bottom-nav" aria-label="Mobile navigation">
+      <a href="/"><CalendarDays size={21}/><span>{t(language,"calendar")}</span></a>
+      <a href="/tv"><Tv size={21}/><span>{t(language,"tv")}</span></a>
+      <a href="/convert"><ArrowLeftRight size={21}/><span>{language==="ne"?"रूपान्तरण":"Convert"}</span></a>
+      <a href="/my-diary"><ListChecks size={21}/><span>{language==="ne"?"डायरी":"Diary"}</span></a>
+      <button type="button" onClick={()=>setMobileOpen(true)}><MoreHorizontal size={21}/><span>{t(language,"more")}</span></button>
+    </nav>
+
+    {mobileOpen && <div className="mp-sheet-backdrop" onMouseDown={e=>{if(e.currentTarget===e.target)setMobileOpen(false)}}>
+      <aside className="mp-sheet" role="dialog" aria-modal="true" aria-label={t(language,"more")}>
+        <header><strong>{t(language,"allFeatures")}</strong><IconButton label="Close" onClick={()=>setMobileOpen(false)}><X size={20}/></IconButton></header>
+        <div className="mp-sheet__links">{COMMAND_ITEMS.map(ItemLink)}</div>
+      </aside>
+    </div>}
+
+    {searchOpen && <div className="mp-command-backdrop" onMouseDown={e=>{if(e.currentTarget===e.target)setSearchOpen(false)}}>
+      <section className="mp-command" role="dialog" aria-modal="true" aria-label={t(language,"search")}>
+        <form onSubmit={submit}><Search size={20}/><input autoFocus value={query} onChange={e=>setQuery(e.target.value)} placeholder={language==="ne"?"फिचर, मिति वा चाडपर्व खोज्नुहोस्":"Search features, dates or festivals"} /></form>
+        <div>{filtered.map(item=><a href={item.path} key={item.path}><item.icon size={20}/><span><strong>{item.label}</strong><small>{desc(item)}</small></span><ChevronRight size={16}/></a>)}</div>
+        <footer><kbd>Ctrl/⌘ K</kbd> {language==="ne"?"खोजी खोल्नुहोस्":"opens search"} · <kbd>Esc</kbd> {language==="ne"?"बन्द":"close"}</footer>
+      </section>
+    </div>}
+  </div>;
+
+  function ItemLink(item:RouteItem){
+    const Icon=item.icon;
+    return <a href={item.path} key={item.path}><Icon size={20}/><span><strong>{t(language,item.key)}</strong><small>{desc(item)}</small></span></a>;
+  }
 }

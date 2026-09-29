@@ -1,5 +1,6 @@
 import Hls from "hls.js";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Star } from "lucide-react";
 import { fuzzyMedia, MEDIA_CATALOG, type MediaItem, type MediaKind } from "./catalog";
 import { useMedia } from "./MediaProvider";
 
@@ -677,7 +678,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       <section className="media-hero">
         <div>
           <p className="eyebrow">{kind === "radio" ? "Nepal FM directory" : "Global free live TV directory"}</p>
-          <h1>{kind === "radio" ? "FM Radio · रेडियो" : "Global Live TV · प्रत्यक्ष टिभी"}</h1>
+          <h1>{kind === "radio" ? "मेरो पात्रो रेडियो" : "लाइभ टिभी · Live TV"}</h1>
           <p>
             {kind === "radio"
               ? "Playable Nepal + global FM directory with broken-station filtering, signed relay playback, country/location filters, persistent audio and recovery."
@@ -700,7 +701,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
           <label>Country
             <select value={fmCountry} onChange={(e) => { setFmCountry(e.target.value); setFmPage(1); setFmProvince("All"); setFmDistrict("All"); }}>
               <option value="NP">🇳🇵 Nepal</option>
-              <option value="ALL">🌐 Worldwide</option>
+              <option value="ALL">Worldwide</option>
               {fmCountries.filter((x) => x.code !== "NP").map((x) => <option key={x.code} value={x.code}>{x.name} ({x.count.toLocaleString()})</option>)}
             </select>
           </label>
@@ -764,7 +765,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
                 {liveState ? " · " + (liveState === "live" ? "LIVE" : liveState === "dead" ? "DEAD" : liveState === "checking" ? "checking" : "health unknown") : ""}
               </small>
             </div>
-            <button className="favorite-button" onClick={() => favorite(item.id)} aria-label={(favorites.has(item.id) ? "Remove " : "Add ") + item.name + " favorite"}>{favorites.has(item.id) ? "★" : "☆"}</button>
+            <button className="favorite-button" onClick={() => favorite(item.id)} aria-label={(favorites.has(item.id) ? "Remove " : "Add ") + item.name + " favorite"}><Star size={19} fill={favorites.has(item.id) ? "currentColor" : "none"} aria-hidden="true"/></button>
             <div className="station-actions">
               {kind === "radio"
                 ? <button onClick={() => playRadio(item)} disabled={item.playable === false && !item.officialUrl}>{item.playable === false ? (item.officialUrl ? "Official site" : "Offline") : (media.item?.id === item.id && media.playing ? "Playing" : "Play")}</button>

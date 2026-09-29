@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
 import type { ApodPayload, CosmicDayPayload, SyncPayload, TithiPayload } from "./types";
 import { HeroCanvas } from "./components/HeroCanvas";
@@ -7,12 +7,13 @@ import { DateTravelExperience } from "./components/DateTravelExperience";
 import { LunarPhaseDial } from "./components/LunarPhaseDial";
 import { CalendarGrid } from "./components/CalendarGrid";
 import { CosmicExperience } from "./components/CosmicExperience";
+import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
   { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },
    { path: "/jyotish/janma-patro", title: "जन्मपत्रो · Kundali", subtitle: "Birth chart, planetary positions, Vimshottari Dasha and 36 Guna Milan", group: "Jyotish" },
-  { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
+  { path: "/aaja", title: "आज · Today", subtitle: "Daily Mero Patro dashboard and open/closed context", group: "Daily" },
   { path: "/tools/tithi", title: "तिथि · Tithi", subtitle: "Tithi reminders, lunar-date derivation and recurrence tools", group: "Tools" },
   { path: "/tools/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Tools" },
   { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete tools directory", group: "Tools" },
@@ -23,9 +24,9 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/tools/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
   { path: "/time-machine", title: "Time Machine", subtitle: "Historical Nepal timeline", group: "Explore" },
   { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
-  { path: "/fm", title: "FM Radio", subtitle: "Nepal radio directory", group: "Explore" },
-  { path: "/explore", title: "Explore", subtitle: "Discovery hub", group: "Explore" },
-  { path: "/tv", title: "Explore TV", subtitle: "Live TV by country, language and category", group: "Explore" },
+  { path: "/fm", title: "मेरो पात्रो रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "Explore" },
+  { path: "/explore", title: "सबै सुविधा · All Features", subtitle: "पात्रो, डायरी, मिडिया र उपकरणको पूर्ण सूची", group: "Explore" },
+  { path: "/tv", title: "लाइभ टिभी · Live TV", subtitle: "देश, भाषा र विषय अनुसार लाइभ च्यानल", group: "Explore" },
   { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
   { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Jyotish tools and guidance", group: "Jyotish" },
   { path: "/tools/api", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
@@ -45,19 +46,25 @@ function matchesFeaturePath(path: string) {
 }
 
 function FeatureFrame() {
+  const frameRef = useRef<HTMLIFrameElement | null>(null);
   const path = window.location.pathname;
   const q = new URLSearchParams({ path });
   if (window.location.search) q.set("search", window.location.search);
-  const title = FEATURE_LINKS.find((x) => x.path === path)?.title || "Nepal Miti";
+  const title = FEATURE_LINKS.find((x) => x.path === path)?.title || "Mero Patro";
 
   return (
     <div className="feature-route-shell">
       <header className="feature-route-bar">
-        <a className="feature-home-link" href="/">← Nepal Miti</a>
+        <a className="feature-home-link" href="/">← Mero Patro</a>
         <strong>{title}</strong>
+        <ReadAloudButton
+          className="secondary-button feature-read-aloud"
+          getText={() => frameRef.current?.contentDocument?.body?.innerText || title}
+          label="सुन्नुहोस्"
+        />
         <span className="free-pill">Free</span>
       </header>
-      <iframe className="feature-frame" src={"/api/v1/compat/page?" + q.toString()} title={title} />
+      <iframe ref={frameRef} className="feature-frame" src={"/api/v1/compat/page?" + q.toString()} title={title} />
     </div>
   );
 }
@@ -168,7 +175,7 @@ export default function App() {
     const params = new URLSearchParams(window.location.search);
     params.set("date", selectedDate);
     window.history.replaceState(null, "", window.location.pathname + "?" + params.toString());
-    document.title = `Patro Sky Calendar · ${selectedDate}`;
+    document.title = `मेरो पात्रो · ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parseIso(selectedDate))}`;
   }, [selectedDate]);
 
   function chooseDate(iso: string) {
@@ -246,11 +253,11 @@ export default function App() {
           error={cosmic.error}
         />
 
-        <section className="feature-hub glass-panel" aria-label="Nepal Miti features">
+        <section className="feature-hub glass-panel" aria-label="Mero Patro features">
           <div className="section-heading">
             <div>
               <p className="eyebrow">All features are free</p>
-              <h2>नेपाल मिति · Features</h2>
+              <h2>मेरो पात्रो · Features</h2>
               <p className="subheading">Calendar, Jyotish, daily-life and discovery tools in one place.</p>
             </div>
           </div>
@@ -266,11 +273,11 @@ export default function App() {
         </section>
 
         <footer className="app-footer">
-          <span>Patro Astronomical Synchronization</span>
+          <span>मेरो पात्रो</span>
           <span aria-hidden="true">·</span>
-          <span>AD · BS · NS · Tithi · NASA</span>
+          <span>AD · BS · NS · तिथि · खगोलीय पात्रो</span>
           <span aria-hidden="true">·</span>
-          <span>Scientific data and traditional interpretation are labeled separately.</span>
+          <span>नेपाली पात्रो, तिथि, चाडपर्व र राशिफल</span>
         </footer>
       </main>
     </div>
