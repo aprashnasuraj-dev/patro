@@ -1,5 +1,6 @@
 import { Hono } from "npm:hono@4.7.2";
 import { cors } from "npm:hono@4.7.2/cors";
+import { storeContact } from "./services/contact.ts";
 
 const app = new Hono().basePath("/functions/v1/router");
 
@@ -420,6 +421,13 @@ app.get("/tools-hub", async (c) => {
       "X-Content-Type-Options":"nosniff",
     },
   });
+});
+
+app.post("/contact", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw,"router-contact",12))) return c.json({ok:false,error:"rate_limit_exceeded"},429,{"Retry-After":"3600"});
+  let body: unknown = {}; try { body = await c.req.json(); } catch { return c.json({ok:false,error:"invalid_json"},400); }
+  const result = await storeContact((body || {}) as Record<string,unknown>, {ip: clientIp(c.req.raw),userAgent: c.req.header("user-agent") || ""});
+  return c.json(result.ok ? {ok:true} : {ok:false,error:result.error}, result.status as any);
 });
 
 app.get("/health", (c) => c.json({

@@ -1,0 +1,2 @@
+import { Search, CalendarDays } from "lucide-react";
+export function NotFound(){return <main className="mp-page mp-not-found"><div><span className="mp-404">४०४</span><h1>यो पृष्ठ भेटिएन</h1><p>लिङ्क परिवर्तन भएको हुन सक्छ। आजको पात्रो वा सबै सुविधाबाट अगाडि बढ्नुहोस्।</p><div><a href="/"><CalendarDays size={18}/>आजको पात्रो</a><a href="/explore"><Search size={18}/>सबै सुविधा</a></div></div></main>;}

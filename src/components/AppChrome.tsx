@@ -7,6 +7,8 @@ import {
 import { LogoMark } from "./LogoMark";
 import { IconButton } from "./ui";
 import { t, type UiLanguage } from "../i18n";
+import { SiteFooter } from "./SiteFooter";
+import { applyRouteSeo } from "../seo";
 
 type ThemeMode = "system" | "light" | "dark";
 type RouteItem = { path:string; key:Parameters<typeof t>[1]; icon:typeof CalendarDays; descriptionNe:string; descriptionEn:string };
@@ -52,6 +54,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
   const [query,setQuery]=useState("");
   const [offline,setOffline]=useState(()=>!navigator.onLine);
   const [compact,setCompact]=useState(false);
+  const [path,setPath]=useState(()=>window.location.pathname.replace(/\\/+$/, "")||"/");
 
   const filtered=useMemo(()=>{
     const q=query.trim().toLowerCase();
@@ -83,6 +86,13 @@ export function AppChrome({ children }: { children:ReactNode }) {
     return()=>{window.removeEventListener("keydown",onKey);window.removeEventListener("online",onOnline);window.removeEventListener("offline",onOffline);window.removeEventListener("scroll",onScroll);};
   },[]);
 
+
+  useEffect(()=>{
+    const sync=()=>{const next=window.location.pathname.replace(/\/+$/, "")||"/";setPath(next);applyRouteSeo(next);};
+    sync();window.addEventListener("popstate",sync);window.addEventListener("patro:navigation",sync);
+    return()=>{window.removeEventListener("popstate",sync);window.removeEventListener("patro:navigation",sync);};
+  },[]);
+
   function submit(event:FormEvent){event.preventDefault();const first=filtered[0];if(first) location.assign(first.path);}
   const nextTheme=()=>setTheme(v=>v==="system"?"light":v==="light"?"dark":"system");
   const ThemeIcon=theme==="dark"?Moon:theme==="light"?Sun:Monitor;
@@ -97,11 +107,11 @@ export function AppChrome({ children }: { children:ReactNode }) {
           <LogoMark size={compact?34:40}/><span><strong>मेरो पात्रो</strong><small>Mero Patro</small></span>
         </a>
         <nav className="mp-primary" aria-label="Primary navigation">
-          <a href="/"><CalendarDays size={18}/><span>{t(language,"calendar")}</span></a>
-          <a href="/jyotish/rashifal"><MoonStar size={18}/><span>{t(language,"rashifal")}</span></a>
-          <a href="/convert"><ArrowLeftRight size={18}/><span>{t(language,"converter")}</span></a>
-          <a href="/tv"><Tv size={18}/><span>{t(language,"tv")}</span></a>
-          <a href="/my-diary"><BookOpenText size={18}/><span>{t(language,"diary")}</span></a>
+          <a href="/" aria-current={path==="/"?"page":undefined}><CalendarDays size={18}/><span>{t(language,"calendar")}</span></a>
+          <a href="/jyotish/rashifal" aria-current={path==="/jyotish/rashifal"?"page":undefined}><MoonStar size={18}/><span>{t(language,"rashifal")}</span></a>
+          <a href="/convert" aria-current={path==="/convert"?"page":undefined}><ArrowLeftRight size={18}/><span>{t(language,"converter")}</span></a>
+          <a href="/tv" aria-current={path==="/tv"?"page":undefined}><Tv size={18}/><span>{t(language,"tv")}</span></a>
+          <a href="/my-diary" aria-current={path==="/my-diary"?"page":undefined}><BookOpenText size={18}/><span>{t(language,"diary")}</span></a>
           <button type="button" onClick={()=>setMoreOpen(v=>!v)} aria-expanded={moreOpen}><MoreHorizontal size={18}/><span>{t(language,"more")}</span></button>
         </nav>
         <div className="mp-actions">
@@ -122,6 +132,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
     </header>
 
     <div id="main-content" tabIndex={-1}>{children}</div>
+    <SiteFooter language={language}/>
 
     <nav className="mp-bottom-nav" aria-label="Mobile navigation">
       <a href="/"><CalendarDays size={21}/><span>{t(language,"calendar")}</span></a>

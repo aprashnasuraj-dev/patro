@@ -122,6 +122,38 @@
       "destination": "/tools"
     },
     {
+      "source": "/explore",
+      "destination": "/tools"
+    },
+    {
+      "source": "/my-diary",
+      "destination": "/tools"
+    },
+    {
+      "source": "/about",
+      "destination": "/tools"
+    },
+    {
+      "source": "/sources",
+      "destination": "/tools"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/tools"
+    },
+    {
+      "source": "/terms",
+      "destination": "/tools"
+    },
+    {
+      "source": "/contact",
+      "destination": "/tools"
+    },
+    {
+      "source": "/404",
+      "destination": "/tools"
+    },
+    {
       "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
@@ -803,6 +835,77 @@
         {
           "key": "Service-Worker-Allowed",
           "value": "/tools"
+        }
+      ]
+    },
+    {
+      "source": "/my-diary",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/about",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/sources",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/privacy",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/terms",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/contact",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/404",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
         }
       ]
     }

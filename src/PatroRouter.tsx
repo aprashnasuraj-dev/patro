@@ -6,8 +6,10 @@ import { UtilitySuite } from "./utilities/UtilitySuite";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 import { FeatureHub } from "./components/FeatureHub";
 import { MyDiary } from "./components/MyDiary";
+import { TrustPage } from "./components/TrustPages";
+import { NotFound } from "./components/NotFound";
 
-const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
+const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking"]);
 
 const PROTECTED_TOOL_PATHS = new Set([
   "/tools/tithi",
@@ -45,6 +47,7 @@ export function PatroRouter() {
       event.preventDefault();
       window.history.pushState(null, "", url.pathname + url.search + url.hash);
       setPath(normalized);
+      window.dispatchEvent(new Event("patro:navigation"));
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
     window.addEventListener("popstate", onPop);
@@ -56,6 +59,12 @@ export function PatroRouter() {
   }, []);
 
   if (path === "/explore") return <FeatureHub />;
+  if (path === "/about") return <TrustPage page="about" />;
+  if (path === "/sources") return <TrustPage page="sources" />;
+  if (path === "/privacy") return <TrustPage page="privacy" />;
+  if (path === "/terms") return <TrustPage page="terms" />;
+  if (path === "/contact") return <TrustPage page="contact" />;
+  if (path === "/404") return <NotFound />;
   if (path === "/my-diary") return <MyDiary />;
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;

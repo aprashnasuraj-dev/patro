@@ -83,13 +83,13 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
   { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance", group: "utility" },
   { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR", group: "utility" },
-  { id: "fuelprice", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
+  { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
   { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Tools", group: "tools" },
-  { id: "diaspora", icon: "🌏", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
+  { id: "diaspora", icon: "देश", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
   { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Tools", group: "tools" },
   { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Tools", group: "tools" },
-  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Nepal Miti API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
-  { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Tools", group: "tools" },
+  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Mero Patro API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
+  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Mero Patro features.", badge: "Tools", group: "tools" },
 ];
 
 const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";

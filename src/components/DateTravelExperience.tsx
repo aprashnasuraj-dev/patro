@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { SunMedium, Circle } from "lucide-react";
 
 interface Props {
   selectedDate: string;
@@ -66,7 +67,7 @@ export function DateTravelExperience({ selectedDate, today, onDateChange }: Prop
       </div>
 
       <div className="orbit-track">
-        <span className="orbit-track__sun" aria-hidden="true">☉</span>
+        <span className="orbit-track__sun" aria-hidden="true"><SunMedium size={18}/></span>
         <input
           type="range"
           min={-3650}
@@ -78,7 +79,7 @@ export function DateTravelExperience({ selectedDate, today, onDateChange }: Prop
           onKeyUp={() => onDateChange(fromOffset(today, draft))}
           aria-label="Travel up to ten years before or after today"
         />
-        <span className="orbit-track__planet" aria-hidden="true">●</span>
+        <span className="orbit-track__planet" aria-hidden="true"><Circle size={13} fill="currentColor"/></span>
       </div>
 
       <div className="time-travel__date-row">
