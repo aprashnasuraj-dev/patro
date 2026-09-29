@@ -43,55 +43,55 @@
     },
     {
       "source": "/tools/nepali-typing",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/unicode-to-preeti",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/preeti-to-unicode",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/fuelprice",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/nepaliqr",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/incometax",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/landconverter",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/adtobs",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/bstoad",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/unicodetopreeti",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/preetitounicode",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/preeti-converter",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/typingtools",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/tools/tithi",
@@ -119,7 +119,7 @@
     },
     {
       "source": "/tools/:path*",
-      "destination": "/astro/index.html"
+      "destination": "/tools"
     },
     {
       "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
