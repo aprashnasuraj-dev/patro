@@ -7,6 +7,8 @@ import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 
 const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
+const TYPING_RELEASE_AT = Date.parse("2027-09-28T18:15:00Z");
+
 const PROTECTED_TOOL_PATHS = new Set([
   "/tools/tithi",
   "/tools/diaspora",
@@ -55,9 +57,10 @@ export function PatroRouter() {
 
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
-  if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
-  if (path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
-  if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;
+  const typingV2Ready = Date.now() >= TYPING_RELEASE_AT;
+  if (typingV2Ready && path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
+  if (typingV2Ready && (path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode")) return <NepaliTools mode="preeti-to-unicode" />;
+  if (typingV2Ready && (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti")) return <NepaliTools mode="unicode-to-preeti" />;
   if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
   if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
   return <App />;
