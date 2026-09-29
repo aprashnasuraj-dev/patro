@@ -6,6 +6,7 @@ type Terai = { bigha: string; kattha: string; dhur: string };
 type DateMetadata = { confidence: "validated-project-archive" | "provisional-open-table"; source: string; note: string };
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
 type QrResult = { dataUrl: string; modules: number; bytes: number };
+type CourtFeeResult = { claimAmount: string; fee: string; bands: { label: string; amount: string; fee: string; rateBps: number | null }[] };
 type TaxResult = {
   fiscalYear: string;
   taxableIncome: string;
@@ -40,6 +41,7 @@ export function UtilitySuite() {
   const latestAdDate = useRef(0);
   const latestTax = useRef(0);
   const latestQr = useRef(0);
+  const latestCourtFee = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -76,6 +78,9 @@ export function UtilitySuite() {
   const [qrLevel, setQrLevel] = useState<"L" | "M" | "Q" | "H">("M");
   const [qrResult, setQrResult] = useState<QrResult | null>(null);
   const [qrError, setQrError] = useState("");
+  const [courtClaim, setCourtClaim] = useState("500000");
+  const [courtFeeResult, setCourtFeeResult] = useState<CourtFeeResult | null>(null);
+  const [courtFeeError, setCourtFeeError] = useState("");
 
   useEffect(() => {
     const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
@@ -88,6 +93,7 @@ export function UtilitySuite() {
         else if (message.id === latestBsDate.current || message.id === latestAdDate.current) setDateError(message.error);
         else if (message.id === latestTax.current) setTaxError(message.error);
         else if (message.id === latestQr.current) setQrError(message.error);
+        else if (message.id === latestCourtFee.current) setCourtFeeError(message.error);
         else setLandError(message.error);
         return;
       }
@@ -115,6 +121,9 @@ export function UtilitySuite() {
       } else if (message.id === latestQr.current) {
         setQrResult(message.result);
         setQrError("");
+      } else if (message.id === latestCourtFee.current) {
+        setCourtFeeResult(message.result);
+        setCourtFeeError("");
       }
     };
     return () => {
@@ -222,6 +231,16 @@ export function UtilitySuite() {
     }, 100);
     return () => window.clearTimeout(timer);
   }, [qrText, qrLevel, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady || !courtClaim.trim()) return;
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestCourtFee.current = id;
+      workerRef.current?.postMessage({ id, type: "court-fee", claimAmount: courtClaim });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, [courtClaim, workerReady]);
 
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
@@ -380,6 +399,37 @@ export function UtilitySuite() {
           </div>
         </div>
         {qrError && <p className="utility-error" role="alert">{qrError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="court-fee-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Muluki Civil Procedure Code · Chapter 6</p>
+            <h2 id="court-fee-title">Civil Court Fee Calculator</h2>
+          </div>
+          <span className="utility-badge">Value-based claim fee</span>
+        </header>
+
+        <div className="court-grid">
+          <article className="land-panel">
+            <h3>Claim amount</h3>
+            <Field label="Claim / बिगो amount (NPR)" value={courtClaim} onChange={setCourtClaim} />
+            {courtFeeResult && <div className="utility-result">
+              <span>Estimated statutory court fee</span>
+              <strong>NPR {courtFeeResult.fee}</strong>
+              <small>Claim NPR {courtFeeResult.claimAmount}</small>
+            </div>}
+          </article>
+          <article className="court-bands">
+            {courtFeeResult?.bands.map((band, index) => <div key={index}>
+              <strong>{band.rateBps === null ? "Flat" : (band.rateBps / 100) + "%"}</strong>
+              <span>{band.label}</span>
+              <small>NPR {band.fee} fee on NPR {band.amount}</small>
+            </div>)}
+          </article>
+        </div>
+        <p className="utility-note">This estimates the value-based civil court fee only. Filing, appeal, copy, execution or case-specific exemptions/fees are separate.</p>
+        {courtFeeError && <p className="utility-error" role="alert">{courtFeeError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
