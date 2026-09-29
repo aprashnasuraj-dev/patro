@@ -708,8 +708,48 @@
       ]
     },
     {
+      "source": "/tools/api",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/card",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/diaspora",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/tithi",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
       "source": "/tools/family",
       "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
@@ -723,6 +763,10 @@
     {
       "source": "/tools/my-data",
       "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
