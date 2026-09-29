@@ -15,7 +15,7 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
   { path: "/tithi", title: "तिथि · Tithi", subtitle: "Traditional recurrence, fasting and observance tools", group: "Daily" },
   { path: "/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Daily" },
-  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Preeti/Unicode and exact Nepali land conversion", group: "Tools" },
+  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Choose from Preeti/Unicode, BS↔AD, land, tax, QR and fuel tools", group: "Tools" },
   { path: "/card", title: "Share Cards", subtitle: "Calendar and festival sharing cards", group: "Tools" },
   { path: "/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
   { path: "/settings/holidays", title: "Holiday Settings", subtitle: "Audience, district and closure preferences", group: "Tools" },
@@ -207,6 +207,13 @@ export default function App() {
           onNextDay={() => shiftSelected(1)}
           onToday={() => chooseDate(today)}
         />
+
+        <nav className="home-quick-launch glass-panel" aria-label="Quick access">
+          <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>
+          <a href="/tools"><span>Tools</span><strong>उपकरण · Utilities</strong><small>Choose from 6 Nepali tools</small></a>
+          <a href="/fm"><span>Listen</span><strong>FM Radio</strong><small>Nepal & global stations</small></a>
+          <a href="/tv"><span>Watch</span><strong>Live TV</strong><small>Playable channels</small></a>
+        </nav>
 
         {sync.error && (
           <div className="inline-error cosmic-top-error" role="alert">
