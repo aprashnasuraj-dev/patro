@@ -42,6 +42,30 @@
       "destination": "/astro/index.html"
     },
     {
+      "source": "/tools/tithi",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tithi"
+    },
+    {
+      "source": "/tools/diaspora",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/diaspora"
+    },
+    {
+      "source": "/tools/card",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/card"
+    },
+    {
+      "source": "/tools/family",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/family"
+    },
+    {
+      "source": "/tools/api",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/developers"
+    },
+    {
+      "source": "/tools/my-data",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/my-data"
+    },
+    {
       "source": "/tools/:path*",
       "destination": "/astro/index.html"
     },
@@ -631,6 +655,32 @@
         {
           "key": "Content-Type",
           "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/family",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/tools/my-data",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
         }
       ]
     },
