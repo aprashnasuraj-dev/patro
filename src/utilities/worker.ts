@@ -2,6 +2,7 @@ import qrcode from "qrcode-generator";
 import {
   adToBs,
   bighaToSqFt,
+  calculateBagmatiPrivateRenewal2083,
   calculateCivilCourtFee,
   calculateNepalSalaryTax2083,
   bsDateMetadata,
@@ -27,7 +28,8 @@ type Request =
   | { id: number; type: "date-ad"; ad: string }
   | { id: number; type: "tax-2083"; annualSalary: string; ssf: string; epf: string; cit: string; lifeInsurance: string; healthInsurance: string; qualifyingSsfContributor: boolean }
   | { id: number; type: "qr"; text: string; errorCorrectionLevel?: "L" | "M" | "Q" | "H" }
-  | { id: number; type: "court-fee"; claimAmount: string };
+  | { id: number; type: "court-fee"; claimAmount: string }
+  | { id: number; type: "vehicle-2083"; kind: "motorcycle" | "car"; engineCc: number };
 
 type Response = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
 
@@ -152,7 +154,7 @@ self.onmessage = (event: MessageEvent<Request>) => {
           bytes: utf8Bytes(text).length,
         },
       };
-    } else {
+    } else if (request.type === "court-fee") {
       const result = calculateCivilCourtFee(request.claimAmount);
       response = {
         id: request.id,
@@ -166,6 +168,18 @@ self.onmessage = (event: MessageEvent<Request>) => {
             fee: formatScaled(band.feeScaled),
             rateBps: band.rateBps,
           })),
+        },
+      };
+    } else {
+      const result = calculateBagmatiPrivateRenewal2083(request);
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          ...result,
+          annualTaxNpr: result.annualTaxNpr.toString(),
+          renewalFeeNpr: result.renewalFeeNpr.toString(),
+          governmentSubtotalNpr: result.governmentSubtotalNpr.toString(),
         },
       };
     }
