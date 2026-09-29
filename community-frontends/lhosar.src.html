@@ -107,7 +107,7 @@ body { background: linear-gradient(180deg, #cfe1f6 0%, #eef4fb 38%, #f7f3ea 100%
     <h2 id="cardH">🎴 ल्होसार शुभकामना कार्ड</h2>
     <p class="lead">नाम लेख्नुहोस् — आफ्नो ल्होसहितको कार्ड बनाउनुहोस्।</p>
     <div class="grid2">
-      <canvas class="share" id="card"></canvas>
+      <canvas class="share" id="card" role="img" aria-label="ल्होसार शुभकामना कार्ड पूर्वावलोकन"></canvas>
       <div class="card">
         <label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label>
         <div role="tablist" id="cardSys" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"></div>
@@ -144,7 +144,7 @@ const next = (id) => K.nextOf(rows, id);
     el('rect', { x: x - w / 2, y, width: w, height: h, fill: FLAG[i % 5], stroke: '#00000018', rx: 2 }, g);
     const slot = [2, 5, 8, 11, 13].indexOf(i);
     if (slot >= 0 && upcoming[slot]) {
-      const r = upcoming[slot], dark = i % 5 === 1 || i % 5 === 4;
+      const r = upcoming[slot], dark = i % 5 === 1 || i % 5 === 3 || i % 5 === 4;
       const t1 = el('text', { x, y: y + 34, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: dark ? '#1a2233' : '#fff' }, g); t1.textContent = r.festival.dev.split(' ')[0];
       const t2 = el('text', { x, y: y + 54, 'text-anchor': 'middle', 'font-size': 12, fill: dark ? '#1a2233' : '#fff' }, g); t2.textContent = fmtShort(r.main);
       const t3 = el('text', { x, y: y + 72, 'text-anchor': 'middle', 'font-size': 11, fill: dark ? '#1a2233' : '#fff', opacity: .85 }, g); t3.textContent = npd(Math.max(0, days(today, r.start))) + ' दिन';
@@ -248,7 +248,7 @@ showDetail(K.nextOf(rows));
 (() => {
   let cs = 'tamang';
   const tabs = document.getElementById('cardSys');
-  [['tamang', 'तामाङ'], ['gurung', 'गुरुङ'], ['tibetan', 'शेर्पा']].forEach(([k, l], i) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('aria-selected', String(i === 0)); b.textContent = l;
+  [['tamang', 'तामाङ'], ['gurung', 'गुरुङ'], ['tibetan', 'शेर्पा']].forEach(([k, l], i) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(i === 0)); b.textContent = l;
     b.onclick = () => { cs = k; [...tabs.children].forEach((c) => c.setAttribute('aria-selected', String(c === b))); draw(); }; tabs.appendChild(b); });
   const draw = async () => {
     try { await document.fonts.load('40px "Noto Serif Tibetan"'); await document.fonts.load('800 60px Mukta'); } catch {}
