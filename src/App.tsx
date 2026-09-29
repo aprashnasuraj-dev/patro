@@ -213,7 +213,7 @@ export default function App() {
 
         <nav className="home-quick-launch glass-panel" aria-label="Quick access">
           <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>
-          <a href="/tools"><span>Tools</span><strong>उपकरण · Utilities</strong><small>Choose from 6 Nepali tools</small></a>
+          <a href="/tools"><span>Tools</span><strong>पात्रो Plus · उपकरण</strong><small>14 focused tools in one directory</small></a>
           <a href="/fm"><span>Listen</span><strong>FM Radio</strong><small>Nepal & global stations</small></a>
           <a href="/tv"><span>Watch</span><strong>Live TV</strong><small>Playable channels</small></a>
         </nav>
