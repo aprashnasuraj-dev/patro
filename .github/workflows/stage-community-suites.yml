@@ -65,7 +65,7 @@ jobs:
             await browser.close();
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
-          node /tmp/community-inputs/download.cjs
+          NODE_PATH="$PWD/node_modules" node /tmp/community-inputs/download.cjs
           unzip -t /tmp/community-inputs/community-suites-bundle.zip >/dev/null
           unzip -t /tmp/community-inputs/community-frontends.zip >/dev/null
       - name: Import source exactly and wire BS adapter
