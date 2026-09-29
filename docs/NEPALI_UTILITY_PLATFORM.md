@@ -16,9 +16,13 @@ patro/
 │     ├─ tsconfig.json
 │     └─ src/
 │        ├─ index.ts
-│        ├─ preeti.ts
+│        ├─ bsDate.ts
+│        ├─ courtFee.ts
 │        ├─ land.ts
+│        ├─ preeti.ts
 │        ├─ tax.ts
+│        ├─ utf8.ts
+│        ├─ vehicle.ts
 │        └─ core.test.ts
 ├─ src/
 │  ├─ utilities/
@@ -64,15 +68,34 @@ Exact anchors:
 
 The final Dam/Dhur values remain scaled decimals so fractional units do not pass through IEEE-754 arithmetic.
 
-### Tax core
+### BS ⇄ AD date engine
 
-The tax engine is policy-driven rather than hard-coding an FY label. It accepts versioned slabs, contribution caps, salary-fraction limits, and insurance exemptions. A specific Nepal FY policy must only be exposed after its authoritative slab table and deductions are versioned and verified.
+- Verified base anchor: BS 1970-01-01 = AD 1913-04-13 UTC.
+- 1970–1974 month lengths come from the existing Patro synchronized calendar archive.
+- 1975–2093 was cross-checked against all 1,428 corresponding months in the project archive with zero month-length mismatches.
+- 2094–2099 stays available for deterministic offline conversion but is explicitly tagged provisional because independent future BS tables can disagree.
+
+### FY 2083/84 salary-tax engine
+
+The reusable progressive engine remains policy-driven. The concrete FY 2083/84 resident salary policy is versioned separately and uses the current 1% / 10% / 20% / 27% / 29% bands, ordinary vs qualifying-SSF contribution caps, and explicit insurance caps. SSF first-band eligibility is never inferred from a contribution amount; the caller must declare it.
+
+### Civil court fee engine
+
+The value-based civil claim calculator implements the Muluki Civil Procedure Code Chapter 6 schedule as successive bands. It deliberately excludes unrelated filing, appeal, copy, execution and case-specific fees.
+
+### Bagmati vehicle renewal engine
+
+The active FY 2083/84 scope is private petrol/diesel motorcycles/scooters and private cars/jeeps/vans registered in Bagmati. It returns annual vehicle tax plus the registration-certificate renewal fee. Insurance, arrears, late penalties, age surcharges, inspection fees and concessions are explicitly excluded rather than guessed. EV schedules remain gated because FY 2083 changed electric-vehicle taxation.
+
+### UTF-8 / QR utility
+
+Devanagari QR encoding routes text through an explicit TextEncoder-based UTF-8 byte function before the QR library. A regression test locks the byte sequence for नेपाली so a library default cannot silently truncate Unicode.
 
 ## Agent 2 — UI, Worker, offline
 
 - `/tools` is a native React route.
-- Font and land calculations execute inside `src/utilities/worker.ts`.
-- 60 ms input coalescing prevents unnecessary Worker messages during rapid typing.
+- Font, date, tax, land, court-fee, vehicle-renewal and QR calculations execute inside `src/utilities/worker.ts`.
+- 60–100 ms input coalescing prevents unnecessary Worker messages during rapid typing.
 - The utility shell uses the existing Patro theme/accessibility system and is responsive down to narrow mobile widths.
 - A separately scoped service worker is registered at `/tools/sw.js`; the production build emits a physical `dist/tools` shell from the verified `/astro` artifact so `/tools` does not depend on an HTML rewrite.
 - Static documents/scripts/styles/images/workers are cached. API traffic remains network-first except the existing calendar cache strategy.
@@ -89,7 +112,13 @@ The tax engine is policy-driven rather than hard-coding an FY label. It accepts 
 - Unicode → Preeti round trip,
 - exact Hill/Terai anchors,
 - fractional Dam precision,
-- progressive tax + contribution-cap edge behavior.
+- generic progressive-tax edge behavior,
+- FY 2083/84 salary bands, SSF waiver, contribution and insurance caps,
+- verified BS/AD anchors and archive fixtures,
+- provisional future-BS provenance,
+- Devanagari UTF-8 bytes,
+- civil court-fee bands,
+- Bagmati vehicle cc boundary behavior.
 
 GitHub Actions runs:
 
@@ -100,15 +129,24 @@ GitHub Actions runs:
 
 Vercel Git integration remains the deployment mechanism. This avoids a second deployment path that could race the existing production integration.
 
-## Expansion modules
+## Expansion module status
 
-These remain isolated modules behind data-quality gates:
+Implemented and exposed in `/tools`:
 
-- BS ⇄ AD: import the authoritative 1975–2099 BS month table into `packages/core`; test anchor and every year boundary before enabling offline conversion.
-- FY tax UI: bind the generic tax core to a versioned, cited fiscal policy object only after official FY 2083/84 rules are validated.
-- Vehicle renewal and court fees: version rate tables by effective date and province/vehicle class/case type where applicable.
-- Devanagari QR: client-only generation; no text needs to leave the device.
-- NOC fuel tracker: online data adapter with timestamp, source metadata, stale-data indicator, and cached last-known value.
+- BS ⇄ AD offline conversion with provenance.
+- FY 2083/84 personal salary-tax calculator.
+- Bagmati FY 2083/84 private ICE vehicle renewal estimator.
+- Devanagari UTF-8 QR generator.
+- Civil value-based court-fee calculator.
+- NOC fuel tracker with regional price groups, fetch timestamp and browser last-known cache.
+
+The NOC adapter lives in the existing Supabase Hono `router`. It attempts the official NOC retail-price page first. When NOC serves a maintenance page or cannot be parsed, the API returns the latest source-verified official snapshot with `stale: true` and an effective-date/note; it never presents a snapshot as live.
+
+Still intentionally gated:
+
+- vehicle EV schedules and late penalties,
+- unsupported provinces,
+- any fee/tax rule whose current effective schedule has not been versioned and tested.
 
 ## Next.js 16 SSG migration gate
 
