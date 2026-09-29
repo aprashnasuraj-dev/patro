@@ -8,7 +8,7 @@ Release branch: `release/nepali-typing-2027`
 
 This branch prepares two related upgrades without replacing any existing Patro feature:
 
-1. **Enhanced Preeti ⇄ Unicode**
+1. **Enhanced Preeti Converter** — one tool containing both Preeti → Unicode and Unicode → Preeti
    - cluster-aware short-i handling
    - postfix reph handling
    - canonical Preeti `If` for `क्ष`
@@ -53,8 +53,7 @@ Direct `anon` and `authenticated` table access is revoked. The public Edge Funct
 The release plan records these staged features for 2027-09-29:
 
 - `nepali-typing-v1`
-- `enhanced-preeti-v2`
-- `enhanced-unicode-preeti-v2`
+- `enhanced-preeti-converter-v2` — one converter with both directions
 
 The new Nepali typing catalog row also has a future `release_after`, so the remote catalog does not expose it before the gate.
 
@@ -123,3 +122,14 @@ The idempotent SQL bootstrap is stored at:
 - `supabase/sql/typing_release_2027.sql`
 
 This SQL file is a runbook, not a migration-history entry.
+
+
+## Catalog hierarchy correction
+
+The intended top-level order is:
+
+1. **Typing Tools** — one **Preeti Converter** card; after the 2027 release gate it also contains **Nepali Typing (Roman → Unicode)**.
+2. **Tools** — exactly: Tithi, Diaspora, Card, Family, API, My Data.
+3. **Converters & utilities** — BS/AD, land, income tax, QR, fuel.
+
+Preeti → Unicode and Unicode → Preeti are directions inside the same converter, not separate catalog tools.
