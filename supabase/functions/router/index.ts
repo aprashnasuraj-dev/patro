@@ -302,6 +302,7 @@ app.all("/cron/rashifal",(c)=>proxyLegacy(c.req.raw,"/api/cron/rashifal"));
 
 
 const TEMP_TOOL_PATHS: Record<string,string> = {
+  "preeti-converter": "/tools?tool=font",
   preetitounicode: "/tools?tool=font",
   unicodetopreeti: "/tools?tool=font",
   bstoad: "/tools?tool=date",
@@ -381,8 +382,8 @@ app.get("/tools-hub", async (c) => {
     '<header><a href="/">पात्रो · Patro</a><a href="/tools">Tools</a></header>'+
     '<div class="hero"><small>Tools · उपकरण</small><h1>Choose a tool</h1><p>Typing, conversion, calendar, sharing, family and developer utilities in one directory. Each tool opens only when selected.</p></div>'+
     section("typing","Typing Tools","Nepali typing & font conversion")+
-    section("utility","Converters & utilities","Date, land, finance and everyday tools")+
     section("tools","Tools","Calendar, sharing, family and developer tools")+
+    section("utility","Converters & utilities","Date, land, finance and everyday tools")+
     '<footer>Catalog managed by Patro · Supabase control plane</footer></main></body></html>';
   return new Response(html, {
     status: 200,
