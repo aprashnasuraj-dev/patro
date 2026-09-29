@@ -921,5 +921,8 @@
       "path": "/api/v1/cron/rashifal",
       "schedule": "15 18 * * *"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }
