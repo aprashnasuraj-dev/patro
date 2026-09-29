@@ -1,7 +1,7 @@
 /* Scoped to /astro/nepali-tools/ only. Does not replace Patro's root worker. */
 const CACHE='patro-nepali-tools-v1.1.0';
 const ROOT=new URL('./',self.location.href).href;
-const LEXICON='https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/typing-lexicon?format=words';
+const LEXICON='/api/v1/typing/lexicon?format=words';
 const FILES=['index.html','styles.css','app.mjs','worker.mjs','core/roman.mjs','core/converter.mjs','core/suggestions.mjs','core/aliases.mjs','licenses/DICTIONARY-NOTICE.txt'];
 self.addEventListener('install',e=>e.waitUntil(
  caches.open(CACHE).then(async c=>{
@@ -16,7 +16,7 @@ self.addEventListener('fetch',e=>{
  const url=new URL(e.request.url);
  if(e.request.method!=='GET')return;
  const isLocal=url.href.startsWith(ROOT);
- const isLexicon=url.origin==='https://pxlsmxbpgdfzjzuqtict.supabase.co'&&url.pathname==='/functions/v1/typing-lexicon'&&url.searchParams.get('format')==='words';
+ const isLexicon=url.origin===self.location.origin&&url.pathname==='/api/v1/typing/lexicon'&&url.searchParams.get('format')==='words';
  if(!isLocal&&!isLexicon)return;
  e.respondWith(caches.open(CACHE).then(async c=>{
   const hit=await c.match(e.request,{ignoreVary:true});
