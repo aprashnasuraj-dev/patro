@@ -640,7 +640,11 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
   }, [fmItems, query, fmProvince, fmDistrict, fmPlayableOnly]);
 
   const shownTv = useMemo(
-    () => tvItems.filter((item) => !tvHideDead || tvHealth[item.id] !== "dead"),
+    () => tvItems.filter((item) => {
+      if (!tvHideDead) return true;
+      const state = tvHealth[item.id];
+      return state === "live" || state === "unknown";
+    }),
     [tvItems, tvHealth, tvHideDead]
   );
   const tvLiveCount = Object.values(tvHealth).filter((value) => value === "live").length;
@@ -789,7 +793,10 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
         </nav>
       )}
 
-      {!items.length && !tvLoading && <div className="media-empty">No station matches this search. Clear the filters to see the full directory.</div>}
+      {!items.length && !tvLoading && kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking") &&
+        <div className="media-empty">Verifying live channels… dead streams stay hidden.</div>}
+      {!items.length && !tvLoading && !(kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking")) &&
+        <div className="media-empty">No playable station matches this search. Clear the filters or recheck live status.</div>}
       {kind === "tv" && tvLoading && <div className="media-empty">Loading and checking global channels…</div>}
       {kind === "radio" && fmLoading && <div className="media-empty">Loading verified global radio streams…</div>}
 
