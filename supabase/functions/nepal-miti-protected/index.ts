@@ -457,7 +457,7 @@ Deno.serve(async request=>{
       const flags=await readFlags();
       if(flags.home_polish){
         next=nmServerHomePaint(next);
-        next=next.replace('</head>','<link rel="stylesheet" href="/nm-foundation.css"><link rel="stylesheet" href="/nm-home.css?v=67"></head>');
+        next=next.replace('</head>','<link rel="stylesheet" href="/nm-foundation.css"><link rel="stylesheet" href="/nm-home.css?v=68"></head>');
         next=next.replace('</body>','<script src="/nm-foundation.js" defer></script><script src="/nm-home.js?v=66" defer></script></body>');
       }
       return secureResponse(new Response(polishLegacyHtml(next,p),{status:baseResponse.status,headers:baseResponse.headers}));
