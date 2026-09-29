@@ -393,6 +393,7 @@ app.get("/tools-hub", async (c) => {
       {slug:"family",title:"परिवार · Family",subtitle:"Keep private family dates and shared household events together.",category:"tools",badge:"Tools",icon:"परि",metadata:{legacy_path:"/family"}},
       {slug:"api",title:"API · Developers",subtitle:"Explore Nepal Miti APIs and integration guidance.",category:"tools",badge:"Tools",icon:"</>",metadata:{legacy_path:"/developers"}},
       {slug:"my-data",title:"मेरो डेटा · My Data",subtitle:"Review, export or remove private Nepal Miti data.",category:"tools",badge:"Tools",icon:"🔐",metadata:{legacy_path:"/my-data"}},
+      {slug:"samudaya",title:"समुदाय · Community Suite",subtitle:"नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी एउटै प्रवेशद्वारमा।",category:"tools",badge:"Community",icon:"◎",metadata:{legacy_path:"/samudaya"}},
     ];
   }
   items = items.filter((item) => item?.slug !== "typingtools");
