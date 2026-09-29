@@ -31,8 +31,8 @@
       "ezbr_sha256": "95bef3d6128a3a5c217167861949490ab2a586029b0d2470fda17fdd757d2662"
     },
     "router": {
-      "version": 37,
-      "ezbr_sha256": "e8272c8055a45dc35a8fa1ba7dbb85cf1a94a2fb4132bf2c693b86b165e63c9a"
+      "version": 38,
+      "ezbr_sha256": "96ec8150a0dc703c8e9ba04ad53b9e26593cdb551102a74c83fd1044e03f516b"
     },
     "same_origin_endpoints": [
       "/api/v1/tools/catalog",
@@ -47,5 +47,27 @@
       "temporary_tools_view": "/explore?view=tools",
       "alias": "/tools-hub"
     }
+  },
+  "catalog_hierarchy": {
+    "typing_tools": [
+      "preeti-converter",
+      "nepali-typing"
+    ],
+    "tools": [
+      "tithi",
+      "diaspora",
+      "card",
+      "family",
+      "api",
+      "my-data"
+    ],
+    "utilities": [
+      "bstoad",
+      "adtobs",
+      "landconverter",
+      "incometax",
+      "nepaliqr",
+      "fuelprice"
+    ]
   }
 }
