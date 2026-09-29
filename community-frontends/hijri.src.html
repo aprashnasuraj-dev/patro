@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>हिलाल · हिजरी पात्रो र नमाज समय</title>
+<meta name="description" content="आजको हिजरी मिति, अर्को चन्द्रदर्शनको सम्भावना, नमाज समय, सेहरी–इफ्तार तालिका, किब्ला कम्पास र ईद काउन्टडाउन — नेपालका शहरहरूका लागि। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#0b1f24" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&family=Noto+Naskh+Arabic:wght@400;700&family=Amiri&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #0b1f24; --ink: #eef6f3; --muted: #9fc1b8; --accent: #e2b659; --on-accent: #1d1503; --card: #ffffff0b; --line: #eef6f31c; --emerald: #2fa37a; }
+body { background: radial-gradient(900px 700px at 50% -10%, #17444d 0%, var(--bg) 60%) fixed; }
+.ar { font-family: "Amiri", "Noto Naskh Arabic", serif; direction: rtl; }
+#stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+#moon { width: 100%; max-width: 440px; aspect-ratio: 1; margin: 0 auto; display: block; }
+.hdate { font-size: clamp(28px, 4vw, 42px); font-weight: 800; }
+.hdate .ar { font-size: 1.2em; color: var(--accent); display: block; }
+.evenings { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+@media (max-width: 760px) { .evenings { grid-template-columns: 1fr; } }
+.ev { border-radius: 18px; border: 1px solid var(--line); background: var(--card); padding: 12px; }
+.ev.yes { border-color: var(--emerald); box-shadow: 0 0 0 1px var(--emerald); }
+.ev svg { width: 100%; height: 110px; display: block; }
+.pr { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 760px) { .pr { grid-template-columns: 1fr; } }
+#clock, #compass { width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto; display: block; }
+table { width: 100%; border-collapse: collapse; }
+td, th { padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: left; }
+tr.now td, tr.now th { color: var(--accent); font-weight: 800; }
+.rtable { max-height: 420px; overflow: auto; }
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<main>
+  <div class="topbar"><div id="nav"></div><div style="display:flex;gap:8px;align-items:center"><span class="today" id="today"></span><button class="pill" id="snd" aria-pressed="false">🔕 आवाज बन्द</button></div></div>
+
+  <div class="hero">
+    <div>
+      <h1>हिलाल <span class="ar" style="font-size:.6em;color:var(--accent)">هلال</span></h1>
+      <div class="hdate" id="hdate"></div>
+      <p class="lead" id="hnote"></p>
+      <div class="hero-count" id="heroCount"></div>
+    </div>
+    <svg id="moon" viewBox="-200 -200 400 400" role="img" aria-label="आजको चन्द्रमा"></svg>
+  </div>
+
+  <section aria-labelledby="evH">
+    <h2 id="evH">🌒 अर्को चन्द्रदर्शन</h2>
+    <p class="lead" id="evLead"></p>
+    <div class="evenings" id="evenings"></div>
+    <p class="rv" style="margin-top:8px">मापदण्ड: सूर्यास्तमा चन्द्रमाको उचाइ ≥ ५°, सूर्य–चन्द्र कोण ≥ १०°, उमेर ≥ १८ घण्टा। नेपालमा आधिकारिक मिति मुस्लिम आयोगको चन्द्रदर्शनमा गृह मन्त्रालयले घोषणा गर्छ।</p>
+  </section>
+
+  <section aria-labelledby="prH">
+    <h2 id="prH">🕌 नमाज घडी</h2>
+    <div class="card" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+      <select id="city" aria-label="शहर"></select>
+      <select id="method" aria-label="विधि"><option value="karachi">कराँची १८°/१८°</option><option value="mwl">MWL १८°/१७°</option><option value="isna">ISNA १५°/१५°</option></select>
+      <select id="asr" aria-label="असर"><option value="hanafi">असर: हनफी</option><option value="shafii">असर: शाफई</option></select>
+      <button class="pill" id="loc">📍 मेरो स्थान</button>
+    </div>
+    <div class="pr">
+      <svg id="clock" viewBox="-160 -160 320 320" role="img" aria-label="२४ घण्टे नमाज घडी"></svg>
+      <div class="card"><table><tbody id="pt"></tbody></table><p id="nextPr" style="margin:12px 0 0;font-size:18px"></p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="qH">
+    <h2 id="qH">🕋 किब्ला कम्पास</h2>
+    <div class="pr">
+      <svg id="compass" viewBox="-160 -160 320 320" role="img" aria-label="किब्ला दिशा"></svg>
+      <div class="card"><p id="qText" style="font-size:20px;margin-top:0"></p><button class="pill" id="qLive">🧭 फोनको कम्पास प्रयोग गर्नुहोस्</button><p class="rv" style="margin-top:10px">फोनको कम्पास चुम्बकीय उत्तर देखाउँछ; नेपालमा भिन्नता करिब ०°। धातुबाट टाढा राख्नुहोस्।</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="rH">
+    <h2 id="rH">🌙 रमजान तालिका</h2>
+    <p class="lead" id="rLead"></p>
+    <div class="card rtable"><table><thead><tr><th>रोजा</th><th>मिति</th><th>सेहरी अन्त्य</th><th>इफ्तार</th></tr></thead><tbody id="rt"></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="tlH">
+    <h2 id="tlH">पर्व–पात्रो</h2>
+    <div class="grid2"><div class="tl" id="tl"></div><div class="card" id="detail" aria-live="polite"></div></div>
+  </section>
+
+  <section aria-labelledby="cardH">
+    <h2 id="cardH">🎴 ईद कार्ड</h2>
+    <div class="grid2"><canvas class="share" id="card"></canvas>
+      <div class="card"><label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label><br><br><label>ईद <select id="cardEid"><option value="eid-ul-fitr">ईद–उल–फित्र</option><option value="eid-al-adha">ईद–उल–अजहा</option></select></label><br><button class="pill" id="cardShare" style="margin-top:14px">⬇ सेयर / डाउनलोड</button></div></div>
+  </section>
+
+  <footer>
+    हिजरी मिति: चन्द्रदर्शन सम्भावनाबाट "सम्भावित" (काठमाडौं)। २०२५ र २०२६ को ईद–उल–फित्र (३१ मार्च, २१ मार्च) र २०२६ को ईद–उल–अजहा (२८ मे) नेपालको घोषणासँग मिल्छ।<br>
+    नमाज समय: खगोलीय गणना; आफ्नो मस्जिदको तालिकासँग मिलाउनुहोस्। स्रोत: Ratopati (गृह मन्त्रालय, २०२६), Kathmandu Post (२०२५), nepalnews।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, fmtShort, days, today, reduce, t24, TZ } = K;
+document.getElementById('nav').innerHTML = K.nav('hijri.html'); K.stamp(document.getElementById('today')); K.soundToggle(document.getElementById('snd'));
+const suite = S.SUITES.hijri, rows = K.rowsFor(suite);
+const cities = S.NEPAL_CITIES;
+let loc = cities[0];
+
+/* stars */
+(() => { const c = document.getElementById('stars'), x = c.getContext('2d'); let st = [];
+  const size = () => { c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio; st = Array.from({ length: 160 }, () => [Math.random() * c.width, Math.random() * c.height, Math.random() * 1.3 + .2, Math.random() * 6]); };
+  size(); addEventListener('resize', size);
+  const draw = (t) => { x.clearRect(0, 0, c.width, c.height); for (const [a, b, r, p] of st) { x.globalAlpha = .3 + .3 * Math.sin(t / 1500 + p); x.fillStyle = '#fff'; x.beginPath(); x.arc(a, b, r * devicePixelRatio, 0, 6.28); x.fill(); } if (!reduce) requestAnimationFrame(draw); };
+  requestAnimationFrame(draw); })();
+
+/* ── Hero moon + Hijri date ── */
+function moonPath(phase, r) { const a = ((phase % 360) + 360) % 360, rx = Math.abs(Math.cos(a * Math.PI / 180)) * r, wax = a < 180, gib = a > 90 && a < 270;
+  return `M0,${-r} A${r},${r} 0 0 ${wax ? 1 : 0} 0,${r} A${rx},${r} 0 0 ${wax ? (gib ? 1 : 0) : (gib ? 0 : 1)} 0,${-r}Z`; }
+(() => {
+  const h = S.hijriOf(today), m = S.HIJRI_MONTHS[h.month - 1];
+  document.getElementById('hdate').innerHTML = `<span class="ar">${h.day.toLocaleString('ar-EG')} ${m.ar} ${h.year.toLocaleString('ar-EG')}</span>${npd(h.day)} ${m.dev} ${npd(h.year)} हि.`;
+  document.getElementById('hnote').innerHTML = `${m.en} · ${K.badge('expected')} — खगोलीय अनुमान`;
+  const svg = document.getElementById('moon'), ph = S.moonPhaseAngle(new Date());
+  const defs = el('defs', {}, svg), g = el('radialGradient', { id: 'lit', cx: '40%', cy: '40%', r: '70%' }, defs);
+  el('stop', { offset: 0, 'stop-color': '#fffbe9' }, g); el('stop', { offset: 1, 'stop-color': '#e2c98a' }, g);
+  el('circle', { r: 190, fill: '#e2b65911' }, svg);
+  el('circle', { r: 150, fill: '#16343b' }, svg);
+  el('path', { d: moonPath(ph, 150), fill: 'url(#lit)' }, svg);
+  el('circle', { r: 150, fill: 'none', stroke: '#ffffff22' }, svg);
+  const n = rows.filter((r) => r.end >= today && ['ramadan-start', 'eid-ul-fitr', 'eid-al-adha', 'islamic-new-year'].includes(r.festival.id))[0];
+  const d = days(today, n.start);
+  document.getElementById('heroCount').innerHTML = `<span class="n">${npd(Math.max(d, 0))}</span><div><b style="font-size:22px">${d <= 0 ? 'आज ' : 'दिनपछि '}${n.festival.dev}</b><br><span style="color:var(--muted)">${fmt(n.main)} ${K.badge(n.confidence)} ±१ दिन</span></div>`;
+})();
+
+/* ── Next crescent evenings ── */
+(() => {
+  const h = S.hijriOf(today), ny = h.month === 12 ? h.year + 1 : h.year, nm = h.month === 12 ? 1 : h.month + 1;
+  const start = S.expectedMonthStart(ny, nm), mname = S.HIJRI_MONTHS[nm - 1];
+  document.getElementById('evLead').textContent = `${mname.dev} ${npd(ny)} को सुरुवात: सम्भावित ${fmt(start)}। चन्द्रदर्शनका लागि तीन साँझ:`;
+  const days3 = [S.addDays(start, -3), S.addDays(start, -2), S.addDays(start, -1)]; // month begins the day after the first visible evening
+  document.getElementById('evenings').innerHTML = days3.map((d) => {
+    const c = S.crescentLikely(d), alt = Math.max(-5, Math.min(25, c.altitude)), y = 90 - alt * 3, x = 150 + Math.max(-60, Math.min(60, c.elongation * 3));
+    return `<div class="ev${c.visible ? ' yes' : ''}"><b>${fmt(d)} को साँझ</b><svg viewBox="0 0 300 110" aria-hidden="true"><rect width="300" height="110" fill="#10303a"/><line x1="0" y1="90" x2="300" y2="90" stroke="#9fc1b8"/><circle cx="150" cy="96" r="10" fill="#e2b659"/>${c.ageHours > 0 ? `<path d="M${x - 7},${y - 9} A10 10 0 1 0 ${x - 7},${y + 9} A7 10 0 1 1 ${x - 7},${y - 9}Z" fill="#fffbe9"/>` : ''}</svg>
+      <small>उमेर ${c.ageHours > 0 ? npd(c.ageHours.toFixed(0)) + ' घण्टा' : 'औंसी भएको छैन'} · उचाइ ${npd(c.altitude.toFixed(1))}° · कोण ${npd(c.elongation.toFixed(1))}°</small><br><b style="color:${c.visible ? 'var(--emerald)' : 'var(--muted)'}">${c.visible ? '✓ देखिने सम्भावना' : '✗ कठिन'}</b></div>`;
+  }).join('');
+})();
+
+/* ── Prayer clock ── */
+function drawPrayer() {
+  const method = document.getElementById('method').value, asr = document.getElementById('asr').value;
+  const p = S.prayerTimes(today, loc, method, asr);
+  const R = [['फज्र · सेहरी अन्त्य', p.fajr], ['सूर्योदय', p.sunrise], ['जोहर', p.dhuhr], ['असर', p.asr], ['मगरिब · इफ्तार', p.maghrib], ['इशा', p.isha]];
+  const now = Date.now(); let cur = -1; R.forEach(([, d], i) => { if (d.getTime() <= now) cur = i; });
+  document.getElementById('pt').innerHTML = R.map(([k, d], i) => `<tr class="${i === cur ? 'now' : ''}"><th>${k}</th><td>${t24(d)}</td></tr>`).join('');
+  const nx = R.find(([, d]) => d.getTime() > now);
+  document.getElementById('nextPr').textContent = nx ? `अर्को: ${nx[0].split(' · ')[0]} — ${npd(Math.round((nx[1].getTime() - now) / 60000))} मिनेटमा` : 'आजका सबै नमाज सकिए।';
+  const svg = document.getElementById('clock'); svg.innerHTML = '';
+  const mins = (d) => { const s = d.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }); return +s.slice(0, 2) * 60 + +s.slice(3, 5); };
+  const ang = (m) => m / 1440 * 360 + 180;
+  const arc = (m0, m1, color) => { const a0 = ang(m0), a1 = ang(m1), [x0, y0] = P(130, a0), [x1, y1] = P(130, a1); el('path', { d: `M${x0},${y0} A130,130 0 ${((a1 - a0 + 360) % 360) > 180 ? 1 : 0} 1 ${x1},${y1}`, stroke: color, 'stroke-width': 16, fill: 'none', 'stroke-linecap': 'round' }, svg); };
+  el('circle', { r: 130, fill: '#0f2a30', stroke: '#ffffff22', 'stroke-width': 16 }, svg);
+  arc(mins(p.sunrise), mins(p.maghrib), '#e2b65966'); arc(mins(p.fajr), mins(p.sunrise), '#2f7ab066'); arc(mins(p.maghrib), mins(p.isha), '#c0506a77');
+  R.forEach(([k, d], i) => { const [x, y] = P(130, ang(mins(d))); el('circle', { cx: x, cy: y, r: 7, fill: i === cur ? '#e2b659' : '#eef6f3' }, svg);
+    const [tx, ty] = P(98, ang(mins(d))); const t = el('text', { x: tx, y: ty + 4, 'text-anchor': 'middle', 'font-size': 11, fill: '#9fc1b8' }, svg); t.textContent = k.split(' · ')[0]; });
+  [0, 6, 12, 18].forEach((h) => { const [x, y] = P(150, ang(h * 60)); const t = el('text', { x, y: y + 4, 'text-anchor': 'middle', 'font-size': 10, fill: '#9fc1b855' }, svg); t.textContent = npd(h); });
+  const [hx, hy] = P(118, ang(mins(new Date())));
+  el('line', { x1: 0, y1: 0, x2: hx, y2: hy, stroke: '#eef6f3', 'stroke-width': 3, 'stroke-linecap': 'round' }, svg); el('circle', { r: 6, fill: '#eef6f3' }, svg);
+}
+
+/* ── Qibla ── */
+let heading = null;
+function drawCompass() {
+  const q = S.qibla(loc.lat, loc.lon), svg = document.getElementById('compass'); svg.innerHTML = '';
+  const rot = heading == null ? 0 : -heading;
+  const g = el('g', { transform: `rotate(${rot})` }, svg);
+  el('circle', { r: 140, fill: '#0f2a30', stroke: '#ffffff33', 'stroke-width': 2 }, g);
+  for (let k = 0; k < 72; k++) { const [x1, y1] = P(140, k * 5), [x2, y2] = P(k % 18 === 0 ? 118 : k % 6 === 0 ? 126 : 132, k * 5); el('line', { x1, y1, x2, y2, stroke: '#9fc1b8', 'stroke-width': k % 18 === 0 ? 3 : 1 }, g); }
+  [['उ', 0], ['पू', 90], ['द', 180], ['प', 270]].forEach(([l, a]) => { const [x, y] = P(100, a); const t = el('text', { x, y: y + 6, 'text-anchor': 'middle', 'font-size': 18, fill: a ? '#9fc1b8' : '#e05a3a', 'font-weight': 800 }, g); t.textContent = l; });
+  const [qx, qy] = P(112, q); el('line', { x1: 0, y1: 0, x2: qx, y2: qy, stroke: '#2fa37a', 'stroke-width': 7, 'stroke-linecap': 'round' }, g);
+  const [kx, ky] = P(128, q); const k = el('text', { x: kx, y: ky + 8, 'text-anchor': 'middle', 'font-size': 26 }, g); k.textContent = '🕋';
+  el('circle', { r: 8, fill: '#eef6f3' }, svg);
+  document.getElementById('qText').innerHTML = `${loc.name ?? 'मेरो स्थान'} बाट किब्ला: <b>${npd(q.toFixed(1))}°</b> (उत्तरबाट घडीको दिशामा — पश्चिमभन्दा अलिकति उत्तर)।`;
+}
+document.getElementById('qLive').onclick = async () => {
+  try { if (typeof DeviceOrientationEvent !== 'undefined' && DeviceOrientationEvent.requestPermission) await DeviceOrientationEvent.requestPermission(); } catch {}
+  addEventListener('deviceorientationabsolute', (e) => { if (e.alpha != null) { heading = 360 - e.alpha; drawCompass(); } });
+  addEventListener('deviceorientation', (e) => { if (e.webkitCompassHeading != null) { heading = e.webkitCompassHeading; drawCompass(); } });
+};
+
+/* ── Ramadan table ── */
+function drawRamadan() {
+  const h = S.hijriOf(today), hy = h.month > 9 || (h.month === 9 && false) ? h.year + 1 : h.year;
+  const ry = h.month >= 10 ? h.year + 1 : h.year;
+  const start = S.expectedMonthStart(ry, 9, loc), end = S.expectedMonthStart(ry, 10, loc);
+  document.getElementById('rLead').innerHTML = `रमजान ${npd(ry)} हि.: सम्भावित ${fmt(start)} – ${fmt(S.addDays(end, -1))} · ईद ${fmt(end)} ${K.badge('expected')} · ${loc.name ?? 'मेरो स्थान'}`;
+  let html = ''; let i = 1;
+  for (let d = start; d < end; d = S.addDays(d, 1), i++) { const r = S.ramadanDay(d, loc, document.getElementById('method').value);
+    html += `<tr class="${d === today ? 'now' : ''}"><td>${npd(i)}</td><td>${fmtShort(d)} · ${K.weekday(d).replace('बार', '')}</td><td>${t24(r.sehriEnds)}</td><td>${t24(r.iftar)}</td></tr>`; }
+  document.getElementById('rt').innerHTML = html;
+}
+
+/* ── controls ── */
+(() => {
+  const sel = document.getElementById('city');
+  cities.forEach((c, i) => { const o = document.createElement('option'); o.value = i; o.textContent = c.name; sel.appendChild(o); });
+  const all = () => { drawPrayer(); drawCompass(); drawRamadan(); };
+  sel.onchange = () => { loc = cities[+sel.value]; all(); };
+  document.getElementById('method').onchange = all; document.getElementById('asr').onchange = all;
+  document.getElementById('loc').onclick = () => navigator.geolocation?.getCurrentPosition((p) => { loc = { name: 'मेरो स्थान', lat: p.coords.latitude, lon: p.coords.longitude, tz: TZ }; all(); });
+  all(); setInterval(drawPrayer, 60_000);
+})();
+
+/* ── Timeline ── */
+const showDetail = (r) => document.getElementById('detail').innerHTML = K.detailHTML(r, 'var(--accent)');
+K.timeline(document.getElementById('tl'), rows, { color: '#e2b659', onSelect: showDetail });
+showDetail(K.nextOf(rows));
+
+/* ── Eid card ── */
+(() => {
+  const draw = async () => {
+    try { await document.fonts.load('800 60px Mukta'); await document.fonts.load('64px Amiri'); } catch {}
+    const id = document.getElementById('cardEid').value, r = K.nextOf(rows, id);
+    K.shareCard(document.getElementById('card'), {
+      bg: '#0b1f24', fg: '#eef6f3', accent: '#e2b659', kicker: 'ईद मुबारक', title: r.festival.dev.split(' (')[0], sub: `${fmt(r.main)} (सम्भावित)`,
+      lines: [`${document.getElementById('cardName').value} को तर्फबाट`], footer: 'हिलाल · हिजरी पात्रो',
+      motif: (c, W) => { c.fillStyle = '#e2b659'; c.font = '96px Amiri, serif'; c.textAlign = 'center'; c.fillText('عيد مبارك', W / 2, 310);
+        c.beginPath(); c.arc(W - 170, 170, 80, 0, 6.28); c.fill(); c.fillStyle = '#0b1f24'; c.beginPath(); c.arc(W - 140, 150, 72, 0, 6.28); c.fill(); },
+    });
+  };
+  document.getElementById('cardName').oninput = draw; document.getElementById('cardEid').onchange = draw; draw();
+  document.getElementById('cardShare').onclick = () => K.shareCanvas(document.getElementById('card'), 'eid.png', 'ईद मुबारक!');
+})();
+})();
+</script>
+</body>
+</html>

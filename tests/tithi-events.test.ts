@@ -8,6 +8,10 @@ describe('observance rules reproduce Nepal festival dates', () => {
   it('Vijaya Dashami (aparahna): 2024-10-12, 2025-10-02', () => {
     expect(dates({ month: 6, paksha: 'shukla', tithi: 10, observance: 'aparahna' })).toEqual(['2024-10-12', '2025-10-02']);
   });
+  it('Vijaya Dashami 2026 = 2026-10-21 (official MoHA list; Dashami covers aparahna on both days)', () => {
+    expect(occurrences({ month: 6, paksha: 'shukla', tithi: 10, observance: 'aparahna', prefer: 'last' }, '2024-01-01', '2026-12-31').map((o) => o.date))
+      .toEqual(['2024-10-12', '2025-10-02', '2026-10-21']);
+  });
   it('Laxmi Puja (pradosh, later day): 2024-11-01, 2025-10-21', () => {
     expect(dates({ month: 7, paksha: 'krishna', tithi: 15, observance: 'pradosh' })).toEqual(['2024-11-01', '2025-10-21']);
   });

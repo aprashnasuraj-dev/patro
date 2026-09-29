@@ -34,8 +34,8 @@ describe('responder', () => {
   });
   it('festival countdown', async () => {
     const text = await reply(parseIntent('dashain kahile'), { bs: fakeBs, appUrl: 'https://x' }, new Date('2026-09-29T02:00:00Z'));
-    expect(text).toContain('2026-10-20');
-    expect(text).toContain('२१ दिन बाँकी');
+    expect(text).toContain('2026-10-21');
+    expect(text).toContain('२२ दिन बाँकी');
   });
 });
 

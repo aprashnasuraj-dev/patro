@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>माघीको आगो · थारू पात्रो</title>
+<meta name="description" content="थारू नयाँ वर्ष माघी, अट्वारी, जितिया, जुडशीतल — काउन्टडाउन, माघीका पाँच दिन, बरघर परम्परा र धानको वर्ष। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#1b120d" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #1b120d; --ink: #f6e9d2; --muted: #c9ae8c; --accent: #e8b04a; --on-accent: #2a1606; --card: #ffffff0c; --line: #f6e9d21f;
+  --clay: #b5452a; --straw: #e8b04a; --lime: #f3e6cc; }
+body { background:
+  radial-gradient(circle at 20% 10%, #3a2217 0%, transparent 45%),
+  radial-gradient(#ffffff08 1.5px, transparent 1.6px) 0 0 / 22px 22px, var(--bg); }
+.mural { border: 6px solid transparent; border-image: repeating-linear-gradient(90deg, var(--lime) 0 6px, transparent 6px 14px) 6; }
+.hero { position: relative; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+.fire-wrap { position: relative; aspect-ratio: 1; max-width: 520px; width: 100%; margin: 0 auto; }
+#fire { position: absolute; inset: 0; width: 100%; height: 100%; }
+#dancers { position: absolute; inset: 0; width: 100%; height: 100%; }
+.orbit { animation: orbit 40s linear infinite; transform-origin: 0 0; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.dancer { animation: bob 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-6px) rotate(4deg); } }
+/* five days */
+.days5 { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 1fr); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+.day { scroll-snap-align: start; border-radius: 22px; padding: 20px; background: linear-gradient(180deg, #ffffff10, #ffffff04); border: 1px solid var(--line); position: relative; min-height: 260px; }
+.day .ic { font-size: 54px; }
+.day .d { color: var(--straw); font-weight: 800; letter-spacing: .5px; }
+.day h3 { margin: 6px 0; font-family: "Tiro Devanagari Sanskrit", serif; font-weight: 400; font-size: 24px; }
+.day.today { border-color: var(--straw); box-shadow: 0 0 0 2px var(--straw), 0 20px 60px #e8b04a33; }
+/* barghar */
+.roles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
+@media (max-width: 760px) { .roles { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.role { text-align: center; padding: 18px 12px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); }
+.role .ic { font-size: 40px; }
+.role b { display: block; font-size: 19px; margin-top: 6px; }
+.role small { color: var(--muted); }
+/* rice year */
+#rice { width: 100%; height: 260px; display: block; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div id="nav"></div><div style="display:flex;gap:8px;align-items:center"><span class="today" id="today"></span><button class="pill" id="snd" aria-pressed="false">🔕 आवाज बन्द</button></div></div>
+
+  <div class="hero">
+    <div>
+      <h1>माघीको आगो</h1>
+      <p class="lead">थारू समुदायको नयाँ वर्ष। माघी नजिकिँदै जाँदा आगो बल्दै जान्छ — आज कति बलेको छ?</p>
+      <div class="hero-count" id="heroCount"></div>
+      <p id="fireNote" style="color:var(--muted)"></p>
+    </div>
+    <div class="fire-wrap">
+      <canvas id="fire" aria-hidden="true"></canvas>
+      <svg id="dancers" viewBox="-250 -250 500 500" role="img" aria-label="आगो वरिपरि मघौटा नाच"></svg>
+    </div>
+  </div>
+
+  <section aria-labelledby="d5H">
+    <h2 id="d5H">माघीका पाँच दिन</h2>
+    <p class="lead">पुस २८ देखि माघ २ सम्म — दायाँ सार्नुहोस्। (अवधि जिल्लाअनुसार १–३ दिन फरक पर्छ।)</p>
+    <div class="days5" id="days5"></div>
+  </section>
+
+  <section aria-labelledby="bgH">
+    <h2 id="bgH">बरघर: गाउँको आफ्नै सरकार</h2>
+    <p class="lead">माघीमा गाउँ भेला बसेर वर्षभरिका लागि गाउँका जिम्मेवार व्यक्ति छानिन्छन् वा नवीकरण गरिन्छ, र सामाजिक नियम बनाइन्छ — जस्तै बर्दियामा बालविवाह र बहुविवाहविरुद्धका निर्णय। कुनै पात्रोमा नभएको थारू परम्परा।</p>
+    <div class="roles">
+      <div class="role"><div class="ic" aria-hidden="true">🧑‍⚖️</div><b>बरघर / बडघर</b><small>गाउँको मुखिया — भेला र निर्णयको अगुवा</small></div>
+      <div class="role"><div class="ic" aria-hidden="true">📣</div><b>चौकीदार</b><small>सूचना पुर्‍याउने, गाउँको रेखदेख</small></div>
+      <div class="role"><div class="ic" aria-hidden="true">⚒️</div><b>लोहार</b><small>खेतीका औजार बनाउने–मर्मत गर्ने</small></div>
+      <div class="role"><div class="ic" aria-hidden="true">🌿</div><b>गुरुवा</b><small>परम्परागत पूजा र उपचार गर्ने</small></div>
+    </div>
+    <p class="rv" style="margin-top:8px">भूमिकाका छोटा विवरण समुदायबाट समीक्षाधीन। स्रोत: Kathmandu Post (Maghi 2024)।</p>
+  </section>
+
+  <section aria-labelledby="riceH">
+    <h2 id="riceH">धानको वर्ष</h2>
+    <p class="lead">रोपाइँदेखि माघीसम्म — थारू पर्वहरू धानको चक्रमा।</p>
+    <div class="card"><svg id="rice" viewBox="0 0 1200 260" preserveAspectRatio="none" role="img" aria-label="धानको वर्ष र थारू पर्वहरू"></svg></div>
+  </section>
+
+  <section aria-labelledby="tlH">
+    <h2 id="tlH">पर्व–पात्रो</h2>
+    <div class="grid2"><div class="tl" id="tl"></div><div class="card" id="detail" aria-live="polite"></div></div>
+  </section>
+
+  <section aria-labelledby="cardH">
+    <h2 id="cardH">🎴 माघी शुभकामना कार्ड</h2>
+    <div class="grid2">
+      <canvas class="share" id="card"></canvas>
+      <div class="card">
+        <label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label><br><br>
+        <label>जिल्ला <select id="cardDist"><option>दाङ</option><option>बर्दिया</option><option>कैलाली</option><option>कञ्चनपुर</option><option>बाँके</option><option>कपिलवस्तु</option><option>रुपन्देही</option><option>नवलपरासी</option><option>चितवन</option><option>सुनसरी</option><option>मोरङ</option></select></label>
+        <br><button class="pill" id="cardShare" style="margin-top:14px">⬇ सेयर / डाउनलोड</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    नियम: माघी = मकर संक्रान्ति (माघ १), पुस २८ – माघ २; अष्टिम्की = भाद्र कृष्ण अष्टमी; अट्वारी = अष्टिम्कीपछिको दोस्रो आइतबार (समीक्षाधीन); जितिया = आश्विन कृष्ण अष्टमी; जुडशीतल = मेष संक्रान्ति।<br>
+    स्रोत: Kathmandu Post (Delicacies and rituals of Maghi, 2024), Rising Nepal, Kantipur, Wikipedia (Atwari, Jur Sital)। थारू महिनाका नाम समावेश गरिएको छैन — समुदायको स्रोत आएपछि मात्र।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, fmtShort, days, today, Y, reduce, addDays } = { ...K, addDays: S.addDays };
+document.getElementById('nav').innerHTML = K.nav('tharu.html'); K.stamp(document.getElementById('today')); K.soundToggle(document.getElementById('snd'));
+const suite = S.SUITES.tharu, rows = K.rowsFor(suite);
+const maghi = K.nextOf(rows, 'maghi');
+const dMaghi = days(today, maghi.start);
+const heat = dMaghi <= 0 ? 1 : Math.max(.12, 1 - dMaghi / 365);
+
+/* ── Hero ── */
+document.getElementById('heroCount').innerHTML = `<span class="n">${npd(Math.max(dMaghi, 0))}</span><div><b style="font-size:22px">${dMaghi <= 0 ? 'माघी सुरु भयो!' : 'दिनपछि माघी'}</b><br><span style="color:var(--muted)">${fmt(maghi.start)} – ${fmtShort(maghi.end)}</span></div>`;
+document.getElementById('fireNote').textContent = `आगो ${npd(Math.round(heat * 100))}% बलेको छ।`;
+
+/* ── Fire (canvas particles, intensity = closeness to Maghi) ── */
+(() => {
+  const c = document.getElementById('fire'), x = c.getContext('2d');
+  const size = () => { const r = c.getBoundingClientRect(); c.width = r.width * devicePixelRatio; c.height = r.height * devicePixelRatio; };
+  size(); addEventListener('resize', size);
+  const parts = [];
+  const spawn = () => { const W = c.width, H = c.height; parts.push({ x: W / 2 + (Math.random() - .5) * W * .12, y: H * .62, vx: (Math.random() - .5) * .6, vy: -(1 + Math.random() * 2.2) * heat * devicePixelRatio, life: 1, r: (6 + Math.random() * 14) * devicePixelRatio * (.5 + heat) }); };
+  const draw = () => {
+    const W = c.width, H = c.height; x.clearRect(0, 0, W, H);
+    const g = x.createRadialGradient(W / 2, H * .62, 0, W / 2, H * .62, W * .45); g.addColorStop(0, `rgba(232,176,74,${.25 * heat})`); g.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    for (let i = 0; i < 3 * heat + 1; i++) spawn();
+    x.globalCompositeOperation = 'lighter';
+    for (let i = parts.length - 1; i >= 0; i--) { const p = parts[i]; p.x += p.vx; p.y += p.vy; p.life -= .012 + (1 - heat) * .01; p.r *= .985;
+      if (p.life <= 0) { parts.splice(i, 1); continue; }
+      x.fillStyle = `rgba(${255},${Math.floor(120 + 110 * p.life)},${Math.floor(40 * p.life)},${p.life * .5})`; x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.28); x.fill(); }
+    x.globalCompositeOperation = 'source-over';
+    x.fillStyle = '#5a3620'; for (let k = -1; k <= 1; k++) { x.save(); x.translate(W / 2, H * .66); x.rotate(k * .5); x.fillRect(-W * .12, -6 * devicePixelRatio, W * .24, 12 * devicePixelRatio); x.restore(); }
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  requestAnimationFrame(draw);
+})();
+
+/* ── Dancers orbiting the fire ── */
+(() => {
+  const svg = document.getElementById('dancers');
+  const g = el('g', { class: reduce ? '' : 'orbit' }, svg);
+  for (let k = 0; k < 8; k++) {
+    const [x, y] = P(190, k * 45);
+    const d = el('g', { transform: `translate(${x},${y})` }, g);
+    const f = el('g', { class: 'dancer', style: `animation-delay:${-k * .15}s` }, d);
+    el('circle', { cx: 0, cy: -34, r: 9, fill: '#f6e9d2' }, f);
+    el('path', { d: 'M0 -24 L-14 10 L14 10 Z', fill: k % 2 ? '#b5452a' : '#e8b04a' }, f); // skirt
+    el('path', { d: 'M-4 -20 L-22 -34 M4 -20 L22 -34', stroke: '#f6e9d2', 'stroke-width': 4, 'stroke-linecap': 'round' }, f); // raised arms
+    el('path', { d: 'M-5 10 L-7 26 M5 10 L7 26', stroke: '#f6e9d2', 'stroke-width': 4, 'stroke-linecap': 'round' }, f);
+  }
+})();
+
+/* ── Five days ── */
+(() => {
+  const s = maghi.start;
+  const DAYS = [
+    { ic: '🎣', t: 'पुस २८ — माछा मार्ने दिन', p: 'घर–परिवार मिलेर खोला–पोखरीमा माछा मार्ने; माघीको भोजको तयारी।' },
+    { ic: '🔥', t: 'पुस २९ — आगो र तयारी', p: 'केही ठाउँमा बँदेल सिकार; जाँड, ढिकरी र घोंघी तयार; रातभर आगो ताप्दै गीत।' },
+    { ic: '🌅', t: 'माघ १ — माघी', p: 'बिहानै नदी स्नान, ठूलाबडाबाट टीका; दाजुभाइले दिदीबहिनीलाई चामल, दाल, नुन (निस्राउ) दिने।' },
+    { ic: '🧑‍⚖️', t: 'गाउँ भेला', p: 'बरघर, चौकीदार, लोहार, गुरुवा छान्ने/नवीकरण; वर्षभरिका नियम तय।' },
+    { ic: '🥁', t: 'माघ २ — नाच र भेटघाट', p: 'मघौटा/सखिया नाच, आफन्त भेट; तिलको लड्डु, भुजा र खिचडी।' },
+  ];
+  document.getElementById('days5').innerHTML = DAYS.map((d, i) => { const iso = addDays(s, i);
+    return `<article class="day${iso === today ? ' today' : ''}"><div class="ic" aria-hidden="true">${d.ic}</div><div class="d">${fmt(iso)}</div><h3>${d.t}</h3><p>${d.p}</p></article>`; }).join('');
+})();
+
+/* ── Rice year ── */
+(() => {
+  const svg = document.getElementById('rice'), W = 1200, base = 210;
+  const mx = (m) => 40 + (m / 12) * 1120; // Jan..Dec
+  el('line', { x1: 30, y1: base, x2: 1170, y2: base, stroke: '#c9ae8c55' }, svg);
+  K.MONTHS.forEach((m, i) => { const t = el('text', { x: mx(i + .5), y: 245, 'text-anchor': 'middle', 'font-size': 14, fill: '#c9ae8c' }, svg); t.textContent = m.slice(0, 3); });
+  // stalk height by month: Jul sow → Nov harvest; winter stubble
+  const H = [8, 8, 6, 6, 8, 20, 50, 90, 130, 160, 120, 10];
+  for (let i = 0; i < 12; i++) for (let k = 0; k < 6; k++) {
+    const x = mx(i) + 12 + k * 14, h = H[i] * (0.8 + ((k * 37) % 10) / 25);
+    el('path', { d: `M${x} ${base} Q${x + 4} ${base - h / 2} ${x + (k % 2 ? 8 : -8)} ${base - h}`, stroke: i >= 8 && i <= 10 ? '#e8b04a' : '#7fae4f', 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round' }, svg);
+  }
+  [['रोपाइँ', 6.3], ['कटनी', 10.3], ['भित्र्याउने', 10.9]].forEach(([l, m]) => { const t = el('text', { x: mx(m), y: 28, 'text-anchor': 'middle', 'font-size': 14, fill: '#c9ae8c' }, svg); t.textContent = l; });
+  const yearRows = S.suiteCalendar(suite, Y).filter((r) => !r.region);
+  yearRows.forEach((r, i) => {
+    const d = new Date(r.main + 'T00:00:00Z'), m = d.getUTCMonth() + (d.getUTCDate() - 1) / 31, x = mx(m);
+    el('line', { x1: x, y1: 44 + (i % 3) * 22, x2: x, y2: base, stroke: '#b5452a', 'stroke-dasharray': '3 4' }, svg);
+    el('circle', { cx: x, cy: 44 + (i % 3) * 22, r: 7, fill: '#b5452a' }, svg);
+    const t = el('text', { x: x + 10, y: 49 + (i % 3) * 22, 'font-size': 14, fill: '#f6e9d2', 'font-weight': 700 }, svg); t.textContent = r.festival.dev.split(' (')[0];
+  });
+  const tx = mx((+today.slice(5, 7) - 1) + (+today.slice(8) - 1) / 31);
+  el('line', { x1: tx, y1: 20, x2: tx, y2: base + 8, stroke: '#f6e9d2', 'stroke-width': 2 }, svg);
+  const tt = el('text', { x: tx, y: 16, 'text-anchor': 'middle', 'font-size': 13, fill: '#f6e9d2' }, svg); tt.textContent = 'आज';
+})();
+
+/* ── Timeline ── */
+const showDetail = (r) => document.getElementById('detail').innerHTML = K.detailHTML(r, 'var(--accent)');
+K.timeline(document.getElementById('tl'), rows, { color: '#e8b04a', onSelect: showDetail });
+showDetail(maghi);
+
+/* ── Share card ── */
+(() => {
+  const draw = async () => {
+    try { await document.fonts.load('800 60px Mukta'); } catch {}
+    K.shareCard(document.getElementById('card'), {
+      bg: '#1b120d', fg: '#f6e9d2', accent: '#e8b04a', kicker: 'थारू नयाँ वर्ष', title: 'माघीको शुभकामना', sub: fmt(maghi.main),
+      lines: [`${document.getElementById('cardName').value} · ${document.getElementById('cardDist').value}`], footer: 'माघीको आगो · थारू पात्रो',
+      motif: (c, W, H) => { c.fillStyle = '#b5452a'; c.fillRect(0, 0, W, 24); c.fillRect(0, H - 24, W, 24);
+        c.fillStyle = '#f3e6cc'; for (let i = 0; i < 36; i++) { c.beginPath(); c.arc(15 + i * 30, 60, 6, 0, 6.28); c.fill(); c.beginPath(); c.arc(15 + i * 30, H - 60, 6, 0, 6.28); c.fill(); }
+        c.font = '120px serif'; c.textAlign = 'center'; c.fillText('🔥', W / 2, 300); },
+    });
+  };
+  document.getElementById('cardName').oninput = draw; document.getElementById('cardDist').onchange = draw; draw();
+  document.getElementById('cardShare').onclick = () => K.shareCanvas(document.getElementById('card'), 'maghi.png', 'माघीको शुभकामना!');
+})();
+})();
+</script>
+</body>
+</html>
