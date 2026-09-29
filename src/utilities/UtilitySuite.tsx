@@ -497,6 +497,11 @@ export function UtilitySuite() {
               <div><p className="eyebrow">Tools</p><h3>Calendar, sharing, family and developer tools</h3></div>
             </div>
             <div className="utility-directory-grid">
+              <a className="utility-directory-card" href="/samudaya">
+                <span className="utility-directory-icon" aria-hidden="true">◎</span>
+                <span className="utility-directory-copy"><small>Community Suite</small><strong>समुदाय · Community Suite</strong><span>नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी—एउटै प्रवेशद्वारमा।</span></span>
+                <span className="utility-directory-arrow" aria-hidden="true">→</span>
+              </a>
               {generalTools.map((tool) => (
                 <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
                   <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
