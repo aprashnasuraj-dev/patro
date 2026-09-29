@@ -150,6 +150,8 @@ self.onmessage = (event: MessageEvent<Request>) => {
           bytes: utf8Bytes(text).length,
         },
       };
+    } else {
+      throw new Error("Unsupported utility request");
     }
   } catch (error) {
     response = {
