@@ -22,6 +22,7 @@ jobs:
             .bootstrap/patro-tools-kit.b64.01 \
             .bootstrap/patro-tools-kit.b64.02 \
             .bootstrap/patro-tools-kit.b64.03 \
+            .bootstrap/patro-tools-kit.b64.04 \
             .bootstrap/rest.part-aa \
             .bootstrap/rest.part-ab \
             .bootstrap/rest.part-ac \
