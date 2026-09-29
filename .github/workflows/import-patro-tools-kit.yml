@@ -31,7 +31,13 @@ jobs:
             | base64 -d > /tmp/patro-tools-source-only.zip
           rm -rf /tmp/patro-tools-kit
           mkdir -p /tmp/patro-tools-kit
+          set +e
           unzip -q /tmp/patro-tools-source-only.zip -d /tmp/patro-tools-kit
+          unzip_rc=$?
+          set -e
+          if [ "$unzip_rc" -ne 0 ] && [ "$unzip_rc" -ne 2 ]; then exit "$unzip_rc"; fi
+          cp .bootstrap/fix-bots-channels.ts /tmp/patro-tools-kit/src/patro-tools/bots/channels.ts
+          cp .bootstrap/fix-language-name-match.ts /tmp/patro-tools-kit/src/patro-tools/language/name-match.ts
           (cd /tmp/patro-tools-kit && sha256sum -c "$GITHUB_WORKSPACE/.bootstrap/patro-tools.sha256")
           rm -rf src/patro-tools
           cp -R /tmp/patro-tools-kit/src/patro-tools src/patro-tools
