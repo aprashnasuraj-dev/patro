@@ -38,7 +38,14 @@
       "/api/v1/tools/catalog",
       "/api/v1/typing/lexicon",
       "/api/v1/typing/lexicon?format=words",
-      "/api/v1/tools-hub"
-    ]
+      "/explore?view=tools",
+      "/tools-hub"
+    ],
+    "nepal_miti_protected": {
+      "version": 110,
+      "ezbr_sha256": "647057bf292b6c03eba68a57b7643fdfe841407a16001d884862de0554dbb910",
+      "temporary_tools_view": "/explore?view=tools",
+      "alias": "/tools-hub"
+    }
   }
 }
