@@ -6,6 +6,26 @@
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/:path*"
     },
     {
+      "source": "/tools/sw.js",
+      "destination": "/astro/sw.js"
+    },
+    {
+      "source": "/tools/app",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools-hub",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tools-hub"
+    },
+    {
+      "source": "/tools",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tools"
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tools/:path*"
+    },
+    {
       "source": "/api/jyotish-chat",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/jyotish-chat"
     },
@@ -36,90 +56,6 @@
     {
       "source": "/tools/sw.js",
       "destination": "/astro/sw.js"
-    },
-    {
-      "source": "/tools",
-      "destination": "/astro/index.html"
-    },
-    {
-      "source": "/tools/nepali-typing",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/unicode-to-preeti",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/preeti-to-unicode",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/fuelprice",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/nepaliqr",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/incometax",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/landconverter",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/adtobs",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/bstoad",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/unicodetopreeti",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/preetitounicode",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/preeti-converter",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/typingtools",
-      "destination": "/tools"
-    },
-    {
-      "source": "/tools/tithi",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tithi"
-    },
-    {
-      "source": "/tools/diaspora",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/diaspora"
-    },
-    {
-      "source": "/tools/card",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/card"
-    },
-    {
-      "source": "/tools/family",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/family"
-    },
-    {
-      "source": "/tools/api",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/developers"
-    },
-    {
-      "source": "/tools/my-data",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/my-data"
-    },
-    {
-      "source": "/tools/:path*",
-      "destination": "/tools"
     },
     {
       "source": "/explore",
