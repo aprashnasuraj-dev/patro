@@ -33,7 +33,15 @@ The uploaded source bundle passed all 72 tests locally before integration. Its r
 Two public Edge Functions are prepared:
 
 - `tools-catalog` — returns the currently eligible tool catalog from Postgres.
-- `typing-lexicon` — reconstructs and validates the full Nepali word list from the pinned upstream dictionary source and serves the compact word list.
+- `typing-lexicon` — reconstructs and validates the full Nepali word list against the pinned checksum and serves the compact word list.
+
+The live Supabase router also exposes these through the Patro origin, so future frontend code does not need hard-coded Supabase URLs:
+
+- `/api/v1/tools/catalog`
+- `/api/v1/typing/lexicon`
+- `/api/v1/typing/lexicon?format=words`
+
+These same-origin endpoints were smoke-tested through the current production Vercel deployment: the catalog and lexicon manifest returned HTTP 200, and the word endpoint reported exactly 34,571 entries.
 
 Database tables:
 
@@ -54,6 +62,8 @@ The new Nepali typing catalog row also has a future `release_after`, so the remo
 
 **What Supabase can do without another frontend build**
 
+A temporary Supabase-rendered directory is already reachable through the existing production API proxy at `/api/v1/tools-hub`. It uses the current live query-based utility URLs and legacy protected-page URLs, so it works even while the production `/tools/*` rewrites are stale. It is a fallback, not the final canonical route.
+
 After one frontend deployment contains the remote-catalog client:
 - reorder tools
 - rename/descriptively relabel tools
@@ -67,7 +77,7 @@ These changes can be controlled from Supabase without rebuilding Vercel.
 
 **What Supabase cannot change on the currently deployed Vercel artifact**
 
-The live Vercel deployment currently owns the `/tools` and `/tools/:path*` rewrites and serves an already-built static React bundle. Supabase cannot replace that compiled bundle or those Vercel rewrite rules from behind the route. Therefore at least **one successful Vercel deployment is required** to install the remote-catalog client and new typing assets.
+The live Vercel deployment currently owns the `/tools` and `/tools/:path*` rewrites and serves an already-built static React bundle. Supabase cannot replace that compiled bundle or those Vercel rewrite rules from behind the route. Therefore at least **one successful Vercel deployment is required** to make the canonical `/tools` namespace use the remote-catalog client and to ship the new typing UI assets. Supabase can keep the catalog/data current before and after that deployment, but cannot replace the already-compiled Vercel SPA at `/tools` from behind the route.
 
 Moving the whole `/tools` UI to server-rendered Supabase HTML would technically reduce Vercel dependency, but it would violate the project's preferred static-SPA architecture and duplicate frontend code. The selected design keeps the UI static/client-side and uses Supabase only as the control/data plane.
 
@@ -97,3 +107,18 @@ Expected source blob: `c6f72034f0c96f2cdfc54c3d61eb07ccc97c18ac`
 Expected source SHA-256: `dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427`
 
 Typed user text is not sent to the dictionary endpoint. The endpoint serves public lexicon data only.
+
+
+## Reproducibility files
+
+The release branch mirrors the exact deployed Supabase function sources:
+
+- `supabase/functions/tools-catalog/index.ts`
+- `supabase/functions/typing-lexicon/index.ts`
+- `supabase/functions/router/index.ts` (includes the same-origin API proxies and temporary tools hub)
+
+The idempotent SQL bootstrap is stored at:
+
+- `supabase/sql/typing_release_2027.sql`
+
+This SQL file is a runbook, not a migration-history entry.
