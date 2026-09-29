@@ -72,7 +72,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
     document.documentElement.dataset.theme=theme;
     document.documentElement.dataset.mode=theme==="dark"?"dark":theme==="light"?"light":"system";
     const meta=document.querySelector('meta[name="theme-color"]');
-    meta?.setAttribute("content",theme==="dark"?"#34A765":"#176F3B");
+    meta?.setAttribute("content","#176f3b");
     try{localStorage.setItem("patro.ui.mode",theme);}catch{}
   },[theme]);
 
@@ -103,8 +103,8 @@ export function AppChrome({ children }: { children:ReactNode }) {
     {offline && <div className="mp-offline" role="status">{t(language,"offline")}</div>}
     <header className={`mp-header ${compact?"is-compact":""}`}>
       <div className="mp-header__inner">
-        <a className="mp-brand" href="/" aria-label={language==="ne"?"मेरो पात्रो गृहपृष्ठ":"Mero Patro home"}>
-          <LogoMark size={compact?34:40}/><span><strong>मेरो पात्रो</strong><small>Mero Patro</small></span>
+        <a className="mp-brand" href="/" aria-label={language==="ne"?"MeroPatro गृहपृष्ठ":"MeroPatro home"}>
+          <LogoMark size={compact?34:40}/><span><strong>MeroPatro</strong></span>
         </a>
         <nav className="mp-primary" aria-label="Primary navigation">
           <a href="/" aria-current={path==="/"?"page":undefined}><CalendarDays size={18}/><span>{t(language,"calendar")}</span></a>
