@@ -4,6 +4,9 @@ import { SpellCheckTool } from "./SpellCheckTool";
 import { NameCheckTool } from "./NameCheckTool";
 import { ReadAloudTool } from "./ReadAloudTool";
 import { ToolPage } from "./ToolPrimitives";
+import { SaitTool } from "./SaitTool";
+import { BabyNamesTool } from "./BabyNamesTool";
+import { JanmadinAkhbarTool } from "./JanmadinAkhbarTool";
 
 const LABELS: Record<string, { title: string; description: string }> = {
   "tithi-reminder": { title: "तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
@@ -24,6 +27,9 @@ export function PatroToolsShell({ slug }: { slug: string }) {
   if (slug === "spell-check") return <SpellCheckTool />;
   if (slug === "name-check") return <NameCheckTool />;
   if (slug === "read-aloud") return <ReadAloudTool />;
+  if (slug === "sait") return <SaitTool />;
+  if (slug === "baby-names") return <BabyNamesTool />;
+  if (slug === "janmadin-akhbar") return <JanmadinAkhbarTool />;
 
   const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
   return (
