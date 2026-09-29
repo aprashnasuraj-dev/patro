@@ -54,7 +54,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
   const [query,setQuery]=useState("");
   const [offline,setOffline]=useState(()=>!navigator.onLine);
   const [compact,setCompact]=useState(false);
-  const [path,setPath]=useState(()=>window.location.pathname.replace(/\\/+$/, "")||"/");
+  const [path,setPath]=useState(()=>window.location.pathname.replace(/\/+$/, "")||"/");
 
   const filtered=useMemo(()=>{
     const q=query.trim().toLowerCase();
