@@ -28,7 +28,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/community-inputs
-          npm install --no-save --no-package-lock playwright@1.56.1 >/dev/null\n          npx playwright install chromium >/dev/null
+          npm install --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npx playwright install chromium >/dev/null
           cat > /tmp/community-inputs/download.cjs <<'NODE'
           const { chromium } = require('playwright');
           const fs = require('fs');
