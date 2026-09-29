@@ -300,6 +300,101 @@ app.all("/rashifal/personalized",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/perso
 app.all("/rashifal/service-token-hash",(c)=>proxyLegacy(c.req.raw,"/api/rashifal/service-token-hash"));
 app.all("/cron/rashifal",(c)=>proxyLegacy(c.req.raw,"/api/cron/rashifal"));
 
+
+const TEMP_TOOL_PATHS: Record<string,string> = {
+  preetitounicode: "/tools?tool=font",
+  unicodetopreeti: "/tools?tool=font",
+  bstoad: "/tools?tool=date",
+  adtobs: "/tools?tool=date",
+  landconverter: "/tools?tool=land",
+  incometax: "/tools?tool=tax",
+  nepaliqr: "/tools?tool=qr",
+  fuelprice: "/tools?tool=fuel",
+};
+function hubEscape(value: unknown) {
+  return String(value ?? "").replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch] || ch));
+}
+
+async function proxyPublicToolFunction(request: Request, slug: "tools-catalog" | "typing-lexicon") {
+  const base = Deno.env.get("SUPABASE_URL") || "";
+  const incoming = new URL(request.url);
+  const target = new URL(base + "/functions/v1/" + slug);
+  target.search = incoming.search;
+  const upstream = await fetch(target, {
+    method: "GET",
+    headers: { accept: request.headers.get("accept") || "*/*" },
+    signal: AbortSignal.timeout(15_000),
+  });
+  const headers = new Headers();
+  for (const name of ["content-type","cache-control","etag","x-lexicon-version","x-lexicon-count"]) {
+    const value = upstream.headers.get(name);
+    if (value) headers.set(name, value);
+  }
+  headers.set("x-content-type-options","nosniff");
+  return new Response(upstream.body, { status: upstream.status, headers });
+}
+app.get("/tools/catalog", (c) => proxyPublicToolFunction(c.req.raw, "tools-catalog"));
+app.get("/typing/lexicon", (c) => proxyPublicToolFunction(c.req.raw, "typing-lexicon"));
+
+app.get("/tools-hub", async (c) => {
+  let items: any[] = [];
+  try {
+    const base = Deno.env.get("SUPABASE_URL") || "";
+    const response = await fetch(base + "/functions/v1/tools-catalog", {
+      headers: { accept: "application/json" },
+      signal: AbortSignal.timeout(3000),
+    });
+    if (response.ok) {
+      const body = await response.json();
+      if (Array.isArray(body?.items)) items = body.items;
+    }
+  } catch {}
+  if (!items.length) {
+    items = [
+      {slug:"preetitounicode",title:"Preeti → Unicode",subtitle:"Convert legacy Preeti text into searchable Unicode Nepali.",category:"typing",badge:"Typing Tools",icon:"क"},
+      {slug:"unicodetopreeti",title:"Unicode → Preeti",subtitle:"Convert Unicode Nepali for legacy Preeti document workflows.",category:"typing",badge:"Typing Tools",icon:"प्री"},
+      {slug:"bstoad",title:"BS → AD Date Converter",subtitle:"Convert Bikram Sambat dates to Gregorian dates.",category:"utility",badge:"Calendar",icon:"वि"},
+      {slug:"adtobs",title:"AD → BS Date Converter",subtitle:"Convert Gregorian dates to Bikram Sambat dates.",category:"utility",badge:"Calendar",icon:"AD"},
+      {slug:"landconverter",title:"Nepali Land Converter",subtitle:"Convert Ropani/Aana/Paisa/Dam, Bigha/Kattha/Dhur and square feet.",category:"utility",badge:"Land",icon:"▦"},
+      {slug:"incometax",title:"Income Tax Calculator",subtitle:"Estimate FY 2083/84 salary tax and supported deductions.",category:"utility",badge:"Finance",icon:"रु"},
+      {slug:"nepaliqr",title:"Devanagari QR Generator",subtitle:"Create a private UTF-8 QR code from Nepali or English text.",category:"utility",badge:"QR",icon:"QR"},
+      {slug:"fuelprice",title:"NOC Fuel Price Tracker",subtitle:"Check Nepal Oil Corporation fuel price references.",category:"utility",badge:"Fuel",icon:"⛽"},
+      {slug:"tithi",title:"तिथि · Tithi",subtitle:"Tithi reminders, lunar-date derivation and recurrence tools.",category:"tools",badge:"Tools",icon:"त",metadata:{legacy_path:"/tithi"}},
+      {slug:"diaspora",title:"Diaspora",subtitle:"Timezone-aware Nepal calendar context for users abroad.",category:"tools",badge:"Tools",icon:"🌏",metadata:{legacy_path:"/diaspora"}},
+      {slug:"card",title:"कार्ड · Share Cards",subtitle:"Create calendar, date and festival cards for sharing.",category:"tools",badge:"Tools",icon:"▣",metadata:{legacy_path:"/card"}},
+      {slug:"family",title:"परिवार · Family",subtitle:"Keep private family dates and shared household events together.",category:"tools",badge:"Tools",icon:"परि",metadata:{legacy_path:"/family"}},
+      {slug:"api",title:"API · Developers",subtitle:"Explore Nepal Miti APIs and integration guidance.",category:"tools",badge:"Tools",icon:"</>",metadata:{legacy_path:"/developers"}},
+      {slug:"my-data",title:"मेरो डेटा · My Data",subtitle:"Review, export or remove private Nepal Miti data.",category:"tools",badge:"Tools",icon:"🔐",metadata:{legacy_path:"/my-data"}},
+    ];
+  }
+  items = items.filter((item) => item?.slug !== "typingtools");
+  const pathFor = (item: any) => item?.metadata?.legacy_path || TEMP_TOOL_PATHS[item?.slug] || item?.path || "/tools";
+  const section = (category: string, eyebrow: string, title: string) => {
+    const rows = items.filter((item) => item?.category === category);
+    if (!rows.length) return "";
+    return '<section><div class="section-head"><span>'+hubEscape(eyebrow)+'</span><h2>'+hubEscape(title)+'</h2></div><div class="grid">' +
+      rows.map((item) => '<a class="tool" href="'+hubEscape(pathFor(item))+'"><b class="icon">'+hubEscape(item.icon || "•")+'</b><span><small>'+hubEscape(item.badge || "Tools")+'</small><strong>'+hubEscape(item.title)+'</strong><em>'+hubEscape(item.subtitle)+'</em></span><i>→</i></a>').join("") +
+      "</div></section>";
+  };
+  const html = '<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tools · उपकरण | Patro</title><meta name="description" content="Nepali typing, converters, calendar and utility tools."><style>'+
+    '*{box-sizing:border-box}body{margin:0;background:#07101f;color:#eef4ff;font:15px/1.55 Inter,system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}main{max-width:1120px;margin:auto;padding:28px 22px 60px}header{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:8px 0 28px;border-bottom:1px solid #263249}header a{color:#eef4ff;text-decoration:none;font-weight:900}.hero{padding:42px 0 20px}.hero small,.section-head span,.tool small{color:#73c7ff;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(32px,6vw,58px);margin:6px 0}.hero p{color:#9dacbf;max-width:680px}.section-head{margin:34px 0 12px}.section-head h2{margin:3px 0;font-size:20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tool{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;text-decoration:none;color:inherit;background:#0d182a;border:1px solid #28364e;border-radius:18px;padding:17px;transition:.16s}.tool:hover{transform:translateY(-2px);border-color:#4a9fd4;background:#102039}.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#142942;color:#8ad3ff}.tool span{display:grid;gap:3px}.tool strong{font-size:16px}.tool em{font-style:normal;font-size:13px;color:#9dacbf}.tool i{font-style:normal;color:#73c7ff;font-size:20px}footer{margin-top:34px;border-top:1px solid #263249;padding-top:20px;color:#8393a9;font-size:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}main{padding:20px 14px 44px}.hero{padding-top:28px}}</style></head><body><main>'+
+    '<header><a href="/">पात्रो · Patro</a><a href="/tools">Tools</a></header>'+
+    '<div class="hero"><small>Tools · उपकरण</small><h1>Choose a tool</h1><p>Typing, conversion, calendar, sharing, family and developer utilities in one directory. Each tool opens only when selected.</p></div>'+
+    section("typing","Typing Tools","Nepali typing & font conversion")+
+    section("utility","Converters & utilities","Date, land, finance and everyday tools")+
+    section("tools","Tools","Calendar, sharing, family and developer tools")+
+    '<footer>Catalog managed by Patro · Supabase control plane</footer></main></body></html>';
+  return new Response(html, {
+    status: 200,
+    headers: {
+      "Content-Type":"text/html; charset=utf-8",
+      "Cache-Control":"public, max-age=60, s-maxage=300, stale-while-revalidate=3600",
+      "X-Robots-Tag":"noindex",
+      "X-Content-Type-Options":"nosniff",
+    },
+  });
+});
+
 app.get("/health", (c) => c.json({
   status: "online",
   runtime: "Deno",
