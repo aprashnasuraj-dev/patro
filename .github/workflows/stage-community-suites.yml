@@ -28,7 +28,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/community-inputs
-          npm exec --yes --package=playwright@1.56.1 playwright install chromium >/dev/null
+          npm install --no-save --no-package-lock playwright@1.56.1 >/dev/null\n          npx playwright install chromium >/dev/null
           cat > /tmp/community-inputs/download.cjs <<'NODE'
           const { chromium } = require('playwright');
           const fs = require('fs');
@@ -64,7 +64,7 @@ jobs:
             await browser.close();
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
-          NODE_PATH="$(npm root -g):$(npm root)" npm exec --yes --package=playwright@1.56.1 node /tmp/community-inputs/download.cjs
+          node /tmp/community-inputs/download.cjs
           unzip -t /tmp/community-inputs/community-suites-bundle.zip >/dev/null
           unzip -t /tmp/community-inputs/community-frontends.zip >/dev/null
       - name: Import source exactly and wire BS adapter
