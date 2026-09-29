@@ -40,19 +40,62 @@ type TaxResult = {
 };
 type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
 
-type ToolId = "font" | "date" | "land" | "tax" | "qr" | "fuel";
-const TOOL_DIRECTORY: { id: ToolId; icon: string; title: string; subtitle: string; badge: string }[] = [
-  { id: "font", icon: "क", title: "Preeti ⇄ Unicode", subtitle: "Convert legacy Preeti text and Nepali Unicode in either direction.", badge: "Text" },
-  { id: "date", icon: "वि", title: "BS ⇄ AD Date Converter", subtitle: "Convert Bikram Sambat and Gregorian dates with source confidence labels.", badge: "Calendar" },
-  { id: "land", icon: "▦", title: "Nepali Land Converter", subtitle: "Ropani–Aana–Paisa–Dam and Bigha–Kattha–Dhur exact conversion.", badge: "Land" },
-  { id: "tax", icon: "रु", title: "Income Tax Calculator", subtitle: "FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance" },
-  { id: "qr", icon: "⌗", title: "Devanagari QR Generator", subtitle: "Create private UTF-8 Nepali QR codes entirely on your device.", badge: "QR" },
-  { id: "fuel", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "View Nepal Oil Corporation fuel prices by depot group.", badge: "Fuel" },
+type ToolId =
+  | "preetitounicode"
+  | "unicodetopreeti"
+  | "bstoad"
+  | "adtobs"
+  | "landconverter"
+  | "incometax"
+  | "nepaliqr"
+  | "fuelprice"
+  | "tithi"
+  | "diaspora"
+  | "card"
+  | "family"
+  | "api"
+  | "my-data";
+
+type ToolDirectoryItem = {
+  id: ToolId;
+  icon: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  legacyPath?: string;
+};
+
+const TOOL_DIRECTORY: ToolDirectoryItem[] = [
+  { id: "preetitounicode", icon: "क", title: "Preeti → Unicode", subtitle: "Turn legacy Preeti-encoded Nepali text into searchable, copyable Unicode Nepali.", badge: "Nepali text" },
+  { id: "unicodetopreeti", icon: "प्री", title: "Unicode → Preeti", subtitle: "Convert modern Unicode Nepali into Preeti-compatible text for legacy documents and workflows.", badge: "Nepali text" },
+  { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar" },
+  { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar" },
+  { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land" },
+  { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance" },
+  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR" },
+  { id: "fuelprice", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel" },
+  { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Patro Plus", legacyPath: "/tithi" },
+  { id: "diaspora", icon: "🌏", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Patro Plus", legacyPath: "/diaspora" },
+  { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Patro Plus", legacyPath: "/card" },
+  { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Patro Plus", legacyPath: "/family" },
+  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Nepal Miti API endpoints, integration guidance and developer resources.", badge: "Patro Plus", legacyPath: "/developers" },
+  { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Patro Plus", legacyPath: "/my-data" },
 ];
 
 function toolFromLocation(): ToolId | null {
-  const value = new URLSearchParams(window.location.search).get("tool");
-  return TOOL_DIRECTORY.some((tool) => tool.id === value) ? value as ToolId : null;
+  const slug = window.location.pathname.replace(/\/+$/, "").split("/")[2] || "";
+  if (TOOL_DIRECTORY.some((tool) => tool.id === slug)) return slug as ToolId;
+
+  const legacyQuery = new URLSearchParams(window.location.search).get("tool");
+  const legacyMap: Record<string, ToolId> = {
+    font: "preetitounicode",
+    date: "bstoad",
+    land: "landconverter",
+    tax: "incometax",
+    qr: "nepaliqr",
+    fuel: "fuelprice",
+  };
+  return legacyQuery && legacyMap[legacyQuery] ? legacyMap[legacyQuery] : null;
 }
 
 function Field({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
@@ -187,11 +230,14 @@ export function UtilitySuite() {
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
+  useEffect(() => {
+    if (selectedTool === "unicodetopreeti") setFontDirection("unicode-to-preeti");
+    if (selectedTool === "preetitounicode") setFontDirection("preeti-to-unicode");
+  }, [selectedTool]);
+
   function chooseTool(tool: ToolId | null) {
-    const url = new URL(window.location.href);
-    if (tool) url.searchParams.set("tool", tool);
-    else url.searchParams.delete("tool");
-    window.history.pushState(null, "", url.pathname + url.search + url.hash);
+    const nextPath = tool ? "/tools/" + tool : "/tools";
+    window.history.pushState(null, "", nextPath);
     setSelectedTool(tool);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -319,8 +365,10 @@ export function UtilitySuite() {
   }, [qrText, qrLevel, workerReady]);
 
   const swapFont = () => {
-    setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
+    const nextDirection = fontDirection === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode";
+    setFontDirection(nextDirection);
     setFontInput(fontOutput);
+    chooseTool(nextDirection === "preeti-to-unicode" ? "preetitounicode" : "unicodetopreeti");
   };
 
   const copy = async (text: string) => {
@@ -328,14 +376,18 @@ export function UtilitySuite() {
   };
 
   const selectedFuelZone = fuel?.zones[fuelZoneIndex] ?? null;
+  const selectedMeta = selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool) ?? null : null;
+  const legacyPath = selectedMeta?.legacyPath ?? null;
+  const showFont = selectedTool === "preetitounicode" || selectedTool === "unicodetopreeti";
+  const showDate = selectedTool === "bstoad" || selectedTool === "adtobs";
 
   return (
     <main className="utility-suite" aria-label="Nepali utility tools">
       <section className="utility-hero">
         <div>
-          <p className="eyebrow">नेपाली Utility Platform</p>
-          <h1>Offline-capable tools for Nepali text, dates and land units</h1>
-          <p>All calculations run on this device. Text/date conversion is isolated in a Web Worker and land math uses scaled integer arithmetic.</p>
+          <p className="eyebrow">पात्रो Plus · Tools</p>
+          <h1>{selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.title : "All tools in one place"}</h1>
+          <p>{selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.subtitle : "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
         </div>
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
       </section>
@@ -344,15 +396,15 @@ export function UtilitySuite() {
         <section className="utility-directory" aria-labelledby="utility-directory-title">
           <div className="utility-directory-head">
             <div>
-              <p className="eyebrow">Tools directory</p>
-              <h2 id="utility-directory-title">Choose a tool</h2>
-              <p>Open only the tool you need. Return to this list anytime without leaving the utility platform.</p>
+              <p className="eyebrow">Tools directory · उपकरण</p>
+              <h2 id="utility-directory-title">Choose what you want to do</h2>
+              <p>Each card explains the tool in one line. Click it to open a dedicated /tools/... page.</p>
             </div>
             <a className="utility-home-link" href="/">← Patro home</a>
           </div>
           <div className="utility-directory-grid">
             {TOOL_DIRECTORY.map((tool) => (
-              <button type="button" className="utility-directory-card" key={tool.id} onClick={() => chooseTool(tool.id)}>
+              <a className={"utility-directory-card " + (tool.badge === "Patro Plus" ? "is-patro-plus" : "")} key={tool.id} href={"/tools/" + tool.id}>
                 <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                 <span className="utility-directory-copy">
                   <small>{tool.badge}</small>
@@ -360,12 +412,13 @@ export function UtilitySuite() {
                   <span>{tool.subtitle}</span>
                 </span>
                 <span className="utility-directory-arrow" aria-hidden="true">→</span>
-              </button>
+              </a>
             ))}
           </div>
           <div className="utility-directory-related">
-            <span>Jyotish:</span>
+            <span>More:</span>
             <a href="/jyotish/rashifal">राशिफल · Rashifal</a>
+            <a href="/">मुख्य पात्रो · Home</a>
           </div>
         </section>
       ) : (
@@ -376,7 +429,7 @@ export function UtilitySuite() {
         </nav>
       )}
 
-      <section className="utility-card" aria-labelledby="date-converter-title" hidden={selectedTool !== "date"}>
+      <section className="utility-card" aria-labelledby="date-converter-title" hidden={!showDate}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Calendar engine</p>
@@ -386,7 +439,7 @@ export function UtilitySuite() {
         </header>
 
         <div className="date-grid">
-          <article className="land-panel">
+          {selectedTool !== "adtobs" && <article className="land-panel">
             <h3>Bikram Sambat → Gregorian</h3>
             <div className="land-fields land-fields--three">
               <Field label="BS year" value={bsDate.year} onChange={(value) => setBsDate((v) => ({ ...v, year: value }))} />
@@ -400,9 +453,9 @@ export function UtilitySuite() {
                 {bsDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
               </small>
             </div>}
-          </article>
-
-          <article className="land-panel">
+          </article>}
+ 
+          {selectedTool !== "bstoad" && <article className="land-panel">
             <h3>Gregorian → Bikram Sambat</h3>
             <label className="utility-field">
               <span>AD date</span>
@@ -415,14 +468,14 @@ export function UtilitySuite() {
                 {adDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
               </small>
             </div>}
-          </article>
+          </article>}
         </div>
 
         <p className="utility-note">1970–2093 is backed by the existing Patro synchronized archive; 2094–2099 remains explicitly provisional because independent future BS tables can disagree.</p>
         {dateError && <p className="utility-error" role="alert">{dateError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "tax"}>
+      <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "incometax"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">FY 2083/84 · Salary tax</p>
@@ -475,7 +528,7 @@ export function UtilitySuite() {
         {taxError && <p className="utility-error" role="alert">{taxError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "qr"}>
+      <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "nepaliqr"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Private · client-only</p>
@@ -516,7 +569,7 @@ export function UtilitySuite() {
       </section>
 
 
-      <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuel"}>
+      <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuelprice"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Nepal Oil Corporation</p>
@@ -558,7 +611,7 @@ export function UtilitySuite() {
       </section>
 
 
-      <section className="utility-card" aria-labelledby="font-converter-title" hidden={selectedTool !== "font"}>
+      <section className="utility-card" aria-labelledby="font-converter-title" hidden={!showFont}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Text engine</p>
@@ -568,8 +621,8 @@ export function UtilitySuite() {
         </header>
 
         <div className="utility-segmented" role="group" aria-label="Font conversion direction">
-          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => setFontDirection("preeti-to-unicode")}>Preeti → Unicode</button>
-          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => setFontDirection("unicode-to-preeti")}>Unicode → Preeti</button>
+          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => chooseTool("preetitounicode")}>Preeti → Unicode</button>
+          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => chooseTool("unicodetopreeti")}>Unicode → Preeti</button>
         </div>
 
         <div className="utility-text-grid">
@@ -589,7 +642,23 @@ export function UtilitySuite() {
         {fontError && <p className="utility-error" role="alert">{fontError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "land"}>
+{legacyPath && <section className="utility-embed-shell" aria-label={selectedMeta?.title}>
+        <iframe
+          className="utility-embed-frame"
+          src={"/api/v1/compat/page?path=" + encodeURIComponent(legacyPath)}
+          title={selectedMeta?.title || "Patro Plus tool"}
+          onLoad={(event) => {
+            try {
+              const innerHeader = event.currentTarget.contentDocument?.querySelector("header.top") as HTMLElement | null;
+              if (innerHeader) innerHeader.style.display = "none";
+            } catch {
+              // Same-origin production pages are expected; keep the frame usable if browser policy differs.
+            }
+          }}
+        />
+      </section>}
+
+            <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Exact land math</p>

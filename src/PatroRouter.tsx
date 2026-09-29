@@ -6,6 +6,10 @@ import { UtilitySuite } from "./utilities/UtilitySuite";
 
 const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
+function isNativePath(path: string) {
+  return NATIVE_PATHS.has(path) || path.startsWith("/tools/");
+}
+
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
 }
@@ -24,7 +28,7 @@ export function PatroRouter() {
       const url = new URL(anchor.href, window.location.href);
       if (url.origin !== window.location.origin) return;
       const normalized = url.pathname.replace(/\/+$/, "") || "/";
-      if (!NATIVE_PATHS.has(normalized)) return;
+      if (!isNativePath(normalized)) return;
       event.preventDefault();
       window.history.pushState(null, "", url.pathname + url.search + url.hash);
       setPath(normalized);
@@ -40,7 +44,7 @@ export function PatroRouter() {
 
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
-  if (path === "/tools") return <UtilitySuite />;
+  if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
   if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
   return <App />;
 }
