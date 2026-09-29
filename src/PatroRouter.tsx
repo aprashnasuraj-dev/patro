@@ -59,7 +59,7 @@ export function PatroRouter() {
   if (path === "/tv") return <MediaSuite kind="tv" />;
   const typingV2Ready = Date.now() >= TYPING_RELEASE_AT;
   if (typingV2Ready && path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
-  if (typingV2Ready && (path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode")) return <NepaliTools mode="preeti-to-unicode" />;
+  if (typingV2Ready && (path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode")) return <NepaliTools mode="preeti-to-unicode" />;
   if (typingV2Ready && (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti")) return <NepaliTools mode="unicode-to-preeti" />;
   if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
   if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
