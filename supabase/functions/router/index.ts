@@ -453,6 +453,34 @@ app.get("/noc/fuel-prices", async (c) => {
   }
 });
 
+
+app.get("/radio/catalog", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw, "router-radio-catalog", 240))) {
+    return c.json({ ok: false, error: "rate_limit_exceeded", retry_after: "1 hour" }, 429, { "Retry-After": "3600" });
+  }
+  try {
+    const { radioCatalogResponse } = await import("./services/radioBrowser.ts");
+    return await radioCatalogResponse(c.req.raw);
+  } catch (error) {
+    console.error("radio_catalog_error", error);
+    return c.json({ ok: false, error: "radio_directory_unavailable" }, 502, { "Cache-Control": "no-store" });
+  }
+});
+
+app.get("/radio/stream", async (c) => {
+  const key = "router-radio-stream|" + clientIp(c.req.raw);
+  if (!fallbackRateAllowed(key, 7200)) {
+    return c.json({ error: "rate_limit_exceeded", retry_after: "1 hour" }, 429, { "Retry-After": "3600" });
+  }
+  const { radioStreamResponse } = await import("./services/radioBrowser.ts");
+  return await radioStreamResponse(c.req.raw);
+});
+
+app.head("/radio/stream", async (c) => {
+  const { radioStreamResponse } = await import("./services/radioBrowser.ts");
+  return await radioStreamResponse(c.req.raw);
+});
+
 app.get("/media/proxy", async (c) => {
   const mediaKey = "router-media|" + clientIp(c.req.raw);
   if (!fallbackRateAllowed(mediaKey, 7200)) {
@@ -477,7 +505,7 @@ app.get("/media/proxy", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/noc/fuel-prices","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/noc/fuel-prices","/radio/catalog","/radio/stream","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {
