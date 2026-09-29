@@ -1,0 +1,166 @@
+import { useMemo, useState } from "react";
+import { openAtFromBs, lockState } from "@/patro-tools/letters/letters";
+import { openWithPassphrase, sealWithPassphrase } from "@/patro-tools/letters/crypto";
+import { zonedMidnight } from "@/patro-tools/core/astro";
+import { panchangProvider, primePanchang } from "./panchangAdapter";
+import { bsAdapter } from "./bsAdapter";
+import { readLife, syncLifeTools, updateLife, type StoredFutureLetter } from "./storage";
+import { ReadAloudButton } from "./ReadAloudButton";
+import { ToolPage, ToolResult } from "./ToolPrimitives";
+
+const MONTH_KEYS = ["chaitra","vaishakha","jyestha","ashadha","shravana","bhadrapada","ashwin","kartika","margashirsha","pausha","magha","falguna"];
+
+function addDays(iso: string, days: number) {
+  const d = new Date(iso + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function todayNepal() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit",
+  }).format(new Date());
+}
+
+async function tithiBirthdayOpenAt(birthDate: string, age: number) {
+  await primePanchang(birthDate);
+  const p = panchangProvider.day(birthDate);
+  const [year, month, day] = birthDate.split("-").map(Number);
+  const approx = `${year + age}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const params = new URLSearchParams({
+    month: MONTH_KEYS[p.monthIndex] || "chaitra",
+    paksha: p.paksha,
+    tithi: String(p.tithiInPaksha),
+    rule: "udaya",
+    system: "purnimanta",
+    adhikPolicy: "nija_month",
+    from: addDays(approx, -55),
+    count: "1",
+  });
+  const response = await fetch("/api/v1/tithi/next?" + params.toString(), { headers: { Accept: "application/json" } });
+  if (!response.ok) throw new Error("तिथि जन्मदिन निकाल्न सकिएन।");
+  const payload = await response.json() as { occurrences?: Array<{ adDate?: string }> };
+  const adDate = payload.occurrences?.[0]?.adDate;
+  if (!adDate) throw new Error("यो तिथि जन्मदिनको मिति भेटिएन।");
+  return {
+    openAt: new Date(zonedMidnight(adDate, "Asia/Kathmandu").getTime() + 6 * 3_600_000).toISOString(),
+    openAtLabel: `${age} औं तिथि जन्मदिन (${adDate})`,
+  };
+}
+
+export function FutureLetterTool() {
+  const [letters, setLetters] = useState<StoredFutureLetter[]>(() => readLife().futureLetters);
+  const [unlockType, setUnlockType] = useState<"bs" | "tithi">("bs");
+  const [recipientName, setRecipientName] = useState("");
+  const [teaser, setTeaser] = useState("");
+  const [content, setContent] = useState("");
+  const [passphrase, setPassphrase] = useState("");
+  const [bsYear, setBsYear] = useState("2084");
+  const [bsMonth, setBsMonth] = useState("1");
+  const [bsDay, setBsDay] = useState("1");
+  const [birthDate, setBirthDate] = useState("2000-01-01");
+  const [age, setAge] = useState("30");
+  const [status, setStatus] = useState("");
+  const [unlockKeys, setUnlockKeys] = useState<Record<string,string>>({});
+  const [opened, setOpened] = useState<Record<string,string>>({});
+
+  const lockedCount = useMemo(() => letters.filter((row) => lockState(row).locked).length, [letters]);
+
+  async function save() {
+    if (!recipientName.trim() || !content.trim() || passphrase.length < 6) {
+      setStatus("प्राप्तकर्ता, चिठी र कम्तीमा ६ अक्षरको passphrase आवश्यक छ।");
+      return;
+    }
+    setStatus("चिठी तपाईंको ब्राउजरमै encrypt हुँदैछ…");
+    try {
+      const unlock = unlockType === "bs"
+        ? openAtFromBs({ year: Number(bsYear), month: Number(bsMonth), day: Number(bsDay) }, bsAdapter)
+        : await tithiBirthdayOpenAt(birthDate, Number(age));
+      if (Date.parse(unlock.openAt) <= Date.now()) throw new Error("खुल्ने मिति भविष्यमा हुनुपर्छ।");
+      const sealed = await sealWithPassphrase(content, passphrase);
+      const row: StoredFutureLetter = {
+        id: crypto.randomUUID(),
+        recipientName: recipientName.trim(),
+        teaser: teaser.trim(),
+        openAt: unlock.openAt,
+        openAtLabel: unlock.openAtLabel,
+        sealed,
+        createdAt: new Date().toISOString(),
+        updatedAt: Date.now(),
+      };
+      const life = updateLife((current) => ({ ...current, futureLetters: [...current.futureLetters, row] }));
+      setLetters(life.futureLetters);
+      const synced = await syncLifeTools();
+      setLetters(synced.life.futureLetters);
+      setContent("");
+      setPassphrase("");
+      setStatus(synced.synced
+        ? "Encrypted चिठी सुरक्षित भयो · Google sync पनि भयो। Passphrase कतै सेभ गरिएको छैन।"
+        : "Encrypted चिठी स्थानीय रूपमा सुरक्षित भयो। Passphrase कतै सेभ गरिएको छैन।");
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "चिठी सुरक्षित गर्न सकिएन।");
+    }
+  }
+
+  async function openLetter(letter: StoredFutureLetter) {
+    if (lockState(letter).locked) return;
+    const key = unlockKeys[letter.id] || "";
+    if (!key) {
+      setStatus("यो चिठी खोल्न passphrase लेख्नुहोस्।");
+      return;
+    }
+    try {
+      const plain = await openWithPassphrase(letter.sealed, key);
+      setOpened((current) => ({ ...current, [letter.id]: plain }));
+      setStatus("चिठी खुल्यो। Passphrase memory मा मात्र प्रयोग भयो, सेभ गरिएको छैन।");
+    } catch {
+      setStatus("Passphrase मिलेन वा encrypted data बिग्रिएको छ।");
+    }
+  }
+
+  async function remove(id: string) {
+    const life = updateLife((current) => ({ ...current, futureLetters: current.futureLetters.filter((row) => row.id !== id) }));
+    setLetters(life.futureLetters);
+    const synced = await syncLifeTools();
+    setLetters(synced.life.futureLetters);
+  }
+
+  return (
+    <ToolPage title="भविष्यको चिठी" description="वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने चिठी। चिठीको मूल पाठ र passphrase Mero Patro server मा पठाइँदैन।">
+      <section className="patro-tool-card">
+        <div className="tool-form-grid">
+          <label>प्राप्तकर्ता<input value={recipientName} onChange={(e) => setRecipientName(e.target.value)} placeholder="नाम" /></label>
+          <label>खोल्ने आधार<select value={unlockType} onChange={(e) => setUnlockType(e.target.value as "bs" | "tithi")}><option value="bs">वि.सं. मिति</option><option value="tithi">तिथि जन्मदिन</option></select></label>
+          {unlockType === "bs" ? <>
+            <label>वि.सं. वर्ष<input inputMode="numeric" value={bsYear} onChange={(e) => setBsYear(e.target.value)} /></label>
+            <label>महिना<input inputMode="numeric" value={bsMonth} onChange={(e) => setBsMonth(e.target.value)} /></label>
+            <label>गते<input inputMode="numeric" value={bsDay} onChange={(e) => setBsDay(e.target.value)} /></label>
+          </> : <>
+            <label>जन्म AD मिति<input type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} /></label>
+            <label>कुन तिथि जन्मदिन?<input inputMode="numeric" value={age} onChange={(e) => setAge(e.target.value)} placeholder="जस्तै ३०" /></label>
+          </>}
+          <label>Envelope teaser<input value={teaser} onChange={(e) => setTeaser(e.target.value)} maxLength={120} placeholder="गोप्य कुरा नलेख्नुहोस्" /></label>
+          <label>Passphrase<input type="password" value={passphrase} onChange={(e) => setPassphrase(e.target.value)} autoComplete="new-password" placeholder="प्राप्तकर्तासँग अलग माध्यमबाट बाँड्नुहोस्" /></label>
+        </div>
+        <label className="tool-block-label">चिठी<textarea rows={9} value={content} onChange={(e) => setContent(e.target.value)} maxLength={20000} /></label>
+        <div className="tool-action-row"><button type="button" className="tool-primary-button" onClick={save}>Encrypt गरेर सुरक्षित गर्नुहोस्</button><span className="tool-badge">{lockedCount} locked</span></div>
+        {status ? <p className="tool-status" role="status">{status}</p> : null}
+      </section>
+
+      <ToolResult title="सुरक्षित चिठीहरू" speechText={letters.map((row) => row.recipientName + " को चिठी " + row.openAtLabel + " मा खुल्छ।").join(" ")}>
+        {letters.length === 0 ? <p className="tool-muted">अहिलेसम्म कुनै भविष्यको चिठी छैन।</p> : <div className="tool-event-list">{letters.map((letter) => {
+          const state = lockState(letter);
+          return <article className="tool-event" key={letter.id}>
+            <div><strong>✉ {letter.recipientName}</strong><small>{letter.openAtLabel}</small>{letter.teaser ? <small>{letter.teaser}</small> : null}</div>
+            <div>{state.locked ? <><span className="tool-badge">🔒 {state.label}</span><small>खुल्ने समय: {new Date(letter.openAt).toLocaleString("ne-NP", { timeZone: "Asia/Kathmandu" })}</small></> : <>
+              <span className="tool-badge">🔓 खोल्न मिल्छ</span>
+              {!opened[letter.id] ? <div className="tool-inline-unlock"><input type="password" value={unlockKeys[letter.id] || ""} onChange={(e) => setUnlockKeys((old) => ({ ...old, [letter.id]: e.target.value }))} placeholder="Passphrase" /><button type="button" className="tool-secondary-button" onClick={() => openLetter(letter)}>खोल्नुहोस्</button></div> : <div className="tool-open-letter"><p>{opened[letter.id]}</p><ReadAloudButton text={opened[letter.id]} /></div>}
+            </>}</div>
+            <button type="button" className="tool-link-button danger" onClick={() => remove(letter.id)}>हटाउनुहोस्</button>
+          </article>;
+        })}</div>}
+        <p className="tool-muted">Passphrase हराएमा passphrase-mode चिठी पुनः खोल्न सकिँदैन। Mero Patro ले passphrase वा plaintext चिठी log गर्दैन।</p>
+      </ToolResult>
+    </ToolPage>
+  );
+}
