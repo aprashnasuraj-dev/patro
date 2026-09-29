@@ -365,8 +365,10 @@ export function UtilitySuite() {
   }, [qrText, qrLevel, workerReady]);
 
   const swapFont = () => {
-    setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
+    const nextDirection = fontDirection === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode";
+    setFontDirection(nextDirection);
     setFontInput(fontOutput);
+    chooseTool(nextDirection === "preeti-to-unicode" ? "preetitounicode" : "unicodetopreeti");
   };
 
   const copy = async (text: string) => {
@@ -402,7 +404,7 @@ export function UtilitySuite() {
           </div>
           <div className="utility-directory-grid">
             {TOOL_DIRECTORY.map((tool) => (
-              <button type="button" className="utility-directory-card" key={tool.id} onClick={() => chooseTool(tool.id)}>
+              <a className={"utility-directory-card " + (tool.badge === "Patro Plus" ? "is-patro-plus" : "")} key={tool.id} href={"/tools/" + tool.id}>
                 <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
                 <span className="utility-directory-copy">
                   <small>{tool.badge}</small>
@@ -410,7 +412,7 @@ export function UtilitySuite() {
                   <span>{tool.subtitle}</span>
                 </span>
                 <span className="utility-directory-arrow" aria-hidden="true">→</span>
-              </button>
+              </a>
             ))}
           </div>
           <div className="utility-directory-related">
@@ -619,8 +621,8 @@ export function UtilitySuite() {
         </header>
 
         <div className="utility-segmented" role="group" aria-label="Font conversion direction">
-          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => setFontDirection("preeti-to-unicode")}>Preeti → Unicode</button>
-          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => setFontDirection("unicode-to-preeti")}>Unicode → Preeti</button>
+          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => chooseTool("preetitounicode")}>Preeti → Unicode</button>
+          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => chooseTool("unicodetopreeti")}>Unicode → Preeti</button>
         </div>
 
         <div className="utility-text-grid">
