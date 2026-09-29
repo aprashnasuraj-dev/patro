@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run packages/core/src/core.test.ts",
-    "test:core": "vitest run packages/core/src/core.test.ts"
+    "test:core": "vitest run packages/core/src/core.test.ts",
+    "test:typing": "node --test tests/nepali-tools.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",

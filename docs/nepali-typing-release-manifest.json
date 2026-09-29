@@ -1,0 +1,73 @@
+{
+  "prepared_at": "2026-09-29",
+  "release_after": "2027-09-28T18:15:00Z",
+  "release_after_nepal": "2027-09-29T00:00:00+05:45",
+  "release_branch": "release/nepali-typing-2027",
+  "draft_pr": 12,
+  "uploaded_bundle": {
+    "name": "Patro_Nepali_Typing_Full_Dictionary_Bundle_v1.0.0(1).zip",
+    "sha256": "f97f649ad353942c38caa63d6e386201138b0364554510ec7093216af158faa7",
+    "baseline_tests": 72
+  },
+  "dictionary": {
+    "source_package": "dictionary-ne",
+    "source_version": "2.0.0",
+    "license": "LGPL-2.1",
+    "source_blob": "c6f72034f0c96f2cdfc54c3d61eb07ccc97c18ac",
+    "source_sha256": "dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427",
+    "usable_source_words": 34548,
+    "canonical_source_words": 34547,
+    "editorial_additions": 24,
+    "final_unique_suggestions": 34571
+  },
+  "supabase": {
+    "project": "pxlsmxbpgdfzjzuqtict",
+    "tools_catalog": {
+      "version": 1,
+      "ezbr_sha256": "001eb96c05f782fb2cc583fb428beec8a7ecd19f6de54a8de40d255116a48071"
+    },
+    "typing_lexicon": {
+      "version": 1,
+      "ezbr_sha256": "95bef3d6128a3a5c217167861949490ab2a586029b0d2470fda17fdd757d2662"
+    },
+    "router": {
+      "version": 38,
+      "ezbr_sha256": "96ec8150a0dc703c8e9ba04ad53b9e26593cdb551102a74c83fd1044e03f516b"
+    },
+    "same_origin_endpoints": [
+      "/api/v1/tools/catalog",
+      "/api/v1/typing/lexicon",
+      "/api/v1/typing/lexicon?format=words",
+      "/explore?view=tools",
+      "/tools-hub"
+    ],
+    "nepal_miti_protected": {
+      "version": 110,
+      "ezbr_sha256": "647057bf292b6c03eba68a57b7643fdfe841407a16001d884862de0554dbb910",
+      "temporary_tools_view": "/explore?view=tools",
+      "alias": "/tools-hub"
+    }
+  },
+  "catalog_hierarchy": {
+    "typing_tools": [
+      "preeti-converter",
+      "nepali-typing"
+    ],
+    "tools": [
+      "tithi",
+      "diaspora",
+      "card",
+      "family",
+      "api",
+      "my-data"
+    ],
+    "utilities": [
+      "bstoad",
+      "adtobs",
+      "landconverter",
+      "incometax",
+      "nepaliqr",
+      "fuelprice"
+    ]
+  }
+}
