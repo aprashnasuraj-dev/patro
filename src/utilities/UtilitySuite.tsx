@@ -96,7 +96,7 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Tools", group: "tools" },
 ];
 
-const REMOTE_CATALOG_URL = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/tools-catalog";
+const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";
 
 function toolFromLocation(): ToolId | null {
   const slug = window.location.pathname.replace(/\/+$/, "").split("/")[2] || "";
