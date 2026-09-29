@@ -50,15 +50,37 @@ export function MediaProvider({children}:{children:ReactNode}) {
 
   useEffect(()=>{
     const audio=new Audio(); audio.preload="none"; audio.crossOrigin="anonymous"; audioRef.current=audio;
-    const onPlaying=()=>setState((s)=>({...s,playing:true,health:"live",retryCount:0}));
     const onPause=()=>setState((s)=>({...s,playing:false}));
-    const onWaiting=()=>setState((s)=>({...s,health:s.playing?"retrying":"loading"}));
-    const onError=()=>setState((s)=>({...s,health:"error"}));
-    audio.addEventListener("playing",onPlaying); audio.addEventListener("pause",onPause); audio.addEventListener("waiting",onWaiting); audio.addEventListener("error",onError);
+    const queueRecovery=()=>{
+      if(!retryAction.current)return;
+      setState((s)=>{
+        const count=Math.min(s.retryCount+1,6);
+        if(count>=6)return {...s,health:"error",retryCount:count};
+        const delay=Math.min(30000,1000*2**(count-1));
+        if(retryTimer.current)window.clearTimeout(retryTimer.current);
+        retryTimer.current=window.setTimeout(()=>retryAction.current?.(),delay);
+        return {...s,health:"retrying",retryCount:count};
+      });
+    };
+    let stallTimer:number|null=null;
+    const onWaiting=()=>{
+      setState((s)=>({...s,health:s.playing?"retrying":"loading"}));
+      if(stallTimer)window.clearTimeout(stallTimer);
+      stallTimer=window.setTimeout(queueRecovery,8000);
+    };
+    const onPlaying=()=>{
+      if(stallTimer)window.clearTimeout(stallTimer);
+      stallTimer=null;
+      setState((s)=>({...s,playing:true,health:"live",retryCount:0}));
+    };
+    const onError=()=>queueRecovery();
+    audio.addEventListener("playing",onPlaying); audio.addEventListener("pause",onPause); audio.addEventListener("waiting",onWaiting); audio.addEventListener("stalled",onWaiting); audio.addEventListener("error",onError);
     return ()=>{
       if(retryTimer.current) window.clearTimeout(retryTimer.current);
+      if(stallTimer) window.clearTimeout(stallTimer);
+      retryAction.current=null;
       hlsRef.current?.destroy(); audio.pause(); audio.src="";
-      audio.removeEventListener("playing",onPlaying); audio.removeEventListener("pause",onPause); audio.removeEventListener("waiting",onWaiting); audio.removeEventListener("error",onError);
+      audio.removeEventListener("playing",onPlaying); audio.removeEventListener("pause",onPause); audio.removeEventListener("waiting",onWaiting); audio.removeEventListener("stalled",onWaiting); audio.removeEventListener("error",onError);
       void contextRef.current?.close();
     };
   },[]);
@@ -95,6 +117,7 @@ export function MediaProvider({children}:{children:ReactNode}) {
     await ensureAudioGraph();
     const url=proxied(item.streamUrl);
     const start=async()=>{
+      retryAction.current=()=>void start();
       try{
         const hlsMedia=item.codec.toLowerCase().includes("hls") || item.mediaType==="hls" || isHls(url);
         if(hlsMedia && Hls.isSupported()){
@@ -120,8 +143,20 @@ export function MediaProvider({children}:{children:ReactNode}) {
     await start();
   },[ensureAudioGraph,scheduleRetry,state.muted,state.volume]);
 
-  const pause=useCallback(()=>audioRef.current?.pause(),[]);
-  const toggle=useCallback(()=>{const a=audioRef.current;if(!a)return;if(a.paused){void a.play().catch(()=>undefined);}else a.pause();},[]);
+  const pause=useCallback(()=>{
+    if(retryTimer.current)window.clearTimeout(retryTimer.current);
+    retryAction.current=null;
+    audioRef.current?.pause();
+  },[]);
+  const toggle=useCallback(()=>{
+    const a=audioRef.current;if(!a)return;
+    if(a.paused){void a.play().catch(()=>retryAction.current?.());}
+    else{
+      if(retryTimer.current)window.clearTimeout(retryTimer.current);
+      retryAction.current=null;
+      a.pause();
+    }
+  },[]);
   const setMuted=useCallback((muted:boolean)=>{if(audioRef.current)audioRef.current.muted=muted;setState((s)=>({...s,muted}));},[]);
   const setVolume=useCallback((volume:number)=>{const value=Math.max(0,Math.min(1,volume));if(gainRef.current&&contextRef.current)gainRef.current.gain.setTargetAtTime(value,contextRef.current.currentTime,.08);setState((s)=>({...s,volume:value}));},[]);
   const setSleepMinutes=useCallback((minutes:number|null)=>setState((s)=>({...s,sleepEndsAt:minutes?Date.now()+minutes*60000:null})),[]);
