@@ -15,7 +15,7 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/aaja", title: "आज · Today", subtitle: "Daily Nepal Miti dashboard and open/closed context", group: "Daily" },
   { path: "/tools/tithi", title: "तिथि · Tithi", subtitle: "Tithi reminders, lunar-date derivation and recurrence tools", group: "Tools" },
   { path: "/tools/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Tools" },
-  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete Patro Plus tool directory", group: "Tools" },
+  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete tools directory", group: "Tools" },
   { path: "/tools/card", title: "Share Cards", subtitle: "Create calendar, date and festival cards for sharing", group: "Tools" },
   { path: "/tools/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
   { path: "/settings/holidays", title: "Holiday Settings", subtitle: "Audience, district and closure preferences", group: "Tools" },
@@ -213,7 +213,7 @@ export default function App() {
 
         <nav className="home-quick-launch glass-panel" aria-label="Quick access">
           <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>
-          <a href="/tools"><span>Tools</span><strong>पात्रो Plus · उपकरण</strong><small>14 focused tools in one directory</small></a>
+          <a href="/tools/typingtools"><span>Tools</span><strong>Typing Tools · टाइपिङ टुल्स</strong><small>Preeti ↔ Unicode converters</small></a>
           <a href="/fm"><span>Listen</span><strong>FM Radio</strong><small>Nepal & global stations</small></a>
           <a href="/tv"><span>Watch</span><strong>Live TV</strong><small>Playable channels</small></a>
         </nav>
