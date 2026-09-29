@@ -42,6 +42,46 @@
       "destination": "/astro/index.html"
     },
     {
+      "source": "/tools/fuelprice",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/nepaliqr",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/incometax",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/landconverter",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/adtobs",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/bstoad",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/unicodetopreeti",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/preetitounicode",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/preeti-converter",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/typingtools",
+      "destination": "/astro/index.html"
+    },
+    {
       "source": "/tools/tithi",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/tithi"
     },
@@ -651,6 +691,15 @@
     },
     {
       "source": "/tools",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/tools/:path*",
       "headers": [
         {
           "key": "Content-Type",
