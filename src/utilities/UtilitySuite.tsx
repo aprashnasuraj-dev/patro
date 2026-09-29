@@ -40,6 +40,21 @@ type TaxResult = {
 };
 type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
 
+type ToolId = "font" | "date" | "land" | "tax" | "qr" | "fuel";
+const TOOL_DIRECTORY: { id: ToolId; icon: string; title: string; subtitle: string; badge: string }[] = [
+  { id: "font", icon: "क", title: "Preeti ⇄ Unicode", subtitle: "Convert legacy Preeti text and Nepali Unicode in either direction.", badge: "Text" },
+  { id: "date", icon: "वि", title: "BS ⇄ AD Date Converter", subtitle: "Convert Bikram Sambat and Gregorian dates with source confidence labels.", badge: "Calendar" },
+  { id: "land", icon: "▦", title: "Nepali Land Converter", subtitle: "Ropani–Aana–Paisa–Dam and Bigha–Kattha–Dhur exact conversion.", badge: "Land" },
+  { id: "tax", icon: "रु", title: "Income Tax Calculator", subtitle: "FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance" },
+  { id: "qr", icon: "⌗", title: "Devanagari QR Generator", subtitle: "Create private UTF-8 Nepali QR codes entirely on your device.", badge: "QR" },
+  { id: "fuel", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "View Nepal Oil Corporation fuel prices by depot group.", badge: "Fuel" },
+];
+
+function toolFromLocation(): ToolId | null {
+  const value = new URLSearchParams(window.location.search).get("tool");
+  return TOOL_DIRECTORY.some((tool) => tool.id === value) ? value as ToolId : null;
+}
+
 function Field({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
   return (
     <label className="utility-field">
@@ -63,6 +78,7 @@ export function UtilitySuite() {
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
+  const [selectedTool, setSelectedTool] = useState<ToolId | null>(toolFromLocation);
   const [fontDirection, setFontDirection] = useState<FontDirection>("preeti-to-unicode");
   const [fontInput, setFontInput] = useState("g]kfn");
   const [fontOutput, setFontOutput] = useState("नेपाल");
@@ -164,6 +180,21 @@ export function UtilitySuite() {
       window.removeEventListener("offline", onOffline);
     };
   }, []);
+
+  useEffect(() => {
+    const onPopState = () => setSelectedTool(toolFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  function chooseTool(tool: ToolId | null) {
+    const url = new URL(window.location.href);
+    if (tool) url.searchParams.set("tool", tool);
+    else url.searchParams.delete("tool");
+    window.history.pushState(null, "", url.pathname + url.search + url.hash);
+    setSelectedTool(tool);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
   async function loadFuelPrices() {
     if (!navigator.onLine) {
@@ -309,7 +340,43 @@ export function UtilitySuite() {
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
       </section>
 
-      <section className="utility-card" aria-labelledby="date-converter-title">
+      {selectedTool === null ? (
+        <section className="utility-directory" aria-labelledby="utility-directory-title">
+          <div className="utility-directory-head">
+            <div>
+              <p className="eyebrow">Tools directory</p>
+              <h2 id="utility-directory-title">Choose a tool</h2>
+              <p>Open only the tool you need. Return to this list anytime without leaving the utility platform.</p>
+            </div>
+            <a className="utility-home-link" href="/">← Patro home</a>
+          </div>
+          <div className="utility-directory-grid">
+            {TOOL_DIRECTORY.map((tool) => (
+              <button type="button" className="utility-directory-card" key={tool.id} onClick={() => chooseTool(tool.id)}>
+                <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
+                <span className="utility-directory-copy">
+                  <small>{tool.badge}</small>
+                  <strong>{tool.title}</strong>
+                  <span>{tool.subtitle}</span>
+                </span>
+                <span className="utility-directory-arrow" aria-hidden="true">→</span>
+              </button>
+            ))}
+          </div>
+          <div className="utility-directory-related">
+            <span>Jyotish:</span>
+            <a href="/jyotish/rashifal">राशिफल · Rashifal</a>
+          </div>
+        </section>
+      ) : (
+        <nav className="utility-tool-nav" aria-label="Utility navigation">
+          <button type="button" onClick={() => chooseTool(null)}>← All tools</button>
+          <strong>{TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.title}</strong>
+          <a href="/">Patro home</a>
+        </nav>
+      )}
+
+      <section className="utility-card" aria-labelledby="date-converter-title" hidden={selectedTool !== "date"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Calendar engine</p>
@@ -355,7 +422,7 @@ export function UtilitySuite() {
         {dateError && <p className="utility-error" role="alert">{dateError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="tax-title">
+      <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "tax"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">FY 2083/84 · Salary tax</p>
@@ -408,7 +475,7 @@ export function UtilitySuite() {
         {taxError && <p className="utility-error" role="alert">{taxError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="qr-title">
+      <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "qr"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Private · client-only</p>
@@ -449,7 +516,7 @@ export function UtilitySuite() {
       </section>
 
 
-      <section className="utility-card" aria-labelledby="fuel-title">
+      <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuel"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Nepal Oil Corporation</p>
@@ -491,7 +558,7 @@ export function UtilitySuite() {
       </section>
 
 
-      <section className="utility-card" aria-labelledby="font-converter-title">
+      <section className="utility-card" aria-labelledby="font-converter-title" hidden={selectedTool !== "font"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Text engine</p>
@@ -522,7 +589,7 @@ export function UtilitySuite() {
         {fontError && <p className="utility-error" role="alert">{fontError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="land-title">
+      <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "land"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Exact land math</p>
