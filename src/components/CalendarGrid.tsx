@@ -65,6 +65,13 @@ function nepaliDigits(value: string | number) {
   const map=["०","१","२","३","४","५","६","७","८","९"];
   return String(value).replace(/\d/g,(d)=>map[Number(d)]);
 }
+
+function tithiTransitionLabel(day: SyncPayload) {
+  const transition=day.archive_panchang.tithi_transition;
+  if(!transition?.time || !transition.next_ne) return null;
+  const clock=transition.time.match(/\d{1,2}:\d{2}/)?.[0] || transition.time;
+  return nepaliDigits(clock)+" देखि "+transition.next_ne;
+}
 function nakshatraFromMoon(longitude: number | null) {
   if (longitude == null || !Number.isFinite(longitude)) return "—";
   return NAKSHATRAS[Math.floor((((longitude%360)+360)%360)/(360/27))] ?? "—";
@@ -226,15 +233,16 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
             <div className="month-grid" role="grid" aria-label={title(month)}>
               {cells.map((cell)=>{
                 const data=entries.get(cell.iso), tithiNumber=data?.tithi.number;
+                const transition=data?tithiTransitionLabel(data):null;
                 const special=tithiNumber===15?"purnima":tithiNumber===30?"amavasya":"";
                 const primary=mode==="bs"?(data?.calendars.bikram_sambat_detail.day??"—"):cell.date.getUTCDate();
                 const secondary=mode==="bs"?String(cell.date.getUTCDate())+" AD":data?data.calendars.bikram_sambat_detail.day+" BS":"";
                 const classes=["calendar-day",!cell.inMonth?"calendar-day--muted":"",cell.iso===today?"calendar-day--today":"",cell.iso===selectedDate?"calendar-day--selected":"",special?"calendar-day--special "+special:""].filter(Boolean).join(" ");
                 return <button key={cell.iso} className={classes} onClick={()=>{onSelectDate(cell.iso);if(data)setOpenDay(data);}} role="gridcell" aria-selected={cell.iso===selectedDate}
-                  aria-label={cell.iso+(data?", "+data.tithi.ne+", "+data.tithi.paksha:"")}>
+                  aria-label={cell.iso+(data?", "+data.tithi.ne+(transition?", "+transition:"")+", "+data.tithi.paksha:"")}>
                   <span className="day-number" aria-label={"day "+primary}>{mode==="bs"&&typeof primary==="number"?nepaliDigits(primary):primary}</span>
                   <span className="day-secondary">{secondary}</span>
-                  {loading&&!data?<span className="cell-skeleton skeleton" role="status" aria-label="Loading day"/>:data?<><span className="tithi-badge">{data.tithi.ne}</span><span className="paksha-dot" title={data.tithi.paksha}>{data.tithi.paksha.startsWith("Shukla")?"शु":"कृ"}</span></>:<span className="tithi-badge tithi-badge--unavailable">—</span>}
+                  {loading&&!data?<span className="cell-skeleton skeleton" role="status" aria-label="Loading day"/>:data?<><span className="tithi-badge">{data.tithi.ne}</span>{transition&&<span className="tithi-transition">{transition}</span>}<span className="paksha-dot" title={data.tithi.paksha}>{data.tithi.paksha.startsWith("Shukla")?"शु":"कृ"}</span></>:<span className="tithi-badge tithi-badge--unavailable">—</span>}
                   {cell.iso===today&&<span className="today-marker">Today</span>}{special&&<span className="special-marker">{special==="purnima"?"पूर्णिमा":"औंसी"}</span>}
                 </button>;
               })}
@@ -244,7 +252,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
           <motion.div key={"agenda-"+month.toISOString()} className="calendar-agenda" initial={{opacity:0,x:-24}} animate={{opacity:1,x:0}} exit={{opacity:0,x:24}} transition={{duration:.18}}>
             {monthEntries.map(({cell,data})=><button key={cell.iso} className={cell.iso===selectedDate?"agenda-row is-selected":"agenda-row"} onClick={()=>{onSelectDate(cell.iso);if(data)setOpenDay(data);}}>
               <time dateTime={cell.iso}><strong>{cell.date.getUTCDate()}</strong><span>{WEEKDAYS[cell.date.getUTCDay()]}</span></time>
-              <div><strong>{data?data.calendars.bikram_sambat:"Loading…"}</strong><span>{data?data.tithi.ne+" · "+data.tithi.paksha:"Synchronizing day"}</span></div>
+              <div><strong>{data?data.calendars.bikram_sambat:"Loading…"}</strong><span>{data?data.tithi.ne+(tithiTransitionLabel(data)?" — "+tithiTransitionLabel(data):"")+" · "+data.tithi.paksha:"Synchronizing day"}</span></div>
               <span aria-hidden="true">›</span>
             </button>)}
           </motion.div>
