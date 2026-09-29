@@ -6,10 +6,12 @@ import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
 import { registerPatroServiceWorker } from "./pwa";
 import "./design-tokens.css";
+import "./app-shell.css";
 import "./styles.css";
 import "./cosmic.css";
 import "./swarm.css";
 import "./feature-suite.css";
+import "./restructure.css";
 import "./utilities.css";
 
 const root = document.getElementById("root");

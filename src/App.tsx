@@ -23,9 +23,9 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/tools/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
   { path: "/time-machine", title: "Time Machine", subtitle: "Historical Nepal timeline", group: "Explore" },
   { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
-  { path: "/fm", title: "FM Radio", subtitle: "Nepal radio directory", group: "Explore" },
-  { path: "/explore", title: "Explore", subtitle: "Discovery hub", group: "Explore" },
-  { path: "/tv", title: "Explore TV", subtitle: "Live TV by country, language and category", group: "Explore" },
+  { path: "/fm", title: "मेरो पात्रो रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "Explore" },
+  { path: "/explore", title: "सबै सुविधा · All Features", subtitle: "पात्रो, डायरी, मिडिया र उपकरणको पूर्ण सूची", group: "Explore" },
+  { path: "/tv", title: "लाइभ टिभी · Live TV", subtitle: "देश, भाषा र विषय अनुसार लाइभ च्यानल", group: "Explore" },
   { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
   { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Jyotish tools and guidance", group: "Jyotish" },
   { path: "/tools/api", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }

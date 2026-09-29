@@ -4,6 +4,8 @@ import { MediaSuite } from "./media/MediaSuite";
 import { JanmaPatroSuite } from "./jyotish/JanmaPatroSuite";
 import { UtilitySuite } from "./utilities/UtilitySuite";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
+import { FeatureHub } from "./components/FeatureHub";
+import { MyDiary } from "./components/MyDiary";
 
 const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
@@ -53,6 +55,8 @@ export function PatroRouter() {
     };
   }, []);
 
+  if (path === "/explore") return <FeatureHub />;
+  if (path === "/my-diary") return <MyDiary />;
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
   if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
