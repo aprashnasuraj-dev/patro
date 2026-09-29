@@ -277,8 +277,18 @@ export function UtilitySuite() {
             badge: String(item.badge || "Tools"),
             group: item.category === "typing" ? "typing" : item.category === "utility" ? "utility" : "tools",
           })) as ToolDirectoryItem[];
-        if (!next.some((item) => item.id === "samudaya")) next.push(SAMUDAYA_TOOL);
-        if (next.length) setCatalog(next);
+        // The database catalog is authoritative for labels/order of rows it knows,
+        // but it must never remove shipped client tools when the catalog lags a release.
+        // Merge remote metadata over the complete local capability registry instead.
+        const remoteById = new Map(next.map((item) => [item.id, item]));
+        const merged = TOOL_DIRECTORY.map((local) => {
+          const remote = remoteById.get(local.id);
+          return remote ? { ...local, ...remote } : local;
+        });
+        for (const remote of next) {
+          if (!merged.some((item) => item.id === remote.id)) merged.push(remote);
+        }
+        setCatalog(merged);
       })
       .catch(() => undefined);
     return () => controller.abort();

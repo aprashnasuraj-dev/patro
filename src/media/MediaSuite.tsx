@@ -644,7 +644,9 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
     () => tvItems.filter((item) => {
       if (!tvHideDead) return true;
       const state = tvHealth[item.id];
-      return state === "live" || state === "unknown";
+      // Keep channels visible while the (potentially slow) live probe is running.
+      // "Hide dead" should hide only confirmed-dead streams, not the whole page.
+      return state !== "dead";
     }),
     [tvItems, tvHealth, tvHideDead]
   );

@@ -61,30 +61,51 @@ export function useNepaliDictation(opts: { onFinal?: (text: string) => void; ser
         }
         setInterim(live);
       };
-      rec.onerror = (e: any) => setError(e.error === 'not-allowed' ? 'माइक्रोफोन अनुमति दिनुहोस्' : `त्रुटि: ${e.error}`);
+      rec.onerror = (e: any) => {
+        setListening(false);
+        setError(e.error === 'not-allowed' || e.error === 'service-not-allowed'
+          ? 'माइक्रोफोन अनुमति दिनुहोस्'
+          : `त्रुटि: ${e.error}`);
+      };
       rec.onend = () => { setListening(false); setInterim(''); };
       recRef.current = rec;
-      rec.start();
-      setListening(true);
+      try {
+        rec.start();
+        setListening(true);
+      } catch (error) {
+        setListening(false);
+        setError(error instanceof Error ? error.message : 'आवाज टाइपिङ सुरु गर्न सकिएन।');
+      }
       return;
     }
     if (mode === 'server') {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const rec = new MediaRecorder(stream);
-      const chunks: Blob[] = [];
-      rec.ondataavailable = (e) => chunks.push(e.data);
-      rec.onstop = async () => {
-        stream.getTracks().forEach((t) => t.stop());
-        const body = new FormData();
-        body.append('audio', new Blob(chunks, { type: rec.mimeType }), 'speech.webm');
-        const res = await fetch('/api/nepali/stt', { method: 'POST', body });
-        if (!res.ok) { setError('आवाज पहिचान असफल'); return; }
-        const { text } = await res.json();
-        opts.onFinal?.(postProcessDictation(text) + ' ');
-      };
-      mediaRef.current = rec;
-      rec.start();
-      setListening(true);
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const rec = new MediaRecorder(stream);
+        const chunks: Blob[] = [];
+        rec.ondataavailable = (e) => chunks.push(e.data);
+        rec.onstop = async () => {
+          stream.getTracks().forEach((t) => t.stop());
+          try {
+            const body = new FormData();
+            body.append('audio', new Blob(chunks, { type: rec.mimeType }), 'speech.webm');
+            const res = await fetch('/api/nepali/stt', { method: 'POST', body });
+            if (!res.ok) throw new Error('आवाज पहिचान असफल');
+            const { text } = await res.json();
+            opts.onFinal?.(postProcessDictation(text) + ' ');
+          } catch (error) {
+            setError(error instanceof Error ? error.message : 'आवाज पहिचान असफल');
+          } finally {
+            setListening(false);
+          }
+        };
+        mediaRef.current = rec;
+        rec.start();
+        setListening(true);
+      } catch (error) {
+        setListening(false);
+        setError(error instanceof Error ? error.message : 'माइक्रोफोन अनुमति दिनुहोस्');
+      }
       return;
     }
     setError('यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome प्रयोग गर्नुहोस्।');

@@ -314,10 +314,13 @@ export async function radioCatalogResponse(request: Request) {
 
   const [facets, localRaw] = await Promise.all([
     countryFacets().catch(() => []),
-    country === "NP" ? localNepalStations() : Promise.resolve([])
+    country === "NP" ? localNepalStations().catch(() => []) : Promise.resolve([])
   ]);
 
-  const localRows = (await Promise.all(localRaw.map(localItem))).filter(Boolean) as any[];
+  // A stale/bad row or temporary DB failure must not take down the entire directory.
+  const localRows = (await Promise.all(
+    localRaw.map((row: any) => localItem(row).catch(() => null))
+  )).filter(Boolean) as any[];
   const remoteOffset = Math.max(0, (page - 1) * limit - localRows.length);
   const remoteLimit = page === 1 ? Math.min(120, limit + localRows.length + 20) : Math.min(100, limit + 20);
 
@@ -340,7 +343,11 @@ export async function radioCatalogResponse(request: Request) {
     directoryWarning = "global_radio_directory_temporarily_unavailable";
   }
 
-  const remoteRows = (await Promise.all(remoteRaw.map(browserItem))).filter(Boolean) as any[];
+  // Isolate per-station signing/parsing failures so one malformed upstream record
+  // cannot turn a usable directory response into HTTP 500.
+  const remoteRows = (await Promise.all(
+    remoteRaw.map((row) => browserItem(row).catch(() => null))
+  )).filter(Boolean) as any[];
   const combined = page === 1 && country === "NP" ? [...localRows, ...remoteRows] : remoteRows;
   const seen = new Set<string>();
   const unique: any[] = [];

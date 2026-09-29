@@ -17,7 +17,7 @@ app.use("*", async (c, next) => {
   await next();
   c.header("X-Content-Type-Options", "nosniff");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
-  c.header("Permissions-Policy", "camera=(), microphone=(), geolocation=(self)");
+  c.header("Permissions-Policy", "camera=(), microphone=(self), geolocation=(self)");
   c.header("Cross-Origin-Opener-Policy", "same-origin");
 });
 
@@ -244,7 +244,7 @@ async function proxyLegacy(request: Request, targetPath: string, opts: {page?: b
       "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " +
       "style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co " +
       "https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; " +
-      "font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; " +
+      "font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; " +
       "object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
     );
     outHeaders.set("cache-control","no-store");
