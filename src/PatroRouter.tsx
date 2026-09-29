@@ -8,6 +8,7 @@ import { FeatureHub } from "./components/FeatureHub";
 import { MyDiary } from "./components/MyDiary";
 import { TrustPage } from "./components/TrustPages";
 import { NotFound } from "./components/NotFound";
+import { PatroToolsShell, PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
 
 const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking"]);
 
@@ -68,6 +69,8 @@ export function PatroRouter() {
   if (path === "/my-diary") return <MyDiary />;
   if (path === "/fm") return <MediaSuite kind="radio" />;
   if (path === "/tv") return <MediaSuite kind="tv" />;
+  const patroToolSlug = path.startsWith("/tools/") ? path.slice("/tools/".length) : "";
+  if (PATRO_TOOL_SLUGS.has(patroToolSlug)) return <PatroToolsShell slug={patroToolSlug} />;
   if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
   if (path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
   if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;

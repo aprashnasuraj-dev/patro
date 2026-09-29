@@ -1,0 +1,56 @@
+name: Import Patro tools kit
+on:
+  push:
+    branches: [feat/patro-tools-phase-a]
+    paths:
+      - '.bootstrap/**'
+      - '.github/workflows/import-patro-tools-kit.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    if: "!contains(github.event.head_commit.message, 'import patro tools kit source')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode and verify kit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            .bootstrap/patro-tools-kit.b64.00 \
+            .bootstrap/patro-tools-kit.b64.01 \
+            .bootstrap/patro-tools-kit.b64.02 \
+            .bootstrap/patro-tools-kit.b64.03 \
+            .bootstrap/rest.part-aa \
+            .bootstrap/rest.part-ab \
+            .bootstrap/rest.part-ac \
+            .bootstrap/rest.part-ad \
+            .bootstrap/rest.part-ae \
+            .bootstrap/rest.part-af \
+            | base64 -d > /tmp/patro-tools-source-only.zip
+          rm -rf /tmp/patro-tools-kit
+          mkdir -p /tmp/patro-tools-kit
+          set +e
+          unzip -q /tmp/patro-tools-source-only.zip -d /tmp/patro-tools-kit
+          unzip_rc=$?
+          set -e
+          if [ "$unzip_rc" -ne 0 ] && [ "$unzip_rc" -ne 2 ]; then exit "$unzip_rc"; fi
+          cp .bootstrap/fix-bots-channels.ts /tmp/patro-tools-kit/src/patro-tools/bots/channels.ts
+          cp .bootstrap/fix-language-name-match.ts /tmp/patro-tools-kit/src/patro-tools/language/name-match.ts
+          (cd /tmp/patro-tools-kit && sha256sum -c "$GITHUB_WORKSPACE/.bootstrap/patro-tools.sha256")
+          rm -rf src/patro-tools
+          cp -R /tmp/patro-tools-kit/src/patro-tools src/patro-tools
+          mkdir -p tests docs
+          cp /tmp/patro-tools-kit/tests/*.ts tests/
+          cp /tmp/patro-tools-kit/README.md docs/patro-tools-kit-README.md
+          rm -rf .bootstrap
+      - name: Commit imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(tools): import patro tools kit source"
+          git push
