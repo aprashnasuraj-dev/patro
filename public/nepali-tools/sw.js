@@ -6,7 +6,7 @@ const FILES=['index.html','styles.css','app.mjs','worker.mjs','core/roman.mjs','
 self.addEventListener('install',e=>e.waitUntil(
  caches.open(CACHE).then(async c=>{
   await c.addAll(FILES.map(p=>ROOT+p));
-  try{await c.add(new Request(LEXICON,{mode:'cors'}));}catch{/* Online typing still works; user can retry offline install. */}
+  try{await c.add(LEXICON);}catch{/* Online typing still works; user can retry offline install. */}
  }).then(()=>self.skipWaiting())
 ));
 self.addEventListener('activate',e=>e.waitUntil(
