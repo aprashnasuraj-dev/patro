@@ -3,7 +3,7 @@ import {romanize} from './core/roman.mjs';
 import {CURATED_ALIASES} from './core/aliases.mjs';
 import {convert} from './core/converter.mjs';
 
-const LEXICON_URL='https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/typing-lexicon?format=words';
+const LEXICON_URL='/api/v1/typing/lexicon?format=words';
 let engine;
 
 function buildRows(words) {
