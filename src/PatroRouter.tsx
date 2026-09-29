@@ -4,7 +4,7 @@ import { MediaSuite } from "./media/MediaSuite";
 import { JanmaPatroSuite } from "./jyotish/JanmaPatroSuite";
 import { UtilitySuite } from "./utilities/UtilitySuite";
 
-const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/rashifal", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
+const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
