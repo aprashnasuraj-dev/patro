@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run packages/core/src/core.test.ts",
+    "test:core": "vitest run packages/core/src/core.test.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -17,10 +19,12 @@
     "framer-motion": "13.4.3",
     "astronomy-engine": "2.1.19",
     "hls.js": "1.7.3",
-    "html2pdf.js": "0.14.0"
+    "html2pdf.js": "0.14.0",
+    "qrcode-generator": "2.0.4"
   },
   "devDependencies": {
     "@types/react": "19.1.2",
-    "@types/react-dom": "19.1.2"
+    "@types/react-dom": "19.1.2",
+    "vitest": "3.2.4"
   }
 }

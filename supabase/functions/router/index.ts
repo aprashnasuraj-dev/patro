@@ -434,6 +434,25 @@ app.get("/astronomy/tithi", async (c) => {
 });
 
 
+
+app.get("/noc/fuel-prices", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw, "router-noc-fuel", 240))) {
+    return c.json({ ok: false, error: "rate_limit_exceeded", retry_after: "1 hour" }, 429, { "Retry-After": "3600" });
+  }
+  try {
+    const { fetchNocFuelPrices } = await import("./services/nocFuel.ts");
+    const result = await fetchNocFuelPrices();
+    return c.json(result, 200, {
+      "Cache-Control": "public, max-age=120, s-maxage=900, stale-while-revalidate=3600"
+    });
+  } catch (error) {
+    console.error("noc_fuel_error", error);
+    return c.json({ ok: false, error: "noc_fuel_unavailable" }, 502, {
+      "Cache-Control": "no-store"
+    });
+  }
+});
+
 app.get("/media/proxy", async (c) => {
   const mediaKey = "router-media|" + clientIp(c.req.raw);
   if (!fallbackRateAllowed(mediaKey, 7200)) {
@@ -458,7 +477,7 @@ app.get("/media/proxy", async (c) => {
 
 app.notFound((c) => c.json({
   error: "not_found",
-  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
+  routes: ["/health","/sync","/nasa/apod","/nasa/cosmic","/astronomy/tithi","/noc/fuel-prices","/media/proxy","/today","/convert","/holidays","/panchang","/tithi/next","/calendar/*","/rashifal/*"]
 }, 404));
 
 app.onError((error, c) => {

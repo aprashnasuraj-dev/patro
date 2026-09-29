@@ -9,6 +9,7 @@ import "./styles.css";
 import "./cosmic.css";
 import "./swarm.css";
 import "./feature-suite.css";
+import "./utilities.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
