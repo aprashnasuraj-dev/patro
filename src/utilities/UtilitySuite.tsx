@@ -647,6 +647,14 @@ export function UtilitySuite() {
           className="utility-embed-frame"
           src={"/api/v1/compat/page?path=" + encodeURIComponent(legacyPath)}
           title={selectedMeta?.title || "Patro Plus tool"}
+          onLoad={(event) => {
+            try {
+              const innerHeader = event.currentTarget.contentDocument?.querySelector("header.top") as HTMLElement | null;
+              if (innerHeader) innerHeader.style.display = "none";
+            } catch {
+              // Same-origin production pages are expected; keep the frame usable if browser policy differs.
+            }
+          }}
         />
       </section>}
 
