@@ -1,14 +1,14 @@
 {
   "id": "/",
-  "name": "मेरो पात्रो",
-  "short_name": "मेरो पात्रो",
+  "name": "MeroPatro",
+  "short_name": "MeroPatro",
   "description": "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण र दैनिक उपयोगी सुविधा।",
   "lang": "ne",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
-  "theme_color": "#176F3B",
+  "theme_color": "#176f3b",
   "orientation": "any",
   "categories": [
     "productivity",
