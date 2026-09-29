@@ -1,7 +1,7 @@
 {
   "prepared_at": "2026-09-29",
-  "release_after": "2027-09-28T18:15:00Z",
-  "release_after_nepal": "2027-09-29T00:00:00+05:45",
+  "release_after": "2026-09-29T05:25:00Z",
+  "release_after_nepal": "2026-09-29T11:10:00+05:45",
   "release_branch": "release/nepali-typing-2027",
   "draft_pr": 12,
   "uploaded_bundle": {
@@ -31,15 +31,15 @@
       "ezbr_sha256": "95bef3d6128a3a5c217167861949490ab2a586029b0d2470fda17fdd757d2662"
     },
     "router": {
-      "version": 38,
-      "ezbr_sha256": "96ec8150a0dc703c8e9ba04ad53b9e26593cdb551102a74c83fd1044e03f516b"
+      "version": 41,
+      "ezbr_sha256": "891a9556d71f70f21ad6417e19eb9213f25001c0b0debda5c1bda20feb9a8b6f"
     },
     "same_origin_endpoints": [
       "/api/v1/tools/catalog",
       "/api/v1/typing/lexicon",
       "/api/v1/typing/lexicon?format=words",
-      "/explore?view=tools",
-      "/tools-hub"
+      "/api/v1/tools-hub",
+      "/api/v1/nepali-typing"
     ],
     "nepal_miti_protected": {
       "version": 110,
@@ -69,5 +69,6 @@
       "nepaliqr",
       "fuelprice"
     ]
-  }
+  },
+  "release_status": "published-now"
 }
