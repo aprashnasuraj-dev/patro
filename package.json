@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs",
+    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "vitest": "3.2.7"
+    "vitest": "3.2.7",
+    "esbuild": "0.25.10"
   }
 }

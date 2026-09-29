@@ -8,6 +8,7 @@ import { LunarPhaseDial } from "./components/LunarPhaseDial";
 import { CalendarGrid } from "./components/CalendarGrid";
 import { CosmicExperience } from "./components/CosmicExperience";
 import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
+import { CommunityHomeLine } from "./community/CommunityHomeLine";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
@@ -217,6 +218,8 @@ export default function App() {
           onNextDay={() => shiftSelected(1)}
           onToday={() => chooseDate(today)}
         />
+
+        <CommunityHomeLine selectedDate={selectedDate} />
 
         <nav className="home-quick-launch glass-panel" aria-label="Quick access">
           <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>

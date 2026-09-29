@@ -154,7 +154,51 @@
       "destination": "/tools"
     },
     {
-      "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$).*)",
+      "source": "/samudaya",
+      "destination": "/samudaya/index.html"
+    },
+    {
+      "source": "/samudaya/lhosar",
+      "destination": "/samudaya/lhosar/index.html"
+    },
+    {
+      "source": "/samudaya/tharu",
+      "destination": "/samudaya/tharu/index.html"
+    },
+    {
+      "source": "/nepal-sambat/mandala",
+      "destination": "/nepal-sambat/mandala/index.html"
+    },
+    {
+      "source": "/samudaya/mithila",
+      "destination": "/samudaya/mithila/index.html"
+    },
+    {
+      "source": "/samudaya/kirat",
+      "destination": "/samudaya/kirat/index.html"
+    },
+    {
+      "source": "/samudaya/hijri",
+      "destination": "/samudaya/hijri/index.html"
+    },
+    {
+      "source": "/samudaya/chakra",
+      "destination": "/samudaya/chakra/index.html"
+    },
+    {
+      "source": "/settings/community",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/admin/community-suites",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/samudaya",
+      "destination": "/samudaya"
+    },
+    {
+      "source": "/((?!astro(?:/.*)?$|tools(?:/.*)?$|fm/?$|tv/?$|jyotish/(?:janma-patro|matchmaking)/?$|samudaya(?:/.*)?$|nepal-sambat/mandala/?$).*)",
       "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected/$1"
     }
   ],
@@ -164,7 +208,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
         },
         {
           "key": "Referrer-Policy",
@@ -625,7 +669,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'"
         }
       ]
     },
@@ -642,7 +686,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'"
         }
       ]
     },
@@ -703,15 +747,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
-      "source": "/rashifal/:path*",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html; charset=utf-8"
         }
       ]
     },
@@ -911,6 +946,15 @@
     },
     {
       "source": "/404",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/rashifal/:path*",
       "headers": [
         {
           "key": "Content-Type",

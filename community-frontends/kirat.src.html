@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>साकेला सिली · किरात पात्रो</title>
+<meta name="description" content="साकेला उभौली र उधौली, चासोक तङनाम, येले सम्वत् — सिली घेरा, आफ्नै किरात भाषामा साकेलाको नाम, लिम्बू (सिरिजङ्गा) लिपि। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#0f1f17" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&family=Noto+Sans+Limbu&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #0f1f17; --ink: #eef5e9; --muted: #a9c2ad; --accent: #7fd18b; --on-accent: #0b1a10; --card: #ffffff0b; --line: #eef5e91c;
+  --dhol: #8a5a2b; --maize: #e3c04b; --sky: #9ad0e6; }
+body { background: radial-gradient(900px 600px at 70% 0%, #1f3b2b 0%, var(--bg) 60%) fixed; }
+.limbu { font-family: "Noto Sans Limbu", sans-serif; }
+.hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+#silli { width: 100%; max-width: 540px; aspect-ratio: 1; margin: 0 auto; display: block; }
+.circle { animation: go 60s linear infinite; transform-origin: 0 0; }
+@keyframes go { to { transform: rotate(360deg); } }
+.dn { animation: step 1s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes step { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-5px) rotate(6deg); } }
+.langs { display: flex; flex-wrap: wrap; gap: 8px; }
+#hills { width: 100%; height: 300px; display: block; border-radius: 20px; }
+.yele { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+@media (max-width: 640px) { .yele { grid-template-columns: 1fr; } }
+.yele .big { font-size: clamp(64px, 12vw, 120px); font-weight: 800; color: var(--maize); line-height: 1; }
+.season { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.season div { border: 1px dashed var(--line); border-radius: 16px; padding: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div id="nav"></div><div style="display:flex;gap:8px;align-items:center"><span class="today" id="today"></span><button class="pill" id="snd" aria-pressed="false">🔕 आवाज बन्द</button></div></div>
+
+  <div class="hero">
+    <div>
+      <h1 id="h1">साकेला सिली</h1>
+      <p class="lead">राई, लिम्बू, याक्खा, सुनुवार — भूमि र पितृप्रति कृतज्ञताको नाच। आफ्नो भाषा छान्नुहोस्:</p>
+      <div class="langs" id="langs" role="radiogroup" aria-label="किरात भाषा"></div>
+      <div class="hero-count" id="heroCount" style="margin-top:18px"></div>
+    </div>
+    <svg id="silli" viewBox="-260 -260 520 520" role="img" aria-label="सिलिमाङपा र सिलिमाङमाको अगुवाइमा साकेला घेरा"></svg>
+  </div>
+
+  <section aria-labelledby="uuH">
+    <h2 id="uuH">उभौली ↑ र उधौली ↓</h2>
+    <p class="lead">वसन्तमा (बैशाख पूर्णिमा) बस्तीहरू माथि लेकतिर उक्लिन्छन् र बाली लगाउनुअघि प्रार्थना गर्छन्; शरदमा (मंसिर पूर्णिमा) अन्न भित्र्याएर बेंसीतिर झर्छन्।</p>
+    <svg id="hills" viewBox="0 0 1200 300" preserveAspectRatio="none" role="img" aria-label="उभौली र उधौलीको यात्रा"></svg>
+  </section>
+
+  <section aria-labelledby="yeleH">
+    <h2 id="yeleH">येले सम्वत्</h2>
+    <div class="card yele">
+      <div><div class="big" id="yeleN"></div><div class="limbu" id="yeleL" style="font-size:40px;color:var(--accent)"></div></div>
+      <div>
+        <p id="yeleText" style="font-size:18px;margin-top:0"></p>
+        <div role="radiogroup" id="yeleMode" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+        <p class="rv" style="margin-top:10px">स्रोतहरूमा नयाँ वर्षको नियम फरक छ: Wikipedia — माघे संक्रान्ति; mundhum.com — मकर संक्रान्तिनजिकको औंसी। किरात विज्ञबाट पुष्टि बाँकी; दुवै गणना उपलब्ध।</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lbH">
+    <h2 id="lbH">✍️ सिरिजङ्गा (लिम्बू) लिपि</h2>
+    <p class="lead">देवनागरीमा लेख्नुहोस् — लिम्बू लिपिमा। (अनुमानित रूपान्तरण, भाषा शिक्षकबाट समीक्षा गराउनुहोस्।)</p>
+    <div class="card">
+      <textarea id="lbIn" rows="2" style="width:100%;font-size:20px" aria-label="देवनागरी">याक्थुङ</textarea>
+      <div class="limbu" id="lbOut" style="font-size:54px;margin-top:10px;min-height:1.4em;color:var(--maize)"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ssH">
+    <h2 id="ssH">🍂 मौसमी पर्व</h2>
+    <p class="lead">यी पर्वको एउटै स्थिर नियम भेटिएन — त्यसैले मिति होइन, मौसम मात्र देखाइएको।</p>
+    <div class="season" id="season"></div>
+  </section>
+
+  <section aria-labelledby="tlH">
+    <h2 id="tlH">पर्व–पात्रो</h2>
+    <div class="grid2"><div class="tl" id="tl"></div><div class="card" id="detail" aria-live="polite"></div></div>
+  </section>
+
+  <section aria-labelledby="cardH">
+    <h2 id="cardH">🎴 साकेला कार्ड</h2>
+    <div class="grid2"><canvas class="share" id="card"></canvas>
+      <div class="card"><label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label><br><button class="pill" id="cardShare" style="margin-top:14px">⬇ सेयर / डाउनलोड</button></div></div>
+  </section>
+
+  <footer>
+    नियम: साकेला उभौली = बैशाख पूर्णिमा, उधौली = मंसिर पूर्णिमा (सूर्योदयमा पूर्णिमा रहेको दिन); चासोक तङनाम = मंसिर पूर्णिमा (समीक्षाधीन); येले सम्वत् = इस्वी + ३०६० (समीक्षाधीन)।<br>
+    स्रोत: Wikipedia (Sakela, Udhauli, Yele Sambat, Limbu script), mundhum.com। भाषागत नाम: Sakela (Wikipedia)। लिम्बू: Unicode U+1900–194F।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, days, today, reduce } = K;
+document.getElementById('nav').innerHTML = K.nav('kirat.html'); K.stamp(document.getElementById('today')); K.soundToggle(document.getElementById('snd'));
+const suite = S.SUITES.kirat, rows = K.rowsFor(suite);
+const NAMES = S.SAKELA_NAMES;
+let lang = 'Chamling';
+try { lang = localStorage.getItem('kirat-lang') || lang; } catch {}
+const sak = () => [K.nextOf(rows, 'ubhauli'), K.nextOf(rows, 'udhauli')].sort((a, b) => a.start.localeCompare(b.start))[0];
+
+/* ── Silli circle ── */
+function drawSilli() {
+  const svg = document.getElementById('silli'); svg.innerHTML = '';
+  el('circle', { r: 250, fill: 'none', stroke: '#eef5e91a' }, svg);
+  el('circle', { r: 200, fill: 'none', stroke: '#7fd18b33', 'stroke-dasharray': '4 8' }, svg);
+  const g = el('g', { class: reduce ? '' : 'circle' }, svg);
+  for (let k = 0; k < 18; k++) {
+    const [x, y] = P(200, k * 20), lead = k === 0 || k === 1;
+    const d = el('g', { transform: `translate(${x},${y}) rotate(${k * 20})` }, g);
+    const f = el('g', { class: 'dn', style: `animation-delay:${-k * .12}s` }, d);
+    el('circle', { cy: -30, r: lead ? 10 : 8, fill: lead ? '#e3c04b' : '#eef5e9' }, f);
+    el('path', { d: 'M0 -20 L-11 10 L11 10 Z', fill: k % 2 ? '#7fd18b' : '#e05a3a' }, f);
+    el('path', { d: 'M-4 -16 L-20 -8 M4 -16 L20 -26', stroke: '#eef5e9', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, f);
+    el('path', { d: 'M-4 10 L-6 24 M4 10 L6 24', stroke: '#eef5e9', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, f);
+  }
+  // dhol at centre
+  el('ellipse', { rx: 90, ry: 60, fill: '#8a5a2b', stroke: '#e3c04b', 'stroke-width': 4 }, svg);
+  for (let k = -4; k <= 4; k++) el('line', { x1: k * 18, y1: -58, x2: -k * 18, y2: 58, stroke: '#e3c04b88', 'stroke-width': 2 }, svg);
+  const t = el('text', { y: 2, 'text-anchor': 'middle', 'font-size': 30, fill: '#fff', 'font-weight': 800 }, svg); t.textContent = NAMES[lang].split(' / ')[0];
+  const t2 = el('text', { y: 30, 'text-anchor': 'middle', 'font-size': 14, fill: '#f6e9d2' }, svg); t2.textContent = lang;
+  const s = sak(), d = days(today, s.start);
+  document.getElementById('h1').textContent = `${NAMES[lang].split(' / ')[0]} सिली`;
+  document.getElementById('heroCount').innerHTML = `<span class="n">${npd(Math.max(d, 0))}</span><div><b style="font-size:22px">${d <= 0 ? 'आज ' : 'दिनपछि '}${s.festival.dev}</b><br><span style="color:var(--muted)">${fmt(s.main)} · ${K.weekday(s.main)}</span></div>`;
+}
+(() => {
+  const box = document.getElementById('langs');
+  Object.keys(NAMES).forEach((l) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', String(l === lang));
+    b.innerHTML = `${NAMES[l].split(' / ')[0]} <small style="opacity:.7">${l}</small>`;
+    b.onclick = () => { lang = l; try { localStorage.setItem('kirat-lang', l); } catch {} [...box.children].forEach((c) => c.setAttribute('aria-checked', String(c === b))); drawSilli(); drawCard(); K.drum(90); };
+    box.appendChild(b); });
+  drawSilli();
+})();
+
+/* ── Hills: up in spring, down in autumn ── */
+(() => {
+  const svg = document.getElementById('hills');
+  const defs = el('defs', {}, svg), gr = el('linearGradient', { id: 'sky', x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+  el('stop', { offset: 0, 'stop-color': '#1f3b4b' }, gr); el('stop', { offset: 1, 'stop-color': '#0f1f17' }, gr);
+  el('rect', { width: 1200, height: 300, fill: 'url(#sky)' }, svg);
+  el('path', { d: 'M0 300 L0 240 L200 120 L360 180 L600 40 L840 170 L1000 110 L1200 230 L1200 300 Z', fill: '#2c5a3d' }, svg);
+  el('path', { d: 'M0 300 L0 270 L300 220 L600 250 L900 215 L1200 265 L1200 300 Z', fill: '#3f7a50' }, svg);
+  const ub = K.nextOf(rows, 'ubhauli'), ud = K.nextOf(rows, 'udhauli'), nxt = sak().festival.id;
+  const path = (d, c, on) => el('path', { d, stroke: c, 'stroke-width': on ? 6 : 3, fill: 'none', 'stroke-dasharray': '10 10', 'marker-end': '' }, svg);
+  path('M150 265 Q300 170 560 70', '#e3c04b', nxt === 'ubhauli'); path('M640 70 Q900 170 1050 265', '#e05a3a', nxt === 'udhauli');
+  el('polygon', { points: '560,70 540,74 552,90', fill: '#e3c04b' }, svg); el('polygon', { points: '1050,265 1030,262 1044,248', fill: '#e05a3a' }, svg);
+  const lab = (x, y, t1, t2, c) => { const a = el('text', { x, y, 'font-size': 24, fill: c, 'font-weight': 800 }, svg); a.textContent = t1; const b = el('text', { x, y: y + 24, 'font-size': 16, fill: '#eef5e9' }, svg); b.textContent = t2; };
+  lab(150, 150, '↑ उभौली', `${fmt(ub.main)} · ${npd(Math.max(0, days(today, ub.start)))} दिन`, '#e3c04b');
+  lab(860, 110, 'उधौली ↓', `${fmt(ud.main)} · ${npd(Math.max(0, days(today, ud.start)))} दिन`, '#e05a3a');
+  const sun = el('circle', { cx: 600, cy: 30, r: 16, fill: '#e3c04b' }, svg);
+})();
+
+/* ── Yele Sambat ── */
+(() => {
+  let mode = 'sankranti';
+  const draw = () => {
+    const y = S.yeleYear(today, mode), ny = S.yeleNewYear(+today.slice(0, 4) + (today >= S.yeleNewYear(+today.slice(0, 4), mode) ? 1 : 0), mode);
+    document.getElementById('yeleN').textContent = npd(y);
+    document.getElementById('yeleL').textContent = S.devanagariToLimbu(npd(y));
+    document.getElementById('yeleText').innerHTML = `आज येले सम्वत् <b>${npd(y)}</b> चलिरहेको छ। अर्को नयाँ वर्ष (काक्फेक्वा तङनाम / येले दोङ): <b>${fmt(ny)}</b> — ${npd(days(today, ny))} दिन बाँकी।`;
+  };
+  const box = document.getElementById('yeleMode');
+  [['sankranti', 'माघे संक्रान्ति'], ['nearest-new-moon', 'नजिकको औंसी']].forEach(([k, l]) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', String(k === mode)); b.textContent = l;
+    b.onclick = () => { mode = k; [...box.children].forEach((c) => c.setAttribute('aria-checked', String(c === b))); draw(); }; box.appendChild(b); });
+  draw();
+})();
+
+/* ── Limbu ── */
+(() => { const i = document.getElementById('lbIn'), o = document.getElementById('lbOut'); const up = () => o.textContent = S.devanagariToLimbu(i.value); i.oninput = up; up(); })();
+
+/* ── Seasonal ── */
+document.getElementById('season').innerHTML = S.KIRAT_SEASONAL.map((s) => `<div><b>${s.dev}</b><br><small style="color:var(--muted)">${s.communities.join(', ')} · ${s.season}</small><p style="margin:6px 0 0">${s.note}</p><span class="rv">समीक्षाधीन</span></div>`).join('');
+
+/* ── Timeline ── */
+const showDetail = (r) => document.getElementById('detail').innerHTML = K.detailHTML(r, 'var(--accent)') + (r.festival.names ? `<div style="margin-top:10px;font-size:14px">${Object.entries(r.festival.names).map(([k, v]) => `<span class="pill" style="display:inline-block;margin:2px">${v} · ${k}</span>`).join('')}</div>` : '');
+K.timeline(document.getElementById('tl'), rows, { color: '#7fd18b', onSelect: showDetail });
+showDetail(sak());
+
+/* ── Card ── */
+async function drawCard() {
+  try { await document.fonts.load('800 60px Mukta'); } catch {}
+  const s = sak(), name = NAMES[lang].split(' / ')[0];
+  K.shareCard(document.getElementById('card'), {
+    bg: '#0f1f17', fg: '#eef5e9', accent: '#e3c04b', kicker: `${lang} · किरात`, title: `${name} को शुभकामना`, sub: `${s.festival.dev} · ${fmt(s.main)}`,
+    lines: [`${document.getElementById('cardName').value}`, `येले सम्वत् ${npd(S.yeleYear(today))}`], footer: 'साकेला सिली · किरात पात्रो',
+    motif: (c, W, H) => { c.strokeStyle = '#7fd18b'; c.lineWidth = 4; c.setLineDash([12, 14]); c.beginPath(); c.arc(W / 2, H / 2 + 40, 420, 0, 6.28); c.stroke(); c.setLineDash([]);
+      for (let k = 0; k < 16; k++) { const a = k / 16 * 6.28; c.fillStyle = k % 2 ? '#7fd18b' : '#e05a3a'; c.beginPath(); c.arc(W / 2 + 420 * Math.cos(a), H / 2 + 40 + 420 * Math.sin(a), 14, 0, 6.28); c.fill(); }
+      c.font = '100px serif'; c.textAlign = 'center'; c.fillText('🥁', W / 2, 300); },
+  });
+}
+document.getElementById('cardName').oninput = drawCard; drawCard();
+document.getElementById('cardShare').onclick = () => K.shareCanvas(document.getElementById('card'), 'sakela.png', 'साकेलाको शुभकामना!');
+})();
+</script>
+</body>
+</html>
