@@ -90,8 +90,7 @@ jobs:
           cp "$ROOT/db/nepal-sambat/days.csv" db/nepal-sambat/days.csv
           cp "$ROOT/COMMUNITY-SUITES.md" docs/COMMUNITY-SUITES.md
           if [ -f "$ROOT/NEPAL-SAMBAT.md" ]; then cp "$ROOT/NEPAL-SAMBAT.md" docs/NEPAL-SAMBAT.md; fi
-          cp "$ROOT/tests/communities.test.ts" tests/communities.test.ts
-          cp "$ROOT/tests/nepal-sambat.test.ts" tests/nepal-sambat.test.ts
+          cp "$ROOT/tests/"*.test.ts tests/
           FRONT="$(find /tmp/community-frontends -maxdepth 2 -type f -name README.md -printf '%h\n' | head -1)"
           test -n "$FRONT"
           rm -rf community-frontends
