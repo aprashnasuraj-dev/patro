@@ -2,6 +2,7 @@ import qrcode from "qrcode-generator";
 import {
   adToBs,
   bighaToSqFt,
+  calculateCivilCourtFee,
   calculateNepalSalaryTax2083,
   bsDateMetadata,
   bsToAd,
@@ -25,7 +26,8 @@ type Request =
   | { id: number; type: "date-bs"; year: number; month: number; day: number }
   | { id: number; type: "date-ad"; ad: string }
   | { id: number; type: "tax-2083"; annualSalary: string; ssf: string; epf: string; cit: string; lifeInsurance: string; healthInsurance: string; qualifyingSsfContributor: boolean }
-  | { id: number; type: "qr"; text: string; errorCorrectionLevel?: "L" | "M" | "Q" | "H" };
+  | { id: number; type: "qr"; text: string; errorCorrectionLevel?: "L" | "M" | "Q" | "H" }
+  | { id: number; type: "court-fee"; claimAmount: string };
 
 type Response = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
 
@@ -135,7 +137,7 @@ self.onmessage = (event: MessageEvent<Request>) => {
           })),
         },
       };
-    } else {
+    } else if (request.type === "qr") {
       const text = request.text.trim();
       if (!text) throw new RangeError("QR text cannot be empty");
       const qr = qrcode(0, request.errorCorrectionLevel ?? "M");
@@ -148,6 +150,22 @@ self.onmessage = (event: MessageEvent<Request>) => {
           dataUrl: qr.createDataURL(6, 24),
           modules: qr.getModuleCount(),
           bytes: utf8Bytes(text).length,
+        },
+      };
+    } else {
+      const result = calculateCivilCourtFee(request.claimAmount);
+      response = {
+        id: request.id,
+        ok: true,
+        result: {
+          claimAmount: result.claimAmount,
+          fee: result.fee,
+          bands: result.bands.map((band) => ({
+            label: band.label,
+            amount: formatScaled(band.amountScaled),
+            fee: formatScaled(band.feeScaled),
+            rateBps: band.rateBps,
+          })),
         },
       };
     }
