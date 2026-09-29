@@ -43,8 +43,7 @@ type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: fal
 type ToolId =
   | "typingtools"
   | "nepali-typing"
-  | "preetitounicode"
-  | "unicodetopreeti"
+  | "preeti-converter"
   | "bstoad"
   | "adtobs"
   | "landconverter"
@@ -80,8 +79,7 @@ const RELEASE_AT = Date.parse("2027-09-28T18:15:00Z");
 
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   ...(Date.now() >= RELEASE_AT ? [FUTURE_TYPING_TOOL] : []),
-  { id: "preetitounicode", icon: "क", title: "Preeti → Unicode", subtitle: "Turn legacy Preeti-encoded Nepali text into searchable, copyable Unicode Nepali.", badge: "Typing Tools", group: "typing" },
-  { id: "unicodetopreeti", icon: "प्री", title: "Unicode → Preeti", subtitle: "Convert modern Unicode Nepali into Preeti-compatible text for legacy documents and workflows.", badge: "Typing Tools", group: "typing" },
+  { id: "preeti-converter", icon: "प्री", title: "Preeti Converter · प्रीति रूपान्तरण", subtitle: "Convert both Preeti → Unicode and Unicode → Preeti from one converter.", badge: "Typing Tools", group: "typing" },
   { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar", group: "utility" },
   { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar", group: "utility" },
   { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
@@ -101,11 +99,12 @@ const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";
 function toolFromLocation(): ToolId | null {
   const slug = window.location.pathname.replace(/\/+$/, "").split("/")[2] || "";
   if (slug === "typingtools") return "typingtools";
+  if (slug === "preetitounicode" || slug === "unicodetopreeti") return "preeti-converter";
   if (TOOL_DIRECTORY.some((tool) => tool.id === slug)) return slug as ToolId;
 
   const legacyQuery = new URLSearchParams(window.location.search).get("tool");
   const legacyMap: Record<string, ToolId> = {
-    font: "preetitounicode",
+    font: "preeti-converter",
     date: "bstoad",
     land: "landconverter",
     tax: "incometax",
@@ -140,7 +139,9 @@ export function UtilitySuite() {
   const [workerReady, setWorkerReady] = useState(false);
   const [catalog, setCatalog] = useState<ToolDirectoryItem[]>(TOOL_DIRECTORY);
   const [selectedTool, setSelectedTool] = useState<ToolId | null>(toolFromLocation);
-  const [fontDirection, setFontDirection] = useState<FontDirection>("preeti-to-unicode");
+  const [fontDirection, setFontDirection] = useState<FontDirection>(() =>
+    window.location.pathname.includes("unicodetopreeti") ? "unicode-to-preeti" : "preeti-to-unicode"
+  );
   const [fontInput, setFontInput] = useState("g]kfn");
   const [fontOutput, setFontOutput] = useState("नेपाल");
   const [capitalIAsShortI, setCapitalIAsShortI] = useState(false);
@@ -238,7 +239,7 @@ export function UtilitySuite() {
       .then((body) => {
         if (!Array.isArray(body?.items)) return;
         const supported = new Set<ToolId>([
-          "nepali-typing","preetitounicode","unicodetopreeti","bstoad","adtobs","landconverter",
+          "nepali-typing","preeti-converter","bstoad","adtobs","landconverter",
           "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data"
         ]);
         const next = body.items
@@ -275,8 +276,8 @@ export function UtilitySuite() {
   }, []);
 
   useEffect(() => {
-    if (selectedTool === "unicodetopreeti") setFontDirection("unicode-to-preeti");
-    if (selectedTool === "preetitounicode") setFontDirection("preeti-to-unicode");
+    if (window.location.pathname.includes("unicodetopreeti")) setFontDirection("unicode-to-preeti");
+    if (window.location.pathname.includes("preetitounicode")) setFontDirection("preeti-to-unicode");
   }, [selectedTool]);
 
   function chooseTool(tool: ToolId | null) {
@@ -412,7 +413,7 @@ export function UtilitySuite() {
     const nextDirection = fontDirection === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode";
     setFontDirection(nextDirection);
     setFontInput(fontOutput);
-    chooseTool(nextDirection === "preeti-to-unicode" ? "preetitounicode" : "unicodetopreeti");
+    if (selectedTool !== "preeti-converter") chooseTool("preeti-converter");
   };
 
   const copy = async (text: string) => {
@@ -426,7 +427,7 @@ export function UtilitySuite() {
   const typingTools = catalog.filter((tool) => tool.group === "typing");
   const utilityTools = catalog.filter((tool) => tool.group === "utility");
   const generalTools = catalog.filter((tool) => tool.group === "tools");
-  const showFont = selectedTool === "preetitounicode" || selectedTool === "unicodetopreeti";
+  const showFont = selectedTool === "preeti-converter";
   const showDate = selectedTool === "bstoad" || selectedTool === "adtobs";
   const showCatalog = selectedTool === null;
   const showTypingCatalog = selectedTool === "typingtools";
@@ -437,7 +438,7 @@ export function UtilitySuite() {
         <div>
           <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools · उपकरण"}</p>
           <h1>{showTypingCatalog ? "Nepali Typing Tools" : selectedMeta?.title || "All tools in one place"}</h1>
-          <p>{showTypingCatalog ? "Choose Preeti → Unicode or Unicode → Preeti. Each converter opens on its own dedicated page." : selectedMeta?.subtitle || "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
+          <p>{showTypingCatalog ? "Two tools live here: one Preeti Converter with both directions, and Roman → Unicode Nepali Typing when its release gate opens." : selectedMeta?.subtitle || "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
         </div>
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
       </section>
@@ -447,8 +448,8 @@ export function UtilitySuite() {
           <div className="utility-directory-head">
             <div>
               <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools directory · उपकरण"}</p>
-              <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing converter" : "Choose what you want to do"}</h2>
-              <p>{showTypingCatalog ? "Preeti and Unicode converters are grouped here for fast access." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
+              <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing tool" : "Choose what you want to do"}</h2>
+              <p>{showTypingCatalog ? "Preeti conversion stays in one converter. Nepali Typing is a separate Roman → Unicode writing tool." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
             </div>
             <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Patro home"}</a>
           </div>
@@ -472,19 +473,6 @@ export function UtilitySuite() {
             </div>
 
             <div className="utility-directory-section-head">
-              <div><p className="eyebrow">Converters & utilities</p><h3>Date, land, finance and everyday tools</h3></div>
-            </div>
-            <div className="utility-directory-grid">
-              {utilityTools.map((tool) => (
-                <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
-                  <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
-                  <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
-                  <span className="utility-directory-arrow" aria-hidden="true">→</span>
-                </a>
-              ))}
-            </div>
-
-            <div className="utility-directory-section-head">
               <div><p className="eyebrow">Tools</p><h3>Calendar, sharing, family and developer tools</h3></div>
             </div>
             <div className="utility-directory-grid">
@@ -496,7 +484,20 @@ export function UtilitySuite() {
                 </a>
               ))}
             </div>
-          </>}
+
+
+            <div className="utility-directory-section-head">
+              <div><p className="eyebrow">Converters & utilities</p><h3>Date, land, finance and everyday tools</h3></div>
+            </div>
+            <div className="utility-directory-grid">
+              {utilityTools.map((tool) => (
+                <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
+                  <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
+                  <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
+                  <span className="utility-directory-arrow" aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>          </>}
 
           {showTypingCatalog && <div className="utility-directory-grid">
             {typingTools.map((tool) => (
@@ -714,8 +715,8 @@ export function UtilitySuite() {
         </header>
 
         <div className="utility-segmented" role="group" aria-label="Font conversion direction">
-          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => chooseTool("preetitounicode")}>Preeti → Unicode</button>
-          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => chooseTool("unicodetopreeti")}>Unicode → Preeti</button>
+          <button className={fontDirection === "preeti-to-unicode" ? "active" : ""} onClick={() => setFontDirection("preeti-to-unicode")}>Preeti → Unicode</button>
+          <button className={fontDirection === "unicode-to-preeti" ? "active" : ""} onClick={() => setFontDirection("unicode-to-preeti")}>Unicode → Preeti</button>
         </div>
 
         <div className="utility-text-grid">
