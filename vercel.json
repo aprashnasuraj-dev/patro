@@ -42,6 +42,18 @@
       "destination": "/astro/index.html"
     },
     {
+      "source": "/tools/nepali-typing",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/unicode-to-preeti",
+      "destination": "/astro/index.html"
+    },
+    {
+      "source": "/tools/preeti-to-unicode",
+      "destination": "/astro/index.html"
+    },
+    {
       "source": "/tools/fuelprice",
       "destination": "/astro/index.html"
     },
