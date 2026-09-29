@@ -62,7 +62,7 @@ The new Nepali typing catalog row also has a future `release_after`, so the remo
 
 **What Supabase can do without another frontend build**
 
-A temporary Supabase-rendered directory is already reachable through the existing production API proxy at `/api/v1/tools-hub`. It uses the current live query-based utility URLs and legacy protected-page URLs, so it works even while the production `/tools/*` rewrites are stale. It is a fallback, not the final canonical route.
+A temporary Supabase-rendered directory is already live at `/explore?view=tools`; `/tools-hub` redirects to it. This works through the existing production HTML route, so it needs no new Vercel build. It uses current live query-based utility URLs and legacy protected-page URLs while the production `/tools/*` rewrites are stale. It is a fallback, not the final canonical route.
 
 After one frontend deployment contains the remote-catalog client:
 - reorder tools
@@ -116,6 +116,7 @@ The release branch mirrors the exact deployed Supabase function sources:
 - `supabase/functions/tools-catalog/index.ts`
 - `supabase/functions/typing-lexicon/index.ts`
 - `supabase/functions/router/index.ts` (includes the same-origin API proxies and temporary tools hub)
+- `supabase/patches/nepal-miti-protected-tools-hub-v110.md` (records the minimal live protected-app patch and deployed hash)
 
 The idempotent SQL bootstrap is stored at:
 
