@@ -454,6 +454,23 @@ app.get("/tools/official-sait", async (c) => {
   return await officialSait(c.req.raw);
 });
 
+app.get("/communities", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.listCommunities(); });
+app.get("/communities/feed.ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.combinedCommunityIcs(c.req.raw); });
+app.get("/communities/lho", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.lho(new URL(c.req.url).searchParams); });
+app.get("/communities/:suite/ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.communityIcs(c.req.param("suite"), new URL(c.req.url).searchParams); });
+app.get("/communities/:suite", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.communityItems(c.req.param("suite"), new URL(c.req.url).searchParams); });
+app.get("/hijri", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.hijri(new URL(c.req.url).searchParams); });
+app.get("/hijri/ramadan", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.ramadan(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nepalSambat(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/festivals", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsFestivals(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/convert", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsConvert(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsIcs(new URL(c.req.url).searchParams); });
+app.get("/scripts", async (c) => { const m=await import("./services/communitySuites.ts"); return m.scripts(new URL(c.req.url).searchParams); });
+app.get("/community-preferences", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.getPreferences(c.req.raw); });
+app.put("/community-preferences", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.putPreferences(c.req.raw); });
+app.post("/admin/community-overrides", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminCommunityOverride(c.req.raw); });
+app.post("/admin/ns-festival-dates", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminNsFestival(c.req.raw); });
+
 app.get("/health", (c) => c.json({
   status: "online",
   runtime: "Deno",
