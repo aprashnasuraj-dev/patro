@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Volume2, VolumeX, Telescope, Share2 } from "lucide-react";
 import type { ApodPayload, CosmicDayPayload, SyncPayload, TithiPayload } from "../types";
 import { StandUnderThisSky } from "./StandUnderThisSky";
+import { ReadAloudButton } from "../patro-tools-integration/ReadAloudButton";
 
 interface Props {
   sync: SyncPayload | null;
@@ -260,6 +261,7 @@ export function CosmicHero({
         </label>
         <button className="icon-button" onClick={onNextDay} aria-label="Next day"><ChevronRight size={18}/></button>
         <button className="secondary-button" onClick={onToday} disabled={selectedDate === today}>Today</button>
+        <ReadAloudButton text={`आजको मिति ${dates.bs}। ग्रेगोरियन ${dates.ad}। नेपाल संवत् ${dates.ns}। ${context}`} className="secondary-button" />
         <button className="secondary-button" onClick={toggleAmbient} aria-pressed={soundOn}>
           {soundOn ? <><VolumeX size={17}/> Ambient on</> : <><Volume2 size={17}/> Ambient</>}
         </button>
