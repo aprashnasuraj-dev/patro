@@ -17,12 +17,10 @@ patro/
 │     └─ src/
 │        ├─ index.ts
 │        ├─ bsDate.ts
-│        ├─ courtFee.ts
 │        ├─ land.ts
 │        ├─ preeti.ts
 │        ├─ tax.ts
 │        ├─ utf8.ts
-│        ├─ vehicle.ts
 │        └─ core.test.ts
 ├─ src/
 │  ├─ utilities/
@@ -79,13 +77,7 @@ The final Dam/Dhur values remain scaled decimals so fractional units do not pass
 
 The reusable progressive engine remains policy-driven. The concrete FY 2083/84 resident salary policy is versioned separately and uses the current 1% / 10% / 20% / 27% / 29% bands, ordinary vs qualifying-SSF contribution caps, and explicit insurance caps. SSF first-band eligibility is never inferred from a contribution amount; the caller must declare it.
 
-### Civil court fee engine
 
-The value-based civil claim calculator implements the Muluki Civil Procedure Code Chapter 6 schedule as successive bands. It deliberately excludes unrelated filing, appeal, copy, execution and case-specific fees.
-
-### Bagmati vehicle renewal engine
-
-The active FY 2083/84 scope is private petrol/diesel motorcycles/scooters and private cars/jeeps/vans registered in Bagmati. It returns annual vehicle tax plus the registration-certificate renewal fee. Insurance, arrears, late penalties, age surcharges, inspection fees and concessions are explicitly excluded rather than guessed. EV schedules remain gated because FY 2083 changed electric-vehicle taxation.
 
 ### UTF-8 / QR utility
 
@@ -94,7 +86,7 @@ Devanagari QR encoding routes text through an explicit TextEncoder-based UTF-8 b
 ## Agent 2 — UI, Worker, offline
 
 - `/tools` is a native React route.
-- Font, date, tax, land, court-fee, vehicle-renewal and QR calculations execute inside `src/utilities/worker.ts`.
+- Font, date, tax, land and QR calculations execute inside `src/utilities/worker.ts`.
 - 60–100 ms input coalescing prevents unnecessary Worker messages during rapid typing.
 - The utility shell uses the existing Patro theme/accessibility system and is responsive down to narrow mobile widths.
 - A separately scoped service worker is registered at `/tools/sw.js`; the production build emits a physical `dist/tools` shell from the verified `/astro` artifact so `/tools` does not depend on an HTML rewrite.
@@ -117,8 +109,7 @@ Devanagari QR encoding routes text through an explicit TextEncoder-based UTF-8 b
 - verified BS/AD anchors and archive fixtures,
 - provisional future-BS provenance,
 - Devanagari UTF-8 bytes,
-- civil court-fee bands,
-- Bagmati vehicle cc boundary behavior.
+- Devanagari QR generation and byte safety.
 
 GitHub Actions runs:
 
@@ -135,18 +126,11 @@ Implemented and exposed in `/tools`:
 
 - BS ⇄ AD offline conversion with provenance.
 - FY 2083/84 personal salary-tax calculator.
-- Bagmati FY 2083/84 private ICE vehicle renewal estimator.
 - Devanagari UTF-8 QR generator.
-- Civil value-based court-fee calculator.
 - NOC fuel tracker with regional price groups, fetch timestamp and browser last-known cache.
 
 The NOC adapter lives in the existing Supabase Hono `router`. It attempts the official NOC retail-price page first. When NOC serves a maintenance page or cannot be parsed, the API returns the latest source-verified official snapshot with `stale: true` and an effective-date/note; it never presents a snapshot as live.
 
-Still intentionally gated:
-
-- vehicle EV schedules and late penalties,
-- unsupported provinces,
-- any fee/tax rule whose current effective schedule has not been versioned and tested.
 
 ## Next.js 16 SSG migration gate
 
