@@ -11,6 +11,9 @@
  *  3. Token-level alignment (handles missing middle names and swapped order)
  */
 
+// ---------------------------------------------------------------------------
+// Devanagari → Roman (simple, name-oriented, Nepali schwa deletion)
+// ---------------------------------------------------------------------------
 const CONS: Record<string, string> = {
   'क': 'k', 'ख': 'kh', 'ग': 'g', 'घ': 'gh', 'ङ': 'ng', 'च': 'ch', 'छ': 'chh', 'ज': 'j', 'झ': 'jh', 'ञ': 'n',
   'ट': 't', 'ठ': 'th', 'ड': 'd', 'ढ': 'dh', 'ण': 'n', 'त': 't', 'थ': 'th', 'द': 'd', 'ध': 'dh', 'न': 'n',
@@ -37,17 +40,20 @@ export function devanagariToRoman(input: string): string {
       if (next === VIRAMA) { i++; continue; }
       if (next && MATRAS[next]) { out += MATRAS[next]; i++; continue; }
       const isWordEnd = !next || !/[ऀ-ॿ]/.test(next);
-      if (!isWordEnd) out += 'a';
+      if (!isWordEnd) out += 'a'; // Nepali drops the final schwa: राम → ram
       continue;
     }
     if (VOWELS[ch]) { out += VOWELS[ch]; continue; }
-    if (ch === 'ं' || ch === 'ँ') { out += 'n'; continue; }
+    if (ch === 'ं' || ch === 'ँ') { out += 'n'; continue; } // ं ँ
     if (ch === 'ः') { out += 'h'; continue; }
     out += ch;
   }
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// Phonetic key for Nepali names in Latin script
+// ---------------------------------------------------------------------------
 export function nameKey(token: string): string {
   let t = token.toLowerCase();
   if (/[ऀ-ॿ]/.test(t)) t = devanagariToRoman(t);
@@ -58,9 +64,9 @@ export function nameKey(token: string): string {
     .replace(/w/g, 'v').replace(/z/g, 'j').replace(/q/g, 'k')
     .replace(/ee|ii/g, 'i').replace(/oo|uu/g, 'u').replace(/aa/g, 'a')
     .replace(/ou/g, 'au').replace(/y$/g, 'i')
-    .replace(/(.)\1+/g, '$1')
-    .replace(/(?<=[bcdfghjklmnpqrstvxz])h/g, '')
-    .replace(/a$/g, '');
+    .replace(/(.)\1+/g, '$1')         // doubled letters
+    .replace(/(?<=[bcdfghjklmnpqrstvxz])h/g, '') // aspiration: th→t, dh→d, bh→b
+    .replace(/a$/g, '');               // Rama → Ram, Sharma/Sharm
   return t;
 }
 
@@ -93,8 +99,9 @@ function tokenVerdict(x: string, y: string): TokenVerdict {
   const kx = nameKey(x);
   const ky = nameKey(y);
   const isDeva = (t: string) => /[\u0900-\u097F]/.test(t);
+  // Nepali vs English script of the same name is expected, not an error
   if (kx === ky) return isDeva(x) !== isDeva(y) ? 'same' : 'spelling_variant';
-  if (kx[0] !== ky[0]) return 'different';
+  if (kx[0] !== ky[0]) return 'different'; // Sita ≠ Gita
   const d = levenshtein(kx, ky);
   return d <= Math.max(1, Math.floor(Math.max(kx.length, ky.length) / 5)) ? 'similar' : 'different';
 }
@@ -141,12 +148,15 @@ export function compareNames(a: string, b: string): NameComparison {
 }
 
 export interface DocumentRecord {
+  /** "नागरिकता", "राहदानी", "SEE प्रमाणपत्र", "बैंक KYC" */
   document: string;
   fullName: string;
   fatherName?: string;
+  /** keep dates as given; compare with your BS adapter before calling */
   dobAD?: string;
 }
 
+/** Cross-check every pair of documents. The passport is usually the reference. */
 export function crossCheck(records: DocumentRecord[]) {
   const results: { docs: [string, string]; field: string; comparison?: NameComparison; message?: string }[] = [];
   for (let i = 0; i < records.length; i++) {
