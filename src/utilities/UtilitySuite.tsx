@@ -41,6 +41,7 @@ type TaxResult = {
 type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: false; error: string };
 
 type ToolId =
+  | "typingtools"
   | "preetitounicode"
   | "unicodetopreeti"
   | "bstoad"
@@ -56,34 +57,40 @@ type ToolId =
   | "api"
   | "my-data";
 
+type ToolGroup = "typing" | "utility" | "tools";
 type ToolDirectoryItem = {
-  id: ToolId;
+  id: Exclude<ToolId, "typingtools">;
   icon: string;
   title: string;
   subtitle: string;
   badge: string;
-  legacyPath?: string;
+  group: ToolGroup;
 };
 
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
-  { id: "preetitounicode", icon: "क", title: "Preeti → Unicode", subtitle: "Turn legacy Preeti-encoded Nepali text into searchable, copyable Unicode Nepali.", badge: "Nepali text" },
-  { id: "unicodetopreeti", icon: "प्री", title: "Unicode → Preeti", subtitle: "Convert modern Unicode Nepali into Preeti-compatible text for legacy documents and workflows.", badge: "Nepali text" },
-  { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar" },
-  { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar" },
-  { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land" },
-  { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance" },
-  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR" },
-  { id: "fuelprice", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel" },
-  { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Patro Plus", legacyPath: "/tithi" },
-  { id: "diaspora", icon: "🌏", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Patro Plus", legacyPath: "/diaspora" },
-  { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Patro Plus", legacyPath: "/card" },
-  { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Patro Plus", legacyPath: "/family" },
-  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Nepal Miti API endpoints, integration guidance and developer resources.", badge: "Patro Plus", legacyPath: "/developers" },
-  { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Patro Plus", legacyPath: "/my-data" },
+  { id: "preetitounicode", icon: "क", title: "Preeti → Unicode", subtitle: "Turn legacy Preeti-encoded Nepali text into searchable, copyable Unicode Nepali.", badge: "Typing Tools", group: "typing" },
+  { id: "unicodetopreeti", icon: "प्री", title: "Unicode → Preeti", subtitle: "Convert modern Unicode Nepali into Preeti-compatible text for legacy documents and workflows.", badge: "Typing Tools", group: "typing" },
+  { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar", group: "utility" },
+  { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar", group: "utility" },
+  { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
+  { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance", group: "utility" },
+  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR", group: "utility" },
+  { id: "fuelprice", icon: "⛽", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
+  { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Tools", group: "tools" },
+  { id: "diaspora", icon: "🌏", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
+  { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Tools", group: "tools" },
+  { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Tools", group: "tools" },
+  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Nepal Miti API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
+  { id: "my-data", icon: "🔐", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Nepal Miti features.", badge: "Tools", group: "tools" },
 ];
+
+const TYPING_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "typing");
+const UTILITY_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "utility");
+const GENERAL_TOOLS = TOOL_DIRECTORY.filter((tool) => tool.group === "tools");
 
 function toolFromLocation(): ToolId | null {
   const slug = window.location.pathname.replace(/\/+$/, "").split("/")[2] || "";
+  if (slug === "typingtools") return "typingtools";
   if (TOOL_DIRECTORY.some((tool) => tool.id === slug)) return slug as ToolId;
 
   const legacyQuery = new URLSearchParams(window.location.search).get("tool");
@@ -376,45 +383,91 @@ export function UtilitySuite() {
   };
 
   const selectedFuelZone = fuel?.zones[fuelZoneIndex] ?? null;
-  const selectedMeta = selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool) ?? null : null;
-  const legacyPath = selectedMeta?.legacyPath ?? null;
+  const selectedMeta = selectedTool && selectedTool !== "typingtools"
+    ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool) ?? null
+    : null;
   const showFont = selectedTool === "preetitounicode" || selectedTool === "unicodetopreeti";
   const showDate = selectedTool === "bstoad" || selectedTool === "adtobs";
+  const showCatalog = selectedTool === null;
+  const showTypingCatalog = selectedTool === "typingtools";
 
   return (
     <main className="utility-suite" aria-label="Nepali utility tools">
       <section className="utility-hero">
         <div>
-          <p className="eyebrow">पात्रो Plus · Tools</p>
-          <h1>{selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.title : "All tools in one place"}</h1>
-          <p>{selectedTool ? TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.subtitle : "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
+          <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools · उपकरण"}</p>
+          <h1>{showTypingCatalog ? "Nepali Typing Tools" : selectedMeta?.title || "All tools in one place"}</h1>
+          <p>{showTypingCatalog ? "Choose Preeti → Unicode or Unicode → Preeti. Each converter opens on its own dedicated page." : selectedMeta?.subtitle || "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
         </div>
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
       </section>
 
-      {selectedTool === null ? (
+      {(showCatalog || showTypingCatalog) ? (
         <section className="utility-directory" aria-labelledby="utility-directory-title">
           <div className="utility-directory-head">
             <div>
-              <p className="eyebrow">Tools directory · उपकरण</p>
-              <h2 id="utility-directory-title">Choose what you want to do</h2>
-              <p>Each card explains the tool in one line. Click it to open a dedicated /tools/... page.</p>
+              <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools directory · उपकरण"}</p>
+              <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing converter" : "Choose what you want to do"}</h2>
+              <p>{showTypingCatalog ? "Preeti and Unicode converters are grouped here for fast access." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
             </div>
-            <a className="utility-home-link" href="/">← Patro home</a>
+            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Patro home"}</a>
           </div>
-          <div className="utility-directory-grid">
-            {TOOL_DIRECTORY.map((tool) => (
-              <a className={"utility-directory-card " + (tool.badge === "Patro Plus" ? "is-patro-plus" : "")} key={tool.id} href={"/tools/" + tool.id}>
+
+          {showCatalog && <>
+            <div className="utility-directory-section-head">
+              <div>
+                <p className="eyebrow">Typing Tools · टाइपिङ टुल्स</p>
+                <h3>Nepali typing & font conversion</h3>
+              </div>
+              <a href="/tools/typingtools">View typing tools →</a>
+            </div>
+            <div className="utility-directory-grid">
+              {TYPING_TOOLS.map((tool) => (
+                <a className="utility-directory-card is-typing-tool" key={tool.id} href={"/tools/" + tool.id}>
+                  <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
+                  <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
+                  <span className="utility-directory-arrow" aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+
+            <div className="utility-directory-section-head">
+              <div><p className="eyebrow">Converters & utilities</p><h3>Date, land, finance and everyday tools</h3></div>
+            </div>
+            <div className="utility-directory-grid">
+              {UTILITY_TOOLS.map((tool) => (
+                <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
+                  <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
+                  <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
+                  <span className="utility-directory-arrow" aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+
+            <div className="utility-directory-section-head">
+              <div><p className="eyebrow">Tools</p><h3>Calendar, sharing, family and developer tools</h3></div>
+            </div>
+            <div className="utility-directory-grid">
+              {GENERAL_TOOLS.map((tool) => (
+                <a className="utility-directory-card" key={tool.id} href={"/tools/" + tool.id}>
+                  <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
+                  <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
+                  <span className="utility-directory-arrow" aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+          </>}
+
+          {showTypingCatalog && <div className="utility-directory-grid">
+            {TYPING_TOOLS.map((tool) => (
+              <a className="utility-directory-card is-typing-tool" key={tool.id} href={"/tools/" + tool.id}>
                 <span className="utility-directory-icon" aria-hidden="true">{tool.icon}</span>
-                <span className="utility-directory-copy">
-                  <small>{tool.badge}</small>
-                  <strong>{tool.title}</strong>
-                  <span>{tool.subtitle}</span>
-                </span>
+                <span className="utility-directory-copy"><small>{tool.badge}</small><strong>{tool.title}</strong><span>{tool.subtitle}</span></span>
                 <span className="utility-directory-arrow" aria-hidden="true">→</span>
               </a>
             ))}
-          </div>
+          </div>}
+
           <div className="utility-directory-related">
             <span>More:</span>
             <a href="/jyotish/rashifal">राशिफल · Rashifal</a>
@@ -424,7 +477,7 @@ export function UtilitySuite() {
       ) : (
         <nav className="utility-tool-nav" aria-label="Utility navigation">
           <button type="button" onClick={() => chooseTool(null)}>← All tools</button>
-          <strong>{TOOL_DIRECTORY.find((tool) => tool.id === selectedTool)?.title}</strong>
+          <strong>{selectedMeta?.title}</strong>
           <a href="/">Patro home</a>
         </nav>
       )}
@@ -642,23 +695,7 @@ export function UtilitySuite() {
         {fontError && <p className="utility-error" role="alert">{fontError}</p>}
       </section>
 
-{legacyPath && <section className="utility-embed-shell" aria-label={selectedMeta?.title}>
-        <iframe
-          className="utility-embed-frame"
-          src={"/api/v1/compat/page?path=" + encodeURIComponent(legacyPath)}
-          title={selectedMeta?.title || "Patro Plus tool"}
-          onLoad={(event) => {
-            try {
-              const innerHeader = event.currentTarget.contentDocument?.querySelector("header.top") as HTMLElement | null;
-              if (innerHeader) innerHeader.style.display = "none";
-            } catch {
-              // Same-origin production pages are expected; keep the frame usable if browser policy differs.
-            }
-          }}
-        />
-      </section>}
-
-            <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter"}>
+      <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Exact land math</p>
