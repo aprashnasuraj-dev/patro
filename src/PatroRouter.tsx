@@ -6,7 +6,17 @@ import { UtilitySuite } from "./utilities/UtilitySuite";
 
 const NATIVE_PATHS = new Set(["/astro", "/fm", "/tv", "/tools", "/jyotish/janma-patro", "/jyotish/matchmaking"]);
 
+const PROTECTED_TOOL_PATHS = new Set([
+  "/tools/tithi",
+  "/tools/diaspora",
+  "/tools/card",
+  "/tools/family",
+  "/tools/api",
+  "/tools/my-data",
+]);
+
 function isNativePath(path: string) {
+  if (PROTECTED_TOOL_PATHS.has(path)) return false;
   return NATIVE_PATHS.has(path) || path.startsWith("/tools/");
 }
 
