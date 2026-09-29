@@ -7,6 +7,18 @@ type DateMetadata = { confidence: "validated-project-archive" | "provisional-ope
 type DateConversionResult = { ad: string; bs: string; metadata: DateMetadata };
 type QrResult = { dataUrl: string; modules: number; bytes: number };
 type CourtFeeResult = { claimAmount: string; fee: string; bands: { label: string; amount: string; fee: string; rateBps: number | null }[] };
+type VehicleRenewalResult = {
+  fiscalYear: "2083/84";
+  province: "Bagmati";
+  kind: "motorcycle" | "car";
+  engineCc: number;
+  bracket: string;
+  annualTaxNpr: string;
+  renewalFeeNpr: string;
+  governmentSubtotalNpr: string;
+  excludes: string[];
+  sourceNote: string;
+};
 type FuelZone = {
   depots: string[];
   petrol: number;
@@ -62,6 +74,7 @@ export function UtilitySuite() {
   const latestTax = useRef(0);
   const latestQr = useRef(0);
   const latestCourtFee = useRef(0);
+  const latestVehicle = useRef(0);
 
   const [online, setOnline] = useState(() => navigator.onLine);
   const [workerReady, setWorkerReady] = useState(false);
@@ -101,6 +114,10 @@ export function UtilitySuite() {
   const [courtClaim, setCourtClaim] = useState("500000");
   const [courtFeeResult, setCourtFeeResult] = useState<CourtFeeResult | null>(null);
   const [courtFeeError, setCourtFeeError] = useState("");
+  const [vehicleKind, setVehicleKind] = useState<"motorcycle" | "car">("motorcycle");
+  const [vehicleCc, setVehicleCc] = useState("150");
+  const [vehicleResult, setVehicleResult] = useState<VehicleRenewalResult | null>(null);
+  const [vehicleError, setVehicleError] = useState("");
   const [fuel, setFuel] = useState<FuelPayload | null>(() => {
     try {
       const raw = localStorage.getItem("patro.noc.fuel");
@@ -125,6 +142,7 @@ export function UtilitySuite() {
         else if (message.id === latestTax.current) setTaxError(message.error);
         else if (message.id === latestQr.current) setQrError(message.error);
         else if (message.id === latestCourtFee.current) setCourtFeeError(message.error);
+        else if (message.id === latestVehicle.current) setVehicleError(message.error);
         else setLandError(message.error);
         return;
       }
@@ -155,6 +173,9 @@ export function UtilitySuite() {
       } else if (message.id === latestCourtFee.current) {
         setCourtFeeResult(message.result);
         setCourtFeeError("");
+      } else if (message.id === latestVehicle.current) {
+        setVehicleResult(message.result);
+        setVehicleError("");
       }
     };
     return () => {
@@ -305,6 +326,21 @@ export function UtilitySuite() {
     }, 80);
     return () => window.clearTimeout(timer);
   }, [courtClaim, workerReady]);
+
+  useEffect(() => {
+    if (!workerReady) return;
+    const engineCc = Number(vehicleCc);
+    if (!Number.isInteger(engineCc) || engineCc <= 0) {
+      setVehicleResult(null);
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      const id = ++sequence.current;
+      latestVehicle.current = id;
+      workerRef.current?.postMessage({ id, type: "vehicle-2083", kind: vehicleKind, engineCc });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, [vehicleKind, vehicleCc, workerReady]);
 
   const swapFont = () => {
     setFontDirection((direction) => direction === "preeti-to-unicode" ? "unicode-to-preeti" : "preeti-to-unicode");
@@ -537,6 +573,38 @@ export function UtilitySuite() {
           </p>
         </> : <p className="utility-note">No NOC price data saved yet. Connect once to fetch the current official source or the latest verified official snapshot.</p>}
         {fuelError && <p className="utility-warning" role="status">{fuelError}</p>}
+      </section>
+
+      <section className="utility-card" aria-labelledby="vehicle-title">
+        <header className="utility-card-head">
+          <div>
+            <p className="eyebrow">Bagmati · FY 2083/84</p>
+            <h2 id="vehicle-title">Vehicle Renewal Calculator</h2>
+          </div>
+          <span className="utility-badge">Private petrol / diesel</span>
+        </header>
+
+        <div className="vehicle-grid">
+          <article className="land-panel">
+            <label className="utility-field">
+              <span>Vehicle type</span>
+              <select value={vehicleKind} onChange={(event) => setVehicleKind(event.target.value as "motorcycle" | "car")}>
+                <option value="motorcycle">Motorcycle / scooter</option>
+                <option value="car">Car / jeep / van</option>
+              </select>
+            </label>
+            <Field label="Engine capacity (cc)" value={vehicleCc} onChange={setVehicleCc} />
+          </article>
+
+          {vehicleResult && <article className="vehicle-result">
+            <div className="utility-result"><span>Annual vehicle tax</span><strong>NPR {vehicleResult.annualTaxNpr}</strong><small>{vehicleResult.bracket}</small></div>
+            <div className="utility-result"><span>Registration renewal fee</span><strong>NPR {vehicleResult.renewalFeeNpr}</strong></div>
+            <div className="utility-result vehicle-total"><span>Government subtotal</span><strong>NPR {vehicleResult.governmentSubtotalNpr}</strong></div>
+          </article>}
+        </div>
+
+        <p className="utility-note">Current scope is Bagmati private combustion vehicles only. The subtotal excludes third-party insurance, late penalties, arrears, inspection/pollution fees, age surcharges, concessions and exemptions. EV and late-payment schedules stay disabled until their FY 2083/84 changes are independently verified.</p>
+        {vehicleError && <p className="utility-error" role="alert">{vehicleError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="font-converter-title">
