@@ -1,7 +1,7 @@
 name: Import Patro tools kit
 on:
   push:
-    branches: [feat/patro-tools-a-setup]
+    branches: [feat/patro-tools-phase-a]
     paths:
       - '.bootstrap/**'
       - '.github/workflows/import-patro-tools-kit.yml'
