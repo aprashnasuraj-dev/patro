@@ -446,6 +446,14 @@ app.get("/tools/tithi-feed.ics", async (c) => {
   return await personalTithiFeed(c.req.raw);
 });
 
+app.get("/tools/official-sait", async (c) => {
+  if (!(await publicRateAllowed(c.req.raw, "router-tools-official-sait", 120))) {
+    return c.json({ok:false,error:"rate_limit_exceeded"},429,{"Retry-After":"3600"});
+  }
+  const { officialSait } = await import("./services/patroTools.ts");
+  return await officialSait(c.req.raw);
+});
+
 app.get("/health", (c) => c.json({
   status: "online",
   runtime: "Deno",
