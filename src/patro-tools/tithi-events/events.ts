@@ -99,6 +99,7 @@ export function toICS(events: PersonalTithiEvent[], fromDate: string, years = 3,
     }
   }
   lines.push('END:VCALENDAR');
+  // RFC 5545 line folding (75 octets)
   return lines.map(foldLine).join('\r\n');
 }
 

@@ -13,11 +13,11 @@ import { KATHMANDU } from '../core/types';
 
 /** Which part of the day the tithi must cover. */
 export type Observance =
-  | 'udaya'
-  | 'madhyahna'
-  | 'aparahna'
-  | 'pradosh'
-  | 'nishitha';
+  | 'udaya'      // at sunrise — birthdays, most vratas
+  | 'madhyahna'  // midday (3rd fifth of daytime)
+  | 'aparahna'   // afternoon (4th fifth) — श्राद्ध, Vijaya Dashami
+  | 'pradosh'    // after sunset — Laxmi Puja, Pradosh vrata
+  | 'nishitha';  // around midnight — Janmashtami, Shivaratri
 
 export type AdhikPolicy = 'nija' | 'adhik' | 'both';
 
@@ -116,6 +116,7 @@ export function occurrences(rule: TithiRule, fromDate: string, toDate: string, l
     if (policy === 'nija' && lm.adhik) continue;
     if (policy === 'adhik' && !lm.adhik) continue;
 
+    // Candidate civil days: the day the tithi starts, and the next one or two.
     const d0 = localDate(new Date(start.getTime() - 24 * HOUR), loc.tz);
     const prefer = rule.prefer ?? DEFAULT_PREFER[rule.observance];
     const minMs = (rule.minOverlapMin ?? 24) * 60_000;
