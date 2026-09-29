@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>चन्द्र मण्डल · Nepal Sambat</title>
+<meta name="description" content="नेपाल सम्बतको घुम्ने चन्द्र मण्डल — आजको ने.सं. तिथि, नेपाल लिपि, जात्रा–पर्व, म्हपूजा काउन्टडाउन र १२ महिना सम्झने सजिलो तरिका।" />
+<meta name="theme-color" content="#0b0a1a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Newa&family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --night: #0b0a1a; --night-2: #151331; --ink: #f6ecd6; --muted: #b9ad95;
+  --gold: #f2b53a; --marigold: #ffb000; --sindoor: #c8312a; --brick: #8c3b2a; --lotus: #e67a8a; --indigo: #2b2a6b;
+  --newa: "Noto Sans Newa", "Nepal Lipi", sans-serif;
+  --deva: "Mukta", "Noto Sans Devanagari", sans-serif;
+  --serif: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--night); color: var(--ink); font-family: var(--deva); }
+body { min-height: 100vh; overflow-x: hidden;
+  background: radial-gradient(1200px 800px at 50% 18%, #241f55 0%, var(--night) 60%) fixed; }
+.newa { font-family: var(--newa); }
+a { color: var(--gold); }
+button { font: inherit; color: inherit; cursor: pointer; }
+#stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+main { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 16px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { font-family: var(--serif); font-size: 20px; letter-spacing: .5px; }
+.brand .newa { color: var(--gold); margin-inline-start: 8px; }
+.pill { border: 1px solid #ffffff2a; background: #ffffff0d; border-radius: 999px; padding: 6px 12px; }
+.pill[aria-pressed="true"] { background: var(--gold); color: #231a05; border-color: var(--gold); }
+
+/* ── Stage ─────────────────────────────── */
+.stage { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 24px; align-items: center; margin-top: 8px; }
+@media (max-width: 860px) { .stage { grid-template-columns: 1fr; } }
+.wheel-wrap { position: relative; aspect-ratio: 1; width: 100%; max-width: 640px; margin: 0 auto; touch-action: none; }
+svg#wheel { width: 100%; height: 100%; display: block; cursor: grab; user-select: none; }
+svg#wheel.dragging { cursor: grabbing; }
+#petals { transition: transform 1.1s cubic-bezier(.2,.8,.2,1); }
+.dragging #petals { transition: none; }
+.slow-spin { animation: spin 240s linear infinite; transform-origin: 0 0; }
+.slow-spin-rev { animation: spin 360s linear infinite reverse; transform-origin: 0 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.bead-now { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+.hint { text-align: center; color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+/* ── Info card ─────────────────────────── */
+.card { background: linear-gradient(180deg, #ffffff10, #ffffff06); border: 1px solid #ffffff1f; border-radius: 20px; padding: 20px; backdrop-filter: blur(6px); }
+.breath { min-height: 3.2em; display: grid; place-items: center start; }
+.breath span { font-size: clamp(22px, 3.2vw, 34px); font-weight: 800; line-height: 1.25; animation: breathe 3.6s ease-in-out infinite; }
+.breath span.newa { font-weight: 400; color: var(--gold); }
+@keyframes breathe { 0% { opacity: 0; transform: translateY(6px); filter: blur(4px); } 18%, 82% { opacity: 1; transform: none; filter: none; } 100% { opacity: 0; transform: translateY(-6px); filter: blur(4px); } }
+.ad { color: var(--muted); margin: 6px 0 14px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.nav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #ffffff2a; background: #ffffff10; font-size: 18px; }
+.nav .today { width: auto; border-radius: 999px; padding: 0 16px; }
+.fest { margin-top: 14px; padding: 14px; border-radius: 14px; background: #c8312a22; border: 1px solid #c8312a55; }
+.fest h3 { margin: 0 0 4px; font-size: 20px; }
+.fest .newa { color: var(--gold); font-size: 18px; }
+.soon { margin-top: 12px; font-size: 15px; line-height: 1.7; }
+.soon b { color: var(--gold); }
+.adhik-badge { display: inline-block; margin-inline-start: 8px; padding: 2px 10px; border-radius: 999px; background: var(--lotus); color: #2a0b10; font-size: 13px; font-weight: 700; }
+.mha { margin-top: 16px; display: flex; align-items: center; gap: 14px; }
+.mha svg { flex: 0 0 76px; }
+.mha .big { font-size: 34px; font-weight: 800; color: var(--gold); line-height: 1; }
+
+/* ── Sections ──────────────────────────── */
+section { margin-top: 56px; }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 3vw, 32px); margin: 0 0 6px; }
+.lead { color: var(--muted); margin: 0 0 18px; }
+
+/* chant */
+.chant { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+@media (max-width: 560px) { .chant { grid-template-columns: repeat(3, 1fr); } }
+.syl { text-align: center; padding: 14px 6px; border-radius: 16px; border: 1px solid #ffffff1a; background: #ffffff08; transition: background .25s, transform .25s, box-shadow .25s; }
+.syl .newa { display: block; font-size: 26px; color: var(--gold); }
+.syl .dv { font-size: 18px; font-weight: 700; }
+.syl.on { background: var(--gold); color: #231a05; transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 40px #f2b53a66; }
+.syl.on .newa { color: #3a2400; }
+
+/* memory palace */
+.palace { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.room { position: relative; padding: 16px; border-radius: 18px; border: 1px solid #ffffff1a; background: #ffffff08; text-align: left; transition: transform .2s, border-color .2s; }
+.room:hover, .room:focus-visible { transform: translateY(-3px); border-color: var(--gold); outline: none; }
+.room .emo { font-size: 34px; }
+.room .newa { font-size: 24px; color: var(--gold); display: block; margin-top: 4px; }
+.room .dv { font-size: 20px; font-weight: 800; }
+.room .rm { color: var(--muted); font-size: 13px; }
+.room .hook { margin-top: 8px; font-size: 14px; line-height: 1.5; }
+.room .n { position: absolute; top: 12px; right: 14px; color: #ffffff40; font-size: 28px; font-weight: 800; }
+.room.now { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 10px 40px #f2b53a33; }
+
+/* quiz */
+.quiz { display: grid; gap: 12px; }
+.q { font-size: 22px; font-weight: 700; }
+.opts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.opt { padding: 14px; border-radius: 14px; border: 1px solid #ffffff2a; background: #ffffff0d; font-size: 18px; text-align: left; }
+.opt.ok { background: #1f7a4a; border-color: #2fbf71; } .opt.no { background: #7a1f1f; border-color: #c8312a; }
+.streak { color: var(--muted); }
+
+/* name */
+.namebox input { width: 100%; font-size: 22px; padding: 14px 16px; border-radius: 14px; border: 1px solid #ffffff2a; background: #ffffff0d; color: var(--ink); }
+.namebox .out { margin-top: 14px; font-family: var(--newa); font-size: clamp(40px, 8vw, 72px); color: var(--gold); min-height: 1.4em; text-shadow: 0 0 30px #f2b53a55; word-break: break-word; }
+footer { margin: 64px 0 24px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) {
+  .slow-spin, .slow-spin-rev, .bead-now, .breath span { animation: none !important; }
+  #petals { transition: none; }
+}
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<main>
+  <header class="top">
+    <div class="brand">चन्द्र मण्डल <span class="newa">𑐣𑐾𑐥𑐵𑐮 𑐳𑐩𑑂𑐧𑐟</span></div>
+    <div class="row" role="group" aria-label="आवाज">
+      <button class="pill" id="soundBtn" aria-pressed="false">🔔 घण्टी बन्द</button>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div>
+      <div class="wheel-wrap">
+        <svg id="wheel" viewBox="-320 -320 640 640" role="img" aria-labelledby="wheelTitle">
+          <title id="wheelTitle">नेपाल सम्बतको चन्द्र मण्डल: बाहिर १२ महिना, भित्र ३० तिथिको माला, बीचमा आजको चन्द्रमा</title>
+          <defs>
+            <radialGradient id="glow" r="50%"><stop offset="0" stop-color="#f2b53a" stop-opacity=".55"/><stop offset="1" stop-color="#f2b53a" stop-opacity="0"/></radialGradient>
+            <radialGradient id="moonLit" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#fff7de"/><stop offset="1" stop-color="#e9cf8e"/></radialGradient>
+            <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+          </defs>
+          <circle r="310" fill="none" stroke="#ffffff10"/>
+          <g class="slow-spin" id="yantra"></g>
+          <g id="petals"></g>
+          <g id="sparks"></g>
+          <g id="beads"></g>
+          <g id="progress"></g>
+          <circle r="150" fill="url(#glow)"/>
+          <g class="slow-spin-rev"><g id="moon"></g></g>
+          <text id="centerNewa" class="newa" y="128" text-anchor="middle" font-size="26" fill="#f2b53a"></text>
+          <polygon points="0,-318 -9,-302 9,-302" fill="#f2b53a"/>
+        </svg>
+      </div>
+      <p class="hint">घुमाउन मण्डल तान्नुहोस् · ← → कुञ्जी · माउस व्हील — प्रत्येक मोतीदाना एक तिथि</p>
+    </div>
+
+    <div class="card" aria-live="polite">
+      <div class="breath" id="breath"></div>
+      <div class="ad" id="adLine"></div>
+      <div class="row nav">
+        <button id="prev" aria-label="अघिल्लो दिन">‹</button>
+        <button class="today" id="todayBtn">आज</button>
+        <button id="next" aria-label="अर्को दिन">›</button>
+        <input type="date" id="datePick" class="pill" aria-label="मिति छान्नुहोस्" />
+      </div>
+      <div id="festBox"></div>
+      <div class="soon" id="soon"></div>
+      <div class="mha">
+        <svg viewBox="-40 -40 80 80" width="76" height="76" aria-hidden="true"><circle r="34" fill="none" stroke="#ffffff22" stroke-width="6"/><circle id="mhaArc" r="34" fill="none" stroke="#f2b53a" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0 999"/><text id="mhaMandala" y="7" text-anchor="middle" font-size="20">🪔</text></svg>
+        <div><div class="big" id="mhaDays"></div><div id="mhaText"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section aria-labelledby="chantH">
+    <h2 id="chantH">१२ महिना, एक लय</h2>
+    <p class="lead">तीन लाइन, चार–चार ताल। एकपटक सुन्नुहोस्, सधैं सम्झनुहोस्: <b>क–थि–प्वँ–सि · चि–चौ–ब–त · दि–गुं–यं–कौ</b></p>
+    <div class="row" style="margin-bottom:12px"><button class="pill" id="chantBtn" aria-pressed="false">▶ लय बजाउनुहोस्</button></div>
+    <div class="chant" id="chant"></div>
+  </section>
+
+  <section aria-labelledby="palaceH">
+    <h2 id="palaceH">स्मृति दरबार · Memory Palace</h2>
+    <p class="lead">हरेक महिनाको एउटा कोठा: एउटा चित्र, एउटा पुन्हि, एउटा पर्व। कार्ड थिच्दा मण्डल त्यही महिनाको पुन्हिमा घुम्छ।</p>
+    <div class="palace" id="palace"></div>
+  </section>
+
+  <section aria-labelledby="quizH">
+    <h2 id="quizH">खेल्दै सिक्नुहोस्</h2>
+    <p class="lead">१० प्रश्न लगातार सही भए तपाईं "ने.सं. जानकार" हुनुहुन्छ।</p>
+    <div class="card quiz">
+      <div class="q" id="qText"></div>
+      <div class="opts" id="qOpts"></div>
+      <div class="streak" id="qStreak"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="nameH">
+    <h2 id="nameH">तपाईंको नाम नेपाल लिपिमा</h2>
+    <p class="lead">देवनागरीमा लेख्नुहोस् — तुरुन्त <span class="newa">𑐣𑐾𑐥𑐵𑐮 𑐮𑐶𑐥𑐶</span> मा।</p>
+    <div class="card namebox">
+      <label class="sr" for="nameIn">नाम</label>
+      <input id="nameIn" value="न्हूदँया भिन्तुना" autocomplete="off" />
+      <div class="out" id="nameOut" lang="new-Newa"></div>
+      <div class="row" style="margin-top:10px"><button class="pill" id="copyName">कपी गर्नुहोस्</button></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>चान्द्र नेपाल सम्बत: अमान्त महिना, काठमाडौं सूर्योदय, लाहिरी अयनांश; कछला थ्वः पारु (म्हपूजा) मा नयाँ वर्ष। अनला = अधिक महिना।
+    डेटा दायरा: <span id="range"></span>। गुठी/ज्योतिषीले तोक्ने जात्रा "सम्भावित" देखाइएको छ।</p>
+    <p>यो पोर्टेबल फाइल एक्लै चल्छ (फन्ट बाहेक अफलाइन)। एपमा राख्दा डेटा <code>/api/v1/nepal-sambat</code> बाट लिनुहोस्।</p>
+  </footer>
+</main>
+
+<script>
+/* ═══════════ DATA (generated by scripts/export-ns-immersive-data.ts) ═══════════ */
+const D = {"start":"2023-11-14","t":"ABCDEFHIJKLMNOPQRSTUVWXYZZ[\\^ABCDEFGHIJKMNOPPQRSTUVWXYZ[\\]^ABCEFGHIJKLMNOPQRSSTUVWXYZ[\\]ABCDEFGHIJKLMNOPQRSTTUVWXY[\\]^ABDEFGHIJKLMMNOPQRSTUVWXYZ[\\^ABCDEFGHIJKLMNOOPQRSTUVXYZ[\\]^ACDEFGHHIJKLMNOPQRSTUVWXY[\\]^ABCDEFGHIJKKLMNOPRSTUVWXYZ[\\]ABBCDEFGHIJKLMNOPQRTUVWXYZ[\\]^ABCDEFFGHIJKLMOPQRSTUWXYZ[\\]^^ABCDEFGHIJKLMNOQRSTUVWXYZ[\\]^ABCCDEFGHIJKMNOPQRTUVWXYZZ[\\]^ABCDEFGHIJKLMNPQRSTUVWXYZ[[\\]^ABCDEFGHJKLMNOPQRSTUVWXYZ[\\]^ABCDEFGHIJKLNOPQRSTTUVWXYZ[\\]^ABCDEGHIJKLMNOPQRSTUUVWXYZ[\\]^BCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ABCEFGHIJKLMNOOPQRSTUVWXYZ[\\^ABCDEFGHIJKLMNOPQRSSTUVXYZ[\\]^ACDEFGHIJKLLMNOPQRSTUVWXY[\\]^ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^ABCDEFGHHIJKLMNOPQRSUVWXYZ[\\]^ABCDEFGHIJKLMNOPQRSTUWXYZ[\\]^ABCCDEFGHIJKLMNOPRSTUVWXYZ[\\]^ABCDEEFGHIJKMNOPQRTUVWXYZ[\\\\]^ABCDEFGHIJKLMNPQRSTUVWXYZ[\\]^^ABCDEFGHIJLMNOPQRSUUVWXYZ[\\]^ABCDEFGHIJKLMOPQRSTUVWWXYZ[\\]^ABCDEFGIJKLMNOPQRSTUVWXXYZ[\\]^BCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ABCEFGHIJKLMNOPQRRSTUVWXYZ[\\]ABCDEFGIJJKLMNOPQRSTUVWXYZ[\\]^BCDEFGHIJKLMNOOPQRSTUVWXYZ\\]^ABCEFGHHIJKLMNOPQRSTUVWXYZ[]^ABCDEFGHIJKLLMNOPQRSTVWXYZ[\\]^ABCDEFGHIJKLMNOPQRSTUVWYZ[\\]^ABCDEFFGHIJKLMNOPRSTUVWXYZ[\\]^ABCDEFGHIIJKMNOPQRSUVWXYZ[\\]^AABCDEFGHIJKLMNOQRSTUVWXYZ[\\]^ABBCDEFGHIJKMNOPQRTUVWXYYZ[\\]^ABCDEFGHIJKLMNPQRSTUVWXYZZ[\\]^ABCDEFGHIKLMNOPQRSTUVWXYZ[\\]]ABCDEFGHIJKLMOPQRSSTUVWXYZ[\\]^ABCDFGHIJKLMNOPQRSTUVVWXYZ[\\^ABCDEFGIJKLMNOOPQRSTUVWXYZ[\\]^BCDEFGHIJKLMNOPQRSSTUVWXYZ\\]^ABDEFGHIJKLLMNOPQRSTUVWXYZ[\\^ABCDEFGHIJKLMNOPPQRSTUWXYZ[\\]^BCDEFGHHIJKLMNOPQRSTUVWXZ[\\]^ABCDEFGHIJJKLMNOPRSTUVWXYZ[\\]^ABCDEFGHIJKLMNOPQRSTVWXYZ[\\]^ABCCDEFGHIJKLMNOQRSTUVWXYZ[\\]^ABCDDEFGHIJKLNOPQRSUVWXYZ[[\\]^ABCDEFGHIJKLMNOQRSTUVWXYZ[\\]]^ABCDEFGHIJLMNOPQRSTUVWXYZ[\\]^ABCDEFGHIJKLMOPQRSTUVWWXYZ[\\]^ABCDEGHIJKLMNOPQRSTUVWXYZ[\\]^ABCDEFGIJKLMNOPQRSSTUVWXYZ[\\]^ACDEFGHIJKLMNOPQRSTUVWWXZ[\\]^ABDEFGHIJKLMNOPPQRSTUVWXYZ[\\^ABCDEFGHIJKLMNOPQRSTUUVXYZ[\\]^BCDEFGHIJKKLMNOPQRSTUVWXYZ\\]^ABCDEFGHIJKLMNNOPQSTUVWXYZ[\\]^ACCDEFGHIJKLMNOPQRSTUVXYZ[\\]^ABCDEEFGHIJKLMNOPRSTUVWXYZ[\\]^ABCDEFGGHIJKLNOPQRSUVWXYZ[\\]]^ABCDEFGHIJKLMNOQRSTUVWXYZ[\\]^AABCDEFGHIJKMNOPQRTUVWXXYZ[\\]^ABCDEFGHIJKLMOPQRSTUVWXYZ[[\\]^ABCDEFHIJKLMNOPQRSTUVWXYZ[\\]^ABCDEFGHJKLMNOPQRSTUVWWXYZ[\\]^BCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ABCEFGHIJKLMNOPQRSSTUVWXYZ[\\^ABCDEFHIJKKLMNOPQRSTUVWXYZ[\\]^ACDEFGHIJKLMNNOPQRSTUVWXYZ[]^ABCDEFGHIJKLMNOPQRRSUVWXYZ[\\]^BCDEFGHHIJKLMNOPQRSTUVWXZ[\\]^ABCDEFGHHIJKLMNOPQSTUVWXYZ[\\]^ABCDEFGHIJJKMNOPQRSTUWXYZ[\\]^ABBCDEFGHIJKLMNOQRSTUVWXYZ[\\]^ABCDDEFGHIJKMNOPQRTUVWXYZ[\\\\]^ABCDEFGHIJKLMOPQRSTUVWXYZ[\\]^ABBCDEFGIJKLMNOQRSTUVWXYYZ[\\]^ABCDEFGHIKLMNOPQRSTUVWXYZ[\\]^ABCDEFGHIJKLNOPQRSTTUVWXYZ[\\]^ABCEFGHIJKLMNOPQRSTUVVWXYZ[\\^ABCDEFGIJKLMNNOPQRSTUVWXYZ[\\]^ACDEFGHIJKLMNOPPQRSTUVWXYZ[]^ABCDEFGHIJKLMNOPQRSTTUVXYZ[\\]^ACDEFGHIJJKLMNOPQRSTUVWXYZ\\]^ABCDEFGHIJKKLMNOPQRSUVWXYZ[\\]^ABCDEFGHIJKLMNOPQRSTUVWYZ[\\]^ABCDEEFGHIJKLMNOPRSTUVWXYZ[\\]^ABCDEFGHHIJLMNOPQRTUVWXYZ[\\]^AABCDEFGHIJKLMOPQRSTUVWXYZ[\\]^ABCDEFGHIJKLMNOQRSTUVWXYZ[\\\\]^ABCDEFGHIJLMNOPQRSTUVWXYZ[\\]^ABCDEFGHIJKLNOPQRSTUVWXXYZ[\\]^ABCDEGHIJKLMNOPQRSTUVWXYZ[[]^ABCDEFGHJKLMNOPQQRSTUVWXYZ[\\]^ABDEFGHIJKLMNOPQRSSTUVWXYZ[\\^ABCDEFHIJJKLMNOPQRSTUUVWYZ[\\]^ACDEFGHIJKLMMNOPQRSTUVWXYZ[]^ABCDEFGHIJKLMNOOPQRSTUWXYZ[\\]^ACDEFFGHIJKLMNOPQRSTUVWXZ[\\]^ABCDEFGHIIJKLMNOPRSTUVWXYZ[\\]^ABCDEFGHIJKLMNOPQRTUVWXYZ[\\]^ABCDEEFGHIJKLMOPQRSTVWXYZ[\\\\]^ABCDEFGHIJKLMNOQRSTUVWXYZ[\\]^ABBCDEFGHIJLMNOPQRTUVWXYYZ[\\]^ABCDEFGHIJKLMOPQRSTUVWXYZ[[\\]^","seg":[[0,1144,1,0],[29,1144,2,0],[59,1144,3,0],[88,1144,4,0],[118,1144,5,0],[147,1144,6,0],[177,1144,7,0],[206,1144,8,0],[235,1144,9,0],[265,1144,10,0],[295,1144,11,0],[324,1144,12,0],[354,1145,1,0],[384,1145,2,0],[413,1145,3,0],[443,1145,4,0],[473,1145,5,0],[502,1145,6,0],[531,1145,7,0],[561,1145,8,0],[590,1145,9,0],[619,1145,10,0],[649,1145,11,0],[678,1145,12,0],[708,1146,1,0],[738,1146,2,0],[768,1146,3,0],[797,1146,4,0],[827,1146,5,0],[857,1146,6,0],[886,1146,7,0],[915,1146,8,1],[945,1146,8,0],[974,1146,9,0],[1003,1146,10,0],[1033,1146,11,0],[1062,1146,12,0],[1092,1147,1,0],[1121,1147,2,0],[1151,1147,3,0],[1181,1147,4,0],[1211,1147,5,0],[1240,1147,6,0],[1270,1147,7,0],[1299,1147,8,0],[1329,1147,9,0],[1358,1147,10,0],[1387,1147,11,0],[1417,1147,12,0],[1446,1148,1,0],[1476,1148,2,0],[1505,1148,3,0],[1535,1148,4,0],[1565,1148,5,0],[1595,1148,6,0],[1624,1148,7,0],[1654,1148,8,0],[1683,1148,9,0],[1713,1148,10,0],[1742,1148,11,0],[1771,1148,12,0],[1801,1149,1,0],[1830,1149,2,0],[1860,1149,3,0],[1889,1149,4,0],[1919,1149,5,0],[1949,1149,6,1],[1978,1149,6,0],[2008,1149,7,0],[2038,1149,8,0],[2067,1149,9,0],[2097,1149,10,0],[2126,1149,11,0],[2155,1149,12,0],[2185,1150,1,0],[2214,1150,2,0],[2244,1150,3,0],[2273,1150,4,0],[2303,1150,5,0],[2332,1150,6,0],[2362,1150,7,0],[2392,1150,8,0],[2421,1150,9,0],[2451,1150,10,0],[2480,1150,11,0],[2510,1150,12,0],[2539,1151,1,0],[2569,1151,2,0],[2598,1151,3,0],[2628,1151,4,0],[2657,1151,5,0],[2687,1151,6,0],[2716,1151,7,0],[2746,1151,8,0],[2775,1151,9,0],[2805,1151,10,0],[2835,1151,11,1],[2864,1151,11,0],[2894,1151,12,0],[2923,1152,1,0],[2953,1152,2,0],[2982,1152,3,0],[3012,1152,4,0],[3041,1152,5,0],[3071,1152,6,0],[3100,1152,7,0],[3130,1152,8,0],[3159,1152,9,0],[3189,1152,10,0],[3218,1152,11,0],[3248,1152,12,0]],"fest":[["2023-11-14","2023-11-14","mha-puja"],["2023-11-15","2023-11-15","kija-puja"],["2023-11-27","2023-11-27","saki-mana-punhi"],["2023-12-26","2023-12-26","yomari-punhi"],["2024-01-15","2024-01-15","ghyah-chaku-sanhu"],["2024-01-18","2024-01-18","jana-baha-snan"],["2024-01-25","2024-01-25","mila-punhi"],["2024-02-14","2024-02-14","shree-panchami"],["2024-02-24","2024-02-24","si-punhi"],["2024-03-08","2024-03-08","sila-charhe"],["2024-03-17","2024-03-24","holi-chir"],["2024-03-26","2024-03-28","nala-karunamaya"],["2024-04-07","2024-04-09","pahan-charhe"],["2024-04-08","2024-04-08","ghode-jatra"],["2024-04-10","2024-04-18","biska"],["2024-04-16","2024-04-19","jana-baha-jatra"],["2024-04-23","2024-04-23","lhuti-punhi"],["2024-05-08","2024-05-08","mata-tirtha"],["2024-05-11","2024-05-11","bunga-dyah-jatra"],["2024-05-23","2024-05-23","swanya-punhi"],["2024-06-12","2024-06-12","sithi-nakha"],["2024-06-22","2024-06-22","jya-punhi"],["2024-06-22","2024-06-22","panauti-jatra"],["2024-06-29","2024-06-29","macha-tiya-jatra"],["2024-07-17","2024-07-18","harishayani"],["2024-07-21","2024-07-21","dila-punhi"],["2024-08-03","2024-08-03","gathamuga"],["2024-08-05","2024-09-03","gunla-dharma"],["2024-08-09","2024-08-09","nag-panchami"],["2024-08-13","2024-08-13","bahidyah-bwayegu"],["2024-08-19","2024-08-19","kwati-punhi"],["2024-08-20","2024-08-20","sa-paru"],["2024-08-21","2024-08-21","mataya"],["2024-08-26","2024-08-26","krishna-janmashtami"],["2024-09-02","2024-09-02","gokarna-aunsi"],["2024-09-07","2024-09-07","chatha"],["2024-09-15","2024-09-22","yenya"],["2024-09-18","2024-09-18","yenya-punhi"],["2024-10-03","2024-10-03","nalaswane"],["2024-10-05","2024-10-05","khokana-rudrayani"],["2024-10-11","2024-10-11","kuchhi-bhwoy"],["2024-10-12","2024-10-12","syakwo-tyakwo"],["2024-10-12","2024-10-12","mohani-tika"],["2024-10-30","2024-10-30","kwah-puja"],["2024-10-31","2024-10-31","khicha-puja"],["2024-11-01","2024-11-01","laxmi-puja"],["2024-11-02","2024-11-02","mha-puja"],["2024-11-03","2024-11-03","kija-puja"],["2024-11-15","2024-11-15","saki-mana-punhi"],["2024-12-15","2024-12-15","yomari-punhi"],["2025-01-07","2025-01-07","jana-baha-snan"],["2025-01-13","2025-01-13","mila-punhi"],["2025-01-15","2025-01-15","ghyah-chaku-sanhu"],["2025-02-03","2025-02-03","shree-panchami"],["2025-02-12","2025-02-12","si-punhi"],["2025-02-26","2025-02-26","sila-charhe"],["2025-03-07","2025-03-14","holi-chir"],["2025-03-15","2025-03-17","nala-karunamaya"],["2025-03-28","2025-03-30","pahan-charhe"],["2025-03-29","2025-03-29","ghode-jatra"],["2025-04-05","2025-04-08","jana-baha-jatra"],["2025-04-10","2025-04-18","biska"],["2025-04-12","2025-04-12","lhuti-punhi"],["2025-04-27","2025-04-27","mata-tirtha"],["2025-05-01","2025-05-01","bunga-dyah-jatra"],["2025-05-12","2025-05-12","swanya-punhi"],["2025-06-01","2025-06-01","sithi-nakha"],["2025-06-11","2025-06-11","jya-punhi"],["2025-06-11","2025-06-11","panauti-jatra"],["2025-06-19","2025-06-19","macha-tiya-jatra"],["2025-07-06","2025-07-07","harishayani"],["2025-07-10","2025-07-10","dila-punhi"],["2025-07-23","2025-07-23","gathamuga"],["2025-07-25","2025-08-23","gunla-dharma"],["2025-07-29","2025-07-29","nag-panchami"],["2025-08-01","2025-08-01","bahidyah-bwayegu"],["2025-08-09","2025-08-09","kwati-punhi"],["2025-08-10","2025-08-10","sa-paru"],["2025-08-11","2025-08-11","mataya"],["2025-08-16","2025-08-16","krishna-janmashtami"],["2025-08-23","2025-08-23","gokarna-aunsi"],["2025-08-27","2025-08-27","chatha"],["2025-09-04","2025-09-11","yenya"],["2025-09-07","2025-09-07","yenya-punhi"],["2025-09-22","2025-09-22","nalaswane"],["2025-09-24","2025-09-24","khokana-rudrayani"],["2025-09-30","2025-09-30","kuchhi-bhwoy"],["2025-10-01","2025-10-01","syakwo-tyakwo"],["2025-10-02","2025-10-02","mohani-tika"],["2025-10-19","2025-10-19","kwah-puja"],["2025-10-20","2025-10-20","khicha-puja"],["2025-10-21","2025-10-21","laxmi-puja"],["2025-10-22","2025-10-22","mha-puja"],["2025-10-23","2025-10-23","kija-puja"],["2025-11-05","2025-11-05","saki-mana-punhi"],["2025-12-04","2025-12-04","yomari-punhi"],["2025-12-28","2025-12-28","jana-baha-snan"],["2026-01-03","2026-01-03","mila-punhi"],["2026-01-15","2026-01-15","ghyah-chaku-sanhu"],["2026-01-23","2026-01-23","shree-panchami"],["2026-02-01","2026-02-01","si-punhi"],["2026-02-15","2026-02-15","sila-charhe"],["2026-02-24","2026-03-03","holi-chir"],["2026-03-04","2026-03-06","nala-karunamaya"],["2026-03-18","2026-03-20","pahan-charhe"],["2026-03-19","2026-03-19","ghode-jatra"],["2026-03-26","2026-03-29","jana-baha-jatra"],["2026-04-02","2026-04-02","lhuti-punhi"],["2026-04-11","2026-04-19","biska"],["2026-04-17","2026-04-17","mata-tirtha"],["2026-04-20","2026-04-20","bunga-dyah-jatra"],["2026-05-01","2026-05-01","swanya-punhi"],["2026-06-20","2026-06-20","sithi-nakha"],["2026-06-29","2026-06-29","jya-punhi"],["2026-06-29","2026-06-29","panauti-jatra"],["2026-07-08","2026-07-08","macha-tiya-jatra"],["2026-07-25","2026-07-26","harishayani"],["2026-07-29","2026-07-29","dila-punhi"],["2026-08-11","2026-08-11","gathamuga"],["2026-08-13","2026-09-11","gunla-dharma"],["2026-08-17","2026-08-17","nag-panchami"],["2026-08-20","2026-08-20","bahidyah-bwayegu"],["2026-08-28","2026-08-28","kwati-punhi"],["2026-08-29","2026-08-29","sa-paru"],["2026-08-30","2026-08-30","mataya"],["2026-09-04","2026-09-04","krishna-janmashtami"],["2026-09-11","2026-09-11","gokarna-aunsi"],["2026-09-15","2026-09-15","chatha"],["2026-09-23","2026-09-30","yenya"],["2026-09-26","2026-09-26","yenya-punhi"],["2026-10-11","2026-10-11","nalaswane"],["2026-10-13","2026-10-13","khokana-rudrayani"],["2026-10-19","2026-10-19","kuchhi-bhwoy"],["2026-10-20","2026-10-20","syakwo-tyakwo"],["2026-10-21","2026-10-21","mohani-tika"],["2026-11-07","2026-11-07","kwah-puja"],["2026-11-08","2026-11-08","khicha-puja"],["2026-11-08","2026-11-08","laxmi-puja"],["2026-11-10","2026-11-10","mha-puja"],["2026-11-11","2026-11-11","kija-puja"],["2026-11-24","2026-11-24","saki-mana-punhi"],["2026-12-24","2026-12-24","yomari-punhi"],["2027-01-15","2027-01-15","ghyah-chaku-sanhu"],["2027-01-16","2027-01-16","jana-baha-snan"],["2027-01-22","2027-01-22","mila-punhi"],["2027-02-11","2027-02-11","shree-panchami"],["2027-02-20","2027-02-20","si-punhi"],["2027-03-06","2027-03-06","sila-charhe"],["2027-03-16","2027-03-23","holi-chir"],["2027-03-23","2027-03-25","nala-karunamaya"],["2027-04-05","2027-04-07","pahan-charhe"],["2027-04-06","2027-04-06","ghode-jatra"],["2027-04-11","2027-04-19","biska"],["2027-04-14","2027-04-17","jana-baha-jatra"],["2027-04-20","2027-04-20","lhuti-punhi"],["2027-05-06","2027-05-06","mata-tirtha"],["2027-05-10","2027-05-10","bunga-dyah-jatra"],["2027-05-20","2027-05-20","swanya-punhi"],["2027-06-10","2027-06-10","sithi-nakha"],["2027-06-18","2027-06-18","jya-punhi"],["2027-06-18","2027-06-18","panauti-jatra"],["2027-06-27","2027-06-27","macha-tiya-jatra"],["2027-07-14","2027-07-15","harishayani"],["2027-07-18","2027-07-18","dila-punhi"],["2027-08-01","2027-08-01","gathamuga"],["2027-08-03","2027-09-01","gunla-dharma"],["2027-08-06","2027-08-06","nag-panchami"],["2027-08-09","2027-08-09","bahidyah-bwayegu"],["2027-08-17","2027-08-17","kwati-punhi"],["2027-08-18","2027-08-18","sa-paru"],["2027-08-19","2027-08-19","mataya"],["2027-08-25","2027-08-25","krishna-janmashtami"],["2027-08-31","2027-08-31","gokarna-aunsi"],["2027-09-04","2027-09-04","chatha"],["2027-09-12","2027-09-19","yenya"],["2027-09-15","2027-09-15","yenya-punhi"],["2027-09-30","2027-09-30","nalaswane"],["2027-10-02","2027-10-02","khokana-rudrayani"],["2027-10-07","2027-10-07","kuchhi-bhwoy"],["2027-10-09","2027-10-09","syakwo-tyakwo"],["2027-10-09","2027-10-09","mohani-tika"],["2027-10-27","2027-10-27","kwah-puja"],["2027-10-28","2027-10-28","khicha-puja"],["2027-10-29","2027-10-29","laxmi-puja"],["2027-10-30","2027-10-30","mha-puja"],["2027-10-31","2027-10-31","kija-puja"],["2027-11-14","2027-11-14","saki-mana-punhi"],["2027-12-13","2027-12-13","yomari-punhi"],["2028-01-05","2028-01-05","jana-baha-snan"],["2028-01-12","2028-01-12","mila-punhi"],["2028-01-15","2028-01-15","ghyah-chaku-sanhu"],["2028-02-01","2028-02-01","shree-panchami"],["2028-02-10","2028-02-10","si-punhi"],["2028-02-23","2028-02-23","sila-charhe"],["2028-03-04","2028-03-11","holi-chir"],["2028-03-11","2028-03-13","nala-karunamaya"],["2028-03-24","2028-03-26","pahan-charhe"],["2028-03-26","2028-03-26","ghode-jatra"],["2028-04-03","2028-04-06","jana-baha-jatra"],["2028-04-09","2028-04-09","lhuti-punhi"],["2028-04-10","2028-04-18","biska"],["2028-04-24","2028-04-24","mata-tirtha"],["2028-04-28","2028-04-28","bunga-dyah-jatra"],["2028-05-08","2028-05-08","swanya-punhi"],["2028-05-29","2028-05-29","sithi-nakha"],["2028-06-07","2028-06-07","jya-punhi"],["2028-06-07","2028-06-07","panauti-jatra"],["2028-06-15","2028-06-15","macha-tiya-jatra"],["2028-07-02","2028-07-03","harishayani"],["2028-07-06","2028-07-06","dila-punhi"],["2028-07-21","2028-07-21","gathamuga"],["2028-07-23","2028-08-21","gunla-dharma"],["2028-07-26","2028-07-26","nag-panchami"],["2028-07-29","2028-07-29","bahidyah-bwayegu"],["2028-08-05","2028-08-05","kwati-punhi"],["2028-08-06","2028-08-06","sa-paru"],["2028-08-07","2028-08-07","mataya"],["2028-08-13","2028-08-13","krishna-janmashtami"],["2028-08-20","2028-08-20","gokarna-aunsi"],["2028-08-23","2028-08-23","chatha"],["2028-08-31","2028-09-07","yenya"],["2028-09-03","2028-09-03","yenya-punhi"],["2028-09-19","2028-09-19","nalaswane"],["2028-09-21","2028-09-21","khokana-rudrayani"],["2028-09-26","2028-09-26","kuchhi-bhwoy"],["2028-09-27","2028-09-27","syakwo-tyakwo"],["2028-09-27","2028-09-27","mohani-tika"],["2028-10-16","2028-10-16","kwah-puja"],["2028-10-17","2028-10-17","khicha-puja"],["2028-10-17","2028-10-17","laxmi-puja"],["2028-10-18","2028-10-18","mha-puja"],["2028-10-19","2028-10-19","kija-puja"],["2028-11-02","2028-11-02","saki-mana-punhi"],["2028-12-02","2028-12-02","yomari-punhi"],["2028-12-24","2028-12-24","jana-baha-snan"],["2028-12-31","2028-12-31","mila-punhi"],["2029-01-15","2029-01-15","ghyah-chaku-sanhu"],["2029-01-19","2029-01-19","shree-panchami"],["2029-01-30","2029-01-30","si-punhi"],["2029-02-11","2029-02-11","sila-charhe"],["2029-02-22","2029-03-01","holi-chir"],["2029-03-01","2029-03-03","nala-karunamaya"],["2029-03-13","2029-03-15","pahan-charhe"],["2029-03-15","2029-03-15","ghode-jatra"],["2029-04-10","2029-04-18","biska"],["2029-04-22","2029-04-25","jana-baha-jatra"],["2029-04-28","2029-04-28","lhuti-punhi"],["2029-05-13","2029-05-13","mata-tirtha"],["2029-05-17","2029-05-17","bunga-dyah-jatra"],["2029-05-27","2029-05-27","swanya-punhi"],["2029-06-18","2029-06-18","sithi-nakha"],["2029-06-26","2029-06-26","jya-punhi"],["2029-06-26","2029-06-26","panauti-jatra"],["2029-07-04","2029-07-04","macha-tiya-jatra"],["2029-07-21","2029-07-22","harishayani"],["2029-07-25","2029-07-25","dila-punhi"],["2029-08-09","2029-08-09","gathamuga"],["2029-08-10","2029-09-08","gunla-dharma"],["2029-08-14","2029-08-14","nag-panchami"],["2029-08-17","2029-08-17","bahidyah-bwayegu"],["2029-08-24","2029-08-24","kwati-punhi"],["2029-08-25","2029-08-25","sa-paru"],["2029-08-26","2029-08-26","mataya"],["2029-09-01","2029-09-01","krishna-janmashtami"],["2029-09-08","2029-09-08","gokarna-aunsi"],["2029-09-11","2029-09-11","chatha"],["2029-09-19","2029-09-26","yenya"],["2029-09-22","2029-09-22","yenya-punhi"],["2029-10-08","2029-10-08","nalaswane"],["2029-10-10","2029-10-10","khokana-rudrayani"],["2029-10-14","2029-10-14","kuchhi-bhwoy"],["2029-10-15","2029-10-15","syakwo-tyakwo"],["2029-10-16","2029-10-16","mohani-tika"],["2029-11-04","2029-11-04","kwah-puja"],["2029-11-05","2029-11-05","khicha-puja"],["2029-11-05","2029-11-05","laxmi-puja"],["2029-11-07","2029-11-07","mha-puja"],["2029-11-07","2029-11-07","kija-puja"],["2029-11-21","2029-11-21","saki-mana-punhi"],["2029-12-20","2029-12-20","yomari-punhi"],["2030-01-11","2030-01-11","jana-baha-snan"],["2030-01-15","2030-01-15","ghyah-chaku-sanhu"],["2030-01-19","2030-01-19","mila-punhi"],["2030-02-07","2030-02-07","shree-panchami"],["2030-02-18","2030-02-18","si-punhi"],["2030-03-02","2030-03-02","sila-charhe"],["2030-03-12","2030-03-19","holi-chir"],["2030-03-20","2030-03-22","nala-karunamaya"],["2030-04-01","2030-04-03","pahan-charhe"],["2030-04-02","2030-04-02","ghode-jatra"],["2030-04-11","2030-04-14","jana-baha-jatra"],["2030-04-11","2030-04-19","biska"],["2030-04-18","2030-04-18","lhuti-punhi"],["2030-05-02","2030-05-02","mata-tirtha"],["2030-05-06","2030-05-06","bunga-dyah-jatra"],["2030-05-17","2030-05-17","swanya-punhi"],["2030-06-07","2030-06-07","sithi-nakha"],["2030-06-15","2030-06-15","jya-punhi"],["2030-06-15","2030-06-15","panauti-jatra"],["2030-06-23","2030-06-23","macha-tiya-jatra"],["2030-07-11","2030-07-12","harishayani"],["2030-07-15","2030-07-15","dila-punhi"],["2030-07-29","2030-07-29","gathamuga"],["2030-07-31","2030-08-29","gunla-dharma"],["2030-08-04","2030-08-04","nag-panchami"],["2030-08-07","2030-08-07","bahidyah-bwayegu"],["2030-08-13","2030-08-13","kwati-punhi"],["2030-08-14","2030-08-14","sa-paru"],["2030-08-15","2030-08-15","mataya"],["2030-08-21","2030-08-21","krishna-janmashtami"],["2030-08-28","2030-08-28","gokarna-aunsi"],["2030-09-01","2030-09-01","chatha"],["2030-09-09","2030-09-16","yenya"],["2030-09-11","2030-09-11","yenya-punhi"],["2030-09-28","2030-09-28","nalaswane"],["2030-09-30","2030-09-30","khokana-rudrayani"],["2030-10-04","2030-10-04","kuchhi-bhwoy"],["2030-10-05","2030-10-05","syakwo-tyakwo"],["2030-10-06","2030-10-06","mohani-tika"],["2030-10-25","2030-10-25","kwah-puja"],["2030-10-25","2030-10-25","khicha-puja"],["2030-10-26","2030-10-26","laxmi-puja"],["2030-10-27","2030-10-27","mha-puja"],["2030-10-28","2030-10-28","kija-puja"],["2030-11-10","2030-11-10","saki-mana-punhi"],["2030-12-09","2030-12-09","yomari-punhi"],["2031-01-01","2031-01-01","jana-baha-snan"],["2031-01-08","2031-01-08","mila-punhi"],["2031-01-15","2031-01-15","ghyah-chaku-sanhu"],["2031-01-27","2031-01-27","shree-panchami"],["2031-02-07","2031-02-07","si-punhi"],["2031-02-20","2031-02-20","sila-charhe"],["2031-03-01","2031-03-08","holi-chir"],["2031-03-10","2031-03-12","nala-karunamaya"],["2031-03-22","2031-03-24","pahan-charhe"],["2031-03-23","2031-03-23","ghode-jatra"],["2031-03-31","2031-04-03","jana-baha-jatra"],["2031-04-07","2031-04-07","lhuti-punhi"],["2031-04-11","2031-04-19","biska"],["2031-04-21","2031-04-21","mata-tirtha"],["2031-04-25","2031-04-25","bunga-dyah-jatra"],["2031-05-07","2031-05-07","swanya-punhi"],["2031-05-27","2031-05-27","sithi-nakha"],["2031-06-05","2031-06-05","jya-punhi"],["2031-06-05","2031-06-05","panauti-jatra"],["2031-06-12","2031-06-12","macha-tiya-jatra"],["2031-07-01","2031-07-02","harishayani"],["2031-07-04","2031-07-04","dila-punhi"],["2031-07-18","2031-07-18","gathamuga"],["2031-07-20","2031-08-18","gunla-dharma"],["2031-07-24","2031-07-24","nag-panchami"],["2031-07-27","2031-07-27","bahidyah-bwayegu"],["2031-08-03","2031-08-03","kwati-punhi"],["2031-08-03","2031-08-03","sa-paru"],["2031-08-04","2031-08-04","mataya"],["2031-08-10","2031-08-10","krishna-janmashtami"],["2031-08-18","2031-08-18","gokarna-aunsi"],["2031-09-20","2031-09-20","chatha"],["2031-09-28","2031-10-05","yenya"],["2031-09-30","2031-09-30","yenya-punhi"],["2031-10-17","2031-10-17","nalaswane"],["2031-10-19","2031-10-19","khokana-rudrayani"],["2031-10-23","2031-10-23","kuchhi-bhwoy"],["2031-10-24","2031-10-24","syakwo-tyakwo"],["2031-10-25","2031-10-25","mohani-tika"],["2031-11-12","2031-11-12","kwah-puja"],["2031-11-13","2031-11-13","khicha-puja"],["2031-11-14","2031-11-14","laxmi-puja"],["2031-11-15","2031-11-15","mha-puja"],["2031-11-16","2031-11-16","kija-puja"],["2031-11-28","2031-11-28","saki-mana-punhi"],["2031-12-28","2031-12-28","yomari-punhi"],["2032-01-15","2032-01-15","ghyah-chaku-sanhu"],["2032-01-19","2032-01-19","jana-baha-snan"],["2032-01-27","2032-01-27","mila-punhi"],["2032-02-15","2032-02-15","shree-panchami"],["2032-02-26","2032-02-26","si-punhi"],["2032-03-10","2032-03-10","sila-charhe"],["2032-03-19","2032-03-26","holi-chir"],["2032-03-28","2032-03-30","nala-karunamaya"],["2032-04-09","2032-04-11","pahan-charhe"],["2032-04-10","2032-04-10","ghode-jatra"],["2032-04-10","2032-04-18","biska"],["2032-04-18","2032-04-21","jana-baha-jatra"],["2032-04-25","2032-04-25","lhuti-punhi"],["2032-05-09","2032-05-09","mata-tirtha"],["2032-05-13","2032-05-13","bunga-dyah-jatra"],["2032-05-25","2032-05-25","swanya-punhi"],["2032-06-14","2032-06-14","sithi-nakha"],["2032-06-23","2032-06-23","jya-punhi"],["2032-06-23","2032-06-23","panauti-jatra"],["2032-06-30","2032-06-30","macha-tiya-jatra"],["2032-07-19","2032-07-20","harishayani"],["2032-07-22","2032-07-22","dila-punhi"],["2032-08-05","2032-08-05","gathamuga"],["2032-08-07","2032-09-05","gunla-dharma"],["2032-08-11","2032-08-11","nag-panchami"],["2032-08-14","2032-08-14","bahidyah-bwayegu"],["2032-08-21","2032-08-21","kwati-punhi"],["2032-08-21","2032-08-21","sa-paru"],["2032-08-22","2032-08-22","mataya"],["2032-08-28","2032-08-28","krishna-janmashtami"],["2032-09-04","2032-09-04","gokarna-aunsi"],["2032-09-09","2032-09-09","chatha"],["2032-09-16","2032-09-23","yenya"],["2032-09-19","2032-09-19","yenya-punhi"],["2032-10-05","2032-10-05","nalaswane"],["2032-10-07","2032-10-07","khokana-rudrayani"],["2032-10-12","2032-10-12","kuchhi-bhwoy"],["2032-10-13","2032-10-13","syakwo-tyakwo"],["2032-10-14","2032-10-14","mohani-tika"],["2032-11-01","2032-11-01","kwah-puja"],["2032-11-02","2032-11-02","khicha-puja"],["2032-11-02","2032-11-02","laxmi-puja"]],"meta":{"mha-puja":{"d":"म्हपूजा","n":"𑐪𑐥𑐹𑐖𑐵","r":"Mha Pujā","e":"Worship of the self · Nepal Sambat New Year","s":"नेपाल सम्बत नयाँ वर्ष। परिवारका सदस्यका लागि मण्डः बनाई आफैंको पूजा, सगुन र भ्वय्।","p":"Nepal Mandala, Newar diaspora","a":0},"kija-puja":{"d":"किजा पूजा","n":"𑐎𑐶𑐖𑐵 𑐥𑐹𑐖𑐵","r":"Kijā Pujā","e":"Worship of brothers (Bhai Tika)","s":"दिदीबहिनीले दाजुभाइको मण्डः पूजा गरी तेल, धागो र सगुन दिने।","p":"Nepal Mandala","a":0},"saki-mana-punhi":{"d":"सकिमना पुन्हि","n":"𑐳𑐎𑐶𑐩𑐣𑐵 𑐥𑐸𑐤𑐶","r":"Saki Manā Punhi","e":"Kārtik Purnimā","s":"कार्तिक पूर्णिमा; हलिमलि पौभा र सकि (पिँडालु) खाने चलन।","p":"Nepal Mandala","a":0},"yomari-punhi":{"d":"यःमरि पुन्हि","n":"𑐫𑑅𑐩𑐬𑐶 𑐥𑐸𑐤𑐶","r":"Yomari Punhi","e":"Yomari full moon (harvest)","s":"धान भित्र्याएपछिको पर्व; चाकु र तिलले भरिएको यःमरि बनाई अन्नपूर्णा पुज्ने।","p":"Nepal Mandala","a":0},"jana-baha-snan":{"d":"जनबहाः द्यः म्वः ल्हुइगु","n":"𑐖𑐣𑐧𑐴𑐵𑑅 𑐡𑑂𑐫𑑅 𑐩𑑂𑐰𑑅 𑐯𑐸𑐂𑐐𑐸","r":"Jana Bāhā Dyah Mwah Lhuigu","e":"Sacred bathing of White Machhendranāth","s":"करुणामय (सेतो मच्छिन्द्रनाथ) को स्नान।","p":"Jana Bāhā, Kathmandu","a":0},"mila-punhi":{"d":"मिला पुन्हि","n":"𑐩𑐶𑐮𑐵 𑐥𑐸𑐤𑐶","r":"Milā Punhi","e":"Pauṣ Purnimā · Swasthāni begins","s":"चाँगुनारायणको जात्रा; महिनाभरि स्वस्थानी व्रतकथा सुरु।","p":"Kathmandu, Sankhu","a":0},"shree-panchami":{"d":"श्रीपञ्चमी","n":"𑐱𑑂𑐬𑐷𑐥𑐘𑑂𑐔𑐩𑐷","r":"Shree Panchami","e":"Basanta Panchami","s":"वसन्त ऋतुको पहिलो दिन; सरस्वती पूजा।","p":"Nepal-wide","a":0},"si-punhi":{"d":"सि पुन्हि","n":"𑐳𑐶 𑐥𑐸𑐤𑐶","r":"Si Punhi","e":"Māghi Purnimā · Swasthāni ends","s":"स्वस्थानी व्रत समापन।","p":"Sankhu, Nepal Mandala","a":0},"sila-charhe":{"d":"सिला चह्रे","n":"𑐳𑐶𑐮𑐵 𑐔𑐴𑑂𑐬𑐾","r":"Silā Charhe","e":"Mahā Shivarātri","s":"शिवको पर्व; पशुपतिमा ठूलो मेला।","p":"Pashupati, Nepal-wide","a":0},"holi-chir":{"d":"होलि (चीर स्वनेगु)","n":"𑐴𑑀𑐮𑐶 (𑐔𑐷𑐬 𑐳𑑂𑐰𑐣𑐾𑐐𑐸)","r":"Holi · Chir","e":"Holi — chir pole raised","s":"अष्टमीमा चीर ठड्याई पूर्णिमासम्म रङ्गको पर्व।","p":"Basantapur, Kathmandu Durbar Square","a":0},"nala-karunamaya":{"d":"नला करुणामय स्नान","n":"𑐣𑐮𑐵 𑐎𑐬𑐸𑐞𑐵𑐩𑐫 𑐳𑑂𑐣𑐵𑐣","r":"Nālā Karunāmaya","e":"Nālā Karunāmaya bathing & chariot","s":"पारुमा स्नान, तृतीयामा रथयात्रा।","p":"Nālā","a":0},"pahan-charhe":{"d":"पाहाँ चह्रे","n":"𑐥𑐵𑐴𑐵𑑃 𑐔𑐴𑑂𑐬𑐾","r":"Pāhān Charhe","e":"Pahan Charhe","s":"काठमाडौंका अजिमाहरूको खटजात्रा र भेटघाट।","p":"Kathmandu (Ason, Indrachok, Maru)","a":0},"ghode-jatra":{"d":"घोडेजात्रा","n":"𑐑𑑀𑐜𑐾𑐖𑐵𑐟𑑂𑐬𑐵","r":"Ghode Jātrā","e":"Horse festival","s":"टुँडिखेलमा घोडा दौड।","p":"Tundikhel, Kathmandu","a":0},"jana-baha-jatra":{"d":"जनबहाः द्यः जात्रा","n":"𑐖𑐣𑐧𑐴𑐵𑑅 𑐡𑑂𑐫𑑅 𑐖𑐵𑐟𑑂𑐬𑐵","r":"Jana Bāhā Dyah Jātrā","e":"White Machhendranāth chariot","s":"सेतो मच्छिन्द्रनाथको रथयात्रा।","p":"Jamal → Asan, Kathmandu","a":0},"lhuti-punhi":{"d":"ल्हुति पुन्हि","n":"𑐯𑐸𑐟𑐶 𑐥𑐸𑐤𑐶","r":"Lhuti Punhi","e":"Bālāju Purnimā","s":"बालाजु बाइसधारामा स्नान र जामाचो डाँडा यात्रा।","p":"Bālāju, Jāmāchwa","a":0},"mata-tirtha":{"d":"मामं ख्वाः स्वयेगु","n":"𑐩𑐵𑐩𑑄 𑐏𑑂𑐰𑐵𑑅 𑐳𑑂𑐰𑐫𑐾𑐐𑐸","r":"Māmyā Khwā Swayegu","e":"Mother's Day (Mātā Tīrtha Aunsi)","s":"आमाको मुख हेर्ने दिन।","p":"Mātā Tīrtha, Nepal-wide","a":0},"bunga-dyah-jatra":{"d":"बुंगद्यः जात्रा","n":"𑐧𑐸𑑄𑐐𑐡𑑂𑐫𑑅 𑐖𑐵𑐟𑑂𑐬𑐵","r":"Bunga Dyah Jātrā","e":"Rato Machhindranāth chariot (Patan)","s":"ललितपुरको सबैभन्दा लामो रथयात्रा सुरु; भोटो जात्राको दिन गुठीले तोक्छ।","p":"Pulchowk → Jawalakhel, Lalitpur","a":1},"swanya-punhi":{"d":"स्वांया पुन्हि","n":"𑐳𑑂𑐰𑐵𑑄𑐫𑐵 𑐥𑐸𑐤𑐶","r":"Swānyā Punhi","e":"Buddha Jayanti","s":"बुद्धको जन्म, बोधि र महापरिनिर्वाणको पर्व।","p":"Swayambhu, Nepal-wide","a":0},"sithi-nakha":{"d":"सिथि नखः","n":"𑐳𑐶𑐠𑐶 𑐣𑐏𑑅","r":"Sithi Nakhah","e":"Kumar Shashthi","s":"कुमार (कार्तिकेय) को पर्व; इनार–पोखरी सफा गर्ने, व/वः खाने।","p":"Nepal Mandala","a":0},"jya-punhi":{"d":"ज्या पुन्हि","n":"𑐖𑑂𑐫𑐵 𑐥𑐸𑐤𑐶","r":"Jyā Punhi","e":"Jeṭh Purnimā","s":"राजकुमार सिद्धार्थले गृहत्याग गरेको दिन।","p":"Nepal Mandala","a":0},"panauti-jatra":{"d":"पनौति जात्रा","n":"𑐥𑐣𑑁𑐟𑐶 𑐖𑐵𑐟𑑂𑐬𑐵","r":"Panauti Jātrā","e":"Panauti chariot festival","s":"भैरव र भद्रकालीको रथयात्रा।","p":"Panauti","a":1},"macha-tiya-jatra":{"d":"मचा तिया जात्रा","n":"𑐩𑐔𑐵 𑐟𑐶𑐫𑐵 𑐖𑐵𑐟𑑂𑐬𑐵","r":"Machā Tiyā Jātrā","e":"Trishul Jātrā","s":"त्रिशूल सहितको जात्रा।","p":"Deopatan","a":0},"harishayani":{"d":"हरिशयनी एकादशी","n":"𑐴𑐬𑐶𑐱𑐫𑐣𑐷 𑐊𑐎𑐵𑐡𑐱𑐷","r":"Hari Shayani Ekādashi","e":"Vishnu’s sleep begins · Tulsi planting","s":"चातुर्मास सुरु; भोलिपल्ट तुलसी रोप्ने।","p":"Homes","a":0},"dila-punhi":{"d":"दिला पुन्हि","n":"𑐡𑐶𑐮𑐵 𑐥𑐸𑐤𑐶","r":"Dilā Punhi","e":"Guru Purnimā","s":"गुरु पूर्णिमा; बुद्धको प्रथम उपदेश (धर्मचक्र प्रवर्तन)।","p":"Nepal-wide","a":0},"gathamuga":{"d":"गथांमुगः चह्रे","n":"𑐐𑐠𑐵𑑄𑐩𑐸𑐐𑑅 𑐔𑐴𑑂𑐬𑐾","r":"Gathān Mugah Charhe","e":"Ghantakarna","s":"गथांमुगःको पुत्ला बनाई भूतप्रेत नगरबाहिर पठाउने।","p":"Every Newar tole","a":0},"gunla-dharma":{"d":"गुंला धर्म","n":"𑐐𑐸𑑄𑐮𑐵 𑐢𑐬𑑂𑐩","r":"Gunlā Dharma","e":"Holy Buddhist month","s":"महिनाभरि गुंला बाजं, द्यः थायेगु, बहीद्यः ब्वयेगु।","p":"Swayambhu, Bāhās","a":0},"nag-panchami":{"d":"नाग पञ्चमी","n":"𑐣𑐵𑐐 𑐥𑐘𑑂𑐔𑐩𑐷","r":"Nāg Panchami","e":"Nāg Panchami","s":"नागको पूजा।","p":"Nepal-wide","a":0},"bahidyah-bwayegu":{"d":"बहीद्यः ब्वयेगु","n":"𑐧𑐴𑐷𑐡𑑂𑐫𑑅 𑐧𑑂𑐰𑐫𑐾𑐐𑐸","r":"Bahidyah Bwayegu","e":"Display of Dipankara images","s":"बहाः–बहीमा दीपंकर बुद्ध र पौभा प्रदर्शन।","p":"Bāhās of Kathmandu & Lalitpur","a":0},"kwati-punhi":{"d":"क्वाँति पुन्हि","n":"𑐎𑑂𑐰𑐵𑑃𑐟𑐶 𑐥𑐸𑐤𑐶","r":"Kwānti Punhi","e":"Janai Purnimā","s":"जनै फेर्ने, रक्षाबन्धन, क्वाँति खाने।","p":"Nepal-wide","a":0},"sa-paru":{"d":"सापारु","n":"𑐳𑐵𑐥𑐵𑐬𑐸","r":"Sā Pāru","e":"Gāi Jātrā","s":"वर्षभित्र दिवंगत भएकाको सम्झनामा गाईजात्रा।","p":"Kathmandu, Lalitpur, Bhaktapur","a":0},"mataya":{"d":"मतया","n":"𑐩𑐟𑐫𑐵","r":"Matayā","e":"Festival of lights procession (Patan)","s":"ललितपुरका बहाः–बहीमा बत्ती बोकेर परिक्रमा।","p":"Lalitpur","a":0},"krishna-janmashtami":{"d":"कृष्ण जन्माष्टमी","n":"𑐎𑐺𑐲𑑂𑐞 𑐖𑐣𑑂𑐩𑐵𑐲𑑂𑐚𑐩𑐷","r":"Krishna Janmāshtami","e":"Krishna Janmāshtami","s":"श्रीकृष्णको जन्मोत्सव।","p":"Krishna Mandir, Patan","a":0},"gokarna-aunsi":{"d":"बौया ख्वाः स्वयेगु","n":"𑐧𑑁𑐫𑐵 𑐏𑑂𑐰𑐵𑑅 𑐳𑑂𑐰𑐫𑐾𑐐𑐸","r":"Bauyā Khwā Swayegu","e":"Father's Day (Gokarna Aunsi)","s":"बुबाको मुख हेर्ने दिन।","p":"Gokarna, Nepal-wide","a":0},"chatha":{"d":"चथा","n":"𑐔𑐠𑐵","r":"Chathā","e":"Ganesh Chaturthi","s":"गणेशको जन्मदिन; जुन हेर्न नहुने दिन।","p":"Nepal Mandala","a":0},"yenya":{"d":"येँयाः","n":"𑐫𑐾𑑃𑐫𑐵𑑅","r":"Yenyā","e":"Indra Jātrā","s":"लिंगो ठड्याउने, कुमारी रथयात्रा, लाखे–पुलुकिसि नाच, आकाशभैरव दर्शन।","p":"Kathmandu Durbar Square, Hanuman Dhoka","a":0},"yenya-punhi":{"d":"येँयाः पुन्हि","n":"𑐫𑐾𑑃𑐫𑐵𑑅 𑐥𑐸𑐤𑐶","r":"Yenyā Punhi","e":"Bhādra Purnimā (Indra Jātrā main day)","s":"येँयाःको मुख्य पूर्णिमा।","p":"Kathmandu","a":0},"nalaswane":{"d":"नःलास्वने","n":"𑐣𑑅𑐮𑐵𑐳𑑂𑐰𑐣𑐾","r":"Nahlā Swanegu","e":"Mohani begins (Ghatasthāpanā)","s":"मोहनी (दशैं) सुरु; जमरा रोप्ने।","p":"Nepal Mandala","a":0},"khokana-rudrayani":{"d":"खोकना रुद्रायणी प्याखं","n":"𑐏𑑀𑐎𑐣𑐵 𑐬𑐸𑐡𑑂𑐬𑐵𑐫𑐞𑐷 𑐥𑑂𑐫𑐵𑐏𑑄","r":"Rudrāyani dances","e":"Rudrāyani masked dances","s":"रुद्रायणीको मुकुण्डो नाच।","p":"Khokana","a":0},"kuchhi-bhwoy":{"d":"कुछिभ्वय्","n":"𑐎𑐸𑐕𑐶𑐨𑑂𑐰𑐫𑑂","r":"Kuchhi Bhwoy","e":"Mohani — Mahā Ashtami feast","s":"अष्टमीको भोज।","p":"Nepal Mandala","a":0},"syakwo-tyakwo":{"d":"स्याक्वः त्याक्वः","n":"𑐳𑑂𑐫𑐵𑐎𑑂𑐰𑑅 𑐟𑑂𑐫𑐵𑐎𑑂𑐰𑑅","r":"Syākwah Tyākwah","e":"Mohani — Mahā Navami","s":"नवमीको बलि र पूजा।","p":"Nepal Mandala","a":0},"mohani-tika":{"d":"मोहनी टीका","n":"𑐩𑑀𑐴𑐣𑐷 𑐚𑐷𑐎𑐵","r":"Mohani Tikā","e":"Vijaya Dashami","s":"विजया दशमी; ठूलाबडाबाट टीका, खड्ग जात्रा।","p":"Nepal-wide","a":0},"kwah-puja":{"d":"क्वः पूजा","n":"𑐎𑑂𑐰𑑅 𑐥𑐹𑐖𑐵","r":"Kwah Pujā","e":"Swanti day 1 — crows","s":"स्वन्तिको पहिलो दिन; कागलाई भोजन।","p":"Nepal Mandala","a":0},"khicha-puja":{"d":"खिचा पूजा","n":"𑐏𑐶𑐔𑐵 𑐥𑐹𑐖𑐵","r":"Khichā Pujā","e":"Swanti day 2 — dogs","s":"कुकुरलाई माला र भोजन।","p":"Nepal Mandala","a":0},"laxmi-puja":{"d":"सा पूजा · लक्ष्मी पूजा","n":"𑐳𑐵 𑐥𑐹𑐖𑐵 · 𑐮𑐎𑑂𑐲𑑂𑐩𑐷 𑐥𑐹𑐖𑐵","r":"Sā Pujā · Lakshmi Pujā","e":"Swanti day 3 — cows & Lakshmi","s":"गाईको पूजा; साँझ लक्ष्मी पूजा।","p":"Nepal-wide","a":0},"ghyah-chaku-sanhu":{"d":"घ्यः चाकु सँल्हु","n":"𑐑𑑂𑐫𑑅 𑐔𑐵𑐎𑐸 𑐳𑑃𑐯𑐸","r":"Ghyah Chāku Sanhu","e":"Māghe Sankrānti","s":"घ्यू, चाकु, तिलको लड्डु र तरुल खाने दिन।","p":"Nepal-wide","a":0},"biska":{"d":"बिस्का जात्रा","n":"𑐧𑐶𑐳𑑂𑐎𑐵 𑐖𑐵𑐟𑑂𑐬𑐵","r":"Biskā Jātrā","e":"Bisket Jātrā (Bhaktapur, Thimi)","s":"भैरव–भद्रकालीको रथ तान्ने, योसिं (लिंगो) ठड्याउने र ढाल्ने; मेष संक्रान्तिमा केन्द्रित।","p":"Bhaktapur, Thimi, Bode","a":1}},"ny":{"1144":"2023-11-14","1145":"2024-11-02","1146":"2025-10-22","1147":"2026-11-10","1148":"2027-10-30","1149":"2028-10-18","1150":"2029-11-07","1151":"2030-10-27","1152":"2031-11-15","1153":"2032-11-04"}};
+
+/* ═══════════ Constants ═══════════ */
+const MONTHS = [
+  { dv: 'कछला', rm: 'Kachhalā', emo: '🪔', punhi: 'सकिमना पुन्हि', fest: 'म्हपूजा · न्हूदँ', hook: 'वर्ष सुरु: आफ्नै मण्डः, आफ्नै पूजा।' },
+  { dv: 'थिंला', rm: 'Thinlā', emo: '🥟', punhi: 'यःमरि पुन्हि', fest: 'यःमरि पुन्हि', hook: 'धान भित्र्यायो, चाकु भरिएको यःमरि।' },
+  { dv: 'प्वँहेला', rm: 'Pwanhelā', emo: '📜', punhi: 'मिला पुन्हि', fest: 'स्वस्थानी सुरु', hook: 'जाडोको पुन्हिमा स्वस्थानीको कथा खुल्छ।' },
+  { dv: 'सिला', rm: 'Silā', emo: '🔱', punhi: 'सि पुन्हि', fest: 'सिला चह्रे · शिवरात्रि', hook: 'श्रीपञ्चमीको वसन्त, सिला चह्रेमा शिव।' },
+  { dv: 'चिला', rm: 'Chilā', emo: '🐎', punhi: 'होलि पुन्हि', fest: 'होलि · पाहाँ चह्रे · घोडेजात्रा', hook: 'रङ, अजिमा भेट, टुँडिखेलमा घोडा।' },
+  { dv: 'चौला', rm: 'Chaulā', emo: '🌸', punhi: 'ल्हुति पुन्हि', fest: 'जनबहाः द्यः जात्रा · मामं ख्वाः', hook: 'सेतो करुणामयको रथ, आमाको मुख।' },
+  { dv: 'बछला', rm: 'Bachhalā', emo: '🛕', punhi: 'स्वांया पुन्हि', fest: 'बुंगद्यः जात्रा · बुद्ध जयन्ती', hook: 'रातो मच्छिन्द्रको रथ, बुद्धको पुन्हि।' },
+  { dv: 'तछला', rm: 'Tachhalā', emo: '🫓', punhi: 'ज्या पुन्हि', fest: 'सिथि नखः', hook: 'इनार सफा, वः खाने, कुमारको पर्व।' },
+  { dv: 'दिला', rm: 'Dilā', emo: '👹', punhi: 'दिला पुन्हि', fest: 'गथांमुगः चह्रे', hook: 'गुरु पुन्हि, अनि गथांमुगः सहर बाहिर।' },
+  { dv: 'गुंला', rm: 'Gunlā', emo: '🥁', punhi: 'गुंपुन्हि', fest: 'गुंला बाजं · सापारु', hook: 'महिनाभरि बाजा, सापारुमा गाई।' },
+  { dv: 'यंला', rm: 'Yanlā', emo: '🎭', punhi: 'येँयाः पुन्हि', fest: 'येँयाः · इन्द्रजात्रा', hook: 'कुमारीको रथ, लाखेको नाच।' },
+  { dv: 'कौला', rm: 'Kaulā', emo: '🌾', punhi: 'कतिं पुन्हि', fest: 'मोहनी · दशैं', hook: 'जमरा, टीका, अनि स्वन्ति तिर।' },
+];
+const THWA = ['पारु','द्वितीया','तृतीया','चौथी','पञ्चमी','खस्ति','सप्तमी','अष्टमी','नवमी','दशमी','एकादशी','द्वादशी','त्रयोदशी','चतुर्दशी','पुन्हि'];
+const GA   = ['पारु','द्वितीया','तृतीया','चौथी','पञ्चमी','खस्ति','सप्तमी','अष्टमी','नवमी','दशमी','एकादशी','द्वादशी','त्रयोदशी','चह्रे','आमै'];
+const THWA_R = ['Pāru','Dwitiyā','Tritiyā','Chauthi','Panchami','Khasti','Saptami','Ashtami','Navami','Dashami','Ekādashi','Dwādashi','Trayodashi','Chaturdashi','Punhi'];
+const GA_R = [...THWA_R.slice(0, 13), 'Charhe', 'Āmāi'];
+const AD_MONTHS = ['जनवरी','फेब्रुअरी','मार्च','अप्रिल','मे','जुन','जुलाई','अगस्ट','सेप्टेम्बर','अक्टोबर','नोभेम्बर','डिसेम्बर'];
+const WEEK = ['आइतबार','सोमबार','मंगलबार','बुधबार','बिहीबार','शुक्रबार','शनिबार'];
+
+/* ═══════════ Newa script (U+11400 block) ═══════════ */
+const NEWA = (() => {
+  const m = new Map();
+  const put = (d, n) => m.set(d, String.fromCodePoint(n));
+  'अआइईउऊऋॠऌॡएऐओऔ'.split('').forEach((c, i) => put(c, 0x11400 + i));
+  [['क',0x1140e],['ख',0x1140f],['ग',0x11410],['घ',0x11411],['ङ',0x11412],['च',0x11414],['छ',0x11415],['ज',0x11416],['झ',0x11417],['ञ',0x11418],
+   ['ट',0x1141a],['ठ',0x1141b],['ड',0x1141c],['ढ',0x1141d],['ण',0x1141e],['त',0x1141f],['थ',0x11420],['द',0x11421],['ध',0x11422],['न',0x11423],
+   ['प',0x11425],['फ',0x11426],['ब',0x11427],['भ',0x11428],['म',0x11429],['य',0x1142b],['र',0x1142c],['ल',0x1142e],['व',0x11430],
+   ['श',0x11431],['ष',0x11432],['स',0x11433],['ह',0x11434],
+   ['ा',0x11435],['ि',0x11436],['ी',0x11437],['ु',0x11438],['ू',0x11439],['ृ',0x1143a],['े',0x1143e],['ै',0x1143f],['ो',0x11440],['ौ',0x11441],
+   ['्',0x11442],['ँ',0x11443],['ं',0x11444],['ः',0x11445],['़',0x11446],['ऽ',0x11447],['ॐ',0x11449],['।',0x1144b],['॥',0x1144c]].forEach(([d, n]) => put(d, n));
+  '०१२३४५६७८९'.split('').forEach((c, i) => put(c, 0x11450 + i));
+  const murm = { 'ङ्ह': 0x11413, 'ञ्ह': 0x11419, 'न्ह': 0x11424, 'म्ह': 0x1142a, 'र्ह': 0x1142d, 'ल्ह': 0x1142f };
+  return (s) => {
+    s = s.normalize('NFC'); let o = '';
+    for (let i = 0; i < s.length;) {
+      const t3 = s.slice(i, i + 3);
+      if (murm[t3]) { o += String.fromCodePoint(murm[t3]); i += 3; continue; }
+      const c = s[i];
+      o += (c >= '0' && c <= '9') ? String.fromCodePoint(0x11450 + +c) : (m.get(c) ?? c); i++;
+    }
+    return o;
+  };
+})();
+const npd = (n) => String(n).replace(/\d/g, (d) => '०१२३४५६७८९'[d]);
+
+/* ═══════════ Engine over embedded data ═══════════ */
+const DAY = 864e5;
+const startMs = Date.parse(D.start + 'T00:00:00Z');
+const N = D.t.length;
+const isoOf = (i) => new Date(startMs + i * DAY).toISOString().slice(0, 10);
+const idxOf = (iso) => Math.round((Date.parse(iso + 'T00:00:00Z') - startMs) / DAY);
+function segOf(i) { let lo = 0, hi = D.seg.length - 1; while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (D.seg[mid][0] <= i) lo = mid; else hi = mid - 1; } return lo; }
+function nsAt(i) {
+  const s = segOf(i), [s0, year, month, adhik] = D.seg[s];
+  const s1 = s + 1 < D.seg.length ? D.seg[s + 1][0] : N;
+  const abs = D.t.charCodeAt(i) - 64;
+  const paksha = abs <= 15 ? 'thwa' : 'ga';
+  return { i, year, month, adhik: !!adhik, abs, paksha, tithi: paksha === 'thwa' ? abs : abs - 15, segStart: s0, segEnd: s1, frac: (i - s0) / Math.max(1, s1 - s0) };
+}
+const tithiName = (n) => (n.paksha === 'thwa' ? THWA : GA)[n.tithi - 1];
+const tithiRoman = (n) => (n.paksha === 'thwa' ? THWA_R : GA_R)[n.tithi - 1];
+const monthDv = (n) => (n.adhik ? 'अनला (' + MONTHS[n.month - 1].dv + ')' : MONTHS[n.month - 1].dv);
+const labelDv = (n) => `ने.सं. ${npd(n.year)} ${monthDv(n)} ${n.paksha === 'thwa' ? 'थ्वः' : 'गाः'} ${tithiName(n)}`;
+const labelRm = (n) => `NS ${n.year} ${n.adhik ? 'Analā (' + MONTHS[n.month - 1].rm + ')' : MONTHS[n.month - 1].rm} ${n.paksha === 'thwa' ? 'Thwa' : 'Gā'} ${tithiRoman(n)}`;
+const festOn = (iso) => D.fest.filter(([s, e]) => iso >= s && iso <= e).map(([s, e, id]) => ({ ...D.meta[id], start: s, end: e, id }));
+const festAfter = (iso, k) => D.fest.filter(([s]) => s > iso).slice(0, k).map(([s, e, id]) => ({ ...D.meta[id], start: s, end: e, id }));
+
+/* ═══════════ SVG helpers ═══════════ */
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+const P = (r, deg) => { const a = deg * Math.PI / 180; return [r * Math.sin(a), -r * Math.cos(a)]; };
+
+function buildYantra() {
+  const g = document.getElementById('yantra');
+  for (let k = 0; k < 24; k++) { const [x, y] = P(300, k * 15); el('line', { x1: 0, y1: 0, x2: x, y2: y, stroke: '#ffffff08' }, g); }
+  [110, 175, 250].forEach((r) => el('circle', { r, fill: 'none', stroke: '#f2b53a18', 'stroke-dasharray': '2 6' }, g));
+  for (let k = 0; k < 8; k++) { // lotus-square yantra
+    const a = k * 45; const [x1, y1] = P(170, a), [x2, y2] = P(170, a + 90);
+    el('line', { x1, y1, x2, y2, stroke: '#f2b53a14' }, g);
+  }
+}
+function petalPath(a, r0, r1) {
+  const [ix, iy] = P(r0, a), [tx, ty] = P(r1, a), [lx, ly] = P((r0 + r1) / 2 + 6, a - 13), [rx, ry] = P((r0 + r1) / 2 + 6, a + 13);
+  return `M${ix},${iy} Q${lx},${ly} ${tx},${ty} Q${rx},${ry} ${ix},${iy}Z`;
+}
+function buildPetals() {
+  const g = document.getElementById('petals');
+  MONTHS.forEach((m, k) => {
+    const a = k * 30;
+    const grp = el('g', { 'data-m': k + 1 }, g);
+    el('path', { d: petalPath(a, 238, 312), fill: '#8c3b2a', 'fill-opacity': .35, stroke: '#f2b53a', 'stroke-opacity': .35 }, grp);
+    const [x, y] = P(282, a);
+    const t = el('text', { x, y: y - 2, 'text-anchor': 'middle', 'font-size': 17, fill: '#f6ecd6', class: 'newa', transform: `rotate(${a} ${x} ${y})` }, grp);
+    t.textContent = NEWA(m.dv);
+    const [x2, y2] = P(262, a);
+    const t2 = el('text', { x: x2, y: y2 + 4, 'text-anchor': 'middle', 'font-size': 11, fill: '#b9ad95', transform: `rotate(${a} ${x2} ${y2})` }, grp);
+    t2.textContent = m.dv;
+  });
+}
+function moonPath(phase, r) {
+  const a = ((phase % 360) + 360) % 360, rx = Math.abs(Math.cos(a * Math.PI / 180)) * r;
+  const waxing = a < 180, gib = a > 90 && a < 270;
+  const limb = waxing ? 1 : 0, term = waxing ? (gib ? 1 : 0) : (gib ? 0 : 1);
+  return `M0,${-r} A${r},${r} 0 0 ${limb} 0,${r} A${rx},${r} 0 0 ${term} 0,${-r}Z`;
+}
+
+/* ═══════════ State & render ═══════════ */
+const todayIso = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kathmandu', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+let cur = Math.min(Math.max(idxOf(todayIso), 0), N - 1);
+let rot = 0;
+
+function render() {
+  const n = nsAt(cur), iso = isoOf(cur);
+  // petals: current month at top, turning smoothly through the month
+  let target = -((n.month - 1) + n.frac) * 30;
+  while (target - rot > 180) target -= 360;
+  while (rot - target > 180) target += 360;
+  rot = target;
+  document.getElementById('petals').setAttribute('transform', `rotate(${rot})`);
+  document.querySelectorAll('#petals > g').forEach((g) => {
+    const on = +g.dataset.m === n.month;
+    g.firstChild.setAttribute('fill', on ? (n.adhik ? '#e67a8a' : '#f2b53a') : '#8c3b2a');
+    g.firstChild.setAttribute('fill-opacity', on ? .9 : .35);
+    g.children[1].setAttribute('fill', on ? '#231a05' : '#f6ecd6');
+    g.children[2].setAttribute('fill', on ? '#3a2400' : '#b9ad95');
+  });
+  // beads: 30 tithis, pāru at top, punhi at bottom
+  const beads = document.getElementById('beads'); beads.innerHTML = '';
+  for (let k = 1; k <= 30; k++) {
+    const a = (k - 1) * 12 + 6, [x, y] = P(205, a);
+    const ill = (1 - Math.cos(((k - .5) * 12) * Math.PI / 180)) / 2;
+    const now = k === n.abs, past = k < n.abs;
+    const c = el('circle', { cx: x, cy: y, r: now ? 11 : 7, fill: `rgb(${43 + ill * 199},${42 + ill * 139},${107 - ill * 49})`, stroke: now ? '#fff' : past ? '#f2b53a' : '#ffffff30', 'stroke-width': now ? 2.5 : 1, class: now ? 'bead-now' : '' }, beads);
+    el('title', {}, c).textContent = (k <= 15 ? 'थ्वः ' + THWA[k - 1] : 'गाः ' + GA[k - 16]);
+    if (k === 1 || k === 15 || k === 16 || k === 30) {
+      const [tx, ty] = P(182, a); const t = el('text', { x: tx, y: ty + 4, 'text-anchor': 'middle', 'font-size': 10, fill: '#b9ad95' }, beads);
+      t.textContent = k === 15 ? 'पुन्हि' : k === 30 ? 'आमै' : k === 1 ? 'थ्वः' : 'गाः';
+    }
+  }
+  // festival sparks for this lunar month
+  const sparks = document.getElementById('sparks'); sparks.innerHTML = '';
+  for (const [s, , id] of D.fest) {
+    const si = idxOf(s); if (si < n.segStart || si >= n.segEnd) continue;
+    const k = D.t.charCodeAt(si) - 64, a = (k - 1) * 12 + 6, [x, y] = P(228, a);
+    const d = el('path', { d: `M${x},${y - 7} L${x + 5},${y} L${x},${y + 7} L${x - 5},${y}Z`, fill: '#c8312a', stroke: '#ffb000', 'stroke-width': 1 }, sparks);
+    el('title', {}, d).textContent = D.meta[id].d + ' · ' + s;
+  }
+  // year progress arc (Mha Puja to Mha Puja)
+  const yStart = idxOf(D.ny[n.year]), yEnd = idxOf(D.ny[n.year + 1]);
+  const prog = (cur - yStart) / (yEnd - yStart);
+  const pg = document.getElementById('progress'); pg.innerHTML = '';
+  el('circle', { r: 160, fill: 'none', stroke: '#ffffff12', 'stroke-width': 3 }, pg);
+  el('circle', { r: 160, fill: 'none', stroke: '#f2b53a', 'stroke-width': 3, 'stroke-linecap': 'round', transform: 'rotate(-90)', 'stroke-dasharray': `${2 * Math.PI * 160 * prog} 9999` }, pg);
+  // moon
+  const phase = (n.abs - .5) * 12, mg = document.getElementById('moon'); mg.innerHTML = '';
+  el('circle', { r: 86, fill: '#1c1b44' }, mg);
+  el('path', { d: moonPath(phase, 86), fill: 'url(#moonLit)' }, mg);
+  el('circle', { r: 86, fill: 'none', stroke: '#ffffff25' }, mg);
+  document.getElementById('centerNewa').textContent = NEWA(npd(n.year));
+
+  // card
+  const lines = [[labelDv(n), ''], [NEWA(labelDv(n)), 'newa'], [labelRm(n), '']];
+  const b = document.getElementById('breath');
+  b.dataset.lines = JSON.stringify(lines); b.dataset.k = '0'; showBreath();
+  const dt = new Date(iso + 'T00:00:00Z');
+  document.getElementById('adLine').innerHTML = `${WEEK[dt.getUTCDay()]} · ${npd(dt.getUTCDate())} ${AD_MONTHS[dt.getUTCMonth()]} ${npd(dt.getUTCFullYear())} (${iso})` + (n.adhik ? '<span class="adhik-badge">अनला · अधिक महिना</span>' : '');
+  document.getElementById('datePick').value = iso;
+  const fs = festOn(iso);
+  document.getElementById('festBox').innerHTML = fs.map((f) => `<div class="fest"><h3>${f.d} <span class="newa">${f.n}</span></h3><div>${f.r} · ${f.e}${f.a ? ' · <i>सम्भावित</i>' : ''}</div><p style="margin:.5em 0 0">${f.s}</p><small>📍 ${f.p}</small></div>`).join('');
+  const nx = festAfter(iso, 3);
+  document.getElementById('soon').innerHTML = nx.length ? '<b>आउँदै:</b> ' + nx.map((f) => `${f.d} — ${npd(Math.round((Date.parse(f.start) - Date.parse(iso)) / DAY))} दिनमा`).join(' · ') : '';
+  const daysLeft = yEnd - cur;
+  document.getElementById('mhaDays').textContent = npd(daysLeft) + ' दिन';
+  document.getElementById('mhaText').textContent = `म्हपूजा · न्हूदँ ${npd(n.year + 1)} (${D.ny[n.year + 1]}) सम्म`;
+  document.getElementById('mhaArc').setAttribute('stroke-dasharray', `${2 * Math.PI * 34 * prog} 999`);
+  document.querySelectorAll('.room').forEach((r) => r.classList.toggle('now', +r.dataset.m === n.month));
+  if (soundOn) chime(440 + n.abs * 6, .18);
+}
+let breathTimer;
+function showBreath() {
+  const b = document.getElementById('breath'), lines = JSON.parse(b.dataset.lines), k = +b.dataset.k % lines.length;
+  b.innerHTML = `<span class="${lines[k][1]}">${lines[k][0]}</span>`;
+  clearTimeout(breathTimer);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) breathTimer = setTimeout(() => { b.dataset.k = String(k + 1); showBreath(); }, 3600);
+}
+function go(i) { cur = Math.min(Math.max(i, 0), N - 1); render(); }
+
+/* ═══════════ Interaction: drag the wheel ═══════════ */
+(() => {
+  const svg = document.getElementById('wheel'); let dragging = false, lastA = 0, acc = 0;
+  const ang = (e) => { const r = svg.getBoundingClientRect(); return Math.atan2(e.clientX - r.left - r.width / 2, -(e.clientY - r.top - r.height / 2)) * 180 / Math.PI; };
+  svg.addEventListener('pointerdown', (e) => { dragging = true; lastA = ang(e); acc = 0; svg.setPointerCapture(e.pointerId); svg.classList.add('dragging'); });
+  svg.addEventListener('pointermove', (e) => {
+    if (!dragging) return; let a = ang(e), d = a - lastA; if (d > 180) d -= 360; if (d < -180) d += 360; lastA = a; acc += d;
+    const steps = Math.trunc(acc / 12); if (steps) { acc -= steps * 12; go(cur - steps); }
+  });
+  const end = () => { dragging = false; svg.classList.remove('dragging'); };
+  svg.addEventListener('pointerup', end); svg.addEventListener('pointercancel', end);
+  svg.addEventListener('wheel', (e) => { e.preventDefault(); go(cur + (e.deltaY > 0 ? 1 : -1)); }, { passive: false });
+  addEventListener('keydown', (e) => { if (e.target.tagName === 'INPUT') return; if (e.key === 'ArrowRight') go(cur + 1); if (e.key === 'ArrowLeft') go(cur - 1); });
+  document.getElementById('prev').onclick = () => go(cur - 1);
+  document.getElementById('next').onclick = () => go(cur + 1);
+  document.getElementById('todayBtn').onclick = () => go(idxOf(todayIso));
+  document.getElementById('datePick').onchange = (e) => e.target.value && go(idxOf(e.target.value));
+})();
+
+/* ═══════════ Sound (off by default) ═══════════ */
+let soundOn = false, ac;
+function chime(freq, gain = .25, dur = 1.6) {
+  ac ??= new (window.AudioContext || window.webkitAudioContext)();
+  const t = ac.currentTime;
+  [1, 2.01, 2.76].forEach((m, i) => { // singing-bowl-ish partials
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.frequency.value = freq * m; o.type = 'sine';
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(gain / (i + 1), t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + dur / (i * .5 + 1));
+    o.connect(g).connect(ac.destination); o.start(t); o.stop(t + dur);
+  });
+}
+document.getElementById('soundBtn').onclick = (e) => { soundOn = !soundOn; e.currentTarget.setAttribute('aria-pressed', soundOn); e.currentTarget.textContent = soundOn ? '🔔 घण्टी खुला' : '🔔 घण्टी बन्द'; if (soundOn) chime(523); };
+
+/* ═══════════ Chant ═══════════ */
+(() => {
+  const box = document.getElementById('chant');
+  MONTHS.forEach((m, k) => { const d = document.createElement('div'); d.className = 'syl'; d.innerHTML = `<span class="newa">${NEWA(m.dv)}</span><span class="dv">${m.dv}</span><div class="rm" style="color:var(--muted);font-size:12px">${m.rm}</div>`; box.appendChild(d); });
+  let timer = null, k = 0;
+  const btn = document.getElementById('chantBtn');
+  btn.onclick = () => {
+    if (timer) { clearInterval(timer); timer = null; btn.textContent = '▶ लय बजाउनुहोस्'; btn.setAttribute('aria-pressed', 'false'); box.querySelectorAll('.syl').forEach((s) => s.classList.remove('on')); return; }
+    btn.textContent = '■ रोक्नुहोस्'; btn.setAttribute('aria-pressed', 'true'); k = 0;
+    const tick = () => {
+      box.querySelectorAll('.syl').forEach((s, i) => s.classList.toggle('on', i === k % 12));
+      chime(k % 4 === 0 ? 392 : 523, k % 4 === 0 ? .3 : .15, .9); k++;
+    };
+    tick(); timer = setInterval(tick, 620);
+  };
+})();
+
+/* ═══════════ Memory palace ═══════════ */
+(() => {
+  const box = document.getElementById('palace');
+  MONTHS.forEach((m, k) => {
+    const b = document.createElement('button'); b.className = 'room'; b.dataset.m = k + 1;
+    b.innerHTML = `<span class="n">${npd(k + 1)}</span><div class="emo" aria-hidden="true">${m.emo}</div><span class="newa">${NEWA(m.dv)}</span><div class="dv">${m.dv}</div><div class="rm">${m.rm} · ${m.punhi}</div><div class="hook"><b>${m.fest}</b><br>${m.hook}</div>`;
+    b.onclick = () => { // jump to this month's punhi within the current NS year (or next)
+      const n = nsAt(cur);
+      for (let i = idxOf(D.ny[n.year]); i < N; i++) { const x = nsAt(i); if (x.month === k + 1 && !x.adhik && x.abs === 15) { go(i); break; } }
+      scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    box.appendChild(b);
+  });
+})();
+
+/* ═══════════ Quiz ═══════════ */
+(() => {
+  let streak = 0, best = 0;
+  try { best = +localStorage.getItem('ns-best') || 0; } catch {}
+  const shuffle = (a) => a.map((v) => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map((x) => x[1]);
+  const Q = [
+    () => { const k = Math.floor(Math.random() * 12); return { q: `${MONTHS[k].emo} "${MONTHS[k].fest}" कुन महिनामा?`, a: MONTHS[k].dv, pool: MONTHS.map((m) => m.dv) }; },
+    () => { const k = Math.floor(Math.random() * 12); return { q: `नेपाल लिपिमा "${MONTHS[k].dv}" कुन हो?`, a: NEWA(MONTHS[k].dv), pool: MONTHS.map((m) => NEWA(m.dv)), newa: true }; },
+    () => { const k = Math.floor(Math.random() * 11); return { q: `${MONTHS[k].dv} पछि कुन महिना आउँछ?`, a: MONTHS[k + 1].dv, pool: MONTHS.map((m) => m.dv) }; },
+    () => { const k = Math.floor(Math.random() * 12); return { q: `"${MONTHS[k].punhi}" कुन महिनाको पुन्हि?`, a: MONTHS[k].dv, pool: MONTHS.map((m) => m.dv) }; },
+    () => ({ q: 'नेपाल सम्बतको नयाँ वर्ष कुन दिन?', a: 'कछला थ्वः पारु (म्हपूजा)', pool: ['कछला थ्वः पारु (म्हपूजा)', 'कौला थ्वः दशमी', 'चौला थ्वः पारु', 'सिला गाः चह्रे'] }),
+    () => ({ q: 'अधिक (थप) महिनालाई नेपाल भाषामा के भनिन्छ?', a: 'अनला', pool: ['अनला', 'न्हंला', 'गुंला', 'थिंला'] }),
+  ];
+  function ask() {
+    const g = Q[Math.floor(Math.random() * Q.length)]();
+    const opts = shuffle([g.a, ...shuffle(g.pool.filter((x) => x !== g.a)).slice(0, 3)]);
+    document.getElementById('qText').textContent = g.q;
+    const box = document.getElementById('qOpts'); box.innerHTML = '';
+    opts.forEach((o) => {
+      const b = document.createElement('button'); b.className = 'opt' + (g.newa ? ' newa' : ''); b.textContent = o;
+      if (g.newa) b.style.fontSize = '28px';
+      b.onclick = () => {
+        const ok = o === g.a; b.classList.add(ok ? 'ok' : 'no');
+        [...box.children].forEach((c) => { c.disabled = true; if (c.textContent === g.a) c.classList.add('ok'); });
+        streak = ok ? streak + 1 : 0; if (streak > best) { best = streak; try { localStorage.setItem('ns-best', best); } catch {} }
+        if (soundOn || ok) chime(ok ? 660 : 220, ok ? .2 : .12, .8);
+        document.getElementById('qStreak').textContent = `लगातार सही: ${npd(streak)} · उत्कृष्ट: ${npd(best)}${streak >= 10 ? ' · 🏅 ने.सं. जानकार!' : ''}`;
+        setTimeout(ask, ok ? 900 : 1600);
+      };
+      box.appendChild(b);
+    });
+  }
+  document.getElementById('qStreak').textContent = `उत्कृष्ट: ${npd(best)}`;
+  ask();
+})();
+
+/* ═══════════ Name → Newa ═══════════ */
+(() => {
+  const i = document.getElementById('nameIn'), o = document.getElementById('nameOut');
+  const up = () => { o.textContent = NEWA(i.value); };
+  i.addEventListener('input', up); up();
+  document.getElementById('copyName').onclick = () => navigator.clipboard?.writeText(o.textContent);
+})();
+
+/* ═══════════ Starfield (calm, subtle) ═══════════ */
+(() => {
+  const c = document.getElementById('stars'), x = c.getContext('2d'); let W, H, S = [];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const size = () => { W = c.width = innerWidth * devicePixelRatio; H = c.height = innerHeight * devicePixelRatio; S = Array.from({ length: 180 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.4 + .2, p: Math.random() * 6.28 })); };
+  size(); addEventListener('resize', size);
+  const draw = (t) => {
+    x.clearRect(0, 0, W, H);
+    for (const s of S) { x.globalAlpha = .35 + .35 * Math.sin(t / 1400 + s.p); x.fillStyle = '#fff4d6'; x.beginPath(); x.arc(s.x, s.y, s.r * devicePixelRatio, 0, 6.28); x.fill(); }
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  requestAnimationFrame(draw);
+})();
+
+/* ═══════════ Boot ═══════════ */
+document.getElementById('range').textContent = `ने.सं. ${npd(D.seg[0][1])}–${npd(D.seg[D.seg.length - 1][1])} (${D.start} देखि ${isoOf(N - 1)})`;
+buildYantra(); buildPetals(); render();
+</script>
+</body>
+</html>
