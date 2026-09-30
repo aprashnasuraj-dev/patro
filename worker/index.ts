@@ -7,9 +7,10 @@ import { dailyWeatherResponse } from "./weather";
 import { communityResponse } from "./community";
 import { adminResponse } from "./admin";
 import { publicApiResponse } from "./public-api";
-import { pushResponse, dispatchDuePushJobs } from "./push";
+import { pushResponse } from "./push";
 import { privateResponse } from "./private";
 import { authResponse } from "./auth";
+import { cronResponse, runScheduled } from "./jobs";
 
 type Env = {
   DB?: any;
@@ -42,8 +43,6 @@ type Env = {
   CRON_SECRET?: string;
 };
 
-const DEFAULT_ROUTER = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router";
-const DEFAULT_PROTECTED = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected";
 const APOD_PRIMARY = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
 const APOD_LEGACY = "https://api.nasa.gov/planetary/apod";
 const APOD_FALLBACK = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moon_2026_print.jpg";
@@ -314,27 +313,6 @@ async function nativeMarketLatest(env: Env, kind: "forex" | "index") {
   } catch {
     return null;
   }
-}
-
-async function compat(request: Request, env: Env, base: "router" | "protected" = "router", overridePath?: string) {
-  const incoming = new URL(request.url);
-  const origin = base === "protected"
-    ? (env.SUPABASE_PROTECTED_ORIGIN || DEFAULT_PROTECTED)
-    : (env.SUPABASE_COMPAT_ORIGIN || DEFAULT_ROUTER);
-  const target = new URL(origin.replace(/\/$/,"") + (overridePath || incoming.pathname.replace(/^\/api\/v1/, "")));
-  if (!target.search) target.search = incoming.search;
-
-  const headers = new Headers(request.headers);
-  headers.delete("host");
-  headers.delete("content-length");
-
-  const init: RequestInit = { method: request.method, headers, redirect: "manual" };
-  if (request.method !== "GET" && request.method !== "HEAD") init.body = request.body;
-  const response = await fetch(target.toString(), init);
-  const out = new Headers(response.headers);
-  out.set("x-patro-backend", "supabase-compat");
-  out.set("x-content-type-options", "nosniff");
-  return new Response(response.body, { status: response.status, headers: out });
 }
 
 async function edgeCached(request: Request, ctx: ExecutionContext, ttl: number, producer: () => Promise<Response>) {
@@ -639,6 +617,8 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   if (privateNative) return privateNative;
   const pushNative = await pushResponse(request,env);
   if (pushNative) return pushNative;
+  const cronNative = await cronResponse(request,env);
+  if (cronNative) return cronNative;
   const publicNative = await publicApiResponse(request,env);
   if (publicNative) return publicNative;
   const communityNative = await communityResponse(request,env);
@@ -842,10 +822,7 @@ export default {
 
     return secureResponse(request, response);
   },
-  async scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
-    ctx.waitUntil(dispatchDuePushJobs(env,100).then(()=>undefined).catch(()=>undefined));
-    if (env.CACHE) {
-      ctx.waitUntil(env.CACHE.put("cron:last_run",new Date().toISOString(),{expirationTtl:86400}).catch(()=>undefined));
-    }
+  async scheduled(controller: any, env: Env, ctx: ExecutionContext): Promise<void> {
+    ctx.waitUntil(runScheduled(String(controller?.cron || ""),env).then(()=>undefined));
   }
 };
