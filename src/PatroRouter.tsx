@@ -15,7 +15,7 @@ const PatroToolsShell = lazy(() => import("./patro-tools-integration/PatroToolsS
 const CommunityPreferences = lazy(() => import("./community/CommunityPreferences").then((m) => ({ default: m.CommunityPreferences })));
 const CommunityAdmin = lazy(() => import("./community/CommunityAdmin").then((m) => ({ default: m.CommunityAdmin })));
 
-const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites"]);
+const NATIVE_PATHS = new Set(["/news","/history","/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites"]);
 
 const PROTECTED_TOOL_PATHS = new Set([
   "/tools/tithi",
@@ -33,6 +33,11 @@ function isNativePath(path: string) {
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
+}
+
+function RouteAlias({to}:{to:string}) {
+  useEffect(()=>{ window.location.replace(to); },[to]);
+  return <RouteFallback />;
 }
 
 function RouteFallback() {
@@ -83,6 +88,8 @@ export function PatroRouter() {
   }, []);
 
   const renderRoute = () => {
+    if (path === "/news") return <RouteAlias to="/samachar" />;
+    if (path === "/history") return <RouteAlias to="/on-this-day" />;
     if (path === "/settings/community") return <CommunityPreferences />;
     if (path === "/admin/community-suites") return <CommunityAdmin />;
     if (path === "/explore") return <FeatureHub />;
