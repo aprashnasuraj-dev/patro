@@ -19,7 +19,7 @@ jobs:
           node-version: 22
           cache: npm
           cache-dependency-path: package.json
-      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - run: npm run build
 
   migration-verify:
@@ -33,6 +33,6 @@ jobs:
           node-version: 22
           cache: npm
           cache-dependency-path: package.json
-      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - run: npm run cloudflare:verify-inventory
       - run: npm run cloudflare:verify-snapshot
