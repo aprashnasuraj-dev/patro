@@ -17,7 +17,7 @@ Private/user/operational Supabase rows are intentionally excluded from this publ
 Before Cloudflare resources are connected:
 
 ```bash
-npm ci
+npm install --ignore-scripts --no-audit --no-fund
 npm run cloudflare:validate
 ```
 
@@ -29,7 +29,8 @@ This checks the frontend build, Worker dry-run, all 78 astronomy snapshot parts,
 The Pages project uses `functions/[[path]].js` plus the `PATRO_API` service binding. Static Astro/tools/community routes continue to Pages assets, while root/calendar/search/planner/API/protected-tool routes are forwarded internally to the `mero-patro` Worker. `public/_routes.json` is copied into the final `dist/` output so this behavior is deterministic in Pages deployments.
 
 The route classifier is covered by `tests/cloudflare-pages-routing.test.mjs` and runs in the Cloudflare migration CI workflow.
-\n## First D1/KV deployment
+
+## First D1/KV deployment
 
 After creating Cloudflare D1 and KV, provide their IDs as environment variables:
 
@@ -43,9 +44,9 @@ export CF_KV_PREVIEW_NAMESPACE_ID=...
 npm run deploy:cloudflare:bootstrap
 ```
 
-Bootstrap order is schema migrations, deterministic public/reference content import, database inventory query, then Worker deployment. The generated bulk import is written to `.cloudflare/d1-import/content-snapshot.sql` and is not committed.
+Bootstrap order is schema migrations, canonical public/reference content import, exact remote D1 parity verification, then Worker deployment. The generated bulk import is written to `.cloudflare/d1-import/content-snapshot.sql` and is not committed.
 
-The bulk import contains no explicit `BEGIN TRANSACTION` / `COMMIT` wrappers and keeps every generated SQL statement below Cloudflare D1's 100 KB statement limit.
+The bulk import is generated from `migration/data/public` plus the retained 22-row universal Rashifal seed. It excludes private/user tables, chunk-rewrites oversized payloads, contains no explicit `BEGIN TRANSACTION` / `COMMIT` wrappers, and keeps every emitted SQL statement below Cloudflare D1's 100 KB statement limit.
 
 ## Routine deployment
 

@@ -376,6 +376,69 @@ async function nativeTimeMachine(request: Request, env: Env) {
   } catch { return null; }
 }
 
+const RASHIFAL_SIGNS = new Set(["aries","taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius","capricorn","aquarius","pisces"]);
+
+function rashifalQuery(url: URL) {
+  const allowed = new Set(["period","system","calendar","date","sign"]);
+  const seen = new Set<string>();
+  const values: Record<string,string> = {};
+  for (const [key,value] of url.searchParams) {
+    if (!allowed.has(key)) continue;
+    if (seen.has(key)) throw new Error("invalid_query_parameter");
+    seen.add(key);
+    values[key] = value;
+  }
+  const period = values.period || "daily";
+  const system = values.system || "vedic";
+  const calendar = values.calendar || "bs";
+  const date = values.date || todayNepal();
+  const sign = values.sign || "";
+  const year = Number(date.slice(0,4));
+  if (!["daily","weekly","monthly"].includes(period)) throw new Error("invalid_query_parameter");
+  if (!["vedic","western"].includes(system)) throw new Error("invalid_query_parameter");
+  if (!["bs","gregorian"].includes(calendar)) throw new Error("invalid_query_parameter");
+  if (sign && !RASHIFAL_SIGNS.has(sign)) throw new Error("invalid_query_parameter");
+  if (!validDate(date) || year < 2000 || year > 2040) throw new Error("invalid_date");
+  return {period,system,calendar,date,sign};
+}
+
+async function nativeRashifalUniversal(request: Request, env: Env) {
+  if (!env.DB || request.method !== "GET") return null;
+  let query: ReturnType<typeof rashifalQuery>;
+  try {
+    query = rashifalQuery(new URL(request.url));
+  } catch (error) {
+    const detail = String((error as Error)?.message || "invalid_query_parameter");
+    return json({detail},400,"no-store");
+  }
+
+  try {
+    const row = await env.DB.prepare(
+      "select payload from content_records " +
+      "where table_name='miti_rashifal_publications' " +
+      "and json_extract(payload,'$.period')=?1 " +
+      "and json_extract(payload,'$.system')=?2 " +
+      "and json_extract(payload,'$.calendar')=?3 " +
+      "and json_extract(payload,'$.period_window.start_date')<=?4 " +
+      "and json_extract(payload,'$.period_window.end_date_exclusive')>?4 " +
+      "order by json_extract(payload,'$.created_at') desc limit 1"
+    ).bind(query.period,query.system,query.calendar,query.date).first();
+
+    const publication:any = parseRecord(row);
+    const payload = publication?.payload;
+    if (!payload || typeof payload !== "object") return null;
+    const body = query.sign
+      ? {...payload,readings:Array.isArray(payload.readings) ? payload.readings.filter((reading:any) => reading?.sign?.id === query.sign) : []}
+      : payload;
+    const response = json(body,200,"public, max-age=60, s-maxage=600, stale-while-revalidate=3600");
+    const headers = new Headers(response.headers);
+    headers.set("x-patro-backend","cloudflare-d1-rashifal");
+    return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  } catch {
+    return null;
+  }
+}
+
 async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   const path = url.pathname;
@@ -417,6 +480,9 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   if (path === "/api/v1/radio/stream" && (request.method === "GET" || request.method === "HEAD")) {
     if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return compat(request,env,"router","/radio/stream");
     return radioStreamResponse(request,env);
+  }
+  if (path === "/api/v1/rashifal/universal" && request.method === "GET") {
+    return edgeCached(request,ctx,600,async() => (await nativeRashifalUniversal(request,env)) || compat(request,env,"router","/rashifal/universal"));
   }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
     return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(env)) || compat(request,env));
@@ -532,6 +598,8 @@ export default {
       response = (await fmResponse(request,env)) || await compat(request,env,"protected",path);
     } else if (path === "/api/jyotish-chat") {
       response = await compat(request,env,"router","/jyotish-chat");
+    } else if (path === "/api/rashifal/universal" && request.method === "GET") {
+      response = (await nativeRashifalUniversal(request,env)) || await compat(request,env,"protected","/api/rashifal/universal");
     } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
       response = await compat(request,env,"protected","/api/rashifal/personalized");
     } else {
