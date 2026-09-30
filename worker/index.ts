@@ -280,6 +280,33 @@ async function contentByDay(env: Env, table: string, month: number, day: number,
   }
 }
 
+async function nativeMarketLatest(env: Env, kind: "forex" | "index") {
+  if (!env.DB) return null;
+  try {
+    const out = await env.DB.prepare(
+      "select payload from content_records where table_name = 'market_snapshots' and category = ?1 order by updated_at desc limit 200"
+    ).bind(kind).all();
+    const latest = new Map<string, any>();
+    for (const row of out.results || []) {
+      const item = parseRecord(row);
+      if (!item?.asset || !item?.as_of) continue;
+      const previous = latest.get(String(item.asset));
+      if (!previous || String(item.as_of) > String(previous.as_of)) latest.set(String(item.asset), item);
+    }
+    const items = Array.from(latest.values()).sort((a:any,b:any)=>String(a.asset).localeCompare(String(b.asset)));
+    if (!items.length) return null;
+    return {
+      ok: true,
+      kind,
+      as_of: items.reduce((max:string,item:any)=>String(item.as_of)>max?String(item.as_of):max,""),
+      source: "Cloudflare D1 migrated market_snapshots",
+      items
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function compat(request: Request, env: Env, base: "router" | "protected" = "router", overridePath?: string) {
   const incoming = new URL(request.url);
   const origin = base === "protected"
@@ -641,6 +668,14 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
     return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(request,env)) || compat(request,env));
+  }
+  if (path === "/api/v1/markets/latest" && request.method === "GET") {
+    const kind = url.searchParams.get("kind") || "forex";
+    if (kind !== "forex" && kind !== "index") return json({error:"unsupported_market_kind",allowed:["forex","index"]},400);
+    return edgeCached(request,ctx,900,async() => {
+      const payload = await nativeMarketLatest(env,kind);
+      return payload ? json(payload) : json({error:"market_snapshot_unavailable",kind},503);
+    });
   }
   if (path === "/api/v1/on-this-day" && request.method === "GET") {
     return edgeCached(request,ctx,86400,async() => (await nativeHistory(request,env)) || compat(request,env,"router","/on-this-day"));
