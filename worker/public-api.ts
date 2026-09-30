@@ -151,6 +151,17 @@ async function tithiDerive(request:Request,url:URL){
   const time=body.time||url.searchParams.get("time")||undefined,system=(body.system||url.searchParams.get("system")||"purnimanta") as "purnimanta"|"amanta";
   try{return json({ok:true,date,rule:ruleFromDate(date,{time,observance,loc:KATHMANDU,system})});}catch(e){return json({ok:false,error:String((e as Error).message||e)},400)}
 }
+async function newsLatest(env:PublicEnv,url:URL){
+  const limit=Math.min(100,Math.max(1,Number(url.searchParams.get("limit")||"30")));
+  const category=(url.searchParams.get("category")||"").trim().toLowerCase();
+  const q=(url.searchParams.get("q")||"").trim().toLowerCase();
+  let rows=await query(env,"select payload from content_records where table_name='news_items' order by json_extract(payload,'$.published_at') desc,updated_at desc limit ?1",[Math.max(limit*5,100)]);
+  if(category&&category!=="all")rows=rows.filter((row:any)=>String(row.category||row.category_raw||"").toLowerCase()===category);
+  if(q)rows=rows.filter((row:any)=>(String(row.title||"")+" "+String(row.excerpt||"")+" "+String(row.source_id||"")).toLowerCase().includes(q));
+  const items=rows.slice(0,limit);
+  return json({ok:true,count:items.length,items,source:"Cloudflare D1 migrated news_items"},200,"public, max-age=60, s-maxage=600, stale-while-revalidate=1800");
+}
+
 async function latestMarket(env:PublicEnv,url:URL){
   const kind=url.searchParams.get("kind");
   const kinds=kind?[kind]:["forex","index"];const result:any={ok:true,as_of:null,items:[]};
@@ -283,6 +294,7 @@ export async function publicApiResponse(request:Request,env:PublicEnv):Promise<R
  if(path==="/api/v1/festivals"&&request.method==="GET")return festivalsRoute(env,url);
  if(path==="/api/v1/holidays"&&request.method==="GET")return holidaysRoute(env,url);
  if(path==="/api/v1/market/latest"&&request.method==="GET")return latestMarket(env,url);
+ if(path==="/api/v1/news/latest"&&request.method==="GET")return newsLatest(env,url);
  if(path==="/api/v1/openapi.json"&&request.method==="GET")return json(openapi(),200,LONG);
  if(path==="/api/v1/panchang"&&request.method==="GET")return panchangRoute(env,url);
  if(path==="/api/v1/tithi/derive"&&["GET","POST"].includes(request.method))return tithiDerive(request,url);
