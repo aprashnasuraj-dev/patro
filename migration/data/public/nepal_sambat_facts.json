@@ -1,0 +1,177 @@
+{
+  "table": "nepal_sambat_facts",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "fact_key": "traditional_year_boundary",
+      "title_ne": "परम्परागत वर्ष सीमा",
+      "title_en": "Traditional year boundary",
+      "detail_ne": "नेपाल संवत् कार्तिक शुक्ल प्रतिपदाबाट सुरु भई कार्तिक कृष्ण औंसीमा वर्ष पूरा हुने सरकारी मिति-लेखन मार्गदर्शनमा उल्लेख छ।",
+      "detail_en": "Government date-writing guidance describes the traditional Nepal Sambat year as beginning on Kartika Shukla Pratipada and completing at Kartika Krishna Amavasya.",
+      "source_url": "https://www.mofaga.gov.np/notice-file/Notices-20240108125907641.pdf",
+      "source_authority": "Government of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "traditional_month_boundary",
+      "title_ne": "परम्परागत महिना सीमा",
+      "title_en": "Traditional month boundary",
+      "detail_ne": "प्रत्येक चान्द्र महिना प्रतिपदाबाट सुरु भई औंसीमा पूरा हुने सरकारी मार्गदर्शनमा उल्लेख छ।",
+      "detail_en": "Government guidance describes each traditional lunar month as starting at Pratipada and ending at Amavasya.",
+      "source_url": "https://www.mofaga.gov.np/notice-file/Notices-20240108125907641.pdf",
+      "source_authority": "Government of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "tithi_variability",
+      "title_ne": "तिथि क्षय/वृद्धि",
+      "title_en": "Tithi variability",
+      "detail_ne": "तिथि घट्न वा बढ्न सक्छ; एउटै तिथि दुई दिन देखिन वा कुनै तिथि लोप हुन सक्छ, त्यसैले बार/दिन सन्दर्भ महत्त्वपूर्ण हुन्छ।",
+      "detail_en": "A tithi may repeat or be skipped, so weekday/day context can be necessary for unambiguous notation.",
+      "source_url": "https://www.mofaga.gov.np/notice-file/Notices-20240108125907641.pdf",
+      "source_authority": "Government of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "tithi_numbering",
+      "title_ne": "सरकारी तिथि संख्या",
+      "title_en": "Government tithi numbering",
+      "detail_ne": "मार्गदर्शनमा प्रतिपदा १ देखि चतुर्दशी १४, पूर्णिमा १५ र औंसी ३० लेख्ने उदाहरण दिइएको छ।",
+      "detail_en": "The guidance gives numerical notation from Pratipada 1 through Chaturdashi 14, Purnima 15 and Amavasya 30.",
+      "source_url": "https://www.mofaga.gov.np/notice-file/Notices-20240108125907641.pdf",
+      "source_authority": "Government of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "official_notation_examples",
+      "title_ne": "हालको सरकारी लेखन शैली",
+      "title_en": "Current official notation",
+      "detail_ne": "राष्ट्रपतिको कार्यालयका हालका सूचनामा “ने.सं. ११४६ कछलाथ्व प्रतिपदा”, “वछलाथ्व: पञ्चमी/सप्तमी” र “वछलागा: चतुर्थी” जस्ता लेखन उदाहरण छन्।",
+      "detail_en": "Current Office of the President notices use Nepal Sambat year plus month/paksha/tithi notation.",
+      "source_url": "https://president.gov.np/",
+      "source_authority": "Office of the President of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "new_year_1146",
+      "title_ne": "नेपाल संवत् ११४६ प्रारम्भ",
+      "title_en": "Nepal Sambat 1146 New Year",
+      "detail_ne": "राष्ट्रपतिको २०८२ कात्तिक ५ को शुभकामना सन्देशमा ने.सं. ११४६ कछलाथ्व प्रतिपदा उल्लेख छ।",
+      "detail_en": "The President’s Nepal Sambat 1146 greeting is dated N.S. 1146 Kachhala Thwa Pratipada.",
+      "source_url": "https://president.gov.np/",
+      "source_authority": "Office of the President of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "sankhadhar_context",
+      "title_ne": "शंखधर साख्वा र ऐतिहासिक स्मरण",
+      "title_en": "Sankhadhar Sakhwa historical context",
+      "detail_ne": "राष्ट्रपतिको शुभकामना सन्देशमा शंखधर साख्वाले ऋणमुक्ति र नयाँ युगको सुरुवातसँग नेपाल संवत् प्रचलनमा ल्याएको मान्यता उल्लेख गरिएको छ।",
+      "detail_en": "The President’s greeting describes the tradition linking Sankhadhar Sakhwa, debt relief and the beginning of a new era.",
+      "source_url": "https://president.gov.np/",
+      "source_authority": "Office of the President of Nepal",
+      "source_level": "government",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "npns_current_display",
+      "title_ne": "पञ्चाङ्ग निकायको हालको प्रदर्शन",
+      "title_en": "Current Panchanga-body display",
+      "detail_ne": "नेपाल पञ्चाङ्ग निर्णायक विकास समितिको वेबसाइटमा नेपाल संवत् मिति दैनिक रूपमा वि.सं. सँगै प्रदर्शन हुन्छ।",
+      "detail_en": "The Nepal Panchanga Nirnayak Bikash Samiti website displays a current Nepal Sambat date alongside Bikram Sambat.",
+      "source_url": "https://npns.gov.np/",
+      "source_authority": "Nepal Panchanga Nirnayak Bikash Samiti",
+      "source_level": "official-panchanga-body",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "solar_nepal_sambat",
+      "title_ne": "आधुनिक Solar Nepal Sambat",
+      "title_en": "Modern Solar Nepal Sambat",
+      "detail_ne": "आधुनिक solar Nepal Sambat परम्परागत lunar Nepal Sambat सँग छुट्टै प्रणालीका रूपमा दस्तावेज गरिएको छ; एपले परम्परागत lunar मितिलाई मुख्य सांस्कृतिक तह मानेको छ।",
+      "detail_en": "Modern Solar Nepal Sambat is documented separately; this app keeps the traditional lunar Nepal Sambat as its primary cultural layer.",
+      "source_url": "https://nepalsambat.org/solar-calendar/",
+      "source_authority": "Nepal Sambat cultural reference",
+      "source_level": "cultural-reference",
+      "metadata": {
+        "solar_epoch": "2020-10-20",
+        "solar_epoch_ns": "1141-01-01"
+      },
+      "updated_at": "2026-09-19 00:11:27.447163+00"
+    },
+    {
+      "fact_key": "government_2080_07_27",
+      "title_ne": "सरकारी कागजातमा नेपाल संवत्",
+      "title_en": "Nepal Sambat in government documents",
+      "detail_ne": "नेपाल सरकार मन्त्रिपरिषद्को २०८०/०७/२७ को निर्णयअनुसार विक्रम संवत् उल्लेख गरिने सरकारी कागजातमा नेपाल संवत् समेत उल्लेख गर्ने व्यवस्था कार्यान्वयन गर्न निर्देशन गरिएको छ।",
+      "detail_en": "A Government of Nepal implementation letter records the 2080/07/27 Cabinet decision to include Nepal Sambat where Bikram Sambat is written in government documents.",
+      "source_url": "https://daobardiya.moha.gov.np/upload/aff702e6cd5af671c163358ce68dce56/files/%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2_%E0%A4%B8%E0%A4%82%E0%A4%B5%E0%A4%A4_2_9.pdf",
+      "source_authority": "Government of Nepal",
+      "source_level": "government-primary",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "fact_key": "lunar_structure",
+      "title_ne": "चन्द्रमानक नेपाल संवत्",
+      "title_en": "Lunar Nepal Sambat structure",
+      "detail_ne": "चन्द्रमानक नेपाल संवत् सामान्यतः १२ महिनाको हुन्छ; अधिक मासमा १३ महिना र दुर्लभ क्षय अवस्थामा ११ महिना हुन सक्छ। औंसीपछि महिना सुरु भई अर्को औंसीमा समाप्त हुन्छ।",
+      "detail_en": "The traditional Nepal Sambat is lunisolar: usually 12 lunar months, sometimes an intercalary 13th month, with rare reduced-month cases.",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "source_authority": "Nepal Sambat cultural reference",
+      "source_level": "cultural-reference",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "fact_key": "thwa_ga",
+      "title_ne": "थ्व र गाः",
+      "title_en": "Thwa and Gā fortnights",
+      "detail_ne": "पूर्णिमातर्फको उज्यालो पक्षलाई थ्व र औंसीतर्फको अँध्यारो पक्षलाई गाः भनिन्छ।",
+      "detail_en": "The waxing/bright fortnight is Thwa and the waning/dark fortnight is Gā.",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "source_authority": "Nepal Sambat cultural reference",
+      "source_level": "cultural-reference",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "fact_key": "solar_week",
+      "title_ne": "सौर्यमानक साता नाम",
+      "title_en": "Solar Nepal Sambat weekday names",
+      "detail_ne": "Solar Nepal Sambat ले निन्हि, मिन्हि, इनान्हि, सुन्हि, सिँन्हि, लुँन्हि र संन्हि जस्ता नेपालभाषा weekday नाम दस्तावेज गर्छ।",
+      "detail_en": "The Solar Nepal Sambat reference documents Nepal Bhasa weekday names from Ninhi through Sanhi.",
+      "source_url": "https://nepalsambat.org/solar-calendar/",
+      "source_authority": "Nepal Sambat cultural reference",
+      "source_level": "cultural-reference",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "fact_key": "bagmati_language_act",
+      "title_ne": "बागमती प्रदेश कानुनी सन्दर्भ",
+      "title_en": "Bagmati Province legal context",
+      "detail_ne": "बागमती प्रदेश सरकारी कामकाजको भाषा ऐन, २०८० ले पत्राचार र सार्वजनिक सूचनामा नेपालभाषाको नेपाल संवत् समेत लेख्न सकिने व्यवस्था उल्लेख गर्छ।",
+      "detail_en": "Bagmati Province's official-language law allows Nepal Sambat notation in provincial/local correspondence and public notices.",
+      "source_url": "https://moial.bagamati.gov.np/storage/866/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A6%E0%A5%87%E0%A4%B6-%E0%A4%B8%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80-%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%95%E0%A4%BE%E0%A4%9C%E0%A4%95%E0%A5%8B-%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE-%E0%A4%90%E0%A4%A8%2C-%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A6.pdf",
+      "source_authority": "Bagmati Province",
+      "source_level": "province-law",
+      "metadata": {},
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    }
+  ]
+}

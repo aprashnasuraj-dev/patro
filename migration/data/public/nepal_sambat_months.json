@@ -1,0 +1,186 @@
+{
+  "table": "nepal_sambat_months",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "month_no": 13,
+      "name_newa": "𑐀𑐣𑐮𑐵",
+      "name_devanagari": "अनला",
+      "name_roman": "Analā",
+      "corresponding_lunar_month": "intercalary",
+      "full_moon_name": "Analā Punhi",
+      "month_kind": "intercalary",
+      "metadata": {}
+    },
+    {
+      "month_no": 14,
+      "name_newa": "𑐴𑑂𑐣𑑄𑐮𑐵",
+      "name_devanagari": "न्हंला",
+      "name_roman": "Nhanlā",
+      "corresponding_lunar_month": "reduced month",
+      "full_moon_name": "",
+      "month_kind": "reduced",
+      "metadata": {}
+    },
+    {
+      "month_no": 1,
+      "name_newa": "𑐎𑐕𑐮𑐵",
+      "name_devanagari": "कछला",
+      "name_roman": "Kachhalā",
+      "corresponding_lunar_month": "Kartika",
+      "full_moon_name": "Saki Milā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 30
+      }
+    },
+    {
+      "month_no": 2,
+      "name_newa": "𑐠𑐶𑑄𑐮𑐵",
+      "name_devanagari": "थिंला",
+      "name_roman": "Thinlā",
+      "corresponding_lunar_month": "Margashirsha",
+      "full_moon_name": "Yomari Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 30
+      }
+    },
+    {
+      "month_no": 3,
+      "name_newa": "𑐥𑑂𑐰𑑃𑐴𑐾𑐮𑐵",
+      "name_devanagari": "प्वँहेला",
+      "name_roman": "Pwanhelā",
+      "corresponding_lunar_month": "Pausha",
+      "full_moon_name": "Milā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 30
+      }
+    },
+    {
+      "month_no": 4,
+      "name_newa": "𑐳𑐶𑐮𑐵",
+      "name_devanagari": "सिला",
+      "name_roman": "Silā",
+      "corresponding_lunar_month": "Magha",
+      "full_moon_name": "Si Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 30
+      }
+    },
+    {
+      "month_no": 5,
+      "name_newa": "𑐔𑐶𑐮𑐵",
+      "name_devanagari": "चिला",
+      "name_roman": "Chilā",
+      "corresponding_lunar_month": "Phalguna",
+      "full_moon_name": "Holi Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 30
+      }
+    },
+    {
+      "month_no": 6,
+      "name_newa": "𑐔𑑁𑐮𑐵",
+      "name_devanagari": "चौला",
+      "name_roman": "Chaulā",
+      "corresponding_lunar_month": "Chaitra",
+      "full_moon_name": "Lhuti Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 29
+      }
+    },
+    {
+      "month_no": 7,
+      "name_newa": "𑐧𑐕𑐮𑐵",
+      "name_devanagari": "बछला",
+      "name_roman": "Bachhalā",
+      "corresponding_lunar_month": "Vaishakha",
+      "full_moon_name": "Swānyā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 31
+      }
+    },
+    {
+      "month_no": 8,
+      "name_newa": "𑐟𑐕𑐮𑐵",
+      "name_devanagari": "तछला",
+      "name_roman": "Tachhalā",
+      "corresponding_lunar_month": "Jyeshtha",
+      "full_moon_name": "Jyā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 31
+      }
+    },
+    {
+      "month_no": 9,
+      "name_newa": "𑐡𑐶𑐮𑐵",
+      "name_devanagari": "दिला",
+      "name_roman": "Dilā",
+      "corresponding_lunar_month": "Ashadha",
+      "full_moon_name": "Dillā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 31
+      }
+    },
+    {
+      "month_no": 10,
+      "name_newa": "𑐐𑐸𑑄𑐮𑐵",
+      "name_devanagari": "गुंला",
+      "name_roman": "Gunlā",
+      "corresponding_lunar_month": "Shravana",
+      "full_moon_name": "Gun Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 31
+      }
+    },
+    {
+      "month_no": 11,
+      "name_newa": "𑐫𑑄𑐮𑐵",
+      "name_devanagari": "यंला",
+      "name_roman": "Yanlā",
+      "corresponding_lunar_month": "Bhadrapada",
+      "full_moon_name": "Yenyā Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "variant_spellings": [
+          "ञंला",
+          "यँला"
+        ],
+        "solar_days_regular": 31
+      }
+    },
+    {
+      "month_no": 12,
+      "name_newa": "𑐎𑑁𑐮𑐵",
+      "name_devanagari": "कौला",
+      "name_roman": "Kaulā",
+      "corresponding_lunar_month": "Ashwina",
+      "full_moon_name": "Katin Punhi",
+      "month_kind": "regular",
+      "metadata": {
+        "source": "https://nepalsambat.org/solar-calendar/",
+        "solar_days_regular": 31
+      }
+    }
+  ]
+}
