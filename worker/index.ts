@@ -309,6 +309,25 @@ async function nativeMarketLatest(env: Env, kind: "forex" | "index") {
   }
 }
 
+async function nativeNewsLatest(request: Request, env: Env) {
+  if (!env.DB) return null;
+  const url = new URL(request.url);
+  const limit = Math.min(12, Math.max(1, Number(url.searchParams.get("limit") || "5")));
+  try {
+    const out = await env.DB.prepare(
+      "select payload from content_records where table_name='news_items' order by json_extract(payload,'$.published_at') desc, updated_at desc limit ?1"
+    ).bind(limit).all();
+    const items = (out.results || []).map(parseRecord).filter((item:any) =>
+      item && typeof item.title === "string" && /^https:\/\//i.test(String(item.url || ""))
+    );
+    if (!items.length) return null;
+    return json({ok:true,source:"Cloudflare D1 migrated news_items",returned:items.length,items},
+      200,"public, max-age=120, s-maxage=900, stale-while-revalidate=3600");
+  } catch {
+    return null;
+  }
+}
+
 async function compat(request: Request, env: Env, base: "router" | "protected" = "router", overridePath?: string) {
   const incoming = new URL(request.url);
   const origin = base === "protected"
@@ -685,6 +704,9 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
       return payload ? json(payload) : json({error:"market_snapshot_unavailable",kind},503);
     });
   }
+  if (path === "/api/v1/news/latest" && request.method === "GET") {
+    return edgeCached(request,ctx,900,async() => (await nativeNewsLatest(request,env)) || compat(request,env,"protected","/api/samachar/feed"));
+  }
   if (path === "/api/v1/on-this-day" && request.method === "GET") {
     return edgeCached(request,ctx,86400,async() => (await nativeHistory(request,env)) || compat(request,env,"router","/on-this-day"));
   }
@@ -721,6 +743,8 @@ function protectedToolPath(path: string) {
 
 function staticRewriteTarget(path: string) {
   const exact: Record<string,string> = {
+    "/news": "/astro/index.html",
+    "/history": "/astro/index.html",
     "/astro": "/astro/index.html",
     "/jyotish/janma-patro": "/astro/index.html",
     "/jyotish/matchmaking": "/astro/index.html",
