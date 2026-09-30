@@ -37,19 +37,23 @@ jobs:
           for (const file of fs.readdirSync(dir).filter((name) => name.endsWith(".json"))) {
             let lhr;
             try { lhr = JSON.parse(fs.readFileSync(dir + "/" + file, "utf8")); } catch { continue; }
-            if (!lhr?.categories?.seo) continue;
             const url = lhr.finalDisplayedUrl || lhr.finalUrl || lhr.requestedUrl || file;
             console.log("\nLighthouse diagnostics:", url);
-            for (const ref of lhr.categories.seo.auditRefs || []) {
-              const audit = lhr.audits?.[ref.id];
-              if (!audit || audit.score === null || audit.score >= 1) continue;
-              console.log(JSON.stringify({
-                id: ref.id,
-                score: audit.score,
-                title: audit.title,
-                description: audit.description,
-                displayValue: audit.displayValue || null
-              }));
+            for (const categoryId of ["seo", "accessibility"]) {
+              const category = lhr?.categories?.[categoryId];
+              if (!category) continue;
+              for (const ref of category.auditRefs || []) {
+                const audit = lhr.audits?.[ref.id];
+                if (!audit || audit.score === null || audit.score >= 1) continue;
+                console.log(JSON.stringify({
+                  category: categoryId,
+                  id: ref.id,
+                  score: audit.score,
+                  title: audit.title,
+                  description: audit.description,
+                  displayValue: audit.displayValue || null
+                }));
+              }
             }
           }
           NODE
