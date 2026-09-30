@@ -17,7 +17,7 @@ Private/user/operational Supabase rows are intentionally excluded from this publ
 Before Cloudflare resources are connected:
 
 ```bash
-npm ci
+npm install --ignore-scripts --no-audit --no-fund
 npm run cloudflare:validate
 ```
 
@@ -43,9 +43,9 @@ export CF_KV_PREVIEW_NAMESPACE_ID=...
 npm run deploy:cloudflare:bootstrap
 ```
 
-Bootstrap order is schema migrations, deterministic public/reference content import, database inventory query, then Worker deployment. The generated bulk import is written to `.cloudflare/d1-import/content-snapshot.sql` and is not committed.
+Bootstrap order is schema migrations, canonical public/reference content import, exact remote D1 parity verification, then Worker deployment. The generated bulk import is written to `.cloudflare/d1-import/content-snapshot.sql` and is not committed.
 
-The bulk import contains no explicit `BEGIN TRANSACTION` / `COMMIT` wrappers and keeps every generated SQL statement below Cloudflare D1's 100 KB statement limit.
+The bulk import is generated from `migration/data/public` plus the retained 22-row universal Rashifal seed. It excludes private/user tables, chunk-rewrites oversized payloads, contains no explicit `BEGIN TRANSACTION` / `COMMIT` wrappers, and keeps every emitted SQL statement below Cloudflare D1's 100 KB statement limit.
 
 ## Routine deployment
 
