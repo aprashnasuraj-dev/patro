@@ -4,8 +4,30 @@ import { resolve } from "node:path";
 const root = process.cwd();
 const expected = JSON.parse(await readFile(resolve(root, "cloudflare/d1/expected-public-counts.json"), "utf8"));
 const inventory = JSON.parse(await readFile(resolve(root, "cloudflare/d1/supabase-table-inventory.json"), "utf8"));
+const runtimeManifest = JSON.parse(await readFile(resolve(root, "cloudflare/source-runtime-manifest.json"), "utf8"));
 
 const failures = [];
+
+for (const [slug, item] of Object.entries(runtimeManifest.canonical_functions || {})) {
+  if (item.repo_exact !== true) failures.push(`${slug}: live source is not marked repo_exact`);
+  for (const path of [
+    `migration/cloudflare/supabase/function-source/${slug}/index.ts`,
+    `cloudflare/converted-functions/${slug}/index.ts`
+  ]) {
+    try {
+      const source = await readFile(resolve(root, path), "utf8");
+      if (path.includes("/converted-functions/")) {
+        if (source.includes("Deno.serve(")) failures.push(`${slug}: converted output still contains Deno.serve`);
+        if (source.includes("Deno.env.get")) failures.push(`${slug}: converted output still contains Deno.env.get`);
+        if (/["']npm:/.test(source)) failures.push(`${slug}: converted output still contains npm: specifier`);
+      }
+    } catch {
+      failures.push(`${slug}: missing required migration artifact ${path}`);
+    }
+  }
+}
+
+if (Object.keys(runtimeManifest.canonical_functions || {}).length !== 11) failures.push("expected 11 canonical live Edge Functions in source-runtime-manifest.json");
 const entries = Object.entries(inventory.tables || {});
 if (entries.length !== inventory.table_count) failures.push(`inventory table_count=${inventory.table_count}, actual entries=${entries.length}`);
 

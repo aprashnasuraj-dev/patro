@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "project": {
+    "id": "prj_MgvAT0zpe4JsrJDTHhpXgcgJLyov",
+    "name": "patro",
+    "team_id": "team_CRsXSWBw5O8e3d9Un3xGAFqZ"
+  },
+  "stable_production": {
+    "alias": "patro-blush.vercel.app",
+    "deployment_id": "dpl_9snU1bYk438E1f9KMZRAQqKvyU4G",
+    "deployment_url": "patro-drtqt1u00-surajdev2.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "source": "git",
+    "github_ref": "main",
+    "github_commit_sha": "d930f76f0334afa02822e549f20651c353343a5b",
+    "github_commit_message": "Data snapshot: astronomy calendar map 051-055",
+    "aliases": [
+      "patro-blush.vercel.app",
+      "patro-surajdev2.vercel.app",
+      "patro-git-main-surajdev2.vercel.app"
+    ],
+    "regions": [
+      "iad1"
+    ]
+  },
+  "repository_config": [
+    "vercel.json"
+  ],
+  "secret_policy": {
+    "secret_values_copied_to_git": false,
+    "note": "Vercel secret/environment values are intentionally not committed. Required runtime secret names are tracked in cloudflare/secrets-manifest.json and must be set as Cloudflare secrets."
+  }
+}

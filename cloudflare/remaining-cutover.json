@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "branch": "cloudflare-migration",
+  "status": {
+    "latest_live_function_sources_copied": "11/11",
+    "latest_live_function_module_conversions_present": "11/11",
+    "historical_preview_or_backup_functions_required": false,
+    "public_reference_snapshot_complete": true,
+    "astronomy_calendar_rows": 77070,
+    "astronomy_coverage": [
+      "1826-04-11",
+      "2037-04-13"
+    ],
+    "cloudflare_native_runtime_complete": false,
+    "safe_to_delete_supabase": false,
+    "safe_to_delete_vercel": false
+  },
+  "already_native_or_local_first": {
+    "worker_endpoints": [
+      "/api/v1/health",
+      "/api/v1/sync",
+      "/api/v1/astronomy/tithi",
+      "/api/v1/jyotish-chat",
+      "/api/v1/nasa/apod",
+      "/api/v1/nasa/cosmic",
+      "/api/v1/radio/catalog",
+      "/api/v1/radio/stream",
+      "/api/v1/rashifal/universal",
+      "/api/v1/tools/catalog",
+      "/api/v1/on-this-day",
+      "/api/v1/time-machine"
+    ],
+    "worker_modules": [
+      "worker/tithi.ts",
+      "worker/cosmic.ts",
+      "worker/fm.ts",
+      "worker/radio.ts",
+      "worker/jyotish.ts"
+    ],
+    "data_target": "Cloudflare D1 + KV/Cache API"
+  },
+  "remaining_native_port_groups": [
+    {
+      "group": "router_public_api",
+      "blocking_supabase_deletion": true,
+      "routes": [
+        "/api/v1/today",
+        "/api/v1/convert",
+        "/api/v1/festivals",
+        "/api/v1/holidays",
+        "/api/v1/market/latest",
+        "/api/v1/openapi.json",
+        "/api/v1/panchang",
+        "/api/v1/tithi/derive",
+        "/api/v1/tithi/next",
+        "/api/v1/calendar/:year/:month",
+        "/api/v1/rashifal/metadata",
+        "/api/v1/rashifal/personalized",
+        "/api/v1/rashifal/service-token-hash",
+        "/api/v1/cron/rashifal",
+        "/api/v1/typing/lexicon",
+        "/api/v1/tools/tithi-feed-token",
+        "/api/v1/tools/tithi-feed.ics",
+        "/api/v1/tools/official-sait",
+        "/api/v1/communities",
+        "/api/v1/communities/feed.ics",
+        "/api/v1/communities/lho",
+        "/api/v1/communities/:suite",
+        "/api/v1/communities/:suite/ics",
+        "/api/v1/hijri",
+        "/api/v1/hijri/ramadan",
+        "/api/v1/nepal-sambat",
+        "/api/v1/nepal-sambat/festivals",
+        "/api/v1/nepal-sambat/convert",
+        "/api/v1/nepal-sambat/ics",
+        "/api/v1/community-preferences",
+        "/api/v1/admin/community-overrides",
+        "/api/v1/admin/ns-festival-dates",
+        "/api/v1/doctor",
+        "/api/v1/noc/fuel-prices",
+        "/api/v1/media/proxy"
+      ]
+    },
+    {
+      "group": "private_auth_and_user_state",
+      "blocking_supabase_deletion": true,
+      "routes": [
+        "/api/family/state",
+        "/api/family/create",
+        "/api/family/invite",
+        "/api/family/join",
+        "/api/family/event",
+        "/api/my-data",
+        "/api/ics/token"
+      ],
+      "replacement_needed": "Cloudflare-native authentication/session model plus D1 schema/access-control for private per-user state. Do not place private rows in the public Git repository."
+    },
+    {
+      "group": "push_and_background_jobs",
+      "blocking_supabase_deletion": true,
+      "routes": [
+        "/api/push/vapid",
+        "/api/push/subscribe",
+        "/api/push/jobs",
+        "/api/cron/market",
+        "/api/cron/push",
+        "/api/cron/revalidate",
+        "/api/admin/holidays"
+      ],
+      "replacement_needed": "Cloudflare secrets + Worker/cron trigger implementation + D1/KV state."
+    },
+    {
+      "group": "protected_html_and_compatibility_catchall",
+      "blocking_supabase_deletion": true,
+      "routes": [
+        "/aaja",
+        "/tithi",
+        "/diaspora",
+        "/card",
+        "/family",
+        "/family/join",
+        "/my-data",
+        "/settings/holidays",
+        "/settings/notifications",
+        "/offline",
+        "/developers"
+      ],
+      "replacement_needed": "Serve equivalent React/static/Worker-native pages without generic Supabase protected catch-all."
+    }
+  ],
+  "cutover_gates": [
+    "No request path in the production route contract invokes SUPABASE_COMPAT_ORIGIN or SUPABASE_PROTECTED_ORIGIN.",
+    "D1 remote row counts and calendar boundary checks match cloudflare/d1/expected-public-counts.json.",
+    "Private authentication, family, my-data, ICS-token and push state work without Supabase Auth/Postgres.",
+    "Scheduled market/push/revalidation jobs run from Cloudflare Cron Triggers.",
+    "Cloudflare secret names in cloudflare/secrets-manifest.json are configured without committing values.",
+    "PUBLIC_SITE_URL is set to the final production domain and sitemap/canonical output is verified.",
+    "Cloudflare preview passes cloudflare:validate, cloudflare:smoke and Lighthouse SEO/accessibility gates.",
+    "Production runs through an observation/rollback window before Vercel/Supabase deletion."
+  ]
+}
