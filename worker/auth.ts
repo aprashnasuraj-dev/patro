@@ -1,4 +1,4 @@
-type Env={
+export type AuthEnv={
   DB?:any;
   GOOGLE_CLIENT_ID?:string;
 };
@@ -16,6 +16,7 @@ type GoogleTokenInfo={
 
 const COOKIE="mp_session";
 const SESSION_DAYS=30;
+const DAY=86_400_000;
 const MAX_STATE_BYTES=512*1024;
 
 function json(body:any,status=200,extra:Record<string,string>={}){
@@ -34,7 +35,7 @@ function base64Url(bytes:Uint8Array){
   return btoa(raw).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
 }
 function token(){return base64Url(crypto.getRandomValues(new Uint8Array(32)));}
-async function sha256(value:string){
+export async function sha256(value:string){
   const bytes=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value)));
   return [...bytes].map(b=>b.toString(16).padStart(2,"0")).join("");
 }
@@ -44,7 +45,7 @@ function setSessionCookie(value:string,secure:boolean){
 function clearSessionCookie(secure:boolean){
   return `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure?"; Secure":""}`;
 }
-async function verifyGoogleCredential(credential:string,env:Env){
+async function verifyGoogleCredential(credential:string,env:AuthEnv){
   if(!env.GOOGLE_CLIENT_ID)throw new Error("google_client_id_not_configured");
   if(!credential||credential.length>8192)throw new Error("invalid_google_credential");
   const response=await fetch("https://oauth2.googleapis.com/tokeninfo?id_token="+encodeURIComponent(credential),{
@@ -58,7 +59,7 @@ async function verifyGoogleCredential(credential:string,env:Env){
   if(info.email_verified!=="true")throw new Error("google_email_not_verified");
   return info;
 }
-async function currentSession(request:Request,env:Env){
+export async function currentSession(request:Request,env:AuthEnv){
   if(!env.DB)return null;
   const raw=cookieValue(request,COOKIE); if(!raw)return null;
   const hash=await sha256(raw);
@@ -73,10 +74,10 @@ async function currentSession(request:Request,env:Env){
   env.DB.prepare("update auth_sessions set last_seen_at=datetime('now') where id=?1").bind(row.session_id).run().catch(()=>{});
   return row;
 }
-function publicUser(row:any){
+export function publicUser(row:any){
   return {id:String(row.user_id),email:row.email||null,name:row.display_name||null,picture:row.picture_url||null,provider:"google"};
 }
-async function ensureDefaultState(env:Env,userId:string){
+async function ensureDefaultState(env:AuthEnv,userId:string){
   await env.DB.prepare(
     "insert into user_calendar_state(user_id) values(?1) on conflict(user_id) do nothing"
   ).bind(userId).run();
@@ -84,16 +85,16 @@ async function ensureDefaultState(env:Env,userId:string){
     "insert into user_community_preferences(user_id) values(?1) on conflict(user_id) do nothing"
   ).bind(userId).run();
 }
-async function parseBody(request:Request,max=MAX_STATE_BYTES){
+export async function parseBody(request:Request,max=MAX_STATE_BYTES){
   const text=await request.text();
   if(new TextEncoder().encode(text).byteLength>max)throw new Error("payload_too_large");
   return text?JSON.parse(text):{};
 }
-function safeJson(value:any,fallback:any){
+export function safeJson(value:any,fallback:any){
   if(typeof value!=="string")return value??fallback;
   try{return JSON.parse(value)}catch{return fallback}
 }
-async function stateResponse(request:Request,env:Env,session:any){
+async function stateResponse(request:Request,env:AuthEnv,session:any){
   if(request.method==="GET"){
     await ensureDefaultState(env,session.user_id);
     const row=await env.DB.prepare("select notes,events,calendars,preferences,feedback,updated_at from user_calendar_state where user_id=?1").bind(session.user_id).first();
@@ -119,7 +120,7 @@ async function stateResponse(request:Request,env:Env,session:any){
   }
   return json({ok:false,error:"method_not_allowed"},405);
 }
-async function communityPreferences(request:Request,env:Env,session:any){
+async function communityPreferences(request:Request,env:AuthEnv,session:any){
   if(request.method==="GET"){
     await ensureDefaultState(env,session.user_id);
     const row=await env.DB.prepare("select communities,updated_at from user_community_preferences where user_id=?1").bind(session.user_id).first();
@@ -135,7 +136,7 @@ async function communityPreferences(request:Request,env:Env,session:any){
   }
   return json({ok:false,error:"method_not_allowed"},405);
 }
-async function myData(request:Request,env:Env,session:any){
+async function myData(request:Request,env:AuthEnv,session:any){
   if(request.method==="GET"){
     const [state,communities,families,push,ics]=await Promise.all([
       env.DB.prepare("select * from user_calendar_state where user_id=?1").bind(session.user_id).first(),
@@ -167,7 +168,7 @@ async function myData(request:Request,env:Env,session:any){
   return json({ok:false,error:"method_not_allowed"},405);
 }
 
-export async function authResponse(request:Request,env:Env):Promise<Response|null>{
+export async function authResponse(request:Request,env:AuthEnv):Promise<Response|null>{
   const url=new URL(request.url),path=url.pathname;
   if(path==="/api/v1/auth/config"&&request.method==="GET"){
     return json({ok:true,google:{enabled:!!env.GOOGLE_CLIENT_ID,client_id:env.GOOGLE_CLIENT_ID||null}});
