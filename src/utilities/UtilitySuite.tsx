@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ReferenceUtilityTools, isReferenceUtilityId } from "./ReferenceUtilities";
 
 type FontDirection = "preeti-to-unicode" | "unicode-to-preeti";
 type Hill = { ropani: string; aana: string; paisa: string; dam: string };
@@ -42,6 +43,20 @@ type WorkerReply = { id: number; ok: true; result: any } | { id: number; ok: fal
 
 type ToolId =
   | "typingtools"
+  | "convert"
+  | "tax"
+  | "land"
+  | "qr"
+  | "fuel"
+  | "calc"
+  | "age"
+  | "clock"
+  | "forex"
+  | "gold"
+  | "emi"
+  | "vat"
+  | "units"
+  | "words"
   | "nepali-typing"
   | "preeti-converter"
   | "bstoad"
@@ -91,6 +106,20 @@ const SAMUDAYA_TOOL: ToolDirectoryItem = { id: "samudaya", icon: "समु", ti
 
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   NEPALI_TYPING_TOOL,
+  { id: "convert", icon: "वि", title: "मिति रूपान्तरण · Date converter", subtitle: "BS ⇄ AD in one place, using the existing validated Patro calendar engine.", badge: "Calendar", group: "utility" },
+  { id: "calc", icon: "±", title: "दिन गणना · Date calculator", subtitle: "Days between two dates, plus add or subtract days from a selected date.", badge: "Calendar", group: "utility" },
+  { id: "age", icon: "उ", title: "उमेर गणक · Age calculator", subtitle: "Exact years, months, days, total days and next birthday.", badge: "Calendar", group: "utility" },
+  { id: "clock", icon: "घ", title: "विश्व घडी · World clock", subtitle: "Live world clocks plus a Nepal-time call-home planner.", badge: "Time", group: "utility" },
+  { id: "forex", icon: "$", title: "विदेशी मुद्रा · Forex rates", subtitle: "NRB buying and selling rates from the verified migrated market snapshot.", badge: "NRB", group: "utility" },
+  { id: "gold", icon: "सु", title: "सुनचाँदी हिसाब · Gold calculator", subtitle: "Tola–gram jewellery estimate using a trusted rate you enter; no fabricated live price.", badge: "Gold", group: "utility" },
+  { id: "emi", icon: "%", title: "कर्जा EMI · Loan EMI", subtitle: "Monthly instalment, total interest and year-by-year repayment schedule.", badge: "Finance", group: "utility" },
+  { id: "vat", icon: "भ", title: "भ्याट र प्रतिशत · VAT & percent", subtitle: "Add/remove VAT, percentage of an amount and percentage change.", badge: "Finance", group: "utility" },
+  { id: "units", icon: "ना", title: "नाप–तौल · Traditional units", subtitle: "Tola–lal, mana–pathi–muri and haat conversions with metric equivalents.", badge: "Measure", group: "utility" },
+  { id: "words", icon: "अ", title: "अंकलाई शब्दमा · Amount in words", subtitle: "Cheque-ready Nepali and English amount words in the lakh–crore system.", badge: "Language", group: "utility" },
+  { id: "tax", icon: "रु", title: "आयकर · Income tax", subtitle: "Reference-friendly alias for the existing FY 2083/84 income tax calculator.", badge: "Finance", group: "utility" },
+  { id: "land", icon: "रो", title: "जग्गा नाप · Land units", subtitle: "Reference-friendly alias for Ropani–Aana and Bigha–Kattha conversion.", badge: "Land", group: "utility" },
+  { id: "qr", icon: "QR", title: "QR कोड · QR code", subtitle: "Reference-friendly alias for the private Devanagari QR generator.", badge: "QR", group: "utility" },
+  { id: "fuel", icon: "इ", title: "इन्धन मूल्य · Fuel prices", subtitle: "Reference-friendly alias for the Nepal Oil Corporation fuel tracker.", badge: "NOC", group: "utility" },
   { id: "preeti-converter", icon: "प्री", title: "Preeti Converter · प्रीति रूपान्तरण", subtitle: "Convert both Preeti → Unicode and Unicode → Preeti from one converter.", badge: "Typing Tools", group: "typing" },
   { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar", group: "utility" },
   { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar", group: "utility" },
@@ -264,7 +293,7 @@ export function UtilitySuite() {
         if (!Array.isArray(body?.items)) return;
         const supported = new Set<ToolId>([
           "nepali-typing","preeti-converter","bstoad","adtobs","landconverter",
-          "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data",
+          "incometax","nepaliqr","fuelprice","convert","tax","land","qr","fuel","calc","age","clock","forex","gold","emi","vat","units","words","tithi","diaspora","card","family","api","my-data",
           "tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot","samudaya"
         ]);
         const next = body.items
@@ -465,7 +494,8 @@ export function UtilitySuite() {
   const utilityTools = catalog.filter((tool) => tool.group === "utility");
   const generalTools = catalog.filter((tool) => tool.group === "tools");
   const showFont = selectedTool === "preeti-converter";
-  const showDate = selectedTool === "bstoad" || selectedTool === "adtobs";
+  const showDate = selectedTool === "bstoad" || selectedTool === "adtobs" || selectedTool === "convert";
+  const showReferenceTool = isReferenceUtilityId(selectedTool);
   const showCatalog = selectedTool === null;
   const showTypingCatalog = selectedTool === "typingtools";
 
@@ -534,6 +564,22 @@ export function UtilitySuite() {
                   <span className="utility-directory-arrow" aria-hidden="true">→</span>
                 </a>
               ))}
+            </div>
+
+            <div className="utility-directory-section-head">
+              <div><p className="eyebrow">Verified external services</p><h3>Official market references</h3></div>
+            </div>
+            <div className="utility-directory-grid">
+              <a className="utility-directory-card" href="https://www.nepalstock.com" target="_blank" rel="noreferrer">
+                <span className="utility-directory-icon" aria-hidden="true">शे</span>
+                <span className="utility-directory-copy"><small>Official site</small><strong>सेयर बजार · Share market</strong><span>Open the Nepal Stock Exchange website.</span></span>
+                <span className="utility-directory-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a className="utility-directory-card" href="https://kalimatimarket.gov.np" target="_blank" rel="noreferrer">
+                <span className="utility-directory-icon" aria-hidden="true">त</span>
+                <span className="utility-directory-copy"><small>Official market</small><strong>तरकारी भाउ · Vegetable prices</strong><span>Open Kalimati Fruit and Vegetable Market price information.</span></span>
+                <span className="utility-directory-arrow" aria-hidden="true">↗</span>
+              </a>
             </div>          </>}
 
           {showTypingCatalog && <div className="utility-directory-grid">
@@ -559,6 +605,8 @@ export function UtilitySuite() {
           <a href="/">Mero Patro home</a>
         </nav>
       )}
+
+      {showReferenceTool && <ReferenceUtilityTools tool={selectedTool} />}
 
       <section className="utility-card" aria-labelledby="date-converter-title" hidden={!showDate}>
         <header className="utility-card-head">
@@ -606,7 +654,7 @@ export function UtilitySuite() {
         {dateError && <p className="utility-error" role="alert">{dateError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "incometax"}>
+      <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "incometax" && selectedTool !== "tax"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">FY 2083/84 · Salary tax</p>
@@ -659,7 +707,7 @@ export function UtilitySuite() {
         {taxError && <p className="utility-error" role="alert">{taxError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "nepaliqr"}>
+      <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "nepaliqr" && selectedTool !== "qr"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Private · client-only</p>
@@ -700,7 +748,7 @@ export function UtilitySuite() {
       </section>
 
 
-      <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuelprice"}>
+      <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuelprice" && selectedTool !== "fuel"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Nepal Oil Corporation</p>
@@ -773,7 +821,7 @@ export function UtilitySuite() {
         {fontError && <p className="utility-error" role="alert">{fontError}</p>}
       </section>
 
-      <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter"}>
+      <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter" && selectedTool !== "land"}>
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">Exact land math</p>

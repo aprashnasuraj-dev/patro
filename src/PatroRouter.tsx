@@ -98,9 +98,10 @@ export function PatroRouter() {
 
     const patroToolSlug = path.startsWith("/tools/") ? path.slice("/tools/".length) : "";
     if (PATRO_TOOL_SLUGS.has(patroToolSlug)) return <PatroToolsShell slug={patroToolSlug} />;
-    if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
-    if (path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
+    if (path === "/tools/nepali-typing" || path === "/tools/type") return <NepaliTools mode="typing" />;
+    if (path === "/tools/preeti" || path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
     if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;
+    if (path === "/tools/janma") return <JanmaPatroSuite />;
     if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
     if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
     return <App />;

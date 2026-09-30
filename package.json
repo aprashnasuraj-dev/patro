@@ -36,10 +36,11 @@
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
     "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
     "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
-    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs",
+    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs tests/reference-ui-contract.test.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
     "seo:serve": "node scripts/serve-dist.mjs",
-    "seo:audit": "npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json"
+    "seo:audit": "npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json",
+    "test:reference-ui": "node --test tests/reference-ui-contract.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
