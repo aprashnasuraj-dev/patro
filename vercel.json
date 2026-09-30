@@ -7,7 +7,7 @@
     },
     {
       "source": "/api/jyotish-chat",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/jyotish-chat"
+      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/jyotish-chat"
     },
     {
       "source": "/astro",
@@ -43,7 +43,7 @@
     },
     {
       "source": "/tools/nepali-typing",
-      "destination": "/tools"
+      "destination": "/nepali-typing/index.html"
     },
     {
       "source": "/tools/unicode-to-preeti",

@@ -1,6 +1,10 @@
 import { Hono } from "npm:hono@4.7.2";
 import { cors } from "npm:hono@4.7.2/cors";
 import { storeContact } from "./services/contact.ts";
+import { handleToolCatalog } from "./services/toolCatalog.ts";
+import { handleTypingLexicon } from "./services/typingLexicon.ts";
+import { handleJyotishChat } from "./services/jyotishChat.ts";
+import { routerDoctor } from "./services/doctor.ts";
 
 const app = new Hono().basePath("/functions/v1/router");
 
@@ -318,57 +322,19 @@ function hubEscape(value: unknown) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch] || ch));
 }
 
-async function proxyPublicToolFunction(request: Request, slug: "tools-catalog" | "typing-lexicon") {
-  const base = Deno.env.get("SUPABASE_URL") || "";
-  const incoming = new URL(request.url);
-  const target = new URL(base + "/functions/v1/" + slug);
-  target.search = incoming.search;
-  const upstream = await fetch(target, {
-    method: "GET",
-    headers: { accept: request.headers.get("accept") || "*/*" },
-    signal: AbortSignal.timeout(15_000),
-  });
-  const headers = new Headers();
-  for (const name of ["content-type","cache-control","etag","x-lexicon-version","x-lexicon-count"]) {
-    const value = upstream.headers.get(name);
-    if (value) headers.set(name, value);
-  }
-  headers.set("x-content-type-options","nosniff");
-  return new Response(upstream.body, { status: upstream.status, headers });
-}
-app.get("/tools/catalog", (c) => proxyPublicToolFunction(c.req.raw, "tools-catalog"));
-app.get("/typing/lexicon", (c) => proxyPublicToolFunction(c.req.raw, "typing-lexicon"));
+app.all("/tools/catalog", (c) => handleToolCatalog(c.req.raw));
+app.all("/typing/lexicon", (c) => handleTypingLexicon(c.req.raw));
 
-
-async function proxyNepaliTyping(request: Request) {
-  const base = Deno.env.get("SUPABASE_URL") || "";
-  const incoming = new URL(request.url);
-  const marker = incoming.pathname.includes("/nepali-typing.htm") ? "/nepali-typing.htm" : incoming.pathname.includes("/nepali-typing.html") ? "/nepali-typing.html" : "/nepali-typing";
-  const suffix = incoming.pathname.slice(incoming.pathname.indexOf(marker) + marker.length);
-  const target = new URL(base + "/functions/v1/nepali-typing-live" + suffix);
-  target.search = incoming.search;
-  const upstream = await fetch(target, {
-    method: request.method,
-    headers: { accept: request.headers.get("accept") || "*/*" },
-    signal: AbortSignal.timeout(15_000),
-  });
-  const headers = new Headers();
-  for (const name of ["content-type","cache-control","content-security-policy","x-content-type-options","etag"]) {
-    const value = upstream.headers.get(name);
-    if (value) headers.set(name, value);
-  }
-  return new Response(upstream.body, { status: upstream.status, headers });
-}
-app.get("/nepali-typing", (c) => c.redirect("/api/v1/nepali-typing.htm", 302));
-app.get("/nepali-typing.htm", (c) => proxyNepaliTyping(c.req.raw));
-app.get("/nepali-typing.html", (c) => proxyNepaliTyping(c.req.raw));
-app.get("/nepali-typing/*", (c) => proxyNepaliTyping(c.req.raw));
+app.get("/nepali-typing", (c) => c.redirect("/tools/nepali-typing", 302));
+app.get("/nepali-typing.htm", (c) => c.redirect("/tools/nepali-typing", 302));
+app.get("/nepali-typing.html", (c) => c.redirect("/tools/nepali-typing", 302));
+app.get("/nepali-typing/*", (c) => c.redirect("/tools/nepali-typing", 302));
 
 app.get("/tools-hub", async (c) => {
   let items: any[] = [];
   try {
     const base = Deno.env.get("SUPABASE_URL") || "";
-    const response = await fetch(base + "/functions/v1/tools-catalog", {
+    const response = await fetch(base + "/functions/v1/router/tools/catalog", {
       headers: { accept: "application/json" },
       signal: AbortSignal.timeout(3000),
     });
@@ -455,6 +421,8 @@ app.get("/tools/official-sait", async (c) => {
   return await officialSait(c.req.raw);
 });
 
+app.all("/jyotish-chat", (c) => handleJyotishChat(c.req.raw));
+
 app.get("/communities", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.listCommunities(); });
 app.get("/communities/feed.ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.combinedCommunityIcs(c.req.raw); });
 app.get("/communities/lho", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.lho(new URL(c.req.url).searchParams); });
@@ -471,6 +439,8 @@ app.get("/community-preferences", async (c) => { const m=await import("./service
 app.put("/community-preferences", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.putPreferences(c.req.raw); });
 app.post("/admin/community-overrides", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminCommunityOverride(c.req.raw); });
 app.post("/admin/ns-festival-dates", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminNsFestival(c.req.raw); });
+
+app.get("/doctor", (c) => routerDoctor(c.req.raw));
 
 app.get("/health", (c) => c.json({
   status: "online",
