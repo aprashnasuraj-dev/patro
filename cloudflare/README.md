@@ -4,11 +4,11 @@ This directory contains the reproducible Cloudflare target for Patro. The curren
 
 ## Target
 
-- Cloudflare Workers for API/proxy logic.
-- Cloudflare Pages for the React/Vite frontend, with Workers Static Assets retained as a single-Worker fallback mode.
+- One Cloudflare Worker is the canonical deployment: API routing plus Workers Static Assets for the React/Vite frontend.
+- Cloudflare Pages + a Worker service binding remains an optional fallback mode (`CF_DEPLOY_MODE=pages-worker`), not the default.
 - D1 for public/reference content.
 - KV for upstream/API cache.
-- Supabase compatibility proxy only while remaining routes are being ported.
+- Supabase compatibility proxy only while the explicit blockers in `cloudflare/remaining-cutover.json` are being ported. Generic fallthrough is a temporary safety bridge, not the final architecture.
 
 Private/user/operational Supabase rows are intentionally excluded from this public repository.
 
@@ -73,3 +73,30 @@ TARGET_ORIGIN=https://<cloudflare-preview-host> npm run cloudflare:smoke
 The contract in `cloudflare/cutover-contract.json` checks core HTML routes plus deterministic AD/BS/Nepal Sambat API fields. A status or semantic mismatch exits non-zero. This is a cutover gate, not a substitute for browser/visual verification of media playback and interactive tools.
 
 The live Supabase backend versions that were verified byte-for-byte against Git are recorded in `cloudflare/source-runtime-manifest.json`.
+
+
+## SEO and canonical host
+
+SEO is generated from Git as part of `npm run build`.
+
+- `PUBLIC_SITE_URL` controls the sitemap/canonical production origin at build time.
+- `scripts/generate-seo.mjs` writes `robots.txt`, `sitemap.xml`, and `seo-manifest.json`.
+- The Worker rewrites canonical, robots, OpenGraph, Twitter and JSON-LD metadata on the initial HTML response using the actual request origin.
+- SPA navigation updates the same metadata through `src/components/seo/SeoMeta.tsx`.
+- Historical calendar pages older than the configured rolling window receive `noindex, follow` rather than being robots-blocked.
+- `.github/workflows/seo-audit.yml` runs Lighthouse SEO/accessibility/performance checks.
+
+Before production cutover, set for example:
+
+```bash
+export PUBLIC_SITE_URL=https://YOUR_FINAL_DOMAIN
+npm run build
+```
+
+Do not leave the final production build canonicalized to a Vercel preview hostname.
+
+## Latest-runtime source preservation
+
+`cloudflare/source-runtime-manifest.json` records the 11 latest active, non-preview Supabase Edge Functions and their deployed hashes. Exact sources live under `migration/cloudflare/supabase/function-source/`; Worker-module conversion artifacts live under `cloudflare/converted-functions/`.
+
+Historical preview/backup Edge Functions are not required for deployment. The source-preservation copy is complete; remaining work is native Cloudflare behavior and private/auth/runtime replacement, tracked in `cloudflare/remaining-cutover.json`.
