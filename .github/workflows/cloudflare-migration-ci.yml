@@ -9,7 +9,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,6 +21,6 @@ jobs:
       - run: npm test
       - run: npm run test:typing
       - run: npm run test:patro-tools
-      - run: npm run cf:validate-data
-      - run: npm run build
-      - run: npx wrangler deploy --dry-run --outdir=.wrangler-dryrun
+      - run: npm run cloudflare:verify-inventory
+      - run: npm run cloudflare:verify-snapshot
+      - run: npm run cloudflare:validate
