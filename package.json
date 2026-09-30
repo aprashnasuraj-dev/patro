@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run dev:cloudflare",
-    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
+    "build": "node scripts/generate-seo.mjs && tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
     "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
@@ -36,7 +36,10 @@
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
     "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
     "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
-    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs"
+    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs",
+    "seo:generate": "node scripts/generate-seo.mjs",
+    "seo:serve": "node scripts/serve-dist.mjs",
+    "seo:audit": "npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
