@@ -12,7 +12,7 @@ The `cloudflare-migration` branch is prepared for a staged move from **Vercel + 
 - Pages-to-Worker transport: service binding `PATRO_API`.
 - Migrated reference/content store: D1 binding `DB`.
 - Edge cache: KV binding `CACHE` plus Cache API.
-- Calendar snapshot: **77,070 rows**, **78 parts**, AD **1826-04-11 → 2037-04-13**.
+- Calendar snapshot: **77,070 rows**, **78 parts**, AD **1826-04-11 → 2037-04-13**, with BS + Nepal Sambat + Panchang required on every row.\n- D1 parity gates: Rashifal **22**, Time Machine **706**, On This Day **5,454**, Tools catalog **29** + release plan **4**, Nepal Sambat day map **14,972**.\n- Exact D1 row expectations live in `cloudflare/d1/expected-public-counts.json`; all Supabase public tables are classified in `cloudflare/d1/supabase-table-inventory.json`.
 - Runtime strategy: **native Cloudflare first, Supabase compatibility fallback second**.
 - Private/user Supabase tables are not bulk-exported into the public migration snapshot.
 - No Supabase service-role credential is used by browser code or committed to Git.
@@ -162,8 +162,7 @@ It performs, in order:
 5. Generation of a Wrangler config containing the real D1/KV IDs.
 6. Application of schema migrations.
 7. One-time public/reference data import with `wrangler d1 execute --file`.
-8. D1 row/migration-state inspection.
-9. Worker deployment.
+8. Exact remote D1 table-count + AD/BS/NS/Panchang verification (`npm run cloudflare:verify-d1-remote`).\n9. Worker deployment.
 
 The generated import excludes private/user tables and strips transaction wrappers that are unsuitable for D1 bulk import.
 

@@ -9,6 +9,7 @@ function run(command, args) {
 }
 
 run("npm", ["run", "build"]);
+run("node", ["scripts/verify-migration-inventory.mjs"]);
 run("node", ["scripts/generate-d1-migrations.mjs", "--verify-only"]);
 
 const d1 = process.env.CF_D1_DATABASE_ID?.trim();

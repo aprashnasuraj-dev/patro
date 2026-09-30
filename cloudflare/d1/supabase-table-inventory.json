@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "source_project": "pxlsmxbpgdfzjzuqtict",
+  "source_schema": "public",
+  "table_count": 56,
+  "policy": {
+    "d1_bootstrap_public_reference": "Included in deterministic D1 bootstrap and exact-count verification.",
+    "supabase_compat_private_until_auth_cutover": "Private/mutable state is not committed to Git; keep on protected Supabase compatibility path until identity/auth migration.",
+    "rebuild_on_cloudflare_runtime": "Ephemeral rate-limit/runtime state is not migrated; it is recreated by the target runtime."
+  },
+  "tables": {
+    "profiles": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "user_calendar_state": {
+      "source_rows": 1,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "calendar_spaces": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "calendar_space_members": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "calendar_space_events": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "correction_reports": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "calendar_reference_sources": {
+      "source_rows": 14,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nepal_sambat_months": {
+      "source_rows": 14,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nepal_sambat_tithi_names": {
+      "source_rows": 15,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "calendar_coverage_tiers": {
+      "source_rows": 4,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "on_this_day_events": {
+      "source_rows": 5454,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nepal_sambat_facts": {
+      "source_rows": 14,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nepal_sambat_observances": {
+      "source_rows": 49,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "astrology_profiles": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "astrology_chart_cache": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "api_rate_buckets": {
+      "source_rows": 4,
+      "strategy": "rebuild_on_cloudflare_runtime"
+    },
+    "preview_feedback": {
+      "source_rows": 1,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "api_rate_limit_buckets": {
+      "source_rows": 1408,
+      "strategy": "rebuild_on_cloudflare_runtime"
+    },
+    "app_flags": {
+      "source_rows": 17,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "np_districts": {
+      "source_rows": 77,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "fm_stations": {
+      "source_rows": 20,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "fm_stream_candidates": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "fm_reports": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "news_items": {
+      "source_rows": 274,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "news_clusters": {
+      "source_rows": 229,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "news_source_health": {
+      "source_rows": 25,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "news_category_keywords": {
+      "source_rows": 27,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "time_machine_moments": {
+      "source_rows": 706,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "audit_log": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "official_panchang_facts": {
+      "source_rows": 101,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "holidays": {
+      "source_rows": 84,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "weekly_off_rules": {
+      "source_rows": 1,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "holiday_coverage": {
+      "source_rows": 10,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "push_subscriptions": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "notification_jobs": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "families": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "family_members": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "family_invites": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "shared_events": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "market_snapshots": {
+      "source_rows": 69,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "personal_ics_tokens": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "miti_rashifal_publications": {
+      "source_rows": 22,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nasa_apod_cache": {
+      "source_rows": 9,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "astronomy_calendar_map": {
+      "source_rows": 77070,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "nasa_cosmic_cache": {
+      "source_rows": 126,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "tool_catalog": {
+      "source_rows": 29,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "tool_release_plan": {
+      "source_rows": 4,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "contact_messages": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "community_festivals": {
+      "source_rows": 34,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "community_dates": {
+      "source_rows": 1062,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "community_overrides": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    },
+    "ns_months": {
+      "source_rows": 12,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "ns_festivals": {
+      "source_rows": 47,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "ns_festival_dates": {
+      "source_rows": 1886,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "ns_days": {
+      "source_rows": 14972,
+      "strategy": "d1_bootstrap_public_reference"
+    },
+    "user_community_preferences": {
+      "source_rows": 0,
+      "strategy": "supabase_compat_private_until_auth_cutover"
+    }
+  }
+}

@@ -71,7 +71,7 @@ source version: patro-archive-v79
 
 The one-time bootstrap generator combines sanitized checked-in reference seeds with the canonical 78-part astronomy snapshot. Private/user tables are excluded.
 
-`npm run cloudflare:verify-snapshot` checks sequence, continuity, row counts and D1 statement-size constraints without generating the bulk SQL file.
+`npm run cloudflare:verify-snapshot` checks sequence, continuity, exact table counts and D1 statement-size constraints without generating the bulk SQL file. The critical D1 counts are Rashifal 22, Time Machine 706, On This Day 5,454, Tools catalog 29 + release plan 4, Nepal Sambat day map 14,972, and the main AD/BS/NS/Panchang map 77,070. Every calendar row is required to contain BS, Nepal Sambat and Panchang/tithi payloads.\n\n`cloudflare/d1/supabase-table-inventory.json` accounts for every table in the Supabase `public` schema. Public/reference feature data is deterministic D1 bootstrap data; private/mutable user state remains behind the protected Supabase compatibility path until auth migration; rate-limit buckets are classified as ephemeral and rebuilt on Cloudflare.
 
 ## Definition of native-migrated
 
