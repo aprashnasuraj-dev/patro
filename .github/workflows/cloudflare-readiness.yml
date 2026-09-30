@@ -21,7 +21,7 @@ jobs:
           cache: npm
           cache-dependency-path: package.json
       - name: Install pinned direct dependencies
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund --fetch-retries=5
       - name: Cloudflare handoff contract
         run: npm run test:cloudflare-contract
       - name: Typecheck
