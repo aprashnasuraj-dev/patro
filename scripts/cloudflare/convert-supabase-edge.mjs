@@ -16,7 +16,7 @@ const NPM_MAP = new Map([
 
 function sharedImport(filePath) {
   const depth = relative(OUT_ROOT, dirname(filePath)).split(/[\\/]/).filter(Boolean).length;
-  return "../".repeat(Math.max(0, depth - 1)) + "_shared/env";
+  return "../".repeat(depth) + "_shared/env";
 }
 
 function normalizeImports(source) {
