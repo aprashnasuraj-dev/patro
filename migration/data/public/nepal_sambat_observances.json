@@ -1,0 +1,398 @@
+{
+  "table": "nepal_sambat_observances",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": 1,
+      "phase_type": "punhi",
+      "month_key": "कछला",
+      "observance_ne": "सकिमिला / सकिमना पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 2,
+      "phase_type": "punhi",
+      "month_key": "थिंला",
+      "observance_ne": "यःमरि पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 3,
+      "phase_type": "punhi",
+      "month_key": "प्वँहेला",
+      "observance_ne": "मिला पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 4,
+      "phase_type": "punhi",
+      "month_key": "सिल्ला",
+      "observance_ne": "सि पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 5,
+      "phase_type": "punhi",
+      "month_key": "चिल्ला",
+      "observance_ne": "होलि / फागु पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 6,
+      "phase_type": "punhi",
+      "month_key": "चौला",
+      "observance_ne": "ल्हुति / न्हवं पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 7,
+      "phase_type": "punhi",
+      "month_key": "बछला",
+      "observance_ne": "स्वांया पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 8,
+      "phase_type": "punhi",
+      "month_key": "तछला",
+      "observance_ne": "ज्या पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 9,
+      "phase_type": "punhi",
+      "month_key": "दिल्ला",
+      "observance_ne": "गुरु पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 10,
+      "phase_type": "punhi",
+      "month_key": "गुंला",
+      "observance_ne": "गुँ / गुन्हु / क्वाति पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 11,
+      "phase_type": "punhi",
+      "month_key": "यंला",
+      "observance_ne": "येँयाः पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 12,
+      "phase_type": "punhi",
+      "month_key": "कौला",
+      "observance_ne": "कति / सिघः पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 13,
+      "phase_type": "punhi",
+      "month_key": "अनला",
+      "observance_ne": "अनला पुन्हि",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 14,
+      "phase_type": "amai",
+      "month_key": "कछला",
+      "observance_ne": "लुति अजिमा जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 15,
+      "phase_type": "amai",
+      "month_key": "थिंला",
+      "observance_ne": "गोकरण श्राद्ध",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 16,
+      "phase_type": "amai",
+      "month_key": "चिल्ला",
+      "observance_ne": "तिंख्यःमा द्यः ल्वाके, न्यत अजिमा प्याखं, अजिमा जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 17,
+      "phase_type": "amai",
+      "month_key": "चौला",
+      "observance_ne": "मातति आमै",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 18,
+      "phase_type": "amai",
+      "month_key": "गुंला",
+      "observance_ne": "अबुया ख्वाः स्वयेगु",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 19,
+      "phase_type": "amai",
+      "month_key": "कौला",
+      "observance_ne": "लछिमि पुजा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 20,
+      "phase_type": "amai",
+      "month_key": "अनला",
+      "observance_ne": "मच्छेनारांद्यः मेला समापन",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 21,
+      "phase_type": "chahre",
+      "month_key": "कछलाथ्व",
+      "observance_ne": "बैकुण्ठ चतुर्दशी",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 22,
+      "phase_type": "chahre",
+      "month_key": "कछलागाः",
+      "observance_ne": "बाला चःह्रे / बालु जाने दिन",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 23,
+      "phase_type": "chahre",
+      "month_key": "थिंलाथ्व",
+      "observance_ne": "थेच्व जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 24,
+      "phase_type": "chahre",
+      "month_key": "थिंलागाः",
+      "observance_ne": "दिसि चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 25,
+      "phase_type": "chahre",
+      "month_key": "प्वँहेलागाः",
+      "observance_ne": "लैं चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 26,
+      "phase_type": "chahre",
+      "month_key": "सिल्लागाः",
+      "observance_ne": "सिला चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 27,
+      "phase_type": "chahre",
+      "month_key": "चिल्लाथ्व",
+      "observance_ne": "गुरुमापालाई भात खुवाउने",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 28,
+      "phase_type": "chahre",
+      "month_key": "चिल्लागाः",
+      "observance_ne": "पहाँ चःह्रे / न्यतमरु अजिमा प्याखं",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 29,
+      "phase_type": "chahre",
+      "month_key": "चौलागाः",
+      "observance_ne": "मातति चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 30,
+      "phase_type": "chahre",
+      "month_key": "तछलागाः",
+      "observance_ne": "दिला चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 31,
+      "phase_type": "chahre",
+      "month_key": "दिल्लागाः",
+      "observance_ne": "गथांमुगः चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 32,
+      "phase_type": "chahre",
+      "month_key": "गुंलागाः",
+      "observance_ne": "जुगः चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 33,
+      "phase_type": "chahre",
+      "month_key": "यंलाथ्व",
+      "observance_ne": "येँया नखःको क्वनेयाः",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 34,
+      "phase_type": "chahre",
+      "month_key": "यंलागाः",
+      "observance_ne": "नःलास्वने चःह्रे",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 35,
+      "phase_type": "chahre",
+      "month_key": "कौलागाः",
+      "observance_ne": "खिचा पुजा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 36,
+      "phase_type": "paru",
+      "month_key": "कछलाथ्व",
+      "observance_ne": "म्ह पुजा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 37,
+      "phase_type": "paru",
+      "month_key": "कछलागाः",
+      "observance_ne": "सक्व माहालछिमि जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 38,
+      "phase_type": "paru",
+      "month_key": "थिंलागाः",
+      "observance_ne": "मतिना पारु",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 39,
+      "phase_type": "paru",
+      "month_key": "प्वँहेलागाः",
+      "observance_ne": "सिमंखू बहाःको पोहेला पुजा भ्वय्",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 40,
+      "phase_type": "paru",
+      "month_key": "सिल्लाथ्व",
+      "observance_ne": "फम्पि माधवनारायण मेला",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 41,
+      "phase_type": "paru",
+      "month_key": "चिल्लागाः",
+      "observance_ne": "चकंद्यः जात्रा / नाला करुणामय न्हवं",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 42,
+      "phase_type": "paru",
+      "month_key": "चौलाथ्व",
+      "observance_ne": "असनमा खः ल्वाके / चोभाःद्यः न्ह्यवं",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 43,
+      "phase_type": "paru",
+      "month_key": "चौलागाः",
+      "observance_ne": "बुङ्गद्यः न्हवं / म्हय्‌पि जात्रा / तिसा मालेगु जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 44,
+      "phase_type": "paru",
+      "month_key": "बछलाथ्व",
+      "observance_ne": "बुङ्गद्यः रथमा राख्ने",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 45,
+      "phase_type": "paru",
+      "month_key": "गुंलाथ्व",
+      "observance_ne": "गुंला धर्म सुरु",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 46,
+      "phase_type": "paru",
+      "month_key": "गुंलागाः",
+      "observance_ne": "सापारु",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 47,
+      "phase_type": "paru",
+      "month_key": "यंलाथ्व",
+      "observance_ne": "गुंला धर्म समापन",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 48,
+      "phase_type": "paru",
+      "month_key": "कौलागाः",
+      "observance_ne": "नरः देय् नारांद्यः जात्रा",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 49,
+      "phase_type": "paru",
+      "month_key": "अनलाथ्व",
+      "observance_ne": "मच्छेनारांद्यः मेला सुरु",
+      "source_url": "https://nepalsambat.org/lunar-calendar/",
+      "updated_at": "2026-09-19 00:17:30.835101+00"
+    }
+  ]
+}

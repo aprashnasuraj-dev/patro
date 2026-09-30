@@ -1,0 +1,776 @@
+{
+  "table": "np_districts",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": "bhojpur",
+      "name_ne": "भोजपुर",
+      "name_en": "Bhojpur",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dhankuta",
+      "name_ne": "धनकुटा",
+      "name_en": "Dhankuta",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "ilam",
+      "name_ne": "इलाम",
+      "name_en": "Ilam",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "jhapa",
+      "name_ne": "झापा",
+      "name_en": "Jhapa",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "khotang",
+      "name_ne": "खोटाङ",
+      "name_en": "Khotang",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "morang",
+      "name_ne": "मोरङ",
+      "name_en": "Morang",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "okhaldhunga",
+      "name_ne": "ओखलढुङ्गा",
+      "name_en": "Okhaldhunga",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "panchthar",
+      "name_ne": "पाँचथर",
+      "name_en": "Panchthar",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "sankhuwasabha",
+      "name_ne": "संखुवासभा",
+      "name_en": "Sankhuwasabha",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "solukhumbu",
+      "name_ne": "सोलुखुम्बु",
+      "name_en": "Solukhumbu",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "sunsari",
+      "name_ne": "सुनसरी",
+      "name_en": "Sunsari",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "taplejung",
+      "name_ne": "ताप्लेजुङ",
+      "name_en": "Taplejung",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "terhathum",
+      "name_ne": "तेह्रथुम",
+      "name_en": "Terhathum",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "udayapur",
+      "name_ne": "उदयपुर",
+      "name_en": "Udayapur",
+      "province": 1,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "bara",
+      "name_ne": "बारा",
+      "name_en": "Bara",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dhanusha",
+      "name_ne": "धनुषा",
+      "name_en": "Dhanusha",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "mahottari",
+      "name_ne": "महोत्तरी",
+      "name_en": "Mahottari",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "parsa",
+      "name_ne": "पर्सा",
+      "name_en": "Parsa",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "rautahat",
+      "name_ne": "रौतहट",
+      "name_en": "Rautahat",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "saptari",
+      "name_ne": "सप्तरी",
+      "name_en": "Saptari",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "sarlahi",
+      "name_ne": "सर्लाही",
+      "name_en": "Sarlahi",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "siraha",
+      "name_ne": "सिराहा",
+      "name_en": "Siraha",
+      "province": 2,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "bhaktapur",
+      "name_ne": "भक्तपुर",
+      "name_en": "Bhaktapur",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "chitwan",
+      "name_ne": "चितवन",
+      "name_en": "Chitwan",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dhading",
+      "name_ne": "धादिङ",
+      "name_en": "Dhading",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dolakha",
+      "name_ne": "दोलखा",
+      "name_en": "Dolakha",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kathmandu",
+      "name_ne": "काठमाडौँ",
+      "name_en": "Kathmandu",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kavrepalanchok",
+      "name_ne": "काभ्रेपलाञ्चोक",
+      "name_en": "Kavrepalanchok",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "lalitpur",
+      "name_ne": "ललितपुर",
+      "name_en": "Lalitpur",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "makwanpur",
+      "name_ne": "मकवानपुर",
+      "name_en": "Makwanpur",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "nuwakot",
+      "name_ne": "नुवाकोट",
+      "name_en": "Nuwakot",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "ramechhap",
+      "name_ne": "रामेछाप",
+      "name_en": "Ramechhap",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "rasuwa",
+      "name_ne": "रसुवा",
+      "name_en": "Rasuwa",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "sindhuli",
+      "name_ne": "सिन्धुली",
+      "name_en": "Sindhuli",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "sindhupalchok",
+      "name_ne": "सिन्धुपाल्चोक",
+      "name_en": "Sindhupalchok",
+      "province": 3,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "baglung",
+      "name_ne": "बागलुङ",
+      "name_en": "Baglung",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "gorkha",
+      "name_ne": "गोरखा",
+      "name_en": "Gorkha",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kaski",
+      "name_ne": "कास्की",
+      "name_en": "Kaski",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "lamjung",
+      "name_ne": "लमजुङ",
+      "name_en": "Lamjung",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "manang",
+      "name_ne": "मनाङ",
+      "name_en": "Manang",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "mustang",
+      "name_ne": "मुस्ताङ",
+      "name_en": "Mustang",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "myagdi",
+      "name_ne": "म्याग्दी",
+      "name_en": "Myagdi",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "nawalpur",
+      "name_ne": "नवलपुर",
+      "name_en": "Nawalpur",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "parbat",
+      "name_ne": "पर्वत",
+      "name_en": "Parbat",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "syangja",
+      "name_ne": "स्याङ्जा",
+      "name_en": "Syangja",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "tanahun",
+      "name_ne": "तनहुँ",
+      "name_en": "Tanahun",
+      "province": 4,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "arghakhanchi",
+      "name_ne": "अर्घाखाँची",
+      "name_en": "Arghakhanchi",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "banke",
+      "name_ne": "बाँके",
+      "name_en": "Banke",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "bardiya",
+      "name_ne": "बर्दिया",
+      "name_en": "Bardiya",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dang",
+      "name_ne": "दाङ",
+      "name_en": "Dang",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "eastern-rukum",
+      "name_ne": "पूर्वी रुकुम",
+      "name_en": "Eastern Rukum",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "gulmi",
+      "name_ne": "गुल्मी",
+      "name_en": "Gulmi",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kapilvastu",
+      "name_ne": "कपिलवस्तु",
+      "name_en": "Kapilvastu",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "parasi",
+      "name_ne": "परासी",
+      "name_en": "Parasi",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "palpa",
+      "name_ne": "पाल्पा",
+      "name_en": "Palpa",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "pyuthan",
+      "name_ne": "प्युठान",
+      "name_en": "Pyuthan",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "rolpa",
+      "name_ne": "रोल्पा",
+      "name_en": "Rolpa",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "rupandehi",
+      "name_ne": "रूपन्देही",
+      "name_en": "Rupandehi",
+      "province": 5,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dailekh",
+      "name_ne": "दैलेख",
+      "name_en": "Dailekh",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dolpa",
+      "name_ne": "डोल्पा",
+      "name_en": "Dolpa",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "humla",
+      "name_ne": "हुम्ला",
+      "name_en": "Humla",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "jajarkot",
+      "name_ne": "जाजरकोट",
+      "name_en": "Jajarkot",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "jumla",
+      "name_ne": "जुम्ला",
+      "name_en": "Jumla",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kalikot",
+      "name_ne": "कालिकोट",
+      "name_en": "Kalikot",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "mugu",
+      "name_ne": "मुगु",
+      "name_en": "Mugu",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "salyan",
+      "name_ne": "सल्यान",
+      "name_en": "Salyan",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "surkhet",
+      "name_ne": "सुर्खेत",
+      "name_en": "Surkhet",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "western-rukum",
+      "name_ne": "पश्चिमी रुकुम",
+      "name_en": "Western Rukum",
+      "province": 6,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "achham",
+      "name_ne": "अछाम",
+      "name_en": "Achham",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "baitadi",
+      "name_ne": "बैतडी",
+      "name_en": "Baitadi",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "bajhang",
+      "name_ne": "बझाङ",
+      "name_en": "Bajhang",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "bajura",
+      "name_ne": "बाजुरा",
+      "name_en": "Bajura",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "dadeldhura",
+      "name_ne": "डडेल्धुरा",
+      "name_en": "Dadeldhura",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "darchula",
+      "name_ne": "दार्चुला",
+      "name_en": "Darchula",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "doti",
+      "name_ne": "डोटी",
+      "name_en": "Doti",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kailali",
+      "name_ne": "कैलाली",
+      "name_en": "Kailali",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    },
+    {
+      "id": "kanchanpur",
+      "name_ne": "कञ्चनपुर",
+      "name_en": "Kanchanpur",
+      "province": 7,
+      "hq_name_ne": null,
+      "hq_lat": null,
+      "hq_lng": null,
+      "source": "https://www.mofaga.gov.np/local-contact/dcc-prov-1?province_id=0"
+    }
+  ]
+}
