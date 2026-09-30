@@ -25,6 +25,7 @@ const rootAssets = [
   "maskable-512.png",
   "robots.txt",
   "sitemap.xml",
+  "seo-manifest.json",
   "og-default.svg",
   "_headers"
 ];
