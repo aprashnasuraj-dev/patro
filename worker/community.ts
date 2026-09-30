@@ -195,12 +195,15 @@ export async function nepalSambat(env:Env,sp:URLSearchParams){
     one(env,"select payload from content_records where table_name='ns_days' and record_key=?1 limit 1",[ad])
   ]);
   const n=archive?.payload?.ns||archive?.ns,day=base;if(!n&&!day)return json({ok:false,error:"date_outside_coverage"},422,"no-store");
-  const year=Number(n?.year||day?.ns_year),until=add(ad,60),[dates,fm]=await Promise.all([
+  const year=Number(n?.year||day?.ns_year),until=add(ad,60),[dates,fm,os]=await Promise.all([
     rows(env,"select payload from content_records where table_name='ns_festival_dates' and json_extract(payload,'$.start_ad')>=?1 and json_extract(payload,'$.start_ad')<=?2 order by json_extract(payload,'$.start_ad') limit 12",[ad,until]),
-    nsFestivalMap(env)
+    nsFestivalMap(env),
+    nsOverrides(env,[year,year+1])
   ]);
-  const upcoming=dates.map((r:any)=>{const f:any=fm.get(r.festival_id);return{id:r.festival_id,dev:f?.dev,roman:f?.roman,en:f?.en,start:r.start_ad,end:r.end_ad,confidence:r.confidence,badge:badge(r.confidence),declaredAnnually:!!f?.declared_annually,status:f?.status,review:f?.status==="review",review_label:f?.status==="review"?"समीक्षाधीन":null}});
-  const ny=await one(env,"select payload from content_records where table_name='ns_festival_dates' and json_extract(payload,'$.ns_year')=?1 and json_extract(payload,'$.festival_id')='mha-puja' limit 1",[year+1]),next=ny?.start_ad||null;
+  const mergedDates=mergeNsDates(dates,os).filter((r:any)=>String(r.start_ad)>=ad&&String(r.start_ad)<=until).sort((a:any,b:any)=>String(a.start_ad).localeCompare(String(b.start_ad))).slice(0,12);
+  const upcoming=mergedDates.map((r:any)=>{const f:any=fm.get(r.festival_id);return{id:r.festival_id,dev:f?.dev,roman:f?.roman,en:f?.en,start:r.start_ad,end:r.end_ad,confidence:r.confidence,badge:badge(r.confidence),declaredAnnually:!!f?.declared_annually,status:f?.status,review:f?.status==="review",review_label:f?.status==="review"?"समीक्षाधीन":null,override:!!r.override,override_note:r.override_note||null}});
+  const nyRaw=await one(env,"select payload from content_records where table_name='ns_festival_dates' and json_extract(payload,'$.ns_year')=?1 and json_extract(payload,'$.festival_id')='mha-puja' limit 1",[year+1]);
+  const ny=mergeNsDates(nyRaw?[nyRaw]:[],os).find((r:any)=>r.festival_id==="mha-puja"&&Number(r.ns_year)===year+1)||nyRaw,next=ny?.start_ad||null;
   return json({ok:true,ad,lunar:n||{year:day.ns_year,month_no:day.ns_month,paksha:day.ns_paksha,tithi_number:day.ns_tithi,adhika:day.ns_adhik,formatted:day.ns_label,formatted_newa:day.ns_label_newa},solar:day?{year:day.solar_year,month:day.solar_month,day:day.solar_day}:null,nextNewYear:next?{nsYear:year+1,ad:next,days:Math.round((Date.parse(next)-Date.parse(ad))/DAY)}:null,upcoming,source:"Cloudflare D1 astronomy archive + Nepal Sambat tables"});
 }
 export async function nsFestivals(env:Env,sp:URLSearchParams){
