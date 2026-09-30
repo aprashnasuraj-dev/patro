@@ -32,6 +32,8 @@ jobs:
         run: npm run test:typing
       - name: Patro tools tests
         run: npm run test:patro-tools
+      - name: Community suite engine tests
+        run: npm run test:community
       - name: Build and validate Worker + complete D1 snapshot
         run: npm run cloudflare:validate
       - name: Bundle Pages Functions
