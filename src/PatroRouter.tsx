@@ -14,20 +14,21 @@ const NotFound = lazy(() => import("./components/NotFound").then((m) => ({ defau
 const PatroToolsShell = lazy(() => import("./patro-tools-integration/PatroToolsShell").then((m) => ({ default: m.PatroToolsShell })));
 const CommunityPreferences = lazy(() => import("./community/CommunityPreferences").then((m) => ({ default: m.CommunityPreferences })));
 const CommunityAdmin = lazy(() => import("./community/CommunityAdmin").then((m) => ({ default: m.CommunityAdmin })));
+const FamilyPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.FamilyPage })));
+const MyDataPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.MyDataPage })));
+const NotificationSettingsPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.NotificationSettingsPage })));
+const HolidaySettingsPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.HolidaySettingsPage })));
+const DevelopersPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.DevelopersPage })));
+const OfflinePage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.OfflinePage })));
+const RouteAlias = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.RouteAlias })));
 
-const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites"]);
-
-const PROTECTED_TOOL_PATHS = new Set([
-  "/tools/tithi",
-  "/tools/diaspora",
-  "/tools/card",
-  "/tools/family",
-  "/tools/api",
-  "/tools/my-data",
+const NATIVE_PATHS = new Set([
+  "/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404",
+  "/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites",
+  "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers"
 ]);
 
 function isNativePath(path: string) {
-  if (PROTECTED_TOOL_PATHS.has(path)) return false;
   return NATIVE_PATHS.has(path) || path.startsWith("/tools/");
 }
 
@@ -83,6 +84,19 @@ export function PatroRouter() {
   }, []);
 
   const renderRoute = () => {
+    if (path === "/aaja") return <RouteAlias to="/" />;
+    if (path === "/tithi") return <RouteAlias to="/tools/tithi-reminder" />;
+    if (path === "/diaspora") return <RouteAlias to="/tools/clock" />;
+    if (path === "/card") return <RouteAlias to="/tools/janmadin-akhbar" />;
+    if (path === "/family" || path === "/family/join" || path === "/tools/family") return <FamilyPage />;
+    if (path === "/my-data" || path === "/tools/my-data") return <MyDataPage />;
+    if (path === "/settings/notifications") return <NotificationSettingsPage />;
+    if (path === "/settings/holidays") return <HolidaySettingsPage />;
+    if (path === "/developers" || path === "/tools/api") return <DevelopersPage />;
+    if (path === "/offline") return <OfflinePage />;
+    if (path === "/tools/tithi") return <RouteAlias to="/tools/tithi-reminder" />;
+    if (path === "/tools/diaspora") return <RouteAlias to="/tools/clock" />;
+    if (path === "/tools/card") return <RouteAlias to="/tools/janmadin-akhbar" />;
     if (path === "/settings/community") return <CommunityPreferences />;
     if (path === "/admin/community-suites") return <CommunityAdmin />;
     if (path === "/explore") return <FeatureHub />;
