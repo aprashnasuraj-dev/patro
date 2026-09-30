@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-09-30",
+  "source": "live Supabase Edge Function",
+  "redactions": [],
+  "id": "4371aedb-9156-4ed8-b2a4-47400e45ab80",
+  "slug": "nm-market-fetch",
+  "name": "nm-market-fetch",
+  "status": "ACTIVE",
+  "version": 9,
+  "created_at": 1790556506224,
+  "updated_at": 1790578677978,
+  "verify_jwt": false,
+  "import_map": false,
+  "entrypoint_path": "/tmp/user_fn_pxlsmxbpgdfzjzuqtict_4371aedb-9156-4ed8-b2a4-47400e45ab80_7/source/index.ts",
+  "ezbr_sha256": "f03f7a3dcdb20d7cdefec801758d7818435093610a80455edce92a24fcd58464",
+  "files": [
+    {
+      "name": "index.ts",
+      "content": "import { createClient } from \"npm:@supabase/supabase-js@2\";\n\nDeno.serve(async req=>{\n  const headers={\"content-type\":\"application/json; charset=utf-8\",\"cache-control\":\"no-store\"};\n  const url=Deno.env.get(\"SUPABASE_URL\")||\"https://pxlsmxbpgdfzjzuqtict.supabase.co\";\n  const key=Deno.env.get(\"SUPABASE_SERVICE_ROLE_KEY\")||JSON.parse(Deno.env.get(\"SUPABASE_SECRET_KEYS\")||\"{}\").default||\"\";\n  if(!key)return new Response(JSON.stringify({error:\"service_role_unavailable\"}),{status:503,headers});\n  const db=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});\n  const {data:secret,error}=await db.rpc(\"nm_runtime_secret\",{secret_name:\"nm_cron_secret\"});\n  if(error||!secret)return new Response(JSON.stringify({error:\"cron_secret_unavailable\"}),{status:503,headers});\n  if((req.headers.get(\"authorization\")||\"\")!==\"Bearer \"+secret)return new Response(JSON.stringify({error:\"unauthorized\"}),{status:401,headers});\n\n  let lastStatus=503;\n  let lastBody=JSON.stringify({error:\"market_refresh_unavailable\"});\n  for(let attempt=1;attempt<=3;attempt++){\n    try{\n      const r=await fetch(url+\"/functions/v1/nepal-miti-protected/api/cron/market\",{\n        method:\"POST\",\n        headers:{authorization:\"Bearer \"+secret,\"content-type\":\"application/json\"},\n        body:\"{}\"\n      });\n      lastStatus=r.status;\n      lastBody=await r.text();\n      if(r.ok)return new Response(lastBody,{status:r.status,headers:{...headers,\"x-nm-attempt\":String(attempt)}});\n      if(r.status===401||r.status===403)break;\n    }catch{\n      lastStatus=503;\n      lastBody=JSON.stringify({error:\"market_refresh_transport_error\"});\n    }\n    if(attempt<3)await new Promise(resolve=>setTimeout(resolve,attempt*1000));\n  }\n  return new Response(lastBody,{status:lastStatus,headers:{...headers,\"x-nm-attempt\":\"3\"}});\n});"
+    }
+  ]
+}

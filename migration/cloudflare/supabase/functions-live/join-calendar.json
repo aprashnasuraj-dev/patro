@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-09-30",
+  "source": "live Supabase Edge Function",
+  "redactions": [],
+  "id": "e948e567-1266-470b-b330-635696333c50",
+  "slug": "join-calendar",
+  "name": "join-calendar",
+  "status": "ACTIVE",
+  "version": 7,
+  "created_at": 1789734414360,
+  "updated_at": 1789734414360,
+  "verify_jwt": true,
+  "import_map": true,
+  "entrypoint_path": "/tmp/user_fn_pxlsmxbpgdfzjzuqtict_e948e567-1266-470b-b330-635696333c50_1/source/index.ts",
+  "import_map_path": "/tmp/user_fn_pxlsmxbpgdfzjzuqtict_e948e567-1266-470b-b330-635696333c50_1/source/deno.json",
+  "ezbr_sha256": "55880fc44973c414ae2ca3c189fed41b81b2b928400c9135d6fb84b5701d64b4",
+  "files": [
+    {
+      "name": "index.ts",
+      "content": "import { createClient } from \"npm:@supabase/supabase-js@2\";\n\nconst cors = {\n  \"Access-Control-Allow-Origin\": \"*\",\n  \"Access-Control-Allow-Headers\": \"authorization, x-client-info, apikey, content-type\",\n  \"Access-Control-Allow-Methods\": \"POST, OPTIONS\",\n};\n\nDeno.serve(async (req: Request) => {\n  if (req.method === \"OPTIONS\") return new Response(\"ok\", { headers: cors });\n  if (req.method !== \"POST\") return Response.json({ error: \"method_not_allowed\" }, { status: 405, headers: cors });\n\n  try {\n    const authHeader = req.headers.get(\"Authorization\") || \"\";\n    const token = authHeader.replace(/^Bearer\\s+/i, \"\");\n    if (!token) return Response.json({ error: \"unauthorized\" }, { status: 401, headers: cors });\n\n    const url = Deno.env.get(\"SUPABASE_URL\")!;\n    const anon = Deno.env.get(\"SUPABASE_ANON_KEY\")!;\n    const service = Deno.env.get(\"SUPABASE_SERVICE_ROLE_KEY\")!;\n\n    const userClient = createClient(url, anon, {\n      global: { headers: { Authorization: authHeader } },\n      auth: { persistSession: false },\n    });\n    const { data: userData, error: userError } = await userClient.auth.getUser(token);\n    const user = userData?.user;\n    if (userError || !user) return Response.json({ error: \"unauthorized\" }, { status: 401, headers: cors });\n\n    const body = await req.json().catch(() => ({}));\n    const code = String(body?.code || \"\").trim().toUpperCase();\n    if (!/^[A-Z0-9]{8,16}$/.test(code)) {\n      return Response.json({ error: \"invalid_share_code\" }, { status: 400, headers: cors });\n    }\n\n    const admin = createClient(url, service, { auth: { persistSession: false } });\n    const { data: calendar, error: calError } = await admin\n      .from(\"calendar_spaces\")\n      .select(\"id,owner_id,name,kind\")\n      .eq(\"share_code\", code)\n      .maybeSingle();\n\n    if (calError) throw calError;\n    if (!calendar) return Response.json({ error: \"calendar_not_found\" }, { status: 404, headers: cors });\n    if (calendar.owner_id === user.id) {\n      return Response.json({ ok: true, calendar, role: \"owner\", already_joined: true }, { headers: cors });\n    }\n\n    const requestedRole = body?.role === \"viewer\" ? \"viewer\" : \"editor\";\n    const { error: joinError } = await admin.from(\"calendar_space_members\").upsert(\n      { calendar_id: calendar.id, user_id: user.id, role: requestedRole },\n      { onConflict: \"calendar_id,user_id\" }\n    );\n    if (joinError) throw joinError;\n\n    return Response.json({ ok: true, calendar, role: requestedRole }, { headers: cors });\n  } catch (e) {\n    return Response.json({ error: \"join_failed\", detail: e instanceof Error ? e.message : String(e) }, { status: 500, headers: cors });\n  }\n});"
+    },
+    {
+      "name": "deno.json",
+      "content": "{\"imports\":{}}"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-09-30",
+  "source": "live Supabase Edge Function",
+  "redactions": [],
+  "id": "f1ee86e7-32d5-484e-b736-d61d11fe183b",
+  "slug": "nm-push-dispatch",
+  "name": "nm-push-dispatch",
+  "status": "ACTIVE",
+  "version": 8,
+  "created_at": 1790556495444,
+  "updated_at": 1790556873782,
+  "verify_jwt": false,
+  "import_map": false,
+  "entrypoint_path": "/tmp/user_fn_pxlsmxbpgdfzjzuqtict_f1ee86e7-32d5-484e-b736-d61d11fe183b_2/source/index.ts",
+  "ezbr_sha256": "1955dd9d749e5348df91bf468b278bb83b4d0e7f59448365e3a11db7174ca9c7",
+  "files": [
+    {
+      "name": "index.ts",
+      "content": "import { createClient } from \"npm:@supabase/supabase-js@2\";\nDeno.serve(async req=>{\n  const url=Deno.env.get(\"SUPABASE_URL\")||\"https://pxlsmxbpgdfzjzuqtict.supabase.co\";\n  const key=Deno.env.get(\"SUPABASE_SERVICE_ROLE_KEY\")||JSON.parse(Deno.env.get(\"SUPABASE_SECRET_KEYS\")||\"{}\").default||\"\";\n  if(!key)return new Response(JSON.stringify({error:\"service_role_unavailable\"}),{status:503,headers:{\"content-type\":\"application/json\"}});\n  const db=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});\n  const {data:secret,error}=await db.rpc(\"nm_runtime_secret\",{secret_name:\"nm_cron_secret\"});\n  if(error||!secret)return new Response(JSON.stringify({error:\"cron_secret_unavailable\"}),{status:503,headers:{\"content-type\":\"application/json\"}});\n  if((req.headers.get(\"authorization\")||\"\")!==\"Bearer \"+secret)return new Response(JSON.stringify({error:\"unauthorized\"}),{status:401,headers:{\"content-type\":\"application/json\",\"cache-control\":\"no-store\"}});\n  const r=await fetch(url+\"/functions/v1/nepal-miti-protected/api/cron/push\",{method:\"POST\",headers:{authorization:\"Bearer \"+secret,\"content-type\":\"application/json\"},body:\"{}\"});\n  return new Response(await r.text(),{status:r.status,headers:{\"content-type\":r.headers.get(\"content-type\")||\"application/json\",\"cache-control\":\"no-store\"}});\n});"
+    }
+  ]
+}
