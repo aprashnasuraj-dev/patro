@@ -2,9 +2,6 @@ import type { PersonalTithiEvent } from "@/patro-tools/tithi-events/events";
 import type { Sealed } from "@/patro-tools/letters/crypto";
 
 const LIFE_KEY = "nepalmiti.life.v1";
-const SESSION_KEY = "nepalmiti.session.v1";
-const SUPABASE_URL = "https://pxlsmxbpgdfzjzuqtict.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_uONsehXk_IXPMu7PPGF1nw_4_gbD_Hm";
 
 export type StoredTithiEvent = PersonalTithiEvent & {
   sourceDate: string;
@@ -91,21 +88,6 @@ export function updateLife(updater: (current: LifeState) => LifeState) {
   return writeLife(updater(readLife()));
 }
 
-type SessionShape = { access_token?: string; user?: { id?: string } };
-
-export function currentSession(): SessionShape | null {
-  try {
-    const raw = localStorage.getItem(SESSION_KEY);
-    return raw ? JSON.parse(raw) as SessionShape : null;
-  } catch {
-    return null;
-  }
-}
-
-export function accessToken() {
-  return currentSession()?.access_token || "";
-}
-
 function mergeById<T extends { id?: string; updatedAt?: number }>(a: T[], b: T[]) {
   const rows = new Map<string, T>();
   for (const item of [...a, ...b]) {
@@ -136,36 +118,42 @@ function mergeLife(local: LifeState, remoteRaw: unknown): LifeState {
 
 export async function syncLifeTools(): Promise<{ life: LifeState; synced: boolean }> {
   const local = readLife();
-  const session = currentSession();
-  const token = session?.access_token;
-  const userId = session?.user?.id;
-  if (!token || !userId) return { life: local, synced: false };
-
-  const headers = {
-    apikey: SUPABASE_PUBLISHABLE_KEY,
-    authorization: "Bearer " + token,
-    "content-type": "application/json",
-  };
-
   try {
-    const response = await fetch(
-      SUPABASE_URL + "/rest/v1/user_calendar_state?user_id=eq." + encodeURIComponent(userId) + "&select=notes,preferences&limit=1",
-      { headers }
-    );
+    const response = await fetch("/api/v1/me/state", {
+      headers: { Accept: "application/json" },
+      cache: "no-store",
+      credentials: "same-origin",
+    });
+    if (response.status === 401) return { life: local, synced: false };
     if (!response.ok) return { life: local, synced: false };
-    const rows = await response.json() as Array<{ notes?: unknown[]; preferences?: Record<string, unknown> }>;
-    const remote = rows[0] || {};
-    const preferences = remote.preferences && typeof remote.preferences === "object" ? remote.preferences : {};
+
+    const body = await response.json() as {
+      state?: {
+        notes?: unknown;
+        events?: unknown;
+        calendars?: unknown;
+        preferences?: Record<string, unknown>;
+        feedback?: unknown;
+      };
+    };
+    const state = body.state || {};
+    const preferences = state.preferences && typeof state.preferences === "object" ? state.preferences : {};
     const life = mergeLife(local, preferences.life_tools);
     writeLife(life);
 
-    const saved = await fetch(SUPABASE_URL + "/rest/v1/user_calendar_state?on_conflict=user_id", {
-      method: "POST",
-      headers: { ...headers, Prefer: "resolution=merge-duplicates,return=minimal" },
+    const saved = await fetch("/api/v1/me/state", {
+      method: "PUT",
+      headers: { "content-type": "application/json", Accept: "application/json" },
+      credentials: "same-origin",
+      cache: "no-store",
       body: JSON.stringify({
-        user_id: userId,
-        notes: Array.isArray(remote.notes) ? remote.notes : [],
-        preferences: { ...preferences, life_tools: life },
+        state: {
+          notes: state.notes && typeof state.notes === "object" ? state.notes : {},
+          events: Array.isArray(state.events) ? state.events : [],
+          calendars: Array.isArray(state.calendars) ? state.calendars : [],
+          preferences: { ...preferences, life_tools: life },
+          feedback: Array.isArray(state.feedback) ? state.feedback : [],
+        },
       }),
     });
     return { life, synced: saved.ok };
