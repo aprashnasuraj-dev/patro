@@ -331,22 +331,54 @@ async function nativeTithi(request: Request, env: Env) {
   }
 }
 
-async function nativeToolCatalog(env: Env) {
+async function nativeToolCatalog(request: Request, env: Env) {
   if (!env.DB) return null;
   try {
-    const out = await env.DB.prepare(
-      "select payload from content_records where table_name = 'tool_catalog' order by sort_order asc, record_key asc"
-    ).all();
+    const includeUpcoming = new URL(request.url).searchParams.get("include") === "upcoming";
+    const [catalogOut, releaseOut] = await Promise.all([
+      env.DB.prepare(
+        "select payload from content_records where table_name = 'tool_catalog' order by sort_order asc, record_key asc"
+      ).all(),
+      env.DB.prepare(
+        "select payload from content_records where table_name = 'tool_release_plan' order by json_extract(payload,'$.publish_after') asc, record_key asc"
+      ).all()
+    ]);
     const now = Date.now();
-    const items = (out.results || []).map(parseRecord).filter(Boolean).filter((row:any) =>
-      row.enabled === true && (!row.release_after || Date.parse(String(row.release_after)) <= now)
-    ).map((row:any) => ({
-      id: row.tool_id, slug: row.slug, title: row.title, subtitle: row.subtitle,
-      category: row.category, parent_slug: row.parent_slug, path: row.target_path,
-      icon: row.icon, badge: row.badge, sort_order: row.sort_order, metadata: row.metadata || {}
-    }));
+    const catalogRows = (catalogOut.results || []).map(parseRecord).filter(Boolean);
+    const releaseRows = (releaseOut.results || []).map(parseRecord).filter(Boolean);
+    const items = catalogRows
+      .filter((row:any) => row.enabled === true && Date.parse(String(row.release_after)) <= now)
+      .map((row:any) => ({
+        id: row.tool_id, slug: row.slug, title: row.title, subtitle: row.subtitle,
+        category: row.category, parent_slug: row.parent_slug, path: row.target_path,
+        icon: row.icon, badge: row.badge, sort_order: row.sort_order, metadata: row.metadata || {}
+      }));
+    const releases = releaseRows
+      .filter((row:any) => (row.state === "staged" || row.state === "published") && Date.parse(String(row.publish_after)) <= now)
+      .map((row:any) => ({
+        id: row.release_id, feature: row.feature_key, version: row.version,
+        target_path: row.target_path, publish_after: row.publish_after,
+        source_bundle_version: row.source_bundle_version, metadata: row.metadata || {}
+      }));
+    const upcoming = includeUpcoming
+      ? releaseRows
+          .filter((row:any) => row.state === "staged" && Date.parse(String(row.publish_after)) > now)
+          .map((row:any) => ({
+            id: row.release_id, feature: row.feature_key, version: row.version,
+            target_path: row.target_path, publish_after: row.publish_after,
+            source_bundle_version: row.source_bundle_version
+          }))
+      : undefined;
     if (!items.length) return null;
-    return json({ok:true,version:2,generated_at:new Date().toISOString(),source:"Cloudflare D1 content_records",items,releases:[]},200,"public, max-age=60, s-maxage=600, stale-while-revalidate=86400");
+    return json({
+      ok:true,
+      version:1,
+      generated_at:new Date().toISOString(),
+      source:"Cloudflare D1 content_records",
+      items,
+      releases,
+      ...(includeUpcoming ? {upcoming} : {})
+    },200,"public, max-age=60, s-maxage=600, stale-while-revalidate=86400");
   } catch { return null; }
 }
 
@@ -485,7 +517,7 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
     return edgeCached(request,ctx,600,async() => (await nativeRashifalUniversal(request,env)) || compat(request,env,"router","/rashifal/universal"));
   }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
-    return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(env)) || compat(request,env));
+    return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(request,env)) || compat(request,env));
   }
   if (path === "/api/v1/on-this-day" && request.method === "GET") {
     return edgeCached(request,ctx,86400,async() => (await nativeHistory(request,env)) || compat(request,env,"router","/on-this-day"));

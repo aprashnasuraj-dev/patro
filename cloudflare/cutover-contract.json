@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "legacy_origin": "https://patro-blush.vercel.app",
-  "notes": "Stable cutover contract. HTML routes verify reachability/content type; deterministic JSON routes compare selected semantic fields. Volatile upstream fields are intentionally excluded.",
+  "notes": "Stable cutover contract. HTML routes verify reachability/content type, including every enabled tool target; deterministic JSON routes compare selected semantic fields and both main-calendar boundaries. Volatile upstream fields are intentionally excluded.",
   "routes": [
     {
       "path": "/",
@@ -108,6 +108,159 @@
     {
       "path": "/api/v1/radio/catalog",
       "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/sync?date=1826-04-11",
+      "kind": "json-semantic",
+      "fields": [
+        "success",
+        "query_date",
+        "calendars.gregorian_ad",
+        "calendars.bikram_sambat",
+        "calendars.nepal_sambat",
+        "tithi.number",
+        "tithi.en",
+        "tithi.paksha"
+      ]
+    },
+    {
+      "path": "/api/v1/sync?date=2037-04-13",
+      "kind": "json-semantic",
+      "fields": [
+        "success",
+        "query_date",
+        "calendars.gregorian_ad",
+        "calendars.bikram_sambat",
+        "calendars.nepal_sambat",
+        "tithi.number",
+        "tithi.en",
+        "tithi.paksha"
+      ]
+    },
+    {
+      "path": "/api/v1/tools/catalog?include=upcoming",
+      "kind": "json-semantic",
+      "fields": [
+        "ok",
+        "version",
+        "items.length",
+        "releases.length",
+        "upcoming.length"
+      ]
+    },
+    {
+      "path": "/api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=2026-09-30",
+      "kind": "json-semantic",
+      "fields": [
+        "window.key",
+        "readings.length",
+        "engine_version",
+        "schema_version"
+      ]
+    },
+    {
+      "path": "/tools/typingtools",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/bstoad",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/adtobs",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/landconverter",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/incometax",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/nepaliqr",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/fuelprice",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/tithi",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/diaspora",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/card",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/family",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/api",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/my-data",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/nepali-typing",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/preeti-converter",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/tithi-reminder",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/sait",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/baby-names",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/janmadin-akhbar",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/future-letter",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/spell-check",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/voice-typing",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/ocr",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/name-check",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/read-aloud",
+      "kind": "html"
+    },
+    {
+      "path": "/tools/patro-bot",
+      "kind": "html"
     }
   ]
 }
