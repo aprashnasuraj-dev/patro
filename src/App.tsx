@@ -34,43 +34,6 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/tools/api", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
 ];
 
-const LEGACY_TOOL_PATHS = new Set(["/tithi", "/diaspora", "/card", "/family", "/developers", "/my-data"]);
-
-const FEATURE_EXACT = new Set([
-  ...FEATURE_LINKS.map((x) => x.path),
-  ...LEGACY_TOOL_PATHS,
-  "/offline", "/convert", "/search", "/notes", "/planner", "/data-trust", "/nepal-sambat", "/astrology"
-]);
-
-function matchesFeaturePath(path: string) {
-  return FEATURE_EXACT.has(path) ||
-    ["/family/", "/settings/", "/calendar/", "/date/", "/festival/", "/jyotish/"].some((p) => path.startsWith(p));
-}
-
-function FeatureFrame() {
-  const frameRef = useRef<HTMLIFrameElement | null>(null);
-  const path = window.location.pathname;
-  const q = new URLSearchParams({ path });
-  if (window.location.search) q.set("search", window.location.search);
-  const title = FEATURE_LINKS.find((x) => x.path === path)?.title || "MeroPatro";
-
-  return (
-    <div className="feature-route-shell">
-      <header className="feature-route-bar">
-        <a className="feature-home-link" href="/">← MeroPatro</a>
-        <strong>{title}</strong>
-        <ReadAloudButton
-          className="secondary-button feature-read-aloud"
-          getText={() => frameRef.current?.contentDocument?.body?.innerText || title}
-          label="सुन्नुहोस्"
-        />
-        <span className="free-pill">Free</span>
-      </header>
-      <iframe ref={frameRef} className="feature-frame" src={"/api/v1/compat/page?" + q.toString()} title={title} />
-    </div>
-  );
-}
-
 type Loadable<T> = {
   data: T | null;
   error: string | null;
@@ -105,15 +68,16 @@ function parseIso(iso: string): Date {
 }
 
 function initialDate(today: string) {
-  const param = new URLSearchParams(window.location.search).get("date");
-  if (!param || !/^\d{4}-\d{2}-\d{2}$/.test(param)) return today;
+  const query = new URLSearchParams(window.location.search).get("date");
+  const pathMatch = window.location.pathname.match(/^\/date\/(\d{4}-\d{2}-\d{2})\/?$/);
+  const param = query || pathMatch?.[1] || "";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(param)) return today;
   const date = parseIso(param);
   if (Number.isNaN(date.getTime())) return today;
   return param;
 }
 
 export default function App() {
-  if (matchesFeaturePath(window.location.pathname)) return <FeatureFrame />;
 
   const today = useMemo(todayInKathmandu, []);
   const [selectedDate, setSelectedDate] = useState(() => initialDate(today));
