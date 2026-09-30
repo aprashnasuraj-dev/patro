@@ -8,14 +8,18 @@
     "database": "Supabase PostgreSQL"
   },
   "target_runtime": {
-    "frontend": "Cloudflare Pages",
+    "canonical": "Cloudflare Worker + Static Assets",
     "api_worker": "mero-patro",
-    "pages_project": "mero-patro-pages",
-    "pages_service_binding": "PATRO_API",
+    "static_assets_binding": "ASSETS",
     "database_binding": "DB",
-    "cache_binding": "CACHE"
+    "cache_binding": "CACHE",
+    "optional_split_frontend": {
+      "mode": "pages-worker",
+      "pages_project": "mero-patro-pages",
+      "pages_service_binding": "PATRO_API"
+    }
   },
-  "migration_mode": "native-first-with-supabase-compatibility-fallback",
+  "migration_mode": "single-worker-native-first-with-explicit-supabase-compatibility-until-cutover-gates-pass",
   "public_reference_data": {
     "private_user_data_included": false,
     "astronomy_calendar_map": {
@@ -86,5 +90,36 @@
     "deterministic_d1_tables": 32,
     "protected_transition_tables": 22,
     "ephemeral_runtime_tables": 2
+  },
+  "source_copy": {
+    "latest_live_edge_functions": {
+      "copied": 11,
+      "total": 11,
+      "manifest": "cloudflare/source-runtime-manifest.json"
+    },
+    "cloudflare_module_conversions": {
+      "present": 11,
+      "total": 11,
+      "path": "cloudflare/converted-functions"
+    },
+    "vercel_manifest": "migration/cloudflare/vercel/project-manifest.json",
+    "historical_previews_required": false
+  },
+  "cutover": {
+    "remaining_inventory": "cloudflare/remaining-cutover.json",
+    "safe_to_delete_supabase": false,
+    "safe_to_delete_vercel": false,
+    "rule": "Deletion is allowed only after remaining-cutover.json gates are satisfied and production parity is observed."
+  },
+  "seo": {
+    "generator": "scripts/generate-seo.mjs",
+    "canonical_host_env": "PUBLIC_SITE_URL",
+    "outputs": [
+      "public/robots.txt",
+      "public/sitemap.xml",
+      "public/seo-manifest.json"
+    ],
+    "edge_metadata": "worker/index.ts HTMLRewriter",
+    "lighthouse_workflow": ".github/workflows/seo-audit.yml"
   }
 }
