@@ -19,7 +19,6 @@ type Env = {
   NASA_API_KEY?: string;
   RADIO_RELAY_SECRET?: string;
   TV_RELAY_SECRET?: string;
-  // Exact secret names preserved from Supabase for Cloudflare cutover.
   Groq_API?: string;
   nvidia_api?: string;
   // Optional provider aliases retained for compatibility.
@@ -41,6 +40,7 @@ type Env = {
   ADMIN_GOOGLE_SUBJECTS?: string;
   PUBLIC_SITE_URL?: string;
   CRON_SECRET?: string;
+  RASHIFAL_SERVICE_TOKEN?: string;
 };
 
 const APOD_PRIMARY = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
