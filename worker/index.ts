@@ -18,6 +18,40 @@ const APOD_PRIMARY = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
 const APOD_LEGACY = "https://api.nasa.gov/planetary/apod";
 const APOD_FALLBACK = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moon_2026_print.jpg";
 
+const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
+const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'";
+
+function secureResponse(request: Request, response: Response) {
+  const headers = new Headers(response.headers);
+  headers.set("x-content-type-options", "nosniff");
+  headers.set("referrer-policy", "strict-origin-when-cross-origin");
+  headers.set("strict-transport-security", "max-age=31536000; includeSubDomains");
+  headers.set("permissions-policy", "camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()");
+  headers.set("x-dns-prefetch-control", "off");
+
+  const path = new URL(request.url).pathname;
+  if (path.startsWith("/api/")) headers.set("x-robots-tag", "noindex, nofollow");
+  if (["/notes","/planner","/settings","/family","/my-data","/my-diary","/offline","/widget/today"].some((prefix) => path === prefix || path.startsWith(prefix + "/"))) {
+    headers.set("x-robots-tag", "noindex, nofollow");
+  }
+  if (path === "/settings" || path.startsWith("/settings/") || path === "/family" || path.startsWith("/family/") || path === "/my-data" || path === "/my-diary") {
+    headers.set("cache-control", "private, no-store, max-age=0");
+  }
+  if (path === "/family" || path.startsWith("/family/")) headers.set("referrer-policy", "no-referrer");
+
+  const type = headers.get("content-type") || "";
+  if (type.includes("text/html")) {
+    headers.set("content-security-policy", path === "/embed/today" || path === "/embed/converter" ? EMBED_CSP : DEFAULT_CSP);
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
+}
+
+
 function json(body: unknown, status = 200, cache = "no-store") {
   return new Response(JSON.stringify(body), {
     status,
@@ -366,22 +400,22 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    let response: Response;
 
-    if (url.pathname.startsWith("/api/v1/")) return handleApi(request,env,ctx);
-
-    if (url.pathname === "/api/jyotish-chat") {
-      return compat(request,env,"router","/jyotish-chat");
+    if (url.pathname.startsWith("/api/v1/")) {
+      response = await handleApi(request,env,ctx);
+    } else if (url.pathname === "/api/jyotish-chat") {
+      response = await compat(request,env,"router","/jyotish-chat");
+    } else if (url.pathname === "/api/rashifal_engine.py") {
+      response = await compat(request,env,"protected","/api/rashifal/personalized");
+    } else if (url.pathname.startsWith("/fm-v2-stream/")) {
+      response = await compat(request,env,"protected",url.pathname);
+    } else if (env.ASSETS) {
+      response = await env.ASSETS.fetch(request);
+    } else {
+      response = json({error:"not_found",runtime:"Cloudflare Workers"},404,"no-store");
     }
 
-    if (url.pathname === "/api/rashifal_engine.py") {
-      return compat(request,env,"protected","/api/rashifal/personalized");
-    }
-
-    if (url.pathname.startsWith("/fm-v2-stream/")) {
-      return compat(request,env,"protected",url.pathname);
-    }
-
-    if (env.ASSETS) return env.ASSETS.fetch(request);
-    return json({error:"not_found",runtime:"Cloudflare Workers"},404,"no-store");
+    return secureResponse(request, response);
   }
 };
