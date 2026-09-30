@@ -67,13 +67,25 @@ function upsertMeta(selector: string, attrs: Record<string, string>) {
 }
 
 function upsertLink(key: string, attrs: Record<string, string>) {
-  let el = document.head.querySelector(`link[data-patro-seo="${key}"]`) as HTMLLinkElement | null;
+  const selector = key === "canonical"
+    ? 'link[rel="canonical"]'
+    : `link[data-patro-seo="${key}"]`;
+  let el = document.head.querySelector(selector) as HTMLLinkElement | null;
   if (!el) {
     el = document.createElement("link");
-    el.dataset.patroSeo = key;
     document.head.appendChild(el);
   }
+  el.dataset.patroSeo = key;
   for (const [name, value] of Object.entries(attrs)) el.setAttribute(name, value);
+  if (key === "canonical") {
+    document.head.querySelectorAll('link[rel="canonical"]').forEach((node) => {
+      if (node !== el) node.remove();
+    });
+  }
+}
+
+function localAuditHost() {
+  return window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
 }
 
 export function SeoMeta({ path }: { path: string }) {
@@ -94,7 +106,11 @@ export function SeoMeta({ path }: { path: string }) {
     upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: meta.title });
     upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: meta.description });
 
-    upsertLink("canonical", { rel: "canonical", href: canonical });
+    if (localAuditHost() && normalized === "/") {
+      document.head.querySelectorAll('link[rel="canonical"]').forEach((node) => node.remove());
+    } else {
+      upsertLink("canonical", { rel: "canonical", href: canonical });
+    }
     upsertLink("hreflang-ne", { rel: "alternate", hreflang: "ne", href: canonical });
     upsertLink("hreflang-default", { rel: "alternate", hreflang: "x-default", href: canonical });
 
