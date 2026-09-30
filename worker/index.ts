@@ -42,6 +42,107 @@ const APOD_FALLBACK = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moo
 const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
 const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'";
 
+
+type EdgeSeoMeta = { title: string; description: string };
+
+const EDGE_SEO_EXACT: Record<string, EdgeSeoMeta> = {
+  "/": { title: "नेपाली पात्रो, तिथि र राशिफल · MeroPatro", description: "MeroPatro — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।" },
+  "/astro": { title: "खगोलीय पात्रो · Astronomy Calendar · MeroPatro", description: "AD, BS, Nepal Sambat, तिथि, lunar phase र NASA astronomy data एउटै पात्रोमा।" },
+  "/fm": { title: "FM Radio · MeroPatro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
+  "/tv": { title: "Live TV · MeroPatro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।" },
+  "/samachar": { title: "समाचार · Samachar · MeroPatro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
+  "/time-machine": { title: "नेपाल Time Machine · MeroPatro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
+  "/on-this-day": { title: "आज इतिहासमा · On This Day · MeroPatro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
+  "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
+  "/convert": { title: "AD ↔ BS Date Converter · MeroPatro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
+  "/jyotish/rashifal": { title: "राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
+  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" }
+};
+
+function canonicalSeoPath(path: string) {
+  if (!path || path === "/") return "/";
+  return path.replace(/\/+$/, "") || "/";
+}
+
+function edgeSeoMeta(path: string): EdgeSeoMeta {
+  if (EDGE_SEO_EXACT[path]) return EDGE_SEO_EXACT[path];
+  const calendar = path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);
+  if (calendar) {
+    return {
+      title: "नेपाली पात्रो " + calendar[1] + "/" + String(calendar[2]).padStart(2, "0") + " · MeroPatro",
+      description: "वि.सं. " + calendar[1] + " सालको महिना " + calendar[2] + ": तिथि, चाडपर्व, बिदा र AD/BS date context।"
+    };
+  }
+  if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · MeroPatro", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
+  if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · MeroPatro", description: "MeroPatro को free browser utility tool।" };
+  return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+}
+
+function historicalCalendarNoindex(path: string) {
+  const match = path.match(/^\/calendar\/(\d{4})\//);
+  if (!match) return false;
+  const adYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
+  return Number(match[1]) < (adYear + 57) - 10;
+}
+
+function escapeHtml(value: string) {
+  const map: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" };
+  return value.replace(/[&<>"']/g, (ch) => map[ch] || ch);
+}
+
+function rewriteSeoHtml(request: Request, response: Response, path: string) {
+  const HTMLRewriterCtor = (globalThis as any).HTMLRewriter;
+  if (!HTMLRewriterCtor || path === "/embed/today" || path === "/embed/converter") return response;
+
+  const url = new URL(request.url);
+  const clean = canonicalSeoPath(path);
+  const canonical = url.origin + clean;
+  const meta = edgeSeoMeta(clean);
+  const privateRoute = ["/notes","/planner","/settings","/family","/my-data","/my-diary","/offline","/admin"].some(
+    (prefix) => clean === prefix || clean.startsWith(prefix + "/")
+  );
+  const robots = privateRoute ? "noindex, nofollow" : historicalCalendarNoindex(clean) ? "noindex, follow" : "index, follow";
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: meta.title,
+    description: meta.description,
+    url: canonical,
+    inLanguage: ["ne", "en"],
+    isPartOf: { "@type": "WebSite", name: "MeroPatro", url: url.origin + "/" }
+  }).replace(/</g, "\\u003c");
+
+  const headBlock =
+    '<meta name="description" content="' + escapeHtml(meta.description) + '">' +
+    '<meta name="robots" content="' + robots + '">' +
+    '<meta property="og:title" content="' + escapeHtml(meta.title) + '">' +
+    '<meta property="og:description" content="' + escapeHtml(meta.description) + '">' +
+    '<meta property="og:url" content="' + escapeHtml(canonical) + '">' +
+    '<meta property="og:locale" content="ne_NP">' +
+    '<meta name="twitter:title" content="' + escapeHtml(meta.title) + '">' +
+    '<meta name="twitter:description" content="' + escapeHtml(meta.description) + '">' +
+    '<link rel="canonical" href="' + escapeHtml(canonical) + '">' +
+    '<link rel="alternate" hreflang="ne" href="' + escapeHtml(canonical) + '">' +
+    '<link rel="alternate" hreflang="x-default" href="' + escapeHtml(canonical) + '">' +
+    '<script type="application/ld+json">' + schema + '</script>';
+
+  return new HTMLRewriterCtor()
+    .on("title", { element(el: any) { el.setInnerContent(meta.title); } })
+    .on('meta[name="description"]', { element(el: any) { el.remove(); } })
+    .on('meta[name="robots"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:title"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:description"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:url"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:locale"]', { element(el: any) { el.remove(); } })
+    .on('meta[name="twitter:title"]', { element(el: any) { el.remove(); } })
+    .on('meta[name="twitter:description"]', { element(el: any) { el.remove(); } })
+    .on('link[rel="canonical"]', { element(el: any) { el.remove(); } })
+    .on('link[rel="alternate"][hreflang]', { element(el: any) { el.remove(); } })
+    .on('script[type="application/ld+json"]', { element(el: any) { el.remove(); } })
+    .on("head", { element(el: any) { el.append(headBlock, { html: true }); } })
+    .transform(response);
+}
+
 function secureResponse(request: Request, response: Response) {
   const headers = new Headers(response.headers);
   headers.set("x-content-type-options", "nosniff");
@@ -52,6 +153,7 @@ function secureResponse(request: Request, response: Response) {
 
   const path = new URL(request.url).pathname;
   if (path.startsWith("/api/")) headers.set("x-robots-tag", "noindex, nofollow");
+  if (historicalCalendarNoindex(path)) headers.set("x-robots-tag", "noindex, follow");
   if (["/notes","/planner","/settings","/family","/my-data","/my-diary","/offline","/widget/today"].some((prefix) => path === prefix || path.startsWith(prefix + "/"))) {
     headers.set("x-robots-tag", "noindex, nofollow");
   }
@@ -78,11 +180,13 @@ function secureResponse(request: Request, response: Response) {
     headers.set("content-security-policy", path === "/embed/today" || path === "/embed/converter" ? EMBED_CSP : DEFAULT_CSP);
   }
 
-  return new Response(response.body, {
+  const secured = new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
     headers
   });
+  if (!type.includes("text/html")) return secured;
+  return rewriteSeoHtml(request, secured, path);
 }
 
 
