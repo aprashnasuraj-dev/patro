@@ -8,5 +8,8 @@
       "binding": "PATRO_API",
       "service": "mero-patro"
     }
-  ]
+  ],
+  "vars": {
+    "PUBLIC_SITE_URL": "https://patro-blush.vercel.app"
+  }
 }
