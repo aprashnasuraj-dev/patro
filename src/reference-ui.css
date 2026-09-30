@@ -125,3 +125,50 @@ h1,h2,h3,h4{font-family:var(--ref-display);color:var(--ink-900);letter-spacing:-
 @media(max-width:1040px){.mp-search-pill{min-width:44px;width:44px;padding:0;justify-content:center}.mp-search-pill span,.mp-search-pill kbd{display:none}.mp-brand::after{display:none}.ref-clock-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ref-tool-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){html{scroll-padding-top:98px}.mp-header{height:56px}.mp-reference-strip{top:56px}.mp-reference-strip__inner{width:calc(100% - 20px);min-height:38px}.mp-reference-links a{padding:5px 7px;font-size:.76rem}.mp-reference-today small{display:none}.app-content,.cosmic-app-content,.mp-page,.utility-suite,.media-suite,.jyotish-suite{width:min(100% - 20px,1280px)}.ref-tool-grid.two,.ref-tool-grid.three,.ref-tool-grid.four{grid-template-columns:1fr}.ref-clock-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ref-tool-card>header{align-items:flex-start}.ref-tool-local{display:none}}
 @media(max-width:440px){.ref-clock-grid,.ref-unit-grid{grid-template-columns:1fr}.mp-reference-links a:nth-child(n+5){display:none}}
+
+
+/* Accessibility parity for the final reference theme.
+   These overrides preserve layout while ensuring text/control contrast and
+   native calendar semantics remain readable in the light reference surface. */
+.inline-error{
+  color:#8E1B2F!important;
+  background:#FFF1F3!important;
+  border-color:#E7AAB4!important;
+}
+.segmented-control{
+  background:var(--surface)!important;
+  border-color:var(--line)!important;
+}
+.segmented-control button,
+.segmented-control a{
+  color:var(--ink-900)!important;
+  background:transparent!important;
+}
+.segmented-control button.active{
+  color:#fff!important;
+  background:var(--brand-700)!important;
+}
+.calendar-card .weekday-row{
+  background:var(--surface)!important;
+}
+.calendar-card .weekday-row span{
+  color:var(--ink-900)!important;
+}
+.utility-directory-head p,
+.utility-directory-card .utility-directory-copy > span{
+  color:var(--ink-600)!important;
+}
+.utility-directory-card .utility-directory-copy > strong{
+  color:var(--ink-900)!important;
+}
+.utility-directory-card .utility-directory-copy > small,
+.utility-directory-section-head > a{
+  color:var(--brand-700)!important;
+}
+.station-badge{
+  color:var(--brand-700)!important;
+  background:var(--brand-50)!important;
+}
+.station-copy .station-meta{
+  color:var(--ink-600)!important;
+}
