@@ -25,7 +25,12 @@ const rootAssets = [
   "maskable-512.png",
   "robots.txt",
   "sitemap.xml",
+  "sitemap-pages.xml",
+  "sitemap-community.xml",
+  "sitemap-calendar.xml",
   "seo-manifest.json",
+  "llms.txt",
+  "googlee3f9fe18a8806baf.html",
   "og-default.svg",
   "_headers"
 ];
