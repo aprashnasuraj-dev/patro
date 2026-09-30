@@ -3,6 +3,7 @@ import { fetchCosmicDay } from "./cosmic";
 import { radioCatalogResponse, radioStreamResponse } from "./radio";
 import { fmResponse } from "./fm";
 import { handleJyotishChat } from "./jyotish";
+import { dailyWeatherResponse } from "./weather";
 
 type Env = {
   DB?: any;
@@ -641,6 +642,9 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   }
   if (path === "/api/v1/jyotish-chat") {
     return handleJyotishChat(request,env);
+  }
+  if (path === "/api/v1/weather/daily" && request.method === "GET") {
+    return edgeCached(request,ctx,1800,() => dailyWeatherResponse(request));
   }
   if (path === "/api/v1/nasa/apod" && request.method === "GET") {
     const date = url.searchParams.get("date") || todayNepal();
