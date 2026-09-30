@@ -23,6 +23,7 @@
       "/api/v1/astronomy/tithi",
       "/api/v1/jyotish-chat",
       "/api/v1/nasa/apod",
+      "/api/v1/weather/daily",
       "/api/v1/nasa/cosmic",
       "/api/v1/radio/catalog",
       "/api/v1/radio/stream",
@@ -138,5 +139,13 @@
     "PUBLIC_SITE_URL is set to the final production domain and sitemap/canonical output is verified.",
     "Cloudflare preview passes cloudflare:validate, cloudflare:smoke and Lighthouse SEO/accessibility gates.",
     "Production runs through an observation/rollback window before Vercel/Supabase deletion."
-  ]
+  ],
+  "weather": {
+    "provider": "Open-Meteo",
+    "route": "/api/v1/weather/daily",
+    "client": "src/components/CalendarGrid.tsx",
+    "display": "Daily calendar condition icon plus maximum temperature where forecast is available",
+    "location_default": "Kathmandu 27.7172,85.3240",
+    "supabase_dependency": false
+  }
 }
