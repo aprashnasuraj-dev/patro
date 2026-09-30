@@ -45,7 +45,7 @@ for (const relative of requiredStaticPages) {
   if (!(await exists(resolve(root, "dist", relative)))) missingStatic.push(relative);
 }
 
-const vercel = JSON.parse(await readFile(resolve(root, "vercel.json"), "utf8");
+const vercel = JSON.parse(await readFile(resolve(root, "vercel.json"), "utf8"));
 const rewrites = vercel.rewrites || [];
 const api = rewrites.find((r) => r.source === "/api/v1/:path*");
 if (!api || !String(api.destination || "").includes("/functions/v1/router/:path*")) {
