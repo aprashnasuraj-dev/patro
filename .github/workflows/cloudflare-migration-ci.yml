@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "22"
       - name: Install pinned dependencies
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - name: Cloudflare handoff contract
         run: npm run test:cloudflare-contract
       - name: Verify Pages route parity
