@@ -3,7 +3,7 @@ import { calculateAstronomicalTithi } from "./tithi";
 type Env = {
   DB?: any;
   CACHE?: any;
-  ASSETS: { fetch(request: Request): Promise<Response> };
+  ASSETS?: { fetch(request: Request): Promise<Response> };
   SUPABASE_COMPAT_ORIGIN?: string;
   SUPABASE_PROTECTED_ORIGIN?: string;
   NASA_API_KEY?: string;
@@ -381,6 +381,7 @@ export default {
       return compat(request,env,"protected",url.pathname);
     }
 
-    return env.ASSETS.fetch(request);
+    if (env.ASSETS) return env.ASSETS.fetch(request);
+    return json({error:"not_found",runtime:"Cloudflare Workers"},404,"no-store");
   }
 };
