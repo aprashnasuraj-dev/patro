@@ -98,6 +98,16 @@
       "kind": "json-status"
     },
     {
+      "path": "/api/v1/weather/daily?lat=27.7172&lng=85.3240&days=7",
+      "kind": "json-semantic",
+      "fields": [
+        "ok",
+        "provider",
+        "timezone",
+        "days.length"
+      ]
+    },
+    {
       "path": "/api/v1/nasa/apod?date=2026-09-28",
       "kind": "json-status"
     },
