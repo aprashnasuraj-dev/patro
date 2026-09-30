@@ -214,3 +214,24 @@ export async function nsIcs(env:Env,sp:URLSearchParams){
   for(const x of p.festivals)lines.push("BEGIN:VEVENT","UID:ns-"+x.id+"-"+x.start+"@meropatro","DTSTART;VALUE=DATE:"+icsDate(x.start),"DTEND;VALUE=DATE:"+icsDate(add(x.end,1)),"SUMMARY:"+icsEsc(x.dev+" · "+x.en),"DESCRIPTION:"+icsEsc(x.badge+(x.review?" · समीक्षाधीन":"")),"END:VEVENT");
   lines.push("END:VCALENDAR");return new Response(lines.join("\r\n")+"\r\n",{headers:{"content-type":"text/calendar; charset=utf-8","cache-control":DAYCACHE}});
 }
+
+
+export async function communityResponse(request:Request,env:Env):Promise<Response|null>{
+  if(!env.DB)return null;
+  const url=new URL(request.url),path=url.pathname;
+  if(request.method!=="GET")return null;
+  if(path==="/api/v1/communities")return listCommunities(env);
+  if(path==="/api/v1/communities/feed.ics")return combinedCommunityIcs(env,request);
+  if(path==="/api/v1/communities/lho")return lho(env,url.searchParams);
+  const ics=path.match(/^\/api\/v1\/communities\/([^/]+)\/ics$/);
+  if(ics)return communityIcs(env,decodeURIComponent(ics[1]),url.searchParams);
+  const suite=path.match(/^\/api\/v1\/communities\/([^/]+)$/);
+  if(suite)return communityItems(env,decodeURIComponent(suite[1]),url.searchParams);
+  if(path==="/api/v1/hijri")return hijri(url.searchParams);
+  if(path==="/api/v1/hijri/ramadan")return ramadan(url.searchParams);
+  if(path==="/api/v1/nepal-sambat")return nepalSambat(env,url.searchParams);
+  if(path==="/api/v1/nepal-sambat/festivals")return nsFestivals(env,url.searchParams);
+  if(path==="/api/v1/nepal-sambat/convert")return nsConvert(env,url.searchParams);
+  if(path==="/api/v1/nepal-sambat/ics")return nsIcs(env,url.searchParams);
+  return null;
+}

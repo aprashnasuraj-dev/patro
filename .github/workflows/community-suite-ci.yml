@@ -1,7 +1,12 @@
 name: Community Suite release gate
 on:
   push:
-    branches: [cloudflare-migration, main, feat/community-suites-c-pages-settings, release/community-suites-20260930]
+    branches:
+      - cloudflare-migration
+      - "migration/cloudflare-*"
+      - main
+      - feat/community-suites-c-pages-settings
+      - release/community-suites-20260930
   pull_request:
 permissions:
   contents: read
@@ -52,18 +57,26 @@ jobs:
           for i in {1..30}; do curl -fsS http://127.0.0.1:4173/samudaya/ >/dev/null && exit 0; sleep 1; done
           cat /tmp/community-http.log
           exit 1
-      - name: 360px overflow and runtime checks
+      - name: Install browser test runtime
         shell: bash
         run: |
           set -euo pipefail
-          npm install --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
           npx playwright install chromium >/dev/null
-          cat >/tmp/check-pages.cjs <<'NODE'
-          const { chromium }=require('playwright');
-          const routes=['/nepal-sambat/mandala/','/samudaya/lhosar/','/samudaya/tharu/','/samudaya/mithila/','/samudaya/kirat/','/samudaya/hijri/','/samudaya/chakra/'];
-          (async()=>{const b=await chromium.launch({headless:true});const c=await b.newContext({viewport:{width:360,height:800},reducedMotion:'reduce'});for(const route of routes){const p=await c.newPage();const errors=[];p.on('pageerror',e=>errors.push(String(e)));await p.goto('http://127.0.0.1:4173'+route,{waitUntil:'networkidle'});const size=await p.evaluate(()=>({sw:document.documentElement.scrollWidth,w:innerWidth}));if(size.sw>size.w+1)throw new Error(route+' sideways overflow '+JSON.stringify(size));if(errors.length)throw new Error(route+' page errors '+errors.join(' | '));await p.close();}await b.close();})().catch(e=>{console.error(e);process.exit(1)});
-          NODE
-          NODE_PATH="$PWD/node_modules" node /tmp/check-pages.cjs
+      - name: Mobile check · Nepal Sambat
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /nepal-sambat/mandala/
+      - name: Mobile check · Lhosar
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/lhosar/
+      - name: Mobile check · Tharu
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/tharu/
+      - name: Mobile check · Mithila
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/mithila/
+      - name: Mobile check · Kirat
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/kirat/
+      - name: Mobile check · Hijri
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/hijri/
+      - name: Mobile check · Samudaya Chakra
+        run: NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs /samudaya/chakra/
       - name: Lighthouse mobile accessibility
         shell: bash
         run: |

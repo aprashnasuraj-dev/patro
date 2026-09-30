@@ -30,14 +30,26 @@
       "/api/v1/rashifal/universal",
       "/api/v1/tools/catalog",
       "/api/v1/on-this-day",
-      "/api/v1/time-machine"
+      "/api/v1/time-machine",
+      "/api/v1/communities",
+      "/api/v1/communities/feed.ics",
+      "/api/v1/communities/lho",
+      "/api/v1/communities/:suite",
+      "/api/v1/communities/:suite/ics",
+      "/api/v1/hijri",
+      "/api/v1/hijri/ramadan",
+      "/api/v1/nepal-sambat",
+      "/api/v1/nepal-sambat/festivals",
+      "/api/v1/nepal-sambat/convert",
+      "/api/v1/nepal-sambat/ics"
     ],
     "worker_modules": [
       "worker/tithi.ts",
       "worker/cosmic.ts",
       "worker/fm.ts",
       "worker/radio.ts",
-      "worker/jyotish.ts"
+      "worker/jyotish.ts",
+      "worker/community.ts"
     ],
     "data_target": "Cloudflare D1 + KV/Cache API"
   },
@@ -64,17 +76,6 @@
         "/api/v1/tools/tithi-feed-token",
         "/api/v1/tools/tithi-feed.ics",
         "/api/v1/tools/official-sait",
-        "/api/v1/communities",
-        "/api/v1/communities/feed.ics",
-        "/api/v1/communities/lho",
-        "/api/v1/communities/:suite",
-        "/api/v1/communities/:suite/ics",
-        "/api/v1/hijri",
-        "/api/v1/hijri/ramadan",
-        "/api/v1/nepal-sambat",
-        "/api/v1/nepal-sambat/festivals",
-        "/api/v1/nepal-sambat/convert",
-        "/api/v1/nepal-sambat/ics",
         "/api/v1/community-preferences",
         "/api/v1/admin/community-overrides",
         "/api/v1/admin/ns-festival-dates",
@@ -149,17 +150,53 @@
     "supabase_dependency": false
   },
   "community_frontend_parity": {
-    "required_count": 7,
-    "status": "7/7 source frontends present and build-gated",
-    "routes": [
-      "/nepal-sambat/mandala",
-      "/samudaya/lhosar",
-      "/samudaya/tharu",
-      "/samudaya/mithila",
-      "/samudaya/kirat",
-      "/samudaya/hijri",
-      "/samudaya/chakra"
+    "required_calendar_count": 6,
+    "aggregate_hub_count": 1,
+    "status": "6/6 community calendars + Samudaya Chakra present and build-gated",
+    "calendars": [
+      {
+        "id": "nepal-sambat",
+        "route": "/nepal-sambat/mandala"
+      },
+      {
+        "id": "lhosar",
+        "route": "/samudaya/lhosar"
+      },
+      {
+        "id": "tharu",
+        "route": "/samudaya/tharu"
+      },
+      {
+        "id": "mithila",
+        "route": "/samudaya/mithila"
+      },
+      {
+        "id": "kirat",
+        "route": "/samudaya/kirat"
+      },
+      {
+        "id": "hijri",
+        "route": "/samudaya/hijri"
+      }
     ],
-    "note": "Frontend parity is complete. Community/NS API routes listed under remaining_native_port_groups must still be made Cloudflare-native before Supabase deletion."
+    "aggregate_route": "/samudaya/chakra",
+    "api_runtime": "Cloudflare-native D1/validated local engines via worker/community.ts",
+    "migrated_rows": {
+      "community_dates": 1062,
+      "community_festivals": 34,
+      "ns_days": 14972,
+      "ns_festival_dates": 1886,
+      "ns_festivals": 47
+    },
+    "supabase_snapshot": {
+      "community_overrides": 0,
+      "user_community_preferences": 0,
+      "confirmed_ns_festival_dates": 0
+    },
+    "pending_private_routes": [
+      "/api/v1/community-preferences",
+      "/api/v1/admin/community-overrides",
+      "/api/v1/admin/ns-festival-dates"
+    ]
   }
 }

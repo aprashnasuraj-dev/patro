@@ -33,3 +33,5 @@ jobs:
         run: npm run test:patro-tools
       - name: Nepali typing tests
         run: npm run test:typing
+      - name: Community suite engine tests
+        run: npm run test:community

@@ -271,6 +271,62 @@
     {
       "path": "/tools/patro-bot",
       "kind": "html"
+    },
+    {
+      "path": "/samudaya/lhosar",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya/tharu",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya/mithila",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya/kirat",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya/hijri",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya/chakra",
+      "kind": "html"
+    },
+    {
+      "path": "/api/v1/communities",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/communities/lhosar?from=2026-09-30&count=1",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/communities/tharu?from=2026-09-30&count=1",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/communities/mithila?from=2026-09-30&count=1",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/communities/kirat?from=2026-09-30&count=1",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/communities/hijri?from=2026-09-30&count=1",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/hijri?date=2026-09-30&lat=27.7172&lon=85.324&method=karachi&asr=hanafi",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/nepal-sambat?ad=2026-09-30",
+      "kind": "json-status"
     }
   ]
 }
