@@ -1,0 +1,36 @@
+name: Cloudflare readiness
+
+on:
+  push:
+    branches:
+      - cloudflare-migration
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install pinned direct dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Core tests
+        run: npm run test:core
+      - name: Nepali typing tests
+        run: npm run test:typing
+      - name: Patro tools tests
+        run: npm run test:patro-tools
+      - name: Build and validate Worker + complete D1 snapshot
+        run: npm run cloudflare:validate
+      - name: Bundle Pages Functions
+        run: npx wrangler pages functions build --outdir .cloudflare/pages-functions

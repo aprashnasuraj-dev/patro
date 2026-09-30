@@ -25,7 +25,8 @@ const rootAssets = [
   "maskable-512.png",
   "robots.txt",
   "sitemap.xml",
-  "og-default.svg"
+  "og-default.svg",
+  "_headers"
 ];
 
 for (const file of rootAssets) {

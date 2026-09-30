@@ -3,10 +3,10 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(self), geolocation=(self)
 
-/assets/*
+/astro/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/data/*
+/astro/data/*
   Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800
 
 /sw.js
