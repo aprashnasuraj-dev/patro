@@ -67,6 +67,21 @@
     "nepal_sambat_days": {
       "table": "ns_days",
       "rows": 14972
+    },
+    "community_suites": {
+      "ids": [
+        "nepal-sambat",
+        "lhosar",
+        "tharu",
+        "mithila",
+        "kirat",
+        "hijri"
+      ],
+      "community_dates_rows": 1062,
+      "community_festivals_rows": 34,
+      "nepal_sambat_days_rows": 14972,
+      "nepal_sambat_festival_dates_rows": 1886,
+      "nepal_sambat_festivals_rows": 47
     }
   }
 }
