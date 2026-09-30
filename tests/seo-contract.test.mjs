@@ -155,3 +155,14 @@ test("reference theme has explicit contrast fixes for audited calendar, utility 
     ".station-copy .station-meta{"
   ]) assert.ok(css.includes(marker), marker);
 });
+
+test("client SEO keeps exactly one canonical and uses localhost only for local audits", async () => {
+  const [componentSeo, routeSeo] = await Promise.all([
+    read("src/components/seo/SeoMeta.tsx"),
+    read("src/seo.ts")
+  ]);
+  assert.ok(componentSeo.includes("querySelectorAll('link[rel=\"canonical\"]')"));
+  assert.ok(componentSeo.includes("localAuditHost()"));
+  assert.ok(routeSeo.includes("canonicalBase=localAudit?location.origin:BASE"));
+  assert.ok(routeSeo.includes("canonicals.slice(1).forEach"));
+});
