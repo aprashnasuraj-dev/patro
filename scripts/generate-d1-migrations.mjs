@@ -33,15 +33,133 @@ function stripTransactions(sql, source) {
   return clean;
 }
 
-function validateStatements(sql, source) {
-  for (const [index, line] of sql.split("\n").entries()) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("--") || !trimmed.endsWith(";")) continue;
-    const bytes = Buffer.byteLength(trimmed, "utf8");
-    if (bytes > MAX_STATEMENT_BYTES) {
-      throw new Error(`${source} line ${index + 1} is ${bytes} bytes; D1 maximum is ${MAX_STATEMENT_BYTES} bytes per statement.`);
+const CONTENT_INSERT_PREFIX =
+  "INSERT OR REPLACE INTO content_records(table_name,record_key,ad_date,year,month,day,category,sort_order,payload,updated_at) VALUES(";
+const IMPORT_CHUNK_TABLE = "__patro_import_payload_chunks";
+const PAYLOAD_CHUNK_BYTES = 48_000;
+
+function validateStatement(statement, source) {
+  const trimmed = statement.trim();
+  if (!trimmed || trimmed.startsWith("--")) return;
+  if (!trimmed.endsWith(";")) throw new Error(`Unterminated SQL statement in ${source}.`);
+  const bytes = Buffer.byteLength(trimmed, "utf8");
+  if (bytes > MAX_STATEMENT_BYTES) {
+    throw new Error(`${source} statement is ${bytes} bytes; D1 maximum is ${MAX_STATEMENT_BYTES} bytes per statement.`);
+  }
+}
+
+function parseValuesTuple(statement, source) {
+  if (!statement.startsWith(CONTENT_INSERT_PREFIX) || !statement.endsWith(");")) return null;
+  const body = statement.slice(CONTENT_INSERT_PREFIX.length, -2);
+  const values = [];
+  let current = "";
+  let inString = false;
+
+  for (let i = 0; i < body.length; i++) {
+    const ch = body[i];
+    if (ch === "'") {
+      current += ch;
+      if (inString && body[i + 1] === "'") {
+        current += "'";
+        i++;
+      } else {
+        inString = !inString;
+      }
+      continue;
+    }
+    if (ch === "," && !inString) {
+      values.push(current.trim());
+      current = "";
+      continue;
+    }
+    current += ch;
+  }
+
+  if (inString) throw new Error(`Unclosed SQL string in ${source}.`);
+  values.push(current.trim());
+  if (values.length !== 10) {
+    throw new Error(`Expected 10 content_records values in ${source}, found ${values.length}.`);
+  }
+  return values;
+}
+
+function decodeSqlString(token, source) {
+  if (token === "NULL") return null;
+  if (!token.startsWith("'") || !token.endsWith("'")) {
+    throw new Error(`Expected SQL string literal in ${source}.`);
+  }
+  return token.slice(1, -1).replaceAll("''", "'");
+}
+
+function splitUtf8(value, maxBytes = PAYLOAD_CHUNK_BYTES) {
+  const chunks = [];
+  let chunk = "";
+  let bytes = 0;
+  for (const char of value) {
+    const charBytes = Buffer.byteLength(char, "utf8");
+    if (bytes && bytes + charBytes > maxBytes) {
+      chunks.push(chunk);
+      chunk = char;
+      bytes = charBytes;
+    } else {
+      chunk += char;
+      bytes += charBytes;
     }
   }
+  if (chunk) chunks.push(chunk);
+  return chunks;
+}
+
+function rewriteOversizedContentInsert(statement, source) {
+  const values = parseValuesTuple(statement, source);
+  if (!values) {
+    throw new Error(`${source} exceeds D1's statement limit and is not a supported content_records insert.`);
+  }
+
+  const recordKey = decodeSqlString(values[1], source);
+  const payload = decodeSqlString(values[8], source);
+  if (recordKey == null || payload == null) {
+    throw new Error(`Oversized content row in ${source} is missing record_key or payload.`);
+  }
+
+  const tempId = `${source}:${recordKey}`;
+  const chunks = splitUtf8(payload);
+  const statements = [
+    `INSERT OR REPLACE INTO ${IMPORT_CHUNK_TABLE}(id,payload) VALUES(${sqlString(tempId)},'');`,
+    ...chunks.map((chunk) =>
+      `UPDATE ${IMPORT_CHUNK_TABLE} SET payload = payload || ${sqlString(chunk)} WHERE id = ${sqlString(tempId)};`
+    ),
+    `INSERT OR REPLACE INTO content_records(table_name,record_key,ad_date,year,month,day,category,sort_order,payload,updated_at) SELECT ${values[0]},${values[1]},${values[2]},${values[3]},${values[4]},${values[5]},${values[6]},${values[7]},payload,${values[9]} FROM ${IMPORT_CHUNK_TABLE} WHERE id = ${sqlString(tempId)};`,
+    `DELETE FROM ${IMPORT_CHUNK_TABLE} WHERE id = ${sqlString(tempId)};`
+  ];
+
+  for (const rewritten of statements) validateStatement(rewritten, source);
+  return statements;
+}
+
+function normalizeSeedSql(sql, source) {
+  const output = [];
+  for (const [index, line] of sql.split("\n").entries()) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("--")) {
+      output.push(line);
+      continue;
+    }
+    if (!trimmed.endsWith(";")) {
+      throw new Error(`${source} line ${index + 1} is not a complete SQL statement.`);
+    }
+
+    const bytes = Buffer.byteLength(trimmed, "utf8");
+    if (bytes <= MAX_STATEMENT_BYTES) {
+      validateStatement(trimmed, `${source} line ${index + 1}`);
+      output.push(trimmed);
+      continue;
+    }
+
+    output.push(`-- Rewritten oversized statement from ${source} line ${index + 1} (${bytes} bytes)`);
+    output.push(...rewriteOversizedContentInsert(trimmed, `${source} line ${index + 1}`));
+  }
+  return output.join("\n").trim() + "\n";
 }
 
 function nextDay(date) {
@@ -82,14 +200,16 @@ async function emit(text) {
 
 await emit("-- Patro Cloudflare D1 deterministic content import.\n");
 await emit("-- Generated only from checked-in public/reference snapshots; private/user tables are excluded.\n");
-await emit("-- No BEGIN TRANSACTION / COMMIT wrappers: this file is for wrangler d1 execute --file.\n\n");
+await emit("-- No BEGIN TRANSACTION / COMMIT wrappers: this file is for wrangler d1 execute --file.\n");
+await emit(`CREATE TABLE IF NOT EXISTS ${IMPORT_CHUNK_TABLE}(id TEXT PRIMARY KEY,payload TEXT NOT NULL);\n`);
+await emit(`DELETE FROM ${IMPORT_CHUNK_TABLE};\n\n`);
 
 for (const name of seedFiles) {
   const raw = await readFile(resolve(legacySeedDir, name), "utf8");
   const clean = stripTransactions(raw, name);
-  validateStatements(clean, name);
+  const normalized = normalizeSeedSql(clean, name);
   await emit(`-- Source seed: cloudflare/d1/migrations/${name}\n`);
-  await emit(clean + "\n");
+  await emit(normalized + "\n");
 }
 
 let totalRows = 0;
@@ -169,8 +289,9 @@ const stateStatement =
     sqlString("2026-09-30T00:00:00Z")
   ].join(",") +
   ");\n";
-validateStatements(stateStatement, "astronomy migration_state");
+validateStatement(stateStatement, "astronomy migration_state");
 await emit(stateStatement);
+await emit(`DROP TABLE IF EXISTS ${IMPORT_CHUNK_TABLE};\n`);
 
 if (!VERIFY_ONLY) {
   await output.close();
