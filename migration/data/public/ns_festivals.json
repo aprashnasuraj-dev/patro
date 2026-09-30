@@ -1,0 +1,1511 @@
+{
+  "table": "ns_festivals",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": "mha-puja",
+      "dev": "म्हपूजा",
+      "newa": "𑐪𑐥𑐹𑐖𑐵",
+      "roman": "Mha Pujā",
+      "en": "Worship of the self · Nepal Sambat New Year",
+      "aliases": [
+        "mha puja",
+        "mhapuja",
+        "nepal sambat new year",
+        "न्हूदँ",
+        "nhu da"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 1,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Nepal Mandala",
+        "Newar diaspora"
+      ],
+      "summary": "नेपाल सम्बत नयाँ वर्ष। परिवारका सदस्यका लागि मण्डः बनाई आफैंको पूजा, सगुन र भ्वय्।",
+      "is_new_year": true,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_swanti",
+        "hypercal"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "kija-puja",
+      "dev": "किजा पूजा",
+      "newa": "𑐎𑐶𑐖𑐵 𑐥𑐹𑐖𑐵",
+      "roman": "Kijā Pujā",
+      "en": "Worship of brothers (Bhai Tika)",
+      "aliases": [
+        "kija puja",
+        "bhai tika",
+        "भाइटीका"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 2,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "दिदीबहिनीले दाजुभाइको मण्डः पूजा गरी तेल, धागो र सगुन दिने।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_swanti"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "saki-mana-punhi",
+      "dev": "सकिमना पुन्हि",
+      "newa": "𑐳𑐎𑐶𑐩𑐣𑐵 𑐥𑐸𑐤𑐶",
+      "roman": "Saki Manā Punhi",
+      "en": "Kārtik Purnimā",
+      "aliases": [
+        "saki mila punhi",
+        "kartik purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "कार्तिक पूर्णिमा; हलिमलि पौभा र सकि (पिँडालु) खाने चलन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_months"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "yomari-punhi",
+      "dev": "यःमरि पुन्हि",
+      "newa": "𑐫𑑅𑐩𑐬𑐶 𑐥𑐸𑐤𑐶",
+      "roman": "Yomari Punhi",
+      "en": "Yomari full moon (harvest)",
+      "aliases": [
+        "yomari punhi",
+        "dhanya purnima",
+        "yomari"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 2,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "धान भित्र्याएपछिको पर्व; चाकु र तिलले भरिएको यःमरि बनाई अन्नपूर्णा पुज्ने।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_thinla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "jana-baha-snan",
+      "dev": "जनबहाः द्यः म्वः ल्हुइगु",
+      "newa": "𑐖𑐣𑐧𑐴𑐵𑑅 𑐡𑑂𑐫𑑅 𑐩𑑂𑐰𑑅 𑐯𑐸𑐂𑐐𑐸",
+      "roman": "Jana Bāhā Dyah Mwah Lhuigu",
+      "en": "Sacred bathing of White Machhendranāth",
+      "aliases": [
+        "seto machhindranath snan"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 3,
+        "tithi": 8,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "buddhist",
+      "places": [
+        "Jana Bāhā, Kathmandu"
+      ],
+      "summary": "करुणामय (सेतो मच्छिन्द्रनाथ) को स्नान।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_pwanhela"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "mila-punhi",
+      "dev": "मिला पुन्हि",
+      "newa": "𑐩𑐶𑐮𑐵 𑐥𑐸𑐤𑐶",
+      "roman": "Milā Punhi",
+      "en": "Pauṣ Purnimā · Swasthāni begins",
+      "aliases": [
+        "swasthani",
+        "स्वस्थानी",
+        "mila punhi"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 3,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Kathmandu",
+        "Sankhu"
+      ],
+      "summary": "चाँगुनारायणको जात्रा; महिनाभरि स्वस्थानी व्रतकथा सुरु।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_pwanhela"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "shree-panchami",
+      "dev": "श्रीपञ्चमी",
+      "newa": "𑐱𑑂𑐬𑐷𑐥𑐘𑑂𑐔𑐩𑐷",
+      "roman": "Shree Panchami",
+      "en": "Basanta Panchami",
+      "aliases": [
+        "basanta panchami",
+        "saraswati puja"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 4,
+        "tithi": 5,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "वसन्त ऋतुको पहिलो दिन; सरस्वती पूजा।",
+      "is_new_year": false,
+      "public_holiday": "check",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_sila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "si-punhi",
+      "dev": "सि पुन्हि",
+      "newa": "𑐳𑐶 𑐥𑐸𑐤𑐶",
+      "roman": "Si Punhi",
+      "en": "Māghi Purnimā · Swasthāni ends",
+      "aliases": [
+        "maghi purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 4,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Sankhu",
+        "Nepal Mandala"
+      ],
+      "summary": "स्वस्थानी व्रत समापन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_sila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "sila-charhe",
+      "dev": "सिला चह्रे",
+      "newa": "𑐳𑐶𑐮𑐵 𑐔𑐴𑑂𑐬𑐾",
+      "roman": "Silā Charhe",
+      "en": "Mahā Shivarātri",
+      "aliases": [
+        "shivaratri",
+        "शिवरात्रि"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 4,
+        "tithi": 14,
+        "paksha": "ga",
+        "observance": "nishitha"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Pashupati",
+        "Nepal-wide"
+      ],
+      "summary": "शिवको पर्व; पशुपतिमा ठूलो मेला।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_sila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "holi-chir",
+      "dev": "होलि (चीर स्वनेगु)",
+      "newa": "𑐴𑑀𑐮𑐶 (𑐔𑐷𑐬 𑐳𑑂𑐰𑐣𑐾𑐐𑐸)",
+      "roman": "Holi · Chir",
+      "en": "Holi — chir pole raised",
+      "aliases": [
+        "holi",
+        "fagu",
+        "chir"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 8,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 8,
+      "tradition": "hindu",
+      "places": [
+        "Basantapur, Kathmandu Durbar Square"
+      ],
+      "summary": "अष्टमीमा चीर ठड्याई पूर्णिमासम्म रङ्गको पर्व।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "nala-karunamaya",
+      "dev": "नला करुणामय स्नान",
+      "newa": "𑐣𑐮𑐵 𑐎𑐬𑐸𑐞𑐵𑐩𑐫 𑐳𑑂𑐣𑐵𑐣",
+      "roman": "Nālā Karunāmaya",
+      "en": "Nālā Karunāmaya bathing & chariot",
+      "aliases": [
+        "nala jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 1,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 3,
+      "tradition": "buddhist",
+      "places": [
+        "Nālā"
+      ],
+      "summary": "पारुमा स्नान, तृतीयामा रथयात्रा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "pahan-charhe",
+      "dev": "पाहाँ चह्रे",
+      "newa": "𑐥𑐵𑐴𑐵𑑃 𑐔𑐴𑑂𑐬𑐾",
+      "roman": "Pāhān Charhe",
+      "en": "Pahan Charhe",
+      "aliases": [
+        "pahan charhe",
+        "pasa chahre"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 14,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 3,
+      "tradition": "hindu",
+      "places": [
+        "Kathmandu (Ason, Indrachok, Maru)"
+      ],
+      "summary": "काठमाडौंका अजिमाहरूको खटजात्रा र भेटघाट।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "ghode-jatra",
+      "dev": "घोडेजात्रा",
+      "newa": "𑐑𑑀𑐜𑐾𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Ghode Jātrā",
+      "en": "Horse festival",
+      "aliases": [
+        "ghode jatra",
+        "ghodejatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 15,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "civic",
+      "places": [
+        "Tundikhel, Kathmandu"
+      ],
+      "summary": "टुँडिखेलमा घोडा दौड।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "jana-baha-jatra",
+      "dev": "जनबहाः द्यः जात्रा",
+      "newa": "𑐖𑐣𑐧𑐴𑐵𑑅 𑐡𑑂𑐫𑑅 𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Jana Bāhā Dyah Jātrā",
+      "en": "White Machhendranāth chariot",
+      "aliases": [
+        "seto machhindranath jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 8,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 4,
+      "tradition": "buddhist",
+      "places": [
+        "Jamal → Asan, Kathmandu"
+      ],
+      "summary": "सेतो मच्छिन्द्रनाथको रथयात्रा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "lhuti-punhi",
+      "dev": "ल्हुति पुन्हि",
+      "newa": "𑐯𑐸𑐟𑐶 𑐥𑐸𑐤𑐶",
+      "roman": "Lhuti Punhi",
+      "en": "Bālāju Purnimā",
+      "aliases": [
+        "balaju purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Bālāju",
+        "Jāmāchwa"
+      ],
+      "summary": "बालाजु बाइसधारामा स्नान र जामाचो डाँडा यात्रा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_chaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "mata-tirtha",
+      "dev": "मामं ख्वाः स्वयेगु",
+      "newa": "𑐩𑐵𑐩𑑄 𑐏𑑂𑐰𑐵𑑅 𑐳𑑂𑐰𑐫𑐾𑐐𑐸",
+      "roman": "Māmyā Khwā Swayegu",
+      "en": "Mother's Day (Mātā Tīrtha Aunsi)",
+      "aliases": [
+        "mata tirtha",
+        "mother's day",
+        "आमाको मुख हेर्ने"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 15,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Mātā Tīrtha",
+        "Nepal-wide"
+      ],
+      "summary": "आमाको मुख हेर्ने दिन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_chaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "bunga-dyah-jatra",
+      "dev": "बुंगद्यः जात्रा",
+      "newa": "𑐧𑐸𑑄𑐐𑐡𑑂𑐫𑑅 𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Bunga Dyah Jātrā",
+      "en": "Rato Machhindranāth chariot (Patan)",
+      "aliases": [
+        "rato machhindranath",
+        "bunga dyo",
+        "machhindranath jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 7,
+        "tithi": 4,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Pulchowk → Jawalakhel, Lalitpur"
+      ],
+      "summary": "ललितपुरको सबैभन्दा लामो रथयात्रा सुरु; भोटो जात्राको दिन गुठीले तोक्छ।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": true,
+      "status": "sourced",
+      "sources": [
+        "wiki_bachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "swanya-punhi",
+      "dev": "स्वांया पुन्हि",
+      "newa": "𑐳𑑂𑐰𑐵𑑄𑐫𑐵 𑐥𑐸𑐤𑐶",
+      "roman": "Swānyā Punhi",
+      "en": "Buddha Jayanti",
+      "aliases": [
+        "buddha jayanti",
+        "buddha purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 7,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "buddhist",
+      "places": [
+        "Swayambhu",
+        "Nepal-wide"
+      ],
+      "summary": "बुद्धको जन्म, बोधि र महापरिनिर्वाणको पर्व।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_bachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "sithi-nakha",
+      "dev": "सिथि नखः",
+      "newa": "𑐳𑐶𑐠𑐶 𑐣𑐏𑑅",
+      "roman": "Sithi Nakhah",
+      "en": "Kumar Shashthi",
+      "aliases": [
+        "sithi nakha",
+        "kumar sasthi"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 6,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "कुमार (कार्तिकेय) को पर्व; इनार–पोखरी सफा गर्ने, व/वः खाने।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_tachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "jya-punhi",
+      "dev": "ज्या पुन्हि",
+      "newa": "𑐖𑑂𑐫𑐵 𑐥𑐸𑐤𑐶",
+      "roman": "Jyā Punhi",
+      "en": "Jeṭh Purnimā",
+      "aliases": [
+        "gaidu purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "buddhist",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "राजकुमार सिद्धार्थले गृहत्याग गरेको दिन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_tachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "panauti-jatra",
+      "dev": "पनौति जात्रा",
+      "newa": "𑐥𑐣𑑁𑐟𑐶 𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Panauti Jātrā",
+      "en": "Panauti chariot festival",
+      "aliases": [
+        "panauti jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Panauti"
+      ],
+      "summary": "भैरव र भद्रकालीको रथयात्रा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": true,
+      "status": "review",
+      "sources": [
+        "wiki_tachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "macha-tiya-jatra",
+      "dev": "मचा तिया जात्रा",
+      "newa": "𑐩𑐔𑐵 𑐟𑐶𑐫𑐵 𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Machā Tiyā Jātrā",
+      "en": "Trishul Jātrā",
+      "aliases": [
+        "trishul jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 8,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Deopatan"
+      ],
+      "summary": "त्रिशूल सहितको जात्रा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_tachhala"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "harishayani",
+      "dev": "हरिशयनी एकादशी",
+      "newa": "𑐴𑐬𑐶𑐱𑐫𑐣𑐷 𑐊𑐎𑐵𑐡𑐱𑐷",
+      "roman": "Hari Shayani Ekādashi",
+      "en": "Vishnu’s sleep begins · Tulsi planting",
+      "aliases": [
+        "harishayani"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 9,
+        "tithi": 11,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 2,
+      "tradition": "hindu",
+      "places": [
+        "Homes"
+      ],
+      "summary": "चातुर्मास सुरु; भोलिपल्ट तुलसी रोप्ने।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_dila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "dila-punhi",
+      "dev": "दिला पुन्हि",
+      "newa": "𑐡𑐶𑐮𑐵 𑐥𑐸𑐤𑐶",
+      "roman": "Dilā Punhi",
+      "en": "Guru Purnimā",
+      "aliases": [
+        "guru purnima"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 9,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "गुरु पूर्णिमा; बुद्धको प्रथम उपदेश (धर्मचक्र प्रवर्तन)।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_dila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "gathamuga",
+      "dev": "गथांमुगः चह्रे",
+      "newa": "𑐐𑐠𑐵𑑄𑐩𑐸𑐐𑑅 𑐔𑐴𑑂𑐬𑐾",
+      "roman": "Gathān Mugah Charhe",
+      "en": "Ghantakarna",
+      "aliases": [
+        "gathamuga",
+        "ghantakarna",
+        "गठेमंगल"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 9,
+        "tithi": 14,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Every Newar tole"
+      ],
+      "summary": "गथांमुगःको पुत्ला बनाई भूतप्रेत नगरबाहिर पठाउने।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_dila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "gunla-dharma",
+      "dev": "गुंला धर्म",
+      "newa": "𑐐𑐸𑑄𑐮𑐵 𑐢𑐬𑑂𑐩",
+      "roman": "Gunlā Dharma",
+      "en": "Holy Buddhist month",
+      "aliases": [
+        "gunla",
+        "gunla bajan"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 1,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 30,
+      "tradition": "buddhist",
+      "places": [
+        "Swayambhu",
+        "Bāhās"
+      ],
+      "summary": "महिनाभरि गुंला बाजं, द्यः थायेगु, बहीद्यः ब्वयेगु।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "nag-panchami",
+      "dev": "नाग पञ्चमी",
+      "newa": "𑐣𑐵𑐐 𑐥𑐘𑑂𑐔𑐩𑐷",
+      "roman": "Nāg Panchami",
+      "en": "Nāg Panchami",
+      "aliases": [
+        "nag panchami"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 5,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "नागको पूजा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "bahidyah-bwayegu",
+      "dev": "बहीद्यः ब्वयेगु",
+      "newa": "𑐧𑐴𑐷𑐡𑑂𑐫𑑅 𑐧𑑂𑐰𑐫𑐾𑐐𑐸",
+      "roman": "Bahidyah Bwayegu",
+      "en": "Display of Dipankara images",
+      "aliases": [],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 8,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "buddhist",
+      "places": [
+        "Bāhās of Kathmandu & Lalitpur"
+      ],
+      "summary": "बहाः–बहीमा दीपंकर बुद्ध र पौभा प्रदर्शन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "kwati-punhi",
+      "dev": "क्वाँति पुन्हि",
+      "newa": "𑐎𑑂𑐰𑐵𑑃𑐟𑐶 𑐥𑐸𑐤𑐶",
+      "roman": "Kwānti Punhi",
+      "en": "Janai Purnimā",
+      "aliases": [
+        "janai purnima",
+        "kwati",
+        "rakshya bandhan"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "जनै फेर्ने, रक्षाबन्धन, क्वाँति खाने।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "sa-paru",
+      "dev": "सापारु",
+      "newa": "𑐳𑐵𑐥𑐵𑐬𑐸",
+      "roman": "Sā Pāru",
+      "en": "Gāi Jātrā",
+      "aliases": [
+        "gai jatra",
+        "gaijatra",
+        "सापारु"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 1,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Kathmandu",
+        "Lalitpur",
+        "Bhaktapur"
+      ],
+      "summary": "वर्षभित्र दिवंगत भएकाको सम्झनामा गाईजात्रा।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "mataya",
+      "dev": "मतया",
+      "newa": "𑐩𑐟𑐫𑐵",
+      "roman": "Matayā",
+      "en": "Festival of lights procession (Patan)",
+      "aliases": [
+        "mataya"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 2,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "buddhist",
+      "places": [
+        "Lalitpur"
+      ],
+      "summary": "ललितपुरका बहाः–बहीमा बत्ती बोकेर परिक्रमा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "krishna-janmashtami",
+      "dev": "कृष्ण जन्माष्टमी",
+      "newa": "𑐎𑐺𑐲𑑂𑐞 𑐖𑐣𑑂𑐩𑐵𑐲𑑂𑐚𑐩𑐷",
+      "roman": "Krishna Janmāshtami",
+      "en": "Krishna Janmāshtami",
+      "aliases": [
+        "janmashtami"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 8,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Krishna Mandir, Patan"
+      ],
+      "summary": "श्रीकृष्णको जन्मोत्सव।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "gokarna-aunsi",
+      "dev": "बौया ख्वाः स्वयेगु",
+      "newa": "𑐧𑑁𑐫𑐵 𑐏𑑂𑐰𑐵𑑅 𑐳𑑂𑐰𑐫𑐾𑐐𑐸",
+      "roman": "Bauyā Khwā Swayegu",
+      "en": "Father's Day (Gokarna Aunsi)",
+      "aliases": [
+        "gokarna aunsi",
+        "father's day",
+        "बुबाको मुख हेर्ने"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 15,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Gokarna",
+        "Nepal-wide"
+      ],
+      "summary": "बुबाको मुख हेर्ने दिन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_gunla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "chatha",
+      "dev": "चथा",
+      "newa": "𑐔𑐠𑐵",
+      "roman": "Chathā",
+      "en": "Ganesh Chaturthi",
+      "aliases": [
+        "ganesh chaturthi",
+        "chatha"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 11,
+        "tithi": 4,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "गणेशको जन्मदिन; जुन हेर्न नहुने दिन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_yanla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "yenya",
+      "dev": "येँयाः",
+      "newa": "𑐫𑐾𑑃𑐫𑐵𑑅",
+      "roman": "Yenyā",
+      "en": "Indra Jātrā",
+      "aliases": [
+        "indra jatra",
+        "yenya",
+        "kumari jatra"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 11,
+        "tithi": 12,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 8,
+      "tradition": "both",
+      "places": [
+        "Kathmandu Durbar Square",
+        "Hanuman Dhoka"
+      ],
+      "summary": "लिंगो ठड्याउने, कुमारी रथयात्रा, लाखे–पुलुकिसि नाच, आकाशभैरव दर्शन।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_yanla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "yenya-punhi",
+      "dev": "येँयाः पुन्हि",
+      "newa": "𑐫𑐾𑑃𑐫𑐵𑑅 𑐥𑐸𑐤𑐶",
+      "roman": "Yenyā Punhi",
+      "en": "Bhādra Purnimā (Indra Jātrā main day)",
+      "aliases": [
+        "yenya punhi"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 11,
+        "tithi": 15,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Kathmandu"
+      ],
+      "summary": "येँयाःको मुख्य पूर्णिमा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_yanla"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "nalaswane",
+      "dev": "नःलास्वने",
+      "newa": "𑐣𑑅𑐮𑐵𑐳𑑂𑐰𑐣𑐾",
+      "roman": "Nahlā Swanegu",
+      "en": "Mohani begins (Ghatasthāpanā)",
+      "aliases": [
+        "mohani",
+        "ghatasthapana",
+        "dashain"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 1,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "मोहनी (दशैं) सुरु; जमरा रोप्ने।",
+      "is_new_year": false,
+      "public_holiday": "check",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "khokana-rudrayani",
+      "dev": "खोकना रुद्रायणी प्याखं",
+      "newa": "𑐏𑑀𑐎𑐣𑐵 𑐬𑐸𑐡𑑂𑐬𑐵𑐫𑐞𑐷 𑐥𑑂𑐫𑐵𑐏𑑄",
+      "roman": "Rudrāyani dances",
+      "en": "Rudrāyani masked dances",
+      "aliases": [
+        "khokana"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 3,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Khokana"
+      ],
+      "summary": "रुद्रायणीको मुकुण्डो नाच।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "kuchhi-bhwoy",
+      "dev": "कुछिभ्वय्",
+      "newa": "𑐎𑐸𑐕𑐶𑐨𑑂𑐰𑐫𑑂",
+      "roman": "Kuchhi Bhwoy",
+      "en": "Mohani — Mahā Ashtami feast",
+      "aliases": [
+        "maha ashtami"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 8,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "अष्टमीको भोज।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "syakwo-tyakwo",
+      "dev": "स्याक्वः त्याक्वः",
+      "newa": "𑐳𑑂𑐫𑐵𑐎𑑂𑐰𑑅 𑐟𑑂𑐫𑐵𑐎𑑂𑐰𑑅",
+      "roman": "Syākwah Tyākwah",
+      "en": "Mohani — Mahā Navami",
+      "aliases": [
+        "maha navami"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 9,
+        "paksha": "thwa",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "नवमीको बलि र पूजा।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "mohani-tika",
+      "dev": "मोहनी टीका",
+      "newa": "𑐩𑑀𑐴𑐣𑐷 𑐚𑐷𑐎𑐵",
+      "roman": "Mohani Tikā",
+      "en": "Vijaya Dashami",
+      "aliases": [
+        "vijaya dashami",
+        "dashain tika"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 10,
+        "paksha": "thwa",
+        "prefer": "last",
+        "observance": "aparahna"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "विजया दशमी; ठूलाबडाबाट टीका, खड्ग जात्रा।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "kwah-puja",
+      "dev": "क्वः पूजा",
+      "newa": "𑐎𑑂𑐰𑑅 𑐥𑐹𑐖𑐵",
+      "roman": "Kwah Pujā",
+      "en": "Swanti day 1 — crows",
+      "aliases": [
+        "kag tihar"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 13,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "स्वन्तिको पहिलो दिन; कागलाई भोजन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_swanti",
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "khicha-puja",
+      "dev": "खिचा पूजा",
+      "newa": "𑐏𑐶𑐔𑐵 𑐥𑐹𑐖𑐵",
+      "roman": "Khichā Pujā",
+      "en": "Swanti day 2 — dogs",
+      "aliases": [
+        "kukur tihar"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 14,
+        "paksha": "ga",
+        "observance": "udaya"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal Mandala"
+      ],
+      "summary": "कुकुरलाई माला र भोजन।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_swanti"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "laxmi-puja",
+      "dev": "सा पूजा · लक्ष्मी पूजा",
+      "newa": "𑐳𑐵 𑐥𑐹𑐖𑐵 · 𑐮𑐎𑑂𑐲𑑂𑐩𑐷 𑐥𑐹𑐖𑐵",
+      "roman": "Sā Pujā · Lakshmi Pujā",
+      "en": "Swanti day 3 — cows & Lakshmi",
+      "aliases": [
+        "laxmi puja",
+        "lakshmi puja",
+        "gai tihar"
+      ],
+      "anchor": {
+        "kind": "lunar",
+        "month": 12,
+        "tithi": 15,
+        "paksha": "ga",
+        "observance": "pradosh"
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "गाईको पूजा; साँझ लक्ष्मी पूजा।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "sourced",
+      "sources": [
+        "wiki_swanti",
+        "wiki_kaula"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "ghyah-chaku-sanhu",
+      "dev": "घ्यः चाकु सँल्हु",
+      "newa": "𑐑𑑂𑐫𑑅 𑐔𑐵𑐎𑐸 𑐳𑑃𑐯𑐸",
+      "roman": "Ghyah Chāku Sanhu",
+      "en": "Māghe Sankrānti",
+      "aliases": [
+        "maghe sankranti",
+        "ghyo chaku"
+      ],
+      "anchor": {
+        "kind": "sankranti",
+        "rashi": 9
+      },
+      "span_days": 1,
+      "tradition": "hindu",
+      "places": [
+        "Nepal-wide"
+      ],
+      "summary": "घ्यू, चाकु, तिलको लड्डु र तरुल खाने दिन।",
+      "is_new_year": false,
+      "public_holiday": "national",
+      "declared_annually": false,
+      "status": "review",
+      "sources": [
+        "wiki_sila"
+      ],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "biska",
+      "dev": "बिस्का जात्रा",
+      "newa": "𑐧𑐶𑐳𑑂𑐎𑐵 𑐖𑐵𑐟𑑂𑐬𑐵",
+      "roman": "Biskā Jātrā",
+      "en": "Bisket Jātrā (Bhaktapur, Thimi)",
+      "aliases": [
+        "bisket jatra",
+        "biska",
+        "sindur jatra"
+      ],
+      "anchor": {
+        "kind": "sankranti",
+        "rashi": 0,
+        "offsetDays": -4
+      },
+      "span_days": 9,
+      "tradition": "hindu",
+      "places": [
+        "Bhaktapur",
+        "Thimi",
+        "Bode"
+      ],
+      "summary": "भैरव–भद्रकालीको रथ तान्ने, योसिं (लिंगो) ठड्याउने र ढाल्ने; मेष संक्रान्तिमा केन्द्रित।",
+      "is_new_year": false,
+      "public_holiday": "none",
+      "declared_annually": true,
+      "status": "review",
+      "sources": [],
+      "updated_at": "2026-09-29 12:56:55.961867+00"
+    },
+    {
+      "id": "bhoto-jatra",
+      "dev": "भोटो जात्रा",
+      "newa": "",
+      "roman": "Bhoto Jātrā",
+      "en": "Bhoto Jatra",
+      "aliases": [
+        "bhoto jatra",
+        "भोटो देखाउने जात्रा"
+      ],
+      "anchor": {
+        "kind": "declared-annually"
+      },
+      "span_days": 1,
+      "tradition": "both",
+      "places": [
+        "Jawalakhel, Lalitpur"
+      ],
+      "summary": "रातो मच्छिन्द्रनाथ जात्राको समापनमा जावलाखेलमा भोटो देखाइने दिन; वास्तविक मिति प्रत्येक वर्ष आधिकारिक घोषणाबाट पुष्टि गरिन्छ।",
+      "is_new_year": false,
+      "public_holiday": "valley",
+      "declared_annually": true,
+      "status": "review",
+      "sources": [],
+      "updated_at": "2026-09-29 23:24:19.590094+00"
+    }
+  ]
+}

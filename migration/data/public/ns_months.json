@@ -1,0 +1,243 @@
+{
+  "table": "ns_months",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "n": 1,
+      "amanta_index": 7,
+      "dev": "कछला",
+      "newa": "𑐎𑐕𑐮𑐵",
+      "roman": "Kachhalā",
+      "dev_variants": [],
+      "lunar_sanskrit": "Kārtika",
+      "full_moon_dev": "सकिमना पुन्हि",
+      "full_moon_newa": "𑐳𑐎𑐶𑐩𑐣𑐵 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Saki Manā Punhi",
+      "gregorian": "Oct–Nov",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_months"
+      ]
+    },
+    {
+      "n": 2,
+      "amanta_index": 8,
+      "dev": "थिंला",
+      "newa": "𑐠𑐶𑑄𑐮𑐵",
+      "roman": "Thinlā",
+      "dev_variants": [
+        "थिँला"
+      ],
+      "lunar_sanskrit": "Mārgaśīrṣa",
+      "full_moon_dev": "यःमरि पुन्हि",
+      "full_moon_newa": "𑐫𑑅𑐩𑐬𑐶 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Yomari Punhi",
+      "gregorian": "Nov–Dec",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_thinla"
+      ]
+    },
+    {
+      "n": 3,
+      "amanta_index": 9,
+      "dev": "प्वँहेला",
+      "newa": "𑐥𑑂𑐰𑑃𑐴𑐾𑐮𑐵",
+      "roman": "Pwanhelā",
+      "dev_variants": [
+        "पोहेला",
+        "प्वहेला"
+      ],
+      "lunar_sanskrit": "Pauṣa",
+      "full_moon_dev": "मिला पुन्हि",
+      "full_moon_newa": "𑐩𑐶𑐮𑐵 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Milā Punhi",
+      "gregorian": "Dec–Jan",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_pwanhela",
+        "nepalsambat_com"
+      ]
+    },
+    {
+      "n": 4,
+      "amanta_index": 10,
+      "dev": "सिला",
+      "newa": "𑐳𑐶𑐮𑐵",
+      "roman": "Silā",
+      "dev_variants": [
+        "सिल्ला"
+      ],
+      "lunar_sanskrit": "Māgha",
+      "full_moon_dev": "सि पुन्हि",
+      "full_moon_newa": "𑐳𑐶 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Si Punhi",
+      "gregorian": "Jan–Feb",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_sila",
+        "nepalsambat_com"
+      ]
+    },
+    {
+      "n": 5,
+      "amanta_index": 11,
+      "dev": "चिला",
+      "newa": "𑐔𑐶𑐮𑐵",
+      "roman": "Chilā",
+      "dev_variants": [
+        "चिल्ला"
+      ],
+      "lunar_sanskrit": "Phālguna",
+      "full_moon_dev": "होलि पुन्हि",
+      "full_moon_newa": "𑐴𑑀𑐮𑐶 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Holi Punhi",
+      "gregorian": "Feb–Mar",
+      "status": "review",
+      "sources": [
+        "wiki_ns",
+        "wiki_chila",
+        "nepalsambat_com"
+      ]
+    },
+    {
+      "n": 6,
+      "amanta_index": 0,
+      "dev": "चौला",
+      "newa": "𑐔𑑁𑐮𑐵",
+      "roman": "Chaulā",
+      "dev_variants": [],
+      "lunar_sanskrit": "Chaitra",
+      "full_moon_dev": "ल्हुति पुन्हि",
+      "full_moon_newa": "𑐯𑐸𑐟𑐶 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Lhuti Punhi",
+      "gregorian": "Mar–Apr",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_chaula"
+      ]
+    },
+    {
+      "n": 7,
+      "amanta_index": 1,
+      "dev": "बछला",
+      "newa": "𑐧𑐕𑐮𑐵",
+      "roman": "Bachhalā",
+      "dev_variants": [],
+      "lunar_sanskrit": "Vaiśākha",
+      "full_moon_dev": "स्वांया पुन्हि",
+      "full_moon_newa": "𑐳𑑂𑐰𑐵𑑄𑐫𑐵 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Swānyā Punhi",
+      "gregorian": "Apr–May",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_bachhala"
+      ]
+    },
+    {
+      "n": 8,
+      "amanta_index": 2,
+      "dev": "तछला",
+      "newa": "𑐟𑐕𑐮𑐵",
+      "roman": "Tachhalā",
+      "dev_variants": [],
+      "lunar_sanskrit": "Jyeṣṭha",
+      "full_moon_dev": "ज्या पुन्हि",
+      "full_moon_newa": "𑐖𑑂𑐫𑐵 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Jyā Punhi",
+      "gregorian": "May–Jun",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_tachhala"
+      ]
+    },
+    {
+      "n": 9,
+      "amanta_index": 3,
+      "dev": "दिला",
+      "newa": "𑐡𑐶𑐮𑐵",
+      "roman": "Dilā",
+      "dev_variants": [
+        "दिल्ला"
+      ],
+      "lunar_sanskrit": "Āṣāḍha",
+      "full_moon_dev": "दिला पुन्हि",
+      "full_moon_newa": "𑐡𑐶𑐮𑐵 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Dilā Punhi",
+      "gregorian": "Jun–Jul",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_dila",
+        "nepalsambat_com"
+      ]
+    },
+    {
+      "n": 10,
+      "amanta_index": 4,
+      "dev": "गुंला",
+      "newa": "𑐐𑐸𑑄𑐮𑐵",
+      "roman": "Gunlā",
+      "dev_variants": [
+        "गुँला"
+      ],
+      "lunar_sanskrit": "Śrāvaṇa",
+      "full_moon_dev": "गुंपुन्हि",
+      "full_moon_newa": "𑐐𑐸𑑄𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Gun Punhi",
+      "gregorian": "Jul–Aug",
+      "status": "review",
+      "sources": [
+        "wiki_ns",
+        "wiki_gunla"
+      ]
+    },
+    {
+      "n": 11,
+      "amanta_index": 5,
+      "dev": "यंला",
+      "newa": "𑐫𑑄𑐮𑐵",
+      "roman": "Yanlā",
+      "dev_variants": [
+        "ञंला",
+        "येँला"
+      ],
+      "lunar_sanskrit": "Bhādrapada",
+      "full_moon_dev": "येँयाः पुन्हि",
+      "full_moon_newa": "𑐫𑐾𑑃𑐫𑐵𑑅 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Yenyā Punhi",
+      "gregorian": "Aug–Sep",
+      "status": "sourced",
+      "sources": [
+        "wiki_ns",
+        "wiki_yanla",
+        "nepalsambat_com"
+      ]
+    },
+    {
+      "n": 12,
+      "amanta_index": 6,
+      "dev": "कौला",
+      "newa": "𑐎𑑁𑐮𑐵",
+      "roman": "Kaulā",
+      "dev_variants": [],
+      "lunar_sanskrit": "Āśvina",
+      "full_moon_dev": "कतिं पुन्हि",
+      "full_moon_newa": "𑐎𑐟𑐶𑑄 𑐥𑐸𑐤𑐶",
+      "full_moon_roman": "Katin Punhi",
+      "gregorian": "Sep–Oct",
+      "status": "review",
+      "sources": [
+        "wiki_ns",
+        "wiki_kaula"
+      ]
+    }
+  ]
+}
