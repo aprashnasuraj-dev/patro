@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-09-30T13:17:20.074Z",
+  "site_url": "https://patro-blush.vercel.app",
+  "current_bs_year": 2083,
+  "sitemap_calendar_years": [
+    2082,
+    2083,
+    2084
+  ],
+  "sitemap_files": [
+    "sitemap-pages.xml",
+    "sitemap-community.xml",
+    "sitemap-calendar.xml"
+  ],
+  "indexed_route_count": 75,
+  "llms_txt": "https://patro-blush.vercel.app/llms.txt",
+  "historical_calendar_policy": "Older calendar pages are omitted from sitemap and receive noindex,follow at runtime; they are not robots-blocked so crawlers can observe the noindex directive."
+}
