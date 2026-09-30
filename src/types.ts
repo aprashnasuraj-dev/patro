@@ -153,8 +153,8 @@ export interface WeatherDailyPayload {
 
 export interface HealthPayload {
   status: "online";
-  runtime: "Deno";
-  framework: "Hono";
+  runtime: "Deno" | "Cloudflare Workers";
+  framework: "Hono" | "Native Web APIs";
 }
 
 export interface CosmicMediaItem {
