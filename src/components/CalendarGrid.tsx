@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { api } from "../api";
-import type { SyncPayload, TithiPayload } from "../types";
+import type { SyncPayload, TithiPayload, WeatherDay } from "../types";
 
 interface Props {
   month: Date;
@@ -176,6 +176,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
   const [mode,setMode]=useState<CalendarMode>("bs");
   const [view,setView]=useState<ViewMode>("month");
   const [entries,setEntries]=useState<Map<string,SyncPayload>>(new Map());
+  const [weather,setWeather]=useState<Map<string,WeatherDay>>(new Map());
   const [loading,setLoading]=useState(true);
   const [monthError,setMonthError]=useState<string|null>(null);
   const [openDay,setOpenDay]=useState<SyncPayload|null>(null);
@@ -184,6 +185,14 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
   const [jumpMonth,setJumpMonth]=useState(1);
   const [jumping,setJumping]=useState(false);
   const cells=useMemo(()=>monthCells(month),[month]);
+
+  useEffect(()=>{
+    const controller=new AbortController();
+    api.weatherDaily(27.7172,85.324,controller.signal)
+      .then((payload)=>{if(!controller.signal.aborted)setWeather(new Map(payload.days.map((day)=>[day.date,day])));})
+      .catch(()=>{if(!controller.signal.aborted)setWeather(new Map());});
+    return ()=>controller.abort();
+  },[]);
 
   useEffect(()=>{
     const controller=new AbortController(); setLoading(true); setMonthError(null);
@@ -232,7 +241,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
             <div className="weekday-row sticky-weekdays" aria-label="Weekdays">{WEEKDAYS.map((w)=><span key={w}>{w}</span>)}</div>
             <div className="month-grid" role="grid" aria-label={title(month)}>
               {cells.map((cell)=>{
-                const data=entries.get(cell.iso), tithiNumber=data?.tithi.number;
+                const data=entries.get(cell.iso), forecast=weather.get(cell.iso), tithiNumber=data?.tithi.number;
                 const transition=data?tithiTransitionLabel(data):null;
                 const special=tithiNumber===15?"purnima":tithiNumber===30?"amavasya":"";
                 const primary=mode==="bs"?(data?.calendars.bikram_sambat_detail.day??"—"):cell.date.getUTCDate();
@@ -242,6 +251,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
                   aria-label={cell.iso+(data?", "+data.tithi.ne+(transition?", "+transition:"")+", "+data.tithi.paksha:"")}>
                   <span className="day-number" aria-label={"day "+primary}>{mode==="bs"&&typeof primary==="number"?nepaliDigits(primary):primary}</span>
                   <span className="day-secondary">{secondary}</span>
+                  {forecast&&<span className="weather-chip" title={forecast.label+(forecast.precipitation_probability_max==null?"":" · "+Math.round(forecast.precipitation_probability_max)+"% rain")}><span aria-hidden="true">{forecast.icon}</span>{forecast.temperature_max_c!=null&&<span>{Math.round(forecast.temperature_max_c)}°</span>}</span>}
                   {loading&&!data?<span className="cell-skeleton skeleton" role="status" aria-label="Loading day"/>:data?<><span className="tithi-badge">{data.tithi.ne}</span>{transition&&<span className="tithi-transition">{transition}</span>}<span className="paksha-dot" title={data.tithi.paksha}>{data.tithi.paksha.startsWith("Shukla")?"शु":"कृ"}</span></>:<span className="tithi-badge tithi-badge--unavailable">—</span>}
                   {cell.iso===today&&<span className="today-marker">Today</span>}{special&&<span className="special-marker">{special==="purnima"?"पूर्णिमा":"औंसी"}</span>}
                 </button>;
