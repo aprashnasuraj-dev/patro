@@ -29,7 +29,8 @@ This checks the frontend build, Worker dry-run, all 78 astronomy snapshot parts,
 The Pages project uses `functions/[[path]].js` plus the `PATRO_API` service binding. Static Astro/tools/community routes continue to Pages assets, while root/calendar/search/planner/API/protected-tool routes are forwarded internally to the `mero-patro` Worker. `public/_routes.json` is copied into the final `dist/` output so this behavior is deterministic in Pages deployments.
 
 The route classifier is covered by `tests/cloudflare-pages-routing.test.mjs` and runs in the Cloudflare migration CI workflow.
-\n## First D1/KV deployment
+
+## First D1/KV deployment
 
 After creating Cloudflare D1 and KV, provide their IDs as environment variables:
 
