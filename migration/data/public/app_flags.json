@@ -1,0 +1,108 @@
+{
+  "table": "app_flags",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "key": "tm_ruler",
+      "enabled": false,
+      "note": "Time Machine scrub ruler and era bands",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "tm_detail",
+      "enabled": false,
+      "note": "Time Machine moment detail sheet and deep links",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "tm_birth_mode",
+      "enabled": false,
+      "note": "Time Machine birth-year mode",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "tm_world",
+      "enabled": false,
+      "note": "Time Machine Nepal vs world strip",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "tm_map",
+      "enabled": false,
+      "note": "Time Machine map layer",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "tm_quiz",
+      "enabled": false,
+      "note": "Time Machine quiz and collections",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "news_pipeline",
+      "enabled": false,
+      "note": "Normalized news items and clusters",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "news_desk",
+      "enabled": false,
+      "note": "New Samachar layout",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "jy_north_chart",
+      "enabled": false,
+      "note": "North Indian kundali chart",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "jy_dasha",
+      "enabled": false,
+      "note": "Vimshottari dasha timeline",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "jy_guna",
+      "enabled": false,
+      "note": "Guna milan",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "jy_profiles",
+      "enabled": false,
+      "note": "Saved kundali profiles",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "life_v2",
+      "enabled": false,
+      "note": "Daily Life chips, quick-add, actions",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "life_ics",
+      "enabled": false,
+      "note": "Calendar export",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "pwa",
+      "enabled": false,
+      "note": "Service worker and install prompt",
+      "updated_at": "2026-09-26 02:47:39.61649+00"
+    },
+    {
+      "key": "home_polish",
+      "enabled": true,
+      "note": "Home skeletons, grid polish, countdown chip, pinned clocks",
+      "updated_at": "2026-09-26 02:56:04.354501+00"
+    },
+    {
+      "key": "fm_directory_v2",
+      "enabled": true,
+      "note": "All-Nepal FM directory and new FM page UI",
+      "updated_at": "2026-09-26 04:02:08.569011+00"
+    }
+  ]
+}

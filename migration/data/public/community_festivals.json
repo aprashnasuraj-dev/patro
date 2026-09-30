@@ -1,0 +1,1059 @@
+{
+  "table": "community_festivals",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "suite": "lhosar",
+      "id": "sonam-lhosar",
+      "dev": "सोनाम ल्होसार",
+      "roman": "Sonam Lhosar",
+      "en": "Tamang & Hyolmo New Year",
+      "rule": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 1,
+        "paksha": "shukla",
+        "system": "amanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "तामाङ",
+        "ह्योल्मो"
+      ],
+      "summary": "माघ शुक्ल प्रतिपदा (जाडो अयनान्तपछिको दोस्रो औंसीपछि) मनाइने तामाङ र ह्योल्मोको नयाँ वर्ष।",
+      "details": [
+        "गुम्बा र स्तुपा दर्शन, मुकुण्डो नाच",
+        "घर सफा गरी देवताको स्वागत",
+        "तामाङ सेलो र डम्फु, ह्योल्मो/रसुवामा स्याब्रु नाच",
+        "ह्योल्मो परिकार: खाप्से, बबर, थोङसे"
+      ],
+      "places": [
+        "बौद्ध",
+        "स्वयम्भू",
+        "बागमती प्रदेशका तामाङ बस्ती"
+      ],
+      "holiday": "national",
+      "announced": true,
+      "status": "sourced",
+      "sources": [
+        "https://radionepalonline.com/en/2026/01/19/423441.html",
+        "https://en.wikipedia.org/wiki/Sonam_Lhosar"
+      ]
+    },
+    {
+      "suite": "lhosar",
+      "id": "tamu-lhosar",
+      "dev": "तमु ल्होसार",
+      "roman": "Tamu Lhosar",
+      "en": "Gurung New Year",
+      "rule": {
+        "day": 15,
+        "kind": "bs",
+        "month": 9
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "गुरुङ"
+      ],
+      "summary": "पुस १५ मा मनाइने गुरुङ (तमु) समुदायको नयाँ वर्ष; पुरानो ल्होलाई बिदाइ गरी नयाँ ल्हो स्वागत।",
+      "details": [
+        "स्वयम्भू र बौद्धमा लुङ्दर (प्रार्थना झण्डा)",
+        "परम्परागत पहिरन",
+        "घाटु र चुड्का नाच",
+        "पुस १५ मा जन्मेको बच्चा नयाँ ल्हो, पुस १४ मा जन्मेको पुरानो ल्होमा पर्छ"
+      ],
+      "places": [
+        "टुँडिखेल/काठमाडौं",
+        "पोखरा",
+        "लमजुङ",
+        "गोरखा",
+        "कास्की"
+      ],
+      "holiday": "national",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tamu_Lhosar",
+        "https://www.tamupariwarny.org/gurung-lho-system",
+        "https://github.com/kitsuyui/hyper-calendar/pull/97"
+      ]
+    },
+    {
+      "suite": "lhosar",
+      "id": "gyalpo-lhosar",
+      "dev": "ग्याल्पो ल्होसार",
+      "roman": "Gyalpo Lhosar",
+      "en": "Sherpa & Tibetan New Year",
+      "rule": {
+        "kind": "tibetan-new-year"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "शेर्पा",
+        "तामाङ",
+        "भोटिया",
+        "तिब्बती"
+      ],
+      "summary": "तिब्बती पात्रोको पहिलो दिन (फेब्रुअरी ३ पछिको पहिलो औंसीपछिको दिन) मनाइने शेर्पा र भोटे समुदायको नयाँ वर्ष।",
+      "details": [
+        "छ्याङकोल, गुथुक सुप, खाप्से",
+        "गुम्बामा चाम (मुकुण्डो नाच) र मन्त्र",
+        "मशाल र पटाकाले नराम्रो शक्ति धपाउने"
+      ],
+      "places": [
+        "बौद्ध",
+        "खुम्बु",
+        "पोखरा",
+        "सोलुखुम्बु"
+      ],
+      "holiday": "national",
+      "announced": true,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gyalpo_Losar",
+        "https://www.sherpakyidug.org/annual-sherpa-gyalpo-losar-party-2026-year-of-the-fire-male-horse-2153-celebration/",
+        "https://github.com/kitsuyui/hyper-calendar/pull/97"
+      ]
+    },
+    {
+      "suite": "lhosar",
+      "id": "buddha-jayanti",
+      "dev": "बुद्ध जयन्ती",
+      "roman": "Buddha Jayanti",
+      "en": "Buddha Purnima",
+      "rule": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "madhyahna"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "तामाङ",
+        "गुरुङ",
+        "शेर्पा",
+        "ह्योल्मो"
+      ],
+      "summary": "बुद्धको जन्म, ज्ञान र महापरिनिर्वाणको पूर्णिमा।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://github.com/kitsuyui/hyper-calendar/pull/97"
+      ]
+    },
+    {
+      "suite": "tharu",
+      "id": "maghi",
+      "dev": "माघी",
+      "roman": "Maghi",
+      "en": "Tharu New Year",
+      "rule": {
+        "kind": "sankranti",
+        "rashi": 9
+      },
+      "start_offset": 3,
+      "span_days": 5,
+      "regions": null,
+      "communities": [
+        "थारू"
+      ],
+      "summary": "थारू समुदायको नयाँ वर्ष र सबैभन्दा ठूलो पर्व। क्षेत्रअनुसार १–३ दिनदेखि पुस २८ – माघ २ सम्म।",
+      "details": [
+        "पुस २८: माछा मार्ने; पुस २९: (केही ठाउँमा) बँदेल सिकार",
+        "बिहानै स्नान र टीका; दाजुभाइले दिदीबहिनीलाई चामल, दाल, नुन (निस्राउ) दिने",
+        "आगो वरिपरि ढोल–नाच, मघौटा/सखिया नाच",
+        "अवधि जिल्लाअनुसार १–३ दिन फरक (बर्दिया, कपिलवस्तु, रुपन्देही, दाङ) — स्थानीय विवरण समुदायबाट लिनुहोस्",
+        "बरघर/बडघर, चौकीदार, लोहार, गुरुवा छान्ने/नवीकरण गर्ने गाउँ भेला — सामाजिक नियम पनि बनाइन्छ",
+        "परिकार: जाँड, ढिकरी, खिचडी, घोंघी, तिलको लड्डु, भुजा, माछा"
+      ],
+      "places": [
+        "बर्दिया",
+        "दाङ",
+        "कैलाली",
+        "कञ्चनपुर",
+        "बाँके",
+        "कपिलवस्तु",
+        "रुपन्देही",
+        "चितवन"
+      ],
+      "holiday": "national",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://kathmandupost.com/art-culture/2024/01/15/delicacies-and-rituals-of-maghi",
+        "https://risingnepaldaily.com/news/55284",
+        "https://ekantipur.com/news/2025/01/15/en/maghi-festival-in-tharu-settlement-15-10.html"
+      ]
+    },
+    {
+      "suite": "tharu",
+      "id": "krishna-janmashtami",
+      "dev": "कृष्ण जन्माष्टमी (अष्टिम्की)",
+      "roman": "Ashtimki",
+      "en": "Krishna Janmashtami",
+      "rule": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 8,
+        "paksha": "krishna",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "थारू"
+      ],
+      "summary": "थारू समुदायमा अष्टिम्की भनिने; भित्तेचित्र (अष्टिम्की चित्र) बनाउने चलन।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Atwari"
+      ]
+    },
+    {
+      "suite": "tharu",
+      "id": "atwari",
+      "dev": "अट्वारी",
+      "roman": "Atwari",
+      "en": "Atwari (brothers fast for sisters)",
+      "rule": {
+        "nth": 2,
+        "ref": "krishna-janmashtami",
+        "kind": "relative",
+        "weekday": 0
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "थारू (पश्चिम तराई)"
+      ],
+      "summary": "कृष्ण जन्माष्टमीपछिको दोस्रो आइतबार; दाजुभाइले दिदीबहिनीको सुस्वास्थ्यका लागि व्रत बस्ने, भीम र सूर्यको पूजा।",
+      "details": [],
+      "places": [
+        "दाङ",
+        "बर्दिया",
+        "कैलाली",
+        "बाँके"
+      ],
+      "holiday": "community",
+      "announced": false,
+      "status": "review",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Atwari"
+      ]
+    },
+    {
+      "suite": "tharu",
+      "id": "jitiya",
+      "dev": "जितिया",
+      "roman": "Jitiya",
+      "en": "Jitiya (mothers fast for children)",
+      "rule": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 8,
+        "paksha": "krishna",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "थारू",
+        "मैथिल"
+      ],
+      "summary": "आश्विन कृष्ण अष्टमीमा आमाहरूले सन्तानको दीर्घायुका लागि निराहार व्रत।",
+      "details": [],
+      "places": [],
+      "holiday": "women",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Public_holidays_in_Nepal"
+      ]
+    },
+    {
+      "suite": "tharu",
+      "id": "jur-sital",
+      "dev": "जुडशीतल",
+      "roman": "Jur Sital",
+      "en": "Solar new year (eastern Tharu)",
+      "rule": {
+        "kind": "sankranti",
+        "rashi": 0
+      },
+      "start_offset": 0,
+      "span_days": 2,
+      "regions": null,
+      "communities": [
+        "थारू (पूर्व)",
+        "मैथिल"
+      ],
+      "summary": "मेष संक्रान्ति: ठूलाले सानालाई शिरमा पानी छर्किने, सानाले ठूलाको खुट्टामा पानी हालेर आदर।",
+      "details": [],
+      "places": [],
+      "holiday": "regional",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jur_Sital"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "tila-sankranti",
+      "dev": "तिला संक्रान्ति",
+      "roman": "Tila Sankranti",
+      "en": "Makar Sankranti (Mithila)",
+      "rule": {
+        "kind": "sankranti",
+        "rashi": 9
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "तिल, दही–चिउरा र तिलकुट खाने दिन।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "saraswati-puja",
+      "dev": "सरस्वती पूजा",
+      "roman": "Saraswati Puja",
+      "en": "Basant Panchami",
+      "rule": {
+        "kind": "lunar",
+        "month": 10,
+        "tithi": 5,
+        "paksha": "shukla",
+        "system": "amanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "विद्याकी देवी सरस्वतीको पूजा; विद्यालयमा मूर्ति स्थापना।",
+      "details": [],
+      "places": [],
+      "holiday": "check",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar",
+        "https://en.wikipedia.org/wiki/Tirhuta_calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "jur-sital",
+      "dev": "जुडशीतल",
+      "roman": "Jur Sital",
+      "en": "Maithili New Year (Aakhar Bochhor)",
+      "rule": {
+        "kind": "sankranti",
+        "rashi": 0
+      },
+      "start_offset": 0,
+      "span_days": 2,
+      "regions": null,
+      "communities": [
+        "मैथिल",
+        "थारू"
+      ],
+      "summary": "मेष संक्रान्ति: तिरहुता पञ्चाङ्गको नयाँ वर्ष। ठूलाले सानालाई शिरमा पानी छर्किने; बडी–भात र सातु।",
+      "details": [],
+      "places": [],
+      "holiday": "regional",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jur_Sital",
+        "https://en.wikipedia.org/wiki/Tirhuta_Panchang"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "janaki-navami",
+      "dev": "जानकी नवमी",
+      "roman": "Janaki Navami",
+      "en": "Sita’s birth anniversary",
+      "rule": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 9,
+        "paksha": "shukla",
+        "system": "amanta",
+        "observance": "madhyahna"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "सीता (जानकी) को जन्मोत्सव; जनकपुरधाममा विशेष पूजा।",
+      "details": [],
+      "places": [
+        "जनकपुरधाम"
+      ],
+      "holiday": "check",
+      "announced": false,
+      "status": "review",
+      "sources": []
+    },
+    {
+      "suite": "mithila",
+      "id": "madhushravani",
+      "dev": "मधुश्रावणी",
+      "roman": "Madhushravani",
+      "en": "Festival of newly-wed women",
+      "rule": {
+        "kind": "lunar",
+        "month": 4,
+        "tithi": 3,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 14,
+      "span_days": 15,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "नवविवाहिताले साउन कृष्ण पञ्चमीदेखि शुक्ल तृतीयासम्म नाग–गौरी पूजा र कथा सुन्ने पर्व।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "review",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Madhushravani",
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "chauth-chandra",
+      "dev": "चौरचन",
+      "roman": "Chaurchan (Chauth Chandra)",
+      "en": "Moon worship",
+      "rule": {
+        "kind": "lunar",
+        "month": 5,
+        "tithi": 4,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "भदौ शुक्ल चतुर्थीको साँझ फलफूल, दही र पकवान चढाएर चन्द्रमाको पूजा।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "jitiya",
+      "dev": "जितिया",
+      "roman": "Jitiya",
+      "en": "Mothers’ fast for children",
+      "rule": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 8,
+        "paksha": "krishna",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल",
+        "थारू"
+      ],
+      "summary": "आमाहरूले सन्तानको दीर्घायुका लागि निराहार व्रत बस्ने।",
+      "details": [],
+      "places": [],
+      "holiday": "women",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Public_holidays_in_Nepal",
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "kojagara",
+      "dev": "कोजागरा",
+      "roman": "Kojagara",
+      "en": "Lakshmi puja · newly-weds",
+      "rule": {
+        "kind": "lunar",
+        "month": 6,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "nishitha"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "आश्विन पूर्णिमाको रात लक्ष्मी पूजा; नवविवाहित वरलाई मखान र पान बाँड्ने।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "chhath",
+      "dev": "छठ",
+      "roman": "Chhath",
+      "en": "Sun worship (4 days)",
+      "rule": {
+        "kind": "lunar",
+        "month": 7,
+        "tithi": 6,
+        "paksha": "shukla",
+        "system": "amanta",
+        "observance": "udaya"
+      },
+      "start_offset": 2,
+      "span_days": 4,
+      "regions": null,
+      "communities": [
+        "मैथिल",
+        "मधेशी",
+        "थारू"
+      ],
+      "summary": "नहाय–खाय, खरना, साँझको अर्घ्य (मुख्य दिन) र बिहानको उषा अर्घ्य — चार दिने सूर्य उपासना।",
+      "details": [
+        "दिन १: नहाय–खाय (शुक्ल चतुर्थी)",
+        "दिन २: खरना (पञ्चमी)",
+        "दिन ३: साँझको अर्घ्य (षष्ठी)",
+        "दिन ४: उषा अर्घ्य (सप्तमी)",
+        "ठेकुवा, भुसवा, केरा, उखु"
+      ],
+      "places": [],
+      "holiday": "national",
+      "announced": true,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar",
+        "https://github.com/kitsuyui/hyper-calendar/pull/97"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "sama-chakeva",
+      "dev": "सामा–चकेवा",
+      "roman": "Sama-Chakeva",
+      "en": "Brother–sister festival with clay birds",
+      "rule": {
+        "kind": "lunar",
+        "month": 7,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 8,
+      "span_days": 9,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "कार्तिक शुक्ल सप्तमीदेखि पूर्णिमासम्म दिदीबहिनीले माटाका चराचुरुङ्गी बनाई गीत गाउने; पूर्णिमामा विसर्जन।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "vivah-panchami",
+      "dev": "विवाह पञ्चमी",
+      "roman": "Vivah Panchami",
+      "en": "Ram–Sita wedding anniversary",
+      "rule": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 5,
+        "paksha": "shukla",
+        "system": "amanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल"
+      ],
+      "summary": "राम–सीता विवाहको सम्झनामा जनकपुरधाममा भव्य विवाह महोत्सव।",
+      "details": [],
+      "places": [
+        "जनकपुरधाम"
+      ],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://mithilalegacy.com/en/calendar"
+      ]
+    },
+    {
+      "suite": "mithila",
+      "id": "holi-terai",
+      "dev": "होली (तराई)",
+      "roman": "Holi (Terai)",
+      "en": "Holi — Terai day",
+      "rule": {
+        "kind": "lunar",
+        "month": 0,
+        "tithi": 1,
+        "paksha": "krishna",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मैथिल",
+        "मधेशी"
+      ],
+      "summary": "पहाडभन्दा एक दिनपछि (चैत्र कृष्ण प्रतिपदा) तराईमा मनाइने रङको पर्व; फगुवा गीत।",
+      "details": [],
+      "places": [],
+      "holiday": "regional",
+      "announced": false,
+      "status": "derived",
+      "sources": [
+        "https://github.com/kitsuyui/hyper-calendar/pull/97"
+      ]
+    },
+    {
+      "suite": "kirat",
+      "id": "ubhauli",
+      "dev": "साकेला उभौली",
+      "roman": "Sakela Ubhauli",
+      "en": "Spring Sakela (upward migration)",
+      "rule": {
+        "kind": "lunar",
+        "month": 1,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "राई",
+        "लिम्बू",
+        "याक्खा",
+        "सुनुवार"
+      ],
+      "summary": "बैशाख पूर्णिमामा बाली लगाउनुअघि भूमि र पितृ (पारुहाङ–सुम्निमा) को पूजा; सिलिमाङपा–सिलिमाङमाको अगुवाइमा साकेला सिली नाच।",
+      "details": [
+        "उत्सव मौसम १५ दिनसम्म",
+        "सिली (नाचका शैली) ले मानव र प्रकृतिको सम्बन्ध देखाउँछ",
+        "ढोल–झ्याम्टा, परम्परागत पहिरन"
+      ],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sakela",
+        "https://en.wikipedia.org/wiki/Udhauli"
+      ]
+    },
+    {
+      "suite": "kirat",
+      "id": "udhauli",
+      "dev": "साकेला उधौली",
+      "roman": "Sakela Udhauli",
+      "en": "Autumn Sakela (harvest, downward migration)",
+      "rule": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "राई",
+        "लिम्बू",
+        "याक्खा",
+        "सुनुवार"
+      ],
+      "summary": "मंसिर पूर्णिमामा अन्नबाली भित्र्याएपछि प्रकृति र पितृप्रति कृतज्ञता; साकेला नाच।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "sourced",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sakela",
+        "https://en.wikipedia.org/wiki/Udhauli"
+      ]
+    },
+    {
+      "suite": "kirat",
+      "id": "chasok-tangnam",
+      "dev": "चासोक तङनाम",
+      "roman": "Chasok Tangnam",
+      "en": "Limbu harvest festival",
+      "rule": {
+        "kind": "lunar",
+        "month": 8,
+        "tithi": 15,
+        "paksha": "shukla",
+        "system": "purnimanta",
+        "observance": "udaya"
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "लिम्बू"
+      ],
+      "summary": "नयाँ अन्न युमा साम्माङ र पितृलाई चढाउने लिम्बू न्वागी पर्व।",
+      "details": [],
+      "places": [],
+      "holiday": "community",
+      "announced": false,
+      "status": "review",
+      "sources": [
+        "https://mundhum.com/calendar"
+      ]
+    },
+    {
+      "suite": "kirat",
+      "id": "yele-new-year",
+      "dev": "येले सम्वत् नयाँ वर्ष (काक्फेक्वा तङनाम)",
+      "roman": "Yele Sambat New Year",
+      "en": "Kirat New Year",
+      "rule": {
+        "kind": "sankranti",
+        "rashi": 9
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "राई",
+        "लिम्बू",
+        "याक्खा",
+        "सुनुवार"
+      ],
+      "summary": "किरात येले सम्वत्को नयाँ वर्ष; तरुल, सखरखण्ड र सेलरोटी खाने चलन।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": false,
+      "status": "review",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yele_Sambat",
+        "https://mundhum.com/calendar"
+      ]
+    },
+    {
+      "suite": "hijri",
+      "id": "islamic-new-year",
+      "dev": "हिजरी नयाँ वर्ष",
+      "roman": "Islamic New Year",
+      "en": "1 Muharram",
+      "rule": {
+        "day": 1,
+        "kind": "hijri",
+        "month": 1
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "हिजरी सम्वत्को पहिलो दिन।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "ashura",
+      "dev": "आशुरा",
+      "roman": "Ashura",
+      "en": "10 Muharram",
+      "rule": {
+        "day": 10,
+        "kind": "hijri",
+        "month": 1
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "मुहर्रमको दशौं दिन; ताजिया जुलुस (कतिपय स्थानमा)।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "mawlid",
+      "dev": "मिलाद–उन–नबी",
+      "roman": "Mawlid an-Nabi",
+      "en": "12 Rabi al-Awwal",
+      "rule": {
+        "day": 12,
+        "kind": "hijri",
+        "month": 3
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "पैगम्बर मुहम्मदको जन्मदिन मनाउने दिन (परम्पराअनुसार)।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "shab-e-miraj",
+      "dev": "शब–ए–मेराज",
+      "roman": "Shab-e-Miraj",
+      "en": "Night of 27 Rajab",
+      "rule": {
+        "day": 27,
+        "eve": true,
+        "kind": "hijri",
+        "month": 7
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "रजब २७ को रात।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "shab-e-barat",
+      "dev": "शब–ए–बरात",
+      "roman": "Shab-e-Barat",
+      "en": "Night of 15 Sha’ban",
+      "rule": {
+        "day": 15,
+        "eve": true,
+        "kind": "hijri",
+        "month": 8
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "शाबान १४–१५ को रात; प्रार्थना र पितृ सम्झना।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "ramadan-start",
+      "dev": "रमजान सुरु",
+      "roman": "Ramadan begins",
+      "en": "1 Ramadan",
+      "rule": {
+        "day": 1,
+        "kind": "hijri",
+        "month": 9
+      },
+      "start_offset": 0,
+      "span_days": 29,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "रोजाको महिना; सेहरी र इफ्तारको समय तल हेर्नुहोस्।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": true,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "laylat-al-qadr",
+      "dev": "शब–ए–कद्र",
+      "roman": "Laylat al-Qadr",
+      "en": "Night of 27 Ramadan",
+      "rule": {
+        "day": 27,
+        "eve": true,
+        "kind": "hijri",
+        "month": 9
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "रमजानको अन्तिम दश रातमध्ये (प्रायः २७ औं रात)।",
+      "details": [],
+      "places": [],
+      "holiday": "none",
+      "announced": false,
+      "status": "derived",
+      "sources": []
+    },
+    {
+      "suite": "hijri",
+      "id": "eid-ul-fitr",
+      "dev": "ईद–उल–फित्र",
+      "roman": "Eid ul-Fitr",
+      "en": "1 Shawwal",
+      "rule": {
+        "day": 1,
+        "kind": "hijri",
+        "month": 10
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "रमजानपछिको ईद। नेपालमा मुस्लिम आयोगको चन्द्रदर्शनको आधारमा गृह मन्त्रालयले बिदा घोषणा गर्छ।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": true,
+      "status": "sourced",
+      "sources": [
+        "https://english.ratopati.com/story/54693/eid-ul-fitr-on-saturday-ministry-of-home-affairs-issues-notice",
+        "https://kathmandupost.com/national/2025/03/30/government-declares-public-holiday-on-monday"
+      ]
+    },
+    {
+      "suite": "hijri",
+      "id": "eid-al-adha",
+      "dev": "ईद–उल–अजहा (बकर ईद)",
+      "roman": "Eid al-Adha",
+      "en": "10 Dhu al-Hijjah",
+      "rule": {
+        "day": 10,
+        "kind": "hijri",
+        "month": 12
+      },
+      "start_offset": 0,
+      "span_days": 1,
+      "regions": null,
+      "communities": [
+        "मुस्लिम"
+      ],
+      "summary": "कुर्बानीको ईद; हज्जको समयसँग जोडिएको।",
+      "details": [],
+      "places": [],
+      "holiday": "national",
+      "announced": true,
+      "status": "sourced",
+      "sources": [
+        "https://english.nepalnews.com/s/nation/public-holiday-announced-on-may-28-for-eid-al-adha/"
+      ]
+    }
+  ]
+}
