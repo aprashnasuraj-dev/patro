@@ -122,6 +122,22 @@ async function nsFestivalMap(env:Env){
   const data=await rows(env,"select payload from content_records where table_name='ns_festivals' order by record_key");
   return new Map(data.map((r:any)=>[r.id,r]));
 }
+async function nsOverrides(env:Env,years:number[]){
+  if(!env.DB||!years.length)return [] as any[];
+  try{
+    const marks=years.map((_,i)=>"?"+(i+1)).join(",");
+    let q=env.DB.prepare("select festival_id,ns_year,start_ad,end_ad,confidence,note,updated_at from ns_festival_overrides where ns_year in ("+marks+")");
+    q=q.bind(...years);
+    return (await q.all()).results||[];
+  }catch{return [] as any[]}
+}
+function mergeNsDates(data:any[],os:any[]){
+  const map=new Map(os.map((o:any)=>[String(o.festival_id)+"|"+String(o.ns_year),o]));
+  return data.map((row:any)=>{
+    const o=map.get(String(row.festival_id)+"|"+String(row.ns_year));
+    return o?{...row,start_ad:o.start_ad,end_ad:o.end_ad,confidence:o.confidence||"confirmed",override_note:o.note||null,override:true}:row;
+  });
+}
 export async function combinedCommunityIcs(env:Env,request:Request){
   const u=new URL(request.url),raw=u.searchParams.get("communities");
   let ids=(raw||"").split(",").filter(Boolean).filter(x=>(COMMUNITY_IDS as readonly string[]).includes(x));
@@ -189,8 +205,12 @@ export async function nepalSambat(env:Env,sp:URLSearchParams){
 }
 export async function nsFestivals(env:Env,sp:URLSearchParams){
   const year=Number(sp.get("year"));if(!Number.isInteger(year)||year<1000||year>1300)return bad("invalid_ns_year");
-  const [data,fm]=await Promise.all([rows(env,"select payload from content_records where table_name='ns_festival_dates' and json_extract(payload,'$.ns_year')=?1 order by json_extract(payload,'$.start_ad')",[year]),nsFestivalMap(env)]);
-  const festivals=data.map((r:any)=>{const f:any=fm.get(r.festival_id);return{id:r.festival_id,dev:f?.dev,newa:f?.newa||null,roman:f?.roman,en:f?.en,start:r.start_ad,end:r.end_ad,tradition:f?.tradition,places:f?.places||[],publicHoliday:f?.public_holiday||"none",confidence:r.confidence,badge:badge(r.confidence),declaredAnnually:!!f?.declared_annually,status:f?.status,review:f?.status==="review",review_label:f?.status==="review"?"समीक्षाधीन":null}});
+  const [raw,fm,os]=await Promise.all([
+    rows(env,"select payload from content_records where table_name='ns_festival_dates' and json_extract(payload,'$.ns_year')=?1 order by json_extract(payload,'$.start_ad')",[year]),
+    nsFestivalMap(env),nsOverrides(env,[year])
+  ]);
+  const data=mergeNsDates(raw,os);
+  const festivals=data.map((r:any)=>{const f:any=fm.get(r.festival_id);return{id:r.festival_id,dev:f?.dev,newa:f?.newa||null,roman:f?.roman,en:f?.en,start:r.start_ad,end:r.end_ad,tradition:f?.tradition,places:f?.places||[],publicHoliday:f?.public_holiday||"none",confidence:r.confidence,badge:badge(r.confidence),declaredAnnually:!!f?.declared_annually,status:f?.status,review:f?.status==="review",review_label:f?.status==="review"?"समीक्षाधीन":null,override:!!r.override,override_note:r.override_note||null}});
   return json({ok:true,year,festivals,review:festivals.filter((x:any)=>x.review).map((x:any)=>({id:x.id,dev:x.dev}))},200,DAYCACHE);
 }
 export async function nsConvert(env:Env,sp:URLSearchParams){
