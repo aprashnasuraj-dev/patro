@@ -37,8 +37,20 @@ createServer(async (req, res) => {
   if (!(await existing(file))) {
     res.writeHead(404); res.end("Not found"); return;
   }
-  const body = await readFile(file);
-  res.writeHead(200, { "content-type": types[extname(file)] || "application/octet-stream" });
+  let body = await readFile(file);
+  const type = types[extname(file)] || "application/octet-stream";
+  if (type.startsWith("text/html")) {
+    const route = url.pathname.length > 1 && url.pathname.endsWith("/") ? url.pathname.slice(0, -1) : url.pathname;
+    const canonical = `http://127.0.0.1:${port}${route || "/"}`;
+    let html = body.toString("utf8");
+    if (/<link\s+rel=["']canonical["'][^>]*>/i.test(html)) {
+      html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonical}">`);
+    } else {
+      html = html.replace("</head>", `<link rel="canonical" href="${canonical}"></head>`);
+    }
+    body = Buffer.from(html);
+  }
+  res.writeHead(200, { "content-type": type });
   res.end(body);
 }).listen(port, "127.0.0.1", () => {
   console.log(`PATRO_STATIC_READY http://127.0.0.1:${port}`);
