@@ -1,0 +1,51 @@
+{
+  "batch": 1,
+  "created_at": "2026-09-30",
+  "bundles": [
+    {
+      "hash": "ecc7dbc19adbf1d02fdf4cd70bec445d6fed09616056dc379d2024f0d71267f4",
+      "representative": "nepal-miti-preview",
+      "slugs": [
+        "nepal-miti-preview"
+      ],
+      "files": 1,
+      "bytes": 1212433
+    },
+    {
+      "hash": "1acd83deb52f9243429d7b415a61d26578b59873579f8a44ad2a3cc30151a98e",
+      "representative": "publish-nepal-miti-preview",
+      "slugs": [
+        "publish-nepal-miti-preview"
+      ],
+      "files": 1,
+      "bytes": 1302
+    },
+    {
+      "hash": "59958d06926b994a016af0e83efa4fb70294a72058c9f375a1f9c72840eb8b28",
+      "representative": "nepal-miti-test",
+      "slugs": [
+        "nepal-miti-test"
+      ],
+      "files": 1,
+      "bytes": 1258
+    },
+    {
+      "hash": "b537320cab3dd2b532fa127b45f6dd2f20557922ea4937ab59b1f00b16f69f08",
+      "representative": "cleanup-nepal-miti-preview",
+      "slugs": [
+        "cleanup-nepal-miti-preview"
+      ],
+      "files": 1,
+      "bytes": 1301
+    },
+    {
+      "hash": "e9026a0901140bf61c484a6c722e34f0be8fd1c7b839184e84d090172a3b985c",
+      "representative": "nepal-miti-v09-preview",
+      "slugs": [
+        "nepal-miti-v09-preview"
+      ],
+      "files": 1,
+      "bytes": 1431446
+    }
+  ]
+}
