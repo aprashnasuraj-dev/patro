@@ -49,4 +49,4 @@ export function PatroToolsShell({ slug }: { slug: string }) {
     </ToolPage>
   );
 }
-export const PATRO_TOOL_SLUGS = new Set(Object.keys(LABELS));
+export { PATRO_TOOL_SLUGS } from "./toolSlugs";
