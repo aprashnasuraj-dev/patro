@@ -1,4 +1,6 @@
 const STATIC_EXACT = new Set([
+  "/news",
+  "/history",
   "/astro",
   "/fm",
   "/tv",
