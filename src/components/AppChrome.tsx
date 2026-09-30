@@ -11,6 +11,7 @@ import { SiteFooter } from "./SiteFooter";
 import { applyRouteSeo } from "../seo";
 import { api } from "../api";
 import type { SyncPayload } from "../types";
+import { GoogleAuthButton } from "../auth/GoogleAuthButton";
 
 type ThemeMode = "system" | "light" | "dark";
 
@@ -137,7 +138,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
           </button>
           <button className="mp-language" onClick={()=>setLanguage(v=>v==="ne"?"en":"ne")} aria-label="Toggle Nepali and English">{language==="ne"?"ने | EN":"EN | ने"}</button>
           <IconButton label={t(language,"theme")} onClick={nextTheme}><ThemeIcon size={20}/></IconButton>
-          <a className="mp-signin" href="/settings"><UserRound size={18}/><span>{t(language,"signIn")}</span></a>
+          <GoogleAuthButton language={language}/>
           <IconButton className="mp-mobile-menu" label={t(language,"more")} onClick={()=>setMobileOpen(true)}><Menu size={22}/></IconButton>
         </div>
       </div>
