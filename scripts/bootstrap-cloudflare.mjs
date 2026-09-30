@@ -28,10 +28,5 @@ run("npx", [
   "--yes",
   "--config", "wrangler.generated.jsonc"
 ]);
-run("npx", [
-  "wrangler", "d1", "execute", "DB", "--remote",
-  "--command=SELECT table_name, COUNT(*) AS rows FROM content_records GROUP BY table_name ORDER BY table_name; SELECT source, source_version, row_count, imported_at FROM migration_state ORDER BY source;",
-  "--yes",
-  "--config", "wrangler.generated.jsonc"
-]);
+run("node", ["scripts/verify-d1-remote.mjs"]);
 run("npx", ["wrangler", "deploy", "--config", "wrangler.generated.jsonc"]);

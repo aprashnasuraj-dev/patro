@@ -8,6 +8,8 @@ const legacySeedDir = resolve(root, "cloudflare/d1/migrations");
 const outputDir = resolve(root, ".cloudflare/d1-import");
 const outputSql = resolve(outputDir, "content-snapshot.sql");
 const outputManifest = resolve(outputDir, "manifest.json");
+const expectedCountsPath = resolve(root, "cloudflare/d1/expected-public-counts.json");
+const expectedCounts = JSON.parse(await readFile(expectedCountsPath, "utf8"));
 const VERIFY_ONLY = process.argv.includes("--verify-only");
 
 const EXPECTED_PARTS = 78;
@@ -173,6 +175,13 @@ const seedFiles = (await readdir(legacySeedDir))
   .filter((name) => !/_seed_astronomy_calendar_/.test(name))
   .sort();
 
+const seedRowCounts = {};
+function countSeedRows(sql) {
+  for (const match of sql.matchAll(/content_records\(table_name,record_key,ad_date,year,month,day,category,sort_order,payload,updated_at\)\s+VALUES\('([^']+)'/g)) {
+    seedRowCounts[match[1]] = (seedRowCounts[match[1]] || 0) + 1;
+  }
+}
+
 const partFiles = (await readdir(snapshotDir))
   .filter((name) => /^part-\d{3}\.json$/.test(name))
   .sort();
@@ -207,6 +216,7 @@ await emit(`DELETE FROM ${IMPORT_CHUNK_TABLE};\n\n`);
 for (const name of seedFiles) {
   const raw = await readFile(resolve(legacySeedDir, name), "utf8");
   const clean = stripTransactions(raw, name);
+  countSeedRows(clean);
   const normalized = normalizeSeedSql(clean, name);
   await emit(`-- Source seed: cloudflare/d1/migrations/${name}\n`);
   await emit(normalized + "\n");
@@ -240,6 +250,9 @@ for (let i = 0; i < partFiles.length; i++) {
     const adDate = String(row.ad_date || "");
     if (!/^\d{4}-\d{2}-\d{2}$/.test(adDate)) throw new Error(`Invalid ad_date in ${fileName}: ${adDate}`);
     if (row.payload?.ad && row.payload.ad !== adDate) throw new Error(`Payload date mismatch in ${fileName}: ${adDate}`);
+    if (!row.payload?.bs?.formatted) throw new Error(`Missing Bikram Sambat mapping in ${fileName}: ${adDate}`);
+    if (!row.payload?.ns?.formatted) throw new Error(`Missing Nepal Sambat mapping in ${fileName}: ${adDate}`);
+    if (!row.payload?.panchang?.tithi) throw new Error(`Missing Panchang/tithi in ${fileName}: ${adDate}`);
     if (previousDate && adDate !== nextDay(previousDate)) throw new Error(`Non-contiguous calendar snapshot: ${previousDate} -> ${adDate}`);
 
     firstDate ||= adDate;
@@ -279,6 +292,18 @@ for (let i = 0; i < partFiles.length; i++) {
 if (totalRows !== EXPECTED_ROWS || firstDate !== EXPECTED_FIRST || lastDate !== EXPECTED_LAST) {
   throw new Error(`Astronomy snapshot verification failed: rows=${totalRows}, coverage=${firstDate}..${lastDate}`);
 }
+seedRowCounts.astronomy_calendar_map = totalRows;
+
+for (const [table, expectedRows] of Object.entries(expectedCounts.tables)) {
+  const actualRows = seedRowCounts[table] || 0;
+  if (actualRows !== expectedRows) {
+    throw new Error(`D1 parity mismatch for ${table}: expected ${expectedRows}, seed source has ${actualRows}`);
+  }
+}
+const unexpectedTables = Object.keys(seedRowCounts).filter((table) => !(table in expectedCounts.tables));
+if (unexpectedTables.length) {
+  throw new Error(`D1 seed contains tables missing from expected-public-counts.json: ${unexpectedTables.join(", ")}`);
+}
 
 const stateStatement =
   "INSERT OR REPLACE INTO migration_state(source,source_version,row_count,imported_at) VALUES(" +
@@ -301,6 +326,7 @@ if (!VERIFY_ONLY) {
     source: "GitHub migration/data/public + sanitized legacy public/reference D1 seeds",
     private_user_data_included: false,
     seed_files: seedFiles,
+    table_counts: seedRowCounts,
     astronomy: {
       parts: EXPECTED_PARTS,
       rows: totalRows,
@@ -321,5 +347,5 @@ if (!VERIFY_ONLY) {
   await writeFile(outputManifest, JSON.stringify(manifest, null, 2) + "\n", "utf8");
   console.log(`Built D1 import: ${totalRows.toLocaleString()} astronomy rows + ${seedFiles.length} public/reference seed files; ${bytesWritten.toLocaleString()} bytes.`);
 } else {
-  console.log(`Verified D1 source snapshots: ${totalRows.toLocaleString()} astronomy rows, ${firstDate} through ${lastDate}; ${seedFiles.length} public/reference seed files.`);
+  console.log(`Verified D1 parity: ${Object.keys(seedRowCounts).length} public/reference tables; ${totalRows.toLocaleString()} AD/BS/NS calendar rows, ${firstDate} through ${lastDate}; tools ${seedRowCounts.tool_catalog}/${seedRowCounts.tool_release_plan}; Rashifal ${seedRowCounts.miti_rashifal_publications}; Time Machine ${seedRowCounts.time_machine_moments}.`);
 }

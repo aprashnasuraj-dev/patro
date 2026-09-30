@@ -26,7 +26,8 @@
     "cloudflare:generate-d1": "node scripts/generate-d1-migrations.mjs",
     "dev:pages": "npm run build && wrangler pages dev --config wrangler.pages.jsonc",
     "deploy:pages": "npm run build && wrangler pages deploy --config wrangler.pages.jsonc",
-    "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only"
+    "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
+    "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
