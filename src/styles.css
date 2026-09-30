@@ -672,6 +672,29 @@ h2 {
   font-weight: 700;
 }
 
+.weather-chip {
+  position: absolute;
+  top: 29px;
+  right: 7px;
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  max-width: 52px;
+  padding: 2px 5px;
+  color: #e0f2fe;
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.48);
+  font-size: 0.56rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.calendar-day--muted .weather-chip {
+  opacity: 0.7;
+}
+
 .tithi-badge {
   display: block;
   width: fit-content;
