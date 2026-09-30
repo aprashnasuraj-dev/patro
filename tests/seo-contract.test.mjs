@@ -166,3 +166,9 @@ test("client SEO keeps exactly one canonical and uses localhost only for local a
   assert.ok(routeSeo.includes("canonicalBase=localAudit?location.origin:BASE"));
   assert.ok(routeSeo.includes("canonicals.slice(1).forEach"));
 });
+
+test("global media provider lazy-loads HLS instead of adding it to every page startup", async () => {
+  const provider = await read("src/media/MediaProvider.tsx");
+  assert.equal(provider.includes('import Hls from "hls.js"'), false);
+  assert.ok(provider.includes('await import("hls.js")'));
+});
