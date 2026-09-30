@@ -86,7 +86,7 @@ This command:
 
 Cloudflare D1 currently allows imports up to 5 GB and SQL statements up to 100 KB. The generator validates the statement limit before upload.
 
-The import is deterministic and may be retried if Cloudflare reports a failed import. It does not include private/user Supabase tables.
+The import is deterministic and built from the canonical `migration/data/public` snapshots plus the retained 22-row universal Rashifal seed. It may be retried if Cloudflare reports a failed import, chunk-rewrites oversized payloads, and does not include private/user Supabase tables.
 
 ## 4. Worker Git integration after bootstrap
 
@@ -124,6 +124,7 @@ GET /api/v1/nasa/apod?date=2026-09-30
 GET /api/v1/tools/catalog
 GET /api/v1/time-machine
 GET /api/v1/on-this-day?date=2026-09-30
+GET /api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=2026-09-30
 ```
 
 With full bindings, health should report native D1 mode. The `x-patro-backend: supabase-compat` header identifies compatibility responses.

@@ -55,9 +55,9 @@
   "devDependencies": {
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
-    "vitest": "3.2.7",
+    "vitest": "5.0.2",
     "esbuild": "0.25.10",
-    "wrangler": "4.143.0"
+    "wrangler": "4.144.0"
   },
   "cloudflare": {
     "build_command": "npm run build",

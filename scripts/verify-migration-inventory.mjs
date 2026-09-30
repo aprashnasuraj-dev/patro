@@ -31,6 +31,41 @@ for (const required of ["astronomy_calendar_map","miti_rashifal_publications","t
   if (inventory.tables?.[required]?.strategy !== "d1_bootstrap_public_reference") failures.push(`critical feature table not D1-bootstrap classified: ${required}`);
 }
 
+
+const toolCatalog = JSON.parse(await readFile(resolve(root, "migration/data/public/tool_catalog.json"), "utf8"));
+const toolReleasePlan = JSON.parse(await readFile(resolve(root, "migration/data/public/tool_release_plan.json"), "utf8"));
+const toolRouteSources = (
+  await Promise.all([
+    "src/PatroRouter.tsx",
+    "src/utilities/UtilitySuite.tsx",
+    "src/patro-tools-integration/toolSlugs.ts"
+  ].map((path) => readFile(resolve(root,path),"utf8")))
+).join("\n");
+
+if (toolCatalog.table !== "tool_catalog" || !Array.isArray(toolCatalog.rows)) failures.push("tool_catalog snapshot shape invalid");
+else {
+  const expectedCatalogRows = expected.critical_features?.tools?.catalog_rows;
+  if (toolCatalog.rows.length !== expectedCatalogRows) failures.push(`tool_catalog rows=${toolCatalog.rows.length}, expected=${expectedCatalogRows}`);
+  const enabled = toolCatalog.rows.filter((row) => row.enabled === true);
+  const disabled = toolCatalog.rows.filter((row) => row.enabled !== true);
+  const activePaths = new Set();
+  for (const row of enabled) {
+    const path = String(row.target_path || "");
+    const slug = path === "/samudaya" ? "samudaya" : path.startsWith("/tools/") ? path.slice("/tools/".length) : "";
+    if (!slug) failures.push(`tool_catalog enabled tool has unsupported target_path: ${row.tool_id} -> ${path}`);
+    else if (!toolRouteSources.includes(`"${slug}"`)) failures.push(`tool_catalog enabled tool is not represented in shipped routing source: ${slug}`);
+    if (activePaths.has(path)) failures.push(`tool_catalog duplicate enabled target_path: ${path}`);
+    activePaths.add(path);
+  }
+  const disabledIds = disabled.map((row) => String(row.tool_id)).sort();
+  const allowedDisabled = ["preetitounicode","unicodetopreeti"];
+  if (JSON.stringify(disabledIds) !== JSON.stringify(allowedDisabled)) failures.push(`unexpected disabled tool catalog rows: ${disabledIds.join(",")}`);
+  if (enabled.length !== 27) failures.push(`enabled tool capability count=${enabled.length}, expected=27`);
+}
+
+if (toolReleasePlan.table !== "tool_release_plan" || !Array.isArray(toolReleasePlan.rows)) failures.push("tool_release_plan snapshot shape invalid");
+else if (toolReleasePlan.rows.length !== expected.critical_features?.tools?.release_rows) failures.push(`tool_release_plan rows=${toolReleasePlan.rows.length}, expected=${expected.critical_features?.tools?.release_rows}`);
+
 if (failures.length) {
   console.error("Migration inventory verification failed:");
   for (const failure of failures) console.error(" - "+failure);
