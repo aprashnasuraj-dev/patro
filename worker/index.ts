@@ -411,9 +411,11 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
     });
   }
   if (path === "/api/v1/radio/catalog" && request.method === "GET") {
+    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return compat(request,env,"router","/radio/catalog");
     return edgeCached(request,ctx,300,() => radioCatalogResponse(request,env));
   }
   if (path === "/api/v1/radio/stream" && (request.method === "GET" || request.method === "HEAD")) {
+    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return compat(request,env,"router","/radio/stream");
     return radioStreamResponse(request,env);
   }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
