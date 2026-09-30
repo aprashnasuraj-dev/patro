@@ -1,0 +1,77 @@
+{
+  "table": "tool_release_plan",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "release_id": "enhanced-preeti-v2",
+      "feature_key": "preeti-to-unicode",
+      "version": "2.0.0",
+      "target_path": "/tools/preetitounicode",
+      "publish_after": "2027-09-28 18:15:00+00",
+      "state": "retired",
+      "source_bundle_version": "1.0.0",
+      "source_bundle_sha256": "dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427",
+      "notes": "Cluster-aware Preeti conversion with warnings, explicit mixed-font runs and canonical Preeti output. Replaced by unified enhanced-preeti-converter-v2 release.",
+      "metadata": {
+        "compat_route": "/tools/preetitounicode",
+        "new_alias_route": "/tools/preeti-to-unicode"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "release_id": "enhanced-unicode-preeti-v2",
+      "feature_key": "unicode-to-preeti",
+      "version": "2.0.0",
+      "target_path": "/tools/unicodetopreeti",
+      "publish_after": "2027-09-28 18:15:00+00",
+      "state": "retired",
+      "source_bundle_version": "1.0.0",
+      "source_bundle_sha256": "dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427",
+      "notes": "Canonical Unicode-to-Preeti conversion with warnings and no Roman alias output for क्ष. Replaced by unified enhanced-preeti-converter-v2 release.",
+      "metadata": {
+        "compat_route": "/tools/unicodetopreeti",
+        "new_alias_route": "/tools/unicode-to-preeti"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "release_id": "nepali-typing-v1",
+      "feature_key": "nepali-typing",
+      "version": "1.0.0",
+      "target_path": "/tools/nepali-typing",
+      "publish_after": "2026-09-29 05:19:11.282281+00",
+      "state": "published",
+      "source_bundle_version": "1.0.0",
+      "source_bundle_sha256": "dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427",
+      "notes": "Full Roman-to-Nepali typing with 34,571 local suggestions. Release gate interpreted literally as one year from 2026-09-29.",
+      "metadata": {
+        "suggestions": 34571,
+        "source_words": 34548,
+        "dictionary_source_blob": "c6f72034f0c96f2cdfc54c3d61eb07ccc97c18ac"
+      },
+      "updated_at": "2026-09-29 05:19:11.282281+00"
+    },
+    {
+      "release_id": "enhanced-preeti-converter-v2",
+      "feature_key": "preeti-converter",
+      "version": "2.0.0",
+      "target_path": "/tools/preeti-converter",
+      "publish_after": "2026-09-29 05:19:11.282281+00",
+      "state": "published",
+      "source_bundle_version": "1.0.0",
+      "source_bundle_sha256": "dfc130b2ccbaeee54a859bdc512c27107eb6efa6ae5167615a65df83377ba427",
+      "notes": "Single Preeti Converter UI containing both Preeti → Unicode and Unicode → Preeti.",
+      "metadata": {
+        "directions": [
+          "preeti-to-unicode",
+          "unicode-to-preeti"
+        ],
+        "legacy_routes": [
+          "/tools/preetitounicode",
+          "/tools/unicodetopreeti"
+        ]
+      },
+      "updated_at": "2026-09-29 05:19:11.282281+00"
+    }
+  ]
+}

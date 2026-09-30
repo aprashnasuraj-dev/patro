@@ -1,0 +1,529 @@
+{
+  "table": "tool_catalog",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "tool_id": "typingtools",
+      "slug": "typingtools",
+      "title": "Typing Tools · टाइपिङ टुल्स",
+      "subtitle": "Nepali typing and legacy-font conversion tools.",
+      "category": "typing",
+      "parent_slug": null,
+      "target_path": "/tools/typingtools",
+      "icon": "क",
+      "badge": "Typing Tools",
+      "sort_order": 10,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "kind": "hub"
+      },
+      "updated_at": "2026-09-29 04:22:46.955609+00"
+    },
+    {
+      "tool_id": "preetitounicode",
+      "slug": "preetitounicode",
+      "title": "Preeti → Unicode",
+      "subtitle": "Convert legacy Preeti text into searchable, copyable Unicode Nepali.",
+      "category": "typing",
+      "parent_slug": "typingtools",
+      "target_path": "/tools/preetitounicode",
+      "icon": "क",
+      "badge": "Typing Tools",
+      "sort_order": 20,
+      "enabled": false,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "engine": "current"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "unicodetopreeti",
+      "slug": "unicodetopreeti",
+      "title": "Unicode → Preeti",
+      "subtitle": "Convert modern Unicode Nepali into Preeti-compatible legacy text.",
+      "category": "typing",
+      "parent_slug": "typingtools",
+      "target_path": "/tools/unicodetopreeti",
+      "icon": "प्री",
+      "badge": "Typing Tools",
+      "sort_order": 30,
+      "enabled": false,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "engine": "current"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "bstoad",
+      "slug": "bstoad",
+      "title": "BS → AD Date Converter",
+      "subtitle": "Convert Bikram Sambat dates to Gregorian/AD dates.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/bstoad",
+      "icon": "वि",
+      "badge": "Calendar",
+      "sort_order": 200,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "adtobs",
+      "slug": "adtobs",
+      "title": "AD → BS Date Converter",
+      "subtitle": "Convert Gregorian/AD dates to Bikram Sambat dates.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/adtobs",
+      "icon": "AD",
+      "badge": "Calendar",
+      "sort_order": 210,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "landconverter",
+      "slug": "landconverter",
+      "title": "Nepali Land Converter",
+      "subtitle": "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/landconverter",
+      "icon": "▦",
+      "badge": "Land",
+      "sort_order": 220,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "incometax",
+      "slug": "incometax",
+      "title": "Income Tax Calculator",
+      "subtitle": "Estimate FY 2083/84 salary tax with supported deductions.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/incometax",
+      "icon": "रु",
+      "badge": "Finance",
+      "sort_order": 230,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "nepaliqr",
+      "slug": "nepaliqr",
+      "title": "Devanagari QR Generator",
+      "subtitle": "Create a private UTF-8 QR code from Nepali or English text.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/nepaliqr",
+      "icon": "QR",
+      "badge": "QR",
+      "sort_order": 240,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "fuelprice",
+      "slug": "fuelprice",
+      "title": "NOC Fuel Price Tracker",
+      "subtitle": "Check Nepal Oil Corporation fuel price references.",
+      "category": "utility",
+      "parent_slug": null,
+      "target_path": "/tools/fuelprice",
+      "icon": "⛽",
+      "badge": "Fuel",
+      "sort_order": 250,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {},
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "tithi",
+      "slug": "tithi",
+      "title": "तिथि · Tithi",
+      "subtitle": "Tithi reminders, lunar-date derivation and recurrence tools.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/tithi",
+      "icon": "त",
+      "badge": "Tools",
+      "sort_order": 50,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "legacy_path": "/tithi"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "diaspora",
+      "slug": "diaspora",
+      "title": "Diaspora",
+      "subtitle": "Timezone-aware Nepal calendar context for users abroad.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/diaspora",
+      "icon": "🌏",
+      "badge": "Tools",
+      "sort_order": 60,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "legacy_path": "/diaspora"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "card",
+      "slug": "card",
+      "title": "कार्ड · Share Cards",
+      "subtitle": "Create calendar, date and festival cards for sharing.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/card",
+      "icon": "▣",
+      "badge": "Tools",
+      "sort_order": 70,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "legacy_path": "/card"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "family",
+      "slug": "family",
+      "title": "परिवार · Family",
+      "subtitle": "Keep private family dates and shared household events together.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/family",
+      "icon": "परि",
+      "badge": "Tools",
+      "sort_order": 80,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "private": true,
+        "legacy_path": "/family"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "api",
+      "slug": "api",
+      "title": "API · Developers",
+      "subtitle": "Explore Nepal Miti APIs, integration guidance and developer resources.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/api",
+      "icon": "</>",
+      "badge": "Tools",
+      "sort_order": 90,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "legacy_path": "/developers"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "my-data",
+      "slug": "my-data",
+      "title": "मेरो डेटा · My Data",
+      "subtitle": "Review, export or remove private data associated with Nepal Miti.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/my-data",
+      "icon": "🔐",
+      "badge": "Tools",
+      "sort_order": 100,
+      "enabled": true,
+      "release_after": "2026-09-28 18:15:00+00",
+      "metadata": {
+        "private": true,
+        "legacy_path": "/my-data"
+      },
+      "updated_at": "2026-09-29 05:00:13.291915+00"
+    },
+    {
+      "tool_id": "nepali-typing",
+      "slug": "nepali-typing",
+      "title": "नेपाली टाइपिङ · Nepali Typing",
+      "subtitle": "Type Roman Nepali and choose from local Devanagari suggestions without sending your text to a typing service.",
+      "category": "typing",
+      "parent_slug": "typingtools",
+      "target_path": "/tools/nepali-typing",
+      "icon": "ने",
+      "badge": "Typing Tools",
+      "sort_order": 30,
+      "enabled": true,
+      "release_after": "2026-09-29 05:19:11.282281+00",
+      "metadata": {
+        "engine": "local-worker",
+        "privacy": "client-only",
+        "suggestions": 34571,
+        "dictionary_version": "1.0.0"
+      },
+      "updated_at": "2026-09-29 05:19:11.282281+00"
+    },
+    {
+      "tool_id": "preeti-converter",
+      "slug": "preeti-converter",
+      "title": "Preeti Converter · प्रीति रूपान्तरण",
+      "subtitle": "Convert both Preeti → Unicode and Unicode → Preeti from one converter.",
+      "category": "typing",
+      "parent_slug": "typingtools",
+      "target_path": "/tools/preeti-converter",
+      "icon": "प्री",
+      "badge": "Typing Tools",
+      "sort_order": 20,
+      "enabled": true,
+      "release_after": "2026-09-29 05:19:11.282281+00",
+      "metadata": {
+        "engine": "v2",
+        "directions": [
+          "preeti-to-unicode",
+          "unicode-to-preeti"
+        ],
+        "legacy_routes": [
+          "/tools/preetitounicode",
+          "/tools/unicodetopreeti"
+        ]
+      },
+      "updated_at": "2026-09-29 05:19:11.282281+00"
+    },
+    {
+      "tool_id": "samudaya",
+      "slug": "samudaya",
+      "title": "समुदाय · Community Suite",
+      "subtitle": "नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी अनुभव एउटै ठाउँमा।",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/samudaya",
+      "icon": "समु",
+      "badge": "Calendar",
+      "sort_order": 105,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "community-suite"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "tithi-reminder",
+      "slug": "tithi-reminder",
+      "title": "तिथि रिमाइन्डर",
+      "subtitle": "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar ICS feed.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/tithi-reminder",
+      "icon": "त",
+      "badge": "नयाँ",
+      "sort_order": 110,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "sait",
+      "slug": "sait",
+      "title": "साइत · शुभ समय",
+      "subtitle": "आधिकारिक मिति पहिलो; गणना गरिएको परिणाम सम्भावित भनेर स्पष्ट.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/sait",
+      "icon": "शु",
+      "badge": "नयाँ",
+      "sort_order": 120,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "baby-names",
+      "slug": "baby-names",
+      "title": "नक्षत्र अनुसार बच्चाको नाम",
+      "subtitle": "नक्षत्र अक्षर, न्वारन, पास्नी र खोप समयरेखा.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/baby-names",
+      "icon": "ना",
+      "badge": "नयाँ",
+      "sort_order": 130,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "janmadin-akhbar",
+      "slug": "janmadin-akhbar",
+      "title": "जन्मदिन अखबार",
+      "subtitle": "जन्म दिनको पात्रो र इतिहासबाट PNG शेयर कार्ड.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/janmadin-akhbar",
+      "icon": "📰",
+      "badge": "नयाँ",
+      "sort_order": 140,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "future-letter",
+      "slug": "future-letter",
+      "title": "भविष्यको चिठी",
+      "subtitle": "वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने निजी चिठी.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/future-letter",
+      "icon": "✉",
+      "badge": "नयाँ",
+      "sort_order": 150,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "spell-check",
+      "slug": "spell-check",
+      "title": "नेपाली हिज्जे जाँच",
+      "subtitle": "स्थानीय नियम र वैकल्पिक AI सुझावसहित नेपाली spell check.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/spell-check",
+      "icon": "✓",
+      "badge": "भाषा",
+      "sort_order": 160,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "voice-typing",
+      "slug": "voice-typing",
+      "title": "आवाजबाट नेपाली टाइपिङ",
+      "subtitle": "ब्राउजर speech recognition बाट नेपाली Unicode टाइपिङ.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/voice-typing",
+      "icon": "🎙",
+      "badge": "भाषा",
+      "sort_order": 170,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "ocr",
+      "slug": "ocr",
+      "title": "नेपाली OCR",
+      "subtitle": "तस्बिरबाट नेपाली अक्षर; OCR engine माग्दा मात्रै load हुन्छ.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/ocr",
+      "icon": "OCR",
+      "badge": "भाषा",
+      "sort_order": 180,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "name-check",
+      "slug": "name-check",
+      "title": "नाम जाँच",
+      "subtitle": "नामको सुरु अक्षर र नक्षत्र/पद मिलान हेर्नुहोस्.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/name-check",
+      "icon": "नाम",
+      "badge": "ज्योतिष",
+      "sort_order": 190,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "read-aloud",
+      "slug": "read-aloud",
+      "title": "पढेर सुनाउनुहोस्",
+      "subtitle": "नेपाली पाठ browser voice बाट सुन्नुहोस्.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/read-aloud",
+      "icon": "🔊",
+      "badge": "Accessibility",
+      "sort_order": 195,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    },
+    {
+      "tool_id": "patro-bot",
+      "slug": "patro-bot",
+      "title": "Patro Bot",
+      "subtitle": "मिति, तिथि, पात्रो र रिमाइन्डरका छोटा प्रश्नको सहायक.",
+      "category": "tools",
+      "parent_slug": null,
+      "target_path": "/tools/patro-bot",
+      "icon": "Bot",
+      "badge": "नयाँ",
+      "sort_order": 198,
+      "enabled": true,
+      "release_after": "2026-09-29 23:58:18.213972+00",
+      "metadata": {
+        "source": "patro-tools"
+      },
+      "updated_at": "2026-09-29 23:58:18.213972+00"
+    }
+  ]
+}
