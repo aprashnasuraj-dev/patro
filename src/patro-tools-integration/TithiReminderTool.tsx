@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import type { EventKind } from "@/patro-tools/tithi-events/events";
 import { panchangProvider, primePanchang } from "./panchangAdapter";
-import { accessToken, readLife, syncLifeTools, updateLife, type StoredTithiEvent } from "./storage";
+import { readLife, syncLifeTools, updateLife, type StoredTithiEvent } from "./storage";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
 
 const MONTH_KEYS = ["chaitra","vaishakha","jyestha","ashadha","shravana","bhadrapada","ashwin","kartika","margashirsha","pausha","magha","falguna"];
@@ -156,17 +156,17 @@ export function TithiReminderTool() {
   }
 
   async function createFeed() {
-    const token = accessToken();
-    if (!token) {
-      setStatus("Google Calendar feed बनाउन पहिले Mero Patro मा Google login गर्नुहोस्।");
-      return;
-    }
     setStatus("निजी feed तयार हुँदैछ…");
     const response = await fetch("/api/v1/tools/tithi-feed-token", {
       method: "POST",
-      headers: { "content-type": "application/json", authorization: "Bearer " + token },
+      headers: { "content-type": "application/json" },
+      credentials: "same-origin",
       body: "{}",
     });
+    if (response.status === 401) {
+      setStatus("Google Calendar feed बनाउन पहिले Mero Patro मा Google login गर्नुहोस्।");
+      return;
+    }
     const payload = await response.json() as { path?: string; error?: string };
     if (!response.ok || !payload.path) {
       setStatus(payload.error || "Feed बनाउन सकिएन।");
