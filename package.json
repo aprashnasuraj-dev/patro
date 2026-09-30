@@ -20,12 +20,13 @@
     "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
     "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
     "cloudflare:validate": "node scripts/validate-cloudflare.mjs",
-    "cloudflare:migrate": "npm run cloudflare:generate-d1 && npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
-    "deploy:cloudflare:bootstrap": "npm run build && wrangler deploy --config wrangler.jsonc",
+    "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
+    "deploy:cloudflare:bootstrap": "node scripts/bootstrap-cloudflare.mjs",
     "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
     "cloudflare:generate-d1": "node scripts/generate-d1-migrations.mjs",
     "dev:pages": "npm run build && wrangler pages dev --config wrangler.pages.jsonc",
-    "deploy:pages": "npm run build && wrangler pages deploy --config wrangler.pages.jsonc"
+    "deploy:pages": "npm run build && wrangler pages deploy --config wrangler.pages.jsonc",
+    "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
