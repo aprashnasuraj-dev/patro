@@ -12,13 +12,9 @@ const LOCAL_RATE = new Map<string, { window: number; count: number }>();
 export type JyotishEnv = {
   DB?: any;
   CACHE?: any;
-  // Exact migrated secret names from Supabase. Preserve casing.
+  // Existing provider key names are preserved for compatibility.
   Groq_API?: string;
   nvidia_api?: string;
-  SUPABASE_ANON_KEY?: string;
-  SUPABASE_DB_URL?: string;
-  SUPABASE_SERVICE_ROLE_KEY?: string;
-  SUPABASE_URL?: string;
   TV_RELAY_SECRET?: string;
   // Supported aliases for backwards/local compatibility.
   GROQ_API_KEY?: string;
