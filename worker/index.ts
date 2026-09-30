@@ -800,16 +800,20 @@ export default {
           else {
             const pushNative = await pushResponse(request,env);
             if (pushNative) response = pushNative;
-            else if (path.startsWith("/api/v1/")) response = await handleApi(request,env,ctx);
-            else if (path.startsWith("/api/fm/")) response = (await fmResponse(request,env)) || json({error:"fm_route_not_found"},404);
-            else if (path === "/api/jyotish-chat") response = await handleJyotishChat(request,env);
-            else if (path === "/api/rashifal/universal" && request.method === "GET") {
-              const native = await nativeRashifalUniversal(request,env);
-              response = native || json({error:"rashifal_unavailable"},503);
-            } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
-              const u=new URL(request.url);u.pathname="/api/v1/rashifal/personalized";
-              response = (await publicApiResponse(new Request(u.toString(),request),env)) || json({error:"rashifal_route_unavailable"},503);
-            } else response = json({error:"api_route_not_found",path},404);
+            else {
+              const cronNative = await cronResponse(request,env);
+              if (cronNative) response = cronNative;
+              else if (path.startsWith("/api/v1/")) response = await handleApi(request,env,ctx);
+              else if (path.startsWith("/api/fm/")) response = (await fmResponse(request,env)) || json({error:"fm_route_not_found"},404);
+              else if (path === "/api/jyotish-chat") response = await handleJyotishChat(request,env);
+              else if (path === "/api/rashifal/universal" && request.method === "GET") {
+                const native = await nativeRashifalUniversal(request,env);
+                response = native || json({error:"rashifal_unavailable"},503);
+              } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py" || path === "/api/rashifal/personalized") {
+                const u=new URL(request.url);u.pathname="/api/v1/rashifal/personalized";
+                response = (await publicApiResponse(new Request(u.toString(),request),env)) || json({error:"rashifal_route_unavailable"},503);
+              } else response = json({error:"api_route_not_found",path},404);
+            }
           }
         }
       }
