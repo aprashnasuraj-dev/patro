@@ -12,6 +12,7 @@ type Env = {
   ASSETS?: { fetch(request: Request): Promise<Response> };
   SUPABASE_COMPAT_ORIGIN?: string;
   SUPABASE_PROTECTED_ORIGIN?: string;
+  PUBLIC_SITE_URL?: string;
   NASA_API_KEY?: string;
   RADIO_RELAY_SECRET?: string;
   TV_RELAY_SECRET?: string;
@@ -45,25 +46,87 @@ const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https
 const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'";
 
 
-type EdgeSeoMeta = { title: string; description: string };
+type EdgeSeoMeta = { title: string; description: string; pageType?: "WebPage" | "CollectionPage" };
 
 const EDGE_SEO_EXACT: Record<string, EdgeSeoMeta> = {
-  "/": { title: "नेपाली पात्रो, तिथि र राशिफल · MeroPatro", description: "MeroPatro — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।" },
+  "/": { title: "नेपाली पात्रो, आजको मिति, तिथि र राशिफल · MeroPatro", description: "MeroPatro — नेपाली पात्रो, आजको मिति, तिथि, चाडपर्व, राशिफल, AD↔BS मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।" },
+  "/aaja": { title: "आजको नेपाली मिति · Aaja Ko Miti · MeroPatro", description: "आजको नेपाली मिति, बार, तिथि, Bikram Sambat र दैनिक पात्रो context नेपाल समय अनुसार।" },
+  "/explore": { title: "MeroPatro का सबै सुविधा · Explore", description: "पात्रो, ज्योतिष, समाचार, FM, Live TV, इतिहास र नेपाली utilities एकै ठाउँमा।", pageType: "CollectionPage" },
   "/astro": { title: "खगोलीय पात्रो · Astronomy Calendar · MeroPatro", description: "AD, BS, Nepal Sambat, तिथि, lunar phase र NASA astronomy data एउटै पात्रोमा।" },
-  "/fm": { title: "FM Radio · MeroPatro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
-  "/tv": { title: "Live TV · MeroPatro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।" },
-  "/samachar": { title: "समाचार · Samachar · MeroPatro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
+  "/fm": { title: "FM Radio · MeroPatro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।", pageType: "CollectionPage" },
+  "/tv": { title: "Live TV · MeroPatro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।", pageType: "CollectionPage" },
+  "/samachar": { title: "समाचार · Samachar · MeroPatro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।", pageType: "CollectionPage" },
   "/time-machine": { title: "नेपाल Time Machine · MeroPatro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
   "/on-this-day": { title: "आज इतिहासमा · On This Day · MeroPatro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
-  "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
+  "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।", pageType: "CollectionPage" },
+  "/tools/nepali-typing": { title: "नेपाली Typing · Roman to Unicode · MeroPatro", description: "Romanized Nepali लाई Unicode नेपालीमा टाइप र रूपान्तरण गर्ने browser tool।" },
+  "/tools/typingtools": { title: "नेपाली Typing Tools · MeroPatro", description: "Roman → Unicode नेपाली typing र Preeti/Unicode conversion utilities।", pageType: "CollectionPage" },
+  "/tools/tithi": { title: "आजको तिथि र पञ्चाङ्ग · MeroPatro", description: "तिथि, पञ्चाङ्ग र lunar-date context हेर्न तथा तिथि सम्बन्धी utilities प्रयोग गर्न।" },
+  "/tools/diaspora": { title: "Nepali Calendar Abroad · Diaspora · MeroPatro", description: "नेपाल बाहिरका timezone अनुसार नेपाली मिति, चाडपर्व र calendar context।" },
+  "/tools/api": { title: "MeroPatro Developer API · Calendar Data", description: "MeroPatro का public calendar, community calendar र embed interfaces का developer references।" },
   "/convert": { title: "AD ↔ BS Date Converter · MeroPatro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
-  "/jyotish/rashifal": { title: "राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
-  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" }
+  "/jyotish": { title: "ज्योतिष · Jyotish · MeroPatro", description: "राशिफल, जन्मपत्रो र Vedic ज्योतिषका उपलब्ध tools तथा context।", pageType: "CollectionPage" },
+  "/jyotish/rashifal": { title: "आजको राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
+  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" },
+  "/nepal-sambat": { title: "नेपाल संवत् · Nepal Sambat · MeroPatro", description: "नेपाल संवत् मिति, पात्रो र सम्बन्धित सांस्कृतिक calendar context।", pageType: "CollectionPage" },
+  "/nepal-sambat/mandala": { title: "नेपाल संवत् मण्डला · MeroPatro", description: "नेपाल संवत् calendar view, dates and festival context।" },
+  "/samudaya": { title: "समुदाय पात्रो · Community Calendars · MeroPatro", description: "नेपालका समुदाय र परम्परासँग सम्बन्धित calendar suites र चाडपर्व context।", pageType: "CollectionPage" },
+  "/samudaya/lhosar": { title: "ल्होसार पात्रो · MeroPatro", description: "ल्होसार सम्बन्धित calendar dates, events and cultural context।" },
+  "/samudaya/tharu": { title: "थारु समुदाय पात्रो · MeroPatro", description: "थारु समुदायका calendar dates, events and cultural context।" },
+  "/samudaya/mithila": { title: "मिथिला पात्रो · MeroPatro", description: "मिथिला परम्पराका calendar dates, events and cultural context।" },
+  "/samudaya/kirat": { title: "किरात पात्रो · MeroPatro", description: "किरात परम्पराका calendar dates, events and cultural context।" },
+  "/samudaya/hijri": { title: "हिजरी पात्रो · Hijri Calendar · MeroPatro", description: "Hijri dates and available community calendar context।" },
+  "/samudaya/chakra": { title: "समुदाय Calendar Chakra · MeroPatro", description: "MeroPatro का community calendar suites को संयुक्त overview।", pageType: "CollectionPage" },
+  "/about": { title: "MeroPatro बारे · About", description: "MeroPatro को उद्देश्य, सार्वजनिक सुविधा र calendar platform context।" },
+  "/sources": { title: "स्रोत र Data Trust · MeroPatro", description: "MeroPatro मा प्रयोग हुने calendar, astronomy र अन्य data sources को provenance context।" }
 };
+
+const SEARCH_INTENT_ROUTES = new Map<string, string>([
+  ["aaja kati gate", "/aaja"],
+  ["aaj ko miti", "/aaja"],
+  ["aaja ko miti", "/aaja"],
+  ["nepali date today", "/aaja"],
+  ["आज कति गते", "/aaja"],
+  ["आजको मिति", "/aaja"],
+  ["bs to ad", "/convert"],
+  ["ad to bs", "/convert"],
+  ["miti parivartak", "/convert"],
+  ["miti rupantaran", "/convert"],
+  ["मिति परिवर्तक", "/convert"],
+  ["मिति रूपान्तरण", "/convert"],
+  ["tithi", "/tools/tithi"],
+  ["today tithi", "/tools/tithi"],
+  ["aaja ko tithi", "/tools/tithi"],
+  ["panchang", "/tools/tithi"],
+  ["panchanga", "/tools/tithi"],
+  ["आजको तिथि", "/tools/tithi"],
+  ["पञ्चाङ्ग", "/tools/tithi"],
+  ["पंचांग", "/tools/tithi"],
+  ["rashifal", "/jyotish/rashifal"],
+  ["aaja ko rashifal", "/jyotish/rashifal"],
+  ["horoscope nepali", "/jyotish/rashifal"],
+  ["आजको राशिफल", "/jyotish/rashifal"],
+  ["nepali typing", "/tools/nepali-typing"],
+  ["roman nepali unicode", "/tools/nepali-typing"],
+  ["fm radio", "/fm"],
+  ["nepali fm", "/fm"],
+  ["live tv", "/tv"]
+]);
 
 function canonicalSeoPath(path: string) {
   if (!path || path === "/") return "/";
   return path.replace(/\/+$/, "") || "/";
+}
+
+function normalizeSearchQuery(value: string) {
+  return value.normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+}
+
+function normalizedSearchTarget(url: URL) {
+  if (url.pathname !== "/search") return null;
+  const raw = url.searchParams.get("q") || url.searchParams.get("query") || "";
+  if (!raw) return null;
+  return SEARCH_INTENT_ROUTES.get(normalizeSearchQuery(raw)) || null;
 }
 
 function edgeSeoMeta(path: string): EdgeSeoMeta {
@@ -77,7 +140,82 @@ function edgeSeoMeta(path: string): EdgeSeoMeta {
   }
   if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · MeroPatro", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
   if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · MeroPatro", description: "MeroPatro को free browser utility tool।" };
-  return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+  return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, आजको मिति, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+}
+
+function configuredSeoOrigin(url: URL, env: Env) {
+  const configured = (env.PUBLIC_SITE_URL || "").trim().replace(/\/+$/, "");
+  return /^https:\/\/[^/]+/.test(configured) ? configured : url.origin;
+}
+
+function seoSchemaGraph(origin: string, clean: string, canonical: string, meta: EdgeSeoMeta) {
+  const websiteId = origin + "/#website";
+  const organizationId = origin + "/#organization";
+  const pageId = canonical + "#webpage";
+  const graph: any[] = [
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      name: "MeroPatro",
+      alternateName: "Mero Patro",
+      url: origin + "/",
+      inLanguage: ["ne", "en"],
+      publisher: { "@id": organizationId },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: origin + "/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: "MeroPatro",
+      url: origin + "/",
+      logo: { "@type": "ImageObject", url: origin + "/icon-512.png", width: 512, height: 512 }
+    },
+    {
+      "@type": meta.pageType || "WebPage",
+      "@id": pageId,
+      name: meta.title,
+      description: meta.description,
+      url: canonical,
+      inLanguage: ["ne", "en"],
+      isPartOf: { "@id": websiteId },
+      primaryImageOfPage: { "@type": "ImageObject", url: origin + "/og-default.svg", width: 1200, height: 630 }
+    }
+  ];
+
+  if (clean === "/") {
+    graph.push({
+      "@type": "SoftwareApplication",
+      "@id": origin + "/#app",
+      name: "MeroPatro",
+      alternateName: "Mero Patro",
+      url: origin + "/",
+      applicationCategory: "LifestyleApplication",
+      operatingSystem: "Web",
+      inLanguage: ["ne", "en"],
+      offers: { "@type": "Offer", price: "0", priceCurrency: "NPR" }
+    });
+  }
+
+  if (clean === "/tools/api") {
+    graph.push({
+      "@type": "Dataset",
+      "@id": canonical + "#calendar-data",
+      name: "MeroPatro public calendar data",
+      description: "Machine-readable calendar synchronization and community calendar data exposed by MeroPatro public APIs.",
+      url: canonical,
+      creator: { "@id": organizationId },
+      distribution: [
+        { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: origin + "/api/v1/sync" },
+        { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: origin + "/api/v1/communities" }
+      ]
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }
 
 function historicalCalendarNoindex(path: string) {
@@ -92,27 +230,24 @@ function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (ch) => map[ch] || ch);
 }
 
-function rewriteSeoHtml(request: Request, response: Response, path: string) {
+function rewriteSeoHtml(request: Request, response: Response, path: string, env: Env) {
   const HTMLRewriterCtor = (globalThis as any).HTMLRewriter;
   if (!HTMLRewriterCtor || path === "/embed/today" || path === "/embed/converter") return response;
 
   const url = new URL(request.url);
   const clean = canonicalSeoPath(path);
-  const canonical = url.origin + clean;
+  const origin = configuredSeoOrigin(url, env);
+  const canonical = origin + clean;
   const meta = edgeSeoMeta(clean);
   const privateRoute = ["/notes","/planner","/settings","/family","/my-data","/my-diary","/offline","/admin"].some(
     (prefix) => clean === prefix || clean.startsWith(prefix + "/")
   );
-  const robots = privateRoute ? "noindex, nofollow" : historicalCalendarNoindex(clean) ? "noindex, follow" : "index, follow";
-  const schema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: meta.title,
-    description: meta.description,
-    url: canonical,
-    inLanguage: ["ne", "en"],
-    isPartOf: { "@type": "WebSite", name: "MeroPatro", url: url.origin + "/" }
-  }).replace(/</g, "\\u003c");
+  const robots = privateRoute
+    ? "noindex, nofollow"
+    : historicalCalendarNoindex(clean)
+      ? "noindex, follow"
+      : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  const schema = JSON.stringify(seoSchemaGraph(origin, clean, canonical, meta)).replace(/</g, "\\u003c");
 
   const headBlock =
     '<meta name="description" content="' + escapeHtml(meta.description) + '">' +
@@ -121,11 +256,14 @@ function rewriteSeoHtml(request: Request, response: Response, path: string) {
     '<meta property="og:description" content="' + escapeHtml(meta.description) + '">' +
     '<meta property="og:url" content="' + escapeHtml(canonical) + '">' +
     '<meta property="og:locale" content="ne_NP">' +
+    '<meta property="og:image" content="' + escapeHtml(origin + "/og-default.svg") + '">' +
+    '<meta property="og:image:width" content="1200">' +
+    '<meta property="og:image:height" content="630">' +
     '<meta name="twitter:title" content="' + escapeHtml(meta.title) + '">' +
     '<meta name="twitter:description" content="' + escapeHtml(meta.description) + '">' +
+    '<meta name="twitter:image" content="' + escapeHtml(origin + "/og-default.svg") + '">' +
     '<link rel="canonical" href="' + escapeHtml(canonical) + '">' +
-    '<link rel="alternate" hreflang="ne" href="' + escapeHtml(canonical) + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + escapeHtml(canonical) + '">' +
+    '<link rel="describedby" href="/llms.txt" type="text/plain">' +
     '<script type="application/ld+json">' + schema + '</script>';
 
   return new HTMLRewriterCtor()
@@ -136,16 +274,21 @@ function rewriteSeoHtml(request: Request, response: Response, path: string) {
     .on('meta[property="og:description"]', { element(el: any) { el.remove(); } })
     .on('meta[property="og:url"]', { element(el: any) { el.remove(); } })
     .on('meta[property="og:locale"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:image"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:image:width"]', { element(el: any) { el.remove(); } })
+    .on('meta[property="og:image:height"]', { element(el: any) { el.remove(); } })
     .on('meta[name="twitter:title"]', { element(el: any) { el.remove(); } })
     .on('meta[name="twitter:description"]', { element(el: any) { el.remove(); } })
+    .on('meta[name="twitter:image"]', { element(el: any) { el.remove(); } })
     .on('link[rel="canonical"]', { element(el: any) { el.remove(); } })
     .on('link[rel="alternate"][hreflang]', { element(el: any) { el.remove(); } })
+    .on('link[rel="describedby"]', { element(el: any) { el.remove(); } })
     .on('script[type="application/ld+json"]', { element(el: any) { el.remove(); } })
     .on("head", { element(el: any) { el.append(headBlock, { html: true }); } })
     .transform(response);
 }
 
-function secureResponse(request: Request, response: Response) {
+function secureResponse(request: Request, response: Response, env: Env) {
   const headers = new Headers(response.headers);
   headers.set("x-content-type-options", "nosniff");
   headers.set("referrer-policy", "strict-origin-when-cross-origin");
@@ -188,7 +331,7 @@ function secureResponse(request: Request, response: Response) {
     headers
   });
   if (!type.includes("text/html")) return secured;
-  return rewriteSeoHtml(request, secured, path);
+  return rewriteSeoHtml(request, secured, path, env);
 }
 
 
@@ -788,6 +931,21 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const path = url.pathname;
+
+    if ((request.method === "GET" || request.method === "HEAD") && path.length > 1 && path.endsWith("/") && !path.startsWith("/api/")) {
+      const canonical = new URL(request.url);
+      canonical.pathname = canonicalSeoPath(path);
+      return Response.redirect(canonical.toString(), 308);
+    }
+
+    if (request.method === "GET" && path === "/search") {
+      const target = normalizedSearchTarget(url);
+      if (target) {
+        const destination = new URL(target, url.origin);
+        return Response.redirect(destination.toString(), 302);
+      }
+    }
+
     let response: Response;
 
     if (path.startsWith("/api/v1/")) {
@@ -817,6 +975,6 @@ export default {
       }
     }
 
-    return secureResponse(request, response);
+    return secureResponse(request, response, env);
   }
 };
