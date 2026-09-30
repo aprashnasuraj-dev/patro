@@ -25,7 +25,7 @@ base.d1_databases = [{
   binding: "DB",
   database_name: process.env.CF_D1_DATABASE_NAME?.trim() || "mero-patro",
   database_id: d1Id,
-  migrations_dir: ".cloudflare/d1-migrations",
+  migrations_dir: "cloudflare/d1/schema-migrations",
   ...(d1PreviewId ? { preview_database_id: d1PreviewId } : {})
 }];
 
@@ -36,4 +36,4 @@ base.kv_namespaces = [{
 }];
 
 await writeFile(outputPath, JSON.stringify(base, null, 2) + "\n", "utf8");
-console.log(`Generated wrangler.generated.jsonc with D1/KV bindings (${splitPagesWorker ? "Pages + API Worker" : "single Worker + Static Assets"} mode).`);
+console.log(`Generated wrangler.generated.jsonc with D1/KV bindings and schema-only migrations (${splitPagesWorker ? "Pages + API Worker" : "single Worker + Static Assets"} mode).`);
