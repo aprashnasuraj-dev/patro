@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
-import App from "./App";
-import { MediaSuite } from "./media/MediaSuite";
-import { JanmaPatroSuite } from "./jyotish/JanmaPatroSuite";
-import { UtilitySuite } from "./utilities/UtilitySuite";
-import { NepaliTools } from "./features/nepali-tools/NepaliTools";
-import { FeatureHub } from "./components/FeatureHub";
-import { MyDiary } from "./components/MyDiary";
-import { TrustPage } from "./components/TrustPages";
-import { NotFound } from "./components/NotFound";
-import { PatroToolsShell, PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
-import { CommunityPreferences } from "./community/CommunityPreferences";
-import { CommunityAdmin } from "./community/CommunityAdmin";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/toolSlugs";
+
+const App = lazy(() => import("./App"));
+const MediaSuite = lazy(() => import("./media/MediaSuite").then((m) => ({ default: m.MediaSuite })));
+const JanmaPatroSuite = lazy(() => import("./jyotish/JanmaPatroSuite").then((m) => ({ default: m.JanmaPatroSuite })));
+const UtilitySuite = lazy(() => import("./utilities/UtilitySuite").then((m) => ({ default: m.UtilitySuite })));
+const NepaliTools = lazy(() => import("./features/nepali-tools/NepaliTools").then((m) => ({ default: m.NepaliTools })));
+const FeatureHub = lazy(() => import("./components/FeatureHub").then((m) => ({ default: m.FeatureHub })));
+const MyDiary = lazy(() => import("./components/MyDiary").then((m) => ({ default: m.MyDiary })));
+const TrustPage = lazy(() => import("./components/TrustPages").then((m) => ({ default: m.TrustPage })));
+const NotFound = lazy(() => import("./components/NotFound").then((m) => ({ default: m.NotFound })));
+const PatroToolsShell = lazy(() => import("./patro-tools-integration/PatroToolsShell").then((m) => ({ default: m.PatroToolsShell })));
+const CommunityPreferences = lazy(() => import("./community/CommunityPreferences").then((m) => ({ default: m.CommunityPreferences })));
+const CommunityAdmin = lazy(() => import("./community/CommunityAdmin").then((m) => ({ default: m.CommunityAdmin })));
 
 const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites"]);
 
@@ -30,6 +32,24 @@ function isNativePath(path: string) {
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, "") || "/";
+}
+
+function RouteFallback() {
+  return (
+    <main
+      role="status"
+      aria-live="polite"
+      style={{
+        minHeight: "55vh",
+        display: "grid",
+        placeItems: "center",
+        padding: "2rem",
+        fontFamily: "system-ui, sans-serif",
+      }}
+    >
+      Loading…
+    </main>
+  );
 }
 
 export function PatroRouter() {
@@ -61,24 +81,29 @@ export function PatroRouter() {
     };
   }, []);
 
-  if (path === "/settings/community") return <CommunityPreferences />;
-  if (path === "/admin/community-suites") return <CommunityAdmin />;
-  if (path === "/explore") return <FeatureHub />;
-  if (path === "/about") return <TrustPage page="about" />;
-  if (path === "/sources") return <TrustPage page="sources" />;
-  if (path === "/privacy") return <TrustPage page="privacy" />;
-  if (path === "/terms") return <TrustPage page="terms" />;
-  if (path === "/contact") return <TrustPage page="contact" />;
-  if (path === "/404") return <NotFound />;
-  if (path === "/my-diary") return <MyDiary />;
-  if (path === "/fm") return <MediaSuite kind="radio" />;
-  if (path === "/tv") return <MediaSuite kind="tv" />;
-  const patroToolSlug = path.startsWith("/tools/") ? path.slice("/tools/".length) : "";
-  if (PATRO_TOOL_SLUGS.has(patroToolSlug)) return <PatroToolsShell slug={patroToolSlug} />;
-  if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
-  if (path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
-  if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;
-  if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
-  if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
-  return <App />;
+  const renderRoute = () => {
+    if (path === "/settings/community") return <CommunityPreferences />;
+    if (path === "/admin/community-suites") return <CommunityAdmin />;
+    if (path === "/explore") return <FeatureHub />;
+    if (path === "/about") return <TrustPage page="about" />;
+    if (path === "/sources") return <TrustPage page="sources" />;
+    if (path === "/privacy") return <TrustPage page="privacy" />;
+    if (path === "/terms") return <TrustPage page="terms" />;
+    if (path === "/contact") return <TrustPage page="contact" />;
+    if (path === "/404") return <NotFound />;
+    if (path === "/my-diary") return <MyDiary />;
+    if (path === "/fm") return <MediaSuite kind="radio" />;
+    if (path === "/tv") return <MediaSuite kind="tv" />;
+
+    const patroToolSlug = path.startsWith("/tools/") ? path.slice("/tools/".length) : "";
+    if (PATRO_TOOL_SLUGS.has(patroToolSlug)) return <PatroToolsShell slug={patroToolSlug} />;
+    if (path === "/tools/nepali-typing") return <NepaliTools mode="typing" />;
+    if (path === "/tools/preeti-converter" || path === "/tools/preeti-to-unicode" || path === "/tools/preetitounicode") return <NepaliTools mode="preeti-to-unicode" />;
+    if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;
+    if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
+    if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
+    return <App />;
+  };
+
+  return <Suspense fallback={<RouteFallback />}>{renderRoute()}</Suspense>;
 }
