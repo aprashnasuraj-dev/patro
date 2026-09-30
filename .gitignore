@@ -16,3 +16,5 @@ supabase/.temp/
 !.dev.vars.example
 .cloudflare/
 wrangler.generated.jsonc
+.cloudflare/d1-import/
+.cloudflare/dry-run/
