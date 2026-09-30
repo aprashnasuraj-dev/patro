@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run build && wrangler dev",
+    "dev": "npm run dev:cloudflare",
     "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
-    "preview": "npm run build && wrangler dev --local",
+    "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
     "test:typing": "node --test tests/nepali-tools.test.mjs",
@@ -15,7 +15,14 @@
     "lint": "tsc --noEmit",
     "doctor": "node scripts/doctor.mjs",
     "dev:vite": "vite",
-    "deploy": "wrangler deploy && wrangler d1 migrations apply DB --remote"
+    "deploy": "npm run deploy:cloudflare",
+    "dev:cloudflare": "npm run build && wrangler dev --config wrangler.jsonc",
+    "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
+    "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
+    "cloudflare:validate": "node scripts/validate-cloudflare.mjs",
+    "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
+    "deploy:cloudflare:bootstrap": "npm run build && wrangler deploy --config wrangler.jsonc",
+    "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -37,15 +44,15 @@
     "@types/react-dom": "19.1.2",
     "vitest": "3.2.7",
     "esbuild": "0.25.10",
-    "wrangler": "4.45.0"
+    "wrangler": "4.143.0"
   },
   "cloudflare": {
     "build_command": "npm run build",
-    "deploy_command": "npm run deploy",
+    "deploy_command": "npm run deploy:cloudflare",
     "bindings": {
-      "DB": "D1 content database (automatically provisioned by Wrangler)",
-      "CACHE": "KV namespace for upstream/API cache (automatically provisioned by Wrangler)",
-      "ASSETS": "Static Assets binding"
+      "ASSETS": "Static SPA assets served by the Worker.",
+      "DB": "Optional during bootstrap; set CF_D1_DATABASE_ID for native D1 calendar/content reads.",
+      "CACHE": "Optional during bootstrap; set CF_KV_NAMESPACE_ID for persistent upstream/API cache."
     }
   }
 }

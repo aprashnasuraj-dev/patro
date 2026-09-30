@@ -1,8 +1,8 @@
 import { calculateAstronomicalTithi } from "./tithi";
 
 type Env = {
-  DB: any;
-  CACHE: any;
+  DB?: any;
+  CACHE?: any;
   ASSETS: { fetch(request: Request): Promise<Response> };
   SUPABASE_COMPAT_ORIGIN?: string;
   SUPABASE_PROTECTED_ORIGIN?: string;
@@ -73,6 +73,7 @@ function parseRecord(row: any) {
 }
 
 async function contentRecord(env: Env, table: string, key: string) {
+  if (!env.DB) return null;
   try {
     const row = await env.DB.prepare(
       "select payload from content_records where table_name = ?1 and record_key = ?2 limit 1"
@@ -84,6 +85,7 @@ async function contentRecord(env: Env, table: string, key: string) {
 }
 
 async function contentRange(env: Env, table: string, start: string, end: string, limit = 100) {
+  if (!env.DB) return [];
   try {
     const out = await env.DB.prepare(
       "select payload from content_records where table_name = ?1 and record_key >= ?2 and record_key <= ?3 order by record_key asc limit ?4"
@@ -95,6 +97,7 @@ async function contentRange(env: Env, table: string, start: string, end: string,
 }
 
 async function contentByDay(env: Env, table: string, month: number, day: number, limit = 100) {
+  if (!env.DB) return [];
   try {
     const out = await env.DB.prepare(
       "select payload from content_records where table_name = ?1 and month = ?2 and day = ?3 order by sort_order desc, record_key asc limit ?4"
@@ -175,10 +178,12 @@ function youtubeId(url: string): string | null {
 
 async function apod(env: Env, date: string) {
   const cacheKey = "apod:" + date;
-  try {
-    const cached = await env.CACHE.get(cacheKey, "json");
-    if (cached) return cached;
-  } catch {}
+  if (env.CACHE) {
+    try {
+      const cached = await env.CACHE.get(cacheKey, "json");
+      if (cached) return cached;
+    } catch {}
+  }
 
   const apiKey = env.NASA_API_KEY || "DEMO_KEY";
   let last = "NASA_APOD_UNAVAILABLE";
@@ -209,7 +214,9 @@ async function apod(env: Env, date: string) {
         copyright: String(data.copyright || "Public Domain / NASA"),
         is_fallback: false
       };
-      try { await env.CACHE.put(cacheKey, JSON.stringify(normalized), { expirationTtl: 30 * 86400 }); } catch {}
+      if (env.CACHE) {
+        try { await env.CACHE.put(cacheKey, JSON.stringify(normalized), { expirationTtl: 30 * 86400 }); } catch {}
+      }
       return normalized;
     } catch (error) {
       last = String((error as Error)?.message || error);
@@ -259,6 +266,7 @@ async function nativeTithi(request: Request, env: Env) {
   if (!Number.isFinite(lat) || lat < -90 || lat > 90) return json({error:"invalid_lat"},400);
   if (!Number.isFinite(lng) || lng < -180 || lng > 180) return json({error:"invalid_lng"},400);
   const record:any = await contentRecord(env,"astronomy_calendar_map",date);
+  if (!record) return null;
   const calendar = record?.payload || record || null;
   try {
     return json(calculateAstronomicalTithi({
@@ -272,6 +280,7 @@ async function nativeTithi(request: Request, env: Env) {
 }
 
 async function nativeToolCatalog(env: Env) {
+  if (!env.DB) return null;
   try {
     const out = await env.DB.prepare(
       "select payload from content_records where table_name = 'tool_catalog' order by sort_order asc, record_key asc"
@@ -300,6 +309,7 @@ async function nativeHistory(request: Request, env: Env) {
 }
 
 async function nativeTimeMachine(request: Request, env: Env) {
+  if (!env.DB) return null;
   const url = new URL(request.url);
   const year = Number(url.searchParams.get("year") || "0");
   const limit = Math.min(200, Math.max(1, Number(url.searchParams.get("limit") || "80")));
@@ -319,14 +329,21 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   const path = url.pathname;
 
   if (path === "/api/v1/health") {
-    return json({status:"online",runtime:"Cloudflare Workers",framework:"Native Web APIs",database:"D1",cache:"KV"},200,"no-store");
+    return json({
+      status:"online",
+      runtime:"Cloudflare Workers",
+      framework:"Native Web APIs",
+      mode: env.DB ? "native-d1-with-supabase-compat" : "supabase-compat-bootstrap",
+      database: env.DB ? "D1" : "Supabase compatibility proxy",
+      cache: env.CACHE ? "KV + Cache API" : "Cache API"
+    },200,"no-store");
   }
 
   if (path === "/api/v1/sync" && request.method === "GET") {
     return edgeCached(request,ctx,3600,async() => (await nativeSync(request,env)) || compat(request,env));
   }
   if (path === "/api/v1/astronomy/tithi" && request.method === "GET") {
-    return edgeCached(request,ctx,1800,() => nativeTithi(request,env));
+    return edgeCached(request,ctx,1800,async() => (await nativeTithi(request,env)) || compat(request,env));
   }
   if (path === "/api/v1/nasa/apod" && request.method === "GET") {
     const date = url.searchParams.get("date") || todayNepal();
