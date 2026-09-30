@@ -1,4 +1,4 @@
-import { access, copyFile, mkdir, readFile } from "node:fs/promises";
+import { access, copyFile, cp, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
 const root = process.cwd();
@@ -38,6 +38,13 @@ for (const relative of requiredSpaShells) {
     await copyFile(astroShell, target);
     repaired.push(relative);
   }
+}
+
+const typingSource = resolve(root, "dist/astro/nepali-typing");
+const typingTarget = resolve(root, "dist/nepali-typing");
+if (!(await exists(typingTarget)) && (await exists(typingSource))) {
+  await cp(typingSource, typingTarget, { recursive: true });
+  repaired.push("nepali-typing/*");
 }
 
 const missingStatic = [];
