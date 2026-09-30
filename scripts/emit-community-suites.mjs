@@ -16,11 +16,24 @@ const routeMap={
  "mithila.html":"/samudaya/mithila","kirat.html":"/samudaya/kirat",
  "hijri.html":"/samudaya/hijri","samudaya-chakra.html":"/samudaya/chakra"
 };
+const REQUIRED_COMMUNITY_ROUTES=[
+ "/nepal-sambat/mandala",
+ "/samudaya/lhosar",
+ "/samudaya/tharu",
+ "/samudaya/mithila",
+ "/samudaya/kirat",
+ "/samudaya/hijri",
+ "/samudaya/chakra"
+];
 const labels={
  "nepal-sambat-mandala.html":"नेपाल संवत्","lhosar.html":"ल्होसार","tharu.html":"थारु",
  "mithila.html":"मिथिला","kirat.html":"किरात","hijri.html":"हिजरी","samudaya-chakra.html":"चक्र"
 };
 const available=Object.keys(routeMap).filter(f=>fs.existsSync(path.join(src,f))||fs.existsSync(path.join(src,f.replace(".html",".src.html"))));
+const availableRoutes=available.map(f=>routeMap[f]);
+const missing=REQUIRED_COMMUNITY_ROUTES.filter(route=>!availableRoutes.includes(route));
+if(missing.length||available.length!==7) throw new Error("Community suite parity failure: expected 7/7 routes; missing="+missing.join(","));
+console.log("[community] parity 7/7:",REQUIRED_COMMUNITY_ROUTES.join(", "));
 function Nav(){
  return React.createElement("nav",{className:"samudaya-suite-menu","aria-label":"Community Suite"},
   React.createElement("a",{href:"/samudaya",className:"suite-home"},"समुदाय"),
@@ -54,5 +67,5 @@ for(const file of Object.keys(routeMap)){
 }
 fs.rmSync(bundleFile,{force:true});
 const cards=available.map(f=>React.createElement("a",{href:routeMap[f],key:f,className:"card"},React.createElement("strong",null,labels[f]),React.createElement("small",null,routeMap[f])));
-const hub="<!doctype html><html lang=\"ne\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>समुदाय · Community Suite | Mero Patro</title><style>body{margin:0;background:#07101f;color:#eef4ff;font:16px/1.55 system-ui,-apple-system,\"Noto Sans Devanagari\",sans-serif}main{max-width:1000px;margin:auto;padding:30px 16px 64px}h1{font-size:clamp(36px,7vw,64px);margin:.25em 0}p{color:#aebcd0;max-width:720px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{display:grid;gap:6px;padding:20px;border:1px solid #2a3a52;border-radius:18px;background:#0d182a;color:inherit;text-decoration:none}.card small{color:#9fb0c8}.back{color:#9ed7ff}html,body{max-width:100%;overflow-x:hidden}</style></head><body><main>"+renderToStaticMarkup(React.createElement(React.Fragment,null,React.createElement("a",{href:"/",className:"back"},"← Mero Patro"),React.createElement("h1",null,"समुदाय · Community Suite"),React.createElement("p",null,"नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी अनुभव एउटै प्रवेशद्वारमा। मितिहरू इञ्जिनबाट आउँछन्; आधिकारिक घोषणाले सम्भावित मिति override गर्छ।"),React.createElement("div",{className:"grid"},...cards)))+"</main></body></html>";
+const hub="<!doctype html><html lang=\"ne\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>समुदाय · Community Suite | Mero Patro</title><style>body{margin:0;background:#07101f;color:#eef4ff;font:16px/1.55 system-ui,-apple-system,\"Noto Sans Devanagari\",sans-serif}main{max-width:1000px;margin:auto;padding:30px 16px 64px}h1{font-size:clamp(36px,7vw,64px);margin:.25em 0}p{color:#aebcd0;max-width:720px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{display:grid;gap:6px;padding:20px;border:1px solid #2a3a52;border-radius:18px;background:#0d182a;color:inherit;text-decoration:none}.card small{color:#9fb0c8}.back{color:#9ed7ff}html,body{max-width:100%;overflow-x:hidden}</style></head><body><main>"+renderToStaticMarkup(React.createElement(React.Fragment,null,React.createElement("a",{href:"/",className:"back"},"← Mero Patro"),React.createElement("h1",null,"समुदाय · Community Suite"),React.createElement("p",null,"सात समुदाय अनुभव: नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात, हिजरी र समुदाय चक्र। मितिहरू इञ्जिनबाट आउँछन्; आधिकारिक घोषणाले सम्भावित मिति override गर्छ।"),React.createElement("div",{className:"grid"},...cards)))+"</main></body></html>";
 fs.mkdirSync(path.join(out,"samudaya"),{recursive:true});fs.writeFileSync(path.join(out,"samudaya","index.html"),hub);
