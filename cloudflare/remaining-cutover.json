@@ -41,7 +41,8 @@
       "/api/v1/nepal-sambat",
       "/api/v1/nepal-sambat/festivals",
       "/api/v1/nepal-sambat/convert",
-      "/api/v1/nepal-sambat/ics"
+      "/api/v1/nepal-sambat/ics",
+      "/api/v1/news/latest"
     ],
     "worker_modules": [
       "worker/tithi.ts",
@@ -198,5 +199,23 @@
       "/api/v1/admin/community-overrides",
       "/api/v1/admin/ns-festival-dates"
     ]
+  },
+  "home_depth": {
+    "status": "native/lightweight home widgets wired",
+    "sections": [
+      "media",
+      "on-this-day",
+      "news",
+      "markets",
+      "world-time",
+      "tools"
+    ],
+    "lazy_below_fold": true,
+    "media_autoplay": false,
+    "news_endpoint": "/api/v1/news/latest",
+    "compatibility_aliases": {
+      "/news": "/samachar",
+      "/history": "/on-this-day"
+    }
   }
 }
