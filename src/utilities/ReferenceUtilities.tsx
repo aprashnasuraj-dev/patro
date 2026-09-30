@@ -119,7 +119,29 @@ function WorldClock(){
 type FxRow={asset:string;as_of:string;buy:number;sell:number;per:number;source_label:string;source_url:string};
 function ForexTool(){
   const [rows,setRows]=useState<FxRow[]>([]),[error,setError]=useState(""),[currency,setCurrency]=useState("USD"),[amount,setAmount]=useState("100"),[direction,setDirection]=useState<"foreign-to-npr"|"npr-to-foreign">("foreign-to-npr");
-  useEffect(()=>{const c=new AbortController();fetch("/api/v1/markets/latest?kind=forex",{signal:c.signal,headers:{Accept:"application/json"}}).then(async r=>{const body=await r.json();if(!r.ok||!Array.isArray(body?.items))throw new Error(body?.error||"Forex data unavailable");setRows(body.items);}).catch(e=>{if(e?.name!=="AbortError")setError(e instanceof Error?e.message:"Forex data unavailable");});return()=>c.abort();},[]);
+  useEffect(()=>{
+    const c=new AbortController();
+    const load=async()=>{
+      try{
+        const live=await fetch("/api/v1/markets/latest?kind=forex",{signal:c.signal,headers:{Accept:"application/json"}});
+        const body=await live.json();
+        if(!live.ok||!Array.isArray(body?.items))throw new Error(body?.error||"Forex API unavailable");
+        setRows(body.items);setError("");return;
+      }catch(error){
+        if((error as any)?.name==="AbortError")return;
+      }
+      try{
+        const fallback=await fetch("/data/market/forex-latest.json",{signal:c.signal,headers:{Accept:"application/json"}});
+        const body=await fallback.json();
+        if(!fallback.ok||!Array.isArray(body?.items))throw new Error("Forex fallback unavailable");
+        setRows(body.items);setError("Live D1 endpoint unavailable — showing the latest verified migration snapshot.");
+      }catch(error){
+        if((error as any)?.name!=="AbortError")setError("Forex data unavailable. No unverified rates are shown.");
+      }
+    };
+    void load();
+    return()=>c.abort();
+  },[]);
   const row=rows.find(x=>x.asset===currency)||rows[0];
   const result=useMemo(()=>{if(!row)return null;const a=Math.max(0,Number(amount)||0),per=Number(row.per)||1;return direction==="foreign-to-npr"?a*Number(row.buy)/per:a/(Number(row.sell)/per);},[row,amount,direction]);
   const preferred=["USD","EUR","GBP","AUD","CAD","JPY","CNY","INR","AED","QAR","SAR","KRW"];
