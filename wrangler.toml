@@ -24,5 +24,8 @@ CALENDAR_COVERAGE_START = "1826-04-11"
 CALENDAR_COVERAGE_END = "2037-04-13"
 CALENDAR_SOURCE_VERSION = "patro-archive-v79"
 
+[triggers]
+crons = ["5 * * * *", "17 0,6,12,18 * * *", "43 2 * * *"]
+
 [observability]
 enabled = true
