@@ -743,6 +743,8 @@ function protectedToolPath(path: string) {
 
 function staticRewriteTarget(path: string) {
   const exact: Record<string,string> = {
+    "/news": "/astro/index.html",
+    "/history": "/astro/index.html",
     "/astro": "/astro/index.html",
     "/jyotish/janma-patro": "/astro/index.html",
     "/jyotish/matchmaking": "/astro/index.html",
