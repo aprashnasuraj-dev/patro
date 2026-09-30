@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/astro/assets/*",
+    "/astro/data/*",
+    "/nepali-tools/*",
+    "/nepali-typing/assets/*"
+  ]
+}

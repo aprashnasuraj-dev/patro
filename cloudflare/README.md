@@ -5,7 +5,7 @@ This directory contains the reproducible Cloudflare target for Patro. The curren
 ## Target
 
 - Cloudflare Workers for API/proxy logic.
-- Workers Static Assets or the optional Pages split mode for the React/Vite frontend.
+- Cloudflare Pages for the React/Vite frontend, with Workers Static Assets retained as a single-Worker fallback mode.
 - D1 for public/reference content.
 - KV for upstream/API cache.
 - Supabase compatibility proxy only while remaining routes are being ported.
@@ -23,7 +23,13 @@ npm run cloudflare:validate
 
 This checks the frontend build, Worker dry-run, all 78 astronomy snapshot parts, 77,070 contiguous rows from 1826-04-11 through 2037-04-13, and D1 SQL statement-size limits.
 
-## First D1/KV deployment
+
+## Pages route parity
+
+The Pages project uses `functions/[[path]].js` plus the `PATRO_API` service binding. Static Astro/tools/community routes continue to Pages assets, while root/calendar/search/planner/API/protected-tool routes are forwarded internally to the `mero-patro` Worker. `public/_routes.json` is copied into the final `dist/` output so this behavior is deterministic in Pages deployments.
+
+The route classifier is covered by `tests/cloudflare-pages-routing.test.mjs` and runs in the Cloudflare migration CI workflow.
+\n## First D1/KV deployment
 
 After creating Cloudflare D1 and KV, provide their IDs as environment variables:
 
