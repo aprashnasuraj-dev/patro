@@ -4,16 +4,18 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs",
-    "preview": "vite preview --host 0.0.0.0",
+    "dev": "npm run build && wrangler dev",
+    "build": "tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
+    "preview": "npm run build && wrangler dev --local",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
     "test:typing": "node --test tests/nepali-tools.test.mjs",
     "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
-    "doctor": "node scripts/doctor.mjs"
+    "doctor": "node scripts/doctor.mjs",
+    "dev:vite": "vite",
+    "deploy": "wrangler deploy && wrangler d1 migrations apply DB --remote"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -34,6 +36,16 @@
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "vitest": "3.2.7",
-    "esbuild": "0.25.10"
+    "esbuild": "0.25.10",
+    "wrangler": "4.45.0"
+  },
+  "cloudflare": {
+    "build_command": "npm run build",
+    "deploy_command": "npm run deploy",
+    "bindings": {
+      "DB": "D1 content database (automatically provisioned by Wrangler)",
+      "CACHE": "KV namespace for upstream/API cache (automatically provisioned by Wrangler)",
+      "ASSETS": "Static Assets binding"
+    }
   }
 }
