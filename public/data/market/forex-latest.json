@@ -1,0 +1,228 @@
+{
+  "ok": true,
+  "kind": "forex",
+  "as_of": "2026-09-30",
+  "source": "migration snapshot fallback",
+  "items": [
+    {
+      "asset": "AED",
+      "as_of": "2026-09-30",
+      "buy": 41.73,
+      "sell": 41.9,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "AUD",
+      "as_of": "2026-09-30",
+      "buy": 107.04,
+      "sell": 107.45,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "BHD",
+      "as_of": "2026-09-30",
+      "buy": 406.58,
+      "sell": 408.17,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "CAD",
+      "as_of": "2026-09-30",
+      "buy": 107.94,
+      "sell": 108.37,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "CHF",
+      "as_of": "2026-09-30",
+      "buy": 183.65,
+      "sell": 184.36,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "CNY",
+      "as_of": "2026-09-30",
+      "buy": 22.86,
+      "sell": 22.95,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "DKK",
+      "as_of": "2026-09-30",
+      "buy": 23.24,
+      "sell": 23.34,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "EUR",
+      "as_of": "2026-09-30",
+      "buy": 173.76,
+      "sell": 174.44,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "GBP",
+      "as_of": "2026-09-30",
+      "buy": 202.71,
+      "sell": 203.5,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "HKD",
+      "as_of": "2026-09-30",
+      "buy": 19.54,
+      "sell": 19.61,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "INR",
+      "as_of": "2026-09-30",
+      "buy": 160,
+      "sell": 160.15,
+      "per": 100,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "JPY",
+      "as_of": "2026-09-30",
+      "buy": 9.72,
+      "sell": 9.76,
+      "per": 10,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "KRW",
+      "as_of": "2026-09-30",
+      "buy": 11.29,
+      "sell": 11.34,
+      "per": 100,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "KWD",
+      "as_of": "2026-09-30",
+      "buy": 498.15,
+      "sell": 500.1,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "MYR",
+      "as_of": "2026-09-30",
+      "buy": 37.56,
+      "sell": 37.71,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "OMR",
+      "as_of": "2026-09-30",
+      "buy": 398.12,
+      "sell": 399.68,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "QAR",
+      "as_of": "2026-09-30",
+      "buy": 42.05,
+      "sell": 42.22,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "SAR",
+      "as_of": "2026-09-30",
+      "buy": 40.82,
+      "sell": 40.98,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "SEK",
+      "as_of": "2026-09-30",
+      "buy": 15.32,
+      "sell": 15.38,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "SGD",
+      "as_of": "2026-09-30",
+      "buy": 119.82,
+      "sell": 120.29,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "THB",
+      "as_of": "2026-09-30",
+      "buy": 4.56,
+      "sell": 4.58,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    },
+    {
+      "asset": "USD",
+      "as_of": "2026-09-30",
+      "buy": 153.28,
+      "sell": 153.88,
+      "per": 1,
+      "source_label": "Nepal Rastra Bank",
+      "source_url": "https://www.nrb.org.np/forex/",
+      "source_updated_at": "2026-09-29 15:53:51+00"
+    }
+  ]
+}
