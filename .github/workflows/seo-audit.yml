@@ -26,3 +26,30 @@ jobs:
         run: npm run build
       - name: Lighthouse SEO, accessibility and performance gate
         run: npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json
+      - name: Print failed Lighthouse audits
+        if: failure()
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          const dir = ".lighthouseci";
+          if (!fs.existsSync(dir)) process.exit(0);
+          for (const file of fs.readdirSync(dir).filter((name) => name.endsWith(".json"))) {
+            let lhr;
+            try { lhr = JSON.parse(fs.readFileSync(dir + "/" + file, "utf8")); } catch { continue; }
+            if (!lhr?.categories?.seo) continue;
+            const url = lhr.finalDisplayedUrl || lhr.finalUrl || lhr.requestedUrl || file;
+            console.log("\nLighthouse diagnostics:", url);
+            for (const ref of lhr.categories.seo.auditRefs || []) {
+              const audit = lhr.audits?.[ref.id];
+              if (!audit || audit.score === null || audit.score >= 1) continue;
+              console.log(JSON.stringify({
+                id: ref.id,
+                score: audit.score,
+                title: audit.title,
+                description: audit.description,
+                displayValue: audit.displayValue || null
+              }));
+            }
+          }
+          NODE
