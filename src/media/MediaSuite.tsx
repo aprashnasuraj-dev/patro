@@ -114,17 +114,13 @@ function storedFavorites() {
   }
 }
 
-function compat(path: string) {
-  return "/api/v1/compat-api/" + path.replace(/^\/+/, "");
-}
-
 function tvToMedia(row: TvCatalogResponse["items"][number]): MediaItem {
   return {
     id: row.id,
     kind: "tv",
     name: row.name,
     nameNe: row.name,
-    streamUrl: compat("tv/relay?id=" + encodeURIComponent(row.id)),
+    streamUrl: "/api/tv/relay?id=" + encodeURIComponent(row.id),
     sourceStreamUrl: row.stream,
     province: row.country_name || row.country || "Global",
     district: (row.language_names || row.languages || []).join(" · ") || "Live",
@@ -218,7 +214,7 @@ function TvPlayer({ item }: { item: MediaItem }) {
   useEffect(() => {
     const controller = new AbortController();
     setProbe(null);
-    fetch(compat("tv/health?ids=" + encodeURIComponent(item.id)), {
+    fetch("/api/tv/health?ids=" + encodeURIComponent(item.id), {
       signal: controller.signal,
       cache: "no-store"
     })
@@ -504,7 +500,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
         if (controller.signal.aborted) return;
         setLoadError(String(error?.message || error));
         try {
-          const response = await fetch(compat("fm/v2/stations"), { signal: controller.signal, cache: "no-store" });
+          const response = await fetch("/api/fm/v2/stations", { signal: controller.signal, cache: "no-store" });
           if (!response.ok) throw new Error("Patro FM fallback returned " + response.status);
           const j = await response.json() as FmDirectoryResponse;
           const mapped = j.items.map(fmToMedia);
@@ -549,7 +545,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
 
     setTvLoading(true);
     setLoadError(null);
-    fetch(compat("tv/catalog?" + params.toString()), { signal: controller.signal, cache: "no-store" })
+    fetch("/api/tv/catalog?" + params.toString(), { signal: controller.signal, cache: "no-store" })
       .then(async (r) => {
         if (!r.ok) throw new Error("TV directory returned " + r.status);
         return r.json() as Promise<TvCatalogResponse>;
@@ -589,7 +585,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       for (let offset = 0; offset < ids.length && !disposed; offset += 20) {
         const batch = ids.slice(offset, offset + 20);
         try {
-          const response = await fetch(compat("tv/health?ids=" + encodeURIComponent(batch.join(","))), {
+          const response = await fetch("/api/tv/health?ids=" + encodeURIComponent(batch.join(",")), {
             signal: controller.signal,
             cache: "no-store",
             headers: { "x-patro-probe": "tv-health-batch" }
