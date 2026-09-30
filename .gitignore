@@ -18,3 +18,4 @@ supabase/.temp/
 wrangler.generated.jsonc
 .cloudflare/d1-import/
 .cloudflare/dry-run/
+.wrangler-dryrun/
