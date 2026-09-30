@@ -10,6 +10,7 @@ import { CosmicExperience } from "./components/CosmicExperience";
 import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
 import { CommunityHomeLine } from "./community/CommunityHomeLine";
 import { DailyDirectAnswer } from "./components/seo/DailyDirectAnswer";
+import { HomeDeepSections } from "./components/HomeDeepSections";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
@@ -258,6 +259,8 @@ export default function App() {
           loading={cosmic.loading}
           error={cosmic.error}
         />
+
+        <HomeDeepSections selectedDate={selectedDate} />
 
         <section className="feature-hub glass-panel" aria-label="MeroPatro features">
           <div className="section-heading">
