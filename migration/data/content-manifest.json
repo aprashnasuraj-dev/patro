@@ -1,0 +1,63 @@
+{
+  "snapshot_at": "2026-09-30",
+  "source": {
+    "provider": "Supabase",
+    "project_ref": "pxlsmxbpgdfzjzuqtict"
+  },
+  "policy": {
+    "include": "public/reference/cache/catalog content required to reproduce Patro features",
+    "exclude": [
+      "auth schema",
+      "user/private state",
+      "rate-limit buckets",
+      "feedback/contact messages",
+      "audit logs",
+      "push subscriptions",
+      "family/private calendar data",
+      "personal astrology profiles/charts"
+    ]
+  },
+  "total_rows": 102477,
+  "tables": {
+    "app_flags": 17,
+    "astronomy_calendar_map": 77070,
+    "calendar_coverage_tiers": 4,
+    "calendar_reference_sources": 14,
+    "community_dates": 1062,
+    "community_festivals": 34,
+    "fm_stations": 20,
+    "holiday_coverage": 10,
+    "holidays": 84,
+    "market_snapshots": 69,
+    "miti_rashifal_publications": 22,
+    "nasa_apod_cache": 9,
+    "nasa_cosmic_cache": 126,
+    "nepal_sambat_facts": 14,
+    "nepal_sambat_months": 14,
+    "nepal_sambat_observances": 49,
+    "nepal_sambat_tithi_names": 15,
+    "news_category_keywords": 27,
+    "news_clusters": 229,
+    "news_items": 274,
+    "news_source_health": 25,
+    "np_districts": 77,
+    "ns_days": 14972,
+    "ns_festival_dates": 1886,
+    "ns_festivals": 47,
+    "ns_months": 12,
+    "official_panchang_facts": 101,
+    "on_this_day_events": 5454,
+    "time_machine_moments": 706,
+    "tool_catalog": 29,
+    "tool_release_plan": 4,
+    "weekly_off_rules": 1
+  },
+  "invariants": {
+    "astronomy_calendar_map": {
+      "rows": 77070,
+      "first_ad_date": "1826-04-11",
+      "last_ad_date": "2037-04-13",
+      "source_version": "patro-archive-v79"
+    }
+  }
+}
