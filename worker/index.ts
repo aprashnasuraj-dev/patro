@@ -5,23 +5,22 @@ import { fmResponse } from "./fm";
 import { handleJyotishChat } from "./jyotish";
 import { dailyWeatherResponse } from "./weather";
 import { communityResponse } from "./community";
+import { adminResponse } from "./admin";
+import { publicApiResponse } from "./public-api";
+import { pushResponse, dispatchDuePushJobs } from "./push";
+import { privateResponse } from "./private";
+import { authResponse } from "./auth";
 
 type Env = {
   DB?: any;
   CACHE?: any;
   ASSETS?: { fetch(request: Request): Promise<Response> };
-  SUPABASE_COMPAT_ORIGIN?: string;
-  SUPABASE_PROTECTED_ORIGIN?: string;
   NASA_API_KEY?: string;
   RADIO_RELAY_SECRET?: string;
   TV_RELAY_SECRET?: string;
   // Exact secret names preserved from Supabase for Cloudflare cutover.
   Groq_API?: string;
   nvidia_api?: string;
-  SUPABASE_ANON_KEY?: string;
-  SUPABASE_DB_URL?: string;
-  SUPABASE_SERVICE_ROLE_KEY?: string;
-  SUPABASE_URL?: string;
   // Optional provider aliases retained for compatibility.
   GROQ_API_KEY?: string;
   GROQ_KEY?: string;
@@ -33,6 +32,14 @@ type Env = {
   CALENDAR_COVERAGE_START?: string;
   CALENDAR_COVERAGE_END?: string;
   CALENDAR_SOURCE_VERSION?: string;
+  GOOGLE_CLIENT_ID?: string;
+  VAPID_PUBLIC_KEY?: string;
+  VAPID_PRIVATE_KEY?: string;
+  VAPID_SUBJECT?: string;
+  ADMIN_EMAILS?: string;
+  ADMIN_GOOGLE_SUBJECTS?: string;
+  PUBLIC_SITE_URL?: string;
+  CRON_SECRET?: string;
 };
 
 const DEFAULT_ROUTER = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router";
@@ -41,7 +48,7 @@ const APOD_PRIMARY = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
 const APOD_LEGACY = "https://api.nasa.gov/planetary/apod";
 const APOD_FALLBACK = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moon_2026_print.jpg";
 
-const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
+const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
 const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'";
 
 
@@ -624,6 +631,16 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  const authNative = await authResponse(request,env);
+  if (authNative) return authNative;
+  const adminNative = await adminResponse(request,env);
+  if (adminNative) return adminNative;
+  const privateNative = await privateResponse(request,env);
+  if (privateNative) return privateNative;
+  const pushNative = await pushResponse(request,env);
+  if (pushNative) return pushNative;
+  const publicNative = await publicApiResponse(request,env);
+  if (publicNative) return publicNative;
   const communityNative = await communityResponse(request,env);
   if (communityNative) return communityNative;
 
@@ -632,17 +649,17 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
       status:"online",
       runtime:"Cloudflare Workers",
       framework:"Native Web APIs",
-      mode: env.DB ? "native-d1-with-supabase-compat" : "supabase-compat-bootstrap",
-      database: env.DB ? "D1" : "Supabase compatibility proxy",
+      mode: env.DB ? "cloudflare-native" : "cloudflare-bootstrap",
+      database: env.DB ? "D1" : "D1 unavailable",
       cache: env.CACHE ? "KV + Cache API" : "Cache API"
     },200,"no-store");
   }
 
   if (path === "/api/v1/sync" && request.method === "GET") {
-    return edgeCached(request,ctx,3600,async() => (await nativeSync(request,env)) || compat(request,env));
+    const native = await nativeSync(request,env); return native ? edgeCached(request,ctx,3600,async()=>native) : json({error:"calendar_data_unavailable"},503);
   }
   if (path === "/api/v1/astronomy/tithi" && request.method === "GET") {
-    return edgeCached(request,ctx,1800,async() => (await nativeTithi(request,env)) || compat(request,env));
+    const native = await nativeTithi(request,env); return native ? edgeCached(request,ctx,1800,async()=>native) : json({error:"tithi_unavailable"},503);
   }
   if (path === "/api/v1/jyotish-chat") {
     return handleJyotishChat(request,env);
@@ -664,18 +681,18 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
     });
   }
   if (path === "/api/v1/radio/catalog" && request.method === "GET") {
-    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return compat(request,env,"router","/radio/catalog");
+    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return json({error:"radio_relay_secret_unavailable"},503);
     return edgeCached(request,ctx,300,() => radioCatalogResponse(request,env));
   }
   if (path === "/api/v1/radio/stream" && (request.method === "GET" || request.method === "HEAD")) {
-    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return compat(request,env,"router","/radio/stream");
+    if (!env.RADIO_RELAY_SECRET && !env.TV_RELAY_SECRET) return json({error:"radio_relay_secret_unavailable"},503);
     return radioStreamResponse(request,env);
   }
   if (path === "/api/v1/rashifal/universal" && request.method === "GET") {
-    return edgeCached(request,ctx,600,async() => (await nativeRashifalUniversal(request,env)) || compat(request,env,"router","/rashifal/universal"));
+    const native = await nativeRashifalUniversal(request,env); return native ? edgeCached(request,ctx,600,async()=>native) : json({error:"rashifal_unavailable"},503);
   }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
-    return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(request,env)) || compat(request,env));
+    const native = await nativeToolCatalog(request,env); return native ? edgeCached(request,ctx,600,async()=>native) : json({error:"tool_catalog_unavailable"},503);
   }
   if (path === "/api/v1/markets/latest" && request.method === "GET") {
     const kind = url.searchParams.get("kind") || "forex";
@@ -686,13 +703,13 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
     });
   }
   if (path === "/api/v1/on-this-day" && request.method === "GET") {
-    return edgeCached(request,ctx,86400,async() => (await nativeHistory(request,env)) || compat(request,env,"router","/on-this-day"));
+    const native = await nativeHistory(request,env); return native ? edgeCached(request,ctx,86400,async()=>native) : json({error:"history_unavailable"},503);
   }
   if (path === "/api/v1/time-machine" && request.method === "GET") {
-    return edgeCached(request,ctx,86400,async() => (await nativeTimeMachine(request,env)) || compat(request,env,"router","/time-machine"));
+    const native = await nativeTimeMachine(request,env); return native ? edgeCached(request,ctx,86400,async()=>native) : json({error:"time_machine_unavailable"},503);
   }
 
-  return compat(request, env);
+  return json({error:"api_route_not_found",path},404,"no-store");
 }
 
 
@@ -707,20 +724,21 @@ async function serveAsset(request: Request, env: Env, pathname?: string) {
   return env.ASSETS.fetch(pathname ? assetRequest(request, pathname) : request);
 }
 
-function protectedToolPath(path: string) {
-  const map: Record<string,string> = {
-    "/tools/tithi": "/tithi",
-    "/tools/diaspora": "/diaspora",
-    "/tools/card": "/card",
-    "/tools/family": "/family",
-    "/tools/api": "/developers",
-    "/tools/my-data": "/my-data"
-  };
-  return map[path] || null;
-}
+function protectedToolPath(_path: string) { return null; }
 
 function staticRewriteTarget(path: string) {
   const exact: Record<string,string> = {
+    "/aaja": "/astro/index.html",
+    "/tithi": "/astro/index.html",
+    "/diaspora": "/astro/index.html",
+    "/card": "/astro/index.html",
+    "/family": "/astro/index.html",
+    "/family/join": "/astro/index.html",
+    "/my-data": "/astro/index.html",
+    "/settings/holidays": "/astro/index.html",
+    "/settings/notifications": "/astro/index.html",
+    "/offline": "/astro/index.html",
+    "/developers": "/astro/index.html",
     "/astro": "/astro/index.html",
     "/jyotish/janma-patro": "/astro/index.html",
     "/jyotish/matchmaking": "/astro/index.html",
@@ -790,33 +808,44 @@ export default {
     const path = url.pathname;
     let response: Response;
 
-    if (path.startsWith("/api/v1/")) {
-      response = await handleApi(request,env,ctx);
-    } else if (path.startsWith("/api/fm/") || path.startsWith("/fm-v2-stream/") || path.startsWith("/fm-stream/")) {
-      response = (await fmResponse(request,env)) || await compat(request,env,"protected",path);
-    } else if (path === "/api/jyotish-chat") {
-      response = await handleJyotishChat(request,env);
-    } else if (path === "/api/rashifal/universal" && request.method === "GET") {
-      response = (await nativeRashifalUniversal(request,env)) || await compat(request,env,"protected","/api/rashifal/universal");
-    } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
-      response = await compat(request,env,"protected","/api/rashifal/personalized");
-    } else {
-      const protectedTool = protectedToolPath(path);
-      const assetTarget = staticRewriteTarget(path);
-
-      if (protectedTool) {
-        response = await compat(request,env,"protected",protectedTool);
-      } else if (assetTarget) {
-        response = await serveAsset(request,env,assetTarget);
-      } else if (!excludedFromProtectedCatchAll(path)) {
-        // Mirrors the final Vercel catch-all rewrite while the protected runtime is
-        // progressively ported to native Cloudflare modules.
-        response = await compat(request,env,"protected",path);
-      } else {
-        response = await serveAsset(request,env);
+    if (path.startsWith("/api/")) {
+      const authNative = await authResponse(request,env);
+      if (authNative) response = authNative;
+      else {
+        const adminNative = await adminResponse(request,env);
+        if (adminNative) response = adminNative;
+        else {
+          const privateNative = await privateResponse(request,env);
+          if (privateNative) response = privateNative;
+          else {
+            const pushNative = await pushResponse(request,env);
+            if (pushNative) response = pushNative;
+            else if (path.startsWith("/api/v1/")) response = await handleApi(request,env,ctx);
+            else if (path.startsWith("/api/fm/")) response = (await fmResponse(request,env)) || json({error:"fm_route_not_found"},404);
+            else if (path === "/api/jyotish-chat") response = await handleJyotishChat(request,env);
+            else if (path === "/api/rashifal/universal" && request.method === "GET") {
+              const native = await nativeRashifalUniversal(request,env);
+              response = native || json({error:"rashifal_unavailable"},503);
+            } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
+              const u=new URL(request.url);u.pathname="/api/v1/rashifal/personalized";
+              response = (await publicApiResponse(new Request(u.toString(),request),env)) || json({error:"rashifal_route_unavailable"},503);
+            } else response = json({error:"api_route_not_found",path},404);
+          }
+        }
       }
+    } else if (path.startsWith("/fm-v2-stream/") || path.startsWith("/fm-stream/")) {
+      response = (await fmResponse(request,env)) || json({error:"fm_route_not_found"},404);
+    } else {
+      const assetTarget = staticRewriteTarget(path);
+      response = await serveAsset(request,env,assetTarget || undefined);
     }
 
     return secureResponse(request, response);
+  },
+  async scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    ctx.waitUntil(dispatchDuePushJobs(env,100).then(()=>undefined).catch(()=>undefined));
+    if (env.CACHE) {
+      ctx.waitUntil(env.CACHE.put("cron:last_run",new Date().toISOString(),{expirationTtl:86400}).catch(()=>undefined));
+    }
   }
 };
