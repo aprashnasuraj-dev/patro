@@ -141,13 +141,13 @@ export function AppChrome({ children }: { children:ReactNode }) {
           <IconButton className="mp-mobile-menu" label={t(language,"more")} onClick={()=>setMobileOpen(true)}><Menu size={22}/></IconButton>
         </div>
       </div>
-      {moreOpen && <div className="mp-mega" role="menu">
+      {moreOpen && <nav className="mp-mega" aria-label={language==="ne"?"थप नेभिगेसन":"More navigation"}>
         <div className="mp-mega__grid">
           <section><h3>{language==="ne"?"मिडिया":"Media"}</h3>{MORE_ITEMS.filter(x=>["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
           <section><h3>{language==="ne"?"उपकरण र थप":"Tools & more"}</h3>{MORE_ITEMS.filter(x=>!["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
         </div>
         <a className="mp-mega__all" href="/explore">{t(language,"allFeatures")} <ChevronRight size={16}/></a>
-      </div>}
+      </nav>}
     </header>
     <div className="mp-reference-strip" aria-label={language==="ne"?"आज र मुख्य सेवा":"Today and key services"}>
       <div className="mp-reference-strip__inner">
