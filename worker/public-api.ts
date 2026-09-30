@@ -44,9 +44,25 @@ async function calendarByBs(env:PublicEnv,bs:string){
 }
 async function holidays(env:PublicEnv,date?:string,year?:number){
   if(!env.DB)return[];
-  if(date)return query(env,"select payload from content_records where table_name='holidays' and ad_date=?1 order by record_key",[date]);
-  if(year)return query(env,"select payload from content_records where table_name='holidays' and ad_date>=?1 and ad_date<?2 order by ad_date,record_key",[year+"-01-01",(year+1)+"-01-01"]);
-  return query(env,"select payload from content_records where table_name='holidays' order by ad_date desc,record_key limit 200");
+  let base:any[]=[];
+  if(date)base=await query(env,"select payload from content_records where table_name='holidays' and ad_date=?1 order by record_key",[date]);
+  else if(year)base=await query(env,"select payload from content_records where table_name='holidays' and ad_date>=?1 and ad_date<?2 order by ad_date,record_key",[year+"-01-01",(year+1)+"-01-01"]);
+  else base=await query(env,"select payload from content_records where table_name='holidays' order by ad_date desc,record_key limit 200");
+  let overlays:any[]=[];
+  try{
+    let q=date
+      ? env.DB.prepare("select * from holiday_overrides where ad_date=?1 order by id").bind(date)
+      : year
+        ? env.DB.prepare("select * from holiday_overrides where ad_date>=?1 and ad_date<?2 order by ad_date,id").bind(year+"-01-01",(year+1)+"-01-01")
+        : env.DB.prepare("select * from holiday_overrides order by ad_date desc,id limit 200");
+    overlays=(await q.all()).results||[];
+  }catch{}
+  const byId=new Map(base.map((row:any)=>[String(row.id||row.ad_date+"|"+row.name_ne),row]));
+  for(const row of overlays){
+    const payload=typeof row.payload==="string"?(()=>{try{return JSON.parse(row.payload)}catch{return{}}})():row.payload||{};
+    byId.set(String(row.id),{...payload,id:row.id,ad_date:row.ad_date,name_ne:row.name_ne,name_en:row.name_en,scope_type:row.scope_type,effect:row.effect,status:row.status,source_url:row.source_url,source_title:row.source_title,override:true,updated_at:row.updated_at});
+  }
+  return [...byId.values()].sort((a:any,b:any)=>String(a.ad_date||"").localeCompare(String(b.ad_date||"")));
 }
 async function facts(env:PublicEnv,kind:string,from?:string,to?:string){
   if(!env.DB)return[];
