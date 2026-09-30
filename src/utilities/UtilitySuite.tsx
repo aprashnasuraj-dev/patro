@@ -52,6 +52,7 @@ type ToolId =
   | "age"
   | "clock"
   | "forex"
+  | "gold"
   | "emi"
   | "vat"
   | "units"
@@ -110,6 +111,7 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "age", icon: "उ", title: "उमेर गणक · Age calculator", subtitle: "Exact years, months, days, total days and next birthday.", badge: "Calendar", group: "utility" },
   { id: "clock", icon: "घ", title: "विश्व घडी · World clock", subtitle: "Live world clocks plus a Nepal-time call-home planner.", badge: "Time", group: "utility" },
   { id: "forex", icon: "$", title: "विदेशी मुद्रा · Forex rates", subtitle: "NRB buying and selling rates from the verified migrated market snapshot.", badge: "NRB", group: "utility" },
+  { id: "gold", icon: "सु", title: "सुनचाँदी हिसाब · Gold calculator", subtitle: "Tola–gram jewellery estimate using a trusted rate you enter; no fabricated live price.", badge: "Gold", group: "utility" },
   { id: "emi", icon: "%", title: "कर्जा EMI · Loan EMI", subtitle: "Monthly instalment, total interest and year-by-year repayment schedule.", badge: "Finance", group: "utility" },
   { id: "vat", icon: "भ", title: "भ्याट र प्रतिशत · VAT & percent", subtitle: "Add/remove VAT, percentage of an amount and percentage change.", badge: "Finance", group: "utility" },
   { id: "units", icon: "ना", title: "नाप–तौल · Traditional units", subtitle: "Tola–lal, mana–pathi–muri and haat conversions with metric equivalents.", badge: "Measure", group: "utility" },
@@ -291,7 +293,7 @@ export function UtilitySuite() {
         if (!Array.isArray(body?.items)) return;
         const supported = new Set<ToolId>([
           "nepali-typing","preeti-converter","bstoad","adtobs","landconverter",
-          "incometax","nepaliqr","fuelprice","convert","tax","land","qr","fuel","calc","age","clock","forex","emi","vat","units","words","tithi","diaspora","card","family","api","my-data",
+          "incometax","nepaliqr","fuelprice","convert","tax","land","qr","fuel","calc","age","clock","forex","gold","emi","vat","units","words","tithi","diaspora","card","family","api","my-data",
           "tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot","samudaya"
         ]);
         const next = body.items
@@ -562,6 +564,22 @@ export function UtilitySuite() {
                   <span className="utility-directory-arrow" aria-hidden="true">→</span>
                 </a>
               ))}
+            </div>
+
+            <div className="utility-directory-section-head">
+              <div><p className="eyebrow">Verified external services</p><h3>Official market references</h3></div>
+            </div>
+            <div className="utility-directory-grid">
+              <a className="utility-directory-card" href="https://www.nepalstock.com" target="_blank" rel="noreferrer">
+                <span className="utility-directory-icon" aria-hidden="true">शे</span>
+                <span className="utility-directory-copy"><small>Official site</small><strong>सेयर बजार · Share market</strong><span>Open the Nepal Stock Exchange website.</span></span>
+                <span className="utility-directory-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a className="utility-directory-card" href="https://kalimatimarket.gov.np" target="_blank" rel="noreferrer">
+                <span className="utility-directory-icon" aria-hidden="true">त</span>
+                <span className="utility-directory-copy"><small>Official market</small><strong>तरकारी भाउ · Vegetable prices</strong><span>Open Kalimati Fruit and Vegetable Market price information.</span></span>
+                <span className="utility-directory-arrow" aria-hidden="true">↗</span>
+              </a>
             </div>          </>}
 
           {showTypingCatalog && <div className="utility-directory-grid">
