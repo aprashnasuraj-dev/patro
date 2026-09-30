@@ -85,5 +85,9 @@ export async function runScheduled(cron:string,env:JobsEnv){
   if(cron==="5 * * * *")result.push=await dispatchDuePushJobs(env,100);
   if(cron==="17 0,6,12,18 * * *")result.market=await refreshMarkets(env);
   if(cron==="43 2 * * *")result.maintenance=await maintenance(env);
+  if(cron==="11 3 * * *"){
+    const row=env.DB?await env.DB.prepare("select count(*) as c,max(updated_at) as updated from content_records where table_name='miti_rashifal_publications'").first():null;
+    result.rashifal={ok:!!row&&Number(row.c)>0,publication_count:Number(row?.c||0),latest_updated_at:row?.updated||null};
+  }
   return result;
 }
