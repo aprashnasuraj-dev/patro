@@ -21,7 +21,7 @@ jobs:
           cache: npm
           cache-dependency-path: package.json
       - name: Install
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund --fetch-retries=5
       - name: Supplied engine tests
         run: npx vitest run tests/*.test.ts
       - name: Existing core tests
@@ -60,7 +60,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          npm install --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 --fetch-retries=5 >/dev/null
           npx playwright install chromium >/dev/null
           cat >/tmp/check-pages.cjs <<'NODE'
           const { chromium }=require('playwright');
