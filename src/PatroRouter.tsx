@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/toolSlugs";
+import { SeoMeta } from "./components/seo/SeoMeta";
 
 const App = lazy(() => import("./App"));
 const MediaSuite = lazy(() => import("./media/MediaSuite").then((m) => ({ default: m.MediaSuite })));
@@ -105,5 +106,5 @@ export function PatroRouter() {
     return <App />;
   };
 
-  return <Suspense fallback={<RouteFallback />}>{renderRoute()}</Suspense>;
+  return <><SeoMeta path={path} /><Suspense fallback={<RouteFallback />}>{renderRoute()}</Suspense></>;
 }
