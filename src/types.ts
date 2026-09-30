@@ -129,6 +129,28 @@ export interface SyncRangePayload {
   };
 }
 
+export interface WeatherDay {
+  date: string;
+  weather_code: number;
+  icon: string;
+  label: string;
+  temperature_max_c: number | null;
+  temperature_min_c: number | null;
+  precipitation_probability_max: number | null;
+  precipitation_mm: number | null;
+}
+
+export interface WeatherDailyPayload {
+  ok: boolean;
+  provider: "Open-Meteo";
+  attribution: string;
+  latitude: number;
+  longitude: number;
+  timezone: string;
+  generated_at: string;
+  days: WeatherDay[];
+}
+
 export interface HealthPayload {
   status: "online";
   runtime: "Deno";
