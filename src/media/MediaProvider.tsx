@@ -1,4 +1,3 @@
-import Hls from "hls.js";
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { MediaItem } from "./catalog";
 
@@ -38,7 +37,7 @@ function emit(state: Pick<PlayerState,"item"|"playing"|"muted"|"health">) {
 
 export function MediaProvider({children}:{children:ReactNode}) {
   const audioRef=useRef<HTMLAudioElement|null>(null);
-  const hlsRef=useRef<Hls|null>(null);
+  const hlsRef=useRef<import("hls.js").default|null>(null);
   const contextRef=useRef<AudioContext|null>(null);
   const gainRef=useRef<GainNode|null>(null);
   const analyserRef=useRef<AnalyserNode|null>(null);
@@ -120,7 +119,11 @@ export function MediaProvider({children}:{children:ReactNode}) {
       retryAction.current=()=>void start();
       try{
         const hlsMedia=item.codec.toLowerCase().includes("hls") || item.mediaType==="hls" || isHls(url);
-        if(hlsMedia && Hls.isSupported()){
+        if(hlsMedia){
+          const {default:Hls}=await import("hls.js");
+          if(!Hls.isSupported()){
+            audio.src=url; audio.load();
+          }else{
           const hls=new Hls({enableWorker:true,lowLatencyMode:true,maxBufferLength:20});
           hlsRef.current=hls; hls.loadSource(url); hls.attachMedia(audio);
           hls.on(Hls.Events.ERROR,(_event,data)=>{
@@ -130,6 +133,7 @@ export function MediaProvider({children}:{children:ReactNode}) {
             else {hls.destroy();scheduleRetry(()=>void start());}
           });
           await new Promise<void>((resolve)=>hls.on(Hls.Events.MANIFEST_PARSED,()=>resolve()));
+          }
         }else{
           audio.src=url; audio.load();
         }
