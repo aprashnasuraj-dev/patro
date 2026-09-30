@@ -1,16 +1,18 @@
+import { lazy, Suspense } from "react";
 import "./patro-tools.css";
-import { TithiReminderTool } from "./TithiReminderTool";
-import { SpellCheckTool } from "./SpellCheckTool";
-import { NameCheckTool } from "./NameCheckTool";
-import { ReadAloudTool } from "./ReadAloudTool";
 import { ToolPage } from "./ToolPrimitives";
-import { SaitTool } from "./SaitTool";
-import { BabyNamesTool } from "./BabyNamesTool";
-import { JanmadinAkhbarTool } from "./JanmadinAkhbarTool";
-import { FutureLetterTool } from "./FutureLetterTool";
-import { VoiceTypingTool } from "./VoiceTypingTool";
-import { OcrTool } from "./OcrTool";
-import { PatroBotTool } from "./PatroBotTool";
+
+const TithiReminderTool = lazy(() => import("./TithiReminderTool").then((m) => ({ default: m.TithiReminderTool })));
+const SpellCheckTool = lazy(() => import("./SpellCheckTool").then((m) => ({ default: m.SpellCheckTool })));
+const NameCheckTool = lazy(() => import("./NameCheckTool").then((m) => ({ default: m.NameCheckTool })));
+const ReadAloudTool = lazy(() => import("./ReadAloudTool").then((m) => ({ default: m.ReadAloudTool })));
+const SaitTool = lazy(() => import("./SaitTool").then((m) => ({ default: m.SaitTool })));
+const BabyNamesTool = lazy(() => import("./BabyNamesTool").then((m) => ({ default: m.BabyNamesTool })));
+const JanmadinAkhbarTool = lazy(() => import("./JanmadinAkhbarTool").then((m) => ({ default: m.JanmadinAkhbarTool })));
+const FutureLetterTool = lazy(() => import("./FutureLetterTool").then((m) => ({ default: m.FutureLetterTool })));
+const VoiceTypingTool = lazy(() => import("./VoiceTypingTool").then((m) => ({ default: m.VoiceTypingTool })));
+const OcrTool = lazy(() => import("./OcrTool").then((m) => ({ default: m.OcrTool })));
+const PatroBotTool = lazy(() => import("./PatroBotTool").then((m) => ({ default: m.PatroBotTool })));
 
 const LABELS: Record<string, { title: string; description: string }> = {
   "tithi-reminder": { title: "तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
@@ -26,7 +28,18 @@ const LABELS: Record<string, { title: string; description: string }> = {
   "patro-bot": { title: "Patro Bot", description: "पात्रो, तिथि र रिमाइन्डर सहायक" },
 };
 
-export function PatroToolsShell({ slug }: { slug: string }) {
+function ToolLoading({ slug }: { slug: string }) {
+  const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
+  return (
+    <ToolPage title={meta.title} description={meta.description}>
+      <section className="patro-tool-card" role="status" aria-live="polite">
+        <p className="tool-muted">उपकरण लोड हुँदैछ…</p>
+      </section>
+    </ToolPage>
+  );
+}
+
+function ToolRoute({ slug }: { slug: string }) {
   if (slug === "tithi-reminder") return <TithiReminderTool />;
   if (slug === "spell-check") return <SpellCheckTool />;
   if (slug === "name-check") return <NameCheckTool />;
@@ -49,4 +62,13 @@ export function PatroToolsShell({ slug }: { slug: string }) {
     </ToolPage>
   );
 }
+
+export function PatroToolsShell({ slug }: { slug: string }) {
+  return (
+    <Suspense fallback={<ToolLoading slug={slug} />}>
+      <ToolRoute slug={slug} />
+    </Suspense>
+  );
+}
+
 export { PATRO_TOOL_SLUGS } from "./toolSlugs";
