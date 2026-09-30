@@ -82,7 +82,7 @@ export async function cronResponse(request:Request,env:JobsEnv):Promise<Response
 }
 export async function runScheduled(cron:string,env:JobsEnv){
   const result:any={cron,at:new Date().toISOString()};
-  if(cron==="*/5 * * * *")result.push=await dispatchDuePushJobs(env,100);
+  if(cron==="5 * * * *")result.push=await dispatchDuePushJobs(env,100);
   if(cron==="17 0,6,12,18 * * *")result.market=await refreshMarkets(env);
   if(cron==="43 2 * * *")result.maintenance=await maintenance(env);
   return result;
