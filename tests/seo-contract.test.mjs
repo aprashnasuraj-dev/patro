@@ -135,3 +135,23 @@ test("local Lighthouse server does not weaken production canonical metadata", as
   assert.ok(server.includes("Lighthouse treats a homepage canonical"));
   assert.ok(index.includes('rel="canonical" href="https://patro-blush.vercel.app/"'));
 });
+
+test("calendar accessibility does not misuse ARIA gridcell without row semantics", async () => {
+  const calendar = await read("src/components/CalendarGrid.tsx");
+  assert.equal(calendar.includes('role="gridcell"'), false);
+  assert.equal(calendar.includes('role="grid"'), false);
+  assert.ok(calendar.includes('role="group"'));
+  assert.ok(calendar.includes('aria-pressed={cell.iso===selectedDate}'));
+});
+
+test("reference theme has explicit contrast fixes for audited calendar, utility and FM selectors", async () => {
+  const css = await read("src/reference-ui.css");
+  for (const marker of [
+    ".inline-error{",
+    ".segmented-control button.active{",
+    ".calendar-card .weekday-row span{",
+    ".utility-directory-card .utility-directory-copy > strong{",
+    ".station-badge{",
+    ".station-copy .station-meta{"
+  ]) assert.ok(css.includes(marker), marker);
+});
