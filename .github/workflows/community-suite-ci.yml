@@ -17,7 +17,7 @@ jobs:
           cache: npm
           cache-dependency-path: package.json
       - name: Install
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - name: Supplied engine tests
         run: npx vitest run tests/*.test.ts
       - name: Existing core tests
