@@ -15,7 +15,7 @@
     "lint": "tsc --noEmit",
     "doctor": "node scripts/doctor.mjs",
     "dev:vite": "vite",
-    "deploy": "npm run cf:deploy",
+    "deploy": "npm run deploy:cloudflare",
     "dev:cloudflare": "npm run build && wrangler dev --config wrangler.jsonc",
     "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
     "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
@@ -29,11 +29,12 @@
     "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
     "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs",
     "cloudflare:verify-inventory": "node scripts/verify-migration-inventory.mjs",
-    "cf:validate-data": "node scripts/cloudflare/import-d1.mjs --dry-run",
-    "cf:deploy": "npm run build && wrangler deploy",
-    "cf:schema:remote": "wrangler d1 execute DB --remote --file=cloudflare/d1/schema/0001_content_schema.sql --yes",
-    "cf:import:remote": "node scripts/cloudflare/import-d1.mjs --remote",
-    "cf:bootstrap": "npm run cf:deploy && npm run cf:schema:remote && npm run cf:import:remote"
+    "cf:validate-data": "npm run cloudflare:verify-snapshot",
+    "cf:deploy": "npm run deploy:cloudflare",
+    "cf:schema:remote": "npm run cloudflare:migrate",
+    "cf:import:remote": "npm run cloudflare:import-d1:recovery",
+    "cf:bootstrap": "npm run deploy:cloudflare:bootstrap",
+    "cloudflare:import-d1:recovery": "node scripts/cloudflare/import-d1.mjs --remote"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -64,6 +65,6 @@
       "DB": "Optional during bootstrap; set CF_D1_DATABASE_ID for native D1 calendar/content reads.",
       "CACHE": "Optional during bootstrap; set CF_KV_NAMESPACE_ID for persistent upstream/API cache."
     },
-    "deploy_command": "npm run cf:deploy"
+    "deploy_command": "npm run deploy:cloudflare"
   }
 }

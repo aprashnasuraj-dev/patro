@@ -243,3 +243,14 @@ Then migrate remaining compatibility routes one at a time. The fallback is a mig
 - `cloudflare/migration-manifest.json` — machine-readable migration state.
 
 The existing Vercel and Supabase files remain intentionally present until the Cloudflare observation window and rollback period are complete.
+
+## Recovery / resumable D1 import
+
+The canonical first import is `npm run deploy:cloudflare:bootstrap`. A second importer exists only for recovery or table-by-table resume:
+
+```bash
+npm run cloudflare:import-d1:recovery
+# or add --table=<table> directly to scripts/cloudflare/import-d1.mjs
+```
+
+It uses the same exact-count manifest and refuses private/user tables. Do not use `cf:bootstrap` as a separate deployment design; it is an alias of the canonical safe bootstrap so ordering remains schema → content → remote parity verification → Worker.

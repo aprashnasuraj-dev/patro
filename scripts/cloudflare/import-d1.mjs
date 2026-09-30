@@ -4,7 +4,7 @@ import process from "node:process";
 
 const ROOT = process.cwd();
 const DATA_ROOT = join(ROOT, "migration", "data", "public");
-const MANIFEST_PATH = join(ROOT, "migration", "data", "content-manifest.json");
+const MANIFEST_PATH = join(ROOT, "cloudflare", "d1", "expected-public-counts.json");
 const LEGACY_RASHIFAL = join(ROOT, "cloudflare", "d1", "migrations", "0600_seed_rashifal_publications.sql");
 
 const PK = {
@@ -153,7 +153,7 @@ function paramsFor(records) {
 
 async function d1(body) {
   const account=process.env.CLOUDFLARE_ACCOUNT_ID;
-  const db=process.env.CLOUDFLARE_D1_DATABASE_ID;
+  const db=process.env.CLOUDFLARE_D1_DATABASE_ID || process.env.CF_D1_DATABASE_ID;
   const token=process.env.CLOUDFLARE_API_TOKEN;
   if (!account || !db || !token) throw new Error("Set CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_D1_DATABASE_ID and CLOUDFLARE_API_TOKEN");
   const url=`https://api.cloudflare.com/client/v4/accounts/${account}/d1/database/${db}/query`;
@@ -211,6 +211,10 @@ async function validate(byTable, manifest) {
         maxPayload=Math.max(maxPayload,Buffer.byteLength(r.payload));
         if (table==="astronomy_calendar_map") {
           first=first||r.ad_date; last=r.ad_date;
+          const doc=JSON.parse(r.payload);
+          if (!doc?.payload?.bs?.formatted) throw new Error(`astronomy_calendar_map: missing BS mapping at ${r.record_key}`);
+          if (!doc?.payload?.ns?.formatted) throw new Error(`astronomy_calendar_map: missing Nepal Sambat mapping at ${r.record_key}`);
+          if (!doc?.payload?.panchang?.tithi) throw new Error(`astronomy_calendar_map: missing Panchang/tithi at ${r.record_key}`);
         }
       }
     }
@@ -221,9 +225,11 @@ async function validate(byTable, manifest) {
     if (first) Object.assign(report[table],{first_ad_date:first,last_ad_date:last});
     total+=count;
   }
-  if (!TABLE_ARG && total!==manifest.total_rows) throw new Error(`total rows ${total}, manifest ${manifest.total_rows}`);
+  const expectedTotal = Object.values(manifest.tables).reduce((sum,n)=>sum+Number(n),0);
+  if (!TABLE_ARG && total!==expectedTotal) throw new Error(`total rows ${total}, expected ${expectedTotal}`);
   const astro=report.astronomy_calendar_map;
-  if (astro && (astro.first_ad_date!=="1826-04-11" || astro.last_ad_date!=="2037-04-13")) throw new Error("astronomy coverage mismatch");
+  const spec=manifest.critical_features?.main_calendar;
+  if (astro && spec && (astro.first_ad_date!==spec.first_ad_date || astro.last_ad_date!==spec.last_ad_date || astro.rows!==spec.rows)) throw new Error("astronomy coverage/count mismatch");
   return {total_rows:total,tables:report};
 }
 
