@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 type HistoryItem = {
   id?: string;
@@ -51,7 +51,7 @@ function useVisibleOnce<T extends HTMLElement>() {
   return {ref,visible};
 }
 
-function CardShell({title,kicker,href,children}:{title:string;kicker:string;href?:string;children:React.ReactNode}){
+function CardShell({title,kicker,href,children}:{title:string;kicker:string;href?:string;children:ReactNode}){
   return <section className="home-depth-card">
     <header><div><p className="eyebrow">{kicker}</p><h2>{title}</h2></div>{href&&<a href={href}>सबै हेर्नुहोस् · View all →</a>}</header>
     <div className="home-depth-card__body">{children}</div>
