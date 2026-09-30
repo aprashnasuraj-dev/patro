@@ -55,3 +55,28 @@ test("verified forex fallback is traceable to NRB",()=>{
   assert.ok(data.items.some((row)=>row.asset==="USD"));
   assert.ok(data.items.some((row)=>row.asset==="JPY"));
 });
+
+
+test("community suite build contract is exactly seven",()=>{
+  const emitter=read("scripts/emit-community-suites.mjs");
+  const required=[
+    "/nepal-sambat/mandala",
+    "/samudaya/lhosar",
+    "/samudaya/tharu",
+    "/samudaya/mithila",
+    "/samudaya/kirat",
+    "/samudaya/hijri",
+    "/samudaya/chakra"
+  ];
+  for(const route of required) assert.ok(emitter.includes(route),`missing community route: ${route}`);
+  assert.ok(emitter.includes("expected 7/7 routes"));
+  for(const file of [
+    "community-frontends/nepal-sambat-mandala.html",
+    "community-frontends/lhosar.src.html",
+    "community-frontends/tharu.src.html",
+    "community-frontends/mithila.src.html",
+    "community-frontends/kirat.src.html",
+    "community-frontends/hijri.src.html",
+    "community-frontends/samudaya-chakra.src.html"
+  ]) assert.ok(read(file).length>1000,`community frontend missing or empty: ${file}`);
+});
