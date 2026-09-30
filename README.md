@@ -1,193 +1,246 @@
-# Patro — Astronomical Calendar SPA
+# Mero Patro
 
-Patro is deployed as a **static React + Vite SPA on Vercel** with all dynamic
-calendar, astronomy, NASA and database work centralized in one Supabase Edge
-Function named `router` (Deno + Hono).
+Production migration repository for Mero Patro: a Nepali calendar, astronomy, history, media, Jyotish and utility platform.
 
-## Runtime boundary
+The `cloudflare-migration` branch is prepared for a staged move from **Vercel + Supabase** to **Cloudflare Pages + Workers + D1 + KV** without removing working product surfaces during the transition.
+
+## Migration state
+
+- Frontend: React 19 + TypeScript + Vite static SPA.
+- Cloudflare frontend target: Pages, output directory `dist/`.
+- Cloudflare API target: Worker `mero-patro`.
+- Pages-to-Worker transport: service binding `PATRO_API`.
+- Migrated reference/content store: D1 binding `DB`.
+- Edge cache: KV binding `CACHE` plus Cache API.
+- Calendar snapshot: **77,070 rows**, **78 parts**, AD **1826-04-11 → 2037-04-13**.
+- Runtime strategy: **native Cloudflare first, Supabase compatibility fallback second**.
+- Private/user Supabase tables are not bulk-exported into the public migration snapshot.
+- No Supabase service-role credential is used by browser code or committed to Git.
+
+The compatibility fallback is deliberate. A route that is not yet Worker-native continues to use the existing Supabase router so a Cloudflare cutover cannot silently delete functionality.
+
+## Architecture
 
 ```text
 Browser
-  │
-  ├── static HTML / CSS / JS ───────────────> Vercel CDN
-  │
-  └── /api/v1/* ── Vercel rewrite ─────────> Supabase Edge Function: router
-                                               ├── existing Patro AD/BS/NS archive
-                                               ├── Astronomy Engine tithi math
-                                               ├── nasa_apod_cache
-                                               └── NASA APOD upstream
+  |
+  +-- static app / PWA --------------------------> Cloudflare Pages
+  |
+  +-- /api/* and /fm-v2-stream/*
+        |
+        +-- Pages Function ----------------------> PATRO_API service binding
+                                                    |
+                                                    v
+                                             Worker: mero-patro
+                                              |        |        |
+                                              |        |        +--> upstream APIs
+                                              |        +-----------> KV / Cache API
+                                              +--------------------> D1
+                                                    |
+                                                    +--> Supabase compatibility
+                                                         for routes not native yet
 ```
 
-There are **no Vercel Serverless Functions, Next.js route handlers or server
-components** in this branch. The earlier Python Rashifal Vercel function and its
-Python requirements were removed as part of this architecture cutover.
+A single-Worker + Static Assets profile remains available for bootstrap/local use. Full production configuration defaults to split Pages + API Worker mode.
 
-The public GitHub repository contains the complete router source, but it does
-**not** publish Patro's proprietary historical calendar rows. Those rows were
-migrated once, server-side, into the private RLS-enabled
-`astronomy_calendar_map` table in the existing Supabase project. The
-`calendarService.ts` adapter reads only that private table with the Edge
-Function service role, so the static browser bundle never receives raw archive
-data.
+## Preserved product surfaces
 
-## Frontend
+This repository keeps the full Patro product rather than replacing it with an astronomy-only application.
 
-```bash
-npm install
-npm run dev
-npm run build
+| Surface | Cloudflare migration behavior |
+| --- | --- |
+| AD / Bikram Sambat / Nepal Sambat calendar | D1-native sync where available; compatibility fallback otherwise |
+| Panchang / tithi / astronomy | Worker-native tithi + preserved router routes |
+| Astronomy / Time Travel | Pages UI + Worker APIs |
+| NASA APOD | Worker-native normalization/fallback + KV |
+| Time Machine / On This Day | Worker/D1 native with compatibility fallback |
+| Jyotish / Janma Patro | Pages UI + preserved backend bridge |
+| Rashifal | existing protected backend contract preserved |
+| FM / radio | Pages player + Worker/compat stream route |
+| Live TV | Pages HLS/browser player |
+| Nepali typing | integrated and standalone static app |
+| Preeti ↔ Unicode | Nepali tools |
+| Utility suite | OCR, voice typing, spellcheck, read-aloud, Sait, reminders, baby names, PatroBot, future letters and related tools |
+| Community calendars | Nepal Sambat, Hijri, Lhosar, Kirat, Mithila, Tharu |
+| Personal | My Diary/local storage behavior |
+| PWA | manifest, icons, installability, service worker |
+| Trust/legal | About, Sources, Privacy, Terms, Contact |
 
-# Vite's development proxy preserves the same relative /api/v1/* contract
-```
-
-Production output is `dist/`. The SPA calls only these relative endpoints:
-
-- `GET /api/v1/health`
-- `GET /api/v1/sync?date=YYYY-MM-DD`
-- `GET /api/v1/nasa/apod?date=YYYY-MM-DD`
-- `GET /api/v1/astronomy/tithi?date=YYYY-MM-DD&lat=27.7172&lng=85.3240`
-
-The required single-date `/sync?date=` contract remains unchanged. The SPA month
-grid additionally uses the same `/sync` route in bounded batch mode
-(`?start=YYYY-MM-DD&end=YYYY-MM-DD`, maximum 62 days) so a 42-cell calendar
-view performs one Edge Function/database range request instead of 42 individual
-requests.
-
-## Supabase environment
-
-The `router` runtime reads:
-
-- `NASA_API_KEY` — set this explicitly for production. `DEMO_KEY` is only a
-  resilience fallback and has a much lower quota.
-- `SUPABASE_URL` — provided automatically to Supabase Edge Functions.
-- `SUPABASE_SERVICE_ROLE_KEY` — provided automatically to Supabase Edge
-  Functions. It is server-only and must never be exposed to the browser.
-
-Set the NASA key:
-
-```bash
-supabase link --project-ref pxlsmxbpgdfzjzuqtict
-supabase secrets set NASA_API_KEY=YOUR_NASA_API_KEY
-```
-
-Supabase injects `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` as project
-runtime secrets. Verify that the function is running in the linked project
-rather than copying either value into frontend environment variables.
-
-## Deploy the Edge Function
-
-The function name is exactly `router` and the public calendar endpoints are
-intentionally callable without a Supabase JWT because Vercel proxies them as the
-public Patro API surface.
-
-```bash
-supabase functions deploy router --project-ref pxlsmxbpgdfzjzuqtict --no-verify-jwt
-```
-
-The deployed Hono app keeps the explicit base path
-`/functions/v1/router`. The entrypoint also normalizes Supabase gateway paths
-before handing requests to Hono, because the Edge runtime receives the function
-slug as `/router/*`.
-
-## Database migration
-
-Apply both schema migrations:
-
-- `supabase/migrations/20260928090000_astronomical_sync_apod_cache.sql`
-- `supabase/migrations/20260928093000_astronomical_sync_calendar_map.sql`
-
-Both tables are RLS-enabled with no browser policy. Only the service-role-backed
-Edge Function can read/write them. In the existing production project, the
-calendar map has already been populated from the current Patro archive with
-**77,070 contiguous dates from 1826-04-11 through 2037-04-13**. That one-time
-data migration is intentionally not published in the public repository.
-
-## Vercel
-
-`vercel.json` contains only the required API proxy and SPA fallback:
-
-```json
-{
-  "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/api/v1/:path*",
-      "destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-```
-
-Connect the repository to the existing Vercel `patro` project. Vercel detects
-Vite, runs `npm run build`, serves `dist/` as static assets, and performs only
-the rewrites above.
-
-## Endpoint tests
-
-Direct Edge Function:
-
-```bash
-curl -i "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/health"
-curl -i "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/sync?date=2026-09-28"
-curl -i "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/nasa/apod?date=2026-09-28"
-curl -i "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router/astronomy/tithi?date=2026-09-28&lat=27.7172&lng=85.3240"
-```
-
-After Vercel deployment, verify the same routes through the production proxy:
-
-```bash
-curl -i "https://patro-blush.vercel.app/api/v1/health"
-curl -i "https://patro-blush.vercel.app/api/v1/sync?date=2026-09-28"
-curl -i "https://patro-blush.vercel.app/api/v1/nasa/apod?date=2026-09-28"
-curl -i "https://patro-blush.vercel.app/api/v1/astronomy/tithi?date=2026-09-28&lat=27.7172&lng=85.3240"
-```
-
-Expected health response:
-
-```json
-{"status":"online","runtime":"Deno","framework":"Hono"}
-```
-
-For `2026-09-28`, the current Patro archive maps the date to BS
-`2083-06-12` and Nepal Sambat `1146 Yanlā ga Nimilā`. The archive and
-calculated engine both identify Krishna Dwitiya (Tithi 17) for the Kathmandu
-reference date.
-
-## Astronomy precision
-
-The real-time Tithi engine uses Astronomy Engine 2.1.19 for geocentric ecliptic
-Sun/Moon longitudes:
+## Repository layout
 
 ```text
-Δθ = (λMoon − λSun) mod 360°
-T  = floor(Δθ / 12°) + 1
-progress = (Δθ mod 12°) / 12°
-illumination = (1 − cos Δθ) / 2
+.
+├── src/                         React/Vite application and features
+├── public/                      PWA/static tools/icons/calendar chunks
+├── functions/
+│   ├── api/[[path]].js          Pages /api/* -> PATRO_API
+│   └── fm-v2-stream/[[path]].js Pages stream bridge -> PATRO_API
+├── worker/
+│   ├── index.ts                 Worker gateway/native handlers
+│   └── tithi.ts                 astronomical tithi calculation
+├── cloudflare/
+│   └── d1/
+│       ├── schema-migrations/   routine D1 schema migrations
+│       └── migrations/          checked-in sanitized reference seed source
+├── migration/
+│   └── data/public/             deterministic public/reference snapshots
+│       └── astronomy_calendar_map/part-001..078.json
+├── scripts/
+│   ├── bootstrap-cloudflare.mjs
+│   ├── generate-d1-migrations.mjs
+│   ├── prepare-cloudflare-config.mjs
+│   ├── validate-cloudflare.mjs
+│   ├── deploy-cloudflare.mjs
+│   └── emit-cloudflare-root.mjs
+├── wrangler.jsonc               Worker bootstrap/single-deploy config
+├── wrangler.pages.jsonc         Pages + PATRO_API config
+└── .github/workflows/cloudflare-readiness.yml
 ```
 
-Kshaya and Adhika awareness is determined by comparing Tithis at consecutive
-local sunrises. Sunrise is resolved with Astronomy Engine's rise/set search for
-the requested latitude/longitude, and date-only Tithi evaluation is anchored at
-that sunrise. Astronomy Engine uses analytical ephemeris models rather than a
-NASA JPL DE binary kernel, so dates very close to a Tithi boundary should be
-cross-checked against an authoritative Panchanga or a JPL-DE-backed ephemeris
-when ceremonial minute-level precision matters.
+## Local verification
 
-## Production verification checklist
+Node 22 is the CI baseline.
 
-- Vercel deployment contains static output only; no `api/*` function runtime.
-- `/api/v1/health` returns the Deno/Hono health contract through Vercel.
-- APOD first request creates one `nasa_apod_cache` row; repeats do not consume
-  another upstream NASA request.
-- Video APOD entries resolve to a YouTube thumbnail; upstream errors return the
-  NASA SVS image with `is_fallback: true`.
-- The month grid works in AD and BS modes and every day displays a Tithi badge.
-- Today, selected date, Purnima and Amavasya remain visually distinct.
-- Keyboard focus, reduced-motion mode, mobile layout and NASA drawer are usable.
-- Existing Patro date archive remains server-side and is never bundled into the
-  public SPA.
+```bash
+npm install --ignore-scripts --no-audit --no-fund
+npm run typecheck
+npm run test:core
+npm run test:typing
+npm run test:patro-tools
+npm run cloudflare:validate
+```
+
+`cloudflare:validate` builds the application, verifies all 78 calendar parts/77,070 rows without creating the large import artifact, and performs a Worker dry-run.
+
+For integrated local compatibility development:
+
+```bash
+npm run dev:cloudflare
+```
+
+For Vite-only UI development:
+
+```bash
+npm run dev:vite
+```
+
+## Cloudflare resource contract
+
+Full native deployment uses these build variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `CF_D1_DATABASE_ID` | D1 UUID bound as `DB` |
+| `CF_KV_NAMESPACE_ID` | KV UUID bound as `CACHE` |
+| `CF_D1_DATABASE_NAME` | optional, defaults to `mero-patro` |
+| `CF_D1_PREVIEW_DATABASE_ID` | optional isolated preview D1 |
+| `CF_KV_PREVIEW_NAMESPACE_ID` | optional isolated preview KV |
+| `CF_DEPLOY_MODE` | optional; default split Pages + Worker, use `single-worker` for Worker Static Assets |
+
+Runtime secret:
+
+```text
+NASA_API_KEY
+```
+
+Never put database passwords, Supabase service-role keys, provider secrets or Cloudflare API tokens into Vite/browser environment variables.
+
+## First native D1 bootstrap
+
+The first native deployment is intentionally different from routine releases.
+
+```bash
+npm run deploy:cloudflare:bootstrap
+```
+
+It performs, in order:
+
+1. Production build and doctor checks.
+2. Verification of all 78 astronomy snapshot parts.
+3. Generation of a deterministic SQL import in `.cloudflare/d1-import/`.
+4. Validation that no generated SQL statement exceeds Cloudflare D1's 100 KB statement limit.
+5. Generation of a Wrangler config containing the real D1/KV IDs.
+6. Application of schema migrations.
+7. One-time public/reference data import with `wrangler d1 execute --file`.
+8. D1 row/migration-state inspection.
+9. Worker deployment.
+
+The generated import excludes private/user tables and strips transaction wrappers that are unsuitable for D1 bulk import.
+
+## Routine Worker deploys
+
+After bootstrap, use:
+
+```bash
+npm run deploy:cloudflare
+```
+
+Routine releases do **not** regenerate/reimport the entire 77,070-row archive. They build, apply schema migrations, and deploy the Worker. This keeps normal Git deployments fast and avoids repeatedly rewriting the reference archive.
+
+If both D1 and KV IDs are absent, routine deploy intentionally falls back to compatibility/bootstrap Worker mode. Supplying only one binding ID fails closed.
+
+## Pages deployment
+
+Pages configuration is in `wrangler.pages.jsonc`.
+
+Git integration:
+
+```text
+Production branch: cloudflare-migration
+Build command:     npm run build
+Build output:      dist
+Service binding:   PATRO_API -> mero-patro
+```
+
+The service binding keeps API traffic inside Cloudflare instead of adding a public network hop.
+
+Optional direct deployment:
+
+```bash
+npm run deploy:pages
+```
+
+Deploy the API Worker before Pages so `PATRO_API` has a valid target.
+
+## Edge behavior
+
+- Fingerprinted Vite assets under `/astro/assets/*` are browser-cached immutably.
+- Static calendar data uses shorter browser caching and longer shared caching.
+- `sw.js` revalidates so PWA releases are not pinned by browser cache.
+- Native GET APIs use Cloudflare Cache API.
+- APOD also uses KV when available.
+- D1 is attempted before compatibility calls on native routes.
+- Unknown `/api/v1/*` routes continue to the existing Supabase router during staged migration.
+
+## Security boundaries
+
+- Browser code never receives a Supabase service-role key.
+- D1/KV identifiers are deployment metadata; provider credentials remain secrets.
+- Pages reaches the API Worker using a service binding.
+- Compatibility proxying strips `Host` and `Content-Length` before forwarding.
+- Public/reference bulk migration is separated from private/user data.
+- Existing Supabase RLS/protected routes stay in force until verified replacements exist.
+
+## Cutover gate
+
+Do not retire Vercel or Supabase just because Cloudflare deploys.
+
+Cut over only after:
+
+- Cloudflare readiness CI is green.
+- D1 bootstrap reports expected table counts.
+- boundary dates `1826-04-11` and `2037-04-13` resolve correctly.
+- representative historical/current/future calendar samples match.
+- FM/TV/Jyotish/Rashifal/tools/PWA smoke checks pass.
+- Pages service-binding API calls pass.
+- production logs show no unexpected 5xx or compatibility spike.
+
+Then migrate remaining compatibility routes one at a time. The fallback is a migration safety mechanism, not permission to weaken the app.
+
+## Migration documentation
+
+- `docs/CLOUDFLARE_GIT_DEPLOY.md` — exact Git setup and cutover runbook.
+- `docs/CLOUDFLARE_MIGRATION_PARITY.md` — feature/route preservation contract.
+- `cloudflare/migration-manifest.json` — machine-readable migration state.
+
+The existing Vercel and Supabase files remain intentionally present until the Cloudflare observation window and rollback period are complete.
