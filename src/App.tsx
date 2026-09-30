@@ -9,6 +9,7 @@ import { CalendarGrid } from "./components/CalendarGrid";
 import { CosmicExperience } from "./components/CosmicExperience";
 import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
 import { CommunityHomeLine } from "./community/CommunityHomeLine";
+import { DailyDirectAnswer } from "./components/seo/DailyDirectAnswer";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
@@ -218,6 +219,8 @@ export default function App() {
           onNextDay={() => shiftSelected(1)}
           onToday={() => chooseDate(today)}
         />
+
+        <DailyDirectAnswer selectedDate={selectedDate} today={today} sync={sync.data} />
 
         <CommunityHomeLine selectedDate={selectedDate} />
 
