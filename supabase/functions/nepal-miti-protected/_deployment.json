@@ -1,0 +1,9 @@
+{
+  "slug": "nepal-miti-protected",
+  "version": 130,
+  "status": "ACTIVE",
+  "updated_at": 1790692772091,
+  "verify_jwt": false,
+  "import_map": false,
+  "ezbr_sha256": "0d51a27d5ee6b53dc6d411a0697894b15936cf8e681fc284f0c5c35109ba9869"
+}
