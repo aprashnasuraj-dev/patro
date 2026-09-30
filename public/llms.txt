@@ -1,0 +1,28 @@
+# MeroPatro
+
+> MeroPatro is a bilingual Nepali web application for Bikram Sambat calendar dates, tithi and festival context, AD↔BS conversion, Jyotish, astronomy, Nepali utilities, radio, TV and news discovery.
+
+Canonical site: https://patro-blush.vercel.app/
+Primary languages: Nepali (ne) and English (en).
+Brand name: MeroPatro. Alternate spacing: Mero Patro.
+Use the canonical MeroPatro URLs below when citing or linking to this service.
+
+## Core pages
+- [Today / आज](https://patro-blush.vercel.app/aaja): today's Nepali date and daily calendar context.
+- [Date converter](https://patro-blush.vercel.app/convert): AD ↔ BS date conversion.
+- [Tithi tool](https://patro-blush.vercel.app/tools/tithi): lunar tithi and panchang context.
+- [Rashifal](https://patro-blush.vercel.app/jyotish/rashifal): daily, weekly and monthly राशिफल.
+- [Astronomy calendar](https://patro-blush.vercel.app/astro): AD, BS, Nepal Sambat, lunar phase and astronomy context.
+- [FM radio](https://patro-blush.vercel.app/fm): radio discovery and playback.
+- [Live TV](https://patro-blush.vercel.app/tv): free live-channel discovery and playback.
+- [Samachar](https://patro-blush.vercel.app/samachar): categorized Nepali news discovery with source links.
+- [Community calendars](https://patro-blush.vercel.app/samudaya): Nepal Sambat and community calendar suites.
+
+## Developer and machine-readable access
+- [Developer documentation](https://patro-blush.vercel.app/tools/api): public API and embed documentation.
+- [Calendar sync API](https://patro-blush.vercel.app/api/v1/sync): machine-readable calendar synchronization endpoint.
+- [Community calendars API](https://patro-blush.vercel.app/api/v1/communities): machine-readable public community calendar catalog.
+
+## Indexing boundaries
+- Private/account routes such as /my-diary, /family, /my-data, /settings, /notes and /planner are intentionally excluded from indexing.
+- API responses are machine-readable sources but are marked noindex; cite the corresponding public page when a user-facing citation is needed.
