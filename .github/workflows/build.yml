@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - swarm/accelerated-overhaul
+      - cloudflare-migration
   pull_request:
 
 jobs:
@@ -20,3 +21,18 @@ jobs:
           cache-dependency-path: package.json
       - run: npm install --ignore-scripts --no-audit --no-fund
       - run: npm run build
+
+  migration-verify:
+    if: github.ref == 'refs/heads/cloudflare-migration' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm run cloudflare:verify-inventory
+      - run: npm run cloudflare:verify-snapshot

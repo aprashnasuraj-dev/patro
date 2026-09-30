@@ -1,14 +1,24 @@
 # Cloudflare Worker secrets. Copy to .dev.vars for local development only.
-# Production values: wrangler secret put <NAME>
-NASA_API_KEY=
+# Never commit .dev.vars. Production values belong in Cloudflare Workers Secrets.
+#
+# Exact Supabase secret names preserved for migration (case-sensitive):
+Groq_API=
+nvidia_api=
+SUPABASE_ANON_KEY=
+SUPABASE_DB_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_URL=
+TV_RELAY_SECRET=
 
-# Required before the native global-radio relay is enabled.
-# Generate a long random value and store it with: wrangler secret put RADIO_RELAY_SECRET
+# Additional Patro runtime secrets used by Cloudflare-native modules:
+NASA_API_KEY=
 RADIO_RELAY_SECRET=
 
-# Optional: Jyotish chat provider keys while the compatibility route remains enabled.
+# Optional aliases supported by the Worker, but not required if the exact names above are set:
 GROQ_API_KEY=
+GROQ_KEY=
+GROQ_MODEL=
 NVIDIA_NIM_API_KEY=
-
-# No Supabase service-role key or database password is needed in the Cloudflare Worker.
-# Public legacy compatibility requests are proxied to the existing public Edge Function URLs.
+NVIDIA_API_KEY=
+NGC_API_KEY=
+NVIDIA_MODEL=

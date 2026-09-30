@@ -2,6 +2,7 @@ import { calculateAstronomicalTithi } from "./tithi";
 import { fetchCosmicDay } from "./cosmic";
 import { radioCatalogResponse, radioStreamResponse } from "./radio";
 import { fmResponse } from "./fm";
+import { handleJyotishChat } from "./jyotish";
 
 type Env = {
   DB?: any;
@@ -12,6 +13,21 @@ type Env = {
   NASA_API_KEY?: string;
   RADIO_RELAY_SECRET?: string;
   TV_RELAY_SECRET?: string;
+  // Exact secret names preserved from Supabase for Cloudflare cutover.
+  Groq_API?: string;
+  nvidia_api?: string;
+  SUPABASE_ANON_KEY?: string;
+  SUPABASE_DB_URL?: string;
+  SUPABASE_SERVICE_ROLE_KEY?: string;
+  SUPABASE_URL?: string;
+  // Optional provider aliases retained for compatibility.
+  GROQ_API_KEY?: string;
+  GROQ_KEY?: string;
+  GROQ_MODEL?: string;
+  NVIDIA_NIM_API_KEY?: string;
+  NVIDIA_API_KEY?: string;
+  NGC_API_KEY?: string;
+  NVIDIA_MODEL?: string;
   CALENDAR_COVERAGE_START?: string;
   CALENDAR_COVERAGE_END?: string;
   CALENDAR_SOURCE_VERSION?: string;
@@ -492,6 +508,9 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   if (path === "/api/v1/astronomy/tithi" && request.method === "GET") {
     return edgeCached(request,ctx,1800,async() => (await nativeTithi(request,env)) || compat(request,env));
   }
+  if (path === "/api/v1/jyotish-chat") {
+    return handleJyotishChat(request,env);
+  }
   if (path === "/api/v1/nasa/apod" && request.method === "GET") {
     const date = url.searchParams.get("date") || todayNepal();
     if (!validDate(date)) return json({error:"invalid_date",expected:"YYYY-MM-DD"},400);
@@ -629,7 +648,7 @@ export default {
     } else if (path.startsWith("/api/fm/") || path.startsWith("/fm-v2-stream/") || path.startsWith("/fm-stream/")) {
       response = (await fmResponse(request,env)) || await compat(request,env,"protected",path);
     } else if (path === "/api/jyotish-chat") {
-      response = await compat(request,env,"router","/jyotish-chat");
+      response = await handleJyotishChat(request,env);
     } else if (path === "/api/rashifal/universal" && request.method === "GET") {
       response = (await nativeRashifalUniversal(request,env)) || await compat(request,env,"protected","/api/rashifal/universal");
     } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
