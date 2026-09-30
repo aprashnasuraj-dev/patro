@@ -5,7 +5,7 @@ const root = process.cwd();
 const basePath = resolve(root, "wrangler.jsonc");
 const outputPath = resolve(root, "wrangler.generated.jsonc");
 const base = JSON.parse(await readFile(basePath, "utf8"));
-const splitPagesWorker = process.env.CF_DEPLOY_MODE?.trim() !== "single-worker";
+const splitPagesWorker = process.env.CF_DEPLOY_MODE?.trim() === "pages-worker";
 if (splitPagesWorker) delete base.assets;
 
 const d1Id = process.env.CF_D1_DATABASE_ID?.trim();
@@ -36,4 +36,4 @@ base.kv_namespaces = [{
 }];
 
 await writeFile(outputPath, JSON.stringify(base, null, 2) + "\n", "utf8");
-console.log(`Generated wrangler.generated.jsonc with D1/KV bindings and schema-only migrations (${splitPagesWorker ? "Pages + API Worker" : "single Worker + Static Assets"} mode).`);
+console.log(`Generated wrangler.generated.jsonc with D1/KV bindings and schema-only migrations (${splitPagesWorker ? "optional Pages + API Worker" : "default single Worker + Static Assets"} mode).`);
