@@ -15,14 +15,12 @@
     "lint": "tsc --noEmit",
     "doctor": "node scripts/doctor.mjs",
     "dev:vite": "vite",
-    "deploy": "npm run deploy:cloudflare",
-    "dev:cloudflare": "npm run build && wrangler dev --config wrangler.jsonc",
-    "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
+    "dev:cloudflare": "npm run build && wrangler dev --config wrangler.toml",
+    "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.toml",
     "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
     "cloudflare:validate": "node scripts/validate-cloudflare.mjs",
     "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
     "deploy:cloudflare:bootstrap": "node scripts/bootstrap-cloudflare.mjs",
-    "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
     "cloudflare:generate-d1": "node scripts/generate-d1-migrations.mjs",
     "dev:pages": "npm run build && wrangler pages dev --config wrangler.pages.jsonc",
     "deploy:pages": "npm run build && wrangler pages deploy --config wrangler.pages.jsonc",
@@ -30,13 +28,13 @@
     "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs",
     "cloudflare:verify-inventory": "node scripts/verify-migration-inventory.mjs",
     "cf:validate-data": "npm run cloudflare:verify-snapshot",
-    "cf:deploy": "npm run deploy:cloudflare",
     "cf:schema:remote": "npm run cloudflare:migrate",
     "cf:import:remote": "npm run cloudflare:import-d1:recovery",
     "cf:bootstrap": "npm run deploy:cloudflare:bootstrap",
     "cloudflare:import-d1:recovery": "node scripts/cloudflare/import-d1.mjs --remote",
     "cloudflare:smoke": "node scripts/cutover-smoke.mjs",
-    "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs"
+    "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
+    "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -51,7 +49,10 @@
     "qrcode-generator": "2.0.4",
     "lucide-react": "0.468.0",
     "html-to-image": "1.11.13",
-    "tesseract.js": "7.0.0"
+    "tesseract.js": "7.0.0",
+    "@supabase/supabase-js": "2.57.4",
+    "hono": "4.9.8",
+    "zod": "4.1.12"
   },
   "devDependencies": {
     "@types/react": "19.1.2",
