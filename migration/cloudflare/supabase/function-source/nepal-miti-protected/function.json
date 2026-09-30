@@ -1,0 +1,101 @@
+{
+  "slug": "nepal-miti-protected",
+  "version": 130,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790692772091,
+  "ezbr_sha256": "0d51a27d5ee6b53dc6d411a0697894b15936cf8e681fc284f0c5c35109ba9869",
+  "env": [
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_SECRET_KEYS",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL",
+    "TV_RELAY_SECRET"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 1398887
+    },
+    {
+      "name": "habits.ts",
+      "chars": 10672
+    },
+    {
+      "name": "habits-ui.ts",
+      "chars": 21244
+    },
+    {
+      "name": "habits-i18n.ts",
+      "chars": 9463
+    },
+    {
+      "name": "hls-asset.ts",
+      "chars": 628009
+    },
+    {
+      "name": "tv-catalog.ts",
+      "chars": 1041918
+    },
+    {
+      "name": "tv-relay.ts",
+      "chars": 10999
+    },
+    {
+      "name": "time-machine.ts",
+      "chars": 386801
+    },
+    {
+      "name": "samachar.ts",
+      "chars": 31619
+    },
+    {
+      "name": "fm.ts",
+      "chars": 35282
+    },
+    {
+      "name": "explore.ts",
+      "chars": 3163
+    },
+    {
+      "name": "foundation.ts",
+      "chars": 3379
+    },
+    {
+      "name": "home-enhance.ts",
+      "chars": 39280
+    },
+    {
+      "name": "bundle-runtime.ts",
+      "chars": 84090
+    },
+    {
+      "name": "rashifal.ts",
+      "chars": 46459
+    },
+    {
+      "name": "jyotish-chat-ui.ts",
+      "chars": 23635
+    },
+    {
+      "name": "launch-polish.ts",
+      "chars": 15474
+    },
+    {
+      "name": "tool-pages.ts",
+      "chars": 8163
+    },
+    {
+      "name": "dedicated-pages.ts",
+      "chars": 5619
+    },
+    {
+      "name": "rashifal-ssr.ts",
+      "chars": 6700
+    },
+    {
+      "name": "shared-shell.ts",
+      "chars": 6828
+    }
+  ]
+}

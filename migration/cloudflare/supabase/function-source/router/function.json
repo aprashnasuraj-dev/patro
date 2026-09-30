@@ -1,0 +1,102 @@
+{
+  "slug": "router",
+  "version": 54,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790731614883,
+  "ezbr_sha256": "21af975bbe817dc1f4107f72a33b892e0610ffbc62b2db0e8fdf1cf6d7eb8053",
+  "env": [
+    "GROQ_API_KEY",
+    "GROQ_KEY",
+    "GROQ_MODEL",
+    "Groq_API",
+    "NASA_API_KEY",
+    "NGC_API_KEY",
+    "NVIDIA_API_KEY",
+    "NVIDIA_MODEL",
+    "NVIDIA_NIM_API_KEY",
+    "RADIO_RELAY_SECRET",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL",
+    "TV_RELAY_SECRET",
+    "nvidia_api"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 33233
+    },
+    {
+      "name": "services/contact.ts",
+      "chars": 1486
+    },
+    {
+      "name": "services/toolCatalog.ts",
+      "chars": 3820
+    },
+    {
+      "name": "services/typingLexicon.ts",
+      "chars": 5090
+    },
+    {
+      "name": "services/jyotishChat.ts",
+      "chars": 21681
+    },
+    {
+      "name": "services/doctor.ts",
+      "chars": 2685
+    },
+    {
+      "name": "services/patroTools.ts",
+      "chars": 10663
+    },
+    {
+      "name": "services/communitySuites.ts",
+      "chars": 25720
+    },
+    {
+      "name": "community-engine/tirhuta.ts",
+      "chars": 2021
+    },
+    {
+      "name": "community-engine/limbu.ts",
+      "chars": 3451
+    },
+    {
+      "name": "community-engine/newa-script.ts",
+      "chars": 3990
+    },
+    {
+      "name": "services/calendarService.ts",
+      "chars": 2983
+    },
+    {
+      "name": "services/nasaService.ts",
+      "chars": 6079
+    },
+    {
+      "name": "services/cosmicService.ts",
+      "chars": 22997
+    },
+    {
+      "name": "services/tithiEngine.ts",
+      "chars": 7047
+    },
+    {
+      "name": "services/nocFuel.ts",
+      "chars": 6031
+    },
+    {
+      "name": "services/radioBrowser.ts",
+      "chars": 19839
+    },
+    {
+      "name": "services/mediaProxy.ts",
+      "chars": 4599
+    },
+    {
+      "name": "deno.json",
+      "chars": 158
+    }
+  ]
+}

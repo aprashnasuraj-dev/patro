@@ -1,0 +1,163 @@
+import { createClient } from "npm:@supabase/supabase-js@2";
+
+const NASA_APOD_URL = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
+const NASA_APOD_LEGACY_URL = "https://api.nasa.gov/planetary/apod";
+const NASA_API_KEY = Deno.env.get("NASA_API_KEY") || "DEMO_KEY";
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+
+const supabase = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
+  ? createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false }
+    })
+  : null;
+
+const FALLBACK_URL = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moon_2026_print.jpg";
+
+export interface ApodNormalizedResponse {
+  title: string;
+  explanation: string;
+  media_type: "image";
+  source_media_type: "image" | "video";
+  url: string;
+  hdurl: string;
+  date: string;
+  copyright: string;
+  is_fallback: boolean;
+  fallback_reason?: string;
+}
+
+function fallback(date: string, reason: string): ApodNormalizedResponse {
+  return {
+    title: "Moon Phase Visualization (NASA SVS Fallback)",
+    explanation: "High-resolution lunar visualization provided by NASA Goddard Scientific Visualization Studio while APOD is unavailable.",
+    media_type: "image",
+    source_media_type: "image",
+    url: FALLBACK_URL,
+    hdurl: FALLBACK_URL,
+    date,
+    copyright: "NASA / Goddard Space Flight Center Scientific Visualization Studio",
+    is_fallback: true,
+    fallback_reason: reason
+  };
+}
+
+function youtubeId(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (u.hostname === "youtu.be") return u.pathname.split("/").filter(Boolean)[0]?.slice(0,11) || null;
+    if (u.hostname.includes("youtube.com")) {
+      const q = u.searchParams.get("v");
+      if (q) return q.slice(0,11);
+      const parts = u.pathname.split("/").filter(Boolean);
+      const marker = parts.findIndex(x => ["embed","shorts","live"].includes(x));
+      if (marker >= 0 && parts[marker + 1]) return parts[marker + 1].slice(0,11);
+    }
+  } catch {
+    // fall through to regex
+  }
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|shorts\/|live\/|watch\?v=))([A-Za-z0-9_-]{11})/);
+  return m?.[1] || null;
+}
+
+async function readCache(date: string): Promise<ApodNormalizedResponse | null> {
+  if (!supabase) return null;
+  const { data, error } = await supabase
+    .from("nasa_apod_cache")
+    .select("payload")
+    .eq("date", date)
+    .maybeSingle();
+  if (error || !data?.payload) return null;
+  return data.payload as ApodNormalizedResponse;
+}
+
+async function writeCache(date: string, payload: ApodNormalizedResponse) {
+  if (!supabase || payload.is_fallback) return;
+  await supabase
+    .from("nasa_apod_cache")
+    .upsert({ date, payload, created_at: new Date().toISOString() }, { onConflict: "date" });
+}
+
+export async function fetchNasaApod(requestedDate?: string): Promise<ApodNormalizedResponse> {
+  const targetDate = requestedDate || new Date().toISOString().slice(0,10);
+  const cached = await readCache(targetDate);
+  if (cached) return cached;
+
+  try {
+    const candidates = [
+      NASA_APOD_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate),
+      NASA_APOD_LEGACY_URL + "?api_key=" + encodeURIComponent(NASA_API_KEY) + "&date=" + encodeURIComponent(targetDate)
+    ];
+    let data: any = null;
+    let lastError = "NASA_APOD_UNAVAILABLE";
+    for (const url of candidates) {
+      const attempt = new AbortController();
+      const timer = setTimeout(() => attempt.abort(), 6500);
+      try {
+        const response = await fetch(url, {
+          signal: attempt.signal,
+          headers: { "Accept": "application/json" }
+        });
+        if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
+        const rawData: any = await response.json();
+        const candidateData = Array.isArray(rawData) ? rawData[0] : rawData;
+        if (
+          candidateData &&
+          (candidateData.hdurl || candidateData.url) &&
+          String(candidateData.date || "") === targetDate
+        ) {
+          data = candidateData;
+          break;
+        }
+        data = null;
+        lastError = candidateData?.date && String(candidateData.date) !== targetDate
+          ? "NASA_DATE_MISMATCH"
+          : "NASA_EMPTY_MEDIA_URL";
+      } catch (error) {
+        lastError = error instanceof DOMException && error.name === "AbortError"
+          ? "NASA_TIMEOUT"
+          : String((error as Error)?.message || error);
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+    if (!data) throw new Error(lastError);
+
+    const sourceMedia: "image" | "video" = data.media_type === "video" ? "video" : "image";
+    let finalUrl = String(data.hdurl || data.url || "");
+    let finalHdUrl = String(data.hdurl || finalUrl);
+
+    if (sourceMedia === "video") {
+      const suppliedThumb = String(data.hdurl || "");
+      if (suppliedThumb.startsWith("http")) {
+        finalUrl = suppliedThumb;
+        finalHdUrl = suppliedThumb;
+      } else {
+        const id = youtubeId(String(data.url || ""));
+        if (!id) return fallback(targetDate, "non_youtube_video");
+        finalUrl = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
+        finalHdUrl = finalUrl;
+      }
+    }
+
+    if (!finalUrl) throw new Error("NASA_EMPTY_MEDIA_URL");
+
+    const normalized: ApodNormalizedResponse = {
+      title: String(data.title || "Astronomy Picture of the Day"),
+      explanation: String(data.explanation || "Astronomical view synchronized with the selected calendar date."),
+      media_type: "image",
+      source_media_type: sourceMedia,
+      url: finalUrl,
+      hdurl: finalHdUrl || finalUrl,
+      date: String(data.date || targetDate),
+      copyright: String(data.copyright || "Public Domain / NASA"),
+      is_fallback: false
+    };
+
+    await writeCache(targetDate, normalized);
+    return normalized;
+  } catch (error) {
+    const reason = String((error as Error)?.message || "upstream_error");
+    return fallback(targetDate, reason);
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "jyotish-chat",
+  "version": 16,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790609173427,
+  "ezbr_sha256": "ecebb146a81e5c571d98ce0a700913740a54a382c9568efb7d10e6ba6eea1c46",
+  "env": [
+    "GROQ_API_KEY",
+    "GROQ_KEY",
+    "GROQ_MODEL",
+    "Groq_API",
+    "NGC_API_KEY",
+    "NVIDIA_API_KEY",
+    "NVIDIA_MODEL",
+    "NVIDIA_NIM_API_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL",
+    "nvidia_api"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 21664
+    }
+  ]
+}
