@@ -4,10 +4,10 @@
 :root{
   --brand-700:#1149B4;--brand-600:#1A5FD6;--brand-500:#2E7BF0;--brand-100:#E4EFFF;--brand-50:#F2F7FF;
   --surface:#FFFFFF;--surface-2:#F2F5FB;--line:#DAE2F0;
-  --ink-900:#0F1B3D;--ink-600:#56637F;--ink-400:#8793AD;
+  --ink-900:#0F1B3D;--ink-600:#56637F;--ink-400:#667085;
   --holiday:#D61F3C;--holiday-bg:#FFF1F3;--festival:#B86E00;--festival-bg:#FFF7E8;
   --bg:#F2F5FB;--panel:#FFFFFF;--panel-strong:#FFFFFF;--panel-soft:#EEF4FF;
-  --ink:#0F1B3D;--muted:#56637F;--muted-2:#8793AD;--danger:#D61F3C;--warning:#B86E00;
+  --ink:#0F1B3D;--muted:#56637F;--muted-2:#667085;--danger:#D61F3C;--warning:#B86E00;
   --cyan:#1A5FD6;--cyan-soft:#1149B4;--line-strong:#8FC1FF;
   --radius-sm:8px;--radius:12px;--radius-lg:18px;--radius-xl:18px;
   --shadow:0 1px 2px rgba(10,42,102,.06),0 10px 30px -16px rgba(10,42,102,.28);
@@ -18,20 +18,20 @@
 }
 :root[data-theme="dark"]{
   --surface:#0E1934;--surface-2:#070F24;--line:#1F2D52;
-  --ink-900:#E7EEFB;--ink-600:#9AA8C6;--ink-400:#6D7B9B;
+  --ink-900:#E7EEFB;--ink-600:#9AA8C6;--ink-400:#8793AD;
   --brand-700:#8FC1FF;--brand-600:#5B9BF6;--brand-500:#2E7BF0;--brand-100:#15285A;--brand-50:#0F1E45;
   --holiday:#FF6F84;--holiday-bg:#2A1024;--festival:#E9A83B;--festival-bg:#2B2110;
   --bg:#070F24;--panel:#0E1934;--panel-strong:#0E1934;--panel-soft:#11224A;
-  --ink:#E7EEFB;--muted:#9AA8C6;--muted-2:#6D7B9B;--cyan:#5B9BF6;--cyan-soft:#8FC1FF;--line-strong:#315791;
+  --ink:#E7EEFB;--muted:#9AA8C6;--muted-2:#8793AD;--cyan:#5B9BF6;--cyan-soft:#8FC1FF;--line-strong:#315791;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -18px rgba(0,0,0,.7);
   color-scheme:dark;
 }
 @media(prefers-color-scheme:dark){
   :root:not([data-theme="light"]):not([data-theme="dark"]){
     --surface:#0E1934;--surface-2:#070F24;--line:#1F2D52;
-    --ink-900:#E7EEFB;--ink-600:#9AA8C6;--ink-400:#6D7B9B;
+    --ink-900:#E7EEFB;--ink-600:#9AA8C6;--ink-400:#8793AD;
     --brand-700:#8FC1FF;--brand-600:#5B9BF6;--brand-500:#2E7BF0;--brand-100:#15285A;--brand-50:#0F1E45;
-    --bg:#070F24;--panel:#0E1934;--panel-strong:#0E1934;--panel-soft:#11224A;--ink:#E7EEFB;--muted:#9AA8C6;--muted-2:#6D7B9B;
+    --bg:#070F24;--panel:#0E1934;--panel-strong:#0E1934;--panel-soft:#11224A;--ink:#E7EEFB;--muted:#9AA8C6;--muted-2:#8793AD;
     --cyan:#5B9BF6;--cyan-soft:#8FC1FF;--line-strong:#315791;color-scheme:dark;
   }
 }
