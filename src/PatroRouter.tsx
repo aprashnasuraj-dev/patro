@@ -32,7 +32,7 @@ const NATIVE_PATHS = new Set([
   "/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites",
   "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers",
   "/samachar","/news","/time-machine","/on-this-day","/history","/jyotish","/jyotish/rashifal","/jyotish/china","/jyotish/china/rashi",
-  "/convert","/search","/notes","/planner","/data-trust","/nepal-sambat","/astrology"
+  "/convert","/search","/notes","/planner","/data-trust","/nepal-sambat","/astrology","/settings","/feedback","/widget/today"
 ]);
 
 function isNativePath(path: string) {
@@ -101,6 +101,9 @@ export function PatroRouter() {
     if (path === "/jyotish/china") return <JanmaPatroSuite />;
     if (path.startsWith("/festival/")) return <FestivalPage />;
     if (path === "/convert") return <RouteAlias to="/tools/convert" />;
+    if (path === "/settings") return <RouteAlias to="/settings/community" />;
+    if (path === "/feedback") return <RouteAlias to="/contact" />;
+    if (path === "/widget/today") return <RouteAlias to="/" />;
     if (path === "/search") return <RouteAlias to="/explore" />;
     if (path === "/notes" || path === "/planner") return <RouteAlias to="/my-diary" />;
     if (path === "/data-trust") return <RouteAlias to="/sources" />;
