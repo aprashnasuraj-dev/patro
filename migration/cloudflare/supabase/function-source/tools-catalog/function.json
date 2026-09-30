@@ -1,0 +1,18 @@
+{
+  "slug": "tools-catalog",
+  "version": 1,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790655849256,
+  "ezbr_sha256": "001eb96c05f782fb2cc583fb428beec8a7ecd19f6de54a8de40d255116a48071",
+  "env": [
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 3803
+    }
+  ]
+}

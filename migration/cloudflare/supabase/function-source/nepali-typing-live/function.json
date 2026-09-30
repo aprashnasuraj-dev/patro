@@ -1,0 +1,19 @@
+{
+  "slug": "nepali-typing-live",
+  "version": 3,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790660046740,
+  "ezbr_sha256": "162276ce300e756fbf9bba74544bd8a4ca2f6416a8db88da3216d6290b77efd9",
+  "env": [],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 1430
+    },
+    {
+      "name": "assets.ts",
+      "chars": 41173
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "typing-lexicon",
+  "version": 1,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790655886095,
+  "ezbr_sha256": "95bef3d6128a3a5c217167861949490ab2a586029b0d2470fda17fdd757d2662",
+  "env": [],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 5071
+    }
+  ]
+}

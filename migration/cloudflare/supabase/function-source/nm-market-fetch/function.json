@@ -1,0 +1,19 @@
+{
+  "slug": "nm-market-fetch",
+  "version": 9,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790578677978,
+  "ezbr_sha256": "f03f7a3dcdb20d7cdefec801758d7818435093610a80455edce92a24fcd58464",
+  "env": [
+    "SUPABASE_SECRET_KEYS",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 1808
+    }
+  ]
+}
