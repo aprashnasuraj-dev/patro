@@ -5,6 +5,16 @@ const root = process.cwd();
 const astroShell = resolve(root, "dist/astro/index.html");
 const requiredSpaShells = [
   "tools/index.html",
+  "fm/index.html",
+  "tv/index.html",
+  "explore/index.html",
+  "my-diary/index.html",
+  "about/index.html",
+  "sources/index.html",
+  "privacy/index.html",
+  "terms/index.html",
+  "contact/index.html",
+  "404/index.html",
   "settings/community/index.html",
   "admin/community-suites/index.html",
   "jyotish/janma-patro/index.html",
@@ -61,6 +71,16 @@ if (!api || !String(api.destination || "").includes("/functions/v1/router/:path*
 const jyotish = rewrites.find((r) => r.source === "/api/jyotish-chat");
 if (!jyotish || !String(jyotish.destination || "").includes("/functions/v1/router/jyotish-chat")) {
   throw new Error("doctor: Jyotish chat still bypasses the canonical router");
+}
+for (const [source, destination] of Object.entries({
+  "/fm": "/fm/index.html",
+  "/tv": "/tv/index.html",
+  "/tools": "/tools/index.html",
+  "/about": "/about/index.html",
+  "/sources": "/sources/index.html"
+})) {
+  const route = rewrites.find((r) => r.source === source);
+  if (!route || route.destination !== destination) throw new Error("doctor: SEO shell rewrite mismatch for " + source);
 }
 const typing = rewrites.find((r) => r.source === "/tools/nepali-typing");
 if (!typing || typing.destination !== "/nepali-typing/index.html") {
