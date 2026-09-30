@@ -29,17 +29,17 @@ export function SiteFooter({ language }: { language: UiLanguage }) {
         <p>{ne?"नेपाली पात्रो, तिथि, चाडपर्व र राशिफल":"Nepali calendar, tithi, festivals and horoscope"}</p>
         <button type="button" onClick={install} disabled={!installPrompt}><Download size={17}/>{ne?"एप इन्स्टल गर्नुहोस्":"Install app"}</button>
       </section>
-      <section><h3>{ne?"पात्रो":"Calendar"}</h3>
+      <section><h2>{ne?"पात्रो":"Calendar"}</h2>
         <a href="/"><CalendarDays size={15}/>{ne?"आजको पात्रो":"Today"}</a>
         <a href="/jyotish/rashifal"><MoonStar size={15}/>{ne?"राशिफल":"Horoscope"}</a>
         <a href="/convert"><BookOpenText size={15}/>{ne?"मिति रूपान्तरण":"Date Converter"}</a>
       </section>
-      <section><h3>{ne?"सुविधाहरू":"Features"}</h3>
+      <section><h2>{ne?"सुविधाहरू":"Features"}</h2>
         <a href="/tv"><Tv size={15}/>{ne?"लाइभ टिभी":"Live TV"}</a>
         <a href="/fm"><Radio size={15}/>{ne?"रेडियो":"Radio"}</a>
         <a href="/tools"><Wrench size={15}/>{ne?"उपयोगी उपकरण":"Tools"}</a>
       </section>
-      <section><h3>{ne?"कम्पनी":"Company"}</h3>
+      <section><h2>{ne?"कम्पनी":"Company"}</h2>
         <a href="/about"><Info size={15}/>{ne?"हाम्रो बारेमा":"About"}</a>
         <a href="/sources"><BookOpenText size={15}/>{ne?"स्रोत र शुद्धता":"Sources & accuracy"}</a>
         <a href="/privacy"><ShieldCheck size={15}/>{ne?"गोपनीयता नीति":"Privacy"}</a>
