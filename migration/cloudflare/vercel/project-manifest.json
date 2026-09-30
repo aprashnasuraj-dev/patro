@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-09-30",
+  "project_id": "prj_MgvAT0zpe4JsrJDTHhpXgcgJLyov",
+  "team_id": "team_CRsXSWBw5O8e3d9Un3xGAFqZ",
+  "project_name": "patro",
+  "production": {
+    "deployment_id": "dpl_C97AejZvkgf3hf9AT5Gmvkx68cjk",
+    "url": "patro-ma5itvkgf-surajdev2.vercel.app",
+    "aliases": [
+      "patro-blush.vercel.app",
+      "patro-surajdev2.vercel.app",
+      "patro-git-main-surajdev2.vercel.app"
+    ],
+    "github_commit_sha": "2a066da49eeadb43abe5d202b0b1ae6e103fc184",
+    "github_ref": "main",
+    "region": [
+      "iad1"
+    ],
+    "source": "git",
+    "state": "READY",
+    "target": "production"
+  }
+}

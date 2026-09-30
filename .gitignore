@@ -10,3 +10,6 @@ dist/
 *.pem
 *.key
 supabase/.temp/
+
+# Local-only migration material; never commit private exports
+.migration-private/

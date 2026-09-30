@@ -1,0 +1,266 @@
+[
+  {
+    "version": "20260918121833",
+    "name": "initial_calendar_backend",
+    "statement_count": 1,
+    "sql_chars": 8160
+  },
+  {
+    "version": "20260918121905",
+    "name": "harden_rls_and_helpers",
+    "statement_count": 1,
+    "sql_chars": 6435
+  },
+  {
+    "version": "20260919000625",
+    "name": "calendar_reference_and_history_layer",
+    "statement_count": 1,
+    "sql_chars": 9242
+  },
+  {
+    "version": "20260919001127",
+    "name": "nepal_sambat_reference_facts",
+    "statement_count": 1,
+    "sql_chars": 4893
+  },
+  {
+    "version": "20260919001255",
+    "name": "add_primary_nepal_sambat_sources",
+    "statement_count": 1,
+    "sql_chars": 699
+  },
+  {
+    "version": "20260919001553",
+    "name": "nepal_sambat_reference_and_on_this_day",
+    "statement_count": 1,
+    "sql_chars": 4805
+  },
+  {
+    "version": "20260919001653",
+    "name": "enrich_nepal_sambat_and_history_schema",
+    "statement_count": 1,
+    "sql_chars": 1644
+  },
+  {
+    "version": "20260919001800",
+    "name": "remove_duplicate_history_policy",
+    "statement_count": 1,
+    "sql_chars": 81
+  },
+  {
+    "version": "20260919004405",
+    "name": "personal_astrology_private_schema",
+    "statement_count": 1,
+    "sql_chars": 3774
+  },
+  {
+    "version": "20260919030923",
+    "name": "protected_calendar_api_rate_limit",
+    "statement_count": 1,
+    "sql_chars": 1293
+  },
+  {
+    "version": "20260919031737",
+    "name": "deny_client_access_rate_buckets",
+    "statement_count": 1,
+    "sql_chars": 236
+  },
+  {
+    "version": "20260919032417",
+    "name": "enable_pg_net_for_preview_publish",
+    "statement_count": 1,
+    "sql_chars": 61
+  },
+  {
+    "version": "20260919032441",
+    "name": "on_this_day_enrichment_and_preview_feedback",
+    "statement_count": 1,
+    "sql_chars": 1636
+  },
+  {
+    "version": "20260919033423",
+    "name": "enable_http_for_internal_publish",
+    "statement_count": 1,
+    "sql_chars": 59
+  },
+  {
+    "version": "20260919034348",
+    "name": "protect_history_and_feedback_behind_edge_api",
+    "statement_count": 1,
+    "sql_chars": 424
+  },
+  {
+    "version": "20260919050854",
+    "name": "public_api_rate_limit",
+    "statement_count": 1,
+    "sql_chars": 1279
+  },
+  {
+    "version": "20260919050957",
+    "name": "explicit_private_public_tables",
+    "statement_count": 1,
+    "sql_chars": 784
+  },
+  {
+    "version": "20260926024739",
+    "name": "app_flags_foundation",
+    "statement_count": 1,
+    "sql_chars": 1562
+  },
+  {
+    "version": "20260926030018",
+    "name": "fm_directory_schema_and_legacy_seed",
+    "statement_count": 1,
+    "sql_chars": 27890
+  },
+  {
+    "version": "20260926033450",
+    "name": "fm_directory_v2_hardening",
+    "statement_count": 1,
+    "sql_chars": 1984
+  },
+  {
+    "version": "20260926033920",
+    "name": "samachar_pipeline_schema",
+    "statement_count": 1,
+    "sql_chars": 3308
+  },
+  {
+    "version": "20260927134259",
+    "name": "bundle_truth_layer_hardened",
+    "statement_count": 1,
+    "sql_chars": 2331
+  },
+  {
+    "version": "20260927134354",
+    "name": "bundle_holidays_hardened",
+    "statement_count": 1,
+    "sql_chars": 2619
+  },
+  {
+    "version": "20260927134358",
+    "name": "bundle_push_hardened",
+    "statement_count": 1,
+    "sql_chars": 2626
+  },
+  {
+    "version": "20260927134458",
+    "name": "bundle_family_hardened",
+    "statement_count": 1,
+    "sql_chars": 9590
+  },
+  {
+    "version": "20260927134547",
+    "name": "bundle_market_ics_mydata_hardened",
+    "statement_count": 1,
+    "sql_chars": 3976
+  },
+  {
+    "version": "20260927134748",
+    "name": "bundle_foundation_security_hardening",
+    "statement_count": 1,
+    "sql_chars": 7876
+  },
+  {
+    "version": "20260927140755",
+    "name": "bundle_verified_seed_20260927",
+    "statement_count": 1,
+    "sql_chars": 168626
+  },
+  {
+    "version": "20260928023224",
+    "name": "rashifal_publication_store",
+    "statement_count": 1,
+    "sql_chars": 1339
+  },
+  {
+    "version": "20260928040059",
+    "name": "astronomical_sync_apod_cache",
+    "statement_count": 1,
+    "sql_chars": 613
+  },
+  {
+    "version": "20260928042229",
+    "name": "astronomical_sync_calendar_map",
+    "statement_count": 1,
+    "sql_chars": 611
+  },
+  {
+    "version": "20260928043644",
+    "name": "fix_apod_cache_date_constraint",
+    "statement_count": 1,
+    "sql_chars": 231
+  },
+  {
+    "version": "20260928043932",
+    "name": "remove_unused_calendar_map_source_index",
+    "statement_count": 1,
+    "sql_chars": 62
+  },
+  {
+    "version": "20260928065511",
+    "name": "ensure_nasa_apod_cache_for_router",
+    "statement_count": 1,
+    "sql_chars": 362
+  },
+  {
+    "version": "20260928081314",
+    "name": "astronomy_cosmic_cache",
+    "statement_count": 1,
+    "sql_chars": 1095
+  },
+  {
+    "version": "20260928125934",
+    "name": "market_snapshots_nepse_metadata",
+    "statement_count": 1,
+    "sql_chars": 686
+  },
+  {
+    "version": "20260928150008",
+    "name": "security_least_privilege_and_rls_hardening",
+    "statement_count": 1,
+    "sql_chars": 2667
+  },
+  {
+    "version": "20260928150257",
+    "name": "security_hardening_client_privileges",
+    "statement_count": 1,
+    "sql_chars": 2184
+  },
+  {
+    "version": "20260928151106",
+    "name": "security_revoke_postgres_client_default_privileges",
+    "statement_count": 1,
+    "sql_chars": 475
+  },
+  {
+    "version": "20260928160337",
+    "name": "restore_preexisting_bbc_cin_fm_entries",
+    "statement_count": 1,
+    "sql_chars": 1308
+  },
+  {
+    "version": "20260929123610",
+    "name": "community_suites_schema",
+    "statement_count": 1,
+    "sql_chars": 4048
+  },
+  {
+    "version": "20260929230258",
+    "name": "community_preferences_and_admin",
+    "statement_count": 1,
+    "sql_chars": 1962
+  },
+  {
+    "version": "20260929232419",
+    "name": "add_bhoto_jatra_declared_event",
+    "statement_count": 1,
+    "sql_chars": 647
+  },
+  {
+    "version": "20260930012901",
+    "name": "doctor_community_rls_and_ns_fk_index",
+    "statement_count": 1,
+    "sql_chars": 1088
+  }
+]
