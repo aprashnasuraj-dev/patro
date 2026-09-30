@@ -1,7 +1,12 @@
+# MeroPatro crawl policy. GPTBot, OAI-SearchBot, PerplexityBot, CCBot and Google-Extended inherit this public policy.
 User-agent: *
 Allow: /
+Disallow: /api/
 Disallow: /my-diary
 Disallow: /family
 Disallow: /my-data
 Disallow: /settings
+Disallow: /admin
+Disallow: /notes
+Disallow: /planner
 Sitemap: https://patro-blush.vercel.app/sitemap.xml
