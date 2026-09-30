@@ -1,0 +1,28 @@
+name: SEO and performance audit
+
+on:
+  pull_request:
+    branches: [main, cloudflare-migration]
+  push:
+    branches: [cloudflare-migration]
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Build production assets and SEO manifests
+        env:
+          PUBLIC_SITE_URL: https://patro-blush.vercel.app
+        run: npm run build
+      - name: Lighthouse SEO, accessibility and performance gate
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json
