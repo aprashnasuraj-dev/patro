@@ -241,6 +241,10 @@ Then migrate remaining compatibility routes one at a time. The fallback is a mig
 
 ## Migration documentation
 
+- `docs/INVENTORY.md` — repository/runtime/route/API inventory and mapping back to the supplied Aafnai Patro v2 baseline.
+- `PLAN.md` — milestone plan and current migration status.
+- `DEPLOY.md` — top-level no-surprises deployment checklist; detailed Cloudflare steps remain in the Git runbook.
+- `CHANGELOG.md` — migration-facing change log.
 - `docs/CLOUDFLARE_GIT_DEPLOY.md` — exact Git setup and cutover runbook.
 - `docs/CLOUDFLARE_MIGRATION_PARITY.md` — feature/route preservation contract.
 - `cloudflare/migration-manifest.json` — machine-readable migration state.

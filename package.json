@@ -34,7 +34,9 @@
     "cloudflare:import-d1:recovery": "node scripts/cloudflare/import-d1.mjs --remote",
     "cloudflare:smoke": "node scripts/cutover-smoke.mjs",
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
-    "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs"
+    "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
+    "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
+    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
