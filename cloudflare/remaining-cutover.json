@@ -147,5 +147,19 @@
     "display": "Daily calendar condition icon plus maximum temperature where forecast is available",
     "location_default": "Kathmandu 27.7172,85.3240",
     "supabase_dependency": false
+  },
+  "community_frontend_parity": {
+    "required_count": 7,
+    "status": "7/7 source frontends present and build-gated",
+    "routes": [
+      "/nepal-sambat/mandala",
+      "/samudaya/lhosar",
+      "/samudaya/tharu",
+      "/samudaya/mithila",
+      "/samudaya/kirat",
+      "/samudaya/hijri",
+      "/samudaya/chakra"
+    ],
+    "note": "Frontend parity is complete. Community/NS API routes listed under remaining_native_port_groups must still be made Cloudflare-native before Supabase deletion."
   }
 }
