@@ -1,4 +1,7 @@
 import { calculateAstronomicalTithi } from "./tithi";
+import { fetchCosmicDay } from "./cosmic";
+import { radioCatalogResponse, radioStreamResponse } from "./radio";
+import { fmResponse } from "./fm";
 
 type Env = {
   DB?: any;
@@ -7,6 +10,8 @@ type Env = {
   SUPABASE_COMPAT_ORIGIN?: string;
   SUPABASE_PROTECTED_ORIGIN?: string;
   NASA_API_KEY?: string;
+  RADIO_RELAY_SECRET?: string;
+  TV_RELAY_SECRET?: string;
   CALENDAR_COVERAGE_START?: string;
   CALENDAR_COVERAGE_END?: string;
   CALENDAR_SOURCE_VERSION?: string;
@@ -397,6 +402,20 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
     if (!validDate(date)) return json({error:"invalid_date",expected:"YYYY-MM-DD"},400);
     return edgeCached(request,ctx,86400,async() => json(await apod(env,date)));
   }
+  if (path === "/api/v1/nasa/cosmic" && request.method === "GET") {
+    const date = url.searchParams.get("date") || todayNepal();
+    if (!validDate(date)) return json({error:"invalid_date",expected:"YYYY-MM-DD"},400);
+    return edgeCached(request,ctx,900,async() => {
+      const apodPayload = await apod(env,date);
+      return json(await fetchCosmicDay(date,env,apodPayload));
+    });
+  }
+  if (path === "/api/v1/radio/catalog" && request.method === "GET") {
+    return edgeCached(request,ctx,300,() => radioCatalogResponse(request,env));
+  }
+  if (path === "/api/v1/radio/stream" && (request.method === "GET" || request.method === "HEAD")) {
+    return radioStreamResponse(request,env);
+  }
   if (path === "/api/v1/tools/catalog" && request.method === "GET") {
     return edgeCached(request,ctx,600,async() => (await nativeToolCatalog(env)) || compat(request,env));
   }
@@ -507,12 +526,12 @@ export default {
 
     if (path.startsWith("/api/v1/")) {
       response = await handleApi(request,env,ctx);
+    } else if (path.startsWith("/api/fm/") || path.startsWith("/fm-v2-stream/") || path.startsWith("/fm-stream/")) {
+      response = (await fmResponse(request,env)) || await compat(request,env,"protected",path);
     } else if (path === "/api/jyotish-chat") {
       response = await compat(request,env,"router","/jyotish-chat");
     } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
       response = await compat(request,env,"protected","/api/rashifal/personalized");
-    } else if (path.startsWith("/fm-v2-stream/")) {
-      response = await compat(request,env,"protected",path);
     } else {
       const protectedTool = protectedToolPath(path);
       const assetTarget = staticRewriteTarget(path);
