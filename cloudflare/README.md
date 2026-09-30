@@ -60,3 +60,15 @@ Routine deploys apply schema-only D1 migrations first and deploy the Worker seco
 ## Decommission gates
 
 Do not delete Vercel or Supabase until route parity is verified, D1 row counts match, remaining Supabase compatibility routes have been ported, private/auth state has an explicit replacement, and Cloudflare production has completed a rollback observation window.
+
+## Cutover smoke comparison
+
+After the Cloudflare Pages/Worker preview URL exists, compare it against current production before changing DNS:
+
+```bash
+TARGET_ORIGIN=https://<cloudflare-preview-host> npm run cloudflare:smoke
+```
+
+The contract in `cloudflare/cutover-contract.json` checks core HTML routes plus deterministic AD/BS/Nepal Sambat API fields. A status or semantic mismatch exits non-zero. This is a cutover gate, not a substitute for browser/visual verification of media playback and interactive tools.
+
+The live Supabase backend versions that were verified byte-for-byte against Git are recorded in `cloudflare/source-runtime-manifest.json`.

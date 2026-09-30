@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "supabase_project": "pxlsmxbpgdfzjzuqtict",
+  "purpose": "Immutable record of canonical live Supabase Edge Function versions verified against cloudflare-migration before Cloudflare cutover.",
+  "verification": "Live deployed file contents were compared byte-for-byte to Git blob SHAs on branch cloudflare-migration.",
+  "canonical_functions": {
+    "router": {
+      "version": 54,
+      "ezbr_sha256": "21af975bbe817dc1f4107f72a33b892e0610ffbc62b2db0e8fdf1cf6d7eb8053",
+      "repo_exact": true
+    },
+    "nepal-miti-protected": {
+      "version": 130,
+      "ezbr_sha256": "0d51a27d5ee6b53dc6d411a0697894b15936cf8e681fc284f0c5c35109ba9869",
+      "repo_exact": true,
+      "repo_extra_files": [
+        "_deployment.json"
+      ]
+    },
+    "jyotish-chat": {
+      "version": 16,
+      "ezbr_sha256": "ecebb146a81e5c571d98ce0a700913740a54a382c9568efb7d10e6ba6eea1c46",
+      "repo_exact": true
+    },
+    "nm-market-fetch": {
+      "version": 9,
+      "ezbr_sha256": "f03f7a3dcdb20d7cdefec801758d7818435093610a80455edce92a24fcd58464",
+      "repo_exact": true
+    },
+    "nm-push-dispatch": {
+      "version": 8,
+      "ezbr_sha256": "1955dd9d749e5348df91bf468b278bb83b4d0e7f59448365e3a11db7174ca9c7",
+      "repo_exact": true
+    },
+    "tools-catalog": {
+      "version": 1,
+      "ezbr_sha256": "001eb96c05f782fb2cc583fb428beec8a7ecd19f6de54a8de40d255116a48071",
+      "repo_exact": true
+    },
+    "typing-lexicon": {
+      "version": 1,
+      "ezbr_sha256": "95bef3d6128a3a5c217167861949490ab2a586029b0d2470fda17fdd757d2662",
+      "repo_exact": true
+    },
+    "nepali-typing-live": {
+      "version": 3,
+      "ezbr_sha256": "162276ce300e756fbf9bba74544bd8a4ca2f6416a8db88da3216d6290b77efd9",
+      "repo_exact": true
+    },
+    "join-calendar": {
+      "version": 7,
+      "ezbr_sha256": "55880fc44973c414ae2ca3c189fed41b81b2b928400c9135d6fb84b5701d64b4",
+      "repo_exact": true
+    },
+    "nepal-miti-api": {
+      "version": 10,
+      "ezbr_sha256": "3a9a544a82bb9c287f25d5df848292683fe27ff23276ebc17397d3b829cc4647",
+      "repo_exact": true
+    },
+    "nepal-miti": {
+      "version": 7,
+      "ezbr_sha256": "dac71dd65889b3def7c17d3a4107570fab8349d42f5a488e67abbdf588a0aba5",
+      "repo_exact": true
+    }
+  }
+}\n

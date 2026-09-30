@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "legacy_origin": "https://patro-blush.vercel.app",
+  "notes": "Stable cutover contract. HTML routes verify reachability/content type; deterministic JSON routes compare selected semantic fields. Volatile upstream fields are intentionally excluded.",
+  "routes": [
+    {
+      "path": "/",
+      "kind": "html"
+    },
+    {
+      "path": "/convert",
+      "kind": "html"
+    },
+    {
+      "path": "/search",
+      "kind": "html"
+    },
+    {
+      "path": "/notes",
+      "kind": "html"
+    },
+    {
+      "path": "/planner",
+      "kind": "html"
+    },
+    {
+      "path": "/settings",
+      "kind": "html"
+    },
+    {
+      "path": "/time-machine",
+      "kind": "html"
+    },
+    {
+      "path": "/samachar",
+      "kind": "html"
+    },
+    {
+      "path": "/fm",
+      "kind": "html"
+    },
+    {
+      "path": "/tv",
+      "kind": "html"
+    },
+    {
+      "path": "/tools",
+      "kind": "html"
+    },
+    {
+      "path": "/astro",
+      "kind": "html"
+    },
+    {
+      "path": "/jyotish/china",
+      "kind": "html"
+    },
+    {
+      "path": "/samudaya",
+      "kind": "html"
+    },
+    {
+      "path": "/nepal-sambat/mandala",
+      "kind": "html"
+    },
+    {
+      "path": "/api/v1/health",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/sync?date=2026-09-28",
+      "kind": "json-semantic",
+      "fields": [
+        "success",
+        "query_date",
+        "calendars.gregorian_ad",
+        "calendars.bikram_sambat",
+        "calendars.nepal_sambat",
+        "tithi.number",
+        "tithi.en",
+        "tithi.paksha"
+      ]
+    },
+    {
+      "path": "/api/v1/astronomy/tithi?date=2026-09-28&lat=27.7172&lng=85.3240",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/tools/catalog",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/on-this-day?date=2026-09-30",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/time-machine?year=2026&limit=5",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/nasa/apod?date=2026-09-28",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/nasa/cosmic?date=2026-09-28",
+      "kind": "json-status"
+    },
+    {
+      "path": "/api/v1/radio/catalog",
+      "kind": "json-status"
+    }
+  ]
+}\n
