@@ -164,7 +164,7 @@ It performs, in order:
 7. One-time public/reference data import with `wrangler d1 execute --file`.
 8. Exact remote D1 table-count + AD/BS/NS/Panchang verification (`npm run cloudflare:verify-d1-remote`).\n9. Worker deployment.
 
-The generated import excludes private/user tables and strips transaction wrappers that are unsuitable for D1 bulk import.
+The generated import is built from the canonical `migration/data/public` snapshots plus the retained 22-row universal Rashifal seed. It excludes private/user tables and chunk-rewrites any oversized payload so every emitted SQL statement stays within the D1 limit.
 
 ## Routine Worker deploys
 
