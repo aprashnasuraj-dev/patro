@@ -45,13 +45,22 @@ jobs:
               for (const ref of category.auditRefs || []) {
                 const audit = lhr.audits?.[ref.id];
                 if (!audit || audit.score === null || audit.score >= 1) continue;
+                const items = Array.isArray(audit.details?.items)
+                  ? audit.details.items.slice(0, 12).map((item) => ({
+                      selector: item?.node?.selector || item?.selector || null,
+                      snippet: item?.node?.snippet || item?.snippet || null,
+                      label: item?.node?.nodeLabel || item?.nodeLabel || null,
+                      explanation: item?.node?.explanation || item?.explanation || null
+                    }))
+                  : [];
                 console.log(JSON.stringify({
                   category: categoryId,
                   id: ref.id,
                   score: audit.score,
                   title: audit.title,
                   description: audit.description,
-                  displayValue: audit.displayValue || null
+                  displayValue: audit.displayValue || null,
+                  items
                 }));
               }
             }
