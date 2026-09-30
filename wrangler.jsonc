@@ -9,19 +9,11 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*", "/fm-v2-stream/*"]
+    "run_worker_first": [
+      "/api/*",
+      "/fm-v2-stream/*"
+    ]
   },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "mero-patro"
-    }
-  ],
-  "kv_namespaces": [
-    {
-      "binding": "CACHE"
-    }
-  ],
   "vars": {
     "SUPABASE_COMPAT_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router",
     "SUPABASE_PROTECTED_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected",
