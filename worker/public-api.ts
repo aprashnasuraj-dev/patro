@@ -7,6 +7,7 @@ export type PublicEnv={
   CALENDAR_COVERAGE_START?:string;
   CALENDAR_COVERAGE_END?:string;
   CALENDAR_SOURCE_VERSION?:string;
+  RASHIFAL_SERVICE_TOKEN?:string;
 };
 
 const CACHE="public, max-age=60, s-maxage=900, stale-while-revalidate=86400";
@@ -175,6 +176,11 @@ async function rashifalMetadata(env:PublicEnv,url:URL){
   const payload=pub.payload||pub;
   return json({ok:true,schema_version:payload.schema_version||1,engine_version:payload.engine_version||null,period:payload.period,system:payload.system,calendar:payload.calendar,window:payload.window||payload.period_window,signs:SIGNS,source:"Cloudflare D1 migrated publication"},200,LONG);
 }
+async function serviceTokenHash(env:PublicEnv){
+  if(!env.RASHIFAL_SERVICE_TOKEN)return json({ok:false,error:"rashifal_service_token_not_configured"},503,"no-store");
+  const bytes=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(env.RASHIFAL_SERVICE_TOKEN)));
+  return new Response([...bytes].map(x=>x.toString(16).padStart(2,"0")).join(""),{headers:{"content-type":"text/plain; charset=utf-8","cache-control":"no-store","x-patro-backend":"cloudflare-native"}});
+}
 async function rashifalPersonalized(request:Request,env:PublicEnv){
   let body:any;try{body=await request.json()}catch{return json({ok:false,error:"invalid_json"},400)}
   const sign=String(body?.sign||body?.rashi||"").toLowerCase();if(!SIGNS.includes(sign))return json({ok:false,error:"sign_required",signs:SIGNS},400);
@@ -283,6 +289,7 @@ export async function publicApiResponse(request:Request,env:PublicEnv):Promise<R
  if(path==="/api/v1/tithi/next"&&request.method==="GET")return tithiNext(url);
  if(/^\/api\/v1\/calendar\/\d{4}\/\d{1,2}$/.test(path)&&request.method==="GET")return calendarMonth(env,path,url);
  if(path==="/api/v1/rashifal/metadata"&&request.method==="GET")return rashifalMetadata(env,url);
+ if(path==="/api/v1/rashifal/service-token-hash"&&request.method==="GET")return serviceTokenHash(env);
  if(path==="/api/v1/rashifal/personalized"&&request.method==="POST")return rashifalPersonalized(request,env);
  if(path==="/api/v1/typing/lexicon"&&request.method==="GET")return typingLexicon(url);
  if(path==="/api/v1/tools/official-sait"&&request.method==="GET")return officialSait(env,url);
