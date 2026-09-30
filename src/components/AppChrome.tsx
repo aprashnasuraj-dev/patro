@@ -9,8 +9,18 @@ import { IconButton } from "./ui";
 import { t, type UiLanguage } from "../i18n";
 import { SiteFooter } from "./SiteFooter";
 import { applyRouteSeo } from "../seo";
+import { api } from "../api";
+import type { SyncPayload } from "../types";
 
 type ThemeMode = "system" | "light" | "dark";
+
+function todayInKathmandu() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const get = (type: Intl.DateTimeFormatPartTypes) => parts.find((part) => part.type === type)?.value || "";
+  return get("year") + "-" + get("month") + "-" + get("day");
+}
 type RouteItem = { path:string; key:Parameters<typeof t>[1]; icon:typeof CalendarDays; descriptionNe:string; descriptionEn:string };
 
 const MORE_ITEMS: RouteItem[] = [
@@ -55,6 +65,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
   const [offline,setOffline]=useState(()=>!navigator.onLine);
   const [compact,setCompact]=useState(false);
   const [path,setPath]=useState(()=>window.location.pathname.replace(/\/+$/, "")||"/");
+  const [todaySummary,setTodaySummary]=useState<SyncPayload|null>(null);
 
   const filtered=useMemo(()=>{
     const q=query.trim().toLowerCase();
@@ -75,6 +86,12 @@ export function AppChrome({ children }: { children:ReactNode }) {
     meta?.setAttribute("content","#176f3b");
     try{localStorage.setItem("patro.ui.mode",theme);}catch{}
   },[theme]);
+
+  useEffect(()=>{
+    const controller = new AbortController();
+    api.sync(todayInKathmandu(), controller.signal).then(setTodaySummary).catch(() => undefined);
+    return () => controller.abort();
+  },[]);
 
   useEffect(()=>{
     const onKey=(event:KeyboardEvent)=>{
@@ -115,7 +132,9 @@ export function AppChrome({ children }: { children:ReactNode }) {
           <button type="button" onClick={()=>setMoreOpen(v=>!v)} aria-expanded={moreOpen}><MoreHorizontal size={18}/><span>{t(language,"more")}</span></button>
         </nav>
         <div className="mp-actions">
-          <IconButton label={t(language,"search")} onClick={()=>setSearchOpen(true)}><Search size={20}/></IconButton>
+          <button className="mp-search-pill" type="button" aria-label={t(language,"search")} onClick={()=>setSearchOpen(true)}>
+            <Search size={18}/><span>{language==="ne"?"खोज्नुहोस्":"Search"}</span><kbd>⌘K</kbd>
+          </button>
           <button className="mp-language" onClick={()=>setLanguage(v=>v==="ne"?"en":"ne")} aria-label="Toggle Nepali and English">{language==="ne"?"ने | EN":"EN | ने"}</button>
           <IconButton label={t(language,"theme")} onClick={nextTheme}><ThemeIcon size={20}/></IconButton>
           <a className="mp-signin" href="/settings"><UserRound size={18}/><span>{t(language,"signIn")}</span></a>
@@ -130,6 +149,23 @@ export function AppChrome({ children }: { children:ReactNode }) {
         <a className="mp-mega__all" href="/explore">{t(language,"allFeatures")} <ChevronRight size={16}/></a>
       </div>}
     </header>
+    <div className="mp-reference-strip" aria-label={language==="ne"?"आज र मुख्य सेवा":"Today and key services"}>
+      <div className="mp-reference-strip__inner">
+        <div className="mp-reference-today">
+          <b>{todaySummary?.calendars.bikram_sambat || (language==="ne"?"आजको पात्रो":"Today")}</b>
+          <span className="mp-reference-dot" aria-hidden="true"/>
+          <small>{todaySummary ? ((todaySummary.tithi?.ne || todaySummary.tithi?.en || "") + " · " + todaySummary.calendars.gregorian_ad) : (language==="ne"?"मिति मिलाउँदै…":"Synchronizing date…")}</small>
+        </div>
+        <nav className="mp-reference-links" aria-label={language==="ne"?"द्रुत सेवा":"Quick services"}>
+          <a href="/">{language==="ne"?"आज":"Today"}</a>
+          <a href="/jyotish/rashifal">{language==="ne"?"राशिफल":"Rashifal"}</a>
+          <a href="/tools">{language==="ne"?"उपकरण":"Tools"}</a>
+          <a href="/samachar">{language==="ne"?"समाचार":"News"}</a>
+          <a href="/fm">FM</a>
+          <a href="/tv">TV</a>
+        </nav>
+      </div>
+    </div>
 
     <div id="main-content" tabIndex={-1}>{children}</div>
     <SiteFooter language={language}/>
