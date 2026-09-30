@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
-export type ReferenceUtilityId = "calc" | "age" | "clock" | "forex" | "emi" | "vat" | "units" | "words";
+export type ReferenceUtilityId = "calc" | "age" | "clock" | "forex" | "gold" | "emi" | "vat" | "units" | "words";
 
-const REFERENCE_UTILITY_IDS = new Set<ReferenceUtilityId>(["calc","age","clock","forex","emi","vat","units","words"]);
+const REFERENCE_UTILITY_IDS = new Set<ReferenceUtilityId>(["calc","age","clock","forex","gold","emi","vat","units","words"]);
 export function isReferenceUtilityId(value: unknown): value is ReferenceUtilityId {
   return typeof value === "string" && REFERENCE_UTILITY_IDS.has(value as ReferenceUtilityId);
 }
@@ -53,7 +53,7 @@ function calendarDifference(a: Date,b: Date) {
 }
 function money(value:number){return new Intl.NumberFormat("en-IN",{style:"currency",currency:"NPR",maximumFractionDigits:2}).format(Number.isFinite(value)?value:0);}
 
-function Panel({title,eyebrow,children}:{title:string;eyebrow:string;children:React.ReactNode}) {
+function Panel({title,eyebrow,children}:{title:string;eyebrow:string;children:ReactNode}) {
   return <section className="ref-tool-card">
     <header><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div><span className="ref-tool-local">Runs on device</span></header>
     <div className="ref-tool-body">{children}</div>
@@ -132,6 +132,23 @@ function ForexTool(){
   </Panel>;
 }
 
+function GoldTool(){
+  const TOLA_G=11.6638038;
+  const [rate,setRate]=useState(""),[weight,setWeight]=useState("1"),[unit,setUnit]=useState<"tola"|"lal"|"g"|"10g">("tola"),[making,setMaking]=useState("0"),[tax,setTax]=useState("0");
+  const result=useMemo(()=>{
+    const r=Math.max(0,Number(rate)||0),w=Math.max(0,Number(weight)||0);
+    const tola=unit==="tola"?w:unit==="lal"?w/100:unit==="g"?w/TOLA_G:w*10/TOLA_G;
+    const metal=tola*r,mc=metal*(Number(making)||0)/100,tx=(metal+mc)*(Number(tax)||0)/100;
+    return{tola,grams:tola*TOLA_G,metal,making:mc,tax:tx,total:metal+mc+tx};
+  },[rate,weight,unit,making,tax]);
+  return <Panel eyebrow="पैसा र बजार · Money & markets" title="सुनचाँदी हिसाब · Gold calculator">
+    <p className="ref-tool-warning">The current verified market dataset contains NRB forex and NEPSE, but no verified live gold/silver feed. Enter a current trusted per-tola rate; MeroPatro will calculate weight, making charge and tax without inventing a price.</p>
+    <div className="ref-tool-grid three"><label>प्रति तोला दर · Rate per tola (Rs)<input type="number" min="0" step="any" value={rate} onChange={e=>setRate(e.target.value)} placeholder="Enter verified current rate"/></label><label>तौल · Weight<input type="number" min="0" step="any" value={weight} onChange={e=>setWeight(e.target.value)}/></label><label>Unit<select value={unit} onChange={e=>setUnit(e.target.value as typeof unit)}><option value="tola">तोला · Tola</option><option value="lal">लाल · Lal</option><option value="g">ग्राम · Gram</option><option value="10g">10 gram units</option></select></label></div>
+    <div className="ref-tool-grid two" style={{marginTop:12}}><label>Making charge %<input type="number" min="0" step="any" value={making} onChange={e=>setMaking(e.target.value)}/></label><label>Tax / other charge %<input type="number" min="0" step="any" value={tax} onChange={e=>setTax(e.target.value)}/></label></div>
+    <div className="ref-result ref-result-large"><strong>{rate?money(result.total):"Enter a rate"}</strong><span>{result.tola.toFixed(4)} tola · {result.grams.toFixed(3)} g{rate?" · metal "+money(result.metal)+" · making "+money(result.making)+" · tax "+money(result.tax):""}</span></div>
+  </Panel>;
+}
+
 function EmiCalculator(){
   const [principal,setPrincipal]=useState("2500000"),[rate,setRate]=useState("11"),[years,setYears]=useState("10");
   const result=useMemo(()=>{const P=Math.max(0,Number(principal)||0),R=Math.max(0,Number(rate)||0),n=Math.max(1,Math.round((Number(years)||0)*12)),r=R/1200;const emi=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):P/n,total=emi*n,interest=total-P;let bal=P;const schedule=[] as {year:number,principal:number,interest:number,balance:number}[];for(let yr=1;yr<=Math.ceil(n/12);yr++){let pp=0,ii=0;for(let m=0;m<12&&bal>0.005;m++){const it=bal*r,pr=Math.min(Math.max(0,emi-it),bal);ii+=it;pp+=pr;bal-=pr;}schedule.push({year:yr,principal:pp,interest:ii,balance:Math.max(0,bal)});}return{emi,total,interest,n,schedule};},[principal,rate,years]);
@@ -194,6 +211,7 @@ export function ReferenceUtilityTools({tool}:{tool:ReferenceUtilityId}){
   if(tool==="age")return <AgeCalculator/>;
   if(tool==="clock")return <WorldClock/>;
   if(tool==="forex")return <ForexTool/>;
+  if(tool==="gold")return <GoldTool/>;
   if(tool==="emi")return <EmiCalculator/>;
   if(tool==="vat")return <VatPercent/>;
   if(tool==="units")return <TraditionalUnits/>;
