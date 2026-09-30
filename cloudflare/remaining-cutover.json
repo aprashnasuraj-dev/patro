@@ -12,134 +12,114 @@
       "1826-04-11",
       "2037-04-13"
     ],
-    "cloudflare_native_runtime_complete": false,
+    "cloudflare_native_runtime_complete": true,
     "safe_to_delete_supabase": false,
-    "safe_to_delete_vercel": false
+    "safe_to_delete_vercel": false,
+    "private_auth_model": "Google Identity Services + HttpOnly Worker session + Cloudflare D1",
+    "active_supabase_runtime_dependency": false,
+    "code_cutover_blockers": 0
   },
   "already_native_or_local_first": {
     "worker_endpoints": [
-      "/api/v1/health",
-      "/api/v1/sync",
+      "/api/admin/holidays",
+      "/api/cron/market",
+      "/api/cron/push",
+      "/api/cron/revalidate",
+      "/api/family/create",
+      "/api/family/event",
+      "/api/family/invite",
+      "/api/family/join",
+      "/api/family/state",
+      "/api/ics/token",
+      "/api/my-data",
+      "/api/push/jobs",
+      "/api/push/subscribe",
+      "/api/push/vapid",
+      "/api/v1/admin/community-overrides",
+      "/api/v1/admin/ns-festival-dates",
       "/api/v1/astronomy/tithi",
-      "/api/v1/jyotish-chat",
-      "/api/v1/nasa/apod",
-      "/api/v1/weather/daily",
-      "/api/v1/nasa/cosmic",
-      "/api/v1/radio/catalog",
-      "/api/v1/radio/stream",
-      "/api/v1/rashifal/universal",
-      "/api/v1/tools/catalog",
-      "/api/v1/on-this-day",
-      "/api/v1/time-machine",
+      "/api/v1/auth/config",
+      "/api/v1/auth/google",
+      "/api/v1/auth/logout",
+      "/api/v1/auth/me",
+      "/api/v1/calendar/:year/:month",
       "/api/v1/communities",
-      "/api/v1/communities/feed.ics",
-      "/api/v1/communities/lho",
       "/api/v1/communities/:suite",
       "/api/v1/communities/:suite/ics",
+      "/api/v1/communities/feed.ics",
+      "/api/v1/communities/lho",
+      "/api/v1/community-preferences",
+      "/api/v1/convert",
+      "/api/v1/cron/rashifal",
+      "/api/v1/doctor",
+      "/api/v1/festivals",
+      "/api/v1/health",
       "/api/v1/hijri",
       "/api/v1/hijri/ramadan",
+      "/api/v1/holidays",
+      "/api/v1/jyotish-chat",
+      "/api/v1/market/latest",
+      "/api/v1/me/state",
+      "/api/v1/media/proxy",
+      "/api/v1/my-data",
+      "/api/v1/nasa/apod",
+      "/api/v1/nasa/cosmic",
       "/api/v1/nepal-sambat",
-      "/api/v1/nepal-sambat/festivals",
       "/api/v1/nepal-sambat/convert",
-      "/api/v1/nepal-sambat/ics"
+      "/api/v1/nepal-sambat/festivals",
+      "/api/v1/nepal-sambat/ics",
+      "/api/v1/noc/fuel-prices",
+      "/api/v1/on-this-day",
+      "/api/v1/openapi.json",
+      "/api/v1/panchang",
+      "/api/v1/radio/catalog",
+      "/api/v1/radio/stream",
+      "/api/v1/rashifal/metadata",
+      "/api/v1/rashifal/personalized",
+      "/api/v1/rashifal/service-token-hash",
+      "/api/v1/rashifal/universal",
+      "/api/v1/sync",
+      "/api/v1/time-machine",
+      "/api/v1/tithi/derive",
+      "/api/v1/tithi/next",
+      "/api/v1/today",
+      "/api/v1/tools/catalog",
+      "/api/v1/tools/official-sait",
+      "/api/v1/tools/tithi-feed-token",
+      "/api/v1/tools/tithi-feed.ics",
+      "/api/v1/typing/lexicon",
+      "/api/v1/weather/daily"
     ],
     "worker_modules": [
-      "worker/tithi.ts",
+      "src/components/NativeProtectedPages.tsx",
+      "worker/admin.ts",
+      "worker/auth.ts",
+      "worker/community.ts",
       "worker/cosmic.ts",
       "worker/fm.ts",
-      "worker/radio.ts",
+      "worker/jobs.ts",
       "worker/jyotish.ts",
-      "worker/community.ts"
+      "worker/private.ts",
+      "worker/public-api.ts",
+      "worker/push.ts",
+      "worker/radio.ts",
+      "worker/tithi.ts"
     ],
     "data_target": "Cloudflare D1 + KV/Cache API"
   },
-  "remaining_native_port_groups": [
-    {
-      "group": "router_public_api",
-      "blocking_supabase_deletion": true,
-      "routes": [
-        "/api/v1/today",
-        "/api/v1/convert",
-        "/api/v1/festivals",
-        "/api/v1/holidays",
-        "/api/v1/market/latest",
-        "/api/v1/openapi.json",
-        "/api/v1/panchang",
-        "/api/v1/tithi/derive",
-        "/api/v1/tithi/next",
-        "/api/v1/calendar/:year/:month",
-        "/api/v1/rashifal/metadata",
-        "/api/v1/rashifal/personalized",
-        "/api/v1/rashifal/service-token-hash",
-        "/api/v1/cron/rashifal",
-        "/api/v1/typing/lexicon",
-        "/api/v1/tools/tithi-feed-token",
-        "/api/v1/tools/tithi-feed.ics",
-        "/api/v1/tools/official-sait",
-        "/api/v1/community-preferences",
-        "/api/v1/admin/community-overrides",
-        "/api/v1/admin/ns-festival-dates",
-        "/api/v1/doctor",
-        "/api/v1/noc/fuel-prices",
-        "/api/v1/media/proxy"
-      ]
-    },
-    {
-      "group": "private_auth_and_user_state",
-      "blocking_supabase_deletion": true,
-      "routes": [
-        "/api/family/state",
-        "/api/family/create",
-        "/api/family/invite",
-        "/api/family/join",
-        "/api/family/event",
-        "/api/my-data",
-        "/api/ics/token"
-      ],
-      "replacement_needed": "Cloudflare-native authentication/session model plus D1 schema/access-control for private per-user state. Do not place private rows in the public Git repository."
-    },
-    {
-      "group": "push_and_background_jobs",
-      "blocking_supabase_deletion": true,
-      "routes": [
-        "/api/push/vapid",
-        "/api/push/subscribe",
-        "/api/push/jobs",
-        "/api/cron/market",
-        "/api/cron/push",
-        "/api/cron/revalidate",
-        "/api/admin/holidays"
-      ],
-      "replacement_needed": "Cloudflare secrets + Worker/cron trigger implementation + D1/KV state."
-    },
-    {
-      "group": "protected_html_and_compatibility_catchall",
-      "blocking_supabase_deletion": true,
-      "routes": [
-        "/aaja",
-        "/tithi",
-        "/diaspora",
-        "/card",
-        "/family",
-        "/family/join",
-        "/my-data",
-        "/settings/holidays",
-        "/settings/notifications",
-        "/offline",
-        "/developers"
-      ],
-      "replacement_needed": "Serve equivalent React/static/Worker-native pages without generic Supabase protected catch-all."
-    }
-  ],
+  "remaining_native_port_groups": [],
   "cutover_gates": [
-    "No request path in the production route contract invokes SUPABASE_COMPAT_ORIGIN or SUPABASE_PROTECTED_ORIGIN.",
+    "Active src/, worker/ and functions/ production code contains no Supabase origin/client/auth dependency or generic compatibility page fetch.",
     "D1 remote row counts and calendar boundary checks match cloudflare/d1/expected-public-counts.json.",
-    "Private authentication, family, my-data, ICS-token and push state work without Supabase Auth/Postgres.",
-    "Scheduled market/push/revalidation jobs run from Cloudflare Cron Triggers.",
-    "Cloudflare secret names in cloudflare/secrets-manifest.json are configured without committing values.",
-    "PUBLIC_SITE_URL is set to the final production domain and sitemap/canonical output is verified.",
-    "Cloudflare preview passes cloudflare:validate, cloudflare:smoke and Lighthouse SEO/accessibility gates.",
-    "Production runs through an observation/rollback window before Vercel/Supabase deletion."
+    "All D1 migrations including private/auth/admin schemas apply successfully to the remote database.",
+    "Google sign-in, account state, family, my-data, ICS token, community preferences and push ownership work across devices.",
+    "Cloudflare Cron Triggers execute push, market, maintenance and Rashifal publication checks without Supabase/Vercel.",
+    "Cloudflare secrets/configuration contract passes scripts/verify-cloudflare-secrets.mjs.",
+    "All six community calendars plus Samudaya Chakra pass build/runtime/mobile gates.",
+    "Former protected routes render native React/static pages without /api/v1/compat/page.",
+    "Cloudflare preview passes cloudflare:validate, native cutover contracts, cloudflare:smoke and SEO/accessibility/performance audits.",
+    "The one unclaimed legacy private row is preserved until explicit owner claim/import.",
+    "Production completes an observation/rollback window with zero requests to Supabase/Vercel before either service is deleted."
   ],
   "weather": {
     "provider": "Open-Meteo",
@@ -180,7 +160,7 @@
       }
     ],
     "aggregate_route": "/samudaya/chakra",
-    "api_runtime": "Cloudflare-native D1/validated local engines via worker/community.ts",
+    "api_runtime": "Cloudflare-native D1/validated local engines + Google-session private preferences/admin overrides",
     "migrated_rows": {
       "community_dates": 1062,
       "community_festivals": 34,
@@ -193,10 +173,87 @@
       "user_community_preferences": 0,
       "confirmed_ns_festival_dates": 0
     },
-    "pending_private_routes": [
-      "/api/v1/community-preferences",
-      "/api/v1/admin/community-overrides",
-      "/api/v1/admin/ns-festival-dates"
+    "pending_private_routes": []
+  },
+  "non_code_cutover_dependencies": [
+    {
+      "id": "remote_d1",
+      "blocking_production_cutover": true,
+      "requirement": "Provision/link Cloudflare D1, apply all migrations including 0800+, import the complete public snapshot, and pass remote count/boundary verification."
+    },
+    {
+      "id": "native_secrets",
+      "blocking_production_cutover": true,
+      "requirement": "Configure the names in cloudflare/secrets-manifest.json and final PUBLIC_SITE_URL without committing values."
+    },
+    {
+      "id": "legacy_private_row",
+      "blocking_supabase_deletion": true,
+      "requirement": "One legacy Supabase user_calendar_state row existed at snapshot time. Keep Supabase read-only/rollback until its owner signs in with Google and explicitly claims/imports it; do not guess an identity mapping."
+    },
+    {
+      "id": "preview_validation",
+      "blocking_production_cutover": true,
+      "requirement": "Cloudflare preview must pass build, native-cutover contracts, D1 verification, route smoke, 360px/browser checks, SEO/accessibility/performance gates, and authenticated Google/private-state tests."
+    },
+    {
+      "id": "observation_window",
+      "blocking_supabase_deletion": true,
+      "requirement": "After production traffic switches to Cloudflare, verify no production request reaches Supabase/Vercel compatibility origins before deleting rollback infrastructure."
+    }
+  ],
+  "native_private_state": {
+    "identity": "Google provider subject (sub) is the durable external identity key; email is display/contact metadata only.",
+    "session": "Opaque HttpOnly SameSite=Lax cookie; SHA-256 token hash stored in D1.",
+    "tables": [
+      "app_users",
+      "auth_sessions",
+      "user_calendar_state",
+      "user_community_preferences",
+      "families",
+      "family_members",
+      "family_invites",
+      "family_events",
+      "personal_ics_tokens",
+      "push_subscriptions",
+      "notification_jobs",
+      "private_migration_claims"
+    ],
+    "legacy_snapshot": {
+      "user_calendar_state": 1,
+      "user_community_preferences": 0,
+      "families": 0,
+      "family_invites": 0,
+      "push_subscriptions": 0,
+      "personal_ics_tokens": 0,
+      "notification_jobs": 0
+    }
+  },
+  "native_cron": {
+    "schedules": {
+      "push": "*/5 * * * *",
+      "market": "17 0,6,12,18 * * *",
+      "maintenance": "43 2 * * *",
+      "rashifal_health": "11 3 * * *"
+    },
+    "http_routes": [
+      "/api/cron/market",
+      "/api/cron/push",
+      "/api/cron/revalidate",
+      "/api/v1/cron/rashifal"
     ]
-  }
+  },
+  "native_protected_pages": [
+    "/aaja",
+    "/tithi",
+    "/diaspora",
+    "/card",
+    "/family",
+    "/family/join",
+    "/my-data",
+    "/settings/holidays",
+    "/settings/notifications",
+    "/offline",
+    "/developers"
+  ]
 }
