@@ -21,15 +21,23 @@ const HolidaySettingsPage = lazy(() => import("./components/NativeProtectedPages
 const DevelopersPage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.DevelopersPage })));
 const OfflinePage = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.OfflinePage })));
 const RouteAlias = lazy(() => import("./components/NativeProtectedPages").then((m) => ({ default: m.RouteAlias })));
+const NewsPage = lazy(() => import("./components/NativeContentPages").then((m) => ({ default: m.NewsPage })));
+const TimeMachinePage = lazy(() => import("./components/NativeContentPages").then((m) => ({ default: m.TimeMachinePage })));
+const OnThisDayPage = lazy(() => import("./components/NativeContentPages").then((m) => ({ default: m.OnThisDayPage })));
+const RashifalPage = lazy(() => import("./components/NativeContentPages").then((m) => ({ default: m.RashifalPage })));
+const FestivalPage = lazy(() => import("./components/NativeContentPages").then((m) => ({ default: m.FestivalPage })));
 
 const NATIVE_PATHS = new Set([
   "/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404",
   "/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites",
-  "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers"
+  "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers",
+  "/samachar","/news","/time-machine","/on-this-day","/history","/jyotish","/jyotish/rashifal","/jyotish/china","/jyotish/china/rashi",
+  "/convert","/search","/notes","/planner","/data-trust","/nepal-sambat","/astrology"
 ]);
 
 function isNativePath(path: string) {
-  return NATIVE_PATHS.has(path) || path.startsWith("/tools/");
+  return NATIVE_PATHS.has(path) || path.startsWith("/tools/") || path.startsWith("/festival/") ||
+    path.startsWith("/date/") || path.startsWith("/calendar/") || path.startsWith("/jyotish/");
 }
 
 function currentPath() {
@@ -84,6 +92,19 @@ export function PatroRouter() {
   }, []);
 
   const renderRoute = () => {
+    if (path === "/samachar") return <NewsPage />;
+    if (path === "/news") return <RouteAlias to="/samachar" />;
+    if (path === "/time-machine") return <TimeMachinePage />;
+    if (path === "/on-this-day" || path === "/history") return <OnThisDayPage />;
+    if (path === "/jyotish/rashifal" || path === "/jyotish/china/rashi" || path === "/astrology") return <RashifalPage />;
+    if (path === "/jyotish") return <RouteAlias to="/jyotish/rashifal" />;
+    if (path === "/jyotish/china") return <JanmaPatroSuite />;
+    if (path.startsWith("/festival/")) return <FestivalPage />;
+    if (path === "/convert") return <RouteAlias to="/tools/convert" />;
+    if (path === "/search") return <RouteAlias to="/explore" />;
+    if (path === "/notes" || path === "/planner") return <RouteAlias to="/my-diary" />;
+    if (path === "/data-trust") return <RouteAlias to="/sources" />;
+    if (path === "/nepal-sambat") return <RouteAlias to="/nepal-sambat/mandala" />;
     if (path === "/aaja") return <RouteAlias to="/" />;
     if (path === "/tithi") return <RouteAlias to="/tools/tithi-reminder" />;
     if (path === "/diaspora") return <RouteAlias to="/tools/clock" />;
