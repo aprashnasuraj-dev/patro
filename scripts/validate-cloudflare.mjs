@@ -9,6 +9,7 @@ function run(command, args) {
 }
 
 run("npm", ["run", "build"]);
+run("node", ["scripts/generate-d1-migrations.mjs"]);
 
 const d1 = process.env.CF_D1_DATABASE_ID?.trim();
 const kv = process.env.CF_KV_NAMESPACE_ID?.trim();

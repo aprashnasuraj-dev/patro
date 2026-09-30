@@ -23,7 +23,7 @@ base.d1_databases = [{
   binding: "DB",
   database_name: process.env.CF_D1_DATABASE_NAME?.trim() || "mero-patro",
   database_id: d1Id,
-  migrations_dir: "cloudflare/d1/migrations",
+  migrations_dir: ".cloudflare/d1-migrations",
   ...(d1PreviewId ? { preview_database_id: d1PreviewId } : {})
 }];
 

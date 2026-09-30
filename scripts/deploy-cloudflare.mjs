@@ -24,6 +24,7 @@ if (!d1 && !kv) {
   process.exit(0);
 }
 
+run("node", ["scripts/generate-d1-migrations.mjs"]);
 run("node", ["scripts/prepare-cloudflare-config.mjs"]);
 run("npx", ["wrangler", "d1", "migrations", "apply", "DB", "--remote", "--config", "wrangler.generated.jsonc"]);
 run("npx", ["wrangler", "deploy", "--config", "wrangler.generated.jsonc"]);
