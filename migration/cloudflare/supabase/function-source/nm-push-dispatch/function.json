@@ -1,0 +1,19 @@
+{
+  "slug": "nm-push-dispatch",
+  "version": 8,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1790556873782,
+  "ezbr_sha256": "1955dd9d749e5348df91bf468b278bb83b4d0e7f59448365e3a11db7174ca9c7",
+  "env": [
+    "SUPABASE_SECRET_KEYS",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 1313
+    }
+  ]
+}

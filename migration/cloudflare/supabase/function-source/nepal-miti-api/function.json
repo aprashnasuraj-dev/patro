@@ -1,0 +1,18 @@
+{
+  "slug": "nepal-miti-api",
+  "version": 10,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1789788685049,
+  "ezbr_sha256": "3a9a544a82bb9c287f25d5df848292683fe27ff23276ebc17397d3b829cc4647",
+  "env": [
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 1216244
+    }
+  ]
+}

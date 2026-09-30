@@ -1,0 +1,15 @@
+{
+  "slug": "nepal-miti",
+  "version": 7,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "updated_at": 1789795255408,
+  "ezbr_sha256": "dac71dd65889b3def7c17d3a4107570fab8349d42f5a488e67abbdf588a0aba5",
+  "env": [],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 26129
+    }
+  ]
+}

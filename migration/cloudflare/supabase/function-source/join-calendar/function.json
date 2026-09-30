@@ -1,0 +1,23 @@
+{
+  "slug": "join-calendar",
+  "version": 7,
+  "status": "ACTIVE",
+  "verify_jwt": true,
+  "updated_at": 1789734414360,
+  "ezbr_sha256": "55880fc44973c414ae2ca3c189fed41b81b2b928400c9135d6fb84b5701d64b4",
+  "env": [
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_URL"
+  ],
+  "files": [
+    {
+      "name": "index.ts",
+      "chars": 2654
+    },
+    {
+      "name": "deno.json",
+      "chars": 14
+    }
+  ]
+}
