@@ -1,0 +1,10 @@
+# Cloudflare Worker secrets. Copy to .dev.vars for local development only.
+# Production values: wrangler secret put <NAME>
+NASA_API_KEY=
+
+# Optional: Jyotish chat provider keys while the compatibility route remains enabled.
+GROQ_API_KEY=
+NVIDIA_NIM_API_KEY=
+
+# No Supabase service-role key or database password is needed in the Cloudflare Worker.
+# Public legacy compatibility requests are proxied to the existing public Edge Function URLs.
