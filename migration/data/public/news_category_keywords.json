@@ -1,0 +1,114 @@
+{
+  "table": "news_category_keywords",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "category": "politics",
+      "keyword": "राजनीति"
+    },
+    {
+      "category": "politics",
+      "keyword": "संसद"
+    },
+    {
+      "category": "politics",
+      "keyword": "सरकार"
+    },
+    {
+      "category": "politics",
+      "keyword": "निर्वाचन"
+    },
+    {
+      "category": "economy",
+      "keyword": "अर्थ"
+    },
+    {
+      "category": "economy",
+      "keyword": "बजार"
+    },
+    {
+      "category": "economy",
+      "keyword": "बैंक"
+    },
+    {
+      "category": "economy",
+      "keyword": "व्यवसाय"
+    },
+    {
+      "category": "sports",
+      "keyword": "खेल"
+    },
+    {
+      "category": "sports",
+      "keyword": "क्रिकेट"
+    },
+    {
+      "category": "sports",
+      "keyword": "फुटबल"
+    },
+    {
+      "category": "province",
+      "keyword": "प्रदेश"
+    },
+    {
+      "category": "province",
+      "keyword": "पालिका"
+    },
+    {
+      "category": "province",
+      "keyword": "जिल्ला"
+    },
+    {
+      "category": "world",
+      "keyword": "विश्व"
+    },
+    {
+      "category": "world",
+      "keyword": "अन्तर्राष्ट्रिय"
+    },
+    {
+      "category": "tech",
+      "keyword": "प्रविधि"
+    },
+    {
+      "category": "tech",
+      "keyword": "इन्टरनेट"
+    },
+    {
+      "category": "tech",
+      "keyword": "साइबर"
+    },
+    {
+      "category": "tech",
+      "keyword": "एआई"
+    },
+    {
+      "category": "entertainment",
+      "keyword": "मनोरञ्जन"
+    },
+    {
+      "category": "entertainment",
+      "keyword": "चलचित्र"
+    },
+    {
+      "category": "entertainment",
+      "keyword": "संगीत"
+    },
+    {
+      "category": "society",
+      "keyword": "समाज"
+    },
+    {
+      "category": "society",
+      "keyword": "शिक्षा"
+    },
+    {
+      "category": "society",
+      "keyword": "स्वास्थ्य"
+    },
+    {
+      "category": "society",
+      "keyword": "दुर्घटना"
+    }
+  ]
+}

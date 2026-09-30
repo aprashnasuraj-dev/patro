@@ -1,0 +1,1942 @@
+{
+  "table": "official_panchang_facts",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": "0b2b7339-e00d-4429-ba1c-08b19535cdb6",
+      "fact_date": "2022-05-16",
+      "kind": "festival",
+      "key": "buddha_jayanti",
+      "value": {
+        "bs": "2079-02-02",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8b869789-f809-4402-9f5c-c7f04f0cdbd9",
+      "fact_date": "2022-08-12",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2079-04-27",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "921ec59a-3fef-40b4-a6c6-934ece33f525",
+      "fact_date": "2022-08-19",
+      "kind": "festival",
+      "key": "krishna_janmashtami",
+      "value": {
+        "bs": "2079-05-03",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "6a8f58b8-f660-41a5-b114-cf76c2a99249",
+      "fact_date": "2022-09-26",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2079-06-10",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "1e821189-c9cb-4356-9222-97573082bb3a",
+      "fact_date": "2022-10-30",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2079-07-13",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "58459a12-c707-4bf4-be1f-01250f263317",
+      "fact_date": "2022-10-24",
+      "kind": "festival",
+      "key": "laxmi_puja",
+      "value": {
+        "bs": "2079-07-07",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "9d698cf7-81e0-4d60-b7cb-466ac98c6a94",
+      "fact_date": "2022-08-30",
+      "kind": "festival",
+      "key": "haritalika_teej",
+      "value": {
+        "bs": "2079-05-14",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "7b638d07-daaf-468b-8b62-986d02284f1c",
+      "fact_date": "2023-02-18",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2079-11-06",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "fb308c4d-a18f-4466-9202-7ad9dfa5c497",
+      "fact_date": "2023-01-26",
+      "kind": "festival",
+      "key": "basanta_panchami",
+      "value": {
+        "bs": "2079-10-12",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "139630d7-a932-42d5-8851-df0209369878",
+      "fact_date": "2022-09-09",
+      "kind": "festival",
+      "key": "indra_jatra",
+      "value": {
+        "bs": "2079-05-24",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "024de37a-4ca1-48ab-be8e-52b4b19aae26",
+      "fact_date": "2023-03-21",
+      "kind": "festival",
+      "key": "ghode_jatra",
+      "value": {
+        "bs": "2079-12-07",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "086a4e78-1d01-44ab-956a-12c983664c77",
+      "fact_date": "2023-03-06",
+      "kind": "festival",
+      "key": "fagu_purnima",
+      "value": {
+        "bs": "2079-11-22",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "e817cb17-aace-43e5-95ef-07b2e1c43dfb",
+      "fact_date": "2023-03-07",
+      "kind": "festival",
+      "key": "terai_holi",
+      "value": {
+        "bs": "2079-11-23",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b49240e5-0a7d-41e0-bd09-d874d623a132",
+      "fact_date": "2023-01-15",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2079-10-01",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "bc41aedc-be3c-45a4-a344-e3688d2cbe0a",
+      "fact_date": "2022-12-08",
+      "kind": "festival",
+      "key": "dhanya_purnima",
+      "value": {
+        "bs": "2079-08-22",
+        "tier": "golden",
+        "bsYear": 2079,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://narayanilawfirm.com/list-of-public-holidays-in-nepal-2079/",
+      "source_title": "Narayani Law Firm — List of Public Holidays in Nepal 2079 (transcribes MoHA notice)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "e85f3650-fbfb-424c-b4a2-8a34cc64b0f2",
+      "fact_date": "2023-05-05",
+      "kind": "festival",
+      "key": "baisakh_purnima",
+      "value": {
+        "bs": "2080-01-22",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "abe31878-1325-4c4e-bec0-22a35a20382f",
+      "fact_date": "2023-08-31",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2080-05-14",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "e5cd6a9f-3d0a-4c33-9d68-6e5ab9865f78",
+      "fact_date": "2023-09-06",
+      "kind": "festival",
+      "key": "krishna_janmashtami",
+      "value": {
+        "bs": "2080-05-20",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "a8c13baf-f9e6-4905-93d0-9c8b9ff8050a",
+      "fact_date": "2023-10-15",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2080-06-28",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "ca872256-955c-4386-9968-b86dc9197e8d",
+      "fact_date": "2023-11-19",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2080-08-03",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "f4dd1283-b7bd-46ab-8fd4-810e9939dbdc",
+      "fact_date": "2023-12-26",
+      "kind": "festival",
+      "key": "dhanya_purnima",
+      "value": {
+        "bs": "2080-09-10",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8a54c986-473f-45a2-8ed4-fc88d4c273ec",
+      "fact_date": "2024-01-15",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2080-10-01",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "fc45bc22-7209-4a9c-a2cb-f5fa0506c1b7",
+      "fact_date": "2024-03-08",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2080-11-25",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "d00471f0-0b2a-402d-a875-0157a6670491",
+      "fact_date": "2024-03-24",
+      "kind": "festival",
+      "key": "fagu_purnima",
+      "value": {
+        "bs": "2080-12-11",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8a980639-cec1-4eba-a915-d55931193f66",
+      "fact_date": "2024-03-25",
+      "kind": "festival",
+      "key": "terai_holi",
+      "value": {
+        "bs": "2080-12-12",
+        "tier": "golden",
+        "bsYear": 2080,
+        "officialUrl": "https://www.moha.gov.np/en/page/public-holidays-for-2080"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2080/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2080 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "308fefa9-7865-4b31-9afb-fcebf869579d",
+      "fact_date": "2024-04-17",
+      "kind": "festival",
+      "key": "ram_navami",
+      "value": {
+        "bs": "2081-01-05",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "d4f4e1a9-f8e6-44ae-9b0d-d82c24ecd5e4",
+      "fact_date": "2024-05-23",
+      "kind": "festival",
+      "key": "buddha_jayanti",
+      "value": {
+        "bs": "2081-02-10",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "9a3035c7-e924-44d9-b855-6cc7cfbfa86e",
+      "fact_date": "2024-08-19",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2081-05-03",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "14441428-a4b6-43a8-aa39-c98473498239",
+      "fact_date": "2024-08-26",
+      "kind": "festival",
+      "key": "krishna_janmashtami",
+      "value": {
+        "bs": "2081-05-10",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "f760b08f-a479-4741-83f9-00fe6e575502",
+      "fact_date": "2024-09-06",
+      "kind": "festival",
+      "key": "haritalika_teej",
+      "value": {
+        "bs": "2081-05-21",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b3b4f8d0-60d3-47f5-857f-400906cf54c0",
+      "fact_date": "2024-10-03",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2081-06-17",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "732d581c-3720-4094-82c5-49257ddd3f47",
+      "fact_date": "2024-11-07",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2081-07-22",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "0af68093-8c83-4f9c-b8f1-7a738aeca3ca",
+      "fact_date": "2025-01-14",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2081-10-01",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "638ba4a7-04dd-46bc-bb04-f356fb0f41ee",
+      "fact_date": "2025-02-26",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2081-11-14",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "57961188-e1b3-4918-88f1-4d9f57217b8f",
+      "fact_date": "2025-03-13",
+      "kind": "festival",
+      "key": "fagu_purnima",
+      "value": {
+        "bs": "2081-11-29",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b88d8ab3-0053-4ea2-b32a-5fe1f7b48601",
+      "fact_date": "2025-03-14",
+      "kind": "festival",
+      "key": "terai_holi",
+      "value": {
+        "bs": "2081-12-01",
+        "tier": "golden",
+        "bsYear": 2081,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2081"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://edusanjal.com/news/list-of-public-holidays-of-nepal-2081/",
+      "source_title": "Edusanjal — List of Public Holidays of Nepal 2081 (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "c21f211c-582c-4276-be73-67de1f90f1ce",
+      "fact_date": "2025-05-12",
+      "kind": "festival",
+      "key": "buddha_jayanti",
+      "value": {
+        "bs": "2082-01-29",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "c869e59f-7591-4f20-b4ec-5706e946b133",
+      "fact_date": "2025-08-09",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2082-04-24",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "098edd7b-bd0f-4ab3-b25c-6d8a42638d31",
+      "fact_date": "2025-08-10",
+      "kind": "festival",
+      "key": "gai_jatra",
+      "value": {
+        "bs": "2082-04-25",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8aee006e-912d-40d2-bb33-1e92a8a07efc",
+      "fact_date": "2025-08-16",
+      "kind": "festival",
+      "key": "krishna_janmashtami",
+      "value": {
+        "bs": "2082-04-31",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "21e1c076-bade-4873-855f-730c03f6e239",
+      "fact_date": "2025-08-26",
+      "kind": "festival",
+      "key": "haritalika_teej",
+      "value": {
+        "bs": "2082-05-10",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "ee6b0d4f-29ec-49b9-9ac0-bbc95bc049d2",
+      "fact_date": "2025-09-06",
+      "kind": "festival",
+      "key": "indra_jatra",
+      "value": {
+        "bs": "2082-05-21",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b0b8bdbf-3218-42a8-9cf3-8695f77eb9e7",
+      "fact_date": "2025-09-22",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2082-06-06",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "a0bd4c02-64bf-48f4-adc0-c93ad85b6938",
+      "fact_date": "2025-10-27",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2082-07-10",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "d547efbd-5247-42bc-b46e-07d1a666e25a",
+      "fact_date": "2025-12-04",
+      "kind": "festival",
+      "key": "dhanya_purnima",
+      "value": {
+        "bs": "2082-08-18",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "6a293d95-6a07-4e67-96ae-477b375c59dc",
+      "fact_date": "2026-01-15",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2082-10-01",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "4f41e058-a08c-464f-8b6d-b73bdf12d23d",
+      "fact_date": "2026-01-23",
+      "kind": "festival",
+      "key": "basanta_panchami",
+      "value": {
+        "bs": "2082-10-09",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "c1fe7d4c-d6c5-4aac-a010-e68709699429",
+      "fact_date": "2026-02-15",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2082-11-03",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "5ded03ee-fd42-4320-b767-1d8ab9ce38f7",
+      "fact_date": "2026-03-02",
+      "kind": "festival",
+      "key": "fagu_purnima",
+      "value": {
+        "bs": "2082-11-18",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "48378532-9ef9-4348-adbd-ae8cdf6075ba",
+      "fact_date": "2026-03-03",
+      "kind": "festival",
+      "key": "terai_holi",
+      "value": {
+        "bs": "2082-11-19",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "dd1b817b-fc39-4adf-997d-a752f3916f59",
+      "fact_date": "2026-03-18",
+      "kind": "festival",
+      "key": "ghode_jatra",
+      "value": {
+        "bs": "2082-12-04",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "0c496956-63b9-4d05-99a5-e71a12a4c7d2",
+      "fact_date": "2026-03-27",
+      "kind": "festival",
+      "key": "ram_navami",
+      "value": {
+        "bs": "2082-12-13",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2082"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.) (transcribes MoHA notice 2081/11/15, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "fae45e6c-c1b7-41da-9e4c-eabaca7041f6",
+      "fact_date": "2025-10-02",
+      "kind": "festival",
+      "key": "vijaya_dashami",
+      "value": {
+        "bs": "2082-06-16",
+        "tier": "golden",
+        "bsYear": 2082,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://thehimalayantimes.com/nepal/dashain-tika-timings-announced-for-nepalis-around-the-world",
+      "source_title": "The Himalayan Times — Dashain Tika timings announced for Nepalis around the world (2025-09-21)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "c4142947-419b-4df1-b0fa-efc747ef516b",
+      "fact_date": "2026-05-01",
+      "kind": "festival",
+      "key": "buddha_jayanti",
+      "value": {
+        "bs": "2083-01-18",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "12b4bcf1-7746-4fbf-b69c-dc5fb775bb11",
+      "fact_date": "2026-08-28",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2083-05-12",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "4a81c7b2-942a-4853-9417-2c86d0dd2667",
+      "fact_date": "2026-08-29",
+      "kind": "festival",
+      "key": "gai_jatra",
+      "value": {
+        "bs": "2083-05-13",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "0985d012-d692-4815-a4b9-4cb6c33bd0c7",
+      "fact_date": "2026-09-04",
+      "kind": "festival",
+      "key": "krishna_janmashtami",
+      "value": {
+        "bs": "2083-05-19",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "50fa763b-0522-4b31-a27c-415e6297dc49",
+      "fact_date": "2026-09-14",
+      "kind": "festival",
+      "key": "haritalika_teej",
+      "value": {
+        "bs": "2083-05-29",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "87b12310-f496-401f-b9e5-14be0b761496",
+      "fact_date": "2026-09-25",
+      "kind": "festival",
+      "key": "indra_jatra",
+      "value": {
+        "bs": "2083-06-09",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "7815c68c-cb0c-447c-adab-a59f24a6de09",
+      "fact_date": "2026-10-11",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2083-06-25",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "3b44e9a6-030a-4a78-a2cb-3f3da6913e9a",
+      "fact_date": "2026-11-15",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2083-07-29",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b619e039-24a4-421e-9076-938eb3b8540b",
+      "fact_date": "2026-12-24",
+      "kind": "festival",
+      "key": "dhanya_purnima",
+      "value": {
+        "bs": "2083-09-09",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "f0844f72-a83a-4d3a-a1b2-3a3a9a7ec9e3",
+      "fact_date": "2027-01-15",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2083-10-01",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "afbdf841-ee68-4fe4-9991-d57c9cffa6e9",
+      "fact_date": "2027-02-11",
+      "kind": "festival",
+      "key": "basanta_panchami",
+      "value": {
+        "bs": "2083-10-28",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8afe5852-9d8a-4938-b918-aafe4c61fd96",
+      "fact_date": "2027-03-06",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2083-11-22",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "91b0a39e-050a-4cb3-aa59-921fcde444b4",
+      "fact_date": "2027-03-21",
+      "kind": "festival",
+      "key": "fagu_purnima",
+      "value": {
+        "bs": "2083-12-07",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "2e0c3f76-303b-4f91-abc4-9b95b2d27902",
+      "fact_date": "2027-03-22",
+      "kind": "festival",
+      "key": "terai_holi",
+      "value": {
+        "bs": "2083-12-08",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "c920bd98-9b7b-4e64-83a6-9bcbf3cfde1f",
+      "fact_date": "2027-04-06",
+      "kind": "festival",
+      "key": "ghode_jatra",
+      "value": {
+        "bs": "2083-12-23",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": "https://www.moha.gov.np/en/page/government-and-public-holidays-in-2083"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27) (transcribes MoHA notice in Nepal Rajpatra, 2082/11/18)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "d695eb7d-f2c4-433a-9eb2-ad204be5e8ef",
+      "fact_date": "2026-10-17",
+      "kind": "festival",
+      "key": "phulpati",
+      "value": {
+        "bs": "2083-06-31",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "1af576f5-dd77-4bfe-b870-c0506ff7a1cd",
+      "fact_date": "2026-10-18",
+      "kind": "festival",
+      "key": "maha_ashtami",
+      "value": {
+        "bs": "2083-07-01",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "9eeee6d6-d4a6-4eae-8b35-ebb0abb2d916",
+      "fact_date": "2026-10-20",
+      "kind": "festival",
+      "key": "maha_navami",
+      "value": {
+        "bs": "2083-07-03",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "76642650-0f7d-4b05-9c13-ae5a5dc9bbc5",
+      "fact_date": "2026-10-21",
+      "kind": "festival",
+      "key": "vijaya_dashami",
+      "value": {
+        "bs": "2083-07-04",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "88b184df-2304-4f3f-8aeb-49211ea27157",
+      "fact_date": "2026-10-25",
+      "kind": "festival",
+      "key": "kojagrat_purnima",
+      "value": {
+        "bs": "2083-07-08",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "a68a54df-23d7-4c56-9da7-79aa43a94167",
+      "fact_date": "2026-11-08",
+      "kind": "festival",
+      "key": "laxmi_puja",
+      "value": {
+        "bs": "2083-07-22",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8e3e924d-4b73-436f-9dda-0281a72e3753",
+      "fact_date": "2026-11-11",
+      "kind": "festival",
+      "key": "bhai_tika",
+      "value": {
+        "bs": "2083-07-25",
+        "tier": "golden",
+        "bsYear": 2083,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://www.ratopati.com/story/543999/calendar-for-2083-bs-dashain-tika-on-kartik-4th-when-is-tihar",
+      "source_title": "Ratopati — २०८३ सालको पात्रो: कात्तिक ४ गते दसैँको टीका (reports the 2083 panchang published by Nepal Panchang Nirnayak Vikas Samiti; article 2082-11-02)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "43b97eaa-9620-4225-b6c0-a2093acb1e8d",
+      "fact_date": "2021-05-26",
+      "kind": "festival",
+      "key": "buddha_jayanti",
+      "value": {
+        "bs": "2078-02-12",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "55ae6e27-b078-4174-9a5d-1094942d19a5",
+      "fact_date": "2021-08-22",
+      "kind": "festival",
+      "key": "janai_purnima",
+      "value": {
+        "bs": "2078-05-06",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "ef8b5126-1388-4c56-9905-8f95d0cc5ad5",
+      "fact_date": "2021-08-23",
+      "kind": "festival",
+      "key": "gai_jatra",
+      "value": {
+        "bs": "2078-05-07",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "457f2029-309f-47ff-9363-1a386f77d9b6",
+      "fact_date": "2021-09-09",
+      "kind": "festival",
+      "key": "haritalika_teej",
+      "value": {
+        "bs": "2078-05-24",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "39e3cb15-ae11-45fc-82ee-98d2798ccc2b",
+      "fact_date": "2021-10-07",
+      "kind": "festival",
+      "key": "ghatasthapana",
+      "value": {
+        "bs": "2078-06-21",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "aaa20580-9cbd-43f1-b5e1-8190921b623b",
+      "fact_date": "2021-11-10",
+      "kind": "festival",
+      "key": "chhath",
+      "value": {
+        "bs": "2078-07-24",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "4b9abd1b-3725-46d3-8641-4a651382e93e",
+      "fact_date": "2022-01-15",
+      "kind": "festival",
+      "key": "maghe_sankranti",
+      "value": {
+        "bs": "2078-10-01",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b821f38c-1f70-44cd-89b1-11874e885eb0",
+      "fact_date": "2022-02-06",
+      "kind": "festival",
+      "key": "basanta_panchami",
+      "value": {
+        "bs": "2078-10-23",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "3f3300bb-ff1c-4ded-99cb-05bae344ff9a",
+      "fact_date": "2022-03-01",
+      "kind": "festival",
+      "key": "maha_shivaratri",
+      "value": {
+        "bs": "2078-11-17",
+        "tier": "holdout",
+        "bsYear": 2078,
+        "officialUrl": null
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://blog.educatenepal.com/2021/02/list-of-public-holidays-for-2078-bs.html",
+      "source_title": "EducateNepal — List of Public Holidays for 2078 B.S. (2021-2022) (transcribes MoHA notice, Nepal Rajpatra)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "e8f5274f-2225-4088-bc47-d795066b0a61",
+      "fact_date": "2021-10-07",
+      "kind": "sait",
+      "key": "ghatasthapana:ghatasthapana",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Ghatasthapana",
+        "label_ne": "घटस्थापना",
+        "end_local": null,
+        "start_local": "2021-10-07T11:46"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://english.onlinekhabar.com/auspicious-time-dashain-tika-2021.html",
+      "source_title": "OnlineKhabar English (2021-09-24), Nepal Panchanga Nirnayak Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "b4b7abcc-fd86-4f55-94cc-58211e716891",
+      "fact_date": "2021-10-15",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2021-10-15T10:02"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://english.onlinekhabar.com/auspicious-time-dashain-tika-2021.html",
+      "source_title": "OnlineKhabar English (2021-09-24), Nepal Panchanga Nirnayak Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "a9558f79-bef0-41ef-abb6-3c5d395f3721",
+      "fact_date": "2021-10-15",
+      "kind": "sait",
+      "key": "vijaya_dashami:devi_visarjan",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Devi visarjan",
+        "label_ne": "देवी विसर्जन",
+        "end_local": null,
+        "start_local": "2021-10-15T08:19"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://english.onlinekhabar.com/auspicious-time-dashain-tika-2021.html",
+      "source_title": "OnlineKhabar English (2021-09-24), Nepal Panchanga Nirnayak Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "01a6619b-6c6a-458e-9cfe-5f954cfce831",
+      "fact_date": "2022-10-05",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2022-10-05T11:51"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://en.nepalkhabar.com/news/detail/68/",
+      "source_title": "Nepal Khabar (2022-10-05), Panchanga Nirnayak Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "78c7363c-5f93-44be-9111-8e6720682f97",
+      "fact_date": "2024-10-12",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2024-10-12T11:36"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://kathmandupost.com/national/2024/10/12/vijaya-dashami-festival-celebration-today",
+      "source_title": "The Kathmandu Post (2024-10-12), Nepal Panchanga Nirnayak Bikas Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "ef0d7cfe-1980-44d0-acc1-4b13aa0de2e6",
+      "fact_date": "2024-10-12",
+      "kind": "sait",
+      "key": "vijaya_dashami:durga_visarjan",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Durga visarjan",
+        "label_ne": "दुर्गा विसर्जन",
+        "end_local": null,
+        "start_local": "2024-10-12T08:33"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://kathmandupost.com/national/2024/10/12/vijaya-dashami-festival-celebration-today",
+      "source_title": "The Kathmandu Post (2024-10-12), Nepal Panchanga Nirnayak Bikas Samiti",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8c418202-f715-432f-8d31-bfc10fd78f64",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Kathmandu",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:53"
+      },
+      "location_key": "kathmandu",
+      "source_url": "https://thehimalayantimes.com/nepal/dashain-tika-timings-announced-for-nepalis-around-the-world",
+      "source_title": "The Himalayan Times (2025-09-21) — Dashain Tika timings announced for Nepalis around the world",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8110a11a-0a72-4912-a4b8-f598017922a2",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Kolkata",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:49"
+      },
+      "location_key": "delhi",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "de481aab-ad9b-426a-b07d-b8518d442416",
+      "fact_date": "2025-10-01",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "America/New_York",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-01T11:25"
+      },
+      "location_key": "new_york",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "a03923d3-e47c-473b-ba65-4d7184465107",
+      "fact_date": "2025-10-01",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "America/Toronto",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-01T11:55"
+      },
+      "location_key": "toronto",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "63881efe-6900-4f94-b3c2-b848045aaaae",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Tokyo",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:31"
+      },
+      "location_key": "tokyo",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "7f568b14-682d-4225-9650-6fa023f2578d",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Australia/Sydney",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:43"
+      },
+      "location_key": "sydney",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8a642f31-1f9b-48d7-a71e-6ec7509edd30",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Australia/Melbourne",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:19"
+      },
+      "location_key": "melbourne",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "13639d1d-2ff3-46d6-b555-cf8b26ed6577",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Pacific/Auckland",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:23"
+      },
+      "location_key": "wellington",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "8392b174-4c6c-4aee-a4e6-4940cfc0f268",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Europe/London",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T09:17"
+      },
+      "location_key": "london",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "f44ccd62-4b9b-494a-a131-fed9383be100",
+      "fact_date": "2025-10-02",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "Asia/Jerusalem",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-02T11:35"
+      },
+      "location_key": "tel_aviv",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    },
+    {
+      "id": "d39d4b0d-c69e-4eef-9a35-dfba12f63df8",
+      "fact_date": "2025-10-01",
+      "kind": "sait",
+      "key": "vijaya_dashami:vijaya_dashami_tika",
+      "value": {
+        "tz": "America/Chicago",
+        "label_en": "Vijaya Dashami tika",
+        "label_ne": "विजया दशमी टीका",
+        "end_local": null,
+        "start_local": "2025-10-01T11:05"
+      },
+      "location_key": "bowling_green_ky",
+      "source_url": "https://www.ujyaalonepal.com/2025/325103/",
+      "source_title": "Ujyaalo Nepal (2025-10-02) — आज बडा दशैंको टीका : यस्तो छ विभिन्न देशमा टीका लगाउने साइत (reports अन्तर्राष्ट्रिय पञ्चांग निर्णय समिति)",
+      "published_at": null,
+      "entered_by": null,
+      "verified_at": "2026-09-27 14:07:55.062136+00",
+      "created_at": "2026-09-27 14:07:55.062136+00"
+    }
+  ]
+}

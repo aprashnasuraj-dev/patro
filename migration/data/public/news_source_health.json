@@ -1,0 +1,181 @@
+{
+  "table": "news_source_health",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "source_id": "nepalpress",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "nepalkhabar",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "khabarhub",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": "2026-09-26 03:42:45.817+00",
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "himalkhabar",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "ujyaalo",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "deshsanchar",
+      "last_ok_at": "2026-09-26 04:02:53.998+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "shilapatra",
+      "last_ok_at": "2026-09-26 04:03:05.186+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "imagekhabar",
+      "last_ok_at": "2026-09-26 04:03:05.186+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "gorkhapatra",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:05.186+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "kathmandupost",
+      "last_ok_at": "2026-09-26 04:03:05.186+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "myrepublica",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:05.186+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "risingnepal",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:05.186+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "bbc-nepali",
+      "last_ok_at": "2026-09-26 04:03:24.123+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "bizmandu",
+      "last_ok_at": "2026-09-26 04:03:24.123+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "arthasarokar",
+      "last_ok_at": "2026-09-26 04:03:24.123+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "sharesansar",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:24.123+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "techpana",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:24.123+00",
+      "last_error": "HTTP 403",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "ictsamachar",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:03:24.123+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 3
+    },
+    {
+      "source_id": "hamrokhelkud",
+      "last_ok_at": "2026-09-26 04:03:35.703+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "onlinekhabar",
+      "last_ok_at": "2026-09-26 04:07:33.55+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "kantipur",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:07:33.55+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 4
+    },
+    {
+      "source_id": "setopati",
+      "last_ok_at": "2026-09-26 04:07:33.55+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "ratopati",
+      "last_ok_at": "2026-09-26 04:07:33.55+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "nagarik",
+      "last_ok_at": "2026-09-26 04:07:33.55+00",
+      "last_error_at": null,
+      "last_error": null,
+      "consecutive_failures": 0
+    },
+    {
+      "source_id": "annapurna",
+      "last_ok_at": null,
+      "last_error_at": "2026-09-26 04:07:33.55+00",
+      "last_error": "HTTP 404",
+      "consecutive_failures": 4
+    }
+  ]
+}

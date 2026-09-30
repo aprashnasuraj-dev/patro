@@ -1,0 +1,148 @@
+{
+  "table": "calendar_reference_sources",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": 2,
+      "topic": "nepal-sambat",
+      "authority": "Ministry of Federal Affairs and General Administration",
+      "url": "https://www.mofaga.gov.np/",
+      "source_role": "Government date-writing guidance/context",
+      "source_level": "government",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 3,
+      "topic": "nepal-sambat",
+      "authority": "Nepal Panchanga Nirnayak Bikash Samiti",
+      "url": "https://npns.gov.np/",
+      "source_role": "Official Panchanga context",
+      "source_level": "official-panchanga-body",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 4,
+      "topic": "nepal-sambat",
+      "authority": "Nepal Sambat community reference",
+      "url": "https://nepalsambat.org/lunar-calendar/",
+      "source_role": "Traditional lunar month/paksha terminology",
+      "source_level": "cultural-reference",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 5,
+      "topic": "nepal-sambat",
+      "authority": "Nepal Sambat community reference",
+      "url": "https://nepalsambat.org/solar-calendar/",
+      "source_role": "Modern solar Nepal Sambat structure",
+      "source_level": "cultural-reference",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 6,
+      "topic": "bs-history",
+      "authority": "World Calendars / Keith Wood",
+      "url": "https://github.com/kbwood/world-calendars",
+      "source_role": "Historical BS month-length table; code attributes source to ashesh.com.np",
+      "source_level": "open-source-reference",
+      "metadata": {
+        "license": "MIT"
+      },
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 7,
+      "topic": "bs-history",
+      "authority": "Ashok095/bikram-sambat",
+      "url": "https://github.com/Ashok095/bikram-sambat",
+      "source_role": "Historical BS month-length table",
+      "source_level": "open-source-reference",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 8,
+      "topic": "bs-history",
+      "authority": "amitgaru/nepali-datetime",
+      "url": "https://github.com/amitgaru/nepali-datetime",
+      "source_role": "Corroboration table for BS 1975–2100",
+      "source_level": "open-source-reference",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 9,
+      "topic": "nepal-sambat",
+      "authority": "Government of Nepal / MoFAGA-hosted document",
+      "url": "https://www.mofaga.gov.np/notice-file/Notices-20240108125907641.pdf",
+      "source_role": "Primary guidance on Nepal Sambat date writing, lunar year/month boundaries and tithi numbering",
+      "source_level": "government-primary",
+      "metadata": {},
+      "created_at": "2026-09-19 00:12:55.141026+00"
+    },
+    {
+      "id": 1,
+      "topic": "nepal-sambat",
+      "authority": "Office of the President of Nepal",
+      "url": "https://president.gov.np/",
+      "source_role": "Current government notation and Nepal Sambat New Year examples",
+      "source_level": "government-primary",
+      "metadata": {},
+      "created_at": "2026-09-19 00:06:25.701432+00"
+    },
+    {
+      "id": 11,
+      "topic": "nepal-sambat",
+      "authority": "Government of Nepal / Ministry of Culture, Tourism and Civil Aviation",
+      "url": "https://daobardiya.moha.gov.np/upload/aff702e6cd5af671c163358ce68dce56/files/%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2_%E0%A4%B8%E0%A4%82%E0%A4%B5%E0%A4%A4_2_9.pdf",
+      "source_role": "Cabinet-decision implementation letter for Nepal Sambat in government documents",
+      "source_level": "government-primary",
+      "metadata": {},
+      "created_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 12,
+      "topic": "nepal-sambat",
+      "authority": "Office of Prime Minister and Council of Ministers",
+      "url": "https://opmcm.gov.np/category/cabinet-decision/",
+      "source_role": "Current official website displaying Nepal Sambat alongside Bikram Sambat",
+      "source_level": "government-current-use",
+      "metadata": {},
+      "created_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 13,
+      "topic": "nepal-sambat",
+      "authority": "Bagmati Province Ministry of Internal Affairs and Law",
+      "url": "https://moial.bagamati.gov.np/storage/866/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A6%E0%A5%87%E0%A4%B6-%E0%A4%B8%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80-%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%95%E0%A4%BE%E0%A4%9C%E0%A4%95%E0%A5%8B-%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE-%E0%A4%90%E0%A4%A8%2C-%E0%A5%A8%E0%A5%A6%E0%A5%AE%E0%A5%A6.pdf",
+      "source_role": "Bagmati official-language law: Nepal Sambat may be written in provincial/local public documents",
+      "source_level": "province-law",
+      "metadata": {},
+      "created_at": "2026-09-19 00:17:30.835101+00"
+    },
+    {
+      "id": 14,
+      "topic": "astrology",
+      "authority": "Astronomy Engine / CosineKitty",
+      "url": "https://github.com/cosinekitty/astronomy",
+      "source_role": "MIT-licensed client-side astronomical engine used by personal astrology; cross-checked against the master Panchang archive",
+      "source_level": "open-source-ephemeris",
+      "metadata": {},
+      "created_at": "2026-09-19 00:51:49.283719+00"
+    },
+    {
+      "id": 15,
+      "topic": "astrology",
+      "authority": "Open-Meteo Geocoding API",
+      "url": "https://open-meteo.com/en/docs/geocoding-api",
+      "source_role": "Place search returning latitude, longitude and timezone for birth-location entry",
+      "source_level": "geocoding-reference",
+      "metadata": {},
+      "created_at": "2026-09-19 00:51:49.283719+00"
+    }
+  ]
+}

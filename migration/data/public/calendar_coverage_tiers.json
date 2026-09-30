@@ -1,0 +1,51 @@
+{
+  "table": "calendar_coverage_tiers",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": 1,
+      "bs_start": "2033-01-01",
+      "bs_end": "2093-12-30",
+      "ad_start": "1976-04-13",
+      "ad_end": "2037-04-13",
+      "status": "validated-archive",
+      "description": "User-supplied 22,281-day authority + astronomy archive; exact civil mapping retained.",
+      "provenance": {
+        "days": 22281
+      }
+    },
+    {
+      "id": 2,
+      "bs_start": "1975-01-01",
+      "bs_end": "2032-12-30",
+      "ad_start": "1918-04-13",
+      "ad_end": "1976-04-12",
+      "status": "corroborated-open-table",
+      "description": "Open tabulated BS month-length data independently matches amitgaru/nepali-datetime across this range; astronomical layer recomputed.",
+      "provenance": {}
+    },
+    {
+      "id": 3,
+      "bs_start": "1901-01-01",
+      "bs_end": "1974-12-30",
+      "ad_start": "1844-04-11",
+      "ad_end": "1918-04-12",
+      "status": "historical-tabulated",
+      "description": "Open historical BS month-length table; comparison sources contain disagreements, so this is historical rather than authoritative.",
+      "provenance": {}
+    },
+    {
+      "id": 4,
+      "bs_start": "1883-01-01",
+      "bs_end": "1900-12-30",
+      "ad_start": "1826-04-11",
+      "ad_end": "1844-04-10",
+      "status": "exploratory-historical-table",
+      "description": "Month lengths from kbwood/world-calendars (MIT; code attributes its table to ashesh.com.np). A second open historical table disagrees across this entire 18-year segment, so dates are exposed only as exploratory reconstruction, never as authoritative legal/ritual dates.",
+      "provenance": {
+        "comparison_years": 18,
+        "cross_source_disagreement_years": 18
+      }
+    }
+  ]
+}

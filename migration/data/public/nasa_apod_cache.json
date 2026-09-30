@@ -1,0 +1,141 @@
+{
+  "table": "nasa_apod_cache",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "date": "2026-09-28",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2609/CosmicLatte_jhu_960_annotated.jpg",
+        "date": "2026-09-28",
+        "hdurl": "https://apod.nasa.gov/apod/image/2609/CosmicLatte_jhu_960.jpg",
+        "title": "Cosmic Latte: The Average Color of the Universe",
+        "copyright": "Public Domain / NASA",
+        "media_type": "image",
+        "explanation": "What color is the universe?  More precisely, if the entire sky were smeared out, what color would the final mix be?  This whimsical question came up when trying to determine what stars are commonplace in nearby galaxies. The answer, depicted here, is a conditionally perceived shade of beige. In computer parlance: #FFF8E7.  To determine this, astronomers computationally averaged the light emitted by one of the larger samples of galaxies analyzed: the 200,000 galaxies of the 2dF Galaxy Redshift Survey.  The resulting cosmic spectrum has some emission in all parts of the electromagnetic spectrum, but a single perceived composite color.  This color has become much less blue over the past 10 billion years, indicating that redder stars are becoming more prevalent.  In a contest to better name the color, notable entries included skyvory, univeige, and the winner: cosmic latte.   APOD's email for image submissions has changed. Please see: APOD Submissions  Tomorrow: APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 04:37:27.338+00"
+    },
+    {
+      "date": "2024-04-08",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2404/Comet12pTails_ShengyuLi_960.jpg",
+        "date": "2024-04-08",
+        "hdurl": "https://apod.nasa.gov/apod/image/2404/Comet12pTails_ShengyuLi_3000.jpg",
+        "title": "The Changing Ion Tail of Comet Pons-Brooks",
+        "copyright": "Shengyu Li & Shaining",
+        "media_type": "image",
+        "explanation": "How does a comet tail change? It depends on the comet.  The ion tail of Comet 12P/Pons–Brooks has been changing markedly, as detailed in the featured image sequenced over nine days from March 6 to 14 (top to bottom).  On some days, the comet's ion tail was relatively long and complex, but not every day.  Reasons for tail changes include the rate of ejection of material from the comet's nucleus, the strength and complexity of the passing solar wind, and the rotation rate of the comet.  Over the course of a week, apparent changes even include a change of perspective from the Earth. In general, a comet's ion tail will point away from the Sun, as gas expelled is pushed out by the Sun's wind. Today, Pons-Brooks may become a rare comet suddenly visible in the middle of the day for those able to see the Sun totally eclipsed by the Moon.   NASA Coverage: Today's Total Solar Eclipse  Total Eclipse Imagery: Notable Submissions to APOD",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 08:33:03.757+00"
+    },
+    {
+      "date": "2026-09-24",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2609/5SNR_Auriga_2000.jpg",
+        "date": "2026-09-24",
+        "hdurl": "https://apod.nasa.gov/apod/image/2609/5SNR_Auriga_2000.jpg",
+        "title": "The Ghosts of Five Supernovas",
+        "copyright": "Stephane Vetter, Yann Sainty\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)",
+        "media_type": "image",
+        "explanation": "The ghosts of five supernovas haunt this extraordinary image.   It was acquired at Oukaïmeden Observatory in Morocco with approximately 200 hours of observations and shows a large patch of the sky, equivalent to the area of one thousand full moons tiled together, in the constellation of Auriga (the Charioteer).   From left to right, the five supernova remnants visible across the field are G181.1+9.5, G182.4+4.3, G179.0+2.6, G180.0−1.7 (Sh2-240, the Spaghetti Nebula), and G178.2−4.2.   They are highlighted in the annotated image, together with open cluster M37 and the Tadpole Nebula.   As each explosion expanded into space, it created a growing shell of shocked gas and delicate filamentary structures shown in red (hydrogen) and blue (oxygen), respectively.    These ancient stellar explosions happened independently; they are at various distances up to about several thousands of light-years away from Earth and have estimated ages up to tens of thousands of years old.   Early humans may have witnessed them as bright new stars, fading over weeks or months.     APOD's email for image submissions has changed. Please see: APOD Submissions.    APOD's main NASA site is moving : From apod.nasa.gov to science.nasa.gov/apod",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 08:39:23.496+00"
+    },
+    {
+      "date": "2024-12-10",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2412/LeonidsWoodcut_Vollmy_1293.jpg",
+        "date": "2024-12-10",
+        "hdurl": "https://apod.nasa.gov/apod/image/2412/LeonidsWoodcut_Vollmy_1293.jpg",
+        "title": "The Great Meteor Storm of 1833",
+        "copyright": "Public Domain / NASA",
+        "media_type": "image",
+        "explanation": "It was a night of 100,000 meteors.  The Great Meteor Storm of 1833 was perhaps the most impressive meteor event in recent history.  Best visible over eastern North America during the pre-dawn hours of November 13, many people -- including a young Abraham Lincoln -- were woken up to see the sky erupt in streaks and flashes. Hundreds of thousands of meteors blazed across the sky, seemingly pouring out of the constellation of the Lion (Leo).  The featured image is a digitization of a wood engraving which itself was based on a painting from a first-person account. We know today that the Great Meteor Storm of 1833 was caused by the Earth moving through a dense part of the dust trail expelled from Comet Tempel-Tuttle. The Earth moves through this dust stream every November during the Leonid meteor shower. Later this week you might get a slight taste of the intensity of that 1833 meteor storm by witnessing the annual Geminid meteor shower.   Explore Your Universe: Random APOD Generator",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 10:57:38.313+00"
+    },
+    {
+      "date": "2026-02-08",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2602/Sunspot4366_Korona_1280.jpg",
+        "date": "2026-02-08",
+        "hdurl": "https://apod.nasa.gov/apod/image/2602/Sunspot4366_Korona_1280.jpg",
+        "title": "Active Sunspot Region 4366 Crosses the Sun",
+        "copyright": "Daniel Korona",
+        "media_type": "image",
+        "explanation": "An unusually active sunspot region is now crossing the Sun.  The region, labelled AR 4366, is much larger than the Earth and has produced several powerful solar flares over the past ten days.  In the featured image, the region is marked by large and dark sunspots toward the upper right of the Sun's disk. The image captured the Sun over a hill in Zacatecas, Mexico, 5 days ago.  AR 4366 has become a candidate for the most active solar region in this entire 11-year solar cycle.  Active solar regions are frequently associated with increased auroral activity on the Earth.  Now reaching the edge, AR 4366 will begin facing away from the Earth during the coming week. It is not known, though, if the active region will survive long enough to reappear in about two weeks' time, as the Sun rotates.",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 10:57:42.605+00"
+    },
+    {
+      "date": "2025-02-27",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2502/M35_NGC2158_2048.jpg",
+        "date": "2025-02-27",
+        "hdurl": "https://apod.nasa.gov/apod/image/2502/M35_NGC2158_2048.jpg",
+        "title": "Open Star Clusters M35 and NGC 2158",
+        "copyright": "Evan Tsai",
+        "media_type": "image",
+        "explanation": "Framed in this single, starry, telescopic field of view are two open star clusters, M35 and NGC 2158. Located within the boundaries of the constellation Gemini, they do appear to be side by side. Its stars concentrated toward the upper right, M35 is relatively nearby, though. M35 (also cataloged as NGC 2168) is a mere 2800 light-years distant, with 400 or so stars spread out over a volume about 30 light-years across. Bright blue stars frequently distinguish younger open clusters like M35, whose age is estimated at 150 million years. At lower left, NGC 2158 is about four times more distant than M35 and much more compact, shining with the more yellowish light of a population of stars over 10 times older. In general, open star clusters are found along the plane of our Milky Way Galaxy. Loosely gravitationally bound, their member stars tend to be dispersed over billions of years as the open star clusters orbit the galactic center.",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 10:57:45.992+00"
+    },
+    {
+      "date": "2025-02-28",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2502/AthenaEarth.png",
+        "date": "2025-02-28",
+        "hdurl": "https://apod.nasa.gov/apod/image/2502/AthenaEarth.png",
+        "title": "Athena to the Moon",
+        "copyright": "Public Domain / NASA",
+        "media_type": "image",
+        "explanation": "Planet Earth hangs in the background of this space age selfie. The snapshot was captured by the IM-2 Nova-C lander Athena, just after stage separation following its February 26 launch to the Moon. A tall robotic lander, Athena is scheduled to touch down on Thursday, March 6, in Mons Mouton, a plateau near the Moon’s South Pole. The intended landing site is in the central portion of one of the Artemis 3 potential landing regions. Athena carries rovers and experiments as part of NASA's Commercial Lunar Payload Services program, including a drill intended to explore beneath the lunar surface in a search for evidence of frozen water. It also carries a propulsive drone dubbed the Micro Nova Hopper. After release to the lunar surface, the autonomous drone is intended to hop into a nearby crater and send science data back to the lander.",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 10:57:48.576+00"
+    },
+    {
+      "date": "2026-09-27",
+      "payload": {
+        "url": "https://apod.nasa.gov/apod/image/2609/M31Before_Scherer_4298.jpg",
+        "date": "2026-09-27",
+        "hdurl": "https://apod.nasa.gov/apod/image/2609/M31Before_Scherer_4298.jpg",
+        "title": "Andromeda before Photoshop",
+        "copyright": "Public Domain / NASA",
+        "media_type": "image",
+        "explanation": "What does the Andromeda galaxy really look like? The featured image shows how our Milky Way Galaxy's closest major galactic neighbor really appears in a long exposure through Earth's busy skies and with a digital camera that introduces normal imperfections.  The picture is a stack of 223 images, each a 300 second exposure, taken from a garden observatory in Portugal during 2019.  Obvious image deficiencies include bright parallel airplane trails, long and continuous satellite trails, short cosmic ray streaks, and bad pixels.  These imperfections were actually not removed with Photoshop specifically, but rather greatly reduced with a series of computer software packages that included Astro Pixel Processor, DeepSkyStacker, and PixInsight.  All of this work was done not to deceive you with a digital fantasy that has little to do with the real likeness of the Andromeda galaxy (M31), but to minimize Earthly artifacts that have nothing to do with the distant galaxy and so better recreate what M31 really does look like.   APOD's email for image submissions has changed. Please see: APOD Submissions APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-28 11:21:33.789+00"
+    },
+    {
+      "date": "2026-09-29",
+      "payload": {
+        "url": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/september/Shrimp_Pawel_2048.jpg?w=2048&h=2560&fit=clip&crop=faces%2Cfocalpoint",
+        "date": "2026-09-29",
+        "hdurl": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/apod/apod/2026/september/Shrimp_Pawel_2048.jpg?w=2048&h=2560&fit=clip&crop=faces%2Cfocalpoint",
+        "title": "Sh2-188: The Shrimp Nebula",
+        "copyright": "<a href=\"https://www.instagram.com/pawelpiechnik.astrophoto/\">Pawel Piechnik</a>",
+        "media_type": "image",
+        "explanation": "<strong>Explanation: </strong>What causes the swirl in the Shrimp Nebula? Its high speed is likely. What is sure is that <a href=\"https://ui.adsabs.harvard.edu/abs/2005MmSAI..76..477W/abstract\">Sh2-188</a> is one of the larger <a href=\"https://apod.nasa.gov/apod/ap260604.html\">planetary nebulas</a> on the night sky, by <a href=\"https://www.desmos.com/calculator/nkroo5ur9f\">angular size</a>, spanning about half the <a href=\"https://apod.nasa.gov/apod/ap251110.html\">diameter of the Moon</a>. Moreover, the <a href=\"https://science.nasa.gov/asset/hubble/signature-of-a-white-dwarf/\">white-dwarf</a> core -- leftover from the <a href=\"https://science.nasa.gov/sun/\">Sun</a>-like star that shed its outer atmosphere -- is moving unusually fast through interstellar space, creating a <a href=\"https://apod.nasa.gov/apod/ap240104.html\">bow shock</a> most visible on the upper left that is <a href=\"https://youtu.be/1wqd_RSEhHo\">similar to</a> a boat plowing <a href=\"https://youtu.be/95sQcSulRFM?t=3\">through water</a>. Although faint, the <a href=\"https://app.astrobin.com/i/gr8l0a\">Shrimp Nebula</a> glows also by <a href=\"https://i.imgur.com/YceJ86e.jpeg\">compressing</a> and brightening gas on its leading edge. The <a href=\"https://www.instagram.com/p/DdBHWd3taKM/\">featured image</a> was taken in the light of <a href=\"https://en.wikipedia.org/wiki/Hydrogen-alpha\">hydrogen</a>, sulfur, and oxygen by a backyard telescope in <a href=\"https://youtu.be/2CHS7fdbX6o\">Krakow</a>, <a href=\"https://en.wikipedia.org/wiki/Poland\">Poland</a> and then digitally adjusted to approximate <a href=\"https://app.astrobin.com/i/20aalv\">the nebula</a>'s true colors.<br><br><strong>APOD's email for image submissions has changed.</strong> Please see: <a href=\"https://apod.nasa.gov/apod/lib/apsubmit2015.html\">APOD Submissions</a><br><strong>APOD's main NASA site has <a href=\"https://asterisk.apod.com/viewtopic.php?t=45023\">moved</a>:</strong> From <a href=\"https://apod.nasa.gov/\">apod.nasa.gov</a> to <a href=\"https://science.nasa.gov/apod\">science.nasa.gov/apod</a><br><strong>Tomorrow's picture: </strong><a href=\"https://apod.nasa.gov/apod/fap/ap260930.html\">open space</a>",
+        "is_fallback": false,
+        "source_media_type": "image"
+      },
+      "created_at": "2026-09-29 04:43:39.104+00"
+    }
+  ]
+}

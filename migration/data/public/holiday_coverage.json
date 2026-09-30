@@ -1,0 +1,66 @@
+{
+  "table": "holiday_coverage",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "bs_year": 2082,
+      "audience": "government",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2025-02-27) — via Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.)"
+    },
+    {
+      "bs_year": 2082,
+      "audience": "women_employees",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2025-02-27) — via Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.)"
+    },
+    {
+      "bs_year": 2082,
+      "audience": "community:jitiya_observers",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2025-02-27) — via Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.)"
+    },
+    {
+      "bs_year": 2082,
+      "audience": "community:kirat",
+      "source_url": "https://pradhanlaw.com/publications/list-of-public-holidays-2082-bs-202526-ad",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2025-02-27) — via Pradhan & Associates — Publication of LIST OF PUBLIC HOLIDAYS, 2082 B.S. (2025/26 A.D.)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "government",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "women_employees",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "community:newar",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "community:jitiya_observers",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "community:kirat",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    },
+    {
+      "bs_year": 2083,
+      "audience": "community:people_with_disabilities",
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27)"
+    }
+  ]
+}

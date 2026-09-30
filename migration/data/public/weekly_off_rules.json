@@ -1,0 +1,17 @@
+{
+  "table": "weekly_off_rules",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": "weekly-government-2083",
+      "audience": "government",
+      "weekdays": [
+        6
+      ],
+      "effective_from": "2026-04-14",
+      "effective_to": null,
+      "source_url": "https://www.pradhanlaw.com/publications/list-of-public-holidays-2083-202627",
+      "source_title": "Ministry of Home Affairs, Government of Nepal notice (2026-03-02) — via Pradhan & Associates — Publication of List of Public Holidays, 2083 (2026/27): Holiday list is stated as \"excluding Saturdays\"; government office hours Sunday–Thursday 10:00–17:00, Friday 10:00–15:00 (winter 10:00–16:00, Nov 2–Jan 29)."
+    }
+  ]
+}

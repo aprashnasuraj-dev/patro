@@ -1,0 +1,126 @@
+{
+  "table": "nepal_sambat_tithi_names",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "tithi_no": 1,
+      "common_roman": "Pāru",
+      "common_devanagari": "पारु",
+      "traditional_roman": "Pāmilā / Pāru",
+      "traditional_devanagari": "पामिला / पारु",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 2,
+      "common_roman": "Dwitiyā",
+      "common_devanagari": "द्वितीया",
+      "traditional_roman": "Nimilā",
+      "traditional_devanagari": "निमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 3,
+      "common_roman": "Tritiyā",
+      "common_devanagari": "तृतीया",
+      "traditional_roman": "Swamilā",
+      "traditional_devanagari": "स्वमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 4,
+      "common_roman": "Chauthi",
+      "common_devanagari": "चौथी",
+      "traditional_roman": "Iṃmilā",
+      "traditional_devanagari": "इंमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 5,
+      "common_roman": "Panchami",
+      "common_devanagari": "पञ्चमी",
+      "traditional_roman": "Nyāmilā",
+      "traditional_devanagari": "न्यामिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 6,
+      "common_roman": "Khasti",
+      "common_devanagari": "खस्ति",
+      "traditional_roman": "Khumilā",
+      "traditional_devanagari": "खुमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 7,
+      "common_roman": "Saptami",
+      "common_devanagari": "सप्तमी",
+      "traditional_roman": "Nhemilā",
+      "traditional_devanagari": "न्हेमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 8,
+      "common_roman": "Ashtami",
+      "common_devanagari": "अष्टमी",
+      "traditional_roman": "Bāmilā",
+      "traditional_devanagari": "बामिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 9,
+      "common_roman": "Navami",
+      "common_devanagari": "नवमी",
+      "traditional_roman": "Gumilā",
+      "traditional_devanagari": "गुमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 10,
+      "common_roman": "Dashami",
+      "common_devanagari": "दशमी",
+      "traditional_roman": "Jhimilā",
+      "traditional_devanagari": "झिमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 11,
+      "common_roman": "Ekādashi",
+      "common_devanagari": "एकादशी",
+      "traditional_roman": "Jhinchamilā",
+      "traditional_devanagari": "झिंचमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 12,
+      "common_roman": "Dwādashi",
+      "common_devanagari": "द्वादशी",
+      "traditional_roman": "Jhinnimilā",
+      "traditional_devanagari": "झिन्निमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 13,
+      "common_roman": "Trayodashi",
+      "common_devanagari": "त्रयोदशी",
+      "traditional_roman": "Jhinswamilā",
+      "traditional_devanagari": "झिंस्वमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 14,
+      "common_roman": "Chahre",
+      "common_devanagari": "चःह्रे",
+      "traditional_roman": "Jhinpyamilā",
+      "traditional_devanagari": "झिंप्यमिला",
+      "metadata": {}
+    },
+    {
+      "tithi_no": 15,
+      "common_roman": "Punhi / Āmāi",
+      "common_devanagari": "पुन्हि / आमाइ",
+      "traditional_roman": "Pūmilā / Punhi · Khiṃmilā / Āmai",
+      "traditional_devanagari": "पूमिला / पुन्हि · खिंमिला / आमाइ",
+      "metadata": {}
+    }
+  ]
+}
