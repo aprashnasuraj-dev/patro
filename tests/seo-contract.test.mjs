@@ -41,11 +41,33 @@ test("edge SEO uses canonical origin override and rich crawl directives", async 
   assert.ok(worker.includes('return Response.redirect(canonical.toString(), 308)'));
 });
 
+test("Cloudflare Pages static routes receive route-specific SEO without UI replacement", async () => {
+  const pages = await read("functions/[[path]].js");
+  assert.ok(pages.includes("rewriteStaticHtml"));
+  assert.ok(pages.includes('"/fm": ["FM Radio · MeroPatro"'));
+  assert.ok(pages.includes('"/tv": ["Live TV · MeroPatro"'));
+  assert.ok(pages.includes('"/samudaya/lhosar"'));
+  assert.ok(pages.includes("max-image-preview:large"));
+  assert.ok(pages.includes('await next()'));
+  assert.ok(pages.includes('return Response.redirect(canonical.toString(), 308)'));
+});
+
+test("Worker and Pages preview deployments canonicalize to the current production host", async () => {
+  const [workerConfig, pagesConfig] = await Promise.all([
+    read("wrangler.toml"),
+    read("wrangler.pages.jsonc")
+  ]);
+  assert.ok(workerConfig.includes('PUBLIC_SITE_URL = "https://patro-blush.vercel.app"'));
+  assert.equal(JSON.parse(pagesConfig).vars.PUBLIC_SITE_URL, "https://patro-blush.vercel.app");
+});
+
 test("SEO surfaces do not inject competitor brand names", async () => {
   const files = [
     "scripts/generate-seo.mjs",
     "worker/index.ts",
-    "index.html"
+    "functions/[[path]].js",
+    "index.html",
+    "public/llms.txt"
   ];
   const forbidden = [/Hamro\s*Patro/i, /Nepali\s*Patro/i];
   for (const file of files) {
@@ -62,4 +84,21 @@ test("base HTML keeps semantic brand and agent discovery metadata", async () => 
   assert.ok(html.includes('rel="describedby" href="/llms.txt"'));
   assert.ok(html.includes("SoftwareApplication"));
   assert.ok(html.includes("max-image-preview:large"));
+});
+
+test("tracked sitemap index points to the three generated sitemap segments", async () => {
+  const [index, pages, community, calendar, robots] = await Promise.all([
+    read("public/sitemap.xml"),
+    read("public/sitemap-pages.xml"),
+    read("public/sitemap-community.xml"),
+    read("public/sitemap-calendar.xml"),
+    read("public/robots.txt")
+  ]);
+  for (const file of ["sitemap-pages.xml", "sitemap-community.xml", "sitemap-calendar.xml"]) {
+    assert.ok(index.includes(file), file);
+  }
+  assert.ok(pages.includes("/aaja"));
+  assert.ok(community.includes("/samudaya/lhosar"));
+  assert.ok(calendar.includes("/calendar/2083/01"));
+  assert.ok(robots.includes("Sitemap: https://patro-blush.vercel.app/sitemap.xml"));
 });
