@@ -694,6 +694,19 @@ h2 {
   border-color: var(--line);
 }
 
+.tithi-transition {
+  display: block;
+  max-width: 100%;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.52rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .paksha-dot {
   display: block;
   margin-top: 5px;

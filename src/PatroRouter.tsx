@@ -9,8 +9,10 @@ import { MyDiary } from "./components/MyDiary";
 import { TrustPage } from "./components/TrustPages";
 import { NotFound } from "./components/NotFound";
 import { PatroToolsShell, PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
+import { CommunityPreferences } from "./community/CommunityPreferences";
+import { CommunityAdmin } from "./community/CommunityAdmin";
 
-const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking"]);
+const NATIVE_PATHS = new Set(["/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites"]);
 
 const PROTECTED_TOOL_PATHS = new Set([
   "/tools/tithi",
@@ -59,6 +61,8 @@ export function PatroRouter() {
     };
   }, []);
 
+  if (path === "/settings/community") return <CommunityPreferences />;
+  if (path === "/admin/community-suites") return <CommunityAdmin />;
   if (path === "/explore") return <FeatureHub />;
   if (path === "/about") return <TrustPage page="about" />;
   if (path === "/sources") return <TrustPage page="sources" />;

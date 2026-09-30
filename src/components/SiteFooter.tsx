@@ -25,7 +25,7 @@ export function SiteFooter({ language }: { language: UiLanguage }) {
   return <footer className="mp-footer">
     <div className="mp-footer__grid">
       <section className="mp-footer__brand">
-        <a href="/" className="mp-footer__lockup"><LogoMark size={42}/><span><strong>मेरो पात्रो</strong><small>Mero Patro</small></span></a>
+        <a href="/" className="mp-footer__lockup"><LogoMark size={42}/><span><strong>MeroPatro</strong></span></a>
         <p>{ne?"नेपाली पात्रो, तिथि, चाडपर्व र राशिफल":"Nepali calendar, tithi, festivals and horoscope"}</p>
         <button type="button" onClick={install} disabled={!installPrompt}><Download size={17}/>{ne?"एप इन्स्टल गर्नुहोस्":"Install app"}</button>
       </section>
@@ -47,6 +47,6 @@ export function SiteFooter({ language }: { language: UiLanguage }) {
         <a href="/contact"><MessageSquare size={15}/>{ne?"सम्पर्क":"Contact"}</a>
       </section>
     </div>
-    <div className="mp-footer__bottom"><span>© २०२६ मेरो पात्रो · सर्वाधिकार सुरक्षित</span><a href="/privacy">{ne?"गोपनीयता":"Privacy"}</a><a href="/terms">{ne?"सर्तहरू":"Terms"}</a></div>
+    <div className="mp-footer__bottom"><span>© २०२६ MeroPatro · सर्वाधिकार सुरक्षित</span><a href="/privacy">{ne?"गोपनीयता":"Privacy"}</a><a href="/terms">{ne?"सर्तहरू":"Terms"}</a></div>
   </footer>;
 }

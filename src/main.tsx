@@ -14,6 +14,7 @@ import "./feature-suite.css";
 import "./restructure.css";
 import "./launch-polish.css";
 import "./utilities.css";
+import "./community/community.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");

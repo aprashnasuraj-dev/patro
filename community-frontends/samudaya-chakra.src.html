@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>समुदाय चक्र · नेपालका सात पात्रो</title>
+<meta name="description" content="राष्ट्रिय (हिन्दू), नेपाल सम्बत, ल्होसार, थारू, मिथिला, किरात र हिजरी — सात पात्रो, एउटै वर्ष–चक्र। एउटै दिन, धेरै नाम। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#0d0c1d" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #0d0c1d; --ink: #f5eedf; --muted: #b3aa98; --accent: #f5eedf; --on-accent: #0d0c1d; --card: #ffffff0b; --line: #ffffff1c; }
+body { background: radial-gradient(1000px 700px at 50% 5%, #211c4d 0%, var(--bg) 62%) fixed; }
+.hero { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 24px; align-items: start; }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
+#ring { width: 100%; max-width: 660px; aspect-ratio: 1; margin: 0 auto; display: block; }
+.dot { cursor: pointer; }
+.dot:hover, .dot:focus { stroke: #fff; stroke-width: 3; outline: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.legend button i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-inline-end: 6px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin: 14px 0; }
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px; text-align: center; }
+.stat b { display: block; font-size: 34px; }
+.shared { display: grid; gap: 10px; }
+.sd { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 12px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
+.sd .date { font-weight: 800; }
+.chip { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 10px; border-radius: 999px; font-size: 14px; color: #0d0c1d; font-weight: 600; }
+.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.doors a { display: block; text-decoration: none; color: #0d0c1d; border-radius: 18px; padding: 16px; font-weight: 800; font-size: 18px; min-height: 110px; position: relative; }
+.doors a small { display: block; font-weight: 700; font-size: 13px; opacity: 1; color: #05040b; margin-top: 6px; }
+#loading { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div id="nav"></div><span class="today" id="today"></span></div>
+  <h1>समुदाय चक्र</h1>
+  <p class="lead">नेपालका सात पात्रो, एउटै वर्ष। हरेक रङ एक समुदाय — एउटै दिनमा धेरै समुदायले पर्व मनाउँदा सेतो धागोले जोडिन्छ।</p>
+  <p id="loading">वर्ष–चक्र गणना हुँदैछ…</p>
+
+  <div class="hero">
+    <div><svg id="ring" viewBox="-320 -320 640 640" role="img" aria-label="सात पात्रोको वर्ष–चक्र"></svg><div class="legend" id="legend"></div></div>
+    <div>
+      <div class="stats" id="stats"></div>
+      <div class="card" id="detail" aria-live="polite"></div>
+      <h2 style="margin-top:18px;font-size:24px">आउँदै</h2>
+      <div class="tl" id="next" style="max-height:360px"></div>
+    </div>
+  </div>
+
+  <section aria-labelledby="shH">
+    <h2 id="shH">एउटै दिन, धेरै नाम</h2>
+    <p class="lead">यस वर्ष जुन दिन एकभन्दा बढी समुदायले पर्व मनाउँछन् — नेपालको विविधता एकै नजरमा।</p>
+    <div class="shared" id="shared"></div>
+  </section>
+
+  <section aria-labelledby="drH">
+    <h2 id="drH">भित्र पस्नुहोस्</h2>
+    <div class="doors" id="doors"></div>
+  </section>
+
+  <footer>
+    राष्ट्रिय/हिन्दू पर्व: नेपाल पञ्चाङ्ग नियम (दशैं, तिहार, तीज, शिवरात्रि…) · नेपाल सम्बत: ४६ जात्रा · ल्होसार, थारू, मिथिला, किरात, हिजरी: समुदाय सुइट। सबै मिति नियमबाट गणना; "सम्भावित" = आधिकारिक घोषणाअघिको अनुमान।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, fmtShort, days, today, Y, reduce, esc } = K;
+document.getElementById('nav').innerHTML = K.nav('samudaya-chakra.html'); K.stamp(document.getElementById('today'));
+const TRACKS = [
+  { id: 'hindu', dev: 'राष्ट्रिय / हिन्दू', color: '#ff9f43', page: null },
+  { id: 'ns', dev: 'नेपाल सम्बत', color: '#e2453c', page: 'nepal-sambat-mandala.html' },
+  { id: 'lhosar', dev: 'ल्होसार', color: '#4f93ff', page: 'lhosar.html' },
+  { id: 'tharu', dev: 'थारू', color: '#e0703a', page: 'tharu.html' },
+  { id: 'mithila', dev: 'मिथिला', color: '#ff5fa2', page: 'mithila.html' },
+  { id: 'kirat', dev: 'किरात', color: '#4fcf8a', page: 'kirat.html' },
+  { id: 'hijri', dev: 'हिजरी', color: '#f2c14e', page: 'hijri.html' },
+];
+const hidden = new Set();
+let EV = []; // { track, dev, en, main, start, end, confidence, summary }
+
+function compute() {
+  const inYear = (d) => d.startsWith(String(Y));
+  // Hindu / national
+  for (const f of S.HINDU_FESTIVALS) {
+    try { const d = S.nextFestivalDate(f, `${Y}-01-01`); if (inYear(d)) EV.push({ track: 'hindu', id: f.id, dev: f.name, en: f.id, main: d, start: d, end: d, confidence: 'computed', summary: '' }); } catch {}
+  }
+  // Nepal Sambat (NS years overlapping Y)
+  const ny0 = S.nsFromAd(`${Y}-01-01`).year;
+  for (const nsY of [ny0, ny0 + 1]) for (const r of S.nsFestivalsOfYear(nsY)) if (inYear(r.start))
+    EV.push({ track: 'ns', id: r.festival.id, dev: r.festival.dev, en: r.festival.roman, main: r.start, start: r.start, end: r.end, confidence: r.festival.declaredAnnually ? 'expected' : 'computed', summary: r.festival.summary });
+  // community suites
+  for (const id of ['lhosar', 'tharu', 'mithila', 'kirat', 'hijri'])
+    for (const r of S.suiteCalendar(S.SUITES[id], Y)) if (!r.region)
+      EV.push({ track: id, id: r.festival.id, dev: r.festival.dev, en: r.festival.roman, main: r.main, start: r.start, end: r.end, confidence: r.confidence, summary: r.festival.summary });
+  EV.sort((a, b) => a.main.localeCompare(b.main));
+}
+
+const len = (Y % 4 === 0 && (Y % 100 !== 0 || Y % 400 === 0)) ? 366 : 365;
+const ang = (iso) => (Date.parse(iso) - Date.UTC(Y, 0, 1)) / 864e5 / len * 360;
+const radius = (i) => 118 + i * 26;
+const trackOf = (id) => TRACKS.find((t) => t.id === id);
+
+function drawRing() {
+  const svg = document.getElementById('ring'); svg.innerHTML = '';
+  const bg = el('g', { style: reduce ? '' : 'animation: spin 300s linear infinite; transform-origin: 0 0' }, svg);
+  for (let k = 0; k < 36; k++) { const [x, y] = P(300, k * 10); el('line', { x1: 0, y1: 0, x2: x, y2: y, stroke: '#ffffff06' }, bg); }
+  K.MONTHS.forEach((m, i) => { const a = ang(`${Y}-${String(i + 1).padStart(2, '0')}-01`), [x1, y1] = P(106, a), [x2, y2] = P(300, a);
+    el('line', { x1, y1, x2, y2, stroke: '#ffffff12' }, svg); const [tx, ty] = P(308, a + 15); const t = el('text', { x: tx, y: ty + 4, 'text-anchor': 'middle', 'font-size': 12, fill: '#b3aa98' }, svg); t.textContent = m.slice(0, 3); });
+  TRACKS.forEach((t, i) => el('circle', { r: radius(i), fill: 'none', stroke: t.color, 'stroke-opacity': hidden.has(t.id) ? .05 : .25 }, svg));
+  // threads: same date across ≥2 visible tracks
+  const byDate = new Map();
+  for (const e of EV) if (!hidden.has(e.track)) { if (!byDate.has(e.main)) byDate.set(e.main, new Set()); byDate.get(e.main).add(e.track); }
+  for (const [d, set] of byDate) if (set.size > 1) {
+    const idx = [...set].map((t) => TRACKS.findIndex((x) => x.id === t)).sort((a, b) => a - b), a = ang(d);
+    const [x1, y1] = P(radius(idx[0]), a), [x2, y2] = P(radius(idx[idx.length - 1]), a);
+    el('line', { x1, y1, x2, y2, stroke: '#ffffff', 'stroke-opacity': .55, 'stroke-width': 1.5 }, svg);
+  }
+  for (const e of EV) {
+    if (hidden.has(e.track)) continue;
+    const i = TRACKS.findIndex((t) => t.id === e.track), r = radius(i), t = TRACKS[i];
+    if (e.end > e.start) { const a0 = ang(e.start), a1 = ang(e.end), [x0, y0] = P(r, a0), [x1, y1] = P(r, a1); el('path', { d: `M${x0},${y0} A${r},${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${x1},${y1}`, stroke: t.color, 'stroke-width': 5, fill: 'none', opacity: .5, 'stroke-linecap': 'round' }, svg); }
+    const [x, y] = P(r, ang(e.main));
+    const c = el('circle', { cx: x, cy: y, r: 5, fill: t.color, stroke: '#0d0c1d', 'stroke-width': 1.5, class: 'dot', tabindex: 0, role: 'button', 'aria-label': `${e.dev} ${e.main}` }, svg);
+    if (e.confidence === 'expected') c.setAttribute('stroke-dasharray', '2 2');
+    el('title', {}, c).textContent = `${t.dev}: ${e.dev} · ${fmt(e.main)}`;
+    const go = () => show(e); c.addEventListener('click', go); c.addEventListener('keydown', (k) => (k.key === 'Enter' || k.key === ' ') && go());
+  }
+  const [hx, hy] = P(290, ang(today)); el('line', { x1: 0, y1: 0, x2: hx, y2: hy, stroke: '#fff', 'stroke-width': 2 }, svg);
+  el('circle', { r: 100, fill: '#141130', stroke: '#ffffff22' }, svg);
+  const a = el('text', { y: -10, 'text-anchor': 'middle', 'font-size': 22, fill: '#f5eedf', 'font-family': 'Tiro Devanagari Sanskrit' }, svg); a.textContent = 'समुदाय चक्र';
+  const b = el('text', { y: 18, 'text-anchor': 'middle', 'font-size': 14, fill: '#b3aa98' }, svg); b.textContent = `${npd(EV.length)} पर्व · ${npd(TRACKS.length)} पात्रो`;
+  const c = el('text', { y: 40, 'text-anchor': 'middle', 'font-size': 13, fill: '#b3aa98' }, svg); c.textContent = fmt(today);
+}
+const style = document.createElement('style'); style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }'; document.head.appendChild(style);
+
+function show(e) {
+  const t = trackOf(e.track), same = EV.filter((x) => x.main === e.main && x !== e), d = days(today, e.start);
+  document.getElementById('detail').innerHTML = `<div class="dt-top" style="color:${t.color}">${t.dev}${t.page ? ` · <a href="${t.page}" style="color:${t.color}">पात्रो खोल्नुहोस् →</a>` : ''}</div>
+    <h2 class="dt-title">${esc(e.dev)} ${K.badge(e.confidence)}</h2>
+    <div class="dt-date">${e.start === e.end ? fmt(e.main) + ', ' + K.weekday(e.main) : fmt(e.start) + ' – ' + fmt(e.end)} · ${d > 0 ? npd(d) + ' दिन बाँकी' : d === 0 ? 'आज!' : npd(-d) + ' दिन अघि'}</div>
+    ${e.summary ? `<p>${esc(e.summary)}</p>` : ''}
+    ${same.length ? `<p><b>सोही दिन:</b> ${same.map((s) => `<span class="chip" style="background:${trackOf(s.track).color}">${esc(s.dev)}</span>`).join('')}</p>` : ''}`;
+}
+
+function drawLegend() {
+  const box = document.getElementById('legend'); box.innerHTML = '';
+  TRACKS.forEach((t) => { const b = document.createElement('button'); b.className = 'pill'; b.setAttribute('aria-pressed', String(!hidden.has(t.id)));
+    b.innerHTML = `<i style="background:${t.color}"></i>${t.dev}`; b.onclick = () => { hidden.has(t.id) ? hidden.delete(t.id) : hidden.add(t.id); drawLegend(); drawRing(); }; box.appendChild(b); });
+}
+
+function drawStats() {
+  const byDate = new Map(); for (const e of EV) { if (!byDate.has(e.main)) byDate.set(e.main, new Set()); byDate.get(e.main).add(e.track); }
+  const shared = [...byDate.values()].filter((s) => s.size > 1).length;
+  const festDays = byDate.size;
+  const nxt = EV.find((e) => e.end >= today);
+  document.getElementById('stats').innerHTML = [[EV.length, 'पर्व यस वर्ष'], [festDays, 'पर्व भएका दिन'], [shared, 'साझा दिन'], [nxt ? Math.max(0, days(today, nxt.start)) : 0, 'दिनमा अर्को पर्व']]
+    .map(([n, l]) => `<div class="stat"><b>${npd(n)}</b><small>${l}</small></div>`).join('');
+}
+
+function drawNext() {
+  const box = document.getElementById('next'); box.innerHTML = '';
+  EV.filter((e) => e.end >= today).slice(0, 12).forEach((e) => { const t = trackOf(e.track), d = days(today, e.start);
+    const b = document.createElement('button'); b.className = 'tl-card';
+    b.innerHTML = `<span>${K.ring(d, t.color, 52)}</span><span><b>${esc(e.dev)}</b> ${K.badge(e.confidence)}<br><small><span style="color:${t.color}">●</span> ${t.dev} · ${fmt(e.main)}</small></span>`;
+    b.onclick = () => show(e); box.appendChild(b); });
+  const first = EV.find((e) => e.end >= today); if (first) show(first);
+}
+
+function drawShared() {
+  const byDate = new Map(); for (const e of EV) { if (!byDate.has(e.main)) byDate.set(e.main, []); byDate.get(e.main).push(e); }
+  const rows = [...byDate.entries()].filter(([, l]) => new Set(l.map((e) => e.track)).size > 1);
+  document.getElementById('shared').innerHTML = rows.map(([d, l]) => `<div class="sd"><div class="date">${fmtShort(d)}<br><small style="color:var(--muted);font-weight:400">${K.weekday(d)}</small></div>
+    <div>${l.map((e) => `<span class="chip" style="background:${trackOf(e.track).color}">${esc(e.dev)}</span>`).join('')}</div></div>`).join('');
+}
+
+function drawDoors() {
+  document.getElementById('doors').innerHTML = TRACKS.filter((t) => t.page).map((t) => { const n = EV.find((e) => e.track === t.id && e.end >= today);
+    return `<a href="${t.page}" style="background:${t.color}">${t.dev}<small>${n ? esc(n.dev) + ' · ' + fmtShort(n.main) : ''}</small></a>`; }).join('');
+}
+
+setTimeout(() => {
+  compute();
+  document.getElementById('loading').remove();
+  drawLegend(); drawRing(); drawStats(); drawNext(); drawShared(); drawDoors();
+}, 30);
+})();
+</script>
+</body>
+</html>

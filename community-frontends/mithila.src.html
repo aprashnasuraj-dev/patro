@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>मधुबनी वर्ष · मिथिला पात्रो</title>
+<meta name="description" content="जुडशीतल, मधुश्रावणी, चौरचन, जितिया, छठ, सामा–चकेवा, विवाह पञ्चमी — मधुबनी शैलीको वर्ष–चक्र, छठ योजनाकार र तिरहुता लिपि। हरेक वर्ष आफैं गणना।" />
+<meta name="theme-color" content="#fff6e5" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Tiro+Devanagari+Sanskrit&family=Noto+Sans+Tirhuta&display=swap" rel="stylesheet" />
+<style>
+/*__KIT_CSS__*/
+:root { --bg: #fff6e5; --ink: #1c1310; --muted: #6b5040; --accent: #d8322a; --on-accent: #fff; --card: #fffdf7; --line: #1c1310;
+  --turmeric: #f2b705; --leaf: #1f8a4c; --indigo: #2a3d8f; --pink: #e05a8a; }
+body { background: var(--bg); }
+.tir { font-family: "Noto Sans Tirhuta", sans-serif; }
+.card, .tl-card, .pill, select, input, textarea { border-width: 2px; }
+.card { box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--ink); }
+.border-band { height: 26px; background:
+  linear-gradient(135deg, var(--accent) 25%, transparent 25%) 0 0 / 26px 26px,
+  linear-gradient(225deg, var(--turmeric) 25%, transparent 25%) 0 0 / 26px 26px, var(--leaf); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); margin: 10px 0; }
+.hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: center; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+#sun, #ring { width: 100%; max-width: 520px; aspect-ratio: 1; margin: 0 auto; display: block; }
+.spin { animation: spin 200s linear infinite; transform-origin: 0 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.chhath { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-top: 12px; }
+@media (max-width: 860px) { .chhath { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 480px) { .chhath { grid-template-columns: 1fr; } }
+.cd { border: 2px solid var(--ink); border-radius: 18px; padding: 14px; background: var(--card); position: relative; }
+.cd .n { position: absolute; top: 8px; right: 12px; font-size: 30px; font-weight: 800; color: #1c131022; }
+.cd h3 { margin: 0; font-size: 20px; }
+.cd .t { font-size: 26px; font-weight: 800; color: var(--accent); }
+.cd.on { background: #fff0c2; }
+.check label { display: block; padding: 4px 0; }
+.letters { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+.letters button { border: 2px solid var(--ink); border-radius: 12px; background: var(--card); padding: 6px; cursor: pointer; }
+.letters .tlt { font-size: 30px; display: block; line-height: 1.2; }
+.birds { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; margin: 10px 0; }
+.birds svg { width: 90px; height: 90px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div id="nav"></div><div style="display:flex;gap:8px;align-items:center"><span class="today" id="today"></span><button class="pill" id="snd" aria-pressed="false">🔕 आवाज बन्द</button></div></div>
+  <div class="border-band" aria-hidden="true"></div>
+
+  <div class="hero">
+    <div>
+      <h1>मधुबनी वर्ष</h1>
+      <p class="tir" style="font-size:30px;margin:0;color:var(--accent)" id="tirTitle"></p>
+      <p class="lead">जुडशीतलदेखि विवाह पञ्चमीसम्म — मिथिलाको वर्ष, मधुबनी रङमा।</p>
+      <div class="hero-count" id="heroCount"></div>
+    </div>
+    <svg id="sun" viewBox="-250 -250 500 500" role="img" aria-label="मधुबनी शैलीको सूर्य र माछा"></svg>
+  </div>
+
+  <section aria-labelledby="ringH">
+    <h2 id="ringH">वर्ष–चक्र</h2>
+    <p class="lead">हरेक पर्व आफ्नै चित्रमा। चित्र छुनुहोस्।</p>
+    <div class="grid2"><svg id="ring" viewBox="-260 -260 520 520" role="img" aria-label="मिथिला पर्वको वर्ष–चक्र"></svg><div class="card" id="detail" aria-live="polite"></div></div>
+  </section>
+
+  <section aria-labelledby="chH">
+    <h2 id="chH">☀️ छठ योजनाकार</h2>
+    <p class="lead">चार दिन, दुई अर्घ्य। शहर छान्नुहोस् — साँझ र बिहानको अर्घ्यको समय सूर्यास्त/सूर्योदयबाट हरेक वर्ष आफैं गणना।</p>
+    <div class="card">
+      <label>शहर <select id="city"></select></label> <span id="chCount" style="margin-inline-start:10px;font-weight:800"></span>
+      <div class="chhath" id="chDays"></div>
+      <h3 style="margin:18px 0 6px">तयारी सूची</h3>
+      <div class="check" id="check"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="smH">
+    <h2 id="smH">🐦 सामा–चकेवा</h2>
+    <p class="lead" id="smLead"></p>
+    <div class="birds" id="birds" aria-hidden="true"></div>
+    <p style="max-width:720px">कार्तिक शुक्ल सप्तमीदेखि पूर्णिमासम्म दिदीबहिनीले माटाका सामा, चकेवा र चुगलाका मूर्ति बनाई साँझ गीत गाउँछन्; दाजुभाइको सुस्वास्थ्यको कामना गर्छन्। पूर्णिमामा खेतमा विसर्जन गरिन्छ।</p>
+  </section>
+
+  <section aria-labelledby="tirH">
+    <h2 id="tirH">✍️ तिरहुता (मिथिलाक्षर)</h2>
+    <p class="lead">अक्षर छुनुहोस्, वा आफ्नो नाम लेख्नुहोस्।</p>
+    <div class="card">
+      <textarea id="tirIn" rows="2" style="width:100%;font-size:20px" aria-label="देवनागरी">मिथिला</textarea>
+      <div class="tir" id="tirOut" style="font-size:52px;margin:10px 0;min-height:1.4em;color:var(--indigo)"></div>
+      <div class="letters" id="letters"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="tlH">
+    <h2 id="tlH">पर्व–पात्रो</h2>
+    <div class="tl" id="tl"></div>
+  </section>
+
+  <section aria-labelledby="cardH">
+    <h2 id="cardH">🎴 शुभकामना कार्ड</h2>
+    <div class="grid2"><canvas class="share" id="card"></canvas>
+      <div class="card"><label>पर्व <select id="cardF"></select></label><br><br><label>पठाउने <input id="cardName" value="हाम्रो परिवार" /></label><br><button class="pill" id="cardShare" style="margin-top:14px">⬇ सेयर / डाउनलोड</button></div></div>
+  </section>
+
+  <div class="border-band" aria-hidden="true"></div>
+  <footer>
+    नियम: जुडशीतल = मेष संक्रान्ति; मधुश्रावणी = साउन कृष्ण पञ्चमी – शुक्ल तृतीया (समीक्षाधीन); चौरचन = भदौ शुक्ल चतुर्थी; जितिया = आश्विन कृष्ण अष्टमी; कोजागरा = आश्विन पूर्णिमा (निशीथ); छठ = कार्तिक शुक्ल षष्ठी (४ दिन); सामा–चकेवा = कार्तिक शुक्ल सप्तमी – पूर्णिमा; विवाह पञ्चमी = मार्गशीर्ष शुक्ल पञ्चमी; तराई होली = चैत्र कृष्ण प्रतिपदा। छठको मिति गृह मन्त्रालयले पनि घोषणा गर्छ।<br>
+    स्रोत: Wikipedia (Tirhuta calendar/Panchang, Jur Sital, Madhushravani), Mithila Legacy calendar। तिरहुता: Unicode U+11480–114DF।
+  </footer>
+</main>
+<script>/*__BUNDLE__*/</script>
+<script>/*__KIT_JS__*/</script>
+<script>
+(() => {
+const { el, P, npd, fmt, fmtShort, days, today, Y, reduce, t24 } = K;
+document.getElementById('nav').innerHTML = K.nav('mithila.html'); K.stamp(document.getElementById('today')); K.soundToggle(document.getElementById('snd'));
+const suite = S.SUITES.mithila, rows = K.rowsFor(suite);
+const INK = '#1c1310', RED = '#d8322a', YEL = '#f2b705', GRN = '#1f8a4c', IND = '#2a3d8f', PNK = '#e05a8a';
+document.getElementById('tirTitle').textContent = S.devanagariToTirhuta('मिथिला पात्रो');
+const MOTIF = { 'tila-sankranti': '🌾', 'saraswati-puja': '📚', 'jur-sital': '💧', 'janaki-navami': '🌺', 'madhushravani': '🐍', 'chauth-chandra': '🌙', 'jitiya': '🪔', 'kojagara': '🪷', 'chhath': '☀️', 'sama-chakeva': '🐦', 'vivah-panchami': '💍', 'holi-terai': '🎨' };
+
+/* ── Hero: Madhubani sun + fish ── */
+(() => {
+  const svg = document.getElementById('sun'), g = el('g', { class: reduce ? '' : 'spin' }, svg);
+  for (let k = 0; k < 24; k++) { const a = k * 15, [x1, y1] = P(120, a - 6), [x2, y2] = P(120, a + 6), [tx, ty] = P(k % 2 ? 190 : 225, a);
+    el('path', { d: `M${x1} ${y1} L${tx} ${ty} L${x2} ${y2} Z`, fill: [RED, YEL, GRN][k % 3], stroke: INK, 'stroke-width': 3 }, g); }
+  [120, 100].forEach((r, i) => el('circle', { r, fill: i ? YEL : RED, stroke: INK, 'stroke-width': 4 }, svg));
+  for (let k = 0; k < 12; k++) { const [x, y] = P(110, k * 30); el('circle', { cx: x, cy: y, r: 4, fill: INK }, svg); }
+  // two fish (symbol of prosperity)
+  const fish = (sx) => { const f = el('g', { transform: `translate(0,10) scale(${sx},1)` }, svg);
+    el('path', { d: 'M-70 0 Q-35 -40 10 0 Q-35 40 -70 0 Z', fill: GRN, stroke: INK, 'stroke-width': 4 }, f);
+    el('path', { d: 'M10 0 L35 -20 L35 20 Z', fill: RED, stroke: INK, 'stroke-width': 4 }, f);
+    el('circle', { cx: -48, cy: -6, r: 5, fill: INK }, f);
+    for (let i = 0; i < 4; i++) el('path', { d: `M${-35 + i * 10} -14 Q${-30 + i * 10} 0 ${-35 + i * 10} 14`, stroke: INK, 'stroke-width': 2, fill: 'none' }, f); };
+  fish(1); fish(-1);
+  const n = K.nextOf(rows); const d = days(today, n.start);
+  document.getElementById('heroCount').innerHTML = `<span class="n">${npd(Math.max(d, 0))}</span><div><b style="font-size:22px">${MOTIF[n.festival.id] || ''} ${d <= 0 ? 'आज ' : 'दिनपछि '}${n.festival.dev}</b><br><span style="color:var(--muted)">${fmt(n.start)}${n.end !== n.start ? ' – ' + fmtShort(n.end) : ''}</span></div>`;
+})();
+
+/* ── Year ring ── */
+const showDetail = (r) => document.getElementById('detail').innerHTML = `<div style="font-size:44px">${MOTIF[r.festival.id] || ''}</div>` + K.detailHTML(r, 'var(--accent)');
+(() => {
+  const svg = document.getElementById('ring'), yr = S.suiteCalendar(suite, Y).filter((r) => !r.region);
+  const len = (Y % 4 === 0 && (Y % 100 !== 0 || Y % 400 === 0)) ? 366 : 365;
+  const doy = (iso) => (Date.parse(iso) - Date.UTC(Y, 0, 1)) / 864e5;
+  [250, 240].forEach((r) => el('circle', { r, fill: 'none', stroke: INK, 'stroke-width': 3 }, svg));
+  for (let k = 0; k < 60; k++) { const [x1, y1] = P(240, k * 6), [x2, y2] = P(240, k * 6 + 6), [tx, ty] = P(222, k * 6 + 3);
+    el('path', { d: `M${x1} ${y1} L${tx} ${ty} L${x2} ${y2}`, fill: [RED, YEL, GRN][k % 3], stroke: INK, 'stroke-width': 1.5 }, svg); }
+  [212, 204, 120, 112].forEach((r) => el('circle', { r, fill: r === 112 ? YEL : 'none', stroke: INK, 'stroke-width': 3 }, svg));
+  K.MONTHS.forEach((m, i) => { const a = doy(`${Y}-${String(i + 1).padStart(2, '0')}-15`) / len * 360, [x, y] = P(128 + 8, a);
+    const t = el('text', { x, y: y + 4, 'text-anchor': 'middle', 'font-size': 11, fill: INK, 'font-weight': 700 }, svg); t.textContent = m.slice(0, 3); });
+  yr.forEach((r, i) => {
+    const a = doy(r.main) / len * 360, rr = 170 - (i % 2) * 22, [x, y] = P(rr, a);
+    const g = el('g', { tabindex: 0, role: 'button', 'aria-label': r.festival.dev, style: 'cursor:pointer' }, svg);
+    el('circle', { cx: x, cy: y, r: 20, fill: '#fffdf7', stroke: INK, 'stroke-width': 3 }, g);
+    el('circle', { cx: x, cy: y, r: 15, fill: 'none', stroke: RED, 'stroke-width': 1.5 }, g);
+    const t = el('text', { x, y: y + 8, 'text-anchor': 'middle', 'font-size': 20 }, g); t.textContent = MOTIF[r.festival.id] || '✦';
+    el('title', {}, g).textContent = `${r.festival.dev} · ${fmt(r.main)}`;
+    const go = () => showDetail(r); g.addEventListener('click', go); g.addEventListener('keydown', (e) => (e.key === 'Enter' || e.key === ' ') && go());
+  });
+  const a = doy(today) / len * 360, [hx, hy] = P(236, a);
+  el('line', { x1: 0, y1: 0, x2: hx, y2: hy, stroke: RED, 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+  el('circle', { r: 60, fill: RED, stroke: INK, 'stroke-width': 3 }, svg);
+  const t = el('text', { y: 8, 'text-anchor': 'middle', 'font-size': 24, fill: '#fff', 'font-weight': 800 }, svg); t.textContent = npd(Y);
+  showDetail(K.nextOf(rows));
+})();
+
+/* ── Chhath planner ── */
+(() => {
+  const chh = K.nextOf(rows, 'chhath');
+  const cities = S.NEPAL_CITIES, sel = document.getElementById('city');
+  const order = [3, 1, 7, 5, 8, 6, 0]; // Janakpur, Birgunj, Rajbiraj, Biratnagar, Gaur, Bhairahawa, Kathmandu
+  order.forEach((i) => { const o = document.createElement('option'); o.value = i; o.textContent = cities[i].name; sel.appendChild(o); });
+  const DAYS = [['नहाय–खाय', 'चतुर्थी: स्नान, कद्दु–भात, सात्विक भोजन'], ['खरना', 'पञ्चमी: दिनभरि व्रत, साँझ गुडको खीर र रोटी'], ['साँझको अर्घ्य', 'षष्ठी: अस्ताउँदो सूर्यलाई अर्घ्य'], ['उषा अर्घ्य', 'सप्तमी: उदाउँदो सूर्यलाई अर्घ्य, व्रत समापन']];
+  const draw = () => {
+    const city = cities[+sel.value];
+    document.getElementById('chCount').textContent = `${npd(Math.max(0, days(today, chh.start)))} दिन बाँकी · ${fmt(chh.start)} – ${fmtShort(chh.end)}`;
+    document.getElementById('chDays').innerHTML = DAYS.map(([t, p], i) => { const iso = S.addDays(chh.start, i), ss = S.sunriseSunset(iso, city);
+      const time = i === 2 ? `सूर्यास्त ${t24(ss.sunset)}` : i === 3 ? `सूर्योदय ${t24(ss.sunrise)}` : '';
+      return `<div class="cd${iso === today ? ' on' : ''}"><span class="n">${npd(i + 1)}</span><h3>${t}</h3><div style="color:var(--muted)">${fmt(iso)}</div>${time ? `<div class="t">${time}</div>` : ''}<p style="margin:6px 0 0">${p}</p></div>`; }).join('');
+  };
+  sel.onchange = draw; draw();
+  const ITEMS = ['दौरा र सुपली (बाँसका)', 'ठेकुवा', 'भुसवा', 'केरा, उखु, नरिवल', 'मौसमी फलफूल', 'दियो र धुप', 'नयाँ लुगा', 'घाट सफाइ'];
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem('chhath-check') || '{}'); } catch {}
+  document.getElementById('check').innerHTML = ITEMS.map((x, i) => `<label><input type="checkbox" data-i="${i}" ${saved[i] ? 'checked' : ''}/> ${x}</label>`).join('');
+  document.querySelectorAll('#check input').forEach((c) => c.onchange = () => { saved[c.dataset.i] = c.checked; try { localStorage.setItem('chhath-check', JSON.stringify(saved)); } catch {} });
+})();
+
+/* ── Sama-Chakeva birds ── */
+(() => {
+  const sc = K.nextOf(rows, 'sama-chakeva');
+  document.getElementById('smLead').textContent = `${fmt(sc.start)} – ${fmt(sc.end)} · ${npd(Math.max(0, days(today, sc.start)))} दिन बाँकी`;
+  const box = document.getElementById('birds');
+  [RED, YEL, GRN, IND, PNK].forEach((c, i) => {
+    box.insertAdjacentHTML('beforeend', `<svg viewBox="-50 -50 100 100"><path d="M-35 10 Q-30 -30 10 -20 Q30 -40 38 -22 Q30 -18 28 -12 Q40 10 10 25 Q-20 30 -35 10 Z" fill="${c}" stroke="${INK}" stroke-width="4"/><circle cx="22" cy="-22" r="4" fill="${INK}"/><path d="M-10 0 Q0 -10 10 0 M-6 8 Q4 -2 14 8" stroke="${INK}" stroke-width="2.5" fill="none"/><path d="M-15 25 L-15 42 M5 25 L5 42" stroke="${INK}" stroke-width="4"/></svg>`);
+  });
+})();
+
+/* ── Tirhuta ── */
+(() => {
+  const inp = document.getElementById('tirIn'), out = document.getElementById('tirOut');
+  const up = () => out.textContent = S.devanagariToTirhuta(inp.value); inp.oninput = up; up();
+  const L = 'अ आ इ ई उ ऊ ए ऐ ओ औ क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह'.split(' ');
+  document.getElementById('letters').innerHTML = L.map((l) => `<button data-l="${l}"><span class="tlt tir">${S.devanagariToTirhuta(l)}</span>${l}</button>`).join('');
+  document.querySelectorAll('#letters button').forEach((b) => b.onclick = () => { inp.value += b.dataset.l; up(); K.bell(700, .08, .5); });
+})();
+
+/* ── Timeline ── */
+K.timeline(document.getElementById('tl'), rows, { color: RED, onSelect: (r) => { showDetail(r); document.getElementById('ringH').scrollIntoView({ behavior: 'smooth' }); } });
+
+/* ── Card ── */
+(() => {
+  const sel = document.getElementById('cardF'), up = rows.filter((r) => r.end >= today).slice(0, 8);
+  up.forEach((r, i) => { const o = document.createElement('option'); o.value = i; o.textContent = r.festival.dev; sel.appendChild(o); });
+  const draw = async () => {
+    try { await document.fonts.load('800 60px Mukta'); await document.fonts.load('40px "Noto Sans Tirhuta"'); } catch {}
+    const r = up[+sel.value];
+    K.shareCard(document.getElementById('card'), {
+      bg: '#fff6e5', fg: INK, accent: RED, kicker: "मिथिला", title: r.festival.dev, sub: fmt(r.main),
+      lines: [`${document.getElementById('cardName').value} को तर्फबाट`], footer: 'मधुबनी वर्ष · मिथिला पात्रो',
+      motif: (c, W, H) => { const b = 40; c.lineWidth = 6; c.strokeStyle = INK; c.strokeRect(b, b, W - 2 * b, H - 2 * b); c.strokeRect(b + 18, b + 18, W - 2 * b - 36, H - 2 * b - 36);
+        for (let i = 0; i < 26; i++) { c.fillStyle = [RED, YEL, GRN][i % 3]; c.beginPath(); c.moveTo(b + 18 + i * 38, b + 18); c.lineTo(b + 37 + i * 38, b + 50); c.lineTo(b + 56 + i * 38, b + 18); c.fill(); c.beginPath(); c.moveTo(b + 18 + i * 38, H - b - 18); c.lineTo(b + 37 + i * 38, H - b - 50); c.lineTo(b + 56 + i * 38, H - b - 18); c.fill(); }
+        c.font = '110px serif'; c.textAlign = 'center'; c.fillText(MOTIF[up[+sel.value].festival.id] || '✦', W / 2, 310); c.font = '34px "Noto Sans Tirhuta"'; },
+    });
+  };
+  sel.onchange = draw; document.getElementById('cardName').oninput = draw; draw();
+  document.getElementById('cardShare').onclick = () => K.shareCanvas(document.getElementById('card'), 'mithila.png', 'शुभकामना!');
+})();
+})();
+</script>
+</body>
+</html>

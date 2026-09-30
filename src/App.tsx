@@ -8,12 +8,13 @@ import { LunarPhaseDial } from "./components/LunarPhaseDial";
 import { CalendarGrid } from "./components/CalendarGrid";
 import { CosmicExperience } from "./components/CosmicExperience";
 import { ReadAloudButton } from "./patro-tools-integration/ReadAloudButton";
+import { CommunityHomeLine } from "./community/CommunityHomeLine";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
   { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },
    { path: "/jyotish/janma-patro", title: "जन्मपत्रो · Kundali", subtitle: "Birth chart, planetary positions, Vimshottari Dasha and 36 Guna Milan", group: "Jyotish" },
-  { path: "/aaja", title: "आज · Today", subtitle: "Daily Mero Patro dashboard and open/closed context", group: "Daily" },
+  { path: "/aaja", title: "आज · Today", subtitle: "Daily MeroPatro dashboard and open/closed context", group: "Daily" },
   { path: "/tools/tithi", title: "तिथि · Tithi", subtitle: "Tithi reminders, lunar-date derivation and recurrence tools", group: "Tools" },
   { path: "/tools/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Tools" },
   { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete tools directory", group: "Tools" },
@@ -24,7 +25,7 @@ const FEATURE_LINKS: FeatureLink[] = [
   { path: "/tools/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
   { path: "/time-machine", title: "Time Machine", subtitle: "Historical Nepal timeline", group: "Explore" },
   { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
-  { path: "/fm", title: "मेरो पात्रो रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "Explore" },
+  { path: "/fm", title: "MeroPatro रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "Explore" },
   { path: "/explore", title: "सबै सुविधा · All Features", subtitle: "पात्रो, डायरी, मिडिया र उपकरणको पूर्ण सूची", group: "Explore" },
   { path: "/tv", title: "लाइभ टिभी · Live TV", subtitle: "देश, भाषा र विषय अनुसार लाइभ च्यानल", group: "Explore" },
   { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
@@ -50,12 +51,12 @@ function FeatureFrame() {
   const path = window.location.pathname;
   const q = new URLSearchParams({ path });
   if (window.location.search) q.set("search", window.location.search);
-  const title = FEATURE_LINKS.find((x) => x.path === path)?.title || "Mero Patro";
+  const title = FEATURE_LINKS.find((x) => x.path === path)?.title || "MeroPatro";
 
   return (
     <div className="feature-route-shell">
       <header className="feature-route-bar">
-        <a className="feature-home-link" href="/">← Mero Patro</a>
+        <a className="feature-home-link" href="/">← MeroPatro</a>
         <strong>{title}</strong>
         <ReadAloudButton
           className="secondary-button feature-read-aloud"
@@ -175,7 +176,7 @@ export default function App() {
     const params = new URLSearchParams(window.location.search);
     params.set("date", selectedDate);
     window.history.replaceState(null, "", window.location.pathname + "?" + params.toString());
-    document.title = `मेरो पात्रो · ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parseIso(selectedDate))}`;
+    document.title = `MeroPatro · ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parseIso(selectedDate))}`;
   }, [selectedDate]);
 
   function chooseDate(iso: string) {
@@ -218,6 +219,8 @@ export default function App() {
           onToday={() => chooseDate(today)}
         />
 
+        <CommunityHomeLine selectedDate={selectedDate} />
+
         <nav className="home-quick-launch glass-panel" aria-label="Quick access">
           <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>
           <a href="/tools/typingtools"><span>Tools</span><strong>Typing Tools · टाइपिङ टुल्स</strong><small>Preeti Converter + Roman → Unicode typing</small></a>
@@ -253,11 +256,11 @@ export default function App() {
           error={cosmic.error}
         />
 
-        <section className="feature-hub glass-panel" aria-label="Mero Patro features">
+        <section className="feature-hub glass-panel" aria-label="MeroPatro features">
           <div className="section-heading">
             <div>
               <p className="eyebrow">All features are free</p>
-              <h2>मेरो पात्रो · Features</h2>
+              <h2>MeroPatro · Features</h2>
               <p className="subheading">Calendar, Jyotish, daily-life and discovery tools in one place.</p>
             </div>
           </div>
@@ -273,7 +276,7 @@ export default function App() {
         </section>
 
         <footer className="app-footer">
-          <span>मेरो पात्रो</span>
+          <span>MeroPatro</span>
           <span aria-hidden="true">·</span>
           <span>AD · BS · NS · तिथि · खगोलीय पात्रो</span>
           <span aria-hidden="true">·</span>

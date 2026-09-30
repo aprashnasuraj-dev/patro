@@ -56,6 +56,7 @@ type ToolId =
   | "family"
   | "api"
   | "my-data"
+  | "samudaya"
   | "tithi-reminder"
   | "sait"
   | "baby-names"
@@ -86,6 +87,8 @@ const NEPALI_TYPING_TOOL: ToolDirectoryItem = {
   badge: "Typing Tools",
   group: "typing",
 };
+const SAMUDAYA_TOOL: ToolDirectoryItem = { id: "samudaya", icon: "समु", title: "समुदाय · Community Suite", subtitle: "नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी अनुभव एउटै ठाउँमा।", badge: "Calendar", group: "tools" };
+
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   NEPALI_TYPING_TOOL,
   { id: "preeti-converter", icon: "प्री", title: "Preeti Converter · प्रीति रूपान्तरण", subtitle: "Convert both Preeti → Unicode and Unicode → Preeti from one converter.", badge: "Typing Tools", group: "typing" },
@@ -94,6 +97,7 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
   { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance", group: "utility" },
   { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR", group: "utility" },
+  SAMUDAYA_TOOL,
   { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
   { id: "tithi-reminder", icon: "त", title: "तिथि रिमाइन्डर", subtitle: "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar ICS feed.", badge: "नयाँ", group: "tools" },
   { id: "sait", icon: "शु", title: "साइत · शुभ समय", subtitle: "आधिकारिक मिति पहिलो; गणना गरिएको परिणाम ‘सम्भावित’ भनेर स्पष्ट.", badge: "नयाँ", group: "tools" },
@@ -261,7 +265,7 @@ export function UtilitySuite() {
         const supported = new Set<ToolId>([
           "nepali-typing","preeti-converter","bstoad","adtobs","landconverter",
           "incometax","nepaliqr","fuelprice","tithi","diaspora","card","family","api","my-data",
-          "tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot"
+          "tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot","samudaya"
         ]);
         const next = body.items
           .filter((item: any) => item && supported.has(item.slug as ToolId) && item.slug !== "typingtools")
@@ -273,7 +277,18 @@ export function UtilitySuite() {
             badge: String(item.badge || "Tools"),
             group: item.category === "typing" ? "typing" : item.category === "utility" ? "utility" : "tools",
           })) as ToolDirectoryItem[];
-        if (next.length) setCatalog(next);
+        // The database catalog is authoritative for labels/order of rows it knows,
+        // but it must never remove shipped client tools when the catalog lags a release.
+        // Merge remote metadata over the complete local capability registry instead.
+        const remoteById = new Map(next.map((item) => [item.id, item]));
+        const merged = TOOL_DIRECTORY.map((local) => {
+          const remote = remoteById.get(local.id);
+          return remote ? { ...local, ...remote } : local;
+        });
+        for (const remote of next) {
+          if (!merged.some((item) => item.id === remote.id)) merged.push(remote);
+        }
+        setCatalog(merged);
       })
       .catch(() => undefined);
     return () => controller.abort();
@@ -302,6 +317,7 @@ export function UtilitySuite() {
   }, [selectedTool]);
 
   function chooseTool(tool: ToolId | null) {
+    if (tool === "samudaya") { window.location.assign("/samudaya"); return; }
     const nextPath = tool ? "/tools/" + tool : "/tools";
     window.history.pushState(null, "", nextPath);
     setSelectedTool(tool);

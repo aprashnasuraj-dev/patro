@@ -17,7 +17,7 @@ app.use("*", async (c, next) => {
   await next();
   c.header("X-Content-Type-Options", "nosniff");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
-  c.header("Permissions-Policy", "camera=(), microphone=(), geolocation=(self)");
+  c.header("Permissions-Policy", "camera=(), microphone=(self), geolocation=(self)");
   c.header("Cross-Origin-Opener-Policy", "same-origin");
 });
 
@@ -244,7 +244,7 @@ async function proxyLegacy(request: Request, targetPath: string, opts: {page?: b
       "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; " +
       "style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co " +
       "https://geocoding-api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; " +
-      "font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; " +
+      "font-src 'self' data:; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; " +
       "object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
     );
     outHeaders.set("cache-control","no-store");
@@ -393,6 +393,7 @@ app.get("/tools-hub", async (c) => {
       {slug:"family",title:"परिवार · Family",subtitle:"Keep private family dates and shared household events together.",category:"tools",badge:"Tools",icon:"परि",metadata:{legacy_path:"/family"}},
       {slug:"api",title:"API · Developers",subtitle:"Explore Nepal Miti APIs and integration guidance.",category:"tools",badge:"Tools",icon:"</>",metadata:{legacy_path:"/developers"}},
       {slug:"my-data",title:"मेरो डेटा · My Data",subtitle:"Review, export or remove private Nepal Miti data.",category:"tools",badge:"Tools",icon:"🔐",metadata:{legacy_path:"/my-data"}},
+      {slug:"samudaya",title:"समुदाय · Community Suite",subtitle:"नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी एउटै प्रवेशद्वारमा।",category:"tools",badge:"Community",icon:"◎",metadata:{legacy_path:"/samudaya"}},
     ];
   }
   items = items.filter((item) => item?.slug !== "typingtools");
@@ -453,6 +454,23 @@ app.get("/tools/official-sait", async (c) => {
   const { officialSait } = await import("./services/patroTools.ts");
   return await officialSait(c.req.raw);
 });
+
+app.get("/communities", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.listCommunities(); });
+app.get("/communities/feed.ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.combinedCommunityIcs(c.req.raw); });
+app.get("/communities/lho", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.lho(new URL(c.req.url).searchParams); });
+app.get("/communities/:suite/ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.communityIcs(c.req.param("suite"), new URL(c.req.url).searchParams); });
+app.get("/communities/:suite", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.communityItems(c.req.param("suite"), new URL(c.req.url).searchParams); });
+app.get("/hijri", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.hijri(new URL(c.req.url).searchParams); });
+app.get("/hijri/ramadan", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.ramadan(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nepalSambat(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/festivals", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsFestivals(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/convert", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsConvert(new URL(c.req.url).searchParams); });
+app.get("/nepal-sambat/ics", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.nsIcs(new URL(c.req.url).searchParams); });
+app.get("/scripts", async (c) => { const m=await import("./services/communitySuites.ts"); return m.scripts(new URL(c.req.url).searchParams); });
+app.get("/community-preferences", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.getPreferences(c.req.raw); });
+app.put("/community-preferences", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.putPreferences(c.req.raw); });
+app.post("/admin/community-overrides", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminCommunityOverride(c.req.raw); });
+app.post("/admin/ns-festival-dates", async (c) => { const m=await import("./services/communitySuites.ts"); return await m.adminNsFestival(c.req.raw); });
 
 app.get("/health", (c) => c.json({
   status: "online",
