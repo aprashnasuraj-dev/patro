@@ -2,6 +2,10 @@
 # Production values: wrangler secret put <NAME>
 NASA_API_KEY=
 
+# Required before the native global-radio relay is enabled.
+# Generate a long random value and store it with: wrangler secret put RADIO_RELAY_SECRET
+RADIO_RELAY_SECRET=
+
 # Optional: Jyotish chat provider keys while the compatibility route remains enabled.
 GROQ_API_KEY=
 NVIDIA_NIM_API_KEY=
