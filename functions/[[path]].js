@@ -1,33 +1,13 @@
 const STATIC_EXACT = new Set([
-  "/astro",
-  "/fm",
-  "/tv",
-  "/tools",
-  "/tools/nepali-typing",
-  "/jyotish/janma-patro",
-  "/jyotish/matchmaking",
-  "/explore",
-  "/my-diary",
-  "/about",
-  "/sources",
-  "/privacy",
-  "/terms",
-  "/contact",
-  "/404",
-  "/samudaya",
-  "/nepal-sambat/mandala",
-  "/settings/community",
-  "/admin/community-suites",
-  "/tools/samudaya"
-]);
-
-const WORKER_EXACT = new Set([
-  "/tools/tithi",
-  "/tools/diaspora",
-  "/tools/card",
-  "/tools/family",
-  "/tools/api",
-  "/tools/my-data"
+  "/", "/astro", "/fm", "/tv", "/tools", "/tools/nepali-typing",
+  "/jyotish/janma-patro", "/jyotish/matchmaking", "/jyotish", "/jyotish/rashifal",
+  "/jyotish/china", "/jyotish/china/rashi",
+  "/explore", "/my-diary", "/about", "/sources", "/privacy", "/terms", "/contact", "/404",
+  "/samudaya", "/nepal-sambat/mandala", "/settings/community", "/admin/community-suites", "/tools/samudaya",
+  "/aaja", "/tithi", "/diaspora", "/card", "/family", "/family/join", "/my-data",
+  "/settings", "/settings/holidays", "/settings/notifications", "/offline", "/developers",
+  "/samachar", "/news", "/time-machine", "/on-this-day", "/history",
+  "/convert", "/search", "/notes", "/planner", "/feedback", "/data-trust", "/nepal-sambat", "/astrology", "/widget/today"
 ]);
 
 function canonicalPath(pathname) {
@@ -45,32 +25,27 @@ export function routeMode(pathname) {
     path.startsWith("/fm-v2-stream/") ||
     path === "/fm-stream" ||
     path.startsWith("/fm-stream/")
-  ) {
-    return "worker";
-  }
+  ) return "worker";
 
-  if (WORKER_EXACT.has(path)) return "worker";
   if (STATIC_EXACT.has(path)) return "static";
 
   if (
     path.startsWith("/astro/") ||
+    path.startsWith("/tools/") ||
     path.startsWith("/samudaya/") ||
-    path.startsWith("/nepal-sambat/mandala/")
-  ) {
-    return "static";
-  }
+    path.startsWith("/nepal-sambat/mandala/") ||
+    path.startsWith("/calendar/") ||
+    path.startsWith("/date/") ||
+    path.startsWith("/festival/") ||
+    path.startsWith("/jyotish/")
+  ) return "static";
 
-  // Vercel's current routing keeps the general /tools/* surface on the SPA,
-  // except for the explicit protected-tool routes handled above.
-  if (path.startsWith("/tools/")) return "static";
-
-  // Files with extensions are static artifacts unless caught by /api/* above.
   const leaf = path.split("/").pop() || "";
   if (leaf.includes(".")) return "static";
 
-  // Match the current Vercel/Supabase protected catch-all for root/calendar/
-  // search/planner/etc. until each route is ported natively to the Worker.
-  return "worker";
+  // Unknown application URLs stay on the SPA so its NotFound/redirect logic
+  // handles them without reviving the retired Supabase protected-page proxy.
+  return "static";
 }
 
 function missingBinding() {
@@ -90,8 +65,6 @@ export const onRequest = async ({ request, env, next }) => {
   const mode = routeMode(new URL(request.url).pathname);
   if (mode === "static") return next();
 
-  if (!env.PATRO_API || typeof env.PATRO_API.fetch !== "function") {
-    return missingBinding();
-  }
+  if (!env.PATRO_API || typeof env.PATRO_API.fetch !== "function") return missingBinding();
   return env.PATRO_API.fetch(request);
 };
