@@ -39,6 +39,19 @@ function secureResponse(request: Request, response: Response) {
   }
   if (path === "/family" || path.startsWith("/family/")) headers.set("referrer-policy", "no-referrer");
 
+  if (path.startsWith("/astro/data/")) headers.set("cache-control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800");
+  if (path === "/sw.js") headers.set("cache-control", "no-cache");
+  if (path === "/manifest.webmanifest") headers.set("cache-control", "public, max-age=3600");
+  if (path === "/tools/sw.js") {
+    headers.set("cache-control", "public, max-age=0, must-revalidate");
+    headers.set("service-worker-allowed", "/tools");
+  }
+  if (path === "/.well-known/assetlinks.json") headers.set("cache-control", "public, max-age=3600");
+  if (path === "/embed/nepal-miti-today.js" || path === "/embed/nepal-miti-converter.js") {
+    headers.set("access-control-allow-origin", "*");
+    headers.set("x-robots-tag", "noindex, nofollow");
+  }
+
   const type = headers.get("content-type") || "";
   if (type.includes("text/html")) {
     headers.set("content-security-policy", path === "/embed/today" || path === "/embed/converter" ? EMBED_CSP : DEFAULT_CSP);
@@ -397,23 +410,124 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   return compat(request, env);
 }
 
+
+function assetRequest(request: Request, pathname: string) {
+  const url = new URL(request.url);
+  url.pathname = pathname;
+  return new Request(url.toString(), request);
+}
+
+async function serveAsset(request: Request, env: Env, pathname?: string) {
+  if (!env.ASSETS) return json({error:"assets_unavailable",runtime:"Cloudflare Workers"},503,"no-store");
+  return env.ASSETS.fetch(pathname ? assetRequest(request, pathname) : request);
+}
+
+function protectedToolPath(path: string) {
+  const map: Record<string,string> = {
+    "/tools/tithi": "/tithi",
+    "/tools/diaspora": "/diaspora",
+    "/tools/card": "/card",
+    "/tools/family": "/family",
+    "/tools/api": "/developers",
+    "/tools/my-data": "/my-data"
+  };
+  return map[path] || null;
+}
+
+function staticRewriteTarget(path: string) {
+  const exact: Record<string,string> = {
+    "/astro": "/astro/index.html",
+    "/jyotish/janma-patro": "/astro/index.html",
+    "/jyotish/matchmaking": "/astro/index.html",
+    "/fm": "/astro/index.html",
+    "/tv": "/astro/index.html",
+    "/tools/sw.js": "/astro/sw.js",
+    "/tools": "/astro/index.html",
+    "/tools/nepali-typing": "/nepali-typing/index.html",
+    "/explore": "/astro/index.html",
+    "/my-diary": "/astro/index.html",
+    "/about": "/astro/index.html",
+    "/sources": "/astro/index.html",
+    "/privacy": "/astro/index.html",
+    "/terms": "/astro/index.html",
+    "/contact": "/astro/index.html",
+    "/404": "/astro/index.html",
+    "/samudaya": "/samudaya/index.html",
+    "/samudaya/lhosar": "/samudaya/lhosar/index.html",
+    "/samudaya/tharu": "/samudaya/tharu/index.html",
+    "/samudaya/mithila": "/samudaya/mithila/index.html",
+    "/samudaya/kirat": "/samudaya/kirat/index.html",
+    "/samudaya/hijri": "/samudaya/hijri/index.html",
+    "/samudaya/chakra": "/samudaya/chakra/index.html",
+    "/nepal-sambat/mandala": "/nepal-sambat/mandala/index.html",
+    "/settings/community": "/astro/index.html",
+    "/admin/community-suites": "/astro/index.html",
+    "/tools/samudaya": "/samudaya/index.html"
+  };
+  if (exact[path]) return exact[path];
+
+  const toolSpa = new Set([
+    "/tools/unicode-to-preeti",
+    "/tools/preeti-to-unicode",
+    "/tools/fuelprice",
+    "/tools/nepaliqr",
+    "/tools/incometax",
+    "/tools/landconverter",
+    "/tools/adtobs",
+    "/tools/bstoad",
+    "/tools/unicodetopreeti",
+    "/tools/preetitounicode",
+    "/tools/preeti-converter",
+    "/tools/typingtools"
+  ]);
+  if (toolSpa.has(path)) return "/astro/index.html";
+
+  if (path.startsWith("/astro/")) return path;
+  if (path.startsWith("/tools/")) return "/astro/index.html";
+  if (path.startsWith("/samudaya/")) return path.endsWith("/") ? path + "index.html" : path + "/index.html";
+  return null;
+}
+
+function excludedFromProtectedCatchAll(path: string) {
+  return path === "/astro" || path.startsWith("/astro/") ||
+    path === "/tools" || path.startsWith("/tools/") ||
+    path === "/fm" || path === "/fm/" ||
+    path === "/tv" || path === "/tv/" ||
+    path === "/jyotish/janma-patro" || path === "/jyotish/janma-patro/" ||
+    path === "/jyotish/matchmaking" || path === "/jyotish/matchmaking/" ||
+    path === "/samudaya" || path.startsWith("/samudaya/") ||
+    path === "/nepal-sambat/mandala" || path === "/nepal-sambat/mandala/";
+}
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    const path = url.pathname;
     let response: Response;
 
-    if (url.pathname.startsWith("/api/v1/")) {
+    if (path.startsWith("/api/v1/")) {
       response = await handleApi(request,env,ctx);
-    } else if (url.pathname === "/api/jyotish-chat") {
+    } else if (path === "/api/jyotish-chat") {
       response = await compat(request,env,"router","/jyotish-chat");
-    } else if (url.pathname === "/api/rashifal_engine.py") {
+    } else if (path === "/api/rashifal-engine" || path === "/api/rashifal_engine" || path === "/api/rashifal_engine.py") {
       response = await compat(request,env,"protected","/api/rashifal/personalized");
-    } else if (url.pathname.startsWith("/fm-v2-stream/")) {
-      response = await compat(request,env,"protected",url.pathname);
-    } else if (env.ASSETS) {
-      response = await env.ASSETS.fetch(request);
+    } else if (path.startsWith("/fm-v2-stream/")) {
+      response = await compat(request,env,"protected",path);
     } else {
-      response = json({error:"not_found",runtime:"Cloudflare Workers"},404,"no-store");
+      const protectedTool = protectedToolPath(path);
+      const assetTarget = staticRewriteTarget(path);
+
+      if (protectedTool) {
+        response = await compat(request,env,"protected",protectedTool);
+      } else if (assetTarget) {
+        response = await serveAsset(request,env,assetTarget);
+      } else if (!excludedFromProtectedCatchAll(path)) {
+        // Mirrors the final Vercel catch-all rewrite while the protected runtime is
+        // progressively ported to native Cloudflare modules.
+        response = await compat(request,env,"protected",path);
+      } else {
+        response = await serveAsset(request,env);
+      }
     }
 
     return secureResponse(request, response);
