@@ -2,6 +2,7 @@ import { calculateAstronomicalTithi } from "./tithi";
 import { fetchCosmicDay } from "./cosmic";
 import { radioCatalogResponse, radioStreamResponse } from "./radio";
 import { fmResponse } from "./fm";
+import { tvResponse } from "./tv";
 import { handleJyotishChat } from "./jyotish";
 import { dailyWeatherResponse } from "./weather";
 import { communityResponse } from "./community";
