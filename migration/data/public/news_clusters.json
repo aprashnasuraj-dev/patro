@@ -1,0 +1,2548 @@
+{
+  "table": "news_clusters",
+  "snapshot_at": "2026-09-30",
+  "rows": [
+    {
+      "id": "e1737af6206aa10aed49c65c88eeadd935c2c46f15be9ffe9304d3252941d8cb",
+      "item_ids": [
+        "e1737af6206aa10aed49c65c88eeadd935c2c46f15be9ffe9304d3252941d8cb"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:04:52+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5d11a337f63d7215a9a6fa2ca9f8222b53397a5f358a6cf2ec76673b0f90fa31",
+      "item_ids": [
+        "5d11a337f63d7215a9a6fa2ca9f8222b53397a5f358a6cf2ec76673b0f90fa31"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d86cc441c4606a4abf95aa3ac0fd14476193deffda7f7be37059948e2fcd93ed",
+      "item_ids": [
+        "d86cc441c4606a4abf95aa3ac0fd14476193deffda7f7be37059948e2fcd93ed"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2b122f2b7daaafff95bd8cc7a8b2673c83ad85133c0e4b7d389ff502d4ab2c7f",
+      "item_ids": [
+        "2b122f2b7daaafff95bd8cc7a8b2673c83ad85133c0e4b7d389ff502d4ab2c7f"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "cb3899b81eee6ffecb4bfdf4af105afbacf7fe0269fa2efa18a545e4d351d05c",
+      "item_ids": [
+        "cb3899b81eee6ffecb4bfdf4af105afbacf7fe0269fa2efa18a545e4d351d05c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "society",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8ef58a6f706eebc77e7c75a631d95012dbdb048c9d5fd6098472dab5e04aaf4c",
+      "item_ids": [
+        "8ef58a6f706eebc77e7c75a631d95012dbdb048c9d5fd6098472dab5e04aaf4c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6fdcab1032bcf10e4e17ce67e506b02736431d33d9aa8ecd85c38f66f7dd5ef2",
+      "item_ids": [
+        "6fdcab1032bcf10e4e17ce67e506b02736431d33d9aa8ecd85c38f66f7dd5ef2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "province",
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e22519cee0b8a10ff232774b47a6a873b912a9c0145a1d32d00029de8b558928",
+      "item_ids": [
+        "e22519cee0b8a10ff232774b47a6a873b912a9c0145a1d32d00029de8b558928"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8384f68836df08eaadf428eb42b94fbe6ab1620708178bf014dbd4cfb61b557d",
+      "item_ids": [
+        "8384f68836df08eaadf428eb42b94fbe6ab1620708178bf014dbd4cfb61b557d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4c7948797000dc30e387f3f05b91f12d03cbf6e4af52096e91dee4e6f6324219",
+      "item_ids": [
+        "4c7948797000dc30e387f3f05b91f12d03cbf6e4af52096e91dee4e6f6324219"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e65124131bcfc9cd138fbedc333589c48979f7830ff2e578bd18ec9e9da02e1e",
+      "item_ids": [
+        "e65124131bcfc9cd138fbedc333589c48979f7830ff2e578bd18ec9e9da02e1e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e4480a648147ee3719f4dfbd2f4fbb7cbffb0745739dff9594344407a7f67ac6",
+      "item_ids": [
+        "e4480a648147ee3719f4dfbd2f4fbb7cbffb0745739dff9594344407a7f67ac6"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "685b3d308cd3c5fe9ef32ab607d5a9de52f98390de3fc6c3d92c79403d0d981b",
+      "item_ids": [
+        "685b3d308cd3c5fe9ef32ab607d5a9de52f98390de3fc6c3d92c79403d0d981b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "entertainment",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "63451f63ea9efd35583781c6ae7af18404d53a8d01048e13d762c0f6b7fe9389",
+      "item_ids": [
+        "63451f63ea9efd35583781c6ae7af18404d53a8d01048e13d762c0f6b7fe9389"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "entertainment",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "ae8f6318f4e9b0e4514cd5c0eca6964c5a17347b6ff7ab120a15e9169945a583",
+      "item_ids": [
+        "ae8f6318f4e9b0e4514cd5c0eca6964c5a17347b6ff7ab120a15e9169945a583"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "35fbeef30fcf35dc5d7b2784656b5e06ec7307b968f29bc198caf9c3409802a6",
+      "item_ids": [
+        "35fbeef30fcf35dc5d7b2784656b5e06ec7307b968f29bc198caf9c3409802a6"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0a289b0c8176e39133f55086d41c5b8533aab77d421ede2ecd174372dbe76a50",
+      "item_ids": [
+        "0a289b0c8176e39133f55086d41c5b8533aab77d421ede2ecd174372dbe76a50"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f6712f2330ca3b92b008133713aadee1ff09f783cb7ef1cc879bd1ffafc79602",
+      "item_ids": [
+        "f6712f2330ca3b92b008133713aadee1ff09f783cb7ef1cc879bd1ffafc79602"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "070b4342d8122d37cf8d3c9a9170724d2b3de4a5a5bbcba061056a09803b52cd",
+      "item_ids": [
+        "070b4342d8122d37cf8d3c9a9170724d2b3de4a5a5bbcba061056a09803b52cd"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:03:05.186+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "015ce3f2ac168dfb82cbc64bd609d9291c4c9a9696b2eab1dcce4d23fd04d513",
+      "item_ids": [
+        "015ce3f2ac168dfb82cbc64bd609d9291c4c9a9696b2eab1dcce4d23fd04d513"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "9e446fae3a01be0894a0e90848a80d64a8a16bcc0d2883aac136b5b463ad6635",
+      "item_ids": [
+        "9e446fae3a01be0894a0e90848a80d64a8a16bcc0d2883aac136b5b463ad6635"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e1ca0e0d880696a95b3c7fff69ab72d1195ec587594b189b1a5ffc5384f1f5e2",
+      "item_ids": [
+        "e1ca0e0d880696a95b3c7fff69ab72d1195ec587594b189b1a5ffc5384f1f5e2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f0f8ecebb9ff9c8dbdd23969fe9f84d05e90b5429f3cdd7a43d535cb8ff68c1d",
+      "item_ids": [
+        "e614e68e873f1c7a0d2920eb9baa15024224c2ae856fa4cc45c7d482d73e8cdf",
+        "f0f8ecebb9ff9c8dbdd23969fe9f84d05e90b5429f3cdd7a43d535cb8ff68c1d"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-26 02:44:20+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4b134b85eaa5ff8fb8972eb10ed94cf7a3f204d94a3a22b893ebe4be42b1a57e",
+      "item_ids": [
+        "4b134b85eaa5ff8fb8972eb10ed94cf7a3f204d94a3a22b893ebe4be42b1a57e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": null,
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "3a7cbd2d3786213b7fa3771f3ad1f6e67b70e06d29e085194dd5277000c318b8",
+      "item_ids": [
+        "3a7cbd2d3786213b7fa3771f3ad1f6e67b70e06d29e085194dd5277000c318b8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "province",
+      "province": 4,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "da9c52cd4513fdb61dacc19294c05e30e9e2674b462a5b0125c95a7e81ce0e6d",
+      "item_ids": [
+        "da9c52cd4513fdb61dacc19294c05e30e9e2674b462a5b0125c95a7e81ce0e6d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6cd9ad4b912959d4323a3ccf9260b520f432775ec6a819fe432be5a9a7b6a264",
+      "item_ids": [
+        "6cd9ad4b912959d4323a3ccf9260b520f432775ec6a819fe432be5a9a7b6a264"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4603b0511f1de0b93129318a555f629a6bf090efc9f1e99e418c353d4ab15575",
+      "item_ids": [
+        "4603b0511f1de0b93129318a555f629a6bf090efc9f1e99e418c353d4ab15575"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "province",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5e11c1d0ab811f22cc3e6bf09515ef8c949c043c78c679ec6d3fa1382a58ba2c",
+      "item_ids": [
+        "5e11c1d0ab811f22cc3e6bf09515ef8c949c043c78c679ec6d3fa1382a58ba2c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "province",
+      "province": 2,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6418f2f04625cc144c84cdc2b7da4b8746c460590940bf9e53fc0afd88530ce0",
+      "item_ids": [
+        "6418f2f04625cc144c84cdc2b7da4b8746c460590940bf9e53fc0afd88530ce0"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2700620638e054ad2b6cf41fed5c3b25426b3eebb38b83badeca7106cfcb0c44",
+      "item_ids": [
+        "a881bfa8f9d84891c74ffb5a419a33f0eba10e15fb313641cd62ce02a71b7be9",
+        "e91489e737ec729440e2b4b198fbc993794ae6e35e3b9d876cd25769ae85c757",
+        "09f947adf28a0dd6da185ad75ae7cc062a116775920a46b8ee2ff08dcfcd36ee",
+        "2700620638e054ad2b6cf41fed5c3b25426b3eebb38b83badeca7106cfcb0c44"
+      ],
+      "source_count": 4,
+      "lead_published_at": "2026-09-26 00:36:49+00",
+      "category": "society",
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d482dd092bd23efac4252d393502bbf8eb73833c81dc84360061d5d132d38df3",
+      "item_ids": [
+        "d482dd092bd23efac4252d393502bbf8eb73833c81dc84360061d5d132d38df3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0b774c29dfa732ba96cc1091d2a56d543a368352eee28bbe95a3e6d78e79c192",
+      "item_ids": [
+        "0b774c29dfa732ba96cc1091d2a56d543a368352eee28bbe95a3e6d78e79c192"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "1d64826f797991018be0cde82e67f48984cc00bb470c42603055b109fb3ec365",
+      "item_ids": [
+        "ad51d0153ac0946b0b1501f814267f4e62314a1f581639b0fe08c6650a461370",
+        "1d64826f797991018be0cde82e67f48984cc00bb470c42603055b109fb3ec365"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-25 16:03:38+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "9210d0417ab017295167944dec394d2afa553fe0ac185436390c5a0949c31aaa",
+      "item_ids": [
+        "9210d0417ab017295167944dec394d2afa553fe0ac185436390c5a0949c31aaa"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "94d74342f3c254f97e32a8ec97f643fb63af3d95177e18735f3346c41ef64b93",
+      "item_ids": [
+        "94d74342f3c254f97e32a8ec97f643fb63af3d95177e18735f3346c41ef64b93"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6e32bed6855bc5882def429aca4c9f08e09ae5128b57ac2a26dfd20e63a2d6e9",
+      "item_ids": [
+        "6e32bed6855bc5882def429aca4c9f08e09ae5128b57ac2a26dfd20e63a2d6e9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:53.998+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "583f9f6080f6b65f71d5a07c6faf330918b52abf18bdd7181841c85e8084d665",
+      "item_ids": [
+        "583f9f6080f6b65f71d5a07c6faf330918b52abf18bdd7181841c85e8084d665"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:02:38+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c9b526fd414e0ddb0cbcae0246d04a207cbfcdf95b7e33359d6dc1f70c119c7a",
+      "item_ids": [
+        "c9b526fd414e0ddb0cbcae0246d04a207cbfcdf95b7e33359d6dc1f70c119c7a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:01:42+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "40119e2005c09c7cf3dccbe1c15d5855419f7c008de27dd775ae600663e8fb2b",
+      "item_ids": [
+        "40119e2005c09c7cf3dccbe1c15d5855419f7c008de27dd775ae600663e8fb2b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 04:00:31+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0f52a7e5b442563a5c3eda9815478ee7a0bf31836b42f7121883816c9f1c5b65",
+      "item_ids": [
+        "2730313aeef6b92adecb1b7d0ca679db8dce8502611d56bd7207d5d41a6b9228",
+        "0f52a7e5b442563a5c3eda9815478ee7a0bf31836b42f7121883816c9f1c5b65"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-26 03:39:21+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c4c965cbe098e370419af29ce0383a7c13cf5e0bff7616dabc8f5cb946754abe",
+      "item_ids": [
+        "c4c965cbe098e370419af29ce0383a7c13cf5e0bff7616dabc8f5cb946754abe"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:54:35+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "b931dbcc6025eb6577c5725f1915d70e5bc59be81e9a72f2ee99a5136ae7802c",
+      "item_ids": [
+        "b931dbcc6025eb6577c5725f1915d70e5bc59be81e9a72f2ee99a5136ae7802c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:54:00+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "20e2b4a2dfab80df122358e04ec3a44b14d376e470d87b7ac5336f95e0db1b14",
+      "item_ids": [
+        "20e2b4a2dfab80df122358e04ec3a44b14d376e470d87b7ac5336f95e0db1b14"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:53:03+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "beb1d17264e14aef91ce87e989606ad8bfa1be9cf48389daf1a84439a9a07aa4",
+      "item_ids": [
+        "beb1d17264e14aef91ce87e989606ad8bfa1be9cf48389daf1a84439a9a07aa4"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:52:00+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "339617d6fe06bbf7ecfa5043a11d5861627fedcd637e796ddbc27046b6ded5a6",
+      "item_ids": [
+        "01bd0be04d46002db3789a9fd8d539392f4ae8548f714ef1f6570cddc3a5a2f7",
+        "880bbb46947f2a6c065c7ce124b265661f6d004e7af1e2e2791f2c0cf71f6b8d",
+        "c9f15faccc0e4dd460abf9b61fba318c011cc26fe36ca087916a637e64150184",
+        "339617d6fe06bbf7ecfa5043a11d5861627fedcd637e796ddbc27046b6ded5a6"
+      ],
+      "source_count": 4,
+      "lead_published_at": "2026-09-26 02:58:15+00",
+      "category": "province",
+      "province": 4,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2d3d02491bfdac3b95b5caf10f34e5c4dc816fe6e985d9e626899855704fc8e5",
+      "item_ids": [
+        "2d3d02491bfdac3b95b5caf10f34e5c4dc816fe6e985d9e626899855704fc8e5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:48:40+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5eccdf8655f11fcbfcaadc1124cbbf6aa94babe80f2b772fa0125a324a316aab",
+      "item_ids": [
+        "5eccdf8655f11fcbfcaadc1124cbbf6aa94babe80f2b772fa0125a324a316aab"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:47:14+00",
+      "category": "province",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "74fc660668ddaa93f3bb141da873f1505cb0250f755f4c036efac95dcbb4eba5",
+      "item_ids": [
+        "74fc660668ddaa93f3bb141da873f1505cb0250f755f4c036efac95dcbb4eba5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:47:09.512+00",
+      "category": "entertainment",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "97ae877b6479b3c8936cf7acd659ec2fba5bbeebb7dd003ddbd46ea06a856cce",
+      "item_ids": [
+        "97ae877b6479b3c8936cf7acd659ec2fba5bbeebb7dd003ddbd46ea06a856cce"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:47:09.512+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "bdb9cb1b3307c4f7d608e6945b3af801b4aedc194a3f6f07ad6bf83683f56493",
+      "item_ids": [
+        "bdb9cb1b3307c4f7d608e6945b3af801b4aedc194a3f6f07ad6bf83683f56493"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:45:06+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6b1057fcfe47afe161f0206381f57c1772cdbba305599d054aacd0b454d19483",
+      "item_ids": [
+        "6b1057fcfe47afe161f0206381f57c1772cdbba305599d054aacd0b454d19483"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:44:28+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "9881228a6c007b382a6d3a1fd2aed5f5f29a11879c84af4439929eaab4fe9628",
+      "item_ids": [
+        "9881228a6c007b382a6d3a1fd2aed5f5f29a11879c84af4439929eaab4fe9628"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:41:41.186+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "de5bc8e8fde4eb834294c5eaf92e8b5e4cd14c2f3ff6c60515cb50f3fc22439a",
+      "item_ids": [
+        "de5bc8e8fde4eb834294c5eaf92e8b5e4cd14c2f3ff6c60515cb50f3fc22439a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:39:37+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "9a072427f75d14ab18e708430fd4a7adbccc169113e01dc2e0249afe04864ded",
+      "item_ids": [
+        "9a072427f75d14ab18e708430fd4a7adbccc169113e01dc2e0249afe04864ded"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:35:36+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "684cd4c78f01a31dd480a315acc1e5b06981740e19754107b65e1ba9c0387f73",
+      "item_ids": [
+        "684cd4c78f01a31dd480a315acc1e5b06981740e19754107b65e1ba9c0387f73"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:33:40+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "94c358682d968c229a5ea6c21af6c7e4cbef0c5756866f0a0132c97077635a1d",
+      "item_ids": [
+        "94c358682d968c229a5ea6c21af6c7e4cbef0c5756866f0a0132c97077635a1d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:33:31+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "134de756f6fa6045553b8583ea55d27b20c6f9aaf8ea2066cbb99b9245c4d867",
+      "item_ids": [
+        "134de756f6fa6045553b8583ea55d27b20c6f9aaf8ea2066cbb99b9245c4d867"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:31:00+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5ede708a4e350f4edf5ad960dc2fcf1bfb41fdb11113ee64bc4c18ae27346a43",
+      "item_ids": [
+        "5ede708a4e350f4edf5ad960dc2fcf1bfb41fdb11113ee64bc4c18ae27346a43"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:30:57+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "079762d2f1bfbf64b9573574547db3a2aba0c025eb7b7951856300b31993ef6b",
+      "item_ids": [
+        "079762d2f1bfbf64b9573574547db3a2aba0c025eb7b7951856300b31993ef6b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:30:53+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a2540460e11401e363b03fde198d121e817228386d04b48500d04c420fb81a47",
+      "item_ids": [
+        "a2540460e11401e363b03fde198d121e817228386d04b48500d04c420fb81a47"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:28:08+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "838456425e922de64f10dcc01a5afd94335025944fd91ec1e90daa4c27b9163c",
+      "item_ids": [
+        "838456425e922de64f10dcc01a5afd94335025944fd91ec1e90daa4c27b9163c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:27:56+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a4a5465a875e7a39876e94cf3d072c49f5af468c492c9cc7eb03b6f35447b2fa",
+      "item_ids": [
+        "a4a5465a875e7a39876e94cf3d072c49f5af468c492c9cc7eb03b6f35447b2fa"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:26:30+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0e5817df40bd20bca47ea31a231b2db0d58213213632c371158b787d17b8c35b",
+      "item_ids": [
+        "0e5817df40bd20bca47ea31a231b2db0d58213213632c371158b787d17b8c35b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:26:02+00",
+      "category": "sports",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "71ce7bb31413385b26849e5b664fe027d27daee8e80fd965e3633c3ac3642cdc",
+      "item_ids": [
+        "71ce7bb31413385b26849e5b664fe027d27daee8e80fd965e3633c3ac3642cdc"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:26:00+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6300ec61fbd4c7aad7a604849484027535fc7f7057a4268663034beec99caf2d",
+      "item_ids": [
+        "6300ec61fbd4c7aad7a604849484027535fc7f7057a4268663034beec99caf2d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:25:49+00",
+      "category": "society",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "bd8a33e621060ff7b2934b67cf61d7b8c54bc629736b1889ad0f1b8e4d9d9c02",
+      "item_ids": [
+        "bd8a33e621060ff7b2934b67cf61d7b8c54bc629736b1889ad0f1b8e4d9d9c02"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:24:00+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "15d890eea378e2dad11524894b6603a054b4ffcf2e226debdcdd02b3ab98aaee",
+      "item_ids": [
+        "5cbfa2334968ed0d8d4e01061e8d514c561dd2028ea60e8b1355024f4040ffb1",
+        "260e7052417ed14feb331aa1f1ef3ee2367b67ec7e2eaa1af0a9720de884acf3",
+        "15d890eea378e2dad11524894b6603a054b4ffcf2e226debdcdd02b3ab98aaee"
+      ],
+      "source_count": 3,
+      "lead_published_at": "2026-09-26 02:39:14+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "189255bb2090f425da27856c4a9a6992a75d3211188e1b27e2c585712bed8a23",
+      "item_ids": [
+        "189255bb2090f425da27856c4a9a6992a75d3211188e1b27e2c585712bed8a23"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:22:16+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d07c1e2cb7e80b08d89a853be1c850a011f09c4cb499d3fd2e0ccab4b59e7012",
+      "item_ids": [
+        "d07c1e2cb7e80b08d89a853be1c850a011f09c4cb499d3fd2e0ccab4b59e7012"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:22:07+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "518b779803427b65bb948b26f30d59edd8072da298ee5e5ce0ea93b32a4d6062",
+      "item_ids": [
+        "518b779803427b65bb948b26f30d59edd8072da298ee5e5ce0ea93b32a4d6062"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:20:31+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f29066d47f110861d0ab440a26e1d55af90d456555b22185c578d9ee4b3e4a27",
+      "item_ids": [
+        "f29066d47f110861d0ab440a26e1d55af90d456555b22185c578d9ee4b3e4a27"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:19:00+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f6dfed8b56cdadd025c280e4ebb539340885420f96010247d304ed797a3769c8",
+      "item_ids": [
+        "f6dfed8b56cdadd025c280e4ebb539340885420f96010247d304ed797a3769c8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:17:35+00",
+      "category": "politics",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "edecf12914b58676491463fc26968cb3a8009eb18e2fc9ee044c79be2c0f4357",
+      "item_ids": [
+        "edecf12914b58676491463fc26968cb3a8009eb18e2fc9ee044c79be2c0f4357"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:16:27+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d0740637e75611f5fdf9f4f88a2e07884b96944e7fe56ef91273c8ee34f2dc84",
+      "item_ids": [
+        "9a5447dcc8498afbc2f7810506f15a10a04d03988969d7db4a6663e00adc3210",
+        "d0740637e75611f5fdf9f4f88a2e07884b96944e7fe56ef91273c8ee34f2dc84"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-26 02:55:59+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4dc5bbab40e4e8a93796075604d13d4bafb0b618ae8211ea01fbad08e5552b2b",
+      "item_ids": [
+        "4dc5bbab40e4e8a93796075604d13d4bafb0b618ae8211ea01fbad08e5552b2b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:14:48+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4c18e54737e203fa1e8a10c2443391728536e6c279d3dd02f913cb59467c379b",
+      "item_ids": [
+        "4c18e54737e203fa1e8a10c2443391728536e6c279d3dd02f913cb59467c379b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:14:09+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "248c637029fbe83e1f0c02402fe36f9af7ce7d4c426010631300ddae3f991e26",
+      "item_ids": [
+        "248c637029fbe83e1f0c02402fe36f9af7ce7d4c426010631300ddae3f991e26"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:14:00+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f4544cf716f5f802212c89b4fda9158a130cfe2c16f0a57a136cdeb4aa513b8b",
+      "item_ids": [
+        "f4544cf716f5f802212c89b4fda9158a130cfe2c16f0a57a136cdeb4aa513b8b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:11:00+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "beaf341c2803fa6ebc866196e74617518e169a096ab850e29bf9405537df6768",
+      "item_ids": [
+        "beaf341c2803fa6ebc866196e74617518e169a096ab850e29bf9405537df6768"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:09:56+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "395650b7b7ab255f0e2cb0e09a8774c1cd853d53300b227a5c47a2e708588c99",
+      "item_ids": [
+        "395650b7b7ab255f0e2cb0e09a8774c1cd853d53300b227a5c47a2e708588c99"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:07:11+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "96323135b37c08546051e0962644df1e798e411496a500d6782866f116275919",
+      "item_ids": [
+        "8497238df05d15c6a3f707c14f7ff7cb41a7729ff6596d1d9ed12ac1bda0d1c8",
+        "96323135b37c08546051e0962644df1e798e411496a500d6782866f116275919"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-26 02:57:00+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f5613b40dd68ccf7a3656771fa46b72c445f7dc8d8a5d66a85c0a8aef7668fe8",
+      "item_ids": [
+        "f5613b40dd68ccf7a3656771fa46b72c445f7dc8d8a5d66a85c0a8aef7668fe8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 03:02:12+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4d1af599017a2cfa4e155d6d6eb3ecc018f81ad22767c3d20ab8a844ff8cce7e",
+      "item_ids": [
+        "dc63a513aab479a026109f6b95bab007e516cfcda7280d109e5b43bf78247aa1",
+        "fa1cc23b33f8e489ac2f14d7606d6665360f631adc194e0e7547d845f8ceb82b",
+        "469e470529497ef78b26304fb362e3912cb8e8ef4076096f12a2b106522288d1",
+        "b3e77373c40d8643f4ab337eec8736d91d95ea5d4aa93d2b01e5b86d99ba0304",
+        "555231cfafc7c08b6470b220883d5fcab56f03afad6c8b7329348fd4258e3e13",
+        "4d1af599017a2cfa4e155d6d6eb3ecc018f81ad22767c3d20ab8a844ff8cce7e"
+      ],
+      "source_count": 6,
+      "lead_published_at": "2026-09-26 02:17:30+00",
+      "category": "sports",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "fcc76f0d6c698a64e68ba9f2d4d508dbf93931f076a03968929ca9f62a358455",
+      "item_ids": [
+        "fcc76f0d6c698a64e68ba9f2d4d508dbf93931f076a03968929ca9f62a358455"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:59:50+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "ea60606a765f68f1222e3819dc6d74ca1416bdaf6973d987e7d97b6236d229c3",
+      "item_ids": [
+        "ea60606a765f68f1222e3819dc6d74ca1416bdaf6973d987e7d97b6236d229c3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:55:11+00",
+      "category": "tech",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c1ba8ebfe30bce1214b10a5216d8d5ca38f657c90415dd300d6a80d42460ac37",
+      "item_ids": [
+        "c1ba8ebfe30bce1214b10a5216d8d5ca38f657c90415dd300d6a80d42460ac37"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:54:44+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2fae61a26cd2bce8df22d4c3e0ffb4fc5709f76094f3b489af97adc8fcd15dc5",
+      "item_ids": [
+        "2fae61a26cd2bce8df22d4c3e0ffb4fc5709f76094f3b489af97adc8fcd15dc5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:52:54+00",
+      "category": "economy",
+      "province": 6,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "afdf51d39c2686a6e37d8079096d03c549a8a3e36544edcc1ad3b1a2145170c1",
+      "item_ids": [
+        "afdf51d39c2686a6e37d8079096d03c549a8a3e36544edcc1ad3b1a2145170c1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:49:40+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "58dcab67abc73fd052283e31db26b94e8765d9ff7359f38fb6528609365654e9",
+      "item_ids": [
+        "58dcab67abc73fd052283e31db26b94e8765d9ff7359f38fb6528609365654e9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:48:34+00",
+      "category": null,
+      "province": 6,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d89354ac3b65f0572adf4546afb4d8d39bd812a4910cebf8f251ba06b750760a",
+      "item_ids": [
+        "d89354ac3b65f0572adf4546afb4d8d39bd812a4910cebf8f251ba06b750760a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:46:57+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8c8ee474ba88bf34ec2f1e1cc406790b2f03594d59deba2a25e580f22f3b98ee",
+      "item_ids": [
+        "8c8ee474ba88bf34ec2f1e1cc406790b2f03594d59deba2a25e580f22f3b98ee"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:46:39+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "3e7f531d27ddf1eadcf5ee2325433e649f896fa6afd8abab212174ae27554cbe",
+      "item_ids": [
+        "3e7f531d27ddf1eadcf5ee2325433e649f896fa6afd8abab212174ae27554cbe"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:46:35+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "975b8ceb8d8213fdfacdeec5f07fd992d87f6d3feced394fff7a93309948d9b9",
+      "item_ids": [
+        "975b8ceb8d8213fdfacdeec5f07fd992d87f6d3feced394fff7a93309948d9b9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:45:00+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "57fb4eeddb1745254d50e31c5242c98b18a5c9df31e696f4dfd568a0dc72ad2e",
+      "item_ids": [
+        "57fb4eeddb1745254d50e31c5242c98b18a5c9df31e696f4dfd568a0dc72ad2e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:45:00+00",
+      "category": null,
+      "province": 7,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2c1905cadc5b4fcf77cbd40bc9fbb220c4ee17ec530116c41a08754ab2191311",
+      "item_ids": [
+        "20202250bb7837ef92fcda318de2394143ce11b148770f8e5871132fe4bc7023",
+        "2c1905cadc5b4fcf77cbd40bc9fbb220c4ee17ec530116c41a08754ab2191311"
+      ],
+      "source_count": 2,
+      "lead_published_at": "2026-09-26 01:45:15+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d539aac905a955e16829be2810940edd0eebf0367a6d770c18416f85f6db46d3",
+      "item_ids": [
+        "d539aac905a955e16829be2810940edd0eebf0367a6d770c18416f85f6db46d3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:36:14+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "1355ff3c70de9b3a6e21a4943573ac63c15a6a01c8c080fd674bd4b4bb1cb4f5",
+      "item_ids": [
+        "1355ff3c70de9b3a6e21a4943573ac63c15a6a01c8c080fd674bd4b4bb1cb4f5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:32:15+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "964d7ebd7daa2a01b60950e5d84d933e919dc02211400303d88602d6ab2221da",
+      "item_ids": [
+        "964d7ebd7daa2a01b60950e5d84d933e919dc02211400303d88602d6ab2221da"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:31:47+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "79a347e2fefccf2e5b4fb9314a0147f1fdf76dbc6cee9d946c315cdbcb0dfca2",
+      "item_ids": [
+        "79a347e2fefccf2e5b4fb9314a0147f1fdf76dbc6cee9d946c315cdbcb0dfca2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:30:59+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "776f2360804ed2b5d4846daa9d38d4c01e34b6a501fe4a405f88fd805f9553c0",
+      "item_ids": [
+        "776f2360804ed2b5d4846daa9d38d4c01e34b6a501fe4a405f88fd805f9553c0"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 03:37:38+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "92eba6286f5137d44d7b7a631663307e10703e2842de1ef4ea11294c0c01ea1e",
+      "item_ids": [
+        "92eba6286f5137d44d7b7a631663307e10703e2842de1ef4ea11294c0c01ea1e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 02:05:29+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "bb46d4bc8d874e75c7c475a0b89f40f1c166f9f2b788617c32ffd0396a750da8",
+      "item_ids": [
+        "bb46d4bc8d874e75c7c475a0b89f40f1c166f9f2b788617c32ffd0396a750da8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 01:16:39+00",
+      "category": "tech",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "81ddd855c3f08937a216190dbbb18228e5a6bb540781c7c8813f34f4488d043e",
+      "item_ids": [
+        "81ddd855c3f08937a216190dbbb18228e5a6bb540781c7c8813f34f4488d043e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 16:44:53+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d48bff881af3ade59d18c10d6077ad2a1612219e6b0097f4b134f23717fd08e1",
+      "item_ids": [
+        "d48bff881af3ade59d18c10d6077ad2a1612219e6b0097f4b134f23717fd08e1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 14:37:16+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c126c929bc583c3bf191b1b938c20a8cd69f43fd87dacd6532da69b8b5367573",
+      "item_ids": [
+        "c126c929bc583c3bf191b1b938c20a8cd69f43fd87dacd6532da69b8b5367573"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 13:54:54+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "42b89a37ed0d6f442879c085e62727e3b26f3abeaec17623be7cb4715a5ab3b7",
+      "item_ids": [
+        "42b89a37ed0d6f442879c085e62727e3b26f3abeaec17623be7cb4715a5ab3b7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 13:04:45+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "1ba68bd3b29400e02c8b1376817ae10793eb53d9a91247edac941d9605417208",
+      "item_ids": [
+        "04c55503ab6ec036f1c1a9b76baeee6eb0f612634a33b4b4681d8d211003d746",
+        "c242fc3be5f4dbe52c4bf1ae678e4bf309e93df8b618c3d7af26ddf32c4b6010",
+        "1ba68bd3b29400e02c8b1376817ae10793eb53d9a91247edac941d9605417208"
+      ],
+      "source_count": 3,
+      "lead_published_at": "2026-09-26 02:00:06+00",
+      "category": "society",
+      "province": 7,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "856dbf596cc198c431aafcf6c9eac58ba0b68dce8a0376a2a5eefb5c3706754d",
+      "item_ids": [
+        "856dbf596cc198c431aafcf6c9eac58ba0b68dce8a0376a2a5eefb5c3706754d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:26:45+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "2b6c3189632e11813bd4195b2ac10619253f4bb725a196cb466fd9d32bb75735",
+      "item_ids": [
+        "2b6c3189632e11813bd4195b2ac10619253f4bb725a196cb466fd9d32bb75735"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:26:00+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "3823ca031a926205d893cd7395aaf5072d75b79dbd7ffab1c1409d1b6e789157",
+      "item_ids": [
+        "3823ca031a926205d893cd7395aaf5072d75b79dbd7ffab1c1409d1b6e789157"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:24:41+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "014202fd2e523e13bc4f9453e1b9b099db382ed2546992ff795b6e9d08e307d5",
+      "item_ids": [
+        "014202fd2e523e13bc4f9453e1b9b099db382ed2546992ff795b6e9d08e307d5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:22:41+00",
+      "category": "world",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6c702f6001c478c196d0872b8e7ac746f316fd5f3028ba64a18f6def46a44371",
+      "item_ids": [
+        "6c702f6001c478c196d0872b8e7ac746f316fd5f3028ba64a18f6def46a44371"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:22:30+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "46f8fa8046385b3ec8bd03c4cf71d4a28403050b983f0ad207683938522127ec",
+      "item_ids": [
+        "46f8fa8046385b3ec8bd03c4cf71d4a28403050b983f0ad207683938522127ec"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:21:49+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6da241d0f086c7367df4f56145537470cf28e2e5dafe437a908786ed928e3437",
+      "item_ids": [
+        "6da241d0f086c7367df4f56145537470cf28e2e5dafe437a908786ed928e3437"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:21:22+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "78fbeb74fa2ab57295fed03d69b3a44a20b2c346e1f88e53108980a05893c899",
+      "item_ids": [
+        "78fbeb74fa2ab57295fed03d69b3a44a20b2c346e1f88e53108980a05893c899"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:16:25+00",
+      "category": null,
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e0e58d9c87e80e7cc04b65eac1a1fc7d03ef13306bb07f05e60121c5ec8576b1",
+      "item_ids": [
+        "e0e58d9c87e80e7cc04b65eac1a1fc7d03ef13306bb07f05e60121c5ec8576b1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:16:03+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "77828bce753fbe16a3a6a3515cb0e2812aca895a1c856ff0ebaa86470433c8db",
+      "item_ids": [
+        "77828bce753fbe16a3a6a3515cb0e2812aca895a1c856ff0ebaa86470433c8db"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:15:24+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "96ab0fa498d21da28282711e44a613f4413ccad49ae6288a623454679b7e6fb8",
+      "item_ids": [
+        "568f422a1fdda3712b99d3acefe273ebd4f0dcf8c0e5936f737a91f8ca0eb8b7",
+        "8d46544d108c1a68ee34214a66be6d7aea38cf9db85da042f5d7951395cca0a5",
+        "96ab0fa498d21da28282711e44a613f4413ccad49ae6288a623454679b7e6fb8"
+      ],
+      "source_count": 3,
+      "lead_published_at": "2026-09-26 01:59:21+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c3e992952679792b4e1122d9be9b5bc204e892c96bd0b88147fa1c89f3ca74ca",
+      "item_ids": [
+        "c3e992952679792b4e1122d9be9b5bc204e892c96bd0b88147fa1c89f3ca74ca"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:12:56+00",
+      "category": "world",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "67faf0cb5af66d179f21e3e16f644e2e484ed4934dbebc67c7584d50cf52d32d",
+      "item_ids": [
+        "67faf0cb5af66d179f21e3e16f644e2e484ed4934dbebc67c7584d50cf52d32d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:08:45+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "477cce5ef3a58eb7392f8f2b822bf05060d830d9043e9832979495563a468cec",
+      "item_ids": [
+        "477cce5ef3a58eb7392f8f2b822bf05060d830d9043e9832979495563a468cec"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:08:45+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "ce92522b36b2148621391be42e3de94e6bd6901c42b0ceef55bac318b1f1ab10",
+      "item_ids": [
+        "ce92522b36b2148621391be42e3de94e6bd6901c42b0ceef55bac318b1f1ab10"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:06:50+00",
+      "category": "sports",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "614ae48a444845f0e3159cc926646a8d1a389ea66043cdf258391bed7dc007bb",
+      "item_ids": [
+        "614ae48a444845f0e3159cc926646a8d1a389ea66043cdf258391bed7dc007bb"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:05:35+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "1c36ff3a15b83c5eff10e153b577f1a8591e943134dea8941b4ffc612b3a524a",
+      "item_ids": [
+        "1c36ff3a15b83c5eff10e153b577f1a8591e943134dea8941b4ffc612b3a524a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:03:27+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "afdf0c15f84ffc6cd75a71f2d4265a965c012e8bf2e3b8b1e03b4f98d7f28aa1",
+      "item_ids": [
+        "afdf0c15f84ffc6cd75a71f2d4265a965c012e8bf2e3b8b1e03b4f98d7f28aa1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:03:05+00",
+      "category": "sports",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "fb7812d70347eed533302fe35a227e002ccdd87a242df27f13ae87d06bea0426",
+      "item_ids": [
+        "fb7812d70347eed533302fe35a227e002ccdd87a242df27f13ae87d06bea0426"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:02:58+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a686af122014c42d93b43e7c270b28ef7d2070c68b1149905b1e6225ac9495c1",
+      "item_ids": [
+        "a686af122014c42d93b43e7c270b28ef7d2070c68b1149905b1e6225ac9495c1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 02:00:50+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d13bcbaa4d5e313f8ac22bceb970214a9c39aeb28528bb1c5e8d04aaf835016e",
+      "item_ids": [
+        "d13bcbaa4d5e313f8ac22bceb970214a9c39aeb28528bb1c5e8d04aaf835016e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:57:55+00",
+      "category": "province",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c680d73a6833793c136c673f474bf24bd5d57e06cc0966f67bc662fc7b98a030",
+      "item_ids": [
+        "c680d73a6833793c136c673f474bf24bd5d57e06cc0966f67bc662fc7b98a030"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:55:11+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "93fa8729713f76d9cb4d2d653e2c631908c0fe83a1d8ee19bbe6c17514893f58",
+      "item_ids": [
+        "93fa8729713f76d9cb4d2d653e2c631908c0fe83a1d8ee19bbe6c17514893f58"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:52:11+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a836f0e363b6ba43f1e26fc5698314bd01ab217543772c8b650a2755037a23ea",
+      "item_ids": [
+        "a836f0e363b6ba43f1e26fc5698314bd01ab217543772c8b650a2755037a23ea"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:49:58+00",
+      "category": null,
+      "province": 7,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "85302e365c46ef47e68b7c52f7cf1f698d8cbbd3117d0b9385d387f1c78659c0",
+      "item_ids": [
+        "85302e365c46ef47e68b7c52f7cf1f698d8cbbd3117d0b9385d387f1c78659c0"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:48:30+00",
+      "category": null,
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "139256177daf6082b3bd88183e09ea269de77c1dfdd671dadddab2235ea77f2e",
+      "item_ids": [
+        "139256177daf6082b3bd88183e09ea269de77c1dfdd671dadddab2235ea77f2e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:48:22+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "bcfa2c583d01980f77d9de8387af5190063ef1cb3f68adab411793b85f169176",
+      "item_ids": [
+        "bcfa2c583d01980f77d9de8387af5190063ef1cb3f68adab411793b85f169176"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:45:16+00",
+      "category": "province",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "47634f620a6c261dc874d5b3263c7fa713deb91e0a06af7213fe718f1218df28",
+      "item_ids": [
+        "47634f620a6c261dc874d5b3263c7fa713deb91e0a06af7213fe718f1218df28"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:41:15+00",
+      "category": "province",
+      "province": 2,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "1769e93ba8d2a63178eaca2b86b0ddc0c6a0a3e42adeb6e67ac8c9b762fea0b7",
+      "item_ids": [
+        "1769e93ba8d2a63178eaca2b86b0ddc0c6a0a3e42adeb6e67ac8c9b762fea0b7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:38:35+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "75ed109347be19a178a80e69d793d6a55c2d8ba14d8f40dcf6d3db401da17d16",
+      "item_ids": [
+        "75ed109347be19a178a80e69d793d6a55c2d8ba14d8f40dcf6d3db401da17d16"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:37:20+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6475ebcb6575759e020cf733b10e5b62999f4856919ac1dec76deb0daea57e31",
+      "item_ids": [
+        "6475ebcb6575759e020cf733b10e5b62999f4856919ac1dec76deb0daea57e31"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:34:44+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "105b3690e4aff33c7d307ff4c43475b2ac8cc570f8d4b84803df6ab92bb94b6d",
+      "item_ids": [
+        "105b3690e4aff33c7d307ff4c43475b2ac8cc570f8d4b84803df6ab92bb94b6d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:33:15+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "07115a8eb894afd69ca1f3dc4cea0d1da19a3ad3979288781aaaf2d9398889f5",
+      "item_ids": [
+        "07115a8eb894afd69ca1f3dc4cea0d1da19a3ad3979288781aaaf2d9398889f5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:32:40+00",
+      "category": "province",
+      "province": 6,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "69027d0e624084f2b439424a972b4741d652fdfc4e0a8f0da7ba5158483f4a98",
+      "item_ids": [
+        "69027d0e624084f2b439424a972b4741d652fdfc4e0a8f0da7ba5158483f4a98"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:30:51+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "88dbf3cf725c094c8a1fcaa5fb05d0f7cbe1abbfe76f2ba1e7fa38689baca1a3",
+      "item_ids": [
+        "88dbf3cf725c094c8a1fcaa5fb05d0f7cbe1abbfe76f2ba1e7fa38689baca1a3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:26:02+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "b6d388068c974731d1e7833af39e346675206c91acf1ac60326ab52aa700940e",
+      "item_ids": [
+        "b6d388068c974731d1e7833af39e346675206c91acf1ac60326ab52aa700940e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:25:37+00",
+      "category": null,
+      "province": 6,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4b425b48641d9ad04c9cfb5592c303700e7bd4f0590838c5f422fdda75361df3",
+      "item_ids": [
+        "4b425b48641d9ad04c9cfb5592c303700e7bd4f0590838c5f422fdda75361df3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:24:48+00",
+      "category": "society",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0bc55d4ae7e823748e40cc357f1f04c7c1e71f45669312f822f3230da4b1841e",
+      "item_ids": [
+        "0bc55d4ae7e823748e40cc357f1f04c7c1e71f45669312f822f3230da4b1841e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:14:27+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a72b6ddd9232823133677bb46b703bfac48edf81978cf3eb49fdb68e6939627f",
+      "item_ids": [
+        "a72b6ddd9232823133677bb46b703bfac48edf81978cf3eb49fdb68e6939627f"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:14:10+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "875228640fb38901c6feb2112465f2b1f9ad0f5e4c6dd1b3dd07486c32dc4182",
+      "item_ids": [
+        "875228640fb38901c6feb2112465f2b1f9ad0f5e4c6dd1b3dd07486c32dc4182"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:10:56+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "737e0074492794b130d1793e64c2c694b64f8a921b179830fa0fce56d8455726",
+      "item_ids": [
+        "737e0074492794b130d1793e64c2c694b64f8a921b179830fa0fce56d8455726"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:06:23+00",
+      "category": null,
+      "province": 4,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c640dc9c37c0619e94eb1d080a5aad92d339488c8c29f92e49198fbf3fe3f9b9",
+      "item_ids": [
+        "c640dc9c37c0619e94eb1d080a5aad92d339488c8c29f92e49198fbf3fe3f9b9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 01:02:35+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "414e230f268baa1978c54e81ca6f21a1156b91571aea3787e1b99af7a195f7e7",
+      "item_ids": [
+        "414e230f268baa1978c54e81ca6f21a1156b91571aea3787e1b99af7a195f7e7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:58:19+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "41bbafb077161a48bd42ed4059eb4a57de75a85d9391520377a8a9c72178458e",
+      "item_ids": [
+        "41bbafb077161a48bd42ed4059eb4a57de75a85d9391520377a8a9c72178458e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:51:05+00",
+      "category": null,
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "378a5e86965132563c06bf89174b61a884dd568fccf4fe565aa6e4d23bc5ceb1",
+      "item_ids": [
+        "378a5e86965132563c06bf89174b61a884dd568fccf4fe565aa6e4d23bc5ceb1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:46:51+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e4aa647f5d2bfd80dfda096fbcdf164873da95031fffc49c37098267ba0fea1f",
+      "item_ids": [
+        "e4aa647f5d2bfd80dfda096fbcdf164873da95031fffc49c37098267ba0fea1f"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:45:19+00",
+      "category": "province",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e1ca7fbbc92628d448a687945010302e80be9807ef935c322cd7fb357ff2b6f4",
+      "item_ids": [
+        "e1ca7fbbc92628d448a687945010302e80be9807ef935c322cd7fb357ff2b6f4"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:43:11+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "400b91b021229e043c868109f44b61b1fd00fdd9abbe60c59be267c12f8d902a",
+      "item_ids": [
+        "400b91b021229e043c868109f44b61b1fd00fdd9abbe60c59be267c12f8d902a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:42:51+00",
+      "category": "province",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "fe4982f05564e2014377400249897102c427622abf04a2befa87a23ee4f56419",
+      "item_ids": [
+        "fe4982f05564e2014377400249897102c427622abf04a2befa87a23ee4f56419"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:41:03+00",
+      "category": "province",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "67ae6359b7dc3cd73a32a01081df6733a0a1be45ff61f758c2819a4d77515126",
+      "item_ids": [
+        "67ae6359b7dc3cd73a32a01081df6733a0a1be45ff61f758c2819a4d77515126"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:39:59+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8d47bb4d06c73a176b4d7867d8032662a8fa9f768a3e2cb1f8c4e06cd545f043",
+      "item_ids": [
+        "8d47bb4d06c73a176b4d7867d8032662a8fa9f768a3e2cb1f8c4e06cd545f043"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:33:41+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "682b9bcc47702d54f8dfe13c801387de2928d72b6aef2dcb768979e48569900a",
+      "item_ids": [
+        "682b9bcc47702d54f8dfe13c801387de2928d72b6aef2dcb768979e48569900a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-26 00:28:41+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "751d9f7edd02ff9c414c860c904539e6d5ba80946532bcc8c8a15a85d47338d7",
+      "item_ids": [
+        "751d9f7edd02ff9c414c860c904539e6d5ba80946532bcc8c8a15a85d47338d7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 22:49:00+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8db98aeb3a7b2d822a2127d59b0a52360f9032feeaa467bb0a2906b8bc72f6a3",
+      "item_ids": [
+        "8db98aeb3a7b2d822a2127d59b0a52360f9032feeaa467bb0a2906b8bc72f6a3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 22:10:00+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "3ef90a84a289eb1885fee5e4f3da3394f3fc5ed1fb2b883b205f3e26d2d84fa3",
+      "item_ids": [
+        "3ef90a84a289eb1885fee5e4f3da3394f3fc5ed1fb2b883b205f3e26d2d84fa3"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 16:28:44+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "91b0e798e5eee9dd01f065b5ec28137ee3d4e76bcc993912c3026c27d9401039",
+      "item_ids": [
+        "91b0e798e5eee9dd01f065b5ec28137ee3d4e76bcc993912c3026c27d9401039"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 16:10:34+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "cdbef113ba154b65e91a68a51a82b88348b911bb88119bdc55dea201e3c5ceef",
+      "item_ids": [
+        "cdbef113ba154b65e91a68a51a82b88348b911bb88119bdc55dea201e3c5ceef"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:58:27+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c5984eb589307f1554da8c8a2a27bbf952070fc7b5f130a2275f8566867558e8",
+      "item_ids": [
+        "c5984eb589307f1554da8c8a2a27bbf952070fc7b5f130a2275f8566867558e8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:58:17+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "85f33a764adaa331d9b91e4480a32575c0762f611a7e0d2ecac65815677171c9",
+      "item_ids": [
+        "85f33a764adaa331d9b91e4480a32575c0762f611a7e0d2ecac65815677171c9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:53:28+00",
+      "category": "economy",
+      "province": 5,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4a5ed8729be0917d0b763b357ad0b4fb5f8ef3505cd853c07dc31a2a19dfed3e",
+      "item_ids": [
+        "4a5ed8729be0917d0b763b357ad0b4fb5f8ef3505cd853c07dc31a2a19dfed3e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:45:00+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a96f83bd1c9d571821b8b3afd72a0c8763b4950b9425fb54875da192c436d07b",
+      "item_ids": [
+        "a96f83bd1c9d571821b8b3afd72a0c8763b4950b9425fb54875da192c436d07b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:39:38+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c9bd31f848b59a8eca7d99a84ae7df8ea770620c54c053e95acbf126ae981ee6",
+      "item_ids": [
+        "c9bd31f848b59a8eca7d99a84ae7df8ea770620c54c053e95acbf126ae981ee6"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:32:04+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "fb9373c864d8fdd6aebeb53125b1ae1c08045c966a0065c3df47bbc241fe6410",
+      "item_ids": [
+        "fb9373c864d8fdd6aebeb53125b1ae1c08045c966a0065c3df47bbc241fe6410"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:26:40+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "b0be3f85ab4d80cc94568b283cfbc08393c074b4ae9fe3e378f49155a8894e3e",
+      "item_ids": [
+        "b0be3f85ab4d80cc94568b283cfbc08393c074b4ae9fe3e378f49155a8894e3e"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 15:06:56+00",
+      "category": "politics",
+      "province": 7,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e5d4cf6e2205679ac9e8b487e8c4d72929886825ff017ad05897a8a73e114f2c",
+      "item_ids": [
+        "e5d4cf6e2205679ac9e8b487e8c4d72929886825ff017ad05897a8a73e114f2c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 13:54:18+00",
+      "category": null,
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e3a90d740499b6962c35e1461c11d8208362685125d1aa09647978974bb59dbf",
+      "item_ids": [
+        "e3a90d740499b6962c35e1461c11d8208362685125d1aa09647978974bb59dbf"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 13:30:50+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "84d5aa81887894d4bf969dbe9e7c605dee5353362eaf6fa711efae1e0fbe8dfd",
+      "item_ids": [
+        "84d5aa81887894d4bf969dbe9e7c605dee5353362eaf6fa711efae1e0fbe8dfd"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 13:13:30+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "ef1b13cc6cc4bd22934be4ac6198e073f18694850a7d3675d411d4a321f6f217",
+      "item_ids": [
+        "ef1b13cc6cc4bd22934be4ac6198e073f18694850a7d3675d411d4a321f6f217"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 13:12:58+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "d36f62aa96595d8c6e36cf71a37a69a0a19c271f5b087060f1c127a27729fc0b",
+      "item_ids": [
+        "d36f62aa96595d8c6e36cf71a37a69a0a19c271f5b087060f1c127a27729fc0b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 13:00:17+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "cb21f4cc3d46049424657094c8834fb6e9539e67cb7de70e20ae65d1d942c319",
+      "item_ids": [
+        "cb21f4cc3d46049424657094c8834fb6e9539e67cb7de70e20ae65d1d942c319"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 12:58:40+00",
+      "category": "province",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e164a877c642457532cf32bf482ad2b4af06e4aab41d9292c6e320cb3893c5f8",
+      "item_ids": [
+        "e164a877c642457532cf32bf482ad2b4af06e4aab41d9292c6e320cb3893c5f8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 12:28:49+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "80bca4aee4a8984fd6f2fdb132b677b8085e655600df66022f49cd7dab7d2d2c",
+      "item_ids": [
+        "80bca4aee4a8984fd6f2fdb132b677b8085e655600df66022f49cd7dab7d2d2c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 11:58:52+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "edab621cecec5f7468c6275a3f13b589026535c7ec731f83e632101215fd124c",
+      "item_ids": [
+        "edab621cecec5f7468c6275a3f13b589026535c7ec731f83e632101215fd124c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 11:38:47+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "51f6f2aa6a94cc7f1eabb05320f5227553ddbb7474b73f699cd4ee850d9838a9",
+      "item_ids": [
+        "51f6f2aa6a94cc7f1eabb05320f5227553ddbb7474b73f699cd4ee850d9838a9"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 11:32:16+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "7b15574b9618f35345f3ee30a5924c6f486301226dd9c20f6550d0dede9ff069",
+      "item_ids": [
+        "7b15574b9618f35345f3ee30a5924c6f486301226dd9c20f6550d0dede9ff069"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 10:43:26+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "f83202224e9fa509076020290b43e15fbdfc5ae47489f92a674bb84d61505a7b",
+      "item_ids": [
+        "f83202224e9fa509076020290b43e15fbdfc5ae47489f92a674bb84d61505a7b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 10:26:06+00",
+      "category": "province",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "193cdd7d83a719e5e9458de95abd882da1c310e266361f0c04b49dcf0f269fe7",
+      "item_ids": [
+        "193cdd7d83a719e5e9458de95abd882da1c310e266361f0c04b49dcf0f269fe7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 10:25:01+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "318640fd8a1ee96224c8437452b8c7788d03a18c2c20362dbaa463f2d23273c2",
+      "item_ids": [
+        "318640fd8a1ee96224c8437452b8c7788d03a18c2c20362dbaa463f2d23273c2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 10:14:52+00",
+      "category": "society",
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "90ffbcf9205d370ee508f6fac9ea6d4ad2e37495a49c00b16dda09f01b6d76be",
+      "item_ids": [
+        "90ffbcf9205d370ee508f6fac9ea6d4ad2e37495a49c00b16dda09f01b6d76be"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 09:20:44+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "47746051e5ad21cf0f90db9ebaa9427cd4b38288ffc874bddf82ac20f209d091",
+      "item_ids": [
+        "47746051e5ad21cf0f90db9ebaa9427cd4b38288ffc874bddf82ac20f209d091"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 08:21:40+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "812b41143e43c6c541ff2c7a2478f2c307196f622a8b1b460a73571f57137eac",
+      "item_ids": [
+        "812b41143e43c6c541ff2c7a2478f2c307196f622a8b1b460a73571f57137eac"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 08:16:42+00",
+      "category": "society",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "eed6898899b20b5f74f55a336b3c07e8dfb720b5d2d6dc6b64f8be5b4c3b58f4",
+      "item_ids": [
+        "eed6898899b20b5f74f55a336b3c07e8dfb720b5d2d6dc6b64f8be5b4c3b58f4"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 08:09:23+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8a3be86e386c719ac1b7f5ad70d0626a2c34642a14ecb71828e5eafada4b87e8",
+      "item_ids": [
+        "8a3be86e386c719ac1b7f5ad70d0626a2c34642a14ecb71828e5eafada4b87e8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 07:55:27+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6a82c38aa81e327e429c2abf07acc936e0fdaccc3bb56a9e5185186b0565fcf4",
+      "item_ids": [
+        "6a82c38aa81e327e429c2abf07acc936e0fdaccc3bb56a9e5185186b0565fcf4"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 07:44:08+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e20b2083fb56f4d9d524792e6674393fb0bcbb146fef815cf204568ce9736358",
+      "item_ids": [
+        "e20b2083fb56f4d9d524792e6674393fb0bcbb146fef815cf204568ce9736358"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 07:40:44+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "04dfdb4dd558aa03d29d1b7e23dde244afe2097b8bb9c6bbc6a8a6c92bfb0983",
+      "item_ids": [
+        "04dfdb4dd558aa03d29d1b7e23dde244afe2097b8bb9c6bbc6a8a6c92bfb0983"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 07:11:06+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c2b3c32fda779de48c7ca682afd4aa350969cf919e3f9c8a8f79e5d87993852d",
+      "item_ids": [
+        "c2b3c32fda779de48c7ca682afd4aa350969cf919e3f9c8a8f79e5d87993852d"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 07:10:26+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6f1e842e4be59487ee6d8e9892f609465d1c5e2fe9fe7af69796c1bfe4af7383",
+      "item_ids": [
+        "6f1e842e4be59487ee6d8e9892f609465d1c5e2fe9fe7af69796c1bfe4af7383"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 06:53:00+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "b553af1a0b8834b8cb00d3107dcfda09894e055c6526d9a2b6b3df8627ca38a7",
+      "item_ids": [
+        "b553af1a0b8834b8cb00d3107dcfda09894e055c6526d9a2b6b3df8627ca38a7"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 06:51:34+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "cf62e8e82a781688e2ee75aea96c0347f7a1f5f4c02995f1b3da68aca44797c6",
+      "item_ids": [
+        "cf62e8e82a781688e2ee75aea96c0347f7a1f5f4c02995f1b3da68aca44797c6"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 06:16:23+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "cfaa945a624aa1d5004d80b2da2e5a00337fc484aff81c679178b42554390342",
+      "item_ids": [
+        "cfaa945a624aa1d5004d80b2da2e5a00337fc484aff81c679178b42554390342"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 05:55:26+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "b43911e42160d5f8940c1a1fc7e6923e3c53891f42992332ee0d836626785a91",
+      "item_ids": [
+        "b43911e42160d5f8940c1a1fc7e6923e3c53891f42992332ee0d836626785a91"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 05:38:49+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "4931408a69fa59eb39a9d669b6c413c56af81101ca7ee3974b4fc11aee14bfce",
+      "item_ids": [
+        "4931408a69fa59eb39a9d669b6c413c56af81101ca7ee3974b4fc11aee14bfce"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 05:21:16+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "36dc61cc8f0fd25f160be6701565629ffbd99c48652411db675cda6379abfb24",
+      "item_ids": [
+        "36dc61cc8f0fd25f160be6701565629ffbd99c48652411db675cda6379abfb24"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 05:13:01+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "32ec3330bd8e99ac10ca29b83ccda9c44d08fb8b3da956143ddb7b40b4c43c1b",
+      "item_ids": [
+        "32ec3330bd8e99ac10ca29b83ccda9c44d08fb8b3da956143ddb7b40b4c43c1b"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 04:38:15+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "458e6d2283a8c10c12de81017fa0b816bf89943170cbe7eaeda76d292d39ca72",
+      "item_ids": [
+        "458e6d2283a8c10c12de81017fa0b816bf89943170cbe7eaeda76d292d39ca72"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 04:35:53+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "744e22aa2f61961019839b8b1c9a7554ac717599f8525d4cbe2fc3982d21b9c2",
+      "item_ids": [
+        "744e22aa2f61961019839b8b1c9a7554ac717599f8525d4cbe2fc3982d21b9c2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 04:20:11+00",
+      "category": "province",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "45df7edeab4630360a7ac4aba2a39d1b52ab668a70d9a5f464218f147d641d1f",
+      "item_ids": [
+        "45df7edeab4630360a7ac4aba2a39d1b52ab668a70d9a5f464218f147d641d1f"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 04:02:29+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "0bee8f33bb75f48b5c18afa71d387c49dd61c2637083b3707a8f41b70ddbe4c8",
+      "item_ids": [
+        "0bee8f33bb75f48b5c18afa71d387c49dd61c2637083b3707a8f41b70ddbe4c8"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-25 03:57:20+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5f096e6b38771fc9cda3195ff5fbaf5b0805fc0d5b446e0e2ad40e00925cf6cd",
+      "item_ids": [
+        "5f096e6b38771fc9cda3195ff5fbaf5b0805fc0d5b446e0e2ad40e00925cf6cd"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 12:32:53+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "10117f3246a4d3a5198309602242b16bf4384f6a5417efa056b0ff8df72c8b50",
+      "item_ids": [
+        "10117f3246a4d3a5198309602242b16bf4384f6a5417efa056b0ff8df72c8b50"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 12:27:09+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a8811f57331b3185e6e2065d2e036dbd761d77527486bf21c5e1c6d15f692c46",
+      "item_ids": [
+        "a8811f57331b3185e6e2065d2e036dbd761d77527486bf21c5e1c6d15f692c46"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 12:17:26+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "dbb3848f7a713b7ece38b648ad86ffe6b64af0e21033784ba6b4a1b6bd8de382",
+      "item_ids": [
+        "dbb3848f7a713b7ece38b648ad86ffe6b64af0e21033784ba6b4a1b6bd8de382"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 11:54:05+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "9f6c1177bfc15f1880075fabf882771795fa14fe4419ca661801e8b1dcf6a133",
+      "item_ids": [
+        "9f6c1177bfc15f1880075fabf882771795fa14fe4419ca661801e8b1dcf6a133"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 11:51:52+00",
+      "category": "economy",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "61a023452b400c50cabb488488d5bf5091dfe34916c32bcf77650862507d606c",
+      "item_ids": [
+        "61a023452b400c50cabb488488d5bf5091dfe34916c32bcf77650862507d606c"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 11:18:00+00",
+      "category": "economy",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "00201cb2ee7fdf2784fc12a0659a0c95fdd2c6d322ae1efd0492c848ea8457a5",
+      "item_ids": [
+        "00201cb2ee7fdf2784fc12a0659a0c95fdd2c6d322ae1efd0492c848ea8457a5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 10:59:14+00",
+      "category": "politics",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "fff263fe735283178298d9c714bf1b105b9db43aaa9a18ae2992ca258248f663",
+      "item_ids": [
+        "fff263fe735283178298d9c714bf1b105b9db43aaa9a18ae2992ca258248f663"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 10:51:49+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8fc3a7023ded4190e86598054778a28937e1d39264b715dc93c96300c4c92f43",
+      "item_ids": [
+        "8fc3a7023ded4190e86598054778a28937e1d39264b715dc93c96300c4c92f43"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 10:09:17+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "27683158918aaf03fcf73360cf50a7fcad4cee8c9242a7ff098795260fa7ddfd",
+      "item_ids": [
+        "27683158918aaf03fcf73360cf50a7fcad4cee8c9242a7ff098795260fa7ddfd"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 10:05:19+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "c8eb4b7e3a146497857950e7660a036995a904152a8e1005f3f9b184eeeff6d4",
+      "item_ids": [
+        "c8eb4b7e3a146497857950e7660a036995a904152a8e1005f3f9b184eeeff6d4"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 10:02:38+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a9bc596b9677242f678465ea6b58ab5fdef45080b5256128614cf564ad18e726",
+      "item_ids": [
+        "a9bc596b9677242f678465ea6b58ab5fdef45080b5256128614cf564ad18e726"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:55:57+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "10395e5df62ab49e695df0f20d21d94dc6a215037f032b50303b2b51eeb70511",
+      "item_ids": [
+        "10395e5df62ab49e695df0f20d21d94dc6a215037f032b50303b2b51eeb70511"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:49:43+00",
+      "category": "economy",
+      "province": 1,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "66d0062c911a9bdd08b8d03234f52afa9eb47ee299e96da251c7ae1b1432286f",
+      "item_ids": [
+        "66d0062c911a9bdd08b8d03234f52afa9eb47ee299e96da251c7ae1b1432286f"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:48:43+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "af9cc97ffa02d1404acead5b711bfa4a8e9d4dfbd734eaf01fcce6f99d36b13a",
+      "item_ids": [
+        "af9cc97ffa02d1404acead5b711bfa4a8e9d4dfbd734eaf01fcce6f99d36b13a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:45:15+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "5d4164b67635bc7f1cc5d244c090b1416d8d324f4c10ca236a838ff0f8d71cbc",
+      "item_ids": [
+        "5d4164b67635bc7f1cc5d244c090b1416d8d324f4c10ca236a838ff0f8d71cbc"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:41:42+00",
+      "category": "sports",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "6f2ca020bccc8518b40f45bdea33d9c56fa67639031eeadba3bda6baadbf46e5",
+      "item_ids": [
+        "6f2ca020bccc8518b40f45bdea33d9c56fa67639031eeadba3bda6baadbf46e5"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:34:15+00",
+      "category": null,
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "a22bd4d645bd6d964f765f1331e87c55c8cc283ce96044f640dd1afa8d55302a",
+      "item_ids": [
+        "a22bd4d645bd6d964f765f1331e87c55c8cc283ce96044f640dd1afa8d55302a"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:18:57+00",
+      "category": "world",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "7332bb4673d32b3201cf6d1147796eab7ec3d317b1323b7ece43d96e72004da1",
+      "item_ids": [
+        "7332bb4673d32b3201cf6d1147796eab7ec3d317b1323b7ece43d96e72004da1"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:15:59+00",
+      "category": "society",
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "81f13393f142baac26ce9023084f380b783a985b592aabaf37fe3fc55325bb26",
+      "item_ids": [
+        "81f13393f142baac26ce9023084f380b783a985b592aabaf37fe3fc55325bb26"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 09:03:19+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "e89bf7b775e946971f5dc7a5e13755128ef819ec9e219bd8bfae462e2769e4b2",
+      "item_ids": [
+        "e89bf7b775e946971f5dc7a5e13755128ef819ec9e219bd8bfae462e2769e4b2"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 08:37:12+00",
+      "category": "politics",
+      "province": 3,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    },
+    {
+      "id": "8ef3dc7247cb22bef487abf4836347220c33277c1025d5c8307d75ce9917c964",
+      "item_ids": [
+        "8ef3dc7247cb22bef487abf4836347220c33277c1025d5c8307d75ce9917c964"
+      ],
+      "source_count": 1,
+      "lead_published_at": "2026-09-24 08:27:45+00",
+      "category": null,
+      "province": null,
+      "updated_at": "2026-09-26 04:07:39.135+00"
+    }
+  ]
+}
