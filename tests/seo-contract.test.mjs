@@ -102,3 +102,36 @@ test("tracked sitemap index points to the three generated sitemap segments", asy
   assert.ok(calendar.includes("/calendar/2083/01"));
   assert.ok(robots.includes("Sitemap: https://patro-blush.vercel.app/sitemap.xml"));
 });
+
+test("Vercel SEO-sensitive SPA routes use route-specific generated shells", async () => {
+  const [vercelRaw, emitter, doctor] = await Promise.all([
+    read("vercel.json"),
+    read("scripts/emit-tool-shell.mjs"),
+    read("scripts/doctor.mjs")
+  ]);
+  const vercel = JSON.parse(vercelRaw);
+  const rewrites = new Map((vercel.rewrites || []).map((row) => [row.source, row.destination]));
+  for (const [route, target] of [
+    ["/tools", "/tools/index.html"],
+    ["/fm", "/fm/index.html"],
+    ["/tv", "/tv/index.html"],
+    ["/explore", "/explore/index.html"],
+    ["/about", "/about/index.html"],
+    ["/sources", "/sources/index.html"],
+    ["/jyotish/janma-patro", "/jyotish/janma-patro/index.html"]
+  ]) {
+    assert.equal(rewrites.get(route), target, route);
+    assert.ok(emitter.includes('"' + route + '"'), "missing shell metadata for " + route);
+  }
+  assert.ok(doctor.includes('"fm/index.html"'));
+  assert.ok(doctor.includes('"tv/index.html"'));
+});
+
+test("local Lighthouse server does not weaken production canonical metadata", async () => {
+  const [server, index] = await Promise.all([
+    read("scripts/serve-dist.mjs"),
+    read("index.html")
+  ]);
+  assert.ok(server.includes("Lighthouse treats a homepage canonical"));
+  assert.ok(index.includes('rel="canonical" href="https://patro-blush.vercel.app/"'));
+});
