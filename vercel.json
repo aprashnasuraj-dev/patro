@@ -19,19 +19,19 @@
     },
     {
       "source": "/jyotish/janma-patro",
-      "destination": "/astro/index.html"
+      "destination": "/jyotish/janma-patro/index.html"
     },
     {
       "source": "/jyotish/matchmaking",
-      "destination": "/astro/index.html"
+      "destination": "/jyotish/matchmaking/index.html"
     },
     {
       "source": "/fm",
-      "destination": "/astro"
+      "destination": "/fm/index.html"
     },
     {
       "source": "/tv",
-      "destination": "/astro"
+      "destination": "/tv/index.html"
     },
     {
       "source": "/tools/sw.js",
@@ -39,7 +39,7 @@
     },
     {
       "source": "/tools",
-      "destination": "/astro/index.html"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/nepali-typing",
@@ -47,51 +47,51 @@
     },
     {
       "source": "/tools/unicode-to-preeti",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/preeti-to-unicode",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/fuelprice",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/nepaliqr",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/incometax",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/landconverter",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/adtobs",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/bstoad",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/unicodetopreeti",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/preetitounicode",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/preeti-converter",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/typingtools",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/tools/tithi",
@@ -119,39 +119,39 @@
     },
     {
       "source": "/tools/:path*",
-      "destination": "/tools"
+      "destination": "/tools/index.html"
     },
     {
       "source": "/explore",
-      "destination": "/tools"
+      "destination": "/explore/index.html"
     },
     {
       "source": "/my-diary",
-      "destination": "/tools"
+      "destination": "/my-diary/index.html"
     },
     {
       "source": "/about",
-      "destination": "/tools"
+      "destination": "/about/index.html"
     },
     {
       "source": "/sources",
-      "destination": "/tools"
+      "destination": "/sources/index.html"
     },
     {
       "source": "/privacy",
-      "destination": "/tools"
+      "destination": "/privacy/index.html"
     },
     {
       "source": "/terms",
-      "destination": "/tools"
+      "destination": "/terms/index.html"
     },
     {
       "source": "/contact",
-      "destination": "/tools"
+      "destination": "/contact/index.html"
     },
     {
       "source": "/404",
-      "destination": "/tools"
+      "destination": "/404/index.html"
     },
     {
       "source": "/samudaya",
@@ -187,11 +187,11 @@
     },
     {
       "source": "/settings/community",
-      "destination": "/astro/index.html"
+      "destination": "/settings/community/index.html"
     },
     {
       "source": "/admin/community-suites",
-      "destination": "/astro/index.html"
+      "destination": "/admin/community-suites/index.html"
     },
     {
       "source": "/tools/samudaya",
