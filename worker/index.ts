@@ -771,17 +771,6 @@ function staticRewriteTarget(path: string) {
   return null;
 }
 
-function excludedFromProtectedCatchAll(path: string) {
-  return path === "/astro" || path.startsWith("/astro/") ||
-    path === "/tools" || path.startsWith("/tools/") ||
-    path === "/fm" || path === "/fm/" ||
-    path === "/tv" || path === "/tv/" ||
-    path === "/jyotish/janma-patro" || path === "/jyotish/janma-patro/" ||
-    path === "/jyotish/matchmaking" || path === "/jyotish/matchmaking/" ||
-    path === "/samudaya" || path.startsWith("/samudaya/") ||
-    path === "/nepal-sambat/mandala" || path === "/nepal-sambat/mandala/";
-}
-
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
