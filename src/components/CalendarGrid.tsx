@@ -239,7 +239,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
         {view==="month"?(
           <motion.div key={"grid-"+month.toISOString()} initial={{opacity:0,x:24}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-24}} transition={{duration:.18}}>
             <div className="weekday-row sticky-weekdays" aria-label="Weekdays">{WEEKDAYS.map((w)=><span key={w}>{w}</span>)}</div>
-            <div className="month-grid" role="grid" aria-label={title(month)}>
+            <div className="month-grid" role="group" aria-label={title(month)}>
               {cells.map((cell)=>{
                 const data=entries.get(cell.iso), forecast=weather.get(cell.iso), tithiNumber=data?.tithi.number;
                 const transition=data?tithiTransitionLabel(data):null;
@@ -247,7 +247,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
                 const primary=mode==="bs"?(data?.calendars.bikram_sambat_detail.day??"—"):cell.date.getUTCDate();
                 const secondary=mode==="bs"?String(cell.date.getUTCDate())+" AD":data?data.calendars.bikram_sambat_detail.day+" BS":"";
                 const classes=["calendar-day",!cell.inMonth?"calendar-day--muted":"",cell.iso===today?"calendar-day--today":"",cell.iso===selectedDate?"calendar-day--selected":"",special?"calendar-day--special "+special:""].filter(Boolean).join(" ");
-                return <button key={cell.iso} className={classes} onClick={()=>{onSelectDate(cell.iso);if(data)setOpenDay(data);}} role="gridcell" aria-selected={cell.iso===selectedDate}
+                return <button key={cell.iso} className={classes} onClick={()=>{onSelectDate(cell.iso);if(data)setOpenDay(data);}} aria-pressed={cell.iso===selectedDate}
                   aria-label={cell.iso+(data?", "+data.tithi.ne+(transition?", "+transition:"")+", "+data.tithi.paksha:"")}>
                   <span className="day-number" aria-label={"day "+primary}>{mode==="bs"&&typeof primary==="number"?nepaliDigits(primary):primary}</span>
                   <span className="day-secondary">{secondary}</span>
