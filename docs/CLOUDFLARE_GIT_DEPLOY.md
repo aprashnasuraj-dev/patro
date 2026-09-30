@@ -124,6 +124,7 @@ GET /api/v1/nasa/apod?date=2026-09-30
 GET /api/v1/tools/catalog
 GET /api/v1/time-machine
 GET /api/v1/on-this-day?date=2026-09-30
+GET /api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=2026-09-30
 ```
 
 With full bindings, health should report native D1 mode. The `x-patro-backend: supabase-compat` header identifies compatibility responses.

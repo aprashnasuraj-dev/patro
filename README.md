@@ -55,7 +55,7 @@ This repository keeps the full Patro product rather than replacing it with an as
 | NASA APOD | Worker-native normalization/fallback + KV |
 | Time Machine / On This Day | Worker/D1 native with compatibility fallback |
 | Jyotish / Janma Patro | Pages UI + preserved backend bridge |
-| Rashifal | existing protected backend contract preserved |
+| Rashifal | universal/public readings are D1-first with compatibility fallback; personalized/private readings remain on the protected backend |
 | FM / radio | Pages player + Worker/compat stream route |
 | Live TV | Pages HLS/browser player |
 | Nepali typing | integrated and standalone static app |
@@ -208,7 +208,7 @@ Deploy the API Worker before Pages so `PATRO_API` has a valid target.
 - `sw.js` revalidates so PWA releases are not pinned by browser cache.
 - Native GET APIs use Cloudflare Cache API.
 - APOD also uses KV when available.
-- D1 is attempted before compatibility calls on native routes.
+- D1 is attempted before compatibility calls on native routes, including universal Rashifal publication lookup.
 - Unknown `/api/v1/*` routes continue to the existing Supabase router during staged migration.
 
 ## Security boundaries

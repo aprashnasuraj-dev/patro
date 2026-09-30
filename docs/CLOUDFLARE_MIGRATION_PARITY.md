@@ -13,6 +13,8 @@ Current native routes include:
 - `GET /api/v1/tools/catalog`
 - `GET /api/v1/on-this-day`
 - `GET /api/v1/time-machine`
+- `GET /api/v1/rashifal/universal` (D1-first)
+- `GET /api/rashifal/universal` (D1-first)
 
 Explicit bridges preserve:
 
@@ -29,7 +31,7 @@ The compatibility layer protects:
 - today/date conversion/calendar month;
 - festivals, holidays, Panchang, tithi derive/next;
 - market data;
-- Rashifal metadata/universal/personalized;
+- Rashifal metadata/personalized plus universal fallback for D1 cache misses;
 - tool catalog and typing lexicon;
 - tithi feed, official Sait and contact;
 - community suites and ICS;
@@ -50,6 +52,7 @@ The compatibility layer protects:
 | Astronomy | Time Travel, lunar phase, NeoWs, APOD, EPIC, space weather |
 | History | On This Day, Time Machine |
 | Jyotish | Janma Patro/matchmaking/current integrations |
+| Rashifal | universal/public D1-first; personalized/private protected compatibility |
 | Media | FM directory/player and live TV/HLS |
 | Nepali language | typing, Preeti/Unicode, spelling, voice/read-aloud |
 | Tools | OCR, Sait, reminders, baby names, birth card, PatroBot, future letters |
