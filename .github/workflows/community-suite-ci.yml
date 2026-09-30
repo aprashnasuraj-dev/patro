@@ -1,7 +1,11 @@
 name: Community Suite release gate
 on:
   push:
-    branches: [feat/community-suites-c-pages-settings, release/community-suites-20260930]
+    branches:
+      - feat/community-suites-c-pages-settings
+      - release/community-suites-20260930
+      - cloudflare-migration
+      - "migration/cloudflare-*"
   pull_request:
 permissions:
   contents: read
