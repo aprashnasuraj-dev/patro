@@ -4,6 +4,7 @@ import { radioCatalogResponse, radioStreamResponse } from "./radio";
 import { fmResponse } from "./fm";
 import { handleJyotishChat } from "./jyotish";
 import { dailyWeatherResponse } from "./weather";
+import { communityResponse } from "./community";
 
 type Env = {
   DB?: any;
@@ -645,6 +646,9 @@ async function nativeRashifalUniversal(request: Request, env: Env) {
 async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   const path = url.pathname;
+
+  const communityNative = await communityResponse(request,env);
+  if (communityNative) return communityNative;
 
   if (path === "/api/v1/health") {
     return json({
