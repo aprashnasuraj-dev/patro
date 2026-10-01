@@ -1,7 +1,7 @@
 import worker from "./index";
-import { runScheduled } from "./jobs";
+import { runScheduled, type JobsEnv } from "./jobs";
 
-type Env = Record<string, unknown> & { SUPABASE_COMPAT_ORIGIN?: string };
+type Env = JobsEnv & Record<string, unknown> & { SUPABASE_COMPAT_ORIGIN?: string };
 
 const FALLBACK_PATHS = new Map<string, string>([
   ["/api/v1/sync", "/sync"],
@@ -159,7 +159,7 @@ const productionWorker = {
     return callWithFallback(request, env, ctx);
   },
   async scheduled(controller: { cron: string }, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(runScheduled(controller.cron,env as any));
+    ctx.waitUntil(runScheduled(controller.cron,env));
   }
 };
 
