@@ -28,7 +28,7 @@ const GROUPS:{title:string;items:Item[]}[]=[
     {path:"/tools",title:"उपयोगी उपकरण",description:"Preeti, मिति, भूमि, कर, QR र इन्धन",icon:Wrench},
     {path:"/time-machine",title:"समययन्त्र",description:"इतिहासमा समय यात्रा",icon:Hourglass},
     {path:"/on-this-day",title:"आज इतिहासमा",description:"आजको दिन इतिहासमा भएका घटनाहरू",icon:History},
-    {path:"/jyotish/janma-patro",title:"जन्मपत्रिका",description:"जन्म मिति, समय र स्थानबाट कुण्डली",icon:Orbit},
+    {path:"/jyotish/china",title:"चिना टिपन · जन्मपत्रिका",description:"जन्म मिति, समय र स्थानबाट कुण्डली, दशा र ग्रह स्थिति",icon:Orbit},
     {path:"/settings",title:"साइन इन र सिङ्क",description:"Google साइन इन, sync र गोपनीयता",icon:Cloud}
   ]}
 ];
