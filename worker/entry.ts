@@ -1,6 +1,6 @@
 import worker from "./index";
+import { runScheduled } from "./jobs";
 
-type BaseWorker = typeof worker;
 type Env = Record<string, unknown> & { SUPABASE_COMPAT_ORIGIN?: string };
 
 const FALLBACK_PATHS = new Map<string, string>([
@@ -137,7 +137,7 @@ async function callWithFallback(request: Request, env: Env, ctx: ExecutionContex
   return url.pathname === "/api/v1/tools/catalog" ? brandCatalog(resolved) : resolved;
 }
 
-const productionWorker: BaseWorker = {
+const productionWorker = {
   ...worker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     let url = new URL(request.url);
@@ -157,6 +157,9 @@ const productionWorker: BaseWorker = {
 
     if (path === "/api/v1/doctor") return doctorWithoutMarketDependency(request, env, ctx);
     return callWithFallback(request, env, ctx);
+  },
+  async scheduled(controller: { cron: string }, env: Env, ctx: ExecutionContext) {
+    ctx.waitUntil(runScheduled(controller.cron,env as any));
   }
 };
 
