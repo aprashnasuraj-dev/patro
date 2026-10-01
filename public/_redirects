@@ -1,11 +1,14 @@
+/aaja / 301
 /astro /tools/astro 301
 /astro/ /tools/astro 301
 /my-diary /me/diary 301
 /notes /me/notes 301
 /planner /me/planner 301
 /family /me/family 301
+/family/join /me/family 301
 /family/* /me/family 301
 /tools/family /me/family 301
+/tithi /me/reminders 301
 /settings/notifications /me/reminders 301
 /tools/tithi /me/reminders 301
 /card /me/cards 301
@@ -14,6 +17,7 @@
 /settings/holidays /me/settings 301
 /my-data /me/data 301
 /tools/my-data /me/data 301
+/diaspora /tools/clock 301
 /jyotish/rashifal /rashifal 301
 /jyotish/china/rashi /rashifal 301
 /jyotish/janma-patro /jyotish/china 301
