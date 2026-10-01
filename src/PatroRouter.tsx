@@ -24,7 +24,7 @@ const RouteAlias = lazy(() => import("./components/NativeProtectedPages").then((
 
 const NATIVE_PATHS = new Set([
   "/astro","/fm","/tv","/tools","/explore","/my-diary","/about","/sources","/privacy","/terms","/contact","/404",
-  "/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites",
+  "/jyotish/china","/jyotish/china/rashi","/jyotish/janma-patro","/jyotish/matchmaking","/settings/community","/admin/community-suites",
   "/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers"
 ]);
 
@@ -97,6 +97,7 @@ export function PatroRouter() {
     if (path === "/tools/tithi") return <RouteAlias to="/tools/tithi-reminder" />;
     if (path === "/tools/diaspora") return <RouteAlias to="/tools/clock" />;
     if (path === "/tools/card") return <RouteAlias to="/tools/janmadin-akhbar" />;
+    if (path === "/jyotish/china/rashi") return <RouteAlias to="/jyotish/rashifal" />;
     if (path === "/settings/community") return <CommunityPreferences />;
     if (path === "/admin/community-suites") return <CommunityAdmin />;
     if (path === "/explore") return <FeatureHub />;
@@ -117,7 +118,7 @@ export function PatroRouter() {
     if (path === "/tools/unicode-to-preeti" || path === "/tools/unicodetopreeti") return <NepaliTools mode="unicode-to-preeti" />;
     if (path === "/tools/janma") return <JanmaPatroSuite />;
     if (path === "/tools" || path.startsWith("/tools/")) return <UtilitySuite key={path} />;
-    if (path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
+    if (path === "/jyotish/china" || path === "/jyotish/janma-patro" || path === "/jyotish/matchmaking") return <JanmaPatroSuite />;
     return <App />;
   };
 
