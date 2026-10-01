@@ -11,11 +11,25 @@ test("archived Aafnai Patro UI reference is byte-exact",()=>{
   assert.equal(createHash("sha256").update(bytes).digest("hex"),"21504b9bb8a638884b2eb00356983638bebbc310f690ee8de5721aac4cbcb519");
 });
 
-test("Aafnai design layer loads after existing feature styles",()=>{
+test("Aafnai design system is the final runtime presentation layer",()=>{
   const main=read("src/main.tsx");
-  const ref=main.indexOf('import "./reference-ui.css";');
+  const aafnai=main.indexOf('import "./aafnai.css";');
   const previous=main.indexOf('import "./community/community.css";');
-  assert.ok(ref>previous,"reference-ui.css must load last so the reference design can override presentation without rewriting feature CSS");
+  assert.ok(aafnai>previous,"aafnai.css must load after the retained feature styles");
+  assert.equal(main.includes('import "./reference-ui.css";'),false,"archived blue reference styles must not be loaded at runtime");
+});
+
+test("Aafnai router covers every home and tools deep-link",()=>{
+  const router=read("src/PatroRouter.tsx");
+  for(const route of ["/time-machine","/on-this-day","/date/"]){
+    assert.ok(router.includes(route),`missing native app route: ${route}`);
+  }
+  assert.ok(router.includes("TimeMachinePage"));
+  assert.ok(router.includes("OnThisDayPage"));
+  assert.ok(router.includes("DateDetailPage"));
+  const entry=read("worker/entry.ts");
+  assert.ok(entry.includes('path === "/nepal-sambat"'));
+  assert.ok(entry.includes('redirect(request, "/nepal-sambat/mandala")'));
 });
 
 test("reference tool parity is wired into the React utility suite",()=>{
@@ -55,7 +69,6 @@ test("verified forex fallback is traceable to NRB",()=>{
   assert.ok(data.items.some((row)=>row.asset==="USD"));
   assert.ok(data.items.some((row)=>row.asset==="JPY"));
 });
-
 
 test("community suite build contract is exactly seven",()=>{
   const emitter=read("scripts/emit-community-suites.mjs");
