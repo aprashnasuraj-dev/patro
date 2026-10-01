@@ -1,0 +1,73 @@
+name: Cloudflare direct deploy
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/cloudflare-direct-deploy.yml"
+      - "wrangler.jsonc"
+      - "scripts/deploy-cloudflare.mjs"
+      - "scripts/prepare-cloudflare-config.mjs"
+      - "cloudflare/d1/schema-migrations/**"
+      - "package.json"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production-deploy
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARE_ACCOUNT_ID: 8cbd02dbb38348565fe56e14fccf1710
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+jobs:
+  auth-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify Cloudflare deploy credential is configured
+        shell: bash
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not configured."
+            exit 1
+          fi
+      - name: Install pinned dependencies
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - name: Verify Cloudflare account authentication
+        run: npx wrangler whoami
+      - name: Verify production Worker bundle locally
+        run: npx wrangler deploy --dry-run --config wrangler.jsonc
+
+  deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify Cloudflare deploy credential is configured
+        shell: bash
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not configured."
+            exit 1
+          fi
+      - name: Install pinned dependencies
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - name: Verify Cloudflare account authentication
+        run: npx wrangler whoami
+      - name: Apply D1 migrations and deploy production Worker
+        run: npm run deploy:cloudflare
