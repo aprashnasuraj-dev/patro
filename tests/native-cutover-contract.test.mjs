@@ -21,7 +21,7 @@ function walk(dir){
   return out;
 }
 
-test("browser source has no direct Supabase runtime dependency and transition fallback stays Worker-side",()=>{
+test("browser source has no direct Supabase runtime dependency and selective transition fallback stays Worker-side",()=>{
   const banned=[
     /https:\/\/[^"'\s]*supabase\.co/i,
     /SUPABASE_[A-Z_]+/,
@@ -35,19 +35,26 @@ test("browser source has no direct Supabase runtime dependency and transition fa
     for(const pattern of banned) if(pattern.test(text)) failures.push(file.replace(root.pathname,"")+": "+pattern);
   }
   assert.deepEqual(failures,[]);
-  const entry=read("worker/entry.ts");
-  assert.ok(entry.includes("SUPABASE_COMPAT_ORIGIN"));
-  assert.ok(entry.includes("supabase-compat-fallback"));
+  const connected=read("worker/connected-entry.ts");
+  assert.ok(connected.includes("SUPABASE_COMPAT_ORIGIN"));
+  assert.ok(connected.includes('new Set(["tv", "fm", "samachar"])'));
+  assert.ok(connected.includes('response.status !== 404'));
+  assert.ok(connected.includes('request.method !== "GET" && request.method !== "HEAD"'));
 });
 
-test("cutover inventory has zero code-port blockers but retains external safety gates",()=>{
+test("cutover inventory is main-branch truthful and preserves selective compatibility until parity",()=>{
   const state=json("cloudflare/remaining-cutover.json");
+  assert.equal(state.branch,"main");
   assert.equal(state.status.cloudflare_native_runtime_complete,true);
   assert.equal(state.status.code_cutover_blockers,0);
   assert.equal(state.status.safe_to_delete_supabase,false);
   assert.equal(state.status.safe_to_delete_vercel,false);
+  assert.equal(state.status.active_supabase_runtime_dependency,true);
+  assert.deepEqual(state.status.selective_compatibility_roots,["tv","fm","samachar"]);
+  assert.ok(state.remaining_native_port_groups.some((x)=>String(x).includes("tv")));
+  assert.ok(state.remaining_native_port_groups.some((x)=>String(x).includes("samachar")));
   const ids=new Set((state.non_code_cutover_dependencies||[]).map((x)=>x.id));
-  for(const id of ["remote_d1","native_secrets","legacy_private_row","preview_validation","observation_window"])assert.ok(ids.has(id),id);
+  for(const id of ["remote_d1","native_secrets","selective_compatibility","legacy_private_row","preview_validation","observation_window"])assert.ok(ids.has(id),id);
 });
 
 test("Google identity and private D1 schemas are present",()=>{
@@ -102,15 +109,16 @@ test("personal frontend sync uses same-origin account APIs, not bearer tokens",(
   assert.ok((storage+preferences+admin).includes('credentials: "same-origin"'));
 });
 
-test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal without NEPSE polling",()=>{
-  const jobs=read("worker/jobs.ts"),entry=read("worker/entry.ts"),wrangler=read("wrangler.jsonc");
+test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal without automatic market polling",()=>{
+  const jobs=read("worker/jobs.ts"),entry=read("worker/entry.ts"),wrangler=read("wrangler.jsonc"),state=json("cloudflare/remaining-cutover.json");
   for(const endpoint of ["/api/cron/push","/api/cron/revalidate","/api/v1/cron/rashifal"])assert.ok(jobs.includes(endpoint),endpoint);
   for(const cron of ["*/5 * * * *","43 2 * * *","11 3 * * *"])assert.ok(wrangler.includes(cron),cron);
   assert.ok(!wrangler.includes("17 0,6,12,18 * * *"),"NEPSE/market polling cron must stay removed");
+  assert.equal(Object.hasOwn(state.native_cron.schedules,"market"),false,"cutover state must not claim market is scheduled");
   assert.match(entry,/runScheduled\(\s*controller\.cron\s*,\s*env\s*\)/);
 });
 
-test("secret manifest no longer requires Supabase and declares native identity/push/admin dependencies",()=>{
+test("secret manifest no longer requires browser Supabase keys and declares native identity/push/admin dependencies",()=>{
   const manifest=json("cloudflare/secrets-manifest.json");
   const all=JSON.stringify(manifest);
   assert.ok(!/SUPABASE_/i.test(JSON.stringify([manifest.exact_case_sensitive_names,manifest.cloudflare_native_required,manifest.one_of_groups])));
