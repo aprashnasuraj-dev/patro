@@ -54,12 +54,39 @@ test("critical product surfaces and all Community Suite calendars are visible fr
   }
 });
 
-test("every registered Patro tool slug resolves to a real component, never the fallback",()=>{
+test("every registered Patro tool slug resolves to a real component and no coming-soon placeholder remains",()=>{
   const shell=read("src/patro-tools-integration/PatroToolsShell.tsx");
   const slugs=setStringEntries(read("src/patro-tools-integration/toolSlugs.ts"));
   assert.ok(slugs.length>=11,"Patro tool registry unexpectedly shrank");
   for(const slug of slugs){
-    assert.ok(shell.includes(`slug==="${slug}"`),`registered tool can hit placeholder fallback: ${slug}`);
+    assert.ok(shell.includes(`slug==="${slug}"`),`registered tool can hit unavailable fallback: ${slug}`);
+  }
+  assert.equal(/integration phase|coming soon|coming-soon/i.test(shell),false,"registered tool shell must not ship placeholder language");
+});
+
+test("premium experience layer is loaded last and keeps reduced-motion support",()=>{
+  const main=read("src/main.tsx");
+  const premium=read("src/premium-experience.css");
+  const primitives=read("src/premium-tool-primitives.css");
+  const premiumIndex=main.indexOf('"./premium-experience.css"');
+  const primitiveIndex=main.indexOf('"./premium-tool-primitives.css"');
+  const baseIndex=main.indexOf('"./aafnai-enhancements.css"');
+  assert.ok(baseIndex>=0&&premiumIndex>baseIndex&&primitiveIndex>premiumIndex,"premium layers must load after base Aafnai CSS");
+  for(const surface of [".ap-tool-card",".utility-directory-card",".patro-tool-hero",".station-card",".community-control-card"]){
+    assert.ok(premium.includes(surface),`premium layer lost ${surface}`);
+  }
+  assert.ok(premium.includes("prefers-reduced-motion"),"premium motion must remain accessible");
+  assert.ok(primitives.includes(".tool-breadcrumbs"));
+  assert.ok(primitives.includes(".tool-trust-row"));
+});
+
+test("route-aware metadata covers public discovery and protects private pages",()=>{
+  const chrome=read("src/components/AppChrome.tsx");
+  for(const token of ["TOOL_SEO","link[rel=\"canonical\"]","og:title","twitter:title","max-image-preview:large","noindex,nofollow"]){
+    assert.ok(chrome.includes(token),`route SEO lost ${token}`);
+  }
+  for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya"]){
+    assert.ok(chrome.includes(`path===\"${route}\"`)||chrome.includes(`path==\"${route}\"`),`route metadata lost ${route}`);
   }
 });
 
