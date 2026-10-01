@@ -6,6 +6,8 @@ type Meta = {
   robots?: string;
 };
 
+const SITE_ORIGIN = (((import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env?.VITE_PUBLIC_BASE_URL) || "https://aafnaipatro.com").replace(/\/+$/, "");
+const PRODUCTION_HOST = "aafnaipatro.com";
 const PRIVATE_PREFIXES = ["/notes", "/planner", "/settings", "/family", "/my-data", "/my-diary", "/offline", "/admin"];
 
 const EXACT: Record<string, Meta> = {
@@ -80,9 +82,10 @@ export function SeoMeta({ path }: { path: string }) {
   useEffect(() => {
     const normalized = cleanPath(path);
     const meta = routeMeta(normalized);
-    const canonical = window.location.origin + normalized;
+    const canonical = SITE_ORIGIN + normalized;
     const privateRoute = PRIVATE_PREFIXES.some((prefix) => normalized === prefix || normalized.startsWith(prefix + "/"));
-    const robots = privateRoute ? "noindex, nofollow" : isHistoricalCalendar(normalized) ? "noindex, follow" : meta.robots || "index, follow";
+    const preview = window.location.hostname !== PRODUCTION_HOST && (window.location.hostname.endsWith(".workers.dev") || window.location.hostname.endsWith(".pages.dev"));
+    const robots = (privateRoute || preview) ? "noindex, nofollow" : isHistoricalCalendar(normalized) ? "noindex, follow" : meta.robots || "index, follow";
 
     document.title = meta.title;
     upsertMeta('meta[name="description"]', { name: "description", content: meta.description });
@@ -113,7 +116,7 @@ export function SeoMeta({ path }: { path: string }) {
       isPartOf: {
         "@type": "WebSite",
         name: "MeroPatro",
-        url: window.location.origin + "/"
+        url: SITE_ORIGIN + "/"
       }
     }).replace(/</g, "\\u003c");
     document.head.appendChild(script);
