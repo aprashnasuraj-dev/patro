@@ -1,5 +1,5 @@
-name = "mero-patro"
-main = "worker/index.ts"
+name = "patro"
+main = "worker/entry.ts"
 compatibility_date = "2026-09-30"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = true
@@ -11,22 +11,22 @@ binding = "ASSETS"
 not_found_handling = "single-page-application"
 run_worker_first = ["/*", "!/astro/assets/*"]
 
-# Draft bindings intentionally omit account-specific IDs.
-# Cloudflare can provision/link these when the repository is connected.
 [[d1_databases]]
 binding = "DB"
-
-[[kv_namespaces]]
-binding = "CACHE"
+database_name = "patro"
+database_id = "fb25c860-01db-4ab0-9036-7f87b26ca64b"
+migrations_dir = "cloudflare/d1/schema-migrations"
 
 [vars]
 PUBLIC_SITE_URL = "https://aafnaipatro.com"
+SUPABASE_COMPAT_ORIGIN = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router"
+SUPABASE_PROTECTED_ORIGIN = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected"
 CALENDAR_COVERAGE_START = "1826-04-11"
 CALENDAR_COVERAGE_END = "2037-04-13"
 CALENDAR_SOURCE_VERSION = "patro-archive-v79"
 
 [triggers]
-crons = ["5 * * * *", "17 0,6,12,18 * * *", "43 2 * * *"]
+crons = ["*/5 * * * *", "43 2 * * *", "11 3 * * *"]
 
 [observability]
 enabled = true
