@@ -3,11 +3,11 @@ import { ListChecks, Receipt, Cake, FileClock, Sparkles, Trash2 } from "lucide-r
 import { readLife, syncLifeTools, updateLife, type LifeState } from "../patro-tools-integration/storage";
 
 const TABS=[
-  {id:"today",label:"मेरो आज",icon:ListChecks,key:null},
-  {id:"due",label:"नियमित म्याद",icon:Receipt,key:"due"},
-  {id:"family",label:"परिवारका मितिहरू",icon:Cake,key:"family"},
-  {id:"documents",label:"कागजात म्याद",icon:FileClock,key:"docs"},
-  {id:"festival",label:"चाडपर्व तयारी",icon:Sparkles,key:"festivalPlans"}
+  {id:"today",label:"आफ्नै नोट",icon:ListChecks,key:null},
+  {id:"due",label:"आफ्नै नियमित म्याद",icon:Receipt,key:"due"},
+  {id:"family",label:"आफ्नै परिवार मितिहरू",icon:Cake,key:"family"},
+  {id:"documents",label:"आफ्नै कागजात म्याद",icon:FileClock,key:"docs"},
+  {id:"festival",label:"आफ्नै चाडपर्व तयारी",icon:Sparkles,key:"festivalPlans"}
 ] as const;
 type TabId=typeof TABS[number]["id"];
 type ListKey="due"|"family"|"docs"|"festivalPlans";
@@ -60,18 +60,18 @@ export function MyDiary(){
   const rows=active.key ? (life[active.key] as Array<Record<string,unknown>>) : [];
 
   return <main className="mp-page mp-diary">
-    <div className="mp-page-hero"><p className="eyebrow">मेरो डायरी</p><h1>काम, म्याद र व्यक्तिगत मितिहरू</h1><p>डाटा पहिले यस उपकरणमा सुरक्षित हुन्छ; Google sign-in भएपछि Cloudflare D1 account state सँग sync हुन्छ।</p><small>{sync}</small></div>
-    <div className="mp-diary-tabs" role="tablist" aria-label="My Diary sections">{TABS.map(x=>{const Icon=x.icon;return <button key={x.id} role="tab" aria-selected={tab===x.id} onClick={()=>setTab(x.id)}><Icon size={18}/>{x.label}</button>})}</div>
+    <div className="mp-page-hero"><p className="eyebrow">आफ्नै नोट</p><h1>आफ्नै काम, म्याद र व्यक्तिगत मितिहरू</h1><p>डाटा पहिले यस उपकरणमा सुरक्षित हुन्छ; sign-in उपलब्ध हुँदा account sync प्रयोग हुन्छ।</p><small>{sync}</small></div>
+    <div className="mp-diary-tabs" role="tablist" aria-label="Aafnai Note sections">{TABS.map(x=>{const Icon=x.icon;return <button key={x.id} role="tab" aria-selected={tab===x.id} onClick={()=>setTab(x.id)}><Icon size={18}/>{x.label}</button>})}</div>
 
     {tab==="today" ? <section className="mp-card mp-diary-native">
-      <h2>आजको व्यक्तिगत सारांश</h2>
+      <h2>आफ्नै आजको सारांश</h2>
       <div className="mp-diary-summary">
-        <a href="?tab=due"><strong>{life.due.length}</strong><span>नियमित म्याद</span></a>
-        <a href="?tab=family"><strong>{life.family.length}</strong><span>परिवारका मिति</span></a>
-        <a href="?tab=documents"><strong>{life.docs.length}</strong><span>कागजात म्याद</span></a>
-        <a href="?tab=festival"><strong>{life.festivalPlans.length}</strong><span>चाडपर्व तयारी</span></a>
+        <a href="?tab=due"><strong>{life.due.length}</strong><span>आफ्नै नियमित म्याद</span></a>
+        <a href="?tab=family"><strong>{life.family.length}</strong><span>आफ्नै परिवार मिति</span></a>
+        <a href="?tab=documents"><strong>{life.docs.length}</strong><span>आफ्नै कागजात म्याद</span></a>
+        <a href="?tab=festival"><strong>{life.festivalPlans.length}</strong><span>आफ्नै चाडपर्व तयारी</span></a>
       </div>
-      <div className="community-actions"><a className="community-button" href="/tools/tithi-reminder">तिथि रिमाइन्डर</a><a className="community-button secondary" href="/settings/community">मेरो समुदाय</a></div>
+      <div className="community-actions"><a className="community-button" href="/tools/tithi-reminder">आफ्नै तिथि रिमाइन्डर</a><a className="community-button secondary" href="/settings/community">आफ्नै समुदाय</a></div>
     </section> : <section className="mp-card mp-diary-native">
       <header><div><p className="eyebrow">Private · व्यक्तिगत</p><h2>{active.label}</h2></div></header>
       <form className="mp-diary-add" onSubmit={add}>
