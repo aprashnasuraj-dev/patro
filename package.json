@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "npm run dev:cloudflare",
-    "build": "node scripts/generate-seo.mjs && tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
+    "audit:aafnai-brand": "node scripts/audit-aafnai-brand.mjs",
+    "build": "npm run audit:aafnai-brand && node scripts/generate-seo.mjs && tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs",
     "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
