@@ -126,7 +126,7 @@ export function FutureLetterTool() {
   }
 
   return (
-    <ToolPage title="भविष्यको चिठी" description="वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने चिठी। चिठीको मूल पाठ र passphrase Mero Patro server मा पठाइँदैन।">
+    <ToolPage title="आफ्नै भविष्यको चिठी" description="वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने चिठी। चिठीको मूल पाठ र passphrase आफ्नै पात्रो server मा पठाइँदैन।">
       <section className="patro-tool-card">
         <div className="tool-form-grid">
           <label>प्राप्तकर्ता<input value={recipientName} onChange={(e) => setRecipientName(e.target.value)} placeholder="नाम" /></label>
@@ -147,7 +147,7 @@ export function FutureLetterTool() {
         {status ? <p className="tool-status" role="status">{status}</p> : null}
       </section>
 
-      <ToolResult title="सुरक्षित चिठीहरू" speechText={letters.map((row) => row.recipientName + " को चिठी " + row.openAtLabel + " मा खुल्छ।").join(" ")}>
+      <ToolResult title="आफ्नै सुरक्षित चिठीहरू" speechText={letters.map((row) => row.recipientName + " को चिठी " + row.openAtLabel + " मा खुल्छ।").join(" ")}>
         {letters.length === 0 ? <p className="tool-muted">अहिलेसम्म कुनै भविष्यको चिठी छैन।</p> : <div className="tool-event-list">{letters.map((letter) => {
           const state = lockState(letter);
           return <article className="tool-event" key={letter.id}>
@@ -159,7 +159,7 @@ export function FutureLetterTool() {
             <button type="button" className="tool-link-button danger" onClick={() => remove(letter.id)}>हटाउनुहोस्</button>
           </article>;
         })}</div>}
-        <p className="tool-muted">Passphrase हराएमा passphrase-mode चिठी पुनः खोल्न सकिँदैन। Mero Patro ले passphrase वा plaintext चिठी log गर्दैन।</p>
+        <p className="tool-muted">Passphrase हराएमा passphrase-mode चिठी पुनः खोल्न सकिँदैन। आफ्नै पात्रोले passphrase वा plaintext चिठी log गर्दैन।</p>
       </ToolResult>
     </ToolPage>
   );
