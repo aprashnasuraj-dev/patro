@@ -57,18 +57,18 @@ export function SaitTool() {
   ].join("। ");
 
   return (
-    <ToolPage title="साइत" description={SAIT_NOTICE}>
+    <ToolPage title="आफ्नै साइत" description={SAIT_NOTICE}>
       <section className="patro-tool-card">
         <div className="tool-form-grid">
           <label>कार्य<select value={kind} onChange={(e) => setKind(e.target.value as SaitKind)}>{Object.entries(SAIT_LABELS).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
           <label>देखि<input type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
           <label>सम्म<input type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
         </div>
-        <button type="button" className="tool-primary-button" onClick={search}>साइत खोज्नुहोस्</button>
+        <button type="button" className="tool-primary-button" onClick={search}>आफ्नै साइत खोज्नुहोस्</button>
         {status ? <p className="tool-status">{status}</p> : null}
       </section>
 
-      <ToolResult title="साइत नतिजा" speechText={speech}>
+      <ToolResult title="आफ्नै साइत नतिजा" speechText={speech}>
         {official.length > 0 ? (
           <section>
             <h3>आधिकारिक</h3>
