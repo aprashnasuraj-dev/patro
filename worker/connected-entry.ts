@@ -129,11 +129,11 @@ export default {
     }
 
     const response = await productionWorker.fetch(request, env as any, ctx);
-    if (response.status !== 404) return response;
+    if (response.status !== 404) return rewriteConnectedSeo(request, response, env);
 
     const suffix = compatSuffix(pathname);
-    if (!suffix) return response;
+    if (!suffix) return rewriteConnectedSeo(request, response, env);
 
-    return (await compatibilityResponse(request, env, suffix)) || response;
+    return (await compatibilityResponse(request, env, suffix)) || rewriteConnectedSeo(request, response, env);
   },
 };
