@@ -1,0 +1,48 @@
+/* Functional/design completion layer derived from design/aafnai-patro-samples tokens. */
+:root{
+ --ap-green:#176f3b;--ap-green-ink:#0e4a27;--ap-green-soft:#e4f1e8;
+ --ap-red:#c0182f;--ap-red-soft:#fbe8eb;--ap-marigold:#a86200;--ap-marigold-soft:#fdf0dc;
+ --ap-bg:#f5f7f4;--ap-surface:#fff;--ap-ink:#17211b;--ap-muted:#55625a;--ap-line:#dbe2dc;
+ --ap-font:"Mukta","Noto Sans Devanagari",system-ui,sans-serif;--ap-display:"Noto Serif Devanagari","Mukta",Georgia,serif;
+ --ap-t-xs:.8125rem;--ap-t-sm:.9375rem;--ap-t-md:1.0625rem;--ap-t-lg:1.25rem;--ap-t-xl:1.625rem;--ap-t-2xl:2.125rem;--ap-t-3xl:3rem;--ap-radius:14px;
+}
+:root[data-theme="dark"]{--ap-green:#4cc27a;--ap-green-ink:#9fe3b8;--ap-green-soft:#16301f;--ap-red:#ff6b7d;--ap-red-soft:#3a1820;--ap-marigold:#f2b14c;--ap-marigold-soft:#33260f;--ap-bg:#0f1411;--ap-surface:#171e19;--ap-ink:#e7eee9;--ap-muted:#a2b0a7;--ap-line:#2a352e}
+.ap-shell{font-family:var(--ap-font);color:var(--ap-ink);background:var(--ap-bg);min-height:100vh;font-size:var(--ap-t-md)}
+.ap-shell button,.ap-shell input,.ap-shell select,.ap-shell textarea{font-family:var(--ap-font);font-size:var(--ap-t-sm)}
+.ap-shell small,.ap-shell .ap-eyebrow,.ap-shell .ap-adday,.ap-shell .ap-tithi,.ap-shell .ap-festival,.ap-shell .ap-wordmark small{font-size:var(--ap-t-xs)!important;line-height:1.35}
+.ap-page{max-width:1200px;margin:0 auto;padding:28px 20px 56px}
+.ap-home-top{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,.75fr);gap:16px;margin-bottom:20px}
+.ap-home-top .ap-today-card{margin:0}
+.ap-next-card{display:flex!important;flex-direction:column;justify-content:center;gap:6px;margin:0!important;padding:22px 24px;border-radius:var(--ap-radius);background:var(--ap-marigold-soft);color:var(--ap-ink);text-decoration:none;border:1px solid transparent}
+.ap-next-card strong{font:700 var(--ap-t-xl)/1.25 var(--ap-display)}
+.ap-next-card b{align-self:flex-start;margin-top:7px;padding:5px 11px;border-radius:999px;background:var(--ap-surface);color:var(--ap-marigold);font-size:var(--ap-t-sm)}
+.ap-inline-error{display:block;color:var(--ap-red);margin-top:8px}
+.ap-retry{margin-top:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--ap-red);background:var(--ap-surface);color:var(--ap-red);font-weight:700;cursor:pointer}
+.ap-day{position:relative;min-height:105px}
+.ap-day.has-festival{box-shadow:inset 0 -3px 0 var(--ap-marigold)}
+.ap-holiday-dot{position:absolute;right:9px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--ap-red)}
+.ap-astro-feature{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:20px 22px;margin:4px 0 26px;border-radius:var(--ap-radius);background:#0d1b2a;color:#e8eef6;text-decoration:none}
+.ap-astro-orb{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f1e6 0 45%,#3a4656 46%)}
+.ap-astro-feature>span:nth-child(2){display:flex;flex-direction:column;gap:4px;min-width:0}
+.ap-astro-feature strong{font:700 var(--ap-t-lg)/1.25 var(--ap-display);color:#fff}
+.ap-astro-feature small{color:#c5ced9}
+.ap-astro-feature>b{padding:9px 15px;border-radius:999px;background:#fff;color:#0d1b2a;font-size:var(--ap-t-sm);white-space:nowrap}
+.ap-tools-page .ap-tool-section{margin-top:24px}
+.ap-tools-page .ap-tool-section>h2{margin-bottom:10px;color:var(--ap-muted);font-size:var(--ap-t-sm);letter-spacing:.02em}
+.ap-tools-page .ap-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ap-tools-page .ap-tool-card{min-height:96px;align-items:center}
+.ap-tools-page .ap-tool-card>div{min-width:0}
+.ap-tools-page .ap-tool-card strong{font-size:var(--ap-t-md)}
+.ap-tools-page .ap-tool-card small{display:block;color:var(--ap-muted);margin-top:2px}
+.ap-history-list{display:grid;gap:12px}
+.ap-history-card{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;padding:18px;border:1px solid var(--ap-line);border-radius:var(--ap-radius);background:var(--ap-surface)}
+.ap-history-year{font:700 var(--ap-t-xl)/1.2 var(--ap-display);color:var(--ap-green)}
+.ap-history-card h2{margin:0 0 4px;font:700 var(--ap-t-lg)/1.35 var(--ap-display)}
+.ap-history-card small{color:var(--ap-muted)}
+.ap-history-card p{margin:8px 0 0;line-height:1.65}
+.ap-history-card a{display:inline-block;margin-top:8px;color:var(--ap-green-ink);font-weight:700}
+.ap-year-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700}
+.ap-year-filter input{width:130px;padding:7px 9px;border:1px solid var(--ap-line);border-radius:9px;background:var(--ap-surface);color:var(--ap-ink)}
+.ap-year-filter button{padding:7px 10px;border:1px solid var(--ap-line);border-radius:9px;background:var(--ap-surface);color:var(--ap-ink)}
+@media(max-width:900px){.ap-tools-page .ap-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ap-home-top{grid-template-columns:1fr}.ap-next-card{min-height:150px}}
+@media(max-width:620px){.ap-page{padding:18px 12px 92px}.ap-tools-page .ap-tool-grid{grid-template-columns:1fr}.ap-astro-feature{grid-template-columns:auto 1fr}.ap-astro-feature>b{grid-column:1/-1;text-align:center}.ap-history-card{grid-template-columns:1fr;gap:7px}.ap-day{min-height:72px;padding:7px 4px}.ap-day .ap-tithi,.ap-day .ap-festival{display:none}.ap-holiday-dot{right:5px;top:5px}.ap-calendar-card{padding:14px 8px}.ap-section-head{align-items:flex-start}.ap-month-actions{flex-shrink:0}}

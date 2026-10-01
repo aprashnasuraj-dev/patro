@@ -16,6 +16,7 @@ import "./launch-polish.css";
 import "./utilities.css";
 import "./community/community.css";
 import "./aafnai.css";
+import "./aafnai-enhancements.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
