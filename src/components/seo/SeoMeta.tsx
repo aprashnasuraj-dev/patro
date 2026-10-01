@@ -27,7 +27,8 @@ const EXACT: Record<string, Meta> = {
   "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
   "/convert": { title: "AD ↔ BS Date Converter · MeroPatro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
   "/jyotish/rashifal": { title: "राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
-  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" },
+  "/jyotish/china": { title: "चिना टिपन · जन्मपत्रो · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
+  "/jyotish/janma-patro": { title: "चिना टिपन · जन्मपत्रो · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
   "/about": { title: "About MeroPatro", description: "MeroPatro को उद्देश्य, data boundaries र platform जानकारी।" },
   "/sources": { title: "Sources · MeroPatro", description: "Calendar, astronomy, media र utility data का स्रोतहरू।" }
 };
@@ -82,7 +83,8 @@ export function SeoMeta({ path }: { path: string }) {
   useEffect(() => {
     const normalized = cleanPath(path);
     const meta = routeMeta(normalized);
-    const canonical = SITE_ORIGIN + normalized;
+    const canonicalPath = normalized === "/jyotish/janma-patro" ? "/jyotish/china" : normalized;
+    const canonical = SITE_ORIGIN + canonicalPath;
     const privateRoute = PRIVATE_PREFIXES.some((prefix) => normalized === prefix || normalized.startsWith(prefix + "/"));
     const preview = window.location.hostname !== PRODUCTION_HOST && (window.location.hostname.endsWith(".workers.dev") || window.location.hostname.endsWith(".pages.dev"));
     const robots = (privateRoute || preview) ? "noindex, nofollow" : isHistoricalCalendar(normalized) ? "noindex, follow" : meta.robots || "index, follow";
