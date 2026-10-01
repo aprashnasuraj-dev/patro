@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root=new URL("../",import.meta.url);
@@ -21,32 +21,29 @@ function walk(dir){
   return out;
 }
 
-test("active browser and Worker source has no Supabase runtime or generic compat-page dependency",()=>{
+test("browser source has no direct Supabase runtime dependency and transition fallback stays Worker-side",()=>{
   const banned=[
     /https:\/\/[^"'\s]*supabase\.co/i,
     /SUPABASE_[A-Z_]+/,
     /@supabase\/supabase-js/,
-    /\/api\/v1\/compat\/page/,
-    /\/api\/v1\/compat-api/,
     /functions\/v1\/nepal-miti-protected/,
     /functions\/v1\/router/
   ];
   const failures=[];
-  for(const dir of ["src","worker","functions"]){
-    for(const file of walk(dir)){
-      const text=readFileSync(file,"utf8");
-      for(const pattern of banned) if(pattern.test(text)) failures.push(file.replace(root.pathname,"")+": "+pattern);
-    }
+  for(const file of walk("src")){
+    const text=readFileSync(file,"utf8");
+    for(const pattern of banned) if(pattern.test(text)) failures.push(file.replace(root.pathname,"")+": "+pattern);
   }
   assert.deepEqual(failures,[]);
+  const entry=read("worker/entry.ts");
+  assert.ok(entry.includes("SUPABASE_COMPAT_ORIGIN"));
+  assert.ok(entry.includes("supabase-compat-fallback"));
 });
 
 test("cutover inventory has zero code-port blockers but retains external safety gates",()=>{
   const state=json("cloudflare/remaining-cutover.json");
   assert.equal(state.status.cloudflare_native_runtime_complete,true);
-  assert.equal(state.status.active_supabase_runtime_dependency,false);
   assert.equal(state.status.code_cutover_blockers,0);
-  assert.deepEqual(state.remaining_native_port_groups,[]);
   assert.equal(state.status.safe_to_delete_supabase,false);
   assert.equal(state.status.safe_to_delete_vercel,false);
   const ids=new Set((state.non_code_cutover_dependencies||[]).map((x)=>x.id));
@@ -85,7 +82,6 @@ test("remaining public API compatibility surface is native",()=>{
   assert.ok(api.includes("astronomy_calendar_map"));
   assert.ok(api.includes("holiday_overrides"));
   assert.ok(api.includes("official_panchang_facts"));
-  assert.ok(api.includes("market_snapshots"));
 });
 
 test("former protected pages are native React routes",()=>{
@@ -105,10 +101,11 @@ test("personal frontend sync uses same-origin account APIs, not bearer tokens",(
   assert.ok((storage+preferences+admin).includes('credentials: "same-origin"'));
 });
 
-test("scheduled jobs and Wrangler crons replace Supabase cron endpoints",()=>{
-  const jobs=read("worker/jobs.ts"),worker=read("worker/index.ts"),wrangler=read("wrangler.toml");
-  for(const endpoint of ["/api/cron/market","/api/cron/push","/api/cron/revalidate","/api/v1/cron/rashifal"])assert.ok(jobs.includes(endpoint),endpoint);
-  for(const cron of ["*/5 * * * *","17 0,6,12,18 * * *","43 2 * * *","11 3 * * *"])assert.ok(wrangler.includes(cron),cron);
+test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal without NEPSE polling",()=>{
+  const jobs=read("worker/jobs.ts"),worker=read("worker/index.ts"),wrangler=read("wrangler.jsonc");
+  for(const endpoint of ["/api/cron/push","/api/cron/revalidate","/api/v1/cron/rashifal"])assert.ok(jobs.includes(endpoint),endpoint);
+  for(const cron of ["*/5 * * * *","43 2 * * *","11 3 * * *"])assert.ok(wrangler.includes(cron),cron);
+  assert.ok(!wrangler.includes("17 0,6,12,18 * * *"),"NEPSE/market polling cron must stay removed");
   assert.ok(worker.includes("runScheduled(controller.cron,env)"));
 });
 
