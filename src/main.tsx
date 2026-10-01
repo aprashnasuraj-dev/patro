@@ -20,6 +20,7 @@ import "./aafnai.css";
 import "./aafnai-enhancements.css";
 import "./premium-experience.css";
 import "./premium-tool-primitives.css";
+import "./feature-launcher.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
