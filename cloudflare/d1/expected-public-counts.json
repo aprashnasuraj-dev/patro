@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-09-30",
+  "snapshot_date": "2026-10-01",
   "private_user_data_included": false,
   "tables": {
     "app_flags": 17,
@@ -12,7 +12,7 @@
     "fm_stations": 20,
     "holiday_coverage": 10,
     "holidays": 84,
-    "miti_rashifal_publications": 22,
+    "miti_rashifal_publications": 1,
     "nasa_apod_cache": 9,
     "nasa_cosmic_cache": 126,
     "nepal_sambat_facts": 14,
@@ -47,7 +47,9 @@
     },
     "rashifal": {
       "table": "miti_rashifal_publications",
-      "rows": 22
+      "rows": 1,
+      "live_source_rows": 26,
+      "mode": "bootstrap-marker-plus-supabase-compat"
     },
     "time_machine": {
       "table": "time_machine_moments",
