@@ -54,18 +54,18 @@ function nextDay(value: string) {
 
 function buildIcs(events: StoredTithiEvent[], occurrences: Record<string, NextOccurrence[]>) {
   const lines = [
-    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Mero Patro//Tithi Reminder//NE","CALSCALE:GREGORIAN",
-    "X-WR-CALNAME:मेरो पात्रो · तिथि रिमाइन्डर","X-WR-TIMEZONE:Asia/Kathmandu",
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Aafnai Patro//Tithi Reminder//NE","CALSCALE:GREGORIAN",
+    "X-WR-CALNAME:आफ्नै पात्रो · आफ्नै तिथि रिमाइन्डर","X-WR-TIMEZONE:Asia/Kathmandu",
   ];
   for (const event of events) {
     for (const occurrence of occurrences[event.id] || []) {
       lines.push(
         "BEGIN:VEVENT",
-        "UID:" + escapeIcs(event.id + "-" + occurrence.adDate + "@meropatro"),
+        "UID:" + escapeIcs(event.id + "-" + occurrence.adDate + "@aafnaipatro"),
         "DTSTART;VALUE=DATE:" + occurrence.adDate.replace(/-/g, ""),
         "DTEND;VALUE=DATE:" + nextDay(occurrence.adDate).replace(/-/g, ""),
         "SUMMARY:" + escapeIcs(event.title),
-        "DESCRIPTION:" + escapeIcs((occurrence.explanation?.ne || "") + " · Mero Patro"),
+        "DESCRIPTION:" + escapeIcs((occurrence.explanation?.ne || "") + " · आफ्नै पात्रो"),
       );
       for (const day of event.remindDaysBefore.filter((value) => value > 0)) {
         lines.push("BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:" + escapeIcs(event.title),"TRIGGER:-P" + day + "D","END:VALARM");
@@ -150,7 +150,7 @@ export function TithiReminderTool() {
     const url = URL.createObjectURL(new Blob([text], { type: "text/calendar;charset=utf-8" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = "mero-patro-tithi-reminders.ics";
+    link.download = "aafnai-patro-tithi-reminders.ics";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -164,7 +164,7 @@ export function TithiReminderTool() {
       body: "{}",
     });
     if (response.status === 401) {
-      setStatus("Google Calendar feed बनाउन पहिले Mero Patro मा Google login गर्नुहोस्।");
+      setStatus("Google Calendar feed बनाउन पहिले आफ्नै पात्रोमा Google login गर्नुहोस्।");
       return;
     }
     const payload = await response.json() as { path?: string; error?: string };
@@ -178,7 +178,7 @@ export function TithiReminderTool() {
   }
 
   return (
-    <ToolPage title="तिथि रिमाइन्डर" description="श्राद्ध र तिथि जन्मदिनलाई Mero Patro को विद्यमान पञ्चाङ्ग इन्जिनबाट निकालेर सुरक्षित गर्नुहोस्।">
+    <ToolPage title="आफ्नै तिथि रिमाइन्डर" description="श्राद्ध र तिथि जन्मदिनलाई आफ्नै पात्रोको पञ्चाङ्ग इन्जिनबाट निकालेर सुरक्षित गर्नुहोस्।">
       <section className="patro-tool-card">
         <form className="tool-form-grid" onSubmit={save}>
           <label>नाम<input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="जस्तै: आमाको श्राद्ध" required /></label>
@@ -191,7 +191,7 @@ export function TithiReminderTool() {
         {status ? <p className="tool-status" role="status">{status}</p> : null}
       </section>
 
-      <ToolResult title="आगामी तिथिहरू" speechText={speechText || "अहिले कुनै तिथि रिमाइन्डर छैन।"}>
+      <ToolResult title="आफ्नै आगामी तिथिहरू" speechText={speechText || "अहिले कुनै तिथि रिमाइन्डर छैन।"}>
         {events.length === 0 ? <p className="tool-muted">पहिलो श्राद्ध वा तिथि जन्मदिन माथि थप्नुहोस्।</p> : (
           <div className="tool-event-list">{events.map((item) => (
             <article className="tool-event" key={item.id}>
