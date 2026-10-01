@@ -15,8 +15,8 @@
     "lint": "tsc --noEmit",
     "doctor": "node scripts/doctor.mjs",
     "dev:vite": "vite",
-    "dev:cloudflare": "npm run build && wrangler dev --config wrangler.toml",
-    "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.toml",
+    "dev:cloudflare": "npm run build && wrangler dev --config wrangler.jsonc",
+    "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
     "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
     "cloudflare:validate": "node scripts/validate-cloudflare.mjs",
     "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
@@ -27,6 +27,7 @@
     "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
     "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs",
     "cloudflare:verify-inventory": "node scripts/verify-migration-inventory.mjs",
+    "cloudflare:production-check": "npm run build && npm run test:typing && npm run test:cloudflare-contract && npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot",
     "cf:validate-data": "npm run cloudflare:verify-snapshot",
     "cf:schema:remote": "npm run cloudflare:migrate",
     "cf:import:remote": "npm run cloudflare:import-d1:recovery",
@@ -71,12 +72,14 @@
     "wrangler": "4.144.0"
   },
   "cloudflare": {
-    "build_command": "npm run build",
+    "production_branch": "main",
+    "build_command": "npm run cloudflare:production-check",
+    "deploy_command": "npm run deploy:cloudflare",
+    "config": "wrangler.jsonc",
     "bindings": {
       "ASSETS": "Static SPA assets served by the Worker.",
-      "DB": "Optional during bootstrap; set CF_D1_DATABASE_ID for native D1 calendar/content reads.",
-      "CACHE": "Optional during bootstrap; set CF_KV_NAMESPACE_ID for persistent upstream/API cache."
-    },
-    "deploy_command": "npm run deploy:cloudflare"
+      "DB": "Required production D1 database binding named DB; committed database is patro.",
+      "CACHE": "Optional KV cache binding. The Worker remains functional without KV."
+    }
   }
 }
