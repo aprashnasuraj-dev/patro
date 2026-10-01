@@ -6,6 +6,12 @@
   Permissions-Policy: camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()
   X-DNS-Prefetch-Control: off
 
+/astro/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/astro/data/*
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -19,6 +25,35 @@
   X-Robots-Tag: noindex, nofollow
   Cache-Control: private, no-store, max-age=0
 
+/notes
+  X-Robots-Tag: noindex, nofollow
+
+/planner
+  X-Robots-Tag: noindex, nofollow
+
+/settings*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store, max-age=0
+
+/family*
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  Cache-Control: private, no-store, max-age=0
+
+/my-data
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store, max-age=0
+
+/my-diary
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store, max-age=0
+
+/offline
+  X-Robots-Tag: noindex, nofollow
+
+/widget/today
+  X-Robots-Tag: noindex, nofollow
+
 /embed/today
   ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'
@@ -29,12 +64,30 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'
   X-Robots-Tag: noindex, nofollow
 
-/api/*
+/embed/nepal-miti-today.js
+  Access-Control-Allow-Origin: *
   X-Robots-Tag: noindex, nofollow
-  Cache-Control: no-store
+
+/embed/nepal-miti-converter.js
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex, nofollow
+
+/tools/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /tools
+
+/.well-known/assetlinks.json
+  Cache-Control: public, max-age=3600
 
 /robots.txt
   Cache-Control: public, max-age=3600
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
+
+/seo-manifest.json
+  Cache-Control: public, max-age=3600
+
+/api/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store

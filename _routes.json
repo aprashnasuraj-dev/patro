@@ -3,7 +3,7 @@
   "include": ["/*"],
   "exclude": [
     "/assets/*",
-    "/assets/*",
+    "/astro/assets/*",
     "/*.css",
     "/*.js",
     "/*.mjs",

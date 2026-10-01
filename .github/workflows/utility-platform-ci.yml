@@ -39,8 +39,7 @@ jobs:
 
       - name: Verify utility artifact
         run: |
-          test -f dist/index.html
-          test -f dist/sw.js
+          test -f dist/astro/index.html
+          test -f dist/astro/sw.js
           test -f dist/tools/index.html
-          test -d dist/assets
-          ! grep -R "/astro/assets/" dist/index.html dist/tools/index.html
+          test -f dist/tools/sw.js

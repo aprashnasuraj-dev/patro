@@ -70,7 +70,7 @@ test("Pages configuration keeps the internal API service binding", async () => {
   assert.equal(config.pages_build_output_dir, "./dist");
   const binding = (config.services || []).find((entry) => entry.binding === "PATRO_API");
   assert.ok(binding, "PATRO_API service binding is missing");
-  assert.equal(binding.service, "patro");
+  assert.equal(binding.service, "mero-patro");
 });
 
 test("README and runbook only document lifecycle commands that package.json exposes", async () => {

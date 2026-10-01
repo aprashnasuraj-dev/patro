@@ -200,7 +200,7 @@ function hex(bytes:Uint8Array){return[...bytes].map(x=>x.toString(16).padStart(2
 async function dictionary(){
   if(dictCache)return dictCache;
   dictCache=(async()=>{
-    const r=await fetch(DICT_URL,{headers:{"user-agent":"आफ्नै पात्रोTyping/2.0"},signal:AbortSignal.timeout(12000)});if(!r.ok)throw new Error("dictionary_source_"+r.status);
+    const r=await fetch(DICT_URL,{headers:{"user-agent":"MeroPatroTyping/2.0"},signal:AbortSignal.timeout(12000)});if(!r.ok)throw new Error("dictionary_source_"+r.status);
     const raw=await r.text(),digest=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(raw)));if(hex(digest)!==DICT_SHA)throw new Error("dictionary_checksum_changed");
     const source=[...new Set(raw.split(/\r?\n/).map(line=>line.split("/")[0].trim().normalize("NFC")).filter(word=>/^[अ-हक़-य़][\u0900-\u0963]*$/u.test(word)&&word.length>=2&&!word.endsWith("्")))];
     const canonical=[...new Set(source.map(word=>word.replaceAll("अा","आ")))];return[...new Set([...canonical,...EDITORIAL])].sort();
@@ -244,7 +244,7 @@ function parseNoc(html:string){
 }
 async function fuel(){
  if(nocCache&&nocCache.until>Date.now())return json(nocCache.value);
- try{const r=await fetch(NOC_URL,{headers:{accept:"text/html","user-agent":"आफ्नै पात्रोFuel/2.0"},signal:AbortSignal.timeout(8000)});if(!r.ok)throw new Error("noc_http_"+r.status);const html=await r.text();const zones=parseNoc(html);if(!zones.length)throw new Error("noc_parse_empty");const value={ok:true,source:"Nepal Oil Corporation",sourceUrl:NOC_URL,fetchedAt:new Date().toISOString(),effectiveDate:null,freshness:"live",stale:false,zones};nocCache={until:Date.now()+600000,value};return json(value);}catch(e){const value={...NOC_SNAPSHOT,fetchedAt:new Date().toISOString(),note:NOC_SNAPSHOT.note+" ("+String((e as Error).message||e)+")"};nocCache={until:Date.now()+120000,value};return json(value);}
+ try{const r=await fetch(NOC_URL,{headers:{accept:"text/html","user-agent":"MeroPatroFuel/2.0"},signal:AbortSignal.timeout(8000)});if(!r.ok)throw new Error("noc_http_"+r.status);const html=await r.text();const zones=parseNoc(html);if(!zones.length)throw new Error("noc_parse_empty");const value={ok:true,source:"Nepal Oil Corporation",sourceUrl:NOC_URL,fetchedAt:new Date().toISOString(),effectiveDate:null,freshness:"live",stale:false,zones};nocCache={until:Date.now()+600000,value};return json(value);}catch(e){const value={...NOC_SNAPSHOT,fetchedAt:new Date().toISOString(),note:NOC_SNAPSHOT.note+" ("+String((e as Error).message||e)+")"};nocCache={until:Date.now()+120000,value};return json(value);}
 }
 
 const MEDIA_HOSTS=new Set(["radio-broadcast.ekantipur.com","usa15.fastcast4u.com","stream.zenolive.com","streaming.softnep.net","stream.live.vc.bbcmedia.co.uk","ktvhdsg.ekantipur.com","202.166.207.67"]);
@@ -253,7 +253,7 @@ function proxied(raw:string){return"/api/v1/media/proxy?url="+encodeURIComponent
 function rewriteManifest(text:string,base:URL){return text.split(/\r?\n/).map(line=>{const v=line.trim();if(!v||v.startsWith("#"))return line.replace(/URI="([^"]+)"/g,(_m,uri)=>'URI="'+proxied(allowedUrl(new URL(uri,base).toString()).toString())+'"');return proxied(allowedUrl(new URL(v,base).toString()).toString());}).join("\n");}
 async function mediaProxy(request:Request,url:URL){
  let target:URL;try{target=allowedUrl(url.searchParams.get("url")||"")}catch(e){return json({ok:false,error:String((e as Error).message||e)},400)}
- const headers=new Headers(),range=request.headers.get("range");if(range&&/^bytes=\d*-\d*(?:,\d*-\d*)?$/i.test(range))headers.set("range",range);headers.set("accept",request.headers.get("accept")||"*/*");headers.set("user-agent","आफ्नै पात्रोMediaProxy/2.0");
+ const headers=new Headers(),range=request.headers.get("range");if(range&&/^bytes=\d*-\d*(?:,\d*-\d*)?$/i.test(range))headers.set("range",range);headers.set("accept",request.headers.get("accept")||"*/*");headers.set("user-agent","MeroPatroMediaProxy/2.0");
  let upstream:Response,final=target;
  for(let i=0;i<4;i++){upstream=await fetch(final,{headers,redirect:"manual",signal:AbortSignal.timeout(15000)});if(upstream.status>=300&&upstream.status<400&&upstream.headers.get("location")){if(i===3)return json({ok:false,error:"too_many_redirects"},502);try{final=allowedUrl(new URL(upstream.headers.get("location")!,final).toString());continue}catch{return json({ok:false,error:"redirect_host_not_allowed"},502)}}break;}
  if(!upstream!.ok&&upstream!.status!==206)return new Response("upstream_stream_error",{status:upstream!.status||502});
@@ -268,7 +268,7 @@ async function doctor(env:PublicEnv){
  const missing=tables.filter(x=>!x.ok);return json({ok:!missing.length,status:missing.length?"degraded":"healthy",canonical_function:"worker/index.ts",architecture:{static_ui:"Cloudflare Pages/Assets",dynamic_api:"Cloudflare Worker",database:"Cloudflare D1"},database:{ok:!missing.length,tables,missing:missing.map(x=>x.table)},checked_at:new Date().toISOString()},missing.length?503:200,"no-store");
 }
 function openapi(){
- return {openapi:"3.1.0",info:{title:"आफ्नै पात्रो API",version:"2.0.0"},servers:[{url:"/"}],paths:{
+ return {openapi:"3.1.0",info:{title:"MeroPatro API",version:"2.0.0"},servers:[{url:"/"}],paths:{
   "/api/v1/today":{get:{}}, "/api/v1/convert":{get:{}}, "/api/v1/festivals":{get:{}}, "/api/v1/holidays":{get:{}},
   "/api/v1/panchang":{get:{}}, "/api/v1/tithi/derive":{get:{},post:{}}, "/api/v1/tithi/next":{get:{}},
   "/api/v1/calendar/{year}/{month}":{get:{}}, "/api/v1/rashifal/metadata":{get:{}}, "/api/v1/rashifal/personalized":{post:{}},

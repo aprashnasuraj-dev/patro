@@ -11,7 +11,7 @@ test("archived Aafnai Patro UI reference is byte-exact",()=>{
   assert.equal(createHash("sha256").update(bytes).digest("hex"),"21504b9bb8a638884b2eb00356983638bebbc310f690ee8de5721aac4cbcb519");
 });
 
-test("Aafnai design layer loads after existing feature styles",()=>{
+test("reference design layer loads after existing app styles",()=>{
   const main=read("src/main.tsx");
   const ref=main.indexOf('import "./reference-ui.css";');
   const previous=main.indexOf('import "./community/community.css";');
@@ -40,7 +40,7 @@ test("missing tools are implemented rather than placeholder cards",()=>{
 
 test("Cloudflare worker exposes native migrated market data",()=>{
   const worker=read("worker/index.ts");
-  assert.match(worker,/path\s*===\s*["']\/api\/v1\/markets\/latest["']/);
+  assert.ok(worker.includes('path === "/api/v1/markets/latest"'));
   assert.ok(worker.includes('"market_snapshots"') || worker.includes("'market_snapshots'"));
   assert.ok(worker.includes("nativeMarketLatest"));
 });

@@ -5,16 +5,8 @@ const root = process.cwd();
 const basePath = resolve(root, "wrangler.jsonc");
 const outputPath = resolve(root, "wrangler.generated.jsonc");
 const base = JSON.parse(await readFile(basePath, "utf8"));
-
-// Production is a single Worker with Static Assets. Historical Pages migration
-// variables must never strip the ASSETS binding from a production build: doing so
-// leaves the Worker deployed but makes every SPA/static route return 503.
-if (!base.assets?.directory || !base.assets?.binding) {
-  throw new Error("Production Worker Static Assets binding is missing from wrangler.jsonc.");
-}
-if (process.env.CF_DEPLOY_MODE?.trim() === "pages-worker") {
-  console.warn("Ignoring legacy CF_DEPLOY_MODE=pages-worker; production requires Worker Static Assets.");
-}
+const splitPagesWorker = process.env.CF_DEPLOY_MODE?.trim() === "pages-worker";
+if (splitPagesWorker) delete base.assets;
 
 const configuredD1 = Array.isArray(base.d1_databases) ? base.d1_databases.find((row) => row?.binding === "DB") : null;
 const d1Id = process.env.CF_D1_DATABASE_ID?.trim() || configuredD1?.database_id;
@@ -46,4 +38,4 @@ if (kvId) {
 }
 
 await writeFile(outputPath, JSON.stringify(base, null, 2) + "\n", "utf8");
-console.log(`Generated wrangler.generated.jsonc with D1=${d1Name}; KV cache ${kvId ? "enabled" : "optional/not configured"}; Worker Static Assets enforced.`);
+console.log(`Generated wrangler.generated.jsonc with D1=${d1Name}; KV cache ${kvId ? "enabled" : "optional/not configured"} (${splitPagesWorker ? "optional Pages + API Worker" : "default single Worker + Static Assets"} mode).`);
