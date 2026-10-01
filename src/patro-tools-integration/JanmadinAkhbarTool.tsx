@@ -99,9 +99,9 @@ export function JanmadinAkhbarTool() {
       const { toPng } = await import("html-to-image");
       const dataUrl = await toPng(cardRef.current, { pixelRatio: 2, backgroundColor: "#f6f1e4" });
       const blob = await (await fetch(dataUrl)).blob();
-      const file = new File([blob], "janmadin-akhbar.png", { type: "image/png" });
+      const file = new File([blob], "aafnai-janmadin-akhbar.png", { type: "image/png" });
       if (navigator.share && navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], text: "मेरो पात्रो · जन्मदिनको अखबार" });
+        await navigator.share({ files: [file], text: "आफ्नै पात्रो · आफ्नै जन्मदिन अखबार" });
       } else {
         const link = document.createElement("a");
         link.href = dataUrl;
@@ -117,20 +117,20 @@ export function JanmadinAkhbarTool() {
   const speech = story ? story.name + " जन्मेको दिन। वि.सं. " + story.bs + "। " + story.tithi + ", " + story.nakshatra + " नक्षत्र।" : "";
 
   return (
-    <ToolPage title="जन्मदिनको अखबार" description="तपाईं जन्मेको दिनको BS मिति, तिथि, नक्षत्र र ‘आज इतिहासमा’ डेटा मिलाएर शेयर गर्न मिल्ने नेपाली अखबार बनाउनुहोस्।">
+    <ToolPage title="आफ्नै जन्मदिन अखबार" description="तपाईं जन्मेको दिनको BS मिति, तिथि, नक्षत्र र ‘आज इतिहासमा’ डेटा मिलाएर शेयर गर्न मिल्ने नेपाली अखबार बनाउनुहोस्।">
       <section className="patro-tool-card">
         <div className="tool-form-grid">
           <label>नाम<input value={name} onChange={(e) => setName(e.target.value)} /></label>
           <label>जन्म AD मिति<input type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} /></label>
         </div>
-        <button className="tool-primary-button" type="button" onClick={build}>अखबार बनाउनुहोस्</button>
+        <button className="tool-primary-button" type="button" onClick={build}>आफ्नै अखबार बनाउनुहोस्</button>
         {status ? <p className="tool-status">{status}</p> : null}
       </section>
 
       {story ? (
-        <ToolResult title="विशेष अंक" speechText={speech}>
+        <ToolResult title="आफ्नै विशेष अंक" speechText={speech}>
           <div className="birth-paper" ref={cardRef}>
-            <header><small>मेरो पात्रो · विशेष अंक</small><h2>{story.name} जन्मेको दिन</h2><div><span>{story.bs} BS</span><span>{story.birthDate} AD</span></div></header>
+            <header><small>आफ्नै पात्रो · विशेष अंक</small><h2>{story.name} जन्मेको दिन</h2><div><span>{story.bs} BS</span><span>{story.birthDate} AD</span></div></header>
             <section className="birth-lead">
               <div><span className="paper-kicker">मुख्य समाचार</span><h3>{story.tithi}, {story.nakshatra} नक्षत्रमा नयाँ सदस्यको आगमन</h3><p>चन्द्र राशि {story.rashi}। चरण {story.pada}। नाम राख्ने अक्षर “{story.syllable}”। सूर्योदय {story.sunrise}, सूर्यास्त {story.sunset}।</p></div>
               <figure><MoonSvg angle={story.angle} size={100}/><figcaption>चन्द्र प्रकाश {(story.illum * 100).toFixed(0)}%</figcaption></figure>
