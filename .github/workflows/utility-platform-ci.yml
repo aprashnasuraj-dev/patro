@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install
+      - name: Install from clean checkout
         run: npm install --legacy-peer-deps --no-audit --no-fund
 
       - name: Core tests
@@ -34,12 +34,29 @@ jobs:
       - name: Nepali typing tests
         run: npm run test:typing
 
+      - name: Patro tool feature tests
+        run: npm run test:patro-tools
+
+      - name: Community calendar tests
+        run: npm run test:community
+
+      - name: Full product route and connectivity contract
+        run: npm run test:full-product
+
       - name: Production build
         run: npm run build
 
-      - name: Verify utility artifact
+      - name: Verify migration artifact
         run: |
           test -f dist/index.html
           test -d dist/assets
           test -f dist/sw.js
           test -f dist/tools/index.html
+          test -f dist/samudaya/index.html
+          test -f dist/nepal-sambat/mandala/index.html
+          test -f dist/samudaya/lhosar/index.html
+          test -f dist/samudaya/tharu/index.html
+          test -f dist/samudaya/mithila/index.html
+          test -f dist/samudaya/kirat/index.html
+          test -f dist/samudaya/hijri/index.html
+          test -f dist/samudaya/chakra/index.html
