@@ -6,7 +6,7 @@
   "services": [
     {
       "binding": "PATRO_API",
-      "service": "mero-patro"
+      "service": "patro"
     }
   ]
 }
