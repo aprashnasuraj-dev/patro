@@ -10,7 +10,6 @@ const TOOL_SEO:Record<string,[string,string]>={
  "preeti-converter":["Preeti Converter","Convert Preeti to Unicode and Unicode to Preeti in one browser tool."],
  bstoad:["BS to AD Converter","Convert Bikram Sambat dates to Gregorian AD dates."],
  adtobs:["AD to BS Converter","Convert Gregorian AD dates to Bikram Sambat dates."],
- convert:["Date Converter","Convert Bikram Sambat and Gregorian dates with Aafnai Patro calendar data."],
  calc:["Date Calculator","Calculate days between dates and add or subtract days."],
  age:["Age Calculator","Calculate exact age, total days and the next birthday."],
  clock:["World Clock","Compare Nepal time with world time zones and plan calls home."],
@@ -20,13 +19,9 @@ const TOOL_SEO:Record<string,[string,string]>={
  vat:["VAT and Percentage Calculator","Calculate VAT, percentages and percentage change."],
  units:["Nepali Traditional Units","Convert traditional Nepali weight and volume units."],
  words:["Amount in Words","Convert amounts into Nepali and English lakh-crore wording."],
- tax:["Nepal Income Tax Calculator","Estimate FY 2083/84 resident salary tax and deductions."],
  incometax:["Nepal Income Tax Calculator","Estimate FY 2083/84 resident salary tax and deductions."],
- land:["Nepali Land Converter","Convert Ropani-Aana-Paisa-Dam and Bigha-Kattha-Dhur."],
  landconverter:["Nepali Land Converter","Convert Nepali land units and square feet."],
- qr:["Nepali QR Generator","Create private UTF-8 QR codes for Nepali or English text in the browser."],
  nepaliqr:["Nepali QR Generator","Create private UTF-8 QR codes for Nepali or English text in the browser."],
- fuel:["Nepal Fuel Prices","Check Nepal Oil Corporation fuel-price references."],
  fuelprice:["NOC Fuel Price Tracker","Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation-fuel references."],
  "tithi-reminder":["Tithi Reminder","Create tithi-based reminders and calendar feeds for rituals and birthdays."],
  sait:["Sait Finder","Review official and calculated auspicious-date references with clear provenance."],
@@ -44,33 +39,46 @@ const TOOL_SEO:Record<string,[string,string]>={
  samudaya:["Community Calendar Suite","Open Nepal Sambat and Nepal's community calendar experiences."],
 };
 
+const ALIAS_CANONICAL:Record<string,string>={
+ "/tools/convert":"/convert",
+ "/tools/tax":"/tools/incometax",
+ "/tools/land":"/tools/landconverter",
+ "/tools/qr":"/tools/nepaliqr",
+ "/tools/fuel":"/tools/fuelprice",
+};
+const PRIVATE_PREFIXES=["/me","/admin","/family","/my-data","/my-diary","/notes","/planner","/settings"];
+const PRIVATE_TOOL_PATHS=new Set(["/tools/family","/tools/my-data","/tools/card","/tools/tithi"]);
+
 function pathNow(){return window.location.pathname.replace(/\/+$/,"")||"/"}
+function canonicalPath(path:string){return ALIAS_CANONICAL[path]||path}
+function isPrivatePath(path:string){return PRIVATE_TOOL_PATHS.has(path)||PRIVATE_PREFIXES.some(prefix=>path===prefix||path.startsWith(prefix+"/"))}
 function useRoute(){const[p,setP]=useState(pathNow);useEffect(()=>{const f=()=>setP(pathNow());window.addEventListener("popstate",f);window.addEventListener("patro:navigation",f);return()=>{window.removeEventListener("popstate",f);window.removeEventListener("patro:navigation",f)}},[]);return p}
 function neActive(path:string,target:string){if(target==="/")return path==="/"||path.startsWith("/calendar/");if(target==="/rashifal")return path==="/rashifal"||path==="/jyotish/rashifal";if(target==="/tools")return path==="/tools"||path.startsWith("/tools/");if(target==="/me")return path==="/me"||path.startsWith("/me/");return path===target}
 
-function routeSeo(path:string):{title:string;description:string;index:boolean}{
- const tool=path.match(/^\/tools\/([^/]+)$/)?.[1];
- if(tool){const meta=TOOL_SEO[tool];if(meta)return{title:meta[0],description:meta[1],index:true};}
- if(path==="/")return{title:"आजको नेपाली पात्रो",description:"आजको नेपाली मिति, तिथि, चाडपर्व, बिदा, नेपाल संवत् र दैनिक पात्रो जानकारी।",index:true};
- if(path==="/tools")return{title:"Nepali Tools · नेपाली उपकरण",description:"Date, language, finance, calendar, sharing and Nepali utility tools in one place.",index:true};
- if(path==="/convert")return{title:"BS AD Date Converter · मिति रूपान्तरण",description:"Convert Bikram Sambat and Gregorian dates both ways using Aafnai Patro calendar data.",index:true};
- if(path==="/rashifal")return{title:"Rashifal · राशिफल",description:"Daily, weekly and monthly Rashifal with transparent calendar context.",index:true};
- if(path==="/samachar")return{title:"Nepali Samachar · समाचार",description:"Discover categorized Nepali news with links back to original sources.",index:true};
- if(path==="/fm")return{title:"Nepali FM Radio",description:"Discover and play verified Nepali FM and internet radio streams.",index:true};
- if(path==="/tv")return{title:"Live TV Explorer",description:"Browse playable public live TV channels with health checks and resilient playback.",index:true};
- if(path==="/time-machine")return{title:"Nepal Time Machine",description:"Travel through notable moments in Nepal and world history by year.",index:true};
- if(path==="/on-this-day")return{title:"On This Day · आज इतिहासमा",description:"Explore historical events associated with today's calendar date.",index:true};
- if(path==="/samudaya")return{title:"Community Calendars · समुदाय पात्रो",description:"Explore Nepal Sambat, Lhosar, Tharu, Mithila, Kirat, Hijri and Samudaya Chakra calendars.",index:true};
- if(path==="/nepal-sambat/mandala")return{title:"Nepal Sambat Mandala",description:"Explore Nepal Sambat dates, observances and festival context.",index:true};
- if(path.startsWith("/samudaya/")){const label=path.split("/").filter(Boolean).at(-1)?.replace(/-/g," ")||"Community";return{title:`${label} calendar`,description:"A community calendar experience within Aafnai Patro's Nepal calendar suite.",index:true};}
- if(path.startsWith("/calendar/")){const bits=path.split("/");return{title:`Nepali Calendar ${bits[2]||""}/${bits[3]||""}`,description:"Monthly Bikram Sambat calendar with tithi, festivals and holidays.",index:true};}
- if(path.startsWith("/date/"))return{title:"Nepali Date Details",description:"Bikram Sambat, tithi, Nepal Sambat and festival details for the selected date.",index:true};
- if(path.startsWith("/me")||path.startsWith("/admin"))return{title:"My Space",description:"Private Aafnai Patro account and personal calendar space.",index:false};
- return{title:"Aafnai Patro · आफ्नै पात्रो",description:"Nepali calendar, Bikram Sambat dates, tithi, community calendars, tools, radio, TV and news.",index:true};
+function routeSeo(path:string):{title:string;description:string;index:boolean;canonical:string}{
+ const canonical=canonicalPath(path);
+ if(isPrivatePath(path))return{title:"My Space · आफ्नै ठाउँ",description:"Private Aafnai Patro account and personal calendar space.",index:false,canonical};
+ const tool=canonical.match(/^\/tools\/([^/]+)$/)?.[1];
+ if(tool){const meta=TOOL_SEO[tool];if(meta)return{title:meta[0],description:meta[1],index:true,canonical};}
+ if(canonical==="/")return{title:"आजको नेपाली पात्रो",description:"आजको नेपाली मिति, तिथि, चाडपर्व, बिदा, नेपाल संवत् र दैनिक पात्रो जानकारी।",index:true,canonical};
+ if(canonical==="/tools")return{title:"Nepali Tools · नेपाली उपकरण",description:"Date, language, finance, calendar, sharing and Nepali utility tools in one place.",index:true,canonical};
+ if(canonical==="/convert")return{title:"BS AD Date Converter · मिति रूपान्तरण",description:"Convert Bikram Sambat and Gregorian dates both ways using Aafnai Patro calendar data.",index:true,canonical};
+ if(canonical==="/rashifal")return{title:"Rashifal · राशिफल",description:"Daily, weekly and monthly Rashifal with transparent calendar context.",index:true,canonical};
+ if(canonical==="/samachar")return{title:"Nepali Samachar · समाचार",description:"Discover categorized Nepali news with links back to original sources.",index:true,canonical};
+ if(canonical==="/fm")return{title:"Nepali FM Radio",description:"Discover and play verified Nepali FM and internet radio streams.",index:true,canonical};
+ if(canonical==="/tv")return{title:"Live TV Explorer",description:"Browse playable public live TV channels with health checks and resilient playback.",index:true,canonical};
+ if(canonical==="/time-machine")return{title:"Nepal Time Machine",description:"Travel through notable moments in Nepal and world history by year.",index:true,canonical};
+ if(canonical==="/on-this-day")return{title:"On This Day · आज इतिहासमा",description:"Explore historical events associated with today's calendar date.",index:true,canonical};
+ if(canonical==="/samudaya")return{title:"Community Calendars · समुदाय पात्रो",description:"Explore Nepal Sambat, Lhosar, Tharu, Mithila, Kirat, Hijri and Samudaya Chakra calendars.",index:true,canonical};
+ if(canonical==="/nepal-sambat/mandala")return{title:"Nepal Sambat Mandala",description:"Explore Nepal Sambat dates, observances and festival context.",index:true,canonical};
+ if(canonical.startsWith("/samudaya/")){const label=canonical.split("/").filter(Boolean).at(-1)?.replace(/-/g," ")||"Community";return{title:`${label} calendar`,description:"A community calendar experience within Aafnai Patro's Nepal calendar suite.",index:true,canonical};}
+ if(canonical.startsWith("/calendar/")){const bits=canonical.split("/");return{title:`Nepali Calendar ${bits[2]||""}/${bits[3]||""}`,description:"Monthly Bikram Sambat calendar with tithi, festivals and holidays.",index:true,canonical};}
+ if(canonical.startsWith("/date/"))return{title:"Nepali Date Details",description:"Bikram Sambat, tithi, Nepal Sambat and festival details for the selected date.",index:true,canonical};
+ return{title:"Aafnai Patro · आफ्नै पात्रो",description:"Nepali calendar, Bikram Sambat dates, tithi, community calendars, tools, radio, TV and news.",index:true,canonical};
 }
 
 function setMeta(selector:string,attribute:string,value:string,content:string){let node=document.head.querySelector<HTMLMetaElement>(selector);if(!node){node=document.createElement("meta");node.setAttribute(attribute,value);document.head.appendChild(node)}node.setAttribute("content",content)}
-function applySeo(path:string){const meta=routeSeo(path);const fullTitle=`${meta.title} | आफ्नै पात्रो`;document.title=fullTitle;setMeta('meta[name="description"]',"name","description",meta.description);setMeta('meta[property="og:title"]',"property","og:title",fullTitle);setMeta('meta[property="og:description"]',"property","og:description",meta.description);setMeta('meta[property="og:url"]',"property","og:url",SITE+path);setMeta('meta[name="twitter:title"]',"name","twitter:title",fullTitle);setMeta('meta[name="twitter:description"]',"name","twitter:description",meta.description);setMeta('meta[name="robots"]',"name","robots",meta.index?"index,follow,max-image-preview:large":"noindex,nofollow");let canonical=document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical)}canonical.href=SITE+path;}
+function applySeo(path:string){const meta=routeSeo(path);const fullTitle=`${meta.title} | आफ्नै पात्रो`;const canonicalUrl=SITE+meta.canonical;document.title=fullTitle;setMeta('meta[name="description"]',"name","description",meta.description);setMeta('meta[property="og:title"]',"property","og:title",fullTitle);setMeta('meta[property="og:description"]',"property","og:description",meta.description);setMeta('meta[property="og:url"]',"property","og:url",canonicalUrl);setMeta('meta[name="twitter:title"]',"name","twitter:title",fullTitle);setMeta('meta[name="twitter:description"]',"name","twitter:description",meta.description);setMeta('meta[name="robots"]',"name","robots",meta.index?"index,follow,max-image-preview:large":"noindex,nofollow");let canonical=document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical)}canonical.href=canonicalUrl;}
 
 export function AppChrome({children}:{children:ReactNode}){
  const path=useRoute();
