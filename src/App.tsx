@@ -13,25 +13,25 @@ import { DailyDirectAnswer } from "./components/seo/DailyDirectAnswer";
 
 type FeatureLink = { path: string; title: string; subtitle: string; group: string };
 const FEATURE_LINKS: FeatureLink[] = [
-  { path: "/jyotish/rashifal", title: "राशिफल · Rashifal", subtitle: "Daily, weekly, monthly · Vedic/Western · exact-birth with consent", group: "Jyotish" },
-   { path: "/jyotish/janma-patro", title: "जन्मपत्रो · Kundali", subtitle: "Birth chart, planetary positions, Vimshottari Dasha and 36 Guna Milan", group: "Jyotish" },
-  { path: "/aaja", title: "आज · Today", subtitle: "Daily MeroPatro dashboard and open/closed context", group: "Daily" },
-  { path: "/tools/tithi", title: "तिथि · Tithi", subtitle: "Tithi reminders, lunar-date derivation and recurrence tools", group: "Tools" },
-  { path: "/tools/diaspora", title: "Diaspora", subtitle: "Timezone-aware Nepal calendar context abroad", group: "Tools" },
-  { path: "/tools", title: "Utilities · उपकरण", subtitle: "Open the complete tools directory", group: "Tools" },
-  { path: "/tools/card", title: "Share Cards", subtitle: "Create calendar, date and festival cards for sharing", group: "Tools" },
-  { path: "/tools/family", title: "Family", subtitle: "Private family dates and shared events", group: "Tools" },
-  { path: "/settings/holidays", title: "Holiday Settings", subtitle: "Audience, district and closure preferences", group: "Tools" },
-  { path: "/settings/notifications", title: "Notifications", subtitle: "Private push reminder controls", group: "Tools" },
-  { path: "/tools/my-data", title: "My Data", subtitle: "Export or remove private account data", group: "Tools" },
-  { path: "/time-machine", title: "Time Machine", subtitle: "Historical Nepal timeline", group: "Explore" },
-  { path: "/samachar", title: "समाचार · Samachar", subtitle: "Nepali news desk", group: "Explore" },
-  { path: "/fm", title: "MeroPatro रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "Explore" },
-  { path: "/explore", title: "सबै सुविधा · All Features", subtitle: "पात्रो, डायरी, मिडिया र उपकरणको पूर्ण सूची", group: "Explore" },
-  { path: "/tv", title: "लाइभ टिभी · Live TV", subtitle: "देश, भाषा र विषय अनुसार लाइभ च्यानल", group: "Explore" },
-  { path: "/on-this-day", title: "आज इतिहासमा", subtitle: "On This Day history", group: "Explore" },
-  { path: "/jyotish", title: "ज्योतिष · Jyotish", subtitle: "Jyotish tools and guidance", group: "Jyotish" },
-  { path: "/tools/api", title: "Developers", subtitle: "Public API and embed documentation", group: "Tools" }
+  { path: "/jyotish/rashifal", title: "आफ्नै राशिफल", subtitle: "दैनिक · साप्ताहिक · मासिक राशिफल", group: "आफ्नै ज्योतिष" },
+  { path: "/jyotish/china", title: "आफ्नै चिना", subtitle: "जन्मपत्रिका, ग्रहस्थिति, दशा र ३६ गुण मिलान", group: "आफ्नै ज्योतिष" },
+  { path: "/aaja", title: "आफ्नै आज", subtitle: "आजको मिति, तिथि र दैनिक पात्रो", group: "दैनिक" },
+  { path: "/tools/tithi", title: "आफ्नै तिथि", subtitle: "तिथि रिमाइन्डर र आगामी तिथि", group: "आफ्नै टुल्स" },
+  { path: "/tools/diaspora", title: "आफ्नै विदेश पात्रो", subtitle: "विदेशमा बस्दा नेपाल समय र पात्रो सन्दर्भ", group: "आफ्नै टुल्स" },
+  { path: "/tools", title: "आफ्नै उपकरण", subtitle: "सबै उपयोगी टुल्स एउटै ठाउँमा", group: "आफ्नै टुल्स" },
+  { path: "/tools/card", title: "आफ्नै कार्ड", subtitle: "मिति, पात्रो र चाडपर्व शेयर कार्ड", group: "आफ्नै टुल्स" },
+  { path: "/tools/family", title: "आफ्नै परिवार", subtitle: "निजी परिवार मिति र साझा घटनाहरू", group: "आफ्नै टुल्स" },
+  { path: "/settings/holidays", title: "आफ्नै बिदा सेटिङ", subtitle: "जिल्ला, audience र बिदा preference", group: "आफ्नै टुल्स" },
+  { path: "/settings/notifications", title: "आफ्नै सूचना", subtitle: "निजी reminder र notification controls", group: "आफ्नै टुल्स" },
+  { path: "/tools/my-data", title: "आफ्नै डेटा", subtitle: "निजी डेटा export वा remove", group: "आफ्नै टुल्स" },
+  { path: "/time-machine", title: "आफ्नै समययन्त्र", subtitle: "नेपालको ऐतिहासिक समयरेखा", group: "खोज" },
+  { path: "/samachar", title: "आफ्नै समाचार", subtitle: "नेपाली समाचार डेस्क", group: "खोज" },
+  { path: "/fm", title: "आफ्नै रेडियो", subtitle: "नेपाल र विश्वका रेडियो स्टेशन", group: "खोज" },
+  { path: "/explore", title: "सबै आफ्नै सुविधा", subtitle: "पात्रो, डायरी, मिडिया र उपकरणको पूर्ण सूची", group: "खोज" },
+  { path: "/tv", title: "आफ्नै लाइभ टिभी", subtitle: "देश, भाषा र विषय अनुसार लाइभ च्यानल", group: "खोज" },
+  { path: "/on-this-day", title: "आफ्नै आज इतिहासमा", subtitle: "आजकै मितिका ऐतिहासिक घटना", group: "खोज" },
+  { path: "/jyotish", title: "आफ्नै ज्योतिष", subtitle: "चिना, राशिफल र ज्योतिष उपकरण", group: "आफ्नै ज्योतिष" },
+  { path: "/tools/api", title: "आफ्नै Developers", subtitle: "Public API र integration documentation", group: "आफ्नै टुल्स" }
 ];
 
 const LEGACY_TOOL_PATHS = new Set(["/tithi", "/diaspora", "/card", "/family", "/developers", "/my-data"]);
@@ -225,10 +225,10 @@ export default function App() {
         <CommunityHomeLine selectedDate={selectedDate} />
 
         <nav className="home-quick-launch glass-panel" aria-label="Quick access">
-          <a href="/jyotish/rashifal"><span>Jyotish</span><strong>राशिफल · Rashifal</strong><small>Daily · Weekly · Monthly</small></a>
-          <a href="/tools/typingtools"><span>Tools</span><strong>Typing Tools · टाइपिङ टुल्स</strong><small>Preeti Converter + Roman → Unicode typing</small></a>
-          <a href="/fm"><span>Listen</span><strong>FM Radio</strong><small>Nepal & global stations</small></a>
-          <a href="/tv"><span>Watch</span><strong>Live TV</strong><small>Playable channels</small></a>
+          <a href="/jyotish/rashifal"><span>आफ्नै ज्योतिष</span><strong>आफ्नै राशिफल</strong><small>दैनिक · साप्ताहिक · मासिक</small></a>
+          <a href="/tools/typingtools"><span>आफ्नै टुल्स</span><strong>आफ्नै नेपाली टाइपिङ</strong><small>Roman → Unicode सुझाव र Preeti converter</small></a>
+          <a href="/fm"><span>सुन्नुहोस्</span><strong>आफ्नै रेडियो</strong><small>नेपाल र विश्वका स्टेशन</small></a>
+          <a href="/tv"><span>हेर्नुहोस्</span><strong>आफ्नै लाइभ टिभी</strong><small>प्ले गर्न मिल्ने च्यानल</small></a>
         </nav>
 
         {sync.error && (
@@ -262,9 +262,9 @@ export default function App() {
         <section className="feature-hub glass-panel" aria-label="MeroPatro features">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">All features are free</p>
-              <h2>MeroPatro · Features</h2>
-              <p className="subheading">Calendar, Jyotish, daily-life and discovery tools in one place.</p>
+              <p className="eyebrow">सबै सुविधा निःशुल्क</p>
+              <h2>आफ्नै पात्रो · सुविधाहरू</h2>
+              <p className="subheading">पात्रो, आफ्नै ज्योतिष, दैनिक जीवन र खोज उपकरण एउटै ठाउँमा।</p>
             </div>
           </div>
           <div className="feature-grid">
@@ -279,11 +279,11 @@ export default function App() {
         </section>
 
         <footer className="app-footer">
-          <span>MeroPatro</span>
+          <span>आफ्नै पात्रो</span>
           <span aria-hidden="true">·</span>
           <span>AD · BS · NS · तिथि · खगोलीय पात्रो</span>
           <span aria-hidden="true">·</span>
-          <span>नेपाली पात्रो, तिथि, चाडपर्व र राशिफल</span>
+          <span>नेपाली पात्रो, तिथि, चाडपर्व र आफ्नै राशिफल</span>
         </footer>
       </main>
     </div>
