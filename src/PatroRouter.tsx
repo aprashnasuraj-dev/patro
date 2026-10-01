@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 
 const AstroPage=lazy(()=>import("./App"));
@@ -17,9 +18,9 @@ const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
 const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
-const EXACT=new Set(["/","/tools","/tools/astro","/me","/convert","/rashifal","/jyotish/rashifal","/samachar","/fm","/tv","/jyotish/china","/jyotish/janma-patro","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline"]);
+const EXACT=new Set(["/","/tools","/tools/astro","/me","/convert","/rashifal","/jyotish/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/janma-patro","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline"]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
+function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith("/date/")||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 
@@ -29,6 +30,7 @@ export function PatroRouter(){
  const render=()=>{
    if(path==="/")return <HomePage/>;
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <HomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
+   const date=path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
    if(path==="/tools/astro")return <AstroPage/>;
    if(path==="/me")return <MePage/>;
@@ -41,6 +43,8 @@ export function PatroRouter(){
    if(path==="/convert")return <ConvertPage/>;
    if(path==="/rashifal"||path==="/jyotish/rashifal")return <RashifalPage/>;
    if(path==="/samachar")return <SamacharPage/>;
+   if(path==="/time-machine")return <TimeMachinePage/>;
+   if(path==="/on-this-day")return <OnThisDayPage/>;
    if(path==="/fm")return <MediaSuite kind="radio"/>;
    if(path==="/tv")return <MediaSuite kind="tv"/>;
    if(path==="/jyotish/china"||path==="/jyotish/janma-patro"||path==="/jyotish/matchmaking")return <JanmaPatroSuite/>;

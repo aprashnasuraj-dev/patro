@@ -122,6 +122,7 @@ const productionWorker = {
     let url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
 
+    if (path === "/nepal-sambat") return redirect(request, "/nepal-sambat/mandala");
     if (path === "/jyotish/janma-patro") return redirect(request, "/jyotish/china");
     if (path === "/jyotish/china/rashi" || path === "/jyotish/rashifal") return redirect(request, "/rashifal");
 
