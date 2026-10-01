@@ -1,22 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "snapshot_date": "2026-09-30",
-  "branch": "cloudflare-migration",
+  "branch": "main",
+  "historical_source_branch": "cloudflare-migration",
   "status": {
     "latest_live_function_sources_copied": "11/11",
     "latest_live_function_module_conversions_present": "11/11",
     "historical_preview_or_backup_functions_required": false,
     "public_reference_snapshot_complete": true,
     "astronomy_calendar_rows": 77070,
-    "astronomy_coverage": [
-      "1826-04-11",
-      "2037-04-13"
-    ],
+    "astronomy_coverage": ["1826-04-11", "2037-04-13"],
     "cloudflare_native_runtime_complete": true,
     "safe_to_delete_supabase": false,
     "safe_to_delete_vercel": false,
     "private_auth_model": "Google Identity Services + HttpOnly Worker session + Cloudflare D1",
-    "active_supabase_runtime_dependency": false,
+    "active_supabase_runtime_dependency": true,
+    "supabase_runtime_scope": "Worker-side selective read-only compatibility only",
+    "selective_compatibility_roots": ["tv", "fm", "samachar"],
     "code_cutover_blockers": 0
   },
   "already_native_or_local_first": {
@@ -107,19 +107,23 @@
     ],
     "data_target": "Cloudflare D1 + KV/Cache API"
   },
-  "remaining_native_port_groups": [],
+  "remaining_native_port_groups": [
+    "tv compatibility catalog/relay/health",
+    "samachar compatibility feed",
+    "fm compatibility fallback cleanup after native radio parity"
+  ],
   "cutover_gates": [
-    "Active src/, worker/ and functions/ production code contains no Supabase origin/client/auth dependency or generic compatibility page fetch.",
+    "Browser source contains no direct Supabase origin/client/auth dependency; any transition traffic is confined to the Worker allow-list for tv, fm and samachar.",
     "D1 remote row counts and calendar boundary checks match cloudflare/d1/expected-public-counts.json.",
     "All D1 migrations including private/auth/admin schemas apply successfully to the remote database.",
     "Google sign-in, account state, family, my-data, ICS token, community preferences and push ownership work across devices.",
-    "Cloudflare Cron Triggers execute push, market, maintenance and Rashifal publication checks without Supabase/Vercel.",
+    "Cloudflare Cron Triggers execute push, maintenance and Rashifal publication checks without Supabase/Vercel.",
     "Cloudflare secrets/configuration contract passes scripts/verify-cloudflare-secrets.mjs.",
     "All six community calendars plus Samudaya Chakra pass build/runtime/mobile gates.",
     "Former protected routes render native React/static pages without /api/v1/compat/page.",
-    "Cloudflare preview passes cloudflare:validate, native cutover contracts, cloudflare:smoke and SEO/accessibility/performance audits.",
+    "Cloudflare deployment passes cloudflare:validate, native cutover contracts, D1 verification, route smoke, SEO/accessibility/performance audits and authenticated private-state tests.",
     "The one unclaimed legacy private row is preserved until explicit owner claim/import.",
-    "Production completes an observation/rollback window with zero requests to Supabase/Vercel before either service is deleted."
+    "Production completes an observation/rollback window and the selective tv/fm/samachar compatibility traffic reaches zero before Supabase is deleted."
   ],
   "weather": {
     "provider": "Open-Meteo",
@@ -134,30 +138,12 @@
     "aggregate_hub_count": 1,
     "status": "6/6 community calendars + Samudaya Chakra present and build-gated",
     "calendars": [
-      {
-        "id": "nepal-sambat",
-        "route": "/nepal-sambat/mandala"
-      },
-      {
-        "id": "lhosar",
-        "route": "/samudaya/lhosar"
-      },
-      {
-        "id": "tharu",
-        "route": "/samudaya/tharu"
-      },
-      {
-        "id": "mithila",
-        "route": "/samudaya/mithila"
-      },
-      {
-        "id": "kirat",
-        "route": "/samudaya/kirat"
-      },
-      {
-        "id": "hijri",
-        "route": "/samudaya/hijri"
-      }
+      {"id": "nepal-sambat", "route": "/nepal-sambat/mandala"},
+      {"id": "lhosar", "route": "/samudaya/lhosar"},
+      {"id": "tharu", "route": "/samudaya/tharu"},
+      {"id": "mithila", "route": "/samudaya/mithila"},
+      {"id": "kirat", "route": "/samudaya/kirat"},
+      {"id": "hijri", "route": "/samudaya/hijri"}
     ],
     "aggregate_route": "/samudaya/chakra",
     "api_runtime": "Cloudflare-native D1/validated local engines + Google-session private preferences/admin overrides",
@@ -179,12 +165,17 @@
     {
       "id": "remote_d1",
       "blocking_production_cutover": true,
-      "requirement": "Provision/link Cloudflare D1, apply all migrations including 0800+, import the complete public snapshot, and pass remote count/boundary verification."
+      "requirement": "Link the existing production D1 database, apply all migrations including 0800+, and pass remote count/boundary verification."
     },
     {
       "id": "native_secrets",
       "blocking_production_cutover": true,
       "requirement": "Configure the names in cloudflare/secrets-manifest.json and final PUBLIC_SITE_URL without committing values."
+    },
+    {
+      "id": "selective_compatibility",
+      "blocking_supabase_deletion": true,
+      "requirement": "Keep the Worker-side tv/fm/samachar compatibility origins available until native production parity is observed and compatibility traffic reaches zero."
     },
     {
       "id": "legacy_private_row",
@@ -194,12 +185,12 @@
     {
       "id": "preview_validation",
       "blocking_production_cutover": true,
-      "requirement": "Cloudflare preview must pass build, native-cutover contracts, D1 verification, route smoke, 360px/browser checks, SEO/accessibility/performance gates, and authenticated Google/private-state tests."
+      "requirement": "Cloudflare deployment must pass build, native-cutover contracts, D1 verification, route smoke, 360px/browser checks, SEO/accessibility/performance gates, and authenticated Google/private-state tests."
     },
     {
       "id": "observation_window",
       "blocking_supabase_deletion": true,
-      "requirement": "After production traffic switches to Cloudflare, verify no production request reaches Supabase/Vercel compatibility origins before deleting rollback infrastructure."
+      "requirement": "After production traffic switches to Cloudflare, verify no unexpected production request reaches Supabase/Vercel and the permitted compatibility traffic is understood before deleting rollback infrastructure."
     }
   ],
   "native_private_state": {
@@ -232,7 +223,6 @@
   "native_cron": {
     "schedules": {
       "push": "*/5 * * * *",
-      "market": "17 0,6,12,18 * * *",
       "maintenance": "43 2 * * *",
       "rashifal_health": "11 3 * * *"
     },
@@ -241,7 +231,8 @@
       "/api/cron/push",
       "/api/cron/revalidate",
       "/api/v1/cron/rashifal"
-    ]
+    ],
+    "note": "The market HTTP endpoint may remain callable, but automatic market polling is intentionally not scheduled in production Wrangler configuration."
   },
   "native_protected_pages": [
     "/aaja",
