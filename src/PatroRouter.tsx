@@ -14,9 +14,10 @@ const MyDataPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({
 const NotificationSettingsPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.NotificationSettingsPage})));
 const HolidaySettingsPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.HolidaySettingsPage})));
 const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.DevelopersPage})));
+const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
 const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
-const EXACT=new Set(["/","/tools","/tools/astro","/me","/convert","/rashifal","/jyotish/rashifal","/samachar","/fm","/tv","/jyotish/china","/jyotish/janma-patro","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers"]);
+const EXACT=new Set(["/","/tools","/tools/astro","/me","/convert","/rashifal","/jyotish/rashifal","/samachar","/fm","/tv","/jyotish/china","/jyotish/janma-patro","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline"]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -49,6 +50,7 @@ export function PatroRouter(){
    if(path.startsWith("/tools/"))return <UtilitySuite key={path}/>;
    if(path==="/privacy")return <TrustPage page="privacy"/>;if(path==="/terms")return <TrustPage page="terms"/>;if(path==="/about")return <TrustPage page="about"/>;if(path==="/sources")return <TrustPage page="sources"/>;if(path==="/contact")return <TrustPage page="contact"/>;
    if(path==="/developers")return <DevelopersPage/>;
+   if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
  return <Suspense fallback={<Fallback/>}>{render()}</Suspense>
