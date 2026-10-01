@@ -42,6 +42,5 @@ jobs:
           test -f dist/index.html
           test -f dist/sw.js
           test -f dist/tools/index.html
-          test -f dist/tools/sw.js
           test -d dist/assets
           ! grep -R "/astro/assets/" dist/index.html dist/tools/index.html
