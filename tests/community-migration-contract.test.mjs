@@ -65,15 +65,15 @@ test("cutover contract probes all six calendars and the aggregate hub",()=>{
   ]) assert.ok(paths.has(path),path);
 });
 
-test("public community APIs are no longer Supabase cutover blockers",()=>{
+test("community APIs are fully native and no longer cutover blockers",()=>{
   const remaining=json("cloudflare/remaining-cutover.json");
   assert.equal(remaining.community_frontend_parity.required_calendar_count,6);
-  const pending=new Set(remaining.remaining_native_port_groups.flatMap(g=>g.routes||[]));
+  assert.deepEqual(remaining.remaining_native_port_groups,[]);
+  assert.deepEqual(remaining.community_frontend_parity.pending_private_routes,[]);
+  const native=new Set(remaining.already_native_or_local_first.worker_endpoints||[]);
   for(const path of [
-    "/api/v1/communities","/api/v1/communities/feed.ics","/api/v1/communities/lho",
-    "/api/v1/communities/:suite","/api/v1/communities/:suite/ics",
-    "/api/v1/hijri","/api/v1/hijri/ramadan",
-    "/api/v1/nepal-sambat","/api/v1/nepal-sambat/festivals","/api/v1/nepal-sambat/convert","/api/v1/nepal-sambat/ics"
-  ]) assert.ok(!pending.has(path),path);
-  for(const path of ["/api/v1/community-preferences","/api/v1/admin/community-overrides","/api/v1/admin/ns-festival-dates"]) assert.ok(pending.has(path),path);
+    "/api/v1/communities","/api/v1/community-preferences",
+    "/api/v1/admin/community-overrides","/api/v1/admin/ns-festival-dates",
+    "/api/v1/hijri","/api/v1/nepal-sambat"
+  ]) assert.ok(native.has(path),path);
 });
