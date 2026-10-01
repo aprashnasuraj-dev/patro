@@ -33,15 +33,15 @@ const MORE_ITEMS: RouteItem[] = [
   {path:"/time-machine",key:"timeMachine",icon:Hourglass,descriptionNe:"इतिहासमा समय यात्रा",descriptionEn:"Travel through Nepal history"},
   {path:"/on-this-day",key:"history",icon:History,descriptionNe:"आजको दिन इतिहासमा",descriptionEn:"Events from this day in history"},
   {path:"/astro",key:"astro",icon:Telescope,descriptionNe:"आकाश र खगोलीय डेटा",descriptionEn:"Sky and astronomical data"},
-  {path:"/jyotish/janma-patro",key:"birthChart",icon:Orbit,descriptionNe:"जन्म विवरणबाट जन्मपत्रिका",descriptionEn:"Birth chart from birth details"}
+  {path:"/jyotish/china",key:"birthChart",icon:Orbit,descriptionNe:"जन्म विवरणबाट आफ्नै चिना",descriptionEn:"Aafnai China from birth details"}
 ];
 
 const COMMAND_ITEMS: RouteItem[] = [
-  {path:"/",key:"calendar",icon:CalendarDays,descriptionNe:"आज र महिनाको पात्रो",descriptionEn:"Today and month calendar"},
-  {path:"/jyotish/rashifal",key:"rashifal",icon:MoonStar,descriptionNe:"दैनिक, साप्ताहिक र मासिक राशिफल",descriptionEn:"Daily, weekly and monthly horoscope"},
+  {path:"/",key:"calendar",icon:CalendarDays,descriptionNe:"आज र महिनाको आफ्नै पात्रो",descriptionEn:"Today and month in Aafnai Patro"},
+  {path:"/jyotish/rashifal",key:"rashifal",icon:MoonStar,descriptionNe:"दैनिक, साप्ताहिक र मासिक आफ्नै राशिफल",descriptionEn:"Daily, weekly and monthly Aafnai Rashifal"},
   {path:"/convert",key:"converter",icon:ArrowLeftRight,descriptionNe:"BS ↔ AD रूपान्तरण",descriptionEn:"BS ↔ AD conversion"},
-  {path:"/tv",key:"tv",icon:Tv,descriptionNe:"लाइभ टिभी",descriptionEn:"Live television"},
-  {path:"/my-diary",key:"diary",icon:BookOpenText,descriptionNe:"रिमाइन्डर र व्यक्तिगत मितिहरू",descriptionEn:"Reminders and personal dates"},
+  {path:"/tv",key:"tv",icon:Tv,descriptionNe:"आफ्नै लाइभ टिभी",descriptionEn:"Aafnai Live TV"},
+  {path:"/my-diary",key:"diary",icon:BookOpenText,descriptionNe:"आफ्नै नोट, रिमाइन्डर र व्यक्तिगत मितिहरू",descriptionEn:"Aafnai notes, reminders and personal dates"},
   ...MORE_ITEMS
 ];
 
@@ -104,7 +104,6 @@ export function AppChrome({ children }: { children:ReactNode }) {
     return()=>{window.removeEventListener("keydown",onKey);window.removeEventListener("online",onOnline);window.removeEventListener("offline",onOffline);window.removeEventListener("scroll",onScroll);};
   },[]);
 
-
   useEffect(()=>{
     const sync=()=>{const next=window.location.pathname.replace(/\/+$/, "")||"/";setPath(next);applyRouteSeo(next);};
     sync();window.addEventListener("popstate",sync);window.addEventListener("patro:navigation",sync);
@@ -121,8 +120,8 @@ export function AppChrome({ children }: { children:ReactNode }) {
     {offline && <div className="mp-offline" role="status">{t(language,"offline")}</div>}
     <header className={`mp-header ${compact?"is-compact":""}`}>
       <div className="mp-header__inner">
-        <a className="mp-brand" href="/" aria-label={language==="ne"?"MeroPatro गृहपृष्ठ":"MeroPatro home"}>
-          <LogoMark size={compact?34:40}/><span><strong>MeroPatro</strong></span>
+        <a className="mp-brand" href="/" aria-label={language==="ne"?"आफ्नै पात्रो गृहपृष्ठ":"Aafnai Patro home"}>
+          <LogoMark size={compact?34:40}/><span><strong>{language==="ne"?"आफ्नै पात्रो":"Aafnai Patro"}</strong></span>
         </a>
         <nav className="mp-primary" aria-label="Primary navigation">
           <a href="/" aria-current={path==="/"?"page":undefined}><CalendarDays size={18}/><span>{t(language,"calendar")}</span></a>
@@ -144,8 +143,8 @@ export function AppChrome({ children }: { children:ReactNode }) {
       </div>
       {moreOpen && <div className="mp-mega" role="menu">
         <div className="mp-mega__grid">
-          <section><h3>{language==="ne"?"मिडिया":"Media"}</h3>{MORE_ITEMS.filter(x=>["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
-          <section><h3>{language==="ne"?"उपकरण र थप":"Tools & more"}</h3>{MORE_ITEMS.filter(x=>!["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
+          <section><h3>{language==="ne"?"आफ्नै मिडिया":"Aafnai Media"}</h3>{MORE_ITEMS.filter(x=>["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
+          <section><h3>{language==="ne"?"आफ्नै उपकरण र थप":"Aafnai Tools & more"}</h3>{MORE_ITEMS.filter(x=>!["/samachar","/fm","/tv"].includes(x.path)).map(ItemLink)}</section>
         </div>
         <a className="mp-mega__all" href="/explore">{t(language,"allFeatures")} <ChevronRight size={16}/></a>
       </div>}
@@ -153,17 +152,18 @@ export function AppChrome({ children }: { children:ReactNode }) {
     <div className="mp-reference-strip" aria-label={language==="ne"?"आज र मुख्य सेवा":"Today and key services"}>
       <div className="mp-reference-strip__inner">
         <div className="mp-reference-today">
-          <b>{todaySummary?.calendars.bikram_sambat || (language==="ne"?"आजको पात्रो":"Today")}</b>
+          <b>{todaySummary?.calendars.bikram_sambat || (language==="ne"?"आफ्नै आजको पात्रो":"Aafnai Today")}</b>
           <span className="mp-reference-dot" aria-hidden="true"/>
           <small>{todaySummary ? ((todaySummary.tithi?.ne || todaySummary.tithi?.en || "") + " · " + todaySummary.calendars.gregorian_ad) : (language==="ne"?"मिति मिलाउँदै…":"Synchronizing date…")}</small>
         </div>
         <nav className="mp-reference-links" aria-label={language==="ne"?"द्रुत सेवा":"Quick services"}>
-          <a href="/">{language==="ne"?"आज":"Today"}</a>
-          <a href="/jyotish/rashifal">{language==="ne"?"राशिफल":"Rashifal"}</a>
-          <a href="/tools">{language==="ne"?"उपकरण":"Tools"}</a>
-          <a href="/samachar">{language==="ne"?"समाचार":"News"}</a>
-          <a href="/fm">FM</a>
-          <a href="/tv">TV</a>
+          <a href="/">{language==="ne"?"आफ्नै आज":"Aafnai Today"}</a>
+          <a href="/jyotish/rashifal">{language==="ne"?"आफ्नै राशिफल":"Aafnai Rashifal"}</a>
+          <a href="/jyotish/china">{language==="ne"?"आफ्नै चिना":"Aafnai China"}</a>
+          <a href="/tools">{language==="ne"?"आफ्नै उपकरण":"Aafnai Tools"}</a>
+          <a href="/samachar">{language==="ne"?"आफ्नै समाचार":"Aafnai News"}</a>
+          <a href="/fm">{language==="ne"?"आफ्नै रेडियो":"Aafnai Radio"}</a>
+          <a href="/tv">{language==="ne"?"आफ्नै TV":"Aafnai TV"}</a>
         </nav>
       </div>
     </div>
@@ -174,8 +174,8 @@ export function AppChrome({ children }: { children:ReactNode }) {
     <nav className="mp-bottom-nav" aria-label="Mobile navigation">
       <a href="/"><CalendarDays size={21}/><span>{t(language,"calendar")}</span></a>
       <a href="/tv"><Tv size={21}/><span>{t(language,"tv")}</span></a>
-      <a href="/convert"><ArrowLeftRight size={21}/><span>{language==="ne"?"रूपान्तरण":"Convert"}</span></a>
-      <a href="/my-diary"><ListChecks size={21}/><span>{language==="ne"?"डायरी":"Diary"}</span></a>
+      <a href="/convert"><ArrowLeftRight size={21}/><span>{language==="ne"?"आफ्नै रूपान्तरण":"Aafnai Convert"}</span></a>
+      <a href="/my-diary"><ListChecks size={21}/><span>{language==="ne"?"आफ्नै नोट":"Aafnai Notes"}</span></a>
       <button type="button" onClick={()=>setMobileOpen(true)}><MoreHorizontal size={21}/><span>{t(language,"more")}</span></button>
     </nav>
 
@@ -188,7 +188,7 @@ export function AppChrome({ children }: { children:ReactNode }) {
 
     {searchOpen && <div className="mp-command-backdrop" onMouseDown={e=>{if(e.currentTarget===e.target)setSearchOpen(false)}}>
       <section className="mp-command" role="dialog" aria-modal="true" aria-label={t(language,"search")}>
-        <form onSubmit={submit}><Search size={20}/><input autoFocus value={query} onChange={e=>setQuery(e.target.value)} placeholder={language==="ne"?"फिचर, मिति वा चाडपर्व खोज्नुहोस्":"Search features, dates or festivals"} /></form>
+        <form onSubmit={submit}><Search size={20}/><input autoFocus value={query} onChange={e=>setQuery(e.target.value)} placeholder={language==="ne"?"आफ्नै सुविधा, मिति वा चाडपर्व खोज्नुहोस्":"Search Aafnai features, dates or festivals"} /></form>
         <div>{filtered.map(item=><a href={item.path} key={item.path}><item.icon size={20}/><span><strong>{item.label}</strong><small>{desc(item)}</small></span><ChevronRight size={16}/></a>)}</div>
         <footer><kbd>Ctrl/⌘ K</kbd> {language==="ne"?"खोजी खोल्नुहोस्":"opens search"} · <kbd>Esc</kbd> {language==="ne"?"बन्द":"close"}</footer>
       </section>
