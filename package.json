@@ -53,6 +53,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "framer-motion": "13.4.3",
+    "motion-dom": "13.4.5",
+    "motion-utils": "13.3.0",
     "astronomy-engine": "2.1.19",
     "hls.js": "1.7.3",
     "html2pdf.js": "0.14.0",
