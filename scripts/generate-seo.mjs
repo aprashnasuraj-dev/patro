@@ -13,7 +13,7 @@ const calendarYears = [currentBsYear - 1, currentBsYear, currentBsYear + 1];
 const publicRoutes = [
   "/", "/explore", "/astro", "/convert", "/samachar", "/time-machine", "/on-this-day",
   "/fm", "/tv", "/tools", "/tools/nepali-typing", "/tools/preeti-converter",
-  "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/nepal-sambat/mandala",
+  "/jyotish/rashifal", "/jyotish/china", "/nepal-sambat", "/nepal-sambat/mandala",
   "/samudaya", "/about", "/sources", "/privacy", "/terms", "/contact"
 ];
 
@@ -33,7 +33,7 @@ const sitemap = [
     const loc = site + path;
     const changefreq = path === "/" ? "daily" : path.startsWith("/calendar/") ? "monthly" : "weekly";
     const priority = path === "/" ? "1.0" : path.startsWith("/calendar/") ? "0.7" : "0.8";
-    return `  <url><loc>${escapeXml(loc)}</loc><lastmod>${today}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+    return `  <url><loc>${escapeXml(loc)}</loc><lastmod>${today}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</url>`;
   }),
   "</urlset>",
   ""
