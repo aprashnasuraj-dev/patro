@@ -1,233 +1,218 @@
 # Cloudflare Git Deployment Runbook
 
-Production migration branch: `cloudflare-migration`.
+This document describes the **current production topology** for Aafnai Patro. Do not use the retired `cloudflare-migration` / `mero-patro` / separate Pages topology for a new deployment.
 
-## Target topology
+## Current production target
 
 ```text
-Cloudflare Pages: mero-patro-pages
+GitHub: aprashnasuraj-dev/patro
+Branch: main
         |
-        | PATRO_API service binding
         v
-Cloudflare Worker: mero-patro
+Cloudflare Worker: patro
+Entrypoint: worker/connected-entry.ts
         |
-        +-- D1 binding DB
-        +-- KV binding CACHE
-        +-- external public APIs
-        +-- temporary Supabase compatibility fallback
+        +-- Static Assets binding: ASSETS -> ./dist
+        +-- D1 binding: DB -> patro
+        +-- canonical custom domain: aafnaipatro.com
+        +-- native Cloudflare APIs first
+        +-- selective Supabase compatibility fallback for TV / FM / Samachar only
 ```
+
+The production deployment is a **single Cloudflare Worker with Static Assets**. A separate Pages project is not required for the current rebuild path.
 
 ## 1. Repository gate
 
-Run:
+Use Node.js 22 and run:
 
 ```bash
-npm install --ignore-scripts --no-audit --no-fund
+npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+npm run cloudflare:production-check
 npm run cloudflare:validate
 ```
 
-Required archive invariants:
+`cloudflare:validate` builds the complete app, verifies migration inventory and calendar snapshots, then performs Wrangler dry-runs for both:
+
+- `wrangler.jsonc` — canonical deploy configuration
+- `wrangler.toml` — default Git-import discovery configuration
+
+Both configs must stay aligned.
+
+## 2. Reconnect / import the Git repository
+
+In Cloudflare Workers & Pages, reconnect GitHub if necessary and import:
 
 ```text
-parts:          78
-rows:           77,070
-first AD date:  1826-04-11
-last AD date:   2037-04-13
-final part:     70 rows
-source version: patro-archive-v79
+Repository:        aprashnasuraj-dev/patro
+Production branch: main
+Worker name:       patro
+Build command:     npm run cloudflare:production-check
+Deploy command:    npm run deploy:cloudflare
+Root directory:    repository root
 ```
 
-Validation is intentionally `--verify-only`: normal CI does not build the large one-time SQL import.
+Do not create or select a Worker named `mero-patro` for this deployment.
 
-## 2. Provision data resources
-
-Create:
+If the old Git integration reports:
 
 ```text
-D1 database: mero-patro
-KV namespace: mero-patro-cache
+Preview creation failed: This Worker does not exist on your account.
 ```
 
-Set Worker build variables:
+remove/reconnect the stale Cloudflare Git project or import the repository as the `patro` Worker again. The GitHub-side code cannot repair a deleted Cloudflare service before Cloudflare has re-established that service connection.
+
+## 3. Production Wrangler configuration
+
+Production-critical values are committed in `wrangler.jsonc` and mirrored in `wrangler.toml`:
 
 ```text
-CF_D1_DATABASE_ID=<D1 UUID>
-CF_KV_NAMESPACE_ID=<KV UUID>
+name:              patro
+main:              worker/connected-entry.ts
+preview URLs:      disabled
+custom domain:     aafnaipatro.com
+assets directory:  ./dist
+assets 404 mode:   none
+D1 binding:        DB
+D1 database:       patro
+D1 database ID:    fb25c860-01db-4ab0-9036-7f87b26ca64b
 ```
 
-Optional:
+The existing D1 database is part of the production configuration. Do **not** create a blank replacement D1 database unless you intentionally want to perform a full data bootstrap and update the committed binding.
 
-```text
-CF_D1_DATABASE_NAME=mero-patro
-CF_D1_PREVIEW_DATABASE_ID=<preview D1 UUID>
-CF_KV_PREVIEW_NAMESPACE_ID=<preview KV UUID>
-```
-
-Do not commit a generated `wrangler.generated.jsonc`; it is ignored by Git.
-
-## 3. Perform the one-time native bootstrap
-
-Before enabling automatic routine deploys, run once in an authenticated Cloudflare environment:
+## 4. What the deploy command does
 
 ```bash
-npm run deploy:cloudflare:bootstrap
+npm run deploy:cloudflare
 ```
 
-This command:
+performs this order:
 
-1. builds the app;
-2. generates `.cloudflare/d1-import/content-snapshot.sql`;
-3. verifies statement-size and snapshot invariants;
-4. generates the bound Wrangler config;
-5. applies `cloudflare/d1/schema-migrations`;
-6. imports the sanitized public/reference snapshot with `wrangler d1 execute --file`;
-7. prints D1 table counts and `migration_state`;
-8. deploys `mero-patro`.
+1. production build;
+2. removes `dist/_redirects` so Workers Static Assets cannot interpret Pages redirects;
+3. applies pending D1 schema migrations to the bound `DB` database;
+4. deploys `worker/connected-entry.ts` plus the built static assets.
 
-Cloudflare D1 currently allows imports up to 5 GB and SQL statements up to 100 KB. The generator validates the statement limit before upload.
+Routine deploys do not bulk-reseed the public archive.
 
-The import is deterministic and built from the canonical `migration/data/public` snapshots plus the retained 22-row universal Rashifal seed. It may be retried if Cloudflare reports a failed import, chunk-rewrites oversized payloads, and does not include private/user Supabase tables.
+## 5. Static/UI features included in every build
 
-## 4. Worker Git integration after bootstrap
-
-Cloudflare Workers → Import repository:
+The build must emit the React SPA plus retained standalone suites. In particular, `scripts/emit-community-suites.mjs` fails the build unless all seven community routes are produced:
 
 ```text
-Repository: aprashnasuraj-dev/patro
-Branch:     cloudflare-migration
-Name:       mero-patro
-Build:      npm run build
-Deploy:     npm run deploy:cloudflare
+/nepal-sambat/mandala
+/samudaya/lhosar
+/samudaya/tharu
+/samudaya/mithila
+/samudaya/kirat
+/samudaya/hijri
+/samudaya/chakra
 ```
 
-The Worker name must match the Wrangler `name`.
+The new UI also exposes Time Machine, On This Day, Community, FM, TV, Samachar and the utility/tool surfaces.
 
-Add build variables from step 2 and runtime secret:
+## 6. Native data expected in D1
+
+The checked migration inventory includes the public/reference datasets required by the current UI, including:
 
 ```text
-NASA_API_KEY
+tool_catalog              29
+time_machine_moments      706
+on_this_day_events        5,454
+astronomy_calendar_map    77,070
+community_dates           1,062
+community_festivals       34
+fm_stations               20
+news_items                274
 ```
 
-Routine deployment applies schema migrations before Worker publication. It does not reimport the full content snapshot.
+The production calendar archive covers `1826-04-11` through `2037-04-13`.
 
-## 5. Worker smoke tests
+## 7. Compatibility boundary
 
-Verify:
+Cloudflare-native routes always run first.
+
+`worker/connected-entry.ts` permits read-only compatibility fallback only for the retained transitional media/news surfaces:
+
+```text
+TV
+FM
+Samachar / /api/v1/news
+```
+
+Do not restore a generic `/api/v1/*` Supabase proxy.
+
+## 8. Runtime secrets after recreating a Worker
+
+A newly recreated Worker does not automatically inherit secrets from a deleted Worker. Restore the relevant Cloudflare secrets from your secure source when those features are required.
+
+See `cloudflare/secrets-manifest.json`. Important names include:
+
+```text
+GOOGLE_CLIENT_ID
+VAPID_PUBLIC_KEY
+VAPID_PRIVATE_KEY
+VAPID_SUBJECT
+CRON_SECRET
+RASHIFAL_SERVICE_TOKEN
+Groq_API
+nvidia_api
+TV_RELAY_SECRET or RADIO_RELAY_SECRET
+ADMIN_GOOGLE_SUBJECTS or ADMIN_EMAILS
+```
+
+`NASA_API_KEY` is optional because the astronomy UI has a safe NASA fallback path.
+
+Never commit secret values to Git.
+
+## 9. Required post-deploy smoke checks
+
+After Cloudflare finishes the fresh deployment, verify at minimum:
+
+```text
+/
+/tools
+/convert
+/tools/astro
+/time-machine
+/on-this-day
+/samudaya
+/nepal-sambat/mandala
+/samudaya/lhosar
+/samudaya/tharu
+/samudaya/mithila
+/samudaya/kirat
+/samudaya/hijri
+/samudaya/chakra
+/fm
+/tv
+/samachar
+/rashifal
+/jyotish/china
+/me
+```
+
+API checks:
 
 ```text
 GET /api/v1/health
-GET /api/v1/sync?date=1826-04-11
 GET /api/v1/sync?date=2026-09-30
-GET /api/v1/sync?date=2037-04-13
+GET /api/v1/calendar/2083/6?calendar=bs
 GET /api/v1/astronomy/tithi?date=2026-09-30&lat=27.7172&lng=85.3240
-GET /api/v1/nasa/apod?date=2026-09-30
 GET /api/v1/tools/catalog
-GET /api/v1/time-machine
+GET /api/v1/time-machine?limit=5
 GET /api/v1/on-this-day?date=2026-09-30
 GET /api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=2026-09-30
+GET /api/v1/news?limit=5
 ```
 
-With full bindings, health should report native D1 mode. The `x-patro-backend: supabase-compat` header identifies compatibility responses.
+Expected native responses use Cloudflare/D1. TV/FM/Samachar may use the explicitly permitted selective compatibility bridge where the native route does not answer.
 
-## 6. Create Pages Git project
+## 10. PWA update behavior
 
-Create a separate Pages project from the same repository:
+The current service-worker cache generation is intentionally bumped for the repaired UI. On activation it removes older Patro/Aafnai cache generations, so users should not remain pinned to the previously broken UI after the fresh production deploy.
 
-```text
-Project name:       mero-patro-pages
-Repository:         aprashnasuraj-dev/patro
-Production branch:  cloudflare-migration
-Build command:      npm run build
-Build output:       dist
-Root directory:     repository root
-```
+Navigation is network-first; calendar data uses stale-while-revalidate for offline resilience.
 
-`vite.config.ts` builds the main app under `dist/astro`; `emit-cloudflare-root.mjs` emits the root SPA/PWA shell and Pages headers into `dist/`.
+## 11. Do not delete rollback sources yet
 
-## 7. Bind Pages to the Worker
-
-Repository config: `wrangler.pages.jsonc`.
-
-Required binding:
-
-```text
-PATRO_API -> mero-patro
-```
-
-If Git import does not apply it automatically:
-
-Settings → Bindings → Add → Service binding.
-
-The Pages functions:
-
-```text
-functions/api/[[path]].js
-functions/fm-v2-stream/[[path]].js
-```
-
-forward requests through the service binding without a public Internet hop.
-
-## 8. Pages smoke tests
-
-Check:
-
-- `/`
-- `/astro`
-- `/fm`
-- `/tv`
-- `/tools`
-- `/tools/nepali-typing`
-- `/jyotish/janma-patro`
-- `/my-diary`
-- `/api/v1/health`
-- manifest + service worker
-- direct navigation/refresh on SPA routes
-
-## 9. Parity gates
-
-Test more than the home page:
-
-- earliest and latest calendar boundaries;
-- current calendar;
-- month-grid/range requests;
-- Nepal Sambat;
-- Time Machine and On This Day;
-- Rashifal/Jyotish;
-- tool catalog and representative tools;
-- FM catalog/stream;
-- live TV/HLS;
-- APOD upstream failure/fallback;
-- PWA install/update path.
-
-## 10. Domain cutover
-
-Keep Vercel production available.
-
-Recommended sequence:
-
-1. Worker bootstrap and D1 verification.
-2. Worker preview/smoke tests.
-3. Pages preview validation.
-4. Attach production domain to Pages.
-5. Observe Worker/Pages logs and compatibility fallback rate.
-6. Migrate remaining compatibility routes individually.
-7. Retire Vercel/Supabase components only after legitimate traffic reaches zero.
-
-## 11. Rollback
-
-Frontend: move the production domain back to the previous Vercel deployment.
-
-API: keep the compatibility Worker/Supabase origins available until the observation window closes.
-
-Data: do not delete Supabase tables/functions during initial cutover. D1 is populated from deterministic checked-in snapshots and the existing source remains the rollback authority until parity is signed off.
-
-## 12. Secret policy
-
-Never expose in Vite/browser configuration:
-
-- Supabase service-role keys;
-- database passwords;
-- NASA/provider credentials;
-- Cloudflare API tokens.
-
-The Worker needs only declared runtime secrets. Cloudflare build IDs are resource identifiers, not browser variables.
+Supabase compatibility is still intentionally retained for selected media/news routes. Do not delete those source functions until live Cloudflare smoke tests prove the remaining compatibility traffic can be removed safely.
