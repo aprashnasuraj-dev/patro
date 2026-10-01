@@ -5,11 +5,11 @@ import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
 import { registerPatroServiceWorker } from "./pwa";
-import "./aafnai.css";
 import "./styles.css";
 import "./feature-suite.css";
 import "./utilities.css";
 import "./community/community.css";
+import "./aafnai.css";
 
 const root=document.getElementById("root");
 if(!root)throw new Error("Missing #root container");
