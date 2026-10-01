@@ -107,7 +107,7 @@ test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal wit
   for(const endpoint of ["/api/cron/push","/api/cron/revalidate","/api/v1/cron/rashifal"])assert.ok(jobs.includes(endpoint),endpoint);
   for(const cron of ["*/5 * * * *","43 2 * * *","11 3 * * *"])assert.ok(wrangler.includes(cron),cron);
   assert.ok(!wrangler.includes("17 0,6,12,18 * * *"),"NEPSE/market polling cron must stay removed");
-  assert.ok(entry.includes("runScheduled(controller.cron,env)"));
+  assert.match(entry,/runScheduled\(\s*controller\.cron\s*,\s*env\s*\)/);
 });
 
 test("secret manifest no longer requires Supabase and declares native identity/push/admin dependencies",()=>{
