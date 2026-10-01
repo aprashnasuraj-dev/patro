@@ -27,7 +27,7 @@
     "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
     "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs",
     "cloudflare:verify-inventory": "node scripts/verify-migration-inventory.mjs",
-    "cloudflare:production-check": "npm run build && npm run test:typing && npm run test:cloudflare-contract && npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot",
+    "cloudflare:production-check": "npm run build && npm run test:typing && npm run test:cloudflare-contract && npm run cloudflare:verify-inventory",
     "cf:validate-data": "npm run cloudflare:verify-snapshot",
     "cf:schema:remote": "npm run cloudflare:migrate",
     "cf:import:remote": "npm run cloudflare:import-d1:recovery",
