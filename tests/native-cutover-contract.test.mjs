@@ -84,9 +84,10 @@ test("remaining public API compatibility surface is native",()=>{
   assert.ok(api.includes("official_panchang_facts"));
 });
 
-test("former protected pages are native React routes",()=>{
+test("personal pages use /me canonicals and legacy aliases",()=>{
   const router=read("src/PatroRouter.tsx"),pages=read("src/components/NativeProtectedPages.tsx"),diary=read("src/components/MyDiary.tsx");
-  for(const path of ["/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers"])assert.ok(router.includes('"'+path+'"'),path);
+  for(const path of ["/me","/me/diary","/me/notes","/me/planner","/me/family","/me/reminders","/me/cards","/me/settings","/me/data","/offline","/developers"])assert.ok(router.includes('"'+path+'"'),path);
+  for(const alias of ["/aaja","/my-diary","/notes","/planner","/family","/family/join","/tithi","/settings/notifications","/card","/settings","/settings/holidays","/my-data","/diaspora"])assert.ok(router.includes('"'+alias+'"'),alias);
   for(const component of ["FamilyPage","MyDataPage","NotificationSettingsPage","HolidaySettingsPage","DevelopersPage","OfflinePage"])assert.ok(pages.includes("function "+component),component);
   assert.ok(!diary.includes("iframe"));
   assert.ok(!diary.includes("compat/page"));

@@ -19,6 +19,7 @@ const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>(
 const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
 const LEGACY_REDIRECTS:Record<string,string>={
+ "/aaja":"/",
  "/astro":"/tools/astro",
  "/my-diary":"/me/diary",
  "/notes":"/me/notes",
