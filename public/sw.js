@@ -1,5 +1,9 @@
-const VERSION = "aafnai-pwa-v5";
-const CORE = ["/", "/tools", "/convert", "/rashifal", "/me", "/time-machine", "/on-this-day", "/samudaya", "/fm", "/tv", "/samachar", "/embed/today", "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"];
+const VERSION = "aafnai-pwa-v6";
+const CORE = [
+  "/", "/tools", "/convert", "/rashifal", "/me", "/time-machine", "/on-this-day", "/samachar", "/fm", "/tv",
+  "/tools/astro", "/samudaya", "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
+  "/developers", "/embed/today", "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"
+];
 const REMINDER_SHELL = "/tools";
 
 function isSameOrigin(url) {
