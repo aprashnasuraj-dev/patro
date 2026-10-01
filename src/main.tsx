@@ -5,30 +5,13 @@ import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
 import { registerPatroServiceWorker } from "./pwa";
-import "./design-tokens.css";
-import "./app-shell.css";
+import "./aafnai.css";
 import "./styles.css";
-import "./cosmic.css";
-import "./swarm.css";
 import "./feature-suite.css";
-import "./restructure.css";
-import "./launch-polish.css";
 import "./utilities.css";
 import "./community/community.css";
-import "./reference-ui.css";
 
-const root = document.getElementById("root");
-if (!root) throw new Error("Missing #root container");
-
+const root=document.getElementById("root");
+if(!root)throw new Error("Missing #root container");
 registerPatroServiceWorker();
-
-createRoot(root).render(
-  <StrictMode>
-    <MediaProvider>
-      <AppChrome>
-        <PatroRouter />
-      </AppChrome>
-      <GlobalMediaPlayer />
-    </MediaProvider>
-  </StrictMode>
-);
+createRoot(root).render(<StrictMode><MediaProvider><AppChrome><PatroRouter/></AppChrome><GlobalMediaPlayer/></MediaProvider></StrictMode>);
