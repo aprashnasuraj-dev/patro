@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main, cloudflare-migration]
   push:
-    branches: [cloudflare-migration]
+    branches: [main, cloudflare-migration]
 
 permissions:
   contents: read
@@ -22,7 +22,9 @@ jobs:
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - name: Build production assets and SEO manifests
         env:
-          PUBLIC_SITE_URL: https://patro-blush.vercel.app
+          PUBLIC_SITE_URL: https://aafnaipatro.com
         run: npm run build
+      - name: Verify SEO discovery contract
+        run: node --test tests/seo-discovery-contract.test.mjs
       - name: Lighthouse SEO, accessibility and performance gate
         run: npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json
