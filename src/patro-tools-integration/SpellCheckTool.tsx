@@ -33,12 +33,12 @@ export function SpellCheckTool() {
   }
 
   return (
-    <ToolPage title="नेपाली हिज्जे जाँच" description="टाइप गरिएको पाठ ब्राउजरमै जाँचिन्छ। पाठ server मा पठाइँदैन; शब्दकोश मात्र download हुन्छ।">
+    <ToolPage title="आफ्नै नेपाली हिज्जे जाँच" description="टाइप गरिएको पाठ ब्राउजरमै जाँचिन्छ। पाठ server मा पठाइँदैन; शब्दकोश मात्र download हुन्छ।">
       <section className="patro-tool-card">
         <label className="tool-block-label">नेपाली पाठ<textarea rows={8} value={text} onChange={(e) => setText(e.target.value)} /></label>
         <div className="tool-action-row"><span className="tool-badge">{dictStatus}</span><button className="tool-primary-button" type="button" onClick={() => setText(corrected)}>सुरक्षित स्वतः-सुधार लागू गर्नुहोस्</button></div>
       </section>
-      <ToolResult title="जाँच नतिजा" speechText={corrected}>
+      <ToolResult title="आफ्नै जाँच नतिजा" speechText={corrected}>
         <p className="tool-preview">{corrected}</p>
         {result.issues.length === 0 ? <p className="tool-success">यो शब्दकोशको दायरामा स्पष्ट समस्या भेटिएन।</p> : (
           <div className="tool-issue-list">{result.issues.slice(0, 50).map((issue, i) => (
