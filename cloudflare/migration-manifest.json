@@ -1,7 +1,8 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "snapshot_date": "2026-09-30",
-  "branch": "cloudflare-migration",
+  "branch": "main",
+  "historical_source_branch": "cloudflare-migration",
   "source_runtime": {
     "frontend": "Vercel static SPA",
     "api": "Supabase Edge Functions",
@@ -9,15 +10,18 @@
   },
   "target_runtime": {
     "canonical": "Cloudflare Worker + Static Assets",
-    "api_worker": "mero-patro",
+    "api_worker": "patro",
+    "worker_entry": "worker/connected-entry.ts",
     "static_assets_binding": "ASSETS",
+    "static_assets_directory": "./dist",
     "database_binding": "DB",
+    "database_name": "patro",
+    "database_id": "fb25c860-01db-4ab0-9036-7f87b26ca64b",
     "cache_binding": "CACHE",
-    "optional_split_frontend": {
-      "mode": "pages-worker",
-      "pages_project": "mero-patro-pages",
-      "pages_service_binding": "PATRO_API"
-    }
+    "cache_required": false,
+    "custom_domain": "aafnaipatro.com",
+    "preview_urls": false,
+    "separate_pages_project_required": false
   },
   "migration_mode": "single-worker-native-first-with-explicit-supabase-compatibility-until-cutover-gates-pass",
   "public_reference_data": {
@@ -68,21 +72,22 @@
     }
   },
   "deploy": {
-    "first_native_bootstrap": "npm run deploy:cloudflare:bootstrap",
+    "production_branch": "main",
+    "production_config": "wrangler.jsonc",
+    "git_import_discovery_config": "wrangler.toml",
+    "production_check": "npm run cloudflare:production-check",
     "routine_worker": "npm run deploy:cloudflare",
-    "pages": "npm run build -> dist",
+    "bootstrap_recovery": "npm run deploy:cloudflare:bootstrap",
     "validation": "npm run cloudflare:validate",
-    "snapshot_validation": "npm run cloudflare:verify-snapshot"
+    "snapshot_validation": "npm run cloudflare:verify-snapshot",
+    "pages_topology": "retired-for-current-production-rebuild"
   },
   "secrets_policy": {
     "browser_service_role": false,
-    "worker_runtime_secrets": [
-      "NASA_API_KEY"
-    ],
-    "build_binding_ids": [
-      "CF_D1_DATABASE_ID",
-      "CF_KV_NAMESPACE_ID"
-    ]
+    "manifest": "cloudflare/secrets-manifest.json",
+    "runtime_secrets_restored_after_worker_recreation": true,
+    "supabase_transition_secrets_required_in_worker": false,
+    "notes": "Runtime secret values are never committed. Recreate them in Cloudflare from the secure source when rebuilding a deleted Worker."
   },
   "database_inventory": {
     "file": "cloudflare/d1/supabase-table-inventory.json",
@@ -109,15 +114,22 @@
     "remaining_inventory": "cloudflare/remaining-cutover.json",
     "safe_to_delete_supabase": false,
     "safe_to_delete_vercel": false,
+    "compatibility_scope": [
+      "tv",
+      "fm",
+      "samachar"
+    ],
     "rule": "Deletion is allowed only after remaining-cutover.json gates are satisfied and production parity is observed."
   },
   "seo": {
     "generator": "scripts/generate-seo.mjs",
     "canonical_host_env": "PUBLIC_SITE_URL",
+    "canonical_host": "https://aafnaipatro.com",
     "outputs": [
       "public/robots.txt",
       "public/sitemap.xml",
-      "public/seo-manifest.json"
+      "public/seo-manifest.json",
+      "public/llms.txt"
     ],
     "edge_metadata": "worker/index.ts HTMLRewriter",
     "lighthouse_workflow": ".github/workflows/seo-audit.yml"
