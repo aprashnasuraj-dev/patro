@@ -21,7 +21,7 @@ export function NameCheckTool() {
   }
 
   return (
-    <ToolPage title="कागजात नाम जाँच" description="नागरिकता, राहदानी, प्रमाणपत्र वा KYC मा रहेको नेपाली/अंग्रेजी नामको उच्चारण र हिज्जे तुलना गर्नुहोस्।">
+    <ToolPage title="आफ्नै नाम जाँच" description="नागरिकता, राहदानी, प्रमाणपत्र वा KYC मा रहेको नेपाली/अंग्रेजी नामको उच्चारण र हिज्जे तुलना गर्नुहोस्।">
       <section className="patro-tool-card">
         <datalist id="patro-doc-titles">{docTitles.map((title) => <option value={title} key={title} />)}</datalist>
         <div className="tool-form-grid">
@@ -33,7 +33,7 @@ export function NameCheckTool() {
         <button type="button" className="tool-secondary-button" onClick={save}>यो जाँच सुरक्षित गर्नुहोस्</button>
         {status ? <p className="tool-status">{status}</p> : null}
       </section>
-      <ToolResult title="तुलना" speechText={result.message}>
+      <ToolResult title="आफ्नै तुलना" speechText={result.message}>
         <div className={"tool-verdict verdict-" + result.verdict}><strong>{result.message}</strong><small>{documentA} ↔ {documentB}</small></div>
         <div className="tool-token-grid">{result.details.map((detail, index) => <div key={index}><span>{detail.tokenA || "—"}</span><b>↔</b><span>{detail.tokenB || "—"}</span><em>{detail.verdict}</em></div>)}</div>
         <p className="tool-muted">यो सहायक जाँच हो; सरकारी कागजात सुधार, भिसा वा KYC निर्णयको आधिकारिक प्रमाण होइन।</p>
