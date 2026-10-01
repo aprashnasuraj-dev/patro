@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { ConvertPage } from "./ConvertPage";
 
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
@@ -36,7 +37,7 @@ export function PatroRouter(){
    if(path==="/me/settings")return <HolidaySettingsPage/>;
    if(path==="/me/data")return <MyDataPage/>;
    if(path==="/me/cards")return <PatroToolsShell slug="janmadin-akhbar"/>;
-   if(path==="/convert")return <UtilitySuite/>;
+   if(path==="/convert")return <ConvertPage/>;
    if(path==="/rashifal"||path==="/jyotish/rashifal")return <RashifalPage/>;
    if(path==="/samachar")return <SamacharPage/>;
    if(path==="/fm")return <MediaSuite kind="radio"/>;
