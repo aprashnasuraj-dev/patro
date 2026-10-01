@@ -79,7 +79,7 @@ export function BabyNamesTool() {
   const speech = result ? NAKSHATRAS[result.nak] + " नक्षत्र, चरण " + result.pada + "। सुझाव अक्षर " + result.syllables.join(", ") + "।" : "";
 
   return (
-    <ToolPage title="नक्षत्र अनुसार बच्चाको नाम" description="Mero Patro को विद्यमान पञ्चाङ्गबाट जन्म नक्षत्र र चरण निकालेर नामका अक्षर, न्वारन, पास्नी र खोप समयरेखा बनाउँछ।">
+    <ToolPage title="आफ्नै बेबी नेम" description="आफ्नै पात्रोको पञ्चाङ्गबाट जन्म नक्षत्र र चरण निकालेर नामका अक्षर, न्वारन, पास्नी र खोप समयरेखा बनाउँछ।">
       <section className="patro-tool-card">
         <div className="tool-form-grid">
           <label>जन्म AD मिति<input type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} /></label>
@@ -96,7 +96,7 @@ export function BabyNamesTool() {
           <h3>न्वारन, पास्नी र खोप समयरेखा</h3>
           <div className="tool-event-list">{result.timeline.map((item, index) => <article className="tool-event" key={item.title + index}><div><strong>{item.title}</strong><small>{item.date} AD · {bsLabel(item.date)} BS</small></div><small>{item.note || ""}</small></article>)}</div>
           <p className="tool-muted">खोप स्रोत: {NEPAL_VACCINE_SCHEDULE_SOURCE.authority}. तालिका बदलिन सक्छ; बच्चाको खोप कार्ड वा स्वास्थ्यकर्मीसँग पक्का गर्नुहोस्।</p>
-          <div className="tool-action-row"><input value={babyName} onChange={(e) => setBabyName(e.target.value)} placeholder="Family Dates मा राख्ने नाम" /><button type="button" className="tool-secondary-button" onClick={saveFamily}>Family Dates मा सुरक्षित</button><a className="tool-link-button" href="/tools/sait">पास्नी/न्वारन साइत हेर्नुहोस्</a></div>
+          <div className="tool-action-row"><input value={babyName} onChange={(e) => setBabyName(e.target.value)} placeholder="Family Dates मा राख्ने नाम" /><button type="button" className="tool-secondary-button" onClick={saveFamily}>Family Dates मा सुरक्षित</button><a className="tool-link-button" href="/tools/sait">आफ्नै साइत हेर्नुहोस्</a></div>
         </ToolResult>
       ) : null}
     </ToolPage>
