@@ -2,7 +2,7 @@ import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = process.cwd();
-const rawSite = (process.env.PUBLIC_SITE_URL || "https://patro-blush.vercel.app").trim();
+const rawSite = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim();
 const site = rawSite.replace(/\/+$/, "");
 if (!/^https:\/\//.test(site)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
 
