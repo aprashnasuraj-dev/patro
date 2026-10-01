@@ -25,7 +25,7 @@ export function OcrTool() {
   }
 
   return (
-    <ToolPage title="नेपाली OCR" description="तस्बिरबाट नेपाली/अंग्रेजी Unicode पाठ निकाल्नुहोस्। Tesseract केवल OCR सुरु गर्दा dynamic import हुन्छ; फोटो server मा upload हुँदैन।">
+    <ToolPage title="आफ्नै नेपाली OCR" description="तस्बिरबाट नेपाली/अंग्रेजी Unicode पाठ निकाल्नुहोस्। Tesseract केवल OCR सुरु गर्दा dynamic import हुन्छ; फोटो server मा upload हुँदैन।">
       <section className="patro-tool-card">
         <label className="tool-block-label">तस्बिर छान्नुहोस्<input type="file" accept="image/*" onChange={(e) => setFile(e.target.files?.[0] || null)} /></label>
         {file ? <p className="tool-muted">{file.name} · {(file.size / 1024 / 1024).toFixed(2)} MB</p> : null}
@@ -35,13 +35,13 @@ export function OcrTool() {
         </div>
         {status ? <p className="tool-status" role="status">{status}</p> : null}
       </section>
-      <ToolResult title="OCR नतिजा" speechText={text}>
+      <ToolResult title="आफ्नै OCR नतिजा" speechText={text}>
         <label className="tool-block-label">निकालिएको पाठ<textarea rows={12} value={text} onChange={(e) => setText(e.target.value)} /></label>
         <div className="tool-action-row">
           {confidence != null ? <span className="tool-badge">Confidence {confidence.toFixed(0)}%</span> : null}
           <button type="button" className="tool-secondary-button" onClick={() => navigator.clipboard?.writeText(text)} disabled={!text}>कपी</button>
-          <a className="tool-link-button" href="/tools/spell-check">हिज्जे जाँच →</a>
-          <a className="tool-link-button" href="/tools/preeti-converter">Preeti text? →</a>
+          <a className="tool-link-button" href="/tools/spell-check">आफ्नै हिज्जे जाँच →</a>
+          <a className="tool-link-button" href="/tools/preeti-converter">आफ्नै Preeti →</a>
         </div>
         <p className="tool-muted">साना/छायाँ परेको फोटोमा OCR त्रुटि हुन सक्छ। फोटो browser भित्रै preprocess र recognize हुन्छ।</p>
       </ToolResult>
