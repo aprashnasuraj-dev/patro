@@ -94,7 +94,15 @@ function metaFor(pathname:string):SeoMeta{
  return{title:`${BRAND} · ${BRAND_EN}`,description:DEFAULT_DESCRIPTION,canonicalPath:canonical,index:true};
 }
 
-function escapeHtml(value:string){return value.replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]||ch))}
+function escapeHtml(value:string){
+ return value.replace(/[&<>"']/g,(ch)=>{
+  if(ch==="&")return "&amp;";
+  if(ch==="<")return "&lt;";
+  if(ch===">")return "&gt;";
+  if(ch==='"')return "&quot;";
+  return "&#39;";
+ });
+}
 
 export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv){
  if(request.method!=="GET")return response;
