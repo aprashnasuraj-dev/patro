@@ -68,7 +68,7 @@ function setMode(next){
  for(const b of root.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode===mode));
  $('typing-panel').hidden=mode!=='typing';$('converter-panel').hidden=mode==='typing';
  const preeti=mode==='preeti-to-unicode';
- $('conversion-title').textContent=preeti?'Preeti → Unicode':'Unicode → Preeti';
+ $('conversion-title').textContent=preeti?'आफ्नै Preeti → Unicode':'आफ्नै Unicode → Preeti';
  $('source-label').textContent=preeti?'Preeti input':'Unicode input';$('output-label').textContent=preeti?'Unicode output':'Preeti output';
  $('conversion-description').textContent=preeti?'Paste text originally typed using the Preeti font.':'Paste Unicode Nepali text for a legacy Preeti document.';
  source.classList.toggle('preeti-font',preeti);output.classList.toggle('preeti-font',!preeti);
@@ -93,6 +93,7 @@ editor.addEventListener('keydown',e=>{
  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();historyStep(true);return;}
  if(e.key==='Escape'){hideSuggestions();return;}
  if(items.length&&['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();active=(active+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;renderSuggestions();return;}
+ if(e.key==='Tab'&&items.length&&commit(active,'')){e.preventDefault();return;}
  if(e.key==='Enter'&&boundary('\n'))e.preventDefault();
 });
 function historyStep(forward){const from=forward?redo:undo,to=forward?undo:redo;if(!from.length)return;to.push(editor.value);editor.value=from.pop();counts();save();hideSuggestions();editor.focus();}
