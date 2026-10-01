@@ -28,3 +28,9 @@ if (hasOverrides) {
 }
 
 run("npx", ["wrangler", "deploy", "--dry-run", "--outdir", ".cloudflare/dry-run", "--config", config]);
+
+// A fresh Cloudflare Git import can discover wrangler.toml before the explicit deploy command runs.
+// Keep that discovery path deployable and in lock-step with the canonical JSON configuration.
+if (!hasOverrides) {
+  run("npx", ["wrangler", "deploy", "--dry-run", "--outdir", ".cloudflare/dry-run-toml", "--config", "wrangler.toml"]);
+}
