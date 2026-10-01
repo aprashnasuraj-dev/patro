@@ -71,9 +71,12 @@ test("My Space keeps Google/session-owned native private features and private in
  assert.ok(chrome.includes("isPrivatePath"));
 });
 
-test("PWA release warms flagship shells and invalidates obsolete UI caches",()=>{
+test("PWA release warms flagship shells, complete Community Suite and invalidates obsolete UI caches",()=>{
  const sw=read("public/sw.js");
- hasAll(sw,['aafnai-pwa-v5','"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/samudaya"','"/fm"','"/tv"','"/samachar"'],"service worker");
+ hasAll(sw,[
+  'aafnai-pwa-v6','"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/tools/astro"','"/samudaya"','"/fm"','"/tv"','"/samachar"',
+  '"/nepal-sambat/mandala"','"/samudaya/lhosar"','"/samudaya/tharu"','"/samudaya/mithila"','"/samudaya/kirat"','"/samudaya/hijri"','"/samudaya/chakra"'
+ ],"service worker");
  assert.ok(sw.includes("skipWaiting"));
  assert.ok(sw.includes("clients.claim"));
  assert.ok(sw.includes("aafnai-pwa-"));
@@ -87,4 +90,6 @@ test("edge SEO covers flagship public routes before React hydration",()=>{
  assert.ok(seo.includes('application/ld+json'));
  assert.ok(seo.includes('hreflang="ne"'));
  assert.ok(seo.includes('hreflang="en"'));
+ assert.ok(seo.includes('og:image'));
+ assert.ok(seo.includes('twitter:image'));
 });
