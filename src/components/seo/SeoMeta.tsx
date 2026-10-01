@@ -12,25 +12,25 @@ const PRIVATE_PREFIXES = ["/notes", "/planner", "/settings", "/family", "/my-dat
 
 const EXACT: Record<string, Meta> = {
   "/": {
-    title: "नेपाली पात्रो, तिथि र राशिफल · MeroPatro",
-    description: "MeroPatro — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।"
+    title: "नेपाली पात्रो, तिथि र राशिफल · आफ्नै पात्रो",
+    description: "आफ्नै पात्रो — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।"
   },
   "/astro": {
-    title: "खगोलीय पात्रो · Astronomy Calendar · MeroPatro",
+    title: "खगोलीय पात्रो · Astronomy Calendar · आफ्नै पात्रो",
     description: "AD, BS, Nepal Sambat, तिथि, lunar phase र NASA astronomy data एउटै पात्रोमा।"
   },
-  "/fm": { title: "FM Radio · MeroPatro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
-  "/tv": { title: "Live TV · MeroPatro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels खोज्नुहोस्।" },
-  "/samachar": { title: "समाचार · Samachar · MeroPatro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
-  "/time-machine": { title: "नेपाल Time Machine · MeroPatro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
-  "/on-this-day": { title: "आज इतिहासमा · On This Day · MeroPatro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
-  "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
-  "/convert": { title: "AD ↔ BS Date Converter · MeroPatro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
-  "/jyotish/rashifal": { title: "राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
-  "/jyotish/china": { title: "चिना टिपन · जन्मपत्रो · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
-  "/jyotish/janma-patro": { title: "चिना टिपन · जन्मपत्रो · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
-  "/about": { title: "About MeroPatro", description: "MeroPatro को उद्देश्य, data boundaries र platform जानकारी।" },
-  "/sources": { title: "Sources · MeroPatro", description: "Calendar, astronomy, media र utility data का स्रोतहरू।" }
+  "/fm": { title: "FM Radio · आफ्नै पात्रो", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
+  "/tv": { title: "Live TV · आफ्नै पात्रो", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels खोज्नुहोस्।" },
+  "/samachar": { title: "समाचार · Samachar · आफ्नै पात्रो", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
+  "/time-machine": { title: "नेपाल Time Machine · आफ्नै पात्रो", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
+  "/on-this-day": { title: "आज इतिहासमा · On This Day · आफ्नै पात्रो", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
+  "/tools": { title: "नेपाली Utility Tools · आफ्नै पात्रो", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
+  "/convert": { title: "AD ↔ BS Date Converter · आफ्नै पात्रो", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
+  "/jyotish/rashifal": { title: "राशिफल · Rashifal · आफ्नै पात्रो", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
+  "/jyotish/china": { title: "चिना टिपन · जन्मपत्रो · आफ्नै पात्रो", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
+  "/jyotish/janma-patro": { title: "चिना टिपन · जन्मपत्रो · आफ्नै पात्रो", description: "जन्म मिति, समय र स्थानका आधारमा चिना, जन्मपत्रो, ग्रह स्थिति, दशा र कुण्डली।" },
+  "/about": { title: "About आफ्नै पात्रो", description: "आफ्नै पात्रो को उद्देश्य, data boundaries र platform जानकारी।" },
+  "/sources": { title: "Sources · आफ्नै पात्रो", description: "Calendar, astronomy, media र utility data का स्रोतहरू।" }
 };
 
 function cleanPath(path: string) {
@@ -42,14 +42,14 @@ function routeMeta(path: string): Meta {
   if (EXACT[path]) return EXACT[path];
   const cal = path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);
   if (cal) return {
-    title: `नेपाली पात्रो ${cal[1]}/${String(cal[2]).padStart(2, "0")} · MeroPatro`,
+    title: `नेपाली पात्रो ${cal[1]}/${String(cal[2]).padStart(2, "0")} · आफ्नै पात्रो`,
     description: `वि.सं. ${cal[1]} सालको महिना ${cal[2]}: तिथि, चाडपर्व, बिदा र AD/BS date context।`
   };
   const date = path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
-  if (date) return { title: `${date[1]} नेपाली मिति · MeroPatro`, description: `${date[1]} को AD, BS, Nepal Sambat, तिथि र पात्रो विवरण।` };
-  if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · MeroPatro", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
-  if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · MeroPatro", description: "MeroPatro को free browser utility tool।" };
-  return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+  if (date) return { title: `${date[1]} नेपाली मिति · आफ्नै पात्रो`, description: `${date[1]} को AD, BS, Nepal Sambat, तिथि र पात्रो विवरण।` };
+  if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · आफ्नै पात्रो", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
+  if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · आफ्नै पात्रो", description: "आफ्नै पात्रो को free browser utility tool।" };
+  return { title: "आफ्नै पात्रो · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
 }
 
 function isHistoricalCalendar(path: string) {
@@ -117,7 +117,7 @@ export function SeoMeta({ path }: { path: string }) {
       inLanguage: ["ne", "en"],
       isPartOf: {
         "@type": "WebSite",
-        name: "MeroPatro",
+        name: "आफ्नै पात्रो",
         url: SITE_ORIGIN + "/"
       }
     }).replace(/</g, "\\u003c");

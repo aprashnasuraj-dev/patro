@@ -172,7 +172,7 @@ export function CosmicHero({
 
       ctx.fillStyle = "#7dd3fc";
       ctx.font = "700 24px system-ui, sans-serif";
-      ctx.fillText("MERO PATRO · COSMIC DAY", 72, 78);
+      ctx.fillText("आफ्नै पात्रो · COSMIC DAY", 72, 78);
       ctx.fillStyle = "#f8fafc";
       ctx.font = "800 54px system-ui, sans-serif";
       ctx.fillText(dates.ad, 72, 154);
@@ -198,7 +198,7 @@ export function CosmicHero({
       if (!blob) return;
       const file = new File([blob], `mero-patro-cosmic-${selectedDate}.png`, { type: "image/png" });
       const shareData: ShareData = {
-        title: `Mero Patro Cosmic Day · ${selectedDate}`,
+        title: `आफ्नै पात्रो Cosmic Day · ${selectedDate}`,
         text: context,
         url: `${location.origin}/astro?date=${selectedDate}`
       };
@@ -226,7 +226,7 @@ export function CosmicHero({
       <div className="cosmic-hero__topline">
         <div>
           <p className="eyebrow">Living astronomical instrument · Nepal</p>
-          <h1>खगोलीय पात्रो · Mero Patro</h1>
+          <h1>खगोलीय पात्रो · आफ्नै पात्रो</h1>
           <p className="cosmic-hero__apod">{apod?.title || "Synchronizing with NASA and the selected sky…"}</p>
         </div>
         <div className={"health-pill health-pill--" + health}>

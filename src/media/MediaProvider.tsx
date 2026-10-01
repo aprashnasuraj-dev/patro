@@ -177,7 +177,7 @@ export function MediaProvider({children}:{children:ReactNode}) {
 
   useEffect(()=>{
     if(!("mediaSession" in navigator)||!state.item)return;
-    navigator.mediaSession.metadata=new MediaMetadata({title:state.item.name,artist:state.item.nameNe,album:"Mero Patro Live"});
+    navigator.mediaSession.metadata=new MediaMetadata({title:state.item.name,artist:state.item.nameNe,album:"आफ्नै पात्रो Live"});
     navigator.mediaSession.setActionHandler("play",()=>void audioRef.current?.play());
     navigator.mediaSession.setActionHandler("pause",()=>audioRef.current?.pause());
     navigator.mediaSession.setActionHandler("stop",()=>{audioRef.current?.pause();if(audioRef.current)audioRef.current.currentTime=0;});

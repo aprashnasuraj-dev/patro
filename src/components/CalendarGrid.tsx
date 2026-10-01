@@ -101,7 +101,7 @@ function downloadIcs(day: SyncPayload, note: string) {
   const next=parseIso(day.query_date); next.setUTCDate(next.getUTCDate()+1);
   const end=iso(next).replaceAll("-","");
   const titleText=day.tithi.ne+" · "+day.calendars.bikram_sambat;
-  const body=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Mero Patro//Calendar//NE","CALSCALE:GREGORIAN","BEGIN:VEVENT",
+  const body=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//आफ्नै पात्रो//Calendar//NE","CALSCALE:GREGORIAN","BEGIN:VEVENT",
     "UID:"+crypto.randomUUID()+"@nepalipatro","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),
     "DTSTART;VALUE=DATE:"+start,"DTEND;VALUE=DATE:"+end,"SUMMARY:"+escapeIcs(titleText),
     "DESCRIPTION:"+escapeIcs(note || day.tithi.en+" · "+day.tithi.paksha),"END:VEVENT","END:VCALENDAR"].join("\r\n");

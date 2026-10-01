@@ -4,7 +4,7 @@ import { applyRouteSeo } from "../seo";
 
 type PageKey="about"|"sources"|"privacy"|"terms"|"contact";
 const PAGES:Record<PageKey,{title:string;en:string;description:string;icon:typeof Info}>={
-  about:{title:"हाम्रो बारेमा",en:"About Mero Patro",description:"नेपालको मिति, परम्परा र दैनिक उपयोगलाई एउटै भरोसायोग्य अनुभवमा जोड्ने वेब एप।",icon:Info},
+  about:{title:"हाम्रो बारेमा",en:"About आफ्नै पात्रो",description:"नेपालको मिति, परम्परा र दैनिक उपयोगलाई एउटै भरोसायोग्य अनुभवमा जोड्ने वेब एप।",icon:Info},
   sources:{title:"स्रोत र शुद्धता",en:"Sources & accuracy",description:"कुन डेटा अभिलेखबाट आउँछ, कुन गणना हो र कहाँ सीमाहरू छन् भन्ने स्पष्ट विवरण।",icon:BookOpenText},
   privacy:{title:"गोपनीयता नीति",en:"Privacy",description:"स्थानीय डाटा, सिङ्क, मिडिया स्ट्रिम र सम्पर्क फाराम कसरी व्यवहार हुन्छ।",icon:ShieldCheck},
   terms:{title:"सेवाका सर्तहरू",en:"Terms",description:"मेरो पात्रो प्रयोग गर्दा लागू हुने आधारभूत सर्त र जिम्मेवारी।",icon:Scale},

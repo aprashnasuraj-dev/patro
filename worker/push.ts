@@ -37,7 +37,7 @@ export async function dispatchDuePushJobs(env:PushEnv,limit=50){
       await env.DB.prepare("update notification_jobs set status='failed',attempts=attempts+1 where id=?1").bind(row.id).run();
       continue;
     }
-    const data=typeof row.shared_payload==="string"?row.shared_payload:JSON.stringify(row.shared_payload||{title:"MeroPatro",body:"You have a reminder.",url:"/"});
+    const data=typeof row.shared_payload==="string"?row.shared_payload:JSON.stringify(row.shared_payload||{title:"आफ्नै पात्रो",body:"You have a reminder.",url:"/"});
     try{
       const message:PushMessage={data,options:{ttl:3600,urgency:"normal" as any}};
       const payload=await buildPushPayload(message,sub,keys);
@@ -113,7 +113,7 @@ async function jobs(request:Request,env:PushEnv,session:any){
   const fire=String(body?.fire_at_utc||"");const ms=Date.parse(fire);
   if(!Number.isFinite(ms)||ms<Date.now()-60_000||ms>Date.now()+366*86400_000)return json({ok:false,error:"invalid_fire_at"},400);
   const id=crypto.randomUUID(),jobRef=String(body?.job_ref||id).slice(0,160),category=String(body?.category||"reminder").slice(0,60);
-  const payload=body?.payload&&typeof body.payload==="object"?body.payload:{title:"MeroPatro",body:"Reminder",url:"/"};
+  const payload=body?.payload&&typeof body.payload==="object"?body.payload:{title:"आफ्नै पात्रो",body:"Reminder",url:"/"};
   await env.DB.prepare("insert into notification_jobs(id,device_id,fire_at_utc,job_ref,category,status,attempts,shared_payload,created_at) values(?1,?2,?3,?4,?5,'pending',0,?6,datetime('now'))")
     .bind(id,deviceId,new Date(ms).toISOString(),jobRef,category,JSON.stringify(payload)).run();
   return json({ok:true,id,status:"pending",fire_at_utc:new Date(ms).toISOString()});

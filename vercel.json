@@ -11,7 +11,7 @@
     },
     {
       "source": "/astro",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/api/rashifal-engine",
@@ -19,11 +19,11 @@
     },
     {
       "source": "/jyotish/janma-patro",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/jyotish/matchmaking",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/fm",
@@ -39,7 +39,7 @@
     },
     {
       "source": "/tools",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/tools/nepali-typing",
@@ -187,11 +187,11 @@
     },
     {
       "source": "/settings/community",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/admin/community-suites",
-      "destination": "/astro/index.html"
+      "destination": "/index.html"
     },
     {
       "source": "/tools/samudaya",

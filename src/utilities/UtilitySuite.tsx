@@ -143,8 +143,8 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "diaspora", icon: "देश", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
   { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Tools", group: "tools" },
   { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Tools", group: "tools" },
-  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore Mero Patro API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
-  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with Mero Patro features.", badge: "Tools", group: "tools" },
+  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore आफ्नै पात्रो API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
+  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with आफ्नै पात्रो features.", badge: "Tools", group: "tools" },
 ];
 
 const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";
@@ -518,7 +518,7 @@ export function UtilitySuite() {
               <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing tool" : "Choose what you want to do"}</h2>
               <p>{showTypingCatalog ? "Preeti conversion stays in one converter. Nepali Typing is a separate Roman → Unicode writing tool." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
             </div>
-            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← Mero Patro home"}</a>
+            <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← आफ्नै पात्रो home"}</a>
           </div>
 
           {showCatalog && <>
@@ -602,7 +602,7 @@ export function UtilitySuite() {
         <nav className="utility-tool-nav" aria-label="Utility navigation">
           <button type="button" onClick={() => chooseTool(null)}>← All tools</button>
           <strong>{selectedMeta?.title}</strong>
-          <a href="/">Mero Patro home</a>
+          <a href="/">आफ्नै पात्रो home</a>
         </nav>
       )}
 

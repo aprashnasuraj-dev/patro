@@ -2,7 +2,7 @@
   "version": 1,
   "include": ["/*"],
   "exclude": [
-    "/astro/assets/*",
+    "/assets/*",
     "/astro/data/*",
     "/nepali-tools/*",
     "/nepali-typing/assets/*"

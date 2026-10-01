@@ -78,14 +78,14 @@ const stamp = () => new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{
 
 export function toICS(events: PersonalTithiEvent[], fromDate: string, years = 3, calName = 'मेरो पात्रो'): string {
   const lines = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mero Patro//Tithi Events//NE', 'CALSCALE:GREGORIAN',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//आफ्नै पात्रो//Tithi Events//NE', 'CALSCALE:GREGORIAN',
     `X-WR-CALNAME:${esc(calName)}`, 'X-WR-TIMEZONE:Asia/Kathmandu', 'REFRESH-INTERVAL;VALUE=DURATION:P1D',
   ];
   for (const ev of events) {
     for (const occ of nextOccurrences(ev.rule, fromDate, years, ev.location ?? KATHMANDU)) {
       lines.push(
         'BEGIN:VEVENT',
-        `UID:${ev.id}-${occ.date}@meropatro`,
+        `UID:${ev.id}-${occ.date}@आफ्नै पात्रो`,
         `DTSTAMP:${stamp()}`,
         `DTSTART;VALUE=DATE:${icsDate(occ.date)}`,
         `DTEND;VALUE=DATE:${icsDate(addDays(occ.date, 1))}`,

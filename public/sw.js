@@ -1,4 +1,4 @@
-const VERSION = "meropatro-pwa-v2";
+const VERSION = "आफ्नै पात्रो-pwa-v2";
 const CORE = ["/", "/tools", "/my-diary", "/embed/today", "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"];
 const REMINDER_SHELL = "/api/v1/compat/page?path=%2Ftools";
 
@@ -68,7 +68,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => (key.startsWith("patro-shell-") || key.startsWith("mero-patro-shell-") || key.startsWith("meropatro-pwa-")) && key !== VERSION).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => (key.startsWith("patro-shell-") || key.startsWith("mero-patro-shell-") || key.startsWith("आफ्नै पात्रो-pwa-")) && key !== VERSION).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });

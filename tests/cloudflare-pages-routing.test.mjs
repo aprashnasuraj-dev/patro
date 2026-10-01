@@ -37,7 +37,7 @@ const workerRoutes = [
 const staticRoutes = [
   "/astro",
   "/astro/",
-  "/astro/assets/app.js",
+  "/assets/app.js",
   "/fm",
   "/tv",
   "/tools",
