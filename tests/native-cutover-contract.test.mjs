@@ -84,9 +84,14 @@ test("remaining public API compatibility surface is native",()=>{
   assert.ok(api.includes("official_panchang_facts"));
 });
 
-test("former protected pages are native React routes",()=>{
-  const router=read("src/PatroRouter.tsx"),pages=read("src/components/NativeProtectedPages.tsx"),diary=read("src/components/MyDiary.tsx");
-  for(const path of ["/aaja","/tithi","/diaspora","/card","/family","/family/join","/my-data","/settings/holidays","/settings/notifications","/offline","/developers"])assert.ok(router.includes('"'+path+'"'),path);
+test("personal pages use /me canonicals and legacy paths redirect",()=>{
+  const router=read("src/PatroRouter.tsx"),pages=read("src/components/NativeProtectedPages.tsx"),diary=read("src/components/MyDiary.tsx"),redirects=read("public/_redirects");
+  for(const path of ["/me","/me/diary","/me/notes","/me/planner","/me/family","/me/reminders","/me/cards","/me/settings","/me/data","/offline","/developers"])assert.ok(router.includes('"'+path+'"'),path);
+  for(const rule of [
+    "/aaja / 301","/my-diary /me/diary 301","/notes /me/notes 301","/planner /me/planner 301",
+    "/family /me/family 301","/family/join /me/family 301","/tithi /me/reminders 301","/settings/notifications /me/reminders 301",
+    "/card /me/cards 301","/settings /me/settings 301","/settings/holidays /me/settings 301","/my-data /me/data 301","/diaspora /tools/clock 301"
+  ])assert.ok(redirects.includes(rule),rule);
   for(const component of ["FamilyPage","MyDataPage","NotificationSettingsPage","HolidaySettingsPage","DevelopersPage","OfflinePage"])assert.ok(pages.includes("function "+component),component);
   assert.ok(!diary.includes("iframe"));
   assert.ok(!diary.includes("compat/page"));
