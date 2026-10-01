@@ -1,0 +1,11 @@
+import { FormEvent, useEffect, useState } from "react";
+import { setPageTitle, toNepaliDigits } from "./title";
+
+type Result={ad?:string;bs?:{year:number;month:number;day:number;formatted?:string};panchang?:any;ok?:boolean};
+export function ConvertPage(){
+ const[mode,setMode]=useState<"ad"|"bs">("ad"),[ad,setAd]=useState(()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()));
+ const[bs,setBs]=useState("2083-06-15"),[result,setResult]=useState<Result|null>(null),[error,setError]=useState("");
+ useEffect(()=>setPageTitle("मिति रूपान्तरण"),[]);
+ async function submit(e:FormEvent){e.preventDefault();setError("");setResult(null);const q=mode==="ad"?`ad=${encodeURIComponent(ad)}`:`bs=${encodeURIComponent(bs)}`;try{const r=await fetch(`/api/v1/convert?${q}`,{headers:{accept:"application/json"}});const body=await r.json();if(!r.ok)throw new Error();setResult(body)}catch{setError("मिति रूपान्तरण हुन सकेन। मिति जाँच गरेर फेरि प्रयास गर्नुहोस्।")}}
+ return <main className="ap-page"><header className="ap-page-title"><span className="ap-eyebrow">मिति उपकरण</span><h1>मिति रूपान्तरण</h1><p>विक्रम संवत् (BS) र Gregorian (AD) मिति बीच रूपान्तरण गर्नुहोस्।</p></header><section className="ap-tool-section"><div className="ap-convert-tabs"><button className={mode==="ad"?"active":""} onClick={()=>setMode("ad")}>AD → BS</button><button className={mode==="bs"?"active":""} onClick={()=>setMode("bs")}>BS → AD</button></div><form className="ap-convert-form" onSubmit={submit}>{mode==="ad"?<label>AD मिति<input type="date" value={ad} onChange={e=>setAd(e.target.value)} required/></label>:<label>BS मिति <small>(YYYY-MM-DD)</small><input inputMode="numeric" pattern="\d{4}-\d{1,2}-\d{1,2}" value={bs} onChange={e=>setBs(e.target.value)} required/></label>}<button type="submit">रूपान्तरण गर्नुहोस्</button></form>{error&&<div className="ap-state ap-error">{error}</div>}{result&&<div className="ap-convert-result"><span>नतिजा</span><strong>{mode==="ad"?(result.bs?.formatted||`${toNepaliDigits(result.bs?.year||"")}-${toNepaliDigits(result.bs?.month||"")}-${toNepaliDigits(result.bs?.day||"")}`):(result.ad||"—")}</strong>{result.panchang?.tithi?.ne&&<small>{result.panchang.tithi.ne}</small>}</div>}</section></main>
+}
