@@ -41,7 +41,7 @@ test("nine reference utilities contain interactive local implementations and ver
  };
  for(const [slug,name] of Object.entries(implementations)){
   assert.ok(refs.includes(`function ${name}`),`${slug} lost ${name}`);
-  assert.ok(refs.includes(`tool===\"${slug}\"`)||slug==="words",`${slug} is no longer routed by ReferenceUtilityTools`);
+  assert.ok(refs.includes(`tool==="${slug}"`)||slug==="words",`${slug} is no longer routed by ReferenceUtilityTools`);
  }
  assert.ok(refs.includes('/api/v1/markets/latest?kind=forex'),"forex lost Cloudflare market endpoint");
  assert.ok(refs.includes('/data/market/forex-latest.json'),"forex lost verified offline snapshot fallback");
@@ -54,7 +54,7 @@ test("all eleven bespoke Patro tools map to lazy-loaded real components",()=>{
   "tithi-reminder":"TithiReminderTool","sait":"SaitTool","baby-names":"BabyNamesTool","janmadin-akhbar":"JanmadinAkhbarTool","future-letter":"FutureLetterTool","spell-check":"SpellCheckTool","voice-typing":"VoiceTypingTool","ocr":"OcrTool","name-check":"NameCheckTool","read-aloud":"ReadAloudTool","patro-bot":"PatroBotTool"
  };
  for(const [slug,component] of Object.entries(mapping)){
-  assert.ok(shell.includes(`slug===\"${slug}\"`),`${slug} lost route mapping`);
+  assert.ok(shell.includes(`slug==="${slug}"`),`${slug} lost route mapping`);
   assert.ok(shell.includes(component),`${slug} lost ${component}`);
  }
  assert.equal(/integration phase|coming soon/i.test(shell),false);
