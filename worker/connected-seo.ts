@@ -108,7 +108,9 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
  const base=String(env.PUBLIC_SITE_URL||incoming.origin).replace(/\/+$/,"");
  const canonical=base+(meta.canonicalPath||path);
  const fullTitle=`${meta.title} | ${BRAND}`;
- const robots=meta.index===false?"noindex, nofollow":"index, follow, max-image-preview:large";
+ const indexable=meta.index!==false&&response.status<400;
+ const robots=indexable?"index, follow, max-image-preview:large":"noindex, nofollow";
+ const image=base+"/og-default.svg";
  const schema=JSON.stringify({"@context":"https://schema.org","@type":"WebPage",name:fullTitle,description:meta.description,url:canonical,inLanguage:["ne","en"],isPartOf:{"@type":"WebSite",name:BRAND,alternateName:BRAND_EN,url:base+"/"}}).replace(/</g,"\\u003c");
  const headBlock=
   `<meta name="description" content="${escapeHtml(meta.description)}">`+
@@ -119,9 +121,11 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
   `<meta property="og:title" content="${escapeHtml(fullTitle)}">`+
   `<meta property="og:description" content="${escapeHtml(meta.description)}">`+
   `<meta property="og:url" content="${escapeHtml(canonical)}">`+
+  `<meta property="og:image" content="${escapeHtml(image)}">`+
   `<meta name="twitter:card" content="summary_large_image">`+
   `<meta name="twitter:title" content="${escapeHtml(fullTitle)}">`+
   `<meta name="twitter:description" content="${escapeHtml(meta.description)}">`+
+  `<meta name="twitter:image" content="${escapeHtml(image)}">`+
   `<link rel="canonical" href="${escapeHtml(canonical)}">`+
   `<link rel="alternate" hreflang="ne" href="${escapeHtml(canonical)}">`+
   `<link rel="alternate" hreflang="en" href="${escapeHtml(canonical)}">`+
