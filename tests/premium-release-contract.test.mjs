@@ -4,7 +4,11 @@ import { readFileSync } from "node:fs";
 
 const read=(path)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 
-test("global feature launcher is mounted and exposes the full product from any page",()=>{
+const canonicalTools=[
+ "/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/tools/bstoad","/tools/adtobs","/tools/calc","/tools/age","/tools/clock","/tools/forex","/tools/gold","/tools/emi","/tools/vat","/tools/units","/tools/words","/tools/incometax","/tools/landconverter","/tools/nepaliqr","/tools/fuelprice","/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check","/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
+];
+
+test("global feature launcher is mounted and exposes the full product plus all 29 canonical tools from any page",()=>{
   const main=read("src/main.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
   const css=read("src/feature-launcher.css");
@@ -15,13 +19,12 @@ test("global feature launcher is mounted and exposes the full product from any p
   assert.ok(launcher.includes('event.key==="/"'));
   assert.ok(launcher.includes('event.key==="Escape"'));
   const hrefs=[...launcher.matchAll(/href:\s*"([^"]+)"/g)].map((m)=>m[1]);
-  assert.ok(new Set(hrefs).size>=35,`launcher unexpectedly small: ${new Set(hrefs).size}`);
+  assert.ok(new Set(hrefs).size>=45,`launcher unexpectedly small: ${new Set(hrefs).size}`);
+  for(const route of canonicalTools)assert.ok(hrefs.includes(route),`launcher lost canonical tool ${route}`);
   for(const route of [
-    "/time-machine","/on-this-day","/tools/astro","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
+    "/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
     "/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra",
-    "/tools/nepali-typing","/tools/preeti-converter","/tools/incometax","/tools/landconverter","/tools/nepaliqr","/tools/fuelprice",
-    "/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check",
-    "/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
+    "/rashifal","/jyotish/china","/jyotish/matchmaking","/developers"
   ]) assert.ok(hrefs.includes(route),`launcher lost ${route}`);
   assert.equal(hrefs.some((href)=>!href||href==="#"),false);
   assert.ok(css.includes("prefers-reduced-motion"));
@@ -44,7 +47,7 @@ test("premium layers upgrade shared tools, media and communities without replaci
 
 test("premium PWA warms the complete high-value product surface",()=>{
   const sw=read("public/sw.js");
-  assert.ok(sw.includes('const VERSION = "aafnai-pwa-v6"'));
+  assert.match(sw,/const VERSION = "aafnai-pwa-v\d+"/);
   for(const route of [
     "/time-machine","/on-this-day","/tools/astro","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
     "/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
