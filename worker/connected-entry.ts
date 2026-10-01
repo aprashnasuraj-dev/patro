@@ -1,11 +1,66 @@
 import productionWorker from "./entry";
 
+type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = Record<string, unknown> & {
   SUPABASE_COMPAT_ORIGIN?: string;
+  ASSETS?: AssetBinding;
 };
 
 const COMPAT_PREFIX = "/api/v1/compat-api/";
 const ALLOWED_COMPAT_ROOTS = new Set(["tv", "fm", "samachar"]);
+const SPA_EXACT = new Set([
+  "/", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
+  "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
+  "/about", "/sources", "/contact", "/developers", "/offline",
+  "/aaja", "/astro", "/my-diary", "/notes", "/planner", "/family", "/family/join", "/settings",
+  "/settings/notifications", "/settings/holidays", "/my-data", "/card", "/tithi", "/diaspora",
+  "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/explore"
+]);
+
+function cleanPath(pathname: string) {
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
+function isSpaPath(pathname: string) {
+  const path = cleanPath(pathname);
+  if (path === "/tools/sw.js") return false;
+  return SPA_EXACT.has(path)
+    || path.startsWith("/calendar/")
+    || path.startsWith("/date/")
+    || path.startsWith("/me/")
+    || path.startsWith("/tools/")
+    || path.startsWith("/jyotish/");
+}
+
+function secureSpaResponse(request: Request, response: Response) {
+  const headers = new Headers(response.headers);
+  headers.set("x-content-type-options", "nosniff");
+  headers.set("referrer-policy", "strict-origin-when-cross-origin");
+  headers.set("strict-transport-security", "max-age=31536000; includeSubDomains");
+  headers.set("permissions-policy", "camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()");
+  headers.set("x-dns-prefetch-control", "off");
+  headers.set("x-patro-shell", "root-spa");
+  const path = cleanPath(new URL(request.url).pathname);
+  if (path === "/me" || path.startsWith("/me/")) {
+    headers.set("x-robots-tag", "noindex, nofollow");
+    headers.set("cache-control", "private, no-store, max-age=0");
+  }
+  return new Response(request.method === "HEAD" ? null : response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+async function rootSpaResponse(request: Request, env: Env) {
+  if (!env.ASSETS || (request.method !== "GET" && request.method !== "HEAD")) return null;
+  const url = new URL(request.url);
+  url.pathname = "/index.html";
+  const assetRequest = new Request(url.toString(), request);
+  const response = await env.ASSETS.fetch(assetRequest);
+  if (!response.ok) return null;
+  return secureSpaResponse(request, response);
+}
 
 function compatSuffix(pathname: string) {
   if (pathname === "/api/v1/news") return "/compat-api/samachar/feed";
@@ -57,10 +112,17 @@ async function compatibilityResponse(request: Request, env: Env, suffix: string)
 export default {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+    const pathname = new URL(request.url).pathname;
+
+    if (isSpaPath(pathname)) {
+      const spa = await rootSpaResponse(request, env);
+      if (spa) return spa;
+    }
+
     const response = await productionWorker.fetch(request, env as any, ctx);
     if (response.status !== 404) return response;
 
-    const suffix = compatSuffix(new URL(request.url).pathname);
+    const suffix = compatSuffix(pathname);
     if (!suffix) return response;
 
     return (await compatibilityResponse(request, env, suffix)) || response;
