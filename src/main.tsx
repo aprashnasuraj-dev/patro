@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { AppChrome } from "./components/AppChrome";
+import { FeatureLauncher } from "./components/FeatureLauncher";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -31,6 +32,7 @@ createRoot(root).render(
       <AppChrome>
         <PatroRouter />
       </AppChrome>
+      <FeatureLauncher />
       <GlobalMediaPlayer />
     </MediaProvider>
   </StrictMode>
