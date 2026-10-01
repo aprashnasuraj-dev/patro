@@ -30,6 +30,23 @@ test("safe Aafnai router covers reworked UI and legacy aliases",()=>{
   assert.ok(router.includes('"/nepal-sambat":"/nepal-sambat/mandala"'));
 });
 
+test("new Aafnai chrome exposes retained history and all community suites",()=>{
+  const chrome=read("src/components/AppChrome.tsx");
+  const required=[
+    "/time-machine",
+    "/on-this-day",
+    "/samudaya",
+    "/nepal-sambat/mandala",
+    "/samudaya/lhosar",
+    "/samudaya/tharu",
+    "/samudaya/mithila",
+    "/samudaya/kirat",
+    "/samudaya/hijri",
+    "/samudaya/chakra"
+  ];
+  for(const route of required) assert.ok(chrome.includes(`href=\"${route}\"`),`new UI does not expose retained route: ${route}`);
+});
+
 test("reference tool parity is wired into the React utility suite",()=>{
   const suite=read("src/utilities/UtilitySuite.tsx");
   for(const slug of ["convert","calc","age","clock","forex","gold","tax","emi","vat","land","units","words","qr","fuel"]){
