@@ -51,12 +51,19 @@ async function doctorWithoutMarketDependency(request: Request, env: any, ctx: Ex
   }
 }
 
+async function serveChinaSpa(request: Request, env: any, ctx: ExecutionContext) {
+  const url = new URL(request.url);
+  url.pathname = "/jyotish/janma-patro";
+  return worker.fetch(new Request(url.toString(), request), env, ctx);
+}
+
 const productionWorker: BaseWorker = {
   ...worker,
   async fetch(request: Request, env: any, ctx: ExecutionContext) {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    if (path === "/jyotish/china") return serveChinaSpa(request, env, ctx);
     if (path === "/jyotish/janma-patro") return redirect(request, "/jyotish/china");
     if (path === "/jyotish/china/rashi") return redirect(request, "/jyotish/rashifal");
 
