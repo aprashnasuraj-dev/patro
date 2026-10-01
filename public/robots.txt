@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 Disallow: /my-diary
 Disallow: /family
 Disallow: /my-data
 Disallow: /settings
-Sitemap: https://patro-blush.vercel.app/sitemap.xml
+Disallow: /admin
+Disallow: /notes
+Disallow: /planner
+Sitemap: https://aafnaipatro.com/sitemap.xml
