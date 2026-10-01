@@ -1,6 +1,34 @@
 import worker from "./index";
 
 type BaseWorker = typeof worker;
+type Env = Record<string, unknown> & { SUPABASE_COMPAT_ORIGIN?: string };
+
+const FALLBACK_PATHS = new Map<string, string>([
+  ["/api/v1/sync", "/sync"],
+  ["/api/v1/astronomy/tithi", "/astronomy/tithi"],
+  ["/api/v1/rashifal/universal", "/rashifal/universal"],
+  ["/api/v1/tools/catalog", "/tools/catalog"],
+  ["/api/v1/markets/latest", "/markets/latest"],
+  ["/api/v1/market/latest", "/markets/latest"],
+]);
+
+const AAFNAI_TOOL_TITLES: Record<string, string> = {
+  typingtools: "आफ्नै टाइपिङ टुल्स",
+  "nepali-typing": "आफ्नै नेपाली टाइपिङ",
+  "tithi-reminder": "आफ्नै तिथि रिमाइन्डर",
+  sait: "आफ्नै साइत",
+  "baby-names": "आफ्नै बेबी नेम",
+  "janmadin-akhbar": "आफ्नै जन्मदिन अखबार",
+  "future-letter": "आफ्नै भविष्यको चिठी",
+  "spell-check": "आफ्नै नेपाली हिज्जे जाँच",
+  "voice-typing": "आफ्नै बोली टाइपिङ",
+  ocr: "आफ्नै OCR",
+  "name-check": "आफ्नै नाम जाँच",
+  "read-aloud": "आफ्नै पढेर सुनाउने",
+  "patro-bot": "आफ्नै पात्रो बोट",
+  family: "आफ्नै परिवार",
+  "my-data": "आफ्नै डेटा",
+};
 
 function redirect(request: Request, pathname: string) {
   const url = new URL(request.url);
@@ -9,22 +37,59 @@ function redirect(request: Request, pathname: string) {
 }
 
 function nepseRemoved() {
-  return new Response(JSON.stringify({
+  return Response.json({
     ok: false,
     error: "nepse_integration_removed",
     message: "NEPSE/index integration is not part of Aafnai Patro production."
-  }), {
+  }, {
     status: 410,
     headers: {
-      "content-type": "application/json; charset=utf-8",
       "cache-control": "public, max-age=3600",
       "x-content-type-options": "nosniff"
     }
   });
 }
 
-async function doctorWithoutMarketDependency(request: Request, env: any, ctx: ExecutionContext) {
-  const response = await worker.fetch(request, env, ctx);
+function responseWithHeader(response: Response, name: string, value: string) {
+  const headers = new Headers(response.headers);
+  headers.set(name, value);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+async function compatFallback(request: Request, env: Env, suffix: string) {
+  const origin = String(env.SUPABASE_COMPAT_ORIGIN || "").replace(/\/+$/, "");
+  if (!origin) return null;
+  const incoming = new URL(request.url);
+  const target = new URL(origin + suffix);
+  target.search = incoming.search;
+  const response = await fetch(new Request(target.toString(), request));
+  if (!response.ok) return null;
+  return responseWithHeader(response, "x-patro-backend", "supabase-compat-fallback");
+}
+
+async function brandCatalog(response: Response) {
+  if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) return response;
+  try {
+    const body: any = await response.clone().json();
+    if (!Array.isArray(body?.items)) return response;
+    body.items = body.items.map((item: any) => {
+      const slug = String(item?.slug || "");
+      return AAFNAI_TOOL_TITLES[slug] ? { ...item, title: AAFNAI_TOOL_TITLES[slug] } : item;
+    });
+    const headers = new Headers(response.headers);
+    headers.set("content-type", "application/json; charset=utf-8");
+    return new Response(JSON.stringify(body), { status: response.status, headers });
+  } catch {
+    return response;
+  }
+}
+
+async function doctorWithoutMarketDependency(request: Request, env: Env, ctx: ExecutionContext) {
+  const response = await worker.fetch(request, env as any, ctx);
   if (!response.headers.get("content-type")?.includes("application/json")) return response;
   try {
     const body: any = await response.clone().json();
@@ -51,37 +116,47 @@ async function doctorWithoutMarketDependency(request: Request, env: any, ctx: Ex
   }
 }
 
-async function serveChinaSpa(request: Request, env: any, ctx: ExecutionContext) {
+async function serveChinaSpa(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   url.pathname = "/jyotish/janma-patro";
-  return worker.fetch(new Request(url.toString(), request), env, ctx);
+  return worker.fetch(new Request(url.toString(), request), env as any, ctx);
+}
+
+async function callWithFallback(request: Request, env: Env, ctx: ExecutionContext) {
+  const url = new URL(request.url);
+  const response = await worker.fetch(request, env as any, ctx);
+  const suffix = FALLBACK_PATHS.get(url.pathname);
+  let resolved = response;
+  if (suffix && response.status >= 500) {
+    try {
+      resolved = (await compatFallback(request, env, suffix)) || response;
+    } catch {
+      resolved = response;
+    }
+  }
+  return url.pathname === "/api/v1/tools/catalog" ? brandCatalog(resolved) : resolved;
 }
 
 const productionWorker: BaseWorker = {
   ...worker,
-  async fetch(request: Request, env: any, ctx: ExecutionContext) {
-    const url = new URL(request.url);
+  async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+    let url = new URL(request.url);
     const path = url.pathname;
 
     if (path === "/jyotish/china") return serveChinaSpa(request, env, ctx);
     if (path === "/jyotish/janma-patro") return redirect(request, "/jyotish/china");
     if (path === "/jyotish/china/rashi") return redirect(request, "/jyotish/rashifal");
 
-    if (path === "/api/v1/markets/latest" && (url.searchParams.get("kind") || "forex") === "index") {
-      return nepseRemoved();
-    }
-    if (path === "/api/v1/market/latest") {
-      const kind = url.searchParams.get("kind");
-      if (!kind || kind === "index") return nepseRemoved();
-      if (kind === "forex") {
-        url.pathname = "/api/v1/markets/latest";
-        url.searchParams.set("kind", "forex");
-        return worker.fetch(new Request(url.toString(), request), env, ctx);
-      }
+    if (path === "/api/v1/markets/latest" || path === "/api/v1/market/latest") {
+      const kinds = (url.searchParams.get("kind") || "forex").split(",").map((value) => value.trim()).filter(Boolean);
+      if (!kinds.length || kinds.some((kind) => kind !== "forex")) return nepseRemoved();
+      url.pathname = "/api/v1/markets/latest";
+      url.searchParams.set("kind", "forex");
+      request = new Request(url.toString(), request);
     }
 
     if (path === "/api/v1/doctor") return doctorWithoutMarketDependency(request, env, ctx);
-    return worker.fetch(request, env, ctx);
+    return callWithFallback(request, env, ctx);
   }
 };
 
