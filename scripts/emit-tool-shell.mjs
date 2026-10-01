@@ -1,8 +1,8 @@
-import { copyFile, mkdir } from "node:fs/promises";
+import { access, copyFile, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = process.cwd();
-const astroDir = resolve(root, "dist/astro");
+const shell = resolve(root, "dist/index.html");
 const toolsDir = resolve(root, "dist/tools");
 const nativeShellRoutes = [
   "settings/community",
@@ -11,14 +11,22 @@ const nativeShellRoutes = [
   "jyotish/matchmaking",
 ];
 
+await access(shell);
 await mkdir(toolsDir, { recursive: true });
-await copyFile(resolve(astroDir, "index.html"), resolve(toolsDir, "index.html"));
-await copyFile(resolve(astroDir, "sw.js"), resolve(toolsDir, "sw.js"));
+await copyFile(shell, resolve(toolsDir, "index.html"));
+
+const publicToolWorker = resolve(root, "public/astro/sw.js");
+try {
+  await access(publicToolWorker);
+  await copyFile(publicToolWorker, resolve(toolsDir, "sw.js"));
+} catch {
+  // Tool service worker is optional for the root SPA; do not fabricate one.
+}
 
 for (const route of nativeShellRoutes) {
   const routeDir = resolve(root, "dist", ...route.split("/"));
   await mkdir(routeDir, { recursive: true });
-  await copyFile(resolve(astroDir, "index.html"), resolve(routeDir, "index.html"));
+  await copyFile(shell, resolve(routeDir, "index.html"));
 }
 
-console.log("Emitted static SPA shells for /tools and native React routes.");
+console.log("Emitted root SPA compatibility shells for /tools and native React routes.");
