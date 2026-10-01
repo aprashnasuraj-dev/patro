@@ -73,8 +73,8 @@ test("sitemap index is segmented into pages, tools, community and calendar", () 
   for (const route of canonicalTools) {
     assert.ok(tools.includes(`<loc>${production}${route}</loc>`), route);
   }
-  for (const alias of ["/tools/tax", "/tools/land", "/tools/qr", "/tools/fuel"]) {
-    assert.ok(!tools.includes(`<loc>${production}${alias}</loc>`), `alias must not be indexed: ${alias}`);
+  for (const alias of ["/tools/tax", "/tools/land", "/tools/qr", "/tools/fuel", "/tools/family", "/tools/my-data"]) {
+    assert.ok(!tools.includes(`<loc>${production}${alias}</loc>`), `alias/private route must not be indexed: ${alias}`);
   }
 
   const community = read("public/sitemap-community.xml");
@@ -104,4 +104,25 @@ test("robots and machine-readable manifest preserve public/private boundaries", 
   assert.ok(llms.includes(`${production}/samachar`));
   assert.ok(llms.includes(`${production}/time-machine`));
   assert.ok(llms.includes(`${production}/tools/patro-bot`));
+});
+
+test("connected Worker emits route-aware Aafnai Patro SEO before JavaScript", () => {
+  const seo = read("worker/connected-seo.ts");
+  const entry = read("worker/connected-entry.ts");
+  assert.ok(entry.includes('import { rewriteConnectedSeo } from "./connected-seo"'));
+  assert.ok(entry.includes("rewriteConnectedSeo(request, response, env)"));
+  assert.ok(seo.includes('const BRAND="आफ्नै पात्रो"'));
+  assert.ok(seo.includes('const BRAND_EN="Aafnai Patro"'));
+  assert.ok(!seo.includes("MeroPatro"), "connected production SEO must not use the retired brand");
+  assert.ok(seo.includes("CONNECTED_TOOL_SEO_COUNT=Object.keys(TOOL_META).length"));
+  for (const route of canonicalTools) {
+    const slug = route.slice("/tools/".length);
+    assert.ok(seo.includes(slug), `connected SEO missing canonical tool: ${slug}`);
+  }
+  for (const path of ["/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]) {
+    assert.ok(seo.includes(path), `private tool SEO boundary missing: ${path}`);
+  }
+  for (const alias of ["/tools/tax", "/tools/land", "/tools/qr", "/tools/fuel"]) {
+    assert.ok(seo.includes(alias), `canonical alias mapping missing: ${alias}`);
+  }
 });
