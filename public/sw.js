@@ -1,6 +1,6 @@
-const VERSION = "aafnai-pwa-v3";
-const CORE = ["/", "/tools", "/me", "/embed/today", "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"];
-const REMINDER_SHELL = "/api/v1/compat/page?path=%2Ftools";
+const VERSION = "aafnai-pwa-v4";
+const CORE = ["/", "/tools", "/me", "/time-machine", "/on-this-day", "/samudaya", "/embed/today", "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"];
+const REMINDER_SHELL = "/tools";
 
 function isSameOrigin(url) {
   return url.origin === self.location.origin;
@@ -12,7 +12,7 @@ function isCalendarApi(url) {
   return isSync(url) || url.pathname.startsWith("/api/v1/calendar/");
 }
 function isReminderShell(url) {
-  return url.pathname === "/api/v1/compat/page" && url.searchParams.get("path") === "/tools";
+  return url.pathname === "/tools";
 }
 function iso(date) {
   return date.getUTCFullYear() + "-" + String(date.getUTCMonth()+1).padStart(2,"0") + "-" + String(date.getUTCDate()).padStart(2,"0");
