@@ -15,21 +15,21 @@ const OcrTool = lazy(() => import("./OcrTool").then((m) => ({ default: m.OcrTool
 const PatroBotTool = lazy(() => import("./PatroBotTool").then((m) => ({ default: m.PatroBotTool })));
 
 const LABELS: Record<string, { title: string; description: string }> = {
-  "tithi-reminder": { title: "तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
-  sait: { title: "साइत", description: "आधिकारिक मिति पहिलो, गणना गरिएको मिति सम्भावित" },
-  "baby-names": { title: "नक्षत्र अनुसार नाम", description: "नाम, न्वारन, पास्नी र खोप समयरेखा" },
-  "janmadin-akhbar": { title: "जन्मदिन अखबार", description: "जन्म दिनको इतिहास र पात्रोबाट शेयर कार्ड" },
-  "future-letter": { title: "भविष्यको चिठी", description: "वि.सं. मिति वा तिथि जन्मदिनमा खुल्ने निजी चिठी" },
-  "spell-check": { title: "नेपाली हिज्जे जाँच", description: "नेपाली पाठको हिज्जे र सुझाव" },
-  "voice-typing": { title: "आवाजबाट नेपाली टाइपिङ", description: "ब्राउजर वा वैकल्पिक सुरक्षित speech API" },
-  ocr: { title: "नेपाली OCR", description: "तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्" },
-  "name-check": { title: "नाम जाँच", description: "कागजातमा नामको हिज्जे र उच्चारण मिलान" },
-  "read-aloud": { title: "पढेर सुनाउनुहोस्", description: "नेपाली सामग्री आवाजमा सुन्नुहोस्" },
-  "patro-bot": { title: "Patro Bot", description: "पात्रो, तिथि र रिमाइन्डर सहायक" },
+  "tithi-reminder": { title: "आफ्नै तिथि रिमाइन्डर", description: "श्राद्ध, तिथि जन्मदिन र पात्रो रिमाइन्डर" },
+  sait: { title: "आफ्नै साइत", description: "आधिकारिक मिति पहिलो, गणना गरिएको मिति सम्भावित" },
+  "baby-names": { title: "आफ्नै बेबी नेम", description: "नक्षत्र अनुसार नाम, न्वारन, पास्नी र खोप समयरेखा" },
+  "janmadin-akhbar": { title: "आफ्नै जन्मदिन अखबार", description: "जन्म दिनको इतिहास र पात्रोबाट शेयर कार्ड" },
+  "future-letter": { title: "आफ्नै भविष्यको चिठी", description: "वि.सं. मिति वा तिथि जन्मदिनमा खुल्ने निजी चिठी" },
+  "spell-check": { title: "आफ्नै नेपाली हिज्जे जाँच", description: "नेपाली पाठको हिज्जे र सुझाव" },
+  "voice-typing": { title: "आफ्नै बोली टाइपिङ", description: "बोलेर नेपाली टाइप गर्ने सुविधा" },
+  ocr: { title: "आफ्नै नेपाली OCR", description: "तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्" },
+  "name-check": { title: "आफ्नै नाम जाँच", description: "नामको हिज्जे र उच्चारण मिलान" },
+  "read-aloud": { title: "आफ्नै पढेर सुनाउने", description: "नेपाली सामग्री आवाजमा सुन्नुहोस्" },
+  "patro-bot": { title: "आफ्नै पात्रो बोट", description: "पात्रो, तिथि र रिमाइन्डर सहायक" },
 };
 
 function ToolLoading({ slug }: { slug: string }) {
-  const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
+  const meta = LABELS[slug] ?? { title: "आफ्नै उपकरण", description: "आफ्नै पात्रो उपकरण" };
   return (
     <ToolPage title={meta.title} description={meta.description}>
       <section className="patro-tool-card" role="status" aria-live="polite">
@@ -52,12 +52,12 @@ function ToolRoute({ slug }: { slug: string }) {
   if (slug === "ocr") return <OcrTool />;
   if (slug === "patro-bot") return <PatroBotTool />;
 
-  const meta = LABELS[slug] ?? { title: "उपकरण", description: "Mero Patro tool" };
+  const meta = LABELS[slug] ?? { title: "आफ्नै उपकरण", description: "आफ्नै पात्रो उपकरण" };
   return (
     <ToolPage title={meta.title} description={meta.description}>
       <section className="patro-tool-card">
         <h2>यो उपकरण अर्को integration phase मा जोडिँदैछ।</h2>
-        <p className="tool-muted">BS र पञ्चाङ्गका लागि Mero Patro को विद्यमान production engine नै प्राथमिक स्रोत रहनेछ।</p>
+        <p className="tool-muted">BS र पञ्चाङ्गका लागि आफ्नै पात्रोको विद्यमान production engine नै प्राथमिक स्रोत रहनेछ।</p>
       </section>
     </ToolPage>
   );
