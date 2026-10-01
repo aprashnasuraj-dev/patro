@@ -1,8 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mero-patro",
+  "name": "patro",
   "main": "worker/index.ts",
   "compatibility_date": "2026-09-30",
+  "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true,
   "assets": {
@@ -14,6 +15,14 @@
       "!/astro/assets/*"
     ]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "patro",
+      "database_id": "fb25c860-01db-4ab0-9036-7f87b26ca64b",
+      "migrations_dir": "cloudflare/d1/schema-migrations"
+    }
+  ],
   "vars": {
     "PUBLIC_SITE_URL": "https://aafnaipatro.com",
     "SUPABASE_COMPAT_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router",
@@ -21,6 +30,9 @@
     "CALENDAR_COVERAGE_START": "1826-04-11",
     "CALENDAR_COVERAGE_END": "2037-04-13",
     "CALENDAR_SOURCE_VERSION": "patro-archive-v79"
+  },
+  "triggers": {
+    "crons": ["5 * * * *", "17 0,6,12,18 * * *", "43 2 * * *"]
   },
   "observability": {
     "enabled": true
