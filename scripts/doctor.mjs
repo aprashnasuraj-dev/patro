@@ -1,8 +1,8 @@
-import { access, copyFile, cp, mkdir, readFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
 const root = process.cwd();
-const astroShell = resolve(root, "dist/astro/index.html");
+const spaShell = resolve(root, "dist/index.html");
 const requiredSpaShells = [
   "tools/index.html",
   "settings/community/index.html",
@@ -26,8 +26,13 @@ async function exists(path) {
   try { await access(path); return true; } catch { return false; }
 }
 
-if (!(await exists(astroShell))) {
-  throw new Error("doctor: dist/astro/index.html is missing; Vite did not produce the canonical SPA shell");
+if (!(await exists(spaShell))) {
+  throw new Error("doctor: dist/index.html is missing; Vite did not produce the canonical root SPA shell");
+}
+
+const shellHtml = await readFile(spaShell, "utf8");
+if (!/\/assets\//.test(shellHtml) || /\/astro\/assets\//.test(shellHtml)) {
+  throw new Error("doctor: root SPA bundle must load from /assets/, never /astro/assets/");
 }
 
 const repaired = [];
@@ -35,16 +40,9 @@ for (const relative of requiredSpaShells) {
   const target = resolve(root, "dist", relative);
   if (!(await exists(target))) {
     await mkdir(dirname(target), { recursive: true });
-    await copyFile(astroShell, target);
+    await copyFile(spaShell, target);
     repaired.push(relative);
   }
-}
-
-const typingSource = resolve(root, "dist/astro/nepali-typing");
-const typingTarget = resolve(root, "dist/nepali-typing");
-if (!(await exists(typingTarget)) && (await exists(typingSource))) {
-  await cp(typingSource, typingTarget, { recursive: true });
-  repaired.push("nepali-typing/*");
 }
 
 const missingStatic = [];
@@ -56,15 +54,11 @@ const vercel = JSON.parse(await readFile(resolve(root, "vercel.json"), "utf8"));
 const rewrites = vercel.rewrites || [];
 const api = rewrites.find((r) => r.source === "/api/v1/:path*");
 if (!api || !String(api.destination || "").includes("/functions/v1/router/:path*")) {
-  throw new Error("doctor: /api/v1 is not routed to the canonical Supabase router");
+  throw new Error("doctor: /api/v1 is not routed to the canonical Supabase router on the legacy Vercel fallback");
 }
 const jyotish = rewrites.find((r) => r.source === "/api/jyotish-chat");
 if (!jyotish || !String(jyotish.destination || "").includes("/functions/v1/router/jyotish-chat")) {
-  throw new Error("doctor: Jyotish chat still bypasses the canonical router");
-}
-const typing = rewrites.find((r) => r.source === "/tools/nepali-typing");
-if (!typing || typing.destination !== "/nepali-typing/index.html") {
-  throw new Error("doctor: Nepali typing is not served as a Vercel static asset");
+  throw new Error("doctor: Jyotish chat still bypasses the canonical router on the legacy Vercel fallback");
 }
 if (missingStatic.length) {
   throw new Error("doctor: required static pages missing: " + missingStatic.join(", "));
@@ -74,7 +68,8 @@ console.log(JSON.stringify({
   ok: true,
   repaired,
   verified: [...requiredSpaShells, ...requiredStaticPages],
+  canonicalShell: "dist/index.html",
+  assetBase: "/assets/",
   canonicalApi: api.destination,
   jyotish: jyotish.destination,
-  typing: typing.destination,
 }, null, 2));

@@ -2,16 +2,14 @@ import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = process.cwd();
-const rawSite = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim();
-const site = rawSite.replace(/\/+$/, "");
-if (!/^https:\/\//.test(site)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
+const site = "https://aafnaipatro.com";
 
 const currentAdYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
 const currentBsYear = Number(process.env.SEO_BS_YEAR || currentAdYear + 57);
 const calendarYears = [currentBsYear - 1, currentBsYear, currentBsYear + 1];
 
 const publicRoutes = [
-  "/", "/explore", "/astro", "/convert", "/samachar", "/time-machine", "/on-this-day",
+  "/", "/explore", "/tools/astro", "/convert", "/samachar", "/time-machine", "/on-this-day",
   "/fm", "/tv", "/tools", "/tools/nepali-typing", "/tools/preeti-converter",
   "/jyotish/rashifal", "/jyotish/china", "/nepal-sambat", "/nepal-sambat/mandala",
   "/samudaya", "/about", "/sources", "/privacy", "/terms", "/contact"
@@ -43,13 +41,13 @@ const robots = [
   "User-agent: *",
   "Allow: /",
   "Disallow: /api/",
-  "Disallow: /my-diary",
-  "Disallow: /family",
-  "Disallow: /my-data",
-  "Disallow: /settings",
+  "Disallow: /me/diary",
+  "Disallow: /me/family",
+  "Disallow: /me/data",
+  "Disallow: /me/settings",
   "Disallow: /admin",
-  "Disallow: /notes",
-  "Disallow: /planner",
+  "Disallow: /me/notes",
+  "Disallow: /me/planner",
   `Sitemap: ${site}/sitemap.xml`,
   ""
 ].join("\n");

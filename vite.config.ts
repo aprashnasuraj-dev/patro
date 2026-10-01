@@ -5,7 +5,8 @@ import react from "@vitejs/plugin-react";
 const projectRef = "pxlsmxbpgdfzjzuqtict";
 
 export default defineConfig({
-  base: "/astro/",
+  // Aafnai Patro is one root SPA. Astronomy is a route inside it at /tools/astro.
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -22,7 +23,8 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: "dist/astro",
+    outDir: "dist",
+    emptyOutDir: true,
     target: "es2022",
     sourcemap: false,
     cssCodeSplit: true,

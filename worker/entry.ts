@@ -1,7 +1,11 @@
 import worker from "./index";
 import { runScheduled, type JobsEnv } from "./jobs";
 
-type Env = JobsEnv & Record<string, unknown> & { SUPABASE_COMPAT_ORIGIN?: string };
+type AssetBinding = { fetch(request: Request): Promise<Response> };
+type Env = JobsEnv & Record<string, unknown> & {
+  ASSETS?: AssetBinding;
+  SUPABASE_COMPAT_ORIGIN?: string;
+};
 
 const FALLBACK_PATHS = new Map<string, string>([
   ["/api/v1/sync", "/sync"],
@@ -12,28 +16,216 @@ const FALLBACK_PATHS = new Map<string, string>([
   ["/api/v1/market/latest", "/markets/latest"],
 ]);
 
-const AAFNAI_TOOL_TITLES: Record<string, string> = {
-  typingtools: "आफ्नै टाइपिङ टुल्स",
-  "nepali-typing": "आफ्नै नेपाली टाइपिङ",
-  "tithi-reminder": "आफ्नै तिथि रिमाइन्डर",
-  sait: "आफ्नै साइत",
-  "baby-names": "आफ्नै बेबी नेम",
-  "janmadin-akhbar": "आफ्नै जन्मदिन अखबार",
-  "future-letter": "आफ्नै भविष्यको चिठी",
-  "spell-check": "आफ्नै नेपाली हिज्जे जाँच",
-  "voice-typing": "आफ्नै बोली टाइपिङ",
-  ocr: "आफ्नै OCR",
-  "name-check": "आफ्नै नाम जाँच",
-  "read-aloud": "आफ्नै पढेर सुनाउने",
-  "patro-bot": "आफ्नै पात्रो बोट",
-  family: "आफ्नै परिवार",
-  "my-data": "आफ्नै डेटा",
+const TOOL_TITLES: Record<string, string> = {
+  typingtools: "टाइपिङ उपकरण",
+  "nepali-typing": "नेपाली टाइपिङ",
+  "tithi-reminder": "तिथि रिमाइन्डर",
+  sait: "साइत",
+  "baby-names": "बच्चाको नाम",
+  "janmadin-akhbar": "जन्मदिन अखबार",
+  "future-letter": "भविष्यको चिठी",
+  "spell-check": "नेपाली हिज्जे जाँच",
+  "voice-typing": "बोली टाइपिङ",
+  ocr: "नेपाली OCR",
+  "name-check": "नाम जाँच",
+  "read-aloud": "पढेर सुनाउने",
+  "patro-bot": "पात्रो बोट",
+  family: "परिवार",
+  "my-data": "डेटा",
 };
+
+const LEGACY_REDIRECTS = new Map<string, string>([
+  ["/aaja", "/"],
+  ["/astro", "/tools/astro"],
+  ["/astro/", "/tools/astro"],
+  ["/my-diary", "/me/diary"],
+  ["/notes", "/me/notes"],
+  ["/planner", "/me/planner"],
+  ["/family", "/me/family"],
+  ["/family/join", "/me/family"],
+  ["/tools/family", "/me/family"],
+  ["/tithi", "/me/reminders"],
+  ["/settings/notifications", "/me/reminders"],
+  ["/tools/tithi", "/me/reminders"],
+  ["/card", "/me/cards"],
+  ["/tools/card", "/me/cards"],
+  ["/settings", "/me/settings"],
+  ["/settings/holidays", "/me/settings"],
+  ["/my-data", "/me/data"],
+  ["/tools/my-data", "/me/data"],
+  ["/diaspora", "/tools/clock"],
+  ["/jyotish/rashifal", "/rashifal"],
+  ["/jyotish/china/rashi", "/rashifal"],
+  ["/jyotish/janma-patro", "/jyotish/china"],
+  ["/explore", "/tools"],
+  ["/search", "/tools"],
+  ["/feedback", "/contact"],
+  ["/data-trust", "/privacy"],
+  ["/astrology", "/rashifal"],
+  ["/nepal-sambat", "/nepal-sambat/mandala"],
+]);
+
+const SPA_EXACT = new Set([
+  "/",
+  "/tools",
+  "/me",
+  "/convert",
+  "/rashifal",
+  "/samachar",
+  "/fm",
+  "/tv",
+  "/time-machine",
+  "/on-this-day",
+  "/jyotish/china",
+  "/jyotish/matchmaking",
+  "/privacy",
+  "/terms",
+  "/about",
+  "/sources",
+  "/contact",
+  "/developers",
+  "/offline",
+]);
+
+const TOOL_SLUGS = new Set([
+  "astro",
+  "typingtools",
+  "nepali-typing",
+  "preeti-converter",
+  "preeti-to-unicode",
+  "unicode-to-preeti",
+  "preetitounicode",
+  "unicodetopreeti",
+  "convert",
+  "bstoad",
+  "adtobs",
+  "calc",
+  "age",
+  "clock",
+  "forex",
+  "gold",
+  "emi",
+  "vat",
+  "units",
+  "words",
+  "tax",
+  "incometax",
+  "land",
+  "landconverter",
+  "qr",
+  "nepaliqr",
+  "fuel",
+  "fuelprice",
+  "tithi-reminder",
+  "sait",
+  "baby-names",
+  "janmadin-akhbar",
+  "future-letter",
+  "spell-check",
+  "voice-typing",
+  "ocr",
+  "name-check",
+  "read-aloud",
+  "patro-bot",
+  "api",
+]);
+
+const SPA_PERSONAL = new Set([
+  "/me/diary",
+  "/me/notes",
+  "/me/planner",
+  "/me/family",
+  "/me/reminders",
+  "/me/cards",
+  "/me/settings",
+  "/me/data",
+]);
+
+const STATIC_PREFIXES = [
+  "/api/",
+  "/fm-v2-stream/",
+  "/fm-stream/",
+  "/samudaya/",
+  "/nepal-sambat/mandala/",
+  "/embed/",
+  "/widget/",
+  "/.well-known/",
+  "/nepali-typing/",
+  "/astro/assets/",
+  "/astro/data/",
+];
+
+const HTML_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://*.supabase.co https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net https://cloudflareinsights.com https://static.cloudflareinsights.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
+
+function canonicalPath(pathname: string) {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+}
 
 function redirect(request: Request, pathname: string) {
   const url = new URL(request.url);
   url.pathname = pathname;
-  return Response.redirect(url.toString(), 308);
+  return Response.redirect(url.toString(), 301);
+}
+
+function isSpaPath(path: string) {
+  if (SPA_EXACT.has(path) || SPA_PERSONAL.has(path)) return true;
+  if (/^\/calendar\/\d{4}\/\d{1,2}$/.test(path)) return true;
+  if (/^\/date\/\d{4}-\d{2}-\d{2}$/.test(path)) return true;
+  if (path.startsWith("/tools/")) {
+    const slug = path.slice("/tools/".length).split("/")[0];
+    return TOOL_SLUGS.has(slug) && path === `/tools/${slug}`;
+  }
+  return false;
+}
+
+function isStaticPassthrough(path: string) {
+  if (path === "/samudaya" || path === "/nepal-sambat/mandala" || path === "/settings/community" || path === "/admin/community-suites" || path === "/tools/samudaya") return true;
+  if (STATIC_PREFIXES.some((prefix) => path.startsWith(prefix))) return true;
+  const leaf = path.split("/").pop() || "";
+  return leaf.includes(".");
+}
+
+function responseWithHeader(response: Response, name: string, value: string) {
+  const headers = new Headers(response.headers);
+  headers.set(name, value);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function secureDocument(response: Response, status: number, path: string, method: string) {
+  const headers = new Headers(response.headers);
+  headers.set("content-type", "text/html; charset=utf-8");
+  headers.set("content-security-policy", HTML_CSP);
+  headers.set("x-content-type-options", "nosniff");
+  headers.set("referrer-policy", "strict-origin-when-cross-origin");
+  headers.set("strict-transport-security", "max-age=31536000; includeSubDomains");
+  headers.set("permissions-policy", "camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()");
+  headers.set("x-dns-prefetch-control", "off");
+  headers.set("cache-control", "no-cache");
+  if (status === 404) headers.set("x-robots-tag", "noindex, nofollow");
+  if (path === "/me" || path.startsWith("/me/")) {
+    headers.set("x-robots-tag", "noindex, nofollow");
+    headers.set("cache-control", "private, no-store, max-age=0");
+  }
+  return new Response(method === "HEAD" ? null : response.body, { status, headers });
+}
+
+async function serveSpa(request: Request, env: Env, status = 200) {
+  if (!env.ASSETS || typeof env.ASSETS.fetch !== "function") {
+    return Response.json({ error: "assets_unavailable" }, { status: 503, headers: { "cache-control": "no-store" } });
+  }
+  const original = new URL(request.url);
+  const shellUrl = new URL(request.url);
+  shellUrl.pathname = "/index.html";
+  shellUrl.search = "";
+  const shellRequest = new Request(shellUrl.toString(), { method: "GET", headers: request.headers });
+  const shell = await env.ASSETS.fetch(shellRequest);
+  if (!shell.ok) return shell;
+  return secureDocument(shell, status, original.pathname, request.method);
 }
 
 function nepseRemoved() {
@@ -47,16 +239,6 @@ function nepseRemoved() {
       "cache-control": "public, max-age=3600",
       "x-content-type-options": "nosniff"
     }
-  });
-}
-
-function responseWithHeader(response: Response, name: string, value: string) {
-  const headers = new Headers(response.headers);
-  headers.set(name, value);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
   });
 }
 
@@ -78,7 +260,7 @@ async function brandCatalog(response: Response) {
     if (!Array.isArray(body?.items)) return response;
     body.items = body.items.map((item: any) => {
       const slug = String(item?.slug || "");
-      return AAFNAI_TOOL_TITLES[slug] ? { ...item, title: AAFNAI_TOOL_TITLES[slug] } : item;
+      return TOOL_TITLES[slug] ? { ...item, title: TOOL_TITLES[slug] } : item;
     });
     const headers = new Headers(response.headers);
     headers.set("content-type", "application/json; charset=utf-8");
@@ -116,12 +298,6 @@ async function doctorWithoutMarketDependency(request: Request, env: Env, ctx: Ex
   }
 }
 
-async function serveChinaSpa(request: Request, env: Env, ctx: ExecutionContext) {
-  const url = new URL(request.url);
-  url.pathname = "/jyotish/janma-patro";
-  return worker.fetch(new Request(url.toString(), request), env as any, ctx);
-}
-
 async function callWithFallback(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   const response = await worker.fetch(request, env as any, ctx);
@@ -141,11 +317,10 @@ const productionWorker = {
   ...worker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     let url = new URL(request.url);
-    const path = url.pathname;
+    let path = canonicalPath(url.pathname);
 
-    if (path === "/jyotish/china") return serveChinaSpa(request, env, ctx);
-    if (path === "/jyotish/janma-patro") return redirect(request, "/jyotish/china");
-    if (path === "/jyotish/china/rashi") return redirect(request, "/jyotish/rashifal");
+    const legacyTarget = LEGACY_REDIRECTS.get(url.pathname) || LEGACY_REDIRECTS.get(path);
+    if (legacyTarget) return redirect(request, legacyTarget);
 
     if (path === "/api/v1/markets/latest" || path === "/api/v1/market/latest") {
       const kinds = (url.searchParams.get("kind") || "forex").split(",").map((value) => value.trim()).filter(Boolean);
@@ -153,13 +328,24 @@ const productionWorker = {
       url.pathname = "/api/v1/markets/latest";
       url.searchParams.set("kind", "forex");
       request = new Request(url.toString(), request);
+      path = url.pathname;
     }
 
     if (path === "/api/v1/doctor") return doctorWithoutMarketDependency(request, env, ctx);
+
+    if ((request.method === "GET" || request.method === "HEAD") && isSpaPath(path)) {
+      return serveSpa(request, env, 200);
+    }
+
+    if ((request.method === "GET" || request.method === "HEAD") && !isStaticPassthrough(path) && !path.startsWith("/api/")) {
+      // Render the same app shell so the React 404 view is useful, while preserving a real HTTP 404.
+      return serveSpa(request, env, 404);
+    }
+
     return callWithFallback(request, env, ctx);
   },
   async scheduled(controller: { cron: string }, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(runScheduled(controller.cron,env));
+    ctx.waitUntil(runScheduled(controller.cron, env));
   }
 };
 
