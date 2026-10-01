@@ -38,15 +38,16 @@ test("new Aafnai UI preserves at least the requested 29 functional tool entries"
   }
 });
 
-test("critical product surfaces remain discoverable in the new UI and routed",()=>{
+test("critical product surfaces and all Community Suite calendars are visible from new UI",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const chrome=read("src/components/AppChrome.tsx");
   const router=read("src/PatroRouter.tsx");
   for(const route of ["/time-machine","/on-this-day","/tools/astro"]){
     assert.ok(pages.includes(route),`Tools UI lost ${route}`);
     assert.ok(router.includes(route),`router lost ${route}`);
+    assert.ok(chrome.includes(`href="${route}"`),`global UI lost ${route}`);
   }
-  for(const route of ["/samachar","/fm","/tv","/samudaya"]){
+  for(const route of ["/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
     assert.ok(chrome.includes(`href="${route}"`),`global UI lost ${route}`);
   }
   for(const route of ["/samachar","/fm","/tv"]){
@@ -88,6 +89,16 @@ test("calendar, Time Machine, Samachar and media UI point to backed API contract
   for(const root of ['"tv"','"fm"','"samachar"'])assert.ok(bridge.includes(root),`compat bridge lost ${root}`);
 });
 
+test("production entry serves React routes from canonical root SPA, not stale astro shell",()=>{
+  const bridge=read("worker/connected-entry.ts");
+  for(const route of ["/tools","/tools/astro","/time-machine","/on-this-day","/fm","/tv","/samachar","/me","/convert","/rashifal"]){
+    assert.ok(bridge.includes(`"${route}"`),`root SPA bridge lost ${route}`);
+  }
+  assert.ok(bridge.includes('url.pathname = "/index.html"'));
+  assert.ok(bridge.includes('headers.set("x-patro-shell", "root-spa")'));
+  assert.equal(bridge.includes('"/astro/index.html"'),false,"production bridge must not depend on stale /astro/index.html");
+});
+
 test("Community Suite remains complete and emitted as seven static experiences",()=>{
   const emitter=read("scripts/emit-community-suites.mjs");
   const required=[
@@ -105,8 +116,15 @@ test("Community Suite remains complete and emitted as seven static experiences",
 
 test("migration runtime stays on connected Worker entry and canonical custom domain",()=>{
   const wrangler=read("wrangler.jsonc");
+  const toml=read("wrangler.toml");
   assert.match(wrangler,/"main"\s*:\s*"worker\/connected-entry\.ts"/);
   assert.match(wrangler,/"pattern"\s*:\s*"aafnaipatro\.com"/);
   assert.match(wrangler,/"custom_domain"\s*:\s*true/);
   assert.match(wrangler,/"preview_urls"\s*:\s*false/);
+  assert.match(toml,/main\s*=\s*"worker\/connected-entry\.ts"/);
+  assert.match(toml,/pattern\s*=\s*"aafnaipatro\.com"/);
+  assert.match(toml,/custom_domain\s*=\s*true/);
+  assert.match(toml,/preview_urls\s*=\s*false/);
+  assert.match(toml,/not_found_handling\s*=\s*"none"/);
+  assert.match(toml,/run_worker_first\s*=\s*\["\/\*",\s*"!\/assets\/\*"\]/);
 });
