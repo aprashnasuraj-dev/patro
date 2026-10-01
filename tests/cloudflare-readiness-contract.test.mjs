@@ -75,6 +75,16 @@ test("production Worker owns the canonical custom domain and does not require pr
   assert.equal(route.custom_domain, true);
 });
 
+test("default Wrangler TOML cannot drift from production Worker routing", async () => {
+  const toml = await read("wrangler.toml");
+  assert.match(toml,/^name\s*=\s*"patro"/m);
+  assert.match(toml,/^main\s*=\s*"worker\/connected-entry\.ts"/m);
+  assert.match(toml,/^preview_urls\s*=\s*false/m);
+  assert.match(toml,/\[\[routes\]\][\s\S]*pattern\s*=\s*"aafnaipatro\.com"[\s\S]*custom_domain\s*=\s*true/);
+  assert.match(toml,/\[assets\][\s\S]*not_found_handling\s*=\s*"none"/);
+  assert.match(toml,/run_worker_first\s*=\s*\["\/\*",\s*"!\/assets\/\*"\]/);
+});
+
 test("Pages configuration keeps the internal API service binding", async () => {
   const config = await json("wrangler.pages.jsonc");
   assert.equal(config.pages_build_output_dir, "./dist");
