@@ -4,13 +4,19 @@ import { ReadAloudButton } from "./ReadAloudButton";
 export function ToolPage({ title, description, children }: { title: string; description: string; children: ReactNode }) {
   return (
     <main className="patro-tool-page">
+      <nav className="tool-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">आफ्नै पात्रो</a><span aria-hidden="true">›</span><a href="/tools">उपकरण</a><span aria-hidden="true">›</span><span aria-current="page">{title}</span>
+      </nav>
       <section className="patro-tool-hero">
-        <div>
-          <p className="eyebrow">मेरो पात्रो · उपकरण</p>
+        <div className="patro-tool-hero-copy">
+          <p className="eyebrow">आफ्नै पात्रो · उपकरण</p>
           <h1>{title}</h1>
           <p>{description}</p>
+          <div className="tool-trust-row" aria-label="Tool qualities">
+            <span>मोबाइलमैत्री</span><span>छिटो परिणाम</span><span>स्रोत-सचेत</span>
+          </div>
         </div>
-        <a className="tool-link-button" href="/tools">← सबै उपकरण</a>
+        <a className="tool-link-button tool-back-button" href="/tools">← सबै उपकरण</a>
       </section>
       {children}
     </main>
@@ -21,7 +27,7 @@ export function ToolResult({ title, speechText, children }: { title: string; spe
   return (
     <section className="patro-tool-card patro-tool-result" aria-live="polite">
       <header className="tool-result-header">
-        <h2>{title}</h2>
+        <div><span className="tool-result-kicker">नतिजा</span><h2>{title}</h2></div>
         {speechText ? <ReadAloudButton text={speechText} /> : null}
       </header>
       {children}
