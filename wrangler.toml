@@ -20,6 +20,7 @@ binding = "DB"
 binding = "CACHE"
 
 [vars]
+PUBLIC_SITE_URL = "https://aafnaipatro.com"
 CALENDAR_COVERAGE_START = "1826-04-11"
 CALENDAR_COVERAGE_END = "2037-04-13"
 CALENDAR_SOURCE_VERSION = "patro-archive-v79"
