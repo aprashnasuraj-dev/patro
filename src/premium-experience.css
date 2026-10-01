@@ -1,0 +1,144 @@
+/* Aafnai Patro premium experience layer.
+   Imported last so it enhances existing surfaces without changing feature logic. */
+:root{
+  --px-shadow-1:0 10px 30px rgba(15,23,42,.08);
+  --px-shadow-2:0 24px 70px rgba(15,23,42,.14);
+  --px-glow:0 0 0 1px color-mix(in srgb,var(--ap-green,#176f3b) 16%,transparent),0 18px 48px color-mix(in srgb,var(--ap-green,#176f3b) 12%,transparent);
+  --px-glass:color-mix(in srgb,var(--ap-surface,#fff) 88%,transparent);
+  --px-ease:cubic-bezier(.2,.8,.2,1);
+}
+
+html{scroll-behavior:smooth}
+body{background:
+  radial-gradient(circle at 10% -10%,color-mix(in srgb,var(--ap-green,#176f3b) 8%,transparent),transparent 34rem),
+  radial-gradient(circle at 95% 10%,color-mix(in srgb,var(--ap-marigold,#a86200) 7%,transparent),transparent 30rem),
+  var(--ap-bg,#f5f7f4)}
+::selection{background:color-mix(in srgb,var(--ap-green,#176f3b) 24%,transparent)}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--ap-green,#176f3b) 62%,white);outline-offset:3px}
+
+/* Header / global navigation */
+.ap-header{box-shadow:0 1px 0 color-mix(in srgb,var(--ap-line,#dbe2dc) 80%,transparent),0 12px 30px rgba(15,23,42,.04)}
+.ap-brand-mark{box-shadow:0 8px 20px color-mix(in srgb,var(--ap-green,#176f3b) 24%,transparent);transition:transform .25s var(--px-ease),box-shadow .25s var(--px-ease)}
+.ap-brand:hover .ap-brand-mark{transform:translateY(-1px) rotate(-2deg);box-shadow:0 12px 28px color-mix(in srgb,var(--ap-green,#176f3b) 30%,transparent)}
+.ap-nav>a,.ap-more>summary,.ap-me-button,.ap-round,.ap-lang{transition:transform .2s var(--px-ease),background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.ap-nav>a:hover,.ap-more>summary:hover,.ap-me-button:hover,.ap-round:hover,.ap-lang:hover{transform:translateY(-1px)}
+.ap-more-menu{animation:px-pop .18s var(--px-ease);transform-origin:top left}
+
+/* Shared page surfaces */
+.ap-page-title,.ap-today-card,.ap-calendar-card,.ap-tool-section,.ap-history-card,.community-control-card,
+.utility-hero,.utility-directory,.utility-card,.media-hero,.jyotish-hero,.patro-tool-hero,.patro-tool-card{
+  box-shadow:var(--px-shadow-1);
+  transition:box-shadow .25s ease,border-color .25s ease,transform .25s var(--px-ease);
+}
+.ap-page-title{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 92% 12%,color-mix(in srgb,var(--ap-green,#176f3b) 13%,transparent),transparent 17rem),
+  var(--ap-surface,#fff)}
+.ap-page-title:after{content:"";position:absolute;right:-26px;bottom:-50px;width:150px;height:150px;border:1px solid color-mix(in srgb,var(--ap-green,#176f3b) 18%,transparent);border-radius:50%;pointer-events:none}
+.ap-page-title h1{letter-spacing:-.025em}
+.ap-eyebrow,.eyebrow{letter-spacing:.08em;text-transform:uppercase;font-weight:850}
+
+/* Home/calendar: tactile without compromising density */
+.ap-today-card{background:
+  linear-gradient(140deg,color-mix(in srgb,var(--ap-green-soft,#e4f1e8) 46%,var(--ap-surface,#fff)),var(--ap-surface,#fff) 64%)}
+.ap-today-facts>div{border:1px solid color-mix(in srgb,var(--ap-line,#dbe2dc) 72%,transparent);transition:transform .2s var(--px-ease),border-color .2s ease;background .2s ease}
+.ap-today-facts>div:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--ap-green,#176f3b) 25%,var(--ap-line,#dbe2dc));background:color-mix(in srgb,var(--ap-green-soft,#e4f1e8) 54%,var(--ap-surface,#fff))}
+.ap-day{transition:transform .12s var(--px-ease),background .12s ease,box-shadow .12s ease;isolation:isolate}
+.ap-day:hover{z-index:2;transform:translateY(-2px);box-shadow:0 7px 18px rgba(15,23,42,.09)}
+.ap-day:active{transform:translateY(0) scale(.985)}
+.ap-next-card{box-shadow:0 18px 45px color-mix(in srgb,var(--ap-marigold,#a86200) 10%,transparent);transition:transform .22s var(--px-ease),box-shadow .22s ease}
+.ap-next-card:hover{transform:translateY(-3px);box-shadow:0 24px 60px color-mix(in srgb,var(--ap-marigold,#a86200) 16%,transparent)}
+
+/* Tools directory */
+.ap-astro-feature{position:relative;overflow:hidden;box-shadow:0 24px 64px rgba(5,12,22,.26);transition:transform .25s var(--px-ease),box-shadow .25s ease}
+.ap-astro-feature:after{content:"";position:absolute;inset:-50% auto auto 55%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(110,168,255,.22),transparent 65%);pointer-events:none}
+.ap-astro-feature:hover{transform:translateY(-3px);box-shadow:0 30px 80px rgba(5,12,22,.34)}
+.ap-astro-orb{animation:px-orbit 8s ease-in-out infinite;box-shadow:0 0 30px rgba(216,228,255,.24)}
+.ap-tool-card{position:relative;overflow:hidden;transition:transform .2s var(--px-ease),box-shadow .2s ease,border-color .2s ease}
+.ap-tool-card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 28%,color-mix(in srgb,var(--ap-green,#176f3b) 7%,transparent),transparent 72%);transform:translateX(-120%);transition:transform .55s var(--px-ease);pointer-events:none}
+.ap-tool-card:hover{transform:translateY(-3px);box-shadow:var(--px-glow)}
+.ap-tool-card:hover:after{transform:translateX(120%)}
+.ap-tool-icon{transition:transform .22s var(--px-ease),box-shadow .22s ease}.ap-tool-card:hover .ap-tool-icon{transform:scale(1.05) rotate(-1deg);box-shadow:0 8px 20px color-mix(in srgb,var(--ap-green,#176f3b) 14%,transparent)}
+
+/* Time Machine / On This Day */
+.ap-history-card{position:relative;overflow:hidden}.ap-history-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--ap-green,#176f3b),var(--ap-marigold,#a86200));opacity:.6}
+.ap-history-card:hover{transform:translateY(-2px);box-shadow:var(--px-shadow-2)}
+.ap-history-year{font-variant-numeric:tabular-nums}
+
+/* UtilitySuite — applies to the broader 29+ public tool inventory */
+.utility-suite{position:relative}
+.utility-hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 85% 5%,color-mix(in srgb,var(--patro-accent,#73e8ff) 16%,transparent),transparent 24rem),
+  linear-gradient(135deg,color-mix(in srgb,var(--patro-accent,#73e8ff) 10%,var(--suite-surface)),var(--suite-surface))}
+.utility-hero:after{content:"";position:absolute;right:-80px;top:-120px;width:280px;height:280px;border:1px solid color-mix(in srgb,var(--patro-accent,#73e8ff) 18%,transparent);border-radius:50%;pointer-events:none}
+.utility-hero h1{letter-spacing:-.04em;text-wrap:balance}
+.utility-directory{background:
+  linear-gradient(180deg,color-mix(in srgb,var(--patro-accent,#73e8ff) 3%,var(--suite-surface)),var(--suite-surface))}
+.utility-directory-card{position:relative;overflow:hidden;box-shadow:0 8px 22px rgba(2,6,23,.05);transition:transform .2s var(--px-ease),box-shadow .2s ease,border-color .2s ease,background .2s ease}
+.utility-directory-card:after{content:"";position:absolute;inset:auto -35% -70% 45%;height:160px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--patro-accent,#73e8ff) 12%,transparent),transparent 70%);pointer-events:none}
+.utility-directory-card:hover,.utility-directory-card:focus-visible{transform:translateY(-4px);box-shadow:0 20px 48px rgba(2,6,23,.16)}
+.utility-directory-card:active{transform:translateY(-1px) scale(.99)}
+.utility-directory-icon{transition:transform .22s var(--px-ease),box-shadow .22s ease}.utility-directory-card:hover .utility-directory-icon{transform:scale(1.06);box-shadow:0 9px 24px color-mix(in srgb,var(--patro-accent,#73e8ff) 15%,transparent)}
+.utility-card:hover{border-color:color-mix(in srgb,var(--patro-accent,#73e8ff) 24%,var(--suite-border))}
+.utility-result{transition:transform .18s var(--px-ease),border-color .18s ease}.utility-result:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--patro-accent,#73e8ff) 36%,var(--suite-border))}
+.utility-field input,.utility-field select,.utility-field textarea,.utility-text-grid textarea,.qr-input-panel textarea,.qr-input-panel select{
+  transition:border-color .18s ease,box-shadow .18s ease,background .18s ease
+}
+.utility-field input:focus,.utility-field select:focus,.utility-field textarea:focus,.utility-text-grid textarea:focus,.qr-input-panel textarea:focus,.qr-input-panel select:focus{
+  border-color:color-mix(in srgb,var(--patro-accent,#73e8ff) 58%,var(--suite-border));box-shadow:0 0 0 4px color-mix(in srgb,var(--patro-accent,#73e8ff) 11%,transparent);outline:none
+}
+.utility-tool-nav{top:72px}
+
+/* Bespoke Patro tools */
+.patro-tool-page{position:relative}
+.patro-tool-hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 86% 12%,color-mix(in srgb,var(--ap-green,#176f3b) 15%,transparent),transparent 18rem),
+  linear-gradient(135deg,color-mix(in srgb,var(--ap-green-soft,#e4f1e8) 65%,var(--ap-surface,#fff)),var(--ap-surface,#fff))}
+.patro-tool-hero:before{content:"";position:absolute;right:-36px;bottom:-70px;width:190px;height:190px;border-radius:50%;border:1px solid color-mix(in srgb,var(--ap-green,#176f3b) 18%,transparent);pointer-events:none}
+.patro-tool-hero h1{letter-spacing:-.035em;text-wrap:balance}
+.patro-tool-card{background:color-mix(in srgb,var(--ap-surface,#fff) 96%,transparent)}
+.patro-tool-card:hover{border-color:color-mix(in srgb,var(--ap-green,#176f3b) 24%,rgba(127,127,127,.2));box-shadow:var(--px-shadow-2)}
+.tool-primary-button,.tool-secondary-button,.tool-link-button,.tool-read-button{transition:transform .16s var(--px-ease),box-shadow .16s ease,filter .16s ease}
+.tool-primary-button:hover,.tool-secondary-button:hover,.tool-link-button:hover,.tool-read-button:hover{transform:translateY(-1px)}
+.tool-primary-button:hover{box-shadow:0 10px 24px color-mix(in srgb,#176f3b 24%,transparent);filter:saturate(1.06)}
+.tool-primary-button:active,.tool-secondary-button:active,.tool-link-button:active,.tool-read-button:active{transform:translateY(0) scale(.98)}
+.tool-form-grid input:focus,.tool-form-grid select:focus,.tool-block-label textarea:focus,.tool-feed input:focus,.tool-inline-unlock input:focus,.bot-input input:focus{border-color:color-mix(in srgb,var(--ap-green,#176f3b) 55%,rgba(127,127,127,.28));box-shadow:0 0 0 4px color-mix(in srgb,var(--ap-green,#176f3b) 10%,transparent);outline:none}
+.tool-preview,.tool-verdict,.tool-open-letter{border:1px solid color-mix(in srgb,var(--ap-green,#176f3b) 12%,rgba(127,127,127,.15))}
+
+/* Media: make playback surfaces feel intentional while retaining current logic */
+.media-hero,.jyotish-hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 88% 8%,color-mix(in srgb,var(--patro-accent,#73e8ff) 17%,transparent),transparent 22rem),
+  linear-gradient(135deg,color-mix(in srgb,var(--patro-accent,#73e8ff) 10%,var(--suite-surface)),var(--suite-surface))}
+.station-card{transition:transform .2s var(--px-ease),box-shadow .2s ease,border-color .2s ease}.station-card:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(2,6,23,.18);border-color:color-mix(in srgb,var(--patro-accent,#73e8ff) 36%,var(--suite-border))}
+.station-badge{transition:transform .2s var(--px-ease)}.station-card:hover .station-badge{transform:scale(1.05)}
+.tv-stage{box-shadow:0 28px 80px rgba(0,0,0,.34)}
+.tv-overlay{box-shadow:0 12px 36px rgba(0,0,0,.25)}
+.global-media-player{box-shadow:0 26px 90px rgba(2,6,23,.55)}
+.media-filters button{transition:transform .15s var(--px-ease),background .15s ease}.media-filters button:hover{transform:translateY(-1px)}
+
+/* Community Suite */
+.community-control-page{position:relative}
+.community-control-card{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 90% 5%,rgba(121,200,255,.11),transparent 20rem),
+  color-mix(in srgb,var(--surface,#101827) 96%,transparent)}
+.community-check,.community-home-grid>a{transition:transform .18s var(--px-ease),border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.community-check:hover,.community-home-grid>a:hover{transform:translateY(-2px);border-color:rgba(121,200,255,.42);box-shadow:0 14px 32px rgba(2,6,23,.15)}
+.community-button{transition:transform .16s var(--px-ease),box-shadow .16s ease}.community-button:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(121,200,255,.16)}
+
+/* Loading / empty states */
+.ap-state,.media-empty{position:relative;overflow:hidden}.ap-state:before,.media-empty:before{content:"";display:block;width:34px;height:3px;border-radius:999px;margin:0 auto 14px;background:linear-gradient(90deg,transparent,var(--ap-green,#176f3b),transparent);animation:px-loading 1.25s ease-in-out infinite}
+.ap-error:before{background:linear-gradient(90deg,transparent,var(--ap-red,#c0182f),transparent)}
+
+/* Accessibility and performance */
+@media(hover:none){.ap-tool-card:hover,.utility-directory-card:hover,.station-card:hover,.ap-day:hover,.ap-history-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+@media(max-width:700px){
+  .utility-tool-nav{top:62px}
+  .ap-page-title,.ap-today-card,.ap-calendar-card,.ap-tool-section,.utility-hero,.utility-directory,.utility-card,.media-hero,.jyotish-hero,.patro-tool-hero,.patro-tool-card{box-shadow:0 9px 28px rgba(15,23,42,.08)}
+  .ap-page-title:after,.patro-tool-hero:before,.utility-hero:after{opacity:.55}
+}
+
+@keyframes px-pop{from{opacity:0;transform:translateY(-5px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes px-orbit{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(3deg)}}
+@keyframes px-loading{0%,100%{opacity:.25;transform:scaleX(.55)}50%{opacity:1;transform:scaleX(1)}}
