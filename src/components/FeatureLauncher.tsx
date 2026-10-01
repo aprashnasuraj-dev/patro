@@ -28,8 +28,17 @@ const ITEMS:LaunchItem[]=[
  {href:"/tools/voice-typing",ne:"आवाजबाट नेपाली टाइपिङ",en:"Voice typing",group:"भाषा · Language",keywords:"voice speech typing बोलि आवाज",mark:"◉"},
  {href:"/tools/ocr",ne:"नेपाली OCR",en:"Nepali OCR",group:"भाषा · Language",keywords:"ocr image text scan फोटो अक्षर",mark:"OCR"},
  {href:"/tools/read-aloud",ne:"पढेर सुनाउनुहोस्",en:"Read aloud",group:"भाषा · Language",keywords:"tts speak read aloud सुनाउनुहोस्",mark:"🔊"},
- {href:"/tools/bstoad",ne:"वि.सं. → ई.सं.",en:"BS → AD",group:"उपकरण · Tools",keywords:"bs ad converter bikram sambat",mark:"वि"},
- {href:"/tools/adtobs",ne:"ई.सं. → वि.सं.",en:"AD → BS",group:"उपकरण · Tools",keywords:"ad bs converter gregorian",mark:"AD"},
+ {href:"/tools/bstoad",ne:"वि.सं. → ई.सं.",en:"BS → AD",group:"मिति · Date tools",keywords:"bs ad converter bikram sambat",mark:"वि"},
+ {href:"/tools/adtobs",ne:"ई.सं. → वि.सं.",en:"AD → BS",group:"मिति · Date tools",keywords:"ad bs converter gregorian",mark:"AD"},
+ {href:"/tools/calc",ne:"दिन गणना",en:"Date calculator",group:"मिति · Date tools",keywords:"days between dates add subtract date calculator दिन गणना",mark:"±"},
+ {href:"/tools/age",ne:"उमेर गणक",en:"Age calculator",group:"मिति · Date tools",keywords:"age birthday years months days उमेर जन्मदिन",mark:"उ"},
+ {href:"/tools/clock",ne:"विश्व घडी",en:"World clock",group:"मिति · Date tools",keywords:"world clock timezone kathmandu tokyo time घडी समय",mark:"◷"},
+ {href:"/tools/forex",ne:"विदेशी मुद्रा",en:"Forex rates",group:"पैसा · Money",keywords:"forex currency nrb exchange rate विदेशी मुद्रा",mark:"$"},
+ {href:"/tools/gold",ne:"सुनचाँदी हिसाब",en:"Gold calculator",group:"पैसा · Money",keywords:"gold silver tola gram jewellery सुन चाँदी",mark:"Au"},
+ {href:"/tools/emi",ne:"कर्जा EMI",en:"Loan EMI calculator",group:"पैसा · Money",keywords:"loan emi interest repayment कर्जा ब्याज",mark:"EMI"},
+ {href:"/tools/vat",ne:"भ्याट र प्रतिशत",en:"VAT & percentage",group:"पैसा · Money",keywords:"vat percentage percent change भ्याट प्रतिशत",mark:"%"},
+ {href:"/tools/units",ne:"नेपाली नाप–तौल",en:"Traditional units",group:"नाप · Measures",keywords:"tola lal mana pathi muri haat units नाप तौल",mark:"नाप"},
+ {href:"/tools/words",ne:"अंकलाई शब्दमा",en:"Amount in words",group:"भाषा · Language",keywords:"amount words cheque lakh crore अंक शब्द",mark:"अ"},
  {href:"/tools/landconverter",ne:"जग्गा नाप रूपान्तरण",en:"Nepali land converter",group:"उपकरण · Tools",keywords:"ropani aana paisa dam bigha kattha dhur जग्गा",mark:"रो"},
  {href:"/tools/incometax",ne:"आयकर गणक",en:"Income tax",group:"उपकरण · Tools",keywords:"tax salary nepal आयकर कर",mark:"रु"},
  {href:"/tools/nepaliqr",ne:"नेपाली QR",en:"QR generator",group:"उपकरण · Tools",keywords:"qr code generator नेपाली",mark:"QR"},
@@ -51,6 +60,6 @@ export function FeatureLauncher(){
  const[query,setQuery]=useState("");
  useEffect(()=>{const onKey=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();setOpen(value=>!value);return}if(event.key==="/"&&!isTypingTarget(event.target)&&!event.ctrlKey&&!event.metaKey&&!event.altKey){event.preventDefault();setOpen(true);return}if(event.key==="Escape")setOpen(false)};window.addEventListener("keydown",onKey);return()=>window.removeEventListener("keydown",onKey)},[]);
  useEffect(()=>{if(!open)setQuery("")},[open]);
- const results=useMemo(()=>{const needle=query.trim().toLocaleLowerCase();if(!needle)return ITEMS.slice(0,14);return ITEMS.filter(item=>`${item.ne} ${item.en} ${item.group} ${item.keywords}`.toLocaleLowerCase().includes(needle)).slice(0,20)},[query]);
+ const results=useMemo(()=>{const needle=query.trim().toLocaleLowerCase();if(!needle)return ITEMS.slice(0,14);return ITEMS.filter(item=>`${item.ne} ${item.en} ${item.group} ${item.keywords}`.toLocaleLowerCase().includes(needle)).slice(0,24)},[query]);
  return <><button className="ap-feature-launcher-button" type="button" onClick={()=>setOpen(true)} aria-haspopup="dialog" aria-label="सबै सुविधा खोज्नुहोस् · Search all features"><span aria-hidden="true">⌕</span><strong>खोज</strong><kbd>⌘K</kbd></button>{open?<div className="ap-launcher-backdrop" role="presentation" onMouseDown={()=>setOpen(false)}><section className="ap-launcher" role="dialog" aria-modal="true" aria-label="आफ्नै पात्रो सुविधा खोज" onMouseDown={event=>event.stopPropagation()}><header className="ap-launcher-search"><span aria-hidden="true">⌕</span><input autoFocus value={query} onChange={event=>setQuery(event.target.value)} placeholder="पात्रो, तिथि, रेडियो, OCR…" aria-label="सुविधा खोज्नुहोस्"/><button type="button" onClick={()=>setOpen(false)} aria-label="बन्द गर्नुहोस्">×</button></header><div className="ap-launcher-hint"><span>सबै सुविधा एउटै ठाउँमा</span><small>नाम, category वा काम लेख्नुहोस् · Type a tool, category or task</small></div><div className="ap-launcher-results">{results.length?results.map(item=><a key={item.href} href={item.href} className="ap-launcher-item"><span className="ap-launcher-orb" aria-hidden="true">{item.mark}</span><span><small>{item.group}</small><strong>{item.ne}</strong><em>{item.en}</em></span><b aria-hidden="true">→</b></a>):<div className="ap-launcher-empty"><strong>मिल्ने सुविधा भेटिएन</strong><span>अर्को शब्द प्रयोग गर्नुहोस् वा सबै उपकरण खोल्नुहोस्।</span><a href="/tools">सबै उपकरण</a></div>}</div><footer><span>छिटो खोल्न <kbd>Ctrl/⌘ K</kbd> वा <kbd>/</kbd></span><a href="/tools">सबै उपकरण हेर्नुहोस् →</a></footer></section></div>:null}</>
 }
