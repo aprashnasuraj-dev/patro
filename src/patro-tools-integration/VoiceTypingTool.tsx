@@ -10,7 +10,7 @@ export function VoiceTypingTool() {
   });
 
   return (
-    <ToolPage title="आवाजबाट नेपाली टाइपिङ" description="Chrome/Edge को Nepali speech recognition प्रयोग गरेर बोलाइलाई Unicode नेपाली पाठमा बदल्नुहोस्। Mero Patro ले audio upload गर्दैन।">
+    <ToolPage title="आफ्नै बोली टाइपिङ" description="Chrome/Edge को Nepali speech recognition प्रयोग गरेर बोलाइलाई Unicode नेपाली पाठमा बदल्नुहोस्। आफ्नै पात्रोले audio upload गर्दैन।">
       <section className="patro-tool-card">
         <div className="tool-action-row">
           <span className="tool-badge">{dictation.mode === "browser" ? "Browser speech · ne-NP" : "यो browser मा उपलब्ध छैन"}</span>
@@ -24,12 +24,12 @@ export function VoiceTypingTool() {
         <div className="tool-action-row">
           <button type="button" className="tool-secondary-button" onClick={() => navigator.clipboard?.writeText(text)} disabled={!text}>कपी</button>
           <button type="button" className="tool-link-button" onClick={() => setText("")} disabled={!text}>खाली गर्नुहोस्</button>
-          <a className="tool-link-button" href="/tools/spell-check">हिज्जे जाँच →</a>
+          <a className="tool-link-button" href="/tools/spell-check">आफ्नै हिज्जे जाँच →</a>
         </div>
       </section>
       <ToolResult title="टाइप भएको पाठ" speechText={text}>
         <p className="tool-preview">{text || "अहिलेसम्म पाठ छैन।"}</p>
-        <p className="tool-muted">Speech recognition browser/OS सेवा हुन सक्छ; audio Mero Patro Supabase मा पठाइँदैन। Paid Google/Azure fallback key नभएकाले UI मा देखाइएको छैन।</p>
+        <p className="tool-muted">Speech recognition browser/OS सेवा हुन सक्छ; audio आफ्नै पात्रो Supabase मा पठाइँदैन। Paid Google/Azure fallback key नभएकाले UI मा देखाइएको छैन।</p>
       </ToolResult>
     </ToolPage>
   );
