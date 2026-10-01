@@ -1,8 +1,10 @@
 import productionWorker from "./entry";
+import { rewriteConnectedSeo } from "./connected-seo";
 
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = Record<string, unknown> & {
   SUPABASE_COMPAT_ORIGIN?: string;
+  PUBLIC_SITE_URL?: string;
   ASSETS?: AssetBinding;
 };
 
@@ -16,6 +18,8 @@ const SPA_EXACT = new Set([
   "/settings/notifications", "/settings/holidays", "/my-data", "/card", "/tithi", "/diaspora",
   "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/explore"
 ]);
+const PRIVATE_SPA_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin"];
+const PRIVATE_TOOL_PATHS = new Set(["/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
 
 function cleanPath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
@@ -32,6 +36,10 @@ function isSpaPath(pathname: string) {
     || path.startsWith("/jyotish/");
 }
 
+function isPrivateSpaPath(path: string) {
+  return PRIVATE_TOOL_PATHS.has(path) || PRIVATE_SPA_PREFIXES.some((prefix) => path === prefix || path.startsWith(prefix + "/"));
+}
+
 function secureSpaResponse(request: Request, response: Response) {
   const headers = new Headers(response.headers);
   headers.set("x-content-type-options", "nosniff");
@@ -41,7 +49,7 @@ function secureSpaResponse(request: Request, response: Response) {
   headers.set("x-dns-prefetch-control", "off");
   headers.set("x-patro-shell", "root-spa");
   const path = cleanPath(new URL(request.url).pathname);
-  if (path === "/me" || path.startsWith("/me/")) {
+  if (isPrivateSpaPath(path)) {
     headers.set("x-robots-tag", "noindex, nofollow");
     headers.set("cache-control", "private, no-store, max-age=0");
   }
@@ -59,7 +67,8 @@ async function rootSpaResponse(request: Request, env: Env) {
   const assetRequest = new Request(url.toString(), request);
   const response = await env.ASSETS.fetch(assetRequest);
   if (!response.ok) return null;
-  return secureSpaResponse(request, response);
+  const seoResponse = rewriteConnectedSeo(request, response, env);
+  return secureSpaResponse(request, seoResponse);
 }
 
 function compatSuffix(pathname: string) {
