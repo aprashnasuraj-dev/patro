@@ -93,6 +93,7 @@ editor.addEventListener('keydown',e=>{
  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();historyStep(true);return;}
  if(e.key==='Escape'){hideSuggestions();return;}
  if(items.length&&['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();active=(active+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;renderSuggestions();return;}
+ if(e.key==='Tab'&&items.length&&commit(active,'')){e.preventDefault();return;}
  if(e.key==='Enter'&&boundary('\n'))e.preventDefault();
 });
 function historyStep(forward){const from=forward?redo:undo,to=forward?undo:redo;if(!from.length)return;to.push(editor.value);editor.value=from.pop();counts();save();hideSuggestions();editor.focus();}
