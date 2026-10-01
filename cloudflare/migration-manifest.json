@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "snapshot_date": "2026-09-30",
   "branch": "main",
   "historical_source_branch": "cloudflare-migration",
@@ -114,24 +114,26 @@
     "remaining_inventory": "cloudflare/remaining-cutover.json",
     "safe_to_delete_supabase": false,
     "safe_to_delete_vercel": false,
-    "compatibility_scope": [
-      "tv",
-      "fm",
-      "samachar"
-    ],
+    "compatibility_scope": ["tv", "fm", "samachar"],
     "rule": "Deletion is allowed only after remaining-cutover.json gates are satisfied and production parity is observed."
   },
   "seo": {
     "generator": "scripts/generate-seo.mjs",
     "canonical_host_env": "PUBLIC_SITE_URL",
     "canonical_host": "https://aafnaipatro.com",
+    "canonical_public_tool_count": 29,
     "outputs": [
       "public/robots.txt",
       "public/sitemap.xml",
+      "public/sitemap-pages.xml",
+      "public/sitemap-tools.xml",
+      "public/sitemap-community.xml",
+      "public/sitemap-calendar.xml",
       "public/seo-manifest.json",
       "public/llms.txt"
     ],
-    "edge_metadata": "worker/index.ts HTMLRewriter",
+    "edge_metadata": "worker/connected-seo.ts via worker/connected-entry.ts HTMLRewriter",
+    "client_metadata": "src/components/AppChrome.tsx",
     "lighthouse_workflow": ".github/workflows/seo-audit.yml"
   }
 }
