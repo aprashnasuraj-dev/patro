@@ -102,11 +102,11 @@ test("personal frontend sync uses same-origin account APIs, not bearer tokens",(
 });
 
 test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal without NEPSE polling",()=>{
-  const jobs=read("worker/jobs.ts"),worker=read("worker/index.ts"),wrangler=read("wrangler.jsonc");
+  const jobs=read("worker/jobs.ts"),entry=read("worker/entry.ts"),wrangler=read("wrangler.jsonc");
   for(const endpoint of ["/api/cron/push","/api/cron/revalidate","/api/v1/cron/rashifal"])assert.ok(jobs.includes(endpoint),endpoint);
   for(const cron of ["*/5 * * * *","43 2 * * *","11 3 * * *"])assert.ok(wrangler.includes(cron),cron);
   assert.ok(!wrangler.includes("17 0,6,12,18 * * *"),"NEPSE/market polling cron must stay removed");
-  assert.ok(worker.includes("runScheduled(controller.cron,env)"));
+  assert.ok(entry.includes("runScheduled(controller.cron,env)"));
 });
 
 test("secret manifest no longer requires Supabase and declares native identity/push/admin dependencies",()=>{
