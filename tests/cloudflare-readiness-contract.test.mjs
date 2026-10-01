@@ -65,6 +65,16 @@ test("migration handoff documents exist", async () => {
   }
 });
 
+test("production Worker owns the canonical custom domain and does not require preview URLs", async () => {
+  const config = await json("wrangler.jsonc");
+  assert.equal(config.name, "patro");
+  assert.equal(config.main, "worker/connected-entry.ts");
+  assert.equal(config.preview_urls, false, "production deploy must not depend on Worker preview creation");
+  const route = (config.routes || []).find((entry) => entry.pattern === "aafnaipatro.com");
+  assert.ok(route, "canonical production custom-domain route is missing");
+  assert.equal(route.custom_domain, true);
+});
+
 test("Pages configuration keeps the internal API service binding", async () => {
   const config = await json("wrangler.pages.jsonc");
   assert.equal(config.pages_build_output_dir, "./dist");
