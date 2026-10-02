@@ -9,19 +9,19 @@ test("Phase 0 inventory is executable and external accuracy is not falsely claim
   const doc=read("docs/DATASET_DISCOVERY.md");
   const expected=JSON.parse(read("cloudflare/d1/expected-public-counts.json"));
   const discovery=read("scripts/dataset-discovery.mjs");
-  const reference=read("scripts/verify-calendar-reference.mjs");
   const pkg=JSON.parse(read("package.json"));
   assert.equal(expected.tables.astronomy_calendar_map,77070);
   assert.equal(expected.critical_features.main_calendar.first_ad_date,"1826-04-11");
   assert.equal(expected.critical_features.main_calendar.last_ad_date,"2037-04-13");
   assert.ok(doc.includes("77,070 rows"));
-  assert.ok(doc.includes("200 deterministic random dates"));
+  assert.ok(doc.includes("200 independently obtained mappings"));
   assert.ok(doc.includes("must not claim that the external 200-date accuracy audit is complete"));
-  assert.ok(existsSync(url("scripts/verify-calendar-reference.mjs")));
   assert.ok(discovery.includes("getDatasetInventory"));
   for(const fn of ["getDay","getDayByAd","getMonth","getYear","getFestivals","getFestival","getSait","getHolidays","convertBsToAd","convertAdToBs","getTodayNepal","getTithiAt"]) assert.ok(discovery.includes(fn),fn);
-  assert.ok(reference.includes("2075")&&reference.includes("2085"));
-  assert.ok(reference.includes("slice(0,200)"));
+  assert.ok(discovery.includes("2075")&&discovery.includes("2085"));
+  assert.ok(discovery.includes("deterministicIndexes(candidates.length,200)"));
+  assert.ok(discovery.includes("SEO_EXTERNAL_REFERENCE_JSON"));
+  assert.ok(discovery.includes("SEO_REQUIRE_EXTERNAL_REFERENCE"));
   assert.equal(pkg.scripts["seo:phase0"],"node scripts/dataset-discovery.mjs");
   assert.ok(pkg.scripts["cloudflare:production-check"].startsWith("npm run seo:phase0 &&"));
 });
@@ -96,9 +96,9 @@ test("Nepal-midnight cache purge is scheduled in both Cloudflare configs",()=>{
 });
 
 test("post-deploy crawler harness checks the four required bot perspectives and MCP",()=>{
-  const smoke=read("scripts/verify-agent-bots.mjs");
+  const smoke=read("scripts/verify-seo-bots.mjs");
   for(const agent of ["Googlebot","OAI-SearchBot","PerplexityBot","Claude-SearchBot"]) assert.ok(smoke.includes(agent),agent);
-  assert.ok(smoke.includes('rel=\\"canonical\\" href=\\"'));
+  assert.ok(smoke.includes('canonical!==origin+"/today"'));
   assert.ok(smoke.includes("MCP-Protocol-Version"));
   assert.ok(smoke.includes("Mcp-Method"));
   assert.ok(smoke.includes("2026-07-28"));
