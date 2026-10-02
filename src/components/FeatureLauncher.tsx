@@ -45,10 +45,10 @@ const ITEMS:LaunchItem[]=[
  {href:"/tools/fuelprice",ne:"इन्धन मूल्य",en:"Fuel prices",group:"उपकरण · Tools",keywords:"noc fuel petrol diesel इन्धन",mark:"⛽"},
  {href:"/tools/tithi-reminder",ne:"तिथि रिमाइन्डर",en:"Tithi reminder",group:"विशेष · Featured",keywords:"tithi reminder shraddha birthday तिथि श्राद्ध",mark:"त"},
  {href:"/tools/sait",ne:"साइत · शुभ समय",en:"Sait · Auspicious time",group:"विशेष · Featured",keywords:"sait auspicious शुभ साइत विवाह",mark:"शु"},
- {href:"/tools/baby-names",ne:"नक्षत्र अनुसार बच्चाको नाम",en:"Baby names",group:"विशेष · Featured",keywords:"baby names nakshatra नक्षत्र नाम",mark:"ना"},
+ {href:"/tools/baby-names",ne:"नक्षत्र अनुसार बच्चाको नाम",en:"Baby names",group:"विशेष · Featured",keywords:"baby names nakshatra pada initials नक्षत्र पद नाम",mark:"ना"},
  {href:"/tools/janmadin-akhbar",ne:"जन्मदिन अखबार",en:"Birthday newspaper",group:"विशेष · Featured",keywords:"birthday newspaper history जन्मदिन अखबार",mark:"📰"},
- {href:"/tools/future-letter",ne:"भविष्यको चिठी",en:"Future letter",group:"विशेष · Featured",keywords:"future letter private चिठी भविष्य",mark:"✉"},
- {href:"/tools/name-check",ne:"नाम जाँच",en:"Name check",group:"विशेष · Featured",keywords:"name nakshatra initials नाम जाँच",mark:"नाम"},
+ {href:"/tools/future-letter",ne:"भविष्यको चिठी",en:"Future letter",group:"विशेष · Featured",keywords:"future letter private encrypted चिठी भविष्य",mark:"✉"},
+ {href:"/tools/name-check",ne:"कागजात नाम जाँच",en:"Document name check",group:"भाषा · Language",keywords:"name document citizenship passport kyc transliteration spelling नाम नागरिकता राहदानी KYC",mark:"नाम"},
  {href:"/tools/patro-bot",ne:"पात्रो बोट",en:"Patro Bot",group:"विशेष · Featured",keywords:"bot assistant calendar प्रश्न पात्रो",mark:"Bot"},
  {href:"/developers",ne:"डेभलपर / API",en:"Developers · API",group:"डेभलपर · Developers",keywords:"api developer integration docs",mark:"</>"}
 ];
