@@ -1,5 +1,6 @@
 import productionWorker from "./entry";
 import { rewriteConnectedSeo } from "./connected-seo";
+import { handleAgentSurface } from "./agent-gateway";
 
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = Record<string, unknown> & {
@@ -11,7 +12,7 @@ type Env = Record<string, unknown> & {
 const COMPAT_PREFIX = "/api/v1/compat-api/";
 const ALLOWED_COMPAT_ROOTS = new Set(["tv", "fm", "samachar"]);
 const SPA_EXACT = new Set([
-  "/", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
   "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
   "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
@@ -34,6 +35,11 @@ function isSpaPath(pathname: string) {
   return SPA_EXACT.has(path)
     || path.startsWith("/calendar/")
     || path.startsWith("/date/")
+    || path.startsWith("/countdown/")
+    || path.startsWith("/panchang/")
+    || path.startsWith("/festivals/")
+    || path.startsWith("/sait/")
+    || path.startsWith("/widget/")
     || path.startsWith("/me/")
     || path.startsWith("/tools/")
     || path.startsWith("/jyotish/");
@@ -75,8 +81,6 @@ async function htmlAssetResponse(request: Request, env: Env, assetPath: string, 
   const type = response.headers.get("content-type") || "";
   if (!type.toLowerCase().includes("text/html")) return null;
 
-  // A build-time prerender has richer factual metadata/body than the generic runtime rewriter.
-  // Preserve it exactly; use connected-seo only as the compatibility fallback for old/unrendered shells.
   if (preferPrerender && request.method === "GET") {
     const text = await response.clone().text();
     if (text.includes(PRERENDER_MARKER)) return secureSpaResponse(request, response, "build-prerender");
@@ -116,30 +120,20 @@ function compatSuffix(pathname: string) {
 
 async function compatibilityResponse(request: Request, env: Env, suffix: string) {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
-
   const origin = String(env.SUPABASE_COMPAT_ORIGIN || "").replace(/\/+$/, "");
   if (!origin) return null;
-
   const incoming = new URL(request.url);
   const target = new URL(origin + suffix);
   target.search = incoming.search;
-
   try {
     const upstream = await fetch(new Request(target.toString(), request));
     if (!upstream.ok) return null;
-
     const headers = new Headers(upstream.headers);
     headers.set("x-patro-backend", "supabase-selective-compat");
     headers.set("x-patro-compat-route", suffix.split("?")[0]);
     headers.set("x-robots-tag", "noindex, nofollow");
-    return new Response(request.method === "HEAD" ? null : upstream.body, {
-      status: upstream.status,
-      statusText: upstream.statusText,
-      headers,
-    });
-  } catch {
-    return null;
-  }
+    return new Response(request.method === "HEAD" ? null : upstream.body, {status: upstream.status,statusText: upstream.statusText,headers});
+  } catch { return null; }
 }
 
 async function normalizePublicApiBrand(pathname: string, response: Response) {
@@ -152,13 +146,11 @@ async function normalizePublicApiBrand(pathname: string, response: Response) {
     headers.set("content-type", "application/json; charset=utf-8");
     headers.set("x-robots-tag", "noindex, nofollow");
     return new Response(JSON.stringify(payload), { status: response.status, statusText: response.statusText, headers });
-  } catch {
-    return response;
-  }
+  } catch { return response; }
 }
 
 function protectMachineSurface(pathname: string, response: Response) {
-  if (!pathname.startsWith("/api/") && !pathname.startsWith("/compat-api/")) return response;
+  if (!pathname.startsWith("/api/") && !pathname.startsWith("/compat-api/") && pathname!=="/mcp") return response;
   const headers = new Headers(response.headers);
   headers.set("x-robots-tag", "noindex, nofollow");
   headers.set("x-content-type-options", "nosniff");
@@ -169,6 +161,9 @@ export default {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
+
+    const agent = await handleAgentSurface(request, env, ctx, (req,e,c)=>productionWorker.fetch(req,e as any,c));
+    if (agent) return protectMachineSurface(pathname, agent);
 
     if (isSpaPath(pathname)) {
       const exact = await exactSpaAssetResponse(request, env);
@@ -184,7 +179,6 @@ export default {
 
     const suffix = compatSuffix(pathname);
     if (!suffix) return rewriteConnectedSeo(request, response, env);
-
     return (await compatibilityResponse(request, env, suffix)) || rewriteConnectedSeo(request, response, env);
   },
 };
