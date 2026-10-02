@@ -38,7 +38,7 @@
     "CALENDAR_SOURCE_VERSION": "patro-archive-v79"
   },
   "triggers": {
-    "crons": ["*/5 * * * *", "43 2 * * *", "11 3 * * *"]
+    "crons": ["*/5 * * * *", "43 2 * * *", "11 3 * * *", "15 18 * * *"]
   },
   "observability": {
     "enabled": true
