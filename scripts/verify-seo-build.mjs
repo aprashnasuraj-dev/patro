@@ -110,13 +110,12 @@ const gateway = await read("worker/agent-gateway.ts");
 const mcp = await read("worker/mcp.ts");
 const jobs = await read("worker/jobs.ts");
 const jsonc = await read("wrangler.jsonc");
-const toml = await read("wrangler.toml");
 expect(entry.includes('import { handleAgentSurface } from "./agent-gateway"'), "production Worker does not wire agent gateway");
 expect(gateway.includes("mcpResponse(request, env)"), "agent gateway does not wire MCP");
 expect(gateway.includes('url.pathname === "/api/agent/v1/sait"'), "agent gateway sourced sait endpoint missing");
 expect(mcp.includes('const MODERN = "2026-07-28"'), "MCP modern protocol version missing");
 expect(mcp.includes("createPatroAdapter(createD1PatroSource(env))"), "MCP must use canonical Patro adapter");
 expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
-expect(jsonc.includes('"15 18 * * *"') && toml.includes('"15 18 * * *"'), "Nepal-midnight cron missing from Cloudflare config");
+expect(jsonc.includes('"15 18 * * *"'), "Nepal-midnight cron missing from canonical Cloudflare config");
 
 console.log(`SEO/agent build verified: ${manifest.indexed_route_count} indexable routes, ${manifest.indexed_day_route_count} factual day pages; sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);

@@ -61,7 +61,7 @@ jobs:
           npm run test:patro-tools
           npm run test:community
           npm run test:full-product
-      - name: Cloudflare Worker contracts and clean-import dry-run
+      - name: Cloudflare Worker contracts and dry-run
         id: cloudflare
         continue-on-error: true
         run: |
@@ -85,7 +85,7 @@ jobs:
             throw new Error(`Supabase compatibility roots must be exactly ${expected.join(", ")}; got ${roots.join(", ")}`);
           }
           NODE
-          ! grep -q 'SUPABASE_PROTECTED_ORIGIN' wrangler.jsonc wrangler.toml worker/connected-entry.ts
+          ! grep -q 'SUPABASE_PROTECTED_ORIGIN' wrangler.jsonc worker/connected-entry.ts
           ! grep -q '"miti_rashifal_publications"' cloudflare/d1/expected-public-counts.json
           ! grep -q '"market_snapshots"' cloudflare/d1/expected-public-counts.json
           grep -q '"time_machine_moments": 706' cloudflare/d1/expected-public-counts.json

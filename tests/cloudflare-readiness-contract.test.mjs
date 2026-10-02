@@ -27,3 +27,18 @@ test("KV remains optional for first deploy",async()=>{
   const config=await json("wrangler.jsonc");
   assert.ok(config.kv_namespaces===undefined||Array.isArray(config.kv_namespaces));
 });
+
+test("Cloudflare Git deploy is direct Wrangler with one config source",async()=>{
+  const pkg=await json("package.json");
+  assert.equal(pkg.scripts?.["deploy:cloudflare"],"wrangler deploy --config wrangler.jsonc");
+  assert.equal(pkg.cloudflare?.build_command,"npm run build");
+  assert.equal(pkg.cloudflare?.deploy_command,"npx wrangler deploy --config wrangler.jsonc");
+  assert.equal(pkg.cloudflare?.config,"wrangler.jsonc");
+});
+
+test("legacy Pages and deploy-wrapper artifacts are absent",async()=>{
+  const obsolete=["_routes.json","public/_routes.json","wrangler.toml","scripts/deploy-cloudflare.mjs"];
+  for(const relative of obsolete){
+    await assert.rejects(access(path.join(root,relative)),(error)=>error?.code==="ENOENT",`${relative} must not exist`);
+  }
+});

@@ -1,24 +1,41 @@
 # Cloudflare Worker secrets. Copy to .dev.vars for local development only.
 # Never commit .dev.vars. Production values belong in Cloudflare Workers Secrets.
 #
-# Exact Supabase secret names preserved for migration (case-sensitive):
-Groq_API=
-nvidia_api=
-SUPABASE_ANON_KEY=
-SUPABASE_DB_URL=
-SUPABASE_SERVICE_ROLE_KEY=
-SUPABASE_URL=
-TV_RELAY_SECRET=
+# Core calendar, conversion, Community, Time Machine, On This Day and native/bundle
+# Rashifal need no runtime secret beyond the committed bindings/non-secret vars.
 
-# Additional Patro runtime secrets used by Cloudflare-native modules:
-NASA_API_KEY=
+# Media relay signing: configure at least one for signed FM/radio playback.
+TV_RELAY_SECRET=
 RADIO_RELAY_SECRET=
 
-# Optional aliases supported by the Worker, but not required if the exact names above are set:
+# Optional AI Jyotish providers: configure at least one provider key to enable AI chat.
+Groq_API=
 GROQ_API_KEY=
 GROQ_KEY=
 GROQ_MODEL=
+nvidia_api=
 NVIDIA_NIM_API_KEY=
 NVIDIA_API_KEY=
 NGC_API_KEY=
 NVIDIA_MODEL=
+
+# Optional account/private-state features.
+GOOGLE_CLIENT_ID=
+
+# Optional browser push.
+VAPID_PUBLIC_KEY=
+VAPID_PRIVATE_KEY=
+VAPID_SUBJECT=
+
+# Optional admin authorization. Configure subject IDs preferably; verified emails are fallback.
+ADMIN_GOOGLE_SUBJECTS=
+ADMIN_EMAILS=
+
+# Optional enhancements/operator endpoints.
+NASA_API_KEY=
+CRON_SECRET=
+RASHIFAL_SERVICE_TOKEN=
+
+# Direct Supabase URL/anon/service-role/database credentials are intentionally not part of
+# the Worker secret contract. Selective TV/FM/Samachar compatibility uses the non-secret
+# SUPABASE_COMPAT_ORIGIN declared in wrangler.jsonc.
