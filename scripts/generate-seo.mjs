@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import {
   SITE, CURRENT_BS_YEAR, CORE_INDEX_ROUTES, TOOL_ROUTES, COMMUNITY_ROUTES,
   NOINDEX_PUBLIC_ROUTES, PRIVATE_PREFIXES, INDEXED_CALENDAR_YEARS,
-  calendarRoutes, unique
+  calendarYearRoutes, calendarRoutes, unique
 } from "./seo-config.mjs";
 import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
 
@@ -38,12 +38,15 @@ for (const year of INDEXED_CALENDAR_YEARS) {
   if (!(dayRoutesByBsYear.get(year)?.length >= 350)) throw new Error(`SEO day-page coverage is incomplete for BS ${year}`);
 }
 
-const discoveryCoreRoutes = unique([...CORE_INDEX_ROUTES, "/today", "/methodology", "/corrections"]);
+const discoveryCoreRoutes = unique(CORE_INDEX_ROUTES);
 const sitemapFiles = [
   ["sitemap-pages.xml", discoveryCoreRoutes],
   ["sitemap-tools.xml", TOOL_ROUTES],
   ["sitemap-community.xml", COMMUNITY_ROUTES],
-  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-calendar-${year}.xml`, calendarRoutes([year])]),
+  ...INDEXED_CALENDAR_YEARS.map((year) => [
+    `sitemap-calendar-${year}.xml`,
+    [...calendarYearRoutes([year]), ...calendarRoutes([year])]
+  ]),
   ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-days-${year}.xml`, dayRoutesByBsYear.get(year)])
 ];
 const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
@@ -100,7 +103,7 @@ const llms = [
   `- Full RAG-oriented URL corpus: ${SITE}/llms-full.txt`,
   "",
   "## Calendar archive",
-  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12; factual day pages are listed in sitemap-days-${year}.xml.`),
+  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}; month pages ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12; factual day pages are listed in sitemap-days-${year}.xml.`),
   "",
   "## Citation and indexing notes",
   "- Prefer the canonical public page over private/account endpoints.",
@@ -111,11 +114,12 @@ const llms = [
 ].join("\n");
 
 const llmsFullLines = [
-  `# Aafnai Patro full retrieval corpus`,
+  "# Aafnai Patro full retrieval corpus",
   `# ${citation}`,
   ...CORE_INDEX_ROUTES.map((path) => `${SITE}${path === "/" ? "/" : path} — Canonical Aafnai Patro public page for ${path === "/" ? "today's Nepali calendar" : path.slice(1).replace(/[-/]/g," ")}.`),
   ...COMMUNITY_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro community-calendar page.`),
   ...TOOL_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro tool page for ${path.split("/").at(-1).replace(/-/g," ")}.`),
+  ...calendarYearRoutes(INDEXED_CALENDAR_YEARS).map((path) => `${SITE}${path} — Canonical Bikram Sambat year hub linking all twelve factual month pages.`),
   ...calendarRoutes(INDEXED_CALENDAR_YEARS).map((path) => `${SITE}${path} — Canonical Bikram Sambat month page with factual day links from the local calendar archive.`),
   ...calendarRows.filter((row) => indexedYearSet.has(Number(row.bs?.year))).map((row) => {
     const tithi=tithiText(row.panchang);const bs=`${row.bs.year}-${String(row.bs.month).padStart(2,"0")}-${String(row.bs.day).padStart(2,"0")}`;
@@ -190,11 +194,12 @@ const manifest = {
   generated_at: new Date().toISOString(), site_url: SITE, brand: "आफ्नै पात्रो", alternate_brand: "Aafnai Patro",
   preferred_citation:citation, current_bs_year: CURRENT_BS_YEAR, indexed_calendar_years: INDEXED_CALENDAR_YEARS,
   sitemap_files: sitemapFiles.map(([file]) => file), canonical_tool_route_count: TOOL_ROUTES.length,
+  indexed_calendar_year_route_count: calendarYearRoutes(INDEXED_CALENDAR_YEARS).length,
   indexed_day_route_count: [...dayRoutesByBsYear.values()].reduce((n, routes) => n + routes.length, 0), indexed_route_count: indexedRoutes.length,
   noindex_public_routes: NOINDEX_PUBLIC_ROUTES, private_prefixes: PRIVATE_PREFIXES,
   llms_txt: SITE + "/llms.txt", llms_full_txt:SITE+"/llms-full.txt", ai_txt:SITE+"/ai.txt", agents_json:SITE+"/.well-known/agents.json", mcp:SITE+"/mcp",
-  rendering_policy: "Build-time semantic HTML for canonical public routes; React replaces the prerender after load without removing product functionality.",
-  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and only a focused five-year BS window are indexed initially to control scaled-content risk."
+  rendering_policy: "Build-time semantic HTML for canonical public routes plus dynamic D1-backed intent pages; the existing React UI remains intact.",
+  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and a focused five-year BS window are indexed initially to control scaled-content risk."
 };
 
 await mkdir(resolve(root,"public/.well-known"),{recursive:true});
