@@ -46,8 +46,8 @@ createRoot(root).render(
   <StrictMode>
     <MediaProvider>
       <AppChrome>
-        <HomeExperience />
         <PatroRouter />
+        <HomeExperience />
       </AppChrome>
       <CalendarCellEnhancer />
       <FeatureLauncher />
