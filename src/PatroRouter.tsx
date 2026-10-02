@@ -3,6 +3,7 @@ import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage }
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
+import { SeoSearchSupport } from "./SeoSearchSupport";
 import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
@@ -95,5 +96,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <Suspense fallback={<Fallback/>}>{render()}</Suspense>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><SeoSearchSupport path={path}/></>
 }
