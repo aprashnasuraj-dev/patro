@@ -125,7 +125,7 @@ function ForexTool(){
       try{
         const live=await fetch("/api/v1/markets/latest?kind=forex",{signal:c.signal,headers:{Accept:"application/json"}});
         const body=await live.json();
-        if(!live.ok||!Array.isArray(body?.items))throw new Error(body?.error||"Forex API unavailable");
+        if(!live.ok||!Array.isArray(body?.items))throw new Error("forex_unavailable");
         setRows(body.items);setError("");return;
       }catch(error){
         if((error as any)?.name==="AbortError")return;
@@ -133,10 +133,10 @@ function ForexTool(){
       try{
         const fallback=await fetch("/data/market/forex-latest.json",{signal:c.signal,headers:{Accept:"application/json"}});
         const body=await fallback.json();
-        if(!fallback.ok||!Array.isArray(body?.items))throw new Error("Forex fallback unavailable");
-        setRows(body.items);setError("Live D1 endpoint unavailable — showing the latest verified migration snapshot.");
+        if(!fallback.ok||!Array.isArray(body?.items))throw new Error("forex_unavailable");
+        setRows(body.items);setError("ताजा दर अहिले अपडेट हुन सकेन। पछिल्लो उपलब्ध NRB दर देखाइएको छ।");
       }catch(error){
-        if((error as any)?.name!=="AbortError")setError("Forex data unavailable. No unverified rates are shown.");
+        if((error as any)?.name!=="AbortError")setError("विनिमय दर अहिले उपलब्ध छैन। केही बेरपछि फेरि प्रयास गर्नुहोस्।");
       }
     };
     void load();
@@ -150,7 +150,7 @@ function ForexTool(){
     <div className="ref-tool-grid three"><label>रकम · Amount<input type="number" min="0" step="any" value={amount} onChange={e=>setAmount(e.target.value)}/></label><label>Currency<select value={currency} onChange={e=>setCurrency(e.target.value)}>{rows.filter(r=>preferred.includes(r.asset)).map(r=><option key={r.asset}>{r.asset}</option>)}</select></label><label>Direction<select value={direction} onChange={e=>setDirection(e.target.value as typeof direction)}><option value="foreign-to-npr">Foreign → NPR</option><option value="npr-to-foreign">NPR → Foreign</option></select></label></div>
     {row&&result!=null&&<div className="ref-result ref-result-large"><strong>{direction==="foreign-to-npr"?money(result):result.toLocaleString("en-IN",{maximumFractionDigits:4})+" "+row.asset}</strong><span>{row.per} {row.asset} = NPR {direction==="foreign-to-npr"?row.buy:row.sell} · {direction==="foreign-to-npr"?"NRB buying":"NRB selling"} rate · {row.as_of}</span></div>}
     {rows.length>0&&<div className="ref-table-wrap"><table><thead><tr><th>Currency</th><th>Per</th><th>Buy</th><th>Sell</th></tr></thead><tbody>{rows.filter(r=>preferred.includes(r.asset)).sort((a,b)=>preferred.indexOf(a.asset)-preferred.indexOf(b.asset)).map(r=><tr key={r.asset}><td><strong>{r.asset}</strong></td><td>{r.per}</td><td>{r.buy}</td><td>{r.sell}</td></tr>)}</tbody></table></div>}
-    {row&&<p className="ref-tool-note">Source: {row.source_label}. Latest migrated snapshot is served from Cloudflare D1; no rate is fabricated when data is unavailable.</p>}
+    {row&&<p className="ref-tool-note">स्रोत: {row.source_label} · मिति: {row.as_of}</p>}
   </Panel>;
 }
 
@@ -164,10 +164,10 @@ function GoldTool(){
     return{tola,grams:tola*TOLA_G,metal,making:mc,tax:tx,total:metal+mc+tx};
   },[rate,weight,unit,making,tax]);
   return <Panel eyebrow="पैसा र बजार · Money & markets" title="सुनचाँदी हिसाब · Gold calculator">
-    <p className="ref-tool-warning">The current verified market dataset contains NRB forex and NEPSE, but no verified live gold/silver feed. Enter a current trusted per-tola rate; आफ्नै पात्रो will calculate weight, making charge and tax without inventing a price.</p>
-    <div className="ref-tool-grid three"><label>प्रति तोला दर · Rate per tola (Rs)<input type="number" min="0" step="any" value={rate} onChange={e=>setRate(e.target.value)} placeholder="Enter verified current rate"/></label><label>तौल · Weight<input type="number" min="0" step="any" value={weight} onChange={e=>setWeight(e.target.value)}/></label><label>Unit<select value={unit} onChange={e=>setUnit(e.target.value as typeof unit)}><option value="tola">तोला · Tola</option><option value="lal">लाल · Lal</option><option value="g">ग्राम · Gram</option><option value="10g">10 gram units</option></select></label></div>
+    <p className="ref-tool-note">आजको बजार दर प्रति तोला राख्नुहोस्। तौल, making charge र अन्य शुल्कका आधारमा अनुमानित मूल्य तुरुन्त गणना हुन्छ।</p>
+    <div className="ref-tool-grid three"><label>प्रति तोला दर · Rate per tola (Rs)<input type="number" min="0" step="any" value={rate} onChange={e=>setRate(e.target.value)} placeholder="आजको बजार दर"/></label><label>तौल · Weight<input type="number" min="0" step="any" value={weight} onChange={e=>setWeight(e.target.value)}/></label><label>Unit<select value={unit} onChange={e=>setUnit(e.target.value as typeof unit)}><option value="tola">तोला · Tola</option><option value="lal">लाल · Lal</option><option value="g">ग्राम · Gram</option><option value="10g">10 gram units</option></select></label></div>
     <div className="ref-tool-grid two" style={{marginTop:12}}><label>Making charge %<input type="number" min="0" step="any" value={making} onChange={e=>setMaking(e.target.value)}/></label><label>Tax / other charge %<input type="number" min="0" step="any" value={tax} onChange={e=>setTax(e.target.value)}/></label></div>
-    <div className="ref-result ref-result-large"><strong>{rate?money(result.total):"Enter a rate"}</strong><span>{result.tola.toFixed(4)} tola · {result.grams.toFixed(3)} g{rate?" · metal "+money(result.metal)+" · making "+money(result.making)+" · tax "+money(result.tax):""}</span></div>
+    <div className="ref-result ref-result-large"><strong>{rate?money(result.total):"दर राख्नुहोस्"}</strong><span>{result.tola.toFixed(4)} tola · {result.grams.toFixed(3)} g{rate?" · metal "+money(result.metal)+" · making "+money(result.making)+" · tax "+money(result.tax):""}</span></div>
   </Panel>;
 }
 
