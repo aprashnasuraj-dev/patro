@@ -49,8 +49,7 @@ const ITEMS:LaunchItem[]=[
  {href:"/tools/janmadin-akhbar",ne:"जन्मदिन अखबार",en:"Birthday newspaper",group:"विशेष · Featured",keywords:"birthday newspaper history जन्मदिन अखबार",mark:"📰"},
  {href:"/tools/future-letter",ne:"भविष्यको चिठी",en:"Future letter",group:"विशेष · Featured",keywords:"future letter private encrypted चिठी भविष्य",mark:"✉"},
  {href:"/tools/name-check",ne:"कागजात नाम जाँच",en:"Document name check",group:"भाषा · Language",keywords:"name document citizenship passport kyc transliteration spelling नाम नागरिकता राहदानी KYC",mark:"नाम"},
- {href:"/tools/patro-bot",ne:"पात्रो बोट",en:"Patro Bot",group:"विशेष · Featured",keywords:"bot assistant calendar प्रश्न पात्रो",mark:"Bot"},
- {href:"/developers",ne:"डेभलपर / API",en:"Developers · API",group:"डेभलपर · Developers",keywords:"api developer integration docs",mark:"</>"}
+ {href:"/tools/patro-bot",ne:"पात्रो बोट",en:"Patro Bot",group:"विशेष · Featured",keywords:"bot assistant calendar प्रश्न पात्रो",mark:"Bot"}
 ];
 
 function isTypingTarget(target:EventTarget|null){return target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement||(target instanceof HTMLElement&&target.isContentEditable)}
