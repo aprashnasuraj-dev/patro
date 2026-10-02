@@ -1,0 +1,34 @@
+name: Patro Tools Behavioral Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: patro-tools-behavior-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  behavior:
+    name: Verify 42 Patro tool behaviors
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - name: Run hardened Patro tool behavioral suite
+        run: npm run test:patro-tools
