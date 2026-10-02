@@ -30,6 +30,7 @@ const CORE_COPY = {
   "/on-this-day": ["इतिहासमा आज · On This Day Nepal", "आजको दिन नेपाल र विश्व इतिहासमा भएका उल्लेखनीय घटनाहरू स्रोतसहित अन्वेषण गर्नुहोस्।"],
   "/fm": ["नेपाली FM रेडियो · Nepal Radio", "नेपालका उपलब्ध FM र internet radio station खोज्नुहोस् र सुन्नुहोस्।"],
   "/tv": ["Nepal Live TV Explorer", "देश, भाषा र category अनुसार उपलब्ध public live TV channels खोज्नुहोस्।"],
+  "/samudaya": ["समुदाय पात्रो · Community Calendars", "नेपाल संवत्, ल्होसार, थारू, मिथिला, किरात, हिजरी र Chakra overview सहित समुदाय-केंद्रित पात्रोहरू एउटै hub बाट अन्वेषण गर्नुहोस्।"],
   "/jyotish/china": ["जन्म कुण्डली · Nepali Jyotish", "जन्म विवरणका आधारमा उपलब्ध नेपाली ज्योतिष र पात्रो सन्दर्भ अन्वेषण गर्नुहोस्।"],
   "/jyotish/matchmaking": ["कुण्डली मिलान · Nepali Matchmaking", "जन्म विवरणका आधारमा उपलब्ध ज्योतिषीय मिलान सन्दर्भ अन्वेषण गर्नुहोस्।"],
   "/about": ["आफ्नै पात्रोबारे · About Aafnai Patro", "Aafnai Patro को उद्देश्य, नेपाली calendar अनुभव र उपलब्ध सुविधाबारे जान्नुहोस्।"],
