@@ -72,7 +72,7 @@ export function HomePage({calendarYear,calendarMonth}:{calendarYear?:number;cale
  const next=events.filter(e=>festivalDate(e)>=today).sort((a,b)=>festivalDate(a).localeCompare(festivalDate(b)))[0];
  const shift=(delta:number)=>setCursor(c=>{if(!c)return c;let y=c.year,m=c.month+delta;if(m<1){m=12;y--}if(m>12){m=1;y++}history.pushState(null,"",`/calendar/${y}/${String(m).padStart(2,"0")}`);window.dispatchEvent(new Event("patro:navigation"));return{year:y,month:m}});
  const bs=todayData?.bs;
- return <main className="ap-page ap-home"><section className="ap-home-top"><article className="ap-today-card"><div><span className="ap-eyebrow">आज</span><h1>{bs?`${toNepaliDigits(bs.day)} ${bs.month_ne||BS_MONTHS[bs.month-1]} ${toNepaliDigits(bs.year)}`:"आजको नेपाली पात्रो"}</h1><p>{neDate(today)} · {toNepaliDigits(today)}</p>{todayError&&<small className="ap-inline-error">{todayError}</small>}</div><div className="ap-today-facts"><div><b>{todayData?.tithi||"तिथि"}</b><small>{todayData?.tithiNext||"आजको तिथि"}</small></div><div><b>{todayData?.ns||"नेपाल संवत्"}</b><small>नेपाल संवत्</small></div><div><b>{todayData?.sunrise||"—"}</b><small>सूर्योदय</small></div><div><b>{todayData?.sunset||"—"}</b><small>सूर्यास्त</small></div></div></article>{next&&<a className="ap-next-festival ap-next-card" href={`/date/${festivalDate(next)}`}><span>आगामी चाडपर्व</span><strong>{festivalName(next)}</strong><small>{neDate(festivalDate(next))}</small><b>{toNepaliDigits(daysUntil(today,festivalDate(next)))} दिन बाँकी</b></a>}</section>{cursor?<section className="ap-calendar-card"><header className="ap-section-head"><div><h2>{BS_MONTHS[cursor.month-1]} {toNepaliDigits(cursor.year)}</h2><p>वि.सं. महिनाको पात्रो · तिथि, चाडपर्व र बिदा</p></div><div className="ap-month-actions"><button onClick={()=>shift(-1)} aria-label="अघिल्लो महिना">‹</button><a href="/">आज</a><button onClick={()=>shift(1)} aria-label="अर्को महिना">›</button></div></header><MonthGrid year={cursor.year} month={cursor.month}/></section>:<section className="ap-calendar-card"><div className="ap-state">आजको वि.सं. मिति पहिचान हुँदैछ…</div></section>}</main>
+ return <main className="ap-page ap-home"><section className="ap-home-top"><article className="ap-today-card"><div><span className="ap-eyebrow">आज</span><h1>{bs?`${toNepaliDigits(bs.day)} ${bs.month_ne||BS_MONTHS[bs.month-1]} ${toNepaliDigits(bs.year)}`:"आजको नेपाली पात्रो"}</h1><p>{neDate(today)} · {toNepaliDigits(today)}</p>{todayError&&<small className="ap-inline-error">{todayError}</small>}</div><div className="ap-today-facts"><div><b>{todayData?.tithi||"तिथि"}</b><small>{todayData?.tithiNext||"आजको तिथि"}</small></div><div><b>{todayData?.ns||"नेपाल संवत्"}</b><small>नेपाल संवत्</small></div><div><b>{todayData?.sunrise||"—"}</b><small>सूर्योदय</small></div><div><b>{todayData?.sunset||"—"}</b><small>सूर्यास्त</small></div></div></article>{next&&<a className="ap-next-festival ap-next-card" href={`/date/${festivalDate(next)}`}><span>आगामी चाडपर्व</span><strong>{festivalName(next)}</strong><small>{neDate(festivalDate(next))}</small><b>{toNepaliDigits(daysUntil(today,festivalDate(next)))} दिन बाँकी</b></a>}</section>{cursor?<section className="ap-calendar-card"><header className="ap-section-head"><div><h2>{BS_MONTHS[cursor.month-1]} {toNepaliDigits(cursor.year)}</h2><p>वि.सं. महिनाको पात्रो · तिथि, चाडपर्व र बिदा</p></div><div className="ap-month-actions"><button onClick={()=>shift(-1)} aria-label="अघिल्लो महिना">‹</button><a href="/">आज</a><button onClick={()=>shift(1)} aria-label="अर्को महिना">›</button></div></header><MonthGrid year={cursor.year} month={cursor.month}/></section>:<section className="ap-calendar-card"><div className="ap-state">आजको पात्रो तयार हुँदैछ…</div></section>}</main>
 }
 
 const toolGroups:{name:string;items:Tool[]}[]=[
@@ -99,29 +99,28 @@ const toolGroups:{name:string;items:Tool[]}[]=[
  {name:"ज्योतिष र संस्कार",items:[
   {icon:"रा",title:"राशिफल",desc:"दैनिक वैदिक राशिफल",href:"/rashifal"},
   {icon:"चि",title:"चिना",desc:"जन्ममिति, समय र स्थानका आधारमा जन्मपत्रिका",href:"/jyotish/china"},
-  {icon:"शु",title:"साइत",desc:"आधिकारिक र गणनामा आधारित शुभ समय",href:"/tools/sait"},
+  {icon:"शु",title:"साइत",desc:"परम्परागत नियम र उपलब्ध आधिकारिक मितिसहित शुभ समय",href:"/tools/sait"},
   {icon:"ना",title:"नक्षत्र अनुसार बच्चाको नाम",desc:"नक्षत्र र पदका आधारमा नाम सुझाव",href:"/tools/baby-names"},
   {icon:"नाम",title:"नाम जाँच",desc:"नामको सुरु अक्षर र नक्षत्र मिलान",href:"/tools/name-check"}
  ]},
  {name:"हिसाब, वित्त र दैनिक उपयोग",items:[
   {icon:"$",title:"विदेशी मुद्रा",desc:"नेपाल राष्ट्र बैंकका विनिमय दर",href:"/tools/forex"},
-  {icon:"सु",title:"सुनचाँदी हिसाब",desc:"तौल र दरका आधारमा मूल्य अनुमान",href:"/tools/gold"},
+  {icon:"सु",title:"सुनचाँदी हिसाब",desc:"तौल र तपाईंले राखेको दरका आधारमा मूल्य अनुमान",href:"/tools/gold"},
   {icon:"%",title:"कर्जा EMI",desc:"मासिक किस्ता र कुल ब्याज गणना",href:"/tools/emi"},
   {icon:"भ",title:"भ्याट र प्रतिशत",desc:"भ्याट थपघट र प्रतिशत गणना",href:"/tools/vat"},
   {icon:"रु",title:"आयकर",desc:"आ.व. २०८३/८४ को व्यक्तिगत आयकर अनुमान",href:"/tools/incometax"},
   {icon:"रो",title:"जग्गा नाप",desc:"रोपनी–आना र बिघा–कट्ठा रूपान्तरण",href:"/tools/landconverter"},
   {icon:"ना",title:"नाप–तौल",desc:"परम्परागत नेपाली एकाइ रूपान्तरण",href:"/tools/units"},
-  {icon:"इ",title:"इन्धन मूल्य",desc:"नेपाल आयल निगमको मूल्य सन्दर्भ",href:"/tools/fuelprice"},
+  {icon:"इ",title:"इन्धन मूल्य",desc:"नेपाल आयल निगमका पेट्रोलियम मूल्य",href:"/tools/fuelprice"},
   {icon:"QR",title:"QR कोड",desc:"नेपाली वा अङ्ग्रेजी पाठबाट निजी QR",href:"/tools/nepaliqr"}
  ]},
  {name:"सिर्जना र सहायक",items:[
   {icon:"📰",title:"जन्मदिन अखबार",desc:"जन्मदिनको पात्रो र इतिहासबाट शेयर कार्ड",href:"/tools/janmadin-akhbar"},
   {icon:"✉",title:"भविष्यको चिठी",desc:"छानिएको मिति वा तिथिमा खुल्ने निजी चिठी",href:"/tools/future-letter"},
-  {icon:"Bot",title:"पात्रो बोट",desc:"मिति, तिथि र पात्रोका छोटा प्रश्नको सहायक",href:"/tools/patro-bot"},
-  {icon:"</>",title:"विकासकर्ता API",desc:"उपलब्ध API र एकीकरण विवरण",href:"/tools/api"}
+  {icon:"Bot",title:"पात्रो बोट",desc:"मिति, तिथि र पात्रोका छोटा प्रश्नको सहायक",href:"/tools/patro-bot"}
  ]}
 ];
-export function ToolsPage(){useEffect(()=>setPageTitle("उपकरण"),[]);return <main className="ap-page ap-tools-page"><header className="ap-page-title"><span className="ap-eyebrow">उपकरण</span><h1>दैनिक कामका उपयोगी उपकरण</h1><p>मिति, भाषा, ज्योतिष, हिसाब र सामग्री निर्माणका काम एकै ठाउँमा।</p></header><a className="ap-astro-feature" href="/tools/astro"><span className="ap-astro-orb" aria-hidden="true"/><span><strong>खगोलीय पात्रो</strong><small>तिथि, चन्द्र अवस्था, आकाशीय घटना र NASA सामग्रीसहितको उन्नत पात्रो</small></span><b>खोल्नुहोस् →</b></a>{toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{group.name}</h2><div className="ap-tool-grid">{group.items.map(item=><a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{item.desc}</small></div><span aria-hidden="true">›</span></a>)}</div></section>)}</main>}
+export function ToolsPage(){useEffect(()=>setPageTitle("उपकरण"),[]);return <main className="ap-page ap-tools-page"><header className="ap-page-title"><span className="ap-eyebrow">उपकरण</span><h1>दैनिक कामका उपयोगी उपकरण</h1><p>मिति, भाषा, ज्योतिष, हिसाब र सामग्री निर्माणका काम एकै ठाउँमा।</p></header><a className="ap-astro-feature" href="/tools/astro"><span className="ap-astro-orb" aria-hidden="true"/><span><strong>खगोलीय पात्रो</strong><small>तिथि, चन्द्र अवस्था र आकाशीय घटनासहितको विस्तृत पात्रो</small></span><b>खोल्नुहोस् →</b></a>{toolGroups.map(group=><section className="ap-tool-section" key={group.name}><h2>{group.name}</h2><div className="ap-tool-grid">{group.items.map(item=><a className="ap-tool-card" href={item.href} key={item.href}><span className="ap-tool-icon">{item.icon}</span><div><strong>{item.title}</strong><small>{item.desc}</small></div><span aria-hidden="true">›</span></a>)}</div></section>)}</main>}
 
 const personalGroups:{name:string;items:Tool[]}[]=[
  {name:"लेखन",items:[{icon:"✎",title:"डायरी",desc:"निजी दैनिक लेख र सम्झना",href:"/me/diary"},{icon:"▤",title:"नोट",desc:"छोटो नोट र सूची",href:"/me/notes"},{icon:"✓",title:"योजना",desc:"काम र दिनको योजना",href:"/me/planner"}]},
