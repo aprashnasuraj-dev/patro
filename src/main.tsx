@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
+import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { HomeExperience } from "./components/HomeExperience";
 import { MobilePrimaryNav } from "./components/MobilePrimaryNav";
@@ -31,6 +32,8 @@ import "./semantic-ui-fixes.css";
 import "./home-experience.css";
 import "./note-enhancements.css";
 import "./mobile-primary-nav.css";
+import "./calendar-cell-enhancements.css";
+import "./fresh-build-surface.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
@@ -45,6 +48,7 @@ createRoot(root).render(
         <HomeExperience />
         <PatroRouter />
       </AppChrome>
+      <CalendarCellEnhancer />
       <FeatureLauncher />
       <GlobalMediaPlayer />
       <MobilePrimaryNav />
