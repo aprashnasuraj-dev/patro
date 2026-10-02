@@ -5,15 +5,11 @@ const root = process.cwd();
 const expected = JSON.parse(await readFile(resolve(root, "cloudflare/d1/expected-public-counts.json"), "utf8"));
 const inventory = JSON.parse(await readFile(resolve(root, "cloudflare/d1/supabase-table-inventory.json"), "utf8"));
 const runtimeManifest = JSON.parse(await readFile(resolve(root, "cloudflare/source-runtime-manifest.json"), "utf8"));
-
 const failures = [];
 
 for (const [slug, item] of Object.entries(runtimeManifest.canonical_functions || {})) {
   if (item.repo_exact !== true) failures.push(`${slug}: live source is not marked repo_exact`);
-  for (const path of [
-    `migration/cloudflare/supabase/function-source/${slug}/index.ts`,
-    `cloudflare/converted-functions/${slug}/index.ts`
-  ]) {
+  for (const path of [`migration/cloudflare/supabase/function-source/${slug}/index.ts`, `cloudflare/converted-functions/${slug}/index.ts`]) {
     try {
       const source = await readFile(resolve(root, path), "utf8");
       if (path.includes("/converted-functions/")) {
@@ -21,17 +17,14 @@ for (const [slug, item] of Object.entries(runtimeManifest.canonical_functions ||
         if (source.includes("Deno.env.get")) failures.push(`${slug}: converted output still contains Deno.env.get`);
         if (/["']npm:/.test(source)) failures.push(`${slug}: converted output still contains npm: specifier`);
       }
-    } catch {
-      failures.push(`${slug}: missing required migration artifact ${path}`);
-    }
+    } catch { failures.push(`${slug}: missing required migration artifact ${path}`); }
   }
 }
-
 if (Object.keys(runtimeManifest.canonical_functions || {}).length !== 11) failures.push("expected 11 canonical live Edge Functions in source-runtime-manifest.json");
+
 const entries = Object.entries(inventory.tables || {});
 if (entries.length !== inventory.table_count) failures.push(`inventory table_count=${inventory.table_count}, actual entries=${entries.length}`);
-
-for (const [table, rows] of Object.entries(expected.tables)) {
+for (const [table, rows] of Object.entries(expected.tables || {})) {
   const item = inventory.tables?.[table];
   if (!item) failures.push(`expected D1 table missing from inventory: ${table}`);
   else {
@@ -40,30 +33,28 @@ for (const [table, rows] of Object.entries(expected.tables)) {
   }
 }
 
+const allowedStrategies = new Set(["d1_bootstrap_public_reference","supabase_compat_private_until_auth_cutover","rebuild_on_cloudflare_runtime","native_bundle_no_table_runtime"]);
 for (const [table, item] of entries) {
-  if (!["d1_bootstrap_public_reference","supabase_compat_private_until_auth_cutover","rebuild_on_cloudflare_runtime"].includes(item.strategy)) {
-    failures.push(`${table}: unknown strategy ${item.strategy}`);
-  }
-  if (item.strategy === "d1_bootstrap_public_reference" && !(table in expected.tables)) {
-    failures.push(`${table}: marked for D1 bootstrap but absent from expected-public-counts.json`);
-  }
+  if (!allowedStrategies.has(item.strategy)) failures.push(`${table}: unknown strategy ${item.strategy}`);
+  if (item.strategy === "d1_bootstrap_public_reference" && !(table in expected.tables)) failures.push(`${table}: marked for D1 bootstrap but absent from expected-public-counts.json`);
 }
-
-for (const required of ["astronomy_calendar_map","miti_rashifal_publications","time_machine_moments","on_this_day_events","tool_catalog","tool_release_plan","ns_days"]) {
+for (const required of ["astronomy_calendar_map","time_machine_moments","on_this_day_events","tool_catalog","tool_release_plan","ns_days"]) {
   if (inventory.tables?.[required]?.strategy !== "d1_bootstrap_public_reference") failures.push(`critical feature table not D1-bootstrap classified: ${required}`);
 }
 
+if (expected.tables?.miti_rashifal_publications != null) failures.push("Rashifal publication rows must not be a mandatory D1 bootstrap expectation");
+if (inventory.tables?.miti_rashifal_publications?.strategy !== "native_bundle_no_table_runtime") failures.push("Rashifal must be classified as native/bundle runtime without a mandatory table");
+if (expected.critical_features?.rashifal?.mode !== "native_bundle") failures.push("Rashifal critical feature mode must be native_bundle");
+if (expected.critical_features?.rashifal?.d1_bootstrap_required !== false) failures.push("Rashifal must explicitly opt out of D1 bootstrap");
+if (expected.critical_features?.rashifal?.supabase_runtime_required !== false) failures.push("Rashifal must explicitly opt out of Supabase runtime dependency");
+if (expected.tables?.market_snapshots != null) failures.push("market_snapshots/NEPSE must not be a mandatory D1 bootstrap expectation");
+if (inventory.tables?.market_snapshots?.strategy !== "rebuild_on_cloudflare_runtime") failures.push("market_snapshots must remain non-blocking runtime state");
+if (expected.critical_features?.market_nepse?.release_required !== false) failures.push("NEPSE/market must be explicitly non-required for release");
+if (expected.tables?.time_machine_moments !== 706 || expected.critical_features?.time_machine?.rows !== 706 || inventory.tables?.time_machine_moments?.source_rows !== 706) failures.push("Time Machine canonical archive must remain exactly 706 records");
 
 const toolCatalog = JSON.parse(await readFile(resolve(root, "migration/data/public/tool_catalog.json"), "utf8"));
 const toolReleasePlan = JSON.parse(await readFile(resolve(root, "migration/data/public/tool_release_plan.json"), "utf8"));
-const toolRouteSources = (
-  await Promise.all([
-    "src/PatroRouter.tsx",
-    "src/utilities/UtilitySuite.tsx",
-    "src/patro-tools-integration/toolSlugs.ts"
-  ].map((path) => readFile(resolve(root,path),"utf8")))
-).join("\n");
-
+const toolRouteSources = (await Promise.all(["src/PatroRouter.tsx","src/utilities/UtilitySuite.tsx","src/patro-tools-integration/toolSlugs.ts"].map((path) => readFile(resolve(root,path),"utf8")))).join("\n");
 if (toolCatalog.table !== "tool_catalog" || !Array.isArray(toolCatalog.rows)) failures.push("tool_catalog snapshot shape invalid");
 else {
   const expectedCatalogRows = expected.critical_features?.tools?.catalog_rows;
@@ -84,7 +75,6 @@ else {
   if (JSON.stringify(disabledIds) !== JSON.stringify(allowedDisabled)) failures.push(`unexpected disabled tool catalog rows: ${disabledIds.join(",")}`);
   if (enabled.length !== 27) failures.push(`enabled tool capability count=${enabled.length}, expected=27`);
 }
-
 if (toolReleasePlan.table !== "tool_release_plan" || !Array.isArray(toolReleasePlan.rows)) failures.push("tool_release_plan snapshot shape invalid");
 else if (toolReleasePlan.rows.length !== expected.critical_features?.tools?.release_rows) failures.push(`tool_release_plan rows=${toolReleasePlan.rows.length}, expected=${expected.critical_features?.tools?.release_rows}`);
 
@@ -93,8 +83,8 @@ if (failures.length) {
   for (const failure of failures) console.error(" - "+failure);
   process.exit(1);
 }
-
 const publicCount=entries.filter(([,x])=>x.strategy==="d1_bootstrap_public_reference").length;
 const privateCount=entries.filter(([,x])=>x.strategy==="supabase_compat_private_until_auth_cutover").length;
 const ephemeralCount=entries.filter(([,x])=>x.strategy==="rebuild_on_cloudflare_runtime").length;
-console.log(`Migration inventory verified: ${entries.length} Supabase public tables accounted; ${publicCount} deterministic D1 tables, ${privateCount} protected transition tables, ${ephemeralCount} ephemeral runtime tables.`);
+const nativeBundleCount=entries.filter(([,x])=>x.strategy==="native_bundle_no_table_runtime").length;
+console.log(`Migration inventory verified: ${entries.length} source tables accounted; ${publicCount} deterministic D1 tables, ${privateCount} protected transition tables, ${ephemeralCount} non-blocking runtime tables, ${nativeBundleCount} native/bundle features. Time Machine=706; Rashifal=native/bundle; NEPSE=not-required.`);

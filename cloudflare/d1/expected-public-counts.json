@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "snapshot_date": "2026-10-01",
+  "schema_version": 2,
+  "snapshot_date": "2026-10-02",
   "private_user_data_included": false,
   "tables": {
     "app_flags": 17,
@@ -12,7 +12,6 @@
     "fm_stations": 20,
     "holiday_coverage": 10,
     "holidays": 84,
-    "miti_rashifal_publications": 1,
     "nasa_apod_cache": 9,
     "nasa_cosmic_cache": 126,
     "nepal_sambat_facts": 14,
@@ -46,10 +45,9 @@
       "requires_panchang_for_every_row": true
     },
     "rashifal": {
-      "table": "miti_rashifal_publications",
-      "rows": 1,
-      "live_source_rows": 26,
-      "mode": "bootstrap-marker-plus-supabase-compat"
+      "mode": "native_bundle",
+      "d1_bootstrap_required": false,
+      "supabase_runtime_required": false
     },
     "time_machine": {
       "table": "time_machine_moments",
@@ -70,19 +68,16 @@
       "rows": 14972
     },
     "community_suites": {
-      "calendar_ids": [
-        "nepal-sambat",
-        "lhosar",
-        "tharu",
-        "mithila",
-        "kirat",
-        "hijri"
-      ],
+      "calendar_ids": ["nepal-sambat", "lhosar", "tharu", "mithila", "kirat", "hijri"],
       "community_dates_rows": 1062,
       "community_festivals_rows": 34,
       "nepal_sambat_days_rows": 14972,
       "nepal_sambat_festival_dates_rows": 1886,
       "nepal_sambat_festivals_rows": 47
+    },
+    "market_nepse": {
+      "release_required": false,
+      "d1_bootstrap_required": false
     }
   }
 }
