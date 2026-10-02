@@ -28,8 +28,17 @@ export type StoredNameCheck = {
   updatedAt: number;
 };
 
+export type StoredNote = {
+  id: string;
+  text: string;
+  inputMode: "english" | "nepali" | "voice";
+  createdAt: string;
+  updatedAt: number;
+};
+
 export type LifeState = {
   version: number;
+  notes: StoredNote[];
   due: Array<Record<string, unknown>>;
   family: Array<Record<string, unknown>>;
   docs: Array<Record<string, unknown>>;
@@ -43,6 +52,7 @@ export type LifeState = {
 
 const EMPTY: LifeState = {
   version: 1,
+  notes: [],
   due: [],
   family: [],
   docs: [],
@@ -63,6 +73,7 @@ export function readLife(): LifeState {
     return {
       ...EMPTY,
       ...parsed,
+      notes: Array.isArray(parsed.notes) ? parsed.notes as StoredNote[] : [],
       due: objectRows(parsed.due),
       family: objectRows(parsed.family),
       docs: objectRows(parsed.docs),
@@ -105,6 +116,7 @@ function mergeLife(local: LifeState, remoteRaw: unknown): LifeState {
     ...EMPTY,
     ...remote,
     ...local,
+    notes: mergeById(Array.isArray(remote.notes) ? remote.notes as StoredNote[] : [], local.notes),
     due: mergeById(objectRows(remote.due) as Array<Record<string, unknown> & {id?:string;updatedAt?:number}>, local.due),
     family: mergeById(objectRows(remote.family) as Array<Record<string, unknown> & {id?:string;updatedAt?:number}>, local.family),
     docs: mergeById(objectRows(remote.docs) as Array<Record<string, unknown> & {id?:string;updatedAt?:number}>, local.docs),
