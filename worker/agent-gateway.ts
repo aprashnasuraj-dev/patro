@@ -45,6 +45,14 @@ async function agentRest(request: Request, env: Env) {
     return value ? json({ ok: true, value }) : json({ ok: false, error: "festival_not_found" }, 404);
   }
 
+  if (url.pathname === "/api/agent/v1/sait" && request.method === "GET") {
+    const type = String(url.searchParams.get("type") || "").trim();
+    const year = Number(url.searchParams.get("year"));
+    if (!type || !Number.isInteger(year)) return json({ ok: false, error: "provide_type_and_year" }, 400);
+    const items = await adapter.getSait(type, year);
+    return json({ ok: true, type, year, count: items.length, items });
+  }
+
   return null;
 }
 
