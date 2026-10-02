@@ -21,6 +21,7 @@ const SPA_EXACT = new Set([
 const PRIVATE_SPA_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin"];
 const PRIVATE_TOOL_PATHS = new Set(["/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
 const SEARCH_NOINDEX_EXACT = new Set(["/samachar", "/developers", "/tools/api", "/offline"]);
+const PRERENDER_MARKER = 'data-seo-prerender="true"';
 
 function cleanPath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
@@ -41,7 +42,7 @@ function isPrivateSpaPath(path: string) {
   return PRIVATE_TOOL_PATHS.has(path) || PRIVATE_SPA_PREFIXES.some((prefix) => path === prefix || path.startsWith(prefix + "/"));
 }
 
-function secureSpaResponse(request: Request, response: Response) {
+function secureSpaResponse(request: Request, response: Response, seoSource = "runtime") {
   const headers = new Headers(response.headers);
   headers.set("x-content-type-options", "nosniff");
   headers.set("referrer-policy", "strict-origin-when-cross-origin");
@@ -49,6 +50,7 @@ function secureSpaResponse(request: Request, response: Response) {
   headers.set("permissions-policy", "camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()");
   headers.set("x-dns-prefetch-control", "off");
   headers.set("x-patro-shell", "root-spa");
+  headers.set("x-patro-seo-source", seoSource);
   const path = cleanPath(new URL(request.url).pathname);
   if (isPrivateSpaPath(path)) {
     headers.set("x-robots-tag", "noindex, nofollow");
@@ -63,7 +65,7 @@ function secureSpaResponse(request: Request, response: Response) {
   });
 }
 
-async function htmlAssetResponse(request: Request, env: Env, assetPath: string) {
+async function htmlAssetResponse(request: Request, env: Env, assetPath: string, preferPrerender = false) {
   if (!env.ASSETS || (request.method !== "GET" && request.method !== "HEAD")) return null;
   const url = new URL(request.url);
   url.pathname = assetPath;
@@ -71,17 +73,24 @@ async function htmlAssetResponse(request: Request, env: Env, assetPath: string) 
   if (!response.ok) return null;
   const type = response.headers.get("content-type") || "";
   if (!type.toLowerCase().includes("text/html")) return null;
-  return secureSpaResponse(request, rewriteConnectedSeo(request, response, env));
+
+  // A build-time prerender has richer factual metadata/body than the generic runtime rewriter.
+  // Preserve it exactly; use connected-seo only as the compatibility fallback for old/unrendered shells.
+  if (preferPrerender && request.method === "GET") {
+    const text = await response.clone().text();
+    if (text.includes(PRERENDER_MARKER)) return secureSpaResponse(request, response, "build-prerender");
+  }
+  return secureSpaResponse(request, rewriteConnectedSeo(request, response, env), "runtime-rewrite");
 }
 
 async function exactSpaAssetResponse(request: Request, env: Env) {
   const path = cleanPath(new URL(request.url).pathname);
   const assetPath = path === "/" ? "/index.html" : `${path}/index.html`;
-  return htmlAssetResponse(request, env, assetPath);
+  return htmlAssetResponse(request, env, assetPath, true);
 }
 
 async function rootSpaResponse(request: Request, env: Env) {
-  return htmlAssetResponse(request, env, "/index.html");
+  return htmlAssetResponse(request, env, "/index.html", false);
 }
 
 function compatSuffix(pathname: string) {
