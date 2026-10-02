@@ -1,38 +1,11 @@
-name: Cloudflare production readiness
+name: Cloudflare production readiness (manual legacy)
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: cloudflare-readiness-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  readiness:
-    runs-on: ubuntu-latest
-    timeout-minutes: 35
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-      - name: Production build and migration contracts
-        run: npm run cloudflare:production-check
-      - name: Core tests
-        run: npm run test:core
-      - name: Patro tools tests
-        run: npm run test:patro-tools
-      - name: Community suite engine tests
-        run: npm run test:community
-      - name: Worker production dry-run
-        run: npm run cloudflare:validate
+  release-gate:
+    uses: ./.github/workflows/release-gate.yml
