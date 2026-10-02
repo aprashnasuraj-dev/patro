@@ -32,3 +32,7 @@ if (hasOverrides) run("node", ["scripts/prepare-cloudflare-config.mjs"]);
 // Safe routine order: schema first, Worker/assets second.
 run("npx", ["wrangler", "d1", "migrations", "apply", "DB", "--remote", "--config", config]);
 run("npx", ["wrangler", "deploy", "--config", config]);
+
+// Search discovery is post-deploy so the public IndexNow key and changed URLs are already live.
+// The submitter is non-fatal by default; set INDEXNOW_STRICT=1 for a release gate.
+if (process.env.SKIP_INDEXNOW !== "1") run("node", ["scripts/indexnow.mjs"]);
