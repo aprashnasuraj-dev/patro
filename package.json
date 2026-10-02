@@ -7,6 +7,7 @@
     "dev": "npm run dev:cloudflare",
     "audit:aafnai-brand": "node scripts/audit-aafnai-brand.mjs",
     "build": "npm run audit:aafnai-brand && npm run seo:phase0 && node scripts/generate-seo.mjs && tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/prerender-days-seo.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs && node scripts/verify-seo-build.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs && node scripts/verify-product-build.mjs",
+    "release:verify": "npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot && npm run build && npm run test:core && npm run test:typing && npm run test:patro-tools && npm run test:community && npm run test:full-product && npm run test:cloudflare-contract && node --test tests/cloudflare-pages-routing.test.mjs && npm run cloudflare:validate",
     "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
