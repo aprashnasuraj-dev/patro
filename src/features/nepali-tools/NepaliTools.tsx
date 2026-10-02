@@ -22,12 +22,12 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
 
     setError("");
     const loading = document.createElement("p");
-    loading.textContent = "Loading Nepali typing tools…";
+    loading.textContent = "नेपाली टाइपिङ तयार हुँदैछ…";
     shadow.replaceChildren(loading);
 
     async function init() {
       const response = await fetch(`${BASE}/index.html`, { signal: controller.signal, cache: "force-cache" });
-      if (!response.ok) throw new Error("Tool assets were not found. Check the packaged /nepali-tools bundle.");
+      if (!response.ok) throw new Error("load_failed");
 
       const [html, module] = await Promise.all([
         response.text(),
@@ -37,7 +37,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       if (cancelled) return;
       const doc = new DOMParser().parseFromString(html, "text/html");
       const main = doc.querySelector("main");
-      if (!main) throw new Error("Invalid Nepali typing tool page");
+      if (!main) throw new Error("load_failed");
 
       for (const anchor of main.querySelectorAll<HTMLAnchorElement>('a[href^="./"]')) {
         anchor.href = `${BASE}/${anchor.getAttribute("href")!.slice(2)}`;
@@ -49,14 +49,13 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       shadow.replaceChildren(stylesheet, document.importNode(main, true));
       cleanup = module.mountNepaliTools(shadow, { mode });
 
-      // Ask the root PWA worker to warm the complete local language-tool bundle and lexicon.
       navigator.serviceWorker?.ready
         .then((registration) => registration.active?.postMessage({ type: "WARM_LANGUAGE_TOOLS" }))
         .catch(() => undefined);
     }
 
-    init().catch((cause) => {
-      if (!cancelled) setError(cause instanceof Error ? cause.message : "Unable to load typing tools");
+    init().catch(() => {
+      if (!cancelled) setError("नेपाली टाइपिङ अहिले लोड हुन सकेन। पृष्ठ फेरि खोल्नुहोस्।");
     });
 
     return () => {
@@ -71,7 +70,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
     <section aria-label="Nepali typing tools" style={{ background: "#f5f4ef", minHeight: "100vh" }}>
       {error && (
         <p role="alert" style={{ maxWidth: 900, margin: "24px auto", padding: 16 }}>
-          {error} <a href={`${BASE}/index.html`}>Open standalone tool</a>
+          {error} <a href={`${BASE}/index.html`}>टाइपिङ उपकरण खोल्नुहोस्</a>
         </p>
       )}
       <div ref={host} />
