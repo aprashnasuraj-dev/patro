@@ -20,6 +20,8 @@ jobs:
     name: Full release validation
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      PUBLIC_SITE_URL: https://aafnaipatro.com
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,9 +36,13 @@ jobs:
       - name: Install once
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
 
-      - name: Production build
-        env:
-          PUBLIC_SITE_URL: https://aafnaipatro.com
+      - name: Verify committed migration sources
+        run: |
+          set -euo pipefail
+          npm run cloudflare:verify-inventory
+          npm run cloudflare:verify-snapshot
+
+      - name: Production build, typecheck, SEO, doctor and product gate
         run: npm run build
 
       - name: Core, typing, Patro tools, community and full-product tests
@@ -48,14 +54,48 @@ jobs:
           npm run test:community
           npm run test:full-product
 
-      - name: Cloudflare contracts, D1 inventory and clean-import dry-run
+      - name: Cloudflare contracts and clean-import dry-run
         run: |
           set -euo pipefail
           npm run test:cloudflare-contract
-          npm run cloudflare:verify-inventory
-          npm run cloudflare:verify-snapshot
           node --test tests/cloudflare-pages-routing.test.mjs
           npm run cloudflare:validate
+
+      - name: Verify canonical router boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -q '/functions/v1/tools-catalog' supabase/functions/router/index.ts
+          ! grep -q '/functions/v1/typing-lexicon' supabase/functions/router/index.ts
+          ! grep -q '/functions/v1/nepali-typing-live' supabase/functions/router/index.ts
+          ! grep -q '"destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/jyotish-chat"' vercel.json
+          grep -q '/functions/v1/router/jyotish-chat' vercel.json
+
+      - name: Verify generated release artifact parity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d dist/assets
+          required=(
+            dist/index.html
+            dist/sw.js
+            dist/tools/index.html
+            dist/samudaya/index.html
+            dist/nepal-sambat/mandala/index.html
+            dist/samudaya/lhosar/index.html
+            dist/samudaya/tharu/index.html
+            dist/samudaya/mithila/index.html
+            dist/samudaya/kirat/index.html
+            dist/samudaya/hijri/index.html
+            dist/samudaya/chakra/index.html
+          )
+          for file in "${required[@]}"; do
+            test -s "$file"
+            if grep -Eiq 'Loading\.\.\.|>Loading<|>लोड हुँदै' "$file"; then
+              echo "Terminal loading placeholder found in $file"
+              exit 1
+            fi
+          done
 
       - name: Dependency audit
         run: npm audit --audit-level=high
@@ -65,7 +105,7 @@ jobs:
         run: |
           set -euo pipefail
           patterns='(gsk_[A-Za-z0-9_-]{20,}|nvapi-[A-Za-z0-9_-]{20,}|sb_secret_[A-Za-z0-9_-]{20,})'
-          if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/security.yml'; then
+          if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/release-gate.yml'; then
             echo "Potential secret detected in tracked files."
             exit 1
           fi
@@ -100,6 +140,8 @@ jobs:
           for route in "${routes[@]}"; do
             NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs "$route"
           done
+          kill "$server" 2>/dev/null || true
+          trap - EXIT
 
       - name: Lighthouse SEO, accessibility, best-practices and performance gate
         run: npm run seo:audit
