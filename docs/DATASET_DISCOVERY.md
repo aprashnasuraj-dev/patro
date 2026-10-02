@@ -104,12 +104,12 @@ The adapter stores explicit IANA timezone IDs and coordinates for runtime astron
 
 The internal archive integrity checks are strong, but they are **not an independent accuracy comparison**. Final Phase 0 accuracy sign-off therefore requires a separate reference fixture containing at least 200 independently obtained mappings across BS 2075–2085.
 
-Use:
+The consolidated auditor always runs the internal 200-date round-trip sample. To require an independent fixture as well, set the fixture path and strict flag:
 
 ```bash
-node scripts/verify-calendar-reference.mjs path/to/reference.json
+SEO_EXTERNAL_REFERENCE_JSON=path/to/reference.json SEO_REQUIRE_EXTERNAL_REFERENCE=1 node scripts/audit-seo-dataset.mjs
 ```
 
-The reference file must not be generated from Aafnai Patro's own archive. The verification script compares deterministic sampled records and fails on any BS↔AD mismatch; optional reference tithi fields are compared when supplied.
+The reference file must not be generated from Aafnai Patro's own archive. It must contain at least 200 valid `{ "ad": "YYYY-MM-DD", "bs": "YYYY-M-D" }` records sourced independently. The auditor fails on any BS↔AD mismatch and writes `reports/seo-dataset-audit.json` with explicit internal/external status.
 
 Until that gate is passed, the focused five-year index architecture may be built/tested, but the project must not claim that the external 200-date accuracy audit is complete.
