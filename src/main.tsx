@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { PatroRouter } from "./PatroRouter";
@@ -30,6 +31,7 @@ const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
 
 registerPatroServiceWorker();
+recordAiReferral();
 
 createRoot(root).render(
   <StrictMode>
