@@ -15,6 +15,7 @@ interface PlayerState {
 interface MediaContextValue extends PlayerState {
   play: (item: MediaItem) => Promise<void>;
   pause: () => void;
+  stop: () => void;
   toggle: () => void;
   setMuted: (muted: boolean) => void;
   setVolume: (volume: number) => void;
@@ -119,17 +120,23 @@ export function MediaProvider({children}:{children:ReactNode}) {
     const start=async()=>{
       retryAction.current=()=>void start();
       try{
+        hlsRef.current?.destroy();
+        hlsRef.current=null;
         const hlsMedia=item.codec.toLowerCase().includes("hls") || item.mediaType==="hls" || isHls(url);
         if(hlsMedia && Hls.isSupported()){
           const hls=new Hls({enableWorker:true,lowLatencyMode:true,maxBufferLength:20});
           hlsRef.current=hls; hls.loadSource(url); hls.attachMedia(audio);
           hls.on(Hls.Events.ERROR,(_event,data)=>{
             if(!data.fatal)return;
-            if(data.type===Hls.ErrorTypes.NETWORK_ERROR){hls.startLoad();scheduleRetry(()=>void start());}
-            else if(data.type===Hls.ErrorTypes.MEDIA_ERROR)hls.recoverMediaError();
-            else {hls.destroy();scheduleRetry(()=>void start());}
+            if(data.type===Hls.ErrorTypes.MEDIA_ERROR){hls.recoverMediaError();return;}
+            scheduleRetry(()=>{hls.destroy();if(hlsRef.current===hls)hlsRef.current=null;void start();});
           });
-          await new Promise<void>((resolve)=>hls.on(Hls.Events.MANIFEST_PARSED,()=>resolve()));
+          await new Promise<void>((resolve,reject)=>{
+            const onParsed=()=>resolve();
+            const onError=(_event:unknown,data:any)=>{if(data?.fatal)reject(new Error("hls_manifest_error"));};
+            hls.once(Hls.Events.MANIFEST_PARSED,onParsed);
+            hls.once(Hls.Events.ERROR,onError);
+          });
         }else{
           audio.src=url; audio.load();
         }
@@ -147,6 +154,15 @@ export function MediaProvider({children}:{children:ReactNode}) {
     if(retryTimer.current)window.clearTimeout(retryTimer.current);
     retryAction.current=null;
     audioRef.current?.pause();
+  },[]);
+  const stop=useCallback(()=>{
+    if(retryTimer.current){window.clearTimeout(retryTimer.current);retryTimer.current=null;}
+    retryAction.current=null;
+    hlsRef.current?.destroy();
+    hlsRef.current=null;
+    const audio=audioRef.current;
+    if(audio){audio.pause();audio.removeAttribute("src");audio.load();}
+    setState((s)=>({...s,item:null,playing:false,health:"idle",retryCount:0,sleepEndsAt:null}));
   },[]);
   const toggle=useCallback(()=>{
     const a=audioRef.current;if(!a)return;
@@ -180,10 +196,11 @@ export function MediaProvider({children}:{children:ReactNode}) {
     navigator.mediaSession.metadata=new MediaMetadata({title:state.item.name,artist:state.item.nameNe,album:"आफ्नै पात्रो Live"});
     navigator.mediaSession.setActionHandler("play",()=>void audioRef.current?.play());
     navigator.mediaSession.setActionHandler("pause",()=>audioRef.current?.pause());
-    navigator.mediaSession.setActionHandler("stop",()=>{audioRef.current?.pause();if(audioRef.current)audioRef.current.currentTime=0;});
-  },[state.item]);
+    navigator.mediaSession.setActionHandler("stop",stop);
+    return()=>{try{navigator.mediaSession.setActionHandler("play",null);navigator.mediaSession.setActionHandler("pause",null);navigator.mediaSession.setActionHandler("stop",null);}catch{}}
+  },[state.item,stop]);
 
-  const value=useMemo<MediaContextValue>(()=>({...state,play,pause,toggle,setMuted,setVolume,setSleepMinutes,analyser}),[state,play,pause,toggle,setMuted,setVolume,setSleepMinutes,analyser]);
+  const value=useMemo<MediaContextValue>(()=>({...state,play,pause,stop,toggle,setMuted,setVolume,setSleepMinutes,analyser}),[state,play,pause,stop,toggle,setMuted,setVolume,setSleepMinutes,analyser]);
   return <MediaContext.Provider value={value}>{children}</MediaContext.Provider>;
 }
 
