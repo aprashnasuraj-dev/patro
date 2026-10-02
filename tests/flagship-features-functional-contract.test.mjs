@@ -16,6 +16,14 @@ test("calendar home, month, date, weather and conversion surfaces remain backed 
  assert.ok(details.includes('/api/v1/sync?date=')||details.includes('/api/v1/today?date='));
 });
 
+test("calendar year hubs remain Worker-owned while calendar months stay SPA navigable",()=>{
+ const router=read("src/PatroRouter.tsx"),year=read("worker/year-page.ts"),bridge=read("worker/connected-entry.ts");
+ assert.ok(router.includes("CALENDAR_MONTH_ROUTE"),"SPA router must scope interception to calendar month routes");
+ assert.equal(router.includes('p.startsWith("/calendar/")'),false,"SPA must not hijack Worker-owned calendar year pages");
+ assert.match(year,/\/calendar\/\\d\{4\}/,"Worker year-page handler must recognize year routes");
+ assert.ok(bridge.includes("yearPageResponse"),"connected Worker must keep year-page response ahead of SPA fallback");
+});
+
 test("Time Machine and On This Day stay visible, native and data-backed",()=>{
  const details=read("src/AafnaiDetailPages.tsx"),index=read("worker/index.ts"),manifest=read("cloudflare/migration-manifest.json"),chrome=read("src/components/AppChrome.tsx");
  hasAll(details,["/api/v1/time-machine","/api/v1/on-this-day"],"history UI");
@@ -75,8 +83,9 @@ test("My Space keeps Google/session-owned native private features and private in
 
 test("PWA release warms flagship shells, complete Community Suite and local language tools",()=>{
  const sw=read("public/sw.js");
+ assert.match(sw,/const VERSION = "aafnai-pwa-v\d+";/,"service worker cache version must be explicit and versioned");
  hasAll(sw,[
-  'aafnai-pwa-v7','"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/tools/astro"','"/tools/nepali-typing"','"/tools/preeti-converter"','"/samudaya"','"/fm"','"/tv"','"/samachar"',
+  '"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/tools/astro"','"/tools/nepali-typing"','"/tools/preeti-converter"','"/samudaya"','"/fm"','"/tv"','"/samachar"',
   '"/nepal-sambat/mandala"','"/samudaya/lhosar"','"/samudaya/tharu"','"/samudaya/mithila"','"/samudaya/kirat"','"/samudaya/hijri"','"/samudaya/chakra"','WARM_LANGUAGE_TOOLS','/nepali-tools/worker.mjs'
  ],"service worker");
  assert.ok(sw.includes("skipWaiting"));
