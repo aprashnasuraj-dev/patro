@@ -81,6 +81,10 @@ Required core routes:
 - `/ics/{festival}-{year}`
 - `/widget/today`
 - `/widget/calendar/{year}/{month}`
+- `/data/calendar/{year}.csv`
+- `/data/calendar/{year}.json`
+
+The `/data/calendar/*` downloads are noindex machine exports generated from the same canonical calendar adapter as the UI and Worker pages; they are not a second calendar dataset.
 
 Thin or unsupported facts must 404/noindex rather than generate fabricated pages.
 

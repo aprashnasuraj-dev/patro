@@ -3,7 +3,7 @@ import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage }
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
-import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
+import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
 
@@ -20,7 +20,6 @@ const NotificationSettingsPage=lazy(()=>import("./components/NativeProtectedPage
 const HolidaySettingsPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.HolidaySettingsPage})));
 const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.DevelopersPage})));
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
-const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
 const DATE_ROUTE_PREFIX="/date/";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;

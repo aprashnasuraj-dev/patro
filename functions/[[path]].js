@@ -60,7 +60,7 @@ export function routeMode(pathname) {
     return "static";
   }
 
-  // Vercel's current routing keeps the general /tools/* surface on the SPA,
+  // Legacy Pages routing keeps the general /tools/* surface on static assets,
   // except for the explicit protected-tool routes handled above.
   if (path.startsWith("/tools/")) return "static";
 
@@ -68,15 +68,15 @@ export function routeMode(pathname) {
   const leaf = path.split("/").pop() || "";
   if (leaf.includes(".")) return "static";
 
-  // Match the current Vercel/Supabase protected catch-all for root/calendar/
-  // search/planner/etc. until each route is ported natively to the Worker.
+  // Preserve the historical Pages service-binding behavior for dynamic routes.
+  // Production Cloudflare Worker routing is owned by worker/connected-entry.ts.
   return "worker";
 }
 
 function missingBinding() {
   return new Response(JSON.stringify({
     error: "patro_api_service_binding_missing",
-    hint: "Bind PATRO_API to the mero-patro Worker in the Pages project."
+    hint: "Bind PATRO_API to the patro Worker in the Pages project."
   }), {
     status: 503,
     headers: {

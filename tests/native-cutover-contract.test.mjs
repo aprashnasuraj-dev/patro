@@ -118,13 +118,31 @@ test("scheduled jobs and Wrangler crons cover push, maintenance and Rashifal wit
   assert.match(entry,/runScheduled\(\s*controller\.cron\s*,\s*env\s*\)/);
 });
 
-test("secret manifest no longer requires browser Supabase keys and declares native identity/push/admin dependencies",()=>{
+test("secret manifest keeps Supabase credentials retired and scopes native feature secrets explicitly",()=>{
   const manifest=json("cloudflare/secrets-manifest.json");
-  const all=JSON.stringify(manifest);
-  assert.ok(!/SUPABASE_/i.test(JSON.stringify([manifest.exact_case_sensitive_names,manifest.cloudflare_native_required,manifest.one_of_groups])));
-  for(const name of ["GOOGLE_CLIENT_ID","VAPID_PUBLIC_KEY","VAPID_PRIVATE_KEY","VAPID_SUBJECT","CRON_SECRET","RASHIFAL_SERVICE_TOKEN"])assert.ok(manifest.cloudflare_native_required.includes(name),name);
-  assert.ok(manifest.removed_transition_secrets.includes("SUPABASE_URL"));
-  assert.ok(all.includes("ADMIN_GOOGLE_SUBJECTS"));
+  assert.equal(manifest.schema_version,3);
+  assert.equal(manifest.scopes.core.groups.length,0);
+  assert.deepEqual(manifest.scopes.public.groups,["media_relay"]);
+  for(const group of ["media_relay","jyotish_ai","google_login_sync","web_push","admin_allowlist"])assert.ok(manifest.scopes.full.groups.includes(group),group);
+
+  const groups=manifest.feature_groups;
+  assert.equal(groups.media_relay.mode,"one_of");
+  for(const name of ["TV_RELAY_SECRET","RADIO_RELAY_SECRET"])assert.ok(groups.media_relay.names.includes(name),name);
+  assert.equal(groups.google_login_sync.mode,"all_of");
+  assert.deepEqual(groups.google_login_sync.names,["GOOGLE_CLIENT_ID"]);
+  for(const name of ["VAPID_PUBLIC_KEY","VAPID_PRIVATE_KEY","VAPID_SUBJECT"])assert.ok(groups.web_push.names.includes(name),name);
+  for(const name of ["ADMIN_GOOGLE_SUBJECTS","ADMIN_EMAILS"])assert.ok(groups.admin_allowlist.names.includes(name),name);
+
+  for(const removed of ["SUPABASE_ANON_KEY","SUPABASE_DB_URL","SUPABASE_SERVICE_ROLE_KEY","SUPABASE_URL"])assert.ok(manifest.removed_transition_secrets.includes(removed),removed);
+  const activeSecretNames=Object.values(groups).flatMap((group)=>group.names||[]);
+  assert.equal(activeSecretNames.some((name)=>/^SUPABASE_/i.test(name)),false,"selective compatibility must not require Supabase credentials");
+  assert.ok(manifest.optional.CRON_SECRET);
+  assert.ok(manifest.optional.RASHIFAL_SERVICE_TOKEN);
+
+  const wrangler=read("wrangler.jsonc"),connected=read("worker/connected-entry.ts");
+  assert.ok(wrangler.includes('"SUPABASE_COMPAT_ORIGIN"'));
+  assert.ok(connected.includes("SUPABASE_COMPAT_ORIGIN"));
+  assert.ok(connected.includes('new Set(["tv", "fm", "samachar"])'));
 });
 
 test("six community calendars plus Chakra remain release-gated",()=>{

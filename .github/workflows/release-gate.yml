@@ -45,15 +45,21 @@ jobs:
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
 
       - name: Verify committed migration sources
+        id: migration
+        continue-on-error: true
         run: |
           set -euo pipefail
           npm run cloudflare:verify-inventory
           npm run cloudflare:verify-snapshot
 
       - name: Production build, typecheck, SEO, doctor and product gate
+        id: build
+        continue-on-error: true
         run: npm run build
 
       - name: Core, typing, Patro tools, community and full-product tests
+        id: product_tests
+        continue-on-error: true
         run: |
           set -euo pipefail
           npm run test:core
@@ -63,6 +69,8 @@ jobs:
           npm run test:full-product
 
       - name: Cloudflare contracts and clean-import dry-run
+        id: cloudflare
+        continue-on-error: true
         run: |
           set -euo pipefail
           npm run test:cloudflare-contract
@@ -70,6 +78,8 @@ jobs:
           npm run cloudflare:validate
 
       - name: Verify canonical router boundaries
+        id: router_boundaries
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -80,6 +90,9 @@ jobs:
           grep -q '/functions/v1/router/jyotish-chat' vercel.json
 
       - name: Verify generated release artifact parity
+        id: artifacts
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -106,9 +119,13 @@ jobs:
           done
 
       - name: Dependency audit
+        id: dependency_audit
+        continue-on-error: true
         run: npm audit --audit-level=high
 
       - name: Reject obvious committed secrets
+        id: secret_scan
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -119,6 +136,8 @@ jobs:
           fi
 
       - name: Install browser validation runtime
+        id: browser_runtime
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -126,6 +145,9 @@ jobs:
           npx playwright install chromium >/dev/null
 
       - name: Community mobile functional checks
+        id: mobile_checks
+        if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -152,4 +174,47 @@ jobs:
           trap - EXIT
 
       - name: Lighthouse SEO, accessibility, best-practices and performance gate
+        id: lighthouse
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
         run: npm run seo:audit
+
+      - name: Release verdict
+        if: always()
+        shell: bash
+        env:
+          MIGRATION: ${{ steps.migration.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+          PRODUCT_TESTS: ${{ steps.product_tests.outcome }}
+          CLOUDFLARE: ${{ steps.cloudflare.outcome }}
+          ROUTER_BOUNDARIES: ${{ steps.router_boundaries.outcome }}
+          ARTIFACTS: ${{ steps.artifacts.outcome }}
+          DEPENDENCY_AUDIT: ${{ steps.dependency_audit.outcome }}
+          SECRET_SCAN: ${{ steps.secret_scan.outcome }}
+          BROWSER_RUNTIME: ${{ steps.browser_runtime.outcome }}
+          MOBILE_CHECKS: ${{ steps.mobile_checks.outcome }}
+          LIGHTHOUSE: ${{ steps.lighthouse.outcome }}
+        run: |
+          set -euo pipefail
+          failures=0
+          check() {
+            local name="$1" outcome="$2"
+            if [[ "$outcome" != "success" ]]; then
+              echo "::error::$name outcome=$outcome"
+              failures=1
+            else
+              echo "$name=success"
+            fi
+          }
+          check migration "$MIGRATION"
+          check build "$BUILD"
+          check product_tests "$PRODUCT_TESTS"
+          check cloudflare "$CLOUDFLARE"
+          check router_boundaries "$ROUTER_BOUNDARIES"
+          check artifacts "$ARTIFACTS"
+          check dependency_audit "$DEPENDENCY_AUDIT"
+          check secret_scan "$SECRET_SCAN"
+          check browser_runtime "$BROWSER_RUNTIME"
+          check mobile_checks "$MOBILE_CHECKS"
+          check lighthouse "$LIGHTHOUSE"
+          exit "$failures"

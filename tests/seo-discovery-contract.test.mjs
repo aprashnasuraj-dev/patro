@@ -50,8 +50,10 @@ test("single-source adapter drives build SEO, D1 pages, data exports and MCP",()
  for(const name of ["getDay","getDayByAd","getMonth","getYear","getFestivals","getFestival","getSait","getHolidays","convertBsToAd","convertAdToBs","getTodayNepal","getTithiAt"])assert.ok(adapter.includes(name),name);
  assert.ok(adapter.includes("PATRO_CITIES"));assert.ok(nodeProvider.includes("migration/data/public/astronomy_calendar_map"));assert.ok(snapshot.includes('../lib/patro.mjs'));assert.ok(source.includes("astronomy_calendar_map"));assert.ok(gateway.includes("createPatroAdapter(createD1PatroSource(env))"));
  assert.ok(mcp.includes('const MODERN = "2026-07-28"'));assert.ok(mcp.includes('const LEGACY = "2025-11-25"'));for(const tool of ["get_today","convert_date","get_festival"])assert.ok(mcp.includes(tool),tool);
- for(const route of ["/today","/methodology","/corrections","/festivals/","/countdown/","/panchang/","/sait/","/ics/","/pdf/calendar/","/widget/today","/widget/calendar/"])assert.ok(pages.includes(route),route);
- assert.ok(year.includes('/calendar\\/(\\d{4})'));assert.ok(data.includes('/data\\/calendar\\/(\\d{4})\\.(csv|json)'));assert.ok(gateway.includes("dataExportResponse"));assert.ok(gateway.includes("yearPageResponse"));
+ for(const direct of ['path === "/today"','path === "/methodology"','path === "/corrections"','path === "/widget/today"'])assert.ok(pages.includes(direct),direct);
+ for(const matcher of ["const festival = path.match(","const countdown = path.match(","const panchang = path.match(","const tika = path.match(","const busiest = path.match(","const ics = path.match(","const pdf = path.match(","const widget = path.match("])assert.ok(pages.includes(matcher),matcher);
+ for(const handler of ["festivalPage(request","countdownPage(request","panchangPage(request","tikaTimePage(request","busiestMonthsPage(request","festivalIcs(request","calendarPdf(request","calendarWidget(request"])assert.ok(pages.includes(handler),handler);
+ assert.ok(year.includes('/calendar\\/(\\d{4})'));assert.ok(data.includes('/data\\/calendar\\/(\\d{4})\\.(csv|json)'));assert.ok(data.includes('"content-type":"application/json; charset=utf-8"'));assert.ok(data.includes('"content-type":"text/csv; charset=utf-8"'));assert.ok(gateway.includes("dataExportResponse"));assert.ok(gateway.includes("yearPageResponse"));
 });
 
 test("build and deploy pipeline lock factual prerender, Phase 0 and IndexNow",()=>{
