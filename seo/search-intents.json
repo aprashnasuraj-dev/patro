@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "core": {
+    "/": {
+      "title": "नेपाली पात्रो २०८३ · Nepali Calendar · आज कति गते?",
+      "description": "नेपाल समयअनुसार आजको नेपाली मिति, तिथि, चाडपर्व, बिदा र मासिक Bikram Sambat पात्रो। Nepali date today, Nepal calendar र aaja kati gate को सीधा उत्तर।",
+      "aliases": ["nepali calendar", "nepal calendar", "nepali patro", "नेपाली पात्रो", "aaj kati gate", "aaja kati gate", "आज कति गते", "today nepali date", "nepali date today", "आजको नेपाली मिति", "nepali miti", "nepal date", "bikram sambat calendar", "nepali calendar 2083"],
+      "steps": ["आजको मिति कार्ड हेर्नुहोस्।", "महिना वा दिन छानेर पात्रो खोल्नुहोस्।", "तिथि, चाडपर्व र सम्बन्धित मिति विवरण जाँच्नुहोस्।"],
+      "faqs": [
+        {"q": "आज कति गते हो?", "a": "आफ्नै पात्रोको मुख्य पृष्ठले Asia/Kathmandu समयअनुसार आजको Bikram Sambat मिति र सम्बन्धित पात्रो विवरण देखाउँछ।"},
+        {"q": "Nepali calendar र Nepal calendar एउटै हो?", "a": "यी खोजहरूले सामान्यतया Bikram Sambat नेपाली पात्रो, आजको नेपाली मिति, तिथि र चाडपर्व जानकारी खोज्छन्; आफ्नै पात्रोले यी सबैलाई एउटै अनुभवमा जोड्छ।"}
+      ]
+    },
+    "/today": {
+      "title": "आजको नेपाली मिति · Nepali Date Today · Aaja Kati Gate",
+      "description": "आजको Nepali date, Bikram Sambat मिति, बार, तिथि र नेपाल समयको स्थिर URL। Aaj kati gate र today Nepali date खोजका लागि सीधा पृष्ठ।",
+      "aliases": ["today nepali date", "nepali date today", "aaja kati gate", "aaj kati gate", "आज कति गते", "आजको मिति", "आजको नेपाली मिति", "today date in nepal", "nepal date today", "bikram sambat today"],
+      "steps": ["आजको स्थिर URL खोल्नुहोस्।", "BS र AD मिति तुलना गर्नुहोस्।", "तिथि र दिनको पात्रो सन्दर्भ हेर्नुहोस्।"],
+      "faqs": [
+        {"q": "Aaja kati gate भनेर कसरी थाहा पाउने?", "a": "यो पृष्ठले नेपाल समयअनुसार आजको नेपाली मिति सिधै देखाउँछ।"},
+        {"q": "विदेशमा हुँदा पनि आजको नेपाली मिति सही हुन्छ?", "a": "मुख्य today पृष्ठ नेपाल समयलाई आधार मान्छ; diaspora today पृष्ठहरू चयनित सहरका स्थानीय दिनसँग नेपाल पात्रो सन्दर्भ जोड्छन्।"}
+      ]
+    },
+    "/convert": {
+      "title": "नेपाली मिति रूपान्तरण · BS ↔ AD Date Converter",
+      "description": "Bikram Sambat र Gregorian मितिबीच BS to AD तथा AD to BS रूपान्तरण। Nepali date converter र Nepali miti converter एउटै पृष्ठमा।",
+      "aliases": ["nepali date converter", "nepali miti converter", "bs to ad converter", "ad to bs converter", "bikram sambat converter", "nepali date to english date", "english date to nepali date", "मिति रूपान्तरण"],
+      "steps": ["रूपान्तरण दिशा छान्नुहोस्।", "मिति प्रविष्ट गर्नुहोस्।", "रूपान्तरित BS वा AD नतिजा र स्रोत सन्दर्भ जाँच्नुहोस्।"],
+      "faqs": [
+        {"q": "BS लाई AD मा कसरी बदल्ने?", "a": "BS मिति छानेपछि आफ्नै पात्रोको validated calendar engine ले सम्बन्धित Gregorian मिति निकाल्छ।"},
+        {"q": "AD लाई नेपाली मितिमा बदल्न मिल्छ?", "a": "हो, यही converter ले AD बाट BS र BS बाट AD दुवै दिशामा रूपान्तरण गर्छ।"}
+      ]
+    },
+    "/tools": {
+      "title": "नेपाली अनलाइन टुल्स · Nepali Tools",
+      "description": "नेपाली टाइपिङ, मिति रूपान्तरण, age, EMI, VAT, land, QR, OCR, तिथि, साइत र अन्य 29 canonical Nepali utilities को एकै hub।",
+      "aliases": ["nepali tools", "nepali online tools", "nepal tools", "नेपाली टुल्स", "online tools nepal", "nepali utilities", "free nepali tools"],
+      "steps": ["आवश्यक tool खोज्नुहोस्।", "tool card बाट canonical पृष्ठ खोल्नुहोस्।", "नतिजा copy, share वा आवश्यक format मा प्रयोग गर्नुहोस्।"],
+      "faqs": [
+        {"q": "आफ्नै पात्रोमा कति सार्वजनिक tools छन्?", "a": "Canonical public inventory मा 29 tools छन्, जसलाई build र browser checks ले निरन्तर verify गर्छन्।"},
+        {"q": "यी tools मोबाइलमा चल्छन्?", "a": "Tools responsive web UI का लागि बनाइएका छन् र mobile browser route checks बाट पनि verify हुन्छन्।"}
+      ]
+    },
+    "/rashifal": {
+      "title": "आजको राशिफल · Nepali Rashifal",
+      "description": "नेपालीमा दैनिक राशिफल र राशि अनुसार horoscope अनुभव। Aaja ko rashifal, Nepali horoscope र आजको राशिफल खोजका लागि canonical पृष्ठ।",
+      "aliases": ["nepali rashifal", "आजको राशिफल", "aaja ko rashifal", "today rashifal nepali", "nepali horoscope", "daily horoscope nepal"],
+      "steps": ["आफ्नो राशि छान्नुहोस्।", "दैनिक राशिफल पढ्नुहोस्।", "पात्रो र ज्योतिषका सम्बन्धित feature खोल्नुहोस्।"],
+      "faqs": [
+        {"q": "आजको राशिफल कहाँ हेर्ने?", "a": "Aafnai Patro को /rashifal पृष्ठ दैनिक राशिफलका लागि canonical destination हो।"},
+        {"q": "राशिफल D1 seed मा निर्भर छ?", "a": "राशिफल native/bundle अनुभवबाट चल्छ; mandatory D1 publication seed यसको critical path होइन।"}
+      ]
+    }
+  },
+  "tools": {
+    "/tools/astro": {
+      "title": "खगोलीय पात्रो · Nepali Astronomical Calendar",
+      "description": "नेपाली पात्रोसँग तिथि, चन्द्र अवस्था, सूर्योदय/सूर्यास्त र खगोलीय सन्दर्भ हेर्ने astronomy tool।",
+      "aliases": ["nepali astronomical calendar", "astronomical calendar nepal", "nepali panchang", "moon phase nepal", "sunrise sunset nepal", "nepali tithi calendar"],
+      "steps": ["मिति छान्नुहोस्।", "तिथि र चन्द्र अवस्था हेर्नुहोस्।", "सूर्योदय, सूर्यास्त र astronomy विवरण तुलना गर्नुहोस्।"],
+      "faqs": [{"q": "Nepali astronomical calendar के हो?", "a": "यो नेपाली पात्रोको मिति र तिथिलाई चन्द्र अवस्था तथा अन्य खगोलीय सन्दर्भसँग जोडेर देखाउने tool हो।"}, {"q": "Moon phase Nepal हेर्न मिल्छ?", "a": "हो, astronomy experience मा उपलब्ध मितिका चन्द्र अवस्था र calendar context हेर्न सकिन्छ।"}]
+    },
+    "/tools/nepali-typing": {
+      "title": "नेपाली टाइपिङ Online · Nepali Unicode Typing",
+      "description": "Roman Nepali बाट देवनागरी Unicode नेपाली टाइप गर्नुहोस्। Local suggestions, copy-ready output र browser-first Nepali typing experience।",
+      "aliases": ["nepali typing", "nepali unicode typing", "roman to nepali typing", "english to nepali typing", "nepali keyboard online", "type in nepali", "online nepali typing"],
+      "steps": ["Roman Nepali टाइप गर्नुहोस्।", "उपयुक्त देवनागरी suggestion छान्नुहोस्।", "Unicode नेपाली text copy गरेर जहाँ चाहिन्छ प्रयोग गर्नुहोस्।"],
+      "faqs": [{"q": "English keyboard बाट Nepali कसरी टाइप गर्ने?", "a": "Roman Nepali ध्वनिअनुसार टाइप गर्दा tool ले देवनागरी Unicode सुझाव दिन्छ।"}, {"q": "Nepali typing text upload हुन्छ?", "a": "मुख्य local typing suggestions browser मा काम गर्छन्; feature ले अनावश्यक रूपमा पूरा text upload गर्नुपर्ने हुँदैन।"}]
+    },
+    "/tools/preeti-converter": {
+      "title": "Preeti to Unicode · Unicode to Preeti Converter",
+      "description": "Preeti font text लाई Nepali Unicode मा र Unicode लाई Preeti मा दुवैतर्फ रूपान्तरण गर्ने browser converter।",
+      "aliases": ["preeti to unicode", "unicode to preeti", "preeti converter", "preeti unicode converter", "nepali font converter", "preeti font converter", "preeti to unicode online"],
+      "steps": ["Conversion direction छान्नुहोस्।", "Preeti वा Unicode text paste गर्नुहोस्।", "रूपान्तरित text जाँचेर copy गर्नुहोस्।"],
+      "faqs": [{"q": "Preeti to Unicode किन चाहिन्छ?", "a": "Preeti legacy font mapping हो; Unicode text आधुनिक web, mobile, email र search मा portable हुन्छ।"}, {"q": "Unicode लाई Preeti मा फर्काउन मिल्छ?", "a": "हो, converter ले दुवै दिशा support गर्छ।"}]
+    },
+    "/tools/bstoad": {
+      "title": "BS to AD Converter · Nepali Date to English Date",
+      "description": "Bikram Sambat नेपाली मितिलाई Gregorian AD मितिमा validated Patro calendar engine बाट रूपान्तरण गर्नुहोस्।",
+      "aliases": ["bs to ad", "bs to ad converter", "nepali date to english date", "bikram sambat to gregorian", "nepali date converter bs ad", "bs date converter nepal"],
+      "steps": ["BS वर्ष, महिना र गते छान्नुहोस्।", "Convert गर्नुहोस्।", "AD date र source confidence जाँच्नुहोस्।"],
+      "faqs": [{"q": "BS to AD converter कति पुरानो मितिसम्म चल्छ?", "a": "Tool ले project को validated calendar archive उपलब्ध दायराभित्र conversion गर्छ।"}, {"q": "Nepali date लाई English date मा बदल्न यही tool हो?", "a": "हो, BS to AD भनेकै Bikram Sambat नेपाली मितिबाट Gregorian/English date रूपान्तरण हो।"}]
+    },
+    "/tools/adtobs": {
+      "title": "AD to BS Converter · English Date to Nepali Date",
+      "description": "Gregorian AD मितिलाई Bikram Sambat नेपाली मितिमा validated Patro calendar engine बाट रूपान्तरण गर्नुहोस्।",
+      "aliases": ["ad to bs", "ad to bs converter", "english date to nepali date", "gregorian to bikram sambat", "english to nepali date converter", "ad date converter nepal"],
+      "steps": ["AD date छान्नुहोस्।", "Convert गर्नुहोस्।", "BS वर्ष, महिना र गते जाँच्नुहोस्।"],
+      "faqs": [{"q": "English date लाई Nepali date मा कसरी बदल्ने?", "a": "AD date प्रविष्ट गरेपछि tool ले validated archive बाट सम्बन्धित BS मिति निकाल्छ।"}, {"q": "AD to BS र date converter फरक हुन्?", "a": "AD to BS एउटा निश्चित conversion direction हो; /convert पृष्ठले दुवै दिशा एउटै ठाउँमा दिन्छ।"}]
+    },
+    "/tools/calc": {
+      "title": "Date Calculator · दिन गणना",
+      "description": "दुई मितिबीच कति दिन छन्, वा कुनै मितिमा दिन थप्ने/घटाउने date calculator।",
+      "aliases": ["date calculator nepal", "days between dates", "day calculator", "date difference calculator", "दिन गणना", "add days to date", "subtract days from date"],
+      "steps": ["दुई मिति वा आधार मिति छान्नुहोस्।", "Difference वा add/subtract mode प्रयोग गर्नुहोस्।", "दिन र नतिजा मिति जाँच्नुहोस्।"],
+      "faqs": [{"q": "दुई मितिबीच कति दिन छन् कसरी निकाल्ने?", "a": "Start र end date छानेपछि tool ले date difference देखाउँछ।"}, {"q": "मितिमा 30 दिन थप्न मिल्छ?", "a": "हो, add/subtract mode बाट चयनित मितिमा दिन थप्न वा घटाउन सकिन्छ।"}]
+    },
+    "/tools/age": {
+      "title": "Age Calculator Nepal · उमेर गणक",
+      "description": "जन्ममितिबाट exact वर्ष, महिना, दिन, total days र अर्को जन्मदिन निकाल्ने age calculator।",
+      "aliases": ["age calculator nepal", "nepali age calculator", "उमेर गणक", "birthday age calculator", "age in years months days", "exact age calculator"],
+      "steps": ["जन्ममिति छान्नुहोस्।", "आज वा target date छान्नुहोस्।", "वर्ष, महिना, दिन र अर्को जन्मदिन हेर्नुहोस्।"],
+      "faqs": [{"q": "Exact age कसरी निकालिन्छ?", "a": "जन्ममिति र target date बीचको calendar difference वर्ष, महिना र दिनमा देखाइन्छ।"}, {"q": "Next birthday पनि देखिन्छ?", "a": "हो, age tool ले अर्को जन्मदिनसम्बन्धी जानकारी पनि दिन्छ।"}]
+    },
+    "/tools/clock": {
+      "title": "Nepal Time & World Clock · विश्व घडी",
+      "description": "Kathmandu/Nepal time सहित विश्व सहरहरूको live clock र विदेशबाट नेपाल call-home समय तुलना।",
+      "aliases": ["nepal time", "kathmandu time", "world clock nepal", "nepal time now", "time in nepal", "nepal time converter", "diaspora clock nepal"],
+      "steps": ["सहर छान्नुहोस्।", "स्थानीय समय र Nepal time तुलना गर्नुहोस्।", "उपयुक्त call-home window हेर्नुहोस्।"],
+      "faqs": [{"q": "Nepal time zone के हो?", "a": "नेपाल Asia/Kathmandu timezone प्रयोग गर्छ, UTC भन्दा 5 घण्टा 45 मिनेट अगाडि।"}, {"q": "विदेशको समयसँग Nepal time तुलना गर्न मिल्छ?", "a": "हो, world clock ले चयनित सहर र नेपाल समय तुलना गर्न मद्दत गर्छ।"}]
+    },
+    "/tools/forex": {
+      "title": "NRB Forex Rates · Nepal Exchange Rate",
+      "description": "नेपाल राष्ट्र बैंक सन्दर्भमा विदेशी मुद्रा buying/selling rates हेर्ने Nepal forex utility।",
+      "aliases": ["nepal forex", "nrb exchange rate", "nepal exchange rate", "usd to npr rate", "foreign exchange nepal", "currency rate nepal", "nrb forex"],
+      "steps": ["मुद्रा छान्नुहोस्।", "Buying र selling reference हेर्नुहोस्।", "Snapshot/source freshness जाँच्नुहोस्।"],
+      "faqs": [{"q": "USD to NPR rate कहाँ हेर्ने?", "a": "Forex tool मा उपलब्ध NRB reference snapshot बाट buying/selling rate हेर्न सकिन्छ।"}, {"q": "Rate live हो?", "a": "Tool ले source freshness स्पष्ट देखाउँछ; stale वा snapshot data लाई live भनेर प्रस्तुत गर्दैन।"}]
+    },
+    "/tools/gold": {
+      "title": "Gold Calculator Nepal · Tola to Gram",
+      "description": "Tola–gram conversion र तपाईंले दिएको trusted rate बाट jewellery/gold estimate निकाल्ने Nepal gold calculator।",
+      "aliases": ["gold calculator nepal", "tola to gram", "gram to tola", "gold price calculator nepal", "jewellery calculator nepal", "gold weight converter"],
+      "steps": ["Gold weight वा tola/gram मान दिनुहोस्।", "Trusted rate प्रविष्ट गर्नुहोस्।", "Estimated amount जाँच्नुहोस्।"],
+      "faqs": [{"q": "1 tola कति gram हुन्छ?", "a": "Tool ले Nepal मा प्रचलित tola–gram conversion प्रयोग गरेर weight conversion देखाउँछ।"}, {"q": "यो live gold price हो?", "a": "Calculator ले fabricated live price प्रयोग गर्दैन; तपाईंले दिएको वा उपलब्ध trusted rate लाई आधार बनाउँछ।"}]
+    },
+    "/tools/emi": {
+      "title": "EMI Calculator Nepal · Loan Calculator",
+      "description": "Loan principal, interest rate र अवधि प्रयोग गरेर monthly EMI, total interest र repayment summary निकाल्नुहोस्।",
+      "aliases": ["emi calculator nepal", "loan emi calculator", "loan calculator nepal", "home loan emi nepal", "monthly installment calculator", "interest calculator nepal"],
+      "steps": ["Loan amount प्रविष्ट गर्नुहोस्।", "Interest rate र अवधि दिनुहोस्।", "Monthly EMI र total interest हेर्नुहोस्।"],
+      "faqs": [{"q": "EMI कसरी गणना हुन्छ?", "a": "Principal, periodic interest rate र number of instalments बाट standard amortizing-loan formula प्रयोग हुन्छ।"}, {"q": "Total interest पनि देखिन्छ?", "a": "हो, monthly instalment सँगै total interest र repayment summary देखिन्छ।"}]
+    },
+    "/tools/vat": {
+      "title": "VAT Calculator Nepal · 13% VAT & Percentage",
+      "description": "Nepal VAT reference अनुसार VAT add/remove, percentage of amount र percentage change निकाल्ने utility।",
+      "aliases": ["vat calculator nepal", "13 percent vat nepal", "nepal vat calculator", "add vat calculator", "remove vat calculator", "percentage calculator nepal"],
+      "steps": ["Amount प्रविष्ट गर्नुहोस्।", "VAT add/remove वा percentage mode छान्नुहोस्।", "Base, VAT र total result जाँच्नुहोस्।"],
+      "faqs": [{"q": "13% VAT कसरी निकाल्ने?", "a": "Amount मा 13% VAT add वा VAT-included total बाट base निकाल्ने mode प्रयोग गर्न सकिन्छ।"}, {"q": "Percentage change पनि निकाल्छ?", "a": "हो, VAT बाहेक percentage of amount र percentage change calculation पनि उपलब्ध छ।"}]
+    },
+    "/tools/units": {
+      "title": "Nepali Unit Converter · Tola, Mana, Pathi, Haat",
+      "description": "नेपालमा प्रचलित तौल, परिमाण र लम्बाइका परम्परागत units लाई metric सन्दर्भसँग रूपान्तरण गर्नुहोस्।",
+      "aliases": ["nepali unit converter", "tola lal converter", "mana pathi converter", "pathi muri converter", "haat to meter", "traditional units nepal"],
+      "steps": ["Unit family छान्नुहोस्।", "मान प्रविष्ट गर्नुहोस्।", "परम्परागत र metric equivalent तुलना गर्नुहोस्।"],
+      "faqs": [{"q": "Mana Pathi conversion मिल्छ?", "a": "हो, tool मा mana–pathi–muri जस्ता परम्परागत unit conversions समावेश छन्।"}, {"q": "Tola र lal conversion पनि छ?", "a": "हो, तौलसम्बन्धी tola–lal conversion उपलब्ध छ।"}]
+    },
+    "/tools/words": {
+      "title": "Amount in Words · Nepali Number to Words",
+      "description": "रकम वा अंकलाई Nepali र English words मा lakh–crore प्रणालीअनुसार बदल्ने cheque-friendly tool।",
+      "aliases": ["number to words nepali", "amount in words nepal", "nepali number to words", "cheque amount in words", "rupees in words nepal", "अंकलाई शब्दमा"],
+      "steps": ["रकम प्रविष्ट गर्नुहोस्।", "Nepali वा English output हेर्नुहोस्।", "Cheque/document का लागि result copy गर्नुहोस्।"],
+      "faqs": [{"q": "रकमलाई नेपाली शब्दमा बदल्न मिल्छ?", "a": "हो, tool ले lakh–crore system अनुसार Nepali amount words बनाउँछ।"}, {"q": "Cheque का लागि English words पनि आउँछ?", "a": "हो, English amount-in-words output पनि उपलब्ध छ।"}]
+    },
+    "/tools/incometax": {
+      "title": "Income Tax Calculator Nepal · Salary Tax 2083/84",
+      "description": "FY 2083/84 reference bands, retirement र insurance deductions सहित Nepal salary income tax estimate।",
+      "aliases": ["income tax calculator nepal", "salary tax calculator nepal", "nepal tax calculator 2083 84", "income tax nepal", "salary tax nepal", "आयकर गणक"],
+      "steps": ["Annual taxable income प्रविष्ट गर्नुहोस्।", "Applicable deductions दिनुहोस्।", "Band-wise tax र annual/monthly estimate हेर्नुहोस्।"],
+      "faqs": [{"q": "Nepal salary tax estimate कसरी निकाल्ने?", "a": "Tool ले configured fiscal-year bands र eligible deduction inputs प्रयोग गरेर estimate देखाउँछ।"}, {"q": "Retirement र insurance deduction समावेश हुन्छ?", "a": "सम्बन्धित inputs उपलब्ध छन् र result मा deduction reference देखिन्छ।"}]
+    },
+    "/tools/landconverter": {
+      "title": "Nepali Land Converter · Ropani Aana Bigha Kattha",
+      "description": "Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur र square feet बीच Nepal land unit conversion।",
+      "aliases": ["ropani aana converter", "bigha kattha dhur converter", "nepali land converter", "land unit converter nepal", "square feet to ropani", "ropani to square feet"],
+      "steps": ["Hill वा Terai land system छान्नुहोस्।", "Known unit value प्रविष्ट गर्नुहोस्।", "अन्य land units र square feet equivalent हेर्नुहोस्।"],
+      "faqs": [{"q": "Ropani लाई square feet मा बदल्न मिल्छ?", "a": "हो, hill land units र square feet बीच conversion उपलब्ध छ।"}, {"q": "Bigha Kattha Dhur पनि support हुन्छ?", "a": "हो, Terai land units समेत एउटै converter मा छन्।"}]
+    },
+    "/tools/nepaliqr": {
+      "title": "Nepali QR Code Generator · Devanagari QR",
+      "description": "Nepali/Devanagari वा English text बाट browser मै UTF-8 QR code बनाउने private QR generator।",
+      "aliases": ["nepali qr generator", "nepali qr code", "devanagari qr code", "qr code generator nepal", "nepali text qr", "unicode qr generator"],
+      "steps": ["Nepali वा English text लेख्नुहोस्।", "QR generate गर्नुहोस्।", "Rendered QR image प्रयोग वा save गर्नुहोस्।"],
+      "faqs": [{"q": "Nepali अक्षर QR मा राख्न मिल्छ?", "a": "हो, UTF-8 Devanagari text बाट QR code बनाउन सकिन्छ।"}, {"q": "QR बनाउन text server मा जान्छ?", "a": "मुख्य QR generation browser मा चल्ने गरी बनाइएको छ।"}]
+    },
+    "/tools/fuelprice": {
+      "title": "Nepal Fuel Price · NOC Petrol Diesel LPG",
+      "description": "Nepal Oil Corporation सन्दर्भमा petrol, diesel, kerosene, LPG र aviation fuel price tracker।",
+      "aliases": ["nepal fuel price", "noc petrol price", "petrol price nepal", "diesel price nepal", "lpg price nepal", "nepal oil corporation price"],
+      "steps": ["Fuel category वा zone हेर्नुहोस्।", "Effective date/source freshness जाँच्नुहोस्।", "Petrol, diesel, LPG वा अन्य rate तुलना गर्नुहोस्।"],
+      "faqs": [{"q": "आजको petrol price Nepal कहाँ हेर्ने?", "a": "Fuel tracker ले उपलब्ध NOC source/snapshot र effective date देखाउँछ।"}, {"q": "पुरानो rate लाई live भनेर देखाउँछ?", "a": "होइन, freshness/stale state स्पष्ट छुट्याउने गरी tool डिजाइन गरिएको छ।"}]
+    },
+    "/tools/tithi-reminder": {
+      "title": "तिथि रिमाइन्डर · Shraddha & Lunar Birthday Reminder",
+      "description": "श्राद्ध, तिथि जन्मदिन, पूजा र व्रतका lunar-date reminders, upcoming occurrences र ICS calendar export।",
+      "aliases": ["tithi reminder", "shraddha reminder", "lunar birthday reminder", "nepali tithi reminder", "तिथि रिमाइन्डर", "श्राद्ध मिति reminder"],
+      "steps": ["Event type र आधार मिति दिनुहोस्।", "Reminder days/time छान्नुहोस्।", "Upcoming tithi र ICS/calendar विकल्प प्रयोग गर्नुहोस्।"],
+      "faqs": [{"q": "श्राद्धको तिथि reminder बनाउन मिल्छ?", "a": "हो, shraddha event का लागि tithi rule र reminder schedule सुरक्षित गर्न सकिन्छ।"}, {"q": "Google Calendar मा राख्न मिल्छ?", "a": "Local ICS export उपलब्ध छ; authenticated private feed feature उपलब्ध हुँदा calendar subscription पनि बनाउन सकिन्छ।"}]
+    },
+    "/tools/sait": {
+      "title": "शुभ साइत · Nepali Sait & Muhurat",
+      "description": "विवाह लगायतका उपलब्ध आधिकारिक साइतलाई प्राथमिकता दिँदै पात्रो नियमअनुसार सम्भावित शुभ समय/मिति खोज्ने tool।",
+      "aliases": ["nepali sait", "शुभ साइत", "vivah sait nepal", "wedding sait nepal", "muhurat nepal", "auspicious date nepal"],
+      "steps": ["Sait प्रकार र date range छान्नुहोस्।", "Official dates र computed possibilities तुलना गर्नुहोस्।", "Warnings/reasons पढेर आवश्यक परे पुरोहितसँग पुष्टि गर्नुहोस्।"],
+      "faqs": [{"q": "Official sait र computed sait कसरी छुट्याइन्छ?", "a": "Tool ले official date लाई स्पष्ट चिन्हसहित प्राथमिकता दिन्छ र गणना गरिएको परिणामलाई सम्भावित भनेर छुट्याउँछ।"}, {"q": "विवाह साइतमा चातुर्मास/खरमास filter हुन्छ?", "a": "Configured rules ले यस्ता hard-rule periods लाई गणनामा विचार गर्छन्।"}]
+    },
+    "/tools/baby-names": {
+      "title": "Nepali Baby Names by Nakshatra · नक्षत्र अनुसार नाम",
+      "description": "जन्म नक्षत्र, पद र अक्षरअनुसार Nepali baby name suggestions, meaning र naming context।",
+      "aliases": ["nepali baby names", "nakshatra baby names", "नक्षत्र अनुसार नाम", "baby names nepal", "hindu nepali baby names", "newborn name by nakshatra"],
+      "steps": ["Birth detail वा nakshatra context दिनुहोस्।", "Nakshatra syllables हेर्नुहोस्।", "Gender/meaning अनुसार नाम suggestions छान्नुहोस्।"],
+      "faqs": [{"q": "नक्षत्र अनुसार बच्चाको नाम कसरी छानिन्छ?", "a": "Nakshatra का चार पदसँग सम्बन्धित starting syllables बाट उपयुक्त नाम suggestions फिल्टर गरिन्छ।"}, {"q": "नामको meaning पनि देखिन्छ?", "a": "Dataset मा उपलब्ध नामका meaning र gender context पनि देखाइन्छ।"}]
+    },
+    "/tools/janmadin-akhbar": {
+      "title": "जन्मदिन अखबार · Birthday History Card Nepal",
+      "description": "जन्म दिनको नेपाली पात्रो, इतिहास र shareable newspaper-style birthday card बनाउने tool।",
+      "aliases": ["birthday newspaper nepal", "जन्मदिन अखबार", "birthday history card", "born on this day nepal", "birthday date history", "birthday share card nepali"],
+      "steps": ["जन्ममिति दिनुहोस्।", "त्यो दिनको पात्रो/इतिहास सामग्री हेर्नुहोस्।", "Shareable birthday card तयार गर्नुहोस्।"],
+      "faqs": [{"q": "जन्मदिनको पुरानो पात्रो हेर्न मिल्छ?", "a": "उपलब्ध validated archive भित्र जन्म दिनको BS/AD calendar context देखाउन सकिन्छ।"}, {"q": "Birthday card share गर्न मिल्छ?", "a": "Tool shareable card output का लागि डिजाइन गरिएको छ।"}]
+    },
+    "/tools/future-letter": {
+      "title": "Future Letter · भविष्यको चिठी",
+      "description": "भविष्यको BS date वा तिथि जन्मदिनमा खुल्ने encrypted private letter तयार गर्ने Nepali future-letter tool।",
+      "aliases": ["future letter", "letter to future", "भविष्यको चिठी", "scheduled letter nepali", "birthday future letter", "time capsule letter"],
+      "steps": ["Recipient र message तयार गर्नुहोस्।", "Unlock date वा tithi birthday छान्नुहोस्।", "Encryption mode प्रयोग गरेर letter seal गर्नुहोस्।"],
+      "faqs": [{"q": "चिठी unlock हुनुअघि पढ्न मिल्छ?", "a": "Unlock state ले निर्धारित समय नपुगेसम्म letter locked राख्ने workflow प्रयोग गर्छ।"}, {"q": "Passphrase letter encrypted हुन्छ?", "a": "Passphrase mode AES-GCM encryption र derived key प्रयोग गरेर message seal गर्छ।"}]
+    },
+    "/tools/spell-check": {
+      "title": "Nepali Spell Checker · नेपाली हिज्जे जाँच",
+      "description": "Unicode normalization, common mistakes र dictionary suggestions सहित Nepali spelling checker।",
+      "aliases": ["nepali spell checker", "नेपाली हिज्जे जाँच", "nepali spelling checker", "nepali spelling correction", "nepali text checker", "nepali grammar spelling"],
+      "steps": ["Nepali text paste/टाइप गर्नुहोस्।", "Highlighted issue र suggestions हेर्नुहोस्।", "Safe common-mistake fixes मात्र apply गर्नुहोस्।"],
+      "faqs": [{"q": "Unknown word आफैं change हुन्छ?", "a": "होइन, uncertain dictionary suggestions स्वतः apply नगरी user लाई review गर्न दिइन्छ।"}, {"q": "Unicode cleanup पनि हुन्छ?", "a": "हो, duplicate matra, stray joiners र punctuation normalization जस्ता local rules लागू हुन्छन्।"}]
+    },
+    "/tools/voice-typing": {
+      "title": "Nepali Voice Typing · Speech to Text नेपाली",
+      "description": "Microphone बाट बोलेर Nepali Unicode text बनाउने voice typing, browser speech recognition र safe fallback experience।",
+      "aliases": ["nepali voice typing", "speech to text nepali", "voice to nepali text", "नेपाली आवाज टाइपिङ", "nepali dictation", "nepali speech recognition"],
+      "steps": ["Microphone अनुमति दिनुहोस्।", "नेपालीमा बोल्नुहोस्।", "Final Unicode text review/copy गर्नुहोस्।"],
+      "faqs": [{"q": "Nepali voice typing कुन browser मा राम्रो चल्छ?", "a": "Browser SpeechRecognition support भएको Chrome/Edge family मा direct path उपलब्ध हुन्छ; अन्य browser मा capability अनुसार fallback हुन्छ।"}, {"q": "बोलेको punctuation राख्न मिल्छ?", "a": "Common spoken punctuation phrasesलाई symbols मा post-process गर्ने helper उपलब्ध छ।"}]
+    },
+    "/tools/ocr": {
+      "title": "Nepali OCR · Image to Nepali Text",
+      "description": "तस्बिरबाट Devanagari/Nepali text निकाल्ने OCR tool, engine आवश्यक पर्दा मात्र lazy-load हुने गरी बनाइएको।",
+      "aliases": ["nepali ocr", "image to nepali text", "devanagari ocr", "photo to text nepali", "nepali image text extractor", "ocr nepal"],
+      "steps": ["स्पष्ट text भएको image छान्नुहोस्।", "OCR सुरु गर्नुहोस्।", "निकालिएको text review र copy गर्नुहोस्।"],
+      "faqs": [{"q": "Nepali photo बाट text निकाल्न मिल्छ?", "a": "हो, OCR tool image बाट Devanagari/Nepali text extract गर्न बनाइएको छ।"}, {"q": "OCR engine सधैं download हुन्छ?", "a": "होइन, heavy OCR engine tool माग्दा मात्र lazy-load हुने गरी राखिएको छ।"}]
+    },
+    "/tools/name-check": {
+      "title": "Nepali Name Check · Document Name Spelling Match",
+      "description": "Citizenship, passport वा अन्य कागजातमा नामको spelling, order र transliteration consistency जाँच्ने tool।",
+      "aliases": ["nepali name checker", "name spelling check nepal", "passport citizenship name match", "document name match nepal", "nepali name transliteration", "नाम जाँच"],
+      "steps": ["दुई कागजातका full names प्रविष्ट गर्नुहोस्।", "Spelling/order/token comparison चलाउनुहोस्।", "Mismatch detail हेरेर official document review गर्नुहोस्।"],
+      "faqs": [{"q": "Suraj र सुरज जस्ता Nepali-English नाम तुलना गर्न मिल्छ?", "a": "हो, tool ले Devanagari transliteration र phonetic normalization प्रयोग गरेर cross-script comparison गर्छ।"}, {"q": "यो legal verification हो?", "a": "होइन, यो consistency checker हो; official KYC/legal निर्णयका लागि सम्बन्धित निकायको record नै निर्णायक हुन्छ।"}]
+    },
+    "/tools/read-aloud": {
+      "title": "Nepali Text to Speech · पढेर सुनाउनुहोस्",
+      "description": "Nepali text लाई browser voice वा उपलब्ध fallback बाट chunked speech मा पढेर सुनाउने accessibility tool।",
+      "aliases": ["nepali text to speech", "nepali tts", "पढेर सुनाउनुहोस्", "read nepali aloud", "nepali voice reader", "text reader nepali"],
+      "steps": ["Nepali text दिनुहोस्।", "Read aloud सुरु गर्नुहोस्।", "आवश्यक परे stop/rate control प्रयोग गर्नुहोस्।"],
+      "faqs": [{"q": "लामो Nepali text पढेर सुनाउँछ?", "a": "हो, long text लाई punctuation र length अनुसार chunks मा विभाजन गरेर speech cutoff कम गर्ने logic प्रयोग हुन्छ।"}, {"q": "Nepali voice नभए के हुन्छ?", "a": "Available browser/server capability अनुसार Nepali वा fallback Devanagari-friendly voice path प्रयोग हुन्छ।"}]
+    },
+    "/tools/patro-bot": {
+      "title": "Nepali Calendar Bot · पात्रो सहायक",
+      "description": "आजको मिति, भोलिको पात्रो, festival date, BS/AD conversion र राशिफलका छोटा प्रश्न बुझ्ने deterministic Nepali calendar assistant।",
+      "aliases": ["nepali calendar bot", "nepali date chatbot", "aaja kati gate bot", "patro bot", "nepali tithi assistant", "calendar assistant nepal"],
+      "steps": ["आज, भोलि, festival वा date conversion जस्तो प्रश्न लेख्नुहोस्।", "Bot ले intent पहिचान गर्छ।", "Calendar-backed उत्तर र सम्बन्धित link हेर्नुहोस्।"],
+      "faqs": [{"q": "Patro Bot लाई 'आज कति गते' सोध्न मिल्छ?", "a": "हो, today/tomorrow/festival/date conversion जस्ता common intents deterministic parser ले सम्हाल्छ।"}, {"q": "Bot ले calendar facts अनुमान गर्छ?", "a": "Common calendar paths canonical Patro provider/adapter बाट तथ्य लिने गरी डिजाइन गरिएको छ।"}]
+    }
+  }
+}
