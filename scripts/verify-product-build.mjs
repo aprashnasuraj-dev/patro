@@ -25,7 +25,6 @@ const requiredFiles=[
   "sitemap-pages.xml",
   "sitemap-tools.xml",
   "sitemap-community.xml",
-  "sitemap-calendar.xml",
   "llms.txt",
   "seo-manifest.json"
 ];
@@ -62,11 +61,28 @@ const seoManifest=JSON.parse(await readFile(resolve(dist,"seo-manifest.json"),"u
 if(seoManifest.canonical_tool_route_count!==29)throw new Error("product-build: SEO manifest lost canonical 29-tool inventory");
 if(!Array.isArray(seoManifest.sitemap_files)||!seoManifest.sitemap_files.includes("sitemap-tools.xml"))throw new Error("product-build: SEO manifest lost sitemap-tools.xml");
 
+const indexedYears=Array.isArray(seoManifest.indexed_calendar_years)?seoManifest.indexed_calendar_years:[];
+if(!indexedYears.length)throw new Error("product-build: SEO manifest lost indexed calendar years");
+const segmentedCalendarFiles=indexedYears.map((year)=>`sitemap-calendar-${year}.xml`);
+const segmentedDayFiles=indexedYears.map((year)=>`sitemap-days-${year}.xml`);
+for(const file of [...segmentedCalendarFiles,...segmentedDayFiles]){
+  if(!seoManifest.sitemap_files.includes(file))throw new Error(`product-build: SEO manifest lost ${file}`);
+  try{await access(resolve(dist,file));}
+  catch{throw new Error(`product-build: missing segmented sitemap artifact: ${file}`)}
+}
+const sitemapIndex=await readFile(resolve(dist,"sitemap.xml"),"utf8");
+for(const file of seoManifest.sitemap_files){
+  if(!sitemapIndex.includes(`/${file}`))throw new Error(`product-build: sitemap index does not reference ${file}`);
+}
+
 console.log(JSON.stringify({
   ok:true,
-  required_files:requiredFiles.length,
+  required_files:requiredFiles.length+segmentedCalendarFiles.length+segmentedDayFiles.length,
   community_experiences:communityFiles.length,
   canonical_tool_routes:canonicalToolCount,
+  indexed_calendar_years:indexedYears.length,
+  calendar_sitemaps:segmentedCalendarFiles.length,
+  day_sitemaps:segmentedDayFiles.length,
   js_assets:jsAssets.length,
   root:"dist/index.html"
 },null,2));
