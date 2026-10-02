@@ -1,5 +1,7 @@
 import { getAllDays, getHolidays, nsText, tithiText } from "../lib/patro.mjs";
 
+const slugify=(value)=>String(value||"").trim().toLowerCase().normalize("NFKD").replace(/[^\p{L}\p{N}]+/gu,"-").replace(/^-+|-+$/g,"");
+
 export async function loadCalendarSnapshot(){return getAllDays();}
 
 export async function loadHolidayMap(){
@@ -16,6 +18,7 @@ export async function loadHolidayMap(){
       list.push({
         name:String(name),
         nameEn:String(value?.name_en||value?.title||""),
+        slug:slugify(value?.key||value?.slug||value?.name_en||value?.title||name),
         effect:String(value?.effect||value?.status||""),
         source:String(value?.source_title||value?.source_url||""),
         verifiedAt:String(value?.verified_at||value?.updated_at||"")
