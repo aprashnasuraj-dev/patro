@@ -1,9 +1,11 @@
+import { PATRO_CITIES } from "../lib/patro";
 import { dispatchDuePushJobs, type PushEnv } from "./push";
 
 export type JobsEnv=PushEnv & {
   DB?:any;
   CACHE?:any;
   CRON_SECRET?:string;
+  PUBLIC_SITE_URL?:string;
 };
 
 function json(body:any,status=200){return new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-patro-backend":"cloudflare-cron"}})}
@@ -17,6 +19,19 @@ export async function maintenance(env:JobsEnv){
   ]);
   if(env.CACHE){for(const key of ["health:doctor"])try{await env.CACHE.delete(key)}catch{}}
   return {ok:true,operations:results.length,at:new Date().toISOString()};
+}
+
+export async function purgeDailyCalendarCache(env:JobsEnv){
+  const base=String(env.PUBLIC_SITE_URL||"https://aafnaipatro.com").replace(/\/+$/,"");
+  const paths=["/","/today",...PATRO_CITIES.map((city)=>`/today/${city.slug}`)];
+  let deleted=0;
+  try{
+    const cache=caches.default;
+    for(const path of paths){
+      try{if(await cache.delete(new Request(base+path,{method:"GET"})))deleted++;}catch{}
+    }
+  }catch{}
+  return {ok:true,at:new Date().toISOString(),scheduled_utc:"18:15",nepal_time:"00:00",paths,deleted};
 }
 
 function authorized(request:Request,env:JobsEnv){
@@ -44,5 +59,6 @@ export async function runScheduled(cron:string,env:JobsEnv){
   if(cron==="*/5 * * * *")result.push=await dispatchDuePushJobs(env,100);
   if(cron==="43 2 * * *")result.maintenance=await maintenance(env);
   if(cron==="11 3 * * *")result.rashifal=await rashifalStatus(env);
+  if(cron==="15 18 * * *")result.nepal_midnight_cache=await purgeDailyCalendarCache(env);
   return result;
 }
