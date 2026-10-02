@@ -32,9 +32,16 @@ export const TOOL_ROUTES = [
 ];
 if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool inventory must remain exactly 29; received ${TOOL_ROUTES.length}`);
 
+export const CITY_SLUGS = [
+  "kathmandu", "pokhara", "biratnagar", "butwal", "new-york", "toronto", "london", "sydney", "melbourne",
+  "tokyo", "seoul", "doha", "dubai", "riyadh", "kuala-lumpur", "kuwait-city"
+];
+export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
+
 export const CORE_INDEX_ROUTES = [
   "/", "/today", "/methodology", "/corrections", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
-  "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact"
+  "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact",
+  ...DIASPORA_TODAY_ROUTES
 ];
 
 export const COMMUNITY_ROUTES = [
@@ -42,7 +49,9 @@ export const COMMUNITY_ROUTES = [
   "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra"
 ];
 
-export const NOINDEX_PUBLIC_ROUTES = ["/samachar", "/developers", "/tools/api"];
+export const NOINDEX_PUBLIC_ROUTES = [
+  "/samachar", "/developers", "/tools/api", "/mcp", "/widget/today"
+];
 export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"];
 
 export const INDEXED_CALENDAR_YEARS = [CURRENT_BS_YEAR - 2, CURRENT_BS_YEAR - 1, CURRENT_BS_YEAR, CURRENT_BS_YEAR + 1, CURRENT_BS_YEAR + 2];
