@@ -16,18 +16,18 @@ for (const route of TOOL_ROUTES) if (!INTENT_META[route]) throw new Error(`Missi
 const CORE_COPY = {
   "/time-machine": ["नेपाल Time Machine · इतिहास", "नेपाल र विश्व इतिहासका उल्लेखनीय वर्ष, घटना र calendar context अन्वेषण गर्नुहोस्।"],
   "/on-this-day": ["इतिहासमा आज · On This Day Nepal", "आजको दिन नेपाल र विश्व इतिहासमा भएका उल्लेखनीय घटनाहरू स्रोतसहित अन्वेषण गर्नुहोस्।"],
-  "/fm": ["नेपाली FM रेडियो · Nepal Radio", "नेपालका उपलब्ध FM र internet radio station खोज्नुहोस् र सुन्नुहोस्।"],
+  "/fm": ["नेपाली FM रेडियो · Nepal Radio", "नेपाल र विश्वका उपलब्ध FM तथा internet radio station खोज्नुहोस् र सुन्नुहोस्।"],
   "/tv": ["Nepal Live TV Explorer", "देश, भाषा र category अनुसार उपलब्ध public live TV channels खोज्नुहोस्।"],
-  "/samudaya": ["समुदाय पात्रो · Community Calendars", "नेपाल संवत्, ल्होसार, थारू, मिथिला, किरात, हिजरी र Chakra overview सहित समुदाय-केंद्रित पात्रोहरू एउटै hub बाट अन्वेषण गर्नुहोस्।"],
-  "/jyotish/china": ["जन्म कुण्डली · Nepali Jyotish", "जन्म विवरणका आधारमा उपलब्ध नेपाली ज्योतिष र पात्रो सन्दर्भ अन्वेषण गर्नुहोस्।"],
-  "/jyotish/matchmaking": ["कुण्डली मिलान · Nepali Matchmaking", "जन्म विवरणका आधारमा उपलब्ध ज्योतिषीय मिलान सन्दर्भ अन्वेषण गर्नुहोस्।"],
+  "/samudaya": ["समुदाय पात्रो · Community Calendars", "नेपाल संवत्, ल्होसार, थारू, मिथिला, किरात, हिजरी र Chakra सहित समुदाय-केंद्रित पात्रोहरू एउटै ठाउँबाट अन्वेषण गर्नुहोस्।"],
+  "/jyotish/china": ["जन्म कुण्डली · Nepali Jyotish", "जन्म विवरणका आधारमा नेपाली ज्योतिष र पात्रो सन्दर्भ अन्वेषण गर्नुहोस्।"],
+  "/jyotish/matchmaking": ["कुण्डली मिलान · Nepali Matchmaking", "जन्म विवरणका आधारमा ज्योतिषीय मिलान सन्दर्भ अन्वेषण गर्नुहोस्।"],
   "/about": ["आफ्नै पात्रोबारे · About Aafnai Patro", "Aafnai Patro को उद्देश्य, नेपाली calendar अनुभव र उपलब्ध सुविधाबारे जान्नुहोस्।"],
-  "/sources": ["स्रोत र पद्धति · Calendar Sources", "नेपाली पात्रो, तिथि र अन्य तथ्यका स्रोत तथा सत्यापन पद्धति हेर्नुहोस्।"],
-  "/methodology": ["नेपाली पात्रो पद्धति · Methodology", "आफ्नै पात्रोले मिति, तिथि, चाडपर्व र conversion data कसरी स्रोत, verify र प्रस्तुत गर्छ भन्ने पद्धति।"],
-  "/corrections": ["पात्रो सुधार र Corrections · Aafnai Patro", "Calendar तथ्यमा त्रुटि भेटिएमा correction process, provenance र update policy हेर्नुहोस्।"],
+  "/sources": ["स्रोत र पद्धति · Calendar Sources", "नेपाली पात्रो, तिथि र अन्य तथ्यका स्रोत तथा शुद्धताबारे जान्नुहोस्।"],
+  "/methodology": ["नेपाली पात्रो पद्धति · Methodology", "आफ्नै पात्रोले मिति, तिथि, चाडपर्व र conversion जानकारी कसरी तयार र जाँच गर्छ भन्ने पद्धति।"],
+  "/corrections": ["पात्रो सुधार · Aafnai Patro", "Calendar तथ्यमा त्रुटि भेटिएमा सुधार पठाउने तरिका र सार्वजनिक सुधार विवरण हेर्नुहोस्।"],
   "/privacy": ["गोपनीयता · Privacy", "Aafnai Patro को privacy र data-handling जानकारी।"],
   "/terms": ["सर्तहरू · Terms", "Aafnai Patro प्रयोगका सर्तहरू।"],
-  "/contact": ["सम्पर्क · Contact Aafnai Patro", "Aafnai Patro सँग सम्पर्क र correction feedback पठाउने जानकारी।"]
+  "/contact": ["सम्पर्क · Contact Aafnai Patro", "Aafnai Patro सँग सम्पर्क, सुझाव वा तथ्य-सुधार पठाउने जानकारी।"]
 };
 
 function esc(value) {
@@ -88,15 +88,15 @@ function bodyFor(path, meta, indexed) {
     const year = Number(match[1]), number = Number(match[2]), month = BS_MONTHS[number - 1];
     const prevN = number === 1 ? 12 : number - 1, prevY = number === 1 ? year - 1 : year;
     const nextN = number === 12 ? 1 : number + 1, nextY = number === 12 ? year + 1 : year;
-    extra = `<p><strong>${esc(month.ne)} ${year}</strong> को महिनागत पृष्ठमा तिथि, चाडपर्व, बिदा र दैनिक Gregorian date विवरण app ले उपलब्ध calendar data बाट लोड गर्छ। English/romanized खोजका लागि ${esc(month.aliases)} ${year}, Nepali calendar ${year}, Nepal calendar र Nepali date terminology पनि यस पृष्ठमा स्पष्ट राखिएको छ।</p><p><a href="${calendarRoute(prevY, prevN)}">अघिल्लो महिना</a> · <a href="${calendarRoute(nextY, nextN)}">अर्को महिना</a></p>`;
+    extra = `<p><strong>${esc(month.ne)} ${year}</strong> को पात्रोमा दैनिक Gregorian मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्। ${esc(month.aliases)} ${year}, Nepali calendar ${year}, Nepal calendar र Nepali date जस्ता नामले खोज्दा पनि यही महिनाको पात्रो उपयोगी हुन्छ।</p><p><a href="${calendarRoute(prevY, prevN)}">अघिल्लो महिना</a> · <a href="${calendarRoute(nextY, nextN)}">अर्को महिना</a></p>`;
   } else if (path === "/") {
-    extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा माथिको interactive पात्रोले देखाउँछ। Nepali calendar, Nepal calendar, Nepali date today, Nepali miti र aaja kati gate जस्ता खोजहरू यही canonical calendar अनुभवमा आउँछन्।</p>`;
+    extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्। Nepali calendar, Nepal calendar, Nepali date today, Nepali miti र aaja kati gate जस्ता खोजका लागि पनि यही पात्रो उपयोगी छ।</p>`;
   } else if (path === "/today") {
-    extra = `<p>यो स्थिर today URL ले नेपाल समयको आजको नेपाली मिति खोज्ने प्रयोगकर्तालाई सीधा उत्तर दिन्छ। दैनिक बदलिने मितिका लागि URL नबदली एउटै canonical destination रहन्छ।</p>`;
+    extra = `<p>नेपाल समयअनुसार आजको नेपाली मिति, बार, तिथि र सम्बन्धित पात्रो जानकारी एउटै पृष्ठमा हेर्नुहोस्। विदेशमा हुँदा पनि नेपालको “आज” यही पृष्ठबाट जाँच गर्न सकिन्छ।</p>`;
   } else if (path === "/convert" || path === "/tools/bstoad" || path === "/tools/adtobs") {
-    extra = `<p>नेपाली मिति (Bikram Sambat/BS) र Gregorian/AD बीच रूपान्तरणका लागि canonical Aafnai Patro calendar engine प्रयोग हुन्छ। Crawlable text ले tool को उद्देश्य मात्र वर्णन गर्छ र कुनै मिति अनुमान गर्दैन।</p>`;
+    extra = `<p>नेपाली मिति (Bikram Sambat/BS) र Gregorian/AD बीच दुवैतर्फ मिति रूपान्तरण गर्नुहोस्। परिणाम आफ्नै पात्रोको पात्रो अभिलेखअनुसार देखाइन्छ।</p>`;
   }
-  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(meta.title)}</h1><p>${esc(meta.description)}</p>${extra}${intentGuide(meta)}<nav aria-label="सम्बन्धित पात्रो पृष्ठहरू">${relatedLinks(path)}</nav>${indexed ? "" : "<p>यो archive page उपयोगी navigation का लागि उपलब्ध छ तर हाल search index मा प्राथमिकता दिइएको छैन।</p>"}</article></main>`;
+  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(meta.title)}</h1><p>${esc(meta.description)}</p>${extra}${intentGuide(meta)}<nav aria-label="सम्बन्धित पात्रो पृष्ठहरू">${relatedLinks(path)}</nav>${indexed ? "" : "<p>यो पुरानो पात्रो पृष्ठ सन्दर्भ र navigation का लागि उपलब्ध छ।</p>"}</article></main>`;
 }
 function schemaFor(path, meta) {
   const keywords = (meta.aliases || []).slice(0, 8).join(", ");
