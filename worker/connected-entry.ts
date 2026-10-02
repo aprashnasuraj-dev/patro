@@ -17,7 +17,7 @@ const SPA_EXACT = new Set([
   "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
   "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/aaja", "/astro", "/my-diary", "/notes", "/planner", "/family", "/family/join", "/settings",
-  "/settings/notifications", "/settings/holidays", "/my-data", "/card", "/tithi", "/diaspora",
+  "/settings/notifications", "/settings/holidays", "/settings/community", "/my-data", "/card", "/tithi", "/diaspora",
   "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/explore"
 ]);
 const PRIVATE_SPA_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin"];
@@ -41,6 +41,7 @@ function isSpaPath(pathname: string) {
     || path.startsWith("/sait/")
     || path.startsWith("/widget/")
     || path.startsWith("/me/")
+    || path.startsWith("/settings/")
     || path.startsWith("/tools/")
     || path.startsWith("/jyotish/");
 }
