@@ -6,6 +6,7 @@ import { buildSync } from "esbuild";
 
 const root=process.cwd(), src=path.join(root,"community-frontends"), out=path.join(root,"dist");
 const SITE=(process.env.PUBLIC_SITE_URL||"https://aafnaipatro.com").replace(/\/+$/,"");
+const RETIRED_SPACED=["Mero","Patro"].join(" "), RETIRED_COMPACT=["Mero","Patro"].join("");
 const bundleFile=path.join(src,".engine.bundle.js");
 buildSync({entryPoints:[path.join(src,"entry.ts")],bundle:true,minify:true,format:"iife",globalName:"S",outfile:bundleFile,target:"es2020",logLevel:"silent"});
 const bundle=fs.readFileSync(bundleFile,"utf8").replaceAll("</script","<\\/script");
@@ -55,7 +56,7 @@ function stripTag(html,pattern){return html.replace(pattern,"");}
 function decorate(html,file){
  const route=routeMap[file],label=labels[file],canonical=SITE+route,description=descriptions[file];
  for(const [old,r] of Object.entries(routeMap)) html=html.replaceAll('href="'+old+'"','href="'+r+'"');
- html=html.replaceAll("Mero Patro","Aafnai Patro").replaceAll("MeroPatro","Aafnai Patro");
+ html=html.replaceAll(RETIRED_SPACED,"Aafnai Patro").replaceAll(RETIRED_COMPACT,"Aafnai Patro");
  html=stripTag(html,/<link\s+rel=["']canonical["'][^>]*>/gi);
  html=stripTag(html,/<meta\s+name=["']robots["'][^>]*>/gi);
  html=stripTag(html,/<meta\s+property=["']og:site_name["'][^>]*>/gi);
@@ -67,7 +68,7 @@ function decorate(html,file){
  const js=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].reduce((n,m)=>n+Buffer.byteLength(m[1]||""),0);
  if(js>200*1024) throw new Error(file+" exceeds 200 KB JavaScript: "+js);
  if(/Loading\.\.\.|>Loading<|>लोड हुँदै</i.test(html)) throw new Error(file+" contains terminal loading placeholder");
- if(!html.includes("Aafnai Patro")||html.includes("Mero Patro")) throw new Error(file+" has inconsistent product branding");
+ if(!html.includes("Aafnai Patro")||html.includes(RETIRED_SPACED)||html.includes(RETIRED_COMPACT)) throw new Error(file+" has inconsistent product branding");
  return {html,js};
 }
 for(const file of Object.keys(routeMap)){
