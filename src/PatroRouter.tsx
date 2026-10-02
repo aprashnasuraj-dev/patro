@@ -23,6 +23,7 @@ const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>(
 const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
 const DATE_ROUTE_PREFIX="/date/";
+const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const LEGACY_REDIRECTS:Record<string,string>={
  "/aaja":"/",
  "/astro":"/tools/astro",
@@ -50,7 +51,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
 };
 const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
+function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
