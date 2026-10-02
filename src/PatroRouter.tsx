@@ -5,6 +5,7 @@ import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
 import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
+import { CommunityPreferences } from "./community/CommunityPreferences";
 
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
@@ -47,7 +48,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -63,6 +64,7 @@ export function PatroRouter(){
    if(path==="/methodology")return <MethodologyPage/>;
    if(path==="/corrections")return <CorrectionsPage/>;
    if(path==="/samudaya")return <CommunityHub/>;
+   if(path==="/settings/community")return <CommunityPreferences/>;
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <HomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
