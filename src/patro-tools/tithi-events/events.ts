@@ -70,22 +70,23 @@ export function buildReminders(ev: PersonalTithiEvent, fromDate: string, count =
 
 // ---------------------------------------------------------------------------
 // ICS feed — serve at /api/calendar/[token].ics so users can subscribe
-// from Google Calendar / Apple Calendar / Outlook. Your brand inside every calendar.
+// from Google Calendar / Apple Calendar / Outlook. Aafnai Patro branding is
+// embedded in every export so legacy product identifiers cannot leak back in.
 // ---------------------------------------------------------------------------
 const esc = (s: string) => s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
 const icsDate = (d: string) => d.replace(/-/g, '');
 const stamp = () => new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 
-export function toICS(events: PersonalTithiEvent[], fromDate: string, years = 3, calName = 'मेरो पात्रो'): string {
+export function toICS(events: PersonalTithiEvent[], fromDate: string, years = 3, calName = 'आफ्नै पात्रो'): string {
   const lines = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mero Patro//Tithi Events//NE', 'CALSCALE:GREGORIAN',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Aafnai Patro//Tithi Events//NE', 'CALSCALE:GREGORIAN',
     `X-WR-CALNAME:${esc(calName)}`, 'X-WR-TIMEZONE:Asia/Kathmandu', 'REFRESH-INTERVAL;VALUE=DURATION:P1D',
   ];
   for (const ev of events) {
     for (const occ of nextOccurrences(ev.rule, fromDate, years, ev.location ?? KATHMANDU)) {
       lines.push(
         'BEGIN:VEVENT',
-        `UID:${ev.id}-${occ.date}@meropatro`,
+        `UID:${ev.id}-${occ.date}@aafnaipatro`,
         `DTSTAMP:${stamp()}`,
         `DTSTART;VALUE=DATE:${icsDate(occ.date)}`,
         `DTEND;VALUE=DATE:${icsDate(addDays(occ.date, 1))}`,
@@ -100,7 +101,7 @@ export function toICS(events: PersonalTithiEvent[], fromDate: string, years = 3,
   }
   lines.push('END:VCALENDAR');
   // RFC 5545 line folding (75 octets)
-  return lines.map(foldLine).join('\r\n');
+  return `${lines.map(foldLine).join('\r\n')}\r\n`;
 }
 
 function foldLine(line: string): string {
