@@ -22,7 +22,7 @@ Required evidence:
 - provenance/source registry present;
 - **200 deterministic random dates across BS 2075–2085 cross-checked against an independent reference.**
 
-Status rule: the repository can build before the external spot-check is supplied, but **search-index expansion beyond the focused window and final accuracy sign-off remain blocked until that independent 200-date check passes**. The harness is `node scripts/verify-calendar-reference.mjs <reference.json>`.
+Status rule: the repository can build before the external spot-check is supplied, but **search-index expansion beyond the focused window and final accuracy sign-off remain blocked until that independent 200-date check passes**. Internal round-trip auditing runs through `node scripts/audit-seo-dataset.mjs`; strict external sign-off uses `SEO_EXTERNAL_REFERENCE_JSON=path/to/reference.json SEO_REQUIRE_EXTERNAL_REFERENCE=1 node scripts/audit-seo-dataset.mjs`.
 
 ## Gate 1 — Framework / brand audit
 
@@ -144,7 +144,7 @@ Pre-deploy:
 - both Cloudflare configs dry-run successfully.
 
 Post-deploy:
-- run `node scripts/verify-agent-bots.mjs https://aafnaipatro.com`;
+- run `node scripts/verify-seo-bots.mjs https://aafnaipatro.com` (or `SEO_VERIFY_ORIGIN=https://aafnaipatro.com npm run seo:bot-smoke`);
 - verify Googlebot, OAI-SearchBot, PerplexityBot and Claude-SearchBot receive equivalent factual `/today` HTML;
 - confirm `/today` canonical stays `/today` and freshness rolls at Nepal midnight;
 - confirm `/.well-known/*`, `/llms*.txt`, `/ai.txt` and `/mcp` are reachable;
