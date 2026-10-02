@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { SITE, BS_MONTHS, INDEXED_CALENDAR_YEARS, calendarRoute } from "./seo-config.mjs";
+import { SITE, BS_MONTHS, INDEXED_CALENDAR_YEARS, calendarRoute, calendarYearRoute } from "./seo-config.mjs";
 import { loadCalendarSnapshot, loadHolidayMap, nsText, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
@@ -23,9 +23,13 @@ const dayFile = (ad) => resolve(root, "dist/date", ad, "index.html");
 function prettyAd(ad, locale="en-GB") {
   return new Intl.DateTimeFormat(locale, { timeZone:"UTC", weekday:"long", year:"numeric", month:"long", day:"numeric" }).format(new Date(ad + "T00:00:00Z"));
 }
+function weekdayNe(ad){
+  const names=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
+  return names[new Date(ad+"T00:00:00Z").getUTCDay()];
+}
 function dayTitle(row) {
   const month = BS_MONTHS[Number(row.bs.month) - 1];
-  return `${toDev(row.bs.day)} ${month.ne} ${toDev(row.bs.year)} = ${prettyAd(row.ad)} · नेपाली मिति`;
+  return `${toDev(row.bs.year)} ${month.ne} ${toDev(row.bs.day)} ${weekdayNe(row.ad)} – तिथि, पञ्चाङ्ग र अंग्रेजी मिति`;
 }
 function dayDescription(row, dayHolidays) {
   const month = BS_MONTHS[Number(row.bs.month) - 1];
@@ -57,8 +61,9 @@ function schema(row, title, description) {
         "@type":"BreadcrumbList",
         itemListElement:[
           {"@type":"ListItem",position:1,name:"आफ्नै पात्रो",item:SITE+"/"},
-          {"@type":"ListItem",position:2,name:`नेपाली पात्रो ${row.bs.year}`,item:SITE+calendarRoute(Number(row.bs.year), Number(row.bs.month))},
-          {"@type":"ListItem",position:3,name:title,item:SITE+path}
+          {"@type":"ListItem",position:2,name:`नेपाली पात्रो ${row.bs.year}`,item:SITE+calendarYearRoute(Number(row.bs.year))},
+          {"@type":"ListItem",position:3,name:`${month.ne} ${row.bs.year}`,item:SITE+calendarRoute(Number(row.bs.year), Number(row.bs.month))},
+          {"@type":"ListItem",position:4,name:title,item:SITE+path}
         ]
       }
     ]
@@ -70,8 +75,10 @@ function body(row, title, description, dayHolidays, index) {
   const ns = nsText(row.ns) || "—";
   const previous = index > 0 ? rows[index - 1] : null;
   const next = index + 1 < rows.length ? rows[index + 1] : null;
-  const holidayHtml = dayHolidays.length ? `<ul>${dayHolidays.map((h) => `<li>${esc(h.name)}${h.nameEn ? ` (${esc(h.nameEn)})` : ""}</li>`).join("")}</ul>` : `<p>यस स्थानीय archive record मा छुट्टै राष्ट्रिय बिदा/चाडपर्व label छैन।</p>`;
-  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(title)}</h1><p><strong>यो मितिको सीधा उत्तर:</strong> ${esc(description)}</p><table><caption>नेपाली मिति विवरण</caption><tbody><tr><th>वि.सं. / BS</th><td>${esc(`${row.bs.day} ${month.en} ${row.bs.year}`)} · ${esc(`${toDev(row.bs.day)} ${month.ne} ${toDev(row.bs.year)}`)}</td></tr><tr><th>AD / English date</th><td>${esc(prettyAd(row.ad))}</td></tr><tr><th>तिथि</th><td>${esc(tithi)}</td></tr><tr><th>नेपाल संवत्</th><td>${esc(ns)}</td></tr></tbody></table><section><h2>चाडपर्व वा बिदा</h2>${holidayHtml}</section><nav aria-label="सम्बन्धित मितिहरू">${previous ? `<a href="/date/${previous.ad}">अघिल्लो दिन</a> · ` : ""}<a href="${calendarRoute(Number(row.bs.year), Number(row.bs.month))}">${esc(`${month.ne} ${row.bs.year} पात्रो`)}</a>${next ? ` · <a href="/date/${next.ad}">अर्को दिन</a>` : ""} · <a href="/convert">BS ↔ AD मिति रूपान्तरण</a></nav></article></main>`;
+  const holidayHtml = dayHolidays.length ? `<ul>${dayHolidays.map((h) => `<li>${h.slug ? `<a href="/festivals/${esc(h.slug)}/${row.bs.year}">` : ""}${esc(h.name)}${h.nameEn ? ` (${esc(h.nameEn)})` : ""}${h.slug ? "</a>" : ""}${h.source ? ` <small>· ${esc(h.source)}</small>` : ""}</li>`).join("")}</ul>` : `<p>यस स्थानीय archive record मा छुट्टै राष्ट्रिय बिदा/चाडपर्व label छैन।</p>`;
+  const source = row.source ? esc(typeof row.source === "string" ? row.source : JSON.stringify(row.source)) : "Aafnai Patro validated calendar archive";
+  const verified = row.verified_at ? ` · verified ${esc(String(row.verified_at).slice(0,10))}` : "";
+  return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(title)}</h1><p><strong>यो मितिको सीधा उत्तर:</strong> ${esc(description)}</p><table><caption>नेपाली मिति विवरण</caption><tbody><tr><th>वि.सं. / BS</th><td>${esc(`${row.bs.day} ${month.en} ${row.bs.year}`)} · ${esc(`${toDev(row.bs.day)} ${month.ne} ${toDev(row.bs.year)}`)}</td></tr><tr><th>AD / English date</th><td>${esc(prettyAd(row.ad))}</td></tr><tr><th>बार</th><td>${esc(weekdayNe(row.ad))}</td></tr><tr><th>तिथि</th><td>${esc(tithi)}</td></tr><tr><th>नेपाल संवत्</th><td>${esc(ns)}</td></tr></tbody></table><section><h2>चाडपर्व वा बिदा</h2>${holidayHtml}</section><p><small>Source: ${source}${verified}</small></p><nav aria-label="सम्बन्धित मितिहरू">${previous ? `<a href="/date/${previous.ad}">अघिल्लो दिन</a> · ` : ""}${next ? `<a href="/date/${next.ad}">अर्को दिन</a> · ` : ""}<a href="${calendarRoute(Number(row.bs.year), Number(row.bs.month))}">${esc(`${month.ne} ${row.bs.year} पात्रो`)}</a> · <a href="${calendarYearRoute(Number(row.bs.year))}">${esc(`${row.bs.year} वार्षिक पात्रो`)}</a> · <a href="/convert">BS ↔ AD मिति रूपान्तरण</a> · <a href="/today">आजको नेपाली मिति</a></nav></article></main>`;
 }
 function render(row, index) {
   const dayHolidays = holidays.get(row.ad) || [];
