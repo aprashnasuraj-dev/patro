@@ -4,17 +4,7 @@ import { runScheduled, type JobsEnv } from "./jobs";
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = JobsEnv & Record<string, unknown> & {
   ASSETS?: AssetBinding;
-  SUPABASE_COMPAT_ORIGIN?: string;
 };
-
-const FALLBACK_PATHS = new Map<string, string>([
-  ["/api/v1/sync", "/sync"],
-  ["/api/v1/astronomy/tithi", "/astronomy/tithi"],
-  ["/api/v1/rashifal/universal", "/rashifal/universal"],
-  ["/api/v1/tools/catalog", "/tools/catalog"],
-  ["/api/v1/markets/latest", "/markets/latest"],
-  ["/api/v1/market/latest", "/markets/latest"],
-]);
 
 const TOOL_TITLES: Record<string, string> = {
   typingtools: "टाइपिङ उपकरण",
@@ -186,16 +176,6 @@ function isStaticPassthrough(path: string) {
   return leaf.includes(".");
 }
 
-function responseWithHeader(response: Response, name: string, value: string) {
-  const headers = new Headers(response.headers);
-  headers.set(name, value);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
-}
-
 function secureDocument(response: Response, status: number, path: string, method: string) {
   const headers = new Headers(response.headers);
   headers.set("content-type", "text/html; charset=utf-8");
@@ -240,17 +220,6 @@ function nepseRemoved() {
       "x-content-type-options": "nosniff"
     }
   });
-}
-
-async function compatFallback(request: Request, env: Env, suffix: string) {
-  const origin = String(env.SUPABASE_COMPAT_ORIGIN || "").replace(/\/+$/, "");
-  if (!origin) return null;
-  const incoming = new URL(request.url);
-  const target = new URL(origin + suffix);
-  target.search = incoming.search;
-  const response = await fetch(new Request(target.toString(), request));
-  if (!response.ok) return null;
-  return responseWithHeader(response, "x-patro-backend", "supabase-compat-fallback");
 }
 
 async function brandCatalog(response: Response) {
@@ -298,19 +267,10 @@ async function doctorWithoutMarketDependency(request: Request, env: Env, ctx: Ex
   }
 }
 
-async function callWithFallback(request: Request, env: Env, ctx: ExecutionContext) {
+async function callNative(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
   const response = await worker.fetch(request, env as any, ctx);
-  const suffix = FALLBACK_PATHS.get(url.pathname);
-  let resolved = response;
-  if (suffix && response.status >= 500) {
-    try {
-      resolved = (await compatFallback(request, env, suffix)) || response;
-    } catch {
-      resolved = response;
-    }
-  }
-  return url.pathname === "/api/v1/tools/catalog" ? brandCatalog(resolved) : resolved;
+  return url.pathname === "/api/v1/tools/catalog" ? brandCatalog(response) : response;
 }
 
 const productionWorker = {
@@ -338,11 +298,10 @@ const productionWorker = {
     }
 
     if ((request.method === "GET" || request.method === "HEAD") && !isStaticPassthrough(path) && !path.startsWith("/api/")) {
-      // Render the same app shell so the React 404 view is useful, while preserving a real HTTP 404.
       return serveSpa(request, env, 404);
     }
 
-    return callWithFallback(request, env, ctx);
+    return callNative(request, env, ctx);
   },
   async scheduled(controller: { cron: string }, env: Env, ctx: ExecutionContext) {
     ctx.waitUntil(runScheduled(controller.cron, env));
