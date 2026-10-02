@@ -1,0 +1,62 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+const root = process.cwd();
+const files = [
+  "src/AafnaiPages.tsx",
+  "src/AafnaiDetailPages.tsx",
+  "src/components/TrustPages.tsx",
+  "src/components/NativeProtectedPages.tsx",
+  "src/SeoAuthorityPages.tsx",
+  "src/utilities/UtilitySuite.tsx",
+  "src/utilities/ReferenceUtilities.tsx",
+  "src/media/MediaSuite.tsx",
+  "src/patro-tools-integration/PatroToolsShell.tsx",
+  "src/patro-tools-integration/TithiReminderTool.tsx",
+  "src/features/nepali-tools/NepaliTools.tsx",
+  "src/jyotish/JanmaPatroSuite.tsx",
+  "src/community/CommunityHub.tsx",
+  "src/community/CommunityPreferences.tsx",
+  "scripts/prerender-seo.mjs"
+];
+
+const forbidden = [
+  ["under development", /under development/i],
+  ["coming soon", /coming soon/i],
+  ["placeholder", /placeholder(?: page| content| text)/i],
+  ["legacy MeroPatro brand", /\bMeroPatro\b|मेरो पात्रो/],
+  ["reference-friendly alias", /reference-friendly alias/i],
+  ["verified migrated", /verified migrated/i],
+  ["migration snapshot", /migration snapshot/i],
+  ["source confidence", /source confidence/i],
+  ["provisional future table", /provisional future table/i],
+  ["validated archive range", /validated archive range/i],
+  ["server fallback", /server fallback/i],
+  ["Cloudflare D1 in consumer UI", /Cloudflare D1/i],
+  ["this build", /this build/i],
+  ["canonical dataset", /canonical dataset/i],
+  ["client-only", /client-only/i],
+  ["directory fallback banner", /Live directory fallback active/i],
+  ["source-verified snapshot", /source-verified snapshot/i],
+  ["crawlable-text implementation copy", /crawlable text/i],
+  ["browser-worker implementation copy", /browser Worker/i],
+  ["diagnostic-report implementation copy", /diagnostic report/i],
+  ["Cloud sync implementation copy", /Cloud sync/i],
+  ["Google login implementation copy", /Google login/i]
+];
+
+const failures = [];
+for (const path of files) {
+  const text = await readFile(resolve(root, path), "utf8");
+  for (const [label, pattern] of forbidden) {
+    const hit = text.match(pattern);
+    if (hit) failures.push(`${path}: ${label} (${JSON.stringify(hit[0])})`);
+  }
+}
+
+if (failures.length) {
+  console.error("Public copy quality gate failed:\n" + failures.map((x) => `- ${x}`).join("\n"));
+  process.exit(1);
+}
+
+console.log(`Public copy quality gate passed across ${files.length} user-facing surfaces.`);
