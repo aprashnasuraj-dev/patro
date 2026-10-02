@@ -17,11 +17,12 @@ test("calendar home, month, date, weather and conversion surfaces remain backed 
 });
 
 test("calendar year hubs remain Worker-owned while calendar months stay SPA navigable",()=>{
- const router=read("src/PatroRouter.tsx"),year=read("worker/year-page.ts"),bridge=read("worker/connected-entry.ts");
+ const router=read("src/PatroRouter.tsx"),year=read("worker/year-page.ts"),gateway=read("worker/agent-gateway.ts"),bridge=read("worker/connected-entry.ts");
  assert.ok(router.includes("CALENDAR_MONTH_ROUTE"),"SPA router must scope interception to calendar month routes");
  assert.equal(router.includes('p.startsWith("/calendar/")'),false,"SPA must not hijack Worker-owned calendar year pages");
- assert.match(year,/\/calendar\/\\d\{4\}/,"Worker year-page handler must recognize year routes");
- assert.ok(bridge.includes("yearPageResponse"),"connected Worker must keep year-page response ahead of SPA fallback");
+ assert.ok(year.includes("const match=path.match(")&&year.includes("const year=Number(match[1])"),"Worker year-page handler must parse a calendar year route");
+ assert.ok(gateway.includes('import { yearPageResponse } from "./year-page"')&&gateway.includes("await yearPageResponse(request, env)"),"agent gateway must dispatch Worker year pages");
+ assert.ok(bridge.includes("handleAgentSurface")&&bridge.includes("await handleAgentSurface"),"connected Worker must execute agent/year surfaces before SPA fallback");
 });
 
 test("Time Machine and On This Day stay visible, native and data-backed",()=>{
