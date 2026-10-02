@@ -98,7 +98,7 @@ const NEPALI_TYPING_TOOL: ToolDirectoryItem = {
   id: "nepali-typing",
   icon: "ने",
   title: "नेपाली टाइपिङ · Nepali Typing",
-  subtitle: "Type Roman Nepali and choose from 34,571 local Devanagari suggestions without uploading your text.",
+  subtitle: "Roman Nepali लेखेर 34,571 देवनागरी सुझावबाट सहजै नेपाली टाइप गर्नुहोस्।",
   badge: "Typing Tools",
   group: "typing",
 };
@@ -106,45 +106,45 @@ const SAMUDAYA_TOOL: ToolDirectoryItem = { id: "samudaya", icon: "समु", ti
 
 const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   NEPALI_TYPING_TOOL,
-  { id: "convert", icon: "वि", title: "मिति रूपान्तरण · Date converter", subtitle: "BS ⇄ AD in one place, using the existing validated Patro calendar engine.", badge: "Calendar", group: "utility" },
-  { id: "calc", icon: "±", title: "दिन गणना · Date calculator", subtitle: "Days between two dates, plus add or subtract days from a selected date.", badge: "Calendar", group: "utility" },
-  { id: "age", icon: "उ", title: "उमेर गणक · Age calculator", subtitle: "Exact years, months, days, total days and next birthday.", badge: "Calendar", group: "utility" },
-  { id: "clock", icon: "घ", title: "विश्व घडी · World clock", subtitle: "Live world clocks plus a Nepal-time call-home planner.", badge: "Time", group: "utility" },
-  { id: "forex", icon: "$", title: "विदेशी मुद्रा · Forex rates", subtitle: "NRB buying and selling rates from the verified migrated market snapshot.", badge: "NRB", group: "utility" },
-  { id: "gold", icon: "सु", title: "सुनचाँदी हिसाब · Gold calculator", subtitle: "Tola–gram jewellery estimate using a trusted rate you enter; no fabricated live price.", badge: "Gold", group: "utility" },
-  { id: "emi", icon: "%", title: "कर्जा EMI · Loan EMI", subtitle: "Monthly instalment, total interest and year-by-year repayment schedule.", badge: "Finance", group: "utility" },
-  { id: "vat", icon: "भ", title: "भ्याट र प्रतिशत · VAT & percent", subtitle: "Add/remove VAT, percentage of an amount and percentage change.", badge: "Finance", group: "utility" },
-  { id: "units", icon: "ना", title: "नाप–तौल · Traditional units", subtitle: "Tola–lal, mana–pathi–muri and haat conversions with metric equivalents.", badge: "Measure", group: "utility" },
-  { id: "words", icon: "अ", title: "अंकलाई शब्दमा · Amount in words", subtitle: "Cheque-ready Nepali and English amount words in the lakh–crore system.", badge: "Language", group: "utility" },
-  { id: "tax", icon: "रु", title: "आयकर · Income tax", subtitle: "Reference-friendly alias for the existing FY 2083/84 income tax calculator.", badge: "Finance", group: "utility" },
-  { id: "land", icon: "रो", title: "जग्गा नाप · Land units", subtitle: "Reference-friendly alias for Ropani–Aana and Bigha–Kattha conversion.", badge: "Land", group: "utility" },
-  { id: "qr", icon: "QR", title: "QR कोड · QR code", subtitle: "Reference-friendly alias for the private Devanagari QR generator.", badge: "QR", group: "utility" },
-  { id: "fuel", icon: "इ", title: "इन्धन मूल्य · Fuel prices", subtitle: "Reference-friendly alias for the Nepal Oil Corporation fuel tracker.", badge: "NOC", group: "utility" },
-  { id: "preeti-converter", icon: "प्री", title: "Preeti Converter · प्रीति रूपान्तरण", subtitle: "Convert both Preeti → Unicode and Unicode → Preeti from one converter.", badge: "Typing Tools", group: "typing" },
-  { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Convert a Bikram Sambat date into its Gregorian/AD equivalent with source confidence.", badge: "Calendar", group: "utility" },
-  { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Convert a Gregorian/AD date into its Bikram Sambat equivalent.", badge: "Calendar", group: "utility" },
-  { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "Convert Ropani–Aana–Paisa–Dam, Bigha–Kattha–Dhur and square feet exactly.", badge: "Land", group: "utility" },
-  { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "Estimate FY 2083/84 salary tax with retirement and insurance deductions.", badge: "Finance", group: "utility" },
-  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "Create a private UTF-8 QR code from Nepali or English text directly in your browser.", badge: "QR", group: "utility" },
+  { id: "convert", icon: "वि", title: "मिति रूपान्तरण · Date converter", subtitle: "Bikram Sambat र Gregorian मिति दुवैतर्फ छिटो रूपान्तरण गर्नुहोस्।", badge: "Calendar", group: "utility" },
+  { id: "calc", icon: "±", title: "दिन गणना · Date calculator", subtitle: "दुई मितिबीचका दिन गन्नुहोस् वा छानिएको मितिमा दिन थपघट गर्नुहोस्।", badge: "Calendar", group: "utility" },
+  { id: "age", icon: "उ", title: "उमेर गणक · Age calculator", subtitle: "वर्ष, महिना, दिन, कुल दिन र अर्को जन्मदिनसहित उमेर गणना गर्नुहोस्।", badge: "Calendar", group: "utility" },
+  { id: "clock", icon: "घ", title: "विश्व घडी · World clock", subtitle: "विश्वका प्रमुख शहरहरूको समय र नेपालमा फोन गर्ने उपयुक्त समय हेर्नुहोस्।", badge: "Time", group: "utility" },
+  { id: "forex", icon: "$", title: "विदेशी मुद्रा · Forex rates", subtitle: "नेपाल राष्ट्र बैंकका खरिद र बिक्री विनिमय दर हेर्नुहोस्।", badge: "NRB", group: "utility" },
+  { id: "gold", icon: "सु", title: "सुनचाँदी हिसाब · Gold calculator", subtitle: "तोला वा ग्रामको तौल र तपाईंले राखेको दरबाट गहना मूल्य अनुमान गर्नुहोस्।", badge: "Gold", group: "utility" },
+  { id: "emi", icon: "%", title: "कर्जा EMI · Loan EMI", subtitle: "मासिक किस्ता, कुल ब्याज र वर्षगत भुक्तानी तालिका गणना गर्नुहोस्।", badge: "Finance", group: "utility" },
+  { id: "vat", icon: "भ", title: "भ्याट र प्रतिशत · VAT & percent", subtitle: "VAT थपघट, प्रतिशत र मूल्य परिवर्तन सजिलै गणना गर्नुहोस्।", badge: "Finance", group: "utility" },
+  { id: "units", icon: "ना", title: "नाप–तौल · Traditional units", subtitle: "तोला–लाल, माना–पाथी–मुरी, हात र अन्य एकाइ रूपान्तरण गर्नुहोस्।", badge: "Measure", group: "utility" },
+  { id: "words", icon: "अ", title: "अंकलाई शब्दमा · Amount in words", subtitle: "रकमलाई लाख–करोड प्रणालीमा नेपाली वा अङ्ग्रेजी शब्दमा लेख्नुहोस्।", badge: "Language", group: "utility" },
+  { id: "tax", icon: "रु", title: "आयकर · Income tax", subtitle: "आ.व. २०८३/८४ को व्यक्तिगत आयकर अनुमान गर्नुहोस्।", badge: "Finance", group: "utility" },
+  { id: "land", icon: "रो", title: "जग्गा नाप · Land units", subtitle: "रोपनी–आना–पैसा–दाम र बिघा–कट्ठा–धुर रूपान्तरण गर्नुहोस्।", badge: "Land", group: "utility" },
+  { id: "qr", icon: "QR", title: "QR कोड · QR code", subtitle: "नेपाली वा अङ्ग्रेजी पाठबाट निजी QR कोड बनाउनुहोस्।", badge: "QR", group: "utility" },
+  { id: "fuel", icon: "इ", title: "इन्धन मूल्य · Fuel prices", subtitle: "नेपाल आयल निगमका पेट्रोल, डिजेल, मट्टितेल, LPG र हवाई इन्धन मूल्य हेर्नुहोस्।", badge: "NOC", group: "utility" },
+  { id: "preeti-converter", icon: "प्री", title: "Preeti Converter · प्रीति रूपान्तरण", subtitle: "Preeti → Unicode र Unicode → Preeti दुवैतर्फ पाठ रूपान्तरण गर्नुहोस्।", badge: "Typing Tools", group: "typing" },
+  { id: "bstoad", icon: "वि", title: "BS → AD Date Converter", subtitle: "Bikram Sambat मितिलाई Gregorian/AD मितिमा रूपान्तरण गर्नुहोस्।", badge: "Calendar", group: "utility" },
+  { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Gregorian/AD मितिलाई Bikram Sambat मितिमा रूपान्तरण गर्नुहोस्।", badge: "Calendar", group: "utility" },
+  { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "रोपनी–आना–पैसा–दाम, बिघा–कट्ठा–धुर र square feet रूपान्तरण गर्नुहोस्।", badge: "Land", group: "utility" },
+  { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "आ.व. २०८३/८४ को तलब आयकर र लागू कटौती अनुमान गर्नुहोस्।", badge: "Finance", group: "utility" },
+  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "नेपाली वा अङ्ग्रेजी पाठबाट आफ्नो उपकरणमै QR कोड बनाउनुहोस्।", badge: "QR", group: "utility" },
   SAMUDAYA_TOOL,
-  { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "Check Nepal Oil Corporation petrol, diesel, kerosene, LPG and aviation fuel references.", badge: "Fuel", group: "utility" },
-  { id: "tithi-reminder", icon: "त", title: "तिथि रिमाइन्डर", subtitle: "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar ICS feed.", badge: "नयाँ", group: "tools" },
-  { id: "sait", icon: "शु", title: "साइत · शुभ समय", subtitle: "आधिकारिक मिति पहिलो; गणना गरिएको परिणाम ‘सम्भावित’ भनेर स्पष्ट.", badge: "नयाँ", group: "tools" },
-  { id: "baby-names", icon: "ना", title: "नक्षत्र अनुसार बच्चाको नाम", subtitle: "नक्षत्र अक्षर, न्वारन, पास्नी र खोप समयरेखा.", badge: "नयाँ", group: "tools" },
-  { id: "janmadin-akhbar", icon: "📰", title: "जन्मदिन अखबार", subtitle: "जन्म दिनको पात्रो र इतिहासबाट PNG शेयर कार्ड.", badge: "नयाँ", group: "tools" },
-  { id: "future-letter", icon: "✉", title: "भविष्यको चिठी", subtitle: "वि.सं. मिति वा तिथि जन्मदिनमा मात्र खुल्ने निजी चिठी.", badge: "नयाँ", group: "tools" },
-  { id: "spell-check", icon: "✓", title: "नेपाली हिज्जे जाँच", subtitle: "स्थानीय नियम र वैकल्पिक AI सुझावसहित नेपाली spell check.", badge: "भाषा", group: "tools" },
-  { id: "voice-typing", icon: "🎙", title: "आवाजबाट नेपाली टाइपिङ", subtitle: "ब्राउजर speech recognition र वैकल्पिक server fallback.", badge: "भाषा", group: "tools" },
-  { id: "ocr", icon: "OCR", title: "नेपाली OCR", subtitle: "तस्बिरबाट नेपाली अक्षर; OCR engine माग्दा मात्रै load हुन्छ.", badge: "भाषा", group: "tools" },
-  { id: "name-check", icon: "नाम", title: "नाम जाँच", subtitle: "नामको सुरु अक्षर र नक्षत्र/पद मिलान हेर्नुहोस्.", badge: "ज्योतिष", group: "tools" },
-  { id: "read-aloud", icon: "🔊", title: "पढेर सुनाउनुहोस्", subtitle: "नेपाली पाठ browser voice वा उपलब्ध सुरक्षित TTS बाट सुन्नुहोस्.", badge: "Accessibility", group: "tools" },
-  { id: "patro-bot", icon: "Bot", title: "Patro Bot", subtitle: "मिति, तिथि, पात्रो र रिमाइन्डरका छोटा प्रश्नको सहायक.", badge: "नयाँ", group: "tools" },
-  { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "Create tithi-based reminders, derive lunar dates and calculate upcoming ritual or birthday occurrences.", badge: "Tools", group: "tools" },
-  { id: "diaspora", icon: "देश", title: "Diaspora", subtitle: "Use Nepal calendar context with timezone-aware dates and daily information while living abroad.", badge: "Tools", group: "tools" },
-  { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "Create shareable Nepali calendar, date and festival cards for messaging and social sharing.", badge: "Tools", group: "tools" },
-  { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "Keep private family dates, shared events and household calendar information together.", badge: "Tools", group: "tools" },
-  { id: "api", icon: "</>", title: "API · Developers", subtitle: "Explore आफ्नै पात्रो API endpoints, integration guidance and developer resources.", badge: "Tools", group: "tools" },
-  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "Review, export or remove private data associated with आफ्नै पात्रो features.", badge: "Tools", group: "tools" },
+  { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "नेपाल आयल निगमका पेट्रोलियम मूल्य क्षेत्रअनुसार हेर्नुहोस्।", badge: "Fuel", group: "utility" },
+  { id: "tithi-reminder", icon: "त", title: "तिथि रिमाइन्डर", subtitle: "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar feed व्यवस्थापन गर्नुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "sait", icon: "शु", title: "साइत · शुभ समय", subtitle: "परम्परागत नियम र उपलब्ध आधिकारिक मितिसहित शुभ समय खोज्नुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "baby-names", icon: "ना", title: "नक्षत्र अनुसार बच्चाको नाम", subtitle: "नक्षत्र अक्षर, न्वारन, पास्नी र खोप समयरेखा हेर्नुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "janmadin-akhbar", icon: "📰", title: "जन्मदिन अखबार", subtitle: "जन्म दिनको पात्रो र इतिहासबाट PNG शेयर कार्ड बनाउनुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "future-letter", icon: "✉", title: "भविष्यको चिठी", subtitle: "वि.सं. मिति वा तिथि जन्मदिनमा खुल्ने निजी चिठी लेख्नुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "spell-check", icon: "✓", title: "नेपाली हिज्जे जाँच", subtitle: "नेपाली पाठको हिज्जे जाँच्नुहोस् र सुधार सुझाव हेर्नुहोस्।", badge: "भाषा", group: "tools" },
+  { id: "voice-typing", icon: "🎙", title: "आवाजबाट नेपाली टाइपिङ", subtitle: "बोलेर नेपाली पाठ लेख्नुहोस्। उपलब्ध ब्राउजरमा आवाज सीधै पहिचान हुन्छ।", badge: "भाषा", group: "tools" },
+  { id: "ocr", icon: "OCR", title: "नेपाली OCR", subtitle: "तस्बिरबाट नेपाली अक्षर निकालेर सम्पादनयोग्य पाठ बनाउनुहोस्।", badge: "भाषा", group: "tools" },
+  { id: "name-check", icon: "नाम", title: "नाम जाँच", subtitle: "नामको सुरु अक्षर र नक्षत्र/पद मिलान हेर्नुहोस्।", badge: "ज्योतिष", group: "tools" },
+  { id: "read-aloud", icon: "🔊", title: "पढेर सुनाउनुहोस्", subtitle: "नेपाली पाठ आवाजमा सुन्नुहोस्।", badge: "Accessibility", group: "tools" },
+  { id: "patro-bot", icon: "Bot", title: "Patro Bot", subtitle: "मिति, तिथि, पात्रो र रिमाइन्डरका छोटा प्रश्न सोध्नुहोस्।", badge: "नयाँ", group: "tools" },
+  { id: "tithi", icon: "त", title: "तिथि · Tithi", subtitle: "तिथिमा आधारित रिमाइन्डर र आगामी धार्मिक वा जन्मदिन मिति गणना गर्नुहोस्।", badge: "Tools", group: "tools" },
+  { id: "diaspora", icon: "देश", title: "Diaspora", subtitle: "विदेशमा बस्दा नेपाल समय, मिति र पात्रो सन्दर्भ सजिलै हेर्नुहोस्।", badge: "Tools", group: "tools" },
+  { id: "card", icon: "▣", title: "कार्ड · Share Cards", subtitle: "मिति र चाडपर्वका शेयर गर्न मिल्ने कार्ड बनाउनुहोस्।", badge: "Tools", group: "tools" },
+  { id: "family", icon: "परि", title: "परिवार · Family", subtitle: "परिवारका मिति, साझा घटना र सम्झना एउटै ठाउँमा राख्नुहोस्।", badge: "Tools", group: "tools" },
+  { id: "api", icon: "</>", title: "API · Integration", subtitle: "आफ्नै पात्रो सेवासँग एकीकरणका लागि उपलब्ध API विवरण हेर्नुहोस्।", badge: "API", group: "tools" },
+  { id: "my-data", icon: "डेटा", title: "मेरो डेटा · My Data", subtitle: "आफ्नो खाताको निजी डेटा हेर्नुहोस्, डाउनलोड गर्नुहोस् वा मेटाउनुहोस्।", badge: "Privacy", group: "tools" },
 ];
 
 const REMOTE_CATALOG_URL = "/api/v1/tools/catalog";
@@ -306,9 +306,6 @@ export function UtilitySuite() {
             badge: String(item.badge || "Tools"),
             group: item.category === "typing" ? "typing" : item.category === "utility" ? "utility" : "tools",
           })) as ToolDirectoryItem[];
-        // The database catalog is authoritative for labels/order of rows it knows,
-        // but it must never remove shipped client tools when the catalog lags a release.
-        // Merge remote metadata over the complete local capability registry instead.
         const remoteById = new Map(next.map((item) => [item.id, item]));
         const merged = TOOL_DIRECTORY.map((local) => {
           const remote = remoteById.get(local.id);
@@ -355,7 +352,7 @@ export function UtilitySuite() {
 
   async function loadFuelPrices() {
     if (!navigator.onLine) {
-      setFuelError(fuel ? "Offline — showing last saved NOC data." : "Offline — no saved NOC price data is available yet.");
+      setFuelError(fuel ? "इन्टरनेट छैन—अघिल्लो सुरक्षित मूल्य देखाइएको छ।" : "इन्टरनेट छैन र यस उपकरणमा पहिलेको मूल्य सुरक्षित छैन।");
       return;
     }
     setFuelLoading(true);
@@ -366,15 +363,15 @@ export function UtilitySuite() {
       });
       const body = await response.json() as FuelPayload | { ok?: false; error?: string };
       if (!response.ok || !body || body.ok !== true || !("zones" in body) || !Array.isArray(body.zones) || !body.zones.length) {
-        throw new Error("error" in body && body.error ? body.error : "NOC fuel service unavailable");
+        throw new Error("fuel_unavailable");
       }
       const next = body as FuelPayload;
       setFuel(next);
       setFuelZoneIndex((current) => Math.min(current, Math.max(0, next.zones.length - 1)));
-      setFuelError(next.stale ? (next.note || "Official snapshot is being shown.") : "");
+      setFuelError(next.stale ? "पछिल्लो उपलब्ध NOC मूल्य देखाइएको छ।" : "");
       try { localStorage.setItem("patro.noc.fuel", JSON.stringify(next)); } catch { /* best-effort offline cache */ }
-    } catch (error) {
-      setFuelError((fuel ? "Using last saved data. " : "") + (error instanceof Error ? error.message : "NOC fuel service unavailable"));
+    } catch {
+      setFuelError(fuel ? "ताजा मूल्य अहिले अपडेट हुन सकेन। अघिल्लो सुरक्षित मूल्य देखाइएको छ।" : "NOC मूल्य अहिले लोड हुन सकेन। केही बेरपछि फेरि प्रयास गर्नुहोस्।");
     } finally {
       setFuelLoading(false);
     }
@@ -492,7 +489,7 @@ export function UtilitySuite() {
     : null;
   const typingTools = catalog.filter((tool) => tool.group === "typing");
   const utilityTools = catalog.filter((tool) => tool.group === "utility");
-  const generalTools = catalog.filter((tool) => tool.group === "tools");
+  const generalTools = catalog.filter((tool) => tool.group === "tools" && tool.id !== "api");
   const showFont = selectedTool === "preeti-converter";
   const showDate = selectedTool === "bstoad" || selectedTool === "adtobs" || selectedTool === "convert";
   const showReferenceTool = isReferenceUtilityId(selectedTool);
@@ -505,7 +502,7 @@ export function UtilitySuite() {
         <div>
           <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools · उपकरण"}</p>
           <h1>{showTypingCatalog ? "Nepali Typing Tools" : selectedMeta?.title || "All tools in one place"}</h1>
-          <p>{showTypingCatalog ? "Two tools live here: one Preeti Converter with both directions, and Roman → Unicode Nepali Typing with local suggestions." : selectedMeta?.subtitle || "Choose a tool below. Every tool has its own clean URL and opens by itself instead of stacking multiple tool windows."}</p>
+          <p>{showTypingCatalog ? "Preeti रूपान्तरण र Roman → Unicode नेपाली टाइपिङ एउटै ठाउँबाट खोल्नुहोस्।" : selectedMeta?.subtitle || "मिति, भाषा, वित्त, ज्योतिष र दैनिक कामका उपयोगी उपकरण एउटै ठाउँमा।"}</p>
         </div>
         <span className={"utility-status " + (online ? "is-online" : "is-offline")}>{online ? "Online · offline ready" : "Offline mode"}</span>
       </section>
@@ -516,7 +513,7 @@ export function UtilitySuite() {
             <div>
               <p className="eyebrow">{showTypingCatalog ? "Typing Tools · टाइपिङ टुल्स" : "Tools directory · उपकरण"}</p>
               <h2 id="utility-directory-title">{showTypingCatalog ? "Choose a typing tool" : "Choose what you want to do"}</h2>
-              <p>{showTypingCatalog ? "Preeti conversion stays in one converter. Nepali Typing is a separate Roman → Unicode writing tool." : "Every tool has a one-line explanation and its own dedicated /tools/... URL."}</p>
+              <p>{showTypingCatalog ? "Preeti conversion र Roman → Unicode नेपाली टाइपिङमध्ये चाहिएको सुविधा छान्नुहोस्।" : "हरेक उपकरणको उद्देश्य छोटकरीमा दिइएको छ—चाहिएको काम छानेर सीधै सुरु गर्नुहोस्।"}</p>
             </div>
             <a className="utility-home-link" href={showTypingCatalog ? "/tools" : "/"}>{showTypingCatalog ? "← All tools" : "← आफ्नै पात्रो home"}</a>
           </div>
@@ -540,7 +537,7 @@ export function UtilitySuite() {
             </div>
 
             <div className="utility-directory-section-head">
-              <div><p className="eyebrow">Tools</p><h3>Calendar, sharing, family and developer tools</h3></div>
+              <div><p className="eyebrow">Tools</p><h3>पात्रो, साझेदारी र व्यक्तिगत सुविधा</h3></div>
             </div>
             <div className="utility-directory-grid">
               {generalTools.map((tool) => (
@@ -552,9 +549,8 @@ export function UtilitySuite() {
               ))}
             </div>
 
-
             <div className="utility-directory-section-head">
-              <div><p className="eyebrow">Converters & utilities</p><h3>Date, land, finance and everyday tools</h3></div>
+              <div><p className="eyebrow">Converters & utilities</p><h3>मिति, जग्गा, वित्त र दैनिक हिसाब</h3></div>
             </div>
             <div className="utility-directory-grid">
               {utilityTools.map((tool) => (
@@ -567,17 +563,17 @@ export function UtilitySuite() {
             </div>
 
             <div className="utility-directory-section-head">
-              <div><p className="eyebrow">Verified external services</p><h3>Official market references</h3></div>
+              <div><p className="eyebrow">आधिकारिक साइटहरू</p><h3>बजार र सार्वजनिक जानकारी</h3></div>
             </div>
             <div className="utility-directory-grid">
               <a className="utility-directory-card" href="https://www.nepalstock.com" target="_blank" rel="noreferrer">
                 <span className="utility-directory-icon" aria-hidden="true">शे</span>
-                <span className="utility-directory-copy"><small>Official site</small><strong>सेयर बजार · Share market</strong><span>Open the Nepal Stock Exchange website.</span></span>
+                <span className="utility-directory-copy"><small>NEPSE</small><strong>सेयर बजार · Share market</strong><span>Nepal Stock Exchange को वेबसाइट खोल्नुहोस्।</span></span>
                 <span className="utility-directory-arrow" aria-hidden="true">↗</span>
               </a>
               <a className="utility-directory-card" href="https://kalimatimarket.gov.np" target="_blank" rel="noreferrer">
                 <span className="utility-directory-icon" aria-hidden="true">त</span>
-                <span className="utility-directory-copy"><small>Official market</small><strong>तरकारी भाउ · Vegetable prices</strong><span>Open Kalimati Fruit and Vegetable Market price information.</span></span>
+                <span className="utility-directory-copy"><small>Kalimati Market</small><strong>तरकारी भाउ · Vegetable prices</strong><span>कालिमाटी फलफूल तथा तरकारी बजारको मूल्य जानकारी खोल्नुहोस्।</span></span>
                 <span className="utility-directory-arrow" aria-hidden="true">↗</span>
               </a>
             </div>          </>}
@@ -594,7 +590,7 @@ export function UtilitySuite() {
 
           <div className="utility-directory-related">
             <span>More:</span>
-            <a href="/jyotish/rashifal">राशिफल · Rashifal</a>
+            <a href="/rashifal">राशिफल · Rashifal</a>
             <a href="/">मुख्य पात्रो · Home</a>
           </div>
         </section>
@@ -611,10 +607,10 @@ export function UtilitySuite() {
       <section className="utility-card" aria-labelledby="date-converter-title" hidden={!showDate}>
         <header className="utility-card-head">
           <div>
-            <p className="eyebrow">Calendar engine</p>
+            <p className="eyebrow">मिति रूपान्तरण</p>
             <h2 id="date-converter-title">BS ⇄ AD Date Converter</h2>
           </div>
-          <span className="utility-badge">Anchor: 1970-01-01 BS = 1913-04-13 AD</span>
+          <span className="utility-badge">वि.सं. ⇄ ई.सं.</span>
         </header>
 
         <div className="date-grid">
@@ -629,7 +625,7 @@ export function UtilitySuite() {
               <strong>{bsDateResult.ad} AD</strong>
               <span>{bsDateResult.bs} BS</span>
               <small className={"utility-provenance " + (bsDateResult.metadata.confidence === "provisional-open-table" ? "is-provisional" : "")}>
-                {bsDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
+                {bsDateResult.metadata.confidence === "provisional-open-table" ? "भविष्यका वर्षमा प्रकाशित पात्रोबीच फरक पर्न सक्छ" : "पात्रो अभिलेखअनुसार"}
               </small>
             </div>}
           </article>}
@@ -644,23 +640,23 @@ export function UtilitySuite() {
               <strong>{adDateResult.bs} BS</strong>
               <span>{adDateResult.ad} AD</span>
               <small className={"utility-provenance " + (adDateResult.metadata.confidence === "provisional-open-table" ? "is-provisional" : "")}>
-                {adDateResult.metadata.confidence === "provisional-open-table" ? "Provisional future table" : "Validated archive range"}
+                {adDateResult.metadata.confidence === "provisional-open-table" ? "भविष्यका वर्षमा प्रकाशित पात्रोबीच फरक पर्न सक्छ" : "पात्रो अभिलेखअनुसार"}
               </small>
             </div>}
           </article>}
         </div>
 
-        <p className="utility-note">1970–2093 is backed by the existing Patro synchronized archive; 2094–2099 remains explicitly provisional because independent future BS tables can disagree.</p>
+        <p className="utility-note">टाढाका भविष्यका वि.सं. वर्षमा विभिन्न प्रकाशित पात्रोबीच दिन फरक पर्न सक्छ। महत्त्वपूर्ण कानुनी वा औपचारिक कामका लागि सम्बन्धित आधिकारिक पात्रोसँग पनि मिति जाँच गर्नुहोस्।</p>
         {dateError && <p className="utility-error" role="alert">{dateError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="tax-title" hidden={selectedTool !== "incometax" && selectedTool !== "tax"}>
         <header className="utility-card-head">
           <div>
-            <p className="eyebrow">FY 2083/84 · Salary tax</p>
+            <p className="eyebrow">आ.व. २०८३/८४ · व्यक्तिगत आयकर</p>
             <h2 id="tax-title">Personal Income Tax Calculator</h2>
           </div>
-          <span className="utility-badge">Current unified resident schedule</span>
+          <span className="utility-badge">Resident taxpayer estimate</span>
         </header>
 
         <div className="tax-grid">
@@ -684,7 +680,7 @@ export function UtilitySuite() {
               <Field label="Life insurance (annual)" value={taxInput.lifeInsurance} onChange={(value) => setTaxInput((v) => ({ ...v, lifeInsurance: value }))} />
               <Field label="Health insurance (annual)" value={taxInput.healthInsurance} onChange={(value) => setTaxInput((v) => ({ ...v, healthInsurance: value }))} />
             </div>
-            <p className="utility-note">Caps applied by the engine: life insurance NPR 40,000; health insurance NPR 20,000. Retirement contribution cap is the lower of actual contribution, one-third of salary, and the applicable NPR 300,000 / NPR 500,000 ceiling.</p>
+            <p className="utility-note">जीवन बीमा कटौती सीमा NPR 40,000 र स्वास्थ्य बीमा कटौती सीमा NPR 20,000 सम्म लागू हुन्छ। अवकाश योगदानको सीमा वास्तविक योगदान, तलबको एक-तिहाइ र लागू NPR 300,000 / NPR 500,000 सीमामध्ये कम रकमका आधारमा गणना हुन्छ।</p>
           </article>
         </div>
 
@@ -703,14 +699,14 @@ export function UtilitySuite() {
           </div>)}
         </div>}
 
-        <p className="utility-note">This module is versioned for FY 2083/84. The first 1% band is waived only when the qualifying SSF checkbox correctly reflects the taxpayer's legal status.</p>
+        <p className="utility-note">यो गणक आ.व. २०८३/८४ का लागि हो। १% सामाजिक सुरक्षा कर छुट लागू हुने वा नहुने अवस्था तपाईंको वास्तविक SSF कानुनी स्थितिअनुसार छान्नुहोस्। अन्तिम कर विवरणका लागि सम्बन्धित आधिकारिक नियम जाँच गर्नुहोस्।</p>
         {taxError && <p className="utility-error" role="alert">{taxError}</p>}
       </section>
 
       <section className="utility-card" aria-labelledby="qr-title" hidden={selectedTool !== "nepaliqr" && selectedTool !== "qr"}>
         <header className="utility-card-head">
           <div>
-            <p className="eyebrow">Private · client-only</p>
+            <p className="eyebrow">गोपनीय · तपाईंको उपकरणमै</p>
             <h2 id="qr-title">Devanagari QR Generator</h2>
           </div>
           <span className="utility-badge">UTF-8 · offline</span>
@@ -731,7 +727,7 @@ export function UtilitySuite() {
                 <option value="H">H · ~30%</option>
               </select>
             </label>
-            <p className="utility-note">Generated entirely in the browser Worker using explicit UTF-8 bytes. The entered text is not transmitted.</p>
+            <p className="utility-note">QR कोड तपाईंको उपकरणमै बन्छ; यहाँ लेखिएको पाठ बाहिर पठाइँदैन।</p>
           </div>
 
           <div className="qr-preview" aria-live="polite">
@@ -741,12 +737,11 @@ export function UtilitySuite() {
                   <div><strong>{qrResult.modules} × {qrResult.modules}</strong><span>{qrResult.bytes} UTF-8 bytes</span></div>
                   <a className="utility-secondary qr-download" href={qrResult.dataUrl} download="nepali-qr.gif">Save QR</a>
                 </>
-              : <span>Enter text to generate a QR code.</span>}
+              : <span>QR बनाउन पाठ लेख्नुहोस्।</span>}
           </div>
         </div>
         {qrError && <p className="utility-error" role="alert">{qrError}</p>}
       </section>
-
 
       <section className="utility-card" aria-labelledby="fuel-title" hidden={selectedTool !== "fuelprice" && selectedTool !== "fuel"}>
         <header className="utility-card-head">
@@ -768,7 +763,7 @@ export function UtilitySuite() {
               </select>
             </label>
             <span className={"utility-status " + (fuel.stale ? "is-offline" : "is-online")}>
-              {fuel.stale ? "Official snapshot · stale" : "Live NOC source"}
+              {fuel.stale ? "पछिल्लो उपलब्ध NOC मूल्य" : "NOC को ताजा मूल्य"}
             </span>
           </div>
 
@@ -781,19 +776,17 @@ export function UtilitySuite() {
             <article className="utility-result"><span>ATF duty free</span><strong>{selectedFuelZone.atfDutyFreeUsdPerKl == null ? "—" : "USD " + selectedFuelZone.atfDutyFreeUsdPerKl + "/KL"}</strong></article>
           </div>
           <p className="utility-note">
-            Depots: {selectedFuelZone.depots.join(", ")}. {fuel.effectiveDate ? "Effective reference: " + fuel.effectiveDate + ". " : ""}
-            Fetched {new Date(fuel.fetchedAt).toLocaleString()}.
-            {fuel.note ? " " + fuel.note : ""}
+            डिपो समूह: {selectedFuelZone.depots.join(", ")}. {fuel.effectiveDate ? "लागू मिति: " + fuel.effectiveDate + ". " : ""}
+            अद्यावधिक: {new Date(fuel.fetchedAt).toLocaleString()}.
           </p>
-        </> : <p className="utility-note">No NOC price data saved yet. Connect once to fetch the current official source or the latest verified official snapshot.</p>}
+        </> : <p className="utility-note">इन्टरनेट जडान भएपछि नेपाल आयल निगमको उपलब्ध मूल्य लोड हुनेछ।</p>}
         {fuelError && <p className="utility-warning" role="status">{fuelError}</p>}
       </section>
-
 
       <section className="utility-card" aria-labelledby="font-converter-title" hidden={!showFont}>
         <header className="utility-card-head">
           <div>
-            <p className="eyebrow">Text engine</p>
+            <p className="eyebrow">प्रीति रूपान्तरण</p>
             <h2 id="font-converter-title">Preeti ⇄ Unicode</h2>
           </div>
           <button type="button" className="utility-secondary" onClick={swapFont}>Swap direction</button>
@@ -815,7 +808,7 @@ export function UtilitySuite() {
           </label>
         </div>
         <div className="utility-inline-actions">
-          <label className="utility-check"><input type="checkbox" checked={capitalIAsShortI} onChange={(event) => setCapitalIAsShortI(event.target.checked)} />Legacy capital-I short-i compatibility</label>
+          <label className="utility-check"><input type="checkbox" checked={capitalIAsShortI} onChange={(event) => setCapitalIAsShortI(event.target.checked)} />पुराना Preeti फाइलका Capital-I अक्षरलाई ह्रस्व इ मान्नुहोस्</label>
           <button type="button" onClick={() => copy(fontOutput)}>Copy output</button>
         </div>
         {fontError && <p className="utility-error" role="alert">{fontError}</p>}
@@ -824,10 +817,10 @@ export function UtilitySuite() {
       <section className="utility-card" aria-labelledby="land-title" hidden={selectedTool !== "landconverter" && selectedTool !== "land"}>
         <header className="utility-card-head">
           <div>
-            <p className="eyebrow">Exact land math</p>
+            <p className="eyebrow">जग्गा नाप रूपान्तरण</p>
             <h2 id="land-title">Ropani · Aana · Paisa · Dam ⇄ Bigha · Kattha · Dhur</h2>
           </div>
-          <span className="utility-badge">1,000,000× scaled integers</span>
+          <span className="utility-badge">रोपनी–आना ⇄ बिघा–कट्ठा</span>
         </header>
 
         <div className="land-grid">
