@@ -161,17 +161,15 @@ test("Community Suite remains complete and emitted as six calendars plus Chakra 
   assert.equal((preferences.match(/href:\s*"\//g)||[]).length,6,"community preference/menu inventory must remain exactly six calendars");
 });
 
-test("migration runtime stays on connected Worker entry and canonical custom domain",()=>{
-  const wrangler=read("wrangler.jsonc");
-  const toml=read("wrangler.toml");
-  assert.match(wrangler,/"main"\s*:\s*"worker\/connected-entry\.ts"/);
-  assert.match(wrangler,/"pattern"\s*:\s*"aafnaipatro\.com"/);
-  assert.match(wrangler,/"custom_domain"\s*:\s*true/);
-  assert.match(wrangler,/"preview_urls"\s*:\s*false/);
-  assert.match(toml,/main\s*=\s*"worker\/connected-entry\.ts"/);
-  assert.match(toml,/pattern\s*=\s*"aafnaipatro\.com"/);
-  assert.match(toml,/custom_domain\s*=\s*true/);
-  assert.match(toml,/preview_urls\s*=\s*false/);
-  assert.match(toml,/not_found_handling\s*=\s*"none"/);
-  assert.match(toml,/run_worker_first\s*=\s*\["\/\*",\s*"!\/assets\/\*"\]/);
+test("production runtime stays on the single canonical Worker config",()=>{
+  const wrangler=JSON.parse(read("wrangler.jsonc"));
+  assert.equal(wrangler.name,"patro");
+  assert.equal(wrangler.main,"worker/connected-entry.ts");
+  assert.equal(wrangler.preview_urls,false);
+  assert.equal(wrangler.assets?.directory,"./dist");
+  assert.equal(wrangler.assets?.binding,"ASSETS");
+  assert.equal(wrangler.assets?.not_found_handling,"none");
+  assert.deepEqual(wrangler.assets?.run_worker_first,["/*","!/assets/*"]);
+  assert.ok((wrangler.d1_databases||[]).some((db)=>db?.binding==="DB"),"DB binding missing");
+  assert.ok((wrangler.routes||[]).some((route)=>route?.pattern==="aafnaipatro.com"&&route?.custom_domain===true),"canonical custom domain missing");
 });
