@@ -32,7 +32,7 @@ const TOOL_META:Record<string,[string,string]>={
  "spell-check":["नेपाली हिज्जे जाँच · Spell Check","स्थानीय नियम र सुझाव प्रयोग गरी नेपाली पाठको हिज्जे जाँच गर्नुहोस्।"],
  "voice-typing":["आवाजबाट नेपाली टाइपिङ","browser speech recognition प्रयोग गरेर आवाजबाट नेपाली Unicode टाइप गर्नुहोस्।"],
  ocr:["नेपाली OCR · Image to Text","तस्बिरबाट नेपाली र English Unicode text browser भित्रै निकाल्नुहोस्।"],
- "name-check":["नाम जाँच · Nakshatra Name Check","नामको सुरु ध्वनि र नक्षत्र/पद सन्दर्भ मिलान हेर्नुहोस्।"],
+ "name-check":["कागजात नाम जाँच · Document Name Check","नागरिकता, राहदानी, प्रमाणपत्र वा KYC का नेपाली/English नामको हिज्जे र transliteration तुलना गर्नुहोस्।"],
  "read-aloud":["पढेर सुनाउनुहोस् · Nepali Read Aloud","उपलब्ध browser speech voices प्रयोग गरी नेपाली पाठ सुन्नुहोस्।"],
  "patro-bot":["पात्रो बोट · Patro Bot","मिति, तिथि, पात्रो र reminders सम्बन्धी छोटा प्रश्न सोध्नुहोस्।"]
 };
