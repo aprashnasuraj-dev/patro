@@ -13,6 +13,7 @@ type OfficialRow = {
   source_url?: string;
 };
 
+const MAX_RANGE_DAYS=180;
 function todayNepal() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 }
@@ -20,6 +21,10 @@ function plusDays(iso: string, days: number) {
   const d = new Date(iso + "T00:00:00Z");
   d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
+}
+function rangeDays(from:string,to:string){
+  const a=Date.parse(from+"T00:00:00Z"),b=Date.parse(to+"T00:00:00Z");
+  return Number.isFinite(a)&&Number.isFinite(b)?Math.floor((b-a)/86400000):NaN;
 }
 
 export function SaitTool() {
@@ -30,9 +35,16 @@ export function SaitTool() {
   const [rows, setRows] = useState<SaitResult[]>([]);
   const [official, setOfficial] = useState<OfficialRow[]>([]);
   const [status, setStatus] = useState("");
+  const [busy,setBusy]=useState(false);
+
+  function preset(days:number){setFrom(today);setTo(plusDays(today,days));setStatus(`${days} दिनको खोज अवधि तयार भयो।`)}
 
   async function search() {
-    setStatus("पञ्चाङ्ग र आधिकारिक सूची जाँचिँदैछ…");
+    const span=rangeDays(from,to);
+    if(!Number.isFinite(span)){setStatus("सही सुरु र अन्तिम मिति छान्नुहोस्।");return;}
+    if(span<0){setStatus("अन्तिम मिति सुरु मितिभन्दा अगाडि हुन सक्दैन।");return;}
+    if(span>MAX_RANGE_DAYS){setStatus(`एक पटकमा बढीमा ${MAX_RANGE_DAYS} दिन खोज्नुहोस्। यसले पञ्चाङ्ग गणना छिटो र स्थिर राख्छ।`);return;}
+    setBusy(true);setStatus(`पञ्चाङ्ग र आधिकारिक सूची जाँचिँदैछ… (${span+1} दिन)`);
     try {
       const q = new URLSearchParams({ kind, from, to });
       const [officialResponse] = await Promise.all([
@@ -44,10 +56,10 @@ export function SaitTool() {
       setOfficial(off);
       const results = findSait({ kind, from, to, provider: panchangProvider, officialDates: off.map((x) => x.fact_date) });
       setRows(results);
-      setStatus(results.length || off.length ? "नतिजा तयार भयो।" : "यो अवधिमा मिल्ने साइत भेटिएन।");
+      setStatus(results.length || off.length ? `${off.length} आधिकारिक र ${results.filter(x=>!x.official).length} सम्भावित नतिजा तयार भयो।` : "यो अवधिमा मिल्ने साइत भेटिएन।");
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "साइत निकाल्न सकिएन।");
-    }
+    } finally {setBusy(false);}
   }
 
   const computed = rows.filter((x) => !x.official);
@@ -64,8 +76,11 @@ export function SaitTool() {
           <label>देखि<input type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
           <label>सम्म<input type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
         </div>
-        <button type="button" className="tool-primary-button" onClick={search}>आफ्नै साइत खोज्नुहोस्</button>
-        {status ? <p className="tool-status">{status}</p> : null}
+        <div className="tool-action-row" aria-label="छिटो अवधि">
+          {[7,30,90,180].map(days=><button key={days} type="button" className="tool-link-button" onClick={()=>preset(days)}>{days} दिन</button>)}
+        </div>
+        <button type="button" className="tool-primary-button" onClick={()=>void search()} disabled={busy}>{busy?"साइत खोजिँदैछ…":"आफ्नै साइत खोज्नुहोस्"}</button>
+        {status ? <p className="tool-status" role="status">{status}</p> : null}
       </section>
 
       <ToolResult title="आफ्नै साइत नतिजा" speechText={speech}>
