@@ -1,29 +1,25 @@
-# Cloudflare Git Deployment Runbook
+# Cloudflare Zero-State Rebuild Runbook
 
-This document describes the **current production topology** for Aafnai Patro. Do not use the retired `cloudflare-migration` / `mero-patro` / separate Pages topology for a new deployment.
+This document is the **current production rebuild path** for **आफ्नै पात्रो / Aafnai Patro**. Do not use the retired `cloudflare-migration`, `mero-patro`, separate Pages, or Vercel topology for a new production build.
 
-## Current production target
+## Production target
 
 ```text
-GitHub: aprashnasuraj-dev/patro
-Branch: main
-        |
-        v
-Cloudflare Worker: patro
-Entrypoint: worker/connected-entry.ts
-        |
-        +-- Static Assets binding: ASSETS -> ./dist
-        +-- D1 binding: DB -> patro
-        +-- canonical custom domain: aafnaipatro.com
-        +-- native Cloudflare APIs first
-        +-- selective Supabase compatibility fallback for TV / FM / Samachar only
+GitHub:             aprashnasuraj-dev/patro
+Production branch: main
+Worker:             patro
+Entrypoint:         worker/connected-entry.ts
+Static assets:      ASSETS -> ./dist
+D1 binding:         DB -> patro
+Custom domain:      aafnaipatro.com
+Architecture:       native Cloudflare first + selective TV/FM/Samachar compatibility only
 ```
 
-The production deployment is a **single Cloudflare Worker with Static Assets**. A separate Pages project is not required for the current rebuild path.
+The production deployment is one Cloudflare Worker with Workers Static Assets. A separate Pages project is not required.
 
-## 1. Repository gate
+## 1. Repository gate before importing Cloudflare
 
-Use Node.js 22 and run:
+Use Node.js 22 from a clean checkout:
 
 ```bash
 npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
@@ -31,14 +27,14 @@ npm run cloudflare:production-check
 npm run cloudflare:validate
 ```
 
-`cloudflare:validate` builds the complete app, verifies migration inventory and calendar snapshots, then performs Wrangler dry-runs for both:
+The build itself runs brand/SEO generation, TypeScript, Vite, retained tool/community emitters, doctor checks and the final product-build verifier. `cloudflare:validate` also performs Wrangler dry-runs against both committed deployment configs:
 
-- `wrangler.jsonc` — canonical deploy configuration
-- `wrangler.toml` — default Git-import discovery configuration
+- `wrangler.jsonc` — canonical deployment configuration
+- `wrangler.toml` — Git-import discovery mirror
 
-Both configs must stay aligned.
+Do not proceed if the clean local build or Wrangler dry-run fails.
 
-## 2. Reconnect / import the Git repository
+## 2. Reconnect/import the repository from zero
 
 In Cloudflare Workers & Pages, reconnect GitHub if necessary and import:
 
@@ -51,19 +47,19 @@ Deploy command:    npm run deploy:cloudflare
 Root directory:    repository root
 ```
 
-Do not create or select a Worker named `mero-patro` for this deployment.
+Do **not** create/select `mero-patro` and do not create a separate Pages site for this rebuild.
 
-If the old Git integration reports:
+If the stale Git integration reports:
 
 ```text
 Preview creation failed: This Worker does not exist on your account.
 ```
 
-remove/reconnect the stale Cloudflare Git project or import the repository as the `patro` Worker again. The GitHub-side code cannot repair a deleted Cloudflare service before Cloudflare has re-established that service connection.
+remove/reconnect that stale Cloudflare Git project or import the repository again as Worker `patro`. Git cannot recreate the Cloudflare account-side service association before Cloudflare accepts the import.
 
 ## 3. Production Wrangler configuration
 
-Production-critical values are committed in `wrangler.jsonc` and mirrored in `wrangler.toml`:
+`wrangler.jsonc` and `wrangler.toml` must remain aligned:
 
 ```text
 name:              patro
@@ -77,26 +73,62 @@ D1 database:       patro
 D1 database ID:    fb25c860-01db-4ab0-9036-7f87b26ca64b
 ```
 
-The existing D1 database is part of the production configuration. Do **not** create a blank replacement D1 database unless you intentionally want to perform a full data bootstrap and update the committed binding.
+Do not create a blank replacement D1 database during a routine rebuild. The existing bound D1 database is part of the production state.
 
-## 4. What the deploy command does
+## 4. Deploy command order
 
 ```bash
 npm run deploy:cloudflare
 ```
 
-performs this order:
+performs:
 
 1. production build;
-2. removes `dist/_redirects` so Workers Static Assets cannot interpret Pages redirects;
-3. applies pending D1 schema migrations to the bound `DB` database;
-4. deploys `worker/connected-entry.ts` plus the built static assets.
+2. removes `dist/_redirects` so Workers Static Assets cannot interpret old Pages redirects;
+3. applies pending D1 schema migrations to `DB`;
+4. deploys `worker/connected-entry.ts` and static assets.
 
 Routine deploys do not bulk-reseed the public archive.
 
-## 5. Static/UI features included in every build
+## 5. Release inventory that must survive every build
 
-The build must emit the React SPA plus retained standalone suites. In particular, `scripts/emit-community-suites.mjs` fails the build unless all seven community routes are produced:
+### 29 canonical public tools
+
+```text
+/tools/astro
+/tools/nepali-typing
+/tools/preeti-converter
+/tools/bstoad
+/tools/adtobs
+/tools/calc
+/tools/age
+/tools/clock
+/tools/forex
+/tools/gold
+/tools/emi
+/tools/vat
+/tools/incometax
+/tools/landconverter
+/tools/units
+/tools/fuelprice
+/tools/nepaliqr
+/tools/words
+/tools/tithi-reminder
+/tools/sait
+/tools/baby-names
+/tools/janmadin-akhbar
+/tools/future-letter
+/tools/spell-check
+/tools/voice-typing
+/tools/ocr
+/tools/name-check
+/tools/read-aloud
+/tools/patro-bot
+```
+
+Aliases remain usable but are deliberately omitted from the canonical tool sitemap to avoid duplicate SEO signals.
+
+### Community Suite: exactly seven retained experiences
 
 ```text
 /nepal-sambat/mandala
@@ -108,11 +140,30 @@ The build must emit the React SPA plus retained standalone suites. In particular
 /samudaya/chakra
 ```
 
-The new UI also exposes Time Machine, On This Day, Community, FM, TV, Samachar and the utility/tool surfaces.
+`scripts/emit-community-suites.mjs` fails the build unless all seven are emitted.
 
-## 6. Native data expected in D1
+### Other first-class surfaces
 
-The checked migration inventory includes the public/reference datasets required by the current UI, including:
+```text
+/
+/tools
+/convert
+/rashifal
+/samachar
+/fm
+/tv
+/time-machine
+/on-this-day
+/jyotish/china
+/jyotish/matchmaking
+/me
+```
+
+The new UI provides a global feature launcher plus a featured Tools rail so history, media, astronomy and community experiences remain discoverable on desktop and mobile.
+
+## 6. D1 inventory expected by the UI
+
+The migration snapshot/release inventory includes at least:
 
 ```text
 tool_catalog              29
@@ -125,13 +176,11 @@ fm_stations               20
 news_items                274
 ```
 
-The production calendar archive covers `1826-04-11` through `2037-04-13`.
+The committed calendar coverage is `1826-04-11` through `2037-04-13`.
 
 ## 7. Compatibility boundary
 
-Cloudflare-native routes always run first.
-
-`worker/connected-entry.ts` permits read-only compatibility fallback only for the retained transitional media/news surfaces:
+Native Cloudflare routes run first. `worker/connected-entry.ts` allows selective read compatibility only for:
 
 ```text
 TV
@@ -139,57 +188,84 @@ FM
 Samachar / /api/v1/news
 ```
 
-Do not restore a generic `/api/v1/*` Supabase proxy.
+Do not restore a generic Supabase `/api/v1/*` proxy.
 
-## 8. Runtime secrets after recreating a Worker
+## 8. Secrets: verify by feature scope
 
-A newly recreated Worker does not automatically inherit secrets from a deleted Worker. Restore the relevant Cloudflare secrets from your secure source when those features are required.
+A recreated Worker does not inherit secrets from a deleted Worker. Secret names and feature groups are documented in `cloudflare/secrets-manifest.json`.
 
-See `cloudflare/secrets-manifest.json`. Important names include:
+### Core scope
 
-```text
-GOOGLE_CLIENT_ID
-VAPID_PUBLIC_KEY
-VAPID_PRIVATE_KEY
-VAPID_SUBJECT
-CRON_SECRET
-RASHIFAL_SERVICE_TOKEN
-Groq_API
-nvidia_api
-TV_RELAY_SECRET or RADIO_RELAY_SECRET
-ADMIN_GOOGLE_SUBJECTS or ADMIN_EMAILS
+Calendar, conversion, Community Suite, Time Machine, On This Day, D1 content, deterministic Patro Bot and browser/local utilities have no runtime-secret requirement beyond their committed bindings/variables.
+
+```bash
+node scripts/verify-cloudflare-secrets.mjs --scope core
 ```
 
-`NASA_API_KEY` is optional because the astronomy UI has a safe NASA fallback path.
+### Public-complete scope
+
+For signed FM/radio playback, configure at least one:
+
+```text
+TV_RELAY_SECRET
+RADIO_RELAY_SECRET
+```
+
+Verify:
+
+```bash
+node scripts/verify-cloudflare-secrets.mjs --scope public
+```
+
+### Full-feature scope
+
+For every optional account/notification/admin/AI feature, also configure the groups below:
+
+```text
+AI Jyotish chat:  one of Groq_API / supported Groq aliases / nvidia_api / supported NVIDIA aliases
+Google login:     GOOGLE_CLIENT_ID
+Web push:         VAPID_PUBLIC_KEY + VAPID_PRIVATE_KEY + VAPID_SUBJECT
+Admin overrides:  one of ADMIN_GOOGLE_SUBJECTS / ADMIN_EMAILS
+```
+
+Verify:
+
+```bash
+node scripts/verify-cloudflare-secrets.mjs --scope full
+```
+
+These are optional for the corresponding specialized feature and are **not** core deployment blockers:
+
+```text
+NASA_API_KEY             optional astronomy/APOD enhancement
+CRON_SECRET              manual HTTP cron authorization only; scheduled() does not require it
+RASHIFAL_SERVICE_TOKEN   compatibility service-token-hash endpoint only
+GROQ_MODEL               optional model override
+NVIDIA_MODEL             optional model override
+```
 
 Never commit secret values to Git.
 
-## 9. Required post-deploy smoke checks
+## 9. Post-deploy smoke checks
 
-After Cloudflare finishes the fresh deployment, verify at minimum:
+First verify the shell/navigation:
 
 ```text
 /
 /tools
 /convert
-/tools/astro
+/rashifal
 /time-machine
 /on-this-day
 /samudaya
-/nepal-sambat/mandala
-/samudaya/lhosar
-/samudaya/tharu
-/samudaya/mithila
-/samudaya/kirat
-/samudaya/hijri
-/samudaya/chakra
 /fm
 /tv
 /samachar
-/rashifal
 /jyotish/china
 /me
 ```
+
+Then open all **29 canonical tool routes** from section 5 and all **7 community routes**. Every route must show a real functional surface, never a placeholder/coming-soon shell.
 
 API checks:
 
@@ -203,16 +279,40 @@ GET /api/v1/time-machine?limit=5
 GET /api/v1/on-this-day?date=2026-09-30
 GET /api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=2026-09-30
 GET /api/v1/news?limit=5
+GET /api/v1/radio/catalog?country=NP&limit=12
 ```
 
-Expected native responses use Cloudflare/D1. TV/FM/Samachar may use the explicitly permitted selective compatibility bridge where the native route does not answer.
+For full-feature verification additionally test:
 
-## 10. PWA update behavior
+```text
+GET  /api/v1/auth/config
+GET  /api/push/vapid
+POST /api/v1/jyotish/chat
+```
 
-The current service-worker cache generation is intentionally bumped for the repaired UI. On activation it removes older Patro/Aafnai cache generations, so users should not remain pinned to the previously broken UI after the fresh production deploy.
+Expected native responses use Cloudflare/D1. TV/FM/Samachar may use only the explicitly allowed selective compatibility bridge where the native route does not answer.
 
-Navigation is network-first; calendar data uses stale-while-revalidate for offline resilience.
+## 10. SEO/PWA checks
 
-## 11. Do not delete rollback sources yet
+Verify these production files after deployment:
 
-Supabase compatibility is still intentionally retained for selected media/news routes. Do not delete those source functions until live Cloudflare smoke tests prove the remaining compatibility traffic can be removed safely.
+```text
+/robots.txt
+/sitemap.xml
+/sitemap-pages.xml
+/sitemap-tools.xml
+/sitemap-community.xml
+/sitemap-calendar.xml
+/llms.txt
+/seo-manifest.json
+/sw.js
+/manifest.webmanifest
+```
+
+Search-facing HTML must use the Aafnai Patro brand and canonical `https://aafnaipatro.com`. `worker/connected-entry.ts` sends production HTML through `worker/connected-seo.ts` before returning it.
+
+The final service-worker generation must purge older `aafnai-pwa-*` caches. Navigation is network-first; calendar data remains stale-while-revalidate for offline resilience.
+
+## 11. Rollback boundary
+
+Do not delete the retained Supabase compatibility functions yet. Remove them only after live Cloudflare smoke checks prove TV/FM/Samachar no longer need compatibility traffic.
