@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { FeatureLauncher } from "./components/FeatureLauncher";
+import { HomeExperience } from "./components/HomeExperience";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -26,6 +27,7 @@ import "./explore-rail.css";
 import "./mobile-safe-area.css";
 import "./tool-rich-media.css";
 import "./semantic-ui-fixes.css";
+import "./home-experience.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
@@ -37,6 +39,7 @@ createRoot(root).render(
   <StrictMode>
     <MediaProvider>
       <AppChrome>
+        <HomeExperience />
         <PatroRouter />
       </AppChrome>
       <FeatureLauncher />
