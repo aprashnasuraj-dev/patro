@@ -18,7 +18,7 @@ concurrency:
 jobs:
   validate:
     name: Full release validation
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
       PUBLIC_SITE_URL: https://aafnaipatro.com
