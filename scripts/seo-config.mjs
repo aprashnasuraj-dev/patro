@@ -33,7 +33,7 @@ export const TOOL_ROUTES = [
 if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool inventory must remain exactly 29; received ${TOOL_ROUTES.length}`);
 
 export const CORE_INDEX_ROUTES = [
-  "/", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
   "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact"
 ];
 
@@ -45,8 +45,6 @@ export const COMMUNITY_ROUTES = [
 export const NOINDEX_PUBLIC_ROUTES = ["/samachar", "/developers", "/tools/api"];
 export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"];
 
-// Crawl/index a focused five-year window. Build prerenders a wider 2070-2090 archive so
-// expanding the index later does not require an architecture change or another SEO rebuild.
 export const INDEXED_CALENDAR_YEARS = [CURRENT_BS_YEAR - 2, CURRENT_BS_YEAR - 1, CURRENT_BS_YEAR, CURRENT_BS_YEAR + 1, CURRENT_BS_YEAR + 2];
 export const PRERENDER_CALENDAR_YEARS = Array.from({ length: 21 }, (_, i) => 2070 + i);
 
