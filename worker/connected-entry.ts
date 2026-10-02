@@ -13,7 +13,8 @@ const ALLOWED_COMPAT_ROOTS = new Set(["tv", "fm", "samachar"]);
 const SPA_EXACT = new Set([
   "/", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
-  "/about", "/sources", "/contact", "/developers", "/offline",
+  "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
+  "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/aaja", "/astro", "/my-diary", "/notes", "/planner", "/family", "/family/join", "/settings",
   "/settings/notifications", "/settings/holidays", "/my-data", "/card", "/tithi", "/diaspora",
   "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/explore"
@@ -170,8 +171,6 @@ export default {
     const pathname = new URL(request.url).pathname;
 
     if (isSpaPath(pathname)) {
-      // Prefer build-time route HTML so crawlers receive semantic content before JS.
-      // The same React application then replaces that content client-side; no tool is forked or removed.
       const exact = await exactSpaAssetResponse(request, env);
       if (exact) return exact;
       const spa = await rootSpaResponse(request, env);
