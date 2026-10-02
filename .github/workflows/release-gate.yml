@@ -1,0 +1,105 @@
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Full release validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Install once
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: Production build
+        env:
+          PUBLIC_SITE_URL: https://aafnaipatro.com
+        run: npm run build
+
+      - name: Core, typing, Patro tools, community and full-product tests
+        run: |
+          set -euo pipefail
+          npm run test:core
+          npm run test:typing
+          npm run test:patro-tools
+          npm run test:community
+          npm run test:full-product
+
+      - name: Cloudflare contracts, D1 inventory and clean-import dry-run
+        run: |
+          set -euo pipefail
+          npm run test:cloudflare-contract
+          npm run cloudflare:verify-inventory
+          npm run cloudflare:verify-snapshot
+          node --test tests/cloudflare-pages-routing.test.mjs
+          npm run cloudflare:validate
+
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+
+      - name: Reject obvious committed secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          patterns='(gsk_[A-Za-z0-9_-]{20,}|nvapi-[A-Za-z0-9_-]{20,}|sb_secret_[A-Za-z0-9_-]{20,})'
+          if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/security.yml'; then
+            echo "Potential secret detected in tracked files."
+            exit 1
+          fi
+
+      - name: Install browser validation runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npx playwright install chromium >/dev/null
+
+      - name: Community mobile functional checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-dist.mjs >/tmp/patro-release-http.log 2>&1 &
+          server=$!
+          trap 'kill $server 2>/dev/null || true' EXIT
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/samudaya/ >/dev/null; then break; fi
+            sleep 1
+          done
+          routes=(
+            /nepal-sambat/mandala/
+            /samudaya/lhosar/
+            /samudaya/tharu/
+            /samudaya/mithila/
+            /samudaya/kirat/
+            /samudaya/hijri/
+            /samudaya/chakra/
+          )
+          for route in "${routes[@]}"; do
+            NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs "$route"
+          done
+
+      - name: Lighthouse SEO, accessibility, best-practices and performance gate
+        run: npm run seo:audit
