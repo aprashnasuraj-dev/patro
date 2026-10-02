@@ -22,6 +22,7 @@ import "./premium-experience.css";
 import "./premium-tool-primitives.css";
 import "./feature-launcher.css";
 import "./explore-rail.css";
+import "./mobile-safe-area.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
