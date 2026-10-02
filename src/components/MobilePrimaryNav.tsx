@@ -22,10 +22,10 @@ export function MobilePrimaryNav(){
   return <>
     <nav className="mp-primary-mobile-nav" aria-label="मुख्य मोबाइल मेनु">
       <a className={active("/")?"active":""} href="/"><span aria-hidden="true">▦</span><b>पात्रो</b></a>
-      <a className={active("/tools/astro")?"active":""} href="/tools/astro"><span aria-hidden="true">☾</span><b>खगोलीय</b></a>
+      <a className={active("/tools/astro")?"active":""} href="/tools/astro"><span aria-hidden="true">☾</span><b>खगोलीय पात्रो</b></a>
       <a className={active("/time-machine")?"active":""} href="/time-machine"><span aria-hidden="true">⌛</span><b>समययन्त्र</b></a>
-      <button type="button" className={communities||path.startsWith("/samudaya/")||path.startsWith("/nepal-sambat/")?"active":""} onClick={()=>setCommunities(v=>!v)} aria-expanded={communities} aria-controls="mp-community-mobile-sheet"><span aria-hidden="true">◎</span><b>समुदाय</b></button>
-      <a className={active("/tools")&&!active("/tools/astro")?"active":""} href="/tools"><span aria-hidden="true">✦</span><b>टुल्स</b></a>
+      <button type="button" className={communities||path.startsWith("/samudaya/")||path.startsWith("/nepal-sambat/")?"active":""} onClick={()=>setCommunities(v=>!v)} aria-expanded={communities} aria-controls="mp-community-mobile-sheet"><span aria-hidden="true">◎</span><b>समुदाय पात्रो</b></button>
+      <a className={active("/tools")&&!active("/tools/astro")?"active":""} href="/tools"><span aria-hidden="true">✦</span><b>आफ्नै टुल्स</b></a>
     </nav>
     {communities&&<div className="mp-community-mobile-backdrop" role="presentation" onClick={()=>setCommunities(false)}>
       <section id="mp-community-mobile-sheet" className="mp-community-mobile-sheet" role="dialog" aria-modal="true" aria-labelledby="mp-community-sheet-title" onClick={e=>e.stopPropagation()}>
