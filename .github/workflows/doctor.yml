@@ -1,29 +1,11 @@
-name: Doctor build
+name: Doctor build (manual legacy)
+
 on:
-  pull_request:
-  push:
-    branches: [main, "fix/doctor-*"]
+  workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
-  doctor:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install
-        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-      - name: Build + self-healing doctor
-        run: npm run build
-      - name: Verify canonical router boundaries
-        shell: bash
-        run: |
-          set -euo pipefail
-          ! grep -q '/functions/v1/tools-catalog' supabase/functions/router/index.ts
-          ! grep -q '/functions/v1/typing-lexicon' supabase/functions/router/index.ts
-          ! grep -q '/functions/v1/nepali-typing-live' supabase/functions/router/index.ts
-          ! grep -q '"destination": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/jyotish-chat"' vercel.json
-          grep -q '/functions/v1/router/jyotish-chat' vercel.json
+  release-gate:
+    uses: ./.github/workflows/release-gate.yml
