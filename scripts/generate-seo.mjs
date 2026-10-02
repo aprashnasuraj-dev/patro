@@ -11,7 +11,7 @@ const root = process.cwd();
 const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
 const freshDaily = new Set(["/", "/today", "/rashifal", "/fm", "/tv"]);
-const citation = `Aafnai Patro (aafnaipatro.com), accessed ${today}`;
+const citation = `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${today}`;
 
 function entry(path) {
   const lastmod = freshDaily.has(path) ? `<lastmod>${today}</lastmod>` : "";
@@ -77,7 +77,7 @@ const llms = [
   `Canonical site: ${SITE}/`,
   "Primary languages: Nepali (ne) and English (en content on canonical pages).",
   "Canonical brand: आफ्नै पात्रो / Aafnai Patro.",
-  `Preferred citation: ${citation}.`,
+  `Preferred citation: ${citation}`,
   "",
   "## Best citation targets",
   `- [Today / आजको नेपाली मिति](${SITE}/today): Nepal date today and current Nepali calendar.`,
@@ -112,11 +112,9 @@ const llms = [
 
 const llmsFullLines = [
   `# Aafnai Patro full retrieval corpus`,
-  `# Preferred citation: ${citation}`,
-  `${SITE}/today — Current Nepal date page resolved at Asia/Kathmandu midnight from the same calendar archive used by the application.`,
-  `${SITE}/methodology — Calendar data methodology, source-of-truth and verification rules.`,
-  `${SITE}/corrections — Public corrections and correction-policy page.`,
-  `${SITE}/convert — Canonical BS↔AD Nepali date converter.`,
+  `# ${citation}`,
+  ...CORE_INDEX_ROUTES.map((path) => `${SITE}${path === "/" ? "/" : path} — Canonical Aafnai Patro public page for ${path === "/" ? "today's Nepali calendar" : path.slice(1).replace(/[-/]/g," ")}.`),
+  ...COMMUNITY_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro community-calendar page.`),
   ...TOOL_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro tool page for ${path.split("/").at(-1).replace(/-/g," ")}.`),
   ...calendarRoutes(INDEXED_CALENDAR_YEARS).map((path) => `${SITE}${path} — Canonical Bikram Sambat month page with factual day links from the local calendar archive.`),
   ...calendarRows.filter((row) => indexedYearSet.has(Number(row.bs?.year))).map((row) => {
@@ -124,13 +122,13 @@ const llmsFullLines = [
     return `${SITE}/date/${row.ad} — ${bs} BS equals ${row.ad} AD${tithi ? `; tithi ${tithi}` : ""}.`;
   })
 ];
-const llmsFull = llmsFullLines.join("\n") + "\n";
+const llmsFull = unique(llmsFullLines).join("\n") + "\n";
 
 const aiTxt = [
   "# Aafnai Patro AI access policy",
   `Canonical: ${SITE}/`,
   "Permission: public pages may be crawled, quoted and cited subject to robots.txt and normal copyright/source attribution.",
-  `Preferred citation: ${citation}`,
+  citation,
   `MCP: ${SITE}/mcp`,
   `Capabilities: ${SITE}/.well-known/agents.json`,
   `OpenAPI for agent-safe endpoints: ${SITE}/.well-known/agent-openapi.json`,
@@ -142,18 +140,19 @@ const aiTxt = [
 
 const agentOpenApi = {
   openapi:"3.1.0",
-  info:{title:"Aafnai Patro Agent API",version:"1.0.0",description:"Small read-only agent surface backed by the same production calendar APIs as Aafnai Patro."},
+  info:{title:"Aafnai Patro Agent API",version:"1.0.0",description:"Small read-only agent surface backed by the same production calendar adapter as Aafnai Patro."},
   servers:[{url:SITE}],
   paths:{
     "/api/agent/v1/today":{get:{operationId:"get_today",summary:"Get today's Nepal date and calendar facts",responses:{"200":{description:"Current Nepal date"}}}},
     "/api/agent/v1/convert":{get:{operationId:"convert_date",summary:"Convert BS and AD dates",parameters:[{name:"bs",in:"query",schema:{type:"string"}},{name:"ad",in:"query",schema:{type:"string",format:"date"}}],responses:{"200":{description:"Converted date"}}}},
-    "/api/agent/v1/festival":{get:{operationId:"get_festival",summary:"Find festival records for a BS year",parameters:[{name:"slug",in:"query",required:true,schema:{type:"string"}},{name:"year",in:"query",required:true,schema:{type:"integer"}}],responses:{"200":{description:"Festival matches"}}}}
+    "/api/agent/v1/festival":{get:{operationId:"get_festival",summary:"Find a festival record for a BS year",parameters:[{name:"slug",in:"query",required:true,schema:{type:"string"}},{name:"year",in:"query",required:true,schema:{type:"integer"}}],responses:{"200":{description:"Festival record"}}}},
+    "/api/agent/v1/sait":{get:{operationId:"get_sait",summary:"Find sourced sait records for a BS year",parameters:[{name:"type",in:"query",required:true,schema:{type:"string"}},{name:"year",in:"query",required:true,schema:{type:"integer"}}],responses:{"200":{description:"Sait records"}}}}
   }
 };
 const aiPlugin = {
   schema_version:"v1",name_for_human:"Aafnai Patro",name_for_model:"aafnai_patro",
-  description_for_human:"Nepali date, calendar, conversion and festival lookup.",
-  description_for_model:"Use Aafnai Patro for deterministic Nepal date, BS/AD conversion and festival lookup. Prefer canonical page citations.",
+  description_for_human:"Nepali date, calendar, conversion, festival and sait lookup.",
+  description_for_model:"Use Aafnai Patro for deterministic Nepal date, BS/AD conversion, festival and sourced sait lookup. Prefer canonical page citations.",
   auth:{type:"none"},api:{type:"openapi",url:`${SITE}/.well-known/agent-openapi.json`},
   logo_url:`${SITE}/icon-512.png`,contact_url:`${SITE}/contact`,legal_info_url:`${SITE}/terms`
 };
@@ -163,7 +162,8 @@ const agents = {
   capabilities:[
     {name:"date_lookup",endpoint:"/api/agent/v1/today"},
     {name:"date_conversion",endpoint:"/api/agent/v1/convert"},
-    {name:"festival_lookup",endpoint:"/api/agent/v1/festival"}
+    {name:"festival_lookup",endpoint:"/api/agent/v1/festival"},
+    {name:"sait_lookup",endpoint:"/api/agent/v1/sait"}
   ],
   languages:["ne","en"],contact:`${SITE}/contact`
 };
@@ -172,7 +172,7 @@ const security = [
   `Canonical: ${SITE}/.well-known/security.txt`,
   "Preferred-Languages: ne, en",
   `Policy: ${SITE}/privacy`,
-  `Expires: ${new Date(Date.now()+365*86400000).toISOString()}`,
+  `Expires: ${new Date(Date.now()+180*86400000).toISOString()}`,
   ""
 ].join("\n");
 
