@@ -4,6 +4,7 @@ import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { HomeExperience } from "./components/HomeExperience";
+import { MobilePrimaryNav } from "./components/MobilePrimaryNav";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -29,6 +30,7 @@ import "./tool-rich-media.css";
 import "./semantic-ui-fixes.css";
 import "./home-experience.css";
 import "./note-enhancements.css";
+import "./mobile-primary-nav.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
@@ -45,6 +47,7 @@ createRoot(root).render(
       </AppChrome>
       <FeatureLauncher />
       <GlobalMediaPlayer />
+      <MobilePrimaryNav />
     </MediaProvider>
   </StrictMode>
 );
