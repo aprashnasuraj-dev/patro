@@ -167,7 +167,6 @@ function fmToMedia(row: FmDirectoryResponse["items"][number]): MediaItem {
   };
 }
 
-
 function radioToMedia(row: RadioCatalogResponse["items"][number]): MediaItem {
   return {
     id: row.id,
@@ -225,7 +224,7 @@ function TvPlayer({ item }: { item: MediaItem }) {
       .then((r) => r.ok ? r.json() : null)
       .then((j) => {
         const row = j?.items?.[0];
-        if (row) setProbe(row.live ? "Pre-check live" : "Pre-check: " + (row.reason || "unavailable"));
+        if (row) setProbe(row.live ? "available" : "unavailable");
       })
       .catch(() => undefined);
     return () => controller.abort();
@@ -401,11 +400,12 @@ function TvPlayer({ item }: { item: MediaItem }) {
     else void video.remote?.prompt().catch(() => undefined);
   };
 
+  const healthLabel = health === "live" ? "Live" : health === "retrying" ? "Reconnecting…" : health === "ready" ? "Ready" : health === "error" ? "Unavailable" : "Connecting…";
   return (
     <div className="tv-stage" ref={stageRef}>
       <video ref={ref} controls playsInline preload="metadata" className={low ? "audio-only-video" : ""} aria-label={item.name + " live stream"} />
       <div className="tv-overlay">
-        <span><i className={"health-dot " + health} />{health}{probe ? " · " + probe : ""}</span>
+        <span><i className={"health-dot " + health} />{healthLabel}{probe === "unavailable" && health !== "live" ? " · checking source" : ""}</span>
         <small>{activeQuality}{item.quality ? " · " + item.quality : ""}</small>
         {levels.length > 1 && (
           <label className="tv-quality">Quality
@@ -420,7 +420,7 @@ function TvPlayer({ item }: { item: MediaItem }) {
         <button onClick={fullscreen}>Fullscreen</button>
         <button onClick={pip}>PiP</button>
         <button onClick={remote}>Cast / AirPlay</button>
-        {item.officialUrl && <a href={item.officialUrl} target="_blank" rel="noreferrer">Official</a>}
+        {item.officialUrl && <a href={item.officialUrl} target="_blank" rel="noreferrer">Official site</a>}
       </div>
     </div>
   );
@@ -473,57 +473,42 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
   useEffect(() => {
     if (kind !== "radio") return;
     const controller = new AbortController();
-    const params = new URLSearchParams({
-      country: fmCountry,
-      page: String(fmPage),
-      limit: "60"
-    });
+    const params = new URLSearchParams({ country: fmCountry, page: String(fmPage), limit: "60" });
     if (fmSearch) params.set("q", fmSearch);
-
     setFmLoading(true);
     setLoadError(null);
     fetch("/api/v1/radio/catalog?" + params.toString(), { signal: controller.signal, cache: "no-store" })
       .then(async (r) => {
-        if (!r.ok) throw new Error("Global FM directory returned " + r.status);
+        if (!r.ok) throw new Error("directory_unavailable");
         return r.json() as Promise<RadioCatalogResponse>;
       })
       .then((j) => {
-        if (!j.ok) throw new Error("Global FM directory unavailable");
+        if (!j.ok) throw new Error("directory_unavailable");
         const mapped = j.items.map(radioToMedia);
         setFmItems(mapped);
         setFmPages(j.pages || 1);
         setFmCountries(j.facets?.countries || []);
-        setFmMeta({
-          total: j.total || mapped.length,
-          verified: mapped.filter((x) => x.playable !== false).length,
-          districts: new Set(mapped.map((x) => x.district).filter(Boolean)).size
-        });
-        if (j.directory_warning) setLoadError("Radio Browser fallback: " + j.directory_warning);
+        setFmMeta({ total: j.total || mapped.length, verified: mapped.filter((x) => x.playable !== false).length, districts: new Set(mapped.map((x) => x.district).filter(Boolean)).size });
+        if (j.directory_warning) setLoadError("limited");
       })
-      .catch(async (error) => {
+      .catch(async () => {
         if (controller.signal.aborted) return;
-        setLoadError(String(error?.message || error));
+        setLoadError("limited");
         try {
           const response = await fetch(compat("fm/v2/stations"), { signal: controller.signal, cache: "no-store" });
-          if (!response.ok) throw new Error("Patro FM fallback returned " + response.status);
+          if (!response.ok) throw new Error("directory_unavailable");
           const j = await response.json() as FmDirectoryResponse;
           const mapped = j.items.map(fmToMedia);
           setFmItems(mapped);
           setFmPages(1);
-          setFmMeta({
-            total: j.catalog_total || mapped.length,
-            verified: j.verified_total || mapped.filter((x) => x.playable).length,
-            districts: j.covered_districts || new Set(mapped.map((x) => x.district).filter(Boolean)).size
-          });
+          setFmMeta({ total: j.catalog_total || mapped.length, verified: j.verified_total || mapped.filter((x) => x.playable).length, districts: j.covered_districts || new Set(mapped.map((x) => x.district).filter(Boolean)).size });
         } catch {
           setFmItems(fallback);
           setFmPages(1);
           setFmMeta({ total: fallback.length, verified: fallback.length, districts: new Set(fallback.map((x) => x.district)).size });
         }
       })
-      .finally(() => {
-        if (!controller.signal.aborted) setFmLoading(false);
-      });
+      .finally(() => { if (!controller.signal.aborted) setFmLoading(false); });
     return () => controller.abort();
   }, [kind, fallback, fmCountry, fmPage, fmSearch]);
 
@@ -546,32 +531,28 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
     if (tvCountry !== "all") params.set("country", tvCountry);
     if (tvLanguage !== "all") params.set("language", tvLanguage);
     if (tvCategory !== "all") params.set("category", tvCategory);
-
     setTvLoading(true);
     setLoadError(null);
     fetch(compat("tv/catalog?" + params.toString()), { signal: controller.signal, cache: "no-store" })
       .then(async (r) => {
-        if (!r.ok) throw new Error("TV directory returned " + r.status);
+        if (!r.ok) throw new Error("directory_unavailable");
         return r.json() as Promise<TvCatalogResponse>;
       })
       .then((j) => {
-        if (!j.ok) throw new Error("TV directory unavailable");
+        if (!j.ok) throw new Error("directory_unavailable");
         setTvItems(j.items.map(tvToMedia));
         setTvTotal(j.total);
         setTvPages(j.pages);
         if (j.facets) setTvFacets(j.facets);
       })
-      .catch((error) => {
+      .catch(() => {
         if (controller.signal.aborted) return;
-        setLoadError(String(error?.message || error));
+        setLoadError("limited");
         setTvItems(fallback);
         setTvTotal(fallback.length);
         setTvPages(1);
       })
-      .finally(() => {
-        if (!controller.signal.aborted) setTvLoading(false);
-      });
-
+      .finally(() => { if (!controller.signal.aborted) setTvLoading(false); });
     return () => controller.abort();
   }, [kind, fallback, tvSearch, tvCountry, tvLanguage, tvCategory, tvPage]);
 
@@ -584,17 +565,12 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
     let disposed = false;
     const ids = tvItems.map((item) => item.id);
     setTvHealth(Object.fromEntries(ids.map((id) => [id, "checking"])));
-
     const run = async () => {
       for (let offset = 0; offset < ids.length && !disposed; offset += 20) {
         const batch = ids.slice(offset, offset + 20);
         try {
-          const response = await fetch(compat("tv/health?ids=" + encodeURIComponent(batch.join(","))), {
-            signal: controller.signal,
-            cache: "no-store",
-            headers: { "x-patro-probe": "tv-health-batch" }
-          });
-          if (!response.ok) throw new Error("health_" + response.status);
+          const response = await fetch(compat("tv/health?ids=" + encodeURIComponent(batch.join(","))), { signal: controller.signal, cache: "no-store", headers: { "x-patro-probe": "tv-health-batch" } });
+          if (!response.ok) throw new Error("health_unavailable");
           const payload = await response.json();
           if (disposed) return;
           setTvHealth((current) => {
@@ -614,45 +590,20 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       }
     };
     void run();
-    return () => {
-      disposed = true;
-      controller.abort();
-    };
+    return () => { disposed = true; controller.abort(); };
   }, [kind, tvItems, tvHealthTick]);
 
-  const fmProvinces = useMemo(
-    () => ["All", ...Array.from(new Set(fmItems.map((x) => x.province).filter(Boolean))).sort()],
-    [fmItems]
-  );
-  const fmDistricts = useMemo(
-    () => ["All", ...Array.from(new Set(
-      fmItems.filter((x) => fmProvince === "All" || x.province === fmProvince).map((x) => x.district).filter(Boolean)
-    )).sort()],
-    [fmItems, fmProvince]
-  );
+  const fmProvinces = useMemo(() => ["All", ...Array.from(new Set(fmItems.map((x) => x.province).filter(Boolean))).sort()], [fmItems]);
+  const fmDistricts = useMemo(() => ["All", ...Array.from(new Set(fmItems.filter((x) => fmProvince === "All" || x.province === fmProvince).map((x) => x.district).filter(Boolean))).sort()], [fmItems, fmProvince]);
 
   const shownFm = useMemo(() => {
-    const filtered = fuzzyMedia(fmItems, query).filter((x) =>
-      (fmProvince === "All" || x.province === fmProvince) &&
-      (fmDistrict === "All" || x.district === fmDistrict) &&
-      (!fmPlayableOnly || x.playable !== false)
-    );
+    const filtered = fuzzyMedia(fmItems, query).filter((x) => (fmProvince === "All" || x.province === fmProvince) && (fmDistrict === "All" || x.district === fmDistrict) && (!fmPlayableOnly || x.playable !== false));
     return filtered.sort((a, b) => Number(b.playable !== false) - Number(a.playable !== false) || a.name.localeCompare(b.name));
   }, [fmItems, query, fmProvince, fmDistrict, fmPlayableOnly]);
 
-  const shownTv = useMemo(
-    () => tvItems.filter((item) => {
-      if (!tvHideDead) return true;
-      const state = tvHealth[item.id];
-      // Keep channels visible while the (potentially slow) live probe is running.
-      // "Hide dead" should hide only confirmed-dead streams, not the whole page.
-      return state !== "dead";
-    }),
-    [tvItems, tvHealth, tvHideDead]
-  );
+  const shownTv = useMemo(() => tvItems.filter((item) => !tvHideDead || tvHealth[item.id] !== "dead"), [tvItems, tvHealth, tvHideDead]);
   const tvLiveCount = Object.values(tvHealth).filter((value) => value === "live").length;
   const tvDeadCount = Object.values(tvHealth).filter((value) => value === "dead").length;
-
   const items = kind === "radio" ? shownFm : shownTv;
   const countries = tvFacets?.countries || [];
   const languages = labelOfFacet(tvFacets?.languages);
@@ -679,69 +630,36 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
     <main className="media-suite">
       <section className="media-hero">
         <div>
-          <p className="eyebrow">{kind === "radio" ? "Nepal FM directory" : "Global free live TV directory"}</p>
-          <h1>{kind === "radio" ? "मेरो पात्रो रेडियो" : "लाइभ टिभी · Live TV"}</h1>
-          <p>
-            {kind === "radio"
-              ? "Playable Nepal + global FM directory with broken-station filtering, signed relay playback, country/location filters, persistent audio and recovery."
-              : "9,000+ global TV sources with live health checks, dead-channel hiding, relay-assisted HLS/HTTP playback, adaptive quality, reconnect, fullscreen, PiP and low-data mode."}
-          </p>
+          <p className="eyebrow">{kind === "radio" ? "FM Radio · रेडियो" : "Live TV · लाइभ टिभी"}</p>
+          <h1>{kind === "radio" ? "आफ्नै पात्रो रेडियो" : "लाइभ टिभी · Live TV"}</h1>
+          <p>{kind === "radio" ? "नेपाल र विश्वका उपलब्ध FM स्टेशन खोज्नुहोस्, मनपर्नेमा राख्नुहोस् र पृष्ठ बदल्दा पनि सुन्न जारी राख्नुहोस्।" : "देश, भाषा र विषयअनुसार 9,000+ उपलब्ध लाइभ TV च्यानल खोज्नुहोस्। Quality, reconnect, fullscreen, PiP र low-data विकल्पसहित।"}</p>
         </div>
-        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={kind === "radio" ? "Search station, district or category…" : "Search 9,000+ channels…"} aria-label="Search media" />
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={kind === "radio" ? "स्टेशन, जिल्ला वा विषय खोज्नुहोस्…" : "9,000+ च्यानल खोज्नुहोस्…"} aria-label="Search media" />
       </section>
 
       <div className="media-stats" aria-live="polite">
         {kind === "radio"
-          ? <><strong>{fmMeta.total.toLocaleString()}</strong><span>playable stations</span><strong>{fmMeta.verified}</strong><span>live on this page</span><strong>{fmPage}</strong><span>page of {fmPages.toLocaleString()}</span></>
-          : <><strong>{tvTotal.toLocaleString()}</strong><span>catalog channels</span><strong>{tvLiveCount}</strong><span>live checked</span><strong>{tvDeadCount}</strong><span>dead hidden</span></>}
+          ? <><strong>{fmMeta.total.toLocaleString()}</strong><span>स्टेशन</span><strong>{fmMeta.verified}</strong><span>अहिले उपलब्ध</span><strong>{fmPage}</strong><span>{fmPages.toLocaleString()} मध्ये पृष्ठ</span></>
+          : <><strong>{tvTotal.toLocaleString()}</strong><span>च्यानल</span><strong>{tvLiveCount}</strong><span>चलिरहेका</span><strong>{tvDeadCount}</strong><span>नचल्ने हटाइयो</span></>}
       </div>
 
-      {loadError && <div className="media-warning" role="status">Live directory fallback active: {loadError}</div>}
+      {loadError && <div className="media-warning" role="status">मुख्य सूची अहिले पूर्ण रूपमा उपलब्ध छैन; उपलब्ध स्टेशन र च्यानलहरू देखाइएका छन्।</div>}
 
       {kind === "radio" ? (
         <div className="media-directory-toolbar">
-          <label>Country
-            <select value={fmCountry} onChange={(e) => { setFmCountry(e.target.value); setFmPage(1); setFmProvince("All"); setFmDistrict("All"); }}>
-              <option value="NP">🇳🇵 Nepal</option>
-              <option value="ALL">Worldwide</option>
-              {fmCountries.filter((x) => x.code !== "NP").map((x) => <option key={x.code} value={x.code}>{x.name} ({x.count.toLocaleString()})</option>)}
-            </select>
-          </label>
-          <label>Region / Province
-            <select value={fmProvince} onChange={(e) => { setFmProvince(e.target.value); setFmDistrict("All"); }}>
-              {fmProvinces.map((x) => <option key={x}>{x}</option>)}
-            </select>
-          </label>
-          <label>District / State
-            <select value={fmDistrict} onChange={(e) => setFmDistrict(e.target.value)}>
-              {fmDistricts.map((x) => <option key={x}>{x}</option>)}
-            </select>
-          </label>
-          <label className="media-check"><input type="checkbox" checked={fmPlayableOnly} onChange={(e) => setFmPlayableOnly(e.target.checked)} /> Playable only</label>
+          <label>Country<select value={fmCountry} onChange={(e) => { setFmCountry(e.target.value); setFmPage(1); setFmProvince("All"); setFmDistrict("All"); }}><option value="NP">🇳🇵 Nepal</option><option value="ALL">Worldwide</option>{fmCountries.filter((x) => x.code !== "NP").map((x) => <option key={x.code} value={x.code}>{x.name} ({x.count.toLocaleString()})</option>)}</select></label>
+          <label>Region / Province<select value={fmProvince} onChange={(e) => { setFmProvince(e.target.value); setFmDistrict("All"); }}>{fmProvinces.map((x) => <option key={x}>{x}</option>)}</select></label>
+          <label>District / State<select value={fmDistrict} onChange={(e) => setFmDistrict(e.target.value)}>{fmDistricts.map((x) => <option key={x}>{x}</option>)}</select></label>
+          <label className="media-check"><input type="checkbox" checked={fmPlayableOnly} onChange={(e) => setFmPlayableOnly(e.target.checked)} /> Available only</label>
           <button type="button" onClick={() => { setFmCountry("NP"); setFmProvince("All"); setFmDistrict("All"); setQuery(""); setFmPage(1); }}>Nepal reset</button>
         </div>
       ) : (
         <div className="media-directory-toolbar">
-          <label>Country
-            <select value={tvCountry} onChange={(e) => { setTvCountry(e.target.value); setTvPage(1); }}>
-              <option value="all">All countries</option>
-              {countries.map((x) => <option key={x.code} value={x.code}>{x.flag ? x.flag + " " : ""}{x.name}</option>)}
-            </select>
-          </label>
-          <label>Language
-            <select value={tvLanguage} onChange={(e) => { setTvLanguage(e.target.value); setTvPage(1); }}>
-              <option value="all">All languages</option>
-              {languages.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}
-            </select>
-          </label>
-          <label>Category
-            <select value={tvCategory} onChange={(e) => { setTvCategory(e.target.value); setTvPage(1); }}>
-              <option value="all">All categories</option>
-              {categories.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}
-            </select>
-          </label>
-          <label className="media-check"><input type="checkbox" checked={tvHideDead} onChange={(e) => setTvHideDead(e.target.checked)} /> Hide dead channels</label>
-          <button type="button" onClick={() => setTvHealthTick((n) => n + 1)}>Recheck live</button>
+          <label>Country<select value={tvCountry} onChange={(e) => { setTvCountry(e.target.value); setTvPage(1); }}><option value="all">All countries</option>{countries.map((x) => <option key={x.code} value={x.code}>{x.flag ? x.flag + " " : ""}{x.name}</option>)}</select></label>
+          <label>Language<select value={tvLanguage} onChange={(e) => { setTvLanguage(e.target.value); setTvPage(1); }}><option value="all">All languages</option>{languages.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
+          <label>Category<select value={tvCategory} onChange={(e) => { setTvCategory(e.target.value); setTvPage(1); }}><option value="all">All categories</option>{categories.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
+          <label className="media-check"><input type="checkbox" checked={tvHideDead} onChange={(e) => setTvHideDead(e.target.checked)} /> Hide unavailable channels</label>
+          <button type="button" onClick={() => setTvHealthTick((n) => n + 1)}>Check availability</button>
           <button type="button" onClick={() => { setTvCountry("NP"); setTvLanguage("all"); setTvCategory("all"); setTvPage(1); }}>Nepal TV</button>
           <button type="button" onClick={() => { setTvCountry("all"); setTvLanguage("all"); setTvCategory("all"); setQuery(""); setTvPage(1); }}>Global reset</button>
         </div>
@@ -752,104 +670,56 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       <section className="station-grid" aria-live="polite" aria-busy={kind === "tv" && tvLoading}>
         {items.map((item) => {
           const liveState = kind === "tv" ? tvHealth[item.id] : undefined;
-          return (
-          <article className={"station-card " + (item.playable === false || liveState === "dead" ? "is-unavailable" : "")} key={item.id}>
-            {item.logo
-              ? <img className="station-logo" src={item.logo} alt="" loading="lazy" referrerPolicy="no-referrer" />
-              : <div className="station-badge" aria-hidden="true">{item.kind === "radio" ? "FM" : (item.countryCode || "TV")}</div>}
+          const availability = liveState === "live" ? "LIVE" : liveState === "dead" ? "Unavailable" : liveState === "checking" ? "Checking" : "";
+          return <article className={"station-card " + (item.playable === false || liveState === "dead" ? "is-unavailable" : "")} key={item.id}>
+            {item.logo ? <img className="station-logo" src={item.logo} alt="" loading="lazy" referrerPolicy="no-referrer" /> : <div className="station-badge" aria-hidden="true">{item.kind === "radio" ? "FM" : (item.countryCode || "TV")}</div>}
             <div className="station-copy">
-              <strong>{item.nameNe}</strong>
-              {item.nameNe !== item.name && <span>{item.name}</span>}
-              <small>{item.district} · {item.genre}</small>
-              <small className="station-meta">
-                {item.quality ? item.quality + " · " : ""}{item.codec}{item.status ? " · " + item.status : ""}
-                {item.verified ? " · verified" : ""}
-                {liveState ? " · " + (liveState === "live" ? "LIVE" : liveState === "dead" ? "DEAD" : liveState === "checking" ? "checking" : "health unknown") : ""}
-              </small>
+              <strong>{item.nameNe}</strong>{item.nameNe !== item.name && <span>{item.name}</span>}<small>{item.district} · {item.genre}</small>
+              <small className="station-meta">{item.quality ? item.quality + " · " : ""}{item.codec}{availability ? " · " + availability : ""}</small>
             </div>
             <button className="favorite-button" onClick={() => favorite(item.id)} aria-label={(favorites.has(item.id) ? "Remove " : "Add ") + item.name + " favorite"}><Star size={19} fill={favorites.has(item.id) ? "currentColor" : "none"} aria-hidden="true"/></button>
             <div className="station-actions">
-              {kind === "radio"
-                ? <button onClick={() => playRadio(item)} disabled={item.playable === false && !item.officialUrl}>{item.playable === false ? (item.officialUrl ? "Official site" : "Offline") : (media.item?.id === item.id && media.playing ? "Playing" : "Play")}</button>
-                : <button onClick={() => setSelectedTv(item)} disabled={item.playable === false || liveState === "dead"}>{liveState === "dead" ? "Dead" : "Watch"}</button>}
-              <button onClick={() => setDrawer(item)}>{kind === "radio" ? "Info" : "EPG"}</button>
-              <button onClick={() => setReport(item)} aria-label={"Report broken stream for " + item.name}>!</button>
+              {kind === "radio" ? <button onClick={() => playRadio(item)} disabled={item.playable === false && !item.officialUrl}>{item.playable === false ? (item.officialUrl ? "Official site" : "Unavailable") : (media.item?.id === item.id && media.playing ? "Playing" : "Play")}</button> : <button onClick={() => setSelectedTv(item)} disabled={item.playable === false || liveState === "dead"}>{liveState === "dead" ? "Unavailable" : "Watch"}</button>}
+              <button onClick={() => setDrawer(item)}>Info</button>
+              <button onClick={() => setReport(item)} aria-label={"Report stream problem for " + item.name}>!</button>
             </div>
-          </article>
-          );
+          </article>;
         })}
       </section>
 
-      {kind === "radio" && fmPages > 1 && (
-        <nav className="media-pagination" aria-label="FM directory pages">
-          <button disabled={fmPage <= 1 || fmLoading} onClick={() => setFmPage((p) => Math.max(1, p - 1))}>← Previous</button>
-          <span>Page {fmPage.toLocaleString()} / {fmPages.toLocaleString()}</span>
-          <button disabled={fmPage >= fmPages || fmLoading} onClick={() => setFmPage((p) => Math.min(fmPages, p + 1))}>Next →</button>
-        </nav>
-      )}
+      {kind === "radio" && fmPages > 1 && <nav className="media-pagination" aria-label="FM directory pages"><button disabled={fmPage <= 1 || fmLoading} onClick={() => setFmPage((p) => Math.max(1, p - 1))}>← Previous</button><span>Page {fmPage.toLocaleString()} / {fmPages.toLocaleString()}</span><button disabled={fmPage >= fmPages || fmLoading} onClick={() => setFmPage((p) => Math.min(fmPages, p + 1))}>Next →</button></nav>}
+      {kind === "tv" && tvPages > 1 && <nav className="media-pagination" aria-label="TV directory pages"><button disabled={tvPage <= 1 || tvLoading} onClick={() => setTvPage((p) => Math.max(1, p - 1))}>← Previous</button><span>Page {tvPage.toLocaleString()} / {tvPages.toLocaleString()}</span><button disabled={tvPage >= tvPages || tvLoading} onClick={() => setTvPage((p) => Math.min(tvPages, p + 1))}>Next →</button></nav>}
 
-      {kind === "tv" && tvPages > 1 && (
-        <nav className="media-pagination" aria-label="TV directory pages">
-          <button disabled={tvPage <= 1 || tvLoading} onClick={() => setTvPage((p) => Math.max(1, p - 1))}>← Previous</button>
-          <span>Page {tvPage.toLocaleString()} / {tvPages.toLocaleString()}</span>
-          <button disabled={tvPage >= tvPages || tvLoading} onClick={() => setTvPage((p) => Math.min(tvPages, p + 1))}>Next →</button>
-        </nav>
-      )}
+      {!items.length && !tvLoading && kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking") && <div className="media-empty">च्यानल उपलब्धता जाँचिँदैछ…</div>}
+      {!items.length && !tvLoading && !(kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking")) && <div className="media-empty">यो खोजसँग मिल्ने उपलब्ध स्टेशन भेटिएन। फिल्टर हटाएर वा उपलब्धता फेरि जाँचेर हेर्नुहोस्।</div>}
+      {kind === "tv" && tvLoading && <div className="media-empty">TV च्यानल लोड हुँदैछन्…</div>}
+      {kind === "radio" && fmLoading && <div className="media-empty">रेडियो स्टेशन लोड हुँदैछन्…</div>}
 
-      {!items.length && !tvLoading && kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking") &&
-        <div className="media-empty">Verifying live channels… dead streams stay hidden.</div>}
-      {!items.length && !tvLoading && !(kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking")) &&
-        <div className="media-empty">No playable station matches this search. Clear the filters or recheck live status.</div>}
-      {kind === "tv" && tvLoading && <div className="media-empty">Loading and checking global channels…</div>}
-      {kind === "radio" && fmLoading && <div className="media-empty">Loading verified global radio streams…</div>}
+      {drawer && <div className="media-modal-backdrop" onMouseDown={(e) => { if (e.currentTarget === e.target) setDrawer(null); }}>
+        <section className="media-modal" role="dialog" aria-modal="true" aria-label={drawer.name + " details"}>
+          <header><div><p className="eyebrow">{drawer.kind === "tv" ? "Channel information" : "Station information"}</p><h2>{drawer.name}</h2></div><button onClick={() => setDrawer(null)} aria-label="Close details">×</button></header>
+          <div className="epg-now"><span className="live-dot" />{drawer.playable === false ? "अहिले उपलब्ध छैन" : "लाइभ स्ट्रिम उपलब्ध"}</div>
+          <p>{drawer.district} · {drawer.genre} · {drawer.codec}{drawer.quality ? " · " + drawer.quality : ""}</p>
+          <p>लाइभ प्रसारणको उपलब्धता प्रसारकअनुसार बदलिन सक्छ। स्ट्रिम रोकिएमा Reconnect प्रयोग गर्नुहोस् वा आधिकारिक साइट खोल्नुहोस्।</p>
+          {drawer.scheduleUrl || drawer.officialUrl ? <a className="modal-primary" href={drawer.scheduleUrl || drawer.officialUrl} target="_blank" rel="noreferrer">Open official source</a> : <span>आधिकारिक लिंक उपलब्ध छैन।</span>}
+        </section>
+      </div>}
 
-      {drawer && (
-        <div className="media-modal-backdrop" onMouseDown={(e) => { if (e.currentTarget === e.target) setDrawer(null); }}>
-          <section className="media-modal" role="dialog" aria-modal="true" aria-label={drawer.name + " details"}>
-            <header>
-              <div><p className="eyebrow">{drawer.kind === "tv" ? "Channel information" : "Station information"}</p><h2>{drawer.name}</h2></div>
-              <button onClick={() => setDrawer(null)} aria-label="Close details">×</button>
-            </header>
-            <div className="epg-now"><span className="live-dot" />{drawer.playable === false ? "NOT VERIFIED LIVE" : "LIVE SOURCE AVAILABLE"}</div>
-            <p>{drawer.district} · {drawer.genre} · {drawer.codec}{drawer.quality ? " · " + drawer.quality : ""}</p>
-            <p>Playback availability can change at the broadcaster or source. The app retries network/media failures and uses the Patro relay for TV streams that need HTTP, redirect, manifest or referrer handling.</p>
-            {drawer.scheduleUrl || drawer.officialUrl
-              ? <a className="modal-primary" href={drawer.scheduleUrl || drawer.officialUrl} target="_blank" rel="noreferrer">Open official source</a>
-              : <span>No official schedule link is listed.</span>}
-          </section>
-        </div>
-      )}
-
-      {report && (
-        <div className="media-modal-backdrop">
-          <form className="media-modal" onSubmit={(e) => {
-            e.preventDefault();
-            const form = new FormData(e.currentTarget);
-            const payload = {
-              station: report.id,
-              url: report.sourceStreamUrl || report.streamUrl,
-              reason: String(form.get("reason") || "not-playing"),
-              at: new Date().toISOString(),
-              userAgent: navigator.userAgent
-            };
-            localStorage.setItem("patro.media.lastReport", JSON.stringify(payload));
-            navigator.clipboard?.writeText(JSON.stringify(payload, null, 2)).catch(() => undefined);
-            setReport(null);
-          }}>
-            <header><div><p className="eyebrow">Broken link report</p><h2>{report.name}</h2></div><button type="button" onClick={() => setReport(null)}>×</button></header>
-            <label>Issue
-              <select name="reason">
-                <option value="not-playing">Does not play</option>
-                <option value="buffering">Buffers repeatedly</option>
-                <option value="wrong-channel">Wrong channel</option>
-                <option value="audio-only">Audio/video issue</option>
-              </select>
-            </label>
-            <p>The diagnostic is saved locally and copied to your clipboard so it can be sent to support without silently transmitting device data.</p>
-            <button className="modal-primary" type="submit">Create diagnostic report</button>
-          </form>
-        </div>
-      )}
+      {report && <div className="media-modal-backdrop">
+        <form className="media-modal" onSubmit={(e) => {
+          e.preventDefault();
+          const form = new FormData(e.currentTarget);
+          const payload = { station: report.id, url: report.sourceStreamUrl || report.streamUrl, reason: String(form.get("reason") || "not-playing"), at: new Date().toISOString(), userAgent: navigator.userAgent };
+          localStorage.setItem("patro.media.lastReport", JSON.stringify(payload));
+          navigator.clipboard?.writeText(JSON.stringify(payload, null, 2)).catch(() => undefined);
+          setReport(null);
+        }}>
+          <header><div><p className="eyebrow">प्रसारण समस्या</p><h2>{report.name}</h2></div><button type="button" onClick={() => setReport(null)}>×</button></header>
+          <label>Issue<select name="reason"><option value="not-playing">Does not play</option><option value="buffering">Buffers repeatedly</option><option value="wrong-channel">Wrong channel</option><option value="audio-only">Audio/video issue</option></select></label>
+          <p>रिपोर्टको विवरण तपाईंको clipboard मा प्रतिलिपि हुन्छ; आवश्यक परे समर्थनमा पठाउन सक्नुहुन्छ।</p>
+          <button className="modal-primary" type="submit">रिपोर्ट तयार गर्नुहोस्</button>
+        </form>
+      </div>}
     </main>
   );
 }
