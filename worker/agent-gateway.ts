@@ -2,6 +2,7 @@ import { createPatroAdapter } from "../lib/patro";
 import { agentPageResponse } from "./agent-pages";
 import { mcpResponse } from "./mcp";
 import { createD1PatroSource } from "./patro-source";
+import { yearPageResponse } from "./year-page";
 
 type Env = Record<string, unknown> & { DB?: any; PUBLIC_SITE_URL?: string };
 type NativeFetch = (request: Request, env: any, ctx: ExecutionContext) => Promise<Response>;
@@ -55,6 +56,9 @@ export async function handleAgentSurface(
 ): Promise<Response | null> {
   const mcp = await mcpResponse(request, env);
   if (mcp) return mcp;
+
+  const year = await yearPageResponse(request, env);
+  if (year) return year;
 
   const page = await agentPageResponse(request, env);
   if (page) return page;
