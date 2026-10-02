@@ -1,0 +1,3 @@
+/* Final semantic display correction: Baby Names owns nakshatra naming; Name Check compares document/KYC names. */
+.ap-tool-card[href="/tools/name-check"] small{font-size:0!important;line-height:1.35}.ap-tool-card[href="/tools/name-check"] small::after{content:"नागरिकता, राहदानी र KYC का नेपाली/English नाम तुलना";font-size:var(--ap-t-xs,.8125rem)}
+@media(prefers-reduced-motion:reduce){.ap-tool-card[href="/tools/name-check"]{scroll-behavior:auto}}
