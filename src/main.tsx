@@ -24,6 +24,7 @@ import "./feature-launcher.css";
 import "./explore-rail.css";
 import "./mobile-safe-area.css";
 import "./tool-rich-media.css";
+import "./semantic-ui-fixes.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
