@@ -57,10 +57,15 @@ export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/a
 export const INDEXED_CALENDAR_YEARS = [CURRENT_BS_YEAR - 2, CURRENT_BS_YEAR - 1, CURRENT_BS_YEAR, CURRENT_BS_YEAR + 1, CURRENT_BS_YEAR + 2];
 export const PRERENDER_CALENDAR_YEARS = Array.from({ length: 21 }, (_, i) => 2070 + i);
 
+export function calendarYearRoute(year) {
+  return `/calendar/${year}`;
+}
+export function calendarYearRoutes(years = INDEXED_CALENDAR_YEARS) {
+  return years.map((year) => calendarYearRoute(year));
+}
 export function calendarRoute(year, month) {
   return `/calendar/${year}/${String(month).padStart(2, "0")}`;
 }
-
 export function calendarRoutes(years = INDEXED_CALENDAR_YEARS) {
   return years.flatMap((year) => BS_MONTHS.map((month) => calendarRoute(year, month.n)));
 }
