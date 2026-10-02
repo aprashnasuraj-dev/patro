@@ -38,7 +38,7 @@
     "cloudflare:smoke": "node scripts/cutover-smoke.mjs",
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
     "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
-    "deploy:cloudflare": "node scripts/deploy-cloudflare.mjs",
+    "deploy:cloudflare": "wrangler deploy --config wrangler.jsonc",
     "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs tests/reference-ui-contract.test.mjs tests/community-migration-contract.test.mjs tests/native-cutover-contract.test.mjs tests/patro-connectivity-contract.test.mjs tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/seo-discovery-contract.test.mjs tests/seo-phase-gates-contract.test.mjs tests/fresh-build-ux-contract.test.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
     "seo:prerender": "node scripts/prerender-days-seo.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs",
@@ -86,8 +86,8 @@
   },
   "cloudflare": {
     "production_branch": "main",
-    "build_command": "npm run cloudflare:production-check",
-    "deploy_command": "npm run deploy:cloudflare",
+    "build_command": "npm run build",
+    "deploy_command": "npx wrangler deploy --config wrangler.jsonc",
     "config": "wrangler.jsonc",
     "bindings": {
       "ASSETS": "Static SPA assets served by the Worker.",
