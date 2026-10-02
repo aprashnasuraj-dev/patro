@@ -118,6 +118,20 @@ async function compatibilityResponse(request: Request, env: Env, suffix: string)
   }
 }
 
+async function normalizePublicApiBrand(pathname: string, response: Response) {
+  if (pathname !== "/api/v1/openapi.json" || !response.ok) return response;
+  try {
+    const payload = await response.clone().json() as any;
+    if (!payload || typeof payload !== "object") return response;
+    payload.info = { ...(payload.info || {}), title: "Aafnai Patro API · आफ्नै पात्रो" };
+    const headers = new Headers(response.headers);
+    headers.set("content-type", "application/json; charset=utf-8");
+    return new Response(JSON.stringify(payload), { status: response.status, statusText: response.statusText, headers });
+  } catch {
+    return response;
+  }
+}
+
 export default {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
@@ -128,7 +142,8 @@ export default {
       if (spa) return spa;
     }
 
-    const response = await productionWorker.fetch(request, env as any, ctx);
+    const nativeResponse = await productionWorker.fetch(request, env as any, ctx);
+    const response = await normalizePublicApiBrand(pathname, nativeResponse);
     if (response.status !== 404) return rewriteConnectedSeo(request, response, env);
 
     const suffix = compatSuffix(pathname);
