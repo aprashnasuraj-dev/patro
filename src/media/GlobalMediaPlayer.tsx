@@ -18,6 +18,7 @@ function Visualizer(){
 export function GlobalMediaPlayer(){
   const media=useMedia(); const [open,setOpen]=useState(false);
   useEffect(()=>{const fn=()=>setOpen((v)=>!v);window.addEventListener("patro:toggle-player-panel",fn);return()=>window.removeEventListener("patro:toggle-player-panel",fn);},[]);
+  useEffect(()=>{if(!media.item)setOpen(false)},[media.item]);
   if(!media.item)return null;
   const remaining=media.sleepEndsAt?Math.max(0,Math.ceil((media.sleepEndsAt-Date.now())/60000)):null;
   return <aside className={"global-media-player "+(open?"is-open":"")} aria-label="Persistent media player">
@@ -29,6 +30,6 @@ export function GlobalMediaPlayer(){
       <input className="player-volume" type="range" min="0" max="1" step=".01" value={media.volume} onChange={(e)=>media.setVolume(Number(e.target.value))} aria-label="Player volume"/>
       <button className="player-more" onClick={()=>setOpen((v)=>!v)} aria-expanded={open} aria-label="Player options"><MoreHorizontal size={18}/></button>
     </div>
-    {open&&<div className="player-options"><span>Sleep timer{remaining!=null?" · "+remaining+"m":""}</span>{[15,30,60,120].map((m)=><button key={m} onClick={()=>media.setSleepMinutes(m)}>{m<60?m+"m":m/60+"h"}</button>)}<button onClick={()=>media.setSleepMinutes(null)}>Off</button></div>}
+    {open&&<div className="player-options"><span>Sleep timer{remaining!=null?" · "+remaining+"m":""}</span>{[15,30,60,120].map((m)=><button key={m} onClick={()=>media.setSleepMinutes(m)}>{m<60?m+"m":m/60+"h"}</button>)}<button onClick={()=>media.setSleepMinutes(null)}>Off</button>{media.health==="error"&&<button className="player-retry" onClick={()=>media.item&&void media.play(media.item)}>Retry now</button>}<button className="player-stop" onClick={media.stop}>Stop & close</button></div>}
   </aside>;
 }
