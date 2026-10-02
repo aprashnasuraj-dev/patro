@@ -33,7 +33,7 @@ describe('spellcheck', () => {
 describe('name match', () => {
   it('transliterates', () => {
     expect(devanagariToRoman('सुरज दाहाल')).toBe('suraj daahaal');
-    expect(devanagariToRoman('राम')).toBe('ram');
+    expect(devanagariToRoman('राम')).toBe('raam');
     expect(devanagariToRoman('ईशा')).toBe('eeshaa');
   });
   it.each([
