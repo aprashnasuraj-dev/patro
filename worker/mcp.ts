@@ -45,6 +45,16 @@ const TOOLS = [
   }
 ] as const;
 
+function responseHeaders(extra: Record<string, string> = {}) {
+  return {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "x-content-type-options": "nosniff",
+    "x-robots-tag": "noindex, nofollow",
+    ...extra
+  };
+}
+
 function jsonRpc(id: unknown, result: any, status = 200, modern = false) {
   const body: any = { jsonrpc: "2.0", id: id ?? null, result };
   if (modern && body.result && typeof body.result === "object") {
@@ -55,24 +65,14 @@ function jsonRpc(id: unknown, result: any, status = 200, modern = false) {
   }
   return new Response(JSON.stringify(body), {
     status,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store",
-      "x-content-type-options": "nosniff",
-      "x-robots-tag": "noindex, nofollow"
-    }
+    headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {})
   });
 }
 
-function rpcError(id: unknown, code: number, message: string, status = 200, data?: any) {
+function rpcError(id: unknown, code: number, message: string, status = 200, data?: any, modern = false) {
   return new Response(JSON.stringify({ jsonrpc: "2.0", id: id ?? null, error: { code, message, ...(data === undefined ? {} : { data }) } }), {
     status,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store",
-      "x-content-type-options": "nosniff",
-      "x-robots-tag": "noindex, nofollow"
-    }
+    headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {})
   });
 }
 
@@ -85,6 +85,23 @@ function toolResult(value: unknown, isError = false) {
   };
 }
 
+function kathmanduAccessDate() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit"
+  }).format(new Date());
+}
+
+function validateModernEnvelope(request: Request, message: any) {
+  const version = request.headers.get("MCP-Protocol-Version");
+  if (version !== MODERN) return { ok: false, reason: "missing_or_unsupported_protocol_version" };
+  if (request.headers.get("Mcp-Method") !== message.method) return { ok: false, reason: "method_header_mismatch" };
+  if (message.method === "tools/call") {
+    const name = String(message?.params?.name || "");
+    if (!name || request.headers.get("Mcp-Name") !== name) return { ok: false, reason: "tool_name_header_mismatch" };
+  }
+  return { ok: true, reason: "" };
+}
+
 async function callTool(name: string, args: any, env: PatroEnv) {
   const adapter = createPatroAdapter(createD1PatroSource(env));
   if (name === "get_today") {
@@ -92,8 +109,8 @@ async function callTool(name: string, args: any, env: PatroEnv) {
     return value ? toolResult(value) : toolResult({ error: "calendar_unavailable" }, true);
   }
   if (name === "convert_date") {
-    const hasAd = typeof args?.ad === "string";
-    const hasBs = typeof args?.bs === "string";
+    const hasAd = typeof args?.ad === "string" && args.ad.length > 0;
+    const hasBs = typeof args?.bs === "string" && args.bs.length > 0;
     if (hasAd === hasBs) return toolResult({ error: "provide_exactly_one_of_ad_or_bs" }, true);
     const value = hasAd ? await adapter.convertAdToBs(args.ad) : await adapter.convertBsToAd(args.bs);
     return value ? toolResult(value) : toolResult({ error: "date_outside_archive" }, true);
@@ -117,28 +134,38 @@ export async function mcpResponse(request: Request, env: PatroEnv): Promise<Resp
       name: "Aafnai Patro MCP",
       endpoint: "/mcp",
       supportedProtocolVersions: [MODERN, LEGACY],
+      transport: "streamable-http",
       tools: TOOLS.map(({ name, title, description }) => ({ name, title, description })),
-      citation: `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${new Date().toISOString().slice(0, 10)}`
+      citation: `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${kathmanduAccessDate()}`
     };
     return new Response(request.method === "HEAD" ? null : JSON.stringify(body), {
       status: 200,
-      headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=300", "x-robots-tag": "noindex, nofollow" }
+      headers: responseHeaders({ "cache-control": "public, max-age=300" })
     });
   }
-  if (request.method !== "POST") return new Response(null, { status: 405, headers: { allow: "GET, HEAD, POST" } });
+  if (request.method !== "POST") return new Response(null, { status: 405, headers: responseHeaders({ allow: "GET, HEAD, POST" }) });
 
   let rpc: any;
   try { rpc = await request.json(); } catch { return rpcError(null, -32700, "Parse error", 400); }
   if (!rpc || rpc.jsonrpc !== "2.0" || typeof rpc.method !== "string") return rpcError(rpc?.id, -32600, "Invalid Request", 400);
 
-  const metaVersion = rpc?.params?._meta?.["io.modelcontextprotocol/protocolVersion"];
   const headerVersion = request.headers.get("MCP-Protocol-Version");
-  const modern = metaVersion === MODERN || headerVersion === MODERN || rpc.method === "server/discover";
+  const modern = headerVersion === MODERN || rpc.method === "server/discover";
+
+  if (headerVersion && headerVersion !== MODERN && headerVersion !== LEGACY) {
+    return rpcError(rpc.id, -32022, "Unsupported protocol version", 400, { supportedVersions: [MODERN, LEGACY] });
+  }
+
+  if (headerVersion === MODERN) {
+    const envelope = validateModernEnvelope(request, rpc);
+    if (!envelope.ok) return rpcError(rpc.id, -32020, "MCP request headers do not match the request envelope", 400, { reason: envelope.reason }, true);
+  }
 
   if (rpc.method === "server/discover") {
     return jsonRpc(rpc.id, {
       resultType: "complete",
       supportedVersions: [MODERN],
+      serverInfo: SERVER_INFO,
       capabilities: { tools: {} },
       instructions: "Use get_today for the Nepal-date answer, convert_date for BS↔AD conversion, and get_festival for a festival lookup. Results come from the same Aafnai Patro calendar source used by the site.",
       ttlMs: 3600000,
@@ -147,28 +174,29 @@ export async function mcpResponse(request: Request, env: PatroEnv): Promise<Resp
   }
 
   if (rpc.method === "initialize") {
-    return jsonRpc(rpc.id, {
-      protocolVersion: LEGACY,
-      capabilities: { tools: { listChanged: false } },
-      serverInfo: SERVER_INFO,
-      instructions: "Deterministic Nepali calendar tools backed by Aafnai Patro."
-    });
+    return new Response(JSON.stringify({
+      jsonrpc: "2.0", id: rpc.id ?? null, result: {
+        protocolVersion: LEGACY,
+        capabilities: { tools: { listChanged: false } },
+        serverInfo: SERVER_INFO,
+        instructions: "Deterministic Nepali calendar tools backed by Aafnai Patro."
+      }
+    }), { status: 200, headers: responseHeaders({ "MCP-Protocol-Version": LEGACY }) });
   }
-  if (rpc.method === "notifications/initialized") return new Response(null, { status: 202 });
-
-  if (modern && headerVersion && headerVersion !== MODERN) {
-    return rpcError(rpc.id, -32022, "Unsupported protocol version", 400, { supportedVersions: [MODERN] });
-  }
+  if (rpc.method === "notifications/initialized") return new Response(null, { status: 202, headers: responseHeaders({ "MCP-Protocol-Version": LEGACY }) });
 
   if (rpc.method === "tools/list") {
-    return jsonRpc(rpc.id, { resultType: "complete", tools: TOOLS }, 200, modern);
+    return jsonRpc(rpc.id, {
+      ...(modern ? { resultType: "complete", ttlMs: 3600000, cacheScope: "public" } : {}),
+      tools: TOOLS
+    }, 200, modern);
   }
   if (rpc.method === "tools/call") {
     const name = String(rpc?.params?.name || "");
     const result = await callTool(name, rpc?.params?.arguments || {}, env);
-    if (!result) return rpcError(rpc.id, -32602, "Unknown tool", 200, { name });
+    if (!result) return rpcError(rpc.id, -32602, "Unknown tool", 200, { name }, modern);
     return jsonRpc(rpc.id, result, 200, modern);
   }
-  if (rpc.method === "ping") return jsonRpc(rpc.id, {});
-  return rpcError(rpc.id, -32601, "Method not found", modern ? 400 : 200);
+  if (rpc.method === "ping") return jsonRpc(rpc.id, {}, 200, modern);
+  return rpcError(rpc.id, -32601, "Method not found", modern ? 400 : 200, undefined, modern);
 }
