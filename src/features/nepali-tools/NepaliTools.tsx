@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export type NepaliMode = "typing" | "preeti-to-unicode" | "unicode-to-preeti";
-const BASE = "/astro/nepali-tools";
+const BASE = "/nepali-tools";
 
 type ToolsModule = {
   mountNepaliTools: (root: ShadowRoot, options: { mode: NepaliMode }) => () => void;
@@ -26,8 +26,8 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
     shadow.replaceChildren(loading);
 
     async function init() {
-      const response = await fetch(`${BASE}/index.html`, { signal: controller.signal });
-      if (!response.ok) throw new Error("Tool assets were not found. Check the static asset copy.");
+      const response = await fetch(`${BASE}/index.html`, { signal: controller.signal, cache: "force-cache" });
+      if (!response.ok) throw new Error("Tool assets were not found. Check the packaged /nepali-tools bundle.");
 
       const [html, module] = await Promise.all([
         response.text(),
@@ -48,6 +48,11 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       stylesheet.href = `${BASE}/styles.css`;
       shadow.replaceChildren(stylesheet, document.importNode(main, true));
       cleanup = module.mountNepaliTools(shadow, { mode });
+
+      // Ask the root PWA worker to warm the complete local language-tool bundle and lexicon.
+      navigator.serviceWorker?.ready
+        .then((registration) => registration.active?.postMessage({ type: "WARM_LANGUAGE_TOOLS" }))
+        .catch(() => undefined);
     }
 
     init().catch((cause) => {
