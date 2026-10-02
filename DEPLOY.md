@@ -1,153 +1,64 @@
-# Deployment / Cutover Checklist
+# Production Deployment Checklist
 
-This file is the top-level operator checklist for the `cloudflare-migration` branch. It does **not** authorize deployment by itself. The detailed runbook is `docs/CLOUDFLARE_GIT_DEPLOY.md`.
+Aafnai Patro has one production Cloudflare topology:
 
-## 1. Pre-deploy repository gate
+- Worker: `patro`
+- Worker entry: `worker/connected-entry.ts`
+- Static Assets: `./dist`, binding `ASSETS`
+- D1 database: `patro`, binding `DB`
+- Production custom domain: `https://aafnaipatro.com`
+- Preview URLs: disabled
 
-Use Node 22 and run:
+A separate Cloudflare Pages project is not part of the supported production path.
+
+## 1. Repository release gate
+
+Use Node 22 from a clean checkout:
 
 ```bash
-npm install --ignore-scripts --no-audit --no-fund
-npm run test:cloudflare-contract
-npm run typecheck
-npm run test:core
-npm run test:typing
-npm run test:patro-tools
+npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+npm run release:verify
 npm run cloudflare:validate
 ```
 
-Do not continue if any command fails.
+Do not deploy if any command fails.
 
 ## 2. Cloudflare resources
 
-Provision or confirm:
+`DB` is required. `CACHE`/KV is optional and must never become a first-deploy or correctness dependency. Optional overrides are `CF_D1_DATABASE_ID`, `CF_D1_DATABASE_NAME`, `CF_D1_PREVIEW_DATABASE_ID`, `CF_KV_NAMESPACE_ID`, and `CF_KV_PREVIEW_NAMESPACE_ID`.
 
-- Worker: `mero-patro`
-- Pages project: `mero-patro-pages`
-- D1 database bound as `DB`
-- KV namespace bound as `CACHE`
-- Pages service binding `PATRO_API -> mero-patro`
+Core calendar, conversion, Community, Time Machine, On This Day, D1 public/reference content and native/bundle Rashifal require no Supabase credential. `SUPABASE_COMPAT_ORIGIN` is a non-secret transition origin and may be used only by `worker/connected-entry.ts` for TV, FM and Samachar.
 
-Build-time resource IDs:
-
-```text
-CF_D1_DATABASE_ID
-CF_KV_NAMESPACE_ID
-CF_D1_DATABASE_NAME            # optional; default mero-patro
-CF_D1_PREVIEW_DATABASE_ID      # optional
-CF_KV_PREVIEW_NAMESPACE_ID     # optional
-CF_DEPLOY_MODE                 # optional
-```
-
-Runtime provider keys belong in Cloudflare secrets, never browser/Vite variables.
-
-## 3. First native Worker bootstrap
-
-Run once after D1/KV exist:
+## 3. Fresh D1 bootstrap
 
 ```bash
 npm run deploy:cloudflare:bootstrap
 ```
 
-Required order:
+Enforced order: production build → deterministic snapshot → additive schema migrations → remote D1 row-count inspection → seed only when `content_records` is exactly zero → exact parity verification → Worker/Static Assets deploy.
 
-1. build and repository validation;
-2. generate deterministic D1 import;
-3. validate snapshot and SQL statement limits;
-4. generate bound Wrangler config;
-5. apply schema migrations;
-6. import public/reference content;
-7. verify exact remote D1 counts and boundary data;
-8. deploy Worker.
+Existing populated D1 databases are never bulk-reseeded by bootstrap or normal deployment.
 
-This import intentionally excludes private/user state.
-
-## 4. Pages Git project
-
-Configure Cloudflare Pages:
-
-```text
-Repository:         aprashnasuraj-dev/patro
-Production branch:  cloudflare-migration
-Build command:      npm run build
-Output directory:   dist
-Root directory:     repository root
-```
-
-Bind:
-
-```text
-PATRO_API -> mero-patro
-```
-
-Deploy the API Worker before Pages so the service binding has a live target.
-
-## 5. Routine Worker release
-
-After the one-time bootstrap:
+## 4. Routine release
 
 ```bash
 npm run deploy:cloudflare
 ```
 
-Routine deployment builds, applies schema migrations, and deploys the Worker. It does **not** replay the full deterministic reference archive.
+Routine release uses the same seed-only-when-empty protection and exact D1 verification.
 
-Pages can be deployed by Git integration or explicitly with:
+## 5. Release data rules
 
-```bash
-npm run deploy:pages
-```
+- `time_machine_moments` is exactly **706** records.
+- Rashifal is served by the checked-in native/bundle runtime and is excluded from mandatory D1 bootstrap/count verification.
+- `market_snapshots`/NEPSE is not a launch, doctor, bootstrap or release-gate requirement.
+- private/user data is excluded from the deterministic public snapshot.
+- a populated D1 must never enter the bulk seed path.
 
-## 6. Preview verification before DNS
+## 6. Post-deploy smoke
 
-With a Cloudflare preview origin:
+Verify Calendar/AD-BS-NS, Panchang/Astronomy, Community suites, Nepal Sambat, Time Machine, On This Day, Rashifal, all 29 tools, FM/TV/Samachar, PWA/offline assets, mobile/desktop navigation and direct-route refresh. NEPSE/market data is not a release smoke requirement.
 
-```bash
-TARGET_ORIGIN=https://<cloudflare-preview-host> npm run cloudflare:smoke
-```
+## 7. Never commit
 
-Also verify manually:
-
-- home/calendar/search/planner;
-- earliest/current/latest calendar dates;
-- Nepal Sambat and Panchang;
-- astronomy/APOD/cosmic;
-- FM and TV playback + error handling;
-- Samachar/history/time machine;
-- Jyotish/Rashifal;
-- representative tools;
-- community calendars;
-- PWA install/update/offline behavior;
-- direct navigation/refresh;
-- no unexpected 5xx;
-- compatibility fallback rate is understood.
-
-## 7. Domain cutover
-
-Cut over only after the preview gates pass.
-
-Recommended sequence:
-
-1. keep Vercel/Supabase intact;
-2. attach the production domain to Pages;
-3. observe Pages/Worker logs;
-4. monitor compatibility fallback traffic;
-5. migrate remaining route families one at a time;
-6. retire old infrastructure only after the observation/rollback window closes and legitimate traffic is zero.
-
-## 8. Rollback
-
-Frontend rollback: move the production domain back to the last known-good Vercel deployment.
-
-API/data rollback: keep the protected Supabase origins and source tables untouched during the migration observation window.
-
-D1 is populated from deterministic checked-in snapshots; it does not become the sole rollback authority until parity is signed off.
-
-## 9. Never commit
-
-- Cloudflare API tokens;
-- Supabase service-role keys;
-- database passwords;
-- provider secrets;
-- generated `wrangler.generated.jsonc`;
-- private/user database exports.
+Cloudflare API tokens, Supabase credentials, database passwords, provider secrets, generated `wrangler.generated.jsonc`, or private/user exports.

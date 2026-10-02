@@ -1,36 +1,11 @@
-name: Patro tools CI
+name: Patro tools CI (manual legacy)
+
 on:
-  push:
-    branches:
-      - feat/patro-tools-phase-a
-      - feat/patro-tools-phase-b
-      - feat/patro-tools-phase-c
-      - feat/patro-tools-phase-d
-  pull_request:
-    paths:
-      - 'src/patro-tools/**'
-      - 'src/patro-tools-integration/**'
-      - 'src/utilities/**'
-      - 'src/components/**'
-      - 'tests/**'
-      - 'package.json'
-      - 'tsconfig.json'
-      - 'vite.config.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
-  verify:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: package.json
-      - run: npm install --legacy-peer-deps --no-audit --no-fund
-      - run: npm run test:core
-      - run: npm run test:typing
-      - run: npm run test:patro-tools
-      - run: npm run lint
-      - run: npm run typecheck
-      - run: npm run build
+  release-gate:
+    uses: ./.github/workflows/release-gate.yml

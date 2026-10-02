@@ -1,263 +1,94 @@
-# Mero Patro
+# Aafnai Patro · आफ्नै पात्रो
 
-Production migration repository for Mero Patro: a Nepali calendar, astronomy, history, media, Jyotish and utility platform.
+Aafnai Patro is a Nepali calendar, astronomy, history, Community calendar, media, Jyotish and utility platform.
 
-The `cloudflare-migration` branch is prepared for a staged move from **Vercel + Supabase** to **Cloudflare Pages + Workers + D1 + KV** without removing working product surfaces during the transition.
+## Production architecture
 
-## Migration state
-
-- Frontend: React 19 + TypeScript + Vite static SPA.
-- Cloudflare frontend target: Pages, output directory `dist/`.
-- Cloudflare API target: Worker `mero-patro`.
-- Pages-to-Worker transport: service binding `PATRO_API`.
-- Migrated reference/content store: D1 binding `DB`.
-- Edge cache: KV binding `CACHE` plus Cache API.
-- Calendar snapshot: **77,070 rows**, **78 parts**, AD **1826-04-11 → 2037-04-13**, with BS + Nepal Sambat + Panchang required on every row.
-- D1 parity gates: Rashifal **22**, Time Machine **706**, On This Day **5,454**, Tools catalog **29** + release plan **4**, Nepal Sambat day map **14,972**.
-- Exact D1 row expectations live in `cloudflare/d1/expected-public-counts.json`; all Supabase public tables are classified in `cloudflare/d1/supabase-table-inventory.json`.
-- Runtime strategy: **native Cloudflare first, Supabase compatibility fallback second**.
-- Private/user Supabase tables are not bulk-exported into the public migration snapshot.
-- No Supabase service-role credential is used by browser code or committed to Git.
-
-The compatibility fallback is deliberate. A route that is not yet Worker-native continues to use the existing Supabase router so a Cloudflare cutover cannot silently delete functionality.
-
-## Architecture
+Production has one supported Cloudflare topology:
 
 ```text
-Browser
-  |
-  +-- static app / PWA --------------------------> Cloudflare Pages
-  |
-  +-- /api/* and /fm-v2-stream/*
-        |
-        +-- Pages Function ----------------------> PATRO_API service binding
-                                                    |
-                                                    v
-                                             Worker: mero-patro
-                                              |        |        |
-                                              |        |        +--> upstream APIs
-                                              |        +-----------> KV / Cache API
-                                              +--------------------> D1
-                                                    |
-                                                    +--> Supabase compatibility
-                                                         for routes not native yet
+GitHub repository:   aprashnasuraj-dev/patro
+Production branch:   main
+Worker:              patro
+Entrypoint:          worker/connected-entry.ts
+Static Assets:       ASSETS -> ./dist
+D1 binding:          DB -> patro
+Custom domain:       aafnaipatro.com
+Preview URLs:        disabled
 ```
 
-A single-Worker + Static Assets profile remains available for bootstrap/local use. Full production configuration defaults to split Pages + API Worker mode.
+Cloudflare Pages is not part of production. The old split Pages/API service-binding topology is retired.
 
-## Preserved product surfaces
+Native Cloudflare routes run first. `SUPABASE_COMPAT_ORIGIN` is a non-secret transition origin used only by `worker/connected-entry.ts` for the explicitly allow-listed TV, FM and Samachar compatibility routes. Calendar, conversion, Community calendars, Time Machine, On This Day, tools and Rashifal do not require Supabase credentials to serve production public/reference content.
 
-This repository keeps the full Patro product rather than replacing it with an astronomy-only application.
+## Release invariants
 
-| Surface | Cloudflare migration behavior |
-| --- | --- |
-| AD / Bikram Sambat / Nepal Sambat calendar | D1-native sync where available; compatibility fallback otherwise |
-| Panchang / tithi / astronomy | Worker-native tithi + preserved router routes |
-| Astronomy / Time Travel | Pages UI + Worker APIs |
-| NASA APOD | Worker-native normalization/fallback + KV |
-| Time Machine / On This Day | Worker/D1 native with compatibility fallback |
-| Jyotish / Janma Patro | Pages UI + preserved backend bridge |
-| Rashifal | universal/public readings are D1-first with compatibility fallback; personalized/private readings remain on the protected backend |
-| FM / radio | Pages player + Worker/compat stream route |
-| Live TV | Pages HLS/browser player |
-| Nepali typing | integrated and standalone static app |
-| Preeti ↔ Unicode | Nepali tools |
-| Utility suite | OCR, voice typing, spellcheck, read-aloud, Sait, reminders, baby names, PatroBot, future letters and related tools |
-| Community calendars | Nepal Sambat, Hijri, Lhosar, Kirat, Mithila, Tharu |
-| Personal | My Diary/local storage behavior |
-| PWA | manifest, icons, installability, service worker |
-| Trust/legal | About, Sources, Privacy, Terms, Contact |
+- AD/BS/Nepal Sambat/Panchang canonical calendar: **77,070** rows, AD `1826-04-11` through `2037-04-13`.
+- Time Machine: exactly **706** canonical D1 records.
+- On This Day: **5,454** records.
+- Tool catalog: **29** canonical tools.
+- Nepal Sambat day map: **14,972** rows.
+- Community suites: Nepal Sambat, Lhosar, Tharu, Mithila, Kirat, Hijri and Samudaya Chakra.
+- Rashifal: checked-in native/bundle runtime; no mandatory D1 publication seed and no mandatory Supabase table.
+- NEPSE/market snapshots: not required for launch, D1 bootstrap, doctor checks or release verdict.
+- KV: optional; first production deployment must work without a KV namespace.
 
-## Repository layout
+## Local release verification
 
-```text
-.
-├── src/                         React/Vite application and features
-├── public/                      PWA/static tools/icons/calendar chunks
-├── functions/
-│   ├── api/[[path]].js          Pages /api/* -> PATRO_API
-│   └── fm-v2-stream/[[path]].js Pages stream bridge -> PATRO_API
-├── worker/
-│   ├── index.ts                 Worker gateway/native handlers
-│   └── tithi.ts                 astronomical tithi calculation
-├── cloudflare/
-│   └── d1/
-│       ├── schema-migrations/   routine D1 schema migrations
-│       └── migrations/          checked-in sanitized reference seed source
-├── migration/
-│   └── data/public/             deterministic public/reference snapshots
-│       └── astronomy_calendar_map/part-001..078.json
-├── scripts/
-│   ├── bootstrap-cloudflare.mjs
-│   ├── generate-d1-migrations.mjs
-│   ├── prepare-cloudflare-config.mjs
-│   ├── validate-cloudflare.mjs
-│   ├── deploy-cloudflare.mjs
-│   └── emit-cloudflare-root.mjs
-├── wrangler.jsonc               Worker bootstrap/single-deploy config
-├── wrangler.pages.jsonc         Pages + PATRO_API config
-└── .github/workflows/cloudflare-readiness.yml
-```
-
-## Local verification
-
-Node 22 is the CI baseline.
+Node.js 22 is the CI baseline.
 
 ```bash
-npm install --ignore-scripts --no-audit --no-fund
-npm run typecheck
-npm run test:core
-npm run test:typing
-npm run test:patro-tools
+npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+npm run release:verify
 npm run cloudflare:validate
 ```
 
-`cloudflare:validate` builds the application, verifies all 78 calendar parts/77,070 rows without creating the large import artifact, and performs a Worker dry-run.
-
-For integrated local compatibility development:
-
-```bash
-npm run dev:cloudflare
-```
-
-For Vite-only UI development:
-
-```bash
-npm run dev:vite
-```
-
-## Cloudflare resource contract
-
-Full native deployment uses these build variables:
-
-| Variable | Purpose |
-| --- | --- |
-| `CF_D1_DATABASE_ID` | D1 UUID bound as `DB` |
-| `CF_KV_NAMESPACE_ID` | KV UUID bound as `CACHE` |
-| `CF_D1_DATABASE_NAME` | optional, defaults to `mero-patro` |
-| `CF_D1_PREVIEW_DATABASE_ID` | optional isolated preview D1 |
-| `CF_KV_PREVIEW_NAMESPACE_ID` | optional isolated preview KV |
-| `CF_DEPLOY_MODE` | optional; default split Pages + Worker, use `single-worker` for Worker Static Assets |
-
-Runtime secret:
-
-```text
-NASA_API_KEY
-```
-
-Never put database passwords, Supabase service-role keys, provider secrets or Cloudflare API tokens into Vite/browser environment variables.
-
-## First native D1 bootstrap
-
-The first native deployment is intentionally different from routine releases.
+## Fresh D1 bootstrap
 
 ```bash
 npm run deploy:cloudflare:bootstrap
 ```
 
-It performs, in order:
+The deployment applies additive schema migrations, inspects remote `content_records`, imports the deterministic public/reference snapshot only when the row count is exactly zero, verifies exact remote parity, then deploys Worker `patro` with Static Assets. Existing populated D1 databases never enter the bulk seed path.
 
-1. Production build and doctor checks.
-2. Verification of all 78 astronomy snapshot parts.
-3. Generation of a deterministic SQL import in `.cloudflare/d1-import/`.
-4. Validation that no generated SQL statement exceeds Cloudflare D1's 100 KB statement limit.
-5. Generation of a Wrangler config containing the real D1/KV IDs.
-6. Application of schema migrations.
-7. One-time public/reference data import with `wrangler d1 execute --file`.
-8. Exact remote D1 table-count + AD/BS/NS/Panchang verification (`npm run cloudflare:verify-d1-remote`).
-9. Worker deployment.
-
-The generated import is built from the canonical `migration/data/public` snapshots plus the retained 22-row universal Rashifal seed. It excludes private/user tables and chunk-rewrites any oversized payload so every emitted SQL statement stays within the D1 limit.
-
-## Routine Worker deploys
-
-After bootstrap, use:
+## Routine production deploy
 
 ```bash
 npm run deploy:cloudflare
 ```
 
-Routine releases do **not** regenerate/reimport the entire 77,070-row archive. They build, apply schema migrations, and deploy the Worker. This keeps normal Git deployments fast and avoids repeatedly rewriting the reference archive.
+The same seed-only-when-empty guard protects routine releases. KV remains optional.
 
-If both D1 and KV IDs are absent, routine deploy intentionally falls back to compatibility/bootstrap Worker mode. Supplying only one binding ID fails closed.
-
-## Pages deployment
-
-Pages configuration is in `wrangler.pages.jsonc`.
-
-Git integration:
+## Cloudflare Git import
 
 ```text
-Production branch: cloudflare-migration
-Build command:     npm run build
-Build output:      dist
-Service binding:   PATRO_API -> mero-patro
+Repository:        aprashnasuraj-dev/patro
+Production branch: main
+Worker name:       patro
+Build command:     npm run cloudflare:production-check
+Deploy command:    npm run deploy:cloudflare
+Root directory:    repository root
 ```
 
-The service binding keeps API traffic inside Cloudflare instead of adding a public network hop.
+Do not create a separate Pages project.
 
-Optional direct deployment:
+## Production feature surfaces
 
-```bash
-npm run deploy:pages
-```
+The build retains the full application: main AD/BS/Nepal Sambat calendar, Panchang/astronomy, all 29 canonical tools, seven Community experiences, Time Machine, On This Day, Rashifal/Jyotish, FM, TV, Samachar, personal tools, SEO/GEO/AI-agent surfaces, PWA/offline support, and mobile/desktop UI.
 
-Deploy the API Worker before Pages so `PATRO_API` has a valid target.
+TV/FM/Samachar may use the selective compatibility bridge only when their native route does not answer. No generic Supabase API proxy is allowed.
 
-## Edge behavior
+## Key deployment files
 
-- Fingerprinted Vite assets under `/astro/assets/*` are browser-cached immutably.
-- Static calendar data uses shorter browser caching and longer shared caching.
-- `sw.js` revalidates so PWA releases are not pinned by browser cache.
-- Native GET APIs use Cloudflare Cache API.
-- APOD also uses KV when available.
-- D1 is attempted before compatibility calls on native routes, including universal Rashifal publication lookup.
-- Unknown `/api/v1/*` routes continue to the existing Supabase router during staged migration.
+- `wrangler.jsonc` — canonical production Worker configuration.
+- `wrangler.toml` — Git-import discovery mirror.
+- `worker/connected-entry.ts` — production Worker entry and selective compatibility boundary.
+- `cloudflare/d1/expected-public-counts.json` — deterministic D1 bootstrap counts.
+- `scripts/ensure-d1-content.mjs` — seed-only-when-empty D1 guard.
+- `scripts/deploy-cloudflare.mjs` — production deploy order.
+- `DEPLOY.md` — production checklist.
+- `docs/CLOUDFLARE_GIT_DEPLOY.md` — Git import and smoke-test runbook.
 
-## Security boundaries
+## Security
 
-- Browser code never receives a Supabase service-role key.
-- D1/KV identifiers are deployment metadata; provider credentials remain secrets.
-- Pages reaches the API Worker using a service binding.
-- Compatibility proxying strips `Host` and `Content-Length` before forwarding.
-- Public/reference bulk migration is separated from private/user data.
-- Existing Supabase RLS/protected routes stay in force until verified replacements exist.
-
-## Cutover gate
-
-Do not retire Vercel or Supabase just because Cloudflare deploys.
-
-Cut over only after:
-
-- Cloudflare readiness CI is green.
-- D1 bootstrap reports expected table counts.
-- boundary dates `1826-04-11` and `2037-04-13` resolve correctly.
-- representative historical/current/future calendar samples match.
-- FM/TV/Jyotish/Rashifal/tools/PWA smoke checks pass.
-- Pages service-binding API calls pass.
-- production logs show no unexpected 5xx or compatibility spike.
-
-Then migrate remaining compatibility routes one at a time. The fallback is a migration safety mechanism, not permission to weaken the app.
-
-## Migration documentation
-
-- `docs/INVENTORY.md` — repository/runtime/route/API inventory and mapping back to the supplied Aafnai Patro v2 baseline.
-- `PLAN.md` — milestone plan and current migration status.
-- `DEPLOY.md` — top-level no-surprises deployment checklist; detailed Cloudflare steps remain in the Git runbook.
-- `CHANGELOG.md` — migration-facing change log.
-- `docs/CLOUDFLARE_GIT_DEPLOY.md` — exact Git setup and cutover runbook.
-- `docs/CLOUDFLARE_MIGRATION_PARITY.md` — feature/route preservation contract.
-- `cloudflare/migration-manifest.json` — machine-readable migration state.
-
-The existing Vercel and Supabase files remain intentionally present until the Cloudflare observation window and rollback period are complete.
-
-## Recovery / resumable D1 import
-
-The canonical first import is `npm run deploy:cloudflare:bootstrap`. A second importer exists only for recovery or table-by-table resume:
-
-```bash
-npm run cloudflare:import-d1:recovery
-# or add --table=<table> directly to scripts/cloudflare/import-d1.mjs
-```
-
-It uses the same exact-count manifest and refuses private/user tables. Do not use `cf:bootstrap` as a separate deployment design; it is an alias of the canonical safe bootstrap so ordering remains schema → content → remote parity verification → Worker.
+Never commit Cloudflare API tokens, Supabase service-role keys, database passwords, provider secrets, generated private exports, or private/user database dumps.

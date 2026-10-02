@@ -1,0 +1,176 @@
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Full release validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PUBLIC_SITE_URL: https://aafnaipatro.com
+    steps:
+      - name: Runner allocation preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "runner.os=${RUNNER_OS:-unknown}"
+          echo "runner.arch=${RUNNER_ARCH:-unknown}"
+          uname -a
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install once
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - name: Verify committed migration sources
+        id: migration
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          npm run cloudflare:verify-inventory
+          npm run cloudflare:verify-snapshot
+      - name: Production build, typecheck, SEO, doctor and product gate
+        id: build
+        continue-on-error: true
+        run: npm run build
+      - name: Core, typing, Patro tools, community and full-product tests
+        id: product_tests
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          npm run test:core
+          npm run test:typing
+          npm run test:patro-tools
+          npm run test:community
+          npm run test:full-product
+      - name: Cloudflare Worker contracts and clean-import dry-run
+        id: cloudflare
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          npm run test:cloudflare-contract
+          npm run cloudflare:validate
+      - name: Verify production runtime boundaries
+        id: router_boundaries
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const source = readFileSync("worker/connected-entry.ts", "utf8");
+          const match = source.match(/const\s+ALLOWED_COMPAT_ROOTS\s*=\s*new\s+Set\(\[([^\]]*)\]\);/);
+          if (!match) throw new Error("ALLOWED_COMPAT_ROOTS declaration not found");
+          const roots = [...match[1].matchAll(/"([^"]+)"/g)].map((item) => item[1]);
+          const expected = ["tv", "fm", "samachar"];
+          if (JSON.stringify(roots) !== JSON.stringify(expected)) {
+            throw new Error(`Supabase compatibility roots must be exactly ${expected.join(", ")}; got ${roots.join(", ")}`);
+          }
+          NODE
+          ! grep -q 'SUPABASE_PROTECTED_ORIGIN' wrangler.jsonc wrangler.toml worker/connected-entry.ts
+          ! grep -q '"miti_rashifal_publications"' cloudflare/d1/expected-public-counts.json
+          ! grep -q '"market_snapshots"' cloudflare/d1/expected-public-counts.json
+          grep -q '"time_machine_moments": 706' cloudflare/d1/expected-public-counts.json
+          grep -q '"mode": "native_bundle"' cloudflare/d1/expected-public-counts.json
+      - name: Verify generated release artifact parity
+        id: artifacts
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d dist/assets
+          required=(dist/index.html dist/sw.js dist/tools/index.html dist/samudaya/index.html dist/nepal-sambat/mandala/index.html dist/samudaya/lhosar/index.html dist/samudaya/tharu/index.html dist/samudaya/mithila/index.html dist/samudaya/kirat/index.html dist/samudaya/hijri/index.html dist/samudaya/chakra/index.html)
+          for file in "${required[@]}"; do
+            test -s "$file"
+            if grep -Eiq 'Loading\.\.\.|>Loading<|>लोड हुँदै' "$file"; then echo "Terminal loading placeholder found in $file"; exit 1; fi
+          done
+      - name: Dependency audit
+        id: dependency_audit
+        continue-on-error: true
+        run: npm audit --audit-level=high
+      - name: Reject obvious committed secrets
+        id: secret_scan
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          patterns='(gsk_[A-Za-z0-9_-]{20,}|nvapi-[A-Za-z0-9_-]{20,}|sb_secret_[A-Za-z0-9_-]{20,})'
+          if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/release-gate.yml'; then echo "Potential secret detected in tracked files."; exit 1; fi
+      - name: Install browser validation runtime
+        id: browser_runtime
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npx playwright install chromium >/dev/null
+      - name: Community mobile functional checks
+        id: mobile_checks
+        if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/serve-dist.mjs >/tmp/patro-release-http.log 2>&1 &
+          server=$!
+          trap 'kill $server 2>/dev/null || true' EXIT
+          for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/samudaya/ >/dev/null; then break; fi; sleep 1; done
+          routes=(/nepal-sambat/mandala/ /samudaya/lhosar/ /samudaya/tharu/ /samudaya/mithila/ /samudaya/kirat/ /samudaya/hijri/ /samudaya/chakra/)
+          for route in "${routes[@]}"; do NODE_PATH="$PWD/node_modules" node scripts/check-community-page.cjs "$route"; done
+          kill "$server" 2>/dev/null || true
+          trap - EXIT
+      - name: Lighthouse SEO, accessibility, best-practices and performance gate
+        id: lighthouse
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
+        run: npm run seo:audit
+      - name: Release verdict
+        if: always()
+        shell: bash
+        env:
+          MIGRATION: ${{ steps.migration.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+          PRODUCT_TESTS: ${{ steps.product_tests.outcome }}
+          CLOUDFLARE: ${{ steps.cloudflare.outcome }}
+          ROUTER_BOUNDARIES: ${{ steps.router_boundaries.outcome }}
+          ARTIFACTS: ${{ steps.artifacts.outcome }}
+          DEPENDENCY_AUDIT: ${{ steps.dependency_audit.outcome }}
+          SECRET_SCAN: ${{ steps.secret_scan.outcome }}
+          BROWSER_RUNTIME: ${{ steps.browser_runtime.outcome }}
+          MOBILE_CHECKS: ${{ steps.mobile_checks.outcome }}
+          LIGHTHOUSE: ${{ steps.lighthouse.outcome }}
+        run: |
+          set -euo pipefail
+          failures=0
+          check() { local name="$1" outcome="$2"; if [[ "$outcome" != "success" ]]; then echo "::error::$name outcome=$outcome"; failures=1; else echo "$name=success"; fi; }
+          check migration "$MIGRATION"
+          check build "$BUILD"
+          check product_tests "$PRODUCT_TESTS"
+          check cloudflare "$CLOUDFLARE"
+          check router_boundaries "$ROUTER_BOUNDARIES"
+          check artifacts "$ARTIFACTS"
+          check dependency_audit "$DEPENDENCY_AUDIT"
+          check secret_scan "$SECRET_SCAN"
+          check browser_runtime "$BROWSER_RUNTIME"
+          check mobile_checks "$MOBILE_CHECKS"
+          check lighthouse "$LIGHTHOUSE"
+          exit "$failures"

@@ -1,16 +1,18 @@
 {
   "id":"/",
-  "name":"आफ्नै पात्रो",
+  "name":"आफ्नै पात्रो · Aafnai Patro",
   "short_name":"आफ्नै पात्रो",
-  "description":"आजको मिति, तिथि, चाडपर्व, बिदा, राशिफल र BS–AD मिति रूपान्तरण।",
+  "description":"आजको नेपाली मिति, तिथि, चाडपर्व, बिदा, खगोलीय पात्रो, समययन्त्र, समुदाय पात्रो र 29 उपयोगी tools।",
   "lang":"ne",
-  "start_url":"/",
+  "dir":"ltr",
+  "start_url":"/?source=pwa",
   "scope":"/",
   "display":"standalone",
+  "display_override":["window-controls-overlay","standalone","minimal-ui"],
   "background_color":"#f5f7f4",
   "theme_color":"#176f3b",
   "orientation":"any",
-  "categories":["productivity","lifestyle","news"],
+  "categories":["productivity","lifestyle","education","news"],
   "prefer_related_applications":false,
   "icons":[
     {"src":"/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
@@ -18,9 +20,10 @@
     {"src":"/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
   ],
   "shortcuts":[
-    {"name":"आजको पात्रो","short_name":"पात्रो","url":"/"},
-    {"name":"राशिफल","short_name":"राशिफल","url":"/rashifal"},
-    {"name":"मिति रूपान्तरण","short_name":"रूपान्तरण","url":"/convert"},
-    {"name":"आफ्नै ठाउँ","short_name":"आफ्नै ठाउँ","url":"/me"}
+    {"name":"पात्रो · Calendar","short_name":"पात्रो","description":"आजको नेपाली पात्रो खोल्नुहोस्","url":"/"},
+    {"name":"खगोलीय पात्रो","short_name":"खगोल","description":"तिथि, चन्द्र अवस्था र astronomy","url":"/tools/astro"},
+    {"name":"समययन्त्र · Time Machine","short_name":"समययन्त्र","description":"इतिहास समयरेखा खोल्नुहोस्","url":"/time-machine"},
+    {"name":"समुदाय पात्रो","short_name":"समुदाय","description":"नेपालका समुदाय पात्रो अनुभव","url":"/samudaya"},
+    {"name":"आफ्नै टुल्स","short_name":"टुल्स","description":"29 नेपाली दैनिक tools","url":"/tools"}
   ]
 }

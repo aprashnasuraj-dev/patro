@@ -68,8 +68,22 @@ test("cutover contract probes all six calendars and the aggregate hub",()=>{
 test("community APIs are fully native and no longer cutover blockers",()=>{
   const remaining=json("cloudflare/remaining-cutover.json");
   assert.equal(remaining.community_frontend_parity.required_calendar_count,6);
-  assert.deepEqual(remaining.remaining_native_port_groups,[]);
   assert.deepEqual(remaining.community_frontend_parity.pending_private_routes,[]);
+  assert.equal(remaining.status.cloudflare_native_runtime_complete,true);
+  assert.equal(remaining.status.code_cutover_blockers,0);
+  assert.deepEqual(remaining.status.selective_compatibility_roots,["tv","fm","samachar"]);
+
+  const transitionGroups=remaining.remaining_native_port_groups||[];
+  assert.ok(transitionGroups.length>0,"selective media/news compatibility must remain declared until observed parity");
+  assert.equal(
+    transitionGroups.some((value)=>/community|samudaya|nepal[- ]sambat|hijri|lhosar|tharu|mithila|kirat/i.test(String(value))),
+    false,
+    "community suites must not remain in the compatibility/cutover backlog"
+  );
+  for(const root of remaining.status.selective_compatibility_roots){
+    assert.ok(transitionGroups.some((value)=>String(value).toLowerCase().includes(root)),root);
+  }
+
   const native=new Set(remaining.already_native_or_local_first.worker_endpoints||[]);
   for(const path of [
     "/api/v1/communities","/api/v1/community-preferences",

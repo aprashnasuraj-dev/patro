@@ -3,9 +3,9 @@ import { join } from "node:path";
 import process from "node:process";
 
 const root=process.cwd();
-// Audit only user-visible/current production surfaces. worker/index.ts still contains
-// historical fallback metadata, but worker/connected-entry.ts is the deployed entry and
-// rewrites every HTML response through worker/connected-seo.ts before it leaves Cloudflare.
+// Audit current production-visible sources and every generator that emits crawlable HTML.
+// Historical migration/runtime internals may still retain archival identifiers, but no public
+// Aafnai Patro HTML or discovery asset may emit the retired product brand.
 const files=[
   "index.html",
   "src/AafnaiPages.tsx",
@@ -17,7 +17,11 @@ const files=[
   "worker/connected-entry.ts",
   "worker/connected-seo.ts",
   "public/manifest.webmanifest",
-  "scripts/generate-seo.mjs"
+  "scripts/generate-seo.mjs",
+  "scripts/prerender-seo.mjs",
+  "scripts/prerender-days-seo.mjs",
+  "scripts/enrich-calendar-month-seo.mjs",
+  "scripts/emit-community-suites.mjs"
 ];
 const compact=["mero","patro"].join("");
 const spaced=["mero","patro"].join(" ");

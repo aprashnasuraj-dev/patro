@@ -2,7 +2,10 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
-import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/PatroToolsShell";
+import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
+import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
+import { CommunityHub } from "./community/CommunityHub";
+import { CommunityPreferences } from "./community/CommunityPreferences";
 
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
@@ -17,9 +20,9 @@ const NotificationSettingsPage=lazy(()=>import("./components/NativeProtectedPage
 const HolidaySettingsPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.HolidaySettingsPage})));
 const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.DevelopersPage})));
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
-const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 
 const DATE_ROUTE_PREFIX="/date/";
+const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const LEGACY_REDIRECTS:Record<string,string>={
  "/aaja":"/",
  "/astro":"/tools/astro",
@@ -45,9 +48,9 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||p.startsWith("/calendar/")||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
+function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -57,7 +60,11 @@ export function PatroRouter(){
  useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);document.removeEventListener("click",onClick)}},[]);
  const render=()=>{
    const legacy=LEGACY_REDIRECTS[path];if(legacy)return <Redirect to={legacy}/>;
-   if(path==="/")return <HomePage/>;
+   if(path==="/"||path==="/today")return <HomePage/>;
+   if(path==="/methodology")return <MethodologyPage/>;
+   if(path==="/corrections")return <CorrectionsPage/>;
+   if(path==="/samudaya")return <CommunityHub/>;
+   if(path==="/settings/community")return <CommunityPreferences/>;
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <HomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;

@@ -1,5 +1,6 @@
 import productionWorker from "./entry";
 import { rewriteConnectedSeo } from "./connected-seo";
+import { handleAgentSurface } from "./agent-gateway";
 
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = Record<string, unknown> & {
@@ -11,15 +12,18 @@ type Env = Record<string, unknown> & {
 const COMPAT_PREFIX = "/api/v1/compat-api/";
 const ALLOWED_COMPAT_ROOTS = new Set(["tv", "fm", "samachar"]);
 const SPA_EXACT = new Set([
-  "/", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
-  "/about", "/sources", "/contact", "/developers", "/offline",
+  "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
+  "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/aaja", "/astro", "/my-diary", "/notes", "/planner", "/family", "/family/join", "/settings",
-  "/settings/notifications", "/settings/holidays", "/my-data", "/card", "/tithi", "/diaspora",
+  "/settings/notifications", "/settings/holidays", "/settings/community", "/my-data", "/card", "/tithi", "/diaspora",
   "/jyotish/rashifal", "/jyotish/janma-patro", "/nepal-sambat", "/explore"
 ]);
 const PRIVATE_SPA_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin"];
 const PRIVATE_TOOL_PATHS = new Set(["/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
+const SEARCH_NOINDEX_EXACT = new Set(["/samachar", "/developers", "/tools/api", "/offline"]);
+const PRERENDER_MARKER = 'data-seo-prerender="true"';
 
 function cleanPath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
@@ -31,7 +35,13 @@ function isSpaPath(pathname: string) {
   return SPA_EXACT.has(path)
     || path.startsWith("/calendar/")
     || path.startsWith("/date/")
+    || path.startsWith("/countdown/")
+    || path.startsWith("/panchang/")
+    || path.startsWith("/festivals/")
+    || path.startsWith("/sait/")
+    || path.startsWith("/widget/")
     || path.startsWith("/me/")
+    || path.startsWith("/settings/")
     || path.startsWith("/tools/")
     || path.startsWith("/jyotish/");
 }
@@ -40,7 +50,7 @@ function isPrivateSpaPath(path: string) {
   return PRIVATE_TOOL_PATHS.has(path) || PRIVATE_SPA_PREFIXES.some((prefix) => path === prefix || path.startsWith(prefix + "/"));
 }
 
-function secureSpaResponse(request: Request, response: Response) {
+function secureSpaResponse(request: Request, response: Response, seoSource = "runtime") {
   const headers = new Headers(response.headers);
   headers.set("x-content-type-options", "nosniff");
   headers.set("referrer-policy", "strict-origin-when-cross-origin");
@@ -48,10 +58,13 @@ function secureSpaResponse(request: Request, response: Response) {
   headers.set("permissions-policy", "camera=(), microphone=(self), payment=(), usb=(), browsing-topics=()");
   headers.set("x-dns-prefetch-control", "off");
   headers.set("x-patro-shell", "root-spa");
+  headers.set("x-patro-seo-source", seoSource);
   const path = cleanPath(new URL(request.url).pathname);
   if (isPrivateSpaPath(path)) {
     headers.set("x-robots-tag", "noindex, nofollow");
     headers.set("cache-control", "private, no-store, max-age=0");
+  } else if (SEARCH_NOINDEX_EXACT.has(path)) {
+    headers.set("x-robots-tag", "noindex, follow");
   }
   return new Response(request.method === "HEAD" ? null : response.body, {
     status: response.status,
@@ -60,15 +73,30 @@ function secureSpaResponse(request: Request, response: Response) {
   });
 }
 
-async function rootSpaResponse(request: Request, env: Env) {
+async function htmlAssetResponse(request: Request, env: Env, assetPath: string, preferPrerender = false) {
   if (!env.ASSETS || (request.method !== "GET" && request.method !== "HEAD")) return null;
   const url = new URL(request.url);
-  url.pathname = "/index.html";
-  const assetRequest = new Request(url.toString(), request);
-  const response = await env.ASSETS.fetch(assetRequest);
+  url.pathname = assetPath;
+  const response = await env.ASSETS.fetch(new Request(url.toString(), request));
   if (!response.ok) return null;
-  const seoResponse = rewriteConnectedSeo(request, response, env);
-  return secureSpaResponse(request, seoResponse);
+  const type = response.headers.get("content-type") || "";
+  if (!type.toLowerCase().includes("text/html")) return null;
+
+  if (preferPrerender && request.method === "GET") {
+    const text = await response.clone().text();
+    if (text.includes(PRERENDER_MARKER)) return secureSpaResponse(request, response, "build-prerender");
+  }
+  return secureSpaResponse(request, rewriteConnectedSeo(request, response, env), "runtime-rewrite");
+}
+
+async function exactSpaAssetResponse(request: Request, env: Env) {
+  const path = cleanPath(new URL(request.url).pathname);
+  const assetPath = path === "/" ? "/index.html" : `${path}/index.html`;
+  return htmlAssetResponse(request, env, assetPath, true);
+}
+
+async function rootSpaResponse(request: Request, env: Env) {
+  return htmlAssetResponse(request, env, "/index.html", false);
 }
 
 function compatSuffix(pathname: string) {
@@ -93,29 +121,20 @@ function compatSuffix(pathname: string) {
 
 async function compatibilityResponse(request: Request, env: Env, suffix: string) {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
-
   const origin = String(env.SUPABASE_COMPAT_ORIGIN || "").replace(/\/+$/, "");
   if (!origin) return null;
-
   const incoming = new URL(request.url);
   const target = new URL(origin + suffix);
   target.search = incoming.search;
-
   try {
     const upstream = await fetch(new Request(target.toString(), request));
     if (!upstream.ok) return null;
-
     const headers = new Headers(upstream.headers);
     headers.set("x-patro-backend", "supabase-selective-compat");
     headers.set("x-patro-compat-route", suffix.split("?")[0]);
-    return new Response(request.method === "HEAD" ? null : upstream.body, {
-      status: upstream.status,
-      statusText: upstream.statusText,
-      headers,
-    });
-  } catch {
-    return null;
-  }
+    headers.set("x-robots-tag", "noindex, nofollow");
+    return new Response(request.method === "HEAD" ? null : upstream.body, {status: upstream.status,statusText: upstream.statusText,headers});
+  } catch { return null; }
 }
 
 async function normalizePublicApiBrand(pathname: string, response: Response) {
@@ -126,10 +145,17 @@ async function normalizePublicApiBrand(pathname: string, response: Response) {
     payload.info = { ...(payload.info || {}), title: "Aafnai Patro API · आफ्नै पात्रो" };
     const headers = new Headers(response.headers);
     headers.set("content-type", "application/json; charset=utf-8");
+    headers.set("x-robots-tag", "noindex, nofollow");
     return new Response(JSON.stringify(payload), { status: response.status, statusText: response.statusText, headers });
-  } catch {
-    return response;
-  }
+  } catch { return response; }
+}
+
+function protectMachineSurface(pathname: string, response: Response) {
+  if (!pathname.startsWith("/api/") && !pathname.startsWith("/compat-api/") && pathname!=="/mcp") return response;
+  const headers = new Headers(response.headers);
+  headers.set("x-robots-tag", "noindex, nofollow");
+  headers.set("x-content-type-options", "nosniff");
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
 export default {
@@ -137,18 +163,23 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
 
+    const agent = await handleAgentSurface(request, env, ctx, (req,e,c)=>productionWorker.fetch(req,e as any,c));
+    if (agent) return protectMachineSurface(pathname, agent);
+
     if (isSpaPath(pathname)) {
+      const exact = await exactSpaAssetResponse(request, env);
+      if (exact) return exact;
       const spa = await rootSpaResponse(request, env);
       if (spa) return spa;
     }
 
     const nativeResponse = await productionWorker.fetch(request, env as any, ctx);
-    const response = await normalizePublicApiBrand(pathname, nativeResponse);
+    const branded = await normalizePublicApiBrand(pathname, nativeResponse);
+    const response = protectMachineSurface(pathname, branded);
     if (response.status !== 404) return rewriteConnectedSeo(request, response, env);
 
     const suffix = compatSuffix(pathname);
     if (!suffix) return rewriteConnectedSeo(request, response, env);
-
     return (await compatibilityResponse(request, env, suffix)) || rewriteConnectedSeo(request, response, env);
   },
 };

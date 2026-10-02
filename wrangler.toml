@@ -24,13 +24,12 @@ migrations_dir = "cloudflare/d1/schema-migrations"
 [vars]
 PUBLIC_SITE_URL = "https://aafnaipatro.com"
 SUPABASE_COMPAT_ORIGIN = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router"
-SUPABASE_PROTECTED_ORIGIN = "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/nepal-miti-protected"
 CALENDAR_COVERAGE_START = "1826-04-11"
 CALENDAR_COVERAGE_END = "2037-04-13"
 CALENDAR_SOURCE_VERSION = "patro-archive-v79"
 
 [triggers]
-crons = ["*/5 * * * *", "43 2 * * *", "11 3 * * *"]
+crons = ["*/5 * * * *", "43 2 * * *", "11 3 * * *", "15 18 * * *"]
 
 [observability]
 enabled = true

@@ -5,6 +5,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { buildSync } from "esbuild";
 
 const root=process.cwd(), src=path.join(root,"community-frontends"), out=path.join(root,"dist");
+const SITE=(process.env.PUBLIC_SITE_URL||"https://aafnaipatro.com").replace(/\/+$/,"");
+const RETIRED_SPACED=["Mero","Patro"].join(" "), RETIRED_COMPACT=["Mero","Patro"].join("");
 const bundleFile=path.join(src,".engine.bundle.js");
 buildSync({entryPoints:[path.join(src,"entry.ts")],bundle:true,minify:true,format:"iife",globalName:"S",outfile:bundleFile,target:"es2020",logLevel:"silent"});
 const bundle=fs.readFileSync(bundleFile,"utf8").replaceAll("</script","<\\/script");
@@ -17,17 +19,21 @@ const routeMap={
  "hijri.html":"/samudaya/hijri","samudaya-chakra.html":"/samudaya/chakra"
 };
 const REQUIRED_COMMUNITY_ROUTES=[
- "/nepal-sambat/mandala",
- "/samudaya/lhosar",
- "/samudaya/tharu",
- "/samudaya/mithila",
- "/samudaya/kirat",
- "/samudaya/hijri",
- "/samudaya/chakra"
+ "/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila",
+ "/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
 ];
 const labels={
  "nepal-sambat-mandala.html":"नेपाल संवत्","lhosar.html":"ल्होसार","tharu.html":"थारु",
  "mithila.html":"मिथिला","kirat.html":"किरात","hijri.html":"हिजरी","samudaya-chakra.html":"चक्र"
+};
+const descriptions={
+ "nepal-sambat-mandala.html":"नेपाल संवत् मिति, तिथि, observances र calendar context अन्वेषण गर्नुहोस्।",
+ "lhosar.html":"ल्होसार calendar, समुदाय मिति र festival context अन्वेषण गर्नुहोस्।",
+ "tharu.html":"थारु समुदायका calendar dates, observances र festival context अन्वेषण गर्नुहोस्।",
+ "mithila.html":"मिथिला/मैथिली calendar dates, observances र festivals अन्वेषण गर्नुहोस्।",
+ "kirat.html":"किरात calendar dates, observances र festival context अन्वेषण गर्नुहोस्।",
+ "hijri.html":"हिजरी calendar र नेपाल-सन्दर्भित मिति context अन्वेषण गर्नुहोस्।",
+ "samudaya-chakra.html":"नेपालका समुदाय पात्रो र observance cycles एउटै दृश्यमा अन्वेषण गर्नुहोस्।"
 };
 const available=Object.keys(routeMap).filter(f=>fs.existsSync(path.join(src,f))||fs.existsSync(path.join(src,f.replace(".html",".src.html"))));
 const availableRoutes=available.map(f=>routeMap[f]);
@@ -46,13 +52,23 @@ const shellCss=`<style id="samudaya-suite-shell">
 html,body{max-width:100%;overflow-x:hidden}@media(max-width:360px){.samudaya-suite-menu{gap:4px;padding:7px 6px}.samudaya-suite-menu a{font-size:10px;padding:5px 6px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>`;
+function stripTag(html,pattern){return html.replace(pattern,"");}
 function decorate(html,file){
+ const route=routeMap[file],label=labels[file],canonical=SITE+route,description=descriptions[file];
  for(const [old,r] of Object.entries(routeMap)) html=html.replaceAll('href="'+old+'"','href="'+r+'"');
- html=html.replace("</head>",'<meta name="x-render-mode" content="static-prerender">'+shellCss+"</head>");
+ html=html.replaceAll(RETIRED_SPACED,"Aafnai Patro").replaceAll(RETIRED_COMPACT,"Aafnai Patro");
+ html=stripTag(html,/<link\s+rel=["']canonical["'][^>]*>/gi);
+ html=stripTag(html,/<meta\s+name=["']robots["'][^>]*>/gi);
+ html=stripTag(html,/<meta\s+property=["']og:site_name["'][^>]*>/gi);
+ html=stripTag(html,/<meta\s+property=["']og:url["'][^>]*>/gi);
+ const seo=`<meta name="x-render-mode" content="static-prerender"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="${canonical}"><meta property="og:site_name" content="आफ्नै पात्रो"><meta property="og:url" content="${canonical}"><meta name="description" content="${description}"><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebPage",name:`${label} · Aafnai Patro`,url:canonical,description,inLanguage:["ne","en"],isPartOf:{"@id":SITE+"/#website"}}).replace(/</g,"\\u003c")}</script>`;
+ html=html.replace("</head>",seo+shellCss+"</head>");
  html=html.replace(/<body([^>]*)>/i,(m,a)=>"<body"+a+">"+nav);
+ html=html.replace(/<main([^>]*)>/i,(m,a)=>`<main${a} data-seo-prerender="true">`);
  const js=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)].reduce((n,m)=>n+Buffer.byteLength(m[1]||""),0);
  if(js>200*1024) throw new Error(file+" exceeds 200 KB JavaScript: "+js);
  if(/Loading\.\.\.|>Loading<|>लोड हुँदै</i.test(html)) throw new Error(file+" contains terminal loading placeholder");
+ if(!html.includes("Aafnai Patro")||html.includes(RETIRED_SPACED)||html.includes(RETIRED_COMPACT)) throw new Error(file+" has inconsistent product branding");
  return {html,js};
 }
 for(const file of Object.keys(routeMap)){
@@ -67,5 +83,7 @@ for(const file of Object.keys(routeMap)){
 }
 fs.rmSync(bundleFile,{force:true});
 const cards=available.map(f=>React.createElement("a",{href:routeMap[f],key:f,className:"card"},React.createElement("strong",null,labels[f]),React.createElement("small",null,routeMap[f])));
-const hub="<!doctype html><html lang=\"ne\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>समुदाय · Community Suite | Mero Patro</title><style>body{margin:0;background:#07101f;color:#eef4ff;font:16px/1.55 system-ui,-apple-system,\"Noto Sans Devanagari\",sans-serif}main{max-width:1000px;margin:auto;padding:30px 16px 64px}h1{font-size:clamp(36px,7vw,64px);margin:.25em 0}p{color:#aebcd0;max-width:720px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{display:grid;gap:6px;padding:20px;border:1px solid #2a3a52;border-radius:18px;background:#0d182a;color:inherit;text-decoration:none}.card small{color:#9fb0c8}.back{color:#9ed7ff}html,body{max-width:100%;overflow-x:hidden}</style></head><body><main>"+renderToStaticMarkup(React.createElement(React.Fragment,null,React.createElement("a",{href:"/",className:"back"},"← Mero Patro"),React.createElement("h1",null,"समुदाय · Community Suite"),React.createElement("p",null,"सात समुदाय अनुभव: नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात, हिजरी र समुदाय चक्र। मितिहरू इञ्जिनबाट आउँछन्; आधिकारिक घोषणाले सम्भावित मिति override गर्छ।"),React.createElement("div",{className:"grid"},...cards)))+"</main></body></html>";
+const hubCanonical=SITE+"/samudaya";
+const hubSeo=`<meta name="description" content="नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात, हिजरी र समुदाय पात्रो एउटै Aafnai Patro suite मा।"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="${hubCanonical}"><meta property="og:site_name" content="आफ्नै पात्रो"><meta property="og:url" content="${hubCanonical}"><meta name="x-render-mode" content="static-prerender">`;
+const hub="<!doctype html><html lang=\"ne\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>समुदाय पात्रो · Community Calendars | Aafnai Patro</title>"+hubSeo+"<style>body{margin:0;background:#07101f;color:#eef4ff;font:16px/1.55 system-ui,-apple-system,\"Noto Sans Devanagari\",sans-serif}main{max-width:1000px;margin:auto;padding:30px 16px 64px}h1{font-size:clamp(36px,7vw,64px);margin:.25em 0}p{color:#aebcd0;max-width:720px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{display:grid;gap:6px;padding:20px;border:1px solid #2a3a52;border-radius:18px;background:#0d182a;color:inherit;text-decoration:none}.card small{color:#9fb0c8}.back{color:#9ed7ff}html,body{max-width:100%;overflow-x:hidden}</style></head><body><main data-seo-prerender=\"true\">"+renderToStaticMarkup(React.createElement(React.Fragment,null,React.createElement("a",{href:"/",className:"back"},"← आफ्नै पात्रो"),React.createElement("h1",null,"समुदाय · Community Calendars"),React.createElement("p",null,"सात समुदाय अनुभव: नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात, हिजरी र समुदाय चक्र। मितिहरू इञ्जिनबाट आउँछन्; आधिकारिक घोषणाले सम्भावित मिति override गर्छ।"),React.createElement("div",{className:"grid"},...cards)))+"</main></body></html>";
 fs.mkdirSync(path.join(out,"samudaya"),{recursive:true});fs.writeFileSync(path.join(out,"samudaya","index.html"),hub);

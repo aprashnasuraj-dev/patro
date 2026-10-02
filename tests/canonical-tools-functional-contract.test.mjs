@@ -11,16 +11,18 @@ const canonical=[
 test("canonical tool inventory stays exactly 29 unique public tools",()=>{
  assert.equal(canonical.length,29);
  assert.equal(new Set(canonical).size,29);
- const seo=read("scripts/generate-seo.mjs");
- for(const slug of canonical)assert.ok(seo.includes(`"/tools/${slug}"`),`SEO canonical inventory lost ${slug}`);
+ const config=read("scripts/seo-config.mjs");
+ for(const slug of canonical)assert.ok(config.includes(`"/tools/${slug}"`),`SEO canonical inventory lost ${slug}`);
 });
 
 test("specialized Astronomy and Nepali Typing tools have real routed implementations",()=>{
  const router=read("src/PatroRouter.tsx");
+ const typing=read("src/features/nepali-tools/NepaliTools.tsx");
  assert.ok(router.includes('path==="/tools/astro"'));
- assert.ok(router.includes("AstroToolShell"));
+ assert.ok(router.includes("<AstroPage"));
  assert.ok(router.includes('path==="/tools/nepali-typing"'));
- assert.ok(router.includes("NepaliTypingTool"));
+ assert.ok(router.includes('<NepaliTools mode="typing"'));
+ assert.ok(typing.includes('const BASE = "/nepali-tools"'));
 });
 
 test("shared UtilitySuite implements converter and worker-backed canonical tools",()=>{
@@ -36,9 +38,7 @@ test("shared UtilitySuite implements converter and worker-backed canonical tools
 
 test("nine reference utilities contain interactive local implementations and verified forex fallback",()=>{
  const refs=read("src/utilities/ReferenceUtilities.tsx");
- const implementations={
-  calc:"DateCalculator",age:"AgeCalculator",clock:"WorldClock",forex:"ForexTool",gold:"GoldTool",emi:"EmiCalculator",vat:"VatPercent",units:"TraditionalUnits",words:"AmountWords"
- };
+ const implementations={calc:"DateCalculator",age:"AgeCalculator",clock:"WorldClock",forex:"ForexTool",gold:"GoldTool",emi:"EmiCalculator",vat:"VatPercent",units:"TraditionalUnits",words:"AmountWords"};
  for(const [slug,name] of Object.entries(implementations)){
   assert.ok(refs.includes(`function ${name}`),`${slug} lost ${name}`);
   assert.ok(refs.includes(`tool==="${slug}"`)||slug==="words",`${slug} is no longer routed by ReferenceUtilityTools`);
@@ -64,6 +64,6 @@ test("canonical tools are reachable through production SPA and no generic compat
  const bridge=read("worker/connected-entry.ts");
  const router=read("src/PatroRouter.tsx");
  assert.ok(bridge.includes('path.startsWith("/tools/")'));
- assert.ok(bridge.includes('url.pathname = "/index.html"'));
+ assert.ok(bridge.includes('url.pathname = "/index.html"')||bridge.includes('"/index.html"'));
  assert.equal(router.includes("compat/page"),false);
 });

@@ -1,37 +1,11 @@
-name: Cloudflare migration CI
+name: Cloudflare migration CI (manual legacy)
 
 on:
-  push:
-    branches:
-      - cloudflare-migration
-      - "migration/cloudflare-*"
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install pinned dependencies
-        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-      - name: Cloudflare handoff contract
-        run: npm run test:cloudflare-contract
-      - name: Verify Pages route parity
-        run: node --test tests/cloudflare-pages-routing.test.mjs
-      - name: Validate Cloudflare build, data inventory and Worker dry-run
-        run: npm run cloudflare:validate
-      - name: Core tests
-        run: npm run test:core
-      - name: Patro tool tests
-        run: npm run test:patro-tools
-      - name: Nepali typing tests
-        run: npm run test:typing
-      - name: Community suite engine tests
-        run: npm run test:community
+  release-gate:
+    uses: ./.github/workflows/release-gate.yml

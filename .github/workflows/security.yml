@@ -1,34 +1,11 @@
-name: Security and build checks
+name: Security and build checks (manual legacy)
 
 on:
-  pull_request:
-  push:
-    branches: [main, "security/**"]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  build-and-audit:
-    runs-on: ubuntu-latest
-    timeout-minutes: 12
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install without lifecycle scripts
-        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
-      - name: Typecheck and production build
-        run: npm run build
-      - name: Audit dependencies
-        run: npm audit --audit-level=high
-      - name: Reject obvious committed secrets
-        shell: bash
-        run: |
-          set -euo pipefail
-          patterns='(gsk_[A-Za-z0-9_-]{20,}|nvapi-[A-Za-z0-9_-]{20,}|sb_secret_[A-Za-z0-9_-]{20,})'
-          if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/security.yml'; then
-            echo "Potential secret detected in tracked files."
-            exit 1
-          fi
+  release-gate:
+    uses: ./.github/workflows/release-gate.yml

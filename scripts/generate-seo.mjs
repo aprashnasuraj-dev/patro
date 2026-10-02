@@ -1,198 +1,221 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import {
+  SITE, CURRENT_BS_YEAR, CORE_INDEX_ROUTES, TOOL_ROUTES, COMMUNITY_ROUTES,
+  NOINDEX_PUBLIC_ROUTES, PRIVATE_PREFIXES, INDEXED_CALENDAR_YEARS,
+  calendarYearRoutes, calendarRoutes, unique
+} from "./seo-config.mjs";
+import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
-const rawSite = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim();
-const site = rawSite.replace(/\/+$/, "");
-if (!/^https:\/\//.test(site)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
+const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
+const freshDaily = new Set(["/", "/today", "/rashifal", "/fm", "/tv"]);
+const citation = `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${today}`;
 
-const currentAdYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
-const currentBsYear = Number(process.env.SEO_BS_YEAR || currentAdYear + 57);
-const calendarYears = [currentBsYear - 1, currentBsYear, currentBsYear + 1];
-
-const coreRoutes = [
-  "/",
-  "/tools",
-  "/convert",
-  "/rashifal",
-  "/samachar",
-  "/time-machine",
-  "/on-this-day",
-  "/fm",
-  "/tv",
-  "/tools/api",
-  "/jyotish/china",
-  "/jyotish/matchmaking",
-  "/samudaya",
-  "/about",
-  "/sources",
-  "/privacy",
-  "/terms",
-  "/contact",
-  "/developers"
-];
-
-// Exactly one canonical route per public tool. Aliases such as /tools/tax,
-// /tools/land and /tools/qr remain functional but are intentionally omitted
-// to avoid duplicate-content dilution.
-const toolRoutes = [
-  "/tools/astro",
-  "/tools/nepali-typing",
-  "/tools/preeti-converter",
-  "/tools/bstoad",
-  "/tools/adtobs",
-  "/tools/calc",
-  "/tools/age",
-  "/tools/clock",
-  "/tools/forex",
-  "/tools/gold",
-  "/tools/emi",
-  "/tools/vat",
-  "/tools/units",
-  "/tools/words",
-  "/tools/incometax",
-  "/tools/landconverter",
-  "/tools/nepaliqr",
-  "/tools/fuelprice",
-  "/tools/tithi-reminder",
-  "/tools/sait",
-  "/tools/baby-names",
-  "/tools/janmadin-akhbar",
-  "/tools/future-letter",
-  "/tools/spell-check",
-  "/tools/voice-typing",
-  "/tools/ocr",
-  "/tools/name-check",
-  "/tools/read-aloud",
-  "/tools/patro-bot"
-];
-if (toolRoutes.length !== 29) throw new Error(`SEO canonical tool inventory must remain exactly 29; received ${toolRoutes.length}`);
-
-const communityRoutes = [
-  "/nepal-sambat/mandala",
-  "/samudaya/lhosar",
-  "/samudaya/tharu",
-  "/samudaya/mithila",
-  "/samudaya/kirat",
-  "/samudaya/hijri",
-  "/samudaya/chakra"
-];
-
-const calendarRoutes = [];
-for (const year of calendarYears) {
-  for (let month = 1; month <= 12; month++) {
-    calendarRoutes.push(`/calendar/${year}/${String(month).padStart(2, "0")}`);
-  }
-}
-
-const unique = (items) => [...new Set(items)];
-const indexedRoutes = unique([...coreRoutes, ...toolRoutes, ...communityRoutes, ...calendarRoutes]);
-const escapeXml = (value) => String(value).replace(/[<>&'"]/g, (ch) => ({
-  "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;"
-}[ch]));
-
-const today = new Date().toISOString().slice(0, 10);
-const freshDaily = new Set(["/", "/samachar", "/rashifal", "/fm", "/tv"]);
-
-function urlEntry(path) {
+function entry(path) {
   const lastmod = freshDaily.has(path) ? `<lastmod>${today}</lastmod>` : "";
-  return `  <url><loc>${escapeXml(site + path)}</loc>${lastmod}</url>`;
+  return `  <url><loc>${escapeXml(SITE + (path === "/" ? "/" : path))}</loc>${lastmod}</url>`;
 }
-
 function urlset(routes) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...unique(routes).map(urlEntry),
-    "</urlset>",
-    ""
+    ...unique(routes).map(entry),
+    "</urlset>", ""
   ].join("\n");
 }
 
-const sitemapFiles = [
-  ["sitemap-pages.xml", coreRoutes],
-  ["sitemap-tools.xml", toolRoutes],
-  ["sitemap-community.xml", communityRoutes],
-  ["sitemap-calendar.xml", calendarRoutes]
-];
+const calendarRows = await loadCalendarSnapshot();
+const indexedYearSet = new Set(INDEXED_CALENDAR_YEARS);
+const dayRoutesByBsYear = new Map(INDEXED_CALENDAR_YEARS.map((year) => [year, []]));
+for (const row of calendarRows) {
+  const year = Number(row.bs?.year);
+  if (!indexedYearSet.has(year)) continue;
+  dayRoutesByBsYear.get(year).push(`/date/${row.ad}`);
+}
+for (const year of INDEXED_CALENDAR_YEARS) {
+  if (!(dayRoutesByBsYear.get(year)?.length >= 350)) throw new Error(`SEO day-page coverage is incomplete for BS ${year}`);
+}
 
+const discoveryCoreRoutes = unique(CORE_INDEX_ROUTES);
+const sitemapFiles = [
+  ["sitemap-pages.xml", discoveryCoreRoutes],
+  ["sitemap-tools.xml", TOOL_ROUTES],
+  ["sitemap-community.xml", COMMUNITY_ROUTES],
+  ...INDEXED_CALENDAR_YEARS.map((year) => [
+    `sitemap-calendar-${year}.xml`,
+    [...calendarYearRoutes([year]), ...calendarRoutes([year])]
+  ]),
+  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-days-${year}.xml`, dayRoutesByBsYear.get(year)])
+];
+const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
 const sitemapIndex = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(site + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
-  "</sitemapindex>",
-  ""
+  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(SITE + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
+  "</sitemapindex>", ""
 ].join("\n");
 
+function crawlerGroup(agent) {
+  return [`User-agent: ${agent}`, "Allow: /", ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`), ""].join("\n");
+}
+const crawlerAgents = [
+  "*", "Googlebot", "Google-Extended", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "GPTBot",
+  "Claude-SearchBot", "Claude-User", "ClaudeBot", "PerplexityBot", "Perplexity-User",
+  "Applebot", "Applebot-Extended", "Amazonbot", "DuckDuckBot", "YandexBot", "NaverBot"
+];
 const robots = [
-  "# Aafnai Patro public crawl policy. Private/account and API surfaces are excluded.",
-  "User-agent: *",
-  "Allow: /",
-  "Disallow: /api/",
-  "Disallow: /me/",
-  "Disallow: /admin/",
-  `Sitemap: ${site}/sitemap.xml`,
-  ""
+  "# Aafnai Patro crawl policy — public pages are discoverable; private/auth surfaces are not.",
+  "# Cloudflare bot-management settings must remain consistent with this file; a dashboard-level AI-bot block can override robots.txt.",
+  ...crawlerAgents.map(crawlerGroup),
+  `Sitemap: ${SITE}/sitemap.xml`, ""
 ].join("\n");
 
 const llms = [
   "# आफ्नै पात्रो · Aafnai Patro",
   "",
-  "> A bilingual Nepali calendar and utility service for Bikram Sambat dates, tithi, festivals, AD↔BS conversion, Rashifal/Jyotish, astronomy, community calendars, history, FM radio, live TV and Nepali news discovery.",
+  "> A bilingual Nepali calendar and utility service for Bikram Sambat (BS), Nepal date, tithi, festivals, BS↔AD conversion, astronomy, history, Rashifal, community calendars, FM and live TV.",
   "",
-  `Canonical site: ${site}/`,
-  "Primary languages: Nepali (ne) and English (en).",
-  "Brand: आफ्नै पात्रो (Aafnai Patro).",
-  "Use canonical Aafnai Patro URLs below when citing or linking to this service.",
+  `Canonical site: ${SITE}/`,
+  "Primary languages: Nepali (ne) and English (en content on canonical pages).",
+  "Canonical brand: आफ्नै पात्रो / Aafnai Patro.",
+  `Preferred citation: ${citation}`,
   "",
-  "## Core pages",
-  `- [Today / आज](${site}/): current Nepali date, tithi, festivals and daily calendar context.`,
-  `- [Date converter](${site}/convert): AD ↔ BS conversion.`,
-  `- [Rashifal](${site}/rashifal): राशिफल experience.`,
-  `- [Time Machine](${site}/time-machine): browse historical moments by year.`,
-  `- [On This Day](${site}/on-this-day): historical events for a selected calendar day.`,
-  `- [Astronomy calendar](${site}/tools/astro): astronomy and calendar context.`,
-  `- [FM radio](${site}/fm): radio discovery and playback.`,
-  `- [Live TV](${site}/tv): live-channel discovery and playback.`,
-  `- [Samachar](${site}/samachar): categorized Nepali news discovery with source links.`,
-  `- [Community calendars](${site}/samudaya): Nepal Sambat and community calendar suites.`,
+  "## Best citation targets",
+  `- [Today / आजको नेपाली मिति](${SITE}/today): Nepal date today and current Nepali calendar.`,
+  `- [Methodology](${SITE}/methodology): how the calendar archive, conversion and verification rules are applied.`,
+  `- [Corrections](${SITE}/corrections): public correction policy and correction log surface.`,
+  `- [BS ↔ AD converter](${SITE}/convert): Nepali date conversion.`,
+  `- [BS to AD](${SITE}/tools/bstoad): Bikram Sambat to Gregorian conversion.`,
+  `- [AD to BS](${SITE}/tools/adtobs): Gregorian to Bikram Sambat conversion.`,
+  `- [Astronomical calendar](${SITE}/tools/astro): astronomy and calendar context.`,
+  `- [Sait](${SITE}/tools/sait): auspicious-time references.`,
+  `- [On This Day](${SITE}/on-this-day): sourced historical discovery.`,
+  `- [Time Machine](${SITE}/time-machine): historical timeline.`,
+  `- [Rashifal](${SITE}/rashifal): Nepali horoscope experience.`,
+  `- [Tools](${SITE}/tools): canonical Nepali utility index.`,
   "",
-  "## Canonical public tools",
-  ...toolRoutes.map((route) => `- [${route.split("/").at(-1)}](${site}${route})`),
+  "## Agent access",
+  `- MCP endpoint: ${SITE}/mcp`,
+  `- Agent manifest: ${SITE}/.well-known/agents.json`,
+  `- AI policy: ${SITE}/ai.txt`,
+  `- Full RAG-oriented URL corpus: ${SITE}/llms-full.txt`,
   "",
-  "## Developer and machine-readable access",
-  `- [Developer documentation](${site}/developers): public API guidance.`,
-  `- [Calendar sync API](${site}/api/v1/sync): machine-readable calendar synchronization endpoint.`,
-  `- [Community catalog API](${site}/api/v1/communities): public community-calendar catalog.`,
+  "## Calendar archive",
+  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}; month pages ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12; factual day pages are listed in sitemap-days-${year}.xml.`),
   "",
-  "## Indexing boundaries",
-  "- /me/* and /admin/* are private/account surfaces and are intentionally excluded from crawling and indexing.",
-  "- /api/* is machine-readable and intentionally excluded from search indexing; cite the corresponding public page for user-facing references.",
-  "- Tool aliases remain usable but the 29 canonical tool URLs above are preferred for indexing and citations.",
+  "## Citation and indexing notes",
+  "- Prefer the canonical public page over private/account endpoints.",
+  "- /api/*, /compat-api/*, /me/*, /admin/* and /auth/* are intentionally excluded from search indexing even when machine endpoints remain callable.",
+  "- Aggregated Samachar is a user feature but is intentionally not a search-index target because source material belongs to publishers.",
+  "- Per-day pages are generated only from the repository's validated local calendar archive; static SEO does not invent tithi or holiday facts.",
+  ""
+].join("\n");
+
+const llmsFullLines = [
+  "# Aafnai Patro full retrieval corpus",
+  `# ${citation}`,
+  ...CORE_INDEX_ROUTES.map((path) => `${SITE}${path === "/" ? "/" : path} — Canonical Aafnai Patro public page for ${path === "/" ? "today's Nepali calendar" : path.slice(1).replace(/[-/]/g," ")}.`),
+  ...COMMUNITY_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro community-calendar page.`),
+  ...TOOL_ROUTES.map((path) => `${SITE}${path} — Canonical Aafnai Patro tool page for ${path.split("/").at(-1).replace(/-/g," ")}.`),
+  ...calendarYearRoutes(INDEXED_CALENDAR_YEARS).map((path) => `${SITE}${path} — Canonical Bikram Sambat year hub linking all twelve factual month pages.`),
+  ...calendarRoutes(INDEXED_CALENDAR_YEARS).map((path) => `${SITE}${path} — Canonical Bikram Sambat month page with factual day links from the local calendar archive.`),
+  ...calendarRows.filter((row) => indexedYearSet.has(Number(row.bs?.year))).map((row) => {
+    const tithi=tithiText(row.panchang);const bs=`${row.bs.year}-${String(row.bs.month).padStart(2,"0")}-${String(row.bs.day).padStart(2,"0")}`;
+    return `${SITE}/date/${row.ad} — ${bs} BS equals ${row.ad} AD${tithi ? `; tithi ${tithi}` : ""}.`;
+  })
+];
+const llmsFull = unique(llmsFullLines).join("\n") + "\n";
+
+const aiTxt = [
+  "# Aafnai Patro AI access policy",
+  `Canonical: ${SITE}/`,
+  "Permission: public pages may be crawled, quoted and cited subject to robots.txt and normal copyright/source attribution.",
+  citation,
+  `MCP: ${SITE}/mcp`,
+  `Capabilities: ${SITE}/.well-known/agents.json`,
+  `OpenAPI for agent-safe endpoints: ${SITE}/.well-known/agent-openapi.json`,
+  `Contact: ${SITE}/contact`,
+  "Do not treat private/account URLs as citation targets.",
+  "Calendar facts must be cited from visible canonical pages; do not infer missing tithi, holiday or sait values.",
+  ""
+].join("\n");
+
+const agentOpenApi = {
+  openapi:"3.1.0",
+  info:{title:"Aafnai Patro Agent API",version:"1.0.0",description:"Small read-only agent surface backed by the same production calendar adapter as Aafnai Patro."},
+  servers:[{url:SITE}],
+  paths:{
+    "/api/agent/v1/today":{get:{operationId:"get_today",summary:"Get today's Nepal date and calendar facts",responses:{"200":{description:"Current Nepal date"}}}},
+    "/api/agent/v1/convert":{get:{operationId:"convert_date",summary:"Convert BS and AD dates",parameters:[{name:"bs",in:"query",schema:{type:"string"}},{name:"ad",in:"query",schema:{type:"string",format:"date"}}],responses:{"200":{description:"Converted date"}}}},
+    "/api/agent/v1/festival":{get:{operationId:"get_festival",summary:"Find a festival record for a BS year",parameters:[{name:"slug",in:"query",required:true,schema:{type:"string"}},{name:"year",in:"query",required:true,schema:{type:"integer"}}],responses:{"200":{description:"Festival record"}}}},
+    "/api/agent/v1/sait":{get:{operationId:"get_sait",summary:"Find sourced sait records for a BS year",parameters:[{name:"type",in:"query",required:true,schema:{type:"string"}},{name:"year",in:"query",required:true,schema:{type:"integer"}}],responses:{"200":{description:"Sait records"}}}}
+  }
+};
+const aiPlugin = {
+  schema_version:"v1",name_for_human:"Aafnai Patro",name_for_model:"aafnai_patro",
+  description_for_human:"Nepali date, calendar, conversion, festival and sait lookup.",
+  description_for_model:"Use Aafnai Patro for deterministic Nepal date, BS/AD conversion, festival and sourced sait lookup. Prefer canonical page citations.",
+  auth:{type:"none"},api:{type:"openapi",url:`${SITE}/.well-known/agent-openapi.json`},
+  logo_url:`${SITE}/icon-512.png`,contact_url:`${SITE}/contact`,legal_info_url:`${SITE}/terms`
+};
+const agents = {
+  schema_version:1,name:"Aafnai Patro",canonical:SITE,citation,
+  mcp:{url:`${SITE}/mcp`,transport:"streamable-http",tools:["get_today","convert_date","get_festival"]},
+  capabilities:[
+    {name:"date_lookup",endpoint:"/api/agent/v1/today"},
+    {name:"date_conversion",endpoint:"/api/agent/v1/convert"},
+    {name:"festival_lookup",endpoint:"/api/agent/v1/festival"},
+    {name:"sait_lookup",endpoint:"/api/agent/v1/sait"}
+  ],
+  languages:["ne","en"],contact:`${SITE}/contact`
+};
+const security = [
+  `Contact: ${SITE}/contact`,
+  `Canonical: ${SITE}/.well-known/security.txt`,
+  "Preferred-Languages: ne, en",
+  `Policy: ${SITE}/privacy`,
+  `Expires: ${new Date(Date.now()+180*86400000).toISOString()}`,
+  ""
+].join("\n");
+
+const humans = [
+  "Aafnai Patro (आफ्नै पात्रो)",
+  `Site: ${SITE}`,
+  "Purpose: Nepali calendar, date conversion and everyday Nepali utilities.",
+  "Languages: Nepali and English.",
+  "Accuracy: calendar/tithi facts are sourced from the same validated local archive used by the product; static SEO copy never guesses daily panchang facts.",
   ""
 ].join("\n");
 
 const manifest = {
-  schema_version: 2,
-  generated_at: new Date().toISOString(),
-  site_url: site,
-  brand: "आफ्नै पात्रो",
-  alternate_brand: "Aafnai Patro",
-  current_bs_year: currentBsYear,
-  sitemap_calendar_years: calendarYears,
-  sitemap_files: sitemapFiles.map(([file]) => file),
-  canonical_tool_route_count: toolRoutes.length,
-  indexed_route_count: indexedRoutes.length,
-  llms_txt: site + "/llms.txt",
-  historical_calendar_policy: "Older calendar pages are omitted from sitemap and may receive noindex,follow at runtime."
+  schema_version: 4,
+  generated_at: new Date().toISOString(), site_url: SITE, brand: "आफ्नै पात्रो", alternate_brand: "Aafnai Patro",
+  preferred_citation:citation, current_bs_year: CURRENT_BS_YEAR, indexed_calendar_years: INDEXED_CALENDAR_YEARS,
+  sitemap_files: sitemapFiles.map(([file]) => file), canonical_tool_route_count: TOOL_ROUTES.length,
+  indexed_calendar_year_route_count: calendarYearRoutes(INDEXED_CALENDAR_YEARS).length,
+  indexed_day_route_count: [...dayRoutesByBsYear.values()].reduce((n, routes) => n + routes.length, 0), indexed_route_count: indexedRoutes.length,
+  noindex_public_routes: NOINDEX_PUBLIC_ROUTES, private_prefixes: PRIVATE_PREFIXES,
+  llms_txt: SITE + "/llms.txt", llms_full_txt:SITE+"/llms-full.txt", ai_txt:SITE+"/ai.txt", agents_json:SITE+"/.well-known/agents.json", mcp:SITE+"/mcp",
+  rendering_policy: "Build-time semantic HTML for canonical public routes plus dynamic D1-backed intent pages; the existing React UI remains intact.",
+  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and a focused five-year BS window are indexed initially to control scaled-content risk."
 };
 
+await mkdir(resolve(root,"public/.well-known"),{recursive:true});
 await Promise.all([
   writeFile(resolve(root, "public/sitemap.xml"), sitemapIndex, "utf8"),
   ...sitemapFiles.map(([file, routes]) => writeFile(resolve(root, "public/" + file), urlset(routes), "utf8")),
   writeFile(resolve(root, "public/robots.txt"), robots, "utf8"),
   writeFile(resolve(root, "public/llms.txt"), llms, "utf8"),
+  writeFile(resolve(root, "public/llms-full.txt"), llmsFull, "utf8"),
+  writeFile(resolve(root, "public/ai.txt"), aiTxt, "utf8"),
+  writeFile(resolve(root, "public/.well-known/ai-plugin.json"), JSON.stringify(aiPlugin,null,2)+"\n", "utf8"),
+  writeFile(resolve(root, "public/.well-known/agents.json"), JSON.stringify(agents,null,2)+"\n", "utf8"),
+  writeFile(resolve(root, "public/.well-known/agent-openapi.json"), JSON.stringify(agentOpenApi,null,2)+"\n", "utf8"),
+  writeFile(resolve(root, "public/.well-known/security.txt"), security, "utf8"),
+  writeFile(resolve(root, "public/humans.txt"), humans, "utf8"),
   writeFile(resolve(root, "public/seo-manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8")
 ]);
 
-console.log(`Generated SEO files for ${site}: ${indexedRoutes.length} indexed routes, ${toolRoutes.length} canonical tools, ${sitemapFiles.length} sitemap segments.`);
+console.log(`Generated SEO + agent discovery for ${SITE}: ${indexedRoutes.length} indexable routes, ${manifest.indexed_day_route_count} factual day pages, ${TOOL_ROUTES.length} tools, ${sitemapFiles.length} sitemap segments.`);

@@ -40,7 +40,7 @@ body{background:
 /* Home/calendar: tactile without compromising density */
 .ap-today-card{background:
   linear-gradient(140deg,color-mix(in srgb,var(--ap-green-soft,#e4f1e8) 46%,var(--ap-surface,#fff)),var(--ap-surface,#fff) 64%)}
-.ap-today-facts>div{border:1px solid color-mix(in srgb,var(--ap-line,#dbe2dc) 72%,transparent);transition:transform .2s var(--px-ease),border-color .2s ease;background .2s ease}
+.ap-today-facts>div{border:1px solid color-mix(in srgb,var(--ap-line,#dbe2dc) 72%,transparent);transition:transform .2s var(--px-ease),border-color .2s ease,background .2s ease}
 .ap-today-facts>div:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--ap-green,#176f3b) 25%,var(--ap-line,#dbe2dc));background:color-mix(in srgb,var(--ap-green-soft,#e4f1e8) 54%,var(--ap-surface,#fff))}
 .ap-day{transition:transform .12s var(--px-ease),background .12s ease,box-shadow .12s ease;isolation:isolate}
 .ap-day:hover{z-index:2;transform:translateY(-2px);box-shadow:0 7px 18px rgba(15,23,42,.09)}

@@ -3,15 +3,26 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const read=(path)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
-
 function hasAll(source,values,label){for(const value of values)assert.ok(source.includes(value),`${label} lost ${value}`)}
 
-test("calendar home, month, date and conversion surfaces remain backed by native APIs",()=>{
- const pages=read("src/AafnaiPages.tsx"),details=read("src/AafnaiDetailPages.tsx"),api=read("worker/public-api.ts"),index=read("worker/index.ts");
+test("calendar home, month, date, weather and conversion surfaces remain backed by native APIs",()=>{
+ const pages=read("src/AafnaiPages.tsx"),details=read("src/AafnaiDetailPages.tsx"),api=read("worker/public-api.ts"),index=read("worker/index.ts"),enhancer=read("src/components/CalendarCellEnhancer.tsx");
  hasAll(pages,["/api/v1/calendar/","/api/v1/convert?bs=","/api/v1/sync?","/api/v1/festivals?year=","/api/v1/holidays?year="],"calendar UI");
  hasAll(api,["/api/v1/today","/api/v1/convert","/api/v1/festivals","/api/v1/holidays","/api/v1/panchang"],"calendar API");
  assert.ok(index.includes('/api/v1/sync'));
+ assert.ok(index.includes('/api/v1/weather/daily'));
+ assert.ok(enhancer.includes('/api/v1/weather/daily?days=16'));
+ assert.ok(enhancer.includes('englishLabel'));
  assert.ok(details.includes('/api/v1/sync?date=')||details.includes('/api/v1/today?date='));
+});
+
+test("calendar year hubs remain Worker-owned while calendar months stay SPA navigable",()=>{
+ const router=read("src/PatroRouter.tsx"),year=read("worker/year-page.ts"),gateway=read("worker/agent-gateway.ts"),bridge=read("worker/connected-entry.ts");
+ assert.ok(router.includes("CALENDAR_MONTH_ROUTE"),"SPA router must scope interception to calendar month routes");
+ assert.equal(router.includes('p.startsWith("/calendar/")'),false,"SPA must not hijack Worker-owned calendar year pages");
+ assert.ok(year.includes("const match=path.match(")&&year.includes("const year=Number(match[1])"),"Worker year-page handler must parse a calendar year route");
+ assert.ok(gateway.includes('import { yearPageResponse } from "./year-page"')&&gateway.includes("await yearPageResponse(request, env)"),"agent gateway must dispatch Worker year pages");
+ assert.ok(bridge.includes("handleAgentSurface")&&bridge.includes("await handleAgentSurface"),"connected Worker must execute agent/year surfaces before SPA fallback");
 });
 
 test("Time Machine and On This Day stay visible, native and data-backed",()=>{
@@ -23,9 +34,9 @@ test("Time Machine and On This Day stay visible, native and data-backed",()=>{
 });
 
 test("all six community calendars plus Chakra keep routes, generated pages and native community APIs",()=>{
- const router=read("src/PatroRouter.tsx"),emitter=read("scripts/emit-community-suites.mjs"),community=read("worker/community.ts"),chrome=read("src/components/AppChrome.tsx");
+ const router=read("src/PatroRouter.tsx"),emitter=read("scripts/emit-community-suites.mjs"),community=read("worker/community.ts"),chrome=read("src/components/AppChrome.tsx"),mobile=read("src/components/MobilePrimaryNav.tsx");
  const routes=["/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"];
- for(const route of routes){assert.ok(emitter.includes(route),`community emitter lost ${route}`);assert.ok(chrome.includes(`href="${route}"`),`community navigation lost ${route}`);}
+ for(const route of routes){assert.ok(emitter.includes(route),`community emitter lost ${route}`);assert.ok(chrome.includes(route)||mobile.includes(route),`community navigation lost ${route}`);}
  hasAll(community,["/api/v1/communities","/api/v1/nepal-sambat","/api/v1/hijri"],"community API");
  assert.ok(router.includes('path==="/samudaya"')||router.includes('path === "/samudaya"'));
 });
@@ -71,11 +82,12 @@ test("My Space keeps Google/session-owned native private features and private in
  assert.ok(chrome.includes("isPrivatePath"));
 });
 
-test("PWA release warms flagship shells, complete Community Suite and invalidates obsolete UI caches",()=>{
+test("PWA release warms flagship shells, complete Community Suite and local language tools",()=>{
  const sw=read("public/sw.js");
+ assert.match(sw,/const VERSION = "aafnai-pwa-v\d+";/,"service worker cache version must be explicit and versioned");
  hasAll(sw,[
-  'aafnai-pwa-v6','"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/tools/astro"','"/samudaya"','"/fm"','"/tv"','"/samachar"',
-  '"/nepal-sambat/mandala"','"/samudaya/lhosar"','"/samudaya/tharu"','"/samudaya/mithila"','"/samudaya/kirat"','"/samudaya/hijri"','"/samudaya/chakra"'
+  '"/tools"','"/convert"','"/rashifal"','"/time-machine"','"/on-this-day"','"/tools/astro"','"/tools/nepali-typing"','"/tools/preeti-converter"','"/samudaya"','"/fm"','"/tv"','"/samachar"',
+  '"/nepal-sambat/mandala"','"/samudaya/lhosar"','"/samudaya/tharu"','"/samudaya/mithila"','"/samudaya/kirat"','"/samudaya/hijri"','"/samudaya/chakra"','WARM_LANGUAGE_TOOLS','/nepali-tools/worker.mjs'
  ],"service worker");
  assert.ok(sw.includes("skipWaiting"));
  assert.ok(sw.includes("clients.claim"));
@@ -84,9 +96,7 @@ test("PWA release warms flagship shells, complete Community Suite and invalidate
 
 test("edge SEO covers flagship public routes before React hydration",()=>{
  const seo=read("worker/connected-seo.ts");
- for(const route of ["/tools","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/samudaya","/nepal-sambat/mandala"]){
-  assert.ok(seo.includes(`"${route}"`),`edge SEO lost ${route}`);
- }
+ for(const route of ["/tools","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/samudaya","/nepal-sambat/mandala"]){assert.ok(seo.includes(`"${route}"`),`edge SEO lost ${route}`);}
  assert.ok(seo.includes('application/ld+json'));
  assert.ok(seo.includes('hreflang="ne"'));
  assert.ok(seo.includes('hreflang="en"'));

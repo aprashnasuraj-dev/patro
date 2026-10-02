@@ -12,24 +12,24 @@ function toolDirectoryHrefs(source){
   const start=source.indexOf("const toolGroups");
   const end=source.indexOf("export function ToolsPage");
   assert.ok(start>=0&&end>start,"Aafnai tool directory must exist");
-  return unique([...source.slice(start,end).matchAll(/href:\s*"([^"]+)"/g)].map((m)=>m[1]));
+  return unique([...source.slice(start,end).matchAll(/href:\s*"([^"]+)"/g)].map((m)=>m[1])).filter((href)=>href!=="/tools/api");
 }
+function setStringEntries(source){return unique([...source.matchAll(/"([a-z0-9-]+)"/g)].map((m)=>m[1]));}
 
-function setStringEntries(source){
-  return unique([...source.matchAll(/"([a-z0-9-]+)"/g)].map((m)=>m[1]));
-}
-
-test("new Aafnai UI preserves at least the requested 29 functional tool entries",()=>{
+test("new Aafnai UI preserves all 29 canonical public tools without advertising developer API",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const router=read("src/PatroRouter.tsx");
   const utilities=read("src/utilities/UtilitySuite.tsx");
   const slugs=setStringEntries(read("src/patro-tools-integration/toolSlugs.ts"));
   const hrefs=toolDirectoryHrefs(pages);
+  const surface=read("src/fresh-build-surface.css");
 
-  assert.ok(hrefs.length>=29,`expected at least 29 distinct tools, found ${hrefs.length}`);
+  assert.ok(hrefs.length>=28,`expected at least 28 grouped tools plus Astronomy, found ${hrefs.length}`);
   assert.equal(hrefs.some((href)=>!href||href==="#"),false,"tool directory must not contain placeholder hrefs");
+  assert.ok(pages.includes('href="/tools/astro"'),"Astronomy flagship tool must remain visible");
+  assert.ok(surface.includes('.ap-tool-card[href="/tools/api"]'),"legacy API card must be suppressed from the user-facing tool grid");
 
-  const specialized=new Set(["astro","nepali-typing","preeti-converter","api"]);
+  const specialized=new Set(["astro","nepali-typing","preeti-converter"]);
   for(const href of hrefs){
     if(!href.startsWith("/tools/")){
       assert.ok(router.includes(`"${href}"`)||router.includes(`path==="${href}"`),`new UI route is not wired: ${href}`);
@@ -41,19 +41,22 @@ test("new Aafnai UI preserves at least the requested 29 functional tool entries"
   }
 });
 
-test("29 canonical public tools stay discoverable through launcher and SEO",()=>{
+test("29 canonical public tools stay discoverable through launcher and SEO config",()=>{
   const launcher=read("src/components/FeatureLauncher.tsx");
-  const seo=read("scripts/generate-seo.mjs");
+  const seo=read("scripts/seo-config.mjs");
   assert.equal(CANONICAL_TOOL_ROUTES.length,29);
   for(const route of CANONICAL_TOOL_ROUTES){
     assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`feature launcher lost ${route}`);
-    assert.ok(seo.includes(`"${route}"`),`tool sitemap lost ${route}`);
+    assert.ok(seo.includes(`"${route}"`),`tool sitemap config lost ${route}`);
   }
+  assert.equal(launcher.includes('href:"/developers"'),false,"developer API must not be advertised in launcher");
 });
 
 test("critical product surfaces and all Community Suite calendars are visible from new UI",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const chrome=read("src/components/AppChrome.tsx");
+  const mobile=read("src/components/MobilePrimaryNav.tsx");
+  const home=read("src/components/HomeExperience.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
   const router=read("src/PatroRouter.tsx");
   for(const route of ["/time-machine","/on-this-day","/tools/astro"]){
@@ -61,12 +64,10 @@ test("critical product surfaces and all Community Suite calendars are visible fr
     assert.ok(router.includes(route),`router lost ${route}`);
   }
   for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
-    assert.ok(chrome.includes(`href=\"${route}\"`)||chrome.includes(`\"${route}\"`),`global UI lost ${route}`);
+    assert.ok(chrome.includes(route)||home.includes(route)||mobile.includes(route),`global UI lost ${route}`);
     assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`launcher lost ${route}`);
   }
-  for(const route of ["/samachar","/fm","/tv"]){
-    assert.ok(router.includes(`"${route}"`),`router lost ${route}`);
-  }
+  for(const route of ["/samachar","/fm","/tv"])assert.ok(router.includes(`"${route}"`),`router lost ${route}`);
   assert.ok(chrome.includes("FEATURED_EXPERIENCES"),"Tools hub lost premium featured-experience rail");
 });
 
@@ -74,9 +75,7 @@ test("every registered Patro tool slug resolves to a real component and no comin
   const shell=read("src/patro-tools-integration/PatroToolsShell.tsx");
   const slugs=setStringEntries(read("src/patro-tools-integration/toolSlugs.ts"));
   assert.ok(slugs.length>=11,"Patro tool registry unexpectedly shrank");
-  for(const slug of slugs){
-    assert.ok(shell.includes(`slug==="${slug}"`),`registered tool can hit unavailable fallback: ${slug}`);
-  }
+  for(const slug of slugs)assert.ok(shell.includes(`slug==="${slug}"`),`registered tool can hit unavailable fallback: ${slug}`);
   assert.equal(/integration phase|coming soon|coming-soon/i.test(shell),false,"registered tool shell must not ship placeholder language");
 });
 
@@ -94,9 +93,7 @@ test("premium experience layers load after base UI and keep reduced-motion suppo
   const exploreIndex=main.indexOf('"./explore-rail.css"');
   const safeIndex=main.indexOf('"./mobile-safe-area.css"');
   assert.ok(baseIndex>=0&&premiumIndex>baseIndex&&primitiveIndex>premiumIndex&&launcherIndex>primitiveIndex&&exploreIndex>launcherIndex&&safeIndex>exploreIndex,"premium layers must load in deterministic override order");
-  for(const surface of [".ap-tool-card",".utility-directory-card",".patro-tool-hero",".station-card",".community-control-card"]){
-    assert.ok(premium.includes(surface),`premium layer lost ${surface}`);
-  }
+  for(const surface of [".ap-tool-card",".utility-directory-card",".patro-tool-hero",".station-card",".community-control-card"])assert.ok(premium.includes(surface),`premium layer lost ${surface}`);
   for(const css of [premium,primitives,launcherCss,exploreCss,safeCss])assert.ok(css.includes("prefers-reduced-motion"),"premium motion must remain accessible");
   assert.ok(primitives.includes(".tool-breadcrumbs"));
   assert.ok(primitives.includes(".tool-trust-row"));
@@ -105,12 +102,8 @@ test("premium experience layers load after base UI and keep reduced-motion suppo
 
 test("route-aware metadata covers public discovery and protects private pages",()=>{
   const chrome=read("src/components/AppChrome.tsx");
-  for(const token of ["TOOL_SEO","link[rel=\"canonical\"]","og:title","twitter:title","max-image-preview:large","noindex,nofollow"]){
-    assert.ok(chrome.includes(token),`route SEO lost ${token}`);
-  }
-  for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya"]){
-    assert.ok(chrome.includes(route),`route metadata lost ${route}`);
-  }
+  for(const token of ["TOOL_SEO","link[rel=\"canonical\"]","og:title","twitter:title","max-image-preview:large","noindex,nofollow"])assert.ok(chrome.includes(token),`route SEO lost ${token}`);
+  for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya"])assert.ok(chrome.includes(route),`route metadata lost ${route}`);
   assert.ok(chrome.includes("ALIAS_CANONICAL"),"duplicate utility aliases must retain canonical consolidation");
 });
 
@@ -123,58 +116,49 @@ test("calendar, Time Machine, Samachar and media UI point to backed API contract
   const worker=read("worker/index.ts");
   const publicApi=read("worker/public-api.ts");
   const bridge=read("worker/connected-entry.ts");
+  const weather=read("src/components/CalendarCellEnhancer.tsx");
 
-  for(const endpoint of ["/api/v1/calendar/","/api/v1/convert?bs=","/api/v1/sync?","/api/v1/festivals?year=","/api/v1/holidays?"]){
-    assert.ok(pages.includes(endpoint)||publicApi.includes(endpoint)||worker.includes(endpoint),endpoint);
-  }
-  for(const endpoint of ["/api/v1/time-machine","/api/v1/on-this-day"]){
-    assert.ok(details.includes(endpoint),`frontend lost ${endpoint}`);
-    assert.ok(worker.includes(endpoint)||publicApi.includes(endpoint),`Worker lost ${endpoint}`);
-  }
+  for(const endpoint of ["/api/v1/calendar/","/api/v1/convert?bs=","/api/v1/sync?","/api/v1/festivals?year=","/api/v1/holidays?"])assert.ok(pages.includes(endpoint)||publicApi.includes(endpoint)||worker.includes(endpoint),endpoint);
+  for(const endpoint of ["/api/v1/time-machine","/api/v1/on-this-day"]){assert.ok(details.includes(endpoint),`frontend lost ${endpoint}`);assert.ok(worker.includes(endpoint)||publicApi.includes(endpoint),`Worker lost ${endpoint}`);}
+  assert.ok(weather.includes('/api/v1/weather/daily?days=16'),"calendar weather enhancer lost native forecast endpoint");
+  assert.ok(worker.includes('/api/v1/weather/daily'),"Worker lost weather endpoint");
   assert.ok(pages.includes('"/api/v1/news?limit=30"'));
   assert.ok(bridge.includes('pathname === "/api/v1/news"'));
   assert.ok(media.includes('"/api/v1/radio/catalog?"'));
   assert.ok(worker.includes("radioCatalogResponse"));
-  for(const endpoint of ["tv/catalog","tv/relay","tv/health"]){
-    assert.ok(media.includes(endpoint),`TV UI lost ${endpoint}`);
-  }
+  for(const endpoint of ["tv/catalog","tv/relay","tv/health"])assert.ok(media.includes(endpoint),`TV UI lost ${endpoint}`);
   for(const root of ['"tv"','"fm"','"samachar"'])assert.ok(bridge.includes(root),`compat bridge lost ${root}`);
   assert.ok(provider.includes("stop: () => void")&&provider.includes("hlsRef.current?.destroy()"),"persistent media must support clean stop and HLS teardown");
   assert.ok(player.includes("Stop & close")&&player.includes("Retry now"),"persistent player recovery controls regressed");
 });
 
-test("service worker prewarms critical new UI surfaces and purges old Aafnai cache generations",()=>{
+test("service worker prewarms critical new UI surfaces and offline language bundle",()=>{
   const sw=read("public/sw.js");
-  for(const route of ["/tools","/time-machine","/on-this-day","/samachar","/fm","/tv","/tools/astro","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
+  for(const route of ["/tools","/time-machine","/on-this-day","/samachar","/fm","/tv","/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
     assert.ok(sw.includes(`\"${route}\"`)||sw.includes(`"${route}"`),`offline shell lost ${route}`);
   }
   assert.ok(sw.includes('key.startsWith("aafnai-pwa-")'),"old Aafnai cache generations must be purged");
   assert.ok(sw.includes("networkFirst(event.request"),"navigation must stay network-first after migrations");
+  assert.ok(sw.includes("WARM_LANGUAGE_TOOLS")&&sw.includes("/nepali-tools/worker.mjs"),"local language bundle must be explicitly warmable");
 });
 
-test("production entry serves React routes from canonical root SPA, not stale astro shell",()=>{
+test("production entry serves exact prerenders then canonical root SPA fallback",()=>{
   const bridge=read("worker/connected-entry.ts");
-  for(const route of ["/tools","/tools/astro","/time-machine","/on-this-day","/fm","/tv","/samachar","/me","/convert","/rashifal"]){
-    assert.ok(bridge.includes(`"${route}"`),`root SPA bridge lost ${route}`);
-  }
-  assert.ok(bridge.includes('url.pathname = "/index.html"'));
+  for(const route of ["/tools","/tools/astro","/time-machine","/on-this-day","/fm","/tv","/samachar","/me","/convert","/rashifal"])assert.ok(bridge.includes(`"${route}"`),`root SPA bridge lost ${route}`);
+  assert.ok(bridge.includes("exactSpaAssetResponse"),"exact prerender lookup missing");
+  assert.ok(bridge.includes("rootSpaResponse"),"root SPA fallback missing");
+  assert.ok(bridge.includes('"/index.html"'),"root SPA index asset missing");
   assert.ok(bridge.includes('headers.set("x-patro-shell", "root-spa")'));
   assert.equal(bridge.includes('"/astro/index.html"'),false,"production bridge must not depend on stale /astro/index.html");
 });
 
-test("Community Suite remains complete and emitted as seven static experiences",()=>{
+test("Community Suite remains complete and emitted as six calendars plus Chakra overview",()=>{
   const emitter=read("scripts/emit-community-suites.mjs");
-  const required=[
-    "/nepal-sambat/mandala",
-    "/samudaya/lhosar",
-    "/samudaya/tharu",
-    "/samudaya/mithila",
-    "/samudaya/kirat",
-    "/samudaya/hijri",
-    "/samudaya/chakra"
-  ];
+  const preferences=read("src/community/preferences.ts");
+  const required=["/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"];
   for(const route of required)assert.ok(emitter.includes(route),route);
   assert.ok(emitter.includes("expected 7/7 routes"));
+  assert.equal((preferences.match(/href:\s*"\//g)||[]).length,6,"community preference/menu inventory must remain exactly six calendars");
 });
 
 test("migration runtime stays on connected Worker entry and canonical custom domain",()=>{

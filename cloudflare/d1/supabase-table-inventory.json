@@ -1,13 +1,14 @@
 {
-  "schema_version": 1,
-  "snapshot_date": "2026-10-01",
+  "schema_version": 2,
+  "snapshot_date": "2026-10-02",
   "source_project": "pxlsmxbpgdfzjzuqtict",
   "source_schema": "public",
   "table_count": 56,
   "policy": {
     "d1_bootstrap_public_reference": "Included in deterministic D1 bootstrap and exact-count verification.",
-    "supabase_compat_private_until_auth_cutover": "Private/mutable state is not committed to Git; keep on protected Supabase compatibility path until identity/auth migration.",
-    "rebuild_on_cloudflare_runtime": "Ephemeral or externally refreshed runtime state is not bulk-migrated; it is recreated or fetched by the target runtime."
+    "supabase_compat_private_until_auth_cutover": "Private/mutable state is not committed to Git; protected legacy source only where explicitly retained.",
+    "rebuild_on_cloudflare_runtime": "Ephemeral or externally refreshed runtime state is not bulk-migrated and is never a release blocker.",
+    "native_bundle_no_table_runtime": "Feature is served by the checked-in native/bundle runtime and requires neither D1 bootstrap rows nor Supabase runtime rows."
   },
   "tables": {
     "profiles": {"source_rows":0,"strategy":"supabase_compat_private_until_auth_cutover"},
@@ -49,9 +50,9 @@
     "family_members": {"source_rows":0,"strategy":"supabase_compat_private_until_auth_cutover"},
     "family_invites": {"source_rows":0,"strategy":"supabase_compat_private_until_auth_cutover"},
     "shared_events": {"source_rows":0,"strategy":"supabase_compat_private_until_auth_cutover"},
-    "market_snapshots": {"source_rows":91,"strategy":"rebuild_on_cloudflare_runtime"},
+    "market_snapshots": {"source_rows":0,"strategy":"rebuild_on_cloudflare_runtime","release_required":false},
     "personal_ics_tokens": {"source_rows":0,"strategy":"supabase_compat_private_until_auth_cutover"},
-    "miti_rashifal_publications": {"source_rows":1,"strategy":"d1_bootstrap_public_reference"},
+    "miti_rashifal_publications": {"source_rows":0,"strategy":"native_bundle_no_table_runtime","release_required":false},
     "nasa_apod_cache": {"source_rows":9,"strategy":"d1_bootstrap_public_reference"},
     "astronomy_calendar_map": {"source_rows":77070,"strategy":"d1_bootstrap_public_reference"},
     "nasa_cosmic_cache": {"source_rows":126,"strategy":"d1_bootstrap_public_reference"},
