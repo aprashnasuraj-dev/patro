@@ -23,6 +23,14 @@ jobs:
     env:
       PUBLIC_SITE_URL: https://aafnaipatro.com
     steps:
+      - name: Runner allocation preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "runner.os=${RUNNER_OS:-unknown}"
+          echo "runner.arch=${RUNNER_ARCH:-unknown}"
+          uname -a
+
       - name: Checkout
         uses: actions/checkout@v4
 
