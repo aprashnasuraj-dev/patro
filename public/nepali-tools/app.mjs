@@ -6,8 +6,8 @@ let mode='typing',composing=false,items=[],active=0,token=null,lastQuery='',requ
 const undo=[],redo=[];let before='';
 function status(s){$('status').textContent=s;}
 function storageGet(k){try{return localStorage.getItem(k);}catch{return null;}}
-function storageSet(k,v){try{localStorage.setItem(k,v);}catch{status('Browser storage unavailable. Download your draft instead.');}}
-function storageRemove(k){try{localStorage.removeItem(k);}catch{status('Could not access browser storage.');}}
+function storageSet(k,v){try{localStorage.setItem(k,v);}catch{status('यो ब्राउजरमा draft सुरक्षित गर्न सकिएन। चाहनुहुन्छ भने text फाइल डाउनलोड गर्नुहोस्।');}}
+function storageRemove(k){try{localStorage.removeItem(k);}catch{status('सुरक्षित draft अहिले खोल्न सकिएन।');}}
 function snapshot(){before=editor.value;}
 function remember(previous){if(previous!==editor.value){undo.push(previous);if(undo.length>50)undo.shift();redo.length=0;}}
 function counts(){const s=editor.value.trim();$('counts').textContent=`${s?s.split(/\s+/u).length:0} words · ${Array.from(editor.value).length} characters`;}
@@ -44,23 +44,23 @@ function boundary(separator){
  const t=currentToken();if(!t||!/[A-Za-z]/.test(t.query))return false;
  if(commit(active,separator))return true;
  replaceRange(t.start,t.end,transliterateRoman(t.query)+separator);
- status('Used phonetic spelling. Select dictionary suggestions for ambiguous words.');return true;
+ status('Roman लेखाइबाट नजिकको नेपाली शब्द बनाइयो। अर्को हिज्जे चाहिएको भए सुझावबाट छान्नुहोस्।');return true;
 }
 function startWorker(){
  try{worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
  worker.onmessage=({data:m})=>{
-  if(m.type==='ready'){status(`${m.count.toLocaleString()} words ready · processing stays on this device`);return;}
-  if(m.type==='load-error'){status('Dictionary unavailable. Phonetic typing and conversion still work. Reload to retry.');return;}
-  if(m.type==='error'){if(m.id===conversionID){$('warnings').textContent=m.error;output.value='';}else status(m.error);return;}
+  if(m.type==='ready'){status(`${m.count.toLocaleString()} शब्द तयार · तपाईंले लेखेको पाठ यही उपकरणमा रहन्छ`);return;}
+  if(m.type==='load-error'){status('शब्द सुझाव अहिले लोड हुन सकेन। Roman typing र Preeti conversion अझै प्रयोग गर्न सकिन्छ।');return;}
+  if(m.type==='error'){if(m.id===conversionID){$('warnings').textContent='रूपान्तरण अहिले पूरा हुन सकेन। पाठ जाँचेर फेरि प्रयास गर्नुहोस्।';output.value='';}else status('यो काम अहिले पूरा हुन सकेन। फेरि प्रयास गर्नुहोस्।');return;}
   if(m.type==='suggest'&&m.id===suggestID&&!composing){const t=currentToken();if(t&&t.query===m.query&&token?.start===t.start){items=m.items;active=0;renderSuggestions();}}
-  if(m.type==='convert'&&m.id===conversionID){output.value=m.text;$('warnings').textContent=m.warnings.length?`${m.warnings.length} warning(s), capped at 100: ${[...new Set(m.warnings.map(w=>w.code))].join(', ')}. Review rare or malformed characters.`:'Conversion complete. Review the output before using it in an official document.';}
+  if(m.type==='convert'&&m.id===conversionID){output.value=m.text;$('warnings').textContent=m.warnings.length?'रूपान्तरण पूरा भयो। केही दुर्लभ अक्षर स्वतः रूपान्तरण नभएको हुन सक्छ; औपचारिक कागजातमा प्रयोग गर्नुअघि एकपटक पढेर जाँच गर्नुहोस्।':'रूपान्तरण पूरा भयो। औपचारिक कागजातमा प्रयोग गर्नुअघि परिणाम एकपटक पढेर जाँच गर्नुहोस्।';}
  };
- worker.onerror=()=>{status('Worker failed. Reload the page; phonetic typing still works.');$('warnings').textContent='Conversion worker failed. Reload to retry.';};
- }catch{status('This browser could not start a worker. Serve this folder over HTTP(S), not file://.');}
+ worker.onerror=()=>{status('नेपाली टाइपिङ अहिले सुरु हुन सकेन। पृष्ठ फेरि खोल्नुहोस्।');$('warnings').textContent='रूपान्तरण अहिले उपलब्ध छैन। पृष्ठ फेरि खोल्नुहोस्।';};
+ }catch{status('नेपाली टाइपिङ अहिले सुरु हुन सकेन। पृष्ठ फेरि खोल्नुहोस्।');}
 }
 function convertNow(){
- conversionID=++request;output.value='';$('warnings').textContent='Converting…';
- if(!worker){$('warnings').textContent='Conversion worker unavailable. Reload over HTTP(S).';return;}
+ conversionID=++request;output.value='';$('warnings').textContent='रूपान्तरण हुँदैछ…';
+ if(!worker){$('warnings').textContent='रूपान्तरण अहिले उपलब्ध छैन। पृष्ठ फेरि खोल्नुहोस्।';return;}
  worker.postMessage({id:conversionID,type:'convert',text:source.value,direction:mode});
 }
 function setMode(next){
@@ -70,12 +70,12 @@ function setMode(next){
  const preeti=mode==='preeti-to-unicode';
  $('conversion-title').textContent=preeti?'आफ्नै Preeti → Unicode':'आफ्नै Unicode → Preeti';
  $('source-label').textContent=preeti?'Preeti input':'Unicode input';$('output-label').textContent=preeti?'Unicode output':'Preeti output';
- $('conversion-description').textContent=preeti?'Paste text originally typed using the Preeti font.':'Paste Unicode Nepali text for a legacy Preeti document.';
+ $('conversion-description').textContent=preeti?'Preeti font मा टाइप गरिएको पाठ यहाँ paste गर्नुहोस्।':'Unicode नेपाली पाठलाई Preeti मा रूपान्तरण गर्नुहोस्।';
  source.classList.toggle('preeti-font',preeti);output.classList.toggle('preeti-font',!preeti);
  if(options.manageHistory){const u=new URL(location.href);u.searchParams.set('mode',mode);history.replaceState(null,'',u);}
  if(mode!=='typing')convertNow();
 }
-async function copy(text){try{await navigator.clipboard.writeText(text);status('Copied.');}catch{status('Copy unavailable. Select the text and use your device’s Copy command.');}}
+async function copy(text){try{await navigator.clipboard.writeText(text);status('कपी भयो।');}catch{status('कपी गर्न सकिएन। पाठ चयन गरेर आफ्नो उपकरणको Copy प्रयोग गर्नुहोस्।');}}
 function download(text,name){const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 editor.addEventListener('compositionstart',()=>{composing=true;hideSuggestions();});
 editor.addEventListener('compositionend',()=>{composing=false;counts();save();query();});
@@ -109,10 +109,10 @@ for(const b of root.querySelectorAll('[data-mode]'))b.onclick=()=>setMode(b.data
 $('save-draft').checked=storageGet('patro-nepali-save-v1')==='yes';
 if($('save-draft').checked)editor.value=(storageGet('patro-nepali-draft-v1')||'').slice(0,100000);
 $('save-draft').onchange=()=>{storageSet('patro-nepali-save-v1',$('save-draft').checked?'yes':'no');if(!$('save-draft').checked){clearTimeout(draftTimer);storageRemove('patro-nepali-draft-v1');}else save();};
-$('forget').onclick=()=>{clearTimeout(draftTimer);$('save-draft').checked=false;storageRemove('patro-nepali-draft-v1');storageRemove('patro-nepali-save-v1');status('Saved draft deleted. Current text remains in the editor.');};
-$('import-text').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>3_000_000){status('Maximum import size is 3 MB.');return;}try{const text=new TextDecoder('utf-8',{fatal:true}).decode(await f.arrayBuffer());if(text.length>1_000_000)throw Error('Text exceeds character limit');source.value=text;convertNow();}catch{status('Import failed. Select a UTF-8 .txt file under the size limit.');}e.target.value='';};
-$('font-file').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>5_000_000){status('Font must be under 5 MB.');return;}try{const font=new FontFace('UserPreeti',await f.arrayBuffer());await font.load();document.fonts.add(font);$('font-status').textContent='Your font is loaded for this tab.';}catch{$('font-status').textContent='Unable to load this font.';}};
-$('offline').onclick=async()=>{try{if(!('serviceWorker'in navigator))throw Error('Unsupported');const reg=await navigator.serviceWorker.register(new URL('./sw.js',import.meta.url),{scope:new URL('./',import.meta.url).pathname});const w=reg.installing||reg.waiting||reg.active;if(w?.state==='activated')status('Offline files are ready. Reopen this tool once before going offline.');else{status('Preparing offline files…');w?.addEventListener('statechange',()=>{if(w.state==='activated')status('Offline files are ready.');if(w.state==='redundant')status('Offline setup failed. Try again while connected.');});}}catch{status('Offline setup unavailable. Use HTTPS or localhost and try again.');}};
+$('forget').onclick=()=>{clearTimeout(draftTimer);$('save-draft').checked=false;storageRemove('patro-nepali-draft-v1');storageRemove('patro-nepali-save-v1');status('सुरक्षित draft हटाइयो। हालको पाठ editor मै रहन्छ।');};
+$('import-text').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>3_000_000){status('अधिकतम file size 3 MB हो।');return;}try{const text=new TextDecoder('utf-8',{fatal:true}).decode(await f.arrayBuffer());if(text.length>1_000_000)throw Error('Text exceeds character limit');source.value=text;convertNow();}catch{status('फाइल खोल्न सकिएन। 3 MB भन्दा सानो UTF-8 .txt फाइल छान्नुहोस्।');}e.target.value='';};
+$('font-file').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>5_000_000){status('Font file 5 MB भन्दा सानो हुनुपर्छ।');return;}try{const font=new FontFace('UserPreeti',await f.arrayBuffer());await font.load();document.fonts.add(font);$('font-status').textContent='यो tab मा font तयार भयो।';}catch{$('font-status').textContent='यो font खोल्न सकिएन।';}};
+$('offline').onclick=async()=>{try{if(!('serviceWorker'in navigator))throw Error('Unsupported');const reg=await navigator.serviceWorker.register(new URL('./sw.js',import.meta.url),{scope:new URL('./',import.meta.url).pathname});const w=reg.installing||reg.waiting||reg.active;if(w?.state==='activated')status('अफलाइन फाइल तयार छन्। अफलाइन जानुअघि यो उपकरण एकपटक खोल्नुहोस्।');else{status('अफलाइन प्रयोगका लागि तयार हुँदैछ…');w?.addEventListener('statechange',()=>{if(w.state==='activated')status('अफलाइन फाइल तयार छन्।');if(w.state==='redundant')status('अफलाइन सुविधा सक्रिय हुन सकेन। इन्टरनेट जडान हुँदा फेरि प्रयास गर्नुहोस्।');});}}catch{status('अफलाइन सुविधा अहिले सक्रिय हुन सकेन। इन्टरनेट जडान भएपछि फेरि प्रयास गर्नुहोस्।');}};
 const onPageHide=()=>{if($('save-draft').checked)storageSet('patro-nepali-draft-v1',editor.value);};
 window.addEventListener('pagehide',onPageHide);
 startWorker();counts();setMode(options.mode||(options.manageHistory?new URL(location.href).searchParams.get('mode'):null)||'typing');
