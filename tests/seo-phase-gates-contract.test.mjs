@@ -32,10 +32,10 @@ test("agent manifests use narrow MCP plus sourced sait REST without inventing pr
  for(const tool of ["get_today","convert_date","get_festival"])assert.ok(mcp.includes(`name: "${tool}"`),tool);assert.ok(mcp.includes('const MODERN = "2026-07-28"'));assert.ok(mcp.includes('const LEGACY = "2025-11-25"'));assert.ok(mcp.includes('method === "server/discover"'));assert.ok(mcp.includes('method === "initialize"'));
 });
 
-test("Nepal-midnight cache purge is scheduled in both Cloudflare configs",()=>{
- const jobs=read("worker/jobs.ts"),jsonc=read("wrangler.jsonc"),toml=read("wrangler.toml");assert.ok(jobs.includes('cron==="15 18 * * *"'));assert.ok(jobs.includes('"/today"'));assert.ok(jobs.includes("PATRO_CITIES.map"));assert.ok(jsonc.includes('"15 18 * * *"'));assert.ok(toml.includes('"15 18 * * *"'));
+test("Nepal-midnight cache purge is scheduled in canonical Cloudflare config",()=>{
+ const jobs=read("worker/jobs.ts"),jsonc=read("wrangler.jsonc");assert.ok(jobs.includes('cron==="15 18 * * *"'));assert.ok(jobs.includes('"/today"'));assert.ok(jobs.includes("PATRO_CITIES.map"));assert.ok(jsonc.includes('"15 18 * * *"'));
 });
 
-test("post-deploy harness checks four bot perspectives, machine files, MCP and IndexNow wiring",()=>{
- const smoke=read("scripts/verify-agent-bots.mjs"),deploy=read("scripts/deploy-cloudflare.mjs"),indexnow=read("scripts/indexnow.mjs");for(const agent of ["Googlebot","OAI-SearchBot","PerplexityBot","Claude-SearchBot"])assert.ok(smoke.includes(agent),agent);assert.ok(smoke.includes('canonical!==origin+"/today"'));assert.ok(smoke.includes("MCP-Protocol-Version"));assert.ok(smoke.includes("server/discover"));assert.ok(smoke.includes("2026-07-28"));assert.ok(deploy.includes("scripts/indexnow.mjs"));assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));assert.ok(existsSync(url("public/ec3997cfe5c249f1af7885fa9f4d790d.txt")));
+test("post-deploy harness checks four bot perspectives, machine files, MCP and explicit IndexNow tooling",()=>{
+ const smoke=read("scripts/verify-agent-bots.mjs"),pkg=JSON.parse(read("package.json")),indexnow=read("scripts/indexnow.mjs");for(const agent of ["Googlebot","OAI-SearchBot","PerplexityBot","Claude-SearchBot"])assert.ok(smoke.includes(agent),agent);assert.ok(smoke.includes('canonical!==origin+"/today"'));assert.ok(smoke.includes("MCP-Protocol-Version"));assert.ok(smoke.includes("server/discover"));assert.ok(smoke.includes("2026-07-28"));assert.equal(pkg.scripts["seo:indexnow"],"node scripts/indexnow.mjs");assert.equal(pkg.scripts["deploy:cloudflare"],"wrangler deploy --config wrangler.jsonc");assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));assert.ok(existsSync(url("public/ec3997cfe5c249f1af7885fa9f4d790d.txt")));
 });
