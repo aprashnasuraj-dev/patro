@@ -4,6 +4,9 @@ import { readFileSync } from "node:fs";
 
 const read=(path)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const unique=(values)=>[...new Set(values)];
+const CANONICAL_TOOL_ROUTES=[
+  "/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/tools/bstoad","/tools/adtobs","/tools/calc","/tools/age","/tools/clock","/tools/forex","/tools/gold","/tools/emi","/tools/vat","/tools/incometax","/tools/landconverter","/tools/units","/tools/fuelprice","/tools/nepaliqr","/tools/words","/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check","/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
+];
 
 function toolDirectoryHrefs(source){
   const start=source.indexOf("const toolGroups");
@@ -38,20 +41,33 @@ test("new Aafnai UI preserves at least the requested 29 functional tool entries"
   }
 });
 
+test("29 canonical public tools stay discoverable through launcher and SEO",()=>{
+  const launcher=read("src/components/FeatureLauncher.tsx");
+  const seo=read("scripts/generate-seo.mjs");
+  assert.equal(CANONICAL_TOOL_ROUTES.length,29);
+  for(const route of CANONICAL_TOOL_ROUTES){
+    assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`feature launcher lost ${route}`);
+    assert.ok(seo.includes(`"${route}"`),`tool sitemap lost ${route}`);
+  }
+});
+
 test("critical product surfaces and all Community Suite calendars are visible from new UI",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const chrome=read("src/components/AppChrome.tsx");
+  const launcher=read("src/components/FeatureLauncher.tsx");
   const router=read("src/PatroRouter.tsx");
   for(const route of ["/time-machine","/on-this-day","/tools/astro"]){
     assert.ok(pages.includes(route),`Tools UI lost ${route}`);
     assert.ok(router.includes(route),`router lost ${route}`);
   }
   for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
-    assert.ok(chrome.includes(`href="${route}"`),`global UI lost ${route}`);
+    assert.ok(chrome.includes(`href=\"${route}\"`)||chrome.includes(`\"${route}\"`),`global UI lost ${route}`);
+    assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`launcher lost ${route}`);
   }
   for(const route of ["/samachar","/fm","/tv"]){
     assert.ok(router.includes(`"${route}"`),`router lost ${route}`);
   }
+  assert.ok(chrome.includes("FEATURED_EXPERIENCES"),"Tools hub lost premium featured-experience rail");
 });
 
 test("every registered Patro tool slug resolves to a real component and no coming-soon placeholder remains",()=>{
@@ -64,20 +80,27 @@ test("every registered Patro tool slug resolves to a real component and no comin
   assert.equal(/integration phase|coming soon|coming-soon/i.test(shell),false,"registered tool shell must not ship placeholder language");
 });
 
-test("premium experience layer is loaded last and keeps reduced-motion support",()=>{
+test("premium experience layers load after base UI and keep reduced-motion support",()=>{
   const main=read("src/main.tsx");
   const premium=read("src/premium-experience.css");
   const primitives=read("src/premium-tool-primitives.css");
+  const launcherCss=read("src/feature-launcher.css");
+  const exploreCss=read("src/explore-rail.css");
+  const safeCss=read("src/mobile-safe-area.css");
+  const baseIndex=main.indexOf('"./aafnai-enhancements.css"');
   const premiumIndex=main.indexOf('"./premium-experience.css"');
   const primitiveIndex=main.indexOf('"./premium-tool-primitives.css"');
-  const baseIndex=main.indexOf('"./aafnai-enhancements.css"');
-  assert.ok(baseIndex>=0&&premiumIndex>baseIndex&&primitiveIndex>premiumIndex,"premium layers must load after base Aafnai CSS");
+  const launcherIndex=main.indexOf('"./feature-launcher.css"');
+  const exploreIndex=main.indexOf('"./explore-rail.css"');
+  const safeIndex=main.indexOf('"./mobile-safe-area.css"');
+  assert.ok(baseIndex>=0&&premiumIndex>baseIndex&&primitiveIndex>premiumIndex&&launcherIndex>primitiveIndex&&exploreIndex>launcherIndex&&safeIndex>exploreIndex,"premium layers must load in deterministic override order");
   for(const surface of [".ap-tool-card",".utility-directory-card",".patro-tool-hero",".station-card",".community-control-card"]){
     assert.ok(premium.includes(surface),`premium layer lost ${surface}`);
   }
-  assert.ok(premium.includes("prefers-reduced-motion"),"premium motion must remain accessible");
+  for(const css of [premium,primitives,launcherCss,exploreCss,safeCss])assert.ok(css.includes("prefers-reduced-motion"),"premium motion must remain accessible");
   assert.ok(primitives.includes(".tool-breadcrumbs"));
   assert.ok(primitives.includes(".tool-trust-row"));
+  assert.ok(safeCss.includes(".global-media-player")&&safeCss.includes(".ap-feature-launcher-button"),"mobile player/launcher safe-area stack regressed");
 });
 
 test("route-aware metadata covers public discovery and protects private pages",()=>{
@@ -86,14 +109,17 @@ test("route-aware metadata covers public discovery and protects private pages",(
     assert.ok(chrome.includes(token),`route SEO lost ${token}`);
   }
   for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya"]){
-    assert.ok(chrome.includes(`path===\"${route}\"`)||chrome.includes(`path==\"${route}\"`),`route metadata lost ${route}`);
+    assert.ok(chrome.includes(route),`route metadata lost ${route}`);
   }
+  assert.ok(chrome.includes("ALIAS_CANONICAL"),"duplicate utility aliases must retain canonical consolidation");
 });
 
 test("calendar, Time Machine, Samachar and media UI point to backed API contracts",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const details=read("src/AafnaiDetailPages.tsx");
   const media=read("src/media/MediaSuite.tsx");
+  const provider=read("src/media/MediaProvider.tsx");
+  const player=read("src/media/GlobalMediaPlayer.tsx");
   const worker=read("worker/index.ts");
   const publicApi=read("worker/public-api.ts");
   const bridge=read("worker/connected-entry.ts");
@@ -113,6 +139,17 @@ test("calendar, Time Machine, Samachar and media UI point to backed API contract
     assert.ok(media.includes(endpoint),`TV UI lost ${endpoint}`);
   }
   for(const root of ['"tv"','"fm"','"samachar"'])assert.ok(bridge.includes(root),`compat bridge lost ${root}`);
+  assert.ok(provider.includes("stop: () => void")&&provider.includes("hlsRef.current?.destroy()"),"persistent media must support clean stop and HLS teardown");
+  assert.ok(player.includes("Stop & close")&&player.includes("Retry now"),"persistent player recovery controls regressed");
+});
+
+test("service worker prewarms critical new UI surfaces and purges old Aafnai cache generations",()=>{
+  const sw=read("public/sw.js");
+  for(const route of ["/tools","/time-machine","/on-this-day","/samachar","/fm","/tv","/tools/astro","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
+    assert.ok(sw.includes(`\"${route}\"`)||sw.includes(`"${route}"`),`offline shell lost ${route}`);
+  }
+  assert.ok(sw.includes('key.startsWith("aafnai-pwa-")'),"old Aafnai cache generations must be purged");
+  assert.ok(sw.includes("networkFirst(event.request"),"navigation must stay network-first after migrations");
 });
 
 test("production entry serves React routes from canonical root SPA, not stale astro shell",()=>{
