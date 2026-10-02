@@ -1,5 +1,6 @@
 import { createPatroAdapter } from "../lib/patro";
 import { agentPageResponse } from "./agent-pages";
+import { dataExportResponse } from "./data-export";
 import { mcpResponse } from "./mcp";
 import { createD1PatroSource } from "./patro-source";
 import { yearPageResponse } from "./year-page";
@@ -64,6 +65,9 @@ export async function handleAgentSurface(
 ): Promise<Response | null> {
   const mcp = await mcpResponse(request, env);
   if (mcp) return mcp;
+
+  const data = await dataExportResponse(request, env);
+  if (data) return data;
 
   const year = await yearPageResponse(request, env);
   if (year) return year;
