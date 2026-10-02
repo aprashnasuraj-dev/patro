@@ -39,7 +39,7 @@ export const CITY_SLUGS = [
 export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
 
 export const CORE_INDEX_ROUTES = [
-  "/", "/today", "/methodology", "/corrections", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/samudaya", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
   "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact",
   ...DIASPORA_TODAY_ROUTES
 ];
