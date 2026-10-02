@@ -1,0 +1,12 @@
+/* Keep fixed global controls usable together on mobile and notched devices. */
+@media(max-width:900px){
+  .global-media-player{bottom:calc(72px + env(safe-area-inset-bottom));width:min(820px,calc(100% - 16px))}
+  .ap-feature-launcher-button{bottom:calc(78px + env(safe-area-inset-bottom))}
+  body:has(.global-media-player) .ap-feature-launcher-button{bottom:calc(154px + env(safe-area-inset-bottom))}
+  .ap-footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+}
+@media(max-width:440px){
+  .global-media-player{bottom:calc(70px + env(safe-area-inset-bottom));width:calc(100% - 12px)}
+  body:has(.global-media-player) .ap-feature-launcher-button{bottom:calc(150px + env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){.global-media-player,.ap-feature-launcher-button{scroll-behavior:auto}}
