@@ -5,6 +5,7 @@ import {
   NOINDEX_PUBLIC_ROUTES, PRIVATE_PREFIXES, INDEXED_CALENDAR_YEARS,
   calendarRoutes, unique
 } from "./seo-config.mjs";
+import { loadCalendarSnapshot } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
 const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
@@ -24,11 +25,24 @@ function urlset(routes) {
   ].join("\n");
 }
 
+const calendarRows = await loadCalendarSnapshot();
+const indexedYearSet = new Set(INDEXED_CALENDAR_YEARS);
+const dayRoutesByBsYear = new Map(INDEXED_CALENDAR_YEARS.map((year) => [year, []]));
+for (const row of calendarRows) {
+  const year = Number(row.bs?.year);
+  if (!indexedYearSet.has(year)) continue;
+  dayRoutesByBsYear.get(year).push(`/date/${row.ad}`);
+}
+for (const year of INDEXED_CALENDAR_YEARS) {
+  if (!(dayRoutesByBsYear.get(year)?.length >= 350)) throw new Error(`SEO day-page coverage is incomplete for BS ${year}`);
+}
+
 const sitemapFiles = [
   ["sitemap-pages.xml", CORE_INDEX_ROUTES],
   ["sitemap-tools.xml", TOOL_ROUTES],
   ["sitemap-community.xml", COMMUNITY_ROUTES],
-  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-calendar-${year}.xml`, calendarRoutes([year])])
+  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-calendar-${year}.xml`, calendarRoutes([year])]),
+  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-days-${year}.xml`, dayRoutesByBsYear.get(year)])
 ];
 const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
 const sitemapIndex = [
@@ -38,23 +52,14 @@ const sitemapIndex = [
   "</sitemapindex>", ""
 ].join("\n");
 
+function crawlerGroup(agent) {
+  return [`User-agent: ${agent}`, "Allow: /", ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`), ""].join("\n");
+}
+const crawlerAgents = ["*", "OAI-SearchBot", "ChatGPT-User", "GPTBot", "Googlebot", "Google-Extended", "Bingbot", "Claude-SearchBot", "Claude-User", "ClaudeBot", "PerplexityBot", "Perplexity-User"];
 const robots = [
   "# Aafnai Patro crawl policy — public pages are discoverable; private/API surfaces are not.",
-  "User-agent: *", "Allow: /",
-  ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`),
-  "", "# Search/answer crawlers are explicitly allowed on public pages.",
-  "User-agent: OAI-SearchBot", "Allow: /",
-  "User-agent: ChatGPT-User", "Allow: /",
-  "User-agent: GPTBot", "Allow: /",
-  "User-agent: Googlebot", "Allow: /",
-  "User-agent: Google-Extended", "Allow: /",
-  "User-agent: Bingbot", "Allow: /",
-  "User-agent: Claude-SearchBot", "Allow: /",
-  "User-agent: Claude-User", "Allow: /",
-  "User-agent: ClaudeBot", "Allow: /",
-  "User-agent: PerplexityBot", "Allow: /",
-  "User-agent: Perplexity-User", "Allow: /",
-  "", `Sitemap: ${SITE}/sitemap.xml`, ""
+  ...crawlerAgents.map(crawlerGroup),
+  `Sitemap: ${SITE}/sitemap.xml`, ""
 ].join("\n");
 
 const llms = [
@@ -79,13 +84,14 @@ const llms = [
   `- [Tools](${SITE}/tools): canonical Nepali utility index.`,
   "",
   "## Calendar archive",
-  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12`),
+  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12; factual day pages are listed in sitemap-days-${year}.xml.`),
   "",
   "## Citation and indexing notes",
   "- Prefer the canonical public page over private, account, developer or machine endpoints.",
   "- /api/*, /compat-api/*, /me/*, /admin/* and /auth/* are intentionally excluded from discovery.",
   "- Aggregated Samachar is a user feature but is intentionally not a search-index target because source material belongs to publishers.",
   "- Calendar pages use Nepali plus common romanizations such as Ashwin/Ashoj/Asoj and Poush/Push so multilingual queries resolve to the same canonical page.",
+  "- Per-day pages are generated only from the repository's validated local calendar archive; static SEO does not invent tithi or holiday facts.",
   ""
 ].join("\n");
 
@@ -94,7 +100,7 @@ const humans = [
   `Site: ${SITE}`,
   "Purpose: Nepali calendar, date conversion and everyday Nepali utilities.",
   "Languages: Nepali and English.",
-  "Accuracy: calendar/tithi facts are displayed from the product data layer; static SEO copy never guesses daily panchang facts.",
+  "Accuracy: calendar/tithi facts are sourced from the same validated local archive used by the product; static SEO copy never guesses daily panchang facts.",
   ""
 ].join("\n");
 
@@ -108,12 +114,13 @@ const manifest = {
   indexed_calendar_years: INDEXED_CALENDAR_YEARS,
   sitemap_files: sitemapFiles.map(([file]) => file),
   canonical_tool_route_count: TOOL_ROUTES.length,
+  indexed_day_route_count: [...dayRoutesByBsYear.values()].reduce((n, routes) => n + routes.length, 0),
   indexed_route_count: indexedRoutes.length,
   noindex_public_routes: NOINDEX_PUBLIC_ROUTES,
   private_prefixes: PRIVATE_PREFIXES,
   llms_txt: SITE + "/llms.txt",
   rendering_policy: "Build-time semantic HTML for canonical public routes; React replaces the prerender after load without removing product functionality.",
-  archive_policy: "Calendar months 2070-2090 are prerender-ready; only the focused five-year window is indexed initially to control thin/scaled-content risk."
+  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and only a focused five-year BS window are indexed initially to control scaled-content risk."
 };
 
 await Promise.all([
@@ -125,4 +132,4 @@ await Promise.all([
   writeFile(resolve(root, "public/seo-manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8")
 ]);
 
-console.log(`Generated SEO discovery for ${SITE}: ${indexedRoutes.length} indexable routes, ${TOOL_ROUTES.length} tools, ${sitemapFiles.length} sitemap segments.`);
+console.log(`Generated SEO discovery for ${SITE}: ${indexedRoutes.length} indexable routes including ${manifest.indexed_day_route_count} factual day pages, ${TOOL_ROUTES.length} tools, ${sitemapFiles.length} sitemap segments.`);
