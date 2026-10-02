@@ -1,8 +1,12 @@
 export const SITE = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim().replace(/\/+$/, "");
 if (!/^https:\/\//.test(SITE)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
 
-const currentAdYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
-export const CURRENT_BS_YEAR = Number(process.env.SEO_BS_YEAR || currentAdYear + 57);
+const kathmanduParts = Object.fromEntries(new Intl.DateTimeFormat("en-US", {
+  timeZone: "Asia/Kathmandu", year: "numeric", month: "numeric", day: "numeric"
+}).formatToParts(new Date()).filter((p) => p.type !== "literal").map((p) => [p.type, Number(p.value)]));
+const afterApproxNewYear = kathmanduParts.month > 4 || (kathmanduParts.month === 4 && kathmanduParts.day >= 14);
+const inferredBsYear = kathmanduParts.year + (afterApproxNewYear ? 57 : 56);
+export const CURRENT_BS_YEAR = Number(process.env.SEO_BS_YEAR || inferredBsYear);
 
 export const BS_MONTHS = [
   { n: 1, ne: "बैशाख", en: "Baisakh", aliases: "Baisakh Baishakh" },
@@ -38,7 +42,6 @@ export const COMMUNITY_ROUTES = [
   "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra"
 ];
 
-// These remain functional, but are intentionally excluded from search discovery.
 export const NOINDEX_PUBLIC_ROUTES = ["/samachar", "/developers", "/tools/api"];
 export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"];
 
