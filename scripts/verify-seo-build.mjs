@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, calendarRoute } from "./seo-config.mjs";
+import { CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, CITY_SLUGS, calendarRoute } from "./seo-config.mjs";
 import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
@@ -14,11 +14,14 @@ expect(manifest.site_url === "https://aafnaipatro.com", "canonical host mismatch
 expect(Array.isArray(manifest.indexed_calendar_years) && manifest.indexed_calendar_years.length === 5, "five-year focused index window missing");
 expect(manifest.indexed_day_route_count >= 1700, `too few factual day routes: ${manifest.indexed_day_route_count}`);
 expect(manifest.indexed_route_count >= 1800, `too few indexable routes: ${manifest.indexed_route_count}`);
-expect(String(manifest.preferred_citation || "").includes("Aafnai Patro (aafnaipatro.com), accessed"), "preferred citation missing");
+expect(/^Cite as: Aafnai Patro \(aafnaipatro\.com\), accessed \d{4}-\d{2}-\d{2}$/.test(String(manifest.preferred_citation || "")), "exact preferred citation missing");
 expect(manifest.llms_full_txt === "https://aafnaipatro.com/llms-full.txt", "llms-full manifest target missing");
 expect(manifest.ai_txt === "https://aafnaipatro.com/ai.txt", "ai.txt manifest target missing");
 expect(manifest.agents_json === "https://aafnaipatro.com/.well-known/agents.json", "agents manifest target missing");
 expect(manifest.mcp === "https://aafnaipatro.com/mcp", "MCP manifest target missing");
+
+const pagesSitemap = await read("public/sitemap-pages.xml");
+for (const city of CITY_SLUGS) expect(pagesSitemap.includes(`https://aafnaipatro.com/today/${city}`), `diaspora today route missing from sitemap: ${city}`);
 
 const rootHtml = await read("dist/index.html");
 expect(rootHtml.includes('data-seo-prerender="true"'), "homepage lacks server-visible semantic body");
@@ -48,6 +51,9 @@ expect(dayHtml.includes(tithiText(sample.panchang)), "day page lacks archive tit
 expect(dayHtml.includes('"@type":"WebPage"') || dayHtml.includes('"@type": "WebPage"'), "day WebPage schema missing");
 expect(dayHtml.includes('"@type":"BreadcrumbList"') || dayHtml.includes('"@type": "BreadcrumbList"'), "day breadcrumb schema missing");
 expect(dayHtml.includes(`rel="canonical" href="https://aafnaipatro.com/date/${sample.ad}"`), "day canonical missing");
+expect(dayHtml.includes('href="/today"'), "day page missing /today link");
+expect(dayHtml.includes(`href="/calendar/${sample.bs.year}"`), "day page missing year hub link");
+expect(dayHtml.includes('href="/convert"'), "day page missing converter link");
 expect(!dayHtml.includes("patro-blush.vercel.app"), "retired Vercel hostname leaked into day page");
 
 const robots = await read("public/robots.txt");
@@ -55,9 +61,7 @@ for (const agent of [
   "OAI-SearchBot", "Googlebot", "Google-Extended", "Bingbot", "Claude-SearchBot", "PerplexityBot",
   "Applebot", "Applebot-Extended", "Amazonbot", "DuckDuckBot", "YandexBot", "NaverBot"
 ]) expect(robots.includes(`User-agent: ${agent}`), `missing crawler group ${agent}`);
-for (const path of ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"]) {
-  expect(robots.includes(`Disallow: ${path}`), `private/machine path exposed: ${path}`);
-}
+for (const path of ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"]) expect(robots.includes(`Disallow: ${path}`), `private/machine path exposed: ${path}`);
 expect(robots.includes("Cloudflare") && robots.includes("override robots.txt"), "Cloudflare crawler override warning missing");
 
 const llms = await read("public/llms.txt");
@@ -65,38 +69,54 @@ expect(llms.includes("Aafnai Patro"), "llms brand missing");
 expect(llms.includes("/mcp"), "llms MCP discovery missing");
 expect(llms.includes("/methodology"), "llms methodology target missing");
 expect(llms.includes("/corrections"), "llms corrections target missing");
+expect(llms.includes("Cite as: Aafnai Patro (aafnaipatro.com), accessed"), "llms exact citation missing");
 expect(!llms.includes("MeroPatro"), "retired brand leaked into llms");
 
 const llmsFull = await read("public/llms-full.txt");
 expect(llmsFull.includes(`/date/${sample.ad}`), "llms-full does not contain factual day corpus");
 expect(llmsFull.includes(`${sample.bs.year}-`), "llms-full does not contain BS facts");
 expect(llmsFull.split("\n").length >= 1700, "llms-full corpus unexpectedly small");
+for (const city of CITY_SLUGS) expect(llmsFull.includes(`/today/${city}`), `llms-full missing city page ${city}`);
 
 const ai = await read("public/ai.txt");
-expect(ai.includes("Preferred citation:"), "ai.txt citation policy missing");
+expect(ai.includes("Cite as: Aafnai Patro (aafnaipatro.com), accessed"), "ai.txt exact citation policy missing");
 expect(ai.includes("/.well-known/agents.json"), "ai.txt agent manifest discovery missing");
 expect(ai.includes("/mcp"), "ai.txt MCP discovery missing");
 
 const agents = JSON.parse(await read("public/.well-known/agents.json"));
 expect(agents.name === "Aafnai Patro", "agents.json brand mismatch");
 expect(agents.mcp?.url === "https://aafnaipatro.com/mcp", "agents.json MCP URL mismatch");
-expect(Array.isArray(agents.mcp?.tools) && agents.mcp.tools.join(",") === "get_today,convert_date,get_festival", "agents.json tool inventory mismatch");
+expect(Array.isArray(agents.mcp?.tools) && agents.mcp.tools.join(",") === "get_today,convert_date,get_festival", "agents.json MCP tool inventory mismatch");
+expect(Array.isArray(agents.capabilities) && agents.capabilities.some((item) => item?.name === "sait_lookup" && item?.endpoint === "/api/agent/v1/sait"), "agents.json sourced sait capability missing");
 
 const plugin = JSON.parse(await read("public/.well-known/ai-plugin.json"));
 expect(plugin.name_for_model === "aafnai_patro", "legacy plugin compatibility manifest mismatch");
 expect(plugin.api?.url === "https://aafnaipatro.com/.well-known/agent-openapi.json", "legacy plugin OpenAPI target mismatch");
+const openapi = JSON.parse(await read("public/.well-known/agent-openapi.json"));
+for (const path of ["/api/agent/v1/today","/api/agent/v1/convert","/api/agent/v1/festival","/api/agent/v1/sait"]) expect(openapi.paths?.[path], `agent OpenAPI path missing: ${path}`);
 
 const security = await read("public/.well-known/security.txt");
 expect(security.includes("Contact: https://aafnaipatro.com/contact"), "security.txt contact missing");
 expect(security.includes("Canonical: https://aafnaipatro.com/.well-known/security.txt"), "security.txt canonical missing");
-expect(security.includes("Expires:"), "security.txt expiry missing");
+const expires = security.match(/^Expires:\s*(.+)$/m)?.[1];
+expect(Boolean(expires), "security.txt expiry missing");
+if (expires) {
+  const delta = Date.parse(expires) - Date.now();
+  expect(delta > 0 && delta < 365 * 86400000, "security.txt Expires must be in the future and less than one year away");
+}
 
 const entry = await read("worker/connected-entry.ts");
 const gateway = await read("worker/agent-gateway.ts");
 const mcp = await read("worker/mcp.ts");
+const jobs = await read("worker/jobs.ts");
+const jsonc = await read("wrangler.jsonc");
+const toml = await read("wrangler.toml");
 expect(entry.includes('import { handleAgentSurface } from "./agent-gateway"'), "production Worker does not wire agent gateway");
 expect(gateway.includes("mcpResponse(request, env)"), "agent gateway does not wire MCP");
+expect(gateway.includes('url.pathname === "/api/agent/v1/sait"'), "agent gateway sourced sait endpoint missing");
 expect(mcp.includes('const MODERN = "2026-07-28"'), "MCP modern protocol version missing");
 expect(mcp.includes("createPatroAdapter(createD1PatroSource(env))"), "MCP must use canonical Patro adapter");
+expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
+expect(jsonc.includes('"15 18 * * *"') && toml.includes('"15 18 * * *"'), "Nepal-midnight cron missing from Cloudflare config");
 
 console.log(`SEO/agent build verified: ${manifest.indexed_route_count} indexable routes, ${manifest.indexed_day_route_count} factual day pages; sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);
