@@ -3,7 +3,7 @@ import { Info, BookOpenText, ShieldCheck, Scale, MessageSquare, Send, CheckCircl
 import { applyRouteSeo } from "../seo";
 
 type PageKey="about"|"sources"|"privacy"|"terms"|"contact";
-const SUPPORT_EMAIL="aafnaipatro@gmail.com";
+const SUPPORT_EMAIL="meroaafnaipatro@gmail.com";
 const PAGES:Record<PageKey,{title:string;en:string;description:string;icon:typeof Info}>={
   about:{title:"हाम्रो बारेमा",en:"About आफ्नै पात्रो",description:"नेपालको मिति, परम्परा र दैनिक उपयोगलाई एउटै भरोसायोग्य अनुभवमा जोड्ने वेब एप।",icon:Info},
   sources:{title:"स्रोत र शुद्धता",en:"Sources & accuracy",description:"कुन डेटा अभिलेखबाट आउँछ, कुन गणना हो र कहाँ सीमाहरू छन् भन्ने स्पष्ट विवरण।",icon:BookOpenText},
