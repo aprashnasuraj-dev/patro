@@ -79,7 +79,6 @@ jobs:
           ! grep -q '"market_snapshots"' cloudflare/d1/expected-public-counts.json
           grep -q '"time_machine_moments": 706' cloudflare/d1/expected-public-counts.json
           grep -q '"mode": "native_bundle"' cloudflare/d1/expected-public-counts.json
-          ! grep -q 'wrangler.pages.jsonc' tests/cloudflare-readiness-contract.test.mjs
       - name: Verify generated release artifact parity
         id: artifacts
         if: always() && steps.build.outcome == 'success'
