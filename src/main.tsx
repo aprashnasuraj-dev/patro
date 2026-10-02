@@ -34,6 +34,7 @@ import "./note-enhancements.css";
 import "./mobile-primary-nav.css";
 import "./calendar-cell-enhancements.css";
 import "./fresh-build-surface.css";
+import "./final-polish.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
