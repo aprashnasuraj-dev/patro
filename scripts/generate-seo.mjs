@@ -1,190 +1,119 @@
 import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import {
+  SITE, CURRENT_BS_YEAR, CORE_INDEX_ROUTES, TOOL_ROUTES, COMMUNITY_ROUTES,
+  NOINDEX_PUBLIC_ROUTES, PRIVATE_PREFIXES, INDEXED_CALENDAR_YEARS,
+  calendarRoutes, unique
+} from "./seo-config.mjs";
 
 const root = process.cwd();
-const rawSite = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim();
-const site = rawSite.replace(/\/+$/, "");
-if (!/^https:\/\//.test(site)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
+const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
+const freshDaily = new Set(["/", "/rashifal", "/fm", "/tv"]);
 
-const currentAdYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
-const currentBsYear = Number(process.env.SEO_BS_YEAR || currentAdYear + 57);
-const calendarYears = [currentBsYear - 1, currentBsYear, currentBsYear + 1];
-
-const coreRoutes = [
-  "/",
-  "/tools",
-  "/convert",
-  "/rashifal",
-  "/samachar",
-  "/time-machine",
-  "/on-this-day",
-  "/fm",
-  "/tv",
-  "/tools/api",
-  "/jyotish/china",
-  "/jyotish/matchmaking",
-  "/samudaya",
-  "/about",
-  "/sources",
-  "/privacy",
-  "/terms",
-  "/contact",
-  "/developers"
-];
-
-// Exactly one canonical route per public tool. Aliases such as /tools/tax,
-// /tools/land and /tools/qr remain functional but are intentionally omitted
-// to avoid duplicate-content dilution.
-const toolRoutes = [
-  "/tools/astro",
-  "/tools/nepali-typing",
-  "/tools/preeti-converter",
-  "/tools/bstoad",
-  "/tools/adtobs",
-  "/tools/calc",
-  "/tools/age",
-  "/tools/clock",
-  "/tools/forex",
-  "/tools/gold",
-  "/tools/emi",
-  "/tools/vat",
-  "/tools/units",
-  "/tools/words",
-  "/tools/incometax",
-  "/tools/landconverter",
-  "/tools/nepaliqr",
-  "/tools/fuelprice",
-  "/tools/tithi-reminder",
-  "/tools/sait",
-  "/tools/baby-names",
-  "/tools/janmadin-akhbar",
-  "/tools/future-letter",
-  "/tools/spell-check",
-  "/tools/voice-typing",
-  "/tools/ocr",
-  "/tools/name-check",
-  "/tools/read-aloud",
-  "/tools/patro-bot"
-];
-if (toolRoutes.length !== 29) throw new Error(`SEO canonical tool inventory must remain exactly 29; received ${toolRoutes.length}`);
-
-const communityRoutes = [
-  "/nepal-sambat/mandala",
-  "/samudaya/lhosar",
-  "/samudaya/tharu",
-  "/samudaya/mithila",
-  "/samudaya/kirat",
-  "/samudaya/hijri",
-  "/samudaya/chakra"
-];
-
-const calendarRoutes = [];
-for (const year of calendarYears) {
-  for (let month = 1; month <= 12; month++) {
-    calendarRoutes.push(`/calendar/${year}/${String(month).padStart(2, "0")}`);
-  }
-}
-
-const unique = (items) => [...new Set(items)];
-const indexedRoutes = unique([...coreRoutes, ...toolRoutes, ...communityRoutes, ...calendarRoutes]);
-const escapeXml = (value) => String(value).replace(/[<>&'"]/g, (ch) => ({
-  "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;"
-}[ch]));
-
-const today = new Date().toISOString().slice(0, 10);
-const freshDaily = new Set(["/", "/samachar", "/rashifal", "/fm", "/tv"]);
-
-function urlEntry(path) {
+function entry(path) {
   const lastmod = freshDaily.has(path) ? `<lastmod>${today}</lastmod>` : "";
-  return `  <url><loc>${escapeXml(site + path)}</loc>${lastmod}</url>`;
+  return `  <url><loc>${escapeXml(SITE + (path === "/" ? "/" : path))}</loc>${lastmod}</url>`;
 }
-
 function urlset(routes) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...unique(routes).map(urlEntry),
-    "</urlset>",
-    ""
+    ...unique(routes).map(entry),
+    "</urlset>", ""
   ].join("\n");
 }
 
 const sitemapFiles = [
-  ["sitemap-pages.xml", coreRoutes],
-  ["sitemap-tools.xml", toolRoutes],
-  ["sitemap-community.xml", communityRoutes],
-  ["sitemap-calendar.xml", calendarRoutes]
+  ["sitemap-pages.xml", CORE_INDEX_ROUTES],
+  ["sitemap-tools.xml", TOOL_ROUTES],
+  ["sitemap-community.xml", COMMUNITY_ROUTES],
+  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-calendar-${year}.xml`, calendarRoutes([year])])
 ];
-
+const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
 const sitemapIndex = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(site + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
-  "</sitemapindex>",
-  ""
+  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(SITE + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
+  "</sitemapindex>", ""
 ].join("\n");
 
 const robots = [
-  "# Aafnai Patro public crawl policy. Private/account and API surfaces are excluded.",
-  "User-agent: *",
-  "Allow: /",
-  "Disallow: /api/",
-  "Disallow: /me/",
-  "Disallow: /admin/",
-  `Sitemap: ${site}/sitemap.xml`,
-  ""
+  "# Aafnai Patro crawl policy — public pages are discoverable; private/API surfaces are not.",
+  "User-agent: *", "Allow: /",
+  ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`),
+  "", "# Search/answer crawlers are explicitly allowed on public pages.",
+  "User-agent: OAI-SearchBot", "Allow: /",
+  "User-agent: ChatGPT-User", "Allow: /",
+  "User-agent: GPTBot", "Allow: /",
+  "User-agent: Googlebot", "Allow: /",
+  "User-agent: Google-Extended", "Allow: /",
+  "User-agent: Bingbot", "Allow: /",
+  "User-agent: Claude-SearchBot", "Allow: /",
+  "User-agent: Claude-User", "Allow: /",
+  "User-agent: ClaudeBot", "Allow: /",
+  "User-agent: PerplexityBot", "Allow: /",
+  "User-agent: Perplexity-User", "Allow: /",
+  "", `Sitemap: ${SITE}/sitemap.xml`, ""
 ].join("\n");
 
 const llms = [
   "# आफ्नै पात्रो · Aafnai Patro",
   "",
-  "> A bilingual Nepali calendar and utility service for Bikram Sambat dates, tithi, festivals, AD↔BS conversion, Rashifal/Jyotish, astronomy, community calendars, history, FM radio, live TV and Nepali news discovery.",
+  "> A bilingual Nepali calendar and utility service for Bikram Sambat (BS), Nepal date, tithi, festivals, BS↔AD conversion, astronomy, history, Rashifal, community calendars, FM and live TV.",
   "",
-  `Canonical site: ${site}/`,
-  "Primary languages: Nepali (ne) and English (en).",
-  "Brand: आफ्नै पात्रो (Aafnai Patro).",
-  "Use canonical Aafnai Patro URLs below when citing or linking to this service.",
+  `Canonical site: ${SITE}/`,
+  "Primary languages: Nepali (ne) and English (en content on canonical pages).",
+  "Canonical brand: आफ्नै पात्रो / Aafnai Patro.",
   "",
-  "## Core pages",
-  `- [Today / आज](${site}/): current Nepali date, tithi, festivals and daily calendar context.`,
-  `- [Date converter](${site}/convert): AD ↔ BS conversion.`,
-  `- [Rashifal](${site}/rashifal): राशिफल experience.`,
-  `- [Time Machine](${site}/time-machine): browse historical moments by year.`,
-  `- [On This Day](${site}/on-this-day): historical events for a selected calendar day.`,
-  `- [Astronomy calendar](${site}/tools/astro): astronomy and calendar context.`,
-  `- [FM radio](${site}/fm): radio discovery and playback.`,
-  `- [Live TV](${site}/tv): live-channel discovery and playback.`,
-  `- [Samachar](${site}/samachar): categorized Nepali news discovery with source links.`,
-  `- [Community calendars](${site}/samudaya): Nepal Sambat and community calendar suites.`,
+  "## Best citation targets",
+  `- [Today / आजको नेपाली मिति](${SITE}/): Nepal date today, tithi, festivals and current Nepali calendar.`,
+  `- [BS ↔ AD converter](${SITE}/convert): Nepali date conversion.`,
+  `- [BS to AD](${SITE}/tools/bstoad): Bikram Sambat to Gregorian conversion.`,
+  `- [AD to BS](${SITE}/tools/adtobs): Gregorian to Bikram Sambat conversion.`,
+  `- [Astronomical calendar](${SITE}/tools/astro): astronomy and calendar context.`,
+  `- [Sait](${SITE}/tools/sait): auspicious-time references.`,
+  `- [On This Day](${SITE}/on-this-day): sourced historical discovery.`,
+  `- [Time Machine](${SITE}/time-machine): historical timeline.`,
+  `- [Rashifal](${SITE}/rashifal): Nepali horoscope experience.`,
+  `- [Tools](${SITE}/tools): canonical Nepali utility index.`,
   "",
-  "## Canonical public tools",
-  ...toolRoutes.map((route) => `- [${route.split("/").at(-1)}](${site}${route})`),
+  "## Calendar archive",
+  ...INDEXED_CALENDAR_YEARS.map((year) => `- Nepali Calendar ${year}: ${SITE}/calendar/${year}/01 through ${SITE}/calendar/${year}/12`),
   "",
-  "## Developer and machine-readable access",
-  `- [Developer documentation](${site}/developers): public API guidance.`,
-  `- [Calendar sync API](${site}/api/v1/sync): machine-readable calendar synchronization endpoint.`,
-  `- [Community catalog API](${site}/api/v1/communities): public community-calendar catalog.`,
-  "",
-  "## Indexing boundaries",
-  "- /me/* and /admin/* are private/account surfaces and are intentionally excluded from crawling and indexing.",
-  "- /api/* is machine-readable and intentionally excluded from search indexing; cite the corresponding public page for user-facing references.",
-  "- Tool aliases remain usable but the 29 canonical tool URLs above are preferred for indexing and citations.",
+  "## Citation and indexing notes",
+  "- Prefer the canonical public page over private, account, developer or machine endpoints.",
+  "- /api/*, /compat-api/*, /me/*, /admin/* and /auth/* are intentionally excluded from discovery.",
+  "- Aggregated Samachar is a user feature but is intentionally not a search-index target because source material belongs to publishers.",
+  "- Calendar pages use Nepali plus common romanizations such as Ashwin/Ashoj/Asoj and Poush/Push so multilingual queries resolve to the same canonical page.",
+  ""
+].join("\n");
+
+const humans = [
+  "Aafnai Patro (आफ्नै पात्रो)",
+  `Site: ${SITE}`,
+  "Purpose: Nepali calendar, date conversion and everyday Nepali utilities.",
+  "Languages: Nepali and English.",
+  "Accuracy: calendar/tithi facts are displayed from the product data layer; static SEO copy never guesses daily panchang facts.",
   ""
 ].join("\n");
 
 const manifest = {
-  schema_version: 2,
+  schema_version: 3,
   generated_at: new Date().toISOString(),
-  site_url: site,
+  site_url: SITE,
   brand: "आफ्नै पात्रो",
   alternate_brand: "Aafnai Patro",
-  current_bs_year: currentBsYear,
-  sitemap_calendar_years: calendarYears,
+  current_bs_year: CURRENT_BS_YEAR,
+  indexed_calendar_years: INDEXED_CALENDAR_YEARS,
   sitemap_files: sitemapFiles.map(([file]) => file),
-  canonical_tool_route_count: toolRoutes.length,
+  canonical_tool_route_count: TOOL_ROUTES.length,
   indexed_route_count: indexedRoutes.length,
-  llms_txt: site + "/llms.txt",
-  historical_calendar_policy: "Older calendar pages are omitted from sitemap and may receive noindex,follow at runtime."
+  noindex_public_routes: NOINDEX_PUBLIC_ROUTES,
+  private_prefixes: PRIVATE_PREFIXES,
+  llms_txt: SITE + "/llms.txt",
+  rendering_policy: "Build-time semantic HTML for canonical public routes; React replaces the prerender after load without removing product functionality.",
+  archive_policy: "Calendar months 2070-2090 are prerender-ready; only the focused five-year window is indexed initially to control thin/scaled-content risk."
 };
 
 await Promise.all([
@@ -192,7 +121,8 @@ await Promise.all([
   ...sitemapFiles.map(([file, routes]) => writeFile(resolve(root, "public/" + file), urlset(routes), "utf8")),
   writeFile(resolve(root, "public/robots.txt"), robots, "utf8"),
   writeFile(resolve(root, "public/llms.txt"), llms, "utf8"),
+  writeFile(resolve(root, "public/humans.txt"), humans, "utf8"),
   writeFile(resolve(root, "public/seo-manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8")
 ]);
 
-console.log(`Generated SEO files for ${site}: ${indexedRoutes.length} indexed routes, ${toolRoutes.length} canonical tools, ${sitemapFiles.length} sitemap segments.`);
+console.log(`Generated SEO discovery for ${SITE}: ${indexedRoutes.length} indexable routes, ${TOOL_ROUTES.length} tools, ${sitemapFiles.length} sitemap segments.`);
