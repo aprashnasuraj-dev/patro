@@ -31,7 +31,7 @@ const TOOL_SEO:Record<string,[string,string]>={
  "spell-check":["Nepali Spell Check","Check Nepali spelling with local rules and suggestions."],
  "voice-typing":["Nepali Voice Typing","Type Nepali with browser speech recognition and safe fallbacks."],
  ocr:["Nepali OCR","Extract Nepali and English Unicode text from images in the browser."],
- "name-check":["Name Check","Compare a name's starting sound with nakshatra and pada references."],
+ "name-check":["Document Name Check","Compare Nepali and English names across citizenship, passport, certificate or KYC documents."],
  "read-aloud":["Nepali Read Aloud","Listen to Nepali text using available browser speech voices."],
  "patro-bot":["Patro Bot","Ask short questions about dates, tithi and calendar context."],
  astro:["Astronomical Calendar","Explore tithi, lunar phases, astronomy and NASA-linked calendar context."],
@@ -45,6 +45,12 @@ const ALIAS_CANONICAL:Record<string,string>={
  "/tools/land":"/tools/landconverter",
  "/tools/qr":"/tools/nepaliqr",
  "/tools/fuel":"/tools/fuelprice",
+ "/tools/preetitounicode":"/tools/preeti-converter",
+ "/tools/unicodetopreeti":"/tools/preeti-converter",
+ "/tools/preeti-to-unicode":"/tools/preeti-converter",
+ "/tools/unicode-to-preeti":"/tools/preeti-converter",
+ "/astro":"/tools/astro",
+ "/jyotish/rashifal":"/rashifal"
 };
 const PRIVATE_PREFIXES=["/me","/admin","/family","/my-data","/my-diary","/notes","/planner","/settings"];
 const PRIVATE_TOOL_PATHS=new Set(["/tools/family","/tools/my-data","/tools/card","/tools/tithi"]);
