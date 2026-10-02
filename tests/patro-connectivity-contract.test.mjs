@@ -7,15 +7,32 @@ const read = (path) => readFileSync(new URL("../" + path, import.meta.url), "utf
 test("Patro UI connectivity routes are backed by the production Worker entrypoint", () => {
   const media = read("src/media/MediaSuite.tsx");
   const pages = read("src/AafnaiPages.tsx");
+  const details = read("src/AafnaiDetailPages.tsx");
+  const utilities = read("src/utilities/ReferenceUtilities.tsx");
+  const birthday = read("src/patro-tools-integration/JanmadinAkhbarTool.tsx");
+  const worker = read("worker/index.ts");
+  const publicApi = read("worker/public-api.ts");
   const shim = read("worker/connected-entry.ts");
   const wranglerToml = read("wrangler.toml");
   const wranglerJson = read("wrangler.jsonc");
 
-  // These are current browser-side contracts. If they change, the Worker must change with them.
+  // Current browser-side contracts. If they change, the Worker must change with them.
   assert.ok(media.includes('compat("tv/catalog?'), "TV catalog still depends on the compatibility namespace");
   assert.ok(media.includes('compat("tv/relay?id='), "TV playback still depends on the compatibility namespace");
   assert.ok(media.includes('compat("tv/health?ids='), "TV health still depends on the compatibility namespace");
   assert.ok(pages.includes('"/api/v1/news?limit=30"'), "Samachar page still expects the /api/v1/news alias");
+  assert.ok(utilities.includes('"/api/v1/markets/latest?kind=forex"'), "Forex UI route unexpectedly changed");
+  assert.ok(worker.includes('path === "/api/v1/markets/latest"'), "production Worker must preserve the plural Forex alias");
+  assert.ok(publicApi.includes('path==="/api/v1/market/latest"'), "native public API should keep the canonical market route");
+
+  for (const endpoint of ["/api/v1/time-machine","/api/v1/on-this-day"]) {
+    assert.ok(details.includes(endpoint), `history UI lost ${endpoint}`);
+    assert.ok(worker.includes(endpoint) || publicApi.includes(endpoint), `production Worker lost ${endpoint}`);
+  }
+  assert.ok(birthday.includes('/api/v1/on-this-day?date='), "Birthday Newspaper must use the migrated On This Day endpoint");
+  assert.ok(!birthday.includes('/api/on-this-day?'), "Birthday Newspaper must not regress to the retired history endpoint");
+  assert.ok(media.includes('"/api/v1/radio/catalog?"'), "FM directory must use the native radio catalog");
+  assert.ok(worker.includes("radioCatalogResponse"), "production Worker must retain native radio catalog handling");
 
   // Production must explicitly bridge only the known transitional Patro surfaces.
   for (const root of ['"tv"', '"fm"', '"samachar"']) assert.ok(shim.includes(root), root);
