@@ -17,7 +17,8 @@ test("Nepali typing and Preeti converter use the packaged offline bundle",()=>{
   }
   assert.ok(sw.includes('/api/v1/typing/lexicon?format=words'));
   assert.match(sw,/const VERSION = "aafnai-pwa-v\d+"/);
-  assert.ok(sw.includes("cacheFirst(event.request)"),"lexicon/assets must be cache-first offline");
+  assert.ok(sw.includes("cacheFirstShell(event.request)"),"packaged language assets must remain cache-first offline");
+  assert.ok(sw.includes("isLanguageLexicon(url)")&&sw.includes("PUBLIC_DATA_CACHE"),"language lexicon must remain in the explicit bounded public-data cache allowlist");
   assert.ok(toolSw.includes("core/roman.mjs")&&toolSw.includes("core/converter.mjs"));
   assert.ok(worker.includes("/api/v1/typing/lexicon?format=words"));
   assert.ok(worker.includes("words.length!==34571"),"full lexicon validation must remain locked");
