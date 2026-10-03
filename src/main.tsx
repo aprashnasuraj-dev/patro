@@ -35,6 +35,7 @@ import "./fresh-build-surface.css";
 import "./final-polish.css";
 import "./jyotish-assistant.css";
 import "./rich-calendar.css";
+import "./homepage-regressions.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
