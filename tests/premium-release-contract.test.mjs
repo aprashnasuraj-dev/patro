@@ -54,16 +54,21 @@ test("premium layers upgrade shared tools, media and communities without replaci
 
 test("premium PWA warms the complete high-value product surface",()=>{
   const sw=read("public/sw.js");
+  const router=read("src/PatroRouter.tsx");
   assert.match(sw,/const VERSION = "aafnai-pwa-v\d+"/);
   for(const route of [
     "/time-machine","/on-this-day","/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
     "/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
   ]) assert.ok(sw.includes(`"${route}"`),`offline core lost ${route}`);
   assert.ok(sw.includes("WARM_LANGUAGE_TOOLS"));
-  assert.ok(sw.includes("staleWhileRevalidate"));
-  assert.ok(sw.includes("networkFirst"));
+  assert.ok(sw.includes("stalePublic"));
+  assert.ok(sw.includes("putBounded"));
+  assert.ok(sw.includes("MAX_PUBLIC_DATA_ENTRIES"));
+  assert.ok(sw.includes("networkFirstShell"));
   assert.ok(sw.includes("self.skipWaiting()"));
   assert.ok(sw.includes("self.clients.claim()"));
+  assert.ok(router.includes('import { NepaliTools } from "./features/nepali-tools/NepaliTools"'),"offline typing adapter must ship in the app shell");
+  assert.equal(router.includes("const NepaliTools=lazy("),false,"offline typing adapter must not depend on an uncached lazy chunk");
 });
 
 test("connected Worker normalizes route SEO for SPA and standalone HTML",()=>{
