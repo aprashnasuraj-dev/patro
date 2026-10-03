@@ -41,14 +41,19 @@ test("new Aafnai UI preserves all 29 canonical public tools without advertising 
   }
 });
 
-test("29 canonical public tools stay discoverable through launcher and SEO config",()=>{
+test("29 canonical public tools stay SEO-discoverable while equivalent converter jobs stay consolidated in launcher",()=>{
   const launcher=read("src/components/FeatureLauncher.tsx");
   const seo=read("scripts/seo-config.mjs");
   assert.equal(CANONICAL_TOOL_ROUTES.length,29);
+  const consolidated=new Set(["/tools/bstoad","/tools/adtobs"]);
   for(const route of CANONICAL_TOOL_ROUTES){
-    assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`feature launcher lost ${route}`);
     assert.ok(seo.includes(`"${route}"`),`tool sitemap config lost ${route}`);
+    if(consolidated.has(route)) continue;
+    assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`feature launcher lost ${route}`);
   }
+  assert.ok(launcher.includes('href:"/convert"'),"combined BS ↔ AD converter must be visible in launcher");
+  assert.ok(launcher.includes("bs to ad")&&launcher.includes("ad to bs"),"combined converter must answer both directional launcher searches");
+  assert.ok(seo.includes('"/tools/bstoad"')&&seo.includes('"/tools/adtobs"'),"legacy directional URLs must remain indexable/backward-compatible");
   assert.equal(launcher.includes('href:"/developers"'),false,"developer API must not be advertised in launcher");
 });
 
