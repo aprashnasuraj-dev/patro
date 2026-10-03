@@ -36,9 +36,26 @@ test("Cloudflare Git deploy is direct Wrangler with one config source",async()=>
   assert.equal(pkg.cloudflare?.config,"wrangler.jsonc");
 });
 
-test("legacy Pages and deploy-wrapper artifacts are absent",async()=>{
-  const obsolete=["_routes.json","public/_routes.json","wrangler.toml","scripts/deploy-cloudflare.mjs"];
+test("legacy Pages, static redirect and deploy-wrapper artifacts are absent",async()=>{
+  const obsolete=[
+    "_routes.json",
+    "public/_routes.json",
+    "_redirects",
+    "public/_redirects",
+    "dist/_redirects",
+    "wrangler.toml",
+    "scripts/deploy-cloudflare.mjs"
+  ];
   for(const relative of obsolete){
     await assert.rejects(access(path.join(root,relative)),(error)=>error?.code==="ENOENT",`${relative} must not exist`);
   }
+});
+
+test("legacy public aliases are handled by Worker redirects instead of static asset rules",async()=>{
+  const worker=await read("worker/connected-entry.ts");
+  assert.match(worker,/const LEGACY_REDIRECTS/);
+  assert.match(worker,/"\/astro": "\/tools\/astro"/);
+  assert.match(worker,/"\/jyotish\/janma-patro": "\/jyotish\/china"/);
+  assert.match(worker,/"\/nepal-sambat": "\/nepal-sambat\/mandala"/);
+  assert.match(worker,/legacyRedirectResponse\(request\)/);
 });
