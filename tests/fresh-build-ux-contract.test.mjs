@@ -69,6 +69,17 @@ test("homepage includes date search and rotating On This Day without replacing c
   assert.ok(pages.includes("<MonthGrid"),"existing calendar grid must remain present");
 });
 
+test("root homepage cannot regress into the astronomical calendar",()=>{
+  const router=read("src/PatroRouter.tsx");
+  const main=read("src/main.tsx");
+  const home=read("src/components/HomeExperience.tsx");
+  assert.ok(router.includes('if(path==="/"||path==="/today")return <HomePage/>'),"root and /today must render the normal Patro homepage");
+  assert.ok(router.includes('if(path==="/tools/astro")return <AstroPage/>'),"astronomical calendar must stay isolated to /tools/astro");
+  assert.ok(router.includes('const AstroPage=lazy(()=>import("./App"))'),"astronomy should remain lazy-loaded as a feature, not the shell root");
+  assert.ok(main.includes("<PatroRouter />"),"the application shell must mount PatroRouter");
+  assert.ok(home.includes('["/tools/astro", "☾", "खगोलीय पात्रो", "Astronomical calendar"]'),"homepage may link to Astronomy but must not render it as the root page");
+});
+
 test("Notes expose English Nepali suggestion and voice input using the same local worker",()=>{
   const diary=read("src/components/MyDiary.tsx");
   const enhancer=read("src/components/NoteTypingEnhancer.tsx");
