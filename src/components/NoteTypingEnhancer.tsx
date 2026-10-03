@@ -20,16 +20,21 @@ export function NoteTypingEnhancer() {
       if (!(textarea instanceof HTMLTextAreaElement) || !textarea.closest(".mp-note-editor")) return;
       const buttons = suggestionButtons(textarea);
       if (!buttons.length) return;
-      const active = Math.max(0, buttons.findIndex((button) => button.classList.contains("is-active")));
+      const active = buttons.findIndex((button) => button.classList.contains("is-active"));
 
-      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      if (event.key === "ArrowDown") {
         event.preventDefault();
-        select(buttons, active + (event.key === "ArrowDown" ? 1 : -1));
+        select(buttons, active < 0 ? 0 : active + 1);
+        return;
+      }
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        select(buttons, active < 0 ? buttons.length - 1 : active - 1);
         return;
       }
       if (event.key === "Tab") {
         event.preventDefault();
-        (buttons[active] || buttons[0])?.click();
+        (buttons[active < 0 ? 0 : active] || buttons[0])?.click();
       }
     };
 
