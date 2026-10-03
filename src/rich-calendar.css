@@ -1,0 +1,66 @@
+.rh-calendar{overflow:hidden}
+.rh-grid{background:var(--ap-line)}
+.rh-cell{box-sizing:border-box;min-width:0;min-height:134px;padding:7px 7px 8px;display:flex;flex-direction:column;align-items:stretch;gap:3px;background:var(--ap-surface);isolation:isolate}
+.rh-cell.is-empty{min-height:134px}
+.rh-cell-top{display:flex;align-items:center;justify-content:space-between;gap:4px;min-width:0;min-height:16px;color:var(--ap-muted);font-size:.67rem;font-weight:700;line-height:1}
+.rh-ad-date,.rh-ns-date{display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rh-ad-date{color:color-mix(in srgb,var(--ap-muted) 88%,var(--ap-ink))}
+.rh-ns-date{text-align:right;color:var(--ap-green-ink)}
+.rh-cell-main{display:flex;align-items:center;justify-content:center;gap:5px;min-height:34px;margin-top:1px}
+.rh-cell-main strong{font:800 clamp(1.4rem,2.1vw,2rem)/1 var(--ap-display);letter-spacing:-.02em}
+.rh-weather{display:inline-grid;place-items:center;min-width:20px;height:20px;font-size:1rem;line-height:1;filter:saturate(.92)}
+.rh-weekday{display:block;text-align:center;font-size:.69rem;font-weight:800;color:var(--ap-muted);line-height:1.1}
+.rh-cell em{display:block!important;min-height:14px;margin:0!important;text-align:center;color:var(--ap-muted);font-size:.72rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rh-cell em.is-pending{opacity:.42}
+.rh-day-badges{display:grid;gap:2px;margin-top:auto;min-height:17px}
+.rh-day-badges>span{display:block;max-width:100%;padding:2px 4px;border-radius:5px;font-size:.64rem;font-weight:800;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.rh-day-badges .is-festival-badge{background:var(--ap-marigold-soft);color:var(--ap-marigold)}
+.rh-day-badges .is-holiday-badge{background:var(--ap-red-soft);color:var(--ap-red)}
+.rh-cell.is-holiday{background:color-mix(in srgb,var(--ap-red-soft) 20%,var(--ap-surface))}
+.rh-cell.is-holiday .rh-weekday{color:var(--ap-red)}
+.rh-cell.is-today{background:color-mix(in srgb,var(--ap-green-soft) 76%,var(--ap-surface));box-shadow:inset 0 0 0 2px var(--ap-green);z-index:1}
+.rh-cell.is-selected:not(.is-today){box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--ap-green) 52%,transparent);z-index:1}
+.rh-cell:hover,.rh-cell:focus-visible{z-index:2}
+
+@media(max-width:900px){
+ .rh-cell{min-height:124px;padding:6px 5px;gap:2px}
+ .rh-cell.is-empty{min-height:124px}
+ .rh-cell-top{font-size:.61rem}
+ .rh-cell-main{min-height:31px;gap:3px}
+ .rh-cell-main strong{font-size:1.5rem}
+ .rh-weather{min-width:17px;height:17px;font-size:.9rem}
+ .rh-weekday{font-size:.64rem}
+ .rh-cell em{font-size:.65rem}
+ .rh-day-badges>span{font-size:.59rem;padding:2px 3px}
+}
+
+@media(max-width:680px){
+ .rh-calendar{padding:12px 8px!important}
+ .rh-calendar .rh-card-head{padding:0 3px}
+ .rh-weekheads span{font-size:.69rem!important;padding:6px 1px!important}
+ .rh-cell{min-height:112px!important;padding:5px 3px 5px!important;gap:2px}
+ .rh-cell.is-empty{min-height:112px!important}
+ .rh-cell-top{font-size:.54rem;gap:2px;min-height:13px}
+ .rh-ad-date{max-width:47%}
+ .rh-ns-date{max-width:51%}
+ .rh-cell-main{min-height:28px;margin-top:0}
+ .rh-cell-main strong{font-size:1.32rem!important}
+ .rh-weather{min-width:15px;height:15px;font-size:.79rem}
+ .rh-weekday{font-size:.57rem}
+ .rh-cell em{display:block!important;min-height:12px;font-size:.57rem;line-height:1.05}
+ .rh-day-badges{min-height:16px;gap:1px}
+ .rh-day-badges>span{font-size:.53rem;line-height:1.05;padding:2px 2px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .rh-legend{gap:7px 11px!important}
+}
+
+@media(max-width:390px){
+ .rh-page{width:calc(100% - 8px)!important}
+ .rh-card.rh-calendar{border-radius:10px;padding-left:5px!important;padding-right:5px!important}
+ .rh-cell{min-height:108px!important;padding:4px 2px 4px!important}
+ .rh-cell.is-empty{min-height:108px!important}
+ .rh-cell-top{font-size:.5rem}
+ .rh-cell-main strong{font-size:1.22rem!important}
+ .rh-weather{font-size:.72rem;min-width:13px}
+ .rh-weekday,.rh-cell em{font-size:.53rem}
+ .rh-day-badges>span{font-size:.49rem}
+}
