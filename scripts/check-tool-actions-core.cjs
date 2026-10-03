@@ -66,10 +66,18 @@ async function exerciseNepaliTools(page, slug) {
       return `editor=${value.slice(0,30)}`;
     }
     const tab = frame.locator('button[data-mode="preeti-to-unicode"]');
+    await tab.evaluate(async (node) => {
+      const deadline = Date.now() + 10000;
+      while (typeof node.onclick !== "function" && Date.now() < deadline) {
+        await new Promise((resolve) => setTimeout(resolve, 50));
+      }
+      if (typeof node.onclick !== "function") throw new Error("Preeti converter tab handler did not mount");
+    });
     await tab.click();
+    await frame.locator("#converter-panel").waitFor({ state: "visible", timeout: 10000 });
+    if (await tab.getAttribute("aria-pressed") !== "true") fail(`${slug}: converter tab did not become active`);
     const source = frame.locator("#source");
     const output = frame.locator("#output");
-    await source.waitFor({ state: "visible", timeout: 10000 });
     await source.fill("g]kfn");
     await page.waitForTimeout(500);
     const value = await output.inputValue();
@@ -88,8 +96,12 @@ async function exerciseNepaliTools(page, slug) {
       return { value: editor.value, status: root.querySelector("#status")?.textContent || "" };
     }
     const tab = root.querySelector('button[data-mode="preeti-to-unicode"]');
+    const deadline = Date.now() + 10000;
+    while (tab && typeof tab.onclick !== "function" && Date.now() < deadline) await new Promise((resolve) => setTimeout(resolve, 50));
     tab?.click();
     await new Promise((resolve) => setTimeout(resolve, 60));
+    const panel = root.querySelector("#converter-panel");
+    if (!panel || panel.hidden || tab?.getAttribute("aria-pressed") !== "true") return { value: "", status: "converter mode did not activate" };
     const source = root.querySelector("#source");
     const output = root.querySelector("#output");
     source.value = "g]kfn";
