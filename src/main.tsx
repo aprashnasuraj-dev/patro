@@ -5,7 +5,9 @@ import { AppChrome } from "./components/AppChrome";
 import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { HomeExperience } from "./components/HomeExperience";
+import { JyotishAssistant } from "./components/JyotishAssistant";
 import { MobilePrimaryNav } from "./components/MobilePrimaryNav";
+import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -35,6 +37,7 @@ import "./mobile-primary-nav.css";
 import "./calendar-cell-enhancements.css";
 import "./fresh-build-surface.css";
 import "./final-polish.css";
+import "./jyotish-assistant.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
@@ -53,6 +56,8 @@ createRoot(root).render(
       <FeatureLauncher />
       <GlobalMediaPlayer />
       <MobilePrimaryNav />
+      <JyotishAssistant />
+      <NoteTypingEnhancer />
     </MediaProvider>
   </StrictMode>
 );
