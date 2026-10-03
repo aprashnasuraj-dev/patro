@@ -57,11 +57,9 @@ test("29 canonical public tools stay SEO-discoverable while equivalent converter
   assert.equal(launcher.includes('href:"/developers"'),false,"developer API must not be advertised in launcher");
 });
 
-test("critical product surfaces and all Community Suite calendars are visible from new UI",()=>{
+test("critical product surfaces and all Community Suite calendars are visible from the authoritative shell",()=>{
   const pages=read("src/AafnaiPages.tsx");
   const chrome=read("src/components/AppChrome.tsx");
-  const mobile=read("src/components/MobilePrimaryNav.tsx");
-  const home=read("src/components/HomeExperience.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
   const router=read("src/PatroRouter.tsx");
   for(const route of ["/time-machine","/on-this-day","/tools/astro"]){
@@ -69,11 +67,12 @@ test("critical product surfaces and all Community Suite calendars are visible fr
     assert.ok(router.includes(route),`router lost ${route}`);
   }
   for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"]){
-    assert.ok(chrome.includes(route)||home.includes(route)||mobile.includes(route),`global UI lost ${route}`);
+    assert.ok(chrome.includes(route),`authoritative app shell lost ${route}`);
     assert.ok(launcher.includes(`href:\"${route}\"`)||launcher.includes(`href:"${route}"`),`launcher lost ${route}`);
   }
   for(const route of ["/samachar","/fm","/tv"])assert.ok(router.includes(`"${route}"`),`router lost ${route}`);
   assert.ok(chrome.includes("FEATURED_EXPERIENCES"),"Tools hub lost premium featured-experience rail");
+  assert.equal((chrome.match(/className="ap-tabbar"/g)||[]).length,1,"authoritative shell must expose exactly one mobile navigation bar");
 });
 
 test("every registered Patro tool slug resolves to a real component and no coming-soon placeholder remains",()=>{
@@ -143,7 +142,7 @@ test("service worker prewarms critical new UI surfaces and offline language bund
     assert.ok(sw.includes(`\"${route}\"`)||sw.includes(`"${route}"`),`offline shell lost ${route}`);
   }
   assert.ok(sw.includes('key.startsWith("aafnai-pwa-")'),"old Aafnai cache generations must be purged");
-  assert.ok(sw.includes("networkFirst(event.request"),"navigation must stay network-first after migrations");
+  assert.ok(sw.includes("networkFirstShell(event.request"),"navigation must stay network-first while falling back to the cached shell offline");
   assert.ok(sw.includes("WARM_LANGUAGE_TOOLS")&&sw.includes("/nepali-tools/worker.mjs"),"local language bundle must be explicitly warmable");
 });
 
