@@ -1,3 +1,4 @@
+import "./release-data-guard.mjs";
 import { access } from "node:fs/promises";
 import { resolve } from "node:path";
 
@@ -10,4 +11,4 @@ try {
   throw new Error("cloudflare emit: dist/index.html is missing; the main SPA must build at the site root");
 }
 
-console.log("Cloudflare root SPA shell verified at dist/index.html.");
+console.log("Cloudflare root SPA shell verified at dist/index.html; deploy artifact guard passed.");
