@@ -231,7 +231,7 @@ export function JyotishAssistant() {
       if (controller.signal.aborted) return;
       setMessages((current) => current.filter((row) => row.id !== assistantId));
       setError(cause instanceof Error && cause.message === "all_providers_unavailable"
-        ? "ज्योतिष AI अहिले उपलब्ध छैन। Cloudflare मा AI secret जोडिएपछि पुनः प्रयास गर्नुहोस्।"
+        ? "ज्योतिष AI अहिले उपलब्ध छैन। केही बेरपछि पुनः प्रयास गर्नुहोस्।"
         : "ज्योतिष AI बाट उत्तर लिन सकिएन। फेरि प्रयास गर्नुहोस्।");
     } finally {
       if (activeRequest.current === controller) activeRequest.current = null;
