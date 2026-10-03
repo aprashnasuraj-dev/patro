@@ -36,8 +36,9 @@ test("private routes and unknown APIs are never persisted by the service worker"
   assert.match(sw, /no-store/);
   assert.match(sw, /private/);
   assert.match(sw, /event\.request\.headers\.has\("authorization"\)/);
-  assert.match(sw, /url\.pathname\.startsWith\("\/api\/"\).*return/s);
-  assert.doesNotMatch(sw, /url\.pathname\.startsWith\("\/api\/"\).*respondWith\(networkFirst/s);
+  const apiGate = sw.split("\n").find((line) => line.includes('url.pathname.startsWith("/api/")')) || "";
+  assert.match(apiGate, /return;/);
+  assert.doesNotMatch(apiGate, /respondWith/);
 });
 
 test("only narrow public calendar requests qualify for offline data caching", () => {
