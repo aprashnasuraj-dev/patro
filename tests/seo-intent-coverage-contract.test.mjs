@@ -65,8 +65,9 @@ test("priority Nepali, English and Romanized searches resolve to the right canon
  }
 });
 
-test("AI-readable query maps and well-known discovery metadata are emitted",()=>{
+test("AI-readable query maps and discovery metadata expose the same canonical coverage",()=>{
  for(const path of ["public/search-intents.txt","public/.well-known/search-intents.json"])assert.ok(existsSync(new URL("../"+path,import.meta.url)),path);
+ const payload=json("public/search-intents.json");
  const text=read("public/search-intents.txt");
  assert.ok(text.includes("aaja kati gate -> https://aafnaipatro.com/today"));
  assert.ok(text.includes("nepali typing -> https://aafnaipatro.com/tools/nepali-typing"));
@@ -74,15 +75,45 @@ test("AI-readable query maps and well-known discovery metadata are emitted",()=>
  assert.ok(well.query_count>=3000);
  assert.equal(well.canonical_tool_count,29);
  assert.equal(well.search_map,"https://aafnaipatro.com/search-intents.json");
+ const manifest=json("public/seo-manifest.json");
+ assert.equal(manifest.search_intent_count,payload.query_count);
+ assert.equal(manifest.search_intent_target,3000);
+ assert.ok(manifest.minimum_tool_intents>=50);
+ const agents=json("public/.well-known/agents.json");
+ assert.equal(agents.search_intents.count,payload.query_count);
+ assert.equal(agents.search_intents.json,"https://aafnaipatro.com/search-intents.json");
+ const llms=read("public/llms.txt"),full=read("public/llms-full.txt"),ai=read("public/ai.txt");
+ assert.ok(llms.includes("Search and AI query coverage")&&llms.includes("search-intents.json"));
+ assert.ok(full.includes("Search and conversational intent aliases"));
+ assert.ok(full.includes("aaja kati gate -> https://aafnaipatro.com/today"));
+ assert.ok(full.includes("nepali typing -> https://aafnaipatro.com/tools/nepali-typing"));
+ assert.ok(ai.includes(`Search-intent coverage: ${payload.query_count}`));
 });
 
-test("build pipeline regenerates query coverage before SEO assets",()=>{
+test("crawlable prerender exposes related-search context and all 29 tool links",()=>{
+ const tools=read("dist/tools/index.html");
+ const typing=read("dist/tools/nepali-typing/index.html");
+ assert.ok(tools.includes("AAFNAI_INTENT_ENHANCEMENT_START"));
+ assert.ok(tools.includes("seo-tool-directory"));
+ assert.ok(tools.includes("सबै 29 नेपाली टुल्स"));
+ for(const route of canonicalTools)assert.ok(tools.includes(`href=\"${route}\"`),`crawlable tool directory missing ${route}`);
+ assert.ok(typing.includes("seo-related-searches"));
+ assert.ok(typing.includes("nepali typing"));
+ assert.ok(typing.includes('href="/search-intents.json"'));
+});
+
+test("build pipeline regenerates and enriches query coverage before release",()=>{
  const pkg=json("package.json");
  assert.equal(pkg.scripts["seo:intents"],"node scripts/generate-search-intents.mjs");
- assert.ok(pkg.scripts.build.includes("npm run seo:intents && node scripts/generate-seo.mjs"));
+ assert.ok(pkg.scripts.build.includes("npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs"));
+ assert.ok(pkg.scripts.build.includes("node scripts/enhance-prerender-intents.mjs"));
  assert.ok(pkg.scripts["seo:generate"].startsWith("npm run seo:intents"));
  const generator=read("scripts/generate-search-intents.mjs");
  assert.ok(generator.includes("const TARGET = 3000"));
  assert.ok(generator.includes("minimumToolCoverage < 50"));
  assert.ok(generator.includes("thin doorway pages"));
+ const discovery=read("scripts/enhance-seo-discovery.mjs");
+ assert.ok(discovery.includes("Search and conversational intent aliases"));
+ const prerender=read("scripts/enhance-prerender-intents.mjs");
+ assert.ok(prerender.includes("seo-tool-directory")&&prerender.includes("seo-related-searches"));
 });
