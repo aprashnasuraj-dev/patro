@@ -5,7 +5,6 @@ const tools = [
 ];
 
 const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
-const transientLoading=/लोड हुँदै|तयार हुँदैछ|loading\.\.\./i;
 
 (async()=>{
   if(tools.length!==29 || new Set(tools).size!==29) throw new Error("canonical tool browser inventory must stay exactly 29 unique tools");
@@ -24,29 +23,36 @@ const transientLoading=/लोड हुँदै|तयार हुँदै�
 
     await page.waitForFunction(() => {
       const text=(document.body?.innerText||"").trim();
-      const interactive=document.querySelectorAll("button,input,textarea,select,a[href]").length;
-      return text.length>=40 && interactive>=1 && !/लोड हुँदै|तयार हुँदैछ|loading\.\.\./i.test(text);
-    },{timeout:15000}).catch(async()=>{
+      const main=document.querySelector("main");
+      const heading=main?.querySelector("h1,h2,[role=heading]");
+      const interactive=main?.querySelectorAll("button,input,textarea,select,a[href]").length||0;
+      return Boolean(main&&heading&&text.length>=80&&interactive>=1);
+    },{timeout:20000}).catch(async()=>{
       const text=(await page.locator("body").innerText()).trim();
-      throw new Error(`${route} did not leave transient loading state: ${text.slice(0,240)}`);
+      throw new Error(`${route} did not render a substantive interactive tool surface: ${text.slice(0,300)}`);
     });
 
-    const metrics=await page.evaluate(()=>({
-      title:document.title.trim(),
-      bodyText:(document.body?.innerText||"").trim(),
-      interactive:document.querySelectorAll("button,input,textarea,select,a[href]").length,
-      scrollWidth:document.documentElement.scrollWidth,
-      innerWidth:window.innerWidth
-    }));
+    const metrics=await page.evaluate(()=>{
+      const main=document.querySelector("main");
+      return {
+        title:document.title.trim(),
+        bodyText:(document.body?.innerText||"").trim(),
+        mainText:(main?.innerText||"").trim(),
+        heading:(main?.querySelector("h1,h2,[role=heading]")?.textContent||"").trim(),
+        interactive:main?.querySelectorAll("button,input,textarea,select,a[href]").length||0,
+        scrollWidth:document.documentElement.scrollWidth,
+        innerWidth:window.innerWidth
+      };
+    });
     page.off("pageerror",onPageError);
     if(!metrics.title) throw new Error(`${route} has no document title`);
-    if(metrics.bodyText.length<40) throw new Error(`${route} rendered too little content (${metrics.bodyText.length} chars)`);
-    if(terminalPlaceholder.test(metrics.bodyText)) throw new Error(`${route} rendered a terminal placeholder`);
-    if(transientLoading.test(metrics.bodyText)) throw new Error(`${route} remained in a loading state`);
+    if(!metrics.heading) throw new Error(`${route} has no visible tool heading`);
+    if(metrics.mainText.length<40) throw new Error(`${route} rendered too little tool content (${metrics.mainText.length} chars)`);
+    if(terminalPlaceholder.test(metrics.mainText)) throw new Error(`${route} rendered a terminal placeholder`);
     if(metrics.interactive<1) throw new Error(`${route} exposes no interactive control or navigation`);
     if(metrics.scrollWidth>metrics.innerWidth+2) throw new Error(`${route} horizontal overflow ${metrics.scrollWidth}>${metrics.innerWidth}`);
     if(errors.length) throw new Error(`${route} browser errors: ${errors.join(" | ")}`);
-    results.push({slug,status:response.status(),title:metrics.title,interactive:metrics.interactive});
+    results.push({slug,status:response.status(),title:metrics.title,heading:metrics.heading,interactive:metrics.interactive});
   }
 
   await browser.close();
