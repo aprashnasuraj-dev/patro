@@ -19,6 +19,7 @@ const files = [
   "src/community/CommunityPreferences.tsx",
   "public/nepali-tools/index.html",
   "public/nepali-tools/app.mjs",
+  "seo/search-intents.json",
   "scripts/prerender-seo.mjs"
 ];
 
@@ -33,11 +34,17 @@ const forbidden = [
   ["source confidence", /source confidence/i],
   ["provisional future table", /provisional future table/i],
   ["validated archive range", /validated archive range/i],
+  ["validated calendar engine", /validated (?:Patro )?calendar engine/i],
   ["server fallback", /server fallback/i],
   ["Cloudflare D1 in consumer UI", /Cloudflare D1/i],
+  ["D1 implementation copy", /D1 (?:seed|publication|table|critical)/i],
+  ["native bundle implementation copy", /native\/bundle/i],
+  ["critical-path implementation copy", /critical path/i],
   ["Supabase in consumer UI", /Supabase(?: dictionary| delivery| backend| runtime)?/i],
   ["this build", /this build/i],
   ["canonical dataset", /canonical dataset/i],
+  ["canonical inventory", /canonical public inventory/i],
+  ["browser test implementation copy", /browser (?:checks|route checks)/i],
   ["client-only", /client-only/i],
   ["directory fallback banner", /Live directory fallback active/i],
   ["source-verified snapshot", /source-verified snapshot/i],
