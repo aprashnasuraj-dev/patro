@@ -17,6 +17,8 @@ const files = [
   "src/jyotish/JanmaPatroSuite.tsx",
   "src/community/CommunityHub.tsx",
   "src/community/CommunityPreferences.tsx",
+  "public/nepali-tools/index.html",
+  "public/nepali-tools/app.mjs",
   "scripts/prerender-seo.mjs"
 ];
 
@@ -33,6 +35,7 @@ const forbidden = [
   ["validated archive range", /validated archive range/i],
   ["server fallback", /server fallback/i],
   ["Cloudflare D1 in consumer UI", /Cloudflare D1/i],
+  ["Supabase in consumer UI", /Supabase(?: dictionary| delivery| backend| runtime)?/i],
   ["this build", /this build/i],
   ["canonical dataset", /canonical dataset/i],
   ["client-only", /client-only/i],
@@ -40,9 +43,11 @@ const forbidden = [
   ["source-verified snapshot", /source-verified snapshot/i],
   ["crawlable-text implementation copy", /crawlable text/i],
   ["browser-worker implementation copy", /browser Worker/i],
+  ["worker failure implementation copy", /Worker failed|conversion worker/i],
   ["diagnostic-report implementation copy", /diagnostic report/i],
   ["Cloud sync implementation copy", /Cloud sync/i],
-  ["Google login implementation copy", /Google login/i]
+  ["Google login implementation copy", /Google login/i],
+  ["data provenance implementation link", />Data provenance</i]
 ];
 
 const failures = [];
