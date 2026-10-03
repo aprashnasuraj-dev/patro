@@ -1,3 +1,4 @@
+const { readFileSync } = require("node:fs");
 const { chromium } = require("playwright");
 
 const tools = [
@@ -8,11 +9,48 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
 
 (async()=>{
   if(tools.length!==29 || new Set(tools).size!==29) throw new Error("canonical tool browser inventory must stay exactly 29 unique tools");
+  const rawHome=readFileSync("dist/index.html","utf8");
+  if(!rawHome.includes('class="seo-prerender ap-prerender-home"')) throw new Error("homepage first paint must use the branded calendar-first prerender shell");
+  if(rawHome.includes("सम्बन्धित खोजहरू · Related searches")) throw new Error("homepage first paint must not expose the raw related-search corpus");
+  if(!rawHome.includes("BS · AD · नेपाल संवत् · तिथि · चाडपर्व · बिदा")) throw new Error("homepage first paint must explain the real calendar information hierarchy");
+
   const browser=await chromium.launch({headless:true});
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:"reduce"});
   const page=await context.newPage();
-  const results=[];
 
+  const homeErrors=[];
+  const onHomeError=(error)=>homeErrors.push(String(error));
+  page.on("pageerror",onHomeError);
+  const homeResponse=await page.goto("http://127.0.0.1:4173/",{waitUntil:"domcontentloaded",timeout:30000});
+  if(!homeResponse || !homeResponse.ok()) throw new Error(`homepage HTTP ${homeResponse?.status() ?? "no-response"}`);
+  await page.waitForSelector(".rh-page .rh-grid .rh-cell:not(.is-empty)",{state:"visible",timeout:20000});
+  await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
+  const home=await page.evaluate(()=>{
+    const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];
+    const sample=cells.find((cell)=>cell.querySelector("strong"));
+    return {
+      rawSeoVisible:Boolean(document.querySelector(".seo-prerender")),
+      cellCount:cells.length,
+      hasAd:Boolean(sample?.querySelector(".rh-ad-date")),
+      hasNs:Boolean(sample?.querySelector(".rh-ns-date")),
+      hasBs:Boolean(sample?.querySelector(".rh-cell-main strong")),
+      hasWeekday:Boolean(sample?.querySelector(".rh-weekday")),
+      hasTithiSlot:Boolean(sample?.querySelector("em")),
+      hasEventSlot:Boolean(sample?.querySelector(".rh-day-badges")),
+      bodyText:(document.body?.innerText||"").trim(),
+      scrollWidth:document.documentElement.scrollWidth,
+      innerWidth:window.innerWidth,
+    };
+  });
+  page.off("pageerror",onHomeError);
+  if(home.rawSeoVisible) throw new Error("SEO prerender remained visible after the React homepage mounted");
+  if(home.cellCount<28) throw new Error(`homepage calendar rendered too few day cells: ${home.cellCount}`);
+  for(const [key,value] of Object.entries({AD:home.hasAd,NS:home.hasNs,BS:home.hasBs,weekday:home.hasWeekday,tithi:home.hasTithiSlot,event:home.hasEventSlot})) if(!value) throw new Error(`homepage rich day tile missing ${key} slot`);
+  if(/आजको पात्रो लोड हुन सकेन|आजको पात्रो तयार हुँदैछ/.test(home.bodyText)) throw new Error("homepage regressed to a terminal calendar failure/loading state");
+  if(home.scrollWidth>home.innerWidth+2) throw new Error(`homepage horizontal overflow ${home.scrollWidth}>${home.innerWidth}`);
+  if(homeErrors.length) throw new Error(`homepage browser errors: ${homeErrors.join(" | ")}`);
+
+  const results=[];
   for(const slug of tools){
     const route=`/tools/${slug}`;
     const errors=[];
@@ -75,5 +113,5 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
   }
 
   await browser.close();
-  console.log(JSON.stringify({ok:true,count:results.length,tools:results},null,2));
+  console.log(JSON.stringify({ok:true,homepage:{cells:home.cellCount,richTiles:true},count:results.length,tools:results},null,2));
 })().catch(error=>{console.error(error);process.exit(1);});
