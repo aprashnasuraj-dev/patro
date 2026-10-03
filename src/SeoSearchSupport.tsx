@@ -18,7 +18,14 @@ const RELATED:[string,string][]=[
   ["/tools","सबै tools"]
 ];
 
+function isPrimaryCalendarSurface(path:string){
+  return path==="/"||path==="/today"||path.startsWith("/calendar/");
+}
+
 export function SeoSearchSupport({path}:{path:string}){
+  // Search-intent material is generated for discovery, but the primary calendar must remain
+  // a clean product surface. Its visible FAQ/SEO copy lives inside ReferenceHomePage instead.
+  if(isPrimaryCalendarSurface(path))return null;
   const meta=pages[path];
   if(!meta)return null;
   const aliases=(meta.aliases||[]).slice(0,5);
