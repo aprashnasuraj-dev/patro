@@ -62,7 +62,10 @@ test("missing tools are implemented rather than placeholder cards",()=>{
   for(const name of ["DateCalculator","AgeCalculator","WorldClock","ForexTool","GoldTool","EmiCalculator","VatPercent","TraditionalUnits","AmountWords"]){
     assert.ok(tools.includes(`function ${name}`),`missing implementation: ${name}`);
   }
-  assert.match(tools,/no verified live gold\/silver feed/i);
+  const gold=tools.slice(tools.indexOf("function GoldTool"),tools.indexOf("function EmiCalculator"));
+  assert.ok(gold.includes('const [rate,setRate]=useState("")'),"gold calculator must require the user to supply the current market rate rather than inventing one");
+  assert.ok(gold.includes("Rate per tola")&&gold.includes("making")&&gold.includes("tax"),"gold calculator must retain rate, weight, making-charge and tax inputs");
+  assert.equal(gold.includes("fetch("),false,"gold calculator must not pretend to have a live feed when none is wired");
   assert.ok(tools.includes("/api/v1/markets/latest?kind=forex"));
   assert.ok(tools.includes("/data/market/forex-latest.json"));
 });
