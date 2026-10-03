@@ -6,6 +6,7 @@ import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { JyotishAssistant } from "./components/JyotishAssistant";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
+import { PwaInstallExperience } from "./components/PwaInstallExperience";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -49,6 +50,7 @@ createRoot(root).render(
       <AppChrome>
         <PatroRouter />
       </AppChrome>
+      <PwaInstallExperience />
       <CalendarCellEnhancer />
       <FeatureLauncher />
       <GlobalMediaPlayer />

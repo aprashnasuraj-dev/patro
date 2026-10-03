@@ -13,7 +13,7 @@ const shell=`<main class="seo-prerender ap-prerender-home" data-seo-prerender="t
     <div class="ap-prerender-actions"><a href="/rashifal">आजको राशिफल</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools/nepali-typing">नेपाली टाइपिङ</a><a href="/me">आफ्नै ठाउँ</a></div>
   </section>
   <section class="ap-prerender-calendar" aria-label="नेपाली पात्रो महिना">
-    <header><span>नेपाली पात्रो</span><h2>यो महिना</h2><p>वि.सं. मिति · ई.सं. मिति · नेपाल संवत् · तिथि · चाडपर्व · बिदा</p></header>
+    <header><span>नेपाली पात्रो</span><h2>यो महिना</h2><p>BS · AD · नेपाल संवत् · तिथि · चाडपर्व · बिदा</p></header>
     <div class="ap-prerender-week"><span>आइत</span><span>सोम</span><span>मंगल</span><span>बुध</span><span>बिही</span><span>शुक्र</span><span>शनि</span></div>
   </section>
 </main>`;
