@@ -8,12 +8,12 @@ import { SeoSearchSupport } from "./SeoSearchSupport";
 import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
+import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
 const UtilitySuite=lazy(()=>import("./utilities/UtilitySuite").then(m=>({default:m.UtilitySuite})));
-const NepaliTools=lazy(()=>import("./features/nepali-tools/NepaliTools").then(m=>({default:m.NepaliTools})));
 const MyDiary=lazy(()=>import("./components/MyDiary").then(m=>({default:m.MyDiary})));
 const TrustPage=lazy(()=>import("./components/TrustPages").then(m=>({default:m.TrustPage})));
 const FamilyPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.FamilyPage})));
