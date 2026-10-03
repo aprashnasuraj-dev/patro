@@ -12,19 +12,21 @@ function fail(message) { throw new Error(message); }
   await noJs.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
   const paint = await noJs.evaluate(() => {
     const shell = document.querySelector(".ap-prerender-home");
+    const hero = document.querySelector(".ap-prerender-hero");
     const calendar = document.querySelector(".ap-prerender-calendar");
     const copy = document.querySelector(".ap-prerender-copy");
     const legacy = document.querySelector("main.seo-prerender:not(.ap-prerender-home) .seo-related-searches");
     const rect = (node) => node ? node.getBoundingClientRect() : null;
     return {
-      shell: Boolean(shell), calendar: rect(calendar), copy: rect(copy), legacy: Boolean(legacy),
+      shell: Boolean(shell), hero: rect(hero), calendar: rect(calendar), copy: rect(copy), legacy: Boolean(legacy),
       overflow: document.documentElement.scrollWidth - innerWidth,
       firstScreen: document.elementFromPoint(187, 760)?.closest(".ap-prerender-copy") ? "copy" : "product"
     };
   });
-  if (!paint.shell || !paint.calendar || !paint.copy) fail("homepage prerender is missing branded calendar-first shell");
+  if (!paint.shell || !paint.hero || !paint.calendar) fail("homepage prerender is missing branded calendar-first shell");
   if (paint.legacy) fail("legacy raw SEO related-search block leaked into homepage first paint");
-  if (paint.calendar.top >= paint.copy.top) fail("SEO copy appears before the prerender calendar");
+  if (paint.copy && paint.calendar.top >= paint.copy.top) fail("SEO copy appears before the prerender calendar");
+  if (paint.calendar.top > 760) fail(`prerender calendar starts too low on 375px viewport (${Math.round(paint.calendar.top)}px)`);
   if (paint.overflow > 1) fail(`homepage prerender overflows 375px viewport by ${paint.overflow}px`);
   await firstPaint.close();
 
