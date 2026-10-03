@@ -1,4 +1,5 @@
 const { readFileSync } = require("node:fs");
+const { spawnSync } = require("node:child_process");
 const { chromium } = require("playwright");
 
 const tools = [
@@ -113,5 +114,9 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
   }
 
   await browser.close();
-  console.log(JSON.stringify({ok:true,homepage:{cells:home.cellCount,richTiles:true},count:results.length,tools:results},null,2));
+
+  const offline=spawnSync(process.execPath,["scripts/check-offline-pwa.cjs"],{cwd:process.cwd(),env:process.env,stdio:"inherit"});
+  if(offline.status!==0)throw new Error(`secure offline PWA browser check failed with status ${offline.status}`);
+
+  console.log(JSON.stringify({ok:true,homepage:{cells:home.cellCount,richTiles:true},offlinePwa:true,count:results.length,tools:results},null,2));
 })().catch(error=>{console.error(error);process.exit(1);});
