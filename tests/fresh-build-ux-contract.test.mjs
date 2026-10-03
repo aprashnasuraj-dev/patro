@@ -23,6 +23,8 @@ test("Nepali typing and Preeti converter use the packaged offline bundle",()=>{
   assert.ok(worker.includes("words.length!==34571"),"full lexicon validation must remain locked");
   assert.ok(app.includes("processing stays on this device"));
   assert.ok(app.includes("preeti-to-unicode")&&app.includes("unicode-to-preeti"));
+  assert.ok(app.includes("e.key==='Tab'&&items.length&&commit(active,'')"),"Tab must accept the active Nepali word suggestion");
+  assert.ok(app.includes("ArrowDown")&&app.includes("ArrowUp"),"keyboard suggestion navigation must remain available");
 });
 
 test("PWA install metadata and homepage install experience are present",()=>{
@@ -69,6 +71,8 @@ test("homepage includes date search and rotating On This Day without replacing c
 
 test("Notes expose English Nepali suggestion and voice input using the same local worker",()=>{
   const diary=read("src/components/MyDiary.tsx");
+  const enhancer=read("src/components/NoteTypingEnhancer.tsx");
+  const main=read("src/main.tsx");
   const storage=read("src/patro-tools-integration/storage.ts");
   assert.ok(storage.includes('inputMode: "english" | "nepali" | "voice"'));
   assert.ok(diary.includes('new Worker("/nepali-tools/worker.mjs"'));
@@ -76,6 +80,38 @@ test("Notes expose English Nepali suggestion and voice input using the same loca
   assert.ok(diary.includes("SpeechRecognition")&&diary.includes("webkitSpeechRecognition"));
   assert.ok(diary.includes("English typing")&&diary.includes("नेपाली typing")&&diary.includes("Voice typing"));
   assert.ok(diary.includes("life.notes"));
+  assert.ok(enhancer.includes('event.key === "Tab"')&&enhancer.includes("ArrowDown")&&enhancer.includes("ArrowUp"),"Notes must support one-key suggestion completion and navigation");
+  assert.ok(main.includes("<NoteTypingEnhancer />"),"Notes keyboard enhancer must be mounted");
+});
+
+test("visible tool surfaces consolidate directional date conversion without killing legacy routes",()=>{
+  const pages=read("src/AafnaiPages.tsx");
+  const launcher=read("src/components/FeatureLauncher.tsx");
+  const css=read("src/jyotish-assistant.css");
+  const router=read("src/PatroRouter.tsx");
+  assert.ok(pages.includes('href:"/convert"'));
+  assert.ok(launcher.includes('href:"/convert"'));
+  assert.ok(css.includes('.ap-tools-page .ap-tool-card[href="/tools/bstoad"]'));
+  assert.ok(css.includes('.ap-tools-page .ap-tool-card[href="/tools/adtobs"]'));
+  assert.ok(css.includes('.ap-launcher-item[href="/tools/bstoad"]'));
+  assert.ok(css.includes('.ap-launcher-item[href="/tools/adtobs"]'));
+  assert.ok(router.includes('path.match(/^\\/tools\\/([^/]+)$/)')||router.includes('const tool=path.match(/^\\/tools\\/([^/]+)$/)'),"legacy tool deep links must remain routable");
+});
+
+test("China-aware Jyotish AI is restored on the React shell and Cloudflare native handler",()=>{
+  const assistant=read("src/components/JyotishAssistant.tsx");
+  const main=read("src/main.tsx");
+  const worker=read("worker/jyotish.ts");
+  const entry=read("worker/index.ts");
+  assert.ok(main.includes("<JyotishAssistant />"),"Jyotish assistant must be mounted globally");
+  assert.ok(assistant.includes('fetch("/api/v1/jyotish-chat"'));
+  assert.ok(assistant.includes("china_data: china"),"chat request must include available China context");
+  assert.ok(assistant.includes(".patro-report")&&assistant.includes(".chart-summary article"),"assistant must reconnect to rendered China output");
+  assert.ok(entry.includes('path === "/api/v1/jyotish-chat"'));
+  assert.ok(worker.includes("Groq_API")&&worker.includes("nvidia_api"),"Cloudflare secret aliases must be retained");
+  assert.ok(worker.includes("NVIDIA_NIM_API_KEY")&&worker.includes("GROQ_API_KEY"),"standard provider secret aliases must be retained");
+  assert.ok(worker.includes("china_data")&&worker.includes("CHINA_CONTEXT"),"backend must preserve personalized China mode");
+  assert.ok(worker.includes("integrate.api.nvidia.com")&&worker.includes("api.groq.com"),"Groq/NVIDIA provider routing must remain present");
 });
 
 test("developer API is not advertised in the frontend launcher",()=>{
