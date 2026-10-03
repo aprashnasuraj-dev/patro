@@ -15,10 +15,10 @@ async function resolveBsDate(year:number,month:number,day:number){
   start.setUTCDate(start.getUTCDate()-31);end.setUTCDate(end.getUTCDate()+31);
   const query=new URLSearchParams({start:start.toISOString().slice(0,10),end:end.toISOString().slice(0,10)});
   const response=await fetch("/api/v1/sync?"+query.toString(),{headers:{Accept:"application/json"}});
-  if(!response.ok)throw new Error("Unable to convert the BS birth date.");
+  if(!response.ok)throw new Error("वि.सं. जन्ममिति रूपान्तरण अहिले हुन सकेन। फेरि प्रयास गर्नुहोस्।");
   const payload=await response.json() as {days?:Array<{query_date:string;calendars:{bikram_sambat_detail:{year:number;month:number;day:number}}}>};
   const hit=payload.days?.find((x)=>{const b=x.calendars.bikram_sambat_detail;return b.year===year&&b.month===month&&b.day===day;});
-  if(!hit)throw new Error("The selected BS date is outside the available calendar archive.");
+  if(!hit)throw new Error("छानिएको वि.सं. मिति उपलब्ध पात्रो दायराभन्दा बाहिर छ।");
   return hit.query_date;
 }
 function dateText(date:Date){return date.toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"2-digit",timeZone:"UTC"});}
@@ -29,14 +29,14 @@ function ProfileForm({value,onChange,prefix}:{value:BirthInput;onChange:(x:Birth
   const [calendar,setCalendar]=useState<"AD"|"BS">("AD"),[bs,setBs]=useState({year:2051,month:9,day:17}),[busy,setBusy]=useState(false),[localError,setLocalError]=useState<string|null>(null);
   const set=<K extends keyof BirthInput>(key:K,val:BirthInput[K])=>onChange({...value,[key]:val});
   const chooseDistrict=(name:string)=>{const row=DISTRICTS.find((x)=>x[0]===name);if(row)onChange({...value,location:row[0],lat:row[1],lng:row[2]});};
-  const applyBs=async()=>{setBusy(true);setLocalError(null);try{set("date",await resolveBsDate(bs.year,bs.month,bs.day));}catch(e){setLocalError(e instanceof Error?e.message:"BS conversion failed.");}finally{setBusy(false);}};
+  const applyBs=async()=>{setBusy(true);setLocalError(null);try{set("date",await resolveBsDate(bs.year,bs.month,bs.day));}catch(e){setLocalError(e instanceof Error?e.message:"मिति रूपान्तरण हुन सकेन।");}finally{setBusy(false);}};
   return <fieldset className="birth-form"><legend>{prefix}</legend>
-    <label>Name<input value={value.name} onChange={(e)=>set("name",e.target.value)} placeholder="नाम / Name"/></label>
-    <div className="form-row"><label>Calendar<select value={calendar} onChange={(e)=>setCalendar(e.target.value as "AD"|"BS")}><option>AD</option><option>BS</option></select></label>
-      {calendar==="AD"?<label>Birth date<input type="date" value={value.date} onChange={(e)=>set("date",e.target.value)}/></label>:<div className="bs-date-fields"><label>BS year<input type="number" value={bs.year} onChange={(e)=>setBs({...bs,year:Number(e.target.value)})}/></label><label>Month<input type="number" min="1" max="12" value={bs.month} onChange={(e)=>setBs({...bs,month:Number(e.target.value)})}/></label><label>Day<input type="number" min="1" max="32" value={bs.day} onChange={(e)=>setBs({...bs,day:Number(e.target.value)})}/></label><button type="button" onClick={applyBs} disabled={busy}>{busy?"Converting…":"Use BS date"}</button></div>}
-      <label>Exact time<input type="time" value={value.time} onChange={(e)=>set("time",e.target.value)}/></label></div>
+    <label>नाम · Name<input value={value.name} onChange={(e)=>set("name",e.target.value)} placeholder="नाम / Name"/></label>
+    <div className="form-row"><label>पात्रो · Calendar<select value={calendar} onChange={(e)=>setCalendar(e.target.value as "AD"|"BS")}><option>AD</option><option>BS</option></select></label>
+      {calendar==="AD"?<label>जन्ममिति · Birth date<input type="date" value={value.date} onChange={(e)=>set("date",e.target.value)}/></label>:<div className="bs-date-fields"><label>BS year<input type="number" value={bs.year} onChange={(e)=>setBs({...bs,year:Number(e.target.value)})}/></label><label>Month<input type="number" min="1" max="12" value={bs.month} onChange={(e)=>setBs({...bs,month:Number(e.target.value)})}/></label><label>Day<input type="number" min="1" max="32" value={bs.day} onChange={(e)=>setBs({...bs,day:Number(e.target.value)})}/></label><button type="button" onClick={applyBs} disabled={busy}>{busy?"रूपान्तरण हुँदैछ…":"वि.सं. मिति प्रयोग गर्नुहोस्"}</button></div>}
+      <label>जन्म समय · Exact time<input type="time" value={value.time} onChange={(e)=>set("time",e.target.value)}/></label></div>
     {localError&&<span className="form-error" role="alert">{localError}</span>}
-    <div className="form-row"><label>District<select value={DISTRICTS.some((x)=>x[0]===value.location)?value.location:""} onChange={(e)=>chooseDistrict(e.target.value)}><option value="">Custom coordinates</option>{DISTRICTS.map((x)=><option key={x[0]}>{x[0]}</option>)}</select></label>
+    <div className="form-row"><label>जन्मस्थान · District<select value={DISTRICTS.some((x)=>x[0]===value.location)?value.location:""} onChange={(e)=>chooseDistrict(e.target.value)}><option value="">अन्य स्थान · Coordinates</option>{DISTRICTS.map((x)=><option key={x[0]}>{x[0]}</option>)}</select></label>
       <label>Latitude<input type="number" step=".0001" value={value.lat} onChange={(e)=>set("lat",Number(e.target.value))}/></label><label>Longitude<input type="number" step=".0001" value={value.lng} onChange={(e)=>set("lng",Number(e.target.value))}/></label></div>
   </fieldset>;
 }
@@ -58,12 +58,12 @@ function ChartReport({chart}:{chart:ChartResult}){
     <h3>Planetary positions</h3><div className="table-wrap"><table><thead><tr><th>Graha</th><th>Sidereal longitude</th><th>Rashi</th><th>House</th></tr></thead><tbody>{chart.planets.map((p)=><tr key={p.key}><td>{p.name}</td><td>{p.longitude.toFixed(3)}° · {degreeText(p.degreeInSign)}</td><td>{p.sign}</td><td>{p.house}</td></tr>)}</tbody></table></div>
     <h3>Vimshottari Mahadasha</h3><div className="table-wrap"><table><thead><tr><th>Lord</th><th>Start</th><th>End</th><th>Years</th></tr></thead><tbody>{chart.dashas.map((d,i)=><tr key={i}><td>{d.lord}</td><td>{dateText(d.start)}</td><td>{dateText(d.end)}</td><td>{d.years.toFixed(2)}</td></tr>)}</tbody></table></div>
     <div className="manglik-card"><div><small>Kuja / Manglik Dosha</small><strong>{chart.manglik.severity}</strong></div><p>{chart.manglik.explanation}</p><p className="tradition-note">Traditional remedy guidance varies by lineage and should not be treated as a substitute for relationship, health, legal or financial decisions. Common traditions discuss Mangal prayer, charity and matching cancellation rules with a qualified practitioner.</p></div>
-    <details className="methodology"><summary>Calculation methodology & limits</summary><ul>{chart.methodology.map((x)=><li key={x}>{x}</li>)}</ul></details>
+    <details className="methodology"><summary>गणना पद्धति र सीमाहरू · Methodology</summary><ul>{chart.methodology.map((x)=><li key={x}>{x}</li>)}</ul></details>
   </section>;
 }
 
 function GunaReport({result}:{result:GunaResult}){
-  return <section className="guna-report"><div className="guna-score"><span>Ashtakoota</span><strong>{result.total}<small>/36</small></strong><p>Traditional compatibility score; not a predictor of relationship success.</p></div>
+  return <section className="guna-report"><div className="guna-score"><span>Ashtakoota</span><strong>{result.total}<small>/36</small></strong><p>यो परम्परागत मिलान स्कोर हो; सम्बन्धको सफलता भविष्यवाणी गर्ने मापन होइन।</p></div>
     <div className="guna-grid">{result.items.map((x)=><article key={x.key}><div><strong>{x.label}</strong><span>{x.score}/{x.max}</span></div><meter min="0" max={x.max} value={x.score}/><p>{x.detail}</p></article>)}</div>
     <div className="manglik-pair"><article><span>{result.profileA.input.name||"Profile A"}</span><strong>Manglik: {result.profileA.manglik.severity}</strong><small>{result.profileA.manglik.explanation}</small></article><article><span>{result.profileB.input.name||"Profile B"}</span><strong>Manglik: {result.profileB.manglik.severity}</strong><small>{result.profileB.manglik.explanation}</small></article></div>
   </section>;
@@ -74,13 +74,13 @@ export function JanmaPatroSuite(){
   const [chart,setChart]=useState<ChartResult|null>(null),[guna,setGuna]=useState<GunaResult|null>(null),[error,setError]=useState<string|null>(null),[pdfBusy,setPdfBusy]=useState(false),[jpgBusy,setJpgBusy]=useState(false);
   const reportRef=useRef<HTMLDivElement|null>(null);
   const canMatch=useMemo(()=>Boolean(a.date&&a.time&&b.date&&b.time),[a,b]);
-  const generate=(e:FormEvent)=>{e.preventDefault();try{setError(null);const ca=calculateChart(a);setChart(ca);if(tab==="match"){const cb=calculateChart(b);setGuna(calculateGuna(ca,cb));}else setGuna(null);}catch(err){setError(err instanceof Error?err.message:"Unable to calculate chart.");}};
+  const generate=(e:FormEvent)=>{e.preventDefault();try{setError(null);const ca=calculateChart(a);setChart(ca);if(tab==="match"){const cb=calculateChart(b);setGuna(calculateGuna(ca,cb));}else setGuna(null);}catch(err){setError(err instanceof Error?err.message:"चिना गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।");}};
   const exportPdf=async()=>{if(!reportRef.current)return;setPdfBusy(true);try{const mod=await import("html2pdf.js");const html2pdf=mod.default;await html2pdf().set({margin:8,filename:"aafnai-china-"+reportSlug(a.name)+".pdf",image:{type:"jpeg",quality:.96},html2canvas:{scale:2,useCORS:true,backgroundColor:"#ffffff"},jsPDF:{unit:"mm",format:"a4",orientation:"portrait"}}).from(reportRef.current).save();}finally{setPdfBusy(false);}};
-  const exportJpg=async()=>{if(!reportRef.current)return;setJpgBusy(true);try{const {toJpeg}=await import("html-to-image");const dataUrl=await toJpeg(reportRef.current,{quality:.95,pixelRatio:2,backgroundColor:"#ffffff",cacheBust:true});const link=document.createElement("a");link.href=dataUrl;link.download="aafnai-china-"+reportSlug(a.name)+".jpg";document.body.appendChild(link);link.click();link.remove();}catch(err){setError(err instanceof Error?err.message:"Unable to export JPG.");}finally{setJpgBusy(false);}};
-  return <main className="jyotish-suite"><header className="jyotish-hero"><div><p className="eyebrow">आफ्नै ज्योतिष</p><h1>आफ्नै चिना · जन्मपत्रो</h1><p>Ephemeris-backed planetary coordinates with clearly separated traditional interpretations.</p></div><div className="segmented-control"><button type="button" className={tab==="chart"?"active":""} onClick={()=>setTab("chart")}>चिना टिपन</button><button type="button" className={tab==="match"?"active":""} onClick={()=>setTab("match")}>36 Guna Milan</button><a className="rashifal-tab" href="/jyotish/rashifal">☾ आफ्नै राशिफल</a></div></header>
-    <form onSubmit={generate} className="jyotish-input-panel"><ProfileForm value={a} onChange={setA} prefix={tab==="match"?"Profile A":"Birth details"}/>{tab==="match"&&<ProfileForm value={b} onChange={setB} prefix="Profile B"/>}<button className="calculate-button" type="submit" disabled={tab==="match"&&!canMatch}>{tab==="match"?"Calculate 36 Guna":"Generate आफ्नै चिना"}</button></form>
+  const exportJpg=async()=>{if(!reportRef.current)return;setJpgBusy(true);try{const {toJpeg}=await import("html-to-image");const dataUrl=await toJpeg(reportRef.current,{quality:.95,pixelRatio:2,backgroundColor:"#ffffff",cacheBust:true});const link=document.createElement("a");link.href=dataUrl;link.download="aafnai-china-"+reportSlug(a.name)+".jpg";document.body.appendChild(link);link.click();link.remove();}catch{setError("JPG तयार हुन सकेन। फेरि प्रयास गर्नुहोस्।");}finally{setJpgBusy(false);}};
+  return <main className="jyotish-suite"><header className="jyotish-hero"><div><p className="eyebrow">आफ्नै ज्योतिष</p><h1>आफ्नै चिना · जन्मपत्रो</h1><p>जन्ममिति, सही समय र स्थानका आधारमा लग्न, ग्रहस्थिति, नक्षत्र, दशा र परम्परागत ज्योतिषीय सन्दर्भ हेर्नुहोस्।</p></div><div className="segmented-control"><button type="button" className={tab==="chart"?"active":""} onClick={()=>setTab("chart")}>चिना टिपन</button><button type="button" className={tab==="match"?"active":""} onClick={()=>setTab("match")}>३६ गुण मिलान</button><a className="rashifal-tab" href="/jyotish/rashifal">☾ आफ्नै राशिफल</a></div></header>
+    <form onSubmit={generate} className="jyotish-input-panel"><ProfileForm value={a} onChange={setA} prefix={tab==="match"?"पहिलो व्यक्ति · Profile A":"जन्म विवरण · Birth details"}/>{tab==="match"&&<ProfileForm value={b} onChange={setB} prefix="दोस्रो व्यक्ति · Profile B"/>}<button className="calculate-button" type="submit" disabled={tab==="match"&&!canMatch}>{tab==="match"?"३६ गुण मिलाउनुहोस्":"आफ्नै चिना बनाउनुहोस्"}</button></form>
     {error&&<div className="inline-error" role="alert">{error}</div>}
     <div ref={reportRef} className="pdf-report-surface">{chart&&<ChartReport chart={chart}/>} {tab==="match"&&guna&&<GunaReport result={guna}/>}</div>
-    {chart&&<div className="report-actions"><button type="button" onClick={exportPdf} disabled={pdfBusy||jpgBusy}>{pdfBusy?"Generating PDF…":"Download PDF"}</button><button type="button" onClick={exportJpg} disabled={jpgBusy||pdfBusy}>{jpgBusy?"Generating JPG…":"Download JPG"}</button></div>}
+    {chart&&<div className="report-actions"><button type="button" onClick={exportPdf} disabled={pdfBusy||jpgBusy}>{pdfBusy?"PDF तयार हुँदैछ…":"PDF डाउनलोड"}</button><button type="button" onClick={exportJpg} disabled={jpgBusy||pdfBusy}>{jpgBusy?"JPG तयार हुँदैछ…":"JPG डाउनलोड"}</button></div>}
   </main>;
 }
