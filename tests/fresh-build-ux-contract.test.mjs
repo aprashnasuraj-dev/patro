@@ -27,57 +27,57 @@ test("Nepali typing and Preeti converter use the packaged offline bundle",()=>{
   assert.ok(app.includes("ArrowDown")&&app.includes("ArrowUp"),"keyboard suggestion navigation must remain available");
 });
 
-test("PWA install metadata and homepage install experience are present",()=>{
+test("PWA install metadata and bounded offline warming are present",()=>{
   const manifest=JSON.parse(read("public/manifest.webmanifest"));
-  const home=read("src/components/HomeExperience.tsx");
+  const pwa=read("src/pwa.ts");
+  const sw=read("public/sw.js");
   assert.equal(manifest.display,"standalone");
   assert.equal(manifest.scope,"/");
   assert.equal(manifest.icons.length,3);
   assert.deepEqual(manifest.shortcuts.map(x=>x.url),["/","/tools/astro","/time-machine","/samudaya","/tools"]);
-  assert.ok(home.includes("beforeinstallprompt"));
-  assert.ok(home.includes("appinstalled"));
-  assert.ok(home.includes("WARM_OFFLINE"));
-  assert.ok(home.includes("Install app"));
+  assert.ok(pwa.includes('register("/sw.js"'));
+  assert.ok(pwa.includes('WARM_OFFLINE'));
+  assert.ok(sw.includes("MAX_CALENDAR_RANGE_DAYS = 45"));
+  assert.ok(sw.includes("MAX_CALENDAR_ENTRIES = 10"));
 });
 
-test("mobile flagship navigation and six Community Patro entries stay visible",()=>{
-  const nav=read("src/components/MobilePrimaryNav.tsx");
-  const home=read("src/components/HomeExperience.tsx");
+test("one authoritative mobile navigation and Community Patro entries stay visible",()=>{
+  const chrome=read("src/components/AppChrome.tsx");
   const hub=read("src/community/CommunityHub.tsx");
   const main=read("src/main.tsx");
   const router=read("src/PatroRouter.tsx");
-  for(const route of ["/","/tools/astro","/time-machine","/samudaya","/tools"]){
-    assert.ok(nav.includes(`href=\"${route}\"`)||nav.includes(`href="${route}"`),`mobile/nav route missing ${route}`);
+  assert.equal((chrome.match(/className="ap-tabbar"/g)||[]).length,1,"AppChrome must expose exactly one mobile tabbar");
+  for(const route of ["/","/rashifal","/convert","/me","/tools"]){
+    assert.ok(chrome.includes(`href="${route}"`),`authoritative mobile nav route missing ${route}`);
   }
-  for(const label of ["पात्रो","खगोलीय","समययन्त्र","समुदाय","टुल्स"])assert.ok(nav.includes(label),label);
+  for(const label of ["पात्रो","राशिफल","रूपान्तरण","आफ्नै ठाउँ","थप"])assert.ok(chrome.includes(label),label);
   const communities=["/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri"];
-  for(const route of communities){
-    assert.ok(home.includes(route),`homepage community card missing ${route}`);
-  }
-  assert.ok(nav.includes("COMMUNITY_OPTIONS"),"mobile community sheet must use canonical six-calendar registry");
+  for(const route of communities)assert.ok(chrome.includes(route)||hub.includes(route),`community route missing ${route}`);
   assert.ok(hub.includes("COMMUNITY_OPTIONS"),"community hub must use canonical registry");
-  assert.ok(main.includes("<MobilePrimaryNav />"),"mobile nav must be mounted globally");
+  assert.ok(!main.includes("<MobilePrimaryNav />"),"legacy mobile nav must not be mounted beside AppChrome tabbar");
   assert.ok(router.includes('if(path==="/samudaya")return <CommunityHub/>'),"/samudaya must resolve to a real page");
 });
 
-test("homepage includes date search and rotating On This Day without replacing calendar",()=>{
-  const home=read("src/components/HomeExperience.tsx");
-  const pages=read("src/AafnaiPages.tsx");
-  assert.ok(home.includes('/api/v1/convert?bs='));
-  assert.ok(home.includes('/api/v1/on-this-day?date='));
-  assert.ok(home.includes("setInterval")&&home.includes("6000"));
-  assert.ok(pages.includes("<MonthGrid"),"existing calendar grid must remain present");
+test("reference homepage keeps local calendar selected-day and festival hierarchy",()=>{
+  const home=read("src/ReferenceHomePage.tsx");
+  assert.ok(home.includes("localMonthDays"));
+  assert.ok(home.includes("<MonthCalendar"));
+  assert.ok(home.includes("rh-selected"));
+  assert.ok(home.includes("visibleMonthEvents"));
+  assert.ok(home.includes("rh-faq"));
+  assert.ok(home.includes("rh-seo-copy"));
+  assert.ok(home.indexOf("rh-calendar")<home.indexOf("rh-seo-copy"),"calendar must precede long-form SEO copy in the product hierarchy");
 });
 
 test("root homepage cannot regress into the astronomical calendar",()=>{
   const router=read("src/PatroRouter.tsx");
   const main=read("src/main.tsx");
-  const home=read("src/components/HomeExperience.tsx");
-  assert.ok(router.includes('if(path==="/"||path==="/today")return <HomePage/>'),"root and /today must render the normal Patro homepage");
+  const home=read("src/ReferenceHomePage.tsx");
+  assert.ok(router.includes('if(path==="/"||path==="/today")return <ReferenceHomePage/>'),"root and /today must render the reference-driven Patro homepage");
   assert.ok(router.includes('if(path==="/tools/astro")return <AstroPage/>'),"astronomical calendar must stay isolated to /tools/astro");
   assert.ok(router.includes('const AstroPage=lazy(()=>import("./App"))'),"astronomy should remain lazy-loaded as a feature, not the shell root");
   assert.ok(main.includes("<PatroRouter />"),"the application shell must mount PatroRouter");
-  assert.ok(home.includes('["/tools/astro", "☾", "खगोलीय पात्रो", "Astronomical calendar"]'),"homepage may link to Astronomy but must not render it as the root page");
+  assert.ok(home.includes('href="/tools/astro"'),"homepage may link to Astronomy but must not render the astronomy app at root");
 });
 
 test("Notes expose English Nepali suggestion and voice input using the same local worker",()=>{
