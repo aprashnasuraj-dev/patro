@@ -55,7 +55,7 @@ agents.search_intents={
 
 const manifestPath="public/seo-manifest.json";
 const manifest=JSON.parse(await read(manifestPath));
-manifest.schema_version=Math.max(Number(manifest.schema_version||0),5);
+manifest.schema_version=Math.max(Number(manifest.schema_version||0),4);
 manifest.search_intent_count=intents.query_count;
 manifest.search_intent_target=intents.target_minimum;
 manifest.search_intent_route_count=intents.canonical_page_count;
