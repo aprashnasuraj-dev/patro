@@ -34,6 +34,7 @@ import "./calendar-cell-enhancements.css";
 import "./fresh-build-surface.css";
 import "./final-polish.css";
 import "./jyotish-assistant.css";
+import "./rich-calendar.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
