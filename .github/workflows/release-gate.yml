@@ -31,7 +31,7 @@ jobs:
           echo "runner.arch=${RUNNER_ARCH:-unknown}"
           uname -a
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
