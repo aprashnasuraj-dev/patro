@@ -5,6 +5,16 @@ const root = process.cwd();
 const files = [
   "src/AafnaiPages.tsx",
   "src/AafnaiDetailPages.tsx",
+  "src/ReferenceHomePage.tsx",
+  "src/App.tsx",
+  "src/components/CosmicHero.tsx",
+  "src/components/CosmicExperience.tsx",
+  "src/components/StandUnderThisSky.tsx",
+  "src/components/EpicEarthPanel.tsx",
+  "src/components/MarsRoverGallery.tsx",
+  "src/components/ExoplanetHighlight.tsx",
+  "src/components/SpaceWeatherPanel.tsx",
+  "src/components/seo/DailyDirectAnswer.tsx",
   "src/components/TrustPages.tsx",
   "src/components/NativeProtectedPages.tsx",
   "src/components/JyotishAssistant.tsx",
@@ -14,6 +24,7 @@ const files = [
   "src/utilities/ReferenceUtilities.tsx",
   "src/media/MediaSuite.tsx",
   "src/patro-tools-integration/PatroToolsShell.tsx",
+  "src/patro-tools-integration/ToolPrimitives.tsx",
   "src/patro-tools-integration/TithiReminderTool.tsx",
   "src/patro-tools-integration/PatroBotTool.tsx",
   "src/patro-tools-integration/VoiceTypingTool.tsx",
@@ -49,7 +60,7 @@ const forbidden = [
   ["D1 implementation copy", /D1 (?:seed|publication|table|critical)/i],
   ["native bundle implementation copy", /native\/bundle/i],
   ["critical-path implementation copy", /critical path/i],
-  ["Supabase in consumer UI", /Supabase(?: dictionary| delivery| backend| runtime)?/i],
+  ["Supabase in consumer UI", /Supabase(?: dictionary| delivery| backend| runtime| router)?/i],
   ["AI provider setup jargon", /Cloudflare मा AI secret|Groq API|NVIDIA API|AI secret/i],
   ["note implementation copy", /local dictionary|Suggestion worker|Local-first|Cloud sync|Local mode/i],
   ["this build", /this build/i],
@@ -68,7 +79,12 @@ const forbidden = [
   ["data provenance implementation link", />Data provenance</i],
   ["bot implementation jargon", /deterministic सहायक|production panchang|adapters? kit|token\/server secret/i],
   ["OCR implementation jargon", /Tesseract(?:\.js)?|dynamic import|server मा upload/i],
-  ["voice implementation jargon", /browser\/device को speech service|audio file वा transcript स्वतः save/i]
+  ["voice implementation jargon", /browser\/device को speech service|audio file वा transcript स्वतः save/i],
+  ["edge status in consumer UI", /Edge online|Edge unavailable|Checking edge/i],
+  ["prototype cosmic label", /Cosmic Context|Living astronomical instrument/i],
+  ["stale Vercel production brand", /patro-blush\.vercel\.app/i],
+  ["internal priority label", /Lower-priority layer/i],
+  ["internal router wording", /protected Supabase router|behind the Supabase router/i]
 ];
 
 const failures = [];

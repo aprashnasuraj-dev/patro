@@ -24,18 +24,18 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
   const latest = epic?.latest_available_date || null;
 
   const badge = loading
-    ? "Reading EPIC"
+    ? "चित्र खोजिँदैछ"
     : fallbackUsed && imageDate
-      ? `Nearest · ${imageDate}`
+      ? `नजिकको मिति · ${imageDate}`
       : hasImage
-        ? "Exact EPIC frame"
-        : "Archive gap";
+        ? "यस मितिको चित्र"
+        : "चित्र उपलब्ध छैन";
 
   return (
     <ExpandedCosmicPanel
       id="earth-space"
-      eyebrow="DSCOVR EPIC · EONET · Earthdata GIBS"
-      title="Earth from Space"
+      eyebrow="स्रोत · NASA पृथ्वी अवलोकन"
+      title="अन्तरिक्षबाट पृथ्वी"
       icon="◉"
       badge={badge}
       defaultOpen
@@ -61,22 +61,22 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
                   <img
                     src={image.image_url}
                     alt={fallbackUsed
-                      ? `Earth observed by DSCOVR EPIC on nearest available date ${imageDate}`
-                      : "Earth observed by DSCOVR EPIC"}
+                      ? `नजिकको उपलब्ध मिति ${imageDate} मा अन्तरिक्षबाट देखिएको पृथ्वी`
+                      : "अन्तरिक्षबाट देखिएको पृथ्वी"}
                     loading="lazy"
                     decoding="async"
                   />
                   <div className="epic-image-glow" aria-hidden="true" />
                   {fallbackUsed && imageDate && (
-                    <span className="epic-nearest-pill">Nearest available: {imageDate}</span>
+                    <span className="epic-nearest-pill">नजिकको उपलब्ध मिति: {imageDate}</span>
                   )}
                 </div>
                 <figcaption>
-                  <strong>{image.caption || "Earth from DSCOVR EPIC"}</strong>
+                  <strong>{image.caption || "पृथ्वीको पूर्ण चित्र"}</strong>
                   <span>
                     {fallbackUsed
-                      ? `No exact full-disc frame for ${epic?.requested_date}. Showing the closest EPIC observation within ±3 days.`
-                      : `Full-disc EPIC observation for ${imageDate || epic?.requested_date || "the selected date"}.`}
+                      ? `चयन गरिएको मितिको सट्टा नजिकको उपलब्ध अवलोकन ${imageDate} देखाइएको छ।`
+                      : `${imageDate || epic?.requested_date || "चयन गरिएको मिति"} को पृथ्वी अवलोकन।`}
                   </span>
                 </figcaption>
               </motion.figure>
@@ -92,15 +92,12 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
                   <span className="epic-empty__moon" />
                 </div>
                 <div>
-                  <p className="eyebrow">EPIC archive gap</p>
-                  <h3>No full-disc frame within ±3 days</h3>
+                  <p className="eyebrow">पृथ्वी अवलोकन</p>
+                  <h3>यस मिति वरिपरि पूर्ण पृथ्वीको चित्र उपलब्ध छैन</h3>
                   <p>
-                    The selected date has no nearby DSCOVR EPIC observation inside the strict fallback window.
-                    {latest ? ` The latest date currently reported by the EPIC archive is ${latest}.` : ""}
+                    उपलब्ध नजिकका अवलोकनमा उपयुक्त पूर्ण पृथ्वी चित्र भेटिएन।
+                    {latest ? ` हाल उपलब्ध पछिल्लो अवलोकन मिति ${latest} हो।` : ""}
                   </p>
-                  {epic?.searched_dates?.length ? (
-                    <small>Searched: {epic.searched_dates.join(" · ")}</small>
-                  ) : null}
                 </div>
               </motion.div>
             )}
@@ -108,7 +105,7 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
             <div className="earth-link-row">
               {worldviewUrl ? (
                 <a className="cosmic-link-button" href={worldviewUrl} target="_blank" rel="noreferrer">
-                  Open this date in NASA Worldview / GIBS ↗
+                  NASA Worldview मा यो मिति हेर्नुहोस् ↗
                 </a>
               ) : null}
               {latest ? (
@@ -118,7 +115,7 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View latest EPIC archive ↗
+                  पछिल्लो पृथ्वी चित्र हेर्नुहोस् ↗
                 </a>
               ) : null}
             </div>
@@ -126,8 +123,8 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
 
           <div className="event-list">
             <div className="mini-heading">
-              <strong>Natural events</strong>
-              <span>{eonet?.count ?? 0} on/around this date</span>
+              <strong>प्राकृतिक घटना</strong>
+              <span>{eonet?.count ?? 0} घटना</span>
             </div>
             {eonet?.events?.length ? eonet.events.map((event, index) => (
               <motion.article
@@ -139,14 +136,14 @@ export function EpicEarthPanel({ epic, eonet, worldviewUrl, loading = false }: P
               >
                 <div>
                   <strong>{event.title}</strong>
-                  <small>{event.categories.join(" · ") || "Natural event"}</small>
+                  <small>{event.categories.join(" · ") || "प्राकृतिक घटना"}</small>
                 </div>
-                <span>{event.closed ? "Closed" : "Open"}</span>
+                <span>{event.closed ? "समाप्त" : "जारी"}</span>
               </motion.article>
             )) : (
               <div className="cosmic-empty-mini">
                 <span aria-hidden="true">◎</span>
-                <p>No EONET events were returned for this day.</p>
+                <p>यस मितिका लागि सूचीबद्ध प्राकृतिक घटना भेटिएन।</p>
               </div>
             )}
           </div>

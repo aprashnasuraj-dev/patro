@@ -9,7 +9,6 @@ interface Props {
   tithi: TithiPayload | null;
   cosmic: CosmicDayPayload | null;
   apod: ApodPayload | null;
-  health: "checking" | "online" | "offline";
   selectedDate: string;
   today: string;
   loading: boolean;
@@ -22,8 +21,8 @@ interface Props {
 function dateText(sync: SyncPayload | null, selectedDate: string) {
   return {
     ad: sync?.calendars.gregorian_ad || selectedDate,
-    bs: sync?.calendars.bikram_sambat || "BS unavailable",
-    ns: sync?.calendars.nepal_sambat || "NS unavailable"
+    bs: sync?.calendars.bikram_sambat || "—",
+    ns: sync?.calendars.nepal_sambat || "—"
   };
 }
 
@@ -36,6 +35,14 @@ function solarTone(level: string | undefined) {
   }
 }
 
+function solarLabel(level: string | undefined) {
+  if (level === "Elevated") return "उच्च";
+  if (level === "Moderate") return "मध्यम";
+  if (level === "Low") return "कम";
+  if (level === "Quiet") return "शान्त";
+  return "";
+}
+
 async function canvasToBlob(canvas: HTMLCanvasElement) {
   return await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png", 0.95));
 }
@@ -45,7 +52,6 @@ export function CosmicHero({
   tithi,
   cosmic,
   apod,
-  health,
   selectedDate,
   today,
   loading,
@@ -61,13 +67,15 @@ export function CosmicHero({
   const dates = dateText(sync, selectedDate);
 
   const context = useMemo(() => {
-    const moon = tithi ? `${tithi.illumination_percent.toFixed(1)}% Moon illumination` : "Moon data loading";
-    const close = cosmic?.neo?.close_count_005_au ?? 0;
-    const neo = cosmic?.neo?.status === "ok"
-      ? `${close} NEO${close === 1 ? "" : "s"} within 0.05 AU`
-      : "NEO feed unavailable";
-    const solar = cosmic?.solar?.level ? `Solar activity: ${cosmic.solar.level}` : "Solar activity loading";
-    return `${moon} • ${neo} • ${solar}`;
+    const facts: string[] = [];
+    if (tithi) facts.push(`चन्द्र प्रकाश ${tithi.illumination_percent.toFixed(1)}%`);
+    if (cosmic?.neo?.status === "ok") {
+      const close = cosmic.neo.close_count_005_au ?? 0;
+      facts.push(`पृथ्वी नजिकका वस्तु ${close}`);
+    }
+    const solar = solarLabel(cosmic?.solar?.level);
+    if (solar) facts.push(`सौर गतिविधि ${solar}`);
+    return facts.join(" · ") || "यस मितिको चन्द्र र आकाशीय विवरण";
   }, [tithi, cosmic]);
 
   async function toggleAmbient() {
@@ -130,7 +138,7 @@ export function CosmicHero({
     try {
       if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
     } catch {
-      // The fixed cinematic overlay remains fully usable when browser fullscreen is unavailable.
+      // The fixed sky view remains usable if browser fullscreen is unavailable.
     }
   }
 
@@ -172,7 +180,7 @@ export function CosmicHero({
 
       ctx.fillStyle = "#7dd3fc";
       ctx.font = "700 24px system-ui, sans-serif";
-      ctx.fillText("आफ्नै पात्रो · COSMIC DAY", 72, 78);
+      ctx.fillText("आफ्नै पात्रो · आजको आकाश", 72, 78);
       ctx.fillStyle = "#f8fafc";
       ctx.font = "800 54px system-ui, sans-serif";
       ctx.fillText(dates.ad, 72, 154);
@@ -183,24 +191,24 @@ export function CosmicHero({
       ctx.fillStyle = "#cbd5e1";
       ctx.font = "500 24px system-ui, sans-serif";
       const facts = [
-        tithi ? `${tithi.tithi_name_ne} · ${tithi.illumination_percent.toFixed(1)}% illuminated` : "Lunar data unavailable",
-        cosmic?.neo?.status === "ok" ? `${cosmic.neo.count} near-Earth objects tracked` : "NEO feed unavailable",
-        cosmic?.solar?.level ? `Solar activity · ${cosmic.solar.level}` : "Solar activity unavailable"
+        tithi ? `${tithi.tithi_name_ne} · चन्द्र प्रकाश ${tithi.illumination_percent.toFixed(1)}%` : "चन्द्र विवरण उपलब्ध छैन",
+        cosmic?.neo?.status === "ok" ? `नजिकका अन्तरिक्ष वस्तु ${cosmic.neo.count}` : "नजिकका वस्तुको विवरण उपलब्ध छैन",
+        solarLabel(cosmic?.solar?.level) ? `सौर गतिविधि · ${solarLabel(cosmic?.solar?.level)}` : "सौर गतिविधिको विवरण उपलब्ध छैन"
       ];
       facts.forEach((fact, index) => ctx.fillText(fact, 72, 344 + index * 42));
 
       ctx.fillStyle = "#94a3b8";
       ctx.font = "500 20px system-ui, sans-serif";
-      ctx.fillText(apod?.title || "NASA-connected astronomical calendar", 72, 506);
-      ctx.fillText("patro-blush.vercel.app/astro", 72, 558);
+      ctx.fillText(apod?.title || "खगोलीय पात्रो", 72, 506);
+      ctx.fillText("aafnaipatro.com/tools/astro", 72, 558);
 
       const blob = await canvasToBlob(canvas);
       if (!blob) return;
-      const file = new File([blob], `mero-patro-cosmic-${selectedDate}.png`, { type: "image/png" });
+      const file = new File([blob], `aafnai-patro-sky-${selectedDate}.png`, { type: "image/png" });
       const shareData: ShareData = {
-        title: `आफ्नै पात्रो Cosmic Day · ${selectedDate}`,
+        title: `आफ्नै पात्रो · खगोलीय पात्रो`,
         text: context,
-        url: `${location.origin}/astro?date=${selectedDate}`
+        url: `${location.origin}/tools/astro?date=${selectedDate}`
       };
 
       if (navigator.share && navigator.canShare?.({ files: [file] })) {
@@ -222,55 +230,51 @@ export function CosmicHero({
 
   return (
     <>
-    <header className="cosmic-hero glass-panel">
-      <div className="cosmic-hero__topline">
-        <div>
-          <p className="eyebrow">Living astronomical instrument · Nepal</p>
-          <h1>खगोलीय पात्रो · आफ्नै पात्रो</h1>
-          <p className="cosmic-hero__apod">{apod?.title || "Synchronizing with NASA and the selected sky…"}</p>
+      <header className="cosmic-hero glass-panel">
+        <div className="cosmic-hero__topline">
+          <div>
+            <p className="eyebrow">उपकरण · खगोल</p>
+            <h1>खगोलीय पात्रो</h1>
+            <p className="cosmic-hero__apod">{apod?.title || "चन्द्र, तिथि र आकाशीय घटनाको मितिअनुसार विवरण"}</p>
+          </div>
         </div>
-        <div className={"health-pill health-pill--" + health}>
-          <span className="health-dot" aria-hidden="true" />
-          <span>{health === "online" ? "Edge online" : health === "offline" ? "Edge unavailable" : "Checking edge"}</span>
+
+        <div className="cosmic-hero__dates" aria-live="polite">
+          <div className="cosmic-date"><span>ई.सं.</span><strong>{dates.ad}</strong></div>
+          <div className="cosmic-date"><span>वि.सं.</span><strong>{dates.bs}</strong></div>
+          <div className="cosmic-date"><span>नेपाल संवत्</span><strong>{dates.ns}</strong></div>
         </div>
-      </div>
 
-      <div className="cosmic-hero__dates" aria-live="polite">
-        <div className="cosmic-date"><span>Gregorian · AD</span><strong>{dates.ad}</strong></div>
-        <div className="cosmic-date"><span>Bikram Sambat · BS</span><strong>{dates.bs}</strong></div>
-        <div className="cosmic-date"><span>Nepal Sambat · NS</span><strong>{dates.ns}</strong></div>
-      </div>
+        <div className="cosmic-context">
+          <span className="cosmic-context__pulse" aria-hidden="true" />
+          <strong>आजको आकाश</strong>
+          <span>{loading ? "खगोलीय विवरण मिलाउँदै…" : context}</span>
+        </div>
 
-      <div className="cosmic-context">
-        <span className="cosmic-context__pulse" aria-hidden="true" />
-        <strong>Cosmic Context</strong>
-        <span>{loading ? "Reading this sky…" : context}</span>
-      </div>
-
-      <div className="cosmic-hero__toolbar">
-        <button className="icon-button" onClick={onPreviousDay} aria-label="Previous day"><ChevronLeft size={18}/></button>
-        <label className="date-input-wrap cosmic-date-input">
-          <span>Selected Earth date</span>
-          <input
-            type="date"
-            value={selectedDate}
-            min="1826-04-11"
-            max="2037-04-13"
-            onChange={(event) => event.target.value && onDateChange(event.target.value)}
-          />
-        </label>
-        <button className="icon-button" onClick={onNextDay} aria-label="Next day"><ChevronRight size={18}/></button>
-        <button className="secondary-button" onClick={onToday} disabled={selectedDate === today}>Today</button>
-        <ReadAloudButton text={`आजको मिति ${dates.bs}। ग्रेगोरियन ${dates.ad}। नेपाल संवत् ${dates.ns}। ${context}`} className="secondary-button" />
-        <button className="secondary-button" onClick={toggleAmbient} aria-pressed={soundOn}>
-          {soundOn ? <><VolumeX size={17}/> Ambient on</> : <><Volume2 size={17}/> Ambient</>}
-        </button>
-        <button className="secondary-button" onClick={openSkyMode}><Telescope size={17}/> Stand under this sky</button>
-        <button className="secondary-button" onClick={shareCosmicCard} disabled={sharing}>
-          {sharing ? "Creating card…" : <><Share2 size={17}/> Cosmic Card</>}
-        </button>
-      </div>
-    </header>
+        <div className="cosmic-hero__toolbar">
+          <button className="icon-button" onClick={onPreviousDay} aria-label="अघिल्लो दिन"><ChevronLeft size={18}/></button>
+          <label className="date-input-wrap cosmic-date-input">
+            <span>मिति छान्नुहोस्</span>
+            <input
+              type="date"
+              value={selectedDate}
+              min="1826-04-11"
+              max="2037-04-13"
+              onChange={(event) => event.target.value && onDateChange(event.target.value)}
+            />
+          </label>
+          <button className="icon-button" onClick={onNextDay} aria-label="अर्को दिन"><ChevronRight size={18}/></button>
+          <button className="secondary-button" onClick={onToday} disabled={selectedDate === today}>आज</button>
+          <ReadAloudButton text={`मिति ${dates.bs}। ईस्वी ${dates.ad}। नेपाल संवत् ${dates.ns}। ${context}`} className="secondary-button" />
+          <button className="secondary-button" onClick={toggleAmbient} aria-pressed={soundOn}>
+            {soundOn ? <><VolumeX size={17}/> आकाश ध्वनि बन्द</> : <><Volume2 size={17}/> आकाश ध्वनि</>}
+          </button>
+          <button className="secondary-button" onClick={openSkyMode}><Telescope size={17}/> आकाश दृश्य</button>
+          <button className="secondary-button" onClick={shareCosmicCard} disabled={sharing}>
+            {sharing ? "कार्ड बनाउँदै…" : <><Share2 size={17}/> शेयर कार्ड</>}
+          </button>
+        </div>
+      </header>
       <StandUnderThisSky
         open={skyOpen}
         onClose={() => setSkyOpen(false)}

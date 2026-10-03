@@ -206,12 +206,12 @@ function TvPlayer({ item }: { item: MediaItem }) {
   const [retryNonce, setRetryNonce] = useState(0);
   const [levels, setLevels] = useState<Array<{ index: number; label: string }>>([]);
   const [quality, setQuality] = useState("auto");
-  const [activeQuality, setActiveQuality] = useState("Auto");
+  const [activeQuality, setActiveQuality] = useState("स्वचालित");
 
   useEffect(() => {
     setQuality("auto");
     setLevels([]);
-    setActiveQuality("Auto");
+    setActiveQuality("स्वचालित");
   }, [item.id]);
 
   useEffect(() => {
@@ -295,7 +295,7 @@ function TvPlayer({ item }: { item: MediaItem }) {
           attempts.current = 0;
           const choices = engine.levels.map((level, index) => ({
             index,
-            label: level.height ? level.height + "p" : (level.bitrate ? Math.round(level.bitrate / 1000) + " kbps" : "Level " + (index + 1))
+            label: level.height ? level.height + "p" : (level.bitrate ? Math.round(level.bitrate / 1000) + " kbps" : "स्तर " + (index + 1))
           }));
           setLevels(choices);
           if (low) engine.autoLevelCapping = 0;
@@ -306,7 +306,7 @@ function TvPlayer({ item }: { item: MediaItem }) {
 
         engine.on(Hls.Events.LEVEL_SWITCHED, (_event, data) => {
           const level = engine.levels[data.level];
-          setActiveQuality(level?.height ? level.height + "p" : (level?.bitrate ? Math.round(level.bitrate / 1000) + " kbps" : "Auto"));
+          setActiveQuality(level?.height ? level.height + "p" : (level?.bitrate ? Math.round(level.bitrate / 1000) + " kbps" : "स्वचालित"));
         });
 
         engine.on(Hls.Events.ERROR, (_event, data) => {
@@ -400,27 +400,27 @@ function TvPlayer({ item }: { item: MediaItem }) {
     else void video.remote?.prompt().catch(() => undefined);
   };
 
-  const healthLabel = health === "live" ? "Live" : health === "retrying" ? "Reconnecting…" : health === "ready" ? "Ready" : health === "error" ? "Unavailable" : "Connecting…";
+  const healthLabel = health === "live" ? "लाइभ" : health === "retrying" ? "फेरि जोडिँदै…" : health === "ready" ? "चलाउन तयार" : health === "error" ? "अहिले उपलब्ध छैन" : "जोडिँदै…";
   return (
     <div className="tv-stage" ref={stageRef}>
-      <video ref={ref} controls playsInline preload="metadata" className={low ? "audio-only-video" : ""} aria-label={item.name + " live stream"} />
+      <video ref={ref} controls playsInline preload="metadata" className={low ? "audio-only-video" : ""} aria-label={`${item.name} लाइभ प्रसारण`} />
       <div className="tv-overlay">
-        <span><i className={"health-dot " + health} />{healthLabel}{probe === "unavailable" && health !== "live" ? " · checking source" : ""}</span>
+        <span><i className={"health-dot " + health} />{healthLabel}{probe === "unavailable" && health !== "live" ? " · उपलब्धता जाँचिँदै" : ""}</span>
         <small>{activeQuality}{item.quality ? " · " + item.quality : ""}</small>
         {levels.length > 1 && (
-          <label className="tv-quality">Quality
+          <label className="tv-quality">गुणस्तर
             <select value={quality} onChange={(e) => setQuality(e.target.value)}>
-              <option value="auto">Auto</option>
+              <option value="auto">स्वचालित</option>
               {levels.map((level) => <option key={level.index} value={String(level.index)}>{level.label}</option>)}
             </select>
           </label>
         )}
-        <button onClick={() => setLow((v) => !v)} aria-pressed={low}>{low ? "Normal data" : "Low-data"}</button>
-        <button onClick={() => setRetryNonce((n) => n + 1)}>Reconnect</button>
-        <button onClick={fullscreen}>Fullscreen</button>
-        <button onClick={pip}>PiP</button>
-        <button onClick={remote}>Cast / AirPlay</button>
-        {item.officialUrl && <a href={item.officialUrl} target="_blank" rel="noreferrer">Official site</a>}
+        <button onClick={() => setLow((v) => !v)} aria-pressed={low}>{low ? "सामान्य डेटा" : "कम डेटा"}</button>
+        <button onClick={() => setRetryNonce((n) => n + 1)}>फेरि जोड्नुहोस्</button>
+        <button onClick={fullscreen}>पूरा पर्दा</button>
+        <button onClick={pip}>सानो पर्दा</button>
+        <button onClick={remote}>TV मा चलाउनुहोस्</button>
+        {item.officialUrl && <a href={item.officialUrl} target="_blank" rel="noreferrer">आधिकारिक साइट</a>}
       </div>
     </div>
   );
@@ -431,6 +431,13 @@ function labelOfFacet(value: Array<{ name?: string; code?: string } | string> | 
     value: x.code || x.name || "",
     label: x.name || x.code || ""
   }).filter((x) => x.value);
+}
+
+function reportReasonLabel(value: string) {
+  if (value === "buffering") return "बारम्बार रोकिन्छ";
+  if (value === "wrong-channel") return "गलत च्यानल";
+  if (value === "audio-only") return "अडियो/भिडियो समस्या";
+  return "चल्दैन";
 }
 
 export function MediaSuite({ kind }: { kind: MediaKind }) {
@@ -501,7 +508,7 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
           const mapped = j.items.map(fmToMedia);
           setFmItems(mapped);
           setFmPages(1);
-          setFmMeta({ total: j.catalog_total || mapped.length, verified: j.verified_total || mapped.filter((x) => x.playable).length, districts: j.covered_districts || new Set(mapped.map((x) => x.district).filter(Boolean)).size });
+          setFmMeta({ total: j.catalog_total || mapped.length, verified: j.verified_total || mapped.filter((x) => x.playable).length, districts: j.covered_districts || new Set(mapped.map((x) => x.district)).size });
         } catch {
           setFmItems(fallback);
           setFmPages(1);
@@ -630,38 +637,38 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
     <main className="media-suite">
       <section className="media-hero">
         <div>
-          <p className="eyebrow">{kind === "radio" ? "FM Radio · रेडियो" : "Live TV · लाइभ टिभी"}</p>
-          <h1>{kind === "radio" ? "आफ्नै पात्रो रेडियो" : "लाइभ टिभी · Live TV"}</h1>
-          <p>{kind === "radio" ? "नेपाल र विश्वका उपलब्ध FM स्टेशन खोज्नुहोस्, मनपर्नेमा राख्नुहोस् र पृष्ठ बदल्दा पनि सुन्न जारी राख्नुहोस्।" : "देश, भाषा र विषयअनुसार 9,000+ उपलब्ध लाइभ TV च्यानल खोज्नुहोस्। Quality, reconnect, fullscreen, PiP र low-data विकल्पसहित।"}</p>
+          <p className="eyebrow">{kind === "radio" ? "रेडियो" : "लाइभ टिभी"}</p>
+          <h1>{kind === "radio" ? "आफ्नै पात्रो रेडियो" : "लाइभ टिभी"}</h1>
+          <p>{kind === "radio" ? "नेपाल र विश्वका उपलब्ध FM स्टेशन खोज्नुहोस्, मनपर्नेमा राख्नुहोस् र पृष्ठ बदल्दा पनि सुन्न जारी राख्नुहोस्।" : "देश, भाषा र विषयअनुसार उपलब्ध लाइभ TV च्यानल खोज्नुहोस् र उपयुक्त गुणस्तरमा हेर्नुहोस्।"}</p>
         </div>
-        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={kind === "radio" ? "स्टेशन, जिल्ला वा विषय खोज्नुहोस्…" : "9,000+ च्यानल खोज्नुहोस्…"} aria-label="Search media" />
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder={kind === "radio" ? "स्टेशन, जिल्ला वा विषय खोज्नुहोस्…" : "च्यानल खोज्नुहोस्…"} aria-label={kind === "radio" ? "रेडियो खोज्नुहोस्" : "टिभी च्यानल खोज्नुहोस्"} />
       </section>
 
       <div className="media-stats" aria-live="polite">
         {kind === "radio"
           ? <><strong>{fmMeta.total.toLocaleString()}</strong><span>स्टेशन</span><strong>{fmMeta.verified}</strong><span>अहिले उपलब्ध</span><strong>{fmPage}</strong><span>{fmPages.toLocaleString()} मध्ये पृष्ठ</span></>
-          : <><strong>{tvTotal.toLocaleString()}</strong><span>च्यानल</span><strong>{tvLiveCount}</strong><span>चलिरहेका</span><strong>{tvDeadCount}</strong><span>नचल्ने हटाइयो</span></>}
+          : <><strong>{tvTotal.toLocaleString()}</strong><span>च्यानल</span><strong>{tvLiveCount}</strong><span>चलिरहेका</span><strong>{tvDeadCount}</strong><span>अहिले नचल्ने</span></>}
       </div>
 
-      {loadError && <div className="media-warning" role="status">मुख्य सूची अहिले पूर्ण रूपमा उपलब्ध छैन; उपलब्ध स्टेशन र च्यानलहरू देखाइएका छन्।</div>}
+      {loadError && <div className="media-warning" role="status">पूरा सूची अहिले उपलब्ध छैन; उपलब्ध स्टेशन र च्यानलहरू देखाइएका छन्।</div>}
 
       {kind === "radio" ? (
         <div className="media-directory-toolbar">
-          <label>Country<select value={fmCountry} onChange={(e) => { setFmCountry(e.target.value); setFmPage(1); setFmProvince("All"); setFmDistrict("All"); }}><option value="NP">🇳🇵 Nepal</option><option value="ALL">Worldwide</option>{fmCountries.filter((x) => x.code !== "NP").map((x) => <option key={x.code} value={x.code}>{x.name} ({x.count.toLocaleString()})</option>)}</select></label>
-          <label>Region / Province<select value={fmProvince} onChange={(e) => { setFmProvince(e.target.value); setFmDistrict("All"); }}>{fmProvinces.map((x) => <option key={x}>{x}</option>)}</select></label>
-          <label>District / State<select value={fmDistrict} onChange={(e) => setFmDistrict(e.target.value)}>{fmDistricts.map((x) => <option key={x}>{x}</option>)}</select></label>
-          <label className="media-check"><input type="checkbox" checked={fmPlayableOnly} onChange={(e) => setFmPlayableOnly(e.target.checked)} /> Available only</label>
-          <button type="button" onClick={() => { setFmCountry("NP"); setFmProvince("All"); setFmDistrict("All"); setQuery(""); setFmPage(1); }}>Nepal reset</button>
+          <label>देश<select value={fmCountry} onChange={(e) => { setFmCountry(e.target.value); setFmPage(1); setFmProvince("All"); setFmDistrict("All"); }}><option value="NP">🇳🇵 नेपाल</option><option value="ALL">विश्वभर</option>{fmCountries.filter((x) => x.code !== "NP").map((x) => <option key={x.code} value={x.code}>{x.name} ({x.count.toLocaleString()})</option>)}</select></label>
+          <label>प्रदेश / क्षेत्र<select value={fmProvince} onChange={(e) => { setFmProvince(e.target.value); setFmDistrict("All"); }}>{fmProvinces.map((x) => <option key={x}>{x === "All" ? "सबै" : x}</option>)}</select></label>
+          <label>जिल्ला / स्थान<select value={fmDistrict} onChange={(e) => setFmDistrict(e.target.value)}>{fmDistricts.map((x) => <option key={x}>{x === "All" ? "सबै" : x}</option>)}</select></label>
+          <label className="media-check"><input type="checkbox" checked={fmPlayableOnly} onChange={(e) => setFmPlayableOnly(e.target.checked)} /> उपलब्ध मात्र</label>
+          <button type="button" onClick={() => { setFmCountry("NP"); setFmProvince("All"); setFmDistrict("All"); setQuery(""); setFmPage(1); }}>नेपालमा फर्कनुहोस्</button>
         </div>
       ) : (
         <div className="media-directory-toolbar">
-          <label>Country<select value={tvCountry} onChange={(e) => { setTvCountry(e.target.value); setTvPage(1); }}><option value="all">All countries</option>{countries.map((x) => <option key={x.code} value={x.code}>{x.flag ? x.flag + " " : ""}{x.name}</option>)}</select></label>
-          <label>Language<select value={tvLanguage} onChange={(e) => { setTvLanguage(e.target.value); setTvPage(1); }}><option value="all">All languages</option>{languages.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
-          <label>Category<select value={tvCategory} onChange={(e) => { setTvCategory(e.target.value); setTvPage(1); }}><option value="all">All categories</option>{categories.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
-          <label className="media-check"><input type="checkbox" checked={tvHideDead} onChange={(e) => setTvHideDead(e.target.checked)} /> Hide unavailable channels</label>
-          <button type="button" onClick={() => setTvHealthTick((n) => n + 1)}>Check availability</button>
-          <button type="button" onClick={() => { setTvCountry("NP"); setTvLanguage("all"); setTvCategory("all"); setTvPage(1); }}>Nepal TV</button>
-          <button type="button" onClick={() => { setTvCountry("all"); setTvLanguage("all"); setTvCategory("all"); setQuery(""); setTvPage(1); }}>Global reset</button>
+          <label>देश<select value={tvCountry} onChange={(e) => { setTvCountry(e.target.value); setTvPage(1); }}><option value="all">सबै देश</option>{countries.map((x) => <option key={x.code} value={x.code}>{x.flag ? x.flag + " " : ""}{x.name}</option>)}</select></label>
+          <label>भाषा<select value={tvLanguage} onChange={(e) => { setTvLanguage(e.target.value); setTvPage(1); }}><option value="all">सबै भाषा</option>{languages.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
+          <label>विषय<select value={tvCategory} onChange={(e) => { setTvCategory(e.target.value); setTvPage(1); }}><option value="all">सबै विषय</option>{categories.map((x) => <option key={x.value} value={x.value}>{x.label}</option>)}</select></label>
+          <label className="media-check"><input type="checkbox" checked={tvHideDead} onChange={(e) => setTvHideDead(e.target.checked)} /> नचल्ने च्यानल लुकाउनुहोस्</label>
+          <button type="button" onClick={() => setTvHealthTick((n) => n + 1)}>उपलब्धता फेरि जाँच्नुहोस्</button>
+          <button type="button" onClick={() => { setTvCountry("NP"); setTvLanguage("all"); setTvCategory("all"); setTvPage(1); }}>नेपालका TV</button>
+          <button type="button" onClick={() => { setTvCountry("all"); setTvLanguage("all"); setTvCategory("all"); setQuery(""); setTvPage(1); }}>सबै देखाउनुहोस्</button>
         </div>
       )}
 
@@ -670,25 +677,25 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       <section className="station-grid" aria-live="polite" aria-busy={kind === "tv" && tvLoading}>
         {items.map((item) => {
           const liveState = kind === "tv" ? tvHealth[item.id] : undefined;
-          const availability = liveState === "live" ? "LIVE" : liveState === "dead" ? "Unavailable" : liveState === "checking" ? "Checking" : "";
+          const availability = liveState === "live" ? "लाइभ" : liveState === "dead" ? "अहिले उपलब्ध छैन" : liveState === "checking" ? "जाँचिँदैछ" : "";
           return <article className={"station-card " + (item.playable === false || liveState === "dead" ? "is-unavailable" : "")} key={item.id}>
             {item.logo ? <img className="station-logo" src={item.logo} alt="" loading="lazy" referrerPolicy="no-referrer" /> : <div className="station-badge" aria-hidden="true">{item.kind === "radio" ? "FM" : (item.countryCode || "TV")}</div>}
             <div className="station-copy">
               <strong>{item.nameNe}</strong>{item.nameNe !== item.name && <span>{item.name}</span>}<small>{item.district} · {item.genre}</small>
-              <small className="station-meta">{item.quality ? item.quality + " · " : ""}{item.codec}{availability ? " · " + availability : ""}</small>
+              {(item.quality || availability) && <small className="station-meta">{[item.quality, availability].filter(Boolean).join(" · ")}</small>}
             </div>
-            <button className="favorite-button" onClick={() => favorite(item.id)} aria-label={(favorites.has(item.id) ? "Remove " : "Add ") + item.name + " favorite"}><Star size={19} fill={favorites.has(item.id) ? "currentColor" : "none"} aria-hidden="true"/></button>
+            <button className="favorite-button" onClick={() => favorite(item.id)} aria-label={`${item.name} ${favorites.has(item.id) ? "मनपर्नेबाट हटाउनुहोस्" : "मनपर्नेमा राख्नुहोस्"}`}><Star size={19} fill={favorites.has(item.id) ? "currentColor" : "none"} aria-hidden="true"/></button>
             <div className="station-actions">
-              {kind === "radio" ? <button onClick={() => playRadio(item)} disabled={item.playable === false && !item.officialUrl}>{item.playable === false ? (item.officialUrl ? "Official site" : "Unavailable") : (media.item?.id === item.id && media.playing ? "Playing" : "Play")}</button> : <button onClick={() => setSelectedTv(item)} disabled={item.playable === false || liveState === "dead"}>{liveState === "dead" ? "Unavailable" : "Watch"}</button>}
-              <button onClick={() => setDrawer(item)}>Info</button>
-              <button onClick={() => setReport(item)} aria-label={"Report stream problem for " + item.name}>!</button>
+              {kind === "radio" ? <button onClick={() => playRadio(item)} disabled={item.playable === false && !item.officialUrl}>{item.playable === false ? (item.officialUrl ? "आधिकारिक साइट" : "अहिले उपलब्ध छैन") : (media.item?.id === item.id && media.playing ? "बजिरहेको" : "सुन्नुहोस्")}</button> : <button onClick={() => setSelectedTv(item)} disabled={item.playable === false || liveState === "dead"}>{liveState === "dead" ? "अहिले उपलब्ध छैन" : "हेर्नुहोस्"}</button>}
+              <button onClick={() => setDrawer(item)}>विवरण</button>
+              <button onClick={() => setReport(item)} aria-label={`${item.name} को प्रसारण समस्या रिपोर्ट गर्नुहोस्`}>!</button>
             </div>
           </article>;
         })}
       </section>
 
-      {kind === "radio" && fmPages > 1 && <nav className="media-pagination" aria-label="FM directory pages"><button disabled={fmPage <= 1 || fmLoading} onClick={() => setFmPage((p) => Math.max(1, p - 1))}>← Previous</button><span>Page {fmPage.toLocaleString()} / {fmPages.toLocaleString()}</span><button disabled={fmPage >= fmPages || fmLoading} onClick={() => setFmPage((p) => Math.min(fmPages, p + 1))}>Next →</button></nav>}
-      {kind === "tv" && tvPages > 1 && <nav className="media-pagination" aria-label="TV directory pages"><button disabled={tvPage <= 1 || tvLoading} onClick={() => setTvPage((p) => Math.max(1, p - 1))}>← Previous</button><span>Page {tvPage.toLocaleString()} / {tvPages.toLocaleString()}</span><button disabled={tvPage >= tvPages || tvLoading} onClick={() => setTvPage((p) => Math.min(tvPages, p + 1))}>Next →</button></nav>}
+      {kind === "radio" && fmPages > 1 && <nav className="media-pagination" aria-label="रेडियो पृष्ठ"><button disabled={fmPage <= 1 || fmLoading} onClick={() => setFmPage((p) => Math.max(1, p - 1))}>← अघिल्लो</button><span>पृष्ठ {fmPage.toLocaleString()} / {fmPages.toLocaleString()}</span><button disabled={fmPage >= fmPages || fmLoading} onClick={() => setFmPage((p) => Math.min(fmPages, p + 1))}>अर्को →</button></nav>}
+      {kind === "tv" && tvPages > 1 && <nav className="media-pagination" aria-label="टिभी पृष्ठ"><button disabled={tvPage <= 1 || tvLoading} onClick={() => setTvPage((p) => Math.max(1, p - 1))}>← अघिल्लो</button><span>पृष्ठ {tvPage.toLocaleString()} / {tvPages.toLocaleString()}</span><button disabled={tvPage >= tvPages || tvLoading} onClick={() => setTvPage((p) => Math.min(tvPages, p + 1))}>अर्को →</button></nav>}
 
       {!items.length && !tvLoading && kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking") && <div className="media-empty">च्यानल उपलब्धता जाँचिँदैछ…</div>}
       {!items.length && !tvLoading && !(kind === "tv" && tvHideDead && tvItems.length > 0 && Object.values(tvHealth).some((value) => value === "checking")) && <div className="media-empty">यो खोजसँग मिल्ने उपलब्ध स्टेशन भेटिएन। फिल्टर हटाएर वा उपलब्धता फेरि जाँचेर हेर्नुहोस्।</div>}
@@ -696,12 +703,12 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
       {kind === "radio" && fmLoading && <div className="media-empty">रेडियो स्टेशन लोड हुँदैछन्…</div>}
 
       {drawer && <div className="media-modal-backdrop" onMouseDown={(e) => { if (e.currentTarget === e.target) setDrawer(null); }}>
-        <section className="media-modal" role="dialog" aria-modal="true" aria-label={drawer.name + " details"}>
-          <header><div><p className="eyebrow">{drawer.kind === "tv" ? "Channel information" : "Station information"}</p><h2>{drawer.name}</h2></div><button onClick={() => setDrawer(null)} aria-label="Close details">×</button></header>
-          <div className="epg-now"><span className="live-dot" />{drawer.playable === false ? "अहिले उपलब्ध छैन" : "लाइभ स्ट्रिम उपलब्ध"}</div>
-          <p>{drawer.district} · {drawer.genre} · {drawer.codec}{drawer.quality ? " · " + drawer.quality : ""}</p>
-          <p>लाइभ प्रसारणको उपलब्धता प्रसारकअनुसार बदलिन सक्छ। स्ट्रिम रोकिएमा Reconnect प्रयोग गर्नुहोस् वा आधिकारिक साइट खोल्नुहोस्।</p>
-          {drawer.scheduleUrl || drawer.officialUrl ? <a className="modal-primary" href={drawer.scheduleUrl || drawer.officialUrl} target="_blank" rel="noreferrer">Open official source</a> : <span>आधिकारिक लिंक उपलब्ध छैन।</span>}
+        <section className="media-modal" role="dialog" aria-modal="true" aria-label={`${drawer.name} को विवरण`}>
+          <header><div><p className="eyebrow">{drawer.kind === "tv" ? "च्यानल विवरण" : "स्टेशन विवरण"}</p><h2>{drawer.name}</h2></div><button onClick={() => setDrawer(null)} aria-label="विवरण बन्द गर्नुहोस्">×</button></header>
+          <div className="epg-now"><span className="live-dot" />{drawer.playable === false ? "अहिले उपलब्ध छैन" : "लाइभ प्रसारण उपलब्ध"}</div>
+          <p>{drawer.district} · {drawer.genre}{drawer.quality ? " · " + drawer.quality : ""}</p>
+          <p>लाइभ प्रसारणको उपलब्धता प्रसारकअनुसार बदलिन सक्छ। प्रसारण रोकिएमा फेरि जोड्नुहोस् वा आधिकारिक साइट खोल्नुहोस्।</p>
+          {drawer.scheduleUrl || drawer.officialUrl ? <a className="modal-primary" href={drawer.scheduleUrl || drawer.officialUrl} target="_blank" rel="noreferrer">आधिकारिक स्रोत खोल्नुहोस्</a> : <span>आधिकारिक लिंक उपलब्ध छैन।</span>}
         </section>
       </div>}
 
@@ -709,15 +716,18 @@ export function MediaSuite({ kind }: { kind: MediaKind }) {
         <form className="media-modal" onSubmit={(e) => {
           e.preventDefault();
           const form = new FormData(e.currentTarget);
-          const payload = { station: report.id, url: report.sourceStreamUrl || report.streamUrl, reason: String(form.get("reason") || "not-playing"), at: new Date().toISOString(), userAgent: navigator.userAgent };
-          localStorage.setItem("patro.media.lastReport", JSON.stringify(payload));
-          navigator.clipboard?.writeText(JSON.stringify(payload, null, 2)).catch(() => undefined);
+          const reason = String(form.get("reason") || "not-playing");
+          const saved = { station: report.id, reason, at: new Date().toISOString() };
+          localStorage.setItem("patro.media.lastReport", JSON.stringify(saved));
+          const subject = encodeURIComponent(`प्रसारण समस्या: ${report.name}`);
+          const body = encodeURIComponent(`स्टेशन/च्यानल: ${report.name}\nसमस्या: ${reportReasonLabel(reason)}\nमिति: ${new Date().toLocaleString()}\n\nआफ्नै पात्रोबाट पठाइएको प्रसारण प्रतिक्रिया।`);
+          window.location.href = `mailto:meroaafnaipatro@gmail.com?subject=${subject}&body=${body}`;
           setReport(null);
         }}>
-          <header><div><p className="eyebrow">प्रसारण समस्या</p><h2>{report.name}</h2></div><button type="button" onClick={() => setReport(null)}>×</button></header>
-          <label>Issue<select name="reason"><option value="not-playing">Does not play</option><option value="buffering">Buffers repeatedly</option><option value="wrong-channel">Wrong channel</option><option value="audio-only">Audio/video issue</option></select></label>
-          <p>रिपोर्टको विवरण तपाईंको clipboard मा प्रतिलिपि हुन्छ; आवश्यक परे समर्थनमा पठाउन सक्नुहुन्छ।</p>
-          <button className="modal-primary" type="submit">रिपोर्ट तयार गर्नुहोस्</button>
+          <header><div><p className="eyebrow">प्रसारण समस्या</p><h2>{report.name}</h2></div><button type="button" onClick={() => setReport(null)} aria-label="रिपोर्ट बन्द गर्नुहोस्">×</button></header>
+          <label>समस्या<select name="reason"><option value="not-playing">चल्दैन</option><option value="buffering">बारम्बार रोकिन्छ</option><option value="wrong-channel">गलत च्यानल</option><option value="audio-only">अडियो/भिडियो समस्या</option></select></label>
+          <p>रिपोर्ट थिच्दा तपाईंको इमेल एपमा तयार सन्देश खुल्छ। पठाउनुअघि विवरण जाँच्न सक्नुहुन्छ।</p>
+          <button className="modal-primary" type="submit">इमेल रिपोर्ट खोल्नुहोस्</button>
         </form>
       </div>}
     </main>

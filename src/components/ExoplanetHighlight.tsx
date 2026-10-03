@@ -15,12 +15,12 @@ function formatNumber(value: number | null | undefined, digits = 1) {
 }
 
 function sizeDescription(radius: number | null | undefined) {
-  if (radius == null || !Number.isFinite(radius)) return "size not yet constrained";
-  if (radius < 0.8) return "smaller than Earth";
-  if (radius <= 1.25) return "roughly Earth-sized";
-  if (radius < 2) return "a super-Earth";
-  if (radius < 6) return "Neptune-scale";
-  return "gas-giant scale";
+  if (radius == null || !Number.isFinite(radius)) return "आकार स्पष्ट छैन";
+  if (radius < 0.8) return "पृथ्वीभन्दा सानो";
+  if (radius <= 1.25) return "पृथ्वी जत्रै";
+  if (radius < 2) return "सुपर-अर्थ आकार";
+  if (radius < 6) return "नेप्च्युन जत्रो";
+  return "ग्यास विशाल ग्रह जत्रो";
 }
 
 export function ExoplanetHighlight({ exoplanet, loading = false }: Props) {
@@ -31,14 +31,14 @@ export function ExoplanetHighlight({ exoplanet, loading = false }: Props) {
   return (
     <ExpandedCosmicPanel
       id="beyond-solar"
-      eyebrow="NASA Exoplanet Archive"
-      title="Beyond Our Solar System"
+      eyebrow="स्रोत · NASA बहिर्ग्रह संग्रह"
+      title="सौर्यमण्डल बाहिर"
       icon="✺"
       badge={loading
-        ? "Searching other worlds"
+        ? "ग्रह खोजिँदैछ"
         : planet?.discovery_year
-          ? `Discovered ${planet.discovery_year}`
-          : "Confirmed worlds"}
+          ? `${planet.discovery_year} मा पत्ता लागेको`
+          : "पुष्टि भएका ग्रह"}
     >
       {loading ? (
         <div className="exo-card exo-card--enhanced" aria-hidden="true">
@@ -65,24 +65,24 @@ export function ExoplanetHighlight({ exoplanet, loading = false }: Props) {
           </div>
 
           <div className="exo-copy">
-            <p className="eyebrow">A confirmed world beyond the Sun</p>
+            <p className="eyebrow">सूर्यभन्दा परको पुष्टि भएको ग्रह</p>
             <h3>{planet.name}</h3>
             <p className="exo-poem">
-              A world orbiting {planet.host || "a distant star"}
-              {distanceLy != null ? `, about ${formatNumber(distanceLy, 0)} light-years from us` : ""}.
-              {" "}Its measured radius makes it {sizeText}.
+              {planet.host || "टाढाको तारा"} वरिपरि परिक्रमा गर्ने ग्रह
+              {distanceLy != null ? `, हामीबाट करिब ${formatNumber(distanceLy, 0)} प्रकाश-वर्ष टाढा` : ""}।
+              {" "}मापन गरिएको त्रिज्याअनुसार यसको आकार {sizeText} छ।
             </p>
 
             <div className="exo-stat-grid">
-              <div><span>Distance</span><strong>{distanceLy != null ? `${formatNumber(distanceLy, 0)} ly` : "—"}</strong><small>{formatNumber(planet.distance_pc, 1)} pc</small></div>
-              <div><span>Discovery</span><strong>{planet.discovery_method || "—"}</strong><small>{planet.discovery_year || "Year unavailable"}</small></div>
-              <div><span>Radius</span><strong>{formatNumber(planet.radius_earth, 2)} R⊕</strong><small>{sizeText}</small></div>
-              <div><span>Orbit</span><strong>{formatNumber(planet.orbital_period_days, 2)} d</strong><small>around {planet.host || "host star"}</small></div>
+              <div><span>दूरी</span><strong>{distanceLy != null ? `${formatNumber(distanceLy, 0)} प्रकाश-वर्ष` : "—"}</strong><small>{formatNumber(planet.distance_pc, 1)} pc</small></div>
+              <div><span>खोज विधि</span><strong>{planet.discovery_method || "—"}</strong><small>{planet.discovery_year || "वर्ष उपलब्ध छैन"}</small></div>
+              <div><span>त्रिज्या</span><strong>{formatNumber(planet.radius_earth, 2)} R⊕</strong><small>{sizeText}</small></div>
+              <div><span>परिक्रमा</span><strong>{formatNumber(planet.orbital_period_days, 2)} दिन</strong><small>{planet.host || "आफ्नो तारा"} वरिपरि</small></div>
             </div>
 
             {planet.mass_earth != null ? (
               <p className="exo-footnote">
-                Estimated mass: {formatNumber(planet.mass_earth, 2)} Earth masses. Archive values can be revised as measurements improve.
+                अनुमानित द्रव्यमान: पृथ्वीको {formatNumber(planet.mass_earth, 2)} गुणा। नयाँ मापनसँग अभिलेख मानहरू परिमार्जन हुन सक्छन्।
               </p>
             ) : null}
           </div>
@@ -90,7 +90,7 @@ export function ExoplanetHighlight({ exoplanet, loading = false }: Props) {
       ) : (
         <div className="exo-empty">
           <div className="exo-empty__orbit" aria-hidden="true"><span /></div>
-          <div><strong>No exoplanet highlight returned</strong><p>The NASA Exoplanet Archive query is temporarily unavailable. This section will repopulate from the server cache when the archive responds.</p></div>
+          <div><strong>यस समय बहिर्ग्रहको विशेष विवरण उपलब्ध छैन</strong><p>स्रोतबाट विवरण उपलब्ध भएपछि यो भाग स्वतः भरिन्छ।</p></div>
         </div>
       )}
     </ExpandedCosmicPanel>

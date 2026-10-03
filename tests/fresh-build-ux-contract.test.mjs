@@ -110,6 +110,19 @@ test("visible tool surfaces consolidate directional date conversion without kill
   assert.ok(router.includes('path.match(/^\\/tools\\/([^/]+)$/)')||router.includes('const tool=path.match(/^\\/tools\\/([^/]+)$/)'),"legacy tool deep links must remain routable");
 });
 
+test("astronomy UI hides deployment and prototype language from visitors",()=>{
+  const hero=read("src/components/CosmicHero.tsx");
+  const experience=read("src/components/CosmicExperience.tsx");
+  const sky=read("src/components/StandUnderThisSky.tsx");
+  const direct=read("src/components/seo/DailyDirectAnswer.tsx");
+  const combined=[hero,experience,sky,direct].join("\n");
+  for(const jargon of ["Edge online","Edge unavailable","Checking edge","Cosmic Context","Living astronomical instrument","protected Supabase router","patro-blush.vercel.app","Lower-priority layer"]){
+    assert.ok(!combined.includes(jargon),`astronomy leaked prototype/deployment copy: ${jargon}`);
+  }
+  assert.ok(hero.includes("/tools/astro?date="),"astronomy share links must use the canonical public route");
+  assert.ok(hero.includes("aafnaipatro.com/tools/astro"),"share card must use the production Aafnai Patro address");
+});
+
 test("China-aware Jyotish AI is restored on the React shell and Cloudflare native handler",()=>{
   const assistant=read("src/components/JyotishAssistant.tsx");
   const main=read("src/main.tsx");

@@ -51,7 +51,7 @@ jobs:
         id: build
         continue-on-error: true
         run: npm run build
-      - name: Core, typing, Patro tools, community and full-product tests
+      - name: Core, typing, Patro tools, community, full-product and release-safety tests
         id: product_tests
         continue-on-error: true
         run: |
@@ -61,6 +61,7 @@ jobs:
           npm run test:patro-tools
           npm run test:community
           npm run test:full-product
+          npm run test:release-safety
       - name: Cloudflare Worker contracts and dry-run
         id: cloudflare
         continue-on-error: true

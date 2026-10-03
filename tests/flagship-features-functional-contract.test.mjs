@@ -49,9 +49,10 @@ test("FM preserves native D1 radio plus verified station fallback and stream rel
  assert.ok(radio.includes("radioCatalogResponse"));
 });
 
-test("TV preserves catalog, health probes and resilient relay compatibility",()=>{
+test("TV preserves catalog, health probes and resilient player controls",()=>{
  const media=read("src/media/MediaSuite.tsx"),bridge=read("worker/connected-entry.ts");
- hasAll(media,["tv/catalog","tv/relay","tv/health","Hls.Events.ERROR","recoverMediaError","Reconnect","Fullscreen","PiP"],"TV experience");
+ hasAll(media,["tv/catalog","tv/relay","tv/health","Hls.Events.ERROR","recoverMediaError","setRetryNonce","requestFullscreen","requestPictureInPicture"],"TV experience");
+ assert.ok(media.includes("webkitShowPlaybackTargetPicker")||media.includes("video.remote?.prompt"),"TV casting control must remain wired");
  assert.ok(bridge.includes('new Set(["tv", "fm", "samachar"])'));
  assert.ok(bridge.includes('response.status !== 404'));
 });

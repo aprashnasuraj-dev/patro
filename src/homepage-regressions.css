@@ -1,40 +1,31 @@
-/* Homepage release guards: the first screen must read like a finished Nepali calendar. */
+/* Homepage release guards: preserve rich information without mobile overflow. */
 .rh-grid,.rh-weekheads{min-width:0;max-width:100%}
 .rh-cell,.rh-cell>*{min-width:0}
 .rh-cell-top,.rh-day-badges{overflow:hidden}
 
-/* Optional enrichment is omitted instead of exposing implementation placeholders. */
-.rh-cell em.is-pending{visibility:hidden}
-.rh-ns-date[hidden]{display:none!important}
-.rh-ns-date[title="नेपाल संवत् विवरण उपलब्ध हुँदा देखिन्छ"]:empty{display:none!important}
+/* Missing optional enrichment is shown neutrally, never as implementation copy. */
+.rh-ns-date:empty::after,.rh-cell em.is-pending:empty::after{content:"—";color:var(--ap-muted);font-weight:700}
 
-/* Legacy calendar fallback gets the same information hierarchy as the main grid. */
+/* Legacy calendar fallback keeps the same readable hierarchy. */
 .ap-nsdate{display:block;margin-top:3px;color:var(--ap-green-ink);font-size:var(--ap-t-xs);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 @media(max-width:680px){
   .rh-grid,.rh-weekheads{width:100%;grid-template-columns:repeat(7,minmax(0,1fr))}
-  .rh-cell{min-height:122px!important;padding:6px 3px!important;gap:2px!important}
-  .rh-cell.is-empty{min-height:122px!important}
-  .rh-cell-top{display:grid!important;grid-template-columns:1fr!important;align-content:start;gap:2px!important;width:100%;min-height:27px!important;font-size:.68rem!important;line-height:1.05!important}
-  .rh-ad-date,.rh-ns-date{max-width:100%!important;width:100%;text-align:left!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .rh-ns-date{color:var(--ap-green-ink)!important;font-weight:800}
-  .rh-cell-main{min-height:30px!important;justify-content:flex-start!important;padding-left:1px}
-  .rh-cell-main strong{font-size:1.38rem!important}
-  .rh-weekday{display:none!important}
-  .rh-cell em{display:block!important;visibility:visible;min-height:14px!important;margin:0!important;text-align:left!important;font-size:.68rem!important;line-height:1.08!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .rh-cell em.is-pending{visibility:hidden!important}
-  .rh-weather{flex:0 0 auto}
-  .rh-day-badges{width:100%;min-height:18px!important}
-  .rh-day-badges>span{font-size:.61rem!important;line-height:1.05!important;padding:2px!important;white-space:normal!important;display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .rh-legend{gap:7px 11px!important}
+  .rh-cell-top{display:grid!important;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:1px!important;width:100%}
+  .rh-ad-date,.rh-ns-date{max-width:100%!important;min-width:0;font-size:var(--ap-t-xs)!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rh-ns-date{text-align:right!important;color:var(--ap-green-ink)!important;font-weight:800}
+  .rh-cell-main{min-height:30px!important}
+  .rh-cell-main strong{font-size:1.3rem!important}
+  .rh-weather{flex:0 0 auto;font-size:var(--ap-t-xs)!important}
+  .rh-weekday,.rh-cell em,.rh-day-badges>span{display:block!important;visibility:visible!important;font-size:var(--ap-t-xs)!important}
+  .rh-cell em{min-height:16px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rh-day-badges{width:100%;min-height:19px!important}
+  .rh-day-badges>span:nth-child(n+2){display:none!important}
 }
 
 @media(max-width:390px){
   .rh-calendar{overflow:hidden}
-  .rh-grid,.rh-weekheads{font-size:var(--ap-t-xs)}
-  .rh-cell{min-height:118px!important;max-width:100%;padding-left:2px!important;padding-right:2px!important}
-  .rh-cell.is-empty{min-height:118px!important}
-  .rh-cell-top,.rh-cell em{font-size:.64rem!important}
-  .rh-cell-main strong{font-size:1.28rem!important}
-  .rh-day-badges>span{font-size:.57rem!important}
+  .rh-cell{max-width:100%}
+  .rh-cell-top,.rh-ad-date,.rh-ns-date,.rh-weekday,.rh-cell em,.rh-day-badges>span,.rh-weather{font-size:13px!important}
+  .rh-cell-main strong{font-size:19px!important}
 }

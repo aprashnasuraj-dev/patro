@@ -4,7 +4,7 @@ import { ReadAloudButton } from "./ReadAloudButton";
 export function ToolPage({ title, description, children }: { title: string; description: string; children: ReactNode }) {
   return (
     <main className="patro-tool-page">
-      <nav className="tool-breadcrumbs" aria-label="Breadcrumb">
+      <nav className="tool-breadcrumbs" aria-label="मार्ग">
         <a href="/">आफ्नै पात्रो</a><span aria-hidden="true">›</span><a href="/tools">उपकरण</a><span aria-hidden="true">›</span><span aria-current="page">{title}</span>
       </nav>
       <section className="patro-tool-hero">
@@ -12,8 +12,8 @@ export function ToolPage({ title, description, children }: { title: string; desc
           <p className="eyebrow">आफ्नै पात्रो · उपकरण</p>
           <h1>{title}</h1>
           <p>{description}</p>
-          <div className="tool-trust-row" aria-label="Tool qualities">
-            <span>मोबाइलमैत्री</span><span>छिटो परिणाम</span><span>स्रोत-सचेत</span>
+          <div className="tool-trust-row" aria-label="उपकरणका विशेषता">
+            <span>मोबाइलमैत्री</span><span>सरल प्रयोग</span><span>स्पष्ट नतिजा</span>
           </div>
         </div>
         <a className="tool-link-button tool-back-button" href="/tools">← सबै उपकरण</a>

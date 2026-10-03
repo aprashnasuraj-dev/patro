@@ -86,14 +86,17 @@ test("homepage and astronomy remain separate routes", () => {
   assert.ok(homeRoute >= 0 && astroRoute > homeRoute);
 });
 
-test("homepage rich calendar cells expose real enrichment fields without mobile overflow placeholders", () => {
+test("homepage rich calendar keeps all requested fields readable at mobile sizes", () => {
   for (const token of ["rh-ad-date", "rh-ns-date", "rh-weather", "rh-weekday", "rh-day-badges", "is-festival-badge", "is-holiday-badge"])
     assert.ok(home.includes(token), `missing rich day-cell field: ${token}`);
   assert.match(richCalendar, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
   assert.match(richCalendar, /@media\(max-width:390px\)/);
-  assert.match(homepageGuards, /\.rh-cell em\.is-pending\{visibility:hidden\}/);
-  assert.match(homepageGuards, /\.rh-ns-date\[title="नेपाल संवत् विवरण उपलब्ध हुँदा देखिन्छ"\]\{visibility:hidden\}/);
+  assert.match(richCalendar, /font-size:var\(--ap-t-xs\)/);
+  assert.doesNotMatch(richCalendar, /font-size:\.(?:4|5|6|7)\d*rem/);
+  assert.doesNotMatch(homepageGuards, /\.rh-weekday\{display:none/);
+  assert.doesNotMatch(homepageGuards, /\.rh-cell em\.is-pending\{visibility:hidden/);
   assert.match(homepageGuards, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
+  assert.match(homepageGuards, /font-size:13px!important/);
   assert.ok(main.indexOf('import "./homepage-regressions.css";') > main.indexOf('import "./rich-calendar.css";'));
 });
 
@@ -102,8 +105,7 @@ test("homepage prerender first paint is branded and calendar-first rather than a
   assert.match(prerenderPolish, /ap-prerender-header/);
   assert.match(prerenderPolish, /ap-prerender-hero/);
   assert.match(prerenderPolish, /ap-prerender-calendar/);
-  assert.match(prerenderPolish, /ap-prerender-copy/);
-  assert.ok(prerenderPolish.indexOf("ap-prerender-calendar") < prerenderPolish.indexOf("ap-prerender-copy"));
+  assert.doesNotMatch(prerenderPolish, /सम्बन्धित खोजहरू · Related searches/);
   assert.match(prerenderPolish, /@media\(max-width:680px\)/);
 });
 

@@ -15,8 +15,16 @@ interface Props {
 
 function distanceText(km: number | null | undefined) {
   if (km == null || !Number.isFinite(km)) return "—";
-  if (km >= 1_000_000) return `${(km / 1_000_000).toFixed(2)} million km`;
-  return `${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(km)} km`;
+  if (km >= 1_000_000) return `${(km / 1_000_000).toFixed(2)} मिलियन किमी`;
+  return `${new Intl.NumberFormat("ne-NP", { maximumFractionDigits: 0 }).format(km)} किमी`;
+}
+
+function solarLabel(level: string | undefined) {
+  if (level === "Elevated") return "उच्च";
+  if (level === "Moderate") return "मध्यम";
+  if (level === "Low") return "कम";
+  if (level === "Quiet") return "शान्त";
+  return "—";
 }
 
 function makeParticles(seedText: string) {
@@ -57,13 +65,13 @@ export function StandUnderThisSky({
     ? epic?.image_url
     : (apod?.hdurl || apod?.url || epic?.image_url || "");
   const backgroundLabel = preferEpic
-    ? `DSCOVR EPIC · ${cosmic?.earth.epic.image_date || selectedDate}`
-    : apod?.title || (epic ? "DSCOVR EPIC" : "Patro cosmic field");
+    ? `पृथ्वी अवलोकन · ${cosmic?.earth.epic.image_date || selectedDate}`
+    : apod?.title || (epic ? "पृथ्वी अवलोकन" : "खगोलीय आकाश");
 
   const nearestNeo = cosmic?.neo.items?.[0] ?? null;
   const ad = sync?.calendars.gregorian_ad || selectedDate;
-  const bs = sync?.calendars.bikram_sambat || "BS unavailable";
-  const ns = sync?.calendars.nepal_sambat || "NS unavailable";
+  const bs = sync?.calendars.bikram_sambat || "—";
+  const ns = sync?.calendars.nepal_sambat || "—";
 
   useEffect(() => {
     if (!open) return;
@@ -170,7 +178,7 @@ export function StandUnderThisSky({
       try {
         await document.exitFullscreen();
       } catch {
-        // The cinematic overlay still closes even if browser fullscreen exit fails.
+        // The overlay still closes if the browser refuses fullscreen exit.
       }
     }
   }
@@ -184,7 +192,7 @@ export function StandUnderThisSky({
           className="sky-mode"
           role="dialog"
           aria-modal="true"
-          aria-label={`Stand under the sky for ${selectedDate}`}
+          aria-label={`${selectedDate} को आकाश दृश्य`}
           initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.015 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 1.015 }}
@@ -218,14 +226,14 @@ export function StandUnderThisSky({
 
           <div className="sky-mode__topbar">
             <div>
-              <span className="eyebrow">Stand under this sky</span>
+              <span className="eyebrow">यस मितिको आकाश</span>
               <strong>{backgroundLabel}</strong>
             </div>
             <div className="sky-mode__actions">
               <button className="sky-mode__sound" onClick={toggleAmbient} aria-pressed={soundOn}>
-                {soundOn ? "🔊 Sound on" : "🔈 Ambient sound"}
+                {soundOn ? "🔊 ध्वनि चालु" : "🔈 आकाश ध्वनि"}
               </button>
-              <button className="sky-mode__close" onClick={closeSky} aria-label="Close sky mode">×</button>
+              <button className="sky-mode__close" onClick={closeSky} aria-label="आकाश दृश्य बन्द गर्नुहोस्">×</button>
             </div>
           </div>
 
@@ -236,7 +244,7 @@ export function StandUnderThisSky({
             transition={{ delay: reduceMotion ? 0 : 0.18, duration: 0.55 }}
           >
             <div className="sky-mode__date-stack">
-              <span>Earth date · AD</span>
+              <span>ई.सं. मिति</span>
               <h2>{ad}</h2>
               <strong>{bs}</strong>
               <strong>{ns}</strong>
@@ -244,31 +252,31 @@ export function StandUnderThisSky({
 
             <div className="sky-mode__facts">
               <div>
-                <span>Moon</span>
-                <strong>{tithi ? `${tithi.illumination_percent.toFixed(1)}% illuminated` : "—"}</strong>
-                <small>{tithi ? `${tithi.tithi_name_ne} · ${tithi.tithi_name}` : "Lunar data unavailable"}</small>
+                <span>चन्द्र</span>
+                <strong>{tithi ? `${tithi.illumination_percent.toFixed(1)}% प्रकाश` : "—"}</strong>
+                <small>{tithi ? `${tithi.tithi_name_ne} · ${tithi.tithi_name}` : "चन्द्र विवरण उपलब्ध छैन"}</small>
               </div>
               <div>
-                <span>Solar activity</span>
-                <strong>{cosmic?.solar.level || "—"}</strong>
-                <small>{cosmic ? `${cosmic.solar.counts.flares} flares · ${cosmic.solar.counts.cmes} CMEs` : "DONKI unavailable"}</small>
+                <span>सौर गतिविधि</span>
+                <strong>{solarLabel(cosmic?.solar.level)}</strong>
+                <small>{cosmic ? `${cosmic.solar.counts.flares} सौर ज्वाला · ${cosmic.solar.counts.cmes} उत्सर्जन` : "विवरण उपलब्ध छैन"}</small>
               </div>
               <div>
-                <span>Nearest tracked NEO</span>
+                <span>नजिकको ट्र्याक गरिएको वस्तु</span>
                 <strong>{nearestNeo?.name || "—"}</strong>
-                <small>{nearestNeo ? distanceText(nearestNeo.miss_distance_km) : "NeoWs unavailable"}</small>
+                <small>{nearestNeo ? distanceText(nearestNeo.miss_distance_km) : "विवरण उपलब्ध छैन"}</small>
               </div>
               <div>
-                <span>Earth view</span>
-                <strong>{cosmic?.earth.epic.fallback_used ? "Nearest EPIC frame" : epic ? "EPIC frame" : "Worldview available"}</strong>
+                <span>पृथ्वी दृश्य</span>
+                <strong>{cosmic?.earth.epic.fallback_used ? "नजिकको उपलब्ध चित्र" : epic ? "पृथ्वी चित्र" : "विश्व दृश्य"}</strong>
                 <small>{cosmic?.earth.epic.image_date || selectedDate}</small>
               </div>
             </div>
           </motion.div>
 
           <div className="sky-mode__hint">
-            <span>NASA data is date-linked through the protected Supabase router.</span>
-            <span>Press Esc or × to return.</span>
+            <span>खगोलीय स्रोतका उपलब्ध विवरण चयन गरिएको मितिसँग मिलाइएका छन्।</span>
+            <span>फर्कन Esc वा × थिच्नुहोस्।</span>
           </div>
         </motion.div>
       ) : null}

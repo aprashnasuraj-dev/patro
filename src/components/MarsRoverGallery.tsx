@@ -21,10 +21,10 @@ export function MarsRoverGallery({ mars, requestedDate, loading = false }: Props
   return (
     <ExpandedCosmicPanel
       id="mars-day"
-      eyebrow="NASA Mars rover archive"
-      title="Mars on This Day"
+      eyebrow="स्रोत · NASA मंगल संग्रह"
+      title="यस दिनको मंगल"
       icon="◌"
-      badge={loading ? "Searching Mars" : fallbackCount ? `${fallbackCount} archive fallback` : "Archive-aware"}
+      badge={loading ? "चित्र खोजिँदैछ" : fallbackCount ? "नजिकका उपलब्ध चित्र" : "मंगल संग्रह"}
     >
       {loading ? (
         <div className="rover-grid" aria-hidden="true">
@@ -33,7 +33,7 @@ export function MarsRoverGallery({ mars, requestedDate, loading = false }: Props
       ) : (
         <>
           <p className="archive-notice">
-            {mars?.official_api_status || "Mars archive status is temporarily unavailable."}
+            {mars?.official_api_status ? "उपलब्ध मंगल अभियानका चित्र र अभिलेख चयन गरिएको मितिसँग मिलाएर देखाइएका छन्।" : "मंगल चित्रको विस्तृत स्थिति अहिले उपलब्ध छैन।"}
           </p>
 
           {photos.length ? (
@@ -50,18 +50,18 @@ export function MarsRoverGallery({ mars, requestedDate, loading = false }: Props
                   <div className="rover-card__image">
                     <img
                       src={photo.img_src}
-                      alt={`${photo.rover} Mars rover archive observation`}
+                      alt={`${photo.rover} मंगल अभियानको चित्र`}
                       loading="lazy"
                       decoding="async"
                     />
                     <span>{photo.rover}</span>
                   </div>
                   <div>
-                    <strong>{photo.camera || "NASA Mars archive"}</strong>
+                    <strong>{photo.camera || "मंगल अभियान"}</strong>
                     <small>{photo.earth_date || requestedDate}</small>
                     <span>
                       {photo.roverStatus === "media_library_fallback"
-                        ? "NASA Media Library fallback"
+                        ? "नजिकको उपलब्ध चित्र"
                         : `Sol ${photo.sol ?? "—"}`}
                     </span>
                   </div>
@@ -72,22 +72,22 @@ export function MarsRoverGallery({ mars, requestedDate, loading = false }: Props
             <div className="mars-empty">
               <div className="mars-empty__disc" aria-hidden="true" />
               <div>
-                <strong>No rover imagery matched this Earth date</strong>
-                <p>The archived rover endpoint and NASA Media Library fallback returned no usable image.</p>
+                <strong>यस मितिसँग मिल्ने मंगल अभियानको चित्र भेटिएन</strong>
+                <p>उपलब्ध मंगल अभिलेखमा प्रयोगयोग्य चित्र नभएकाले यस भागमा चित्र देखाइएको छैन।</p>
               </div>
             </div>
           )}
 
           <div className="insight-strip insight-strip--enhanced">
-            <strong>InSight weather archive</strong>
-            <span>{mars?.insight_weather.status.replaceAll("_", " ") || "unavailable"}</span>
+            <strong>InSight मौसम अभिलेख</strong>
+            <span>{insight ? "उपलब्ध" : "यस मितिका लागि उपलब्ध छैन"}</span>
             {insight ? (
               <>
                 <span>Sol {insight.sol}</span>
                 <span>
                   {insight.average_temp_c != null
-                    ? `${Math.round(insight.average_temp_c)}°C average`
-                    : "temperature unavailable"}
+                    ? `औसत ${Math.round(insight.average_temp_c)}°C`
+                    : "तापक्रम उपलब्ध छैन"}
                 </span>
                 {insight.pressure_pa != null ? <span>{Math.round(insight.pressure_pa)} Pa</span> : null}
               </>

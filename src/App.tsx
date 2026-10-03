@@ -40,10 +40,8 @@ export default function App() {
   const [apod,setApod]=useState<Loadable<ApodPayload>>({data:null,error:null,loading:true});
   const [tithi,setTithi]=useState<Loadable<TithiPayload>>({data:null,error:null,loading:true});
   const [cosmic,setCosmic]=useState<Loadable<CosmicDayPayload>>({data:null,error:null,loading:true});
-  const [health,setHealth]=useState<"checking"|"online"|"offline">("checking");
 
   useEffect(()=>{setPageTitle("खगोलीय पात्रो")},[]);
-  useEffect(()=>{const c=new AbortController();api.health(c.signal).then(()=>setHealth("online")).catch(e=>{if(e?.name!=="AbortError")setHealth("offline")});return()=>c.abort()},[]);
   useEffect(()=>{
     const c=new AbortController();
     setSync(s=>({...s,loading:true,error:null}));setApod(s=>({...s,loading:true,error:null}));setTithi(s=>({...s,loading:true,error:null}));setCosmic(s=>({...s,loading:true,error:null}));
@@ -62,16 +60,11 @@ export default function App() {
   return <div className="app-shell">
     <HeroCanvas imageUrl={effectiveApod?.hdurl||effectiveApod?.url||null} loading={apod.loading}/>
     <main className="app-content cosmic-app-content">
-      <section className="glass-panel" style={{marginBottom:"1rem",padding:"1rem 1.2rem"}}>
-        <p className="eyebrow">उपकरण · खगोल</p>
-        <h1 style={{margin:".2rem 0"}}>खगोलीय पात्रो</h1>
-        <p className="subheading">AD, BS, नेपाल संवत्, तिथि, चन्द्र अवस्था र NASA को खगोलीय सामग्री एउटै मितिसँग मिलाएर हेर्नुहोस्।</p>
-      </section>
-      <CosmicHero sync={sync.data} tithi={tithi.data} cosmic={cosmic.data} apod={effectiveApod} health={health} selectedDate={selectedDate} today={today} loading={cosmic.loading||tithi.loading} onDateChange={chooseDate} onPreviousDay={()=>shiftSelected(-1)} onNextDay={()=>shiftSelected(1)} onToday={()=>chooseDate(today)}/>
+      <CosmicHero sync={sync.data} tithi={tithi.data} cosmic={cosmic.data} apod={effectiveApod} selectedDate={selectedDate} today={today} loading={cosmic.loading||tithi.loading} onDateChange={chooseDate} onPreviousDay={()=>shiftSelected(-1)} onNextDay={()=>shiftSelected(1)} onToday={()=>chooseDate(today)}/>
       <DailyDirectAnswer selectedDate={selectedDate} today={today} sync={sync.data}/>
-      {sync.error&&<div className="inline-error cosmic-top-error" role="alert"><strong>पात्रो मिलान हुन सकेन।</strong><span>{sync.error}</span></div>}
+      {sync.error&&<div className="inline-error cosmic-top-error" role="status"><strong>पात्रो विवरण अहिले पूर्ण रूपमा उपलब्ध छैन।</strong><span>उपलब्ध खगोलीय जानकारी भने तल हेर्न सक्नुहुन्छ।</span></div>}
       <DateTravelExperience selectedDate={selectedDate} today={today} onDateChange={chooseDate}/>
-      <section className="dashboard-grid" aria-label="खगोलीय पात्रो ड्यासबोर्ड">
+      <section className="dashboard-grid" aria-label="खगोलीय पात्रो">
         <LunarPhaseDial data={tithi.data} loading={tithi.loading} error={tithi.error}/>
         <CalendarGrid month={monthCursor} selectedDate={selectedDate} today={today} onMonthChange={setMonthCursor} onSelectDate={chooseDate}/>
       </section>

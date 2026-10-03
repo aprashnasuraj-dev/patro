@@ -20,11 +20,11 @@ function formatNumber(value: number | null | undefined, maximumFractionDigits = 
 }
 
 function culturalNote(tithi: TithiPayload | null) {
-  if (!tithi) return "Tithi meaning will appear when astronomical calculation completes.";
-  if (tithi.tithi_index === 15) return "पूर्णिमा · Purnima is the full-moon Tithi, culturally associated with observances, pilgrimage and lunar festivals across Nepal.";
-  if (tithi.tithi_index === 30) return "औंसी · Amavasya is the new-moon Tithi, important in many remembrance and ritual traditions in Nepal.";
-  if (tithi.tithi_name === "Ekadashi") return "एकादशी · Ekadashi is traditionally observed by many devotees through fasting, reflection or dietary restraint.";
-  return `${tithi.tithi_name_ne} · ${tithi.tithi_name} belongs to ${tithi.paksha}. Cultural observance varies by tradition, locality and authoritative Panchanga.`;
+  if (!tithi) return "तिथि गणना पूरा भएपछि यसको सांस्कृतिक सन्दर्भ यहाँ देखिन्छ।";
+  if (tithi.tithi_index === 15) return "पूर्णिमा नेपाली परम्परामा पूजा, व्रत, तीर्थ र विभिन्न चन्द्र पर्वसँग जोडिने महत्त्वपूर्ण तिथि हो।";
+  if (tithi.tithi_index === 30) return "औंसी नेपाली परम्परामा पितृस्मरण, पूजा र विभिन्न स्थानीय संस्कारसँग जोडिने तिथि हो।";
+  if (tithi.tithi_name === "Ekadashi") return "एकादशीमा धेरै समुदायमा व्रत, साधना वा विशेष आहारको परम्परा पाइन्छ।";
+  return `${tithi.tithi_name_ne} (${tithi.tithi_name}) ${tithi.paksha} पक्षको तिथि हो। चलन स्थान र परम्पराअनुसार फरक हुन सक्छ।`;
 }
 
 export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
@@ -32,9 +32,9 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
     return (
       <section className="glass-panel cosmic-loading">
         <div>
-          <p className="eyebrow">Cosmic data</p>
-          <h2>NASA context is temporarily unavailable</h2>
-          <p className="subheading">{error}</p>
+          <p className="eyebrow">खगोलीय विवरण</p>
+          <h2>यस मितिको विस्तृत आकाशीय जानकारी अहिले उपलब्ध छैन</h2>
+          <p className="subheading">माथिका पात्रो र चन्द्रसम्बन्धी उपलब्ध विवरण भने हेर्न सक्नुहुन्छ।</p>
         </div>
       </section>
     );
@@ -42,13 +42,13 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
 
   if (!data) {
     return (
-      <section className="cosmic-stack" aria-label="Loading NASA cosmic data layers">
+      <section className="cosmic-stack" aria-label="खगोलीय विवरण">
         <section className="cosmic-loading glass-panel">
           <span className="cosmic-loader" />
           <div>
-            <p className="eyebrow">NASA + Patro</p>
-            <h2>Reading the selected sky</h2>
-            <p className="subheading">Each NASA source is cached and resolved independently behind the Supabase router.</p>
+            <p className="eyebrow">खगोलीय विवरण</p>
+            <h2>आकाशीय जानकारी तयार हुँदैछ</h2>
+            <p className="subheading">चन्द्र, पृथ्वी र अन्तरिक्षसम्बन्धी उपलब्ध विवरण चयन गरिएको मितिसँग मिलाइँदैछ।</p>
           </div>
         </section>
         <EpicEarthPanel epic={null} eonet={null} loading={loading} />
@@ -60,25 +60,25 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
   }
 
   return (
-    <section className="cosmic-stack" aria-label="NASA cosmic data layers">
+    <section className="cosmic-stack" aria-label="खगोलीय विवरण">
       <ExpandedCosmicPanel
         id="sky-this-day"
-        eyebrow="NASA APOD + media library"
-        title="Sky of This Day"
+        eyebrow="स्रोत · NASA APOD"
+        title="यस दिनको आकाश"
         icon="✦"
-        badge={apod?.is_fallback ? "Fallback image" : "NASA"}
+        badge={apod?.is_fallback ? "नजिकको उपलब्ध चित्र" : "NASA"}
         defaultOpen
       >
         <div className="sky-layout">
           <figure className="sky-feature">
             {apod?.url && <img src={apod.url} alt="" loading="lazy" decoding="async" />}
             <figcaption>
-              <h3>{apod?.title || "Astronomy Picture of the Day"}</h3>
-              <p>{apod?.explanation || "NASA APOD metadata is unavailable for this date."}</p>
+              <h3>{apod?.title || "आजको खगोलीय चित्र"}</h3>
+              <p>{apod?.explanation || "यस मितिको चित्र विवरण उपलब्ध छैन।"}</p>
               <div className="source-row">
                 <span>{apod?.date || data.requested_date}</span>
                 {apod?.copyright && <span>{apod.copyright}</span>}
-                {apod?.source_media_type === "video" && <span>Video represented by thumbnail</span>}
+                {apod?.source_media_type === "video" && <span>भिडियोको प्रतिनिधि चित्र</span>}
               </div>
             </figcaption>
           </figure>
@@ -87,29 +87,29 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
             {data.related_media.items.length ? data.related_media.items.map((item) => (
               <article className="media-tile" key={item.nasa_id || item.preview_url}>
                 <img src={item.preview_url} alt="" loading="lazy" decoding="async" />
-                <div><strong>{item.title}</strong><small>{item.center || "NASA media archive"}</small></div>
+                <div><strong>{item.title}</strong><small>{item.center || "NASA संग्रह"}</small></div>
               </article>
-            )) : <p className="empty-copy">No related NASA media was returned for this date.</p>}
+            )) : <p className="empty-copy">यस मितिसँग सम्बन्धित थप चित्र भेटिएन।</p>}
           </div>
         </div>
       </ExpandedCosmicPanel>
 
       <ExpandedCosmicPanel
         id="moon-tithi"
-        eyebrow="Astronomy Engine + Nepali tradition"
-        title="Moon & Tithi"
+        eyebrow="चन्द्र गणना · नेपाली परम्परा"
+        title="चन्द्र र तिथि"
         icon="☾"
-        badge={tithi ? `${tithi.illumination_percent.toFixed(1)}% lit` : "Calculating"}
+        badge={tithi ? `${tithi.illumination_percent.toFixed(1)}% प्रकाश` : "गणना हुँदैछ"}
         defaultOpen
       >
         <div className="fact-grid">
-          <div className="fact-card"><span>Tithi</span><strong>{tithi?.tithi_name_ne || "—"}</strong><small>{tithi?.tithi_name || ""}</small></div>
-          <div className="fact-card"><span>Paksha</span><strong>{tithi?.paksha || "—"}</strong></div>
-          <div className="fact-card"><span>Phase angle</span><strong>{tithi ? `${tithi.phase_angle_deg.toFixed(2)}°` : "—"}</strong></div>
-          <div className="fact-card"><span>Next transition</span><strong>{tithi?.time_to_next_tithi_minutes != null ? `${Math.round(tithi.time_to_next_tithi_minutes / 60 * 10) / 10} h` : "—"}</strong></div>
+          <div className="fact-card"><span>तिथि</span><strong>{tithi?.tithi_name_ne || "—"}</strong><small>{tithi?.tithi_name || ""}</small></div>
+          <div className="fact-card"><span>पक्ष</span><strong>{tithi?.paksha || "—"}</strong></div>
+          <div className="fact-card"><span>चन्द्र कोण</span><strong>{tithi ? `${tithi.phase_angle_deg.toFixed(2)}°` : "—"}</strong></div>
+          <div className="fact-card"><span>अर्को तिथि</span><strong>{tithi?.time_to_next_tithi_minutes != null ? `${Math.round(tithi.time_to_next_tithi_minutes / 60 * 10) / 10} घण्टा` : "—"}</strong></div>
         </div>
-        <div className="cultural-note"><strong>नेपाल सन्दर्भ · Cultural note</strong><p>{culturalNote(tithi)}</p></div>
-        <p className="method-note">Traditional interpretation is kept separate from verified astronomical calculations. Near-boundary ceremonial timing should still be checked against an authoritative Panchanga.</p>
+        <div className="cultural-note"><strong>नेपाल सन्दर्भ</strong><p>{culturalNote(tithi)}</p></div>
+        <p className="method-note">खगोलीय गणना र सांस्कृतिक व्याख्या अलग राखिएका छन्। संस्कारको ठ्याक्कै समयका लागि मान्य पञ्चाङ्ग वा सम्बन्धित परम्पराको आधिकारिक सन्दर्भ पनि हेर्नुहोस्।</p>
       </ExpandedCosmicPanel>
 
       <EpicEarthPanel
@@ -123,30 +123,30 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
 
       <ExpandedCosmicPanel
         id="cosmic-neighborhood"
-        eyebrow="NASA JPL · NeoWs"
-        title="Cosmic Neighborhood"
+        eyebrow="स्रोत · NASA JPL"
+        title="पृथ्वी नजिकका अन्तरिक्ष वस्तु"
         icon="◎"
-        badge={`${data.neo.count} tracked`}
+        badge={`${data.neo.count} वस्तु`}
         defaultOpen
       >
         <div className="neo-layout">
           <NeoWsOrbitViz items={data.neo.items} />
           <div className="neo-list">
             <div className="mini-heading">
-              <strong>Closest approaches</strong>
-              <span>{data.neo.hazardous_count} hazardous-flag object{data.neo.hazardous_count === 1 ? "" : "s"}</span>
+              <strong>नजिकका आगमन</strong>
+              <span>{data.neo.hazardous_count} सम्भावित जोखिम चिन्ह भएका</span>
             </div>
             {data.neo.items.map((neo) => (
               <article className="neo-row" key={neo.id || neo.name}>
                 <div>
                   <strong>{neo.name}</strong>
-                  <small>{formatNumber(neo.diameter_m)} m estimated diameter</small>
+                  <small>अनुमानित व्यास {formatNumber(neo.diameter_m)} मिटर</small>
                 </div>
                 <div className="neo-row__numbers">
-                  <b>{formatNumber(neo.miss_distance_km)} km</b>
-                  <small>{formatNumber(neo.velocity_kph)} km/h</small>
+                  <b>{formatNumber(neo.miss_distance_km)} किमी</b>
+                  <small>{formatNumber(neo.velocity_kph)} किमी/घण्टा</small>
                 </div>
-                {neo.hazardous && <span className="hazard-chip">Potentially hazardous</span>}
+                {neo.hazardous && <span className="hazard-chip">सम्भावित जोखिम चिन्ह</span>}
               </article>
             ))}
           </div>
@@ -159,19 +159,19 @@ export function CosmicExperience({ data, apod, tithi, loading, error }: Props) {
 
       <ExpandedCosmicPanel
         id="technology"
-        eyebrow="NASA Tech Transfer"
-        title="Technology from the Space Program"
+        eyebrow="NASA प्रविधि संग्रह"
+        title="अन्तरिक्ष कार्यक्रमबाट विकसित प्रविधि"
         icon="⌁"
-        badge="Lower-priority layer"
+        badge="थप जानकारी"
       >
         <div className="technology-grid">
           {data.technology.items.length ? data.technology.items.map((item) => (
             <article key={item.id || item.title}>
-              <span>{item.category || "NASA technology"}</span>
+              <span>{item.category || "NASA प्रविधि"}</span>
               <strong>{item.title}</strong>
-              <p>{item.description || "NASA technology-transfer record."}</p>
+              <p>{item.description || "यस प्रविधिको थप विवरण उपलब्ध छैन।"}</p>
             </article>
-          )) : <p className="empty-copy">No technology-transfer records were returned right now.</p>}
+          )) : <p className="empty-copy">यस समय थप प्रविधि विवरण उपलब्ध छैन।</p>}
         </div>
       </ExpandedCosmicPanel>
     </section>
