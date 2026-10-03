@@ -1,0 +1,22 @@
+/* Production homepage guards: keep optional enrichment honest and cells bounded. */
+.rh-grid,.rh-weekheads{min-width:0;max-width:100%}
+.rh-cell,.rh-cell>*{min-width:0}
+.rh-cell-top,.rh-day-badges{overflow:hidden}
+
+/* Optional enrichment is omitted rather than rendered as fake/incomplete data. */
+.rh-cell em.is-pending{visibility:hidden}
+.rh-ns-date[title="नेपाल संवत् विवरण उपलब्ध हुँदा देखिन्छ"]{visibility:hidden}
+
+@media(max-width:680px){
+  .rh-grid,.rh-weekheads{width:100%;grid-template-columns:repeat(7,minmax(0,1fr))}
+  .rh-cell-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
+  .rh-ad-date,.rh-ns-date{max-width:100%!important}
+  .rh-weather{flex:0 0 auto}
+  .rh-day-badges{width:100%}
+}
+
+@media(max-width:390px){
+  .rh-calendar{overflow:hidden}
+  .rh-grid,.rh-weekheads{font-size:clamp(.48rem,2.15vw,.66rem)}
+  .rh-cell{max-width:100%}
+}
