@@ -60,3 +60,4 @@ for(const route of routes){
 }
 if(written<30)throw new Error(`Intent enhancer touched too few canonical pages: ${written}`);
 console.log(`Prerender intent enhancement added related-search context to ${written} canonical pages and a crawlable 29-tool directory.`);
+await import("./polish-home-prerender.mjs");
