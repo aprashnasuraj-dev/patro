@@ -123,6 +123,21 @@ jobs:
           set -euo pipefail
           npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
           npx playwright install chromium >/dev/null
+      - name: Homepage first-paint, API-failure and offline PWA checks
+        id: home_pwa_checks
+        if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          PATRO_AUDIT_API=1 node scripts/serve-dist.mjs >/tmp/patro-release-home-http.log 2>&1 &
+          server=$!
+          trap 'kill $server 2>/dev/null || true' EXIT
+          for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/ >/dev/null; then break; fi; sleep 1; done
+          NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-offline-pwa.cjs
+          kill "$server" 2>/dev/null || true
+          trap - EXIT
       - name: Canonical tools and community mobile functional checks
         id: mobile_checks
         if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
@@ -157,6 +172,7 @@ jobs:
           DEPENDENCY_AUDIT: ${{ steps.dependency_audit.outcome }}
           SECRET_SCAN: ${{ steps.secret_scan.outcome }}
           BROWSER_RUNTIME: ${{ steps.browser_runtime.outcome }}
+          HOME_PWA_CHECKS: ${{ steps.home_pwa_checks.outcome }}
           MOBILE_CHECKS: ${{ steps.mobile_checks.outcome }}
           LIGHTHOUSE: ${{ steps.lighthouse.outcome }}
         run: |
@@ -172,6 +188,7 @@ jobs:
           check dependency_audit "$DEPENDENCY_AUDIT"
           check secret_scan "$SECRET_SCAN"
           check browser_runtime "$BROWSER_RUNTIME"
+          check home_pwa_checks "$HOME_PWA_CHECKS"
           check mobile_checks "$MOBILE_CHECKS"
           check lighthouse "$LIGHTHOUSE"
           exit "$failures"
