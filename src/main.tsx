@@ -4,9 +4,7 @@ import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
-import { HomeExperience } from "./components/HomeExperience";
 import { JyotishAssistant } from "./components/JyotishAssistant";
-import { MobilePrimaryNav } from "./components/MobilePrimaryNav";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
@@ -31,9 +29,7 @@ import "./explore-rail.css";
 import "./mobile-safe-area.css";
 import "./tool-rich-media.css";
 import "./semantic-ui-fixes.css";
-import "./home-experience.css";
 import "./note-enhancements.css";
-import "./mobile-primary-nav.css";
 import "./calendar-cell-enhancements.css";
 import "./fresh-build-surface.css";
 import "./final-polish.css";
@@ -50,12 +46,10 @@ createRoot(root).render(
     <MediaProvider>
       <AppChrome>
         <PatroRouter />
-        <HomeExperience />
       </AppChrome>
       <CalendarCellEnhancer />
       <FeatureLauncher />
       <GlobalMediaPlayer />
-      <MobilePrimaryNav />
       <JyotishAssistant />
       <NoteTypingEnhancer />
     </MediaProvider>
