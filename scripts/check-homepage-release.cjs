@@ -7,8 +7,6 @@ function fail(message) { throw new Error(message); }
 (async () => {
   const browser = await chromium.launch({ headless: true });
 
-  // First paint: JavaScript-disabled HTML must already look like a product shell,
-  // not the old long raw SEO article that escaped into production.
   const firstPaint = await browser.newContext({ viewport: { width: 375, height: 812 }, javaScriptEnabled: false });
   const noJs = await firstPaint.newPage();
   await noJs.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
@@ -30,9 +28,7 @@ function fail(message) { throw new Error(message); }
   if (paint.overflow > 1) fail(`homepage prerender overflows 375px viewport by ${paint.overflow}px`);
   await firstPaint.close();
 
-  // Force every API call to fail. The homepage must still render its BS date and
-  // month grid locally and must never turn into an error-looking landing page.
-  const failureContext = await browser.newContext({ viewport: { width: 375, height: 812 }, serviceWorkers: "block" });
+  const failureContext = await browser.newContext({ viewport: { width: 375, height: 812 }, serviceWorkers: "block", reducedMotion: "reduce" });
   await failureContext.route("**/api/**", (route) => route.fulfill({
     status: 503,
     headers: { "content-type": "application/json", "cache-control": "no-store" },
@@ -54,11 +50,24 @@ function fail(message) { throw new Error(message); }
       const box = cell.getBoundingClientRect();
       return box.left < -1 || box.right > innerWidth + 1;
     });
+    const sample = cells.find((cell) => cell.querySelector(".rh-cell-main strong")) || first;
+    const richSelectors = [".rh-ad-date", ".rh-ns-date", ".rh-cell-main strong", ".rh-weekday", "em"];
+    const rich = richSelectors.map((selector) => {
+      const node = sample?.querySelector(selector);
+      if (!node) return { selector, exists: false, visible: false, font: 0 };
+      const style = getComputedStyle(node), box = node.getBoundingClientRect();
+      return { selector, exists: true, visible: style.display !== "none" && style.visibility !== "hidden" && box.height > 0, font: parseFloat(style.fontSize) || 0 };
+    });
+    const calendar = document.querySelector(".rh-calendar")?.getBoundingClientRect();
     return {
       count: cells.length,
       hasBs: Boolean(first?.querySelector(".rh-cell-main strong")),
       hasAd: Boolean(first?.querySelector(".rh-ad-date")),
       hasWeekday: Boolean(first?.querySelector(".rh-weekday")),
+      hasTithi: Boolean(first?.querySelector("em")),
+      hasEvent: Boolean(first?.querySelector(".rh-day-badges")),
+      rich,
+      calendarTop: calendar?.top ?? 9999,
       badFailureCopy: /आजको पात्रो लोड हुन सकेन|आजको पात्रो तयार हुँदैछ/.test(text),
       navs, visibleDesktopNav, overflow: document.documentElement.scrollWidth - innerWidth,
       badCell: Boolean(badCell),
@@ -66,7 +75,12 @@ function fail(message) { throw new Error(message); }
     };
   });
   if (runtime.count < 27) fail(`local month grid rendered only ${runtime.count} days with APIs down`);
-  if (!runtime.hasBs || !runtime.hasAd || !runtime.hasWeekday) fail("rich local day cell lost required core fields");
+  if (!runtime.hasBs || !runtime.hasAd || !runtime.hasWeekday || !runtime.hasTithi || !runtime.hasEvent) fail("rich local day cell lost required core fields");
+  for (const metric of runtime.rich) {
+    if (!metric.exists || !metric.visible) fail(`375px calendar field ${metric.selector} is hidden`);
+    if (metric.font < 13) fail(`375px calendar field ${metric.selector} is ${metric.font}px; minimum is 13px`);
+  }
+  if (runtime.calendarTop > 760) fail(`main calendar starts too low on 375px viewport (${Math.round(runtime.calendarTop)}px)`);
   if (runtime.badFailureCopy) fail("homepage exposed the old API failure/loading copy");
   if (runtime.navs !== 1) fail(`expected one authoritative mobile nav, found ${runtime.navs}`);
   if (runtime.visibleDesktopNav) fail("desktop navigation remained visible alongside mobile navigation at 375px");

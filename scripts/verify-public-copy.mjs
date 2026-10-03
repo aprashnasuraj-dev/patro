@@ -15,6 +15,9 @@ const files = [
   "src/media/MediaSuite.tsx",
   "src/patro-tools-integration/PatroToolsShell.tsx",
   "src/patro-tools-integration/TithiReminderTool.tsx",
+  "src/patro-tools-integration/PatroBotTool.tsx",
+  "src/patro-tools-integration/VoiceTypingTool.tsx",
+  "src/patro-tools-integration/OcrTool.tsx",
   "src/features/nepali-tools/NepaliTools.tsx",
   "src/jyotish/JanmaPatroSuite.tsx",
   "src/community/CommunityHub.tsx",
@@ -62,7 +65,10 @@ const forbidden = [
   ["diagnostic-report implementation copy", /diagnostic report/i],
   ["Cloud sync implementation copy", /Cloud sync/i],
   ["Google login implementation copy", /Google login/i],
-  ["data provenance implementation link", />Data provenance</i]
+  ["data provenance implementation link", />Data provenance</i],
+  ["bot implementation jargon", /deterministic सहायक|production panchang|adapters? kit|token\/server secret/i],
+  ["OCR implementation jargon", /Tesseract(?:\.js)?|dynamic import|server मा upload/i],
+  ["voice implementation jargon", /browser\/device को speech service|audio file वा transcript स्वतः save/i]
 ];
 
 const failures = [];

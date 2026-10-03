@@ -14,16 +14,16 @@ const LANGUAGE_META: Record<DictationLanguage, {
 }> = {
   "ne-NP": {
     label: "नेपाली",
-    short: "Nepali · ne-NP",
+    short: "नेपाली · नेपाल",
     start: "🎙 नेपाली बोल्न सुरु गर्नुहोस्",
     listening: "सुन्दैछ",
     placeholder: "नेपालीमा बोल्नुहोस्—पाठ यहाँ देखिन्छ…",
     empty: "अहिलेसम्म नेपाली पाठ छैन।",
-    punctuation: "पूर्णविराम, अल्पविराम, प्रश्नचिन्ह, उद्गार चिन्ह वा नयाँ लाइन भन्न सक्नुहुन्छ।",
+    punctuation: "‘पूर्णविराम’, ‘अल्पविराम’, ‘प्रश्नचिन्ह’, ‘उद्गार चिन्ह’ वा ‘नयाँ लाइन’ भन्न सक्नुहुन्छ।",
   },
   "en-US": {
     label: "English",
-    short: "English · en-US",
+    short: "English · US",
     start: "🎙 Start English voice typing",
     listening: "Listening",
     placeholder: "Speak in English—your transcript appears here…",
@@ -71,7 +71,7 @@ export function VoiceTypingTool() {
   return (
     <ToolPage
       title="आवाजबाट टाइपिङ · Voice to Text"
-      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै editable text मा बदल्नुहोस्। भाषा परिवर्तन गरेर एउटै ठाउँबाट दुवै भाषामा voice typing गर्न सकिन्छ।"
+      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। भाषा परिवर्तन गरेर एउटै ठाउँबाट दुवै भाषामा टाइप गर्न सकिन्छ।"
     >
       <section className="patro-tool-card voice-typing-card">
         <div className="voice-language-panel">
@@ -104,7 +104,7 @@ export function VoiceTypingTool() {
 
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
-            <span className="tool-badge">{dictation.mode === "browser" ? meta.short : "Voice recognition unavailable"}</span>
+            <span className="tool-badge">{dictation.mode === "browser" ? meta.short : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन"}</span>
             <p>{meta.punctuation}</p>
           </div>
           {!dictation.listening ? (
@@ -145,7 +145,7 @@ export function VoiceTypingTool() {
 
         <div className="tool-action-row">
           <button type="button" className="tool-secondary-button" onClick={copyTranscript} disabled={!text}>
-            {copied ? "✓ Copied" : "कपी · Copy"}
+            {copied ? "✓ कपी भयो" : "कपी · Copy"}
           </button>
           <button type="button" className="tool-link-button" onClick={clearTranscript} disabled={!text && !dictation.listening}>
             खाली गर्नुहोस् · Clear
@@ -156,7 +156,7 @@ export function VoiceTypingTool() {
 
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
-        <p className="tool-muted">Voice recognition तपाईंको browser/device को speech service मार्फत चल्छ। आफ्नै पात्रोले यो पृष्ठबाट audio file वा transcript स्वतः save गर्दैन।</p>
+        <p className="tool-muted">आवाज पहिचान तपाईंको उपकरणमै उपलब्ध सुविधाबाट चल्छ। तपाईंले कपी वा सम्पादन नगरेसम्म यो पृष्ठले बोलेको आवाज वा ट्रान्सक्रिप्ट आफैं सुरक्षित गर्दैन।</p>
       </ToolResult>
     </ToolPage>
   );

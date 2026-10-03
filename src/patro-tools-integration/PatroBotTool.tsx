@@ -53,22 +53,22 @@ export function PatroBotTool() {
   const speech = rows.filter((row) => row.role === "bot").at(-1)?.text || "";
 
   return (
-    <ToolPage title="आफ्नै पात्रो बोट" description="सामान्य पात्रो प्रश्नका लागि deterministic सहायक। आज/भोलिको तिथि आफ्नै पात्रोको production panchang बाट लिइन्छ; unknown प्रश्नमा अनुमान नगरी help देखाउँछ।">
+    <ToolPage title="आफ्नै पात्रो बोट" description="मिति, तिथि, चाडपर्व र पात्रोसम्बन्धी छोटा प्रश्नको छिटो सहायक। थाहा नभएको कुरा अनुमान नगरी उपयोगी विकल्प देखाउँछ।">
       <section className="patro-tool-card">
         <div className="bot-chat" aria-live="polite">
           {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? "आफ्नै पात्रो बोट" : "तपाईं"}</small><p>{row.text}</p></div>)}
         </div>
         <form className="bot-input" onSubmit={send}>
           <input value={input} onChange={(e) => setInput(e.target.value)} maxLength={300} placeholder="आज, भोलि, दशैं कहिले…" aria-label="आफ्नै पात्रो बोट प्रश्न" />
-          <button type="submit" className="tool-primary-button" disabled={busy}>{busy ? "…" : "पठाउनुहोस्"}</button>
+          <button type="submit" className="tool-primary-button" disabled={busy}>{busy ? "उत्तर खोज्दै…" : "पठाउनुहोस्"}</button>
         </form>
         <div className="tool-action-row">
           {["आज","भोलि","दशैं कहिले","2083-06-13 AD","मेष राशिफल"].map((q) => <button type="button" className="tool-link-button" key={q} onClick={() => setInput(q)}>{q}</button>)}
         </div>
       </section>
-      <ToolResult title="पछिल्लो बोट उत्तर" speechText={speech}>
+      <ToolResult title="पछिल्लो उत्तर" speechText={speech}>
         <p className="tool-preview">{speech}</p>
-        <p className="tool-muted">Telegram/Viber adapters kit मा सुरक्षित छन्, तर token/server secret configure नभएसम्म बाह्य bot delivery UI देखाइँदैन।</p>
+        <p className="tool-muted">छोटो पात्रो प्रश्न यहीँ सोध्नुहोस्। विस्तृत ज्योतिषीय कुराकानीका लागि ज्योतिष AI छुट्टै उपलब्ध छ।</p>
       </ToolResult>
     </ToolPage>
   );

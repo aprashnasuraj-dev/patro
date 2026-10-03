@@ -6,7 +6,7 @@ const tools = [
   "astro","nepali-typing","preeti-converter","bstoad","adtobs","calc","age","clock","forex","gold","emi","vat","units","words","incometax","landconverter","nepaliqr","fuelprice","tithi-reminder","sait","baby-names","janmadin-akhbar","future-letter","spell-check","voice-typing","ocr","name-check","read-aloud","patro-bot"
 ];
 
-const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
+const terminalPlaceholder=/coming soon|integration phase|placeholder|under development/i;
 
 (async()=>{
   if(tools.length!==29 || new Set(tools).size!==29) throw new Error("canonical tool browser inventory must stay exactly 29 unique tools");
@@ -29,6 +29,14 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
   const home=await page.evaluate(()=>{
     const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];
     const sample=cells.find((cell)=>cell.querySelector("strong"));
+    const calendar=document.querySelector(".rh-calendar");
+    const rich=[".rh-ad-date",".rh-ns-date",".rh-cell-main strong",".rh-weekday","em"];
+    const richMetrics=Object.fromEntries(rich.map((selector)=>{
+      const node=sample?.querySelector(selector);
+      if(!node)return[selector,{exists:false,visible:false,font:0}];
+      const style=getComputedStyle(node),box=node.getBoundingClientRect();
+      return[selector,{exists:true,visible:style.display!=="none"&&style.visibility!=="hidden"&&box.height>0,font:parseFloat(style.fontSize)||0}];
+    }));
     return {
       rawSeoVisible:Boolean(document.querySelector(".seo-prerender")),
       cellCount:cells.length,
@@ -38,6 +46,8 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
       hasWeekday:Boolean(sample?.querySelector(".rh-weekday")),
       hasTithiSlot:Boolean(sample?.querySelector("em")),
       hasEventSlot:Boolean(sample?.querySelector(".rh-day-badges")),
+      richMetrics,
+      calendarTop:calendar?.getBoundingClientRect().top??9999,
       bodyText:(document.body?.innerText||"").trim(),
       scrollWidth:document.documentElement.scrollWidth,
       innerWidth:window.innerWidth,
@@ -47,6 +57,11 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
   if(home.rawSeoVisible) throw new Error("SEO prerender remained visible after the React homepage mounted");
   if(home.cellCount<28) throw new Error(`homepage calendar rendered too few day cells: ${home.cellCount}`);
   for(const [key,value] of Object.entries({AD:home.hasAd,NS:home.hasNs,BS:home.hasBs,weekday:home.hasWeekday,tithi:home.hasTithiSlot,event:home.hasEventSlot})) if(!value) throw new Error(`homepage rich day tile missing ${key} slot`);
+  for(const [selector,metric] of Object.entries(home.richMetrics)){
+    if(!metric.exists||!metric.visible)throw new Error(`homepage mobile rich field ${selector} is hidden`);
+    if(metric.font<13)throw new Error(`homepage mobile rich field ${selector} is only ${metric.font}px; minimum is 13px`);
+  }
+  if(home.calendarTop>760) throw new Error(`homepage calendar starts too low on mobile (${Math.round(home.calendarTop)}px)`);
   if(/आजको पात्रो लोड हुन सकेन|आजको पात्रो तयार हुँदैछ/.test(home.bodyText)) throw new Error("homepage regressed to a terminal calendar failure/loading state");
   if(home.scrollWidth>home.innerWidth+2) throw new Error(`homepage horizontal overflow ${home.scrollWidth}>${home.innerWidth}`);
   if(homeErrors.length) throw new Error(`homepage browser errors: ${homeErrors.join(" | ")}`);
@@ -115,8 +130,11 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
 
   await browser.close();
 
+  const actions=spawnSync(process.execPath,["scripts/check-tool-actions.cjs"],{cwd:process.cwd(),env:process.env,stdio:"inherit"});
+  if(actions.status!==0)throw new Error(`primary user-action checks failed with status ${actions.status}`);
+
   const offline=spawnSync(process.execPath,["scripts/check-offline-pwa.cjs"],{cwd:process.cwd(),env:process.env,stdio:"inherit"});
   if(offline.status!==0)throw new Error(`secure offline PWA browser check failed with status ${offline.status}`);
 
-  console.log(JSON.stringify({ok:true,homepage:{cells:home.cellCount,richTiles:true},offlinePwa:true,count:results.length,tools:results},null,2));
+  console.log(JSON.stringify({ok:true,homepage:{cells:home.cellCount,richTiles:true,calendarTop:home.calendarTop},primaryActions:true,offlinePwa:true,count:results.length,tools:results},null,2));
 })().catch(error=>{console.error(error);process.exit(1);});
