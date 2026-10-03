@@ -10,6 +10,13 @@ const converter = read("src/ConvertPage.tsx");
 const wrangler = read("wrangler.jsonc");
 const vite = read("vite.config.ts");
 const connectedWorker = read("worker/connected-entry.ts");
+const home = read("src/ReferenceHomePage.tsx");
+const router = read("src/PatroRouter.tsx");
+const richCalendar = read("src/rich-calendar.css");
+const homepageGuards = read("src/homepage-regressions.css");
+const main = read("src/main.tsx");
+const prerenderPolish = read("scripts/polish-home-prerender.mjs");
+const prerenderPipeline = read("scripts/enhance-prerender-intents.mjs");
 
 test("offline cache is bounded and does not become a database mirror", () => {
   assert.match(sw, /MAX_CALENDAR_ENTRIES\s*=\s*10/);
@@ -57,6 +64,46 @@ test("BS AD conversion remains local-first with optional online enrichment", () 
   assert.match(converter, /setResult\(next\)/);
   assert.match(converter, /enrichPanchang/);
   assert.doesNotMatch(converter, /fetch\(`\/api\/v1\/convert/);
+});
+
+test("homepage core calendar is local-first and does not collapse into an API error state", () => {
+  assert.match(home, /function localToday/);
+  assert.match(home, /adToBs\(date\)/);
+  assert.match(home, /function localMonthDays/);
+  assert.match(home, /daysInBsMonth\(year,month\)/);
+  assert.match(home, /bsToAd\(\{year,month,day\}\)/);
+  assert.match(home, /catch\{return fallback\}/);
+  assert.doesNotMatch(home, /आजको पात्रो लोड हुन सकेन/);
+  assert.doesNotMatch(home, /आजको पात्रो तयार हुँदैछ/);
+});
+
+test("homepage and astronomy remain separate routes", () => {
+  assert.match(router, /if\(path==="\/"\|\|path==="\/today"\)return <ReferenceHomePage\/>/);
+  assert.match(router, /if\(path==="\/tools\/astro"\)return <AstroPage\/>/);
+  const homeRoute = router.indexOf('path==="/"||path==="/today"');
+  const astroRoute = router.indexOf('path==="/tools/astro"');
+  assert.ok(homeRoute >= 0 && astroRoute > homeRoute);
+});
+
+test("homepage rich calendar cells expose real enrichment fields without mobile overflow placeholders", () => {
+  for (const token of ["rh-ad-date", "rh-ns-date", "rh-weather", "rh-weekday", "rh-day-badges", "is-festival-badge", "is-holiday-badge"])
+    assert.ok(home.includes(token), `missing rich day-cell field: ${token}`);
+  assert.match(richCalendar, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
+  assert.match(richCalendar, /@media\(max-width:390px\)/);
+  assert.match(homepageGuards, /\.rh-cell em\.is-pending\{visibility:hidden\}/);
+  assert.match(homepageGuards, /\.rh-ns-date\[title="नेपाल संवत् विवरण उपलब्ध हुँदा देखिन्छ"\]\{visibility:hidden\}/);
+  assert.match(homepageGuards, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
+  assert.ok(main.indexOf('import "./homepage-regressions.css";') > main.indexOf('import "./rich-calendar.css";'));
+});
+
+test("homepage prerender first paint is branded and calendar-first rather than a raw SEO wall", () => {
+  assert.match(prerenderPipeline, /import\("\.\/polish-home-prerender\.mjs"\)/);
+  assert.match(prerenderPolish, /ap-prerender-header/);
+  assert.match(prerenderPolish, /ap-prerender-hero/);
+  assert.match(prerenderPolish, /ap-prerender-calendar/);
+  assert.match(prerenderPolish, /ap-prerender-copy/);
+  assert.ok(prerenderPolish.indexOf("ap-prerender-calendar") < prerenderPolish.indexOf("ap-prerender-copy"));
+  assert.match(prerenderPolish, /@media\(max-width:680px\)/);
 });
 
 test("production build does not publish source maps or obsolete service bindings", () => {
