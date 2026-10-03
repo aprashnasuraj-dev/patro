@@ -3,7 +3,7 @@ import { COMMUNITY_OPTIONS, communityFeedUrl, loadCommunityPreferences, readComm
 
 export function CommunityPreferences() {
   const [selected, setSelected] = useState<CommunityId[]>(readCommunityPreferences);
-  const [status, setStatus] = useState("यो ब्राउजरमा सुरक्षित हुन्छ। साइन इन भएको अवस्थामा खातामा पनि sync हुन्छ।");
+  const [status, setStatus] = useState("यो ब्राउजरमा सुरक्षित हुन्छ। साइन इन भएको अवस्थामा खातामा पनि सिङ्क हुन्छ।");
 
   useEffect(() => {
     let active = true;
@@ -22,11 +22,11 @@ export function CommunityPreferences() {
 
   return (
     <main className="community-control-page">
-      <a className="community-back" href="/tools">← Tools</a>
+      <a className="community-back" href="/tools">← उपकरण</a>
       <section className="community-control-card">
-        <p className="community-kicker">Settings · व्यक्तिगत पात्रो</p>
+        <p className="community-kicker">व्यक्तिगत पात्रो</p>
         <h1>मेरो समुदाय</h1>
-        <p>छानिएका समुदाय मात्रै home date card, community reminder/calendar feed र सम्बन्धित shortcut मा देखिन्छन्। कुनै पनि विकल्प नछानेमा home card खाली रहन्छ।</p>
+        <p>तपाईंले छानेका समुदायका मिति, पर्व र सम्झना मुख्य पात्रो तथा समुदाय feed मा देखिन्छन्। कुनै विकल्प नछानेमा सामान्य पात्रो अनुभव यथावत् रहन्छ।</p>
         <div className="community-check-grid">
           {COMMUNITY_OPTIONS.map((item) => (
             <label className={"community-check " + (selected.includes(item.id) ? "is-selected" : "")} key={item.id}>
@@ -38,9 +38,9 @@ export function CommunityPreferences() {
         <p className="community-status" aria-live="polite">{status}</p>
         <div className="community-actions">
           <a className="community-button" href={feed}>चयनित समुदायको Calendar / Reminder Feed (.ics)</a>
-          <a className="community-button secondary" href="/samudaya">Community Suite खोल्नुहोस्</a>
+          <a className="community-button secondary" href="/samudaya">समुदाय पात्रो खोल्नुहोस्</a>
         </div>
-        <p className="community-note">Feed ले चयनित समुदायका engine-generated/officially-overridden मितिहरू मात्र समावेश गर्छ। ‘घोषित’ मितिले ‘सम्भावित’ वा ‘गणना’ मितिलाई प्राथमिकता दिन्छ।</p>
+        <p className="community-note">उपलब्ध आधिकारिक रूपमा घोषित मितिलाई प्राथमिकता दिइन्छ। अन्य अवस्थामा पात्रोका नियमअनुसार सम्भावित मिति स्पष्ट रूपमा छुट्याएर देखाइन्छ।</p>
       </section>
     </main>
   );
