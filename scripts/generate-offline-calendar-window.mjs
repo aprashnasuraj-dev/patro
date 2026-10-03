@@ -3,9 +3,13 @@ import { dirname, resolve } from "node:path";
 import { getAllDays, getFestivals, getHolidays } from "../lib/patro.mjs";
 
 const root=process.cwd();
-const out=resolve(root,"public/data/calendar/offline-window.json");
+const outputs=[
+  resolve(root,"public/data/calendar/offline-window.json"),
+  resolve(root,"dist/data/calendar/offline-window.json")
+];
 const MAX_DAYS=45;
 const PAST_DAYS=7;
+const MAX_BYTES=300000;
 const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const rows=await getAllDays();
 const todayIndex=rows.findIndex((row)=>row.ad===today);
@@ -54,7 +58,7 @@ const payload={
   events:uniqueEvents
 };
 const text=JSON.stringify(payload);
-if(Buffer.byteLength(text)>300000)throw new Error(`Offline calendar window unexpectedly large: ${Buffer.byteLength(text)} bytes`);
-await mkdir(dirname(out),{recursive:true});
-await writeFile(out,text,"utf8");
-console.log(`Bounded offline calendar window: ${days.length} days, ${uniqueEvents.length} events, ${payload.start}..${payload.end}, ${Buffer.byteLength(text)} bytes.`);
+const bytes=Buffer.byteLength(text);
+if(bytes>MAX_BYTES)throw new Error(`Offline calendar window unexpectedly large: ${bytes} bytes`);
+for(const out of outputs){await mkdir(dirname(out),{recursive:true});await writeFile(out,text,"utf8");}
+console.log(`Bounded offline calendar window: ${days.length} days, ${uniqueEvents.length} events, ${payload.start}..${payload.end}, ${bytes} bytes.`);
