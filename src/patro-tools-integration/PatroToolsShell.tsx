@@ -21,7 +21,7 @@ const LABELS:Record<string,{title:string;description:string}>={
  "janmadin-akhbar":{title:"जन्मदिन अखबार",description:"जन्म दिनको इतिहास र पात्रोबाट शेयर कार्ड"},
  "future-letter":{title:"भविष्यको चिठी",description:"वि.सं. मिति वा तिथि जन्मदिनमा खुल्ने निजी चिठी"},
  "spell-check":{title:"नेपाली हिज्जे जाँच",description:"नेपाली पाठको हिज्जे र सुझाव"},
- "voice-typing":{title:"बोली टाइपिङ",description:"बोलेर नेपाली टाइप गर्ने सुविधा"},
+ "voice-typing":{title:"आवाजबाट टाइपिङ · Voice to Text",description:"नेपाली वा English बोलीलाई editable text मा बदल्नुहोस्"},
  ocr:{title:"नेपाली OCR",description:"तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्"},
  "name-check":{title:"नाम जाँच",description:"नामको हिज्जे र उच्चारण मिलान"},
  "read-aloud":{title:"पढेर सुनाउने",description:"नेपाली सामग्री आवाजमा सुन्नुहोस्"},
