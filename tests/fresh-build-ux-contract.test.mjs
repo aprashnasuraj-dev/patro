@@ -126,6 +126,21 @@ test("China-aware Jyotish AI is restored on the React shell and Cloudflare nativ
   assert.ok(worker.includes("integrate.api.nvidia.com")&&worker.includes("api.groq.com"),"Groq/NVIDIA provider routing must remain present");
 });
 
+test("voice typing exposes real Nepali and English recognition modes",()=>{
+  const tool=read("src/patro-tools-integration/VoiceTypingTool.tsx");
+  const hook=read("src/patro-tools/language/react/useNepaliDictation.ts");
+  const css=read("src/patro-tools-integration/voice-typing.css");
+  assert.ok(tool.includes('useState<DictationLanguage>("ne-NP")'));
+  assert.ok(tool.includes('chooseLanguage("ne-NP")')&&tool.includes('chooseLanguage("en-US")'),"language selector must expose both recognition modes");
+  assert.ok(tool.includes("नेपाली बोली → नेपाली पाठ")&&tool.includes("English speech → English text"));
+  assert.ok(tool.includes("language,")&&tool.includes("serverFallback: false"),"selected locale must reach browser dictation");
+  assert.ok(hook.includes("export type DictationLanguage = 'ne-NP' | 'en-US'"));
+  assert.ok(hook.includes("rec.lang = language"),"speech recognizer must use the selected locale dynamically");
+  assert.ok(!hook.includes("rec.lang = 'ne-NP'"),"speech recognizer must not regress to Nepali-only mode");
+  assert.ok(hook.includes("postProcessEnglishDictation")&&hook.includes("question mark")&&hook.includes("new paragraph"));
+  assert.ok(css.includes(".voice-language-picker")&&css.includes(".voice-live-dot"),"bilingual voice UI styling must remain present");
+});
+
 test("developer API is not advertised in the frontend launcher",()=>{
   const launcher=read("src/components/FeatureLauncher.tsx");
   assert.ok(!launcher.includes('href:"/developers"'));
