@@ -53,10 +53,14 @@ describe('name match', () => {
 });
 
 describe('voice + tts helpers', () => {
-  it('spoken punctuation and digits', () => {
+  it('processes Nepali and English dictation punctuation without mixing language rules', () => {
     expect(postProcessDictation('आज 5 गते हो पूर्णविराम')).toBe('आज ५ गते हो।');
     expect(postProcessDictation('आज 5 गते हो पूर्णविराम', { nepaliDigits: false })).toBe('आज 5 गते हो।');
     expect(postProcessDictation('ठिक छ प्रश्नचिन्ह')).toBe('ठिक छ?');
+    expect(postProcessDictation('Hello world period', { language: 'en-US' })).toBe('Hello world.');
+    expect(postProcessDictation('How are you question mark', { language: 'en-US' })).toBe('How are you?');
+    expect(postProcessDictation('First line new line second line', { language: 'en-US' })).toBe('First line\nsecond line');
+    expect(postProcessDictation('Version 5 period', { language: 'en-US' })).toBe('Version 5.'); // English digits remain Latin
   });
   it('splits long text for speech', () => {
     const parts = splitForSpeech('पहिलो वाक्य। दोस्रो वाक्य? तेस्रो!');
