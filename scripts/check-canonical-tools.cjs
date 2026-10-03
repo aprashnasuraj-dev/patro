@@ -22,37 +22,56 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder/i;
     if(!response || !response.ok()) throw new Error(`${route} HTTP ${response?.status() ?? "no-response"}`);
 
     await page.waitForFunction(() => {
-      const text=(document.body?.innerText||"").trim();
+      const host=document.querySelector("[data-nepali-tools-host]");
+      if(host?.shadowRoot?.querySelector("#editor")) return true;
+      if(document.querySelector("iframe[data-nepali-tools-fallback]")) return true;
       const main=document.querySelector("main");
       const heading=main?.querySelector("h1,h2,[role=heading]");
       const interactive=main?.querySelectorAll("button,input,textarea,select,a[href]").length||0;
-      return Boolean(main&&heading&&text.length>=80&&interactive>=1);
+      const text=(main?.innerText||"").trim();
+      return Boolean(main&&heading&&text.length>=40&&interactive>=1);
     },{timeout:20000}).catch(async()=>{
       const text=(await page.locator("body").innerText()).trim();
       throw new Error(`${route} did not render a substantive interactive tool surface: ${text.slice(0,300)}`);
     });
 
-    const metrics=await page.evaluate(()=>{
+    let metrics=await page.evaluate(()=>{
       const main=document.querySelector("main");
+      const host=document.querySelector("[data-nepali-tools-host]");
+      const shadow=host?.shadowRoot||null;
+      const scope=shadow||main;
       return {
         title:document.title.trim(),
         bodyText:(document.body?.innerText||"").trim(),
-        mainText:(main?.innerText||"").trim(),
-        heading:(main?.querySelector("h1,h2,[role=heading]")?.textContent||"").trim(),
-        interactive:main?.querySelectorAll("button,input,textarea,select,a[href]").length||0,
+        mainText:((shadow?.textContent)||(main?.innerText)||"").trim(),
+        heading:((shadow?.querySelector("h1,h2,[role=heading]")?.textContent)||(main?.querySelector("h1,h2,[role=heading]")?.textContent)||"").trim(),
+        interactive:scope?.querySelectorAll("button,input,textarea,select,a[href]").length||0,
         scrollWidth:document.documentElement.scrollWidth,
-        innerWidth:window.innerWidth
+        innerWidth:window.innerWidth,
+        fallback:Boolean(document.querySelector("iframe[data-nepali-tools-fallback]")),
+        shadowEditor:Boolean(shadow?.querySelector("#editor"))
       };
     });
+
+    if(metrics.fallback){
+      const frame=page.frameLocator('iframe[data-nepali-tools-fallback]');
+      await frame.locator("#editor").waitFor({state:"visible",timeout:15000});
+      const frameText=(await frame.locator("main").innerText()).trim();
+      const frameHeading=(await frame.locator("h1").innerText()).trim();
+      const frameInteractive=await frame.locator("button,input,textarea,select,a[href]").count();
+      metrics={...metrics,mainText:frameText,heading:frameHeading,interactive:frameInteractive};
+    }
+
     page.off("pageerror",onPageError);
     if(!metrics.title) throw new Error(`${route} has no document title`);
     if(!metrics.heading) throw new Error(`${route} has no visible tool heading`);
     if(metrics.mainText.length<40) throw new Error(`${route} rendered too little tool content (${metrics.mainText.length} chars)`);
     if(terminalPlaceholder.test(metrics.mainText)) throw new Error(`${route} rendered a terminal placeholder`);
     if(metrics.interactive<1) throw new Error(`${route} exposes no interactive control or navigation`);
+    if(slug==="nepali-typing"&&!metrics.shadowEditor&&!metrics.fallback) throw new Error("Nepali Typing must render either the integrated editor or its packaged fallback");
     if(metrics.scrollWidth>metrics.innerWidth+2) throw new Error(`${route} horizontal overflow ${metrics.scrollWidth}>${metrics.innerWidth}`);
     if(errors.length) throw new Error(`${route} browser errors: ${errors.join(" | ")}`);
-    results.push({slug,status:response.status(),title:metrics.title,heading:metrics.heading,interactive:metrics.interactive});
+    results.push({slug,status:response.status(),title:metrics.title,heading:metrics.heading,interactive:metrics.interactive,fallback:metrics.fallback||undefined});
   }
 
   await browser.close();
