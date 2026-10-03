@@ -78,10 +78,11 @@ test("Notes expose English Nepali suggestion and voice input using the same loca
   assert.ok(diary.includes('new Worker("/nepali-tools/worker.mjs"'));
   assert.ok(diary.includes('type:"suggest"')||diary.includes('type: "suggest"'));
   assert.ok(diary.includes("SpeechRecognition")&&diary.includes("webkitSpeechRecognition"));
-  assert.ok(diary.includes("English typing")&&diary.includes("नेपाली typing")&&diary.includes("Voice typing"));
+  for(const mode of ['mode==="english"','mode==="nepali"','mode==="voice"'])assert.ok(diary.includes(mode),`Notes input mode missing ${mode}`);
   assert.ok(diary.includes("life.notes"));
   assert.ok(enhancer.includes('event.key === "Tab"')&&enhancer.includes("ArrowDown")&&enhancer.includes("ArrowUp"),"Notes must support one-key suggestion completion and navigation");
   assert.ok(main.includes("<NoteTypingEnhancer />"),"Notes keyboard enhancer must be mounted");
+  for(const jargon of ["Local-first","local dictionary","Suggestion worker","Cloud sync","Local mode"])assert.ok(!diary.includes(jargon),`Notes leaked implementation copy: ${jargon}`);
 });
 
 test("visible tool surfaces consolidate directional date conversion without killing legacy routes",()=>{
@@ -107,6 +108,7 @@ test("China-aware Jyotish AI is restored on the React shell and Cloudflare nativ
   assert.ok(assistant.includes('fetch("/api/v1/jyotish-chat"'));
   assert.ok(assistant.includes("china_data: china"),"chat request must include available China context");
   assert.ok(assistant.includes(".patro-report")&&assistant.includes(".chart-summary article"),"assistant must reconnect to rendered China output");
+  assert.ok(!assistant.includes("Cloudflare मा AI secret"),"consumer chat must not expose deployment setup instructions");
   assert.ok(entry.includes('path === "/api/v1/jyotish-chat"'));
   assert.ok(worker.includes("Groq_API")&&worker.includes("nvidia_api"),"Cloudflare secret aliases must be retained");
   assert.ok(worker.includes("NVIDIA_NIM_API_KEY")&&worker.includes("GROQ_API_KEY"),"standard provider secret aliases must be retained");
