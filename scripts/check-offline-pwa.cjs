@@ -13,11 +13,33 @@ const SAFE_API = [
   /^\/api\/v1\/typing\/lexicon(?:\?|$)/,
 ];
 
+const INTERACTIVE_SELECTOR = "button, input, textarea, select, a[href], [contenteditable=true]";
+
 async function waitForApp(page) {
   await page.waitForFunction(() => {
     const main = document.querySelector("main");
     return Boolean(main && (main.innerText || "").trim().length >= 20);
   }, { timeout: 20000 });
+}
+
+async function waitForInteractiveSurface(page) {
+  await page.waitForFunction((selector) => {
+    const main = document.querySelector("main");
+    if (!main) return false;
+    if (main.querySelector(selector)) return true;
+
+    for (const element of main.querySelectorAll("*")) {
+      if (element.shadowRoot?.querySelector(selector)) return true;
+    }
+
+    for (const frame of main.querySelectorAll("iframe")) {
+      try {
+        if (frame.contentDocument?.querySelector(selector)) return true;
+      } catch {}
+    }
+
+    return false;
+  }, INTERACTIVE_SELECTOR, { timeout: 8000 }).catch(() => undefined);
 }
 
 (async () => {
@@ -70,17 +92,50 @@ async function waitForApp(page) {
   for (const route of OFFLINE_ROUTES) {
     const response = await page.goto(BASE + route, { waitUntil: "domcontentloaded", timeout: 20000 }).catch(() => null);
     await waitForApp(page);
-    const snapshot = await page.evaluate(() => ({
-      title: document.title,
-      text: (document.querySelector("main")?.innerText || "").trim(),
-      interactive: document.querySelectorAll("main button, main input, main textarea, main select, main a[href], main [contenteditable=true]").length,
-      controlled: Boolean(navigator.serviceWorker.controller),
-    }));
+    await waitForInteractiveSurface(page);
+    const snapshot = await page.evaluate((selector) => {
+      const main = document.querySelector("main");
+      let interactive = main?.querySelectorAll(selector).length || 0;
+      let shadowInteractive = 0;
+      let frameInteractive = 0;
+
+      if (main) {
+        for (const element of main.querySelectorAll("*")) {
+          const count = element.shadowRoot?.querySelectorAll(selector).length || 0;
+          shadowInteractive += count;
+          interactive += count;
+        }
+
+        for (const frame of main.querySelectorAll("iframe")) {
+          try {
+            const count = frame.contentDocument?.querySelectorAll(selector).length || 0;
+            frameInteractive += count;
+            interactive += count;
+          } catch {}
+        }
+      }
+
+      return {
+        title: document.title,
+        text: (main?.innerText || "").trim(),
+        interactive,
+        shadowInteractive,
+        frameInteractive,
+        controlled: Boolean(navigator.serviceWorker.controller),
+      };
+    }, INTERACTIVE_SELECTOR);
     if (!snapshot.controlled) throw new Error(`${route} lost service-worker control offline`);
     if (!snapshot.title) throw new Error(`${route} has no title offline`);
     if (snapshot.text.length < 20) throw new Error(`${route} rendered too little offline content`);
     if (snapshot.interactive < 1) throw new Error(`${route} has no interactive surface offline`);
-    results.push({ route, status: response?.status() || "service-worker", title: snapshot.title, interactive: snapshot.interactive });
+    results.push({
+      route,
+      status: response?.status() || "service-worker",
+      title: snapshot.title,
+      interactive: snapshot.interactive,
+      shadowInteractive: snapshot.shadowInteractive,
+      frameInteractive: snapshot.frameInteractive,
+    });
   }
 
   await page.goto(BASE + "/convert", { waitUntil: "domcontentloaded", timeout: 20000 }).catch(() => null);
