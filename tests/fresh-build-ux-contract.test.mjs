@@ -21,7 +21,7 @@ test("Nepali typing and Preeti converter use the packaged offline bundle",()=>{
   assert.ok(toolSw.includes("core/roman.mjs")&&toolSw.includes("core/converter.mjs"));
   assert.ok(worker.includes("/api/v1/typing/lexicon?format=words"));
   assert.ok(worker.includes("words.length!==34571"),"full lexicon validation must remain locked");
-  assert.ok(app.includes("processing stays on this device"));
+  assert.ok(app.includes("तपाईंले लेखेको पाठ यही उपकरणमा रहन्छ")||app.includes("processing stays on this device"),"typing privacy promise must remain visible without requiring old English copy");
   assert.ok(app.includes("preeti-to-unicode")&&app.includes("unicode-to-preeti"));
   assert.ok(app.includes("e.key==='Tab'&&items.length&&commit(active,'')"),"Tab must accept the active Nepali word suggestion");
   assert.ok(app.includes("ArrowDown")&&app.includes("ArrowUp"),"keyboard suggestion navigation must remain available");
@@ -103,10 +103,9 @@ test("visible tool surfaces consolidate directional date conversion without kill
   const router=read("src/PatroRouter.tsx");
   assert.ok(pages.includes('href:"/convert"'));
   assert.ok(launcher.includes('href:"/convert"'));
+  assert.ok(launcher.includes("bs to ad")&&launcher.includes("ad to bs"),"combined launcher converter must still match both directional searches");
   assert.ok(css.includes('.ap-tools-page .ap-tool-card[href="/tools/bstoad"]'));
   assert.ok(css.includes('.ap-tools-page .ap-tool-card[href="/tools/adtobs"]'));
-  assert.ok(css.includes('.ap-launcher-item[href="/tools/bstoad"]'));
-  assert.ok(css.includes('.ap-launcher-item[href="/tools/adtobs"]'));
   assert.ok(router.includes('path.match(/^\\/tools\\/([^/]+)$/)')||router.includes('const tool=path.match(/^\\/tools\\/([^/]+)$/)'),"legacy tool deep links must remain routable");
 });
 
