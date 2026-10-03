@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { DictationLanguage, useNepaliDictation } from "@/patro-tools/language/react/useNepaliDictation";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
+import "./voice-typing.css";
 
 const LANGUAGE_META: Record<DictationLanguage, {
   label: string;
