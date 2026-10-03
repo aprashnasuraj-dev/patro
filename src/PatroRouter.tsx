@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { HomePage, MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { ReferenceHomePage } from "./ReferenceHomePage";
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
@@ -61,12 +62,12 @@ export function PatroRouter(){
  useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);document.removeEventListener("click",onClick)}},[]);
  const render=()=>{
    const legacy=LEGACY_REDIRECTS[path];if(legacy)return <Redirect to={legacy}/>;
-   if(path==="/"||path==="/today")return <HomePage/>;
+   if(path==="/"||path==="/today")return <ReferenceHomePage/>;
    if(path==="/methodology")return <MethodologyPage/>;
    if(path==="/corrections")return <CorrectionsPage/>;
    if(path==="/samudaya")return <CommunityHub/>;
    if(path==="/settings/community")return <CommunityPreferences/>;
-   const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <HomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
+   const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <ReferenceHomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
    if(path==="/tools/astro")return <AstroPage/>;
