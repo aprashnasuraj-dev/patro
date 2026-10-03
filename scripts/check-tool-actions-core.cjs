@@ -65,10 +65,13 @@ async function exerciseNepaliTools(page, slug) {
       if (!value.trim()) fail(`${slug}: editor rejected typed text`);
       return `editor=${value.slice(0,30)}`;
     }
+    const tab = frame.locator('button[data-mode="preeti-to-unicode"]');
+    await tab.click();
     const source = frame.locator("#source");
     const output = frame.locator("#output");
-    await source.fill(slug === "preeti-converter" ? "g]kfn" : "नेपाल");
-    await page.waitForTimeout(450);
+    await source.waitFor({ state: "visible", timeout: 10000 });
+    await source.fill("g]kfn");
+    await page.waitForTimeout(500);
     const value = await output.inputValue();
     if (!value.trim()) fail(`${slug}: conversion produced no output`);
     return `conversion=${value.slice(0,30)}`;
@@ -84,6 +87,9 @@ async function exerciseNepaliTools(page, slug) {
       await new Promise((resolve) => setTimeout(resolve, 250));
       return { value: editor.value, status: root.querySelector("#status")?.textContent || "" };
     }
+    const tab = root.querySelector('button[data-mode="preeti-to-unicode"]');
+    tab?.click();
+    await new Promise((resolve) => setTimeout(resolve, 60));
     const source = root.querySelector("#source");
     const output = root.querySelector("#output");
     source.value = "g]kfn";

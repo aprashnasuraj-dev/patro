@@ -12,6 +12,7 @@ const vite = read("vite.config.ts");
 const connectedWorker = read("worker/connected-entry.ts");
 const home = read("src/ReferenceHomePage.tsx");
 const router = read("src/PatroRouter.tsx");
+const referenceHomeCss = read("src/reference-home.css");
 const richCalendar = read("src/rich-calendar.css");
 const homepageGuards = read("src/homepage-regressions.css");
 const main = read("src/main.tsx");
@@ -42,10 +43,11 @@ test("private routes and unknown APIs are never persisted by the service worker"
 });
 
 test("only narrow public calendar requests qualify for offline data caching", () => {
-  assert.match(sw, /isSafeCalendarRequest/);
+  assert.match(sw, /function\s+isSafeCalendarRequest/);
   assert.match(sw, /span\s*>=\s*0\s*&&\s*span\s*<\s*MAX_CALENDAR_RANGE_DAYS/);
-  assert.match(sw, /\/api\/v1\/calendar/);
-  assert.match(sw, /\/api\/v1\/sync/);
+  assert.ok(sw.includes("/api/v1/sync"), "sync route must stay explicitly allowlisted");
+  assert.ok(sw.includes("/api/v1/today"), "today route must stay explicitly allowlisted");
+  assert.ok(sw.includes("calendar\\/\\d{4}"), "bounded monthly calendar route must stay explicitly allowlisted");
   assert.match(sw, /hasOnlyParams/);
 });
 
@@ -89,7 +91,7 @@ test("homepage and astronomy remain separate routes", () => {
 test("homepage rich calendar keeps all requested fields readable at mobile sizes", () => {
   for (const token of ["rh-ad-date", "rh-ns-date", "rh-weather", "rh-weekday", "rh-day-badges", "is-festival-badge", "is-holiday-badge"])
     assert.ok(home.includes(token), `missing rich day-cell field: ${token}`);
-  assert.match(richCalendar, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
+  assert.match(referenceHomeCss, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
   assert.match(richCalendar, /@media\(max-width:390px\)/);
   assert.match(richCalendar, /font-size:var\(--ap-t-xs\)/);
   assert.doesNotMatch(richCalendar, /font-size:\.(?:4|5|6|7)\d*rem/);
@@ -118,7 +120,8 @@ test("production build does not publish source maps or obsolete service bindings
 });
 
 test("selective compatibility proxy remains limited to media and news roots", () => {
-  assert.match(connectedWorker, /new Set\(\["tv",\s*"fm",\s*"samachar"\]\)/);
-  assert.doesNotMatch(connectedWorker, /new Set\(\[[^\]]*calendar[^\]]*\]\)/s);
-  assert.doesNotMatch(connectedWorker, /new Set\(\[[^\]]*jyotish[^\]]*\]\)/s);
+  const match = connectedWorker.match(/const\s+ALLOWED_COMPAT_ROOTS\s*=\s*new\s+Set\(\[([^\]]*)\]\);/);
+  assert.ok(match, "ALLOWED_COMPAT_ROOTS declaration must exist");
+  const roots = [...match[1].matchAll(/"([^"]+)"/g)].map((item) => item[1]);
+  assert.deepEqual(roots, ["tv", "fm", "samachar"]);
 });
