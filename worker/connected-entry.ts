@@ -11,6 +11,35 @@ type Env = Record<string, unknown> & {
 
 const COMPAT_PREFIX = "/api/v1/compat-api/";
 const ALLOWED_COMPAT_ROOTS = new Set(["tv", "fm", "samachar"]);
+const LEGACY_REDIRECTS: Record<string, string> = {
+  "/aaja": "/",
+  "/astro": "/tools/astro",
+  "/my-diary": "/me/diary",
+  "/notes": "/me/notes",
+  "/planner": "/me/planner",
+  "/family": "/me/family",
+  "/family/join": "/me/family",
+  "/tools/family": "/me/family",
+  "/tithi": "/me/reminders",
+  "/settings/notifications": "/me/reminders",
+  "/tools/tithi": "/me/reminders",
+  "/card": "/me/cards",
+  "/tools/card": "/me/cards",
+  "/settings": "/me/settings",
+  "/settings/holidays": "/me/settings",
+  "/my-data": "/me/data",
+  "/tools/my-data": "/me/data",
+  "/diaspora": "/tools/clock",
+  "/jyotish/rashifal": "/rashifal",
+  "/jyotish/china/rashi": "/rashifal",
+  "/jyotish/janma-patro": "/jyotish/china",
+  "/explore": "/tools",
+  "/search": "/tools",
+  "/feedback": "/contact",
+  "/data-trust": "/privacy",
+  "/astrology": "/rashifal",
+  "/nepal-sambat": "/nepal-sambat/mandala",
+};
 const SPA_EXACT = new Set([
   "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
@@ -27,6 +56,16 @@ const PRERENDER_MARKER = 'data-seo-prerender="true"';
 
 function cleanPath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
+}
+
+function legacyRedirectResponse(request: Request) {
+  if (request.method !== "GET" && request.method !== "HEAD") return null;
+  const url = new URL(request.url);
+  const path = cleanPath(url.pathname);
+  const target = path.startsWith("/family/") ? "/me/family" : LEGACY_REDIRECTS[path];
+  if (!target || target === path) return null;
+  url.pathname = target;
+  return Response.redirect(url.toString(), 301);
 }
 
 function isSpaPath(pathname: string) {
@@ -162,6 +201,9 @@ export default {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
+
+    const redirect = legacyRedirectResponse(request);
+    if (redirect) return redirect;
 
     const agent = await handleAgentSurface(request, env, ctx, (req,e,c)=>productionWorker.fetch(req,e as any,c));
     if (agent) return protectMachineSurface(pathname, agent);
