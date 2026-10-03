@@ -8,9 +8,10 @@ const canonicalTools=[
  "/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/tools/bstoad","/tools/adtobs","/tools/calc","/tools/age","/tools/clock","/tools/forex","/tools/gold","/tools/emi","/tools/vat","/tools/units","/tools/words","/tools/incometax","/tools/landconverter","/tools/nepaliqr","/tools/fuelprice","/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check","/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
 ];
 
-test("global feature launcher is mounted and exposes full user product plus all 29 canonical tools without API docs",()=>{
+test("global feature launcher is mounted and exposes the full product while equivalent converter jobs stay consolidated",()=>{
   const main=read("src/main.tsx");
   const launcher=read("src/components/FeatureLauncher.tsx");
+  const seo=read("scripts/seo-config.mjs");
   const css=read("src/feature-launcher.css");
   assert.ok(main.includes('import { FeatureLauncher } from "./components/FeatureLauncher"'));
   assert.ok(main.includes("<FeatureLauncher />"));
@@ -19,8 +20,14 @@ test("global feature launcher is mounted and exposes full user product plus all 
   assert.ok(launcher.includes('event.key==="/"'));
   assert.ok(launcher.includes('event.key==="Escape"'));
   const hrefs=[...launcher.matchAll(/href:\s*"([^"]+)"/g)].map((m)=>m[1]);
-  assert.ok(new Set(hrefs).size>=44,`launcher unexpectedly small: ${new Set(hrefs).size}`);
-  for(const route of canonicalTools)assert.ok(hrefs.includes(route),`launcher lost canonical tool ${route}`);
+  assert.ok(new Set(hrefs).size>=42,`launcher unexpectedly small: ${new Set(hrefs).size}`);
+  const consolidated=new Set(["/tools/bstoad","/tools/adtobs"]);
+  for(const route of canonicalTools){
+    assert.ok(seo.includes(`"${route}"`),`SEO inventory lost canonical tool ${route}`);
+    if(!consolidated.has(route))assert.ok(hrefs.includes(route),`launcher lost canonical tool ${route}`);
+  }
+  assert.ok(hrefs.includes("/convert"),"combined BS ↔ AD converter must remain visible");
+  assert.ok(launcher.includes("bs to ad")&&launcher.includes("ad to bs"),"combined converter search must match both directions");
   for(const route of [
     "/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
     "/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra",
