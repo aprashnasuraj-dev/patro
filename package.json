@@ -13,7 +13,7 @@
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
     "test:typing": "node --test tests/nepali-tools.test.mjs",
-    "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts",
+    "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts tests/rashifal-local.test.ts",
     "test:full-product": "node --test tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/fresh-build-ux-contract.test.mjs",
     "test:release-safety": "node --test tests/production-release-safety.test.mjs",
     "typecheck": "tsc --noEmit",

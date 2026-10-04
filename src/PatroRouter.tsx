@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { ReferenceHomePage } from "./ReferenceHomePage";
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
@@ -11,6 +11,7 @@ import { CommunityPreferences } from "./community/CommunityPreferences";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 
 const AstroPage=lazy(()=>import("./App"));
+const RashifalPage=lazy(()=>import("./rashifal/RashifalPage").then(m=>({default:m.RashifalPage})));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
 const UtilitySuite=lazy(()=>import("./utilities/UtilitySuite").then(m=>({default:m.UtilitySuite})));
@@ -50,9 +51,9 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/rashifal/today","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
+function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/rashifal/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -79,7 +80,8 @@ export function PatroRouter(){
    if(path==="/me/data")return <MyDataPage/>;
    if(path==="/me/cards")return <PatroToolsShell slug="janmadin-akhbar"/>;
    if(path==="/convert")return <ConvertPage/>;
-   if(path==="/rashifal")return <RashifalPage/>;
+   if(path==="/rashifal"||path==="/rashifal/today")return <RashifalPage/>;
+   const rashi=path.match(/^\/rashifal\/(mesh|vrishabha|mithun|kark|singha|kanya|tula|vrishchik|dhanu|makar|kumbha|meen)$/);if(rashi)return <RashifalPage initialSign={rashi[1]}/>;
    if(path==="/samachar")return <SamacharPage/>;
    if(path==="/time-machine")return <TimeMachinePage/>;
    if(path==="/on-this-day")return <OnThisDayPage/>;
