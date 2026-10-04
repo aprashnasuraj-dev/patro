@@ -1,0 +1,203 @@
+{
+  "bundle_version": "2026-10-04-cloudflare-recovery",
+  "production_domain": "https://aafnaipatro.com",
+  "production_branch": "main",
+  "hosting": "Cloudflare Workers + static assets",
+  "database": "Cloudflare D1 (DB binding)",
+  "cache": "Cloudflare KV optional (CACHE binding)",
+  "frontend": "React 19 + TypeScript + Vite",
+  "tool_count": 29,
+  "tools": [
+    {
+      "slug": "astro",
+      "route": "/tools/astro"
+    },
+    {
+      "slug": "nepali-typing",
+      "route": "/tools/nepali-typing"
+    },
+    {
+      "slug": "preeti-converter",
+      "route": "/tools/preeti-converter"
+    },
+    {
+      "slug": "bstoad",
+      "route": "/tools/bstoad"
+    },
+    {
+      "slug": "adtobs",
+      "route": "/tools/adtobs"
+    },
+    {
+      "slug": "calc",
+      "route": "/tools/calc"
+    },
+    {
+      "slug": "age",
+      "route": "/tools/age"
+    },
+    {
+      "slug": "clock",
+      "route": "/tools/clock"
+    },
+    {
+      "slug": "forex",
+      "route": "/tools/forex"
+    },
+    {
+      "slug": "gold",
+      "route": "/tools/gold"
+    },
+    {
+      "slug": "emi",
+      "route": "/tools/emi"
+    },
+    {
+      "slug": "vat",
+      "route": "/tools/vat"
+    },
+    {
+      "slug": "units",
+      "route": "/tools/units"
+    },
+    {
+      "slug": "words",
+      "route": "/tools/words"
+    },
+    {
+      "slug": "incometax",
+      "route": "/tools/incometax"
+    },
+    {
+      "slug": "landconverter",
+      "route": "/tools/landconverter"
+    },
+    {
+      "slug": "nepaliqr",
+      "route": "/tools/nepaliqr"
+    },
+    {
+      "slug": "fuelprice",
+      "route": "/tools/fuelprice"
+    },
+    {
+      "slug": "tithi-reminder",
+      "route": "/tools/tithi-reminder"
+    },
+    {
+      "slug": "sait",
+      "route": "/tools/sait"
+    },
+    {
+      "slug": "baby-names",
+      "route": "/tools/baby-names"
+    },
+    {
+      "slug": "janmadin-akhbar",
+      "route": "/tools/janmadin-akhbar"
+    },
+    {
+      "slug": "future-letter",
+      "route": "/tools/future-letter"
+    },
+    {
+      "slug": "spell-check",
+      "route": "/tools/spell-check"
+    },
+    {
+      "slug": "voice-typing",
+      "route": "/tools/voice-typing"
+    },
+    {
+      "slug": "ocr",
+      "route": "/tools/ocr"
+    },
+    {
+      "slug": "name-check",
+      "route": "/tools/name-check"
+    },
+    {
+      "slug": "read-aloud",
+      "route": "/tools/read-aloud"
+    },
+    {
+      "slug": "patro-bot",
+      "route": "/tools/patro-bot"
+    }
+  ],
+  "community_count": 6,
+  "communities": [
+    {
+      "id": "nepal-sambat",
+      "route": "/nepal-sambat/mandala",
+      "name": "Nepal Sambat Mandala"
+    },
+    {
+      "id": "lhosar",
+      "route": "/samudaya/lhosar",
+      "name": "Lhosar"
+    },
+    {
+      "id": "tharu",
+      "route": "/samudaya/tharu",
+      "name": "Tharu"
+    },
+    {
+      "id": "mithila",
+      "route": "/samudaya/mithila",
+      "name": "Mithila"
+    },
+    {
+      "id": "kirat",
+      "route": "/samudaya/kirat",
+      "name": "Kirat"
+    },
+    {
+      "id": "hijri",
+      "route": "/samudaya/hijri",
+      "name": "Hijri"
+    }
+  ],
+  "community_hub": {
+    "route": "/samudaya/chakra",
+    "note": "aggregate hub, not a seventh calendar"
+  },
+  "flagship_routes": [
+    "/",
+    "/today",
+    "/calendar/:bsYear/:bsMonth",
+    "/date/:adDate",
+    "/convert",
+    "/rashifal",
+    "/samachar",
+    "/fm",
+    "/tv",
+    "/time-machine",
+    "/on-this-day",
+    "/jyotish/china",
+    "/jyotish/matchmaking",
+    "/tools",
+    "/tools/astro",
+    "/me"
+  ],
+  "seo_requirements": {
+    "canonical_domain": "https://aafnaipatro.com",
+    "robots": true,
+    "sitemap": true,
+    "prerender": true,
+    "structured_data": true,
+    "unique_titles": true,
+    "social_previews": true,
+    "search_intents": true
+  },
+  "ui_authority": [
+    "docs/ui-audit/Website_UI_audit_Claude.pdf",
+    "docs/ui-audit/Patro_UI_UX_Enhancement_Plan_2026-09-29.txt"
+  ],
+  "data_safety": [
+    "Do not publish service-role secrets.",
+    "Do not expose raw proprietary calendar master archives in public Git.",
+    "Use D1/API slices for production calendar access.",
+    "Do not fabricate historical events or calendar facts."
+  ]
+}

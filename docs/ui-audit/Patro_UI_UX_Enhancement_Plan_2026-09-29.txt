@@ -1,0 +1,233 @@
+Patro — UI & UX Enhancement Plan
+Sep 29, 2026 · @Mysteries
+Executive summary
+The product is feature-rich, but it reads as a student project because it tries to show everything at once, decorates with emoji instead of a designed icon set, and leaks "developer" signals (personal Gmail, noindex, loading placeholders, a Vercel subdomain). The calendar itself is the strongest asset; the plan is to make it the hero, move everything else behind a clear structure, and apply one consistent visual system.
+Audit basis: the live page text and markup at patro-blush.vercel.app and /explore, read on 29 Sep 2026. Screenshots were not available, so pixel-level items (exact spacing, contrast values) are flagged for a visual check.
+The five changes that remove the student feel fastest
+1. Focus the home page. Today it stacks 10+ modules (calendar, tasks, history, due dates, family dates, date lab, festival prep, document vault, birth chart, live TV). Keep today's date, the month grid and three shortcuts; move the rest to their own pages.
+2. Replace emoji with one icon family. 19 emoji appear in headings and nav alone (☾ 🧰 ⌨ ⌛ 📰 📻 🌙 ✦ 📺 💳 🎂 🧮 🪔 📄 ☁️). Swap them for a single line-icon set (Lucide, Phosphor or Tabler) at one size and stroke.
+3. Settle the brand. The product is called "नेपाल मिति", "पात्रो", "Nepal Miti", "Nepal Miti FM" and "patro" in different places, the logo is a lone "प", and two different greens are in use (#176f3b and #174d30). Pick one name, one logo, one palette.
+4. Pick one language per screen. Labels switch mid-line between Nepali and English ("🧰 उपयोगी Tools", "निजी Login & Sync", "Exact Date Lab"). Default to Nepali with an EN toggle, and translate every label both ways.
+5. Remove developer tells. Replace the footer's personal Gmail and "✦AI" badge with a proper footer (about, privacy, contact form, © line); replace "लोड हुँदैछ…" text with skeletons; move to a custom domain; remove noindex, nofollow at launch.
+Audit findings
+Severity: High = a first-time visitor or client notices it within 10 seconds; Med = noticed on use; Low = polish.
+Area
+What the site does today
+Why it reads as amateur
+Severity
+Home scope
+10+ modules on one page, including a global live-TV player
+No hierarchy; the calendar is buried; TV feels off-topic for a patro
+High
+Header / nav
+~12 nav items with emoji, mixed scripts; "✦ सबै" catch-all
+Crowded, no primary action, reads as a link dump
+High
+Brand
+Lone "प" mark; 4–5 product names; two greens
+No identity; looks like a template
+High
+Footer
+"Developed by Suraj Dahal · Contact: personal Gmail" + "✦AI"
+Portfolio footer, not a product footer; AI tag lowers trust
+High
+Loading states
+"लोड हुँदैछ…" for weather; "—" for current time and muhurta; "च्यानलहरू लोड हुँदैछन्…"
+Raw text and dashes on first paint look broken
+High
+Hero date
+"१३ आश्विन २०८३" + "मंगलबार · 2026-09-29"
+ISO date format is a developer format; mixes digit systems
+Med
+Calendar cells
+BS digit + "09-17" + tithi + "✦ festival"
+Dense and uniform; holidays marked with a glyph, not colour; AD shown as MM-DD
+Med
+Language
+Nepali and English mixed inside single labels
+Feels unfinished; no language switch
+Med
+Feature naming
+"Exact Date Lab", "Document Expiry Vault", "Life Due Dates"
+Hackathon-style names, English-only
+Med
+Explore page
+4 cards, back link, header shows only "प नेपाल मिति"
+Separate visual shell from home; theme colour differs
+Med
+SEO / meta
+noindex, nofollow; no description or social image seen
+Invisible to search; bare link previews when shared
+Med
+Domain
+patro-blush.vercel.app
+Auto-generated preview URL signals "side project"
+Med
+Google login
+Sits as a card in the page body
+Auth belongs in the header/account menu
+Low
+Speaker icon
+🔊 beside the date with no label
+Unclear purpose; emoji as a control
+Low
+Visual identity
+Define the system once as design tokens (CSS variables) and use nothing outside it.
+Brand
+• One name: "नेपाल मिति" (EN: Nepal Miti). Drop "patro" from user-facing text; rename "Nepal Miti FM" to "रेडियो".
+• A real logomark: e.g. the "मि" glyph or a stylised sun/moon disc inside a rounded square, drawn as SVG, with a horizontal lockup for the header and a square version for favicon, app icon and social image.
+• Add favicon set, apple-touch-icon, manifest.json (name, icons, theme colour) so it installs cleanly as a PWA.
+Colour (one green, not two)
+Token
+Suggested value
+Use
+--brand-600
+#176F3B
+Primary buttons, active nav, today ring
+--brand-50
+#EEF6F1
+Selected-day fill, subtle panels
+--holiday
+#C0392B
+Public-holiday date numerals only
+--festival
+#B7791F
+Festival dot / label
+--ink-900 / --ink-600 / --ink-400
+#111827 / #4B5563 / #9CA3AF
+Primary, secondary, tertiary text
+--surface / --surface-2 / --line
+#FFFFFF / #F7F7F5 / #E5E7EB
+Page, cards, dividers
+Ship a dark theme from the same tokens (prefers-color-scheme + toggle). Keep text contrast ≥ 4.5:1 and check red holiday numerals on the selected-day fill.
+Typography
+• Devanagari: Mukta or Noto Sans Devanagari (body/UI), Tiro Devanagari Hindi or Martel for the big date only. Latin: Inter. Load via Google Fonts with font-display: swap and only the weights used (400/500/700).
+• Type scale (rem): 0.75 · 0.875 · 1 · 1.25 · 1.5 · 2 · 3. Hero date at 3rem, section titles 1.25rem, body 1rem, cell meta 0.75rem.
+• Devanagari needs extra line height: 1.6 for body, 1.2 for the hero.
+• One numeral system per context: Nepali numerals for BS, Latin for AD, never mixed in one string.
+Iconography
+• Replace every emoji with one outline icon set (Lucide recommended), 20px in nav, 16px inline, 1.75px stroke, coloured --ink-600.
+• Suggested mapping: calendar → calendar-days, horoscope → moon-star, tools → wrench, typing → keyboard, history → history, news → newspaper, radio → radio, TV → tv, audio → volume-2.
+Imagery and texture
+• One subtle cultural motif (a thin mandala or dhaka-pattern line) used only in the hero and footer, never behind text.
+• Festival days can carry a small illustrated thumbnail in the day-detail panel, drawn in one consistent style.
+Layout and components
+Home page, top to bottom (target)
+1. Header — logo lockup, 5 primary links, search, language toggle (ने / EN), theme toggle, account avatar (Google sign-in lives here).
+2. Today hero (two columns on desktop) — left: big BS date, weekday, AD date as "29 September 2026", tithi, Nepal Sambat, live clock. Right: sunrise/sunset, muhurta, weather for the chosen city. One primary action: "आजको विवरण" (today's detail).
+3. Month calendar — the centrepiece, full content width.
+4. Upcoming — next 5 festivals/holidays as a horizontal list with countdown ("३ दिनमा").
+5. Shortcuts — 3–6 cards to Rashifal, Date converter, My Reminders, Today in History.
+6. Footer.
+Everything else (TV, radio, news, typing, time machine, birth chart, document vault) moves to its own route.
+Grid and spacing
+• Max content width 1200px, 12-column grid, 24px gutters; 16px side padding on mobile.
+• 4px spacing base: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64. Sections separated by 48–64px, not by borders.
+• Cards: 12px radius, 1px --line border, no heavy shadows; one elevation level for popovers only.
+Calendar component
+• Cell layout: BS numeral large top-left; AD day small top-right ("17", not "09-17"); tithi one line at the bottom in --ink-400; festival as a coloured dot + truncated name.
+• Saturdays and public holidays: numeral in --holiday. Today: --brand-600 ring. Selected: --brand-50 fill.
+• Click a day → side panel (desktop) or bottom sheet (mobile) with tithi, nakshatra, festivals, muhurta, events and "add reminder".
+• Month header: "आश्विन २०८३ · Sep–Oct 2026", prev/next arrows, "आज" button, month/year picker. Keyboard arrows move between days.
+• Small legend under the grid (holiday, festival, today).
+States (every data module)
+State
+Today
+Target
+Loading
+"लोड हुँदैछ…" or "—"
+Skeleton blocks the same size as the final content; clock rendered server-side so it is never blank
+Empty
+Not observed
+Illustration + one sentence + one action ("पहिलो रिमाइन्डर थप्नुहोस्")
+Error
+Not observed
+Short message + retry; weather failure hides the card rather than showing an error
+Success
+Not observed
+Toast bottom-centre, 3s, for saves and deletes (with undo)
+Forms (reminders, family dates, document vault, birth chart)
+• Labels above fields, helper text below, inline validation, one primary button per form.
+• A single BS/AD date picker component reused everywhere, with a visible BS↔AD switch.
+• Group the four personal tools under one "मेरो पात्रो" (My Patro) area with tabs, instead of four separate cards on the home page.
+Navigation and browsing flow
+Cut the header from ~12 links to 5 destinations plus a "थप" (More) menu, and give every feature one permanent home. The sitemap below shows where each existing feature lands.
+Header
+• Primary: पात्रो · राशिफल · मिति रूपान्तरण (converter) · मेरो पात्रो · थप ▾.
+• "थप" opens a two-column mega-menu: Media (news, radio, TV) and Tools (typing, time machine, astro calendar, birth chart).
+• Sticky header that shrinks to 56px on scroll; active item underlined in --brand-600.
+• Mobile: bottom tab bar with 4 icons (पात्रो, राशिफल, रूपान्तरण, मेरो) + a menu sheet, instead of a long hamburger list.
+Global patterns
+• Command/search (Ctrl K or the search icon): jump to a date ("२०८३ मंसिर १५"), a festival ("तिहार"), or a tool.
+• Breadcrumbs on inner pages; replace the lone "पात्रोमा फर्कनुहोस्" back link on /explore with the shared header.
+• Shareable URLs for every day and month (/2083/06/13, /2083/06) so people can link a date; each gets its own title and social preview.
+• Every inner page uses the same shell (header, width, footer) as home; /explore currently does not.
+Microinteractions (subtle, 150–250ms, respect prefers-reduced-motion)
+• Month change: 8px horizontal slide + fade.
+• Day hover: background tint; click opens the detail panel with a short ease-out.
+• Buttons: pressed state (scale 0.98), visible focus ring (2px --brand-600 + 2px offset).
+• Live clock ticks without layout shift (tabular numerals).
+• The 🔊 control becomes a labelled "सुन्नुहोस्" button with a volume-2 icon and a playing state.
+Scope decision for the client
+• Live global TV is the biggest off-brand element: it adds load weight, licensing risk and visual noise to a calendar product. Recommend moving it to /tv, off the home page and out of the primary nav, or removing it.
+Mobile, accessibility, performance, SEO and trust
+Most Nepali calendar traffic is on phones, so design mobile-first and treat desktop as the expanded layout.
+Mobile
+• Test at 360, 390 and 430px widths. Calendar cells stay ≥ 44px tall; on small screens show BS numeral + holiday colour + festival dot only, with details in the bottom sheet.
+• Swipe left/right to change month; pull-to-refresh not needed.
+• Bottom tab bar (see Navigation) and no horizontal page scroll anywhere, including the TV and filter rows.
+• Installable PWA with an offline cache of the current and next 12 months, so the calendar opens without network.
+Accessibility (target WCAG 2.2 AA)
+• lang="ne" on the page and lang="en" on English fragments so screen readers switch voice.
+• Each day cell is a button with a full label, e.g. "१३ आश्विन, मंगलबार, षष्ठी, सार्वजनिक बिदा"; the grid uses role="grid" with arrow-key movement.
+• Never signal holidays by colour alone: add the dot/label as well.
+• Icon-only buttons (audio, theme, prev/next) get aria-label; visible focus ring everywhere; honour prefers-reduced-motion.
+• Contrast ≥ 4.5:1 for text, ≥ 3:1 for icons and borders; verify red numerals and tertiary tithi text.
+Performance (budgets for a mid-range Android on 4G)
+Metric
+Target
+Largest Contentful Paint
+< 2.5 s
+Interaction to Next Paint
+< 200 ms
+Cumulative Layout Shift
+< 0.1
+Home page JS (gzipped)
+< 150 KB
+• Render today's date, clock and month grid on the server (static generation per day) so first paint is complete, not "—".
+• Lazy-load weather, history, rashifal; load the TV player and its channel list only on /tv.
+• Subset Devanagari fonts, preload the one used for the hero date.
+• Run Lighthouse and fix anything under 90 before handover.
+SEO and sharing
+• Remove noindex, nofollow at launch; add robots.txt and sitemap.xml (every month and festival page).
+• Unique <title> and meta description per route, e.g. "आश्विन २०८३ पात्रो — तिथि, चाडपर्व र बिदा · नेपाल मिति".
+• Open Graph + Twitter images: a branded template that renders the date, so a shared day link shows "१३ आश्विन २०८३" as an image.
+• Structured data: WebSite with search action, Event for major festivals.
+• Custom domain (e.g. a .com.np or .app) with HTTPS and www redirect.
+Trust signals
+• Footer: About, Data sources & accuracy, Privacy policy, Terms, Contact form, social links, © 2026 नेपाल मिति. Move developer credit to the About page.
+• State the panchanga source and any calculation method on a "स्रोत" (sources) page; this matters more for a calendar than for most sites.
+• Privacy note next to Google sign-in and the document vault explaining what is stored and where; local-first sync is a selling point, so say it plainly.
+• Remove the "✦AI" footer mark, or replace it with a clear line on the About page if AI features exist.
+• Friendly 404 page with a link to today and the search box.
+Prioritized roadmap
+Ship the quick wins in week 1 so the site already looks more professional, then build the design system before restructuring pages, so the new layouts are built once in the final style. Phase 3 carries the most visible change.
+Durations are estimates for one designer-developer; each gate is a client check before the next phase starts.
+Client-ready launch checklist
+[ ] One product name and SVG logo used everywhere; favicon, app icon and manifest in place
+[ ] No emoji used as icons; one icon set at consistent sizes
+[ ] One green, one type scale, one spacing scale, defined as tokens; dark mode works
+[ ] Every label translated both ways; no mixed-language strings
+[ ] Home page shows today, month grid, upcoming festivals and shortcuts only
+[ ] TV moved to /tv or removed; not in primary nav
+[ ] Header has ≤ 5 primary links + More; mobile has a bottom tab bar
+[ ] Every page shares the same header, width and footer (including /explore)
+[ ] No "लोड हुँदैछ…" or "—" on first paint; skeletons, empty and error states designed
+[ ] Dates shown as "29 September 2026", never ISO; no mixed numeral systems
+[ ] Day detail panel / bottom sheet with shareable URL per day
+[ ] Footer with About, Sources, Privacy, Terms, Contact; no personal email or "✦AI" badge
+[ ] Custom domain with HTTPS; noindex removed; sitemap, robots, OG images live
+[ ] Lighthouse ≥ 90 on mobile for Performance, Accessibility, Best Practices, SEO
+[ ] Keyboard and screen-reader pass on the calendar grid
+[ ] Tested on a real low-end Android phone and on Safari iOS
+[ ] Visual check of spacing and contrast on screenshots (not covered by this text-based audit)
