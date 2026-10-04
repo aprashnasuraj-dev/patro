@@ -1,3 +1,5 @@
+import "./patro-cell.css";
+import { formatDate } from "./nepaliDate";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { adToBs, bsToAd, daysInBsMonth } from "../packages/core/src";
 import { BS_MONTHS, calendarTitle, pageTitle, toNepaliDigits } from "./title";
@@ -22,10 +24,13 @@ function todayNepal() {
 }
 function festivalDate(item: Festival) { return item.ad_date || item.fact_date || item.date || ""; }
 function festivalName(item: Festival, language: "ne" | "en") {
-  if (language === "en") return item.name_en || item.title || item.key || item.name_ne || item.title_ne || "Festival";
-  return item.name_ne || item.title_ne || item.label_ne || item.value?.label_ne || item.title || item.name_en || item.key || "चाडपर्व";
+  const fromKey = item.key ? String(item.key).replace(/[_-]+/g, " ").replace(/\b[a-z]/g, (c: string) => c.toUpperCase()) : "";
+  if (language === "en") return item.name_en || item.title || item.name_ne || item.title_ne || fromKey || "Festival";
+  return item.name_ne || item.title_ne || item.label_ne || item.value?.label_ne || item.title || item.name_en || fromKey || "चाडपर्व";
 }
 function isHoliday(item: Festival) {
+  // Holiday rows mark public closures as effect "closed" (some also say "holiday" / बिदा in the name).
+  if (String(item.effect || "").toLowerCase() === "closed") return true;
   const text = `${item.effect || ""} ${item.status || ""} ${item.name_ne || ""} ${item.name_en || ""}`.toLowerCase();
   return text.includes("holiday") || text.includes("बिदा") || text.includes("छुट्टी");
 }
@@ -49,6 +54,7 @@ function normalizeDay(row: any): CalendarDay | null {
 }
 function mergeDays(local: CalendarDay[], remote: CalendarDay[]) {
   if (!remote.length) return local;
+  if (!local.length) return remote; // months outside the built-in converter: trust the archive
   const byDate = new Map(remote.map((row) => [row.ad, row]));
   return local.map((row) => {
     const richer = byDate.get(row.ad);
@@ -83,13 +89,21 @@ async function loadEvents(days: CalendarDay[], signal: AbortSignal) {
 function panchangTithi(day?: CalendarDay) {
   return day?.panchang?.tithi?.ne || day?.panchang?.tithi?.name_ne || day?.panchang?.tithi_name_ne || "";
 }
+const AD_MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/** Compact Nepal Sambat date for a calendar cell, e.g. "बछला थ्वः ७" (month · paksha · tithi number). */
+function nsShort(value: any, language: "ne" | "en") {
+  if (!value || typeof value !== "object") return "";
+  const n = value.tithi_number || value.tithi_ordinal;
+  if (language === "en") return [value.month?.roman, value.paksha, n].filter(Boolean).join(" ");
+  return [value.month?.dev, value.paksha_dev, n ? toNepaliDigits(n) : ""].filter(Boolean).join(" ");
+}
 function nsText(value: any) {
   if (!value) return "";
   if (typeof value === "string") return value;
   return value.formatted_ne || value.formatted || [value.year, value.month?.dev || value.month?.roman, value.tithi_name_ne || value.day].filter(Boolean).join(" ");
 }
 function adLabel(iso: string, language: "ne" | "en") {
-  return new Intl.DateTimeFormat(language === "en" ? "en-GB" : "ne-NP", { timeZone: "Asia/Kathmandu", weekday: "long", year: "numeric", month: "long", day: "numeric" }).format(new Date(`${iso}T06:00:00Z`));
+  return formatDate(iso, language, { weekday: "long" });
 }
 function bsMonth(month: number, language: "ne" | "en") { return language === "en" ? BS_MONTHS_EN[month - 1] : BS_MONTHS[month - 1]; }
 function number(value: number, language: "ne" | "en") { return language === "en" ? String(value) : toNepaliDigits(value); }
@@ -199,15 +213,20 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
             {days.map((day) => {
               const weekday = new Date(`${day.ad}T00:00:00Z`).getUTCDay();
               const dayEvents = eventMap.get(day.ad) || [];
-              const holiday = weekday === 6 || dayEvents.some(isHoliday);
+              const holidayEvent = dayEvents.find(isHoliday);
+              const holiday = weekday === 6 || !!holidayEvent;
               const tithi = panchangTithi(day);
-              const event = dayEvents[0];
-              return <button type="button" key={day.ad} onClick={() => setSelected(day.ad)} className={`rh-cell${holiday ? " is-holiday" : ""}${day.ad === today ? " is-today" : ""}${day.ad === selected ? " is-selected" : ""}`}>
-                <span className="rh-cell-top"><span className="rh-ad-date">{language === "en" ? new Date(`${day.ad}T00:00:00Z`).getUTCDate() : toNepaliDigits(new Date(`${day.ad}T00:00:00Z`).getUTCDate())}</span><span className="rh-ns-date">{nsText(day.nepal_sambat)}</span></span>
-                <span className="rh-cell-main"><strong>{number(day.bs.day, language)}</strong></span>
-                <span className="rh-weekday">{(language === "en" ? EN_DAYS : NE_DAYS)[weekday]}</span>
-                <em className={tithi ? "" : "is-pending"}>{tithi}</em>
-                {event ? <span className="rh-day-badge">{festivalName(event, language)}</span> : null}
+              const label = dayEvents.slice(0, 2).map((item) => festivalName(item, language)).join(" / ");
+              const adDate = new Date(`${day.ad}T00:00:00Z`);
+              const ad = `${adDate.getUTCDate()} ${AD_MONTHS_SHORT[adDate.getUTCMonth()]}`;
+              const ns = nsShort(day.nepal_sambat, language);
+              const spoken = [`${number(day.bs.day, language)} ${bsMonth(day.bs.month, language)}`, ad, tithi, ns, label].filter(Boolean).join(", ");
+              return <button type="button" key={day.ad} onClick={() => setSelected(day.ad)} aria-label={spoken} title={nsText(day.nepal_sambat) || undefined} aria-pressed={day.ad === selected} className={`rh-cell pc-cell${holiday ? " is-holiday" : ""}${day.ad === today ? " is-today" : ""}${day.ad === selected ? " is-selected" : ""}`}>
+                <span className="pc-top" aria-hidden="true"><span className={`pc-event${holidayEvent ? " is-holiday" : ""}`}>{label}</span><span className="pc-ad">{ad}</span></span>
+                <strong className="pc-bs" aria-hidden="true">{number(day.bs.day, language)}</strong>
+                <span className="pc-tithi" aria-hidden="true">{tithi || "—"}</span>
+                <span className="pc-ns" aria-hidden="true">{ns}</span>
+                {dayEvents.length ? <i className={`pc-dot${holidayEvent ? " is-holiday" : ""}`} aria-hidden="true" /> : null}
               </button>;
             })}
           </div>

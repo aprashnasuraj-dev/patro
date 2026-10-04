@@ -1,3 +1,4 @@
+import { formatNeDate } from "../nepaliDate";
 import { motion } from "framer-motion";
 import type { CosmicDayPayload } from "../types";
 import { ExpandedCosmicPanel } from "./ExpandedCosmicPanel";
@@ -13,14 +14,7 @@ function formatUtc(value: string | null | undefined) {
   if (!value) return "समय उपलब्ध छैन";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("ne-NP", {
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "UTC",
-    timeZoneName: "short"
-  }).format(date);
+  return formatNeDate(date, { year: false, time: true, timeZone: "UTC", zoneLabel: "UTC" });
 }
 
 function levelIndex(level: SolarData["level"] | undefined) {

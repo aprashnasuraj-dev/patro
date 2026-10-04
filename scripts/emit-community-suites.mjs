@@ -47,9 +47,11 @@ function Nav(){
 }
 const nav=renderToStaticMarkup(React.createElement(Nav));
 const shellCss=`<style id="samudaya-suite-shell">
-.samudaya-suite-menu{position:relative;z-index:2147480000;display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:9px 10px;background:#07101ff2;border-bottom:1px solid #ffffff22;font:700 12px/1.2 system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}
-.samudaya-suite-menu a{color:#f4f8ff;text-decoration:none;padding:7px 8px;border:1px solid #ffffff22;border-radius:999px}.samudaya-suite-menu .suite-home{background:#f4f8ff;color:#07101f}
-html,body{max-width:100%;overflow-x:hidden}@media(max-width:360px){.samudaya-suite-menu{gap:4px;padding:7px 6px}.samudaya-suite-menu a{font-size:10px;padding:5px 6px}}
+.samudaya-suite-menu{position:relative;z-index:2147480000;display:flex;align-items:center;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:8px 10px;background:#07101ff2;border-bottom:1px solid #ffffff22;font:700 14px/1.2 "Mukta",system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}
+.samudaya-suite-menu::-webkit-scrollbar{display:none}
+.samudaya-suite-menu a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;color:#f4f8ff;text-decoration:none;border:1px solid #ffffff33;border-radius:999px;white-space:nowrap}
+.samudaya-suite-menu a:focus-visible{outline:2px solid #f4f8ff;outline-offset:2px}.samudaya-suite-menu .suite-home{background:#f4f8ff;color:#07101f}
+html,body{max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>`;
 function stripTag(html,pattern){return html.replace(pattern,"");}

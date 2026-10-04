@@ -1,3 +1,4 @@
+import { neNumber } from "../nepaliDate";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { createPortal } from "react-dom";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -16,7 +17,7 @@ interface Props {
 function distanceText(km: number | null | undefined) {
   if (km == null || !Number.isFinite(km)) return "—";
   if (km >= 1_000_000) return `${(km / 1_000_000).toFixed(2)} मिलियन किमी`;
-  return `${new Intl.NumberFormat("ne-NP", { maximumFractionDigits: 0 }).format(km)} किमी`;
+  return `${neNumber(km)} किमी`;
 }
 
 function solarLabel(level: string | undefined) {

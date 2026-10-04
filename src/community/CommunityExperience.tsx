@@ -1,3 +1,4 @@
+import { formatDate } from "../nepaliDate";
 import { useEffect, useMemo, useState } from "react";
 import { SUITES, type SuiteId } from "../patro-tools/communities/registry";
 import { suiteCalendar, upcoming } from "../patro-tools/communities/shared/resolve";
@@ -15,7 +16,7 @@ function todayNepal() {
 }
 function adYear(iso: string) { return Number(iso.slice(0, 4)); }
 function prettyDate(iso: string, language: "ne" | "en") {
-  return new Intl.DateTimeFormat(language === "en" ? "en-GB" : "ne-NP", { timeZone: "Asia/Kathmandu", year: "numeric", month: "long", day: "numeric", weekday: "short" }).format(new Date(`${iso}T06:00:00Z`));
+  return formatDate(iso, language, { weekday: "short" });
 }
 function confidenceLabel(value: string, language: "ne" | "en") {
   if (value === "announced") return l(language, "आधिकारिक घोषणा", "Announced");

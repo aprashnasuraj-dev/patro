@@ -1,0 +1,90 @@
+/* Month-grid cell: festival · AD date / BS day / tithi / Nepal Sambat.
+   New class names (pc-*) so older homepage stylesheets can't fight these rules;
+   the container uses .rh-grid .rh-cell.pc-cell to outrank earlier .rh-cell overrides. */
+.rh-grid .rh-cell.pc-cell {
+  display: grid !important;
+  grid-template-rows: auto 1fr auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 2px !important;
+  min-height: 120px !important;
+  padding: 6px 7px 7px !important;
+  text-align: center;
+  font-family: var(--ap-body, "Mukta", system-ui, sans-serif);
+}
+.pc-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 4px;
+  width: 100%;
+  min-height: 32px;
+}
+.pc-event {
+  min-width: 0;
+  text-align: left;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--ap-ink, #18241d);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+.pc-event.is-holiday { color: var(--ap-red, #c0392b); }
+.pc-ad {
+  font: 600 12.5px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ap-muted, #5d6b63);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.pc-bs {
+  font: 800 clamp(1.55rem, 2.4vw, 2.15rem)/1 var(--ap-display, "Mukta", sans-serif);
+  color: var(--ap-ink, #18241d);
+  letter-spacing: -0.01em;
+}
+.pc-tithi,
+.pc-ns {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+.pc-tithi { font-size: 13px; font-weight: 600; color: var(--ap-muted, #5d6b63); }
+.pc-ns { font-size: 12px; font-weight: 600; color: var(--ap-green-ink, #0f5a2e); opacity: 0.9; }
+.pc-ns:empty { display: none; }
+.rh-cell.pc-cell.is-holiday .pc-bs,
+.rh-cell.pc-cell.is-holiday .pc-tithi { color: var(--ap-red, #c0392b); }
+.rh-cell.pc-cell.is-today .pc-bs { color: var(--ap-green-ink, #0f5a2e); }
+.pc-dot { display: none; }
+
+/* Phones: cells are ~45px wide — keep AD, BS day and tithi; festivals become a dot,
+   and full festival / Nepal Sambat details show in the selected-day panel on tap. */
+@media (max-width: 640px) {
+  .rh-grid .rh-cell.pc-cell {
+    grid-template-rows: auto 1fr auto;
+    min-height: 76px !important;
+    padding: 4px 2px 5px !important;
+    position: relative;
+  }
+  .pc-top { grid-template-columns: 1fr; min-height: 0; }
+  .pc-event, .pc-ns { display: none; }
+  .pc-ad { font-size: 12px; text-align: right; padding-right: 2px; }
+  .pc-bs { font-size: 1.3rem; }
+  .pc-tithi { font-size: 12px; }
+  .pc-dot {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ap-marigold, #b7791f);
+  }
+  .pc-dot.is-holiday { background: var(--ap-red, #c0392b); }
+}

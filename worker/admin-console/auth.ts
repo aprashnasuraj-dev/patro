@@ -23,7 +23,10 @@ export const COOKIE = "aap_admin";
 const SESSION_TTL = 12 * 3600_000;
 const SESSION_MAX = 7 * 86400_000;
 const LOCK_WINDOW = 15 * 60_000;
-const MAX_FAILURES = 5;
+// Failures allowed per 15 minutes before a key locks. The ip+username pair locks fast so a
+// mistyped password only affects that person; the username-wide limit is high so a stranger
+// can't lock the owner out by guessing.
+const LIMITS = { pair: 5, ip: 20, user: 50 } as const;
 
 export type Role = "owner" | "editor" | "viewer";
 export type AdminSession = {
@@ -108,12 +111,12 @@ async function lockState(env: AdminEnv, key: string) {
   const row = await first<any>(env, "select failures,first_at,locked_until from aap_login_attempts where key=?1", key);
   return row || { failures: 0, first_at: 0, locked_until: 0 };
 }
-async function recordFailure(env: AdminEnv, key: string) {
+async function recordFailure(env: AdminEnv, key: string, limit: number) {
   const now = Date.now();
   const s = await lockState(env, key);
   const fresh = now - s.first_at > LOCK_WINDOW;
   const failures = fresh ? 1 : s.failures + 1;
-  const lockedUntil = failures >= MAX_FAILURES ? now + LOCK_WINDOW : 0;
+  const lockedUntil = failures >= limit ? now + LOCK_WINDOW : 0;
   await run(
     env,
     "insert into aap_login_attempts(key,failures,first_at,locked_until) values(?1,?2,?3,?4) on conflict(key) do update set failures=excluded.failures,first_at=excluded.first_at,locked_until=excluded.locked_until",
@@ -175,20 +178,24 @@ async function login(request: Request, env: AdminEnv) {
   const password = String(body?.password || "").slice(0, 200);
   const code = String(body?.totp || "");
   const ip = clientIp(request);
-  const ipKey = "ip:" + ip, userKey = "user:" + username;
+  const pairKey = "pair:" + ip + "|" + username, ipKey = "ip:" + ip, userKey = "user:" + username;
   const now = Date.now();
-  const [ipLock, userLock] = await Promise.all([lockState(env, ipKey), lockState(env, userKey)]);
-  const lockedUntil = Math.max(ipLock.locked_until, userLock.locked_until);
-  if (lockedUntil > now) {
+  const fail = () => Promise.all([recordFailure(env, pairKey, LIMITS.pair), recordFailure(env, ipKey, LIMITS.ip), recordFailure(env, userKey, LIMITS.user)]);
+  const locks = await Promise.all([lockState(env, pairKey), lockState(env, ipKey), lockState(env, userKey)]);
+  const lockedUntil = Math.max(...locks.map((l: any) => l.locked_until));
+
+  const admin = await first<any>(env, "select * from aap_admins where username=?1", username);
+  const recovery = typeof env.ADMIN_RECOVERY_PASSWORD === "string" ? env.ADMIN_RECOVERY_PASSWORD : "";
+  const recoveryMatch = !!admin && recovery.length >= 12 && admin.role === "owner" && timingSafeEqual(password, recovery);
+  if (lockedUntil > now && !recoveryMatch) {
+    // The owner's recovery password (a Cloudflare secret) always gets through a lock.
     return json({ ok: false, error: "locked", retryInSeconds: Math.ceil((lockedUntil - now) / 1000) }, 429);
   }
 
-  const admin = await first<any>(env, "select * from aap_admins where username=?1", username);
   let ok = false, viaRecovery = false;
   if (admin) {
     ok = await verifyPassword(password, admin.password_hash);
-    const recovery = typeof env.ADMIN_RECOVERY_PASSWORD === "string" ? env.ADMIN_RECOVERY_PASSWORD : "";
-    if (!ok && recovery.length >= 12 && admin.role === "owner" && timingSafeEqual(password, recovery)) {
+    if (!ok && recoveryMatch) {
       ok = true;
       viaRecovery = true;
     }
@@ -196,7 +203,7 @@ async function login(request: Request, env: AdminEnv) {
     await hashPassword(password); // equalise timing for unknown usernames
   }
   if (!ok) {
-    await Promise.all([recordFailure(env, ipKey), recordFailure(env, userKey)]);
+    await fail();
     await audit(env, username || null, "login_failed", "auth", { ip });
     return json({ ok: false, error: "invalid_credentials" }, 401);
   }
@@ -210,12 +217,12 @@ async function login(request: Request, env: AdminEnv) {
       /* fallthrough to invalid */
     }
     if (!secret || !(await verifyTotp(secret, code))) {
-      await Promise.all([recordFailure(env, ipKey), recordFailure(env, userKey)]);
+      await fail();
       return json({ ok: false, error: "totp_invalid", totpRequired: true }, 401);
     }
   }
 
-  await run(env, "delete from aap_login_attempts where key in (?1,?2)", ipKey, userKey);
+  await run(env, "delete from aap_login_attempts where key in (?1,?2,?3)", pairKey, ipKey, userKey);
   if (viaRecovery) await run(env, "update aap_admins set must_change_password=1 where id=?1", admin.id);
   await run(env, "update aap_admins set last_login_at=?1,last_login_ip=?2 where id=?3", now, ip, admin.id);
   const { raw, csrf } = await createSession(request, env, admin.id);

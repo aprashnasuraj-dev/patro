@@ -1,3 +1,4 @@
+import { formatNeDate } from "../nepaliDate";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { ListChecks, Receipt, Cake, FileClock, Sparkles, Trash2, Mic, MicOff, Languages, Save } from "lucide-react";
 import { readLife, syncLifeTools, updateLife, type LifeState, type StoredNote } from "../patro-tools-integration/storage";
@@ -94,7 +95,7 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
     <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
     <div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>
-    {life.notes.length>0&&<div className="mp-note-list"><h3>सुरक्षित नोटहरू</h3>{life.notes.slice(0,30).map(note=><article key={note.id}><div><small>{new Date(note.createdAt).toLocaleString("ne-NP")} · {modeLabel(note.inputMode)}</small><p>{note.text}</p></div><button type="button" aria-label="नोट हटाउनुहोस्" onClick={()=>removeNote(note.id)}><Trash2 size={16}/></button></article>)}</div>}
+    {life.notes.length>0&&<div className="mp-note-list"><h3>सुरक्षित नोटहरू</h3>{life.notes.slice(0,30).map(note=><article key={note.id}><div><small>{formatNeDate(note.createdAt,{time:true})} · {modeLabel(note.inputMode)}</small><p>{note.text}</p></div><button type="button" aria-label="नोट हटाउनुहोस्" onClick={()=>removeNote(note.id)}><Trash2 size={16}/></button></article>)}</div>}
   </section>;
 }
 

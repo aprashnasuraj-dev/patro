@@ -254,3 +254,6 @@ dialog .row { justify-content: flex-end; margin-top: 1.25rem; }
 .code-box { font-family: ui-monospace, Menlo, Consolas, monospace; background: var(--mist); border: 1px solid var(--line); border-radius: var(--r-sm); padding: .55rem .7rem; word-break: break-all; font-size: .9rem; }
 .health-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .4rem 1rem; }
 .health-grid div { display: flex; justify-content: space-between; gap: .5rem; padding: .3rem 0; border-bottom: 1px dashed var(--line); font-size: .93rem; }
+
+/* Keep last: the hidden attribute must beat any class that sets display (e.g. .field, .publish-bar). */
+[hidden] { display: none !important; }

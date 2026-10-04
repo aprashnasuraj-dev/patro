@@ -28,8 +28,14 @@ function today(){
   return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 }
 function parse(row:any){
-  if(!row)return null;const value=row.payload??row;
-  if(typeof value==="string"){try{return JSON.parse(value)}catch{return null}}return value;
+  if(!row)return null;let value=row.payload??row;
+  if(typeof value==="string"){try{value=JSON.parse(value)}catch{return null}}
+  // Calendar archive rows are stored wrapped: {ad_date, payload:{ad,bs,ns,panchang}, source_version}.
+  // Unwrap so callers (syncShape, convert, today) read real bs/ns/panchang instead of undefined.
+  if(value&&typeof value==="object"&&!("bs" in value)&&value.payload&&typeof value.payload==="object"&&("bs" in value.payload||"ad" in value.payload)){
+    return {...value.payload,ad:value.payload.ad||value.ad_date};
+  }
+  return value;
 }
 async function query(env:PublicEnv,sql:string,bindings:any[]=[]){
   if(!env.DB)return[];const out=await env.DB.prepare(sql).bind(...bindings).all();return(out.results||[]).map(parse).filter(Boolean);
@@ -40,7 +46,7 @@ async function calendarByAd(env:PublicEnv,date:string){
 async function calendarByBs(env:PublicEnv,bs:string){
   const m=bs.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);if(!m||!env.DB)return null;
   return parse(await env.DB.prepare(
-    "select payload from content_records where table_name='astronomy_calendar_map' and json_extract(payload,'$.bs.year')=?1 and json_extract(payload,'$.bs.month')=?2 and json_extract(payload,'$.bs.day')=?3 limit 1"
+    "select payload from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 and coalesce(json_extract(payload,'$.payload.bs.day'),json_extract(payload,'$.bs.day'))=?3 limit 1"
   ).bind(Number(m[1]),Number(m[2]),Number(m[3])).first());
 }
 async function holidays(env:PublicEnv,date?:string,year?:number){
@@ -98,8 +104,22 @@ async function festivalsRoute(env:PublicEnv,url:URL){
   if(!Number.isInteger(year)||year<1900||year>2100)return json({ok:false,error:"invalid_year"},400);
   const from=year+"-01-01",to=year+"-12-31";
   const [festivalFacts,holidayRows]=await Promise.all([facts(env,"festival",from,to),holidays(env,undefined,year)]);
+  // Official facts carry only a machine key (e.g. "indra_jatra"). Give them the matching
+  // holiday's display names, and drop facts a holiday row already covers for that day, so
+  // visitors never see raw keys or the same festival twice.
+  const slug=(v:unknown)=>String(v||"").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g,"");
+  const holidaySlug=(h:any)=>slug(String(h.id||"").split(":")[1]||h.name_en);
+  const FESTIVAL_NE:Record<string,string>={baisakh_purnima:"बैशाख पूर्णिमा",basanta_panchami:"बसन्त पञ्चमी",bhai_tika:"भाइटीका",buddha_jayanti:"बुद्ध जयन्ती",chhath:"छठ पर्व",dhanya_purnima:"धान्य पूर्णिमा",fagu_purnima:"फागु पूर्णिमा",gai_jatra:"गाईजात्रा",ghatasthapana:"घटस्थापना",ghode_jatra:"घोडेजात्रा",haritalika_teej:"हरितालिका तीज",indra_jatra:"इन्द्रजात्रा",janai_purnima:"जनैपूर्णिमा",kojagrat_purnima:"कोजाग्रत पूर्णिमा",krishna_janmashtami:"श्रीकृष्ण जन्माष्टमी",laxmi_puja:"लक्ष्मी पूजा",maghe_sankranti:"माघे संक्रान्ति",maha_ashtami:"महाअष्टमी",maha_navami:"महानवमी",maha_shivaratri:"महाशिवरात्रि",phulpati:"फूलपाती",ram_navami:"रामनवमी",terai_holi:"तराई होली",vijaya_dashami:"विजया दशमी"};
+  const humanize=(k:string)=>k.replace(/[_-]+/g," ").replace(/\b[a-z]/g,(c)=>c.toUpperCase()).trim();
+  const covered=new Set(holidayRows.map((h:any)=>String(h.ad_date)+"|"+holidaySlug(h)));
+  const named=festivalFacts.filter((f:any)=>!covered.has(String(f.fact_date||f.ad_date)+"|"+slug(f.key))).map((f:any)=>{
+    if(f.name_ne||f.name_en||f.title)return f;
+    const date=String(f.fact_date||f.ad_date||""),k=slug(f.key);
+    const match=holidayRows.find((h:any)=>h.ad_date===date&&(holidaySlug(h).includes(k)||k.includes(holidaySlug(h))));
+    return {...f,ad_date:f.ad_date||date,name_ne:match?.name_ne||FESTIVAL_NE[String(f.key||"")]||null,name_en:match?.name_en||humanize(String(f.key||""))||null};
+  });
   const seen=new Set<string>(),items:any[]=[];
-  for(const row of [...festivalFacts,...holidayRows]){
+  for(const row of [...named,...holidayRows]){
     const key=String(row.key||row.id||row.ad_date+"|"+row.name_en);if(seen.has(key))continue;seen.add(key);items.push(row);
   }
   items.sort((a,b)=>String(a.fact_date||a.ad_date||"").localeCompare(String(b.fact_date||b.ad_date||"")));
@@ -116,7 +136,7 @@ async function calendarMonth(env:PublicEnv,path:string,url:URL){
   if(month<1||month>12)return json({ok:false,error:"invalid_month"},400);
   let rows:any[]=[];
   if(mode==="bs"){
-    rows=await query(env,"select payload from content_records where table_name='astronomy_calendar_map' and json_extract(payload,'$.bs.year')=?1 and json_extract(payload,'$.bs.month')=?2 order by record_key",[year,month]);
+    rows=await query(env,"select payload from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 order by record_key",[year,month]);
   }else{
     const start=year+"-"+String(month).padStart(2,"0")+"-01",endMonth=month===12?1:month+1,endYear=month===12?year+1:year,end=endYear+"-"+String(endMonth).padStart(2,"0")+"-01";
     rows=await query(env,"select payload from content_records where table_name='astronomy_calendar_map' and record_key>=?1 and record_key<?2 order by record_key",[start,end]);

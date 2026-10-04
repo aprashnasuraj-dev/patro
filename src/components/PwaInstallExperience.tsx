@@ -2,6 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import "./pwa-install.css";
 
+const SNOOZE_KEY="ap-install-snoozed-until";
+function snoozed(){try{return Number(localStorage.getItem(SNOOZE_KEY)||0)>Date.now()}catch{return false}}
+function snooze(days=14){try{localStorage.setItem(SNOOZE_KEY,String(Date.now()+days*86400000))}catch{/* private mode */}}
+function isDesktop(){return window.matchMedia("(pointer: fine) and (min-width: 900px)").matches}
 type InstallChoice={outcome:"accepted"|"dismissed";platform:string};
 interface InstallPromptEvent extends Event{
   prompt():Promise<void>;
@@ -31,13 +35,15 @@ export function PwaInstallExperience(){
       if(active){setShowNotice(false);setShowGuide(false);setPromptEvent(null)}
     };
     syncInstalled();
-    if(!isStandalone())setShowNotice(true);
+    // Don't greet visitors with a pop-up over the calendar: wait, respect a recent dismissal,
+    // and on desktop only offer it when the browser can actually install.
+    const timer=window.setTimeout(()=>{if(!isStandalone()&&!snoozed()&&!isDesktop())setShowNotice(true)},20000);
     setFooter(document.querySelector<HTMLElement>(".ap-footer"));
 
     const onBeforeInstall=(event:Event)=>{
       event.preventDefault();
       setPromptEvent(event as InstallPromptEvent);
-      if(!isStandalone())setShowNotice(true);
+      if(!isStandalone()&&!snoozed())window.setTimeout(()=>setShowNotice(true),20000);
     };
     const onInstalled=()=>{
       setInstalled(true);
@@ -49,6 +55,7 @@ export function PwaInstallExperience(){
     window.addEventListener("appinstalled",onInstalled);
     media.addEventListener?.("change",syncInstalled);
     return()=>{
+      window.clearTimeout(timer);
       window.removeEventListener("beforeinstallprompt",onBeforeInstall);
       window.removeEventListener("appinstalled",onInstalled);
       media.removeEventListener?.("change",syncInstalled);
@@ -81,7 +88,7 @@ export function PwaInstallExperience(){
   return <>
     {footer?createPortal(footerAction,footer):null}
     {!installed&&showNotice?<aside className="ap-install-notice" role="status" aria-live="polite">
-      <button className="ap-install-close" type="button" onClick={()=>setShowNotice(false)} aria-label="इन्स्टल सूचना बन्द गर्नुहोस्">×</button>
+      <button className="ap-install-close" type="button" onClick={()=>{snooze();setShowNotice(false)}} aria-label="इन्स्टल सूचना बन्द गर्नुहोस्">×</button>
       <span className="ap-install-mark" aria-hidden="true">आ</span>
       <div className="ap-install-copy">
         <strong>आफ्नै पात्रो फोनमा राख्नुहोस्</strong>

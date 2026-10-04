@@ -43,7 +43,7 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
       if (!db) return null;
       try {
         return normalizeCalendar(await db.prepare(
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and json_extract(payload,'$.bs.year')=?1 and json_extract(payload,'$.bs.month')=?2 and json_extract(payload,'$.bs.day')=?3 limit 1"
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 and coalesce(json_extract(payload,'$.payload.bs.day'),json_extract(payload,'$.bs.day'))=?3 limit 1"
         ).bind(bsY, bsM, bsD).first());
       } catch { return null; }
     },
@@ -52,7 +52,7 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
       if (!db) return [];
       try {
         const rows = await all(db,
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and json_extract(payload,'$.bs.year')=?1 and json_extract(payload,'$.bs.month')=?2 order by record_key",
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 order by record_key",
           [bsY, bsM]
         );
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
@@ -63,7 +63,7 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
       if (!db) return [];
       try {
         const rows = await all(db,
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and json_extract(payload,'$.bs.year')=?1 order by record_key",
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 order by record_key",
           [bsY]
         );
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];

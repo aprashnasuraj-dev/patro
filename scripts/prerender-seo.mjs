@@ -141,10 +141,10 @@ function render(path, indexed) {
   html = replaceOrInsert(html, /<meta\s+property="og:title"[^>]*>/i, `<meta property="og:title" content="${esc(title)}" />`);
   html = replaceOrInsert(html, /<meta\s+property="og:description"[^>]*>/i, `<meta property="og:description" content="${esc(meta.description)}" />`);
   html = replaceOrInsert(html, /<meta\s+property="og:url"[^>]*>/i, `<meta property="og:url" content="${esc(canonical)}" />`);
-  html = replaceOrInsert(html, /<meta\s+property="og:image"[^>]*>/i, `<meta property="og:image" content="${SITE}/icon-512.png" />`);
+  html = replaceOrInsert(html, /<meta\s+property="og:image"[^>]*>/i, `<meta property="og:image" content="${SITE}/og-default.png" />`);
   html = replaceOrInsert(html, /<meta\s+name="twitter:title"[^>]*>/i, `<meta name="twitter:title" content="${esc(title)}" />`);
   html = replaceOrInsert(html, /<meta\s+name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${esc(meta.description)}" />`);
-  html = replaceOrInsert(html, /<meta\s+name="twitter:image"[^>]*>/i, `<meta name="twitter:image" content="${SITE}/icon-512.png" />`);
+  html = replaceOrInsert(html, /<meta\s+name="twitter:image"[^>]*>/i, `<meta name="twitter:image" content="${SITE}/og-default.png" />`);
   html = html.replace(/<script\s+type="application\/ld\+json">.*?<\/script>/gis, "");
   html = html.replace(/<meta\s+name="robots"[^>]*>/gi, "").replace(/<meta\s+name="googlebot"[^>]*>/gi, "");
   const directives = indexed ? "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" : "noindex,follow,max-image-preview:large";

@@ -118,7 +118,7 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
  const fullTitle=`${meta.title} | ${BRAND}`;
  const indexable=meta.index!==false&&response.status<400;
  const robots=indexable?"index, follow, max-image-preview:large":"noindex, nofollow";
- const image=base+"/og-default.svg";
+ const image=base+"/og-default.png";
  const schema=JSON.stringify({"@context":"https://schema.org","@type":"WebPage",name:fullTitle,description:meta.description,url:canonical,inLanguage:["ne","en"],isPartOf:{"@type":"WebSite",name:BRAND,alternateName:BRAND_EN,url:base+"/"}}).replace(/</g,"\\u003c");
  const headBlock=
   `<meta name="description" content="${escapeHtml(meta.description)}">`+
