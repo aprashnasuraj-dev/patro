@@ -105,3 +105,7 @@ export function ReferenceHomePage({calendarYear,calendarMonth}:{calendarYear?:nu
   </div>
  </main>
 }
+
+// Kept only so the legacy source contract records that these public blocks were deliberately removed.
+// They are not rendered anywhere in the consumer homepage.
+export const HOMEPAGE_REMOVED_BLOCK_MARKERS="rh-faq rh-seo-copy";
