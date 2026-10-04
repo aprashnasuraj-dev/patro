@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { MePage, NotFoundPage, RashifalPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { ReferenceHomePage } from "./ReferenceHomePage";
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
@@ -8,7 +8,10 @@ import { SeoSearchSupport } from "./SeoSearchSupport";
 import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
+import { CommunityChakraPage, CommunitySuitePage, NepalSambatPage } from "./community/CommunityExperience";
+import { RashifalExperience } from "./rashifal/RashifalExperience";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
+import type { SuiteId } from "./patro-tools/communities/registry";
 
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
@@ -25,6 +28,7 @@ const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>(
 
 const DATE_ROUTE_PREFIX="/date/";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
+const COMMUNITY_SUITE_ROUTE=/^\/samudaya\/(lhosar|tharu|mithila|kirat|hijri)$/;
 const LEGACY_REDIRECTS:Record<string,string>={
  "/aaja":"/",
  "/astro":"/tools/astro",
@@ -50,9 +54,9 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")}
+function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -66,6 +70,9 @@ export function PatroRouter(){
    if(path==="/methodology")return <MethodologyPage/>;
    if(path==="/corrections")return <CorrectionsPage/>;
    if(path==="/samudaya")return <CommunityHub/>;
+   if(path==="/samudaya/chakra")return <CommunityChakraPage/>;
+   if(path==="/nepal-sambat/mandala")return <NepalSambatPage/>;
+   const community=path.match(COMMUNITY_SUITE_ROUTE);if(community)return <CommunitySuitePage suiteId={community[1] as SuiteId}/>;
    if(path==="/settings/community")return <CommunityPreferences/>;
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <ReferenceHomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
@@ -79,7 +86,7 @@ export function PatroRouter(){
    if(path==="/me/data")return <MyDataPage/>;
    if(path==="/me/cards")return <PatroToolsShell slug="janmadin-akhbar"/>;
    if(path==="/convert")return <ConvertPage/>;
-   if(path==="/rashifal")return <RashifalPage/>;
+   if(path==="/rashifal")return <RashifalExperience/>;
    if(path==="/samachar")return <SamacharPage/>;
    if(path==="/time-machine")return <TimeMachinePage/>;
    if(path==="/on-this-day")return <OnThisDayPage/>;
