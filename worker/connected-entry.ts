@@ -1,6 +1,7 @@
 import productionWorker from "./entry";
 import { rewriteConnectedSeo } from "./connected-seo";
 import { handleAgentSurface } from "./agent-gateway";
+import { withAdminConsole } from "./admin-console";
 
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = Record<string, unknown> & {
@@ -197,7 +198,7 @@ function protectMachineSurface(pathname: string, response: Response) {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
-export default {
+const connectedWorker = {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
@@ -225,3 +226,6 @@ export default {
     return (await compatibilityResponse(request, env, suffix)) || rewriteConnectedSeo(request, response, env);
   },
 };
+
+// /admin console, live site config (theme, renames, banner, features), analytics.
+export default withAdminConsole(connectedWorker);
