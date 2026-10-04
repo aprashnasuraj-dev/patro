@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { ReferenceHomePage } from "./ReferenceHomePage";
-import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
+import { DateDetailPage, OnThisDayPage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
 import { SeoSearchSupport } from "./SeoSearchSupport";
@@ -10,6 +10,7 @@ import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
 import { CommunityChakraPage, CommunitySuitePage, NepalSambatPage } from "./community/CommunityExperience";
 import { RashifalExperience } from "./rashifal/RashifalExperience";
+import { TimeMachineExperience } from "./time-machine/TimeMachineExperience";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 import type { SuiteId } from "./patro-tools/communities/registry";
 
@@ -88,7 +89,7 @@ export function PatroRouter(){
    if(path==="/convert")return <ConvertPage/>;
    if(path==="/rashifal")return <RashifalExperience/>;
    if(path==="/samachar")return <SamacharPage/>;
-   if(path==="/time-machine")return <TimeMachinePage/>;
+   if(path==="/time-machine")return <TimeMachineExperience/>;
    if(path==="/on-this-day")return <OnThisDayPage/>;
    if(path==="/fm")return <MediaSuite kind="radio"/>;
    if(path==="/tv")return <MediaSuite kind="tv"/>;
