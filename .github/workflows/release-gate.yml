@@ -197,14 +197,18 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_D1_DATABASE_ID: fb25c860-01db-4ab0-9036-7f87b26ca64b
         run: |
           set -euo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
             echo "::error::Cloudflare credentials are required for the production D1 repair."
             exit 1
           fi
+          # Re-import the small public history snapshot first. This makes the repair self-healing
+          # even when an earlier production import never populated on_this_day_events at all.
+          node scripts/cloudflare/import-d1.mjs --remote --table=on_this_day_events
           npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "UPDATE content_records SET year = COALESCE(year, CAST(json_extract(payload,'$.ad_year') AS INTEGER)), month = COALESCE(month, CAST(json_extract(payload,'$.ad_month') AS INTEGER)), day = COALESCE(day, CAST(json_extract(payload,'$.ad_day') AS INTEGER)) WHERE table_name='on_this_day_events' AND (year IS NULL OR month IS NULL OR day IS NULL);"
-          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "SELECT COUNT(*) AS missing_date_dimensions FROM content_records WHERE table_name='on_this_day_events' AND (month IS NULL OR day IS NULL);"
+          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "SELECT COUNT(*) AS on_this_day_rows, SUM(CASE WHEN month IS NULL OR day IS NULL THEN 1 ELSE 0 END) AS missing_date_dimensions FROM content_records WHERE table_name='on_this_day_events';"
       - name: Deploy validated build to Cloudflare
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
