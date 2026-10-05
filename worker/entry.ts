@@ -1,5 +1,6 @@
 import worker from "./index";
 import { runScheduled, type JobsEnv } from "./jobs";
+import { calendarTierResponse } from "./calendar-tier";
 
 type AssetBinding = { fetch(request: Request): Promise<Response> };
 type Env = JobsEnv & Record<string, unknown> & {
@@ -269,6 +270,8 @@ async function doctorWithoutMarketDependency(request: Request, env: Env, ctx: Ex
 
 async function callNative(request: Request, env: Env, ctx: ExecutionContext) {
   const url = new URL(request.url);
+  const calendar = await calendarTierResponse(request, env as any);
+  if (calendar) return calendar;
   const response = await worker.fetch(request, env as any, ctx);
   return url.pathname === "/api/v1/tools/catalog" ? brandCatalog(response) : response;
 }
