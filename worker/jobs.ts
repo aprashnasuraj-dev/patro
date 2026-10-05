@@ -14,6 +14,8 @@ export type JobsEnv=PushEnv & {
   PUBLIC_REFERENCE_CACHE_VERSION?:string;
 };
 
+const HISTORY_CACHE_REV="20261006-history-live-v4";
+
 function json(body:any,status=200){return new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-patro-backend":"cloudflare-cron"}})}
 
 function todayNepal(){
@@ -56,7 +58,9 @@ export async function warmDailyReferenceCache(env:JobsEnv){
   const date=todayNepal();
   const result:any={ok:true,date,kv:!!env.CACHE,r2:!!env.ARCHIVE,items:{}};
 
-  const historyRequest=new Request(`${base}/api/v1/on-this-day?date=${encodeURIComponent(date)}`,{method:"GET"});
+  // Keep the scheduled warmup on the same revisioned key used by the live UI. The
+  // revision prevents an older KV/R2 snapshot from shadowing a repaired D1 archive.
+  const historyRequest=new Request(`${base}/api/v1/on-this-day?date=${encodeURIComponent(date)}&rev=${HISTORY_CACHE_REV}`,{method:"GET"});
   const history=await primeQuotaCache(historyRequest,env,()=>fastHistoryResponse(historyRequest,env as any));
   result.items.history=history?{status:history.status,cache:history.headers.get("x-patro-cache")||"primed"}:{status:0};
 
