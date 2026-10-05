@@ -5,7 +5,6 @@ import process from "node:process";
 const ROOT = process.cwd();
 const DATA_ROOT = join(ROOT, "migration", "data", "public");
 const MANIFEST_PATH = join(ROOT, "cloudflare", "d1", "expected-public-counts.json");
-const LEGACY_RASHIFAL = join(ROOT, "cloudflare", "d1", "migrations", "0600_seed_rashifal_publications.sql");
 
 const PK = {
   app_flags:["key"], astronomy_calendar_map:["ad_date"], calendar_coverage_tiers:["id"],
@@ -29,6 +28,7 @@ const PRIVATE_DENYLIST = new Set([
   "contact_messages","fm_reports","fm_stream_candidates","community_overrides","user_community_preferences"
 ]);
 
+const NON_D1_RUNTIME_TABLES = new Set(["miti_rashifal_publications","market_snapshots"]);
 const args = new Set(process.argv.slice(2));
 const REMOTE = args.has("--remote");
 const TABLE_ARG = process.argv.find(x => x.startsWith("--table="))?.slice(8) || null;
@@ -83,59 +83,16 @@ async function walk(dir) {
   return out.sort();
 }
 
-function parseSqlValues(s) {
-  const vals=[]; let i=0;
-  while (i < s.length) {
-    while (/[\s,]/.test(s[i]||"")) i++;
-    if (s[i] === "'") {
-      i++; let v="";
-      while (i < s.length) {
-        if (s[i] === "'" && s[i+1] === "'") { v += "'"; i += 2; continue; }
-        if (s[i] === "'") { i++; break; }
-        v += s[i++];
-      }
-      vals.push(v);
-    } else {
-      let j=i; while (j<s.length && s[j]!==",") j++;
-      const raw=s.slice(i,j).trim();
-      vals.push(/^null$/i.test(raw) ? null : /^-?\d+(?:\.\d+)?$/.test(raw) ? Number(raw) : raw);
-      i=j;
-    }
-  }
-  return vals;
-}
-
-async function legacyRashifalRecords() {
-  const sql = await readFile(LEGACY_RASHIFAL,"utf8");
-  const rows=[];
-  for (const line of sql.split(/\r?\n/)) {
-    if (!line.startsWith("INSERT OR REPLACE INTO content_records")) continue;
-    const marker="VALUES(";
-    const start=line.indexOf(marker);
-    if (start<0 || !line.endsWith(");")) continue;
-    const v=parseSqlValues(line.slice(start+marker.length,-2));
-    if (v.length!==10 || v[0]!=="miti_rashifal_publications") continue;
-    rows.push({
-      table_name:v[0], record_key:String(v[1]), ad_date:v[2], year:v[3], month:v[4], day:v[5],
-      category:v[6], sort_order:v[7], payload:String(v[8]), updated_at:v[9]
-    });
-  }
-  if (!rows.length) throw new Error("Could not recover Rashifal rows from retained legacy seed");
-  return rows;
-}
-
 async function collectSources() {
   const byTable = new Map();
   for (const file of await walk(DATA_ROOT)) {
     const doc=JSON.parse(await readFile(file,"utf8"));
     if (!doc.table || !Array.isArray(doc.rows)) throw new Error(`Invalid snapshot ${relative(ROOT,file)}`);
     if (PRIVATE_DENYLIST.has(doc.table)) throw new Error(`Private table found in snapshot: ${doc.table}`);
+    if (NON_D1_RUNTIME_TABLES.has(doc.table)) continue;
     if (!PK[doc.table]) throw new Error(`Unapproved table in snapshot: ${doc.table}`);
     if (!byTable.has(doc.table)) byTable.set(doc.table,[]);
     byTable.get(doc.table).push({file,rows:doc.rows});
-  }
-  if (!byTable.has("miti_rashifal_publications")) {
-    byTable.set("miti_rashifal_publications",[{file:LEGACY_RASHIFAL,records:await legacyRashifalRecords()}]);
   }
   return byTable;
 }
@@ -178,7 +135,7 @@ async function flush(batch) {
 async function importTable(table, sources) {
   let batch=[], batchBytes=0, count=0;
   for (const source of sources) {
-    const records = source.records || source.rows.map(row=>toRecord(table,row));
+    const records = source.rows.map(row=>toRecord(table,row));
     for (let i=0;i<records.length;i+=ROWS_PER_QUERY) {
       const chunk=records.slice(i,i+ROWS_PER_QUERY);
       const q={sql:sqlForRows(chunk.length),params:paramsFor(chunk)};
@@ -204,7 +161,7 @@ async function validate(byTable, manifest) {
     if (TABLE_ARG && table!==TABLE_ARG) continue;
     const seen=new Set(); let count=0, first=null,last=null,maxPayload=0;
     for (const source of sources) {
-      const records=source.records || source.rows.map(row=>toRecord(table,row));
+      const records=source.rows.map(row=>toRecord(table,row));
       for (const r of records) {
         if (seen.has(r.record_key)) throw new Error(`${table}: duplicate key ${r.record_key}`);
         seen.add(r.record_key); count++;
