@@ -1,5 +1,7 @@
 import { nextOccurrences, ruleFromDate, type Observance, type TithiRule } from "../src/patro-tools/tithi-events/engine";
 import { KATHMANDU } from "../src/patro-tools/core/types";
+import { calculateAstronomicalTithi } from "./tithi";
+import { bsToAd, daysInBsMonth } from "../packages/core/src";
 
 export type PublicEnv={
   DB?:any;
@@ -141,8 +143,48 @@ async function calendarMonth(env:PublicEnv,path:string,url:URL){
     const start=year+"-"+String(month).padStart(2,"0")+"-01",endMonth=month===12?1:month+1,endYear=month===12?year+1:year,end=endYear+"-"+String(endMonth).padStart(2,"0")+"-01";
     rows=await query(env,"select payload from content_records where table_name='astronomy_calendar_map' and record_key>=?1 and record_key<?2 order by record_key",[start,end]);
   }
-  if(!rows.length)return json({ok:false,error:"month_outside_archive"},404);
-  return json({ok:true,calendar:mode,year,month,count:rows.length,days:rows.map(syncShape)},200,LONG);
+  let days:any[]=rows.map(syncShape);
+  if(!days.length&&mode==="bs")days=bsMonthSkeleton(year,month);
+  if(!days.length)return json({ok:false,error:"month_outside_archive"},404);
+  days=await fillPanchang(env,days);
+  return json({ok:true,calendar:mode,year,month,count:days.length,days},200,LONG);
+}
+
+// ---- Panchang fallbacks: archive rows → relational `days` table → astronomical calculation ----
+const TITHI_NE=["प्रतिपदा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","अष्टमी","नवमी","दशमी","एकादशी","द्वादशी","त्रयोदशी","चतुर्दशी","पूर्णिमा"];
+function tithiNe(n:number){return n===30?"औंसी":TITHI_NE[(n-1)%15]||"";}
+function bsMonthSkeleton(year:number,month:number){
+  try{
+    const len=daysInBsMonth(year,month),out:any[]=[];
+    for(let day=1;day<=len;day++)out.push({ad:bsToAd({year,month,day}),bs:{year,month,day,formatted:`${year}-${String(month).padStart(2,"0")}-${String(day).padStart(2,"0")}`},nepal_sambat:null,panchang:null,source:"BS converter"});
+    return out;
+  }catch{return [];}
+}
+/** Fill missing tithi/sunrise from the relational `days` table (Nepali Calendar Open Archive schema)
+ *  when present, otherwise compute the sunrise tithi for Kathmandu with Astronomy Engine. */
+async function fillPanchang(env:PublicEnv,days:any[]){
+  const missing=days.filter((d)=>d?.ad&&!(d.panchang&&d.panchang.tithi));
+  if(!missing.length)return days;
+  const byDate=new Map<string,any>();
+  try{
+    const first=missing[0].ad,last=missing[missing.length-1].ad;
+    const r=await env.DB?.prepare("select ad_date,tithi_num,tithi,paksha,tithi_end_npt,nakshatra,yoga,karana,sunrise_npt,sunset_npt,ritu from days where ad_date between ?1 and ?2").bind(first,last).all();
+    for(const row of r?.results||[])byDate.set(row.ad_date,row);
+  }catch{/* table not present in this D1 — fall through to calculation */}
+  return days.map((d)=>{
+    if(!d?.ad||(d.panchang&&d.panchang.tithi))return d;
+    const row=byDate.get(d.ad);
+    if(row){
+      const n=Number(row.tithi_num);
+      return {...d,panchang:{...(d.panchang||{}),tithi:{number:n,ne:tithiNe(n),en:row.tithi,paksha:`${row.paksha} Paksha`,ends_npt:row.tithi_end_npt||null},
+        nakshatra:row.nakshatra,yoga:row.yoga,karana:row.karana,ritu:row.ritu,sunrise:row.sunrise_npt,sunset:row.sunset_npt,source:"days table"}};
+    }
+    try{
+      const t:any=calculateAstronomicalTithi({date:d.ad});
+      const n=Number(t.tithi_index);
+      return {...d,panchang:{...(d.panchang||{}),tithi:{number:n,ne:t.tithi_name_ne||tithiNe(n),en:t.tithi_name,paksha:t.paksha},source:"computed (Astronomy Engine, Kathmandu sunrise)"}};
+    }catch{return d;}
+  });
 }
 function parseTithiRule(url:URL):TithiRule{
   const monthRaw=(url.searchParams.get("month")||"").toLowerCase();

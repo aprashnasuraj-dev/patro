@@ -24,3 +24,24 @@
 .sx-card .hx-foot a { color: #f2d48a; }
 .sx-card .sx-next { background: #ffffff10; color: #fff; border-color: #ffffff2a; }
 @media (prefers-reduced-motion: reduce) { .hx-item { animation: none; } }
+
+/* "मेरो टिपोट" quick note (text + voice) */
+.qn-card { display: grid; gap: 10px; margin-top: 16px; }
+.qn-field textarea { width: 100%; min-height: 92px; padding: 12px 14px; font: inherit; font-size: 16px; line-height: 1.55; border: 1px solid var(--ap-line, #dfe7e2); border-radius: 14px; background: var(--ap-surface, #fff); color: var(--ap-ink, #18241d); resize: vertical; box-sizing: border-box; }
+.qn-field textarea:focus { outline: 2px solid var(--ap-green, #176f3b); outline-offset: 1px; }
+.qn-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.qn-mic { width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--ap-green, #176f3b); color: #fff; font-size: 20px; cursor: pointer; }
+.qn-mic.is-on { background: #c0392b; animation: qn-pulse 1.2s ease-in-out infinite; }
+@keyframes qn-pulse { 50% { box-shadow: 0 0 0 8px #c0392b33; } }
+.qn-lang { display: inline-flex; border: 1px solid var(--ap-line, #dfe7e2); border-radius: 12px; overflow: hidden; }
+.qn-lang button { min-height: 44px; padding: 0 12px; border: 0; background: transparent; font: 600 14px/1 inherit; color: var(--ap-muted, #5d6b63); cursor: pointer; }
+.qn-lang button[aria-pressed="true"] { background: var(--ap-green-soft, #e7f3eb); color: var(--ap-green-ink, #0f5a2e); }
+.qn-save { margin-left: auto; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: var(--ap-green-ink, #0f5a2e); color: #fff; font: 700 15px/1 inherit; cursor: pointer; }
+.qn-save:disabled { opacity: .45; cursor: not-allowed; }
+.qn-status { margin: 0; font-size: 14px; color: var(--ap-muted, #5d6b63); }
+.qn-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.qn-list li { padding: 10px 12px; border-radius: 12px; background: var(--ap-surface-2, #f6f8f6); }
+.qn-list small { font-size: 13px; color: var(--ap-muted, #5d6b63); }
+.qn-list p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; white-space: pre-wrap; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.qn-card .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) { .qn-mic.is-on { animation: none; } }
