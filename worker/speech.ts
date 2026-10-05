@@ -32,6 +32,16 @@ function audioLike(value: FormDataEntryValue | null): value is File {
   return !!value && typeof value !== "string" && typeof (value as File).arrayBuffer === "function";
 }
 
+function audioFilename(audio: File) {
+  const type = audio.type.toLowerCase();
+  if (type.includes("ogg")) return "speech.ogg";
+  if (type.includes("mp4") || type.includes("m4a")) return "speech.m4a";
+  if (type.includes("mpeg") || type.includes("mp3")) return "speech.mp3";
+  if (type.includes("wav")) return "speech.wav";
+  if (type.includes("flac")) return "speech.flac";
+  return "speech.webm";
+}
+
 async function transcribe(request: Request, env: SpeechEnv) {
   const declared = Number(request.headers.get("content-length") || 0);
   if (Number.isFinite(declared) && declared > MAX_AUDIO_BYTES + 512_000) {
@@ -55,7 +65,7 @@ async function transcribe(request: Request, env: SpeechEnv) {
 
   const language = languageCode(form.get("language"));
   const upstream = new FormData();
-  upstream.append("file", audio, audio.name || (audio.type.includes("ogg") ? "speech.ogg" : "speech.webm"));
+  upstream.append("file", audio, audio.name && audio.name.includes(".") ? audio.name : audioFilename(audio));
   upstream.set("model", GROQ_STT_MODEL);
   upstream.set("language", language);
   upstream.set("response_format", "json");
