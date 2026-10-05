@@ -1,17 +1,12 @@
 'use client';
-/**
- * Browser voice typing for Nepali and English.
- *
- * Browser path (free): Web Speech API with a caller-selected recognition locale.
- * Fallback: record with MediaRecorder and POST to /api/nepali/stt, where a server
- * STT implementation can optionally use the submitted language hint.
- */
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 
 export type DictationLanguage = 'ne-NP' | 'en-US';
+type Mode = 'browser' | 'server' | 'unsupported';
 
+const MAX_SERVER_RECORDING_MS = 60_000;
 const NEPALI_SPOKEN: [RegExp, string][] = [
   [/\s*पूर्णविराम/g, '।'],
   [/\s*अल्पविराम/g, ','],
@@ -19,7 +14,6 @@ const NEPALI_SPOKEN: [RegExp, string][] = [
   [/\s*उद्गार(?: चिन्ह)?/g, '!'],
   [/\s*नयाँ (?:लाइन|अनुच्छेद)\s*/g, '\n'],
 ];
-
 const ENGLISH_SPOKEN: [RegExp, string][] = [
   [/\s*\b(?:full stop|period)\b/gi, '.'],
   [/\s*\bcomma\b/gi, ','],
@@ -29,8 +23,8 @@ const ENGLISH_SPOKEN: [RegExp, string][] = [
   [/\s*\bnew paragraph\b\s*/gi, '\n\n'],
 ];
 
-function cleanEnglishSpacing(raw: string): string {
-  return raw
+function cleanEnglishSpacing(raw: string) {
+  return raw.normalize('NFC')
     .replace(/[ \t]+([,?.!])/g, '$1')
     .replace(/([,?.!])(?=[^\s\n])/g, '$1 ')
     .replace(/[ \t]{2,}/g, ' ')
@@ -38,82 +32,140 @@ function cleanEnglishSpacing(raw: string): string {
     .trim();
 }
 
-export function postProcessEnglishDictation(raw: string): string {
+export function postProcessEnglishDictation(raw: string) {
   let text = raw;
-  for (const [re, symbol] of ENGLISH_SPOKEN) text = text.replace(re, symbol);
+  for (const [pattern, symbol] of ENGLISH_SPOKEN) text = text.replace(pattern, symbol);
   return cleanEnglishSpacing(text);
 }
 
 export function postProcessDictation(
   raw: string,
   opts: { nepaliDigits?: boolean; language?: DictationLanguage } = {},
-): string {
+) {
   const language = opts.language ?? 'ne-NP';
   if (language === 'en-US') return postProcessEnglishDictation(raw);
-
-  let text = raw;
-  for (const [re, symbol] of NEPALI_SPOKEN) text = text.replace(re, symbol);
+  let text = raw.normalize('NFC');
+  for (const [pattern, symbol] of NEPALI_SPOKEN) text = text.replace(pattern, symbol);
   if (opts.nepaliDigits ?? true) text = toNepaliDigits(text);
   return normalize(text).text;
 }
 
-type Mode = 'browser' | 'server' | 'unsupported';
+function speechRecognitionCtor() {
+  if (typeof window === 'undefined') return null;
+  return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition || null;
+}
 
-type DictationOptions = {
-  onFinal?: (text: string) => void;
-  serverFallback?: boolean;
-  language?: DictationLanguage;
-};
+function serverRecordingAvailable() {
+  return typeof window !== 'undefined'
+    && 'MediaRecorder' in window
+    && !!navigator.mediaDevices?.getUserMedia;
+}
+
+function preferredMimeType() {
+  if (typeof MediaRecorder === 'undefined' || typeof MediaRecorder.isTypeSupported !== 'function') return '';
+  return ['audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus', 'audio/mp4']
+    .find((type) => MediaRecorder.isTypeSupported(type)) || '';
+}
+
+function errorMessage(language: DictationLanguage, code: string) {
+  if (language === 'en-US') {
+    if (code === 'not-allowed' || code === 'service-not-allowed') return 'Please allow microphone access.';
+    if (code === 'no-speech') return 'No speech was detected. Please try again.';
+    return `Speech recognition error: ${code}`;
+  }
+  if (code === 'not-allowed' || code === 'service-not-allowed') return 'माइक्रोफोन अनुमति दिनुहोस्।';
+  if (code === 'no-speech') return 'आवाज सुनिएन। फेरि प्रयास गर्नुहोस्।';
+  return `आवाज पहिचान त्रुटि: ${code}`;
+}
 
 export function useNepaliDictation({
   onFinal,
   serverFallback = true,
   language = 'ne-NP',
-}: DictationOptions = {}) {
+}: {
+  onFinal?: (text: string) => void;
+  serverFallback?: boolean;
+  language?: DictationLanguage;
+} = {}) {
+  const [mode, setMode] = useState<Mode>('unsupported');
   const [listening, setListening] = useState(false);
   const [interim, setInterim] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const recRef = useRef<any>(null);
-  const mediaRef = useRef<MediaRecorder | null>(null);
-  const [mode, setMode] = useState<Mode>('unsupported');
+  const recognitionRef = useRef<any>(null);
+  const recorderRef = useRef<MediaRecorder | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
+  const timerRef = useRef<number | null>(null);
+  const mountedRef = useRef(true);
+
+  const clearTimer = useCallback(() => {
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  const stopTracks = useCallback(() => {
+    streamRef.current?.getTracks().forEach((track) => track.stop());
+    streamRef.current = null;
+  }, []);
 
   useEffect(() => {
-    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (SR) setMode('browser');
-    else if (serverFallback && 'MediaRecorder' in window) setMode('server');
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      clearTimer();
+      try { recognitionRef.current?.abort?.(); } catch { /* already ended */ }
+      try {
+        if (recorderRef.current && recorderRef.current.state !== 'inactive') recorderRef.current.stop();
+      } catch { /* already ended */ }
+      streamRef.current?.getTracks().forEach((track) => track.stop());
+    };
+  }, [clearTimer]);
+
+  useEffect(() => {
+    if (speechRecognitionCtor()) setMode('browser');
+    else if (serverFallback && serverRecordingAvailable()) setMode('server');
     else setMode('unsupported');
   }, [serverFallback]);
 
   const stop = useCallback(() => {
-    recRef.current?.stop();
-    mediaRef.current?.stop();
-    recRef.current = null;
-    mediaRef.current = null;
-    setListening(false);
     setInterim('');
-  }, []);
+    clearTimer();
+    const recognition = recognitionRef.current;
+    recognitionRef.current = null;
+    try { recognition?.stop?.(); } catch { /* already ended */ }
 
-  useEffect(() => {
-    if (listening) stop();
-  }, [language]);
+    const recorder = recorderRef.current;
+    if (recorder && recorder.state !== 'inactive') {
+      try { recorder.stop(); } catch { stopTracks(); }
+    } else if (!recorder) {
+      stopTracks();
+    }
+    setListening(false);
+  }, [clearTimer, stopTracks]);
 
   const start = useCallback(async () => {
     setError(null);
     setInterim('');
 
     if (mode === 'browser') {
-      const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-      const rec = new SR();
-      rec.lang = language;
-      rec.continuous = true;
-      rec.interimResults = true;
-      rec.maxAlternatives = 1;
-      rec.onstart = () => setListening(true);
-      rec.onresult = (event: any) => {
+      const SR = speechRecognitionCtor();
+      if (!SR) {
+        setMode(serverFallback && serverRecordingAvailable() ? 'server' : 'unsupported');
+        return;
+      }
+
+      const recognition = new SR();
+      recognition.lang = language;
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+      recognition.onstart = () => mountedRef.current && setListening(true);
+      recognition.onresult = (event: any) => {
         let live = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
+        for (let i = event.resultIndex; i < event.results.length; i += 1) {
           const result = event.results[i];
-          const transcript = result?.[0]?.transcript ?? '';
+          const transcript = String(result?.[0]?.transcript ?? '');
           if (result.isFinal) {
             const processed = postProcessDictation(transcript, {
               language,
@@ -121,76 +173,107 @@ export function useNepaliDictation({
             });
             if (processed) onFinal?.(`${processed} `);
           } else {
-            live += transcript;
+            live += `${transcript} `;
           }
         }
-        setInterim(live.trimStart());
+        if (mountedRef.current) setInterim(live.trimStart());
       };
-      rec.onerror = (event: any) => {
+      recognition.onerror = (event: any) => {
+        if (!mountedRef.current) return;
+        const code = String(event?.error || 'unknown');
         setListening(false);
-        setError(event.error === 'not-allowed' || event.error === 'service-not-allowed'
-          ? (language === 'ne-NP' ? 'माइक्रोफोन अनुमति दिनुहोस्।' : 'Please allow microphone access.')
-          : (language === 'ne-NP' ? `आवाज पहिचान त्रुटि: ${event.error}` : `Speech recognition error: ${event.error}`));
+        setInterim('');
+        if (serverFallback && serverRecordingAvailable() && ['network', 'language-not-supported'].includes(code)) {
+          setMode('server');
+          setError(language === 'ne-NP'
+            ? 'ब्राउजरको आवाज सेवा उपलब्ध भएन। फेरि माइक्रोफोन थिच्दा server transcription प्रयोग हुन्छ।'
+            : 'Browser speech service failed. Press the microphone again to use server transcription.');
+        } else {
+          setError(errorMessage(language, code));
+        }
       };
-      rec.onend = () => {
-        recRef.current = null;
+      recognition.onend = () => {
+        if (recognitionRef.current === recognition) recognitionRef.current = null;
+        if (!mountedRef.current) return;
         setListening(false);
         setInterim('');
       };
-      recRef.current = rec;
+      recognitionRef.current = recognition;
       try {
-        rec.start();
+        recognition.start();
       } catch (cause) {
-        recRef.current = null;
+        recognitionRef.current = null;
         setListening(false);
-        setError(cause instanceof Error
-          ? cause.message
-          : (language === 'ne-NP' ? 'आवाज टाइपिङ सुरु गर्न सकिएन।' : 'Voice typing could not start.'));
+        setError(cause instanceof Error ? cause.message : errorMessage(language, 'start-failed'));
       }
       return;
     }
 
     if (mode === 'server') {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const rec = new MediaRecorder(stream);
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+        });
+        streamRef.current = stream;
+        const mimeType = preferredMimeType();
+        const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
         const chunks: Blob[] = [];
-        rec.ondataavailable = (event) => chunks.push(event.data);
-        rec.onstop = async () => {
-          stream.getTracks().forEach((track) => track.stop());
+        recorder.ondataavailable = (event) => {
+          if (event.data?.size) chunks.push(event.data);
+        };
+        recorder.onerror = () => {
+          if (mountedRef.current) setError(language === 'ne-NP' ? 'आवाज रेकर्ड गर्न सकिएन।' : 'Audio recording failed.');
+        };
+        recorder.onstop = async () => {
+          clearTimer();
+          stopTracks();
+          const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
           try {
+            if (!blob.size) throw new Error(language === 'ne-NP' ? 'आवाज रेकर्ड भएन।' : 'No audio was recorded.');
             const body = new FormData();
-            body.append('audio', new Blob(chunks, { type: rec.mimeType }), 'speech.webm');
+            body.append('audio', blob, 'speech');
             body.append('language', language);
             const response = await fetch('/api/nepali/stt', { method: 'POST', body });
-            if (!response.ok) throw new Error(language === 'ne-NP' ? 'आवाज पहिचान असफल भयो।' : 'Speech recognition failed.');
-            const payload = await response.json();
+            const payload = await response.json().catch(() => ({}));
+            if (!response.ok) {
+              const code = String(payload?.error || `HTTP ${response.status}`);
+              throw new Error(language === 'ne-NP'
+                ? `Server आवाज पहिचान असफल भयो (${code})।`
+                : `Server speech recognition failed (${code}).`);
+            }
             const processed = postProcessDictation(String(payload?.text ?? ''), {
               language,
               nepaliDigits: language === 'ne-NP',
             });
             if (processed) onFinal?.(`${processed} `);
           } catch (cause) {
-            setError(cause instanceof Error ? cause.message : (language === 'ne-NP' ? 'आवाज पहिचान असफल भयो।' : 'Speech recognition failed.'));
+            if (mountedRef.current) {
+              setError(cause instanceof Error ? cause.message : errorMessage(language, 'server-failed'));
+            }
           } finally {
-            mediaRef.current = null;
-            setListening(false);
+            recorderRef.current = null;
+            if (mountedRef.current) setListening(false);
           }
         };
-        mediaRef.current = rec;
-        rec.start();
+
+        recorderRef.current = recorder;
+        recorder.start(1_000);
         setListening(true);
+        timerRef.current = window.setTimeout(() => {
+          if (recorderRef.current === recorder && recorder.state !== 'inactive') recorder.stop();
+        }, MAX_SERVER_RECORDING_MS);
       } catch (cause) {
+        stopTracks();
         setListening(false);
-        setError(cause instanceof Error ? cause.message : (language === 'ne-NP' ? 'माइक्रोफोन अनुमति दिनुहोस्।' : 'Please allow microphone access.'));
+        setError(cause instanceof Error ? cause.message : errorMessage(language, 'not-allowed'));
       }
       return;
     }
 
     setError(language === 'ne-NP'
-      ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome वा Edge प्रयोग गर्नुहोस्।'
-      : 'Voice typing is not available in this browser. Try Chrome or Edge.');
-  }, [language, mode, onFinal]);
+      ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
+      : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
+  }, [clearTimer, language, mode, onFinal, serverFallback, stopTracks]);
 
   return { mode, listening, interim, error, language, start, stop };
 }
