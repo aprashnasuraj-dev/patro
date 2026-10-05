@@ -8,12 +8,13 @@
     "audit:aafnai-brand": "node scripts/audit-aafnai-brand.mjs",
     "test:public-copy": "node scripts/verify-public-copy.mjs",
     "build": "npm run audit:aafnai-brand && npm run test:public-copy && npm run seo:phase0 && npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs && tsc --noEmit && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/prerender-days-seo.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs && node scripts/enhance-prerender-intents.mjs && node scripts/verify-seo-build.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs && node scripts/verify-product-build.mjs",
-    "release:verify": "npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot && npm run build && npm run test:core && npm run test:typing && npm run test:patro-tools && npm run test:community && npm run test:full-product && npm run test:cloudflare-contract && npm run test:release-safety && npm run cloudflare:validate",
+    "release:verify": "npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot && npm run build && npm run test:core && npm run test:typing && npm run test:patro-tools && npm run test:community && npm run test:calendar-resilience && npm run test:full-product && npm run test:cloudflare-contract && npm run test:release-safety && npm run cloudflare:validate",
     "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
     "test:typing": "node --test tests/nepali-tools.test.mjs",
     "test:patro-tools": "vitest run tests/core.test.ts tests/tithi-events.test.ts tests/sait-baby.test.ts tests/language.test.ts tests/bots-letters.test.ts",
+    "test:calendar-resilience": "vitest run tests/calendar-resilience.test.ts",
     "test:full-product": "node --test tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/fresh-build-ux-contract.test.mjs",
     "test:release-safety": "node --test tests/production-release-safety.test.mjs",
     "typecheck": "tsc --noEmit",
@@ -30,7 +31,7 @@
     "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
     "cloudflare:verify-d1-remote": "node scripts/verify-d1-remote.mjs",
     "cloudflare:verify-inventory": "node scripts/verify-migration-inventory.mjs",
-    "cloudflare:production-check": "npm run build && npm run test:typing && npm run test:cloudflare-contract && npm run test:release-safety && npm run cloudflare:verify-inventory",
+    "cloudflare:production-check": "npm run build && npm run test:typing && npm run test:calendar-resilience && npm run test:cloudflare-contract && npm run test:release-safety && npm run cloudflare:verify-inventory",
     "cf:validate-data": "npm run cloudflare:verify-snapshot",
     "cf:schema:remote": "npm run cloudflare:migrate",
     "cf:import:remote": "npm run cloudflare:import-d1:recovery",
@@ -93,7 +94,8 @@
     "config": "wrangler.jsonc",
     "bindings": {
       "ASSETS": "Static SPA assets served by the Worker.",
-      "DB": "Required production D1 database binding named DB; committed database is patro.",
+      "DB": "Primary production D1 database binding named DB.",
+      "CALENDAR_BACKUP": "R2 bucket fallback for the same ±12-month static calendar JSON window; production bucket is patro.",
       "CACHE": "Optional KV cache binding. The Worker remains functional without KV."
     }
   }
