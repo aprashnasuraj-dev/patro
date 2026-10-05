@@ -7,6 +7,20 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
+const SW_REVISION = "2026-10-05-runtime-recovery-v2";
+const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
+const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
+const STALE_CACHE_PREFIXES = [
+  "aafnai-shell-",
+  "aafnai-calendar-",
+  "aafnai-public-data-",
+  "aafnai-pwa-",
+  "patro-shell-",
+  "mero-patro-shell-",
+  "meropatro-pwa-",
+  "आफ्नै पात्रो-pwa-",
+];
+
 function runWhenIdle(task: () => void) {
   const idleWindow = window as IdleWindow;
   if (typeof idleWindow.requestIdleCallback === "function") {
@@ -27,17 +41,48 @@ async function prewarmOfflineModules() {
   }
 }
 
+async function clearStaleRuntimeCaches() {
+  try {
+    if (localStorage.getItem(CACHE_EPOCH_KEY) === SW_REVISION) return;
+    if (!("caches" in window)) return;
+    const names = await caches.keys();
+    await Promise.all(names.filter((name) => STALE_CACHE_PREFIXES.some((prefix) => name.startsWith(prefix))).map((name) => caches.delete(name)));
+    localStorage.setItem(CACHE_EPOCH_KEY, SW_REVISION);
+  } catch {
+    // Cache recovery must never prevent the live application from booting.
+  }
+}
+
 function askWorkerToWarm(registration: ServiceWorkerRegistration) {
   const worker = registration.active || registration.waiting || registration.installing || navigator.serviceWorker.controller;
   worker?.postMessage({ type: "WARM_OFFLINE" });
 }
 
+function installControllerRefresh() {
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshing) return;
+    try {
+      if (sessionStorage.getItem(RELOAD_EPOCH_KEY) === SW_REVISION) return;
+      sessionStorage.setItem(RELOAD_EPOCH_KEY, SW_REVISION);
+    } catch {
+      // Session storage is optional; one guarded reload is still safe.
+    }
+    refreshing = true;
+    window.location.reload();
+  });
+}
+
 export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
+  installControllerRefresh();
 
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(async (registration) => {
+    navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`, { scope: "/", updateViaCache: "none" }).then(async (registration) => {
       try {
+        await clearStaleRuntimeCaches();
+        await registration.update();
+        if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
         askWorkerToWarm(registration);
         runWhenIdle(() => { void prewarmOfflineModules(); });
