@@ -5,8 +5,14 @@ type Lang = "ne" | "en";
 type Moment = { title: string; summary: string; year: string; href: string; importance: number; highlight: boolean };
 
 const HISTORY_ROTATION_MS = 8500;
-const HISTORY_REFRESH_TOKEN = "20261005-history-v2";
+const HISTORY_REFRESH_TOKEN = "20261005-history-v3";
+const HISTORY_RETRY_DELAYS = [0, 1200, 3200];
 const pick = (o: any, keys: string[]) => { for (const k of keys) { const v = o?.[k]; if (typeof v === "string" && v.trim()) return v.trim(); } return ""; };
+const sleep = (ms: number, signal: AbortSignal) => new Promise<void>((resolve, reject) => {
+  if (!ms) return resolve();
+  const timer = window.setTimeout(resolve, ms);
+  signal.addEventListener("abort", () => { window.clearTimeout(timer); reject(new DOMException("Aborted", "AbortError")); }, { once: true });
+});
 
 function toMoment(row: any, language: Lang): Moment | null {
   if (row?.published === false || row?.published === 0 || String(row?.published ?? "true").toLowerCase() === "false") return null;
@@ -32,22 +38,47 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
     setLoaded(false);
-    fetch(`/api/v1/on-this-day?date=${encodeURIComponent(todayAd)}&fresh=${HISTORY_REFRESH_TOKEN}`, {
-      signal: controller.signal,
-      cache: "no-store",
-      headers: { accept: "application/json" },
-    })
-      .then((r) => r.ok ? r.json() : Promise.reject(new Error("history_unavailable")))
-      .then((payload) => {
-        const list = (payload?.items || []).map((row: any) => toMoment(row, language)).filter(Boolean) as Moment[];
-        list.sort((a, b) => Number(b.highlight) - Number(a.highlight) || b.importance - a.importance || b.year.localeCompare(a.year));
-        if (!controller.signal.aborted) { setItems(list.slice(0, 12)); setIndex(0); setLoaded(true); }
-      })
-      .catch(() => { if (!controller.signal.aborted) { setItems([]); setLoaded(true); } });
+    setFailed(false);
+
+    (async () => {
+      let lastError: unknown = null;
+      for (const delay of HISTORY_RETRY_DELAYS) {
+        try {
+          await sleep(delay, controller.signal);
+          const response = await fetch(`/api/v1/on-this-day?date=${encodeURIComponent(todayAd)}&fresh=${HISTORY_REFRESH_TOKEN}`, {
+            signal: controller.signal,
+            cache: "no-store",
+            headers: { accept: "application/json" },
+          });
+          if (!response.ok) throw new Error(`history_http_${response.status}`);
+          const payload = await response.json();
+          const list = (payload?.items || []).map((row: any) => toMoment(row, language)).filter(Boolean) as Moment[];
+          list.sort((a, b) => Number(b.highlight) - Number(a.highlight) || b.importance - a.importance || b.year.localeCompare(a.year));
+          if (!controller.signal.aborted) {
+            setItems(list.slice(0, 12));
+            setIndex(0);
+            setFailed(false);
+            setLoaded(true);
+          }
+          return;
+        } catch (error) {
+          if (controller.signal.aborted) return;
+          lastError = error;
+        }
+      }
+      if (!controller.signal.aborted) {
+        void lastError;
+        setItems([]);
+        setFailed(true);
+        setLoaded(true);
+      }
+    })();
+
     return () => controller.abort();
   }, [todayAd, language]);
 
@@ -71,7 +102,9 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
         <h3>{item.title}</h3>
         {item.summary ? <p>{item.summary}</p> : null}
       </article>;
-    })() : <p className="rh-muted">{l("आजको मितिका लागि प्रकाशित इतिहास अभिलेख भेटिएन।", "No published archive entry is available for this date yet.")}</p>}
+    })() : failed
+      ? <p className="rh-muted">{l("इतिहास अभिलेखसँग जडान पुनः प्रयास हुँदैछ। केहीबेरमा फेरि खोल्नुहोस्।", "The history archive is reconnecting. Please try again shortly.")}</p>
+      : <p className="rh-muted">{l("आजको मितिका लागि प्रकाशित इतिहास अभिलेख भेटिएन।", "No published archive entry is available for this date yet.")}</p>}
     <footer className="hx-foot">
       {items.length > 1 ? <div className="hx-nav">
         <button type="button" onClick={() => go(-1)} aria-label={l("अघिल्लो घटना", "Previous event")}>‹</button>
