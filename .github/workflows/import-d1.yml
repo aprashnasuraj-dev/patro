@@ -19,8 +19,8 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       ZIP_FILE: "databse.zip.zip"
-      D1_DATABASE_NAME: "patro-db"
-      D1_DATABASE_ID: "PASTE_YOUR_D1_DATABASE_ID"
+      D1_DATABASE_NAME: "patro"
+      D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
 
     steps:
       - name: Download repository
@@ -45,8 +45,8 @@ jobs:
               raise SystemExit("Missing CLOUDFLARE_ACCOUNT_ID secret.")
           if not os.environ.get("CLOUDFLARE_API_TOKEN"):
               raise SystemExit("Missing CLOUDFLARE_API_TOKEN secret.")
-          if os.environ["D1_DATABASE_ID"] == "PASTE_YOUR_D1_DATABASE_ID":
-              raise SystemExit("Replace D1_DATABASE_ID in the workflow.")
+          if not os.environ.get("D1_DATABASE_ID"):
+              raise SystemExit("Missing CLOUDFLARE_D1_DATABASE_ID secret.")
 
           archive = Path(os.environ["ZIP_FILE"])
           if not archive.is_file():
