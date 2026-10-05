@@ -34,7 +34,8 @@
     "SUPABASE_COMPAT_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router",
     "CALENDAR_COVERAGE_START": "1826-04-11",
     "CALENDAR_COVERAGE_END": "2037-04-13",
-    "CALENDAR_SOURCE_VERSION": "patro-archive-v79"
+    "CALENDAR_SOURCE_VERSION": "patro-archive-v79",
+    "PUBLIC_REFERENCE_CACHE_VERSION": "public-reference-v1"
   },
   "triggers": {
     "crons": ["*/5 * * * *", "43 2 * * *", "11 3 * * *", "15 18 * * *"]
