@@ -1,15 +1,14 @@
-import { aiEnvOverlay } from "./admin-console/ai";
-
 type SpeechEnv = Record<string, unknown> & {
-  DB?: any;
   Groq_API?: string;
   GROQ_API_KEY?: string;
   GROQ_KEY?: string;
+  GROQ_STT_MODEL?: string;
 };
 
 const GROQ_TRANSCRIBE_URL = "https://api.groq.com/openai/v1/audio/transcriptions";
-const GROQ_STT_MODEL = "whisper-large-v3-turbo";
+const DEFAULT_GROQ_STT_MODEL = "whisper-large-v3-turbo";
 const MAX_AUDIO_BYTES = 20 * 1024 * 1024;
+const PROVIDER_TIMEOUT_MS = 45_000;
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -22,19 +21,18 @@ function json(body: unknown, status = 200) {
   });
 }
 
-function groqKey(env: SpeechEnv) {
-  const candidates = [env.Groq_API, env.GROQ_API_KEY, env.GROQ_KEY];
-  return candidates.find((value): value is string => typeof value === "string" && value.trim().length > 0)?.trim() || "";
+function firstString(...values: unknown[]) {
+  return values.find((value): value is string => typeof value === "string" && value.trim().length > 0)?.trim() || "";
 }
 
-async function effectiveSpeechEnv(env: SpeechEnv): Promise<SpeechEnv> {
-  if (groqKey(env) || !env.DB) return env;
-  try {
-    const overlay = await aiEnvOverlay(env as any);
-    return Object.keys(overlay).length ? { ...env, ...overlay } : env;
-  } catch {
-    return env;
-  }
+function groqKey(env: SpeechEnv) {
+  // Speech must stay available even when D1 has exhausted its read quota.
+  // Only Worker secrets/vars are consulted here; never read DB/admin-console overlays.
+  return firstString(env.Groq_API, env.GROQ_API_KEY, env.GROQ_KEY);
+}
+
+function sttModel(env: SpeechEnv) {
+  return firstString(env.GROQ_STT_MODEL) || DEFAULT_GROQ_STT_MODEL;
 }
 
 function languageCode(value: FormDataEntryValue | null) {
@@ -61,8 +59,7 @@ async function transcribe(request: Request, env: SpeechEnv) {
     return json({ error: "audio_too_large", maxBytes: MAX_AUDIO_BYTES }, 413);
   }
 
-  const effectiveEnv = await effectiveSpeechEnv(env);
-  const key = groqKey(effectiveEnv);
+  const key = groqKey(env);
   if (!key) return json({ error: "speech_backend_unconfigured" }, 503);
 
   let form: FormData;
@@ -78,9 +75,10 @@ async function transcribe(request: Request, env: SpeechEnv) {
   if (audio.size > MAX_AUDIO_BYTES) return json({ error: "audio_too_large", maxBytes: MAX_AUDIO_BYTES }, 413);
 
   const language = languageCode(form.get("language"));
+  const model = sttModel(env);
   const upstream = new FormData();
   upstream.append("file", audio, audio.name && audio.name.includes(".") ? audio.name : audioFilename(audio));
-  upstream.set("model", GROQ_STT_MODEL);
+  upstream.set("model", model);
   upstream.set("language", language);
   upstream.set("response_format", "json");
   upstream.set("temperature", "0");
@@ -91,15 +89,21 @@ async function transcribe(request: Request, env: SpeechEnv) {
     );
   }
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort("speech_provider_timeout"), PROVIDER_TIMEOUT_MS);
   let response: Response;
   try {
     response = await fetch(GROQ_TRANSCRIBE_URL, {
       method: "POST",
       headers: { authorization: `Bearer ${key}` },
       body: upstream,
+      signal: controller.signal,
     });
-  } catch {
+  } catch (error) {
+    if (controller.signal.aborted) return json({ error: "speech_provider_timeout" }, 504);
     return json({ error: "speech_provider_unreachable" }, 502);
+  } finally {
+    clearTimeout(timeout);
   }
 
   if (!response.ok) {
@@ -119,17 +123,16 @@ async function transcribe(request: Request, env: SpeechEnv) {
   return json({
     text,
     language: language === "ne" ? "ne-NP" : "en-US",
-    provider: GROQ_STT_MODEL,
+    provider: model,
   });
 }
 
 export async function speechApiResponse(request: Request, env: SpeechEnv): Promise<Response | null> {
   const path = new URL(request.url).pathname;
   if (path === "/api/nepali/speech-capabilities" && request.method === "GET") {
-    const effectiveEnv = await effectiveSpeechEnv(env);
     return json({
-      stt: { browser: true, server: !!groqKey(effectiveEnv), model: GROQ_STT_MODEL },
-      tts: { browser: true, server: false, locale: "ne-NP" },
+      stt: { browser: true, server: !!groqKey(env), model: sttModel(env), databaseRequired: false },
+      tts: { browser: true, server: false, locale: "ne-NP", databaseRequired: false },
     });
   }
 
