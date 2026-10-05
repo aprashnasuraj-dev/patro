@@ -148,7 +148,7 @@ jobs:
               "verified_events_2083": 52,
               "verified_event_sources_2083": 3
           }
-          query = " UNION ALL ".join(
+          query = "; ".join(
               f"SELECT '{table}' AS dataset, COUNT(*) AS row_count FROM {table}"
               for table in expected
           )
