@@ -97,7 +97,7 @@ jobs:
         run: |
           set -euo pipefail
           test -d dist/assets
-          required=(dist/index.html dist/sw.js dist/tools/index.html dist/samudaya/index.html dist/nepal-sambat/mandala/index.html dist/samudaya/lhosar/index.html dist/samudaya/tharu/index.html dist/samudaya/mithila/index.html dist/samudaya/kirat/index.html dist/samudaya/hijri/index.html dist/samudaya/chakra/index.html)
+          required=(dist/index.html dist/sw.js dist/tools/index.html dist/samudaya/index.html dist/nepal-sambat/mandala/index.html dist/samudaya/lhosar/index.html dist/samudaya/tharu/index.html dist/samudaya/mithila/index.html dist/samudaya/kirat/index.html dist/samudaya/hijri/index.html dist/samudaya/chakra/index.html dist/data/on-this-day/manifest.json dist/data/on-this-day/month-01.json dist/data/on-this-day/month-12.json)
           for file in "${required[@]}"; do
             test -s "$file"
             if grep -Eiq 'Loading\.\.\.|>Loading<|>लोड हुँदै' "$file"; then echo "Terminal loading placeholder found in $file"; exit 1; fi
@@ -191,8 +191,8 @@ jobs:
           check mobile_checks "$MOBILE_CHECKS"
           check lighthouse "$LIGHTHOUSE"
           exit "$failures"
-      - name: Ensure On This Day D1 snapshot
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Optional On This Day D1 snapshot refresh
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SYNC_HISTORY_D1 == '1'
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -202,13 +202,9 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
-            echo "::error::Cloudflare credentials are required for the production D1 history sync."
+            echo "::error::Cloudflare credentials are required for the optional D1 history sync."
             exit 1
           fi
-          # Fingerprint only the canonical history dataset + transform contract. An unrelated importer
-          # implementation change must not force 5,454 identical writes. If today's D1 row-read quota
-          # is already exhausted, keep the existing history snapshot and continue deploying validated
-          # code/static assets; the next release can retry synchronization after quota reset.
           node scripts/cloudflare/ensure-history-d1.mjs
       - name: Deploy validated build to Cloudflare
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -221,7 +217,7 @@ jobs:
           CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
           CF_R2_PREVIEW_BUCKET_NAME: ${{ vars.CF_R2_PREVIEW_BUCKET_NAME || secrets.CF_R2_PREVIEW_BUCKET_NAME }}
           CF_CACHE_AUTO_PROVISION: "1"
-          REQUIRE_QUOTA_CACHE: "1"
+          REQUIRE_QUOTA_CACHE: "0"
           PUBLIC_REFERENCE_CACHE_VERSION: public-reference-v1
         run: |
           set -euo pipefail
@@ -230,23 +226,21 @@ jobs:
             exit 1
           fi
           test -s dist/index.html
+          test -s dist/data/on-this-day/manifest.json
           node scripts/prepare-cloudflare-config.mjs
           node --input-type=module <<'NODE'
           import { readFileSync } from "node:fs";
           const cfg=JSON.parse(readFileSync("wrangler.generated.jsonc","utf8"));
           const hasKv=Boolean(cfg.kv_namespaces?.some(x=>x.binding==="CACHE"));
           const hasR2=Boolean(cfg.r2_buckets?.some(x=>x.binding==="ARCHIVE"));
-          console.log(`quota bindings: KV=${hasKv} R2=${hasR2}`);
-          if(process.env.REQUIRE_QUOTA_CACHE==="1"&&(!hasKv||!hasR2)){
-            throw new Error(`Production quota cache requires both CACHE(KV) and ARCHIVE(R2); KV=${hasKv} R2=${hasR2}`);
-          }
+          console.log(`quota bindings (optional acceleration): KV=${hasKv} R2=${hasR2}; packaged history archive is always present`);
           NODE
           npx wrangler deploy --config wrangler.generated.jsonc
-      - name: Prime annual On This Day KV/R2 cache
+      - name: Prime annual On This Day cache
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         env:
-          HISTORY_CACHE_REV: 20261006-history-live-v4
+          HISTORY_CACHE_REV: 20261006-history-live-v5
         run: |
           set -euo pipefail
           node --input-type=module <<'NODE'
@@ -285,9 +279,11 @@ jobs:
           if(!verify.ok)throw new Error(`Post-prime verification HTTP ${verify.status}`);
           const verifiedBody=await verify.json();
           const layer=verify.headers.get("x-patro-cache")||"origin";
+          const backend=verify.headers.get("x-patro-backend")||"";
           if(verifiedBody?.date!==today)throw new Error(`Cached history date adapter mismatch: ${verifiedBody?.date} != ${today}`);
-          if(!["edge","kv","r2"].includes(layer))throw new Error(`Post-prime request did not hit cache; layer=${layer}`);
-          console.log(JSON.stringify({ok:true,annual_keys:dates.length,first_pass:stats,verified_date:today,verified_layer:layer}));
+          const durableOrigin=["cloudflare-asset-history","cloudflare-r2-history"].includes(backend);
+          if(!["edge","kv","r2"].includes(layer)&&!durableOrigin)throw new Error(`Post-prime history source is not durable; layer=${layer} backend=${backend}`);
+          console.log(JSON.stringify({ok:true,annual_keys:dates.length,first_pass:stats,verified_date:today,verified_layer:layer,verified_backend:backend}));
           NODE
       - name: Smoke test deployed Cloudflare runtime
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
