@@ -4,6 +4,7 @@ import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
+import { HomepageEnhancer } from "./components/HomepageEnhancer";
 import { JyotishAssistant } from "./components/JyotishAssistant";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PwaInstallExperience } from "./components/PwaInstallExperience";
@@ -56,6 +57,7 @@ createRoot(root).render(
       </AppChrome>
       <PwaInstallExperience />
       <CalendarCellEnhancer />
+      <HomepageEnhancer />
       <FeatureLauncher />
       <GlobalMediaPlayer />
       <JyotishAssistant />
