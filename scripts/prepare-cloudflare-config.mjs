@@ -13,12 +13,60 @@ const configuredR2=Array.isArray(base.r2_buckets)?base.r2_buckets.find((row)=>ro
 const d1Id=process.env.CF_D1_DATABASE_ID?.trim()||configuredD1?.database_id;
 const d1Name=process.env.CF_D1_DATABASE_NAME?.trim()||configuredD1?.database_name||"patro";
 const d1PreviewId=process.env.CF_D1_PREVIEW_DATABASE_ID?.trim();
-const kvId=process.env.CF_KV_NAMESPACE_ID?.trim()||configuredKv?.id;
+let kvId=process.env.CF_KV_NAMESPACE_ID?.trim()||configuredKv?.id||"";
 const kvPreviewId=process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim()||configuredKv?.preview_id;
-const r2Bucket=process.env.CF_R2_BUCKET_NAME?.trim()||process.env.R2_BUCKET_NAME?.trim()||configuredR2?.bucket_name;
+let r2Bucket=process.env.CF_R2_BUCKET_NAME?.trim()||process.env.R2_BUCKET_NAME?.trim()||configuredR2?.bucket_name||"";
 const r2PreviewBucket=process.env.CF_R2_PREVIEW_BUCKET_NAME?.trim()||configuredR2?.preview_bucket_name;
 
 if(!d1Id)throw new Error("Cloudflare D1 DB binding is missing. Configure DB in wrangler.jsonc or set CF_D1_DATABASE_ID.");
+
+const account=process.env.CLOUDFLARE_ACCOUNT_ID?.trim();
+const token=process.env.CLOUDFLARE_API_TOKEN?.trim();
+async function cf(path,init={}){
+  if(!account||!token)throw new Error("Cloudflare credentials unavailable");
+  const response=await fetch(`https://api.cloudflare.com/client/v4/accounts/${account}${path}`,{
+    ...init,
+    headers:{authorization:`Bearer ${token}`,"content-type":"application/json",...(init.headers||{})}
+  });
+  const body=await response.json().catch(()=>({}));
+  if(!response.ok||body?.success===false)throw new Error(`Cloudflare ${path} HTTP ${response.status}`);
+  return body?.result;
+}
+
+// Production deploys already have an account-scoped API token. If optional cache IDs were
+// not copied into GitHub variables, discover safe cache resources instead of silently
+// deploying a Worker that can only hit D1. KV may be provisioned once under a deterministic
+// cache-only name; R2 is never created or deleted here because it can contain user backups.
+if(account&&token){
+  if(!kvId){
+    try{
+      const rows=await cf("/storage/kv/namespaces?per_page=100");
+      const namespaces=Array.isArray(rows)?rows:[];
+      const found=namespaces.find((row)=>["patro-runtime-cache","patro-cache","aafnai-patro-cache","aafnaipatro-cache"].includes(String(row?.title||"").toLowerCase()));
+      if(found?.id)kvId=String(found.id);
+      else if(process.env.CF_CACHE_AUTO_PROVISION!=="0"){
+        const created=await cf("/storage/kv/namespaces",{method:"POST",body:JSON.stringify({title:"patro-runtime-cache"})});
+        if(created?.id)kvId=String(created.id);
+      }
+    }catch(error){
+      console.warn(`KV cache discovery/provision skipped: ${String(error?.message||error)}`);
+    }
+  }
+
+  if(!r2Bucket){
+    try{
+      const result=await cf("/r2/buckets");
+      const buckets=Array.isArray(result?.buckets)?result.buckets:Array.isArray(result)?result:[];
+      const names=buckets.map((row)=>String(row?.name||"")).filter(Boolean);
+      const preferred=names.filter((name)=>/(?:^|[-_])(patro|aafnai|aafnaipatro|miti)(?:$|[-_])|^(?:patro|aafnai-patro|aafnaipatro|miti)/i.test(name));
+      if(preferred.length===1)r2Bucket=preferred[0];
+      else if(names.length===1)r2Bucket=names[0];
+      else if(names.length>1)console.warn("Multiple R2 buckets found; set CF_R2_BUCKET_NAME to select the Patro archive bucket safely.");
+    }catch(error){
+      console.warn(`R2 cache discovery skipped: ${String(error?.message||error)}`);
+    }
+  }
+}
 
 base.name="patro";
 base.main="worker/optimized-entry.ts";
