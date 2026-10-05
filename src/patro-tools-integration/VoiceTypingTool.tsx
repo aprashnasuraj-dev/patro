@@ -43,14 +43,16 @@ export function VoiceTypingTool() {
     onFinal: appendFinal,
   });
   const meta = LANGUAGE_META[language];
-  const modeText = dictation.mode === "browser"
-    ? `${meta.short} · Live recognition`
-    : dictation.mode === "server"
-      ? `${meta.short} · Recorded recognition`
-      : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन";
+  const modeText = dictation.processing
+    ? (language === "ne-NP" ? "आवाजलाई पाठमा बदलिँदैछ…" : "Transcribing recording…")
+    : dictation.mode === "browser"
+      ? `${meta.short} · Live recognition`
+      : dictation.mode === "server"
+        ? `${meta.short} · Recorded recognition`
+        : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन";
 
   function chooseLanguage(next: DictationLanguage) {
-    if (next === language) return;
+    if (next === language || dictation.processing) return;
     if (dictation.listening) dictation.stop();
     setLanguage(next);
     setCopied(false);
@@ -68,6 +70,7 @@ export function VoiceTypingTool() {
   }
 
   function clearTranscript() {
+    if (dictation.processing) return;
     if (dictation.listening) dictation.stop();
     setText("");
     setCopied(false);
@@ -91,6 +94,7 @@ export function VoiceTypingTool() {
               className={language === "ne-NP" ? "is-active" : ""}
               aria-pressed={language === "ne-NP"}
               onClick={() => chooseLanguage("ne-NP")}
+              disabled={dictation.processing}
             >
               <strong>नेपाली</strong>
               <small>नेपाली बोली → नेपाली पाठ</small>
@@ -100,6 +104,7 @@ export function VoiceTypingTool() {
               className={language === "en-US" ? "is-active" : ""}
               aria-pressed={language === "en-US"}
               onClick={() => chooseLanguage("en-US")}
+              disabled={dictation.processing}
             >
               <strong>English</strong>
               <small>English speech → English text</small>
@@ -109,7 +114,7 @@ export function VoiceTypingTool() {
 
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
-            <span className="tool-badge">{modeText}</span>
+            <span className="tool-badge" aria-live="polite">{modeText}</span>
             <p>{meta.punctuation}</p>
             {dictation.mode === "server" ? (
               <p className="tool-muted">Stop थिचेपछि रेकर्ड गरिएको आवाजलाई पाठमा बदलिन्छ। एक पटकमा अधिकतम 60 सेकेन्ड बोल्न सकिन्छ।</p>
@@ -120,11 +125,14 @@ export function VoiceTypingTool() {
               type="button"
               className="tool-primary-button voice-record-button"
               onClick={() => void dictation.start()}
-              disabled={dictation.mode === "unsupported"}
+              disabled={dictation.mode === "unsupported" || dictation.processing}
+              aria-busy={dictation.processing}
             >
-              {dictation.mode === "server"
-                ? (language === "ne-NP" ? "🎙 रेकर्ड सुरु गर्नुहोस्" : "🎙 Start recording")
-                : meta.start}
+              {dictation.processing
+                ? (language === "ne-NP" ? "⏳ पाठ तयार हुँदैछ…" : "⏳ Transcribing…")
+                : dictation.mode === "server"
+                  ? (language === "ne-NP" ? "🎙 रेकर्ड सुरु गर्नुहोस्" : "🎙 Start recording")
+                  : meta.start}
             </button>
           ) : (
             <button type="button" className="tool-secondary-button voice-record-button is-listening" onClick={dictation.stop}>
@@ -157,7 +165,7 @@ export function VoiceTypingTool() {
           <button type="button" className="tool-secondary-button" onClick={copyTranscript} disabled={!text}>
             {copied ? "✓ कपी भयो" : "कपी · Copy"}
           </button>
-          <button type="button" className="tool-link-button" onClick={clearTranscript} disabled={!text && !dictation.listening}>
+          <button type="button" className="tool-link-button" onClick={clearTranscript} disabled={dictation.processing || (!text && !dictation.listening)}>
             खाली गर्नुहोस् · Clear
           </button>
           {language === "ne-NP" ? <a className="tool-link-button" href="/tools/spell-check">नेपाली हिज्जे जाँच →</a> : null}
