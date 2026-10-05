@@ -7,9 +7,11 @@ const outputs=[
   resolve(root,"public/data/calendar/offline-window.json"),
   resolve(root,"dist/data/calendar/offline-window.json")
 ];
-const MAX_DAYS=45;
-const PAST_DAYS=7;
-const MAX_BYTES=300000;
+// This asset is the no-database safety net for the live calendar. Keep enough history to
+// cover the entire visible BS month even when "today" is near the end of that month.
+const MAX_DAYS=92;
+const PAST_DAYS=40;
+const MAX_BYTES=700000;
 const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const rows=await getAllDays();
 const todayIndex=rows.findIndex((row)=>row.ad===today);
@@ -48,10 +50,11 @@ for(const year of years){
 }
 const uniqueEvents=[...new Map(events.map((row)=>[`${row.ad_date}|${row.name_ne||row.name_en||row.key}|${row.effect||""}`,row])).values()];
 const payload={
-  schema_version:1,
+  schema_version:2,
   generated_at:new Date().toISOString(),
-  basis:"Canonical Aafnai Patro archive; bounded offline/PWA window only",
+  basis:"Canonical Aafnai Patro archive; bounded static fallback for current calendar availability",
   max_days:MAX_DAYS,
+  past_days:PAST_DAYS,
   start:days[0].ad,
   end:days.at(-1).ad,
   days,
