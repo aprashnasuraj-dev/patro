@@ -1,12 +1,15 @@
+type D1Row = Record<string, unknown> & { payload?: unknown };
 type D1Like = {
   prepare(sql: string): {
     bind(...values: unknown[]): {
-      all(): Promise<{ results?: Array<{ payload?: unknown }> }>;
+      all(): Promise<{ results?: D1Row[] }>;
     };
   };
 };
 
 type Env = { DB?: D1Like };
+const HISTORY_RELEASE_MARKER = "release:on_this_day_events";
+const EXPECTED_HISTORY_ROWS = 5454;
 
 function validDate(value: string) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -56,27 +59,41 @@ function response(body: unknown, status = 200) {
   });
 }
 
+async function verifiedIndexedArchive(db: D1Like) {
+  try {
+    const out = await db.prepare(
+      "select row_count from migration_state where source=?1 limit 1",
+    ).bind(HISTORY_RELEASE_MARKER).all();
+    return Number(out.results?.[0]?.row_count || 0) >= EXPECTED_HISTORY_ROWS;
+  } catch {
+    return false;
+  }
+}
+
 async function queryRows(db: D1Like, month: number, day: number) {
   // Normal path: fast indexed lookup on content_records(table_name, month, day).
   const indexed = await db.prepare(
     "select payload from content_records where table_name='on_this_day_events' and month=?1 and day=?2 order by sort_order desc, record_key asc limit 100",
   ).bind(month, day).all();
-  if ((indexed.results || []).length) return indexed.results || [];
+  if ((indexed.results || []).length) return { rows: indexed.results || [], indexedReady: true };
 
-  // Recovery path for legacy imports whose dimension columns were left null/wrong.
-  // The archive is small, and the JSON fallback only runs when the indexed query is empty.
+  // Once the release marker confirms a complete import, an empty indexed result really
+  // means this date has no record. Do not pay for a 5,454-row JSON scan to prove it.
+  if (await verifiedIndexedArchive(db)) return { rows: [] as D1Row[], indexedReady: true };
+
+  // Recovery only for a legacy/incomplete database that predates the verified import.
   const legacy = await db.prepare(
     "select payload from content_records where table_name='on_this_day_events' and (" +
       "(cast(json_extract(payload,'$.ad_month') as integer)=?1 and cast(json_extract(payload,'$.ad_day') as integer)=?2)" +
       " or (cast(substr(json_extract(payload,'$.ad_date'),6,2) as integer)=?1 and cast(substr(json_extract(payload,'$.ad_date'),9,2) as integer)=?2)" +
     ") order by coalesce(cast(json_extract(payload,'$.importance') as integer),0) desc, record_key asc limit 100",
   ).bind(month, day).all();
-  return legacy.results || [];
+  return { rows: legacy.results || [], indexedReady: false };
 }
 
 /**
- * Hot-path On This Day endpoint. It is intentionally independent of the larger API router so
- * homepage history remains available even when an older D1 import has missing month/day columns.
+ * Hot-path On This Day endpoint. Normal traffic is an indexed month/day lookup. The
+ * expensive JSON recovery scan is gated behind the absence of the verified release marker.
  */
 export async function fastHistoryResponse(request: Request, env: Env) {
   if (request.method !== "GET" || new URL(request.url).pathname !== "/api/v1/on-this-day") return null;
@@ -88,11 +105,16 @@ export async function fastHistoryResponse(request: Request, env: Env) {
 
   const [, month, day] = date.split("-").map(Number);
   try {
-    const records = (await queryRows(env.DB, month, day))
+    const queried = await queryRows(env.DB, month, day);
+    const records = queried.rows
       .map(parsePayload)
       .filter((row): row is Record<string, unknown> => Boolean(row) && isPublished(row as Record<string, unknown>));
 
+    if (!records.length && queried.indexedReady) {
+      return response({ ok: true, date, count: 0, items: [], source: "Cloudflare D1 On This Day archive" });
+    }
     if (!records.length) return null;
+
     records.sort((a, b) => {
       const highlight = Number(Boolean(b.highlight)) - Number(Boolean(a.highlight));
       if (highlight) return highlight;
