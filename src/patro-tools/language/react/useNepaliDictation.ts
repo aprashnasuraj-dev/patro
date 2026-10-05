@@ -78,6 +78,25 @@ function errorMessage(language: DictationLanguage, code: string) {
   return `आवाज पहिचान त्रुटि: ${code}`;
 }
 
+function serverErrorMessage(language: DictationLanguage, code: string) {
+  const nepali = language === 'ne-NP';
+  if (code === 'speech_backend_unconfigured') {
+    return nepali
+      ? 'Server आवाज सेवा अहिले configure गरिएको छैन। Browser live recognition प्रयोग गर्नुहोस्।'
+      : 'Server speech is not configured right now. Use browser live recognition.';
+  }
+  if (code === 'speech_provider_timeout') {
+    return nepali ? 'आवाजलाई पाठमा बदल्न धेरै समय लाग्यो। फेरि प्रयास गर्नुहोस्।' : 'Transcription timed out. Please try again.';
+  }
+  if (code === 'no_speech_detected') {
+    return nepali ? 'रेकर्डिङमा स्पष्ट आवाज भेटिएन। फेरि बोल्नुहोस्।' : 'No clear speech was detected in the recording.';
+  }
+  if (code === 'speech_provider_failed' || code === 'speech_provider_unreachable') {
+    return nepali ? 'Server आवाज सेवा अहिले उपलब्ध छैन। फेरि प्रयास गर्नुहोस्।' : 'Server speech service is temporarily unavailable.';
+  }
+  return nepali ? `Server आवाज पहिचान असफल भयो (${code})।` : `Server speech recognition failed (${code}).`;
+}
+
 export function useNepaliDictation({
   onFinal,
   serverFallback = true,
@@ -89,6 +108,7 @@ export function useNepaliDictation({
 } = {}) {
   const [mode, setMode] = useState<Mode>('unsupported');
   const [listening, setListening] = useState(false);
+  const [processing, setProcessing] = useState(false);
   const [interim, setInterim] = useState('');
   const [error, setError] = useState<string | null>(null);
   const recognitionRef = useRef<any>(null);
@@ -145,6 +165,7 @@ export function useNepaliDictation({
   }, [clearTimer, stopTracks]);
 
   const start = useCallback(async () => {
+    if (processing) return;
     setError(null);
     setInterim('');
 
@@ -228,6 +249,7 @@ export function useNepaliDictation({
           clearTimer();
           stopTracks();
           const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
+          if (mountedRef.current) setProcessing(true);
           try {
             if (!blob.size) throw new Error(language === 'ne-NP' ? 'आवाज रेकर्ड भएन।' : 'No audio was recorded.');
             const body = new FormData();
@@ -237,9 +259,7 @@ export function useNepaliDictation({
             const payload = await response.json().catch(() => ({}));
             if (!response.ok) {
               const code = String(payload?.error || `HTTP ${response.status}`);
-              throw new Error(language === 'ne-NP'
-                ? `Server आवाज पहिचान असफल भयो (${code})।`
-                : `Server speech recognition failed (${code}).`);
+              throw new Error(serverErrorMessage(language, code));
             }
             const processed = postProcessDictation(String(payload?.text ?? ''), {
               language,
@@ -252,7 +272,10 @@ export function useNepaliDictation({
             }
           } finally {
             recorderRef.current = null;
-            if (mountedRef.current) setListening(false);
+            if (mountedRef.current) {
+              setProcessing(false);
+              setListening(false);
+            }
           }
         };
 
@@ -273,7 +296,7 @@ export function useNepaliDictation({
     setError(language === 'ne-NP'
       ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
       : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
-  }, [clearTimer, language, mode, onFinal, serverFallback, stopTracks]);
+  }, [clearTimer, language, mode, onFinal, processing, serverFallback, stopTracks]);
 
-  return { mode, listening, interim, error, language, start, stop };
+  return { mode, listening, processing, interim, error, language, start, stop };
 }
