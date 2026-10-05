@@ -34,6 +34,8 @@ test("KV and R2 remain optional but generated deploy can attach both",async()=>{
   assert.match(generator,/binding:"CACHE"/);
   assert.match(generator,/CF_R2_BUCKET_NAME/);
   assert.match(generator,/binding:"ARCHIVE"/);
+  assert.match(generator,/patro-runtime-cache/);
+  assert.match(generator,/\/r2\/buckets/);
 });
 
 test("Cloudflare deploy generates environment-aware bindings before Wrangler",async()=>{
@@ -46,18 +48,24 @@ test("Cloudflare deploy generates environment-aware bindings before Wrangler",as
   assert.ok(pkg.cloudflare?.bindings?.ARCHIVE);
 });
 
-test("public reference hot paths are quota cached without caching private routes",async()=>{
+test("public D1 hot paths are quota cached without caching private routes",async()=>{
   const quota=await read("worker/quota-cache.ts");
   const optimized=await read("worker/optimized-entry.ts");
   const jobs=await read("worker/jobs.ts");
+  const push=await read("worker/push.ts");
   assert.match(optimized,/quotaCachedResponse/);
-  assert.match(quota,/\/api\/v1\/on-this-day/);
-  assert.match(quota,/\/api\/v1\/time-machine/);
+  for(const route of [
+    "/api/v1/on-this-day","/api/v1/time-machine","/api/v1/today","/api/v1/panchang",
+    "/api/v1/holidays","/api/v1/festivals","/api/v1/communities","/api/fm/stations"
+  ]) assert.ok(quota.includes(route),`quota cache missing ${route}`);
   assert.match(quota,/calendar-today/);
   assert.match(quota,/ARCHIVE/);
   assert.match(quota,/CACHE/);
-  assert.match(quota,/very high key cardinality/);
+  assert.match(quota,/arbitrary query cardinality/);
+  assert.match(quota,/text\/calendar/);
   assert.match(jobs,/warmDailyReferenceCache/);
+  assert.match(push,/PUSH_GATE_KEY/);
+  assert.match(push,/julianday\(next_attempt_at\)/);
   assert.doesNotMatch(quota,/\/api\/auth|\/api\/push|\/api\/me/);
 });
 
