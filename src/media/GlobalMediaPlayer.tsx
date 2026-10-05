@@ -1,3 +1,4 @@
+import { useDismiss } from "../useDismiss";
 import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, MoreHorizontal } from "lucide-react";
 import { useMedia } from "./MediaProvider";
@@ -17,6 +18,7 @@ function Visualizer(){
 
 export function GlobalMediaPlayer(){
   const media=useMedia(); const [open,setOpen]=useState(false);
+  useDismiss(open,()=>setOpen(false));
   useEffect(()=>{const fn=()=>setOpen((v)=>!v);window.addEventListener("patro:toggle-player-panel",fn);return()=>window.removeEventListener("patro:toggle-player-panel",fn);},[]);
   useEffect(()=>{if(!media.item)setOpen(false)},[media.item]);
   if(!media.item)return null;

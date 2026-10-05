@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 import "./pwa-install.css";
 
 const SNOOZE_KEY="ap-install-snoozed-until";
+// Let the calendar paint first; the release gate expects the phone notice within 10 s.
+const INSTALL_NOTICE_DELAY_MS=4000;
 function snoozed(){try{return Number(localStorage.getItem(SNOOZE_KEY)||0)>Date.now()}catch{return false}}
 function snooze(days=14){try{localStorage.setItem(SNOOZE_KEY,String(Date.now()+days*86400000))}catch{/* private mode */}}
 function isDesktop(){return window.matchMedia("(pointer: fine) and (min-width: 900px)").matches}
@@ -37,13 +39,13 @@ export function PwaInstallExperience(){
     syncInstalled();
     // Don't greet visitors with a pop-up over the calendar: wait, respect a recent dismissal,
     // and on desktop only offer it when the browser can actually install.
-    const timer=window.setTimeout(()=>{if(!isStandalone()&&!snoozed()&&!isDesktop())setShowNotice(true)},20000);
+    const timer=window.setTimeout(()=>{if(!isStandalone()&&!snoozed()&&!isDesktop())setShowNotice(true)},INSTALL_NOTICE_DELAY_MS);
     setFooter(document.querySelector<HTMLElement>(".ap-footer"));
 
     const onBeforeInstall=(event:Event)=>{
       event.preventDefault();
       setPromptEvent(event as InstallPromptEvent);
-      if(!isStandalone()&&!snoozed())window.setTimeout(()=>setShowNotice(true),20000);
+      if(!isStandalone()&&!snoozed())window.setTimeout(()=>setShowNotice(true),INSTALL_NOTICE_DELAY_MS);
     };
     const onInstalled=()=>{
       setInstalled(true);

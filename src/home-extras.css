@@ -1,0 +1,26 @@
+/* Homepage sidebar: "इतिहासमा आज" carousel + "आकाशमा आज" astronomy fact */
+.hx-card, .sx-card { display: grid; gap: 10px; }
+.hx-item { display: grid; gap: 6px; animation: hx-in .35s ease both; }
+@keyframes hx-in { from { opacity: 0; transform: translateY(4px); } }
+.hx-year { justify-self: start; font-size: 13px; font-weight: 700; color: var(--ap-green-ink, #0f5a2e); background: var(--ap-green-soft, #e7f3eb); padding: 2px 10px; border-radius: 999px; }
+.hx-item h3 { margin: 0; font-size: 16px; line-height: 1.4; color: var(--ap-ink, #18241d); }
+.hx-item p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ap-muted, #5d6b63); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.hx-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+.hx-foot a { font-size: 14px; font-weight: 700; color: var(--ap-green-ink, #0f5a2e); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.hx-foot a:hover { text-decoration: underline; }
+.hx-nav { display: inline-flex; align-items: center; gap: 4px; }
+.hx-nav button, .sx-next { min-width: 44px; min-height: 44px; border-radius: 12px; border: 1px solid var(--ap-line, #dfe7e2); background: var(--ap-surface, #fff); color: var(--ap-ink, #18241d); font: 700 18px/1 inherit; cursor: pointer; }
+.sx-next { font-size: 14px; padding: 0 14px; }
+.hx-nav button:hover, .sx-next:hover { border-color: var(--ap-green, #176f3b); }
+.hx-count { min-width: 44px; text-align: center; font-size: 13px; color: var(--ap-muted, #5d6b63); font-variant-numeric: tabular-nums; }
+.sx-card { background: linear-gradient(160deg, #102019 0%, #17302a 100%) !important; color: #eef3ee; border-color: #20392f !important; }
+.sx-card .rh-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.sx-card .rh-kicker { color: #d4a64a !important; }
+.sx-card h2 { color: #fff !important; }
+.sx-moon { width: 48px; height: 48px; flex: none; }
+.sx-sun { font-size: 34px; line-height: 1; color: #f2c14e; flex: none; }
+.sx-title { margin: 0; font-size: 18px; font-weight: 800; line-height: 1.35; color: #fff; }
+.sx-detail { margin: 0; font-size: 14px; line-height: 1.6; color: #b9cbc1; }
+.sx-card .hx-foot a { color: #f2d48a; }
+.sx-card .sx-next { background: #ffffff10; color: #fff; border-color: #ffffff2a; }
+@media (prefers-reduced-motion: reduce) { .hx-item { animation: none; } }

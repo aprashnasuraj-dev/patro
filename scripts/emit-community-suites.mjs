@@ -40,10 +40,12 @@ const availableRoutes=available.map(f=>routeMap[f]);
 const missing=REQUIRED_COMMUNITY_ROUTES.filter(route=>!availableRoutes.includes(route));
 if(missing.length||available.length!==7) throw new Error("Community suite parity failure: expected 7/7 routes; missing="+missing.join(","));
 console.log("[community] parity 7/7:",REQUIRED_COMMUNITY_ROUTES.join(", "));
+// Each suite already renders its own community switcher (kit.js nav()), so the injected bar only
+// adds what the suites lack: a way back to the main site and to the community hub.
 function Nav(){
- return React.createElement("nav",{className:"samudaya-suite-menu","aria-label":"Community Suite"},
-  React.createElement("a",{href:"/samudaya",className:"suite-home"},"समुदाय"),
-  ...available.map(f=>React.createElement("a",{href:routeMap[f],key:f},labels[f])));
+ return React.createElement("nav",{className:"samudaya-suite-menu","aria-label":"आफ्नै पात्रो"},
+  React.createElement("a",{href:"/",className:"suite-home"},"← आफ्नै पात्रो"),
+  React.createElement("a",{href:"/samudaya"},"सबै समुदाय पात्रो"));
 }
 const nav=renderToStaticMarkup(React.createElement(Nav));
 const shellCss=`<style id="samudaya-suite-shell">

@@ -76,7 +76,7 @@ test("connected Worker normalizes route SEO for SPA and standalone HTML",()=>{
   const seo=read("worker/connected-seo.ts");
   assert.ok(entry.includes('import { rewriteConnectedSeo } from "./connected-seo"'));
   assert.ok((entry.match(/rewriteConnectedSeo\(/g)||[]).length>=3,"SEO rewrite must cover SPA, standalone HTML and fallback HTML");
-  assert.ok(seo.includes("og-default.svg"));
+  assert.ok(seo.includes("og-default.png"),"share previews must use the 1200x630 PNG; WhatsApp/Facebook/X do not render SVG");
   assert.ok(seo.includes("response.status<400"));
   assert.ok(seo.includes('name:BRAND,alternateName:BRAND_EN'));
   assert.ok(seo.includes('"/samudaya/chakra"'));

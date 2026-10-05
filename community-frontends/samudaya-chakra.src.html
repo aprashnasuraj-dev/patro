@@ -29,7 +29,7 @@ body { background: radial-gradient(1000px 700px at 50% 5%, #211c4d 0%, var(--bg)
 .chip { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 10px; border-radius: 999px; font-size: 14px; color: #0d0c1d; font-weight: 600; }
 .doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .doors a { display: block; text-decoration: none; color: #0d0c1d; border-radius: 18px; padding: 16px; font-weight: 800; font-size: 18px; min-height: 110px; position: relative; }
-.doors a small { display: block; font-weight: 700; font-size: 13px; opacity: 1; color: #05040b; margin-top: 6px; }
+.doors a small { display: block; font-weight: 400; font-size: 13px; opacity: .8; margin-top: 6px; }
 #loading { color: var(--muted); }
 </style>
 </head>
@@ -141,7 +141,7 @@ const style = document.createElement('style'); style.textContent = '@keyframes s
 function show(e) {
   const t = trackOf(e.track), same = EV.filter((x) => x.main === e.main && x !== e), d = days(today, e.start);
   document.getElementById('detail').innerHTML = `<div class="dt-top" style="color:${t.color}">${t.dev}${t.page ? ` · <a href="${t.page}" style="color:${t.color}">पात्रो खोल्नुहोस् →</a>` : ''}</div>
-    <h2 class="dt-title">${esc(e.dev)} ${K.badge(e.confidence)}</h2>
+    <h3 class="dt-title">${esc(e.dev)} ${K.badge(e.confidence)}</h3>
     <div class="dt-date">${e.start === e.end ? fmt(e.main) + ', ' + K.weekday(e.main) : fmt(e.start) + ' – ' + fmt(e.end)} · ${d > 0 ? npd(d) + ' दिन बाँकी' : d === 0 ? 'आज!' : npd(-d) + ' दिन अघि'}</div>
     ${e.summary ? `<p>${esc(e.summary)}</p>` : ''}
     ${same.length ? `<p><b>सोही दिन:</b> ${same.map((s) => `<span class="chip" style="background:${trackOf(s.track).color}">${esc(s.dev)}</span>`).join('')}</p>` : ''}`;

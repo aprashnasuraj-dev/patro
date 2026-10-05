@@ -1,3 +1,4 @@
+import { useDismiss } from "../useDismiss";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type ChatRole = "user" | "assistant";
@@ -132,6 +133,7 @@ async function streamAssistant(
 
 export function JyotishAssistant() {
   const [open, setOpen] = useState(false);
+  useDismiss(open,()=>setOpen(false));
   const [messages, setMessages] = useState<ChatMessage[]>(readHistory);
   const [language, setLanguage] = useState<ChatLanguage>(readLanguage);
   const [china, setChina] = useState<ChinaContext | null>(readChina);

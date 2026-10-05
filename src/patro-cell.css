@@ -56,26 +56,26 @@
 }
 .pc-tithi { font-size: 13px; font-weight: 600; color: var(--ap-muted, #5d6b63); }
 .pc-ns { font-size: 12px; font-weight: 600; color: var(--ap-green-ink, #0f5a2e); opacity: 0.9; }
-.pc-ns:empty { display: none; }
+.pc-ns:empty::after { content: "—"; opacity: 0.55; }
 .rh-cell.pc-cell.is-holiday .pc-bs,
 .rh-cell.pc-cell.is-holiday .pc-tithi { color: var(--ap-red, #c0392b); }
 .rh-cell.pc-cell.is-today .pc-bs { color: var(--ap-green-ink, #0f5a2e); }
 .pc-dot { display: none; }
 
-/* Phones: cells are ~45px wide — keep AD, BS day and tithi; festivals become a dot,
-   and full festival / Nepal Sambat details show in the selected-day panel on tap. */
+/* Phones: cells are ~45px wide. Keep AD, BS day, tithi and a compact Nepal Sambat date
+   ("बछला ७") at the 13px minimum; festivals become a dot, details show in the selected-day panel. */
 @media (max-width: 640px) {
   .rh-grid .rh-cell.pc-cell {
-    grid-template-rows: auto 1fr auto;
-    min-height: 76px !important;
-    padding: 4px 2px 5px !important;
+    grid-template-rows: auto 1fr auto auto;
+    min-height: 100px !important;
+    padding: 4px 1px 5px !important;
     position: relative;
   }
   .pc-top { grid-template-columns: 1fr; min-height: 0; }
-  .pc-event, .pc-ns { display: none; }
-  .pc-ad { font-size: 12px; text-align: right; padding-right: 2px; }
+  .pc-event, .pc-ns-paksha { display: none; }
+  .pc-ad { font-size: 13px; text-align: right; padding-right: 2px; }
   .pc-bs { font-size: 1.3rem; }
-  .pc-tithi { font-size: 12px; }
+  .pc-tithi, .pc-ns { font-size: 13px; }
   .pc-dot {
     display: block;
     position: absolute;

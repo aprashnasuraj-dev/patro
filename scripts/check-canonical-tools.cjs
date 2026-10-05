@@ -28,9 +28,10 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
   const home=await page.evaluate(()=>{
     const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];
-    const sample=cells.find((cell)=>cell.querySelector("strong"));
+    const sample=cells.find((cell)=>cell.querySelector(".pc-bs"));
     const calendar=document.querySelector(".rh-calendar");
-    const rich=[".rh-ad-date",".rh-ns-date",".rh-cell-main strong",".rh-weekday","em"];
+    // Day cell (Oct 2026 layout): festival · AD date / BS day / tithi / Nepal Sambat.
+    const rich=[".pc-ad",".pc-ns",".pc-bs",".pc-tithi"];
     const richMetrics=Object.fromEntries(rich.map((selector)=>{
       const node=sample?.querySelector(selector);
       if(!node)return[selector,{exists:false,visible:false,font:0}];
@@ -40,12 +41,12 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
     return {
       rawSeoVisible:Boolean(document.querySelector(".seo-prerender")),
       cellCount:cells.length,
-      hasAd:Boolean(sample?.querySelector(".rh-ad-date")),
-      hasNs:Boolean(sample?.querySelector(".rh-ns-date")),
-      hasBs:Boolean(sample?.querySelector(".rh-cell-main strong")),
-      hasWeekday:Boolean(sample?.querySelector(".rh-weekday")),
-      hasTithiSlot:Boolean(sample?.querySelector("em")),
-      hasEventSlot:Boolean(sample?.querySelector(".rh-day-badges")),
+      hasAd:Boolean(sample?.querySelector(".pc-ad")),
+      hasNs:Boolean(sample?.querySelector(".pc-ns")),
+      hasBs:Boolean(sample?.querySelector(".pc-bs")),
+      hasWeekday:document.querySelectorAll(".rh-calendar .rh-weekheads > *").length===7,
+      hasTithiSlot:Boolean(sample?.querySelector(".pc-tithi")),
+      hasEventSlot:Boolean(sample?.querySelector(".pc-event")),
       richMetrics,
       calendarTop:calendar?.getBoundingClientRect().top??9999,
       bodyText:(document.body?.innerText||"").trim(),

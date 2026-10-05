@@ -1,3 +1,7 @@
+import "./home-extras.css";
+import { HomeHistoryCard } from "./components/HomeHistoryCard";
+import { lazy, Suspense } from "react";
+const HomeSkyFact = lazy(() => import("./components/HomeSkyFact"));
 import "./patro-cell.css";
 import { formatDate } from "./nepaliDate";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -90,13 +94,15 @@ function panchangTithi(day?: CalendarDay) {
   return day?.panchang?.tithi?.ne || day?.panchang?.tithi?.name_ne || day?.panchang?.tithi_name_ne || "";
 }
 const AD_MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-/** Compact Nepal Sambat date for a calendar cell, e.g. "बछला थ्वः ७" (month · paksha · tithi number). */
-function nsShort(value: any, language: "ne" | "en") {
-  if (!value || typeof value !== "object") return "";
+/** Nepal Sambat date parts for a cell: [month, paksha, tithi number], e.g. ["बछला", "थ्वः", "७"]. */
+function nsParts(value: any, language: "ne" | "en"): string[] {
+  if (!value || typeof value !== "object" || !value.month) return [];
   const n = value.tithi_number || value.tithi_ordinal;
-  if (language === "en") return [value.month?.roman, value.paksha, n].filter(Boolean).join(" ");
-  return [value.month?.dev, value.paksha_dev, n ? toNepaliDigits(n) : ""].filter(Boolean).join(" ");
+  if (language === "en") return [value.month?.roman || "", value.paksha || "", n ? String(n) : ""];
+  return [value.month?.dev || "", value.paksha_dev || "", n ? toNepaliDigits(n) : ""];
 }
+/** Compact Nepal Sambat date, e.g. "बछला थ्वः ७". */
+function nsShort(value: any, language: "ne" | "en") { return nsParts(value, language).filter(Boolean).join(" "); }
 function nsText(value: any) {
   if (!value) return "";
   if (typeof value === "string") return value;
@@ -163,7 +169,9 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   }, [events]);
   const selectedDay = days.find((day) => day.ad === selected);
   const selectedEvents = eventMap.get(selected) || [];
-  const upcoming = [...events].filter((item) => festivalDate(item) >= today).sort((a, b) => festivalDate(a).localeCompare(festivalDate(b))).slice(0, 6);
+  // Multi-day holidays (e.g. बडादशैं बिदा) appear once per day in the data — list each name once.
+  const upcoming = [...events].filter((item) => festivalDate(item) >= today).sort((a, b) => festivalDate(a).localeCompare(festivalDate(b)))
+    .filter((item, index, list) => list.findIndex((other) => festivalName(other, language) === festivalName(item, language)) === index).slice(0, 6);
   const firstOffset = days[0] ? new Date(`${days[0].ad}T00:00:00Z`).getUTCDay() : 0;
 
   const shift = useCallback((delta: number) => {
@@ -185,7 +193,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
     <section className="rh-hero">
       <div className="rh-hero-copy">
         <span className="rh-kicker">{l(language, "आज · काठमाडौं समय", "Today · Nepal time")}</span>
-        <h1>{todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")}</h1>
+        <h1 id="rh-today-title">{todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")}</h1>
         <p>{adLabel(today, language)}</p>
       </div>
       <div className="rh-today-facts">
@@ -225,7 +233,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
                 <span className="pc-top" aria-hidden="true"><span className={`pc-event${holidayEvent ? " is-holiday" : ""}`}>{label}</span><span className="pc-ad">{ad}</span></span>
                 <strong className="pc-bs" aria-hidden="true">{number(day.bs.day, language)}</strong>
                 <span className="pc-tithi" aria-hidden="true">{tithi || "—"}</span>
-                <span className="pc-ns" aria-hidden="true">{ns}</span>
+                <span className="pc-ns" aria-hidden="true">{nsParts(day.nepal_sambat, language).map((part, i) => <span key={i} className={i === 1 ? "pc-ns-paksha" : undefined}>{i ? " " : ""}{part}</span>)}</span>
                 {dayEvents.length ? <i className={`pc-dot${holidayEvent ? " is-holiday" : ""}`} aria-hidden="true" /> : null}
               </button>;
             })}
@@ -234,13 +242,15 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
 
         <section className="rh-card rh-selected" aria-live="polite">
           <header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छानिएको दिन", "Selected day")}</span><h2>{selectedDay ? `${number(selectedDay.bs.day, language)} ${bsMonth(selectedDay.bs.month, language)} ${number(selectedDay.bs.year, language)}` : l(language, "दिन छान्नुहोस्", "Choose a day")}</h2><p>{selectedDay ? adLabel(selectedDay.ad, language) : l(language, "पात्रोबाट कुनै दिन छान्नुहोस्।", "Choose a day from the calendar.")}</p></div>{selectedDay ? <a className="rh-link" href={`/date/${selectedDay.ad}`}>{l(language, "पूरा दिन विवरण →", "Full day details →")}</a> : null}</header>
-          {selectedDay ? <div className="rh-selected-grid"><div><span>{l(language, "तिथि", "Tithi")}</span><b>{panchangTithi(selectedDay) || "—"}</b></div><div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{nsText(selectedDay.nepal_sambat) || "—"}</b></div><div><span>{l(language, "ई.सं.", "AD")}</span><b>{selectedDay.ad}</b></div><div><span>{l(language, "चाडपर्व / बिदा", "Festival / holiday")}</span><b>{selectedEvents.length ? selectedEvents.map((item) => festivalName(item, language)).join(" · ") : l(language, "कुनै सूचीबद्ध कार्यक्रम छैन", "No listed event")}</b></div></div> : null}
+          {selectedDay ? <div className="rh-selected-grid"><div><span>{l(language, "तिथि", "Tithi")}</span><b>{panchangTithi(selectedDay) || "—"}</b></div><div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{nsText(selectedDay.nepal_sambat) || "—"}</b></div><div><span>{l(language, "ई.सं.", "AD")}</span><b>{formatDate(selectedDay.ad, language, { weekday: "short" })}</b></div><div><span>{l(language, "चाडपर्व / बिदा", "Festival / holiday")}</span><b>{selectedEvents.length ? selectedEvents.map((item) => festivalName(item, language)).join(" · ") : l(language, "कुनै सूचीबद्ध कार्यक्रम छैन", "No listed event")}</b></div></div> : null}
         </section>
       </div>
 
       <aside className="rh-side" aria-label={l(language, "पात्रो सहायक सामग्री", "Calendar shortcuts")}>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "आगामी", "Upcoming")}</span><h2>{l(language, "नजिकका चाडपर्व", "Upcoming festivals")}</h2></div></header><div className="rh-upcoming">{upcoming.length ? upcoming.map((item, index) => <a href={`/date/${festivalDate(item)}`} key={`${festivalDate(item)}-${index}`}><strong>{festivalName(item, language)}</strong><small>{adLabel(festivalDate(item), language)}</small></a>) : <p className="rh-muted">{l(language, "यो महिनाका थप चाडपर्व विवरण उपलब्ध छैनन्।", "No additional festival entries are available for this month.")}</p>}</div></section>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छिटो पहुँच", "Quick access")}</span><h2>{l(language, "दैनिक प्रयोग", "Daily tools")}</h2></div></header><div className="rh-quick-grid"><a href="/tools/nepali-typing"><b>ने</b><span>{l(language, "नेपाली टाइपिङ", "Nepali typing")}</span></a><a href="/time-machine"><b>⌛</b><span>{l(language, "समययन्त्र", "Time Machine")}</span></a><a href="/samudaya"><b>समु</b><span>{l(language, "समुदाय पात्रो", "Community calendars")}</span></a><a href="/tools/astro"><b>☾</b><span>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</span></a></div></section>
+        <HomeHistoryCard language={language} todayAd={today} />
+        <Suspense fallback={null}><HomeSkyFact language={language} /></Suspense>
       </aside>
     </div>
   </main>;

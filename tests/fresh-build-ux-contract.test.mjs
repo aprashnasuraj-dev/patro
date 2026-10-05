@@ -60,20 +60,22 @@ test("one authoritative mobile navigation and Community Patro entries stay visib
 });
 
 test("reference homepage keeps local calendar selected-day and festival hierarchy",()=>{
-  const home=read("src/ReferenceHomePage.tsx");
+  const home=read("src/HomePageCurrent.tsx");
+  // The homepage lives in HomePageCurrent.tsx. FAQ and SEO prose were removed on purpose
+  // (commit bc009cf "remove rejected homepage faq and seo prose"), so they must stay out.
   assert.ok(home.includes("localMonthDays"));
-  assert.ok(home.includes("<MonthCalendar"));
+  assert.ok(home.includes("rh-calendar"));
   assert.ok(home.includes("rh-selected"));
-  assert.ok(home.includes("visibleMonthEvents"));
-  assert.ok(home.includes("rh-faq"));
-  assert.ok(home.includes("rh-seo-copy"));
-  assert.ok(home.indexOf("rh-calendar")<home.indexOf("rh-seo-copy"),"calendar must precede long-form SEO copy in the product hierarchy");
+  assert.ok(home.includes("eventMap"),"month grid must carry festivals/holidays per day");
+  assert.ok(!home.includes("rh-faq"),"homepage FAQ was removed by product decision");
+  assert.ok(!home.includes("rh-seo-copy"),"homepage SEO prose was removed by product decision");
+  assert.ok(home.indexOf("rh-calendar")<home.indexOf("rh-selected"),"month calendar must come before the selected-day panel");
 });
 
 test("root homepage cannot regress into the astronomical calendar",()=>{
   const router=read("src/PatroRouter.tsx");
   const main=read("src/main.tsx");
-  const home=read("src/ReferenceHomePage.tsx");
+  const home=read("src/HomePageCurrent.tsx");
   assert.ok(router.includes('if(path==="/"||path==="/today")return <ReferenceHomePage/>'),"root and /today must render the reference-driven Patro homepage");
   assert.ok(router.includes('if(path==="/tools/astro")return <AstroPage/>'),"astronomical calendar must stay isolated to /tools/astro");
   assert.ok(router.includes('const AstroPage=lazy(()=>import("./App"))'),"astronomy should remain lazy-loaded as a feature, not the shell root");

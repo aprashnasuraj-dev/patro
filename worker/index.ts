@@ -530,13 +530,15 @@ async function nativeTimeMachine(request: Request, env: Env) {
   if (!env.DB) return null;
   const url = new URL(request.url);
   const year = Number(url.searchParams.get("year") || "0");
-  const limit = Math.min(200, Math.max(1, Number(url.searchParams.get("limit") || "80")));
+  // 800 covers the whole archive (706 moments) so the timeline can load in one cached request.
+  const limit = Math.min(800, Math.max(1, Number(url.searchParams.get("limit") || "80")));
   try {
     const stmt = year
       ? env.DB.prepare("select payload from content_records where table_name='time_machine_moments' and year=?1 order by sort_order desc,record_key asc limit ?2").bind(year,limit)
       : env.DB.prepare("select payload from content_records where table_name='time_machine_moments' order by year desc,sort_order desc,record_key asc limit ?1").bind(limit);
     const out = await stmt.all();
-    const rows = (out.results || []).map(parseRecord).filter(Boolean);
+    // Drop internal build fields; they are large and never shown.
+    const rows = (out.results || []).map(parseRecord).filter(Boolean).map((row: any) => { const { raw_compact, source_build, source_function_version, mirrored_at, ...rest } = row || {}; return rest; });
     if (!rows.length) return null;
     return json({ok:true,year:year||null,count:rows.length,items:rows},200,"public, max-age=300, s-maxage=86400, stale-while-revalidate=604800");
   } catch { return null; }

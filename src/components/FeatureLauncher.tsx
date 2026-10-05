@@ -1,3 +1,4 @@
+import { useDismiss } from "../useDismiss";
 import { useEffect, useMemo, useState } from "react";
 
 type LaunchItem={href:string;ne:string;en:string;group:string;keywords:string;mark:string};
@@ -54,6 +55,7 @@ function isTypingTarget(target:EventTarget|null){return target instanceof HTMLIn
 
 export function FeatureLauncher(){
  const[open,setOpen]=useState(false);
+  useDismiss(open,()=>setOpen(false));
  const[query,setQuery]=useState("");
  useEffect(()=>{const onKey=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();setOpen(value=>!value);return}if(event.key==="/"&&!isTypingTarget(event.target)&&!event.ctrlKey&&!event.metaKey&&!event.altKey){event.preventDefault();setOpen(true);return}if(event.key==="Escape")setOpen(false)};window.addEventListener("keydown",onKey);return()=>window.removeEventListener("keydown",onKey)},[]);
  useEffect(()=>{if(!open)setQuery("")},[open]);

@@ -52,8 +52,9 @@ function fail(message) { throw new Error(message); }
       const box = cell.getBoundingClientRect();
       return box.left < -1 || box.right > innerWidth + 1;
     });
-    const sample = cells.find((cell) => cell.querySelector(".rh-cell-main strong")) || first;
-    const richSelectors = [".rh-ad-date", ".rh-ns-date", ".rh-cell-main strong", ".rh-weekday", "em"];
+    // Day cell (Oct 2026 layout): festival · AD date / BS day / tithi / Nepal Sambat.
+    const sample = cells.find((cell) => cell.querySelector(".pc-bs")) || first;
+    const richSelectors = [".pc-ad", ".pc-ns", ".pc-bs", ".pc-tithi"];
     const rich = richSelectors.map((selector) => {
       const node = sample?.querySelector(selector);
       if (!node) return { selector, exists: false, visible: false, font: 0 };
@@ -63,11 +64,11 @@ function fail(message) { throw new Error(message); }
     const calendar = document.querySelector(".rh-calendar")?.getBoundingClientRect();
     return {
       count: cells.length,
-      hasBs: Boolean(first?.querySelector(".rh-cell-main strong")),
-      hasAd: Boolean(first?.querySelector(".rh-ad-date")),
-      hasWeekday: Boolean(first?.querySelector(".rh-weekday")),
-      hasTithi: Boolean(first?.querySelector("em")),
-      hasEvent: Boolean(first?.querySelector(".rh-day-badges")),
+      hasBs: Boolean(first?.querySelector(".pc-bs")),
+      hasAd: Boolean(first?.querySelector(".pc-ad")),
+      hasWeekday: document.querySelectorAll(".rh-calendar .rh-weekheads > *").length === 7,
+      hasTithi: Boolean(first?.querySelector(".pc-tithi")),
+      hasEvent: Boolean(first?.querySelector(".pc-event")),
       rich,
       calendarTop: calendar?.top ?? 9999,
       badFailureCopy: /आजको पात्रो लोड हुन सकेन|आजको पात्रो तयार हुँदैछ/.test(text),

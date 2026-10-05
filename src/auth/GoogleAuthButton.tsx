@@ -1,3 +1,4 @@
+import { useDismiss } from "../useDismiss";
 import { useEffect, useRef, useState } from "react";
 import { LogOut, UserRound } from "lucide-react";
 
@@ -27,6 +28,7 @@ async function readMe():Promise<AuthUser|null>{
 export function GoogleAuthButton({language}:{language:"ne"|"en"}){
   const [user,setUser]=useState<AuthUser|null>(null);
   const [open,setOpen]=useState(false);
+  useDismiss(open,()=>setOpen(false));
   const [config,setConfig]=useState<Config|null>(null);
   const [error,setError]=useState("");
   const host=useRef<HTMLDivElement>(null);

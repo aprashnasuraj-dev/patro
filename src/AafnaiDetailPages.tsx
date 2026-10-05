@@ -1,3 +1,4 @@
+import { TimeMachineAtlas } from "./time-machine/TimeMachineAtlas";
 import { useEffect, useMemo, useState } from "react";
 import { setPageTitle, toNepaliDigits } from "./title";
 
@@ -11,10 +12,11 @@ function itemYear(item:AnyRecord){const year=item.year_bs||item.bs_year||item.ye
 function itemMeta(item:AnyRecord){const parts=[] as string[];if(item.place)parts.push(String(item.place));if(item.category)parts.push(String(item.category));if(item.source_title)parts.push(String(item.source_title));return parts.join(" · ")}
 
 export function TimeMachinePage(){
- const[data,setData]=useState<AnyRecord[]>([]),[error,setError]=useState(""),[loading,setLoading]=useState(true),[year,setYear]=useState("");
+ const[data,setData]=useState<AnyRecord[]>([]),[error,setError]=useState(""),[loading,setLoading]=useState(true);
  useEffect(()=>{setPageTitle("समययन्त्र")},[]);
- useEffect(()=>{const controller=new AbortController();setLoading(true);setError("");const query=year?`?year=${encodeURIComponent(year)}&limit=160`:"?limit=160";getJson<{items?:AnyRecord[]}>(`/api/v1/time-machine${query}`,controller.signal).then(payload=>setData(payload.items||[])).catch(()=>setError("ऐतिहासिक समयरेखा लोड हुन सकेन।")).finally(()=>setLoading(false));return()=>controller.abort()},[year]);
- return <main className="ap-page"><header className="ap-page-title"><span className="ap-eyebrow">इतिहास</span><h1>समययन्त्र</h1><p>नेपालको इतिहासका अभिलेखित क्षणहरू वर्षअनुसार खोज्नुहोस्।</p></header><section className="ap-tool-section"><div className="ap-section-head"><div><h2>ऐतिहासिक समयरेखा</h2><p>वर्ष खाली राख्दा उपलब्ध पछिल्ला अभिलेख देखिन्छन्।</p></div><label className="ap-year-filter">वर्ष <input value={year} inputMode="numeric" pattern="[0-9]*" placeholder="जस्तै २००८" onChange={event=>setYear(event.target.value.replace(/[^0-9]/g,""))}/>{year&&<button type="button" onClick={()=>setYear("")}>हटाउनुहोस्</button>}</label></div>{loading?<div className="ap-state">समयरेखा लोड हुँदैछ…</div>:error?<div className="ap-state ap-error">{error}</div>:data.length?<div className="ap-history-list">{data.map((item,index)=><article className="ap-history-card" key={item.id||item.key||index}><div className="ap-history-year">{itemYear(item)}</div><div><h2>{itemTitle(item)}</h2>{itemMeta(item)&&<small>{itemMeta(item)}</small>}<p>{itemBody(item)}</p>{item.source_url&&<a href={item.source_url} target="_blank" rel="noopener noreferrer">स्रोत हेर्नुहोस् ↗</a>}</div></article>)}</div>:<div className="ap-state">यो वर्षका लागि अभिलेख भेटिएन। अर्को वर्ष खोज्नुहोस्।</div>}</section></main>
+ // Whole archive in one edge-cached request; the atlas filters by era/category/search on the client.
+ useEffect(()=>{const controller=new AbortController();setLoading(true);setError("");getJson<{items?:AnyRecord[]}>("/api/v1/time-machine?limit=800",controller.signal).then(payload=>setData(payload.items||[])).catch(()=>setError("ऐतिहासिक समयरेखा अहिले लोड हुन सकेन। केही बेरपछि फेरि प्रयास गर्नुहोस्।")).finally(()=>setLoading(false));return()=>controller.abort()},[]);
+ return <TimeMachineAtlas items={data} loading={loading} error={error}/>;
 }
 
 export function OnThisDayPage(){

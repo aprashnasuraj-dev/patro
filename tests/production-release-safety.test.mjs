@@ -10,7 +10,7 @@ const converter = read("src/ConvertPage.tsx");
 const wrangler = read("wrangler.jsonc");
 const vite = read("vite.config.ts");
 const connectedWorker = read("worker/connected-entry.ts");
-const home = read("src/ReferenceHomePage.tsx");
+const home = read("src/HomePageCurrent.tsx"); // homepage implementation (ReferenceHomePage.tsx re-exports it)
 const router = read("src/PatroRouter.tsx");
 const referenceHomeCss = read("src/reference-home.css");
 const richCalendar = read("src/rich-calendar.css");
@@ -70,12 +70,12 @@ test("BS AD conversion remains local-first with optional online enrichment", () 
 });
 
 test("homepage core calendar is local-first and does not collapse into an API error state", () => {
-  assert.match(home, /function localToday/);
-  assert.match(home, /adToBs\(date\)/);
+  assert.match(home, /localToday/);
+  assert.match(home, /adToBs\(\w+\)/);
   assert.match(home, /function localMonthDays/);
-  assert.match(home, /daysInBsMonth\(year,month\)/);
-  assert.match(home, /bsToAd\(\{year,month,day\}\)/);
-  assert.match(home, /catch\{return fallback\}/);
+  assert.match(home, /daysInBsMonth\(\s*year,\s*month\s*\)/);
+  assert.match(home, /bsToAd\(\{\s*year,\s*month,\s*day\s*\}\)/);
+  assert.match(home, /catch\s*\{\s*return fallback;?\s*\}/);
   assert.doesNotMatch(home, /आजको पात्रो लोड हुन सकेन/);
   assert.doesNotMatch(home, /आजको पात्रो तयार हुँदैछ/);
 });
@@ -89,7 +89,9 @@ test("homepage and astronomy remain separate routes", () => {
 });
 
 test("homepage rich calendar keeps all requested fields readable at mobile sizes", () => {
-  for (const token of ["rh-ad-date", "rh-ns-date", "rh-weather", "rh-weekday", "rh-day-badges", "is-festival-badge", "is-holiday-badge"])
+  // Day cells: festival · AD date / BS day / tithi / Nepal Sambat (owner-requested layout, Oct 2026).
+  // Weather and the repeated weekday name were removed per the UI audit (weather moves to the Today card).
+  for (const token of ["pc-event", "pc-ad", "pc-bs", "pc-tithi", "pc-ns", "pc-dot", "is-holiday", "nsShort("])
     assert.ok(home.includes(token), `missing rich day-cell field: ${token}`);
   assert.match(referenceHomeCss, /grid-template-columns:repeat\(7,minmax\(0,1fr\)\)/);
   assert.match(richCalendar, /@media\(max-width:390px\)/);
