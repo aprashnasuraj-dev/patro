@@ -1,0 +1,102 @@
+name: Import ZIP database into Cloudflare D1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-d1-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      ZIP_FILE: "databse.zip.zip"
+      D1_DATABASE_NAME: "patro-db"
+      D1_DATABASE_ID: "PASTE_YOUR_D1_DATABASE_ID"
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js on GitHub
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Prepare SQL file and database configuration
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          if not os.environ.get("CLOUDFLARE_ACCOUNT_ID"):
+              raise SystemExit("Missing CLOUDFLARE_ACCOUNT_ID secret.")
+          if not os.environ.get("CLOUDFLARE_API_TOKEN"):
+              raise SystemExit("Missing CLOUDFLARE_API_TOKEN secret.")
+          if os.environ["D1_DATABASE_ID"] == "PASTE_YOUR_D1_DATABASE_ID":
+              raise SystemExit("Replace D1_DATABASE_ID in the workflow.")
+
+          archive = Path(os.environ["ZIP_FILE"])
+          if not archive.is_file():
+              raise SystemExit(f"ZIP file not found: {archive}")
+
+          work = Path(os.environ["RUNNER_TEMP"]) / "d1-import"
+          work.mkdir(parents=True, exist_ok=True)
+
+          with zipfile.ZipFile(archive) as z:
+              sql_files = [
+                  item for item in z.infolist()
+                  if not item.is_dir()
+                  and item.filename.lower().endswith(".sql")
+                  and not item.filename.startswith("__MACOSX/")
+              ]
+              if len(sql_files) != 1:
+                  raise SystemExit(
+                      f"Expected exactly one SQL file; found {len(sql_files)}. "
+                      "Use a ZIP containing only the SQL file you want to import."
+                  )
+
+              sql = sql_files[0]
+              print(f"Preparing: {sql.filename}")
+              print(f"Uncompressed size: {sql.file_size:,} bytes")
+              with z.open(sql) as source, (work / "database.sql").open("wb") as target:
+                  shutil.copyfileobj(source, target)
+
+          config = {
+              "d1_databases": [{
+                  "binding": "DB",
+                  "database_name": os.environ["D1_DATABASE_NAME"],
+                  "database_id": os.environ["D1_DATABASE_ID"]
+              }]
+          }
+          (work / "wrangler.json").write_text(json.dumps(config))
+          PY
+
+      - name: Import SQL into hosted D1 database
+        shell: bash
+        run: |
+          npx --yes wrangler@latest d1 execute "$D1_DATABASE_NAME" \
+            --config "$RUNNER_TEMP/d1-import/wrangler.json" \
+            --remote \
+            --file "$RUNNER_TEMP/d1-import/database.sql" \
+            --yes
+
+      - name: Verify imported tables
+        shell: bash
+        run: |
+          npx --yes wrangler@latest d1 execute "$D1_DATABASE_NAME" \
+            --config "$RUNNER_TEMP/d1-import/wrangler.json" \
+            --remote \
+            --command "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name;"
