@@ -38,6 +38,7 @@ jobs:
           ui=false
           tools=false
           community=false
+          community_static=false
           cloudflare=false
 
           while IFS= read -r file; do
@@ -70,6 +71,11 @@ jobs:
             esac
 
             case "$file" in
+              community-frontends/*|community-frontends/**|scripts/emit-community-suites.mjs|tests/community-migration-contract.test.mjs)
+                community_static=true ;;
+            esac
+
+            case "$file" in
               worker/*|worker/**|cloudflare/*|cloudflare/**|wrangler.jsonc|scripts/cloudflare/*|scripts/cloudflare/**|scripts/validate-cloudflare.mjs|scripts/prepare-cloudflare-config.mjs|tests/*cloudflare*|tests/*cutover*|tests/*connectivity*)
                 cloudflare=true ;;
             esac
@@ -81,6 +87,7 @@ jobs:
             echo "ui=$ui"
             echo "tools=$tools"
             echo "community=$community"
+            echo "community_static=$community_static"
             echo "cloudflare=$cloudflare"
           } >> "$GITHUB_OUTPUT"
 
@@ -123,6 +130,24 @@ jobs:
       - name: Community tests
         if: steps.changes.outputs.community == 'true' || steps.changes.outputs.full == 'true'
         run: npm run test:community
+
+      - name: Community standalone frontends
+        if: steps.changes.outputs.community_static == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/emit-community-suites.mjs
+          node --test tests/community-migration-contract.test.mjs
+          required=(
+            dist/nepal-sambat/mandala/index.html
+            dist/samudaya/lhosar/index.html
+            dist/samudaya/tharu/index.html
+            dist/samudaya/mithila/index.html
+            dist/samudaya/kirat/index.html
+            dist/samudaya/hijri/index.html
+            dist/samudaya/chakra/index.html
+          )
+          for file in "${required[@]}"; do test -s "$file"; done
 
       - name: Cloudflare and product contracts
         if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
