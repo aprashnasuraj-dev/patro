@@ -9,6 +9,7 @@
   "routes": [{"pattern":"aafnaipatro.com","custom_domain":true}],
   "assets": {"directory":"./dist","binding":"ASSETS","not_found_handling":"none","run_worker_first":["/*","!/assets/*"]},
   "d1_databases": [{"binding":"DB","database_name":"patro","database_id":"fb25c860-01db-4ab0-9036-7f87b26ca64b","migrations_dir":"cloudflare/d1/schema-migrations"}],
+  "r2_buckets": [{"binding":"CALENDAR_BACKUP","bucket_name":"patro"}],
   "vars": {
     "PUBLIC_SITE_URL": "https://aafnaipatro.com",
     "SUPABASE_COMPAT_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router",
