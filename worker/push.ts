@@ -3,10 +3,14 @@ import { currentSession, parseBody, sha256, type AuthEnv } from "./auth";
 
 export type PushEnv=AuthEnv & {
   DB?:any;
+  CACHE?:any;
   VAPID_PUBLIC_KEY?:string;
   VAPID_PRIVATE_KEY?:string;
   VAPID_SUBJECT?:string;
 };
+
+const PUSH_GATE_KEY="quota:push-next-due:v1";
+const IDLE_RECHECK_MS=60*60*1000;
 
 function json(body:any,status=200){
   return new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-content-type-options":"nosniff"}});
@@ -23,9 +27,55 @@ function safeSubscription(row:any):PushSubscription|null{
     return {endpoint:String(row.endpoint),expirationTime:null,keys:{p256dh:String(keys.p256dh),auth:String(keys.auth)}};
   }catch{return null}
 }
+
+async function readPushGate(env:PushEnv){
+  if(!env.CACHE)return null;
+  try{
+    const raw=await env.CACHE.get(PUSH_GATE_KEY,"text");
+    if(!raw)return null;
+    const value=JSON.parse(raw);
+    return Number.isFinite(Number(value?.wake_at_ms))?Number(value.wake_at_ms):null;
+  }catch{return null}
+}
+async function writePushGate(env:PushEnv,wakeAtMs:number){
+  if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
+  try{await env.CACHE.put(PUSH_GATE_KEY,JSON.stringify({wake_at_ms:wakeAtMs,updated_at:new Date().toISOString()}),{expirationTtl:48*3600})}catch{}
+}
+async function notePushDue(env:PushEnv,wakeAtMs:number){
+  if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
+  const current=await readPushGate(env);
+  if(current!=null&&current<=wakeAtMs&&current>Date.now()-30_000)return;
+  await writePushGate(env,wakeAtMs);
+}
+async function invalidatePushGate(env:PushEnv){
+  if(!env.CACHE)return;
+  try{await env.CACHE.delete(PUSH_GATE_KEY)}catch{}
+}
+async function refreshPushGate(env:PushEnv){
+  if(!env.CACHE||!env.DB)return;
+  try{
+    const row=await env.DB.prepare(
+      "select min(case when next_attempt_at is not null and next_attempt_at>fire_at_utc then next_attempt_at else fire_at_utc end) as next_due from notification_jobs where status='pending'"
+    ).first();
+    const next=row?.next_due?Date.parse(String(row.next_due)):NaN;
+    await writePushGate(env,Number.isFinite(next)?next:Date.now()+IDLE_RECHECK_MS);
+  }catch{
+    await writePushGate(env,Date.now()+5*60*1000);
+  }
+}
+
 export async function dispatchDuePushJobs(env:PushEnv,limit=50){
   if(!env.DB)return {ok:false,error:"d1_unavailable",processed:0,sent:0,failed:0};
   const keys=vapid(env);if(!keys)return {ok:false,error:"vapid_not_configured",processed:0,sent:0,failed:0};
+
+  // The 5-minute cron used to hit D1 288 times/day even with no reminders. KV stores only
+  // the next wake timestamp (no personal data). New/updated jobs lower this timestamp, so
+  // delivery cadence is preserved while idle/future periods avoid D1 reads entirely.
+  const gatedUntil=await readPushGate(env);
+  if(gatedUntil!=null&&gatedUntil>Date.now()+15_000){
+    return {ok:true,processed:0,sent:0,failed:0,skipped:"kv_next_due",next_check_at:new Date(gatedUntil).toISOString()};
+  }
+
   const rows=await env.DB.prepare(
     "select j.id,j.device_id,j.job_ref,j.category,j.attempts,j.shared_payload,s.endpoint,s.keys from notification_jobs j join push_subscriptions s on s.device_id=j.device_id where j.status='pending' and j.fire_at_utc<=datetime('now') and (j.next_attempt_at is null or j.next_attempt_at<=datetime('now')) order by j.fire_at_utc limit ?1"
   ).bind(Math.min(200,Math.max(1,limit))).all();
@@ -58,13 +108,16 @@ export async function dispatchDuePushJobs(env:PushEnv,limit=50){
         failed++;
         const attempts=Number(row.attempts||0)+1,delay=Math.min(3600,Math.pow(2,Math.min(attempts,8))*60);
         await env.DB.prepare("update notification_jobs set attempts=?2,next_attempt_at=datetime('now',?3) where id=?1").bind(row.id,attempts,"+"+delay+" seconds").run();
+        await notePushDue(env,Date.now()+delay*1000);
       }
     }catch{
       failed++;
       const attempts=Number(row.attempts||0)+1,delay=Math.min(3600,Math.pow(2,Math.min(attempts,8))*60);
       await env.DB.prepare("update notification_jobs set attempts=?2,next_attempt_at=datetime('now',?3) where id=?1").bind(row.id,attempts,"+"+delay+" seconds").run();
+      await notePushDue(env,Date.now()+delay*1000);
     }
   }
+  await refreshPushGate(env);
   return {ok:true,processed:(rows.results||[]).length,sent,failed};
 }
 async function subscribe(request:Request,env:PushEnv,session:any){
@@ -78,6 +131,7 @@ async function subscribe(request:Request,env:PushEnv,session:any){
       env.DB.prepare("delete from notification_jobs where device_id=?1").bind(deviceId),
       env.DB.prepare("delete from push_subscriptions where device_id=?1").bind(deviceId)
     ]);
+    await invalidatePushGate(env);
     return json({ok:true,deleted:true});
   }
   const sub=body?.subscription||body;
@@ -105,7 +159,9 @@ async function jobs(request:Request,env:PushEnv,session:any){
     const id=String(body?.id||"");
     const row=await env.DB.prepare("select j.id from notification_jobs j join push_subscriptions s on s.device_id=j.device_id where j.id=?1 and s.user_id=?2").bind(id,session.user_id).first();
     if(!row)return json({ok:false,error:"job_not_found"},404);
-    await env.DB.prepare("delete from notification_jobs where id=?1").bind(id).run();return json({ok:true,deleted:true});
+    await env.DB.prepare("delete from notification_jobs where id=?1").bind(id).run();
+    await invalidatePushGate(env);
+    return json({ok:true,deleted:true});
   }
   const deviceId=String(body?.device_id||"");
   const own=await env.DB.prepare("select device_id from push_subscriptions where device_id=?1 and user_id=?2").bind(deviceId,session.user_id).first();
@@ -116,6 +172,7 @@ async function jobs(request:Request,env:PushEnv,session:any){
   const payload=body?.payload&&typeof body.payload==="object"?body.payload:{title:"MeroPatro",body:"Reminder",url:"/"};
   await env.DB.prepare("insert into notification_jobs(id,device_id,fire_at_utc,job_ref,category,status,attempts,shared_payload,created_at) values(?1,?2,?3,?4,?5,'pending',0,?6,datetime('now'))")
     .bind(id,deviceId,new Date(ms).toISOString(),jobRef,category,JSON.stringify(payload)).run();
+  await notePushDue(env,ms);
   return json({ok:true,id,status:"pending",fire_at_utc:new Date(ms).toISOString()});
 }
 export async function pushResponse(request:Request,env:PushEnv):Promise<Response|null>{
