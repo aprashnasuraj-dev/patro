@@ -42,23 +42,10 @@ test("all 29 tools receive deep query coverage",()=>{
 test("priority Nepali, English and Romanized searches resolve to the right canonical pages",()=>{
  const payload=json("public/search-intents.json");
  const expected={
-   "nepali calendar":"/",
-   "नेपाली पात्रो":"/",
-   "aaja kati gate":"/today",
-   "आज कति गते":"/today",
-   "nepali date today":"/today",
-   "nepali date converter":"/convert",
-   "bs to ad converter":"/convert",
-   "ad to bs converter":"/convert",
-   "nepali typing":"/tools/nepali-typing",
-   "english to nepali typing":"/tools/nepali-typing",
-   "नेपाली टाइपिङ":"/tools/nepali-typing",
-   "preeti to unicode":"/tools/preeti-converter",
-   "today rashifal nepali":"/rashifal",
-   "nepali astronomical calendar":"/tools/astro",
-   "nepal live tv":"/tv",
-   "nepali fm online":"/fm",
-   "nepali kundali":"/jyotish/china"
+   "nepali calendar":"/", "नेपाली पात्रो":"/", "aaja kati gate":"/today", "आज कति गते":"/today", "nepali date today":"/today",
+   "nepali date converter":"/convert", "bs to ad converter":"/convert", "ad to bs converter":"/convert", "nepali typing":"/tools/nepali-typing",
+   "english to nepali typing":"/tools/nepali-typing", "नेपाली टाइपिङ":"/tools/nepali-typing", "preeti to unicode":"/tools/preeti-converter",
+   "today rashifal nepali":"/rashifal", "nepali astronomical calendar":"/tools/astro", "nepal live tv":"/tv", "nepali fm online":"/fm", "nepali kundali":"/jyotish/china"
  };
  for(const [query,route] of Object.entries(expected)){
    const row=lookup(payload,query);assert.ok(row,`priority query missing: ${query}`);assert.equal(row.route,route,query);
@@ -90,19 +77,19 @@ test("AI-readable query maps and discovery metadata expose the same canonical co
  assert.ok(ai.includes(`Search-intent coverage: ${payload.query_count}`));
 });
 
-test("crawlable prerender exposes related-search context and all 29 tool links",()=>{
+test("crawlable prerender exposes the real 29-tool directory without search-query blocks",()=>{
  const tools=read("dist/tools/index.html");
  const typing=read("dist/tools/nepali-typing/index.html");
  assert.ok(tools.includes("AAFNAI_INTENT_ENHANCEMENT_START"));
  assert.ok(tools.includes("seo-tool-directory"));
  assert.ok(tools.includes("सबै 29 नेपाली टुल्स"));
  for(const route of canonicalTools)assert.ok(tools.includes(`href=\"${route}\"`),`crawlable tool directory missing ${route}`);
- assert.ok(typing.includes("seo-related-searches"));
- assert.ok(typing.includes("nepali typing"));
- assert.ok(typing.includes('href="/search-intents.json"'));
+ assert.equal(typing.includes("seo-related-searches"),false);
+ assert.equal(typing.includes('href="/search-intents.json"'),false);
+ assert.equal(tools.includes("सम्बन्धित खोजहरू · Related searches"),false);
 });
 
-test("build pipeline regenerates and enriches query coverage before release",()=>{
+test("build pipeline regenerates machine intent coverage but keeps it out of direct display",()=>{
  const pkg=json("package.json");
  assert.equal(pkg.scripts["seo:intents"],"node scripts/generate-search-intents.mjs");
  assert.ok(pkg.scripts.build.includes("npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs"));
@@ -115,5 +102,7 @@ test("build pipeline regenerates and enriches query coverage before release",()=
  const discovery=read("scripts/enhance-seo-discovery.mjs");
  assert.ok(discovery.includes("Search and conversational intent aliases"));
  const prerender=read("scripts/enhance-prerender-intents.mjs");
- assert.ok(prerender.includes("seo-tool-directory")&&prerender.includes("seo-related-searches"));
+ assert.ok(prerender.includes("seo-tool-directory"));
+ assert.equal(prerender.includes("seo-related-searches"),false);
+ assert.ok(prerender.includes("sanitize-seo-output.mjs"));
 });
