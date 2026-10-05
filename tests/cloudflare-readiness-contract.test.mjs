@@ -11,7 +11,7 @@ const json=async(relative)=>JSON.parse(await read(relative));
 test("Cloudflare first-deploy readiness is the canonical Worker contract",async()=>{
   const config=await json("wrangler.jsonc");
   assert.equal(config.name,"patro");
-  assert.equal(config.main,"worker/connected-entry.ts");
+  assert.equal(config.main,"worker/optimized-entry.ts");
   assert.equal(config.preview_urls,false);
   assert.equal(config.assets?.directory,"./dist");
   assert.ok((config.d1_databases||[]).some((entry)=>entry?.binding==="DB"),"missing DB binding");
@@ -19,6 +19,7 @@ test("Cloudflare first-deploy readiness is the canonical Worker contract",async(
 });
 
 test("Worker entry and production dist exist",async()=>{
+  await assert.doesNotReject(access(path.join(root,"worker/optimized-entry.ts")));
   await assert.doesNotReject(access(path.join(root,"worker/connected-entry.ts")));
   await assert.doesNotReject(access(path.join(root,"dist")));
 });
