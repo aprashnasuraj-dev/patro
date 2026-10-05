@@ -21,6 +21,7 @@ jobs:
     env:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      VERIFY_ONLY: "true"
       ZIP_FILE: "databse.zip.zip"
       D1_DATABASE_NAME: "patro"
       D1_DATABASE_ID: "fb25c860-01db-4ab0-9036-7f87b26ca64b"
@@ -81,7 +82,7 @@ jobs:
           sql_path = work / "database.sql"
           sql_text = sql_path.read_text(encoding="utf-8-sig")
           sql_text, removed = re.subn(
-              r"(?im)^[ \\t]*(?:BEGIN(?:[ \\t]+TRANSACTION)?|COMMIT|END[ \\t]+TRANSACTION)[ \\t]*;[ \\t]*$",
+              r"(?im)^[ \t]*(?:BEGIN(?:[ \t]+TRANSACTION)?|COMMIT|END[ \t]+TRANSACTION)[ \t]*;[ \t]*$",
               "",
               sql_text
           )
@@ -100,6 +101,7 @@ jobs:
           PY
 
       - name: Apply canonical schema migrations
+        if: env.VERIFY_ONLY != 'true'
         shell: bash
         run: |
           npx --yes wrangler@latest d1 migrations apply "$D1_DATABASE_NAME" \
@@ -107,6 +109,7 @@ jobs:
             --remote
 
       - name: Import SQL into hosted D1 database
+        if: env.VERIFY_ONLY != 'true'
         shell: bash
         run: |
           npx --yes wrangler@latest d1 execute "$D1_DATABASE_NAME" \
@@ -146,7 +149,7 @@ jobs:
               "verified_event_sources_2083": 3
           }
           query = " UNION ALL ".join(
-              f"SELECT '{table}' AS dataset, COUNT(*) AS rows FROM {table}"
+              f"SELECT '{table}' AS dataset, COUNT(*) AS row_count FROM {table}"
               for table in expected
           )
           config = str(Path(os.environ["RUNNER_TEMP"]) / "d1-import/wrangler.json")
@@ -154,12 +157,16 @@ jobs:
               "npx", "--yes", "wrangler@latest", "d1", "execute",
               os.environ["D1_DATABASE_NAME"], "--config", config,
               "--remote", "--command", query, "--json"
-          ], check=True, text=True, capture_output=True)
+          ], text=True, capture_output=True)
+          if result.returncode:
+              print(result.stdout)
+              print(result.stderr)
+              raise SystemExit(result.returncode)
           responses = json.loads(result.stdout)
           if isinstance(responses, dict):
               responses = [responses]
           rows = [row for response in responses for row in response.get("results", [])]
-          actual = {row["dataset"]: row["rows"] for row in rows}
+          actual = {row["dataset"]: row["row_count"] for row in rows}
           summary = ["| Dataset | Actual rows | Minimum expected |",
                      "|---|---:|---:|"]
           failed = []
