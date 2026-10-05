@@ -90,4 +90,16 @@ describe('voice + tts helpers', () => {
     expect(worker).not.toContain('aiEnvOverlay');
     expect(worker).not.toContain('env.DB');
   });
+  it('detects configured server STT and exposes it as a selectable recognition mode', () => {
+    const hook = readFileSync(new URL('../src/patro-tools/language/react/useNepaliDictation.ts', import.meta.url), 'utf8');
+    const tool = readFileSync(new URL('../src/patro-tools-integration/VoiceTypingTool.tsx', import.meta.url), 'utf8');
+    expect(hook).toContain('/api/nepali/speech-capabilities');
+    expect(hook).toContain('payload?.stt?.server === true');
+    expect(hook).toContain("setMode('server')");
+    expect(hook).toContain('selectMode');
+    expect(tool).toContain('dictation.serverAvailable');
+    expect(tool).toContain('dictation.selectMode("server")');
+    expect(tool).toContain('Server transcription');
+    expect(tool).toContain('Accurate');
+  });
 });
