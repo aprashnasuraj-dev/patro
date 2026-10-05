@@ -1,0 +1,131 @@
+name: PR CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  affected-checks:
+    name: Affected PR checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed areas
+        id: changes
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          files="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          printf '%s\n' "$files"
+
+          any=false
+          full=false
+          ui=false
+          tools=false
+          community=false
+          cloudflare=false
+
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+
+            case "$file" in
+              *.md|docs/*|research/*|CHANGELOG.md|PLAN.md|SHA256SUMS.txt)
+                ;;
+              *) any=true ;;
+            esac
+
+            case "$file" in
+              package.json|package-lock.json|tsconfig*.json|vite.config.*|src/main.*|src/App.*|packages/core/*|packages/core/**)
+                full=true ;;
+            esac
+
+            case "$file" in
+              src/*|src/**|public/*|public/**|index.html|vite.config.*|scripts/emit-*|scripts/prerender-*|scripts/generate-seo.mjs|scripts/enhance-seo-discovery.mjs|scripts/verify-seo-build.mjs)
+                ui=true ;;
+            esac
+
+            case "$file" in
+              *tool*|*tools*|tests/core.test.ts|tests/tithi-events.test.ts|tests/sait-baby.test.ts|tests/language.test.ts|tests/bots-letters.test.ts)
+                tools=true ;;
+            esac
+
+            case "$file" in
+              community-frontends/*|community-frontends/**|*samudaya*|*community*|tests/communities.test.ts|tests/nepal-sambat.test.ts)
+                community=true ;;
+            esac
+
+            case "$file" in
+              worker/*|worker/**|cloudflare/*|cloudflare/**|wrangler.jsonc|scripts/cloudflare/*|scripts/cloudflare/**|scripts/validate-cloudflare.mjs|scripts/prepare-cloudflare-config.mjs|tests/*cloudflare*|tests/*cutover*|tests/*connectivity*)
+                cloudflare=true ;;
+            esac
+          done <<< "$files"
+
+          {
+            echo "any=$any"
+            echo "full=$full"
+            echo "ui=$ui"
+            echo "tools=$tools"
+            echo "community=$community"
+            echo "cloudflare=$cloudflare"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Use Node.js 22
+        if: steps.changes.outputs.any == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Install dependencies once
+        if: steps.changes.outputs.any == 'true'
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: Baseline compile and core tests
+        if: steps.changes.outputs.any == 'true'
+        run: |
+          set -euo pipefail
+          npm run typecheck
+          npm run test:core
+
+      - name: Lightweight UI compile
+        if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true'
+        run: npx vite build
+
+      - name: Patro tool tests
+        if: steps.changes.outputs.tools == 'true' || steps.changes.outputs.full == 'true'
+        run: npm run test:patro-tools
+
+      - name: Community tests
+        if: steps.changes.outputs.community == 'true' || steps.changes.outputs.full == 'true'
+        run: npm run test:community
+
+      - name: Cloudflare and product contracts
+        if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
+        run: npm run test:cloudflare-contract
+
+      - name: Cross-cutting safety tests
+        if: steps.changes.outputs.full == 'true'
+        run: |
+          set -euo pipefail
+          npm run test:typing
+          npm run test:release-safety
+
+      - name: Documentation-only PR
+        if: steps.changes.outputs.any != 'true'
+        run: echo "Only documentation/non-runtime files changed; expensive application checks skipped."
