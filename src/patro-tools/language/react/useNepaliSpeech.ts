@@ -10,6 +10,7 @@ export function detectSpeechLanguage(text: string): SpeechLanguage {
     if (char >= '\u0900' && char <= '\u097f') devanagari += 1;
     else if (/[A-Za-z]/.test(char)) latin += 1;
   }
+  if (devanagari >= 2 && devanagari >= latin * 0.35) return 'ne-NP';
   return devanagari >= Math.max(1, latin) ? 'ne-NP' : 'en-US';
 }
 
