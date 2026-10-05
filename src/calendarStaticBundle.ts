@@ -2,19 +2,19 @@ import { adToBs } from "../packages/core/src";
 
 export type StaticCalendarDay={ad:string;bs:{year:number;month:number;day:number;formatted?:string};ns?:any;panchang?:any};
 export type StaticCalendarEvent={ad_date?:string;fact_date?:string;date?:string;[key:string]:unknown};
-type MonthMeta={year:number;month:number;path:string;start:string;end:string;days:number};
-type IndexPayload={start:string;end:string;months:MonthMeta[]};
+type MonthMeta={year:number;month:number;path:string;start:string;end:string;days:number;bytes?:number};
+export type StaticCalendarIndex={start:string;end:string;window_months?:number;month_entries?:number;past_months?:number;future_months?:number;months:MonthMeta[]};
 type MonthPayload={year:number;month:number;days:StaticCalendarDay[];events:StaticCalendarEvent[]};
 
-const INDEX_URL="/data/calendar/offline/index.json";
-let indexPromise:Promise<IndexPayload|null>|null=null;
+export const STATIC_CALENDAR_INDEX_URL="/data/calendar/offline-24-months/index.json";
+let indexPromise:Promise<StaticCalendarIndex|null>|null=null;
 const monthPromises=new Map<string,Promise<MonthPayload|null>>();
 
 async function json<T>(url:string,signal?:AbortSignal):Promise<T|null>{
   try{const response=await fetch(url,{signal,headers:{accept:"application/json"},credentials:"same-origin",cache:"force-cache"});return response.ok?await response.json() as T:null}catch{return null}
 }
 export function staticCalendarIndex(signal?:AbortSignal){
-  if(!indexPromise)indexPromise=json<IndexPayload>(INDEX_URL).then(value=>value&&Array.isArray(value.months)?value:null);
+  if(!indexPromise)indexPromise=json<StaticCalendarIndex>(STATIC_CALENDAR_INDEX_URL).then(value=>value&&Array.isArray(value.months)?value:null);
   if(!signal)return indexPromise;
   if(signal.aborted)return Promise.resolve(null);
   return Promise.race([indexPromise,new Promise<null>(resolve=>signal.addEventListener("abort",()=>resolve(null),{once:true}))]);
@@ -33,4 +33,7 @@ export async function staticCalendarEventsForDays(days:Array<{ad:string;bs?:{yea
   if(!year||!month){try{const bs=adToBs(first.ad);year=bs.year;month=bs.month}catch{return null}}
   const bundle=await staticCalendarMonthBundle(year,month,signal);if(!bundle)return null;
   const allowed=new Set(days.map(day=>day.ad));return (bundle.events||[]).filter(event=>allowed.has(String(event.ad_date||event.fact_date||event.date||"")));
+}
+export async function staticCalendarCoversAd(ad:string,signal?:AbortSignal){
+  const index=await staticCalendarIndex(signal);return Boolean(index&&ad>=index.start&&ad<=index.end);
 }
