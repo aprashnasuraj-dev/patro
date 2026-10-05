@@ -55,7 +55,7 @@ async function refreshPushGate(env:PushEnv){
   if(!env.CACHE||!env.DB)return;
   try{
     const row=await env.DB.prepare(
-      "select min(case when next_attempt_at is not null and next_attempt_at>fire_at_utc then next_attempt_at else fire_at_utc end) as next_due from notification_jobs where status='pending'"
+      "select case when next_attempt_at is not null and julianday(next_attempt_at)>julianday(fire_at_utc) then next_attempt_at else fire_at_utc end as next_due from notification_jobs where status='pending' order by max(julianday(fire_at_utc),coalesce(julianday(next_attempt_at),julianday(fire_at_utc))) asc limit 1"
     ).first();
     const next=row?.next_due?Date.parse(String(row.next_due)):NaN;
     await writePushGate(env,Number.isFinite(next)?next:Date.now()+IDLE_RECHECK_MS);
