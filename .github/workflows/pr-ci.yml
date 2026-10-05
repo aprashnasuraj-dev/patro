@@ -30,7 +30,7 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          files="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          files="$(git diff --name-only "$BASE_SHA...$HEAD_SHA")"
           printf '%s\n' "$files"
 
           any=false
