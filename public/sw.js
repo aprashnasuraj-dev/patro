@@ -1,5 +1,5 @@
-const VERSION = "aafnai-pwa-v10";
-const SHELL_CACHE = "aafnai-shell-v10";
+const VERSION = "aafnai-pwa-v11";
+const SHELL_CACHE = "aafnai-shell-v11";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
 const LOCAL_CONFIG_CACHE = "aafnai-local-config-v1";
@@ -17,6 +17,7 @@ const CORE = [
   "/samudaya", "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"
 ];
+const INSTALL_CORE = ["/", "/today", "/manifest.webmanifest", "/favicon.svg"];
 const LANGUAGE_TOOL_ASSETS = [
   "/nepali-tools/index.html", "/nepali-tools/styles.css", "/nepali-tools/app.mjs", "/nepali-tools/worker.mjs",
   "/nepali-tools/core/roman.mjs", "/nepali-tools/core/converter.mjs", "/nepali-tools/core/suggestions.mjs", "/nepali-tools/core/aliases.mjs",
@@ -118,6 +119,10 @@ async function warmLanguageTools(cache) {
     const response = await fetch(request); if (responseAllowsStorage(response)) await putBounded(PUBLIC_DATA_CACHE, request, response, MAX_PUBLIC_DATA_ENTRIES);
   } catch {}
 }
+async function warmInstallShell() {
+  const shell = await caches.open(SHELL_CACHE);
+  await Promise.allSettled(INSTALL_CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin" }))));
+}
 async function warmOffline() {
   const shell = await caches.open(SHELL_CACHE);
   await Promise.allSettled(CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin" }))));
@@ -198,7 +203,7 @@ async function maybeMorningGreeting(force=false) {
   await localPut(MORNING_SENT_KEY,{date,sentAt:new Date().toISOString()}); return true;
 }
 
-self.addEventListener("install", (event) => { event.waitUntil(warmOffline().then(() => self.skipWaiting())); });
+self.addEventListener("install", (event) => { event.waitUntil(warmInstallShell().then(() => self.skipWaiting())); });
 self.addEventListener("activate", (event) => {
   const keep = new Set([SHELL_CACHE, CALENDAR_CACHE, PUBLIC_DATA_CACHE, LOCAL_CONFIG_CACHE]);
   event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => !keep.has(key) && (key.startsWith("patro-shell-") || key.startsWith("mero-patro-shell-") || key.startsWith("meropatro-pwa-") || key.startsWith("aafnai-pwa-") || key.startsWith("aafnai-shell-") || key.startsWith("aafnai-calendar-") || key.startsWith("aafnai-public-data-") || key.startsWith("आफ्नै पात्रो-pwa-"))).map((key) => caches.delete(key)))).then(() => self.clients.claim()).then(()=>maybeMorningGreeting(false)));
