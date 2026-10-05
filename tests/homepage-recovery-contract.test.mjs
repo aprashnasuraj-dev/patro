@@ -8,6 +8,7 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   const enhancer=read("src/components/HomepageEnhancer.tsx");
   const history=read("src/components/HomeHistoryCard.tsx");
   const router=read("src/PatroRouter.tsx");
+  const chrome=read("src/components/AppChrome.tsx");
   const main=read("src/main.tsx");
   const pwa=read("src/pwa.ts");
   const sw=read("public/sw.js");
@@ -20,10 +21,13 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   const importWorkflow=read(".github/workflows/import-d1.yml");
   const releaseGate=read(".github/workflows/release-gate.yml");
 
-  for(const route of ["/rashifal","/jyotish/china","/time-machine","/tools/astro","/tools"]){
+  // HomepageEnhancer owns only the extra homepage shortcuts. Rashifal remains an
+  // authoritative app-shell/router route and must not be duplicated just to satisfy this guard.
+  for(const route of ["/jyotish/china","/time-machine","/tools/astro","/tools"]){
     assert.ok(enhancer.includes(route),`homepage enhancer lost ${route}`);
     assert.ok(router.includes(route),`router lost ${route}`);
   }
+  assert.ok(router.includes("/rashifal")&&chrome.includes("/rashifal"),"authoritative app shell/router lost /rashifal");
   assert.ok(enhancer.includes("hp-month-jump")&&enhancer.includes("/calendar/${event.target.value}"),"year/month jump controls must navigate real calendar routes");
   assert.ok(enhancer.includes('aria-label="विक्रम संवत् वर्ष"')&&enhancer.includes('aria-label="विक्रम संवत् महिना"'),"calendar jump controls must retain accessible names");
   assert.ok(main.includes("<HomepageEnhancer />"),"homepage enhancer must be mounted");
