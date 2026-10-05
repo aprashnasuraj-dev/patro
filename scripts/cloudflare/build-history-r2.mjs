@@ -7,6 +7,7 @@ const ROOT = process.cwd();
 const HISTORY_ROOT = join(ROOT, "migration", "data", "public", "on_this_day_events");
 const MANIFEST_PATH = join(ROOT, "cloudflare", "d1", "expected-public-counts.json");
 const OUT_ROOT = join(ROOT, ".cloudflare", "history-r2");
+const STATIC_ROOT = join(ROOT, "public", "data", "on-this-day");
 const TABLE = "on_this_day_events";
 const PREFIX = "datasets/on-this-day/v1";
 const FORMAT_VERSION = "on-this-day-r2-month-v1";
@@ -38,6 +39,13 @@ function compareRows(a, b) {
   const importance = Number(b?.importance || 0) - Number(a?.importance || 0);
   if (importance) return importance;
   return String(a?.id ?? "").localeCompare(String(b?.id ?? ""));
+}
+
+async function writeEverywhere(name, text) {
+  await Promise.all([
+    writeFile(join(OUT_ROOT, name), text),
+    writeFile(join(STATIC_ROOT, name), text),
+  ]);
 }
 
 async function main() {
@@ -80,8 +88,14 @@ async function main() {
   }
 
   const sourceVersion = `sha256:${hash.digest("hex")}`;
-  await rm(OUT_ROOT, { recursive: true, force: true });
-  await mkdir(OUT_ROOT, { recursive: true });
+  await Promise.all([
+    rm(OUT_ROOT, { recursive: true, force: true }),
+    rm(STATIC_ROOT, { recursive: true, force: true }),
+  ]);
+  await Promise.all([
+    mkdir(OUT_ROOT, { recursive: true }),
+    mkdir(STATIC_ROOT, { recursive: true }),
+  ]);
 
   const monthFiles = [];
   let emittedRows = 0;
@@ -106,7 +120,7 @@ async function main() {
       source_version: sourceVersion,
       days: dayObject,
     };
-    await writeFile(join(OUT_ROOT, name), JSON.stringify(payload));
+    await writeEverywhere(name, JSON.stringify(payload));
     monthFiles.push({ name, key: `${PREFIX}/${name}`, month, row_count: monthRows });
   }
 
@@ -117,12 +131,19 @@ async function main() {
     format: FORMAT_VERSION,
     table: TABLE,
     prefix: PREFIX,
+    static_prefix: "/data/on-this-day",
     source_version: sourceVersion,
     row_count: rowCount,
     files: monthFiles,
   };
-  await writeFile(join(OUT_ROOT, "manifest.json"), JSON.stringify(outputManifest, null, 2));
-  console.log(JSON.stringify({ ok: true, out: relative(ROOT, OUT_ROOT), ...outputManifest }, null, 2));
+  const manifestText = JSON.stringify(outputManifest, null, 2);
+  await writeEverywhere("manifest.json", manifestText);
+  console.log(JSON.stringify({
+    ok: true,
+    out: relative(ROOT, OUT_ROOT),
+    static_out: relative(ROOT, STATIC_ROOT),
+    ...outputManifest,
+  }, null, 2));
 }
 
 await main();
