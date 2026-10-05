@@ -42,6 +42,23 @@ async function waitForInteractiveSurface(page) {
   }, INTERACTIVE_SELECTOR, { timeout: 8000 }).catch(() => undefined);
 }
 
+async function waitForServiceWorkerControl(page) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller), { timeout: 10000 });
+      await waitForApp(page);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt === 2) break;
+      await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 }).catch(() => undefined);
+      await waitForApp(page);
+    }
+  }
+  throw lastError || new Error("service worker never took control");
+}
+
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "allow" });
@@ -52,8 +69,9 @@ async function waitForInteractiveSurface(page) {
   await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
   await waitForApp(page);
   await page.evaluate(async () => { await navigator.serviceWorker.ready; });
-  await page.reload({ waitUntil: "domcontentloaded", timeout: 30000 });
-  await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller), { timeout: 15000 });
+  // pwa.ts intentionally reloads once on controllerchange. Do not race that navigation
+  // with a second explicit page.reload(); just wait until the new worker controls the page.
+  await waitForServiceWorkerControl(page);
   await page.evaluate(() => navigator.serviceWorker.controller?.postMessage({ type: "WARM_OFFLINE" }));
 
   // Give the registered PWA enough idle time to prewarm local feature bundles.
