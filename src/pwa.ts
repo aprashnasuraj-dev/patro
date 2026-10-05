@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "2026-10-05-runtime-recovery-v2";
+const SW_REVISION = "2026-10-05-runtime-recovery-v3";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
