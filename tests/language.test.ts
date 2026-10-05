@@ -17,7 +17,7 @@ describe('spellcheck', () => {
   });
   it('fixes common mistakes with postpositions', () => {
     expect(autoFix('आज बिद्यालयमा परिक्षा छ', dict)).toBe('आज विद्यालयमा परीक्षा छ');
-    expect(autoFix('बिद्यालयबाट घरमा', dict)).toBe('आज विद्यालयमा परीक्षा छ'.replace('आज विद्यालयमा परीक्षा छ', 'विद्यालयबाट घरमा'));
+    expect(autoFix('बिद्यालयबाट घरमा', dict)).toBe('विद्यालयबाट घरमा');
     expect(autoFix('घरमा पानि छ', dict)).toBe('घरमा पानि छ');
   });
   it('suggests via confusion sets for unknown words', () => {
