@@ -1,19 +1,23 @@
-import { useDismiss } from "../useDismiss";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { answerPatroQuestion } from "../patro-tools-integration/patroBotEngine";
+import { useDismiss } from "../useDismiss";
 
 type ChatRole = "user" | "assistant";
 type ChatMessage = { id: string; role: ChatRole; content: string };
 type ChatLanguage = "auto" | "ne" | "en";
 type ChinaContext = Record<string, unknown>;
 
-const HISTORY_KEY = "aafnai.jyotish.chat.history.v1";
-const LANGUAGE_KEY = "aafnai.jyotish.chat.language.v1";
+const HISTORY_KEY = "aafnai.bot.chat.history.v1";
+const LEGACY_HISTORY_KEY = "aafnai.jyotish.chat.history.v1";
+const LANGUAGE_KEY = "aafnai.bot.chat.language.v1";
+const LEGACY_LANGUAGE_KEY = "aafnai.jyotish.chat.language.v1";
 const CHINA_KEY = "aafnai.jyotish.china.context.v1";
 const MAX_STORED = 24;
 
 function readHistory(): ChatMessage[] {
   try {
-    const rows = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+    const stored = localStorage.getItem(HISTORY_KEY) || localStorage.getItem(LEGACY_HISTORY_KEY) || "[]";
+    const rows = JSON.parse(stored);
     if (!Array.isArray(rows)) return [];
     return rows
       .filter((row) => row && (row.role === "user" || row.role === "assistant") && typeof row.content === "string")
@@ -26,7 +30,7 @@ function readHistory(): ChatMessage[] {
 
 function readLanguage(): ChatLanguage {
   try {
-    const value = localStorage.getItem(LANGUAGE_KEY);
+    const value = localStorage.getItem(LANGUAGE_KEY) || localStorage.getItem(LEGACY_LANGUAGE_KEY);
     return value === "ne" || value === "en" ? value : "auto";
   } catch {
     return "auto";
@@ -78,7 +82,7 @@ function contextFromRenderedChina(): ChinaContext | null {
   const identity = text(report.querySelector(".report-head h2"));
   const birthLine = text(report.querySelector(".report-head p:not(.eyebrow)"));
 
-  const context: ChinaContext = {
+  return {
     time_known: true,
     lagna: lagna ? { name: lagna } : null,
     nakshatra: nakshatra ? { name: nakshatra.value, pada: nakshatra.detail } : null,
@@ -88,7 +92,6 @@ function contextFromRenderedChina(): ChinaContext | null {
     other_important_points: manglik ? { manglik: `${manglik.value} ${manglik.detail}`.trim() } : undefined,
     data_quality: { source: "aafnai-patro-china", generated_at: new Date().toISOString() },
   };
-  return context;
 }
 
 function extractSseContent(payload: string) {
@@ -100,10 +103,7 @@ function extractSseContent(payload: string) {
   }
 }
 
-async function streamAssistant(
-  response: Response,
-  onText: (text: string) => void,
-) {
+async function streamAssistant(response: Response, onText: (text: string) => void) {
   if (!response.body) throw new Error("empty_response");
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
@@ -133,7 +133,7 @@ async function streamAssistant(
 
 export function JyotishAssistant() {
   const [open, setOpen] = useState(false);
-  useDismiss(open,()=>setOpen(false));
+  useDismiss(open, () => setOpen(false));
   const [messages, setMessages] = useState<ChatMessage[]>(readHistory);
   const [language, setLanguage] = useState<ChatLanguage>(readLanguage);
   const [china, setChina] = useState<ChinaContext | null>(readChina);
@@ -180,8 +180,8 @@ export function JyotishAssistant() {
 
   const prompts = useMemo(
     () => china
-      ? ["मेरो हालको दशा के देखाउँछ?", "मेरो विवाह/सम्बन्ध पक्ष बुझाइदिनुहोस्", "मेरो चिना अनुसार विदेश योग कस्तो छ?"]
-      : ["लग्न भनेको के हो?", "दशा र गोचरमा के फरक छ?", "चिना कसरी प्रयोग गर्ने?"],
+      ? ["आजको मिति र तिथि", "दशैं कहिले", "मेरो हालको दशा के देखाउँछ?"]
+      : ["आजको मिति र तिथि", "दशैं कहिले", "लग्न भनेको के हो?"],
     [china],
   );
 
@@ -190,7 +190,10 @@ export function JyotishAssistant() {
     setBusy(false);
     setMessages([]);
     setError("");
-    try { localStorage.removeItem(HISTORY_KEY); } catch { /* optional */ }
+    try {
+      localStorage.removeItem(HISTORY_KEY);
+      localStorage.removeItem(LEGACY_HISTORY_KEY);
+    } catch { /* optional */ }
   }
 
   async function send(event?: FormEvent) {
@@ -199,14 +202,25 @@ export function JyotishAssistant() {
     if (!value || busy) return;
     setInput("");
     setError("");
+
     const userRow: ChatMessage = { id: crypto.randomUUID(), role: "user", content: value };
     const assistantId = crypto.randomUUID();
     const history = messages.slice(-6).map(({ role, content }) => ({ role, content }));
     setMessages((current) => [...current, userRow, { id: assistantId, role: "assistant", content: "" }]);
     setBusy(true);
-    const controller = new AbortController();
-    activeRequest.current = controller;
+
+    let controller: AbortController | null = null;
     try {
+      // Calendar/date/tithi/festival/conversion questions stay on the deterministic
+      // Patro engine. Unknown/open-ended prompts fall through to managed cloud AI.
+      const deterministic = await answerPatroQuestion(value, location.origin, { helpFallback: false });
+      if (deterministic) {
+        setMessages((current) => current.map((row) => row.id === assistantId ? { ...row, content: deterministic.answer } : row));
+        return;
+      }
+
+      controller = new AbortController();
+      activeRequest.current = controller;
       const response = await fetch("/api/v1/jyotish-chat", {
         method: "POST",
         credentials: "same-origin",
@@ -216,7 +230,7 @@ export function JyotishAssistant() {
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
-        throw new Error(String(body?.error || body?.code || `HTTP ${response.status}`));
+        throw new Error(String(body?.code || body?.error || `HTTP ${response.status}`));
       }
       const type = response.headers.get("content-type") || "";
       if (type.includes("text/event-stream")) {
@@ -230,24 +244,24 @@ export function JyotishAssistant() {
         setMessages((current) => current.map((row) => row.id === assistantId ? { ...row, content } : row));
       }
     } catch (cause) {
-      if (controller.signal.aborted) return;
+      if (controller?.signal.aborted) return;
       setMessages((current) => current.filter((row) => row.id !== assistantId));
       setError(cause instanceof Error && cause.message === "all_providers_unavailable"
-        ? "ज्योतिष AI अहिले उपलब्ध छैन। केही बेरपछि पुनः प्रयास गर्नुहोस्।"
-        : "ज्योतिष AI बाट उत्तर लिन सकिएन। फेरि प्रयास गर्नुहोस्।");
+        ? "आफ्नै Bot को AI सेवा अहिले उपलब्ध छैन। पात्रोका मिति/तिथि प्रश्न भने चलिरहन्छन्।"
+        : "आफ्नै Bot बाट उत्तर लिन सकिएन। फेरि प्रयास गर्नुहोस्।");
     } finally {
-      if (activeRequest.current === controller) activeRequest.current = null;
+      if (controller && activeRequest.current === controller) activeRequest.current = null;
       setBusy(false);
     }
   }
 
   return <>
-    <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-jyotish-ai" aria-label="ज्योतिष AI खोल्नुहोस्">
-      <span aria-hidden="true">ॐ</span><b>AI</b>
+    <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Bot खोल्नुहोस्">
+      <span aria-hidden="true">आ</span><em>आफ्नै Bot</em><b>AI</b>
     </button>
-    {open && <section id="aafnai-jyotish-ai" className="jy-ai-panel" ref={panel} aria-label="आफ्नै ज्योतिष AI">
+    {open && <section id="aafnai-bot-panel" className="jy-ai-panel" ref={panel} aria-label="आफ्नै Bot">
       <header className="jy-ai-head">
-        <div><span aria-hidden="true">ॐ</span><div><strong>आफ्नै ज्योतिष AI</strong><small>{china ? "तपाईंको चिना सन्दर्भ जोडिएको छ" : "सामान्य ज्योतिष सहायक"}</small></div></div>
+        <div><span aria-hidden="true">आ</span><div><strong>आफ्नै Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>
         <div><button type="button" onClick={clearChat} title="च्याट खाली गर्नुहोस्" aria-label="च्याट खाली गर्नुहोस्">↺</button><button type="button" onClick={() => setOpen(false)} aria-label="बन्द गर्नुहोस्">×</button></div>
       </header>
       <div className="jy-ai-toolbar">
@@ -257,15 +271,15 @@ export function JyotishAssistant() {
         <a href="/jyotish/china" className={china ? "is-connected" : ""}>{china ? "● चिना जोडिएको" : "+ चिना बनाउनुहोस्"}</a>
       </div>
       <div className="jy-ai-messages" aria-live="polite">
-        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏</strong><p>ज्योतिषसम्बन्धी सामान्य प्रश्न सोध्नुहोस्। चिना बनाएपछि ग्रहस्थिति र दशाको सन्दर्भसहित प्रश्न सोध्न सकिन्छ।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
-        {messages.map((row) => row.content ? <article className={`jy-ai-message ${row.role}`} key={row.id}><small>{row.role === "assistant" ? "ज्योतिष AI" : "तपाईं"}</small><p>{row.content}</p></article> : <article className="jy-ai-message assistant is-typing" key={row.id}><span/><span/><span/></article>)}
+        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏 म आफ्नै Bot हुँ।</strong><p>आजको मिति/तिथि, चाडपर्व, BS–AD रूपान्तरण वा ज्योतिषसम्बन्धी प्रश्न सोध्नुहोस्। पात्रोका तथ्य स्थानीय इन्जिनबाट र खुला प्रश्न cloud AI बाट उत्तर हुन्छन्।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
+        {messages.map((row) => row.content ? <article className={`jy-ai-message ${row.role}`} key={row.id}><small>{row.role === "assistant" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.content}</p></article> : <article className="jy-ai-message assistant is-typing" key={row.id}><span/><span/><span/></article>)}
         {error && <p className="jy-ai-error" role="alert">{error}</p>}
       </div>
       <form className="jy-ai-compose" onSubmit={send}>
-        <textarea value={input} onChange={(event) => setInput(event.target.value)} maxLength={1000} rows={2} placeholder="ज्योतिष वा चिना बारे सोध्नुहोस्…" aria-label="ज्योतिष AI प्रश्न" onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }}/>
+        <textarea value={input} onChange={(event) => setInput(event.target.value)} maxLength={1000} rows={2} placeholder="मिति, तिथि, चाडपर्व वा ज्योतिष बारे सोध्नुहोस्…" aria-label="आफ्नै Bot प्रश्न" onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }}/>
         <button type="submit" disabled={busy || !input.trim()}>{busy ? "…" : "पठाउनुहोस्"}</button>
       </form>
-      <footer><span>परम्परागत ज्योतिषीय व्याख्या हो, निश्चित भविष्यवाणी होइन।</span><a href="/tools/patro-bot">पात्रोका तथ्य → पात्रो बोट</a></footer>
+      <footer><span>मिति/तिथि तथ्य पात्रो इन्जिनबाट; खुला प्रश्न managed AI बाट।</span><a href="/tools/patro-bot">पूरा पात्रो बोट खोल्नुहोस्</a></footer>
     </section>}
   </>;
 }
