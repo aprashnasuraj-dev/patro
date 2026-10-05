@@ -39,10 +39,15 @@ export function VoiceTypingTool() {
   const appendFinal = useCallback((chunk: string) => setText((current) => current + chunk), []);
   const dictation = useNepaliDictation({
     language,
-    serverFallback: false,
+    serverFallback: true,
     onFinal: appendFinal,
   });
   const meta = LANGUAGE_META[language];
+  const modeText = dictation.mode === "browser"
+    ? `${meta.short} · Live recognition`
+    : dictation.mode === "server"
+      ? `${meta.short} · Secure server fallback`
+      : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन";
 
   function chooseLanguage(next: DictationLanguage) {
     if (next === language) return;
@@ -71,7 +76,7 @@ export function VoiceTypingTool() {
   return (
     <ToolPage
       title="आवाजबाट टाइपिङ · Voice to Text"
-      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। भाषा परिवर्तन गरेर एउटै ठाउँबाट दुवै भाषामा टाइप गर्न सकिन्छ।"
+      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Browser recognition उपलब्ध नभए सुरक्षित server transcription स्वतः fallback हुन्छ।"
     >
       <section className="patro-tool-card voice-typing-card">
         <div className="voice-language-panel">
@@ -104,17 +109,22 @@ export function VoiceTypingTool() {
 
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
-            <span className="tool-badge">{dictation.mode === "browser" ? meta.short : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन"}</span>
+            <span className="tool-badge">{modeText}</span>
             <p>{meta.punctuation}</p>
+            {dictation.mode === "server" ? (
+              <p className="tool-muted">Fallback mode मा Stop थिचेपछि रेकर्ड गरिएको आवाज transcription का लागि पठाइन्छ। अधिकतम 60 सेकेन्ड।</p>
+            ) : null}
           </div>
           {!dictation.listening ? (
             <button
               type="button"
               className="tool-primary-button voice-record-button"
-              onClick={dictation.start}
-              disabled={dictation.mode !== "browser"}
+              onClick={() => void dictation.start()}
+              disabled={dictation.mode === "unsupported"}
             >
-              {meta.start}
+              {dictation.mode === "server"
+                ? (language === "ne-NP" ? "🎙 रेकर्ड सुरु गर्नुहोस्" : "🎙 Start recording")
+                : meta.start}
             </button>
           ) : (
             <button type="button" className="tool-secondary-button voice-record-button is-listening" onClick={dictation.stop}>
@@ -156,7 +166,9 @@ export function VoiceTypingTool() {
 
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
-        <p className="tool-muted">आवाज पहिचान तपाईंको उपकरणमै उपलब्ध सुविधाबाट चल्छ। तपाईंले कपी वा सम्पादन नगरेसम्म यो पृष्ठले बोलेको आवाज वा ट्रान्सक्रिप्ट आफैं सुरक्षित गर्दैन।</p>
+        <p className="tool-muted">
+          Live browser mode मा audio Patro ले सुरक्षित गर्दैन। Server fallback चाहिएको अवस्थामा छोटो recording transcription provider मा पठाइन्छ र Patro ले recording संग्रह गर्दैन।
+        </p>
       </ToolResult>
     </ToolPage>
   );
