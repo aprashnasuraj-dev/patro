@@ -1,4 +1,5 @@
 import type { CalendarRecord, PatroSource, RecordQuery } from "../lib/patro";
+import { bsToAd, daysInBsMonth } from "../packages/core/src";
 import { calculateAstronomicalTithi } from "./tithi";
 
 export type PatroEnv = { DB?: any };
@@ -27,6 +28,15 @@ async function all(db: any, sql: string, bindings: any[] = []) {
   return (out.results || []).map(parse).filter(Boolean);
 }
 
+function bsRange(year:number,month?:number){
+  try{
+    const startMonth=month||1,endMonth=month||12;
+    const start=bsToAd({year,month:startMonth,day:1});
+    const end=bsToAd({year,month:endMonth,day:daysInBsMonth(year,endMonth)});
+    return {start,end};
+  }catch{return null;}
+}
+
 export function createD1PatroSource(env: PatroEnv): PatroSource {
   const db = env.DB;
   return {
@@ -42,18 +52,20 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
     async getCalendarByBs(bsY, bsM, bsD) {
       if (!db) return null;
       try {
+        const ad=bsToAd({year:bsY,month:bsM,day:bsD});
         return normalizeCalendar(await db.prepare(
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 and coalesce(json_extract(payload,'$.payload.bs.day'),json_extract(payload,'$.bs.day'))=?3 limit 1"
-        ).bind(bsY, bsM, bsD).first());
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and record_key=?1 limit 1"
+        ).bind(ad).first());
       } catch { return null; }
     },
 
     async getCalendarMonth(bsY, bsM) {
       if (!db) return [];
+      const range=bsRange(bsY,bsM);if(!range)return [];
       try {
         const rows = await all(db,
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 and coalesce(json_extract(payload,'$.payload.bs.month'),json_extract(payload,'$.bs.month'))=?2 order by record_key",
-          [bsY, bsM]
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and record_key>=?1 and record_key<=?2 order by record_key",
+          [range.start,range.end]
         );
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
       } catch { return []; }
@@ -61,10 +73,11 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
 
     async getCalendarYear(bsY) {
       if (!db) return [];
+      const range=bsRange(bsY);if(!range)return [];
       try {
         const rows = await all(db,
-          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and coalesce(json_extract(payload,'$.payload.bs.year'),json_extract(payload,'$.bs.year'))=?1 order by record_key",
-          [bsY]
+          "select payload, ad_date from content_records where table_name='astronomy_calendar_map' and record_key>=?1 and record_key<=?2 order by record_key",
+          [range.start,range.end]
         );
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
       } catch { return []; }
