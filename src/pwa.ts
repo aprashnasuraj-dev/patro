@@ -72,9 +72,11 @@ export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   installControllerRefresh();
 
-  // Heavy offline chunks are no longer downloaded automatically on every normal page load.
-  // The explicit offline-preparation UI can opt into this work without blocking the app shell.
+  // Normal browsing stays light. Full offline preparation now happens only after an explicit request.
   window.addEventListener("patro:prepare-offline", () => {
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.active?.postMessage({ type: "WARM_OFFLINE" });
+    }).catch(() => undefined);
     runWhenIdle(() => { void prewarmOfflineModules(); });
   });
 
