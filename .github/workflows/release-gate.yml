@@ -220,6 +220,8 @@ jobs:
           CF_KV_PREVIEW_NAMESPACE_ID: ${{ vars.CF_KV_PREVIEW_NAMESPACE_ID || secrets.CF_KV_PREVIEW_NAMESPACE_ID }}
           CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
           CF_R2_PREVIEW_BUCKET_NAME: ${{ vars.CF_R2_PREVIEW_BUCKET_NAME || secrets.CF_R2_PREVIEW_BUCKET_NAME }}
+          CF_CACHE_AUTO_PROVISION: "1"
+          REQUIRE_QUOTA_CACHE: "1"
           PUBLIC_REFERENCE_CACHE_VERSION: public-reference-v1
         run: |
           set -euo pipefail
@@ -232,9 +234,61 @@ jobs:
           node --input-type=module <<'NODE'
           import { readFileSync } from "node:fs";
           const cfg=JSON.parse(readFileSync("wrangler.generated.jsonc","utf8"));
-          console.log(`quota bindings: KV=${Boolean(cfg.kv_namespaces?.some(x=>x.binding==="CACHE"))} R2=${Boolean(cfg.r2_buckets?.some(x=>x.binding==="ARCHIVE"))}`);
+          const hasKv=Boolean(cfg.kv_namespaces?.some(x=>x.binding==="CACHE"));
+          const hasR2=Boolean(cfg.r2_buckets?.some(x=>x.binding==="ARCHIVE"));
+          console.log(`quota bindings: KV=${hasKv} R2=${hasR2}`);
+          if(process.env.REQUIRE_QUOTA_CACHE==="1"&&(!hasKv||!hasR2)){
+            throw new Error(`Production quota cache requires both CACHE(KV) and ARCHIVE(R2); KV=${hasKv} R2=${hasR2}`);
+          }
           NODE
           npx wrangler deploy --config wrangler.generated.jsonc
+      - name: Prime annual On This Day KV/R2 cache
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          HISTORY_CACHE_REV: 20261006-history-live-v4
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          const site="https://aafnaipatro.com";
+          const rev=process.env.HISTORY_CACHE_REV||"history-live";
+          const dates=[];
+          for(let month=1;month<=12;month++){
+            const days=new Date(Date.UTC(2000,month,0)).getUTCDate();
+            for(let day=1;day<=days;day++)dates.push(`2000-${String(month).padStart(2,"0")}-${String(day).padStart(2,"0")}`);
+          }
+          const stats={edge:0,kv:0,r2:0,origin:0};
+          const failures=[];
+          let cursor=0;
+          async function worker(){
+            while(true){
+              const index=cursor++;
+              if(index>=dates.length)return;
+              const date=dates[index];
+              const url=`${site}/api/v1/on-this-day?date=${date}&rev=${encodeURIComponent(rev)}`;
+              try{
+                const response=await fetch(url,{headers:{accept:"application/json","user-agent":"aafnai-patro-cache-primer/1.0"}});
+                if(!response.ok)throw new Error(`HTTP ${response.status}`);
+                const body=await response.json();
+                if(body?.ok!==true||body?.date!==date||!Array.isArray(body?.items))throw new Error("invalid history payload");
+                const layer=response.headers.get("x-patro-cache")||"origin";
+                if(layer in stats)stats[layer]++;else stats.origin++;
+              }catch(error){failures.push(`${date}: ${String(error?.message||error)}`);}
+            }
+          }
+          await Promise.all(Array.from({length:8},()=>worker()));
+          if(failures.length)throw new Error(`Annual history prime failed (${failures.length}): ${failures.slice(0,5).join(" | ")}`);
+          await new Promise(resolve=>setTimeout(resolve,1500));
+          const formatter=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"});
+          const today=formatter.format(new Date());
+          const verify=await fetch(`${site}/api/v1/on-this-day?date=${today}&rev=${encodeURIComponent(rev)}`,{headers:{accept:"application/json","user-agent":"aafnai-patro-cache-primer/1.0"}});
+          if(!verify.ok)throw new Error(`Post-prime verification HTTP ${verify.status}`);
+          const verifiedBody=await verify.json();
+          const layer=verify.headers.get("x-patro-cache")||"origin";
+          if(verifiedBody?.date!==today)throw new Error(`Cached history date adapter mismatch: ${verifiedBody?.date} != ${today}`);
+          if(!["edge","kv","r2"].includes(layer))throw new Error(`Post-prime request did not hit cache; layer=${layer}`);
+          console.log(JSON.stringify({ok:true,annual_keys:dates.length,first_pass:stats,verified_date:today,verified_layer:layer}));
+          NODE
       - name: Smoke test deployed Cloudflare runtime
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
