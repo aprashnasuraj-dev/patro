@@ -51,7 +51,7 @@ jobs:
         id: build
         continue-on-error: true
         run: npm run build
-      - name: Core, typing, Patro tools, community, full-product and release-safety tests
+      - name: Core, typing, Patro tools, community, calendar resilience, full-product and release-safety tests
         id: product_tests
         continue-on-error: true
         run: |
@@ -60,6 +60,7 @@ jobs:
           npm run test:typing
           npm run test:patro-tools
           npm run test:community
+          npm run test:calendar-resilience
           npm run test:full-product
           npm run test:release-safety
       - name: Cloudflare Worker contracts and dry-run
@@ -91,6 +92,7 @@ jobs:
           ! grep -q '"market_snapshots"' cloudflare/d1/expected-public-counts.json
           grep -q '"time_machine_moments": 706' cloudflare/d1/expected-public-counts.json
           grep -q '"mode": "native_bundle"' cloudflare/d1/expected-public-counts.json
+          grep -q '"binding":"CALENDAR_BACKUP","bucket_name":"patro"' wrangler.jsonc
       - name: Verify generated release artifact parity
         id: artifacts
         if: always() && steps.build.outcome == 'success'
@@ -99,11 +101,19 @@ jobs:
         run: |
           set -euo pipefail
           test -d dist/assets
-          required=(dist/index.html dist/sw.js dist/tools/index.html dist/samudaya/index.html dist/nepal-sambat/mandala/index.html dist/samudaya/lhosar/index.html dist/samudaya/tharu/index.html dist/samudaya/mithila/index.html dist/samudaya/kirat/index.html dist/samudaya/hijri/index.html dist/samudaya/chakra/index.html)
+          required=(dist/index.html dist/sw.js dist/data/calendar/offline-24-months/index.json dist/tools/index.html dist/samudaya/index.html dist/nepal-sambat/mandala/index.html dist/samudaya/lhosar/index.html dist/samudaya/tharu/index.html dist/samudaya/mithila/index.html dist/samudaya/kirat/index.html dist/samudaya/hijri/index.html dist/samudaya/chakra/index.html)
           for file in "${required[@]}"; do
             test -s "$file"
             if grep -Eiq 'Loading\.\.\.|>Loading<|>लोड हुँदै' "$file"; then echo "Terminal loading placeholder found in $file"; exit 1; fi
           done
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const index=JSON.parse(readFileSync("dist/data/calendar/offline-24-months/index.json","utf8"));
+          if(index.past_months!==12||index.future_months!==12||index.months?.length!==25) throw new Error("static calendar window is incomplete");
+          const total=(index.months||[]).reduce((sum,row)=>sum+Number(row.bytes||0),0);
+          if(total>8*1024*1024) throw new Error(`static calendar cache payload too large: ${total}`);
+          console.log(`static calendar payload=${total} bytes across ${index.months.length} month entries`);
+          NODE
       - name: Dependency audit
         id: dependency_audit
         continue-on-error: true
