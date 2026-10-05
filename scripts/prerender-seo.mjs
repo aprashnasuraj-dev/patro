@@ -75,11 +75,9 @@ function relatedLinks(path) {
 }
 function intentGuide(meta) {
   if (!meta?.steps?.length && !meta?.faqs?.length) return "";
-  const aliases = (meta.aliases || []).slice(0, 5);
   const steps = meta.steps?.length ? `<section class="seo-howto"><h2>कसरी प्रयोग गर्ने?</h2><ol>${meta.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol></section>` : "";
   const faq = meta.faqs?.length ? `<section class="seo-faq"><h2>धेरै सोधिने प्रश्न</h2>${meta.faqs.map((item) => `<h3>${esc(item.q)}</h3><p>${esc(item.a)}</p>`).join("")}</section>` : "";
-  const names = aliases.length ? `<p><strong>सम्बन्धित नामहरू:</strong> ${aliases.map(esc).join(" · ")}</p>` : "";
-  return `${steps}${faq}${names}`;
+  return `${steps}${faq}`;
 }
 function bodyFor(path, meta, indexed) {
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
@@ -88,9 +86,9 @@ function bodyFor(path, meta, indexed) {
     const year = Number(match[1]), number = Number(match[2]), month = BS_MONTHS[number - 1];
     const prevN = number === 1 ? 12 : number - 1, prevY = number === 1 ? year - 1 : year;
     const nextN = number === 12 ? 1 : number + 1, nextY = number === 12 ? year + 1 : year;
-    extra = `<p><strong>${esc(month.ne)} ${year}</strong> को पात्रोमा दैनिक Gregorian मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्। ${esc(month.aliases)} ${year}, Nepali calendar ${year}, Nepal calendar र Nepali date जस्ता नामले खोज्दा पनि यही महिनाको पात्रो उपयोगी हुन्छ।</p><p><a href="${calendarRoute(prevY, prevN)}">अघिल्लो महिना</a> · <a href="${calendarRoute(nextY, nextN)}">अर्को महिना</a></p>`;
+    extra = `<p><strong>${esc(month.ne)} ${year}</strong> को पात्रोमा दैनिक Gregorian मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्।</p><p><a href="${calendarRoute(prevY, prevN)}">अघिल्लो महिना</a> · <a href="${calendarRoute(nextY, nextN)}">अर्को महिना</a></p>`;
   } else if (path === "/") {
-    extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्। Nepali calendar, Nepal calendar, Nepali date today, Nepali miti र aaja kati gate जस्ता खोजका लागि पनि यही पात्रो उपयोगी छ।</p>`;
+    extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्।</p>`;
   } else if (path === "/today") {
     extra = `<p>नेपाल समयअनुसार आजको नेपाली मिति, बार, तिथि र सम्बन्धित पात्रो जानकारी एउटै पृष्ठमा हेर्नुहोस्। विदेशमा हुँदा पनि नेपालको “आज” यही पृष्ठबाट जाँच गर्न सकिन्छ।</p>`;
   } else if (path === "/convert" || path === "/tools/bstoad" || path === "/tools/adtobs") {
@@ -99,9 +97,8 @@ function bodyFor(path, meta, indexed) {
   return `<main class="seo-prerender" data-seo-prerender="true"><article><h1>${esc(meta.title)}</h1><p>${esc(meta.description)}</p>${extra}${intentGuide(meta)}<nav aria-label="सम्बन्धित पात्रो पृष्ठहरू">${relatedLinks(path)}</nav>${indexed ? "" : "<p>यो पुरानो पात्रो पृष्ठ सन्दर्भ र navigation का लागि उपलब्ध छ।</p>"}</article></main>`;
 }
 function schemaFor(path, meta) {
-  const keywords = (meta.aliases || []).slice(0, 8).join(", ");
   const graph = [
-    { "@type": "WebPage", "@id": abs(path) + "#page", url: abs(path), name: meta.title, description: meta.description, keywords: keywords || undefined, inLanguage: ["ne", "en"], isPartOf: { "@id": SITE + "/#website" } },
+    { "@type": "WebPage", "@id": abs(path) + "#page", url: abs(path), name: meta.title, description: meta.description, inLanguage: ["ne", "en"], isPartOf: { "@id": SITE + "/#website" } },
     breadcrumb(path, meta.title)
   ];
   if (path === "/") {
@@ -111,13 +108,7 @@ function schemaFor(path, meta) {
     );
   }
   if (path === "/convert" || path.startsWith("/tools/")) {
-    graph.push({ "@type": "WebApplication", name: meta.title, alternateName: (meta.aliases || []).slice(0, 5), url: abs(path), applicationCategory: "UtilitiesApplication", operatingSystem: "Any", browserRequirements: "Requires a modern web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "NPR" }, featureList: meta.steps || [] });
-  }
-  if (meta.faqs?.length) {
-    graph.push({ "@type": "FAQPage", mainEntity: meta.faqs.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) });
-  }
-  if (meta.steps?.length && (path === "/convert" || path.startsWith("/tools/"))) {
-    graph.push({ "@type": "HowTo", name: `${meta.title} कसरी प्रयोग गर्ने`, step: meta.steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, text })) });
+    graph.push({ "@type": "WebApplication", name: meta.title, url: abs(path), applicationCategory: "UtilitiesApplication", operatingSystem: "Any", browserRequirements: "Requires a modern web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "NPR" }, featureList: meta.steps || [] });
   }
   const m = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   if (m) {
@@ -151,8 +142,6 @@ function render(path, indexed) {
   const head = [
     `<meta name="robots" content="${directives}" />`,
     `<meta name="googlebot" content="${directives}" />`,
-    `<link rel="alternate" hreflang="ne" href="${esc(canonical)}" />`,
-    `<link rel="alternate" hreflang="x-default" href="${esc(canonical)}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:locale" content="ne_NP" />`,
     `<meta property="og:locale:alternate" content="en_US" />`,
@@ -173,4 +162,4 @@ for (const path of routes) {
   written++;
 }
 
-console.log(`SEO prerender emitted ${written} crawlable HTML routes (${indexed.size} indexable; all 29 tools have intent-specific semantic content).`);
+console.log(`SEO prerender emitted ${written} crawlable HTML routes (${indexed.size} indexable; all 29 tools have user-facing semantic fallback content).`);

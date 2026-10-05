@@ -79,6 +79,10 @@ test("connected Worker normalizes route SEO for SPA and standalone HTML",()=>{
   assert.ok(seo.includes("og-default.png"),"share previews must use the 1200x630 PNG; WhatsApp/Facebook/X do not render SVG");
   assert.ok(seo.includes("response.status<400"));
   assert.ok(seo.includes('name:BRAND,alternateName:BRAND_EN'));
+  assert.ok(seo.includes('id="patro-edge-webpage-schema"'),"edge fallback WebPage schema needs a stable marker");
+  assert.equal(seo.includes('<link rel="alternate" hreflang='),false,"mixed-language canonical pages must not advertise same-URL hreflang variants");
+  assert.equal(seo.includes('.on(\'script[type="application/ld+json"]\''),false,"edge rewrite must preserve build-time Organization/Breadcrumb/Event JSON-LD");
+  assert.ok(seo.includes('link[rel="alternate"][hreflang]'),"edge rewrite should scrub stale build-time hreflang until separate locale URLs exist");
   assert.ok(seo.includes('"/samudaya/chakra"'));
   assert.ok(seo.includes('"/time-machine"'));
   assert.ok(seo.includes('"/tools/patro-bot"')||seo.includes('"patro-bot"'));

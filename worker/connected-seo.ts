@@ -135,10 +135,7 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
   `<meta name="twitter:description" content="${escapeHtml(meta.description)}">`+
   `<meta name="twitter:image" content="${escapeHtml(image)}">`+
   `<link rel="canonical" href="${escapeHtml(canonical)}">`+
-  `<link rel="alternate" hreflang="ne" href="${escapeHtml(canonical)}">`+
-  `<link rel="alternate" hreflang="en" href="${escapeHtml(canonical)}">`+
-  `<link rel="alternate" hreflang="x-default" href="${escapeHtml(canonical)}">`+
-  `<script type="application/ld+json">${schema}</script>`;
+  `<script id="patro-edge-webpage-schema" type="application/ld+json">${schema}</script>`;
  return new HTMLRewriterCtor()
   .on("title",{element(el:any){el.setInnerContent(fullTitle)}})
   .on('meta[name="description"]',{element(el:any){el.remove()}})
@@ -147,7 +144,6 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
   .on('meta[name^="twitter:"]',{element(el:any){el.remove()}})
   .on('link[rel="canonical"]',{element(el:any){el.remove()}})
   .on('link[rel="alternate"][hreflang]',{element(el:any){el.remove()}})
-  .on('script[type="application/ld+json"]',{element(el:any){el.remove()}})
   .on("head",{element(el:any){el.append(headBlock,{html:true})}})
   .transform(response);
 }

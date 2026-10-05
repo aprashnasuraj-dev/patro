@@ -35,8 +35,13 @@ test("intent expansion covers at least 1000 unique real queries without doorway 
   for(const must of ["nepali calendar","aaja kati gate","आज कति गते","nepali typing","nepali unicode typing","preeti to unicode","bs to ad converter","ad to bs converter","age calculator nepal","emi calculator nepal","nepali ocr","nepali text to speech"]){assert.ok(normalized.has(must),must);}
 });
 
-test("prerender and hydrated UI expose the same useful intent guidance",()=>{
-  for(const token of ["seo/search-intents.json","FAQPage","HowTo","WebApplication","सम्बन्धित नामहरू","twitter:title","twitter:description"])assert.ok(prerender.includes(token),token);
-  for(const token of ["search-intents.json","कसरी प्रयोग गर्ने?","धेरै सोधिने प्रश्न","यो सुविधा यस्ता नामले पनि खोजिन्छ"])assert.ok(support.includes(token),token);
+test("machine intent metadata stays separate from clean user-facing guidance",()=>{
+  for(const token of ["seo/search-intents.json","WebApplication","twitter:title","twitter:description"])assert.ok(prerender.includes(token),token);
+  assert.ok(prerender.includes("कसरी प्रयोग गर्ने?")&&prerender.includes("धेरै सोधिने प्रश्न"));
+  assert.equal(prerender.includes("सम्बन्धित नामहरू"),false,"prerender must not render query aliases as visible copy");
+  assert.equal(prerender.includes('"@type": "FAQPage"'),false,"FAQ rich-result markup is obsolete for Google Search");
+  assert.equal(prerender.includes('"@type": "HowTo"'),false,"HowTo rich-result markup is deprecated");
+  assert.ok(support.includes("कसरी प्रयोग गर्ने?")&&support.includes("धेरै सोधिने प्रश्न"));
+  assert.equal(support.includes("यो सुविधा यस्ता नामले पनि खोजिन्छ"),false,"hydrated UI must not render search aliases");
   assert.ok(!prerender.includes('meta name="keywords"'),"do not add obsolete keyword meta stuffing");
 });

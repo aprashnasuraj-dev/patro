@@ -99,8 +99,8 @@ test("edge SEO covers flagship public routes before React hydration",()=>{
  const seo=read("worker/connected-seo.ts");
  for(const route of ["/tools","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/samudaya","/nepal-sambat/mandala"]){assert.ok(seo.includes(`"${route}"`),`edge SEO lost ${route}`);}
  assert.ok(seo.includes('application/ld+json'));
- assert.ok(seo.includes('hreflang="ne"'));
- assert.ok(seo.includes('hreflang="en"'));
+ assert.equal(seo.includes('<link rel="alternate" hreflang='),false,"same-URL hreflang must not be emitted without distinct locale URLs");
+ assert.ok(seo.includes('link[rel="alternate"][hreflang]'),"edge must scrub stale hreflang from fallback HTML");
  assert.ok(seo.includes('og:image'));
  assert.ok(seo.includes('twitter:image'));
 });
