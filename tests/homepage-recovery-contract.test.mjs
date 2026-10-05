@@ -9,6 +9,7 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   const router=read("src/PatroRouter.tsx");
   const main=read("src/main.tsx");
   const pwa=read("src/pwa.ts");
+  const sw=read("public/sw.js");
   const css=read("src/homepage-interactions.css");
   const worker=read("worker/index.ts");
   const offlineCheck=read("scripts/check-offline-pwa.cjs");
@@ -29,6 +30,8 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   for(const prefix of ["aafnai-shell-","aafnai-calendar-","aafnai-public-data-"])assert.ok(pwa.includes(prefix),`stale cache cleanup lost ${prefix}`);
   assert.ok(pwa.includes('updateViaCache: "none"'),"service-worker update must bypass stale HTTP cache");
   assert.ok(pwa.includes("registration.update()")&&pwa.includes("SKIP_WAITING"),"new worker must be activated promptly");
+  assert.ok(sw.includes('limit <= 800')&&sw.includes('/api/v1/time-machine?limit=800'),"Time Machine must be eligible for and prewarmed into the bounded public offline cache");
+  assert.ok(sw.includes('/api/v1/on-this-day?date='),"On This Day must be prewarmed for the current Nepal date");
   assert.ok(offlineCheck.includes("waitForServiceWorkerControl")&&!offlineCheck.includes("await page.reload("),"offline release check must not race the controllerchange reload");
 
   for(const endpoint of ["/api/v1/sync","/api/v1/on-this-day","/api/v1/time-machine","/api/v1/calendar/"])assert.ok(worker.includes(endpoint),`Worker lost ${endpoint}`);
