@@ -191,7 +191,7 @@ jobs:
           check mobile_checks "$MOBILE_CHECKS"
           check lighthouse "$LIGHTHOUSE"
           exit "$failures"
-      - name: Repair On This Day D1 dimensions
+      - name: Ensure On This Day D1 snapshot
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         env:
@@ -201,14 +201,13 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
-            echo "::error::Cloudflare credentials are required for the production D1 repair."
+            echo "::error::Cloudflare credentials are required for the production D1 history sync."
             exit 1
           fi
-          # Re-import the small public history snapshot first. This makes the repair self-healing
-          # even when an earlier production import never populated on_this_day_events at all.
-          node scripts/cloudflare/import-d1.mjs --remote --table=on_this_day_events
-          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "UPDATE content_records SET year = COALESCE(year, CAST(json_extract(payload,'$.ad_year') AS INTEGER)), month = COALESCE(month, CAST(json_extract(payload,'$.ad_month') AS INTEGER)), day = COALESCE(day, CAST(json_extract(payload,'$.ad_day') AS INTEGER)) WHERE table_name='on_this_day_events' AND (year IS NULL OR month IS NULL OR day IS NULL);"
-          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "SELECT COUNT(*) AS on_this_day_rows, SUM(CASE WHEN month IS NULL OR day IS NULL THEN 1 ELSE 0 END) AS missing_date_dimensions FROM content_records WHERE table_name='on_this_day_events';"
+          # The helper fingerprints the canonical history snapshot + importer. It performs
+          # the 5,454-row import only when that fingerprint changes (or on its first run),
+          # avoiding thousands of identical D1 writes on every unrelated deployment.
+          node scripts/cloudflare/ensure-history-d1.mjs
       - name: Deploy validated build to Cloudflare
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
