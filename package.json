@@ -39,7 +39,7 @@
     "cloudflare:smoke": "node scripts/cutover-smoke.mjs",
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
     "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
-    "deploy:cloudflare": "wrangler deploy --config wrangler.jsonc",
+    "deploy:cloudflare": "npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc",
     "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs tests/reference-ui-contract.test.mjs tests/community-migration-contract.test.mjs tests/native-cutover-contract.test.mjs tests/patro-connectivity-contract.test.mjs tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/seo-discovery-contract.test.mjs tests/seo-phase-gates-contract.test.mjs tests/seo-intent-coverage-contract.test.mjs tests/fresh-build-ux-contract.test.mjs",
     "seo:intents": "node scripts/generate-search-intents.mjs",
     "seo:generate": "npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs",
@@ -89,12 +89,13 @@
   "cloudflare": {
     "production_branch": "main",
     "build_command": "npm run build",
-    "deploy_command": "npx wrangler deploy --config wrangler.jsonc",
+    "deploy_command": "npm run cloudflare:config && npx wrangler deploy --config wrangler.generated.jsonc",
     "config": "wrangler.jsonc",
     "bindings": {
       "ASSETS": "Static SPA assets served by the Worker.",
       "DB": "Required production D1 database binding named DB; committed database is patro.",
-      "CACHE": "Optional KV cache binding. The Worker remains functional without KV."
+      "CACHE": "Optional KV cache binding used for low-write global reference caching.",
+      "ARCHIVE": "Optional R2 bucket binding used as a durable public-reference cache and D1 read fallback."
     }
   }
 }
