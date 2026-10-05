@@ -36,7 +36,7 @@ export function PatroBotTool() {
   const speech = rows.filter((row) => row.role === "bot").at(-1)?.text || "";
 
   return (
-    <ToolPage title="आफ्नै Bot" description="मिति, तिथि, चाडपर्व र पात्रोसम्बन्धी प्रश्नको deterministic सहायक। यही logic floating आफ्नै Bot ले पनि प्रयोग गर्छ।">
+    <ToolPage title="आफ्नै Bot" description="मिति, तिथि, चाडपर्व, मिति रूपान्तरण र पात्रोसम्बन्धी छोटा प्रश्नको छिटो सहायक।">
       <section className="patro-tool-card">
         <div className="bot-chat" aria-live="polite">
           {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.text}</p></div>)}
@@ -51,7 +51,7 @@ export function PatroBotTool() {
       </section>
       <ToolResult title="पछिल्लो उत्तर" speechText={speech}>
         <p className="tool-preview">{speech}</p>
-        <p className="tool-muted">Floating आफ्नै Bot ले यही पात्रो logic प्रयोग गर्छ र खुला प्रश्नका लागि cloud AI मा स्वचालित fallback गर्छ।</p>
+        <p className="tool-muted">आज, भोलि, चाडपर्व वा मिति रूपान्तरणका प्रश्न सोध्नुहोस्।</p>
       </ToolResult>
     </ToolPage>
   );
