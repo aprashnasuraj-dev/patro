@@ -1,7 +1,7 @@
-const VERSION = "aafnai-pwa-v9";
-const SHELL_CACHE = "aafnai-shell-v9";
-const CALENDAR_CACHE = "aafnai-calendar-v3";
-const PUBLIC_DATA_CACHE = "aafnai-public-data-v3";
+const VERSION = "aafnai-pwa-v10";
+const SHELL_CACHE = "aafnai-shell-v10";
+const CALENDAR_CACHE = "aafnai-calendar-v4";
+const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
 const LOCAL_CONFIG_CACHE = "aafnai-local-config-v1";
 const MORNING_CONFIG_KEY = "/__local/morning-config";
 const MORNING_SENT_KEY = "/__local/morning-sent";
@@ -73,7 +73,7 @@ function isSafePublicDataRequest(url) {
   if (url.pathname === "/api/v1/time-machine") {
     if (!hasOnlyParams(url, new Set(["year", "limit"]))) return false;
     const year = url.searchParams.get("year"), limit = Number(url.searchParams.get("limit") || "80");
-    return (!year || /^\d{1,4}$/.test(year)) && Number.isInteger(limit) && limit > 0 && limit <= 160;
+    return (!year || /^\d{1,4}$/.test(year)) && Number.isInteger(limit) && limit > 0 && limit <= 800;
   }
   return isLanguageLexicon(url);
 }
@@ -130,6 +130,13 @@ async function warmOffline() {
   calendarRequests.push(new Request("/api/v1/sync?start=" + encodeURIComponent(range.start) + "&end=" + encodeURIComponent(range.end), { headers:{accept:"application/json"} }));
   for (const request of calendarRequests) {
     try { const response = await fetch(request); if (responseAllowsStorage(response)) await putBounded(CALENDAR_CACHE, request, response, MAX_CALENDAR_ENTRIES); } catch {}
+  }
+  const publicRequests = [
+    new Request("/api/v1/on-this-day?date=" + encodeURIComponent(today), { headers:{accept:"application/json"} }),
+    new Request("/api/v1/time-machine?limit=800", { headers:{accept:"application/json"} }),
+  ];
+  for (const request of publicRequests) {
+    try { const response = await fetch(request); if (responseAllowsStorage(response)) await putBounded(PUBLIC_DATA_CACHE, request, response, MAX_PUBLIC_DATA_ENTRIES); } catch {}
   }
 }
 async function cacheFirstShell(request) {
