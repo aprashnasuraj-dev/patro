@@ -1,0 +1,30 @@
+/* Mobile release-gate repair for the richer homepage introduced in release seven.
+   Keep the visual hierarchy, but surface the month calendar inside the first 760px
+   of a 375px viewport as required by the production browser contract. */
+@media (max-width:640px){
+  .rh-page{padding-top:6px}
+  .rh-hero{grid-template-columns:1fr;gap:8px;margin-bottom:8px;padding:13px 12px;border-radius:16px}
+  .rh-hero:before{right:-150px;top:-150px;width:250px;height:250px;opacity:.28}
+  .rh-hero:after{right:10px;bottom:-24px;font-size:6rem}
+  .rh-hero .rh-kicker{font-size:11px;line-height:1.15}
+  .rh-hero-copy h1{margin:3px 0 2px;font-size:1.72rem;line-height:1.02}
+  .rh-hero-copy p{font-size:12px;line-height:1.2}
+  .rh-today-facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+  .rh-today-facts>div{min-height:44px;padding:6px 5px;border-radius:9px;backdrop-filter:none}
+  .rh-today-facts>div:after{display:none}
+  .rh-today-facts span{font-size:9.5px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rh-today-facts b{margin-top:2px;font-size:12px;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal}
+  .rh-actions{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0 0 8px}
+  .rh-actions>a{display:grid;grid-template-rows:24px auto;place-items:center;gap:2px;min-height:44px;padding:4px 2px;border-radius:9px;text-align:center;font-size:10.5px;line-height:1.05}
+  .rh-actions b{width:24px;height:24px;border-radius:7px;font-size:11px}
+  .rh-actions span{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+  .rh-layout,.rh-main-stack{gap:8px}
+}
+@media (max-width:390px){
+  .rh-hero{padding:11px 10px}
+  .rh-hero-copy h1{font-size:1.58rem}
+  .rh-today-facts>div{padding:5px 4px}
+  .rh-today-facts span{font-size:9px}
+  .rh-today-facts b{font-size:11px}
+  .rh-actions>a{font-size:10px}
+}
