@@ -95,13 +95,13 @@ export function HomepageEnhancer() {
     <div className="hp-month-jump" aria-label="वर्ष र महिना छान्नुहोस्">
       <label>
         <span>वर्ष</span>
-        <select value={current.year} onChange={(event) => navigate(`/calendar/${event.target.value}/${String(current.month).padStart(2, "0")}`)}>
+        <select aria-label="विक्रम संवत् वर्ष" value={current.year} onChange={(event) => navigate(`/calendar/${event.target.value}/${String(current.month).padStart(2, "0")}`)}>
           {years.map((year) => <option value={year} key={year}>{toNepaliDigits(year)}</option>)}
         </select>
       </label>
       <label>
         <span>महिना</span>
-        <select value={current.month} onChange={(event) => navigate(`/calendar/${current.year}/${String(event.target.value).padStart(2, "0")}`)}>
+        <select aria-label="विक्रम संवत् महिना" value={current.month} onChange={(event) => navigate(`/calendar/${current.year}/${String(event.target.value).padStart(2, "0")}`)}>
           {BS_MONTHS.map((month, index) => <option value={index + 1} key={month}>{month}</option>)}
         </select>
       </label>
