@@ -26,6 +26,7 @@ type StoredResponse = {
 
 const CACHE_PREFIX = "patro-quota-v2";
 const DAY = 86_400;
+const HISTORY_CACHE_YEAR = "2000"; // Leap-year sentinel: exactly 366 reusable month/day keys.
 const textEncoder = new TextEncoder();
 
 function todayNepal() {
@@ -41,9 +42,33 @@ function safeVersion(value: string) {
   return String(value || "v1").replace(/[^A-Za-z0-9._-]+/g, "-").slice(0, 80) || "v1";
 }
 
+function validIsoDate(value: string | null) {
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split("-").map(Number);
+  const check = new Date(Date.UTC(year, month - 1, day));
+  return check.getUTCFullYear() === year && check.getUTCMonth() === month - 1 && check.getUTCDate() === day;
+}
+
+function historyCacheDate(value: string | null) {
+  const date = validIsoDate(value) ? String(value) : todayNepal();
+  const [, month, day] = date.split("-");
+  return `${HISTORY_CACHE_YEAR}-${month}-${day}`;
+}
+
+function requestedHistoryDate(request: Request) {
+  const value = new URL(request.url).searchParams.get("date");
+  return validIsoDate(value) ? String(value) : todayNepal();
+}
+
 function canonicalUrl(request: Request) {
   const url = new URL(request.url);
-  if (url.pathname === "/api/v1/on-this-day") url.searchParams.delete("fresh");
+  if (url.pathname === "/api/v1/on-this-day") {
+    url.searchParams.delete("fresh");
+    // History content is month/day based. Normalizing the year collapses an unbounded
+    // sequence of annual URLs into exactly 366 durable objects while the response adapter
+    // below restores the caller's requested year/date before returning JSON.
+    url.searchParams.set("date", historyCacheDate(url.searchParams.get("date")));
+  }
   for (const key of [...url.searchParams.keys()]) {
     if (/^(?:utm_.+|fbclid|gclid)$/i.test(key)) url.searchParams.delete(key);
   }
@@ -55,8 +80,25 @@ function canonicalUrl(request: Request) {
   return url;
 }
 
-function validIsoDate(value: string | null) {
-  return !!value && /^\d{4}-\d{2}-\d{2}$/.test(value);
+async function adaptCachedResponse(request: Request, response: Response) {
+  const url = new URL(request.url);
+  if (url.pathname !== "/api/v1/on-this-day" || !response.ok) return response;
+  const type = (response.headers.get("content-type") || "").toLowerCase();
+  if (!type.includes("application/json")) return response;
+  try {
+    const body = await response.clone().json() as Record<string, unknown>;
+    if (!body || typeof body !== "object" || !("date" in body)) return response;
+    body.date = requestedHistoryDate(request);
+    const headers = new Headers(response.headers);
+    headers.delete("content-length");
+    return new Response(JSON.stringify(body), {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
+  } catch {
+    return response;
+  }
 }
 
 function edgeOnly(group = "edge-only", maxBytes = 2_000_000): CachePolicy {
@@ -81,7 +123,7 @@ function policyFor(request: Request): CachePolicy | null {
     return {
       group: "history",
       durable: true,
-      kvTtl: 14 * DAY,
+      kvTtl: 30 * DAY,
       maxBytes: 1_000_000,
       version: (env) => safeVersion(env.PUBLIC_REFERENCE_CACHE_VERSION || "history-v1"),
     };
@@ -290,15 +332,17 @@ export async function quotaCachedResponse(
       if (hit) {
         const headers = new Headers(hit.headers);
         headers.set("x-patro-cache", "edge");
-        return new Response(hit.body, { status: hit.status, statusText: hit.statusText, headers });
+        const restored = new Response(hit.body, { status: hit.status, statusText: hit.statusText, headers });
+        return adaptCachedResponse(request, restored);
       }
     } catch {}
   }
 
   const durable = await readDurable(request, env, policy);
   if (durable) {
-    ctx.waitUntil(putEdge(request, durable.clone()));
-    return durable;
+    const adapted = await adaptCachedResponse(request, durable);
+    ctx.waitUntil(putEdge(request, adapted.clone()));
+    return adapted;
   }
 
   const response = await producer();
