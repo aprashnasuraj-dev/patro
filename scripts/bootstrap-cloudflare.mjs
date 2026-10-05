@@ -2,7 +2,11 @@ import { spawnSync } from "node:child_process";
 import { ensureRemoteD1Content } from "./ensure-d1-content.mjs";
 function run(command,args){const result=spawnSync(command,args,{stdio:"inherit",shell:process.platform==="win32"});if(result.status!==0)process.exit(result.status??1);}
 run("npm",["run","build"]); run("node",["scripts/generate-d1-migrations.mjs"]);
-const hasOverrides=Boolean(process.env.CF_D1_DATABASE_ID?.trim()||process.env.CF_D1_DATABASE_NAME?.trim()||process.env.CF_D1_PREVIEW_DATABASE_ID?.trim()||process.env.CF_KV_NAMESPACE_ID?.trim()||process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim());
+const hasOverrides=Boolean(
+  process.env.CF_D1_DATABASE_ID?.trim()||process.env.CF_D1_DATABASE_NAME?.trim()||process.env.CF_D1_PREVIEW_DATABASE_ID?.trim()||
+  process.env.CF_KV_NAMESPACE_ID?.trim()||process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim()||
+  process.env.CF_R2_BUCKET_NAME?.trim()||process.env.CF_R2_PREVIEW_BUCKET_NAME?.trim()||process.env.R2_BUCKET_NAME?.trim()
+);
 const config=hasOverrides?"wrangler.generated.jsonc":"wrangler.jsonc"; if(hasOverrides)run("node",["scripts/prepare-cloudflare-config.mjs"]);
 run("npx",["wrangler","d1","migrations","apply","DB","--remote","--config",config]);
 try{ensureRemoteD1Content({config});}catch(error){console.error(error instanceof Error?error.message:String(error));process.exit(1);}
