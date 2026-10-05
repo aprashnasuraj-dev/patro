@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { setPageTitle, toNepaliDigits } from "./title";
 
 type AnyRecord=Record<string,any>;
+const ON_THIS_DAY_REV="20261006-history-live-v4";
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 async function getJson<T>(url:string,signal?:AbortSignal):Promise<T>{const response=await fetch(url,{headers:{accept:"application/json"},credentials:"same-origin",signal});if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()}
 function text(value:unknown,fallback="—"){const out=String(value??"").trim();return out||fallback}
@@ -22,14 +23,14 @@ export function TimeMachinePage(){
 export function OnThisDayPage(){
  const[date,setDate]=useState(todayNepal),[data,setData]=useState<AnyRecord[]>([]),[error,setError]=useState(""),[loading,setLoading]=useState(true);
  useEffect(()=>{setPageTitle("आज इतिहासमा")},[]);
- useEffect(()=>{const controller=new AbortController();setLoading(true);setError("");getJson<{items?:AnyRecord[]}>(`/api/v1/on-this-day?date=${encodeURIComponent(date)}`,controller.signal).then(payload=>setData(payload.items||[])).catch(()=>setError("यो मितिको इतिहास लोड हुन सकेन।")).finally(()=>setLoading(false));return()=>controller.abort()},[date]);
+ useEffect(()=>{const controller=new AbortController();setLoading(true);setError("");getJson<{items?:AnyRecord[]}>(`/api/v1/on-this-day?date=${encodeURIComponent(date)}&rev=${ON_THIS_DAY_REV}`,controller.signal).then(payload=>setData(payload.items||[])).catch(()=>setError("यो मितिको इतिहास लोड हुन सकेन।")).finally(()=>setLoading(false));return()=>controller.abort()},[date]);
  return <main className="ap-page"><header className="ap-page-title"><span className="ap-eyebrow">इतिहास</span><h1>आज इतिहासमा</h1><p>चयन गरिएको मितिमा भएका अभिलेखित ऐतिहासिक घटना हेर्नुहोस्।</p></header><section className="ap-tool-section"><div className="ap-section-head"><div><h2>मिति अनुसार घटना</h2><p>{date}</p></div><label>मिति <input type="date" value={date} onChange={event=>setDate(event.target.value)}/></label></div>{loading?<div className="ap-state">इतिहास लोड हुँदैछ…</div>:error?<div className="ap-state ap-error">{error}</div>:data.length?<div className="ap-history-list">{data.map((item,index)=><article className="ap-history-card" key={item.id||item.key||index}><div className="ap-history-year">{itemYear(item)}</div><div><h2>{itemTitle(item)}</h2>{itemMeta(item)&&<small>{itemMeta(item)}</small>}<p>{itemBody(item)}</p></div></article>)}</div>:<div className="ap-state">यो मितिका लागि अभिलेख भेटिएन।</div>}</section></main>
 }
 
 type DateView={ad:string;bs:any;ns:any;tithi:any;panchang:any};
 function festivalDate(item:AnyRecord){return item.ad_date||item.fact_date||item.date||""}
 function festivalName(item:AnyRecord){return text(item.name_ne||item.title_ne||item.label_ne||item.value?.label_ne||item.title||item.name_en||item.key,"चाडपर्व")}
-function normalizeDate(payload:any,date:string):DateView{return {ad:payload?.calendars?.gregorian_ad||payload?.ad||payload?.date||date,bs:payload?.calendars?.bikram_sambat_detail||payload?.bs||{},ns:payload?.calendars?.nepal_sambat_detail||payload?.calendars?.nepal_sambat||payload?.nepal_sambat||{},tithi:payload?.tithi||payload?.panchang?.tithi||payload?.archive_panchang?.tithi||{},panchang:payload?.archive_panchang||payload?.panchang||{}}}
+function normalizeDate(payload:any,date:string):DateView{return {ad:payload?.calendars?.gregorian_ad||payload?.ad||payload?.date||date,bs:payload?.calendars?.bikram_sambat_detail||payload?.bs||{},ns:payload?.calendars?.nepal_sambat_detail||payload?.calendars?.nepal_sambat||payload?.nepal_sambat||{},tithi:payload?.tithi||payload?.panchang?.tithi||{},panchang:payload?.archive_panchang||payload?.panchang||{}}}
 function bsText(bs:any,date:string){return bs?.formatted||[bs?.day&&toNepaliDigits(bs.day),bs?.month_ne,bs?.year&&toNepaliDigits(bs.year)].filter(Boolean).join(" ")||date}
 function nsText(ns:any){if(typeof ns==="string")return ns;return ns?.formatted_ne||ns?.formatted||"नेपाल संवत्"}
 
