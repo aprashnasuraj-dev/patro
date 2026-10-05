@@ -50,14 +50,16 @@ function validIsoDate(value: string | null) {
 }
 
 function historyCacheDate(value: string | null) {
-  const date = validIsoDate(value) ? String(value) : todayNepal();
+  const date = value === null || value === "" ? todayNepal() : validIsoDate(value) ? String(value) : "";
+  if (!date) return "";
   const [, month, day] = date.split("-");
   return `${HISTORY_CACHE_YEAR}-${month}-${day}`;
 }
 
 function requestedHistoryDate(request: Request) {
   const value = new URL(request.url).searchParams.get("date");
-  return validIsoDate(value) ? String(value) : todayNepal();
+  if (value === null || value === "") return todayNepal();
+  return validIsoDate(value) ? String(value) : null;
 }
 
 function canonicalUrl(request: Request) {
@@ -67,7 +69,8 @@ function canonicalUrl(request: Request) {
     // History content is month/day based. Normalizing the year collapses an unbounded
     // sequence of annual URLs into exactly 366 durable objects while the response adapter
     // below restores the caller's requested year/date before returning JSON.
-    url.searchParams.set("date", historyCacheDate(url.searchParams.get("date")));
+    const normalized = historyCacheDate(url.searchParams.get("date"));
+    if (normalized) url.searchParams.set("date", normalized);
   }
   for (const key of [...url.searchParams.keys()]) {
     if (/^(?:utm_.+|fbclid|gclid)$/i.test(key)) url.searchParams.delete(key);
@@ -85,10 +88,12 @@ async function adaptCachedResponse(request: Request, response: Response) {
   if (url.pathname !== "/api/v1/on-this-day" || !response.ok) return response;
   const type = (response.headers.get("content-type") || "").toLowerCase();
   if (!type.includes("application/json")) return response;
+  const requestedDate = requestedHistoryDate(request);
+  if (!requestedDate) return response;
   try {
     const body = await response.clone().json() as Record<string, unknown>;
     if (!body || typeof body !== "object" || !("date" in body)) return response;
-    body.date = requestedHistoryDate(request);
+    body.date = requestedDate;
     const headers = new Headers(response.headers);
     headers.delete("content-length");
     return new Response(JSON.stringify(body), {
