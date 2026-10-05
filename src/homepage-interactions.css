@@ -16,18 +16,24 @@
 
 @media(max-width:1100px){
   .hp-nav-extra{display:none!important}
-  .rh-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 
 @media(max-width:720px){
-  .rh-month-actions{flex-wrap:wrap;justify-content:flex-end}
-  .hp-month-jump{width:100%;justify-content:flex-end;margin:0 0 2px}
-  .hp-month-jump label{min-width:0;flex:1}
-  .hp-month-jump select{width:100%;min-width:0}
+  .rh-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px}
+  .rh-actions a{padding:8px 4px}
+  .rh-actions a span{font-size:11px}
+  .rh-month-actions{flex-wrap:wrap;justify-content:flex-end;gap:6px}
+  .hp-month-jump{flex:1 1 190px;width:auto;justify-content:flex-end;margin:0}
+  .hp-month-jump label{min-width:72px;flex:1}
+  .hp-month-jump select{width:100%;min-width:0;height:36px}
 }
 
 @media(max-width:420px){
-  .rh-actions{grid-template-columns:1fr 1fr!important}
-  .rh-actions a{padding-inline:7px}
-  .rh-actions a span{font-size:12px}
+  .rh-actions{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  .rh-actions a{padding-inline:3px}
+  .rh-actions a span{font-size:10px}
+  .rh-actions a b{font-size:18px}
+  .hp-month-jump{flex-basis:170px}
+  .hp-month-jump label span{display:none}
+  .hp-month-jump select{height:34px;padding-left:7px;font-size:12px}
 }

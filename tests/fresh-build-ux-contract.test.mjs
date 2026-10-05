@@ -36,7 +36,9 @@ test("PWA install metadata and bounded offline warming are present",()=>{
   assert.equal(manifest.scope,"/");
   assert.equal(manifest.icons.length,3);
   assert.deepEqual(manifest.shortcuts.map(x=>x.url),["/","/tools/astro","/time-machine","/samudaya","/tools"]);
-  assert.ok(pwa.includes('register("/sw.js"'));
+  assert.ok(pwa.includes('navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`'),"service worker registration must stay revisioned to break stale browser caches");
+  assert.ok(pwa.includes('updateViaCache: "none"'),"service worker updates must bypass the browser HTTP cache");
+  assert.ok(pwa.includes('registration.update()'),"registered worker must be actively refreshed after load");
   assert.ok(pwa.includes('WARM_OFFLINE'));
   assert.ok(sw.includes("MAX_CALENDAR_RANGE_DAYS = 45"));
   assert.ok(sw.includes("MAX_CALENDAR_ENTRIES = 10"));

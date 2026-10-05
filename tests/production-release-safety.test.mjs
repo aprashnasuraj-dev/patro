@@ -57,7 +57,13 @@ test("offline module prewarming loads code only, not private records", () => {
   assert.match(pwa, /NepaliTools/);
   assert.match(pwa, /PatroToolsShell/);
   assert.match(pwa, /MyDiary/);
-  assert.doesNotMatch(pwa, /fetch\(|localStorage|getItem\(|indexedDB|\/api\//);
+  const start = pwa.indexOf("async function prewarmOfflineModules()");
+  const end = pwa.indexOf("async function clearStaleRuntimeCaches()");
+  assert.ok(start >= 0 && end > start, "offline prewarm function must remain isolated from cache-recovery logic");
+  const prewarm = pwa.slice(start, end);
+  assert.doesNotMatch(prewarm, /fetch\(|localStorage|getItem\(|indexedDB|\/api\//);
+  assert.match(pwa, /clearStaleRuntimeCaches/);
+  assert.match(pwa, /registration\.update\(\)/);
 });
 
 test("BS AD conversion remains local-first with optional online enrichment", () => {
