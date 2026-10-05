@@ -1,10 +1,45 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-const root=process.cwd(); const basePath=resolve(root,"wrangler.jsonc"); const outputPath=resolve(root,"wrangler.generated.jsonc"); const base=JSON.parse(await readFile(basePath,"utf8"));
+
+const root=process.cwd();
+const basePath=resolve(root,"wrangler.jsonc");
+const outputPath=resolve(root,"wrangler.generated.jsonc");
+const base=JSON.parse(await readFile(basePath,"utf8"));
+
 const configuredD1=Array.isArray(base.d1_databases)?base.d1_databases.find((row)=>row?.binding==="DB"):null;
-const d1Id=process.env.CF_D1_DATABASE_ID?.trim()||configuredD1?.database_id; const d1Name=process.env.CF_D1_DATABASE_NAME?.trim()||configuredD1?.database_name||"patro"; const kvId=process.env.CF_KV_NAMESPACE_ID?.trim(); const d1PreviewId=process.env.CF_D1_PREVIEW_DATABASE_ID?.trim(); const kvPreviewId=process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim();
-if (!d1Id) throw new Error("Cloudflare D1 DB binding is missing. Configure DB in wrangler.jsonc or set CF_D1_DATABASE_ID.");
-base.name="patro"; base.main="worker/optimized-entry.ts"; base.preview_urls=false; base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:["/*","!/assets/*"]};
+const configuredKv=Array.isArray(base.kv_namespaces)?base.kv_namespaces.find((row)=>row?.binding==="CACHE"):null;
+const configuredR2=Array.isArray(base.r2_buckets)?base.r2_buckets.find((row)=>row?.binding==="ARCHIVE"):null;
+
+const d1Id=process.env.CF_D1_DATABASE_ID?.trim()||configuredD1?.database_id;
+const d1Name=process.env.CF_D1_DATABASE_NAME?.trim()||configuredD1?.database_name||"patro";
+const d1PreviewId=process.env.CF_D1_PREVIEW_DATABASE_ID?.trim();
+const kvId=process.env.CF_KV_NAMESPACE_ID?.trim()||configuredKv?.id;
+const kvPreviewId=process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim()||configuredKv?.preview_id;
+const r2Bucket=process.env.CF_R2_BUCKET_NAME?.trim()||process.env.R2_BUCKET_NAME?.trim()||configuredR2?.bucket_name;
+const r2PreviewBucket=process.env.CF_R2_PREVIEW_BUCKET_NAME?.trim()||configuredR2?.preview_bucket_name;
+
+if(!d1Id)throw new Error("Cloudflare D1 DB binding is missing. Configure DB in wrangler.jsonc or set CF_D1_DATABASE_ID.");
+
+base.name="patro";
+base.main="worker/optimized-entry.ts";
+base.preview_urls=false;
+base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:["/*","!/assets/*"]};
 base.d1_databases=[{binding:"DB",database_name:d1Name,database_id:d1Id,migrations_dir:"cloudflare/d1/schema-migrations",...(d1PreviewId?{preview_database_id:d1PreviewId}:{})}];
-if (kvId) base.kv_namespaces=[{binding:"CACHE",id:kvId,...(kvPreviewId?{preview_id:kvPreviewId}:{})}]; else delete base.kv_namespaces;
-await writeFile(outputPath,JSON.stringify(base,null,2)+"\n","utf8"); console.log(`Generated Worker-only wrangler.generated.jsonc with D1=${d1Name}; KV cache ${kvId?"enabled":"optional/not configured"}.`);
+
+const otherKv=Array.isArray(base.kv_namespaces)?base.kv_namespaces.filter((row)=>row?.binding!=="CACHE"):[];
+if(kvId)base.kv_namespaces=[...otherKv,{binding:"CACHE",id:kvId,...(kvPreviewId?{preview_id:kvPreviewId}:{})}];
+else if(otherKv.length)base.kv_namespaces=otherKv;
+else delete base.kv_namespaces;
+
+const otherR2=Array.isArray(base.r2_buckets)?base.r2_buckets.filter((row)=>row?.binding!=="ARCHIVE"):[];
+if(r2Bucket)base.r2_buckets=[...otherR2,{binding:"ARCHIVE",bucket_name:r2Bucket,...(r2PreviewBucket?{preview_bucket_name:r2PreviewBucket}:{})}];
+else if(otherR2.length)base.r2_buckets=otherR2;
+else delete base.r2_buckets;
+
+base.vars={
+  ...(base.vars||{}),
+  PUBLIC_REFERENCE_CACHE_VERSION:process.env.PUBLIC_REFERENCE_CACHE_VERSION?.trim()||base.vars?.PUBLIC_REFERENCE_CACHE_VERSION||"public-reference-v1"
+};
+
+await writeFile(outputPath,JSON.stringify(base,null,2)+"\n","utf8");
+console.log(`Generated wrangler.generated.jsonc with D1=${d1Name}; KV=${kvId?"enabled":"not configured"}; R2=${r2Bucket?`enabled (${r2Bucket})`:"not configured"}.`);
