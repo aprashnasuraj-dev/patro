@@ -9,11 +9,13 @@ type D1Like = {
 
 type R2ObjectBodyLike = { text(): Promise<string> };
 type R2Like = { get(key: string): Promise<R2ObjectBodyLike | null> };
-type Env = { DB?: D1Like; ARCHIVE?: R2Like };
+type AssetFetcherLike = { fetch(input: Request): Promise<Response> };
+type Env = { DB?: D1Like; ARCHIVE?: R2Like; ASSETS?: AssetFetcherLike };
 
 const HISTORY_RELEASE_MARKER = "release:on_this_day_events";
 const EXPECTED_HISTORY_ROWS = 5454;
 const HISTORY_R2_PREFIX = "datasets/on-this-day/v1";
+const HISTORY_ASSET_PREFIX = "/data/on-this-day";
 
 function validDate(value: string) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -74,11 +76,8 @@ function response(body: unknown, status = 200, backend = "cloudflare-native-hist
   });
 }
 
-async function queryR2Records(archive: R2Like, month: number, day: number) {
-  const key = `${HISTORY_R2_PREFIX}/month-${String(month).padStart(2, "0")}.json`;
-  const object = await archive.get(key);
-  if (!object) return null;
-  const doc = JSON.parse(await object.text()) as {
+function parseArchiveMonth(text: string, month: number, day: number) {
+  const doc = JSON.parse(text) as {
     schema?: unknown;
     table?: unknown;
     month?: unknown;
@@ -90,6 +89,26 @@ async function queryR2Records(archive: R2Like, month: number, day: number) {
   const raw = doc.days[String(day).padStart(2, "0")];
   if (!Array.isArray(raw)) return [] as Record<string, unknown>[];
   return raw.filter((row): row is Record<string, unknown> => Boolean(row) && typeof row === "object");
+}
+
+async function queryR2Records(archive: R2Like, month: number, day: number) {
+  const key = `${HISTORY_R2_PREFIX}/month-${String(month).padStart(2, "0")}.json`;
+  const object = await archive.get(key);
+  if (!object) return null;
+  return parseArchiveMonth(await object.text(), month, day);
+}
+
+async function queryAssetRecords(request: Request, assets: AssetFetcherLike, month: number, day: number) {
+  const url = new URL(request.url);
+  url.pathname = `${HISTORY_ASSET_PREFIX}/month-${String(month).padStart(2, "0")}.json`;
+  url.search = "";
+  url.hash = "";
+  const asset = await assets.fetch(new Request(url.toString(), {
+    method: "GET",
+    headers: { accept: "application/json" },
+  }));
+  if (!asset.ok) return null;
+  return parseArchiveMonth(await asset.text(), month, day);
 }
 
 async function verifiedIndexedArchive(db: D1Like) {
@@ -125,10 +144,12 @@ async function queryRows(db: D1Like, month: number, day: number) {
 }
 
 /**
- * On This Day endpoint with a quota-safe source hierarchy:
- *   R2 monthly archive -> D1 indexed fallback.
- * The outer quota cache adds Edge Cache -> KV -> R2 day-response caching ahead of this
- * handler, so after the one-time annual prime normal traffic does not touch either source.
+ * On This Day endpoint with an availability-safe source hierarchy:
+ *   R2 monthly archive -> packaged static monthly archive -> D1 indexed fallback.
+ * The packaged archive is generated from the same canonical 5,454-row source at build time,
+ * so Cloudflare R2 IAM or D1 daily quota exhaustion cannot take this static feature offline.
+ * The outer quota cache still adds Edge Cache -> KV -> R2 day-response caching ahead of this
+ * handler, keeping normal repeat traffic away from all origin sources.
  */
 export async function fastHistoryResponse(request: Request, env: Env) {
   if (request.method !== "GET" || new URL(request.url).pathname !== "/api/v1/on-this-day") return null;
@@ -139,7 +160,7 @@ export async function fastHistoryResponse(request: Request, env: Env) {
 
   const [, month, day] = date.split("-").map(Number);
 
-  // R2 is the primary public archive. It is independent of the D1 daily read/write quota.
+  // R2 is the preferred public archive. It is independent of the D1 daily read/write quota.
   if (env.ARCHIVE) {
     try {
       const r2Rows = await queryR2Records(env.ARCHIVE, month, day);
@@ -154,7 +175,27 @@ export async function fastHistoryResponse(request: Request, env: Env) {
         }, 200, "cloudflare-r2-history");
       }
     } catch {
-      // Fall through to D1 only when the R2 object is absent/corrupt/unavailable.
+      // Continue to the immutable packaged copy if the R2 binding/object is unavailable.
+    }
+  }
+
+  // Every production build packages the same versioned monthly archive into static assets.
+  // This is the availability floor: it requires neither an R2 binding nor a D1 query.
+  if (env.ASSETS) {
+    try {
+      const assetRows = await queryAssetRecords(request, env.ASSETS, month, day);
+      if (assetRows !== null) {
+        const records = sortRecords(assetRows.filter(isPublished));
+        return response({
+          ok: true,
+          date,
+          count: records.length,
+          items: records,
+          source: "Packaged On This Day archive",
+        }, 200, "cloudflare-asset-history");
+      }
+    } catch {
+      // Fall through to D1 only if the packaged archive is unexpectedly unavailable/corrupt.
     }
   }
 
