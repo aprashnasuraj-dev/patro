@@ -9,6 +9,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { adToBs, bsToAd, daysInBsMonth } from "../packages/core/src";
 import { BS_MONTHS, calendarTitle, pageTitle, toNepaliDigits } from "./title";
 import { l, useUiLanguage } from "./useUiLanguage";
+import { staticCalendarDay, staticCalendarEventsForDays, staticCalendarMonthBundle } from "./calendarStaticBundle";
 import "./reference-home.css";
 
 type BsDate = { year: number; month: number; day: number; month_ne?: string };
@@ -34,7 +35,6 @@ function festivalName(item: Festival, language: "ne" | "en") {
   return item.name_ne || item.title_ne || item.label_ne || item.value?.label_ne || item.title || item.name_en || fromKey || "चाडपर्व";
 }
 function isHoliday(item: Festival) {
-  // Holiday rows mark public closures as effect "closed" (some also say "holiday" / बिदा in the name).
   if (String(item.effect || "").toLowerCase() === "closed") return true;
   const text = `${item.effect || ""} ${item.status || ""} ${item.name_ne || ""} ${item.name_en || ""}`.toLowerCase();
   return text.includes("holiday") || text.includes("बिदा") || text.includes("छुट्टी");
@@ -59,7 +59,7 @@ function normalizeDay(row: any): CalendarDay | null {
 }
 function mergeDays(local: CalendarDay[], remote: CalendarDay[]) {
   if (!remote.length) return local;
-  if (!local.length) return remote; // months outside the built-in converter: trust the archive
+  if (!local.length) return remote;
   const byDate = new Map(remote.map((row) => [row.ad, row]));
   return local.map((row) => {
     const richer = byDate.get(row.ad);
@@ -72,37 +72,45 @@ async function getJson<T>(url: string, signal?: AbortSignal): Promise<T> {
   return response.json();
 }
 async function loadMonth(year: number, month: number, fallback: CalendarDay[], signal: AbortSignal) {
+  const staticBundle = await staticCalendarMonthBundle(year, month, signal);
+  if (staticBundle?.days?.length) {
+    const rows = staticBundle.days.map(normalizeDay).filter(Boolean) as CalendarDay[];
+    return mergeDays(fallback, rows);
+  }
   try {
     const body = await getJson<any>(`/api/v1/calendar/${year}/${month}?calendar=bs`, signal);
     const rows = (body?.days || []).map(normalizeDay).filter(Boolean) as CalendarDay[];
     return mergeDays(fallback, rows);
   } catch { return fallback; }
 }
-async function loadEvents(days: CalendarDay[], signal: AbortSignal) {
-  const years = [...new Set(days.map((day) => Number(day.ad.slice(0, 4))).filter(Boolean))];
-  const results = await Promise.all(years.flatMap((year) => [
-    getJson<{ items?: Festival[] }>(`/api/v1/festivals?year=${year}`, signal).catch(() => ({ items: [] })),
-    getJson<{ items?: Festival[] }>(`/api/v1/holidays?year=${year}`, signal).catch(() => ({ items: [] })),
-  ]));
+function uniqueEvents(items: Festival[]) {
   const seen = new Set<string>();
-  return results.flatMap((row) => row.items || []).filter((item) => {
+  return items.filter((item) => {
     const key = `${festivalDate(item)}|${item.name_ne || item.name_en || item.title || item.key || ""}|${item.effect || ""}`;
     if (!festivalDate(item) || seen.has(key)) return false;
     seen.add(key); return true;
   });
 }
+async function loadEvents(days: CalendarDay[], signal: AbortSignal) {
+  const staticEvents = await staticCalendarEventsForDays(days, signal);
+  if (staticEvents) return uniqueEvents(staticEvents as Festival[]);
+  const years = [...new Set(days.map((day) => Number(day.ad.slice(0, 4))).filter(Boolean))];
+  const results = await Promise.all(years.flatMap((year) => [
+    getJson<{ items?: Festival[] }>(`/api/v1/festivals?year=${year}`, signal).catch(() => ({ items: [] })),
+    getJson<{ items?: Festival[] }>(`/api/v1/holidays?year=${year}`, signal).catch(() => ({ items: [] })),
+  ]));
+  return uniqueEvents(results.flatMap((row) => row.items || []));
+}
 function panchangTithi(day?: CalendarDay) {
   return day?.panchang?.tithi?.ne || day?.panchang?.tithi?.name_ne || day?.panchang?.tithi_name_ne || "";
 }
 const AD_MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-/** Nepal Sambat date parts for a cell: [month, paksha, tithi number], e.g. ["बछला", "थ्वः", "७"]. */
 function nsParts(value: any, language: "ne" | "en"): string[] {
   if (!value || typeof value !== "object" || !value.month) return [];
   const n = value.tithi_number || value.tithi_ordinal;
   if (language === "en") return [value.month?.roman || "", value.paksha || "", n ? String(n) : ""];
   return [value.month?.dev || "", value.paksha_dev || "", n ? toNepaliDigits(n) : ""];
 }
-/** Compact Nepal Sambat date, e.g. "बछला थ्वः ७". */
 function nsShort(value: any, language: "ne" | "en") { return nsParts(value, language).filter(Boolean).join(" "); }
 function nsText(value: any) {
   if (!value) return "";
@@ -136,18 +144,34 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
 
   useEffect(() => {
     const controller = new AbortController();
-    getJson<any>(`/api/v1/sync?date=${today}`, controller.signal).then((body) => {
-      const p = body?.archive_panchang || body?.panchang || {};
-      const t = body?.tithi || p?.tithi || {};
-      const rawBs = body?.calendars?.bikram_sambat_detail || body?.bs || localToday;
-      setTodayView({
-        bs: rawBs ? decorateBs(rawBs) : localToday,
-        ns: nsText(body?.calendars?.nepal_sambat_detail || body?.calendars?.nepal_sambat || body?.nepal_sambat),
-        tithi: t?.ne || t?.name_ne || t?.tithi_name_ne || "",
-        sunrise: p?.sunrise || "",
-        sunset: p?.sunset || "",
-      });
-    }).catch(() => {});
+    (async () => {
+      const local = await staticCalendarDay(today, controller.signal);
+      if (local) {
+        const p = local.panchang || {};
+        const t = p?.tithi || {};
+        setTodayView({
+          bs: local.bs ? decorateBs(local.bs) : localToday,
+          ns: nsText(local.ns),
+          tithi: t?.ne || t?.name_ne || p?.tithi_name_ne || "",
+          sunrise: p?.sunrise || "",
+          sunset: p?.sunset || "",
+        });
+        return;
+      }
+      try {
+        const body = await getJson<any>(`/api/v1/sync?date=${today}`, controller.signal);
+        const p = body?.archive_panchang || body?.panchang || {};
+        const t = body?.tithi || p?.tithi || {};
+        const rawBs = body?.calendars?.bikram_sambat_detail || body?.bs || localToday;
+        setTodayView({
+          bs: rawBs ? decorateBs(rawBs) : localToday,
+          ns: nsText(body?.calendars?.nepal_sambat_detail || body?.calendars?.nepal_sambat || body?.nepal_sambat),
+          tithi: t?.ne || t?.name_ne || t?.tithi_name_ne || "",
+          sunrise: p?.sunrise || "",
+          sunset: p?.sunset || "",
+        });
+      } catch {}
+    })();
     return () => controller.abort();
   }, [today, localToday]);
 
@@ -170,7 +194,6 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   }, [events]);
   const selectedDay = days.find((day) => day.ad === selected);
   const selectedEvents = eventMap.get(selected) || [];
-  // Multi-day holidays (e.g. बडादशैं बिदा) appear once per day in the data — list each name once.
   const upcoming = [...events].filter((item) => festivalDate(item) >= today).sort((a, b) => festivalDate(a).localeCompare(festivalDate(b)))
     .filter((item, index, list) => list.findIndex((other) => festivalName(other, language) === festivalName(item, language)) === index).slice(0, 6);
   const firstOffset = days[0] ? new Date(`${days[0].ad}T00:00:00Z`).getUTCDay() : 0;
