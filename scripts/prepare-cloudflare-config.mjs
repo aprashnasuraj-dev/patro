@@ -10,7 +10,7 @@ const kvId=process.env.CF_KV_NAMESPACE_ID?.trim(),kvPreviewId=process.env.CF_KV_
 const r2Bucket=process.env.CF_R2_BUCKET_NAME?.trim()||configuredR2?.bucket_name||"patro";
 const r2PreviewBucket=process.env.CF_R2_PREVIEW_BUCKET_NAME?.trim()||configuredR2?.preview_bucket_name;
 if(!d1Id)throw new Error("Cloudflare D1 DB binding is missing. Configure DB in wrangler.jsonc or set CF_D1_DATABASE_ID.");
-base.name="patro";base.main="worker/calendar-tier-entry.ts";base.preview_urls=false;base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:["/*","!/assets/*"]};
+base.name="patro";base.main="worker/connected-entry.ts";base.preview_urls=false;base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:["/*","!/assets/*"]};
 base.d1_databases=[{binding:"DB",database_name:d1Name,database_id:d1Id,migrations_dir:"cloudflare/d1/schema-migrations",...(d1PreviewId?{preview_database_id:d1PreviewId}:{})}];
 if(kvId)base.kv_namespaces=[{binding:"CACHE",id:kvId,...(kvPreviewId?{preview_id:kvPreviewId}:{})}];else delete base.kv_namespaces;
 base.r2_buckets=[{binding:"CALENDAR_BACKUP",bucket_name:r2Bucket,...(r2PreviewBucket?{preview_bucket_name:r2PreviewBucket}:{})}];
