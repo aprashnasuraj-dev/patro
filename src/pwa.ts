@@ -9,7 +9,6 @@ const OFFLINE_MODULE_LOADERS = [
 
 const SW_REVISION = "2026-10-05-runtime-recovery-v3";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
-const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
   "aafnai-shell-",
   "aafnai-calendar-",
@@ -58,24 +57,8 @@ function askWorkerToWarm(registration: ServiceWorkerRegistration) {
   worker?.postMessage({ type: "WARM_OFFLINE" });
 }
 
-function installControllerRefresh() {
-  let refreshing = false;
-  navigator.serviceWorker.addEventListener("controllerchange", () => {
-    if (refreshing) return;
-    try {
-      if (sessionStorage.getItem(RELOAD_EPOCH_KEY) === SW_REVISION) return;
-      sessionStorage.setItem(RELOAD_EPOCH_KEY, SW_REVISION);
-    } catch {
-      // Session storage is optional; one guarded reload is still safe.
-    }
-    refreshing = true;
-    window.location.reload();
-  });
-}
-
 export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
-  installControllerRefresh();
 
   window.addEventListener("load", () => {
     navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`, { scope: "/", updateViaCache: "none" }).then(async (registration) => {
