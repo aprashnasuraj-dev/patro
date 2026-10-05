@@ -13,6 +13,7 @@ test("Patro UI connectivity routes are backed by the production Worker entrypoin
   const worker = read("worker/index.ts");
   const publicApi = read("worker/public-api.ts");
   const shim = read("worker/connected-entry.ts");
+  const optimized = read("worker/optimized-entry.ts");
   const wranglerJson = read("wrangler.jsonc");
 
   // Current browser-side contracts. If they change, the Worker must change with them.
@@ -40,7 +41,8 @@ test("Patro UI connectivity routes are backed by the production Worker entrypoin
   assert.ok(shim.includes('response.status !== 404'), "native Cloudflare routes must stay first choice");
   assert.ok(shim.includes('request.method !== "GET" && request.method !== "HEAD"'), "compatibility bridge must stay read-only");
   assert.ok(!shim.includes('path.startsWith("/api/v1/")'), "do not restore a generic /api/v1 catch-all proxy");
+  assert.ok(optimized.includes('import connectedWorker from "./connected-entry"'), "optimized entry must preserve the connected Worker as its base runtime");
 
-  assert.match(wranglerJson, /"main"\s*:\s*"worker\/connected-entry\.ts"/);
+  assert.match(wranglerJson, /"main"\s*:\s*"worker\/optimized-entry\.ts"/);
   assert.match(wranglerJson, /"name"\s*:\s*"patro"/);
 });
