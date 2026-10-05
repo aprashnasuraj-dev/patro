@@ -48,8 +48,10 @@ export function VoiceTypingTool() {
     : dictation.mode === "browser"
       ? `${meta.short} · Live recognition`
       : dictation.mode === "server"
-        ? `${meta.short} · Recorded recognition`
-        : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन";
+        ? `${meta.short} · Accurate server transcription`
+        : dictation.capabilitiesChecked
+          ? "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन"
+          : "Voice service जाँच हुँदैछ…";
 
   function chooseLanguage(next: DictationLanguage) {
     if (next === language || dictation.processing) return;
@@ -79,7 +81,7 @@ export function VoiceTypingTool() {
   return (
     <ToolPage
       title="आवाजबाट टाइपिङ · Voice to Text"
-      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Live recognition उपलब्ध नभए छोटो recording बाट पनि पाठ तयार गर्न सकिन्छ।"
+      description="नेपाली वा English छानेर बोलाइलाई सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Live recognition वा अझ भरपर्दो recorded server transcription मध्ये उपलब्ध विकल्प छान्न सकिन्छ।"
     >
       <section className="patro-tool-card voice-typing-card">
         <div className="voice-language-panel">
@@ -112,12 +114,47 @@ export function VoiceTypingTool() {
           </div>
         </div>
 
+        {(dictation.browserAvailable || dictation.serverAvailable) ? (
+          <div className="voice-engine-panel">
+            <div>
+              <span className="tool-badge">पहिचान विधि · Recognition mode</span>
+              <p className="tool-muted">Live mode तुरुन्तै लेख्छ। Server mode छोटो recording रोकिएपछि उच्च-गुणस्तर transcription तयार गर्छ।</p>
+            </div>
+            <div className="voice-engine-picker" role="group" aria-label="Voice recognition engine">
+              {dictation.browserAvailable ? (
+                <button
+                  type="button"
+                  className={dictation.mode === "browser" ? "is-active" : ""}
+                  aria-pressed={dictation.mode === "browser"}
+                  onClick={() => dictation.selectMode("browser")}
+                  disabled={dictation.listening || dictation.processing}
+                >
+                  <strong>⚡ Live</strong>
+                  <small>Browser recognition</small>
+                </button>
+              ) : null}
+              {dictation.serverAvailable ? (
+                <button
+                  type="button"
+                  className={dictation.mode === "server" ? "is-active" : ""}
+                  aria-pressed={dictation.mode === "server"}
+                  onClick={() => dictation.selectMode("server")}
+                  disabled={dictation.listening || dictation.processing}
+                >
+                  <strong>🎯 Accurate</strong>
+                  <small>Server transcription</small>
+                </button>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
+
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
             <span className="tool-badge" aria-live="polite">{modeText}</span>
             <p>{meta.punctuation}</p>
             {dictation.mode === "server" ? (
-              <p className="tool-muted">Stop थिचेपछि रेकर्ड गरिएको आवाजलाई पाठमा बदलिन्छ। एक पटकमा अधिकतम 60 सेकेन्ड बोल्न सकिन्छ।</p>
+              <p className="tool-muted">Stop थिचेपछि recording server मा transcription का लागि पठाइन्छ। एक पटकमा अधिकतम 60 सेकेन्ड बोल्न सकिन्छ।</p>
             ) : null}
           </div>
           {!dictation.listening ? (
@@ -175,7 +212,7 @@ export function VoiceTypingTool() {
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
         <p className="tool-muted">
-          Live mode मा Patro ले audio संग्रह गर्दैन। Recorded recognition प्रयोग हुँदा छोटो recording पाठमा बदल्न पठाइन्छ र Patro ले recording संग्रह गर्दैन।
+          Live mode मा Patro ले audio संग्रह गर्दैन। Server transcription प्रयोग हुँदा छोटो recording transcription का लागि मात्र पठाइन्छ; Patro ले recording संग्रह गर्दैन।
         </p>
       </ToolResult>
     </ToolPage>
