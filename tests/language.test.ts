@@ -71,6 +71,9 @@ describe('voice + tts helpers', () => {
     const parts = splitForSpeech('पहिलो वाक्य। दोस्रो वाक्य? तेस्रो!');
     expect(parts).toEqual(['पहिलो वाक्य।', 'दोस्रो वाक्य?', 'तेस्रो!']);
     expect(splitForSpeech('पहिलो लाइन\nदोस्रो लाइन')).toEqual(['पहिलो लाइन', 'दोस्रो लाइन']);
+    const defaultChunks = splitForSpeech('नेपाली आवाज परीक्षणका लागि यो लामो वाक्य हो '.repeat(8).trim());
+    expect(defaultChunks.length).toBeGreaterThan(1);
+    expect(defaultChunks.every((part) => part.length <= 140)).toBe(true);
     const long = splitForSpeech('शब्द '.repeat(30).trim(), 20);
     expect(long.length).toBeGreaterThan(1);
     expect(long.every((part) => part.length <= 20 && part.trim() === part)).toBe(true);
