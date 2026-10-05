@@ -1,12 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { neDigits } from "../nepaliDate";
 
 type Lang = "ne" | "en";
 type Moment = { title: string; summary: string; year: string; href: string; importance: number; highlight: boolean };
 
+const HISTORY_ROTATION_MS = 8500;
+const HISTORY_REFRESH_TOKEN = "20261005-history-v2";
 const pick = (o: any, keys: string[]) => { for (const k of keys) { const v = o?.[k]; if (typeof v === "string" && v.trim()) return v.trim(); } return ""; };
 
 function toMoment(row: any, language: Lang): Moment | null {
+  if (row?.published === false || row?.published === 0 || String(row?.published ?? "true").toLowerCase() === "false") return null;
   const title = language === "en" ? pick(row, ["title_en", "title", "title_ne", "event_en", "event_ne"]) : pick(row, ["title_ne", "title", "event_ne", "title_en", "event_en"]);
   if (!title) return null;
   const summary = language === "en" ? pick(row, ["summary_en", "summary", "description", "event_en", "summary_ne"]) : pick(row, ["summary_ne", "summary", "description_ne", "description", "event_ne", "summary_en"]);
@@ -23,7 +26,7 @@ function toMoment(row: any, language: Lang): Moment | null {
   };
 }
 
-/** Home history uses only the exact Gregorian month/day from the D1 On This Day archive. */
+/** Home history uses the exact Gregorian month/day from the D1 On This Day archive. */
 export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd: string }) {
   const [items, setItems] = useState<Moment[]>([]);
   const [index, setIndex] = useState(0);
@@ -33,23 +36,26 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
   useEffect(() => {
     const controller = new AbortController();
     setLoaded(false);
-    fetch(`/api/v1/on-this-day?date=${encodeURIComponent(todayAd)}`, { signal: controller.signal, headers: { accept: "application/json" } })
+    fetch(`/api/v1/on-this-day?date=${encodeURIComponent(todayAd)}&fresh=${HISTORY_REFRESH_TOKEN}`, {
+      signal: controller.signal,
+      cache: "no-store",
+      headers: { accept: "application/json" },
+    })
       .then((r) => r.ok ? r.json() : Promise.reject(new Error("history_unavailable")))
       .then((payload) => {
         const list = (payload?.items || []).map((row: any) => toMoment(row, language)).filter(Boolean) as Moment[];
         list.sort((a, b) => Number(b.highlight) - Number(a.highlight) || b.importance - a.importance || b.year.localeCompare(a.year));
-        if (!controller.signal.aborted) { setItems(list.slice(0, 10)); setIndex(0); setLoaded(true); }
+        if (!controller.signal.aborted) { setItems(list.slice(0, 12)); setIndex(0); setLoaded(true); }
       })
       .catch(() => { if (!controller.signal.aborted) { setItems([]); setLoaded(true); } });
     return () => controller.abort();
   }, [todayAd, language]);
 
-  const reduceMotion = useMemo(() => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches, []);
   useEffect(() => {
-    if (items.length < 2 || paused || reduceMotion) return;
-    const timer = window.setInterval(() => setIndex((i) => (i + 1) % items.length), 9000);
+    if (items.length < 2 || paused) return;
+    const timer = window.setInterval(() => setIndex((i) => (i + 1) % items.length), HISTORY_ROTATION_MS);
     return () => window.clearInterval(timer);
-  }, [items.length, paused, reduceMotion]);
+  }, [items.length, paused]);
 
   const l = (ne: string, en: string) => (language === "en" ? en : ne);
   const go = (step: number) => setIndex((i) => (i + step + items.length) % items.length);
@@ -60,7 +66,7 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
       <h2>{l("आजकै मितिका घटना", "Events from this date")}</h2></div></header>
     {!loaded ? <p className="rh-muted">{l("इतिहास अभिलेख खोल्दैछ…", "Loading the historical archive…")}</p> : items.length ? (() => {
       const item = items[index % items.length];
-      return <article className="hx-item" aria-live={paused ? "polite" : "off"} key={index}>
+      return <article className="hx-item" aria-live={paused ? "polite" : "off"} key={`${index}-${item.year}-${item.title}`}>
         {item.year ? <span className="hx-year">{item.year}</span> : null}
         <h3>{item.title}</h3>
         {item.summary ? <p>{item.summary}</p> : null}
