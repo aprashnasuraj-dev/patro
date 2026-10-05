@@ -14,7 +14,10 @@ export function detectSpeechLanguage(text: string): SpeechLanguage {
   return devanagari >= Math.max(1, latin) ? 'ne-NP' : 'en-US';
 }
 
-export function splitForSpeech(text: string, max = 180): string[] {
+// 140 chars follows the upper bound recommended by the validated Nepali TTS
+// reference models in the project Drive and also avoids long-utterance cut-offs
+// seen in some browser speech engines.
+export function splitForSpeech(text: string, max = 140): string[] {
   if (max < 8) max = 8;
   const normalized = text
     .normalize('NFC')
