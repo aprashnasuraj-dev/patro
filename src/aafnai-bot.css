@@ -1,0 +1,46 @@
+/* Unified floating Aafnai Bot. Loaded after the legacy Jyotish assistant styles. */
+.jy-ai-fab{
+  z-index:190;
+  width:auto;
+  min-width:58px;
+  padding:0 15px 0 11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:22px;
+  pointer-events:auto!important;
+  touch-action:manipulation;
+  isolation:isolate;
+}
+.jy-ai-fab>span{
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  border-radius:11px;
+  background:rgba(255,255,255,.13);
+  font:900 21px/1 "Mukta","Noto Sans Devanagari",system-ui,sans-serif;
+}
+.jy-ai-fab>em{
+  display:block;
+  margin:0;
+  white-space:nowrap;
+  font:800 13px/1 "Mukta","Noto Sans Devanagari",Inter,system-ui,sans-serif;
+  font-style:normal;
+  letter-spacing:.01em;
+}
+.jy-ai-fab>b{right:-5px;top:-6px;min-width:27px}
+.jy-ai-panel{z-index:189;pointer-events:auto!important}
+
+@media(max-width:700px){
+  .jy-ai-fab{
+    width:54px;
+    min-width:54px;
+    padding:0;
+    gap:0;
+    border-radius:18px;
+  }
+  .jy-ai-fab>span{width:34px;height:34px}
+  .jy-ai-fab>em{display:none}
+}
