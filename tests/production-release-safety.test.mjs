@@ -121,7 +121,7 @@ test("homepage prerender first paint is branded and calendar-first rather than a
 
 test("production build does not publish source maps or obsolete service bindings", () => {
   assert.match(vite, /sourcemap:\s*false/);
-  assert.match(wrangler, /"main"\s*:\s*"worker\/connected-entry\.ts"/);
+  assert.match(wrangler, /"main"\s*:\s*"worker\/optimized-entry\.ts"/);
   assert.match(wrangler, /"binding"\s*:\s*"DB"/);
   assert.doesNotMatch(wrangler, /PATRO_API|pages_build_output_dir/i);
   assert.doesNotMatch(connectedWorker, /PATRO_API/);
