@@ -1,4 +1,7 @@
+import { aiEnvOverlay } from "./admin-console/ai";
+
 type SpeechEnv = Record<string, unknown> & {
+  DB?: any;
   Groq_API?: string;
   GROQ_API_KEY?: string;
   GROQ_KEY?: string;
@@ -22,6 +25,16 @@ function json(body: unknown, status = 200) {
 function groqKey(env: SpeechEnv) {
   const candidates = [env.Groq_API, env.GROQ_API_KEY, env.GROQ_KEY];
   return candidates.find((value): value is string => typeof value === "string" && value.trim().length > 0)?.trim() || "";
+}
+
+async function effectiveSpeechEnv(env: SpeechEnv): Promise<SpeechEnv> {
+  if (groqKey(env) || !env.DB) return env;
+  try {
+    const overlay = await aiEnvOverlay(env as any);
+    return Object.keys(overlay).length ? { ...env, ...overlay } : env;
+  } catch {
+    return env;
+  }
 }
 
 function languageCode(value: FormDataEntryValue | null) {
@@ -48,7 +61,8 @@ async function transcribe(request: Request, env: SpeechEnv) {
     return json({ error: "audio_too_large", maxBytes: MAX_AUDIO_BYTES }, 413);
   }
 
-  const key = groqKey(env);
+  const effectiveEnv = await effectiveSpeechEnv(env);
+  const key = groqKey(effectiveEnv);
   if (!key) return json({ error: "speech_backend_unconfigured" }, 503);
 
   let form: FormData;
@@ -112,8 +126,9 @@ async function transcribe(request: Request, env: SpeechEnv) {
 export async function speechApiResponse(request: Request, env: SpeechEnv): Promise<Response | null> {
   const path = new URL(request.url).pathname;
   if (path === "/api/nepali/speech-capabilities" && request.method === "GET") {
+    const effectiveEnv = await effectiveSpeechEnv(env);
     return json({
-      stt: { browser: true, server: !!groqKey(env), model: GROQ_STT_MODEL },
+      stt: { browser: true, server: !!groqKey(effectiveEnv), model: GROQ_STT_MODEL },
       tts: { browser: true, server: false, locale: "ne-NP" },
     });
   }
