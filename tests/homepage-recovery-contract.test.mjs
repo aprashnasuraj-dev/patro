@@ -58,5 +58,10 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(importWorkflow.includes('D1_DATABASE_NAME: "patro"')&&!importWorkflow.includes("PASTE_YOUR_D1_DATABASE_ID"),"manual D1 import workflow must target the production database without placeholders");
   assert.ok(releaseGate.includes("Ensure On This Day D1 snapshot")&&releaseGate.includes("ensure-history-d1.mjs"),"release gate must fingerprint and synchronize the On This Day archive only when its source changes");
   assert.ok(historySync.includes("--table=on_this_day_events")&&historySync.includes("migration_state")&&releaseGate.includes("CLOUDFLARE_D1_DATABASE_ID"),"release gate must keep the public On This Day archive recoverable without redundant deployment writes");
+  assert.ok(historySync.includes("TRANSFORM_VERSION")&&!historySync.includes("const IMPORTER ="),"history fingerprint must not change merely because the generic D1 importer implementation changes");
+  assert.ok(historySync.includes("ALLOW_D1_QUOTA_DEFER")&&historySync.includes("isDailyQuotaError")&&releaseGate.includes('ALLOW_D1_QUOTA_DEFER: "1"'),"daily D1 quota exhaustion must defer history synchronization without blocking unrelated validated UI/static deployment");
+  for(const marker of ["चन्द्र मण्डल · Nepal Sambat","लुङ्दर · ल्होसार पात्रो","माघीको आगो · थारू पात्रो","मधुबनी वर्ष · मिथिला पात्रो","साकेला सिली · किरात पात्रो","हिलाल · हिजरी पात्रो र नमाज समय","समुदाय चक्र · नेपालका सात पात्रो"]){
+    assert.ok(releaseGate.includes(marker),`post-deploy smoke test lost Community Patro marker: ${marker}`);
+  }
   assert.ok(releaseGate.includes("Smoke test deployed Cloudflare runtime")&&releaseGate.includes("/api/v1/on-this-day")&&releaseGate.includes("/api/v1/time-machine?limit=800"),"release must verify critical live Cloudflare routes after deploy");
 });
