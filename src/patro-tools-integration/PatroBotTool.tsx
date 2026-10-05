@@ -1,18 +1,8 @@
 import { FormEvent, useState } from "react";
-import { parseIntent } from "@/patro-tools/bots/intents";
-import { reply } from "@/patro-tools/bots/responder";
-import { addDays } from "@/patro-tools/core/astro";
-import { bsAdapter } from "./bsAdapter";
-import { panchangProvider, primePanchang } from "./panchangAdapter";
+import { answerPatroQuestion } from "./patroBotEngine";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
 
 type ChatRow = { id: string; role: "user" | "bot"; text: string };
-
-function todayNepal() {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit",
-  }).format(new Date());
-}
 
 export function PatroBotTool() {
   const [input, setInput] = useState("आज");
@@ -25,19 +15,12 @@ export function PatroBotTool() {
     event?.preventDefault();
     const value = input.trim();
     if (!value || busy) return;
-    const intent = parseIntent(value);
     setRows((current) => [...current, { id: crypto.randomUUID(), role: "user", text: value }]);
     setInput("");
     setBusy(true);
     try {
-      const today = todayNepal();
-      if (intent.type === "today") await primePanchang(today);
-      if (intent.type === "tomorrow") await primePanchang(addDays(today, 1));
-      const answer = await reply(intent, {
-        bs: bsAdapter,
-        provider: panchangProvider,
-        appUrl: location.origin,
-      });
+      const result = await answerPatroQuestion(value, location.origin, { helpFallback: true });
+      const answer = result?.answer || "उत्तर तयार गर्न सकिएन।";
       setRows((current) => [...current, { id: crypto.randomUUID(), role: "bot", text: answer }]);
     } catch (error) {
       setRows((current) => [...current, {
@@ -53,13 +36,13 @@ export function PatroBotTool() {
   const speech = rows.filter((row) => row.role === "bot").at(-1)?.text || "";
 
   return (
-    <ToolPage title="आफ्नै पात्रो बोट" description="मिति, तिथि, चाडपर्व र पात्रोसम्बन्धी छोटा प्रश्नको छिटो सहायक। थाहा नभएको कुरा अनुमान नगरी उपयोगी विकल्प देखाउँछ।">
+    <ToolPage title="आफ्नै Bot" description="मिति, तिथि, चाडपर्व र पात्रोसम्बन्धी प्रश्नको deterministic सहायक। यही logic floating आफ्नै Bot ले पनि प्रयोग गर्छ।">
       <section className="patro-tool-card">
         <div className="bot-chat" aria-live="polite">
-          {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? "आफ्नै पात्रो बोट" : "तपाईं"}</small><p>{row.text}</p></div>)}
+          {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.text}</p></div>)}
         </div>
         <form className="bot-input" onSubmit={send}>
-          <input value={input} onChange={(e) => setInput(e.target.value)} maxLength={300} placeholder="आज, भोलि, दशैं कहिले…" aria-label="आफ्नै पात्रो बोट प्रश्न" />
+          <input value={input} onChange={(e) => setInput(e.target.value)} maxLength={300} placeholder="आज, भोलि, दशैं कहिले…" aria-label="आफ्नै Bot प्रश्न" />
           <button type="submit" className="tool-primary-button" disabled={busy}>{busy ? "उत्तर खोज्दै…" : "पठाउनुहोस्"}</button>
         </form>
         <div className="tool-action-row">
@@ -68,7 +51,7 @@ export function PatroBotTool() {
       </section>
       <ToolResult title="पछिल्लो उत्तर" speechText={speech}>
         <p className="tool-preview">{speech}</p>
-        <p className="tool-muted">छोटो पात्रो प्रश्न यहीँ सोध्नुहोस्। विस्तृत ज्योतिषीय कुराकानीका लागि ज्योतिष AI छुट्टै उपलब्ध छ।</p>
+        <p className="tool-muted">Floating आफ्नै Bot ले यही पात्रो logic प्रयोग गर्छ र खुला प्रश्नका लागि cloud AI मा स्वचालित fallback गर्छ।</p>
       </ToolResult>
     </ToolPage>
   );
