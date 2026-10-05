@@ -27,6 +27,15 @@ function explicitHelp(input: string) {
   return /^(help|मद्दत|सहायता|के गर्न सक्छौ|के गर्न सक्छ|what can you do)$/.test(value);
 }
 
+async function primeAuthoritativePanchang(date: string) {
+  try {
+    await primePanchang(date);
+  } catch {
+    // The provider already has a deterministic astronomy fallback. A temporary
+    // D1/API outage must not make the bot itself unusable.
+  }
+}
+
 /**
  * Shared deterministic Patro engine.
  *
@@ -43,8 +52,8 @@ export async function answerPatroQuestion(
   if (intent.type === "help" && !options.helpFallback && !explicitHelp(input)) return null;
 
   const today = todayNepal();
-  if (intent.type === "today") await primePanchang(today);
-  if (intent.type === "tomorrow") await primePanchang(addDays(today, 1));
+  if (intent.type === "today") await primeAuthoritativePanchang(today);
+  if (intent.type === "tomorrow") await primeAuthoritativePanchang(addDays(today, 1));
 
   return {
     intent,
