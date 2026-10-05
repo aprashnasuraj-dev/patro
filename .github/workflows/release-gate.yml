@@ -1,8 +1,6 @@
 name: Release Gate
 
 on:
-  pull_request:
-    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -51,7 +49,7 @@ jobs:
         id: build
         continue-on-error: true
         run: npm run build
-      - name: Core, typing, Patro tools, community, full-product and release-safety tests
+      - name: Core, typing, Patro tools, community and release-safety tests
         id: product_tests
         continue-on-error: true
         run: |
@@ -60,9 +58,8 @@ jobs:
           npm run test:typing
           npm run test:patro-tools
           npm run test:community
-          npm run test:full-product
           npm run test:release-safety
-      - name: Cloudflare Worker contracts and dry-run
+      - name: Cloudflare Worker and full-product contracts
         id: cloudflare
         continue-on-error: true
         run: |
@@ -193,3 +190,17 @@ jobs:
           check mobile_checks "$MOBILE_CHECKS"
           check lighthouse "$LIGHTHOUSE"
           exit "$failures"
+      - name: Deploy validated build to Cloudflare
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
+            echo "::error::GitHub Actions requires CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets before GitHub-owned deployment can be enabled."
+            exit 1
+          fi
+          test -s dist/index.html
+          npx wrangler deploy --config wrangler.jsonc

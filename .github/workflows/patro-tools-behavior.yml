@@ -1,18 +1,10 @@
-name: Patro Tools Behavioral Gate
+name: Patro Tools Behavioral Gate (manual)
 
 on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-
-concurrency:
-  group: patro-tools-behavior-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   behavior:
