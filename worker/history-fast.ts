@@ -7,9 +7,13 @@ type D1Like = {
   };
 };
 
-type Env = { DB?: D1Like };
+type R2ObjectBodyLike = { text(): Promise<string> };
+type R2Like = { get(key: string): Promise<R2ObjectBodyLike | null> };
+type Env = { DB?: D1Like; ARCHIVE?: R2Like };
+
 const HISTORY_RELEASE_MARKER = "release:on_this_day_events";
 const EXPECTED_HISTORY_ROWS = 5454;
+const HISTORY_R2_PREFIX = "datasets/on-this-day/v1";
 
 function validDate(value: string) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -44,7 +48,18 @@ function isPublished(row: Record<string, unknown>) {
   return value !== false && value !== 0 && String(value ?? "true").toLowerCase() !== "false";
 }
 
-function response(body: unknown, status = 200) {
+function sortRecords(records: Record<string, unknown>[]) {
+  records.sort((a, b) => {
+    const highlight = Number(Boolean(b.highlight)) - Number(Boolean(a.highlight));
+    if (highlight) return highlight;
+    const importance = Number(b.importance || 0) - Number(a.importance || 0);
+    if (importance) return importance;
+    return String(a.id ?? "").localeCompare(String(b.id ?? ""));
+  });
+  return records;
+}
+
+function response(body: unknown, status = 200, backend = "cloudflare-native-history") {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
@@ -54,9 +69,27 @@ function response(body: unknown, status = 200) {
         : "no-store",
       "x-content-type-options": "nosniff",
       "x-robots-tag": "noindex, nofollow",
-      "x-patro-backend": "cloudflare-native-indexed-history",
+      "x-patro-backend": backend,
     },
   });
+}
+
+async function queryR2Records(archive: R2Like, month: number, day: number) {
+  const key = `${HISTORY_R2_PREFIX}/month-${String(month).padStart(2, "0")}.json`;
+  const object = await archive.get(key);
+  if (!object) return null;
+  const doc = JSON.parse(await object.text()) as {
+    schema?: unknown;
+    table?: unknown;
+    month?: unknown;
+    days?: Record<string, unknown>;
+  };
+  if (Number(doc?.schema) !== 1 || doc?.table !== "on_this_day_events" || Number(doc?.month) !== month || !doc?.days) {
+    return null;
+  }
+  const raw = doc.days[String(day).padStart(2, "0")];
+  if (!Array.isArray(raw)) return [] as Record<string, unknown>[];
+  return raw.filter((row): row is Record<string, unknown> => Boolean(row) && typeof row === "object");
 }
 
 async function verifiedIndexedArchive(db: D1Like) {
@@ -71,7 +104,7 @@ async function verifiedIndexedArchive(db: D1Like) {
 }
 
 async function queryRows(db: D1Like, month: number, day: number) {
-  // Normal path: fast indexed lookup on content_records(table_name, month, day).
+  // Normal D1 fallback: fast indexed lookup on content_records(table_name, month, day).
   const indexed = await db.prepare(
     "select payload from content_records where table_name='on_this_day_events' and month=?1 and day=?2 order by sort_order desc, record_key asc limit 100",
   ).bind(month, day).all();
@@ -92,8 +125,10 @@ async function queryRows(db: D1Like, month: number, day: number) {
 }
 
 /**
- * Hot-path On This Day endpoint. Normal traffic is an indexed month/day lookup. The
- * expensive JSON recovery scan is gated behind the absence of the verified release marker.
+ * On This Day endpoint with a quota-safe source hierarchy:
+ *   R2 monthly archive -> D1 indexed fallback.
+ * The outer quota cache adds Edge Cache -> KV -> R2 day-response caching ahead of this
+ * handler, so after the one-time annual prime normal traffic does not touch either source.
  */
 export async function fastHistoryResponse(request: Request, env: Env) {
   if (request.method !== "GET" || new URL(request.url).pathname !== "/api/v1/on-this-day") return null;
@@ -101,34 +136,56 @@ export async function fastHistoryResponse(request: Request, env: Env) {
   const url = new URL(request.url);
   const date = url.searchParams.get("date") || todayNepal();
   if (!validDate(date)) return response({ error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
-  if (!env.DB) return null;
 
   const [, month, day] = date.split("-").map(Number);
-  try {
-    const queried = await queryRows(env.DB, month, day);
-    const records = queried.rows
-      .map(parsePayload)
-      .filter((row): row is Record<string, unknown> => Boolean(row) && isPublished(row as Record<string, unknown>));
 
-    if (!records.length && queried.indexedReady) {
-      return response({ ok: true, date, count: 0, items: [], source: "Cloudflare D1 On This Day archive" });
+  // R2 is the primary public archive. It is independent of the D1 daily read/write quota.
+  if (env.ARCHIVE) {
+    try {
+      const r2Rows = await queryR2Records(env.ARCHIVE, month, day);
+      if (r2Rows !== null) {
+        const records = sortRecords(r2Rows.filter(isPublished));
+        return response({
+          ok: true,
+          date,
+          count: records.length,
+          items: records,
+          source: "Cloudflare R2 On This Day archive",
+        }, 200, "cloudflare-r2-history");
+      }
+    } catch {
+      // Fall through to D1 only when the R2 object is absent/corrupt/unavailable.
     }
-    if (!records.length) return null;
-
-    records.sort((a, b) => {
-      const highlight = Number(Boolean(b.highlight)) - Number(Boolean(a.highlight));
-      if (highlight) return highlight;
-      return Number(b.importance || 0) - Number(a.importance || 0);
-    });
-
-    return response({
-      ok: true,
-      date,
-      count: records.length,
-      items: records,
-      source: "Cloudflare D1 On This Day archive",
-    });
-  } catch {
-    return null;
   }
+
+  if (env.DB) {
+    try {
+      const queried = await queryRows(env.DB, month, day);
+      const records = sortRecords(queried.rows
+        .map(parsePayload)
+        .filter((row): row is Record<string, unknown> => Boolean(row) && isPublished(row as Record<string, unknown>)));
+
+      if (!records.length && queried.indexedReady) {
+        return response({ ok: true, date, count: 0, items: [], source: "Cloudflare D1 On This Day archive" }, 200, "cloudflare-d1-history");
+      }
+      if (records.length) {
+        return response({
+          ok: true,
+          date,
+          count: records.length,
+          items: records,
+          source: "Cloudflare D1 On This Day archive",
+        }, 200, "cloudflare-d1-history");
+      }
+    } catch {
+      // Report a real source outage below instead of silently falling into an unrelated backend.
+    }
+  }
+
+  return response({
+    ok: false,
+    error: "history_source_unavailable",
+    date,
+    message: "On This Day archive is temporarily unavailable",
+  }, 503, "cloudflare-history-unavailable");
 }
