@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { autoFix, checkSpelling, createDictionary, normalize } from '../src/patro-tools/language/spellcheck';
 import { compareNames, devanagariToRoman } from '../src/patro-tools/language/name-match';
@@ -79,5 +80,14 @@ describe('voice + tts helpers', () => {
     expect(long.every((part) => part.length <= 20 && part.trim() === part)).toBe(true);
     expect(splitForSpeech('अ'.repeat(45), 20).every((part) => part.length <= 20)).toBe(true);
     expect(splitForSpeech('   ')).toEqual([]);
+  });
+  it('keeps server speech transcription independent of D1', () => {
+    const worker = readFileSync(new URL('../worker/speech.ts', import.meta.url), 'utf8');
+    expect(worker).toContain('GROQ_API_KEY');
+    expect(worker).toContain('Groq_API');
+    expect(worker).toContain('AbortController');
+    expect(worker).toContain('databaseRequired: false');
+    expect(worker).not.toContain('aiEnvOverlay');
+    expect(worker).not.toContain('env.DB');
   });
 });
