@@ -53,6 +53,8 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(worker.includes('contentRange(env,"astronomy_calendar_map"')||worker.includes("astronomy_calendar_map")||calendarWorker.includes("astronomy_calendar_map"),"calendar runtime must remain backed by migrated D1 archive");
 
   assert.ok(importer.includes("row.ad_month")&&importer.includes("row.ad_day"),"On This Day import must populate queryable month/day dimensions");
+  assert.ok(importer.includes("if (TABLE_ARG && doc.table!==TABLE_ARG) continue"),"targeted D1 imports must ignore unrelated snapshot payloads after validating them");
+  assert.ok(importer.includes('TABLE_ARG==="miti_rashifal_publications"'),"legacy Rashifal recovery must only run for a full import or an explicit Rashifal import");
   assert.ok(importWorkflow.includes('D1_DATABASE_NAME: "patro"')&&!importWorkflow.includes("PASTE_YOUR_D1_DATABASE_ID"),"manual D1 import workflow must target the production database without placeholders");
   assert.ok(releaseGate.includes("Ensure On This Day D1 snapshot")&&releaseGate.includes("ensure-history-d1.mjs"),"release gate must fingerprint and synchronize the On This Day archive only when its source changes");
   assert.ok(historySync.includes("--table=on_this_day_events")&&historySync.includes("migration_state")&&releaseGate.includes("CLOUDFLARE_D1_DATABASE_ID"),"release gate must keep the public On This Day archive recoverable without redundant deployment writes");
