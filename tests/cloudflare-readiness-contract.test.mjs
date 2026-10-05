@@ -21,20 +21,44 @@ test("Cloudflare first-deploy readiness is the canonical Worker contract",async(
 test("Worker entry and production dist exist",async()=>{
   await assert.doesNotReject(access(path.join(root,"worker/optimized-entry.ts")));
   await assert.doesNotReject(access(path.join(root,"worker/connected-entry.ts")));
+  await assert.doesNotReject(access(path.join(root,"worker/quota-cache.ts")));
   await assert.doesNotReject(access(path.join(root,"dist")));
 });
 
-test("KV remains optional for first deploy",async()=>{
+test("KV and R2 remain optional but generated deploy can attach both",async()=>{
   const config=await json("wrangler.jsonc");
   assert.ok(config.kv_namespaces===undefined||Array.isArray(config.kv_namespaces));
+  assert.ok(config.r2_buckets===undefined||Array.isArray(config.r2_buckets));
+  const generator=await read("scripts/prepare-cloudflare-config.mjs");
+  assert.match(generator,/CF_KV_NAMESPACE_ID/);
+  assert.match(generator,/binding:"CACHE"/);
+  assert.match(generator,/CF_R2_BUCKET_NAME/);
+  assert.match(generator,/binding:"ARCHIVE"/);
 });
 
-test("Cloudflare Git deploy is direct Wrangler with one config source",async()=>{
+test("Cloudflare deploy generates environment-aware bindings before Wrangler",async()=>{
   const pkg=await json("package.json");
-  assert.equal(pkg.scripts?.["deploy:cloudflare"],"wrangler deploy --config wrangler.jsonc");
+  assert.equal(pkg.scripts?.["deploy:cloudflare"],"npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
   assert.equal(pkg.cloudflare?.build_command,"npm run build");
-  assert.equal(pkg.cloudflare?.deploy_command,"npx wrangler deploy --config wrangler.jsonc");
+  assert.equal(pkg.cloudflare?.deploy_command,"npm run cloudflare:config && npx wrangler deploy --config wrangler.generated.jsonc");
   assert.equal(pkg.cloudflare?.config,"wrangler.jsonc");
+  assert.ok(pkg.cloudflare?.bindings?.CACHE);
+  assert.ok(pkg.cloudflare?.bindings?.ARCHIVE);
+});
+
+test("public reference hot paths are quota cached without caching private routes",async()=>{
+  const quota=await read("worker/quota-cache.ts");
+  const optimized=await read("worker/optimized-entry.ts");
+  const jobs=await read("worker/jobs.ts");
+  assert.match(optimized,/quotaCachedResponse/);
+  assert.match(quota,/\/api\/v1\/on-this-day/);
+  assert.match(quota,/\/api\/v1\/time-machine/);
+  assert.match(quota,/calendar-today/);
+  assert.match(quota,/ARCHIVE/);
+  assert.match(quota,/CACHE/);
+  assert.match(quota,/very high key cardinality/);
+  assert.match(jobs,/warmDailyReferenceCache/);
+  assert.doesNotMatch(quota,/\/api\/auth|\/api\/push|\/api\/me/);
 });
 
 test("legacy Pages, static redirect and deploy-wrapper artifacts are absent",async()=>{
