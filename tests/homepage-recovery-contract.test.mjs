@@ -15,7 +15,9 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   const css=read("src/homepage-interactions.css");
   const worker=read("worker/index.ts");
   const optimizedWorker=read("worker/optimized-entry.ts");
+  const calendarWorker=read("worker/calendar-fast.ts");
   const historyWorker=read("worker/history-fast.ts");
+  const historySync=read("scripts/cloudflare/ensure-history-d1.mjs");
   const offlineCheck=read("scripts/check-offline-pwa.cjs");
   const importer=read("scripts/cloudflare/import-d1.mjs");
   const importWorkflow=read(".github/workflows/import-d1.yml");
@@ -46,12 +48,13 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(sw.includes('/api/v1/on-this-day?date='),"On This Day must be prewarmed for the current Nepal date");
   assert.ok(offlineCheck.includes("waitForServiceWorkerControl")&&!offlineCheck.includes("await page.reload("),"offline release check must not race the controllerchange reload");
 
-  for(const endpoint of ["/api/v1/sync","/api/v1/on-this-day","/api/v1/time-machine","/api/v1/calendar/"])assert.ok(worker.includes(endpoint),`Worker lost ${endpoint}`);
-  assert.ok(worker.includes('contentRange(env,"astronomy_calendar_map"')||worker.includes("astronomy_calendar_map"),"calendar runtime must remain backed by migrated D1 archive");
+  for(const endpoint of ["/api/v1/sync","/api/v1/on-this-day","/api/v1/time-machine"])assert.ok(worker.includes(endpoint),`Worker lost ${endpoint}`);
+  assert.ok(optimizedWorker.includes("fastCalendarResponse")&&calendarWorker.includes("const monthMatch = url.pathname.match")&&calendarWorker.includes("astronomy_calendar_map"),"production Worker lost the indexed /api/v1/calendar/:year/:month hot path");
+  assert.ok(worker.includes('contentRange(env,"astronomy_calendar_map"')||worker.includes("astronomy_calendar_map")||calendarWorker.includes("astronomy_calendar_map"),"calendar runtime must remain backed by migrated D1 archive");
 
   assert.ok(importer.includes("row.ad_month")&&importer.includes("row.ad_day"),"On This Day import must populate queryable month/day dimensions");
   assert.ok(importWorkflow.includes('D1_DATABASE_NAME: "patro"')&&!importWorkflow.includes("PASTE_YOUR_D1_DATABASE_ID"),"manual D1 import workflow must target the production database without placeholders");
-  assert.ok(releaseGate.includes("Repair On This Day D1 dimensions")&&releaseGate.includes("missing_date_dimensions"),"release gate must backfill existing On This Day rows before deploy");
-  assert.ok(releaseGate.includes("--table=on_this_day_events")&&releaseGate.includes("CLOUDFLARE_D1_DATABASE_ID"),"release gate must restore the public On This Day archive before deploying");
+  assert.ok(releaseGate.includes("Ensure On This Day D1 snapshot")&&releaseGate.includes("ensure-history-d1.mjs"),"release gate must fingerprint and synchronize the On This Day archive only when its source changes");
+  assert.ok(historySync.includes("--table=on_this_day_events")&&historySync.includes("migration_state")&&releaseGate.includes("CLOUDFLARE_D1_DATABASE_ID"),"release gate must keep the public On This Day archive recoverable without redundant deployment writes");
   assert.ok(releaseGate.includes("Smoke test deployed Cloudflare runtime")&&releaseGate.includes("/api/v1/on-this-day")&&releaseGate.includes("/api/v1/time-machine?limit=800"),"release must verify critical live Cloudflare routes after deploy");
 });
