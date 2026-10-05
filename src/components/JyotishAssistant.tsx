@@ -271,7 +271,7 @@ export function JyotishAssistant() {
         <a href="/jyotish/china" className={china ? "is-connected" : ""}>{china ? "● चिना जोडिएको" : "+ चिना बनाउनुहोस्"}</a>
       </div>
       <div className="jy-ai-messages" aria-live="polite">
-        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏 म आफ्नै Bot हुँ।</strong><p>आजको मिति/तिथि, चाडपर्व, BS–AD रूपान्तरण वा ज्योतिषसम्बन्धी प्रश्न सोध्नुहोस्। पात्रोका तथ्य स्थानीय इन्जिनबाट र खुला प्रश्न cloud AI बाट उत्तर हुन्छन्।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
+        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏 म आफ्नै Bot हुँ।</strong><p>आजको मिति/तिथि, चाडपर्व, BS–AD रूपान्तरण वा ज्योतिषसम्बन्धी प्रश्न सोध्नुहोस्।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
         {messages.map((row) => row.content ? <article className={`jy-ai-message ${row.role}`} key={row.id}><small>{row.role === "assistant" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.content}</p></article> : <article className="jy-ai-message assistant is-typing" key={row.id}><span/><span/><span/></article>)}
         {error && <p className="jy-ai-error" role="alert">{error}</p>}
       </div>
@@ -279,7 +279,7 @@ export function JyotishAssistant() {
         <textarea value={input} onChange={(event) => setInput(event.target.value)} maxLength={1000} rows={2} placeholder="मिति, तिथि, चाडपर्व वा ज्योतिष बारे सोध्नुहोस्…" aria-label="आफ्नै Bot प्रश्न" onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }}/>
         <button type="submit" disabled={busy || !input.trim()}>{busy ? "…" : "पठाउनुहोस्"}</button>
       </form>
-      <footer><span>मिति/तिथि तथ्य पात्रो इन्जिनबाट; खुला प्रश्न managed AI बाट।</span><a href="/tools/patro-bot">पूरा पात्रो बोट खोल्नुहोस्</a></footer>
+      <footer><span>ज्योतिषीय उत्तर परम्परागत व्याख्या हुन्; निश्चित भविष्यवाणी होइनन्।</span><a href="/tools/patro-bot">पूरा पात्रो बोट खोल्नुहोस्</a></footer>
     </section>}
   </>;
 }
