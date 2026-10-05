@@ -59,6 +59,7 @@ jobs:
           npm run test:patro-tools
           npm run test:community
           npm run test:release-safety
+          node --test tests/homepage-recovery-contract.test.mjs
       - name: Cloudflare Worker and full-product contracts
         id: cloudflare
         continue-on-error: true
@@ -190,6 +191,20 @@ jobs:
           check mobile_checks "$MOBILE_CHECKS"
           check lighthouse "$LIGHTHOUSE"
           exit "$failures"
+      - name: Repair On This Day D1 dimensions
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
+            echo "::error::Cloudflare credentials are required for the production D1 repair."
+            exit 1
+          fi
+          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "UPDATE content_records SET year = COALESCE(year, CAST(json_extract(payload,'$.ad_year') AS INTEGER)), month = COALESCE(month, CAST(json_extract(payload,'$.ad_month') AS INTEGER)), day = COALESCE(day, CAST(json_extract(payload,'$.ad_day') AS INTEGER)) WHERE table_name='on_this_day_events' AND (year IS NULL OR month IS NULL OR day IS NULL);"
+          npx wrangler d1 execute patro --remote --config wrangler.jsonc --command "SELECT COUNT(*) AS missing_date_dimensions FROM content_records WHERE table_name='on_this_day_events' AND (month IS NULL OR day IS NULL);"
       - name: Deploy validated build to Cloudflare
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
@@ -204,3 +219,14 @@ jobs:
           fi
           test -s dist/index.html
           npx wrangler deploy --config wrangler.jsonc
+      - name: Smoke test deployed Cloudflare runtime
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          for path in / /tools /convert /time-machine /on-this-day /tools/astro; do
+            curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com${path}" >/dev/null
+          done
+          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/sync?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
+          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/on-this-day?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
+          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/time-machine?limit=800" >/dev/null
