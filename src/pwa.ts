@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "2026-10-05-runtime-recovery-v3";
+const SW_REVISION = "2026-10-05-runtime-recovery-v4";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -36,7 +36,7 @@ async function prewarmOfflineModules() {
     try {
       await load();
     } catch {
-      // Offline prewarming is best-effort; route-level lazy loading remains authoritative.
+      // Offline prewarming is best-effort and only runs after an explicit prepare-offline action.
     }
   }
 }
@@ -51,11 +51,6 @@ async function clearStaleRuntimeCaches() {
   } catch {
     // Cache recovery must never prevent the live application from booting.
   }
-}
-
-function askWorkerToWarm(registration: ServiceWorkerRegistration) {
-  const worker = registration.active || registration.waiting || registration.installing || navigator.serviceWorker.controller;
-  worker?.postMessage({ type: "WARM_OFFLINE" });
 }
 
 function installControllerRefresh() {
@@ -77,6 +72,12 @@ export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   installControllerRefresh();
 
+  // Heavy offline chunks are no longer downloaded automatically on every normal page load.
+  // The explicit offline-preparation UI can opt into this work without blocking the app shell.
+  window.addEventListener("patro:prepare-offline", () => {
+    runWhenIdle(() => { void prewarmOfflineModules(); });
+  });
+
   window.addEventListener("load", () => {
     navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`, { scope: "/", updateViaCache: "none" }).then(async (registration) => {
       try {
@@ -84,8 +85,6 @@ export function registerPatroServiceWorker() {
         await registration.update();
         if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
-        askWorkerToWarm(registration);
-        runWhenIdle(() => { void prewarmOfflineModules(); });
       } catch {
         // The application remains fully usable online if service-worker setup is unavailable.
       }
