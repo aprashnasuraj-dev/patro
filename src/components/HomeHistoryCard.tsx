@@ -5,7 +5,7 @@ type Lang = "ne" | "en";
 type Moment = { title: string; summary: string; year: string; href: string; importance: number; highlight: boolean };
 
 const HISTORY_ROTATION_MS = 8500;
-const HISTORY_REFRESH_TOKEN = "20261005-history-v3";
+const HISTORY_REFRESH_TOKEN = "20261006-history-live-v4";
 const HISTORY_RETRY_DELAYS = [0, 1200, 3200];
 const pick = (o: any, keys: string[]) => { for (const k of keys) { const v = o?.[k]; if (typeof v === "string" && v.trim()) return v.trim(); } return ""; };
 const sleep = (ms: number, signal: AbortSignal) => new Promise<void>((resolve, reject) => {
@@ -13,6 +13,15 @@ const sleep = (ms: number, signal: AbortSignal) => new Promise<void>((resolve, r
   const timer = window.setTimeout(resolve, ms);
   signal.addEventListener("abort", () => { window.clearTimeout(timer); reject(new DOMException("Aborted", "AbortError")); }, { once: true });
 });
+
+function kathmanduToday() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kathmandu",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
 
 function toMoment(row: any, language: Lang): Moment | null {
   if (row?.published === false || row?.published === 0 || String(row?.published ?? "true").toLowerCase() === "false") return null;
@@ -39,6 +48,18 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
   const [paused, setPaused] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [liveToday, setLiveToday] = useState(todayAd);
+
+  useEffect(() => { setLiveToday(todayAd); }, [todayAd]);
+  useEffect(() => {
+    const refreshDate = () => {
+      const current = kathmanduToday();
+      setLiveToday((previous) => previous === current ? previous : current);
+    };
+    refreshDate();
+    const timer = window.setInterval(refreshDate, 30_000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -50,7 +71,7 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
       for (const delay of HISTORY_RETRY_DELAYS) {
         try {
           await sleep(delay, controller.signal);
-          const response = await fetch(`/api/v1/on-this-day?date=${encodeURIComponent(todayAd)}&fresh=${HISTORY_REFRESH_TOKEN}`, {
+          const response = await fetch(`/api/v1/on-this-day?date=${encodeURIComponent(liveToday)}&fresh=${HISTORY_REFRESH_TOKEN}&rev=${HISTORY_REFRESH_TOKEN}`, {
             signal: controller.signal,
             cache: "no-store",
             headers: { accept: "application/json" },
@@ -80,7 +101,7 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
     })();
 
     return () => controller.abort();
-  }, [todayAd, language]);
+  }, [liveToday, language]);
 
   useEffect(() => {
     if (items.length < 2 || paused) return;
