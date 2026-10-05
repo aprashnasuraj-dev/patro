@@ -35,6 +35,7 @@ import "./calendar-cell-enhancements.css";
 import "./fresh-build-surface.css";
 import "./final-polish.css";
 import "./jyotish-assistant.css";
+import "./aafnai-bot.css";
 import "./rich-calendar.css";
 import "./homepage-regressions.css";
 import "./homepage-premium.css";
