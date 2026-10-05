@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { answerPatroQuestion } from "../patro-tools-integration/patroBotEngine";
 import { useDismiss } from "../useDismiss";
 
@@ -13,6 +13,7 @@ const LANGUAGE_KEY = "aafnai.bot.chat.language.v1";
 const LEGACY_LANGUAGE_KEY = "aafnai.jyotish.chat.language.v1";
 const CHINA_KEY = "aafnai.jyotish.china.context.v1";
 const MAX_STORED = 24;
+const REQUEST_TIMEOUT_MS = 18_000;
 
 function readHistory(): ChatMessage[] {
   try {
@@ -90,7 +91,7 @@ function contextFromRenderedChina(): ChinaContext | null {
     planets,
     birth: { name: identity || undefined, summary: birthLine || undefined },
     other_important_points: manglik ? { manglik: `${manglik.value} ${manglik.detail}`.trim() } : undefined,
-    data_quality: { source: "aafnai-patro-china", generated_at: new Date().toISOString() },
+    data_quality: { source: "aafnai-patro-china" },
   };
 }
 
@@ -141,7 +142,18 @@ export function JyotishAssistant() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const panel = useRef<HTMLDivElement>(null);
+  const messagesEnd = useRef<HTMLDivElement>(null);
   const activeRequest = useRef<AbortController | null>(null);
+
+  const captureChina = useCallback(() => {
+    const context = contextFromRenderedChina();
+    if (!context) return;
+    setChina((current) => {
+      if (current && JSON.stringify(current) === JSON.stringify(context)) return current;
+      try { localStorage.setItem(CHINA_KEY, JSON.stringify(context)); } catch { /* optional */ }
+      return context;
+    });
+  }, []);
 
   useEffect(() => {
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(messages.slice(-MAX_STORED))); } catch { /* local-only convenience */ }
@@ -151,30 +163,27 @@ export function JyotishAssistant() {
   }, [language]);
 
   useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const context = contextFromRenderedChina();
-        if (!context) return;
-        setChina(context);
-        try { localStorage.setItem(CHINA_KEY, JSON.stringify(context)); } catch { /* optional */ }
-      });
-    };
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(document.body, { childList: true, subtree: true });
-    window.addEventListener("patro:navigation", update);
+    captureChina();
+    const timers = [350, 1200, 2800].map((delay) => window.setTimeout(captureChina, delay));
+    window.addEventListener("patro:navigation", captureChina);
+    window.addEventListener("patro:china-updated", captureChina);
     return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-      window.removeEventListener("patro:navigation", update);
+      timers.forEach((timer) => window.clearTimeout(timer));
+      window.removeEventListener("patro:navigation", captureChina);
+      window.removeEventListener("patro:china-updated", captureChina);
     };
-  }, []);
+  }, [captureChina]);
 
   useEffect(() => {
-    if (open) requestAnimationFrame(() => panel.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus());
-  }, [open]);
+    if (!open) return;
+    captureChina();
+    requestAnimationFrame(() => panel.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus());
+  }, [open, captureChina]);
+
+  useEffect(() => {
+    if (!open) return;
+    requestAnimationFrame(() => messagesEnd.current?.scrollIntoView({ block: "end" }));
+  }, [messages, busy, error, open]);
 
   useEffect(() => () => activeRequest.current?.abort(), []);
 
@@ -187,6 +196,7 @@ export function JyotishAssistant() {
 
   function clearChat() {
     activeRequest.current?.abort();
+    activeRequest.current = null;
     setBusy(false);
     setMessages([]);
     setError("");
@@ -210,6 +220,8 @@ export function JyotishAssistant() {
     setBusy(true);
 
     let controller: AbortController | null = null;
+    let timeoutId: number | null = null;
+    let timedOut = false;
     try {
       // Calendar/date/tithi/festival/conversion questions stay on the deterministic
       // Patro engine. Unknown/open-ended prompts fall through to managed cloud AI.
@@ -221,6 +233,11 @@ export function JyotishAssistant() {
 
       controller = new AbortController();
       activeRequest.current = controller;
+      timeoutId = window.setTimeout(() => {
+        timedOut = true;
+        controller?.abort();
+      }, REQUEST_TIMEOUT_MS);
+
       const response = await fetch("/api/v1/jyotish-chat", {
         method: "POST",
         credentials: "same-origin",
@@ -244,24 +261,35 @@ export function JyotishAssistant() {
         setMessages((current) => current.map((row) => row.id === assistantId ? { ...row, content } : row));
       }
     } catch (cause) {
-      if (controller?.signal.aborted) return;
+      if (controller?.signal.aborted && !timedOut) return;
+
+      const fallback = await answerPatroQuestion(value, location.origin, { helpFallback: true }).catch(() => null);
+      if (fallback) {
+        setMessages((current) => current.map((row) => row.id === assistantId ? { ...row, content: fallback.answer } : row));
+        setError(timedOut
+          ? "AI उत्तर आउन ढिलो भयो, त्यसैले आफ्नै Patro मोडबाट उत्तर दिइयो।"
+          : "AI सेवा उपलब्ध नभएकाले आफ्नै Patro मोड सक्रिय छ। मिति, तिथि, चाडपर्व र रूपान्तरण चलिरहन्छन्।");
+        return;
+      }
+
       setMessages((current) => current.filter((row) => row.id !== assistantId));
       setError(cause instanceof Error && cause.message === "all_providers_unavailable"
         ? "आफ्नै Bot को AI सेवा अहिले उपलब्ध छैन। पात्रोका मिति/तिथि प्रश्न भने चलिरहन्छन्।"
         : "आफ्नै Bot बाट उत्तर लिन सकिएन। फेरि प्रयास गर्नुहोस्।");
     } finally {
+      if (timeoutId !== null) window.clearTimeout(timeoutId);
       if (controller && activeRequest.current === controller) activeRequest.current = null;
       setBusy(false);
     }
   }
 
   return <>
-    <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Bot खोल्नुहोस्">
-      <span aria-hidden="true">आ</span><em>आफ्नै Bot</em><b>AI</b>
+    <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Patro Bot खोल्नुहोस्" title="आफ्नै Patro Bot">
+      <span aria-hidden="true">आ</span><em>आफ्नै Patro Bot</em><b>आफ्नै</b>
     </button>
-    {open && <section id="aafnai-bot-panel" className="jy-ai-panel" ref={panel} aria-label="आफ्नै Bot">
+    {open && <section id="aafnai-bot-panel" className="jy-ai-panel" ref={panel} aria-label="आफ्नै Patro Bot">
       <header className="jy-ai-head">
-        <div><span aria-hidden="true">आ</span><div><strong>आफ्नै Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>
+        <div><span aria-hidden="true">आ</span><div><strong>आफ्नै Patro Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>
         <div><button type="button" onClick={clearChat} title="च्याट खाली गर्नुहोस्" aria-label="च्याट खाली गर्नुहोस्">↺</button><button type="button" onClick={() => setOpen(false)} aria-label="बन्द गर्नुहोस्">×</button></div>
       </header>
       <div className="jy-ai-toolbar">
@@ -271,15 +299,16 @@ export function JyotishAssistant() {
         <a href="/jyotish/china" className={china ? "is-connected" : ""}>{china ? "● चिना जोडिएको" : "+ चिना बनाउनुहोस्"}</a>
       </div>
       <div className="jy-ai-messages" aria-live="polite">
-        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏 म आफ्नै Bot हुँ।</strong><p>आजको मिति/तिथि, चाडपर्व, BS–AD रूपान्तरण वा ज्योतिषसम्बन्धी प्रश्न सोध्नुहोस्।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
+        {!messages.length && <div className="jy-ai-welcome"><strong>नमस्ते 🙏 म आफ्नै Patro Bot हुँ।</strong><p>आजको मिति/तिथि, चाडपर्व, BS–AD रूपान्तरण वा ज्योतिषसम्बन्धी प्रश्न सोध्नुहोस्।</p><div>{prompts.map((prompt) => <button type="button" key={prompt} onClick={() => setInput(prompt)}>{prompt}</button>)}</div></div>}
         {messages.map((row) => row.content ? <article className={`jy-ai-message ${row.role}`} key={row.id}><small>{row.role === "assistant" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.content}</p></article> : <article className="jy-ai-message assistant is-typing" key={row.id}><span/><span/><span/></article>)}
-        {error && <p className="jy-ai-error" role="alert">{error}</p>}
+        {error && <p className="jy-ai-error" role="status">{error}</p>}
+        <div className="jy-ai-end" ref={messagesEnd} aria-hidden="true" />
       </div>
       <form className="jy-ai-compose" onSubmit={send}>
         <textarea value={input} onChange={(event) => setInput(event.target.value)} maxLength={1000} rows={2} placeholder="मिति, तिथि, चाडपर्व वा ज्योतिष बारे सोध्नुहोस्…" aria-label="आफ्नै Bot प्रश्न" onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }}/>
         <button type="submit" disabled={busy || !input.trim()}>{busy ? "…" : "पठाउनुहोस्"}</button>
       </form>
-      <footer><span>ज्योतिषीय उत्तर परम्परागत व्याख्या हुन्; निश्चित भविष्यवाणी होइनन्।</span><a href="/tools/patro-bot">पूरा पात्रो बोट खोल्नुहोस्</a></footer>
+      <footer><span>ज्योतिषीय उत्तर परम्परागत व्याख्या हुन्; निश्चित भविष्यवाणी होइनन्।</span><a href="/tools/patro-bot">पूरा Patro Bot खोल्नुहोस्</a></footer>
     </section>}
   </>;
 }
