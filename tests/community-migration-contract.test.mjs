@@ -34,8 +34,8 @@ test("immersive community routes are served by their rich standalone front ends"
 
   const readme=read("community-frontends/README.md");
   for(const signature of [
-    "turning lunar mandala","three Lhosar doors","Maghi fire","Madhubani year ring",
-    "Silli dance circle","24-hour prayer clock","shared-day white threads"
+    "Turning lunar mandala",'three Lhosar "doors"',"Fire that grows as Maghi approaches","Painted year ring",
+    "silli dance circle","24-hour prayer clock","white threads join days shared by several communities"
   ]) assert.ok(readme.includes(signature),`community interaction brief lost: ${signature}`);
 });
 
