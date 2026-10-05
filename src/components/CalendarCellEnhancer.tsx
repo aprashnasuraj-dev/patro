@@ -9,7 +9,7 @@ const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलब�
 const NEPALI_DIGITS:Record<string,string>={"०":"0","१":"1","२":"2","३":"3","४":"4","५":"5","६":"6","७":"7","८":"8","९":"9"};
 // This revision token intentionally bypasses old service-worker calendar cache entries
 // created while the D1 payload shape was still broken. The Worker ignores the parameter.
-const CALENDAR_REFRESH_TOKEN="20261005-tithi-ns-v2";
+const CALENDAR_REFRESH_TOKEN="20261005-tithi-ns-v3";
 
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 function englishLabel(ad:string){
@@ -166,6 +166,9 @@ export function CalendarCellEnhancer(){
       }
       return useful;
     };
+    const completeFor=(dates:string[])=>dates.every((ad)=>{
+      const info=calendar.get(ad);return Boolean(info?.tithi&&info?.ns);
+    });
 
     const fetchCalendar=async()=>{
       if(stopped)return;
@@ -175,22 +178,35 @@ export function CalendarCellEnhancer(){
       if(span<1||span>62)return;
       const key=`${start}|${end}`;if(key===calendarRange)return;calendarRange=key;
       try{
-        const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;
-        const response=await fetch(rangeUrl,{headers:{accept:"application/json"},cache:"no-store"});
-        if(!response.ok)throw new Error("calendar_unavailable");
-        const body=await response.json();
-        let useful=ingest(Array.isArray(body?.days)?body.days:[]);
+        let useful=0;
+        try{
+          const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;
+          const response=await fetch(rangeUrl,{headers:{accept:"application/json"},cache:"no-store"});
+          if(response.ok){const body=await response.json();useful+=ingest(Array.isArray(body?.days)?body.days:[])}
+        }catch{}
 
-        // Secondary D1 path: if an old/broken sync response has no facts, use the canonical BS month endpoint.
-        if(useful===0){
+        // Secondary D1 path: if sync is incomplete, use the canonical BS month endpoint.
+        if(!completeFor(dates)){
           const cursor=visibleBsCursor();
           if(cursor){
-            const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
-            const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
-            if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
+            try{
+              const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
+              const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
+              if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
+            }catch{}
           }
         }
-        if(useful===0)throw new Error("calendar_facts_missing");
+
+        // Database-independent safety net. This file is generated from the canonical archive at build time
+        // and covers the full current BS month plus surrounding days, so D1/KV outages cannot blank Tithi/NS.
+        if(!completeFor(dates)){
+          try{
+            const staticResponse=await fetch(`/data/calendar/offline-window.json?fresh=${CALENDAR_REFRESH_TOKEN}`,{headers:{accept:"application/json"},cache:"no-store"});
+            if(staticResponse.ok){const staticBody=await staticResponse.json();useful+=ingest(Array.isArray(staticBody?.days)?staticBody.days:[])}
+          }catch{}
+        }
+
+        if(!useful||!completeFor(dates))throw new Error("calendar_facts_missing");
         retries=0;decorate(weather,calendar);
       }catch{
         calendarRange="";
