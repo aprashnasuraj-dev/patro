@@ -6,9 +6,10 @@ import process from "node:process";
 
 const ROOT = process.cwd();
 const HISTORY_ROOT = join(ROOT, "migration", "data", "public", "on_this_day_events");
-const IMPORTER = join(ROOT, "scripts", "cloudflare", "import-d1.mjs");
 const MANIFEST = join(ROOT, "cloudflare", "d1", "expected-public-counts.json");
 const MARKER = "release:on_this_day_events";
+const TRANSFORM_VERSION = "on-this-day-record-v1";
+const ALLOW_QUOTA_DEFER = process.env.ALLOW_D1_QUOTA_DEFER === "1";
 
 async function filesUnder(dir) {
   const out = [];
@@ -22,14 +23,26 @@ async function filesUnder(dir) {
 
 async function sourceVersion() {
   const hash = createHash("sha256");
-  const files = [...await filesUnder(HISTORY_ROOT), IMPORTER];
-  for (const file of files) {
+  hash.update(TRANSFORM_VERSION);
+  hash.update("\0");
+  for (const file of await filesUnder(HISTORY_ROOT)) {
     hash.update(relative(ROOT, file));
     hash.update("\0");
     hash.update(await readFile(file));
     hash.update("\0");
   }
   return `sha256:${hash.digest("hex")}`;
+}
+
+function isDailyQuotaError(value) {
+  const text = String(value || "");
+  return /exceeded D1's free tier daily row read limit|code["']?:?\s*7500|daily row read limit/i.test(text);
+}
+
+function deferForQuota(stage, detail) {
+  if (!ALLOW_QUOTA_DEFER || !isDailyQuotaError(detail)) return false;
+  console.warn(`::warning::On This Day D1 ${stage} deferred because today's D1 row-read quota is exhausted. Existing production history remains in place; continuing with the code/static-asset deployment.`);
+  return true;
 }
 
 async function d1(sql, params = []) {
@@ -56,32 +69,53 @@ function firstResult(json) {
   return json?.result?.[0]?.results?.[0] || null;
 }
 
-const version = await sourceVersion();
-const state = firstResult(await d1(
-  "SELECT source_version, row_count FROM migration_state WHERE source=?1 LIMIT 1",
-  [MARKER],
-));
+async function main() {
+  const version = await sourceVersion();
+  let state;
+  try {
+    state = firstResult(await d1(
+      "SELECT source_version, row_count FROM migration_state WHERE source=?1 LIMIT 1",
+      [MARKER],
+    ));
+  } catch (error) {
+    if (deferForQuota("marker check", error?.message || error)) return;
+    throw error;
+  }
 
-const manifest = JSON.parse(await readFile(MANIFEST, "utf8"));
-const expectedRows = Number(manifest?.tables?.on_this_day_events || 0);
-if (!expectedRows) throw new Error("on_this_day_events expected row count is missing");
+  const manifest = JSON.parse(await readFile(MANIFEST, "utf8"));
+  const expectedRows = Number(manifest?.tables?.on_this_day_events || 0);
+  if (!expectedRows) throw new Error("on_this_day_events expected row count is missing");
 
-if (state?.source_version === version && Number(state?.row_count) === expectedRows) {
-  console.log(`On This Day D1 snapshot unchanged (${expectedRows} rows); skipping ${expectedRows} redundant writes.`);
-  process.exit(0);
+  if (state?.source_version === version && Number(state?.row_count) === expectedRows) {
+    console.log(`On This Day D1 snapshot unchanged (${expectedRows} rows); skipping ${expectedRows} redundant writes.`);
+    return;
+  }
+
+  console.log("On This Day source changed or has no release marker; importing once.");
+  const child = spawnSync(
+    process.execPath,
+    ["scripts/cloudflare/import-d1.mjs", "--remote", "--table=on_this_day_events"],
+    { cwd: ROOT, encoding: "utf8", env: process.env },
+  );
+  if (child.stdout) process.stdout.write(child.stdout);
+  if (child.stderr) process.stderr.write(child.stderr);
+  if (child.status !== 0) {
+    const detail = `${child.stdout || ""}\n${child.stderr || ""}`;
+    if (deferForQuota("snapshot import", detail)) return;
+    process.exit(child.status ?? 1);
+  }
+
+  const importedAt = new Date().toISOString();
+  try {
+    await d1(
+      "INSERT INTO migration_state(source,source_version,row_count,imported_at) VALUES(?1,?2,?3,?4) ON CONFLICT(source) DO UPDATE SET source_version=excluded.source_version,row_count=excluded.row_count,imported_at=excluded.imported_at",
+      [MARKER, version, expectedRows, importedAt],
+    );
+  } catch (error) {
+    if (deferForQuota("release-marker write", error?.message || error)) return;
+    throw error;
+  }
+  console.log(`On This Day D1 snapshot synchronized: ${expectedRows} rows; marker=${version.slice(0, 22)}…`);
 }
 
-console.log("On This Day source changed or has no release marker; importing once.");
-const child = spawnSync(
-  process.execPath,
-  ["scripts/cloudflare/import-d1.mjs", "--remote", "--table=on_this_day_events"],
-  { cwd: ROOT, stdio: "inherit", env: process.env },
-);
-if (child.status !== 0) process.exit(child.status ?? 1);
-
-const importedAt = new Date().toISOString();
-await d1(
-  "INSERT INTO migration_state(source,source_version,row_count,imported_at) VALUES(?1,?2,?3,?4) ON CONFLICT(source) DO UPDATE SET source_version=excluded.source_version,row_count=excluded.row_count,imported_at=excluded.imported_at",
-  [MARKER, version, expectedRows, importedAt],
-);
-console.log(`On This Day D1 snapshot synchronized: ${expectedRows} rows; marker=${version.slice(0, 22)}…`);
+await main();
