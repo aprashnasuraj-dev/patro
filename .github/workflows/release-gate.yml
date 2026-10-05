@@ -198,15 +198,17 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_D1_DATABASE_ID: fb25c860-01db-4ab0-9036-7f87b26ca64b
+          ALLOW_D1_QUOTA_DEFER: "1"
         run: |
           set -euo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
             echo "::error::Cloudflare credentials are required for the production D1 history sync."
             exit 1
           fi
-          # The helper fingerprints the canonical history snapshot + importer. It performs
-          # the 5,454-row import only when that fingerprint changes (or on its first run),
-          # avoiding thousands of identical D1 writes on every unrelated deployment.
+          # Fingerprint only the canonical history dataset + transform contract. An unrelated importer
+          # implementation change must not force 5,454 identical writes. If today's D1 row-read quota
+          # is already exhausted, keep the existing history snapshot and continue deploying validated
+          # code/static assets; the next release can retry synchronization after quota reset.
           node scripts/cloudflare/ensure-history-d1.mjs
       - name: Deploy validated build to Cloudflare
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -241,6 +243,23 @@ jobs:
           for path in / /tools /convert /time-machine /on-this-day /tools/astro; do
             curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com${path}" >/dev/null
           done
+
+          while IFS='|' read -r path marker; do
+            html="$(curl --retry 5 --retry-delay 2 --retry-all-errors -fsSL "https://aafnaipatro.com${path}")"
+            if ! grep -Fq "$marker" <<<"$html"; then
+              echo "::error::Rich Community Patro smoke test failed for ${path}; expected marker: ${marker}"
+              exit 1
+            fi
+          done <<'COMMUNITY'
+          /nepal-sambat/mandala|चन्द्र मण्डल · Nepal Sambat
+          /samudaya/lhosar|लुङ्दर · ल्होसार पात्रो
+          /samudaya/tharu|माघीको आगो · थारू पात्रो
+          /samudaya/mithila|मधुबनी वर्ष · मिथिला पात्रो
+          /samudaya/kirat|साकेला सिली · किरात पात्रो
+          /samudaya/hijri|हिलाल · हिजरी पात्रो र नमाज समय
+          /samudaya/chakra|समुदाय चक्र · नेपालका सात पात्रो
+          COMMUNITY
+
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/sync?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/on-this-day?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/time-machine?limit=800" >/dev/null
