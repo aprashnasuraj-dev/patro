@@ -46,7 +46,7 @@ export function VoiceTypingTool() {
   const modeText = dictation.mode === "browser"
     ? `${meta.short} · Live recognition`
     : dictation.mode === "server"
-      ? `${meta.short} · Secure server fallback`
+      ? `${meta.short} · Recorded recognition`
       : "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन";
 
   function chooseLanguage(next: DictationLanguage) {
@@ -76,7 +76,7 @@ export function VoiceTypingTool() {
   return (
     <ToolPage
       title="आवाजबाट टाइपिङ · Voice to Text"
-      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Browser recognition उपलब्ध नभए सुरक्षित server transcription स्वतः fallback हुन्छ।"
+      description="नेपाली वा English छानेर बोलाइलाई तुरुन्तै सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Live recognition उपलब्ध नभए छोटो recording बाट पनि पाठ तयार गर्न सकिन्छ।"
     >
       <section className="patro-tool-card voice-typing-card">
         <div className="voice-language-panel">
@@ -112,7 +112,7 @@ export function VoiceTypingTool() {
             <span className="tool-badge">{modeText}</span>
             <p>{meta.punctuation}</p>
             {dictation.mode === "server" ? (
-              <p className="tool-muted">Fallback mode मा Stop थिचेपछि रेकर्ड गरिएको आवाज transcription का लागि पठाइन्छ। अधिकतम 60 सेकेन्ड।</p>
+              <p className="tool-muted">Stop थिचेपछि रेकर्ड गरिएको आवाजलाई पाठमा बदलिन्छ। एक पटकमा अधिकतम 60 सेकेन्ड बोल्न सकिन्छ।</p>
             ) : null}
           </div>
           {!dictation.listening ? (
@@ -167,7 +167,7 @@ export function VoiceTypingTool() {
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
         <p className="tool-muted">
-          Live browser mode मा audio Patro ले सुरक्षित गर्दैन। Server fallback चाहिएको अवस्थामा छोटो recording transcription provider मा पठाइन्छ र Patro ले recording संग्रह गर्दैन।
+          Live mode मा Patro ले audio संग्रह गर्दैन। Recorded recognition प्रयोग हुँदा छोटो recording पाठमा बदल्न पठाइन्छ र Patro ले recording संग्रह गर्दैन।
         </p>
       </ToolResult>
     </ToolPage>
