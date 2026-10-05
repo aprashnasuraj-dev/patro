@@ -4,7 +4,7 @@ import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 
 export type DictationLanguage = 'ne-NP' | 'en-US';
-type Mode = 'browser' | 'server' | 'unsupported';
+export type DictationMode = 'browser' | 'server' | 'unsupported';
 
 const MAX_SERVER_RECORDING_MS = 60_000;
 const NEPALI_SPOKEN: [RegExp, string][] = [
@@ -82,8 +82,8 @@ function serverErrorMessage(language: DictationLanguage, code: string) {
   const nepali = language === 'ne-NP';
   if (code === 'speech_backend_unconfigured') {
     return nepali
-      ? 'Server आवाज सेवा अहिले configure गरिएको छैन। Browser live recognition प्रयोग गर्नुहोस्।'
-      : 'Server speech is not configured right now. Use browser live recognition.';
+      ? 'Server आवाज सेवा उपलब्ध भएन। Live recognition प्रयोग गर्नुहोस्।'
+      : 'Server speech is unavailable. Use live recognition.';
   }
   if (code === 'speech_provider_timeout') {
     return nepali ? 'आवाजलाई पाठमा बदल्न धेरै समय लाग्यो। फेरि प्रयास गर्नुहोस्।' : 'Transcription timed out. Please try again.';
@@ -106,7 +106,10 @@ export function useNepaliDictation({
   serverFallback?: boolean;
   language?: DictationLanguage;
 } = {}) {
-  const [mode, setMode] = useState<Mode>('unsupported');
+  const [mode, setMode] = useState<DictationMode>('unsupported');
+  const [browserAvailable, setBrowserAvailable] = useState(false);
+  const [serverAvailable, setServerAvailable] = useState(false);
+  const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
   const [listening, setListening] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [interim, setInterim] = useState('');
@@ -143,9 +146,40 @@ export function useNepaliDictation({
   }, [clearTimer]);
 
   useEffect(() => {
-    if (speechRecognitionCtor()) setMode('browser');
-    else if (serverFallback && serverRecordingAvailable()) setMode('server');
-    else setMode('unsupported');
+    const browser = !!speechRecognitionCtor();
+    const recorder = serverFallback && serverRecordingAvailable();
+    setBrowserAvailable(browser);
+    setMode(browser ? 'browser' : 'unsupported');
+    setCapabilitiesChecked(false);
+
+    if (!recorder) {
+      setServerAvailable(false);
+      setCapabilitiesChecked(true);
+      return;
+    }
+
+    const controller = new AbortController();
+    void (async () => {
+      try {
+        const response = await fetch('/api/nepali/speech-capabilities', {
+          headers: { accept: 'application/json' },
+          cache: 'no-store',
+          signal: controller.signal,
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!mountedRef.current || controller.signal.aborted) return;
+        const server = response.ok && payload?.stt?.server === true;
+        setServerAvailable(server);
+        if (!browser && server) setMode('server');
+      } catch {
+        if (!mountedRef.current || controller.signal.aborted) return;
+        setServerAvailable(false);
+      } finally {
+        if (mountedRef.current && !controller.signal.aborted) setCapabilitiesChecked(true);
+      }
+    })();
+
+    return () => controller.abort();
   }, [serverFallback]);
 
   const stop = useCallback(() => {
@@ -164,6 +198,19 @@ export function useNepaliDictation({
     setListening(false);
   }, [clearTimer, stopTracks]);
 
+  const selectMode = useCallback((next: Exclude<DictationMode, 'unsupported'>) => {
+    if (listening || processing) return;
+    if (next === 'browser' && browserAvailable) {
+      setError(null);
+      setMode('browser');
+      return;
+    }
+    if (next === 'server' && serverAvailable && serverRecordingAvailable()) {
+      setError(null);
+      setMode('server');
+    }
+  }, [browserAvailable, listening, processing, serverAvailable]);
+
   const start = useCallback(async () => {
     if (processing) return;
     setError(null);
@@ -172,7 +219,8 @@ export function useNepaliDictation({
     if (mode === 'browser') {
       const SR = speechRecognitionCtor();
       if (!SR) {
-        setMode(serverFallback && serverRecordingAvailable() ? 'server' : 'unsupported');
+        setBrowserAvailable(false);
+        setMode(serverAvailable && serverRecordingAvailable() ? 'server' : 'unsupported');
         return;
       }
 
@@ -204,11 +252,11 @@ export function useNepaliDictation({
         const code = String(event?.error || 'unknown');
         setListening(false);
         setInterim('');
-        if (serverFallback && serverRecordingAvailable() && ['network', 'language-not-supported'].includes(code)) {
+        if (serverFallback && serverAvailable && serverRecordingAvailable() && ['network', 'language-not-supported'].includes(code)) {
           setMode('server');
           setError(language === 'ne-NP'
-            ? 'ब्राउजरको आवाज सेवा उपलब्ध भएन। फेरि माइक्रोफोन थिच्दा server transcription प्रयोग हुन्छ।'
-            : 'Browser speech service failed. Press the microphone again to use server transcription.');
+            ? 'Live recognition उपलब्ध भएन। Server transcription चयन गरिएको छ—फेरि माइक्रोफोन थिच्नुहोस्।'
+            : 'Live recognition failed. Server transcription is selected—press the microphone again.');
         } else {
           setError(errorMessage(language, code));
         }
@@ -231,6 +279,10 @@ export function useNepaliDictation({
     }
 
     if (mode === 'server') {
+      if (capabilitiesChecked && !serverAvailable) {
+        setError(serverErrorMessage(language, 'speech_backend_unconfigured'));
+        return;
+      }
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
@@ -296,7 +348,20 @@ export function useNepaliDictation({
     setError(language === 'ne-NP'
       ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
       : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
-  }, [clearTimer, language, mode, onFinal, processing, serverFallback, stopTracks]);
+  }, [capabilitiesChecked, clearTimer, language, mode, onFinal, processing, serverAvailable, serverFallback, stopTracks]);
 
-  return { mode, listening, processing, interim, error, language, start, stop };
+  return {
+    mode,
+    browserAvailable,
+    serverAvailable,
+    capabilitiesChecked,
+    listening,
+    processing,
+    interim,
+    error,
+    language,
+    selectMode,
+    start,
+    stop,
+  };
 }
