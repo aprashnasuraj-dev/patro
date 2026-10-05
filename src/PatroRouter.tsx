@@ -4,7 +4,6 @@ import { ReferenceHomePage } from "./ReferenceHomePage";
 import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
 import { ConvertPage } from "./ConvertPage";
 import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
-import { SeoSearchSupport } from "./SeoSearchSupport";
 import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
 import { CommunityHub } from "./community/CommunityHub";
 import { CommunityPreferences } from "./community/CommunityPreferences";
@@ -25,6 +24,7 @@ const NotificationSettingsPage=lazy(()=>import("./components/NativeProtectedPage
 const HolidaySettingsPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.HolidaySettingsPage})));
 const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.DevelopersPage})));
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
+const SeoSearchSupport=lazy(()=>import("./SeoSearchSupport").then(m=>({default:m.SeoSearchSupport})));
 
 const DATE_ROUTE_PREFIX="/date/";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
@@ -104,5 +104,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><SeoSearchSupport path={path}/></>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><Suspense fallback={null}><SeoSearchSupport path={path}/></Suspense></>
 }
