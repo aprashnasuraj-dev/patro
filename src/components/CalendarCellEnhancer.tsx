@@ -7,6 +7,9 @@ type CalendarDecoration={tithi:string;ns:string};
 
 const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
 const NEPALI_DIGITS:Record<string,string>={"०":"0","१":"1","२":"2","३":"3","४":"4","५":"5","६":"6","७":"7","८":"8","९":"9"};
+// This revision token intentionally bypasses old service-worker calendar cache entries
+// created while the D1 payload shape was still broken. The Worker ignores the parameter.
+const CALENDAR_REFRESH_TOKEN="20261005-tithi-ns-v2";
 
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 function englishLabel(ad:string){
@@ -79,7 +82,12 @@ function decorateHomepageDate(){
   const weekday=FULL_NE_DAYS[new Date(ad+"T00:00:00Z").getUTCDay()];
   document.querySelectorAll<HTMLElement>(".rh-hero .rh-kicker,.rh-today>.rh-kicker").forEach(kicker=>{const label=`आज · ${weekday}`;if(kicker.textContent!==label)kicker.textContent=label});
 }
-
+function decorateTodayFacts(calendar:Map<string,CalendarDecoration>){
+  const info=calendar.get(todayNepal());if(!info)return;
+  const facts=document.querySelectorAll<HTMLElement>(".rh-today-facts > div b");
+  if(info.tithi&&facts[0]&&(!facts[0].textContent||facts[0].textContent.trim()==="—"))facts[0].textContent=info.tithi;
+  if(info.ns&&facts[1]&&(!facts[1].textContent||facts[1].textContent.trim()==="—"))facts[1].textContent=info.ns;
+}
 function weatherTitle(forecast:WeatherDay){
   const max=forecast.temperature_max_c==null?"":`${Math.round(forecast.temperature_max_c)}°C`;
   const min=forecast.temperature_min_c==null?"":`${Math.round(forecast.temperature_min_c)}°C`;
@@ -88,7 +96,7 @@ function weatherTitle(forecast:WeatherDay){
 }
 
 function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDecoration>){
-  decorateHomepageDate();
+  decorateHomepageDate();decorateTodayFacts(calendar);
 
   for(const cell of document.querySelectorAll<HTMLElement>(".rh-grid .rh-cell")){
     const ad=richCellDate(cell);if(!ad)continue;
@@ -96,13 +104,15 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     const info=calendar.get(ad);
     const adNode=cell.querySelector<HTMLElement>(".rh-ad-date");
     if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;adNode.setAttribute("aria-label",`English date ${label}`)}
+
+    // Enrichment is additive only. Never erase React/D1-rendered core calendar facts.
     const nsNode=cell.querySelector<HTMLElement>(".rh-ns-date");
-    if(nsNode){const label=info?.ns?`नेसं ${info.ns}`:"";if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.toggleAttribute("hidden",!label)}
+    if(nsNode&&info?.ns){const label=`नेसं ${info.ns}`;if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.hidden=false}
     const tithiNode=cell.querySelector<HTMLElement>("em");
-    if(tithiNode){const label=info?.tithi||"";if(tithiNode.textContent!==label)tithiNode.textContent=label;tithiNode.classList.toggle("is-pending",!label)}
+    if(tithiNode&&info?.tithi){if(tithiNode.textContent!==info.tithi)tithiNode.textContent=info.tithi;tithiNode.classList.remove("is-pending")}
 
     const pcTithi=cell.querySelector<HTMLElement>(".pc-tithi");
-    if(pcTithi&&info?.tithi&&pcTithi.textContent!==info.tithi)pcTithi.textContent=info.tithi;
+    if(pcTithi&&info?.tithi&&(!pcTithi.textContent||pcTithi.textContent.trim()==="—"))pcTithi.textContent=info.tithi;
     const pcNs=cell.querySelector<HTMLElement>(".pc-ns");
     if(pcNs&&info?.ns&&(!pcNs.textContent||pcNs.textContent.trim()==="—"))pcNs.textContent=info.ns;
 
@@ -120,10 +130,10 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     const adNode=cell.querySelector<HTMLElement>(".ap-adday");
     if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;adNode.setAttribute("aria-label",`English date ${label}`)}
     const tithi=cell.querySelector<HTMLElement>(".ap-tithi");
-    if(tithi&&info?.tithi&&tithi.textContent!==info.tithi)tithi.textContent=info.tithi;
+    if(tithi&&info?.tithi&&(!tithi.textContent||tithi.textContent.trim()==="—"))tithi.textContent=info.tithi;
     let ns=cell.querySelector<HTMLElement>(".ap-nsdate");
     if(info?.ns&&!ns){ns=document.createElement("span");ns.className="ap-nsdate";tithi?.insertAdjacentElement("afterend",ns);if(!tithi)cell.append(ns)}
-    if(ns){ns.textContent=info?.ns?`नेसं ${info.ns}`:"";ns.hidden=!info?.ns}
+    if(ns&&info?.ns){ns.textContent=`नेसं ${info.ns}`;ns.hidden=false}
 
     const old=cell.querySelector(".ap-weather");old?.remove();
     const forecast=weather.get(ad);if(!forecast)continue;
@@ -141,8 +151,21 @@ export function CalendarCellEnhancer(){
     let stopped=false;
     let calendarRange="";
     let refreshTimer=0;
+    let retryTimer=0;
+    let retries=0;
     const weather=new Map<string,WeatherDay>();
     const calendar=new Map<string,CalendarDecoration>();
+
+    const ingest=(rows:any[])=>{
+      let useful=0;
+      for(const row of rows){
+        const ad=rowDate(row);if(!/^\d{4}-\d{2}-\d{2}$/.test(ad))continue;
+        const tithi=tithiText(row),ns=nsText(row);
+        if(!tithi&&!ns)continue;
+        calendar.set(ad,{tithi,ns});useful++;
+      }
+      return useful;
+    };
 
     const fetchCalendar=async()=>{
       if(stopped)return;
@@ -152,15 +175,27 @@ export function CalendarCellEnhancer(){
       if(span<1||span>62)return;
       const key=`${start}|${end}`;if(key===calendarRange)return;calendarRange=key;
       try{
-        const response=await fetch(`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`,{headers:{accept:"application/json"},cache:"no-store"});
+        const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;
+        const response=await fetch(rangeUrl,{headers:{accept:"application/json"},cache:"no-store"});
         if(!response.ok)throw new Error("calendar_unavailable");
         const body=await response.json();
-        for(const row of (Array.isArray(body?.days)?body.days:[])){
-          const ad=rowDate(row);if(!/^\d{4}-\d{2}-\d{2}$/.test(ad))continue;
-          calendar.set(ad,{tithi:tithiText(row),ns:nsText(row)});
+        let useful=ingest(Array.isArray(body?.days)?body.days:[]);
+
+        // Secondary D1 path: if an old/broken sync response has no facts, use the canonical BS month endpoint.
+        if(useful===0){
+          const cursor=visibleBsCursor();
+          if(cursor){
+            const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
+            const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
+            if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
+          }
         }
-        decorate(weather,calendar);
-      }catch{calendarRange=""}
+        if(useful===0)throw new Error("calendar_facts_missing");
+        retries=0;decorate(weather,calendar);
+      }catch{
+        calendarRange="";
+        if(!stopped&&retries<2){retries++;window.clearTimeout(retryTimer);retryTimer=window.setTimeout(()=>{void fetchCalendar()},1200*retries)}
+      }
     };
 
     const run=()=>{
@@ -178,7 +213,7 @@ export function CalendarCellEnhancer(){
       .then(body=>{for(const item of (Array.isArray(body?.days)?body.days:[])){if(item?.date)weather.set(String(item.date),item)}run()})
       .catch(()=>undefined);
 
-    return()=>{stopped=true;window.clearTimeout(refreshTimer);observer.disconnect()};
+    return()=>{stopped=true;window.clearTimeout(refreshTimer);window.clearTimeout(retryTimer);observer.disconnect()};
   },[]);
   return null;
 }
