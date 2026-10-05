@@ -48,6 +48,10 @@ async function waitForServiceWorkerControl(page) {
     try {
       await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller), { timeout: 10000 });
       await waitForApp(page);
+      // controllerchange can trigger the one intentional PWA reload immediately after
+      // navigator.serviceWorker.controller becomes truthy. Give that navigation a chance to settle.
+      await page.waitForLoadState("domcontentloaded").catch(() => undefined);
+      await page.waitForTimeout(250);
       return;
     } catch (error) {
       lastError = error;
@@ -59,6 +63,23 @@ async function waitForServiceWorkerControl(page) {
   throw lastError || new Error("service worker never took control");
 }
 
+async function stableEvaluate(page, fn, arg) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await page.evaluate(fn, arg);
+    } catch (error) {
+      lastError = error;
+      const message = String(error?.message || error || "");
+      if (!message.includes("Execution context was destroyed") || attempt === 2) throw error;
+      await page.waitForLoadState("domcontentloaded").catch(() => undefined);
+      await waitForApp(page).catch(() => undefined);
+      await page.waitForTimeout(250);
+    }
+  }
+  throw lastError;
+}
+
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "allow" });
@@ -68,16 +89,16 @@ async function waitForServiceWorkerControl(page) {
 
   await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
   await waitForApp(page);
-  await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+  await stableEvaluate(page, async () => { await navigator.serviceWorker.ready; });
   // pwa.ts intentionally reloads once on controllerchange. Do not race that navigation
   // with a second explicit page.reload(); just wait until the new worker controls the page.
   await waitForServiceWorkerControl(page);
-  await page.evaluate(() => navigator.serviceWorker.controller?.postMessage({ type: "WARM_OFFLINE" }));
+  await stableEvaluate(page, () => navigator.serviceWorker.controller?.postMessage({ type: "WARM_OFFLINE" }));
 
   // Give the registered PWA enough idle time to prewarm local feature bundles.
   await page.waitForTimeout(7500);
 
-  const before = await page.evaluate(async () => {
+  const before = await stableEvaluate(page, async () => {
     const result = {};
     for (const name of await caches.keys()) {
       const cache = await caches.open(name);
@@ -111,7 +132,7 @@ async function waitForServiceWorkerControl(page) {
     const response = await page.goto(BASE + route, { waitUntil: "domcontentloaded", timeout: 20000 }).catch(() => null);
     await waitForApp(page);
     await waitForInteractiveSurface(page);
-    const snapshot = await page.evaluate((selector) => {
+    const snapshot = await stableEvaluate(page, (selector) => {
       const main = document.querySelector("main");
       let interactive = main?.querySelectorAll(selector).length || 0;
       let shadowInteractive = 0;
