@@ -44,6 +44,9 @@ function safeVersion(value: string) {
 function canonicalUrl(request: Request) {
   const url = new URL(request.url);
   if (url.pathname === "/api/v1/on-this-day") url.searchParams.delete("fresh");
+  for (const key of [...url.searchParams.keys()]) {
+    if (/^(?:utm_.+|fbclid|gclid)$/i.test(key)) url.searchParams.delete(key);
+  }
   const entries = [...url.searchParams.entries()].sort(([ak, av], [bk, bv]) =>
     ak.localeCompare(bk) || av.localeCompare(bv),
   );
@@ -56,11 +59,24 @@ function validIsoDate(value: string | null) {
   return !!value && /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
+function edgeOnly(group = "edge-only", maxBytes = 2_000_000): CachePolicy {
+  return {
+    group,
+    durable: false,
+    kvTtl: DAY,
+    maxBytes,
+    version: () => "edge-v1",
+  };
+}
+
 function policyFor(request: Request): CachePolicy | null {
   if (request.method !== "GET") return null;
   const url = canonicalUrl(request);
   const path = url.pathname;
 
+  // Immutable/slow-changing reference surfaces get the full Cache -> KV -> R2 -> D1
+  // hierarchy. R2 is deliberately used for response snapshots, not as a per-request
+  // SQLite engine, so the main SQL backup object can coexist untouched in the bucket.
   if (path === "/api/v1/on-this-day") {
     return {
       group: "history",
@@ -103,17 +119,36 @@ function policyFor(request: Request): CachePolicy | null {
     };
   }
 
-  // These can have very high key cardinality (arbitrary dates/coordinates). Keep them
-  // on the Cache API only so a crawler cannot burn KV/R2 operation quotas by enumerating keys.
-  if (path === "/api/v1/convert" || path === "/api/v1/astronomy/tithi") {
-    return {
-      group: "edge-only",
-      durable: false,
-      kvTtl: DAY,
-      maxBytes: 1_000_000,
-      version: () => "edge-v1",
-    };
+  // Public D1-backed surfaces that may change through admin overrides, stream health,
+  // publication refreshes, or have arbitrary query cardinality stay Cache-API-only.
+  // This saves D1 rows-read without converting crawler/search traffic into KV/R2 ops.
+  if (
+    path === "/api/v1/convert" ||
+    path === "/api/v1/astronomy/tithi" ||
+    path === "/api/v1/today" ||
+    path === "/api/v1/panchang" ||
+    path === "/api/v1/holidays" ||
+    path === "/api/v1/festivals" ||
+    path === "/api/v1/tools/official-sait" ||
+    path === "/api/v1/market/latest" ||
+    path === "/api/v1/news" ||
+    path === "/api/v1/rashifal/metadata" ||
+    path === "/api/v1/rashifal/universal" ||
+    path === "/api/v1/noc/fuel-prices" ||
+    path === "/api/fm/stations" ||
+    path === "/api/fm/v2/stations" ||
+    /^\/api\/fm\/(?:v2\/)?play\//.test(path) ||
+    path === "/api/v1/communities" ||
+    path === "/api/v1/communities/feed.ics" ||
+    path === "/api/v1/communities/lho" ||
+    /^\/api\/v1\/communities\/[^/]+(?:\/ics)?$/.test(path)
+  ) {
+    return edgeOnly("public-d1-edge", 4_000_000);
   }
+
+  // Typing lexicon is a large public external reference. Edge caching avoids repeated
+  // upstream fetch/checksum work without spending KV/R2 operations on format variants.
+  if (path === "/api/v1/typing/lexicon") return edgeOnly("typing-edge", 4_000_000);
 
   return null;
 }
@@ -144,9 +179,9 @@ function safeHeaders(response: Response) {
 }
 
 function cacheable(response: Response) {
-  if (!response.ok) return false;
-  const type = response.headers.get("content-type") || "";
-  if (!type.toLowerCase().includes("application/json")) return false;
+  if (!response.ok || response.headers.has("set-cookie")) return false;
+  const type = (response.headers.get("content-type") || "").toLowerCase();
+  if (!(type.includes("application/json") || type.includes("text/calendar") || type.includes("application/xml") || type.startsWith("text/plain"))) return false;
   const control = response.headers.get("cache-control") || "";
   return !/\b(?:private|no-store)\b/i.test(control);
 }
@@ -233,8 +268,8 @@ async function readDurable(request: Request, env: QuotaCacheEnv, policy: CachePo
   if (kv) return kv;
   const r2 = await readR2(env, key);
   if (r2) {
-    // Refill KV from the R2 copy asynchronously on the next store path rather than
-    // turning every R2 cache hit into a KV write.
+    // Do not refill KV on every R2 hit. This deliberately trades a cheap R2 read for a
+    // potentially quota-counted KV write; the next real origin refresh will repopulate both.
     return r2;
   }
   return null;
