@@ -38,6 +38,7 @@ import "./jyotish-assistant.css";
 import "./rich-calendar.css";
 import "./homepage-regressions.css";
 import "./homepage-premium.css";
+import "./release-seven.css";
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");

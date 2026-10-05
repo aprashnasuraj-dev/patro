@@ -3,7 +3,8 @@ import { createPanchangProvider } from "@/patro-tools/core/provider";
 import { KATHMANDU, type DayPanchang, type GeoLocation, type Paksha } from "@/patro-tools/core/types";
 
 type PatroPanchangPayload = {
-  ad: string;
+  ad?: string;
+  date?: string;
   panchang: {
     tithi: { number: number; paksha: string };
     tithi_transition?: { minutes?: number; time?: string | null } | null;
@@ -40,8 +41,7 @@ function primaryDay(date: string, loc: GeoLocation): DayPanchang | undefined {
   const live = cache.get(date);
   if (!live) return undefined;
 
-  // The existing Patro panchang is authoritative for fields it exposes.
-  // Astronomy Engine only supplies fields absent from the current API contract.
+  // D1/archive values are authoritative when present. Astronomy Engine only fills gaps.
   const fallback = dayPanchang(date, loc, "purnimanta");
   const tithi = Number(live.panchang.tithi?.number);
   const paksha = asPaksha(live.panchang.tithi?.paksha || fallback.paksha);
@@ -56,13 +56,14 @@ function primaryDay(date: string, loc: GeoLocation): DayPanchang | undefined {
     ? nakNumber - 1
     : fallback.nakshatra;
   const pada = Number(live.panchang.nakshatra?.pada);
+  const safeTithi = Number.isInteger(tithi) && tithi >= 1 && tithi <= 30 ? tithi : fallback.tithi;
 
   return {
     ...fallback,
     date,
-    tithi: Number.isInteger(tithi) && tithi >= 1 && tithi <= 30 ? tithi : fallback.tithi,
+    tithi: safeTithi,
     paksha,
-    tithiInPaksha: paksha === "shukla" ? Math.min(tithi, 15) : Math.max(1, tithi - 15),
+    tithiInPaksha: paksha === "shukla" ? Math.min(safeTithi, 15) : Math.max(1, safeTithi - 15),
     nakshatra,
     nakshatraPada: Number.isInteger(pada) && pada >= 1 && pada <= 4 ? pada : fallback.nakshatraPada,
     sunrise,
@@ -83,8 +84,10 @@ export async function primePanchang(date: string, signal?: AbortSignal) {
     headers: { Accept: "application/json" },
   });
   if (!response.ok) throw new Error("Patro panchang unavailable");
-  const payload = await response.json() as PatroPanchangPayload;
-  if (payload?.ad !== date || !payload?.panchang?.tithi) throw new Error("Invalid Patro panchang response");
+  const raw = await response.json() as PatroPanchangPayload;
+  const resolvedDate = raw?.ad || raw?.date || date;
+  if (resolvedDate !== date || !raw?.panchang?.tithi) throw new Error("Invalid Patro panchang response");
+  const payload: PatroPanchangPayload = { ...raw, ad: date, date };
   cache.set(date, payload);
   return panchangProvider.day(date, KATHMANDU);
 }

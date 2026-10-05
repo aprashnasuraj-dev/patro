@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { adToBs } from "../../packages/core/src";
+import { adToBs, bsToAd } from "../../packages/core/src";
 import { BS_MONTHS, toNepaliDigits } from "../title";
 
-type WeatherDay={date:string;icon:string;temperature_max_c:number|null;temperature_min_c:number|null;precipitation_probability_max:number|null};
+type WeatherDay={date:string;icon:string;label?:string;temperature_max_c:number|null;temperature_min_c:number|null;precipitation_probability_max:number|null};
 type CalendarDecoration={tithi:string;ns:string};
 
 const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
+const NEPALI_DIGITS:Record<string,string>={"०":"0","१":"1","२":"2","३":"3","४":"4","५":"5","६":"6","७":"7","८":"8","९":"9"};
 
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 function englishLabel(ad:string){
@@ -33,10 +34,26 @@ function nsText(row:any){
   return year?toNepaliDigits(year):"";
 }
 function rowDate(row:any){return String(row?.calendars?.gregorian_ad||row?.ad||row?.date||row?.query_date||"")}
+function parseNumber(text:string){
+  const normalized=text.replace(/[०-९]/g,(d)=>NEPALI_DIGITS[d]||d).replace(/[^0-9]/g,"");
+  const value=Number(normalized);return Number.isInteger(value)?value:NaN;
+}
+function visibleBsCursor(){
+  const route=location.pathname.match(/^\/calendar\/(\d{4})\/(\d{1,2})(?:\/|$)/);
+  if(route)return{year:Number(route[1]),month:Number(route[2])};
+  try{const bs=adToBs(todayNepal());return{year:bs.year,month:bs.month}}catch{return null}
+}
 function richCellDate(cell:Element){
+  const explicit=cell.getAttribute("data-ad")||"";
+  if(/^\d{4}-\d{2}-\d{2}$/.test(explicit))return explicit;
   const title=cell.querySelector<HTMLElement>(".rh-ad-date")?.getAttribute("title")||"";
   const match=title.match(/^AD\s+(\d{4}-\d{2}-\d{2})$/);
-  return match?.[1]||"";
+  if(match?.[1])return match[1];
+  const bsNode=cell.querySelector<HTMLElement>(".pc-bs");
+  const cursor=visibleBsCursor();
+  const day=bsNode?parseNumber(bsNode.textContent||""):NaN;
+  if(cursor&&day>=1&&day<=32){try{return bsToAd({year:cursor.year,month:cursor.month,day})}catch{return ""}}
+  return "";
 }
 function legacyCellDate(cell:Element){
   const href=cell.getAttribute("href")||"";
@@ -56,12 +73,18 @@ function decorateHomepageDate(){
   try{
     const bs=adToBs(ad);
     const label=`${toNepaliDigits(bs.day)} ${BS_MONTHS[bs.month-1]} ${toNepaliDigits(bs.year)}`;
-    document.querySelectorAll<HTMLElement>(".rh-today h1,.ap-today-card h1").forEach(node=>{if(node.textContent!==label)node.textContent=label});
+    document.querySelectorAll<HTMLElement>(".rh-hero h1,.rh-today h1,.ap-today-card h1").forEach(node=>{if(node.textContent!==label)node.textContent=label});
     document.querySelectorAll<HTMLElement>(".ap-home .ap-inline-error").forEach(node=>{node.hidden=true});
   }catch{}
   const weekday=FULL_NE_DAYS[new Date(ad+"T00:00:00Z").getUTCDay()];
-  const kicker=document.querySelector<HTMLElement>(".rh-today>.rh-kicker");
-  if(kicker){const label=`आज · ${weekday}`;if(kicker.textContent!==label)kicker.textContent=label}
+  document.querySelectorAll<HTMLElement>(".rh-hero .rh-kicker,.rh-today>.rh-kicker").forEach(kicker=>{const label=`आज · ${weekday}`;if(kicker.textContent!==label)kicker.textContent=label});
+}
+
+function weatherTitle(forecast:WeatherDay){
+  const max=forecast.temperature_max_c==null?"":`${Math.round(forecast.temperature_max_c)}°C`;
+  const min=forecast.temperature_min_c==null?"":`${Math.round(forecast.temperature_min_c)}°C`;
+  const rain=forecast.precipitation_probability_max==null?"":`${Math.round(forecast.precipitation_probability_max)}% वर्षा`;
+  return [forecast.label||"काठमाडौं मौसम",max&&min?`${min}–${max}`:max||min,rain,"Open-Meteo"].filter(Boolean).join(" · ");
 }
 
 function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDecoration>){
@@ -69,6 +92,7 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
 
   for(const cell of document.querySelectorAll<HTMLElement>(".rh-grid .rh-cell")){
     const ad=richCellDate(cell);if(!ad)continue;
+    cell.dataset.ad=ad;
     const info=calendar.get(ad);
     const adNode=cell.querySelector<HTMLElement>(".rh-ad-date");
     if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;adNode.setAttribute("aria-label",`English date ${label}`)}
@@ -76,6 +100,18 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     if(nsNode){const label=info?.ns?`नेसं ${info.ns}`:"";if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.toggleAttribute("hidden",!label)}
     const tithiNode=cell.querySelector<HTMLElement>("em");
     if(tithiNode){const label=info?.tithi||"";if(tithiNode.textContent!==label)tithiNode.textContent=label;tithiNode.classList.toggle("is-pending",!label)}
+
+    const pcTithi=cell.querySelector<HTMLElement>(".pc-tithi");
+    if(pcTithi&&info?.tithi&&pcTithi.textContent!==info.tithi)pcTithi.textContent=info.tithi;
+    const pcNs=cell.querySelector<HTMLElement>(".pc-ns");
+    if(pcNs&&info?.ns&&(!pcNs.textContent||pcNs.textContent.trim()==="—"))pcNs.textContent=info.ns;
+
+    let icon=cell.querySelector<HTMLElement>(".pc-weather");
+    const forecast=weather.get(ad);
+    if(!forecast){icon?.remove();continue}
+    if(!icon){icon=document.createElement("span");icon.className="pc-weather";icon.setAttribute("aria-hidden","true");const top=cell.querySelector<HTMLElement>(".pc-top");if(top)top.insertBefore(icon,top.querySelector(".pc-ad"));else cell.prepend(icon)}
+    icon.textContent=forecast.icon;icon.title=weatherTitle(forecast);
+    cell.setAttribute("data-weather",forecast.icon);
   }
 
   for(const cell of document.querySelectorAll<HTMLAnchorElement>('.ap-month-grid a.ap-day[href^="/date/"]')){
@@ -95,7 +131,7 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     const max=forecast.temperature_max_c==null?"":`${Math.round(forecast.temperature_max_c)}°`;
     const rain=forecast.precipitation_probability_max==null?"":`${Math.round(forecast.precipitation_probability_max)}%`;
     line.textContent=[forecast.icon,max,rain?`💧${rain}`:""].filter(Boolean).join(" ");
-    line.title=`Kathmandu forecast · ${max||"temperature unavailable"}${rain?` · precipitation ${rain}`:""} · Open-Meteo`;
+    line.title=weatherTitle(forecast);
     if(tithi)tithi.insertAdjacentElement("afterend",line);else cell.append(line);
   }
 }
