@@ -7,9 +7,7 @@ type CalendarDecoration={tithi:string;ns:string};
 
 const FULL_NE_DAYS=["आइतबार","सोमबार","मंगलबार","बुधबार","बिहीबार","शुक्रबार","शनिबार"];
 const NEPALI_DIGITS:Record<string,string>={"०":"0","१":"1","२":"2","३":"3","४":"4","५":"5","६":"6","७":"7","८":"8","९":"9"};
-// This revision token intentionally bypasses old service-worker calendar cache entries
-// created while the D1 payload shape was still broken. The Worker ignores the parameter.
-const CALENDAR_REFRESH_TOKEN="20261005-tithi-ns-v2";
+const CALENDAR_REFRESH_TOKEN="20261005-tithi-ns-v3";
 
 function todayNepal(){return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}
 function englishLabel(ad:string){
@@ -100,12 +98,11 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
 
   for(const cell of document.querySelectorAll<HTMLElement>(".rh-grid .rh-cell")){
     const ad=richCellDate(cell);if(!ad)continue;
-    cell.dataset.ad=ad;
+    if(cell.dataset.ad!==ad)cell.dataset.ad=ad;
     const info=calendar.get(ad);
     const adNode=cell.querySelector<HTMLElement>(".rh-ad-date");
-    if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;adNode.setAttribute("aria-label",`English date ${label}`)}
+    if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;if(adNode.getAttribute("aria-label")!==`English date ${label}`)adNode.setAttribute("aria-label",`English date ${label}`)}
 
-    // Enrichment is additive only. Never erase React/D1-rendered core calendar facts.
     const nsNode=cell.querySelector<HTMLElement>(".rh-ns-date");
     if(nsNode&&info?.ns){const label=`नेसं ${info.ns}`;if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.hidden=false}
     const tithiNode=cell.querySelector<HTMLElement>("em");
@@ -120,29 +117,30 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     const forecast=weather.get(ad);
     if(!forecast){icon?.remove();continue}
     if(!icon){icon=document.createElement("span");icon.className="pc-weather";icon.setAttribute("aria-hidden","true");const top=cell.querySelector<HTMLElement>(".pc-top");if(top)top.insertBefore(icon,top.querySelector(".pc-ad"));else cell.prepend(icon)}
-    icon.textContent=forecast.icon;icon.title=weatherTitle(forecast);
-    cell.setAttribute("data-weather",forecast.icon);
+    if(icon.textContent!==forecast.icon)icon.textContent=forecast.icon;
+    const title=weatherTitle(forecast);if(icon.title!==title)icon.title=title;
+    if(cell.getAttribute("data-weather")!==forecast.icon)cell.setAttribute("data-weather",forecast.icon);
   }
 
   for(const cell of document.querySelectorAll<HTMLAnchorElement>('.ap-month-grid a.ap-day[href^="/date/"]')){
     const ad=legacyCellDate(cell);if(!/^\d{4}-\d{2}-\d{2}$/.test(ad))continue;
     const info=calendar.get(ad);
     const adNode=cell.querySelector<HTMLElement>(".ap-adday");
-    if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;adNode.setAttribute("aria-label",`English date ${label}`)}
+    if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;if(adNode.getAttribute("aria-label")!==`English date ${label}`)adNode.setAttribute("aria-label",`English date ${label}`)}
     const tithi=cell.querySelector<HTMLElement>(".ap-tithi");
     if(tithi&&info?.tithi&&(!tithi.textContent||tithi.textContent.trim()==="—"))tithi.textContent=info.tithi;
     let ns=cell.querySelector<HTMLElement>(".ap-nsdate");
     if(info?.ns&&!ns){ns=document.createElement("span");ns.className="ap-nsdate";tithi?.insertAdjacentElement("afterend",ns);if(!tithi)cell.append(ns)}
-    if(ns&&info?.ns){ns.textContent=`नेसं ${info.ns}`;ns.hidden=false}
+    if(ns&&info?.ns){const label=`नेसं ${info.ns}`;if(ns.textContent!==label)ns.textContent=label;ns.hidden=false}
 
-    const old=cell.querySelector(".ap-weather");old?.remove();
     const forecast=weather.get(ad);if(!forecast)continue;
-    const line=document.createElement("span");line.className="ap-weather";
+    let line=cell.querySelector<HTMLElement>(".ap-weather");
+    if(!line){line=document.createElement("span");line.className="ap-weather";if(tithi)tithi.insertAdjacentElement("afterend",line);else cell.append(line)}
     const max=forecast.temperature_max_c==null?"":`${Math.round(forecast.temperature_max_c)}°`;
     const rain=forecast.precipitation_probability_max==null?"":`${Math.round(forecast.precipitation_probability_max)}%`;
-    line.textContent=[forecast.icon,max,rain?`💧${rain}`:""].filter(Boolean).join(" ");
-    line.title=weatherTitle(forecast);
-    if(tithi)tithi.insertAdjacentElement("afterend",line);else cell.append(line);
+    const text=[forecast.icon,max,rain?`💧${rain}`:""].filter(Boolean).join(" ");
+    if(line.textContent!==text)line.textContent=text;
+    const title=weatherTitle(forecast);if(line.title!==title)line.title=title;
   }
 }
 
@@ -167,53 +165,52 @@ export function CalendarCellEnhancer(){
       return useful;
     };
 
-    const fetchCalendar=async()=>{
+    const fetchCalendar=async(force=false)=>{
       if(stopped)return;
       const dates=collectVisibleDates();if(!dates.length)return;
       const start=dates[0],end=dates[dates.length-1];
       const span=Math.floor((Date.parse(end+"T00:00:00Z")-Date.parse(start+"T00:00:00Z"))/86400000)+1;
       if(span<1||span>62)return;
-      const key=`${start}|${end}`;if(key===calendarRange)return;calendarRange=key;
+      const key=`${start}|${end}`;if(!force&&key===calendarRange)return;calendarRange=key;
       try{
-        const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;
-        const response=await fetch(rangeUrl,{headers:{accept:"application/json"},cache:"no-store"});
-        if(!response.ok)throw new Error("calendar_unavailable");
-        const body=await response.json();
-        let useful=ingest(Array.isArray(body?.days)?body.days:[]);
-
-        // Secondary D1 path: if an old/broken sync response has no facts, use the canonical BS month endpoint.
+        let useful=0;
+        const cursor=visibleBsCursor();
+        if(cursor){
+          const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
+          const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
+          if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
+        }
         if(useful===0){
-          const cursor=visibleBsCursor();
-          if(cursor){
-            const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
-            const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
-            if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
-          }
+          const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;
+          const response=await fetch(rangeUrl,{headers:{accept:"application/json"},cache:"no-store"});
+          if(response.ok){const body=await response.json();useful+=ingest(Array.isArray(body?.days)?body.days:[])}
         }
         if(useful===0)throw new Error("calendar_facts_missing");
         retries=0;decorate(weather,calendar);
       }catch{
         calendarRange="";
-        if(!stopped&&retries<2){retries++;window.clearTimeout(retryTimer);retryTimer=window.setTimeout(()=>{void fetchCalendar()},1200*retries)}
+        if(!stopped&&retries<2){retries++;window.clearTimeout(retryTimer);retryTimer=window.setTimeout(()=>{void fetchCalendar(true)},1200*retries)}
       }
     };
 
-    const run=()=>{
+    const run=(force=false)=>{
       if(stopped)return;
       decorate(weather,calendar);
       window.clearTimeout(refreshTimer);
-      refreshTimer=window.setTimeout(()=>{void fetchCalendar()},80);
+      refreshTimer=window.setTimeout(()=>{void fetchCalendar(force)},160);
     };
-    const observer=new MutationObserver(run);
-    observer.observe(document.body,{subtree:true,childList:true});
-    run();
+    const onNavigate=()=>{calendarRange="";calendar.clear();run(true);window.setTimeout(()=>run(true),500)};
+    addEventListener("patro:navigation",onNavigate);
+    addEventListener("popstate",onNavigate);
+    run(true);
+    window.setTimeout(()=>run(true),700);
 
     fetch("/api/v1/weather/daily?days=16",{headers:{accept:"application/json"}})
       .then(r=>r.ok?r.json():Promise.reject())
       .then(body=>{for(const item of (Array.isArray(body?.days)?body.days:[])){if(item?.date)weather.set(String(item.date),item)}run()})
       .catch(()=>undefined);
 
-    return()=>{stopped=true;window.clearTimeout(refreshTimer);window.clearTimeout(retryTimer);observer.disconnect()};
+    return()=>{stopped=true;window.clearTimeout(refreshTimer);window.clearTimeout(retryTimer);removeEventListener("patro:navigation",onNavigate);removeEventListener("popstate",onNavigate)};
   },[]);
   return null;
 }
