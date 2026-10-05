@@ -1,0 +1,51 @@
+name: Synchronize canonical D1 datasets
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/dataset-experience-20261005]
+    paths: [.github/workflows/sync-d1-datasets.yml]
+permissions:
+  contents: read
+concurrency:
+  group: patro-d1-canonical-sync
+  cancel-in-progress: false
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Prepare database-only configuration
+        run: |
+          python3 <<'PY'
+          import json, os
+          from pathlib import Path
+          if not os.environ.get("CLOUDFLARE_ACCOUNT_ID") or not os.environ.get("CLOUDFLARE_API_TOKEN"):
+              raise SystemExit("Missing Cloudflare GitHub Actions secrets")
+          config = json.loads(Path("wrangler.jsonc").read_text())
+          for db in config["d1_databases"]:
+              db["migrations_dir"] = str(Path(db["migrations_dir"]).resolve())
+          Path("/tmp/d1-sync.json").write_text(json.dumps({"d1_databases": config["d1_databases"]}))
+          PY
+      - name: Apply canonical schema migrations
+        run: npx --yes wrangler@latest d1 migrations apply DB --remote --config /tmp/d1-sync.json
+      - name: Prepare runtime schemas
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          paths = sorted(Path("cloudflare/d1/migrations").glob("080*.sql"))
+          Path("/tmp/runtime-schema.sql").write_text("\n".join(p.read_text() for p in paths))
+          PY
+          npx --yes wrangler@latest d1 execute DB --remote --config /tmp/d1-sync.json --file /tmp/runtime-schema.sql --yes
+      - name: Generate validated canonical snapshot
+        run: node scripts/generate-d1-migrations.mjs
+      - name: Restore public feature datasets
+        run: npx --yes wrangler@latest d1 execute DB --remote --config /tmp/d1-sync.json --file .cloudflare/d1-import/content-snapshot.sql --yes
+      - name: Verify all canonical dataset counts
+        run: node scripts/verify-d1-remote.mjs /tmp/d1-sync.json
