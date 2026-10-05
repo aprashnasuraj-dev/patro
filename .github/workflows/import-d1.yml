@@ -2,6 +2,9 @@ name: Import ZIP database into Cloudflare D1
 
 on:
   workflow_dispatch:
+  push:
+    branches: [codex/d1-import-20261005]
+    paths: [.github/workflows/import-d1.yml]
 
 permissions:
   contents: read
@@ -19,8 +22,8 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       ZIP_FILE: "databse.zip.zip"
-      D1_DATABASE_NAME: "patro-db"
-      D1_DATABASE_ID: "PASTE_YOUR_D1_DATABASE_ID"
+      D1_DATABASE_NAME: "patro"
+      D1_DATABASE_ID: "fb25c860-01db-4ab0-9036-7f87b26ca64b"
 
     steps:
       - name: Download repository
@@ -38,6 +41,7 @@ jobs:
           import json
           import os
           import shutil
+          import re
           import zipfile
           from pathlib import Path
 
@@ -74,15 +78,33 @@ jobs:
               with z.open(sql) as source, (work / "database.sql").open("wb") as target:
                   shutil.copyfileobj(source, target)
 
+          sql_path = work / "database.sql"
+          sql_text = sql_path.read_text(encoding="utf-8-sig")
+          sql_text, removed = re.subn(
+              r"(?im)^[ \\t]*(?:BEGIN(?:[ \\t]+TRANSACTION)?|COMMIT|END[ \\t]+TRANSACTION)[ \\t]*;[ \\t]*$",
+              "",
+              sql_text
+          )
+          print(f"Removed {removed} standalone transaction statements for D1.")
+          sql_path.write_text(sql_text, encoding="utf-8")
+
           config = {
               "d1_databases": [{
                   "binding": "DB",
                   "database_name": os.environ["D1_DATABASE_NAME"],
-                  "database_id": os.environ["D1_DATABASE_ID"]
+                  "database_id": os.environ["D1_DATABASE_ID"],
+                  "migrations_dir": str(Path("cloudflare/d1/schema-migrations").resolve())
               }]
           }
           (work / "wrangler.json").write_text(json.dumps(config))
           PY
+
+      - name: Apply canonical schema migrations
+        shell: bash
+        run: |
+          npx --yes wrangler@latest d1 migrations apply "$D1_DATABASE_NAME" \
+            --config "$RUNNER_TEMP/d1-import/wrangler.json" \
+            --remote
 
       - name: Import SQL into hosted D1 database
         shell: bash
@@ -100,3 +122,55 @@ jobs:
             --config "$RUNNER_TEMP/d1-import/wrangler.json" \
             --remote \
             --command "SELECT name FROM sqlite_schema WHERE type='table' ORDER BY name;"
+
+      - name: Check imported dataset counts
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          expected = {
+              "nepali_master_days": 22281,
+              "nepali_bs_months": 732,
+              "nepali_master_festivals": 1573,
+              "nepali_sankranti": 732,
+              "nepali_reconciliation_divergences": 225,
+              "nepali_typing_lexicon": 34571,
+              "nepali_typing_aliases": 34771,
+              "nepali_typing_source_entries": 34548,
+              "samachar_sources": 28,
+              "verified_events_2083": 52,
+              "verified_event_sources_2083": 3
+          }
+          query = " UNION ALL ".join(
+              f"SELECT '{table}' AS dataset, COUNT(*) AS rows FROM {table}"
+              for table in expected
+          )
+          config = str(Path(os.environ["RUNNER_TEMP"]) / "d1-import/wrangler.json")
+          result = subprocess.run([
+              "npx", "--yes", "wrangler@latest", "d1", "execute",
+              os.environ["D1_DATABASE_NAME"], "--config", config,
+              "--remote", "--command", query, "--json"
+          ], check=True, text=True, capture_output=True)
+          responses = json.loads(result.stdout)
+          if isinstance(responses, dict):
+              responses = [responses]
+          rows = [row for response in responses for row in response.get("results", [])]
+          actual = {row["dataset"]: row["rows"] for row in rows}
+          summary = ["| Dataset | Actual rows | Minimum expected |",
+                     "|---|---:|---:|"]
+          failed = []
+          for table, minimum in expected.items():
+              count = actual.get(table)
+              print(f"{table}: {count} rows (minimum {minimum})")
+              summary.append(f"| {table} | {count} | {minimum} |")
+              if count is None or count < minimum:
+                  failed.append(table)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as output:
+              output.write("\n".join(summary) + "\n")
+          if failed:
+              raise SystemExit("Import verification failed: " + ", ".join(failed))
+          PY
