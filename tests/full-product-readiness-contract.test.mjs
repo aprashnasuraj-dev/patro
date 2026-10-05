@@ -168,7 +168,7 @@ test("Community Suite remains complete and emitted as six calendars plus Chakra 
 test("production runtime stays on the single canonical Worker config",()=>{
   const wrangler=JSON.parse(read("wrangler.jsonc"));
   assert.equal(wrangler.name,"patro");
-  assert.equal(wrangler.main,"worker/connected-entry.ts");
+  assert.equal(wrangler.main,"worker/optimized-entry.ts");
   assert.equal(wrangler.preview_urls,false);
   assert.equal(wrangler.assets?.directory,"./dist");
   assert.equal(wrangler.assets?.binding,"ASSETS");
