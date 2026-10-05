@@ -29,6 +29,10 @@ const SeoSearchSupport=lazy(()=>import("./SeoSearchSupport").then(m=>({default:m
 const DATE_ROUTE_PREFIX="/date/";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const COMMUNITY_SUITE_ROUTE=/^\/samudaya\/(lhosar|tharu|mithila|kirat|hijri)$/;
+const STANDALONE_COMMUNITY_ROUTES=new Set([
+ "/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila",
+ "/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
+]);
 const LEGACY_REDIRECTS:Record<string,string>={
  "/aaja":"/",
  "/astro":"/tools/astro",
@@ -56,7 +60,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
 };
 const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
+function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}

@@ -125,18 +125,21 @@ async function legacyRashifalRecords() {
 }
 
 async function collectSources() {
+  if (TABLE_ARG && !PK[TABLE_ARG]) throw new Error(`Unknown or unapproved table: ${TABLE_ARG}`);
   const byTable = new Map();
   for (const file of await walk(DATA_ROOT)) {
     const doc=JSON.parse(await readFile(file,"utf8"));
     if (!doc.table || !Array.isArray(doc.rows)) throw new Error(`Invalid snapshot ${relative(ROOT,file)}`);
     if (PRIVATE_DENYLIST.has(doc.table)) throw new Error(`Private table found in snapshot: ${doc.table}`);
     if (!PK[doc.table]) throw new Error(`Unapproved table in snapshot: ${doc.table}`);
+    if (TABLE_ARG && doc.table!==TABLE_ARG) continue;
     if (!byTable.has(doc.table)) byTable.set(doc.table,[]);
     byTable.get(doc.table).push({file,rows:doc.rows});
   }
-  if (!byTable.has("miti_rashifal_publications")) {
+  if ((!TABLE_ARG || TABLE_ARG==="miti_rashifal_publications") && !byTable.has("miti_rashifal_publications")) {
     byTable.set("miti_rashifal_publications",[{file:LEGACY_RASHIFAL,records:await legacyRashifalRecords()}]);
   }
+  if (TABLE_ARG && !byTable.has(TABLE_ARG)) throw new Error(`No migration source found for requested table: ${TABLE_ARG}`);
   return byTable;
 }
 

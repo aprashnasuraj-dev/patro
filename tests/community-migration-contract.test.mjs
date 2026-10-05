@@ -5,6 +5,10 @@ import { readFileSync } from "node:fs";
 const read=(path)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const json=(path)=>JSON.parse(read(path));
 const IDS=["nepal-sambat","lhosar","tharu","mithila","kirat","hijri"];
+const RICH_ROUTES=[
+  "/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu",
+  "/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
+];
 
 test("exactly six community calendars remain registered",()=>{
   const preferences=read("src/community/preferences.ts");
@@ -14,12 +18,25 @@ test("exactly six community calendars remain registered",()=>{
 
 test("build preserves six calendars plus Samudaya Chakra aggregate",()=>{
   const emitter=read("scripts/emit-community-suites.mjs");
-  const routes=[
-    "/nepal-sambat/mandala","/samudaya/lhosar","/samudaya/tharu",
-    "/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra"
-  ];
-  for(const route of routes) assert.ok(emitter.includes('"'+route+'"'),route);
+  for(const route of RICH_ROUTES) assert.ok(emitter.includes('"'+route+'"'),route);
   assert.ok(emitter.includes("expected 7/7 routes"));
+});
+
+test("immersive community routes are served by their rich standalone front ends",()=>{
+  const router=read("src/PatroRouter.tsx");
+  const emitter=read("scripts/emit-community-suites.mjs");
+  assert.ok(router.includes("STANDALONE_COMMUNITY_ROUTES"),"router must declare the immersive community document routes");
+  assert.ok(router.includes("if(STANDALONE_COMMUNITY_ROUTES.has(p))return false"),"SPA click interception must yield to standalone community documents");
+  for(const route of RICH_ROUTES){
+    assert.ok(router.includes('"'+route+'"'),`router standalone set lost ${route}`);
+    assert.ok(emitter.includes('"'+route+'"'),`standalone emitter lost ${route}`);
+  }
+
+  const readme=read("community-frontends/README.md");
+  for(const signature of [
+    "Turning lunar mandala",'three Lhosar "doors"',"Fire that grows as Maghi approaches","Painted year ring",
+    "silli dance circle","24-hour prayer clock","white threads join days shared by several communities"
+  ]) assert.ok(readme.includes(signature),`community interaction brief lost: ${signature}`);
 });
 
 test("D1 migration snapshot contains every community dataset",()=>{
