@@ -1,44 +1,15 @@
 import connectedWorker from "./connected-entry";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
+import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
 
-type FastHandler = () => Promise<Response | null>;
-
 /**
- * Normalize public hot-path cache keys. The homepage adds `fresh` only to bypass a
- * browser's stale response; it must not fragment the shared edge cache and trigger
- * another D1 read for every browser/session.
- */
-function publicCacheKey(request: Request) {
-  const url = new URL(request.url);
-  if (url.pathname === "/api/v1/on-this-day") url.searchParams.delete("fresh");
-  return new Request(url.toString(), { method: "GET" });
-}
-
-async function cachedPublicFastResponse(request: Request, ctx: ExecutionContext, handler: FastHandler) {
-  if (request.method !== "GET" || typeof caches === "undefined") return handler();
-
-  const cache = caches.default;
-  const key = publicCacheKey(request);
-  const cached = await cache.match(key);
-  if (cached) return cached;
-
-  const response = await handler();
-  if (!response) return null;
-
-  const cacheControl = response.headers.get("cache-control") || "";
-  if (response.ok && !/\b(?:no-store|private)\b/i.test(cacheControl)) {
-    ctx.waitUntil(cache.put(key, response.clone()));
-  }
-  return response;
-}
-
-/**
- * Thin production wrapper that keeps the full connected worker intact while routing
- * hot/native endpoints before the larger compatibility worker. Public D1-backed hot
- * paths use the Workers Cache API so repeated calendar/history traffic is served from
- * the edge instead of consuming D1 rows-read quota on every request.
+ * Production wrapper:
+ * - speech stays uncached because it is user/input specific;
+ * - public reference/calendar/history routes use Cache API first, then optional KV/R2,
+ *   then D1/connected runtime;
+ * - private, mutable and compatibility routes remain untouched.
  */
 const optimizedWorker = {
   ...connectedWorker,
@@ -46,21 +17,15 @@ const optimizedWorker = {
     const speech = await speechApiResponse(request, env);
     if (speech) return speech;
 
-    const history = await cachedPublicFastResponse(
-      request,
-      ctx,
-      () => fastHistoryResponse(request, env as any),
-    );
-    if (history) return history;
+    return quotaCachedResponse(request, env as any, ctx, async () => {
+      const history = await fastHistoryResponse(request, env as any);
+      if (history) return history;
 
-    const fast = await cachedPublicFastResponse(
-      request,
-      ctx,
-      () => fastCalendarResponse(request, env as any),
-    );
-    if (fast) return fast;
+      const calendar = await fastCalendarResponse(request, env as any);
+      if (calendar) return calendar;
 
-    return connectedWorker.fetch(request, env as any, ctx);
+      return connectedWorker.fetch(request, env as any, ctx);
+    }) as Promise<Response>;
   },
 };
 
