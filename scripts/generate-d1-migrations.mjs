@@ -14,6 +14,7 @@ const PAYLOAD_CHUNK_BYTES = 32_000;
 const IMPORT_CHUNK_TABLE = "__patro_import_payload_chunks";
 const SNAPSHOT_VERSION = "supabase-2026-09-30";
 const IMPORTED_AT = "2026-09-30T00:00:00Z";
+const NON_SNAPSHOT_PUBLIC_JSON = new Set(["tool_identity_review.json"]);
 
 const PK = {
   app_flags:["key"], astronomy_calendar_map:["ad_date"], calendar_coverage_tiers:["id"], calendar_reference_sources:["id"],
@@ -51,7 +52,7 @@ function statementsForRecord(record,source) {
 async function walk(dir) { const files=[]; for (const entry of await readdir(dir,{withFileTypes:true})) { const path=join(dir,entry.name); if (entry.isDirectory()) files.push(...await walk(path)); else if (entry.isFile()&&entry.name.endsWith(".json")) files.push(path); } return files.sort(); }
 function nextDay(date) { return new Date(Date.parse(date+"T00:00:00Z")+86_400_000).toISOString().slice(0,10); }
 
-const expected=JSON.parse(await readFile(manifestPath,"utf8")); const expectedTables=expected.tables||{}; const sourceFiles=await walk(dataRoot);
+const expected=JSON.parse(await readFile(manifestPath,"utf8")); const expectedTables=expected.tables||{}; const sourceFiles=(await walk(dataRoot)).filter((file)=>!NON_SNAPSHOT_PUBLIC_JSON.has(relative(dataRoot,file).replaceAll("\\","/")));
 if ("miti_rashifal_publications" in expectedTables) throw new Error("Rashifal must not be a mandatory D1 bootstrap table; it is served by the native/bundle runtime.");
 if ("market_snapshots" in expectedTables) throw new Error("market_snapshots/NEPSE must not be a mandatory D1 bootstrap table.");
 if (Number(expected.critical_features?.time_machine?.rows)!==706 || Number(expectedTables.time_machine_moments)!==706) throw new Error("Time Machine canonical D1 requirement must remain exactly 706 records.");
