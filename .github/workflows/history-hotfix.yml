@@ -1,6 +1,7 @@
-name: History Hotfix Deploy
+name: Storage Reconcile and History Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -11,9 +12,9 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy packaged history fallback
+    name: Reconcile storage, deploy and warm history
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,7 +33,7 @@ jobs:
           test -s dist/data/on-this-day/manifest.json
           test -s dist/data/on-this-day/month-01.json
           test -s dist/data/on-this-day/month-12.json
-      - name: Deploy without D1 data import
+      - name: Resolve and require KV plus R2
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
@@ -41,7 +42,8 @@ jobs:
           CF_KV_PREVIEW_NAMESPACE_ID: ${{ vars.CF_KV_PREVIEW_NAMESPACE_ID || secrets.CF_KV_PREVIEW_NAMESPACE_ID }}
           CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
           CF_R2_PREVIEW_BUCKET_NAME: ${{ vars.CF_R2_PREVIEW_BUCKET_NAME || secrets.CF_R2_PREVIEW_BUCKET_NAME }}
-          CF_CACHE_AUTO_PROVISION: "0"
+          CF_CACHE_AUTO_PROVISION: "1"
+          REQUIRE_QUOTA_CACHE: "1"
           PUBLIC_REFERENCE_CACHE_VERSION: public-reference-v1
         run: |
           set -euo pipefail
@@ -50,22 +52,65 @@ jobs:
             exit 1
           fi
           node scripts/prepare-cloudflare-config.mjs
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const cfg=JSON.parse(readFileSync("wrangler.generated.jsonc","utf8"));
+          const kv=cfg.kv_namespaces?.find(row=>row.binding==="CACHE");
+          const r2=cfg.r2_buckets?.find(row=>row.binding==="ARCHIVE");
+          if(!kv?.id)throw new Error("CACHE KV binding missing after reconciliation");
+          if(!r2?.bucket_name)throw new Error("ARCHIVE R2 binding missing after reconciliation");
+          console.log(JSON.stringify({ok:true,kv_binding:"CACHE",r2_binding:"ARCHIVE",r2_bucket:r2.bucket_name}));
+          NODE
+      - name: Verify immutable R2 history source
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          bucket="$(node --input-type=module - <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const cfg=JSON.parse(readFileSync('wrangler.generated.jsonc','utf8'));
+          process.stdout.write(String(cfg.r2_buckets.find(row=>row.binding==='ARCHIVE').bucket_name));
+          NODE
+          )"
+          npx wrangler r2 object get "${bucket}/datasets/on-this-day/v1/manifest.json" --file /tmp/history-r2-manifest.json --remote
+          node --input-type=module - <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const remote=JSON.parse(readFileSync('/tmp/history-r2-manifest.json','utf8'));
+          const local=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
+          if(remote.row_count!==5454)throw new Error(`R2 row count ${remote.row_count} != 5454`);
+          if(remote.source_version!==local.source_version)throw new Error('R2 source hash differs from this build');
+          if(!Array.isArray(remote.files)||remote.files.length!==12)throw new Error('R2 monthly archive is incomplete');
+          console.log(JSON.stringify({ok:true,row_count:remote.row_count,months:remote.files.length,source_version:remote.source_version}));
+          NODE
+      - name: Deploy Worker with D1, KV, R2 and Assets bindings
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
           npx wrangler deploy --config wrangler.generated.jsonc
-      - name: Verify live On This Day response
+      - name: Prime all 366 On This Day cache keys without D1
+        env:
+          PUBLIC_SITE_URL: https://aafnaipatro.com
+          HISTORY_PRIME_CONCURRENCY: "8"
+          HISTORY_PRIME_SETTLE_MS: "2000"
+        run: node scripts/cloudflare/prime-history-cache.mjs
+      - name: Verify today's live response
         shell: bash
         run: |
           set -euo pipefail
           date_value="$(TZ=Asia/Kathmandu date +%F)"
           out="$(mktemp)"
           headers="$(mktemp)"
-          curl --retry 8 --retry-delay 2 --retry-all-errors -fsS -D "$headers" -o "$out" "https://aafnaipatro.com/api/v1/on-this-day?date=${date_value}&rev=history-static-hotfix-v1"
-          node --input-type=module "$out" "$date_value" <<'NODE'
+          curl --retry 8 --retry-delay 2 --retry-all-errors -fsS -D "$headers" -o "$out" "https://aafnaipatro.com/api/v1/on-this-day?date=${date_value}&rev=storage-reconcile"
+          node --input-type=module - "$out" "$date_value" <<'NODE'
           import { readFileSync } from "node:fs";
           const [file,date]=process.argv.slice(2);
           const body=JSON.parse(readFileSync(file,"utf8"));
-          if(body?.ok!==true||body?.date!==date||!Array.isArray(body?.items)){
-            throw new Error(`Invalid live history payload: ${JSON.stringify(body).slice(0,300)}`);
-          }
+          if(body?.ok!==true||body?.date!==date||!Array.isArray(body?.items))throw new Error(`Invalid live history payload: ${JSON.stringify(body).slice(0,300)}`);
           console.log(JSON.stringify({ok:true,date,count:body.count,source:body.source}));
           NODE
           grep -iE '^(x-patro-backend|x-patro-cache):' "$headers" || true
