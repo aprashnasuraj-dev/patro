@@ -116,8 +116,6 @@ const manifest = {
 };
 await writeFile(join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2));
 
-// Step 4 archives are a small, deliberate route family. Add them to discovery without creating
-// community × day cross-products.
 const site = "https://aafnaipatro.com";
 const sitemapPath = join(ROOT, "public", "sitemap-community-archives.xml");
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${archiveRoutes.map((route) => `  <url><loc>${site}${route}</loc></url>`).join("\n")}\n</urlset>\n`;
@@ -133,6 +131,10 @@ const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
 seoManifest.sitemap_files = [...new Set([...(seoManifest.sitemap_files || []), "sitemap-community-archives.xml"])];
 seoManifest.community_archive_route_count = archiveRoutes.length;
 seoManifest.community_archive_families = manifest.primary_families;
+seoManifest.community_archive_source_version = sourceVersion;
 await writeFile(seoManifestPath, JSON.stringify(seoManifest, null, 2) + "\n");
+
+// Finalize the canonical publication graph after both calendar and community manifests exist.
+await import("../reconcile-community-archives.mjs");
 
 console.log(JSON.stringify({ ok:true, out:relative(ROOT, OUT), ...manifest }, null, 2));
