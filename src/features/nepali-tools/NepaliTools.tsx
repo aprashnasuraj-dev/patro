@@ -31,7 +31,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
 
     setFallback(false);
 
-    async function init() {
+    async function init(mountHost: HTMLDivElement) {
       // Load both dependencies before exposing the Shadow DOM.
       // This keeps the adapter atomic: consumers see either a fully mounted native tool or
       // the same-origin iframe fallback, never the short intermediate DOM without handlers.
@@ -54,7 +54,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       const stylesheet = document.createElement("link");
       stylesheet.rel = "stylesheet";
       stylesheet.href = `${BASE}/styles.css`;
-      shadow = element.shadowRoot || element.attachShadow({ mode: "open" });
+      shadow = mountHost.shadowRoot || mountHost.attachShadow({ mode: "open" });
       shadow.replaceChildren(stylesheet, document.importNode(main, true));
       cleanup = module.mountNepaliTools(shadow, { mode });
 
@@ -63,7 +63,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
         .catch(() => undefined);
     }
 
-    init().catch((reason) => {
+    init(element).catch((reason) => {
       if (cancelled || controller.signal.aborted) return;
       console.warn("Nepali typing adapter switched to packaged fallback", reason);
       shadow?.replaceChildren();
