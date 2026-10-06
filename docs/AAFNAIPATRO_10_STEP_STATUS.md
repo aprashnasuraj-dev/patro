@@ -21,23 +21,22 @@ Main already contains Cache → KV/R2 → connected-runtime response caching plu
 |---|---|---|---|---|
 | 1 | Inventory, preservation contract, stable identity/URL semantics | `docs/INVENTORY.md`, migration inventory checks, release-safety tests and the canonical publication graph protect the working product. Current date canonical is `/date/YYYY-MM-DD`; no mass URL move is required. | COMPLETE | Regression-only. Do not rebuild Step 1. |
 | 2 | Permanent useful date pages from validated data | `scripts/calendar-snapshot.mjs`, `lib/patro.mjs`, `scripts/prerender-days-seo.mjs`, `seo-config.mjs`, phase-gate tests and PR #81 provide factual date pages plus R2/static calendar fallback before indexed D1. | CORE COMPLETE / SCALE-GATED | Keep wider years candidate/non-indexed until accuracy/indexing gates justify expansion. |
-| 3 | Festival identity + annual occurrence + real-event separation | PR #78 provides deterministic festival identity/year pages from the validated holiday map. Festival observances are represented separately from future organizer-event entities. | PARTIAL — EVENT SCHEMA REMAINS | Add a real `event` entity type/source gate only; do not fabricate organizer events. Add a renderer later only if source-backed organizer records already exist. |
+| 3 | Festival identity + annual occurrence + real-event separation | PR #78 provides deterministic festival identity/year pages from the validated holiday map. Organizer events are not yet a separate graph type. Review also found festival occurrence prerender still emits Schema.org `Event`, which is too strong for an ordinary recurring observance. | PARTIAL — EVENT SCHEMA REMAINS | Add a real `event` entity/source gate without fabricating records, and replace festival occurrence `Event` schema with observance/WebPage semantics. Add an organizer-event renderer later only if source-backed organizer records exist. |
 | 4 | Six community calendar hubs/archives without flattening native rules | The six suites remain registered and functional with migration/readiness tests. | CORE COMPLETE / DATA-GATED | Do not synthesize native dates by fixed offsets. Expand only from trustworthy native-source coverage. |
-| 5 | 33 source-backed tool identities with one public canonical per real task | Public HTML/SEO registry verifies 29 canonical public tools. The four additional source-backed identities are now parity-reviewed in `migration/data/public/tool_identity_review.json`, and the graph validator requires their explicit disposition. | PARITY REVIEW COMPLETE / 29 PUBLIC | No promotion is justified now: `diaspora` maps to `/tools/clock`; `tithi` and `card` bridge into private `/me/*` state; `api` is a developer/reference surface kept noindex and outside the end-user tool count. Preserve 29 working canonical tools. |
-| 6 | Today in History + permanent archive + contextual workflows | Main includes packaged/R2 On This Day fallback over the 5,454-row archive. The publication graph contains 366 reusable month/day identities and 5,454 stable history-event candidates. | PARTIAL — ARCHIVE RENDERER REMAINS | Add deterministic `/on-this-day/MM-DD` pages first, without D1 and without individual event-detail publication. Then classify event evidence quality before any event pages. |
+| 5 | 33 source-backed tool identities with one public canonical per real task | Public HTML/SEO registry verifies 29 canonical public tools. The four additional source-backed identities are parity-reviewed in `migration/data/public/tool_identity_review.json`, and the graph validator requires their explicit disposition. | PARITY REVIEW COMPLETE / 29 PUBLIC | No promotion is justified now: `diaspora` maps to `/tools/clock`; `tithi` and `card` bridge into private `/me/*` state; `api` is a developer/reference surface kept noindex and outside the end-user tool count. Preserve 29 working canonical tools. |
+| 6 | Today in History + permanent archive + contextual workflows | Live `/on-this-day` remains unchanged. `scripts/prerender-history-days.mjs` renders all 366 permanent `/on-this-day/MM-DD` routes from packaged monthly history shards; hydrated archive views also read those static shards. Only source-URL-backed titles are shown, archive summaries are omitted, Feb 29 is explicit, and pages remain `noindex` candidates pending evidence classification. | RECURRING ARCHIVE COMPLETE / EVENT CLASSIFIER REMAINS | Classify all 5,454 history-event identities as `publishable`, `needs-source`, `duplicate`, or `uncertain`. Do not publish individual event-detail pages until that classifier is trustworthy. |
 | 7 | Deterministic read-only publication pipeline | Build-time SEO/day generation, shared source adapters, validated local archive and the canonical publication graph provide one deterministic publication path. | COMPLETE | Future page families must use the graph rather than separate uncontrolled route registries. |
-| 8 | Midnight freshness, cache hierarchy, performance and private-state preservation | `worker/quota-cache.ts`, packaged/R2 history fallback, storage-binding guards, release-safety tests and PR #81 cover the core requirement. | COMPLETE / MONITOR | Keep private/local state out of shared caches and preserve Kathmandu date-boundary behavior. |
-| 9 | Canonicals, crawlable archives, sitemaps and measured 10k+ scaling | SEO generation/validation and the >19k-entity candidate graph provide route capacity without making every entity indexable. | CORE COMPLETE / SCALE-GATED | 10k–50k is capacity, not an indexing target. No blind cross-products or duplicate aliases. |
+| 8 | Midnight freshness, cache hierarchy, performance and private-state preservation | `worker/quota-cache.ts`, packaged/R2 history fallback, storage-binding guards, release-safety tests and PR #81 cover the core requirement. Permanent history month/day pages are immutable and do not depend on Nepal midnight. | COMPLETE / MONITOR | Keep private/local state out of shared caches and preserve Kathmandu date-boundary behavior for live routes. |
+| 9 | Canonicals, crawlable archives, sitemaps and measured 10k+ scaling | SEO generation/validation and the >19k-entity candidate graph provide route capacity without making every entity indexable. The new 366 history archive routes are deliberately noindex during the first evidence-gated cohort. | CORE COMPLETE / SCALE-GATED | 10k–50k is capacity, not an indexing target. No blind cross-products or duplicate aliases. |
 | 10 | Reversible release, regression gates and monitoring | GitHub Release Gate, `release:verify`, browser functional checks, Lighthouse, deployment smoke checks and previous-artifact safeguards are working. | COMPLETE | Keep PRs narrow and merge only with a green Release Gate. |
 
 ## Remaining implementation sequence
 
-Only gaps that still require code should create PRs. After the Step 5 parity review, the remaining sequence is:
+Only gaps that still require code should create PRs. After Step 5 parity review and the recurring Step 6 archive renderer, the remaining sequence is:
 
-1. **Step 6 recurring history archive renderer** — `/on-this-day/MM-DD`, deterministic/static, 366 valid keys including Feb 29, no D1, no event-detail pages yet.
-2. **Step 6 history publication-quality classifier** — classify all 5,454 records as `publishable`, `needs-source`, `duplicate`, or `uncertain`; do not auto-publish pages.
-3. **Step 3 real-event schema + source gate** — add organizer-event entity support and validation, with source evidence mandatory before `public/indexable`.
-4. **Step 3 event renderer only if data already exists** — stop at the schema/source gate if the repository lacks sufficient organizer-event records.
+1. **Step 6 history publication-quality classifier** — classify all 5,454 records as `publishable`, `needs-source`, `duplicate`, or `uncertain`; do not auto-publish event pages.
+2. **Step 3 real-event schema + source gate** — add organizer-event entity support and validation, with source evidence mandatory before `public/indexable`; also remove `Event` structured data from ordinary festival occurrence pages.
+3. **Step 3 event renderer only if data already exists** — stop at the schema/source gate if the repository lacks sufficient organizer-event records.
 
 No additional PR is justified solely to reach a numeric page/tool target.
 
@@ -73,6 +72,17 @@ The parity review is machine-readable in `migration/data/public/tool_identity_re
 | `api` | `/tools/api` renders the same developer/reference surface as `/developers` and is intentionally noindex | No, not as an end-user tool | Keep as candidate/reference and outside the public tool count. |
 
 Therefore the repository retains **33 source-backed identities = 29 public canonical tools + 4 explicit non-promoted identities**. The four candidates must not replace or remove any of the verified 29.
+
+## History archive publication policy
+
+The permanent recurrence archive is intentionally narrower than the live Today in History experience.
+
+- `/on-this-day` remains the live/current-date-capable feature and may use the existing cached API path.
+- `/on-this-day/MM-DD` is generated from the packaged public history shards and performs no D1 read.
+- All 366 valid month/day keys exist, including `02-29`.
+- The first archive cohort is `noindex,follow`; graph identities stay `candidate` until evidence-quality classification is complete.
+- Permanent archive HTML does not copy archive summaries. It emits source-cited titles/year/category plus a source link and useful next actions.
+- History event detail routes remain non-published candidates.
 
 ## Scale policy
 
