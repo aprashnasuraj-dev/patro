@@ -125,13 +125,19 @@ if (expires) {
 const entry = await read("worker/connected-entry.ts");
 const gateway = await read("worker/agent-gateway.ts");
 const mcp = await read("worker/mcp.ts");
+const calendarFast = await read("worker/calendar-fast.ts");
+const patroSource = await read("worker/patro-source.ts");
 const jobs = await read("worker/jobs.ts");
 const jsonc = await read("wrangler.jsonc");
 expect(entry.includes('import { handleAgentSurface } from "./agent-gateway"'), "production Worker does not wire agent gateway");
 expect(gateway.includes("mcpResponse(request, env)"), "agent gateway does not wire MCP");
 expect(gateway.includes('url.pathname === "/api/agent/v1/sait"'), "agent gateway sourced sait endpoint missing");
+expect(gateway.includes("createArchivePatroSource(env)"), "agent calendar reads must use the R2 archive source");
 expect(mcp.includes('const MODERN = "2026-07-28"'), "MCP modern protocol version missing");
-expect(mcp.includes("createPatroAdapter(createD1PatroSource(env))"), "MCP must use canonical Patro adapter");
+expect(mcp.includes("createPatroAdapter(createArchivePatroSource(env))"), "MCP calendar reads must use the R2 archive source");
+expect(patroSource.includes('const CALENDAR_PREFIX="datasets/calendar/v1"'), "canonical adapter source lacks calendar R2 prefix");
+expect(calendarFast.includes("D1 is deliberately not a normal fallback"), "calendar fast path must fail closed instead of reading D1");
+expect(!calendarFast.includes("cloudflare-d1-calendar"), "calendar fast path still contains a D1 calendar backend");
 expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
 expect(jsonc.includes('"15 18 * * *"'), "Nepal-midnight cron missing from canonical Cloudflare config");
 
