@@ -9,17 +9,16 @@ const canonicalTools=[
  "/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/tools/bstoad","/tools/adtobs","/tools/calc","/tools/age","/tools/clock","/tools/forex","/tools/gold","/tools/emi","/tools/vat","/tools/units","/tools/words","/tools/incometax","/tools/landconverter","/tools/nepaliqr","/tools/fuelprice","/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check","/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
 ];
 
-test("SEO discovery uses production canonical and submits only the indexable BS-year window of the R2 archive",()=>{
+test("SEO discovery uses production canonical and submits a broad factual BS-year window",()=>{
  const manifest=JSON.parse(read("public/seo-manifest.json"));
  assert.equal(manifest.schema_version,4);assert.equal(manifest.site_url,production);assert.equal(manifest.canonical_tool_route_count,29);
- // Full validated archive stays in R2 and remains reachable...
  assert.ok(manifest.calendar_archive_bs_years.length>200);assert.equal(manifest.calendar_archive_row_count,77070);
- // ...but sitemaps carry only current BS year ±10 (the Worker's historical noindex cutoff).
- const {min,max,current}=manifest.sitemap_bs_year_window;assert.equal(min,current-10);assert.equal(max,current+10);
+ const {min,max,current}=manifest.sitemap_bs_year_window;assert.equal(min,current-35);assert.equal(max,current+10);
  assert.deepEqual(manifest.indexed_calendar_years,manifest.calendar_archive_bs_years.filter((y)=>y>=min&&y<=max));
- assert.ok(manifest.indexed_calendar_years.length>=10&&manifest.indexed_calendar_years.length<=21);
+ assert.ok(manifest.indexed_calendar_years.length>=40&&manifest.indexed_calendar_years.length<=46);
  assert.equal(manifest.indexed_calendar_year_route_count,manifest.indexed_calendar_years.length);
- assert.ok(manifest.indexed_day_route_count>3000&&manifest.indexed_day_route_count<8000);assert.ok(manifest.indexed_route_count>=1800);
+ assert.ok(manifest.indexed_day_route_count>15000&&manifest.indexed_day_route_count<18000);
+ assert.ok(manifest.indexed_route_count>=1800);
  assert.match(manifest.archive_policy,/indexable BS \d{4}–\d{4} window/);
  for(const name of manifest.sitemap_files){const archive=name.match(/^sitemap-(?:calendar|days)-(\d+)\.xml$/);if(archive)assert.ok(Number(archive[1])>=min&&Number(archive[1])<=max,name);}
  assert.equal(manifest.calendar_archive_ad_start,"1826-04-11");assert.equal(manifest.calendar_archive_ad_end,"2037-04-13");assert.match(manifest.calendar_archive_source_version,/^sha256:[a-f0-9]{64}$/);
@@ -27,7 +26,7 @@ test("SEO discovery uses production canonical and submits only the indexable BS-
  const index=read("public/sitemap.xml");assert.ok(index.includes("<sitemapindex"));
  const entries=[...index.matchAll(/<sitemap><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/sitemap>/g)];
  assert.equal(entries.length,(index.match(/<sitemap>/g)||[]).length,"every sitemap index entry carries <lastmod>");
- assert.ok(entries.length>=25&&entries.length<=50,`index child count ${entries.length}`);
+ assert.ok(entries.length>=90&&entries.length<=140,`index child count ${entries.length}`);
  for(const year of manifest.indexed_calendar_years){
    const cal=`sitemap-calendar-${year}.xml`,days=`sitemap-days-${year}.xml`;assert.ok(manifest.sitemap_files.includes(cal));assert.ok(manifest.sitemap_files.includes(days));
    const calText=read(`public/${cal}`);assert.ok(calText.includes(`<loc>${production}/calendar/${year}</loc>`),`year hub ${year}`);
@@ -36,6 +35,8 @@ test("SEO discovery uses production canonical and submits only the indexable BS-
  for(const name of manifest.sitemap_files){assert.ok(index.includes(`${production}/${name}`));const path=`public/${name}`;assert.ok(existsSync(new URL("../"+path,import.meta.url)));const text=read(path);assert.ok(text.includes(production));assert.ok(!text.includes(retired));}
  const pages=read("public/sitemap-pages.xml");
  for(const route of ["/","/today","/methodology","/corrections","/convert","/rashifal","/time-machine","/on-this-day","/fm","/tv","/today/tokyo","/today/sydney"]){const url=route==="/"?`${production}/`:`${production}${route}`;assert.ok(pages.includes(`<loc>${url}</loc>`),route);}
+ assert.ok(manifest.sitemap_files.includes("sitemap-history-events.xml"));
+ assert.ok(Number(manifest.indexed_history_event_route_count||0)>=3000);
 });
 
 test("canonical tools stay complete while private/news/developer surfaces stay out of discovery",()=>{
@@ -46,13 +47,14 @@ test("canonical tools stay complete while private/news/developer surfaces stay o
  assert.ok(!/<loc>https:\/\/aafnaipatro\.com\/(?:api|compat-api|me|admin|auth)\//.test(all));
  const config=read("scripts/seo-config.mjs");
  assert.ok(config.includes('export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"]'));
- assert.ok(config.includes("export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - 10"));
+ assert.ok(config.includes("export const INDEXABLE_PAST_YEARS = 35"));
+ assert.ok(config.includes("export const INDEXABLE_FUTURE_YEARS = 10"));
 });
 
 test("sitemap window and Worker noindex cutoff share one BS-year formula; sitemaps are served as static XML",()=>{
  const config=read("scripts/seo-config.mjs"),win=read("worker/seo-window.ts"),index=read("worker/index.ts"),seo=read("worker/seo-static.ts"),optimized=read("worker/optimized-entry.ts"),connected=read("worker/connected-entry.ts");
  for(const text of [config,win]){assert.ok(text.includes("parts.month > 4 || (parts.month === 4 && parts.day >= 14)"));assert.ok(text.includes("parts.year + (afterApproxNewYear ? 57 : 56)"));}
- assert.ok(win.includes("approxBsYear(date) - 10"));assert.ok(index.includes('import { historicalCalendarNoindex } from "./seo-window"'));assert.ok(!index.includes("adYear + 57"));
+ assert.ok(win.includes("approxBsYear(date) - INDEXABLE_PAST_YEARS"));assert.ok(index.includes('import { historicalCalendarNoindex } from "./seo-window"'));assert.ok(!index.includes("adYear + 57"));
  assert.ok(seo.includes("/^\\/sitemap[\\w-]*\\.xml$/"));assert.ok(seo.includes('"application/xml; charset=utf-8"'));assert.ok(seo.includes('"text/plain; charset=utf-8"'));assert.ok(seo.includes('"cache-control": "public, max-age=3600"'));
  assert.ok(optimized.indexOf("seoStaticResponse(request")<optimized.indexOf("speechApiResponse(request"));
  assert.ok(connected.indexOf("seoStaticResponse(request")<connected.indexOf("legacyRedirectResponse(request)"));
@@ -91,10 +93,10 @@ test("canonical adapter uses Git mirror at build time and R2 for immutable runti
  assert.ok(year.includes('/calendar\\/(\\d{4})'));assert.ok(data.includes('/data\\/calendar\\/(\\d{4})\\.(csv|json)'));assert.ok(data.includes('"content-type":"application/json; charset=utf-8"'));assert.ok(data.includes('"content-type":"text/csv; charset=utf-8"'));assert.ok(gateway.includes("dataExportResponse"));assert.ok(gateway.includes("yearPageResponse"));
 });
 
-test("build and deploy pipeline lock factual prerender, Phase 0 and explicit IndexNow tooling",()=>{
- const prerender=read("scripts/prerender-seo.mjs"),days=read("scripts/prerender-days-seo.mjs"),config=read("scripts/seo-config.mjs"),pkg=JSON.parse(read("package.json")),entry=read("worker/connected-entry.ts"),indexnow=read("scripts/indexnow.mjs");
+test("build and deploy pipeline lock factual prerender, dynamic history and explicit IndexNow tooling",()=>{
+ const prerender=read("scripts/prerender-seo.mjs"),days=read("scripts/prerender-days-seo.mjs"),config=read("scripts/seo-config.mjs"),pkg=JSON.parse(read("package.json")),entry=read("worker/connected-entry.ts"),optimized=read("worker/optimized-entry.ts"),history=read("worker/history-event-page.ts"),indexnow=read("scripts/indexnow.mjs");
  assert.ok(prerender.includes('data-seo-prerender="true"'));assert.ok(prerender.includes('"@type": "WebPage"'));assert.ok(prerender.includes('"@type": "BreadcrumbList"'));assert.ok(prerender.includes('"@type": "WebApplication"'));assert.ok(prerender.includes("max-image-preview:large"));assert.ok(config.includes("Ashwin Ashoj Asoj"));assert.ok(config.includes("calendarYearRoute"));
  assert.ok(days.includes("loadCalendarSnapshot"));assert.ok(days.includes("loadHolidayMap"));assert.ok(days.includes("यो मितिको सीधा उत्तर"));assert.ok(days.includes("calendarYearRoute"));assert.ok(days.includes('href="/today"'));assert.ok(days.includes('/festivals/${esc(h.slug)}/'));
  assert.ok(pkg.scripts.build.includes("npm run seo:phase0"));assert.equal(pkg.scripts["seo:accuracy-reference"],"node scripts/verify-calendar-reference.mjs");assert.equal(pkg.scripts["seo:verify-live"],"node scripts/verify-agent-bots.mjs");assert.equal(pkg.scripts["seo:indexnow"],"node scripts/indexnow.mjs");assert.equal(pkg.scripts["deploy:cloudflare"],"npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
- assert.ok(entry.includes("exactSpaAssetResponse"));assert.ok(entry.includes('import { handleAgentSurface } from "./agent-gateway"'));assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));
+ assert.ok(entry.includes("exactSpaAssetResponse"));assert.ok(entry.includes('import { handleAgentSurface } from "./agent-gateway"'));assert.ok(optimized.includes("historyEventPageResponse"));assert.ok(history.includes("dynamic-history-static-index"));assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));
 });
