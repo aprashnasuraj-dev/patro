@@ -6,6 +6,14 @@ on:
       - feature/janmapatro-gunamilan
     paths:
       - 'packages/engine/**'
+      - 'src/jyotish/**'
+      - 'src/PatroRouter.tsx'
+      - 'src/components/FeatureLauncher.tsx'
+      - 'worker/connected-entry.ts'
+      - 'worker/connected-seo.ts'
+      - 'scripts/seo-config.mjs'
+      - 'scripts/generate-search-intents.mjs'
+      - 'scripts/prerender-seo.mjs'
       - 'tests/janmapatro-*.test.mjs'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
@@ -13,6 +21,14 @@ on:
     branches: [main]
     paths:
       - 'packages/engine/**'
+      - 'src/jyotish/**'
+      - 'src/PatroRouter.tsx'
+      - 'src/components/FeatureLauncher.tsx'
+      - 'worker/connected-entry.ts'
+      - 'worker/connected-seo.ts'
+      - 'scripts/seo-config.mjs'
+      - 'scripts/generate-search-intents.mjs'
+      - 'scripts/prerender-seo.mjs'
       - 'tests/janmapatro-*.test.mjs'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
@@ -60,7 +76,7 @@ jobs:
           while IFS= read -r file; do
             [[ -z "$file" ]] && continue
             case "$file" in
-              packages/engine/*|packages/engine/**|tests/janmapatro-*.test.mjs|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/janmapatro-fast-gate.yml)
+              packages/engine/*|packages/engine/**|src/jyotish/*|src/jyotish/**|src/PatroRouter.tsx|src/components/FeatureLauncher.tsx|worker/connected-entry.ts|worker/connected-seo.ts|scripts/seo-config.mjs|scripts/generate-search-intents.mjs|scripts/prerender-seo.mjs|tests/janmapatro-*.test.mjs|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/janmapatro-fast-gate.yml)
                 ;;
               *)
                 echo "::error::Fast gate is intentionally limited to Janma Patro/Guna Milan files; unrelated change: $file"
