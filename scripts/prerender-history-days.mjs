@@ -30,6 +30,10 @@ function yearOf(row) {
   return Number.isInteger(year) ? year : null;
 }
 
+function verificationOf(row) {
+  return String(row?.verification_status || "").trim().toLowerCase() || "unverified";
+}
+
 function sourceNameOf(row, url) {
   const explicit = String(row?.source_name || row?.source_title || "").trim();
   if (explicit) return explicit;
@@ -38,8 +42,18 @@ function sourceNameOf(row, url) {
 
 function archiveRows(rows) {
   return (Array.isArray(rows) ? rows : [])
-    .map((row) => ({ row, url: safeHttp(row?.source_url), title: titleOf(row), year: yearOf(row) }))
-    .filter((entry) => entry.url && entry.title)
+    .map((row) => {
+      const url = safeHttp(row?.source_url);
+      const verificationStatus = verificationOf(row);
+      return {
+        row,
+        url,
+        title: titleOf(row) || "Historical archive record",
+        year: yearOf(row),
+        verificationStatus,
+        needsFurtherVerification: verificationStatus === "unverified" || !url,
+      };
+    })
     .sort((a, b) => (a.year ?? 999999) - (b.year ?? 999999) || a.title.localeCompare(b.title));
 }
 
@@ -83,7 +97,8 @@ async function monthShard(month) {
 }
 
 let emitted = 0;
-let citedEvents = 0;
+let archiveEvents = 0;
+let needsFurtherVerification = 0;
 for (const entity of historyDays) {
   const mmdd = String(entity?.facts?.monthDay || "");
   if (!validMonthDay(mmdd)) throw new Error(`Invalid history-day identity: ${entity?.id}`);
@@ -93,18 +108,21 @@ for (const entity of historyDays) {
   const shard = await monthShard(month);
   const allRows = Array.isArray(shard.days?.[day2(day)]) ? shard.days[day2(day)] : [];
   const rows = archiveRows(allRows);
-  citedEvents += rows.length;
+  archiveEvents += rows.length;
+  const needsCount = rows.filter((entry) => entry.needsFurtherVerification).length;
+  needsFurtherVerification += needsCount;
+  const citedCount = rows.filter((entry) => Boolean(entry.url)).length;
 
   const display = new Intl.DateTimeFormat("en", { timeZone: "UTC", month: "long", day: "numeric" }).format(new Date(Date.UTC(2000, month - 1, day)));
   const canonical = `${SITE}/on-this-day/${mmdd}`;
   const title = `${display} — इतिहास अभिलेख`;
-  const description = `${display} का source-cited On This Day archive records. Permanent recurrence archive; summaries are intentionally omitted until evidence-quality classification is complete.`;
+  const description = `${display} का On This Day archive records. सबै अभिलेख सुरक्षित राखिएका छन्; अप्रमाणित अभिलेखमा थप प्रमाणीकरण आवश्यक भनेर स्पष्ट चिन्ह लगाइएको छ।`;
   const items = rows.length
-    ? `<ol>${rows.map(({ row, url, title: eventTitle, year }) => `<li>${year ? `<strong>${esc(year)}</strong> — ` : ""}${esc(eventTitle)} <a href="${esc(url)}" rel="nofollow noopener">${esc(sourceNameOf(row, url))}</a></li>`).join("")}</ol>`
-    : `<p>यो मिति लागि हालको archive snapshot मा source URL सहितको प्रकाशनयोग्य अभिलेख छैन।</p>`;
+    ? `<ol>${rows.map(({ row, url, title: eventTitle, year, needsFurtherVerification: needsVerification }) => `<li>${year ? `<strong>${esc(year)}</strong> — ` : ""}${esc(eventTitle)} ${url ? `<a href="${esc(url)}" rel="nofollow noopener">${esc(sourceNameOf(row, url))}</a>` : ""}${needsVerification ? ` <strong data-verification="needs-further-verification">Needs further verification · थप प्रमाणीकरण आवश्यक</strong>` : ""}</li>`).join("")}</ol>`
+    : `<p>यो मितिका लागि हालको archive snapshot मा अभिलेख छैन।</p>`;
   const prev = adjacentMonthDay(mmdd, -1);
   const next = adjacentMonthDay(mmdd, 1);
-  const body = `<article><p class="eyebrow">स्थायी इतिहास अभिलेख</p><h1>${esc(title)}</h1><p>${esc(description)}</p><p><strong>${rows.length}</strong> source-cited record${rows.length === 1 ? "" : "s"} shown from ${allRows.length} archive record${allRows.length === 1 ? "" : "s"}.</p>${items}<nav aria-label="History archive navigation"><a href="/on-this-day/${prev}">← ${esc(prev)}</a> · <a href="/on-this-day">आज इतिहासमा</a> · <a href="/on-this-day/${next}">${esc(next)} →</a></nav><p><a href="/convert">मिति रूपान्तरण गर्नुहोस्</a></p></article>`;
+  const body = `<article><p class="eyebrow">स्थायी इतिहास अभिलेख</p><h1>${esc(title)}</h1><p>${esc(description)}</p><p><strong>${rows.length}</strong> total archive record${rows.length === 1 ? "" : "s"}; ${citedCount} source-cited; ${needsCount} need further verification.</p>${items}<nav aria-label="History archive navigation"><a href="/on-this-day/${prev}">← ${esc(prev)}</a> · <a href="/on-this-day">आज इतिहासमा</a> · <a href="/on-this-day/${next}">${esc(next)} →</a></nav><p><a href="/convert">मिति रूपान्तरण गर्नुहोस्</a></p></article>`;
   const schema = { "@context":"https://schema.org", "@type":"WebPage", name:title, description, url:canonical, isPartOf:{ "@type":"WebSite", name:"Aafnai Patro", url:SITE } };
   const file = resolve(root, "dist/on-this-day", mmdd, "index.html");
   await mkdir(dirname(file), { recursive:true });
@@ -113,4 +131,6 @@ for (const entity of historyDays) {
 }
 
 if (emitted !== 366) throw new Error(`History-day prerender output mismatch: ${emitted}`);
-console.log(`History-day prerender emitted ${emitted} permanent month/day pages with ${citedEvents} source-cited event references and no archive summaries.`);
+if (archiveEvents !== Number(graph.counts?.historyEvents || 0)) throw new Error(`History archive visibility mismatch: rendered ${archiveEvents}; graph has ${graph.counts?.historyEvents || 0}`);
+if (needsFurtherVerification !== Number(graph.counts?.historyNeedsFurtherVerification || 0)) throw new Error(`History verification-label mismatch: rendered ${needsFurtherVerification}; graph has ${graph.counts?.historyNeedsFurtherVerification || 0}`);
+console.log(`History-day prerender emitted ${emitted} permanent month/day pages with all ${archiveEvents} archive records; ${needsFurtherVerification} are labeled needs further verification.`);
