@@ -73,3 +73,9 @@ await Promise.all([
 ]);
 
 console.log(`AI/search discovery augmented with ${intents.query_count} canonical query mappings.`);
+
+// Build the canonical entity graph from the same validated registries and calendar sources,
+// then fail the build on identity/canonical/private-route regressions before Vite copies
+// public/ into dist/. This is additive metadata; it does not replace any tool or calendar engine.
+await import("./generate-publication-graph.mjs");
+await import("./validate-publication-graph.mjs");
