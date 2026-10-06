@@ -44,8 +44,13 @@ export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
 
 export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"];
 
-export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - 10;
-export const SITEMAP_MAX_BS_YEAR = CURRENT_BS_YEAR + 10;
+// Publish a broad but still bounded real-data cohort. With the current archive this yields roughly
+// 16k factual day URLs plus month/year/festival/history pages, comfortably above the 10k target.
+// Keep the runtime Worker cutoff in worker/seo-window.ts exactly aligned with these constants.
+export const INDEXABLE_PAST_YEARS = 33;
+export const INDEXABLE_FUTURE_YEARS = 10;
+export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - INDEXABLE_PAST_YEARS;
+export const SITEMAP_MAX_BS_YEAR = CURRENT_BS_YEAR + INDEXABLE_FUTURE_YEARS;
 export const isSitemapYear = (y) => Number(y) >= SITEMAP_MIN_BS_YEAR && Number(y) <= SITEMAP_MAX_BS_YEAR;
 
 const RAW_CORE_INDEX_ROUTES = [
@@ -92,7 +97,6 @@ export const TOOL_ROUTES = RAW_TOOL_ROUTES.filter(isIndexableRoute);
 export const COMMUNITY_ROUTES = RAW_COMMUNITY_ROUTES.filter(isIndexableRoute);
 if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool sitemap must remain exactly 29; received ${TOOL_ROUTES.length}`);
 
-// All data-backed calendar/festival publication uses the same current BS ±10-year window.
 export const INDEXED_CALENDAR_YEARS = Array.from({ length: SITEMAP_MAX_BS_YEAR - SITEMAP_MIN_BS_YEAR + 1 }, (_, i) => SITEMAP_MIN_BS_YEAR + i);
 export const PRERENDER_CALENDAR_YEARS = [...INDEXED_CALENDAR_YEARS];
 
