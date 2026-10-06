@@ -52,15 +52,16 @@ for(const file of files){
 }
 if(files.length<100)throw new Error(`SEO sanitizer saw unexpectedly few HTML files: ${files.length}`);
 
+// Index <lastmod> values are real data-modification dates and are kept. Only volatile live pages
+// (/fm, /tv) drop their per-URL lastmod, since a constantly-changing date carries no signal.
 async function sanitizeSitemap(path){
  let xml;try{xml=await readFile(path,"utf8");}catch{return false;}
  let out=xml;
- if(basename(path)==="sitemap.xml")out=out.replace(/(<sitemap><loc>[^<]+<\/loc>)<lastmod>[^<]+<\/lastmod>(<\/sitemap>)/g,"$1$2");
  if(basename(path)==="sitemap-pages.xml")out=out.replace(/(<loc>https:\/\/aafnaipatro\.com\/(?:fm|tv)<\/loc>)<lastmod>[^<]+<\/lastmod>/g,"$1");
  if(out!==xml)await writeFile(path,out,"utf8");
  return true;
 }
-for(const name of ["sitemap.xml","sitemap-pages.xml"]){
+for(const name of ["sitemap-pages.xml"]){
  await sanitizeSitemap(resolve(root,"public",name));
  await sanitizeSitemap(resolve(root,"dist",name));
 }

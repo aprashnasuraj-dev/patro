@@ -1,4 +1,5 @@
 import productionWorker from "./entry";
+import { seoStaticResponse } from "./seo-static";
 import { rewriteConnectedSeo } from "./connected-seo";
 import { handleAgentSurface } from "./agent-gateway";
 import { withAdminConsole } from "./admin-console";
@@ -282,6 +283,9 @@ const connectedWorker = {
   ...productionWorker,
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const pathname = new URL(request.url).pathname;
+
+    const seoStatic = await seoStaticResponse(request, env);
+    if (seoStatic) return seoStatic;
 
     const redirect = legacyRedirectResponse(request);
     if (redirect) return redirect;

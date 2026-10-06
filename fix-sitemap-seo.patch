@@ -1,0 +1,1272 @@
+From a62a61a3fab546f0c5adbdaeebae9ae51dc24b7e Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Tue, 6 Oct 2026 10:05:43 +0000
+Subject: [PATCH] fix(seo): submit only indexable, canonical URLs in sitemaps
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- seo-config: SITEMAP_MIN/MAX_BS_YEAR (current BS year ±10), isSitemapYear,
+  NOINDEX_EXACT_ROUTES and sitemapExclusionReason() mirroring Worker robots rules
+- build-calendar-r2: single writer of calendar/day sitemaps, window-limited,
+  deletes stale files, stable per-year <lastmod>, manifest kept in sync
+- generate-seo: no longer emits archive sitemaps; index entries carry <lastmod>
+- festivals / community-archives sitemaps filtered + index <lastmod>
+- sanitize-seo-output: keep index <lastmod>
+- worker: shared seo-window cutoff; seo-static serves /sitemap*.xml and
+  /robots.txt from ASSETS first with crawler-safe headers, 404 when missing
+- verify-seo-build: size/count/well-formedness/orphan/duplicate/noindex guards
+- tests: seo-discovery contract reflects the indexable window
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01V4iK4B23CEoeVgRUfFi3kC
+---
+ CHANGELOG.md                              |   7 +
+ public/robots.txt                         | 150 ++++++++++++++++++++-
+ public/sitemap.xml                        | 106 +++++++--------
+ scripts/cloudflare/build-calendar-r2.mjs  |  84 ++++++++----
+ scripts/cloudflare/build-community-r2.mjs |  17 ++-
+ scripts/generate-publication-graph.mjs    |  27 ++--
+ scripts/generate-seo.mjs                  |  49 +++----
+ scripts/sanitize-seo-output.mjs           |   5 +-
+ scripts/seo-config.mjs                    |  69 ++++++++--
+ scripts/sitemap-utils.mjs                 |  90 +++++++++++++
+ scripts/verify-seo-build.mjs              | 153 +++++++++++++++++++++-
+ tests/seo-discovery-contract.test.mjs     |  33 ++++-
+ worker/connected-entry.ts                 |   4 +
+ worker/index.ts                           |   9 +-
+ worker/optimized-entry.ts                 |   5 +
+ worker/seo-static.ts                      |  50 +++++++
+ worker/seo-window.ts                      |  25 ++++
+ 17 files changed, 712 insertions(+), 171 deletions(-)
+ create mode 100644 scripts/sitemap-utils.mjs
+ create mode 100644 worker/seo-static.ts
+ create mode 100644 worker/seo-window.ts
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 1dbcd9e..033a075 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -4,6 +4,13 @@ All notable migration-facing changes are recorded here. Product-feature history
+ 
+ ## Unreleased
+ 
++### Fixed — sitemaps (fix/sitemap-seo)
++
++- Sitemaps now submit only indexable, self-canonical URLs: BS calendar/day archives are limited to the current BS year ±10 (`SITEMAP_MIN_BS_YEAR`/`SITEMAP_MAX_BS_YEAR` in `scripts/seo-config.mjs`), matching the Worker's historical `noindex` cutoff, which now lives in `worker/seo-window.ts` with the identical formula. The index drops from 422 to 47 child sitemaps (~8.3k URLs instead of ~77k); the full 77,070-row archive remains served from R2.
++- `scripts/cloudflare/build-calendar-r2.mjs` is the single writer of `sitemap-calendar-*`/`sitemap-days-*`, deletes stale out-of-window files, and every index entry carries a stable `<lastmod>` derived from the data snapshot.
++- `/sitemap*.xml` and `/robots.txt` are served first by `worker/seo-static.ts`: static asset only, `application/xml`/`text/plain`, `cache-control: public, max-age=3600`, no `x-robots-tag`, 404 (never the SPA shell) when missing.
++- `scripts/verify-seo-build.mjs` fails the build on oversized, malformed, orphaned or missing sitemaps, duplicate `<loc>`s, and any URL the Worker would serve `noindex`, redirect or keep private.
++
+ ### Added
+ 
+ - Cloudflare Pages + Worker staged migration architecture on `cloudflare-migration`.
+diff --git a/public/robots.txt b/public/robots.txt
+index 0df5524..3e8f6c0 100644
+--- a/public/robots.txt
++++ b/public/robots.txt
+@@ -1,11 +1,147 @@
++# Aafnai Patro crawl policy — public pages are discoverable; private/auth surfaces are not.
++# Cloudflare bot-management settings must remain consistent with this file; a dashboard-level AI-bot block can override robots.txt.
+ User-agent: *
+ Allow: /
+ Disallow: /api/
+-Disallow: /my-diary
+-Disallow: /family
+-Disallow: /my-data
+-Disallow: /settings
+-Disallow: /admin
+-Disallow: /notes
+-Disallow: /planner
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Googlebot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Google-Extended
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Bingbot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: OAI-SearchBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: ChatGPT-User
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: GPTBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Claude-SearchBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Claude-User
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: ClaudeBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: PerplexityBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Perplexity-User
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Applebot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Applebot-Extended
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: Amazonbot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: DuckDuckBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: YandexBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
++User-agent: NaverBot
++Allow: /
++Disallow: /api/
++Disallow: /compat-api/
++Disallow: /me/
++Disallow: /admin/
++Disallow: /auth/
++
+ Sitemap: https://aafnaipatro.com/sitemap.xml
+diff --git a/public/sitemap.xml b/public/sitemap.xml
+index 223f11e..0109454 100644
+--- a/public/sitemap.xml
++++ b/public/sitemap.xml
+@@ -1,58 +1,50 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+-  <url><loc>https://aafnaipatro.com/</loc></url>
+-  <url><loc>https://aafnaipatro.com/explore</loc></url>
+-  <url><loc>https://aafnaipatro.com/tv</loc></url>
+-  <url><loc>https://aafnaipatro.com/fm</loc></url>
+-  <url><loc>https://aafnaipatro.com/samachar</loc></url>
+-  <url><loc>https://aafnaipatro.com/time-machine</loc></url>
+-  <url><loc>https://aafnaipatro.com/on-this-day</loc></url>
+-  <url><loc>https://aafnaipatro.com/astro</loc></url>
+-  <url><loc>https://aafnaipatro.com/tools</loc></url>
+-  <url><loc>https://aafnaipatro.com/tools/nepali-typing</loc></url>
+-  <url><loc>https://aafnaipatro.com/tools/preeti-converter</loc></url>
+-  <url><loc>https://aafnaipatro.com/jyotish/rashifal</loc></url>
+-  <url><loc>https://aafnaipatro.com/jyotish/janma-patro</loc></url>
+-  <url><loc>https://aafnaipatro.com/convert</loc></url>
+-  <url><loc>https://aafnaipatro.com/about</loc></url>
+-  <url><loc>https://aafnaipatro.com/sources</loc></url>
+-  <url><loc>https://aafnaipatro.com/privacy</loc></url>
+-  <url><loc>https://aafnaipatro.com/terms</loc></url>
+-  <url><loc>https://aafnaipatro.com/contact</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/01</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/02</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/03</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/04</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/05</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/06</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/07</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/08</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/09</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/10</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/11</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2082/12</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/01</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/02</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/03</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/04</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/05</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/06</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/07</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/08</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/09</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/10</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/11</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2083/12</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/01</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/02</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/03</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/04</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/05</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/06</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/07</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/08</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/09</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/10</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/11</loc></url>
+-  <url><loc>https://aafnaipatro.com/calendar/2084/12</loc></url>
+-</urlset>
++<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
++  <sitemap><loc>https://aafnaipatro.com/sitemap-pages.xml</loc><lastmod>2026-10-06</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-tools.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-community.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-festivals.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2073.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2073.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2074.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2074.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2075.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2075.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2076.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2076.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2077.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2077.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2078.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2078.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2079.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2079.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2080.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2080.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2081.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2081.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2082.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2082.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2083.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2083.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2084.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2084.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2085.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2085.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2086.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2086.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2087.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2087.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2088.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2088.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2089.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2089.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2090.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2090.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2091.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2091.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2092.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2092.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-calendar-2093.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-days-2093.xml</loc><lastmod>2026-09-28</lastmod></sitemap>
++  <sitemap><loc>https://aafnaipatro.com/sitemap-community-archives.xml</loc><lastmod>2026-09-30</lastmod></sitemap>
++</sitemapindex>
+diff --git a/scripts/cloudflare/build-calendar-r2.mjs b/scripts/cloudflare/build-calendar-r2.mjs
+index 3807b57..3ac17bb 100644
+--- a/scripts/cloudflare/build-calendar-r2.mjs
++++ b/scripts/cloudflare/build-calendar-r2.mjs
+@@ -1,15 +1,18 @@
+ import { createHash } from "node:crypto";
+-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
++import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
+ import { join, relative } from "node:path";
+ import process from "node:process";
+ import { loadCalendarSnapshot } from "../calendar-snapshot.mjs";
++import { CURRENT_BS_YEAR, SITEMAP_MIN_BS_YEAR, SITEMAP_MAX_BS_YEAR, isSitemapYear } from "../seo-config.mjs";
++import { BUILD_DATE, isoDate, maxDate, snapshotDate, updateSitemapIndex, urlsetXml } from "../sitemap-utils.mjs";
+ 
+ const ROOT = process.cwd();
+ const OUT_ROOT = join(ROOT, ".cloudflare", "calendar-r2");
+ const STATIC_ROOT = join(ROOT, "public", "data", "calendar");
+ const PREFIX = "datasets/calendar/v1";
+ const FORMAT_VERSION = "calendar-r2-year-v1";
+-const SITE = "https://aafnaipatro.com";
++const CALENDAR_SOURCE_DIR = join(ROOT, "migration", "data", "public", "astronomy_calendar_map");
++const ARCHIVE_SITEMAP_RE = /^sitemap-(?:calendar|days)-\d+\.xml$/;
+ 
+ function validAd(value) {
+   return /^\d{4}-\d{2}-\d{2}$/.test(String(value || ""));
+@@ -31,12 +34,6 @@ function groupBy(rows, fn) {
+   for (const values of map.values()) values.sort(stableRowSort);
+   return map;
+ }
+-function escapeXml(value) {
+-  return String(value).replace(/[<>&'\"]/g, (ch) => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
+-}
+-function urlset(routes) {
+-  return ['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',...routes.map((route)=>`  <url><loc>${escapeXml(SITE+route)}</loc></url>`),'</urlset>',''].join("\n");
+-}
+ async function writeBoth(relativePath, text) {
+   const out = join(OUT_ROOT, relativePath);
+   const stat = join(STATIC_ROOT, relativePath);
+@@ -95,27 +92,61 @@ const manifest = {
+ };
+ await writeBoth("manifest.json", JSON.stringify(manifest, null, 2));
+ 
+-// Step 9: indexing and prerendering are separate concerns. Publish the full validated R2-backed
+-// archive through segmented BS-year sitemaps without generating one HTML asset per day.
+-const archiveSitemapFiles = [];
++// Step 9: indexing and prerendering are separate concerns. The full validated archive stays in R2 and
++// remains reachable, but only the indexable BS-year window (seo-config.mjs isSitemapYear, which matches the
++// Worker's historical noindex cutoff) is submitted through segmented BS-year sitemaps. This script is the
++// single writer of sitemap-calendar-YYYY.xml / sitemap-days-YYYY.xml.
++
++// Per-BS-year data modification date from the raw snapshot (max created_at/updated_at), falling back to
++// the part's snapshot_at. Stable across builds unless the data itself changes.
++const yearDataDate = new Map();
++for (const name of (await readdir(CALENDAR_SOURCE_DIR)).filter((n) => n.endsWith(".json")).sort()) {
++  const doc = JSON.parse(await readFile(join(CALENDAR_SOURCE_DIR, name), "utf8"));
++  for (const raw of doc?.rows || []) {
++    const year = Number((raw?.payload ?? raw)?.bs?.year);
++    if (!Number.isInteger(year)) continue;
++    const date = maxDate(raw?.updated_at, raw?.created_at, (raw?.payload ?? {})?.verified_at) || isoDate(doc?.snapshot_at);
++    if (date) yearDataDate.set(year, maxDate(yearDataDate.get(year), date));
++  }
++}
++const snapshotSourceDate = await snapshotDate((await readdir(CALENDAR_SOURCE_DIR)).filter((n) => n.endsWith(".json")).map((n) => `migration/data/public/astronomy_calendar_map/${n}`));
++function yearLastmod(year) {
++  const dataDate = yearDataDate.get(year);
++  if (dataDate) return dataDate;
++  if (Math.abs(year - CURRENT_BS_YEAR) <= 1) return BUILD_DATE;
++  return snapshotSourceDate || "2026-09-30";
++}
++
++// Remove stale archive sitemaps (e.g. 1883–2072) so they never ship in dist/.
++const publicDir = join(ROOT, "public");
++await Promise.all((await readdir(publicDir)).filter((name) => ARCHIVE_SITEMAP_RE.test(name)).map((name) => rm(join(publicDir, name), { force:true })));
++
++const archiveSitemapEntries = [];
++let sitemapCalendarRouteCount = 0, sitemapDayRouteCount = 0, sitemapMonthRouteCount = 0;
++const sitemapYears = [];
+ for (const [year, values] of [...bsGroups.entries()].sort(([a],[b]) => a-b)) {
++  if (!isSitemapYear(year)) continue;
+   const months = [...new Set(values.map((row) => Number(row.bs.month)).filter((m) => m >= 1 && m <= 12))].sort((a,b)=>a-b);
+   const calendarFile = `sitemap-calendar-${year}.xml`;
+   const dayFile = `sitemap-days-${year}.xml`;
+   const calendarRoutes = [`/calendar/${year}`, ...months.map((month) => `/calendar/${year}/${String(month).padStart(2,"0")}`)];
+   const dayRoutes = values.map((row) => `/date/${row.ad}`);
+   await Promise.all([
+-    writeFile(join(ROOT, "public", calendarFile), urlset(calendarRoutes), "utf8"),
+-    writeFile(join(ROOT, "public", dayFile), urlset(dayRoutes), "utf8"),
++    writeFile(join(publicDir, calendarFile), urlsetXml(calendarRoutes), "utf8"),
++    writeFile(join(publicDir, dayFile), urlsetXml(dayRoutes), "utf8"),
+   ]);
+-  archiveSitemapFiles.push(calendarFile, dayFile);
++  const lastmod = yearLastmod(year);
++  archiveSitemapEntries.push({ file:calendarFile, lastmod }, { file:dayFile, lastmod });
++  sitemapYears.push(year);
++  sitemapCalendarRouteCount += 1;
++  sitemapMonthRouteCount += months.length;
++  sitemapDayRouteCount += dayRoutes.length;
+ }
++if (!sitemapYears.length) throw new Error(`No BS archive years inside the sitemap window ${SITEMAP_MIN_BS_YEAR}..${SITEMAP_MAX_BS_YEAR}`);
++const archiveSitemapFiles = archiveSitemapEntries.map((entry) => entry.file);
+ 
+-const sitemapIndexPath = join(ROOT, "public", "sitemap.xml");
+-let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
+-sitemapIndex = sitemapIndex.replace(/\s*<sitemap><loc>https:\/\/aafnaipatro\.com\/sitemap-(?:calendar|days)-\d+\.xml<\/loc>(?:<lastmod>[^<]+<\/lastmod>)?<\/sitemap>/g, "");
+-sitemapIndex = sitemapIndex.replace("</sitemapindex>", archiveSitemapFiles.map((file) => `  <sitemap><loc>${SITE}/${file}</loc></sitemap>`).join("\n") + "\n</sitemapindex>");
+-await writeFile(sitemapIndexPath, sitemapIndex, "utf8");
++const sitemapIndexPath = join(publicDir, "sitemap.xml");
++await updateSitemapIndex(sitemapIndexPath, archiveSitemapEntries, (file) => ARCHIVE_SITEMAP_RE.test(file));
+ 
+ const seoManifestPath = join(ROOT, "public", "seo-manifest.json");
+ let seoManifest = { sitemap_files: [] };
+@@ -126,18 +157,21 @@ try {
+ }
+ const nonArchiveSitemaps = (seoManifest.sitemap_files || []).filter((file) => !/^sitemap-(?:calendar|days)-\d+\.xml$/.test(file));
+ seoManifest.sitemap_files = [...nonArchiveSitemaps, ...archiveSitemapFiles];
+-seoManifest.indexed_calendar_years = manifest.bs_years;
+-seoManifest.indexed_calendar_year_route_count = manifest.bs_years.length;
+-seoManifest.indexed_calendar_month_route_count = [...bsGroups.values()].reduce((sum, values) => sum + new Set(values.map((row) => Number(row.bs.month))).size, 0);
+-seoManifest.indexed_day_route_count = rows.length;
++seoManifest.sitemap_bs_year_window = { min:SITEMAP_MIN_BS_YEAR, max:SITEMAP_MAX_BS_YEAR, current:CURRENT_BS_YEAR };
++seoManifest.indexed_calendar_years = sitemapYears;
++seoManifest.indexed_calendar_year_route_count = sitemapCalendarRouteCount;
++seoManifest.indexed_calendar_month_route_count = sitemapMonthRouteCount;
++seoManifest.indexed_day_route_count = sitemapDayRouteCount;
++seoManifest.calendar_archive_bs_years = manifest.bs_years;
++seoManifest.calendar_archive_row_count = rows.length;
+ seoManifest.calendar_archive_source_version = sourceVersion;
+ seoManifest.calendar_archive_ad_start = manifest.ad_start;
+ seoManifest.calendar_archive_ad_end = manifest.ad_end;
+-seoManifest.archive_policy = "All 77,070 validated calendar records are discoverable through segmented sitemaps and render dynamically from immutable R2 year shards; only a small hot cohort is prerendered.";
++seoManifest.archive_policy = `All ${rows.length.toLocaleString("en-US")} validated calendar records render dynamically from immutable R2 year shards, but only the indexable BS ${SITEMAP_MIN_BS_YEAR}–${SITEMAP_MAX_BS_YEAR} window (current year ±10, matching the Worker noindex cutoff) is submitted through segmented sitemaps; older years remain reachable via internal links. Only a small hot cohort is prerendered.`;
+ seoManifest.rendering_policy = "Static SPA plus small hot prerender cohort; permanent calendar/date/community archive pages are rendered from immutable Cloudflare R2 shards without normal D1 reads.";
+ await writeFile(seoManifestPath, JSON.stringify(seoManifest, null, 2) + "\n", "utf8");
+ 
+-console.log(JSON.stringify({ ok:true, out:relative(ROOT, OUT_ROOT), static_out:relative(ROOT, STATIC_ROOT), row_count:rows.length, ad_year_files:adGroups.size, bs_year_files:bsGroups.size, sitemap_files:archiveSitemapFiles.length, source_version:sourceVersion }, null, 2));
++console.log(JSON.stringify({ ok:true, out:relative(ROOT, OUT_ROOT), static_out:relative(ROOT, STATIC_ROOT), row_count:rows.length, ad_year_files:adGroups.size, bs_year_files:bsGroups.size, sitemap_files:archiveSitemapFiles.length, sitemap_years:`${sitemapYears[0]}..${sitemapYears.at(-1)}`, source_version:sourceVersion }, null, 2));
+ 
+ // The same checked-in public mirror also contains the six community archive families. Build their
+ // R2 year shards in the same deterministic archive phase so calendar/community source versions are
+diff --git a/scripts/cloudflare/build-community-r2.mjs b/scripts/cloudflare/build-community-r2.mjs
+index 2dcb434..d59e2c4 100644
+--- a/scripts/cloudflare/build-community-r2.mjs
++++ b/scripts/cloudflare/build-community-r2.mjs
+@@ -1,6 +1,8 @@
+ import { createHash } from "node:crypto";
+ import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+ import { join, relative } from "node:path";
++import { isIndexableRoute } from "../seo-config.mjs";
++import { BUILD_DATE, snapshotDate, updateSitemapIndex, urlsetXml } from "../sitemap-utils.mjs";
+ 
+ const ROOT = process.cwd();
+ const OUT = join(ROOT, ".cloudflare", "community-r2");
+@@ -116,15 +118,16 @@ const manifest = {
+ };
+ await writeFile(join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2));
+ 
+-const site = "https://aafnaipatro.com";
++// Community/Nepal Sambat year archives are served by worker/public-archive-pages.ts as index,follow,
++// self-canonical R2 pages; urlsetXml() refuses any route the Worker would mark noindex.
+ const sitemapPath = join(ROOT, "public", "sitemap-community-archives.xml");
+-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${archiveRoutes.map((route) => `  <url><loc>${site}${route}</loc></url>`).join("\n")}\n</urlset>\n`;
+-await writeFile(sitemapPath, xml);
++await writeFile(sitemapPath, urlsetXml(archiveRoutes.filter(isIndexableRoute)));
+ 
+-const sitemapIndexPath = join(ROOT, "public", "sitemap.xml");
+-let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
+-if (!sitemapIndex.includes(`${site}/sitemap-community-archives.xml`)) sitemapIndex = sitemapIndex.replace("</sitemapindex>", `  <sitemap><loc>${site}/sitemap-community-archives.xml</loc></sitemap>\n</sitemapindex>`);
+-await writeFile(sitemapIndexPath, sitemapIndex);
++const communityLastmod = (await snapshotDate(
++  "migration/data/public/community_dates.json", "migration/data/public/community_festivals.json",
++  "migration/data/public/ns_festival_dates.json", "migration/data/public/ns_festivals.json"
++)) || BUILD_DATE;
++await updateSitemapIndex(join(ROOT, "public", "sitemap.xml"), [{ file:"sitemap-community-archives.xml", lastmod:communityLastmod }]);
+ 
+ const seoManifestPath = join(ROOT, "public", "seo-manifest.json");
+ const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
+diff --git a/scripts/generate-publication-graph.mjs b/scripts/generate-publication-graph.mjs
+index 5ca5b45..7f6809b 100644
+--- a/scripts/generate-publication-graph.mjs
++++ b/scripts/generate-publication-graph.mjs
+@@ -9,7 +9,9 @@ import {
+   TOOL_ROUTES,
+   calendarRoute,
+   calendarYearRoute,
++  isIndexableRoute,
+ } from "./seo-config.mjs";
++import { BUILD_DATE, snapshotDate, updateSitemapIndex, urlsetXml } from "./sitemap-utils.mjs";
+ import { loadCalendarSnapshot, loadHolidayMap } from "./calendar-snapshot.mjs";
+ 
+ const root = process.cwd();
+@@ -27,7 +29,6 @@ const cleanSlug = (value) => String(value || "").trim().toLowerCase().replace(/[
+ const adYear = (ad) => Number(String(ad || "").slice(0, 4));
+ const month2 = (value) => String(Number(value)).padStart(2, "0");
+ const stableHash = (value) => createHash("sha256").update(value).digest("hex");
+-const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
+ 
+ async function walkJson(dir) {
+   const out = [];
+@@ -316,25 +317,15 @@ await mkdir(resolve(root, "public"), { recursive:true });
+ await writeFile(resolve(root, "public/publication-graph.json"), JSON.stringify(graph, null, 2) + "\n", "utf8");
+ 
+ if (festivalPublishingEnabled) {
+-  const festivalRoutes = entities
++  const festivalRoutes = [...new Set(entities
+     .filter((entity) => entity.indexable && (entity.type === "festival" || entity.type === "festival-occurrence"))
+-    .map((entity) => entity.canonical);
+-  const festivalSitemap = [
+-    '<?xml version="1.0" encoding="UTF-8"?>',
+-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+-    ...festivalRoutes.map((route) => `  <url><loc>${escapeXml(SITE + route)}</loc></url>`),
+-    '</urlset>',
+-    '',
+-  ].join("\n");
+-  await writeFile(resolve(root, "public/sitemap-festivals.xml"), festivalSitemap, "utf8");
++    .map((entity) => entity.canonical)
++    .filter((route) => isIndexableRoute(route)))];
++  // Every festival URL is a self-canonical, index,follow prerender (verified in verify-seo-build.mjs).
++  await writeFile(resolve(root, "public/sitemap-festivals.xml"), urlsetXml(festivalRoutes), "utf8");
+ 
+-  const sitemapIndexPath = resolve(root, "public/sitemap.xml");
+-  let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
+-  const festivalSitemapUrl = `${SITE}/sitemap-festivals.xml`;
+-  if (!sitemapIndex.includes(festivalSitemapUrl)) {
+-    sitemapIndex = sitemapIndex.replace("</sitemapindex>", `  <sitemap><loc>${escapeXml(festivalSitemapUrl)}</loc></sitemap>\n</sitemapindex>`);
+-    await writeFile(sitemapIndexPath, sitemapIndex, "utf8");
+-  }
++  const festivalLastmod = (await snapshotDate("migration/data/public/holidays.json", "migration/data/public/official_panchang_facts.json")) || BUILD_DATE;
++  await updateSitemapIndex(resolve(root, "public/sitemap.xml"), [{ file:"sitemap-festivals.xml", lastmod:festivalLastmod }]);
+ 
+   const seoManifestPath = resolve(root, "public/seo-manifest.json");
+   const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
+diff --git a/scripts/generate-seo.mjs b/scripts/generate-seo.mjs
+index 5821487..86faadc 100644
+--- a/scripts/generate-seo.mjs
++++ b/scripts/generate-seo.mjs
+@@ -6,25 +6,15 @@ import {
+   calendarYearRoutes, calendarRoutes, unique
+ } from "./seo-config.mjs";
+ import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
++import { BUILD_DATE, sitemapIndexXml, snapshotDate, urlsetXml } from "./sitemap-utils.mjs";
+ 
+ const root = process.cwd();
+-const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+-const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
++const today = BUILD_DATE;
+ const freshDaily = new Set(["/", "/today", "/rashifal", "/fm", "/tv"]);
+ const citation = `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${today}`;
+ 
+-function entry(path) {
+-  const lastmod = freshDaily.has(path) ? `<lastmod>${today}</lastmod>` : "";
+-  return `  <url><loc>${escapeXml(SITE + (path === "/" ? "/" : path))}</loc>${lastmod}</url>`;
+-}
+-function urlset(routes) {
+-  return [
+-    '<?xml version="1.0" encoding="UTF-8"?>',
+-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+-    ...unique(routes).map(entry),
+-    "</urlset>", ""
+-  ].join("\n");
+-}
++// Daily-fresh pages carry today's lastmod; everything else omits <lastmod> rather than lying.
++const urlset = (routes) => urlsetXml(unique(routes).map((route) => ({ route, lastmod: freshDaily.has(route) ? today : null })));
+ 
+ const calendarRows = await loadCalendarSnapshot();
+ const indexedYearSet = new Set(INDEXED_CALENDAR_YEARS);
+@@ -39,23 +29,22 @@ for (const year of INDEXED_CALENDAR_YEARS) {
+ }
+ 
+ const discoveryCoreRoutes = unique(CORE_INDEX_ROUTES);
++// Calendar/day archive sitemaps (sitemap-calendar-YYYY.xml / sitemap-days-YYYY.xml) are written only by
++// scripts/cloudflare/build-calendar-r2.mjs, limited to the indexable BS-year window in seo-config.mjs.
++// Festivals and community archives are appended by their own generators.
++const toolSnapshotDate = (await snapshotDate("migration/data/public/tool_catalog.json")) || today;
++const communitySnapshotDate = (await snapshotDate("migration/data/public/community_festivals.json", "migration/data/public/ns_festivals.json")) || today;
+ const sitemapFiles = [
+-  ["sitemap-pages.xml", discoveryCoreRoutes],
+-  ["sitemap-tools.xml", TOOL_ROUTES],
+-  ["sitemap-community.xml", COMMUNITY_ROUTES],
+-  ...INDEXED_CALENDAR_YEARS.map((year) => [
+-    `sitemap-calendar-${year}.xml`,
+-    [...calendarYearRoutes([year]), ...calendarRoutes([year])]
+-  ]),
+-  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-days-${year}.xml`, dayRoutesByBsYear.get(year)])
++  ["sitemap-pages.xml", discoveryCoreRoutes, today],
++  ["sitemap-tools.xml", TOOL_ROUTES, toolSnapshotDate],
++  ["sitemap-community.xml", COMMUNITY_ROUTES, communitySnapshotDate]
+ ];
+-const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
+-const sitemapIndex = [
+-  '<?xml version="1.0" encoding="UTF-8"?>',
+-  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+-  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(SITE + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
+-  "</sitemapindex>", ""
+-].join("\n");
++const hotArchiveRoutes = [
++  ...calendarYearRoutes(INDEXED_CALENDAR_YEARS), ...calendarRoutes(INDEXED_CALENDAR_YEARS),
++  ...[...dayRoutesByBsYear.values()].flat()
++];
++const indexedRoutes = unique([...sitemapFiles.flatMap(([, routes]) => routes), ...hotArchiveRoutes]);
++const sitemapIndex = sitemapIndexXml(sitemapFiles.map(([file, , lastmod]) => ({ file, lastmod })));
+ 
+ function crawlerGroup(agent) {
+   return [`User-agent: ${agent}`, "Allow: /", ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`), ""].join("\n");
+@@ -199,7 +188,7 @@ const manifest = {
+   noindex_public_routes: NOINDEX_PUBLIC_ROUTES, private_prefixes: PRIVATE_PREFIXES,
+   llms_txt: SITE + "/llms.txt", llms_full_txt:SITE+"/llms-full.txt", ai_txt:SITE+"/ai.txt", agents_json:SITE+"/.well-known/agents.json", mcp:SITE+"/mcp",
+   rendering_policy: "Build-time semantic HTML for canonical public routes plus dynamic D1-backed intent pages; the existing React UI remains intact.",
+-  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and a focused five-year BS window are indexed initially to control scaled-content risk."
++  archive_policy: "Calendar months 2070-2090 are prerender-ready; sitemaps list only the indexable BS-year window (current year ±10); older archive years stay reachable but are not submitted."
+ };
+ 
+ await mkdir(resolve(root,"public/.well-known"),{recursive:true});
+diff --git a/scripts/sanitize-seo-output.mjs b/scripts/sanitize-seo-output.mjs
+index 9384638..d4ed257 100644
+--- a/scripts/sanitize-seo-output.mjs
++++ b/scripts/sanitize-seo-output.mjs
+@@ -52,15 +52,16 @@ for(const file of files){
+ }
+ if(files.length<100)throw new Error(`SEO sanitizer saw unexpectedly few HTML files: ${files.length}`);
+ 
++// Index <lastmod> values are real data-modification dates and are kept. Only volatile live pages
++// (/fm, /tv) drop their per-URL lastmod, since a constantly-changing date carries no signal.
+ async function sanitizeSitemap(path){
+  let xml;try{xml=await readFile(path,"utf8");}catch{return false;}
+  let out=xml;
+- if(basename(path)==="sitemap.xml")out=out.replace(/(<sitemap><loc>[^<]+<\/loc>)<lastmod>[^<]+<\/lastmod>(<\/sitemap>)/g,"$1$2");
+  if(basename(path)==="sitemap-pages.xml")out=out.replace(/(<loc>https:\/\/aafnaipatro\.com\/(?:fm|tv)<\/loc>)<lastmod>[^<]+<\/lastmod>/g,"$1");
+  if(out!==xml)await writeFile(path,out,"utf8");
+  return true;
+ }
+-for(const name of ["sitemap.xml","sitemap-pages.xml"]){
++for(const name of ["sitemap-pages.xml"]){
+  await sanitizeSitemap(resolve(root,"public",name));
+  await sanitizeSitemap(resolve(root,"dist",name));
+ }
+diff --git a/scripts/seo-config.mjs b/scripts/seo-config.mjs
+index b3317d9..434ced2 100644
+--- a/scripts/seo-config.mjs
++++ b/scripts/seo-config.mjs
+@@ -1,12 +1,16 @@
+ export const SITE = (process.env.PUBLIC_SITE_URL || "https://aafnaipatro.com").trim().replace(/\/+$/, "");
+ if (!/^https:\/\//.test(SITE)) throw new Error("PUBLIC_SITE_URL must be an absolute https URL");
+ 
+-const kathmanduParts = Object.fromEntries(new Intl.DateTimeFormat("en-US", {
+-  timeZone: "Asia/Kathmandu", year: "numeric", month: "numeric", day: "numeric"
+-}).formatToParts(new Date()).filter((p) => p.type !== "literal").map((p) => [p.type, Number(p.value)]));
+-const afterApproxNewYear = kathmanduParts.month > 4 || (kathmanduParts.month === 4 && kathmanduParts.day >= 14);
+-const inferredBsYear = kathmanduParts.year + (afterApproxNewYear ? 57 : 56);
+-export const CURRENT_BS_YEAR = Number(process.env.SEO_BS_YEAR || inferredBsYear);
++// Approximate BS year for a moment in Asia/Kathmandu. worker/seo-window.ts replicates this exact
++// formula (BS New Year treated as 14 April) so build-time sitemaps and runtime noindex agree.
++export function approxBsYear(date = new Date()) {
++  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", {
++    timeZone: "Asia/Kathmandu", year: "numeric", month: "numeric", day: "numeric"
++  }).formatToParts(date).filter((p) => p.type !== "literal").map((p) => [p.type, Number(p.value)]));
++  const afterApproxNewYear = parts.month > 4 || (parts.month === 4 && parts.day >= 14);
++  return parts.year + (afterApproxNewYear ? 57 : 56);
++}
++export const CURRENT_BS_YEAR = Number(process.env.SEO_BS_YEAR || approxBsYear());
+ 
+ export const BS_MONTHS = [
+   { n: 1, ne: "बैशाख", en: "Baisakh", aliases: "Baisakh Baishakh" },
+@@ -23,14 +27,14 @@ export const BS_MONTHS = [
+   { n: 12, ne: "चैत", en: "Chaitra", aliases: "Chaitra Chait" }
+ ];
+ 
+-export const TOOL_ROUTES = [
++const RAW_TOOL_ROUTES = [
+   "/tools/astro", "/tools/nepali-typing", "/tools/preeti-converter", "/tools/bstoad", "/tools/adtobs",
+   "/tools/calc", "/tools/age", "/tools/clock", "/tools/forex", "/tools/gold", "/tools/emi", "/tools/vat",
+   "/tools/units", "/tools/words", "/tools/incometax", "/tools/landconverter", "/tools/nepaliqr", "/tools/fuelprice",
+   "/tools/tithi-reminder", "/tools/sait", "/tools/baby-names", "/tools/janmadin-akhbar", "/tools/future-letter",
+   "/tools/spell-check", "/tools/voice-typing", "/tools/ocr", "/tools/name-check", "/tools/read-aloud", "/tools/patro-bot"
+ ];
+-if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool inventory must remain exactly 29; received ${TOOL_ROUTES.length}`);
++if (RAW_TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool inventory must remain exactly 29; received ${RAW_TOOL_ROUTES.length}`);
+ 
+ export const CITY_SLUGS = [
+   "kathmandu", "pokhara", "biratnagar", "butwal", "new-york", "toronto", "london", "sydney", "melbourne",
+@@ -38,13 +42,22 @@ export const CITY_SLUGS = [
+ ];
+ export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
+ 
+-export const CORE_INDEX_ROUTES = [
++// Exact public routes the Worker answers with x-robots-tag noindex (connected-entry SEARCH_NOINDEX_EXACT,
++// worker/index.ts secureResponse). They must never appear in a sitemap.
++export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"];
++
++// Must match worker/seo-window.ts historicalCalendarNoindex() cutoff exactly (BS year - 10).
++export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - 10;
++export const SITEMAP_MAX_BS_YEAR = CURRENT_BS_YEAR + 10;
++export const isSitemapYear = (y) => Number(y) >= SITEMAP_MIN_BS_YEAR && Number(y) <= SITEMAP_MAX_BS_YEAR;
++
++const RAW_CORE_INDEX_ROUTES = [
+   "/", "/today", "/methodology", "/corrections", "/samudaya", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
+   "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact",
+   ...DIASPORA_TODAY_ROUTES
+ ];
+ 
+-export const COMMUNITY_ROUTES = [
++const RAW_COMMUNITY_ROUTES = [
+   "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila",
+   "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra"
+ ];
+@@ -54,6 +67,42 @@ export const NOINDEX_PUBLIC_ROUTES = [
+ ];
+ export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"];
+ 
++// Path prefixes the Worker marks noindex / private or redirects (connected-entry PRIVATE_SPA_PREFIXES,
++// PRIVATE_TOOL_PATHS, LEGACY_REDIRECTS; worker/index.ts private routes).
++const WORKER_NOINDEX_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin", "/offline", "/widget"];
++const WORKER_NOINDEX_EXACT = new Set(["/mcp", "/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
++const WORKER_REDIRECT_EXACT = new Set([
++  "/aaja", "/astro", "/tithi", "/card", "/diaspora", "/jyotish/rashifal", "/jyotish/china/rashi", "/jyotish/janma-patro",
++  "/explore", "/search", "/feedback", "/data-trust", "/astrology", "/nepal-sambat", "/festivals"
++]);
++
++/**
++ * Mirrors the Worker's runtime robots rules for a canonical path. Returns a reason string when the
++ * path would be served noindex (or redirected / private), otherwise null. Used by every sitemap
++ * writer and by verify-seo-build.mjs.
++ */
++export function sitemapExclusionReason(path) {
++  const p = String(path || "");
++  if (!p.startsWith("/")) return "not-a-root-relative-path";
++  if (/[?#]/.test(p)) return "query-or-fragment";
++  if (p !== "/" && p.endsWith("/")) return "trailing-slash-duplicate";
++  if (NOINDEX_EXACT_ROUTES.includes(p) || NOINDEX_PUBLIC_ROUTES.includes(p)) return "noindex-exact-route";
++  if (PRIVATE_PREFIXES.some((prefix) => p.startsWith(prefix) || p === prefix.replace(/\/$/, ""))) return "private-prefix";
++  if (WORKER_NOINDEX_EXACT.has(p)) return "worker-noindex-exact";
++  if (WORKER_NOINDEX_PREFIXES.some((prefix) => p === prefix || p.startsWith(prefix + "/"))) return "worker-noindex-prefix";
++  if (WORKER_REDIRECT_EXACT.has(p)) return "legacy-redirect";
++  if (/^\/on-this-day\/\d{2}-\d{2}$/.test(p)) return "history-day-noindex";
++  const calendar = p.match(/^\/calendar\/(\d{4})(?:\/|$)/);
++  if (calendar && !isSitemapYear(calendar[1])) return "calendar-year-outside-window";
++  return null;
++}
++export const isIndexableRoute = (path) => sitemapExclusionReason(path) === null;
++
++export const CORE_INDEX_ROUTES = RAW_CORE_INDEX_ROUTES.filter(isIndexableRoute);
++export const TOOL_ROUTES = RAW_TOOL_ROUTES.filter(isIndexableRoute);
++export const COMMUNITY_ROUTES = RAW_COMMUNITY_ROUTES.filter(isIndexableRoute);
++if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool sitemap must remain exactly 29; received ${TOOL_ROUTES.length}`);
++
+ export const INDEXED_CALENDAR_YEARS = [CURRENT_BS_YEAR - 2, CURRENT_BS_YEAR - 1, CURRENT_BS_YEAR, CURRENT_BS_YEAR + 1, CURRENT_BS_YEAR + 2];
+ export const PRERENDER_CALENDAR_YEARS = Array.from({ length: 21 }, (_, i) => 2070 + i);
+ 
+diff --git a/scripts/sitemap-utils.mjs b/scripts/sitemap-utils.mjs
+new file mode 100644
+index 0000000..582cbb7
+--- /dev/null
++++ b/scripts/sitemap-utils.mjs
+@@ -0,0 +1,90 @@
++// Shared helpers for every sitemap writer (generate-seo, generate-publication-graph,
++// build-calendar-r2, build-community-r2) so the index is assembled the same way everywhere.
++import { readFile, writeFile } from "node:fs/promises";
++import { resolve } from "node:path";
++import { SITE, sitemapExclusionReason } from "./seo-config.mjs";
++
++export const escapeXml = (value) => String(value).replace(/[<>&'"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
++
++/** Build date in Asia/Kathmandu (YYYY-MM-DD). */
++export const BUILD_DATE = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
++
++const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
++export function isoDate(value) {
++  const s = String(value || "").slice(0, 10);
++  return DATE_RE.test(s) ? s : null;
++}
++export function maxDate(...values) {
++  return values.flat().map(isoDate).filter(Boolean).sort().at(-1) || null;
++}
++
++/**
++ * Stable "data modified" date: the newest snapshot_at found in the given JSON snapshot files
++ * (paths relative to the repo root). Returns null when none is available.
++ */
++export async function snapshotDate(...relativePaths) {
++  const dates = [];
++  for (const rel of relativePaths.flat()) {
++    try {
++      const doc = JSON.parse(await readFile(resolve(process.cwd(), rel), "utf8"));
++      if (isoDate(doc?.snapshot_at)) dates.push(doc.snapshot_at);
++    } catch { /* missing optional snapshot */ }
++  }
++  return maxDate(dates);
++}
++
++/** Absolute, canonical sitemap <loc> for a root-relative route. Throws on non-indexable routes. */
++export function sitemapLoc(route) {
++  const reason = sitemapExclusionReason(route);
++  if (reason) throw new Error(`Refusing to put non-indexable route in a sitemap (${reason}): ${route}`);
++  return SITE + route;
++}
++
++/** <urlset> document. entries: string routes or { route, lastmod }. Duplicates are dropped. */
++export function urlsetXml(entries) {
++  const seen = new Set();
++  const lines = [];
++  for (const item of entries) {
++    const route = typeof item === "string" ? item : item.route;
++    if (seen.has(route)) continue;
++    seen.add(route);
++    const lastmod = typeof item === "object" && isoDate(item.lastmod) ? `<lastmod>${item.lastmod}</lastmod>` : "";
++    lines.push(`  <url><loc>${escapeXml(sitemapLoc(route))}</loc>${lastmod}</url>`);
++  }
++  if (lines.length > 50_000) throw new Error(`Sitemap exceeds 50,000 URLs (${lines.length})`);
++  return ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...lines, "</urlset>", ""].join("\n");
++}
++
++/** <sitemapindex> document. entries: [{ file, lastmod }]. */
++export function sitemapIndexXml(entries) {
++  return [
++    '<?xml version="1.0" encoding="UTF-8"?>',
++    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
++    ...entries.map(({ file, lastmod }) => `  <sitemap><loc>${escapeXml(`${SITE}/${file}`)}</loc>${isoDate(lastmod) ? `<lastmod>${lastmod}</lastmod>` : ""}</sitemap>`),
++    "</sitemapindex>", ""
++  ].join("\n");
++}
++
++export function parseSitemapIndex(xml) {
++  const out = [];
++  for (const m of String(xml).matchAll(/<sitemap>\s*<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?\s*<\/sitemap>/g)) {
++    const loc = m[1].trim();
++    const file = loc.startsWith(SITE + "/") ? loc.slice(SITE.length + 1) : loc;
++    out.push({ file, lastmod: m[2] ? m[2].trim() : null });
++  }
++  return out;
++}
++
++/**
++ * Rewrite public/sitemap.xml: drop entries matching `remove(file)`, then upsert `entries`
++ * (preserving the position of existing entries, appending new ones).
++ */
++export async function updateSitemapIndex(indexPath, entries, remove = () => false) {
++  let current = [];
++  try { current = parseSitemapIndex(await readFile(indexPath, "utf8")); } catch (error) { if (error?.code !== "ENOENT") throw error; }
++  const byFile = new Map(entries.map((entry) => [entry.file, entry]));
++  const next = current.filter((entry) => !remove(entry.file)).map((entry) => byFile.get(entry.file) || entry);
++  for (const entry of entries) if (!next.some((row) => row.file === entry.file)) next.push(entry);
++  await writeFile(indexPath, sitemapIndexXml(next), "utf8");
++  return next;
++}
+diff --git a/scripts/verify-seo-build.mjs b/scripts/verify-seo-build.mjs
+index 7222094..e3b3341 100644
+--- a/scripts/verify-seo-build.mjs
++++ b/scripts/verify-seo-build.mjs
+@@ -1,6 +1,12 @@
+-import { readFile } from "node:fs/promises";
++import { readdir, readFile, stat } from "node:fs/promises";
++import { existsSync } from "node:fs";
+ import { resolve } from "node:path";
+-import { CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, CITY_SLUGS, calendarRoute } from "./seo-config.mjs";
++import {
++  CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, CITY_SLUGS, calendarRoute, SITE,
++  SITEMAP_MIN_BS_YEAR, SITEMAP_MAX_BS_YEAR, isSitemapYear, approxBsYear,
++  NOINDEX_EXACT_ROUTES, PRIVATE_PREFIXES, sitemapExclusionReason
++} from "./seo-config.mjs";
++import { parseSitemapIndex } from "./sitemap-utils.mjs";
+ import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
+ 
+ const root = process.cwd();
+@@ -16,9 +22,14 @@ expect(calendarManifest.row_count === 77070, `calendar R2 row count mismatch: ${
+ expect(calendarManifest.ad_start === "1826-04-11" && calendarManifest.ad_end === "2037-04-13", "calendar R2 coverage mismatch");
+ expect(Array.isArray(calendarManifest.bs_years) && calendarManifest.bs_years.length > 200, "full BS archive year inventory missing");
+ expect(Array.isArray(manifest.indexed_calendar_years), "indexed calendar year inventory missing");
+-expect(JSON.stringify(manifest.indexed_calendar_years) === JSON.stringify(calendarManifest.bs_years), "indexed calendar years must match validated R2 BS archive coverage");
+-expect(manifest.indexed_calendar_year_route_count === calendarManifest.bs_years.length, "indexed year route count mismatch");
+-expect(manifest.indexed_day_route_count === calendarManifest.row_count, `factual day route count ${manifest.indexed_day_route_count} != ${calendarManifest.row_count}`);
++const windowYears = calendarManifest.bs_years.filter(isSitemapYear);
++expect(SITEMAP_MIN_BS_YEAR === CURRENT_BS_YEAR - 10 && SITEMAP_MAX_BS_YEAR === CURRENT_BS_YEAR + 10, "sitemap BS window must be current year ±10");
++expect(windowYears.length >= 10, `too few archive years inside sitemap window: ${windowYears.length}`);
++expect(JSON.stringify(manifest.indexed_calendar_years) === JSON.stringify(windowYears), "indexed calendar years must equal the R2 BS archive years inside the sitemap window");
++expect(JSON.stringify(manifest.calendar_archive_bs_years) === JSON.stringify(calendarManifest.bs_years), "full R2 BS archive year inventory missing from SEO manifest");
++expect(manifest.calendar_archive_row_count === calendarManifest.row_count, "SEO manifest archive row count mismatch");
++expect(manifest.indexed_calendar_year_route_count === windowYears.length, "indexed year route count mismatch");
++expect(manifest.indexed_day_route_count > 0 && manifest.indexed_day_route_count < calendarManifest.row_count, `factual day route count ${manifest.indexed_day_route_count} must be the windowed subset of ${calendarManifest.row_count}`);
+ expect(manifest.calendar_archive_source_version === calendarManifest.source_version, "SEO/R2 source version mismatch");
+ expect(manifest.calendar_archive_ad_start === calendarManifest.ad_start && manifest.calendar_archive_ad_end === calendarManifest.ad_end, "SEO/R2 archive bounds mismatch");
+ expect(manifest.indexed_route_count >= 1800, `too few indexable routes: ${manifest.indexed_route_count}`);
+@@ -29,7 +40,7 @@ expect(manifest.agents_json === "https://aafnaipatro.com/.well-known/agents.json
+ expect(manifest.mcp === "https://aafnaipatro.com/mcp", "MCP manifest target missing");
+ 
+ const sitemapIndex = await read("public/sitemap.xml");
+-for (const year of calendarManifest.bs_years) {
++for (const year of windowYears) {
+   expect(manifest.sitemap_files.includes(`sitemap-calendar-${year}.xml`), `calendar sitemap missing from manifest: ${year}`);
+   expect(manifest.sitemap_files.includes(`sitemap-days-${year}.xml`), `day sitemap missing from manifest: ${year}`);
+   expect(sitemapIndex.includes(`https://aafnaipatro.com/sitemap-calendar-${year}.xml`), `calendar sitemap missing from index: ${year}`);
+@@ -141,4 +152,134 @@ expect(!calendarFast.includes("cloudflare-d1-calendar"), "calendar fast path sti
+ expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
+ expect(jsonc.includes('"15 18 * * *"'), "Nepal-midnight cron missing from canonical Cloudflare config");
+ 
++
++// ---------------------------------------------------------------------------------------------
++// Sitemap guard: everything submitted to search engines must be valid, fetchable and indexable.
++// ---------------------------------------------------------------------------------------------
++const MAX_URLS = 50_000, MAX_BYTES = 50 * 1024 * 1024;
++
++/** Minimal XML well-formedness check (balanced tags, escaped text, single root). No dependencies. */
++function wellFormed(xml, name) {
++  let body = String(xml);
++  if (body.charCodeAt(0) === 0xfeff) body = body.slice(1);
++  body = body.replace(/^<\?xml[^?]*\?>/, "");
++  const stack = [];
++  let roots = 0, last = 0;
++  const tag = /<(\/?)([A-Za-z_][\w:.-]*)((?:\s+[\w:.-]+\s*=\s*(?:"[^"]*"|'[^']*'))*)\s*(\/?)>|<!--[\s\S]*?-->/g;
++  const checkText = (text) => {
++    if (/[<>]/.test(text)) fail(`${name}: stray markup character in text`);
++    if (/&(?!(?:amp|lt|gt|apos|quot|#\d+|#x[0-9a-fA-F]+);)/.test(text)) fail(`${name}: unescaped & in text`);
++    if (!stack.length && text.trim()) fail(`${name}: text outside root element`);
++  };
++  let m;
++  while ((m = tag.exec(body))) {
++    checkText(body.slice(last, m.index));
++    last = tag.lastIndex;
++    if (m[0].startsWith("<!--")) continue;
++    const [, closing, nameTag, , selfClosing] = m;
++    if (closing) {
++      if (stack.pop() !== nameTag) fail(`${name}: mismatched </${nameTag}>`);
++    } else if (!selfClosing) {
++      if (!stack.length) roots++;
++      stack.push(nameTag);
++    } else if (!stack.length) roots++;
++  }
++  checkText(body.slice(last));
++  if (stack.length) fail(`${name}: unclosed <${stack.at(-1)}>`);
++  if (roots !== 1) fail(`${name}: expected exactly one root element, found ${roots}`);
++}
++
++const distDir = resolve(root, "dist");
++const distSitemaps = (await readdir(distDir)).filter((file) => /^sitemap[\w-]*\.xml$/.test(file)).sort();
++expect(distSitemaps.includes("sitemap.xml"), "dist/sitemap.xml missing");
++const distIndexXml = await read("dist/sitemap.xml");
++wellFormed(distIndexXml, "sitemap.xml");
++expect(/<sitemapindex xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/.test(distIndexXml), "sitemap.xml is not a sitemapindex");
++const indexEntries = parseSitemapIndex(distIndexXml);
++expect((distIndexXml.match(/<sitemap>/g) || []).length === indexEntries.length, "sitemap index has entries that failed to parse");
++expect(indexEntries.length >= 10 && indexEntries.length <= 100, `sitemap index child count out of range: ${indexEntries.length}`);
++const indexFiles = new Set();
++for (const { file, lastmod } of indexEntries) {
++  expect(/^sitemap[\w-]*\.xml$/.test(file), `sitemap index entry is not a same-site sitemap file: ${file}`);
++  expect(!indexFiles.has(file), `sitemap index lists ${file} twice`);
++  indexFiles.add(file);
++  expect(existsSync(resolve(distDir, file)), `sitemap index lists ${file} but dist/${file} does not exist`);
++  expect(/^\d{4}-\d{2}-\d{2}$/.test(String(lastmod || "")), `sitemap index entry ${file} lacks a valid <lastmod>`);
++  expect(String(lastmod) <= new Date(Date.now() + 2 * 86400000).toISOString().slice(0, 10), `sitemap index entry ${file} has a future <lastmod> ${lastmod}`);
++}
++for (const file of distSitemaps) if (file !== "sitemap.xml") expect(indexFiles.has(file), `stale/orphan sitemap shipped in dist but not in index: ${file}`);
++expect(JSON.stringify([...indexFiles].sort()) === JSON.stringify([...manifest.sitemap_files].sort()), "seo-manifest sitemap_files out of sync with dist/sitemap.xml");
++for (const file of indexFiles) {
++  const archive = file.match(/^sitemap-(?:calendar|days)-(\d+)\.xml$/);
++  if (archive) expect(isSitemapYear(archive[1]), `archive sitemap outside BS window ${SITEMAP_MIN_BS_YEAR}..${SITEMAP_MAX_BS_YEAR}: ${file}`);
++}
++
++const bsYearByAd = new Map(rows.map((row) => [row.ad, Number(row.bs?.year)]));
++const robotsDisallows = [...robots.matchAll(/^Disallow:\s*(\S+)\s*$/gm)].map((m) => m[1]);
++const seenLocs = new Map();
++let totalLocs = 0;
++const festivalLocs = [];
++for (const file of indexFiles) {
++  const path = resolve(distDir, file);
++  const size = (await stat(path)).size;
++  expect(size <= MAX_BYTES, `${file} exceeds 50 MB uncompressed (${size} bytes)`);
++  const xml = await readFile(path, "utf8");
++  wellFormed(xml, file);
++  expect(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), `${file} is not a sitemap urlset`);
++  const locs = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => m[1].trim());
++  expect((xml.match(/<url>/g) || []).length === locs.length, `${file}: every <url> needs exactly one <loc>`);
++  expect(locs.length > 0, `${file} is empty`);
++  expect(locs.length <= MAX_URLS, `${file} exceeds 50,000 URLs (${locs.length})`);
++  for (const loc of locs) {
++    expect(loc.startsWith(SITE + "/"), `${file}: <loc> is not absolute on ${SITE}: ${loc}`);
++    const route = loc.slice(SITE.length).replace(/&amp;/g, "&");
++    const reason = sitemapExclusionReason(route);
++    expect(!reason, `${file}: <loc> would be noindex/redirect/private (${reason}): ${loc}`);
++    expect(!NOINDEX_EXACT_ROUTES.includes(route), `${file}: noindex route in sitemap: ${route}`);
++    expect(!PRIVATE_PREFIXES.some((prefix) => route.startsWith(prefix)) && !route.startsWith("/api/"), `${file}: private/API route in sitemap: ${route}`);
++    expect(!robotsDisallows.some((prefix) => route.startsWith(prefix)), `${file}: robots.txt disallows a sitemap URL: ${route}`);
++    const calendar = route.match(/^\/calendar\/(\d{4})(?:\/|$)/);
++    if (calendar) expect(Number(calendar[1]) >= SITEMAP_MIN_BS_YEAR && isSitemapYear(calendar[1]), `${file}: calendar URL outside BS window: ${route}`);
++    const date = route.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
++    if (route.startsWith("/date/")) {
++      expect(Boolean(date) && bsYearByAd.has(date[1]), `${file}: /date/ URL not in validated archive: ${route}`);
++      expect(isSitemapYear(bsYearByAd.get(date[1])), `${file}: /date/ URL for BS ${bsYearByAd.get(date[1])} outside window: ${route}`);
++    }
++    if (route.startsWith("/festivals/")) festivalLocs.push(route);
++    expect(!seenLocs.has(loc), `duplicate <loc> ${loc} in ${file} and ${seenLocs.get(loc)}`);
++    seenLocs.set(loc, file);
++  }
++  totalLocs += locs.length;
++}
++// Festival pages are static prerenders: they must exist, be self-canonical and indexable.
++for (const route of festivalLocs) {
++  const htmlPath = resolve(distDir, `.${route}/index.html`);
++  expect(existsSync(htmlPath), `festival sitemap URL has no prerendered page: ${route}`);
++  const html = await readFile(htmlPath, "utf8");
++  expect(html.includes(`rel="canonical" href="${SITE}${route}"`), `festival page is not self-canonical: ${route}`);
++  expect(!/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html), `festival page is noindex: ${route}`);
++}
++
++// robots.txt: exactly one Sitemap line pointing at the index.
++const robotsSitemapLines = robots.split("\n").filter((line) => /^sitemap:/i.test(line.trim()));
++expect(robotsSitemapLines.length === 1 && robotsSitemapLines[0].trim() === `Sitemap: ${SITE}/sitemap.xml`, "robots.txt must contain exactly one Sitemap line for the index");
++expect((await read("dist/robots.txt")) === robots, "dist/robots.txt differs from public/robots.txt");
++
++// Runtime parity: the Worker's noindex cutoff must use the same BS-year formula as the build.
++const seoWindow = await read("worker/seo-window.ts");
++const workerIndex = await read("worker/index.ts");
++const optimizedEntry = await read("worker/optimized-entry.ts");
++const seoStatic = await read("worker/seo-static.ts");
++expect(seoWindow.includes("parts.month > 4 || (parts.month === 4 && parts.day >= 14)") && seoWindow.includes("parts.year + (afterApproxNewYear ? 57 : 56)") && seoWindow.includes("approxBsYear(date) - 10"), "worker/seo-window.ts BS-year cutoff drifted from scripts/seo-config.mjs");
++expect(workerIndex.includes('import { historicalCalendarNoindex } from "./seo-window"') && !workerIndex.includes("adYear + 57"), "worker/index.ts must use the shared seo-window cutoff");
++expect(approxBsYear(new Date("2026-04-13T12:00:00+05:45")) === 2082 && approxBsYear(new Date("2026-04-14T12:00:00+05:45")) === 2083, "approxBsYear New Year boundary changed");
++const firstSeo = optimizedEntry.indexOf("seoStaticResponse(request");
++expect(firstSeo > 0 && firstSeo < optimizedEntry.indexOf("speechApiResponse(request") && firstSeo < optimizedEntry.indexOf("quotaCachedResponse(request"), "sitemap/robots handler must run first in worker/optimized-entry.ts");
++expect(entry.indexOf("seoStaticResponse(request") > 0 && entry.indexOf("seoStaticResponse(request") < entry.indexOf("legacyRedirectResponse(request)"), "sitemap/robots handler must run first in worker/connected-entry.ts");
++expect(seoStatic.includes('"application/xml; charset=utf-8"') && seoStatic.includes('"cache-control": "public, max-age=3600"') && !seoStatic.includes("x-robots-tag\","), "seo-static headers drifted");
++for (const file of (await readdir(resolve(root, "worker"))).filter((name) => name.endsWith(".ts"))) {
++  expect(!(await read(`worker/${file}`)).includes("converted-functions"), `worker/${file} must not route legacy converted-functions sitemaps`);
++}
++console.log(`Sitemap guard passed: ${indexFiles.size} child sitemaps, ${totalLocs} unique indexable URLs, BS window ${SITEMAP_MIN_BS_YEAR}..${SITEMAP_MAX_BS_YEAR}.`);
++
+ console.log(`SEO/agent build verified: ${manifest.indexed_day_route_count} validated factual day routes across ${manifest.indexed_calendar_years.length} BS years; hot prerender sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);
+diff --git a/tests/seo-discovery-contract.test.mjs b/tests/seo-discovery-contract.test.mjs
+index cb6f27c..167f4fe 100644
+--- a/tests/seo-discovery-contract.test.mjs
++++ b/tests/seo-discovery-contract.test.mjs
+@@ -9,13 +9,25 @@ const canonicalTools=[
+  "/tools/astro","/tools/nepali-typing","/tools/preeti-converter","/tools/bstoad","/tools/adtobs","/tools/calc","/tools/age","/tools/clock","/tools/forex","/tools/gold","/tools/emi","/tools/vat","/tools/units","/tools/words","/tools/incometax","/tools/landconverter","/tools/nepaliqr","/tools/fuelprice","/tools/tithi-reminder","/tools/sait","/tools/baby-names","/tools/janmadin-akhbar","/tools/future-letter","/tools/spell-check","/tools/voice-typing","/tools/ocr","/tools/name-check","/tools/read-aloud","/tools/patro-bot"
+ ];
+ 
+-test("SEO discovery uses production canonical and the full validated R2-backed calendar archive",()=>{
++test("SEO discovery uses production canonical and submits only the indexable BS-year window of the R2 archive",()=>{
+  const manifest=JSON.parse(read("public/seo-manifest.json"));
+  assert.equal(manifest.schema_version,4);assert.equal(manifest.site_url,production);assert.equal(manifest.canonical_tool_route_count,29);
+- assert.ok(manifest.indexed_calendar_years.length>200);assert.equal(manifest.indexed_calendar_year_route_count,manifest.indexed_calendar_years.length);assert.equal(manifest.indexed_day_route_count,77070);assert.ok(manifest.indexed_route_count>=1800);
++ // Full validated archive stays in R2 and remains reachable...
++ assert.ok(manifest.calendar_archive_bs_years.length>200);assert.equal(manifest.calendar_archive_row_count,77070);
++ // ...but sitemaps carry only current BS year ±10 (the Worker's historical noindex cutoff).
++ const {min,max,current}=manifest.sitemap_bs_year_window;assert.equal(min,current-10);assert.equal(max,current+10);
++ assert.deepEqual(manifest.indexed_calendar_years,manifest.calendar_archive_bs_years.filter((y)=>y>=min&&y<=max));
++ assert.ok(manifest.indexed_calendar_years.length>=10&&manifest.indexed_calendar_years.length<=21);
++ assert.equal(manifest.indexed_calendar_year_route_count,manifest.indexed_calendar_years.length);
++ assert.ok(manifest.indexed_day_route_count>3000&&manifest.indexed_day_route_count<8000);assert.ok(manifest.indexed_route_count>=1800);
++ assert.match(manifest.archive_policy,/indexable BS \d{4}–\d{4} window/);
++ for(const name of manifest.sitemap_files){const archive=name.match(/^sitemap-(?:calendar|days)-(\d+)\.xml$/);if(archive)assert.ok(Number(archive[1])>=min&&Number(archive[1])<=max,name);}
+  assert.equal(manifest.calendar_archive_ad_start,"1826-04-11");assert.equal(manifest.calendar_archive_ad_end,"2037-04-13");assert.match(manifest.calendar_archive_source_version,/^sha256:[a-f0-9]{64}$/);
+  assert.match(manifest.preferred_citation,/^Cite as: Aafnai Patro \(aafnaipatro\.com\), accessed \d{4}-\d{2}-\d{2}$/);
+  const index=read("public/sitemap.xml");assert.ok(index.includes("<sitemapindex"));
++ const entries=[...index.matchAll(/<sitemap><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/sitemap>/g)];
++ assert.equal(entries.length,(index.match(/<sitemap>/g)||[]).length,"every sitemap index entry carries <lastmod>");
++ assert.ok(entries.length>=25&&entries.length<=50,`index child count ${entries.length}`);
+  for(const year of manifest.indexed_calendar_years){
+    const cal=`sitemap-calendar-${year}.xml`,days=`sitemap-days-${year}.xml`;assert.ok(manifest.sitemap_files.includes(cal));assert.ok(manifest.sitemap_files.includes(days));
+    const calText=read(`public/${cal}`);assert.ok(calText.includes(`<loc>${production}/calendar/${year}</loc>`),`year hub ${year}`);
+@@ -28,7 +40,22 @@ test("SEO discovery uses production canonical and the full validated R2-backed c
+ 
+ test("canonical tools stay complete while private/news/developer surfaces stay out of discovery",()=>{
+  const tools=read("public/sitemap-tools.xml");assert.equal(canonicalTools.length,29);for(const route of canonicalTools)assert.ok(tools.includes(`<loc>${production}${route}</loc>`),route);
+- const pages=read("public/sitemap-pages.xml");for(const route of ["/samachar","/developers","/tools/api"])assert.ok(!pages.includes(`<loc>${production}${route}</loc>`),route);
++ const manifest=JSON.parse(read("public/seo-manifest.json"));
++ const all=manifest.sitemap_files.map((name)=>read(`public/${name}`)).join("\n");
++ for(const route of ["/samachar","/developers","/tools/api","/widget/today","/offline","/mcp"])assert.ok(!all.includes(`<loc>${production}${route}</loc>`),route);
++ assert.ok(!/<loc>https:\/\/aafnaipatro\.com\/(?:api|compat-api|me|admin|auth)\//.test(all));
++ const config=read("scripts/seo-config.mjs");
++ assert.ok(config.includes('export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"]'));
++ assert.ok(config.includes("export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - 10"));
++});
++
++test("sitemap window and Worker noindex cutoff share one BS-year formula; sitemaps are served as static XML",()=>{
++ const config=read("scripts/seo-config.mjs"),win=read("worker/seo-window.ts"),index=read("worker/index.ts"),seo=read("worker/seo-static.ts"),optimized=read("worker/optimized-entry.ts"),connected=read("worker/connected-entry.ts");
++ for(const text of [config,win]){assert.ok(text.includes("parts.month > 4 || (parts.month === 4 && parts.day >= 14)"));assert.ok(text.includes("parts.year + (afterApproxNewYear ? 57 : 56)"));}
++ assert.ok(win.includes("approxBsYear(date) - 10"));assert.ok(index.includes('import { historicalCalendarNoindex } from "./seo-window"'));assert.ok(!index.includes("adYear + 57"));
++ assert.ok(seo.includes("/^\\/sitemap[\\w-]*\\.xml$/"));assert.ok(seo.includes('"application/xml; charset=utf-8"'));assert.ok(seo.includes('"text/plain; charset=utf-8"'));assert.ok(seo.includes('"cache-control": "public, max-age=3600"'));
++ assert.ok(optimized.indexOf("seoStaticResponse(request")<optimized.indexOf("speechApiResponse(request"));
++ assert.ok(connected.indexOf("seoStaticResponse(request")<connected.indexOf("legacyRedirectResponse(request)"));
+ });
+ 
+ test("robots covers 2026 search and AI crawlers with private boundaries",()=>{
+diff --git a/worker/connected-entry.ts b/worker/connected-entry.ts
+index 2e0c436..b21c491 100644
+--- a/worker/connected-entry.ts
++++ b/worker/connected-entry.ts
+@@ -1,4 +1,5 @@
+ import productionWorker from "./entry";
++import { seoStaticResponse } from "./seo-static";
+ import { rewriteConnectedSeo } from "./connected-seo";
+ import { handleAgentSurface } from "./agent-gateway";
+ import { withAdminConsole } from "./admin-console";
+@@ -283,6 +284,9 @@ const connectedWorker = {
+   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+     const pathname = new URL(request.url).pathname;
+ 
++    const seoStatic = await seoStaticResponse(request, env);
++    if (seoStatic) return seoStatic;
++
+     const redirect = legacyRedirectResponse(request);
+     if (redirect) return redirect;
+ 
+diff --git a/worker/index.ts b/worker/index.ts
+index eee3416..93a5404 100644
+--- a/worker/index.ts
++++ b/worker/index.ts
+@@ -11,6 +11,9 @@ import { pushResponse } from "./push";
+ import { privateResponse } from "./private";
+ import { authResponse } from "./auth";
+ import { cronResponse, runScheduled } from "./jobs";
++// historicalCalendarNoindex: /calendar/YYYY/MM older than (current BS year - 10) is noindex. Shared with
++// the build-time sitemap window (scripts/seo-config.mjs SITEMAP_MIN_BS_YEAR) via the same formula.
++import { historicalCalendarNoindex } from "./seo-window";
+ 
+ type Env = {
+   DB?: any;
+@@ -86,12 +89,6 @@ function edgeSeoMeta(path: string): EdgeSeoMeta {
+   return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+ }
+ 
+-function historicalCalendarNoindex(path: string) {
+-  const match = path.match(/^\/calendar\/(\d{4})\//);
+-  if (!match) return false;
+-  const adYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
+-  return Number(match[1]) < (adYear + 57) - 10;
+-}
+ 
+ function escapeHtml(value: string) {
+   const map: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" };
+diff --git a/worker/optimized-entry.ts b/worker/optimized-entry.ts
+index e4e406b..8db9f10 100644
+--- a/worker/optimized-entry.ts
++++ b/worker/optimized-entry.ts
+@@ -1,4 +1,5 @@
+ import connectedWorker from "./connected-entry";
++import { seoStaticResponse } from "./seo-static";
+ import { fastCalendarResponse } from "./calendar-fast";
+ import { fastHistoryResponse } from "./history-fast";
+ import { staticFestivalResponse } from "./festival-static";
+@@ -17,6 +18,10 @@ import { speechApiResponse } from "./speech";
+ const optimizedWorker = {
+   ...connectedWorker,
+   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
++    // Sitemaps/robots.txt: static asset only, crawler-safe headers, 404 when missing.
++    const seoStatic = await seoStaticResponse(request, env as any);
++    if (seoStatic) return seoStatic;
++
+     const speech = await speechApiResponse(request, env);
+     if (speech) return speech;
+ 
+diff --git a/worker/seo-static.ts b/worker/seo-static.ts
+new file mode 100644
+index 0000000..9d75ef6
+--- /dev/null
++++ b/worker/seo-static.ts
+@@ -0,0 +1,50 @@
++// Sitemaps and robots.txt are always served straight from the static asset store with crawler-safe
++// headers: never the SPA shell, never an HTMLRewriter/CSP pass, never an x-robots-tag. Wired first in
++// worker/optimized-entry.ts (production main) and worker/connected-entry.ts.
++type AssetBinding = { fetch(request: Request): Promise<Response> };
++
++const SITEMAP_PATH = /^\/sitemap[\w-]*\.xml$/;
++
++export function isSeoStaticPath(pathname: string): boolean {
++  return pathname === "/robots.txt" || SITEMAP_PATH.test(pathname);
++}
++
++export async function seoStaticResponse(request: Request, env: { ASSETS?: AssetBinding }): Promise<Response | null> {
++  const url = new URL(request.url);
++  if (!isSeoStaticPath(url.pathname)) return null;
++  const head = request.method === "HEAD";
++  const contentType = url.pathname === "/robots.txt" ? "text/plain; charset=utf-8" : "application/xml; charset=utf-8";
++  if (request.method !== "GET" && !head) {
++    return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD", "content-type": "text/plain; charset=utf-8" } });
++  }
++  const notFound = () => new Response(head ? null : "Not Found", {
++    status: 404,
++    headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=300" },
++  });
++  if (!env.ASSETS || typeof env.ASSETS.fetch !== "function") return notFound();
++
++  const assetUrl = new URL(url.toString());
++  assetUrl.search = "";
++  assetUrl.hash = "";
++  let asset: Response;
++  try {
++    asset = await env.ASSETS.fetch(new Request(assetUrl.toString(), { method: "GET" }));
++  } catch {
++    return notFound();
++  }
++  // Anything other than a direct 200 hit (redirects, 404, an HTML fallback) is treated as missing.
++  const assetType = (asset.headers.get("content-type") || "").toLowerCase();
++  if (asset.status !== 200 || assetType.includes("text/html")) return notFound();
++
++  const headers = new Headers({
++    "content-type": contentType,
++    "cache-control": "public, max-age=3600",
++    "x-content-type-options": "nosniff",
++    "x-patro-backend": "static-seo-asset",
++  });
++  const etag = asset.headers.get("etag");
++  if (etag) headers.set("etag", etag);
++  const lastModified = asset.headers.get("last-modified");
++  if (lastModified) headers.set("last-modified", lastModified);
++  return new Response(head ? null : asset.body, { status: 200, headers });
++}
+diff --git a/worker/seo-window.ts b/worker/seo-window.ts
+new file mode 100644
+index 0000000..6edfb8f
+--- /dev/null
++++ b/worker/seo-window.ts
+@@ -0,0 +1,25 @@
++// Single runtime definition of the indexable BS-year window. scripts/seo-config.mjs (approxBsYear,
++// SITEMAP_MIN_BS_YEAR) uses the identical formula at build time, so a calendar URL is in a sitemap
++// exactly when this cutoff leaves it indexable. tests/seo-discovery-contract.test.mjs locks the parity.
++
++/** Approximate Bikram Sambat year in Asia/Kathmandu (BS New Year treated as 14 April). */
++export function approxBsYear(date: Date = new Date()): number {
++  const parts: Record<string, number> = {};
++  for (const part of new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Kathmandu", year: "numeric", month: "numeric", day: "numeric" }).formatToParts(date)) {
++    if (part.type !== "literal") parts[part.type] = Number(part.value);
++  }
++  const afterApproxNewYear = parts.month > 4 || (parts.month === 4 && parts.day >= 14);
++  return parts.year + (afterApproxNewYear ? 57 : 56);
++}
++
++/** Oldest BS year whose /calendar/YYYY/MM pages are indexable (current BS year - 10). */
++export function minIndexableBsYear(date: Date = new Date()): number {
++  return approxBsYear(date) - 10;
++}
++
++/** true when /calendar/YYYY/... is older than the indexable window and must be served noindex. */
++export function historicalCalendarNoindex(path: string, date: Date = new Date()): boolean {
++  const match = path.match(/^\/calendar\/(\d{4})\//);
++  if (!match) return false;
++  return Number(match[1]) < minIndexableBsYear(date);
++}
+-- 
+2.43.0
+

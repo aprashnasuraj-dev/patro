@@ -1,6 +1,8 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { isIndexableRoute } from "../seo-config.mjs";
+import { BUILD_DATE, snapshotDate, updateSitemapIndex, urlsetXml } from "../sitemap-utils.mjs";
 
 const ROOT = process.cwd();
 const OUT = join(ROOT, ".cloudflare", "community-r2");
@@ -116,15 +118,16 @@ const manifest = {
 };
 await writeFile(join(OUT, "manifest.json"), JSON.stringify(manifest, null, 2));
 
-const site = "https://aafnaipatro.com";
+// Community/Nepal Sambat year archives are served by worker/public-archive-pages.ts as index,follow,
+// self-canonical R2 pages; urlsetXml() refuses any route the Worker would mark noindex.
 const sitemapPath = join(ROOT, "public", "sitemap-community-archives.xml");
-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${archiveRoutes.map((route) => `  <url><loc>${site}${route}</loc></url>`).join("\n")}\n</urlset>\n`;
-await writeFile(sitemapPath, xml);
+await writeFile(sitemapPath, urlsetXml(archiveRoutes.filter(isIndexableRoute)));
 
-const sitemapIndexPath = join(ROOT, "public", "sitemap.xml");
-let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
-if (!sitemapIndex.includes(`${site}/sitemap-community-archives.xml`)) sitemapIndex = sitemapIndex.replace("</sitemapindex>", `  <sitemap><loc>${site}/sitemap-community-archives.xml</loc></sitemap>\n</sitemapindex>`);
-await writeFile(sitemapIndexPath, sitemapIndex);
+const communityLastmod = (await snapshotDate(
+  "migration/data/public/community_dates.json", "migration/data/public/community_festivals.json",
+  "migration/data/public/ns_festival_dates.json", "migration/data/public/ns_festivals.json"
+)) || BUILD_DATE;
+await updateSitemapIndex(join(ROOT, "public", "sitemap.xml"), [{ file:"sitemap-community-archives.xml", lastmod:communityLastmod }]);
 
 const seoManifestPath = join(ROOT, "public", "seo-manifest.json");
 const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));

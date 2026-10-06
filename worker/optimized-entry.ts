@@ -1,4 +1,5 @@
 import connectedWorker from "./connected-entry";
+import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
 import { staticFestivalResponse } from "./festival-static";
@@ -17,6 +18,10 @@ import { speechApiResponse } from "./speech";
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    // Sitemaps/robots.txt: static asset only, crawler-safe headers, 404 when missing.
+    const seoStatic = await seoStaticResponse(request, env as any);
+    if (seoStatic) return seoStatic;
+
     const speech = await speechApiResponse(request, env);
     if (speech) return speech;
 

@@ -11,6 +11,9 @@ import { pushResponse } from "./push";
 import { privateResponse } from "./private";
 import { authResponse } from "./auth";
 import { cronResponse, runScheduled } from "./jobs";
+// historicalCalendarNoindex: /calendar/YYYY/MM older than (current BS year - 10) is noindex. Shared with
+// the build-time sitemap window (scripts/seo-config.mjs SITEMAP_MIN_BS_YEAR) via the same formula.
+import { historicalCalendarNoindex } from "./seo-window";
 
 type Env = {
   DB?: any;
@@ -86,12 +89,6 @@ function edgeSeoMeta(path: string): EdgeSeoMeta {
   return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
 }
 
-function historicalCalendarNoindex(path: string) {
-  const match = path.match(/^\/calendar\/(\d{4})\//);
-  if (!match) return false;
-  const adYear = Number(new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Kathmandu" }).format(new Date()));
-  return Number(match[1]) < (adYear + 57) - 10;
-}
 
 function escapeHtml(value: string) {
   const map: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" };

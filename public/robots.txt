@@ -1,11 +1,147 @@
+# Aafnai Patro crawl policy — public pages are discoverable; private/auth surfaces are not.
+# Cloudflare bot-management settings must remain consistent with this file; a dashboard-level AI-bot block can override robots.txt.
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /my-diary
-Disallow: /family
-Disallow: /my-data
-Disallow: /settings
-Disallow: /admin
-Disallow: /notes
-Disallow: /planner
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
+User-agent: NaverBot
+Allow: /
+Disallow: /api/
+Disallow: /compat-api/
+Disallow: /me/
+Disallow: /admin/
+Disallow: /auth/
+
 Sitemap: https://aafnaipatro.com/sitemap.xml

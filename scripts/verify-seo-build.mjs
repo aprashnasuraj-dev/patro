@@ -1,6 +1,12 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { resolve } from "node:path";
-import { CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, CITY_SLUGS, calendarRoute } from "./seo-config.mjs";
+import {
+  CURRENT_BS_YEAR, INDEXED_CALENDAR_YEARS, CITY_SLUGS, calendarRoute, SITE,
+  SITEMAP_MIN_BS_YEAR, SITEMAP_MAX_BS_YEAR, isSitemapYear, approxBsYear,
+  NOINDEX_EXACT_ROUTES, PRIVATE_PREFIXES, sitemapExclusionReason
+} from "./seo-config.mjs";
+import { parseSitemapIndex } from "./sitemap-utils.mjs";
 import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
@@ -16,9 +22,14 @@ expect(calendarManifest.row_count === 77070, `calendar R2 row count mismatch: ${
 expect(calendarManifest.ad_start === "1826-04-11" && calendarManifest.ad_end === "2037-04-13", "calendar R2 coverage mismatch");
 expect(Array.isArray(calendarManifest.bs_years) && calendarManifest.bs_years.length > 200, "full BS archive year inventory missing");
 expect(Array.isArray(manifest.indexed_calendar_years), "indexed calendar year inventory missing");
-expect(JSON.stringify(manifest.indexed_calendar_years) === JSON.stringify(calendarManifest.bs_years), "indexed calendar years must match validated R2 BS archive coverage");
-expect(manifest.indexed_calendar_year_route_count === calendarManifest.bs_years.length, "indexed year route count mismatch");
-expect(manifest.indexed_day_route_count === calendarManifest.row_count, `factual day route count ${manifest.indexed_day_route_count} != ${calendarManifest.row_count}`);
+const windowYears = calendarManifest.bs_years.filter(isSitemapYear);
+expect(SITEMAP_MIN_BS_YEAR === CURRENT_BS_YEAR - 10 && SITEMAP_MAX_BS_YEAR === CURRENT_BS_YEAR + 10, "sitemap BS window must be current year ±10");
+expect(windowYears.length >= 10, `too few archive years inside sitemap window: ${windowYears.length}`);
+expect(JSON.stringify(manifest.indexed_calendar_years) === JSON.stringify(windowYears), "indexed calendar years must equal the R2 BS archive years inside the sitemap window");
+expect(JSON.stringify(manifest.calendar_archive_bs_years) === JSON.stringify(calendarManifest.bs_years), "full R2 BS archive year inventory missing from SEO manifest");
+expect(manifest.calendar_archive_row_count === calendarManifest.row_count, "SEO manifest archive row count mismatch");
+expect(manifest.indexed_calendar_year_route_count === windowYears.length, "indexed year route count mismatch");
+expect(manifest.indexed_day_route_count > 0 && manifest.indexed_day_route_count < calendarManifest.row_count, `factual day route count ${manifest.indexed_day_route_count} must be the windowed subset of ${calendarManifest.row_count}`);
 expect(manifest.calendar_archive_source_version === calendarManifest.source_version, "SEO/R2 source version mismatch");
 expect(manifest.calendar_archive_ad_start === calendarManifest.ad_start && manifest.calendar_archive_ad_end === calendarManifest.ad_end, "SEO/R2 archive bounds mismatch");
 expect(manifest.indexed_route_count >= 1800, `too few indexable routes: ${manifest.indexed_route_count}`);
@@ -29,7 +40,7 @@ expect(manifest.agents_json === "https://aafnaipatro.com/.well-known/agents.json
 expect(manifest.mcp === "https://aafnaipatro.com/mcp", "MCP manifest target missing");
 
 const sitemapIndex = await read("public/sitemap.xml");
-for (const year of calendarManifest.bs_years) {
+for (const year of windowYears) {
   expect(manifest.sitemap_files.includes(`sitemap-calendar-${year}.xml`), `calendar sitemap missing from manifest: ${year}`);
   expect(manifest.sitemap_files.includes(`sitemap-days-${year}.xml`), `day sitemap missing from manifest: ${year}`);
   expect(sitemapIndex.includes(`https://aafnaipatro.com/sitemap-calendar-${year}.xml`), `calendar sitemap missing from index: ${year}`);
@@ -140,5 +151,135 @@ expect(calendarFast.includes("D1 is deliberately not a normal fallback"), "calen
 expect(!calendarFast.includes("cloudflare-d1-calendar"), "calendar fast path still contains a D1 calendar backend");
 expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
 expect(jsonc.includes('"15 18 * * *"'), "Nepal-midnight cron missing from canonical Cloudflare config");
+
+
+// ---------------------------------------------------------------------------------------------
+// Sitemap guard: everything submitted to search engines must be valid, fetchable and indexable.
+// ---------------------------------------------------------------------------------------------
+const MAX_URLS = 50_000, MAX_BYTES = 50 * 1024 * 1024;
+
+/** Minimal XML well-formedness check (balanced tags, escaped text, single root). No dependencies. */
+function wellFormed(xml, name) {
+  let body = String(xml);
+  if (body.charCodeAt(0) === 0xfeff) body = body.slice(1);
+  body = body.replace(/^<\?xml[^?]*\?>/, "");
+  const stack = [];
+  let roots = 0, last = 0;
+  const tag = /<(\/?)([A-Za-z_][\w:.-]*)((?:\s+[\w:.-]+\s*=\s*(?:"[^"]*"|'[^']*'))*)\s*(\/?)>|<!--[\s\S]*?-->/g;
+  const checkText = (text) => {
+    if (/[<>]/.test(text)) fail(`${name}: stray markup character in text`);
+    if (/&(?!(?:amp|lt|gt|apos|quot|#\d+|#x[0-9a-fA-F]+);)/.test(text)) fail(`${name}: unescaped & in text`);
+    if (!stack.length && text.trim()) fail(`${name}: text outside root element`);
+  };
+  let m;
+  while ((m = tag.exec(body))) {
+    checkText(body.slice(last, m.index));
+    last = tag.lastIndex;
+    if (m[0].startsWith("<!--")) continue;
+    const [, closing, nameTag, , selfClosing] = m;
+    if (closing) {
+      if (stack.pop() !== nameTag) fail(`${name}: mismatched </${nameTag}>`);
+    } else if (!selfClosing) {
+      if (!stack.length) roots++;
+      stack.push(nameTag);
+    } else if (!stack.length) roots++;
+  }
+  checkText(body.slice(last));
+  if (stack.length) fail(`${name}: unclosed <${stack.at(-1)}>`);
+  if (roots !== 1) fail(`${name}: expected exactly one root element, found ${roots}`);
+}
+
+const distDir = resolve(root, "dist");
+const distSitemaps = (await readdir(distDir)).filter((file) => /^sitemap[\w-]*\.xml$/.test(file)).sort();
+expect(distSitemaps.includes("sitemap.xml"), "dist/sitemap.xml missing");
+const distIndexXml = await read("dist/sitemap.xml");
+wellFormed(distIndexXml, "sitemap.xml");
+expect(/<sitemapindex xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/.test(distIndexXml), "sitemap.xml is not a sitemapindex");
+const indexEntries = parseSitemapIndex(distIndexXml);
+expect((distIndexXml.match(/<sitemap>/g) || []).length === indexEntries.length, "sitemap index has entries that failed to parse");
+expect(indexEntries.length >= 10 && indexEntries.length <= 100, `sitemap index child count out of range: ${indexEntries.length}`);
+const indexFiles = new Set();
+for (const { file, lastmod } of indexEntries) {
+  expect(/^sitemap[\w-]*\.xml$/.test(file), `sitemap index entry is not a same-site sitemap file: ${file}`);
+  expect(!indexFiles.has(file), `sitemap index lists ${file} twice`);
+  indexFiles.add(file);
+  expect(existsSync(resolve(distDir, file)), `sitemap index lists ${file} but dist/${file} does not exist`);
+  expect(/^\d{4}-\d{2}-\d{2}$/.test(String(lastmod || "")), `sitemap index entry ${file} lacks a valid <lastmod>`);
+  expect(String(lastmod) <= new Date(Date.now() + 2 * 86400000).toISOString().slice(0, 10), `sitemap index entry ${file} has a future <lastmod> ${lastmod}`);
+}
+for (const file of distSitemaps) if (file !== "sitemap.xml") expect(indexFiles.has(file), `stale/orphan sitemap shipped in dist but not in index: ${file}`);
+expect(JSON.stringify([...indexFiles].sort()) === JSON.stringify([...manifest.sitemap_files].sort()), "seo-manifest sitemap_files out of sync with dist/sitemap.xml");
+for (const file of indexFiles) {
+  const archive = file.match(/^sitemap-(?:calendar|days)-(\d+)\.xml$/);
+  if (archive) expect(isSitemapYear(archive[1]), `archive sitemap outside BS window ${SITEMAP_MIN_BS_YEAR}..${SITEMAP_MAX_BS_YEAR}: ${file}`);
+}
+
+const bsYearByAd = new Map(rows.map((row) => [row.ad, Number(row.bs?.year)]));
+const robotsDisallows = [...robots.matchAll(/^Disallow:\s*(\S+)\s*$/gm)].map((m) => m[1]);
+const seenLocs = new Map();
+let totalLocs = 0;
+const festivalLocs = [];
+for (const file of indexFiles) {
+  const path = resolve(distDir, file);
+  const size = (await stat(path)).size;
+  expect(size <= MAX_BYTES, `${file} exceeds 50 MB uncompressed (${size} bytes)`);
+  const xml = await readFile(path, "utf8");
+  wellFormed(xml, file);
+  expect(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), `${file} is not a sitemap urlset`);
+  const locs = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => m[1].trim());
+  expect((xml.match(/<url>/g) || []).length === locs.length, `${file}: every <url> needs exactly one <loc>`);
+  expect(locs.length > 0, `${file} is empty`);
+  expect(locs.length <= MAX_URLS, `${file} exceeds 50,000 URLs (${locs.length})`);
+  for (const loc of locs) {
+    expect(loc.startsWith(SITE + "/"), `${file}: <loc> is not absolute on ${SITE}: ${loc}`);
+    const route = loc.slice(SITE.length).replace(/&amp;/g, "&");
+    const reason = sitemapExclusionReason(route);
+    expect(!reason, `${file}: <loc> would be noindex/redirect/private (${reason}): ${loc}`);
+    expect(!NOINDEX_EXACT_ROUTES.includes(route), `${file}: noindex route in sitemap: ${route}`);
+    expect(!PRIVATE_PREFIXES.some((prefix) => route.startsWith(prefix)) && !route.startsWith("/api/"), `${file}: private/API route in sitemap: ${route}`);
+    expect(!robotsDisallows.some((prefix) => route.startsWith(prefix)), `${file}: robots.txt disallows a sitemap URL: ${route}`);
+    const calendar = route.match(/^\/calendar\/(\d{4})(?:\/|$)/);
+    if (calendar) expect(Number(calendar[1]) >= SITEMAP_MIN_BS_YEAR && isSitemapYear(calendar[1]), `${file}: calendar URL outside BS window: ${route}`);
+    const date = route.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
+    if (route.startsWith("/date/")) {
+      expect(Boolean(date) && bsYearByAd.has(date[1]), `${file}: /date/ URL not in validated archive: ${route}`);
+      expect(isSitemapYear(bsYearByAd.get(date[1])), `${file}: /date/ URL for BS ${bsYearByAd.get(date[1])} outside window: ${route}`);
+    }
+    if (route.startsWith("/festivals/")) festivalLocs.push(route);
+    expect(!seenLocs.has(loc), `duplicate <loc> ${loc} in ${file} and ${seenLocs.get(loc)}`);
+    seenLocs.set(loc, file);
+  }
+  totalLocs += locs.length;
+}
+// Festival pages are static prerenders: they must exist, be self-canonical and indexable.
+for (const route of festivalLocs) {
+  const htmlPath = resolve(distDir, `.${route}/index.html`);
+  expect(existsSync(htmlPath), `festival sitemap URL has no prerendered page: ${route}`);
+  const html = await readFile(htmlPath, "utf8");
+  expect(html.includes(`rel="canonical" href="${SITE}${route}"`), `festival page is not self-canonical: ${route}`);
+  expect(!/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html), `festival page is noindex: ${route}`);
+}
+
+// robots.txt: exactly one Sitemap line pointing at the index.
+const robotsSitemapLines = robots.split("\n").filter((line) => /^sitemap:/i.test(line.trim()));
+expect(robotsSitemapLines.length === 1 && robotsSitemapLines[0].trim() === `Sitemap: ${SITE}/sitemap.xml`, "robots.txt must contain exactly one Sitemap line for the index");
+expect((await read("dist/robots.txt")) === robots, "dist/robots.txt differs from public/robots.txt");
+
+// Runtime parity: the Worker's noindex cutoff must use the same BS-year formula as the build.
+const seoWindow = await read("worker/seo-window.ts");
+const workerIndex = await read("worker/index.ts");
+const optimizedEntry = await read("worker/optimized-entry.ts");
+const seoStatic = await read("worker/seo-static.ts");
+expect(seoWindow.includes("parts.month > 4 || (parts.month === 4 && parts.day >= 14)") && seoWindow.includes("parts.year + (afterApproxNewYear ? 57 : 56)") && seoWindow.includes("approxBsYear(date) - 10"), "worker/seo-window.ts BS-year cutoff drifted from scripts/seo-config.mjs");
+expect(workerIndex.includes('import { historicalCalendarNoindex } from "./seo-window"') && !workerIndex.includes("adYear + 57"), "worker/index.ts must use the shared seo-window cutoff");
+expect(approxBsYear(new Date("2026-04-13T12:00:00+05:45")) === 2082 && approxBsYear(new Date("2026-04-14T12:00:00+05:45")) === 2083, "approxBsYear New Year boundary changed");
+const firstSeo = optimizedEntry.indexOf("seoStaticResponse(request");
+expect(firstSeo > 0 && firstSeo < optimizedEntry.indexOf("speechApiResponse(request") && firstSeo < optimizedEntry.indexOf("quotaCachedResponse(request"), "sitemap/robots handler must run first in worker/optimized-entry.ts");
+expect(entry.indexOf("seoStaticResponse(request") > 0 && entry.indexOf("seoStaticResponse(request") < entry.indexOf("legacyRedirectResponse(request)"), "sitemap/robots handler must run first in worker/connected-entry.ts");
+expect(seoStatic.includes('"application/xml; charset=utf-8"') && seoStatic.includes('"cache-control": "public, max-age=3600"') && !seoStatic.includes("x-robots-tag\","), "seo-static headers drifted");
+for (const file of (await readdir(resolve(root, "worker"))).filter((name) => name.endsWith(".ts"))) {
+  expect(!(await read(`worker/${file}`)).includes("converted-functions"), `worker/${file} must not route legacy converted-functions sitemaps`);
+}
+console.log(`Sitemap guard passed: ${indexFiles.size} child sitemaps, ${totalLocs} unique indexable URLs, BS window ${SITEMAP_MIN_BS_YEAR}..${SITEMAP_MAX_BS_YEAR}.`);
 
 console.log(`SEO/agent build verified: ${manifest.indexed_day_route_count} validated factual day routes across ${manifest.indexed_calendar_years.length} BS years; hot prerender sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);

@@ -9,7 +9,9 @@ import {
   TOOL_ROUTES,
   calendarRoute,
   calendarYearRoute,
+  isIndexableRoute,
 } from "./seo-config.mjs";
+import { BUILD_DATE, snapshotDate, updateSitemapIndex, urlsetXml } from "./sitemap-utils.mjs";
 import { loadCalendarSnapshot, loadHolidayMap } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
@@ -27,7 +29,6 @@ const cleanSlug = (value) => String(value || "").trim().toLowerCase().replace(/[
 const adYear = (ad) => Number(String(ad || "").slice(0, 4));
 const month2 = (value) => String(Number(value)).padStart(2, "0");
 const stableHash = (value) => createHash("sha256").update(value).digest("hex");
-const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
 
 async function walkJson(dir) {
   const out = [];
@@ -316,25 +317,15 @@ await mkdir(resolve(root, "public"), { recursive:true });
 await writeFile(resolve(root, "public/publication-graph.json"), JSON.stringify(graph, null, 2) + "\n", "utf8");
 
 if (festivalPublishingEnabled) {
-  const festivalRoutes = entities
+  const festivalRoutes = [...new Set(entities
     .filter((entity) => entity.indexable && (entity.type === "festival" || entity.type === "festival-occurrence"))
-    .map((entity) => entity.canonical);
-  const festivalSitemap = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...festivalRoutes.map((route) => `  <url><loc>${escapeXml(SITE + route)}</loc></url>`),
-    '</urlset>',
-    '',
-  ].join("\n");
-  await writeFile(resolve(root, "public/sitemap-festivals.xml"), festivalSitemap, "utf8");
+    .map((entity) => entity.canonical)
+    .filter((route) => isIndexableRoute(route)))];
+  // Every festival URL is a self-canonical, index,follow prerender (verified in verify-seo-build.mjs).
+  await writeFile(resolve(root, "public/sitemap-festivals.xml"), urlsetXml(festivalRoutes), "utf8");
 
-  const sitemapIndexPath = resolve(root, "public/sitemap.xml");
-  let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
-  const festivalSitemapUrl = `${SITE}/sitemap-festivals.xml`;
-  if (!sitemapIndex.includes(festivalSitemapUrl)) {
-    sitemapIndex = sitemapIndex.replace("</sitemapindex>", `  <sitemap><loc>${escapeXml(festivalSitemapUrl)}</loc></sitemap>\n</sitemapindex>`);
-    await writeFile(sitemapIndexPath, sitemapIndex, "utf8");
-  }
+  const festivalLastmod = (await snapshotDate("migration/data/public/holidays.json", "migration/data/public/official_panchang_facts.json")) || BUILD_DATE;
+  await updateSitemapIndex(resolve(root, "public/sitemap.xml"), [{ file:"sitemap-festivals.xml", lastmod:festivalLastmod }]);
 
   const seoManifestPath = resolve(root, "public/seo-manifest.json");
   const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));

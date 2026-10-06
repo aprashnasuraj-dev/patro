@@ -6,25 +6,15 @@ import {
   calendarYearRoutes, calendarRoutes, unique
 } from "./seo-config.mjs";
 import { loadCalendarSnapshot, tithiText } from "./calendar-snapshot.mjs";
+import { BUILD_DATE, sitemapIndexXml, snapshotDate, urlsetXml } from "./sitemap-utils.mjs";
 
 const root = process.cwd();
-const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[ch]));
+const today = BUILD_DATE;
 const freshDaily = new Set(["/", "/today", "/rashifal", "/fm", "/tv"]);
 const citation = `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${today}`;
 
-function entry(path) {
-  const lastmod = freshDaily.has(path) ? `<lastmod>${today}</lastmod>` : "";
-  return `  <url><loc>${escapeXml(SITE + (path === "/" ? "/" : path))}</loc>${lastmod}</url>`;
-}
-function urlset(routes) {
-  return [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...unique(routes).map(entry),
-    "</urlset>", ""
-  ].join("\n");
-}
+// Daily-fresh pages carry today's lastmod; everything else omits <lastmod> rather than lying.
+const urlset = (routes) => urlsetXml(unique(routes).map((route) => ({ route, lastmod: freshDaily.has(route) ? today : null })));
 
 const calendarRows = await loadCalendarSnapshot();
 const indexedYearSet = new Set(INDEXED_CALENDAR_YEARS);
@@ -39,23 +29,22 @@ for (const year of INDEXED_CALENDAR_YEARS) {
 }
 
 const discoveryCoreRoutes = unique(CORE_INDEX_ROUTES);
+// Calendar/day archive sitemaps (sitemap-calendar-YYYY.xml / sitemap-days-YYYY.xml) are written only by
+// scripts/cloudflare/build-calendar-r2.mjs, limited to the indexable BS-year window in seo-config.mjs.
+// Festivals and community archives are appended by their own generators.
+const toolSnapshotDate = (await snapshotDate("migration/data/public/tool_catalog.json")) || today;
+const communitySnapshotDate = (await snapshotDate("migration/data/public/community_festivals.json", "migration/data/public/ns_festivals.json")) || today;
 const sitemapFiles = [
-  ["sitemap-pages.xml", discoveryCoreRoutes],
-  ["sitemap-tools.xml", TOOL_ROUTES],
-  ["sitemap-community.xml", COMMUNITY_ROUTES],
-  ...INDEXED_CALENDAR_YEARS.map((year) => [
-    `sitemap-calendar-${year}.xml`,
-    [...calendarYearRoutes([year]), ...calendarRoutes([year])]
-  ]),
-  ...INDEXED_CALENDAR_YEARS.map((year) => [`sitemap-days-${year}.xml`, dayRoutesByBsYear.get(year)])
+  ["sitemap-pages.xml", discoveryCoreRoutes, today],
+  ["sitemap-tools.xml", TOOL_ROUTES, toolSnapshotDate],
+  ["sitemap-community.xml", COMMUNITY_ROUTES, communitySnapshotDate]
 ];
-const indexedRoutes = unique(sitemapFiles.flatMap(([, routes]) => routes));
-const sitemapIndex = [
-  '<?xml version="1.0" encoding="UTF-8"?>',
-  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  ...sitemapFiles.map(([file]) => `  <sitemap><loc>${escapeXml(SITE + "/" + file)}</loc><lastmod>${today}</lastmod></sitemap>`),
-  "</sitemapindex>", ""
-].join("\n");
+const hotArchiveRoutes = [
+  ...calendarYearRoutes(INDEXED_CALENDAR_YEARS), ...calendarRoutes(INDEXED_CALENDAR_YEARS),
+  ...[...dayRoutesByBsYear.values()].flat()
+];
+const indexedRoutes = unique([...sitemapFiles.flatMap(([, routes]) => routes), ...hotArchiveRoutes]);
+const sitemapIndex = sitemapIndexXml(sitemapFiles.map(([file, , lastmod]) => ({ file, lastmod })));
 
 function crawlerGroup(agent) {
   return [`User-agent: ${agent}`, "Allow: /", ...PRIVATE_PREFIXES.map((path) => `Disallow: ${path}`), ""].join("\n");
@@ -199,7 +188,7 @@ const manifest = {
   noindex_public_routes: NOINDEX_PUBLIC_ROUTES, private_prefixes: PRIVATE_PREFIXES,
   llms_txt: SITE + "/llms.txt", llms_full_txt:SITE+"/llms-full.txt", ai_txt:SITE+"/ai.txt", agents_json:SITE+"/.well-known/agents.json", mcp:SITE+"/mcp",
   rendering_policy: "Build-time semantic HTML for canonical public routes plus dynamic D1-backed intent pages; the existing React UI remains intact.",
-  archive_policy: "Calendar months 2070-2090 are prerender-ready; factual day pages and a focused five-year BS window are indexed initially to control scaled-content risk."
+  archive_policy: "Calendar months 2070-2090 are prerender-ready; sitemaps list only the indexable BS-year window (current year ±10); older archive years stay reachable but are not submitted."
 };
 
 await mkdir(resolve(root,"public/.well-known"),{recursive:true});
