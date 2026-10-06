@@ -44,7 +44,7 @@ const LEGACY_REDIRECTS: Record<string, string> = {
 };
 const SPA_EXACT = new Set([
   "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
-  "/time-machine", "/on-this-day", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
+  "/time-machine", "/on-this-day", "/festivals", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
   "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",
   "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
   "/aaja", "/astro", "/my-diary", "/notes", "/planner", "/family", "/family/join", "/settings",
@@ -74,11 +74,8 @@ function legacyRedirectResponse(request: Request) {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
   const url = new URL(request.url);
   const path = cleanPath(url.pathname);
-  // There are no standalone festival pages; old /festivals/<slug>/<year> links go to the
-  // homepage, which lists upcoming festivals.
-  const target = path.startsWith("/family/") ? "/me/family"
-    : path === "/festivals" || path.startsWith("/festivals/") ? "/"
-    : LEGACY_REDIRECTS[path];
+  // Festival routes are real public pages and must never fall through to the homepage.
+  const target = path.startsWith("/family/") ? "/me/family" : LEGACY_REDIRECTS[path];
   if (!target || target === path) return null;
   url.pathname = target;
   return Response.redirect(url.toString(), 301);
