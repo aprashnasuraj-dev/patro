@@ -1,12 +1,16 @@
-name: Seed On This Day R2
+name: Seed Public Archives R2
 
 on:
   push:
     branches: [main]
     paths:
       - 'migration/data/public/on_this_day_events/**'
+      - 'migration/data/public/astronomy_calendar_map/**'
+      - 'scripts/calendar-snapshot.mjs'
       - 'scripts/cloudflare/build-history-r2.mjs'
+      - 'scripts/cloudflare/build-calendar-r2.mjs'
       - 'worker/history-fast.ts'
+      - 'worker/calendar-fast.ts'
       - '.github/workflows/seed-history-r2.yml'
   workflow_dispatch:
 
@@ -14,7 +18,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: seed-history-r2-${{ github.ref }}
+  group: seed-public-r2-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -55,7 +59,7 @@ jobs:
           writeFileSync('/tmp/patro-r2-bucket',String(row.bucket_name));
           console.log(`ARCHIVE bucket=${row.bucket_name}`);
           NODE
-      - name: Build 12-month history archive
+      - name: Build history and calendar archives
         run: node scripts/cloudflare/build-history-r2.mjs
       - name: Upload immutable history source to R2
         run: |
@@ -78,17 +82,48 @@ jobs:
             echo "::error::Expected 13 R2 history objects, uploaded ${count}."
             exit 1
           fi
-      - name: Verify R2 archive
+      - name: Upload validated calendar cohort to R2
+        run: |
+          set -euo pipefail
+          bucket="$(cat /tmp/patro-r2-bucket)"
+          count=0
+          # R2 carries the high-value 2016-2035 AD / corresponding 2072-2092 BS cohort.
+          # The full validated archive is still packaged under public/data/calendar, so dates
+          # outside this R2 cohort remain D1-independent instead of triggering a huge R2 seed.
+          for year in $(seq 2016 2035); do
+            file=".cloudflare/calendar-r2/ad/${year}.json"
+            [[ -f "$file" ]] || { echo "::error::Missing ${file}"; exit 1; }
+            npx wrangler r2 object put "${bucket}/datasets/calendar/v1/ad/${year}.json" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+            count=$((count+1))
+          done
+          for year in $(seq 2072 2092); do
+            file=".cloudflare/calendar-r2/bs/${year}.json"
+            [[ -f "$file" ]] || continue
+            npx wrangler r2 object put "${bucket}/datasets/calendar/v1/bs/${year}.json" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+            count=$((count+1))
+          done
+          if [[ "$count" -lt 40 ]]; then
+            echo "::error::Expected at least 40 R2 calendar year objects, uploaded ${count}."
+            exit 1
+          fi
+          echo "Uploaded ${count} validated calendar year shards."
+      - name: Verify R2 archives
         run: |
           set -euo pipefail
           bucket="$(cat /tmp/patro-r2-bucket)"
           npx wrangler r2 object get "${bucket}/datasets/on-this-day/v1/manifest.json" --file /tmp/r2-history-manifest.json --remote
+          npx wrangler r2 object get "${bucket}/datasets/calendar/v1/ad/2026.json" --file /tmp/r2-calendar-2026.json --remote
           node --input-type=module <<'NODE'
           import { readFileSync } from 'node:fs';
-          const local=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
-          const remote=JSON.parse(readFileSync('/tmp/r2-history-manifest.json','utf8'));
-          if(remote.row_count!==5454) throw new Error(`R2 row count ${remote.row_count} != 5454`);
-          if(remote.source_version!==local.source_version) throw new Error('R2 source version does not match this release');
-          if(!Array.isArray(remote.files)||remote.files.length!==12) throw new Error('R2 manifest must contain 12 month shards');
-          console.log(JSON.stringify({ok:true,row_count:remote.row_count,source_version:remote.source_version,months:remote.files.length}));
+          const localHistory=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
+          const remoteHistory=JSON.parse(readFileSync('/tmp/r2-history-manifest.json','utf8'));
+          if(remoteHistory.row_count!==5454) throw new Error(`R2 history row count ${remoteHistory.row_count} != 5454`);
+          if(remoteHistory.source_version!==localHistory.source_version) throw new Error('R2 history source version does not match this release');
+          if(!Array.isArray(remoteHistory.files)||remoteHistory.files.length!==12) throw new Error('R2 history manifest must contain 12 month shards');
+
+          const localCalendar=JSON.parse(readFileSync('.cloudflare/calendar-r2/ad/2026.json','utf8'));
+          const remoteCalendar=JSON.parse(readFileSync('/tmp/r2-calendar-2026.json','utf8'));
+          if(remoteCalendar.calendar!=='ad'||remoteCalendar.year!==2026||!Array.isArray(remoteCalendar.rows)||remoteCalendar.rows.length<365) throw new Error('R2 calendar 2026 shard is incomplete');
+          if(remoteCalendar.source_version!==localCalendar.source_version) throw new Error('R2 calendar source version does not match this release');
+          console.log(JSON.stringify({ok:true,history_rows:remoteHistory.row_count,calendar_2026_rows:remoteCalendar.rows.length,calendar_source_version:remoteCalendar.source_version}));
           NODE
