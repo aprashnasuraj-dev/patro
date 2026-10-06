@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 
 const root = process.cwd();
 const graph = JSON.parse(await readFile(resolve(root, "public/publication-graph.json"), "utf8"));
+const review = JSON.parse(await readFile(resolve(root, "migration/data/public/tool_identity_review.json"), "utf8"));
 const entities = Array.isArray(graph.entities) ? graph.entities : [];
 if (graph.schemaVersion !== 1) throw new Error(`Unsupported publication graph schema: ${graph.schemaVersion}`);
 if (entities.length < 19_000) throw new Error(`Publication graph unexpectedly small after history identity mapping: ${entities.length}`);
@@ -19,9 +20,9 @@ let previousId = "";
 
 function validIsoDate(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value))) return false;
-  const [y,m,d] = String(value).split("-").map(Number);
-  const check = new Date(Date.UTC(y,m-1,d));
-  return check.getUTCFullYear() === y && check.getUTCMonth() === m-1 && check.getUTCDate() === d;
+  const [y, m, d] = String(value).split("-").map(Number);
+  const check = new Date(Date.UTC(y, m - 1, d));
+  return check.getUTCFullYear() === y && check.getUTCMonth() === m - 1 && check.getUTCDate() === d;
 }
 
 function validMonthDay(value) {
@@ -34,7 +35,7 @@ function validMonthDay(value) {
 
 for (const entity of entities) {
   if (!entity || typeof entity !== "object") throw new Error("Entity must be an object");
-  for (const field of ["id","type","canonical","sourceRef","sourceVersion","coverageStatus","publicationStatus"]) {
+  for (const field of ["id", "type", "canonical", "sourceRef", "sourceVersion", "coverageStatus", "publicationStatus"]) {
     if (!String(entity[field] || "").trim()) throw new Error(`Entity ${entity.id || "<unknown>"} missing ${field}`);
   }
   if (ids.has(entity.id)) throw new Error(`Duplicate entity id: ${entity.id}`);
@@ -104,11 +105,57 @@ const actualToolCandidates = candidateTools.map((entity) => entity.id).sort();
 if (JSON.stringify(actualToolCandidates) !== JSON.stringify(expectedToolCandidates)) {
   throw new Error(`Unexpected gated tool identities: ${actualToolCandidates.join(",")}`);
 }
+
+if (review?.schemaVersion !== 1 || !Array.isArray(review?.records)) throw new Error("Tool identity parity review is missing or unsupported");
+const reviewBySlug = new Map();
+for (const row of review.records) {
+  const slug = String(row?.slug || "").trim();
+  if (!slug || reviewBySlug.has(slug)) throw new Error(`Invalid/duplicate tool parity review slug: ${slug || "<empty>"}`);
+  for (const field of ["currentTarget", "privacyClass", "engineReuse", "recommendedAction", "reason", "publicationStatus"]) {
+    if (!String(row?.[field] || "").trim()) throw new Error(`Tool parity review ${slug} missing ${field}`);
+  }
+  if (typeof row?.distinctTask !== "boolean") throw new Error(`Tool parity review ${slug} missing distinctTask decision`);
+  if (row.publicationStatus !== "candidate") throw new Error(`Tool parity review ${slug} cannot promote itself: ${row.publicationStatus}`);
+  reviewBySlug.set(slug, row);
+}
+const reviewedIds = [...reviewBySlug.keys()].map((slug) => `tool:${slug}`).sort();
+if (JSON.stringify(reviewedIds) !== JSON.stringify(expectedToolCandidates)) {
+  throw new Error(`Tool parity review must cover exactly the four gated identities: ${reviewedIds.join(",")}`);
+}
+if (graph.toolReconciliation?.reviewPath !== "migration/data/public/tool_identity_review.json") {
+  throw new Error(`Tool reconciliation review path changed: ${graph.toolReconciliation?.reviewPath}`);
+}
 for (const entity of candidateTools) {
   if (entity.indexable || entity.coverageStatus !== "legacy-source-identity" || entity.sourceRef !== "migration-tool-catalog") {
     throw new Error(`Gated tool escaped reconciliation policy: ${entity.id}`);
   }
+  const slug = entity.id.replace(/^tool:/, "");
+  const decision = reviewBySlug.get(slug);
+  if (!decision) throw new Error(`Gated tool lacks parity decision: ${entity.id}`);
+  for (const field of ["currentTarget", "distinctTask", "privacyClass", "engineReuse", "recommendedAction"]) {
+    if (entity.facts?.[field] !== decision[field]) throw new Error(`Gated tool parity mismatch for ${entity.id}.${field}`);
+  }
+  if ((entity.facts?.existingEquivalent ?? null) !== (decision.existingEquivalent ?? null)) {
+    throw new Error(`Gated tool parity mismatch for ${entity.id}.existingEquivalent`);
+  }
+  if (entity.facts?.reconciliationStatus !== "parity-reviewed-no-public-promotion") {
+    throw new Error(`Gated tool lacks reviewed reconciliation status: ${entity.id}`);
+  }
 }
+
+const requiredDispositions = {
+  api: ["C.keep-candidate-reference", "/tools/api", "/developers"],
+  card: ["C.keep-candidate-private", "/me/cards", "/me/cards"],
+  diaspora: ["B.map-alias-to-existing-task", "/tools/clock", "/tools/clock"],
+  tithi: ["C.keep-candidate-private", "/me/reminders", "/tools/tithi-reminder"],
+};
+for (const [slug, [action, target, equivalent]] of Object.entries(requiredDispositions)) {
+  const row = reviewBySlug.get(slug);
+  if (row.recommendedAction !== action || row.currentTarget !== target || row.existingEquivalent !== equivalent || row.distinctTask !== false) {
+    throw new Error(`Tool parity disposition changed without explicit review update: ${slug}`);
+  }
+}
+
 if (Number(graph.counts?.communities || 0) < 6) throw new Error(`Expected all six community hubs; got ${graph.counts?.communities}`);
 if (!(Number(graph.counts?.historyEventsWithSource || 0) > 0)) throw new Error("History source-evidence classification unexpectedly empty");
 
