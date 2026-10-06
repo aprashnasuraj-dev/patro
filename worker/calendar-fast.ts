@@ -1,28 +1,40 @@
 import { bsToAd, daysInBsMonth } from "../packages/core/src";
 
+type R2ObjectLike = { text(): Promise<string> };
+type R2Like = { get(key: string): Promise<R2ObjectLike | null> };
+type AssetBinding = { fetch(request: Request): Promise<Response> };
 type CalendarEnv = {
   DB?: any;
+  ARCHIVE?: R2Like;
+  ASSETS?: AssetBinding;
   CALENDAR_COVERAGE_START?: string;
   CALENDAR_COVERAGE_END?: string;
   CALENDAR_SOURCE_VERSION?: string;
 };
 
-const CACHE = "public, max-age=60, s-maxage=3600, stale-while-revalidate=86400";
+type SourceRows = { rows: any[]; backend: string };
 
-function json(body: unknown, status = 200) {
+const CACHE = "public, max-age=60, s-maxage=3600, stale-while-revalidate=86400";
+const CALENDAR_R2_PREFIX = "datasets/calendar/v1";
+const CALENDAR_ASSET_PREFIX = "/data/calendar";
+
+function json(body: unknown, status = 200, backend = "cloudflare-native-indexed-calendar") {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": CACHE,
+      "cache-control": status === 200 ? CACHE : "no-store",
       "x-content-type-options": "nosniff",
-      "x-patro-backend": "cloudflare-native-indexed-calendar",
+      "x-patro-backend": backend,
     },
   });
 }
 
 function validDate(value: string | null) {
-  return !!value && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value + "T00:00:00Z"));
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split("-").map(Number);
+  const check = new Date(Date.UTC(year, month - 1, day));
+  return check.getUTCFullYear() === year && check.getUTCMonth() === month - 1 && check.getUTCDate() === day;
 }
 
 function todayNepal() {
@@ -59,7 +71,7 @@ function shape(calendar: any) {
     bs: calendar?.bs || null,
     nepal_sambat: calendar?.ns || calendar?.nepal_sambat || null,
     panchang: calendar?.panchang || null,
-    source: "Cloudflare D1 indexed astronomy archive",
+    source: "Aafnai Patro validated calendar archive",
   };
 }
 
@@ -88,28 +100,95 @@ function coverage(env: CalendarEnv) {
   };
 }
 
-async function rowsByAdRange(env: CalendarEnv, start: string, end: string) {
-  if (!env.DB) return [];
+function parseYearShard(text: string, calendar: "ad" | "bs", year: number): any[] | null {
+  try {
+    const doc = JSON.parse(text);
+    if (Number(doc?.schema) !== 1 || doc?.calendar !== calendar || Number(doc?.year) !== year || !Array.isArray(doc?.rows)) return null;
+    return doc.rows.map(parseCalendar).filter(Boolean);
+  } catch {
+    return null;
+  }
+}
+
+async function r2YearRows(env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
+  if (!env.ARCHIVE) return null;
+  try {
+    const object = await env.ARCHIVE.get(`${CALENDAR_R2_PREFIX}/${calendar}/${year}.json`);
+    if (!object) return null;
+    const rows = parseYearShard(await object.text(), calendar, year);
+    return rows ? { rows, backend: "cloudflare-r2-calendar" } : null;
+  } catch { return null; }
+}
+
+async function assetYearRows(request: Request, env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
+  if (!env.ASSETS) return null;
+  try {
+    const url = new URL(request.url);
+    url.pathname = `${CALENDAR_ASSET_PREFIX}/${calendar}/${year}.json`;
+    url.search = "";
+    url.hash = "";
+    const response = await env.ASSETS.fetch(new Request(url.toString(), { method:"GET", headers:{ accept:"application/json" } }));
+    if (!response.ok) return null;
+    const rows = parseYearShard(await response.text(), calendar, year);
+    return rows ? { rows, backend: "cloudflare-asset-calendar" } : null;
+  } catch { return null; }
+}
+
+async function archiveYearRows(request: Request, env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
+  return await r2YearRows(env, calendar, year) || await assetYearRows(request, env, calendar, year);
+}
+
+async function d1RowsByAdRange(env: CalendarEnv, start: string, end: string): Promise<SourceRows | null> {
+  if (!env.DB) return null;
   try {
     const out = await env.DB.prepare(
       "select payload from content_records where table_name='astronomy_calendar_map' and record_key>=?1 and record_key<=?2 order by record_key"
     ).bind(start, end).all();
-    return (out?.results || []).map(parseCalendar).filter(Boolean);
-  } catch {
-    return [];
-  }
+    const rows = (out?.results || []).map(parseCalendar).filter(Boolean);
+    return rows.length ? { rows, backend:"cloudflare-d1-calendar" } : null;
+  } catch { return null; }
 }
 
-async function rowByAd(env: CalendarEnv, ad: string) {
+async function d1RowByAd(env: CalendarEnv, ad: string): Promise<{ row:any; backend:string } | null> {
   if (!env.DB) return null;
   try {
-    const row = await env.DB.prepare(
+    const row = parseCalendar(await env.DB.prepare(
       "select payload from content_records where table_name='astronomy_calendar_map' and record_key=?1 limit 1"
-    ).bind(ad).first();
-    return parseCalendar(row);
-  } catch {
-    return null;
+    ).bind(ad).first());
+    return row ? { row, backend:"cloudflare-d1-calendar" } : null;
+  } catch { return null; }
+}
+
+async function rowsByAdRange(request: Request, env: CalendarEnv, start: string, end: string): Promise<SourceRows | null> {
+  const startYear = Number(start.slice(0,4));
+  const endYear = Number(end.slice(0,4));
+  const rows: any[] = [];
+  const backends = new Set<string>();
+  let completeArchive = true;
+  for (let year = startYear; year <= endYear; year++) {
+    const source = await archiveYearRows(request, env, "ad", year);
+    if (!source) { completeArchive = false; break; }
+    backends.add(source.backend);
+    rows.push(...source.rows);
   }
+  if (completeArchive) {
+    return {
+      rows: rows.filter((row) => String(row?.ad || "") >= start && String(row?.ad || "") <= end).sort((a,b) => String(a.ad).localeCompare(String(b.ad))),
+      backend: backends.size === 1 ? [...backends][0] : "cloudflare-calendar-archive",
+    };
+  }
+  return d1RowsByAdRange(env, start, end);
+}
+
+async function rowByAd(request: Request, env: CalendarEnv, ad: string): Promise<{ row:any; backend:string; archiveKnown:boolean } | null> {
+  const year = Number(ad.slice(0,4));
+  const source = await archiveYearRows(request, env, "ad", year);
+  if (source) {
+    const row = source.rows.find((value) => String(value?.ad || "").slice(0,10) === ad) || null;
+    return { row, backend:source.backend, archiveKnown:true };
+  }
+  const d1 = await d1RowByAd(env, ad);
+  return d1 ? { ...d1, archiveKnown:false } : null;
 }
 
 function bsBounds(year: number, month: number) {
@@ -125,12 +204,20 @@ function bsBounds(year: number, month: number) {
   }
 }
 
+async function rowsByBsMonth(request: Request, env: CalendarEnv, year: number, month: number): Promise<SourceRows | null> {
+  const source = await archiveYearRows(request, env, "bs", year);
+  if (source) return { rows: source.rows.filter((row) => Number(row?.bs?.month) === month), backend:source.backend };
+  const bounds = bsBounds(year, month);
+  return bounds ? d1RowsByAdRange(env, bounds.start, bounds.end) : null;
+}
+
 /**
- * Hot-path calendar repair.
+ * Public calendar source hierarchy:
+ *   R2 year shard -> packaged static year shard -> D1 indexed fallback.
  *
- * The migrated D1 archive is keyed by AD date. Calendar and converter traffic must
- * resolve to indexed record_key lookups/ranges instead of json_extract scans over the
- * ~77k-row archive. The response shapes intentionally match the connected worker.
+ * The immutable archives are produced from the same repository-validated calendar dataset.
+ * They keep calendar/date/converter traffic available when the D1 daily read quota is
+ * exhausted while the outer quota cache still provides Edge -> KV/R2 response caching.
  */
 export async function fastCalendarResponse(request: Request, env: CalendarEnv): Promise<Response | null> {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
@@ -144,9 +231,9 @@ export async function fastCalendarResponse(request: Request, env: CalendarEnv): 
       if (!validDate(start) || !validDate(end)) return json({ success: false, error: "invalid_range", expected: "start=YYYY-MM-DD&end=YYYY-MM-DD" }, 400);
       const requested = daysInclusive(start!, end!);
       if (requested < 1 || requested > 62) return json({ success: false, error: "range_limit_exceeded", max_days: 62 }, 400);
-      const rows = await rowsByAdRange(env, start!, end!);
-      if (!rows.length) return null;
-      const days = rows.map((calendar: any) => syncPayload(calendar?.ad || "", calendar));
+      const source = await rowsByAdRange(request, env, start!, end!);
+      if (!source || !source.rows.length) return json({ success:false, error:"date_outside_archive" }, 404, source?.backend || "cloudflare-calendar-unavailable");
+      const days = source.rows.map((calendar: any) => syncPayload(calendar?.ad || "", calendar));
       const response = json({
         success: true,
         start_date: start,
@@ -155,15 +242,18 @@ export async function fastCalendarResponse(request: Request, env: CalendarEnv): 
         returned_days: days.length,
         days,
         coverage: coverage(env),
-      });
+      }, 200, source.backend);
       return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
     }
 
     const date = url.searchParams.get("date") || todayNepal();
     if (!validDate(date)) return json({ success: false, error: "invalid_date", expected: "YYYY-MM-DD" }, 400);
-    const row = await rowByAd(env, date);
-    if (!row) return null;
-    const response = json(syncPayload(date, row));
+    const source = await rowByAd(request, env, date);
+    if (!source?.row) {
+      if (source?.archiveKnown) return json({ success:false, error:"date_outside_archive" }, 404, source.backend);
+      return null;
+    }
+    const response = json(syncPayload(date, source.row), 200, source.backend);
     return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
   }
 
@@ -175,25 +265,27 @@ export async function fastCalendarResponse(request: Request, env: CalendarEnv): 
     if (mode === "bs") {
       const bounds = bsBounds(year, month);
       if (!bounds) return null;
-      const rows = await rowsByAdRange(env, bounds.start, bounds.end);
-      if (!rows.length) return null;
-      const days = rows.map(shape);
-      const response = json({ ok: true, calendar: "bs", year, month, count: days.length, days });
+      const source = await rowsByBsMonth(request, env, year, month);
+      if (!source || !source.rows.length) return null;
+      const days = source.rows.map(shape);
+      const response = json({ ok: true, calendar: "bs", year, month, count: days.length, days }, 200, source.backend);
       return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
     }
   }
 
-  // BS→AD conversion used to use the same full-table JSON scan. Resolve the BS date
-  // locally, then do one indexed lookup so converter traffic cannot recreate the freeze.
+  // BS→AD conversion resolves locally and then reads the AD year archive before D1.
   if (url.pathname === "/api/v1/convert" && url.searchParams.has("bs") && !url.searchParams.has("ad")) {
     const raw = String(url.searchParams.get("bs") || "");
     const match = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
     if (!match) return null;
     try {
       const ad = bsToAd({ year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) });
-      const row = await rowByAd(env, ad);
-      if (!row) return null;
-      const response = json({ ok: true, ...shape(row) });
+      const source = await rowByAd(request, env, ad);
+      if (!source?.row) {
+        if (source?.archiveKnown) return json({ ok:false, error:"date_outside_archive" }, 404, source.backend);
+        return null;
+      }
+      const response = json({ ok: true, ...shape(source.row) }, 200, source.backend);
       return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
     } catch {
       return null;
