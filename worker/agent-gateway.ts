@@ -3,6 +3,7 @@ import { agentPageResponse } from "./agent-pages";
 import { dataExportResponse } from "./data-export";
 import { mcpResponse } from "./mcp";
 import { createD1PatroSource } from "./patro-source";
+import { publicArchivePageResponse } from "./public-archive-pages";
 import { yearPageResponse } from "./year-page";
 
 type Env = Record<string, unknown> & { DB?: any; PUBLIC_SITE_URL?: string };
@@ -69,8 +70,19 @@ export async function handleAgentSurface(
   const data = await dataExportResponse(request, env);
   if (data) return data;
 
+  // Permanent date/calendar/community archives use the immutable Git mirror materialized in R2.
+  // This runs before legacy D1-backed page helpers so public archive pageviews do not consume D1 reads.
+  const archive = await publicArchivePageResponse(request, env);
+  if (archive) return archive;
+
   const year = await yearPageResponse(request, env);
   if (year) return year;
+
+  const path = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
+  // Festival identities/year occurrences are build-prerendered from the validated holiday map.
+  // Let connected-entry serve that HTML instead of the legacy agent page, which historically
+  // modeled ordinary festivals as Schema.org Event and performed D1 reads.
+  if (path === "/festivals" || path.startsWith("/festivals/")) return null;
 
   const page = await agentPageResponse(request, env);
   if (page) return page;
