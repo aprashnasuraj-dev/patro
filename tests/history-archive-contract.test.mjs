@@ -129,7 +129,9 @@ test("immutable public archive rendering is R2-first and fail-closed instead of 
   assert.ok(!pages.includes("env.DB"));
   assert.ok(year.includes("Calendar R2 archive unavailable"));
   assert.ok(year.includes('"x-patro-backend":"r2-required"'));
-  assert.ok(gateway.indexOf("publicArchivePageResponse") < gateway.indexOf("agentPageResponse"));
+  const archiveCall = gateway.indexOf("const archive = await publicArchivePageResponse(request, env)");
+  const agentPageCall = gateway.indexOf("const page = await agentPageResponse(request, env)");
+  assert.ok(archiveCall >= 0 && agentPageCall >= 0 && archiveCall < agentPageCall, "R2 archive handling must run before legacy agent page handling");
   assert.ok(seed.includes("manifest.files"));
   assert.ok(!seed.includes("seq 2016 2035"));
   assert.ok(!seed.includes("seq 2072 2092"));
