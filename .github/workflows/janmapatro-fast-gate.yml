@@ -18,9 +18,6 @@ on:
       - 'tests/premium-release-contract.test.mjs'
       - 'tests/seo-intent-coverage-contract.test.mjs'
       - 'worker/admin-console/site-config.ts'
-      - 'tests/premium-release-contract.test.mjs'
-      - 'tests/seo-intent-coverage-contract.test.mjs'
-      - 'worker/admin-console/site-config.ts'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
   pull_request:
@@ -36,6 +33,9 @@ on:
       - 'scripts/generate-search-intents.mjs'
       - 'scripts/prerender-seo.mjs'
       - 'tests/janmapatro-*.test.mjs'
+      - 'tests/premium-release-contract.test.mjs'
+      - 'tests/seo-intent-coverage-contract.test.mjs'
+      - 'worker/admin-console/site-config.ts'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
   workflow_dispatch:
