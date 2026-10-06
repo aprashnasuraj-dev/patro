@@ -25,7 +25,7 @@ test("Worker entry and production dist exist",async()=>{
   await assert.doesNotReject(access(path.join(root,"dist")));
 });
 
-test("KV and R2 remain optional but generated deploy can attach both",async()=>{
+test("generated production deploy can discover, require and attach KV plus R2",async()=>{
   const config=await json("wrangler.jsonc");
   assert.ok(config.kv_namespaces===undefined||Array.isArray(config.kv_namespaces));
   assert.ok(config.r2_buckets===undefined||Array.isArray(config.r2_buckets));
@@ -36,6 +36,9 @@ test("KV and R2 remain optional but generated deploy can attach both",async()=>{
   assert.match(generator,/binding:"ARCHIVE"/);
   assert.match(generator,/patro-runtime-cache/);
   assert.match(generator,/\/r2\/buckets/);
+  assert.match(generator,/REQUIRE_QUOTA_CACHE/);
+  assert.match(generator,/CACHE KV namespace could not be resolved or provisioned/);
+  assert.match(generator,/ARCHIVE R2 bucket could not be resolved/);
 });
 
 test("Cloudflare deploy generates environment-aware bindings before Wrangler",async()=>{
@@ -63,10 +66,25 @@ test("public D1 hot paths are quota cached without caching private routes",async
   assert.match(quota,/CACHE/);
   assert.match(quota,/arbitrary query cardinality/);
   assert.match(quota,/text\/calendar/);
+  assert.match(quota,/patro-quota-v3/);
+  assert.match(quota,/searchParams\.delete\("rev"\)/);
+  assert.match(quota,/HISTORY_CACHE_YEAR = "2000"/);
   assert.match(jobs,/warmDailyReferenceCache/);
   assert.match(push,/PUSH_GATE_KEY/);
   assert.match(push,/julianday\(next_attempt_at\)/);
   assert.doesNotMatch(quota,/\/api\/auth|\/api\/push|\/api\/me/);
+});
+
+test("annual On This Day primer protects R2-first cold fills",async()=>{
+  const primer=await read("scripts/cloudflare/prime-history-cache.mjs");
+  assert.match(primer,/annual_keys/);
+  assert.match(primer,/2000-02-29/);
+  assert.match(primer,/unexpectedly used D1/);
+  assert.match(primer,/x-patro-cache/);
+  const release=await read(".github/workflows/release-gate.yml");
+  assert.match(release,/REQUIRE_QUOTA_CACHE: "1"/);
+  assert.match(release,/prime-history-cache\.mjs/);
+  assert.match(release,/secrets\.git \|\| secrets\.GIT \|\| secrets\.CLOUDFLARE_API_TOKEN/);
 });
 
 test("legacy Pages, static redirect and deploy-wrapper artifacts are absent",async()=>{
