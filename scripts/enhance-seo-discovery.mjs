@@ -75,8 +75,10 @@ await Promise.all([
 console.log(`AI/search discovery augmented with ${intents.query_count} canonical query mappings.`);
 
 // Build the canonical entity graph from the same validated registries and calendar sources,
-// reconcile source-backed tool identities without publishing aliases/private tools, then fail
-// the build on identity/canonical/private-route regressions before Vite copies public/ into dist/.
+// classify every history record without hiding unverified entries, reconcile source-backed tool
+// identities without publishing aliases/private tools, then fail the build on regressions before
+// Vite copies public/ into dist/.
 await import("./generate-publication-graph.mjs");
+await import("./classify-history-evidence.mjs");
 await import("./reconcile-tool-identities.mjs");
 await import("./validate-publication-graph.mjs");
