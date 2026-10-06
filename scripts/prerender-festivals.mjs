@@ -64,9 +64,9 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
   if (!occurrences.length) continue;
 
   const identityCanonical = `${SITE}/festivals/${festival.slug}`;
-  const identityDescription = `${name} का source-backed Bikram Sambat वर्षगत मितिहरू, observance records र सम्बन्धित दिनहरू।`;
+  const identityDescription = `${name} का source-backed Bikram Sambat वर्षगत मिति र घर, परिवार तथा समुदायमा मनाइने observance अभिलेखहरू।`;
   const identityBody = `<article><h1>${esc(name)}</h1><p>${esc(identityDescription)}</p><h2>वर्षगत अभिलेख</h2><ul>${occurrences.map((o) => `<li><a href="/festivals/${esc(festival.slug)}/${o.year}">${esc(`${name} ${o.year}`)}</a> — ${o.dates.map((d) => esc(prettyAd(d))).join(", ")}</li>`).join("")}</ul><p><a href="/">पात्रोमा फर्कनुहोस्</a></p></article>`;
-  const identitySchema = { "@context":"https://schema.org", "@type":"WebPage", name, description:identityDescription, url:identityCanonical };
+  const identitySchema = { "@context":"https://schema.org", "@type":"CollectionPage", name, description:identityDescription, url:identityCanonical, about:{ "@type":"Thing", name, description:"Festival and community observance" } };
   const identityFile = resolve(root, "dist/festivals", festival.slug, "index.html");
   await mkdir(dirname(identityFile), { recursive:true });
   await writeFile(identityFile, render({ title:name, description:identityDescription, canonical:identityCanonical, body:identityBody, schema:identitySchema }), "utf8");
@@ -77,10 +77,10 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
     const canonical = `${SITE}/festivals/${festival.slug}/${occurrence.year}`;
     const title = `${name} ${occurrence.year} कहिले?`;
     const dateSummary = occurrence.dates.map((d) => prettyAd(d)).join(", ");
-    const description = `${name} ${occurrence.year} का validated archive date${occurrence.dates.length === 1 ? "" : "s"}: ${dateSummary}.`;
+    const description = `${name} ${occurrence.year} को घर, परिवार र समुदायमा मनाइने observance का validated archive date${occurrence.dates.length === 1 ? "" : "s"}: ${dateSummary}.`;
     const sourceText = [...occurrence.sources].join("; ") || "Aafnai Patro validated calendar archive";
-    const body = `<article><h1>${esc(title)}</h1><p><strong>${esc(dateSummary)}</strong></p><table><thead><tr><th>AD date</th><th>BS date</th></tr></thead><tbody>${occurrence.dates.map((ad) => { const row = byAd.get(ad); return `<tr><td><a href="/date/${esc(ad)}">${esc(prettyAd(ad))}</a></td><td>${esc(`${row?.bs?.year || ""}-${row?.bs?.month || ""}-${row?.bs?.day || ""}`)}</td></tr>`; }).join("")}</tbody></table><p><small>Source: ${esc(sourceText)}</small></p><p><a href="/festivals/${esc(festival.slug)}">${esc(name)} को मुख्य पृष्ठ</a></p></article>`;
-    const schema = { "@context":"https://schema.org", "@type":"Event", name, startDate:occurrence.dates[0], ...(occurrence.dates.length > 1 ? { endDate:occurrence.dates.at(-1) } : {}), url:canonical, description:`Source: ${sourceText}` };
+    const body = `<article><h1>${esc(title)}</h1><p>${esc(description)}</p><p><strong>${esc(dateSummary)}</strong></p><table><thead><tr><th>AD date</th><th>BS date</th></tr></thead><tbody>${occurrence.dates.map((ad) => { const row = byAd.get(ad); return `<tr><td><a href="/date/${esc(ad)}">${esc(prettyAd(ad))}</a></td><td>${esc(`${row?.bs?.year || ""}-${row?.bs?.month || ""}-${row?.bs?.day || ""}`)}</td></tr>`; }).join("")}</tbody></table><p><small>Source: ${esc(sourceText)}</small></p><p><a href="/festivals/${esc(festival.slug)}">${esc(name)} को मुख्य पृष्ठ</a></p></article>`;
+    const schema = { "@context":"https://schema.org", "@type":"WebPage", name:title, url:canonical, description, about:{ "@type":"Thing", name, description:"Festival and community observance" }, mainEntity:{ "@type":"DefinedTerm", name, description:`${name} ${occurrence.year} observance dates` } };
     const file = resolve(root, "dist/festivals", festival.slug, String(occurrence.year), "index.html");
     await mkdir(dirname(file), { recursive:true });
     await writeFile(file, render({ title, description, canonical, body, schema }), "utf8");
@@ -88,4 +88,4 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
   }
 }
 
-console.log(`Festival prerender emitted ${identityCount} identities and ${occurrenceCount} dated occurrences from validated holiday records.`);
+console.log(`Festival prerender emitted ${identityCount} identities and ${occurrenceCount} dated community/people observances from validated holiday records.`);
