@@ -136,6 +136,15 @@ async function rowsByAdRange(request: Request, env: CalendarEnv, start: string, 
     backend: backends.size === 1 ? [...backends][0] : "cloudflare-calendar-archive",
   };
 }
+async function rowsByAdMonth(request: Request, env: CalendarEnv, year: number, month: number): Promise<SourceRows | null> {
+  const source = await archiveYearRows(request, env, "ad", year);
+  if (!source) return null;
+  const prefix = `${year}-${String(month).padStart(2, "0")}-`;
+  return {
+    rows: source.rows.filter((row) => String(row?.ad || "").startsWith(prefix)),
+    backend: source.backend,
+  };
+}
 async function rowByAd(request: Request, env: CalendarEnv, ad: string): Promise<{ row:any; backend:string; archiveKnown:boolean } | null> {
   const year = Number(ad.slice(0,4));
   const source = await archiveYearRows(request, env, "ad", year);
@@ -206,6 +215,16 @@ export async function fastCalendarResponse(request: Request, env: CalendarEnv): 
       const response = json({ ok: true, calendar: "bs", year, month, count: days.length, days }, 200, source.backend);
       return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
     }
+    if (mode === "ad") {
+      if (!Number.isInteger(month) || month < 1 || month > 12) return json({ ok:false, error:"invalid_ad_month" }, 400);
+      const source = await rowsByAdMonth(request, env, year, month);
+      if (!source) return unavailable();
+      if (!source.rows.length) return json({ ok:false, error:"date_outside_archive" }, 404, source.backend);
+      const days = source.rows.map(shape);
+      const response = json({ ok: true, calendar: "ad", year, month, count: days.length, days }, 200, source.backend);
+      return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
+    }
+    return json({ ok:false, error:"invalid_calendar_mode" }, 400);
   }
 
   if (url.pathname === "/api/v1/convert" && url.searchParams.has("bs") && !url.searchParams.has("ad")) {
