@@ -1,6 +1,7 @@
 import { createPatroAdapter } from "../lib/patro";
 import { agentPageResponse } from "./agent-pages";
 import { dataExportResponse } from "./data-export";
+import { festivalPageResponse } from "./festival-page";
 import { historyEventPageResponse } from "./history-event-page";
 import { mcpResponse } from "./mcp";
 import { createArchivePatroSource } from "./patro-source";
@@ -74,6 +75,9 @@ export async function handleAgentSurface(
   const data = await dataExportResponse(request, env);
   if (data) return data;
 
+  const festival = await festivalPageResponse(request, env);
+  if (festival) return festival;
+
   // Thousands of source-backed history event URLs are rendered from one compact static index.
   // This keeps HTML storage essentially constant and consumes neither D1 nor one object per URL.
   const historyEvent = await historyEventPageResponse(request, env);
@@ -90,10 +94,6 @@ export async function handleAgentSurface(
 
   const year = await yearPageResponse(request, env);
   if (year) return year;
-
-  const path = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
-  // Festival identities/year occurrences are build-prerendered from the validated holiday map.
-  if (path === "/festivals" || path.startsWith("/festivals/")) return null;
 
   const page = await agentPageResponse(request, env);
   if (page) return page;
