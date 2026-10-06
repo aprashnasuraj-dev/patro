@@ -66,6 +66,13 @@ jobs:
           writeFileSync('/tmp/patro-r2-bucket',String(row.bucket_name));
           console.log(`ARCHIVE bucket=${row.bucket_name}`);
           NODE
+      - name: Generate archive discovery prerequisites
+        run: |
+          set -euo pipefail
+          npm run seo:phase0
+          npm run seo:intents
+          node scripts/generate-seo.mjs
+          node scripts/enhance-seo-discovery.mjs
       - name: Build public archive shards
         run: node scripts/cloudflare/build-history-r2.mjs
       - name: Validate local archive manifests
