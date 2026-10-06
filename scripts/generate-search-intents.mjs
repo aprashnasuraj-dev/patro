@@ -75,8 +75,8 @@ const HIGH_VALUE = {
   "/on-this-day": ["on this day nepal", "today in nepal history", "आज इतिहासमा", "nepal historical events today"],
   "/fm": ["nepali fm online", "nepal radio online", "live nepali radio", "nepali fm radio", "नेपाल एफएम रेडियो"],
   "/tv": ["nepal live tv", "nepali tv online", "live tv nepal", "free nepali live tv", "नेपाल लाइभ टिभी"],
-  "/jyotish/china": ["nepali kundali", "janma kundali nepal", "nepali birth chart", "janma patro", "जन्मपत्रिका", "चिना बनाउने"],
-  "/jyotish/matchmaking": ["kundali matching nepal", "guna milan nepali", "nepali marriage matching", "कुण्डली मिलान", "गुण मिलान"],
+  "/janmapatro": ["nepali kundali", "janma kundali nepal", "nepali birth chart", "janma patro", "जन्मपत्रिका", "चिना बनाउने"],
+  "/janmapatro/milan.html": ["kundali matching nepal", "guna milan nepali", "nepali marriage matching", "कुण्डली मिलान", "गुण मिलान"],
   "/festivals": [
     "nepali public holidays", "सार्वजनिक बिदा", "nepali festival calendar", "नेपाली चाडपर्व", "dashain tihar date",
     "दशैं तिहार मिति", "nepali calendar dashain date", "nepali festival list", "holiday list nepal", "festival dates nepal"
