@@ -5,8 +5,11 @@ const root = process.cwd();
 const graph = JSON.parse(await readFile(resolve(root, "public/publication-graph.json"), "utf8"));
 const entities = Array.isArray(graph.entities) ? graph.entities : [];
 if (graph.schemaVersion !== 1) throw new Error(`Unsupported publication graph schema: ${graph.schemaVersion}`);
-if (entities.length < 10_000) throw new Error(`Publication graph unexpectedly small: ${entities.length}`);
+if (entities.length < 19_000) throw new Error(`Publication graph unexpectedly small after history identity mapping: ${entities.length}`);
 if (Number(graph.counts?.days || 0) < 14_000) throw new Error(`Expected a 1996-2035 mapped day candidate cohort; got ${graph.counts?.days || 0}`);
+if (Number(graph.counts?.historyDays || 0) !== 366) throw new Error(`Expected 366 reusable month/day history identities; got ${graph.counts?.historyDays || 0}`);
+if (Number(graph.counts?.historyEvents || 0) !== 5454) throw new Error(`Expected all 5,454 canonical On This Day records; got ${graph.counts?.historyEvents || 0}`);
+if (graph.historyPublishingEnabled !== false) throw new Error("History event/day candidates must remain non-published until a dedicated renderer is gated");
 
 const ids = new Set();
 const canonicals = new Map();
@@ -19,6 +22,14 @@ function validIsoDate(value) {
   const [y,m,d] = String(value).split("-").map(Number);
   const check = new Date(Date.UTC(y,m-1,d));
   return check.getUTCFullYear() === y && check.getUTCMonth() === m-1 && check.getUTCDate() === d;
+}
+
+function validMonthDay(value) {
+  if (!/^\d{2}-\d{2}$/.test(String(value))) return false;
+  const [month, day] = String(value).split("-").map(Number);
+  if (month < 1 || month > 12) return false;
+  const maxDay = new Date(Date.UTC(2000, month, 0)).getUTCDate();
+  return day >= 1 && day <= maxDay;
 }
 
 for (const entity of entities) {
@@ -48,6 +59,20 @@ for (const entity of entities) {
     if (!validIsoDate(ad)) throw new Error(`Invalid day date: ${entity.id}`);
     if (entity.id !== `day:${ad}` || entity.canonical !== `/date/${ad}`) throw new Error(`Day identity/canonical mismatch: ${entity.id}`);
   }
+  if (entity.type === "history-day") {
+    const monthDay = entity.facts?.monthDay;
+    if (!validMonthDay(monthDay)) throw new Error(`Invalid history month/day: ${entity.id}`);
+    if (entity.id !== `history-day:${monthDay}` || entity.canonical !== `/on-this-day/${monthDay}`) throw new Error(`History-day identity/canonical mismatch: ${entity.id}`);
+    if (entity.indexable || entity.publicationStatus !== "candidate") throw new Error(`History-day published before renderer gate: ${entity.id}`);
+  }
+  if (entity.type === "history-event") {
+    const stableId = entity.id.slice("history-event:".length);
+    const monthDay = entity.facts?.monthDay;
+    if (!stableId || !validMonthDay(monthDay)) throw new Error(`Invalid history event identity: ${entity.id}`);
+    if (entity.canonical !== `/on-this-day/event/${encodeURIComponent(stableId)}`) throw new Error(`History-event canonical mismatch: ${entity.id}`);
+    if (entity.indexable || entity.publicationStatus !== "candidate") throw new Error(`History event published before evidence/render gate: ${entity.id}`);
+    if (!(entity.relations || []).includes(`history-day:${monthDay}`)) throw new Error(`History event missing month/day relation: ${entity.id}`);
+  }
 
   for (const alias of entity.aliases || []) {
     if (typeof alias !== "string" || !alias.startsWith("/") || alias.includes("?") || alias.includes("#")) throw new Error(`Invalid alias on ${entity.id}`);
@@ -70,5 +95,6 @@ if (Number(graph.counts?.tools || 0) !== 29) {
   throw new Error(`Canonical tool registry changed from the verified 29-tool baseline: ${graph.counts?.tools}`);
 }
 if (Number(graph.counts?.communities || 0) < 6) throw new Error(`Expected all six community hubs; got ${graph.counts?.communities}`);
+if (!(Number(graph.counts?.historyEventsWithSource || 0) > 0)) throw new Error("History source-evidence classification unexpectedly empty");
 
-console.log(`Publication graph valid: ${entities.length} entities; ${graph.counts.indexable} indexable; ${graph.counts.candidate} candidates; ${graph.counts.tools} tools; ${graph.counts.communities} communities.`);
+console.log(`Publication graph valid: ${entities.length} entities; ${graph.counts.indexable} indexable; ${graph.counts.candidate} candidates; ${graph.counts.historyEvents} history events; ${graph.counts.tools} tools; ${graph.counts.communities} communities.`);
