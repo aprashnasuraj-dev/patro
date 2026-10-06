@@ -48,11 +48,14 @@ test("agent discovery files, citation, MCP and narrow read-only OpenAPI are gene
  const security=read("public/.well-known/security.txt");assert.ok(security.includes(`Contact: ${production}/contact`));assert.ok(security.includes(`Canonical: ${production}/.well-known/security.txt`));
 });
 
-test("single-source adapter drives build SEO, D1 agent APIs, data exports and MCP while archive pages are R2-backed",()=>{
- const adapter=read("lib/patro.ts"),nodeProvider=read("lib/patro.mjs"),snapshot=read("scripts/calendar-snapshot.mjs"),source=read("worker/patro-source.ts"),gateway=read("worker/agent-gateway.ts"),mcp=read("worker/mcp.ts"),pages=read("worker/agent-pages.ts"),year=read("worker/year-page.ts"),archive=read("worker/public-archive-pages.ts"),data=read("worker/data-export.ts");
+test("canonical adapter uses Git mirror at build time and R2 for immutable runtime calendar reads",()=>{
+ const adapter=read("lib/patro.ts"),nodeProvider=read("lib/patro.mjs"),snapshot=read("scripts/calendar-snapshot.mjs"),source=read("worker/patro-source.ts"),gateway=read("worker/agent-gateway.ts"),mcp=read("worker/mcp.ts"),pages=read("worker/agent-pages.ts"),year=read("worker/year-page.ts"),archive=read("worker/public-archive-pages.ts"),data=read("worker/data-export.ts"),calendarFast=read("worker/calendar-fast.ts");
  for(const name of ["getDay","getDayByAd","getMonth","getYear","getFestivals","getFestival","getSait","getHolidays","convertBsToAd","convertAdToBs","getTodayNepal","getTithiAt"])assert.ok(adapter.includes(name),name);
- assert.ok(adapter.includes("PATRO_CITIES"));assert.ok(nodeProvider.includes("migration/data/public/astronomy_calendar_map"));assert.ok(snapshot.includes('../lib/patro.mjs'));assert.ok(source.includes("astronomy_calendar_map"));assert.ok(gateway.includes("createPatroAdapter(createD1PatroSource(env))"));
+ assert.ok(adapter.includes("PATRO_CITIES"));assert.ok(nodeProvider.includes("migration/data/public/astronomy_calendar_map"));assert.ok(snapshot.includes('../lib/patro.mjs'));
+ assert.ok(source.includes('const CALENDAR_PREFIX="datasets/calendar/v1"'));assert.ok(source.includes("createArchivePatroSource"));assert.ok(gateway.includes("createPatroAdapter(createArchivePatroSource(env))"));assert.ok(mcp.includes("createPatroAdapter(createArchivePatroSource(env))"));
  assert.ok(archive.includes("datasets/calendar/v1"));assert.ok(archive.includes("datasets/community/v1"));assert.ok(!archive.includes("env.DB"));assert.ok(gateway.indexOf("publicArchivePageResponse")<gateway.indexOf("agentPageResponse"));
+ assert.ok(calendarFast.includes("D1 is deliberately not a normal fallback"));assert.ok(!calendarFast.includes("cloudflare-d1-calendar"));
+ assert.ok(data.includes("datasets/calendar/v1"));assert.ok(!data.includes("createD1PatroSource"));assert.ok(data.includes('"x-patro-backend":"cloudflare-r2-calendar"'));
  assert.ok(mcp.includes('const MODERN = "2026-07-28"'));assert.ok(mcp.includes('const LEGACY = "2025-11-25"'));for(const tool of ["get_today","convert_date","get_festival"])assert.ok(mcp.includes(tool),tool);
  for(const direct of ['path === "/today"','path === "/methodology"','path === "/corrections"','path === "/widget/today"'])assert.ok(pages.includes(direct),direct);
  for(const matcher of ["const festival = path.match(","const countdown = path.match(","const panchang = path.match(","const tika = path.match(","const busiest = path.match(","const ics = path.match(","const pdf = path.match(","const widget = path.match("])assert.ok(pages.includes(matcher),matcher);
