@@ -1,6 +1,9 @@
-// Single runtime definition of the indexable BS-year window. scripts/seo-config.mjs (approxBsYear,
-// SITEMAP_MIN_BS_YEAR/SITEMAP_MAX_BS_YEAR) uses the identical formula at build time, so a calendar
-// or date URL is in a sitemap exactly when runtime leaves it indexable.
+// Single runtime definition of the indexable BS-year window. scripts/seo-config.mjs uses the
+// identical formula at build time, so a calendar or date URL is in a sitemap exactly when runtime
+// leaves it indexable.
+
+export const INDEXABLE_PAST_YEARS = 33;
+export const INDEXABLE_FUTURE_YEARS = 10;
 
 /** Approximate Bikram Sambat year in Asia/Kathmandu (BS New Year treated as 14 April). */
 export function approxBsYear(date: Date = new Date()): number {
@@ -13,18 +16,18 @@ export function approxBsYear(date: Date = new Date()): number {
 }
 
 export function minIndexableBsYear(date: Date = new Date()): number {
-  return approxBsYear(date) - 10;
+  return approxBsYear(date) - INDEXABLE_PAST_YEARS;
 }
 
 export function maxIndexableBsYear(date: Date = new Date()): number {
-  return approxBsYear(date) + 10;
+  return approxBsYear(date) + INDEXABLE_FUTURE_YEARS;
 }
 
 export function isIndexableBsYear(year: number, date: Date = new Date()): boolean {
   return Number.isInteger(year) && year >= minIndexableBsYear(date) && year <= maxIndexableBsYear(date);
 }
 
-/** true when /calendar/YYYY[/MM] is outside current BS year ±10 and must be served noindex. */
+/** true when /calendar/YYYY[/MM] is outside the bounded real-data indexable cohort and must be served noindex. */
 export function historicalCalendarNoindex(path: string, date: Date = new Date()): boolean {
   const match = path.match(/^\/calendar\/(\d{4})(?:\/|$)/);
   if (!match) return false;
