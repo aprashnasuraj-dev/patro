@@ -48,17 +48,20 @@ function expand(alias, route, family = "canonical") {
 const HIGH_VALUE = {
   "/": [
     "nepali calendar", "nepal calendar", "nepali patro", "नेपाली पात्रो", "nepali calendar 2083", "nepali calendar 2026",
-    "bikram sambat calendar", "BS calendar Nepal", "Nepal patro", "आफ्नै पात्रो", "aafnai patro"
+    "bikram sambat calendar", "BS calendar Nepal", "Nepal patro", "आफ्नै पात्रो", "aafnai patro",
+    "nepali calendar app", "नेपाली क्यालेन्डर एप", "patro", "पात्रो", "nepali patro online", "nepali calendar with tithi"
   ],
   "/today": [
     "aaja kati gate", "aaj kati gate", "aja kati gate", "aaja kati gate ho", "आज कति गते", "आज कति गते हो", "आजको नेपाली मिति",
     "nepali date today", "today nepali date", "nepal date today", "current nepali date", "today date in nepal", "aaj ko miti", "aaja ko miti",
-    "nepal ma aaja kati gate", "today bikram sambat date", "what is nepali date today", "what is today's date in nepal"
+    "nepal ma aaja kati gate", "today bikram sambat date", "what is nepali date today", "what is today's date in nepal",
+    "nepali miti today", "nepali date today in bs", "today tithi nepali", "आजको तिथि", "aajako panchang", "आजको पञ्चाङ्ग", "nepali date widget"
   ],
   "/convert": [
     "nepali date converter", "nepali miti converter", "BS to AD converter", "AD to BS converter", "bs ad converter nepal", "bikram sambat converter",
     "nepali date to english date", "english date to nepali date", "convert nepali date to english", "convert english date to nepali",
-    "nepali date of birth converter", "passport nepali date converter", "visa nepali date converter", "citizenship date converter nepal"
+    "nepali date of birth converter", "passport nepali date converter", "visa nepali date converter", "citizenship date converter nepal",
+    "eng to nepali date converter", "अङ्ग्रेजीबाट नेपाली मिति"
   ],
   "/tools/nepali-typing": [
     "nepali typing", "nepali typing online", "english to nepali typing", "roman to nepali typing", "nepali unicode typing", "type in nepali",
@@ -73,7 +76,15 @@ const HIGH_VALUE = {
   "/fm": ["nepali fm online", "nepal radio online", "live nepali radio", "nepali fm radio", "नेपाल एफएम रेडियो"],
   "/tv": ["nepal live tv", "nepali tv online", "live tv nepal", "free nepali live tv", "नेपाल लाइभ टिभी"],
   "/jyotish/china": ["nepali kundali", "janma kundali nepal", "nepali birth chart", "janma patro", "जन्मपत्रिका", "चिना बनाउने"],
-  "/jyotish/matchmaking": ["kundali matching nepal", "guna milan nepali", "nepali marriage matching", "कुण्डली मिलान", "गुण मिलान"]
+  "/jyotish/matchmaking": ["kundali matching nepal", "guna milan nepali", "nepali marriage matching", "कुण्डली मिलान", "गुण मिलान"],
+  "/festivals": [
+    "nepali public holidays", "सार्वजनिक बिदा", "nepali festival calendar", "नेपाली चाडपर्व", "dashain tihar date",
+    "दशैं तिहार मिति", "nepali calendar dashain date", "nepali festival list", "holiday list nepal", "festival dates nepal"
+  ],
+  "/tools/sait": [
+    "subha sait", "शुभ साइत", "bibaha sait", "विवाह साइत", "today choghadiya nepali", "nepali choghadiya today",
+    "auspicious time nepal", "marriage sait nepal"
+  ]
 };
 for (const [route, queries] of Object.entries(HIGH_VALUE)) for (const query of queries) add(query, route, query, "high-value", 1);
 
