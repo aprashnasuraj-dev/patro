@@ -24,7 +24,7 @@ type StoredResponse = {
   canonical: string;
 };
 
-const CACHE_PREFIX = "patro-quota-v2";
+const CACHE_PREFIX = "patro-quota-v3";
 const DAY = 86_400;
 const HISTORY_CACHE_YEAR = "2000"; // Leap-year sentinel: exactly 366 reusable month/day keys.
 const textEncoder = new TextEncoder();
@@ -65,7 +65,11 @@ function requestedHistoryDate(request: Request) {
 function canonicalUrl(request: Request) {
   const url = new URL(request.url);
   if (url.pathname === "/api/v1/on-this-day") {
+    // Client revision/freshness tokens are browser cache-busters only. Durable storage is
+    // keyed solely by month/day + PUBLIC_REFERENCE_CACHE_VERSION, otherwise every UI rev
+    // would allocate another 366 KV/R2 objects and release warmups could miss live keys.
     url.searchParams.delete("fresh");
+    url.searchParams.delete("rev");
     // History content is month/day based. Normalizing the year collapses an unbounded
     // sequence of annual URLs into exactly 366 durable objects while the response adapter
     // below restores the caller's requested year/date before returning JSON.
