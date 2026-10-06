@@ -6,11 +6,18 @@ on:
     paths:
       - 'migration/data/public/on_this_day_events/**'
       - 'migration/data/public/astronomy_calendar_map/**'
+      - 'migration/data/public/community_dates.json'
+      - 'migration/data/public/community_festivals.json'
+      - 'migration/data/public/ns_days/**'
+      - 'migration/data/public/ns_festival_dates.json'
+      - 'migration/data/public/ns_festivals.json'
       - 'scripts/calendar-snapshot.mjs'
       - 'scripts/cloudflare/build-history-r2.mjs'
       - 'scripts/cloudflare/build-calendar-r2.mjs'
+      - 'scripts/cloudflare/build-community-r2.mjs'
       - 'worker/history-fast.ts'
       - 'worker/calendar-fast.ts'
+      - 'worker/public-archive-pages.ts'
       - '.github/workflows/seed-history-r2.yml'
   workflow_dispatch:
 
@@ -24,7 +31,7 @@ concurrency:
 jobs:
   seed:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -59,8 +66,24 @@ jobs:
           writeFileSync('/tmp/patro-r2-bucket',String(row.bucket_name));
           console.log(`ARCHIVE bucket=${row.bucket_name}`);
           NODE
-      - name: Build history and calendar archives
+      - name: Build public archive shards
         run: node scripts/cloudflare/build-history-r2.mjs
+      - name: Validate local archive manifests
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const history=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
+          const calendar=JSON.parse(readFileSync('.cloudflare/calendar-r2/manifest.json','utf8'));
+          const community=JSON.parse(readFileSync('.cloudflare/community-r2/manifest.json','utf8'));
+          if(history.row_count!==5454) throw new Error(`history row_count ${history.row_count} != 5454`);
+          if(calendar.row_count!==77070) throw new Error(`calendar row_count ${calendar.row_count} != 77070`);
+          if(calendar.ad_start!=='1826-04-11'||calendar.ad_end!=='2037-04-13') throw new Error(`calendar coverage mismatch ${calendar.ad_start}..${calendar.ad_end}`);
+          if(!Array.isArray(calendar.files)||calendar.files.length!==calendar.ad_years.length+calendar.bs_years.length) throw new Error('calendar manifest files/year coverage mismatch');
+          if(!Array.isArray(community.primary_families)||community.primary_families.length!==6) throw new Error('community manifest must contain exactly six archive families');
+          for(const family of ['nepal-sambat','lhosar','tharu','mithila','kirat','hijri']) if(!community.primary_families.includes(family)) throw new Error(`missing community family ${family}`);
+          console.log(JSON.stringify({ok:true,history_rows:history.row_count,calendar_rows:calendar.row_count,calendar_objects:calendar.files.length,community_objects:community.files.length,calendar_source_version:calendar.source_version,community_source_version:community.source_version}));
+          NODE
       - name: Upload immutable history source to R2
         run: |
           set -euo pipefail
@@ -70,60 +93,93 @@ jobs:
             [[ -f "$file" ]] || continue
             name="$(basename "$file")"
             key="datasets/on-this-day/v1/${name}"
-            npx wrangler r2 object put "${bucket}/${key}" \
-              --file "$file" \
-              --content-type application/json \
-              --cache-control 'public, max-age=31536000, immutable' \
-              --remote \
-              --force
+            npx wrangler r2 object put "${bucket}/${key}" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
             count=$((count+1))
           done
           if [[ "$count" -ne 13 ]]; then
             echo "::error::Expected 13 R2 history objects, uploaded ${count}."
             exit 1
           fi
-      - name: Upload validated calendar cohort to R2
+      - name: Upload full validated calendar archive to R2
         run: |
           set -euo pipefail
           bucket="$(cat /tmp/patro-r2-bucket)"
+          node --input-type=module <<'NODE' >/tmp/calendar-r2-files
+          import { readFileSync } from 'node:fs';
+          const manifest=JSON.parse(readFileSync('.cloudflare/calendar-r2/manifest.json','utf8'));
+          for(const file of manifest.files||[]) {
+            if(!file?.key) throw new Error('calendar manifest entry missing key');
+            const rel=String(file.key).replace(/^datasets\/calendar\/v1\//,'');
+            console.log(`${rel}|${file.key}`);
+          }
+          NODE
           count=0
-          # R2 carries the high-value 2016-2035 AD / corresponding 2072-2092 BS cohort.
-          # The full validated archive is still packaged under public/data/calendar, so dates
-          # outside this R2 cohort remain D1-independent instead of triggering a huge R2 seed.
-          for year in $(seq 2016 2035); do
-            file=".cloudflare/calendar-r2/ad/${year}.json"
+          while IFS='|' read -r rel key; do
+            [[ -n "$rel" && -n "$key" ]] || continue
+            file=".cloudflare/calendar-r2/${rel}"
             [[ -f "$file" ]] || { echo "::error::Missing ${file}"; exit 1; }
-            npx wrangler r2 object put "${bucket}/datasets/calendar/v1/ad/${year}.json" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+            npx wrangler r2 object put "${bucket}/${key}" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
             count=$((count+1))
-          done
-          for year in $(seq 2072 2092); do
-            file=".cloudflare/calendar-r2/bs/${year}.json"
-            [[ -f "$file" ]] || continue
-            npx wrangler r2 object put "${bucket}/datasets/calendar/v1/bs/${year}.json" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+          done </tmp/calendar-r2-files
+          npx wrangler r2 object put "${bucket}/datasets/calendar/v1/manifest.json" --file .cloudflare/calendar-r2/manifest.json --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+          expected="$(wc -l </tmp/calendar-r2-files | tr -d ' ')"
+          if [[ "$count" -ne "$expected" ]]; then echo "::error::Calendar upload count ${count} != manifest ${expected}"; exit 1; fi
+          echo "Uploaded ${count} calendar year shards plus manifest."
+      - name: Upload six community archive families to R2
+        run: |
+          set -euo pipefail
+          bucket="$(cat /tmp/patro-r2-bucket)"
+          node --input-type=module <<'NODE' >/tmp/community-r2-files
+          import { readFileSync } from 'node:fs';
+          const manifest=JSON.parse(readFileSync('.cloudflare/community-r2/manifest.json','utf8'));
+          for(const file of manifest.files||[]) {
+            if(!file?.key) throw new Error('community manifest entry missing key');
+            const rel=String(file.key).replace(/^datasets\/community\/v1\//,'');
+            console.log(`${rel}|${file.key}`);
+          }
+          NODE
+          count=0
+          while IFS='|' read -r rel key; do
+            [[ -n "$rel" && -n "$key" ]] || continue
+            file=".cloudflare/community-r2/${rel}"
+            [[ -f "$file" ]] || { echo "::error::Missing ${file}"; exit 1; }
+            npx wrangler r2 object put "${bucket}/${key}" --file "$file" --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
             count=$((count+1))
-          done
-          if [[ "$count" -lt 40 ]]; then
-            echo "::error::Expected at least 40 R2 calendar year objects, uploaded ${count}."
-            exit 1
-          fi
-          echo "Uploaded ${count} validated calendar year shards."
+          done </tmp/community-r2-files
+          npx wrangler r2 object put "${bucket}/datasets/community/v1/manifest.json" --file .cloudflare/community-r2/manifest.json --content-type application/json --cache-control 'public, max-age=31536000, immutable' --remote --force
+          expected="$(wc -l </tmp/community-r2-files | tr -d ' ')"
+          if [[ "$count" -ne "$expected" ]]; then echo "::error::Community upload count ${count} != manifest ${expected}"; exit 1; fi
+          echo "Uploaded ${count} community year shards plus manifest."
       - name: Verify R2 archives
         run: |
           set -euo pipefail
           bucket="$(cat /tmp/patro-r2-bucket)"
           npx wrangler r2 object get "${bucket}/datasets/on-this-day/v1/manifest.json" --file /tmp/r2-history-manifest.json --remote
-          npx wrangler r2 object get "${bucket}/datasets/calendar/v1/ad/2026.json" --file /tmp/r2-calendar-2026.json --remote
+          npx wrangler r2 object get "${bucket}/datasets/calendar/v1/manifest.json" --file /tmp/r2-calendar-manifest.json --remote
+          npx wrangler r2 object get "${bucket}/datasets/community/v1/manifest.json" --file /tmp/r2-community-manifest.json --remote
+          node --input-type=module <<'NODE' >/tmp/r2-representatives
+          import { readFileSync } from 'node:fs';
+          const c=JSON.parse(readFileSync('.cloudflare/calendar-r2/manifest.json','utf8'));
+          const pick=(arr)=>[arr[0],arr[Math.floor(arr.length/2)],arr.at(-1)];
+          for(const y of pick(c.ad_years)) console.log(`calendar|ad/${y}.json|datasets/calendar/v1/ad/${y}.json`);
+          for(const y of pick(c.bs_years)) console.log(`calendar|bs/${y}.json|datasets/calendar/v1/bs/${y}.json`);
+          const m=JSON.parse(readFileSync('.cloudflare/community-r2/manifest.json','utf8'));
+          for(const family of m.primary_families){const rows=m.files.filter(x=>x.family===family);const row=rows[Math.floor(rows.length/2)];if(!row)throw new Error(`no archive object for ${family}`);console.log(`community|${String(row.key).replace(/^datasets\/community\/v1\//,'')}|${row.key}`);}
+          NODE
+          while IFS='|' read -r kind rel key; do
+            npx wrangler r2 object get "${bucket}/${key}" --file "/tmp/r2-${kind}-$(echo "$rel" | tr '/' '-')" --remote
+          done </tmp/r2-representatives
           node --input-type=module <<'NODE'
           import { readFileSync } from 'node:fs';
-          const localHistory=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
-          const remoteHistory=JSON.parse(readFileSync('/tmp/r2-history-manifest.json','utf8'));
-          if(remoteHistory.row_count!==5454) throw new Error(`R2 history row count ${remoteHistory.row_count} != 5454`);
-          if(remoteHistory.source_version!==localHistory.source_version) throw new Error('R2 history source version does not match this release');
-          if(!Array.isArray(remoteHistory.files)||remoteHistory.files.length!==12) throw new Error('R2 history manifest must contain 12 month shards');
-
-          const localCalendar=JSON.parse(readFileSync('.cloudflare/calendar-r2/ad/2026.json','utf8'));
-          const remoteCalendar=JSON.parse(readFileSync('/tmp/r2-calendar-2026.json','utf8'));
-          if(remoteCalendar.calendar!=='ad'||remoteCalendar.year!==2026||!Array.isArray(remoteCalendar.rows)||remoteCalendar.rows.length<365) throw new Error('R2 calendar 2026 shard is incomplete');
-          if(remoteCalendar.source_version!==localCalendar.source_version) throw new Error('R2 calendar source version does not match this release');
-          console.log(JSON.stringify({ok:true,history_rows:remoteHistory.row_count,calendar_2026_rows:remoteCalendar.rows.length,calendar_source_version:remoteCalendar.source_version}));
+          const lh=JSON.parse(readFileSync('.cloudflare/history-r2/manifest.json','utf8'));
+          const rh=JSON.parse(readFileSync('/tmp/r2-history-manifest.json','utf8'));
+          const lc=JSON.parse(readFileSync('.cloudflare/calendar-r2/manifest.json','utf8'));
+          const rc=JSON.parse(readFileSync('/tmp/r2-calendar-manifest.json','utf8'));
+          const lm=JSON.parse(readFileSync('.cloudflare/community-r2/manifest.json','utf8'));
+          const rm=JSON.parse(readFileSync('/tmp/r2-community-manifest.json','utf8'));
+          if(rh.row_count!==5454||rh.source_version!==lh.source_version) throw new Error('R2 history manifest mismatch');
+          if(rc.row_count!==77070||rc.source_version!==lc.source_version||rc.ad_start!=='1826-04-11'||rc.ad_end!=='2037-04-13') throw new Error('R2 calendar manifest mismatch');
+          if(JSON.stringify(rc.ad_years)!==JSON.stringify(lc.ad_years)||JSON.stringify(rc.bs_years)!==JSON.stringify(lc.bs_years)) throw new Error('R2 calendar year coverage mismatch');
+          if(rm.source_version!==lm.source_version||rm.archive_route_count!==lm.archive_route_count||JSON.stringify(rm.primary_families)!==JSON.stringify(lm.primary_families)) throw new Error('R2 community manifest mismatch');
+          console.log(JSON.stringify({ok:true,history_rows:rh.row_count,calendar_rows:rc.row_count,calendar_start:rc.ad_start,calendar_end:rc.ad_end,calendar_source_version:rc.source_version,community_source_version:rm.source_version,community_routes:rm.archive_route_count}));
           NODE
