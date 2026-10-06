@@ -13,36 +13,37 @@ D1 read quota is currently constrained. New public-reference work must **not add
 3. `ARCHIVE` R2 for durable public-reference/history/calendar snapshots and packaged fallback data;
 4. D1 only where an existing mutable/runtime contract still requires it and a cached/static path is not available.
 
-Main already contains Cache → KV/R2 → connected-runtime response caching plus packaged/R2 On This Day fallback. Recent main commits also enforce/reconcile production KV/R2 bindings. PR #81 applies the same D1-independent availability rule to immutable calendar reads. Do not duplicate these systems.
+Main already contains Cache → KV/R2 → connected-runtime response caching plus packaged/R2 On This Day fallback. PR #81 applies the same D1-independent availability rule to immutable calendar reads. Do not duplicate these systems.
 
 ## Step-by-step status
 
 | Step | Requirement | Repository evidence/current state | Status | Required change |
 |---|---|---|---|---|
-| 1 | Inventory, preservation contract, stable identity/URL semantics | `docs/INVENTORY.md`, migration inventory checks, release-safety tests and current route registries already protect the working product. Current date canonical is `/date/YYYY-MM-DD`; no mass URL move is required. PR #80 adds stable cross-family identities without changing existing presentation routes. | IMPLEMENTED / PR-GATED | Validate and merge PR #80 after CI/review; no destructive URL migration. |
-| 2 | Permanent useful date pages from validated data | `scripts/calendar-snapshot.mjs`, `lib/patro.mjs`, `scripts/prerender-days-seo.mjs`, `seo-config.mjs` and phase-gate tests already produce factual date pages from the validated archive. PR #81 adds R2 + packaged static calendar shards before D1 fallback. | EXISTING, SCALE-GATED | Keep wider years candidate/non-indexed until the existing accuracy/indexing gates pass. Do not create hand-written date articles. |
-| 3 | Festival identity + annual occurrence + real-event separation | Date pages already link festival-year routes. PR #78 adds deterministic festival identity/year pages from the validated holiday map and serves them as static assets before legacy redirect handling. | IMPLEMENTED / PR-GATED | Merge only after combined build/release gates stay green. Organizer-event pages remain separately source-gated. |
-| 4 | Six community calendar hubs/archives without flattening native rules | The six suites are registered (`lhosar`, `tharu`, `mithila`, `kirat`, `hijri`, `chakra`) and existing community functionality is covered by migration/readiness tests. | EXISTING / DATA-GATED | Do not synthesize native year/month/day mappings by fixed offsets. Expand archive depth only from each suite's real source coverage. |
-| 5 | 33 tools as task systems, with one working identity per task | Public HTML/SEO registry verifies 29 canonical public tools. Repository evidence also contains four enabled, non-private legacy/source identities outside that public 29: `tithi`, `diaspora`, `card`, `api`. PR #80 reconciles them as candidate identities while excluding private `family`/`my-data`, disabled legacy font routes, hubs and aliases. | IDENTITY RECONCILED / FUNCTION-GATED | Keep 29 public + 4 gated = 33 source-backed identities. Do not publish/index the four candidates until each proves a distinct working public task rather than an alias/private redirect. Do not invent replacements. |
-| 6 | Today in History + permanent archive + contextual workflows | Main includes packaged/R2 On This Day fallback over the 5,454-row archive. PR #80 adds 366 reusable month/day identities and all 5,454 stable history-event identities to the canonical graph as non-indexable candidates. | SUBSTANTIALLY IMPLEMENTED / PUBLICATION-GATED | Existing `/on-this-day` remains live. Per-event pages stay gated until evidence-qualified rendering is explicitly approved; records without source evidence must not be promoted automatically. |
-| 7 | Deterministic read-only publication pipeline | Build-time SEO/day generation, shared source adapters, validated local archive and deterministic templates already exist. PR #80 adds a single publication/entity manifest plus validation instead of another content DB. | IMPLEMENTED / PR-GATED | Validate/merge PR #80; future page families must derive from this identity/source model. |
-| 8 | Midnight freshness, cache hierarchy, performance and private-state preservation | `worker/quota-cache.ts`, packaged/R2 history fallback, recent main KV/R2 reconciliation work, release-safety tests and private route handling cover the core requirement. PR #81 removes avoidable cold D1 calendar reads through R2/static fallback. | IMPLEMENTED / MONITOR | Keep private/local state out of public caches and continue cache/date-boundary regression checks. |
-| 9 | Canonicals, crawlable archives, sitemaps and measured 10k+ scaling | `scripts/generate-seo.mjs`, SEO intent/discovery tests, date prerendering and phase gates already provide discovery. PR #80 builds a >19k-entity candidate graph while preserving a much smaller indexable cohort; history/tool candidates are not automatically put in sitemaps. | IMPLEMENTED / SCALE-GATED | 10k–50k is route/data capacity, not an indexing target. Expand cohorts only after validation and indexing diagnostics; no blind cross-products. |
-| 10 | Reversible release, regression gates and monitoring | PR/release workflows, `release:verify`, production release-safety tests, storage-binding guards and previous-artifact discipline already exist. | EXISTING | Keep each PR narrow. No PR in this program should combine framework migration, DB migration, route migration and cache changes. |
+| 1 | Inventory, preservation contract, stable identity/URL semantics | `docs/INVENTORY.md`, migration inventory checks, release-safety tests and the canonical publication graph protect the working product. Current date canonical is `/date/YYYY-MM-DD`; no mass URL move is required. | COMPLETE | Regression-only. Do not rebuild Step 1. |
+| 2 | Permanent useful date pages from validated data | `scripts/calendar-snapshot.mjs`, `lib/patro.mjs`, `scripts/prerender-days-seo.mjs`, `seo-config.mjs`, phase-gate tests and PR #81 provide factual date pages plus R2/static calendar fallback before indexed D1. | CORE COMPLETE / SCALE-GATED | Keep wider years candidate/non-indexed until accuracy/indexing gates justify expansion. |
+| 3 | Festival identity + annual occurrence + real-event separation | PR #78 provides deterministic festival identity/year pages from the validated holiday map. Festival observances are represented separately from future organizer-event entities. | PARTIAL — EVENT SCHEMA REMAINS | Add a real `event` entity type/source gate only; do not fabricate organizer events. Add a renderer later only if source-backed organizer records already exist. |
+| 4 | Six community calendar hubs/archives without flattening native rules | The six suites remain registered and functional with migration/readiness tests. | CORE COMPLETE / DATA-GATED | Do not synthesize native dates by fixed offsets. Expand only from trustworthy native-source coverage. |
+| 5 | 33 source-backed tool identities with one public canonical per real task | Public HTML/SEO registry verifies 29 canonical public tools. The four additional source-backed identities are now parity-reviewed in `migration/data/public/tool_identity_review.json`, and the graph validator requires their explicit disposition. | PARITY REVIEW COMPLETE / 29 PUBLIC | No promotion is justified now: `diaspora` maps to `/tools/clock`; `tithi` and `card` bridge into private `/me/*` state; `api` is a developer/reference surface kept noindex and outside the end-user tool count. Preserve 29 working canonical tools. |
+| 6 | Today in History + permanent archive + contextual workflows | Main includes packaged/R2 On This Day fallback over the 5,454-row archive. The publication graph contains 366 reusable month/day identities and 5,454 stable history-event candidates. | PARTIAL — ARCHIVE RENDERER REMAINS | Add deterministic `/on-this-day/MM-DD` pages first, without D1 and without individual event-detail publication. Then classify event evidence quality before any event pages. |
+| 7 | Deterministic read-only publication pipeline | Build-time SEO/day generation, shared source adapters, validated local archive and the canonical publication graph provide one deterministic publication path. | COMPLETE | Future page families must use the graph rather than separate uncontrolled route registries. |
+| 8 | Midnight freshness, cache hierarchy, performance and private-state preservation | `worker/quota-cache.ts`, packaged/R2 history fallback, storage-binding guards, release-safety tests and PR #81 cover the core requirement. | COMPLETE / MONITOR | Keep private/local state out of shared caches and preserve Kathmandu date-boundary behavior. |
+| 9 | Canonicals, crawlable archives, sitemaps and measured 10k+ scaling | SEO generation/validation and the >19k-entity candidate graph provide route capacity without making every entity indexable. | CORE COMPLETE / SCALE-GATED | 10k–50k is capacity, not an indexing target. No blind cross-products or duplicate aliases. |
+| 10 | Reversible release, regression gates and monitoring | GitHub Release Gate, `release:verify`, browser functional checks, Lighthouse, deployment smoke checks and previous-artifact safeguards are working. | COMPLETE | Keep PRs narrow and merge only with a green Release Gate. |
 
-## Required implementation sequence
+## Remaining implementation sequence
 
-Only gaps that still require code should create PRs. Current required PRs are:
+Only gaps that still require code should create PRs. After the Step 5 parity review, the remaining sequence is:
 
-1. **PR #78 — Festival identity/occurrence route repair without D1 reads.**
-2. **PR #80 — Canonical publication graph, history identities and 33-tool identity reconciliation.**
-3. **PR #81 — R2 + packaged calendar shards before D1 fallback.**
+1. **Step 6 recurring history archive renderer** — `/on-this-day/MM-DD`, deterministic/static, 366 valid keys including Feb 29, no D1, no event-detail pages yet.
+2. **Step 6 history publication-quality classifier** — classify all 5,454 records as `publishable`, `needs-source`, `duplicate`, or `uncertain`; do not auto-publish pages.
+3. **Step 3 real-event schema + source gate** — add organizer-event entity support and validation, with source evidence mandatory before `public/indexable`.
+4. **Step 3 event renderer only if data already exists** — stop at the schema/source gate if the repository lacks sufficient organizer-event records.
 
-No additional PR is justified solely to reach a numeric page/tool target. The four reconciled legacy tool identities need a separate implementation PR only if repository/product review confirms a distinct public task can be restored without duplicating an existing engine or exposing private state. History event pages likewise remain optional/source-gated rather than automatically generated.
+No additional PR is justified solely to reach a numeric page/tool target.
 
 ## Canonical entity rules
 
-The publication graph uses stable internal IDs independent of presentation state and supports these source families:
+The publication graph uses stable internal IDs independent of presentation state and currently supports these source families:
 
 - `day`
 - `calendar-year`
@@ -54,23 +55,24 @@ The publication graph uses stable internal IDs independent of presentation state
 - `history-event`
 - `tool`
 
-Future `event` or `guide` entities are permitted only when real organizer/source evidence or a genuinely distinct reviewed task exists.
+A future `event` entity is permitted only when real organizer/source evidence exists. A future `guide`/reference entity is permitted only when it has distinct reviewed public intent.
 
 Each published entity needs: stable ID, type, canonical route, aliases only when truly equivalent, source/version references, coverage status, publication status, indexability decision, and dependencies/relations.
 
 Equivalent presentation state is not a new public page. Personal inputs, notes, future letters, uploaded OCR documents, account tokens, saved results and arbitrary filter permutations are never public entities.
 
-## Tool reconciliation decision
+## Tool parity decisions
 
-The original plan correctly states that 29 tool links were observed publicly while earlier project scope requested 33; the difference is a reconciliation ticket, not permission to invent names. Repository evidence resolves the identity gap as follows:
+The parity review is machine-readable in `migration/data/public/tool_identity_review.json` and is enforced by `scripts/reconcile-tool-identities.mjs` plus `scripts/validate-publication-graph.mjs`.
 
-- **29** remain the verified canonical public tool set.
-- **4** additional enabled/non-private source identities exist in the checked-in tool catalog: `tithi`, `diaspora`, `card`, `api`.
-- `family` and `my-data` are explicitly private and are excluded from public-growth counts.
-- `typingtools` is a hub, not a separate task identity.
-- disabled `preetitounicode` / `unicodetopreeti` records are legacy directions of the unified Preeti converter, not extra canonical tools.
+| Identity | Current behavior | Distinct public task? | Decision |
+|---|---|---:|---|
+| `tithi` | `/tools/tithi` resolves to private `/me/reminders`; public `/tools/tithi-reminder` already exists | No | Keep candidate/private compatibility identity; do not publish a duplicate. |
+| `diaspora` | `/tools/diaspora` resolves to `/tools/clock` | No | Treat as an alias/equivalent intent of the canonical clock/timezone tool. |
+| `card` | `/tools/card` resolves to private `/me/cards` | No | Keep candidate/private; do not expose saved card/user state as a public task. |
+| `api` | `/tools/api` renders the same developer/reference surface as `/developers` and is intentionally noindex | No, not as an end-user tool | Keep as candidate/reference and outside the public tool count. |
 
-Therefore the graph may safely retain **33 source-backed identities**, but only 29 are currently approved public/indexable tools. The four candidates require distinct-task parity before promotion. This satisfies preservation/reconciliation without manufacturing duplicate public URLs.
+Therefore the repository retains **33 source-backed identities = 29 public canonical tools + 4 explicit non-promoted identities**. The four candidates must not replace or remove any of the verified 29.
 
 ## Scale policy
 

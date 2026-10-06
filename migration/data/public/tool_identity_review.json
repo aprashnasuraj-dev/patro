@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-06",
+  "policy": "Source-backed tool identities are reviewed against current routing, privacy boundaries, engine reuse and distinct end-user intent. Review does not publish or index a candidate.",
+  "records": [
+    {
+      "slug": "api",
+      "currentTarget": "/tools/api",
+      "existingEquivalent": "/developers",
+      "distinctTask": false,
+      "privacyClass": "public-reference-noindex",
+      "engineReuse": "DevelopersPage",
+      "recommendedAction": "C.keep-candidate-reference",
+      "reason": "The route is a substantive developer/reference surface, not a distinct end-user task. It intentionally remains noindex and excluded from the public tool launcher/count.",
+      "publicationStatus": "candidate"
+    },
+    {
+      "slug": "card",
+      "currentTarget": "/me/cards",
+      "existingEquivalent": "/me/cards",
+      "distinctTask": false,
+      "privacyClass": "private-user-state",
+      "engineReuse": "existing share-card/private cards flow",
+      "recommendedAction": "C.keep-candidate-private",
+      "reason": "The compatibility route resolves into a private user-state surface. Publishing it as a separate public task would cross the private/public boundary and duplicate existing share-card behavior.",
+      "publicationStatus": "candidate"
+    },
+    {
+      "slug": "diaspora",
+      "currentTarget": "/tools/clock",
+      "existingEquivalent": "/tools/clock",
+      "distinctTask": false,
+      "privacyClass": "public-alias",
+      "engineReuse": "existing clock/timezone tool",
+      "recommendedAction": "B.map-alias-to-existing-task",
+      "reason": "Current routing already resolves diaspora behavior to the canonical clock/timezone task. A second public tool page would duplicate the same engine and intent.",
+      "publicationStatus": "candidate"
+    },
+    {
+      "slug": "tithi",
+      "currentTarget": "/me/reminders",
+      "existingEquivalent": "/tools/tithi-reminder",
+      "distinctTask": false,
+      "privacyClass": "private-user-state-bridge",
+      "engineReuse": "existing tithi reminder/recurrence engine",
+      "recommendedAction": "C.keep-candidate-private",
+      "reason": "The compatibility route enters private reminder state while the distinct public reminder task already exists at /tools/tithi-reminder. Promoting /tools/tithi would duplicate intent and risk private-state leakage.",
+      "publicationStatus": "candidate"
+    }
+  ]
+}
