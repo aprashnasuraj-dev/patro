@@ -103,3 +103,8 @@ const manifest = {
 };
 await writeBoth("manifest.json", JSON.stringify(manifest, null, 2));
 console.log(JSON.stringify({ ok:true, out:relative(ROOT, OUT_ROOT), static_out:relative(ROOT, STATIC_ROOT), row_count:rows.length, ad_year_files:adGroups.size, bs_year_files:bsGroups.size, source_version:sourceVersion }, null, 2));
+
+// The same checked-in public mirror also contains the six community archive families. Build their
+// R2 year shards in the same deterministic archive phase so calendar/community source versions are
+// ready before Vite and before deployment seeding.
+await import("./build-community-r2.mjs");
