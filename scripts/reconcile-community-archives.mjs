@@ -1,10 +1,11 @@
 import { createHash } from "node:crypto";
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { loadCalendarSnapshot } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
 const graphPath = resolve(root, "public/publication-graph.json");
+const graphCalendarRoot = resolve(root, "public/publication-graph/calendar");
 const communityDatesPath = resolve(root, "migration/data/public/community_dates.json");
 const nsDaysRoot = resolve(root, "migration/data/public/ns_days");
 const communityManifestPath = resolve(root, ".cloudflare/community-r2/manifest.json");
@@ -35,7 +36,8 @@ if (!Array.isArray(communityManifest.primary_families) || communityManifest.prim
 
 const originalEntities = Array.isArray(graph.entities) ? graph.entities : [];
 const existingDayRelations = new Map(originalEntities.filter((entity) => entity.type === "day").map((entity) => [entity.id, entity.relations || []]));
-// Replace the old limited calendar window atomically. All non-calendar identities are retained.
+// Root graph remains compact. Full calendar day/month/year identities live in deterministic
+// per-BS-year graph shards so Cloudflare never has to publish one giant multi-tens-of-MB asset.
 const entities = originalEntities.filter((entity) => !["day","calendar-year","calendar-month","community-year"].includes(entity.type));
 const ids = new Set(entities.map((entity) => entity.id));
 const canonicals = new Set(entities.map((entity) => entity.canonical));
@@ -51,33 +53,41 @@ for (const row of calendarRows) {
   byMonth.get(month).push(row);
 }
 
+await rm(graphCalendarRoot, { recursive:true, force:true });
+await mkdir(graphCalendarRoot, { recursive:true });
+const calendarShards = [];
+let shardedEntityCount = 0;
 for (const [year, byMonth] of [...byYear.entries()].sort(([a],[b])=>a-b)) {
   const yearId = `calendar-year:${year}`;
   const monthIds = [...byMonth.keys()].sort((a,b)=>a-b).map((month)=>`calendar-month:${year}-${month2(month)}`);
-  entities.push({
+  const shardEntities = [{
     id:yearId,type:"calendar-year",canonical:`/calendar/${year}`,aliases:[],sourceRef:"validated-calendar-snapshot",sourceVersion:calendarManifest.source_version,
     coverageStatus:"archive-mapped",publicationStatus:"public",indexable:true,facts:{ bsYear:year, rowCount:[...byMonth.values()].reduce((n,rows)=>n+rows.length,0) },relations:monthIds,
-  });
-  ids.add(yearId); canonicals.add(`/calendar/${year}`);
+  }];
   for (const [month, monthRows] of [...byMonth.entries()].sort(([a],[b])=>a-b)) {
     const monthId = `calendar-month:${year}-${month2(month)}`;
     const dayIds = monthRows.map((row)=>`day:${String(row.ad).slice(0,10)}`);
-    entities.push({
+    shardEntities.push({
       id:monthId,type:"calendar-month",canonical:`/calendar/${year}/${month2(month)}`,aliases:[],sourceRef:"validated-calendar-snapshot",sourceVersion:calendarManifest.source_version,
       coverageStatus:"archive-mapped",publicationStatus:"public",indexable:true,facts:{ bsYear:year, bsMonth:month, rowCount:monthRows.length },relations:[yearId,...dayIds],
     });
-    ids.add(monthId); canonicals.add(`/calendar/${year}/${month2(month)}`);
   }
-}
-for (const row of calendarRows) {
-  const ad = String(row.ad).slice(0,10), year=Number(row.bs.year), month=Number(row.bs.month), day=Number(row.bs.day);
-  const id=`day:${ad}`;
-  const carried=(existingDayRelations.get(id)||[]).filter((rel)=>String(rel).startsWith("festival-occurrence:"));
-  entities.push({
-    id,type:"day",canonical:`/date/${ad}`,aliases:[],sourceRef:"validated-calendar-snapshot",sourceVersion:calendarManifest.source_version,
-    coverageStatus:"archive-mapped",publicationStatus:"public",indexable:true,facts:{ ad, bs:`${year}-${month2(month)}-${month2(day)}` },relations:[`calendar-year:${year}`,`calendar-month:${year}-${month2(month)}`,...carried].sort(),
-  });
-  ids.add(id); canonicals.add(`/date/${ad}`);
+  for (const monthRows of byMonth.values()) {
+    for (const row of monthRows) {
+      const ad = String(row.ad).slice(0,10), month=Number(row.bs.month), day=Number(row.bs.day), id=`day:${ad}`;
+      const carried=(existingDayRelations.get(id)||[]).filter((rel)=>String(rel).startsWith("festival-occurrence:"));
+      shardEntities.push({
+        id,type:"day",canonical:`/date/${ad}`,aliases:[],sourceRef:"validated-calendar-snapshot",sourceVersion:calendarManifest.source_version,
+        coverageStatus:"archive-mapped",publicationStatus:"public",indexable:true,facts:{ ad, bs:`${year}-${month2(month)}-${month2(day)}` },relations:[yearId,`calendar-month:${year}-${month2(month)}`,...carried].sort(),
+      });
+    }
+  }
+  shardEntities.sort((a,b)=>String(a.id).localeCompare(String(b.id)));
+  const path = `publication-graph/calendar/${year}.json`;
+  const payload = { schemaVersion:1, kind:"calendar-publication-graph-shard", bsYear:year, sourceVersion:calendarManifest.source_version, entityCount:shardEntities.length, dayCount:[...byMonth.values()].reduce((n,rows)=>n+rows.length,0), entities:shardEntities };
+  await writeFile(resolve(root,"public",path), JSON.stringify(payload)+"\n", "utf8");
+  calendarShards.push({ bsYear:year, path:`/${path}`, sourceVersion:calendarManifest.source_version, entityCount:payload.entityCount, dayCount:payload.dayCount });
+  shardedEntityCount += payload.entityCount;
 }
 
 const communityDatesDoc = JSON.parse(await readFile(communityDatesPath, "utf8"));
@@ -122,16 +132,18 @@ entities.sort((a,b) => String(a.id).localeCompare(String(b.id)));
 graph.entities = entities;
 graph.candidateWindow = null;
 graph.indexedCalendarYears = [...byYear.keys()].sort((a,b)=>a-b);
-graph.calendarArchivePolicy = { version:1, rowCount:77070, adStart:calendarManifest.ad_start, adEnd:calendarManifest.ad_end, sourceVersion:calendarManifest.source_version, runtime:"cloudflare-r2", d1NormalReadPath:false };
+graph.publicationShards = { calendar:calendarShards };
+graph.calendarArchivePolicy = { version:1, rowCount:77070, adStart:calendarManifest.ad_start, adEnd:calendarManifest.ad_end, sourceVersion:calendarManifest.source_version, runtime:"cloudflare-r2", d1NormalReadPath:false, graphSharding:"one-static-machine-readable-shard-per-bs-year" };
 graph.communityArchivePolicy = { version:1, primaryFamilies:["nepal-sambat", ...PRIMARY_SUITES], aggregateOnly:["chakra"], sourceVersion:communityManifest.source_version, rule:"Publish source-backed year archives only; never synthesize community × day cross-products or fixed-offset native dates." };
-graph.counts.total = entities.length;
-graph.counts.indexable = entities.filter((entity) => entity.indexable).length;
+const rootIndexable = entities.filter((entity) => entity.indexable).length;
+graph.counts.total = entities.length + shardedEntityCount;
+graph.counts.indexable = rootIndexable + shardedEntityCount;
 graph.counts.candidate = entities.filter((entity) => entity.publicationStatus === "candidate").length;
 graph.counts.days = calendarRows.length;
 graph.counts.calendarYears = byYear.size;
 graph.counts.calendarMonths = [...byYear.values()].reduce((n,months)=>n+months.size,0);
 graph.counts.communityYears = additions.length;
-graph.sourceDigest = sha(JSON.stringify(entities));
-// Compact output keeps the 77k-day canonical graph below static single-file size limits.
+graph.counts.calendarGraphShardEntities = shardedEntityCount;
+graph.sourceDigest = sha(JSON.stringify({entities,calendarShards}));
 await writeFile(graphPath, JSON.stringify(graph) + "\n", "utf8");
-console.log(`Archive reconciliation: ${calendarRows.length} public calendar days, ${byYear.size} BS years, ${additions.length} community year archives across six primary families.`);
+console.log(`Archive reconciliation: ${calendarRows.length} public calendar days in ${calendarShards.length} graph shards, ${additions.length} community year archives across six primary families.`);
