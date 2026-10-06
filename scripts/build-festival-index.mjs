@@ -66,7 +66,10 @@ for(const [ad,items] of holidays.entries()){
 
 const aliases={};
 const festivals={};
-const routes=["/festivals"];
+// /festivals is already published by the core sitemap. Keep this sitemap
+// limited to festival identity/year detail routes so every canonical URL
+// appears in exactly one sitemap.
+const routes=[];
 let occurrenceCount=0;
 for(const festival of [...festivalMap.values()].sort((a,b)=>a.slug.localeCompare(b.slug))){
   const years={};
