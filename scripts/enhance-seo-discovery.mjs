@@ -75,11 +75,12 @@ await Promise.all([
 console.log(`AI/search discovery augmented with ${intents.query_count} canonical query mappings.`);
 
 // Build the canonical entity graph from the same validated registries and calendar sources,
-// classify every history record without hiding unverified entries, reconcile source-backed tool
-// identities without publishing aliases/private tools, then fail the build on regressions before
-// Vite copies public/ into dist/.
+// classify every history record without hiding unverified entries, then generate a compact route
+// index for source-backed history events. The route index is one JSON asset; event HTML is rendered
+// dynamically by the Worker so thousands of pages do not become thousands of stored HTML files.
 await import("./generate-publication-graph.mjs");
 await import("./classify-history-evidence.mjs");
+await import("./build-dynamic-history-pages.mjs");
 await import("./reconcile-tool-identities.mjs");
 await import("./validate-step3-step6-completion.mjs");
 await import("./validate-publication-graph.mjs");
