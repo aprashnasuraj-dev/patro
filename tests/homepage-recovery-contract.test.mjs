@@ -51,6 +51,7 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   for(const endpoint of ["/api/v1/sync","/api/v1/on-this-day","/api/v1/time-machine"])assert.ok(worker.includes(endpoint),`Worker lost ${endpoint}`);
   assert.ok(optimizedWorker.includes("fastCalendarResponse")&&calendarWorker.includes("const monthMatch = url.pathname.match")&&calendarWorker.includes('const CALENDAR_R2_PREFIX = "datasets/calendar/v1"'),"production Worker lost the immutable R2 /api/v1/calendar/:year/:month hot path");
   assert.ok(calendarWorker.includes("archiveYearRows")&&calendarWorker.includes("r2YearRows")&&calendarWorker.includes("D1 is deliberately not a normal fallback"),"calendar runtime must remain backed by the immutable R2 archive without a normal D1 fallback");
+  assert.ok(calendarWorker.includes('if (mode === "ad")')&&calendarWorker.includes("rowsByAdMonth")&&calendarWorker.includes('archiveYearRows(request, env, "ad", year)'),"AD calendar month requests must remain on the immutable R2 fast path instead of falling through to D1");
 
   assert.ok(importer.includes("row.ad_month")&&importer.includes("row.ad_day"),"On This Day import must populate queryable month/day dimensions");
   assert.ok(importer.includes("if (TABLE_ARG && doc.table!==TABLE_ARG) continue"),"targeted D1 imports must ignore unrelated snapshot payloads after validating them");
