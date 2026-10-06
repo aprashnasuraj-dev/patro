@@ -22,7 +22,7 @@ export const BS_MONTHS = [
   { n: 7, ne: "कार्तिक", en: "Kartik", aliases: "Kartik Kattik" },
   { n: 8, ne: "मंसिर", en: "Mangsir", aliases: "Mangsir Margashirsha" },
   { n: 9, ne: "पुष", en: "Poush", aliases: "Poush Push Paush" },
-  { n: 10, ne: "माघ", en: "Magh", aliases: "Magh" },
+  { n: 10, ne: "माघ", en: "Magh", aliases: "Magh Magh" },
   { n: 11, ne: "फागुन", en: "Falgun", aliases: "Falgun Phagun" },
   { n: 12, ne: "चैत", en: "Chaitra", aliases: "Chaitra Chait" }
 ];
@@ -42,11 +42,8 @@ export const CITY_SLUGS = [
 ];
 export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
 
-// Exact public routes the Worker answers with x-robots-tag noindex (connected-entry SEARCH_NOINDEX_EXACT,
-// worker/index.ts secureResponse). They must never appear in a sitemap.
 export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"];
 
-// Must match worker/seo-window.ts historicalCalendarNoindex() cutoff exactly (BS year - 10).
 export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - 10;
 export const SITEMAP_MAX_BS_YEAR = CURRENT_BS_YEAR + 10;
 export const isSitemapYear = (y) => Number(y) >= SITEMAP_MIN_BS_YEAR && Number(y) <= SITEMAP_MAX_BS_YEAR;
@@ -67,8 +64,6 @@ export const NOINDEX_PUBLIC_ROUTES = [
 ];
 export const PRIVATE_PREFIXES = ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"];
 
-// Path prefixes the Worker marks noindex / private or redirects (connected-entry PRIVATE_SPA_PREFIXES,
-// PRIVATE_TOOL_PATHS, LEGACY_REDIRECTS; worker/index.ts private routes).
 const WORKER_NOINDEX_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/planner", "/settings", "/my-data", "/admin", "/offline", "/widget"];
 const WORKER_NOINDEX_EXACT = new Set(["/mcp", "/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
 const WORKER_REDIRECT_EXACT = new Set([
@@ -76,11 +71,6 @@ const WORKER_REDIRECT_EXACT = new Set([
   "/explore", "/search", "/feedback", "/data-trust", "/astrology", "/nepal-sambat", "/festivals"
 ]);
 
-/**
- * Mirrors the Worker's runtime robots rules for a canonical path. Returns a reason string when the
- * path would be served noindex (or redirected / private), otherwise null. Used by every sitemap
- * writer and by verify-seo-build.mjs.
- */
 export function sitemapExclusionReason(path) {
   const p = String(path || "");
   if (!p.startsWith("/")) return "not-a-root-relative-path";
@@ -91,7 +81,6 @@ export function sitemapExclusionReason(path) {
   if (WORKER_NOINDEX_EXACT.has(p)) return "worker-noindex-exact";
   if (WORKER_NOINDEX_PREFIXES.some((prefix) => p === prefix || p.startsWith(prefix + "/"))) return "worker-noindex-prefix";
   if (WORKER_REDIRECT_EXACT.has(p)) return "legacy-redirect";
-  if (/^\/on-this-day\/\d{2}-\d{2}$/.test(p)) return "history-day-noindex";
   const calendar = p.match(/^\/calendar\/(\d{4})(?:\/|$)/);
   if (calendar && !isSitemapYear(calendar[1])) return "calendar-year-outside-window";
   return null;
@@ -103,22 +92,13 @@ export const TOOL_ROUTES = RAW_TOOL_ROUTES.filter(isIndexableRoute);
 export const COMMUNITY_ROUTES = RAW_COMMUNITY_ROUTES.filter(isIndexableRoute);
 if (TOOL_ROUTES.length !== 29) throw new Error(`Canonical tool sitemap must remain exactly 29; received ${TOOL_ROUTES.length}`);
 
-export const INDEXED_CALENDAR_YEARS = [CURRENT_BS_YEAR - 2, CURRENT_BS_YEAR - 1, CURRENT_BS_YEAR, CURRENT_BS_YEAR + 1, CURRENT_BS_YEAR + 2];
-export const PRERENDER_CALENDAR_YEARS = Array.from({ length: 21 }, (_, i) => 2070 + i);
+// All data-backed calendar/festival publication uses the same current BS ±10-year window.
+export const INDEXED_CALENDAR_YEARS = Array.from({ length: SITEMAP_MAX_BS_YEAR - SITEMAP_MIN_BS_YEAR + 1 }, (_, i) => SITEMAP_MIN_BS_YEAR + i);
+export const PRERENDER_CALENDAR_YEARS = [...INDEXED_CALENDAR_YEARS];
 
-export function calendarYearRoute(year) {
-  return `/calendar/${year}`;
-}
-export function calendarYearRoutes(years = INDEXED_CALENDAR_YEARS) {
-  return years.map((year) => calendarYearRoute(year));
-}
-export function calendarRoute(year, month) {
-  return `/calendar/${year}/${String(month).padStart(2, "0")}`;
-}
-export function calendarRoutes(years = INDEXED_CALENDAR_YEARS) {
-  return years.flatMap((year) => BS_MONTHS.map((month) => calendarRoute(year, month.n)));
-}
+export function calendarYearRoute(year) { return `/calendar/${year}`; }
+export function calendarYearRoutes(years = INDEXED_CALENDAR_YEARS) { return years.map((year) => calendarYearRoute(year)); }
+export function calendarRoute(year, month) { return `/calendar/${year}/${String(month).padStart(2, "0")}`; }
+export function calendarRoutes(years = INDEXED_CALENDAR_YEARS) { return years.flatMap((year) => BS_MONTHS.map((month) => calendarRoute(year, month.n))); }
 
-export function unique(items) {
-  return [...new Set(items)];
-}
+export function unique(items) { return [...new Set(items)]; }
