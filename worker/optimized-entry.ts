@@ -3,6 +3,7 @@ import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
 import { historyEventPageResponse } from "./history-event-page";
+import { timeMachinePageResponse } from "./time-machine-page";
 import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
@@ -26,11 +27,9 @@ function canonicalDateRedirect(request: Request): Response | null {
  * Production wrapper:
  * - speech stays uncached because it is user/input specific;
  * - sourced history-event pages render dynamically from one compact static index;
- * - deterministic festival identities/occurrences are served from build assets before
- *   legacy festival redirects, so they do not spend D1 reads;
- * - public reference/calendar/history routes use Cache API first, then optional KV/R2,
- *   then D1/connected runtime;
- * - private, mutable and compatibility routes remain untouched.
+ * - each Time Machine record gets one dynamic detail URL while /time-machine itself stays the immersive SPA;
+ * - deterministic festival identities/occurrences are served from build assets before legacy redirects;
+ * - public reference/calendar/history routes use cacheable server HTML without one stored HTML file per URL.
  */
 const optimizedWorker = {
   ...connectedWorker,
@@ -38,7 +37,6 @@ const optimizedWorker = {
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
 
-    // Sitemaps/robots.txt: static asset only, crawler-safe headers, 404 when missing.
     const seoStatic = await seoStaticResponse(request, env as any);
     if (seoStatic) return seoStatic;
 
@@ -47,6 +45,9 @@ const optimizedWorker = {
 
     const historyEvent = await historyEventPageResponse(request, env as any);
     if (historyEvent) return historyEvent;
+
+    const timeMachineDetail = await timeMachinePageResponse(request, env as any);
+    if (timeMachineDetail) return timeMachineDetail;
 
     const festival = await staticFestivalResponse(request, env as any);
     if (festival) return festival;
