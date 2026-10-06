@@ -59,7 +59,7 @@ export const PRERENDER_PAST_YEARS = 2;
 export const PRERENDER_FUTURE_YEARS = 2;
 
 const RAW_CORE_INDEX_ROUTES = [
-  "/", "/today", "/methodology", "/corrections", "/samudaya", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/fm", "/tv",
+  "/", "/today", "/methodology", "/corrections", "/samudaya", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/festivals", "/fm", "/tv",
   "/jyotish/china", "/jyotish/matchmaking", "/about", "/sources", "/privacy", "/terms", "/contact",
   ...DIASPORA_TODAY_ROUTES
 ];
@@ -78,7 +78,7 @@ const WORKER_NOINDEX_PREFIXES = ["/me", "/family", "/my-diary", "/notes", "/plan
 const WORKER_NOINDEX_EXACT = new Set(["/mcp", "/tools/family", "/tools/my-data", "/tools/card", "/tools/tithi"]);
 const WORKER_REDIRECT_EXACT = new Set([
   "/aaja", "/astro", "/tithi", "/card", "/diaspora", "/jyotish/rashifal", "/jyotish/china/rashi", "/jyotish/janma-patro",
-  "/explore", "/search", "/feedback", "/data-trust", "/astrology", "/nepal-sambat", "/festivals"
+  "/explore", "/search", "/feedback", "/data-trust", "/astrology", "/nepal-sambat"
 ]);
 
 export function sitemapExclusionReason(path) {
