@@ -118,7 +118,12 @@ sitemapIndex = sitemapIndex.replace("</sitemapindex>", archiveSitemapFiles.map((
 await writeFile(sitemapIndexPath, sitemapIndex, "utf8");
 
 const seoManifestPath = join(ROOT, "public", "seo-manifest.json");
-const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
+let seoManifest = { sitemap_files: [] };
+try {
+  seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
+} catch (error) {
+  if (error?.code !== "ENOENT") throw error;
+}
 const nonArchiveSitemaps = (seoManifest.sitemap_files || []).filter((file) => !/^sitemap-(?:calendar|days)-\d+\.xml$/.test(file));
 seoManifest.sitemap_files = [...nonArchiveSitemaps, ...archiveSitemapFiles];
 seoManifest.indexed_calendar_years = manifest.bs_years;
