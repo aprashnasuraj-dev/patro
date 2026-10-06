@@ -2,6 +2,7 @@ import connectedWorker from "./connected-entry";
 import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
+import { historyEventPageResponse } from "./history-event-page";
 import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
@@ -9,6 +10,7 @@ import { speechApiResponse } from "./speech";
 /**
  * Production wrapper:
  * - speech stays uncached because it is user/input specific;
+ * - sourced history-event pages render dynamically from one compact static index;
  * - deterministic festival identities/occurrences are served from build assets before
  *   legacy festival redirects, so they do not spend D1 reads;
  * - public reference/calendar/history routes use Cache API first, then optional KV/R2,
@@ -24,6 +26,9 @@ const optimizedWorker = {
 
     const speech = await speechApiResponse(request, env);
     if (speech) return speech;
+
+    const historyEvent = await historyEventPageResponse(request, env as any);
+    if (historyEvent) return historyEvent;
 
     const festival = await staticFestivalResponse(request, env as any);
     if (festival) return festival;
