@@ -59,6 +59,16 @@ function cleanPath(pathname: string) {
   return pathname.replace(/\/+$/, "") || "/";
 }
 
+function isHistoryDayPath(pathname: string) {
+  const match = cleanPath(pathname).match(/^\/on-this-day\/(\d{2})-(\d{2})$/);
+  if (!match) return false;
+  const month = Number(match[1]);
+  const day = Number(match[2]);
+  if (month < 1 || month > 12) return false;
+  const maxDay = new Date(Date.UTC(2000, month, 0)).getUTCDate();
+  return day >= 1 && day <= maxDay;
+}
+
 function legacyRedirectResponse(request: Request) {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
   const url = new URL(request.url);
@@ -77,6 +87,7 @@ function isSpaPath(pathname: string) {
   const path = cleanPath(pathname);
   if (path === "/tools/sw.js") return false;
   return SPA_EXACT.has(path)
+    || isHistoryDayPath(path)
     || path.startsWith("/calendar/")
     || path.startsWith("/date/")
     || path.startsWith("/countdown/")
@@ -107,7 +118,7 @@ function secureSpaResponse(request: Request, response: Response, seoSource = "ru
   if (isPrivateSpaPath(path)) {
     headers.set("x-robots-tag", "noindex, nofollow");
     headers.set("cache-control", "private, no-store, max-age=0");
-  } else if (SEARCH_NOINDEX_EXACT.has(path)) {
+  } else if (SEARCH_NOINDEX_EXACT.has(path) || isHistoryDayPath(path)) {
     headers.set("x-robots-tag", "noindex, follow");
   }
   return new Response(request.method === "HEAD" ? null : response.body, {
