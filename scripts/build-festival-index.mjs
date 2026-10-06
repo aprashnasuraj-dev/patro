@@ -36,6 +36,7 @@ for(const [ad,items] of holidays.entries()){
       source_urls:new Set(),
       verified_at:new Set(),
       record_ids:new Set(),
+      records:[],
     };
     occurrence.dates.add(ad);
     if(item?.effect)occurrence.effects.add(String(item.effect));
@@ -43,6 +44,21 @@ for(const [ad,items] of holidays.entries()){
     if(item?.sourceUrl)occurrence.source_urls.add(String(item.sourceUrl));
     if(item?.verifiedAt)occurrence.verified_at.add(String(item.verifiedAt));
     if(item?.recordId)occurrence.record_ids.add(String(item.recordId));
+    const record={
+      date:ad,
+      record_id:String(item?.recordId||""),
+      kind:String(item?.kind||""),
+      key:String(item?.key||""),
+      name:String(item?.name||""),
+      name_en:String(item?.nameEn||""),
+      effect:String(item?.effect||""),
+      source:String(item?.source||""),
+      source_url:String(item?.sourceUrl||""),
+      verified_at:String(item?.verifiedAt||""),
+      value:item?.factValue&&typeof item.factValue==="object"?item.factValue:null,
+    };
+    const recordKey=`${record.date}|${record.record_id}|${record.kind}|${record.key}|${record.name}`;
+    if(!occurrence.records.some((row)=>`${row.date}|${row.record_id}|${row.kind}|${row.key}|${row.name}`===recordKey))occurrence.records.push(record);
     festival.years.set(bsYear,occurrence);
     festivalMap.set(slug,festival);
   }
@@ -63,6 +79,7 @@ for(const festival of [...festivalMap.values()].sort((a,b)=>a.slug.localeCompare
       source_urls:[...occurrence.source_urls].sort(),
       verified_at:[...occurrence.verified_at].sort(),
       record_ids:[...occurrence.record_ids].sort(),
+      records:[...occurrence.records].sort((a,b)=>`${a.date}|${a.key}|${a.record_id}`.localeCompare(`${b.date}|${b.key}|${b.record_id}`)),
     };
     const route=`/festivals/${festival.slug}/${year}`;
     if(isIndexableRoute(route))routes.push(route);
