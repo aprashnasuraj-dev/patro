@@ -1,9 +1,9 @@
 // Single runtime definition of the indexable BS-year window. scripts/seo-config.mjs uses the
 // identical formula at build time, so a calendar/date URL is submitted exactly when runtime
-// leaves it indexable. The current factual cohort is 35 years back + current + 10 years forward
-// (46 BS years total when the archive contains the complete range).
+// leaves it indexable. The current factual cohort is 40 years back + current + 10 years forward
+// (51 BS years total when the archive contains the complete range).
 
-export const INDEXABLE_PAST_YEARS = 35;
+export const INDEXABLE_PAST_YEARS = 40;
 export const INDEXABLE_FUTURE_YEARS = 10;
 
 /** Approximate Bikram Sambat year in Asia/Kathmandu (BS New Year treated as 14 April). */
