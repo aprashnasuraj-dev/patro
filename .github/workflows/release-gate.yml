@@ -102,6 +102,11 @@ jobs:
             test -s "$file"
             if grep -Eiq 'Loading\.\.\.|>Loading<|>लोड हुँदै' "$file"; then echo "Terminal loading placeholder found in $file"; exit 1; fi
           done
+      - name: Verify immutable R2 release inventory
+        id: r2_inventory
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/cloudflare/verify-r2-release-inventory.mjs
       - name: Dependency audit
         id: dependency_audit
         continue-on-error: true
@@ -168,6 +173,7 @@ jobs:
           CLOUDFLARE: ${{ steps.cloudflare.outcome }}
           ROUTER_BOUNDARIES: ${{ steps.router_boundaries.outcome }}
           ARTIFACTS: ${{ steps.artifacts.outcome }}
+          R2_INVENTORY: ${{ steps.r2_inventory.outcome }}
           DEPENDENCY_AUDIT: ${{ steps.dependency_audit.outcome }}
           SECRET_SCAN: ${{ steps.secret_scan.outcome }}
           BROWSER_RUNTIME: ${{ steps.browser_runtime.outcome }}
@@ -184,6 +190,7 @@ jobs:
           check cloudflare "$CLOUDFLARE"
           check router_boundaries "$ROUTER_BOUNDARIES"
           check artifacts "$ARTIFACTS"
+          check r2_inventory "$R2_INVENTORY"
           check dependency_audit "$DEPENDENCY_AUDIT"
           check secret_scan "$SECRET_SCAN"
           check browser_runtime "$BROWSER_RUNTIME"
@@ -245,7 +252,7 @@ jobs:
           HISTORY_PRIME_CONCURRENCY: "8"
           HISTORY_PRIME_SETTLE_MS: "2000"
         run: node scripts/cloudflare/prime-history-cache.mjs
-      - name: Smoke test deployed Cloudflare runtime
+      - name: Smoke test deployed Cloudflare runtime and R2 archive backends
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         run: |
@@ -273,3 +280,4 @@ jobs:
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/sync?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/on-this-day?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/time-machine?limit=800" >/dev/null
+          node scripts/cloudflare/smoke-r2-release.mjs
