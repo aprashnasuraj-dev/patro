@@ -147,3 +147,8 @@ async function main() {
 }
 
 await main();
+// Calendar shards are generated from the same repository-validated snapshot and copied to
+// public/ before Vite runs, giving calendar APIs an R2/static availability floor when D1
+// daily reads are exhausted. Keep this chained to the existing build hook instead of adding
+// another package-script dependency.
+await import("./build-calendar-r2.mjs");
