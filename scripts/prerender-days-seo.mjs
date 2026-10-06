@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { SITE, BS_MONTHS, INDEXED_CALENDAR_YEARS, calendarRoute, calendarYearRoute } from "./seo-config.mjs";
+import { SITE, BS_MONTHS, PRERENDER_CALENDAR_YEARS, calendarRoute, calendarYearRoute } from "./seo-config.mjs";
 import { loadCalendarSnapshot, loadHolidayMap, nsText, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
@@ -8,10 +8,10 @@ const shellPath = resolve(root, "dist/index.html");
 const shell = await readFile(shellPath, "utf8");
 if (!shell.includes('id="root"')) throw new Error("Day SEO prerender requires the Vite root shell");
 
-const indexedYears = new Set(INDEXED_CALENDAR_YEARS);
-const rows = (await loadCalendarSnapshot()).filter((row) => indexedYears.has(Number(row.bs?.year)));
+const prerenderYears = new Set(PRERENDER_CALENDAR_YEARS);
+const rows = (await loadCalendarSnapshot()).filter((row) => prerenderYears.has(Number(row.bs?.year)));
 const holidays = await loadHolidayMap();
-if (rows.length < 1700) throw new Error(`Day SEO coverage unexpectedly small: ${rows.length}`);
+if (rows.length < 1700) throw new Error(`Day SEO hot-cohort coverage unexpectedly small: ${rows.length}`);
 
 const DEV = ["०","१","२","३","४","५","६","७","८","९"];
 const toDev = (value) => String(value).replace(/\d/g, (d) => DEV[Number(d)]);
@@ -114,4 +114,4 @@ for (let i = 0; i < rows.length; i++) {
   await writeFile(file, render(rows[i], i), "utf8");
   count++;
 }
-console.log(`SEO day prerender emitted ${count} factual date pages from the validated local calendar archive.`);
+console.log(`SEO day prerender emitted ${count} hot factual date pages; long-tail indexable dates are Worker-rendered on demand.`);

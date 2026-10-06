@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "2026-10-05-runtime-recovery-v4";
+const SW_REVISION = "2026-10-06-r2-archive-recovery-v1";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -17,7 +17,6 @@ const STALE_CACHE_PREFIXES = [
   "aafnai-pwa-",
   "patro-shell-",
   "mero-patro-shell-",
-  "meropatro-pwa-",
   "आफ्नै पात्रो-pwa-",
 ];
 
@@ -33,11 +32,7 @@ function runWhenIdle(task: () => void) {
 async function prewarmOfflineModules() {
   if (!navigator.onLine) return;
   for (const load of OFFLINE_MODULE_LOADERS) {
-    try {
-      await load();
-    } catch {
-      // Offline prewarming is best-effort and only runs after an explicit prepare-offline action.
-    }
+    try { await load(); } catch { /* best-effort offline prewarm */ }
   }
 }
 
@@ -48,9 +43,7 @@ async function clearStaleRuntimeCaches() {
     const names = await caches.keys();
     await Promise.all(names.filter((name) => STALE_CACHE_PREFIXES.some((prefix) => name.startsWith(prefix))).map((name) => caches.delete(name)));
     localStorage.setItem(CACHE_EPOCH_KEY, SW_REVISION);
-  } catch {
-    // Cache recovery must never prevent the live application from booting.
-  }
+  } catch { /* cache recovery must never block app boot */ }
 }
 
 function installControllerRefresh() {
@@ -60,9 +53,7 @@ function installControllerRefresh() {
     try {
       if (sessionStorage.getItem(RELOAD_EPOCH_KEY) === SW_REVISION) return;
       sessionStorage.setItem(RELOAD_EPOCH_KEY, SW_REVISION);
-    } catch {
-      // Session storage is optional; one guarded reload is still safe.
-    }
+    } catch { /* session storage is optional */ }
     refreshing = true;
     window.location.reload();
   });
@@ -71,15 +62,12 @@ function installControllerRefresh() {
 export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   installControllerRefresh();
-
-  // Normal browsing stays light. Full offline preparation now happens only after an explicit request.
   window.addEventListener("patro:prepare-offline", () => {
     navigator.serviceWorker.ready.then((registration) => {
       registration.active?.postMessage({ type: "WARM_OFFLINE" });
     }).catch(() => undefined);
     runWhenIdle(() => { void prewarmOfflineModules(); });
   });
-
   window.addEventListener("load", () => {
     navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`, { scope: "/", updateViaCache: "none" }).then(async (registration) => {
       try {
@@ -87,11 +75,7 @@ export function registerPatroServiceWorker() {
         await registration.update();
         if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
-      } catch {
-        // The application remains fully usable online if service-worker setup is unavailable.
-      }
-    }).catch((error) => {
-      console.warn("Service worker registration failed", error);
-    });
+      } catch { /* app remains usable if service worker setup fails */ }
+    }).catch((error) => console.warn("Service worker registration failed", error));
   });
 }

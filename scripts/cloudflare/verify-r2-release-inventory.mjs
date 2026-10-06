@@ -21,6 +21,7 @@ for(const file of calendar.files){
   expect(file?.key?.startsWith("datasets/calendar/v1/"),`invalid calendar key ${file?.key}`);
   const rel=String(file.key).replace(/^datasets\/calendar\/v1\//,"");
   expect(existsSync(resolve(root,".cloudflare/calendar-r2",rel)),`missing generated calendar shard ${rel}`);
+  expect(existsSync(resolve(root,"dist/data/calendar",rel)),`missing packaged static calendar fallback ${rel}`);
 }
 const requiredFamilies=["nepal-sambat","lhosar","tharu","mithila","kirat","hijri"];
 expect(JSON.stringify(community.primary_families)===JSON.stringify(requiredFamilies),`community primary families mismatch: ${JSON.stringify(community.primary_families)}`);
@@ -31,19 +32,22 @@ for(const family of requiredFamilies){
   expect(files.length>0,`no R2 archive files for ${family}`);
 }
 expect(!community.primary_families.includes("chakra"),"samudaya/chakra must not become a seventh archive family");
-expect(!existsSync(resolve(root,"dist/data/calendar")),"bulk calendar archive leaked into dist/data/calendar");
+expect(existsSync(resolve(root,"dist/data/calendar/ad/2026.json")),"AD 2026 static fallback missing from dist");
+expect(existsSync(resolve(root,"dist/data/calendar/bs")),"BS static fallback directory missing from dist");
 
+const loader=readFileSync(resolve(root,"worker/calendar-archive.ts"),"utf8");
 const archive=readFileSync(resolve(root,"worker/public-archive-pages.ts"),"utf8");
 const fast=readFileSync(resolve(root,"worker/calendar-fast.ts"),"utf8");
 const source=readFileSync(resolve(root,"worker/patro-source.ts"),"utf8");
 const data=readFileSync(resolve(root,"worker/data-export.ts"),"utf8");
-expect(archive.includes('"x-patro-backend":"cloudflare-r2-public-archive"'),"public archive renderer lacks R2 backend header");
-expect(archive.includes('"x-patro-backend":"r2-required"'),"public archive renderer does not fail closed when R2 is unavailable");
+expect(loader.includes('CALENDAR_PREFIX = "datasets/calendar/v1"'),"shared calendar reader prefix drifted from writer");
+expect(loader.includes('backend: "static-fallback"'),"shared calendar reader lacks static fallback backend");
+expect(loader.includes('"retry-after": "300"'),"calendar 503 response lacks Retry-After 300");
 expect(!archive.includes("env.DB"),"public archive renderer still references D1");
-expect(fast.includes("D1 is deliberately not a normal fallback"),"calendar fast path does not encode fail-closed policy");
+expect(fast.includes("D1 is deliberately not a normal fallback"),"calendar fast path does not encode immutable R2/static policy");
 expect(!fast.includes("cloudflare-d1-calendar"),"calendar fast path still contains a D1 backend");
 expect(source.includes("createArchivePatroSource"),"canonical runtime source lacks R2 archive adapter");
-expect(data.includes("datasets/calendar/v1"),"calendar export is not R2-backed");
+expect(data.includes("loadCalendarShard"),"calendar export is not using shared R2/static loader");
 
 console.log(JSON.stringify({
   ok:true,
@@ -57,5 +61,5 @@ console.log(JSON.stringify({
   community_archive_routes:community.archive_route_count,
   community_families:community.primary_families,
   community_source_version:community.source_version,
-  dist_bulk_calendar:false
+  dist_calendar_fallback:true
 },null,2));

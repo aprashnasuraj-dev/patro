@@ -1,21 +1,17 @@
 import { bsToAd, daysInBsMonth } from "../packages/core/src";
+import { calendarArchiveUnavailable, loadCalendarShard, type CalendarArchiveBackend, type CalendarArchiveEnv } from "./calendar-archive";
 
-type R2ObjectLike = { text(): Promise<string> };
-type R2Like = { get(key: string): Promise<R2ObjectLike | null> };
 type AssetBinding = { fetch(request: Request): Promise<Response> };
-type CalendarEnv = {
-  ARCHIVE?: R2Like;
+type CalendarEnv = CalendarArchiveEnv & {
   ASSETS?: AssetBinding;
   CALENDAR_COVERAGE_START?: string;
   CALENDAR_COVERAGE_END?: string;
   CALENDAR_SOURCE_VERSION?: string;
 };
 
-type SourceRows = { rows: any[]; backend: string };
+type SourceRows = { rows: any[]; backend: CalendarArchiveBackend };
 
 const CACHE = "public, max-age=60, s-maxage=3600, stale-while-revalidate=86400";
-const CALENDAR_R2_PREFIX = "datasets/calendar/v1";
-const CALENDAR_ASSET_PREFIX = "/data/calendar";
 
 function json(body: unknown, status = 200, backend = "cloudflare-native-indexed-calendar") {
   return new Response(JSON.stringify(body), {
@@ -29,7 +25,7 @@ function json(body: unknown, status = 200, backend = "cloudflare-native-indexed-
   });
 }
 function unavailable() {
-  return json({ success:false, error:"calendar_archive_unavailable" }, 503, "r2-required");
+  return calendarArchiveUnavailable(JSON.stringify({ success:false, error:"calendar_archive_unavailable" }), "application/json; charset=utf-8");
 }
 function validDate(value: string | null) {
   if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -87,56 +83,29 @@ function coverage(env: CalendarEnv) {
     rows: 77070,
   };
 }
-function parseYearShard(text: string, calendar: "ad" | "bs", year: number): any[] | null {
-  try {
-    const doc = JSON.parse(text);
-    if (Number(doc?.schema) !== 1 || doc?.calendar !== calendar || Number(doc?.year) !== year || !Array.isArray(doc?.rows)) return null;
-    return doc.rows.map(parseCalendar).filter(Boolean);
-  } catch { return null; }
-}
-async function r2YearRows(env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
-  if (!env.ARCHIVE) return null;
-  try {
-    const object = await env.ARCHIVE.get(`${CALENDAR_R2_PREFIX}/${calendar}/${year}.json`);
-    if (!object) return null;
-    const rows = parseYearShard(await object.text(), calendar, year);
-    return rows ? { rows, backend: "cloudflare-r2-calendar" } : null;
-  } catch { return null; }
-}
-async function assetYearRows(request: Request, env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
-  // Development/offline compatibility only. scripts/release-data-guard.mjs removes the bulk
-  // calendar asset tree from production dist, so production immutable reads resolve from R2.
-  if (!env.ASSETS) return null;
-  try {
-    const url = new URL(request.url);
-    url.pathname = `${CALENDAR_ASSET_PREFIX}/${calendar}/${year}.json`;
-    url.search = ""; url.hash = "";
-    const response = await env.ASSETS.fetch(new Request(url.toString(), { method:"GET", headers:{ accept:"application/json" } }));
-    if (!response.ok) return null;
-    const rows = parseYearShard(await response.text(), calendar, year);
-    return rows ? { rows, backend: "cloudflare-asset-calendar" } : null;
-  } catch { return null; }
-}
+
 async function archiveYearRows(request: Request, env: CalendarEnv, calendar: "ad" | "bs", year: number): Promise<SourceRows | null> {
-  return await r2YearRows(env, calendar, year) || await assetYearRows(request, env, calendar, year);
+  const source = await loadCalendarShard(request, env, calendar, year);
+  if (!source) return null;
+  return { rows: source.doc.rows.map(parseCalendar).filter(Boolean), backend: source.backend };
 }
 async function rowsByAdRange(request: Request, env: CalendarEnv, start: string, end: string): Promise<SourceRows | null> {
   const startYear = Number(start.slice(0,4));
   const endYear = Number(end.slice(0,4));
   const rows: any[] = [];
-  const backends = new Set<string>();
+  let backend: CalendarArchiveBackend = "r2";
   for (let year = startYear; year <= endYear; year++) {
     const source = await archiveYearRows(request, env, "ad", year);
     if (!source) return null;
-    backends.add(source.backend);
+    if (source.backend === "static-fallback") backend = "static-fallback";
     rows.push(...source.rows);
   }
   return {
     rows: rows.filter((row) => String(row?.ad || "") >= start && String(row?.ad || "") <= end).sort((a,b) => String(a.ad).localeCompare(String(b.ad))),
-    backend: backends.size === 1 ? [...backends][0] : "cloudflare-calendar-archive",
+    backend,
   };
 }
-async function rowByAd(request: Request, env: CalendarEnv, ad: string): Promise<{ row:any; backend:string; archiveKnown:boolean } | null> {
+async function rowByAd(request: Request, env: CalendarEnv, ad: string): Promise<{ row:any; backend:CalendarArchiveBackend; archiveKnown:boolean } | null> {
   const year = Number(ad.slice(0,4));
   const source = await archiveYearRows(request, env, "ad", year);
   if (!source) return null;
@@ -163,11 +132,11 @@ async function rowsByBsMonth(request: Request, env: CalendarEnv, year: number, m
 
 /**
  * Immutable public calendar hierarchy:
- *   production: R2 year shard (required)
- *   development/offline build: packaged static year shard may be used before the release guard.
+ *   1. R2 year shard
+ *   2. packaged static year shard in ASSETS
+ *   3. bounded 503 with Retry-After
  *
- * D1 is deliberately not a normal fallback. Missing production R2 data fails closed with 503,
- * preventing public archive/API traffic from silently consuming D1 read quota.
+ * D1 is deliberately not a normal fallback, preventing archive/API traffic from consuming D1 read quota.
  */
 export async function fastCalendarResponse(request: Request, env: CalendarEnv): Promise<Response | null> {
   if (request.method !== "GET" && request.method !== "HEAD") return null;
