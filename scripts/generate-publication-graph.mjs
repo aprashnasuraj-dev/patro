@@ -1,9 +1,11 @@
 import { createHash } from "node:crypto";
-import { mkdir, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import {
   COMMUNITY_ROUTES,
   INDEXED_CALENDAR_YEARS,
+  SITE,
   TOOL_ROUTES,
   calendarRoute,
   calendarYearRoute,
@@ -15,11 +17,16 @@ const CANDIDATE_AD_START = 1996;
 const CANDIDATE_AD_END = 2035;
 const indexedYears = new Set(INDEXED_CALENDAR_YEARS.map(Number));
 const privatePrefixes = ["/me", "/admin", "/auth", "/api", "/compat-api", "/settings", "/family"];
+// PR #78 (or an equivalent future implementation) provides deterministic source-backed
+// festival HTML. Keep festival entities gated until that renderer actually exists in the
+// combined checkout, so this graph never advertises unshipped routes.
+const festivalPublishingEnabled = existsSync(resolve(root, "scripts/prerender-festivals.mjs"));
 
 const cleanSlug = (value) => String(value || "").trim().toLowerCase().replace(/[^a-z0-9\p{L}-]+/gu, "-").replace(/^-+|-+$/g, "");
 const adYear = (ad) => Number(String(ad || "").slice(0, 4));
 const month2 = (value) => String(Number(value)).padStart(2, "0");
 const stableHash = (value) => createHash("sha256").update(value).digest("hex");
+const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (ch) => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
 
 const rows = await loadCalendarSnapshot();
 const holidays = await loadHolidayMap();
@@ -124,8 +131,8 @@ for (const festival of [...festivals.values()].sort((a,b) => a.slug.localeCompar
     sourceRef: "validated-holiday-map",
     sourceVersion: "repository-holiday-snapshot",
     coverageStatus: "source-backed",
-    publicationStatus: "candidate",
-    indexable: false,
+    publicationStatus: festivalPublishingEnabled ? "public" : "candidate",
+    indexable: festivalPublishingEnabled,
     label: [...festival.names][0] || festival.slug,
     relations: occurrenceIds,
   });
@@ -138,8 +145,8 @@ for (const festival of [...festivals.values()].sort((a,b) => a.slug.localeCompar
       sourceRef: "validated-holiday-map",
       sourceVersion: stableHash(JSON.stringify({ dates, sources:[...occurrence.sources].sort() })).slice(0, 16),
       coverageStatus: "source-backed",
-      publicationStatus: "candidate",
-      indexable: false,
+      publicationStatus: festivalPublishingEnabled ? "public" : "candidate",
+      indexable: festivalPublishingEnabled,
       facts: { bsYear: year, dates },
       relations: [`festival:${festival.slug}`, ...dates.map((date) => `day:${date}`)],
     });
@@ -188,6 +195,7 @@ const graph = {
   candidateWindow: { adStart: CANDIDATE_AD_START, adEnd: CANDIDATE_AD_END },
   indexedCalendarYears: [...indexedYears].sort((a,b)=>a-b),
   privatePrefixes,
+  festivalPublishingEnabled,
   sourceDigest: stableHash(canonicalPayload),
   counts: {
     total: entities.length,
@@ -204,4 +212,34 @@ const graph = {
 
 await mkdir(resolve(root, "public"), { recursive:true });
 await writeFile(resolve(root, "public/publication-graph.json"), JSON.stringify(graph, null, 2) + "\n", "utf8");
-console.log(`Publication graph: ${graph.counts.total} entities (${graph.counts.days} days; ${graph.counts.indexable} indexable, ${graph.counts.candidate} gated candidates).`);
+
+if (festivalPublishingEnabled) {
+  const festivalRoutes = entities
+    .filter((entity) => entity.indexable && (entity.type === "festival" || entity.type === "festival-occurrence"))
+    .map((entity) => entity.canonical);
+  const festivalSitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...festivalRoutes.map((route) => `  <url><loc>${escapeXml(SITE + route)}</loc></url>`),
+    '</urlset>',
+    '',
+  ].join("\n");
+  await writeFile(resolve(root, "public/sitemap-festivals.xml"), festivalSitemap, "utf8");
+
+  const sitemapIndexPath = resolve(root, "public/sitemap.xml");
+  let sitemapIndex = await readFile(sitemapIndexPath, "utf8");
+  const festivalSitemapUrl = `${SITE}/sitemap-festivals.xml`;
+  if (!sitemapIndex.includes(festivalSitemapUrl)) {
+    sitemapIndex = sitemapIndex.replace("</sitemapindex>", `  <sitemap><loc>${escapeXml(festivalSitemapUrl)}</loc></sitemap>\n</sitemapindex>`);
+    await writeFile(sitemapIndexPath, sitemapIndex, "utf8");
+  }
+
+  const seoManifestPath = resolve(root, "public/seo-manifest.json");
+  const seoManifest = JSON.parse(await readFile(seoManifestPath, "utf8"));
+  seoManifest.sitemap_files = [...new Set([...(seoManifest.sitemap_files || []), "sitemap-festivals.xml"])];
+  seoManifest.indexed_festival_route_count = festivalRoutes.length;
+  seoManifest.publication_graph = `${SITE}/publication-graph.json`;
+  await writeFile(seoManifestPath, JSON.stringify(seoManifest, null, 2) + "\n", "utf8");
+}
+
+console.log(`Publication graph: ${graph.counts.total} entities (${graph.counts.days} days; ${graph.counts.indexable} indexable, ${graph.counts.candidate} gated candidates; festival publishing ${festivalPublishingEnabled ? "enabled" : "gated"}).`);
