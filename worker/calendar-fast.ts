@@ -150,6 +150,12 @@ function bsBounds(year: number, month: number) {
     return { start: bsToAd({ year, month, day: 1 }), end: bsToAd({ year, month, day: days }) };
   } catch { return null; }
 }
+async function rowsByAdMonth(request: Request, env: CalendarEnv, year: number, month: number): Promise<SourceRows | null> {
+  const source = await archiveYearRows(request, env, "ad", year);
+  if (!source) return null;
+  const prefix = `${year}-${String(month).padStart(2, "0")}-`;
+  return { rows: source.rows.filter((row) => String(row?.ad || "").startsWith(prefix)), backend:source.backend };
+}
 async function rowsByBsMonth(request: Request, env: CalendarEnv, year: number, month: number): Promise<SourceRows | null> {
   const source = await archiveYearRows(request, env, "bs", year);
   return source ? { rows: source.rows.filter((row) => Number(row?.bs?.month) === month), backend:source.backend } : null;
@@ -196,6 +202,15 @@ export async function fastCalendarResponse(request: Request, env: CalendarEnv): 
     const year = Number(monthMatch[1]);
     const month = Number(monthMatch[2]);
     const mode = url.searchParams.get("calendar") || (year > 2050 ? "bs" : "ad");
+    if (mode === "ad") {
+      if (!Number.isInteger(year) || !Number.isInteger(month) || month < 1 || month > 12) return json({ ok:false, error:"invalid_ad_month" }, 400);
+      const source = await rowsByAdMonth(request, env, year, month);
+      if (!source) return unavailable();
+      if (!source.rows.length) return json({ ok:false, error:"date_outside_archive" }, 404, source.backend);
+      const days = source.rows.map(shape);
+      const response = json({ ok: true, calendar: "ad", year, month, count: days.length, days }, 200, source.backend);
+      return request.method === "HEAD" ? new Response(null, { status: response.status, headers: response.headers }) : response;
+    }
     if (mode === "bs") {
       const bounds = bsBounds(year, month);
       if (!bounds) return json({ ok:false, error:"invalid_bs_month" }, 400);
