@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 const read = (path) => readFileSync(new URL("../" + path, import.meta.url), "utf8");
@@ -87,4 +87,52 @@ test("Step 3 renders festivals as people/community observances, not Schema.org E
   assert.ok(occurrenceHtml, "expected at least one prerendered festival occurrence page");
   assert.ok(occurrenceHtml.includes('"@type":"WebPage"'));
   assert.ok(!occurrenceHtml.includes('"@type":"Event"'));
+});
+
+test("Step 10 calendar R2 manifest is complete, deterministic and absent from deploy static bulk", () => {
+  const manifest = JSON.parse(read(".cloudflare/calendar-r2/manifest.json"));
+  assert.equal(manifest.row_count, 77070);
+  assert.equal(manifest.ad_start, "1826-04-11");
+  assert.equal(manifest.ad_end, "2037-04-13");
+  assert.match(manifest.source_version, /^sha256:[a-f0-9]{64}$/);
+  assert.ok(Array.isArray(manifest.ad_years) && manifest.ad_years.length > 200);
+  assert.ok(Array.isArray(manifest.bs_years) && manifest.bs_years.length > 200);
+  assert.equal(manifest.files.length, manifest.ad_years.length + manifest.bs_years.length);
+  assert.ok(manifest.files.every((row) => row.key?.startsWith("datasets/calendar/v1/") && row.row_count > 0));
+  assert.equal(existsSync(resolve(new URL("../dist/data/calendar", import.meta.url).pathname)), false, "bulk calendar shards must not survive into dist");
+});
+
+test("Step 4/10 community R2 manifest contains exactly six archive families", () => {
+  const manifest = JSON.parse(read(".cloudflare/community-r2/manifest.json"));
+  assert.deepEqual(manifest.primary_families, ["nepal-sambat", "lhosar", "tharu", "mithila", "kirat", "hijri"]);
+  assert.match(manifest.source_version, /^sha256:[a-f0-9]{64}$/);
+  assert.ok(manifest.archive_route_count > 0);
+  assert.equal(manifest.files.length, manifest.archive_route_count);
+  for (const family of manifest.primary_families) {
+    const rows = manifest.files.filter((row) => row.family === family);
+    assert.ok(rows.length > 0, `missing archive years for ${family}`);
+    assert.ok(rows.every((row) => row.key.startsWith("datasets/community/v1/") && row.route.startsWith(family === "nepal-sambat" ? "/nepal-sambat/" : `/samudaya/${family}/`)));
+  }
+  assert.ok(!manifest.primary_families.includes("chakra"));
+});
+
+test("immutable public archive rendering is R2-first and fail-closed instead of D1-per-page", () => {
+  const pages = read("worker/public-archive-pages.ts");
+  const year = read("worker/year-page.ts");
+  const gateway = read("worker/agent-gateway.ts");
+  const seed = read(".github/workflows/seed-history-r2.yml");
+
+  assert.ok(pages.includes('const CALENDAR_PREFIX = "datasets/calendar/v1"'));
+  assert.ok(pages.includes('const COMMUNITY_PREFIX = "datasets/community/v1"'));
+  assert.ok(pages.includes('"x-patro-backend":"cloudflare-r2-public-archive"'));
+  assert.ok(!pages.includes("createD1PatroSource"));
+  assert.ok(!pages.includes("env.DB"));
+  assert.ok(year.includes("Calendar R2 archive unavailable"));
+  assert.ok(year.includes('"x-patro-backend":"r2-required"'));
+  const archiveCall = gateway.indexOf("const archive = await publicArchivePageResponse(request, env)");
+  const agentPageCall = gateway.indexOf("const page = await agentPageResponse(request, env)");
+  assert.ok(archiveCall >= 0 && agentPageCall >= 0 && archiveCall < agentPageCall, "R2 archive handling must run before legacy agent page handling");
+  assert.ok(seed.includes("manifest.files"));
+  assert.ok(!seed.includes("seq 2016 2035"));
+  assert.ok(!seed.includes("seq 2072 2092"));
 });

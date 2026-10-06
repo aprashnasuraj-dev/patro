@@ -1,5 +1,5 @@
 import { createPatroAdapter } from "../lib/patro";
-import { createD1PatroSource, type PatroEnv } from "./patro-source";
+import { createArchivePatroSource, type PatroEnv } from "./patro-source";
 
 const MODERN = "2026-07-28";
 const LEGACY = "2025-11-25";
@@ -54,43 +54,22 @@ function responseHeaders(extra: Record<string, string> = {}) {
     ...extra
   };
 }
-
 function jsonRpc(id: unknown, result: any, status = 200, modern = false) {
   const body: any = { jsonrpc: "2.0", id: id ?? null, result };
   if (modern && body.result && typeof body.result === "object") {
-    body.result._meta = {
-      ...(body.result._meta || {}),
-      "io.modelcontextprotocol/serverInfo": SERVER_INFO
-    };
+    body.result._meta = { ...(body.result._meta || {}), "io.modelcontextprotocol/serverInfo": SERVER_INFO };
   }
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {})
-  });
+  return new Response(JSON.stringify(body), { status, headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {}) });
 }
-
 function rpcError(id: unknown, code: number, message: string, status = 200, data?: any, modern = false) {
-  return new Response(JSON.stringify({ jsonrpc: "2.0", id: id ?? null, error: { code, message, ...(data === undefined ? {} : { data }) } }), {
-    status,
-    headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {})
-  });
+  return new Response(JSON.stringify({ jsonrpc: "2.0", id: id ?? null, error: { code, message, ...(data === undefined ? {} : { data }) } }), { status, headers: responseHeaders(modern ? { "MCP-Protocol-Version": MODERN } : {}) });
 }
-
 function toolResult(value: unknown, isError = false) {
-  return {
-    resultType: "complete",
-    content: [{ type: "text", text: JSON.stringify(value, null, 2) }],
-    structuredContent: value,
-    ...(isError ? { isError: true } : {})
-  };
+  return { resultType: "complete", content: [{ type: "text", text: JSON.stringify(value, null, 2) }], structuredContent: value, ...(isError ? { isError: true } : {}) };
 }
-
 function kathmanduAccessDate() {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit"
-  }).format(new Date());
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kathmandu", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 }
-
 function validateModernEnvelope(request: Request, message: any) {
   const version = request.headers.get("MCP-Protocol-Version");
   if (version !== MODERN) return { ok: false, reason: "missing_or_unsupported_protocol_version" };
@@ -103,17 +82,19 @@ function validateModernEnvelope(request: Request, message: any) {
 }
 
 async function callTool(name: string, args: any, env: PatroEnv) {
-  const adapter = createPatroAdapter(createD1PatroSource(env));
+  // Calendar reads use R2. Mutable/correctable festival records may still resolve through the
+  // source's D1-backed listRecords implementation.
+  const adapter = createPatroAdapter(createArchivePatroSource(env));
   if (name === "get_today") {
     const value = await adapter.getTodayNepal();
-    return value ? toolResult(value) : toolResult({ error: "calendar_unavailable" }, true);
+    return value ? toolResult(value) : toolResult({ error: "calendar_archive_unavailable" }, true);
   }
   if (name === "convert_date") {
     const hasAd = typeof args?.ad === "string" && args.ad.length > 0;
     const hasBs = typeof args?.bs === "string" && args.bs.length > 0;
     if (hasAd === hasBs) return toolResult({ error: "provide_exactly_one_of_ad_or_bs" }, true);
     const value = hasAd ? await adapter.convertAdToBs(args.ad) : await adapter.convertBsToAd(args.bs);
-    return value ? toolResult(value) : toolResult({ error: "date_outside_archive" }, true);
+    return value ? toolResult(value) : toolResult({ error: "date_outside_or_archive_unavailable" }, true);
   }
   if (name === "get_festival") {
     const slug = typeof args?.slug === "string" ? args.slug.trim() : "";
@@ -138,10 +119,7 @@ export async function mcpResponse(request: Request, env: PatroEnv): Promise<Resp
       tools: TOOLS.map(({ name, title, description }) => ({ name, title, description })),
       citation: `Cite as: Aafnai Patro (aafnaipatro.com), accessed ${kathmanduAccessDate()}`
     };
-    return new Response(request.method === "HEAD" ? null : JSON.stringify(body), {
-      status: 200,
-      headers: responseHeaders({ "cache-control": "public, max-age=300" })
-    });
+    return new Response(request.method === "HEAD" ? null : JSON.stringify(body), { status: 200, headers: responseHeaders({ "cache-control": "public, max-age=300" }) });
   }
   if (request.method !== "POST") return new Response(null, { status: 405, headers: responseHeaders({ allow: "GET, HEAD, POST" }) });
 
@@ -151,11 +129,7 @@ export async function mcpResponse(request: Request, env: PatroEnv): Promise<Resp
 
   const headerVersion = request.headers.get("MCP-Protocol-Version");
   const modern = headerVersion === MODERN || rpc.method === "server/discover";
-
-  if (headerVersion && headerVersion !== MODERN && headerVersion !== LEGACY) {
-    return rpcError(rpc.id, -32022, "Unsupported protocol version", 400, { supportedVersions: [MODERN, LEGACY] });
-  }
-
+  if (headerVersion && headerVersion !== MODERN && headerVersion !== LEGACY) return rpcError(rpc.id, -32022, "Unsupported protocol version", 400, { supportedVersions: [MODERN, LEGACY] });
   if (headerVersion === MODERN) {
     const envelope = validateModernEnvelope(request, rpc);
     if (!envelope.ok) return rpcError(rpc.id, -32020, "MCP request headers do not match the request envelope", 400, { reason: envelope.reason }, true);
@@ -163,34 +137,16 @@ export async function mcpResponse(request: Request, env: PatroEnv): Promise<Resp
 
   if (rpc.method === "server/discover") {
     return jsonRpc(rpc.id, {
-      resultType: "complete",
-      supportedVersions: [MODERN],
-      serverInfo: SERVER_INFO,
-      capabilities: { tools: {} },
-      instructions: "Use get_today for the Nepal-date answer, convert_date for BS↔AD conversion, and get_festival for a festival lookup. Results come from the same Aafnai Patro calendar source used by the site.",
-      ttlMs: 3600000,
-      cacheScope: "public"
+      resultType: "complete", supportedVersions: [MODERN], serverInfo: SERVER_INFO, capabilities: { tools: {} },
+      instructions: "Use get_today for the Nepal-date answer, convert_date for BS↔AD conversion, and get_festival for a festival lookup. Calendar results come from Aafnai Patro's immutable R2 archive.",
+      ttlMs: 3600000, cacheScope: "public"
     }, 200, true);
   }
-
   if (rpc.method === "initialize") {
-    return new Response(JSON.stringify({
-      jsonrpc: "2.0", id: rpc.id ?? null, result: {
-        protocolVersion: LEGACY,
-        capabilities: { tools: { listChanged: false } },
-        serverInfo: SERVER_INFO,
-        instructions: "Deterministic Nepali calendar tools backed by Aafnai Patro."
-      }
-    }), { status: 200, headers: responseHeaders({ "MCP-Protocol-Version": LEGACY }) });
+    return new Response(JSON.stringify({ jsonrpc: "2.0", id: rpc.id ?? null, result: { protocolVersion: LEGACY, capabilities: { tools: { listChanged: false } }, serverInfo: SERVER_INFO, instructions: "Deterministic Nepali calendar tools backed by Aafnai Patro." } }), { status: 200, headers: responseHeaders({ "MCP-Protocol-Version": LEGACY }) });
   }
   if (rpc.method === "notifications/initialized") return new Response(null, { status: 202, headers: responseHeaders({ "MCP-Protocol-Version": LEGACY }) });
-
-  if (rpc.method === "tools/list") {
-    return jsonRpc(rpc.id, {
-      ...(modern ? { resultType: "complete", ttlMs: 3600000, cacheScope: "public" } : {}),
-      tools: TOOLS
-    }, 200, modern);
-  }
+  if (rpc.method === "tools/list") return jsonRpc(rpc.id, { ...(modern ? { resultType: "complete", ttlMs: 3600000, cacheScope: "public" } : {}), tools: TOOLS }, 200, modern);
   if (rpc.method === "tools/call") {
     const name = String(rpc?.params?.name || "");
     const result = await callTool(name, rpc?.params?.arguments || {}, env);

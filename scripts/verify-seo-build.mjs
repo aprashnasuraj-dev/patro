@@ -9,16 +9,32 @@ const fail = (message) => { throw new Error(`SEO build verification failed: ${me
 const expect = (condition, message) => { if (!condition) fail(message); };
 
 const manifest = JSON.parse(await read("public/seo-manifest.json"));
+const calendarManifest = JSON.parse(await read(".cloudflare/calendar-r2/manifest.json"));
 expect(manifest.schema_version === 4, "manifest schema must be 4");
 expect(manifest.site_url === "https://aafnaipatro.com", "canonical host mismatch");
-expect(Array.isArray(manifest.indexed_calendar_years) && manifest.indexed_calendar_years.length === 5, "five-year focused index window missing");
-expect(manifest.indexed_day_route_count >= 1700, `too few factual day routes: ${manifest.indexed_day_route_count}`);
+expect(calendarManifest.row_count === 77070, `calendar R2 row count mismatch: ${calendarManifest.row_count}`);
+expect(calendarManifest.ad_start === "1826-04-11" && calendarManifest.ad_end === "2037-04-13", "calendar R2 coverage mismatch");
+expect(Array.isArray(calendarManifest.bs_years) && calendarManifest.bs_years.length > 200, "full BS archive year inventory missing");
+expect(Array.isArray(manifest.indexed_calendar_years), "indexed calendar year inventory missing");
+expect(JSON.stringify(manifest.indexed_calendar_years) === JSON.stringify(calendarManifest.bs_years), "indexed calendar years must match validated R2 BS archive coverage");
+expect(manifest.indexed_calendar_year_route_count === calendarManifest.bs_years.length, "indexed year route count mismatch");
+expect(manifest.indexed_day_route_count === calendarManifest.row_count, `factual day route count ${manifest.indexed_day_route_count} != ${calendarManifest.row_count}`);
+expect(manifest.calendar_archive_source_version === calendarManifest.source_version, "SEO/R2 source version mismatch");
+expect(manifest.calendar_archive_ad_start === calendarManifest.ad_start && manifest.calendar_archive_ad_end === calendarManifest.ad_end, "SEO/R2 archive bounds mismatch");
 expect(manifest.indexed_route_count >= 1800, `too few indexable routes: ${manifest.indexed_route_count}`);
 expect(/^Cite as: Aafnai Patro \(aafnaipatro\.com\), accessed \d{4}-\d{2}-\d{2}$/.test(String(manifest.preferred_citation || "")), "exact preferred citation missing");
 expect(manifest.llms_full_txt === "https://aafnaipatro.com/llms-full.txt", "llms-full manifest target missing");
 expect(manifest.ai_txt === "https://aafnaipatro.com/ai.txt", "ai.txt manifest target missing");
 expect(manifest.agents_json === "https://aafnaipatro.com/.well-known/agents.json", "agents manifest target missing");
 expect(manifest.mcp === "https://aafnaipatro.com/mcp", "MCP manifest target missing");
+
+const sitemapIndex = await read("public/sitemap.xml");
+for (const year of calendarManifest.bs_years) {
+  expect(manifest.sitemap_files.includes(`sitemap-calendar-${year}.xml`), `calendar sitemap missing from manifest: ${year}`);
+  expect(manifest.sitemap_files.includes(`sitemap-days-${year}.xml`), `day sitemap missing from manifest: ${year}`);
+  expect(sitemapIndex.includes(`https://aafnaipatro.com/sitemap-calendar-${year}.xml`), `calendar sitemap missing from index: ${year}`);
+  expect(sitemapIndex.includes(`https://aafnaipatro.com/sitemap-days-${year}.xml`), `day sitemap missing from index: ${year}`);
+}
 
 const pagesSitemap = await read("public/sitemap-pages.xml");
 for (const city of CITY_SLUGS) expect(pagesSitemap.includes(`https://aafnaipatro.com/today/${city}`), `diaspora today route missing from sitemap: ${city}`);
@@ -32,9 +48,10 @@ expect(rootHtml.includes('rel="describedby"') || rootHtml.includes("/llms.txt"),
 expect(!rootHtml.includes("patro-blush.vercel.app"), "retired Vercel hostname leaked into homepage");
 
 const rows = await loadCalendarSnapshot();
+expect(rows.length === calendarManifest.row_count, "Git mirror row count does not match R2 manifest");
 const sample = rows.find((row) => Number(row.bs?.year) === CURRENT_BS_YEAR && tithiText(row.panchang))
   || rows.find((row) => INDEXED_CALENDAR_YEARS.includes(Number(row.bs?.year)) && tithiText(row.panchang));
-expect(sample, "no indexed calendar sample with tithi found");
+expect(sample, "no hot prerender calendar sample with tithi found");
 
 const monthPath = calendarRoute(Number(sample.bs.year), Number(sample.bs.month));
 const monthHtml = await read(`dist${monthPath}/index.html`);
@@ -73,7 +90,7 @@ expect(llms.includes("Cite as: Aafnai Patro (aafnaipatro.com), accessed"), "llms
 expect(!llms.includes("MeroPatro"), "retired brand leaked into llms");
 
 const llmsFull = await read("public/llms-full.txt");
-expect(llmsFull.includes(`/date/${sample.ad}`), "llms-full does not contain factual day corpus");
+expect(llmsFull.includes(`/date/${sample.ad}`), "llms-full does not contain hot factual day corpus");
 expect(llmsFull.includes(`${sample.bs.year}-`), "llms-full does not contain BS facts");
 expect(llmsFull.split("\n").length >= 1700, "llms-full corpus unexpectedly small");
 for (const city of CITY_SLUGS) expect(llmsFull.includes(`/today/${city}`), `llms-full missing city page ${city}`);
@@ -108,14 +125,20 @@ if (expires) {
 const entry = await read("worker/connected-entry.ts");
 const gateway = await read("worker/agent-gateway.ts");
 const mcp = await read("worker/mcp.ts");
+const calendarFast = await read("worker/calendar-fast.ts");
+const patroSource = await read("worker/patro-source.ts");
 const jobs = await read("worker/jobs.ts");
 const jsonc = await read("wrangler.jsonc");
 expect(entry.includes('import { handleAgentSurface } from "./agent-gateway"'), "production Worker does not wire agent gateway");
 expect(gateway.includes("mcpResponse(request, env)"), "agent gateway does not wire MCP");
 expect(gateway.includes('url.pathname === "/api/agent/v1/sait"'), "agent gateway sourced sait endpoint missing");
+expect(gateway.includes("createArchivePatroSource(env)"), "agent calendar reads must use the R2 archive source");
 expect(mcp.includes('const MODERN = "2026-07-28"'), "MCP modern protocol version missing");
-expect(mcp.includes("createPatroAdapter(createD1PatroSource(env))"), "MCP must use canonical Patro adapter");
+expect(mcp.includes("createPatroAdapter(createArchivePatroSource(env))"), "MCP calendar reads must use the R2 archive source");
+expect(patroSource.includes('const CALENDAR_PREFIX="datasets/calendar/v1"'), "canonical adapter source lacks calendar R2 prefix");
+expect(calendarFast.includes("D1 is deliberately not a normal fallback"), "calendar fast path must fail closed instead of reading D1");
+expect(!calendarFast.includes("cloudflare-d1-calendar"), "calendar fast path still contains a D1 calendar backend");
 expect(jobs.includes('cron==="15 18 * * *"'), "Nepal-midnight cache purge handler missing");
 expect(jsonc.includes('"15 18 * * *"'), "Nepal-midnight cron missing from canonical Cloudflare config");
 
-console.log(`SEO/agent build verified: ${manifest.indexed_route_count} indexable routes, ${manifest.indexed_day_route_count} factual day pages; sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);
+console.log(`SEO/agent build verified: ${manifest.indexed_day_route_count} validated factual day routes across ${manifest.indexed_calendar_years.length} BS years; hot prerender sample ${sample.ad} / BS ${sample.bs.year}-${sample.bs.month}-${sample.bs.day}.`);
