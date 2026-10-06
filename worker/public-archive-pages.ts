@@ -4,8 +4,6 @@ type ArchiveEnv = Record<string, unknown> & { ARCHIVE?: R2Like; PUBLIC_SITE_URL?
 
 const CALENDAR_PREFIX = "datasets/calendar/v1";
 const COMMUNITY_PREFIX = "datasets/community/v1";
-const INDEXED_BS_START = 2053;
-const INDEXED_BS_END = 2091;
 const PRIMARY_COMMUNITIES = new Set(["lhosar", "tharu", "mithila", "kirat", "hijri"]);
 const BS_MONTHS = ["", "बैशाख", "जेठ", "असार", "साउन", "भदौ", "असोज", "कार्तिक", "मंसिर", "पुष", "माघ", "फागुन", "चैत"];
 
@@ -26,7 +24,6 @@ function currentBsYear() {
   return Number(parts.year) + (after ? 57 : 56);
 }
 function hotBsYear(year:number) { const current=currentBsYear(); return year>=current-2 && year<=current+2; }
-function indexableBsYear(year:number) { return year>=INDEXED_BS_START && year<=INDEXED_BS_END; }
 function dateLabel(ad:string) { return new Intl.DateTimeFormat("en-GB", { timeZone:"UTC", weekday:"long", year:"numeric", month:"long", day:"numeric" }).format(new Date(ad+"T00:00:00Z")); }
 function tithiText(row:any) { const p=row?.panchang||row?.archive_panchang||{}; const t=p?.tithi||row?.tithi||{}; return String(t?.ne||t?.name_ne||t?.tithi_name_ne||t?.name||"").trim(); }
 function nsText(row:any) { const ns=row?.ns||row?.nepal_sambat||{}; return typeof ns === "string" ? ns : String(ns?.formatted_ne||ns?.formatted||"").trim(); }
@@ -62,31 +59,31 @@ async function datePage(request:Request, env:ArchiveEnv, ad:string) {
   const row = shard.rows.find((item:any) => String(item?.ad||item?.ad_date||"").slice(0,10)===ad);
   if (!row) return new Response("Date outside archive", { status:404, headers:{"x-robots-tag":"noindex, nofollow"} });
   const bsYear = Number(row?.bs?.year);
-  // Keep the hot five-year cohort on the richer build-prerendered SPA path.
+  // Keep only the small current cohort on the richer prerendered SPA path; all other validated
+  // dates are permanent R2 pages and are indexable because existence is proven by this shard.
   if (hotBsYear(bsYear)) return null;
   const title = `${bsLabel(row)} · ${dateLabel(ad)} | Aafnai Patro`;
   const tithi=tithiText(row), ns=nsText(row), description=`${bsLabel(row)} = ${dateLabel(ad)}. ${tithi?`तिथि: ${tithi}. `:""}${ns?`नेपाल संवत्: ${ns}.`:""}`.trim();
   const body=`<h1>${esc(bsLabel(row))}</h1><p><strong>${esc(dateLabel(ad))}</strong> · ${esc(ad)}</p><div class="grid"><div class="card"><b>वि.सं.</b><div>${esc(bsLabel(row))}</div></div><div class="card"><b>तिथि</b><div>${esc(tithi||"—")}</div></div><div class="card"><b>नेपाल संवत्</b><div>${esc(ns||"—")}</div></div><div class="card"><b>Archive version</b><div>${esc(shard.source_version||"versioned")}</div></div></div><p><a href="/calendar/${bsYear}/${String(Number(row?.bs?.month)||1).padStart(2,"0")}">यो महिनाको पात्रो</a> · <a href="/calendar/${bsYear}">${bsYear} वार्षिक पात्रो</a></p>`;
-  return page(request,env,{title,description,body,index:indexableBsYear(bsYear),schema:{"@context":"https://schema.org","@type":"WebPage",name:title,description,url:site(env)+`/date/${ad}`,about:[{"@type":"Thing",name:"Bikram Sambat"},{"@type":"Thing",name:"Nepal Sambat"}]}});
+  return page(request,env,{title,description,body,index:true,schema:{"@context":"https://schema.org","@type":"WebPage",name:title,description,url:site(env)+`/date/${ad}`,about:[{"@type":"Thing",name:"Bikram Sambat"},{"@type":"Thing",name:"Nepal Sambat"}]}});
 }
 
 async function calendarPage(request:Request, env:ArchiveEnv, year:number, month?:number) {
   if (!Number.isInteger(year)||year<1800||year>2200) return new Response("Invalid BS year",{status:400});
+  if(month!=null&&(month<1||month>12))return new Response("Invalid month",{status:400});
   const shard=await calendarShard(env,"bs",year); if(!shard)return null;
   const rows=month==null?shard.rows:shard.rows.filter((row:any)=>Number(row?.bs?.month)===month);
   if(!rows.length)return new Response("Calendar unavailable",{status:404,headers:{"x-robots-tag":"noindex, nofollow"}});
-  if(month!=null&&(month<1||month>12))return new Response("Invalid month",{status:400});
-  const index=indexableBsYear(year);
   if(month==null){
     const grouped=new Map<number,any[]>();for(const row of rows){const m=Number(row?.bs?.month);const list=grouped.get(m)||[];list.push(row);grouped.set(m,list);}
     const cards=Array.from({length:12},(_,i)=>i+1).map((m)=>{const list=grouped.get(m)||[];return `<a class="card" href="/calendar/${year}/${String(m).padStart(2,"0")}"><b>${esc(BS_MONTHS[m])}</b><div>${list.length} days</div><small>${esc(list[0]?.ad||"—")} → ${esc(list.at(-1)?.ad||"—")}</small></a>`}).join("");
     const title=`नेपाली पात्रो ${year} · Nepali Calendar ${year} | Aafnai Patro`,description=`Bikram Sambat ${year} को archive-backed १२ महिनाको नेपाली पात्रो; ${rows.length} factual day records.`;
-    return page(request,env,{title,description,index,body:`<h1>${esc(title)}</h1><p>${esc(description)}</p><div class="grid">${cards}</div><p class="meta">Source version: ${esc(shard.source_version||"versioned")}</p>`});
+    return page(request,env,{title,description,index:true,body:`<h1>${esc(title)}</h1><p>${esc(description)}</p><div class="grid">${cards}</div><p class="meta">Source version: ${esc(shard.source_version||"versioned")}</p>`});
   }
   const monthName=BS_MONTHS[month]||`Month ${month}`;
   const items=rows.map((row:any)=>`<tr><td><a href="/date/${esc(row.ad)}">${esc(row?.bs?.day)}</a></td><td>${esc(row.ad)}</td><td>${esc(tithiText(row)||"—")}</td></tr>`).join("");
   const title=`${monthName} ${year} नेपाली पात्रो | Aafnai Patro`,description=`${monthName} ${year} का ${rows.length} archive-backed दिन, AD mapping र तिथि.`;
-  return page(request,env,{title,description,index,body:`<h1>${esc(title)}</h1><table><thead><tr><th>BS day</th><th>AD</th><th>तिथि</th></tr></thead><tbody>${items}</tbody></table><p><a href="/calendar/${year}">${year} वार्षिक पात्रो</a></p>`});
+  return page(request,env,{title,description,index:true,body:`<h1>${esc(title)}</h1><table><thead><tr><th>BS day</th><th>AD</th><th>तिथि</th></tr></thead><tbody>${items}</tbody></table><p><a href="/calendar/${year}">${year} वार्षिक पात्रो</a></p>`});
 }
 
 function festivalName(map:Map<string,any>, id:string){const row=map.get(id);return String(row?.dev||row?.name_ne||row?.roman||row?.en||id);}
@@ -94,7 +91,7 @@ async function communityPage(request:Request, env:ArchiveEnv, suite:string, year
   const doc=await r2Json(env,`${COMMUNITY_PREFIX}/${suite}/${year}.json`);if(!doc||doc?.kind!=="community-year"||!Array.isArray(doc?.dates))return null;
   const festivals=new Map((doc.festivals||[]).map((row:any)=>[String(row?.id||""),row]));
   const rows=[...doc.dates].sort((a:any,b:any)=>String(a?.start_ad||a?.main||"").localeCompare(String(b?.start_ad||b?.main||"")));
-  const items=rows.map((row:any)=>{const id=String(row?.festival_id||"");const meta:any=festivals.get(id)||{};const sources=(meta?.sources||[]).map((url:any)=>safeHttp(url)).filter(Boolean);return `<tr><td>${esc(festivalName(festivals,id))}</td><td>${esc(row?.start_ad||row?.main||"—")}${row?.end_ad&&row.end_ad!==row.start_ad?` → ${esc(row.end_ad)}`:""}</td><td><span class="badge">${esc(row?.confidence||meta?.status||"archive")}</span></td><td>${sources.slice(0,2).map((url:string,i:number)=>`<a href="${esc(url)}" rel="nofollow noopener">source ${i+1}</a>`).join(" · ")||"—"}</td></tr>`}).join("");
+  const items=rows.map((row:any)=>{const id=String(row?.festival_id||"");const meta:any=festivals.get(id)||{};const sources=(meta?.sources||[]).map((url:any)=>safeHttp(url)).filter(Boolean);const confidence=String(row?.confidence||meta?.status||"review");const label=confidence==="review"?"Needs further verification":confidence;return `<tr><td>${esc(festivalName(festivals,id))}</td><td>${esc(row?.start_ad||row?.main||"—")}${row?.end_ad&&row.end_ad!==row.start_ad?` → ${esc(row.end_ad)}`:""}</td><td><span class="badge">${esc(label)}</span></td><td>${sources.slice(0,2).map((url:string,i:number)=>`<a href="${esc(url)}" rel="nofollow noopener">source ${i+1}</a>`).join(" · ")||"—"}</td></tr>`}).join("");
   const label=String((doc.festivals||[])[0]?.suite||suite).replace(/-/g," ");
   const title=`${label} ${year} समुदाय पात्रो अभिलेख | Aafnai Patro`,description=`${suite} community calendar ${year}: ${rows.length} source/engine-backed observance records from the versioned public archive.`;
   return page(request,env,{title,description,index:true,body:`<h1>${esc(title)}</h1><p>${esc(description)}</p><table><thead><tr><th>Observance</th><th>Date</th><th>Confidence</th><th>Sources</th></tr></thead><tbody>${items}</tbody></table><p><a href="/samudaya/${esc(suite)}">${esc(suite)} मुख्य पात्रो</a></p>`});
