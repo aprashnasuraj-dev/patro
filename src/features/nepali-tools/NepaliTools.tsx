@@ -32,8 +32,8 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
     setFallback(false);
 
     async function init() {
-      // Load both dependencies before exposing a Shadow DOM to release-gate/browser checks.
-      // This keeps the adapter atomic: observers see either a fully mounted native tool or
+      // Load both dependencies before exposing the Shadow DOM.
+      // This keeps the adapter atomic: consumers see either a fully mounted native tool or
       // the same-origin iframe fallback, never the short intermediate DOM without handlers.
       const [response, module] = await Promise.all([
         fetch(`${BASE}/index.html`, { signal: controller.signal, cache: "force-cache" }),
