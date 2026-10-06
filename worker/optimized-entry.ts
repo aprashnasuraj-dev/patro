@@ -7,6 +7,21 @@ import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
 
+/** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
+function canonicalDateRedirect(request: Request): Response | null {
+  if (request.method !== "GET" && request.method !== "HEAD") return null;
+  const url = new URL(request.url);
+  const match = url.pathname.match(/^\/date\/(\d{4})-(\d{1,2})-(\d{1,2})\/?$/);
+  if (!match) return null;
+  const year = Number(match[1]), month = Number(match[2]), day = Number(match[3]);
+  const check = new Date(Date.UTC(year, month - 1, day));
+  if (check.getUTCFullYear() !== year || check.getUTCMonth() !== month - 1 || check.getUTCDate() !== day) return null;
+  const canonical = `/date/${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  if (url.pathname.replace(/\/+$/, "") === canonical) return null;
+  url.pathname = canonical;
+  return Response.redirect(url.toString(), 301);
+}
+
 /**
  * Production wrapper:
  * - speech stays uncached because it is user/input specific;
@@ -20,6 +35,9 @@ import { speechApiResponse } from "./speech";
 const optimizedWorker = {
   ...connectedWorker,
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
+    const normalizedDate = canonicalDateRedirect(request);
+    if (normalizedDate) return normalizedDate;
+
     // Sitemaps/robots.txt: static asset only, crawler-safe headers, 404 when missing.
     const seoStatic = await seoStaticResponse(request, env as any);
     if (seoStatic) return seoStatic;
