@@ -88,3 +88,7 @@ manifest.history_event_index = `${SITE}/data/history-events-index.json`;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 
 console.log(`Dynamic history route index: ${routes.length} source-backed event pages; one compact JSON index, no per-event HTML files.`);
+
+// Time Machine follows the same lightweight publication model: one compact build-time index plus
+// dynamically rendered detail URLs. No R2 seeding, no additional D1 rows and no per-route HTML files.
+await import("./build-dynamic-time-machine-pages.mjs");
