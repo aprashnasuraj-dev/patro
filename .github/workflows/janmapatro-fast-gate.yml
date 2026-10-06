@@ -1,0 +1,124 @@
+name: Janma Patro Fast Gate
+
+on:
+  push:
+    branches:
+      - feature/janmapatro-gunamilan
+    paths:
+      - 'packages/engine/**'
+      - 'tests/janmapatro-*.test.mjs'
+      - 'docs/janmapatro/**'
+      - '.github/workflows/janmapatro-fast-gate.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'packages/engine/**'
+      - 'tests/janmapatro-*.test.mjs'
+      - 'docs/janmapatro/**'
+      - '.github/workflows/janmapatro-fast-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: janmapatro-fast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  focused-validation:
+    name: Janma Patro focused validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify fast-gate scope
+        if: github.event_name == 'push'
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${BEFORE:-}" || "$BEFORE" =~ ^0+$ ]]; then
+            echo "Initial/new-branch push: scope diff guard skipped."
+            exit 0
+          fi
+
+          files="$(git diff --name-only "$BEFORE" "$AFTER")"
+          printf '%s\n' "$files"
+          bad=0
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+            case "$file" in
+              packages/engine/*|packages/engine/**|tests/janmapatro-*.test.mjs|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/janmapatro-fast-gate.yml)
+                ;;
+              *)
+                echo "::error::Fast gate is intentionally limited to Janma Patro/Guna Milan files; unrelated change: $file"
+                bad=1
+                ;;
+            esac
+          done <<< "$files"
+          exit "$bad"
+
+      - name: Syntax-check Janma engine JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(find packages/engine/src -type f -name '*.js' -print0 | sort -z)
+          if [[ "${#files[@]}" -eq 0 ]]; then
+            echo "::error::No Janma engine JavaScript files found."
+            exit 1
+          fi
+          for file in "${files[@]}"; do
+            echo "node --check $file"
+            node --check "$file"
+          done
+
+      - name: Run Janma Patro focused tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          tests=(tests/janmapatro-*.test.mjs)
+          if [[ "${#tests[@]}" -eq 0 ]]; then
+            echo "::error::No focused Janma Patro tests found."
+            exit 1
+          fi
+          node --test "${tests[@]}"
+
+      - name: Enforce zero-origin share path
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const source = readFileSync('packages/engine/src/share-state.js', 'utf8');
+          const banned = [
+            [/\bfetch\s*\(/, 'fetch()'],
+            [/\bXMLHttpRequest\b/, 'XMLHttpRequest'],
+            [/\bWebSocket\b/, 'WebSocket'],
+            [/env\.(?:DB|ARCHIVE|CACHE)\b/, 'Cloudflare storage binding'],
+            [/\/janmapatro\/api\//, 'Janma Patro server API'],
+            [/\bJP_STORE\b/, 'JP_STORE'],
+          ];
+          const failures = banned.filter(([pattern]) => pattern.test(source)).map(([, label]) => label);
+          if (failures.length) {
+            throw new Error(`share-state.js must remain browser-only; found: ${failures.join(', ')}`);
+          }
+          console.log('zero-origin share guard=pass');
+          NODE
+
+      - name: Fast-gate summary
+        run: |
+          echo "Janma Patro fast gate passed."
+          echo "Skipped intentionally: npm install, full Vite/SEO build, Playwright, Lighthouse, D1/R2 inventory, Cloudflare deploy, full release gate."
