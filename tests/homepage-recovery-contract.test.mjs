@@ -16,6 +16,7 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   const worker=read("worker/index.ts");
   const optimizedWorker=read("worker/optimized-entry.ts");
   const calendarWorker=read("worker/calendar-fast.ts");
+  const calendarArchive=read("worker/calendar-archive.ts");
   const historyWorker=read("worker/history-fast.ts");
   const historySync=read("scripts/cloudflare/ensure-history-d1.mjs");
   const offlineCheck=read("scripts/check-offline-pwa.cjs");
@@ -49,9 +50,9 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(offlineCheck.includes("waitForServiceWorkerControl")&&!offlineCheck.includes("await page.reload("),"offline release check must not race the controllerchange reload");
 
   for(const endpoint of ["/api/v1/sync","/api/v1/on-this-day","/api/v1/time-machine"])assert.ok(worker.includes(endpoint),`Worker lost ${endpoint}`);
-  assert.ok(optimizedWorker.includes("fastCalendarResponse")&&calendarWorker.includes("const monthMatch = url.pathname.match")&&calendarWorker.includes('const CALENDAR_R2_PREFIX = "datasets/calendar/v1"'),"production Worker lost the immutable R2 /api/v1/calendar/:year/:month hot path");
-  assert.ok(calendarWorker.includes("archiveYearRows")&&calendarWorker.includes("r2YearRows")&&calendarWorker.includes("D1 is deliberately not a normal fallback"),"calendar runtime must remain backed by the immutable R2 archive without a normal D1 fallback");
-  assert.ok(calendarWorker.includes("rowsByAdMonth")&&calendarWorker.includes('if (mode === "ad")')&&calendarWorker.includes('calendar: "ad"'),"AD month requests must resolve through the immutable R2 calendar hot path instead of falling through to the legacy worker");
+  assert.ok(optimizedWorker.includes("fastCalendarResponse")&&calendarWorker.includes("const monthMatch = url.pathname.match")&&calendarWorker.includes("loadCalendarShard")&&calendarArchive.includes('CALENDAR_PREFIX = "datasets/calendar/v1"'),"production Worker lost the immutable /api/v1/calendar/:year/:month archive hot path");
+  assert.ok(calendarWorker.includes("archiveYearRows")&&calendarWorker.includes("loadCalendarShard")&&calendarWorker.includes("D1 is deliberately not a normal fallback")&&calendarArchive.includes('backend: "r2"')&&calendarArchive.includes('backend: "static-fallback"'),"calendar runtime must remain archive-first with packaged static fallback and without a normal D1 fallback");
+  assert.ok(calendarWorker.includes("rowsByAdMonth")&&calendarWorker.includes('if (mode === "ad")')&&calendarWorker.includes('calendar: "ad"'),"AD month requests must resolve through the immutable calendar hot path instead of falling through to the legacy worker");
 
   assert.ok(importer.includes("row.ad_month")&&importer.includes("row.ad_day"),"On This Day import must populate queryable month/day dimensions");
   assert.ok(importer.includes("if (TABLE_ARG && doc.table!==TABLE_ARG) continue"),"targeted D1 imports must ignore unrelated snapshot payloads after validating them");
