@@ -19,12 +19,16 @@ test("festival routes are real full-detail pages, never homepage redirects",()=>
   assert.ok(optimized.indexOf("festivalPageResponse(request")<optimized.indexOf("staticFestivalResponse(request"),"dynamic full-detail festival renderer must precede static fallback");
   assert.ok(gateway.includes("festivalPageResponse(request"),"connected/agent entry must preserve festival renderer");
 
-  for(const marker of ["loadCalendarShard","पूर्ण Panchang विवरण","Nepal Sambat / NS record","अन्य उपलब्ध day/archive fields","/data/festival-index.json"]){
+  for(const marker of ["loadCalendarShard","पूर्ण Panchang विवरण","Nepal Sambat / NS record","अन्य उपलब्ध day/archive fields","Festival / holiday source DB records","/data/festival-index.json"]){
     assert.ok(page.includes(marker),`festival renderer missing ${marker}`);
   }
+  assert.ok(!page.includes('"@type":"Event"'),"festival runtime must use observance page semantics rather than synthetic Event schema");
+  assert.ok(snapshot.includes("getFestivals"),"official Panchang festival facts must join holiday records");
   assert.ok(snapshot.includes('return "dashain"'));
   assert.ok(snapshot.includes('return "gai-jatra"'));
   assert.ok(snapshot.includes('out.add("gaijatra")'));
+  assert.ok(builder.includes("factValue"),"festival compact index must retain official fact values");
+  assert.ok(builder.includes("records:"),"festival compact index must retain source records");
   assert.ok(builder.includes('public/sitemap-festivals.xml'));
   assert.ok(builder.includes('indexed_festival_route_count'));
   assert.ok(pkg.scripts.build.includes("node scripts/build-festival-index.mjs"));
