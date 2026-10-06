@@ -24,26 +24,25 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
   useEffect(() => {
     let cancelled = false;
     let cleanup: (() => void) | undefined;
+    let shadow: ShadowRoot | undefined;
     const controller = new AbortController();
     const element = host.current;
     if (!element) return;
-    const shadow = element.shadowRoot || element.attachShadow({ mode: "open" });
 
     setFallback(false);
-    const loading = document.createElement("p");
-    loading.textContent = "नेपाली टाइपिङ तयार हुँदैछ…";
-    shadow.replaceChildren(loading);
 
     async function init() {
-      const response = await fetch(`${BASE}/index.html`, { signal: controller.signal, cache: "force-cache" });
-      if (!response.ok) throw new Error("load_failed");
-
-      const [html, module] = await Promise.all([
-        response.text(),
+      // Load both dependencies before exposing a Shadow DOM to release-gate/browser checks.
+      // This keeps the adapter atomic: observers see either a fully mounted native tool or
+      // the same-origin iframe fallback, never the short intermediate DOM without handlers.
+      const [response, module] = await Promise.all([
+        fetch(`${BASE}/index.html`, { signal: controller.signal, cache: "force-cache" }),
         import(/* @vite-ignore */ `${BASE}/app.mjs`) as Promise<ToolsModule>,
       ]);
-
+      if (!response.ok) throw new Error("load_failed");
+      const html = await response.text();
       if (cancelled) return;
+
       const doc = new DOMParser().parseFromString(html, "text/html");
       const main = doc.querySelector("main");
       if (!main || typeof module.mountNepaliTools !== "function") throw new Error("load_failed");
@@ -55,6 +54,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       const stylesheet = document.createElement("link");
       stylesheet.rel = "stylesheet";
       stylesheet.href = `${BASE}/styles.css`;
+      shadow = element.shadowRoot || element.attachShadow({ mode: "open" });
       shadow.replaceChildren(stylesheet, document.importNode(main, true));
       cleanup = module.mountNepaliTools(shadow, { mode });
 
@@ -66,7 +66,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
     init().catch((reason) => {
       if (cancelled || controller.signal.aborted) return;
       console.warn("Nepali typing adapter switched to packaged fallback", reason);
-      shadow.replaceChildren();
+      shadow?.replaceChildren();
       setFallback(true);
     });
 
@@ -74,7 +74,7 @@ export function NepaliTools({ mode = "typing" }: { mode?: NepaliMode }) {
       cancelled = true;
       controller.abort();
       cleanup?.();
-      shadow.replaceChildren();
+      shadow?.replaceChildren();
     };
   }, [mode]);
 
