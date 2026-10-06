@@ -1,0 +1,5 @@
+git checkout main && git pull
+git rm fix-sitemap-seo.bundle fix-sitemap-seo.patch APPLY_FIX_SITEMAP_SEO.md
+git commit -m "chore: remove sitemap fix helper files"
+npm run build && npm run test:full-product && npm run test:release-safety
+git push
