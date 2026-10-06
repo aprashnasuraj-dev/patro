@@ -1,0 +1,86 @@
+name: Rashifal Fast Gate
+
+on:
+  push:
+    branches:
+      - feature/janmapatro-gunamilan
+    paths:
+      - 'worker/rashifal-native.ts'
+      - 'worker/optimized-entry.ts'
+      - 'src/rashifal/**'
+      - 'tests/rashifal-fast-contract.test.mjs'
+      - 'docs/rashifal/**'
+      - '.github/workflows/rashifal-fast-gate.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'worker/rashifal-native.ts'
+      - 'worker/optimized-entry.ts'
+      - 'src/rashifal/**'
+      - 'tests/rashifal-fast-contract.test.mjs'
+      - 'docs/rashifal/**'
+      - '.github/workflows/rashifal-fast-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rashifal-fast-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  focused-validation:
+    name: Rashifal focused validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify fast-gate scope
+        if: github.event_name == 'push'
+        shell: bash
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${BEFORE:-}" || "$BEFORE" =~ ^0+$ ]]; then
+            echo "Initial/new-branch push: scope guard skipped."
+            exit 0
+          fi
+          files="$(git diff --name-only "$BEFORE" "$AFTER")"
+          printf '%s\n' "$files"
+          bad=0
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+            case "$file" in
+              worker/rashifal-native.ts|worker/optimized-entry.ts|src/rashifal/*|src/rashifal/**|tests/rashifal-fast-contract.test.mjs|docs/rashifal/*|docs/rashifal/**|.github/workflows/rashifal-fast-gate.yml)
+                ;;
+              *) echo "::error::Rashifal fast gate received unrelated change: $file"; bad=1 ;;
+            esac
+          done <<< "$files"
+          exit "$bad"
+
+      - name: Focused Rashifal source contracts
+        run: node --test tests/rashifal-fast-contract.test.mjs
+
+      - name: Reject legacy Rashifal origin dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -Eiq 'supabase\.co|patro-blush\.vercel\.app|miti_rashifal_publications|RASHIFAL_SERVICE_TOKEN|env\.(DB|ARCHIVE)' worker/rashifal-native.ts
+          grep -q 'deterministic-period-keyed-edge-broadcast' worker/rashifal-native.ts
+          grep -q 'private, no-store' worker/rashifal-native.ts
+          grep -q 'yearly' src/rashifal/RashifalExperience.tsx
+
+      - name: Fast-gate summary
+        run: echo "Rashifal focused validation passed; expensive repository-wide release stages were intentionally not invoked."
