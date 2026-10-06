@@ -59,9 +59,9 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
+function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -98,7 +98,7 @@ export function PatroRouter(){
    const historyDay=path.match(HISTORY_DAY_ROUTE);if(historyDay)return <OnThisDayPage monthDay={historyDay[1]}/>;
    if(path==="/fm")return <MediaSuite kind="radio"/>;
    if(path==="/tv")return <MediaSuite kind="tv"/>;
-   if(path==="/jyotish/china"||path==="/jyotish/matchmaking")return <JanmaPatroSuite/>;
+   if(path==="/janmapatro"||path==="/janmapatro/milan.html"||path==="/jyotish/china"||path==="/jyotish/matchmaking")return <JanmaPatroSuite/>;
    if(path==="/tools/nepali-typing"||path==="/tools/type")return <NepaliTools mode="typing"/>;
    if(path==="/tools/preeti"||path==="/tools/preeti-converter"||path==="/tools/preeti-to-unicode"||path==="/tools/preetitounicode")return <NepaliTools mode="preeti-to-unicode"/>;
    if(path==="/tools/unicode-to-preeti"||path==="/tools/unicodetopreeti")return <NepaliTools mode="unicode-to-preeti"/>;
