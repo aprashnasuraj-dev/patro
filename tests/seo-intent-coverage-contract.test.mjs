@@ -45,7 +45,7 @@ test("priority Nepali, English and Romanized searches resolve to the right canon
    "nepali calendar":"/", "नेपाली पात्रो":"/", "aaja kati gate":"/today", "आज कति गते":"/today", "nepali date today":"/today",
    "nepali date converter":"/convert", "bs to ad converter":"/convert", "ad to bs converter":"/convert", "nepali typing":"/tools/nepali-typing",
    "english to nepali typing":"/tools/nepali-typing", "नेपाली टाइपिङ":"/tools/nepali-typing", "preeti to unicode":"/tools/preeti-converter",
-   "today rashifal nepali":"/rashifal", "nepali astronomical calendar":"/tools/astro", "nepal live tv":"/tv", "nepali fm online":"/fm", "nepali kundali":"/jyotish/china"
+   "today rashifal nepali":"/rashifal", "nepali astronomical calendar":"/tools/astro", "nepal live tv":"/tv", "nepali fm online":"/fm", "nepali kundali":"/janmapatro"
  };
  for(const [query,route] of Object.entries(expected)){
    const row=lookup(payload,query);assert.ok(row,`priority query missing: ${query}`);assert.equal(row.route,route,query);

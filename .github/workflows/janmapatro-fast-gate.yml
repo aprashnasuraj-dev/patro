@@ -6,14 +6,36 @@ on:
       - feature/janmapatro-gunamilan
     paths:
       - 'packages/engine/**'
+      - 'src/jyotish/**'
+      - 'src/PatroRouter.tsx'
+      - 'src/components/FeatureLauncher.tsx'
+      - 'worker/connected-entry.ts'
+      - 'worker/connected-seo.ts'
+      - 'scripts/seo-config.mjs'
+      - 'scripts/generate-search-intents.mjs'
+      - 'scripts/prerender-seo.mjs'
       - 'tests/janmapatro-*.test.mjs'
+      - 'tests/premium-release-contract.test.mjs'
+      - 'tests/seo-intent-coverage-contract.test.mjs'
+      - 'worker/admin-console/site-config.ts'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
   pull_request:
     branches: [main]
     paths:
       - 'packages/engine/**'
+      - 'src/jyotish/**'
+      - 'src/PatroRouter.tsx'
+      - 'src/components/FeatureLauncher.tsx'
+      - 'worker/connected-entry.ts'
+      - 'worker/connected-seo.ts'
+      - 'scripts/seo-config.mjs'
+      - 'scripts/generate-search-intents.mjs'
+      - 'scripts/prerender-seo.mjs'
       - 'tests/janmapatro-*.test.mjs'
+      - 'tests/premium-release-contract.test.mjs'
+      - 'tests/seo-intent-coverage-contract.test.mjs'
+      - 'worker/admin-console/site-config.ts'
       - 'docs/janmapatro/**'
       - '.github/workflows/janmapatro-fast-gate.yml'
   workflow_dispatch:
@@ -60,7 +82,7 @@ jobs:
           while IFS= read -r file; do
             [[ -z "$file" ]] && continue
             case "$file" in
-              packages/engine/*|packages/engine/**|tests/janmapatro-*.test.mjs|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/janmapatro-fast-gate.yml)
+              packages/engine/*|packages/engine/**|src/jyotish/*|src/jyotish/**|src/PatroRouter.tsx|src/components/FeatureLauncher.tsx|worker/connected-entry.ts|worker/connected-seo.ts|scripts/seo-config.mjs|scripts/generate-search-intents.mjs|scripts/prerender-seo.mjs|worker/admin-console/site-config.ts|tests/janmapatro-*.test.mjs|tests/premium-release-contract.test.mjs|tests/seo-intent-coverage-contract.test.mjs|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/janmapatro-fast-gate.yml)
                 ;;
               *)
                 echo "::error::Fast gate is intentionally limited to Janma Patro/Guna Milan files; unrelated change: $file"

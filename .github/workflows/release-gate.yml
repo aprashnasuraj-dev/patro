@@ -60,7 +60,7 @@ jobs:
                   ;;
               esac
               case "$file" in
-                src/rashifal/*|src/rashifal/**|worker/rashifal-native.ts|worker/optimized-entry.ts|packages/engine/*|packages/engine/**|tests/rashifal-*.test.mjs|tests/janmapatro-*.test.mjs|docs/rashifal/*|docs/rashifal/**|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/rashifal-fast-gate.yml|.github/workflows/janmapatro-fast-gate.yml|.github/workflows/release-gate.yml)
+                src/rashifal/*|src/rashifal/**|src/jyotish/*|src/jyotish/**|src/PatroRouter.tsx|src/components/FeatureLauncher.tsx|worker/rashifal-native.ts|worker/optimized-entry.ts|worker/connected-entry.ts|worker/connected-seo.ts|worker/admin-console/site-config.ts|packages/engine/*|packages/engine/**|scripts/seo-config.mjs|scripts/generate-search-intents.mjs|scripts/prerender-seo.mjs|tests/rashifal-*.test.mjs|tests/janmapatro-*.test.mjs|tests/premium-release-contract.test.mjs|tests/seo-intent-coverage-contract.test.mjs|docs/rashifal/*|docs/rashifal/**|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/rashifal-fast-gate.yml|.github/workflows/janmapatro-fast-gate.yml|.github/workflows/release-gate.yml)
                   ;;
                 *)
                   heavy=true
@@ -107,7 +107,7 @@ jobs:
             npm run test:release-safety
             node --test tests/homepage-recovery-contract.test.mjs
           else
-            node --test tests/rashifal-fast-contract.test.mjs tests/janmapatro-share-state.test.mjs
+            node --test tests/rashifal-fast-contract.test.mjs tests/janmapatro-*.test.mjs
             npm run test:release-safety
           fi
       - name: Cloudflare Worker and full-product contracts
@@ -327,7 +327,7 @@ jobs:
           ARCHIVE_CHANGED: ${{ steps.scope.outputs.archive }}
         run: |
           set -euo pipefail
-          for path in / /tools /convert /time-machine /on-this-day /tools/astro; do
+          for path in / /tools /convert /time-machine /on-this-day /tools/astro /janmapatro/ /janmapatro/milan.html /jyotish/china /jyotish/matchmaking; do
             curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com${path}" >/dev/null
           done
 

@@ -19,8 +19,8 @@ const CORE_COPY = {
   "/fm": ["नेपाली FM रेडियो · Nepal Radio", "नेपाल र विश्वका उपलब्ध FM तथा internet radio station खोज्नुहोस् र सुन्नुहोस्।"],
   "/tv": ["Nepal Live TV Explorer", "देश, भाषा र category अनुसार उपलब्ध public live TV channels खोज्नुहोस्।"],
   "/samudaya": ["समुदाय पात्रो · Community Calendars", "नेपाल संवत्, ल्होसार, थारू, मिथिला, किरात, हिजरी र Chakra सहित समुदाय-केंद्रित पात्रोहरू एउटै ठाउँबाट अन्वेषण गर्नुहोस्।"],
-  "/jyotish/china": ["जन्म कुण्डली · Nepali Jyotish", "जन्म विवरणका आधारमा नेपाली ज्योतिष र पात्रो सन्दर्भ अन्वेषण गर्नुहोस्।"],
-  "/jyotish/matchmaking": ["कुण्डली मिलान · Nepali Matchmaking", "जन्म विवरणका आधारमा ज्योतिषीय मिलान सन्दर्भ अन्वेषण गर्नुहोस्।"],
+  "/janmapatro": ["जन्मपत्रो · Nepali Birth Chart", "जन्म मिति, सही समय र स्थानका आधारमा लग्न, ग्रहस्थिति, नक्षत्र, दशा र चन्द्र कुण्डली गणना गर्नुहोस्।"],
+  "/janmapatro/milan.html": ["३६ गुण मिलान · Nepali Matchmaking", "जन्म विवरण वा नामको नक्षत्र-अक्षरबाट परम्परागत अष्टकूट ३६ गुण मिलान हेर्नुहोस्।"],
   "/about": ["आफ्नै पात्रोबारे · About Aafnai Patro", "Aafnai Patro को उद्देश्य, नेपाली calendar अनुभव र उपलब्ध सुविधाबारे जान्नुहोस्।"],
   "/sources": ["स्रोत र पद्धति · Calendar Sources", "नेपाली पात्रो, तिथि र अन्य तथ्यका स्रोत तथा शुद्धताबारे जान्नुहोस्।"],
   "/methodology": ["नेपाली पात्रो पद्धति · Methodology", "आफ्नै पात्रोले मिति, तिथि, चाडपर्व र conversion जानकारी कसरी तयार र जाँच गर्छ भन्ने पद्धति।"],
@@ -65,7 +65,7 @@ function relatedLinks(path) {
     ["/", "आजको नेपाली मिति"], ["/today", "आज कति गते?"], ["/convert", "BS ↔ AD मिति रूपान्तरण"],
     ["/tools/nepali-typing", "नेपाली टाइपिङ"], ["/tools/preeti-converter", "Preeti ↔ Unicode"],
     ["/tools/bstoad", "BS to AD"], ["/tools/adtobs", "AD to BS"], ["/tools/sait", "शुभ साइत"],
-    ["/rashifal", "राशिफल"], ["/on-this-day", "इतिहासमा आज"], ["/tools", "सबै नेपाली tools"]
+    ["/rashifal", "राशिफल"], ["/janmapatro", "जन्मपत्रो"], ["/janmapatro/milan.html", "३६ गुण मिलान"], ["/on-this-day", "इतिहासमा आज"], ["/tools", "सबै नेपाली tools"]
   ];
   if (path.startsWith("/calendar/")) {
     const [, , y] = path.split("/");
