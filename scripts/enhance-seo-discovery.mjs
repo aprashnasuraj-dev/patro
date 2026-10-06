@@ -81,4 +81,5 @@ console.log(`AI/search discovery augmented with ${intents.query_count} canonical
 await import("./generate-publication-graph.mjs");
 await import("./classify-history-evidence.mjs");
 await import("./reconcile-tool-identities.mjs");
+await import("./validate-step3-step6-completion.mjs");
 await import("./validate-publication-graph.mjs");
