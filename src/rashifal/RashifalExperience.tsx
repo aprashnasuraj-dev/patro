@@ -57,7 +57,7 @@ function cacheKey(period:Period,system:System,calendar:Calendar,date:string,sign
 function readCache(key:string):Publication|null{try{return JSON.parse(localStorage.getItem(key)||"null")?.data||null}catch{return null}}
 function writeCache(key:string,data:Publication){try{localStorage.setItem(key,JSON.stringify({saved_at:new Date().toISOString(),data}))}catch{}}
 function summary(reading:Reading,language:Language){return reading?.narrative?.[language]?.summary || (language==="ne"?reading?.summary_ne:reading?.summary_en) || reading?.summary_ne || reading?.summary_en || "";}
-function sections(reading:Reading,language:Language){
+function sections(reading:Reading,language:Language): Array<{domain?:string;title?:string;text?:string;band?:string;score?:number}>{
   const rich=reading?.narrative?.[language]?.sections;
   if(Array.isArray(rich)&&rich.length)return rich;
   return Object.entries(reading?.scores?.domains||{}).map(([domain,value])=>({domain,title:DOMAIN_LABELS[domain]?.[language==="ne"?0:1]||domain,text:"",score:value}));
