@@ -18,16 +18,11 @@ function validAd(value:string) {
   const check = new Date(Date.UTC(y,m-1,d));
   return check.getUTCFullYear()===y && check.getUTCMonth()===m-1 && check.getUTCDate()===d;
 }
-function currentBsYear() {
-  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone:"Asia/Kathmandu", year:"numeric", month:"numeric", day:"numeric" }).formatToParts(new Date()).filter((p) => p.type !== "literal").map((p) => [p.type, Number(p.value)]));
-  const after = Number(parts.month) > 4 || (Number(parts.month) === 4 && Number(parts.day) >= 14);
-  return Number(parts.year) + (after ? 57 : 56);
-}
-function hotBsYear(year:number) { const current=currentBsYear(); return year>=current-2 && year<=current+2; }
 function dateLabel(ad:string) { return new Intl.DateTimeFormat("en-GB", { timeZone:"UTC", weekday:"long", year:"numeric", month:"long", day:"numeric" }).format(new Date(ad+"T00:00:00Z")); }
 function tithiText(row:any) { const p=row?.panchang||row?.archive_panchang||{}; const t=p?.tithi||row?.tithi||{}; return String(t?.ne||t?.name_ne||t?.tithi_name_ne||t?.name||"").trim(); }
 function nsText(row:any) { const ns=row?.ns||row?.nepal_sambat||{}; return typeof ns === "string" ? ns : String(ns?.formatted_ne||ns?.formatted||"").trim(); }
 function bsLabel(row:any) { const bs=row?.bs||{}; return String(bs?.formatted||[bs?.year,bs?.month,bs?.day].filter(Boolean).join("-")||""); }
+function unavailable(kind:string) { return new Response(`${kind} R2 archive unavailable`,{status:503,headers:{"cache-control":"no-store","x-robots-tag":"noindex, nofollow","x-patro-backend":"r2-required"}}); }
 
 async function r2Json(env:ArchiveEnv, key:string) {
   if (!env.ARCHIVE) return null;
@@ -55,13 +50,10 @@ function page(request:Request, env:ArchiveEnv, opts:{ title:string; description:
 async function datePage(request:Request, env:ArchiveEnv, ad:string) {
   if (!validAd(ad)) return new Response("Invalid date", { status:400 });
   const shard = await calendarShard(env, "ad", Number(ad.slice(0,4)));
-  if (!shard) return null;
+  if (!shard) return unavailable("Calendar");
   const row = shard.rows.find((item:any) => String(item?.ad||item?.ad_date||"").slice(0,10)===ad);
   if (!row) return new Response("Date outside archive", { status:404, headers:{"x-robots-tag":"noindex, nofollow"} });
   const bsYear = Number(row?.bs?.year);
-  // Keep only the small current cohort on the richer prerendered SPA path; all other validated
-  // dates are permanent R2 pages and are indexable because existence is proven by this shard.
-  if (hotBsYear(bsYear)) return null;
   const title = `${bsLabel(row)} · ${dateLabel(ad)} | Aafnai Patro`;
   const tithi=tithiText(row), ns=nsText(row), description=`${bsLabel(row)} = ${dateLabel(ad)}. ${tithi?`तिथि: ${tithi}. `:""}${ns?`नेपाल संवत्: ${ns}.`:""}`.trim();
   const body=`<h1>${esc(bsLabel(row))}</h1><p><strong>${esc(dateLabel(ad))}</strong> · ${esc(ad)}</p><div class="grid"><div class="card"><b>वि.सं.</b><div>${esc(bsLabel(row))}</div></div><div class="card"><b>तिथि</b><div>${esc(tithi||"—")}</div></div><div class="card"><b>नेपाल संवत्</b><div>${esc(ns||"—")}</div></div><div class="card"><b>Archive version</b><div>${esc(shard.source_version||"versioned")}</div></div></div><p><a href="/calendar/${bsYear}/${String(Number(row?.bs?.month)||1).padStart(2,"0")}">यो महिनाको पात्रो</a> · <a href="/calendar/${bsYear}">${bsYear} वार्षिक पात्रो</a></p>`;
@@ -71,7 +63,7 @@ async function datePage(request:Request, env:ArchiveEnv, ad:string) {
 async function calendarPage(request:Request, env:ArchiveEnv, year:number, month?:number) {
   if (!Number.isInteger(year)||year<1800||year>2200) return new Response("Invalid BS year",{status:400});
   if(month!=null&&(month<1||month>12))return new Response("Invalid month",{status:400});
-  const shard=await calendarShard(env,"bs",year); if(!shard)return null;
+  const shard=await calendarShard(env,"bs",year); if(!shard)return unavailable("Calendar");
   const rows=month==null?shard.rows:shard.rows.filter((row:any)=>Number(row?.bs?.month)===month);
   if(!rows.length)return new Response("Calendar unavailable",{status:404,headers:{"x-robots-tag":"noindex, nofollow"}});
   if(month==null){
@@ -88,17 +80,17 @@ async function calendarPage(request:Request, env:ArchiveEnv, year:number, month?
 
 function festivalName(map:Map<string,any>, id:string){const row=map.get(id);return String(row?.dev||row?.name_ne||row?.roman||row?.en||id);}
 async function communityPage(request:Request, env:ArchiveEnv, suite:string, year:number) {
-  const doc=await r2Json(env,`${COMMUNITY_PREFIX}/${suite}/${year}.json`);if(!doc||doc?.kind!=="community-year"||!Array.isArray(doc?.dates))return null;
+  const doc=await r2Json(env,`${COMMUNITY_PREFIX}/${suite}/${year}.json`);if(!doc||doc?.kind!=="community-year"||!Array.isArray(doc?.dates))return unavailable("Community");
   const festivals=new Map((doc.festivals||[]).map((row:any)=>[String(row?.id||""),row]));
   const rows=[...doc.dates].sort((a:any,b:any)=>String(a?.start_ad||a?.main||"").localeCompare(String(b?.start_ad||b?.main||"")));
-  const items=rows.map((row:any)=>{const id=String(row?.festival_id||"");const meta:any=festivals.get(id)||{};const sources=(meta?.sources||[]).map((url:any)=>safeHttp(url)).filter(Boolean);const confidence=String(row?.confidence||meta?.status||"review");const label=confidence==="review"?"Needs further verification":confidence;return `<tr><td>${esc(festivalName(festivals,id))}</td><td>${esc(row?.start_ad||row?.main||"—")}${row?.end_ad&&row.end_ad!==row.start_ad?` → ${esc(row.end_ad)}`:""}</td><td><span class="badge">${esc(label)}</span></td><td>${sources.slice(0,2).map((url:string,i:number)=>`<a href="${esc(url)}" rel="nofollow noopener">source ${i+1}</a>`).join(" · ")||"—"}</td></tr>`}).join("");
+  const items=rows.map((row:any)=>{const id=String(row?.festival_id||"");const meta:any=festivals.get(id)||{};const sources=(meta?.sources||[]).map((url:any)=>safeHttp(url)).filter(Boolean);const confidence=String(row?.confidence||"review");const confidenceLabel=confidence==="review"?"Needs further verification":confidence;const status=String(meta?.status||"");const statusLabel=status==="review"?"Needs further verification":status;return `<tr><td>${esc(festivalName(festivals,id))}</td><td>${esc(row?.start_ad||row?.main||"—")}${row?.end_ad&&row.end_ad!==row.start_ad?` → ${esc(row.end_ad)}`:""}</td><td><span class="badge">${esc(confidenceLabel)}</span>${statusLabel?` <span class="badge">${esc(statusLabel)}</span>`:""}</td><td>${sources.slice(0,2).map((url:string,i:number)=>`<a href="${esc(url)}" rel="nofollow noopener">source ${i+1}</a>`).join(" · ")||"—"}</td></tr>`}).join("");
   const label=String((doc.festivals||[])[0]?.suite||suite).replace(/-/g," ");
   const title=`${label} ${year} समुदाय पात्रो अभिलेख | Aafnai Patro`,description=`${suite} community calendar ${year}: ${rows.length} source/engine-backed observance records from the versioned public archive.`;
-  return page(request,env,{title,description,index:true,body:`<h1>${esc(title)}</h1><p>${esc(description)}</p><table><thead><tr><th>Observance</th><th>Date</th><th>Confidence</th><th>Sources</th></tr></thead><tbody>${items}</tbody></table><p><a href="/samudaya/${esc(suite)}">${esc(suite)} मुख्य पात्रो</a></p>`});
+  return page(request,env,{title,description,index:true,body:`<h1>${esc(title)}</h1><p>${esc(description)}</p><table><thead><tr><th>Observance</th><th>Date</th><th>Confidence / status</th><th>Sources</th></tr></thead><tbody>${items}</tbody></table><p><a href="/samudaya/${esc(suite)}">${esc(suite)} मुख्य पात्रो</a></p>`});
 }
 
 async function nepalSambatPage(request:Request, env:ArchiveEnv, year:number) {
-  const doc=await r2Json(env,`${COMMUNITY_PREFIX}/nepal-sambat/${year}.json`);if(!doc||doc?.kind!=="nepal-sambat-year"||!Array.isArray(doc?.days))return null;
+  const doc=await r2Json(env,`${COMMUNITY_PREFIX}/nepal-sambat/${year}.json`);if(!doc||doc?.kind!=="nepal-sambat-year"||!Array.isArray(doc?.days))return unavailable("Community");
   const festivalMap=new Map((doc.festivals||[]).map((row:any)=>[String(row?.id||row?.festival_id||""),row]));
   const festivalRows=(doc.festival_dates||[]).map((row:any)=>`<tr><td>${esc(festivalName(festivalMap,String(row?.festival_id||row?.id||"")))}</td><td>${esc(row?.start_ad||row?.ad||"—")}${row?.end_ad&&row.end_ad!==row.start_ad?` → ${esc(row.end_ad)}`:""}</td></tr>`).join("");
   const samples=[...doc.days].slice(0,40).map((row:any)=>`<tr><td>${esc(row?.ad||row?.ad_date||"—")}</td><td>${esc(row?.ns_month??row?.month??"—")}</td><td>${esc(row?.ns_paksha??row?.paksha??"—")}</td><td>${esc(row?.ns_tithi??row?.tithi??"—")}</td></tr>`).join("");
