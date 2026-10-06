@@ -1,17 +1,20 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { BS_MONTHS, INDEXED_CALENDAR_YEARS, calendarRoute } from "./seo-config.mjs";
+import { BS_MONTHS, PRERENDER_CALENDAR_YEARS, calendarRoute } from "./seo-config.mjs";
 import { loadCalendarSnapshot, loadHolidayMap, tithiText } from "./calendar-snapshot.mjs";
 
 const root = process.cwd();
 const rows = await loadCalendarSnapshot();
 const holidays = await loadHolidayMap();
-const indexedYears = new Set(INDEXED_CALENDAR_YEARS);
+const prerenderYears = new Set(PRERENDER_CALENDAR_YEARS);
 
+// Only the hot five-year cohort is materialized as HTML. The wider factual discovery
+// window is rendered by the Worker on demand, so this post-processing step must never
+// require long-tail dist/calendar/YYYY/MM files to exist.
 const groups = new Map();
 for (const row of rows) {
   const year = Number(row.bs?.year), month = Number(row.bs?.month);
-  if (!indexedYears.has(year) || month < 1 || month > 12) continue;
+  if (!prerenderYears.has(year) || month < 1 || month > 12) continue;
   const key = `${year}-${month}`;
   const list = groups.get(key) || [];
   list.push(row);
@@ -24,7 +27,7 @@ const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&a
 const shortAd = (ad) => new Intl.DateTimeFormat("en-GB", { timeZone:"UTC", day:"numeric", month:"short", year:"numeric" }).format(new Date(ad + "T00:00:00Z"));
 
 let count = 0;
-for (const year of INDEXED_CALENDAR_YEARS) {
+for (const year of PRERENDER_CALENDAR_YEARS) {
   for (let monthNo = 1; monthNo <= 12; monthNo++) {
     const month = BS_MONTHS[monthNo - 1];
     const list = groups.get(`${year}-${monthNo}`) || [];
@@ -46,4 +49,4 @@ for (const year of INDEXED_CALENDAR_YEARS) {
     count++;
   }
 }
-console.log(`Enriched ${count} indexed calendar month pages with factual day links.`);
+console.log(`Enriched ${count} statically prerendered calendar month pages with factual day links; long-tail months remain Worker-rendered.`);
