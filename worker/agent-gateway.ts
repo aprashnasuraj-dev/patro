@@ -2,11 +2,11 @@ import { createPatroAdapter } from "../lib/patro";
 import { agentPageResponse } from "./agent-pages";
 import { dataExportResponse } from "./data-export";
 import { mcpResponse } from "./mcp";
-import { createD1PatroSource } from "./patro-source";
+import { createArchivePatroSource } from "./patro-source";
 import { publicArchivePageResponse } from "./public-archive-pages";
 import { yearPageResponse } from "./year-page";
 
-type Env = Record<string, unknown> & { DB?: any; PUBLIC_SITE_URL?: string };
+type Env = Record<string, unknown> & { DB?: any; ARCHIVE?: any; PUBLIC_SITE_URL?: string };
 type NativeFetch = (request: Request, env: any, ctx: ExecutionContext) => Promise<Response>;
 
 function headers(extra: Record<string, string> = {}) {
@@ -24,11 +24,13 @@ function json(body: unknown, status = 200) {
 
 async function agentRest(request: Request, env: Env) {
   const url = new URL(request.url);
-  const adapter = createPatroAdapter(createD1PatroSource(env));
+  // Calendar methods resolve from immutable R2. The adapter may still query D1 through
+  // listRecords for mutable/correctable festival or sait records.
+  const adapter = createPatroAdapter(createArchivePatroSource(env));
 
   if (url.pathname === "/api/agent/v1/today" && request.method === "GET") {
     const value = await adapter.getTodayNepal();
-    return value ? json({ ok: true, value }) : json({ ok: false, error: "calendar_unavailable" }, 503);
+    return value ? json({ ok: true, value }) : json({ ok: false, error: "calendar_archive_unavailable" }, 503);
   }
 
   if (url.pathname === "/api/agent/v1/convert" && request.method === "GET") {
@@ -36,7 +38,7 @@ async function agentRest(request: Request, env: Env) {
     const bs = url.searchParams.get("bs");
     if (!!ad === !!bs) return json({ ok: false, error: "provide_exactly_one_of_ad_or_bs" }, 400);
     const value = ad ? await adapter.convertAdToBs(ad) : await adapter.convertBsToAd(String(bs));
-    return value ? json({ ok: true, value }) : json({ ok: false, error: "date_outside_archive" }, 404);
+    return value ? json({ ok: true, value }) : json({ ok: false, error: "date_outside_or_archive_unavailable" }, 404);
   }
 
   if (url.pathname === "/api/agent/v1/festival" && request.method === "GET") {
@@ -71,7 +73,7 @@ export async function handleAgentSurface(
   if (data) return data;
 
   // Permanent date/calendar/community archives use the immutable Git mirror materialized in R2.
-  // This runs before legacy D1-backed page helpers so public archive pageviews do not consume D1 reads.
+  // This runs before legacy helpers so public archive pageviews do not consume D1 reads.
   const archive = await publicArchivePageResponse(request, env);
   if (archive) return archive;
 
