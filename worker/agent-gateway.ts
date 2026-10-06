@@ -1,12 +1,13 @@
 import { createPatroAdapter } from "../lib/patro";
 import { agentPageResponse } from "./agent-pages";
 import { dataExportResponse } from "./data-export";
+import { historyEventPageResponse } from "./history-event-page";
 import { mcpResponse } from "./mcp";
 import { createArchivePatroSource } from "./patro-source";
 import { publicArchivePageResponse } from "./public-archive-pages";
 import { yearPageResponse } from "./year-page";
 
-type Env = Record<string, unknown> & { DB?: any; ARCHIVE?: any; PUBLIC_SITE_URL?: string };
+type Env = Record<string, unknown> & { DB?: any; ARCHIVE?: any; ASSETS?: any; PUBLIC_SITE_URL?: string };
 type NativeFetch = (request: Request, env: any, ctx: ExecutionContext) => Promise<Response>;
 
 function headers(extra: Record<string, string> = {}) {
@@ -24,7 +25,7 @@ function json(body: unknown, status = 200) {
 
 async function agentRest(request: Request, env: Env) {
   const url = new URL(request.url);
-  // Calendar methods resolve from immutable R2. The adapter may still query D1 through
+  // Calendar methods resolve from immutable archive/static assets. The adapter may still query D1 through
   // listRecords for mutable/correctable festival or sait records.
   const adapter = createPatroAdapter(createArchivePatroSource(env));
 
@@ -72,8 +73,12 @@ export async function handleAgentSurface(
   const data = await dataExportResponse(request, env);
   if (data) return data;
 
-  // Permanent date/calendar/community archives use the immutable Git mirror materialized in R2.
-  // This runs before legacy helpers so public archive pageviews do not consume D1 reads.
+  // Thousands of source-backed history event URLs are rendered from one compact static index.
+  // This keeps HTML storage essentially constant and consumes neither D1 nor one object per URL.
+  const historyEvent = await historyEventPageResponse(request, env);
+  if (historyEvent) return historyEvent;
+
+  // Permanent date/calendar/community archives use the immutable archive plus packaged static fallback.
   const archive = await publicArchivePageResponse(request, env);
   if (archive) return archive;
 
@@ -82,8 +87,6 @@ export async function handleAgentSurface(
 
   const path = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
   // Festival identities/year occurrences are build-prerendered from the validated holiday map.
-  // Let connected-entry serve that HTML instead of the legacy agent page, which historically
-  // modeled ordinary festivals as Schema.org Event and performed D1 reads.
   if (path === "/festivals" || path.startsWith("/festivals/")) return null;
 
   const page = await agentPageResponse(request, env);
