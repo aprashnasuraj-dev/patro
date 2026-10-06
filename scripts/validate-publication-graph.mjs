@@ -91,10 +91,25 @@ for (const entity of entities) {
   }
 }
 
-if (Number(graph.counts?.tools || 0) !== 29) {
-  throw new Error(`Canonical tool registry changed from the verified 29-tool baseline: ${graph.counts?.tools}`);
+const publicTools = entities.filter((entity) => entity.type === "tool" && entity.publicationStatus === "public");
+const candidateTools = entities.filter((entity) => entity.type === "tool" && entity.publicationStatus === "candidate");
+if (publicTools.length !== 29 || Number(graph.counts?.publicTools || 0) !== 29) {
+  throw new Error(`Observed canonical public tool baseline changed: entities=${publicTools.length}, count=${graph.counts?.publicTools}`);
+}
+if (candidateTools.length !== 4 || Number(graph.counts?.candidateTools || 0) !== 4 || Number(graph.counts?.tools || 0) !== 33) {
+  throw new Error(`33-tool identity reconciliation changed: total=${graph.counts?.tools}, public=${publicTools.length}, candidates=${candidateTools.length}`);
+}
+const expectedToolCandidates = ["tool:api", "tool:card", "tool:diaspora", "tool:tithi"];
+const actualToolCandidates = candidateTools.map((entity) => entity.id).sort();
+if (JSON.stringify(actualToolCandidates) !== JSON.stringify(expectedToolCandidates)) {
+  throw new Error(`Unexpected gated tool identities: ${actualToolCandidates.join(",")}`);
+}
+for (const entity of candidateTools) {
+  if (entity.indexable || entity.coverageStatus !== "legacy-source-identity" || entity.sourceRef !== "migration-tool-catalog") {
+    throw new Error(`Gated tool escaped reconciliation policy: ${entity.id}`);
+  }
 }
 if (Number(graph.counts?.communities || 0) < 6) throw new Error(`Expected all six community hubs; got ${graph.counts?.communities}`);
 if (!(Number(graph.counts?.historyEventsWithSource || 0) > 0)) throw new Error("History source-evidence classification unexpectedly empty");
 
-console.log(`Publication graph valid: ${entities.length} entities; ${graph.counts.indexable} indexable; ${graph.counts.candidate} candidates; ${graph.counts.historyEvents} history events; ${graph.counts.tools} tools; ${graph.counts.communities} communities.`);
+console.log(`Publication graph valid: ${entities.length} entities; ${graph.counts.indexable} indexable; ${graph.counts.candidate} candidates; ${graph.counts.historyEvents} history events; ${publicTools.length}+${candidateTools.length} tool identities; ${graph.counts.communities} communities.`);
