@@ -4,6 +4,7 @@ import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
 import { historyEventPageResponse } from "./history-event-page";
 import { timeMachinePageResponse } from "./time-machine-page";
+import { festivalPageResponse } from "./festival-page";
 import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
@@ -28,7 +29,8 @@ function canonicalDateRedirect(request: Request): Response | null {
  * - speech stays uncached because it is user/input specific;
  * - sourced history-event pages render dynamically from one compact static index;
  * - each Time Machine record gets one dynamic detail URL while /time-machine itself stays the immersive SPA;
- * - deterministic festival identities/occurrences are served from build assets before legacy redirects;
+ * - festival hub/identity/year pages render from one compact index plus the immutable calendar archive;
+ * - prerendered festival assets remain a fallback, never a redirect-to-home dependency;
  * - public reference/calendar/history routes use cacheable server HTML without one stored HTML file per URL.
  */
 const optimizedWorker = {
@@ -49,8 +51,11 @@ const optimizedWorker = {
     const timeMachineDetail = await timeMachinePageResponse(request, env as any);
     if (timeMachineDetail) return timeMachineDetail;
 
-    const festival = await staticFestivalResponse(request, env as any);
-    if (festival) return festival;
+    const festivalPage = await festivalPageResponse(request, env as any);
+    if (festivalPage) return festivalPage;
+
+    const festivalStatic = await staticFestivalResponse(request, env as any);
+    if (festivalStatic) return festivalStatic;
 
     return quotaCachedResponse(request, env as any, ctx, async () => {
       const history = await fastHistoryResponse(request, env as any);
