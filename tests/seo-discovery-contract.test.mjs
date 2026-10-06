@@ -36,7 +36,10 @@ test("SEO discovery uses production canonical and submits a broad factual BS-yea
  const pages=read("public/sitemap-pages.xml");
  for(const route of ["/","/today","/methodology","/corrections","/convert","/rashifal","/time-machine","/on-this-day","/fm","/tv","/today/tokyo","/today/sydney"]){const url=route==="/"?`${production}/`:`${production}${route}`;assert.ok(pages.includes(`<loc>${url}</loc>`),route);}
  assert.ok(manifest.sitemap_files.includes("sitemap-history-events.xml"));
+ assert.ok(manifest.sitemap_files.includes("sitemap-time-machine.xml"));
  assert.ok(Number(manifest.indexed_history_event_route_count||0)>=3000);
+ assert.equal(Number(manifest.indexed_time_machine_route_count||0),706);
+ assert.ok(Number(manifest.dynamic_indexable_route_count||0)>=21000);
 });
 
 test("canonical tools stay complete while private/news/developer surfaces stay out of discovery",()=>{
@@ -77,15 +80,16 @@ test("agent discovery files, citation, MCP and narrow read-only OpenAPI are gene
  const security=read("public/.well-known/security.txt");assert.ok(security.includes(`Contact: ${production}/contact`));assert.ok(security.includes(`Canonical: ${production}/.well-known/security.txt`));
 });
 
-test("canonical adapter uses Git mirror at build time and R2 for immutable runtime calendar reads",()=>{
- const adapter=read("lib/patro.ts"),nodeProvider=read("lib/patro.mjs"),snapshot=read("scripts/calendar-snapshot.mjs"),source=read("worker/patro-source.ts"),gateway=read("worker/agent-gateway.ts"),mcp=read("worker/mcp.ts"),pages=read("worker/agent-pages.ts"),year=read("worker/year-page.ts"),archive=read("worker/public-archive-pages.ts"),data=read("worker/data-export.ts"),calendarFast=read("worker/calendar-fast.ts");
+test("canonical adapter uses Git mirror at build time and shared immutable runtime calendar loader",()=>{
+ const adapter=read("lib/patro.ts"),nodeProvider=read("lib/patro.mjs"),snapshot=read("scripts/calendar-snapshot.mjs"),source=read("worker/patro-source.ts"),gateway=read("worker/agent-gateway.ts"),mcp=read("worker/mcp.ts"),pages=read("worker/agent-pages.ts"),year=read("worker/year-page.ts"),archive=read("worker/public-archive-pages.ts"),archiveLoader=read("worker/calendar-archive.ts"),data=read("worker/data-export.ts"),calendarFast=read("worker/calendar-fast.ts");
  for(const name of ["getDay","getDayByAd","getMonth","getYear","getFestivals","getFestival","getSait","getHolidays","convertBsToAd","convertAdToBs","getTodayNepal","getTithiAt"])assert.ok(adapter.includes(name),name);
  assert.ok(adapter.includes("PATRO_CITIES"));assert.ok(nodeProvider.includes("migration/data/public/astronomy_calendar_map"));assert.ok(snapshot.includes('../lib/patro.mjs'));
  assert.ok(source.includes('const CALENDAR_PREFIX="datasets/calendar/v1"'));assert.ok(source.includes("createArchivePatroSource"));assert.ok(gateway.includes("createPatroAdapter(createArchivePatroSource(env))"));assert.ok(mcp.includes("createPatroAdapter(createArchivePatroSource(env))"));
- assert.ok(archive.includes("datasets/calendar/v1"));assert.ok(archive.includes("datasets/community/v1"));assert.ok(!archive.includes("env.DB"));
- const archiveCall=gateway.indexOf("const archive = await publicArchivePageResponse(request, env)");const agentPageCall=gateway.indexOf("const page = await agentPageResponse(request, env)");assert.ok(archiveCall>=0&&agentPageCall>=0&&archiveCall<agentPageCall,"R2 archive invocation must precede legacy agent page invocation");
- assert.ok(calendarFast.includes("D1 is deliberately not a normal fallback"));assert.ok(!calendarFast.includes("cloudflare-d1-calendar"));
- assert.ok(data.includes("datasets/calendar/v1"));assert.ok(!data.includes("createD1PatroSource"));assert.ok(data.includes('"x-patro-backend":"cloudflare-r2-calendar"'));
+ assert.ok(archiveLoader.includes('CALENDAR_PREFIX = "datasets/calendar/v1"'));assert.ok(archiveLoader.includes('CALENDAR_STATIC_PREFIX = "/data/calendar"'));assert.ok(archiveLoader.includes('backend: "r2"'));assert.ok(archiveLoader.includes('backend: "static-fallback"'));
+ assert.ok(archive.includes("loadCalendarShard"));assert.ok(archive.includes("datasets/community/v1"));assert.ok(!archive.includes("env.DB"));
+ const archiveCall=gateway.indexOf("const archive = await publicArchivePageResponse(request, env)");const agentPageCall=gateway.indexOf("const page = await agentPageResponse(request, env)");assert.ok(archiveCall>=0&&agentPageCall>=0&&archiveCall<agentPageCall,"immutable archive invocation must precede legacy agent page invocation");
+ assert.ok(calendarFast.includes("loadCalendarShard"));assert.ok(calendarFast.includes("D1 is deliberately not a normal fallback"));assert.ok(!calendarFast.includes("cloudflare-d1-calendar"));
+ assert.ok(data.includes("loadCalendarShard"));assert.ok(!data.includes("createD1PatroSource"));assert.ok(data.includes('"x-patro-backend":source.backend'));
  assert.ok(mcp.includes('const MODERN = "2026-07-28"'));assert.ok(mcp.includes('const LEGACY = "2025-11-25"'));for(const tool of ["get_today","convert_date","get_festival"])assert.ok(mcp.includes(tool),tool);
  for(const direct of ['path === "/today"','path === "/methodology"','path === "/corrections"','path === "/widget/today"'])assert.ok(pages.includes(direct),direct);
  for(const matcher of ["const festival = path.match(","const countdown = path.match(","const panchang = path.match(","const tika = path.match(","const busiest = path.match(","const ics = path.match(","const pdf = path.match(","const widget = path.match("])assert.ok(pages.includes(matcher),matcher);
@@ -94,9 +98,9 @@ test("canonical adapter uses Git mirror at build time and R2 for immutable runti
 });
 
 test("build and deploy pipeline lock factual prerender, dynamic history and explicit IndexNow tooling",()=>{
- const prerender=read("scripts/prerender-seo.mjs"),days=read("scripts/prerender-days-seo.mjs"),config=read("scripts/seo-config.mjs"),pkg=JSON.parse(read("package.json")),entry=read("worker/connected-entry.ts"),optimized=read("worker/optimized-entry.ts"),history=read("worker/history-event-page.ts"),indexnow=read("scripts/indexnow.mjs");
+ const prerender=read("scripts/prerender-seo.mjs"),days=read("scripts/prerender-days-seo.mjs"),config=read("scripts/seo-config.mjs"),pkg=JSON.parse(read("package.json")),entry=read("worker/connected-entry.ts"),optimized=read("worker/optimized-entry.ts"),history=read("worker/history-event-page.ts"),timeMachine=read("worker/time-machine-page.ts"),indexnow=read("scripts/indexnow.mjs");
  assert.ok(prerender.includes('data-seo-prerender="true"'));assert.ok(prerender.includes('"@type": "WebPage"'));assert.ok(prerender.includes('"@type": "BreadcrumbList"'));assert.ok(prerender.includes('"@type": "WebApplication"'));assert.ok(prerender.includes("max-image-preview:large"));assert.ok(config.includes("Ashwin Ashoj Asoj"));assert.ok(config.includes("calendarYearRoute"));
  assert.ok(days.includes("loadCalendarSnapshot"));assert.ok(days.includes("loadHolidayMap"));assert.ok(days.includes("यो मितिको सीधा उत्तर"));assert.ok(days.includes("calendarYearRoute"));assert.ok(days.includes('href="/today"'));assert.ok(days.includes('/festivals/${esc(h.slug)}/'));
- assert.ok(pkg.scripts.build.includes("npm run seo:phase0"));assert.equal(pkg.scripts["seo:accuracy-reference"],"node scripts/verify-calendar-reference.mjs");assert.equal(pkg.scripts["seo:verify-live"],"node scripts/verify-agent-bots.mjs");assert.equal(pkg.scripts["seo:indexnow"],"node scripts/indexnow.mjs");assert.equal(pkg.scripts["deploy:cloudflare"],"npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
- assert.ok(entry.includes("exactSpaAssetResponse"));assert.ok(entry.includes('import { handleAgentSurface } from "./agent-gateway"'));assert.ok(optimized.includes("historyEventPageResponse"));assert.ok(history.includes("dynamic-history-static-index"));assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));
+ assert.ok(pkg.scripts.build.includes("npm run seo:phase0"));assert.ok(pkg.scripts.build.includes("build-dynamic-history-pages.mjs"));assert.ok(pkg.scripts.build.includes("build-dynamic-time-machine-pages.mjs"));assert.equal(pkg.scripts["seo:accuracy-reference"],"node scripts/verify-calendar-reference.mjs");assert.equal(pkg.scripts["seo:verify-live"],"node scripts/verify-agent-bots.mjs");assert.equal(pkg.scripts["seo:indexnow"],"node scripts/indexnow.mjs");assert.equal(pkg.scripts["deploy:cloudflare"],"npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc");
+ assert.ok(entry.includes("exactSpaAssetResponse"));assert.ok(entry.includes('import { handleAgentSurface } from "./agent-gateway"'));assert.ok(optimized.includes("historyEventPageResponse"));assert.ok(optimized.includes("timeMachinePageResponse"));assert.ok(history.includes("dynamic-history-static-index"));assert.ok(timeMachine.includes("dynamic-time-machine-index"));assert.ok(indexnow.includes("https://api.indexnow.org/indexnow"));
 });
