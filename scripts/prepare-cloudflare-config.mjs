@@ -17,6 +17,7 @@ let kvId=process.env.CF_KV_NAMESPACE_ID?.trim()||configuredKv?.id||"";
 const kvPreviewId=process.env.CF_KV_PREVIEW_NAMESPACE_ID?.trim()||configuredKv?.preview_id;
 let r2Bucket=process.env.CF_R2_BUCKET_NAME?.trim()||process.env.R2_BUCKET_NAME?.trim()||configuredR2?.bucket_name||"";
 const r2PreviewBucket=process.env.CF_R2_PREVIEW_BUCKET_NAME?.trim()||configuredR2?.preview_bucket_name;
+const requireQuotaCache=/^(?:1|true|yes)$/i.test(process.env.REQUIRE_QUOTA_CACHE?.trim()||"");
 
 if(!d1Id)throw new Error("Cloudflare D1 DB binding is missing. Configure DB in wrangler.jsonc or set CF_D1_DATABASE_ID.");
 
@@ -33,10 +34,10 @@ async function cf(path,init={}){
   return body?.result;
 }
 
-// Production deploys already have an account-scoped API token. If optional cache IDs were
-// not copied into GitHub variables, discover safe cache resources instead of silently
-// deploying a Worker that can only hit D1. KV may be provisioned once under a deterministic
-// cache-only name; R2 is never created or deleted here because it can contain user backups.
+// Production deploys already have an account-scoped API token. If cache IDs were not copied
+// into GitHub variables, discover safe resources. KV may be provisioned once under a
+// deterministic cache-only name; R2 is never created/deleted here because the bucket can
+// also contain user backups or other durable archives.
 if(account&&token){
   if(!kvId){
     try{
@@ -58,14 +59,24 @@ if(account&&token){
       const result=await cf("/r2/buckets");
       const buckets=Array.isArray(result?.buckets)?result.buckets:Array.isArray(result)?result:[];
       const names=buckets.map((row)=>String(row?.name||"")).filter(Boolean);
-      const preferred=names.filter((name)=>/(?:^|[-_])(patro|aafnai|aafnaipatro|miti)(?:$|[-_])|^(?:patro|aafnai-patro|aafnaipatro|miti)/i.test(name));
-      if(preferred.length===1)r2Bucket=preferred[0];
-      else if(names.length===1)r2Bucket=names[0];
-      else if(names.length>1)console.warn("Multiple R2 buckets found; set CF_R2_BUCKET_NAME to select the Patro archive bucket safely.");
+      if(names.includes("patro"))r2Bucket="patro";
+      else{
+        const preferred=names.filter((name)=>/(?:^|[-_])(patro|aafnai|aafnaipatro|miti)(?:$|[-_])|^(?:patro|aafnai-patro|aafnaipatro|miti)/i.test(name));
+        if(preferred.length===1)r2Bucket=preferred[0];
+        else if(names.length===1)r2Bucket=names[0];
+        else if(names.length>1)console.warn("Multiple R2 buckets found; set CF_R2_BUCKET_NAME to select the Patro archive bucket safely.");
+      }
     }catch(error){
       console.warn(`R2 cache discovery skipped: ${String(error?.message||error)}`);
     }
   }
+}
+
+if(requireQuotaCache&&!kvId){
+  throw new Error("REQUIRE_QUOTA_CACHE=1 but CACHE KV namespace could not be resolved or provisioned.");
+}
+if(requireQuotaCache&&!r2Bucket){
+  throw new Error("REQUIRE_QUOTA_CACHE=1 but ARCHIVE R2 bucket could not be resolved.");
 }
 
 base.name="patro";
