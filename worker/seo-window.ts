@@ -1,6 +1,7 @@
 // Single runtime definition of the indexable BS-year window. scripts/seo-config.mjs uses the
-// identical formula at build time, so a calendar or date URL is in a sitemap exactly when runtime
-// leaves it indexable.
+// identical formula at build time, so a calendar/date URL is submitted exactly when runtime
+// leaves it indexable. The current factual cohort is 35 years back + current + 10 years forward
+// (46 BS years total when the archive contains the complete range).
 
 export const INDEXABLE_PAST_YEARS = 35;
 export const INDEXABLE_FUTURE_YEARS = 10;
