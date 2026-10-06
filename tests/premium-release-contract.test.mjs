@@ -31,7 +31,7 @@ test("global feature launcher is mounted and exposes the full product while equi
   for(const route of [
     "/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya","/nepal-sambat/mandala",
     "/samudaya/lhosar","/samudaya/tharu","/samudaya/mithila","/samudaya/kirat","/samudaya/hijri","/samudaya/chakra",
-    "/rashifal","/jyotish/china","/jyotish/matchmaking"
+    "/rashifal","/janmapatro","/janmapatro/milan.html"
   ]) assert.ok(hrefs.includes(route),`launcher lost ${route}`);
   assert.ok(!hrefs.includes("/developers"),"developer/API docs must not be advertised in frontend launcher");
   assert.ok(!hrefs.includes("/tools/api"),"API tool must not be advertised in frontend launcher");
