@@ -102,7 +102,7 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
   if (!occurrences.length) continue;
 
   const identityCanonical = `${SITE}/festivals/${festival.slug}`;
-  const identityDescription = `${name} का source-backed Bikram Sambat वर्षगत मिति; प्रत्येक वर्षको पृष्ठमा त्यो दिनको BS/AD, Nepal Sambat र उपलब्ध पूर्ण Panchang विवरण।`;
+  const identityDescription = `${name} का source-backed Bikram Sambat वर्षगत मिति र घर, परिवार तथा समुदायमा मनाइने observance अभिलेख; प्रत्येक वर्षको पृष्ठमा त्यो दिनको BS/AD, Nepal Sambat र उपलब्ध पूर्ण Panchang विवरण।`;
   const identityBody = `<article><p><a href="/festivals">चाडपर्व</a> › ${esc(name)}</p><h1>${esc(name)}</h1><p>${esc(identityDescription)}</p><h2>वर्षगत अभिलेख</h2><ul>${occurrences.map((o) => `<li><a href="/festivals/${esc(festival.slug)}/${o.year}">${esc(`${name} ${o.year}`)}</a> — ${o.dates.map((d) => esc(prettyAd(d))).join(", ")}</li>`).join("")}</ul><p><a href="/festivals">सबै चाडपर्व</a> · <a href="/">पात्रोमा फर्कनुहोस्</a></p></article>`;
   const identitySchema = { "@context":"https://schema.org", "@type":"CollectionPage", name, description:identityDescription, url:identityCanonical, about:{ "@type":"Thing", name, description:"Festival and community observance" } };
   const identityFile = resolve(root, "dist/festivals", festival.slug, "index.html");
@@ -127,7 +127,7 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
     }).join("");
     const sourceLinks = [...occurrence.sourceUrls].map((url) => `<a href="${esc(url)}" rel="nofollow noopener">source</a>`).join(" · ");
     const body = `<article><p><a href="/festivals">चाडपर्व</a> › <a href="/festivals/${esc(festival.slug)}">${esc(name)}</a> › ${occurrence.year}</p><h1>${esc(title)}</h1><p>${esc(description)}</p><p><strong>${esc(dateSummary)}</strong></p><p><small>Source: ${esc(sourceText)}${sourceLinks ? ` · ${sourceLinks}` : ""}</small></p></article>${daySections}`;
-    const schema = { "@context":"https://schema.org", "@graph":[{ "@type":"WebPage", name:title, url:canonical, description },{ "@type":"Event", name, startDate:occurrence.dates[0], endDate:occurrence.dates.at(-1), url:canonical }] };
+    const schema = { "@context":"https://schema.org", "@graph":[{ "@type":"WebPage", name:title, url:canonical, description, about:{ "@type":"DefinedTerm", name, description:`${name} ${occurrence.year} observance dates` } },{ "@type":"BreadcrumbList", itemListElement:[{ "@type":"ListItem", position:1, name:"आफ्नै पात्रो", item:`${SITE}/` },{ "@type":"ListItem", position:2, name:"चाडपर्व", item:`${SITE}/festivals` },{ "@type":"ListItem", position:3, name, item:`${SITE}/festivals/${festival.slug}` },{ "@type":"ListItem", position:4, name:String(occurrence.year), item:canonical }] }] };
     const file = resolve(root, "dist/festivals", festival.slug, String(occurrence.year), "index.html");
     await mkdir(dirname(file), { recursive:true });
     await writeFile(file, render({ title, description, canonical, body, schema }), "utf8");
@@ -135,4 +135,5 @@ for (const festival of [...festivalMap.values()].sort((a,b) => a.slug.localeComp
   }
 }
 
-console.log(`Festival prerender emitted ${identityCount} identities and ${occurrenceCount} full-detail occurrence pages from validated holiday records.`);
+// Contract wording: these are community/people observances, not synthetic scheduled event listings.
+console.log(`Festival prerender emitted ${identityCount} identities and ${occurrenceCount} full-detail community/people observances from validated holiday records.`);
