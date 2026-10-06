@@ -9,6 +9,7 @@ import { communityEventPageResponse } from "./community-event-page";
 import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
+import { nativeRashifalResponse } from "./rashifal-native";
 
 /** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
 function canonicalDateRedirect(request: Request): Response | null {
@@ -33,6 +34,7 @@ function canonicalDateRedirect(request: Request): Response | null {
  * - festival hub/identity/year pages render from one compact index plus the immutable calendar archive;
  * - 1,000+ community observance records get factual detail pages with source/community data and day-calendar enrichment;
  * - prerendered festival assets remain a fallback, never a redirect-to-home dependency;
+ * - Rashifal public broadcasts and private birthday calculations use the native deterministic engine before connected storage;
  * - public reference/calendar/history routes use cacheable server HTML without one stored HTML file per URL.
  */
 const optimizedWorker = {
@@ -63,6 +65,9 @@ const optimizedWorker = {
     if (festivalStatic) return festivalStatic;
 
     return quotaCachedResponse(request, env as any, ctx, async () => {
+      const rashifal = await nativeRashifalResponse(request, ctx);
+      if (rashifal) return rashifal;
+
       const history = await fastHistoryResponse(request, env as any);
       if (history) return history;
 

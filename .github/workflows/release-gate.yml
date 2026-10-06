@@ -30,6 +30,48 @@ jobs:
           uname -a
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Detect release scope
+        id: scope
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          archive=true
+          heavy=true
+          files=""
+          if [[ "$EVENT_NAME" == "push" && -n "${BEFORE:-}" && ! "$BEFORE" =~ ^0+$ ]]; then
+            if ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              git fetch --no-tags --depth=1 origin "$BEFORE"
+            fi
+            files="$(git diff --name-only "$BEFORE" "$AFTER")"
+            printf '%s\n' "$files"
+            archive=false
+            heavy=false
+            while IFS= read -r file; do
+              [[ -z "$file" ]] && continue
+              case "$file" in
+                migration/data/public/*|migration/data/public/**|public/data/calendar/*|public/data/calendar/**|cloudflare/d1/*|cloudflare/d1/**|scripts/cloudflare/*r2*|scripts/cloudflare/*archive*|worker/calendar-archive.ts|worker/calendar-fast.ts|worker/history-fast.ts|worker/public-archive-pages.ts|worker/seo-window.ts|wrangler.jsonc)
+                  archive=true
+                  ;;
+              esac
+              case "$file" in
+                src/rashifal/*|src/rashifal/**|worker/rashifal-native.ts|worker/optimized-entry.ts|packages/engine/*|packages/engine/**|tests/rashifal-*.test.mjs|tests/janmapatro-*.test.mjs|docs/rashifal/*|docs/rashifal/**|docs/janmapatro/*|docs/janmapatro/**|.github/workflows/rashifal-fast-gate.yml|.github/workflows/janmapatro-fast-gate.yml|.github/workflows/release-gate.yml)
+                  ;;
+                *)
+                  heavy=true
+                  ;;
+              esac
+            done <<< "$files"
+          fi
+          echo "archive=$archive" >> "$GITHUB_OUTPUT"
+          echo "heavy=$heavy" >> "$GITHUB_OUTPUT"
+          echo "archive-sensitive validation=$archive"
+          echo "heavy browser validation=$heavy"
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
@@ -40,6 +82,7 @@ jobs:
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
       - name: Verify committed migration sources
         id: migration
+        if: steps.scope.outputs.archive == 'true'
         continue-on-error: true
         run: |
           set -euo pipefail
@@ -49,17 +92,24 @@ jobs:
         id: build
         continue-on-error: true
         run: npm run build
-      - name: Core, typing, Patro tools, community and release-safety tests
+      - name: Core, focused feature and release-safety tests
         id: product_tests
         continue-on-error: true
+        env:
+          HEAVY_RELEASE: ${{ steps.scope.outputs.heavy }}
         run: |
           set -euo pipefail
-          npm run test:core
-          npm run test:typing
-          npm run test:patro-tools
-          npm run test:community
-          npm run test:release-safety
-          node --test tests/homepage-recovery-contract.test.mjs
+          if [[ "$HEAVY_RELEASE" == "true" ]]; then
+            npm run test:core
+            npm run test:typing
+            npm run test:patro-tools
+            npm run test:community
+            npm run test:release-safety
+            node --test tests/homepage-recovery-contract.test.mjs
+          else
+            node --test tests/rashifal-fast-contract.test.mjs tests/janmapatro-share-state.test.mjs
+            npm run test:release-safety
+          fi
       - name: Cloudflare Worker and full-product contracts
         id: cloudflare
         continue-on-error: true
@@ -104,7 +154,7 @@ jobs:
           done
       - name: Verify immutable R2 release inventory
         id: r2_inventory
-        if: always() && steps.build.outcome == 'success'
+        if: always() && steps.build.outcome == 'success' && steps.scope.outputs.archive == 'true'
         continue-on-error: true
         run: node scripts/cloudflare/verify-r2-release-inventory.mjs
       - name: Dependency audit
@@ -121,6 +171,7 @@ jobs:
           if git grep -nEI "$patterns" -- . ':(exclude).github/workflows/release-gate.yml'; then echo "Potential secret detected in tracked files."; exit 1; fi
       - name: Install browser validation runtime
         id: browser_runtime
+        if: steps.scope.outputs.heavy == 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -129,7 +180,7 @@ jobs:
           npx playwright install chromium >/dev/null
       - name: Homepage first-paint, API-failure and offline PWA checks
         id: home_pwa_checks
-        if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
+        if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |
@@ -144,7 +195,7 @@ jobs:
           trap - EXIT
       - name: Canonical tools and community mobile functional checks
         id: mobile_checks
-        if: always() && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
+        if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success' && steps.browser_runtime.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |
@@ -160,7 +211,7 @@ jobs:
           trap - EXIT
       - name: Lighthouse SEO, accessibility, best-practices and performance gate
         id: lighthouse
-        if: always() && steps.build.outcome == 'success'
+        if: always() && steps.scope.outputs.heavy == 'true' && steps.build.outcome == 'success'
         continue-on-error: true
         run: npm run seo:audit
       - name: Release verdict
@@ -180,23 +231,40 @@ jobs:
           HOME_PWA_CHECKS: ${{ steps.home_pwa_checks.outcome }}
           MOBILE_CHECKS: ${{ steps.mobile_checks.outcome }}
           LIGHTHOUSE: ${{ steps.lighthouse.outcome }}
+          ARCHIVE_REQUIRED: ${{ steps.scope.outputs.archive }}
+          HEAVY_REQUIRED: ${{ steps.scope.outputs.heavy }}
         run: |
           set -euo pipefail
           failures=0
           check() { local name="$1" outcome="$2"; if [[ "$outcome" != "success" ]]; then echo "::error::$name outcome=$outcome"; failures=1; else echo "$name=success"; fi; }
-          check migration "$MIGRATION"
+          if [[ "$ARCHIVE_REQUIRED" == "true" ]]; then
+            check migration "$MIGRATION"
+          else
+            echo "migration=skipped (no archive-sensitive changes)"
+          fi
           check build "$BUILD"
           check product_tests "$PRODUCT_TESTS"
           check cloudflare "$CLOUDFLARE"
           check router_boundaries "$ROUTER_BOUNDARIES"
           check artifacts "$ARTIFACTS"
-          check r2_inventory "$R2_INVENTORY"
+          if [[ "$ARCHIVE_REQUIRED" == "true" ]]; then
+            check r2_inventory "$R2_INVENTORY"
+          else
+            echo "r2_inventory=skipped (no archive-sensitive changes)"
+          fi
           check dependency_audit "$DEPENDENCY_AUDIT"
           check secret_scan "$SECRET_SCAN"
-          check browser_runtime "$BROWSER_RUNTIME"
-          check home_pwa_checks "$HOME_PWA_CHECKS"
-          check mobile_checks "$MOBILE_CHECKS"
-          check lighthouse "$LIGHTHOUSE"
+          if [[ "$HEAVY_REQUIRED" == "true" ]]; then
+            check browser_runtime "$BROWSER_RUNTIME"
+            check home_pwa_checks "$HOME_PWA_CHECKS"
+            check mobile_checks "$MOBILE_CHECKS"
+            check lighthouse "$LIGHTHOUSE"
+          else
+            echo "browser_runtime=skipped (focused release)"
+            echo "home_pwa_checks=skipped (focused release)"
+            echo "mobile_checks=skipped (focused release)"
+            echo "lighthouse=skipped (focused release)"
+          fi
           exit "$failures"
       - name: Optional On This Day D1 snapshot refresh
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SYNC_HISTORY_D1 == '1'
@@ -246,15 +314,17 @@ jobs:
           NODE
           npx wrangler deploy --config wrangler.generated.jsonc
       - name: Prime annual On This Day cache
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.scope.outputs.archive == 'true'
         env:
           PUBLIC_SITE_URL: https://aafnaipatro.com
           HISTORY_PRIME_CONCURRENCY: "8"
           HISTORY_PRIME_SETTLE_MS: "2000"
         run: node scripts/cloudflare/prime-history-cache.mjs
-      - name: Smoke test deployed Cloudflare runtime and R2 archive backends
+      - name: Smoke test deployed Cloudflare runtime
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
+        env:
+          ARCHIVE_CHANGED: ${{ steps.scope.outputs.archive }}
         run: |
           set -euo pipefail
           for path in / /tools /convert /time-machine /on-this-day /tools/astro; do
@@ -280,4 +350,9 @@ jobs:
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/sync?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/on-this-day?date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
           curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/time-machine?limit=800" >/dev/null
-          node scripts/cloudflare/smoke-r2-release.mjs
+          curl --retry 5 --retry-delay 2 --retry-all-errors -fsS "https://aafnaipatro.com/api/v1/rashifal/universal?period=daily&system=vedic&calendar=bs&date=$(TZ=Asia/Kathmandu date +%F)" >/dev/null
+          if [[ "$ARCHIVE_CHANGED" == "true" ]]; then
+            node scripts/cloudflare/smoke-r2-release.mjs
+          else
+            echo "R2 archive smoke skipped: archive-sensitive files unchanged."
+          fi
