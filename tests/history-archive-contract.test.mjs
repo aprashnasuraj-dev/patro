@@ -25,6 +25,7 @@ test("history archive renderer and hydration use packaged shards without copied 
   const renderer = read("scripts/prerender-history-days.mjs");
   const pages = read("src/AafnaiDetailPages.tsx");
   const router = read("src/PatroRouter.tsx");
+  const worker = read("worker/connected-entry.ts");
   const pkg = JSON.parse(read("package.json"));
 
   assert.ok(renderer.includes("public/data/on-this-day"));
@@ -38,6 +39,10 @@ test("history archive renderer and hydration use packaged shards without copied 
   assert.ok(pages.includes("historySourceUrl"));
   assert.ok(router.includes("HISTORY_DAY_ROUTE"));
   assert.ok(router.includes("monthDay={historyDay[1]}"));
+  assert.ok(worker.includes("function isHistoryDayPath"));
+  assert.ok(worker.includes("|| isHistoryDayPath(path)"));
+  assert.ok(worker.includes('SEARCH_NOINDEX_EXACT.has(path) || isHistoryDayPath(path)'));
+  assert.ok(!worker.includes('path.startsWith("/on-this-day/")'), "invalid month/day paths must not receive root SPA fallback");
   assert.ok(pkg.scripts.build.includes("scripts/prerender-history-days.mjs"));
   assert.ok(pkg.scripts["seo:prerender"].includes("scripts/prerender-history-days.mjs"));
 });
