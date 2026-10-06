@@ -8,6 +8,7 @@ import { communityResponse } from "./community";
 import { adminResponse } from "./admin";
 import { publicApiResponse } from "./public-api";
 import { pushResponse } from "./push";
+import { morningPushResponse } from "./morning-push";
 import { privateResponse } from "./private";
 import { authResponse } from "./auth";
 import { cronResponse, runScheduled } from "./jobs";
@@ -614,6 +615,8 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   if (adminNative) return adminNative;
   const privateNative = await privateResponse(request,env);
   if (privateNative) return privateNative;
+  const morningNative = await morningPushResponse(request,env);
+  if (morningNative) return morningNative;
   const pushNative = await pushResponse(request,env);
   if (pushNative) return pushNative;
   const cronNative = await cronResponse(request,env);
@@ -786,6 +789,8 @@ export default {
           const privateNative = await privateResponse(request,env);
           if (privateNative) response = privateNative;
           else {
+            const morningNative = await morningPushResponse(request,env);
+            if (morningNative) return secureResponse(request,morningNative);
             const pushNative = await pushResponse(request,env);
             if (pushNative) response = pushNative;
             else {

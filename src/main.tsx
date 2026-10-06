@@ -8,6 +8,7 @@ import { HomepageEnhancer } from "./components/HomepageEnhancer";
 import { JyotishAssistant } from "./components/JyotishAssistant";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PwaInstallExperience } from "./components/PwaInstallExperience";
+import { startLocalMorningScheduler } from "./localMorning";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -47,6 +48,7 @@ const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
 
 registerPatroServiceWorker();
+startLocalMorningScheduler();
 recordAiReferral();
 
 createRoot(root).render(

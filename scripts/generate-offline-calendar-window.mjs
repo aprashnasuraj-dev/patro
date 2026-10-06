@@ -7,15 +7,18 @@ const outputs=[
   resolve(root,"public/data/calendar/offline-window.json"),
   resolve(root,"dist/data/calendar/offline-window.json")
 ];
-const MAX_DAYS=45;
+const MAX_DAYS=64;
 const PAST_DAYS=7;
 const MAX_BYTES=300000;
 const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const rows=await getAllDays();
 const todayIndex=rows.findIndex((row)=>row.ad===today);
 if(todayIndex<0)throw new Error(`Offline calendar window cannot locate today ${today} in canonical archive`);
-const start=Math.max(0,todayIndex-PAST_DAYS);
-const days=rows.slice(start,start+MAX_DAYS).map((row)=>({
+const current=rows[todayIndex].bs;
+const monthIndices=rows.map((row,index)=>row.bs?.year===current.year&&row.bs?.month===current.month?index:-1).filter(index=>index>=0);
+const start=Math.max(0,monthIndices[0]-PAST_DAYS);
+const end=Math.min(rows.length,monthIndices.at(-1)+PAST_DAYS+1);
+const days=rows.slice(start,end).map((row)=>({
   ad:row.ad,
   bs:row.bs,
   ns:row.ns||null,
@@ -27,7 +30,7 @@ const days=rows.slice(start,start+MAX_DAYS).map((row)=>({
     sunset:row.panchang?.sunset||null
   }
 }));
-if(days.length!==MAX_DAYS)throw new Error(`Offline calendar window must be exactly ${MAX_DAYS} days; got ${days.length}`);
+if(days.length>MAX_DAYS||days.length<monthIndices.length)throw new Error(`Offline calendar window must contain the whole BS month and stay bounded; got ${days.length}`);
 const years=[...new Set(days.map((row)=>Number(row.bs?.year)).filter(Boolean))];
 const allowedDates=new Set(days.map((row)=>row.ad));
 const events=[];
@@ -52,6 +55,7 @@ const payload={
   generated_at:new Date().toISOString(),
   basis:"Canonical Aafnai Patro archive; bounded offline/PWA window only",
   max_days:MAX_DAYS,
+  month_days:monthIndices.length,
   start:days[0].ad,
   end:days.at(-1).ad,
   days,

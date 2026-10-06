@@ -1,13 +1,14 @@
 type IdleWindow = Window & typeof globalThis & { requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number };
 
 const OFFLINE_MODULE_LOADERS = [
+  () => import("./ConvertPage"),
   () => import("./utilities/UtilitySuite"),
   () => import("./features/nepali-tools/NepaliTools"),
   () => import("./patro-tools-integration/PatroToolsShell"),
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "2026-10-06-r2-archive-recovery-v1";
+const SW_REVISION = "2026-10-07-morning-offline-v2";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -75,6 +76,8 @@ export function registerPatroServiceWorker() {
         await registration.update();
         if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
+        registration.active?.postMessage({ type: "WARM_CALENDAR" });
+        runWhenIdle(() => { void import("./ConvertPage").catch(() => undefined); });
       } catch { /* app remains usable if service worker setup fails */ }
     }).catch((error) => console.warn("Service worker registration failed", error));
   });

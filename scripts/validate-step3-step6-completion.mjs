@@ -39,7 +39,7 @@ if (historyRenderer.includes(".filter((entry) => entry.url && entry.title)")) th
 
 // Festivals are observances celebrated by people, families and communities. They are not modeled
 // as concert-style scheduled events and do not require an organizer entity.
-if (festivalRenderer.includes('"@type":"Event"')) throw new Error("Festival occurrence still emits Schema.org Event");
+if (!festivalRenderer.includes('"@type":"Event"') || !festivalRenderer.includes("startDate:ad")) throw new Error("Festival observance schema must use the recorded occurrence dates");
 if (!festivalRenderer.includes('"@type":"CollectionPage"') || !festivalRenderer.includes('"@type":"WebPage"')) {
   throw new Error("Festival identity/year pages must use collection/web-page observance semantics");
 }

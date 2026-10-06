@@ -19,14 +19,28 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
   await page.getByRole("button", { name: /^Install$/ }).waitFor({ state: "visible", timeout: 5000 });
   await page.getByRole("button", { name: /^Install$/ }).click();
   await page.waitForFunction(() => window.__installPromptCalls === 1, { timeout: 5000 });
+  await page.evaluate(() => {
+    window.__notificationPermissionCalls=0;
+    Notification.requestPermission=async()=>{window.__notificationPermissionCalls++;return "denied"};
+    window.dispatchEvent(new Event("appinstalled"));
+  });
   const installedButton = page.locator(".ap-install-footer.is-installed");
   await installedButton.waitFor({ state: "visible", timeout: 5000 });
   if (!(await installedButton.isDisabled())) throw new Error("PWA install footer did not switch to installed state after accepted prompt");
 
-  await page.evaluate(() => window.dispatchEvent(new Event("appinstalled")));
-  await page.waitForTimeout(100);
-  const noticeCount = await page.locator(".ap-install-notice").count();
-  if (noticeCount && await page.locator(".ap-install-notice").isVisible().catch(() => false)) throw new Error("install notice stayed visible after appinstalled");
+  await page.locator(".ap-morning-setup").waitFor({state:"visible"});
+  if(await page.evaluate(()=>window.__notificationPermissionCalls)!==0)throw new Error("permission was requested without an explicit enable click");
+  await page.getByRole("button",{name:"अनुमति दिएर सक्रिय गर्नुहोस्"}).click();
+  await page.getByText("अनुमति दिइएन। फेरि स्वतः सोधिने छैन।").waitFor();
+  if(await page.evaluate(()=>window.__notificationPermissionCalls)!==1)throw new Error("notification permission must be requested once");
+  await page.getByRole("button",{name:"अहिले चाहिँदैन"}).click();
+  await page.reload({waitUntil:"domcontentloaded"});
+  await page.waitForTimeout(500);
+  await page.evaluate(()=>window.dispatchEvent(new Event("appinstalled")));
+  await page.waitForTimeout(200);
+  if(await page.locator(".ap-morning-setup").count())throw new Error("notification offer repeated after reload/decline");
+  const noticeCount = await page.locator(".ap-install-notice:not(.ap-morning-setup)").count();
+  if (noticeCount && await page.locator(".ap-install-notice:not(.ap-morning-setup)").isVisible().catch(() => false)) throw new Error("install notice stayed visible after appinstalled");
   await context.close();
 
   const iosContext = await browser.newContext({
