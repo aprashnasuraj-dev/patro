@@ -2,7 +2,10 @@ import type { CalendarRecord, PatroSource, RecordQuery } from "../lib/patro";
 import { bsToAd, daysInBsMonth } from "../packages/core/src";
 import { calculateAstronomicalTithi } from "./tithi";
 
-export type PatroEnv = { DB?: any };
+type R2ObjectLike={text():Promise<string>};
+type R2Like={get(key:string):Promise<R2ObjectLike|null>};
+export type PatroEnv = { DB?: any; ARCHIVE?:R2Like };
+const CALENDAR_PREFIX="datasets/calendar/v1";
 
 function parse(row: any) {
   if (!row) return null;
@@ -12,7 +15,6 @@ function parse(row: any) {
   }
   return value;
 }
-
 function normalizeCalendar(row: any): CalendarRecord | null {
   const value = parse(row);
   if (!value) return null;
@@ -22,18 +24,25 @@ function normalizeCalendar(row: any): CalendarRecord | null {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(ad) || !bs?.year || !bs?.month || !bs?.day) return null;
   return { ...payload, ad, bs, ns: payload.ns || payload.nepal_sambat || null, panchang: payload.panchang || null };
 }
-
 async function all(db: any, sql: string, bindings: any[] = []) {
   const out = await db.prepare(sql).bind(...bindings).all();
   return (out.results || []).map(parse).filter(Boolean);
 }
-
 function bsRange(year:number,month?:number){
   try{
     const startMonth=month||1,endMonth=month||12;
     const start=bsToAd({year,month:startMonth,day:1});
     const end=bsToAd({year,month:endMonth,day:daysInBsMonth(year,endMonth)});
     return {start,end};
+  }catch{return null;}
+}
+async function r2Year(env:PatroEnv,calendar:"ad"|"bs",year:number):Promise<CalendarRecord[]|null>{
+  if(!env.ARCHIVE)return null;
+  try{
+    const object=await env.ARCHIVE.get(`${CALENDAR_PREFIX}/${calendar}/${year}.json`);if(!object)return null;
+    const doc=JSON.parse(await object.text());
+    if(Number(doc?.schema)!==1||doc?.calendar!==calendar||Number(doc?.year)!==year||!Array.isArray(doc?.rows))return null;
+    return doc.rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
   }catch{return null;}
 }
 
@@ -48,7 +57,6 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
         ).bind(adIso).first());
       } catch { return null; }
     },
-
     async getCalendarByBs(bsY, bsM, bsD) {
       if (!db) return null;
       try {
@@ -58,7 +66,6 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
         ).bind(ad).first());
       } catch { return null; }
     },
-
     async getCalendarMonth(bsY, bsM) {
       if (!db) return [];
       const range=bsRange(bsY,bsM);if(!range)return [];
@@ -70,7 +77,6 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
       } catch { return []; }
     },
-
     async getCalendarYear(bsY) {
       if (!db) return [];
       const range=bsRange(bsY);if(!range)return [];
@@ -82,7 +88,6 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
         return rows.map(normalizeCalendar).filter(Boolean) as CalendarRecord[];
       } catch { return []; }
     },
-
     async listRecords(table: string, query: RecordQuery = {}) {
       if (!db || !/^[a-z0-9_]+$/i.test(table)) return [];
       const where = ["table_name=?1"];
@@ -97,17 +102,38 @@ export function createD1PatroSource(env: PatroEnv): PatroSource {
         return all(db, `select payload from content_records where ${where.join(" and ")} order by ad_date, sort_order desc, record_key limit ${limit}`, bindings);
       } catch { return []; }
     },
-
     async calculateTithiAt(adIso, lat, lng, calendar) {
       try {
-        return calculateAstronomicalTithi({
-          date: adIso,
-          lat,
-          lng,
-          bsFormatted: calendar.bs?.formatted || null,
-          nsFormatted: calendar.ns?.formatted || calendar.ns?.formatted_ne || null
-        });
+        return calculateAstronomicalTithi({ date:adIso, lat, lng, bsFormatted:calendar.bs?.formatted||null, nsFormatted:calendar.ns?.formatted||calendar.ns?.formatted_ne||null });
       } catch { return calendar.panchang?.tithi || null; }
+    }
+  };
+}
+
+/**
+ * Hybrid public source: immutable calendar methods are R2-only; D1 remains available solely
+ * through listRecords for mutable/correctable datasets (official facts, overlays, configuration).
+ * An R2 miss therefore returns no calendar record instead of silently spending D1 reads.
+ */
+export function createArchivePatroSource(env:PatroEnv):PatroSource{
+  const mutable=createD1PatroSource(env);
+  return {
+    ...mutable,
+    async getCalendarByAd(adIso){
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(adIso))return null;
+      const rows=await r2Year(env,"ad",Number(adIso.slice(0,4)));if(!rows)return null;
+      return rows.find((row)=>row.ad===adIso)||null;
+    },
+    async getCalendarByBs(bsY,bsM,bsD){
+      const rows=await r2Year(env,"bs",bsY);if(!rows)return null;
+      return rows.find((row)=>Number(row.bs?.year)===bsY&&Number(row.bs?.month)===bsM&&Number(row.bs?.day)===bsD)||null;
+    },
+    async getCalendarMonth(bsY,bsM){
+      const rows=await r2Year(env,"bs",bsY);if(!rows)return [];
+      return rows.filter((row)=>Number(row.bs?.month)===bsM);
+    },
+    async getCalendarYear(bsY){
+      return await r2Year(env,"bs",bsY)||[];
     }
   };
 }
