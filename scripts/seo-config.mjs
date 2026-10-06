@@ -45,9 +45,9 @@ export const DIASPORA_TODAY_ROUTES = CITY_SLUGS.map((slug) => `/today/${slug}`);
 export const NOINDEX_EXACT_ROUTES = ["/samachar", "/developers", "/tools/api", "/widget/today", "/offline"];
 
 // Broad real-data discovery cohort. The long tail is Worker-rendered; it is NOT materialized as HTML files.
-// 51 calendar years (~18.6k factual day URLs) + 3k+ sourced history pages + 706 Time Machine pages alone
-// keeps the factual search portfolio above 21k before festival/community additions, without new R2/D1 rows.
-export const INDEXABLE_PAST_YEARS = 40;
+// 46 calendar years (~16.8k factual day URLs) + 598 year/month hubs + 3k+ sourced history pages +
+// 706 Time Machine event pages puts the factual search horizon above 21k before festival/community additions.
+export const INDEXABLE_PAST_YEARS = 35;
 export const INDEXABLE_FUTURE_YEARS = 10;
 export const SITEMAP_MIN_BS_YEAR = CURRENT_BS_YEAR - INDEXABLE_PAST_YEARS;
 export const SITEMAP_MAX_BS_YEAR = CURRENT_BS_YEAR + INDEXABLE_FUTURE_YEARS;
