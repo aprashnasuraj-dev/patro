@@ -55,6 +55,8 @@ const EXACT:Record<string,SeoMeta>={
  "/samudaya/kirat":{title:"किरात पात्रो · Kirat Calendar",description:"किरात calendar dates, observances र festival context अन्वेषण गर्नुहोस्।"},
  "/samudaya/hijri":{title:"हिजरी पात्रो · Hijri Calendar",description:"Hijri/Islamic calendar dates र नेपाल-सन्दर्भित observances अन्वेषण गर्नुहोस्।"},
  "/samudaya/chakra":{title:"समुदाय चक्र · Community Chakra",description:"नेपालका समुदाय पात्रो र observances लाई एउटै aggregate experience मा हेर्नुहोस्।"},
+ "/janmapatro":{title:"जन्मपत्रो · Nepali Birth Chart",description:"जन्म मिति, सही समय र स्थानका आधारमा लग्न, ग्रहस्थिति, नक्षत्र, दशा र चन्द्र कुण्डली गणना गर्नुहोस्।"},
+ "/janmapatro/milan.html":{title:"३६ गुण मिलान · Guna Milan",description:"जन्म विवरण वा नक्षत्र-अक्षरमा आधारित नामबाट परम्परागत अष्टकूट ३६ गुण मिलान हेर्नुहोस्।"},
  "/jyotish/china":{title:"जन्मपत्रो · Birth Chart",description:"जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रहस्थिति अन्वेषण गर्नुहोस्।"},
  "/jyotish/matchmaking":{title:"गुण मिलान · Matchmaking",description:"जन्म विवरणका आधारमा Vedic matchmaking र गुण मिलान सन्दर्भ अन्वेषण गर्नुहोस्।"},
  "/developers":{title:"Aafnai Patro API · Developers",description:"Aafnai Patro public APIs, calendar endpoints र integration guidance हेर्नुहोस्।"}
@@ -71,7 +73,10 @@ const ALIAS_CANONICAL:Record<string,string>={
  "/tools/preeti-to-unicode":"/tools/preeti-converter",
  "/tools/unicode-to-preeti":"/tools/preeti-converter",
  "/astro":"/tools/astro",
- "/jyotish/rashifal":"/rashifal"
+ "/jyotish/rashifal":"/rashifal",
+ "/jyotish/china":"/janmapatro",
+ "/jyotish/matchmaking":"/janmapatro/milan.html",
+ "/jyotish/janma-patro":"/janmapatro"
 };
 
 const PRIVATE_PREFIXES=["/me","/admin","/family","/my-data","/my-diary","/notes","/planner","/settings"];
