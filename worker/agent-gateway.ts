@@ -5,6 +5,7 @@ import { historyEventPageResponse } from "./history-event-page";
 import { mcpResponse } from "./mcp";
 import { createArchivePatroSource } from "./patro-source";
 import { publicArchivePageResponse } from "./public-archive-pages";
+import { timeMachinePageResponse } from "./time-machine-page";
 import { yearPageResponse } from "./year-page";
 
 type Env = Record<string, unknown> & { DB?: any; ARCHIVE?: any; ASSETS?: any; PUBLIC_SITE_URL?: string };
@@ -77,6 +78,11 @@ export async function handleAgentSurface(
   // This keeps HTML storage essentially constant and consumes neither D1 nor one object per URL.
   const historyEvent = await historyEventPageResponse(request, env);
   if (historyEvent) return historyEvent;
+
+  // All 706 canonical Time Machine records use the same compact-index pattern: one small asset,
+  // dynamic HTML per request, no additional D1 rows and no per-page static HTML files.
+  const timeMachine = await timeMachinePageResponse(request, env);
+  if (timeMachine) return timeMachine;
 
   // Permanent date/calendar/community archives use the immutable archive plus packaged static fallback.
   const archive = await publicArchivePageResponse(request, env);
