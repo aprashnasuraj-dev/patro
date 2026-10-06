@@ -87,6 +87,9 @@
     "esbuild": "0.25.10",
     "wrangler": "4.144.0"
   },
+  "overrides": {
+    "sharp": "0.35.5"
+  },
   "cloudflare": {
     "production_branch": "main",
     "build_command": "npm run build",
