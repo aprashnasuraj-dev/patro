@@ -126,11 +126,29 @@ const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.sitemap_files = [...new Set([...(manifest.sitemap_files || []), "sitemap-time-machine.xml"])];
 manifest.indexed_time_machine_route_count = routes.length;
 manifest.time_machine_index = `${SITE}/data/time-machine-index.json`;
+
+// Count only distinct factual route families. Calendar hubs are one year page + 12 month pages
+// for every indexed year; they are dynamic outside the five-year hot prerender cohort.
+const calendarYearCount = Number(manifest.indexed_calendar_year_route_count || 0);
+const calendarHubCount = calendarYearCount * 13;
 manifest.dynamic_indexable_route_count = Number(manifest.indexed_day_route_count || 0)
+  + calendarHubCount
   + Number(manifest.indexed_history_event_route_count || 0)
   + Number(manifest.indexed_time_machine_route_count || 0)
   + Number(manifest.indexed_festival_route_count || 0);
+manifest.indexable_url_horizon = {
+  minimum: 21000,
+  actual: manifest.dynamic_indexable_route_count,
+  day_routes: Number(manifest.indexed_day_route_count || 0),
+  calendar_hubs: calendarHubCount,
+  history_events: Number(manifest.indexed_history_event_route_count || 0),
+  time_machine_events: Number(manifest.indexed_time_machine_route_count || 0),
+  festival_routes: Number(manifest.indexed_festival_route_count || 0),
+};
+if (manifest.dynamic_indexable_route_count < 21000) {
+  throw new Error(`Indexable URL horizon below 21,000: ${manifest.dynamic_indexable_route_count}`);
+}
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 
 console.log(`Dynamic Time Machine route index: ${routes.length} pages from ${rawRows.length} canonical records; one compact JSON index, no per-page HTML.`);
-console.log(`Dynamic indexable core count is now at least ${manifest.dynamic_indexable_route_count}.`);
+console.log(`Indexable URL horizon locked at ${manifest.dynamic_indexable_route_count} factual routes (minimum 21,000).`);
