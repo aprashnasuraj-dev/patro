@@ -65,7 +65,7 @@
     "vite": "6.4.3",
     "typescript": "5.8.3",
     "react": "19.3.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.3.0",
     "framer-motion": "13.4.3",
     "motion-dom": "13.4.5",
     "motion-utils": "13.3.0",
