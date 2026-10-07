@@ -43,11 +43,11 @@ export async function ensureAuthSchema(env:AuthEnv){
         `create table if not exists user_calendar_state (user_id text primary key references app_users(id) on delete cascade,notes text not null default '{}',events text not null default '[]',calendars text not null default '[]',preferences text not null default '{}',feedback text not null default '[]',updated_at text not null default (datetime('now')),revision integer not null default 0)`,
         `create table if not exists user_community_preferences (user_id text primary key references app_users(id) on delete cascade,communities text not null default '[]',updated_at text not null default (datetime('now')))`
       ];
-      for(const sql of statements)await env.DB.prepare(sql).run();
-      const info=await env.DB.prepare("pragma table_info(user_calendar_state)").all();
+      for(const sql of statements)await env.DB.prepare(sql).bind().run();
+      const info=await env.DB.prepare("pragma table_info(user_calendar_state)").bind().all();
       const columns=Array.isArray(info?.results)?info.results:[];
       if(!columns.some((row:any)=>String(row?.name)==="revision")){
-        try{await env.DB.prepare("alter table user_calendar_state add column revision integer not null default 0").run();}
+        try{await env.DB.prepare("alter table user_calendar_state add column revision integer not null default 0").bind().run();}
         catch(error){if(!/duplicate column/i.test(String((error as Error)?.message||error)))throw error;}
       }
     })().catch((error)=>{AUTH_SCHEMA_READY.delete(key);throw error;});
