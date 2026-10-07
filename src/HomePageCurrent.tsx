@@ -1,4 +1,6 @@
 import { HomeQuickNote } from "./components/HomeQuickNote";
+import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
+import { HomeWeather } from "./components/HomeWeather";
 import "./home-extras.css";
 import { HomeHistoryCard } from "./components/HomeHistoryCard";
 import { lazy, Suspense } from "react";
@@ -18,7 +20,7 @@ type Festival = {
   label_ne?: string; name_en?: string; title?: string; key?: string; effect?: string; status?: string;
   value?: { label_ne?: string; label_en?: string };
 };
-type TodayView = { bs: BsDate | null; ns: string; tithi: string; sunrise: string; sunset: string };
+type TodayView = { bs: BsDate | null; ns: string; tithi: string; sunrise: string; sunset: string; panchang?: HomePanchangData };
 
 const NE_DAYS = ["आइत", "सोम", "मंगल", "बुध", "बिही", "शुक्र", "शनि"];
 const EN_DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -146,6 +148,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
         tithi: t?.ne || t?.name_ne || t?.tithi_name_ne || "",
         sunrise: p?.sunrise || "",
         sunset: p?.sunset || "",
+        panchang: { ...p, tithi: t },
       });
     }).catch(() => {});
     return () => controller.abort();
@@ -196,14 +199,12 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
         <span className="rh-kicker">{l(language, "आज · काठमाडौं समय", "Today · Nepal time")}</span>
         <h1 id="rh-today-title">{todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")}</h1>
         <p>{adLabel(today, language)}</p>
+        <div className="hp-ns"><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><strong lang="ne">{todayView.ns || "—"}</strong></div>
+        <div className="hp-today-events">{(eventMap.get(today) || []).slice(0, 2).map((event, index) => <a href={`/date/${today}`} key={index}>{festivalName(event, language)}</a>)}</div>
       </div>
-      <div className="rh-today-facts">
-        <div><span>{l(language, "तिथि", "Tithi")}</span><b>{todayView.tithi || "—"}</b></div>
-        <div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{todayView.ns || "—"}</b></div>
-        <div><span>{l(language, "सूर्योदय", "Sunrise")}</span><b>{todayView.sunrise || "—"}</b></div>
-        <div><span>{l(language, "सूर्यास्त", "Sunset")}</span><b>{todayView.sunset || "—"}</b></div>
-      </div>
+      <HomePanchang date={today} language={language} panchang={todayView.panchang || {}} />
     </section>
+    <HomeWeather language={language} today={today} />
 
     <div className="rh-actions" aria-label={l(language, "मुख्य छिटो कार्य", "Quick actions")}>
       <a href="/rashifal"><b>१२</b><span>{l(language, "राशिफल", "Rashifal")}</span></a>

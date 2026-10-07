@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { loadWeatherForecast } from "../weather-client";
 import { adToBs, bsToAd } from "../../packages/core/src";
 import { BS_MONTHS, toNepaliDigits } from "../title";
 
@@ -205,8 +206,7 @@ export function CalendarCellEnhancer(){
     run(true);
     window.setTimeout(()=>run(true),700);
 
-    fetch("/api/v1/weather/daily?days=16",{headers:{accept:"application/json"}})
-      .then(r=>r.ok?r.json():Promise.reject())
+    loadWeatherForecast()
       .then(body=>{for(const item of (Array.isArray(body?.days)?body.days:[])){if(item?.date)weather.set(String(item.date),item)}run()})
       .catch(()=>undefined);
 

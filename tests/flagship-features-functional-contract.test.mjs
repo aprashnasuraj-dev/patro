@@ -11,7 +11,7 @@ test("calendar home, month, date, weather and conversion surfaces remain backed 
  hasAll(api,["/api/v1/today","/api/v1/convert","/api/v1/festivals","/api/v1/holidays","/api/v1/panchang"],"calendar API");
  assert.ok(index.includes('/api/v1/sync'));
  assert.ok(index.includes('/api/v1/weather/daily'));
- assert.ok(enhancer.includes('/api/v1/weather/daily?days=16'));
+ assert.ok(enhancer.includes('loadWeatherForecast()') && read('src/weather-client.ts').includes('/api/v1/weather/daily?days=16'));
  assert.ok(enhancer.includes('englishLabel'));
  assert.ok(details.includes('/api/v1/sync?date=')||details.includes('/api/v1/today?date='));
 });
