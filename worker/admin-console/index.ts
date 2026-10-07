@@ -8,7 +8,7 @@
 import { authRoutes, checkCsrf, currentAdmin, ensureBootstrapAdmin, hasRole, readCookie, COOKIE, type AdminSession, type Role } from "./auth";
 import { all, audit, ensureSchema, first, getSetting, json, readJson, setSetting, type AdminEnv } from "./db";
 import {
-  configIsEmpty, discardDraft, FEATURE_CATALOG, FONT_CHOICES, injectIntoHtml, listVersions, loadConfig, normalizeConfig,
+  configIsEmpty, discardDraft, FEATURE_CATALOG, FONT_CHOICES, injectIntoHtml, listVersions, loadConfig, loadPublishedConfig, normalizeConfig,
   preRoute, publishDraft, restoreVersion, runtimePayload, saveDraft, type SiteConfig,
 } from "./site-config";
 import { cloudflareEdge, live, prune, recordHit, stats, today } from "./analytics";
@@ -129,14 +129,14 @@ async function health(env: AdminEnv) {
 async function api(request: Request, env: AdminEnv, ctx: Ctx, path: string): Promise<Response> {
   if (path === "/api/aap/hit") {
     if (request.method !== "POST") return json({ ok: false }, 405);
-    const cfg = (await loadConfig(env, "published")).config;
+    const cfg = (await loadPublishedConfig(env, ctx)).config;
     if (!cfg.analytics.enabled) return new Response(null, { status: 204 });
     return recordHit(request, env);
   }
   if (path === "/api/aap/site-config" && request.method === "GET") {
     let preview = false;
     if (readCookie(request, PREVIEW_COOKIE) === "1" && (await currentAdmin(request, env))) preview = true;
-    const entry = await loadConfig(env, preview ? "draft" : "published");
+    const entry = preview ? await loadConfig(env, "draft", true) : await loadPublishedConfig(env, ctx);
     return json(runtimePayload(entry.config, entry.version, preview), 200, { "cache-control": preview ? "no-store" : "public, max-age=15" });
   }
 
@@ -397,11 +397,11 @@ export function withAdminConsole<W extends WorkerLike>(worker: W): W {
         if (request.method !== "GET" && request.method !== "HEAD") return new Response("Method not allowed", { status: 405 });
         return shell();
       }
-      if (path.startsWith("/admin-console/") || path === "/aap/runtime.js") return staticAsset(request, env, path);
+      if (path.startsWith("/admin-console/") || ["/aap/runtime.js", "/aap/analytics.js", "/aap/settings.js"].includes(path)) return staticAsset(request, env, path);
       if (path.startsWith("/api/aap/")) {
         if (!env.DB) return json({ ok: false, error: "d1_unavailable", message: "The D1 database binding DB is missing." }, 503);
         try {
-          await ensureSchema(env);
+          if (path !== "/api/aap/site-config") await ensureSchema(env);
           const res = await api(request, env, ctx, path);
           if (path.startsWith("/api/aap/hit") || path === "/api/aap/site-config") return res;
           const headers = new Headers(res.headers);
@@ -421,8 +421,7 @@ export function withAdminConsole<W extends WorkerLike>(worker: W): W {
 
       let config: SiteConfig | null = null, version = 0, preview = false, isAdmin = false;
       try {
-        await ensureSchema(env);
-        const pub = await loadConfig(env, "published");
+        const pub = await loadPublishedConfig(env, ctx);
         config = pub.config;
         version = pub.version;
         const wantsPreview = readCookie(request, PREVIEW_COOKIE) === "1";
