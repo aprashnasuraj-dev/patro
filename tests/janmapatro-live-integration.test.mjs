@@ -37,7 +37,7 @@ test("full live UI exposes china, matching, bilingual mode, name matching and ex
  assert.match(exporter,/jspdf/);
  assert.match(exporter,/window\.print\(\)/);
  assert.match(css,/@media print/);
- assert.match(css,/china-scroll/);
+ assert.match(css,/\.china\s*\{/);
 });
 
 test("native Worker exposes Jyotish API without durable storage or shared caching of personal results",()=>{
