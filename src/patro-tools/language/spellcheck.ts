@@ -71,6 +71,11 @@ export function stripSuffix(word: string): { stem: string; suffix: string } {
 
 /** Frequent real-world misspellings → correct form (curate & grow this list from user corrections). */
 export const COMMON_MISTAKES: Record<string, string> = {
+  'चाहान्छु':'चाहन्छु',
+  'सम्पुर्ण':'सम्पूर्ण',
+  'सुचना':'सूचना',
+  'जिम्बेवारी':'जिम्मेवारी',
+  'आवस्यक':'आवश्यक',
   'राश्ट्र': 'राष्ट्र',
   'राश्ट्रिय': 'राष्ट्रिय',
   'अन्तराष्ट्रिय': 'अन्तर्राष्ट्रिय',
@@ -133,6 +138,7 @@ export function suggest(word: string, dict: Dictionary, max = 5): string[] {
     const f = Math.max(dict.freq(cand), dict.freq(cs));
     if (f > 0 || bonus > 0) scored.set(cand, Math.max(scored.get(cand) ?? 0, f + bonus));
   };
+  if(COMMON_MISTAKES[word])consider(COMMON_MISTAKES[word],2e9);
   const fixedStem = COMMON_MISTAKES[stem];
   if (fixedStem) consider(fixedStem + suffix, 1e9);
   const level1 = variants(stem);

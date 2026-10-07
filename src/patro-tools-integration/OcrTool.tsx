@@ -6,6 +6,7 @@ const MAX_IMAGE_BYTES=16*1024*1024;
 
 export function OcrTool() {
   const ocr = useNepaliOcr();
+  const [threshold,setThreshold]=useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState("");
   const [text, setText] = useState("");
@@ -31,7 +32,7 @@ export function OcrTool() {
     if (!file) return;
     setStatus("तस्बिरबाट अक्षर पढिँदैछ…");
     try {
-      const result = await ocr.recognize(file, { langs: "nep+eng" });
+      const result = await ocr.recognize(file, { langs: "nep+eng", threshold });
       setText(result.text);
       setConfidence(result.confidence);
       setStatus(result.text.trim()?"पाठ तयार भयो। तल सम्पादन, कपी वा सुरक्षित गर्न सक्नुहुन्छ।":"पढ्न मिल्ने पाठ भेटिएन। अझ स्पष्ट र सीधा फोटोबाट फेरि प्रयास गर्नुहोस्।");
@@ -55,7 +56,7 @@ export function OcrTool() {
   return (
     <ToolPage title="नेपाली OCR · तस्बिरबाट पाठ" description="फोटो वा तस्बिरमा भएको नेपाली र English पाठ निकालेर तुरुन्तै सम्पादन गर्न मिल्ने बनाउनुहोस्। छानिएको फोटो तपाईंको उपकरणमै प्रशोधन हुन्छ।">
       <section className="patro-tool-card">
-        <label className="tool-block-label">तस्बिर छान्नुहोस्<input type="file" accept="image/*" capture="environment" onChange={(e) => chooseFile(e.target.files?.[0] || null)} /></label>
+        <label><input type="checkbox" checked={threshold} onChange={e=>setThreshold(e.target.checked)}/> उच्च कन्ट्रास्ट (स्क्यान गरिएको पानाका लागि)</label><label className="tool-block-label">तस्बिर छान्नुहोस्<input type="file" accept="image/*" capture="environment" onChange={(e) => chooseFile(e.target.files?.[0] || null)} /></label>
         {file ? <p className="tool-muted">{file.name} · {(file.size / 1024 / 1024).toFixed(2)} MB</p> : null}
         {preview?<figure className="ocr-local-preview"><img src={preview} alt="पाठ निकाल्न छानिएको तस्बिर"/><figcaption>छानिएको तस्बिरको झलक</figcaption></figure>:null}
         <div className="tool-action-row">
@@ -71,7 +72,7 @@ export function OcrTool() {
           {confidence != null ? <span className="tool-badge">पठन स्पष्टता {confidence.toFixed(0)}%</span> : null}
           <button type="button" className="tool-secondary-button" onClick={()=>void copyText()} disabled={!text}>कपी</button>
           <button type="button" className="tool-secondary-button" onClick={downloadText} disabled={!text}>TXT सुरक्षित गर्नुहोस्</button>
-          <a className="tool-link-button" href="/tools/spell-check">हिज्जे जाँच →</a>
+          <a className="tool-link-button" href="/tools/spell-check" onClick={()=>{try{sessionStorage.setItem("patro.language.handoff",text)}catch{}}}>हिज्जे जाँच →</a>
           <a className="tool-link-button" href="/tools/preeti-converter">Preeti रूपान्तरण →</a>
         </div>
         <p className="tool-muted">सीधा, उज्यालो र स्पष्ट तस्बिरबाट अक्षर अझ राम्रो पढिन्छ। निकालिएको पाठ औपचारिक प्रयोगअघि एकपटक जाँच्नुहोस्।</p>

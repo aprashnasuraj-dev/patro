@@ -1,3 +1,4 @@
+import { readLife } from "../patro-tools-integration/storage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { api } from "../api";
@@ -160,7 +161,7 @@ function DaySheet({ day, onClose }: { day: SyncPayload; onClose: () => void }) {
         <section><div className="day-section-heading"><h4>चौघडिया · Choghadiya</h4><span>Daylight divided into 8 equal periods</span></div>
           <div className="choghadiya-grid">{slots.map((slot)=><div key={slot.start} className={slot.good?"is-good":""}><strong>{slot.name}</strong><span>{slot.start}–{slot.end}</span>{slot.good&&<small>शुभ समय</small>}</div>)}</div>
         </section>
-        <section><div className="day-section-heading"><h4>My note</h4><span>Stored only in this browser</span></div>
+        <section>{readLife().notes.filter(n=>(n.date||n.createdAt.slice(0,10))===day.query_date).map(n=><p key={n.id}>{n.text}</p>)}<a href={"/me/notes?date="+day.query_date}>यस मितिमा नोट लेख्नुहोस् · Voice note</a><div className="day-section-heading"><h4>My note</h4><span>Stored only in this browser</span></div>
           <textarea value={note} onChange={(e)=>saveNote(e.target.value)} rows={4} placeholder="यो दिनको निजी नोट… / Add a private note…" aria-label="Private note for this day" />
         </section>
         <footer className="day-sheet-actions">

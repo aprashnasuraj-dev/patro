@@ -1,3 +1,4 @@
+import { useNepaliDictation } from "../patro-tools/language/react/useNepaliDictation";
 import { GoogleAuthButton } from "../auth/GoogleAuthButton";
 import { formatNeDate } from "../nepaliDate";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -34,7 +35,8 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   const[mode,setMode]=useState<NoteMode>("nepali");
   const[suggestions,setSuggestions]=useState<Suggestion[]>([]);
   const[status,setStatus]=useState("नेपाली शब्द सुझाव तयार हुँदैछन्…");
-  const[listening,setListening]=useState(false);
+  const [noteDate,setNoteDate]=useState(new URLSearchParams(location.search).get("date")||new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu"}).format(new Date()));
+ const dictation=useNepaliDictation({language:mode==="english"?"en-US":"ne-NP",serverFallback:true,onFinal:chunk=>setText(value=>value+(value&&!/\s$/.test(value)?" ":"")+chunk)});const listening=dictation.listening;
   const textarea=useRef<HTMLTextAreaElement>(null);
   const worker=useRef<Worker|null>(null);
   const requestId=useRef(0);
@@ -72,23 +74,12 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   }
   async function save(){
     const value=text.trim();if(!value)return;
-    const row:StoredNote={id:crypto.randomUUID(),text:value,inputMode:mode,createdAt:new Date().toISOString(),updatedAt:Date.now()};
+    const row:StoredNote={id:crypto.randomUUID(),text:value,date:noteDate,inputMode:mode,createdAt:new Date().toISOString(),updatedAt:Date.now()};
     const next=updateLife(current=>({...current,notes:[row,...current.notes]}));onLife(next);setText("");setSuggestions([]);onSync("नोट यस उपकरणमा सुरक्षित भयो। खातासँग जोडिएको भए त्यहाँ पनि अद्यावधिक हुँदैछ…");
     const result=await syncLifeTools();onLife(result.life);onSync(result.synced?"नोट खातासँग पनि सुरक्षित भयो।":"नोट यस ब्राउजरमा सुरक्षित छ; साइन इन गरेपछि खातासँग पनि सुरक्षित हुन्छ।");
   }
   function removeNote(id:string){const next=updateLife(current=>({...current,notes:current.notes.filter(n=>n.id!==id)}));onLife(next);void syncLifeTools();}
-  function startVoice(){
-    const SpeechRecognition=(window as any).SpeechRecognition||(window as any).webkitSpeechRecognition;
-    if(!SpeechRecognition){setStatus("यस ब्राउजरमा voice typing उपलब्ध छैन। Chrome वा Edge प्रयोग गरेर प्रयास गर्नुहोस्।");return;}
-    if(listening){recognition.current?.stop();return;}
-    const r=new SpeechRecognition();recognition.current=r;r.lang=mode==="english"?"en-US":"ne-NP";r.interimResults=true;r.continuous=true;
-    let committed="";
-    r.onstart=()=>{setListening(true);setMode("voice");setStatus("सुन्दैछ… बोल्नुहोस्।")};
-    r.onresult=(event:any)=>{let interim="";for(let i=event.resultIndex;i<event.results.length;i++){const transcript=event.results[i][0]?.transcript||"";if(event.results[i].isFinal)committed+=transcript+" ";else interim+=transcript}setText(previous=>{const base=previous.replace(/\s*\[voice:[\s\S]*\]$/u,"").trimEnd();const chunk=(committed+interim).trim();return chunk?`${base}${base?" ":""}[voice:${chunk}]`:base})};
-    r.onerror=()=>setStatus("Voice typing रोकियो। फेरि प्रयास गर्नुहोस्।");
-    r.onend=()=>{setListening(false);setText(previous=>previous.replace(/\[voice:([\s\S]*?)\]$/u,"$1"));setStatus("Voice typing पूरा भयो।")};
-    r.start();
-  }
+  function startVoice(){if(listening)dictation.stop();else{if(mode!=="english")setMode("voice");void dictation.start();}}
 
   return <section className="mp-card mp-diary-native mp-note-composer">
     <header><div><p className="eyebrow">निजी · अफलाइनमा पनि उपयोगी</p><h2>आफ्नै नोट लेख्नुहोस्</h2><p>English, नेपाली शब्द सुझाव वा voice typing प्रयोग गरेर सहज रूपमा लेख्नुहोस्।</p></div><a className="community-button secondary" href="/tools/nepali-typing"><Languages size={16}/> पूर्ण नेपाली टाइपिङ / Preeti</a></header>
@@ -96,8 +87,8 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
     <div className="mp-note-account"><GoogleAuthButton language="ne"/></div>
     <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
-    <div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>
-    {life.notes.length>0&&<div className="mp-note-list"><h3>सुरक्षित नोटहरू</h3>{life.notes.slice(0,30).map(note=><article key={note.id}><div><small>{formatNeDate(note.createdAt,{time:true})} · {modeLabel(note.inputMode)}</small><p>{note.text}</p></div><button type="button" aria-label="नोट हटाउनुहोस्" onClick={()=>removeNote(note.id)}><Trash2 size={16}/></button></article>)}</div>}
+    <label>मितिमा सुरक्षित गर्नुहोस्<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)} required/></label>{dictation.interim&&<p aria-live="polite">{dictation.interim}</p>}{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>
+    {life.notes.length>0&&<div className="mp-note-list"><h3>{noteDate} · सुरक्षित नोटहरू</h3>{life.notes.filter(note=>(note.date||note.createdAt.slice(0,10))===noteDate).map(note=><article key={note.id}><div><small>{formatNeDate(note.createdAt,{time:true})} · {modeLabel(note.inputMode)}</small><p>{note.text}</p></div><button type="button" aria-label="नोट हटाउनुहोस्" onClick={()=>removeNote(note.id)}><Trash2 size={16}/></button></article>)}</div>}
   </section>;
 }
 

@@ -13,7 +13,7 @@ const LANGUAGE_KEY = "aafnai.bot.chat.language.v1";
 const LEGACY_LANGUAGE_KEY = "aafnai.jyotish.chat.language.v1";
 const CHINA_KEY = "aafnai.jyotish.china.context.v1";
 const MAX_STORED = 24;
-const REQUEST_TIMEOUT_MS = 18_000;
+const REQUEST_TIMEOUT_MS = 60_000;
 
 function readHistory(): ChatMessage[] {
   try {
@@ -146,7 +146,7 @@ export function JyotishAssistant() {
   const activeRequest = useRef<AbortController | null>(null);
 
   const captureChina = useCallback(() => {
-    const context = contextFromRenderedChina();
+    const context = readChina() || contextFromRenderedChina();
     if (!context) return;
     setChina((current) => {
       if (current && JSON.stringify(current) === JSON.stringify(context)) return current;
@@ -243,7 +243,7 @@ export function JyotishAssistant() {
         credentials: "same-origin",
         signal: controller.signal,
         headers: { "content-type": "application/json", accept: "text/event-stream, application/json" },
-        body: JSON.stringify({ message: value, history, language, china_data: china }),
+        body: JSON.stringify({ message: value, history, language, china_data: china, calendar_context:(await answerPatroQuestion("आज",location.origin,{helpFallback:false}))?.answer }),
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));

@@ -1,3 +1,4 @@
+import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS, toNepaliDigits } from "../patro-tools/core/names";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult, SIGNS } from "./jyotishEngine";
 import { calculateNameGuna, nameSyllableFromNakshatra, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
@@ -73,12 +74,13 @@ function ProfileForm({value,onChange,prefix,language}:{value:ProfileInput;onChan
 }
 
 function NorthIndianChart({chart,anchorSign=chart.ascSignIndex,title}:{chart:ChartResult;anchorSign?:number;title:string}){
- const houses=Array.from({length:12},(_,i)=>chart.planets.filter((p)=>((p.signIndex-anchorSign+12)%12)+1===i+1).map((p)=>p.name.slice(0,2)).join(" "));
- const labels:[[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number],[number,number]]=[[150,38],[235,62],[264,150],[235,238],[150,264],[65,238],[36,150],[65,62],[150,96],[204,150],[150,204],[96,150]];
+ const graha:Record<string,string>={sun:"सू",moon:"चं",mars:"मं",mercury:"बु",jupiter:"गु",venus:"शु",saturn:"श",rahu:"रा",ketu:"के"};
+ const houses=Array.from({length:12},(_,i)=>chart.planets.filter((p)=>((p.signIndex-anchorSign+12)%12)+1===i+1).map((p)=>graha[p.key]||p.name.slice(0,2)).join(" "));
+ const labels:[number,number][]=[[150,75],[75,32],[32,75],[75,150],[32,225],[75,268],[150,225],[225,268],[268,225],[225,150],[268,75],[225,32]];
  return <figure className="jp-chart"><svg viewBox="0 0 300 300" role="img" aria-label={title}>
   <rect x="8" y="8" width="284" height="284"/><path d="M8 8L292 292M292 8L8 292M150 8L292 150L150 292L8 150Z"/>
-  {labels.map(([x,y],i)=><g key={i}><text x={x} y={y-8} className="jp-house-number">{i+1}</text><text x={x} y={y+8}>{houses[i]||"·"}</text></g>)}
-  <text x="150" y="142" className="jp-lagna-label">{anchorSign===chart.ascSignIndex?"लग्न":"चन्द्र"}</text><text x="150" y="160" className="jp-lagna-value">{SIGNS[anchorSign].split(" · ")[0]}</text>
+  {labels.map(([x,y],i)=><g key={i}><text x={x} y={y-8} className="jp-house-number">{toNepaliDigits(((anchorSign+i)%12)+1)}</text><text x={x} y={y+8}>{houses[i]||"·"}</text></g>)}
+  <text x="150" y="142" className="jp-lagna-label">{anchorSign===chart.ascSignIndex?"लग्न":"चन्द्र"}</text><text x="150" y="160" className="jp-lagna-value">{NE_SIGNS[anchorSign]}</text>
  </svg><figcaption>{title}</figcaption></figure>;
 }
 
@@ -96,8 +98,8 @@ function ChartReport({chart,language}:{chart:ChartResult;language:Language}){
    <dt>{tx(language,"जन्म मिति","Birth date")}</dt><dd>{chart.input.date}</dd>
    <dt>{tx(language,"जन्म समय","Birth time")}</dt><dd>{chart.input.time} (UTC+05:45)</dd>
    <dt>{tx(language,"जन्म स्थान","Birth place")}</dt><dd>{chart.input.location} ({chart.input.lat.toFixed(4)}, {chart.input.lng.toFixed(4)})</dd>
-   <dt>{tx(language,"लग्न","Ascendant")}</dt><dd>{SIGNS[chart.ascSignIndex]} · {degreeText(chart.ascendant%30)}</dd>
-   <dt>{tx(language,"नक्षत्र","Nakshatra")}</dt><dd>{chart.moonNakshatra} · Pada {chart.moonPada}{syllable?" · "+tx(language,"नामाक्षर","Name syllable")+" "+syllable:""}</dd>
+   <dt>{tx(language,"लग्न","Ascendant")}</dt><dd>{language==="ne"?NE_SIGNS[chart.ascSignIndex]:SIGNS[chart.ascSignIndex]} · {degreeText(chart.ascendant%30)}</dd>
+   <dt>{tx(language,"नक्षत्र","Nakshatra")}</dt><dd>{language==="ne"?NE_NAKSHATRAS[chart.moonNakshatraIndex]:chart.moonNakshatra} · {tx(language,"चरण","Pada")} {chart.moonPada}{syllable?" · "+tx(language,"नामाक्षर","Name syllable")+" "+syllable:""}</dd>
    <dt>{tx(language,"चन्द्र राशि","Moon sign")}</dt><dd>{moon?.sign||"—"}</dd>
   </dl>
   <div className="jp-chart-pair"><NorthIndianChart chart={chart} title={tx(language,"लग्न कुण्डली","Lagna chart")}/><NorthIndianChart chart={chart} anchorSign={moon?.signIndex??chart.ascSignIndex} title={tx(language,"चन्द्र कुण्डली","Moon chart")}/></div>
@@ -147,6 +149,10 @@ export function JanmaPatroSuite(){
   try{
    if(activeTab==="match"&&activeMode==="name"){setChart(null);setGuna(null);setNameGuna(calculateNameGuna(nA,nB));return;}
    const ca=calculateChart(aa);setChart(ca);
+   if(activeTab==="chart"){
+    const context={time_known:true,lagna:{name:NE_SIGNS[ca.ascSignIndex],degree:ca.ascendant},rashi:{name:NE_SIGNS[ca.planets.find(p=>p.key==="moon")!.signIndex]},nakshatra:{name:NE_NAKSHATRAS[ca.moonNakshatraIndex],pada:ca.moonPada},birth:{...ca.input},planets:ca.planets.map(p=>({planet_en:p.name,rashi:{name:NE_SIGNS[p.signIndex]},house:p.house,degree:p.longitude})),dasha:{periods:ca.dashas.map(d=>({...d,start:d.start.toISOString(),end:d.end.toISOString()}))},other_important_points:{manglik:ca.manglik},data_quality:{source:"janmapatro-engine",methodology:ca.methodology}};
+    try{localStorage.setItem("aafnai.jyotish.china.context.v1",JSON.stringify(context));window.dispatchEvent(new CustomEvent("patro:china-updated",{detail:context}));}catch{}
+   }
    if(activeTab==="match"){const cb=calculateChart(bb);setGuna(calculateGuna(ca,cb));}else setGuna(null);
   }catch(err){setError(err instanceof Error?err.message:tx(language,"गणना हुन सकेन। विवरण जाँचेर फेरि प्रयास गर्नुहोस्।","Calculation failed. Check the details and try again."));}
  };

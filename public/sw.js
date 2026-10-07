@@ -1,4 +1,4 @@
-const VERSION = "aafnai-pwa-v11";
+const VERSION = "aafnai-pwa-v12";
 const SHELL_CACHE = "aafnai-shell-v11";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
@@ -21,7 +21,7 @@ const INSTALL_CORE = ["/", "/today", "/manifest.webmanifest", "/favicon.svg"];
 const LANGUAGE_TOOL_ASSETS = [
   "/nepali-tools/index.html", "/nepali-tools/styles.css", "/nepali-tools/app.mjs", "/nepali-tools/worker.mjs",
   "/nepali-tools/core/roman.mjs", "/nepali-tools/core/converter.mjs", "/nepali-tools/core/suggestions.mjs", "/nepali-tools/core/aliases.mjs",
-  "/nepali-tools/licenses/DICTIONARY-NOTICE.txt"
+  "/nepali-tools/licenses/DICTIONARY-NOTICE.txt", "/nepali-tools/lexicon.txt", "/fonts/nepali-serif-700.woff2", "/vendor/jsQR.js"
 ];
 const LANGUAGE_LEXICON = "/api/v1/typing/lexicon?format=words";
 const PRIVATE_ROUTE_PREFIXES = ["/me", "/notes", "/planner", "/family", "/settings", "/my-data", "/admin"];

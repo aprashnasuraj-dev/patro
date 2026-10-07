@@ -5,13 +5,13 @@ import { ToolPage, ToolResult } from "./ToolPrimitives";
 const seed = ["आज","भोलि","नेपाल","नेपाली","मेरो","पात्रो","मिति","तिथि","जन्मदिन","श्राद्ध","धन्यवाद","विद्यालय","परीक्षा","स्वास्थ्य","महत्त्व"];
 
 export function SpellCheckTool() {
-  const [text, setText] = useState("आज बिद्यालयमा परिक्षा छ। स्वास्थ्य र शिक्षाको महत्व ठूलो छ।");
+  const [text, setText] = useState(()=>{try{const value=sessionStorage.getItem("patro.language.handoff");sessionStorage.removeItem("patro.language.handoff");return value||"आज बिद्यालयमा परिक्षा छ। स्वास्थ्य र शिक्षाको महत्व ठूलो छ।"}catch{return ""}});
   const [dict, setDict] = useState<Dictionary>(() => createDictionary(seed));
   const [dictStatus, setDictStatus] = useState("आधारभूत शब्दकोश");
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch("/api/v1/typing/lexicon?format=words", { signal: controller.signal, headers: { Accept: "text/plain" } })
+    fetch("/api/v1/typing/lexicon?format=words", { signal: controller.signal, headers: { Accept: "text/plain" } }).catch(error=>{if(controller.signal.aborted)throw error;return fetch("/nepali-tools/lexicon.txt",{signal:controller.signal})}).then(response=>response.ok?response:fetch("/nepali-tools/lexicon.txt",{signal:controller.signal}))
       .then(async (response) => {
         if (!response.ok) throw new Error("dictionary");
         const words = (await response.text()).split(/\r?\n/).map((word) => word.trim()).filter(Boolean);
@@ -29,7 +29,7 @@ export function SpellCheckTool() {
   const corrected = useMemo(() => autoFix(text, dict), [text, dict]);
 
   function applySuggestion(index: number, word: string, replacement: string) {
-    setText((value) => value.slice(0, index) + replacement + value.slice(index + word.length));
+    setText(result.text.slice(0,index)+replacement+result.text.slice(index+word.length));
   }
 
   return (
