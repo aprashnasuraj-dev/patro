@@ -7,7 +7,13 @@ const projectRef = "pxlsmxbpgdfzjzuqtict";
 export default defineConfig({
   // Aafnai Patro is one root SPA. Astronomy is a route inside it at /tools/astro.
   base: "/",
-  plugins: [react()],
+  plugins: [react(), {
+    name: "installed-app-asset-manifest",
+    generateBundle(_options, bundle) {
+      const assets = Object.keys(bundle).filter(name => /\.(?:m?js|css|woff2?)$/.test(name)).map(name => "/" + name).sort();
+      this.emitFile({type: "asset", fileName: "pwa-optional-assets.json", source: JSON.stringify({version: 1, assets})});
+    }
+  }],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url))

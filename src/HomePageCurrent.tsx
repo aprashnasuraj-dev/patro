@@ -3,8 +3,7 @@ import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
 import { HomeWeather } from "./components/HomeWeather";
 import "./home-extras.css";
 import { HomeHistoryCard } from "./components/HomeHistoryCard";
-import { lazy, Suspense } from "react";
-const HomeSkyFact = lazy(() => import("./components/HomeSkyFact"));
+import { DeferredHomeSkyFact } from "./components/DeferredHomeSkyFact";
 import "./patro-cell.css";
 import { formatDate } from "./nepaliDate";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -253,7 +252,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "आगामी", "Upcoming")}</span><h2>{l(language, "नजिकका चाडपर्व", "Upcoming festivals")}</h2></div></header><div className="rh-upcoming">{upcoming.length ? upcoming.map((item, index) => <a href={`/date/${festivalDate(item)}`} key={`${festivalDate(item)}-${index}`}><strong>{festivalName(item, language)}</strong><small>{adLabel(festivalDate(item), language)}</small></a>) : <p className="rh-muted">{l(language, "यो महिनाका थप चाडपर्व विवरण उपलब्ध छैनन्।", "No additional festival entries are available for this month.")}</p>}</div></section>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छिटो पहुँच", "Quick access")}</span><h2>{l(language, "दैनिक प्रयोग", "Daily tools")}</h2></div></header><div className="rh-quick-grid"><a href="/tools/nepali-typing"><b>ने</b><span>{l(language, "नेपाली टाइपिङ", "Nepali typing")}</span></a><a href="/time-machine"><b>⌛</b><span>{l(language, "समययन्त्र", "Time Machine")}</span></a><a href="/samudaya"><b>समु</b><span>{l(language, "समुदाय पात्रो", "Community calendars")}</span></a><a href="/tools/astro"><b>☾</b><span>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</span></a></div></section>
         <HomeHistoryCard language={language} todayAd={today} />
-        <Suspense fallback={null}><HomeSkyFact language={language} /></Suspense>
+        <DeferredHomeSkyFact language={language} />
       </aside>
     </div>
   </main>;

@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "aafnai-pwa-v14";
+const SW_REVISION = "aafnai-pwa-v15";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -59,9 +59,28 @@ function installControllerRefresh() {
   });
 }
 
+function isInstalledApp() {
+  return window.matchMedia("(display-mode: standalone)").matches || Boolean((navigator as Navigator & { standalone?: boolean }).standalone);
+}
+function prepareInstalledFeatures() {
+  if (!navigator.onLine) return;
+  navigator.serviceWorker.ready.then(registration => {
+    (navigator.serviceWorker.controller || registration.active)?.postMessage({type: "WARM_FEATURE_ASSETS"});
+  }).catch(() => undefined);
+}
+
 export function registerPatroServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   installControllerRefresh();
+  let installed = isInstalledApp();
+  window.addEventListener("appinstalled", () => { installed = true; prepareInstalledFeatures(); });
+  window.addEventListener("online", () => { if (installed || isInstalledApp()) prepareInstalledFeatures(); });
+  window.matchMedia("(display-mode: standalone)").addEventListener?.("change", () => { if (isInstalledApp()) prepareInstalledFeatures(); });
+  navigator.serviceWorker.addEventListener("message", event => {
+    if (event.data?.type === "FEATURE_ASSETS_READY") {
+      window.dispatchEvent(new CustomEvent("patro:offline-features-ready"));
+    }
+  });
   window.addEventListener("patro:prepare-offline", () => {
     navigator.serviceWorker.ready.then((registration) => {
       registration.active?.postMessage({ type: "WARM_OFFLINE" });
@@ -75,6 +94,7 @@ export function registerPatroServiceWorker() {
         await registration.update();
         if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
+        if (installed || isInstalledApp()) prepareInstalledFeatures();
       } catch { /* app remains usable if service worker setup fails */ }
     }).catch((error) => console.warn("Service worker registration failed", error));
   });

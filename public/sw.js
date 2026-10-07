@@ -1,4 +1,4 @@
-const VERSION = "aafnai-pwa-v14";
+const VERSION = "aafnai-pwa-v15";
 const SHELL_CACHE = "aafnai-shell-v11";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
@@ -123,6 +123,30 @@ async function warmInstallShell() {
   const shell = await caches.open(SHELL_CACHE);
   await Promise.allSettled(INSTALL_CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin" }))));
 }
+// Install-time preparation downloads executable assets only from this build.
+// A failed asset remains retryable on the next installed-app launch or online event.
+async function warmFeatureAssets() {
+  const response = await fetch("/pwa-optional-assets.json", { cache: "no-cache", credentials: "same-origin" });
+  if (!response.ok) throw new Error("optional_asset_manifest_unavailable");
+  const manifest = await response.json();
+  if (!Array.isArray(manifest.assets) || manifest.assets.length > 300) throw new Error("invalid_optional_assets");
+  await warmInstallShell();
+  const shell = await caches.open(SHELL_CACHE);
+  const assets = manifest.assets.filter(path => typeof path === "string" && /^\/assets\/[\w.-]+\.(?:m?js|css|woff2?)$/.test(path));
+  let failed = await shell.match(new Request("/", {credentials:"same-origin"})) ? 0 : 1;
+  for (let i = 0; i < assets.length; i += 4) {
+    await Promise.all(assets.slice(i, i + 4).map(async path => {
+      try {
+        const request = new Request(path, { credentials: "same-origin" });
+        if (await shell.match(request)) return;
+        const asset = await fetch(request);
+        if (!responseAllowsStorage(asset)) throw new Error("optional_asset_fetch_failed");
+        await shell.put(request, asset);
+      } catch { failed++; }
+    }));
+  }
+  if (failed) throw new Error("optional_assets_incomplete_" + failed);
+}
 async function warmOffline() {
   const shell = await caches.open(SHELL_CACHE);
   await Promise.allSettled(CORE.map((url) => putIfOk(shell, new Request(url, { credentials:"same-origin" }))));
@@ -210,6 +234,7 @@ self.addEventListener("activate", (event) => {
 });
 self.addEventListener("message", (event) => {
   if (event.data?.type === "WARM_LANGUAGE_TOOLS") event.waitUntil(caches.open(SHELL_CACHE).then(warmLanguageTools));
+  if (event.data?.type === "WARM_FEATURE_ASSETS") event.waitUntil(warmFeatureAssets().then(() => event.source?.postMessage({type:"FEATURE_ASSETS_READY",revision:VERSION})).catch(() => event.source?.postMessage({type:"FEATURE_ASSETS_RETRY",revision:VERSION})));
   if (event.data?.type === "WARM_OFFLINE") event.waitUntil(warmOffline());
   if (event.data?.type === "MORNING_CONFIG") event.waitUntil(localPut(MORNING_CONFIG_KEY,event.data.config||{enabled:false,name:""}));
   if (event.data?.type === "CHECK_MORNING") event.waitUntil(maybeMorningGreeting(false));

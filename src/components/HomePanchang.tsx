@@ -24,14 +24,18 @@ export function HomePanchang({ date, panchang, language }: { date: string; panch
   const [calculated, setCalculated] = useState<{ at: PanchangAt; sunrise: string; sunset: string } | null>(null);
   useEffect(() => {
     let active = true;
-    import("../patro-tools/core/astro").then(({ panchangAt, sunriseSunset, zonedMidnight }) => {
+    const load = () => import("../patro-tools/core/astro").then(({ panchangAt, sunriseSunset, zonedMidnight }) => {
       const times = sunriseSunset(date, { lat: 27.7172, lon: 85.324, tz: "Asia/Kathmandu", name: "Kathmandu" });
       const match = /^(\d{2}):(\d{2})$/.exec(panchang.sunrise || "");
       const anchor = match ? new Date(zonedMidnight(date, "Asia/Kathmandu").getTime() + (Number(match[1]) * 60 + Number(match[2])) * 60_000) : times.sunrise;
       const clock = (value: Date) => new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kathmandu", hour: "2-digit", minute: "2-digit" }).format(value);
       if (active) setCalculated({ at: panchangAt(anchor), sunrise: clock(times.sunrise), sunset: clock(times.sunset) });
     }).catch(() => {});
-    return () => { active = false; };
+    // Archive values render immediately. Supplemental calculations wait until idle.
+    const idleWindow = window as Window & {requestIdleCallback?: (callback: () => void) => number; cancelIdleCallback?: (id: number) => void};
+    let idle: number | undefined;
+    const timer = window.setTimeout(() => { if (idleWindow.requestIdleCallback) idle = idleWindow.requestIdleCallback(load); else void load(); }, 2500);
+    return () => { active = false; window.clearTimeout(timer); if (idle !== undefined) idleWindow.cancelIdleCallback?.(idle); };
   }, [date, panchang.sunrise]);
   const at = calculated?.at;
   const ne = language === "ne";
