@@ -1,5 +1,6 @@
 import { HomeQuickNote } from "./components/HomeQuickNote";
-import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
+import { TodayHero } from "./components/TodayHero";
+import { type HomePanchangData } from "./components/HomePanchang";
 import { HomeWeather } from "./components/HomeWeather";
 import "./home-extras.css";
 import { HomeHistoryCard } from "./components/HomeHistoryCard";
@@ -116,6 +117,11 @@ function adLabel(iso: string, language: "ne" | "en") {
 function bsMonth(month: number, language: "ne" | "en") { return language === "en" ? BS_MONTHS_EN[month - 1] : BS_MONTHS[month - 1]; }
 function number(value: number, language: "ne" | "en") { return language === "en" ? String(value) : toNepaliDigits(value); }
 
+function readServerToday(date:string): {view:TodayView;events:Festival[]} | null {
+  if(typeof document==="undefined")return null;
+  try {const value=JSON.parse(document.getElementById("patro-today-data")?.textContent||"null");return value?.date===date && value?.view ? value : null;} catch{return null;}
+}
+
 export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYear?: number; calendarMonth?: number }) {
   const language = useUiLanguage();
   const today = useMemo(todayNepal, []);
@@ -124,8 +130,8 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const [cursor, setCursor] = useState<{ year: number; month: number } | null>(initialCursor);
   const [selected, setSelected] = useState(today);
   const [days, setDays] = useState<CalendarDay[]>(() => initialCursor ? localMonthDays(initialCursor.year, initialCursor.month) : []);
-  const [events, setEvents] = useState<Festival[]>([]);
-  const [todayView, setTodayView] = useState<TodayView>({ bs: localToday, ns: "", tithi: "", sunrise: "", sunset: "" });
+  const [events, setEvents] = useState<Festival[]>(() => readServerToday(today)?.events || []);
+  const [todayView, setTodayView] = useState<TodayView>(() => readServerToday(today)?.view || { bs: localToday, ns: "", tithi: "", sunrise: "", sunset: "" });
 
   useEffect(() => {
     if (calendarYear && calendarMonth) setCursor({ year: calendarYear, month: calendarMonth });
@@ -193,16 +199,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
 
   const todayBs = todayView.bs || localToday;
   return <main id="main-content" className="rh-page">
-    <section className="rh-hero">
-      <div className="rh-hero-copy">
-        <span className="rh-kicker">{l(language, "आज · काठमाडौं समय", "Today · Nepal time")}</span>
-        <h1 id="rh-today-title">{todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")}</h1>
-        <p>{adLabel(today, language)}</p>
-        <div className="hp-ns"><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><strong lang="ne">{todayView.ns || "—"}</strong></div>
-        <div className="hp-today-events">{(eventMap.get(today) || []).slice(0, 2).map((event, index) => <a href={`/date/${today}`} key={index}>{festivalName(event, language)}</a>)}</div>
-      </div>
-      <HomePanchang date={today} language={language} panchang={todayView.panchang || {}} />
-    </section>
+    <TodayHero language={language} date={today} bsLabel={todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")} adLabel={adLabel(today, language)} ns={todayView.ns} panchang={todayView.panchang || {}} events={(eventMap.get(today) || []).map(event=>({name:festivalName(event,language)}))}/>
     <HomeWeather language={language} today={today} />
 
     <div className="rh-actions" aria-label={l(language, "मुख्य छिटो कार्य", "Quick actions")}>

@@ -1,4 +1,4 @@
-const VERSION = "aafnai-pwa-v15";
+const VERSION = "aafnai-pwa-v16";
 const SHELL_CACHE = "aafnai-shell-v11";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
