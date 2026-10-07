@@ -1,0 +1,164 @@
+name: Jyotish Bundle Bootstrap
+
+on:
+  push:
+    branches:
+      - feat/jyotish-bundle-final-20261007
+    paths:
+      - '.github/workflows/jyotish-bundle-bootstrap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jyotish-bundle-bootstrap
+  cancel-in-progress: true
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PAYLOAD_SHARE_URL: https://firestorage.ai/ja/f/AfBij00bepHN
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: feat/jyotish-bundle-final-20261007
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Download prepared Jyotish payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          target=/tmp/jyotish-payload.zip
+          page=/tmp/firestorage-share
+          curl --retry 4 --retry-all-errors -fsSL -A 'Mozilla/5.0' "$PAYLOAD_SHARE_URL" -o "$page"
+          if unzip -t "$page" >/dev/null 2>&1; then
+            mv "$page" "$target"
+          else
+            SHARE_URL="$PAYLOAD_SHARE_URL" PAGE="$page" TARGET="$target" python3 <<'PY'
+          import html, os, re, subprocess
+          from urllib.parse import urljoin
+          page=os.environ["PAGE"]; base=os.environ["SHARE_URL"]; target=os.environ["TARGET"]
+          raw=open(page,"r",encoding="utf-8",errors="ignore").read()
+          cooked=html.unescape(raw).replace("\\/","/").replace("\\u002F","/")
+          vals=[]
+          vals += re.findall(r'https?://[^"\'<>\s]+', cooked)
+          vals += re.findall(r'(?:href|src)=["\']([^"\']+)["\']', cooked, re.I)
+          vals += re.findall(r'["\'](?:downloadUrl|download_url|url)["\']\s*:\s*["\']([^"\']+)["\']', cooked, re.I)
+          seen=set()
+          ranked=[]
+          for v in vals:
+            u=urljoin(base,v)
+            if u in seen: continue
+            seen.add(u)
+            low=u.lower()
+            score=sum(k in low for k in ("download",".zip","attachment","file"))
+            if score: ranked.append((score,u))
+          ranked.sort(reverse=True)
+          print("candidate download URLs:", len(ranked))
+          for _,u in ranked[:60]:
+            print("TRY",u)
+            try:
+              subprocess.run(["curl","--retry","2","--retry-all-errors","-fsSL","-A","Mozilla/5.0",u,"-o",target],check=True,timeout=90)
+              if subprocess.run(["unzip","-t",target],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0:
+                print("ZIP_OK",u); raise SystemExit(0)
+            except Exception as e:
+              print("candidate failed",type(e).__name__)
+          raise SystemExit(2)
+          PY
+          fi
+
+          if ! unzip -t "$target" >/dev/null 2>&1; then
+            echo "Static download discovery did not locate the ZIP; using browser fallback."
+            npm install --no-save --no-package-lock --legacy-peer-deps playwright@1.56.1 >/dev/null
+            npx playwright install chromium >/dev/null
+            SHARE_URL="$PAYLOAD_SHARE_URL" TARGET="$target" node <<'NODE'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const page=await browser.newPage({acceptDownloads:true});
+            await page.goto(process.env.SHARE_URL,{waitUntil:'networkidle',timeout:90000});
+            const controls=await page.locator('a,button,[role="button"]').evaluateAll(els=>els.map((e,i)=>({
+              i,tag:e.tagName,text:(e.textContent||'').trim().slice(0,120),href:e.href||'',aria:e.getAttribute('aria-label')||'',title:e.getAttribute('title')||''
+            })));
+            console.log('controls',JSON.stringify(controls.slice(0,120)));
+            const likely=page.locator('a,button,[role="button"]').filter({hasText:/download|ダウンロード/i});
+            let saved=false;
+            for(let i=0;i<Math.min(await likely.count(),12)&&!saved;i++){
+              const el=likely.nth(i);
+              try{
+                const dl=page.waitForEvent('download',{timeout:15000});
+                await el.click({timeout:10000});
+                const d=await dl;
+                await d.saveAs(process.env.TARGET);
+                saved=true;
+              }catch(e){ console.log('download control failed',i,String(e).slice(0,180)); }
+            }
+            if(!saved){
+              for(const c of controls){
+                if(!/download|ダウンロード|zip|保存/i.test([c.text,c.href,c.aria,c.title].join(' '))) continue;
+                try{
+                  const el=page.locator('a,button,[role="button"]').nth(c.i);
+                  const dl=page.waitForEvent('download',{timeout:15000});
+                  await el.click({timeout:10000});
+                  const d=await dl;
+                  await d.saveAs(process.env.TARGET); saved=true; break;
+                }catch{}
+              }
+            }
+            await browser.close();
+            if(!saved||!fs.existsSync(process.env.TARGET)) process.exit(3);
+          })().catch(e=>{console.error(e);process.exit(4)});
+          NODE
+          fi
+          unzip -t "$target" >/dev/null
+          echo "Jyotish payload downloaded and validated."
+
+      - name: Integrate prepared bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/jyotish-payload
+          mkdir -p /tmp/jyotish-payload
+          unzip -q /tmp/jyotish-payload.zip -d /tmp/jyotish-payload
+          test -s /tmp/jyotish-payload/apply-repo.mjs
+          test -s /tmp/jyotish-payload/src/features/jyotish/JyotishPage.jsx
+          test -s /tmp/jyotish-payload/worker/jyotish-api.ts
+
+          rm -rf src/features/jyotish
+          mkdir -p src/features public/jyotish
+          cp -R /tmp/jyotish-payload/src/features/jyotish src/features/
+          cp /tmp/jyotish-payload/public/jyotish/paper-fibers.png public/jyotish/paper-fibers.png
+          cp /tmp/jyotish-payload/public/jyotish/paper-grain.png public/jyotish/paper-grain.png
+          cp /tmp/jyotish-payload/worker/jyotish-api.ts worker/jyotish-api.ts
+          cp /tmp/jyotish-payload/tests/verify.mjs tests/janmapatro-bundle-verify.test.mjs
+          node /tmp/jyotish-payload/apply-repo.mjs
+
+      - name: Validate integrated Jyotish feature
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+          node tests/janmapatro-bundle-verify.test.mjs
+          node --test tests/janmapatro-*.test.mjs
+          npm run typecheck
+
+      - name: Commit prepared integration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/features/jyotish public/jyotish worker/jyotish-api.ts tests/janmapatro-bundle-verify.test.mjs src/PatroRouter.tsx worker/optimized-entry.ts .github/workflows/janmapatro-fast-gate.yml .github/workflows/release-gate.yml
+          git diff --cached --stat
+          git diff --cached --quiet && { echo "No integration changes to commit."; exit 0; }
+          git commit -m "feat: integrate complete Janma Patro and Guna Milan bundle [jyotish-bootstrap]"
+          git push origin HEAD:feat/jyotish-bundle-final-20261007
