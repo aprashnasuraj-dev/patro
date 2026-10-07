@@ -270,7 +270,7 @@ jobs:
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.SYNC_HISTORY_D1 == '1'
         shell: bash
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_D1_DATABASE_ID: fb25c860-01db-4ab0-9036-7f87b26ca64b
           ALLOW_D1_QUOTA_DEFER: "1"
@@ -285,7 +285,8 @@ jobs:
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         shell: bash
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_D1_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.GIT || secrets.git }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CF_KV_NAMESPACE_ID: ${{ vars.CF_KV_NAMESPACE_ID || secrets.CF_KV_NAMESPACE_ID }}
           CF_KV_PREVIEW_NAMESPACE_ID: ${{ vars.CF_KV_PREVIEW_NAMESPACE_ID || secrets.CF_KV_PREVIEW_NAMESPACE_ID }}
@@ -313,7 +314,7 @@ jobs:
           console.log(`quota bindings required: KV=true R2=true (${r2.bucket_name})`);
           NODE
           set +e
-          migration_output="$(npx wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc 2>&1)"
+          migration_output="$(CLOUDFLARE_API_TOKEN="${CLOUDFLARE_D1_API_TOKEN:-$CLOUDFLARE_API_TOKEN}" npx wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc 2>&1)"
           migration_status=$?
           set -e
           printf '%s\n' "$migration_output"
