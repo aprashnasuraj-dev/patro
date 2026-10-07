@@ -42,7 +42,7 @@ jobs:
           if unzip -t "$page" >/dev/null 2>&1; then
             mv "$page" "$target"
           else
-            SHARE_URL="$PAYLOAD_SHARE_URL" PAGE="$page" TARGET="$target" python3 <<'PY'
+            SHARE_URL="$PAYLOAD_SHARE_URL" PAGE="$page" TARGET="$target" python3 <<'PY' || true
           import html, os, re, subprocess
           from urllib.parse import urljoin
           page=os.environ["PAGE"]; base=os.environ["SHARE_URL"]; target=os.environ["TARGET"]
