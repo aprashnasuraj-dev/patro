@@ -114,7 +114,7 @@ export async function communityIcs(env:Env,suite:string,sp:URLSearchParams){
   if(!Number.isInteger(year)||year<2020||year>2050)return bad("invalid_year");
   if(!SUITES.includes(suite as SuiteId))return json({ok:false,error:"unknown_suite"},404,"no-store");
   const result=await communityData(env,suite as SuiteId,new URLSearchParams({year:String(year)})); if(result.error)return result.error;
-  const items=result.items||[],m=META[suite as SuiteId],lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Mero Patro//Community Suite//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:"+icsEsc(m.dev+" · "+m.en),"REFRESH-INTERVAL;VALUE=DURATION:P7D"];
+  const items=result.items||[],m=META[suite as SuiteId],lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Aafnai Patro//Community Suite//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:"+icsEsc(m.dev+" · "+m.en),"REFRESH-INTERVAL;VALUE=DURATION:P7D"];
   for(const x of items)lines.push("BEGIN:VEVENT","UID:"+x.id+"-"+x.start+"@meropatro","DTSTART;VALUE=DATE:"+icsDate(x.start),"DTEND;VALUE=DATE:"+icsDate(add(x.end,1)),"SUMMARY:"+icsEsc(x.dev+" · "+x.en),"DESCRIPTION:"+icsEsc(x.badge+(x.review?" · समीक्षाधीन":"")+" · "+x.summary),"END:VEVENT");
   lines.push("END:VCALENDAR"); return new Response(lines.join("\r\n")+"\r\n",{headers:{"content-type":"text/calendar; charset=utf-8","cache-control":DAYCACHE}});
 }
@@ -143,7 +143,7 @@ export async function combinedCommunityIcs(env:Env,request:Request){
   let ids=(raw||"").split(",").filter(Boolean).filter(x=>(COMMUNITY_IDS as readonly string[]).includes(x));
   if(raw===null&&!ids.length)ids=[...COMMUNITY_IDS];
   const from=u.searchParams.get("from")||today(); if(!validDate(from))return bad("invalid_from");
-  const to=add(from,550),lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Mero Patro//My Communities//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:मेरो समुदाय · Mero Patro","REFRESH-INTERVAL;VALUE=DURATION:P1D"];
+  const to=add(from,550),lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Aafnai Patro//My Communities//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:मेरो समुदाय · Aafnai Patro","REFRESH-INTERVAL;VALUE=DURATION:P1D"];
   for(const id of ids.filter(x=>x!=="nepal-sambat")){
     const s=id as SuiteId,fm=await festivalMap(env,s);
     let data=await rows(env,"select payload from content_records where table_name='community_dates' and json_extract(payload,'$.suite')=?1 and json_extract(payload,'$.region') is null and json_extract(payload,'$.start_ad')>=?2 and json_extract(payload,'$.start_ad')<=?3 order by json_extract(payload,'$.start_ad')",[s,from,to]);
@@ -233,7 +233,7 @@ export async function nsConvert(env:Env,sp:URLSearchParams){
 export async function nsIcs(env:Env,sp:URLSearchParams){
   const year=Number(sp.get("year"));if(!Number.isInteger(year)||year<1000||year>1300)return bad("invalid_ns_year");
   const r=await nsFestivals(env,new URLSearchParams({year:String(year)}));if(r.status!==200)return r;const p:any=await r.json();
-  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Mero Patro//Nepal Sambat//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:नेपाल संवत् "+year,"REFRESH-INTERVAL;VALUE=DURATION:P7D"];
+  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Aafnai Patro//Nepal Sambat//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:नेपाल संवत् "+year,"REFRESH-INTERVAL;VALUE=DURATION:P7D"];
   for(const x of p.festivals)lines.push("BEGIN:VEVENT","UID:ns-"+x.id+"-"+x.start+"@meropatro","DTSTART;VALUE=DATE:"+icsDate(x.start),"DTEND;VALUE=DATE:"+icsDate(add(x.end,1)),"SUMMARY:"+icsEsc(x.dev+" · "+x.en),"DESCRIPTION:"+icsEsc(x.badge+(x.review?" · समीक्षाधीन":"")),"END:VEVENT");
   lines.push("END:VCALENDAR");return new Response(lines.join("\r\n")+"\r\n",{headers:{"content-type":"text/calendar; charset=utf-8","cache-control":DAYCACHE}});
 }
