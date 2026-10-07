@@ -124,7 +124,7 @@ test("calendar, Time Machine, Samachar and media UI point to backed API contract
 
   for(const endpoint of ["/api/v1/calendar/","/api/v1/convert?bs=","/api/v1/sync?","/api/v1/festivals?year=","/api/v1/holidays?"])assert.ok(pages.includes(endpoint)||publicApi.includes(endpoint)||worker.includes(endpoint),endpoint);
   for(const endpoint of ["/api/v1/time-machine","/api/v1/on-this-day"]){assert.ok(details.includes(endpoint),`frontend lost ${endpoint}`);assert.ok(worker.includes(endpoint)||publicApi.includes(endpoint),`Worker lost ${endpoint}`);}
-  assert.ok(weather.includes('/api/v1/weather/daily?days=16'),"calendar weather enhancer lost native forecast endpoint");
+  assert.ok(weather.includes('loadWeatherForecast()') && read('src/weather-client.ts').includes('/api/v1/weather/daily?days=16'),"calendar weather enhancer lost its shared native forecast endpoint");
   assert.ok(worker.includes('/api/v1/weather/daily'),"Worker lost weather endpoint");
   assert.ok(pages.includes('"/api/v1/news?limit=30"'));
   assert.ok(bridge.includes('pathname === "/api/v1/news"'));
