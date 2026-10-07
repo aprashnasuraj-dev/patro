@@ -107,19 +107,19 @@ async function personalTithiFeed(request:Request,env:Env){
   const life=prefs&&typeof prefs.life_tools==="object"?prefs.life_tools:{};
   const events=Array.isArray(life.tithiEvents)?life.tithiEvents.slice(0,30):[];
   const today=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//MeroPatro//Private Tithi Feed//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:मेरो पात्रो · तिथि रिमाइन्डर","X-WR-TIMEZONE:Asia/Kathmandu","REFRESH-INTERVAL;VALUE=DURATION:P1D"];
+  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Aafnai Patro//Private Tithi Feed//NE","CALSCALE:GREGORIAN","X-WR-CALNAME:आफ्नै पात्रो · तिथि रिमाइन्डर","X-WR-TIMEZONE:Asia/Kathmandu","REFRESH-INTERVAL;VALUE=DURATION:P1D"];
   for(const event of events){
     const rule=event?.rule as TithiRule|undefined;if(!rule||!event?.id||!event?.title)continue;
     let occurrences;try{occurrences=nextOccurrences(rule,today,4,KATHMANDU)}catch{continue}
     for(const occurrence of occurrences){
-      lines.push("BEGIN:VEVENT","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z"),"UID:"+icsEsc(event.id+"-"+occurrence.date+"@meropatro"),"DTSTART;VALUE=DATE:"+occurrence.date.replace(/-/g,""),"DTEND;VALUE=DATE:"+nextDate(occurrence.date).replace(/-/g,""),"SUMMARY:"+icsEsc(event.title),"DESCRIPTION:"+icsEsc("तिथि रिमाइन्डर · MeroPatro"));
+      lines.push("BEGIN:VEVENT","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z"),"UID:"+icsEsc(event.id+"-"+occurrence.date+"@meropatro"),"DTSTART;VALUE=DATE:"+occurrence.date.replace(/-/g,""),"DTEND;VALUE=DATE:"+nextDate(occurrence.date).replace(/-/g,""),"SUMMARY:"+icsEsc(event.title),"DESCRIPTION:"+icsEsc("तिथि रिमाइन्डर · Aafnai Patro"));
       const reminders=Array.isArray(event.remindDaysBefore)?event.remindDaysBefore:[];
       for(const day of reminders.filter((x:any)=>Number.isInteger(x)&&x>=0&&x<=365).slice(0,12))lines.push("BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:"+icsEsc(event.title),"TRIGGER;VALUE=DATE-TIME:"+tithiAlarmUtc(occurrence.date,String(event.remindAt||"07:00"),day),"END:VALARM");
       lines.push("END:VEVENT");
     }
   }
   lines.push("END:VCALENDAR");
-  return new Response(lines.join("\r\n")+"\r\n",{headers:{"content-type":"text/calendar; charset=utf-8","cache-control":"private, no-store","content-disposition":'inline; filename="mero-patro-tithi.ics"',"x-robots-tag":"noindex, nofollow"}});
+  return new Response(lines.join("\r\n")+"\r\n",{headers:{"content-type":"text/calendar; charset=utf-8","cache-control":"private, no-store","content-disposition":'inline; filename="aafnai-patro-tithi.ics"',"x-robots-tag":"noindex, nofollow"}});
 }
 
 export async function privateResponse(request:Request,env:Env):Promise<Response|null>{

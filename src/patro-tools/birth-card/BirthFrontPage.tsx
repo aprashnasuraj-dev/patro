@@ -17,7 +17,7 @@ const paper = '#f6f1e4';
 const ink = '#1b1b1b';
 const accent = '#9b1c1c';
 
-export function BirthFrontPage({ model, brand = 'मेरो पात्रो', shareUrl }: { model: Model; brand?: string; shareUrl?: string }) {
+export function BirthFrontPage({ model, brand = 'आफ्नै पात्रो', shareUrl }: { model: Model; brand?: string; shareUrl?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
 

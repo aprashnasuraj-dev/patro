@@ -1,0 +1,485 @@
+{
+  "source": "Local production dist with PATRO_AUDIT_API=1 bounded calendar fixtures. External media/account/backend unavailable. Live browser navigation timed out.",
+  "results": [
+    {
+      "route": "/",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 375,
+      "lang": "ne",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 375,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 375,
+      "lang": "en",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 375,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 768,
+      "lang": "ne",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 768,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 768,
+      "lang": "en",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 768,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 1280,
+      "lang": "ne",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 1280,
+      "lang": "ne",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/date/2026-10-07",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/rashifal",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/convert",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tools/astro",
+      "width": 1280,
+      "lang": "en",
+      "errors": [
+        "Cannot read properties of undefined (reading 'gregorian_ad')"
+      ]
+    },
+    {
+      "route": "/tools/tithi-reminder",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/fm",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/tv",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/samudaya",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/time-machine",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/on-this-day",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    },
+    {
+      "route": "/me",
+      "width": 1280,
+      "lang": "en",
+      "errors": []
+    }
+  ]
+}

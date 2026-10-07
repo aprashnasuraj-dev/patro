@@ -1,0 +1,43 @@
+{
+  "scope": "Local built dist; cache disabled. Worker admin runtime injection and production edge latency are not simulated.",
+  "metrics": {
+    "ttfb": 9.800000000046566,
+    "fcp": 68,
+    "domContentLoaded": 69.30000000004657,
+    "lcp": 104,
+    "cls": 0.05185680085054236,
+    "totalJsBytes": 1225427,
+    "chunks": [
+      {
+        "url": "/assets/react-vendor-knnG78c1.js",
+        "bytes": 208651,
+        "transfer": 0
+      },
+      {
+        "url": "/assets/index-C7MxUrry.js",
+        "bytes": 314974,
+        "transfer": 0
+      },
+      {
+        "url": "/assets/astronomy-C5bnjLHK.js",
+        "bytes": 60622,
+        "transfer": 0
+      },
+      {
+        "url": "/assets/media-player-CJzT4PSO.js",
+        "bytes": 591574,
+        "transfer": 0
+      },
+      {
+        "url": "/assets/HomeSkyFact-DuDdCTqW.js",
+        "bytes": 6191,
+        "transfer": 0
+      },
+      {
+        "url": "/assets/SeoSearchSupport-C24MRZ7z.js",
+        "bytes": 43415,
+        "transfer": 0
+      }
+    ]
+  }
+}

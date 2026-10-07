@@ -37,7 +37,7 @@ export const viber = {
     const res = await fetch(`${VIBER_API}/send_message`, {
       method: 'POST',
       headers: { 'X-Viber-Auth-Token': token, 'content-type': 'application/json' },
-      body: JSON.stringify({ receiver, type: 'text', text, sender: { name: 'मेरो पात्रो' }, min_api_version: 3, ...(withKeyboard ? { keyboard: viber.keyboard() } : {}) }),
+      body: JSON.stringify({ receiver, type: 'text', text, sender: { name: 'आफ्नै पात्रो' }, min_api_version: 3, ...(withKeyboard ? { keyboard: viber.keyboard() } : {}) }),
     });
     return res.json();
   },
@@ -47,7 +47,7 @@ export const viber = {
       await fetch(`${VIBER_API}/broadcast_message`, {
         method: 'POST',
         headers: { 'X-Viber-Auth-Token': token, 'content-type': 'application/json' },
-        body: JSON.stringify({ broadcast_list: receivers.slice(i, i + 300), type: 'text', text, sender: { name: 'मेरो पात्रो' }, min_api_version: 3 }),
+        body: JSON.stringify({ broadcast_list: receivers.slice(i, i + 300), type: 'text', text, sender: { name: 'आफ्नै पात्रो' }, min_api_version: 3 }),
       });
     }
   },

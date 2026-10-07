@@ -57,17 +57,17 @@ const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-
 type EdgeSeoMeta = { title: string; description: string };
 
 const EDGE_SEO_EXACT: Record<string, EdgeSeoMeta> = {
-  "/": { title: "नेपाली पात्रो, तिथि र राशिफल · MeroPatro", description: "MeroPatro — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।" },
-  "/astro": { title: "खगोलीय पात्रो · Astronomy Calendar · MeroPatro", description: "AD, BS, Nepal Sambat, तिथि, lunar phase र NASA astronomy data एउटै पात्रोमा।" },
-  "/fm": { title: "FM Radio · MeroPatro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
-  "/tv": { title: "Live TV · MeroPatro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।" },
-  "/samachar": { title: "समाचार · Samachar · MeroPatro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
-  "/time-machine": { title: "नेपाल Time Machine · MeroPatro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
-  "/on-this-day": { title: "आज इतिहासमा · On This Day · MeroPatro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
-  "/tools": { title: "नेपाली Utility Tools · MeroPatro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
-  "/convert": { title: "AD ↔ BS Date Converter · MeroPatro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
-  "/jyotish/rashifal": { title: "राशिफल · Rashifal · MeroPatro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
-  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · MeroPatro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" }
+  "/": { title: "नेपाली पात्रो, तिथि र राशिफल · Aafnai Patro", description: "Aafnai Patro — नेपाली पात्रो, तिथि, चाडपर्व, राशिफल, मिति रूपान्तरण, समाचार, रेडियो र लाइभ टिभी।" },
+  "/astro": { title: "खगोलीय पात्रो · Astronomy Calendar · Aafnai Patro", description: "AD, BS, Nepal Sambat, तिथि, lunar phase र NASA astronomy data एउटै पात्रोमा।" },
+  "/fm": { title: "FM Radio · Aafnai Patro", description: "नेपाल र विश्वका प्ले गर्न मिल्ने FM तथा online radio stations।" },
+  "/tv": { title: "Live TV · Aafnai Patro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।" },
+  "/samachar": { title: "समाचार · Samachar · Aafnai Patro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
+  "/time-machine": { title: "नेपाल Time Machine · Aafnai Patro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
+  "/on-this-day": { title: "आज इतिहासमा · On This Day · Aafnai Patro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
+  "/tools": { title: "नेपाली Utility Tools · Aafnai Patro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
+  "/convert": { title: "AD ↔ BS Date Converter · Aafnai Patro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
+  "/jyotish/rashifal": { title: "राशिफल · Rashifal · Aafnai Patro", description: "दैनिक, साप्ताहिक र मासिक राशिफल तथा Vedic astrology context।" },
+  "/jyotish/janma-patro": { title: "जन्मपत्रो · Kundali · Aafnai Patro", description: "जन्म मिति, समय र स्थानका आधारमा जन्मपत्रो तथा ग्रह स्थिति।" }
 };
 
 function canonicalSeoPath(path: string) {
@@ -80,13 +80,13 @@ function edgeSeoMeta(path: string): EdgeSeoMeta {
   const calendar = path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);
   if (calendar) {
     return {
-      title: "नेपाली पात्रो " + calendar[1] + "/" + String(calendar[2]).padStart(2, "0") + " · MeroPatro",
+      title: "नेपाली पात्रो " + calendar[1] + "/" + String(calendar[2]).padStart(2, "0") + " · Aafnai Patro",
       description: "वि.सं. " + calendar[1] + " सालको महिना " + calendar[2] + ": तिथि, चाडपर्व, बिदा र AD/BS date context।"
     };
   }
-  if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · MeroPatro", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
-  if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · MeroPatro", description: "MeroPatro को free browser utility tool।" };
-  return { title: "MeroPatro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
+  if (path.startsWith("/festival/")) return { title: "चाडपर्व · Festival · Aafnai Patro", description: "चाडपर्वको मिति, पात्रो context र उपलब्ध स्रोत विवरण।" };
+  if (path.startsWith("/tools/")) return { title: "नेपाली Utility Tool · Aafnai Patro", description: "Aafnai Patro को free browser utility tool।" };
+  return { title: "Aafnai Patro · नेपाली पात्रो", description: "नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक utilities।" };
 }
 
 
@@ -114,7 +114,7 @@ function rewriteSeoHtml(request: Request, response: Response, path: string) {
     description: meta.description,
     url: canonical,
     inLanguage: ["ne", "en"],
-    isPartOf: { "@type": "WebSite", name: "MeroPatro", url: url.origin + "/" }
+    isPartOf: { "@type": "WebSite", name: "Aafnai Patro", url: url.origin + "/" }
   }).replace(/</g, "\\u003c");
 
   const headBlock =

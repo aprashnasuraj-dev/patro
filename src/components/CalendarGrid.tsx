@@ -108,7 +108,7 @@ function downloadIcs(day: SyncPayload, note: string) {
     "DESCRIPTION:"+escapeIcs(note || day.tithi.en+" · "+day.tithi.paksha),"END:VEVENT","END:VCALENDAR"].join("\r\n");
   const blob=new Blob([body],{type:"text/calendar;charset=utf-8"});
   const url=URL.createObjectURL(blob), a=document.createElement("a");
-  a.href=url; a.download="mero-patro-"+day.query_date+".ics"; a.click();
+  a.href=url; a.download="aafnai-patro-"+day.query_date+".ics"; a.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 function googleCalendarUrl(day: SyncPayload, note: string) {

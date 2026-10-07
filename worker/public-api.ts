@@ -330,7 +330,7 @@ async function doctor(env:PublicEnv){
  const missing=tables.filter(x=>!x.ok);return json({ok:!missing.length,status:missing.length?"degraded":"healthy",canonical_function:"worker/index.ts",architecture:{static_ui:"Cloudflare Pages/Assets",dynamic_api:"Cloudflare Worker",database:"Cloudflare D1"},database:{ok:!missing.length,tables,missing:missing.map(x=>x.table)},checked_at:new Date().toISOString()},missing.length?503:200,"no-store");
 }
 function openapi(){
- return {openapi:"3.1.0",info:{title:"MeroPatro API",version:"2.0.0"},servers:[{url:"/"}],paths:{
+ return {openapi:"3.1.0",info:{title:"Aafnai Patro API",version:"2.0.0"},servers:[{url:"/"}],paths:{
   "/api/v1/today":{get:{}}, "/api/v1/convert":{get:{}}, "/api/v1/festivals":{get:{}}, "/api/v1/holidays":{get:{}},
   "/api/v1/panchang":{get:{}}, "/api/v1/tithi/derive":{get:{},post:{}}, "/api/v1/tithi/next":{get:{}},
   "/api/v1/calendar/{year}/{month}":{get:{}}, "/api/v1/rashifal/metadata":{get:{}}, "/api/v1/rashifal/personalized":{post:{}},
