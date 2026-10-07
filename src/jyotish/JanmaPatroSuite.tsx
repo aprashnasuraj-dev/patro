@@ -6,6 +6,7 @@ import { createJanmaPatroShareUrl, readJanmaPatroShareState } from "../../packag
 import "./janmapatro.css";
 
 type Language="ne"|"en";
+const GRAHA_NE:Record<string,string>={Sun:"सूर्य",Moon:"चन्द्र",Mars:"मङ्गल",Mercury:"बुध",Jupiter:"बृहस्पति",Venus:"शुक्र",Saturn:"शनि",Rahu:"राहु",Ketu:"केतु"};
 type Tab="chart"|"match";
 type MatchMode="birth"|"name";
 type ProfileInput=BirthInput&{father?:string};
@@ -100,13 +101,13 @@ function ChartReport({chart,language}:{chart:ChartResult;language:Language}){
    <dt>{tx(language,"जन्म स्थान","Birth place")}</dt><dd>{chart.input.location} ({chart.input.lat.toFixed(4)}, {chart.input.lng.toFixed(4)})</dd>
    <dt>{tx(language,"लग्न","Ascendant")}</dt><dd>{language==="ne"?NE_SIGNS[chart.ascSignIndex]:SIGNS[chart.ascSignIndex]} · {degreeText(chart.ascendant%30)}</dd>
    <dt>{tx(language,"नक्षत्र","Nakshatra")}</dt><dd>{language==="ne"?NE_NAKSHATRAS[chart.moonNakshatraIndex]:chart.moonNakshatra} · {tx(language,"चरण","Pada")} {chart.moonPada}{syllable?" · "+tx(language,"नामाक्षर","Name syllable")+" "+syllable:""}</dd>
-   <dt>{tx(language,"चन्द्र राशि","Moon sign")}</dt><dd>{moon?.sign||"—"}</dd>
+   <dt>{tx(language,"चन्द्र राशि","Moon sign")}</dt><dd>{moon?(language==="ne"?NE_SIGNS[moon.signIndex]:moon.sign):"—"}</dd>
   </dl>
   <div className="jp-chart-pair"><NorthIndianChart chart={chart} title={tx(language,"लग्न कुण्डली","Lagna chart")}/><NorthIndianChart chart={chart} anchorSign={moon?.signIndex??chart.ascSignIndex} title={tx(language,"चन्द्र कुण्डली","Moon chart")}/></div>
   <h3>{tx(language,"ग्रह स्थिति","Planetary positions")}</h3>
-  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"ग्रह","Graha")}</th><th>{tx(language,"निरायण अंश","Sidereal longitude")}</th><th>{tx(language,"राशि","Rashi")}</th><th>{tx(language,"भाव","House")}</th></tr></thead><tbody>{chart.planets.map((p)=><tr key={p.key}><td>{p.name}</td><td>{p.longitude.toFixed(3)}°</td><td>{p.sign}</td><td>{p.house}</td></tr>)}</tbody></table></div>
+  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"ग्रह","Graha")}</th><th>{tx(language,"निरायण अंश","Sidereal longitude")}</th><th>{tx(language,"राशि","Rashi")}</th><th>{tx(language,"भाव","House")}</th></tr></thead><tbody>{chart.planets.map((p)=><tr key={p.key}><td>{language==="ne"?GRAHA_NE[p.name]||p.name:p.name}</td><td>{language==="ne"?toNepaliDigits(p.longitude.toFixed(3)):p.longitude.toFixed(3)}°</td><td>{language==="ne"?NE_SIGNS[p.signIndex]:p.sign}</td><td>{language==="ne"?toNepaliDigits(p.house):p.house}</td></tr>)}</tbody></table></div>
   <h3>{tx(language,"विंशोत्तरी महादशा","Vimshottari Mahadasha")}</h3>
-  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"स्वामी","Lord")}</th><th>{tx(language,"सुरु","Start")}</th><th>{tx(language,"अन्त्य","End")}</th><th>{tx(language,"वर्ष","Years")}</th></tr></thead><tbody>{chart.dashas.map((d,i)=><tr key={i}><td>{d.lord}</td><td>{dateText(d.start)}</td><td>{dateText(d.end)}</td><td>{d.years.toFixed(2)}</td></tr>)}</tbody></table></div>
+  <div className="jp-table-wrap"><table><thead><tr><th>{tx(language,"स्वामी","Lord")}</th><th>{tx(language,"सुरु","Start")}</th><th>{tx(language,"अन्त्य","End")}</th><th>{tx(language,"वर्ष","Years")}</th></tr></thead><tbody>{chart.dashas.map((d,i)=><tr key={i}><td>{language==="ne"?GRAHA_NE[d.lord]||d.lord:d.lord}</td><td>{dateText(d.start)}</td><td>{dateText(d.end)}</td><td>{d.years.toFixed(2)}</td></tr>)}</tbody></table></div>
   <div className="jp-note"><strong>Kuja / Manglik: {chart.manglik.severity}</strong><p>{chart.manglik.explanation}</p></div>
   <details className="jp-method"><summary>{tx(language,"गणना पद्धति र सीमाहरू","Methodology and limitations")}</summary><ul>{chart.methodology.map((x)=><li key={x}>{x}</li>)}</ul></details>
  </section>;
