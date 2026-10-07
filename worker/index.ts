@@ -1,3 +1,4 @@
+import { apod } from "./apod";
 import { calculateAstronomicalTithi } from "./tithi";
 import { fetchCosmicDay } from "./cosmic";
 import { radioCatalogResponse, radioStreamResponse } from "./radio";
@@ -46,9 +47,7 @@ type Env = {
   RASHIFAL_SERVICE_TOKEN?: string;
 };
 
-const APOD_PRIMARY = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/";
-const APOD_LEGACY = "https://api.nasa.gov/planetary/apod";
-const APOD_FALLBACK = "https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/Moon_2026_print.jpg";
+
 
 const DEFAULT_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://geocoding-api.open-meteo.com https://api.open-meteo.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://accounts.google.com; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
 const EMBED_CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self'; img-src 'self' data:; frame-ancestors *; base-uri 'none'; form-action 'self'";
@@ -329,84 +328,6 @@ async function edgeCached(request: Request, ctx: ExecutionContext, ttl: number, 
   return response;
 }
 
-function apodFallback(date: string, reason: string) {
-  return {
-    title: "Moon Phase Visualization (NASA SVS Fallback)",
-    explanation: "High-resolution lunar visualization provided by NASA Goddard Scientific Visualization Studio while APOD is unavailable.",
-    media_type: "image",
-    source_media_type: "image",
-    url: APOD_FALLBACK,
-    hdurl: APOD_FALLBACK,
-    date,
-    copyright: "NASA / Goddard Space Flight Center Scientific Visualization Studio",
-    is_fallback: true,
-    fallback_reason: reason
-  };
-}
-
-function youtubeId(url: string): string | null {
-  try {
-    const u = new URL(url);
-    if (u.hostname === "youtu.be") return u.pathname.split("/").filter(Boolean)[0]?.slice(0,11) || null;
-    if (u.hostname.includes("youtube.com")) {
-      const q = u.searchParams.get("v");
-      if (q) return q.slice(0,11);
-      const parts = u.pathname.split("/").filter(Boolean);
-      const marker = parts.findIndex(x => ["embed","shorts","live"].includes(x));
-      if (marker >= 0 && parts[marker + 1]) return parts[marker + 1].slice(0,11);
-    }
-  } catch {}
-  return null;
-}
-
-async function apod(env: Env, date: string) {
-  const cacheKey = "apod:" + date;
-  if (env.CACHE) {
-    try {
-      const cached = await env.CACHE.get(cacheKey, "json");
-      if (cached) return cached;
-    } catch {}
-  }
-
-  const apiKey = env.NASA_API_KEY || "DEMO_KEY";
-  let last = "NASA_APOD_UNAVAILABLE";
-  for (const endpoint of [APOD_PRIMARY, APOD_LEGACY]) {
-    const url = endpoint + "?api_key=" + encodeURIComponent(apiKey) + "&date=" + encodeURIComponent(date);
-    try {
-      const response = await fetch(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(6500) });
-      if (!response.ok) throw new Error("NASA_HTTP_" + response.status);
-      const raw: any = await response.json();
-      const data = Array.isArray(raw) ? raw[0] : raw;
-      if (!data || String(data.date || "") !== date || !(data.hdurl || data.url)) throw new Error("NASA_DATE_OR_MEDIA_MISMATCH");
-
-      const sourceMedia = data.media_type === "video" ? "video" : "image";
-      let image = String(data.hdurl || data.url || "");
-      if (sourceMedia === "video") {
-        const id = youtubeId(String(data.url || ""));
-        if (!id) return apodFallback(date, "non_youtube_video");
-        image = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
-      }
-      const normalized = {
-        title: String(data.title || "Astronomy Picture of the Day"),
-        explanation: String(data.explanation || "Astronomical view synchronized with the selected calendar date."),
-        media_type: "image",
-        source_media_type: sourceMedia,
-        url: image,
-        hdurl: image,
-        date,
-        copyright: String(data.copyright || "Public Domain / NASA"),
-        is_fallback: false
-      };
-      if (env.CACHE) {
-        try { await env.CACHE.put(cacheKey, JSON.stringify(normalized), { expirationTtl: 30 * 86400 }); } catch {}
-      }
-      return normalized;
-    } catch (error) {
-      last = String((error as Error)?.message || error);
-    }
-  }
-  return apodFallback(date, last);
-}
 
 async function nativeSync(request: Request, env: Env) {
   const url = new URL(request.url);
@@ -649,7 +570,7 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   if (path === "/api/v1/nasa/apod" && request.method === "GET") {
     const date = url.searchParams.get("date") || todayNepal();
     if (!validDate(date)) return json({error:"invalid_date",expected:"YYYY-MM-DD"},400);
-    return edgeCached(request,ctx,86400,async() => json(await apod(env,date)));
+    return edgeCached(request,ctx,900,async() => json(await apod(env,date)));
   }
   if (path === "/api/v1/nasa/cosmic" && request.method === "GET") {
     const date = url.searchParams.get("date") || todayNepal();

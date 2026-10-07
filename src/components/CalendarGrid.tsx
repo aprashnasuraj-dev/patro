@@ -237,7 +237,7 @@ export function CalendarGrid({month,selectedDate,today,onMonthChange,onSelectDat
       </div>
       <AnimatePresence mode="wait" initial={false}>
         {view==="month"?(
-          <motion.div key={"grid-"+month.toISOString()} initial={{opacity:0,x:24}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-24}} transition={{duration:.18}}>
+          <motion.div className="calendar-month-scroll" tabIndex={0} role="region" aria-label="Month calendar; scroll horizontally for more days" key={"grid-"+month.toISOString()} initial={{opacity:0,x:24}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-24}} transition={{duration:.18}}>
             <div className="weekday-row sticky-weekdays" aria-label="Weekdays">{WEEKDAYS.map((w)=><span key={w}>{w}</span>)}</div>
             <div className="month-grid" role="grid" aria-label={title(month)}>
               {cells.map((cell)=>{
