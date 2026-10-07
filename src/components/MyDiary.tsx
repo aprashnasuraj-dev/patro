@@ -1,3 +1,4 @@
+import { GoogleAuthButton } from "../auth/GoogleAuthButton";
 import { formatNeDate } from "../nepaliDate";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { ListChecks, Receipt, Cake, FileClock, Sparkles, Trash2, Mic, MicOff, Languages, Save } from "lucide-react";
@@ -92,6 +93,7 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   return <section className="mp-card mp-diary-native mp-note-composer">
     <header><div><p className="eyebrow">निजी · अफलाइनमा पनि उपयोगी</p><h2>आफ्नै नोट लेख्नुहोस्</h2><p>English, नेपाली शब्द सुझाव वा voice typing प्रयोग गरेर सहज रूपमा लेख्नुहोस्।</p></div><a className="community-button secondary" href="/tools/nepali-typing"><Languages size={16}/> पूर्ण नेपाली टाइपिङ / Preeti</a></header>
     <div className="mp-note-modes" role="group" aria-label="नोट लेख्ने तरिका"><button type="button" className={mode==="english"?"active":""} onClick={()=>setMode("english")}>English</button><button type="button" className={mode==="nepali"?"active":""} onClick={()=>setMode("nepali")}>नेपाली</button><button type="button" className={mode==="voice"?"active":""} onClick={startVoice}>{listening?<MicOff size={16}/>:<Mic size={16}/>} बोलेर</button></div>
+    <div className="mp-note-account"><GoogleAuthButton language="ne"/></div>
     <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
     <div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>

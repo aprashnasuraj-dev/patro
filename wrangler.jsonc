@@ -5,6 +5,7 @@
   "compatibility_date": "2026-09-30",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "keep_vars": true,
   "preview_urls": false,
   "routes": [
     {
@@ -30,6 +31,7 @@
     }
   ],
   "vars": {
+    "GOOGLE_CLIENT_ID": "1057768734502-0on6v9gor3in7k09i0b1js1jp2iauk29.apps.googleusercontent.com",
     "PUBLIC_SITE_URL": "https://aafnaipatro.com",
     "SUPABASE_COMPAT_ORIGIN": "https://pxlsmxbpgdfzjzuqtict.supabase.co/functions/v1/router",
     "CALENDAR_COVERAGE_START": "1826-04-11",

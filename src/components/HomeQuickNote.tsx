@@ -1,3 +1,5 @@
+import { useAccount } from "../auth/account-client";
+import { GoogleAuthButton } from "../auth/GoogleAuthButton";
 import { useEffect, useRef, useState } from "react";
 import { readLife, syncLifeTools, updateLife, type StoredNote } from "../patro-tools-integration/storage";
 import { formatDate } from "../nepaliDate";
@@ -6,6 +8,7 @@ type Lang = "ne" | "en";
 
 /** "मेरो टिपोट" — quick text or voice note on the homepage; same store as मेरो ठाउँ → नोट. */
 export function HomeQuickNote({ language }: { language: Lang }) {
+  const account = useAccount();
   const l = (ne: string, en: string) => (language === "en" ? en : ne);
   const [text, setText] = useState("");
   const [voiceLang, setVoiceLang] = useState<"ne-NP" | "en-US">("ne-NP");
@@ -18,6 +21,12 @@ export function HomeQuickNote({ language }: { language: Lang }) {
   const supported = typeof window !== "undefined" && !!((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
 
   useEffect(() => () => { try { recognition.current?.stop(); } catch { /* ignore */ } }, []);
+
+  useEffect(() => {
+    const refresh = () => setNotes(readLife().notes.slice(0,2));
+    window.addEventListener("patro:life-updated",refresh);
+    return () => window.removeEventListener("patro:life-updated",refresh);
+  }, []);
 
   function toggleVoice() {
     if (listening) { recognition.current?.stop(); return; }
@@ -48,7 +57,7 @@ export function HomeQuickNote({ language }: { language: Lang }) {
     setStatus(l("यस उपकरणमा सुरक्षित भयो।", "Saved on this device."));
     try {
       const result = await syncLifeTools();
-      setStatus(result.synced ? l("खातासँग पनि सुरक्षित भयो।", "Saved to your account too.") : l("यस उपकरणमा सुरक्षित छ; साइन इन गरे खातामा पनि रहन्छ।", "Saved here; sign in to keep it in your account."));
+      setStatus(result.synced ? l("खातासँग पनि सुरक्षित भयो।", "Saved to your account too.") : account ? l("यस उपकरणमा सुरक्षित छ; खाता सिङ्क हुन बाँकी छ।", "Saved on this device; account sync is pending.") : l("यस उपकरणमा सुरक्षित छ; साइन इन गरे खातामा पनि रहन्छ।", "Saved here; sign in to keep it in your account."));
     } catch { /* stays local */ }
   }
 
@@ -64,6 +73,7 @@ export function HomeQuickNote({ language }: { language: Lang }) {
         <button type="button" aria-pressed={voiceLang === "ne-NP"} onClick={() => setVoiceLang("ne-NP")}>नेपाली</button>
         <button type="button" aria-pressed={voiceLang === "en-US"} onClick={() => setVoiceLang("en-US")}>English</button>
       </div> : null}
+      <GoogleAuthButton language={language} compact/>
       <button type="button" className="qn-save" onClick={save} disabled={!text.trim()}>{l("सुरक्षित गर्नुहोस्", "Save")}</button>
     </div>
     {status ? <p className="qn-status" role="status">{status}</p> : null}

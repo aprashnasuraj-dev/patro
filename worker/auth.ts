@@ -1,3 +1,5 @@
+import { createRemoteJWKSet, jwtVerify } from "jose";
+
 export type AuthEnv={
   DB?:any;
   GOOGLE_CLIENT_ID?:string;
@@ -9,12 +11,14 @@ type GoogleTokenInfo={
   iss?:string;
   exp?:string;
   email?:string;
-  email_verified?:string;
+  email_verified?:boolean;
   name?:string;
   picture?:string;
 };
 
 const COOKIE="mp_session";
+const NONCE_COOKIE="mp_google_nonce";
+const GOOGLE_KEYS=createRemoteJWKSet(new URL("https://www.googleapis.com/oauth2/v3/certs"),{timeoutDuration:8000,cacheMaxAge:3600000});
 const SESSION_DAYS=30;
 const DAY=86_400_000;
 const MAX_STATE_BYTES=512*1024;
@@ -26,7 +30,7 @@ function cookieValue(request:Request,name:string){
   const raw=request.headers.get("cookie")||"";
   for(const part of raw.split(";")){
     const i=part.indexOf("="); if(i<0)continue;
-    if(part.slice(0,i).trim()===name)return decodeURIComponent(part.slice(i+1).trim());
+    if(part.slice(0,i).trim()===name){try{return decodeURIComponent(part.slice(i+1).trim())}catch{return ""}}
   }
   return "";
 }
@@ -45,18 +49,13 @@ function setSessionCookie(value:string,secure:boolean){
 function clearSessionCookie(secure:boolean){
   return `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure?"; Secure":""}`;
 }
-async function verifyGoogleCredential(credential:string,env:AuthEnv){
+async function verifyGoogleCredential(credential:string,env:AuthEnv,nonce:string){
   if(!env.GOOGLE_CLIENT_ID)throw new Error("google_client_id_not_configured");
   if(!credential||credential.length>8192)throw new Error("invalid_google_credential");
-  const response=await fetch("https://oauth2.googleapis.com/tokeninfo?id_token="+encodeURIComponent(credential),{
-    headers:{accept:"application/json"},signal:AbortSignal.timeout(8000)
-  });
-  if(!response.ok)throw new Error("google_token_invalid");
-  const info=await response.json() as GoogleTokenInfo;
-  if(!info.sub||info.aud!==env.GOOGLE_CLIENT_ID)throw new Error("google_token_audience_mismatch");
-  if(info.iss!=="accounts.google.com"&&info.iss!=="https://accounts.google.com")throw new Error("google_token_issuer_invalid");
-  if(Number(info.exp||"0")*1000<=Date.now())throw new Error("google_token_expired");
-  if(info.email_verified!=="true")throw new Error("google_email_not_verified");
+  const {payload}=await jwtVerify(credential,GOOGLE_KEYS,{audience:env.GOOGLE_CLIENT_ID,issuer:["accounts.google.com","https://accounts.google.com"],algorithms:["RS256"],requiredClaims:["sub","exp","iat","nonce"]});
+  if(!nonce||payload.nonce!==nonce)throw new Error("google_nonce_mismatch");
+  if(payload.email_verified!==true)throw new Error("google_email_not_verified");
+  const info=payload as unknown as GoogleTokenInfo;
   return info;
 }
 export async function currentSession(request:Request,env:AuthEnv){
@@ -67,7 +66,7 @@ export async function currentSession(request:Request,env:AuthEnv){
     "select s.id as session_id,s.user_id,s.expires_at,u.email,u.display_name,u.picture_url,u.provider_subject from auth_sessions s join app_users u on u.id=s.user_id where s.token_hash=?1 limit 1"
   ).bind(hash).first();
   if(!row)return null;
-  if(Date.parse(String(row.expires_at))<=Date.now()){
+  if(!Number.isFinite(Date.parse(String(row.expires_at)))||Date.parse(String(row.expires_at))<=Date.now()){
     await env.DB.prepare("delete from auth_sessions where id=?1").bind(row.session_id).run();
     return null;
   }
@@ -97,11 +96,19 @@ export function safeJson(value:any,fallback:any){
 async function stateResponse(request:Request,env:AuthEnv,session:any){
   if(request.method==="GET"){
     await ensureDefaultState(env,session.user_id);
-    const row=await env.DB.prepare("select notes,events,calendars,preferences,feedback,updated_at from user_calendar_state where user_id=?1").bind(session.user_id).first();
+    const row=await env.DB.prepare("select notes,events,calendars,preferences,feedback,updated_at,revision from user_calendar_state where user_id=?1").bind(session.user_id).first();
     return json({ok:true,user:publicUser(session),state:{
       notes:safeJson(row?.notes,{}),events:safeJson(row?.events,[]),calendars:safeJson(row?.calendars,[]),
       preferences:safeJson(row?.preferences,{}),feedback:safeJson(row?.feedback,[])
-    },updated_at:row?.updated_at||null});
+    },updated_at:row?.updated_at||null,revision:Number(row?.revision||0)});
+  }
+  if(request.method==="PATCH"){
+    let body:any;try{body=await parseBody(request)}catch{return json({ok:false,error:"invalid_or_oversized_state"},400)}
+    if(body?.account_id!==String(session.user_id))return json({ok:false,error:"account_mismatch"},409);
+    if(!Number.isSafeInteger(body?.revision)||body.revision<0||!body.life||typeof body.life!=="object"||Array.isArray(body.life))return json({ok:false,error:"invalid_state"},400);
+    await ensureDefaultState(env,session.user_id);
+    const result=await env.DB.prepare("update user_calendar_state set preferences=json_set(preferences,'$.life_tools',json(?1)),revision=revision+1,updated_at=datetime('now') where user_id=?2 and revision=?3").bind(JSON.stringify(body.life),session.user_id,body.revision).run();
+    return Number(result.meta?.changes)===1?json({ok:true,saved:true,revision:body.revision+1}):json({ok:false,error:"state_conflict"},409);
   }
   if(request.method==="PUT"){
     let body:any;try{body=await parseBody(request)}catch(e){return json({ok:false,error:String((e as Error).message||e)},400)}
@@ -114,7 +121,7 @@ async function stateResponse(request:Request,env:AuthEnv,session:any){
       feedback:Array.isArray(state.feedback)?state.feedback:[]
     };
     await env.DB.prepare(
-      "insert into user_calendar_state(user_id,notes,events,calendars,preferences,feedback,updated_at) values(?1,?2,?3,?4,?5,?6,datetime('now')) on conflict(user_id) do update set notes=excluded.notes,events=excluded.events,calendars=excluded.calendars,preferences=excluded.preferences,feedback=excluded.feedback,updated_at=datetime('now')"
+      "insert into user_calendar_state(user_id,notes,events,calendars,preferences,feedback,updated_at) values(?1,?2,?3,?4,?5,?6,datetime('now')) on conflict(user_id) do update set notes=excluded.notes,events=excluded.events,calendars=excluded.calendars,preferences=excluded.preferences,feedback=excluded.feedback,revision=user_calendar_state.revision+1,updated_at=datetime('now')"
     ).bind(session.user_id,JSON.stringify(normalized.notes),JSON.stringify(normalized.events),JSON.stringify(normalized.calendars),JSON.stringify(normalized.preferences),JSON.stringify(normalized.feedback)).run();
     return json({ok:true,saved:true,updated_at:new Date().toISOString()});
   }
@@ -170,14 +177,21 @@ async function myData(request:Request,env:AuthEnv,session:any){
 
 export async function authResponse(request:Request,env:AuthEnv):Promise<Response|null>{
   const url=new URL(request.url),path=url.pathname;
+  const accountRoute=path.startsWith("/api/v1/auth/")||["/api/v1/me/state","/api/v1/community-preferences","/api/v1/my-data","/api/my-data"].includes(path);
+  if(accountRoute&&!["GET","HEAD"].includes(request.method)&&request.headers.get("origin")!==url.origin)return json({ok:false,error:"same_origin_required"},403);
+  if(path==="/api/v1/auth/challenge"&&request.method==="POST"){
+    if(!env.DB||!env.GOOGLE_CLIENT_ID)return json({ok:false,error:"google_sign_in_unavailable"},503);
+    const nonce=token();
+    return json({ok:true,nonce},200,{"set-cookie":`${NONCE_COOKIE}=${nonce}; Path=/api/v1/auth; HttpOnly; SameSite=Strict; Max-Age=900${url.protocol==="https:"?"; Secure":""}`});
+  }
   if(path==="/api/v1/auth/config"&&request.method==="GET"){
-    return json({ok:true,google:{enabled:!!env.GOOGLE_CLIENT_ID,client_id:env.GOOGLE_CLIENT_ID||null}});
+    return json({ok:true,google:{enabled:!!env.GOOGLE_CLIENT_ID&&!!env.DB,client_id:env.GOOGLE_CLIENT_ID||null}});
   }
   if(path==="/api/v1/auth/google"&&request.method==="POST"){
     if(!env.DB)return json({ok:false,error:"d1_unavailable"},503);
     let body:any;try{body=await parseBody(request,16*1024)}catch{return json({ok:false,error:"invalid_json"},400)}
     try{
-      const info=await verifyGoogleCredential(String(body?.credential||""),env);
+      const info=await verifyGoogleCredential(String(body?.credential||""),env,cookieValue(request,NONCE_COOKIE));
       let user=await env.DB.prepare("select id from app_users where provider='google' and provider_subject=?1 limit 1").bind(info.sub).first();
       const userId=String(user?.id||crypto.randomUUID());
       await env.DB.prepare(
@@ -188,9 +202,11 @@ export async function authResponse(request:Request,env:AuthEnv):Promise<Response
       const raw=token(),hash=await sha256(raw),sessionId=crypto.randomUUID();
       const expires=new Date(Date.now()+SESSION_DAYS*DAY).toISOString();
       await env.DB.prepare("insert into auth_sessions(id,user_id,token_hash,expires_at) values(?1,?2,?3,?4)").bind(sessionId,user.user_id,hash,expires).run();
-      return json({ok:true,user:publicUser(user),expires_at:expires},200,{"set-cookie":setSessionCookie(raw,url.protocol==="https:")});
+      const response=json({ok:true,user:publicUser(user),expires_at:expires},200,{"set-cookie":setSessionCookie(raw,url.protocol==="https:")});
+      response.headers.append("set-cookie",`${NONCE_COOKIE}=; Path=/api/v1/auth; HttpOnly; SameSite=Strict; Max-Age=0${url.protocol==="https:"?"; Secure":""}`);
+      return response;
     }catch(error){
-      return json({ok:false,error:String((error as Error)?.message||error)},401);
+      return json({ok:false,error:"google_sign_in_failed"},401);
     }
   }
   if(path==="/api/v1/auth/me"&&request.method==="GET"){
