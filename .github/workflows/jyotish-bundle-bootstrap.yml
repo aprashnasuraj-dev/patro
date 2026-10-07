@@ -73,6 +73,7 @@ jobs:
               print("candidate failed",type(e).__name__)
           raise SystemExit(2)
           PY
+          true
           fi
 
           if ! unzip -t "$target" >/dev/null 2>&1; then
