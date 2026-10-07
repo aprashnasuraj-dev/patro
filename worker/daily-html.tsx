@@ -6,6 +6,7 @@ import { formatDate, neDigits } from "../src/nepaliDate";
 import { BS_MONTHS } from "../src/title";
 import { type CalendarArchiveEnv } from "./calendar-archive";
 import { nativeRashifalResponse } from "./rashifal-native";
+import { htmlAssetResponse } from "./connected-entry";
 import { rewriteConnectedSeo } from "./connected-seo";
 import { withAdminConsole } from "./admin-console";
 
@@ -23,7 +24,7 @@ async function rawDailyHtml(request:Request,env:Env,ctx:Ctx){
  if(typeof caches!=="undefined"&&(caches as any).default){const hit=await(caches as any).default.match(new Request(key));if(hit){const h=new Headers(hit.headers);h.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);return new Response(hit.body,{status:hit.status,headers:h});}}
  const assetUrl=new URL(u);assetUrl.pathname=path==="/"?"/index.html":"/rashifal/index.html";assetUrl.search="";
  const headers=new Headers(request.headers);headers.delete("if-none-match");headers.delete("if-modified-since");
- let response=await env.ASSETS.fetch(new Request(assetUrl,{headers,method:"GET"}));if(!response.ok)return response;
+ let response=await htmlAssetResponse(new Request(request,{headers}),env as any,path==="/"?"/index.html":"/rashifal/index.html",true);if(!response)return new Response("Static page unavailable",{status:503});
  let body="",data:any=null,schema:any;
  if(path==="/"){
   data=await serverToday(request,env,boundary.date);if(!data)return new Response(response.body,{status:response.status,headers:{...Object.fromEntries(response.headers),"cache-control":"no-store"}});
