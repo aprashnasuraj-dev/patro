@@ -1,4 +1,6 @@
-import Hls from "hls.js";
+import type Hls from "hls.js";
+let hlsModule: Promise<typeof import("hls.js")["default"]> | null = null;
+function loadHls() { return hlsModule ||= import("hls.js").then(module => module.default).catch(error => { hlsModule = null; throw error; }); }
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { MediaItem } from "./catalog";
 
@@ -38,6 +40,7 @@ function emit(state: Pick<PlayerState,"item"|"playing"|"muted"|"health">) {
 }
 
 export function MediaProvider({children}:{children:ReactNode}) {
+  const playEpoch=useRef(0);
   const audioRef=useRef<HTMLAudioElement|null>(null);
   const hlsRef=useRef<Hls|null>(null);
   const contextRef=useRef<AudioContext|null>(null);
@@ -79,6 +82,7 @@ export function MediaProvider({children}:{children:ReactNode}) {
     return ()=>{
       if(retryTimer.current) window.clearTimeout(retryTimer.current);
       if(stallTimer) window.clearTimeout(stallTimer);
+      playEpoch.current++;
       retryAction.current=null;
       hlsRef.current?.destroy(); audio.pause(); audio.src="";
       audio.removeEventListener("playing",onPlaying); audio.removeEventListener("pause",onPause); audio.removeEventListener("waiting",onWaiting); audio.removeEventListener("stalled",onWaiting); audio.removeEventListener("error",onError);
@@ -112,18 +116,24 @@ export function MediaProvider({children}:{children:ReactNode}) {
 
   const play=useCallback(async(item:MediaItem)=>{
     const audio=audioRef.current; if(!audio) return;
+    const epoch=++playEpoch.current;
     if(retryTimer.current) window.clearTimeout(retryTimer.current);
     hlsRef.current?.destroy(); hlsRef.current=null;
     setState((s)=>({...s,item,health:"loading",retryCount:0}));
     await ensureAudioGraph();
+    if (epoch !== playEpoch.current) return;
     const url=proxied(item.streamUrl);
     const start=async()=>{
+      if (epoch !== playEpoch.current) return;
       retryAction.current=()=>void start();
       try{
         hlsRef.current?.destroy();
         hlsRef.current=null;
         const hlsMedia=item.codec.toLowerCase().includes("hls") || item.mediaType==="hls" || isHls(url);
-        if(hlsMedia && Hls.isSupported()){
+        const nativeHls = Boolean(audio.canPlayType("application/vnd.apple.mpegurl"));
+        const Hls = hlsMedia && !nativeHls ? await loadHls() : null;
+        if (epoch !== playEpoch.current) return;
+        if(Hls && Hls.isSupported()){
           const hls=new Hls({enableWorker:true,lowLatencyMode:true,maxBufferLength:20});
           hlsRef.current=hls; hls.loadSource(url); hls.attachMedia(audio);
           hls.on(Hls.Events.ERROR,(_event,data)=>{
@@ -140,10 +150,12 @@ export function MediaProvider({children}:{children:ReactNode}) {
         }else{
           audio.src=url; audio.load();
         }
+        if (epoch !== playEpoch.current) return;
         audio.muted=state.muted; audio.volume=1;
         if(gainRef.current) gainRef.current.gain.setTargetAtTime(state.volume,contextRef.current?.currentTime || 0,.08);
         await audio.play();
       }catch{
+        if (epoch !== playEpoch.current) return;
         scheduleRetry(()=>void start());
       }
     };
@@ -151,11 +163,13 @@ export function MediaProvider({children}:{children:ReactNode}) {
   },[ensureAudioGraph,scheduleRetry,state.muted,state.volume]);
 
   const pause=useCallback(()=>{
+    playEpoch.current++;
     if(retryTimer.current)window.clearTimeout(retryTimer.current);
     retryAction.current=null;
     audioRef.current?.pause();
   },[]);
   const stop=useCallback(()=>{
+    playEpoch.current++;
     if(retryTimer.current){window.clearTimeout(retryTimer.current);retryTimer.current=null;}
     retryAction.current=null;
     hlsRef.current?.destroy();
