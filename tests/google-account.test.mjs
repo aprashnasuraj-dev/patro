@@ -68,3 +68,24 @@ test('guest adoption is one-time, local accounts stay separate, and deleted note
  storage.switchLifeAccount('a');assert.equal(storage.readLife().notes.length,0);
  globalThis.fetch=savedFetch;
 });
+
+test('an edit made while a cloud save is in flight stays pending and is saved on the next pass',async()=>{
+ const values=new Map(),savedFetch=globalThis.fetch;
+ globalThis.localStorage={getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
+ globalThis.window={dispatchEvent(){}};
+ storage.switchLifeAccount('a');
+ const note=id=>({id,text:id,inputMode:'english',createdAt:new Date().toISOString(),updatedAt:Date.now()});
+ storage.updateLife(s=>({...s,notes:[note('first')]}));
+ let remote={},patches=0;
+ globalThis.fetch=async(_url,options)=>{
+  if(options?.method==='PATCH'){
+   remote=JSON.parse(options.body).life;
+   if(++patches===1)storage.updateLife(s=>({...s,notes:[note('during-save'),...s.notes]}));
+   return Response.json({ok:true});
+  }
+  return Response.json({user:{id:'a'},revision:patches,state:{preferences:{life_tools:remote}}});
+ };
+ const first=await storage.syncLifeTools();assert.equal(first.synced,false);assert.equal(first.life.notes.length,2);assert.equal(remote.notes.length,1);
+ const second=await storage.syncLifeTools();assert.equal(second.synced,true);assert.equal(remote.notes.length,2);
+ globalThis.fetch=savedFetch;
+});

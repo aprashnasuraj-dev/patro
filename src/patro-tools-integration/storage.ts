@@ -174,14 +174,16 @@ async function syncAccount(owner: string): Promise<{life:LifeState;synced:boolea
       if (!response.ok || lifeAccount() !== owner) break;
       const body=await response.json();
       if (body.user?.id !== owner) break;
-      const life=mergeLife(readLife(),body.state?.preferences?.life_tools);
+      const before=readLife(),beforeSnapshot=JSON.stringify(before);
+      const life=mergeLife(before,body.state?.preferences?.life_tools);
       const saved=await fetch("/api/v1/me/state",{method:"PATCH",headers:{"content-type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify({account_id:owner,revision:body.revision,life})});
       if (lifeAccount() !== owner) break;
       if (saved.status===409) continue;
       if (!saved.ok) break;
       // Keep edits made during the request. The coordinator schedules another save.
       const current=readLife();
-      return {life:writeLife(mergeLife(current,life),true),synced:true};
+      const pending=JSON.stringify(current)!==beforeSnapshot;
+      return {life:writeLife(mergeLife(current,life),!pending),synced:!pending};
     }
   } catch { /* Keep the local copy on network or server failure. */ }
   return {life:readLife(),synced:false};
