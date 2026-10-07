@@ -416,7 +416,7 @@ export function withAdminConsole<W extends WorkerLike>(worker: W): W {
       // Public site — never let the admin layer take the site down.
       if (!env.DB) return worker.fetch(request, env, ctx);
       const page = isPageRequest(path);
-      const jyotish = path === "/api/jyotish-chat";
+      const jyotish = path === "/api/jyotish-chat" || path === "/api/v1/jyotish-chat";
       if (!page && !jyotish) return worker.fetch(request, env, ctx);
 
       let config: SiteConfig | null = null, version = 0, preview = false, isAdmin = false;

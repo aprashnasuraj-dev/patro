@@ -230,18 +230,20 @@ export function useNepaliDictation({
       recognition.interimResults = true;
       recognition.maxAlternatives = 1;
       recognition.onstart = () => mountedRef.current && setListening(true);
+      const finalized=new Set<number>();
       recognition.onresult = (event: any) => {
         let live = '';
         for (let i = event.resultIndex; i < event.results.length; i += 1) {
           const result = event.results[i];
           const transcript = String(result?.[0]?.transcript ?? '');
-          if (result.isFinal) {
+          if (result.isFinal && !finalized.has(i)) {
+            finalized.add(i);
             const processed = postProcessDictation(transcript, {
               language,
               nepaliDigits: language === 'ne-NP',
             });
             if (processed) onFinal?.(`${processed} `);
-          } else {
+          } else if (!result.isFinal) {
             live += `${transcript} `;
           }
         }

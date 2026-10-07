@@ -407,6 +407,8 @@ export async function aiEnvOverlay(env: AdminEnv): Promise<Record<string, string
   const vars: Record<string, string> = {};
   try {
     const s = await getAiSettings(env);
+    if(s.models.groq)vars.GROQ_MODEL=s.models.groq;
+    if(s.models.nvidia)vars.NVIDIA_MODEL=s.models.nvidia;
     const hasGroq = !!(env.Groq_API || env.GROQ_API_KEY || env.GROQ_KEY);
     const hasNvidia = !!(env.nvidia_api || env.NVIDIA_NIM_API_KEY || env.NVIDIA_API_KEY || env.NGC_API_KEY);
     if (s.jyotishBridge.groq && !hasGroq) {

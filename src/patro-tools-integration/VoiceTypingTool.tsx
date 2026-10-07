@@ -205,7 +205,7 @@ export function VoiceTypingTool() {
           <button type="button" className="tool-link-button" onClick={clearTranscript} disabled={dictation.processing || (!text && !dictation.listening)}>
             खाली गर्नुहोस् · Clear
           </button>
-          {language === "ne-NP" ? <a className="tool-link-button" href="/tools/spell-check">नेपाली हिज्जे जाँच →</a> : null}
+          {language === "ne-NP" ? <a className="tool-link-button" href="/tools/spell-check" onClick={()=>{try{sessionStorage.setItem("patro.language.handoff",text)}catch{}}}>नेपाली हिज्जे जाँच →</a> : null}
         </div>
       </section>
 

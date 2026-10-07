@@ -44,6 +44,7 @@ export type StoredNameCheck = {
 };
 
 export type StoredNote = {
+  date?: string;
   id: string;
   text: string;
   inputMode: "english" | "nepali" | "voice";

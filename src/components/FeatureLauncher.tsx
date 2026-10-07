@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 
 type LaunchItem={href:string;ne:string;en:string;group:string;keywords:string;mark:string};
 
-const ITEMS:LaunchItem[]=[
+export const ITEMS:LaunchItem[]=[
  {href:"/",ne:"आजको पात्रो",en:"Today · Calendar",group:"पात्रो · Calendar",keywords:"today calendar nepali date bs ad आज पात्रो मिति",mark:"आज"},
  {href:"/#home-weather",ne:"मौसम पूर्वानुमान",en:"Weather forecast",group:"दैनिक · Daily",keywords:"weather forecast rain temperature city मौसम वर्षा तापक्रम शहर",mark:"☀"},
  {href:"/convert",ne:"मिति रूपान्तरण",en:"BS ↔ AD Date converter",group:"पात्रो · Calendar",keywords:"convert conversion ad bs date bs to ad ad to bs nepali date converter bikram sambat gregorian वि सं ई सं विक्रम संवत् मिति रूपान्तरण",mark:"↔"},

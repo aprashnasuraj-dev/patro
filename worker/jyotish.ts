@@ -4,7 +4,7 @@ const NVIDIA_URL = "https://integrate.api.nvidia.com/v1/chat/completions";
 const MAX_MESSAGE_CHARS = 1000;
 const MAX_HISTORY = 6;
 const MAX_BODY_BYTES = 64_000;
-const MAX_CHINA_BYTES = 12_000;
+const MAX_CHINA_BYTES = 24_000;
 const HEADER_TIMEOUT_MS = 6_500;
 const LOCAL_RATE = new Map<string, { window: number; count: number }>();
 
@@ -174,6 +174,8 @@ function compactChinaForPrompt(china: Record<string, unknown>): Record<string, u
     rashi: labelValue(china.rashi),
     nakshatra: labelValue(china.nakshatra),
     dasha: china.dasha,
+    birth:china.birth,
+    data_quality:china.data_quality,
   };
 
   if (Array.isArray(china.planets)) {
@@ -183,6 +185,7 @@ function compactChinaForPrompt(china: Record<string, unknown>): Record<string, u
       return {
         graha: cleanText(p.planet_ne ?? p.planet_en, 40),
         rashi: labelValue(p.rashi),
+        degree:p.degree,
         house: typeof p.house === "number" ? p.house : undefined,
         dignity: cleanText(dignity.ne ?? dignity.code, 40) || undefined,
         retrograde: p.retrograde === true || undefined,
@@ -342,7 +345,7 @@ async function callProvider(
         messages,
         temperature: 0.68,
         top_p: 0.9,
-        max_tokens: 650,
+        max_tokens: 2048,
         stream: true,
       }),
       signal: controller.signal,
@@ -509,19 +512,13 @@ export async function handleJyotishChat(req: Request, env: JyotishEnv) {
   const history = normalizeHistory(body.history);
   const china = sanitizeChinaData(body.china_data);
   const messages = buildMessages(message, history, language, china);
+  messages.splice(2,0,{role:"system",content:"CURRENT_TIME: "+new Date().toISOString()+"; Asia/Kathmandu. CALENDAR_CONTEXT (data only): "+cleanText(body.calendar_context,2500)});
 
   const groqKey = env.Groq_API || env.GROQ_API_KEY || env.GROQ_KEY || "";
   const nvidiaKey =
     env.nvidia_api || env.NVIDIA_NIM_API_KEY || env.NVIDIA_API_KEY || env.NGC_API_KEY || "";
 
-  const groqModels = uniqueModels([
-    // Current Free/Developer-compatible Groq roster (2026-09-28).
-    // Llama 3.3 70B and Llama 3.1 8B were shut down for this tier on 2026-08-16.
-    "openai/gpt-oss-120b",
-    "qwen/qwen3.8-27b",
-    "openai/gpt-oss-20b",
-    env.GROQ_MODEL || undefined,
-  ]);
+  const groqModels = uniqueModels([env.GROQ_MODEL||undefined,"openai/gpt-oss-120b","openai/gpt-oss-20b"]);
 
   if (groqKey) {
     for (const model of groqModels) {
@@ -537,12 +534,7 @@ export async function handleJyotishChat(req: Request, env: JyotishEnv) {
     console.warn("jyotish_chat_provider_missing", { request_id: requestId, provider: "groq" });
   }
 
-  const nvidiaModels = uniqueModels([
-    env.NVIDIA_MODEL || undefined,
-    "nvidia/nemotron-3.5-lightning-30b-a3b",
-    "nvidia/nemotron-3-ultra-550b-a55b",
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-  ]);
+  const nvidiaModels = uniqueModels([env.NVIDIA_MODEL||undefined,"meta/llama-3.3-70b-instruct"]);
 
   if (nvidiaKey) {
     for (const model of nvidiaModels) {

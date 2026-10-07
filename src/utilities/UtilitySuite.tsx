@@ -1,3 +1,4 @@
+import { PaymentQrInput } from "./PaymentQrInput";
 import { useEffect, useRef, useState } from "react";
 import { ReferenceUtilityTools, isReferenceUtilityId } from "./ReferenceUtilities";
 
@@ -125,7 +126,7 @@ const TOOL_DIRECTORY: ToolDirectoryItem[] = [
   { id: "adtobs", icon: "AD", title: "AD → BS Date Converter", subtitle: "Gregorian/AD मितिलाई Bikram Sambat मितिमा रूपान्तरण गर्नुहोस्।", badge: "Calendar", group: "utility" },
   { id: "landconverter", icon: "▦", title: "Nepali Land Converter", subtitle: "रोपनी–आना–पैसा–दाम, बिघा–कट्ठा–धुर र square feet रूपान्तरण गर्नुहोस्।", badge: "Land", group: "utility" },
   { id: "incometax", icon: "रु", title: "Income Tax Calculator", subtitle: "आ.व. २०८३/८४ को तलब आयकर र लागू कटौती अनुमान गर्नुहोस्।", badge: "Finance", group: "utility" },
-  { id: "nepaliqr", icon: "QR", title: "Devanagari QR Generator", subtitle: "नेपाली वा अङ्ग्रेजी पाठबाट आफ्नो उपकरणमै QR कोड बनाउनुहोस्।", badge: "QR", group: "utility" },
+  { id: "nepaliqr", icon: "QR", title: "नेपाली / बैंक / eSewa / Khalti QR", subtitle: "नेपाली वा अङ्ग्रेजी पाठबाट आफ्नो उपकरणमै QR कोड बनाउनुहोस्।", badge: "QR", group: "utility" },
   SAMUDAYA_TOOL,
   { id: "fuelprice", icon: "NOC", title: "NOC Fuel Price Tracker", subtitle: "नेपाल आयल निगमका पेट्रोलियम मूल्य क्षेत्रअनुसार हेर्नुहोस्।", badge: "Fuel", group: "utility" },
   { id: "tithi-reminder", icon: "त", title: "तिथि रिमाइन्डर", subtitle: "श्राद्ध, तिथि जन्मदिन, रिमाइन्डर र Google Calendar feed व्यवस्थापन गर्नुहोस्।", badge: "नयाँ", group: "tools" },
@@ -707,13 +708,13 @@ export function UtilitySuite() {
         <header className="utility-card-head">
           <div>
             <p className="eyebrow">गोपनीय · तपाईंको उपकरणमै</p>
-            <h2 id="qr-title">Devanagari QR Generator</h2>
+            <h2 id="qr-title">नेपाली / बैंक / eSewa / Khalti QR</h2>
           </div>
           <span className="utility-badge">UTF-8 · offline</span>
         </header>
 
         <div className="qr-grid">
-          <div className="qr-input-panel">
+          <div className="qr-input-panel"><PaymentQrInput onPayload={setQrText}/>
             <label className="utility-field">
               <span>Text / नेपाली सामग्री</span>
               <textarea rows={8} value={qrText} onChange={(event) => setQrText(event.target.value)} placeholder="नमस्ते नेपाल" />

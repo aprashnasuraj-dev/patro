@@ -1,3 +1,4 @@
+import { tithiAlarmUtc } from "../src/tithiAlarm";
 import { currentSession, parseBody, safeJson, sha256, type AuthEnv } from "./auth";
 import { nextOccurrences, type TithiRule } from "../src/patro-tools/tithi-events/engine";
 import { KATHMANDU } from "../src/patro-tools/core/types";
@@ -111,9 +112,9 @@ async function personalTithiFeed(request:Request,env:Env){
     const rule=event?.rule as TithiRule|undefined;if(!rule||!event?.id||!event?.title)continue;
     let occurrences;try{occurrences=nextOccurrences(rule,today,4,KATHMANDU)}catch{continue}
     for(const occurrence of occurrences){
-      lines.push("BEGIN:VEVENT","UID:"+icsEsc(event.id+"-"+occurrence.date+"@meropatro"),"DTSTART;VALUE=DATE:"+occurrence.date.replace(/-/g,""),"DTEND;VALUE=DATE:"+nextDate(occurrence.date).replace(/-/g,""),"SUMMARY:"+icsEsc(event.title),"DESCRIPTION:"+icsEsc("तिथि रिमाइन्डर · MeroPatro"));
+      lines.push("BEGIN:VEVENT","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}Z$/,"Z"),"UID:"+icsEsc(event.id+"-"+occurrence.date+"@meropatro"),"DTSTART;VALUE=DATE:"+occurrence.date.replace(/-/g,""),"DTEND;VALUE=DATE:"+nextDate(occurrence.date).replace(/-/g,""),"SUMMARY:"+icsEsc(event.title),"DESCRIPTION:"+icsEsc("तिथि रिमाइन्डर · MeroPatro"));
       const reminders=Array.isArray(event.remindDaysBefore)?event.remindDaysBefore:[];
-      for(const day of reminders.filter((x:any)=>Number.isInteger(x)&&x>0&&x<=365).slice(0,12))lines.push("BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:"+icsEsc(event.title),"TRIGGER:-P"+day+"D","END:VALARM");
+      for(const day of reminders.filter((x:any)=>Number.isInteger(x)&&x>=0&&x<=365).slice(0,12))lines.push("BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:"+icsEsc(event.title),"TRIGGER;VALUE=DATE-TIME:"+tithiAlarmUtc(occurrence.date,String(event.remindAt||"07:00"),day),"END:VALARM");
       lines.push("END:VEVENT");
     }
   }

@@ -93,7 +93,8 @@ test("Notes expose English Nepali suggestion and voice input using the same loca
   assert.ok(storage.includes('inputMode: "english" | "nepali" | "voice"'));
   assert.ok(diary.includes('new Worker("/nepali-tools/worker.mjs"'));
   assert.ok(diary.includes('type:"suggest"')||diary.includes('type: "suggest"'));
-  assert.ok(diary.includes("SpeechRecognition")&&diary.includes("webkitSpeechRecognition"));
+  const dictation=read("src/patro-tools/language/react/useNepaliDictation.ts");
+  assert.ok(diary.includes("useNepaliDictation")&&dictation.includes("SpeechRecognition")&&dictation.includes("webkitSpeechRecognition"));
   for(const mode of ['mode==="english"','mode==="nepali"','mode==="voice"'])assert.ok(diary.includes(mode),`Notes input mode missing ${mode}`);
   assert.ok(diary.includes("life.notes"));
   assert.ok(enhancer.includes('event.key === "Tab"')&&enhancer.includes("ArrowDown")&&enhancer.includes("ArrowUp"),"Notes must support one-key suggestion completion and navigation");

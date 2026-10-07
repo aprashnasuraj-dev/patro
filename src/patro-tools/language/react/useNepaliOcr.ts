@@ -12,14 +12,15 @@
 import { useCallback, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 
-async function preprocess(file: Blob): Promise<HTMLCanvasElement> {
+async function preprocess(file: Blob, threshold: boolean): Promise<HTMLCanvasElement> {
   const img = await createImageBitmap(file);
-  const scale = img.width < 1500 ? 1500 / img.width : 1;
+  const scale=Math.min(Math.max(1,1500/img.width),3000/Math.max(img.width,img.height),Math.sqrt(8_000_000/(img.width*img.height)));
   const c = document.createElement('canvas');
   c.width = Math.round(img.width * scale);
   c.height = Math.round(img.height * scale);
   const ctx = c.getContext('2d', { willReadFrequently: true })!;
   ctx.drawImage(img, 0, 0, c.width, c.height);
+  img.close();
   const data = ctx.getImageData(0, 0, c.width, c.height);
   const px = data.data;
   const hist = new Array(256).fill(0);
@@ -41,7 +42,7 @@ async function preprocess(file: Blob): Promise<HTMLCanvasElement> {
     const between = wB * wF * (mB - mF) ** 2;
     if (between > best) { best = between; thr = t; }
   }
-  for (let i = 0; i < px.length; i += 4) { const v = px[i] > thr ? 255 : 0; px[i] = px[i + 1] = px[i + 2] = v; }
+  if(threshold) for (let i = 0; i < px.length; i += 4) { const v = px[i] > thr ? 255 : 0; px[i] = px[i + 1] = px[i + 2] = v; }
   ctx.putImageData(data, 0, 0);
   return c;
 }
@@ -51,8 +52,8 @@ export function useNepaliOcr() {
   const [busy, setBusy] = useState(false);
   const workerRef = useRef<any>(null);
 
-  const recognize = useCallback(async (file: Blob, opts: { langs?: string } = {}) => {
-    setBusy(true);
+  const recognize = useCallback(async (file: Blob, opts: { langs?: string; threshold?: boolean } = {}) => {
+    setBusy(true);setProgress(0);
     try {
       const { createWorker } = await import('tesseract.js');
       if (!workerRef.current) {
@@ -60,7 +61,7 @@ export function useNepaliOcr() {
           logger: (m: any) => m.status === 'recognizing text' && setProgress(m.progress),
         });
       }
-      const canvas = await preprocess(file);
+      const canvas = await preprocess(file,opts.threshold===true);
       const { data } = await workerRef.current.recognize(canvas);
       return { text: normalize(data.text).text, confidence: data.confidence as number };
     } finally {
