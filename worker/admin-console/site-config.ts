@@ -6,7 +6,8 @@
 // Publishing snapshots the document into aap_config_versions so any earlier
 // state can be restored. The Worker applies the published document to every
 // HTML response at the edge, so no rebuild or git push is needed.
-import { all, audit, first, run, type AdminEnv } from "./db";
+import { SETTINGS_SOURCE } from "./settings-source";
+import { all, audit, ensureSchema, first, run, type AdminEnv } from "./db";
 
 export type LabelRule = { from: string; to: string; match: "exact" | "contains" };
 export type FeatureRule = { path: string; enabled: boolean; hideInNav: boolean; redirectTo: string };
@@ -188,6 +189,54 @@ type Slot = "draft" | "published";
 const memo: Record<Slot, { at: number; version: number; config: SiteConfig } | undefined> = { draft: undefined, published: undefined };
 const CACHE_MS = 20_000;
 
+// Published settings are served from the last known snapshot. D1 refreshes
+// happen only in waitUntil; a cold isolate returns an empty config immediately.
+const PUBLISHED_FRESH_MS = 240_000;
+const PUBLISHED_KEY = "aap:published-config:v1";
+const PUBLISHED_URL = "https://aafnaipatro.com/__aap/published-config-v1";
+let publishedRefresh: Promise<void> | null = null;
+function snapshot(value: any): { at: number; version: number; config: SiteConfig } | null {
+  if (!value || !Number.isFinite(value.at) || !Number.isFinite(value.version) || !value.config) return null;
+  return { at: value.at, version: value.version, config: normalizeConfig(value.config) };
+}
+async function persistPublished(env: AdminEnv, entry: { at: number; version: number; config: SiteConfig }) {
+  const body = JSON.stringify(entry);
+  const kv = env.CACHE as { put?: (key: string, value: string, options: any) => Promise<void> } | undefined;
+  await Promise.allSettled([
+    typeof caches !== "undefined" && (caches as any).default ? (caches as any).default.put(PUBLISHED_URL, new Response(body, { headers: { "content-type": "application/json", "cache-control": "public, max-age=604800" } })) : Promise.resolve(),
+    kv?.put ? kv.put(PUBLISHED_KEY, body, { expirationTtl: 604800 }) : Promise.resolve(),
+  ]);
+}
+function refreshPublished(env: AdminEnv) {
+  if (publishedRefresh) return publishedRefresh;
+  publishedRefresh = (async () => {
+    const kv = env.CACHE as { get?: (key: string, type: string) => Promise<unknown> } | undefined;
+    let entry = kv?.get ? snapshot(await kv.get(PUBLISHED_KEY, "json").catch(() => null)) : null;
+    if (!entry || Date.now() - entry.at >= PUBLISHED_FRESH_MS) {
+      await ensureSchema(env);
+      entry = await loadConfig(env, "published", true);
+    }
+    // An admin publish racing this refresh must never be overwritten by an older version.
+    if (!memo.published || entry.version >= memo.published.version) {
+      memo.published = entry;
+      await persistPublished(env, entry);
+    }
+  })().catch(error => console.warn("aap_config_refresh_failed", String(error))).finally(() => { publishedRefresh = null; });
+  return publishedRefresh;
+}
+export async function loadPublishedConfig(env: AdminEnv, ctx: { waitUntil(promise: Promise<unknown>): void }) {
+  let entry = memo.published;
+  if (!entry && typeof caches !== "undefined" && (caches as any).default) {
+    try {
+      const cached = await (caches as any).default.match(PUBLISHED_URL);
+      entry = cached ? snapshot(await cached.json()) || undefined : undefined;
+      if (entry) memo.published = entry;
+    } catch { /* cache outages must not take down HTML */ }
+  }
+  if (!entry || Date.now() - entry.at >= PUBLISHED_FRESH_MS) ctx.waitUntil(refreshPublished(env));
+  return entry || { at: 0, version: 0, config: DEFAULT_CONFIG };
+}
+
 export async function loadConfig(env: AdminEnv, slot: Slot, fresh = false) {
   const cached = memo[slot];
   if (!fresh && cached && Date.now() - cached.at < CACHE_MS) return cached;
@@ -203,13 +252,14 @@ export async function loadConfig(env: AdminEnv, slot: Slot, fresh = false) {
     return loadConfig(env, "published", fresh); // draft starts as a copy of published
   }
   const entry = { at: Date.now(), version: Number(row?.version || 0), config, updatedAt: row?.updated_at || null, updatedBy: row?.updated_by || null };
+  if (slot === "published" && memo.published && memo.published.version > entry.version) return memo.published;
   memo[slot] = entry;
   return entry;
 }
 
 export function invalidateConfigCache() {
   memo.draft = undefined;
-  memo.published = undefined;
+  if (memo.published) memo.published = { ...memo.published, at: 0 };
 }
 
 export async function saveDraft(env: AdminEnv, config: SiteConfig, by: string) {
@@ -236,6 +286,8 @@ export async function publishDraft(env: AdminEnv, by: string, note: string) {
     env.DB.prepare("insert into aap_config_versions(version,json,note,created_at,created_by) values(?1,?2,?3,?4,?5)").bind(version, body, note.slice(0, 300) || null, now, by),
   ]);
   invalidateConfigCache();
+  memo.published = { at: now, version, config: draft };
+  await persistPublished(env, memo.published);
   await audit(env, by, "publish", "site_config", { version, note });
   return version;
 }
@@ -358,7 +410,8 @@ export function injectIntoHtml(response: Response, c: SiteConfig, version: numbe
     (css ? `<style id="aap-theme">${escapeStyle(css)}</style>` : "") +
     (custom ? `<style id="aap-custom">${escapeStyle(custom)}</style>` : "") +
     `<script type="application/json" id="aap-config">${escapeJson(runtimePayload(c, version, preview))}</script>` +
-    `<script src="/aap/runtime.js" defer></script>` +
+    `<script>${SETTINGS_SOURCE.replace(/<\/script/gi, "<\\/script")}</script>` +
+    `<script src="/aap/analytics.js" async></script>` +
     (c.customHead.trim() ? c.customHead : "");
   // @ts-ignore HTMLRewriter is a Workers runtime global
   const rewriter = new HTMLRewriter().on("head", {
