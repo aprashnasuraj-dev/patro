@@ -1,5 +1,5 @@
 import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { answerPatroQuestion } from "../patro-tools-integration/patroBotEngine";
+const answerPatroQuestion: typeof import("../patro-tools-integration/patroBotEngine")["answerPatroQuestion"] = (...args) => import("../patro-tools-integration/patroBotEngine").then(module=>module.answerPatroQuestion(...args));
 import { useDismiss } from "../useDismiss";
 
 type ChatRole = "user" | "assistant";
