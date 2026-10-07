@@ -6,6 +6,7 @@ on:
       - feat/jyotish-bundle-final-20261007
     paths:
       - '.github/workflows/jyotish-bundle-bootstrap.yml'
+      - 'tests/janmapatro-live-integration.test.mjs'
   workflow_dispatch:
 
 permissions:
@@ -152,6 +153,7 @@ jobs:
           node tests/janmapatro-bundle-verify.test.mjs
           node --test tests/janmapatro-*.test.mjs
           npm run typecheck
+          npx vite build
 
       - name: Commit prepared integration
         shell: bash
