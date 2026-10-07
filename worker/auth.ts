@@ -22,6 +22,39 @@ const GOOGLE_KEYS=createRemoteJWKSet(new URL("https://www.googleapis.com/oauth2/
 const SESSION_DAYS=30;
 const DAY=86_400_000;
 const MAX_STATE_BYTES=512*1024;
+const AUTH_SCHEMA_READY=new WeakMap<object,Promise<void>>();
+
+/**
+ * The account tables are small and deterministic. Keep auth deployable even when the
+ * GitHub deployment token can deploy Workers but cannot call the D1 migrations API.
+ * DDL is idempotent and runs at most once per Worker isolate/DB binding.
+ */
+export async function ensureAuthSchema(env:AuthEnv){
+  if(!env.DB)return;
+  const key=env.DB as object;
+  let ready=AUTH_SCHEMA_READY.get(key);
+  if(!ready){
+    ready=(async()=>{
+      const statements=[
+        `create table if not exists app_users (id text primary key,provider text not null,provider_subject text not null,email text,email_verified integer not null default 0,display_name text,picture_url text,created_at text not null default (datetime('now')),updated_at text not null default (datetime('now')),unique(provider,provider_subject))`,
+        `create table if not exists auth_sessions (id text primary key,user_id text not null references app_users(id) on delete cascade,token_hash text not null unique,expires_at text not null,created_at text not null default (datetime('now')),last_seen_at text not null default (datetime('now')))`,
+        `create index if not exists auth_sessions_user_idx on auth_sessions(user_id)`,
+        `create index if not exists auth_sessions_expiry_idx on auth_sessions(expires_at)`,
+        `create table if not exists user_calendar_state (user_id text primary key references app_users(id) on delete cascade,notes text not null default '{}',events text not null default '[]',calendars text not null default '[]',preferences text not null default '{}',feedback text not null default '[]',updated_at text not null default (datetime('now')),revision integer not null default 0)`,
+        `create table if not exists user_community_preferences (user_id text primary key references app_users(id) on delete cascade,communities text not null default '[]',updated_at text not null default (datetime('now')))`
+      ];
+      for(const sql of statements)await env.DB.prepare(sql).run();
+      const info=await env.DB.prepare("pragma table_info(user_calendar_state)").all();
+      const columns=Array.isArray(info?.results)?info.results:[];
+      if(!columns.some((row:any)=>String(row?.name)==="revision")){
+        try{await env.DB.prepare("alter table user_calendar_state add column revision integer not null default 0").run();}
+        catch(error){if(!/duplicate column/i.test(String((error as Error)?.message||error)))throw error;}
+      }
+    })().catch((error)=>{AUTH_SCHEMA_READY.delete(key);throw error;});
+    AUTH_SCHEMA_READY.set(key,ready);
+  }
+  await ready;
+}
 
 function json(body:any,status=200,extra:Record<string,string>={}){
   return new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store","x-content-type-options":"nosniff",...extra}});
@@ -60,6 +93,7 @@ async function verifyGoogleCredential(credential:string,env:AuthEnv,nonce:string
 }
 export async function currentSession(request:Request,env:AuthEnv){
   if(!env.DB)return null;
+  await ensureAuthSchema(env);
   const raw=cookieValue(request,COOKIE); if(!raw)return null;
   const hash=await sha256(raw);
   const row=await env.DB.prepare(
@@ -179,6 +213,9 @@ export async function authResponse(request:Request,env:AuthEnv):Promise<Response
   const url=new URL(request.url),path=url.pathname;
   const accountRoute=path.startsWith("/api/v1/auth/")||["/api/v1/me/state","/api/v1/community-preferences","/api/v1/my-data","/api/my-data"].includes(path);
   if(accountRoute&&!["GET","HEAD"].includes(request.method)&&request.headers.get("origin")!==url.origin)return json({ok:false,error:"same_origin_required"},403);
+  if(accountRoute&&env.DB){
+    try{await ensureAuthSchema(env)}catch(error){console.error("auth schema bootstrap failed",error);return json({ok:false,error:"account_schema_unavailable"},503)}
+  }
   if(path==="/api/v1/auth/challenge"&&request.method==="POST"){
     if(!env.DB||!env.GOOGLE_CLIENT_ID)return json({ok:false,error:"google_sign_in_unavailable"},503);
     const nonce=token();
