@@ -2,6 +2,21 @@ import type { PersonalTithiEvent } from "@/patro-tools/tithi-events/events";
 import type { Sealed } from "@/patro-tools/letters/crypto";
 
 const LIFE_KEY = "nepalmiti.life.v1";
+const OWNER_KEY = "patro.account.active";
+export function lifeAccount() { return localStorage.getItem(OWNER_KEY) || ""; }
+function storageKey() { const owner = lifeAccount(); return owner ? LIFE_KEY + ".account:" + owner : LIFE_KEY; }
+export function switchLifeAccount(id: string | null) {
+  const previous = lifeAccount();
+  if (id) {
+    const guest = localStorage.getItem(LIFE_KEY);
+    if (!localStorage.getItem(LIFE_KEY + ".account:" + id) && guest && !localStorage.getItem("patro.guest.claimed")) {
+      localStorage.setItem(LIFE_KEY + ".account:" + id, guest);
+      localStorage.setItem("patro.guest.claimed", id);
+    }
+    localStorage.setItem(OWNER_KEY,id);
+  } else localStorage.removeItem(OWNER_KEY);
+  if (previous !== (id || "")) window.dispatchEvent(new CustomEvent("patro:life-updated",{detail:{accountChanged:true}}));
+}
 
 export type StoredTithiEvent = PersonalTithiEvent & {
   sourceDate: string;
@@ -69,7 +84,7 @@ function objectRows(value: unknown): Array<Record<string, unknown>> {
 
 export function readLife(): LifeState {
   try {
-    const parsed = JSON.parse(localStorage.getItem(LIFE_KEY) || "{}") as Record<string, unknown>;
+    const parsed = JSON.parse(localStorage.getItem(storageKey()) || "{}") as Record<string, unknown>;
     return {
       ...EMPTY,
       ...parsed,
@@ -88,15 +103,21 @@ export function readLife(): LifeState {
   }
 }
 
-export function writeLife(next: LifeState) {
+export function writeLife(next: LifeState, synced = false) {
   const value = { ...next, version: 1, updatedAt: Date.now() };
-  localStorage.setItem(LIFE_KEY, JSON.stringify(value));
-  window.dispatchEvent(new CustomEvent("patro:life-updated", { detail: { updatedAt: value.updatedAt } }));
+  localStorage.setItem(storageKey(), JSON.stringify(value));
+  window.dispatchEvent(new CustomEvent("patro:life-updated", { detail: { updatedAt: value.updatedAt, synced } }));
   return value;
 }
 
 export function updateLife(updater: (current: LifeState) => LifeState) {
-  return writeLife(updater(readLife()));
+  const before = readLife(), next = updater(before);
+  const deleted = { ...(before.deleted as Record<string, number> || {}) };
+  for (const key of ["notes","due","family","docs","festivalPlans","tithiEvents","nameChecks","futureLetters"] as const) {
+    const ids = new Set((next[key] as Array<{id?:string}>).map(row => row.id));
+    for (const row of before[key] as Array<{id?:string}>) if (row.id && !ids.has(row.id)) deleted[key + ":" + row.id] = Date.now();
+  }
+  return writeLife({ ...next, deleted });
 }
 
 function mergeById<T extends { id?: string; updatedAt?: number }>(a: T[], b: T[]) {
@@ -112,7 +133,7 @@ function mergeById<T extends { id?: string; updatedAt?: number }>(a: T[], b: T[]
 
 function mergeLife(local: LifeState, remoteRaw: unknown): LifeState {
   const remote = (remoteRaw && typeof remoteRaw === "object" ? remoteRaw : {}) as Partial<LifeState>;
-  return {
+  const merged: LifeState = {
     ...EMPTY,
     ...remote,
     ...local,
@@ -126,50 +147,44 @@ function mergeLife(local: LifeState, remoteRaw: unknown): LifeState {
     futureLetters: mergeById(Array.isArray(remote.futureLetters) ? remote.futureLetters as StoredFutureLetter[] : [], local.futureLetters),
     updatedAt: Math.max(Number(remote.updatedAt || 0), Number(local.updatedAt || 0)),
   };
+  const deleted: Record<string,number> = {};
+  for (const source of [remote.deleted, local.deleted]) if (source && typeof source === "object") for (const [key,value] of Object.entries(source)) deleted[key] = Math.max(deleted[key] || 0, Number(value) || 0);
+  merged.deleted = deleted;
+  for (const key of ["notes","due","family","docs","festivalPlans","tithiEvents","nameChecks","futureLetters"] as const) {
+    (merged[key] as Array<{id?:string;updatedAt?:number}>) = (merged[key] as Array<{id?:string;updatedAt?:number}>).filter(row => !deleted[key + ":" + row.id] || Number(row.updatedAt || 0) > deleted[key + ":" + row.id]);
+  }
+  merged.notes.sort((a,b) => b.updatedAt - a.updatedAt);
+  return merged;
 }
 
-export async function syncLifeTools(): Promise<{ life: LifeState; synced: boolean }> {
-  const local = readLife();
+const pendingSync = new Map<string, Promise<{life:LifeState;synced:boolean}>>();
+export function syncLifeTools(): Promise<{ life: LifeState; synced: boolean }> {
+  const owner = lifeAccount();
+  if (!owner) return Promise.resolve({ life: readLife(), synced: false });
+  const pending = pendingSync.get(owner);
+  if (pending) return pending;
+  const work = syncAccount(owner).finally(() => pendingSync.delete(owner));
+  pendingSync.set(owner,work);
+  return work;
+}
+async function syncAccount(owner: string): Promise<{life:LifeState;synced:boolean}> {
   try {
-    const response = await fetch("/api/v1/me/state", {
-      headers: { Accept: "application/json" },
-      cache: "no-store",
-      credentials: "same-origin",
-    });
-    if (response.status === 401) return { life: local, synced: false };
-    if (!response.ok) return { life: local, synced: false };
-
-    const body = await response.json() as {
-      state?: {
-        notes?: unknown;
-        events?: unknown;
-        calendars?: unknown;
-        preferences?: Record<string, unknown>;
-        feedback?: unknown;
-      };
-    };
-    const state = body.state || {};
-    const preferences = state.preferences && typeof state.preferences === "object" ? state.preferences : {};
-    const life = mergeLife(local, preferences.life_tools);
-    writeLife(life);
-
-    const saved = await fetch("/api/v1/me/state", {
-      method: "PUT",
-      headers: { "content-type": "application/json", Accept: "application/json" },
-      credentials: "same-origin",
-      cache: "no-store",
-      body: JSON.stringify({
-        state: {
-          notes: state.notes && typeof state.notes === "object" ? state.notes : {},
-          events: Array.isArray(state.events) ? state.events : [],
-          calendars: Array.isArray(state.calendars) ? state.calendars : [],
-          preferences: { ...preferences, life_tools: life },
-          feedback: Array.isArray(state.feedback) ? state.feedback : [],
-        },
-      }),
-    });
-    return { life, synced: saved.ok };
-  } catch {
-    return { life: local, synced: false };
-  }
+    for (let attempt=0; attempt<3; attempt++) {
+      const response=await fetch("/api/v1/me/state",{headers:{Accept:"application/json"},cache:"no-store",credentials:"same-origin"});
+      if (!response.ok || lifeAccount() !== owner) break;
+      const body=await response.json();
+      if (body.user?.id !== owner) break;
+      const before=readLife(),beforeSnapshot=JSON.stringify(before);
+      const life=mergeLife(before,body.state?.preferences?.life_tools);
+      const saved=await fetch("/api/v1/me/state",{method:"PATCH",headers:{"content-type":"application/json",Accept:"application/json"},credentials:"same-origin",cache:"no-store",body:JSON.stringify({account_id:owner,revision:body.revision,life})});
+      if (lifeAccount() !== owner) break;
+      if (saved.status===409) continue;
+      if (!saved.ok) break;
+      // Keep edits made during the request. The coordinator schedules another save.
+      const current=readLife();
+      const pending=JSON.stringify(current)!==beforeSnapshot;
+      return {life:writeLife(mergeLife(current,life),!pending),synced:!pending};
+    }
+  } catch { /* Keep the local copy on network or server failure. */ }
+  return {life:readLife(),synced:false};
 }
