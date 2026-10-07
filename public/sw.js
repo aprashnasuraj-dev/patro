@@ -130,9 +130,10 @@ async function warmFeatureAssets() {
   if (!response.ok) throw new Error("optional_asset_manifest_unavailable");
   const manifest = await response.json();
   if (!Array.isArray(manifest.assets) || manifest.assets.length > 300) throw new Error("invalid_optional_assets");
+  await warmInstallShell();
   const shell = await caches.open(SHELL_CACHE);
   const assets = manifest.assets.filter(path => typeof path === "string" && /^\/assets\/[\w.-]+\.(?:m?js|css|woff2?)$/.test(path));
-  let failed = 0;
+  let failed = await shell.match(new Request("/", {credentials:"same-origin"})) ? 0 : 1;
   for (let i = 0; i < assets.length; i += 4) {
     await Promise.all(assets.slice(i, i + 4).map(async path => {
       try {
