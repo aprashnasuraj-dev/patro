@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -51,40 +51,82 @@ test("Cloudflare deploy generates environment-aware bindings before Wrangler",as
   assert.ok(pkg.cloudflare?.bindings?.ARCHIVE);
 });
 
-test("public D1 hot paths are quota cached without caching private routes",async()=>{
+test("public caches use Cache API and R2 while KV stays small-state only",async()=>{
   const quota=await read("worker/quota-cache.ts");
+  const cosmic=await read("worker/cosmic.ts");
+  const worker=await read("worker/index.ts");
   const optimized=await read("worker/optimized-entry.ts");
   const jobs=await read("worker/jobs.ts");
   const push=await read("worker/push.ts");
+  const siteConfig=await read("worker/admin-console/site-config.ts");
+
   assert.match(optimized,/quotaCachedResponse/);
   for(const route of [
     "/api/v1/on-this-day","/api/v1/time-machine","/api/v1/today","/api/v1/panchang",
     "/api/v1/holidays","/api/v1/festivals","/api/v1/communities","/api/fm/stations"
   ]) assert.ok(quota.includes(route),`quota cache missing ${route}`);
+
   assert.match(quota,/calendar-today/);
   assert.match(quota,/ARCHIVE/);
-  assert.match(quota,/CACHE/);
+  assert.match(quota,/Cache API -> R2 -> origin/);
   assert.match(quota,/arbitrary query cardinality/);
   assert.match(quota,/text\/calendar/);
   assert.match(quota,/patro-quota-v3/);
   assert.match(quota,/searchParams\.delete\("rev"\)/);
   assert.match(quota,/HISTORY_CACHE_YEAR = "2000"/);
+  assert.doesNotMatch(quota,/env\.CACHE|CACHE\?:|readKv|\.CACHE\.put/);
+
+  assert.match(cosmic,/caches\.default/);
+  assert.match(cosmic,/COSMIC_R2_PREFIX/);
+  assert.match(cosmic,/ARCHIVE/);
+  assert.doesNotMatch(cosmic,/env\.CACHE|CACHE\?:|\.CACHE\.put/);
+
+  assert.match(worker,/APOD_R2_PREFIX/);
+  assert.match(worker,/caches\.default/);
+  assert.doesNotMatch(worker,/env\.CACHE\.(?:get|put)/);
+
   assert.match(jobs,/warmDailyReferenceCache/);
   assert.match(push,/PUSH_GATE_KEY/);
+  assert.match(push,/env\.CACHE\.put/);
   assert.match(push,/julianday\(next_attempt_at\)/);
+  assert.match(siteConfig,/kv\?\.put|kv\.put/);
   assert.doesNotMatch(quota,/\/api\/auth|\/api\/push|\/api\/me/);
 });
 
-test("annual On This Day primer protects R2-first cold fills",async()=>{
+test("annual On This Day primer is edge/R2-only and never depends on KV",async()=>{
   const primer=await read("scripts/cloudflare/prime-history-cache.mjs");
   assert.match(primer,/annual_keys/);
   assert.match(primer,/2000-02-29/);
+  assert.match(primer,/unexpectedly used KV/);
   assert.match(primer,/unexpectedly used D1/);
   assert.match(primer,/x-patro-cache/);
+  assert.ok(primer.includes('["edge","r2"]'));
   const release=await read(".github/workflows/release-gate.yml");
   assert.match(release,/REQUIRE_QUOTA_CACHE: "1"/);
   assert.match(release,/prime-history-cache\.mjs/);
   assert.match(release,/secrets\.git \|\| secrets\.GIT \|\| secrets\.CLOUDFLARE_API_TOKEN/);
+});
+
+async function listTsFiles(relativeDir){
+  const dir=path.join(root,relativeDir);
+  const entries=await readdir(dir,{withFileTypes:true});
+  const out=[];
+  for(const entry of entries){
+    const relative=path.join(relativeDir,entry.name);
+    if(entry.isDirectory())out.push(...await listTsFiles(relative));
+    else if(entry.isFile()&&entry.name.endsWith(".ts"))out.push(relative.replaceAll("\\","/"));
+  }
+  return out;
+}
+
+test("Worker KV put operations are limited to approved small-state files",async()=>{
+  const allowed=new Set(["worker/push.ts","worker/admin-console/site-config.ts"]);
+  const offenders=[];
+  for(const relative of await listTsFiles("worker")){
+    const source=await read(relative);
+    if(/\benv\.CACHE\.put\s*\(|\bkv\?*\.put\s*\(/.test(source)&&!allowed.has(relative))offenders.push(relative);
+  }
+  assert.deepEqual(offenders,[]);
 });
 
 test("legacy Pages, static redirect and deploy-wrapper artifacts are absent",async()=>{
