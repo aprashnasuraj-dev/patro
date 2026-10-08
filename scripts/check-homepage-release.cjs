@@ -5,7 +5,7 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
 function fail(message) { throw new Error(message); }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, args: ["--disable-dev-shm-usage"] });
+  const browser = await chromium.launch({ channel: "chromium", headless: true, args: ["--disable-dev-shm-usage"] });
 
   const firstPaint = await browser.newContext({ viewport: { width: 375, height: 812 }, javaScriptEnabled: false });
   const noJs = await firstPaint.newPage();
