@@ -1,3 +1,4 @@
+import { PlaceTimingMount } from './place/PlaceTimingMount';
 import { lazy, Suspense, useEffect, useState } from "react";
 import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { ReferenceHomePage } from "./ReferenceHomePage";
@@ -118,5 +119,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><PlaceTimingMount path={path}/><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
 }
