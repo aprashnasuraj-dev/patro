@@ -6,6 +6,7 @@ import { ToolPage, ToolResult } from "./ToolPrimitives";
 import "./voice-typing.css";
 
 const VoiceLetterComposer = lazy(() => import('./VoiceLetterComposer'));
+const ElderVoicePanel = lazy(() => import('./ElderVoicePanel'));
 const LANGUAGE_META: Record<DictationLanguage, {
   label: string;
   short: string;
@@ -42,6 +43,7 @@ export function VoiceTypingTool() {
   const [preetiStatus, setPreetiStatus] = useState("");
   const [spokenNumbers, setSpokenNumbers] = useState(false);
   const [transliterateLatin, setTransliterateLatin] = useState<((text: string) => string) | undefined>();
+  const [elderOpen, setElderOpen] = useState(false);
   const [letterOpen, setLetterOpen] = useState(false);
   const [cleanupError, setCleanupError] = useState("");
   const textarea = useRef<HTMLTextAreaElement>(null);
@@ -245,6 +247,8 @@ export function VoiceTypingTool() {
 
       <button type="button" onClick={() => setLetterOpen(!letterOpen)} aria-expanded={letterOpen}>बोलेर निवेदन · Voice application</button>
       {letterOpen ? <Suspense fallback={<p role="status">लोड हुँदैछ…</p>}><VoiceLetterComposer/></Suspense> : null}
+      <button type="button" onClick={() => setElderOpen(!elderOpen)} aria-expanded={elderOpen}>हजुरबा मोड · Hold to talk</button>
+      {elderOpen ? <Suspense fallback={<p role="status">लोड हुँदैछ…</p>}><ElderVoicePanel/></Suspense> : null}
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
         <p className="tool-muted">

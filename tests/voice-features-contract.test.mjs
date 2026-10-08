@@ -53,3 +53,10 @@ test('application templates include only supplied facts and preserve literal tex
  const result = applicationLetter({ recipient: 'शाखा प्रमुख', name: 'सुरज', subject: 'बिदा', body: '<script>literal</script>', date: '2083-06-22' });
  assert.match(result, /सुरज/); assert.match(result, /2083-06-22/); assert.match(result, /<script>literal<\/script>/); assert.ok(!result.includes('स्वीकृत'));
 });
+
+test('elder mode handles hold cancellation, late microphone start and deliberate readback', async () => {
+ const { readFile } = await import('node:fs/promises'); const source = await readFile('src/patro-tools-integration/ElderVoicePanel.tsx','utf8');
+ for (const event of ['onPointerUp={end}','onPointerCancel={end}','onLostPointerCapture={end}','onBlur={end}','onKeyUp=']) assert.ok(source.includes(event));
+ assert.match(source, /if \(!held.current \|\| !mounted.current\) voice.stop\(\)/);
+ assert.match(source, /!voice.listening && !voice.processing/); assert.match(source, /speech.stop\(\); await voice.start/);
+});
