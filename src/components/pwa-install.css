@@ -1,5 +1,5 @@
 .ap-install-notice{cursor:pointer}
-.ap-install-content{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:11px;min-width:0;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.ap-install-content{grid-column:1/3;display:grid;grid-template-columns:46px minmax(0,1fr);align-items:center;gap:11px;min-width:0;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
 .ap-install-content:focus-visible,.ap-install-primary:focus-visible,.ap-install-close:focus-visible,.ap-install-footer:focus-visible{outline:3px solid var(--ap-green);outline-offset:3px}
 .ap-install-content .ap-install-copy{display:block}
 .ap-install-description{display:block;margin:3px 0 0;color:var(--ap-muted);font-size:var(--ap-t-sm);line-height:1.3}
