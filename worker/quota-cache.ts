@@ -1,5 +1,4 @@
 type QuotaCacheEnv = {
-  CACHE?: any;
   ARCHIVE?: any;
   CALENDAR_SOURCE_VERSION?: string;
   PUBLIC_REFERENCE_CACHE_VERSION?: string;
@@ -8,7 +7,6 @@ type QuotaCacheEnv = {
 type CachePolicy = {
   group: string;
   durable: boolean;
-  kvTtl: number;
   maxBytes: number;
   version: (env: QuotaCacheEnv) => string;
 };
@@ -25,7 +23,6 @@ type StoredResponse = {
 };
 
 const CACHE_PREFIX = "patro-quota-v3";
-const DAY = 86_400;
 const HISTORY_CACHE_YEAR = "2000"; // Leap-year sentinel: exactly 366 reusable month/day keys.
 const textEncoder = new TextEncoder();
 
@@ -114,7 +111,6 @@ function edgeOnly(group = "edge-only", maxBytes = 2_000_000): CachePolicy {
   return {
     group,
     durable: false,
-    kvTtl: DAY,
     maxBytes,
     version: () => "edge-v1",
   };
@@ -125,14 +121,13 @@ function policyFor(request: Request): CachePolicy | null {
   const url = canonicalUrl(request);
   const path = url.pathname;
 
-  // Immutable/slow-changing reference surfaces get the full Cache -> KV -> R2 -> D1
-  // hierarchy. R2 is deliberately used for response snapshots, not as a per-request
-  // SQLite engine, so the main SQL backup object can coexist untouched in the bucket.
+  // Immutable/slow-changing reference surfaces use Cache API -> R2 -> origin.
+  // R2 is the durable shared response store; KV is intentionally excluded so public
+  // traffic cannot consume the account's low daily KV write quota.
   if (path === "/api/v1/on-this-day") {
     return {
       group: "history",
       durable: true,
-      kvTtl: 30 * DAY,
       maxBytes: 1_000_000,
       version: (env) => safeVersion(env.PUBLIC_REFERENCE_CACHE_VERSION || "history-v1"),
     };
@@ -142,7 +137,6 @@ function policyFor(request: Request): CachePolicy | null {
     return {
       group: "time-machine",
       durable: true,
-      kvTtl: 30 * DAY,
       maxBytes: 4_000_000,
       version: (env) => safeVersion(env.PUBLIC_REFERENCE_CACHE_VERSION || "references-v1"),
     };
@@ -152,7 +146,6 @@ function policyFor(request: Request): CachePolicy | null {
     return {
       group: "calendar-month",
       durable: true,
-      kvTtl: 30 * DAY,
       maxBytes: 2_000_000,
       version: (env) => safeVersion(env.CALENDAR_SOURCE_VERSION || "calendar-v1"),
     };
@@ -164,7 +157,6 @@ function policyFor(request: Request): CachePolicy | null {
     return {
       group: durable ? "calendar-today" : "calendar-edge",
       durable,
-      kvTtl: 2 * DAY,
       maxBytes: 2_000_000,
       version: (env) => safeVersion(env.CALENDAR_SOURCE_VERSION || "calendar-v1"),
     };
@@ -248,17 +240,6 @@ function restore(stored: StoredResponse, layer: string) {
   });
 }
 
-async function readKv(env: QuotaCacheEnv, key: string) {
-  if (!env.CACHE) return null;
-  try {
-    const text = await env.CACHE.get(key, "text");
-    if (!text) return null;
-    return restore(JSON.parse(text) as StoredResponse, "kv");
-  } catch {
-    return null;
-  }
-}
-
 async function readR2(env: QuotaCacheEnv, key: string) {
   if (!env.ARCHIVE) return null;
   try {
@@ -277,7 +258,7 @@ async function persistDurable(
   env: QuotaCacheEnv,
   policy: CachePolicy,
 ) {
-  if (!policy.durable || (!env.CACHE && !env.ARCHIVE) || !cacheable(response)) return;
+  if (!policy.durable || !env.ARCHIVE || !cacheable(response)) return;
   const body = await response.clone().text();
   if (textEncoder.encode(body).byteLength > policy.maxBytes) return;
   const key = await durableKey(request, policy, env);
@@ -290,21 +271,14 @@ async function persistDurable(
     canonical: canonicalUrl(request).pathname + canonicalUrl(request).search,
   };
   const payload = JSON.stringify(stored);
-  const writes: Promise<unknown>[] = [];
-  if (env.CACHE) {
-    writes.push(env.CACHE.put(key, payload, { expirationTtl: policy.kvTtl }));
-  }
-  if (env.ARCHIVE) {
-    writes.push(env.ARCHIVE.put(key, payload, {
-      httpMetadata: { contentType: "application/json" },
-      customMetadata: {
-        patro_cache: "1",
-        group: policy.group,
-        stored_at: stored.stored_at,
-      },
-    }));
-  }
-  await Promise.allSettled(writes);
+  await env.ARCHIVE.put(key, payload, {
+    httpMetadata: { contentType: "application/json" },
+    customMetadata: {
+      patro_cache: "1",
+      group: policy.group,
+      stored_at: stored.stored_at,
+    },
+  });
 }
 
 async function putEdge(request: Request, response: Response) {
@@ -315,15 +289,7 @@ async function putEdge(request: Request, response: Response) {
 async function readDurable(request: Request, env: QuotaCacheEnv, policy: CachePolicy) {
   if (!policy.durable) return null;
   const key = await durableKey(request, policy, env);
-  const kv = await readKv(env, key);
-  if (kv) return kv;
-  const r2 = await readR2(env, key);
-  if (r2) {
-    // Do not refill KV on every R2 hit. This deliberately trades a cheap R2 read for a
-    // potentially quota-counted KV write; the next real origin refresh will repopulate both.
-    return r2;
-  }
-  return null;
+  return readR2(env, key);
 }
 
 export async function quotaCachedResponse(
@@ -363,8 +329,8 @@ export async function quotaCachedResponse(
   return response;
 }
 
-/** Scheduled warmup helper. It waits for KV/R2 persistence before returning so the next
- * user request can avoid D1 even when the local edge cache is cold. */
+/** Scheduled warmup helper. It waits for R2/edge persistence before returning so the next
+ * user request can avoid origin/D1 even when the local edge cache is cold. */
 export async function primeQuotaCache(
   request: Request,
   env: QuotaCacheEnv,

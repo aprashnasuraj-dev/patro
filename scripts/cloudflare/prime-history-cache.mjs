@@ -10,10 +10,11 @@ for(let month=1;month<=12;month++){
   }
 }
 
-const stats={edge:0,kv:0,r2:0,origin:0};
+const stats={edge:0,r2:0,origin:0};
 const backends={};
 const failures=[];
 let d1Responses=0;
+let kvResponses=0;
 let cursor=0;
 
 async function fetchHistory(date){
@@ -31,6 +32,7 @@ async function fetchHistory(date){
   const backend=response.headers.get("x-patro-backend")||String(body?.source||"unknown");
   if(layer in stats)stats[layer]++;else stats.origin++;
   backends[backend]=(backends[backend]||0)+1;
+  if(layer==="kv")kvResponses++;
   if(/d1/i.test(backend))d1Responses++;
   return {layer,backend,count:Number(body.count||0)};
 }
@@ -48,6 +50,9 @@ await Promise.all(Array.from({length:concurrency},()=>worker()));
 if(failures.length){
   throw new Error(`Annual On This Day prime failed (${failures.length}/366): ${failures.slice(0,8).join(" | ")}`);
 }
+if(kvResponses>0){
+  throw new Error(`Annual On This Day prime unexpectedly used KV ${kvResponses} times; public history cache must be edge/R2-only.`);
+}
 if(d1Responses>0){
   throw new Error(`Annual On This Day prime unexpectedly used D1 ${d1Responses} times; R2/static archive should satisfy cold fills.`);
 }
@@ -60,7 +65,7 @@ for(const date of verifyDates){
   const result=await fetchHistory(date);
   verify.push({date,...result});
 }
-if(!verify.some(row=>["edge","kv","r2"].includes(row.layer))){
+if(!verify.some(row=>["edge","r2"].includes(row.layer))){
   throw new Error(`Post-prime verification did not observe a cache hit: ${JSON.stringify(verify)}`);
 }
 if(verify.some(row=>/d1/i.test(row.backend))){
@@ -72,6 +77,7 @@ console.log(JSON.stringify({
   annual_keys:dates.length,
   concurrency,
   first_pass:stats,
+  kv_responses:kvResponses,
   backends,
   verify,
 },null,2));

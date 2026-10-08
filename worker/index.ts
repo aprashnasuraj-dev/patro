@@ -18,6 +18,7 @@ import { historicalCalendarNoindex } from "./seo-window";
 type Env = {
   DB?: any;
   CACHE?: any;
+  ARCHIVE?: any;
   ASSETS?: { fetch(request: Request): Promise<Response> };
   NASA_API_KEY?: string;
   RADIO_RELAY_SECRET?: string;
@@ -359,14 +360,76 @@ function youtubeId(url: string): string | null {
   return null;
 }
 
-async function apod(env: Env, date: string) {
-  const cacheKey = "apod:" + date;
-  if (env.CACHE) {
+const APOD_CACHE_TTL = 30 * 86400;
+const APOD_R2_PREFIX = "runtime/apod/v1";
+
+function apodEdgeKey(date: string) {
+  return new Request("https://aafnaipatro.com/__cache/apod/" + encodeURIComponent(date), { method: "GET" });
+}
+
+async function readApodCache(env: Env, date: string) {
+  if (typeof caches !== "undefined") {
     try {
-      const cached = await env.CACHE.get(cacheKey, "json");
-      if (cached) return cached;
+      const hit = await caches.default.match(apodEdgeKey(date));
+      if (hit) return await hit.json();
     } catch {}
   }
+  if (env.ARCHIVE) {
+    try {
+      const object = await env.ARCHIVE.get(`${APOD_R2_PREFIX}/${date}.json`);
+      if (object) {
+        const stored: any = JSON.parse(await object.text());
+        if (stored?.payload && Date.parse(String(stored.expires_at || "")) > Date.now()) {
+          if (typeof caches !== "undefined") {
+            try {
+              await caches.default.put(
+                apodEdgeKey(date),
+                new Response(JSON.stringify(stored.payload), {
+                  headers: {"content-type":"application/json; charset=utf-8","cache-control":`public, max-age=${APOD_CACHE_TTL}`}
+                })
+              );
+            } catch {}
+          }
+          return stored.payload;
+        }
+      }
+    } catch {}
+  }
+  return null;
+}
+
+async function writeApodCache(env: Env, date: string, payload: any) {
+  const body = JSON.stringify(payload);
+  const writes: Promise<unknown>[] = [];
+  if (typeof caches !== "undefined") {
+    writes.push(caches.default.put(
+      apodEdgeKey(date),
+      new Response(body, {
+        headers: {"content-type":"application/json; charset=utf-8","cache-control":`public, max-age=${APOD_CACHE_TTL}`}
+      })
+    ));
+  }
+  if (env.ARCHIVE) {
+    const now = Date.now();
+    writes.push(env.ARCHIVE.put(
+      `${APOD_R2_PREFIX}/${date}.json`,
+      JSON.stringify({
+        payload,
+        stored_at:new Date(now).toISOString(),
+        expires_at:new Date(now + APOD_CACHE_TTL * 1000).toISOString()
+      }),
+      {
+        httpMetadata:{contentType:"application/json"},
+        customMetadata:{patro_cache:"apod-v1"}
+      }
+    ));
+  }
+  await Promise.allSettled(writes);
+}
+
+async function apod(env: Env, date: string) {
+  const cached = await readApodCache(env, date);
+  if (cached) return cached;
 
   const apiKey = env.NASA_API_KEY || "DEMO_KEY";
   let last = "NASA_APOD_UNAVAILABLE";
@@ -397,9 +460,7 @@ async function apod(env: Env, date: string) {
         copyright: String(data.copyright || "Public Domain / NASA"),
         is_fallback: false
       };
-      if (env.CACHE) {
-        try { await env.CACHE.put(cacheKey, JSON.stringify(normalized), { expirationTtl: 30 * 86400 }); } catch {}
-      }
+      await writeApodCache(env, date, normalized);
       return normalized;
     } catch (error) {
       last = String((error as Error)?.message || error);
