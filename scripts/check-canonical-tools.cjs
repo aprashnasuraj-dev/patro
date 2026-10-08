@@ -15,16 +15,26 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   if(rawHome.includes("सम्बन्धित खोजहरू · Related searches")) throw new Error("homepage first paint must not expose the raw related-search corpus");
   if(!rawHome.includes("BS · AD · नेपाल संवत् · तिथि · चाडपर्व · बिदा")) throw new Error("homepage first paint must explain the real calendar information hierarchy");
 
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({channel:"chromium",headless:true,args:["--disable-dev-shm-usage"]});
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:"reduce"});
   const page=await context.newPage();
 
   const homeErrors=[];
   const onHomeError=(error)=>homeErrors.push(String(error));
   page.on("pageerror",onHomeError);
+  page.on("crash",()=>console.error("RELEASE_BROWSER_CRASH: canonical-tools Chromium target crashed"));
+  page.on("console",message=>{if(message.type()==="error")console.error("RELEASE_BROWSER_CONSOLE:",message.text())});
   const homeResponse=await page.goto("http://127.0.0.1:4173/",{waitUntil:"domcontentloaded",timeout:30000});
   if(!homeResponse || !homeResponse.ok()) throw new Error(`homepage HTTP ${homeResponse?.status() ?? "no-response"}`);
-  await page.waitForSelector(".rh-page .rh-grid .rh-cell:not(.is-empty)",{state:"visible",timeout:20000});
+  await page.waitForSelector(".rh-page .rh-grid .rh-cell:not(.is-empty)",{state:"visible",timeout:20000}).catch(async error => {
+    const diagnostic=await page.evaluate(()=>({
+      rootText:document.querySelector("#root")?.textContent?.slice(0,600),
+      calendarNodes:document.querySelectorAll(".rh-calendar").length,
+      cells:document.querySelectorAll(".rh-cell").length,
+      jsAssets:[...document.scripts].map(s=>s.src).filter(Boolean).slice(-5)
+    }));
+    throw new Error(`Canonical home calendar unavailable: ${error.message}; browser errors=${JSON.stringify(homeErrors)}; diagnostic=${JSON.stringify(diagnostic)}`);
+  });
   await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
   const home=await page.evaluate(()=>{
     const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];

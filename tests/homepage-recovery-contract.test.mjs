@@ -7,6 +7,7 @@ const read=(path)=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 test("homepage recovery keeps interactive routes, calendar jump, cache invalidation and production data repair",()=>{
   const enhancer=read("src/components/HomepageEnhancer.tsx");
   const history=read("src/components/HomeHistoryCard.tsx");
+  const historyClient=read("src/history-client.ts");
   const router=read("src/PatroRouter.tsx");
   const chrome=read("src/components/AppChrome.tsx");
   const main=read("src/main.tsx");
@@ -38,7 +39,7 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   assert.ok(css.includes("min-height:44px")&&css.includes("outline:3px solid var(--ap-green)"),"mobile controls must keep usable tap targets and keyboard focus");
 
   assert.ok(history.includes("HISTORY_ROTATION_MS = 8500")&&history.includes("window.setInterval"),"homepage On This Day must rotate automatically within the requested 7-10 second window");
-  assert.ok(history.includes('cache: "no-store"')&&history.includes("HISTORY_REFRESH_TOKEN"),"homepage history must bypass stale failed responses");
+  assert.ok(historyClient.includes("cache:'no-store'")&&history.includes("HISTORY_REFRESH_TOKEN")&&historyClient.includes("/data/on-this-day/month-"),"homepage history must bypass stale failed responses");
   assert.ok(optimizedWorker.includes("fastHistoryResponse")&&historyWorker.includes("on_this_day_events"),"production worker must route On This Day through the resilient native D1 path");
   assert.ok(historyWorker.includes("$.ad_month")&&historyWorker.includes("$.ad_day"),"On This Day runtime must recover legacy rows with missing D1 dimensions");
 

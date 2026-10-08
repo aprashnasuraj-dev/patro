@@ -42,7 +42,7 @@ async function mock(page, scenario, server = true) {
   }, { scenario, server });
 }
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: process.env.VOICE_CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-webgl'] });
+  const browser = await chromium.launch({ headless: true, ...(process.env.VOICE_CHROMIUM_PATH ? { executablePath: process.env.VOICE_CHROMIUM_PATH } : { channel: 'chromium' }), args: ['--no-sandbox', '--disable-webgl', '--disable-dev-shm-usage'] });
   const origin = process.env.VOICE_TEST_ORIGIN || 'http://127.0.0.1:4173';
   try {
     for (const scenario of ['desktop', 'local', 'cleanup', 'session-ended', 'locale', 'server-locale', 'android', 'chunked', 'network', 'service-not-allowed', 'language-not-supported', 'silent', 'none', 'unconfigured', 'cancel'].filter(scenario => !process.env.VOICE_CASE || scenario === process.env.VOICE_CASE)) {

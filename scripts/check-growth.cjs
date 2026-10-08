@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 (async()=>{
- const browser=await chromium.launch({headless:true,executablePath:process.env.GROWTH_CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-webgl']});
+ const browser=await chromium.launch({headless:true,...(process.env.GROWTH_CHROMIUM_PATH?{executablePath:process.env.GROWTH_CHROMIUM_PATH}:{channel:'chromium'}),args:['--no-sandbox','--disable-webgl','--disable-dev-shm-usage']});
  try{
   const page=await browser.newPage({viewport:{width:390,height:844}});
   await page.addInitScript(()=>{Object.defineProperty(navigator,'share',{value:async data=>{window.__growthShared=data},configurable:true})});

@@ -2,7 +2,7 @@ const { chromium } = require("playwright");
 const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
 
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ channel: 'chromium', headless: true, args: ['--disable-dev-shm-usage'] });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
   await context.addInitScript(() => {
     class FakeSpeechRecognition {

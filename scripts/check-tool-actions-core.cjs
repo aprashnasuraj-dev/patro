@@ -157,6 +157,27 @@ async function exercisePatroBot(page) {
   return `answer=${answer.slice(0,60)}`;
 }
 
+async function exerciseTithiReminder(page) {
+  const name = "परीक्षण तिथि रिमाइन्डर";
+  const form = page.locator("main form.tool-form-grid");
+  await form.locator("input").first().fill(name);
+  // Deterministic fixture-backed panchang date; this test must verify persistence,
+  // not merely that a button toggles a voice input or that an error appears.
+  await form.locator('input[type="date"]').fill("2026-10-03");
+  await form.locator('button[type="submit"]').click();
+  try {
+    await page.locator(".tool-event-list .tool-event").filter({ hasText: name })
+      .first().waitFor({ state: "visible", timeout: 12000 });
+  } catch {
+    const status = await page.locator("main .tool-status").allTextContents();
+    fail(`tithi-reminder: failed to save a fixture-backed reminder: ${status.join(" | ") || "no status"}`);
+  }
+  const stored = await page.evaluate((title) =>
+    Object.values(localStorage).some((value) => value.includes(title)), name);
+  if (!stored) fail("tithi-reminder: event displayed without persisting in local storage");
+  return "form submit + saved reminder visible + local persistence";
+}
+
 async function mutateFirstControl(page) {
   const controls = page.locator('main textarea, main input:not([type=hidden]):not([type=file]):not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]), main select');
   const count = await controls.count();
@@ -185,15 +206,25 @@ async function mutateFirstControl(page) {
 }
 
 async function clickPrimary(page) {
-  const candidates = page.locator('main .tool-primary-button:not(:disabled), main .ref-primary:not(:disabled), main button[type=submit]:not(:disabled), main button:not(:disabled)');
-  const count = await candidates.count();
-  for (let i = 0; i < Math.min(count, 20); i++) {
-    const button = candidates.nth(i);
-    if (!await button.isVisible().catch(() => false)) continue;
-    const text = ((await button.innerText().catch(() => "")) || "").trim();
-    if (/copy|कपी|share|शेयर|download|डाउनलोड|बन्द|close|undo|redo|फेरि जोड|पूरा पर्दा/i.test(text)) continue;
-    await button.click({ timeout: 5000 }).catch(() => undefined);
-    return text || "button";
+  // Prefer the real submit/primary action. One combined CSS selector returns DOM
+  // order, accidentally selecting an earlier microphone or helper button.
+  const priorities = [
+    'main .tool-primary-button:not(:disabled)',
+    'main .ref-primary:not(:disabled)',
+    'main button[type=submit]:not(:disabled)',
+    'main button:not(:disabled)',
+  ];
+  for (const selector of priorities) {
+    const buttons = page.locator(selector);
+    const count = await buttons.count();
+    for (let i = 0; i < Math.min(count, 20); i++) {
+      const button = buttons.nth(i);
+      if (!await button.isVisible().catch(() => false)) continue;
+      const label = ((await button.innerText().catch(() => "")) || "").trim();
+      if (/copy|कपी|share|शेयर|download|डाउनलोड|बन्द|close|undo|redo|फेरि जोड|पूरा पर्दा/i.test(label)) continue;
+      await button.click({ timeout: 5000 });
+      return label || "button";
+    }
   }
   return "";
 }
@@ -219,7 +250,7 @@ async function exerciseGeneric(page, slug) {
 
 (async () => {
   if (TOOLS.length !== 29 || new Set(TOOLS).size !== 29) fail("tool-action inventory must remain exactly 29 unique tools");
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ channel: 'chromium', headless: true, args: ['--disable-dev-shm-usage'] });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
   await context.addInitScript(() => {
     window.__patroSpeechCalls = 0;
@@ -251,6 +282,7 @@ async function exerciseGeneric(page, slug) {
     else if (slug === "ocr") action = await exerciseOcr(page);
     else if (slug === "voice-typing") action = await exerciseVoice(page);
     else if (slug === "patro-bot") action = await exercisePatroBot(page);
+    else if (slug === "tithi-reminder") action = await exerciseTithiReminder(page);
     else action = await exerciseGeneric(page, slug);
     page.off("pageerror", onError);
     if (errors.length) fail(`${slug}: browser errors during primary action: ${errors.join(" | ")}`);
