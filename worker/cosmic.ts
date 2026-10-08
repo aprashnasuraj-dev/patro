@@ -1,6 +1,6 @@
 export type CosmicEnv = {
   DB?: any;
-  CACHE?: any;
+  ARCHIVE?: any;
   NASA_API_KEY?: string;
 };
 
@@ -58,6 +58,84 @@ function epicSearchWindow(date: string) {
   return [0, -1, 1, -2, 2, -3, 3].map((offset) => shiftIsoDate(date, offset));
 }
 
+type CosmicStored<T = unknown> = {
+  payload: T;
+  expires_at: string;
+  stored_at: string;
+};
+
+const COSMIC_R2_PREFIX = "runtime/cosmic/v1";
+
+function cosmicEdgeKey(cacheKey: string) {
+  return new Request(`https://aafnaipatro.com/__cache/cosmic/${encodeURIComponent(cacheKey)}`, { method: "GET" });
+}
+
+function cosmicR2Key(cacheKey: string) {
+  return `${COSMIC_R2_PREFIX}/${encodeURIComponent(cacheKey)}.json`;
+}
+
+async function readEdgeCache<T>(cacheKey: string): Promise<T | null> {
+  if (typeof caches === "undefined") return null;
+  try {
+    const hit = await caches.default.match(cosmicEdgeKey(cacheKey));
+    return hit ? await hit.json() as T : null;
+  } catch {
+    return null;
+  }
+}
+
+async function writeEdgeCache<T>(cacheKey: string, payload: T, ttlSeconds: number) {
+  if (typeof caches === "undefined") return;
+  try {
+    await caches.default.put(
+      cosmicEdgeKey(cacheKey),
+      new Response(JSON.stringify(payload), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": `public, max-age=${Math.max(60, ttlSeconds)}`
+        }
+      })
+    );
+  } catch {}
+}
+
+async function readR2Cache<T>(cacheKey: string): Promise<{ payload: T; expiresAt: number } | null> {
+  const env = envNow();
+  if (!env.ARCHIVE) return null;
+  try {
+    const object = await env.ARCHIVE.get(cosmicR2Key(cacheKey));
+    if (!object) return null;
+    const stored = JSON.parse(await object.text()) as CosmicStored<T>;
+    if (stored?.payload == null) return null;
+    return {
+      payload: stored.payload,
+      expiresAt: Date.parse(String(stored.expires_at || ""))
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function writeR2Cache<T>(cacheKey: string, payload: T, ttlSeconds: number) {
+  const env = envNow();
+  if (!env.ARCHIVE) return;
+  const now = Date.now();
+  const stored: CosmicStored<T> = {
+    payload,
+    stored_at: new Date(now).toISOString(),
+    expires_at: new Date(now + Math.max(60, ttlSeconds) * 1000).toISOString()
+  };
+  try {
+    await env.ARCHIVE.put(cosmicR2Key(cacheKey), JSON.stringify(stored), {
+      httpMetadata: { contentType: "application/json" },
+      customMetadata: {
+        patro_cache: "cosmic-v1",
+        expires_at: stored.expires_at
+      }
+    });
+  } catch {}
+}
+
 async function snapshotCache(cacheKey: string) {
   const env = envNow();
   if (!env.DB) return null;
@@ -89,18 +167,18 @@ async function cached<T>(
   ttlSeconds: number,
   producer: () => Promise<T>
 ): Promise<T> {
-  const env = envNow();
-  const kvKey = "cosmic:" + cacheKey;
+  const edge = await readEdgeCache<T>(cacheKey);
+  if (edge != null) return edge;
 
-  if (env.CACHE) {
-    try {
-      const hit = await env.CACHE.get(kvKey, "json");
-      if (hit != null) return hit as T;
-    } catch {}
+  const r2 = await readR2Cache<T>(cacheKey);
+  if (r2?.payload != null && r2.expiresAt > Date.now()) {
+    await writeEdgeCache(cacheKey, r2.payload, ttlSeconds);
+    return r2.payload;
   }
 
   const snapshot = await snapshotCache(cacheKey);
   if (snapshot?.payload && snapshot.expiresAt > Date.now()) {
+    await writeEdgeCache(cacheKey, snapshot.payload as T, ttlSeconds);
     return snapshot.payload as T;
   }
 
@@ -108,19 +186,20 @@ async function cached<T>(
   try {
     payload = await producer();
   } catch (error) {
+    if (r2?.payload != null) return r2.payload;
     if (snapshot?.payload) return snapshot.payload as T;
     throw error;
   }
 
-  if (producerUnavailable(payload) && snapshot?.payload) {
-    return snapshot.payload as T;
+  if (producerUnavailable(payload)) {
+    if (r2?.payload != null) return r2.payload;
+    if (snapshot?.payload) return snapshot.payload as T;
   }
 
-  if (env.CACHE) {
-    try {
-      await env.CACHE.put(kvKey, JSON.stringify(payload), { expirationTtl: Math.max(60, ttlSeconds) });
-    } catch {}
-  }
+  await Promise.allSettled([
+    writeEdgeCache(cacheKey, payload, ttlSeconds),
+    writeR2Cache(cacheKey, payload, ttlSeconds)
+  ]);
   return payload;
 }
 
