@@ -1,19 +1,39 @@
 import { PlaceTimingMount } from './place/PlaceTimingMount';
 import { lazy, Suspense, useEffect, useState } from "react";
-import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
+
 import { ReferenceHomePage } from "./ReferenceHomePage";
-import { DateDetailPage, OnThisDayPage, TimeMachinePage } from "./AafnaiDetailPages";
-import { ConvertPage } from "./ConvertPage";
-import { MethodologyPage, CorrectionsPage } from "./SeoAuthorityPages";
-import { PATRO_TOOL_SLUGS, PatroToolsShell } from "./patro-tools-integration/PatroToolsShell";
-import { CommunityHub } from "./community/CommunityHub";
-import { CommunityPreferences } from "./community/CommunityPreferences";
+
+
+
+import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/toolSlugs";
+// Offline-first typing stays eagerly linked to the app shell: the PWA must work without fetching a new chunk.
+import { NepaliTools } from "./features/nepali-tools/NepaliTools";
+
+
 const CommunityChakraPage=lazy(()=>import("./community/CommunityExperience").then(m=>({default:m.CommunityChakraPage})));
 const CommunitySuitePage=lazy(()=>import("./community/CommunityExperience").then(m=>({default:m.CommunitySuitePage})));
 const NepalSambatPage=lazy(()=>import("./community/CommunityExperience").then(m=>({default:m.NepalSambatPage})));
-import { RashifalExperience } from "./rashifal/RashifalExperience";
-import { NepaliTools } from "./features/nepali-tools/NepaliTools";
+
+
 import type { SuiteId } from "./patro-tools/communities/registry";
+
+// Keep only today's calendar and the navigation shell on the initial JS path.
+// All other experiences load on demand; routes, controls and APIs are unchanged.
+const MePage=lazy(()=>import("./AafnaiPages").then(m=>({default:m.MePage})));
+const NotFoundPage=lazy(()=>import("./AafnaiPages").then(m=>({default:m.NotFoundPage})));
+const SamacharPage=lazy(()=>import("./AafnaiPages").then(m=>({default:m.SamacharPage})));
+const ToolsPage=lazy(()=>import("./AafnaiPages").then(m=>({default:m.ToolsPage})));
+const DateDetailPage=lazy(()=>import("./AafnaiDetailPages").then(m=>({default:m.DateDetailPage})));
+const OnThisDayPage=lazy(()=>import("./AafnaiDetailPages").then(m=>({default:m.OnThisDayPage})));
+const TimeMachinePage=lazy(()=>import("./AafnaiDetailPages").then(m=>({default:m.TimeMachinePage})));
+const ConvertPage=lazy(()=>import("./ConvertPage").then(m=>({default:m.ConvertPage})));
+const MethodologyPage=lazy(()=>import("./SeoAuthorityPages").then(m=>({default:m.MethodologyPage})));
+const CorrectionsPage=lazy(()=>import("./SeoAuthorityPages").then(m=>({default:m.CorrectionsPage})));
+const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
+const CommunityHub=lazy(()=>import("./community/CommunityHub").then(m=>({default:m.CommunityHub})));
+const CommunityPreferences=lazy(()=>import("./community/CommunityPreferences").then(m=>({default:m.CommunityPreferences})));
+const RashifalExperience=lazy(()=>import("./rashifal/RashifalExperience").then(m=>({default:m.RashifalExperience})));
+
 
 const BirthdayPage=lazy(()=>import('./birthday/BirthdayPage'));
 const PlacePage=lazy(()=>import('./place/PlacePage'));
