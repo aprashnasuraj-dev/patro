@@ -6,6 +6,11 @@ const {chromium}=require('playwright');
   const page=await browser.newPage({viewport:{width:390,height:844}});
   await page.addInitScript(()=>{Object.defineProperty(navigator,'share',{value:async data=>{window.__growthShared=data},configurable:true})});
   const origin=process.env.GROWTH_TEST_ORIGIN||'http://127.0.0.1:4173';
+  for(const route of ['/','/tools','/fm']){
+   await page.goto(origin+route);
+   await page.waitForFunction(()=>document.querySelector('meta[name=robots]')?.content.startsWith('index,follow'));
+   assert.equal(await page.locator('meta[name=robots]').count(),1);
+  }
   await page.goto(origin+'/guides');
   await page.locator('.ap-guides').waitFor();
   await page.locator('.ap-guides h2 a').filter({hasText:'Preeti'}).click();

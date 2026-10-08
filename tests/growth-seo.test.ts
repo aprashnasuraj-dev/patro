@@ -1,5 +1,5 @@
 import {describe,it,expect} from "vitest";
-import {resolveRouteSeo} from "../src/seo";
+import {resolveRouteSeo,isPublicPreviewHost} from "../src/seo";
 import {connectedRouteMeta} from "../worker/connected-seo";
 import guides from "../seo/guides.json";
 import {readFileSync} from "node:fs";
@@ -7,6 +7,10 @@ import {readFileSync} from "node:fs";
 import {comparePublishedUrls} from "../scripts/verify-url-preservation.mjs";
 
 describe("search navigation and guide discovery",()=>{
+ it("keeps public previews noindex while loopback audits use production route directives",()=>{
+  for(const host of ["aafnaipatro.com","localhost","127.0.0.1","[::1]"])expect(isPublicPreviewHost(host),host).toBe(false);
+  for(const host of ["patro-preview.pages.dev","patro.workers.dev","example.com"])expect(isPublicPreviewHost(host),host).toBe(true);
+ });
  it("catches replacements even when the total URL count stays constant",()=>{
   const result=comparePublishedUrls(["/today","/date/2026-10-08"],["/today","/guides"]);
   expect(result.removed).toEqual(["/date/2026-10-08"]);

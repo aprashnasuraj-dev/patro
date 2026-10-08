@@ -6,6 +6,13 @@ import { historicalCalendarNoindex } from "../worker/seo-window";
 const BASE=(((import.meta as ImportMeta & {env?:Record<string,string|undefined>}).env?.VITE_PUBLIC_BASE_URL)||"https://aafnaipatro.com").replace(/\/+$/,"");
 const NOINDEX=new Set(["/samachar","/developers","/tools/api","/offline","/mcp","/widget/today"]);
 const catalog:Record<string,{title:string;description:string}>={...intents.core,...intents.tools};
+export function isPublicPreviewHost(hostname:string){
+  const host=hostname.toLowerCase();
+  // Loopback development/audit servers cannot be crawled publicly. Let their
+  // metadata match production so browser SEO audits exercise real directives.
+  const loopback=host==="localhost"||host==="127.0.0.1"||host==="[::1]"||host==="::1";
+  return !loopback&&host!==new URL(BASE).hostname;
+}
 export function resolveRouteSeo(path:string){
   const clean=path.replace(/\/+$/,"")||"/";
   const edge=connectedRouteMeta(clean);
@@ -26,7 +33,7 @@ function meta(name:string,content:string,property=false){
 }
 export function applyRouteSeo(path=location.pathname){
   const row=resolveRouteSeo(path);
-  const preview=location.hostname!==new URL(BASE).hostname;
+  const preview=isPublicPreviewHost(location.hostname);
   const canonicals=Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'));
   let canonical=canonicals.shift();for(const duplicate of canonicals)duplicate.remove();
   // Preserve the richer server-rendered metadata and factual schema on first render.
