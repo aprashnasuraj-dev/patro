@@ -1,0 +1,8 @@
+function partsAt(instant:Date,tz:string) { const parts=new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(instant);const n=(key:string)=>Number(parts.find(p=>p.type===key)?.value);return{year:n('year'),month:n('month'),day:n('day'),hour:n('hour'),minute:n('minute'),second:n('second')}; }
+export function zonedInstant(date:string,clock:string,tz:string) {
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!/^([01]\d|2[0-3]):[0-5]\d$/.test(clock))throw Error('Invalid civil time');
+ const [y,m,d]=date.split('-').map(Number),[h,min]=clock.split(':').map(Number),base=Date.UTC(y,m-1,d,h,min);if(new Date(base).toISOString().slice(0,10)!==date)throw Error('Invalid date');
+ const candidates=new Set<number>();for(const hours of [-36,-24,-12,0,12,24,36]) { const sample=new Date(base+hours*3600000),p=partsAt(sample,tz),offset=Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second)-sample.getTime();const value=base-offset,q=partsAt(new Date(value),tz);if(q.year===y&&q.month===m&&q.day===d&&q.hour===h&&q.minute===min)candidates.add(value); }
+ if(!candidates.size)throw Error('This local time does not exist (DST or date-line change). Choose another time.');const values=[...candidates].sort((a,b)=>a-b);return{instant:new Date(values[0]),ambiguous:values.length>1};
+}
+export function civilBounds(date:string,tz:string) { const next=new Date(date+'T00:00Z');next.setUTCDate(next.getUTCDate()+1);return{start:zonedInstant(date,'00:00',tz).instant,end:zonedInstant(next.toISOString().slice(0,10),'00:00',tz).instant}; }
