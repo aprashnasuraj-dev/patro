@@ -6,6 +6,8 @@ import { ReferenceHomePage } from "./ReferenceHomePage";
 
 
 import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/toolSlugs";
+// Offline-first typing stays eagerly linked to the app shell: the PWA must work without fetching a new chunk.
+import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 
 
 const CommunityChakraPage=lazy(()=>import("./community/CommunityExperience").then(m=>({default:m.CommunityChakraPage})));
@@ -31,7 +33,7 @@ const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell
 const CommunityHub=lazy(()=>import("./community/CommunityHub").then(m=>({default:m.CommunityHub})));
 const CommunityPreferences=lazy(()=>import("./community/CommunityPreferences").then(m=>({default:m.CommunityPreferences})));
 const RashifalExperience=lazy(()=>import("./rashifal/RashifalExperience").then(m=>({default:m.RashifalExperience})));
-const NepaliTools=lazy(()=>import("./features/nepali-tools/NepaliTools").then(m=>({default:m.NepaliTools})));
+
 
 const BirthdayPage=lazy(()=>import('./birthday/BirthdayPage'));
 const PlacePage=lazy(()=>import('./place/PlacePage'));
