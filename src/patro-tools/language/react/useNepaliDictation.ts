@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
+import { browserEngineHint, rememberBrowserEngine } from '../voice-engine';
 
 export type DictationLanguage = 'ne-NP' | 'en-US';
 export type DictationMode = 'browser' | 'server' | 'unsupported';
@@ -107,6 +108,7 @@ export function useNepaliDictation({
   language?: DictationLanguage;
 } = {}) {
   const [mode, setMode] = useState<DictationMode>('unsupported');
+  const [browserWorking, setBrowserWorking] = useState(false);
   const [browserAvailable, setBrowserAvailable] = useState(false);
   const [serverAvailable, setServerAvailable] = useState(false);
   const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
@@ -119,6 +121,10 @@ export function useNepaliDictation({
   const streamRef = useRef<MediaStream | null>(null);
   const timerRef = useRef<number | null>(null);
   const mountedRef = useRef(true);
+  const listeningIntentRef = useRef(false);
+  const capabilitiesReadyRef = useRef<Promise<boolean>>(Promise.resolve(false));
+  const onFinalRef = useRef(onFinal);
+  useEffect(() => { onFinalRef.current = onFinal; }, [onFinal]);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current !== null) {
@@ -136,6 +142,7 @@ export function useNepaliDictation({
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
+      listeningIntentRef.current = false;
       clearTimer();
       try { recognitionRef.current?.abort?.(); } catch { /* already ended */ }
       try {
@@ -151,6 +158,7 @@ export function useNepaliDictation({
     setBrowserAvailable(browser);
     setMode(browser ? 'browser' : 'unsupported');
     setCapabilitiesChecked(false);
+    capabilitiesReadyRef.current = Promise.resolve(false);
 
     if (!recorder) {
       setServerAvailable(false);
@@ -159,7 +167,7 @@ export function useNepaliDictation({
     }
 
     const controller = new AbortController();
-    void (async () => {
+    capabilitiesReadyRef.current = (async () => {
       try {
         const response = await fetch('/api/nepali/speech-capabilities', {
           headers: { accept: 'application/json' },
@@ -167,26 +175,28 @@ export function useNepaliDictation({
           signal: controller.signal,
         });
         const payload = await response.json().catch(() => ({}));
-        if (!mountedRef.current || controller.signal.aborted) return;
+        if (!mountedRef.current || controller.signal.aborted) return false;
         const server = response.ok && payload?.stt?.server === true;
         setServerAvailable(server);
-        if (!browser && server) setMode('server');
+        if (server && (!browser || browserEngineHint(language) === false)) setMode('server');
+        return server;
       } catch {
-        if (!mountedRef.current || controller.signal.aborted) return;
+        if (!mountedRef.current || controller.signal.aborted) return false;
         setServerAvailable(false);
+        return false;
       } finally {
         if (mountedRef.current && !controller.signal.aborted) setCapabilitiesChecked(true);
       }
     })();
 
     return () => controller.abort();
-  }, [serverFallback]);
+  }, [serverFallback, language]);
 
   const stop = useCallback(() => {
+    listeningIntentRef.current = false;
     setInterim('');
     clearTimer();
     const recognition = recognitionRef.current;
-    recognitionRef.current = null;
     try { recognition?.stop?.(); } catch { /* already ended */ }
 
     const recorder = recorderRef.current;
@@ -211,77 +221,10 @@ export function useNepaliDictation({
     }
   }, [browserAvailable, listening, processing, serverAvailable]);
 
-  const start = useCallback(async () => {
-    if (processing) return;
-    setError(null);
-    setInterim('');
-
-    if (mode === 'browser') {
-      const SR = speechRecognitionCtor();
-      if (!SR) {
-        setBrowserAvailable(false);
-        setMode(serverAvailable && serverRecordingAvailable() ? 'server' : 'unsupported');
-        return;
-      }
-
-      const recognition = new SR();
-      recognition.lang = language;
-      recognition.continuous = true;
-      recognition.interimResults = true;
-      recognition.maxAlternatives = 1;
-      recognition.onstart = () => mountedRef.current && setListening(true);
-      const finalized=new Set<number>();
-      recognition.onresult = (event: any) => {
-        let live = '';
-        for (let i = event.resultIndex; i < event.results.length; i += 1) {
-          const result = event.results[i];
-          const transcript = String(result?.[0]?.transcript ?? '');
-          if (result.isFinal && !finalized.has(i)) {
-            finalized.add(i);
-            const processed = postProcessDictation(transcript, {
-              language,
-              nepaliDigits: language === 'ne-NP',
-            });
-            if (processed) onFinal?.(`${processed} `);
-          } else if (!result.isFinal) {
-            live += `${transcript} `;
-          }
-        }
-        if (mountedRef.current) setInterim(live.trimStart());
-      };
-      recognition.onerror = (event: any) => {
-        if (!mountedRef.current) return;
-        const code = String(event?.error || 'unknown');
-        setListening(false);
-        setInterim('');
-        if (serverFallback && serverAvailable && serverRecordingAvailable() && ['network', 'language-not-supported'].includes(code)) {
-          setMode('server');
-          setError(language === 'ne-NP'
-            ? 'Live recognition उपलब्ध भएन। Server transcription चयन गरिएको छ—फेरि माइक्रोफोन थिच्नुहोस्।'
-            : 'Live recognition failed. Server transcription is selected—press the microphone again.');
-        } else {
-          setError(errorMessage(language, code));
-        }
-      };
-      recognition.onend = () => {
-        if (recognitionRef.current === recognition) recognitionRef.current = null;
-        if (!mountedRef.current) return;
-        setListening(false);
-        setInterim('');
-      };
-      recognitionRef.current = recognition;
-      try {
-        recognition.start();
-      } catch (cause) {
-        recognitionRef.current = null;
-        setListening(false);
-        setError(cause instanceof Error ? cause.message : errorMessage(language, 'start-failed'));
-      }
-      return;
-    }
-
-    if (mode === 'server') {
+  const startServer = useCallback(async () => {
       if (capabilitiesChecked && !serverAvailable) {
+        listeningIntentRef.current = false;
+        setListening(false);
         setError(serverErrorMessage(language, 'speech_backend_unconfigured'));
         return;
       }
@@ -289,6 +232,7 @@ export function useNepaliDictation({
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
         });
+        if (!mountedRef.current || !listeningIntentRef.current) { stream.getTracks().forEach(track => track.stop()); return; }
         streamRef.current = stream;
         const mimeType = preferredMimeType();
         const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
@@ -302,6 +246,7 @@ export function useNepaliDictation({
         recorder.onstop = async () => {
           clearTimer();
           stopTracks();
+          if (!mountedRef.current) { recorderRef.current = null; return; }
           const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
           if (mountedRef.current) setProcessing(true);
           try {
@@ -319,7 +264,7 @@ export function useNepaliDictation({
               language,
               nepaliDigits: language === 'ne-NP',
             });
-            if (processed) onFinal?.(`${processed} `);
+            if (processed && mountedRef.current) onFinalRef.current?.(`${processed} `);
           } catch (cause) {
             if (mountedRef.current) {
               setError(cause instanceof Error ? cause.message : errorMessage(language, 'server-failed'));
@@ -340,21 +285,110 @@ export function useNepaliDictation({
           if (recorderRef.current === recorder && recorder.state !== 'inactive') recorder.stop();
         }, MAX_SERVER_RECORDING_MS);
       } catch (cause) {
+        listeningIntentRef.current = false;
         stopTracks();
         setListening(false);
         setError(cause instanceof Error ? cause.message : errorMessage(language, 'not-allowed'));
       }
       return;
-    }
+  }, [capabilitiesChecked, clearTimer, language, serverAvailable, stopTracks]);
 
+  const start = useCallback(async () => {
+    if (processing || listening) return;
+    listeningIntentRef.current = true;
+    setError(null);
+    setInterim('');
+    setBrowserWorking(false);
+
+    if (mode === 'server') { await startServer(); return; }
+    if (mode === 'browser') {
+      const SR = speechRecognitionCtor();
+      if (!SR) {
+        setBrowserAvailable(false);
+        if (serverFallback && await capabilitiesReadyRef.current) { setMode('server'); await startServer(); }
+        else { listeningIntentRef.current = false; setListening(false); setError(serverErrorMessage(language, 'speech_backend_unconfigured')); }
+        return;
+      }
+      let recognition: any;
+      try { recognition = new SR(); }
+      catch {
+        rememberBrowserEngine(language, false);
+        if (serverFallback && await capabilitiesReadyRef.current && listeningIntentRef.current) { setMode('server'); await startServer(); }
+        else { listeningIntentRef.current = false; setListening(false); setError(serverErrorMessage(language, 'speech_backend_unconfigured')); }
+        return;
+      }
+      recognition.lang = language;
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+      let working = false, switching = false;
+      const markWorking = () => {
+        if (!mountedRef.current || recognitionRef.current !== recognition) return;
+        working = true; clearTimer(); setBrowserWorking(true);
+        rememberBrowserEngine(language, true);
+      };
+      const fallback = async (code: string) => {
+        if (switching || !mountedRef.current || !listeningIntentRef.current || recognitionRef.current !== recognition) return;
+        switching = true; clearTimer();
+        rememberBrowserEngine(language, false);
+        recognitionRef.current = null;
+        try { recognition.abort?.(); } catch { /* already ended */ }
+        setInterim(''); setBrowserWorking(false);
+        const available = serverFallback && serverRecordingAvailable() && (serverAvailable || await capabilitiesReadyRef.current);
+        if (!mountedRef.current || !listeningIntentRef.current) return;
+        if (available) { setMode('server'); await startServer(); }
+        else { listeningIntentRef.current = false; setListening(false); setError(serverFallback ? serverErrorMessage(language, 'speech_backend_unconfigured') : errorMessage(language, code)); }
+      };
+      recognition.onstart = () => mountedRef.current && setListening(true);
+      recognition.onaudiostart = markWorking;
+      const finalized = new Set<number>();
+      recognition.onresult = (event: any) => {
+        if (!mountedRef.current || recognitionRef.current !== recognition) return;
+        markWorking();
+        let live = '';
+        for (let i = event.resultIndex; i < event.results.length; i += 1) {
+          const result = event.results[i];
+          const transcript = String(result?.[0]?.transcript ?? '');
+          if (result.isFinal && !finalized.has(i)) {
+            finalized.add(i);
+            const processed = postProcessDictation(transcript, { language, nepaliDigits: language === 'ne-NP' });
+            if (processed) onFinalRef.current?.(`${processed} `);
+          } else if (!result.isFinal) live += `${transcript} `;
+        }
+        setInterim(live.trimStart());
+      };
+      recognition.onerror = (event: any) => {
+        if (!mountedRef.current || recognitionRef.current !== recognition || !listeningIntentRef.current) return;
+        const code = String(event?.error || 'unknown');
+        if (['network', 'service-not-allowed', 'language-not-supported'].includes(code)) { void fallback(code); return; }
+        listeningIntentRef.current = false; clearTimer(); setListening(false); setInterim(''); setError(errorMessage(language, code));
+      };
+      recognition.onend = () => {
+        if (!mountedRef.current || recognitionRef.current !== recognition) return;
+        if (!working && listeningIntentRef.current) { void fallback('audio-start-timeout'); return; }
+        recognitionRef.current = null; clearTimer(); setListening(false); setInterim('');
+      };
+      recognitionRef.current = recognition;
+      setListening(true);
+      timerRef.current = window.setTimeout(() => { if (!working) void fallback('audio-start-timeout'); }, 3_000);
+      try { recognition.start(); }
+      catch (cause) {
+        if (cause instanceof DOMException && cause.name === 'NotAllowedError') {
+          listeningIntentRef.current = false; recognitionRef.current = null; clearTimer(); setListening(false); setError(errorMessage(language, 'not-allowed'));
+        } else await fallback('start-failed');
+      }
+      return;
+    }
+    listeningIntentRef.current = false;
     setError(language === 'ne-NP'
       ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
       : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
-  }, [capabilitiesChecked, clearTimer, language, mode, onFinal, processing, serverAvailable, serverFallback, stopTracks]);
+  }, [clearTimer, language, listening, mode, processing, serverAvailable, serverFallback, startServer]);
 
   return {
     mode,
     browserAvailable,
+    browserWorking,
     serverAvailable,
     capabilitiesChecked,
     listening,
