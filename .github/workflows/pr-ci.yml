@@ -16,6 +16,8 @@ jobs:
     name: Affected PR checks
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      browser_required: ${{ steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -167,26 +169,62 @@ jobs:
           npm run test:release-safety
 
 
-      - name: Release homepage and canonical browser regression
+      - name: Package validated build for isolated browser checks
         if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-browser-dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Documentation-only PR
+        if: steps.changes.outputs.any != 'true'
+        run: echo "Only documentation/non-runtime files changed; expensive application checks skipped."
+
+  isolated-browser-checks:
+    name: Isolated production browser regressions
+    needs: affected-checks
+    if: needs.affected-checks.result == 'success' && needs.affected-checks.outputs.browser_required == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout verified PR code
+        uses: actions/checkout@v4
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install Playwright on fresh runner (no rebuild)
+        run: |
+          set -euo pipefail
+          npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npx playwright install chromium
+      - name: Download exact CI build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pr-browser-dist
+          path: dist
+      - name: Run release browser tests with isolated memory and diagnostics
         shell: bash
         run: |
           set -euo pipefail
-          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
-          npx playwright install chromium >/dev/null
-          PATRO_AUDIT_API=1 node scripts/serve-dist.mjs > /tmp/patro-pr-static.log 2>&1 &
+          test -s dist/index.html
+          echo 'CI Chromium preflight:'
+          free -h
+          cat /sys/fs/cgroup/memory.events 2>/dev/null || true
+          PATRO_AUDIT_API=1 node scripts/serve-dist.mjs >/tmp/patro-browser-server.log 2>&1 &
           server=$!
-          trap 'kill "$server" 2>/dev/null || true; cat /tmp/patro-pr-static.log' EXIT
+          trap 'status=$?; kill "$server" 2>/dev/null || true; cat /tmp/patro-browser-server.log; free -h; cat /sys/fs/cgroup/memory.events 2>/dev/null || true; exit "$status"' EXIT
           ready=false
           for i in {1..40}; do
             if curl -fsS http://127.0.0.1:4173/ >/dev/null 2>&1; then ready=true; break; fi
             sleep 1
           done
-          if [[ "$ready" != true ]]; then echo "::error::Static test server unavailable"; exit 1; fi
+          if [[ "$ready" != true ]]; then echo "::error::Static audit server did not start"; exit 1; fi
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-canonical-tools.cjs
-
-      - name: Documentation-only PR
-        if: steps.changes.outputs.any != 'true'
-        run: echo "Only documentation/non-runtime files changed; expensive application checks skipped."
