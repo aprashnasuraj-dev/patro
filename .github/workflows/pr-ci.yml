@@ -121,6 +121,19 @@ jobs:
           # fully prerendered dist output, not a bare Vite shell.
           npm run build
 
+      - name: Homepage preservation — voice, place, birthday, SEO and Free-plan regressions
+        if: steps.changes.outputs.ui == 'true' && steps.changes.outputs.full != 'true' && steps.changes.outputs.cloudflare != 'true'
+        run: |
+          set -euo pipefail
+          npm run test:typing
+          npm run test:place-birthday
+          npm run test:birthday-modules
+          npm run test:free-plan
+          npm run test:growth-pages
+          npm run test:growth
+          npm run test:cloudflare-contract
+          npm run test:release-safety
+
       - name: Patro tool tests
         if: steps.changes.outputs.tools == 'true' || steps.changes.outputs.full == 'true'
         run: npm run test:patro-tools
@@ -228,3 +241,22 @@ jobs:
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-canonical-tools.cjs
+          # Measure the same mobile Lighthouse laboratory route on the exact tested
+          # production artifact, not a newly rebuilt or redeployed copy.
+          # This is diagnostic until 90+ is actually measured; never invent success.
+          cat >/tmp/patro-mobile-lhci.json <<'LHCONFIG'
+          {"ci":{"collect":{"url":["http://127.0.0.1:4173/"],"numberOfRuns":1}}}
+          LHCONFIG
+          npx --yes @lhci/cli@0.15.1 collect --config=/tmp/patro-mobile-lhci.json
+          node --input-type=module <<'LHSUMMARY'
+          import { readdirSync, readFileSync } from "node:fs";
+          const files=readdirSync(".lighthouseci").filter(file=>/^lhr-.*\.json$/.test(file));
+          if(!files.length)throw new Error("Mobile Lighthouse did not produce LHR JSON");
+          const reports=files.map(file=>JSON.parse(readFileSync(".lighthouseci/"+file,"utf8")));
+          const score=Math.round(100*reports.reduce((sum,report)=>sum+(report.categories?.performance?.score||0),0)/reports.length);
+          const details=["first-contentful-paint","largest-contentful-paint","total-blocking-time","cumulative-layout-shift","speed-index"].map(id=>{const audit=reports[0].audits?.[id];return id+": "+(audit?.displayValue||"not recorded");}).join("; ");
+          console.log("MOBILE_LIGHTHOUSE_SCORE="+score+"/100");
+          console.log("MOBILE_LIGHTHOUSE_METRICS="+details);
+          if(process.env.GITHUB_STEP_SUMMARY){const {appendFileSync}=await import("node:fs");appendFileSync(process.env.GITHUB_STEP_SUMMARY,"Mobile Lighthouse: **"+score+"/100** (goal 90+)\\n\\n"+details+"\\n");}
+          if(score<90)console.log("::warning::Measured mobile homepage score "+score+" is below the 90 target; do not claim 90+ or release on this basis.");
+          LHSUMMARY
