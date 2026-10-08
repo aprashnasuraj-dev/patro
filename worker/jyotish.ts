@@ -449,10 +449,27 @@ async function rateAllowed(req: Request, env: JyotishEnv): Promise<boolean> {
   }
 }
 
+// Do not let unrelated websites send browser-originated paid chat requests.
+// The first-party SPA uses the request's own origin; workers.dev previews are
+// allowed on their own host. Non-browser clients without Origin remain subject
+// to the existing per-IP D1/local rate limit and content-size checks.
+function isAllowedChatOrigin(req: Request): boolean {
+  const origin = req.headers.get("origin");
+  if (!origin) return true;
+  try {
+    const provided = new URL(origin);
+    const current = new URL(req.url);
+    return provided.origin === current.origin || provided.origin === "https://aafnaipatro.com";
+  } catch {
+    return false;
+  }
+}
+
 export async function handleJyotishChat(req: Request, env: JyotishEnv) {
   const requestId = crypto.randomUUID();
 
   if (req.method === "OPTIONS") {
+    if (!isAllowedChatOrigin(req)) return json({ error: "forbidden_origin", request_id: requestId }, 403);
     return new Response(null, {
       status: 204,
       headers: {
@@ -474,6 +491,11 @@ export async function handleJyotishChat(req: Request, env: JyotishEnv) {
 
   if (req.method !== "POST") {
     return json({ error: "method_not_allowed", request_id: requestId }, 405, { allow: "GET,POST,OPTIONS" });
+  }
+
+  // Also block text/plain simple POSTs that can bypass CORS preflight.
+  if (!isAllowedChatOrigin(req)) {
+    return json({ error: "forbidden_origin", request_id: requestId }, 403);
   }
 
   if (!(await rateAllowed(req, env))) {

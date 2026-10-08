@@ -76,7 +76,7 @@ function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},
 
 export function PatroRouter(){
  const[path,setPath]=useState(currentPath);
- useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.hasAttribute("download")||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);document.removeEventListener("click",onClick)}},[]);
+ useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.hasAttribute("download")||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);addEventListener("patro:navigation",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);removeEventListener("patro:navigation",onPop);document.removeEventListener("click",onClick)}},[]);
  const render=()=>{
    if(path==="/guides"||path.startsWith("/guides/"))return <GuidePage path={path}/>;
    const legacy=LEGACY_REDIRECTS[path];if(legacy)return <Redirect to={legacy}/>;
@@ -88,7 +88,7 @@ export function PatroRouter(){
    if(path==="/nepal-sambat/mandala")return <NepalSambatPage/>;
    const community=path.match(COMMUNITY_SUITE_ROUTE);if(community)return <CommunitySuitePage suiteId={community[1] as SuiteId}/>;
    if(path==="/settings/community")return <CommunityPreferences/>;
-   const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <ReferenceHomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
+   const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal){const year=Number(cal[1]),month=Number(cal[2]);if(year>=1883&&year<=2093&&month>=1&&month<=12)return <ReferenceHomePage calendarYear={year} calendarMonth={month}/>;return <NotFoundPage/>;}
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
    if(path==="/janmadin")return <BirthdayPage/>;
