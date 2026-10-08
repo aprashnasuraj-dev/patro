@@ -44,7 +44,7 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   "/astrology": "/rashifal",
   "/nepal-sambat": "/nepal-sambat/mandala",
 };
-const SPA_EXACT = new Set([
+const SPA_EXACT = new Set(["/janmadin",
   "/", "/today", "/methodology", "/corrections", "/tools", "/tools/astro", "/me", "/convert", "/rashifal", "/samachar", "/fm", "/tv",
   "/time-machine", "/on-this-day", "/festivals", "/janmapatro", "/janmapatro/milan.html", "/jyotish/china", "/jyotish/matchmaking", "/privacy", "/terms",
   "/about", "/sources", "/contact", "/developers", "/offline", "/samudaya", "/nepal-sambat/mandala",

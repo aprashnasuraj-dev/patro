@@ -103,3 +103,35 @@ describe('voice + tts helpers', () => {
     expect(tool).toContain('Accurate');
   });
 });
+
+describe('opt-in voice cleanup', () => {
+  it('accepts spaced and borrowed punctuation without changing mixed English words', () => {
+    expect(postProcessDictation('आज meeting छ पूर्ण विराम')).toBe('आज meeting छ।');
+    expect(postProcessDictation('हो कमा किन प्रश्न चिन्ह')).toBe('हो, किन?');
+    expect(postProcessDictation('पहिलो नयाँ हरफ दोस्रो फुलस्टप')).toBe('पहिलो\nदोस्रो।');
+  });
+  it('leaves spoken numbers unchanged by default and converts supported numbers only on request', () => {
+    expect(postProcessDictation('सात बजे')).toBe('सात बजे');
+    expect(postProcessDictation('दुई हजार तीन सय पच्चीस', { spokenNumbers: true })).toBe('२३२५');
+    expect(postProcessDictation('सात बजेर तीस', { spokenNumbers: true })).toBe('७ बजेर ३०');
+  });
+  it('uses the existing joiner normalization and protects links under optional transliteration', () => {
+    expect(postProcessDictation('र्\u200Dयाल')).toBe('र्\u200Dयाल');
+    expect(postProcessDictation('क्\u200Dष क्\u200Cष')).toBe('क्ष क्ष');
+    expect(postProcessDictation('meeting https://example.com a@example.com', { transliterateLatin: () => 'लिपि' })).toBe('लिपि https://example.com a@example.com');
+  });
+});
+
+
+describe('Nepali copula versus six in dictation', () => {
+  it('preserves the requested sentence with number cleanup on or off', () => {
+    for (const spokenNumbers of [false,true]) for (const ending of ['छ','6','६']) {
+      expect(postProcessDictation(`आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य ${ending}.`,{spokenNumbers})).toBe('आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य छ.');
+    }
+    expect(postProcessDictation('आज meeting छ पूर्ण विराम',{spokenNumbers:true})).toBe('आज meeting छ।');
+  });
+  it('keeps numeric six in explicit quantities, clocks and compounds', () => {
+    for (const [raw,want] of [['छ बजे','६ बजे'],['छ वटा','६ वटा'],['छ हजार','६०००'],['छ','६'],['आज 6 गते हो','आज ६ गते हो'],['उत्तर 6.','उत्तर ६.']]) expect(postProcessDictation(raw,{spokenNumbers:true})).toBe(want);
+    expect(postProcessDictation('Capacity 6.',{language:'en-US',spokenNumbers:true})).toBe('Capacity 6.');
+  });
+});

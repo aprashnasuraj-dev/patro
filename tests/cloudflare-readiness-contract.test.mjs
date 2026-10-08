@@ -129,19 +129,26 @@ test("Worker KV put operations are limited to approved small-state files",async(
   assert.deepEqual(offenders,[]);
 });
 
-test("legacy Pages, static redirect and deploy-wrapper artifacts are absent",async()=>{
+test("legacy Pages and deploy-wrapper artifacts are absent; growth redirects are exact",async()=>{
   const obsolete=[
     "_routes.json",
     "public/_routes.json",
     "_redirects",
     "public/_redirects",
-    "dist/_redirects",
     "wrangler.toml",
     "scripts/deploy-cloudflare.mjs"
   ];
   for(const relative of obsolete){
     await assert.rejects(access(path.join(root,relative)),(error)=>error?.code==="ENOENT",`${relative} must not exist`);
   }
+});
+
+test("static growth slash redirects preserve canonical routes",async()=>{
+  const rules=(await read("dist/_redirects")).trim().split("\n");
+  const sitemap=await read("dist/sitemap-growth.xml");
+  const routes=[...sitemap.matchAll(/<loc>https:\/\/aafnaipatro\.com([^<]+)<\/loc>/g)].map(m=>m[1]);
+  assert.equal(routes.length,337);
+  assert.deepEqual(rules.sort(),routes.map(route=>`${route}/ ${route} 301`).sort());
 });
 
 test("legacy public aliases are handled by Worker redirects instead of static asset rules",async()=>{

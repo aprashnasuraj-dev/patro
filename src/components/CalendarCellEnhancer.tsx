@@ -1,3 +1,4 @@
+import {homeMonth} from '../home-calendar-client';
 import { useEffect } from "react";
 import { loadWeatherForecast } from "../weather-client";
 import { adToBs, bsToAd } from "../../packages/core/src";
@@ -177,9 +178,8 @@ export function CalendarCellEnhancer(){
         let useful=0;
         const cursor=visibleBsCursor();
         if(cursor){
-          const monthUrl=`/api/v1/calendar/${cursor.year}/${cursor.month}?calendar=bs&fresh=${CALENDAR_REFRESH_TOKEN}`;
-          const monthResponse=await fetch(monthUrl,{headers:{accept:"application/json"},cache:"no-store"});
-          if(monthResponse.ok){const monthBody=await monthResponse.json();useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[])}
+          const monthBody=await homeMonth(cursor.year,cursor.month,new AbortController().signal);
+          useful+=ingest(Array.isArray(monthBody?.days)?monthBody.days:[]);
         }
         if(useful===0){
           const rangeUrl=`/api/v1/sync?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&fresh=${CALENDAR_REFRESH_TOKEN}`;

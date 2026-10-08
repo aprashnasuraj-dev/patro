@@ -1,0 +1,9 @@
+# Step 2.5: sampled pageviews and covered daily rollups
+
+Only pv is sampled (default .1, 1–100 weight); hb, login, forms and errors remain unsampled. AAP_HIT_SAMPLE env overrides published analytics.sample; owner advanced settings edit sample and Cloudflare Web Analytics token. CF_WEB_ANALYTICS_TOKEN overrides the token; beacon is emitted only for valid configured tokens, using existing CSP hosts. No token has been invented or installed in production.
+
+0006_weighted_analytics_rollup.sql adds weight (old rows = 1), six dimension/time indexes, daily dimension aggregates and coverage markers. Existing ts and primary id indexes remain. Dashboards use weighted sums from completed whole-day rollups plus raw partial boundary/unrolled days, so no day is counted twice. The existing 43 2 cron fills all daily dimensions and a coverage marker in one D1 batch transaction. It then prunes covered raw rows only, after at least 90 days. Failed rollup leaves raw rows intact. No cron was added. Historical aggregates are retained.
+
+Weighted pageviews estimate totals; sampling cannot preserve exact distinct visitors. Dashboard labels say observed visitors. Live hb remains exact for received heartbeat events, but short visits omitted by pageview sampling are absent from presence until a heartbeat. This is a material sampling limitation, not a verified 90% reduction in all D1 writes. Heartbeats, auth and other application writes remain.
+
+Rollbacks: AAP_HIT_SAMPLE=1 restores every pv; clear CF_WEB_ANALYTICS_TOKEN/config token to disable beacon. Additive schema can remain; restoring old JS/handler safely uses default weight=1. Original APIs stay available. Python SQLite tests exercise actual migration, legacy weight, idempotent rollup and post-prune aggregate preservation. Production migration, three-day dashboard/request/write measurements await merge/deploy.

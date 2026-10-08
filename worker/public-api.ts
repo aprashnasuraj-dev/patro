@@ -342,6 +342,12 @@ export async function publicApiResponse(request:Request,env:PublicEnv):Promise<R
  const url=new URL(request.url),path=url.pathname;
  if(path==="/api/v1/today"&&request.method==="GET")return todayRoute(env,url);
  if(path==="/api/v1/convert"&&request.method==="GET")return convertRoute(env,url);
+ if(path==="/api/v1/events"&&request.method==="GET"){
+  const [festivalResponse,holidayResponse]=await Promise.all([festivalsRoute(env,url),holidaysRoute(env,url)]);
+  if(!festivalResponse.ok)return festivalResponse;if(!holidayResponse.ok)return holidayResponse;
+  const [festivals,holidayItems]=await Promise.all([festivalResponse.json(),holidayResponse.json()]) as any[];
+  return json({ok:true,year:festivals.year,items:[...festivals.items,...holidayItems.items]},200,LONG);
+ }
  if(path==="/api/v1/festivals"&&request.method==="GET")return festivalsRoute(env,url);
  if(path==="/api/v1/holidays"&&request.method==="GET")return holidaysRoute(env,url);
  if(path==="/api/v1/market/latest"&&request.method==="GET")return latestMarket(env,url);

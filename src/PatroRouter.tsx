@@ -1,3 +1,4 @@
+import { PlaceTimingMount } from './place/PlaceTimingMount';
 import { lazy, Suspense, useEffect, useState } from "react";
 import { MePage, NotFoundPage, SamacharPage, ToolsPage } from "./AafnaiPages";
 import { ReferenceHomePage } from "./ReferenceHomePage";
@@ -14,6 +15,8 @@ import { RashifalExperience } from "./rashifal/RashifalExperience";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 import type { SuiteId } from "./patro-tools/communities/registry";
 
+const BirthdayPage=lazy(()=>import('./birthday/BirthdayPage'));
+const PlacePage=lazy(()=>import('./place/PlacePage'));
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
@@ -64,7 +67,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -88,6 +91,9 @@ export function PatroRouter(){
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <ReferenceHomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
+   if(path==="/janmadin")return <BirthdayPage/>;
+   if(path==="/tools/janmadin-akhbar"&&new URLSearchParams(location.search).get("birthday")==="1")return <><PatroToolsShell slug="janmadin-akhbar"/><BirthdayPage/></>;
+   if(path==="/tools/my-place")return <PlacePage/>;
    if(path==="/tools/astro")return <AstroPage/>;
    if(path==="/me")return <MePage/>;
    if(path==="/me/diary"||path==="/me/notes"||path==="/me/planner")return <MyDiary/>;
@@ -116,5 +122,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><PlaceTimingMount path={path}/><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
 }

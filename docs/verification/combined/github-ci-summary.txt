@@ -1,0 +1,8 @@
+GitHub PR CI passed on fed4665a0443712c3ef412b584c9e4c631603bed.
+Run: https://github.com/aprashnasuraj-dev/patro/actions/runs/37761473970
+Includes the newly required place, birthday, free-plan and growth regression step.
+This precedes the isolated static-icon/OG follow-up; final head is verified separately.
+
+URL preservation passed: 22902 existing URLs retained; 7 added; 0 removed (public).
+URL preservation passed: 22902 existing URLs retained; 344 added; 0 removed (dist).
+Final static file budget: 3713 / 19500

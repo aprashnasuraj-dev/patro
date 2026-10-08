@@ -160,25 +160,6 @@ export async function fastHistoryResponse(request: Request, env: Env) {
 
   const [, month, day] = date.split("-").map(Number);
 
-  // R2 is the preferred public archive. It is independent of the D1 daily read/write quota.
-  if (env.ARCHIVE) {
-    try {
-      const r2Rows = await queryR2Records(env.ARCHIVE, month, day);
-      if (r2Rows !== null) {
-        const records = sortRecords(r2Rows.filter(isPublished));
-        return response({
-          ok: true,
-          date,
-          count: records.length,
-          items: records,
-          source: "Cloudflare R2 On This Day archive",
-        }, 200, "cloudflare-r2-history");
-      }
-    } catch {
-      // Continue to the immutable packaged copy if the R2 binding/object is unavailable.
-    }
-  }
-
   // Every production build packages the same versioned monthly archive into static assets.
   // This is the availability floor: it requires neither an R2 binding nor a D1 query.
   if (env.ASSETS) {
@@ -196,6 +177,26 @@ export async function fastHistoryResponse(request: Request, env: Env) {
       }
     } catch {
       // Fall through to D1 only if the packaged archive is unexpectedly unavailable/corrupt.
+    }
+  }
+
+
+  // R2 is the preferred public archive. It is independent of the D1 daily read/write quota.
+  if (env.ARCHIVE) {
+    try {
+      const r2Rows = await queryR2Records(env.ARCHIVE, month, day);
+      if (r2Rows !== null) {
+        const records = sortRecords(r2Rows.filter(isPublished));
+        return response({
+          ok: true,
+          date,
+          count: records.length,
+          items: records,
+          source: "Cloudflare R2 On This Day archive",
+        }, 200, "cloudflare-r2-history");
+      }
+    } catch {
+      // Continue to the immutable packaged copy if the R2 binding/object is unavailable.
     }
   }
 

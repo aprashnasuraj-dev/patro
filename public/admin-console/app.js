@@ -356,7 +356,7 @@
       if (idx % every !== 0 && idx !== n - 1) return;
       var t = svg("text", { class: "axis", x: L + idx * bw + bw / 2, y: H - 6, "text-anchor": "middle" }); t.textContent = bucketLabel(s.bucket, bucket); g.appendChild(t);
     });
-    return h("div", null, g, h("div", { class: "legend" }, h("span", null, h("i", { style: { background: "var(--leaf)" } }), "Page views"), h("span", null, h("i", { style: { background: "var(--marigold-bright)" } }), "Visitors")));
+    return h("div", null, g, h("div", { class: "legend" }, h("span", null, h("i", { style: { background: "var(--leaf)" } }), "Page views"), h("span", null, h("i", { style: { background: "var(--marigold-bright)" } }), "Observed visitors")));
   }
   function meterList(rows, labelKey, valueKey, fmtLabel) {
     if (!rows || !rows.length) return h("p", { class: "empty" }, "No data yet.");
@@ -388,9 +388,9 @@
             h("div", null, liveNum, h("div", { class: "cap" }, h("span", { class: "pulse", "aria-hidden": "true" }), "on the site right now")),
             h("div", null, h("div", { class: "big" }, d.live.signedInNow == null ? "—" : num(d.live.signedInNow)), h("div", { class: "cap" }, "signed-in users active"))),
           h("section", { class: "kpis", "aria-label": "Key numbers" },
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.views)), h("div", { class: "l" }, "Page views today")),
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.visitors)), h("div", { class: "l" }, "Visitors today")),
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.week.totals.visitors)), h("div", { class: "l" }, "Visitors, last 7 days"), delta(d.week.totals.visitors, d.week.previous.visitors)),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.views)), h("div", { class: "l" }, "Estimated page views today")),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.visitors)), h("div", { class: "l" }, "Observed visitors today")),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.week.totals.visitors)), h("div", { class: "l" }, "Observed visitors, last 7 days"), delta(d.week.totals.visitors, d.week.previous.visitors)),
             h("div", { class: "kpi" }, h("div", { class: "v" }, d.users.available ? num(d.users.total) : "—"), h("div", { class: "l" }, "Registered users"), d.users.available && d.users.new7 ? h("span", { class: "delta up" }, "+" + num(d.users.new7) + " this week") : null)),
           h("div", { class: "grid grid-2", style: { gridTemplateColumns: "minmax(0,1.6fr) minmax(0,1fr)" } },
             h("section", { class: "panel" }, h("div", { class: "panel-head" }, h("h2", null, "Last 7 days"), h("a", { href: "#/traffic", class: "small" }, "Full traffic report")), trafficChart(d.week.series, "day")),
@@ -442,12 +442,13 @@
       }));
       var edge = h("section", { class: "panel" }, h("div", { class: "panel-head" }, h("div", null, h("h2", null, "Cloudflare edge"), h("p", null, "All requests at the edge, including bots and API calls."))), h("p", { class: "muted" }, "Loading…"));
       add(el, [
-        pageHead("Traffic", "Counted from real browsers with an anonymous daily visitor ID — no cookies. Times are Nepal time.", seg),
+        pageHead("Traffic · weighted estimates / observed visitors", "Counted from real browsers with an anonymous daily visitor ID — no cookies. Times are Nepal time.", seg),
         h("section", { class: "kpis" },
           h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.totals.views)), h("div", { class: "l" }, "Page views"), delta(d.totals.views, d.previous.views)),
-          h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.totals.visitors)), h("div", { class: "l" }, "Visitors"), delta(d.totals.visitors, d.previous.visitors)),
-          h("div", { class: "kpi" }, h("div", { class: "v" }, d.totals.visitors ? (d.totals.views / d.totals.visitors).toFixed(1) : "0"), h("div", { class: "l" }, "Pages per visitor")),
+          h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.totals.visitors)), h("div", { class: "l" }, "Observed visitors"), delta(d.totals.visitors, d.previous.visitors)),
+          h("div", { class: "kpi" }, h("div", { class: "v" }, d.totals.visitors ? (d.totals.views / d.totals.visitors).toFixed(1) : "0"), h("div", { class: "l" }, "Estimated views / observed visitor")),
           h("div", { class: "kpi" }, h("div", { class: "v" }, (d.devices.find(function (x) { return x.device === "mobile"; }) || { visitors: 0 }).visitors && d.totals.visitors ? Math.round(100 * d.devices.find(function (x) { return x.device === "mobile"; }).visitors / d.devices.reduce(function (a, b) { return a + b.visitors; }, 0)) + "%" : "—"), h("div", { class: "l" }, "On mobile"))),
+        h("p", { class: "muted small" }, d.measurement || "Weighted estimates; observed sampled visitors are not total unique visitors."),
         h("section", { class: "panel" }, trafficChart(d.series, d.bucket)),
         h("div", { class: "grid grid-2", style: { marginTop: "1rem" } },
           h("section", { class: "panel" }, h("div", { class: "panel-head" }, h("h2", null, "Pages")), pagesTable(d.paths)),
@@ -477,7 +478,7 @@
   function pagesTable(rows) {
     if (!rows.length) return h("p", { class: "empty" }, "No page views recorded yet. They appear within a minute of the first visit after deploy.");
     return h("div", { class: "table-wrap" }, h("table", { class: "t" },
-      h("thead", null, h("tr", null, h("th", null, "Page"), h("th", { class: "num" }, "Views"), h("th", { class: "num" }, "Visitors"))),
+      h("thead", null, h("tr", null, h("th", null, "Page"), h("th", { class: "num" }, "Views"), h("th", { class: "num" }, "Observed visitors"))),
       h("tbody", null, rows.map(function (r) {
         return h("tr", null, h("td", null, h("a", { href: r.path, target: "_blank", rel: "noopener" }, r.path)), h("td", { class: "num" }, num(r.views)), h("td", { class: "num" }, num(r.visitors)));
       }))));
@@ -908,6 +909,8 @@
     add(el, [
       h("section", { class: "panel stack" }, h("h2", null, "Visitor counting"),
         sw("Count visitors (anonymous, no cookies)", S.draft.analytics.enabled, function (v) { S.draft.analytics.enabled = v; changed("advanced"); }),
+        h("label", {}, "Pageview sample (0.01–1)", h("input", {type:"number",min:0.01,max:1,step:0.01,value:S.draft.analytics.sample||0.1,onchange:function(e){S.draft.analytics.sample=Math.min(1,Math.max(0.01,Number(e.target.value)||0.1));changed("advanced");}})),
+        h("label", {}, "Cloudflare Web Analytics token", h("input", {value:S.draft.analytics.webAnalyticsToken||"",maxlength:32,onchange:function(e){S.draft.analytics.webAnalyticsToken=e.target.value;changed("advanced");}})),
         h("p", { class: "muted small", style: { margin: 0 } }, "Turning this off stops new traffic and live numbers after you publish.")),
       h("section", { class: "panel stack" }, h("h2", null, "Custom CSS"),
         h("p", { class: "muted small", style: { margin: 0 } }, "Added after the site's own styles. The site's colour variables work here: --brand-600, --surface, --surface-2, --ink-900, --radius, --holiday."), css),

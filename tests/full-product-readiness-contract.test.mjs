@@ -175,7 +175,8 @@ test("production runtime stays on the single canonical Worker config",()=>{
   assert.equal(wrangler.assets?.directory,"./dist");
   assert.equal(wrangler.assets?.binding,"ASSETS");
   assert.equal(wrangler.assets?.not_found_handling,"none");
-  assert.deepEqual(wrangler.assets?.run_worker_first,["/*","!/assets/*"]);
+  assert.deepEqual(wrangler.assets?.run_worker_first.slice(0,2),["/*","!/assets/*"]);
+  for(const path of ["!/moon","!/eclipse/*","!/nepal/*","!/weather/*","!/aap/analytics.js","!/data/*"])assert.ok(wrangler.assets.run_worker_first.includes(path));
   assert.ok((wrangler.d1_databases||[]).some((db)=>db?.binding==="DB"),"DB binding missing");
   assert.ok((wrangler.routes||[]).some((route)=>route?.pattern==="aafnaipatro.com"&&route?.custom_domain===true),"canonical custom domain missing");
 });

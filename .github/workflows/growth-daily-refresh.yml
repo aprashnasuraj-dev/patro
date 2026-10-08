@@ -1,0 +1,23 @@
+name: Daily refresh of static growth pages
+
+# Cloudflare Free plan: growth pages are static files, so a daily deploy refreshes the server-rendered
+# "today" snapshot that crawlers see (visitors already get live values in the browser).
+# This reuses the production deploy workflow instead of duplicating it. GitHub Actions minutes are free
+# for public repositories; Cloudflare Workers Builds minutes (3,000/month on Free) are not used.
+on:
+  schedule:
+    - cron: "20 18 * * *"   # 00:05 Nepal time (UTC+5:45)
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the production deploy workflow on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run release-gate.yml --ref main -R "${{ github.repository }}"

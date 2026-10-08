@@ -1,4 +1,6 @@
 type QuotaCacheEnv = {
+  ASSETS?:any;
+  REFERENCE_R2_FIRST?:string;
   ARCHIVE?: any;
   CALENDAR_SOURCE_VERSION?: string;
   PUBLIC_REFERENCE_CACHE_VERSION?: string;
@@ -171,6 +173,7 @@ function policyFor(request: Request): CachePolicy | null {
     path === "/api/v1/today" ||
     path === "/api/v1/panchang" ||
     path === "/api/v1/holidays" ||
+    path === "/api/v1/events" ||
     path === "/api/v1/festivals" ||
     path === "/api/v1/tools/official-sait" ||
     path === "/api/v1/market/latest" ||
@@ -298,7 +301,9 @@ export async function quotaCachedResponse(
   ctx: Pick<ExecutionContext, "waitUntil">,
   producer: FastProducer,
 ): Promise<Response | null> {
-  const policy = policyFor(request);
+  let policy = policyFor(request);
+  // Immutable packaged datasets require no durable origin read/write per view.
+  if(policy&&env.ASSETS&&env.REFERENCE_R2_FIRST!=="1"&&["history","calendar-month","calendar-today","time-machine"].includes(policy.group))policy={...policy,durable:false};
   if (!policy) return producer();
 
   if (typeof caches !== "undefined") {

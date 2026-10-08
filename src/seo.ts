@@ -19,6 +19,7 @@ export function resolveRouteSeo(path:string){
   const guide=guides.find(row=>clean==="/guides/"+row.slug);
   let row=guide||catalog[edge.canonicalPath||clean]||edge;
   if(clean==="/guides")row={title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति रूपान्तरण, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।"};
+  if(clean==="/janmadin")row={title:"मेरो असली जन्मदिन · Three Birthdays",description:"AD, BS र तिथि जन्मदिन, निजी स्थानीय जन्म-पञ्चाङ्ग र नेपालका सांस्कृतिक पात्रो।"};
   const date=clean.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
   if(date)row={title:`${date[1]} नेपाली मिति · Date Details`,description:`${date[1]} को बिक्रम संवत्, तिथि, नेपाल संवत् र चाडपर्व विवरण।`};
   const privateRoute=/^\/(me|admin|auth|api|compat-api|notes|planner|settings|family|my-data|my-diary)(\/|$)/.test(clean);

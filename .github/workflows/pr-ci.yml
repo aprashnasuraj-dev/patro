@@ -153,6 +153,16 @@ jobs:
         if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
         run: npm run test:cloudflare-contract
 
+      - name: Place, birthday and free-plan regressions
+        if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
+        run: |
+          set -euo pipefail
+          npm run test:place-birthday
+          npm run test:birthday-modules
+          npm run test:free-plan
+          npm run test:growth-pages
+          npm run test:growth
+
       - name: Cross-cutting safety tests
         if: steps.changes.outputs.full == 'true'
         run: |

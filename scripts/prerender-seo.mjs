@@ -53,6 +53,7 @@ function monthMeta(year, monthNumber) {
   return { title, description, month, aliases: [`Nepali calendar ${year} ${month.en}`, `${month.ne} ${year} पात्रो`, `${month.aliases} ${year}`] };
 }
 function pageMeta(path) {
+  if(path==="/janmadin")return {title:"मेरो असली जन्मदिन · AD, BS and Tithi Birthday",description:"Private device-local birthday calculations, cultural calendars and reflection with Aafnai Patro.",aliases:[]};
   const match = path.match(/^\/calendar\/(\d{4})\/(\d{2})$/);
   if (match) return monthMeta(Number(match[1]), Number(match[2]));
   if (INTENT_META[path]) return INTENT_META[path];

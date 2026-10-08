@@ -1,17 +1,19 @@
-import type { WeatherDailyPayload } from "./types";
-
-const forecasts = new Map<string, { until: number; promise: Promise<WeatherDailyPayload> }>();
-/** One shared request for the homepage and calendar icons; refresh on next use after 30 minutes. */
-export function loadWeatherForecast(lat?: number, lng?: number) {
-  const path = lat === undefined ? "/api/v1/weather/daily?days=16" : `/api/v1/weather/daily?days=16&lat=${lat}&lng=${lng}`;
-  const cached = forecasts.get(path);
-  if (cached && cached.until > Date.now()) return cached.promise;
-  const promise = fetch(path, { headers: { accept: "application/json" } }).then(async response => {
-    if (!response.ok) throw new Error("weather_unavailable");
-    const body = await response.json() as WeatherDailyPayload;
-    if (!body.ok || !Array.isArray(body.days) || !body.days.length) throw new Error("weather_unavailable");
-    return body;
-  }).catch(error => { forecasts.delete(path); throw error; });
-  forecasts.set(path, { until: Date.now() + 30 * 60_000, promise });
-  return promise;
+import type { WeatherDailyPayload } from './types';
+import {normalizeWeather} from './weather-normalize';
+const forecasts=new Map<string,{until:number;promise:Promise<WeatherDailyPayload>}>();
+const TTL=30*60_000;
+export function loadWeatherForecast(lat=27.7172,lng=85.3240){
+ const path=`/api/v1/weather/daily?days=16&lat=${lat}&lng=${lng}`,key=`patro.weather.v1:${lat}:${lng}`;
+ const cached=forecasts.get(path);if(cached&&cached.until>Date.now())return cached.promise;
+ const promise=(async()=>{
+  try{const old=JSON.parse(sessionStorage.getItem(key)||'null');if(old?.until>Date.now()&&old.body?.ok&&Array.isArray(old.body.days)&&old.body.days.length)return old.body as WeatherDailyPayload;}catch{}
+  let body:WeatherDailyPayload;
+  try{
+   const url=new URL('https://api.open-meteo.com/v1/forecast');url.search=new URLSearchParams({latitude:String(lat),longitude:String(lng),daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum',timezone:'Asia/Kathmandu',forecast_days:'16'}).toString();
+   const response=await fetch(url,{signal:AbortSignal.timeout(6500),headers:{accept:'application/json'}});if(!response.ok)throw Error('weather_upstream_unavailable');body=normalizeWeather(await response.json(),lat,lng);
+  }catch{
+   const response=await fetch(path,{headers:{accept:'application/json'}});if(!response.ok)throw Error('weather_unavailable');body=await response.json();if(!body.ok||!Array.isArray(body.days)||!body.days.length)throw Error('weather_unavailable');
+  }
+  try{sessionStorage.setItem(key,JSON.stringify({until:Date.now()+TTL,body}));}catch{}return body;
+ })().catch(error=>{forecasts.delete(path);throw error;});forecasts.set(path,{until:Date.now()+TTL,promise});return promise;
 }

@@ -10,6 +10,8 @@ export default defineConfig({
   plugins: [react(), {
     name: "installed-app-asset-manifest",
     generateBundle(_options, bundle) {
+      const festival=Object.values(bundle).find(item => item.type === 'chunk' && item.name === 'placeFestival');
+      if (festival && festival.type === 'chunk') this.emitFile({ type: 'asset', fileName: 'assets/place-festival.js', source: `import './${festival.fileName.split('/').pop()}';` });
       const assets = Object.keys(bundle).filter(name => /\.(?:m?js|css|woff2?)$/.test(name)).map(name => "/" + name).sort();
       this.emitFile({type: "asset", fileName: "pwa-optional-assets.json", source: JSON.stringify({version: 1, assets})});
     }
@@ -35,6 +37,7 @@ export default defineConfig({
     sourcemap: false,
     cssCodeSplit: true,
     rollupOptions: {
+      input: { main: fileURLToPath(new URL("./index.html", import.meta.url)), placeFestival: fileURLToPath(new URL("./src/place/festival-entry.tsx", import.meta.url)) },
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return undefined;

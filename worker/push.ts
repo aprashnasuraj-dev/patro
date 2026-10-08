@@ -29,6 +29,7 @@ function safeSubscription(row:any):PushSubscription|null{
 }
 
 async function readPushGate(env:PushEnv){
+  if(env.PUSH_KV_GATE!=="1")return null;
   if(!env.CACHE)return null;
   try{
     const raw=await env.CACHE.get(PUSH_GATE_KEY,"text");
@@ -38,16 +39,19 @@ async function readPushGate(env:PushEnv){
   }catch{return null}
 }
 async function writePushGate(env:PushEnv,wakeAtMs:number){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
   try{await env.CACHE.put(PUSH_GATE_KEY,JSON.stringify({wake_at_ms:wakeAtMs,updated_at:new Date().toISOString()}),{expirationTtl:48*3600})}catch{}
 }
 async function notePushDue(env:PushEnv,wakeAtMs:number){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
   const current=await readPushGate(env);
   if(current!=null&&current<=wakeAtMs&&current>Date.now()-30_000)return;
   await writePushGate(env,wakeAtMs);
 }
 async function invalidatePushGate(env:PushEnv){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE)return;
   try{await env.CACHE.delete(PUSH_GATE_KEY)}catch{}
 }
@@ -142,10 +146,10 @@ async function subscribe(request:Request,env:PushEnv,session:any){
   const ua=String(body?.user_agent_family||request.headers.get("user-agent")||"unknown").slice(0,240);
   const tz=String(body?.timezone||"Asia/Kathmandu").slice(0,64);
   const quiet=body?.quiet_hours&&typeof body.quiet_hours==="object"?JSON.stringify(body.quiet_hours):null;
-  await env.DB.prepare(
-    "insert into push_subscriptions(device_id,device_secret_hash,user_id,endpoint,keys,user_agent_family,timezone,quiet_hours,created_at) values(?1,?2,?3,?4,?5,?6,?7,?8,datetime('now')) on conflict(endpoint) do update set user_id=excluded.user_id,keys=excluded.keys,user_agent_family=excluded.user_agent_family,timezone=excluded.timezone,quiet_hours=excluded.quiet_hours"
-  ).bind(deviceId,secretHash,session.user_id,endpoint,JSON.stringify(keys),ua,tz,quiet).run();
-  return json({ok:true,device_id:deviceId,device_secret:secret});
+  const stored=await env.DB.prepare(
+    "insert into push_subscriptions(device_id,device_secret_hash,user_id,endpoint,keys,user_agent_family,timezone,quiet_hours,created_at) values(?1,?2,?3,?4,?5,?6,?7,?8,datetime('now')) on conflict(endpoint) do update set user_id=excluded.user_id,keys=excluded.keys,user_agent_family=excluded.user_agent_family,timezone=excluded.timezone,quiet_hours=excluded.quiet_hours returning device_id"
+  ).bind(deviceId,secretHash,session.user_id,endpoint,JSON.stringify(keys),ua,tz,quiet).first<{device_id:string}>();
+  return json({ok:true,device_id:stored?.device_id||deviceId,device_secret:secret});
 }
 async function jobs(request:Request,env:PushEnv,session:any){
   if(request.method==="GET"){

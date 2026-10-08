@@ -81,7 +81,7 @@ export function PwaInstallExperience(){
 
   useEffect(()=>{const handler=()=>{void install()};window.addEventListener("patro:install",handler);return()=>window.removeEventListener("patro:install",handler)},[installed,promptEvent]);
   const footerAction=<button className={`ap-install-footer${installed?" is-installed":""}`} type="button" onClick={install} disabled={installed} aria-label={installed?"आफ्नै पात्रो इन्स्टल भइसकेको छ":"आफ्नै पात्रो एप इन्स्टल गर्नुहोस्"}>
-    <span aria-hidden="true">{installed?"✓":"↓"}</span>{installed?"App installed":"Install app"}
+    <span aria-hidden="true">{installed?"✓":"↓"}</span>{installed?"एप इन्स्टल भयो":"एप डाउनलोड"}
   </button>;
 
   return <>

@@ -171,7 +171,9 @@
   var lastPath = null;
   function beacon(kind) {
     if (!cfg.analytics) return;
-    var body = JSON.stringify({ t: kind, p: location.pathname, r: kind === "pv" && lastPath === null ? document.referrer : "" });
+    var sample=Math.min(1,Math.max(0.01,Number(cfg.sample)||0.1));
+    if(kind==='pv'&&Math.random()>=sample)return;
+    var body = JSON.stringify({ t: kind, weight:kind==='pv'?1/sample:1,p: location.pathname, r: kind === "pv" && lastPath === null ? document.referrer : "" });
     try {
       if (navigator.sendBeacon && navigator.sendBeacon("/api/aap/hit", new Blob([body], { type: "application/json" }))) return;
     } catch (e) { /* fall through */ }

@@ -1,3 +1,4 @@
+import {loadHistoryDay} from "../history-client";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
 type DeferredInstallPrompt = Event & {
@@ -150,8 +151,7 @@ function HistoryPulse() {
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`/api/v1/on-this-day?date=${todayNepal()}`, { headers: { accept: "application/json" }, signal: controller.signal })
-      .then((response) => response.ok ? response.json() : Promise.reject())
+    loadHistoryDay(todayNepal(),controller.signal)
       .then((payload) => setItems(Array.isArray(payload?.items) ? payload.items.slice(0, 12) : []))
       .catch(() => setItems([]));
     return () => controller.abort();

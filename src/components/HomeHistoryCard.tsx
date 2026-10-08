@@ -1,3 +1,4 @@
+import {loadHistoryDay} from "../history-client";
 import { useEffect, useState } from "react";
 import { neDigits } from "../nepaliDate";
 
@@ -71,13 +72,7 @@ export function HomeHistoryCard({ language, todayAd }: { language: Lang; todayAd
       for (const delay of HISTORY_RETRY_DELAYS) {
         try {
           await sleep(delay, controller.signal);
-          const response = await fetch(`/api/v1/on-this-day?date=${encodeURIComponent(liveToday)}&fresh=${HISTORY_REFRESH_TOKEN}&rev=${HISTORY_REFRESH_TOKEN}`, {
-            signal: controller.signal,
-            cache: "no-store",
-            headers: { accept: "application/json" },
-          });
-          if (!response.ok) throw new Error(`history_http_${response.status}`);
-          const payload = await response.json();
+          const payload = await loadHistoryDay(liveToday,controller.signal);
           const list = (payload?.items || []).map((row: any) => toMoment(row, language)).filter(Boolean) as Moment[];
           list.sort((a, b) => Number(b.highlight) - Number(a.highlight) || b.importance - a.importance || b.year.localeCompare(a.year));
           if (!controller.signal.aborted) {
