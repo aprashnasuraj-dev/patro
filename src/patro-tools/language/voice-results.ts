@@ -25,7 +25,8 @@ export class VoiceResultDiff {
         if (words.slice(0, overlap).every((word, i) => word === this.committed[this.committed.length - overlap + i])) { skip = Math.max(skip, overlap); break; }
       }
     }
-    this.firstInSession = false; this.previous = words;
+    this.firstInSession = false;
+    if (words.length >= this.previous.length) this.previous = words;
     const delta = words.slice(skip); this.committed.push(...delta);
     return delta.join(' ');
   }

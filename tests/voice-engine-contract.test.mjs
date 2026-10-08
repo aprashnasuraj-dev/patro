@@ -99,3 +99,25 @@ test('browser guidance distinguishes service failure from permission and removes
   }
   assert.equal(api.voiceBrowserGuidance('iPhone Safari', 'https://aafnaipatro.com/').ios, true);
 });
+
+test('local recognition requires a local pack, handles installation, and times out stalled availability/downloads', async () => {
+  const output = await build({ entryPoints: ['src/patro-tools/language/voice-local.ts'], bundle: true, write: false, format: 'cjs' });
+  const context = { module: { exports: {} }, Date, Promise, setTimeout, clearTimeout }; runInNewContext(output.outputFiles[0].text, context);
+  const api = context.module.exports; let installed = false;
+  const sr = { async available(options) { assert.equal(options.processLocally, true); assert.deepEqual([...options.langs], ['ne-NP']); return installed ? 'available' : 'downloadable'; }, async install(options) { assert.equal(options.processLocally, true); installed = true; return true; } };
+  assert.equal(await api.localSpeechStatus(sr, 'ne-NP', 30), 'downloadable');
+  assert.equal(await api.installLocalSpeech(sr, 'ne-NP', 30), 'available');
+  assert.equal(await api.localSpeechStatus(null, 'ne-NP'), 'unavailable');
+  assert.equal(await api.localSpeechStatus({ available: () => new Promise(() => {}) }, 'ne-NP', 5), 'unavailable');
+  assert.equal(await api.localSpeechStatus({ available: async () => 'downloading' }, 'ne-NP', 8), 'unavailable');
+  assert.equal(await api.installLocalSpeech({ install: () => new Promise(() => {}) }, 'ne-NP', 5), 'unavailable');
+  const controller = new AbortController(); controller.abort();
+  assert.equal(await api.localSpeechStatus(sr, 'ne-NP', 30, controller.signal), 'unavailable');
+});
+
+test('the bundled Roman voice adapter preserves the existing keyboard mappings', async () => {
+  const { transliterateRoman: original } = await import('../public/nepali-tools/core/roman.mjs');
+  const output = await build({ entryPoints: ['src/patro-tools/language/roman-keyboard.ts'], bundle: true, write: false, format: 'cjs' });
+  const context = { module: { exports: {} } }; runInNewContext(output.outputFiles[0].text, context);
+  for (const word of ['nepaal','namaste','kathmandu','English','school','ksh','gy','shr','aa','aai','chha','raam','mero','~','M','H','x','Hello world']) assert.equal(context.module.exports.transliterateRoman(word), original(word), word);
+});
