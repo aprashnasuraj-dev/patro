@@ -101,10 +101,51 @@ function fail(message) { throw new Error(message); }
   if (runtime.overflow > 1 || runtime.badCell) fail("rich calendar cells overflow the 375px mobile viewport");
   if (!runtime.todayHeading) fail("local-first today heading is empty with APIs down");
   if (errors.length) fail(`homepage browser errors: ${errors.join(" | ")}`);
+
+  // Regression for the public month/year selectors: URL changes MUST update
+  // the real React calendar, even when every API endpoint returns 503.
+  async function assertCalendarRoute(year, month) {
+    const path = `/calendar/${year}/${String(month).padStart(2, "0")}`;
+    await page.waitForURL((url) => url.pathname === path, { timeout: 12000 });
+    await page.waitForFunction(({ year, month }) => {
+      const yearSelect = document.querySelector('select[aria-label="विक्रम संवत् वर्ष"]');
+      const monthSelect = document.querySelector('select[aria-label="विक्रम संवत् महिना"]');
+      const cells = document.querySelectorAll(".rh-calendar .rh-grid .rh-cell:not(.is-empty)");
+      const active = document.querySelector(".rh-calendar .rh-card-head h2")?.textContent || "";
+      const label = document.querySelector(".rh-card-head h2")?.textContent || "";
+      return yearSelect?.value === String(year) && monthSelect?.value === String(month)
+        && cells.length >= 27 && Boolean(active || label);
+    }, { year, month }, { timeout: 12000 });
+    const data = await page.evaluate(() => ({
+      calendarDays: document.querySelectorAll(".rh-calendar .rh-grid .rh-cell:not(.is-empty)").length,
+      title: document.querySelector(".rh-calendar .rh-card-head h2")?.textContent?.trim(),
+      year: document.querySelector('select[aria-label="विक्रम संवत् वर्ष"]')?.value,
+      month: document.querySelector('select[aria-label="विक्रम संवत् महिना"]')?.value,
+    }));
+    if(data.calendarDays < 27 || data.year !== String(year) || data.month !== String(month) || !data.title) fail("Calendar picker blank or stale: "+JSON.stringify({ path, data }));
+    return data;
+  }
+  const pickerYear = page.getByRole("combobox", { name: "विक्रम संवत् वर्ष" });
+  const pickerMonth = page.getByRole("combobox", { name: "विक्रम संवत् महिना" });
+  await pickerMonth.selectOption("8");
+  const mangsir = await assertCalendarRoute(2083, 8);
+  await pickerYear.selectOption("2084");
+  await assertCalendarRoute(2084, 8);
+  await pickerMonth.selectOption("1");
+  await assertCalendarRoute(2084, 1);
+  await page.goBack();
+  await assertCalendarRoute(2084, 8);
+  await page.goBack();
+  await assertCalendarRoute(2083, 8);
+  await page.getByRole("button", { name: "अर्को महिना" }).click();
+  await assertCalendarRoute(2083, 9);
+  await page.reload({ waitUntil: "domcontentloaded" });
+  await assertCalendarRoute(2083, 9);
+  if (errors.length) fail(`month picker browser errors: ${errors.join(" | ")}`);
   await failureContext.close();
 
   await browser.close();
-  console.log(JSON.stringify({ ok: true, firstPaint: paint, apiFailureHome: runtime }, null, 2));
+  console.log(JSON.stringify({ ok: true, firstPaint: paint, apiFailureHome: runtime, calendarMonthPicker: mangsir }, null, 2));
 })().catch((error) => {
   console.error(error);
   process.exit(1);
