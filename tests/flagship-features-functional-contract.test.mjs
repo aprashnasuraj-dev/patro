@@ -80,7 +80,8 @@ test("My Space keeps Google/session-owned native private features and private in
  hasAll(auth,["/api/v1/auth/google","/api/v1/auth/me","/api/v1/auth/logout","/api/v1/me/state"],"auth APIs");
  hasAll(priv,["/api/family/state","/api/family/create","/api/ics/token"],"private APIs");
  assert.ok(seo.includes('index:false'));
- assert.ok(chrome.includes("isPrivatePath"));
+ assert.ok(chrome.includes("applyRouteSeo(path)"));
+ assert.ok(read("src/seo.ts").includes("privateRoute"));
 });
 
 test("PWA release warms flagship shells, complete Community Suite and local language tools",()=>{

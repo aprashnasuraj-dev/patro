@@ -1,3 +1,5 @@
+import guides from "../seo/guides.json";
+const GUIDE_PATHS=new Set(["/guides",...guides.map(row=>"/guides/"+row.slug)]);
 import productionWorker from "./entry";
 import { seoStaticResponse } from "./seo-static";
 import { rewriteConnectedSeo } from "./connected-seo";
@@ -84,7 +86,7 @@ function legacyRedirectResponse(request: Request) {
 function isSpaPath(pathname: string) {
   const path = cleanPath(pathname);
   if (path === "/tools/sw.js") return false;
-  return SPA_EXACT.has(path)
+  return GUIDE_PATHS.has(path) || SPA_EXACT.has(path)
     || isHistoryDayPath(path)
     || path.startsWith("/calendar/")
     || path.startsWith("/date/")

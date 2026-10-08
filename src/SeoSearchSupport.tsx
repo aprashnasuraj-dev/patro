@@ -15,7 +15,8 @@ const RELATED:[string,string][]=[
   ["/tools/bstoad","BS → AD"],
   ["/tools/adtobs","AD → BS"],
   ["/tools/sait","शुभ साइत"],
-  ["/tools","सबै tools"]
+  ["/tools","सबै tools"],
+  ["/guides","प्रयोग निर्देशिका"]
 ];
 
 function isPrimaryCalendarSurface(path:string){
@@ -28,7 +29,7 @@ export function SeoSearchSupport({path}:{path:string}){
   if(isPrimaryCalendarSurface(path))return null;
   const meta=pages[path];
   if(!meta)return null;
-  const related=RELATED.filter(([href])=>href!==path).slice(0,6);
+  const related=RELATED.filter(([href])=>href!==path).slice(0,9);
   return <section className="ap-search-support" aria-labelledby="search-support-title">
     <div className="ap-search-support-inner">
       <header className="ap-search-support-head">

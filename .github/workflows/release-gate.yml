@@ -99,6 +99,7 @@ jobs:
           HEAVY_RELEASE: ${{ steps.scope.outputs.heavy }}
         run: |
           set -euo pipefail
+          npm run test:growth
           if [[ "$HEAVY_RELEASE" == "true" ]]; then
             npm run test:core
             npm run test:typing
@@ -191,6 +192,7 @@ jobs:
           for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/ >/dev/null; then break; fi; sleep 1; done
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-offline-pwa.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-growth.cjs
           kill "$server" 2>/dev/null || true
           trap - EXIT
       - name: Canonical tools and community mobile functional checks

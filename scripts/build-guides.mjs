@@ -1,0 +1,10 @@
+import {readFile,writeFile} from "node:fs/promises";
+import {urlsetXml,updateSitemapIndex} from "./sitemap-utils.mjs";
+const guides=JSON.parse(await readFile("seo/guides.json","utf8"));
+await writeFile("public/sitemap-guides.xml",urlsetXml(["/guides",...guides.map(row=>"/guides/"+row.slug)]));
+await updateSitemapIndex("public/sitemap.xml",[{file:"sitemap-guides.xml",lastmod:"2026-10-08"}]);
+const manifest=JSON.parse(await readFile("public/seo-manifest.json","utf8"));
+manifest.sitemap_files=[...new Set([...manifest.sitemap_files,"sitemap-guides.xml"])];
+manifest.guide_route_count=guides.length+1;
+await writeFile("public/seo-manifest.json",JSON.stringify(manifest,null,2)+"\n");
+console.log(`Published ${guides.length} practical guide routes in sitemap-guides.xml.`);

@@ -1,24 +1,50 @@
-const BASE=(((import.meta as ImportMeta & { env?: Record<string,string|undefined> }).env?.VITE_PUBLIC_BASE_URL) || "https://aafnaipatro.com").replace(/\/$/,"");
-const PRODUCTION_HOST="aafnaipatro.com";
-const ROUTES:Record<string,{title:string;description:string;private?:boolean}>={
-  "/":{title:"आजको नेपाली पात्रो",description:"आजको BS/AD मिति, तिथि, चाडपर्व, पञ्चाङ्ग र दैनिक जानकारी।"},
-  "/today":{title:"आज कति गते? नेपाली मिति आज",description:"नेपाल समयअनुसार आजको नेपाली मिति, तिथि, नेपाल संवत् र पात्रो जानकारी।"},
-  "/samudaya":{title:"समुदाय पात्रो · 6 Community Calendars",description:"नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात र हिजरी समुदाय पात्रो एउटै हबबाट खोल्नुहोस्।"},
-  "/explore":{title:"सबै सुविधा",description:"आफ्नै पात्रो का पात्रो, डायरी, मिडिया, ज्योतिष र उपयोगी उपकरणहरू।"},
-  "/my-diary":{title:"मेरो डायरी",description:"मेरो आज, नियमित म्याद, परिवारका मिति, कागजात म्याद र चाडपर्व तयारी।",private:true},
-  "/tv":{title:"लाइभ टिभी",description:"देश, भाषा र विषय अनुसार सार्वजनिक स्रोतका लाइभ टिभी च्यानल।"},
-  "/fm":{title:"आफ्नै पात्रो रेडियो",description:"नेपाल र विश्वका रेडियो स्टेशन खोज्नुहोस् र सुन्नुहोस्।"},
-  "/tools":{title:"उपयोगी उपकरण",description:"नेपाली टाइपिङ, Preeti, मिति, भूमि, कर, QR र इन्धन उपकरण।"},
-  "/tools/nepali-typing":{title:"नेपाली टाइपिङ",description:"Roman बाट Unicode नेपाली टाइपिङ र स्थानीय शब्द सुझाव।"},
-  "/tools/preeti-converter":{title:"Preeti Converter",description:"Preeti ↔ Unicode नेपाली रूपान्तरण एउटै उपकरणमा।"},
-  "/jyotish/rashifal":{title:"राशिफल",description:"दैनिक, साप्ताहिक, मासिक र वार्षिक राशिफल।"},
-  "/jyotish/janma-patro":{title:"जन्मपत्रिका",description:"जन्म मिति, समय र स्थानबाट जन्मपत्रिका र ग्रह स्थिति।"},
-  "/about":{title:"हाम्रो बारेमा",description:"आफ्नै पात्रोको उद्देश्य, उत्पादन सिद्धान्त र दृष्टिकोण।"},
-  "/sources":{title:"स्रोत र शुद्धता",description:"पात्रो, तिथि, खगोलीय र मिडिया स्रोत तथा गणना विधिको विवरण।"},
-  "/privacy":{title:"गोपनीयता नीति",description:"स्थानीय डाटा, सिङ्क, मिडिया र सम्पर्क डाटाबारे गोपनीयता विवरण।"},
-  "/terms":{title:"सेवाका सर्तहरू",description:"आफ्नै पात्रो प्रयोगका आधारभूत सर्तहरू।"},
-  "/contact":{title:"सम्पर्क",description:"आफ्नै पात्रोलाई सुझाव, त्रुटि रिपोर्ट वा सन्देश पठाउनुहोस्।",private:true}
-};
-function metaName(name:string,content:string){let el=document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement|null;if(!el){el=document.createElement("meta");el.name=name;document.head.appendChild(el);}el.content=content;}
-function metaProperty(name:string,content:string){let el=document.querySelector(`meta[property="${name}"]`) as HTMLMetaElement|null;if(!el){el=document.createElement("meta");el.setAttribute("property",name);document.head.appendChild(el);}el.content=content;}
-export function applyRouteSeo(path=location.pathname){const clean=path.replace(/\/+$/,"")||"/";const row=ROUTES[clean]||{title:"आफ्नै पात्रो",description:"नेपाली पात्रो, तिथि, चाडपर्व, राशिफल र दैनिक उपयोगी सुविधा।"};const title=row.title==="आफ्नै पात्रो"?"आफ्नै पात्रो":`${row.title} · आफ्नै पात्रो`;document.title=title;metaName("description",row.description);const preview=location.hostname!==PRODUCTION_HOST&&(location.hostname.endsWith(".workers.dev")||location.hostname.endsWith(".pages.dev"));metaName("robots",(row.private||preview)?"noindex, nofollow":"index, follow");metaProperty("og:title",title);metaProperty("og:description",row.description);metaProperty("og:url",BASE+clean);metaProperty("og:image",BASE+"/og-default.png");metaName("twitter:card","summary_large_image");metaName("twitter:title",title);metaName("twitter:description",row.description);metaName("twitter:image",BASE+"/og-default.svg");let canonical=document.querySelector('link[rel="canonical"]') as HTMLLinkElement|null;if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical);}canonical.href=BASE+clean;}
+import intents from "../seo/search-intents.json";
+import guides from "../seo/guides.json";
+import { connectedRouteMeta } from "../worker/connected-seo";
+import { historicalCalendarNoindex } from "../worker/seo-window";
+
+const BASE=(((import.meta as ImportMeta & {env?:Record<string,string|undefined>}).env?.VITE_PUBLIC_BASE_URL)||"https://aafnaipatro.com").replace(/\/+$/,"");
+const NOINDEX=new Set(["/samachar","/developers","/tools/api","/offline","/mcp","/widget/today"]);
+const catalog:Record<string,{title:string;description:string}>={...intents.core,...intents.tools};
+export function resolveRouteSeo(path:string){
+  const clean=path.replace(/\/+$/,"")||"/";
+  const edge=connectedRouteMeta(clean);
+  const guide=guides.find(row=>clean==="/guides/"+row.slug);
+  let row=guide||catalog[edge.canonicalPath||clean]||edge;
+  if(clean==="/guides")row={title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति रूपान्तरण, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।"};
+  const date=clean.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/);
+  if(date)row={title:`${date[1]} नेपाली मिति · Date Details`,description:`${date[1]} को बिक्रम संवत्, तिथि, नेपाल संवत् र चाडपर्व विवरण।`};
+  const privateRoute=/^\/(me|admin|auth|api|compat-api|notes|planner|settings|family|my-data|my-diary)(\/|$)/.test(clean);
+  const index=edge.index!==false&&!privateRoute&&!NOINDEX.has(clean)&&!historicalCalendarNoindex(clean)&&!/^\/on-this-day\/\d{2}-\d{2}$/.test(clean);
+  return {title:row.title,description:row.description,canonical:BASE+(edge.canonicalPath||clean),index};
+}
+function meta(name:string,content:string,property=false){
+  const attr=property?"property":"name";
+  const matches=Array.from(document.head.querySelectorAll<HTMLMetaElement>(`meta[${attr}="${name}"]`));
+  let el=matches.shift();for(const duplicate of matches)duplicate.remove();
+  if(!el){el=document.createElement("meta");el.setAttribute(attr,name);document.head.appendChild(el)}el.content=content;
+}
+export function applyRouteSeo(path=location.pathname){
+  const row=resolveRouteSeo(path);
+  const preview=location.hostname!==new URL(BASE).hostname;
+  const canonicals=Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'));
+  let canonical=canonicals.shift();for(const duplicate of canonicals)duplicate.remove();
+  // Preserve the richer server-rendered metadata and factual schema on first render.
+  const initialMatch=canonical?.href===row.canonical;
+  if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical)}
+  if(!initialMatch){
+    document.title=row.title.includes("आफ्नै पात्रो")?row.title:`${row.title} · आफ्नै पात्रो`;
+    meta("description",row.description);
+    for(const [name,value] of [["og:title",document.title],["og:description",row.description],["og:url",row.canonical],["og:image",BASE+"/og-default.png"]])meta(name,value,true);
+    for(const [name,value] of [["twitter:card","summary_large_image"],["twitter:title",document.title],["twitter:description",row.description],["twitter:image",BASE+"/og-default.png"]])meta(name,value);
+    // A previous route's event/article schema must not describe the next route.
+    document.head.querySelectorAll('script[type="application/ld+json"]').forEach(el=>el.remove());
+    const schema=document.createElement("script");schema.type="application/ld+json";schema.id="patro-route-schema";
+    schema.textContent=JSON.stringify({"@context":"https://schema.org","@type":"WebPage",name:document.title,description:row.description,url:row.canonical,inLanguage:["ne","en"]});document.head.appendChild(schema);
+  }
+  canonical.href=row.canonical;
+  const directive=preview?"noindex,nofollow":row.index?"index,follow,max-image-preview:large":"noindex,follow";
+  meta("robots",directive);meta("googlebot",directive);
+  // Reuse existing alternate links, avoiding stale canonicals after SPA navigation.
+  document.head.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]').forEach(el=>{el.href=row.canonical});
+}

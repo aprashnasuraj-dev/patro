@@ -1,3 +1,4 @@
+import guides from "../seo/guides.json";
 type SeoMeta={title:string;description:string;canonicalPath?:string;index?:boolean};
 type SeoEnv={PUBLIC_SITE_URL?:unknown};
 
@@ -86,9 +87,13 @@ function cleanPath(pathname:string){return pathname.replace(/\/+$/,"")||"/"}
 function canonicalPath(path:string){return ALIAS_CANONICAL[path]||path}
 function isPrivate(path:string){return PRIVATE_TOOL_PATHS.has(path)||PRIVATE_PREFIXES.some(prefix=>path===prefix||path.startsWith(prefix+"/"))}
 
-function metaFor(pathname:string):SeoMeta{
+export function connectedRouteMeta(pathname:string):SeoMeta{
  const path=cleanPath(pathname);
  const canonical=canonicalPath(path);
+ const guide=guides.find(row=>canonical==="/guides/"+row.slug);
+ if(guide)return{title:guide.title,description:guide.description,canonicalPath:canonical,index:true};
+ if(canonical==="/guides")return{title:"नेपाली उपकरण प्रयोग निर्देशिका · Practical Guides",description:"मिति, Preeti, नेपाली टाइपिङ, आवाज र उमेर गणनाका व्यावहारिक निर्देशिका।",canonicalPath:canonical,index:true};
+ if(canonical.startsWith("/guides/"))return{title:"निर्देशिका भेटिएन",description:"यो निर्देशिका उपलब्ध छैन।",canonicalPath:canonical,index:false};
  if(isPrivate(path))return{title:"आफ्नै ठाउँ · My Space",description:"Aafnai Patro को निजी account र personal calendar space।",canonicalPath:canonical,index:false};
  if(EXACT[canonical])return{...EXACT[canonical],canonicalPath:canonical,index:true};
  const tool=canonical.match(/^\/tools\/([^/]+)$/)?.[1];
@@ -117,7 +122,7 @@ export function rewriteConnectedSeo(request:Request,response:Response,env:SeoEnv
  if(!HTMLRewriterCtor)return response;
  const incoming=new URL(request.url);
  const path=cleanPath(incoming.pathname);
- const meta=metaFor(path);
+ const meta=connectedRouteMeta(path);
  const base=String(env.PUBLIC_SITE_URL||incoming.origin).replace(/\/+$/,"");
  const canonical=base+(meta.canonicalPath||path);
  const fullTitle=`${meta.title} | ${BRAND}`;

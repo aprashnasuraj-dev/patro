@@ -28,6 +28,9 @@ const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
 const SeoSearchSupport=lazy(()=>import("./SeoSearchSupport").then(m=>({default:m.SeoSearchSupport})));
 
+const GuidePage=lazy(()=>import("./growth/GuidePage").then(m=>({default:m.GuidePage})));
+const DiscoveryPanel=lazy(()=>import("./growth/DiscoveryPanel").then(m=>({default:m.DiscoveryPanel})));
+
 const DATE_ROUTE_PREFIX="/date/";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const HISTORY_DAY_ROUTE=/^\/on-this-day\/(\d{2}-\d{2})$/;
@@ -63,15 +66,16 @@ const LEGACY_REDIRECTS:Record<string,string>={
 };
 const EXACT=new Set(["/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
+function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
 
 export function PatroRouter(){
  const[path,setPath]=useState(currentPath);
- useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);document.removeEventListener("click",onClick)}},[]);
+ useEffect(()=>{const onPop=()=>setPath(currentPath());const onClick=(event:MouseEvent)=>{if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;const a=(event.target as HTMLElement|null)?.closest("a");if(!(a instanceof HTMLAnchorElement)||a.hasAttribute("download")||a.target&&a.target!=="_self")return;const u=new URL(a.href,location.href);if(u.origin!==location.origin||!isAppPath(u.pathname))return;event.preventDefault();history.pushState(null,"",u.pathname+u.search+u.hash);setPath(clean(u.pathname));window.dispatchEvent(new Event("patro:navigation"));scrollTo({top:0,behavior:"smooth"})};addEventListener("popstate",onPop);document.addEventListener("click",onClick);return()=>{removeEventListener("popstate",onPop);document.removeEventListener("click",onClick)}},[]);
  const render=()=>{
+   if(path==="/guides"||path.startsWith("/guides/"))return <GuidePage path={path}/>;
    const legacy=LEGACY_REDIRECTS[path];if(legacy)return <Redirect to={legacy}/>;
    if(path==="/"||path==="/today")return <ReferenceHomePage/>;
    if(path==="/methodology")return <MethodologyPage/>;
@@ -112,5 +116,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><Suspense fallback={null}><SeoSearchSupport path={path}/></Suspense></>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
 }

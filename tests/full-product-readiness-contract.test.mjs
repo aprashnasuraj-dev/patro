@@ -106,9 +106,11 @@ test("premium experience layers load after base UI and keep reduced-motion suppo
 
 test("route-aware metadata covers public discovery and protects private pages",()=>{
   const chrome=read("src/components/AppChrome.tsx");
-  for(const token of ["TOOL_SEO","link[rel=\"canonical\"]","og:title","twitter:title","max-image-preview:large","noindex,nofollow"])assert.ok(chrome.includes(token),`route SEO lost ${token}`);
+  assert.ok(chrome.includes('applyRouteSeo(path)'), 'AppChrome uses the shared route metadata updater');
+  const sharedSeo=read("src/seo.ts");
+  for(const token of ['link[rel="canonical"]',"og:title","twitter:title","max-image-preview:large","noindex,nofollow"])assert.ok(sharedSeo.includes(token),`route SEO lost ${token}`);
   for(const route of ["/time-machine","/on-this-day","/samachar","/fm","/tv","/samudaya"])assert.ok(chrome.includes(route),`route metadata lost ${route}`);
-  assert.ok(chrome.includes("ALIAS_CANONICAL"),"duplicate utility aliases must retain canonical consolidation");
+  assert.ok(read("worker/connected-seo.ts").includes("ALIAS_CANONICAL"),"shared utility aliases must retain canonical consolidation");
 });
 
 test("calendar, Time Machine, Samachar and media UI point to backed API contracts",()=>{
