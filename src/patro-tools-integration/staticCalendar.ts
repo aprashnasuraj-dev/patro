@@ -5,6 +5,10 @@ export type ArchiveDay = {
   [key: string]: unknown;
 };
 const years = new Map<number, Promise<ArchiveDay[]>>();
+export async function archiveYear(year:number, signal?:AbortSignal):Promise<ArchiveDay[]> {
+ await archiveDay(`${year}-01-01`,signal).catch(error => { if (!years.has(year)) throw error; });
+ const rows=await years.get(year)!;if(signal?.aborted)throw new DOMException('Cancelled','AbortError');return rows;
+}
 export async function archiveDay(date: string, signal?: AbortSignal): Promise<ArchiveDay> {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(Date.parse(date))) throw Error('Invalid archive date');
   const year = Number(date.slice(0, 4));
