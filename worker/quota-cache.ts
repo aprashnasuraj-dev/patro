@@ -23,7 +23,6 @@ type StoredResponse = {
 };
 
 const CACHE_PREFIX = "patro-quota-v3";
-const DAY = 86_400;
 const HISTORY_CACHE_YEAR = "2000"; // Leap-year sentinel: exactly 366 reusable month/day keys.
 const textEncoder = new TextEncoder();
 
