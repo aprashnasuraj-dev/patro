@@ -1,15 +1,15 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { recordAiReferral } from "./aiReferral";
 import { AppChrome } from "./components/AppChrome";
 import { CalendarCellEnhancer } from "./components/CalendarCellEnhancer";
 import { FeatureLauncher } from "./components/FeatureLauncher";
 import { HomepageEnhancer } from "./components/HomepageEnhancer";
-import { JyotishAssistant } from "./components/JyotishAssistant";
+const JyotishAssistant = lazy(() => import("./components/JyotishAssistant").then(m => ({ default: m.JyotishAssistant })));
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
-import { PwaInstallExperience } from "./components/PwaInstallExperience";
+const PwaInstallExperience = lazy(() => import("./components/PwaInstallExperience").then(m => ({ default: m.PwaInstallExperience })));
 import { PatroRouter } from "./PatroRouter";
-import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
+const GlobalMediaPlayer = lazy(() => import("./media/GlobalMediaPlayer").then(m => ({ default: m.GlobalMediaPlayer })));
 import { MediaProvider } from "./media/MediaProvider";
 import { registerPatroServiceWorker } from "./pwa";
 import "./design-tokens.css";
@@ -44,6 +44,35 @@ import "./release-seven.css";
 import "./release-seven-mobile-fix.css";
 import "./mobile-home.css";
 
+/**
+ * Optional global experiences are available after the initial paint instead of
+ * blocking the homepage with chat, install-prompt and player UI code. The media
+ * provider itself stays mounted synchronously to preserve ongoing playback.
+ */
+function DeferredGlobalExperiences() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const idle = window as Window & {
+      requestIdleCallback?: (cb: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let cancelled = false;
+    const start = () => { if (!cancelled) setReady(true); };
+    const id = idle.requestIdleCallback?.(start, { timeout: 2200 });
+    const timer = id === undefined ? window.setTimeout(start, 900) : undefined;
+    return () => {
+      cancelled = true;
+      if (id !== undefined) idle.cancelIdleCallback?.(id);
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
+  }, []);
+  return ready ? <Suspense fallback={null}>
+    <PwaInstallExperience />
+    <GlobalMediaPlayer />
+    <JyotishAssistant />
+  </Suspense> : null;
+}
+
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
 
@@ -56,13 +85,11 @@ createRoot(root).render(
       <AppChrome>
         <PatroRouter />
       </AppChrome>
-      <PwaInstallExperience />
       <CalendarCellEnhancer />
       <HomepageEnhancer />
       <FeatureLauncher />
-      <GlobalMediaPlayer />
-      <JyotishAssistant />
       <NoteTypingEnhancer />
+      <DeferredGlobalExperiences />
     </MediaProvider>
   </StrictMode>
 );
