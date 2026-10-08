@@ -22,7 +22,7 @@ export function DeferredHomeQuickNote({ language }: { language: "ne" | "en" }) {
       ? new IntersectionObserver((entries) => {
           if (entries.some((entry) => entry.isIntersecting)) {
             setReady(true);
-            observer.disconnect();
+            observer?.disconnect();
           }
         }, { rootMargin: "350px" })
       : null;
