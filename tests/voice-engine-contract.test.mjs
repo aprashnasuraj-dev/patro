@@ -73,3 +73,14 @@ test('recorded segments have independent containers, upload in order, and flush 
   assert.deepEqual(uploads, ['HEADER-1', 'HEADER-2', 'HEADER-3']); assert.deepEqual(texts, uploads);
   assert.equal(ended, true); assert.ok(stopped > 0);
 });
+
+test('dictation inserts at the cursor, replaces selection, and respects existing editor limits', async () => {
+  const output = await build({ entryPoints: ['src/patro-tools/language/voice-insertion.ts'], bundle: true, write: false, format: 'cjs' });
+  const context = { module: { exports: {} } }; runInNewContext(output.outputFiles[0].text, context);
+  const insert = context.module.exports.insertDictatedText;
+  assert.equal(insert('Hello world', 'Nepal ', 6, 11).text, 'Hello Nepal ');
+  assert.equal(insert('आज राम्रो छ', 'मौसम ', 3, 3).text, 'आज मौसम राम्रो छ');
+  assert.equal(insert('hello', 'world ').text, 'hello world ');
+  assert.equal(insert('abcXYZ', '123456', 3, 3, 8).text, 'abc 1XYZ');
+  assert.equal(insert('', 'नमस्ते ').cursor, 'नमस्ते '.length);
+});

@@ -67,12 +67,21 @@ async function mock(page, scenario, server = true) {
           await mic.click(); await page.waitForTimeout(550);
           assert.equal(await page.evaluate(() => window.__voice.starts), 2, 'stop prevents restarts');
         } else if (scenario === 'desktop') {
+          await page.locator('.voice-transcript-label textarea').fill('Hello world');
+          await page.evaluate(() => {
+            const editor = document.querySelector('.voice-transcript-label textarea'); editor.setSelectionRange(6, 11);
+            const interim = Object.assign([{ transcript: 'नमस्ते' }], { isFinal: false });
+            window.__voice.recognition.onresult({ resultIndex: 0, results: [interim] });
+          });
+          await page.locator('.dictation-inline-preview').waitFor();
+          assert.equal(await page.locator('.voice-transcript-label textarea').inputValue(), 'Hello world', 'interim must not commit');
           await page.evaluate(() => {
             const final = Object.assign([{ transcript: 'नमस्ते' }], { isFinal: true });
             window.__voice.recognition.onresult({ resultIndex: 0, results: [final] });
           });
           await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value.includes('नमस्ते'));
           assert.equal(await page.evaluate(() => window.__voice.media), 0);
+          assert.equal(await page.locator('.voice-transcript-label textarea').inputValue(), 'Hello नमस्ते ');
           await mic.click();
         } else if (scenario === 'cancel') {
           await mic.click(); await page.waitForTimeout(3200);

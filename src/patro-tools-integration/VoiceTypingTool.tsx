@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+import { InlineDictationPreview, useDictationEditor } from '../patro-tools/language/react/DictationEditor';
+import { useRef, useState } from "react";
 import { DictationLanguage, useNepaliDictation } from "@/patro-tools/language/react/useNepaliDictation";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
 import "./voice-typing.css";
@@ -36,7 +37,8 @@ export function VoiceTypingTool() {
   const [language, setLanguage] = useState<DictationLanguage>("ne-NP");
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
-  const appendFinal = useCallback((chunk: string) => setText((current) => current + chunk), []);
+  const textarea = useRef<HTMLTextAreaElement>(null);
+  const appendFinal = useDictationEditor(text, setText, textarea);
   const dictation = useNepaliDictation({
     language,
     serverFallback: true,
@@ -184,16 +186,12 @@ export function VoiceTypingTool() {
           )}
         </div>
 
-        {dictation.interim ? (
-          <p className="tool-interim voice-live-transcript" aria-live="polite">
-            <strong>{meta.listening}:</strong> {dictation.interim}
-          </p>
-        ) : null}
         {dictation.error ? <p className="tool-status" role="alert">{dictation.error}</p> : null}
 
         <label className="tool-block-label voice-transcript-label">
           <span>ट्रान्सक्रिप्ट · Transcript</span>
           <textarea
+            ref={textarea}
             rows={12}
             value={text}
             onChange={(event) => { setText(event.target.value); setCopied(false); }}
@@ -201,6 +199,7 @@ export function VoiceTypingTool() {
             lang={language === "ne-NP" ? "ne" : "en"}
             spellCheck={language === "en-US"}
           />
+          <InlineDictationPreview textarea={textarea} interim={dictation.interim} />
         </label>
 
         <div className="tool-action-row">
