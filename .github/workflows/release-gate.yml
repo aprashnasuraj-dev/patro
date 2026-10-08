@@ -329,6 +329,13 @@ jobs:
               exit "$migration_status"
             fi
           fi
+          # Migration 0006 is idempotent even if the live Worker bootstrapped weight
+          # first. Verify/add that column on the same remote DB before deployment.
+          if [[ "$migration_status" -eq 0 ]]; then
+            CLOUDFLARE_API_TOKEN="${CLOUDFLARE_D1_API_TOKEN:-$CLOUDFLARE_API_TOKEN}" node scripts/cloudflare/ensure-analytics-weight-d1.mjs
+          else
+            echo "::warning::D1 migration API denied (7403); Worker bootstrap is the existing fallback. Validate runtime after deploy."
+          fi
           npx wrangler deploy --config wrangler.generated.jsonc
       - name: Prime annual On This Day cache
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.scope.outputs.archive == 'true'

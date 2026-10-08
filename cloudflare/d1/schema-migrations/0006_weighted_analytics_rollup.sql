@@ -1,5 +1,6 @@
--- Additive migration. Old pageviews retain weight=1. Runtime bootstrap also handles this idempotently.
-ALTER TABLE aap_pageviews ADD COLUMN weight REAL NOT NULL DEFAULT 1;
+-- Idempotent additive rollup migration. The Worker may already have added
+-- aap_pageviews.weight on first request. The release reconciler verifies/adds
+-- REAL NOT NULL DEFAULT 1 after migrations apply, for old and new databases.
 CREATE TABLE IF NOT EXISTS aap_pageview_daily(day TEXT NOT NULL,dimension TEXT NOT NULL,key TEXT NOT NULL,views REAL NOT NULL,visitors INTEGER NOT NULL,PRIMARY KEY(day,dimension,key));
 CREATE TABLE IF NOT EXISTS aap_pageview_rollup_days(day TEXT PRIMARY KEY,completed_at INTEGER NOT NULL);
 CREATE INDEX IF NOT EXISTS aap_pageview_daily_dimension_day_idx ON aap_pageview_daily(dimension,day);

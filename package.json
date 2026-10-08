@@ -24,7 +24,7 @@
     "preview:cloudflare": "npm run build && wrangler dev --local --config wrangler.jsonc",
     "cloudflare:config": "node scripts/prepare-cloudflare-config.mjs",
     "cloudflare:validate": "node scripts/validate-cloudflare.mjs",
-    "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc",
+    "cloudflare:migrate": "npm run cloudflare:config && wrangler d1 migrations apply DB --remote --config wrangler.generated.jsonc && node scripts/cloudflare/ensure-analytics-weight-d1.mjs",
     "deploy:cloudflare:bootstrap": "node scripts/bootstrap-cloudflare.mjs",
     "cloudflare:generate-d1": "node scripts/generate-d1-migrations.mjs",
     "cloudflare:verify-snapshot": "node scripts/generate-d1-migrations.mjs --verify-only",
@@ -67,7 +67,7 @@
     "seo:growth": "node scripts/prerender-growth.mjs",
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:birthday-modules": "node --test tests/birthday-modules.test.mjs",
-    "test:free-plan": "node --test tests/free-plan-contract.test.mjs tests/analytics-rollup.test.mjs"
+    "test:free-plan": "node --test tests/free-plan-contract.test.mjs tests/analytics-rollup.test.mjs tests/analytics-d1-schema.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
