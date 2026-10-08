@@ -72,3 +72,24 @@
 /api/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+# Growth pages (prerendered static HTML, served without the Worker on the Cloudflare Free plan).
+# Browsers revalidate hourly; Cloudflare's edge keeps them a day. Live values update in the browser.
+/moon*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/eclipse*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/nepal*
+  Cache-Control: public, max-age=600, s-maxage=3600
+/us/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/weather*
+  Cache-Control: public, max-age=600, s-maxage=3600
+/de/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/fr/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/es/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+/it/*
+  Cache-Control: public, max-age=3600, s-maxage=86400

@@ -20,7 +20,21 @@
     "not_found_handling": "none",
     "run_worker_first": [
       "/*",
-      "!/assets/*"
+      "!/assets/*",
+      "!/moon",
+      "!/moon/*",
+      "!/eclipse",
+      "!/eclipse/*",
+      "!/nepal",
+      "!/nepal/*",
+      "!/us/*",
+      "!/weather",
+      "!/weather/*",
+      "!/de/*",
+      "!/fr/*",
+      "!/es/*",
+      "!/it/*",
+      "!/sitemap-growth.xml"
     ]
   },
   "d1_databases": [

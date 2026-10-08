@@ -1,3 +1,4 @@
+import { growthPageResponse } from "./growth";
 import connectedWorker from "./connected-entry";
 import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
@@ -43,6 +44,8 @@ const optimizedWorker = {
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
 
+    const growth = await growthPageResponse(request, env as any);
+    if (growth) return growth;
     const seoStatic = await seoStaticResponse(request, env as any);
     if (seoStatic) return seoStatic;
 
