@@ -1,6 +1,6 @@
 import {festivalTiming} from "./home-festival-label";
 import {homeToday,homeMonth,homeEvents} from "./home-calendar-client";
-import { HomeQuickNote } from "./components/HomeQuickNote";
+import { DeferredHomeQuickNote } from "./components/DeferredHomeQuickNote";
 import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
 import { HomeWeather } from "./components/HomeWeather";
 import "./home-extras.css";
@@ -255,7 +255,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
           <header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छानिएको दिन", "Selected day")}</span><h2>{selectedDay ? `${number(selectedDay.bs.day, language)} ${bsMonth(selectedDay.bs.month, language)} ${number(selectedDay.bs.year, language)}` : l(language, "दिन छान्नुहोस्", "Choose a day")}</h2><p>{selectedDay ? adLabel(selectedDay.ad, language) : l(language, "पात्रोबाट कुनै दिन छान्नुहोस्।", "Choose a day from the calendar.")}</p></div>{selectedDay ? <a className="rh-link" href={`/date/${selectedDay.ad}`}>{l(language, "पूरा दिन विवरण →", "Full day details →")}</a> : null}</header>
           {selectedDay ? <div className="rh-selected-grid">{panchangTithi(selectedDay) ? <div><span>{l(language, "तिथि", "Tithi")}</span><b>{panchangTithi(selectedDay)}</b></div> : null}{nsText(selectedDay.nepal_sambat) ? <div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{nsText(selectedDay.nepal_sambat)}</b></div> : null}<div><span>{l(language, "ई.सं.", "AD")}</span><b>{formatDate(selectedDay.ad, language, { weekday: "short" })}</b></div><div><span>{l(language, "चाडपर्व / बिदा", "Festival / holiday")}</span><b>{selectedEvents.length ? selectedEvents.map((item) => festivalName(item, language)).join(" · ") : l(language, "कुनै सूचीबद्ध कार्यक्रम छैन", "No listed event")}</b></div></div> : null}
         </section>
-          <HomeQuickNote language={language} />
+          <DeferredHomeQuickNote language={language} />
       </div>
 
       <aside className="rh-side" aria-label={l(language, "पात्रो सहायक सामग्री", "Calendar shortcuts")}>
