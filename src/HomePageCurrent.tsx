@@ -126,9 +126,18 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const [events, setEvents] = useState<Festival[]>([]);
   const [todayView, setTodayView] = useState<TodayView>({ bs: localToday, ns: "", tithi: "", sunrise: "", sunset: "" });
 
+  // Sync the displayed month whenever the URL changes (picker, back/forward
+  // or an internal link). Reset to today's month when returning to the root.
   useEffect(() => {
-    if (calendarYear && calendarMonth) setCursor({ year: calendarYear, month: calendarMonth });
-  }, [calendarYear, calendarMonth]);
+    const next = calendarYear && calendarMonth
+      ? { year: calendarYear, month: calendarMonth }
+      : localToday ? { year: localToday.year, month: localToday.month } : null;
+    if (!next) return;
+    setCursor((previous) => previous?.year === next.year && previous?.month === next.month ? previous : next);
+    const monthDays = localMonthDays(next.year, next.month);
+    setDays(monthDays);
+    setSelected(monthDays.some((day) => day.ad === today) ? today : monthDays[0]?.ad || "");
+  }, [calendarYear, calendarMonth, localToday, today]);
 
   useEffect(() => {
     document.title = calendarYear && calendarMonth ? calendarTitle(calendarYear, calendarMonth) : pageTitle();
@@ -177,18 +186,20 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
   const firstOffset = days[0] ? new Date(`${days[0].ad}T00:00:00Z`).getUTCDay() : 0;
 
   const shift = useCallback((delta: number) => {
-    setCursor((value) => {
-      if (!value) return value;
-      let year = value.year, month = value.month + delta;
-      if (month < 1) { month = 12; year -= 1; }
-      if (month > 12) { month = 1; year += 1; }
-      history.pushState(null, "", `/calendar/${year}/${String(month).padStart(2, "0")}`);
-      window.dispatchEvent(new Event("patro:navigation"));
-      const monthDays = localMonthDays(year, month);
-      if (monthDays[0]) setSelected(monthDays[0].ad);
-      return { year, month };
-    });
-  }, []);
+    if (!cursor) return;
+    let year = cursor.year, month = cursor.month + delta;
+    if (month < 1) { month = 12; year -= 1; }
+    if (month > 12) { month = 1; year += 1; }
+    if (year < 1883 || year > 2093) return;
+    const next = { year, month };
+    setCursor(next);
+    const monthDays = localMonthDays(year, month);
+    setSelected(monthDays[0]?.ad || "");
+    // Updating history inside a React state updater fired navigation events
+    // during rendering. Dispatch only from the click handler, exactly once.
+    history.pushState(null, "", `/calendar/${year}/${String(month).padStart(2, "0")}`);
+    window.dispatchEvent(new Event("patro:navigation"));
+  }, [cursor]);
 
   const todayBs = todayView.bs || localToday;
   return <main id="main-content" className="rh-page">
