@@ -14,6 +14,7 @@ import { RashifalExperience } from "./rashifal/RashifalExperience";
 import { NepaliTools } from "./features/nepali-tools/NepaliTools";
 import type { SuiteId } from "./patro-tools/communities/registry";
 
+const PlacePage=lazy(()=>import('./place/PlacePage'));
 const AstroPage=lazy(()=>import("./App"));
 const MediaSuite=lazy(()=>import("./media/MediaSuite").then(m=>({default:m.MediaSuite})));
 const JanmaPatroSuite=lazy(()=>import("./jyotish/JanmaPatroSuite").then(m=>({default:m.JanmaPatroSuite})));
@@ -88,6 +89,7 @@ export function PatroRouter(){
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal)return <ReferenceHomePage calendarYear={Number(cal[1])} calendarMonth={Number(cal[2])}/>;
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
    if(path==="/tools")return <ToolsPage/>;
+   if(path==="/tools/my-place")return <PlacePage/>;
    if(path==="/tools/astro")return <AstroPage/>;
    if(path==="/me")return <MePage/>;
    if(path==="/me/diary"||path==="/me/notes"||path==="/me/planner")return <MyDiary/>;
