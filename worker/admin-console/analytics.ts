@@ -1,3 +1,4 @@
+import {rollupPageviews,rolledStats} from "./analytics-rollup";
 // Aafnai Patro admin console — first-party, privacy-friendly analytics.
 // - No cookies, no fingerprinting beyond a SHA-256 of (daily salt + IP + UA),
 //   so a visitor can be counted within a day but not tracked across days.
@@ -84,7 +85,7 @@ export async function recordHit(request: Request, env: AdminEnv): Promise<Respon
   ];
   if (kind === "pv") {
     stmts.push(
-      env.DB.prepare("insert into aap_pageviews(ts,path,visitor,country,device,browser,referrer) values(?1,?2,?3,?4,?5,?6,?7)").bind(now, path, visitor, country, dev, browser(ua), referrer)
+      env.DB.prepare("insert into aap_pageviews(ts,path,visitor,country,device,browser,referrer,weight) values(?1,?2,?3,?4,?5,?6,?7,?8)").bind(now, path, visitor, country, dev, browser(ua), referrer, Number.isFinite(Number(body.weight))?Math.min(100,Math.max(1,Number(body.weight))):1)
     );
   }
   await env.DB.batch(stmts);
@@ -104,19 +105,19 @@ export async function stats(env: AdminEnv, rangeKey: string) {
   const prevSince = since - range.ms;
   const fmt = range.bucket === "hour" ? "%Y-%m-%d %H:00" : "%Y-%m-%d";
   const bucketExpr = `strftime('${fmt}', ts/1000, 'unixepoch', ${NEPAL_OFFSET})`;
-  const [totals, prev, series, paths, refs, countries, devices, browsers] = await Promise.all([
-    first<any>(env, "select count(*) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1", since),
-    first<any>(env, "select count(*) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 and ts<?2", prevSince, since),
-    all<any>(env, `select ${bucketExpr} as bucket, count(*) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by bucket order by bucket`, since),
-    all<any>(env, "select path, count(*) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by path order by views desc limit 25", since),
-    all<any>(env, "select coalesce(referrer,'(direct)') as referrer, count(*) as views from aap_pageviews where ts>=?1 group by referrer order by views desc limit 15", since),
-    all<any>(env, "select coalesce(country,'??') as country, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by country order by visitors desc limit 20", since),
-    all<any>(env, "select device, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by device order by visitors desc", since),
-    all<any>(env, "select browser, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by browser order by visitors desc", since),
+  const [totalRows,previousRows,pathRows,refRows,countryRows,deviceRows,browserRows] = await Promise.all([
+    rolledStats(env,"total",since),rolledStats(env,"total",prevSince,since),rolledStats(env,"path",since),rolledStats(env,"referrer",since),rolledStats(env,"country",since),rolledStats(env,"device",since),rolledStats(env,"browser",since)
   ]);
+  const sum=(rows:any[])=>({views:rows.reduce((n,r)=>n+Number(r.views),0),visitors:rows.reduce((n,r)=>n+Number(r.visitors),0)});
+  const totals=sum(totalRows),prev=sum(previousRows);
+  const grouped=(rows:any[],label:string,limit=100)=>{const map=new Map<string,any>();for(const r of rows){const old=map.get(r.key)||{[label]:r.key,views:0,visitors:0};old.views+=Number(r.views);old.visitors+=Number(r.visitors);map.set(r.key,old);}return [...map.values()].sort((a,b)=>b.views-a.views).slice(0,limit);};
+  const [paths,refs,countries,devices,browsers]=[grouped(pathRows,"path",25),grouped(refRows,"referrer",15),grouped(countryRows,"country",20),grouped(deviceRows,"device"),grouped(browserRows,"browser")];
+  const series=range.bucket==="day"?totalRows.map(r=>({bucket:r.day,views:r.views,visitors:r.visitors})):await all<any>(env,`select ${bucketExpr} as bucket, coalesce(sum(weight),0) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1 group by bucket order by bucket`,since);
+
   return {
     range: rangeKey in RANGES ? rangeKey : "7d",
     bucket: range.bucket,
+    measurement:"Estimated weighted pageviews; observed sampled visitors (not estimated uniques). Live heartbeats are unsampled.",
     totals: { views: Number(totals?.views || 0), visitors: Number(totals?.visitors || 0) },
     previous: { views: Number(prev?.views || 0), visitors: Number(prev?.visitors || 0) },
     series: fillSeries(series, range.bucket, since),
@@ -162,14 +163,15 @@ export async function today(env: AdminEnv) {
   const dayStart = new Date(Date.now() + 345 * 60_000);
   dayStart.setUTCHours(0, 0, 0, 0);
   const since = dayStart.getTime() - 345 * 60_000;
-  const row = await first<any>(env, "select count(*) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1", since);
+  const row = await first<any>(env, "select coalesce(sum(weight),0) as views, count(distinct visitor) as visitors from aap_pageviews where ts>=?1", since);
   return { views: Number(row?.views || 0), visitors: Number(row?.visitors || 0) };
 }
 
 export async function prune(env: AdminEnv) {
   const days = Math.max(7, Math.min(400, Number(await getSetting(env, "analytics.retention_days", 90)) || 90));
+  await rollupPageviews(env);
   await env.DB.batch([
-    env.DB.prepare("delete from aap_pageviews where ts<?1").bind(Date.now() - days * 86400_000),
+    env.DB.prepare("delete from aap_pageviews where ts<?1 and date(ts/1000,'unixepoch','+345 minutes') in(select day from aap_pageview_rollup_days)").bind(Date.now() - Math.max(90,days) * 86400_000),
     env.DB.prepare("delete from aap_presence where ts<?1").bind(Date.now() - 86400_000),
     env.DB.prepare("delete from aap_sessions where expires_at<?1").bind(Date.now()),
     env.DB.prepare("delete from aap_login_attempts where first_at<?1 and locked_until<?1").bind(Date.now() - 86400_000),

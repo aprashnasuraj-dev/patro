@@ -1,3 +1,4 @@
+import {ROLLUP_SCHEMA} from "./analytics-rollup";
 // Aafnai Patro admin console — D1 schema + helpers.
 // Cloudflare Workers Builds runs `npm run build` + `wrangler deploy` but does NOT
 // apply D1 migrations, so the console creates its own tables idempotently on the
@@ -81,7 +82,8 @@ export const SCHEMA: string[] = [
     country text,
     device text,
     browser text,
-    referrer text
+    referrer text,
+    weight real not null default 1
   )`,
   `create index if not exists aap_pageviews_ts_idx on aap_pageviews(ts)`,
   `create table if not exists aap_presence (
@@ -131,7 +133,11 @@ export function ensureSchema(env: AdminEnv) {
     const db = env.DB;
     schemaReady = db
       .batch(SCHEMA.map((sql) => db.prepare(sql)))
-      .then(() => undefined)
+      .then(async () => {
+        const info=await db.prepare("pragma table_info(aap_pageviews)").all();
+        if(!(info.results||[]).some((r:any)=>r.name==="weight")){try{await db.prepare("alter table aap_pageviews add column weight real not null default 1").run();}catch(e){if(!/duplicate column/i.test(String(e)))throw e;}}
+        await db.batch(ROLLUP_SCHEMA.map(sql=>db.prepare(sql)));
+      })
       .catch((error: unknown) => {
         schemaReady = null; // retry on next request
         throw error;

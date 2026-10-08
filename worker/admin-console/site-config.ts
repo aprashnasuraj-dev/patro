@@ -26,7 +26,7 @@ export type SiteConfig = {
   maintenance: { enabled: boolean; title: string; message: string; allowPaths: string[] };
   customCss: string;
   customHead: string;
-  analytics: { enabled: boolean };
+  analytics: { enabled: boolean; sample?:number; webAnalyticsToken?:string };
 };
 
 export const DEFAULT_CONFIG: SiteConfig = {
@@ -43,7 +43,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
   },
   customCss: "",
   customHead: "",
-  analytics: { enabled: true },
+  analytics: { enabled: true, sample:0.1, webAnalyticsToken:"" },
 };
 
 /** Known site sections, so the admin can toggle/rename without memorising paths. */
@@ -179,7 +179,7 @@ export function normalizeConfig(input: any): SiteConfig {
     },
     customCss: str(c.customCss, 60_000),
     customHead: str(c.customHead, 20_000),
-    analytics: { enabled: bool(c.analytics?.enabled, true) },
+    analytics: { enabled: bool(c.analytics?.enabled, true),sample:Math.min(1,Math.max(0.01,Number(c.analytics?.sample)||0.1)),webAnalyticsToken:String(c.analytics?.webAnalyticsToken||"").replace(/[^a-f0-9]/gi,"").slice(0,32) },
   };
 }
 
@@ -387,7 +387,7 @@ function escapeHtml(s: string) {
 }
 
 /** Subset the browser runtime needs (renames, nav rules, banner). */
-export function runtimePayload(c: SiteConfig, version: number, preview: boolean) {
+export function runtimePayload(c: SiteConfig, version: number, preview: boolean,env:Record<string,unknown>={}) {
   return {
     v: version,
     preview,
@@ -395,21 +395,24 @@ export function runtimePayload(c: SiteConfig, version: number, preview: boolean)
     disabled: c.features.filter((f) => !f.enabled).map((f) => ({ path: f.path, to: f.redirectTo })),
     banner: c.banner.enabled && c.banner.text ? c.banner : null,
     analytics: c.analytics.enabled && !preview,
+    sample:Math.min(1,Math.max(0.01,Number(env.AAP_HIT_SAMPLE)||c.analytics.sample||0.1)),
   };
 }
 
 /** Injects theme + runtime into an HTML response via HTMLRewriter. */
-export function injectIntoHtml(response: Response, c: SiteConfig, version: number, preview: boolean): Response {
+export function injectIntoHtml(response: Response, c: SiteConfig, version: number, preview: boolean,env:Record<string,unknown>={}): Response {
   const css = themeCss(c);
   const custom = c.customCss.trim();
   const fontLink = c.theme.font
     ? `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(c.theme.font).replace(/%20/g, "+")}:wght@400;500;600;700&display=swap">`
     : "";
+  const webToken=String(env.CF_WEB_ANALYTICS_TOKEN||c.analytics.webAnalyticsToken||"");
+  const webBeacon=!preview&&c.analytics.enabled&&/^[a-f0-9]{32}$/i.test(webToken)?`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"${webToken}"}'></script>`:"";
   const head =
-    fontLink +
+    webBeacon + fontLink +
     (css ? `<style id="aap-theme">${escapeStyle(css)}</style>` : "") +
     (custom ? `<style id="aap-custom">${escapeStyle(custom)}</style>` : "") +
-    `<script type="application/json" id="aap-config">${escapeJson(runtimePayload(c, version, preview))}</script>` +
+    `<script type="application/json" id="aap-config">${escapeJson(runtimePayload(c, version, preview,env))}</script>` +
     `<script>${SETTINGS_SOURCE.replace(/<\/script/gi, "<\\/script")}</script>` +
     `<script src="/aap/analytics.js" async></script>` +
     (c.customHead.trim() ? c.customHead : "");

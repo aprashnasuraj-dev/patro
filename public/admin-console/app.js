@@ -388,9 +388,9 @@
             h("div", null, liveNum, h("div", { class: "cap" }, h("span", { class: "pulse", "aria-hidden": "true" }), "on the site right now")),
             h("div", null, h("div", { class: "big" }, d.live.signedInNow == null ? "—" : num(d.live.signedInNow)), h("div", { class: "cap" }, "signed-in users active"))),
           h("section", { class: "kpis", "aria-label": "Key numbers" },
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.views)), h("div", { class: "l" }, "Page views today")),
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.visitors)), h("div", { class: "l" }, "Visitors today")),
-            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.week.totals.visitors)), h("div", { class: "l" }, "Visitors, last 7 days"), delta(d.week.totals.visitors, d.week.previous.visitors)),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.views)), h("div", { class: "l" }, "Estimated page views today")),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.today.visitors)), h("div", { class: "l" }, "Observed visitors today")),
+            h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.week.totals.visitors)), h("div", { class: "l" }, "Observed visitors, last 7 days"), delta(d.week.totals.visitors, d.week.previous.visitors)),
             h("div", { class: "kpi" }, h("div", { class: "v" }, d.users.available ? num(d.users.total) : "—"), h("div", { class: "l" }, "Registered users"), d.users.available && d.users.new7 ? h("span", { class: "delta up" }, "+" + num(d.users.new7) + " this week") : null)),
           h("div", { class: "grid grid-2", style: { gridTemplateColumns: "minmax(0,1.6fr) minmax(0,1fr)" } },
             h("section", { class: "panel" }, h("div", { class: "panel-head" }, h("h2", null, "Last 7 days"), h("a", { href: "#/traffic", class: "small" }, "Full traffic report")), trafficChart(d.week.series, "day")),
@@ -442,7 +442,7 @@
       }));
       var edge = h("section", { class: "panel" }, h("div", { class: "panel-head" }, h("div", null, h("h2", null, "Cloudflare edge"), h("p", null, "All requests at the edge, including bots and API calls."))), h("p", { class: "muted" }, "Loading…"));
       add(el, [
-        pageHead("Traffic", "Counted from real browsers with an anonymous daily visitor ID — no cookies. Times are Nepal time.", seg),
+        pageHead("Traffic · weighted estimates / observed visitors", "Counted from real browsers with an anonymous daily visitor ID — no cookies. Times are Nepal time.", seg),
         h("section", { class: "kpis" },
           h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.totals.views)), h("div", { class: "l" }, "Page views"), delta(d.totals.views, d.previous.views)),
           h("div", { class: "kpi" }, h("div", { class: "v" }, num(d.totals.visitors)), h("div", { class: "l" }, "Visitors"), delta(d.totals.visitors, d.previous.visitors)),
@@ -908,6 +908,8 @@
     add(el, [
       h("section", { class: "panel stack" }, h("h2", null, "Visitor counting"),
         sw("Count visitors (anonymous, no cookies)", S.draft.analytics.enabled, function (v) { S.draft.analytics.enabled = v; changed("advanced"); }),
+        h("label", {}, "Pageview sample (0.01–1)", h("input", {type:"number",min:0.01,max:1,step:0.01,value:S.draft.analytics.sample||0.1,onchange:function(e){S.draft.analytics.sample=Math.min(1,Math.max(0.01,Number(e.target.value)||0.1));changed("advanced");}})),
+        h("label", {}, "Cloudflare Web Analytics token", h("input", {value:S.draft.analytics.webAnalyticsToken||"",maxlength:32,onchange:function(e){S.draft.analytics.webAnalyticsToken=e.target.value;changed("advanced");}})),
         h("p", { class: "muted small", style: { margin: 0 } }, "Turning this off stops new traffic and live numbers after you publish.")),
       h("section", { class: "panel stack" }, h("h2", null, "Custom CSS"),
         h("p", { class: "muted small", style: { margin: 0 } }, "Added after the site's own styles. The site's colour variables work here: --brand-600, --surface, --surface-2, --ink-900, --radius, --holiday."), css),

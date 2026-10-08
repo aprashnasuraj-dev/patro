@@ -137,7 +137,7 @@ async function api(request: Request, env: AdminEnv, ctx: Ctx, path: string): Pro
     let preview = false;
     if (readCookie(request, PREVIEW_COOKIE) === "1" && (await currentAdmin(request, env))) preview = true;
     const entry = preview ? await loadConfig(env, "draft", true) : await loadPublishedConfig(env, ctx);
-    return json(runtimePayload(entry.config, entry.version, preview), 200, { "cache-control": preview ? "no-store" : "public, max-age=15" });
+    return json(runtimePayload(entry.config, entry.version, preview,env), 200, { "cache-control": preview ? "no-store" : "public, max-age=15" });
   }
 
   await ensureBootstrapAdmin(env);
@@ -370,12 +370,12 @@ function isPageRequest(path: string) {
   return !path.startsWith("/api/") && !path.startsWith("/assets/") && !path.startsWith("/compat-api/") && !/\.[a-z0-9]{2,8}$/i.test(path);
 }
 
-async function decorate(request: Request, response: Response, config: SiteConfig, version: number, preview: boolean) {
+async function decorate(request: Request, response: Response, config: SiteConfig, version: number, preview: boolean,env:AdminEnv={}) {
   if (request.method !== "GET" || response.status !== 200) return response;
   const type = response.headers.get("content-type") || "";
   if (!type.toLowerCase().includes("text/html")) return response;
   if (configIsEmpty(config) && !config.analytics.enabled && !preview) return response;
-  let out = injectIntoHtml(response, config, version, preview);
+  let out = injectIntoHtml(response, config, version, preview,env);
   if (preview) {
     out = new Response(out.body, out);
     const csp = out.headers.get("content-security-policy");
@@ -450,7 +450,7 @@ export function withAdminConsole<W extends WorkerLike>(worker: W): W {
       const response = await worker.fetch(request, innerEnv, ctx);
       if (!page) return response;
       try {
-        return await decorate(request, response, config, version, preview);
+        return await decorate(request, response, config, version, preview,env);
       } catch (e) {
         console.error("aap_decorate_error", e);
         return response;
