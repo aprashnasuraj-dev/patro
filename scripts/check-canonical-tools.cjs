@@ -24,7 +24,15 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   page.on("pageerror",onHomeError);
   const homeResponse=await page.goto("http://127.0.0.1:4173/",{waitUntil:"domcontentloaded",timeout:30000});
   if(!homeResponse || !homeResponse.ok()) throw new Error(`homepage HTTP ${homeResponse?.status() ?? "no-response"}`);
-  await page.waitForSelector(".rh-page .rh-grid .rh-cell:not(.is-empty)",{state:"visible",timeout:20000});
+  await page.waitForSelector(".rh-page .rh-grid .rh-cell:not(.is-empty)",{state:"visible",timeout:20000}).catch(async error => {
+    const diagnostic=await page.evaluate(()=>({
+      rootText:document.querySelector("#root")?.textContent?.slice(0,600),
+      calendarNodes:document.querySelectorAll(".rh-calendar").length,
+      cells:document.querySelectorAll(".rh-cell").length,
+      jsAssets:[...document.scripts].map(s=>s.src).filter(Boolean).slice(-5)
+    }));
+    throw new Error(`Canonical home calendar unavailable: ${error.message}; browser errors=${JSON.stringify(homeErrors)}; diagnostic=${JSON.stringify(diagnostic)}`);
+  });
   await page.waitForFunction(()=>document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)").length>=28,{timeout:20000});
   const home=await page.evaluate(()=>{
     const cells=[...document.querySelectorAll(".rh-grid .rh-cell:not(.is-empty)")];
