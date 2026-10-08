@@ -48,7 +48,7 @@ export async function purgeDailyCalendarCache(env:JobsEnv){
 
 /**
  * Prime the small, high-traffic public reference set once per Nepal day. This turns
- * thousands of potential D1 reads into one indexed D1 read followed by Cache/KV/R2 hits.
+ * thousands of potential D1 reads into one indexed D1 read followed by Cache API/R2 hits.
  * The current BS month is also primed; after the first write, the durable R2 copy can
  * repopulate cold edges without touching D1.
  */
@@ -56,7 +56,7 @@ export async function warmDailyReferenceCache(env:JobsEnv){
   if(!env.DB)return {ok:false,error:"d1_unavailable"};
   const base=String(env.PUBLIC_SITE_URL||"https://aafnaipatro.com").replace(/\/+$/,"");
   const date=todayNepal();
-  const result:any={ok:true,date,kv:!!env.CACHE,r2:!!env.ARCHIVE,items:{}};
+  const result:any={ok:true,date,r2:!!env.ARCHIVE,kv_coordination:!!env.CACHE,items:{}};
 
   // Keep the scheduled warmup on the same revisioned key used by the live UI. The
   // revision prevents an older KV/R2 snapshot from shadowing a repaired D1 archive.
