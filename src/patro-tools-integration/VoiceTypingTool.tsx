@@ -118,7 +118,7 @@ export function VoiceTypingTool() {
           <div className="voice-engine-panel">
             <div>
               <span className="tool-badge">पहिचान विधि · Recognition mode</span>
-              <p className="tool-muted">Live mode तुरुन्तै लेख्छ। Server mode छोटो recording रोकिएपछि उच्च-गुणस्तर transcription तयार गर्छ।</p>
+              <p className="tool-muted">Live mode तुरुन्तै लेख्छ। Server mode ले बोल्दै गर्दा प्रत्येक छोटो recording को पाठ तयार गर्छ।</p>
             </div>
             <div className="voice-engine-picker" role="group" aria-label="Voice recognition engine">
               {dictation.browserAvailable ? (
@@ -149,12 +149,17 @@ export function VoiceTypingTool() {
           </div>
         ) : null}
 
+        {dictation.mode === "server" && (dictation.listening || dictation.processing || dictation.progress.completed > 0) ? (
+          <span className="tool-badge" role="status" aria-live="polite">
+            {dictation.progress.elapsedSeconds}s · {dictation.progress.completed} {language === "ne-NP" ? "खण्ड तयार" : "chunks ready"} · {dictation.progress.pending} {language === "ne-NP" ? "प्रतीक्षामा" : "pending"}
+          </span>
+        ) : null}
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
             <span className="tool-badge" aria-live="polite">{modeText}</span>
             <p>{meta.punctuation}</p>
             {dictation.mode === "server" ? (
-              <p className="tool-muted">Stop थिचेपछि recording server मा transcription का लागि पठाइन्छ। एक पटकमा अधिकतम 60 सेकेन्ड बोल्न सकिन्छ।</p>
+              <p className="tool-muted">हरेक 12 सेकेन्डमा recording transcription का लागि पठाइन्छ। Stop थिच्दा बाँकी आवाज पनि पठाइन्छ।</p>
             ) : null}
           </div>
           {!dictation.listening ? (

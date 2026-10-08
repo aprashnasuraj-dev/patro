@@ -28,7 +28,7 @@ async function mock(page, scenario, server = true) {
     } });
     class Recorder {
       static isTypeSupported() { return true; }
-      constructor() { this.state = 'inactive'; this.mimeType = 'audio/webm'; }
+      constructor() { this.state = 'inactive'; this.mimeType = 'audio/webm'; window.__voice.recorder = this; }
       start() { this.state = 'recording'; }
       stop() {
         this.state = 'inactive';
@@ -42,9 +42,9 @@ async function mock(page, scenario, server = true) {
   const browser = await chromium.launch({ headless: true, executablePath: process.env.VOICE_CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-webgl'] });
   const origin = process.env.VOICE_TEST_ORIGIN || 'http://127.0.0.1:4173';
   try {
-    for (const scenario of ['desktop', 'android', 'network', 'service-not-allowed', 'language-not-supported', 'silent', 'none', 'unconfigured', 'cancel']) {
+    for (const scenario of ['desktop', 'android', 'chunked', 'network', 'service-not-allowed', 'language-not-supported', 'silent', 'none', 'unconfigured', 'cancel']) {
       const page = await browser.newPage();
-      await mock(page, ['unconfigured'].includes(scenario) ? 'none' : scenario === 'cancel' ? 'silent' : scenario, scenario !== 'unconfigured');
+      await mock(page, ['unconfigured'].includes(scenario) ? 'none' : scenario === 'cancel' ? 'silent' : scenario === 'chunked' ? 'none' : scenario, scenario !== 'unconfigured');
       await page.goto(origin + '/tools/voice-typing');
       const mic = page.locator('.voice-record-button'); await mic.waitFor();
       await page.waitForFunction(() => document.querySelector('.voice-capture-status').textContent.includes('Live recognition') || document.querySelector('.voice-capture-status').textContent.includes('Accurate server') || document.querySelector('.voice-capture-status').textContent.includes('उपलब्ध छैन'));
@@ -80,8 +80,14 @@ async function mock(page, scenario, server = true) {
         } else {
           await page.waitForFunction(() => window.__voice.media === 1);
           await page.waitForFunction(() => document.querySelector('.voice-record-button').textContent.includes('रोक्नुहोस्'));
+          if (scenario === 'chunked') {
+            await page.evaluate(() => window.__voice.recorder.stop());
+            await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value.includes('नमस्ते नेपाल'));
+            assert.equal(await page.evaluate(() => window.__voice.tracksStopped), 0, 'stream remains open between segments');
+          }
           await mic.click();
           await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value.includes('नमस्ते नेपाल'));
+          if (scenario === 'chunked') await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value.trim() === 'नमस्ते नेपाल नमस्ते नेपाल');
           assert.equal(await page.evaluate(() => window.__voice.media), 1, 'fallback uses the original tap');
         }
       }
