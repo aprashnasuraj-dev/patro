@@ -56,7 +56,7 @@ jobs:
             esac
 
             case "$file" in
-              src/*|src/**|public/*|public/**|index.html|vite.config.*|scripts/emit-*|scripts/prerender-*|scripts/generate-seo.mjs|scripts/enhance-seo-discovery.mjs|scripts/verify-seo-build.mjs)
+              src/*|src/**|public/*|public/**|index.html|vite.config.*|scripts/emit-*|scripts/prerender-*|scripts/generate-seo.mjs|scripts/enhance-seo-discovery.mjs|scripts/verify-seo-build.mjs|scripts/check-homepage-release.cjs|scripts/check-canonical-tools.cjs|tests/homepage-recovery-contract.test.mjs)
                 ui=true ;;
             esac
 
