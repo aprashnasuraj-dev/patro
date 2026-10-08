@@ -142,10 +142,10 @@ async function subscribe(request:Request,env:PushEnv,session:any){
   const ua=String(body?.user_agent_family||request.headers.get("user-agent")||"unknown").slice(0,240);
   const tz=String(body?.timezone||"Asia/Kathmandu").slice(0,64);
   const quiet=body?.quiet_hours&&typeof body.quiet_hours==="object"?JSON.stringify(body.quiet_hours):null;
-  await env.DB.prepare(
-    "insert into push_subscriptions(device_id,device_secret_hash,user_id,endpoint,keys,user_agent_family,timezone,quiet_hours,created_at) values(?1,?2,?3,?4,?5,?6,?7,?8,datetime('now')) on conflict(endpoint) do update set user_id=excluded.user_id,keys=excluded.keys,user_agent_family=excluded.user_agent_family,timezone=excluded.timezone,quiet_hours=excluded.quiet_hours"
-  ).bind(deviceId,secretHash,session.user_id,endpoint,JSON.stringify(keys),ua,tz,quiet).run();
-  return json({ok:true,device_id:deviceId,device_secret:secret});
+  const stored=await env.DB.prepare(
+    "insert into push_subscriptions(device_id,device_secret_hash,user_id,endpoint,keys,user_agent_family,timezone,quiet_hours,created_at) values(?1,?2,?3,?4,?5,?6,?7,?8,datetime('now')) on conflict(endpoint) do update set user_id=excluded.user_id,keys=excluded.keys,user_agent_family=excluded.user_agent_family,timezone=excluded.timezone,quiet_hours=excluded.quiet_hours returning device_id"
+  ).bind(deviceId,secretHash,session.user_id,endpoint,JSON.stringify(keys),ua,tz,quiet).first<{device_id:string}>();
+  return json({ok:true,device_id:stored?.device_id||deviceId,device_secret:secret});
 }
 async function jobs(request:Request,env:PushEnv,session:any){
   if(request.method==="GET"){
