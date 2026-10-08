@@ -15,7 +15,7 @@ const terminalPlaceholder=/coming soon|integration phase|placeholder|under devel
   if(rawHome.includes("सम्बन्धित खोजहरू · Related searches")) throw new Error("homepage first paint must not expose the raw related-search corpus");
   if(!rawHome.includes("BS · AD · नेपाल संवत् · तिथि · चाडपर्व · बिदा")) throw new Error("homepage first paint must explain the real calendar information hierarchy");
 
-  const browser=await chromium.launch({headless:true,args:["--disable-dev-shm-usage"]});
+  const browser=await chromium.launch({channel:"chromium",headless:true,args:["--disable-dev-shm-usage"]});
   const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:"reduce"});
   const page=await context.newPage();
 
