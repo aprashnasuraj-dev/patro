@@ -68,3 +68,27 @@ test("homepage recovery keeps interactive routes, calendar jump, cache invalidat
   }
   assert.ok(releaseGate.includes("Smoke test deployed Cloudflare runtime")&&releaseGate.includes("/api/v1/on-this-day")&&releaseGate.includes("/api/v1/time-machine?limit=800"),"release must verify critical live Cloudflare routes after deploy");
 });
+
+// No homepage import should pull every unrelated feature suite into initial JavaScript.
+test("mobile first-load isolates feature routes without losing navigation",()=>{
+  const router=read("src/PatroRouter.tsx");
+  const home=read("src/ReferenceHomePage.tsx");
+  assert.ok(router.includes('import { ReferenceHomePage } from "./ReferenceHomePage"'));
+  assert.ok(home.includes("HomePageCurrent"));
+  assert.ok(router.includes('import { PATRO_TOOL_SLUGS } from "./patro-tools-integration/toolSlugs"'));
+  for(const [component,module] of [
+    ["ToolsPage","AafnaiPages"],["SamacharPage","AafnaiPages"],
+    ["DateDetailPage","AafnaiDetailPages"],["OnThisDayPage","AafnaiDetailPages"],
+    ["TimeMachinePage","AafnaiDetailPages"],["ConvertPage","ConvertPage"],
+    ["PatroToolsShell","patro-tools-integration/PatroToolsShell"],
+    ["CommunityHub","community/CommunityHub"],
+    ["RashifalExperience","rashifal/RashifalExperience"],
+    ["NepaliTools","features/nepali-tools/NepaliTools"]
+  ]){
+    assert.ok(router.includes(`const ${component}=lazy(()=>import("./${module}")`),`${component} should load only on demand`);
+  }
+  for(const route of ["/","/today","/calendar/","/tools","/convert","/rashifal","/samachar","/fm","/tv","/on-this-day","/time-machine","/janmadin","/tools/my-place","/nepal-sambat/mandala"]){
+    assert.ok(router.includes(route),`lost user-facing path ${route}`);
+  }
+  assert.ok(router.includes('Suspense fallback={<Fallback/>}'),"lazy routes need visible accessible loading state");
+});
