@@ -69,8 +69,7 @@ export function VoiceTypingTool() {
   async function toggleTransliteration(enabled: boolean) {
     if (!enabled) { setTransliterateLatin(undefined); return; }
     try {
-      const modulePath = '/nepali-tools/core/roman.mjs';
-      const engine = await import(/* @vite-ignore */ modulePath);
+      const engine = await import('../patro-tools/language/roman-keyboard');
       setTransliterateLatin(() => engine.transliterateRoman); setCleanupError("");
     } catch { setCleanupError("Roman लिप्यन्तरण अहिले उपलब्ध छैन; English शब्द जस्ताको तस्तै रहन्छन्।"); }
   }
@@ -169,6 +168,8 @@ export function VoiceTypingTool() {
             {dictation.progress.elapsedSeconds}s · {dictation.progress.completed} {language === "ne-NP" ? "खण्ड तयार" : "chunks ready"} · {dictation.progress.pending} {language === "ne-NP" ? "प्रतीक्षामा" : "pending"}
           </span>
         ) : null}
+        {dictation.localStatus === "downloadable" ? <button type="button" className="tool-secondary-button" onClick={() => void dictation.installLocalRecognition()} disabled={dictation.localInstalling || dictation.listening || dictation.processing}>{dictation.localInstalling ? "अफलाइन आवाज डाउनलोड हुँदैछ…" : "अफलाइन आवाज डाउनलोड गर्नुहोस्"}</button> : null}
+        {dictation.localStatus === "available" ? <label><input type="checkbox" checked={dictation.localEnabled} disabled={dictation.listening || dictation.processing} onChange={event => dictation.selectLocalRecognition(event.target.checked)}/> यस उपकरणमा आवाज पहिचान · On-device recognition</label> : null}
         {language === "ne-NP" ? <fieldset className="voice-cleanup-options"><legend>पाठ मिलाउने विकल्प · Optional cleanup</legend>
           <label><input type="checkbox" checked={spokenNumbers} onChange={event => setSpokenNumbers(event.target.checked)}/> बोलेका सामान्य अंक बदल्नुहोस्</label>
           <label><input type="checkbox" checked={!!transliterateLatin} onChange={event => void toggleTransliteration(event.target.checked)}/> Roman अक्षर देवनागरीमा (अनुमान; सम्पादन गर्नुहोस्)</label>

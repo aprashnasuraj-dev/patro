@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 import { recordVoiceChunks, type ChunkedRecording, type RecordingProgress } from '../voice-chunks';
+import { installLocalSpeech, localSpeechStatus, type LocalSpeechStatus } from '../voice-local';
 import { convertSpokenNepaliNumbers } from '../voice-numbers';
 import { speechError as errorMessage } from '../voice-guidance';
 import { VoiceResultDiff } from '../voice-results';
@@ -109,6 +110,10 @@ export function useNepaliDictation({
   const [mode, setMode] = useState<DictationMode>('unsupported');
   const [browserWorking, setBrowserWorking] = useState(false);
   const [browserFailure, setBrowserFailure] = useState<string | null>(null);
+  const [localStatus, setLocalStatus] = useState<LocalSpeechStatus>('unavailable');
+  const [localEnabled, setLocalEnabled] = useState(false);
+  const [localInstalling, setLocalInstalling] = useState(false);
+  const localControllerRef = useRef<AbortController | null>(null);
   const [browserAvailable, setBrowserAvailable] = useState(false);
   const [serverAvailable, setServerAvailable] = useState(false);
   const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
@@ -160,6 +165,7 @@ export function useNepaliDictation({
       clearTimer();
       try { recognitionRef.current?.abort?.(); } catch { /* already ended */ }
       recordingRef.current?.cancel();
+      localControllerRef.current?.abort();
       streamRef.current?.getTracks().forEach((track) => track.stop());
     };
   }, [clearTimer, clearSessionTimers]);
@@ -203,6 +209,33 @@ export function useNepaliDictation({
 
     return () => controller.abort();
   }, [serverFallback, language]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    localControllerRef.current?.abort(); localControllerRef.current = controller;
+    setLocalEnabled(false); setLocalInstalling(false); setLocalStatus('unavailable');
+    void localSpeechStatus(speechRecognitionCtor(), language, 10_000, controller.signal).then(status => {
+      if (mountedRef.current && !controller.signal.aborted) setLocalStatus(status);
+    });
+    return () => controller.abort();
+  }, [language]);
+
+  const installLocalRecognition = useCallback(async () => {
+    if (localInstalling || listening || processing) return;
+    const controller = localControllerRef.current;
+    setLocalInstalling(true);
+    const status = await installLocalSpeech(speechRecognitionCtor(), language, 60_000, controller?.signal);
+    if (mountedRef.current && !controller?.signal.aborted) {
+      setLocalStatus(status); setLocalInstalling(false);
+      if (status !== 'available') setError(language === 'ne-NP' ? 'अफलाइन आवाज डाउनलोड पूरा भएन। Live वा server mode प्रयोग गर्नुहोस्।' : 'Offline speech download did not finish. Use live or server mode.');
+    }
+  }, [language, listening, localInstalling, processing]);
+
+  const selectLocalRecognition = useCallback((enabled: boolean) => {
+    if (listening || processing || (enabled && localStatus !== 'available')) return;
+    setLocalEnabled(enabled);
+    if (enabled) { selectedModeRef.current = 'browser'; setMode('browser'); }
+  }, [listening, processing, localStatus]);
 
   const stop = useCallback(() => {
     setRestartLanguage(null);
@@ -305,6 +338,7 @@ export function useNepaliDictation({
         return;
       }
       recognition.lang = language;
+      recognition.processLocally = localEnabled && localStatus === 'available';
       const android = /Android/i.test(navigator.userAgent);
       recognition.continuous = !android;
       const diff = new VoiceResultDiff();
@@ -366,7 +400,7 @@ export function useNepaliDictation({
           restartDelay = Math.min(2_000, restartDelay * 2);
           return;
         }
-        recognitionRef.current = null; clearSessionTimers(); setListening(false);
+        recognitionRef.current = null; listeningIntentRef.current = false; clearSessionTimers(); setListening(false);
       };
       recognitionRef.current = recognition;
       if (android) sessionTimerRef.current = window.setTimeout(stop, 10 * 60_000);
@@ -384,7 +418,7 @@ export function useNepaliDictation({
     setError(language === 'ne-NP'
       ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
       : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
-  }, [clearTimer, clearSessionTimers, language, listening, mode, processing, serverAvailable, serverFallback, startServer, stop]);
+  }, [clearTimer, clearSessionTimers, language, listening, localEnabled, localStatus, mode, processing, serverAvailable, serverFallback, startServer, stop]);
 
   useEffect(() => {
     if (previousLanguageRef.current === language) return;
@@ -405,6 +439,11 @@ export function useNepaliDictation({
     browserAvailable,
     browserWorking,
     browserFailure,
+    localStatus,
+    localEnabled,
+    localInstalling,
+    installLocalRecognition,
+    selectLocalRecognition,
     serverAvailable,
     capabilitiesChecked,
     listening,
