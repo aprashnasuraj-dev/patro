@@ -106,6 +106,10 @@ export function useNepaliDictation({
   const [serverAvailable, setServerAvailable] = useState(false);
   const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
   const [listening, setListening] = useState(false);
+  const [recordingEnded, setRecordingEnded] = useState(0);
+  const selectedModeRef = useRef<DictationMode>('browser');
+  const [restartLanguage, setRestartLanguage] = useState<DictationLanguage | null>(null);
+  const previousLanguageRef = useRef(language);
   const [processing, setProcessing] = useState(false);
   const [progress, setProgress] = useState<RecordingProgress>({ completed: 0, pending: 0, elapsedSeconds: 0 });
   const [interim, setInterim] = useState('');
@@ -177,7 +181,7 @@ export function useNepaliDictation({
         if (!mountedRef.current || controller.signal.aborted) return false;
         const server = response.ok && payload?.stt?.server === true;
         setServerAvailable(server);
-        if (server && (!browser || browserEngineHint(language) === false)) setMode('server');
+        if (server && (!browser || browserEngineHint(language) === false || selectedModeRef.current === 'server')) setMode('server');
         return server;
       } catch {
         if (!mountedRef.current || controller.signal.aborted) return false;
@@ -192,6 +196,7 @@ export function useNepaliDictation({
   }, [serverFallback, language]);
 
   const stop = useCallback(() => {
+    setRestartLanguage(null);
     listeningIntentRef.current = false;
     setInterim('');
     clearSessionTimers();
@@ -208,11 +213,13 @@ export function useNepaliDictation({
     if (listening || processing) return;
     if (next === 'browser' && browserAvailable) {
       setError(null);
+      selectedModeRef.current = 'browser';
       setMode('browser');
       return;
     }
     if (next === 'server' && serverAvailable && serverRecordingAvailable()) {
       setError(null);
+      selectedModeRef.current = 'server';
       setMode('server');
     }
   }, [browserAvailable, listening, processing, serverAvailable]);
@@ -251,7 +258,7 @@ export function useNepaliDictation({
           },
           onEnd() {
             recordingRef.current = null; streamRef.current = null; listeningIntentRef.current = false;
-            if (mountedRef.current) { setListening(false); setProcessing(false); }
+            if (mountedRef.current) { setListening(false); setProcessing(false); setRecordingEnded(value => value + 1); }
           },
         });
       } catch (cause) {
@@ -369,6 +376,20 @@ export function useNepaliDictation({
       ? 'यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन। Chrome/Edge वा MediaRecorder समर्थित ब्राउजर प्रयोग गर्नुहोस्।'
       : 'Voice typing is not available in this browser. Try Chrome/Edge or a browser with MediaRecorder support.');
   }, [clearTimer, clearSessionTimers, language, listening, mode, processing, serverAvailable, serverFallback, startServer, stop]);
+
+  useEffect(() => {
+    if (previousLanguageRef.current === language) return;
+    previousLanguageRef.current = language;
+    const resume = listeningIntentRef.current || listening;
+    stop();
+    if (resume) setRestartLanguage(language);
+  }, [language, listening, stop]);
+
+  useEffect(() => {
+    if (restartLanguage !== language || !capabilitiesChecked || processing || recordingRef.current) return;
+    setRestartLanguage(null);
+    if (mode !== 'unsupported') void start();
+  }, [restartLanguage, language, capabilitiesChecked, processing, recordingEnded, mode, start]);
 
   return {
     mode,
