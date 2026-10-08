@@ -40,3 +40,9 @@ test('the calendar adapter reads and caches static year assets without requestin
   await context.module.exports.archiveDay('2026-10-08'); assert.equal(calls, 1);
   await assert.rejects(context.module.exports.archiveDay('2026-10-09'), /अभिलेख/);
 });
+
+test('voice Preeti conversion reuses the core Nepali mapping and preserves Latin text', async () => {
+  const { unicodeToPreeti, preetiToUnicode } = await runtime('packages/core/src/preeti.ts');
+  for (const text of ['नेपाल', 'मेरो नाम सुरज हो।']) assert.equal(preetiToUnicode(unicodeToPreeti(text)), text);
+  assert.ok(unicodeToPreeti('नेपाल Office 2026').includes('Office 2026'));
+});

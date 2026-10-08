@@ -38,6 +38,7 @@ export function VoiceTypingTool() {
   const [language, setLanguage] = useState<DictationLanguage>("ne-NP");
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
+  const [preetiStatus, setPreetiStatus] = useState("");
   const [spokenNumbers, setSpokenNumbers] = useState(false);
   const [transliterateLatin, setTransliterateLatin] = useState<((text: string) => string) | undefined>();
   const [cleanupError, setCleanupError] = useState("");
@@ -83,6 +84,10 @@ export function VoiceTypingTool() {
     } catch {
       setCopied(false);
     }
+  }
+
+  async function copyPreeti() {
+    try { if (!navigator.clipboard) throw Error(); const { unicodeToPreeti } = await import("../../packages/core/src/preeti"); await navigator.clipboard.writeText(unicodeToPreeti(text)); setPreetiStatus("Preeti कपी भयो। Preeti font छानेर paste गर्नुहोस्; English शब्द जस्ताको तस्तै राखिन्छन्।"); } catch { setPreetiStatus("कपी हुन सकेन। अनुमति जाँच्नुहोस् वा Preeti converter प्रयोग गर्नुहोस्।"); }
   }
 
   function clearTranscript() {
@@ -227,11 +232,13 @@ export function VoiceTypingTool() {
           <button type="button" className="tool-secondary-button" onClick={copyTranscript} disabled={!text}>
             {copied ? "✓ कपी भयो" : "कपी · Copy"}
           </button>
+          <button type="button" className="tool-secondary-button" onClick={() => void copyPreeti()} disabled={!text}>Preeti मा कपी</button>
           <button type="button" className="tool-link-button" onClick={clearTranscript} disabled={dictation.processing || (!text && !dictation.listening)}>
             खाली गर्नुहोस् · Clear
           </button>
           {language === "ne-NP" ? <a className="tool-link-button" href="/tools/spell-check" onClick={()=>{try{sessionStorage.setItem("patro.language.handoff",text)}catch{}}}>नेपाली हिज्जे जाँच →</a> : null}
         </div>
+      {preetiStatus ? <p role="status">{preetiStatus}</p> : null}
       </section>
 
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
