@@ -191,3 +191,13 @@ describe("Cloudflare Free plan (static default)", () => {
     for (const x of ["!/moon/*", "!/eclipse/*", "!/nepal/*", "!/us/*", "!/weather/*", "!/de/*", "!/fr/*", "!/es/*", "!/it/*"]) expect(cfg).toContain(`"${x}"`);
   });
 });
+
+
+it("standalone shell resources bypass the Worker through static assets", async () => {
+ const {shell}=await import("../worker/growth/html");
+ const html=await shell(new Request("https://aafnaipatro.com/moon"),{}, {title:"Moon",description:"Phase",body:"Moon"}).text();
+ expect(html).toContain('href="/assets/growth-favicon-v1.svg"');
+ expect(html).toContain('content="https://aafnaipatro.com/assets/growth-og-default-v1.png"');
+ expect(html).toContain('url("/assets/growth-nepali-serif-700-v1.woff2")');
+ expect(html).not.toContain('href="/favicon.svg"');
+});

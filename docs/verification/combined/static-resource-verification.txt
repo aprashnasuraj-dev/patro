@@ -1,0 +1,22 @@
+growth prerender: 337 pages in 16.8 s; dist now has 3715 files (Free plan limit 20000)
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> patro-astronomy-spa@2.0.0 test:growth-pages
+> vitest run tests/growth-pages.test.ts
+
+
+ RUN  v5.0.2 /workspace/scratch/f1bdcf437f38/patro-next
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  16:00:17
+   Duration  38.53s (tests 99%, transform 1%)
+
+SEO build verified: 23246 unique indexable URLs, including 3307 source-backed Time Machine pages and 16802 factual date pages across BS 2048-2093.
+Final static file budget: 3715 / 19500
+URL preservation passed: 22902 existing URLs retained; 344 added; 0 removed (dist).
+All three static growth resources preserve original bytes.
+
+Fresh Cloudflare dry-run: exit 0.

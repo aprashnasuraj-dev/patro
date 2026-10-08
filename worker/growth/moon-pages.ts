@@ -309,4 +309,3 @@ export async function moonPageResponse(request: Request, env: GrowthEnv, now = n
     return new Response("Moon page temporarily unavailable", { status: 503, headers: { "cache-control": "no-store", "retry-after": "120", "x-robots-tag": "noindex, nofollow", "x-error": String((error as Error)?.message || error).slice(0, 120) } });
   }
 }
-

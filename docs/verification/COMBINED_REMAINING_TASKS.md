@@ -5,14 +5,16 @@ Verified 2026-10-08 against main `bfb4e0e552d4a95e5f298911dfa68903badd2704`. Sco
 ## Verified result
 
 - Baseline release verification passed. Combined `npm run release:verify` passed: 372 test executions, two production builds, Cloudflare dry run, dataset guards and URL guards. Seven additional growth SEO tests passed.
-- Final font-only correction passed TypeScript, all 14 growth-page tests, growth prerender, SEO validation, URL/file guards and a fresh Cloudflare dry run. The full release run preceded this isolated font correction; it is not represented as a later full rerun.
+- Final font-only correction passed TypeScript, all 14 growth-page tests, growth prerender, SEO validation, URL/file guards and a fresh Cloudflare dry run. The full release run preceded this isolated font correction; it is not represented as a later full rerun. An additional static favicon/social-image correction passed all 15 growth tests, TypeScript, SEO/URL/file guards and a fresh dry run; the copied resources retain original bytes.
 - Final artifact contains **23,246 indexable URLs**: **22,902 baseline URLs retained, 344 added, zero removed**. New URLs comprise 337 growth routes, six existing guide additions and the opt-in birthday landing page. The immutable baseline was not recaptured or overwritten.
-- **3,713 static files**, below the configured 19,500 guard. Most existing date pages continue using their prior Worker routes; URL count is not static-file count.
-- Chromium passed all 19 mocked voice scenarios and two bot/reminder flows. Final combined browser checks passed for home, moon, German moon, Nepal year, Kathmandu weather, Everest trek weather and birthday. No JavaScript errors or document overflow at 380px on checked pages. Growth font load is explicitly tested. Moon/weather/home screenshots also cover 1280px.
+- **3,715 static files**, below the configured 19,500 guard. Most existing date pages continue using their prior Worker routes; URL count is not static-file count.
+- Chromium passed all 19 mocked voice scenarios and two bot/reminder flows. Final combined browser checks passed for home, moon, German moon, Nepal year, Kathmandu weather, Everest trek weather and birthday. No JavaScript errors or document overflow at 380px on checked pages. Growth font load is explicitly tested. Icons and social images now use `/assets/` too, avoiding root-path Worker requests. Moon/weather/home screenshots also cover 1280px.
 - Forty fixed Kathmandu archive dates retain sunrise/sunset within one minute. Twenty fixed-seed birthdays independently check archive recurrence including unavailable years. DST, repeated/skipped civil times, date-line and polar cases are tested. These checks are internal regression evidence, not independent astronomical calibration.
 - Browser birthday calculation does not auto-save, preserves an unknown pre-existing private field, sends no birth date to an API, defaults private export fields off, and requires explicit family reminder copying.
 
 Evidence: [release summary](combined/release-summary.txt), [baseline summary](combined/baseline-release-summary.txt), [URL guard](combined/url-preservation-final.json), [before browser](combined/before-browser.json), [after browser](combined/after-browser.json), [voice scenarios](combined/voice-browser.txt), [voice flows](combined/voice-features.txt), [font follow-up](combined/font-verification.txt).
+
+GitHub expanded PR CI passed on `fed4665a0443712c3ef412b584c9e4c631603bed`; [summary](combined/github-ci-summary.txt). A final metadata/resource follow-up is checked separately. The Cloudflare preview integration reports `Preview creation failed: This Worker does not exist on your account.` Production main previously passed its Cloudflare check and the Worker name remains `patro`. This may be preview-trigger state, not a proved application-code cause. Cloudflare build-log/account access is unavailable here; no Worker was renamed/replaced, no check bypassed, and no production deploy made. The failing preview check must be investigated in the Cloudflare account before calling the whole PR green.
 
 ## Requirement status
 
@@ -73,6 +75,8 @@ PV sampling estimates page views only. Visitors are observed sampled visitors, n
 Some existing archive/history records already carry an unverified label; those labels are retained. The existing dataset audit has no external calibration dataset supplied. No unverified facts or named approvals were invented to mark the prompt finished.
 
 The 100,000 visitor goal is a target, not a guaranteed result. Useful, differentiated pages and preserved indexed URLs are provided instead of 40,000 near-duplicate pages. Google's official policy describes scaled content abuse: https://developers.google.com/search/docs/essentials/spam-policies#scaled-content .
+
+[Static resource verification](combined/static-resource-verification.txt) checks the font, icon and social-preview image remain byte-identical to existing repository files.
 
 ## Rollback
 

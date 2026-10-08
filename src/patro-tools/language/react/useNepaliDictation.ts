@@ -366,7 +366,7 @@ export function useNepaliDictation({
       };
       recognition.onstart = () => mountedRef.current && setListening(true);
       recognition.onaudiostart = markWorking;
-      
+
       recognition.onresult = (event: any) => {
         if (!mountedRef.current || recognitionRef.current !== recognition) return;
         markWorking();

@@ -20,6 +20,8 @@ const mod = await import("data:text/javascript;base64," + Buffer.from(bundle.out
 
 await mkdir(resolve(dist,"assets"),{recursive:true});
 await copyFile(resolve(root,"public/fonts/nepali-serif-700.woff2"),resolve(dist,"assets/growth-nepali-serif-700-v1.woff2"));
+await copyFile(resolve(root,"public/favicon.svg"),resolve(dist,"assets/growth-favicon-v1.svg"));
+await copyFile(resolve(root,"public/og-default.png"),resolve(dist,"assets/growth-og-default-v1.png"));
 const started = Date.now();
 const pages = await mod.growthStaticPages(new Date(), SITE);
 for (const page of pages) {

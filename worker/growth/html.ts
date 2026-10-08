@@ -110,8 +110,8 @@ export function shell(request: Request, env: GrowthEnv, opts: ShellOptions): Res
 <title>${esc(opts.title)}</title><meta name="description" content="${esc(opts.description)}"><meta name="robots" content="${robots}">
 <link rel="canonical" href="${esc(canonical)}">${alternates}<meta property="og:type" content="website"><meta property="og:site_name" content="Aafnai Patro">
 <meta property="og:title" content="${esc(opts.title)}"><meta property="og:description" content="${esc(opts.description)}"><meta property="og:url" content="${esc(canonical)}">
-<meta property="og:image" content="${esc(siteOrigin(env))}/og-default.png"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#176f3b"><style>${CSS}</style>${schema}</head>
+<meta property="og:image" content="${esc(siteOrigin(env))}/assets/growth-og-default-v1.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/growth-favicon-v1.svg" type="image/svg+xml"><meta name="theme-color" content="#176f3b"><style>${CSS}</style>${schema}</head>
 <body><header class="top"><div><a class="brand" href="/">Aafnai Patro</a>${nav}</div></header>
 <main>${opts.body}</main>
 <footer><p>${footer}</p></footer>
