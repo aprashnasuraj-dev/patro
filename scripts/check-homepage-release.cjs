@@ -40,7 +40,16 @@ function fail(message) { throw new Error(message); }
   const errors = [];
   page.on("pageerror", (error) => errors.push(String(error)));
   await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
-  await page.locator(".rh-calendar .rh-cell:not(.is-empty)").first().waitFor({ state: "visible", timeout: 20000 });
+  await page.locator(".rh-calendar .rh-cell:not(.is-empty)").first().waitFor({ state: "visible", timeout: 20000 }).catch(async (error) => {
+    const diagnostic = await page.evaluate(() => ({
+      url: location.href,
+      rootText: document.querySelector("#root")?.textContent?.slice(0, 600),
+      calendarNodes: document.querySelectorAll(".rh-calendar").length,
+      cells: document.querySelectorAll(".rh-cell").length,
+      jsAssets: [...document.scripts].map(s => s.src).filter(Boolean).slice(-5)
+    }));
+    throw new Error(`Homepage calendar unavailable with APIs offline: ${error.message}; browser errors=${JSON.stringify(errors)}; diagnostic=${JSON.stringify(diagnostic)}`);
+  });
   const runtime = await page.evaluate(() => {
     const cells = [...document.querySelectorAll(".rh-calendar .rh-cell:not(.is-empty)")];
     const first = cells[0];
