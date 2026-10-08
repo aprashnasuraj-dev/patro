@@ -1,3 +1,4 @@
+import { InlineDictationPreview, useDictationEditor } from '../patro-tools/language/react/DictationEditor';
 import { useNepaliDictation } from "../patro-tools/language/react/useNepaliDictation";
 import { useAccount } from "../auth/account-client";
 import { GoogleAuthButton } from "../auth/GoogleAuthButton";
@@ -17,7 +18,9 @@ export function HomeQuickNote({ language }: { language: Lang }) {
   const [usedVoice, setUsedVoice] = useState(false);
   const [status, setStatus] = useState("");
   const [notes, setNotes] = useState<StoredNote[]>(() => { try { return readLife().notes; } catch { return []; } });
-  const dictation=useNepaliDictation({language:voiceLang,serverFallback:true,onFinal:chunk=>{setText(value=>value+(value&&!/\s$/.test(value)?" ":"")+chunk);setUsedVoice(true)}});const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
+  const textarea = useRef<HTMLTextAreaElement>(null);
+  const insertFinal = useDictationEditor(text, setText, textarea, () => setUsedVoice(true));
+  const dictation=useNepaliDictation({language:voiceLang,serverFallback:true,onFinal:insertFinal});const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
 
   useEffect(() => {
     const refresh = () => setNotes(readLife().notes);
@@ -44,9 +47,9 @@ export function HomeQuickNote({ language }: { language: Lang }) {
   return <section className="rh-card qn-card" aria-labelledby="qn-title">
     <header className="rh-card-head"><div><span className="rh-kicker">{l("आफ्नै ठाउँ", "My space")}</span><h2 id="qn-title">{l("मेरो टिपोट", "Quick note")}</h2></div></header>
     <label className="qn-field"><span className="sr-only">{l("टिपोट लेख्नुहोस्", "Write a note")}</span>
-      <textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} lang={voiceLang === "ne-NP" ? "ne" : "en"}
-        placeholder={l("आजको काम, सम्झनु पर्ने कुरा… लेख्नुहोस् वा 🎙 थिचेर बोल्नुहोस्", "Write, or press 🎙 and speak…")} /></label>
-    <label className="qn-field">{l("मितिमा सुरक्षित गर्नुहोस्","Save to date")}<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)}/></label>{dictation.interim&&<p aria-live="polite">{dictation.interim}</p>}{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="qn-actions">
+      <textarea ref={textarea} value={text} onChange={(e) => setText(e.target.value)} rows={3} lang={voiceLang === "ne-NP" ? "ne" : "en"}
+        placeholder={l("आजको काम, सम्झनु पर्ने कुरा… लेख्नुहोस् वा 🎙 थिचेर बोल्नुहोस्", "Write, or press 🎙 and speak…")} /><InlineDictationPreview textarea={textarea} interim={dictation.interim} /></label>
+    <label className="qn-field">{l("मितिमा सुरक्षित गर्नुहोस्","Save to date")}<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)}/></label>{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="qn-actions">
       {supported ? <button type="button" className={`qn-mic${listening ? " is-on" : ""}`} onClick={toggleVoice} aria-pressed={listening}
         aria-label={listening ? l("बोलेर टाइप रोक्नुहोस्", "Stop voice typing") : l("बोलेर टाइप गर्नुहोस्", "Voice typing")}>{listening ? "■" : "🎙"}</button> : null}
       {supported ? <div className="qn-lang" role="group" aria-label={l("बोल्ने भाषा", "Voice language")}>
