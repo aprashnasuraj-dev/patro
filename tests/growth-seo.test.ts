@@ -64,8 +64,8 @@ describe("search navigation and guide discovery",()=>{
    const canonical="https://aafnaipatro.com"+route;
    expect(sitemap,route).toContain("<loc>"+canonical+"</loc>");
    expect(html,route).toContain('<link rel="canonical" href="'+canonical+'">');
-   expect(html,route).toMatch(/<title>[^<]+<\\/title>/);
-   expect(html,route).toMatch(/<h1(?:\\s[^>]*)?>[\\s\\S]*?<\\/h1>/);
+   expect(html,route).toMatch(/<title>[^<]+<\/title>/);
+   expect(html,route).toMatch(/<h1(?:\s[^>]*)?>[\s\S]*?<\/h1>/);
    expect(html,route).toContain('<html lang="'+lang+'"');
    expect(html,route).not.toMatch(/<meta name="robots" content="noindex/);
   }
