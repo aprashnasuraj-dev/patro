@@ -1,0 +1,19 @@
+Voice browser passed: desktop
+Voice browser passed: local
+Voice browser passed: cleanup
+Voice browser passed: session-ended
+Voice browser passed: locale
+Voice browser passed: server-locale
+Voice browser passed: android
+Voice browser passed: chunked
+Voice browser passed: network
+Voice browser passed: service-not-allowed
+Voice browser passed: language-not-supported
+Voice browser passed: silent
+Voice browser passed: none
+Voice browser passed: unconfigured
+Voice browser passed: cancel
+Visible unsupported mic passed: /
+Visible unsupported mic passed: /me/notes
+Live language switch passed: /
+Live language switch passed: /me/notes

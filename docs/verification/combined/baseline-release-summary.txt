@@ -1,0 +1,27 @@
+main bfb4e0e552d4a95e5f298911dfa68903badd2704: release:verify exit 0
+URL preservation passed: 22902 existing URLs retained; 6 added; 0 removed (public).
+SEO build verified: 22908 unique indexable URLs, including 3307 source-backed Time Machine pages and 16802 factual date pages across BS 2048-2093.
+URL preservation passed: 22902 existing URLs retained; 6 added; 0 removed (dist).
+ Test Files  1 passed (1)
+      Tests  17 passed (17)
+   Duration  234ms (transform 77%, import 13%, tests 8%, worker 3%)
+ℹ tests 5
+ℹ fail 0
+ Test Files  5 passed (5)
+      Tests  45 passed (45)
+   Duration  772ms (transform 52%, tests 35%, import 12%, worker 1%)
+ Test Files  2 passed (2)
+      Tests  61 passed (61)
+   Duration  2.35s (tests 70%, import 15%, transform 14%)
+ℹ tests 43
+ℹ fail 0
+ℹ tests 122
+ℹ fail 0
+ℹ tests 11
+ℹ fail 0
+ℹ tests 5
+ℹ fail 0
+URL preservation passed: 22902 existing URLs retained; 6 added; 0 removed (public).
+SEO build verified: 22908 unique indexable URLs, including 3307 source-backed Time Machine pages and 16802 factual date pages across BS 2048-2093.
+URL preservation passed: 22902 existing URLs retained; 6 added; 0 removed (dist).
+--dry-run: exiting now.

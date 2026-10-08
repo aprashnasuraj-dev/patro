@@ -1,0 +1,41 @@
+npm run release:verify: exit 0 on code cfc0f8f
+URL preservation passed: 22902 existing URLs retained; 7 added; 0 removed (public).
+growth prerender: 337 pages in 17.5 s; dist now has 3712 files (Free plan limit 20000)
+SEO build verified: 23246 unique indexable URLs, including 3307 source-backed Time Machine pages and 16802 factual date pages across BS 2048-2093.
+URL preservation passed: 22902 existing URLs retained; 344 added; 0 removed (dist).
+Final static file budget: 3712 / 19500
+ Test Files  1 passed (1)
+      Tests  17 passed (17)
+   Duration  247ms (transform 78%, import 13%, tests 7%, worker 3%)
+ℹ tests 5
+ℹ fail 0
+ Test Files  5 passed (5)
+      Tests  48 passed (48)
+   Duration  774ms (transform 54%, tests 33%, import 12%, worker 1%)
+ Test Files  2 passed (2)
+      Tests  61 passed (61)
+   Duration  2.47s (tests 69%, import 16%, transform 14%)
+ℹ tests 43
+ℹ fail 0
+ℹ tests 146
+ℹ fail 0
+ℹ tests 10
+ℹ fail 0
+ℹ tests 5
+ℹ fail 0
+ℹ tests 7
+ℹ fail 0
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Duration  37.10s (tests 99%, transform 1%)
+ℹ tests 11
+ℹ fail 0
+ℹ tests 5
+ℹ fail 0
+URL preservation passed: 22902 existing URLs retained; 7 added; 0 removed (public).
+growth prerender: 337 pages in 16.9 s; dist now has 3712 files (Free plan limit 20000)
+SEO build verified: 23246 unique indexable URLs, including 3307 source-backed Time Machine pages and 16802 factual date pages across BS 2048-2093.
+URL preservation passed: 22902 existing URLs retained; 344 added; 0 removed (dist).
+Final static file budget: 3712 / 19500
+--dry-run: exiting now.
+Post-release font-only fix: typecheck + growth 14 + prerender/SEO/URL/file guards + Cloudflare dry-run passed; see font-verification.txt.

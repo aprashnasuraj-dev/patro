@@ -1,0 +1,120 @@
+{
+  "phase": "after",
+  "home": [
+    {
+      "signedIn": false,
+      "workerRequests": 3,
+      "workerPaths": [
+        "/",
+        "/api/nepali/speech-capabilities",
+        "/api/v1/events?year=2026"
+      ],
+      "allRequests": [
+        "/",
+        "/assets/main-B0smAH8X.js",
+        "/assets/react-vendor-knnG78c1.js",
+        "/assets/PlaceTimingMount-BDgV8mDu.js",
+        "/assets/main-Bg_H__T_.css",
+        "/aap/analytics.js",
+        "/assets/SeoSearchSupport-bGp7AFxT.js",
+        "/assets/SeoSearchSupport-Dtgj77MU.css",
+        "/api/nepali/speech-capabilities",
+        "/data/calendar/ad/2026.json",
+        "/data/calendar/bs/2083.json",
+        "/data/on-this-day/month-10.json",
+        "/api/v1/events?year=2026",
+        "/assets/DiscoveryPanel-ClAbYNo4.js",
+        "/assets/growth-WZ-PLRqW.css",
+        "/assets/HomeSkyFact-CssCEGsf.js",
+        "/assets/astronomy-DyqtK23S.js",
+        "/assets/astro-DzsKdnM-.js"
+      ],
+      "errors": [],
+      "auth": "synthetic auth/me+state fixture; no real account credentials used",
+      "sampling": "random .99: after PV skipped; average adds .1 per pageview; heartbeats after 60s excluded"
+    },
+    {
+      "signedIn": true,
+      "workerRequests": 5,
+      "workerPaths": [
+        "/",
+        "/api/v1/auth/me",
+        "/api/nepali/speech-capabilities",
+        "/api/v1/me/state",
+        "/api/v1/events?year=2026"
+      ],
+      "allRequests": [
+        "/",
+        "/assets/main-B0smAH8X.js",
+        "/assets/react-vendor-knnG78c1.js",
+        "/assets/PlaceTimingMount-BDgV8mDu.js",
+        "/assets/main-Bg_H__T_.css",
+        "/aap/analytics.js",
+        "/assets/SeoSearchSupport-bGp7AFxT.js",
+        "/assets/SeoSearchSupport-Dtgj77MU.css",
+        "/api/v1/auth/me",
+        "/api/nepali/speech-capabilities",
+        "/data/calendar/ad/2026.json",
+        "/data/calendar/bs/2083.json",
+        "/data/on-this-day/month-10.json",
+        "/assets/DiscoveryPanel-ClAbYNo4.js",
+        "/assets/growth-WZ-PLRqW.css",
+        "/api/v1/me/state",
+        "/api/v1/events?year=2026"
+      ],
+      "errors": [],
+      "auth": "synthetic auth/me+state fixture; no real account credentials used",
+      "sampling": "random .99: after PV skipped; average adds .1 per pageview; heartbeats after 60s excluded"
+    }
+  ],
+  "growth": [
+    {
+      "path": "/moon",
+      "status": 200,
+      "pageErrors": [],
+      "overflow": false,
+      "characters": 2524,
+      "weather": "deterministic upstream fixture; live external provider not asserted"
+    },
+    {
+      "path": "/de/mond",
+      "status": 200,
+      "pageErrors": [],
+      "overflow": false,
+      "characters": 1442,
+      "weather": "deterministic upstream fixture; live external provider not asserted"
+    },
+    {
+      "path": "/nepal/year",
+      "status": 200,
+      "pageErrors": [],
+      "overflow": false,
+      "characters": 1287,
+      "weather": "deterministic upstream fixture; live external provider not asserted"
+    },
+    {
+      "path": "/weather/kathmandu",
+      "status": 200,
+      "pageErrors": [],
+      "overflow": false,
+      "characters": 2794,
+      "weather": "deterministic upstream fixture; live external provider not asserted"
+    },
+    {
+      "path": "/nepal/trek-weather/everest-base-camp",
+      "status": 200,
+      "pageErrors": [],
+      "overflow": false,
+      "characters": 2488,
+      "weather": "deterministic upstream fixture; live external provider not asserted"
+    }
+  ],
+  "birthday": {
+    "pageErrors": [],
+    "oldStoragePreserved": true,
+    "autoSave": false,
+    "privateFieldsDefault": false,
+    "birthDateApiUploads": 0,
+    "familyLocalOnly": true
+  }
+}
