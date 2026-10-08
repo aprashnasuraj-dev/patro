@@ -1,10 +1,11 @@
 import { tithiAlarmUtc } from "../tithiAlarm";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, lazy, Suspense, useEffect, useMemo, useState } from "react";
 import type { EventKind } from "@/patro-tools/tithi-events/events";
 import { panchangProvider, primePanchang } from "./panchangAdapter";
 import { readLife, syncLifeTools, updateLife, type StoredTithiEvent } from "./storage";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
 
+const VoiceReminderComposer = lazy(() => import('./VoiceReminderComposer'));
 const MONTH_KEYS = ["chaitra","vaishakha","jyestha","ashadha","shravana","bhadrapada","ashwin","kartika","margashirsha","pausha","magha","falguna"];
 const KIND_LABEL: Record<EventKind, string> = { shraddha:"श्राद्ध", tithi_birthday:"तिथि जन्मदिन", puja:"पूजा", vrata:"व्रत", custom:"अन्य" };
 
@@ -28,6 +29,7 @@ function buildIcs(events:StoredTithiEvent[],occurrences:Record<string,NextOccurr
 }
 
 export function TithiReminderTool(){
+  const[voiceOpen,setVoiceOpen]=useState(false);
   const[events,setEvents]=useState<StoredTithiEvent[]>(()=>readLife().tithiEvents);
   const[title,setTitle]=useState("");const[kind,setKind]=useState<EventKind>("tithi_birthday");const[sourceDate,setSourceDate]=useState(todayNepal());const[remindAt,setRemindAt]=useState("07:00");const[days,setDays]=useState<number[]>([7,1,0]);const[occurrences,setOccurrences]=useState<Record<string,NextOccurrence[]>>({});const[status,setStatus]=useState("");const[feedUrl,setFeedUrl]=useState("");const[busy,setBusy]=useState(false);
 
@@ -67,6 +69,8 @@ export function TithiReminderTool(){
   async function copyFeed(){if(!feedUrl)return;try{await navigator.clipboard.writeText(feedUrl);setStatus("निजी Calendar feed लिंक कपी भयो।")}catch{setStatus("Clipboard अनुमति उपलब्ध छैन। लिंक चयन गरेर कपी गर्नुहोस्।")}}
 
   return <ToolPage title="आफ्नै तिथि रिमाइन्डर" description="श्राद्ध, तिथि जन्मदिन, पूजा वा व्रतका आगामी तिथि पत्ता लगाएर सम्झना सुरक्षित गर्नुहोस्।">
+    <button type="button" className="tool-secondary-button" onClick={()=>setVoiceOpen(value=>!value)} aria-expanded={voiceOpen}>🎙 बोलेर सम्झना थप्नुहोस्</button>
+    {voiceOpen?<Suspense fallback={<p role="status">आवाज सम्झना खुल्दैछ…</p>}><VoiceReminderComposer onSaved={()=>setEvents(readLife().tithiEvents)}/></Suspense>:null}
     <section className="patro-tool-card"><form className="tool-form-grid" onSubmit={save}><label>नाम<input value={title} onChange={e=>setTitle(e.target.value)} placeholder="जस्तै: आमाको श्राद्ध" required maxLength={100}/></label><label>प्रकार<select value={kind} onChange={e=>setKind(e.target.value as EventKind)}>{Object.entries(KIND_LABEL).map(([value,label])=><option value={value} key={value}>{label}</option>)}</select></label><label>मूल AD मिति<input type="date" value={sourceDate} onChange={e=>setSourceDate(e.target.value)} required/></label><label>रिमाइन्डर समय<input type="time" value={remindAt} onChange={e=>setRemindAt(e.target.value)}/></label><fieldset className="tool-checks"><legend>कति दिनअघि सम्झाउने?</legend>{[30,7,1,0].map(day=><label key={day}><input type="checkbox" checked={days.includes(day)} onChange={e=>setDays(old=>e.target.checked?[...new Set([...old,day])]:old.filter(x=>x!==day))}/> {day===0?"सोही दिन":day+" दिनअघि"}</label>)}</fieldset><button className="tool-primary-button" type="submit" disabled={busy}>{busy?"सुरक्षित हुँदैछ…":"तिथि निकालेर सुरक्षित गर्नुहोस्"}</button></form>{status?<p className="tool-status" role="status">{status}</p>:null}</section>
     <ToolResult title="आगामी तिथिहरू" speechText={speechText||"अहिले कुनै तिथि रिमाइन्डर छैन।"}>{events.length===0?<p className="tool-muted">पहिलो श्राद्ध वा तिथि जन्मदिन माथि थप्नुहोस्।</p>:<div className="tool-event-list">{events.map(item=><article className="tool-event" key={item.id}><div><strong>{item.title}</strong><small>{KIND_LABEL[item.kind]} · आधार {item.sourceDate} · {item.rule.paksha==="krishna"?"कृष्ण":"शुक्ल"} {item.rule.tithi}</small></div><div className="tool-occurrences">{(occurrences[item.id]||[]).map(row=><span key={row.adDate}><b>{row.adDate}</b>{row.bsDate?.key?" · "+row.bsDate.key+" BS":""}{row.status==="ambiguous"?" · पुष्टि गर्नुहोस्":""}</span>)}</div><button type="button" className="tool-link-button danger" onClick={()=>void remove(item.id)}>हटाउनुहोस्</button></article>)}</div>}<div className="tool-action-row"><button type="button" className="tool-secondary-button" onClick={downloadIcs} disabled={!events.length||!Object.values(occurrences).some(rows=>rows.length)}>Calendar फाइल डाउनलोड</button><button type="button" className="tool-secondary-button" onClick={()=>void createFeed()} disabled={!events.length}>Google Calendar feed</button></div>{feedUrl?<div className="tool-feed"><input readOnly value={feedUrl} aria-label="Private calendar feed URL"/><button type="button" onClick={()=>void copyFeed()}>कपी</button></div>:null}<p className="tool-muted">सूचना आउन ICS आफ्नो Calendar मा import गर्नुहोस् वा feed जोड्नुहोस्। यो Calendar feed लिंक निजी राख्नुहोस्। Feed उपलब्ध नभए पनि Calendar फाइल डाउनलोड प्रयोग गर्न सक्नुहुन्छ।</p></ToolResult>
   </ToolPage>
