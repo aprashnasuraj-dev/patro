@@ -4,7 +4,7 @@ const route=process.argv[2];
 if(!route){console.error("Usage: node scripts/check-community-page.cjs /route/");process.exit(2);}
 
 (async()=>{
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({channel:'chromium',headless:true,args:['--disable-dev-shm-usage']});
   const context=await browser.newContext({viewport:{width:360,height:800},reducedMotion:"reduce"});
   const page=await context.newPage();
   const errors=[];

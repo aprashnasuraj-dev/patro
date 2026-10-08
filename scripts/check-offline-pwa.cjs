@@ -81,7 +81,7 @@ async function stableEvaluate(page, fn, arg) {
 }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ channel: 'chromium', headless: true, args: ['--disable-dev-shm-usage'] });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: "allow" });
   const page = await context.newPage();
   const pageErrors = [];

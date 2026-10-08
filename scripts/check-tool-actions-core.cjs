@@ -219,7 +219,7 @@ async function exerciseGeneric(page, slug) {
 
 (async () => {
   if (TOOLS.length !== 29 || new Set(TOOLS).size !== 29) fail("tool-action inventory must remain exactly 29 unique tools");
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ channel: 'chromium', headless: true, args: ['--disable-dev-shm-usage'] });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
   await context.addInitScript(() => {
     window.__patroSpeechCalls = 0;
