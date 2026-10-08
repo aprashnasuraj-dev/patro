@@ -82,7 +82,7 @@ if(requireQuotaCache&&!r2Bucket){
 base.name="patro";
 base.main="worker/optimized-entry.ts";
 base.preview_urls=false;
-base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:[...new Set([...(base.assets?.run_worker_first||["/*","!/assets/*"]),"!/moon","!/moon/*","!/eclipse","!/eclipse/*","!/nepal","!/nepal/*","!/us/*","!/weather","!/weather/*","!/de/*","!/fr/*","!/es/*","!/it/*","!/sitemap-growth.xml","!/aap/runtime.js","!/aap/analytics.js"])]};
+base.assets={...(base.assets||{}),directory:"./dist",binding:"ASSETS",not_found_handling:"none",run_worker_first:[...new Set([...(base.assets?.run_worker_first||["/*","!/assets/*"]),"!/moon","!/moon/*","!/eclipse","!/eclipse/*","!/nepal","!/nepal/*","!/us/*","!/weather","!/weather/*","!/de/*","!/fr/*","!/es/*","!/it/*","!/sitemap-growth.xml","!/aap/runtime.js","!/aap/analytics.js", "!/data/*"])]};
 base.d1_databases=[{binding:"DB",database_name:d1Name,database_id:d1Id,migrations_dir:"cloudflare/d1/schema-migrations",...(d1PreviewId?{preview_database_id:d1PreviewId}:{})}];
 
 const otherKv=Array.isArray(base.kv_namespaces)?base.kv_namespaces.filter((row)=>row?.binding!=="CACHE"):[];
