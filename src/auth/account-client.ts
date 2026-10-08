@@ -1,6 +1,8 @@
 import { useEffect, useSyncExternalStore } from "react";
 import { switchLifeAccount, syncLifeTools } from "../patro-tools-integration/storage";
 
+import {AUTH_PROBE_KEY,shouldProbeAccount,clearAccountMarker} from "./auth-probe";
+
 export type AuthUser={id:string;email:string|null;name:string|null;picture:string|null;provider:"google"};
 let user: AuthUser|null=null;
 const listeners=new Set<()=>void>();
@@ -31,9 +33,14 @@ async function savePending(){
 export function initializeAccount(){
   if(initialized)return initialized;
   initialized=(async()=>{
+    let probed:string|null=null;try{probed=localStorage.getItem(AUTH_PROBE_KEY);}catch{}
+    if(!shouldProbeAccount(document.cookie,probed,Date.now(),(import.meta as any).env?.VITE_AUTH_PROBE==="1")){publish(null);return;}
     const response=await fetch("/api/v1/auth/me",{credentials:"same-origin",cache:"no-store",headers:{Accept:"application/json"}});
+    if(response.status===401){clearAccountMarker();publish(null);try{localStorage.setItem(AUTH_PROBE_KEY,"1");}catch{};return;}
     if(!response.ok)return;
     const body=await response.json();
+    try{localStorage.setItem(AUTH_PROBE_KEY,"1");}catch{}
+    if(!body.authenticated)clearAccountMarker();
     publish(body.authenticated?body.user:null);
     if(user)await syncLifeTools();
   })().catch(()=>undefined);
@@ -63,6 +70,7 @@ export async function completeGoogleSignIn(credential:string){
 export async function signOut(){
   const response=await fetch("/api/v1/auth/logout",{method:"POST",credentials:"same-origin"});
   if(!response.ok)throw new Error("Sign-out failed. Please try again.");
+  clearAccountMarker();
   clearTimeout(timer);dirty=false;
   publish(null);
   (window as any).google?.accounts?.id?.disableAutoSelect();

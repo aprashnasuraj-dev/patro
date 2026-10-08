@@ -82,6 +82,8 @@ function setSessionCookie(value:string,secure:boolean){
 function clearSessionCookie(secure:boolean){
   return `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure?"; Secure":""}`;
 }
+function markerCookie(secure:boolean,maxAge=SESSION_DAYS*86400){return `aap_signed_in=${maxAge>0?'1':''}; Path=/; SameSite=Lax; Max-Age=${maxAge}${secure?'; Secure':''}`;}
+function clearAccountResponse(response:Response,secure:boolean){response.headers.append('set-cookie',markerCookie(secure,0));return response;}
 async function verifyGoogleCredential(credential:string,env:AuthEnv,nonce:string){
   if(!env.GOOGLE_CLIENT_ID)throw new Error("google_client_id_not_configured");
   if(!credential||credential.length>8192)throw new Error("invalid_google_credential");
@@ -204,7 +206,7 @@ async function myData(request:Request,env:AuthEnv,session:any){
       env.DB.prepare("delete from auth_sessions where user_id=?1").bind(uid),
       env.DB.prepare("delete from app_users where id=?1").bind(uid)
     ]);
-    return json({ok:true,deleted:true},200,{"set-cookie":clearSessionCookie(new URL(request.url).protocol==="https:")});
+    return clearAccountResponse(json({ok:true,deleted:true},200,{"set-cookie":clearSessionCookie(new URL(request.url).protocol==="https:")}),new URL(request.url).protocol==="https:");
   }
   return json({ok:false,error:"method_not_allowed"},405);
 }
@@ -240,6 +242,7 @@ export async function authResponse(request:Request,env:AuthEnv):Promise<Response
       const expires=new Date(Date.now()+SESSION_DAYS*DAY).toISOString();
       await env.DB.prepare("insert into auth_sessions(id,user_id,token_hash,expires_at) values(?1,?2,?3,?4)").bind(sessionId,user.user_id,hash,expires).run();
       const response=json({ok:true,user:publicUser(user),expires_at:expires},200,{"set-cookie":setSessionCookie(raw,url.protocol==="https:")});
+      response.headers.append("set-cookie",markerCookie(url.protocol==="https:"));
       response.headers.append("set-cookie",`${NONCE_COOKIE}=; Path=/api/v1/auth; HttpOnly; SameSite=Strict; Max-Age=0${url.protocol==="https:"?"; Secure":""}`);
       return response;
     }catch(error){
@@ -248,11 +251,13 @@ export async function authResponse(request:Request,env:AuthEnv):Promise<Response
   }
   if(path==="/api/v1/auth/me"&&request.method==="GET"){
     const session=await currentSession(request,env);
-    return session?json({ok:true,authenticated:true,user:publicUser(session)}):json({ok:true,authenticated:false,user:null});
+    const response=session?json({ok:true,authenticated:true,user:publicUser(session)}):json({ok:true,authenticated:false,user:null});
+    response.headers.append("set-cookie",markerCookie(url.protocol==="https:",session?Math.max(0,Math.floor((Date.parse(String(session.expires_at))-Date.now())/1000)):0));
+    return response;
   }
   if(path==="/api/v1/auth/logout"&&request.method==="POST"){
     if(env.DB){const raw=cookieValue(request,COOKIE);if(raw){const hash=await sha256(raw);await env.DB.prepare("delete from auth_sessions where token_hash=?1").bind(hash).run().catch(()=>{});}}
-    return json({ok:true},200,{"set-cookie":clearSessionCookie(url.protocol==="https:")});
+    return clearAccountResponse(json({ok:true},200,{"set-cookie":clearSessionCookie(url.protocol==="https:")}),url.protocol==="https:");
   }
 
   const needsAuth=path==="/api/v1/me/state"||path==="/api/v1/community-preferences"||path==="/api/v1/my-data"||path==="/api/my-data";
