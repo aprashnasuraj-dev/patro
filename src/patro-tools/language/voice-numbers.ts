@@ -10,8 +10,10 @@ const pattern = new RegExp(`(?<![\\p{L}\\p{N}])(?:${tokens})(?:\\s+(?:${tokens})
 
 /** Opt-in: common Nepali numbers; unsupported forms are left as dictated. */
 export function convertSpokenNepaliNumbers(text: string) {
-  return text.replace(pattern, phrase => {
+  return text.replace(pattern, (phrase: string, offset: number) => {
     const words = phrase.split(/\s+/);
+    // छ is also the Nepali copula. Convert it only with a numeric context.
+    if (phrase === 'छ' && text.trim() !== 'छ' && !/^\s+(?:बजे|बजेर|वटा|जना|दिन|महिना|वर्ष|साल|गते|रुपैयाँ|रुपैया|रुपियाँ|रुपिया|रु|किलो|मिटर|प्रतिशत|कक्षा)(?![\p{L}\p{N}])/u.test(text.slice(offset + phrase.length))) return phrase;
     if (!words.some(word => word in SCALES)) return words.map(word => String(VALUES[word])).join(' ');
     let total = 0, group = 0;
     for (const word of words) {
@@ -21,4 +23,10 @@ export function convertSpokenNepaliNumbers(text: string) {
     }
     return String(total + group);
   });
+}
+
+/** Repair a narrow ASR homophone only after predicates that take the copula.
+ * Other dictated sixes stay numeric; this is not a general grammar rewriter. */
+export function repairNepaliCopula(text: string) {
+  return text.replace(/(सामर्थ्य|क्षमता|आवश्यकता|सम्भावना|जरुरी|आवश्यक)\s+[6६](?=\s*(?:[।.!?]|$))/gu, '$1 छ');
 }

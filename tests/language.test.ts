@@ -121,3 +121,17 @@ describe('opt-in voice cleanup', () => {
     expect(postProcessDictation('meeting https://example.com a@example.com', { transliterateLatin: () => 'लिपि' })).toBe('लिपि https://example.com a@example.com');
   });
 });
+
+
+describe('Nepali copula versus six in dictation', () => {
+  it('preserves the requested sentence with number cleanup on or off', () => {
+    for (const spokenNumbers of [false,true]) for (const ending of ['छ','6','६']) {
+      expect(postProcessDictation(`आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य ${ending}.`,{spokenNumbers})).toBe('आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य छ.');
+    }
+    expect(postProcessDictation('आज meeting छ पूर्ण विराम',{spokenNumbers:true})).toBe('आज meeting छ।');
+  });
+  it('keeps numeric six in explicit quantities, clocks and compounds', () => {
+    for (const [raw,want] of [['छ बजे','६ बजे'],['छ वटा','६ वटा'],['छ हजार','६०००'],['छ','६'],['आज 6 गते हो','आज ६ गते हो'],['उत्तर 6.','उत्तर ६.']]) expect(postProcessDictation(raw,{spokenNumbers:true})).toBe(want);
+    expect(postProcessDictation('Capacity 6.',{language:'en-US',spokenNumbers:true})).toBe('Capacity 6.');
+  });
+});

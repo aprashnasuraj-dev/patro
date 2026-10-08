@@ -4,7 +4,7 @@ import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 import { recordVoiceChunks, type ChunkedRecording, type RecordingProgress } from '../voice-chunks';
 import { installLocalSpeech, localSpeechStatus, type LocalSpeechStatus } from '../voice-local';
-import { convertSpokenNepaliNumbers } from '../voice-numbers';
+import { convertSpokenNepaliNumbers, repairNepaliCopula } from '../voice-numbers';
 import { speechError as errorMessage } from '../voice-guidance';
 import { VoiceResultDiff } from '../voice-results';
 import { browserEngineHint, rememberBrowserEngine } from '../voice-engine';
@@ -49,7 +49,7 @@ export function postProcessDictation(
 ) {
   const language = opts.language ?? 'ne-NP';
   if (language === 'en-US') return postProcessEnglishDictation(raw);
-  let text = raw.normalize('NFC');
+  let text = repairNepaliCopula(raw.normalize('NFC'));
   for (const [pattern, symbol] of NEPALI_SPOKEN) text = text.replace(pattern, symbol);
   if (opts.spokenNumbers) text = convertSpokenNepaliNumbers(text);
   if (opts.transliterateLatin) text = text.split(/(https?:\/\/\S+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})/).map((part, i) => i % 2 ? part : part.replace(/[A-Za-z~]+/g, opts.transliterateLatin!)).join('');

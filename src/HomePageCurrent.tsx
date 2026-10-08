@@ -1,3 +1,4 @@
+import {festivalTiming} from "./home-festival-label";
 import {homeToday,homeMonth,homeEvents} from "./home-calendar-client";
 import { HomeQuickNote } from "./components/HomeQuickNote";
 import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
@@ -196,7 +197,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
         <span className="rh-kicker">{l(language, "आज · काठमाडौं समय", "Today · Nepal time")}</span>
         <h1 id="rh-today-title">{todayBs ? `${number(todayBs.day, language)} ${bsMonth(todayBs.month, language)} ${number(todayBs.year, language)}` : l(language, "आजको नेपाली पात्रो", "Today's Nepali calendar")}</h1>
         <p>{adLabel(today, language)}</p>
-        <div className="hp-ns"><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><strong lang="ne">{todayView.ns || "—"}</strong></div>
+        {todayView.ns ? <div className="hp-ns"><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><strong lang="ne">{todayView.ns}</strong></div> : null}
         <div className="hp-today-events">{(eventMap.get(today) || []).slice(0, 2).map((event, index) => <a href={`/date/${today}`} key={index}>{festivalName(event, language)}</a>)}</div>
       </div>
       <HomePanchang date={today} language={language} panchang={todayView.panchang || {}} />
@@ -241,13 +242,13 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
 
         <section className="rh-card rh-selected" aria-live="polite">
           <header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छानिएको दिन", "Selected day")}</span><h2>{selectedDay ? `${number(selectedDay.bs.day, language)} ${bsMonth(selectedDay.bs.month, language)} ${number(selectedDay.bs.year, language)}` : l(language, "दिन छान्नुहोस्", "Choose a day")}</h2><p>{selectedDay ? adLabel(selectedDay.ad, language) : l(language, "पात्रोबाट कुनै दिन छान्नुहोस्।", "Choose a day from the calendar.")}</p></div>{selectedDay ? <a className="rh-link" href={`/date/${selectedDay.ad}`}>{l(language, "पूरा दिन विवरण →", "Full day details →")}</a> : null}</header>
-          {selectedDay ? <div className="rh-selected-grid"><div><span>{l(language, "तिथि", "Tithi")}</span><b>{panchangTithi(selectedDay) || "—"}</b></div><div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{nsText(selectedDay.nepal_sambat) || "—"}</b></div><div><span>{l(language, "ई.सं.", "AD")}</span><b>{formatDate(selectedDay.ad, language, { weekday: "short" })}</b></div><div><span>{l(language, "चाडपर्व / बिदा", "Festival / holiday")}</span><b>{selectedEvents.length ? selectedEvents.map((item) => festivalName(item, language)).join(" · ") : l(language, "कुनै सूचीबद्ध कार्यक्रम छैन", "No listed event")}</b></div></div> : null}
+          {selectedDay ? <div className="rh-selected-grid">{panchangTithi(selectedDay) ? <div><span>{l(language, "तिथि", "Tithi")}</span><b>{panchangTithi(selectedDay)}</b></div> : null}{nsText(selectedDay.nepal_sambat) ? <div><span>{l(language, "नेपाल संवत्", "Nepal Sambat")}</span><b>{nsText(selectedDay.nepal_sambat)}</b></div> : null}<div><span>{l(language, "ई.सं.", "AD")}</span><b>{formatDate(selectedDay.ad, language, { weekday: "short" })}</b></div><div><span>{l(language, "चाडपर्व / बिदा", "Festival / holiday")}</span><b>{selectedEvents.length ? selectedEvents.map((item) => festivalName(item, language)).join(" · ") : l(language, "कुनै सूचीबद्ध कार्यक्रम छैन", "No listed event")}</b></div></div> : null}
         </section>
           <HomeQuickNote language={language} />
       </div>
 
       <aside className="rh-side" aria-label={l(language, "पात्रो सहायक सामग्री", "Calendar shortcuts")}>
-        <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "आगामी", "Upcoming")}</span><h2>{l(language, "नजिकका चाडपर्व", "Upcoming festivals")}</h2></div></header><div className="rh-upcoming">{upcoming.length ? upcoming.map((item, index) => <a href={`/date/${festivalDate(item)}`} key={`${festivalDate(item)}-${index}`}><strong>{festivalName(item, language)}</strong><small>{adLabel(festivalDate(item), language)}</small></a>) : <p className="rh-muted">{l(language, "यो महिनाका थप चाडपर्व विवरण उपलब्ध छैनन्।", "No additional festival entries are available for this month.")}</p>}</div></section>
+        <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "आगामी", "Upcoming")}</span><h2>{l(language, "नजिकका चाडपर्व", "Upcoming festivals")}</h2></div></header><div className="rh-upcoming">{upcoming.length ? upcoming.map((item, index) => <a href={`/date/${festivalDate(item)}`} key={`${festivalDate(item)}-${index}`}><strong>{festivalName(item, language)}</strong><small>{festivalTiming(festivalDate(item), today, language)}</small></a>) : <p className="rh-muted">{l(language, "यो महिनाका थप चाडपर्व विवरण उपलब्ध छैनन्।", "No additional festival entries are available for this month.")}</p>}</div></section>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छिटो पहुँच", "Quick access")}</span><h2>{l(language, "दैनिक प्रयोग", "Daily tools")}</h2></div></header><div className="rh-quick-grid"><a href="/tools/nepali-typing"><b>ने</b><span>{l(language, "नेपाली टाइपिङ", "Nepali typing")}</span></a><a href="/time-machine"><b>⌛</b><span>{l(language, "समययन्त्र", "Time Machine")}</span></a><a href="/samudaya"><b>समु</b><span>{l(language, "समुदाय पात्रो", "Community calendars")}</span></a><a href="/tools/astro"><b>☾</b><span>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</span></a></div></section>
         <HomeHistoryCard language={language} todayAd={today} />
         <DeferredHomeSkyFact language={language} />

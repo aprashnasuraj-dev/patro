@@ -1,3 +1,4 @@
+import {festivalTiming} from "../src/home-festival-label";
 /**
  * Growth pages: correctness against independent references (see seo-growth/research/validation-log.md).
  * References: almanac.com (full moons, ET), timeanddate.com (NYC moonrise), Drik Panchang New York 2026
@@ -200,4 +201,10 @@ it("standalone shell resources bypass the Worker through static assets", async (
  expect(html).toContain('content="https://aafnaipatro.com/assets/growth-og-default-v1.png"');
  expect(html).toContain('url("/assets/growth-nepali-serif-700-v1.woff2")');
  expect(html).not.toContain('href="/favicon.svg"');
+});
+
+it('labels festivals by actual BS date and Nepal calendar-day distance',()=>{
+ expect(festivalTiming('2026-10-08','2026-10-08','ne')).toMatch(/असोज [०-९]+ · आज$/);
+ expect(festivalTiming('2026-10-09','2026-10-08','ne')).toMatch(/असोज [०-९]+ · भोलि$/);
+ expect(festivalTiming('2026-10-11','2026-10-08','ne')).toMatch(/असोज [०-९]+ · ३ दिनमा$/);
 });

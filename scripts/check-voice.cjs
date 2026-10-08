@@ -76,6 +76,10 @@ async function mock(page, scenario, server = true) {
         } else if (scenario === 'cleanup') {
           await page.evaluate(() => window.__voice.recognition.onresult({ resultIndex: 0, results: [Object.assign([{ transcript: 'सात बजे nepaal पूर्ण विराम' }], { isFinal: true })] }));
           await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value === '७ बजे नेपाल। ');
+          await page.locator('.voice-transcript-label textarea').fill('');
+          await page.evaluate(() => window.__voice.recognition.onresult({ resultIndex: 1, results: [Object.assign([{ transcript: 'सात बजे nepaal पूर्ण विराम' }], { isFinal: true }),Object.assign([{ transcript: 'आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य ६.' }], { isFinal: true })] }));
+          await page.waitForFunction(() => document.querySelector('.voice-transcript-label textarea').value.trim() === 'आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य छ.').catch(async error=>{console.error('copula output:',await page.locator('.voice-transcript-label textarea').inputValue());throw error;});
+
           await mic.click();
         } else if (scenario === 'server-locale') {
           await page.waitForFunction(() => window.__voice.media === 1);
