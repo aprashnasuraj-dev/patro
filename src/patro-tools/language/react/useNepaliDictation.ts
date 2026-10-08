@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 import { recordVoiceChunks, type ChunkedRecording, type RecordingProgress } from '../voice-chunks';
+import { speechError as errorMessage } from '../voice-guidance';
 import { VoiceResultDiff } from '../voice-results';
 import { browserEngineHint, rememberBrowserEngine } from '../voice-engine';
 
@@ -69,24 +70,14 @@ function preferredMimeType() {
     .find((type) => MediaRecorder.isTypeSupported(type)) || '';
 }
 
-function errorMessage(language: DictationLanguage, code: string) {
-  if (language === 'en-US') {
-    if (code === 'not-allowed' || code === 'service-not-allowed') return 'Please allow microphone access.';
-    if (code === 'no-speech') return 'No speech was detected. Please try again.';
-    return `Speech recognition error: ${code}`;
-  }
-  if (code === 'not-allowed' || code === 'service-not-allowed') return 'माइक्रोफोन अनुमति दिनुहोस्।';
-  if (code === 'no-speech') return 'आवाज सुनिएन। फेरि प्रयास गर्नुहोस्।';
-  return `आवाज पहिचान त्रुटि: ${code}`;
-}
-
 function serverErrorMessage(language: DictationLanguage, code: string) {
   const nepali = language === 'ne-NP';
   if (code === 'speech_backend_unconfigured') {
     return nepali
-      ? 'Server आवाज सेवा उपलब्ध भएन। Live recognition प्रयोग गर्नुहोस्।'
-      : 'Server speech is unavailable. Use live recognition.';
+      ? 'Server आवाज सेवा उपलब्ध भएन। अर्को ब्राउजर वा केही समयपछि प्रयास गर्नुहोस्।'
+      : 'Server speech is unavailable. Try another browser or try again later.';
   }
+  if (code === 'speech_rate_limited') return nepali ? 'आवाज सेवाको सीमा पुग्यो। केही समयपछि फेरि प्रयास गर्नुहोस्।' : 'Speech service limit reached. Please retry later.';
   if (code === 'speech_provider_timeout') {
     return nepali ? 'आवाजलाई पाठमा बदल्न धेरै समय लाग्यो। फेरि प्रयास गर्नुहोस्।' : 'Transcription timed out. Please try again.';
   }
@@ -110,6 +101,7 @@ export function useNepaliDictation({
 } = {}) {
   const [mode, setMode] = useState<DictationMode>('unsupported');
   const [browserWorking, setBrowserWorking] = useState(false);
+  const [browserFailure, setBrowserFailure] = useState<string | null>(null);
   const [browserAvailable, setBrowserAvailable] = useState(false);
   const [serverAvailable, setServerAvailable] = useState(false);
   const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
@@ -266,7 +258,7 @@ export function useNepaliDictation({
         listeningIntentRef.current = false;
         stopTracks();
         setListening(false);
-        setError(cause instanceof Error ? cause.message : errorMessage(language, 'not-allowed'));
+        setError(cause instanceof DOMException && ['NotAllowedError', 'PermissionDeniedError'].includes(cause.name) ? errorMessage(language, 'not-allowed') : cause instanceof Error ? cause.message : errorMessage(language, 'audio-capture'));
       }
       return;
   }, [capabilitiesChecked, clearTimer, language, serverAvailable, stopTracks]);
@@ -277,6 +269,7 @@ export function useNepaliDictation({
     setError(null);
     setInterim('');
     setBrowserWorking(false);
+    setBrowserFailure(null);
 
     if (mode === 'server') { await startServer(); return; }
     if (mode === 'browser') {
@@ -312,6 +305,7 @@ export function useNepaliDictation({
         if (switching || !mountedRef.current || !listeningIntentRef.current || recognitionRef.current !== recognition) return;
         switching = true; clearSessionTimers(); clearTimer();
         rememberBrowserEngine(language, false);
+        setBrowserFailure(code);
         recognitionRef.current = null;
         try { recognition.abort?.(); } catch { /* already ended */ }
         setInterim(''); setBrowserWorking(false);
@@ -380,6 +374,7 @@ export function useNepaliDictation({
     mode,
     browserAvailable,
     browserWorking,
+    browserFailure,
     serverAvailable,
     capabilitiesChecked,
     listening,

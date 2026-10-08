@@ -1,3 +1,4 @@
+import { VoiceHelp } from "../patro-tools/language/react/VoiceHelp";
 import { InlineDictationPreview, useDictationEditor } from '../patro-tools/language/react/DictationEditor';
 import { useRef, useState } from "react";
 import { DictationLanguage, useNepaliDictation } from "@/patro-tools/language/react/useNepaliDictation";
@@ -186,6 +187,7 @@ export function VoiceTypingTool() {
           )}
         </div>
 
+        <VoiceHelp unsupported={dictation.mode === "unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} serverAvailable={dictation.serverAvailable} language={language}/>
         {dictation.error ? <p className="tool-status" role="alert">{dictation.error}</p> : null}
 
         <label className="tool-block-label voice-transcript-label">

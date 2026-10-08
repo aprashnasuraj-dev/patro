@@ -4,8 +4,9 @@ const { chromium } = require('playwright');
 async function mock(page, scenario, server = true) {
   await page.route('**/api/nepali/speech-capabilities', route => route.fulfill({ json: { stt: { server } } }));
   await page.route('**/api/nepali/stt', route => route.fulfill({ json: { text: 'नमस्ते नेपाल', language: 'ne-NP', provider: 'mock' } }));
-  await page.addInitScript(({ scenario }) => {
+  await page.addInitScript(({ scenario, server }) => {
     localStorage.setItem('nepalmiti.life.v1', '{"version":1,"sentinel":"preserve"}');
+    if (!server) Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'Android FBAN' });
     if (scenario === 'android') Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'Mozilla/5.0 Android Chrome/133' });
     window.__voice = { media: 0, starts: 0, tracksStopped: 0 };
     class Recognition {
@@ -36,7 +37,7 @@ async function mock(page, scenario, server = true) {
       }
     }
     Object.defineProperty(window, 'MediaRecorder', { configurable: true, value: Recorder });
-  }, { scenario });
+  }, { scenario, server });
 }
 (async () => {
   const browser = await chromium.launch({ headless: true, executablePath: process.env.VOICE_CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-webgl'] });
@@ -51,6 +52,7 @@ async function mock(page, scenario, server = true) {
       assert.equal(await page.evaluate(() => window.__voice.media), 0, 'microphone must require a gesture');
       if (scenario === 'unconfigured') {
         assert.equal(await mic.isVisible(), true); assert.equal(await mic.isDisabled(), true);
+        assert.equal(await page.locator('.voice-browser-help a[href^="intent://"]').count(), 1);
       } else {
         await mic.click();
         if (scenario === 'android') {
@@ -102,6 +104,13 @@ async function mock(page, scenario, server = true) {
       }
       assert.equal(await page.evaluate(() => localStorage.getItem('nepalmiti.life.v1')), '{"version":1,"sentinel":"preserve"}');
       console.log('Voice browser passed:', scenario); await page.close();
+    }
+    for (const [route, selector] of [['/', '.qn-mic'], ['/me/notes', '.mp-note-modes button:last-child']]) {
+      const page = await browser.newPage(); await mock(page, 'none', false); await page.goto(origin + route);
+      const mic = page.locator(selector); await mic.waitFor(); await page.locator('.voice-browser-help').first().waitFor();
+      assert.equal(await mic.isVisible(), true); assert.equal(await mic.isDisabled(), true);
+      assert.equal(await page.evaluate(() => window.__voice.media), 0);
+      console.log('Visible unsupported mic passed:', route); await page.close();
     }
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exit(1); });

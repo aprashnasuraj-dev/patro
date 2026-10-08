@@ -1,3 +1,4 @@
+import { VoiceHelp } from "../patro-tools/language/react/VoiceHelp";
 import { InlineDictationPreview, useDictationEditor } from '../patro-tools/language/react/DictationEditor';
 import { useNepaliDictation } from "../patro-tools/language/react/useNepaliDictation";
 import { useAccount } from "../auth/account-client";
@@ -50,15 +51,16 @@ export function HomeQuickNote({ language }: { language: Lang }) {
       <textarea ref={textarea} value={text} onChange={(e) => setText(e.target.value)} rows={3} lang={voiceLang === "ne-NP" ? "ne" : "en"}
         placeholder={l("आजको काम, सम्झनु पर्ने कुरा… लेख्नुहोस् वा 🎙 थिचेर बोल्नुहोस्", "Write, or press 🎙 and speak…")} /><InlineDictationPreview textarea={textarea} interim={dictation.interim} /></label>
     <label className="qn-field">{l("मितिमा सुरक्षित गर्नुहोस्","Save to date")}<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)}/></label>{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="qn-actions">
-      {supported ? <button type="button" className={`qn-mic${listening ? " is-on" : ""}`} onClick={toggleVoice} aria-pressed={listening}
-        aria-label={listening ? l("बोलेर टाइप रोक्नुहोस्", "Stop voice typing") : l("बोलेर टाइप गर्नुहोस्", "Voice typing")}>{listening ? "■" : "🎙"}</button> : null}
-      {supported ? <div className="qn-lang" role="group" aria-label={l("बोल्ने भाषा", "Voice language")}>
+      <button type="button" className={`qn-mic${listening ? " is-on" : ""}`} onClick={toggleVoice} disabled={!supported || (dictation.processing && !listening)} title={!supported ? l("आवाज टाइपिङ उपलब्ध छैन; तलको सहायता हेर्नुहोस्।", "Voice typing unavailable; see help below.") : undefined} aria-pressed={listening}
+        aria-label={listening ? l("बोलेर टाइप रोक्नुहोस्", "Stop voice typing") : l("बोलेर टाइप गर्नुहोस्", "Voice typing")}>{listening ? "■" : "🎙"}</button>
+      <div className="qn-lang" role="group" aria-label={l("बोल्ने भाषा", "Voice language")}>
         <button type="button" aria-pressed={voiceLang === "ne-NP"} onClick={() => setVoiceLang("ne-NP")}>नेपाली</button>
         <button type="button" aria-pressed={voiceLang === "en-US"} onClick={() => setVoiceLang("en-US")}>English</button>
-      </div> : null}
+      </div>
       <GoogleAuthButton language={language} compact/>
       <button type="button" className="qn-save" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}>{l("सुरक्षित गर्नुहोस्", "Save")}</button>
     </div>
+    <VoiceHelp unsupported={!supported} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} serverAvailable={dictation.serverAvailable} language={voiceLang}/>
     {status ? <p className="qn-status" role="status">{status}</p> : null}
     {notes.length ? <ul className="qn-list">{notes.filter(n=>(n.date||n.createdAt.slice(0,10))===noteDate).map((n) => <li key={n.id}><small>{formatDate(n.createdAt, language, { year: false, time: true })}{n.inputMode === "voice" ? " · 🎙" : ""}</small><p>{n.text}</p></li>)}</ul> : null}
     <footer className="hx-foot"><span /><a href="/me/notes">{l("सबै टिपोट", "All notes")} →</a></footer>

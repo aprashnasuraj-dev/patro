@@ -84,3 +84,18 @@ test('dictation inserts at the cursor, replaces selection, and respects existing
   assert.equal(insert('abcXYZ', '123456', 3, 3, 8).text, 'abc 1XYZ');
   assert.equal(insert('', 'नमस्ते ').cursor, 'नमस्ते '.length);
 });
+
+test('browser guidance distinguishes service failure from permission and removes private query fields from open-browser links', async () => {
+  const output = await build({ entryPoints: ['src/patro-tools/language/voice-guidance.ts'], bundle: true, write: false, format: 'cjs' });
+  const context = { module: { exports: {} }, URL }; runInNewContext(output.outputFiles[0].text, context);
+  const api = context.module.exports;
+  assert.match(api.speechError('en-US', 'not-allowed'), /allow microphone/);
+  assert.doesNotMatch(api.speechError('en-US', 'service-not-allowed'), /allow microphone/);
+  assert.match(api.speechError('en-US', 'service-not-allowed'), /Siri/);
+  for (const app of ['FBAN', 'FBAV', 'Instagram', 'Line/14', 'TikTok', 'Viber']) {
+    const info = api.voiceBrowserGuidance(`Android ${app}`, 'https://aafnaipatro.com/tools/voice-typing?name=private#secret');
+    assert.equal(info.inApp, true); assert.match(info.chromeIntent, /^intent:\/\/aafnaipatro.com\/tools\/voice-typing#Intent;/);
+    assert.equal(info.copyUrl, 'https://aafnaipatro.com/tools/voice-typing'); assert.ok(!info.chromeIntent.includes('private'));
+  }
+  assert.equal(api.voiceBrowserGuidance('iPhone Safari', 'https://aafnaipatro.com/').ios, true);
+});
