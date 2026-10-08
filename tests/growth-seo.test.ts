@@ -50,4 +50,25 @@ describe("search navigation and guide discovery",()=>{
    for(const slug of guide.related)expect(guides.some(row=>row.slug===slug)).toBe(true);
   }
  });
+ it("keeps representative international pages crawlable in the published growth sitemap",()=>{
+  const sitemap=readFileSync("dist/sitemap-growth.xml","utf8");
+  const samples=[
+   ["/moon","en"],["/moon/london","en"],["/moon/new-york","en"],
+   ["/eclipse/2027-08-02","en"],
+   ["/de/mond","de"],["/fr/lune","fr"],["/es/luna","es"],["/it/luna","it"],
+   ["/nepal/time","en"],["/nepal/trek-weather/everest-base-camp","en"],
+   ["/us/diwali-2026","en"],["/weather/charikot","ne"],
+  ] as const;
+  for(const [route,lang] of samples){
+   const html=readFileSync("dist"+route+".html","utf8");
+   const canonical="https://aafnaipatro.com"+route;
+   expect(sitemap,route).toContain("<loc>"+canonical+"</loc>");
+   expect(html,route).toContain('<link rel="canonical" href="'+canonical+'">');
+   expect(html,route).toMatch(/<title>[^<]+<\\/title>/);
+   expect(html,route).toMatch(/<h1(?:\\s[^>]*)?>[\\s\\S]*?<\\/h1>/);
+   expect(html,route).toContain('<html lang="'+lang+'"');
+   expect(html,route).not.toMatch(/<meta name="robots" content="noindex/);
+  }
+ });
+
 });
