@@ -58,7 +58,6 @@ export function VoiceTypingTool() {
 
   function chooseLanguage(next: DictationLanguage) {
     if (next === language || dictation.processing) return;
-    if (dictation.listening) dictation.stop();
     setLanguage(next);
     setCopied(false);
   }

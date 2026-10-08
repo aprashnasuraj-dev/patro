@@ -35,15 +35,15 @@ function currentToken(text:string,caret:number){
 function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeState)=>void;onSync:(text:string)=>void}){
   const[text,setText]=useState("");
   const[mode,setMode]=useState<NoteMode>("nepali");
+  const[voiceLang,setVoiceLang]=useState<"ne-NP"|"en-US">("ne-NP");
   const[suggestions,setSuggestions]=useState<Suggestion[]>([]);
   const[status,setStatus]=useState("नेपाली शब्द सुझाव तयार हुँदैछन्…");
   const [noteDate,setNoteDate]=useState(new URLSearchParams(location.search).get("date")||new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu"}).format(new Date()));
  const textarea=useRef<HTMLTextAreaElement>(null);
  const insertFinal = useDictationEditor(text, setText, textarea);
- const dictation=useNepaliDictation({language:mode==="english"?"en-US":"ne-NP",serverFallback:true,onFinal:insertFinal});const listening=dictation.listening;
+ const dictation=useNepaliDictation({language:voiceLang,serverFallback:true,onFinal:insertFinal});const listening=dictation.listening;
   const worker=useRef<Worker|null>(null);
   const requestId=useRef(0);
-  const recognition=useRef<any>(null);
 
   useEffect(()=>{
     try{
@@ -82,11 +82,12 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
     const result=await syncLifeTools();onLife(result.life);onSync(result.synced?"नोट खातासँग पनि सुरक्षित भयो।":"नोट यस ब्राउजरमा सुरक्षित छ; साइन इन गरेपछि खातासँग पनि सुरक्षित हुन्छ।");
   }
   function removeNote(id:string){const next=updateLife(current=>({...current,notes:current.notes.filter(n=>n.id!==id)}));onLife(next);void syncLifeTools();}
-  function startVoice(){if(listening)dictation.stop();else{if(mode!=="english")setMode("voice");void dictation.start();}}
+  function chooseMode(next:"english"|"nepali"){setVoiceLang(next==="english"?"en-US":"ne-NP");setMode(next);}
+  function startVoice(){if(listening)dictation.stop();else{setMode("voice");void dictation.start();}}
 
   return <section className="mp-card mp-diary-native mp-note-composer">
     <header><div><p className="eyebrow">निजी · अफलाइनमा पनि उपयोगी</p><h2>आफ्नै नोट लेख्नुहोस्</h2><p>English, नेपाली शब्द सुझाव वा voice typing प्रयोग गरेर सहज रूपमा लेख्नुहोस्।</p></div><a className="community-button secondary" href="/tools/nepali-typing"><Languages size={16}/> पूर्ण नेपाली टाइपिङ / Preeti</a></header>
-    <div className="mp-note-modes" role="group" aria-label="नोट लेख्ने तरिका"><button type="button" className={mode==="english"?"active":""} onClick={()=>setMode("english")}>English</button><button type="button" className={mode==="nepali"?"active":""} onClick={()=>setMode("nepali")}>नेपाली</button><button type="button" className={mode==="voice"?"active":""} onClick={startVoice} disabled={dictation.mode==="unsupported" || (dictation.processing && !listening)}>{listening?<MicOff size={16}/>:<Mic size={16}/>} बोलेर</button></div>
+    <div className="mp-note-modes" role="group" aria-label="नोट लेख्ने तरिका"><button type="button" className={mode==="english"?"active":""} onClick={()=>chooseMode("english")}>English</button><button type="button" className={mode==="nepali"?"active":""} onClick={()=>chooseMode("nepali")}>नेपाली</button><button type="button" className={mode==="voice"||listening?"active":""} onClick={startVoice} disabled={dictation.mode==="unsupported" || (dictation.processing && !listening)}>{listening?<MicOff size={16}/>:<Mic size={16}/>} बोलेर</button></div>
     <div className="mp-note-account"><GoogleAuthButton language="ne"/></div>
     <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/><InlineDictationPreview textarea={textarea} interim={dictation.interim}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
