@@ -170,6 +170,26 @@ jobs:
           npm run test:typing
           npm run test:release-safety
 
+
+      - name: Release homepage and canonical browser regression
+        if: steps.changes.outputs.ui == 'true' || steps.changes.outputs.full == 'true' || steps.changes.outputs.cloudflare == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --legacy-peer-deps --no-save --no-package-lock playwright@1.56.1 >/dev/null
+          npx playwright install chromium >/dev/null
+          PATRO_AUDIT_API=1 node scripts/serve-dist.mjs > /tmp/patro-pr-static.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true; cat /tmp/patro-pr-static.log' EXIT
+          ready=false
+          for i in {1..40}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null 2>&1; then ready=true; break; fi
+            sleep 1
+          done
+          if [[ "$ready" != true ]]; then echo "::error::Static test server unavailable"; exit 1; fi
+          NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-canonical-tools.cjs
+
       - name: Documentation-only PR
         if: steps.changes.outputs.any != 'true'
         run: echo "Only documentation/non-runtime files changed; expensive application checks skipped."
