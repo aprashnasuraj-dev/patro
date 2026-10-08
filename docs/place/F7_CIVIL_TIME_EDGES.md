@@ -14,5 +14,5 @@ The original core and immutable Kathmandu archive are never altered.
 ## Validation and rollback
 Contracts cover NY 23h/25h days, skipped/repeated 02:30/01:30, Apia's skipped day,
 polar Tromsø and Auckland/Honolulu/Sydney civil-date boundaries. Final archive
-regression checks require Kathmandu sunrise/sunset <=1 minute on 40 dates.
+regression checks passed: Kathmandu sunrise/sunset <=1 minute on 40 dates.
 Revert this item; no migration.

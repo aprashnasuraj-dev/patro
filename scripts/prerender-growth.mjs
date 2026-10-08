@@ -6,7 +6,7 @@
 // computed for 30–400 days ahead, so pages stay correct between deploys. A daily scheduled deploy
 // (.github/workflows/growth-daily-refresh.yml) keeps the server-rendered snapshot current for crawlers.
 import { build } from "esbuild";
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { BUILD_DATE, updateSitemapIndex, urlsetXml } from "./sitemap-utils.mjs";
 import { SITE } from "./seo-config.mjs";
@@ -18,6 +18,8 @@ const FREE_PLAN_FILE_LIMIT = 20_000; // Workers Static Assets, Free plan: files 
 const bundle = await build({ entryPoints: [resolve(root, "worker/growth/index.ts")], bundle: true, platform: "node", format: "esm", write: false, logLevel: "silent" });
 const mod = await import("data:text/javascript;base64," + Buffer.from(bundle.outputFiles[0].text).toString("base64"));
 
+await mkdir(resolve(dist,"assets"),{recursive:true});
+await copyFile(resolve(root,"public/fonts/nepali-serif-700.woff2"),resolve(dist,"assets/growth-nepali-serif-700-v1.woff2"));
 const started = Date.now();
 const pages = await mod.growthStaticPages(new Date(), SITE);
 for (const page of pages) {

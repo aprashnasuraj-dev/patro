@@ -66,7 +66,8 @@ export const MONTH_NAMES = MONTH_SLUGS.map((m) => m[0].toUpperCase() + m.slice(1
 
 const CSS = `:root{--bg:#f6f8f5;--card:#fff;--ink:#14231a;--muted:#55665b;--line:#dfe6df;--accent:#176f3b;--soft:#e9f3ec}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1512;--card:#17201b;--ink:#e7efe9;--muted:#a3b3a8;--line:#2a372f;--accent:#5fc18a;--soft:#1d2a22}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans Devanagari",sans-serif}
+@font-face{font-family:"Aafnai Growth Devanagari";src:url("/assets/growth-nepali-serif-700-v1.woff2") format("woff2");font-display:swap;font-weight:100 900;unicode-range:U+0900-097F,U+200C-200D,U+25CC}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Aafnai Growth Devanagari",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans Devanagari",sans-serif}
 a{color:var(--accent)}header.top{border-bottom:1px solid var(--line);background:var(--card)}header.top div{max-width:1040px;margin:auto;padding:12px 16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 header.top a.brand{font-weight:700;text-decoration:none;color:var(--ink)}main{max-width:1040px;margin:auto;padding:20px 16px 48px}
 .crumbs{font-size:14px;color:var(--muted)}h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:.3em 0}

@@ -45,7 +45,7 @@ checklist, and rollback instructions. Feature work does not go directly to main.
 | `patro.birthday.v1` (new) | Explicitly saved birthday profile and display choices | Local by default; no implicit sync |
 | `patro.birthday.family.v1` (new) | Explicit family constellation | Local by default |
 | `patro.birthday.reflections.v1` (new) | Reflection progress | Local by default |
-| `patro.birthday.media.v1` (new IndexedDB database) | Optional recorded blessing | Explicit recording and local saving |
+| `patro.birthday.blessings.v1` (new IndexedDB database) | Optional recorded blessing | Explicit recording and local saving |
 
 V1 does not read any browser storage. Its rate limiter stores only hashed-IP
 counters in Cache API; it does not store audio, transcripts, or D1 records.
