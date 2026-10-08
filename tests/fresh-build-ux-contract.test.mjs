@@ -133,7 +133,10 @@ test("China-aware Jyotish AI is restored on the React shell and Cloudflare nativ
   const main=read("src/main.tsx");
   const worker=read("worker/jyotish.ts");
   const entry=read("worker/index.ts");
-  assert.ok(main.includes("<JyotishAssistant />"),"Jyotish assistant must be mounted globally");
+  const shell=read("src/components/DeferredJyotishAssistant.tsx");
+  assert.ok(main.includes("<DeferredJyotishAssistant />"),"Jyotish assistant trigger must be mounted globally");
+  assert.ok(shell.includes("import(\"./JyotishAssistant\")")&&shell.includes("initiallyOpen"),"Full assistant must open with one tap, without upfront feature bundle");
+  assert.ok(assistant.includes("useState(initiallyOpen)"),"Lazy assistant must be open on first tap");
   assert.ok(assistant.includes('fetch("/api/v1/jyotish-chat"'));
   assert.ok(assistant.includes("china_data: china"),"chat request must include available China context");
   assert.ok(assistant.includes(".patro-report")&&assistant.includes(".chart-summary article"),"assistant must reconnect to rendered China output");
