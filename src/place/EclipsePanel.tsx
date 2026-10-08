@@ -1,0 +1,9 @@
+import { useState } from 'react';
+import { localSolarEclipse,localLunarEclipse } from './eclipse';
+import { formatPlaceInstant } from './timing';
+import type { SavedPlace } from './place';
+export default function EclipsePanel({date,place}:{date:string;place:SavedPlace}) {
+ const [events,setEvents]=useState<Array<ReturnType<typeof localSolarEclipse>|ReturnType<typeof localLunarEclipse>>>([]),[status,setStatus]=useState('');
+ function search(){try{setEvents([localSolarEclipse(new Date(date+'T00:00Z'),place),localLunarEclipse(new Date(date+'T00:00Z'),place)]);setStatus('');}catch{setStatus('Eclipse search unavailable.');}}
+ return <details><summary>ग्रहण यहाँ · Local eclipses</summary><button type="button" onClick={search}>अर्को ग्रहण गणना · Search next</button><p role="status">{status}</p>{events.map(e=><article key={e.type}><h3>{e.type} · {e.kind}</h3><p>{e.visible?'यहाँ देखिन सक्छ / Visible from this place':'चन्द्रमा क्षितिजमुनि / Not visible here'} · coverage {(e.coverage*100).toFixed(1)}%</p><ul>{e.contacts.map(c=><li key={c.name}>{c.name}: {formatPlaceInstant(c.time,place.tz)} {c.aboveHorizon?'':'(below horizon)'}</li>)}</ul>{e.sutak?<p>Reviewed sutak: {formatPlaceInstant(e.sutak.start,place.tz)} → {formatPlaceInstant(e.sutak.end,place.tz)}</p>:<p>सूतक नियम धार्मिक समीक्षाअघि उपलब्ध छैन / Sutak awaits religious review.</p>}<button type="button" onClick={()=>{const text=`${e.type} ${e.kind}\n${e.contacts.map(c=>c.name+': '+formatPlaceInstant(c.time,place.tz)).join('\n')}\nhttps://aafnaipatro.com${location.pathname}`;if(navigator.share)void navigator.share({text}).catch(()=>setStatus('Sharing cancelled/unavailable.'));else void navigator.clipboard?.writeText(text).then(()=>setStatus('Copied.')).catch(()=>setStatus('Copy unavailable.'));}}>सेयर · Share contacts</button></article>)}<p>खगोलीय गणना मात्र। सूर्यलाई सुरक्षित प्रमाणित solar viewer बिना नहेर्नुहोस् / Never view the Sun without a certified solar viewer.</p></details>;
+}
