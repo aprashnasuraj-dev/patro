@@ -132,8 +132,8 @@ async function streamAssistant(response: Response, onText: (text: string) => voi
   return output;
 }
 
-export function JyotishAssistant() {
-  const [open, setOpen] = useState(false);
+export function JyotishAssistant({ initiallyOpen = false }: { initiallyOpen?: boolean } = {}) {
+  const [open, setOpen] = useState(initiallyOpen);
   useDismiss(open, () => setOpen(false));
   const [messages, setMessages] = useState<ChatMessage[]>(readHistory);
   const [language, setLanguage] = useState<ChatLanguage>(readLanguage);
