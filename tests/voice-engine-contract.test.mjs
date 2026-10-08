@@ -31,3 +31,21 @@ test('corrupt or blocked storage cannot break recognition', async () => {
   assert.equal(blocked.browserEngineHint('ne-NP'), null);
   assert.doesNotThrow(() => blocked.rememberBrowserEngine('ne-NP', false));
 });
+
+test('Android event fixtures commit only new final words across cumulative snapshots and restarts', async () => {
+  const { readFileSync } = await import('node:fs');
+  const output = await build({ entryPoints: ['src/patro-tools/language/voice-results.ts'], bundle: true, write: false, format: 'cjs' });
+  const context = { module: { exports: {} } }; runInNewContext(output.outputFiles[0].text, context);
+  for (const fixture of JSON.parse(readFileSync('tests/fixtures/voice/android-results.json', 'utf8'))) {
+    const diff = new context.module.exports.VoiceResultDiff(); const chunks = [];
+    for (const session of fixture.sessions) {
+      diff.restart();
+      for (const snapshot of session) {
+        const final = snapshot.map(transcript => Object.assign([{ transcript }], { isFinal: true }));
+        const delta = diff.final(final); if (delta) chunks.push(delta);
+        assert.equal(diff.final(final), '', 'redelivered snapshot');
+      }
+    }
+    assert.equal(chunks.join(' '), fixture.expected, fixture.name);
+  }
+});

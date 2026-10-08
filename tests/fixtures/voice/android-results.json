@@ -1,0 +1,7 @@
+[
+  {"name":"cumulative index zero","sessions":[[["नमस्ते"],["नमस्ते नेपाल"],["नमस्ते नेपाल"]]],"expected":"नमस्ते नेपाल"},
+  {"name":"replayed prefix after pause","sessions":[[["आज मौसम"]],[["आज मौसम राम्रो छ"],["आज मौसम राम्रो छ"]]],"expected":"आज मौसम राम्रो छ"},
+  {"name":"multiple final indices","sessions":[[["म काठमाडौंमा"],["म काठमाडौंमा","बस्छु"],["म काठमाडौंमा","बस्छु"]]],"expected":"म काठमाडौंमा बस्छु"},
+  {"name":"fresh phrase after restart","sessions":[[["Hello Nepal"]],[["Good morning"]]],"expected":"Hello Nepal Good morning"},
+  {"name":"interim then cumulative final","sessions":[[["एक"],["एक दुई"],["एक दुई तीन"]]],"expected":"एक दुई तीन"}
+]

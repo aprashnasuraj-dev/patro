@@ -6,6 +6,7 @@ async function mock(page, scenario, server = true) {
   await page.route('**/api/nepali/stt', route => route.fulfill({ json: { text: 'नमस्ते नेपाल', language: 'ne-NP', provider: 'mock' } }));
   await page.addInitScript(({ scenario }) => {
     localStorage.setItem('nepalmiti.life.v1', '{"version":1,"sentinel":"preserve"}');
+    if (scenario === 'android') Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'Mozilla/5.0 Android Chrome/133' });
     window.__voice = { media: 0, starts: 0, tracksStopped: 0 };
     class Recognition {
       start() {
@@ -13,7 +14,7 @@ async function mock(page, scenario, server = true) {
         window.__voice.recognition = this;
         queueMicrotask(() => {
           this.onstart?.();
-          if (scenario === 'desktop') this.onaudiostart?.();
+          if (scenario === 'desktop' || scenario === 'android') this.onaudiostart?.();
           else if (scenario !== 'silent') this.onerror?.({ error: scenario });
         });
       }
@@ -41,7 +42,7 @@ async function mock(page, scenario, server = true) {
   const browser = await chromium.launch({ headless: true, executablePath: process.env.VOICE_CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-webgl'] });
   const origin = process.env.VOICE_TEST_ORIGIN || 'http://127.0.0.1:4173';
   try {
-    for (const scenario of ['desktop', 'network', 'service-not-allowed', 'language-not-supported', 'silent', 'none', 'unconfigured', 'cancel']) {
+    for (const scenario of ['desktop', 'android', 'network', 'service-not-allowed', 'language-not-supported', 'silent', 'none', 'unconfigured', 'cancel']) {
       const page = await browser.newPage();
       await mock(page, ['unconfigured'].includes(scenario) ? 'none' : scenario === 'cancel' ? 'silent' : scenario, scenario !== 'unconfigured');
       await page.goto(origin + '/tools/voice-typing');
@@ -52,7 +53,20 @@ async function mock(page, scenario, server = true) {
         assert.equal(await mic.isVisible(), true); assert.equal(await mic.isDisabled(), true);
       } else {
         await mic.click();
-        if (scenario === 'desktop') {
+        if (scenario === 'android') {
+          const emit = async text => page.evaluate(text => {
+            const final = Object.assign([{ transcript: text }], { isFinal: true });
+            window.__voice.recognition.onresult({ resultIndex: 0, results: [final] });
+          }, text);
+          assert.equal(await page.evaluate(() => window.__voice.recognition.continuous), false);
+          await emit('आज मौसम'); await emit('आज मौसम');
+          await page.evaluate(() => window.__voice.recognition.onend());
+          await page.waitForFunction(() => window.__voice.starts === 2);
+          await emit('आज मौसम राम्रो छ'); await emit('आज मौसम राम्रो छ');
+          assert.equal((await page.locator('.voice-transcript-label textarea').inputValue()).trim(), 'आज मौसम राम्रो छ');
+          await mic.click(); await page.waitForTimeout(550);
+          assert.equal(await page.evaluate(() => window.__voice.starts), 2, 'stop prevents restarts');
+        } else if (scenario === 'desktop') {
           await page.evaluate(() => {
             const final = Object.assign([{ transcript: 'नमस्ते' }], { isFinal: true });
             window.__voice.recognition.onresult({ resultIndex: 0, results: [final] });
