@@ -256,6 +256,7 @@ jobs:
           if [[ "$ready" != true ]]; then echo "::error::Static audit server did not start"; exit 1; fi
           node --test tests/homepage-recovery-contract.test.mjs
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-pwa-install-ui.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-canonical-tools.cjs
           # Measure the same mobile Lighthouse laboratory route on the exact tested
           # production artifact, not a newly rebuilt or redeployed copy.
