@@ -2,13 +2,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
+import { recordVoiceChunks, type ChunkedRecording, type RecordingProgress } from '../voice-chunks';
 import { VoiceResultDiff } from '../voice-results';
 import { browserEngineHint, rememberBrowserEngine } from '../voice-engine';
 
 export type DictationLanguage = 'ne-NP' | 'en-US';
 export type DictationMode = 'browser' | 'server' | 'unsupported';
 
-const MAX_SERVER_RECORDING_MS = 60_000;
 const NEPALI_SPOKEN: [RegExp, string][] = [
   [/\s*पूर्णविराम/g, '।'],
   [/\s*अल्पविराम/g, ','],
@@ -115,10 +115,11 @@ export function useNepaliDictation({
   const [capabilitiesChecked, setCapabilitiesChecked] = useState(false);
   const [listening, setListening] = useState(false);
   const [processing, setProcessing] = useState(false);
+  const [progress, setProgress] = useState<RecordingProgress>({ completed: 0, pending: 0, elapsedSeconds: 0 });
   const [interim, setInterim] = useState('');
   const [error, setError] = useState<string | null>(null);
   const recognitionRef = useRef<any>(null);
-  const recorderRef = useRef<MediaRecorder | null>(null);
+  const recordingRef = useRef<ChunkedRecording | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const timerRef = useRef<number | null>(null);
   const restartTimerRef = useRef<number | null>(null);
@@ -153,9 +154,7 @@ export function useNepaliDictation({
       clearSessionTimers();
       clearTimer();
       try { recognitionRef.current?.abort?.(); } catch { /* already ended */ }
-      try {
-        if (recorderRef.current && recorderRef.current.state !== 'inactive') recorderRef.current.stop();
-      } catch { /* already ended */ }
+      recordingRef.current?.cancel();
       streamRef.current?.getTracks().forEach((track) => track.stop());
     };
   }, [clearTimer, clearSessionTimers]);
@@ -208,12 +207,8 @@ export function useNepaliDictation({
     const recognition = recognitionRef.current;
     try { recognition?.stop?.(); } catch { /* already ended */ }
 
-    const recorder = recorderRef.current;
-    if (recorder && recorder.state !== 'inactive') {
-      try { recorder.stop(); } catch { stopTracks(); }
-    } else if (!recorder) {
-      stopTracks();
-    }
+    if (recordingRef.current) recordingRef.current.stop();
+    else stopTracks();
     setListening(false);
   }, [clearTimer, clearSessionTimers, stopTracks]);
 
@@ -244,55 +239,29 @@ export function useNepaliDictation({
         if (!mountedRef.current || !listeningIntentRef.current) { stream.getTracks().forEach(track => track.stop()); return; }
         streamRef.current = stream;
         const mimeType = preferredMimeType();
-        const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
-        const chunks: Blob[] = [];
-        recorder.ondataavailable = (event) => {
-          if (event.data?.size) chunks.push(event.data);
-        };
-        recorder.onerror = () => {
-          if (mountedRef.current) setError(language === 'ne-NP' ? 'आवाज रेकर्ड गर्न सकिएन।' : 'Audio recording failed.');
-        };
-        recorder.onstop = async () => {
-          clearTimer();
-          stopTracks();
-          if (!mountedRef.current) { recorderRef.current = null; return; }
-          const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
-          if (mountedRef.current) setProcessing(true);
-          try {
-            if (!blob.size) throw new Error(language === 'ne-NP' ? 'आवाज रेकर्ड भएन।' : 'No audio was recorded.');
-            const body = new FormData();
-            body.append('audio', blob, 'speech');
-            body.append('language', language);
-            const response = await fetch('/api/nepali/stt', { method: 'POST', body });
-            const payload = await response.json().catch(() => ({}));
-            if (!response.ok) {
-              const code = String(payload?.error || `HTTP ${response.status}`);
-              throw new Error(serverErrorMessage(language, code));
-            }
-            const processed = postProcessDictation(String(payload?.text ?? ''), {
-              language,
-              nepaliDigits: language === 'ne-NP',
-            });
-            if (processed && mountedRef.current) onFinalRef.current?.(`${processed} `);
-          } catch (cause) {
-            if (mountedRef.current) {
-              setError(cause instanceof Error ? cause.message : errorMessage(language, 'server-failed'));
-            }
-          } finally {
-            recorderRef.current = null;
-            if (mountedRef.current) {
-              setProcessing(false);
-              setListening(false);
-            }
-          }
-        };
-
-        recorderRef.current = recorder;
-        recorder.start(1_000);
+        setProgress({ completed: 0, pending: 0, elapsedSeconds: 0 });
         setListening(true);
-        timerRef.current = window.setTimeout(() => {
-          if (recorderRef.current === recorder && recorder.state !== 'inactive') recorder.stop();
-        }, MAX_SERVER_RECORDING_MS);
+        recordingRef.current = recordVoiceChunks({
+          stream, mimeType,
+          async transcribe(blob, signal) {
+            const body = new FormData();
+            body.append('audio', blob, 'speech'); body.append('language', language);
+            const response = await fetch('/api/nepali/stt', { method: 'POST', body, signal });
+            const payload = await response.json().catch(() => ({}));
+            if (!response.ok) throw new Error(serverErrorMessage(language, String(payload?.error || `HTTP ${response.status}`)));
+            return postProcessDictation(String(payload?.text ?? ''), { language, nepaliDigits: language === 'ne-NP' });
+          },
+          onText(text) { if (mountedRef.current) onFinalRef.current?.(`${text} `); },
+          onProgress(next) { if (mountedRef.current) { setProgress(next); setProcessing(next.pending > 0); } },
+          onError(cause) {
+            listeningIntentRef.current = false;
+            if (mountedRef.current) { setListening(false); setError(cause instanceof Error ? cause.message : serverErrorMessage(language, 'recording-failed')); }
+          },
+          onEnd() {
+            recordingRef.current = null; streamRef.current = null; listeningIntentRef.current = false;
+            if (mountedRef.current) { setListening(false); setProcessing(false); }
+          },
+        });
       } catch (cause) {
         listeningIntentRef.current = false;
         stopTracks();
@@ -415,6 +384,7 @@ export function useNepaliDictation({
     capabilitiesChecked,
     listening,
     processing,
+    progress,
     interim,
     error,
     language,

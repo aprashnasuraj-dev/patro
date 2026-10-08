@@ -49,3 +49,27 @@ test('Android event fixtures commit only new final words across cumulative snaps
     assert.equal(chunks.join(' '), fixture.expected, fixture.name);
   }
 });
+
+test('recorded segments have independent containers, upload in order, and flush on stop', async () => {
+  const output = await build({ entryPoints: ['src/patro-tools/language/voice-chunks.ts'], bundle: true, write: false, format: 'cjs' });
+  let id = 0, stopped = 0; const texts = [], uploads = [], recorders = []; const timers = new Map();
+  class Recorder {
+    constructor() { this.id = ++id; this.state = 'inactive'; this.mimeType = 'audio/webm'; recorders.push(this); }
+    start(timeslice) { assert.equal(timeslice, undefined, 'must not use undecodable timeslice fragments'); this.state = 'recording'; }
+    stop() { this.state = 'inactive'; queueMicrotask(() => { this.ondataavailable({ data: new Blob([`HEADER-${this.id}`]) }); this.onstop(); }); }
+  }
+  const context = { module: { exports: {} }, Blob, AbortController, Date, MediaRecorder: Recorder,
+    setTimeout: fn => { const key = timers.size + 1; timers.set(key, fn); return key; }, clearTimeout: key => timers.delete(key), setInterval: () => 99, clearInterval() {} };
+  runInNewContext(output.outputFiles[0].text, context);
+  let release; const blocked = new Promise(resolve => { release = resolve; }); let ended = false;
+  const session = context.module.exports.recordVoiceChunks({ stream: { getTracks: () => [{ stop() { stopped++; } }] }, mimeType: 'audio/webm',
+    async transcribe(blob) { const value = await blob.text(); uploads.push(value); if (value === 'HEADER-1') await blocked; return value; },
+    onText: text => texts.push(text), onProgress() {}, onError: error => { throw error; }, onEnd() { ended = true; } });
+  recorders[0].stop(); await new Promise(resolve => setImmediate(resolve));
+  assert.equal(recorders.length, 2); recorders[1].stop(); await new Promise(resolve => setImmediate(resolve));
+  assert.deepEqual(uploads, ['HEADER-1'], 'second upload waits for the first');
+  session.stop(); await new Promise(resolve => setImmediate(resolve)); assert.equal(ended, false, 'wait for pending transcripts');
+  release(); await new Promise(resolve => setImmediate(resolve));
+  assert.deepEqual(uploads, ['HEADER-1', 'HEADER-2', 'HEADER-3']); assert.deepEqual(texts, uploads);
+  assert.equal(ended, true); assert.ok(stopped > 0);
+});
