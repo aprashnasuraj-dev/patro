@@ -194,6 +194,7 @@ jobs:
           NODE_PATH="$PWD/node_modules" node scripts/check-offline-pwa.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-growth.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-voice.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-voice-features.cjs
           kill "$server" 2>/dev/null || true
           trap - EXIT
       - name: Canonical tools and community mobile functional checks
