@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { normalize } from '../spellcheck';
 import { toNepaliDigits } from '../../core/names';
 import { recordVoiceChunks, type ChunkedRecording, type RecordingProgress } from '../voice-chunks';
+import { convertSpokenNepaliNumbers } from '../voice-numbers';
 import { speechError as errorMessage } from '../voice-guidance';
 import { VoiceResultDiff } from '../voice-results';
 import { browserEngineHint, rememberBrowserEngine } from '../voice-engine';
@@ -11,11 +12,11 @@ export type DictationLanguage = 'ne-NP' | 'en-US';
 export type DictationMode = 'browser' | 'server' | 'unsupported';
 
 const NEPALI_SPOKEN: [RegExp, string][] = [
-  [/\s*पूर्णविराम/g, '।'],
-  [/\s*अल्पविराम/g, ','],
-  [/\s*प्रश्नवाचक(?: चिन्ह)?|\s*प्रश्नचिन्ह/g, '?'],
+  [/\s*(?:पूर्ण\s*विराम|फुल\s*स्टप)/g, '।'],
+  [/\s*(?:अल्प\s*विराम|कमा)/g, ','],
+  [/\s*प्रश्नवाचक(?: चिन्ह)?|\s*प्रश्न\s*(?:चिन्ह|चिह्न)/g, '?'],
   [/\s*उद्गार(?: चिन्ह)?/g, '!'],
-  [/\s*नयाँ (?:लाइन|अनुच्छेद)\s*/g, '\n'],
+  [/\s*नयाँ (?:लाइन|हरफ|अनुच्छेद)\s*/g, '\n'],
 ];
 const ENGLISH_SPOKEN: [RegExp, string][] = [
   [/\s*\b(?:full stop|period)\b/gi, '.'],
@@ -43,12 +44,14 @@ export function postProcessEnglishDictation(raw: string) {
 
 export function postProcessDictation(
   raw: string,
-  opts: { nepaliDigits?: boolean; language?: DictationLanguage } = {},
+  opts: { nepaliDigits?: boolean; language?: DictationLanguage; spokenNumbers?: boolean; transliterateLatin?: (text: string) => string } = {},
 ) {
   const language = opts.language ?? 'ne-NP';
   if (language === 'en-US') return postProcessEnglishDictation(raw);
   let text = raw.normalize('NFC');
   for (const [pattern, symbol] of NEPALI_SPOKEN) text = text.replace(pattern, symbol);
+  if (opts.spokenNumbers) text = convertSpokenNepaliNumbers(text);
+  if (opts.transliterateLatin) text = text.split(/(https?:\/\/\S+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,})/).map((part, i) => i % 2 ? part : part.replace(/[A-Za-z~]+/g, opts.transliterateLatin!)).join('');
   if (opts.nepaliDigits ?? true) text = toNepaliDigits(text);
   return normalize(text).text;
 }
@@ -94,10 +97,14 @@ export function useNepaliDictation({
   onFinal,
   serverFallback = true,
   language = 'ne-NP',
+  spokenNumbers = false,
+  transliterateLatin,
 }: {
   onFinal?: (text: string) => void;
   serverFallback?: boolean;
   language?: DictationLanguage;
+  spokenNumbers?: boolean;
+  transliterateLatin?: (text: string) => string;
 } = {}) {
   const [mode, setMode] = useState<DictationMode>('unsupported');
   const [browserWorking, setBrowserWorking] = useState(false);
@@ -124,6 +131,8 @@ export function useNepaliDictation({
   const listeningIntentRef = useRef(false);
   const capabilitiesReadyRef = useRef<Promise<boolean>>(Promise.resolve(false));
   const onFinalRef = useRef(onFinal);
+  const cleanupRef = useRef({ spokenNumbers, transliterateLatin });
+  useEffect(() => { cleanupRef.current = { spokenNumbers, transliterateLatin }; }, [spokenNumbers, transliterateLatin]);
   useEffect(() => { onFinalRef.current = onFinal; }, [onFinal]);
 
   const clearTimer = useCallback(() => {
@@ -248,7 +257,7 @@ export function useNepaliDictation({
             const response = await fetch('/api/nepali/stt', { method: 'POST', body, signal });
             const payload = await response.json().catch(() => ({}));
             if (!response.ok) throw new Error(serverErrorMessage(language, String(payload?.error || `HTTP ${response.status}`)));
-            return postProcessDictation(String(payload?.text ?? ''), { language, nepaliDigits: language === 'ne-NP' });
+            return postProcessDictation(String(payload?.text ?? ''), { ...cleanupRef.current, language, nepaliDigits: language === 'ne-NP' });
           },
           onText(text) { if (mountedRef.current) onFinalRef.current?.(`${text} `); },
           onProgress(next) { if (mountedRef.current) { setProgress(next); setProcessing(next.pending > 0); } },
@@ -329,7 +338,7 @@ export function useNepaliDictation({
         markWorking();
         restartDelay = 250;
         const delta = diff.final(event.results);
-        const processed = postProcessDictation(delta, { language, nepaliDigits: language === 'ne-NP' });
+        const processed = postProcessDictation(delta, { ...cleanupRef.current, language, nepaliDigits: language === 'ne-NP' });
         if (processed) onFinalRef.current?.(`${processed} `);
         let live = '';
         for (let i = 0; i < event.results.length; i++) { if (!event.results[i].isFinal) live += `${event.results[i]?.[0]?.transcript ?? ''} `; }

@@ -38,12 +38,16 @@ export function VoiceTypingTool() {
   const [language, setLanguage] = useState<DictationLanguage>("ne-NP");
   const [text, setText] = useState("");
   const [copied, setCopied] = useState(false);
+  const [spokenNumbers, setSpokenNumbers] = useState(false);
+  const [transliterateLatin, setTransliterateLatin] = useState<((text: string) => string) | undefined>();
+  const [cleanupError, setCleanupError] = useState("");
   const textarea = useRef<HTMLTextAreaElement>(null);
   const appendFinal = useDictationEditor(text, setText, textarea);
   const dictation = useNepaliDictation({
     language,
     serverFallback: true,
     onFinal: appendFinal,
+    spokenNumbers, transliterateLatin,
   });
   const meta = LANGUAGE_META[language];
   const modeText = dictation.processing
@@ -60,6 +64,15 @@ export function VoiceTypingTool() {
     if (next === language || dictation.processing) return;
     setLanguage(next);
     setCopied(false);
+  }
+
+  async function toggleTransliteration(enabled: boolean) {
+    if (!enabled) { setTransliterateLatin(undefined); return; }
+    try {
+      const modulePath = '/nepali-tools/core/roman.mjs';
+      const engine = await import(/* @vite-ignore */ modulePath);
+      setTransliterateLatin(() => engine.transliterateRoman); setCleanupError("");
+    } catch { setCleanupError("Roman लिप्यन्तरण अहिले उपलब्ध छैन; English शब्द जस्ताको तस्तै रहन्छन्।"); }
   }
 
   async function copyTranscript() {
@@ -156,6 +169,12 @@ export function VoiceTypingTool() {
             {dictation.progress.elapsedSeconds}s · {dictation.progress.completed} {language === "ne-NP" ? "खण्ड तयार" : "chunks ready"} · {dictation.progress.pending} {language === "ne-NP" ? "प्रतीक्षामा" : "pending"}
           </span>
         ) : null}
+        {language === "ne-NP" ? <fieldset className="voice-cleanup-options"><legend>पाठ मिलाउने विकल्प · Optional cleanup</legend>
+          <label><input type="checkbox" checked={spokenNumbers} onChange={event => setSpokenNumbers(event.target.checked)}/> बोलेका सामान्य अंक बदल्नुहोस्</label>
+          <label><input type="checkbox" checked={!!transliterateLatin} onChange={event => void toggleTransliteration(event.target.checked)}/> Roman अक्षर देवनागरीमा (अनुमान; सम्पादन गर्नुहोस्)</label>
+          <small>English शब्द सुरुमा Latin मै रहन्छन्। यी विकल्प आगामी आवाज पाठमा मात्र लागू हुन्छन्।</small>
+          {cleanupError ? <p role="alert">{cleanupError}</p> : null}
+        </fieldset> : null}
         <div className="voice-capture-panel">
           <div className="voice-capture-status">
             <span className="tool-badge" aria-live="polite">{modeText}</span>

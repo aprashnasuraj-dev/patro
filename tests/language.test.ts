@@ -103,3 +103,21 @@ describe('voice + tts helpers', () => {
     expect(tool).toContain('Accurate');
   });
 });
+
+describe('opt-in voice cleanup', () => {
+  it('accepts spaced and borrowed punctuation without changing mixed English words', () => {
+    expect(postProcessDictation('आज meeting छ पूर्ण विराम')).toBe('आज meeting छ।');
+    expect(postProcessDictation('हो कमा किन प्रश्न चिन्ह')).toBe('हो, किन?');
+    expect(postProcessDictation('पहिलो नयाँ हरफ दोस्रो फुलस्टप')).toBe('पहिलो\nदोस्रो।');
+  });
+  it('leaves spoken numbers unchanged by default and converts supported numbers only on request', () => {
+    expect(postProcessDictation('सात बजे')).toBe('सात बजे');
+    expect(postProcessDictation('दुई हजार तीन सय पच्चीस', { spokenNumbers: true })).toBe('२३२५');
+    expect(postProcessDictation('सात बजेर तीस', { spokenNumbers: true })).toBe('७ बजेर ३०');
+  });
+  it('uses the existing joiner normalization and protects links under optional transliteration', () => {
+    expect(postProcessDictation('र्\u200Dयाल')).toBe('र्\u200Dयाल');
+    expect(postProcessDictation('क्\u200Dष क्\u200Cष')).toBe('क्ष क्ष');
+    expect(postProcessDictation('meeting https://example.com a@example.com', { transliterateLatin: () => 'लिपि' })).toBe('लिपि https://example.com a@example.com');
+  });
+});
