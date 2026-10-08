@@ -93,3 +93,10 @@
   Cache-Control: public, max-age=3600, s-maxage=86400
 /it/*
   Cache-Control: public, max-age=3600, s-maxage=86400
+
+/aap/runtime.js
+  Cache-Control: public, max-age=300
+  X-Robots-Tag: noindex, nofollow
+/aap/analytics.js
+  Cache-Control: public, max-age=300
+  X-Robots-Tag: noindex, nofollow

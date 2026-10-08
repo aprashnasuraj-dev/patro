@@ -34,7 +34,9 @@
       "!/fr/*",
       "!/es/*",
       "!/it/*",
-      "!/sitemap-growth.xml"
+      "!/sitemap-growth.xml",
+      "!/aap/runtime.js",
+      "!/aap/analytics.js"
     ]
   },
   "d1_databases": [
