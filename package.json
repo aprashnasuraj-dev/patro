@@ -40,7 +40,7 @@
     "cloudflare:verify-secrets": "node scripts/verify-cloudflare-secrets.mjs",
     "cloudflare:convert-archived-edge": "node scripts/cloudflare/convert-supabase-edge.mjs",
     "deploy:cloudflare": "npm run cloudflare:config && wrangler deploy --config wrangler.generated.jsonc",
-    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs tests/reference-ui-contract.test.mjs tests/community-migration-contract.test.mjs tests/native-cutover-contract.test.mjs tests/patro-connectivity-contract.test.mjs tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/seo-discovery-contract.test.mjs tests/seo-phase-gates-contract.test.mjs tests/seo-intent-coverage-contract.test.mjs tests/fresh-build-ux-contract.test.mjs tests/history-archive-contract.test.mjs tests/festival-runtime-contract.test.mjs tests/ten-fixes-contract.test.mjs tests/aafnai-export-brand.test.mjs tests/admin-nonblocking-runtime.test.mjs tests/lazy-features-install-cache.test.mjs tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs",
+    "test:cloudflare-contract": "node --test tests/cloudflare-readiness-contract.test.mjs tests/reference-ui-contract.test.mjs tests/community-migration-contract.test.mjs tests/native-cutover-contract.test.mjs tests/patro-connectivity-contract.test.mjs tests/full-product-readiness-contract.test.mjs tests/canonical-tools-functional-contract.test.mjs tests/flagship-features-functional-contract.test.mjs tests/premium-release-contract.test.mjs tests/seo-discovery-contract.test.mjs tests/seo-phase-gates-contract.test.mjs tests/seo-intent-coverage-contract.test.mjs tests/fresh-build-ux-contract.test.mjs tests/history-archive-contract.test.mjs tests/festival-runtime-contract.test.mjs tests/ten-fixes-contract.test.mjs tests/aafnai-export-brand.test.mjs tests/admin-nonblocking-runtime.test.mjs tests/lazy-features-install-cache.test.mjs tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs tests/voice-features-contract.test.mjs",
     "seo:intents": "node scripts/generate-search-intents.mjs",
     "seo:generate": "npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs && node scripts/build-guides.mjs && node scripts/build-festival-index.mjs && node scripts/build-dynamic-history-pages.mjs && node scripts/build-dynamic-time-machine-pages.mjs && node scripts/build-community-event-pages.mjs",
     "seo:prerender": "node scripts/prerender-days-seo.mjs && node scripts/prerender-festivals.mjs && node scripts/prerender-history-days.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs && node scripts/enhance-prerender-intents.mjs && node scripts/prerender-guides.mjs",
@@ -62,7 +62,7 @@
     "seo:growth-audit": "node scripts/audit-growth.mjs",
     "test:growth": "vitest run tests/growth-seo.test.ts",
     "seo:preserve-urls": "node scripts/verify-url-preservation.mjs && node scripts/verify-url-preservation.mjs dist",
-    "test:voice": "node --test tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs"
+    "test:voice": "node --test tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs tests/voice-features-contract.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",

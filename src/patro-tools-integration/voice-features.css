@@ -1,0 +1,2 @@
+.bot-input-with-voice{grid-template-columns:minmax(0,1fr) auto auto}.bot-input-with-voice input{min-width:0}
+@media(max-width:700px){.bot-input-with-voice{grid-template-columns:1fr}}
