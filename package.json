@@ -100,7 +100,7 @@
     "bindings": {
       "ASSETS": "Static SPA assets served by the Worker.",
       "DB": "Required production D1 database binding named DB; committed database is patro.",
-      "CACHE": "Optional KV cache binding used for low-write global reference caching.",
+      "CACHE": "Optional KV binding reserved for low-write runtime coordination and published configuration.",
       "ARCHIVE": "Optional R2 bucket binding used as a durable public-reference cache and D1 read fallback."
     }
   }
