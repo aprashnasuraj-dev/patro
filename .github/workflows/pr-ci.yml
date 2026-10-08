@@ -105,6 +105,20 @@ jobs:
         if: steps.changes.outputs.any == 'true'
         run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
 
+      - name: Promotion dependency and tracked-secret security gate
+        if: steps.changes.outputs.any == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # This is the same high-severity npm audit enforced at release,
+          # now caught before an unsafe PR could be merged.
+          npm audit --audit-level=high
+          # Protect against accidentally committing provider keys / auth secrets.
+          if git grep -nEI '(gsk_[A-Za-z0-9_-]{20,}|nvapi-[A-Za-z0-9_-]{20,}|sb_secret_[A-Za-z0-9_-]{20,})' -- . ':(exclude).github/workflows/pr-ci.yml' ':(exclude).github/workflows/release-gate.yml'; then
+            echo "::error::Potential secret in tracked files"
+            exit 1
+          fi
+
       - name: Baseline compile and core tests
         if: steps.changes.outputs.any == 'true'
         run: |
