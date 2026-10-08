@@ -23,6 +23,7 @@ export function PwaInstallExperience(){
   const[showGuide,setShowGuide]=useState(false);
   const[footer,setFooter]=useState<HTMLElement|null>(null);
   const noticed=useRef(false);
+  const prompting=useRef(false);
   const ios=useMemo(()=>typeof navigator!=="undefined"&&isIos(),[]);
 
   useEffect(()=>{
@@ -33,15 +34,13 @@ export function PwaInstallExperience(){
       if(active){setShowNotice(false);setShowGuide(false);setPromptEvent(null)}
     };
     syncInstalled();
-    // Don't greet visitors with a pop-up over the calendar: wait, respect a recent dismissal,
-    // and on desktop only offer it when the browser can actually install.
+    // Present an unobtrusive invitation once the calendar has rendered.
     const timer=window.setTimeout(()=>{if(!isStandalone()&&!noticed.current){noticed.current=true;setShowNotice(true)}},INSTALL_NOTICE_DELAY_MS);
     setFooter(document.querySelector<HTMLElement>(".ap-footer"));
 
     const onBeforeInstall=(event:Event)=>{
       event.preventDefault();
       setPromptEvent(event as InstallPromptEvent);
-
     };
     const onInstalled=()=>{
       setInstalled(true);
@@ -61,40 +60,56 @@ export function PwaInstallExperience(){
   },[]);
 
   const install=async()=>{
-    if(installed)return;
+    if(installed||prompting.current)return;
     if(promptEvent){
+      // The browser only permits a PWA install prompt from a direct user gesture.
+      // Keep prompt() in this click handler (never from a timer or effect).
+      prompting.current=true;
       try{
         await promptEvent.prompt();
         const choice=await promptEvent.userChoice;
+        setPromptEvent(null); // browsers permit only one use of each prompt event
         if(choice.outcome==="accepted"){
-          setInstalled(true);
+          // userChoice is not proof of installation. appinstalled/standalone is.
           setShowNotice(false);
           setShowGuide(false);
+        }else{
+          setShowNotice(true);
+          setShowGuide(true);
         }
-        setPromptEvent(null);
         return;
-      }catch{}
+      }catch{
+        setPromptEvent(null);
+      }finally{
+        prompting.current=false;
+      }
     }
+    // Safari/iOS and browsers without beforeinstallprompt cannot add an icon
+    // programmatically. Keep the action clickable and show exact manual steps.
     setShowGuide(true);
     setShowNotice(true);
   };
 
   useEffect(()=>{const handler=()=>{void install()};window.addEventListener("patro:install",handler);return()=>window.removeEventListener("patro:install",handler)},[installed,promptEvent]);
   const footerAction=<button className={`ap-install-footer${installed?" is-installed":""}`} type="button" onClick={install} disabled={installed} aria-label={installed?"आफ्नै पात्रो इन्स्टल भइसकेको छ":"आफ्नै पात्रो एप इन्स्टल गर्नुहोस्"}>
-    <span aria-hidden="true">{installed?"✓":"↓"}</span>{installed?"एप इन्स्टल भयो":"एप डाउनलोड"}
+    <span aria-hidden="true">{installed?"✓":"↓"}</span>{installed?"एप इन्स्टल भयो":"एप इन्स्टल गर्नुहोस्"}
   </button>;
 
   return <>
     {footer?createPortal(footerAction,footer):null}
     {!installed&&showNotice?<aside className="ap-install-notice" role="status" aria-live="polite">
-      <button className="ap-install-close" type="button" onClick={()=>{setShowNotice(false)}} aria-label="इन्स्टल सूचना बन्द गर्नुहोस्">×</button>
-      <span className="ap-install-mark" aria-hidden="true">आ</span>
-      <div className="ap-install-copy">
-        <strong>आफ्नै पात्रो एप राख्नुहोस्</strong>
-        <p>छिटो खोल्न, पात्रो र समर्थित सुविधाहरू अफलाइन प्रयोग गर्न app install गर्नुहोस्।</p>
-        {showGuide?<small>{ios?"iPhone/iPad: Safari को Share ↑ खोल्नुहोस् → Add to Home Screen छान्नुहोस्।":"Chrome/Edge: ठेगाना पट्टीको Install चिन्ह वा ⋮ → Install app छान्नुहोस्। मोबाइलमा Add to Home screen छान्नुहोस्। विकल्प नदेखिए समर्थित ब्राउजरमा खोल्नुहोस्।"}</small>:null}
-      </div>
-      <button className="ap-install-primary" type="button" onClick={install}>{promptEvent?"Install":"कसरी Install गर्ने?"}</button>
+      {/* The entire card, including title and icon, activates installation.
+          Close is an independent sibling button, never nested in the install button. */}
+      <button className="ap-install-surface" type="button" onClick={install} aria-label="आफ्नै पात्रो अहिले इन्स्टल गर्नुहोस् · Install Now">
+        <span className="ap-install-mark" aria-hidden="true">आ</span>
+        <span className="ap-install-copy">
+          <strong>आफ्नै पात्रो एप राख्नुहोस्</strong>
+          <span className="ap-install-description">छिटो खोल्न, पात्रो र समर्थित सुविधाहरू अफलाइन प्रयोग गर्न एप इन्स्टल गर्नुहोस्।</span>
+          {showGuide?<small>{ios?"iPhone/iPad: Safari मा यो पेज खोल्नुहोस् → Share ↑ → Add to Home Screen → Add छान्नुहोस्।":"ब्राउजरको मेनु ⋮ वा Install चिन्हबाट Install app / Add to Home screen छान्नुहोस्। विकल्प नदेखिए Chrome वा Edge मा खोल्नुहोस्।"}</small>:null}
+        </span>
+        <span className="ap-install-primary">अहिले इन्स्टल गर्नुहोस् <span lang="en">· Install Now</span></span>
+      </button>
+      <button className="ap-install-close" type="button" onClick={()=>setShowNotice(false)} aria-label="इन्स्टल सूचना बन्द गर्नुहोस्">×</button>
     </aside>:null}
   </>;
 }
