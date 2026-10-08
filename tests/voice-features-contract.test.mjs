@@ -46,3 +46,10 @@ test('voice Preeti conversion reuses the core Nepali mapping and preserves Latin
   for (const text of ['नेपाल', 'मेरो नाम सुरज हो।']) assert.equal(preetiToUnicode(unicodeToPreeti(text)), text);
   assert.ok(unicodeToPreeti('नेपाल Office 2026').includes('Office 2026'));
 });
+
+test('application templates include only supplied facts and preserve literal text', async () => {
+ const { applicationLetter, LETTER_DEFAULTS } = await runtime('src/patro-tools/language/application-letter.ts');
+ assert.deepEqual(Object.keys(LETTER_DEFAULTS), ['leave','recommendation','office']);
+ const result = applicationLetter({ recipient: 'शाखा प्रमुख', name: 'सुरज', subject: 'बिदा', body: '<script>literal</script>', date: '2083-06-22' });
+ assert.match(result, /सुरज/); assert.match(result, /2083-06-22/); assert.match(result, /<script>literal<\/script>/); assert.ok(!result.includes('स्वीकृत'));
+});

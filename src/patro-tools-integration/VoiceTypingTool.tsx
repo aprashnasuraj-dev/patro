@@ -1,10 +1,11 @@
 import { VoiceHelp } from "../patro-tools/language/react/VoiceHelp";
 import { InlineDictationPreview, useDictationEditor } from '../patro-tools/language/react/DictationEditor';
-import { useRef, useState } from "react";
+import { lazy, Suspense, useRef, useState } from "react";
 import { DictationLanguage, useNepaliDictation } from "@/patro-tools/language/react/useNepaliDictation";
 import { ToolPage, ToolResult } from "./ToolPrimitives";
 import "./voice-typing.css";
 
+const VoiceLetterComposer = lazy(() => import('./VoiceLetterComposer'));
 const LANGUAGE_META: Record<DictationLanguage, {
   label: string;
   short: string;
@@ -41,6 +42,7 @@ export function VoiceTypingTool() {
   const [preetiStatus, setPreetiStatus] = useState("");
   const [spokenNumbers, setSpokenNumbers] = useState(false);
   const [transliterateLatin, setTransliterateLatin] = useState<((text: string) => string) | undefined>();
+  const [letterOpen, setLetterOpen] = useState(false);
   const [cleanupError, setCleanupError] = useState("");
   const textarea = useRef<HTMLTextAreaElement>(null);
   const appendFinal = useDictationEditor(text, setText, textarea);
@@ -241,6 +243,8 @@ export function VoiceTypingTool() {
       {preetiStatus ? <p role="status">{preetiStatus}</p> : null}
       </section>
 
+      <button type="button" onClick={() => setLetterOpen(!letterOpen)} aria-expanded={letterOpen}>बोलेर निवेदन · Voice application</button>
+      {letterOpen ? <Suspense fallback={<p role="status">लोड हुँदैछ…</p>}><VoiceLetterComposer/></Suspense> : null}
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
         <p className="tool-muted">
