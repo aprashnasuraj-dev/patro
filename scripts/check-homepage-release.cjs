@@ -122,7 +122,9 @@ function fail(message) { throw new Error(message); }
       year: document.querySelector('select[aria-label="विक्रम संवत् वर्ष"]')?.value,
       month: document.querySelector('select[aria-label="विक्रम संवत् महिना"]')?.value,
     }));
-    if(data.calendarDays < 27 || data.year !== String(year) || data.month !== String(month) || !data.title) fail("Calendar picker blank or stale: "+JSON.stringify({ path, data }));
+    const monthNames = ["बैशाख","जेठ","असार","साउन","भदौ","असोज","कात्तिक","मंसिर","पुस","माघ","फागुन","चैत"];
+    const yearLabel = String(year).replace(/\d/g, (digit) => "०१२३४५६७८९"[Number(digit)]);
+    if(data.calendarDays < 27 || data.year !== String(year) || data.month !== String(month) || !data.title?.includes(monthNames[month-1]) || !data.title.includes(yearLabel)) fail("Calendar picker blank or stale: "+JSON.stringify({ path, data }));
     return data;
   }
   const pickerYear = page.getByRole("combobox", { name: "विक्रम संवत् वर्ष" });
