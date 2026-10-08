@@ -5,7 +5,7 @@ const BASE = process.env.PATRO_TEST_BASE || "http://127.0.0.1:4173";
 function fail(message) { throw new Error(message); }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, args: ["--disable-dev-shm-usage"] });
 
   const firstPaint = await browser.newContext({ viewport: { width: 375, height: 812 }, javaScriptEnabled: false });
   const noJs = await firstPaint.newPage();
@@ -39,6 +39,8 @@ function fail(message) { throw new Error(message); }
   const page = await failureContext.newPage();
   const errors = [];
   page.on("pageerror", (error) => errors.push(String(error)));
+  page.on("crash", () => console.error("RELEASE_BROWSER_CRASH: homepage Chromium target crashed"));
+  page.on("console", (message) => { if (message.type() === "error") console.error("RELEASE_BROWSER_CONSOLE:",message.text()); });
   await page.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
   await page.locator(".rh-calendar .rh-cell:not(.is-empty)").first().waitFor({ state: "visible", timeout: 20000 }).catch(async (error) => {
     const diagnostic = await page.evaluate(() => ({
