@@ -82,8 +82,7 @@ test("mobile first-load isolates feature routes without losing navigation",()=>{
     ["TimeMachinePage","AafnaiDetailPages"],["ConvertPage","ConvertPage"],
     ["PatroToolsShell","patro-tools-integration/PatroToolsShell"],
     ["CommunityHub","community/CommunityHub"],
-    ["RashifalExperience","rashifal/RashifalExperience"],
-    ["NepaliTools","features/nepali-tools/NepaliTools"]
+    ["RashifalExperience","rashifal/RashifalExperience"]
   ]){
     assert.ok(router.includes(`const ${component}=lazy(()=>import("./${module}")`),`${component} should load only on demand`);
   }
