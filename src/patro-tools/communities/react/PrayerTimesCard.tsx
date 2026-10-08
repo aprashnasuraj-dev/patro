@@ -8,8 +8,8 @@ import type { GeoLocation } from '../../core/types';
 
 const t = (d: Date, tz: string) => d.toLocaleTimeString('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit' });
 
-export function PrayerTimesCard({ date }: { date: string }) {
-  const [loc, setLoc] = useState<GeoLocation>(NEPAL_CITIES[0]);
+export function PrayerTimesCard({ date, initialPlace }: { date: string; initialPlace?: GeoLocation }) {
+  const [loc, setLoc] = useState<GeoLocation>(initialPlace || NEPAL_CITIES[0]);
   const [method, setMethod] = useState<MethodId>('karachi');
   const [asr, setAsr] = useState<'hanafi' | 'shafii'>('hanafi');
   const p = useMemo(() => prayerTimes(date, loc, method, asr), [date, loc, method, asr]);
