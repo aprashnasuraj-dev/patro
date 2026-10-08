@@ -115,13 +115,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "${{ steps.changes.outputs.cloudflare }}" == "true" || "${{ steps.changes.outputs.full }}" == "true" ]]; then
-            # Cloudflare/product contract tests read SEO, intent and prerender artifacts emitted by
-            # the canonical build pipeline. A bare `vite build` cannot create those files.
-            npm run build
-          else
-            npx vite build
-          fi
+          # Release browser/SEO checks run for UI-only changes too. They require the
+          # fully prerendered dist output, not a bare Vite shell.
+          npm run build
 
       - name: Patro tool tests
         if: steps.changes.outputs.tools == 'true' || steps.changes.outputs.full == 'true'
