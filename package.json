@@ -7,8 +7,8 @@
     "dev": "npm run dev:cloudflare",
     "audit:aafnai-brand": "node scripts/audit-aafnai-brand.mjs",
     "test:public-copy": "node scripts/verify-public-copy.mjs",
-    "build": "npm run audit:aafnai-brand && npm run test:public-copy && npm run seo:phase0 && npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs && node scripts/build-guides.mjs && node scripts/build-festival-index.mjs && node scripts/build-dynamic-history-pages.mjs && node scripts/build-dynamic-time-machine-pages.mjs && node scripts/build-community-event-pages.mjs && tsc --noEmit && node scripts/build-client-calendar.mjs && node scripts/cloudflare/build-history-r2.mjs && node scripts/verify-url-preservation.mjs && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/prerender-days-seo.mjs && node scripts/prerender-festivals.mjs && node scripts/prerender-history-days.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs && node scripts/enhance-prerender-intents.mjs && node scripts/prerender-guides.mjs && node scripts/prerender-growth.mjs && node scripts/verify-seo-build.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs && node scripts/verify-product-build.mjs && node scripts/verify-url-preservation.mjs dist",
-    "release:verify": "npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot && npm run build && npm run test:core && npm run test:typing && npm run test:patro-tools && npm run test:community && npm run test:full-product && npm run test:cloudflare-contract && npm run test:release-safety && npm run cloudflare:validate",
+    "build": "npm run audit:aafnai-brand && npm run test:public-copy && npm run seo:phase0 && npm run seo:intents && node scripts/generate-seo.mjs && node scripts/enhance-seo-discovery.mjs && node scripts/build-guides.mjs && node scripts/build-festival-index.mjs && node scripts/build-dynamic-history-pages.mjs && node scripts/build-dynamic-time-machine-pages.mjs && node scripts/build-community-event-pages.mjs && tsc --noEmit && node scripts/build-client-calendar.mjs && node scripts/build-birthday-index.mjs && node scripts/cloudflare/build-history-r2.mjs && node scripts/verify-url-preservation.mjs && vite build && node scripts/emit-tool-shell.mjs && node scripts/emit-community-suites.mjs && node scripts/prerender-days-seo.mjs && node scripts/prerender-festivals.mjs && node scripts/prerender-history-days.mjs && node scripts/prerender-seo.mjs && node scripts/enrich-calendar-month-seo.mjs && node scripts/enhance-prerender-intents.mjs && node scripts/prerender-guides.mjs && node scripts/prerender-growth.mjs && node scripts/verify-seo-build.mjs && node scripts/doctor.mjs && node scripts/emit-cloudflare-root.mjs && node scripts/verify-product-build.mjs && node scripts/verify-url-preservation.mjs dist && node scripts/verify-static-file-budget.mjs",
+    "release:verify": "npm run cloudflare:verify-inventory && npm run cloudflare:verify-snapshot && npm run build && npm run test:core && npm run test:typing && npm run test:patro-tools && npm run test:community && npm run test:full-product && npm run test:cloudflare-contract && npm run test:place-birthday && npm run test:birthday-modules && npm run test:free-plan && npm run test:growth-pages && npm run test:release-safety && npm run cloudflare:validate",
     "preview": "npm run preview:cloudflare",
     "test": "vitest run packages/core/src/core.test.ts",
     "test:core": "vitest run packages/core/src/core.test.ts",
@@ -65,7 +65,9 @@
     "test:voice": "node --test tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs tests/voice-features-contract.test.mjs",
     "test:place-birthday": "node --test tests/place-birthday-contract.test.mjs",
     "seo:growth": "node scripts/prerender-growth.mjs",
-    "test:growth-pages": "vitest run tests/growth-pages.test.ts"
+    "test:growth-pages": "vitest run tests/growth-pages.test.ts",
+    "test:birthday-modules": "node --test tests/birthday-modules.test.mjs",
+    "test:free-plan": "node --test tests/free-plan-contract.test.mjs tests/analytics-rollup.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",

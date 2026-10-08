@@ -1,3 +1,4 @@
+import {homeToday,homeMonth,homeEvents} from "./home-calendar-client";
 import { HomeQuickNote } from "./components/HomeQuickNote";
 import { HomePanchang, type HomePanchangData } from "./components/HomePanchang";
 import { HomeWeather } from "./components/HomeWeather";
@@ -74,17 +75,14 @@ async function getJson<T>(url: string, signal?: AbortSignal): Promise<T> {
 }
 async function loadMonth(year: number, month: number, fallback: CalendarDay[], signal: AbortSignal) {
   try {
-    const body = await getJson<any>(`/api/v1/calendar/${year}/${month}?calendar=bs`, signal);
+    const body = await homeMonth(year,month,signal);
     const rows = (body?.days || []).map(normalizeDay).filter(Boolean) as CalendarDay[];
     return mergeDays(fallback, rows);
   } catch { return fallback; }
 }
 async function loadEvents(days: CalendarDay[], signal: AbortSignal) {
   const years = [...new Set(days.map((day) => Number(day.ad.slice(0, 4))).filter(Boolean))];
-  const results = await Promise.all(years.flatMap((year) => [
-    getJson<{ items?: Festival[] }>(`/api/v1/festivals?year=${year}`, signal).catch(() => ({ items: [] })),
-    getJson<{ items?: Festival[] }>(`/api/v1/holidays?year=${year}`, signal).catch(() => ({ items: [] })),
-  ]));
+  const results = await Promise.all(years.map(year=>homeEvents(year,signal).catch(()=>({items:[]}))));
   const seen = new Set<string>();
   return results.flatMap((row) => row.items || []).filter((item) => {
     const key = `${festivalDate(item)}|${item.name_ne || item.name_en || item.title || item.key || ""}|${item.effect || ""}`;
@@ -137,7 +135,7 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
 
   useEffect(() => {
     const controller = new AbortController();
-    getJson<any>(`/api/v1/sync?date=${today}`, controller.signal).then((body) => {
+    homeToday(today,controller.signal).then((body) => {
       const p = body?.archive_panchang || body?.panchang || {};
       const t = body?.tithi || p?.tithi || {};
       const rawBs = body?.calendars?.bikram_sambat_detail || body?.bs || localToday;

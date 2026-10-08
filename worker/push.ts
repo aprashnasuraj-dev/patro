@@ -29,6 +29,7 @@ function safeSubscription(row:any):PushSubscription|null{
 }
 
 async function readPushGate(env:PushEnv){
+  if(env.PUSH_KV_GATE!=="1")return null;
   if(!env.CACHE)return null;
   try{
     const raw=await env.CACHE.get(PUSH_GATE_KEY,"text");
@@ -38,16 +39,19 @@ async function readPushGate(env:PushEnv){
   }catch{return null}
 }
 async function writePushGate(env:PushEnv,wakeAtMs:number){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
   try{await env.CACHE.put(PUSH_GATE_KEY,JSON.stringify({wake_at_ms:wakeAtMs,updated_at:new Date().toISOString()}),{expirationTtl:48*3600})}catch{}
 }
 async function notePushDue(env:PushEnv,wakeAtMs:number){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE||!Number.isFinite(wakeAtMs))return;
   const current=await readPushGate(env);
   if(current!=null&&current<=wakeAtMs&&current>Date.now()-30_000)return;
   await writePushGate(env,wakeAtMs);
 }
 async function invalidatePushGate(env:PushEnv){
+  if(env.PUSH_KV_GATE!=="1")return;
   if(!env.CACHE)return;
   try{await env.CACHE.delete(PUSH_GATE_KEY)}catch{}
 }

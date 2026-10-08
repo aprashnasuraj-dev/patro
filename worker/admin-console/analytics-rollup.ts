@@ -9,7 +9,7 @@ export const ROLLUP_SCHEMA=[
 const DIMENSIONS:Record<string,string>={total:"'all'",path:'path',referrer:"coalesce(referrer,'(direct)')",country:"coalesce(country,'??')",device:"coalesce(device,'Other')",browser:"coalesce(browser,'Other')"};
 /** One D1 transaction per completed Nepal day: aggregates and coverage marker commit together. */
 export async function rollupPageviews(env:AdminEnv){
- const days=await all<{day:string}>(env,`select distinct ${DAY} as day from aap_pageviews where ${DAY}<date('now','+345 minutes') and ${DAY} not in(select day from aap_pageview_rollup_days) order by day`);
+ const days=await all<{day:string}>(env,`select distinct ${DAY} as day from aap_pageviews where ${DAY}<date('now','+345 minutes') and ${DAY} not in(select day from aap_pageview_rollup_days) order by day desc limit 4`);
  for(const {day} of days){const statements=Object.entries(DIMENSIONS).map(([dim,expr])=>env.DB.prepare(`insert into aap_pageview_daily(day,dimension,key,views,visitors) select ?1,?2,${expr},sum(weight),count(distinct visitor) from aap_pageviews where ts>=?3 and ts<?4 group by ${expr} on conflict(day,dimension,key) do update set views=excluded.views,visitors=excluded.visitors`).bind(day,dim,Date.parse(day+'T00:00:00Z')-345*60000,Date.parse(day+'T00:00:00Z')-345*60000+86400000));statements.push(env.DB.prepare('insert into aap_pageview_rollup_days(day,completed_at) values(?1,?2)').bind(day,Date.now()));await env.DB.batch(statements);}
 }
 /** Full covered days use rollups. Partial boundary days and unrolled days use raw rows.

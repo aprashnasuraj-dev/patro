@@ -100,3 +100,6 @@
 /aap/analytics.js
   Cache-Control: public, max-age=300
   X-Robots-Tag: noindex, nofollow
+
+/assets/place-festival.js
+  Cache-Control: public, max-age=300

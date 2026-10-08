@@ -74,18 +74,6 @@ export async function loadCalendarShard(request: Request, env: CalendarArchiveEn
     return cached;
   }
 
-  if (env.ARCHIVE) {
-    try {
-      const object = await env.ARCHIVE.get(calendarArchiveKey(calendar, year));
-      if (object) {
-        const doc = await parseText(await object.text(), calendar, year);
-        if (doc) return remember(cacheKey, { doc, backend: "r2" });
-      }
-    } catch {
-      // Static assets are the availability floor when R2 is unavailable.
-    }
-  }
-
   if (env.ASSETS) {
     try {
       const url = new URL(request.url);
@@ -101,6 +89,19 @@ export async function loadCalendarShard(request: Request, env: CalendarArchiveEn
       // Caller returns a bounded 503 only after both immutable sources fail.
     }
   }
+
+  if (env.ARCHIVE) {
+    try {
+      const object = await env.ARCHIVE.get(calendarArchiveKey(calendar, year));
+      if (object) {
+        const doc = await parseText(await object.text(), calendar, year);
+        if (doc) return remember(cacheKey, { doc, backend: "r2" });
+      }
+    } catch {
+      // Static assets are the availability floor when R2 is unavailable.
+    }
+  }
+
 
   return null;
 }

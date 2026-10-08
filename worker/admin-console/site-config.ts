@@ -204,7 +204,7 @@ async function persistPublished(env: AdminEnv, entry: { at: number; version: num
   const kv = env.CACHE as { put?: (key: string, value: string, options: any) => Promise<void> } | undefined;
   await Promise.allSettled([
     typeof caches !== "undefined" && (caches as any).default ? (caches as any).default.put(PUBLISHED_URL, new Response(body, { headers: { "content-type": "application/json", "cache-control": "public, max-age=604800" } })) : Promise.resolve(),
-    kv?.put ? kv.put(PUBLISHED_KEY, body, { expirationTtl: 604800 }) : Promise.resolve(),
+    env.AAP_CONFIG_KV_WRITE==="1" && kv?.put ? kv.put(PUBLISHED_KEY, body, { expirationTtl: 604800 }) : Promise.resolve(),
   ]);
 }
 function refreshPublished(env: AdminEnv) {

@@ -6,7 +6,7 @@
 // computed for 30–400 days ahead, so pages stay correct between deploys. A daily scheduled deploy
 // (.github/workflows/growth-daily-refresh.yml) keeps the server-rendered snapshot current for crawlers.
 import { build } from "esbuild";
-import { mkdir, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { BUILD_DATE, updateSitemapIndex, urlsetXml } from "./sitemap-utils.mjs";
 import { SITE } from "./seo-config.mjs";
@@ -27,6 +27,11 @@ for (const page of pages) {
   await writeFile(file, page.html, "utf8");
 }
 
+// Exact slash redirects bypass the Worker and preserve any existing redirect file.
+const redirectsPath=resolve(dist,"_redirects");let redirects="";try{redirects=await readFile(redirectsPath,"utf8");}catch{}
+const existing=new Set(redirects.split("\n"));for(const page of pages){const rule=`${page.route}/ ${page.route} 301`;if(!existing.has(rule))redirects+="\n"+rule;}
+await writeFile(redirectsPath,redirects.trim()+"\n");
+
 // Sitemap (public/ for the repo, dist/ for this deploy).
 const xml = urlsetXml(pages.map((p) => ({ route: p.route, lastmod: BUILD_DATE })));
 await writeFile(resolve(root, "public/sitemap-growth.xml"), xml, "utf8");
@@ -34,6 +39,9 @@ await writeFile(resolve(dist, "sitemap-growth.xml"), xml, "utf8");
 for (const index of ["public/sitemap.xml", "dist/sitemap.xml"]) {
   try { await updateSitemapIndex(resolve(root, index), [{ file: "sitemap-growth.xml", lastmod: BUILD_DATE }]); } catch { /* dist index may not exist in partial builds */ }
 }
+
+// Keep the existing manifest in sync with the additive sitemap index.
+for(const target of ["public/seo-manifest.json","dist/seo-manifest.json"]){const file=resolve(root,target);const manifest=JSON.parse(await readFile(file,"utf8"));manifest.sitemap_files=[...new Set([...(manifest.sitemap_files||[]),"sitemap-growth.xml"])];manifest.indexed_growth_route_count=pages.length;await writeFile(file,JSON.stringify(manifest,null,2)+"\n");}
 
 // Free-plan guard: total static files must stay under the per-version limit.
 async function countFiles(dir) { let n = 0; for (const e of await readdir(dir, { withFileTypes: true })) n += e.isDirectory() ? await countFiles(join(dir, e.name)) : 1; return n; }

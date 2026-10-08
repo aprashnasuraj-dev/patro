@@ -1,3 +1,5 @@
+import {placeTiming} from "./timing";
+import {civilBounds} from "./civil";
 import * as A from 'astronomy-engine';
 import { addDays, dayPanchang, sunriseSunset, tithiEndAfter, zonedMidnight, sunSidereal } from '../patro-tools/core/astro';
 import { occurrences } from '../patro-tools/tithi-events/engine';
@@ -10,12 +12,12 @@ export function festivalWindows(slug:string,year:number,place:GeoLocation,config
  const recurring=['ekadashi','purnima','aunsi','chaturthi'].includes(slug);
  const rules=recurring?Array.from({length:12},(_,month)=>({...entry.rule,month})): [entry.rule];if(slug==='ekadashi')rules.push(...rules.map(rule=>({...rule,paksha:'krishna' as const})));
  return rules.flatMap(rule=>occurrences(rule,`${year}-01-01`,`${year}-12-31`,place).flatMap(o=>{
- const p=dayPanchang(o.date,place),next=sunriseSunset(addDays(o.date,1),place).sunrise,r=p.sunrise.getTime(),s=p.sunset.getTime(),night=next.getTime()-s,day=s-r;
+ const p=placeTiming(o.date,place),next=placeTiming(addDays(o.date,1),place).sunrise,r=p.sunrise.getTime(),s=p.sunset.getTime(),night=next.getTime()-s,day=s-r;
  let start=o.tithiStart,end=o.tithiEnd;
  switch(entry.window){case'aparahna':start=new Date(r+day*3/5);end=new Date(r+day*4/5);break;case'pradosh':start=p.sunset;end=new Date(s+night*windows.pradoshNightFraction);break;case'nishitha':start=new Date(s+night/2-night*windows.nishithaHalfNightFraction);end=new Date(s+night/2+night*windows.nishithaHalfNightFraction);break;
  case'chhath':return [{title:'सन्ध्या अर्घ्य / Sunset arghya',date:o.date,start:p.sunset,end:p.sunset,source:entry.source},{title:'उषा अर्घ्य / Sunrise arghya',date:addDays(o.date,1),start:next,end:next,source:entry.source}];
  case'parana':{const dwadashiEnd=tithiEndAfter(new Date(o.tithiEnd.getTime()+1000));start=new Date(Math.max(next.getTime(),o.tithiEnd.getTime()+(dwadashiEnd.getTime()-o.tithiEnd.getTime())*windows.hariVasaraFraction));end=new Date(Math.min(dwadashiEnd.getTime(),next.getTime()+day/3));break;}
- case'moonrise':{const moon=A.SearchRiseSet(A.Body.Moon,new A.Observer(place.lat,place.lon,place.height||0),1,zonedMidnight(o.date,place.tz),1);if(!moon)return [];start=moon.date;end=moon.date;break;}
+ case'moonrise':{const moon=A.SearchRiseSet(A.Body.Moon,new A.Observer(place.lat,place.lon,place.height||0),1,civilBounds(o.date,place.tz).start,(civilBounds(o.date,place.tz).end.getTime()-civilBounds(o.date,place.tz).start.getTime())/86400000);if(!moon)return [];start=moon.date;end=moon.date;break;}
  case'sunrise':start=p.sunrise;end=o.tithiEnd;break;case'official':return [];
  }
  if(!['interval','parana','moonrise','sunrise'].includes(entry.window)){start=new Date(Math.max(start.getTime(),o.tithiStart.getTime()));end=new Date(Math.min(end.getTime(),o.tithiEnd.getTime()));}
