@@ -192,6 +192,7 @@ jobs:
           for i in {1..30}; do if curl -fsS http://127.0.0.1:4173/ >/dev/null; then break; fi; sleep 1; done
           NODE_PATH="$PWD/node_modules" node scripts/check-homepage-release.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-offline-pwa.cjs
+          NODE_PATH="$PWD/node_modules" node scripts/check-pwa-install-ui.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-growth.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-voice.cjs
           NODE_PATH="$PWD/node_modules" node scripts/check-voice-features.cjs
