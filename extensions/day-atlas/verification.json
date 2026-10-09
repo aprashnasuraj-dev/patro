@@ -1,0 +1,53 @@
+{
+  "verifiedAt": "2026-10-09T22:44:38.814Z",
+  "liveAtlasInventory": 2000000,
+  "sitemapUrls": 104429,
+  "sitemapShards": 105,
+  "otherCityUrls": 71638,
+  "canonicalDateUrls": 32791,
+  "policy": {
+    "reviewedAt": "2026-10-10",
+    "from": "2025-10-10",
+    "to": "2029-10-10",
+    "birthFrom": "1940-01-01",
+    "birthTo": "2025-12-31",
+    "reviewAfter": "2027-01-08"
+  },
+  "astronomySamples": 300,
+  "independentPanchangChecks": [
+    {
+      "city": "Kathmandu",
+      "date": "2026-10-10",
+      "tithi": 30,
+      "endDeltaMinutes": 1.6120666666666668,
+      "source": "https://www.drikpanchang.com/vrats/amavasyadates.html?geoname-id=1283240"
+    },
+    {
+      "city": "Tokyo",
+      "date": "2026-10-09",
+      "tithi": 29,
+      "endDeltaMinutes": 1.8043166666666666,
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=1850147&date=09%2F10%2F2026"
+    },
+    {
+      "city": "Sydney",
+      "date": "2026-10-10",
+      "tithi": 30,
+      "endDeltaMinutes": 1.6120666666666668,
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=2147714&date=10%2F10%2F2026"
+    },
+    {
+      "city": "San Jose",
+      "date": "2026-10-10",
+      "tithi": 30,
+      "endDeltaMinutes": 1.6127166666666666,
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=10%2F10%2F2026"
+    }
+  ],
+  "medianComputeMs": 0.9692679999999427,
+  "p95ComputeMs": 2.0613010000000713,
+  "bundleBytes": 208438,
+  "coreHtmlPreserved": true,
+  "dstAndPolarTestsPassed": true,
+  "festivalAssignments": "not inferred from sunrise; pending authoritative rules"
+}

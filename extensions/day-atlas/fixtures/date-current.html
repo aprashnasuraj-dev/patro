@@ -1,0 +1,221 @@
+<!doctype html><html lang="ne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2083-06-24 · Saturday, 10 Oct 2026 | आफ्नै पात्रो</title><meta name="description" content="2083-06-24 = Saturday, 10 Oct 2026 (2026-10-10). तिथि: औंसी. नेपाल संवत्: ने.सं. 1146 यंला गाः आमाइ."><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><link rel="canonical" href="https://aafnaipatro.com/date/2026-10-10"><meta property="og:title" content="2083-06-24 · Saturday, 10 Oct 2026 | आफ्नै पात्रो"><meta property="og:description" content="2083-06-24 = Saturday, 10 Oct 2026 (2026-10-10). तिथि: औंसी. नेपाल संवत्: ने.सं. 1146 यंला गाः आमाइ."><meta property="og:url" content="https://aafnaipatro.com/date/2026-10-10"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://aafnaipatro.com/date/2026-10-10#page","name":"2083-06-24 · Saturday, 10 Oct 2026 | आफ्नै पात्रो","description":"2083-06-24 = Saturday, 10 Oct 2026 (2026-10-10). तिथि: औंसी. नेपाल संवत्: ने.सं. 1146 यंला गाः आमाइ.","url":"https://aafnaipatro.com/date/2026-10-10","inLanguage":["ne","en"],"about":[{"@type":"Thing","name":"Bikram Sambat"},{"@type":"Thing","name":"Nepal Sambat"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"आफ्नै पात्रो","item":"https://aafnaipatro.com/"},{"@type":"ListItem","position":2,"name":"नेपाली पात्रो 2083","item":"https://aafnaipatro.com/calendar/2083"},{"@type":"ListItem","position":3,"name":"असोज 2083","item":"https://aafnaipatro.com/calendar/2083/06"},{"@type":"ListItem","position":4,"name":"2083-06-24","item":"https://aafnaipatro.com/date/2026-10-10"}]}]}</script><style>body{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;margin:0;background:#f6f7f4;color:#172019}main{max-width:980px;margin:auto;padding:28px 18px 56px}article{background:#fff;border:1px solid #dfe6df;border-radius:20px;padding:24px}a{color:#176f3b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.card{padding:14px;border:1px solid #e2e8e2;border-radius:14px}.badge{display:inline-block;padding:2px 8px;border:1px solid #ccd8cc;border-radius:999px;font-size:.82rem}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e7ece7;text-align:left;vertical-align:top}nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.meta{color:#667268;font-size:.9rem}</style><script type="application/json" id="aap-config">{"v":0,"preview":false,"labels":[],"disabled":[],"banner":null,"analytics":true,"sample":0.1}</script><script>/* Aafnai Patro site runtime — applies admin console settings in the browser.
+ * Loaded on every page by the Worker (see worker/admin-console/site-config.ts).
+ * Renames text, shows the announcement banner, keeps disabled sections out of
+ * in-app navigation. Analytics loads independently without blocking page load. */
+(function () {
+  "use strict";
+  var el = document.getElementById("aap-config");
+  if (!el || window.__aapRuntime) return;
+  window.__aapRuntime = true;
+  var cfg;
+  try { cfg = JSON.parse(el.textContent || "{}"); } catch (e) { return; }
+
+  var SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, INPUT: 1, SELECT: 1, CODE: 1, PRE: 1, SVG: 1, TEMPLATE: 1 };
+  var ATTRS = ["title", "aria-label", "placeholder", "alt"];
+  var FORM = { INPUT: 1, TEXTAREA: 1, SELECT: 1 }; // never touch their values, but rename their attributes
+  var exact = {}, contains = [], lastSet = new WeakMap();
+
+  function compile(labels) {
+    exact = {}; contains = [];
+    (labels || []).forEach(function (r) {
+      if (!r || !r.from) return;
+      if (r.match === "contains") contains.push([r.from, r.to]);
+      else exact[r.from] = r.to;
+    });
+    contains.sort(function (a, b) { return b[0].length - a[0].length; });
+  }
+  function hasRules() { return contains.length > 0 || Object.keys(exact).length > 0; }
+
+  function transform(text) {
+    if (!text) return text;
+    var trimmed = text.trim();
+    if (trimmed && Object.prototype.hasOwnProperty.call(exact, trimmed)) {
+      var lead = text.match(/^\s*/)[0], trail = text.match(/\s*$/)[0];
+      return lead + exact[trimmed] + trail;
+    }
+    var out = text;
+    for (var i = 0; i < contains.length; i++) {
+      if (out.indexOf(contains[i][0]) !== -1) out = out.split(contains[i][0]).join(contains[i][1]);
+    }
+    return out;
+  }
+
+  function skipped(node) {
+    for (var n = node; n && n !== document.body; n = n.parentNode) {
+      if (n.nodeType === 1) {
+        if (SKIP[n.nodeName.toUpperCase()] || n.isContentEditable || n.id === "aap-banner" || (n.hasAttribute && n.hasAttribute("data-aap-keep"))) return true;
+      }
+    }
+    return false;
+  }
+
+  function applyText(node) {
+    var v = node.nodeValue;
+    if (!v || !v.trim() || lastSet.get(node) === v) return;
+    var next = transform(v);
+    if (next !== v) { lastSet.set(node, next); node.nodeValue = next; }
+  }
+  function applyAttrs(elm) {
+    for (var i = 0; i < ATTRS.length; i++) {
+      var a = elm.getAttribute(ATTRS[i]);
+      if (!a) continue;
+      var key = "aap:" + ATTRS[i];
+      if (elm[key] === a) continue;
+      var next = transform(a);
+      if (next !== a) { elm[key] = next; elm.setAttribute(ATTRS[i], next); }
+    }
+  }
+  function isForm(n) { return n.nodeType === 1 && FORM[n.nodeName.toUpperCase()]; }
+  function attrTarget(n) { // attributes of form controls are renamable; their contents are not
+    if (isForm(n)) return !skipped(n.parentNode);
+    return !skipped(n);
+  }
+  function walk(root) {
+    if (!hasRules() || !root) return;
+    if (root.nodeType === 3) { if (!skipped(root)) applyText(root); return; }
+    if (root.nodeType === 1 && isForm(root)) { if (attrTarget(root)) applyAttrs(root); return; }
+    if (root.nodeType !== 1 || skipped(root)) return;
+    applyAttrs(root);
+    var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
+      acceptNode: function (n) {
+        if (n.nodeType === 1) {
+          if (isForm(n)) { applyAttrs(n); return NodeFilter.FILTER_REJECT; }
+          return SKIP[n.nodeName.toUpperCase()] || n.id === "aap-banner" || n.isContentEditable ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n;
+    while ((n = tw.nextNode())) {
+      if (n.nodeType === 3) applyText(n); else applyAttrs(n);
+    }
+  }
+  var lastTitle = null;
+  function applyTitle() {
+    if (!hasRules()) return;
+    var t = document.title;
+    if (t === lastTitle) return; // our own write — don't rename it again
+    var next = transform(t);
+    lastTitle = next;
+    if (next !== t) document.title = next;
+  }
+
+  var pending = [], scheduled = false;
+  function flush() {
+    scheduled = false;
+    var batch = pending; pending = [];
+    for (var i = 0; i < batch.length; i++) if (batch[i].isConnected) walk(batch[i]);
+    applyTitle();
+  }
+  function queue(node) {
+    pending.push(node);
+    if (!scheduled) { scheduled = true; (window.queueMicrotask || function (f) { Promise.resolve().then(f); })(flush); }
+  }
+
+  // ---- banner ----
+  function storageGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function storageSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
+  function renderBanner(b) {
+    var old = document.getElementById("aap-banner");
+    if (old) old.remove();
+    if (!b || !b.text) return;
+    if (b.dismissible && storageGet("aap-banner-" + b.id) === "1") return;
+    var bar = document.createElement("div");
+    bar.id = "aap-banner";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Announcement");
+    bar.setAttribute("data-tone", b.tone || "info");
+    var span = document.createElement("span");
+    span.textContent = b.text;
+    bar.appendChild(span);
+    if (b.linkUrl && b.linkText) {
+      var a = document.createElement("a");
+      a.href = b.linkUrl;
+      a.textContent = b.linkText;
+      if (/^https:/i.test(b.linkUrl) && b.linkUrl.indexOf(location.origin) !== 0) { a.target = "_blank"; a.rel = "noopener"; }
+      bar.appendChild(a);
+    }
+    if (b.dismissible) {
+      var x = document.createElement("button");
+      x.type = "button";
+      x.setAttribute("aria-label", "Dismiss announcement");
+      x.textContent = "×";
+      x.onclick = function () { storageSet("aap-banner-" + b.id, "1"); bar.remove(); };
+      bar.appendChild(x);
+    }
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
+  // ---- disabled sections (client-side navigation) ----
+  function disabledTarget(path) {
+    if (cfg.preview) return null;
+    var list = cfg.disabled || [];
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i].path;
+      if (path === p || path.indexOf(p + "/") === 0) return list[i].to || "/";
+    }
+    return null;
+  }
+  function guardRoute() {
+    var to = disabledTarget(location.pathname.replace(/\/+$/, "") || "/");
+    if (to && to !== location.pathname) location.replace(to);
+  }
+  document.addEventListener("click", function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
+    if (!a || a.origin !== location.origin) return;
+    var to = disabledTarget(a.pathname.replace(/\/+$/, "") || "/");
+    if (to) { ev.preventDefault(); ev.stopPropagation(); location.assign(to); }
+  }, true);
+
+  function onRoute() {
+    guardRoute();
+    queue(document.body);
+  }
+  ["pushState", "replaceState"].forEach(function (m) {
+    var orig = history[m];
+    history[m] = function () { var r = orig.apply(this, arguments); onRoute(); return r; };
+  });
+  window.addEventListener("popstate", onRoute);
+
+  // ---- boot ----
+  function apply(next) {
+    cfg = next;
+    compile(cfg.labels);
+    renderBanner(cfg.banner);
+    walk(document.body);
+    applyTitle();
+  }
+  function start() {
+    apply(cfg);
+    onRoute();
+    new MutationObserver(function (records) {
+      if (!hasRules()) return;
+      for (var i = 0; i < records.length; i++) {
+        var r = records[i];
+        if (r.type === "characterData") queue(r.target);
+        else if (r.type === "attributes") { if (attrTarget(r.target)) applyAttrs(r.target); }
+        else for (var j = 0; j < r.addedNodes.length; j++) queue(r.addedNodes[j]);
+      }
+    }).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS });
+    var titleEl = document.querySelector("title");
+    if (titleEl) new MutationObserver(applyTitle).observe(titleEl, { childList: true, characterData: true, subtree: true });
+
+    // If this HTML came from the browser cache, make sure settings are current.
+    try {
+      var nav = performance.getEntriesByType("navigation")[0];
+      if (cfg.preview || (nav && nav.transferSize === 0)) {
+        fetch("/api/aap/site-config", { credentials: "same-origin", cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (fresh) { if (fresh && fresh.v !== cfg.v) apply(fresh); })
+          .catch(function () {});
+      }
+    } catch (e) { /* ignore */ }
+  }
+  if (document.body) start(); else {
+    var boot = new MutationObserver(function () {
+      if (document.body) { boot.disconnect(); start(); }
+    });
+    boot.observe(document.documentElement, { childList: true });
+  }
+})();
+</script><script src="/aap/analytics.js" async></script></head><body><main data-archive-backend="static-fallback"><article><p><a href="/">Home</a> › <a href="/calendar/2083">2083</a> › <a href="/calendar/2083/06">असोज</a> › 2083-06-24</p><h1>2083-06-24</h1><p><strong>Saturday, 10 Oct 2026</strong> · 2026-10-10</p><div class="grid"><div class="card"><b>वि.सं.</b><div>2083-06-24</div></div><div class="card"><b>तिथि</b><div>औंसी</div></div><div class="card"><b>नेपाल संवत्</b><div>ने.सं. 1146 यंला गाः आमाइ</div></div><div class="card"><b>Archive version</b><div>sha256:0572b44365564066b22801a4b03665d5a6427074bbb7161c49928fd10f330fe9</div></div></div><nav aria-label="Date navigation"><a href="/date/2026-10-09">← अघिल्लो दिन</a><a href="/calendar/2083/06">यो महिनाको पात्रो</a><a href="/date/2026-10-11">अर्को दिन →</a></nav><nav><a href="/">आफ्नै पात्रो</a><a href="/convert">मिति रूपान्तरण</a><a href="/samudaya">समुदाय पात्रो</a><a href="/methodology">पद्धति</a></nav><p class="meta">Versioned public calendar archive served from packaged static archive fallback.</p></article></main></body></html>

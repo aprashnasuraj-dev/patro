@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "astronomy-engine": "2.1.19",
+    "esbuild": "0.25.10"
+  },
+  "name": "patro-day-atlas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild worker.mjs --bundle --format=esm --platform=browser --minify --outfile=bundle.mjs",
+    "test": "node test.mjs",
+    "build:markers": "node build-markers.mjs"
+  }
+}

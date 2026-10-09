@@ -1,0 +1,3005 @@
+{
+  "status": "500 relevant intent hypotheses; not verified Google top-500 rankings",
+  "intents": [
+    {
+      "query": "sunrise Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Kathmandu",
+      "city": "kathmandu",
+      "route": "/atlas/kathmandu",
+      "dateTemplate": "/atlas/kathmandu/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Pokhara",
+      "city": "pokhara",
+      "route": "/atlas/pokhara",
+      "dateTemplate": "/atlas/pokhara/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Biratnagar",
+      "city": "biratnagar",
+      "route": "/atlas/biratnagar",
+      "dateTemplate": "/atlas/biratnagar/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Birgunj",
+      "city": "birgunj",
+      "route": "/atlas/birgunj",
+      "dateTemplate": "/atlas/birgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Butwal",
+      "city": "butwal",
+      "route": "/atlas/butwal",
+      "dateTemplate": "/atlas/butwal/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Nepalgunj",
+      "city": "nepalgunj",
+      "route": "/atlas/nepalgunj",
+      "dateTemplate": "/atlas/nepalgunj/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Dhangadhi",
+      "city": "dhangadhi",
+      "route": "/atlas/dhangadhi",
+      "dateTemplate": "/atlas/dhangadhi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Dharan",
+      "city": "dharan",
+      "route": "/atlas/dharan",
+      "dateTemplate": "/atlas/dharan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Charikot",
+      "city": "charikot",
+      "route": "/atlas/charikot",
+      "dateTemplate": "/atlas/charikot/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Doha",
+      "city": "doha",
+      "route": "/atlas/doha",
+      "dateTemplate": "/atlas/doha/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Dubai",
+      "city": "dubai",
+      "route": "/atlas/dubai",
+      "dateTemplate": "/atlas/dubai/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Abu Dhabi",
+      "city": "abu-dhabi",
+      "route": "/atlas/abu-dhabi",
+      "dateTemplate": "/atlas/abu-dhabi/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Riyadh",
+      "city": "riyadh",
+      "route": "/atlas/riyadh",
+      "dateTemplate": "/atlas/riyadh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Jeddah",
+      "city": "jeddah",
+      "route": "/atlas/jeddah",
+      "dateTemplate": "/atlas/jeddah/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Dammam",
+      "city": "dammam",
+      "route": "/atlas/dammam",
+      "dateTemplate": "/atlas/dammam/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Kuwait",
+      "city": "kuwait",
+      "route": "/atlas/kuwait",
+      "dateTemplate": "/atlas/kuwait/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Muscat",
+      "city": "muscat",
+      "route": "/atlas/muscat",
+      "dateTemplate": "/atlas/muscat/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Manama",
+      "city": "manama",
+      "route": "/atlas/manama",
+      "dateTemplate": "/atlas/manama/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Kuala Lumpur",
+      "city": "kuala-lumpur",
+      "route": "/atlas/kuala-lumpur",
+      "dateTemplate": "/atlas/kuala-lumpur/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Penang",
+      "city": "penang",
+      "route": "/atlas/penang",
+      "dateTemplate": "/atlas/penang/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Singapore",
+      "city": "singapore",
+      "route": "/atlas/singapore",
+      "dateTemplate": "/atlas/singapore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Seoul",
+      "city": "seoul",
+      "route": "/atlas/seoul",
+      "dateTemplate": "/atlas/seoul/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Busan",
+      "city": "busan",
+      "route": "/atlas/busan",
+      "dateTemplate": "/atlas/busan/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Tokyo",
+      "city": "tokyo",
+      "route": "/atlas/tokyo",
+      "dateTemplate": "/atlas/tokyo/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Osaka",
+      "city": "osaka",
+      "route": "/atlas/osaka",
+      "dateTemplate": "/atlas/osaka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Nagoya",
+      "city": "nagoya",
+      "route": "/atlas/nagoya",
+      "dateTemplate": "/atlas/nagoya/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Fukuoka",
+      "city": "fukuoka",
+      "route": "/atlas/fukuoka",
+      "dateTemplate": "/atlas/fukuoka/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Sydney",
+      "city": "sydney",
+      "route": "/atlas/sydney",
+      "dateTemplate": "/atlas/sydney/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Melbourne",
+      "city": "melbourne",
+      "route": "/atlas/melbourne",
+      "dateTemplate": "/atlas/melbourne/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Brisbane",
+      "city": "brisbane",
+      "route": "/atlas/brisbane",
+      "dateTemplate": "/atlas/brisbane/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Perth",
+      "city": "perth",
+      "route": "/atlas/perth",
+      "dateTemplate": "/atlas/perth/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Adelaide",
+      "city": "adelaide",
+      "route": "/atlas/adelaide",
+      "dateTemplate": "/atlas/adelaide/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Canberra",
+      "city": "canberra",
+      "route": "/atlas/canberra",
+      "dateTemplate": "/atlas/canberra/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Hobart",
+      "city": "hobart",
+      "route": "/atlas/hobart",
+      "dateTemplate": "/atlas/hobart/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Darwin",
+      "city": "darwin",
+      "route": "/atlas/darwin",
+      "dateTemplate": "/atlas/darwin/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Auckland",
+      "city": "auckland",
+      "route": "/atlas/auckland",
+      "dateTemplate": "/atlas/auckland/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Wellington",
+      "city": "wellington",
+      "route": "/atlas/wellington",
+      "dateTemplate": "/atlas/wellington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar London",
+      "city": "london",
+      "route": "/atlas/london",
+      "dateTemplate": "/atlas/london/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Birmingham",
+      "city": "birmingham",
+      "route": "/atlas/birmingham",
+      "dateTemplate": "/atlas/birmingham/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Manchester",
+      "city": "manchester",
+      "route": "/atlas/manchester",
+      "dateTemplate": "/atlas/manchester/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Edinburgh",
+      "city": "edinburgh",
+      "route": "/atlas/edinburgh",
+      "dateTemplate": "/atlas/edinburgh/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar New York",
+      "city": "new-york",
+      "route": "/atlas/new-york",
+      "dateTemplate": "/atlas/new-york/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Dallas",
+      "city": "dallas",
+      "route": "/atlas/dallas",
+      "dateTemplate": "/atlas/dallas/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Houston",
+      "city": "houston",
+      "route": "/atlas/houston",
+      "dateTemplate": "/atlas/houston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Chicago",
+      "city": "chicago",
+      "route": "/atlas/chicago",
+      "dateTemplate": "/atlas/chicago/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Boston",
+      "city": "boston",
+      "route": "/atlas/boston",
+      "dateTemplate": "/atlas/boston/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Washington",
+      "city": "washington",
+      "route": "/atlas/washington",
+      "dateTemplate": "/atlas/washington/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Baltimore",
+      "city": "baltimore",
+      "route": "/atlas/baltimore",
+      "dateTemplate": "/atlas/baltimore/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar San Francisco",
+      "city": "san-francisco",
+      "route": "/atlas/san-francisco",
+      "dateTemplate": "/atlas/san-francisco/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunrise Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "sunset Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon phase Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moon illumination Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonrise Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "moonset Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "daylight duration Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "Nepali date Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "on this day history Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    },
+    {
+      "query": "astronomical calendar Los Angeles",
+      "city": "los-angeles",
+      "route": "/atlas/los-angeles",
+      "dateTemplate": "/atlas/los-angeles/{YYYY-MM-DD}"
+    }
+  ]
+}
