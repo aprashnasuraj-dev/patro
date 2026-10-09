@@ -52,3 +52,6 @@
 .rh-page .rh-cell.is-today { background: var(--ap-green-soft); }
 :root[data-theme="dark"] .rh-page, :root[data-mode="dark"] .rh-page,
 :root[data-theme="dark"] .rh-hero, :root[data-mode="dark"] .rh-hero { --ap-ink: #edf3ee; --ap-muted: #b5c5b9; --ap-green: #8ebba0; --ap-green-ink: #a4d4b5; --ap-green-soft: #253b2f; --ap-line: #385043; --ap-surface: #18271f; --ap-bg: #112019; --home-hero: #20382a; --home-event-bg: #3f3422; --home-event-line: #695638; --home-event-ink: #f2d599; }
+
+.hp-weather-area { font-size: 13px; font-weight: 600; color: var(--ap-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+@media (max-width:640px) { .hp-weather-area { max-width: 160px; font-size:12px; } }

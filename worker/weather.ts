@@ -22,6 +22,25 @@ function json(body: unknown, status = 200, cache = "public, max-age=300, s-maxag
   });
 }
 
+/** Request-derived approximate area; no GPS, location permission, or stored tracking. */
+export function weatherLocationResponse(request: Request): Response {
+  const cf = (request as Request & { cf?: Record<string, unknown> }).cf;
+  const coordinate = (value: unknown, bound: number) => {
+    if (value == null || String(value).trim() === "") return null;
+    const n = Number(value);
+    return Number.isFinite(n) && Math.abs(n) <= bound ? Math.round(n * 10) / 10 : null;
+  };
+  const latitude = coordinate(cf?.latitude, 90), longitude = coordinate(cf?.longitude, 180);
+  if (latitude === null || longitude === null) return json({ ok: false, error: "location_unavailable" }, 503, "private, no-store");
+  let timezone = String(cf?.timezone || "auto");
+  if (timezone !== "auto") {
+    try { new Intl.DateTimeFormat("en", { timeZone: timezone }); }
+    catch { timezone = "auto"; }
+  }
+  const label = [cf?.city || cf?.region, cf?.country].filter(Boolean).map(value => String(value).slice(0, 100)).join(", ");
+  return json({ ok: true, latitude, longitude, timezone, label, approximate: true }, 200, "private, no-store");
+}
+
 export async function dailyWeatherResponse(request: Request): Promise<Response> {
   const incoming = new URL(request.url);
   const lat = incoming.searchParams.get("lat") == null ? 27.7172 : Number(incoming.searchParams.get("lat"));
@@ -36,7 +55,12 @@ export async function dailyWeatherResponse(request: Request): Promise<Response> 
   upstream.searchParams.set("latitude", String(lat));
   upstream.searchParams.set("longitude", String(lng));
   upstream.searchParams.set("daily", "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum");
-  upstream.searchParams.set("timezone", "Asia/Kathmandu");
+  const timezone = incoming.searchParams.get("timezone") || "Asia/Kathmandu";
+  if (timezone !== "auto") {
+    try { new Intl.DateTimeFormat("en", { timeZone: timezone }); }
+    catch { return json({ ok: false, error: "invalid_timezone" }, 400, "no-store"); }
+  }
+  upstream.searchParams.set("timezone", timezone);
   upstream.searchParams.set("forecast_days", String(days));
 
   let response: Response;

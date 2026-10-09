@@ -4,7 +4,7 @@ import { fetchCosmicDay } from "./cosmic";
 import { radioCatalogResponse, radioStreamResponse } from "./radio";
 import { fmResponse } from "./fm";
 import { handleJyotishChat } from "./jyotish";
-import { dailyWeatherResponse } from "./weather";
+import { dailyWeatherResponse, weatherLocationResponse } from "./weather";
 import { communityResponse } from "./community";
 import { adminResponse } from "./admin";
 import { publicApiResponse } from "./public-api";
@@ -566,6 +566,9 @@ async function handleApi(request: Request, env: Env, ctx: ExecutionContext) {
   }
   if (path === "/api/v1/jyotish-chat") {
     return handleJyotishChat(request,env);
+  }
+  if (path === "/api/v1/weather/location" && request.method === "GET") {
+    return weatherLocationResponse(request);
   }
   if (path === "/api/v1/weather/daily" && request.method === "GET") {
     return edgeCached(request,ctx,1800,() => dailyWeatherResponse(request));

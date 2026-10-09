@@ -39,3 +39,10 @@ Morning greetings remain part of installation and run in the background, subject
 Guest greetings are nameless. Personalized greetings use the authenticated profile, never a manually supplied name. The subscription stores the associated session ID; dispatch joins the account profile only while that session remains valid. Logout or expiry therefore produces a nameless greeting even if the application is closed. Account changes and reconnects synchronize local foreground greetings and the current push subscription. Existing guest-entered names are ignored at delivery.
 
 The idempotent Worker schema upgrade adds `account_session_id` to existing morning subscriptions. No personal calendar, note, reminder or push endpoint data is deleted. The updated homepage shows the sourced Nepal Sambat year in each populated day cell and uses a restrained cream/white/green palette with separate dark-mode colors.
+
+
+## Automatic homepage weather
+
+The homepage no longer has a location chooser or reads the old saved city preference. A private, uncached `/api/v1/weather/location` response uses Cloudflare's request-derived area, rounds coordinates to about 0.1 degree, and returns the area label and timezone. No browser geolocation API, permission prompt, GPS tracking, location history or database write is used. VPNs and network routing may affect this approximate area.
+
+The browser loads the forecast directly for that area, retaining the existing native forecast API fallback. Forecast caches include coordinates and timezone; the area response is never stored in a shared cache. Worldwide visitors see forecast dates in the area's timezone, while the Nepali calendar keeps Nepal time. Missing/invalid area metadata produces an unavailable state instead of silently showing Kathmandu weather.
