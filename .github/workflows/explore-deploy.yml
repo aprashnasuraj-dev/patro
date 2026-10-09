@@ -48,6 +48,8 @@ jobs:
         run: |
           set -uo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then echo '::error::Cloudflare credentials are required.'; exit 1; fi
+          # The config script fingerprints dist/index.html; this job never deploys the Worker, so a placeholder is enough.
+          if [[ ! -f dist/index.html ]]; then mkdir -p dist && echo '<!doctype html><title>explore</title>' > dist/index.html; fi
           if ! out="$(node scripts/prepare-cloudflare-config.mjs 2>&1)"; then
             echo "$out" | grep -E "Error|error|at file" | head -6 | while IFS= read -r line; do echo "::error::config: ${line}"; done
             exit 1
