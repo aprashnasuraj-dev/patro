@@ -7,7 +7,8 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "aafnai-pwa-v17";
+const SW_REVISION = "aafnai-pwa-v18";
+const ACTIVE_RUNTIME_CACHES = new Set(["aafnai-shell-v13", "aafnai-calendar-v4", "aafnai-public-data-v4"]);
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -41,7 +42,7 @@ async function clearStaleRuntimeCaches() {
     if (localStorage.getItem(CACHE_EPOCH_KEY) === SW_REVISION) return;
     if (!("caches" in window)) return;
     const names = await caches.keys();
-    await Promise.all(names.filter((name) => STALE_CACHE_PREFIXES.some((prefix) => name.startsWith(prefix))).map((name) => caches.delete(name)));
+    await Promise.all(names.filter((name) => !ACTIVE_RUNTIME_CACHES.has(name) && STALE_CACHE_PREFIXES.some((prefix) => name.startsWith(prefix))).map((name) => caches.delete(name)));
     localStorage.setItem(CACHE_EPOCH_KEY, SW_REVISION);
   } catch { /* cache recovery must never block app boot */ }
 }

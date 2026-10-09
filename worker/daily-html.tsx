@@ -10,7 +10,7 @@ import { htmlAssetResponse } from "./connected-entry";
 import { rewriteConnectedSeo } from "./connected-seo";
 import { withAdminConsole } from "./admin-console";
 
-type Env=Record<string,unknown>&CalendarArchiveEnv&{ASSETS?:{fetch(request:Request):Promise<Response>};PUBLIC_SITE_URL?:string};
+type Env=Record<string,unknown>&CalendarArchiveEnv&{ASSETS?:{fetch(request:Request):Promise<Response>};PUBLIC_SITE_URL?:string;PATRO_HTML_BUILD_ID?:string};
 type Ctx={waitUntil(promise:Promise<unknown>):void};
 import { nepalDayBoundary } from "./nepal-day";
 const esc=(value:unknown)=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]!));
@@ -20,8 +20,11 @@ async function rawDailyHtml(request:Request,env:Env,ctx:Ctx){
  if(!env.ASSETS)return new Response("Static assets unavailable",{status:503});
  const u=new URL(request.url),path=u.pathname.replace(/\/+$/,"")||"/",boundary=nepalDayBoundary();
  // Cache unconfigured HTML only; admin config is applied after this lookup.
- const key=new URL(u);key.pathname="/__patro/daily-html-v2";key.search=new URLSearchParams({path,date:boundary.date,sign:""}).toString();
- if(typeof caches!=="undefined"&&(caches as any).default){const hit=await(caches as any).default.match(new Request(key));if(hit){const h=new Headers(hit.headers);h.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);return new Response(hit.body,{status:hit.status,headers:h});}}
+ // A deployment-specific key prevents old HTML from referencing missing JS assets.
+ // Manual deployments without a fingerprint bypass the HTML cache safely.
+ const buildId=typeof env.PATRO_HTML_BUILD_ID==="string"&&/^[a-f0-9]{16}$/.test(env.PATRO_HTML_BUILD_ID)?env.PATRO_HTML_BUILD_ID:"";
+ const key=new URL(u);key.pathname="/__patro/daily-html-v3";key.search=new URLSearchParams({path,date:boundary.date,build:buildId}).toString();
+ if(buildId&&typeof caches!=="undefined"&&(caches as any).default){const hit=await(caches as any).default.match(new Request(key));if(hit){const h=new Headers(hit.headers);h.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);return new Response(hit.body,{status:hit.status,headers:h});}}
 
  const headers=new Headers(request.headers);headers.delete("if-none-match");headers.delete("if-modified-since");
  let response=await htmlAssetResponse(new Request(request,{headers}),env as any,path!=="/rashifal"?"/index.html":"/rashifal/index.html",true);if(!response)return new Response("Static page unavailable",{status:503});
@@ -39,9 +42,9 @@ async function rawDailyHtml(request:Request,env:Env,ctx:Ctx){
  // @ts-ignore HTMLRewriter is provided by Cloudflare Workers.
  const rewrite=new HTMLRewriter().on(path!=="/rashifal"?".ap-prerender-hero":"#root",{element(el:any){if(path!=="/rashifal")el.replace(body,{html:true});else el.append(body,{html:true});}}).on("head",{element(el:any){el.append(renderToStaticMarkup(createElement(JsonLd,{id:"daily-server-schema",data:schema}))+(data?`<script id="patro-today-data" type="application/json">${safeJson({date:data.date,view:data.view,events:data.events})}</script>`:""),{html:true});}});
  response=rewrite.transform(response);response=await rewriteConnectedSeo(request,response,env);
- const outHeaders=new Headers(response.headers);outHeaders.delete("etag");outHeaders.delete("last-modified");outHeaders.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);outHeaders.set("x-patro-day",boundary.date);
+ const outHeaders=new Headers(response.headers);outHeaders.delete("etag");outHeaders.delete("last-modified");outHeaders.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);outHeaders.set("x-patro-day",boundary.date);outHeaders.set("x-patro-html-build",buildId||"uncached");
  const out=new Response(response.body,{status:200,headers:outHeaders});
- if(typeof caches!=="undefined"&&(caches as any).default)ctx.waitUntil((caches as any).default.put(new Request(key),out.clone()).catch(()=>{}));
+ if(buildId&&typeof caches!=="undefined"&&(caches as any).default)ctx.waitUntil((caches as any).default.put(new Request(key),out.clone()).catch(()=>{}));
  return out;
 }
 const dailyWorker=withAdminConsole({fetch:rawDailyHtml});

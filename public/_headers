@@ -18,6 +18,9 @@
 /sw.js
   Cache-Control: no-cache
 
+/patro-boot-recovery.js
+  Cache-Control: no-cache
+
 /manifest.webmanifest
   Cache-Control: public, max-age=3600
 

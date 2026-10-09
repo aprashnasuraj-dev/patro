@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 
 const root=process.cwd();
@@ -95,8 +96,12 @@ if(r2Bucket)base.r2_buckets=[...otherR2,{binding:"ARCHIVE",bucket_name:r2Bucket,
 else if(otherR2.length)base.r2_buckets=otherR2;
 else delete base.r2_buckets;
 
+// Include the actual deployed HTML fingerprint in the Worker cache identity.
+const htmlShell=await readFile(resolve(root,"dist/index.html"),"utf8");
+const htmlBuildId=createHash("sha256").update(htmlShell).digest("hex").slice(0,16);
 base.vars={
   ...(base.vars||{}),
+  PATRO_HTML_BUILD_ID:htmlBuildId,
   PUBLIC_REFERENCE_CACHE_VERSION:process.env.PUBLIC_REFERENCE_CACHE_VERSION?.trim()||base.vars?.PUBLIC_REFERENCE_CACHE_VERSION||"public-reference-v1"
 };
 

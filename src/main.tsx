@@ -49,10 +49,6 @@ import "./mobile-home.css";
 const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
 
-registerPatroServiceWorker();
-startLocalMorningScheduler();
-recordAiReferral();
-
 createRoot(root).render(
   <StrictMode>
     <MediaProvider>
@@ -69,3 +65,8 @@ createRoot(root).render(
     </MediaProvider>
   </StrictMode>
 );
+
+// Keep optional notifications, offline caching, and attribution from blocking React.
+for (const initialize of [registerPatroServiceWorker, startLocalMorningScheduler, recordAiReferral]) {
+  try { initialize(); } catch (error) { console.warn("Optional Patro startup skipped:", error); }
+}
