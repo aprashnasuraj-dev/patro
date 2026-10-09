@@ -39,7 +39,8 @@ not invented. Maps links are search links, not verified navigation endpoints.
 
 Photos are older documentary photographs, dated and credited in captions.
 Their Wikimedia Commons source and CC BY-SA licences are linked individually.
-No photos imply a live 2083 festival scene.
+No photos imply a live 2083 festival scene. The three 960px Commons thumbnails
+are hosted locally (approximately 662 KiB total) to avoid third-party requests.
 
 ## Validation
 
