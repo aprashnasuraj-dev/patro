@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { compactNepalSambat } from "../nepalSambatCompact";
 import { COMMUNITY_OPTIONS, readCommunityPreferences, type CommunityId } from "./preferences";
 
 type HomeItem = { id: CommunityId; title: string; value: string; badge: string; href: string };
@@ -27,7 +28,7 @@ export function CommunityHomeLine({ selectedDate }: { selectedDate: string }) {
           const r = await fetch("/api/v1/nepal-sambat?ad=" + encodeURIComponent(selectedDate), { signal: controller.signal });
           const b = await r.json();
           if (!r.ok || !b?.lunar) return null;
-          return { id, title: option(id).dev, value: b.lunar.formatted_ne || b.lunar.formatted || selectedDate, badge: "गणना", href: option(id).href };
+          return { id, title: option(id).dev, value: compactNepalSambat(b.lunar) || selectedDate, badge: "गणना", href: option(id).href };
         }
         if (id === "hijri") {
           const r = await fetch("/api/v1/hijri?date=" + encodeURIComponent(selectedDate) + "&lat=27.7172&lon=85.324&method=karachi&asr=hanafi", { signal: controller.signal });

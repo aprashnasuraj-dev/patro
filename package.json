@@ -58,7 +58,7 @@
     "seo:audit": "npx --yes @lhci/cli@0.15.1 autorun --config=.lighthouserc.json",
     "test:google-auth": "node --test tests/google-account.test.mjs",
     "test:reference-ui": "node --test tests/reference-ui-contract.test.mjs",
-    "test:community": "vitest run tests/communities.test.ts tests/nepal-sambat.test.ts",
+    "test:community": "vitest run tests/communities.test.ts tests/nepal-sambat.test.ts tests/nepal-sambat-compact.test.ts",
     "test:native-cutover": "node --test tests/native-cutover-contract.test.mjs",
     "seo:growth-audit": "node scripts/audit-growth.mjs",
     "test:growth": "vitest run tests/growth-seo.test.ts",

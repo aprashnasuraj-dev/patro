@@ -1,4 +1,5 @@
 import type { SyncPayload } from "../types";
+import { compactNepalSambat } from "../nepalSambatCompact";
 
 interface Props {
   sync: SyncPayload | null;
@@ -81,8 +82,7 @@ export function TripleDateHeader({
         />
         <Badge
           label="Nepal Sambat · NS"
-          value={sync?.calendars.nepal_sambat}
-          detail={ns?.formatted_ne}
+          value={compactNepalSambat(ns?.formatted_ne || sync?.calendars.nepal_sambat) || undefined}
           loading={loading}
         />
       </div>
