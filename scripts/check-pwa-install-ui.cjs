@@ -64,7 +64,11 @@ async function providePrompt(page, outcome) {
     await manual.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(manual);
     await manual.locator(".ap-install-primary").click();
+    await manual.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
     await manual.getByText(/Add to Home screen/i).waitFor({ state: "visible", timeout: 5000 });
+    await manual.getByRole("button", { name: /साइटको लिङ्क कपी गर्नुहोस्/ }).waitFor({state:"visible"});
+    await manual.getByRole("button", { name: "बुझें" }).click();
+    await manual.getByRole("dialog").waitFor({state:"hidden"});
     await manualContext.close();
 
     const iosContext = await browser.newContext({
@@ -75,13 +79,49 @@ async function providePrompt(page, outcome) {
     await ios.goto(BASE + "/", { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitForNotice(ios);
     await ios.locator(".ap-install-content").click();
+    await ios.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
     await ios.getByText(/Safari.*Share.*Add to Home Screen/i).waitFor({ state: "visible", timeout: 5000 });
     await iosContext.close();
+
+    // Some install events fire before React initializes on low-end phones.
+    // The head script must retain the event and the CTA must consume it later.
+    const earlyContext=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:"block"});
+    const early=await earlyContext.newPage();
+    await early.goto(BASE+"/",{waitUntil:"domcontentloaded",timeout:30000});
+    await waitForNotice(early);
+    const earlyCapture=await early.evaluate(()=>{
+      if(!window.__aafnaiInstallCaptureReady)throw new Error("Early install capture was not loaded in the document head");
+      window.__installPromptCalls=0;
+      const event=new Event("beforeinstallprompt",{cancelable:true});
+      Object.defineProperty(event,"prompt",{value:async()=>{window.__installPromptCalls++}});
+      Object.defineProperty(event,"userChoice",{value:Promise.resolve({outcome:"accepted",platform:"web"})});
+      window.dispatchEvent(event);
+      return window.__aafnaiInstallPrompt===event;
+    });
+    if(!earlyCapture)throw new Error("Early capture did not save the actual browser install event");
+    await early.locator(".ap-install-primary").click();
+    await early.waitForFunction(()=>window.__installPromptCalls===1,{timeout:5000});
+    await earlyContext.close();
+
+    // Embedded Android browsers cannot silently install PWAs. Their first tap
+    // must open a prominent dialog with a real Chrome deep link.
+    const embeddedContext=await browser.newContext({
+      viewport:{width:390,height:844},serviceWorkers:"block",
+      userAgent:"Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/UKQ1; wv) AppleWebKit/537.36 Mobile Safari/537.36 ChatGPT/1.2026"
+    });
+    const embedded=await embeddedContext.newPage();
+    await embedded.goto(BASE+"/",{waitUntil:"domcontentloaded",timeout:30000});
+    await waitForNotice(embedded);
+    await embedded.locator(".ap-install-primary").click();
+    const chromeLink=embedded.getByRole("link",{name:/Chrome मा खोल्नुहोस्/});
+    await chromeLink.waitFor({state:"visible",timeout:5000});
+    if(!(await chromeLink.getAttribute("href")).startsWith("intent://aafnaipatro.com/"))throw new Error("Embedded browser Chrome action missing");
+    await embeddedContext.close();
 
     console.log(JSON.stringify({
       ok: true, nativePromptFromCard: true, acceptedNotYetInstalled: true,
       appInstalledState: true, dismissedNotInstalled: true,
-      noNativePromptGuide: true, iosGuide: true, alwaysInstallNow: true
+      noNativePromptGuide: true, iosGuide: true, embeddedChromeAction: true, earlyCapturedPrompt: true, visibleFallbackDialog: true, alwaysInstallNow: true
     }, null, 2));
   } finally {
     await browser.close();
