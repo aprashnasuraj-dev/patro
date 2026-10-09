@@ -176,6 +176,10 @@ jobs:
           )
           for file in "${required[@]}"; do test -s "$file"; done
 
+      - name: Daily HTML and conversion Worker integration
+        if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
+        run: npm run test:worker-html
+
       - name: Cloudflare and product contracts
         if: steps.changes.outputs.cloudflare == 'true' || steps.changes.outputs.full == 'true'
         run: npm run test:cloudflare-contract
