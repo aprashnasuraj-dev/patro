@@ -78,8 +78,8 @@
     "@vitejs/plugin-react": "4.4.1",
     "vite": "6.4.3",
     "typescript": "5.8.3",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "framer-motion": "13.4.3",
     "motion-dom": "13.4.5",
     "motion-utils": "13.3.0",
@@ -97,7 +97,7 @@
     "@block65/webcrypto-web-push": "2.0.0"
   },
   "devDependencies": {
-    "@types/react": "19.1.2",
+    "@types/react": "19.3.0",
     "@types/react-dom": "19.1.2",
     "vitest": "5.0.2",
     "esbuild": "0.25.10",
