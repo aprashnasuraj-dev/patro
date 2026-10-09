@@ -1,4 +1,5 @@
 import {homeMonth} from '../home-calendar-client';
+import { compactNepalSambat } from '../nepalSambatCompact';
 import { useEffect } from "react";
 import { loadAutomaticWeatherForecast as loadWeatherForecast } from "../weather-client";
 import { adToBs, bsToAd } from "../../packages/core/src";
@@ -26,16 +27,9 @@ function tithiText(row:any){
 }
 function nsText(row:any){
   const value=row?.calendars?.nepal_sambat_detail||row?.calendars?.nepal_sambat||row?.nepal_sambat||row?.ns;
-  if(!value)return "";
-  if(typeof value==="string")return value.replace(/^नेपाल\s*संवत्\s*/i,"").trim();
-  const formatted=String(value.formatted_ne||value.formatted||"").replace(/^नेपाल\s*संवत्\s*/i,"").trim();
-  if(formatted)return formatted;
-  const month=value.month?.dev||value.month?.ne||value.month_ne||value.month_name_ne||value.month?.roman||"";
-  const day=value.day??value.tithi_day??value.date_day??value.tithi?.day;
-  if(day!==undefined&&day!==null)return `${month?month+" ":""}${toNepaliDigits(day)}`.trim();
-  const year=value.year??value.ns_year;
-  return year?toNepaliDigits(year):"";
+  return compactNepalSambat(value);
 }
+
 function rowDate(row:any){return String(row?.calendars?.gregorian_ad||row?.ad||row?.date||row?.query_date||"")}
 function parseNumber(text:string){
   const normalized=text.replace(/[०-९]/g,(d)=>NEPALI_DIGITS[d]||d).replace(/[^0-9]/g,"");
@@ -106,7 +100,7 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     if(adNode){const label=englishLabel(ad);if(adNode.textContent!==label)adNode.textContent=label;if(adNode.getAttribute("aria-label")!==`English date ${label}`)adNode.setAttribute("aria-label",`English date ${label}`)}
 
     const nsNode=cell.querySelector<HTMLElement>(".rh-ns-date");
-    if(nsNode&&info?.ns){const label=`नेसं ${info.ns}`;if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.hidden=false}
+    if(nsNode&&info?.ns){const label=info.ns;if(nsNode.textContent!==label)nsNode.textContent=label;nsNode.hidden=false}
     const tithiNode=cell.querySelector<HTMLElement>("em");
     if(tithiNode&&info?.tithi){if(tithiNode.textContent!==info.tithi)tithiNode.textContent=info.tithi;tithiNode.classList.remove("is-pending")}
 
@@ -133,7 +127,7 @@ function decorate(weather:Map<string,WeatherDay>,calendar:Map<string,CalendarDec
     if(tithi&&info?.tithi&&(!tithi.textContent||tithi.textContent.trim()==="—"))tithi.textContent=info.tithi;
     let ns=cell.querySelector<HTMLElement>(".ap-nsdate");
     if(info?.ns&&!ns){ns=document.createElement("span");ns.className="ap-nsdate";tithi?.insertAdjacentElement("afterend",ns);if(!tithi)cell.append(ns)}
-    if(ns&&info?.ns){const label=`नेसं ${info.ns}`;if(ns.textContent!==label)ns.textContent=label;ns.hidden=false}
+    if(ns&&info?.ns){const label=info.ns;if(ns.textContent!==label)ns.textContent=label;ns.hidden=false}
 
     const forecast=weather.get(ad);if(!forecast)continue;
     let line=cell.querySelector<HTMLElement>(".ap-weather");
