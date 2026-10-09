@@ -166,7 +166,7 @@ export function PwaInstallExperience(){
     }}>
       <button className="ap-install-close" type="button" onClick={()=>setShowNotice(false)} aria-label="इन्स्टल सूचना बन्द गर्नुहोस्">×</button>
       <button className="ap-install-content" type="button" onClick={()=>{void install()}} aria-label="आफ्नै पात्रो अहिले इन्स्टल गर्नुहोस्" disabled={busy}>
-        <span className="ap-install-mark" aria-hidden="true">आ</span>
+        <span className="ap-install-mark" aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="46" height="46" /></span>
         <span className="ap-install-copy">
           <strong>आफ्नै पात्रो एप राख्नुहोस्</strong>
           <span className="ap-install-description">अफलाइन पात्रो र उपयोगी उपकरणका लागि इन्स्टल गर्नुहोस्।</span>
