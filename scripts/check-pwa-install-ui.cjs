@@ -51,7 +51,7 @@ async function providePrompt(page, outcome) {
     await cancelled.locator(".ap-install-primary").click();
     await cancelled.waitForFunction(() => window.__installPromptCalls === 1, { timeout: 5000 });
     await cancelled.getByText(/स्थापना रद्द भयो/).waitFor({ state: "visible", timeout: 5000 });
-    await cancelled.getByText(/Add to Home screen/i).waitFor({ state: "visible", timeout: 5000 });
+    await cancelled.getByText(/Add to Home screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     if (await cancelled.locator(".ap-install-footer.is-installed").count()) {
       throw new Error("Dismissed native install prompt incorrectly marked app installed");
     }
@@ -65,7 +65,7 @@ async function providePrompt(page, outcome) {
     await waitForNotice(manual);
     await manual.locator(".ap-install-primary").click();
     await manual.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
-    await manual.getByText(/Add to Home screen/i).waitFor({ state: "visible", timeout: 5000 });
+    await manual.getByText(/Add to Home screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     await manual.getByRole("button", { name: /साइटको लिङ्क कपी गर्नुहोस्/ }).waitFor({state:"visible"});
     await manual.getByRole("button", { name: "बुझें" }).click();
     await manual.getByRole("dialog").waitFor({state:"hidden"});
@@ -80,7 +80,7 @@ async function providePrompt(page, outcome) {
     await waitForNotice(ios);
     await ios.locator(".ap-install-content").click();
     await ios.getByRole("dialog", { name: /होमस्क्रिनमा राख्नुहोस्/ }).waitFor({ state: "visible", timeout: 5000 });
-    await ios.getByText(/Safari.*Share.*Add to Home Screen/i).waitFor({ state: "visible", timeout: 5000 });
+    await ios.getByText(/Safari.*Share.*Add to Home Screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     await iosContext.close();
 
     // Some install events fire before React initializes on low-end phones.
