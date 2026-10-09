@@ -19,6 +19,7 @@ import { serverToday } from "./server-today";
 async function rawDailyHtml(request:Request,env:Env,ctx:Ctx){
  if(!env.ASSETS)return new Response("Static assets unavailable",{status:503});
  const u=new URL(request.url),path=u.pathname.replace(/\/+$/,"")||"/",boundary=nepalDayBoundary();
+ // Cache unconfigured HTML only; admin config is applied after this lookup.
  // A deployment-specific key prevents old HTML from referencing missing JS assets.
  // Manual deployments without a fingerprint bypass the HTML cache safely.
  const buildId=typeof env.PATRO_HTML_BUILD_ID==="string"&&/^[a-f0-9]{16}$/.test(env.PATRO_HTML_BUILD_ID)?env.PATRO_HTML_BUILD_ID:"";
