@@ -46,14 +46,18 @@ jobs:
 
       - name: Resolve ARCHIVE R2 bucket
         run: |
-          set -euo pipefail
+          set -uo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then echo '::error::Cloudflare credentials are required.'; exit 1; fi
-          node scripts/prepare-cloudflare-config.mjs
-          node --input-type=module -e "
-            import { readFileSync, writeFileSync } from 'node:fs';
-            const row = JSON.parse(readFileSync('wrangler.generated.jsonc','utf8')).r2_buckets?.find(x => x.binding === 'ARCHIVE');
-            if (!row?.bucket_name) throw new Error('ARCHIVE R2 bucket could not be resolved');
-            writeFileSync('/tmp/r2-bucket', row.bucket_name); console.log('ARCHIVE bucket=' + row.bucket_name);"
+          if ! out="$(node scripts/prepare-cloudflare-config.mjs 2>&1)"; then
+            echo "::error::prepare-cloudflare-config failed: $(echo "$out" | tail -3 | tr '\n' ' ')"; exit 1
+          fi
+          echo "$out"
+          bucket="$(node -e "const c=JSON.parse(require('fs').readFileSync('wrangler.generated.jsonc','utf8'));const r=(c.r2_buckets||[]).find(x=>x.binding==='ARCHIVE');process.stdout.write(r&&r.bucket_name||'')")"
+          if [[ -z "${bucket}" ]]; then
+            echo "::error::ARCHIVE R2 bucket could not be resolved. Config output: $(echo "$out" | tr '\n' ' ')"; exit 1
+          fi
+          echo "${bucket}" > /tmp/r2-bucket
+          echo "::notice::ARCHIVE bucket=${bucket}"
 
       - name: Build pages and sitemaps
         run: npm run explore:build -- --out .cloudflare/explore
