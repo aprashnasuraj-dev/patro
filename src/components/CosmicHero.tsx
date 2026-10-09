@@ -70,8 +70,9 @@ export function CosmicHero({
     const facts: string[] = [];
     if (tithi) facts.push(`चन्द्र प्रकाश ${tithi.illumination_percent.toFixed(1)}%`);
     if (cosmic?.neo?.status === "ok") {
-      const close = cosmic.neo.close_count_005_au ?? 0;
-      facts.push(`पृथ्वी नजिकका वस्तु ${close}`);
+      // Use the same total as the detailed NASA card. The 0.05 AU subset
+      // is a distance threshold, not the total near-Earth object count.
+      facts.push(`पृथ्वी नजिकका वस्तु ${cosmic.neo.count}`);
     }
     const solar = solarLabel(cosmic?.solar?.level);
     if (solar) facts.push(`सौर गतिविधि ${solar}`);
