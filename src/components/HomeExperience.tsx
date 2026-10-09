@@ -90,7 +90,7 @@ function InstallCard() {
   }
 
   return <article className="hx-install-card">
-    <div className="hx-install-icon" aria-hidden="true">आ</div>
+    <div className="hx-install-icon" aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="48" height="48" style={{ objectFit: "contain" }} /></div>
     <div className="hx-install-copy">
       <span className="hx-kicker">APP · OFFLINE</span>
       <h2>{installed ? "आफ्नै पात्रो स्थापित छ" : "आफ्नै पात्रो App बनाउनुहोस्"}</h2>
