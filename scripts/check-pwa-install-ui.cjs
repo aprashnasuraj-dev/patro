@@ -36,7 +36,9 @@ async function providePrompt(page, outcome) {
       throw new Error("Accepting a prompt was incorrectly treated as a completed installation");
     }
     await page.evaluate(() => window.dispatchEvent(new Event("appinstalled")));
-    await page.locator(".ap-install-notice").waitFor({ state: "hidden", timeout: 5000 });
+    await page.locator(".ap-install-notice:not(.ap-morning-installation)").waitFor({ state: "hidden", timeout: 5000 });
+    await page.locator(".ap-morning-installation").waitFor({ state: "visible", timeout: 5000 });
+    await page.locator(".hx-morning").waitFor({ state: "visible", timeout: 5000 });
     const installedButton = page.locator(".ap-install-footer.is-installed");
     await installedButton.waitFor({ state: "visible", timeout: 5000 });
     if (!(await installedButton.isDisabled())) throw new Error("App-installed footer should be disabled");

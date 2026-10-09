@@ -100,6 +100,7 @@ jobs:
         run: |
           set -euo pipefail
           npm run test:growth
+          npm run test:worker-html
           if [[ "$HEAVY_RELEASE" == "true" ]]; then
             npm run test:core
             npm run test:typing
@@ -337,6 +338,7 @@ jobs:
           else
             echo "::warning::D1 migration API denied (7403); Worker bootstrap is the existing fallback. Validate runtime after deploy."
           fi
+          node scripts/cloudflare/ensure-push-secrets.mjs
           npx wrangler deploy --config wrangler.generated.jsonc
       - name: Prime annual On This Day cache
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.scope.outputs.archive == 'true'

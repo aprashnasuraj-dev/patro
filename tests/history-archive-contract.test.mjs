@@ -44,11 +44,13 @@ test("history renderer uses packaged shards and never hides unverified records",
   assert.ok(pkg.scripts.build.includes("scripts/prerender-history-days.mjs"));
 });
 
-test("festival pages are source-backed page schema, not synthetic Schema.org Event spam", () => {
+test("festival page and Event schemas use recorded observance dates", () => {
   const renderer = read("scripts/prerender-festivals.mjs");
   assert.ok(renderer.includes('"@type":"CollectionPage"'));
   assert.ok(renderer.includes('"@type":"WebPage"'));
-  assert.ok(!renderer.includes('"@type":"Event"'));
+  assert.ok(renderer.includes('"@type":"Event"'));
+  assert.ok(renderer.includes("startDate:ad"));
+  assert.ok(!renderer.includes("offers:"), "observances must not invent tickets or venues");
   const festivalsRoot = resolve(new URL("../dist/festivals", import.meta.url).pathname);
   const slugs = readdirSync(festivalsRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name);
   assert.ok(slugs.length > 0, "expected source-backed festival pages");

@@ -8,6 +8,7 @@ type Result = {
   panchang?: any;
   ok?: boolean;
 };
+const MONTH_SLUGS=["baisakh","jestha","ashadh","shrawan","bhadra","ashwin","kartik","mangsir","poush","magh","falgun","chaitra"];
 
 function formatBs(year: number, month: number, day: number) {
   return `${toNepaliDigits(day)} ${BS_MONTHS[month - 1] || toNepaliDigits(month)} ${toNepaliDigits(year)}`;
@@ -111,6 +112,8 @@ export function ConvertPage() {
             <span>नतिजा</span>
             <strong>{mode === "ad" ? result.bs?.formatted : (result.ad || "—")}</strong>
             {result.panchang?.tithi?.ne && <small>{result.panchang.tithi.ne}</small>}
+            {result.ad && <a href={`/ad-to-bs/${result.ad}`}>यस रूपान्तरणको स्थायी लिंक</a>}
+            {result.bs && <a href={`/bs-to-ad/${result.bs.year}-${MONTH_SLUGS[result.bs.month-1]}-${result.bs.day}`}>BS → AD स्थायी लिंक</a>}
           </div>
         )}
       </section>

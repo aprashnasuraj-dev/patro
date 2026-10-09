@@ -22,7 +22,7 @@ test("festival routes are real full-detail pages, never homepage redirects",()=>
   for(const marker of ["loadCalendarShard","पूर्ण Panchang विवरण","Nepal Sambat / NS record","अन्य उपलब्ध day/archive fields","Festival / holiday source DB records","/data/festival-index.json"]){
     assert.ok(page.includes(marker),`festival renderer missing ${marker}`);
   }
-  assert.ok(!page.includes('"@type":"Event"'),"festival runtime must use observance page semantics rather than synthetic Event schema");
+  assert.ok(page.includes('"@type":"Event"') && page.includes("startDate:ad"),"festival Events must use actual recorded occurrence dates");
   assert.ok(snapshot.includes("getFestivals"),"official Panchang festival facts must join holiday records");
   assert.ok(snapshot.includes('return "dashain"'));
   assert.ok(snapshot.includes('return "gai-jatra"'));

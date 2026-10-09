@@ -57,7 +57,7 @@ export default function App() {
   function shiftSelected(days:number){const d=parseIso(selectedDate);d.setUTCDate(d.getUTCDate()+days);const next=isoFromDate(d);if(next<"1826-04-11"||next>"2037-04-13")return;chooseDate(next)}
 
   const effectiveApod=sanitizeApod(apod.data||cosmic.data?.apod||null);
-  return <div className="app-shell">
+  return <div className="app-shell astro-app">
     <HeroCanvas imageUrl={effectiveApod?.hdurl||effectiveApod?.url||null} loading={apod.loading}/>
     <main className="app-content cosmic-app-content">
       <CosmicHero sync={sync.data} tithi={tithi.data} cosmic={cosmic.data} apod={effectiveApod} selectedDate={selectedDate} today={today} loading={cosmic.loading||tithi.loading} onDateChange={chooseDate} onPreviousDay={()=>shiftSelected(-1)} onNextDay={()=>shiftSelected(1)} onToday={()=>chooseDate(today)}/>

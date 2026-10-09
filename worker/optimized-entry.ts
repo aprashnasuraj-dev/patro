@@ -1,5 +1,7 @@
 import { growthPageResponse } from "./growth";
+import { dailyHtmlResponse } from "./daily-html";
 import connectedWorker from "./connected-entry";
+import { conversionPageResponse } from "./conversion-page";
 import { seoStaticResponse } from "./seo-static";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
@@ -43,9 +45,14 @@ const optimizedWorker = {
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
+    const conversion = await conversionPageResponse(request, env as any);
+    if (conversion) return conversion;
 
     const growth = await growthPageResponse(request, env as any);
     if (growth) return growth;
+    const dailyHtml = await dailyHtmlResponse(request, env as any, ctx);
+    if (dailyHtml) return dailyHtml;
+
     const seoStatic = await seoStaticResponse(request, env as any);
     if (seoStatic) return seoStatic;
 

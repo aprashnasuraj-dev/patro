@@ -24,8 +24,9 @@ test("SEO discovery uses production canonical and submits a broad factual BS-yea
  assert.equal(manifest.calendar_archive_ad_start,"1826-04-11");assert.equal(manifest.calendar_archive_ad_end,"2037-04-13");assert.match(manifest.calendar_archive_source_version,/^sha256:[a-f0-9]{64}$/);
  assert.match(manifest.preferred_citation,/^Cite as: Aafnai Patro \(aafnaipatro\.com\), accessed \d{4}-\d{2}-\d{2}$/);
  const index=read("public/sitemap.xml");assert.ok(index.includes("<sitemapindex"));
- const entries=[...index.matchAll(/<sitemap><loc>([^<]+)<\/loc><lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod><\/sitemap>/g)];
- assert.equal(entries.length,(index.match(/<sitemap>/g)||[]).length,"every sitemap index entry carries <lastmod>");
+ const entries=[...index.matchAll(/<sitemap><loc>([^<]+)<\/loc>(?:<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>)?<\/sitemap>/g)];
+ assert.equal(entries.length,(index.match(/<sitemap>/g)||[]).length,"sitemap entries use canonical URLs and valid lastmod when known");
+ assert.ok(index.includes("sitemap-conversions.xml"));
  assert.ok(entries.length>=90&&entries.length<=140,`index child count ${entries.length}`);
  for(const year of manifest.indexed_calendar_years){
    const cal=`sitemap-calendar-${year}.xml`,days=`sitemap-days-${year}.xml`;assert.ok(manifest.sitemap_files.includes(cal));assert.ok(manifest.sitemap_files.includes(days));

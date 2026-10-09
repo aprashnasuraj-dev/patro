@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "aafnai-pwa-v15";
+const SW_REVISION = "aafnai-pwa-v16";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
@@ -94,6 +94,8 @@ export function registerPatroServiceWorker() {
         await registration.update();
         if (registration.waiting) registration.waiting.postMessage({ type: "SKIP_WAITING" });
         await navigator.serviceWorker.ready;
+        registration.active?.postMessage({ type: "WARM_CALENDAR" });
+        runWhenIdle(() => { void import("./ConvertPage"); });
         if (installed || isInstalledApp()) prepareInstalledFeatures();
       } catch { /* app remains usable if service worker setup fails */ }
     }).catch((error) => console.warn("Service worker registration failed", error));
