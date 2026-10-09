@@ -1,4 +1,5 @@
 import { growthPageResponse } from "./growth";
+import { exploreResponse } from "./explore";
 import { dailyHtmlResponse } from "./daily-html";
 import connectedWorker from "./connected-entry";
 import { conversionPageResponse } from "./conversion-page";
@@ -45,6 +46,9 @@ const optimizedWorker = {
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
+    // Explore families own only their new prefixes and /sitemap-explore.xml + /sitemap-x-*.xml; null for everything else.
+    const explore = await exploreResponse(request, env as any, ctx);
+    if (explore) return explore;
     const conversion = await conversionPageResponse(request, env as any);
     if (conversion) return conversion;
 
