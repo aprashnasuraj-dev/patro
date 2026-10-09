@@ -1,0 +1,118 @@
+/* Keep astronomy's dark palette local. Global light cards previously inherited
+   pale astronomy labels, leaving text almost invisible in the default theme. */
+.astro-app {
+  color-scheme: dark;
+  --surface: #0f172a;
+  --surface-2: #162239;
+  --ink-900: #f8fafc;
+  --ink-600: #cbd5e1;
+  --ink-400: #b5c3d7;
+  --ink: #f8fafc;
+  --muted: #cbd5e1;
+  --muted-2: #b5c3d7;
+  --line: #35465f;
+  --cyan-soft: #8bd8fc;
+  --suite-muted: #cbd5e1;
+  --suite-surface-strong: #0f172a;
+  --suite-border: #35465f;
+  color: var(--ink);
+  background: #080f20;
+  font-family: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.astro-app :is(button,input,select,textarea) { font-family: inherit; }
+.astro-app .cosmic-app-content { position: relative; width: min(1200px, calc(100% - 32px)); }
+.astro-app :is(h1,h2,h3,h4) { color: var(--ink); }
+.astro-app .glass-panel {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.astro-app .cosmic-hero {
+  min-height: 340px;
+  background: linear-gradient(135deg,#101e36,#102b3c) !important;
+}
+.astro-app .cosmic-hero h1 {
+  font-size: clamp(2rem,4vw,3.5rem);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  text-shadow: none;
+}
+.astro-app .cosmic-hero__dates { margin-top: 32px; }
+.astro-app :is(.cosmic-date,.cosmic-context,.progress-block,.illumination-readout) {
+  background: #162239;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.astro-app .cosmic-date { min-height: 84px; }
+.astro-app .cosmic-date strong { overflow-wrap: anywhere; }
+.astro-app :is(.eyebrow,.cosmic-date span,.tithi-index,.precision-details summary) { color: #8bd8fc; }
+.astro-app :is(.eyebrow,.cosmic-date span,.cosmic-panel__badge,.source-row span) {
+  font-size: .8125rem;
+  letter-spacing: .025em;
+}
+.astro-app :is(.cosmic-context,.cosmic-panel__body p,.cosmic-hero__apod,.progress-labels,.progress-block small,.illumination-readout span,.time-travel__date-row,.fact-card span,.fact-card small,.event-row small,.neo-row small,.media-tile small,.rover-card small,.rover-card span,.space-weather-grid span,.space-weather-grid small,.technology-grid span,.technology-grid p) {
+  font-size: .875rem;
+  line-height: 1.6;
+}
+.astro-app :is(.cosmic-panel__badge,.source-row span,.cosmic-context span:last-child) { color: var(--muted); }
+.astro-app :is(.cosmic-panel__heading strong,.media-tile strong,.event-row strong,.neo-row strong,.space-weather-grid strong,.technology-grid strong) { font-size: 1rem; }
+.astro-app :is(.icon-button,.secondary-button,.segmented-control button,.segmented-control a,.cosmic-link-button) {
+  color: #dff4ff;
+  font-size: .875rem;
+  min-height: 44px;
+}
+.astro-app .segmented-control { background: #162239; border-color: var(--line); }
+.astro-app .segmented-control button.active { background: #8bd8fc; color: #082031; box-shadow: none; }
+.astro-app input[type="date"] { background: #162239; color: #f8fafc; min-height: 44px; font-size: 1rem; }
+.astro-app .dashboard-grid { grid-template-columns: minmax(0,.7fr) minmax(0,1.5fr); }
+.astro-app :is(.lunar-card,.calendar-card,.cosmic-panel,.sky-layout>*,.earth-layout>*,.neo-layout>*) { min-width: 0; }
+.astro-app .calendar-day { background: #162239; border-color: #35465f; color: #f8fafc; min-height: 116px; }
+.astro-app .calendar-day--muted { opacity: 1; background: #101a2b; color: #aebcd0; }
+.astro-app .calendar-day--selected { background: #164b66; border-color: #8bd8fc; box-shadow: inset 0 0 0 1px #8bd8fc; }
+.astro-app .calendar-day--today { border-color: #8bd8fc; }
+.astro-app .sticky-weekdays { position: static; background: #162239; backdrop-filter: none; }
+.astro-app .calendar-actions .segmented-control { width: auto; flex: none; }
+.astro-app .icon-button { width: 44px; min-width: 44px; flex: 0 0 44px; }
+.astro-app .day-number { font-size: 1.25rem; }
+.astro-app :is(.weekday-row span,.day-secondary,.tithi-badge,.tithi-transition,.weather-chip,.paksha-dot,.today-marker,.special-marker) { font-size: .75rem; line-height: 1.4; }
+.astro-app .tithi-badge { color: #e1f5ff; background: #1d4056; margin-top: 12px; }
+.astro-app .day-secondary { color: #cbd5e1; }
+.astro-app .tithi-transition { color: #cbd5e1; }
+.astro-app .direct-answer-card { margin-top: 16px; padding: 18px 22px; }
+.astro-app .direct-answer-card :is(p,h2) { margin: 4px 0; }
+.astro-app .calendar-day:hover { transform: none; background: #20364e; }
+
+@media (max-width: 1100px) {
+  .astro-app .dashboard-grid { grid-template-columns: minmax(0,1fr); }
+  .astro-app .lunar-card { position: static; display: block; }
+}
+@media (max-width: 760px) {
+  .astro-app .cosmic-app-content { width: calc(100% - 24px); padding-top: 16px; }
+  .astro-app .cosmic-hero { padding: 20px; min-height: 0; }
+  .astro-app .cosmic-hero__dates { grid-template-columns: minmax(0,1fr); gap: 8px; margin-top: 22px; }
+  .astro-app .cosmic-date { min-height: 0; padding: 12px 14px; }
+  .astro-app .cosmic-date strong { margin-top: 3px; font-size: 1.125rem; }
+  .astro-app .cosmic-hero__toolbar { display: grid; grid-template-columns: 44px minmax(0,1fr) 44px; gap: 8px; }
+  .astro-app .cosmic-date-input { min-width: 0; width: auto; }
+  .astro-app .cosmic-date-input input { min-width: 0; width: 100%; }
+  .astro-app .cosmic-hero__toolbar .secondary-button { grid-column: 1 / -1; justify-content: center; }
+  .astro-app .time-travel__top { flex-direction: column; gap: 12px; }
+  .astro-app .time-travel__quick { justify-content: flex-start; }
+  .astro-app .calendar-toolbar { display: block; }
+  .astro-app .calendar-actions { justify-content: flex-start; margin-top: 12px; }
+  /* A readable seven-column grid scrolls locally instead of shrinking the page.
+     Agenda remains available for a full-width list of the same days. */
+  .astro-app .calendar-month-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 8px; }
+  .astro-app :is(.month-grid,.weekday-row) { min-width: 630px; gap: 6px; }
+  .astro-app .calendar-day { min-height: 118px; padding: 8px; }
+  .astro-app .day-secondary { display: inline-block; }
+  .astro-app .lunar-visual-wrap { min-height: 250px; }
+  .astro-app .lunar-svg { width: 230px; max-width: 100%; }
+  .astro-app .cosmic-panel__summary { grid-template-columns: auto minmax(0,1fr) auto; gap: 10px; padding: 16px; }
+  .astro-app .cosmic-panel__badge { grid-column: 2; width: fit-content; }
+  .astro-app .cosmic-panel__chevron { grid-column: 3; grid-row: 1; }
+}

@@ -129,7 +129,7 @@ function secureSpaResponse(request: Request, response: Response, seoSource = "ru
   });
 }
 
-async function htmlAssetResponse(request: Request, env: Env, assetPath: string, preferPrerender = false) {
+export async function htmlAssetResponse(request: Request, env: Env, assetPath: string, preferPrerender = false) {
   if (!env.ASSETS || (request.method !== "GET" && request.method !== "HEAD")) return null;
   const url = new URL(request.url);
   // Static assets use html_handling "auto-trailing-slash": "/x/index.html" answers 307 → "/x/".

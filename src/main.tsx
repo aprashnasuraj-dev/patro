@@ -8,6 +8,7 @@ import { HomepageEnhancer } from "./components/HomepageEnhancer";
 import { DeferredJyotishAssistant } from "./components/DeferredJyotishAssistant";
 import { NoteTypingEnhancer } from "./components/NoteTypingEnhancer";
 import { PwaInstallExperience } from "./components/PwaInstallExperience";
+import { startLocalMorningScheduler } from "./localMorning";
 import { PatroRouter } from "./PatroRouter";
 import { GlobalMediaPlayer } from "./media/GlobalMediaPlayer";
 import { MediaProvider } from "./media/MediaProvider";
@@ -16,6 +17,7 @@ import "./design-tokens.css";
 import "./app-shell.css";
 import "./styles.css";
 import "./cosmic.css";
+import "./astro-readability.css";
 import "./swarm.css";
 import "./feature-suite.css";
 import "./restructure.css";
@@ -48,6 +50,7 @@ const root = document.getElementById("root");
 if (!root) throw new Error("Missing #root container");
 
 registerPatroServiceWorker();
+startLocalMorningScheduler();
 recordAiReferral();
 
 createRoot(root).render(

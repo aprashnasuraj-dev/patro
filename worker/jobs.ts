@@ -2,6 +2,7 @@ import { PATRO_CITIES } from "../lib/patro";
 import { fastCalendarResponse } from "./calendar-fast";
 import { fastHistoryResponse } from "./history-fast";
 import { dispatchDuePushJobs, type PushEnv } from "./push";
+import { dispatchMorningPush } from "./morning-push";
 import { primeQuotaCache } from "./quota-cache";
 
 export type JobsEnv=PushEnv & {
@@ -105,7 +106,13 @@ export async function cronResponse(request:Request,env:JobsEnv):Promise<Response
 
 export async function runScheduled(cron:string,env:JobsEnv){
   const result:any={cron,at:new Date().toISOString()};
-  if(cron==="*/5 * * * *")result.push=await dispatchDuePushJobs(env,100);
+  if(cron==="*/5 * * * *"){
+    // Free Workers allow 50 external subrequests per invocation. Share a
+    // budget of 40 sends and reserve headroom for cache/source operations.
+    result.morning=await dispatchMorningPush(env,32);
+    const used=Number(result.morning.processed||0);
+    result.push=await dispatchDuePushJobs(env,Math.max(8,40-used));
+  }
   if(cron==="43 2 * * *")result.maintenance=await maintenance(env);
   if(cron==="11 3 * * *")result.rashifal=await rashifalStatus(env);
   if(cron==="15 18 * * *"){

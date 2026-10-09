@@ -81,7 +81,10 @@ test("public caches use Cache API and R2 while KV stays small-state only",async(
   assert.match(cosmic,/ARCHIVE/);
   assert.doesNotMatch(cosmic,/env\.CACHE|CACHE\?:|\.CACHE\.put/);
 
-  assert.match(worker,/APOD_R2_PREFIX/);
+  const apod=await read("worker/apod.ts");
+  assert.match(apod,/APOD_R2_PREFIX/);
+  assert.match(apod,/ARCHIVE/);
+  assert.doesNotMatch(apod,/env\.CACHE/);
   assert.match(worker,/caches\.default/);
   assert.doesNotMatch(worker,/env\.CACHE\.(?:get|put)/);
 

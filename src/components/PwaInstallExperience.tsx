@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./pwa-install.css";
+import { MorningInstallationCompletion } from "./MorningNotificationSetup";
 
 const INSTALL_NOTICE_DELAY_MS=4000;
 const SITE_LINK="https://aafnaipatro.com/";
@@ -158,6 +159,7 @@ export function PwaInstallExperience(){
   </button>;
 
   return <>
+    <MorningInstallationCompletion installed={installed}/>
     {footer?createPortal(footerAction,footer):null}
     {!installed&&showNotice?<aside className="ap-install-notice" role="status" aria-live="polite" onClick={(event)=>{
       if(!(event.target as Element).closest("button,a,input,select,textarea"))void install();
@@ -167,7 +169,7 @@ export function PwaInstallExperience(){
         <span className="ap-install-mark" aria-hidden="true">आ</span>
         <span className="ap-install-copy">
           <strong>आफ्नै पात्रो एप राख्नुहोस्</strong>
-          <span className="ap-install-description">छिटो खोल्न, पात्रो र समर्थित सुविधाहरू अफलाइन प्रयोग गर्न अहिले इन्स्टल गर्नुहोस्।</span>
+          <span className="ap-install-description">अफलाइन पात्रो र हरेक बिहान ६ बजे शुभ प्रभात सूचनाका लागि इन्स्टल गर्नुहोस्।</span>
           {installStatus?<small className="ap-install-feedback">{installStatus}</small>:null}
         </span>
       </button>
