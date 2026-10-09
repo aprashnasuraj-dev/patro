@@ -90,10 +90,7 @@
 }
 
 /* A separate compact year line keeps Nepal Sambat explicit on narrow screens. */
-.pc-ns-year { font-size: 11px; font-weight: 650; line-height: 1.25; color: var(--ap-muted, #5d6b63); white-space: nowrap; }
-.pc-ns-year:empty { display: none; }
 
 @media (max-width: 640px) {
   .rh-grid .rh-cell.pc-cell { min-height: 116px !important; }
-  .pc-ns-year { white-space: normal; font-size: 12px; max-width: 100%; }
 }
