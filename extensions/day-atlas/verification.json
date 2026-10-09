@@ -1,0 +1,14 @@
+{
+  "inventory": 1000000,
+  "sitemaps": 1000,
+  "storedHtmlFiles": 0,
+  "newDatabaseRows": 0,
+  "generatedXmlBytes": 71527000,
+  "astronomySamples": 300,
+  "medianComputeMs": 0.5150389999998879,
+  "p95ComputeMs": 1.2443429999998443,
+  "bundleBytes": 76482,
+  "elapsedMs": 1782.708914,
+  "existingSitemapEntriesPreserved": true,
+  "dstAndPolarTestsPassed": true
+}
