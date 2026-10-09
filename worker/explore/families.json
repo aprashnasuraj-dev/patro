@@ -1,0 +1,18 @@
+{
+  "storage_prefix": "explore/v1",
+  "sitemap_shard_size": 45000,
+  "max_children": 400,
+  "max_siblings": 24,
+  "families": [
+    {
+      "id": "places",
+      "prefix": "/place",
+      "schema_type": "AdministrativeArea",
+      "root_label": "Places in Nepal",
+      "root_label_ne": "नेपालका स्थानहरू",
+      "min_facts": 4,
+      "min_description": 60,
+      "enabled": true
+    }
+  ]
+}

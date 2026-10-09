@@ -1,8 +1,19 @@
 import type { ExploreFamily } from "./families";
-import type { ExploreRow, LinkRow } from "./db";
 
-/** body_json contract written by scripts/explore/*.mjs (see scripts/explore/README.md). */
-export type ExploreBody = {
+export type LinkRef = { path: string; title: string; title_ne?: string };
+
+/**
+ * One prebuilt page record (R2 object explore/v1/pages{path}.json), written by scripts/explore/build.mjs.
+ * Everything the page needs — breadcrumbs, children, siblings, the index decision — is precomputed, so a
+ * cache miss costs exactly one R2 read and a template fill.
+ */
+export type ExploreRecord = {
+  v: 1;
+  family: string;
+  path: string;
+  title: string;
+  title_ne?: string;
+  description: string;
   summary?: string;
   summary_ne?: string;
   facts?: { label: string; label_ne?: string; value: string; value_ne?: string; href?: string }[];
@@ -12,36 +23,27 @@ export type ExploreBody = {
   geo?: { lat: number; lng: number };
   website?: string;
   links?: { href: string; label: string }[];
+  source_name?: string;
+  source_url?: string;
+  lastmod: string;
+  indexable: boolean;
+  ancestors: LinkRef[];
+  children: LinkRef[];
+  children_total: number;
+  siblings: LinkRef[];
+  hash: string;
 };
 
 export const esc = (value: unknown) =>
   String(value ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]!);
 
 const jsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
+const safeHref = (href: string) => (/^\/(?!\/)/.test(href) || /^https?:\/\//.test(href) ? href : "#");
 
-export function parseBody(row: ExploreRow): ExploreBody {
-  try {
-    const parsed = JSON.parse(row.body_json);
-    return parsed && typeof parsed === "object" ? parsed : {};
-  } catch {
-    return {};
-  }
+/** Final index decision: the build's quality gate AND the family's current thresholds must both pass. */
+export function isIndexable(record: ExploreRecord, family: ExploreFamily): boolean {
+  return record.indexable === true && (record.facts?.length ?? 0) >= family.min_facts && record.description.length >= family.min_description;
 }
-
-/** Index only rows that the importer marked indexable AND still carry enough facts. */
-export function isIndexable(row: ExploreRow, body: ExploreBody, family: ExploreFamily): boolean {
-  return row.indexable === 1 && (body.facts?.length ?? 0) >= family.minFacts && row.description.length >= 50;
-}
-
-/** Ancestor paths of /place/a/b/c → ["/place", "/place/a", "/place/a/b"]. */
-export function ancestorPaths(path: string, prefix: string): string[] {
-  const parts = path.slice(prefix.length).split("/").filter(Boolean);
-  const out = [prefix];
-  for (let i = 1; i < parts.length; i++) out.push(prefix + "/" + parts.slice(0, i).join("/"));
-  return path === prefix ? [] : out;
-}
-
-const safeHref = (href: string) => (/^\/(?!\/)/.test(href) || /^https:\/\//.test(href) ? href : "#");
 
 const STYLE = `:root{--bg:#f5f7f4;--card:#fff;--ink:#172019;--muted:#5b675e;--line:#dde3dc;--accent:#176f3b}
 @media (prefers-color-scheme:dark){:root{--bg:#101511;--card:#18201a;--ink:#e8efe9;--muted:#a3b0a6;--line:#2a352d;--accent:#7fd19c}}
@@ -53,91 +55,72 @@ th,td{padding:9px 6px;text-align:left;vertical-align:top;border-bottom:1px solid
 ul.links{columns:2;column-gap:20px;padding-left:18px;margin:0}@media (max-width:560px){ul.links{columns:1}}
 footer{font-size:.85rem;color:var(--muted);padding:6px 4px 30px}`;
 
-export function renderPage(opts: {
-  site: string;
-  family: ExploreFamily;
-  row: ExploreRow;
-  body: ExploreBody;
-  ancestors: LinkRow[];
-  children: LinkRow[];
-  siblings: LinkRow[];
-}): string {
-  const { site, family, row, body, ancestors, children, siblings } = opts;
-  const canonical = site + row.path;
-  const indexable = isIndexable(row, body, family);
-  const titleFull = row.title_ne ? `${row.title} · ${row.title_ne}` : row.title;
+const neSpan = (value?: string) => (value ? ` <span class="ne" lang="ne">${esc(value)}</span>` : "");
 
-  const crumbs = [
-    { path: "/", title: "आफ्नै पात्रो" },
-    ...ancestors.map((a) => ({ path: a.path, title: a.path === family.prefix ? family.rootLabel : a.title })),
-    { path: row.path, title: row.path === family.prefix ? family.rootLabel : row.title },
-  ];
+export function renderPage(site: string, family: ExploreFamily, r: ExploreRecord): string {
+  const canonical = site + r.path;
+  const indexable = isIndexable(r, family);
+  const isRoot = r.path === family.prefix;
+  const heading = isRoot ? family.root_label : r.title;
+  const headingNe = isRoot ? family.root_label_ne : r.title_ne;
+  const titleFull = headingNe ? `${heading} · ${headingNe}` : heading;
+  const label = (l: LinkRef) => (l.path === family.prefix ? family.root_label : l.title);
 
-  const parent = ancestors.at(-1);
-  const entity: Record<string, unknown> = {
-    "@type": family.schemaType,
-    "@id": canonical + "#entity",
-    name: row.title,
-    url: canonical,
-    description: row.description,
-  };
-  if (row.title_ne) entity.alternateName = row.title_ne;
-  if (parent && parent.path !== family.prefix) entity.containedInPlace = { "@type": family.schemaType, name: parent.title, url: site + parent.path };
-  if (body.geo) entity.geo = { "@type": "GeoCoordinates", latitude: body.geo.lat, longitude: body.geo.lng };
-  if (body.website && /^https?:\/\//.test(body.website)) entity.sameAs = [body.website];
+  const crumbs = [{ path: "/", title: "आफ्नै पात्रो" }, ...r.ancestors.map((a) => ({ path: a.path, title: label(a) })), { path: r.path, title: heading }];
+  const parent = r.ancestors.at(-1);
+
+  const entity: Record<string, unknown> = { "@type": family.schema_type, "@id": canonical + "#entity", name: heading, url: canonical, description: r.description };
+  if (headingNe) entity.alternateName = headingNe;
+  if (parent && parent.path !== family.prefix) entity.containedInPlace = { "@type": family.schema_type, name: parent.title, url: site + parent.path };
+  if (r.geo) entity.geo = { "@type": "GeoCoordinates", latitude: r.geo.lat, longitude: r.geo.lng };
+  if (r.website && /^https?:\/\//.test(r.website)) entity.sameAs = [r.website];
 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": canonical, url: canonical, name: titleFull, description: row.description, inLanguage: ["en", "ne"], dateModified: row.lastmod, about: { "@id": canonical + "#entity" } },
+      { "@type": "WebPage", "@id": canonical, url: canonical, name: titleFull, description: r.description, inLanguage: ["en", "ne"], dateModified: r.lastmod, about: { "@id": canonical + "#entity" } },
       entity,
       { "@type": "BreadcrumbList", itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, item: site + c.path })) },
     ],
   };
 
-  const facts = (body.facts || [])
+  const facts = (r.facts || [])
     .map((f) => {
       const value = f.href ? `<a href="${esc(safeHref(f.href))}">${esc(f.value)}</a>` : esc(f.value);
-      const valueNe = f.value_ne ? ` <span class="ne" lang="ne">${esc(f.value_ne)}</span>` : "";
-      const labelNe = f.label_ne ? `<br><span class="ne" lang="ne">${esc(f.label_ne)}</span>` : "";
-      return `<tr><th>${esc(f.label)}${labelNe}</th><td>${value}${valueNe}</td></tr>`;
+      return `<tr><th>${esc(f.label)}${f.label_ne ? `<br><span class="ne" lang="ne">${esc(f.label_ne)}</span>` : ""}</th><td>${value}${neSpan(f.value_ne)}</td></tr>`;
     })
     .join("");
 
-  const linkList = (rows: LinkRow[]) =>
-    `<ul class="links">${rows.map((r) => `<li><a href="${esc(r.path)}">${esc(r.title)}</a>${r.title_ne ? ` <span class="ne" lang="ne">${esc(r.title_ne)}</span>` : ""}</li>`).join("")}</ul>`;
-
-  const sections = (body.sections || [])
-    .map((s) => `<section><h2>${esc(s.heading)}${s.heading_ne ? ` <span class="ne" lang="ne">${esc(s.heading_ne)}</span>` : ""}</h2><p>${esc(s.text)}</p></section>`)
-    .join("");
-
-  const extraLinks = [...(body.links || []), { href: "/today", label: "Today's Nepali date · आजको मिति" }, { href: "/festivals", label: "Festivals · चाडपर्व" }];
-  const source = row.source_url
-    ? `Source: <a href="${esc(safeHref(row.source_url))}" rel="nofollow noopener">${esc(row.source_name || row.source_url)}</a>. `
-    : row.source_name
-      ? `Source: ${esc(row.source_name)}. `
+  const linkList = (rows: LinkRef[]) => `<ul class="links">${rows.map((l) => `<li><a href="${esc(l.path)}">${esc(l.title)}</a>${neSpan(l.title_ne)}</li>`).join("")}</ul>`;
+  const sections = (r.sections || []).map((s) => `<section><h2>${esc(s.heading)}${neSpan(s.heading_ne)}</h2><p>${esc(s.text)}</p></section>`).join("");
+  const more = r.children_total > r.children.length ? `<p>Showing ${r.children.length} of ${r.children_total}.</p>` : "";
+  const extraLinks = [...(r.links || []), { href: "/today", label: "Today's Nepali date · आजको मिति" }, { href: "/festivals", label: "Festivals · चाडपर्व" }];
+  const source = r.source_url
+    ? `Source: <a href="${esc(safeHref(r.source_url))}" rel="nofollow noopener">${esc(r.source_name || r.source_url)}</a>. `
+    : r.source_name
+      ? `Source: ${esc(r.source_name)}. `
       : "";
 
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(titleFull)} | आफ्नै पात्रो</title>
-<meta name="description" content="${esc(row.description)}">
+<meta name="description" content="${esc(r.description)}">
 <link rel="canonical" href="${esc(canonical)}">
 <meta name="robots" content="${indexable ? "index, follow, max-image-preview:large" : "noindex, follow"}">
-<meta property="og:title" content="${esc(titleFull)}"><meta property="og:description" content="${esc(row.description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:type" content="website"><meta property="og:image" content="${esc(site)}/og-default.png">
+<meta property="og:title" content="${esc(titleFull)}"><meta property="og:description" content="${esc(r.description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:type" content="website"><meta property="og:image" content="${esc(site)}/og-default.png">
 <script type="application/ld+json">${jsonLd(schema)}</script>
 <style>${STYLE}</style></head><body><main>
 <nav class="crumbs" aria-label="Breadcrumb">${crumbs.map((c, i) => (i === crumbs.length - 1 ? `<span aria-current="page">${esc(c.title)}</span>` : `<a href="${esc(c.path)}">${esc(c.title)}</a>`)).join(" › ")}</nav>
-<article><h1>${esc(row.path === family.prefix ? family.rootLabel : row.title)}${row.title_ne ? `<br><span class="ne" lang="ne">${esc(row.path === family.prefix ? family.rootLabelNe : row.title_ne)}</span>` : ""}</h1>
-${body.summary ? `<p>${esc(body.summary)}</p>` : `<p>${esc(row.description)}</p>`}${body.summary_ne ? `<p lang="ne">${esc(body.summary_ne)}</p>` : ""}
+<article><h1>${esc(heading)}${headingNe ? `<br><span class="ne" lang="ne">${esc(headingNe)}</span>` : ""}</h1>
+<p>${esc(r.summary || r.description)}</p>${r.summary_ne ? `<p lang="ne">${esc(r.summary_ne)}</p>` : ""}
 ${facts ? `<table>${facts}</table>` : ""}</article>
 ${sections}
-${children.length ? `<section><h2>${esc(body.child_heading || "Inside " + row.title)}${body.child_heading_ne ? ` <span class="ne" lang="ne">${esc(body.child_heading_ne)}</span>` : ""}</h2>${linkList(children)}</section>` : ""}
-${siblings.length ? `<section><h2>Nearby in ${esc(parent?.path === family.prefix ? family.rootLabel : parent?.title || family.rootLabel)}</h2>${linkList(siblings)}</section>` : ""}
+${r.children.length ? `<section><h2>${esc(r.child_heading || "Inside " + heading)}${neSpan(r.child_heading_ne)}</h2>${linkList(r.children)}${more}</section>` : ""}
+${r.siblings.length && parent ? `<section><h2>More in ${esc(label(parent))}</h2>${linkList(r.siblings)}</section>` : ""}
 <section><h2>More on आफ्नै पात्रो</h2><ul class="links">${extraLinks.map((l) => `<li><a href="${esc(safeHref(l.href))}">${esc(l.label)}</a></li>`).join("")}</ul></section>
-<footer>${source}Last updated <time datetime="${esc(row.lastmod)}">${esc(row.lastmod)}</time>. Found a mistake? <a href="/corrections">Report a correction</a>.</footer>
+<footer>${source}Last updated <time datetime="${esc(r.lastmod)}">${esc(r.lastmod)}</time>. Found a mistake? <a href="/corrections">Report a correction</a>.</footer>
 </main></body></html>`;
 }
 
 export function renderNotFound(family: ExploreFamily): string {
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Not found | आफ्नै पात्रो</title><meta name="robots" content="noindex, follow"><style>${STYLE}</style></head><body><main><article><h1>Page not found</h1><p>We could not find that page. Browse <a href="${esc(family.prefix)}">${esc(family.rootLabel)}</a> or go to <a href="/">आफ्नै पात्रो</a>.</p></article></main></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Not found | आफ्नै पात्रो</title><meta name="robots" content="noindex, follow"><style>${STYLE}</style></head><body><main><article><h1>Page not found</h1><p>We could not find that page. Browse <a href="${esc(family.prefix)}">${esc(family.root_label)}</a> or go to <a href="/">आफ्नै पात्रो</a>.</p></article></main></body></html>`;
 }

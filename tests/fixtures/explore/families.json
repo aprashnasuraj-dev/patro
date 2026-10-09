@@ -1,0 +1,9 @@
+{
+  "storage_prefix": "explore/v1",
+  "sitemap_shard_size": 45000,
+  "max_children": 400,
+  "max_siblings": 24,
+  "families": [
+    { "id": "synthetic", "prefix": "/synthetic-load", "schema_type": "Thing", "root_label": "Load test", "root_label_ne": "परीक्षण", "min_facts": 4, "min_description": 60, "enabled": true }
+  ]
+}

@@ -2,41 +2,33 @@
  * Explore page families: data-driven page sets that live entirely under their own URL prefixes and their
  * own sitemap index (/sitemap-explore.xml). Nothing here claims a path that existed before this module:
  * tests/explore-engine.test.ts checks every prefix against seo/published-url-baseline.json, the growth
- * prefixes, the legacy redirects and the run_worker_first exclusions.
+ * prefixes, the legacy redirects and the existing sitemap children.
  *
- * Adding a family = one entry here + rows imported through scripts/explore (NDJSON contract). Rendering,
- * caching, breadcrumbs, child listings, quality gating and sitemaps are generic.
+ * The same families.json drives the build (scripts/explore/build.mjs) and the Worker, so they cannot drift.
+ * Adding a family = one entry in families.json + one adapter in scripts/explore/families/<id>.mjs.
  */
+import config from "./families.json";
+
 export type ExploreFamily = {
-  /** Stable id stored in D1 (explore_pages.family) and used in sitemap file names. [a-z0-9]+ only. */
   id: string;
-  /** URL prefix owned by this family. Must not overlap any existing route. */
   prefix: string;
-  /** schema.org type for the page entity. */
-  schemaType: string;
-  /** Breadcrumb label of the prefix root. */
-  rootLabel: string;
-  rootLabelNe: string;
-  /** Minimum sourced facts before a page may be indexed (enforced at import, re-checked at render). */
-  minFacts: number;
-  /** Families can be switched off without deleting data: pages then 404 and drop out of sitemaps. */
+  schema_type: string;
+  root_label: string;
+  root_label_ne: string;
+  min_facts: number;
+  min_description: number;
   enabled: boolean;
 };
 
-export const EXPLORE_FAMILIES: readonly ExploreFamily[] = [
-  {
-    id: "places",
-    prefix: "/place",
-    schemaType: "AdministrativeArea",
-    rootLabel: "Places in Nepal",
-    rootLabelNe: "नेपालका स्थानहरू",
-    minFacts: 4,
-    enabled: true,
-  },
-];
+export const EXPLORE_CONFIG = config as {
+  storage_prefix: string;
+  sitemap_shard_size: number;
+  max_children: number;
+  max_siblings: number;
+  families: ExploreFamily[];
+};
 
-/** Max URLs per sitemap shard. Small shards keep each sitemap response cheap in Worker CPU (Free plan: 10 ms). */
-export const SITEMAP_SHARD_SIZE = 10_000;
+export const EXPLORE_FAMILIES: readonly ExploreFamily[] = EXPLORE_CONFIG.families;
 
 export const SITEMAP_INDEX_PATH = "/sitemap-explore.xml";
 /** /sitemap-x-{family}-{shard}.xml — deliberately not matching any existing sitemap writer's patterns. */
@@ -60,3 +52,8 @@ export function isExplorePath(pathname: string): boolean {
   const lower = pathname.toLowerCase().replace(/\/+$/, "") || "/";
   return familyForPath(lower) !== null;
 }
+
+/** R2 object key of a page record. /place/koshi → explore/v1/pages/place/koshi.json */
+export const pageKey = (path: string) => `${EXPLORE_CONFIG.storage_prefix}/pages${path}.json`;
+/** R2 object key of a prebuilt sitemap file. */
+export const sitemapKey = (file: string) => `${EXPLORE_CONFIG.storage_prefix}/sitemaps/${file}`;
