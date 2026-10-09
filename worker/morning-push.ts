@@ -129,6 +129,6 @@ export async function dispatchMorningPush(env: Env, limit = 32, now = Date.now()
         .bind(row.device_id, attempts, attempts >= 5 ? nextNepalMorning(now) : new Date(now + Math.min(3600, 60 * 2 ** attempts) * 1000).toISOString()).run(); failed++;
     }
   }
-  for(let offset=0;offset<rows.results.length;offset+=8)await Promise.all(rows.results.slice(offset,offset+8).map(send));
+  for(let offset=0;offset<rows.results.length;offset+=4)await Promise.all(rows.results.slice(offset,offset+4).map(send));
   return { ok: true, sent, failed, processed: rows.results.length };
 }
