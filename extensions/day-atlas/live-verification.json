@@ -1,0 +1,210 @@
+{
+  "verifiedAt": "2026-10-09T22:44:03.633728+00:00",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 22259
+    },
+    {
+      "path": "/tools",
+      "status": 200,
+      "bytes": 25176
+    },
+    {
+      "path": "/convert",
+      "status": 200,
+      "bytes": 16946
+    },
+    {
+      "path": "/tools/astro",
+      "status": 200,
+      "bytes": 16889
+    },
+    {
+      "path": "/time-machine",
+      "status": 200,
+      "bytes": 14856
+    },
+    {
+      "path": "/on-this-day",
+      "status": 200,
+      "bytes": 14991
+    },
+    {
+      "path": "/samudaya",
+      "status": 200,
+      "bytes": 15481
+    },
+    {
+      "path": "/fm",
+      "status": 200,
+      "bytes": 14716
+    },
+    {
+      "path": "/tv",
+      "status": 200,
+      "bytes": 14353
+    },
+    {
+      "path": "/samachar",
+      "status": 200,
+      "bytes": 18571
+    },
+    {
+      "path": "/janmapatro",
+      "status": 200,
+      "bytes": 15133
+    },
+    {
+      "path": "/festivals",
+      "status": 200,
+      "bytes": 19260
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "bytes": 2476
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "bytes": 11310
+    },
+    {
+      "path": "/date/1940-01-01",
+      "status": 200,
+      "bytes": 14411
+    },
+    {
+      "path": "/date/1995-03-12",
+      "status": 200,
+      "bytes": 14377
+    },
+    {
+      "path": "/date/2026-10-10",
+      "status": 200,
+      "bytes": 14069
+    },
+    {
+      "path": "/date/2029-10-10",
+      "status": 200,
+      "bytes": 14143
+    },
+    {
+      "path": "/atlas/",
+      "status": 200,
+      "bytes": 9860
+    },
+    {
+      "path": "/atlas/dictionary",
+      "status": 200,
+      "bytes": 5155
+    },
+    {
+      "path": "/atlas/publishers",
+      "status": 200,
+      "bytes": 4439
+    },
+    {
+      "path": "/atlas/widget/tokyo",
+      "status": 200,
+      "bytes": 583
+    },
+    {
+      "path": "/atlas/kathmandu/1927-10-09",
+      "status": 200,
+      "bytes": 7905
+    },
+    {
+      "path": "/atlas/kathmandu/2037-04-13",
+      "status": 200,
+      "bytes": 7915
+    },
+    {
+      "path": "/atlas/kathmandu/2026-10-10",
+      "status": 200,
+      "bytes": 8031
+    },
+    {
+      "path": "/atlas/tokyo/2026-10-10",
+      "status": 200,
+      "bytes": 7886
+    },
+    {
+      "path": "/atlas/tokyo/1931-10-09",
+      "status": 200,
+      "bytes": 8089
+    },
+    {
+      "path": "/atlas/tokyo/2025-10-10",
+      "status": 200,
+      "bytes": 7823
+    },
+    {
+      "path": "/atlas/tokyo/2029-10-10",
+      "status": 200,
+      "bytes": 7801
+    },
+    {
+      "path": "/atlas/tokyo/2029-10-11",
+      "status": 200,
+      "bytes": 7807
+    },
+    {
+      "path": "/atlas/new-york/2026-03-08",
+      "status": 200,
+      "bytes": 7897
+    },
+    {
+      "path": "/atlas/tokyo/2026-10-10/calendar.ics",
+      "status": 200,
+      "bytes": 461
+    },
+    {
+      "path": "/atlas/tokyo/2026-10-10/data.csv",
+      "status": 200,
+      "bytes": 653
+    },
+    {
+      "path": "/atlas/sydney/tithi-calendar/2026.ics",
+      "status": 200,
+      "bytes": 17957
+    },
+    {
+      "path": "/sitemap-atlas.xml",
+      "status": 200,
+      "bytes": 7884
+    },
+    {
+      "path": "/sitemap-atlas-0.xml",
+      "status": 200,
+      "bytes": 71107
+    },
+    {
+      "path": "/sitemap-atlas-104.xml",
+      "status": 200,
+      "bytes": 26705
+    },
+    {
+      "path": "/sitemap-atlas-1999.xml",
+      "status": 410,
+      "bytes": 21
+    },
+    {
+      "path": "/atlas/fake/2026-10-10",
+      "status": 404,
+      "bytes": 14
+    },
+    {
+      "path": "/atlas/kathmandu/2026-02-29",
+      "status": 404,
+      "bytes": 14
+    }
+  ],
+  "mainSitemapEntries": 103,
+  "atlasSitemaps": 105,
+  "atlasSitemapUrls": 104429,
+  "coreRoutesByteIdentical": 14,
+  "passed": true
+}
