@@ -26,3 +26,7 @@
 .ap-install-copy-result{font-size:.9rem}
 .ap-install-dialog button:focus-visible,.ap-install-dialog a:focus-visible,.ap-install-site-link:focus-visible{outline:3px solid var(--ap-green,#176f3b);outline-offset:2px}
 @media(max-width:480px){.ap-install-overlay{align-items:flex-end;padding:0}.ap-install-dialog{width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 14px);padding:20px 18px calc(20px + env(safe-area-inset-bottom));border-radius:20px 20px 0 0}}
+
+/* Illustrated Aafnai identity for the PWA installation notice. */
+.ap-install-mark{background:transparent;color:inherit;overflow:hidden}
+.ap-install-mark img{display:block;width:100%;height:100%;object-fit:contain}
