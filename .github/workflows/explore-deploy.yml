@@ -1,0 +1,130 @@
+name: Explore pages to R2
+
+# Manual only: builds every enabled explore family and syncs it to R2 under explore/v1/ in the ARCHIVE bucket.
+# Touches nothing else in the bucket and never deploys the Worker.
+on:
+  workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: "Allow the total page count to drop by more than 20% (deletes pages)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: explore-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.git || secrets.GIT || secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
+      CF_CACHE_AUTO_PROVISION: '0'
+      # Optional R2 S3 API keys (R2 → Manage API tokens). Needed above 5,000 objects; small families upload with Wrangler.
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      PREFIX: explore/v1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install
+        run: npm install --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+
+      - name: Explore contract tests
+        run: npm run test:explore
+
+      - name: Resolve ARCHIVE R2 bucket
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then echo '::error::Cloudflare credentials are required.'; exit 1; fi
+          node scripts/prepare-cloudflare-config.mjs
+          node --input-type=module -e "
+            import { readFileSync, writeFileSync } from 'node:fs';
+            const row = JSON.parse(readFileSync('wrangler.generated.jsonc','utf8')).r2_buckets?.find(x => x.binding === 'ARCHIVE');
+            if (!row?.bucket_name) throw new Error('ARCHIVE R2 bucket could not be resolved');
+            writeFileSync('/tmp/r2-bucket', row.bucket_name); console.log('ARCHIVE bucket=' + row.bucket_name);"
+
+      - name: Build pages and sitemaps
+        run: npm run explore:build -- --out .cloudflare/explore
+
+      - name: Shrink guard
+        run: |
+          set -euo pipefail
+          bucket="$(cat /tmp/r2-bucket)"
+          if npx wrangler r2 object get "${bucket}/${PREFIX}/manifest.json" --file /tmp/prev-manifest.json --remote >/dev/null 2>&1; then
+            prev="$(node -p "require('/tmp/prev-manifest.json').totals.pages")"
+          else
+            prev=0
+          fi
+          next="$(node -p "require('./.cloudflare/explore/manifest.json').totals.pages")"
+          echo "Previous pages: ${prev}; new pages: ${next}"
+          echo "PREV_PAGES=${prev}" >> "$GITHUB_ENV"
+          if [[ "${prev}" -gt 0 && $(( next * 100 )) -lt $(( prev * 80 )) && "${{ inputs.allow_shrink }}" != "true" ]]; then
+            echo "::error::Page count would drop from ${prev} to ${next} (>20%). Re-run with allow_shrink if intended."
+            exit 1
+          fi
+
+      - name: Upload with rclone (S3 API, incremental)
+        if: env.R2_ACCESS_KEY_ID != '' && env.R2_SECRET_ACCESS_KEY != ''
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: 'true'
+        run: |
+          set -euo pipefail
+          curl -fsSL https://rclone.org/install.sh | sudo bash >/dev/null
+          bucket="$(cat /tmp/r2-bucket)"
+          if [[ "${{ inputs.allow_shrink }}" == "true" ]]; then max_delete=-1; else max_delete=$(( PREV_PAGES / 5 + 100 )); fi
+          # Only unchanged-checksum files are skipped; only paths under explore/v1/ are ever written or deleted.
+          rclone sync .cloudflare/explore/pages "r2:${bucket}/${PREFIX}/pages" --checksum --fast-list --transfers 64 --checkers 64 \
+            --max-delete "${max_delete}" --header-upload "Content-Type: application/json; charset=utf-8" --stats 60s --stats-one-line
+          rclone sync .cloudflare/explore/sitemaps "r2:${bucket}/${PREFIX}/sitemaps" --checksum --transfers 16 \
+            --header-upload "Content-Type: application/xml; charset=utf-8"
+          rclone copyto .cloudflare/explore/manifest.json "r2:${bucket}/${PREFIX}/manifest.json" --header-upload "Content-Type: application/json"
+
+      - name: Upload with Wrangler (small families, no S3 keys)
+        if: env.R2_ACCESS_KEY_ID == '' || env.R2_SECRET_ACCESS_KEY == ''
+        run: |
+          set -euo pipefail
+          bucket="$(cat /tmp/r2-bucket)"
+          cd .cloudflare/explore
+          count="$(find pages sitemaps -type f | wc -l)"
+          if [[ "${count}" -gt 5000 ]]; then
+            echo "::error::${count} objects is too many for Wrangler uploads. Add R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY secrets to use rclone."
+            exit 1
+          fi
+          export bucket PREFIX
+          put() {
+            local file="$1" type="application/json"
+            [[ "$file" == *.xml ]] && type="application/xml"
+            for attempt in 1 2 3; do
+              npx wrangler r2 object put "${bucket}/${PREFIX}/${file}" --file "$file" --content-type "$type" --remote --force >/dev/null 2>&1 && return 0
+              sleep $(( attempt * 3 ))
+            done
+            echo "::error::Upload failed: ${file}"; return 1
+          }
+          export -f put
+          find pages sitemaps -type f -print0 | xargs -0 -n 1 -P 8 bash -c 'put "$0"'
+          put manifest.json
+          echo "Uploaded ${count} objects with Wrangler (pages removed from the build are not deleted on this path)."
+
+      - name: Summary
+        if: always()
+        run: |
+          if [[ -f .cloudflare/explore/report.json ]]; then
+            { echo '### Explore build'; echo '```json'; cat .cloudflare/explore/report.json; echo '```';
+              echo 'Submit https://aafnaipatro.com/sitemap-explore.xml in Google Search Console and Bing Webmaster Tools.'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
