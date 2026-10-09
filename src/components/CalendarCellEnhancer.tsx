@@ -1,6 +1,6 @@
 import {homeMonth} from '../home-calendar-client';
 import { useEffect } from "react";
-import { loadWeatherForecast } from "../weather-client";
+import { loadAutomaticWeatherForecast as loadWeatherForecast } from "../weather-client";
 import { adToBs, bsToAd } from "../../packages/core/src";
 import { BS_MONTHS, toNepaliDigits } from "../title";
 

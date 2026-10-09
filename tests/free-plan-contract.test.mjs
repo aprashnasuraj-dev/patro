@@ -6,3 +6,28 @@ test('static history matches old API records for three fixed dates and falls bac
 test('weather direct request shares exact API normalization, storage blocked and upstream fallback work',async()=>{const raw={daily:{time:['2026-10-08'],weather_code:[61],temperature_2m_max:[24],temperature_2m_min:[12],precipitation_probability_max:[80],precipitation_sum:[3]},latitude:27.7,longitude:85.3,timezone:'Asia/Kathmandu'};let calls=[];const client=await runtime('src/weather-client.ts',{sessionStorage:{getItem(){throw Error('blocked');},setItem(){throw Error('blocked');}},fetch:async url=>{calls.push(String(url));return Response.json(raw);}});const got=await client.loadWeatherForecast();const worker=await runtime('worker/weather.ts',{fetch:async()=>Response.json(raw)});const expected=await(await worker.dailyWeatherResponse(new Request('https://x/api/v1/weather/daily'))).json();delete got.generated_at;delete expected.generated_at;assert.equal(JSON.stringify(got),JSON.stringify(expected));assert.match(calls[0],/^https:\/\/api.open-meteo.com/);await client.loadWeatherForecast();assert.equal(calls.length,1);let count=0;const fall=await runtime('src/weather-client.ts',{fetch:async url=>{count++;if(count===1)throw Error('offline');assert.match(url,/^\/api\/v1\/weather/);return Response.json(expected);}});assert.equal((await fall.loadWeatherForecast()).provider,'Open-Meteo');});
 test('pageview sampling keeps heartbeat events exact and weights selected views',async()=>{for(const name of ['analytics','runtime']){const s=await readFile(`public/aap/${name}.js`,'utf8');assert.match(s,/kind==='pv'&&Math.random\(\)>=sample/);assert.match(s,/weight:kind==='pv'\?1\/sample:1/);}const m=await runtime('worker/admin-console/site-config.ts');const cfg=m.normalizeConfig?m.normalizeConfig({}):null;if(cfg){assert.equal(m.runtimePayload(cfg,1,false).sample,0.1);assert.equal(m.runtimePayload(cfg,1,false,{AAP_HIT_SAMPLE:'1'}).sample,1);}});
 test('homepage static calendar preserves original values and live event merge retains both APIs',async()=>{const client=await runtime('src/home-calendar-client.ts',{fetch:async path=>Response.json(JSON.parse(await readFile('public'+path,'utf8')))}),signal=new AbortController().signal,old=JSON.parse(await readFile('public/data/calendar/ad/2026.json','utf8')).rows.find(r=>r.ad==='2026-10-08');assert.equal(JSON.stringify((await client.homeToday('2026-10-08',signal)).panchang),JSON.stringify(old.panchang));const month=await client.homeMonth(2083,6,signal);assert.equal(month.days.length,31);assert.equal(month.days.find(r=>r.ad===old.ad).panchang.tithi.number,old.panchang.tithi.number);let paths=[];const fallback=await runtime('src/home-calendar-client.ts',{fetch:async p=>{paths.push(p);return p.includes('/events?')?new Response('',{status:404}):Response.json({items:[{id:p}]});}});assert.equal((await fallback.homeEvents(2026,signal)).items.length,2);assert.ok(paths.some(p=>p.startsWith('/api/v1/festivals')));assert.ok(paths.some(p=>p.startsWith('/api/v1/holidays')));});
+
+test('automatic weather uses request area globally without GPS and never caches one visitor location for another',async()=>{
+ const worker=await runtime('worker/weather.ts');
+ const request=cf=>{const r=new Request('https://aafnaipatro.com/api/v1/weather/location');Object.defineProperty(r,'cf',{value:cf});return r;};
+ const nepal=worker.weatherLocationResponse(request({latitude:'28.2096',longitude:'83.9856',city:'Pokhara',country:'NP',timezone:'Asia/Kathmandu'}));
+ assert.equal(nepal.headers.get('cache-control'),'private, no-store');
+ const a=await nepal.json();assert.equal(a.latitude,28.2);assert.equal(a.longitude,84);assert.equal(a.label,'Pokhara, NP');
+ const abroad=await worker.weatherLocationResponse(request({latitude:'-33.8688',longitude:'151.2093',city:'Sydney',country:'AU',timezone:'Australia/Sydney'})).json();
+ assert.equal(abroad.latitude,-33.9);assert.equal(abroad.timezone,'Australia/Sydney');assert.equal(abroad.label,'Sydney, AU');
+ for(const cf of [undefined,{latitude:'',longitude:''},{latitude:'NaN',longitude:'85'},{latitude:'91',longitude:'85'}])assert.equal(worker.weatherLocationResponse(request(cf)).status,503);
+ let calls=[];
+ const client=await runtime('src/weather-client.ts',{fetch:async(url,options)=>{
+  calls.push(String(url));
+  if(String(url).includes('/weather/location')){assert.equal(options.cache,'no-store');return Response.json(abroad);}
+  const u=new URL(url);assert.equal(u.searchParams.get('timezone'),'Australia/Sydney');assert.equal(u.searchParams.get('latitude'),'-33.9');
+  return Response.json({latitude:-33.9,longitude:151.2,timezone:'Australia/Sydney',daily:{time:['2026-10-09'],weather_code:[0],temperature_2m_max:[22],temperature_2m_min:[13]}});
+ }});
+ const [x,y]=await Promise.all([client.loadAutomaticWeatherForecast(),client.loadAutomaticWeatherForecast()]);
+ assert.equal(x.location.label,'Sydney, AU');assert.equal(y.timezone,'Australia/Sydney');assert.equal(calls.length,2);
+ const unknown=await runtime('src/weather-client.ts',{fetch:async()=>new Response('',{status:503})});
+ await assert.rejects(unknown.loadAutomaticWeatherForecast(),/location_unavailable/);
+ let upstreamCalls=0;const bad=await runtime('worker/weather.ts',{fetch:async()=>{upstreamCalls++;return Response.json({});}});
+ assert.equal((await bad.dailyWeatherResponse(new Request('https://x/api/v1/weather/daily?timezone=invalid-zone'))).status,400);assert.equal(upstreamCalls,0);
+ const home=await readFile('src/components/HomeWeather.tsx','utf8');assert.ok(!home.includes('<select')&&!home.includes('localStorage')&&!home.includes('geolocation'));
+});

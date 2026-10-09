@@ -7,7 +7,7 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "aafnai-pwa-v16";
+const SW_REVISION = "aafnai-pwa-v17";
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [

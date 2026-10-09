@@ -10,6 +10,7 @@ import vm from "node:vm";
 import { build } from "esbuild";
 const dir=mkdtempSync(resolve(tmpdir(),"patro-morning-test-"));
 async function load(file){const out=resolve(dir,file.split("/").at(-1)+".mjs");await build({entryPoints:[file],outfile:out,bundle:true,platform:"node",format:"esm",logLevel:"silent"});return import(pathToFileURL(out));}
+const auth=await load("worker/auth.ts");
 const message=await load("lib/morning-message.ts"),conversion=await load("worker/conversion-page.ts"),push=await load("worker/morning-push.ts");
 const clientMorning=await load("src/localMorning.ts");
 const origin="https://aafnaipatro.com";
@@ -30,7 +31,7 @@ test("declined permission is remembered; startup and reload scheduling never ask
  for(const name of names)backups.set(name,Object.getOwnPropertyDescriptor(globalThis,name));
  let requests=0;
  const notification={permission:"default",async requestPermission(){requests++;return "default"}};
- const globals={window:{Notification:notification},Notification:notification,navigator:{serviceWorker:{}},localStorage:{getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v)},document:{addEventListener(){},visibilityState:"visible"}};
+ const globals={window:{Notification:notification,addEventListener(){}},Notification:notification,navigator:{serviceWorker:{}},localStorage:{getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v)},document:{addEventListener(){},visibilityState:"visible"}};
  for(const name of names)Object.defineProperty(globalThis,name,{value:globals[name],configurable:true});
  try{
   assert.equal(clientMorning.morningOfferSeen(),false);
@@ -60,12 +61,26 @@ test("guest push is consented, device-authorized, encrypted, recurring and dedup
  const request=(b,method="POST")=>new Request(origin+"/api/push/morning",{method,headers:{origin,"content-type":"application/json"},body:JSON.stringify(b)});
  assert.equal((await push.morningPushResponse(request({...body,consent:false}),env)).status,400);
  assert.equal((await push.morningPushResponse(request(body),env)).status,200);
+ assert.equal(DB.raw.prepare("SELECT display_name FROM morning_subscriptions").get().display_name, "", "guests cannot supply a personalized name");
  assert.equal((await push.morningPushResponse(request({...body,device_secret:"x".repeat(40)}),env)).status,403);
  assert.equal((await push.morningPushResponse(request({...body,subscription:{...body.subscription,endpoint:"https://127.0.0.1/private"}}),env)).status,400);
+ await auth.ensureAuthSchema(env);
+ const sessionToken="signed-in-session-token";
+ DB.raw.prepare("INSERT INTO app_users(id,provider,provider_subject,display_name) VALUES('user1','google','subject1','सुरज')").run();
+ DB.raw.prepare("INSERT INTO auth_sessions(id,user_id,token_hash,expires_at) VALUES('session1','user1',?,?)").run(await auth.sha256(sessionToken),"2099-01-01T00:00:00.000Z");
+ const signedRequest=request({...body,name:"forged-name"}); signedRequest.headers.set("cookie",`mp_session=${sessionToken}`);
+ assert.equal((await push.morningPushResponse(signedRequest,env)).status,200);
+ assert.equal(DB.raw.prepare("SELECT display_name FROM morning_subscriptions").get().display_name,"सुरज","name must come from the authenticated profile");
+ assert.equal(DB.raw.prepare("SELECT account_session_id FROM morning_subscriptions").get().account_session_id,"session1");
  DB.raw.prepare("UPDATE morning_subscriptions SET next_due_at=?").run("2026-10-07T00:15:00.000Z");
  const previous=globalThis.fetch;let sends=0;
  globalThis.fetch=async(url,options)=>{assert.equal(url,body.subscription.endpoint);assert.equal(options.redirect,"error");assert.ok(options.body);sends++;return new Response(null,{status:201})};
  try{assert.equal((await push.dispatchMorningPush(env,200,Date.parse("2026-10-07T00:15:00Z"))).sent,1);assert.equal((await push.dispatchMorningPush(env,200,Date.parse("2026-10-07T00:20:00Z"))).sent,0);assert.equal(sends,1);assert.equal(DB.raw.prepare("SELECT next_due_at FROM morning_subscriptions").get().next_due_at,"2026-10-08T00:15:00.000Z");}finally{globalThis.fetch=previous;}
+ DB.raw.prepare("DELETE FROM auth_sessions WHERE id='session1'").run();
+ const loggedOutRequest=request(body); loggedOutRequest.headers.set("cookie",`mp_session=${sessionToken}`);
+ assert.equal((await push.morningPushResponse(loggedOutRequest,env)).status,200);
+ const guestAgain=DB.raw.prepare("SELECT display_name,account_session_id FROM morning_subscriptions").get();
+ assert.equal(guestAgain.display_name,"");assert.equal(guestAgain.account_session_id,null,"logged-out devices return to nameless greetings");
  assert.equal((await push.morningPushResponse(request(body,"DELETE"),env)).status,200);assert.equal(DB.raw.prepare("SELECT count(*) c FROM morning_subscriptions").get().c,0);
 });
 test("service worker accepts push and preserves personal config across updates",()=>{

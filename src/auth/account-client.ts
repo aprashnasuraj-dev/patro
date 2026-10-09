@@ -54,6 +54,7 @@ export function initializeAccount(){
   });
   return initialized;
 }
+export function getAccountSnapshot(){ return user; }
 export function useAccount(){
   useEffect(()=>{void initializeAccount();},[]);
   return useSyncExternalStore(listener=>{listeners.add(listener);return()=>listeners.delete(listener)},()=>user,()=>null);

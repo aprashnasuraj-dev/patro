@@ -169,7 +169,7 @@ export function PwaInstallExperience(){
         <span className="ap-install-mark" aria-hidden="true">आ</span>
         <span className="ap-install-copy">
           <strong>आफ्नै पात्रो एप राख्नुहोस्</strong>
-          <span className="ap-install-description">अफलाइन पात्रो र हरेक बिहान ६ बजे शुभ प्रभात सूचनाका लागि इन्स्टल गर्नुहोस्।</span>
+          <span className="ap-install-description">अफलाइन पात्रो र उपयोगी उपकरणका लागि इन्स्टल गर्नुहोस्।</span>
           {installStatus?<small className="ap-install-feedback">{installStatus}</small>:null}
         </span>
       </button>
