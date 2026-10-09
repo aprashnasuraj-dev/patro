@@ -130,6 +130,34 @@ describe('Nepali copula versus six in dictation', () => {
     }
     expect(postProcessDictation('आज meeting छ पूर्ण विराम',{spokenNumbers:true})).toBe('आज meeting छ।');
   });
+  it('repairs dictated copula छ without rewriting actual numeric sixes', () => {
+    const examples: [string, string][] = [
+      ['उन बाध्य ६', 'उन बाध्य छ'],
+      ['म बाध्य 6.', 'म बाध्य छ.'],
+      ['आज मौसम राम्रो ६।', 'आज मौसम राम्रो छ।'],
+      ['आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य ६.', 'आजको युवाको प्रश्नको उत्तर दिने सामर्थ्य छ.'],
+      ['म घरमा ६।', 'म घरमा छ।'],
+      ['आज मौसम राम्रो ६। भोलि बादल छ।', 'आज मौसम राम्रो छ। भोलि बादल छ।'],
+      ['उत्तर ६.', 'उत्तर ६.'],
+      ['यो संख्या ६.', 'यो संख्या ६.'],
+      ['मेरो उमेर ६.', 'मेरो उमेर ६.'],
+      ['मसँग ६', 'मसँग ६'],
+      ['६', '६'],
+      ['६.', '६.'],
+      ['आज ६.', 'आज ६.'],
+      ['५ र ६', '५ र ६'],
+      ['कोड ६', 'कोड ६'],
+      ['६ बजे', '६ बजे'],
+      ['६ वटा', '६ वटा'],
+      ['२०७६', '२०७६'],
+      ['6.5', '६.५'],
+    ];
+    for (const [spoken, expected] of examples) {
+      for (const spokenNumbers of [false, true]) {
+        expect(postProcessDictation(spoken, { spokenNumbers })).toBe(expected);
+      }
+    }
+  });
   it('keeps numeric six in explicit quantities, clocks and compounds', () => {
     for (const [raw,want] of [['छ बजे','६ बजे'],['छ वटा','६ वटा'],['छ हजार','६०००'],['छ','६'],['आज 6 गते हो','आज ६ गते हो'],['उत्तर 6.','उत्तर ६.']]) expect(postProcessDictation(raw,{spokenNumbers:true})).toBe(want);
     expect(postProcessDictation('Capacity 6.',{language:'en-US',spokenNumbers:true})).toBe('Capacity 6.');
