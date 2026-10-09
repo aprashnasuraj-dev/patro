@@ -60,7 +60,7 @@ export function PatroBotTool() {
     <ToolPage title="आफ्नै Bot" description="मिति, तिथि, चाडपर्व, मिति रूपान्तरण र पात्रोसम्बन्धी छोटा प्रश्नको छिटो सहायक।">
       <section className="patro-tool-card">
         <div className="bot-chat" aria-live="polite">
-          {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? "आफ्नै Bot" : "तपाईं"}</small><p>{row.text}</p></div>)}
+          {rows.map((row) => <div className={"bot-bubble " + row.role} key={row.id}><small>{row.role === "bot" ? <><img src="/aafnai-logo.png" alt="" width="22" height="22" loading="lazy" style={{ verticalAlign: "middle", marginRight: 6 }} />आफ्नै Bot</> : "तपाईं"}</small><p>{row.text}</p></div>)}
         </div>
         <form className="bot-input bot-input-with-voice" onSubmit={send}>
           <input value={input} onChange={(e) => { setInput(e.target.value); spokenText.current = e.target.value; }} maxLength={300} placeholder="आज, भोलि, दशैं कहिले…" aria-label="आफ्नै Bot प्रश्न" />

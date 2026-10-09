@@ -1,5 +1,5 @@
-const VERSION = "aafnai-pwa-v18";
-const SHELL_CACHE = "aafnai-shell-v13";
+const VERSION = "aafnai-pwa-v19";
+const SHELL_CACHE = "aafnai-shell-v14";
 const CALENDAR_CACHE = "aafnai-calendar-v4";
 const PUBLIC_DATA_CACHE = "aafnai-public-data-v4";
 const LOCAL_CONFIG_CACHE = "aafnai-local-config-v1";
@@ -16,7 +16,7 @@ const CORE = [
   "/", "/today", "/tools", "/convert", "/rashifal", "/time-machine", "/on-this-day", "/samachar", "/fm", "/tv",
   "/tools/astro", "/tools/nepali-typing", "/tools/preeti-converter",
   "/samudaya", "/nepal-sambat/mandala", "/samudaya/lhosar", "/samudaya/tharu", "/samudaya/mithila", "/samudaya/kirat", "/samudaya/hijri", "/samudaya/chakra",
-  "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png"
+  "/manifest.webmanifest", "/favicon.svg", "/icon-192.png", "/icon-512.png", "/maskable-512.png", "/apple-touch-icon.png"
 ];
 const INSTALL_CORE = ["/", "/today", "/manifest.webmanifest", "/favicon.svg"];
 const LANGUAGE_TOOL_ASSETS = [

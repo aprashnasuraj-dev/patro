@@ -7,8 +7,8 @@ const OFFLINE_MODULE_LOADERS = [
   () => import("./components/MyDiary"),
 ];
 
-const SW_REVISION = "aafnai-pwa-v18";
-const ACTIVE_RUNTIME_CACHES = new Set(["aafnai-shell-v13", "aafnai-calendar-v4", "aafnai-public-data-v4"]);
+const SW_REVISION = "aafnai-pwa-v19";
+const ACTIVE_RUNTIME_CACHES = new Set(["aafnai-shell-v14", "aafnai-calendar-v4", "aafnai-public-data-v4"]);
 const CACHE_EPOCH_KEY = "patro.runtime.cache-epoch";
 const RELOAD_EPOCH_KEY = "patro.runtime.controller-epoch";
 const STALE_CACHE_PREFIXES = [
