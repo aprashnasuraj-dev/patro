@@ -49,7 +49,8 @@ jobs:
           set -uo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then echo '::error::Cloudflare credentials are required.'; exit 1; fi
           if ! out="$(node scripts/prepare-cloudflare-config.mjs 2>&1)"; then
-            echo "::error::prepare-cloudflare-config failed: $(echo "$out" | tail -3 | tr '\n' ' ')"; exit 1
+            echo "$out" | grep -E "Error|error|at file" | head -6 | while IFS= read -r line; do echo "::error::config: ${line}"; done
+            exit 1
           fi
           echo "$out"
           bucket="$(node -e "const c=JSON.parse(require('fs').readFileSync('wrangler.generated.jsonc','utf8'));const r=(c.r2_buckets||[]).find(x=>x.binding==='ARCHIVE');process.stdout.write(r&&r.bucket_name||'')")"
