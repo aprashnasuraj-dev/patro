@@ -3,9 +3,9 @@
 ## User behavior
 
 - Every supported browser surface offers installation after the calendar paints. Recent install dismissals are respected; Safari receives Add to Home Screen instructions.
-- Morning greetings are part of PWA installation, with no separate subscription offer or account requirement. The browser notification permission prompt supplies consent. Platforms requiring a fresh gesture show an installation-completion action. Decline and disable choices are remembered; reloads never repeatedly request permission.
-- Homepage controls remain visible for changing the greeting name, enabling notifications after a decline, or turning them off.
-- Optional display name personalizes the greeting. At 06:00 Asia/Kathmandu the server reads that day's validated calendar and festival index, then sends BS date, weekday, available Tithi and up to three recorded events, ending with “शुभ दिन।”
+- Morning greetings are part of PWA installation, with no separate subscription offer or account requirement. The browser notification permission prompt supplies consent. Platforms requiring a fresh gesture can be enabled from settings. Decline and disable choices are remembered; reloads never repeatedly request permission.
+- Settings controls allow enabling notifications after a decline or turning them off; no greeting card appears on the homepage.
+- Only a signed-in profile personalizes the greeting; guests receive nameless greetings. At 06:00 Asia/Kathmandu the server reads that day's validated calendar and festival index, then sends BS date, weekday, available Tithi and up to three recorded events, ending with “शुभ दिन।”
 - The five-minute cron processes up to 32 due devices per tick with four concurrent sends. Morning and existing reminder delivery share a 40-send external-request budget per invocation, with reserved headroom; notification throughput must be measured before mass promotion. Indexed due timestamps avoid scanning all users; claims prevent overlapping sends. Successful sends advance to the next day; expired endpoints are deleted and transient failures use bounded exponential retries. The service worker uses a date-specific notification tag.
 - Delivery requires permission, a functioning push provider/network and OS support. On iPhone/iPad use the installed Home Screen app. OS delivery timing is outside the site's control. Unsupported push browsers use the local foreground fallback; there is no promise of closed-app delivery there.
 
@@ -13,7 +13,7 @@
 
 The existing validated main release applies D1 schema migration `0004_morning_push.sql` and provisions VAPID secrets before deploying. `scripts/cloudflare/ensure-push-secrets.mjs` lists secret names only, creates a persistent key pair only if both keys are absent, and preserves existing pairs. Incomplete pairs fail explicitly rather than silently rotating subscriptions. Cloudflare credentials need Workers edit and D1 migration permissions.
 
-Guest subscriptions are scoped to an unguessable device secret stored locally; only its hash is stored remotely. Subscription POST/DELETE requests require the same origin. Known HTTPS push-provider endpoints and subscription keys are validated, and subscription writes are rate limited. Display names are optional and used only in greetings. The API and private data are never added to the offline cache.
+Guest subscriptions are scoped to an unguessable device secret stored locally; only its hash is stored remotely. Subscription POST/DELETE requests require the same origin. Known HTTPS push-provider endpoints and subscription keys are validated, and subscription writes are rate limited. Personalized names come from a valid account session and are used only in greetings. The API and private data are never added to the offline cache.
 
 ## Offline behavior
 
@@ -30,3 +30,12 @@ Festival runtime and static fallback pages add Schema.org Event objects for actu
 Run `npm run build`, `npm run test:morning`, `npm run test:core`, `npm run test:release-safety`, and the Worker dry run. The morning tests use real SQLite and encrypted push construction with a mocked provider to verify ownership, consent, deduplication, recurrence, conversion validity, offline Tithi/month data and notification receipt. The browser gate `scripts/check-pwa-install-ui.cjs` checks one permission request and no repeated offer after decline/reload.
 
 For a real-device acceptance test, install, grant the browser permission, inspect the next morning greeting, open its date link, turn off notifications and confirm subsequent delivery stops. Real provider/device delivery cannot be proven by the mocked test.
+
+
+## Homepage follow-up
+
+Morning greetings remain part of installation and run in the background, subject to browser notification permission. The homepage has no morning greeting card, name field, status banner, or 6 AM install sales copy. Enable/disable controls live at `/me/settings`, accessible to guests. A browser that rejects an installation-time permission request can be enabled later from settings.
+
+Guest greetings are nameless. Personalized greetings use the authenticated profile, never a manually supplied name. The subscription stores the associated session ID; dispatch joins the account profile only while that session remains valid. Logout or expiry therefore produces a nameless greeting even if the application is closed. Account changes and reconnects synchronize local foreground greetings and the current push subscription. Existing guest-entered names are ignored at delivery.
+
+The idempotent Worker schema upgrade adds `account_session_id` to existing morning subscriptions. No personal calendar, note, reminder or push endpoint data is deleted. The updated homepage shows the sourced Nepal Sambat year in each populated day cell and uses a restrained cream/white/green palette with separate dark-mode colors.

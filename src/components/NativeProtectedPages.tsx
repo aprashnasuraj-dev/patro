@@ -1,3 +1,4 @@
+import { MorningGreetingCard } from "./MorningGreetingCard";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
 async function requestJson(path:string,init:RequestInit={}){
@@ -75,7 +76,7 @@ export function NotificationSettingsPage(){
 export function HolidaySettingsPage(){
   const year=new Date().getFullYear();const [items,setItems]=useState<any[]>([]),[status,setStatus]=useState("");
   useEffect(()=>{requestJson("/api/v1/holidays?year="+year).then(body=>setItems(body.items||body.holidays||[])).catch(e=>setStatus(friendlyError(e,"बिदा सूची अहिले लोड हुन सकेन।")))},[year]);
-  return <main className="mp-page"><section className="mp-page-hero"><p className="eyebrow">बिदा र प्राथमिकता</p><h1>बिदा सेटिङ</h1><p>राष्ट्रिय तथा उपलब्ध स्थानीय बिदा हेर्नुहोस् र आफ्नो पात्रो अनुभव मिलाउनुहोस्।</p></section><section className="mp-card"><div className="mp-native-list">{items.map((h:any)=><article key={h.id||h.ad_date+h.name_ne}><strong>{h.name_ne||h.name_en}</strong><small>{h.ad_date} · {h.scope_type||"राष्ट्रिय"}</small></article>)}</div>{status&&<p>{status}</p>}</section></main>;
+  return <main className="mp-page"><section className="mp-page-hero"><p className="eyebrow">बिदा र प्राथमिकता</p><h1>सेटिङ</h1><p>राष्ट्रिय तथा उपलब्ध स्थानीय बिदा हेर्नुहोस् र आफ्नो पात्रो अनुभव मिलाउनुहोस्।</p></section><MorningGreetingCard/><section className="mp-card"><div className="mp-native-list">{items.map((h:any)=><article key={h.id||h.ad_date+h.name_ne}><strong>{h.name_ne||h.name_en}</strong><small>{h.ad_date} · {h.scope_type||"राष्ट्रिय"}</small></article>)}</div>{status&&<p>{status}</p>}</section></main>;
 }
 
 export function DevelopersPage(){

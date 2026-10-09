@@ -3,7 +3,7 @@
    the container uses .rh-grid .rh-cell.pc-cell to outrank earlier .rh-cell overrides. */
 .rh-grid .rh-cell.pc-cell {
   display: grid !important;
-  grid-template-rows: auto 1fr auto auto;
+  grid-template-rows: auto 1fr auto auto auto;
   align-items: center;
   justify-items: center;
   gap: 2px !important;
@@ -66,7 +66,7 @@
    ("बछला ७") at the 13px minimum; festivals become a dot, details show in the selected-day panel. */
 @media (max-width: 640px) {
   .rh-grid .rh-cell.pc-cell {
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto auto auto;
     min-height: 100px !important;
     padding: 4px 1px 5px !important;
     position: relative;
@@ -87,4 +87,13 @@
     background: var(--ap-marigold, #b7791f);
   }
   .pc-dot.is-holiday { background: var(--ap-red, #c0392b); }
+}
+
+/* A separate compact year line keeps Nepal Sambat explicit on narrow screens. */
+.pc-ns-year { font-size: 11px; font-weight: 650; line-height: 1.25; color: var(--ap-muted, #5d6b63); white-space: nowrap; }
+.pc-ns-year:empty { display: none; }
+
+@media (max-width: 640px) {
+  .rh-grid .rh-cell.pc-cell { min-height: 116px !important; }
+  .pc-ns-year { white-space: normal; font-size: 12px; max-width: 100%; }
 }

@@ -1,5 +1,5 @@
 import { buildPushPayload, type PushSubscription } from "@block65/webcrypto-web-push";
-import { parseBody, sha256 } from "./auth";
+import { currentSession, ensureAuthSchema, parseBody, sha256 } from "./auth";
 import { loadCalendarShard, type CalendarArchiveEnv } from "./calendar-archive";
 import { morningMessage, nextNepalMorning } from "../lib/morning-message";
 import type { PushEnv } from "./push";
@@ -26,6 +26,11 @@ async function ensureMorningSchema(env: Env) {
 );
 CREATE INDEX IF NOT EXISTS morning_push_due_idx ON morning_subscriptions(next_due_at);`.split(";").map(s => s.trim()).filter(Boolean);
       for (const statement of statements) await env.DB.prepare(statement).bind().run();
+      const columns = await env.DB.prepare("PRAGMA table_info(morning_subscriptions)").bind().all();
+      if (!columns.results?.some((column: any) => column.name === "account_session_id")) {
+        try { await env.DB.prepare("ALTER TABLE morning_subscriptions ADD COLUMN account_session_id TEXT").bind().run(); }
+        catch (error) { if (!/duplicate column/i.test(String(error))) throw error; }
+      }
       await env.DB.prepare("CREATE TABLE IF NOT EXISTS runtime_rate_buckets (scope TEXT NOT NULL,key_hash TEXT NOT NULL,window_start INTEGER NOT NULL,count INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(scope,key_hash,window_start))").bind().run();
     })().catch(error => { schemaReady.delete(env.DB); throw error; });
     schemaReady.set(env.DB, ready);
@@ -67,10 +72,11 @@ export async function morningPushResponse(request: Request, env: Env): Promise<R
   if (body.consent !== true || !validPushEndpoint(String(body.subscription?.endpoint || "")) || !validKeys(body.subscription?.keys)) return json({ error: "invalid_subscription_or_consent" }, 400);
   const endpointOwner = await env.DB.prepare("SELECT device_id FROM morning_subscriptions WHERE endpoint=?1").bind(body.subscription.endpoint).first();
   if (endpointOwner && endpointOwner.device_id !== body.device_id) return json({ error: "subscription_owned_by_another_device" }, 409);
-  const name = String(body.name || "").replace(/[\p{Cc}\p{Cf}]/gu, "").trim().slice(0, 80);
+  const session = /(?:^|;\s*)mp_session=/.test(request.headers.get("cookie") || "") ? await currentSession(request, env) : null;
+  const name = String(session?.display_name || "").replace(/[\p{Cc}\p{Cf}]/gu, "").trim().slice(0, 80);
   // An upsert updates the user's preference without delaying an already-due greeting.
-  await env.DB.prepare("INSERT INTO morning_subscriptions(device_id,secret_hash,endpoint,keys,display_name,next_due_at) VALUES(?1,?2,?3,?4,?5,?6) ON CONFLICT(device_id) DO UPDATE SET endpoint=excluded.endpoint,keys=excluded.keys,display_name=excluded.display_name")
-    .bind(body.device_id, hash, body.subscription.endpoint, JSON.stringify(body.subscription.keys), name, nextNepalMorning()).run();
+  await env.DB.prepare("INSERT INTO morning_subscriptions(device_id,secret_hash,endpoint,keys,display_name,next_due_at,account_session_id) VALUES(?1,?2,?3,?4,?5,?6,?7) ON CONFLICT(device_id) DO UPDATE SET endpoint=excluded.endpoint,keys=excluded.keys,display_name=excluded.display_name,account_session_id=excluded.account_session_id")
+    .bind(body.device_id, hash, body.subscription.endpoint, JSON.stringify(body.subscription.keys), name, nextNepalMorning(), session?.session_id || null).run();
   return json({ ok: true, time: "06:00", timezone: "Asia/Kathmandu" });
 }
 
@@ -99,8 +105,9 @@ export async function dispatchMorningPush(env: Env, limit = 32, now = Date.now()
   const minutes = clock.getUTCHours() * 60 + clock.getUTCMinutes();
   if (minutes < 360 || minutes >= 720) return { ok: true, sent: 0, skipped: "outside_morning" };
   await ensureMorningSchema(env);
+  await ensureAuthSchema(env);
   const instant = new Date(now).toISOString();
-  const rows = await env.DB.prepare("SELECT * FROM morning_subscriptions WHERE next_due_at<=?1 AND (claim_until IS NULL OR claim_until<=?1) ORDER BY next_due_at LIMIT ?2").bind(instant, Math.min(32, Math.max(1, Math.floor(limit)))).all();
+  const rows = await env.DB.prepare("SELECT m.*,CASE WHEN s.expires_at>?1 THEN u.display_name ELSE '' END AS greeting_name FROM morning_subscriptions m LEFT JOIN auth_sessions s ON s.id=m.account_session_id LEFT JOIN app_users u ON u.id=s.user_id WHERE m.next_due_at<=?1 AND (m.claim_until IS NULL OR m.claim_until<=?1) ORDER BY m.next_due_at LIMIT ?2").bind(instant, Math.min(32, Math.max(1, Math.floor(limit)))).all();
   if (!rows.results?.length) return { ok: true, sent: 0 };
   const facts = await dayFacts(env, date);
   if (!facts) return { ok: false, error: "calendar_unavailable", sent: 0 };
@@ -116,7 +123,7 @@ export async function dispatchMorningPush(env: Env, limit = 32, now = Date.now()
     try {
       if (!validPushEndpoint(row.endpoint)) throw new Error("invalid_endpoint");
       const sub: PushSubscription = { endpoint: row.endpoint, expirationTime: null, keys: JSON.parse(row.keys) };
-      const payload = await buildPushPayload({ data: JSON.stringify(morningMessage(date, facts.day, facts.names, row.display_name)), options: { ttl: 6 * 3600, urgency: "normal" } }, sub, { subject: env.VAPID_SUBJECT, publicKey: env.VAPID_PUBLIC_KEY, privateKey: env.VAPID_PRIVATE_KEY });
+      const payload = await buildPushPayload({ data: JSON.stringify(morningMessage(date, facts.day, facts.names, row.greeting_name || "")), options: { ttl: 6 * 3600, urgency: "normal" } }, sub, { subject: env.VAPID_SUBJECT, publicKey: env.VAPID_PUBLIC_KEY, privateKey: env.VAPID_PRIVATE_KEY });
       const response = await fetch(row.endpoint, { ...payload, redirect: "error", signal: AbortSignal.timeout(8000) });
       if (response.ok) {
         await env.DB.prepare("UPDATE morning_subscriptions SET last_sent_date=?2,next_due_at=?3,attempts=0,claim_until=NULL WHERE device_id=?1").bind(row.device_id, date, nextNepalMorning(now)).run(); sent++;

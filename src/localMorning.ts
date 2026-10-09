@@ -3,6 +3,7 @@ const DEVICE_KEY = "patro.morning.device.v1";
 const OFFER_KEY = "patro.morning.permission-offer.v1";
 type MorningConfig = { enabled: boolean; name: string; mode?: "push" | "local" };
 let timer: number | undefined;
+let schedulerStarted = false;
 export function getLocalMorningGreeting(): MorningConfig {
   try { return { enabled: false, name: "", ...JSON.parse(localStorage.getItem(CONFIG_KEY) || "{}") }; }
   catch { return { enabled: false, name: "" }; }
@@ -28,14 +29,20 @@ function armForeground() {
   const now = Date.now(), today = new Date(now + 345 * 60_000).toISOString().slice(0, 10), due = Date.parse(`${today}T00:15:00Z`);
   timer = window.setTimeout(() => { void post("CHECK_MORNING").catch(() => undefined); armForeground(); }, (due > now ? due : due + 86400000) - now);
 }
-// Only explicit enable clicks request permission. Page loads never invoke this function.
-export async function enableLocalMorningGreeting(name = "") {
+// Installation and explicit settings actions request permission; routine scheduling never does.
+async function accountName() {
+  const account = await import("./auth/account-client");
+  await account.initializeAccount();
+  return account.getAccountSnapshot()?.name?.trim().slice(0, 80) || "";
+}
+export async function enableLocalMorningGreeting(_legacyName = "") {
   rememberMorningOffer("requested");
   if (!("Notification" in window) || !("serviceWorker" in navigator)) return { ok: false, reason: "unsupported" as const };
   if (Notification.permission === "denied") return { ok: false, reason: "permission" as const };
   const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
   if (permission !== "granted") { rememberMorningOffer("declined"); return { ok: false, reason: "permission" as const }; }
   try {
+    const name = await accountName();
     const reg = await registration(); let mode: "push" | "local" = "local";
     if ("PushManager" in window) {
       const response = await fetch("/api/push/vapid"); if (!response.ok) return { ok: false, reason: "server" as const };
@@ -61,7 +68,32 @@ export async function disableLocalMorningGreeting() {
   save({ enabled: false, name: "" }); rememberMorningOffer("disabled");
   await post("MORNING_CONFIG", { enabled: false, name: "" }); if (timer) clearTimeout(timer);
 }
+export async function syncMorningIdentity() {
+  const config = getLocalMorningGreeting();
+  if (!config.enabled) return;
+  const name = await accountName();
+  if (config.mode === "push") {
+    const reg = await registration(), subscription = await reg.pushManager.getSubscription();
+    if (!subscription) return;
+    const result = await fetch("/api/push/morning", { method: "POST", credentials: "same-origin", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...device(), subscription: subscription.toJSON(), consent: true }) });
+    if (!result.ok) return;
+  }
+  // Recheck after network IO so switching identity cannot re-enable a disabled preference.
+  if (!getLocalMorningGreeting().enabled) {
+    if (config.mode === "push") await fetch("/api/push/morning", { method: "DELETE", headers: { "content-type": "application/json" }, body: JSON.stringify(device()) });
+    return;
+  }
+  const next = save({ ...config, name });
+  await post("MORNING_CONFIG", next);
+}
 export function startLocalMorningScheduler() {
+  if (schedulerStarted) return;
+  schedulerStarted = true;
   const sync = () => { const config = getLocalMorningGreeting(); if (config.enabled) { void post("MORNING_CONFIG", config).then(() => config.mode !== "push" ? post("CHECK_MORNING") : undefined).catch(() => undefined); armForeground(); } };
+  let identityQueue = Promise.resolve();
+  const identity = () => { identityQueue = identityQueue.then(syncMorningIdentity).catch(() => undefined); };
+  window.addEventListener("patro:auth-changed", identity);
+  window.addEventListener("online", identity);
+  identity();
   sync(); document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") sync(); });
 }

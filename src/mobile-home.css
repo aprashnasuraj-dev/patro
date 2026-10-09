@@ -33,3 +33,22 @@
 }
 @media(max-width:360px){.ap-header__in{padding:8px!important;gap:6px!important}.ap-wordmark{font-size:19px!important}.ap-brand-mark{display:none}.rh-hero{padding:13px}.rh-hero-copy h1{font-size:1.9rem!important}.hp-panchang-facts dd{font-size:14px}.hp-weather-next{display:none}.hp-menu-panel>nav a{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.hp-menu-panel{animation:none}}
+
+/* Quiet homepage palette; the raw HTML hero shares these colors before React loads. */
+.rh-page, .rh-hero { --ap-ink: #26352f; --ap-muted: #58675f; --ap-green: #35745b; --ap-green-ink: #275d46; --ap-green-soft: #e8f0e9; --ap-line: #dce3db; --ap-surface: #fffefb; --ap-bg: #f5f4ee; --home-hero: #edf2e9; --home-event-bg: #fff3db; --home-event-line: #e5d5b5; --home-event-ink: #80551d; }
+.rh-page:before { background: var(--ap-bg); }
+.rh-hero { background: var(--home-hero); border-color: var(--ap-line); box-shadow: 0 5px 20px #26352f06; color: var(--ap-ink); }
+.rh-hero .rh-hero-copy h1 { color: var(--ap-green-ink) !important; }
+.rh-hero .rh-hero-copy p, .rh-hero .rh-kicker, .rh-hero .hp-ns>span, .rh-hero .hp-panchang-title>small, .rh-hero .hp-panchang-facts dt, .rh-hero .hp-sun-times small, .rh-hero .hp-tithi-end, .rh-hero .hp-panchang-source { color: var(--ap-muted); }
+.rh-hero .hp-ns, .rh-hero .hp-sun-times { border-color: var(--ap-line); }
+.rh-hero .hp-ns>strong, .rh-hero .hp-panchang-title, .rh-hero .hp-panchang-facts dd, .rh-hero .hp-sun-times b { color: var(--ap-ink); }
+.rh-hero .hp-panchang-facts>div { background: var(--ap-surface); border-color: var(--ap-line); }
+.rh-hero .hp-tithi-end b, .rh-hero .hp-panchang-source a { color: var(--ap-green-ink); }
+.rh-hero .hp-sun-times>span { color: var(--home-event-ink); }
+.rh-hero .hp-today-events>a { background: var(--home-event-bg); border-color: var(--home-event-line); color: var(--home-event-ink); }
+.rh-page .hp-weather { background: var(--ap-surface); border-color: var(--ap-line); box-shadow: none; }
+.rh-page .rh-actions>a b { background: var(--ap-green-soft); color: var(--ap-green-ink); }
+.rh-page .rh-card, .rh-page .rh-selected { background: var(--ap-surface); box-shadow: 0 4px 16px #26352f05; }
+.rh-page .rh-cell.is-today { background: var(--ap-green-soft); }
+:root[data-theme="dark"] .rh-page, :root[data-mode="dark"] .rh-page,
+:root[data-theme="dark"] .rh-hero, :root[data-mode="dark"] .rh-hero { --ap-ink: #edf3ee; --ap-muted: #b5c5b9; --ap-green: #8ebba0; --ap-green-ink: #a4d4b5; --ap-green-soft: #253b2f; --ap-line: #385043; --ap-surface: #18271f; --ap-bg: #112019; --home-hero: #20382a; --home-event-bg: #3f3422; --home-event-line: #695638; --home-event-ink: #f2d599; }

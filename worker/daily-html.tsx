@@ -20,7 +20,7 @@ async function rawDailyHtml(request:Request,env:Env,ctx:Ctx){
  if(!env.ASSETS)return new Response("Static assets unavailable",{status:503});
  const u=new URL(request.url),path=u.pathname.replace(/\/+$/,"")||"/",boundary=nepalDayBoundary();
  // Cache unconfigured HTML only; admin config is applied after this lookup.
- const key=new URL(u);key.pathname="/__patro/daily-html-v1";key.search=new URLSearchParams({path,date:boundary.date,sign:""}).toString();
+ const key=new URL(u);key.pathname="/__patro/daily-html-v2";key.search=new URLSearchParams({path,date:boundary.date,sign:""}).toString();
  if(typeof caches!=="undefined"&&(caches as any).default){const hit=await(caches as any).default.match(new Request(key));if(hit){const h=new Headers(hit.headers);h.set("cache-control",`public, max-age=0, s-maxage=${boundary.seconds}`);return new Response(hit.body,{status:hit.status,headers:h});}}
 
  const headers=new Headers(request.headers);headers.delete("if-none-match");headers.delete("if-modified-since");

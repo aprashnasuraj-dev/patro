@@ -37,8 +37,10 @@ async function providePrompt(page, outcome) {
     }
     await page.evaluate(() => window.dispatchEvent(new Event("appinstalled")));
     await page.locator(".ap-install-notice:not(.ap-morning-installation)").waitFor({ state: "hidden", timeout: 5000 });
-    await page.locator(".ap-morning-installation").waitFor({ state: "visible", timeout: 5000 });
-    await page.locator(".hx-morning").waitFor({ state: "visible", timeout: 5000 });
+    if (await page.locator(".ap-morning-installation, .hx-morning").count()) {
+      throw new Error("Installation greetings must remain in the background, without a homepage card");
+    }
+    await page.waitForFunction(() => Boolean(localStorage.getItem("patro.morning.permission-offer.v1")), { timeout: 5000 });
     const installedButton = page.locator(".ap-install-footer.is-installed");
     await installedButton.waitFor({ state: "visible", timeout: 5000 });
     if (!(await installedButton.isDisabled())) throw new Error("App-installed footer should be disabled");
