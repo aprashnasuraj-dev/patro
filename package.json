@@ -88,7 +88,7 @@
     "html2pdf.js": "0.14.0",
     "qrcode-generator": "2.0.4",
     "jose": "6.2.12",
-    "lucide-react": "0.468.0",
+    "lucide-react": "1.51.0",
     "html-to-image": "1.11.13",
     "tesseract.js": "7.0.0",
     "@supabase/supabase-js": "2.57.4",
