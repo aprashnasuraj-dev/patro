@@ -25,8 +25,19 @@ export function convertSpokenNepaliNumbers(text: string) {
   });
 }
 
-/** Repair a narrow ASR homophone only after predicates that take the copula.
- * Other dictated sixes stay numeric; this is not a general grammar rewriter. */
+/** Correct sentence-final छ misheard as the numeral ६, preserving explicit numeric contexts.
+ * Audio pronunciation is ambiguous: stand-alone sixes and numeric answers remain digits. */
 export function repairNepaliCopula(text: string) {
-  return text.replace(/(सामर्थ्य|क्षमता|आवश्यकता|सम्भावना|जरुरी|आवश्यक)\s+[6६](?=\s*(?:[।.!?]|$))/gu, '$1 छ');
+  return text.replace(/(^|[^\p{L}\p{M}\p{N}])([6६])(?=\s*(?:[।!?]|[.](?![0-9०-९])|$))/gu,
+    (match, prefix, _digit, offset) => {
+      const before = text.slice(0, offset + prefix.length).trimEnd();
+      const words = before.match(/[\p{L}\p{M}]+/gu) || [];
+      const last = words[words.length - 1] || '';
+      if (!/[\u0900-\u0963]/u.test(last)) return match;
+      const numberCue = /^(?:नं|नम्बर|नंबर|अङ्क|अंक|संख्या|क्रमाङ्क|क्रमांक|कोड|पिन|ओटीपी|कक्षा|ग्रेड|दफा|धारा|अध्याय|पृष्ठ|पेज|उमेर|दर|रकम|मूल्य|स्कोर|उत्तर|रोल|साल|वर्ष|गते|बजे|सेट|वार्ड|वडा|टोकन|संस्करण|भर्सन|जम्मा|करिब|लगभग|झण्डै|देखि|भन्दा|र)$/u.test(last);
+      if (numberCue || /[0-9०-९]\s*(?:[+\-*/=×÷–]|र|देखि|,)\s*$/u.test(before)) return match;
+      const predicate = /^(?:सामर्थ्य|क्षमता|आवश्यकता|सम्भावना|जरुरी|आवश्यक|बाध्य|तयार|राम्रो|नराम्रो|खराब|ठीक|ठिक|सही|गलत|सम्भव|असम्भव|उपलब्ध|अनुपलब्ध|बिरामी|स्वस्थ|खुसी|खुशि|खुशी|निश्चित|सुरक्षित|असुरक्षित|सक्रिय|निष्क्रिय|महत्त्वपूर्ण|महत्वपूर्ण|रहेको|भएको|गरेको)$/u.test(last);
+      if (!predicate && words.length < 2) return match;
+      return `${prefix}छ`;
+    });
 }
