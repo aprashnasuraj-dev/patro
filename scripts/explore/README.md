@@ -40,9 +40,10 @@ listed in sitemaps and marked `index`; the rest are served with `noindex, follow
 
 Run **Actions → Explore pages to R2** (manual). It builds, refuses a >20% page-count drop unless
 `allow_shrink` is ticked, and uploads under `explore/v1/` in the ARCHIVE bucket only.
-Up to 5,000 objects upload with the existing Cloudflare token; beyond that add
-`R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` (R2 S3 API token) and it switches to an
-incremental `rclone sync`.
+It uses the existing `CLOUDFLARE_API_TOKEN` secret: R2 S3 credentials are derived from it
+(access key id = token id, secret = SHA-256 of the token) and uploads run as an incremental
+`rclone sync` that only sends changed pages. Dedicated `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY`
+secrets are used instead if you ever add them.
 
 Then submit `https://aafnaipatro.com/sitemap-explore.xml` in Google Search Console and Bing.
 

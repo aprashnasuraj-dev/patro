@@ -26,7 +26,8 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CF_R2_BUCKET_NAME: ${{ vars.CF_R2_BUCKET_NAME || secrets.CF_R2_BUCKET_NAME }}
       CF_CACHE_AUTO_PROVISION: '0'
-      # Optional R2 S3 API keys (R2 → Manage API tokens). Needed above 5,000 objects; small families upload with Wrangler.
+      # Optional dedicated R2 S3 keys. When absent, S3 credentials are derived from CLOUDFLARE_API_TOKEN
+      # (Cloudflare: access key id = token id, secret = SHA-256 of the token value), so no new secret is needed.
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       PREFIX: explore/v1
@@ -74,13 +75,30 @@ jobs:
             exit 1
           fi
 
+      - name: Resolve R2 S3 credentials
+        run: |
+          set -euo pipefail
+          if [[ -n "${R2_ACCESS_KEY_ID:-}" && -n "${R2_SECRET_ACCESS_KEY:-}" ]]; then
+            key_id="${R2_ACCESS_KEY_ID}"; key_secret="${R2_SECRET_ACCESS_KEY}"
+          else
+            auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}")
+            key_id="$(curl -fsS "${auth[@]}" https://api.cloudflare.com/client/v4/user/tokens/verify | jq -r '.result.id // empty' || true)"
+            if [[ -z "${key_id}" ]]; then
+              key_id="$(curl -fsS "${auth[@]}" "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/tokens/verify" | jq -r '.result.id // empty' || true)"
+            fi
+            key_secret="$(printf '%s' "${CLOUDFLARE_API_TOKEN}" | sha256sum | cut -d' ' -f1)"
+          fi
+          if [[ -z "${key_id}" ]]; then echo "::warning::Could not resolve S3 credentials; falling back to Wrangler uploads."; exit 0; fi
+          echo "::add-mask::${key_id}"; echo "::add-mask::${key_secret}"
+          { echo "S3_KEY_ID=${key_id}"; echo "S3_KEY_SECRET=${key_secret}"; } >> "$GITHUB_ENV"
+
       - name: Upload with rclone (S3 API, incremental)
-        if: env.R2_ACCESS_KEY_ID != '' && env.R2_SECRET_ACCESS_KEY != ''
+        if: env.S3_KEY_ID != ''
         env:
           RCLONE_CONFIG_R2_TYPE: s3
           RCLONE_CONFIG_R2_PROVIDER: Cloudflare
-          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ env.S3_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ env.S3_KEY_SECRET }}
           RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
           RCLONE_CONFIG_R2_NO_CHECK_BUCKET: 'true'
         run: |
@@ -95,15 +113,15 @@ jobs:
             --header-upload "Content-Type: application/xml; charset=utf-8"
           rclone copyto .cloudflare/explore/manifest.json "r2:${bucket}/${PREFIX}/manifest.json" --header-upload "Content-Type: application/json"
 
-      - name: Upload with Wrangler (small families, no S3 keys)
-        if: env.R2_ACCESS_KEY_ID == '' || env.R2_SECRET_ACCESS_KEY == ''
+      - name: Upload with Wrangler (fallback when S3 credentials are unavailable)
+        if: env.S3_KEY_ID == ''
         run: |
           set -euo pipefail
           bucket="$(cat /tmp/r2-bucket)"
           cd .cloudflare/explore
           count="$(find pages sitemaps -type f | wc -l)"
           if [[ "${count}" -gt 5000 ]]; then
-            echo "::error::${count} objects is too many for Wrangler uploads. Add R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY secrets to use rclone."
+            echo "::error::${count} objects is too many for Wrangler uploads, and S3 credentials could not be derived from CLOUDFLARE_API_TOKEN."
             exit 1
           fi
           export bucket PREFIX
