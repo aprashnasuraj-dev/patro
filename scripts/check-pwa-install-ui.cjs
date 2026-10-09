@@ -50,7 +50,7 @@ async function providePrompt(page, outcome) {
     await providePrompt(cancelled, "dismissed");
     await cancelled.locator(".ap-install-primary").click();
     await cancelled.waitForFunction(() => window.__installPromptCalls === 1, { timeout: 5000 });
-    await cancelled.getByText(/स्थापना रद्द भयो/).waitFor({ state: "visible", timeout: 5000 });
+    await cancelled.getByRole("dialog").getByText(/स्थापना रद्द भयो/).waitFor({ state: "visible", timeout: 5000 });
     await cancelled.getByText(/Add to Home screen/i).first().waitFor({ state: "visible", timeout: 5000 });
     if (await cancelled.locator(".ap-install-footer.is-installed").count()) {
       throw new Error("Dismissed native install prompt incorrectly marked app installed");
