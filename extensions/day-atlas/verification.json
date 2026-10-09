@@ -5,10 +5,10 @@
   "newDatabaseRows": 0,
   "generatedXmlBytes": 143054000,
   "astronomySamples": 300,
-  "medianComputeMs": 0.6871439999999893,
-  "p95ComputeMs": 1.4618010000003778,
-  "bundleBytes": 158105,
-  "elapsedMs": 3167.2123189999998,
+  "medianComputeMs": 0.6307090000000244,
+  "p95ComputeMs": 1.2892609999998967,
+  "bundleBytes": 161581,
+  "elapsedMs": 2912.1131370000003,
   "existingSitemapEntriesPreserved": true,
   "dstAndPolarTestsPassed": true
 }

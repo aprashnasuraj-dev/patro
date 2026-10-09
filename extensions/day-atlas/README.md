@@ -34,3 +34,7 @@ Each date page includes a BS civil-date conversion from the existing archive-cro
 Existing one-million-page URLs remain valid because the range is extended backward. Old sitemap shard names remain valid but their inventories follow the new full-range ordering.
 
 Production smoke: `python extensions/day-atlas/smoke.py` checks existing routes, atlas bounds, dictionary, ICS, first/last shards, the sitemap index, and preservation of the original sitemap entries. Successful deployment verification is recorded in live-verification.json.
+
+## Search intent and publisher resources (v2.1)
+
+Every day page now answers explicit city/date questions for sunrise, sunset, Moon phase, daylight and Nepali date. City hubs link to today using the local time zone, and month links describe their destination. Date-specific CSV exports expose the calculated data with a source URL; exports use noindex. `/atlas/publishers` documents download/citation use and calculation limits. These resources support voluntary editorial citations; no outreach, paid links, backlinks or search-rank gains are claimed.
