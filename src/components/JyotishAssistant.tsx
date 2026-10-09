@@ -285,11 +285,11 @@ export function JyotishAssistant({ initiallyOpen = false }: { initiallyOpen?: bo
 
   return <>
     <button className="jy-ai-fab" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="aafnai-bot-panel" aria-label="आफ्नै Patro Bot खोल्नुहोस्" title="आफ्नै Patro Bot">
-      <span aria-hidden="true">आ</span><em>आफ्नै Patro Bot</em><b>आफ्नै</b>
+      <span aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="30" height="30" style={{ objectFit: "contain" }} /></span><em>आफ्नै Patro Bot</em><b>आफ्नै</b>
     </button>
     {open && <section id="aafnai-bot-panel" className="jy-ai-panel" ref={panel} aria-label="आफ्नै Patro Bot">
       <header className="jy-ai-head">
-        <div><span aria-hidden="true">आ</span><div><strong>आफ्नै Patro Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>
+        <div><span aria-hidden="true"><img src="/aafnai-logo.png" alt="" width="30" height="30" style={{ objectFit: "contain" }} /></span><div><strong>आफ्नै Patro Bot</strong><small>{china ? "पात्रो + ज्योतिष · तपाईंको चिना जोडिएको" : "पात्रो, मिति, चाडपर्व र ज्योतिष सहायक"}</small></div></div>
         <div><button type="button" onClick={clearChat} title="च्याट खाली गर्नुहोस्" aria-label="च्याट खाली गर्नुहोस्">↺</button><button type="button" onClick={() => setOpen(false)} aria-label="बन्द गर्नुहोस्">×</button></div>
       </header>
       <div className="jy-ai-toolbar">
