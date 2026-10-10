@@ -49,6 +49,7 @@ Quality gates
 from __future__ import annotations
 
 import argparse
+import collections
 import json
 import os
 import time
@@ -70,6 +71,11 @@ OVERPASS_ENDPOINTS = [
     "https://overpass.kumi.systems/api/interpreter",
     "https://overpass.private.coffee/api/interpreter",
 ]
+
+PROVINCE_ALIASES = {"koshi": "Koshi", "province no. 1": "Koshi", "madhesh": "Madhesh", "province no. 2": "Madhesh",
+                    "bagmati": "Bagmati", "bagamati": "Bagmati", "gandaki": "Gandaki", "lumbini": "Lumbini",
+                    "karnali": "Karnali", "sudurpashchim": "Sudurpashchim", "sudurpaschim": "Sudurpashchim",
+                    "far-western": "Sudurpashchim", "far western": "Sudurpashchim"}
 
 PROVINCES_NE = {"Koshi": "कोशी", "Madhesh": "मधेश", "Bagmati": "बागमती", "Gandaki": "गण्डकी",
                 "Lumbini": "लुम्बिनी", "Karnali": "कर्णाली", "Sudurpashchim": "सुदूरपश्चिम"}
@@ -203,7 +209,8 @@ def read_pbf(path: Path):
     plus administrative boundary rings. Requires `pip install osmium`."""
     import osmium
 
-    feats, bounds = [], []
+    feats, bounds, towns = [], [], []
+    SETTLEMENT = {"city", "town", "village", "suburb", "quarter", "neighbourhood", "hamlet"}
 
     def wanted(tags) -> bool:
         if "name" not in tags:
@@ -213,6 +220,9 @@ def read_pbf(path: Path):
 
     class H(osmium.SimpleHandler):
         def node(self, n):
+            if n.tags.get("place") in SETTLEMENT and "name" in n.tags:
+                towns.append({"lat": n.location.lat, "lon": n.location.lon, "en": n.tags.get("name:en") or n.tags.get("name"),
+                              "ne": n.tags.get("name:ne") or "", "rank": n.tags.get("place")})
             if wanted(n.tags):
                 feats.append({"type": "node", "id": n.id, "lat": n.location.lat, "lon": n.location.lon,
                               "tags": {t.k: t.v for t in n.tags}})
@@ -245,7 +255,7 @@ def read_pbf(path: Path):
                                   "tags": {k.k: k.v for k in t}})
 
     H().apply_file(str(path), locations=True)
-    return {"elements": feats}, {"elements": bounds}
+    return {"elements": feats, "settlements": towns}, {"elements": bounds}
 
 
 class Regions:
@@ -282,7 +292,8 @@ class Regions:
         d = self._find(self.districts, lon, lat)
         p = self._find(self.provinces, lon, lat)
         prov = (p or {}).get("en", "")
-        prov = next((k for k in PROVINCES_NE if k.lower() in prov.lower()), prov)
+        low = prov.lower()
+        prov = next((v for k, v in PROVINCE_ALIASES.items() if k in low), prov)
         return {"district": (d or {}).get("en", ""), "district_ne": (d or {}).get("ne", "") or (d or {}).get("en", ""),
                 "province": prov}
 
@@ -313,6 +324,35 @@ def kind_of(tags: dict) -> str:
     if rel == "buddhist":
         return "stupa" if b == "stupa" or "stupa" in tags.get("name", "").lower() else "monastery"
     return "temple"
+
+
+class Towns:
+    """Nearest named settlement, used to tell apart places with generic names
+    ("Hanuman Mandir, Gaur"). Grid buckets keep lookups fast."""
+    CELL = 0.05
+
+    def __init__(self, towns: list[dict]):
+        self.grid: dict[tuple, list] = {}
+        for t in towns:
+            self.grid.setdefault((int(t["lat"] / self.CELL), int(t["lon"] / self.CELL)), []).append(t)
+
+    def nearest(self, lat: float, lon: float, max_km: float = 8.0):
+        ci, cj = int(lat / self.CELL), int(lon / self.CELL)
+        best, bd = None, max_km
+        for r in (1, 2):
+            for i in range(ci - r, ci + r + 1):
+                for j in range(cj - r, cj + r + 1):
+                    for t in self.grid.get((i, j), ()):
+                        d = haversine_km(lat, lon, t["lat"], t["lon"])
+                        if d < bd:
+                            best, bd = t, d
+            if best:
+                break
+        return best
+
+
+def norm_name(s: str) -> str:
+    return re.sub(r"[^a-z0-9\u0900-\u097f]+", " ", s.lower()).strip()
 
 
 def load_seed(path: Path, key: str) -> list[dict]:
@@ -380,26 +420,57 @@ def main() -> None:
     seed_peaks = load_seed(ROOT / "data/peaks.yaml", "peaks")
     seen_ids = {p["id"] for p in seed_places} | {p["id"] for p in seed_peaks}
 
-    places, peaks = [], []
+    towns = Towns(raw.get("settlements", []))
+    seed_peak_names = {slugify(re.sub(r"\(.*?\)|mount ", "", p["name_en"].lower())) for p in seed_peaks} | {p["id"] for p in seed_peaks}
+
+    # pass 1: candidates
+    cands = []
     for el in elements:
         tags = el.get("tags", {})
         lat = el.get("lat") or (el.get("center") or {}).get("lat")
         lon = el.get("lon") or (el.get("center") or {}).get("lon")
         if lat is None or lon is None:
             continue
-        name_en = tags.get("name:en") or tags.get("name")
-        name_ne = tags.get("name:ne") or (tags.get("name") if re.search(r"[ऀ-ॿ]", tags.get("name", "")) else None)
+        name_en = (tags.get("name:en") or tags.get("name") or "").strip()
+        name_ne = tags.get("name:ne") or (tags.get("name") if re.search(r"[\u0900-\u097F]", tags.get("name", "")) else None)
         if not name_en:
             continue
         kind = kind_of(tags)
-        seeds = seed_peaks if kind in ("peak", "viewpoint") else seed_places
-        if any(haversine_km(lat, lon, s["lat"], s["lon"]) < 0.15 for s in seeds):
-            continue  # curated record wins
-
-        base = slugify(name_en if re.search(r"[A-Za-z]", name_en) else f"{kind}-{el['id']}")
-        loc = regions.locate(float(lat), float(lon)) if regions else {}
+        lat, lon = float(lat), float(lon)
+        if kind in ("peak", "viewpoint"):
+            if any(haversine_km(lat, lon, p["lat"], p["lon"]) < 2.0 for p in seed_peaks):
+                continue  # curated peak wins
+            if slugify(name_en) in seed_peak_names and any(haversine_km(lat, lon, p["lat"], p["lon"]) < 15 for p in seed_peaks):
+                continue
+        elif any(haversine_km(lat, lon, p["lat"], p["lon"]) < 0.15 for p in seed_places):
+            continue  # curated place wins
+        loc = regions.locate(lat, lon) if regions else {}
         if regions and regions.districts and not loc.get("district"):
             continue   # outside Nepal (extracts include a margin beyond the border)
+        cands.append({"el": el, "tags": tags, "lat": lat, "lon": lon, "en": name_en, "ne": name_ne, "kind": kind, "loc": loc})
+
+    # pass 2: tell apart generic names with the nearest village/town, else the district
+    counts = collections.Counter(norm_name(c["en"]) for c in cands if c["kind"] not in ("peak", "viewpoint"))
+    for c in cands:
+        if c["kind"] in ("peak", "viewpoint") or counts[norm_name(c["en"])] < 2:
+            continue
+        t = towns.nearest(c["lat"], c["lon"])
+        d_en = c["loc"].get("district") or c["tags"].get("addr:district") or ""
+        d_ne = c["loc"].get("district_ne") or d_en
+        if t and norm_name(t["en"]) not in norm_name(c["en"]):
+            c["en"] = f"{c['en']}, {t['en']}"
+            if c["ne"]:
+                c["ne"] = f"{c['ne']}, {t['ne'] or t['en']}"
+        elif d_en:
+            c["en"] = f"{c['en']}, {d_en}"
+            if c["ne"]:
+                c["ne"] = f"{c['ne']}, {d_ne}"
+
+    places, peaks = [], []
+    for c in cands:
+        el, tags, kind, loc = c["el"], c["tags"], c["kind"], c["loc"]
+        name_en, name_ne, lat, lon = c["en"], c["ne"], c["lat"], c["lon"]
+        base = slugify(name_en if re.search(r"[A-Za-z]", name_en) else f"{kind}-{el['id']}")
         district = loc.get("district") or tags.get("addr:district") or tags.get("is_in:district") or ""
         sid = base if base not in seen_ids else f"{base}-{el['id']}"
         seen_ids.add(sid)
@@ -407,8 +478,8 @@ def main() -> None:
             "id": sid,
             "name_en": name_en,
             "name_ne": name_ne or name_en,
-            "lat": round(float(lat), 6),
-            "lon": round(float(lon), 6),
+            "lat": round(lat, 6),
+            "lon": round(lon, 6),
             "district": district,
             "district_ne": loc.get("district_ne") or district,
             "province": loc.get("province", ""),
@@ -427,7 +498,7 @@ def main() -> None:
             peaks.append({**common, "kind": "peak" if kind == "peak" else "viewpoint",
                           "height_m": h, "range": "", "note_en": "", "note_ne": ""})
         else:
-            religion = tags.get("religion", "hindu")
+            religion = (tags.get("religion") or "hindu").split(";")[0].strip().lower()
             fests = guess_festivals(f"{name_en} {name_ne or ''}", religion)
             if not fests:
                 continue

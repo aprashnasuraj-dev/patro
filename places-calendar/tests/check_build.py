@@ -8,7 +8,7 @@ Fails (exit 1) if any of these are wrong:
   * an internal link points to a page that wasn't built
   * a JSON-LD block doesn't parse, or an Event lacks startDate/location
   * a page's hreflang partner (en <-> ne) is missing
-  * a title or meta description is empty or duplicated across pages
+  * a title or meta description is empty, or a title is duplicated across indexable pages
   * a page references a social image that wasn't generated (when images were built)
 """
 from __future__ import annotations
@@ -62,10 +62,11 @@ def main(root: Path) -> int:
                 errors.append(f"{me}: hreflang {lang} -> {alts[lang]} not built")
         t = TITLE.search(html)
         d = DESC.search(html)
+        indexable = 'content="noindex' not in html
         if not t or not t.group(1).strip():
             errors.append(f"{me}: empty title")
-        else:
-            titles[t.group(1)] += 1
+        elif indexable:
+            titles[t.group(1)] += 1   # duplicates only matter among pages competing in search
         if not d or not d.group(1).strip():
             errors.append(f"{me}: empty description")
         else:
