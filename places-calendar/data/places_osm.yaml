@@ -2773,8 +2773,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: small-roadside-shrine
-  name_en: small roadside shrine
-  name_ne: small roadside shrine
+  name_en: Small Roadside Shrine
+  name_ne: Small Roadside Shrine
   lat: 27.641969
   lon: 85.541112
   district: Kavrepalanchok
@@ -3999,8 +3999,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chariot-end-point
-  name_en: chariot end point
-  name_ne: chariot end point
+  name_en: Chariot End Point
+  name_ne: Chariot End Point
   lat: 27.672901
   lon: 85.313102
   district: Lalitpur
@@ -4368,8 +4368,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-pipal-bot
-  name_en: temple, Pipal Bot
-  name_ne: temple, Pipal Bot
+  name_en: Temple, Pipal Bot
+  name_ne: Temple, Pipal Bot
   lat: 27.6819
   lon: 85.429868
   district: Bhaktapur
@@ -4391,8 +4391,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-lakhaju-tol
-  name_en: temple, Lakhaju Tol
-  name_ne: temple, Lakhaju Tol
+  name_en: Temple, Lakhaju Tol
+  name_ne: Temple, Lakhaju Tol
   lat: 27.689176
   lon: 85.430073
   district: Bhaktapur
@@ -4414,8 +4414,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-thapa-tol
-  name_en: temple, Thapa tol
-  name_ne: temple, Thapa tol
+  name_en: Temple, Thapa tol
+  name_ne: Temple, Thapa tol
   lat: 27.689624
   lon: 85.430168
   district: Bhaktapur
@@ -5013,8 +5013,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: swet-bhairab-mandir
-  name_en: swet bhairab mandir
-  name_ne: swet bhairab mandir
+  name_en: Swet Bhairab Mandir
+  name_ne: Swet Bhairab Mandir
   lat: 27.615853
   lon: 85.533964
   district: Kavrepalanchok
@@ -5884,7 +5884,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: nhu-bahal
-  name_en: nhu bahal
+  name_en: Nhu Bahal
   name_ne: नु बाहल
   lat: 27.58488
   lon: 85.515272
@@ -6077,7 +6077,7 @@ places:
   - id: shree-panchami
   - id: vijaya-dashami
 - id: mandir-buddhnagar
-  name_en: mandir, Buddhnagar
+  name_en: Mandir, Buddhnagar
   name_ne: मन्दिर, बुद्धनगर
   lat: 27.688011
   lon: 85.330955
@@ -6125,7 +6125,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-ko-mandir
-  name_en: shiva ko mandir
+  name_en: Shiva Ko Mandir
   name_ne: शिव को मन्दिर
   lat: 27.736778
   lon: 85.280857
@@ -7592,8 +7592,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: yapi-bhairab
-  name_en: yapi bhairab
-  name_ne: yapi bhairab
+  name_en: Yapi Bhairab
+  name_ne: Yapi Bhairab
   lat: 27.698853
   lon: 85.420546
   district: Bhaktapur
@@ -7615,8 +7615,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kotdevi
-  name_en: kotdevi
-  name_ne: kotdevi
+  name_en: Kotdevi
+  name_ne: Kotdevi
   lat: 27.69601
   lon: 85.432301
   district: Bhaktapur
@@ -7937,7 +7937,7 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: nasa-dua
-  name_en: nasa dua
+  name_en: Nasa Dua
   name_ne: नासा दुआ
   lat: 27.584213
   lon: 85.515133
@@ -8327,8 +8327,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: temple-thapa-tol-2478760289
-  name_en: temple, Thapa tol
-  name_ne: temple, Thapa tol
+  name_en: Temple, Thapa tol
+  name_ne: Temple, Thapa tol
   lat: 27.68967
   lon: 85.430185
   district: Bhaktapur
@@ -8373,8 +8373,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-mandir-pipal-bot
-  name_en: ganesh mandir, Pipal Bot
-  name_ne: ganesh mandir, Pipal Bot
+  name_en: Ganesh Mandir, Pipal Bot
+  name_ne: Ganesh Mandir, Pipal Bot
   lat: 27.686226
   lon: 85.430306
   district: Bhaktapur
@@ -9196,7 +9196,7 @@ places:
   festivals:
   - id: christmas
 - id: mahalaxmi-temple-jawalakhel
-  name_en: mahalaxmi temple, Jawalakhel
+  name_en: Mahalaxmi Temple, Jawalakhel
   name_ne: महालक्ष्मी मन्दिर, जावालाखेल
   lat: 27.674749
   lon: 85.31045
@@ -9406,8 +9406,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: rajaji-mandir-dain
-  name_en: rajaji mandir, Dain
-  name_ne: rajaji mandir, Dain
+  name_en: Rajaji Mandir, Dain
+  name_ne: Rajaji Mandir, Dain
   lat: 26.480172
   lon: 86.827447
   district: Saptari
@@ -9429,8 +9429,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: hanuma
-  name_en: hanuma
-  name_ne: hanuma
+  name_en: Hanuma
+  name_ne: Hanuma
   lat: 26.543357
   lon: 86.749042
   district: Saptari
@@ -9502,8 +9502,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: hanuman-tempal
-  name_en: hanuman tempal
-  name_ne: hanuman tempal
+  name_en: Hanuman Tempal
+  name_ne: Hanuman Tempal
   lat: 26.543397
   lon: 86.749027
   district: Saptari
@@ -9600,8 +9600,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: mahadev-mandir-joginiya-2
-  name_en: mahadev mandir, Joginiya-2
-  name_ne: mahadev mandir, Joginiya-2
+  name_en: Mahadev Mandir, Joginiya-2
+  name_ne: Mahadev Mandir, Joginiya-2
   lat: 26.52936
   lon: 86.922182
   district: Saptari
@@ -9625,8 +9625,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-joginiya-2
-  name_en: shiva, Joginiya-2
-  name_ne: shiva, Joginiya-2
+  name_en: Shiva, Joginiya-2
+  name_ne: Shiva, Joginiya-2
   lat: 26.532777
   lon: 86.918297
   district: Saptari
@@ -10011,8 +10011,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sivaparbati-mandir
-  name_en: sivaparbati mandir
-  name_ne: sivaparbati mandir
+  name_en: Sivaparbati Mandir
+  name_ne: Sivaparbati Mandir
   lat: 27.022265
   lon: 87.1205
   district: Bhojpur
@@ -11256,7 +11256,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-temple-subidhanagar
-  name_en: ganesh temple, Subidhanagar
+  name_en: Ganesh Temple, Subidhanagar
   name_ne: गणेश मन्दिर, सुविधानगर
   lat: 27.686145
   lon: 85.342175
@@ -11279,8 +11279,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-nipani
-  name_en: shiva mandir, Nipani
-  name_ne: shiva mandir, Nipani
+  name_en: Shiva Mandir, Nipani
+  name_ne: Shiva Mandir, Nipani
   lat: 27.625317
   lon: 84.504109
   district: Chitwan
@@ -11304,7 +11304,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-gurju-tol
-  name_en: chandeshwori temple, Gurju Tol
+  name_en: Chandeshwori Temple, Gurju Tol
   name_ne: चन्देश्वरी मन्दिर, गुर्जु टोल
   lat: 27.633853
   lon: 85.517867
@@ -11453,7 +11453,7 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: peepal-bot-dhungedhara
-  name_en: peepal bot, dhungedhara
+  name_en: Peepal Bot, dhungedhara
   name_ne: पीपल बोट, ढुंगेधारा
   lat: 27.690278
   lon: 85.388617
@@ -11476,7 +11476,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: pipal-bot-dhungedhara
-  name_en: pipal bot, dhungedhara
+  name_en: Pipal Bot, dhungedhara
   name_ne: पिपल बोट, ढुंगेधारा
   lat: 27.690569
   lon: 85.389866
@@ -12052,8 +12052,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: mahalaxmi-mandir-dhungedhara
-  name_en: mahalaxmi mandir, dhungedhara
-  name_ne: mahalaxmi mandir, dhungedhara
+  name_en: Mahalaxmi Mandir, dhungedhara
+  name_ne: Mahalaxmi Mandir, dhungedhara
   lat: 27.692188
   lon: 85.388137
   district: Bhaktapur
@@ -12098,8 +12098,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: durga-temple-birtamod
-  name_en: durga temple, Birtamod
-  name_ne: durga temple, Birtamod
+  name_en: Durga Temple, Birtamod
+  name_ne: Durga Temple, Birtamod
   lat: 26.64333
   lon: 87.992351
   district: Jhapa
@@ -12367,8 +12367,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: krishna-mandir-suryabinayak
-  name_en: krishna mandir, Suryabinayak
-  name_ne: krishna mandir, Suryabinayak
+  name_en: Krishna Mandir, Suryabinayak
+  name_ne: Krishna Mandir, Suryabinayak
   lat: 27.663084
   lon: 85.401232
   district: Bhaktapur
@@ -12564,8 +12564,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shiva-mandir-ghopatar-ward-no-2
-  name_en: shiva mandir, Ghopatar Ward no 2
-  name_ne: shiva mandir, Ghopatar Ward no 2
+  name_en: Shiva Mandir, Ghopatar Ward no 2
+  name_ne: Shiva Mandir, Ghopatar Ward no 2
   lat: 27.209524
   lon: 86.544709
   district: Khotang
@@ -12638,8 +12638,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: bajrabarahi-temple
-  name_en: bajrabarahi temple
-  name_ne: bajrabarahi temple
+  name_en: Bajrabarahi Temple
+  name_ne: Bajrabarahi Temple
   lat: 27.642227
   lon: 85.119822
   district: Makwanpur
@@ -12758,8 +12758,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: krishna-mandir-dude-bazar
-  name_en: krishna mandir, Dude Bazar
-  name_ne: krishna mandir, Dude Bazar
+  name_en: Krishna Mandir, Dude Bazar
+  name_ne: Krishna Mandir, Dude Bazar
   lat: 27.664611
   lon: 85.133915
   district: Makwanpur
@@ -12882,8 +12882,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: pasupati-temple
-  name_en: pasupati temple
-  name_ne: pasupati temple
+  name_en: Pasupati Temple
+  name_ne: Pasupati Temple
   lat: 27.649779
   lon: 85.120905
   district: Makwanpur
@@ -13485,7 +13485,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: stupa-chwa-ga-la
-  name_en: stupa, Chwa-ga-la
+  name_en: Stupa, Chwa-ga-la
   name_ne: स्तूप, Chwa-ga-la
   lat: 27.67751
   lon: 85.276561
@@ -13556,8 +13556,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: harihar-mandir-ganesh-chowk
-  name_en: harihar mandir, Ganesh Chowk
-  name_ne: harihar mandir, Ganesh Chowk
+  name_en: Harihar Mandir, Ganesh Chowk
+  name_ne: Harihar Mandir, Ganesh Chowk
   lat: 27.699876
   lon: 84.424703
   district: Chitwan
@@ -13579,8 +13579,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: harihar
-  name_en: harihar
-  name_ne: harihar
+  name_en: Harihar
+  name_ne: Harihar
   lat: 27.699991
   lon: 84.425109
   district: Chitwan
@@ -13625,8 +13625,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: janaki-mandir-ganesh-chowk
-  name_en: janaki mandir, Ganesh Chowk
-  name_ne: janaki mandir, Ganesh Chowk
+  name_en: Janaki Mandir, Ganesh Chowk
+  name_ne: Janaki Mandir, Ganesh Chowk
   lat: 27.700632
   lon: 84.426175
   district: Chitwan
@@ -13650,8 +13650,8 @@ places:
   - id: vivah-panchami
   - id: ram-navami
 - id: ram-janaki-temple-ganesh-chowk
-  name_en: ram janaki temple, Ganesh Chowk
-  name_ne: ram janaki temple, Ganesh Chowk
+  name_en: Ram Janaki Temple, Ganesh Chowk
+  name_ne: Ram Janaki Temple, Ganesh Chowk
   lat: 27.700475
   lon: 84.426062
   district: Chitwan
@@ -13675,8 +13675,8 @@ places:
   - id: vivah-panchami
   - id: ram-navami
 - id: siddi-ganesh-mandir
-  name_en: siddi ganesh mandir
-  name_ne: siddi ganesh mandir
+  name_en: Siddi Ganesh Mandir
+  name_ne: Siddi Ganesh Mandir
   lat: 27.700231
   lon: 84.425573
   district: Chitwan
@@ -13698,8 +13698,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: gujesori-mandir
-  name_en: gujesori mandir
-  name_ne: gujesori mandir
+  name_en: Gujesori Mandir
+  name_ne: Gujesori Mandir
   lat: 27.701182
   lon: 84.4272
   district: Chitwan
@@ -13721,8 +13721,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: biswokarma-sarodaye-upasana-mandir
-  name_en: biswokarma sarodaye upasana mandir
-  name_ne: biswokarma sarodaye upasana mandir
+  name_en: Biswokarma Sarodaye Upasana Mandir
+  name_ne: Biswokarma Sarodaye Upasana Mandir
   lat: 27.700989
   lon: 84.426913
   district: Chitwan
@@ -14035,8 +14035,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: bhimsen
-  name_en: bhimsen
-  name_ne: bhimsen
+  name_en: Bhimsen
+  name_ne: Bhimsen
   lat: 27.697771
   lon: 84.424595
   district: Chitwan
@@ -14081,8 +14081,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sprinkle-kids-garden
-  name_en: sprinkle kids garden
-  name_ne: sprinkle kids garden
+  name_en: Sprinkle Kids Garden
+  name_ne: Sprinkle Kids Garden
   lat: 27.677267
   lon: 84.423906
   district: Chitwan
@@ -14104,8 +14104,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: tinkhole-gumba
-  name_en: tinkhole gumba
-  name_ne: tinkhole gumba
+  name_en: Tinkhole Gumba
+  name_ne: Tinkhole Gumba
   lat: 27.700176
   lon: 84.439565
   district: Chitwan
@@ -14603,8 +14603,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: krishna-mandir-simpani
-  name_en: krishna mandir, Simpani
-  name_ne: krishna mandir, Simpani
+  name_en: Krishna Mandir, Simpani
+  name_ne: Krishna Mandir, Simpani
   lat: 27.517763
   lon: 84.825226
   district: Makwanpur
@@ -14628,8 +14628,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: manakamana-temple-manahari
-  name_en: manakamana temple, Manahari
-  name_ne: manakamana temple, Manahari
+  name_en: Manakamana Temple, Manahari
+  name_ne: Manakamana Temple, Manahari
   lat: 27.540394
   lon: 84.802419
   district: Makwanpur
@@ -14651,8 +14651,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: churiya-temple
-  name_en: churiya temple
-  name_ne: churiya temple
+  name_en: Churiya Temple
+  name_ne: Churiya Temple
   lat: 27.523921
   lon: 84.814076
   district: Makwanpur
@@ -14674,8 +14674,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: krishna-mandir-basti
-  name_en: krishna mandir, basti
-  name_ne: krishna mandir, basti
+  name_en: Krishna Mandir, basti
+  name_ne: Krishna Mandir, basti
   lat: 27.530707
   lon: 84.809245
   district: Makwanpur
@@ -14747,8 +14747,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chureeya-mai
-  name_en: chureeya mai
-  name_ne: chureeya mai
+  name_en: Chureeya Mai
+  name_ne: Chureeya Mai
   lat: 27.532537
   lon: 84.775521
   district: Makwanpur
@@ -14773,8 +14773,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: deurali-simal
-  name_en: deurali simal
-  name_ne: deurali simal
+  name_en: Deurali Simal
+  name_ne: Deurali Simal
   lat: 27.532633
   lon: 84.776265
   district: Makwanpur
@@ -14921,8 +14921,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shree-sangakugn-gumba
-  name_en: shree sangakugn gumba
-  name_ne: shree sangakugn gumba
+  name_en: Shree Sangakugn Gumba
+  name_ne: Shree Sangakugn Gumba
   lat: 27.683957
   lon: 84.514425
   district: Chitwan
@@ -14946,8 +14946,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: dhekun-tharbling-gumba
-  name_en: dhekun tharbling gumba
-  name_ne: dhekun tharbling gumba
+  name_en: Dhekun Tharbling Gumba
+  name_ne: Dhekun Tharbling Gumba
   lat: 27.676094
   lon: 84.531305
   district: Chitwan
@@ -15379,8 +15379,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: temple-godawari
-  name_en: temple, Godawari
-  name_ne: temple, Godawari
+  name_en: Temple, Godawari
+  name_ne: Temple, Godawari
   lat: 27.596352
   lon: 85.386461
   district: Lalitpur
@@ -16778,8 +16778,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: jarayotar
-  name_en: jarayotar
-  name_ne: jarayotar
+  name_en: Jarayotar
+  name_ne: Jarayotar
   lat: 27.142901
   lon: 87.265944
   district: Bhojpur
@@ -17527,8 +17527,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chhabdi-mandir
-  name_en: chhabdi mandir
-  name_ne: chhabdi mandir
+  name_en: Chhabdi Mandir
+  name_ne: Chhabdi Mandir
   lat: 27.960318
   lon: 84.324515
   district: Tanahun
@@ -17847,7 +17847,7 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: joytish-vawisya-kendra
-  name_en: joytish vawisya kendra
+  name_en: Joytish Vawisya Kendra
   name_ne: जोतिष भविस्य केन्द्र
   lat: 28.195192
   lon: 83.950388
@@ -19130,8 +19130,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: devithan-malpi
-  name_en: devithan malpi
-  name_ne: devithan malpi
+  name_en: Devithan Malpi
+  name_ne: Devithan Malpi
   lat: 27.582841
   lon: 85.502903
   district: Kavrepalanchok
@@ -19476,8 +19476,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: balkumari-mandir-borcha
-  name_en: balkumari mandir, Borcha
-  name_ne: balkumari mandir, Borcha
+  name_en: Balkumari Mandir, Borcha
+  name_ne: Balkumari Mandir, Borcha
   lat: 27.647322
   lon: 85.364413
   district: Lalitpur
@@ -19840,8 +19840,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: jyaba-bahi-jestha-barna-maha-bihar
-  name_en: jyaba bahi (jestha barna maha bihar)
-  name_ne: jyaba bahi (jestha barna maha bihar)
+  name_en: Jyaba Bahi (jestha Barna Maha Bihar)
+  name_ne: Jyaba Bahi (jestha Barna Maha Bihar)
   lat: 27.670578
   lon: 85.325144
   district: Lalitpur
@@ -20087,8 +20087,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: pipal-tree-bhimphedi-4388650405
-  name_en: pipal tree, Bhimphedi
-  name_ne: pipal tree, Bhimphedi
+  name_en: Pipal Tree, Bhimphedi
+  name_ne: Pipal Tree, Bhimphedi
   lat: 27.54584
   lon: 85.128664
   district: Makwanpur
@@ -20135,8 +20135,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: pipal-tree-bhimphedi-4393119931
-  name_en: pipal tree, Bhimphedi
-  name_ne: pipal tree, Bhimphedi
+  name_en: Pipal Tree, Bhimphedi
+  name_ne: Pipal Tree, Bhimphedi
   lat: 27.543092
   lon: 85.122272
   district: Makwanpur
@@ -20278,8 +20278,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: 2no-road
-  name_en: 2no. road
-  name_ne: 2no. road
+  name_en: 2no. Road
+  name_ne: 2no. Road
   lat: 26.651222
   lon: 86.211304
   district: Siraha
@@ -21145,8 +21145,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: mandir-pragatinagar
-  name_en: mandir, Pragatinagar
-  name_ne: mandir, Pragatinagar
+  name_en: Mandir, Pragatinagar
+  name_ne: Mandir, Pragatinagar
   lat: 27.66864
   lon: 84.180754
   district: Nawalpur
@@ -21886,7 +21886,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: samakhusi-townplanning-mandir
-  name_en: samakhusi townplanning mandir
+  name_en: Samakhusi Townplanning Mandir
   name_ne: सामाखुसी टाउनप्लानिङ  मन्दिर
   lat: 27.730873
   lon: 85.315324
@@ -22077,7 +22077,7 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: ashapuri
-  name_en: ashapuri
+  name_en: Ashapuri
   name_ne: आशापुरी
   lat: 27.618253
   lon: 85.464953
@@ -23196,8 +23196,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: puranosinamangal-mandir
-  name_en: puranosinamangal mandir
-  name_ne: puranosinamangal mandir
+  name_en: Puranosinamangal Mandir
+  name_ne: Puranosinamangal Mandir
   lat: 27.689145
   lon: 85.360439
   district: Kathmandu
@@ -25241,8 +25241,8 @@ places:
   festivals:
   - id: christmas
 - id: satyashor-shiva-mandir
-  name_en: satyashor shiva mandir
-  name_ne: satyashor shiva mandir
+  name_en: Satyashor Shiva Mandir
+  name_ne: Satyashor Shiva Mandir
   lat: 27.574261
   lon: 85.279975
   district: Lalitpur
@@ -25266,8 +25266,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: jauladevi-mandir
-  name_en: jauladevi mandir
-  name_ne: jauladevi mandir
+  name_en: Jauladevi Mandir
+  name_ne: Jauladevi Mandir
   lat: 27.615014
   lon: 85.376266
   district: Lalitpur
@@ -26101,7 +26101,7 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: kali-temple-naya-baneshwar
-  name_en: kali temple, Naya Baneshwar
+  name_en: Kali Temple, Naya Baneshwar
   name_ne: काली मन्दिर, नयाँ बानेश्वर
   lat: 27.689815
   lon: 85.340358
@@ -27150,8 +27150,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-temple-parajuligaun
-  name_en: shiva temple, Parajuligaun
-  name_ne: shiva temple, Parajuligaun
+  name_en: Shiva Temple, Parajuligaun
+  name_ne: Shiva Temple, Parajuligaun
   lat: 28.159001
   lon: 83.982968
   district: Kaski
@@ -27811,8 +27811,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: om-santi-yog-office
-  name_en: om santi yog office
-  name_ne: om santi yog office
+  name_en: Om Santi Yog Office
+  name_ne: Om Santi Yog Office
   lat: 28.706374
   lon: 80.572622
   district: Kailali
@@ -27834,8 +27834,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-chowk
-  name_en: ganesh chowk
-  name_ne: ganesh chowk
+  name_en: Ganesh Chowk
+  name_ne: Ganesh Chowk
   lat: 27.256749
   lon: 87.790869
   district: Panchthar
@@ -27857,8 +27857,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: swasthani-mata-mandir
-  name_en: swasthani mata mandir
-  name_ne: swasthani mata mandir
+  name_en: Swasthani Mata Mandir
+  name_ne: Swasthani Mata Mandir
   lat: 27.72804
   lon: 85.46907
   district: Kathmandu
@@ -27926,7 +27926,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-tarebhir
-  name_en: temple, Tarebhir
+  name_en: Temple, Tarebhir
   name_ne: मंदिर, तारेभिर
   lat: 27.75896
   lon: 85.386938
@@ -28025,8 +28025,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shivpuri-dham
-  name_en: shivpuri dham
-  name_ne: shivpuri dham
+  name_en: Shivpuri Dham
+  name_ne: Shivpuri Dham
   lat: 28.717134
   lon: 80.576869
   district: Kailali
@@ -29345,8 +29345,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: stupa-chorten-samde
-  name_en: stupa, chorten, Samde
-  name_ne: stupa, chorten, Samde
+  name_en: Stupa, Chorten, Samde
+  name_ne: Stupa, Chorten, Samde
   lat: 27.828056
   lon: 86.666569
   district: Solukhumbu
@@ -31055,8 +31055,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kapileshwar-mandir
-  name_en: kapileshwar mandir
-  name_ne: kapileshwar mandir
+  name_en: Kapileshwar Mandir
+  name_ne: Kapileshwar Mandir
   lat: 28.05979
   lon: 81.611327
   district: Banke
@@ -31515,8 +31515,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: jamiya-masjid-kinghariyan-purwa
-  name_en: jamiya masjid , kinghariyan purwa
-  name_ne: jamiya masjid , kinghariyan purwa
+  name_en: Jamiya Masjid , Kinghariyan Purwa
+  name_ne: Jamiya Masjid , Kinghariyan Purwa
   lat: 28.05576
   lon: 81.670796
   district: Banke
@@ -31538,8 +31538,8 @@ places:
   festivals:
   - id: christmas
 - id: shiv-mandir-jodhapurwa
-  name_en: shiv mandir, Jodhapurwa
-  name_ne: shiv mandir, Jodhapurwa
+  name_en: Shiv Mandir, Jodhapurwa
+  name_ne: Shiv Mandir, Jodhapurwa
   lat: 28.058174
   lon: 81.673379
   district: Banke
@@ -31589,8 +31589,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: mandir-malahupur
-  name_en: mandir, Malahupur
-  name_ne: mandir, Malahupur
+  name_en: Mandir, Malahupur
+  name_ne: Mandir, Malahupur
   lat: 28.06251
   lon: 81.682842
   district: Banke
@@ -31612,8 +31612,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-lulenpur
-  name_en: shiva mandir, Lulenpur
-  name_ne: shiva mandir, Lulenpur
+  name_en: Shiva Mandir, Lulenpur
+  name_ne: Shiva Mandir, Lulenpur
   lat: 28.064775
   lon: 81.672931
   district: Banke
@@ -31685,8 +31685,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: ram-janaki-mandir-puraini-gaun
-  name_en: ram janaki mandir, Puraini Gaun
-  name_ne: ram janaki mandir, Puraini Gaun
+  name_en: Ram Janaki Mandir, Puraini Gaun
+  name_ne: Ram Janaki Mandir, Puraini Gaun
   lat: 28.062497
   lon: 81.654664
   district: Banke
@@ -31710,8 +31710,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: sahid-mandir
-  name_en: sahid mandir
-  name_ne: sahid mandir
+  name_en: Sahid Mandir
+  name_ne: Sahid Mandir
   lat: 28.064942
   lon: 81.656212
   district: Banke
@@ -31733,8 +31733,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: prasula-khatum-madarsa-gulsane-masodiya
-  name_en: prasula khatum ,madarsa gulsane masodiya
-  name_ne: prasula khatum ,madarsa gulsane masodiya
+  name_en: Prasula Khatum ,madarsa Gulsane Masodiya
+  name_ne: Prasula Khatum ,madarsa Gulsane Masodiya
   lat: 28.062323
   lon: 81.659009
   district: Banke
@@ -32025,8 +32025,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: shiv-mandir-bagwanpur-tol
-  name_en: shiv mandir, Bagwanpur Tol
-  name_ne: shiv mandir, Bagwanpur Tol
+  name_en: Shiv Mandir, Bagwanpur Tol
+  name_ne: Shiv Mandir, Bagwanpur Tol
   lat: 28.059372
   lon: 81.643805
   district: Banke
@@ -32050,8 +32050,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiv-mandir-bagwanpur-tol-5401063432
-  name_en: shiv mandir, Bagwanpur Tol
-  name_ne: shiv mandir, Bagwanpur Tol
+  name_en: Shiv Mandir, Bagwanpur Tol
+  name_ne: Shiv Mandir, Bagwanpur Tol
   lat: 28.0591
   lon: 81.642537
   district: Banke
@@ -32345,8 +32345,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: shree-shiva-ram-janaki-mandir
-  name_en: shree shiva ram janaki mandir
-  name_ne: shree shiva ram janaki mandir
+  name_en: Shree Shiva Ram Janaki Mandir
+  name_ne: Shree Shiva Ram Janaki Mandir
   lat: 28.061137
   lon: 81.62423
   district: Banke
@@ -32372,8 +32372,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: shri-hanuman-gadhi-mandir
-  name_en: shri hanuman gadhi mandir
-  name_ne: shri hanuman gadhi mandir
+  name_en: Shri Hanuman Gadhi Mandir
+  name_ne: Shri Hanuman Gadhi Mandir
   lat: 28.061096
   lon: 81.622486
   district: Banke
@@ -33630,8 +33630,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: shiv-mandir-kataliya-chauraha
-  name_en: shiv mandir, Kataliya Chauraha
-  name_ne: shiv mandir, Kataliya Chauraha
+  name_en: Shiv Mandir, Kataliya Chauraha
+  name_ne: Shiv Mandir, Kataliya Chauraha
   lat: 28.068592
   lon: 81.676434
   district: Banke
@@ -34463,7 +34463,7 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: shri-phaimalchuli-karuneshwar-durga-mandir
-  name_en: shri phaimalchuli karuneshwar durga mandir
+  name_en: Shri Phaimalchuli Karuneshwar Durga Mandir
   name_ne: श्री फाईमलचुली करुणेश्वर दुर्गा मन्दिर
   lat: 27.749653
   lon: 85.338233
@@ -38933,8 +38933,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chakra-devi-mandir
-  name_en: chakra devi mandir
-  name_ne: chakra devi mandir
+  name_en: Chakra Devi Mandir
+  name_ne: Chakra Devi Mandir
   lat: 28.191839
   lon: 84.086504
   district: Kaski
@@ -39554,7 +39554,7 @@ places:
   festivals:
   - id: christmas
 - id: chandeshwori-temple-bholakha-tol
-  name_en: chandeshwori temple, Bholakha Tol
+  name_en: Chandeshwori Temple, Bholakha Tol
   name_ne: चन्देश्वरी मन्दिर, भोलाखा टोल
   lat: 27.633474
   lon: 85.521619
@@ -39579,7 +39579,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-wasinkhyo-tol
-  name_en: chandeshwori temple, Wasinkhyo Tol
+  name_en: Chandeshwori Temple, Wasinkhyo Tol
   name_ne: चन्देश्वरी मन्दिर, वासिंख्यो टोल
   lat: 27.632701
   lon: 85.521999
@@ -39723,8 +39723,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: durga-mandir-sabaila
-  name_en: durga mandir, Sabaila
-  name_ne: durga mandir, Sabaila
+  name_en: Durga Mandir, Sabaila
+  name_ne: Durga Mandir, Sabaila
   lat: 26.799231
   lon: 86.089732
   district: Dhanusha
@@ -40093,8 +40093,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: durga-mandir-madhawaliya
-  name_en: durga mandir, Madhawaliya
-  name_ne: durga mandir, Madhawaliya
+  name_en: Durga Mandir, Madhawaliya
+  name_ne: Durga Mandir, Madhawaliya
   lat: 27.583013
   lon: 83.508309
   district: Rupandehi
@@ -40119,8 +40119,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: bm
-  name_en: bm
-  name_ne: bm
+  name_en: Bm
+  name_ne: Bm
   lat: 27.470993
   lon: 85.263663
   district: Lalitpur
@@ -40738,8 +40738,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-kaden
-  name_en: shiva mandir, Kaden
-  name_ne: shiva mandir, Kaden
+  name_en: Shiva Mandir, Kaden
+  name_ne: Shiva Mandir, Kaden
   lat: 28.287855
   lon: 83.738142
   district: Parbat
@@ -40836,8 +40836,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shivalaya-temple-pradeepnagar
-  name_en: shivalaya temple, Pradeepnagar
-  name_ne: shivalaya temple, Pradeepnagar
+  name_en: Shivalaya Temple, Pradeepnagar
+  name_ne: Shivalaya Temple, Pradeepnagar
   lat: 27.63109
   lon: 83.510843
   district: Rupandehi
@@ -40912,8 +40912,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-dubripur
-  name_en: temple, Dubripur
-  name_ne: temple, Dubripur
+  name_en: Temple, Dubripur
+  name_ne: Temple, Dubripur
   lat: 27.525173
   lon: 83.124433
   district: Kapilvastu
@@ -41253,8 +41253,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chaurashi-babathan
-  name_en: chaurashi babathan
-  name_ne: chaurashi babathan
+  name_en: Chaurashi Babathan
+  name_ne: Chaurashi Babathan
   lat: 28.276494
   lon: 83.67957
   district: Parbat
@@ -41727,8 +41727,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: kulmandir
-  name_en: kulmandir
-  name_ne: kulmandir
+  name_en: Kulmandir
+  name_ne: Kulmandir
   lat: 28.288935
   lon: 83.740939
   district: Parbat
@@ -42439,8 +42439,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: paudel-kulmandir
-  name_en: paudel kulmandir
-  name_ne: paudel kulmandir
+  name_en: Paudel Kulmandir
+  name_ne: Paudel Kulmandir
   lat: 28.245071
   lon: 83.753245
   district: Parbat
@@ -44488,8 +44488,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: hayagri-temple
-  name_en: hayagri temple
-  name_ne: hayagri temple
+  name_en: Hayagri Temple
+  name_ne: Hayagri Temple
   lat: 27.177193
   lon: 87.206419
   district: Bhojpur
@@ -45727,8 +45727,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: monuments
-  name_en: monuments
-  name_ne: monuments
+  name_en: Monuments
+  name_ne: Monuments
   lat: 27.693001
   lon: 85.938714
   district: Sindhupalchowk
@@ -46085,8 +46085,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-bhajani
-  name_en: shiva mandir bhajani
-  name_ne: shiva mandir bhajani
+  name_en: Shiva Mandir Bhajani
+  name_ne: Shiva Mandir Bhajani
   lat: 28.466202
   lon: 80.98019
   district: Kailali
@@ -46110,8 +46110,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiiva-mandir-kanhaiyapur
-  name_en: shiiva mandir kanhaiyapur
-  name_ne: shiiva mandir kanhaiyapur
+  name_en: Shiiva Mandir Kanhaiyapur
+  name_ne: Shiiva Mandir Kanhaiyapur
   lat: 28.456472
   lon: 80.993582
   district: Kailali
@@ -47285,8 +47285,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-baglung
-  name_en: shiva mandir, Baglung
-  name_ne: shiva mandir, Baglung
+  name_en: Shiva Mandir, Baglung
+  name_ne: Shiva Mandir, Baglung
   lat: 28.264505
   lon: 83.599674
   district: Baglung
@@ -47737,8 +47737,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: prayer-flag-and-stone
-  name_en: prayer flag and stone
-  name_ne: prayer flag and stone
+  name_en: Prayer Flag And Stone
+  name_ne: Prayer Flag And Stone
   lat: 29.03679
   lon: 83.126695
   district: Dolpa
@@ -47836,8 +47836,8 @@ places:
   - id: shree-panchami
   - id: vijaya-dashami
 - id: bhawani-mandir-hildum
-  name_en: bhawani mandir, Hildum
-  name_ne: bhawani mandir, Hildum
+  name_en: Bhawani Mandir, Hildum
+  name_ne: Bhawani Mandir, Hildum
   lat: 29.971371
   lon: 81.836511
   district: Humla
@@ -50397,8 +50397,8 @@ places:
   festivals:
   - id: christmas
 - id: bagawati-temple
-  name_en: bagawati temple
-  name_ne: bagawati temple
+  name_en: Bagawati Temple
+  name_ne: Bagawati Temple
   lat: 28.297839
   lon: 83.767647
   district: Kaski
@@ -50684,7 +50684,7 @@ places:
   festivals:
   - id: christmas
 - id: chandeshwori-temple-bade-tol
-  name_en: chandeshwori temple, Bade Tol
+  name_en: Chandeshwori Temple, Bade Tol
   name_ne: चन्देश्वरी मन्दिर, बाडे टोल
   lat: 27.635003
   lon: 85.520174
@@ -50709,7 +50709,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-kwon-tol
-  name_en: chandeshwori temple, Kwon Tol
+  name_en: Chandeshwori Temple, Kwon Tol
   name_ne: चन्देश्वरी मन्दिर, कुओन टोल
   lat: 27.63313
   lon: 85.51878
@@ -50734,7 +50734,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-bade-tol-7296263646
-  name_en: chandeshwori temple, Bade Tol
+  name_en: Chandeshwori Temple, Bade Tol
   name_ne: चन्देश्वरी मन्दिर, बाडे टोल
   lat: 27.63424
   lon: 85.519264
@@ -51003,8 +51003,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: ganesh-temple-gyaneshwar
-  name_en: ganesh temple, Gyaneshwar
-  name_ne: ganesh temple, Gyaneshwar
+  name_en: Ganesh Temple, Gyaneshwar
+  name_ne: Ganesh Temple, Gyaneshwar
   lat: 27.709377
   lon: 85.329446
   district: Kathmandu
@@ -51386,8 +51386,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiv-mandir-katal
-  name_en: shiv mandir, Katal
-  name_ne: shiv mandir, Katal
+  name_en: Shiv Mandir, Katal
+  name_ne: Shiv Mandir, Katal
   lat: 29.144352
   lon: 80.352117
   district: Dadeldhura
@@ -51528,8 +51528,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: mahadev-temple-mastadeu-basic-school-jub-bajhang
-  name_en: mahadev temple, mastadeu basic school jub bajhang
-  name_ne: mahadev temple, mastadeu basic school jub bajhang
+  name_en: Mahadev Temple, mastadeu basic school jub bajhang
+  name_ne: Mahadev Temple, mastadeu basic school jub bajhang
   lat: 29.46623
   lon: 80.90681
   district: Bajhang
@@ -54369,8 +54369,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-khadka-bada
-  name_en: temple, Khadka Bada
-  name_ne: temple, Khadka Bada
+  name_en: Temple, Khadka Bada
+  name_ne: Temple, Khadka Bada
   lat: 29.157303
   lon: 80.958861
   district: Doti
@@ -54392,8 +54392,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-khadka-bada-8213982123
-  name_en: temple, Khadka Bada
-  name_ne: temple, Khadka Bada
+  name_en: Temple, Khadka Bada
+  name_ne: Temple, Khadka Bada
   lat: 29.158851
   lon: 80.958767
   district: Doti
@@ -54415,8 +54415,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-bhadagau
-  name_en: temple, Bhadagau
-  name_ne: temple, Bhadagau
+  name_en: Temple, Bhadagau
+  name_ne: Temple, Bhadagau
   lat: 29.163839
   lon: 80.964838
   district: Doti
@@ -54438,8 +54438,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-badhariya
-  name_en: temple, Badhariya
-  name_ne: temple, Badhariya
+  name_en: Temple, Badhariya
+  name_ne: Temple, Badhariya
   lat: 28.56178
   lon: 81.027094
   district: Kailali
@@ -54486,8 +54486,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: temple-jogahi
-  name_en: temple, Jogahi
-  name_ne: temple, Jogahi
+  name_en: Temple, Jogahi
+  name_ne: Temple, Jogahi
   lat: 28.641425
   lon: 80.955569
   district: Kailali
@@ -54509,8 +54509,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-jogahi-8222393197
-  name_en: temple, Jogahi
-  name_ne: temple, Jogahi
+  name_en: Temple, Jogahi
+  name_ne: Temple, Jogahi
   lat: 28.644556
   lon: 80.955417
   district: Kailali
@@ -56759,8 +56759,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: betal-temple-pimee-village
-  name_en: betal temple, Pimee Village
-  name_ne: betal temple, Pimee Village
+  name_en: Betal Temple, Pimee Village
+  name_ne: Betal Temple, Pimee Village
   lat: 29.521861
   lon: 81.231794
   district: Bajhang
@@ -56782,8 +56782,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: masta-temple-kapri-vilage
-  name_en: masta temple, Kapri Vilage
-  name_ne: masta temple, Kapri Vilage
+  name_en: Masta Temple, Kapri Vilage
+  name_ne: Masta Temple, Kapri Vilage
   lat: 29.513422
   lon: 81.079101
   district: Bajhang
@@ -56805,8 +56805,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: radha-krishna-temple-jhota
-  name_en: radha krishna temple, Jhota
-  name_ne: radha krishna temple, Jhota
+  name_en: Radha Krishna Temple, Jhota
+  name_ne: Radha Krishna Temple, Jhota
   lat: 29.47547
   lon: 81.001854
   district: Bajhang
@@ -56830,7 +56830,7 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: shiva-temple-shela-gaun
-  name_en: shiva temple, Shela Gaun
+  name_en: Shiva Temple, Shela Gaun
   name_ne: शिव मन्दिर , Shela Gaun
   lat: 29.502964
   lon: 81.012497
@@ -56855,8 +56855,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shree-mahadev-temple
-  name_en: shree mahadev temple
-  name_ne: shree mahadev temple
+  name_en: Shree Mahadev Temple
+  name_ne: Shree Mahadev Temple
   lat: 29.495494
   lon: 80.990867
   district: Bajhang
@@ -56880,8 +56880,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: kapar-temple
-  name_en: kapar temple
-  name_ne: kapar temple
+  name_en: Kapar Temple
+  name_ne: Kapar Temple
   lat: 29.507745
   lon: 80.996017
   district: Bajhang
@@ -56949,7 +56949,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-temple-baraadi-gaun
-  name_en: shiva temple, Baraadi Gaun
+  name_en: Shiva Temple, Baraadi Gaun
   name_ne: शिव मन्दिर , वरादीगाउँ
   lat: 29.479286
   lon: 80.92764
@@ -56974,8 +56974,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: bhamdeli-temple
-  name_en: bhamdeli temple
-  name_ne: bhamdeli temple
+  name_en: Bhamdeli Temple
+  name_ne: Bhamdeli Temple
   lat: 29.49314
   lon: 80.87182
   district: Bajhang
@@ -56997,8 +56997,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bishnu-temple
-  name_en: bishnu temple
-  name_ne: bishnu temple
+  name_en: Bishnu Temple
+  name_ne: Bishnu Temple
   lat: 29.535661
   lon: 80.921321
   district: Bajhang
@@ -57020,8 +57020,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-temple-bhadsain
-  name_en: ganesh temple, Bhadsain
-  name_ne: ganesh temple, Bhadsain
+  name_en: Ganesh Temple, Bhadsain
+  name_ne: Ganesh Temple, Bhadsain
   lat: 29.535604
   lon: 80.920103
   district: Bajhang
@@ -57043,7 +57043,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: devi-temple-dhyadi
-  name_en: devi temple, Dhyadi
+  name_en: Devi Temple, Dhyadi
   name_ne: देवी मन्दिर, ध्यादी
   lat: 29.557406
   lon: 80.877743
@@ -57141,7 +57141,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-tumeda
-  name_en: temple, Tumeda
+  name_en: Temple, Tumeda
   name_ne: मन्दिर , Tumeda
   lat: 29.589505
   lon: 80.829152
@@ -57187,7 +57187,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhawani-temple-paththarkot
-  name_en: bhawani temple, Paththarkot
+  name_en: Bhawani Temple, Paththarkot
   name_ne: भवानी मन्दिर , Paththarkot
   lat: 29.628258
   lon: 80.858321
@@ -57213,7 +57213,7 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: mahadev-temple-thanjyawan
-  name_en: mahadev temple, Thanjyawan
+  name_en: Mahadev Temple, Thanjyawan
   name_ne: महादेव मन्दिर , Thanjyawan
   lat: 29.659838
   lon: 80.874908
@@ -57938,8 +57938,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: herauni-thau
-  name_en: herauni thau
-  name_ne: herauni thau
+  name_en: Herauni Thau
+  name_ne: Herauni Thau
   lat: 28.233874
   lon: 83.982663
   district: Kaski
@@ -57986,8 +57986,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: durga-mandir-bardaghat
-  name_en: durga mandir, Bardaghat
-  name_ne: durga mandir, Bardaghat
+  name_en: Durga Mandir, Bardaghat
+  name_ne: Durga Mandir, Bardaghat
   lat: 27.556908
   lon: 83.778785
   district: Nawalparasi W
@@ -59369,8 +59369,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: sivji-mandir
-  name_en: sivji mandir
-  name_ne: sivji mandir
+  name_en: Sivji Mandir
+  name_ne: Sivji Mandir
   lat: 28.07031
   lon: 81.543097
   district: Banke
@@ -59392,8 +59392,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: juguniya-mata-mandir
-  name_en: juguniya mata mandir
-  name_ne: juguniya mata mandir
+  name_en: Juguniya Mata Mandir
+  name_ne: Juguniya Mata Mandir
   lat: 28.119066
   lon: 81.514419
   district: Banke
@@ -59415,8 +59415,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: radha-krishna-mandir-thatenpur
-  name_en: radha krishna mandir, Thatenpur
-  name_ne: radha krishna mandir, Thatenpur
+  name_en: Radha Krishna Mandir, Thatenpur
+  name_ne: Radha Krishna Mandir, Thatenpur
   lat: 28.115358
   lon: 81.512471
   district: Banke
@@ -59440,8 +59440,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: baba-sukaidas-temple
-  name_en: baba sukaidas temple
-  name_ne: baba sukaidas temple
+  name_en: Baba Sukaidas Temple
+  name_ne: Baba Sukaidas Temple
   lat: 28.103701
   lon: 81.522111
   district: Banke
@@ -59463,8 +59463,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: durga-kalika-shiva-dham-temple
-  name_en: durga kalika shiva dham temple
-  name_ne: durga kalika shiva dham temple
+  name_en: Durga Kalika Shiva Dham Temple
+  name_ne: Durga Kalika Shiva Dham Temple
   lat: 28.134365
   lon: 81.579112
   district: Banke
@@ -59490,8 +59490,8 @@ places:
   - id: maha-ashtami
   - id: maha-navami
 - id: kalika-mandir-sahadat-puruwa
-  name_en: kalika mandir, Sahadat puruwa
-  name_ne: kalika mandir, Sahadat puruwa
+  name_en: Kalika Mandir, Sahadat puruwa
+  name_ne: Kalika Mandir, Sahadat puruwa
   lat: 28.123109
   lon: 81.57336
   district: Banke
@@ -59516,8 +59516,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: naba-durga-temple
-  name_en: naba durga temple
-  name_ne: naba durga temple
+  name_en: Naba Durga Temple
+  name_ne: Naba Durga Temple
   lat: 28.084765
   lon: 81.551061
   district: Banke
@@ -59542,8 +59542,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: laxminarayan-temple-balbhadrapur
-  name_en: laxminarayan temple, Balbhadrapur
-  name_ne: laxminarayan temple, Balbhadrapur
+  name_en: Laxminarayan Temple, Balbhadrapur
+  name_ne: Laxminarayan Temple, Balbhadrapur
   lat: 28.12632
   lon: 81.574996
   district: Banke
@@ -59567,8 +59567,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: shree-bageshwori-temple
-  name_en: shree bageshwori temple
-  name_ne: shree bageshwori temple
+  name_en: Shree Bageshwori Temple
+  name_ne: Shree Bageshwori Temple
   lat: 28.097467
   lon: 81.572214
   district: Banke
@@ -59592,8 +59592,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: pragya-baudha-bihar-gumba
-  name_en: pragya baudha bihar gumba
-  name_ne: pragya baudha bihar gumba
+  name_en: Pragya Baudha Bihar Gumba
+  name_ne: Pragya Baudha Bihar Gumba
   lat: 28.1024
   lon: 81.556538
   district: Banke
@@ -59617,8 +59617,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: durga-bhawani-mandir-balbhadrapur
-  name_en: durga bhawani mandir, Balbhadrapur
-  name_ne: durga bhawani mandir, Balbhadrapur
+  name_en: Durga Bhawani Mandir, Balbhadrapur
+  name_ne: Durga Bhawani Mandir, Balbhadrapur
   lat: 28.128884
   lon: 81.58461
   district: Banke
@@ -59643,8 +59643,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: sansari-mai-temple
-  name_en: sansari mai temple
-  name_ne: sansari mai temple
+  name_en: Sansari Mai Temple
+  name_ne: Sansari Mai Temple
   lat: 28.151777
   lon: 81.580627
   district: Banke
@@ -59669,8 +59669,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: bhagawoti-mai-temple
-  name_en: bhagawoti mai temple
-  name_ne: bhagawoti mai temple
+  name_en: Bhagawoti Mai Temple
+  name_ne: Bhagawoti Mai Temple
   lat: 28.152344
   lon: 81.580348
   district: Banke
@@ -59695,8 +59695,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: kalika-temple-balbhadrapur
-  name_en: kalika temple, Balbhadrapur
-  name_ne: kalika temple, Balbhadrapur
+  name_en: Kalika Temple, Balbhadrapur
+  name_ne: Kalika Temple, Balbhadrapur
   lat: 28.149771
   lon: 81.59244
   district: Banke
@@ -59721,8 +59721,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: shiva-temple-balbhadrapur
-  name_en: shiva temple, Balbhadrapur
-  name_ne: shiva temple, Balbhadrapur
+  name_en: Shiva Temple, Balbhadrapur
+  name_ne: Shiva Temple, Balbhadrapur
   lat: 28.161475
   lon: 81.589477
   district: Banke
@@ -59746,8 +59746,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: kiran-bhawani-mandir
-  name_en: kiran bhawani mandir
-  name_ne: kiran bhawani mandir
+  name_en: Kiran Bhawani Mandir
+  name_ne: Kiran Bhawani Mandir
   lat: 28.146462
   lon: 81.623393
   district: Banke
@@ -59772,8 +59772,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: salom-church
-  name_en: salom church
-  name_ne: salom church
+  name_en: Salom Church
+  name_ne: Salom Church
   lat: 28.141807
   lon: 81.510562
   district: Banke
@@ -59795,8 +59795,8 @@ places:
   festivals:
   - id: christmas
 - id: church-balbhadrapur
-  name_en: church, Balbhadrapur
-  name_ne: church, Balbhadrapur
+  name_en: Church, Balbhadrapur
+  name_ne: Church, Balbhadrapur
   lat: 28.131736
   lon: 81.589995
   district: Banke
@@ -59818,8 +59818,8 @@ places:
   festivals:
   - id: christmas
 - id: shiva-temple-thatenpur
-  name_en: shiva temple, Thatenpur
-  name_ne: shiva temple, Thatenpur
+  name_en: Shiva Temple, Thatenpur
+  name_ne: Shiva Temple, Thatenpur
   lat: 28.126121
   lon: 81.536334
   district: Banke
@@ -59843,8 +59843,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: temple-thatenpur
-  name_en: temple, Thatenpur
-  name_ne: temple, Thatenpur
+  name_en: Temple, Thatenpur
+  name_ne: Temple, Thatenpur
   lat: 28.106673
   lon: 81.530516
   district: Banke
@@ -59866,8 +59866,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: hanuman-gadhi-mandir
-  name_en: hanuman gadhi mandir
-  name_ne: hanuman gadhi mandir
+  name_en: Hanuman Gadhi Mandir
+  name_ne: Hanuman Gadhi Mandir
   lat: 28.137998
   lon: 81.551074
   district: Banke
@@ -59890,8 +59890,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: durga-mandir-balbhadrapur
-  name_en: durga mandir, Balbhadrapur
-  name_ne: durga mandir, Balbhadrapur
+  name_en: Durga Mandir, Balbhadrapur
+  name_ne: Durga Mandir, Balbhadrapur
   lat: 28.134174
   lon: 81.578971
   district: Banke
@@ -59916,8 +59916,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: durga-mandir-balbhadrapur-9116409569
-  name_en: durga mandir, Balbhadrapur
-  name_ne: durga mandir, Balbhadrapur
+  name_en: Durga Mandir, Balbhadrapur
+  name_ne: Durga Mandir, Balbhadrapur
   lat: 28.134247
   lon: 81.579162
   district: Banke
@@ -59942,8 +59942,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: durga-temple-pashipur
-  name_en: durga temple, Pashipur
-  name_ne: durga temple, Pashipur
+  name_en: Durga Temple, Pashipur
+  name_ne: Durga Temple, Pashipur
   lat: 28.12118
   lon: 81.560322
   district: Banke
@@ -59968,8 +59968,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: masjid-thatenpur
-  name_en: masjid, Thatenpur
-  name_ne: masjid, Thatenpur
+  name_en: Masjid, Thatenpur
+  name_ne: Masjid, Thatenpur
   lat: 28.127969
   lon: 81.536489
   district: Banke
@@ -59991,8 +59991,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: masjid-thatenpur-9123560199
-  name_en: masjid, Thatenpur
-  name_ne: masjid, Thatenpur
+  name_en: Masjid, Thatenpur
+  name_ne: Masjid, Thatenpur
   lat: 28.124995
   lon: 81.537277
   district: Banke
@@ -60014,8 +60014,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: majar
-  name_en: majar
-  name_ne: majar
+  name_en: Majar
+  name_ne: Majar
   lat: 28.127412
   lon: 81.532247
   district: Banke
@@ -60866,8 +60866,8 @@ places:
   festivals:
   - id: christmas
 - id: shiv-mandir-jhagarpuruwa-gau
-  name_en: shiv mandir, JhagarPuruwa Gau
-  name_ne: shiv mandir, JhagarPuruwa Gau
+  name_en: Shiv Mandir, JhagarPuruwa Gau
+  name_ne: Shiv Mandir, JhagarPuruwa Gau
   lat: 28.035167
   lon: 81.686775
   district: Banke
@@ -61222,8 +61222,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-flood-affected-area
-  name_en: shiva mandir, Flood affected area
-  name_ne: shiva mandir, Flood affected area
+  name_en: Shiva Mandir, Flood affected area
+  name_ne: Shiva Mandir, Flood affected area
   lat: 28.04776
   lon: 81.703437
   district: Banke
@@ -61247,8 +61247,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-mandir-flood-affected-area-9252434925
-  name_en: shiva mandir, Flood affected area
-  name_ne: shiva mandir, Flood affected area
+  name_en: Shiva Mandir, Flood affected area
+  name_ne: Shiva Mandir, Flood affected area
   lat: 28.045504
   lon: 81.717219
   district: Banke
@@ -61296,8 +61296,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: shiv-mandir-flood-affected-area-9252446240
-  name_en: shiv mandir, Flood affected area
-  name_ne: shiv mandir, Flood affected area
+  name_en: Shiv Mandir, Flood affected area
+  name_ne: Shiv Mandir, Flood affected area
   lat: 28.060309
   lon: 81.708989
   district: Banke
@@ -61721,8 +61721,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bridge
-  name_en: bridge
-  name_ne: bridge
+  name_en: Bridge
+  name_ne: Bridge
   lat: 28.114628
   lon: 86.174184
   district: Dolakha
@@ -64647,8 +64647,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: dikpaldevi
-  name_en: dikpaldevi
-  name_ne: dikpaldevi
+  name_en: Dikpaldevi
+  name_ne: Dikpaldevi
   lat: 27.588245
   lon: 85.656186
   district: Kavrepalanchok
@@ -65469,8 +65469,8 @@ places:
   festivals:
   - id: christmas
 - id: church-bhongjangaun
-  name_en: church, Bhongjangaun
-  name_ne: church, Bhongjangaun
+  name_en: Church, Bhongjangaun
+  name_ne: Church, Bhongjangaun
   lat: 27.552956
   lon: 85.605096
   district: Kavrepalanchok
@@ -66856,8 +66856,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shree-kalika-sakti-pitha
-  name_en: shree kalika sakti pitha
-  name_ne: shree kalika sakti pitha
+  name_en: Shree Kalika Sakti Pitha
+  name_ne: Shree Kalika Sakti Pitha
   lat: 27.543566
   lon: 85.699538
   district: Kavrepalanchok
@@ -66974,7 +66974,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: seti-devi
-  name_en: seti devi
+  name_en: Seti Devi
   name_ne: सेती देबि मन्दिर
   lat: 27.540997
   lon: 85.6814
@@ -67493,7 +67493,7 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: mahne-gumba
-  name_en: mahne gumba
+  name_en: Mahne Gumba
   name_ne: माने गहुमबा
   lat: 27.537577
   lon: 85.662696
@@ -67518,7 +67518,7 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: gumba-kot-timal
-  name_en: gumba, Kot Timal
+  name_en: Gumba, Kot Timal
   name_ne: तेमाल गुम्बा, Kot Timal
   lat: 27.553818
   lon: 85.704188
@@ -67715,8 +67715,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: naag-ko-than-hamlet
-  name_en: naag ko than, Hamlet
-  name_ne: naag ko than, Hamlet
+  name_en: Naag Ko Than, Hamlet
+  name_ne: Naag Ko Than, Hamlet
   lat: 28.181067
   lon: 83.768265
   district: Syangja
@@ -68981,7 +68981,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shree-bindeswori-bhagawati-temple-parisar
-  name_en: shree bindeswori bhagawati temple parisar
+  name_en: Shree Bindeswori Bhagawati Temple Parisar
   name_ne: श्री बिन्देस्वोरी भगवती मन्दिर
   lat: 28.098287
   lon: 82.411845
@@ -69053,7 +69053,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sibalaya-mandir
-  name_en: sibalaya mandir
+  name_en: Sibalaya Mandir
   name_ne: सिबालय मन्दिर
   lat: 28.062342
   lon: 82.374641
@@ -69076,7 +69076,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: 16-number-ward-mandir
-  name_en: 16 number ward mandir
+  name_en: 16 Number Ward Mandir
   name_ne: १६ नम्बर वडा मन्दिर
   lat: 28.032314
   lon: 82.450935
@@ -74381,8 +74381,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhirkot-nagaranthan
-  name_en: bhirkot nagaranthan
-  name_ne: bhirkot nagaranthan
+  name_en: Bhirkot Nagaranthan
+  name_ne: Bhirkot Nagaranthan
   lat: 27.744586
   lon: 85.229497
   district: Dhading
@@ -74427,8 +74427,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: samaya-mai-mandir
-  name_en: samaya mai mandir
-  name_ne: samaya mai mandir
+  name_en: Samaya Mai Mandir
+  name_ne: Samaya Mai Mandir
   lat: 27.481057
   lon: 83.447636
   district: Rupandehi
@@ -88768,8 +88768,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: manpur-masjid
-  name_en: manpur masjid
-  name_ne: manpur masjid
+  name_en: Manpur Masjid
+  name_ne: Manpur Masjid
   lat: 28.018108
   lon: 84.678038
   district: Gorkha
@@ -89256,8 +89256,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: aakala-mandir
-  name_en: aakala mandir
-  name_ne: aakala mandir
+  name_en: Aakala Mandir
+  name_ne: Aakala Mandir
   lat: 28.022272
   lon: 84.681685
   district: Gorkha
@@ -94369,8 +94369,8 @@ places:
   festivals:
   - id: christmas
 - id: charcha
-  name_en: charcha
-  name_ne: charcha
+  name_en: Charcha
+  name_ne: Charcha
   lat: 26.504231
   lon: 87.284328
   district: Morang
@@ -97123,8 +97123,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: hanuman-mandir-baswaria
-  name_en: hanuman mandir, Baswaria
-  name_ne: hanuman mandir, Baswaria
+  name_en: Hanuman Mandir, Baswaria
+  name_ne: Hanuman Mandir, Baswaria
   lat: 26.87484
   lon: 85.189082
   district: Rautahat
@@ -99991,8 +99991,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shankat-mochan-sitaram-mandir
-  name_en: shankat mochan sitaram mandir
-  name_ne: shankat mochan sitaram mandir
+  name_en: Shankat Mochan Sitaram Mandir
+  name_ne: Shankat Mochan Sitaram Mandir
   lat: 27.639508
   lon: 84.408522
   district: Chitwan
@@ -103666,8 +103666,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: sitaladevi-temple
-  name_en: sitaladevi temple
-  name_ne: sitaladevi temple
+  name_en: Sitaladevi Temple
+  name_ne: Sitaladevi Temple
   lat: 26.668286
   lon: 87.602565
   district: Morang
@@ -105079,8 +105079,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: mauwa-devi-mandir
-  name_en: mauwa devi mandir
-  name_ne: mauwa devi mandir
+  name_en: Mauwa Devi Mandir
+  name_ne: Mauwa Devi Mandir
   lat: 27.129165
   lon: 85.047279
   district: Bara
@@ -106002,8 +106002,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chhath-pooja-site
-  name_en: chhath pooja site
-  name_ne: chhath pooja site
+  name_en: Chhath Pooja Site
+  name_ne: Chhath Pooja Site
   lat: 27.018864
   lon: 85.020018
   district: Bara
@@ -107417,7 +107417,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: hanuman-mandir-bhayail-tol
-  name_en: hanuman mandir, Bhayail Tol
+  name_en: Hanuman Mandir, Bhayail Tol
   name_ne: हनुमान मन्दिर, भयाल टोल
   lat: 27.633915
   lon: 85.52728
@@ -108354,7 +108354,7 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: siddasram-shakti-kendra
-  name_en: siddasram shakti kendra
+  name_en: Siddasram Shakti Kendra
   name_ne: 'सिद्धश्रम शक्ति केन्द्र '
   lat: 27.743371
   lon: 85.333342
@@ -108670,8 +108670,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: siwa-mandir
-  name_en: siwa mandir
-  name_ne: siwa mandir
+  name_en: Siwa Mandir
+  name_ne: Siwa Mandir
   lat: 27.677676
   lon: 85.38676
   district: Bhaktapur
@@ -111380,8 +111380,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: singhadevi-temple
-  name_en: singhadevi temple
-  name_ne: singhadevi temple
+  name_en: Singhadevi Temple
+  name_ne: Singhadevi Temple
   lat: 27.034187
   lon: 87.319707
   district: Dhankuta
@@ -111532,8 +111532,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: prayer-wheel-ngawal
-  name_en: prayer wheel, Ngawal
-  name_ne: prayer wheel, Ngawal
+  name_en: Prayer Wheel, Ngawal
+  name_ne: Prayer Wheel, Ngawal
   lat: 28.648947
   lon: 84.101158
   district: Manang
@@ -111794,8 +111794,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: hamuman-mandir
-  name_en: hamuman mandir
-  name_ne: hamuman mandir
+  name_en: Hamuman Mandir
+  name_ne: Hamuman Mandir
   lat: 26.730482
   lon: 85.941741
   district: Dhanusha
@@ -111817,8 +111817,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: krishna-mandir-purbari
-  name_en: krishna mandir, Purbari
-  name_ne: krishna mandir, Purbari
+  name_en: Krishna Mandir, Purbari
+  name_ne: Krishna Mandir, Purbari
   lat: 26.758057
   lon: 85.99145
   district: Dhanusha
@@ -111865,8 +111865,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: nagar-dihbar-baghchaura
-  name_en: nagar dihbar, baghchaura
-  name_ne: nagar dihbar, baghchaura
+  name_en: Nagar Dihbar, Baghchaura
+  name_ne: Nagar Dihbar, Baghchaura
   lat: 26.760358
   lon: 85.994736
   district: Dhanusha
@@ -112860,7 +112860,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: devithan-ghyawar-mandir
-  name_en: devithan ghyawar mandir
+  name_en: Devithan Ghyawar Mandir
   name_ne: देवीथान घ्यावर मन्दिर
   lat: 27.993471
   lon: 85.452399
@@ -114812,8 +114812,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: temple-makkhan
-  name_en: temple, Makkhan
-  name_ne: temple, Makkhan
+  name_en: Temple, Makkhan
+  name_ne: Temple, Makkhan
   lat: 27.707239
   lon: 85.308138
   district: Kathmandu
@@ -115745,8 +115745,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-upallo-lespar
-  name_en: temple, Upallo Lespar
-  name_ne: temple, Upallo Lespar
+  name_en: Temple, Upallo Lespar
+  name_ne: Temple, Upallo Lespar
   lat: 28.315928
   lon: 83.6709
   district: Parbat
@@ -117001,8 +117001,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chorten-braka
-  name_en: chorten, Braka
-  name_ne: chorten, Braka
+  name_en: Chorten, Braka
+  name_ne: Chorten, Braka
   lat: 28.659329
   lon: 84.041743
   district: Manang
@@ -118083,8 +118083,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: naumude-temple-naumude-bowa-temple-area
-  name_en: naumude temple, naumude bowa temple area
-  name_ne: naumude temple, naumude bowa temple area
+  name_en: Naumude Temple, naumude bowa temple area
+  name_ne: Naumude Temple, naumude bowa temple area
   lat: 29.303921
   lon: 82.220102
   district: Jumla
@@ -118106,8 +118106,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kakani-bhuiyar
-  name_en: kakani bhuiyar
-  name_ne: kakani bhuiyar
+  name_en: Kakani Bhuiyar
+  name_ne: Kakani Bhuiyar
   lat: 29.31323
   lon: 82.268726
   district: Jumla
@@ -118129,8 +118129,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: mahadev-than-japna
-  name_en: mahadev than, Japna
-  name_ne: mahadev than, Japna
+  name_en: Mahadev Than, Japna
+  name_ne: Mahadev Than, Japna
   lat: 29.311334
   lon: 82.278402
   district: Jumla
@@ -118154,8 +118154,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: hangre-than
-  name_en: hangre than
-  name_ne: hangre than
+  name_en: Hangre Than
+  name_ne: Hangre Than
   lat: 29.305566
   lon: 82.281857
   district: Jumla
@@ -120003,8 +120003,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: hyngraya-than-temple
-  name_en: hyngraya than (temple)
-  name_ne: hyngraya than (temple)
+  name_en: Hyngraya Than (temple)
+  name_ne: Hyngraya Than (temple)
   lat: 29.284857
   lon: 82.348869
   district: Jumla
@@ -120372,8 +120372,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: bamandeu-than
-  name_en: bamandeu than
-  name_ne: bamandeu than
+  name_en: Bamandeu Than
+  name_ne: Bamandeu Than
   lat: 29.317076
   lon: 82.262619
   district: Jumla
@@ -122932,7 +122932,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-kaag-gaun
-  name_en: temple, Kaag Gaun
+  name_en: Temple, Kaag Gaun
   name_ne: मन्दिर , काग गाउँ
   lat: 29.438621
   lon: 80.948497
@@ -122978,7 +122978,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shailewshori-mandir
-  name_en: shailewshori mandir
+  name_en: Shailewshori Mandir
   name_ne: सैलेशोरी मन्दिर
   lat: 29.462231
   lon: 81.049002
@@ -123122,7 +123122,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiv-mandir-kholi-bajaar
-  name_en: shiv mandir, Kholi Bajaar
+  name_en: Shiv Mandir, Kholi Bajaar
   name_ne: शिव मन्दिर, खोलि बजार
   lat: 29.464512
   lon: 81.027301
@@ -123219,7 +123219,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: caudam-khet
-  name_en: caudam khet
+  name_en: Caudam Khet
   name_ne: 'कौदम खेत '
   lat: 29.461933
   lon: 80.925041
@@ -124121,7 +124121,7 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: nawadeu-mandir-afla
-  name_en: nawadeu mandir afla
+  name_en: Nawadeu Mandir Afla
   name_ne: 'नवादेउ मन्दिर अफ्ला '
   lat: 29.495556
   lon: 81.111554
@@ -125056,8 +125056,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shree-ram-chowk
-  name_en: shree ram chowk
-  name_ne: shree ram chowk
+  name_en: Shree Ram Chowk
+  name_ne: Shree Ram Chowk
   lat: 28.954988
   lon: 80.12171
   district: Kanchanpur
@@ -125079,8 +125079,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-badka-maharwa
-  name_en: shiva mandir, Badka Maharwa
-  name_ne: shiva mandir, Badka Maharwa
+  name_en: Shiva Mandir, Badka Maharwa
+  name_ne: Shiva Mandir, Badka Maharwa
   lat: 27.874624
   lon: 82.511079
   district: Dang
@@ -125127,8 +125127,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-basundhara
-  name_en: shiva mandir, Basundhara
-  name_ne: shiva mandir, Basundhara
+  name_en: Shiva Mandir, Basundhara
+  name_ne: Shiva Mandir, Basundhara
   lat: 27.742965
   lon: 85.329402
   district: Kathmandu
@@ -125201,8 +125201,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chorten-purang
-  name_en: chorten, Purang
-  name_ne: chorten, Purang
+  name_en: Chorten, Purang
+  name_ne: Chorten, Purang
   lat: 28.819151
   lon: 83.86024
   district: Mustang
@@ -131515,8 +131515,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: hollow-stupa-temple
-  name_en: hollow stupa temple
-  name_ne: hollow stupa temple
+  name_en: Hollow Stupa Temple
+  name_ne: Hollow Stupa Temple
   lat: 27.739443
   lon: 85.385443
   district: Kathmandu
@@ -134188,8 +134188,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiv-temple-bagadi
-  name_en: shiv temple, Bagadi
-  name_ne: shiv temple, Bagadi
+  name_en: Shiv Temple, Bagadi
+  name_ne: Shiv Temple, Bagadi
   lat: 27.576396
   lon: 83.155093
   district: Kapilvastu
@@ -134213,8 +134213,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: malawar-mata-temple-bagadi
-  name_en: malawar mata temple,bagadi
-  name_ne: malawar mata temple,bagadi
+  name_en: Malawar Mata Temple,bagadi
+  name_ne: Malawar Mata Temple,bagadi
   lat: 27.571788
   lon: 83.153704
   district: Kapilvastu
@@ -135178,8 +135178,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: code-3447
-  name_en: code 3447
-  name_ne: code 3447
+  name_en: Code 3447
+  name_ne: Code 3447
   lat: 29.564967
   lon: 80.406701
   district: Baitadi
@@ -139553,8 +139553,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: code-10124
-  name_en: code 10124
-  name_ne: code 10124
+  name_en: Code 10124
+  name_ne: Code 10124
   lat: 29.52391
   lon: 80.467318
   district: Baitadi
@@ -139576,8 +139576,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3428-kulaun
-  name_en: code 3428 kulaun
-  name_ne: code 3428 kulaun
+  name_en: Code 3428 Kulaun
+  name_ne: Code 3428 Kulaun
   lat: 29.558757
   lon: 80.472731
   district: Baitadi
@@ -139599,8 +139599,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3065-udaydev-ma-vi
-  name_en: code 3065 udaydev ma vi
-  name_ne: code 3065 udaydev ma vi
+  name_en: Code 3065 Udaydev Ma Vi
+  name_ne: Code 3065 Udaydev Ma Vi
   lat: 29.410904
   lon: 80.501446
   district: Baitadi
@@ -139622,8 +139622,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3314-jabalpur-ma-vi
-  name_en: code 3314 jabalpur ma vi
-  name_ne: code 3314 jabalpur ma vi
+  name_en: Code 3314 Jabalpur Ma Vi
+  name_ne: Code 3314 Jabalpur Ma Vi
   lat: 29.441302
   lon: 80.329664
   district: Baitadi
@@ -139645,8 +139645,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3306dunarikhan
-  name_en: code 3306dunarikhan
-  name_ne: code 3306dunarikhan
+  name_en: Code 3306dunarikhan
+  name_ne: Code 3306dunarikhan
   lat: 29.429608
   lon: 80.279195
   district: Baitadi
@@ -141728,8 +141728,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-001mt
-  name_en: code 001mt
-  name_ne: code 001mt
+  name_en: Code 001mt
+  name_ne: Code 001mt
   lat: 29.556299
   lon: 80.42456
   district: Baitadi
@@ -141751,8 +141751,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3445
-  name_en: code 3445
-  name_ne: code 3445
+  name_en: Code 3445
+  name_ne: Code 3445
   lat: 29.554246
   lon: 80.411392
   district: Baitadi
@@ -141774,8 +141774,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-10072
-  name_en: code 10072
-  name_ne: code 10072
+  name_en: Code 10072
+  name_ne: Code 10072
   lat: 29.535131
   lon: 80.478208
   district: Baitadi
@@ -141797,8 +141797,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3434
-  name_en: code 3434
-  name_ne: code 3434
+  name_en: Code 3434
+  name_ne: Code 3434
   lat: 29.560045
   lon: 80.435989
   district: Baitadi
@@ -141820,8 +141820,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3456
-  name_en: code 3456
-  name_ne: code 3456
+  name_en: Code 3456
+  name_ne: Code 3456
   lat: 29.546778
   lon: 80.374896
   district: Baitadi
@@ -141843,8 +141843,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3440
-  name_en: code 3440
-  name_ne: code 3440
+  name_en: Code 3440
+  name_ne: Code 3440
   lat: 29.532671
   lon: 80.442503
   district: Baitadi
@@ -141866,8 +141866,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11026
-  name_en: code 11026
-  name_ne: code 11026
+  name_en: Code 11026
+  name_ne: Code 11026
   lat: 29.548725
   lon: 80.490465
   district: Baitadi
@@ -141889,8 +141889,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3453
-  name_en: code 3453
-  name_ne: code 3453
+  name_en: Code 3453
+  name_ne: Code 3453
   lat: 29.551928
   lon: 80.393135
   district: Baitadi
@@ -141912,8 +141912,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3461
-  name_en: code 3461
-  name_ne: code 3461
+  name_en: Code 3461
+  name_ne: Code 3461
   lat: 29.59556
   lon: 80.413173
   district: Baitadi
@@ -141935,8 +141935,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3451
-  name_en: code 3451
-  name_ne: code 3451
+  name_en: Code 3451
+  name_ne: Code 3451
   lat: 29.568051
   lon: 80.43513
   district: Baitadi
@@ -141958,8 +141958,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3406
-  name_en: code 3406
-  name_ne: code 3406
+  name_en: Code 3406
+  name_ne: Code 3406
   lat: 29.521868
   lon: 80.381479
   district: Baitadi
@@ -141981,8 +141981,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3449
-  name_en: code 3449
-  name_ne: code 3449
+  name_en: Code 3449
+  name_ne: Code 3449
   lat: 29.577993
   lon: 80.40917
   district: Baitadi
@@ -142004,8 +142004,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3459
-  name_en: code 3459
-  name_ne: code 3459
+  name_en: Code 3459
+  name_ne: Code 3459
   lat: 29.549029
   lon: 80.354886
   district: Baitadi
@@ -142027,8 +142027,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11979
-  name_en: code 11979
-  name_ne: code 11979
+  name_en: Code 11979
+  name_ne: Code 11979
   lat: 29.560725
   lon: 80.397841
   district: Baitadi
@@ -142050,8 +142050,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3415
-  name_en: code 3415
-  name_ne: code 3415
+  name_en: Code 3415
+  name_ne: Code 3415
   lat: 29.518806
   lon: 80.423198
   district: Baitadi
@@ -142073,8 +142073,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11028
-  name_en: code 11028
-  name_ne: code 11028
+  name_en: Code 11028
+  name_ne: Code 11028
   lat: 29.517141
   lon: 80.40191
   district: Baitadi
@@ -142096,8 +142096,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-10071
-  name_en: code 10071
-  name_ne: code 10071
+  name_en: Code 10071
+  name_ne: Code 10071
   lat: 29.507635
   lon: 80.469983
   district: Baitadi
@@ -142119,8 +142119,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3102
-  name_en: code 3102
-  name_ne: code 3102
+  name_en: Code 3102
+  name_ne: Code 3102
   lat: 29.458167
   lon: 80.561006
   district: Baitadi
@@ -142142,8 +142142,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11025
-  name_en: code 11025
-  name_ne: code 11025
+  name_en: Code 11025
+  name_ne: Code 11025
   lat: 29.483356
   lon: 80.466327
   district: Baitadi
@@ -142165,8 +142165,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3100
-  name_en: code 3100
-  name_ne: code 3100
+  name_en: Code 3100
+  name_ne: Code 3100
   lat: 29.465003
   lon: 80.547884
   district: Baitadi
@@ -142188,8 +142188,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3122
-  name_en: code 3122
-  name_ne: code 3122
+  name_en: Code 3122
+  name_ne: Code 3122
   lat: 29.486465
   lon: 80.570567
   district: Baitadi
@@ -142211,8 +142211,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3096
-  name_en: code 3096
-  name_ne: code 3096
+  name_en: Code 3096
+  name_ne: Code 3096
   lat: 29.482588
   lon: 80.530968
   district: Baitadi
@@ -142234,8 +142234,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3092
-  name_en: code 3092
-  name_ne: code 3092
+  name_en: Code 3092
+  name_ne: Code 3092
   lat: 29.489467
   lon: 80.520247
   district: Baitadi
@@ -142257,8 +142257,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11890
-  name_en: code 11890
-  name_ne: code 11890
+  name_en: Code 11890
+  name_ne: Code 11890
   lat: 29.414039
   lon: 80.398657
   district: Baitadi
@@ -142280,8 +142280,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11788
-  name_en: code 11788
-  name_ne: code 11788
+  name_en: Code 11788
+  name_ne: Code 11788
   lat: 29.422276
   lon: 80.421837
   district: Baitadi
@@ -142303,8 +142303,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3337
-  name_en: code 3337
-  name_ne: code 3337
+  name_en: Code 3337
+  name_ne: Code 3337
   lat: 29.469452
   lon: 80.362243
   district: Baitadi
@@ -142326,8 +142326,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3328
-  name_en: code 3328
-  name_ne: code 3328
+  name_en: Code 3328
+  name_ne: Code 3328
   lat: 29.415032
   lon: 80.448362
   district: Baitadi
@@ -142349,8 +142349,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3301
-  name_en: code 3301
-  name_ne: code 3301
+  name_en: Code 3301
+  name_ne: Code 3301
   lat: 29.383819
   lon: 80.398528
   district: Baitadi
@@ -142372,8 +142372,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3353
-  name_en: code 3353
-  name_ne: code 3353
+  name_en: Code 3353
+  name_ne: Code 3353
   lat: 29.422071
   lon: 80.41013
   district: Baitadi
@@ -142395,8 +142395,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-10068
-  name_en: code 10068
-  name_ne: code 10068
+  name_en: Code 10068
+  name_ne: Code 10068
   lat: 29.374482
   lon: 80.382575
   district: Baitadi
@@ -142418,8 +142418,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3320
-  name_en: code 3320
-  name_ne: code 3320
+  name_en: Code 3320
+  name_ne: Code 3320
   lat: 29.41924
   lon: 80.388337
   district: Baitadi
@@ -142441,8 +142441,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3295
-  name_en: code 3295
-  name_ne: code 3295
+  name_en: Code 3295
+  name_ne: Code 3295
   lat: 29.39624
   lon: 80.288604
   district: Baitadi
@@ -142464,8 +142464,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3333
-  name_en: code 3333
-  name_ne: code 3333
+  name_en: Code 3333
+  name_ne: Code 3333
   lat: 29.473104
   lon: 80.350675
   district: Baitadi
@@ -142487,8 +142487,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11886
-  name_en: code 11886
-  name_ne: code 11886
+  name_en: Code 11886
+  name_ne: Code 11886
   lat: 29.493448
   lon: 80.339134
   district: Baitadi
@@ -142510,8 +142510,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11027
-  name_en: code 11027
-  name_ne: code 11027
+  name_en: Code 11027
+  name_ne: Code 11027
   lat: 29.495722
   lon: 80.368836
   district: Baitadi
@@ -142533,8 +142533,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3313
-  name_en: code 3313
-  name_ne: code 3313
+  name_en: Code 3313
+  name_ne: Code 3313
   lat: 29.415743
   lon: 80.303537
   district: Baitadi
@@ -142556,8 +142556,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11021
-  name_en: code 11021
-  name_ne: code 11021
+  name_en: Code 11021
+  name_ne: Code 11021
   lat: 29.440467
   lon: 80.314543
   district: Baitadi
@@ -142579,8 +142579,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3310
-  name_en: code 3310
-  name_ne: code 3310
+  name_en: Code 3310
+  name_ne: Code 3310
   lat: 29.408872
   lon: 80.284793
   district: Baitadi
@@ -142628,8 +142628,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: code-11011
-  name_en: code 11011
-  name_ne: code 11011
+  name_en: Code 11011
+  name_ne: Code 11011
   lat: 29.630249
   lon: 80.630657
   district: Baitadi
@@ -142651,8 +142651,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3210
-  name_en: code 3210
-  name_ne: code 3210
+  name_en: Code 3210
+  name_ne: Code 3210
   lat: 29.683257
   lon: 80.693134
   district: Baitadi
@@ -142674,8 +142674,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3482
-  name_en: code 3482
-  name_ne: code 3482
+  name_en: Code 3482
+  name_ne: Code 3482
   lat: 29.660038
   lon: 80.545156
   district: Baitadi
@@ -142697,8 +142697,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3200
-  name_en: code 3200
-  name_ne: code 3200
+  name_en: Code 3200
+  name_ne: Code 3200
   lat: 29.690189
   lon: 80.60284
   district: Baitadi
@@ -142720,8 +142720,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3207
-  name_en: code 3207
-  name_ne: code 3207
+  name_en: Code 3207
+  name_ne: Code 3207
   lat: 29.675383
   lon: 80.722092
   district: Baitadi
@@ -142743,8 +142743,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11012
-  name_en: code 11012
-  name_ne: code 11012
+  name_en: Code 11012
+  name_ne: Code 11012
   lat: 29.662337
   lon: 80.573592
   district: Baitadi
@@ -142766,8 +142766,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3191
-  name_en: code 3191
-  name_ne: code 3191
+  name_en: Code 3191
+  name_ne: Code 3191
   lat: 29.651128
   lon: 80.610794
   district: Baitadi
@@ -142789,8 +142789,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11884
-  name_en: code 11884
-  name_ne: code 11884
+  name_en: Code 11884
+  name_ne: Code 11884
   lat: 29.676932
   lon: 80.569913
   district: Baitadi
@@ -142812,8 +142812,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-11885
-  name_en: code 11885
-  name_ne: code 11885
+  name_en: Code 11885
+  name_ne: Code 11885
   lat: 29.65392
   lon: 80.596019
   district: Baitadi
@@ -142835,8 +142835,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-10074
-  name_en: code 10074
-  name_ne: code 10074
+  name_en: Code 10074
+  name_ne: Code 10074
   lat: 29.592818
   lon: 80.554802
   district: Baitadi
@@ -142858,8 +142858,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3489
-  name_en: code 3489
-  name_ne: code 3489
+  name_en: Code 3489
+  name_ne: Code 3489
   lat: 29.565959
   lon: 80.56867
   district: Baitadi
@@ -142881,8 +142881,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3479
-  name_en: code 3479
-  name_ne: code 3479
+  name_en: Code 3479
+  name_ne: Code 3479
   lat: 29.619546
   lon: 80.554619
   district: Baitadi
@@ -142904,8 +142904,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-10113
-  name_en: code 10113
-  name_ne: code 10113
+  name_en: Code 10113
+  name_ne: Code 10113
   lat: 29.620389
   lon: 80.588003
   district: Baitadi
@@ -142927,8 +142927,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3469
-  name_en: code 3469
-  name_ne: code 3469
+  name_en: Code 3469
+  name_ne: Code 3469
   lat: 29.594115
   lon: 80.446988
   district: Baitadi
@@ -142950,8 +142950,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: code-3472
-  name_en: code 3472
-  name_ne: code 3472
+  name_en: Code 3472
+  name_ne: Code 3472
   lat: 29.583937
   lon: 80.51704
   district: Baitadi
@@ -147820,8 +147820,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: dudha-kunda-gaath
-  name_en: dudha kunda gaath
-  name_ne: dudha kunda gaath
+  name_en: Dudha Kunda Gaath
+  name_ne: Dudha Kunda Gaath
   lat: 29.186595
   lon: 82.559838
   district: Jumla
@@ -148935,8 +148935,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chandeshwori-temple-bhayail-tol
-  name_en: chandeshwori temple, Bhayail Tol
-  name_ne: chandeshwori temple, Bhayail Tol
+  name_en: Chandeshwori Temple, Bhayail Tol
+  name_ne: Chandeshwori Temple, Bhayail Tol
   lat: 27.635836
   lon: 85.53216
   district: Kavrepalanchok
@@ -149010,8 +149010,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: barahi-temple
-  name_en: barahi temple
-  name_ne: barahi temple
+  name_en: Barahi Temple
+  name_ne: Barahi Temple
   lat: 27.684807
   lon: 85.325796
   district: Lalitpur
@@ -149593,8 +149593,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: ram-mandir-lamatar
-  name_en: ram mandir, Lamatar
-  name_ne: ram mandir, Lamatar
+  name_en: Ram Mandir, Lamatar
+  name_ne: Ram Mandir, Lamatar
   lat: 27.633538
   lon: 85.389807
   district: Lalitpur
@@ -149992,8 +149992,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: bindhyabasini-mandir
-  name_en: bindhyabasini mandir
-  name_ne: bindhyabasini mandir
+  name_en: Bindhyabasini Mandir
+  name_ne: Bindhyabasini Mandir
   lat: 26.483432
   lon: 87.28042
   district: Morang
@@ -150040,8 +150040,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: saraswati-temple-chamthali-203134381
-  name_en: saraswati temple, Chamthali
-  name_ne: saraswati temple, Chamthali
+  name_en: Saraswati Temple, Chamthali
+  name_ne: Saraswati Temple, Chamthali
   lat: 27.709444
   lon: 85.416012
   district: Bhaktapur
@@ -150580,8 +150580,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: ganesh-mandir-dallu
-  name_en: ganesh mandir, Dallu
-  name_ne: ganesh mandir, Dallu
+  name_en: Ganesh Mandir, Dallu
+  name_ne: Ganesh Mandir, Dallu
   lat: 27.710889
   lon: 85.301455
   district: Kathmandu
@@ -150773,8 +150773,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: shree-phaimalchuli-karuneshwor-durga-mandir
-  name_en: shree phaimalchuli karuneshwor durga mandir
-  name_ne: shree phaimalchuli karuneshwor durga mandir
+  name_en: Shree Phaimalchuli Karuneshwor Durga Mandir
+  name_ne: Shree Phaimalchuli Karuneshwor Durga Mandir
   lat: 27.749661
   lon: 85.338203
   district: Kathmandu
@@ -151242,8 +151242,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: indradevi-mandir
-  name_en: indradevi mandir
-  name_ne: indradevi mandir
+  name_en: Indradevi Mandir
+  name_ne: Indradevi Mandir
   lat: 27.560819
   lon: 85.491428
   district: Kavrepalanchok
@@ -151291,8 +151291,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-sano-thimi-215099199
-  name_en: temple, Sano Thimi
-  name_ne: temple, Sano Thimi
+  name_en: Temple, Sano Thimi
+  name_ne: Temple, Sano Thimi
   lat: 27.682804
   lon: 85.371315
   district: Bhaktapur
@@ -151463,8 +151463,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: pashupati-nath-temple-paunauti
-  name_en: pashupati nath temple, Paunauti
-  name_ne: pashupati nath temple, Paunauti
+  name_en: Pashupati Nath Temple, Paunauti
+  name_ne: Pashupati Nath Temple, Paunauti
   lat: 27.588881
   lon: 85.514694
   district: Kavrepalanchok
@@ -152038,8 +152038,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: laxmi-narayan-temple-thapa-tole-pikhel
-  name_en: laxmi narayan temple, thapa tole pikhel
-  name_ne: laxmi narayan temple, thapa tole pikhel
+  name_en: Laxmi Narayan Temple, thapa tole pikhel
+  name_ne: Laxmi Narayan Temple, thapa tole pikhel
   lat: 27.703971
   lon: 85.439696
   district: Bhaktapur
@@ -152063,8 +152063,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: krishna-temple-thapa-tol
-  name_en: krishna temple, Thapa tol
-  name_ne: krishna temple, Thapa tol
+  name_en: Krishna Temple, Thapa tol
+  name_ne: Krishna Temple, Thapa tol
   lat: 27.694997
   lon: 85.430612
   district: Bhaktapur
@@ -152875,8 +152875,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shree-108-ramchandra-mandir
-  name_en: shree 108 ramchandra mandir
-  name_ne: shree 108 ramchandra mandir
+  name_en: Shree 108 Ramchandra Mandir
+  name_ne: Shree 108 Ramchandra Mandir
   lat: 26.53793
   lon: 86.745962
   district: Saptari
@@ -152994,8 +152994,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chandeshwori-temple-bhayail-tol-275866763
-  name_en: chandeshwori temple, Bhayail Tol
-  name_ne: chandeshwori temple, Bhayail Tol
+  name_en: Chandeshwori Temple, Bhayail Tol
+  name_ne: Chandeshwori Temple, Bhayail Tol
   lat: 27.63614
   lon: 85.531408
   district: Kavrepalanchok
@@ -153019,8 +153019,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: 64-dham
-  name_en: 64 dham
-  name_ne: 64 dham
+  name_en: 64 Dham
+  name_ne: 64 Dham
   lat: 27.862517
   lon: 85.11209
   district: Nuwakot
@@ -153115,8 +153115,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chandeshwori-temple-sodha-tol
-  name_en: chandeshwori temple, Sodha Tol
-  name_ne: chandeshwori temple, Sodha Tol
+  name_en: Chandeshwori Temple, Sodha Tol
+  name_ne: Chandeshwori Temple, Sodha Tol
   lat: 27.631864
   lon: 85.521882
   district: Kavrepalanchok
@@ -153336,8 +153336,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: durga-mandir-birta-bazaar-303570031
-  name_en: durga mandir, Birta Bazaar
-  name_ne: durga mandir, Birta Bazaar
+  name_en: Durga Mandir, Birta Bazaar
+  name_ne: Durga Mandir, Birta Bazaar
   lat: 26.60925
   lon: 88.009848
   district: Jhapa
@@ -153846,8 +153846,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: narayan-mandir-pharsikhel
-  name_en: narayan mandir, Pharsikhel
-  name_ne: narayan mandir, Pharsikhel
+  name_en: Narayan Mandir, Pharsikhel
+  name_ne: Narayan Mandir, Pharsikhel
   lat: 27.653866
   lon: 85.125699
   district: Makwanpur
@@ -153896,8 +153896,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: nandikeshwor-mahadev
-  name_en: nandikeshwor mahadev
-  name_ne: nandikeshwor mahadev
+  name_en: Nandikeshwor Mahadev
+  name_ne: Nandikeshwor Mahadev
   lat: 27.646939
   lon: 85.122877
   district: Makwanpur
@@ -153921,8 +153921,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: saraswoti-temple-saraswati-bazar
-  name_en: saraswoti temple, Saraswati Bazar
-  name_ne: saraswoti temple, Saraswati Bazar
+  name_en: Saraswoti Temple, Saraswati Bazar
+  name_ne: Saraswoti Temple, Saraswati Bazar
   lat: 27.648067
   lon: 85.122887
   district: Makwanpur
@@ -154479,8 +154479,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: ram-mandir-godawari
-  name_en: ram mandir, Godawari
-  name_ne: ram mandir, Godawari
+  name_en: Ram Mandir, Godawari
+  name_ne: Ram Mandir, Godawari
   lat: 27.600168
   lon: 85.376152
   district: Lalitpur
@@ -154504,8 +154504,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: urasia-reukai
-  name_en: urasia reukai
-  name_ne: urasia reukai
+  name_en: Urasia Reukai
+  name_ne: Urasia Reukai
   lat: 27.702934
   lon: 84.429473
   district: Chitwan
@@ -154836,8 +154836,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: simaldhap-gospel-chruch
-  name_en: simaldhap gospel chruch
-  name_ne: simaldhap gospel chruch
+  name_en: Simaldhap Gospel Chruch
+  name_ne: Simaldhap Gospel Chruch
   lat: 27.740762
   lon: 84.519514
   district: Chitwan
@@ -154932,8 +154932,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sunwal-baptise-church-nawalparasi-w
-  name_en: sunwal baptise church, Nawalparasi W
-  name_ne: sunwal baptise church, Nawalparasi W
+  name_en: Sunwal Baptise Church, Nawalparasi W
+  name_ne: Sunwal Baptise Church, Nawalparasi W
   lat: 27.609093
   lon: 83.637307
   district: Nawalparasi W
@@ -154955,8 +154955,8 @@ places:
   festivals:
   - id: christmas
 - id: sunwal-baptise-church-nawalparasi-w-334272927
-  name_en: sunwal baptise church, Nawalparasi W
-  name_ne: sunwal baptise church, Nawalparasi W
+  name_en: Sunwal Baptise Church, Nawalparasi W
+  name_ne: Sunwal Baptise Church, Nawalparasi W
   lat: 27.609084
   lon: 83.637497
   district: Nawalparasi W
@@ -155029,8 +155029,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: gumba-simpani
-  name_en: gumba, Simpani
-  name_ne: gumba, Simpani
+  name_en: Gumba, Simpani
+  name_ne: Gumba, Simpani
   lat: 27.528158
   lon: 84.814012
   district: Makwanpur
@@ -155054,8 +155054,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: manakamana-temple-manahari-336030330
-  name_en: manakamana temple, Manahari
-  name_ne: manakamana temple, Manahari
+  name_en: Manakamana Temple, Manahari
+  name_ne: Manakamana Temple, Manahari
   lat: 27.540135
   lon: 84.802818
   district: Makwanpur
@@ -155127,8 +155127,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: prakasit-church
-  name_en: prakasit church
-  name_ne: prakasit church
+  name_en: Prakasit Church
+  name_ne: Prakasit Church
   lat: 27.512339
   lon: 84.829283
   district: Makwanpur
@@ -155150,8 +155150,8 @@ places:
   festivals:
   - id: christmas
 - id: bhadra-kali-temple
-  name_en: bhadra kali temple
-  name_ne: bhadra kali temple
+  name_en: Bhadra Kali Temple
+  name_ne: Bhadra Kali Temple
   lat: 27.525848
   lon: 84.810109
   district: Makwanpur
@@ -155301,8 +155301,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: poudel-kul-mandir
-  name_en: poudel kul mandir
-  name_ne: poudel kul mandir
+  name_en: Poudel Kul Mandir
+  name_ne: Poudel Kul Mandir
   lat: 27.688547
   lon: 84.514171
   district: Chitwan
@@ -155324,8 +155324,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: baramtham
-  name_en: baramtham
-  name_ne: baramtham
+  name_en: Baramtham
+  name_ne: Baramtham
   lat: 27.693309
   lon: 84.490299
   district: Chitwan
@@ -155395,8 +155395,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: brahma-kumari-ragyog-sewa-kendra
-  name_en: brahma kumari ragyog sewa kendra
-  name_ne: brahma kumari ragyog sewa kendra
+  name_en: Brahma Kumari Ragyog Sewa Kendra
+  name_ne: Brahma Kumari Ragyog Sewa Kendra
   lat: 27.689407
   lon: 84.486776
   district: Chitwan
@@ -155496,8 +155496,8 @@ places:
   - id: maha-ashtami
   - id: maha-navami
 - id: hindu-mandir
-  name_en: hindu mandir
-  name_ne: hindu mandir
+  name_en: Hindu Mandir
+  name_ne: Hindu Mandir
   lat: 27.690854
   lon: 84.521371
   district: Chitwan
@@ -155544,8 +155544,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: bhimbali-temple
-  name_en: bhimbali temple
-  name_ne: bhimbali temple
+  name_en: Bhimbali Temple
+  name_ne: Bhimbali Temple
   lat: 27.683133
   lon: 84.514533
   district: Chitwan
@@ -155567,8 +155567,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: habron-chruch
-  name_en: habron chruch
-  name_ne: habron chruch
+  name_en: Habron Chruch
+  name_ne: Habron Chruch
   lat: 27.68571
   lon: 84.511327
   district: Chitwan
@@ -155813,8 +155813,8 @@ places:
   - id: maha-ashtami
   - id: maha-navami
 - id: big-prayer-mill-shyala
-  name_en: big prayer mill, Shyala
-  name_ne: big prayer mill, Shyala
+  name_en: Big Prayer Mill, Shyala
+  name_ne: Big Prayer Mill, Shyala
   lat: 28.574152
   lon: 84.672768
   district: Gorkha
@@ -156156,8 +156156,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bishambareswor
-  name_en: bishambareswor
-  name_ne: bishambareswor
+  name_en: Bishambareswor
+  name_ne: Bishambareswor
   lat: 27.593837
   lon: 85.335664
   district: Lalitpur
@@ -156298,8 +156298,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kani-gate-samdo
-  name_en: kani gate, Samdo
-  name_ne: kani gate, Samdo
+  name_en: Kani Gate, Samdo
+  name_ne: Kani Gate, Samdo
   lat: 28.649736
   lon: 84.633117
   district: Gorkha
@@ -156323,8 +156323,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: mandir-kharpani
-  name_en: mandir, kharpani
-  name_ne: mandir, kharpani
+  name_en: Mandir, kharpani
+  name_ne: Mandir, kharpani
   lat: 28.017951
   lon: 84.553021
   district: Gorkha
@@ -156346,8 +156346,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-phatakshila
-  name_en: shiva mandir, Phatakshila
-  name_ne: shiva mandir, Phatakshila
+  name_en: Shiva Mandir, Phatakshila
+  name_ne: Shiva Mandir, Phatakshila
   lat: 27.760699
   lon: 85.572914
   district: Sindhupalchowk
@@ -156396,8 +156396,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: dudheshori
-  name_en: dudheshori
-  name_ne: dudheshori
+  name_en: Dudheshori
+  name_ne: Dudheshori
   lat: 27.554925
   lon: 85.282358
   district: Lalitpur
@@ -156490,8 +156490,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: big-prayer-mill-tanju
-  name_en: big prayer mill, Tānju
-  name_ne: big prayer mill, Tānju
+  name_en: Big Prayer Mill, Tānju
+  name_ne: Big Prayer Mill, Tānju
   lat: 28.47251
   lon: 84.987733
   district: Gorkha
@@ -156613,8 +156613,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-bursi
-  name_en: stupa, chorten, Bursi
-  name_ne: stupa, chorten, Bursi
+  name_en: Stupa, Chorten, Bursi
+  name_ne: Stupa, Chorten, Bursi
   lat: 28.511386
   lon: 85.082148
   district: Gorkha
@@ -156688,8 +156688,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: kaleshwar-mahadev
-  name_en: kaleshwar mahadev
-  name_ne: kaleshwar mahadev
+  name_en: Kaleshwar Mahadev
+  name_ne: Kaleshwar Mahadev
   lat: 27.598013
   lon: 85.325291
   district: Lalitpur
@@ -156860,8 +156860,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chandeshwori-temple-shree-sthapit-ganesh-pote-guthi-che
-  name_en: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
-  name_ne: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_en: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_ne: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
   lat: 27.633986
   lon: 85.520925
   district: Kavrepalanchok
@@ -156885,8 +156885,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-bhayail-tol-342118442
-  name_en: chandeshwori temple, Bhayail Tol
-  name_ne: chandeshwori temple, Bhayail Tol
+  name_en: Chandeshwori Temple, Bhayail Tol
+  name_ne: Chandeshwori Temple, Bhayail Tol
   lat: 27.635777
   lon: 85.532162
   district: Kavrepalanchok
@@ -157034,8 +157034,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: buddha-bihar-jhyalpati
-  name_en: buddha bihar, Jhyalpati
-  name_ne: buddha bihar, Jhyalpati
+  name_en: Buddha Bihar, Jhyalpati
+  name_ne: Buddha Bihar, Jhyalpati
   lat: 27.606728
   lon: 85.324874
   district: Lalitpur
@@ -157429,8 +157429,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: mahalaxmi-mandir-lubhu
-  name_en: mahalaxmi mandir, Lubhu
-  name_ne: mahalaxmi mandir, Lubhu
+  name_en: Mahalaxmi Mandir, Lubhu
+  name_ne: Mahalaxmi Mandir, Lubhu
   lat: 27.643594
   lon: 85.372184
   district: Lalitpur
@@ -157797,8 +157797,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: ganesh-temple-chapagaon-344386482
-  name_en: ganesh temple, Chapagaon
-  name_ne: ganesh temple, Chapagaon
+  name_en: Ganesh Temple, Chapagaon
+  name_ne: Ganesh Temple, Chapagaon
   lat: 27.588258
   lon: 85.322111
   district: Lalitpur
@@ -157820,8 +157820,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhirab-mandir-pyangaun-bazaar
-  name_en: bhirab mandir, Pyangaun Bazaar
-  name_ne: bhirab mandir, Pyangaun Bazaar
+  name_en: Bhirab Mandir, Pyangaun Bazaar
+  name_ne: Bhirab Mandir, Pyangaun Bazaar
   lat: 27.602838
   lon: 85.323583
   district: Lalitpur
@@ -157843,8 +157843,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: buddha-santi-bihar
-  name_en: buddha santi bihar
-  name_ne: buddha santi bihar
+  name_en: Buddha Santi Bihar
+  name_ne: Buddha Santi Bihar
   lat: 27.601939
   lon: 85.325628
   district: Lalitpur
@@ -157891,8 +157891,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: temple-kodari
-  name_en: temple, Kodāri
-  name_ne: temple, Kodāri
+  name_en: Temple, Kodāri
+  name_ne: Temple, Kodāri
   lat: 27.975092
   lon: 85.962549
   district: Sindhupalchowk
@@ -157939,8 +157939,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: krishana-mandir
-  name_en: krishana mandir
-  name_ne: krishana mandir
+  name_en: Krishana Mandir
+  name_ne: Krishana Mandir
   lat: 27.594564
   lon: 85.309214
   district: Lalitpur
@@ -158203,8 +158203,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: ram-janaki-temple-phulbari
-  name_en: ram janaki temple, Phulbari
-  name_ne: ram janaki temple, Phulbari
+  name_en: Ram Janaki Temple, Phulbari
+  name_ne: Ram Janaki Temple, Phulbari
   lat: 28.637027
   lon: 80.692164
   district: Kailali
@@ -158299,8 +158299,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: aasish-church
-  name_en: aasish church
-  name_ne: aasish church
+  name_en: Aasish Church
+  name_ne: Aasish Church
   lat: 27.694411
   lon: 83.459254
   district: Rupandehi
@@ -158497,8 +158497,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: chandeshwori-temple-shree-sthapit-ganesh-pote-guthi-che-348066675
-  name_en: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
-  name_ne: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_en: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_ne: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
   lat: 27.63389
   lon: 85.520881
   district: Kavrepalanchok
@@ -158860,8 +158860,8 @@ places:
   - id: ram-navami
   - id: vijaya-dashami
 - id: kani-chorten-dho-tarap
-  name_en: kani chorten, Dho Tarap
-  name_ne: kani chorten, Dho Tarap
+  name_en: Kani Chorten, Dho Tarap
+  name_ne: Kani Chorten, Dho Tarap
   lat: 29.134627
   lon: 83.186191
   district: Dolpa
@@ -158885,8 +158885,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-chorten-khanigaon
-  name_en: kani chorten, Khanigaon
-  name_ne: kani chorten, Khanigaon
+  name_en: Kani Chorten, Khanigaon
+  name_ne: Kani Chorten, Khanigaon
   lat: 28.893641
   lon: 83.034301
   district: Dolpa
@@ -158910,8 +158910,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-khanigaon
-  name_en: chorten, Khanigaon
-  name_ne: chorten, Khanigaon
+  name_en: Chorten, Khanigaon
+  name_ne: Chorten, Khanigaon
   lat: 28.899019
   lon: 83.033175
   district: Dolpa
@@ -158935,8 +158935,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-khanigaon-354192938
-  name_en: chorten, Khanigaon
-  name_ne: chorten, Khanigaon
+  name_en: Chorten, Khanigaon
+  name_ne: Chorten, Khanigaon
   lat: 28.899086
   lon: 83.033083
   district: Dolpa
@@ -158960,8 +158960,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-dolpa
-  name_en: chorten, Dolpa
-  name_ne: chorten, Dolpa
+  name_en: Chorten, Dolpa
+  name_ne: Chorten, Dolpa
   lat: 29.036683
   lon: 83.126937
   district: Dolpa
@@ -159031,8 +159031,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhajan-kirtan-pati
-  name_en: bhajan kirtan pati
-  name_ne: bhajan kirtan pati
+  name_en: Bhajan Kirtan Pati
+  name_ne: Bhajan Kirtan Pati
   lat: 27.594503
   lon: 85.322901
   district: Lalitpur
@@ -161316,7 +161316,7 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: shiva-sugam-gahan-tol
-  name_en: shiva, Sugam Gahan Tol
+  name_en: Shiva, Sugam Gahan Tol
   name_ne: शिव मन्दिर, सुगम गहन टोल
   lat: 28.211998
   lon: 83.977241
@@ -162757,8 +162757,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: buddha-bihar-nagdesh
-  name_en: buddha bihar, Nagdesh
-  name_ne: buddha bihar, Nagdesh
+  name_en: Buddha Bihar, Nagdesh
+  name_ne: Buddha Bihar, Nagdesh
   lat: 27.685233
   lon: 85.38198
   district: Bhaktapur
@@ -163398,8 +163398,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: temple-jana-aandolan-chok
-  name_en: temple, Jana Aandolan Chok
-  name_ne: temple, Jana Aandolan Chok
+  name_en: Temple, Jana Aandolan Chok
+  name_ne: Temple, Jana Aandolan Chok
   lat: 26.45121
   lon: 87.267878
   district: Morang
@@ -164421,8 +164421,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sarswati-mandir-amala-bisaune
-  name_en: sarswati mandir, Amala Bisaune
-  name_ne: sarswati mandir, Amala Bisaune
+  name_en: Sarswati Mandir, Amala Bisaune
+  name_ne: Sarswati Mandir, Amala Bisaune
   lat: 28.261387
   lon: 83.973758
   district: Kaski
@@ -164540,8 +164540,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: om-karyahor-mandeer
-  name_en: om karyahor mandeer
-  name_ne: om karyahor mandeer
+  name_en: Om Karyahor Mandeer
+  name_ne: Om Karyahor Mandeer
   lat: 27.590023
   lon: 85.291019
   district: Lalitpur
@@ -164563,8 +164563,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: eshya-siddheswar
-  name_en: eshya siddheswar
-  name_ne: eshya siddheswar
+  name_en: Eshya Siddheswar
+  name_ne: Eshya Siddheswar
   lat: 27.594788
   lon: 85.331014
   district: Lalitpur
@@ -164609,8 +164609,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: maheswor-mahadev
-  name_en: maheswor mahadev
-  name_ne: maheswor mahadev
+  name_en: Maheswor Mahadev
+  name_ne: Maheswor Mahadev
   lat: 27.598845
   lon: 85.335633
   district: Lalitpur
@@ -164634,8 +164634,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: radha-sarbeswar
-  name_en: radha sarbeswar
-  name_ne: radha sarbeswar
+  name_en: Radha Sarbeswar
+  name_ne: Radha Sarbeswar
   lat: 27.593947
   lon: 85.330909
   district: Lalitpur
@@ -164657,8 +164657,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bindabasini-godawari
-  name_en: bindabasini, Godawari
-  name_ne: bindabasini, Godawari
+  name_en: Bindabasini, Godawari
+  name_ne: Bindabasini, Godawari
   lat: 27.604818
   lon: 85.372566
   district: Lalitpur
@@ -164680,8 +164680,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kalidevi-temple-salyan
-  name_en: kalidevi temple, Salyan
-  name_ne: kalidevi temple, Salyan
+  name_en: Kalidevi Temple, Salyan
+  name_ne: Kalidevi Temple, Salyan
   lat: 27.59147
   lon: 85.341052
   district: Lalitpur
@@ -164706,8 +164706,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: tikabhirab-temple
-  name_en: tikabhirab temple
-  name_ne: tikabhirab temple
+  name_en: Tikabhirab Temple
+  name_ne: Tikabhirab Temple
   lat: 27.587799
   lon: 85.343926
   district: Lalitpur
@@ -164729,8 +164729,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kalobhirab-temple
-  name_en: kalobhirab temple
-  name_ne: kalobhirab temple
+  name_en: Kalobhirab Temple
+  name_ne: Kalobhirab Temple
   lat: 27.588697
   lon: 85.343296
   district: Lalitpur
@@ -164752,8 +164752,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: saraswoti-mandir-jhaluntar
-  name_en: saraswoti mandir, Jhaluntar
-  name_ne: saraswoti mandir, Jhaluntar
+  name_en: Saraswoti Mandir, Jhaluntar
+  name_ne: Saraswoti Mandir, Jhaluntar
   lat: 27.587415
   lon: 85.326367
   district: Lalitpur
@@ -164775,8 +164775,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganeshtemple
-  name_en: ganeshtemple
-  name_ne: ganeshtemple
+  name_en: Ganeshtemple
+  name_ne: Ganeshtemple
   lat: 27.588908
   lon: 85.349485
   district: Lalitpur
@@ -164798,8 +164798,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: manakamana-temple-kavre
-  name_en: manakamana temple, Kavre
-  name_ne: manakamana temple, Kavre
+  name_en: Manakamana Temple, Kavre
+  name_ne: Manakamana Temple, Kavre
   lat: 27.574321
   lon: 85.367489
   district: Lalitpur
@@ -164821,8 +164821,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: radha-krishna-chapagaon
-  name_en: radha krishna, Chapagaon
-  name_ne: radha krishna, Chapagaon
+  name_en: Radha Krishna, Chapagaon
+  name_ne: Radha Krishna, Chapagaon
   lat: 27.594404
   lon: 85.322899
   district: Lalitpur
@@ -164846,8 +164846,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: tarkeshwor
-  name_en: tarkeshwor
-  name_ne: tarkeshwor
+  name_en: Tarkeshwor
+  name_ne: Tarkeshwor
   lat: 27.592004
   lon: 85.32282
   district: Lalitpur
@@ -164871,8 +164871,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shree-bharabashor-shiva-mandir
-  name_en: shree bharabashor shiva mandir
-  name_ne: shree bharabashor shiva mandir
+  name_en: Shree Bharabashor Shiva Mandir
+  name_ne: Shree Bharabashor Shiva Mandir
   lat: 27.613967
   lon: 85.31951
   district: Lalitpur
@@ -164896,8 +164896,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: bhairab-mandir-thecho
-  name_en: bhairab mandir, Thecho
-  name_ne: bhairab mandir, Thecho
+  name_en: Bhairab Mandir, Thecho
+  name_ne: Bhairab Mandir, Thecho
   lat: 27.612276
   lon: 85.319793
   district: Lalitpur
@@ -164919,8 +164919,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhirab-mandir-pyangaun-bazaar-499437738
-  name_en: bhirab mandir, Pyangaun Bazaar
-  name_ne: bhirab mandir, Pyangaun Bazaar
+  name_en: Bhirab Mandir, Pyangaun Bazaar
+  name_ne: Bhirab Mandir, Pyangaun Bazaar
   lat: 27.600683
   lon: 85.324928
   district: Lalitpur
@@ -164942,8 +164942,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-temple-pyangaun-bazaar
-  name_en: shiva temple, Pyangaun Bazaar
-  name_ne: shiva temple, Pyangaun Bazaar
+  name_en: Shiva Temple, Pyangaun Bazaar
+  name_ne: Shiva Temple, Pyangaun Bazaar
   lat: 27.600591
   lon: 85.3254
   district: Lalitpur
@@ -164967,8 +164967,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: narayan-mandir-pyangaun-bazaar
-  name_en: narayan mandir, Pyangaun Bazaar
-  name_ne: narayan mandir, Pyangaun Bazaar
+  name_en: Narayan Mandir, Pyangaun Bazaar
+  name_ne: Narayan Mandir, Pyangaun Bazaar
   lat: 27.600603
   lon: 85.325531
   district: Lalitpur
@@ -164992,8 +164992,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: saraswati-temple-godawari
-  name_en: saraswati temple, Godawari
-  name_ne: saraswati temple, Godawari
+  name_en: Saraswati Temple, Godawari
+  name_ne: Saraswati Temple, Godawari
   lat: 27.60565
   lon: 85.3277
   district: Lalitpur
@@ -165062,8 +165062,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: elohim-cristian-church
-  name_en: elohim cristian church
-  name_ne: elohim cristian church
+  name_en: Elohim Cristian Church
+  name_ne: Elohim Cristian Church
   lat: 27.599137
   lon: 85.318186
   district: Lalitpur
@@ -165085,8 +165085,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: krishna-mandir-jhyalpati
-  name_en: krishna mandir, Jhyalpati
-  name_ne: krishna mandir, Jhyalpati
+  name_en: Krishna Mandir, Jhyalpati
+  name_ne: Krishna Mandir, Jhyalpati
   lat: 27.604341
   lon: 85.323998
   district: Lalitpur
@@ -165110,8 +165110,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: balkumari-temple-jhyalpati
-  name_en: balkumari temple, Jhyalpati
-  name_ne: balkumari temple, Jhyalpati
+  name_en: Balkumari Temple, Jhyalpati
+  name_ne: Balkumari Temple, Jhyalpati
   lat: 27.606123
   lon: 85.322661
   district: Lalitpur
@@ -165182,8 +165182,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: dhalkashor-mahadev
-  name_en: dhalkashor mahadev
-  name_ne: dhalkashor mahadev
+  name_en: Dhalkashor Mahadev
+  name_ne: Dhalkashor Mahadev
   lat: 27.622828
   lon: 85.317673
   district: Lalitpur
@@ -165207,7 +165207,7 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: bisankhu-narayan
-  name_en: bisankhu narayan
+  name_en: Bisankhu Narayan
   name_ne: विशंखु नारायण
   lat: 27.616705
   lon: 85.375415
@@ -165232,8 +165232,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: gumba-lamdada
-  name_en: gumba, Lamdada
-  name_ne: gumba, Lamdada
+  name_en: Gumba, Lamdada
+  name_ne: Gumba, Lamdada
   lat: 27.562158
   lon: 85.272204
   district: Lalitpur
@@ -165255,8 +165255,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-temple-lele
-  name_en: ganesh temple, Lele
-  name_ne: ganesh temple, Lele
+  name_en: Ganesh Temple, Lele
+  name_ne: Ganesh Temple, Lele
   lat: 27.572282
   lon: 85.33511
   district: Lalitpur
@@ -165278,8 +165278,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-padaligau
-  name_en: shiva mandir, Padaligau
-  name_ne: shiva mandir, Padaligau
+  name_en: Shiva Mandir, Padaligau
+  name_ne: Shiva Mandir, Padaligau
   lat: 27.622949
   lon: 85.38213
   district: Lalitpur
@@ -165303,8 +165303,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: ram-mandir-bisankhunarayan
-  name_en: ram mandir, Bisankhunarayan
-  name_ne: ram mandir, Bisankhunarayan
+  name_en: Ram Mandir, Bisankhunarayan
+  name_ne: Ram Mandir, Bisankhunarayan
   lat: 27.609968
   lon: 85.385325
   district: Lalitpur
@@ -165328,8 +165328,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: devi-mandir-bisankhunarayan
-  name_en: devi mandir, Bisankhunarayan
-  name_ne: devi mandir, Bisankhunarayan
+  name_en: Devi Mandir, Bisankhunarayan
+  name_ne: Devi Mandir, Bisankhunarayan
   lat: 27.616165
   lon: 85.384198
   district: Lalitpur
@@ -165453,8 +165453,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: nasa-dya
-  name_en: nasa dya
-  name_ne: nasa dya
+  name_en: Nasa Dya
+  name_ne: Nasa Dya
   lat: 27.698687
   lon: 85.30362
   district: Kathmandu
@@ -165499,8 +165499,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-tample-maru
-  name_en: ganesh tample, Maru
-  name_ne: ganesh tample, Maru
+  name_en: Ganesh Tample, Maru
+  name_ne: Ganesh Tample, Maru
   lat: 27.705732
   lon: 85.302517
   district: Kathmandu
@@ -165522,8 +165522,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sangal-panchakanya-temple
-  name_en: sangal panchakanya temple
-  name_ne: sangal panchakanya temple
+  name_en: Sangal Panchakanya Temple
+  name_ne: Sangal Panchakanya Temple
   lat: 27.690374
   lon: 85.297887
   district: Kathmandu
@@ -165545,8 +165545,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sarveswor-temple
-  name_en: sarveswor temple
-  name_ne: sarveswor temple
+  name_en: Sarveswor Temple
+  name_ne: Sarveswor Temple
   lat: 27.691981
   lon: 85.296677
   district: Kathmandu
@@ -165568,8 +165568,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sangal-binayak
-  name_en: sangal binayak
-  name_ne: sangal binayak
+  name_en: Sangal Binayak
+  name_ne: Sangal Binayak
   lat: 27.689036
   lon: 85.297922
   district: Kathmandu
@@ -165591,8 +165591,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shakti-binayak
-  name_en: shakti binayak
-  name_ne: shakti binayak
+  name_en: Shakti Binayak
+  name_ne: Shakti Binayak
   lat: 27.692023
   lon: 85.295899
   district: Kathmandu
@@ -165614,8 +165614,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: gaurishankar-temple
-  name_en: gaurishankar temple
-  name_ne: gaurishankar temple
+  name_en: Gaurishankar Temple
+  name_ne: Gaurishankar Temple
   lat: 27.690091
   lon: 85.294335
   district: Kathmandu
@@ -165637,8 +165637,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: siddhibinayak-and-shovabhagwati-temple
-  name_en: siddhibinayak and shovabhagwati temple
-  name_ne: siddhibinayak and shovabhagwati temple
+  name_en: Siddhibinayak And Shovabhagwati Temple
+  name_ne: Siddhibinayak And Shovabhagwati Temple
   lat: 27.684447
   lon: 85.343118
   district: Kathmandu
@@ -165663,8 +165663,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: seto-machendra-bahal
-  name_en: seto machendra bahal
-  name_ne: seto machendra bahal
+  name_en: Seto Machendra Bahal
+  name_ne: Seto Machendra Bahal
   lat: 27.706631
   lon: 85.310077
   district: Kathmandu
@@ -165882,8 +165882,8 @@ places:
   - id: shree-panchami
   - id: vijaya-dashami
 - id: delashaini-bhagpati-mandir
-  name_en: delashaini bhagpati mandir
-  name_ne: delashaini bhagpati mandir
+  name_en: Delashaini Bhagpati Mandir
+  name_ne: Delashaini Bhagpati Mandir
   lat: 28.739261
   lon: 80.555735
   district: Kailali
@@ -165905,8 +165905,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-bhimdatta
-  name_en: temple, Bhimdatta
-  name_ne: temple, Bhimdatta
+  name_en: Temple, Bhimdatta
+  name_ne: Temple, Bhimdatta
   lat: 28.985573
   lon: 80.176439
   district: Kanchanpur
@@ -165928,8 +165928,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-hawaldarpur
-  name_en: temple, Hawaldarpur
-  name_ne: temple, Hawaldarpur
+  name_en: Temple, Hawaldarpur
+  name_ne: Temple, Hawaldarpur
   lat: 28.154924
   lon: 81.674928
   district: Banke
@@ -166521,8 +166521,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: kutichiwa-stupa
-  name_en: kutichiwa stupa
-  name_ne: kutichiwa stupa
+  name_en: Kutichiwa Stupa
+  name_ne: Kutichiwa Stupa
   lat: 27.680418
   lon: 85.386064
   district: Bhaktapur
@@ -167835,8 +167835,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bhnjang-mission-centre-or-chruch
-  name_en: bhnjang mission centre or chruch
-  name_ne: bhnjang mission centre or chruch
+  name_en: Bhnjang Mission Centre Or Chruch
+  name_ne: Bhnjang Mission Centre Or Chruch
   lat: 27.655431
   lon: 85.308033
   district: Lalitpur
@@ -167930,8 +167930,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: krishna-mandir-dhangadhi
-  name_en: krishna mandir, Dhangadhi
-  name_ne: krishna mandir, Dhangadhi
+  name_en: Krishna Mandir, Dhangadhi
+  name_ne: Krishna Mandir, Dhangadhi
   lat: 28.706433
   lon: 80.582877
   district: Kailali
@@ -168074,8 +168074,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kalika-temple-himali-tole
-  name_en: kalika temple, Himali Tole
-  name_ne: kalika temple, Himali Tole
+  name_en: Kalika Temple, Himali Tole
+  name_ne: Kalika Temple, Himali Tole
   lat: 28.735165
   lon: 80.609489
   district: Kailali
@@ -168202,8 +168202,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: shivalaya-phulbari
-  name_en: shivalaya, Phulbari
-  name_ne: shivalaya, Phulbari
+  name_en: Shivalaya, Phulbari
+  name_ne: Shivalaya, Phulbari
   lat: 28.628397
   lon: 80.700223
   district: Kailali
@@ -168422,8 +168422,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shambhunath-temple
-  name_en: shambhunath temple
-  name_ne: shambhunath temple
+  name_en: Shambhunath Temple
+  name_ne: Shambhunath Temple
   lat: 26.62864
   lon: 86.685599
   district: Saptari
@@ -168445,8 +168445,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: stupa-chorten-beding
-  name_en: stupa, chorten, Beding
-  name_ne: stupa, chorten, Beding
+  name_en: Stupa, Chorten, Beding
+  name_ne: Stupa, Chorten, Beding
   lat: 27.90314
   lon: 86.373771
   district: Dolakha
@@ -168470,8 +168470,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-simi-gaun
-  name_en: stupa, chorten, Simi Gaun
-  name_ne: stupa, chorten, Simi Gaun
+  name_en: Stupa, Chorten, Simi Gaun
+  name_ne: Stupa, Chorten, Simi Gaun
   lat: 27.869628
   lon: 86.226704
   district: Dolakha
@@ -168618,8 +168618,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-tagako-mukh-541664400
-  name_en: temple, Tagako Mukh
-  name_ne: temple, Tagako Mukh
+  name_en: Temple, Tagako Mukh
+  name_ne: Temple, Tagako Mukh
   lat: 28.144608
   lon: 84.089344
   district: Kaski
@@ -168928,8 +168928,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bara-mandir
-  name_en: bara mandir
-  name_ne: bara mandir
+  name_en: Bara Mandir
+  name_ne: Bara Mandir
   lat: 29.942822
   lon: 81.847713
   district: Humla
@@ -169663,8 +169663,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shiiva-mandir
-  name_en: shiiva mandir
-  name_ne: shiiva mandir
+  name_en: Shiiva Mandir
+  name_ne: Shiiva Mandir
   lat: 27.595367
   lon: 84.392552
   district: Chitwan
@@ -169951,8 +169951,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-mandir-bhuregaun
-  name_en: shiva mandir, Bhuregaun
-  name_ne: shiva mandir, Bhuregaun
+  name_en: Shiva Mandir, Bhuregaun
+  name_ne: Shiva Mandir, Bhuregaun
   lat: 28.455097
   lon: 81.327049
   district: Bardiya
@@ -170296,8 +170296,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: debithan
-  name_en: debithan
-  name_ne: debithan
+  name_en: Debithan
+  name_ne: Debithan
   lat: 28.015142
   lon: 83.642903
   district: Parbat
@@ -170472,8 +170472,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: hanuman-mandir-bargachhi-chok
-  name_en: hanuman mandir, Bargachhi Chok
-  name_ne: hanuman mandir, Bargachhi Chok
+  name_en: Hanuman Mandir, Bargachhi Chok
+  name_ne: Hanuman Mandir, Bargachhi Chok
   lat: 26.479355
   lon: 87.288083
   district: Morang
@@ -170522,8 +170522,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: pangboche-gumba
-  name_en: pangboche gumba
-  name_ne: pangboche gumba
+  name_en: Pangboche Gumba
+  name_ne: Pangboche Gumba
   lat: 27.856925
   lon: 86.788495
   district: Solukhumbu
@@ -170547,8 +170547,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: memorial
-  name_en: memorial
-  name_ne: memorial
+  name_en: Memorial
+  name_ne: Memorial
   lat: 27.883145
   lon: 86.816912
   district: Solukhumbu
@@ -170941,8 +170941,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chorten-stupa-chumling
-  name_en: chorten, stupa, Chumling
-  name_ne: chorten, stupa, Chumling
+  name_en: Chorten, Stupa, Chumling
+  name_ne: Chorten, Stupa, Chumling
   lat: 28.473918
   lon: 84.961799
   district: Gorkha
@@ -170966,8 +170966,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-chumling
-  name_en: stupa, chorten, Chumling
-  name_ne: stupa, chorten, Chumling
+  name_en: Stupa, Chorten, Chumling
+  name_ne: Stupa, Chorten, Chumling
   lat: 28.473139
   lon: 84.962356
   district: Gorkha
@@ -170991,8 +170991,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-gate-chumling
-  name_en: kani gate, Chumling
-  name_ne: kani gate, Chumling
+  name_en: Kani Gate, Chumling
+  name_ne: Kani Gate, Chumling
   lat: 28.473358
   lon: 84.964363
   district: Gorkha
@@ -171016,8 +171016,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chumling-638731837
-  name_en: chorten, stupa, Chumling
-  name_ne: chorten, stupa, Chumling
+  name_en: Chorten, Stupa, Chumling
+  name_ne: Chorten, Stupa, Chumling
   lat: 28.472952
   lon: 84.962054
   district: Gorkha
@@ -171041,8 +171041,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chumling-638731840
-  name_en: chorten, stupa, Chumling
-  name_ne: chorten, stupa, Chumling
+  name_en: Chorten, Stupa, Chumling
+  name_ne: Chorten, Stupa, Chumling
   lat: 28.473355
   lon: 84.961712
   district: Gorkha
@@ -171066,8 +171066,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-gate-chumling-638731843
-  name_en: kani gate, Chumling
-  name_ne: kani gate, Chumling
+  name_en: Kani Gate, Chumling
+  name_ne: Kani Gate, Chumling
   lat: 28.474026
   lon: 84.962406
   district: Gorkha
@@ -171091,8 +171091,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-dramba
-  name_en: chorten, stupa, Dramba
-  name_ne: chorten, stupa, Dramba
+  name_en: Chorten, Stupa, Dramba
+  name_ne: Chorten, Stupa, Dramba
   lat: 28.47857
   lon: 85.014402
   district: Gorkha
@@ -171116,8 +171116,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-dramba-638735897
-  name_en: chorten, stupa, Dramba
-  name_ne: chorten, stupa, Dramba
+  name_en: Chorten, Stupa, Dramba
+  name_ne: Chorten, Stupa, Dramba
   lat: 28.47862
   lon: 85.014367
   district: Gorkha
@@ -171141,8 +171141,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-dramba-638735899
-  name_en: chorten, stupa, Dramba
-  name_ne: chorten, stupa, Dramba
+  name_en: Chorten, Stupa, Dramba
+  name_ne: Chorten, Stupa, Dramba
   lat: 28.479048
   lon: 85.014395
   district: Gorkha
@@ -171166,8 +171166,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-dramba-638735901
-  name_en: chorten, stupa, Dramba
-  name_ne: chorten, stupa, Dramba
+  name_en: Chorten, Stupa, Dramba
+  name_ne: Chorten, Stupa, Dramba
   lat: 28.47867
   lon: 85.014351
   district: Gorkha
@@ -171191,8 +171191,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-dramba-638735903
-  name_en: chorten, stupa, Dramba
-  name_ne: chorten, stupa, Dramba
+  name_en: Chorten, Stupa, Dramba
+  name_ne: Chorten, Stupa, Dramba
   lat: 28.478725
   lon: 85.014346
   district: Gorkha
@@ -171216,8 +171216,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-gate-chhokang
-  name_en: kani gate, Chhokāng
-  name_ne: kani gate, Chhokāng
+  name_en: Kani Gate, Chhokāng
+  name_ne: Kani Gate, Chhokāng
   lat: 28.500426
   lon: 85.06907
   district: Gorkha
@@ -171241,8 +171241,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.489046
   lon: 85.039063
   district: Gorkha
@@ -171266,8 +171266,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745258
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.489034
   lon: 85.039011
   district: Gorkha
@@ -171291,8 +171291,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745259
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.489046
   lon: 85.038956
   district: Gorkha
@@ -171316,8 +171316,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745260
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.489052
   lon: 85.038901
   district: Gorkha
@@ -171341,8 +171341,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745261
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488811
   lon: 85.038799
   district: Gorkha
@@ -171366,8 +171366,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745262
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488853
   lon: 85.038833
   district: Gorkha
@@ -171391,8 +171391,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745263
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488891
   lon: 85.038887
   district: Gorkha
@@ -171416,8 +171416,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745264
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488768
   lon: 85.038767
   district: Gorkha
@@ -171441,8 +171441,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745267
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.489982
   lon: 85.040872
   district: Gorkha
@@ -171466,8 +171466,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745268
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488203
   lon: 85.036519
   district: Gorkha
@@ -171491,8 +171491,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745269
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488163
   lon: 85.036491
   district: Gorkha
@@ -171516,8 +171516,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745271
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488127
   lon: 85.036482
   district: Gorkha
@@ -171541,8 +171541,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745273
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.488092
   lon: 85.036455
   district: Gorkha
@@ -171566,8 +171566,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745276
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.487351
   lon: 85.034403
   district: Gorkha
@@ -171591,8 +171591,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745277
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.487309
   lon: 85.034494
   district: Gorkha
@@ -171616,8 +171616,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-stupa-chokhangparo-chekumpar-638745278
-  name_en: chorten, stupa, Chokhangparo  - Chekumpar
-  name_ne: chorten, stupa, Chokhangparo  - Chekumpar
+  name_en: Chorten, Stupa, Chokhangparo  - Chekumpar
+  name_ne: Chorten, Stupa, Chokhangparo  - Chekumpar
   lat: 28.48733
   lon: 85.034446
   district: Gorkha
@@ -171641,8 +171641,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-gate-chule
-  name_en: kani gate, Chule
-  name_ne: kani gate, Chule
+  name_en: Kani Gate, Chule
+  name_ne: Kani Gate, Chule
   lat: 28.54
   lon: 85.106094
   district: Gorkha
@@ -171666,8 +171666,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-chhokangparo
-  name_en: stupa, chorten, Chhokangparo
-  name_ne: stupa, chorten, Chhokangparo
+  name_en: Stupa, Chorten, Chhokangparo
+  name_ne: Stupa, Chorten, Chhokangparo
   lat: 28.58183
   lon: 85.103319
   district: Gorkha
@@ -171691,8 +171691,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-chhokangparo-638770766
-  name_en: stupa, chorten, Chhokangparo
-  name_ne: stupa, chorten, Chhokangparo
+  name_en: Stupa, Chorten, Chhokangparo
+  name_ne: Stupa, Chorten, Chhokangparo
   lat: 28.581816
   lon: 85.104393
   district: Gorkha
@@ -171716,8 +171716,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-chhokangparo-638770767
-  name_en: stupa, chorten, Chhokangparo
-  name_ne: stupa, chorten, Chhokangparo
+  name_en: Stupa, Chorten, Chhokangparo
+  name_ne: Stupa, Chorten, Chhokangparo
   lat: 28.581802
   lon: 85.104995
   district: Gorkha
@@ -171741,8 +171741,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shiva-mandir-maidi
-  name_en: shiva mandir, Maidi
-  name_ne: shiva mandir, Maidi
+  name_en: Shiva Mandir, Maidi
+  name_ne: Shiva Mandir, Maidi
   lat: 27.901196
   lon: 84.765965
   district: Dhading
@@ -171841,8 +171841,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-samdo
-  name_en: stupa, chorten, Samdo
-  name_ne: stupa, chorten, Samdo
+  name_en: Stupa, Chorten, Samdo
+  name_ne: Stupa, Chorten, Samdo
   lat: 28.652836
   lon: 84.634805
   district: Gorkha
@@ -171866,8 +171866,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: stupa-chorten-samdo-640367133
-  name_en: stupa, chorten, Samdo
-  name_ne: stupa, chorten, Samdo
+  name_en: Stupa, Chorten, Samdo
+  name_ne: Stupa, Chorten, Samdo
   lat: 28.65448
   lon: 84.635261
   district: Gorkha
@@ -172035,8 +172035,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: temple-gijyan
-  name_en: temple, Gijyan
-  name_ne: temple, Gijyan
+  name_en: Temple, Gijyan
+  name_ne: Temple, Gijyan
   lat: 28.253513
   lon: 83.72647
   district: Parbat
@@ -172588,8 +172588,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: thhaan
-  name_en: thhaan
-  name_ne: thhaan
+  name_en: Thhaan
+  name_ne: Thhaan
   lat: 28.017056
   lon: 82.432436
   district: Dang
@@ -172636,8 +172636,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: shiv-mandir-siraha
-  name_en: shiv mandir, Siraha
-  name_ne: shiv mandir, Siraha
+  name_en: Shiv Mandir, Siraha
+  name_ne: Shiv Mandir, Siraha
   lat: 26.65766
   lon: 86.194654
   district: Siraha
@@ -172955,8 +172955,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kalika-bhagwati-temple
-  name_en: kalika bhagwati temple
-  name_ne: kalika bhagwati temple
+  name_en: Kalika Bhagwati Temple
+  name_ne: Kalika Bhagwati Temple
   lat: 29.526647
   lon: 80.819329
   district: Bajhang
@@ -173106,8 +173106,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: adhikari-kul-mandir-dalit-basti
-  name_en: adhikari kul mandir, Dalit Basti
-  name_ne: adhikari kul mandir, Dalit Basti
+  name_en: Adhikari Kul Mandir, Dalit Basti
+  name_ne: Adhikari Kul Mandir, Dalit Basti
   lat: 28.279627
   lon: 83.860334
   district: Kaski
@@ -173154,8 +173154,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chorten-thamel
-  name_en: chorten, Thamel
-  name_ne: chorten, Thamel
+  name_en: Chorten, Thamel
+  name_ne: Chorten, Thamel
   lat: 27.716774
   lon: 85.313879
   district: Kathmandu
@@ -173229,8 +173229,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-chorten-sugugoan
-  name_en: kani chorten, Sugugoan
-  name_ne: kani chorten, Sugugoan
+  name_en: Kani Chorten, Sugugoan
+  name_ne: Kani Chorten, Sugugoan
   lat: 29.382992
   lon: 83.10649
   district: Dolpa
@@ -173279,8 +173279,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: kani-chorten-ponra
-  name_en: kani chorten, Ponra
-  name_ne: kani chorten, Ponra
+  name_en: Kani Chorten, Ponra
+  name_ne: Kani Chorten, Ponra
   lat: 29.397146
   lon: 83.092381
   district: Dolpa
@@ -173329,8 +173329,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: mani-wall-thousands-of-mani-stones
-  name_en: mani wall & thousands of mani stones
-  name_ne: mani wall & thousands of mani stones
+  name_en: Mani Wall & Thousands Of Mani Stones
+  name_ne: Mani Wall & Thousands Of Mani Stones
   lat: 29.412807
   lon: 83.079955
   district: Dolpa
@@ -173729,8 +173729,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chandeshwori-temple-shree-sthapit-ganesh-pote-guthi-che-739837311
-  name_en: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
-  name_ne: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_en: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_ne: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
   lat: 27.633967
   lon: 85.520932
   district: Kavrepalanchok
@@ -173754,8 +173754,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-bhayail-tol-739841344
-  name_en: chandeshwori temple, Bhayail Tol
-  name_ne: chandeshwori temple, Bhayail Tol
+  name_en: Chandeshwori Temple, Bhayail Tol
+  name_ne: Chandeshwori Temple, Bhayail Tol
   lat: 27.635867
   lon: 85.532202
   district: Kavrepalanchok
@@ -173827,8 +173827,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kulani-temple
-  name_en: kulani temple
-  name_ne: kulani temple
+  name_en: Kulani Temple
+  name_ne: Kulani Temple
   lat: 28.290315
   lon: 83.771933
   district: Kaski
@@ -173896,8 +173896,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: siddha-gyan-aashram
-  name_en: siddha gyan aashram
-  name_ne: siddha gyan aashram
+  name_en: Siddha Gyan Aashram
+  name_ne: Siddha Gyan Aashram
   lat: 28.246719
   lon: 83.87775
   district: Kaski
@@ -174113,8 +174113,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-temple-tilahar
-  name_en: shiva temple, Tilahar
-  name_ne: shiva temple, Tilahar
+  name_en: Shiva Temple, Tilahar
+  name_ne: Shiva Temple, Tilahar
   lat: 28.190118
   lon: 83.897696
   district: Kaski
@@ -174138,8 +174138,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: bajjiuko-than-tempel
-  name_en: bajjiuko than tempel
-  name_ne: bajjiuko than tempel
+  name_en: Bajjiuko Than Tempel
+  name_ne: Bajjiuko Than Tempel
   lat: 29.262816
   lon: 81.608808
   district: Kalikot
@@ -174325,8 +174325,8 @@ places:
   festivals:
   - id: christmas
 - id: ganesh-temple-magar-gaun
-  name_en: ganesh temple, Magar Gaun
-  name_ne: ganesh temple, Magar Gaun
+  name_en: Ganesh Temple, Magar Gaun
+  name_ne: Ganesh Temple, Magar Gaun
   lat: 27.69289
   lon: 85.371937
   district: Kathmandu
@@ -174348,8 +174348,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganesh-magar-gaun
-  name_en: ganesh, Magar Gaun
-  name_ne: ganesh, Magar Gaun
+  name_en: Ganesh, Magar Gaun
+  name_ne: Ganesh, Magar Gaun
   lat: 27.691538
   lon: 85.371489
   district: Kathmandu
@@ -174443,8 +174443,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-rampur
-  name_en: temple, Rampur
-  name_ne: temple, Rampur
+  name_en: Temple, Rampur
+  name_ne: Temple, Rampur
   lat: 27.651961
   lon: 84.349803
   district: Chitwan
@@ -174683,8 +174683,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: gumba-sankalpa-chowk
-  name_en: gumba, Sankalpa Chowk
-  name_ne: gumba, Sankalpa Chowk
+  name_en: Gumba, Sankalpa Chowk
+  name_ne: Gumba, Sankalpa Chowk
   lat: 27.689743
   lon: 84.459652
   district: Chitwan
@@ -174782,8 +174782,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-riga
-  name_en: temple, Riga
-  name_ne: temple, Riga
+  name_en: Temple, Riga
+  name_ne: Temple, Riga
   lat: 29.529281
   lon: 81.789315
   district: Mugu
@@ -175599,8 +175599,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: bram-mandu
-  name_en: bram mandu
-  name_ne: bram mandu
+  name_en: Bram Mandu
+  name_ne: Bram Mandu
   lat: 29.370828
   lon: 81.226274
   district: Bajura
@@ -176610,8 +176610,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: chandeshwori-temple-wasinkhyo-tol-908870450
-  name_en: chandeshwori temple, Wasinkhyo Tol
-  name_ne: chandeshwori temple, Wasinkhyo Tol
+  name_en: Chandeshwori Temple, Wasinkhyo Tol
+  name_ne: Chandeshwori Temple, Wasinkhyo Tol
   lat: 27.63256
   lon: 85.522269
   district: Kavrepalanchok
@@ -176877,8 +176877,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: naya-shristi
-  name_en: naya shristi
-  name_ne: naya shristi
+  name_en: Naya Shristi
+  name_ne: Naya Shristi
   lat: 27.774947
   lon: 85.364292
   district: Kathmandu
@@ -176900,8 +176900,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: nasal-devi-temple
-  name_en: nasal devi temple
-  name_ne: nasal devi temple
+  name_en: Nasal Devi Temple
+  name_ne: Nasal Devi Temple
   lat: 27.778386
   lon: 85.364486
   district: Kathmandu
@@ -176926,8 +176926,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: buddha-laxmi
-  name_en: buddha laxmi
-  name_ne: buddha laxmi
+  name_en: Buddha Laxmi
+  name_ne: Buddha Laxmi
   lat: 27.778623
   lon: 85.368838
   district: Kathmandu
@@ -176949,8 +176949,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: sedup-nedup-ghumba
-  name_en: sedup nedup ghumba
-  name_ne: sedup nedup ghumba
+  name_en: Sedup Nedup Ghumba
+  name_ne: Sedup Nedup Ghumba
   lat: 27.783237
   lon: 85.369838
   district: Kathmandu
@@ -177043,8 +177043,8 @@ places:
   festivals:
   - id: christmas
 - id: shivalaya-mandir-dalit-basti
-  name_en: shivalaya mandir, Dalit Basti
-  name_ne: shivalaya mandir, Dalit Basti
+  name_en: Shivalaya Mandir, Dalit Basti
+  name_ne: Shivalaya Mandir, Dalit Basti
   lat: 28.277655
   lon: 83.859691
   district: Kaski
@@ -177240,8 +177240,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiva-mandir-gumba-phedi
-  name_en: shiva mandir, Gumba Phedi
-  name_ne: shiva mandir, Gumba Phedi
+  name_en: Shiva Mandir, Gumba Phedi
+  name_ne: Shiva Mandir, Gumba Phedi
   lat: 28.212726
   lon: 84.005169
   district: Kaski
@@ -177336,8 +177336,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: radha-krishna-temple-raniganj
-  name_en: radha krishna temple, Raniganj
-  name_ne: radha krishna temple, Raniganj
+  name_en: Radha Krishna Temple, Raniganj
+  name_ne: Radha Krishna Temple, Raniganj
   lat: 27.039053
   lon: 85.660289
   district: Sarlahi
@@ -178118,8 +178118,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: sundara-mata-mandir
-  name_en: sundara mata mandir
-  name_ne: sundara mata mandir
+  name_en: Sundara Mata Mandir
+  name_ne: Sundara Mata Mandir
   lat: 28.002912
   lon: 81.707995
   district: Banke
@@ -178609,8 +178609,8 @@ places:
   - id: eid-al-fitr
   - id: eid-al-adha
 - id: shankha-devi-temple
-  name_en: shankha devi temple
-  name_ne: shankha devi temple
+  name_en: Shankha Devi Temple
+  name_ne: Shankha Devi Temple
   lat: 27.975156
   lon: 84.878378
   district: Dhading
@@ -178835,8 +178835,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: krishna-mandhir
-  name_en: krishna mandhir
-  name_ne: krishna mandhir
+  name_en: Krishna Mandhir
+  name_ne: Krishna Mandhir
   lat: 27.725722
   lon: 85.376609
   district: Kathmandu
@@ -179074,8 +179074,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: temple-tikapur
-  name_en: temple, Tikapur
-  name_ne: temple, Tikapur
+  name_en: Temple, Tikapur
+  name_ne: Temple, Tikapur
   lat: 28.529824
   lon: 81.130915
   district: Kailali
@@ -179148,8 +179148,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-meodihawa
-  name_en: temple, Meodihawa
-  name_ne: temple, Meodihawa
+  name_en: Temple, Meodihawa
+  name_ne: Temple, Meodihawa
   lat: 27.484876
   lon: 83.441466
   district: Rupandehi
@@ -179223,8 +179223,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: temple-area-kandachaur
-  name_en: temple area, Kandachaur
-  name_ne: temple area, Kandachaur
+  name_en: Temple Area, Kandachaur
+  name_ne: Temple Area, Kandachaur
   lat: 28.850892
   lon: 81.715192
   district: Dailekh
@@ -179248,8 +179248,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: swarshoti-mandir
-  name_en: swarshoti mandir
-  name_ne: swarshoti mandir
+  name_en: Swarshoti Mandir
+  name_ne: Swarshoti Mandir
   lat: 28.838077
   lon: 81.708159
   district: Dailekh
@@ -179271,8 +179271,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: tample-kandachaur
-  name_en: tample, Kandachaur
-  name_ne: tample, Kandachaur
+  name_en: Tample, Kandachaur
+  name_ne: Tample, Kandachaur
   lat: 28.849982
   lon: 81.720151
   district: Dailekh
@@ -179294,8 +179294,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: church-kandachaur
-  name_en: church, Kandachaur
-  name_ne: church, Kandachaur
+  name_en: Church, Kandachaur
+  name_ne: Church, Kandachaur
   lat: 28.847473
   lon: 81.717687
   district: Dailekh
@@ -179317,8 +179317,8 @@ places:
   festivals:
   - id: christmas
 - id: ganesh-mandir-ganeshsthan
-  name_en: ganesh mandir, Ganeshsthan
-  name_ne: ganesh mandir, Ganeshsthan
+  name_en: Ganesh Mandir, Ganeshsthan
+  name_ne: Ganesh Mandir, Ganeshsthan
   lat: 28.844833
   lon: 81.713194
   district: Dailekh
@@ -179340,8 +179340,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: tample-mathillo-bijaure
-  name_en: tample, Mathillo Bijaure
-  name_ne: tample, Mathillo Bijaure
+  name_en: Tample, Mathillo Bijaure
+  name_ne: Tample, Mathillo Bijaure
   lat: 28.855647
   lon: 81.732833
   district: Dailekh
@@ -179363,8 +179363,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: tample-syalakatiya
-  name_en: tample, Syalakatiya
-  name_ne: tample, Syalakatiya
+  name_en: Tample, Syalakatiya
+  name_ne: Tample, Syalakatiya
   lat: 28.877411
   lon: 81.702275
   district: Dailekh
@@ -179504,8 +179504,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: shiva-temple-hamlet
-  name_en: shiva temple, Hamlet
-  name_ne: shiva temple, Hamlet
+  name_en: Shiva Temple, Hamlet
+  name_ne: Shiva Temple, Hamlet
   lat: 28.185732
   lon: 83.759872
   district: Syangja
@@ -179555,8 +179555,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: subedi-kulpuja-mandir
-  name_en: subedi kulpuja mandir
-  name_ne: subedi kulpuja mandir
+  name_en: Subedi Kulpuja Mandir
+  name_ne: Subedi Kulpuja Mandir
   lat: 28.183713
   lon: 83.77582
   district: Syangja
@@ -179770,8 +179770,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: temple-naya-basti
-  name_en: temple, Naya Basti
-  name_ne: temple, Naya Basti
+  name_en: Temple, Naya Basti
+  name_ne: Temple, Naya Basti
   lat: 27.64105
   lon: 85.516302
   district: Kavrepalanchok
@@ -179916,8 +179916,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: durga-mandir-rupnagar
-  name_en: durga mandir, Rupnagar
-  name_ne: durga mandir, Rupnagar
+  name_en: Durga Mandir, Rupnagar
+  name_ne: Durga Mandir, Rupnagar
   lat: 26.64756
   lon: 86.897917
   district: Saptari
@@ -180037,8 +180037,8 @@ places:
   - id: shree-panchami
   - id: vijaya-dashami
 - id: chandeshwori-temple-bholakha-tol-1093362790
-  name_en: chandeshwori temple, Bholakha Tol
-  name_ne: chandeshwori temple, Bholakha Tol
+  name_en: Chandeshwori Temple, Bholakha Tol
+  name_ne: Chandeshwori Temple, Bholakha Tol
   lat: 27.633829
   lon: 85.520992
   district: Kavrepalanchok
@@ -180062,8 +180062,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-bholakha-tol-1093362791
-  name_en: chandeshwori temple, Bholakha Tol
-  name_ne: chandeshwori temple, Bholakha Tol
+  name_en: Chandeshwori Temple, Bholakha Tol
+  name_ne: Chandeshwori Temple, Bholakha Tol
   lat: 27.633856
   lon: 85.52095
   district: Kavrepalanchok
@@ -180087,8 +180087,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: chandeshwori-temple-shree-sthapit-ganesh-pote-guthi-che-1093362792
-  name_en: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
-  name_ne: chandeshwori temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_en: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
+  name_ne: Chandeshwori Temple, Shree Sthapit Ganesh (pote) Guthi Che
   lat: 27.633934
   lon: 85.520733
   district: Kavrepalanchok
@@ -180185,8 +180185,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: mahadevkuntha
-  name_en: mahadevkuntha
-  name_ne: mahadevkuntha
+  name_en: Mahadevkuntha
+  name_ne: Mahadevkuntha
   lat: 28.784501
   lon: 81.775606
   district: Dailekh
@@ -180617,8 +180617,8 @@ places:
   - id: krishna-janmashtami
   - id: vijaya-dashami
 - id: shiva-temple-halhale
-  name_en: shiva temple, Halhale
-  name_ne: shiva temple, Halhale
+  name_en: Shiva Temple, Halhale
+  name_ne: Shiva Temple, Halhale
   lat: 28.248833
   lon: 83.649428
   district: Parbat
@@ -180642,8 +180642,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: shiv-mandir-dhungedhara
-  name_en: shiv mandir, dhungedhara
-  name_ne: shiv mandir, dhungedhara
+  name_en: Shiv Mandir, dhungedhara
+  name_ne: Shiv Mandir, dhungedhara
   lat: 27.703786
   lon: 85.379214
   district: Kathmandu
@@ -180788,8 +180788,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: kapileswar-nath-mahadev-temple-area
-  name_en: kapileswar nath mahadev temple area
-  name_ne: kapileswar nath mahadev temple area
+  name_en: Kapileswar Nath Mahadev Temple Area
+  name_ne: Kapileswar Nath Mahadev Temple Area
   lat: 26.727787
   lon: 85.945322
   district: Dhanusha
@@ -181137,8 +181137,8 @@ places:
   - id: bala-chaturdashi
   - id: vijaya-dashami
 - id: amarnath-temple
-  name_en: amarnath temple
-  name_ne: amarnath temple
+  name_en: Amarnath Temple
+  name_ne: Amarnath Temple
   lat: 27.606772
   lon: 84.571423
   district: Chitwan
@@ -181848,8 +181848,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: ganga-mata-mandir
-  name_en: ganga mata mandir
-  name_ne: ganga mata mandir
+  name_en: Ganga Mata Mandir
+  name_ne: Ganga Mata Mandir
   lat: 28.74336
   lon: 80.710208
   district: Kailali
@@ -181896,8 +181896,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: chimara-malika
-  name_en: chimara malika
-  name_ne: chimara malika
+  name_en: Chimara Malika
+  name_ne: Chimara Malika
   lat: 29.285624
   lon: 82.250001
   district: Jumla
@@ -182520,8 +182520,8 @@ places:
   - id: gyalpo-lhosar
   - id: sonam-lhosar
 - id: temple-baura
-  name_en: temple, Baura
-  name_ne: temple, Baura
+  name_en: Temple, Baura
+  name_ne: Temple, Baura
   lat: 28.277468
   lon: 83.934894
   district: Kaski
@@ -182566,8 +182566,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: dewal-bhagwati
-  name_en: dewal bhagwati
-  name_ne: dewal bhagwati
+  name_en: Dewal Bhagwati
+  name_ne: Dewal Bhagwati
   lat: 29.445809
   lon: 81.001228
   district: Bajhang
@@ -182710,8 +182710,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: chapode-mane
-  name_en: chapode mane
-  name_ne: chapode mane
+  name_en: Chapode Mane
+  name_ne: Chapode Mane
   lat: 27.27494
   lon: 86.861254
   district: Khotang
@@ -183072,8 +183072,8 @@ places:
   - id: maha-navami
   - id: vijaya-dashami
 - id: naag-ko-than-st-mary-chowk
-  name_en: naag ko than, St. Mary Chowk
-  name_ne: naag ko than, St. Mary Chowk
+  name_en: Naag Ko Than, St. Mary Chowk
+  name_ne: Naag Ko Than, St. Mary Chowk
   lat: 28.199948
   lon: 83.991373
   district: Kaski
@@ -183361,8 +183361,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: belaspur
-  name_en: belaspur
-  name_ne: belaspur
+  name_en: Belaspur
+  name_ne: Belaspur
   lat: 28.857957
   lon: 81.727654
   district: Dailekh
@@ -183384,8 +183384,8 @@ places:
   festivals:
   - id: vijaya-dashami
 - id: samaijee-temple
-  name_en: samaijee temple
-  name_ne: samaijee temple
+  name_en: Samaijee Temple
+  name_ne: Samaijee Temple
   lat: 29.372641
   lon: 80.442996
   district: Dadeldhura
