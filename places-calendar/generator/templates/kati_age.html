@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% import "_kati.html" as k %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="h1-sub">{{ sub }}</p>
+    <p class="kati-answer">{{ lede }}</p>
+    {{ k.tool(tool) }}
+  </header>
+
+  <section aria-labelledby="h-rows">
+    <h2 id="h-rows">{{ t.age_now }}</h2>
+    <div class="scroll">
+    <table class="data">
+      <thead><tr><th scope="col">{{ t.age_month }}</th><th scope="col">{{ t.age_now }}</th><th scope="col">{{ t.age_ad }}</th></tr></thead>
+      <tbody>{% for r in rows %}<tr><th scope="row">{{ r.month }}</th><td>{{ r.age }}</td><td>{{ r.ad }}</td></tr>{% endfor %}</tbody>
+    </table>
+    </div>
+    <p class="note">{{ t.exact_age }}</p>
+  </section>
+
+  <section aria-labelledby="h-ms">
+    <h2 id="h-ms">{{ t.milestones }}</h2>
+    <div class="scroll">
+    <table class="data">
+      <thead><tr><th scope="col">{{ t.age_at }}</th><th scope="col">{{ t.milestone }}</th><th scope="col">{{ t.year_bs }}</th><th scope="col"></th></tr></thead>
+      <tbody>{% for x in ms %}<tr><th scope="row">{{ x.age }}</th><td>{{ x.what }}</td><td>{{ x.year }}</td><td>{{ x.status }}</td></tr>{% endfor %}</tbody>
+    </table>
+    </div>
+  </section>
+
+  {{ m.faq(faq, t) }}
+
+  <nav class="pager" aria-label="{{ t.year }}">
+    {% if prev_url %}<a href="{{ prev_url }}" rel="prev">{{ prev_label }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ hub_url }}">{{ t.age }}</a>
+    {% if next_url %}<a href="{{ next_url }}" rel="next">{{ next_label }}</a>{% else %}<span></span>{% endif %}
+  </nav>
+  {{ m.share(t) }}
+</article>
+{% endblock %}

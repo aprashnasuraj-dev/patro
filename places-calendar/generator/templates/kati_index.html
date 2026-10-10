@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ intro }}</p>
+  </header>
+
+  <section aria-labelledby="h-pop">
+    <h2 id="h-pop">{{ t.popular }}</h2>
+    <ul class="links">{% for p in popular %}<li><a href="{{ p.url }}">{{ p.q }}</a><span class="meta">{{ p.a }}</span></li>{% endfor %}</ul>
+  </section>
+
+  <section aria-labelledby="h-groups">
+    <h2 id="h-groups">{{ t.groups }}</h2>
+    <ul class="links">
+      {% for g in groups_l %}<li><a href="{{ g.url }}">{{ g.name }}</a><span class="meta">{{ g.title }}</span></li>{% endfor %}
+      <li><a href="{{ age_url }}">{{ t.age }}</a></li>
+    </ul>
+  </section>
+</article>
+{% endblock %}

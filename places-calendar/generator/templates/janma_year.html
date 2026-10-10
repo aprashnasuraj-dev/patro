@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ intro }}</p>
+  </header>
+  <section aria-labelledby="h-months">
+    <h2 id="h-months">{{ t.months }}</h2>
+    <ul class="links">{% for mo in months %}<li><a href="{{ mo.url }}">{{ mo.name }}</a><span class="meta">{{ mo.ad }}</span></li>{% endfor %}</ul>
+  </section>
+  <p><a href="{{ age_url }}">{{ age_label }}</a></p>
+</article>
+{% endblock %}

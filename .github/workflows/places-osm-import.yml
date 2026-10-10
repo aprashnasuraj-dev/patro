@@ -1,0 +1,96 @@
+name: "Places: OpenStreetMap import"
+
+# Pulls every named temple, gumba, mosque, church, peak and viewpoint in Nepal
+# from OpenStreetMap (Overpass API), assigns each to its district and province,
+# and commits places-calendar/data/places_osm.yaml + peaks_osm.yaml.
+#
+# - Manual run or monthly: opens a pull request (never pushes to main).
+# - Push to a feature branch that changes the importer: commits to that branch.
+# Touches only places-calendar/data/*_osm.yaml. Never builds or deploys the site.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "30 21 1 * *"   # 03:15 NPT on the 2nd of each month
+  push:
+    branches-ignore: [main]
+    paths:
+      - places-calendar/tools/osm_import.py
+      - .github/workflows/places-osm-import.yml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: places-osm-import-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: places-calendar
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Import from OpenStreetMap
+        run: python tools/osm_import.py --save-raw /tmp/osm-raw
+
+      - name: Summary
+        run: |
+          python - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import yaml, collections
+          p = yaml.safe_load(open("data/places_osm.yaml"))["places"]
+          k = yaml.safe_load(open("data/peaks_osm.yaml"))["peaks"]
+          print("### OpenStreetMap import")
+          print(f"- Places of worship: **{len(p)}**")
+          print(f"- Peaks and viewpoints: **{len(k)}**")
+          print(f"- Places with a district: {sum(1 for x in p if x.get('district'))}")
+          for r, n in collections.Counter(x['religion'] for x in p).most_common():
+              print(f"- {r}: {n}")
+          EOF
+
+      - name: Check the data still builds
+        run: |
+          python tests/test_units.py >/dev/null
+          python -m generator.build --only places --years 2083-2083 --no-images --workers 2 --out /tmp/check
+          python tests/check_build.py /tmp/check | tail -1
+
+      - name: Commit to this branch
+        if: github.ref_name != 'main'
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add places-calendar/data/places_osm.yaml places-calendar/data/peaks_osm.yaml
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "data(places): OpenStreetMap import $(date -u +%F)"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Open a pull request (main)
+        if: github.ref_name == 'main'
+        working-directory: .
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add places-calendar/data/places_osm.yaml places-calendar/data/peaks_osm.yaml
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          branch="places/osm-import-$(date -u +%Y%m%d)"
+          git switch -c "$branch"
+          git commit -m "data(places): OpenStreetMap import $(date -u +%F)"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "data(places): OpenStreetMap import $(date -u +%F)" \
+            --body "Monthly refresh of temples, gumbas, mosques, churches, peaks and viewpoints from OpenStreetMap (© OpenStreetMap contributors, ODbL 1.0). See the workflow run summary for counts." \
+            || echo "::warning::Could not open a PR automatically (repository setting). Branch ${branch} was pushed; open the PR from GitHub."

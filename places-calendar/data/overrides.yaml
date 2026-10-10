@@ -1,0 +1,15 @@
+# Official dates that override the computed rule. Add an entry only when the
+# Nepal Panchanga Nirnayak Samiti / Government of Nepal publishes a date that
+# differs from data/festivals.yaml's rule. Format:
+#
+#   overrides:
+#     <festival-id>:
+#       <bs-year>: YYYY-MM-DD   # AD date as published
+#
+# The build report (build/report.json) lists every override where the
+# computed date disagrees, so editors can review.
+overrides:
+  # Eid dates depend on moon sighting; pin them here once announced, e.g.
+  # eid-al-fitr:
+  #   2083: 2027-03-10
+  {}

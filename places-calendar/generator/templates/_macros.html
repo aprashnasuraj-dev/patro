@@ -1,0 +1,69 @@
+{% macro leaf(l, lang) -%}
+<div class="leaf" aria-hidden="true">
+  <div class="leaf-month">{{ l.month }}</div>
+  <div class="leaf-day">{{ l.day }}</div>
+  <div class="leaf-year">{{ l.year }}</div>
+</div>
+{%- endmacro %}
+
+{% macro countdown(d, iso, t) -%}
+<p class="countdown" data-date="{{ iso }}" data-today="{{ t.today }}" data-passed="{{ t.passed }}" data-togo="{{ t.days_to_go }}" data-lang="{{ 'ne' if t.site == 'आफ्नै पात्रो' else 'en' }}">
+{%- if d is not none and d > 0 %}<strong>{{ d }}</strong> {{ t.days_to_go }}{% elif d == 0 %}<strong>{{ t.today }}</strong>{% else %}{{ t.passed }}{% endif -%}
+</p>
+{%- endmacro %}
+
+{% macro facts(rows) -%}
+<dl class="facts">
+{% for k, v in rows %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>
+{% endfor %}</dl>
+{%- endmacro %}
+
+{% macro timings(tb, title, note, t) -%}
+<section class="timings" aria-labelledby="h-timings">
+  <h2 id="h-timings">{{ title }}</h2>
+  <figure class="tl">
+    {{ tb.svg | safe }}
+    <figcaption class="tl-legend">
+      {% for cls, label in tb.legend %}<span><i class="sw {{ cls }}"></i>{{ label }}</span>{% endfor %}
+    </figcaption>
+  </figure>
+  {{ facts(tb.rows) }}
+  <p class="note">{{ note }}</p>
+</section>
+{%- endmacro %}
+
+{% macro faq(items, t) -%}
+<section class="faq" aria-labelledby="h-faq">
+  <h2 id="h-faq">{{ t.faq }}</h2>
+  {% for q, a in items %}
+  <details{% if loop.first %} open{% endif %}><summary>{{ q }}</summary><p>{{ a }}</p></details>
+  {% endfor %}
+</section>
+{%- endmacro %}
+
+{% macro sun_table(rows, title, t) -%}
+<section aria-labelledby="h-sun">
+  <h2 id="h-sun">{{ title }}</h2>
+  <div class="scroll">
+  <table class="data">
+    <thead><tr><th scope="col">{{ t.month }}</th><th scope="col">{{ t.sunrise }}</th><th scope="col">{{ t.sunset }}</th><th scope="col">{{ t.day_length }}</th></tr></thead>
+    <tbody>{% for r in rows %}<tr><th scope="row">{{ r.m }}</th><td>{{ r.sr }}</td><td>{{ r.ss }}</td><td>{{ r.len }}</td></tr>{% endfor %}</tbody>
+  </table>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro linklist(items, title, id) -%}
+{% if items %}
+<section aria-labelledby="{{ id }}">
+  <h2 id="{{ id }}">{{ title }}</h2>
+  <ul class="links">
+    {% for it in items %}<li><a href="{{ it.url }}">{{ it.name }}</a>{% if it.date %}<span class="meta">{{ it.date }}</span>{% elif it.dist %}<span class="meta">{{ it.dist }}{% if it.dir %}, {{ it.dir }}{% endif %}</span>{% elif it.h %}<span class="meta">{{ it.h }}</span>{% endif %}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{%- endmacro %}
+
+{% macro share(t) -%}
+<div class="share"><button type="button" class="btn-share" data-copied="{{ t.copied }}">{{ t.share }}</button></div>
+{%- endmacro %}

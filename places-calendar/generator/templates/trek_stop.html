@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block main %}
+<article>
+  <header class="hero hero-trek">
+    <div class="hero-text">
+      <h1>{{ h1 }}<span class="h1-sub"><a href="{{ trek_url }}">{{ on_trek }}</a></span></h1>
+      <p class="height"><b>{{ alt }}</b><span>{{ alt_ft }}</span></p>
+    </div>
+  </header>
+
+  <figure class="alt-fig">{{ svg | safe }}</figure>
+
+  <section aria-labelledby="h-band" class="band band-{{ band_key }}">
+    <h2 id="h-band">{{ t.altitude_band }}: {{ band }}</h2>
+    <p>{{ band_note }}</p>
+    {% if stop.warn %}<p class="st-note warn">{{ stop.warn_txt }}</p>{% endif %}
+    {% if stop.rest %}<p class="st-note good">{{ t.acclimatise }}</p>{% endif %}
+  </section>
+
+  <nav class="hops" aria-label="{{ t.itinerary }}">
+    {% if prev %}<a href="{{ prev.url }}" rel="prev"><small>{{ t.previous }}</small><b>{{ prev.name }}</b><span>{{ prev.alt }} {{ 'मि.' if lang == 'ne' else 'm' }}, {{ t.straight_line }} {{ stop.dist }}</span></a>{% else %}<span></span>{% endif %}
+    {% if next %}<a href="{{ next.url }}" rel="next"><small>{{ t.next }}</small><b>{{ next.name }}</b><span>{{ next.alt }} {{ 'मि.' if lang == 'ne' else 'm' }} ({{ next.gain }}), {{ t.straight_line }} {{ next.dist }}</span></a>{% endif %}
+  </nav>
+
+  {% if peaks %}
+  <section aria-labelledby="h-peaks">
+    <h2 id="h-peaks">{{ t.peaks_in_view }}</h2>
+    <ul class="links">{% for p in peaks %}<li><a href="{{ p.url }}">{{ p.name }}</a><span class="meta">{{ p.h }}, {{ p.dist }} {{ p.dir }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  {{ m.sun_table(sun, t.sun_by_month, t) }}
+  {{ m.linklist(sacred, t.nearby_places, "h-sacred") }}
+  <p><a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t.map }}</a></p>
+  {{ m.share(t) }}
+</article>
+{% endblock %}
