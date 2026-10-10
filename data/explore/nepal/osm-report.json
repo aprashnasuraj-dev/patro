@@ -452,102 +452,89 @@
    }
   ]
  },
- "districts_matched": 76,
+ "districts_matched": 77,
+ "districts_unmatched": {
+  "source": [],
+  "osm": []
+ },
+ "palikas_second_pass": [
+  "Narphu → NarpaBhumi (wards equal: True)",
+  "Bogtan → Bogatan-Phudsil (wards equal: True)",
+  "Tribeni Nalagad → Nalgad (wards equal: True)",
+  "Kukmakhmalika → Kumakh (wards equal: True)",
+  "Neshyang → Manang Ngisyang (wards equal: True)",
+  "Suwarnabati → Sunil Smiriti (wards equal: True)",
+  "Dhorchaur → Siddha Kumakh (wards equal: True)",
+  "Kanda → Saipal (wards equal: True)",
+  "Pandav Gupha → Jagannath (wards equal: True)",
+  "Dalome → Lo-Ghekar Damodarkunda (wards equal: True)",
+  "Sukidaha → GangaDev (wards equal: True)",
+  "Duikholi → Pariwartan (wards equal: True)",
+  "None → Sainamaina (wards equal: False)"
+ ],
  "palikas": {
   "source": 753,
   "osm": 751,
-  "matched": 734,
+  "matched": 750,
   "unmatched_source": [
-   "363:Doramba",
-   "429:NarpaBhumi",
-   "430:Manang Ngisyang",
-   "435:Lo-Ghekar Damodarkunda",
-   "488:Bardaghat",
-   "498:Sainamaina",
-   "519:Rurukshetra",
    "550:Pyuthan",
-   "561:Sunil Smiriti",
-   "566:GangaDev",
-   "567:Pariwartan",
    "571:Nepalgunj",
-   "575:Duduwa",
-   "593:Kumakh",
-   "599:Siddha Kumakh",
-   "661:Nalgad",
-   "686:Saipal",
-   "693:Jagannath",
-   "713:Bogatan-Phudsil"
+   "575:Duduwa"
   ],
   "unmatched_osm": [
-   "w398518284:None",
-   "w419840907:None",
-   "r10466483:Bogtan",
-   "r10507520:Suwarnabati",
-   "r10507081:Dhorchaur",
-   "r10507082:Kukmakhmalika",
-   "r10507525:Duikholi",
-   "r10507528:Sukidaha",
-   "r10491218:Tribeni Nalagad",
-   "r12421492:Pandav Gupha",
-   "r10497178:Dalome",
-   "r10516303:Narphu",
-   "r10516302:Neshyang",
-   "r10512628:Ruru",
-   "r12393598:दोरम्बा शैलुङ गाउँपालिका",
-   "r10492506:नवलपरासी पश्चिम / बर्दघाट सुस्ता पश्चिम",
-   "r10470790:Kanda"
+   "w419840907:None"
   ]
  },
  "wards": {
   "source_total": 6743,
   "osm_level_count": 6739,
-  "matched": 6557,
-  "palikas_complete": 716,
+  "matched": 6715,
+  "palikas_complete": 732,
   "problems": {
-   "outside-matched-palika": 158,
    "no-or-bad-number": 18,
+   "assigned-by-name": 46,
    "duplicate-number": 6
   }
  },
  "settlements": {
-  "total": 19297,
+  "total": 19299,
   "by_place": {
    "city": 28,
    "neighbourhood": 1127,
    "locality": 1111,
-   "village": 3369,
+   "village": 3370,
    "hamlet": 12483,
    "suburb": 447,
-   "town": 258,
+   "town": 259,
    "isolated_dwelling": 468,
    "quarter": 6
   },
   "assigned": {
-   "ward": 18291,
+   "ward": 19172,
    "palika": 95,
-   "district": 911
+   "district": 32
   }
  },
  "pois": {
-  "total": 54698,
+  "total": 54822,
   "by_category": {
-   "bus": 289,
-   "stay": 4941,
+   "bus": 290,
+   "stay": 4942,
    "peak": 565,
-   "worship": 7709,
-   "school": 24859,
+   "worship": 7713,
+   "school": 24915,
    "market": 300,
-   "bank": 5870,
-   "sight": 809,
+   "bank": 5871,
+   "sight": 855,
    "police": 625,
    "office": 2832,
    "waterfall": 32,
-   "health": 4470,
+   "health": 4481,
    "post": 93,
    "airport": 53,
-   "park": 504,
-   "lake": 747
+   "park": 505,
+   "lake": 750
   }
  },
- "district_hq_points": 64
+ "district_hq_points": 68
 }
