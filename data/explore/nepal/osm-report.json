@@ -1,0 +1,553 @@
+{
+ "generated": "2026-10-10",
+ "osm_timestamp": "2026-10-09T20:21:04Z",
+ "level_counts": {
+  "4": 7,
+  "6": 77,
+  "7": 751,
+  "8": 2,
+  "9": 6739,
+  "10": 20,
+  "11": 1
+ },
+ "levels": {
+  "district": 6,
+  "palika": 7,
+  "ward": 9
+ },
+ "samples": {
+  "4": [
+   {
+    "id": "r10489132",
+    "name": "कोशी प्रदेश",
+    "name:en": "Koshi Province",
+    "name:ne": "कोशी प्रदेश",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10489318",
+    "name": "मधेश प्रदेश",
+    "name:en": "Madhesh Province",
+    "name:ne": "मधेश प्रदेश",
+    "alt_name": "मिथिला प्रदेश",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10493722",
+    "name": "लुम्बिनी प्रदेश",
+    "name:en": "Lumbini Province",
+    "name:ne": "लुम्बिनी प्रदेश",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10489317",
+    "name": "बागमती प्रदेश",
+    "name:en": "Bagamati Province",
+    "name:ne": "बागमती प्रदेश",
+    "alt_name": "Bagamati Pradesh",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10489605",
+    "name": "गण्डकी प्रदेश",
+    "name:en": "Gandaki Province",
+    "name:ne": "गण्डकी प्रदेश",
+    "alt_name": "Gandaki Pradesh",
+    "ref": "4",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10493723",
+    "name": "कर्णाली प्रदेश",
+    "name:en": "Karnali Province",
+    "name:ne": "कर्णाली प्रदेश",
+    "alt_name": "Karnali Pradesh",
+    "ref": "6",
+    "admin_level": "4",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10488187",
+    "name": "सुदूरपश्चिम प्रदेश",
+    "name:en": "Sudurpashchim Province",
+    "name:ne": "सुदूरपश्चिम प्रदेश",
+    "alt_name": "Sudurpashchim Pradesh",
+    "ref": "7",
+    "admin_level": "4",
+    "boundary": "administrative"
+   }
+  ],
+  "6": [
+   {
+    "id": "r4586293",
+    "name": "बैतडी",
+    "name:en": "Baitadi",
+    "name:ne": "बैतडी",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4586288",
+    "name": "डडेलधुरा",
+    "name:en": "Dadeldhura",
+    "name:ne": "डडेलधुरा",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4586286",
+    "name": "कञ्चनपुर जिल्ला",
+    "name:en": "Kanchanpur District",
+    "name:ne": "कञ्चनपुर जिल्ला",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4586289",
+    "name": "डोटी",
+    "name:en": "Doti",
+    "name:ne": "डोटी",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589473",
+    "name": "सोलुखुम्बु जिल्ला",
+    "name:en": "Solukhumbu",
+    "name:ne": "सोलुखुम्बु जिल्ला",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589463",
+    "name": "ओखलढुङ्गा जिल्ला",
+    "name:en": "Okhaldhunga",
+    "name:ne": "ओखलढुङ्गा जिल्ला",
+    "admin_level": "6",
+    "boundary": "administrative",
+    "population": "147984"
+   },
+   {
+    "id": "r4589464",
+    "name": "खोटाङ जिल्ला",
+    "name:en": "Khotang",
+    "name:ne": "खोटाङ जिल्ला",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589467",
+    "name": "भोजपुर जिल्ला",
+    "name:en": "Bhojpur",
+    "name:ne": "भोजपुर जिल्ला",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589466",
+    "name": "धनकुटा जिल्ला",
+    "name:en": "Dhankuta",
+    "name:ne": "धनकुटा",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589469",
+    "name": "सङ्खुवासभा जिल्ला",
+    "name:en": "Sankhuwasabha",
+    "name:ne": "सङ्खुवासभा",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589465",
+    "name": "तेह्रथुम जिल्ला",
+    "name:en": "Tehrathum",
+    "name:ne": "तेह्रथुम",
+    "admin_level": "6",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4589478",
+    "name": "ताप्लेजुङ जिल्ला",
+    "name:en": "Taplejung",
+    "name:ne": "ताप्लेजुङ",
+    "admin_level": "6",
+    "boundary": "administrative"
+   }
+  ],
+  "7": [
+   {
+    "id": "r10515188",
+    "name": "Bihadi",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10512631",
+    "name": "Chandrakot",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10508286",
+    "name": "Maharajgunj",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10508280",
+    "name": "यसोधरा",
+    "name:en": "Yasodhara",
+    "name:ne": "यसोधरा",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "w398518284",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10521981",
+    "name": "Phedhikhola",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "w419840907",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r12389521",
+    "name": "जिराभवानी गाउँपालिका",
+    "name:en": "Jirabhawani",
+    "name:ne": "जिराभवानी गाउँपालिका",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r12389492",
+    "name": "पटेर्वा सुगौली गाउँपालिका",
+    "name:en": "Paterwa Sugauli",
+    "name:ne": "पटेर्वा सुगौली गाउँपालिका",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r12389564",
+    "name": "धोबिनी गाउँपालिका",
+    "name:en": "Dhobini",
+    "name:ne": "धोबिनी गाउँपालिका",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r12389577",
+    "name": "पकहाँ मैनपुर गाउँपालिका",
+    "name:en": "Pakaha Mainpur",
+    "name:ne": "पकहाँ मैनपुर गाउँपालिका",
+    "admin_level": "7",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r10433054",
+    "name": "जन्तेढुङ्गा गाउँपालिका",
+    "name:en": "Jantedhunga",
+    "name:ne": "जन्तेढुङ्गा गाउँपालिका",
+    "admin_level": "7",
+    "boundary": "administrative"
+   }
+  ],
+  "8": [
+   {
+    "id": "r12304382",
+    "name": "霍尔巴乡",
+    "name:en": "Horba township",
+    "official_name": "霍尔巴乡",
+    "alt_name": "归桑;霍尔巴",
+    "admin_level": "8",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r11767373",
+    "name": "樟木镇 འགྲམ",
+    "name:en": "Dram town",
+    "name:ne": "खासा",
+    "official_name": "樟木镇",
+    "admin_level": "8",
+    "boundary": "administrative"
+   }
+  ],
+  "9": [
+   {
+    "id": "w230520844",
+    "name": "Kirtipur Municipality Ward no 8",
+    "ward": "8",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4649358",
+    "name": "Simkot-08",
+    "ward": "8",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4654655",
+    "name": "Khatyad-05",
+    "ward": "5",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4800758",
+    "name": "Mahankal-05",
+    "ward": "5",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4816710",
+    "name": "Godawari-01",
+    "ward": "1",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4816718",
+    "name": "Godawari-12",
+    "ward": "12",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4818537",
+    "name": "Makawanpurgadhi-07",
+    "ward": "7",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r4822543",
+    "name": "Mahankal-03",
+    "ward": "3",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5196036",
+    "name": "Raghuganga-03",
+    "ward": "3",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5258015",
+    "name": "Barhagaun Muktikhsetra-02",
+    "ward": "2",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5268077",
+    "name": "Neshyang-02",
+    "ward": "2",
+    "admin_level": "9",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5284425",
+    "name": "Dordi-05",
+    "ward": "5",
+    "admin_level": "9",
+    "boundary": "administrative"
+   }
+  ],
+  "10": [
+   {
+    "id": "r5357577",
+    "name": "Ghandruk - Lumle",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5360301",
+    "name": "Parche - Namarjung",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5361252",
+    "name": "Gurja - Mudi",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5385075",
+    "name": "Kuhun - Pulachaur",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5392806",
+    "name": "Devisthan - Okharbot",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5392807",
+    "name": "Devisthan - Takam",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5361255",
+    "name": "Mudi - Bhalkbang",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5392805",
+    "name": "Chimkhola - Kuinemangale",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5392808",
+    "name": "Malkaban",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5392804",
+    "name": "Bhalkbang - Maran",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "r5691341",
+    "name": "Bhattarai Danda",
+    "admin_level": "10",
+    "boundary": "administrative"
+   },
+   {
+    "id": "w745282825",
+    "admin_level": "10",
+    "boundary": "administrative"
+   }
+  ],
+  "11": [
+   {
+    "id": "w499604754",
+    "admin_level": "11",
+    "boundary": "administrative"
+   }
+  ]
+ },
+ "districts_matched": 76,
+ "palikas": {
+  "source": 753,
+  "osm": 751,
+  "matched": 734,
+  "unmatched_source": [
+   "363:Doramba",
+   "429:NarpaBhumi",
+   "430:Manang Ngisyang",
+   "435:Lo-Ghekar Damodarkunda",
+   "488:Bardaghat",
+   "498:Sainamaina",
+   "519:Rurukshetra",
+   "550:Pyuthan",
+   "561:Sunil Smiriti",
+   "566:GangaDev",
+   "567:Pariwartan",
+   "571:Nepalgunj",
+   "575:Duduwa",
+   "593:Kumakh",
+   "599:Siddha Kumakh",
+   "661:Nalgad",
+   "686:Saipal",
+   "693:Jagannath",
+   "713:Bogatan-Phudsil"
+  ],
+  "unmatched_osm": [
+   "w398518284:None",
+   "w419840907:None",
+   "r10466483:Bogtan",
+   "r10507520:Suwarnabati",
+   "r10507081:Dhorchaur",
+   "r10507082:Kukmakhmalika",
+   "r10507525:Duikholi",
+   "r10507528:Sukidaha",
+   "r10491218:Tribeni Nalagad",
+   "r12421492:Pandav Gupha",
+   "r10497178:Dalome",
+   "r10516303:Narphu",
+   "r10516302:Neshyang",
+   "r10512628:Ruru",
+   "r12393598:दोरम्बा शैलुङ गाउँपालिका",
+   "r10492506:नवलपरासी पश्चिम / बर्दघाट सुस्ता पश्चिम",
+   "r10470790:Kanda"
+  ]
+ },
+ "wards": {
+  "source_total": 6743,
+  "osm_level_count": 6739,
+  "matched": 6557,
+  "palikas_complete": 716,
+  "problems": {
+   "outside-matched-palika": 158,
+   "no-or-bad-number": 18,
+   "duplicate-number": 6
+  }
+ },
+ "settlements": {
+  "total": 19297,
+  "by_place": {
+   "city": 28,
+   "neighbourhood": 1127,
+   "locality": 1111,
+   "village": 3369,
+   "hamlet": 12483,
+   "suburb": 447,
+   "town": 258,
+   "isolated_dwelling": 468,
+   "quarter": 6
+  },
+  "assigned": {
+   "ward": 18291,
+   "palika": 95,
+   "district": 911
+  }
+ },
+ "pois": {
+  "total": 54698,
+  "by_category": {
+   "bus": 289,
+   "stay": 4941,
+   "peak": 565,
+   "worship": 7709,
+   "school": 24859,
+   "market": 300,
+   "bank": 5870,
+   "sight": 809,
+   "police": 625,
+   "office": 2832,
+   "waterfall": 32,
+   "health": 4470,
+   "post": 93,
+   "airport": 53,
+   "park": 504,
+   "lake": 747
+  }
+ },
+ "district_hq_points": 64
+}
