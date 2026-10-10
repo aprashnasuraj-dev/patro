@@ -44,6 +44,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -69,12 +70,12 @@ PROVINCES_NE = {"Koshi": "कोशी", "Madhesh": "मधेश", "Bagmati": "
 BOUNDARY_QUERY = """
 [out:json][timeout:600];
 area["ISO3166-1"="NP"][admin_level=2]->.np;
-relation["boundary"="administrative"]["admin_level"~"^(4|5|6)$"](area.np);
-out tags geom;
+relation["boundary"="administrative"]["admin_level"~"^(4|6)$"](area.np);
+out tags geom qt;
 """
 
 QUERY = """
-[out:json][timeout:300];
+[out:json][timeout:600][maxsize:1073741824];
 area["ISO3166-1"="NP"][admin_level=2]->.np;
 (
   nwr["amenity"="place_of_worship"]["name"](area.np);
@@ -123,9 +124,12 @@ def fetch(query: str) -> dict:
                     return json.load(r)
             except Exception as e:  # noqa: BLE001 - report and try the next mirror
                 last = e
-                print(f"  {url}: {e}", file=sys.stderr)
+                msg = f"{url}: {type(e).__name__}: {e}"
+                print(f"  {msg}", file=sys.stderr)
+                if os.environ.get("GITHUB_ACTIONS"):
+                    print(f"::warning title=Overpass attempt failed::{msg[:300]}")
                 time.sleep(20)
-    raise SystemExit(f"All Overpass endpoints failed: {last}")
+    raise RuntimeError(f"All Overpass endpoints failed: {last}")
 
 
 # --------------------------------------------------------------------------
@@ -255,12 +259,25 @@ def main() -> None:
     ap.add_argument("--save-raw", type=Path, help="Directory to keep the raw Overpass responses")
     args = ap.parse_args()
 
-    raw = json.loads(args.from_file.read_text()) if args.from_file else fetch(QUERY)
+    try:
+        raw = json.loads(args.from_file.read_text()) if args.from_file else fetch(QUERY)
+    except RuntimeError as e:
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::error title=OpenStreetMap import failed::{str(e)[:400]}")
+        raise SystemExit(1)
     elements = raw.get("elements", [])
     print(f"overpass: {len(elements)} features")
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::notice title=Overpass::{len(elements)} features downloaded")
     regions = None
     if not args.no_boundaries:
-        braw = json.loads(args.boundaries.read_text()) if args.boundaries else (None if args.from_file else fetch(BOUNDARY_QUERY))
+        try:
+            braw = json.loads(args.boundaries.read_text()) if args.boundaries else (None if args.from_file else fetch(BOUNDARY_QUERY))
+        except RuntimeError as e:
+            braw = None
+            print(f"boundaries unavailable, districts left blank: {e}", file=sys.stderr)
+            if os.environ.get("GITHUB_ACTIONS"):
+                print("::warning title=Districts not assigned::Boundary query failed; places imported without district. Re-run later.")
         if braw:
             regions = Regions(braw)
             if args.save_raw:
