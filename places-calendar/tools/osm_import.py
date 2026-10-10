@@ -13,6 +13,12 @@ Usage
     python tools/osm_import.py --from-file nepal.json  # offline / CI
     python tools/osm_import.py --limit 500           # small trial run
     python tools/osm_import.py --save-raw raw/        # keep the Overpass responses
+    python tools/osm_import.py --pbf nepal-latest.osm.pbf   # Geofabrik extract (preferred)
+
+The preferred source is the Geofabrik Nepal extract
+(https://download.geofabrik.de/asia/nepal-latest.osm.pbf, about 100 MB),
+read with pyosmium: no query server is involved, and district/province
+boundaries come from the same file. Overpass is the fallback.
 
 In this repository the import runs on GitHub's servers through
 .github/workflows/places-osm-import.yml (Actions → "Places: OpenStreetMap
@@ -192,6 +198,56 @@ def _inside(lon: float, lat: float, ring) -> bool:
     return inside
 
 
+def read_pbf(path: Path):
+    """Read a Geofabrik .osm.pbf (or .osm) file into Overpass-style features
+    plus administrative boundary rings. Requires `pip install osmium`."""
+    import osmium
+
+    feats, bounds = [], []
+
+    def wanted(tags) -> bool:
+        if "name" not in tags:
+            return False
+        return (tags.get("amenity") == "place_of_worship" or tags.get("historic") == "monastery"
+                or tags.get("natural") == "peak" or tags.get("tourism") == "viewpoint")
+
+    class H(osmium.SimpleHandler):
+        def node(self, n):
+            if wanted(n.tags):
+                feats.append({"type": "node", "id": n.id, "lat": n.location.lat, "lon": n.location.lon,
+                              "tags": {t.k: t.v for t in n.tags}})
+
+        def way(self, w):
+            t = w.tags
+            if wanted(t) and t.get("natural") != "peak":
+                pts = [(nd.lon, nd.lat) for nd in w.nodes if nd.location.valid()]
+                if pts:
+                    feats.append({"type": "way", "id": w.id, "center": {"lon": sum(x for x, _ in pts) / len(pts),
+                                                                        "lat": sum(y for _, y in pts) / len(pts)},
+                                  "tags": {k.k: k.v for k in t}})
+
+        def area(self, a):
+            t = a.tags
+            if t.get("boundary") == "administrative" and t.get("admin_level") in ("4", "5", "6") and not a.from_way():
+                members = []
+                for ring in a.outer_rings():
+                    geom = [{"lon": nd.lon, "lat": nd.lat} for nd in ring if nd.location.valid()]
+                    if len(geom) >= 4:
+                        members.append({"type": "way", "role": "outer", "geometry": geom})
+                if members:
+                    bounds.append({"type": "relation", "id": a.orig_id(), "members": members,
+                                   "tags": {k.k: k.v for k in t}})
+            elif wanted(t) and not a.from_way():
+                pts = [(nd.lon, nd.lat) for r in a.outer_rings() for nd in r if nd.location.valid()]
+                if pts:
+                    feats.append({"type": "relation", "id": a.orig_id(),
+                                  "center": {"lon": sum(x for x, _ in pts) / len(pts), "lat": sum(y for _, y in pts) / len(pts)},
+                                  "tags": {k.k: k.v for k in t}})
+
+    H().apply_file(str(path), locations=True)
+    return {"elements": feats}, {"elements": bounds}
+
+
 class Regions:
     """Finds the district and province containing a point."""
 
@@ -270,13 +326,17 @@ def main() -> None:
     ap.add_argument("--from-file", type=Path)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out-dir", type=Path, default=ROOT / "data")
+    ap.add_argument("--pbf", type=Path, help="Geofabrik nepal-latest.osm.pbf (preferred source)")
     ap.add_argument("--boundaries", type=Path, help="Saved Overpass boundary JSON (skip the live boundary query)")
     ap.add_argument("--no-boundaries", action="store_true", help="Do not assign districts")
     ap.add_argument("--save-raw", type=Path, help="Directory to keep the raw Overpass responses")
     args = ap.parse_args()
 
+    braw_pbf = None
     try:
-        if args.from_file:
+        if args.pbf:
+            raw, braw_pbf = read_pbf(args.pbf)
+        elif args.from_file:
             raw = json.loads(args.from_file.read_text())
         else:
             seen, elements = set(), []
@@ -293,11 +353,13 @@ def main() -> None:
             print(f"::error title=OpenStreetMap import failed::{str(e)[:400]}")
         raise SystemExit(1)
     elements = raw.get("elements", [])
-    print(f"overpass: {len(elements)} features")
+    print(f"source: {len(elements)} features")
     if os.environ.get("GITHUB_ACTIONS"):
-        print(f"::notice title=Overpass::{len(elements)} features downloaded")
+        print(f"::notice title=OpenStreetMap::{len(elements)} features read")
     regions = None
-    if not args.no_boundaries:
+    if braw_pbf is not None and not args.no_boundaries:
+        regions = Regions(braw_pbf)
+    elif not args.no_boundaries:
         try:
             braw = json.loads(args.boundaries.read_text()) if args.boundaries else (None if args.from_file else fetch(BOUNDARY_QUERY))
         except RuntimeError as e:
@@ -336,6 +398,8 @@ def main() -> None:
 
         base = slugify(name_en if re.search(r"[A-Za-z]", name_en) else f"{kind}-{el['id']}")
         loc = regions.locate(float(lat), float(lon)) if regions else {}
+        if regions and regions.districts and not loc.get("district"):
+            continue   # outside Nepal (extracts include a margin beyond the border)
         district = loc.get("district") or tags.get("addr:district") or tags.get("is_in:district") or ""
         sid = base if base not in seen_ids else f"{base}-{el['id']}"
         seen_ids.add(sid)
@@ -374,7 +438,7 @@ def main() -> None:
         if args.limit and len(places) + len(peaks) >= args.limit:
             break
 
-    if len(places) < 100 and not args.from_file and not args.limit:
+    if len(places) < 100 and not args.from_file and not args.limit and not (args.pbf and args.pbf.suffix == ".osm"):
         msg = f"Only {len(places)} places imported; refusing to overwrite the data files."
         if os.environ.get("GITHUB_ACTIONS"):
             print(f"::error title=Import too small::{msg}")

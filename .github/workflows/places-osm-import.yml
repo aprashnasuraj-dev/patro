@@ -1,8 +1,10 @@
 name: "Places: OpenStreetMap import"
 
 # Pulls every named temple, gumba, mosque, church, peak and viewpoint in Nepal
-# from OpenStreetMap (Overpass API), assigns each to its district and province,
-# and commits places-calendar/data/places_osm.yaml + peaks_osm.yaml.
+# from OpenStreetMap, assigns each to its district and province, and commits
+# places-calendar/data/places_osm.yaml + peaks_osm.yaml.
+# Source: the Geofabrik Nepal extract (one file, no query server); the public
+# Overpass API is only a fallback if the download fails.
 #
 # - Manual run or monthly: opens a pull request (never pushes to main).
 # - Push to a feature branch that changes the importer: commits to that branch.
@@ -40,10 +42,24 @@ jobs:
           python-version: "3.12"
 
       - name: Install
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt osmium
+
+      - name: Download the Geofabrik Nepal extract
+        id: pbf
+        continue-on-error: true
+        run: |
+          curl -fsSL --retry 4 --retry-delay 15 -o /tmp/nepal-latest.osm.pbf \
+            https://download.geofabrik.de/asia/nepal-latest.osm.pbf
+          ls -lh /tmp/nepal-latest.osm.pbf
 
       - name: Import from OpenStreetMap
-        run: python tools/osm_import.py --save-raw /tmp/osm-raw
+        run: |
+          if [[ -s /tmp/nepal-latest.osm.pbf ]]; then
+            python tools/osm_import.py --pbf /tmp/nepal-latest.osm.pbf
+          else
+            echo "::warning::Geofabrik download failed; trying the Overpass API"
+            python tools/osm_import.py --save-raw /tmp/osm-raw
+          fi
 
       - name: Summary
         run: |
@@ -55,6 +71,7 @@ jobs:
           print(f"- Places of worship: **{len(p)}**")
           print(f"- Peaks and viewpoints: **{len(k)}**")
           print(f"- Places with a district: {sum(1 for x in p if x.get('district'))}")
+          print(f"- Districts covered: {len({x['district'] for x in p if x.get('district')})} of 77")
           for r, n in collections.Counter(x['religion'] for x in p).most_common():
               print(f"- {r}: {n}")
           EOF
@@ -92,5 +109,5 @@ jobs:
           git push origin "$branch"
           gh pr create --base main --head "$branch" \
             --title "data(places): OpenStreetMap import $(date -u +%F)" \
-            --body "Monthly refresh of temples, gumbas, mosques, churches, peaks and viewpoints from OpenStreetMap (© OpenStreetMap contributors, ODbL 1.0). See the workflow run summary for counts." \
+            --body "Monthly refresh of temples, gumbas, mosques, churches, peaks and viewpoints from OpenStreetMap via the Geofabrik Nepal extract (© OpenStreetMap contributors, ODbL 1.0). See the workflow run summary for counts." \
             || echo "::warning::Could not open a PR automatically (repository setting). Branch ${branch} was pushed; open the PR from GitHub."
