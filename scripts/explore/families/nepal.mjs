@@ -226,7 +226,21 @@ async function data(root) {
   for (const [pid, list] of S.byPalika) {
     const p = palika.get(pid);
     const used = new Set();
-    const candidates = list.filter((s) => PAGE_PLACES.has(s.place) && s.name && /[a-z]/i.test(s.name) && !/^ward\b/i.test(s.name));
+    const rank = (s) => ({ city: 5, town: 4, village: 3, suburb: 2 })[s.place] * 4 + (s.name_ne ? 2 : 0) + (s.ele ? 1 : 0);
+    // OSM sometimes has the same village twice (two nodes, same name, same ward, close together): keep the better one.
+    const near = new Map();
+    const candidates = [];
+    for (const s of list.filter((s) => PAGE_PLACES.has(s.place) && s.name && /[a-z]/i.test(s.name) && !/^ward\b/i.test(s.name))) {
+      const key = `${slugify(s.name)}|${s.ward || 0}`;
+      const twin = (near.get(key) || []).find((o) => km(o.lat, o.lng, s.lat, s.lng) < 3);
+      if (!twin) {
+        push(near, key, s);
+        candidates.push(s);
+      } else if (rank(s) > rank(twin)) {
+        candidates[candidates.indexOf(twin)] = s;
+        near.get(key)[near.get(key).indexOf(twin)] = s;
+      }
+    }
     const baseCounts = new Map();
     for (const s of candidates) baseCounts.set(slugify(s.name), (baseCounts.get(slugify(s.name)) || 0) + 1);
     for (const s of candidates.sort((a, b) => (a.ward || 99) - (b.ward || 99) || a.name.localeCompare(b.name))) {
