@@ -36,6 +36,8 @@ jobs:
         working-directory: places-calendar
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -88,10 +90,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add places-calendar/data/places_osm.yaml places-calendar/data/peaks_osm.yaml
+          report() { echo "::error title=Commit step failed::$(tail -c 900 /tmp/git.log | tr '\n' ' ')"; exit 1; }
+          git add places-calendar/data/places_osm.yaml places-calendar/data/peaks_osm.yaml > /tmp/git.log 2>&1 || report
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "data(places): OpenStreetMap import $(date -u +%F)"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          ls -l places-calendar/data/*_osm.yaml
+          git commit -q -m "data(places): OpenStreetMap import $(date -u +%F)" > /tmp/git.log 2>&1 || report
+          git fetch -q origin "${GITHUB_REF_NAME}" > /tmp/git.log 2>&1 || report
+          git rebase -q "origin/${GITHUB_REF_NAME}" > /tmp/git.log 2>&1 || report
+          git push origin "HEAD:refs/heads/${GITHUB_REF_NAME}" > /tmp/git.log 2>&1 || report
+          echo "::notice title=Committed::OpenStreetMap data pushed to ${GITHUB_REF_NAME}"
 
       - name: Open a pull request (main)
         if: github.ref_name == 'main'
