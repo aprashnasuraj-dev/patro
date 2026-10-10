@@ -10,14 +10,14 @@ summary in §4 below.
 
 | Family | Language | URLs |
 |---|---|---|
-| Name days | cs, sk, hu (pl disabled) | `/nameday` hub · `/nameday/{country}` today · `/nameday/{country}/{mm-dd}` · `/nameday/{country}/month/{mm}` · `/nameday/{country}/name/{name}` (+ `.ics` reminder) · `/nameday/{country}/search?q=` · `/nameday/{country}/data.json` (CC BY-SA share-alike copy) |
+| Name days | pl, cs, sk, hu | `/nameday` hub · `/nameday/{country}` today · `/nameday/{country}/{mm-dd}` · `/nameday/{country}/month/{mm}` · `/nameday/{country}/name/{name}` (+ `.ics` reminder) · `/nameday/{country}/search?q=` · `/nameday/{country}/data.json` (CC BY-SA share-alike copy) |
 | Ethiopian calendar | en + am | `/ethiopian-calendar` today + converter + Ethiopian clock · `/ethiopian-calendar/date/{yyyy-mm-dd}` · `/ethiopian-calendar/{EY}` · `/ethiopian-calendar/{EY}/{month}` · `/ethiopian-calendar/holidays/{GY}` · `/ethiopian-calendar/time` · `/ethiopian-calendar/convert` (redirect) |
 | Bali calendar | id | `/bali-calendar` today · `/bali-calendar/{yyyy-mm-dd}` · `/bali-calendar/hari-raya/{GY}` · `/bali-calendar/wuku/{wuku}` · `/bali-calendar/otonan` (+ `?lahir=` result, noindex) |
 | Weton | id | `/weton` today · `/weton/{yyyy-mm-dd}` · `/weton/{hari}-{pasaran}` (35) · `/weton/jodoh` (+ query result, noindex) · `/weton/hitung` (redirect) |
 | Moon calendar | de, es, it | `/mondkalender`, `/calendario-lunar`, `/calendario-lunare`: today · `/{yyyy-mm-dd}` · `/{yyyy}/{mm}` · German only: `/mondkalender/haare-schneiden` |
 | Sitemaps | — | `/sitemap-worldcal.xml` → `/sitemap-wc-{family}.xml` (≤ 45,000 URLs each) |
 
-Country slugs: `czech-republic`, `slovakia`, `hungary`, `poland` (disabled). Indexable URLs at launch: about **42,000**
+Country slugs: `poland`, `czech-republic`, `slovakia`, `hungary`. Indexable URLs at launch: about **42,000**
 (weton 32.5k birth-date pages from 1940, name days 2.7k, Ethiopian 1.8k, Bali 1.2k, moon 3 × 1.2k).
 
 ## 2. Request flow (backend)
@@ -57,7 +57,7 @@ for the moon family, `hreflang` alternates between de/es/it for the same date.
 | Moon | astronomy-engine (already a dependency); IAU constellations for day types, tropical signs for haircuts | Oct 2026 events within 15–30 min; day types identical to icalendario.net for 29/31 days, the other 2 contain the published type |
 | Name days CZ/HU | Wikipedia lists via `namedays-cs` / `nevnap` → **CC BY-SA 4.0** (attribution + share-alike `data.json`) | 366 days, leap rules, upstream HU May shift fixed, NFC-normalised |
 | Name days SK | MK SR calendar via `name-day-calendar` → public information (§ 5 Act 185/2015) | Fixed 29 Feb Radomír, typo fixed |
-| Name days PL | package states no source → **disabled** | `/nameday/poland` returns 404 |
+| Name days PL | traditional name-day facts via `namedays` (MIT) | Enabled; 1,566 names, up to 18 per day |
 
 Re-create the name-day files with `node scripts/worldcal/vendor-namedays.mjs <dir-of-npm-packs>` (instructions in the script).
 
@@ -71,15 +71,15 @@ Re-create the name-day files with `node scripts/worldcal/vendor-namedays.mjs <di
 
 ## 6. Before launch (blockers from the research)
 
-1. **Ethiopian:** confirm whether Genna stays on 7 Jan in 2028 (page currently shows 8 Jan with a warning); confirm Derg
+1. **Ethiopian:** Genna is kept on 7 January (Tahsas 28 in the year after Pagume 6, e.g. 2028) — done; confirm Derg
    Downfall Day status for 2027; native Amharic review of holiday names, weekday transliterations and the Ge'ez
    numeral routine.
-2. **Bali/Java:** Saka table beyond 2026 (purnama/tilem 2027+) from the printed Kalender Bali; confirm computed 2027
+2. **Bali/Java:** purnama/tilem 2026 and 2027 are in (2027 from Kalender Bali Digital, consistent with Nyepi 8 Mar 2027 in the SKB); add 2028+ when published; confirm computed 2027
    Galungan/Kuningan when the 2027 Kalender Bali is out; native review of Indonesian copy and primbon meanings.
 3. **Moon:** explain the 1–2 h gap against mondkalender-online.de tropical ingress times (check a second source);
    check DPMA/EUIPO for "Maria Thun" / "Aussaattage" (the pages never use those names).
 4. **Name days:** confirm the Wikipedia CC BY-SA attribution wording; review CZ against a current printed calendar
-   (two packages differ on 65 dates); fetch the 2023 MK SR additions; rebuild PL from pl.wikipedia/Wikidata.
+   (two packages differ on 65 dates); fetch the 2023 MK SR additions.
 5. **Infra:** Workers Paid plan before heavy crawling (Free = 100,000 requests/day).
 6. **Measure:** real Google SERPs and keyword volumes per market (could not be measured in research).
 

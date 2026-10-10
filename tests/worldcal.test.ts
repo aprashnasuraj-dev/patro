@@ -93,7 +93,7 @@ describe("Ethiopian calendar", () => {
     expect(pub(2026)).toMatchObject({ genna: "2026-01-07", timkat: "2026-01-19", adwa: "2026-03-02", siklet: "2026-04-10", fasika: "2026-04-12", labour: "2026-05-01", patriots: "2026-05-05", derg: "2026-05-28", enkutatash: "2026-09-11", meskel: "2026-09-27" });
     expect(pub(2027)).toMatchObject({ genna: "2027-01-07", timkat: "2027-01-19", siklet: "2027-04-30", fasika: "2027-05-02", enkutatash: "2027-09-12", meskel: "2027-09-28" });
     const genna2028 = ethiopianHolidays(2028).find((h) => h.key === "genna")!;
-    expect(jdnToIso(genna2028.jdn)).toBe("2028-01-08");
+    expect(jdnToIso(genna2028.jdn)).toBe("2028-01-07");
     expect(genna2028.note).toMatch(/Tahsas 28/);
   });
 
@@ -206,9 +206,14 @@ describe("name days", () => {
     expect(namesOn(countryBySlug("czech-republic")!, "2024-02-29")).toEqual(["Horymír"]);
   });
 
-  it("keeps Poland disabled until its data is rebuilt from a licensed source", () => {
-    expect(countryBySlug("poland")).toBeNull();
-    expect(get("/nameday/poland").status).toBe(404);
+  it("serves Poland with its multi-name days", async () => {
+    const pl = countryBySlug("poland")!;
+    expect(pl).not.toBeNull();
+    expect(namesOn(pl, "2026-07-26")).toContain("Anna");
+    const r = get("/nameday/poland");
+    expect(r.status).toBe(200);
+    expect(await r.text()).toContain("Kto dziś obchodzi imieniny");
+    expect(get("/nameday/poland/name/anna").status).toBe(200);
   });
 });
 

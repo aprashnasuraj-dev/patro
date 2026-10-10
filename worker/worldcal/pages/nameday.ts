@@ -41,7 +41,7 @@ function hub(ctx: Ctx): Rendered {
   return {
     status: 200, maxAge: 3600, indexable: true,
     html: page({
-      site: ctx.site, path: P, lang: "en", title: "Today's name days in Europe — Czech, Slovak and Hungarian name days", description: "Whose name day is it today? Name days for Czechia, Slovakia and Hungary with full calendars, every name's date and reminders.",
+      site: ctx.site, path: P, lang: "en", title: "Today's name days in Europe — Polish, Czech, Slovak and Hungarian name days", description: "Whose name day is it today? Name days for Poland, Czechia, Slovakia and Hungary with full calendars, every name's date and reminders.",
       h1: "Today's name days", sub: "Name days are celebrated like birthdays in much of Central Europe.", crumbs: [{ href: P, label: "Name days" }], indexable: true,
       body: `<section><table><thead><tr><th>Country</th><th>Today</th></tr></thead><tbody>${rows}</tbody></table></section>`,
     }),

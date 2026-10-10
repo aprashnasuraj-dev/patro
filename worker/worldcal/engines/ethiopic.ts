@@ -186,14 +186,17 @@ export function ethiopianHolidays(gy: number): EthHoliday[] {
   const start = gregorianToJdn(gy, 1, 1), end = gregorianToJdn(gy, 12, 31);
   for (const ey of [gy - 8, gy - 7]) {
     for (const h of FIXED_ETH_HOLIDAYS) {
-      const jdn = ethToJdn(ey, h.month, h.day);
+      let jdn = ethToJdn(ey, h.month, h.day);
+      let note: string | undefined;
+      // Genna is kept on 7 January: in the year after Pagume 6, Tahsas 29 falls on 8 January, so it is observed on Tahsas 28.
+      if (h.key === "genna") {
+        const g0 = jdnToGregorian(jdn);
+        if (g0.m === 1 && g0.d === 8) { jdn -= 1; note = "Observed on Tahsas 28 this year, so that Genna stays on 7 January."; }
+      }
       if (jdn < start || jdn > end) continue;
-      const g = jdnToGregorian(jdn);
-      const note = h.key === "genna" && g.m === 1 && g.d === 8
-        ? "Tahsas 29 falls on 8 January this year. Many sources say Genna is then kept on Tahsas 28 (7 January); confirm with the Ethiopian Orthodox Tewahedo Church."
-        : h.key === "derg" && gy >= 2027
+      note = note || (h.key === "derg" && gy >= 2027
           ? "Listed in earlier official calendars; confirm this year's status."
-          : undefined;
+          : undefined);
       out.push({ key: h.key, en: h.en, am: h.am, jdn, kind: "public", note });
     }
   }

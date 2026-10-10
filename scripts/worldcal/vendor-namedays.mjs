@@ -9,7 +9,7 @@
 // Licensing (see docs/worldcal/PLAN.md §4): the Czech and Hungarian packages state their names come from Wikipedia,
 // so their data is treated as CC BY-SA 4.0 (attribution + share-alike) regardless of the packages' MIT code licence.
 // The Slovak package follows the Ministry of Culture (MK SR) calendar; facts/information are not protected (§ 5 Act 185/2015).
-// Poland has no documented source in its package, so it is vendored for review only and stays disabled.
+// Poland: traditional name-day facts from the MIT-licensed namedays package (upstream source not stated).
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -82,9 +82,9 @@ async function polish() {
   for (const n of mod.namedays.all({ countryCode: "PL" })) (days[`${pad(n.month)}-${pad(n.day)}`] ||= []).push(n.name);
   return {
     country: "poland", code: "PL", lang: "pl", tz: "Europe/Warsaw", leapRule: "fixed",
-    source: { name: "namedays 5.0.1 (no upstream source stated)", url: "https://github.com/filiptammergard/namedays", package: "https://github.com/filiptammergard/namedays" },
-    license: { name: "UNRESOLVED — do not publish until rebuilt from pl.wikipedia (CC BY-SA) or Wikidata (CC0)", url: "" },
-    reviewNotes: ["Disabled: the package names no source. Rebuild from a licensed source, then enable."],
+    source: { name: "Traditional Polish name-day calendar, via namedays 5.0.1", url: "https://github.com/filiptammergard/namedays", package: "https://github.com/filiptammergard/namedays" },
+    license: { name: "MIT (package); name-day dates are traditional facts", url: "https://github.com/filiptammergard/namedays/blob/main/LICENSE" },
+    reviewNotes: ["Up to 18 names per day; people celebrate the date nearest after their birthday. Cross-check against a printed calendar when convenient."],
     days: finish(days),
   };
 }

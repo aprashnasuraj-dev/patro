@@ -19,6 +19,11 @@ export const PURNAMA_TILEM: Record<number, { purnama: string[]; tilem: string[];
     tilem: ["2026-01-18", "2026-02-16", "2026-03-18", "2026-04-16", "2026-05-16", "2026-06-14", "2026-07-14", "2026-08-12", "2026-09-11", "2026-10-11", "2026-11-09", "2026-12-09"],
     source: "detikBali, Jadwal lengkap hari raya Hindu 2026 menurut Kalender Bali",
   },
+  2027: {
+    purnama: ["2027-01-22", "2027-02-20", "2027-03-22", "2027-04-20", "2027-05-20", "2027-06-19", "2027-07-18", "2027-08-17", "2027-09-15", "2027-10-15", "2027-11-13", "2027-12-13"],
+    tilem: ["2027-01-07", "2027-02-06", "2027-03-07", "2027-04-06", "2027-05-05", "2027-06-04", "2027-07-03", "2027-08-02", "2027-08-31", "2027-09-30", "2027-10-29", "2027-11-28", "2027-12-28"],
+    source: "Kalender Bali Digital (kalenderbali.org), Purnama-Tilem 2027; nampih sasih: Mala Jiyestha (20 May–4 Jun). Tilem Kesanga 7 Mar matches Nyepi 8 Mar in SKB 2027.",
+  },
 };
 
 /** Other published Balinese Hindu days that are not Pawukon-derived. */

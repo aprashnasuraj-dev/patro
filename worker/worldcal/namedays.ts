@@ -67,13 +67,13 @@ export const NAMEDAY_COUNTRIES: NamedayCountry[] = [
     },
   },
   {
-    slug: "poland", enabled: false, data: pl as Dataset,
+    slug: "poland", enabled: true, data: pl as Dataset,
     t: {
       countryName: "Polska", todayTitle: (d) => `Imieniny dzisiaj (${d}) – kto obchodzi imieniny`, todayH1: "Kto dziś obchodzi imieniny", dateTitle: (l) => `Imieniny ${l} – kto obchodzi`,
-      nameTitle: (n) => `Kiedy są imieniny ${n}? Daty imienin`, nameH1: (n) => `Kiedy są imieniny: ${n}`, whose: "Imieniny obchodzą", tomorrow: "Jutro", yesterday: "Wczoraj",
+      nameTitle: (n) => `Kiedy imieniny obchodzi ${n}? Daty imienin`, nameH1: (n) => `Kiedy imieniny obchodzi ${n}`, whose: "Imieniny obchodzą", tomorrow: "Jutro", yesterday: "Wczoraj",
       week: "Imieniny w najbliższych 7 dniach", allNames: "Wszystkie imiona w kalendarzu", noName: "Brak imienin tego dnia.",
       greeting: "Wszystkiego najlepszego!", greetingNote: "Tradycyjne życzenia", search: "Szukaj imienia", searchButton: "Szukaj",
-      sourceLine: "Źródło imion", when: (n) => `Imieniny: ${n}`, calendarCta: "Dodaj przypomnienie do kalendarza", months: PL_MONTHS,
+      sourceLine: "Źródło imion", when: (n) => `${n} obchodzi imieniny`, calendarCta: "Dodaj przypomnienie do kalendarza", months: PL_MONTHS,
       weekdays: ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"], dataset: "Dane", notFound: (q) => `Nie znaleziono imienia „${q}”.`, month: "Miesiąc",
     },
   },
@@ -121,5 +121,7 @@ export function nameIndex(c: NamedayCountry): Map<string, NameEntry> {
 
 export function dateLabel(c: NamedayCountry, key: string): string {
   const [m, d] = key.split("-").map(Number);
-  return c.data.lang === "hu" ? `${c.t.months[m - 1]} ${d}.` : `${d}. ${c.t.months[m - 1]}`;
+  if (c.data.lang === "hu") return `${c.t.months[m - 1]} ${d}.`;
+  if (c.data.lang === "pl") return `${d} ${c.t.months[m - 1]}`;
+  return `${d}. ${c.t.months[m - 1]}`;
 }

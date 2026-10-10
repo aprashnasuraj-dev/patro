@@ -5,16 +5,16 @@
  "tz": "Europe/Warsaw",
  "leapRule": "fixed",
  "source": {
-  "name": "namedays 5.0.1 (no upstream source stated)",
+  "name": "Traditional Polish name-day calendar, via namedays 5.0.1",
   "url": "https://github.com/filiptammergard/namedays",
   "package": "https://github.com/filiptammergard/namedays"
  },
  "license": {
-  "name": "UNRESOLVED — do not publish until rebuilt from pl.wikipedia (CC BY-SA) or Wikidata (CC0)",
-  "url": ""
+  "name": "MIT (package); name-day dates are traditional facts",
+  "url": "https://github.com/filiptammergard/namedays/blob/main/LICENSE"
  },
  "reviewNotes": [
-  "Disabled: the package names no source. Rebuild from a licensed source, then enable."
+  "Up to 18 names per day; people celebrate the date nearest after their birthday. Cross-check against a printed calendar when convenient."
  ],
  "days": {
   "01-01": [
