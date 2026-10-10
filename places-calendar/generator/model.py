@@ -45,11 +45,15 @@ DATA = ROOT / "data"
 # --------------------------------------------------------------------------
 @dataclass
 class Config:
-    base_url: str = "https://www.aafnaipatro.com"
+    base_url: str = "https://aafnaipatro.com"
     first_year: int = 2083          # build.py sets this to the current BS year unless --years says otherwise
     last_year: int = 2100
     today: date = field(default_factory=lambda: datetime.now(astro.NPT).date())
     asset_prefix: str = "/static/places"
+    # Sections being built; nav and cross-links only point at these. build.py sets it from --only.
+    sections: tuple = ("places", "festivals", "mountains", "treks", "kati", "janma", "shraddha")
+    # Where a place links when the places section is not built (aafnaipatro.com's own Nepal map search).
+    map_url: str = "/nepalmap?q="
     path_root: str = ""              # e.g. "/explore" to mount every section under one prefix
     index_osm: bool = False          # OSM-imported places noindex until proven
     image_years: tuple = ()          # BS years that get per-page OG images ((): current-1..current+2)
@@ -210,7 +214,7 @@ def num(x, lang: str) -> str:
 def url(lang: str, *parts: str) -> str:
     """Site URL. With no parts it is the aafnaipatro.com home page itself."""
     if not parts:
-        return "/ne/" if lang == "ne" else "/"
+        return "/"  # the aafnaipatro.com home page is the same for both languages
     path = CFG.path_root.rstrip("/") + "/" + "/".join(p.strip("/") for p in parts if p) + "/"
     path = path.replace("//", "/")
     return ("/ne" + path) if lang == "ne" else path
@@ -427,7 +431,15 @@ NAV = [("places", ("places",)), ("festivals", ("festivals",)), ("mountains", ("m
 
 
 def nav(lang: str) -> list[tuple[str, str]]:
-    return [(T[lang].get(key, key), url(lang, *parts)) for key, parts in NAV if key in T[lang]]
+    return [(T[lang].get(key, key), url(lang, *parts)) for key, parts in NAV if key in T[lang] and key in CFG.sections]
+
+
+def place_url(lang: str, p: dict) -> str:
+    """A place's own page when the places section is built, else the site's Nepal map searched for it."""
+    if "places" in CFG.sections:
+        return url(lang, "places", p["id"])
+    from urllib.parse import quote
+    return CFG.map_url + quote(p.get("name_en") or p.get("name") or "")
 
 
 def page_shell(lang: str, path_parts: tuple, title: str, description: str, crumbs: list, og: str | None,
@@ -1089,7 +1101,7 @@ def trek_stop_ctx(tid: str, sid: str, lang: str) -> dict:
     pk = [{"name": nm(x, lang), "h": hm(int(x["height_m"]), lang), "dist": km(dk, lang), "dir": compass_l(c, lang),
            "url": url(lang, "mountains", x["id"])}
           for dk, c, x in nearby(s["lat"], s["lon"], [p for p in peaks().values() if p.get("kind") != "viewpoint"], limit=8, max_km=35)]
-    sacred = [{"name": nm(p, lang), "dist": km(dk, lang), "dir": compass_l(c, lang), "url": url(lang, "places", p["id"])}
+    sacred = [{"name": nm(p, lang), "dist": km(dk, lang), "dir": compass_l(c, lang), "url": place_url(lang, p)}
               for dk, c, p in nearby(s["lat"], s["lon"], list(places().values()), limit=4, max_km=25)]
     svg = images.altitude_svg([{"id": x["id"], "name": x["name"], "alt_m": x["alt_m"]} for x in stops], highlight=sid,
                               unit=unit, label=tname)
