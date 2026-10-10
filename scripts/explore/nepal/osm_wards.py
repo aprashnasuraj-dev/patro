@@ -52,6 +52,29 @@ def notice(kind: str, title: str, text: str) -> None:
 # ----------------------------------------------------------------------------------------------------------
 # Landmark categories (named features only)
 # ----------------------------------------------------------------------------------------------------------
+RELIGION = {"hindu": "hindu", "buddhist": "buddhist", "muslim": "muslim", "christian": "christian", "sikh": "sikh", "jain": "jain",
+            "kirant": "kirat", "kirati": "kirat", "kirat": "kirat", "bon": "bon", "animist": "other"}
+
+
+def poi_sub(cat: str, t) -> str:
+    """Finer kind used by the map filters: religion for places of worship, amenity/healthcare/tourism value otherwise."""
+    if cat == "worship":
+        if t.get("historic") == "monastery" and not t.get("religion"):
+            return "buddhist"
+        return RELIGION.get(str(t.get("religion") or "").lower(), "other" if t.get("religion") else "")
+    if cat == "school":
+        return t.get("amenity") or ""
+    if cat == "health":
+        return t.get("amenity") if t.get("amenity") in ("hospital", "clinic", "doctors") else (t.get("healthcare") or t.get("amenity") or "")
+    if cat == "sight":
+        return t.get("tourism") or t.get("historic") or t.get("natural") or ""
+    if cat == "stay":
+        return t.get("tourism") or ""
+    if cat == "park":
+        return t.get("boundary") or t.get("leisure") or ""
+    return ""
+
+
 def poi_category(t) -> str | None:
     a, h, tour, hist, nat = t.get("amenity"), t.get("healthcare"), t.get("tourism"), t.get("historic"), t.get("natural")
     if a in ("school", "college", "university", "kindergarten"):
@@ -80,7 +103,8 @@ def poi_category(t) -> str | None:
         return "lake"
     if t.get("waterway") == "waterfall" or nat == "waterfall":
         return "waterfall"
-    if tour in ("attraction", "viewpoint", "museum", "zoo") or hist in ("fort", "palace", "archaeological_site", "ruins", "castle", "monument"):
+    if tour in ("attraction", "viewpoint", "museum", "zoo") or hist in ("fort", "palace", "archaeological_site", "ruins", "castle", "monument") \
+            or nat in ("cave_entrance", "hot_spring"):
         return "sight"
     if tour in ("hotel", "guest_house", "hostel", "motel"):
         return "stay"
@@ -244,7 +268,11 @@ def read_pbf(path: Path):
         return {k: tags.get(k) for k in TAG_KEEP if tags.get(k) is not None}
 
     def add_point(kind, tags, lon, lat, osm_id):
+        wiki = tags.get("wikipedia") or ""
+        if wiki and not re.match(r"^(en|ne):", wiki):
+            wiki = ""
         points.append({"kind": kind, "id": osm_id, "lon": round(lon, 6), "lat": round(lat, 6),
+                       "sub": poi_sub(kind, tags) if kind != "settlement" else "", "wiki": wiki[:120],
                        "name": tags.get("name:en") or tags.get("name"), "name_ne": tags.get("name:ne") or "",
                        "raw_name": tags.get("name"), "place": tags.get("place"), "ele": tags.get("ele"), "population": tags.get("population")})
 
@@ -512,9 +540,9 @@ def main() -> None:
         if pt["kind"] == "settlement":
             place_counts[pt["place"]] += 1
             assigned["ward" if n else "palika" if pid else "district"] += 1
-            settlements.append([pt["place"], *row, pop])
+            settlements.append([pt["place"], *row, pop, pt["id"]])
         else:
-            pois.append([pt["kind"], *row])
+            pois.append([pt["kind"], *row, pt["sub"], pt["id"], pt["wiki"]])
 
     # District headquarters point: the settlement in the district whose name matches the source headquarters.
     hq = {}
@@ -563,8 +591,8 @@ def main() -> None:
         (args.out / name).write_text(text + "\n", "utf8")
 
     dump("osm-admin.json", {**meta, "palikas": palika_out, "wards": wards, "district_hq": hq})
-    dump("osm-settlements.json", {**meta, "fields": ["place", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "population"], "rows": settlements})
-    dump("osm-pois.json", {**meta, "fields": ["category", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id"], "rows": pois})
+    dump("osm-settlements.json", {**meta, "fields": ["place", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "population", "osm_id"], "rows": settlements})
+    dump("osm-pois.json", {**meta, "fields": ["category", "name", "name_ne", "lat", "lng", "ele", "palika_id", "ward", "district_id", "sub", "osm_id", "wikipedia"], "rows": pois})
     (args.out / "osm-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", "utf8")
     print("wrote", ", ".join(f"{f.name} {f.stat().st_size // 1024} KB" for f in sorted(args.out.glob("osm-*.json"))))
 
