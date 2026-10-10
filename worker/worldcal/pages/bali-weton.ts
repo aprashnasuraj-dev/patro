@@ -5,6 +5,8 @@ import {
   HARI_JAWA, JODOH, NEPTU_HARI, NEPTU_PASARAN, otonanDates, PASARAN, pawukon, pawukonDay, pawukonEvents, pawukonHolidaysInYear, WUKU, weton, wetonJodoh,
 } from "../engines/pawukon";
 import { INDEX_WINDOW } from "../config";
+import { pawukonRing, wetonGrid } from "../visuals";
+import { PAWUKON_HOLIDAYS, TUMPEK } from "../engines/pawukon";
 import type { Ctx, Rendered } from "../types";
 
 const BP = "/bali-calendar";
@@ -72,12 +74,27 @@ function otonanForm(): string {
   return `<form class="inline" method="get" action="${BP}/otonan"><label>Tanggal lahir<input type="date" name="lahir" required></label><label><span><input type="checkbox" name="sebelum_subuh" value="1" style="width:auto"> lahir antara tengah malam dan matahari terbit</span></label><button>Hitung otonan</button></form>`;
 }
 
+const RING_HOLIDAYS = [...PAWUKON_HOLIDAYS.filter((h) => ["banyu-pinaruh", "pagerwesi", "galungan", "kuningan", "saraswati"].includes(h.key)).map((h) => ({ day: h.day, name: h.id })), ...TUMPEK.filter((t) => t.day !== 83).map((t) => ({ day: t.day, name: t.id }))];
+function baliHero(iso: string) {
+  const j = isoToJdn(iso), p = pawukon(j);
+  const events = [...pawukonEvents(j), ...sakaFacts(iso)];
+  return {
+    art: pawukonRing(p.day, WUKU, RING_HOLIDAYS, { big: p.wuku.name, small: `${p.saptawara} ${p.pancawara}` }),
+    lede: `${esc(p.saptawara)} ${esc(p.pancawara)}, wuku ${esc(p.wuku.name)}${events.length ? `<br>${events.map((e) => `<span class="chip">${esc(e)}</span>`).join(" ")}` : ""}<br><span class="note">Lingkaran Pawukon: 30 wuku × 7 hari = 210 hari. Titik merah adalah hari raya, titik hitam adalah hari ini.</span>`,
+  };
+}
+function wetonHero(iso: string, label?: string) {
+  const w = weton(isoToJdn(iso));
+  const hi = HARI_JAWA.indexOf(w.hari), pi = PASARAN.indexOf(w.pasaran);
+  return { art: wetonGrid(HARI_JAWA, PASARAN, NEPTU_HARI, NEPTU_PASARAN, hi, pi), lede: `<span class="neptu">${w.neptu}</span><br>neptu ${esc(label || `${w.hari} ${w.pasaran}`)}` };
+}
+
 function baliDayBody(iso: string, today: string): string {
   const j = isoToJdn(iso);
   const events = [...pawukonEvents(j), ...sakaFacts(iso)];
   const p = pawukon(j);
-  return `<section><p class="big">${esc(p.saptawara)} ${esc(p.pancawara)} ${esc(p.wuku.name)}</p>${events.length ? `<p>${events.map((e) => `<span class="chip">${esc(e)}</span>`).join(" ")}</p>` : ""}
-<p class="muted">Weton Jawa: <a href="${WP}/${iso}">${esc(weton(j).hari)} ${esc(weton(j).pasaran)}</a> (neptu ${weton(j).neptu})</p></section>
+  void events;
+  return `<section><p class="muted">Weton Jawa: <a href="${WP}/${iso}">${esc(weton(j).hari)} ${esc(weton(j).pasaran)}</a> (neptu ${weton(j).neptu})</p></section>
 <section><h2>Wewaran lengkap</h2>${pawukonTable(iso)}</section>
 <section><h2>Hari raya berikutnya</h2>${upcomingBali(iso)}<p><a href="${BP}/hari-raya/${iso.slice(0, 4)}">Semua hari raya ${iso.slice(0, 4)}</a></p></section>
 <section><p><a href="${BP}/${addDaysIso(iso, -1)}">← ${esc(idDate(addDaysIso(iso, -1)))}</a> · <a href="${BP}/${addDaysIso(iso, 1)}">${esc(idDate(addDaysIso(iso, 1)))} →</a>${iso !== today ? ` · <a href="${BP}">Hari ini</a>` : ""}</p></section>
@@ -92,7 +109,7 @@ function baliToday(ctx: Ctx): Rendered {
     html: page({
       site: ctx.site, path: BP, lang: "id", title: `Kalender Bali hari ini: ${p.saptawara} ${p.pancawara} ${p.wuku.name} — wuku, wewaran dan hari raya`,
       description: `Hari ini menurut Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}. Wewaran lengkap, hari raya Galungan, Kuningan, Saraswati dan kalkulator otonan.`,
-      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliDayBody(today, today), footer: BALI_NOTE,
+      h1: "Kalender Bali hari ini", sub: esc(idDate(today)), hero: baliHero(today).art, lede: baliHero(today).lede, crumbs: [{ href: BP, label: "Kalender Bali" }], indexable: true, body: baliDayBody(today, today), footer: BALI_NOTE,
     }),
   };
 }
@@ -107,7 +124,7 @@ function baliDate(ctx: Ctx, iso: string): Rendered | null {
     html: page({
       site: ctx.site, path: `${BP}/${iso}`, lang: "id", title: `Kalender Bali ${idDate(iso)}: ${p.saptawara} ${p.pancawara} ${p.wuku.name}`,
       description: `${idDate(iso)} dalam Kalender Bali: ${p.saptawara} ${p.pancawara}, wuku ${p.wuku.name}${pawukonEvents(isoToJdn(iso)).length ? ", " + pawukonEvents(isoToJdn(iso)).join(", ") : ""}.`,
-      h1: esc(`Kalender Bali ${idDate(iso)}`), crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }], indexable: ix, body: baliDayBody(iso, today), footer: BALI_NOTE,
+      h1: esc(`Kalender Bali ${idDate(iso)}`), hero: baliHero(iso).art, lede: baliHero(iso).lede, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/${iso}`, label: iso }], indexable: ix, body: baliDayBody(iso, today), footer: BALI_NOTE,
     }),
   };
 }
@@ -175,7 +192,7 @@ function wukuPage(ctx: Ctx, wslug: string): Rendered | null {
     html: page({
       site: ctx.site, path: `${BP}/wuku/${wslug}`, lang: "id", title: `Wuku ${w}: kapan berikutnya, hari dan hari raya dalam wuku ${w}`,
       description: `Wuku ${w} adalah wuku ke-${wi + 1} dari 30 dalam Pawukon Bali. Wuku ${w} berikutnya mulai ${idDate(jdnToIso(starts[0]))}.`,
-      h1: `Wuku ${esc(w)}`, sub: `Wuku ke-${wi + 1} dari 30`, crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/wuku/${wslug}`, label: `Wuku ${w}` }], indexable: true,
+      h1: `Wuku ${esc(w)}`, sub: `Wuku ke-${wi + 1} dari 30`, hero: pawukonRing(wi * 7, WUKU, RING_HOLIDAYS, { big: w, small: `wuku ke-${wi + 1}` }), crumbs: [{ href: BP, label: "Kalender Bali" }, { href: `${BP}/wuku/${wslug}`, label: `Wuku ${w}` }], indexable: true,
       body: `<section><h2>Wuku ${esc(w)} berikutnya</h2><table><tbody>${days}</tbody></table><p>Berikutnya lagi: ${starts.slice(1).map((j) => esc(idDate(jdnToIso(j)))).join(" · ")}</p></section>
 <section><h2>Semua wuku</h2><p>${WUKU.map((x, i) => `<a class="chip" href="${BP}/wuku/${slug(x)}">${i + 1}. ${esc(x)}</a>`).join(" ")}</p></section>`, footer: BALI_NOTE,
     }),
@@ -205,7 +222,7 @@ function wetonDayBody(iso: string, today: string): string {
   const j = isoToJdn(iso);
   const w = weton(j), after = weton(j, true);
   const hi = HARI_JAWA.indexOf(w.hari), pi = PASARAN.indexOf(w.pasaran);
-  return `<section><p class="big"><a href="${WP}/${wetonSlug(w.hari, w.pasaran)}">${esc(w.hari)} ${esc(w.pasaran)}</a></p>
+  return `<section><h2><a href="${WP}/${wetonSlug(w.hari, w.pasaran)}">${esc(w.hari)} ${esc(w.pasaran)}</a></h2>
 <table><tbody><tr><th>Neptu hari</th><td>${esc(w.hari)} = ${NEPTU_HARI[hi]}</td></tr><tr><th>Neptu pasaran</th><td>${esc(w.pasaran)} = ${NEPTU_PASARAN[pi]}</td></tr><tr><th>Jumlah neptu</th><td><b>${w.neptu}</b></td></tr>
 <tr><th>Wuku</th><td><a href="${BP}/wuku/${slug(w.wuku)}">${esc(w.wuku)}</a></td></tr><tr><th>Lahir setelah maghrib</th><td><a href="${WP}/${wetonSlug(after.hari, after.pasaran)}">${esc(after.hari)} ${esc(after.pasaran)}</a> (neptu ${after.neptu})</td></tr></tbody></table>
 <p class="muted">Kalender Bali: <a href="${BP}/${iso}">${esc(pawukon(j).saptawara)} ${esc(pawukon(j).pancawara)} ${esc(pawukon(j).wuku.name)}</a></p></section>
@@ -221,7 +238,7 @@ function wetonToday(ctx: Ctx): Rendered {
     html: page({
       site: ctx.site, path: WP, lang: "id", title: `Weton hari ini: ${w.hari} ${w.pasaran} (neptu ${w.neptu}) — cek weton dan weton jodoh`,
       description: `Weton hari ini ${idDate(today)} adalah ${w.hari} ${w.pasaran} dengan neptu ${w.neptu}, wuku ${w.wuku}. Cek weton dari tanggal lahir dan hitung weton jodoh.`,
-      h1: "Weton hari ini", sub: esc(idDate(today)), crumbs: [{ href: WP, label: "Weton" }], indexable: true, body: wetonDayBody(today, today), footer: WETON_NOTE,
+      h1: "Weton hari ini", sub: esc(idDate(today)), hero: wetonHero(today).art, lede: wetonHero(today).lede, crumbs: [{ href: WP, label: "Weton" }], indexable: true, body: wetonDayBody(today, today), footer: WETON_NOTE,
     }),
   };
 }
@@ -237,7 +254,7 @@ function wetonDate(ctx: Ctx, iso: string): Rendered | null {
     html: page({
       site: ctx.site, path: `${WP}/${iso}`, lang: "id", title: `Weton ${idDate(iso)}: ${w.hari} ${w.pasaran}, neptu ${w.neptu}`,
       description: `Orang yang lahir ${idDate(iso)} memiliki weton ${w.hari} ${w.pasaran} dengan neptu ${w.neptu} (wuku ${w.wuku}).`,
-      h1: esc(`Weton ${idDate(iso)}`), crumbs: [{ href: WP, label: "Weton" }, { href: `${WP}/${iso}`, label: iso }], indexable: ix, body: wetonDayBody(iso, today), footer: WETON_NOTE,
+      h1: esc(`Weton ${idDate(iso)}`), hero: wetonHero(iso).art, lede: wetonHero(iso).lede, crumbs: [{ href: WP, label: "Weton" }, { href: `${WP}/${iso}`, label: iso }], indexable: ix, body: wetonDayBody(iso, today), footer: WETON_NOTE,
     }),
   };
 }
@@ -256,7 +273,7 @@ function wetonType(ctx: Ctx, ws: string): Rendered | null {
     html: page({
       site: ctx.site, path: `${WP}/${ws}`, lang: "id", title: `Weton ${name}: neptu ${neptu} dan tanggal ${name} berikutnya`,
       description: `${name} memiliki neptu ${neptu} (${HARI_JAWA[hi]} ${NEPTU_HARI[hi]} + ${PASARAN[pi]} ${NEPTU_PASARAN[pi]}). ${name} berikutnya: ${idDate(jdnToIso(next[0]))}. Weton berulang setiap 35 hari.`,
-      h1: `Weton ${esc(name)}`, sub: `Neptu ${neptu}`, crumbs: [{ href: WP, label: "Weton" }, { href: `${WP}/${ws}`, label: name }], indexable: true,
+      h1: `Weton ${esc(name)}`, hero: wetonGrid(HARI_JAWA, PASARAN, NEPTU_HARI, NEPTU_PASARAN, hi, pi), lede: `<span class="neptu">${neptu}</span><br>neptu ${esc(name)}`, crumbs: [{ href: WP, label: "Weton" }, { href: `${WP}/${ws}`, label: name }], indexable: true,
       body: `<section><p>Neptu ${esc(HARI_JAWA[hi])} = ${NEPTU_HARI[hi]}, neptu ${esc(PASARAN[pi])} = ${NEPTU_PASARAN[pi]}, jumlah <b>${neptu}</b>. Weton yang sama berulang setiap 35 hari (selapan).</p></section>
 <section><h2>${esc(name)} berikutnya</h2><table><tbody>${next.map((j) => `<tr><td><a href="${WP}/${jdnToIso(j)}">${esc(idDate(jdnToIso(j)))}</a></td><td>wuku ${esc(weton(j).wuku)}</td></tr>`).join("")}</tbody></table></section>
 <section><h2>Semua weton</h2><p>${HARI_JAWA.flatMap((hh) => PASARAN.map((pp) => `<a class="chip" href="${WP}/${wetonSlug(hh, pp)}">${hh} ${pp}</a>`)).join(" ")}</p></section>`, footer: WETON_NOTE,

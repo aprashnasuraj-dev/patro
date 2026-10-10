@@ -1,5 +1,6 @@
 import { addDaysIso, daysInGregorianMonth, isoToJdn, localHm, pad2, parseIso, todayIn } from "../dates";
 import { esc, page } from "../html";
+import { moonDisc } from "../visuals";
 import { haircutRating, moonDay, type DayType, type MoonDay, type MoonEvent, type Sign } from "../engines/moon";
 import { FAMILIES, INDEX_WINDOW, type FamilyId } from "../config";
 import type { Ctx, Rendered } from "../types";
@@ -100,12 +101,21 @@ function dayBody(lang: MoonLang, md: MoonDay, isToday: boolean): string {
   }).join("");
   const hair = lang === "de" ? `<p><a href="${P}/haare-schneiden">✂ ${esc(s.hair!)}: ${esc({ best: "sehr günstig (Löwe)", good: "günstig (Jungfrau)", neutral: "neutral", avoid: "ungünstig (Fische/Krebs)" }[haircutRating(md)])}</a></p>` : "";
   const [y, m] = md.date.split("-");
-  return `<section><p class="big">${PHASE_ICON(md.phaseAngle)} ${esc(md.waxing ? s.waxing : s.waning)} · ${Math.round(md.illumination * 100)} % ${esc(s.illum)}</p>
-<table><tbody><tr><th>${esc(s.dayType)}</th><td>${typeLine(s, md)}</td></tr><tr><th>${esc(s.signTropical)}</th><td>${signLine(s, md)}</td></tr>
+  return `<section><table><tbody><tr><th>${esc(s.dayType)}</th><td>${typeLine(s, md)}</td></tr><tr><th>${esc(s.signTropical)}</th><td>${signLine(s, md)}</td></tr>
 <tr><th>${esc(md.ascending ? s.asc : s.desc)}</th><td>${esc(md.ascending ? s.ascAdvice : s.descAdvice)}</td></tr></tbody></table>${md.unfavourable ? `<p class="warn">⚠ ${esc(s.unfavourable)}</p>` : ""}${hair}</section>
 ${ev ? `<section><h2>${esc(s.phase)}</h2><ul>${ev}</ul></section>` : ""}
 <section><h2>${esc(s.garden)}</h2><p>${esc(s.advice[md.mainDayType])}</p><p>${esc(md.waxing ? s.waxAdvice : s.wanAdvice)}</p>${md.unfavourable ? `<p class="warn">${esc(s.restAdvice)}</p>` : ""}${s.phaseOnly ? `<p class="note">${esc(s.phaseOnly)}</p>` : ""}</section>
 <section><h2>${esc(s.next7)}</h2><table><tbody>${week}</tbody></table><p><a href="${P}/${addDaysIso(md.date, -1)}">← ${esc(s.prev)}</a> · <a href="${P}/${addDaysIso(md.date, 1)}">${esc(s.next)} →</a> · <a href="${P}/${y}/${m}">${esc(s.month)}</a>${isToday ? "" : ` · <a href="${P}">${esc(s.today)}</a>`}</p></section>`;
+}
+
+/** Hero: today's real moon disc and the day type as a coloured pill. */
+function moonHero(lang: MoonLang, md: MoonDay) {
+  const s = STR[lang];
+  const label = `${md.waxing ? s.waxing : s.waning}, ${Math.round(md.illumination * 100)} %`;
+  return {
+    art: moonDisc(md.phaseAngle, label),
+    lede: `<span class="daytype dt-${md.mainDayType}">${esc(s.types[md.mainDayType])}</span><br>${esc(label)} ${esc(s.illum)}<br><span class="muted">${esc(s.signs[md.mainSign])}, ${esc(md.ascending ? s.asc : s.desc)}</span>`,
+  };
 }
 
 function todayPage(ctx: Ctx, lang: MoonLang): Rendered {
@@ -116,7 +126,7 @@ function todayPage(ctx: Ctx, lang: MoonLang): Rendered {
     status: 200, maxAge: "midnight", tz: tz(lang), indexable: true,
     html: page({
       site: ctx.site, path: P, lang, title: s.todayTitle(dLabel(s, iso), s.types[md.mainDayType]), description: `${dLabel(s, iso)}: ${md.waxing ? s.waxing : s.waning}, ${s.types[md.mainDayType]}, ${s.signs[md.mainSign]}, ${md.ascending ? s.asc : s.desc}.`,
-      h1: esc(s.todayH1), sub: esc(dLabel(s, iso)), crumbs: [{ href: P, label: s.brand }], indexable: true, alternates: alternates((l) => prefix(l)),
+      h1: esc(s.todayH1), sub: esc(dLabel(s, iso)), hero: moonHero(lang, md).art, lede: moonHero(lang, md).lede, crumbs: [{ href: P, label: s.brand }], indexable: true, alternates: alternates((l) => prefix(l)),
       body: dayBody(lang, md, true), footer: `<p class="note">${esc(s.disclaimer)}</p>`,
     }),
   };
@@ -134,7 +144,7 @@ function datePage(ctx: Ctx, lang: MoonLang, iso: string): Rendered | null {
     status: 200, maxAge: 86400 * 7, indexable: ix,
     html: page({
       site: ctx.site, path: `${P}/${iso}`, lang, title: s.dateTitle(dLabel(s, iso), s.types[md.mainDayType]), description: `${dLabel(s, iso)}: ${md.waxing ? s.waxing : s.waning}, ${s.types[md.mainDayType]}, ${s.signs[md.mainSign]}, ${md.ascending ? s.asc : s.desc}.`,
-      h1: esc(`${s.brand} ${dLabel(s, iso)}`), crumbs: [{ href: P, label: s.brand }, { href: `${P}/${iso.slice(0, 4)}/${iso.slice(5, 7)}`, label: `${s.months[p.m - 1]} ${p.y}` }, { href: `${P}/${iso}`, label: dLabel(s, iso) }],
+      h1: esc(`${s.brand} ${dLabel(s, iso)}`), hero: moonHero(lang, md).art, lede: moonHero(lang, md).lede, crumbs: [{ href: P, label: s.brand }, { href: `${P}/${iso.slice(0, 4)}/${iso.slice(5, 7)}`, label: `${s.months[p.m - 1]} ${p.y}` }, { href: `${P}/${iso}`, label: dLabel(s, iso) }],
       indexable: ix, alternates: alternates((l) => `${prefix(l)}/${iso}`), body: dayBody(lang, md, iso === today), footer: `<p class="note">${esc(s.disclaimer)}</p>`,
     }),
   };
@@ -173,7 +183,7 @@ function haircutPage(ctx: Ctx): Rendered {
   const rows = days.map(({ iso, d }) => {
     const r = haircutRating(d);
     const purpose = r === "best" || r === "good" ? (d.waxing ? "für Wachstum und Volumen (zunehmender Mond)" : "für haltbare Kurzhaarschnitte (abnehmender Mond)") : "";
-    return `<tr><td><a href="${P}/${iso}">${esc(s.weekdays[new Date(iso + "T12:00:00Z").getUTCDay()])} ${esc(dLabel(s, iso))}</a></td><td>${esc(s.signs[d.mainSign])}</td><td><b>${esc(label[r])}</b>${purpose ? `<br><span class="note">${esc(purpose)}</span>` : ""}</td></tr>`;
+    return `<tr><td><a href="${P}/${iso}">${esc(shortLabel(s, iso))}</a></td><td>${PHASE_ICON(d.phaseAngle)} ${esc(s.signs[d.mainSign])}</td><td><span class="hc hc-${r}">${esc(label[r])}</span>${purpose ? `<br><span class="note">${esc(purpose)}</span>` : ""}</td></tr>`;
   }).join("");
   const r0 = haircutRating(days[0].d);
   return {
@@ -181,7 +191,8 @@ function haircutPage(ctx: Ctx): Rendered {
     html: page({
       site: ctx.site, path: `${P}/haare-schneiden`, lang: "de", title: `Haare schneiden nach dem Mondkalender: heute ${label[r0]} – die besten Tage der nächsten 30 Tage`,
       description: `Wann Haare schneiden nach dem Mond? Heute steht der Mond im Zeichen ${s.signs[days[0].d.mainSign]} (${label[r0]}). Die günstigsten Tage der nächsten 30 Tage nach der Tradition.`,
-      h1: "Haare schneiden nach dem Mondkalender", sub: esc(`Heute: ${s.signs[days[0].d.mainSign]} · ${label[r0]}`), crumbs: [{ href: P, label: s.brand }, { href: `${P}/haare-schneiden`, label: "Haare schneiden" }], indexable: true,
+      h1: "Haare schneiden nach dem Mondkalender", sub: esc(`Heute steht der Mond in ${s.signs[days[0].d.mainSign]}.`), hero: moonDisc(days[0].d.phaseAngle, label[r0]),
+      lede: `<span class="hc hc-${r0}">${esc(label[r0])}</span><br><span class="muted">Nächster sehr günstiger Tag: ${esc((days.find((x) => haircutRating(x.d) === "best") ? shortLabel(s, days.find((x) => haircutRating(x.d) === "best")!.iso) : "—"))}</span>`, crumbs: [{ href: P, label: s.brand }, { href: `${P}/haare-schneiden`, label: "Haare schneiden" }], indexable: true,
       body: `<section><p>Nach der verbreiteten Tradition gilt: Löwe ist das beste Zeichen, Jungfrau das zweitbeste; in Fische und Krebs lieber nicht schneiden. Bei zunehmendem Mond schneiden, wenn die Haare kräftig nachwachsen sollen; bei abnehmendem Mond, wenn ein kurzer Schnitt lange halten soll. Grundlage ist der tropische Tierkreis.</p></section>
 <section><table><thead><tr><th>Tag</th><th>Mondzeichen</th><th>Bewertung</th></tr></thead><tbody>${rows}</tbody></table></section>`,
       footer: `<p class="note">${esc(s.disclaimer)}</p>`,

@@ -1,5 +1,6 @@
 import { addDaysIso, daysInGregorianMonth, isGregorianLeap, isoToJdn, pad2, parseIso, todayIn, weekdaySun0 } from "../dates";
 import { esc, icsYearly, page } from "../html";
+import { tearSheet } from "../visuals";
 import { countryBySlug, dateLabel, NAMEDAY_COUNTRIES, nameIndex, namesOn, namesOnKey, slugifyName, type NamedayCountry } from "../namedays";
 import type { Ctx, Rendered } from "../types";
 
@@ -69,7 +70,8 @@ ${t.leapNote ? `<section><p class="note">${esc(t.leapNote)}</p></section>` : ""}
     status: 200, maxAge: "midnight", tz: c.data.tz, indexable: true,
     html: page({
       site: ctx.site, path: `${P}/${c.slug}`, lang: c.data.lang, title: t.todayTitle(label), description: `${t.whose}: ${names.join(", ") || "—"}. ${t.week}.`,
-      h1: esc(t.todayH1), sub: esc(`${t.weekdays[weekdaySun0(isoToJdn(todayIso))]} ${label} ${p.y}`), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }],
+      h1: esc(t.todayH1), sub: esc(`${t.weekdays[weekdaySun0(isoToJdn(todayIso))]}, ${label} ${p.y}`),
+      hero: tearSheet(p.d, t.months[p.m - 1], t.weekdays[weekdaySun0(isoToJdn(todayIso))], names.join(", ") || "—"), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }],
       indexable: true, body, footer: sourceFooter(c),
     }),
   };
@@ -89,7 +91,7 @@ function datePage(ctx: Ctx, c: NamedayCountry, key: string): Rendered | null {
     status: 200, maxAge: 86400 * 7, indexable: true,
     html: page({
       site: ctx.site, path: `${P}/${c.slug}/${key}`, lang: c.data.lang, title: t.dateTitle(label), description: `${label}: ${names.join(", ") || t.noName}`,
-      h1: esc(`${t.whose} ${label}`), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }, { href: `${P}/${c.slug}/${key}`, label }],
+      h1: esc(`${t.whose} ${label}`), hero: tearSheet(d, t.months[m - 1], "", names.join(", ") || "—"), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }, { href: `${P}/${c.slug}/${key}`, label }],
       indexable: true, body, footer: sourceFooter(c),
     }),
   };
@@ -150,7 +152,7 @@ function namePage(ctx: Ctx, c: NamedayCountry, slug: string): Rendered | null {
     status: 200, maxAge: "midnight", tz: c.data.tz, indexable: true,
     html: page({
       site: ctx.site, path: `${P}/${c.slug}/name/${slug}`, lang: c.data.lang, title: t.nameTitle(display), description: `${t.when(display)}: ${occurrences.map((o) => dateLabel(c, o.key)).join(", ")}.`,
-      h1: esc(t.nameH1(display)), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }, { href: `${P}/${c.slug}/name/${slug}`, label: display }],
+      h1: esc(t.nameH1(display)), hero: (() => { const q = parseIso(soonest.next)!; return tearSheet(q.d, t.months[q.m - 1], t.weekdays[weekdaySun0(isoToJdn(soonest.next))], display); })(), crumbs: [{ href: P, label: "Name days" }, { href: `${P}/${c.slug}`, label: t.countryName }, { href: `${P}/${c.slug}/name/${slug}`, label: display }],
       indexable: true, body, footer: sourceFooter(c),
     }),
   };
