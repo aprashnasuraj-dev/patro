@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ html_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+<link rel="alternate" hreflang="en" href="{{ alt_en }}">
+<link rel="alternate" hreflang="ne" href="{{ alt_ne }}">
+<link rel="alternate" hreflang="x-default" href="{{ alt_en }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.site }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ 'ne_NP' if lang == 'ne' else 'en_US' }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F2A5A">
+<link rel="preload" href="{{ asset }}/fonts/mukta-devanagari-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ asset }}/fonts/mukta-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset }}/places.css">
+{% for j in jsonld %}<script type="application/ld+json">{{ j | safe }}</script>
+{% endfor %}
+</head>
+<body class="k-{{ kind }}">
+<a class="skip" href="#main">{{ 'मुख्य सामग्रीमा जानुहोस्' if lang == 'ne' else 'Skip to content' }}</a>
+<header class="site">
+  <div class="wrap site-row">
+    <a class="mark" href="{{ '/ne/' if lang == 'ne' else '/' }}"><span class="mark-dot" aria-hidden="true"></span>{{ t.site }}</a>
+    <nav aria-label="{{ 'मुख्य' if lang == 'ne' else 'Main' }}">
+      {% for n, u in nav %}<a href="{{ u }}">{{ n }}</a>{% endfor %}
+    </nav>
+    <a class="lang" href="{{ other_lang_url }}" hreflang="{{ 'en' if lang == 'ne' else 'ne' }}">{{ t.lang_switch }}</a>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <ol class="crumbs">
+    {% for n, u in crumbs %}<li>{% if not loop.last %}<a href="{{ u }}">{{ n }}</a>{% else %}<span aria-current="page">{{ n }}</span>{% endif %}</li>{% endfor %}
+  </ol>
+  {% block main %}{% endblock %}
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    {% if geo_page %}<h2>{{ t.method_geo }}</h2>
+    <p>{{ t.method_geo_text }}</p>{% else %}<h2>{{ t.method }}</h2>
+    <p>{{ t.method_text }}</p>{% endif %}
+    <p class="small">{{ t.updated }}: <time datetime="{{ updated_iso }}">{{ updated }}</time>{% if osm %}<br>{{ t.data_source_osm }}{% endif %}</p>
+  </div>
+</footer>
+<script src="{{ asset }}/places.js" defer></script>
+</body>
+</html>

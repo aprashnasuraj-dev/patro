@@ -1,0 +1,8 @@
+{"elements":[
+ {"type":"node","id":101,"lat":27.6720,"lon":85.3150,"tags":{"amenity":"place_of_worship","religion":"hindu","name":"Kumbheshwor Mahadev Mandir","name:ne":"कुम्भेश्वर महादेव"}},
+ {"type":"way","id":202,"center":{"lat":27.6100,"lon":85.5390},"tags":{"amenity":"place_of_worship","religion":"hindu","name":"Palanchok Bhagwati","name:ne":"पलाञ्चोक भगवती"}},
+ {"type":"node","id":303,"lat":27.7400,"lon":85.3000,"tags":{"amenity":"place_of_worship","religion":"buddhist","name":"Pharping Gompa"}},
+ {"type":"node","id":404,"lat":27.7000,"lon":85.3200,"tags":{"amenity":"place_of_worship","religion":"christian","name":"Gyaneshwor Church"}},
+ {"type":"node","id":505,"lat":28.3000,"lon":84.0000,"tags":{"natural":"peak","name":"Dhampus Peak","ele":"6012"}},
+ {"type":"node","id":606,"lat":27.7105,"lon":85.3488,"tags":{"amenity":"place_of_worship","religion":"hindu","name":"Pashupatinath"}}
+]}

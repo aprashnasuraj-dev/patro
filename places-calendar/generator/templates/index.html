@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block main %}
+<article>
+  <header class="hero hero-index">
+    <div class="hero-text">
+      <h1>{{ h1 }}</h1>
+      <p class="lede">{{ intro }}</p>
+    </div>
+  </header>
+  {% for g, items in groups.items() %}
+  <section{% if g %} aria-label="{{ g }}"{% endif %}>
+    {% if g and groups|length > 1 %}<h2>{{ g }}</h2>{% endif %}
+    <ul class="links index-list">
+      {% for it in items %}<li><a href="{{ it.url }}">{{ it.name }}</a><span class="meta">{{ it.sub }}</span></li>{% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</article>
+{% endblock %}

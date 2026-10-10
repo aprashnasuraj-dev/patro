@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% import "_kati.html" as k %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="kati-answer">{{ answer_line }}</p>
+    <p class="note">{{ exact_note }}</p>
+    {% if approx %}<p class="st-note warn">{{ t.approx_unit }}</p>{% endif %}
+  </header>
+
+  <section aria-labelledby="h-formula">
+    <h2 id="h-formula">{{ t.formula }}</h2>
+    <p class="kati-formula">{{ formula }}</p>
+    <dl class="facts">
+      <div><dt>{{ t.one_each }}</dt><dd>{{ one_a }}</dd></div>
+      <div><dt></dt><dd>{{ one_b }}</dd></div>
+    </dl>
+  </section>
+
+  {% if digits %}
+  <section aria-labelledby="h-digits">
+    <h2 id="h-digits">{{ t.digits }}</h2>
+    <dl class="facts">
+      <div><dt>{{ t.nepali_comma }}</dt><dd>{{ digits.lakh }}</dd></div>
+      <div><dt>{{ t.intl_comma }}</dt><dd>{{ digits.intl }}</dd></div>
+      <div><dt></dt><dd>{{ digits.zeros }}</dd></div>
+    </dl>
+  </section>
+  {% endif %}
+
+  {% if mixed or square %}
+  <section aria-labelledby="h-mixed">
+    <h2 id="h-mixed">{{ t.mixed }}</h2>
+    {% if mixed %}<dl class="facts">{% for x in mixed %}<div><dt>{{ x.label }}</dt><dd>{{ x.text }}</dd></div>{% endfor %}</dl>{% endif %}
+    {% if square %}<h3>{{ t.square }}</h3><p>{{ square }}</p>{% endif %}
+  </section>
+  {% endif %}
+
+  <section aria-labelledby="h-conv" class="conv-wrap">
+    <h2 id="h-conv">{{ t.converter }}</h2>
+    {{ k.converter(conv, t) }}
+    {{ k.tool(tool) }}
+  </section>
+
+  <section aria-labelledby="h-equiv">
+    <h2 id="h-equiv">{{ equiv_title }}</h2>
+    <ul class="links">
+      {% for e in equiv %}<li{% if e.current %} class="is-here"{% endif %}>{% if e.url %}<a href="{{ e.url }}">{{ e.unit }}</a>{% else %}<span>{{ e.unit }}</span>{% endif %}<span class="meta">{{ e.value }}</span></li>{% endfor %}
+    </ul>
+  </section>
+
+  {{ m.faq(faq, t) }}
+
+  <section aria-labelledby="h-table">
+    <h2 id="h-table">{{ table_title }}</h2>
+    <div class="scroll">
+    <table class="data">
+      <tbody>{% for r in table %}<tr class="{{ 'is-next' if r.current else '' }}"><th scope="row"><a href="{{ r.url }}"{% if r.current %} aria-current="page"{% endif %}>{{ r.from }}</a></th><td>{{ r.to }}</td></tr>{% endfor %}</tbody>
+    </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-rev">
+    <h2 id="h-rev">{{ t.reverse }}</h2>
+    <p><a href="{{ rev.url }}">{{ rev.q }}</a> {{ rev.a }}</p>
+  </section>
+
+  {{ k.notes(notes, sources, false, t) }}
+  <p class="inline-links"><a href="{{ pair_url }}">{{ t.all_pairs }}</a><a href="{{ group_url }}">{{ group_name }}</a></p>
+  {{ m.share(t) }}
+</article>
+<script src="{{ asset }}/kati.js" defer></script>
+{% endblock %}

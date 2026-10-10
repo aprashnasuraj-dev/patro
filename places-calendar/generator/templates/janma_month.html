@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}<span class="h1-sub">{{ sub }}</span></h1>
+    <p class="lede">{{ lede }}</p>
+    {% if adhik_any %}<p class="st-note warn">{{ t.adhik_note }}</p>{% endif %}
+  </header>
+
+  <ol class="days">
+    {% for r in rows %}
+    <li{% if r.adhik %} class="is-adhik"{% endif %}>
+      <a class="d-num" href="{{ r.day_url }}" title="{{ t.day_page }}">{{ r.day }}</a>
+      <div class="d-body">
+        <p class="d-date">{{ r.ad }}</p>
+        <dl>
+          <div><dt>{{ t.tithi }}</dt><dd>{{ r.tithi }}</dd></div>
+          <div><dt>{{ t.nak }}</dt><dd>{{ r.nak }}</dd></div>
+          <div><dt>{{ t.rashi }}</dt><dd>{{ r.rashi }}</dd></div>
+          <div><dt>{{ t.tithi_bday }}</dt><dd>{{ r.bday }}</dd></div>
+        </dl>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <section aria-labelledby="h-next">
+    <h2 id="h-next">{{ t.use_tools }}</h2>
+    <ul class="links">
+      {% for u, label in tools %}<li><a href="{{ u }}">{{ label }}</a></li>{% endfor %}
+      <li><a href="{{ age_url }}">{{ age_label }}</a></li>
+    </ul>
+  </section>
+
+  <nav class="pager" aria-label="{{ t.months }}">
+    {% if prev_url %}<a href="{{ prev_url }}" rel="prev">{{ prev_label }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ year_url }}">{{ year_label }}</a>
+    {% if next_url %}<a href="{{ next_url }}" rel="next">{{ next_label }}</a>{% else %}<span></span>{% endif %}
+  </nav>
+  {{ m.share(t) }}
+</article>
+{% endblock %}

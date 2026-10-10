@@ -1,0 +1,290 @@
+# Everyday "kati" questions: units, exact factors and the values people ask about.
+#
+# factor  : size of one unit in the group's base unit, as an exact number or
+#           fraction string ("1369/4"). All arithmetic uses exact fractions.
+# generic : metric / international unit. Pairs where BOTH units are generic
+#           are skipped (1 kg kati gram is not a Nepal question, and would
+#           otherwise appear in several groups).
+# values  : the amounts that get their own question page.
+# chains  : traditional unit ladders used to break an answer into
+#           "2 ropani 8 aana 1 paisa" style mixed amounts.
+#
+# Keep factors in sync with aafnaipatro.com/tools/landconverter and
+# /tools/units if those tools use different rounding.
+
+groups:
+  - id: land
+    name_en: Land area
+    name_ne: जग्गाको नाप
+    title_en: Land measurement in Nepal — ropani, aana, bigha, kattha
+    title_ne: जग्गाको नाप — रोपनी, आना, बिघा, कट्ठा
+    base: sqft
+    tool: /tools/landconverter
+    chains: [[ropani, aana, paisa, daam], [bigha, kattha, dhur]]
+    square: true
+    about_en: Nepal uses two land systems. The hills and the Kathmandu valley measure in ropani–aana–paisa–daam; the Terai measures in bigha–kattha–dhur. Land offices, lalpurja and blueprints may also show square feet or square metres.
+    about_ne: नेपालमा जग्गा नाप्ने दुई प्रणाली छन्। पहाड र काठमाडौं उपत्यकामा रोपनी–आना–पैसा–दाम, तराईमा बिघा–कट्ठा–धुर प्रयोग हुन्छ। मालपोत, लालपुर्जा र नक्सामा वर्ग फिट वा वर्ग मिटर पनि लेखिन्छ।
+    sources:
+      - {title: "Nepalese customary units of measurement (Wikipedia)", url: "https://en.wikipedia.org/wiki/Nepalese_customary_units_of_measurement"}
+    units:
+      - {id: ropani, slug: ropani, en: ropani, ne: रोपनी, aliases: [ropni], factor: "5476", values: trad,
+         note_en: "Hill and Kathmandu valley unit. 1 ropani = 16 aana = 5,476 sq ft, a square 74 ft × 74 ft.",
+         note_ne: "पहाड र काठमाडौं उपत्यकाको नाप। १ रोपनी = १६ आना = ५,४७६ वर्ग फिट, अर्थात् ७४ फिट × ७४ फिटको वर्ग।"}
+      - {id: aana, slug: aana, en: aana, ne: आना, aliases: [ana, anna], factor: "1369/4", values: trad,
+         note_en: "1/16 of a ropani. 1 aana = 4 paisa = 342.25 sq ft, a square 18.5 ft × 18.5 ft.",
+         note_ne: "रोपनीको सोह्रौं भाग। १ आना = ४ पैसा = ३४२.२५ वर्ग फिट, अर्थात् १८.५ फिट × १८.५ फिटको वर्ग।"}
+      - {id: paisa, slug: paisa, en: paisa, ne: पैसा, aliases: [], factor: "1369/16", values: small,
+         note_en: "1/4 of an aana. 1 paisa = 4 daam = 85.5625 sq ft.",
+         note_ne: "आनाको चौथाइ। १ पैसा = ४ दाम = ८५.५६२५ वर्ग फिट।"}
+      - {id: daam, slug: daam, en: daam, ne: दाम, aliases: [dam], factor: "1369/64", values: small,
+         note_en: "The smallest hill unit. 1 daam = 21.390625 sq ft.",
+         note_ne: "पहाडी प्रणालीको सबैभन्दा सानो नाप। १ दाम = २१.३९०६२५ वर्ग फिट।"}
+      - {id: bigha, slug: bigha, en: bigha, ne: बिघा, aliases: [], factor: "72900", values: bigha,
+         note_en: "Terai unit. 1 bigha = 20 kattha = 72,900 sq ft, a square 270 ft × 270 ft.",
+         note_ne: "तराईको नाप। १ बिघा = २० कट्ठा = ७२,९०० वर्ग फिट, अर्थात् २७० फिट × २७० फिटको वर्ग।"}
+      - {id: kattha, slug: kattha, en: kattha, ne: कट्ठा, aliases: [katha], factor: "3645", values: trad,
+         note_en: "1/20 of a bigha. 1 kattha = 20 dhur = 3,645 sq ft.",
+         note_ne: "बिघाको बीसौं भाग। १ कट्ठा = २० धुर = ३,६४५ वर्ग फिट।"}
+      - {id: dhur, slug: dhur, en: dhur, ne: धुर, aliases: [], factor: "729/4", values: small,
+         note_en: "1/20 of a kattha. 1 dhur = 182.25 sq ft, a square 13.5 ft × 13.5 ft.",
+         note_ne: "कट्ठाको बीसौं भाग। १ धुर = १८२.२५ वर्ग फिट, अर्थात् १३.५ फिट × १३.५ फिटको वर्ग।"}
+      - {id: sqft, slug: sq-ft, en: sq ft, ne: वर्ग फिट, aliases: [square feet, sqft], factor: "1", values: sqft,
+         note_en: "Square foot. Used on house plans and building permits.",
+         note_ne: "वर्ग फिट। घरको नक्सा र भवन निर्माण अनुमतिमा प्रयोग हुन्छ।"}
+      - {id: sqm, slug: sq-m, en: sq m, ne: वर्ग मिटर, aliases: [square metre, square meter], factor: "100000000/9290304", values: sqm,
+         note_en: "Square metre. 1 sq m = 10.7639 sq ft. Used in cadastral (napi) records.",
+         note_ne: "वर्ग मिटर। १ वर्ग मिटर = १०.७६३९ वर्ग फिट। नापी अभिलेखमा प्रयोग हुन्छ।"}
+      - {id: acre, slug: acre, en: acre, en_pl: acres, ne: एकड, aliases: [], factor: "43560", values: big,
+         note_en: "1 acre = 43,560 sq ft.", note_ne: "१ एकड = ४३,५६० वर्ग फिट।"}
+      - {id: hectare, slug: hectare, en: hectare, en_pl: hectares, ne: हेक्टर, aliases: [], factor: "1000000000000/9290304", values: big,
+         note_en: "1 hectare = 10,000 sq m = 1,07,639 sq ft.", note_ne: "१ हेक्टर = १०,००० वर्ग मिटर = १,०७,६३९ वर्ग फिट।"}
+
+  - id: gold
+    name_en: Gold and silver weight
+    name_ne: सुनचाँदीको तौल
+    title_en: Gold and silver weight — tola, lal and gram
+    title_ne: सुनचाँदीको तौल — तोला, लाल र ग्राम
+    base: gram
+    tool: /tools/gold
+    chains: [[tola, lal]]
+    about_en: Nepal's gold and silver prices are quoted per tola. Jewellers weigh smaller amounts in lal, where 100 lal make one tola.
+    about_ne: नेपालमा सुन र चाँदीको भाउ प्रति तोलामा तोकिन्छ। सानो तौल लालमा गरिन्छ, जहाँ १०० लाल बराबर एक तोला हुन्छ।
+    sources:
+      - {title: "Tola (unit): 180 grains = 11.6638038 g (Wikipedia)", url: "https://en.wikipedia.org/wiki/Tola_(unit)"}
+    units:
+      - {id: tola, slug: tola, en: tola, ne: तोला, aliases: [tolaa], factor: "11.6638038", values: tola,
+         note_en: "1 tola = 11.6638 grams = 100 lal. Gold and silver prices in Nepal are per tola.",
+         note_ne: "१ तोला = ११.६६३८ ग्राम = १०० लाल। नेपालमा सुनचाँदीको भाउ प्रति तोला हुन्छ।"}
+      - {id: lal, slug: lal, en: lal, ne: लाल, aliases: [], factor: "0.116638038", values: lal,
+         note_en: "1/100 of a tola, about 0.1166 grams.", note_ne: "तोलाको सयौं भाग, करिब ०.११६६ ग्राम।"}
+      - {id: gram, slug: gram, en: gram, en_pl: grams, ne: ग्राम, aliases: [g], factor: "1", values: gram, generic: true,
+         note_en: "Metric gram.", note_ne: "मेट्रिक ग्राम।"}
+      - {id: kg, slug: kg, en: kg, ne: केजी, aliases: [kilogram], factor: "1000", values: kg_gold, generic: true,
+         note_en: "1 kilogram = 1,000 grams.", note_ne: "१ किलोग्राम = १,००० ग्राम।"}
+      - {id: ounce, slug: ounce, en: troy ounce, en_pl: troy ounces, ne: ट्रोय औंस, aliases: [oz], factor: "31.1034768", values: ounce, generic: true,
+         note_en: "The troy ounce (31.1035 g) used for international gold prices.",
+         note_ne: "अन्तर्राष्ट्रिय सुन भाउमा प्रयोग हुने ट्रोय औंस (३१.१०३५ ग्राम)।"}
+
+  - id: market-weight
+    name_en: Market weight
+    name_ne: बजारको तौल
+    title_en: Traditional market weight — dharni, bisauli and pau
+    title_ne: परम्परागत तौल — धार्नी, बिसौली र पाउ
+    base: gram
+    tool: /tools/units
+    approximate: true
+    chains: [[dharni, bisauli, pau]]
+    about_en: Before kilograms, vegetables, meat and grain were weighed in dharni. 1 dharni = 2 bisauli = 12 pau. The dharni was never fixed by law in the metric era; the UN Statistical Office recorded it as 2.3325 kg, which is the figure used here. Some markets round it differently, so treat these answers as close guides rather than exact weights.
+    about_ne: किलोग्राम आउनुअघि तरकारी, मासु र अन्न धार्नीमा तौलिन्थ्यो। १ धार्नी = २ बिसौली = १२ पाउ। मेट्रिक युगमा धार्नी कानुनी रूपमा तोकिएन; संयुक्त राष्ट्रसंघको तथ्याङ्क कार्यालयले यसलाई २.३३२५ केजी अभिलेख गरेको छ, यहाँ त्यही प्रयोग गरिएको छ। केही बजारमा फरक मान चल्ने भएकाले यी उत्तरलाई अनुमानित मान्नुहोस्।
+    sources:
+      - {title: "Dharni (unit): 2.3325 kg per UN Statistical Office, 1966 (Wikipedia)", url: "https://en.wikipedia.org/wiki/Dharni_(unit)"}
+    units:
+      - {id: dharni, slug: dharni, en: dharni, ne: धार्नी, aliases: [dharni], factor: "2332.5", values: dharni,
+         note_en: "About 2.33 kg. 1 dharni = 2 bisauli = 12 pau.", note_ne: "करिब २.३३ केजी। १ धार्नी = २ बिसौली = १२ पाउ।"}
+      - {id: bisauli, slug: bisauli, en: bisauli, ne: बिसौली, aliases: [bisauni], factor: "1166.25", values: bisauli,
+         note_en: "Half a dharni.", note_ne: "आधा धार्नी।"}
+      - {id: pau, slug: pau, en: pau, ne: पाउ, aliases: [paau], factor: "194.375", values: pau,
+         note_en: "1/12 of a dharni, about 194 grams.", note_ne: "धार्नीको बाह्रौं भाग, करिब १९४ ग्राम।"}
+      - {id: mkg, slug: kg, en: kg, ne: केजी, aliases: [kilogram], factor: "1000", values: kg_market, generic: true,
+         note_en: "1 kilogram = 1,000 grams.", note_ne: "१ किलोग्राम = १,००० ग्राम।"}
+      - {id: mgram, slug: gram, en: gram, en_pl: grams, ne: ग्राम, aliases: [g], factor: "1", values: gram_market, generic: true,
+         note_en: "Metric gram.", note_ne: "मेट्रिक ग्राम।"}
+
+  - id: grain
+    name_en: Grain measure
+    name_ne: अन्नको नाप
+    title_en: Grain measure — muri, pathi and mana
+    title_ne: अन्नको नाप — मुरी, पाथी र माना
+    base: litre
+    tool: /tools/units
+    chains: [[muri, pathi, mana, mutthi]]
+    about_en: Rice, grain and flour are traditionally measured by volume. 1 muri = 20 pathi, 1 pathi = 8 mana and 1 mana = 10 mutthi (fistfuls). Because these are volumes, the weight depends on what you measure — a pathi of rice weighs more than a pathi of flattened rice.
+    about_ne: चामल, अन्न र पीठो परम्परागत रूपमा आयतनले नापिन्छ। १ मुरी = २० पाथी, १ पाथी = ८ माना र १ माना = १० मुठ्ठी। यी आयतनका नाप भएकाले तौल नापिने वस्तुअनुसार फरक हुन्छ — एक पाथी चामल एक पाथी चिउराभन्दा गह्रौं हुन्छ।
+    sources:
+      - {title: "Nepalese customary units: 1 pathi = 4.54596 L (Wikipedia)", url: "https://en.wikipedia.org/wiki/Nepalese_customary_units_of_measurement"}
+    units:
+      - {id: muri, slug: muri, en: muri, ne: मुरी, aliases: [], factor: "90.9192", values: muri,
+         note_en: "1 muri = 20 pathi, about 90.9 litres.", note_ne: "१ मुरी = २० पाथी, करिब ९०.९ लिटर।"}
+      - {id: pathi, slug: pathi, en: pathi, ne: पाथी, aliases: [paathi], factor: "4.54596", values: trad_vol,
+         note_en: "1 pathi = 8 mana, about 4.55 litres.", note_ne: "१ पाथी = ८ माना, करिब ४.५५ लिटर।"}
+      - {id: mana, slug: mana, en: mana, ne: माना, aliases: [maana], factor: "0.568245", values: mana,
+         note_en: "1 mana = 10 mutthi, about 0.57 litres.", note_ne: "१ माना = १० मुठ्ठी, करिब ०.५७ लिटर।"}
+      - {id: mutthi, slug: mutthi, en: mutthi, ne: मुठ्ठी, aliases: [muthi], factor: "0.0568245", values: mutthi,
+         note_en: "A fistful; 1/10 of a mana.", note_ne: "एक मुठी; मानाको दशौं भाग।"}
+      - {id: litre, slug: litre, en: litre, en_pl: litres, ne: लिटर, aliases: [liter], factor: "1", values: litre, generic: true,
+         note_en: "Metric litre.", note_ne: "मेट्रिक लिटर।"}
+
+  - id: length
+    name_en: Length
+    name_ne: लम्बाइ
+    title_en: Traditional length — haat, bitta, angul and kos
+    title_ne: परम्परागत लम्बाइ — हात, बित्ता, अंगुल र कोस
+    base: inch
+    tool: /tools/units
+    chains: [[haat, bitta, angul]]
+    about_en: Builders, tailors and carpenters still measure in haat (a forearm, 18 inches). 1 haat = 2 bitta = 24 angul. The kos, used for walking distances, varied from place to place; this page uses the classical 4,000 yards (about 3.66 km).
+    about_ne: डकर्मी, सिलाइ गर्ने र सिकर्मीहरू अझै हात (१८ इन्च) मा नाप्छन्। १ हात = २ बित्ता = २४ अंगुल। हिँडेर जाने दूरी नाप्ने कोस ठाउँअनुसार फरक हुन्थ्यो; यहाँ शास्त्रीय ४,००० गज (करिब ३.६६ कि.मि.) प्रयोग गरिएको छ।
+    sources:
+      - {title: "Nepalese customary units of measurement — length (Wikipedia)", url: "https://en.wikipedia.org/wiki/Nepalese_customary_units_of_measurement"}
+    units:
+      - {id: angul, slug: angul, en: angul, ne: अंगुल, aliases: [], factor: "3/4", values: angul,
+         note_en: "A finger's width, 0.75 inch.", note_ne: "एक औंलाको चौडाइ, ०.७५ इन्च।"}
+      - {id: bitta, slug: bitta, en: bitta, ne: बित्ता, aliases: [bitto], factor: "9", values: bitta,
+         note_en: "A hand span, 9 inches; half a haat.", note_ne: "एक बित्ता, ९ इन्च; आधा हात।"}
+      - {id: haat, slug: haat, en: haat, ne: हात, aliases: [hat, haath], factor: "18", values: haat,
+         note_en: "A forearm (cubit), 18 inches = 1.5 ft.", note_ne: "कुहिनादेखि औंलाको टुप्पोसम्म, १८ इन्च = १.५ फिट।"}
+      - {id: kos, slug: kos, en: kos, ne: कोस, aliases: [kosh], factor: "144000", values: kos, approximate: true,
+         note_en: "A traditional walking distance; varied by region. Here 4,000 yards ≈ 3.66 km.",
+         note_ne: "परम्परागत हिँडाइ दूरी; क्षेत्रअनुसार फरक। यहाँ ४,००० गज ≈ ३.६६ कि.मि.।"}
+      - {id: inch, slug: inch, en: inch, en_pl: inches, ne: इन्च, aliases: [], factor: "1", values: inch, generic: true,
+         note_en: "1 inch = 2.54 cm.", note_ne: "१ इन्च = २.५४ सेन्टिमिटर।"}
+      - {id: foot, slug: feet, en: foot, en_pl: feet, ne: फिट, aliases: [ft], factor: "12", values: foot, generic: true,
+         note_en: "1 foot = 12 inches.", note_ne: "१ फिट = १२ इन्च।"}
+      - {id: metre, slug: metre, en: metre, en_pl: metres, ne: मिटर, aliases: [meter], factor: "5000/127", values: metre, generic: true,
+         note_en: "1 metre = 39.37 inches.", note_ne: "१ मिटर = ३९.३७ इन्च।"}
+      - {id: cm, slug: cm, en: cm, ne: सेन्टिमिटर, aliases: [centimetre], factor: "50/127", values: cm, generic: true,
+         note_en: "1 cm = 0.3937 inch.", note_ne: "१ सेन्टिमिटर = ०.३९३७ इन्च।"}
+      - {id: km, slug: km, en: km, ne: किलोमिटर, aliases: [kilometre], factor: "5000000/127", values: km, generic: true,
+         note_en: "1 km = 1,000 metres.", note_ne: "१ किलोमिटर = १,००० मिटर।"}
+
+  - id: time
+    name_en: Panchang time
+    name_ne: पञ्चाङ्गको समय
+    title_en: Panchang time — ghadi, pala, muhurta and prahar
+    title_ne: पञ्चाङ्गको समय — घडी, पला, मुहूर्त र प्रहर
+    base: second
+    tool: /tools/astro
+    chains: [[ghadi, pala, bipala], [hour, minute, second]]
+    about_en: The panchang divides a full day into 60 ghadi. 1 ghadi = 60 pala = 24 minutes, and 1 pala = 60 bipala = 24 seconds. A muhurta is 2 ghadi (48 minutes) and a prahar is a quarter of the day or night, 3 hours.
+    about_ne: पञ्चाङ्गले एक दिनलाई ६० घडीमा बाँड्छ। १ घडी = ६० पला = २४ मिनेट, र १ पला = ६० विपला = २४ सेकेन्ड। एक मुहूर्त २ घडी (४८ मिनेट) र एक प्रहर दिन वा रातको चौथाइ, ३ घण्टा हुन्छ।
+    sources:
+      - {title: "Hindu units of time (Wikipedia)", url: "https://en.wikipedia.org/wiki/Hindu_units_of_time"}
+    units:
+      - {id: bipala, slug: bipala, en: bipala, ne: विपला, aliases: [vipala], factor: "2/5", values: bipala,
+         note_en: "1/60 of a pala = 0.4 seconds.", note_ne: "पलाको साठीऔं भाग = ०.४ सेकेन्ड।"}
+      - {id: pala, slug: pala, en: pala, ne: पला, aliases: [pal], factor: "24", values: pala,
+         note_en: "1/60 of a ghadi = 24 seconds.", note_ne: "घडीको साठीऔं भाग = २४ सेकेन्ड।"}
+      - {id: ghadi, slug: ghadi, en: ghadi, ne: घडी, aliases: [ghati, ghatika], factor: "1440", values: ghadi,
+         note_en: "1/60 of a day = 24 minutes.", note_ne: "दिनको साठीऔं भाग = २४ मिनेट।"}
+      - {id: muhurta, slug: muhurta, en: muhurta, ne: मुहूर्त, aliases: [muhurt], factor: "2880", values: muhurta,
+         note_en: "2 ghadi = 48 minutes; 30 muhurta make a day.", note_ne: "२ घडी = ४८ मिनेट; ३० मुहूर्त बराबर एक दिन।"}
+      - {id: prahar, slug: prahar, en: prahar, ne: प्रहर, aliases: [pahar], factor: "10800", values: prahar,
+         note_en: "A quarter of the day or night = 3 hours = 7.5 ghadi.", note_ne: "दिन वा रातको चौथाइ = ३ घण्टा = ७.५ घडी।"}
+      - {id: din, slug: din, en: day, en_pl: days, ne: दिन, aliases: [day], factor: "86400", values: din, generic: true,
+         note_en: "24 hours = 60 ghadi.", note_ne: "२४ घण्टा = ६० घडी।"}
+      - {id: hour, slug: hour, en: hour, en_pl: hours, ne: घण्टा, aliases: [ghanta], factor: "3600", values: hour, generic: true,
+         note_en: "60 minutes.", note_ne: "६० मिनेट।"}
+      - {id: minute, slug: minute, en: minute, en_pl: minutes, ne: मिनेट, aliases: [min], factor: "60", values: minute, generic: true,
+         note_en: "60 seconds.", note_ne: "६० सेकेन्ड।"}
+      - {id: second, slug: second, en: second, en_pl: seconds, ne: सेकेन्ड, aliases: [sec], factor: "1", values: second, generic: true,
+         note_en: "SI second.", note_ne: "सेकेन्ड।"}
+
+  - id: numbers
+    name_en: Lakh, crore and million
+    name_ne: लाख, करोड र मिलियन
+    title_en: Nepali number scale — lakh, crore, arab vs million and billion
+    title_ne: नेपाली सङ्ख्या — लाख, करोड, अर्ब र मिलियन, बिलियन
+    base: one
+    tool: /tools/words
+    numbers: true
+    chains: [[shankha, padma, neel, kharab, arab, crore, lakh, hajar]]
+    about_en: Nepali counting groups large numbers in hundreds after the first thousand — hajar, lakh, crore, arab, kharab — and writes them with commas the same way, 1,00,00,000. International English groups in thousands — thousand, million, billion. 1 crore is 10 million and 1 arab is 1 billion.
+    about_ne: नेपाली गन्तीमा हजारपछि सयको फरकमा ठूला सङ्ख्या जान्छन् — हजार, लाख, करोड, अर्ब, खर्ब — र अल्पविराम पनि त्यसैगरी लेखिन्छ, १,००,००,०००। अन्तर्राष्ट्रिय अंग्रेजीमा हजारको फरकमा जान्छ — थाउजेन्ड, मिलियन, बिलियन। १ करोड बराबर १० मिलियन र १ अर्ब बराबर १ बिलियन।
+    sources:
+      - {title: "Indian numbering system (Wikipedia)", url: "https://en.wikipedia.org/wiki/Indian_numbering_system"}
+    units:
+      - {id: hajar, slug: hajar, en: hajar, ne: हजार, aliases: [hazar], factor: "1000", values: hajar,
+         note_en: "1,000.", note_ne: "१,०००।"}
+      - {id: lakh, slug: lakh, en: lakh, ne: लाख, aliases: [lac, lakhs], factor: "100000", values: lakh,
+         note_en: "1,00,000 (one hundred thousand).", note_ne: "१,००,००० (सय हजार)।"}
+      - {id: crore, slug: crore, en: crore, ne: करोड, aliases: [karod, karor], factor: "10000000", values: crore,
+         note_en: "1,00,00,000 = 100 lakh = 10 million.", note_ne: "१,००,००,००० = १०० लाख = १० मिलियन।"}
+      - {id: arab, slug: arab, en: arab, ne: अर्ब, aliases: [arba], factor: "1000000000", values: arab,
+         note_en: "1,00,00,00,000 = 100 crore = 1 billion.", note_ne: "१,००,००,००,००० = १०० करोड = १ बिलियन।"}
+      - {id: kharab, slug: kharab, en: kharab, ne: खर्ब, aliases: [kharba], factor: "100000000000", values: kharab,
+         note_en: "100 arab = 100 billion.", note_ne: "१०० अर्ब = १०० बिलियन।"}
+      - {id: neel, slug: neel, en: neel, ne: नील, aliases: [nil], factor: "10000000000000", values: one,
+         note_en: "100 kharab = 10 trillion.", note_ne: "१०० खर्ब = १० ट्रिलियन।"}
+      - {id: padma, slug: padma, en: padma, ne: पद्म, aliases: [], factor: "1000000000000000", values: one,
+         note_en: "100 neel = 1 quadrillion.", note_ne: "१०० नील = १ क्वाड्रिलियन।"}
+      - {id: shankha, slug: shankha, en: shankha, ne: शंख, aliases: [sankha], factor: "100000000000000000", values: one,
+         note_en: "100 padma = 100 quadrillion.", note_ne: "१०० पद्म = १०० क्वाड्रिलियन।"}
+      - {id: thousand, slug: thousand, en: thousand, ne: थाउजेन्ड, aliases: [], factor: "1000", values: thousand, generic: true,
+         note_en: "1,000 (same as one hajar).", note_ne: "१,००० (एक हजार नै)।"}
+      - {id: million, slug: million, en: million, ne: मिलियन, aliases: [], factor: "1000000", values: million, generic: true,
+         note_en: "10,00,000 = 10 lakh.", note_ne: "१०,००,००० = १० लाख।"}
+      - {id: billion, slug: billion, en: billion, ne: बिलियन, aliases: [], factor: "1000000000", values: billion, generic: true,
+         note_en: "1 arab = 100 crore.", note_ne: "१ अर्ब = १०० करोड।"}
+      - {id: trillion, slug: trillion, en: trillion, ne: ट्रिलियन, aliases: [], factor: "1000000000000", values: trillion, generic: true,
+         note_en: "10 kharab.", note_ne: "१० खर्ब।"}
+
+value_sets:
+  trad: ["0.25", "0.5", "0.75", "1", "1.5", "2", "2.5", "3", "3.5", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "25", "30", "40", "50", "100"]
+  small: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "16", "20", "25", "30", "40", "50", "64", "100"]
+  bigha: ["0.25", "0.5", "0.75", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "50", "100"]
+  sqft: ["100", "150", "200", "250", "300", "400", "500", "600", "700", "800", "900", "1000", "1200", "1250", "1500", "1600", "1800", "2000", "2400", "2500", "3000", "3500", "4000", "5000", "6000", "7500", "10000", "20000", "50000", "100000"]
+  sqm: ["10", "20", "25", "50", "75", "100", "125", "150", "200", "250", "300", "400", "500", "750", "1000", "1500", "2000", "2500", "5000", "10000"]
+  big: ["0.25", "0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "10", "20", "50", "100"]
+  tola: ["0.25", "0.5", "0.75", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "30", "40", "50", "100"]
+  lal: ["1", "5", "10", "15", "20", "25", "30", "40", "50", "60", "70", "75", "80", "90", "100", "150", "200", "250", "500"]
+  gram: ["0.5", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "30", "40", "50", "100", "250", "500", "1000"]
+  kg_gold: ["0.5", "1", "2", "5", "10"]
+  ounce: ["0.5", "1", "2", "5", "10", "100"]
+  dharni: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "8", "10", "12", "15", "20", "25", "50", "100"]
+  bisauli: ["1", "2", "3", "4", "5", "10"]
+  pau: ["1", "2", "3", "4", "5", "6", "8", "10", "12"]
+  kg_market: ["0.5", "1", "2", "3", "4", "5", "10", "20", "25", "50", "100"]
+  gram_market: ["100", "200", "250", "500", "750"]
+  muri: ["0.5", "1", "2", "3", "4", "5", "10", "20", "50", "100"]
+  trad_vol: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "30", "40", "50", "100"]
+  mana: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "10", "12", "15", "16", "20", "25", "30", "40", "50", "100"]
+  mutthi: ["1", "2", "5", "10", "20"]
+  litre: ["0.5", "1", "2", "5", "10", "20", "25", "50", "100"]
+  angul: ["1", "2", "4", "8", "12", "24", "100"]
+  bitta: ["1", "2", "3", "4", "5", "10"]
+  haat: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "30", "40", "50", "100"]
+  kos: ["0.5", "1", "2", "3", "4", "5", "10", "20", "50", "100"]
+  inch: ["1", "6", "9", "12", "18", "24", "36"]
+  foot: ["1", "1.5", "2", "3", "5", "6", "10", "20", "50", "100"]
+  metre: ["1", "2", "5", "10", "20", "50", "100"]
+  cm: ["10", "30", "45", "50", "100"]
+  km: ["1", "2", "5", "10", "20", "50", "100"]
+  bipala: ["1", "10", "30", "60"]
+  pala: ["1", "2", "5", "10", "15", "20", "30", "45", "60"]
+  ghadi: ["1", "2", "2.5", "3", "4", "5", "6", "7", "7.5", "8", "10", "12", "15", "20", "24", "30", "45", "60"]
+  muhurta: ["1", "2", "3", "4", "5", "15", "30"]
+  prahar: ["1", "2", "3", "4", "8"]
+  din: ["1", "7"]
+  hour: ["1", "2", "3", "6", "12", "24"]
+  minute: ["1", "24", "30", "48", "60"]
+  second: ["1", "24", "60"]
+  hajar: ["1", "2", "5", "10", "20", "50", "100", "500", "1000"]
+  lakh: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "25", "30", "40", "50", "75", "100", "500", "1000"]
+  crore: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "5", "10", "15", "20", "25", "50", "100"]
+  arab: ["1", "2", "5", "10", "100"]
+  kharab: ["1", "5", "10"]
+  one: ["1"]
+  thousand: ["1", "10", "50", "100", "500"]
+  million: ["1", "1.5", "2", "2.5", "3", "5", "10", "20", "25", "50", "100", "500"]
+  billion: ["1", "2", "5", "10", "100"]
+  trillion: ["1", "5"]

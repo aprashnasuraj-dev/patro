@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block main %}
+<article>
+  <header class="hero hero-peak">
+    <div class="hero-text">
+      <h1>{{ h1 }}</h1>
+      <p class="height"><b>{{ height }}</b><span>{{ height_ft }}</span></p>
+      {% if note %}<p class="lede">{{ note }}</p>{% endif %}
+    </div>
+  </header>
+
+  <section aria-labelledby="h-facts">
+    <h2 id="h-facts">{{ t.at_a_glance }}</h2>
+    {{ m.facts(facts) }}
+    <p><a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t.map }}</a></p>
+  </section>
+
+  {% if faces %}
+  <section aria-labelledby="h-faces">
+    <h2 id="h-faces">{{ t.faces }}</h2>
+    <ul class="links">{% for f in faces %}<li><a href="{{ f.url }}">{{ f.name }}</a><span class="meta">{{ f.h }}, {{ f.dist }} {{ f.dir }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  {% if view_from %}
+  <section aria-labelledby="h-vf">
+    <h2 id="h-vf">{{ t.visible_from }}</h2>
+    <ul class="links">{% for v in view_from %}<li><a href="{{ v.url }}">{{ v.name }}</a><span class="meta">{{ v.h }}, {{ v.dist }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  {{ m.sun_table(sun, sun_title, t) }}
+
+  <section aria-labelledby="h-years">
+    <h2 id="h-years">{{ t.full_moons_by_year }}</h2>
+    <ul class="years">{% for y in years %}<li{% if y.current %} class="is-current"{% endif %}><a href="{{ y.url }}"><b>{{ y.label }}</b></a></li>{% endfor %}</ul>
+  </section>
+
+  {% if near %}
+  <section aria-labelledby="h-near">
+    <h2 id="h-near">{{ t.nearby_peaks }}</h2>
+    <ul class="links">{% for n in near %}<li><a href="{{ n.url }}">{{ n.name }}</a><span class="meta">{{ n.h }}, {{ n.dist }} {{ n.dir }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+  {{ m.share(t) }}
+</article>
+{% endblock %}

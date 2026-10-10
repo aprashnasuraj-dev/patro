@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ intro }}</p>
+  </header>
+  <ul class="years">
+    {% for r in years %}<li><a href="{{ r.url }}"><b>{{ r.y }}</b><span>{{ r.ad }}</span></a></li>{% endfor %}
+  </ul>
+</article>
+{% endblock %}

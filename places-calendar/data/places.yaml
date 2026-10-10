@@ -1,0 +1,1572 @@
+# Religious sites and jatra venues (seed set). Scale this to thousands with
+# tools/osm_import.py. Coordinates marked coord_verified: false are close
+# (within a few hundred metres) but should be checked before launch; they
+# only affect sunrise/moonrise by seconds.
+#
+# festivals: festival ids from festivals.yaml that are celebrated *here*,
+# each optionally with a place-specific note (en/ne) and crowd override (1-5).
+
+places:
+  - id: pashupatinath
+    name_en: Pashupatinath Temple
+    name_ne: पशुपतिनाथ मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva (Pashupati)
+    deity_ne: भगवान शिव (पशुपति)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7105
+    lon: 85.3487
+    elev_m: 1310
+    coord_verified: false
+    unesco: true
+    about_en: Nepal's most sacred Hindu temple, on the banks of the Bagmati river in eastern Kathmandu. The two-tiered pagoda houses the four-faced Pashupati linga; Arya Ghat beside it is the country's most important cremation site.
+    about_ne: काठमाडौंको पूर्वमा बागमती किनारमा रहेको नेपालको सबैभन्दा पवित्र हिन्दु मन्दिर। दुईतले प्यागोडा शैलीको मन्दिरमा चतुर्मुखी पशुपति लिङ्ग छ; छेउको आर्यघाट देशकै प्रमुख दाहसंस्कार स्थल हो।
+    tips_en:
+      - Only Hindus may enter the main temple courtyard; others can view it from the terraces across the Bagmati.
+      - Leather items are not allowed inside the inner premises.
+      - On big festival days, police set up separate queues for men and women from well before dawn.
+    tips_ne:
+      - मुख्य मन्दिर प्राङ्गणमा हिन्दुहरू मात्र प्रवेश गर्न पाउँछन्; अरूले बागमती पारिको डिलबाट हेर्न सक्छन्।
+      - भित्री परिसरमा छालाका सामान लैजान पाइँदैन।
+      - ठूला पर्वका दिन प्रहरीले बिहानैदेखि महिला र पुरुषका लागि छुट्टाछुट्टै लाइन मिलाउँछ।
+    festivals:
+      - id: maha-shivaratri
+        note_en: Sadhus arrive from across Nepal and India days earlier and camp in the Shleshmantak forest. Expect queues of several hours; the temple stays open through the night.
+        note_ne: नेपाल र भारतभरबाट साधुहरू केही दिनअघि नै आई श्लेष्मान्तक वनमा बस्छन्। घण्टौं लामो लाइनको अपेक्षा गर्नुहोस्; मन्दिर रातभर खुला रहन्छ।
+      - id: haritalika-teej
+        note_en: Women in red queue from midnight; the area around Gaushala becomes a sea of red by morning.
+        note_ne: रातो पहिरनमा महिलाहरू मध्यरातदेखि लाइन बस्छन्; बिहानसम्म गौशाला क्षेत्र रातैरातो हुन्छ।
+      - id: bala-chaturdashi
+        note_en: Families keep vigil with lamps on the night before and scatter satbij along the forest path at dawn.
+        note_ne: अघिल्लो रात परिवारहरू बत्ती बालेर जाग्राम बस्छन् र बिहान वनको बाटोमा सतबीज छर्छन्।
+      - id: janai-purnima
+      - id: kartik-purnima
+
+  - id: guhyeshwari
+    name_en: Guhyeshwari Temple
+    name_ne: गुह्येश्वरी मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Guhyeshwari (Shakti peeth)
+    deity_ne: देवी गुह्येश्वरी (शक्तिपीठ)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7112
+    lon: 85.3535
+    elev_m: 1310
+    coord_verified: false
+    about_en: One of the most important Shakti peeths, a short walk upstream from Pashupatinath along the Bagmati.
+    about_ne: पशुपतिनाथबाट बागमती किनारै केही माथि रहेको प्रमुख शक्तिपीठमध्ये एक।
+    tips_en:
+      - Combine with Pashupatinath; the riverside path between them takes about ten minutes.
+    tips_ne:
+      - पशुपतिनाथसँगै दर्शन गर्न सकिन्छ; दुईबीचको किनारको बाटो करिब दस मिनेटको छ।
+    festivals:
+      - id: ghatasthapana
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: boudhanath
+    name_en: Boudhanath Stupa
+    name_ne: बौद्धनाथ स्तूप
+    kind: stupa
+    religion: buddhist
+    deity_en: Buddhist stupa
+    deity_ne: बौद्ध स्तूप
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7215
+    lon: 85.3620
+    elev_m: 1310
+    coord_verified: false
+    unesco: true
+    about_en: One of the largest spherical stupas in the world and the heart of Tibetan Buddhist life in Kathmandu, ringed by monasteries, butter-lamp shops and cafés.
+    about_ne: विश्वकै ठूला गोलाकार स्तूपमध्ये एक र काठमाडौंमा तिब्बती बौद्ध जीवनको केन्द्र, जसको वरिपरि गुम्बा, दियो पसल र क्याफे छन्।
+    tips_en:
+      - Walk around the stupa clockwise (kora).
+      - Rooftop cafés on the circuit give the best view of evening lamp offerings.
+    tips_ne:
+      - स्तूपको परिक्रमा घडीको सुईको दिशामा गर्नुहोस्।
+      - परिक्रमा मार्गका छतका क्याफेबाट साँझको दियो चढाउने दृश्य राम्रो देखिन्छ।
+    festivals:
+      - id: gyalpo-lhosar
+        note_en: Families in traditional dress circle the stupa from early morning; flags are changed and tsampa is thrown in the air.
+        note_ne: बिहानैदेखि परम्परागत पहिरनमा परिवारहरू स्तूप परिक्रमा गर्छन्; ध्वजा फेरिन्छ र साम्पा उडाइन्छ।
+      - id: sonam-lhosar
+      - id: buddha-jayanti
+
+  - id: swayambhunath
+    name_en: Swayambhunath Stupa
+    name_ne: स्वयम्भूनाथ स्तूप
+    kind: stupa
+    religion: buddhist
+    deity_en: Buddhist stupa (also revered by Hindus)
+    deity_ne: बौद्ध स्तूप (हिन्दुहरूले पनि पुज्ने)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7149
+    lon: 85.2904
+    elev_m: 1420
+    coord_verified: false
+    unesco: true
+    about_en: The hilltop stupa west of Kathmandu, known for the Buddha's eyes painted on its tower and the monkeys on its 365 stone steps.
+    about_ne: काठमाडौंको पश्चिम डाँडामा रहेको स्तूप, जसको गजुरमा कोरिएका बुद्धका आँखा र ३६५ ढुंगे खुड्किलामा बस्ने बाँदरका लागि प्रसिद्ध छ।
+    tips_en:
+      - The eastern stairway is steep; the western entrance has a road almost to the top.
+      - Keep food out of sight — the monkeys are quick.
+    tips_ne:
+      - पूर्वतर्फको भर्‍याङ ठाडो छ; पश्चिमी प्रवेशद्वारसम्म गाडीको बाटो छ।
+      - खानेकुरा लुकाएर राख्नुहोस् — बाँदर छिटो खोस्छन्।
+    festivals:
+      - id: buddha-jayanti
+        note_en: Butter lamps are lit through the night before and the hill is crowded from dawn.
+        note_ne: अघिल्लो राति दियो बालिन्छ र बिहानैदेखि डाँडामा भीड लाग्छ।
+      - id: shree-panchami
+        note_en: The Saraswati shrine near the top of the hill draws students and parents for children's first letters.
+        note_ne: डाँडाको टुप्पोनजिकको सरस्वती स्थानमा अक्षरारम्भका लागि विद्यार्थी र अभिभावक आउँछन्।
+      - id: sonam-lhosar
+
+  - id: kathmandu-durbar-square
+    name_en: Kathmandu Durbar Square (Hanuman Dhoka)
+    name_ne: काठमाडौं दरबार क्षेत्र (हनुमानढोका)
+    kind: square
+    religion: hindu
+    deity_en: Taleju Bhawani, Kumari, Kal Bhairav
+    deity_ne: तलेजु भवानी, कुमारी, काल भैरव
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7042
+    lon: 85.3067
+    elev_m: 1300
+    coord_verified: false
+    unesco: true
+    about_en: The old royal palace square of Kathmandu, home of the Kumari Ghar, Taleju temple and Kal Bhairav, and the stage for Indra Jatra.
+    about_ne: काठमाडौंको पुरानो राजदरबार क्षेत्र, जहाँ कुमारी घर, तलेजु मन्दिर र काल भैरव छन्, र इन्द्रजात्राको मुख्य थलो हो।
+    tips_en:
+      - Foreign visitors pay an entry fee at the ticket booths on the approach roads.
+      - For Indra Jatra, temple steps around the square fill hours before the chariot procession.
+    tips_ne:
+      - विदेशी आगन्तुकले प्रवेशमार्गका टिकट काउन्टरमा शुल्क तिर्नुपर्छ।
+      - इन्द्रजात्रामा रथ यात्राभन्दा घण्टौं अघि नै वरिपरिका मन्दिरका खुड्किला भरिन्छन्।
+    festivals:
+      - id: indra-jatra
+        note_en: The Kumari, Ganesh and Bhairav chariots set off from the Kumari Ghar in the afternoon; the Head of State traditionally receives tika from the Kumari.
+        note_ne: कुमारी, गणेश र भैरवका रथ दिउँसो कुमारी घरबाट निस्कन्छन्; परम्पराअनुसार राष्ट्रप्रमुखले कुमारीबाट टीका ग्रहण गर्छन्।
+      - id: fulpati
+        note_en: The Fulpati procession arrives at Hanuman Dhoka from Jamal with an army salute.
+        note_ne: फूलपातीको शोभायात्रा जमलबाट सेनाको सलामीसहित हनुमानढोका आइपुग्छ।
+      - id: maha-navami
+        note_en: Taleju Bhawani temple opens to the public on this one day; the queue stretches across the square.
+        note_ne: तलेजु भवानी मन्दिर यही एक दिन आम दर्शनका लागि खुल्छ; लाइन दरबार क्षेत्रभर फैलिन्छ।
+      - id: holi-hill
+        note_en: The chir pole is raised in Basantapur a week before Fagu Purnima; the square is the centre of colour play on the day.
+        note_ne: फागु पूर्णिमाको एक हप्ताअघि बसन्तपुरमा चीर ठड्याइन्छ; पर्वको दिन रंग खेल्ने मुख्य थलो यही हो।
+
+  - id: patan-durbar-square
+    name_en: Patan Durbar Square and Krishna Mandir
+    name_ne: पाटन दरबार क्षेत्र र कृष्ण मन्दिर
+    kind: square
+    religion: hindu
+    deity_en: Lord Krishna, Taleju
+    deity_ne: भगवान कृष्ण, तलेजु
+    district: Lalitpur
+    district_ne: ललितपुर
+    province: Bagmati
+    lat: 27.6727
+    lon: 85.3253
+    elev_m: 1300
+    coord_verified: false
+    unesco: true
+    about_en: The royal square of Lalitpur with its stone shikhara Krishna Mandir, built in the 17th century, and the Patan Museum.
+    about_ne: ललितपुरको दरबार क्षेत्र, जहाँ सत्रौं शताब्दीमा बनेको ढुंगाको शिखर शैलीको कृष्ण मन्दिर र पाटन संग्रहालय छन्।
+    tips_en:
+      - On Janmashtami the square stays open all night; arrive before 9 pm for a place near the temple.
+    tips_ne:
+      - जन्माष्टमीमा दरबार क्षेत्र रातभर खुला रहन्छ; मन्दिरनजिक ठाउँ पाउन राति ९ बजेअघि पुग्नुहोस्।
+    festivals:
+      - id: krishna-janmashtami
+        note_en: Devotees sing bhajans through the night and light lamps on the temple's stone steps.
+        note_ne: भक्तजन रातभर भजन गाउँछन् र मन्दिरका ढुंगे खुड्किलामा दियो बाल्छन्।
+      - id: rato-machhindranath-start
+
+  - id: kumbheshwar
+    name_en: Kumbheshwar Temple
+    name_ne: कुम्भेश्वर मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva
+    deity_ne: भगवान शिव
+    district: Lalitpur
+    district_ne: ललितपुर
+    province: Bagmati
+    lat: 27.6766
+    lon: 85.3245
+    elev_m: 1300
+    coord_verified: false
+    about_en: A five-tiered pagoda in northern Patan whose ponds are believed to be fed by the sacred Gosaikunda lake.
+    about_ne: पाटनको उत्तरमा रहेको पाँचतले प्यागोडा मन्दिर, जसका कुण्डमा गोसाइँकुण्डको पानी आउने विश्वास गरिन्छ।
+    tips_en:
+      - On Janai Purnima, a silver and gold linga is placed in the pond and devotees bathe around it.
+    tips_ne:
+      - जनै पूर्णिमामा कुण्डमा चाँदी र सुनको लिङ्ग राखिन्छ र भक्तजन त्यसैको वरिपरि स्नान गर्छन्।
+    festivals:
+      - id: janai-purnima
+        note_en: Jhankri (shamans) dance around the pond through the day.
+        note_ne: दिनभर कुण्ड वरिपरि झाँक्रीहरू नाच्छन्।
+
+  - id: bhaktapur-durbar-square
+    name_en: Bhaktapur Durbar Square and Taumadhi
+    name_ne: भक्तपुर दरबार क्षेत्र र टौमढी
+    kind: square
+    religion: hindu
+    deity_en: Bhairav, Bhadrakali, Nyatapola
+    deity_ne: भैरव, भद्रकाली, न्यातपोल
+    district: Bhaktapur
+    district_ne: भक्तपुर
+    province: Bagmati
+    lat: 27.6722
+    lon: 85.4280
+    elev_m: 1401
+    coord_verified: false
+    unesco: true
+    about_en: The best-preserved medieval city square in the Kathmandu Valley, with the five-storey Nyatapola temple at Taumadhi.
+    about_ne: काठमाडौं उपत्यकाको सबैभन्दा राम्ररी संरक्षित मध्यकालीन सहर, जहाँ टौमढीमा पाँचतले न्यातपोल मन्दिर छ।
+    tips_en:
+      - The chariot tug-of-war in Taumadhi is boisterous; watch from a temple plinth or a rooftop café.
+      - Try juju dhau (king curd) from the shops around the square.
+    tips_ne:
+      - टौमढीमा रथ तानातान निकै उत्साहजनक हुन्छ; मन्दिरको डबली वा छतको क्याफेबाट हेर्नुहोस्।
+      - वरिपरिका पसलमा जुजु धौ चाख्न नबिर्सनुहोस्।
+    festivals:
+      - id: bisket-jatra
+        note_en: The lingo pole is raised at Yoshin Khel on the last day of Chaitra and pulled down on Baisakh 1, marking the new year.
+        note_ne: चैतको अन्तिम दिन योसिंखेलमा लिंगो ठड्याइन्छ र वैशाख १ गते ढालिन्छ, जसले नयाँ वर्षको सुरुआत जनाउँछ।
+      - id: gai-jatra
+        note_en: Bhaktapur's Gai Jatra lasts several days with stick dances and tall bamboo taha-macha.
+        note_ne: भक्तपुरको गाईजात्रा लाठे नाच र अग्लो बाँसको ताहामचासहित धेरै दिन चल्छ।
+      - id: nepali-new-year
+
+  - id: changu-narayan
+    name_en: Changu Narayan Temple
+    name_ne: चाँगुनारायण मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu (Narayan)
+    deity_ne: भगवान विष्णु (नारायण)
+    district: Bhaktapur
+    district_ne: भक्तपुर
+    province: Bagmati
+    lat: 27.7163
+    lon: 85.4278
+    elev_m: 1541
+    coord_verified: false
+    unesco: true
+    about_en: Considered the oldest temple in the Kathmandu Valley, on a ridge north of Bhaktapur, with a Lichhavi-era stone inscription and fine woodcarving.
+    about_ne: भक्तपुरको उत्तर डाँडामा रहेको काठमाडौं उपत्यकाकै सबैभन्दा पुरानो मानिने मन्दिर, जहाँ लिच्छविकालीन शिलालेख र उत्कृष्ट काष्ठकला छ।
+    tips_en:
+      - A pleasant walk connects Changu Narayan with Nagarkot or Telkot.
+    tips_ne:
+      - चाँगुनारायणबाट नगरकोट वा तेलकोटसम्म रमाइलो पैदल बाटो छ।
+    festivals:
+      - id: haribodhini-ekadashi
+      - id: harishayani-ekadashi
+
+  - id: budhanilkantha
+    name_en: Budhanilkantha Temple
+    name_ne: बूढानीलकण्ठ मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu reclining on the serpent Shesh
+    deity_ne: शेषनागमाथि शयन गरेका भगवान विष्णु
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7783
+    lon: 85.3626
+    elev_m: 1450
+    coord_verified: false
+    about_en: A five-metre stone statue of Vishnu reclining in a pool of water at the foot of Shivapuri hill in north Kathmandu.
+    about_ne: उत्तर काठमाडौंको शिवपुरी डाँडाको फेदमा पानीको कुण्डमा शयन गरेका विष्णुको पाँच मिटर लामो ढुंगे मूर्ति।
+    tips_en:
+      - Only Hindus may enter the inner enclosure; the statue is visible from the railing outside.
+    tips_ne:
+      - भित्री घेरामा हिन्दु मात्र प्रवेश गर्न पाउँछन्; मूर्ति बाहिरको रेलिङबाट देखिन्छ।
+    festivals:
+      - id: haribodhini-ekadashi
+        note_en: The temple's biggest day, when Vishnu is believed to wake; a large fair surrounds the temple.
+        note_ne: विष्णु जाग्ने विश्वास गरिएको मन्दिरको सबैभन्दा ठूलो दिन; मन्दिर वरिपरि ठूलो मेला लाग्छ।
+      - id: harishayani-ekadashi
+
+  - id: dakshinkali
+    name_en: Dakshinkali Temple
+    name_ne: दक्षिणकाली मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Kali
+    deity_ne: देवी काली
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6005
+    lon: 85.2627
+    elev_m: 1400
+    coord_verified: false
+    about_en: A forested gorge-side shrine to Kali south of Kathmandu, known for animal sacrifices on Tuesdays and Saturdays.
+    about_ne: काठमाडौंको दक्षिणमा जंगलले घेरिएको खोल्सा छेउको कालीको मन्दिर, जहाँ मंगलबार र शनिबार बलि चढाइन्छ।
+    tips_en:
+      - Tuesdays and Saturdays are busiest; festival days more so. Go early to avoid hours-long queues.
+    tips_ne:
+      - मंगलबार र शनिबार सबैभन्दा भीड हुन्छ; पर्वका दिन अझ बढी। घण्टौंको लाइनबाट बच्न बिहानै जानुहोस्।
+    festivals:
+      - id: maha-ashtami
+        note_en: The temple's peak day of the year, with queues often stretching back along the access road.
+        note_ne: वर्षकै सबैभन्दा भीड हुने दिन, लाइन प्रायः पहुँच सडकसम्म लम्बिन्छ।
+      - id: maha-navami
+
+  - id: gokarneshwor
+    name_en: Gokarneshwor Mahadev
+    name_ne: गोकर्णेश्वर महादेव
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva
+    deity_ne: भगवान शिव
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7626
+    lon: 85.3895
+    elev_m: 1350
+    coord_verified: false
+    about_en: A riverside Shiva temple on the Bagmati in north-east Kathmandu, where shraddha for fathers is performed on Kushe Aunsi.
+    about_ne: उत्तर-पूर्व काठमाडौंमा बागमती किनारको शिव मन्दिर, जहाँ कुशे औंसीमा बुबाको श्राद्ध गरिन्छ।
+    tips_en:
+      - Priests set up along the ghats from early morning on Kushe Aunsi; bring kush grass and offerings or buy them on site.
+    tips_ne:
+      - कुशे औंसीमा बिहानैदेखि घाटभरि पुरोहित बस्छन्; कुश र पूजा सामग्री आफैं लैजानुहोस् वा त्यहीँ किन्नुहोस्।
+    festivals:
+      - id: kushe-aunsi
+        note_en: Thousands perform shraddha for their late fathers at the ghats.
+        note_ne: हजारौंले घाटमा स्वर्गीय बुबाको श्राद्ध गर्छन्।
+      - id: maha-shivaratri
+
+  - id: mata-tirtha
+    name_en: Mata Tirtha
+    name_ne: मातातीर्थ
+    kind: pond
+    religion: hindu
+    deity_en: Sacred pond for mothers
+    deity_ne: आमाको सम्झनामा पवित्र कुण्ड
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6935
+    lon: 85.2367
+    elev_m: 1400
+    coord_verified: false
+    about_en: A sacred pond on the western edge of Kathmandu where people whose mothers have died bathe and make offerings.
+    about_ne: काठमाडौंको पश्चिमी छेउमा रहेको पवित्र कुण्ड, जहाँ आमा गुमाएकाहरू स्नान गरी तर्पण गर्छन्।
+    tips_en:
+      - The pond area is small; expect a slow-moving crowd in the morning.
+    tips_ne:
+      - कुण्ड क्षेत्र सानो छ; बिहान बिस्तारै सर्ने भीडको अपेक्षा गर्नुहोस्।
+    festivals:
+      - id: mata-tirtha-aunsi
+        note_en: The pond's one big day of the year; a fair is held around it.
+        note_ne: कुण्डको वर्षमा एक पटकको ठूलो दिन; वरिपरि मेला लाग्छ।
+
+  - id: tundikhel
+    name_en: Tundikhel
+    name_ne: टुँडिखेल
+    kind: ground
+    religion: civic
+    deity_en: Parade ground
+    deity_ne: परेड मैदान
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7015
+    lon: 85.3150
+    elev_m: 1300
+    coord_verified: false
+    about_en: The historic open ground in central Kathmandu used for army parades and the Ghode Jatra horse festival.
+    about_ne: सेनाको परेड र घोडेजात्राका लागि प्रयोग हुने मध्य काठमाडौंको ऐतिहासिक खुला मैदान।
+    tips_en:
+      - Entry to the Ghode Jatra stands is controlled; the public watches from the ground's edges.
+    tips_ne:
+      - घोडेजात्राको मञ्चमा प्रवेश नियन्त्रित हुन्छ; आम जनताले मैदानको छेउबाट हेर्छन्।
+    festivals:
+      - id: ghode-jatra
+        note_en: Army cavalry and acrobatic displays take place in the afternoon; roads around Tundikhel close.
+        note_ne: सेनाको घोडसवार र कलाबाजी प्रदर्शन दिउँसो हुन्छ; टुँडिखेल वरपरका सडक बन्द हुन्छन्।
+
+  - id: rani-pokhari
+    name_en: Rani Pokhari
+    name_ne: रानीपोखरी
+    kind: pond
+    religion: hindu
+    deity_en: Balgopaleshwar temple in the pond
+    deity_ne: पोखरीबीचको बालगोपालेश्वर मन्दिर
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7076
+    lon: 85.3157
+    elev_m: 1300
+    coord_verified: false
+    about_en: The 17th-century queen's pond in central Kathmandu, whose island temple opens to the public only on Bhai Tika.
+    about_ne: मध्य काठमाडौंको सत्रौं शताब्दीको रानीपोखरी, जसको बीचको मन्दिर भाइटीकाको दिन मात्र खुल्छ।
+    tips_en:
+      - Brothers and sisters without siblings visit the temple to receive tika.
+    tips_ne:
+      - दाजुभाइ वा दिदीबहिनी नभएकाहरू टीका लगाउन यहाँ आउँछन्।
+    festivals:
+      - id: bhai-tika
+        note_en: The causeway to the island temple opens for this one day; queues form along Kamaladi.
+        note_ne: पोखरीबीचको मन्दिरसम्मको पुल यही दिन खुल्छ; कमलादीसम्म लाइन लाग्छ।
+
+  - id: kamal-pokhari
+    name_en: Kamal Pokhari
+    name_ne: कमलपोखरी
+    kind: pond
+    religion: hindu
+    deity_en: Pond used for Chhath arghya
+    deity_ne: छठको अर्घ्य दिइने पोखरी
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7114
+    lon: 85.3290
+    elev_m: 1300
+    coord_verified: false
+    about_en: A pond in central Kathmandu that becomes one of the city's main Chhath ghats.
+    about_ne: मध्य काठमाडौंको पोखरी, जुन छठका बेला सहरको प्रमुख घाटमध्ये एक बन्छ।
+    tips_en:
+      - Arrive at least an hour before sunset for the evening arghya.
+    tips_ne:
+      - साँझको अर्घ्यका लागि सूर्यास्तभन्दा कम्तीमा एक घण्टाअघि पुग्नुहोस्।
+    festivals:
+      - id: chhath
+
+  - id: seto-machhindranath
+    name_en: Seto Machhindranath Temple (Jana Bahal)
+    name_ne: सेतो मछिन्द्रनाथ मन्दिर (जनबहाल)
+    kind: temple
+    religion: buddhist
+    deity_en: Karunamaya (Seto Machhindranath)
+    deity_ne: करुणामय (सेतो मछिन्द्रनाथ)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7050
+    lon: 85.3104
+    elev_m: 1300
+    coord_verified: false
+    about_en: A courtyard temple near Asan revered by both Buddhists and Hindus as Karunamaya, compassion personified.
+    about_ne: असननजिकको बहाल मन्दिर, जसलाई बौद्ध र हिन्दु दुवैले करुणामयका रूपमा पुज्छन्।
+    tips_en:
+      - The temple sits in a busy market lane; go early morning for a calmer visit.
+    tips_ne:
+      - मन्दिर भीडभाडयुक्त बजारको गल्लीमा छ; शान्त दर्शनका लागि बिहानै जानुहोस्।
+    festivals:
+      - id: seto-machhindranath-jatra
+
+  - id: manakamana
+    name_en: Manakamana Temple
+    name_ne: मनकामना मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Bhagwati (Manakamana)
+    deity_ne: देवी भगवती (मनकामना)
+    district: Gorkha
+    district_ne: गोरखा
+    province: Gandaki
+    lat: 27.9047
+    lon: 84.5845
+    elev_m: 1302
+    coord_verified: false
+    about_en: The wish-fulfilling goddess on a ridge above the Trishuli river, reached by cable car from Kurintar on the Prithvi Highway.
+    about_ne: त्रिशूली नदीमाथिको डाँडामा रहेकी मनोकामना पूरा गर्ने देवी, जहाँ पृथ्वी राजमार्गको कुरिनटारबाट केबलकारमा पुगिन्छ।
+    tips_en:
+      - Cable car queues at Kurintar can be long on Saturdays and festival days; travel on a weekday if you can.
+    tips_ne:
+      - शनिबार र पर्वका दिन कुरिनटारमा केबलकारको लाइन लामो हुन्छ; सकेसम्म हप्ताको बीचमा जानुहोस्।
+    festivals:
+      - id: maha-ashtami
+      - id: maha-navami
+      - id: ghatasthapana
+
+  - id: gorkha-durbar
+    name_en: Gorkha Durbar and Gorkhakali Temple
+    name_ne: गोरखा दरबार र गोरखकाली मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Gorkhakali, Gorakhnath
+    deity_ne: गोरखकाली, गोरखनाथ
+    district: Gorkha
+    district_ne: गोरखा
+    province: Gandaki
+    lat: 28.0055
+    lon: 84.6285
+    elev_m: 1500
+    coord_verified: false
+    about_en: The hilltop palace of the Shah kings above Gorkha bazaar, birthplace of Prithvi Narayan Shah, with the Gorkhakali temple inside.
+    about_ne: गोरखा बजारमाथिको डाँडामा रहेको शाह राजाहरूको दरबार, पृथ्वीनारायण शाहको जन्मस्थल, जसभित्र गोरखकाली मन्दिर छ।
+    tips_en:
+      - The climb from Gorkha bazaar takes about an hour on stone steps.
+    tips_ne:
+      - गोरखा बजारबाट ढुंगे खुड्किला उक्लँदै करिब एक घण्टा लाग्छ।
+    festivals:
+      - id: maha-ashtami
+      - id: fulpati
+        note_en: The Fulpati sent to Kathmandu traditionally sets out from Gorkha days in advance.
+        note_ne: परम्पराअनुसार काठमाडौं पठाइने फूलपाती केही दिनअघि नै गोरखाबाट हिँड्छ।
+
+  - id: bindhyabasini
+    name_en: Bindhyabasini Temple
+    name_ne: बिन्ध्यवासिनी मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Bhagwati (Bindhyabasini)
+    deity_ne: देवी भगवती (बिन्ध्यवासिनी)
+    district: Kaski
+    district_ne: कास्की
+    province: Gandaki
+    lat: 28.2390
+    lon: 83.9876
+    elev_m: 830
+    coord_verified: false
+    about_en: Pokhara's most important temple, on a small hill in the old bazaar with views of Machhapuchhre on clear mornings.
+    about_ne: पोखराको पुरानो बजारको सानो डाँडामा रहेको सबैभन्दा प्रमुख मन्दिर, जहाँबाट सफा बिहान माछापुच्छ्रे देखिन्छ।
+    tips_en:
+      - Morning visits give the best chance of mountain views behind the temple.
+    tips_ne:
+      - मन्दिरपछाडिको हिमाल हेर्न बिहानको समय उत्तम हुन्छ।
+    festivals:
+      - id: maha-ashtami
+      - id: maha-navami
+      - id: ghatasthapana
+
+  - id: tal-barahi
+    name_en: Tal Barahi Temple
+    name_ne: तालबाराही मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Barahi
+    deity_ne: देवी बाराही
+    district: Kaski
+    district_ne: कास्की
+    province: Gandaki
+    lat: 28.2075
+    lon: 83.9575
+    elev_m: 790
+    coord_verified: false
+    about_en: The island temple in Phewa Lake, Pokhara, reached by rowing boat from Lakeside.
+    about_ne: पोखराको फेवाताल बीचमा रहेको टापु मन्दिर, जहाँ लेकसाइडबाट डुंगामा पुगिन्छ।
+    tips_en:
+      - Boats leave from the Barahi ghat at Lakeside; life jackets are mandatory.
+    tips_ne:
+      - लेकसाइडको बाराही घाटबाट डुंगा छुट्छ; लाइफ ज्याकेट अनिवार्य छ।
+    festivals:
+      - id: maha-ashtami
+      - id: kartik-purnima
+
+  - id: muktinath
+    name_en: Muktinath Temple
+    name_ne: मुक्तिनाथ मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu (Muktinath); sacred to Buddhists as Chumig Gyatsa
+    deity_ne: भगवान विष्णु (मुक्तिनाथ); बौद्धहरूका लागि छुमिग ग्यात्सा
+    district: Mustang
+    district_ne: मुस्ताङ
+    province: Gandaki
+    lat: 28.8166
+    lon: 83.8716
+    elev_m: 3710
+    coord_verified: false
+    about_en: A high-altitude pilgrimage site below Thorong La, sacred to both Hindus and Buddhists, with 108 water spouts and an eternal natural gas flame.
+    about_ne: थोरोङ लाको फेदमा रहेको उच्च हिमाली तीर्थस्थल, हिन्दु र बौद्ध दुवैका लागि पवित्र, जहाँ १०८ धारा र प्राकृतिक ग्याँसको अखण्ड ज्योति छ।
+    tips_en:
+      - At over 3,700 m, take altitude seriously — ascend gradually from Jomsom and drink plenty of water.
+      - Bathing under all 108 spouts is bracingly cold; carry a change of clothes.
+      - Mornings are calmest; strong winds usually pick up in the Kali Gandaki valley after noon.
+    tips_ne:
+      - ३,७०० मिटरभन्दा माथि भएकाले उचाइ रोगप्रति सजग रहनुहोस् — जोमसोमबाट बिस्तारै उक्लनुहोस् र प्रशस्त पानी पिउनुहोस्।
+      - १०८ धारामा स्नान गर्दा निकै चिसो हुन्छ; फेर्ने लुगा लैजानुहोस्।
+      - बिहान शान्त हुन्छ; कालीगण्डकी उपत्यकामा दिउँसोपछि प्रायः हुरी चल्छ।
+    festivals:
+      - id: janai-purnima
+      - id: maha-shivaratri
+
+  - id: lumbini
+    name_en: Lumbini (Maya Devi Temple)
+    name_ne: लुम्बिनी (मायादेवी मन्दिर)
+    kind: temple
+    religion: buddhist
+    deity_en: Birthplace of Gautama Buddha
+    deity_ne: गौतम बुद्धको जन्मस्थल
+    district: Rupandehi
+    district_ne: रुपन्देही
+    province: Lumbini
+    lat: 27.4697
+    lon: 83.2760
+    elev_m: 105
+    coord_verified: false
+    unesco: true
+    about_en: The birthplace of Siddhartha Gautama. The Maya Devi Temple marks the marker stone, beside the Ashoka pillar of 249 BCE and the sacred Puskarini pond, at the centre of a monastic zone with temples from many countries.
+    about_ne: सिद्धार्थ गौतमको जन्मस्थल। मायादेवी मन्दिरले जन्मस्थलको चिह्न ढुंगा जनाउँछ, छेउमा ईसापूर्व २४९ को अशोक स्तम्भ र पवित्र पुष्करिणी पोखरी छन्, र वरिपरि विभिन्न देशका गुम्बा भएको बौद्ध विहार क्षेत्र छ।
+    tips_en:
+      - The monastic zone is large; rent a bicycle or e-rickshaw at the gates.
+      - From April to June, midday heat often passes 40 °C; visit early morning or late afternoon.
+    tips_ne:
+      - विहार क्षेत्र ठूलो छ; मूलद्वारमा साइकल वा ई-रिक्सा भाडामा लिन सकिन्छ।
+      - वैशाखदेखि असारसम्म दिउँसो ४० डिग्रीभन्दा बढी गर्मी हुने भएकाले बिहान वा बेलुकी घुम्नुहोस्।
+    festivals:
+      - id: buddha-jayanti
+        note_en: Pilgrims and monks from across Asia gather for prayers, processions and peace ceremonies; dignitaries usually attend.
+        note_ne: एसियाभरका तीर्थयात्री र भिक्षु प्रार्थना, शोभायात्रा र शान्ति समारोहका लागि भेला हुन्छन्; प्रायः विशिष्ट व्यक्तिहरू सहभागी हुन्छन्।
+
+  - id: janaki-mandir
+    name_en: Janaki Mandir, Janakpur
+    name_ne: जानकी मन्दिर, जनकपुर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Sita (Janaki)
+    deity_ne: देवी सीता (जानकी)
+    district: Dhanusha
+    district_ne: धनुषा
+    province: Madhesh
+    lat: 26.7307
+    lon: 85.9256
+    elev_m: 74
+    coord_verified: false
+    about_en: A white marble palace-temple built in 1910 in Hindu-Koiri style on the site where Sita is believed to have been born, at the heart of the ancient city of Mithila.
+    about_ne: सीताको जन्मस्थल मानिने ठाउँमा सन् १९१० मा हिन्दु-कोइरी शैलीमा बनेको सेतो संगमरमरको दरबार-मन्दिर, प्राचीन मिथिला सहरको मुटुमा।
+    tips_en:
+      - Evening aarti is the most atmospheric time to visit.
+      - Mithila art shops and the Janakpur Women's Art Centre are worth a stop.
+    tips_ne:
+      - साँझको आरती दर्शनका लागि सबैभन्दा मनमोहक समय हो।
+      - मिथिला कलाका पसल र जनकपुर महिला कला केन्द्र अवश्य हेर्नुहोस्।
+    festivals:
+      - id: vivah-panchami
+        note_en: Week-long celebrations re-enact the wedding of Ram and Sita, with a grand barat procession from Ram Mandir to Janaki Mandir on the day.
+        note_ne: हप्ता दिनसम्म राम-सीता विवाहको पुनर्मञ्चन गरिन्छ, पर्वको दिन राम मन्दिरबाट जानकी मन्दिरसम्म भव्य बारात निस्कन्छ।
+      - id: ram-navami
+      - id: chhath
+        note_en: Janakpur's many ponds (sagar), including Gangasagar and Dhanushsagar, fill with devotees for the sunset and sunrise arghya.
+        note_ne: गंगासागर, धनुषसागर लगायत जनकपुरका सागरहरू सूर्यास्त र सूर्योदयको अर्घ्यका लागि भक्तजनले भरिन्छन्।
+      - id: holi-terai
+
+  - id: ram-mandir-janakpur
+    name_en: Ram Mandir, Janakpur
+    name_ne: राम मन्दिर, जनकपुर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Ram
+    deity_ne: भगवान राम
+    district: Dhanusha
+    district_ne: धनुषा
+    province: Madhesh
+    lat: 26.7290
+    lon: 85.9240
+    elev_m: 74
+    coord_verified: false
+    about_en: A pagoda-style temple of Lord Ram near Janaki Mandir, the starting point of the Vivah Panchami wedding procession.
+    about_ne: जानकी मन्दिरनजिकको प्यागोडा शैलीको राम मन्दिर, जहाँबाट विवाह पञ्चमीको बारात सुरु हुन्छ।
+    tips_en:
+      - Walk between Ram Mandir and Janaki Mandir through the old bazaar.
+    tips_ne:
+      - पुरानो बजार हुँदै राम मन्दिरदेखि जानकी मन्दिरसम्म पैदल घुम्नुहोस्।
+    festivals:
+      - id: ram-navami
+        note_en: The main celebrations of Ram's birth take place here at midday.
+        note_ne: रामजन्मको मुख्य उत्सव यहाँ मध्याह्नमा हुन्छ।
+      - id: vivah-panchami
+
+  - id: gosaikunda
+    name_en: Gosaikunda Lake
+    name_ne: गोसाइँकुण्ड
+    kind: lake
+    religion: hindu
+    deity_en: Sacred lake of Lord Shiva
+    deity_ne: भगवान शिवको पवित्र कुण्ड
+    district: Rasuwa
+    district_ne: रसुवा
+    province: Bagmati
+    lat: 28.0820
+    lon: 85.4150
+    elev_m: 4380
+    coord_verified: false
+    about_en: An alpine lake at about 4,380 m in Langtang National Park, believed to have been created by Shiva's trident. Thousands make the pilgrimage on Janai Purnima.
+    about_ne: लाङटाङ राष्ट्रिय निकुञ्जमा करिब ४,३८० मिटर उचाइमा रहेको हिमताल, जुन शिवको त्रिशूलले बनेको विश्वास गरिन्छ। जनै पूर्णिमामा हजारौं तीर्थयात्री पुग्छन्।
+    tips_en:
+      - The usual route climbs from Dhunche via Sing Gompa in two days; rushing it risks altitude sickness.
+      - Janai Purnima falls in the monsoon — expect rain, leeches lower down, and slippery trails.
+      - Carry warm layers; nights near the lake are cold even in August.
+    tips_ne:
+      - सामान्य बाटो धुन्चेबाट सिङगुम्बा हुँदै दुई दिनमा उक्लन्छ; हतार गर्दा लेक लाग्ने जोखिम हुन्छ।
+      - जनै पूर्णिमा वर्षामा पर्ने भएकाले पानी, तल जुका र चिप्लो बाटोको अपेक्षा गर्नुहोस्।
+      - न्यानो लुगा लैजानुहोस्; साउनमा पनि कुण्डनजिक राति चिसो हुन्छ।
+    festivals:
+      - id: janai-purnima
+        note_en: Pilgrims and jhankris walk up for days to bathe in the lake at dawn on the full moon.
+        note_ne: पूर्णिमाको बिहान कुण्डमा स्नान गर्न तीर्थयात्री र झाँक्रीहरू दिनौं हिँडेर पुग्छन्।
+
+  - id: pathibhara
+    name_en: Pathibhara Devi Temple
+    name_ne: पाथीभरा देवी मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Pathibhara
+    deity_ne: पाथीभरा देवी
+    district: Taplejung
+    district_ne: ताप्लेजुङ
+    province: Koshi
+    lat: 27.4270
+    lon: 87.7660
+    elev_m: 3794
+    coord_verified: false
+    about_en: A ridge-top shrine at about 3,794 m in Taplejung, eastern Nepal's most visited pilgrimage site, with views of Kanchenjunga on clear days.
+    about_ne: ताप्लेजुङमा करिब ३,७९४ मिटर उचाइको डाँडामा रहेको पूर्वी नेपालको सबैभन्दा धेरै भक्तजन पुग्ने तीर्थस्थल, सफा दिनमा कञ्चनजंघा देखिन्छ।
+    tips_en:
+      - The trail from Kafle Bhanjyang is steep; start before dawn to reach the top while the sky is clear.
+      - Snow can cover the final section from December to February.
+    tips_ne:
+      - काफ्ले भन्ज्याङबाटको बाटो ठाडो छ; आकाश सफा हुँदै टुप्पो पुग्न बिहान सबेरै हिँड्नुहोस्।
+      - पुसदेखि फागुनसम्म अन्तिम खण्डमा हिउँ पर्न सक्छ।
+    festivals:
+      - id: maha-navami
+      - id: buddha-jayanti
+
+  - id: halesi
+    name_en: Halesi Mahadev (Maratika Cave)
+    name_ne: हलेसी महादेव (मारातिका गुफा)
+    kind: cave
+    religion: hindu
+    deity_en: Lord Shiva; sacred to Buddhists as Maratika
+    deity_ne: भगवान शिव; बौद्धहरूका लागि मारातिका
+    district: Khotang
+    district_ne: खोटाङ
+    province: Koshi
+    lat: 27.1976
+    lon: 86.6200
+    elev_m: 1400
+    coord_verified: false
+    about_en: A natural limestone cave in Khotang, revered by Hindus as a Shiva shrine and by Buddhists as the cave where Padmasambhava attained longevity.
+    about_ne: खोटाङको प्राकृतिक चुनढुंगे गुफा, जसलाई हिन्दुहरू शिवस्थलका रूपमा र बौद्धहरू पद्मसम्भवले दीर्घायु सिद्धि प्राप्त गरेको गुफाका रूपमा पुज्छन्।
+    tips_en:
+      - Bring a torch for the inner chambers; floors can be wet.
+    tips_ne:
+      - भित्री गुफाका लागि टर्च लैजानुहोस्; भुइँ चिप्लो हुन सक्छ।
+    festivals:
+      - id: maha-shivaratri
+        note_en: The cave's biggest gathering of the year, with pilgrims from across eastern Nepal and India.
+        note_ne: पूर्वी नेपाल र भारतभरबाट तीर्थयात्री आउने गुफाको वर्षकै ठूलो जमघट।
+      - id: bala-chaturdashi
+
+  - id: barahachhetra
+    name_en: Barahachhetra
+    name_ne: बराहक्षेत्र
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu as Varaha
+    deity_ne: वराह अवतारका भगवान विष्णु
+    district: Sunsari
+    district_ne: सुनसरी
+    province: Koshi
+    lat: 26.8500
+    lon: 87.1660
+    elev_m: 150
+    coord_verified: false
+    about_en: An ancient pilgrimage site at the confluence of the Koka and Koshi rivers, where Vishnu is worshipped in his boar incarnation.
+    about_ne: कोका र कोशी नदीको दोभानमा रहेको प्राचीन तीर्थस्थल, जहाँ विष्णुको वराह अवतारको पूजा गरिन्छ।
+    tips_en:
+      - Large melas fill the riverbank; nearby lodging books up early.
+    tips_ne:
+      - नदी किनारभरि ठूलो मेला लाग्छ; नजिकका होटल चाँडै भरिन्छन्।
+    festivals:
+      - id: kartik-purnima
+        note_en: One of the largest fairs in eastern Nepal is held on the riverbank.
+        note_ne: पूर्वी नेपालकै ठूलो मेलामध्ये एक नदी किनारमा लाग्छ।
+      - id: maghe-sankranti
+
+  - id: devghat
+    name_en: Devghat Dham
+    name_ne: देवघाट धाम
+    kind: confluence
+    religion: hindu
+    deity_en: Confluence of the Kali Gandaki and Trishuli
+    deity_ne: कालीगण्डकी र त्रिशूलीको दोभान
+    district: Tanahun
+    district_ne: तनहुँ
+    province: Gandaki
+    lat: 27.7180
+    lon: 84.4290
+    elev_m: 200
+    coord_verified: false
+    about_en: A sacred confluence north of Narayanghat where many elderly devotees spend their final years, lined with ashrams and temples.
+    about_ne: नारायणगढको उत्तरमा रहेको पवित्र दोभान, जहाँ धेरै वृद्ध भक्तजन जीवनको अन्तिम समय बिताउँछन्; किनारमा आश्रम र मन्दिर छन्।
+    tips_en:
+      - A suspension bridge links the Chitwan and Tanahun banks; the mela spreads across both.
+    tips_ne:
+      - झोलुंगे पुलले चितवन र तनहुँ किनार जोड्छ; मेला दुवैतर्फ फैलिन्छ।
+    festivals:
+      - id: maghe-sankranti
+        note_en: The Maghe Sankranti mela draws tens of thousands for a holy dip at the confluence.
+        note_ne: माघे संक्रान्तिको मेलामा दोभानमा स्नान गर्न हजारौं भक्तजन आउँछन्।
+
+  - id: doleshwor
+    name_en: Doleshwor Mahadev
+    name_ne: डोलेश्वर महादेव
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva (believed to be the head of Kedarnath)
+    deity_ne: भगवान शिव (केदारनाथको शिर मानिने)
+    district: Bhaktapur
+    district_ne: भक्तपुर
+    province: Bagmati
+    lat: 27.6400
+    lon: 85.4580
+    elev_m: 1500
+    coord_verified: false
+    about_en: A Shiva temple in Bhaktapur's Suryabinayak area, believed by many to be the head of the Kedarnath linga in India.
+    about_ne: भक्तपुरको सूर्यविनायक क्षेत्रमा रहेको शिव मन्दिर, जसलाई धेरैले भारतको केदारनाथ लिङ्गको शिर मान्छन्।
+    tips_en:
+      - Roads to the temple are narrow; use public transport on festival days.
+    tips_ne:
+      - मन्दिर पुग्ने सडक साँघुरो छ; पर्वका दिन सार्वजनिक यातायात प्रयोग गर्नुहोस्।
+    festivals:
+      - id: maha-shivaratri
+
+  - id: kalinchowk
+    name_en: Kalinchowk Bhagwati
+    name_ne: कालिञ्चोक भगवती
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Kalinchowk Bhagwati
+    deity_ne: कालिञ्चोक भगवती
+    district: Dolakha
+    district_ne: दोलखा
+    province: Bagmati
+    lat: 27.7790
+    lon: 86.0430
+    elev_m: 3842
+    coord_verified: false
+    about_en: A high ridge-top shrine in Dolakha reached by cable car from Kuri village, popular for winter snow as well as pilgrimage.
+    about_ne: दोलखाको अग्लो डाँडामा रहेको मन्दिर, जहाँ कुरी गाउँबाट केबलकारमा पुगिन्छ; तीर्थका साथै जाडोमा हिउँ हेर्न पनि लोकप्रिय।
+    tips_en:
+      - The final steps above the cable car are at nearly 3,850 m; walk slowly.
+      - Roads to Kuri can be blocked by snow in winter.
+    tips_ne:
+      - केबलकारमाथिका अन्तिम खुड्किला करिब ३,८५० मिटरमा छन्; बिस्तारै हिँड्नुहोस्।
+      - जाडोमा कुरीसम्मको सडक हिउँले अवरुद्ध हुन सक्छ।
+    festivals:
+      - id: maha-ashtami
+      - id: janai-purnima
+
+  - id: tengboche
+    name_en: Tengboche Monastery
+    name_ne: तेङबोचे गुम्बा
+    kind: monastery
+    religion: buddhist
+    deity_en: Tibetan Buddhist monastery (Nyingma)
+    deity_ne: तिब्बती बौद्ध गुम्बा (ञिङ्मा)
+    district: Solukhumbu
+    district_ne: सोलुखुम्बु
+    province: Koshi
+    lat: 27.8362
+    lon: 86.7646
+    elev_m: 3867
+    coord_verified: false
+    about_en: The largest monastery in the Khumbu, on a ridge at about 3,867 m on the Everest Base Camp trail, facing Ama Dablam and Everest.
+    about_ne: सगरमाथा आधार शिविर पदमार्गमा करिब ३,८६७ मिटरको डाँडामा रहेको खुम्बुको सबैभन्दा ठूलो गुम्बा, जसको अगाडि अमादब्लम र सगरमाथा देखिन्छन्।
+    tips_en:
+      - Afternoon prayers can usually be watched quietly from the back of the hall; no photography inside.
+      - Most trekkers reach Tengboche from Namche Bazaar in a day.
+    tips_ne:
+      - दिउँसोको प्रार्थना प्रायः हलको पछाडिबाट चुपचाप हेर्न सकिन्छ; भित्र फोटो खिच्न पाइँदैन।
+      - अधिकांश पदयात्री नाम्चे बजारबाट एक दिनमा तेङबोचे पुग्छन्।
+    festivals:
+      - id: mani-rimdu
+        note_en: Masked cham dances fill the courtyard over three days; lodges in Tengboche and Deboche book out.
+        note_ne: तीन दिनसम्म आँगनमा मुकुण्डो लगाएर छाम नाच हुन्छ; तेङबोचे र देबोचेका लज भरिन्छन्।
+      - id: gyalpo-lhosar
+      - id: buddha-jayanti
+
+  - id: namo-buddha
+    name_en: Namo Buddha
+    name_ne: नमोबुद्ध
+    kind: stupa
+    religion: buddhist
+    deity_en: Buddhist stupa and monastery
+    deity_ne: बौद्ध स्तूप र गुम्बा
+    district: Kavrepalanchok
+    district_ne: काभ्रेपलाञ्चोक
+    province: Bagmati
+    lat: 27.5710
+    lon: 85.5850
+    elev_m: 1750
+    coord_verified: false
+    about_en: A hilltop stupa and the Thrangu Tashi Yangtse monastery south-east of Dhulikhel, linked to the Jataka story of a prince who offered himself to a starving tigress.
+    about_ne: धुलिखेलको दक्षिण-पूर्व डाँडामा रहेको स्तूप र थ्रांगु ताशी याङ्त्से गुम्बा, जसलाई भोकाएकी बाघिनीलाई आफूलाई अर्पण गर्ने राजकुमारको जातक कथासँग जोडिन्छ।
+    tips_en:
+      - A popular day hike links Dhulikhel and Namo Buddha through farming villages.
+    tips_ne:
+      - धुलिखेलदेखि नमोबुद्धसम्म खेतीपाती भएका गाउँ हुँदै लोकप्रिय दिने पैदल यात्रा गर्न सकिन्छ।
+    festivals:
+      - id: buddha-jayanti
+      - id: gyalpo-lhosar
+
+  - id: jame-masjid-kathmandu
+    name_en: Kashmiri Takiya Jame Masjid
+    name_ne: कश्मिरी तकिया जामे मस्जिद
+    kind: mosque
+    religion: muslim
+    deity_en: Mosque
+    deity_ne: मस्जिद
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7066
+    lon: 85.3152
+    elev_m: 1300
+    coord_verified: false
+    about_en: One of Kathmandu's oldest mosques, near Ghantaghar and Durbar Marg, and a focal point for Eid prayers in the capital.
+    about_ne: घण्टाघर र दरबारमार्गनजिक रहेको काठमाडौंको पुरानो मस्जिदमध्ये एक, र राजधानीमा इदको नमाजको मुख्य केन्द्र।
+    tips_en:
+      - Dress modestly; women should cover their heads if invited inside.
+    tips_ne:
+      - शालीन पहिरन लगाउनुहोस्; भित्र निम्तो भएमा महिलाले टाउको ढाक्नुपर्छ।
+    festivals:
+      - id: eid-al-fitr
+        note_en: Eid prayers overflow into the surrounding streets and Ratna Park area in the morning.
+        note_ne: बिहानको इदको नमाज वरपरका सडक र रत्नपार्क क्षेत्रसम्म फैलिन्छ।
+      - id: eid-al-adha
+
+  - id: shaileshwari
+    name_en: Shaileshwari Temple, Doti
+    name_ne: शैलेश्वरी मन्दिर, डोटी
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Shaileshwari
+    deity_ne: शैलेश्वरी देवी
+    district: Doti
+    district_ne: डोटी
+    province: Sudurpashchim
+    lat: 29.2650
+    lon: 80.9450
+    elev_m: 1300
+    coord_verified: false
+    about_en: The principal goddess temple of Silgadhi in Doti, at the centre of far-western Nepal's festival life.
+    about_ne: डोटीको सिलगढीमा रहेको प्रमुख देवी मन्दिर, सुदूरपश्चिमको चाडपर्वको केन्द्र।
+    tips_en:
+      - Gaura and Dashain bring deuda dancing circles to the temple grounds.
+    tips_ne:
+      - गौरा र दशैंमा मन्दिर परिसरमा देउडा खेलिन्छ।
+    festivals:
+      - id: gaura-parva
+        note_en: Women carry the Gaura image and sing deuda songs through the night.
+        note_ne: महिलाहरू गौराको मूर्ति बोकी रातभर देउडा गीत गाउँछन्।
+      - id: maha-ashtami
+
+  # ------------------------------------------------------------- added: more temples, gumbas, church, gurudwara
+  - id: asan-annapurna
+    name_en: Annapurna Ajima Temple, Asan
+    name_ne: अन्नपूर्ण अजिमा मन्दिर, असन
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Annapurna (Asan Ajima)
+    deity_ne: देवी अन्नपूर्ण (असन अजिमा)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7077
+    lon: 85.3116
+    elev_m: 1300
+    coord_verified: false
+    about_en: A three-tiered temple at the heart of Asan, Kathmandu's old market crossroads, dedicated to the goddess of grain and plenty.
+    about_ne: काठमाडौंको पुरानो बजार असन चोकको मुटुमा रहेको अन्न र समृद्धिकी देवी अन्नपूर्णको तीनतले मन्दिर।
+    tips_en:
+      - Asan is a busy wholesale market; mornings before nine are the easiest time to walk through.
+    tips_ne:
+      - असन व्यस्त थोक बजार हो; बिहान नौ बजेअघि हिँड्न सबैभन्दा सजिलो हुन्छ।
+    festivals:
+      - id: pahan-charhe
+        note_en: Mother goddesses from around the old city are carried here in palanquins and made to meet in the Asan square.
+        note_ne: पुरानो सहरका विभिन्न मातृदेवीलाई खटमा राखी यहाँ ल्याइन्छ र असन चोकमा भेट गराइन्छ।
+      - id: ghatasthapana
+      - id: maha-ashtami
+
+  - id: bajrayogini-sankhu
+    name_en: Bajrayogini Temple, Sankhu
+    name_ne: वज्रयोगिनी मन्दिर, साँखु
+    kind: temple
+    religion: buddhist
+    deity_en: Bajrayogini (Ugratara), revered by Buddhists and Hindus
+    deity_ne: वज्रयोगिनी (उग्रतारा), बौद्ध र हिन्दु दुवैले पुज्ने
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7510
+    lon: 85.4810
+    elev_m: 1500
+    coord_verified: false
+    about_en: A forest shrine on the hill above the old Newar town of Sankhu, north-east of Kathmandu, sacred to both Vajrayana Buddhists and Hindus.
+    about_ne: काठमाडौंको उत्तर-पूर्व, पुरानो नेवार बस्ती साँखुमाथिको डाँडाको जंगलमा रहेको, वज्रयानी बौद्ध र हिन्दु दुवैका लागि पवित्र स्थल।
+    tips_en:
+      - The stone path from Sankhu climbs for about 30–40 minutes.
+    tips_ne:
+      - साँखुबाट ढुंगे बाटो करिब ३०–४० मिनेट उक्लनुपर्छ।
+    festivals:
+      - id: maha-ashtami
+      - id: buddha-jayanti
+
+  - id: salinadi-sankhu
+    name_en: Salinadi, Sankhu
+    name_ne: सालीनदी, साँखु
+    kind: confluence
+    religion: hindu
+    deity_en: Sacred river and Madhav Narayan shrine
+    deity_ne: पवित्र नदी र माधव नारायण
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7340
+    lon: 85.4700
+    elev_m: 1420
+    coord_verified: false
+    about_en: The riverbank at Sankhu where devotees, many of them women, bathe and worship during the month of the Swasthani Brata.
+    about_ne: स्वस्थानी व्रतको महिनाभर भक्तजन, विशेषगरी महिलाहरू, स्नान र पूजा गर्ने साँखुको नदी किनार।
+    tips_en:
+      - Mornings in Magh are cold by the river; bring warm clothes.
+    tips_ne:
+      - माघमा बिहान नदी किनार चिसो हुन्छ; न्यानो लुगा लैजानुहोस्।
+    festivals:
+      - id: swasthani-brata
+        note_en: A month-long mela begins here, with devotees bathing in the Salinadi and reading the Swasthani Katha.
+        note_ne: यहाँ महिना दिने मेला सुरु हुन्छ; भक्तजन सालीनदीमा स्नान गरी स्वस्थानी कथा वाचन गर्छन्।
+
+  - id: naxal-bhagwati
+    name_en: Naxal Bhagwati Temple
+    name_ne: नक्साल भगवती मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Bhagwati
+    deity_ne: देवी भगवती
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7140
+    lon: 85.3290
+    elev_m: 1310
+    coord_verified: false
+    about_en: A Bhagwati temple in Naxal, central Kathmandu, one of the city's busiest shrines during Dashain.
+    about_ne: मध्य काठमाडौंको नक्सालमा रहेको भगवती मन्दिर, दशैंमा सहरकै धेरै भीड हुने मन्दिरमध्ये एक।
+    tips_en:
+      - Queues on Ashtami and Navami spill onto the main road; go early.
+    tips_ne:
+      - अष्टमी र नवमीमा लाइन मूल सडकसम्म आइपुग्छ; बिहानै जानुहोस्।
+    festivals:
+      - id: ghatasthapana
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: bhadrakali
+    name_en: Bhadrakali Temple
+    name_ne: भद्रकाली मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Bhadrakali
+    deity_ne: देवी भद्रकाली
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6977
+    lon: 85.3183
+    elev_m: 1300
+    coord_verified: false
+    about_en: A temple of the goddess Bhadrakali at the south-east corner of Tundikhel, one of Kathmandu's guardian shakti shrines.
+    about_ne: टुँडिखेलको दक्षिण-पूर्वी कुनामा रहेको देवी भद्रकालीको मन्दिर, काठमाडौंका रक्षक शक्तिपीठमध्ये एक।
+    tips_en:
+      - The temple sits on a busy junction; walk in from Tundikhel rather than stopping on the road.
+    tips_ne:
+      - मन्दिर व्यस्त चोकमा छ; सडकमा नरोकी टुँडिखेलतर्फबाट हिँडेर जानुहोस्।
+    festivals:
+      - id: maha-ashtami
+      - id: maha-navami
+      - id: ghatasthapana
+
+  - id: kirateshwar
+    name_en: Kirateshwar Mahadev Temple
+    name_ne: किरातेश्वर महादेव मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva as Kirateshwar
+    deity_ne: किरातेश्वरका रूपमा भगवान शिव
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7093
+    lon: 85.3497
+    elev_m: 1310
+    coord_verified: false
+    about_en: A Shiva temple beside the Bagmati near Pashupatinath, known for its full-moon evenings of classical music.
+    about_ne: पशुपतिनाथनजिक बागमती किनारमा रहेको शिव मन्दिर, पूर्णिमाका साँझ हुने शास्त्रीय संगीतका लागि परिचित।
+    tips_en:
+      - Combine with Pashupatinath; the temple is a short walk along the river.
+    tips_ne:
+      - पशुपतिनाथसँगै दर्शन गर्न सकिन्छ; नदी किनारै केही मिनेटको दूरीमा छ।
+    festivals:
+      - id: maha-shivaratri
+      - id: bala-chaturdashi
+
+  - id: ichangu-narayan
+    name_en: Ichangu Narayan Temple
+    name_ne: इचंगु नारायण मन्दिर
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu (Narayan)
+    deity_ne: भगवान विष्णु (नारायण)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7400
+    lon: 85.2785
+    elev_m: 1520
+    coord_verified: false
+    about_en: One of the four Narayan temples guarding the Kathmandu valley, on the hills north-west of Swayambhu.
+    about_ne: काठमाडौं उपत्यकाको रक्षा गर्ने चार नारायणमध्ये एक, स्वयम्भूको उत्तर-पश्चिमी डाँडामा।
+    tips_en:
+      - Many devotees visit all four Narayans — Changu, Ichangu, Sesh and Bishankhu — on Haribodhini Ekadashi.
+    tips_ne:
+      - हरिबोधिनी एकादशीमा धेरै भक्तजन चाँगु, इचंगु, शेष र विशंखु गरी चारै नारायणको दर्शन गर्छन्।
+    festivals:
+      - id: haribodhini-ekadashi
+      - id: harishayani-ekadashi
+
+  - id: sesh-narayan
+    name_en: Sesh Narayan Temple, Pharping
+    name_ne: शेष नारायण मन्दिर, फर्पिङ
+    kind: temple
+    religion: hindu
+    deity_en: Lord Vishnu (Narayan)
+    deity_ne: भगवान विष्णु (नारायण)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6155
+    lon: 85.2652
+    elev_m: 1450
+    coord_verified: false
+    about_en: A Narayan temple beside spring-fed ponds below a cliff at Pharping, on the road to Dakshinkali.
+    about_ne: दक्षिणकाली जाने बाटोमा फर्पिङको भीरमुनि मूलको पोखरी छेउमा रहेको नारायण मन्दिर।
+    tips_en:
+      - Easy to combine with Dakshinkali and the Pharping gumbas in one trip.
+    tips_ne:
+      - दक्षिणकाली र फर्पिङका गुम्बासँगै एकै यात्रामा जान सकिन्छ।
+    festivals:
+      - id: haribodhini-ekadashi
+
+  - id: kopan
+    name_en: Kopan Monastery
+    name_ne: कोपन गुम्बा
+    kind: monastery
+    religion: buddhist
+    deity_en: Tibetan Buddhist monastery (Gelug)
+    deity_ne: तिब्बती बौद्ध गुम्बा (गेलुग)
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.7426
+    lon: 85.3622
+    elev_m: 1400
+    coord_verified: false
+    about_en: A hilltop monastery north of Boudha, well known for meditation courses for visitors from around the world.
+    about_ne: बौद्धको उत्तर डाँडामा रहेको गुम्बा, विश्वभरका आगन्तुकका लागि ध्यान शिविरका लागि परिचित।
+    tips_en:
+      - Visiting hours are limited during courses; check before you go.
+    tips_ne:
+      - शिविर चलिरहेका बेला भ्रमण समय सीमित हुन्छ; जानुअघि बुझ्नुहोस्।
+    festivals:
+      - id: buddha-jayanti
+      - id: gyalpo-lhosar
+
+  - id: pharping-gumbas
+    name_en: Pharping caves and gumbas
+    name_ne: फर्पिङका गुफा र गुम्बा
+    kind: cave
+    religion: buddhist
+    deity_en: Caves of Guru Padmasambhava
+    deity_ne: गुरु पद्मसम्भवका गुफा
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6125
+    lon: 85.2640
+    elev_m: 1500
+    coord_verified: false
+    about_en: Hillside caves where Guru Padmasambhava is believed to have meditated, surrounded by monasteries and prayer flags, south of Kathmandu.
+    about_ne: काठमाडौंको दक्षिणमा गुरु पद्मसम्भवले ध्यान गरेको विश्वास गरिएका डाँडाका गुफा, वरिपरि गुम्बा र प्रार्थना ध्वजा।
+    tips_en:
+      - The caves are small; remove shoes and keep voices low.
+    tips_ne:
+      - गुफा साना छन्; जुत्ता खोलेर शान्त रहनुहोस्।
+    festivals:
+      - id: buddha-jayanti
+      - id: gyalpo-lhosar
+
+  - id: assumption-church
+    name_en: Church of the Assumption, Dhobighat
+    name_ne: असम्प्सन चर्च, धोबीघाट
+    kind: church
+    religion: christian
+    deity_en: Roman Catholic church
+    deity_ne: रोमन क्याथोलिक चर्च
+    district: Lalitpur
+    district_ne: ललितपुर
+    province: Bagmati
+    lat: 27.6740
+    lon: 85.3040
+    elev_m: 1300
+    coord_verified: false
+    about_en: The main Catholic church of the Kathmandu valley, in Dhobighat, Lalitpur.
+    about_ne: ललितपुरको धोबीघाटमा रहेको काठमाडौं उपत्यकाको मुख्य क्याथोलिक चर्च।
+    tips_en:
+      - Christmas Eve and Christmas Day services are crowded; arrive early for a seat.
+    tips_ne:
+      - क्रिसमसको अघिल्लो साँझ र क्रिसमसको दिन प्रार्थनामा भीड हुन्छ; ठाउँ पाउन चाँडै पुग्नुहोस्।
+    festivals:
+      - id: christmas
+        note_en: Midnight mass on Christmas Eve and services through Christmas Day.
+        note_ne: क्रिसमसको अघिल्लो राति मध्यरातको प्रार्थना र क्रिसमसभर सेवा।
+
+  - id: gurudwara-kupondole
+    name_en: Gurudwara Guru Nanak Satsang, Kupondole
+    name_ne: गुरुद्वारा गुरु नानक सत्संग, कुपण्डोल
+    kind: temple
+    religion: sikh
+    deity_en: Sikh gurudwara
+    deity_ne: सिख गुरुद्वारा
+    district: Lalitpur
+    district_ne: ललितपुर
+    province: Bagmati
+    lat: 27.6880
+    lon: 85.3160
+    elev_m: 1300
+    coord_verified: false
+    about_en: A Sikh gurudwara in Kupondole, Lalitpur, open to visitors of every faith for prayers and langar.
+    about_ne: ललितपुरको कुपण्डोलमा रहेको सिख गुरुद्वारा, जहाँ सबै धर्मका आगन्तुक प्रार्थना र लंगरमा सहभागी हुन सक्छन्।
+    tips_en:
+      - Cover your head and remove shoes before entering; head scarves are usually provided.
+    tips_ne:
+      - भित्र पस्नुअघि टाउको ढाक्नुहोस् र जुत्ता खोल्नुहोस्; टाउको ढाक्ने कपडा प्रायः उपलब्ध हुन्छ।
+    festivals:
+      - id: guru-nanak-jayanti
+        note_en: Continuous reading of the Guru Granth Sahib ends on the day, followed by kirtan and langar for everyone.
+        note_ne: गुरु ग्रन्थ साहिबको अखण्ड पाठ यस दिन सकिन्छ, त्यसपछि कीर्तन र सबैका लागि लंगर हुन्छ।
+
+  - id: chandeshwori-banepa
+    name_en: Chandeshwori Temple, Banepa
+    name_ne: चण्डेश्वरी मन्दिर, बनेपा
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Chandeshwori
+    deity_ne: देवी चण्डेश्वरी
+    district: Kavrepalanchok
+    district_ne: काभ्रेपलाञ्चोक
+    province: Bagmati
+    lat: 27.6330
+    lon: 85.5330
+    elev_m: 1450
+    coord_verified: false
+    about_en: A goddess temple on the edge of Banepa, east of Bhaktapur, set above a river gorge.
+    about_ne: भक्तपुरको पूर्व, बनेपाको छेउमा खोल्सामाथि रहेको देवी मन्दिर।
+    tips_en:
+      - Banepa is about an hour from Kathmandu on the Araniko Highway.
+    tips_ne:
+      - अरनिको राजमार्ग हुँदै काठमाडौंबाट बनेपा करिब एक घण्टाको दूरीमा छ।
+    festivals:
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: bhimeshwor-dolakha
+    name_en: Bhimeshwor Temple, Dolakha
+    name_ne: भीमेश्वर मन्दिर, दोलखा
+    kind: temple
+    religion: hindu
+    deity_en: Bhimsen (Bhimeshwor)
+    deity_ne: भीमसेन (भीमेश्वर)
+    district: Dolakha
+    district_ne: दोलखा
+    province: Bagmati
+    lat: 27.6740
+    lon: 86.0650
+    elev_m: 1600
+    coord_verified: false
+    about_en: An open-roofed shrine in old Dolakha bazaar whose stone image is said to sweat before major events in the country.
+    about_ne: पुरानो दोलखा बजारको छानोविहीन मन्दिर, जहाँको ढुंगे मूर्तिमा देशमा ठूलो घटना हुनुअघि पसिना आउने जनविश्वास छ।
+    tips_en:
+      - Dolakha bazaar is a short drive above Charikot.
+    tips_ne:
+      - चरिकोटबाट दोलखा बजार केही माथि छ।
+    festivals:
+      - id: maha-ashtami
+      - id: vijaya-dashami
+
+  - id: swargadwari
+    name_en: Swargadwari, Pyuthan
+    name_ne: स्वर्गद्वारी, प्युठान
+    kind: temple
+    religion: hindu
+    deity_en: Hilltop ashram and temples
+    deity_ne: डाँडाको आश्रम र मन्दिर
+    district: Pyuthan
+    district_ne: प्युठान
+    province: Lumbini
+    lat: 28.0850
+    lon: 82.6580
+    elev_m: 2100
+    coord_verified: false
+    about_en: A forested hilltop pilgrimage site in Pyuthan with an ashram and a sacred fire that has been kept burning for generations.
+    about_ne: प्युठानको जंगलले घेरिएको डाँडामा रहेको तीर्थस्थल, जहाँ आश्रम र पुस्तौंदेखि बलिरहेको अखण्ड धुनी छ।
+    tips_en:
+      - The final stretch is a steep climb; carry water.
+    tips_ne:
+      - अन्तिम खण्ड ठाडो उकालो छ; पानी बोक्नुहोस्।
+    festivals:
+      - id: kartik-purnima
+        note_en: One of the site's two big melas of the year.
+        note_ne: वर्षका दुई ठूला मेलामध्ये एक।
+      - id: buddha-jayanti
+        note_en: Baisakh Purnima brings the site's other big mela.
+        note_ne: वैशाख पूर्णिमामा अर्को ठूलो मेला लाग्छ।
+
+  - id: ridi
+    name_en: Ruru Kshetra (Ridi)
+    name_ne: रुरु क्षेत्र (रिडी)
+    kind: confluence
+    religion: hindu
+    deity_en: Rishikesh (Vishnu) at the Ridi–Kali Gandaki confluence
+    deity_ne: रिडी–कालीगण्डकी दोभानका ऋषिकेश (विष्णु)
+    district: Gulmi
+    district_ne: गुल्मी
+    province: Lumbini
+    lat: 27.9330
+    lon: 83.4660
+    elev_m: 470
+    coord_verified: false
+    about_en: An old riverside bazaar and pilgrimage site where the Ridi Khola meets the Kali Gandaki, on the border of Gulmi, Palpa and Syangja.
+    about_ne: गुल्मी, पाल्पा र स्याङ्जाको सिमानामा रिडी खोला र कालीगण्डकी मिसिने ठाउँमा रहेको पुरानो बजार र तीर्थस्थल।
+    tips_en:
+      - Lodges in Ridi bazaar fill up for Maghe Sankranti; book ahead.
+    tips_ne:
+      - माघे संक्रान्तिमा रिडी बजारका होटल भरिन्छन्; पहिल्यै बुक गर्नुहोस्।
+    festivals:
+      - id: maghe-sankranti
+        note_en: The Ridi mela is one of the largest Maghe Sankranti fairs in western Nepal, with a holy dip at the confluence.
+        note_ne: रिडी मेला पश्चिम नेपालकै ठूला माघे संक्रान्ति मेलामध्ये एक हो, दोभानमा स्नान गरिन्छ।
+
+  - id: galeshwor
+    name_en: Galeshwor Dham, Myagdi
+    name_ne: गलेश्वर धाम, म्याग्दी
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva (Galeshwor)
+    deity_ne: भगवान शिव (गलेश्वर)
+    district: Myagdi
+    district_ne: म्याग्दी
+    province: Gandaki
+    lat: 28.3800
+    lon: 83.6800
+    elev_m: 950
+    coord_verified: false
+    about_en: A Shiva temple on the banks of the Kali Gandaki near Beni, on the road to Jomsom and Muktinath.
+    about_ne: जोमसोम र मुक्तिनाथ जाने बाटोमा बेनीनजिक कालीगण्डकी किनारको शिव मन्दिर।
+    tips_en:
+      - Pilgrims heading to Muktinath often stop here on the way.
+    tips_ne:
+      - मुक्तिनाथ जाने तीर्थयात्री प्रायः बाटोमा यहाँ रोकिन्छन्।
+    festivals:
+      - id: maha-shivaratri
+      - id: shrawan-sankranti
+
+  - id: kalika-baglung
+    name_en: Kalika Bhagwati Temple, Baglung
+    name_ne: कालिका भगवती मन्दिर, बागलुङ
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Kalika
+    deity_ne: देवी कालिका
+    district: Baglung
+    district_ne: बागलुङ
+    province: Gandaki
+    lat: 28.2720
+    lon: 83.5900
+    elev_m: 1000
+    coord_verified: false
+    about_en: Baglung's principal goddess temple, in a park above the Kali Gandaki.
+    about_ne: कालीगण्डकीमाथि एक बगैंचामा रहेको बागलुङको प्रमुख देवी मन्दिर।
+    tips_en:
+      - Dashain draws devotees from across Baglung, Myagdi and Parbat.
+    tips_ne:
+      - दशैंमा बागलुङ, म्याग्दी र पर्वतभरबाट भक्तजन आउँछन्।
+    festivals:
+      - id: ghatasthapana
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: dantakali-dharan
+    name_en: Dantakali Temple, Dharan
+    name_ne: दन्तकाली मन्दिर, धरान
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Dantakali (Shakti peeth)
+    deity_ne: देवी दन्तकाली (शक्तिपीठ)
+    district: Sunsari
+    district_ne: सुनसरी
+    province: Koshi
+    lat: 26.8190
+    lon: 87.2950
+    elev_m: 400
+    coord_verified: false
+    about_en: A Shakti peeth on Bijayapur hill above Dharan, where the teeth of Sati are believed to have fallen.
+    about_ne: धरानमाथिको विजयपुर डाँडामा रहेको शक्तिपीठ, जहाँ सतीदेवीका दाँत खसेको विश्वास गरिन्छ।
+    tips_en:
+      - Pindeshwor and Budhasubba temples are close by on the same hill.
+    tips_ne:
+      - पिण्डेश्वर र बुढासुब्बा मन्दिर सोही डाँडामा नजिकै छन्।
+    festivals:
+      - id: ghatasthapana
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: pindeshwor-dharan
+    name_en: Pindeshwor Babadham, Dharan
+    name_ne: पिण्डेश्वर बाबाधाम, धरान
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva (Pindeshwor)
+    deity_ne: भगवान शिव (पिण्डेश्वर)
+    district: Sunsari
+    district_ne: सुनसरी
+    province: Koshi
+    lat: 26.8210
+    lon: 87.2990
+    elev_m: 400
+    coord_verified: false
+    about_en: A Shiva temple in Dharan that fills during Shrawan with Bol Bam pilgrims who carry Koshi river water from Chatara on foot.
+    about_ne: धरानको शिव मन्दिर, जहाँ साउनभर चतराबाट कोशीको जल बोकेर पैदल आउने बोलबम तीर्थयात्रीको भीड लाग्छ।
+    tips_en:
+      - Shrawan Mondays are the busiest days of the month.
+    tips_ne:
+      - साउनका सोमबार महिनाकै सबैभन्दा भीड हुने दिन हुन्।
+    festivals:
+      - id: shrawan-sankranti
+        note_en: The month of Bol Bam pilgrimages begins.
+        note_ne: बोलबम तीर्थयात्राको महिना सुरु हुन्छ।
+      - id: maha-shivaratri
+
+  - id: bageshwori-nepalgunj
+    name_en: Bageshwori Temple, Nepalgunj
+    name_ne: बागेश्वरी मन्दिर, नेपालगन्ज
+    kind: temple
+    religion: hindu
+    deity_en: Goddess Bageshwori (Shakti peeth)
+    deity_ne: देवी बागेश्वरी (शक्तिपीठ)
+    district: Banke
+    district_ne: बाँके
+    province: Lumbini
+    lat: 28.0530
+    lon: 81.6170
+    elev_m: 150
+    coord_verified: false
+    about_en: The best-known temple of Nepalgunj, beside a pond in the city centre.
+    about_ne: सहरको बीचमा पोखरी छेउमा रहेको नेपालगन्जको सबैभन्दा प्रसिद्ध मन्दिर।
+    tips_en:
+      - Summer days in Nepalgunj are very hot; visit early or in the evening.
+    tips_ne:
+      - गर्मीमा नेपालगन्ज निकै तातो हुन्छ; बिहानै वा साँझ जानुहोस्।
+    festivals:
+      - id: ghatasthapana
+      - id: maha-ashtami
+      - id: maha-navami
+
+  - id: dhanusha-dham
+    name_en: Dhanushadham
+    name_ne: धनुषाधाम
+    kind: temple
+    religion: hindu
+    deity_en: Site of the broken bow of Shiva
+    deity_ne: शिवधनुष भाँचिएको स्थल
+    district: Dhanusha
+    district_ne: धनुषा
+    province: Madhesh
+    lat: 26.8170
+    lon: 86.0570
+    elev_m: 90
+    coord_verified: false
+    about_en: A pilgrimage site north of Janakpur where a piece of Shiva's bow, broken by Ram to win Sita's hand, is believed to lie.
+    about_ne: जनकपुरको उत्तरमा रहेको तीर्थस्थल, जहाँ सीतासँग विवाह गर्न रामले भाँचेको शिवधनुषको टुक्रा रहेको विश्वास गरिन्छ।
+    tips_en:
+      - Often visited together with Janaki Mandir in Janakpur.
+    tips_ne:
+      - प्रायः जनकपुरको जानकी मन्दिरसँगै भ्रमण गरिन्छ।
+    festivals:
+      - id: vivah-panchami
+      - id: maghe-sankranti
+
+  - id: jaleshwor-mahadev
+    name_en: Jaleshwor Mahadev, Mahottari
+    name_ne: जलेश्वर महादेव, महोत्तरी
+    kind: temple
+    religion: hindu
+    deity_en: Lord Shiva (linga set below water level)
+    deity_ne: भगवान शिव (जलमुनि रहेको लिङ्ग)
+    district: Mahottari
+    district_ne: महोत्तरी
+    province: Madhesh
+    lat: 26.6480
+    lon: 85.8000
+    elev_m: 75
+    coord_verified: false
+    about_en: The temple that gives Jaleshwar its name; the linga sits in a sunken sanctum that fills with water.
+    about_ne: जलेश्वर सहरको नाम रहन कारण बनेको मन्दिर; लिङ्ग पानी भरिने गहिरो गर्भगृहमा छ।
+    tips_en:
+      - Jaleshwar is close to the Indian border; carry ID.
+    tips_ne:
+      - जलेश्वर भारतीय सीमानजिक छ; परिचयपत्र बोक्नुहोस्।
+    festivals:
+      - id: maha-shivaratri
+      - id: shrawan-sankranti
+
+  - id: bagh-bhairav
+    name_en: Bagh Bhairav Temple, Kirtipur
+    name_ne: बाघभैरव मन्दिर, कीर्तिपुर
+    kind: temple
+    religion: hindu
+    deity_en: Bhairav in the form of a tiger
+    deity_ne: बाघको रूपमा भैरव
+    district: Kathmandu
+    district_ne: काठमाडौं
+    province: Bagmati
+    lat: 27.6790
+    lon: 85.2775
+    elev_m: 1400
+    coord_verified: false
+    about_en: Kirtipur's guardian temple, its walls hung with old swords and shields, on the ridge of the old Newar town.
+    about_ne: पुरानो नेवार सहर कीर्तिपुरको डाँडामा रहेको रक्षक मन्दिर, जसका भित्तामा पुराना तरवार र ढाल झुन्ड्याइएका छन्।
+    tips_en:
+      - The old town's lanes are steep; the view over the valley from the temple square is worth the climb.
+    tips_ne:
+      - पुरानो सहरका गल्ली ठाडा छन्; मन्दिर परिसरबाट उपत्यकाको दृश्य हेर्न लायक छ।
+    festivals:
+      - id: maha-ashtami
+      - id: maha-navami

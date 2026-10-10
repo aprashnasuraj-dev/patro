@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% import "_kati.html" as k %}
+{% block main %}
+<article>
+  <header class="kati-hero">
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ about }}</p>
+    {{ k.tool(tool) }}
+  </header>
+
+  <section aria-labelledby="h-matrix">
+    <h2 id="h-matrix">{{ t.matrix }}</h2>
+    <div class="scroll">
+    <table class="data matrix">
+      <thead><tr><th scope="col">1 →</th>{% for c in matrix_cols %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+      <tbody>{% for r in matrix %}<tr><th scope="row">{{ r.unit }}</th>{% for c in r.cells %}<td>{% if c.url %}<a href="{{ c.url }}">{{ c.v }}</a>{% else %}{{ c.v }}{% endif %}</td>{% endfor %}</tr>{% endfor %}</tbody>
+    </table>
+    </div>
+  </section>
+
+  {{ k.notes(units_list, sources, approx, t) }}
+
+  <section aria-labelledby="h-pairs">
+    <h2 id="h-pairs">{{ t.all_pairs }}</h2>
+    <ul class="links cols">{% for p in pairs %}<li><a href="{{ p.url }}">{{ p.name }}</a></li>{% endfor %}</ul>
+  </section>
+  {{ m.share(t) }}
+</article>
+{% endblock %}

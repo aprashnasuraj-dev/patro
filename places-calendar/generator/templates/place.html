@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block main %}
+<article>
+  <header class="hero hero-place">
+    <div class="hero-text">
+      <h1>{{ h1 }}</h1>
+      {% if about %}<p class="lede">{{ about }}</p>{% endif %}
+    </div>
+  </header>
+
+  {% if upcoming %}
+  <section aria-labelledby="h-up">
+    <h2 id="h-up">{{ upcoming_title }}</h2>
+    <ol class="agenda">
+      {% for u in upcoming %}
+      <li><a href="{{ u.url }}"><span class="ag-date">{{ u.date }}</span><span class="ag-name">{{ u.name }}</span><span class="ag-left">{% if u.days == 0 %}{{ t.today }}{% else %}{{ u.days_l }} {{ t.days_to_go }}{% endif %}</span></a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <section aria-labelledby="h-today">
+    <h2 id="h-today">{{ t.today }}: {{ today_label }}</h2>
+    <div class="today">{{ moon | safe }}{{ m.facts(today_rows) }}</div>
+  </section>
+
+  <section aria-labelledby="h-facts">
+    <h2 id="h-facts">{{ t.at_a_glance }}</h2>
+    {{ m.facts(facts) }}
+    <p><a href="{{ map }}" rel="nofollow noopener" target="_blank">{{ t.map }}</a></p>
+  </section>
+
+  {% if tips %}
+  <section aria-labelledby="h-tips">
+    <h2 id="h-tips">{{ t.visitor_tips }}</h2>
+    <ul class="tips">{% for tip in tips %}<li>{{ tip }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  {% if allf %}
+  <section aria-labelledby="h-allf">
+    <h2 id="h-allf">{{ t.festivals }}</h2>
+    <ul class="links">{% for f in allf %}<li><a href="{{ f.here }}">{{ f.name }}</a><span class="meta"><a href="{{ f.url }}">{{ t.see_all_years }}</a></span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  {{ m.sun_table(sun, t.sun_by_month, t) }}
+  {{ m.linklist(near, t.nearby_places, "h-near") }}
+  {{ m.share(t) }}
+</article>
+{% endblock %}
