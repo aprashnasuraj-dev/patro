@@ -1,5 +1,6 @@
 import { growthPageResponse } from "./growth";
 import { exploreResponse } from "./explore";
+import { worldcalResponse } from "./worldcal";
 import { dailyHtmlResponse } from "./daily-html";
 import connectedWorker from "./connected-entry";
 import { conversionPageResponse } from "./conversion-page";
@@ -49,6 +50,10 @@ const optimizedWorker = {
     // Explore families own only their new prefixes and /sitemap-explore.xml + /sitemap-x-*.xml; null for everything else.
     const explore = await exploreResponse(request, env as any, ctx);
     if (explore) return explore;
+    // World calendars own only /nameday, /ethiopian-calendar, /bali-calendar, /weton, /mondkalender, /calendario-lunar(e)
+    // and /sitemap-worldcal.xml + /sitemap-wc-*.xml; null for everything else.
+    const worldcal = await worldcalResponse(request, env as any, ctx);
+    if (worldcal) return worldcal;
     const conversion = await conversionPageResponse(request, env as any);
     if (conversion) return conversion;
 
