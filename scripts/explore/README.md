@@ -15,6 +15,9 @@ No database is involved, so traffic scales with the cache, not with queries.
 ## Adding a family
 
 1. Add an entry to `worker/explore/families.json` (unique `id`, a new `prefix` nobody uses yet).
+   A family may share a prefix with older pages: `serve_root: false` leaves the bare prefix to its current
+   owner, and `segments: [...]` limits the family to those first segments below it (the `nepal` family
+   claims `/nepal/bajhang` but never `/nepal/time`).
 2. Add `scripts/explore/families/<id>.mjs` exporting `id` and `async function* records()`.
    Each record:
 
@@ -27,7 +30,12 @@ No database is involved, so traffic scales with the cache, not with queries.
    | `title_ne`, `summary`, `summary_ne` | no | Nepali and English text |
    | `facts` | for indexing | `[{label,label_ne,value,value_ne,href}]`, at least `min_facts` |
    | `sections`, `links`, `geo`, `website`, `child_heading(_ne)` | no | extra content |
-   | `source_name`, `source_url` | strongly advised | shown on the page |
+   | `tables` | no | `[{heading, head:[...], rows:[[cell]]}]`, a cell is text or `{text, href}` |
+   | `lists` | no | `[{heading, items:[{title, title_ne, href, note}]}]` |
+   | `faq` | no | `[{q, a}]`, shown and emitted as FAQPage data |
+   | `schema_type` | no | entity type when it differs from the family's (e.g. `Place`) |
+   | `sitemap_group` | no | `[a-z]+`; splits the family's sitemaps by page type (`sitemap-x-nepal-wards-0.xml`) |
+   | `sources` or `source_name`, `source_url` | strongly advised | shown on the page |
    | `quality: {allow_index:false, reason}` | no | serve the page but keep it out of search |
 
 3. `npm run explore:build` and check `.cloudflare/explore/report.json`.
@@ -35,6 +43,33 @@ No database is involved, so traffic scales with the cache, not with queries.
 
 Only pages that pass the quality gate (enough facts, a real description, not a duplicate) are
 listed in sitemaps and marked `index`; the rest are served with `noindex, follow`.
+
+## The `nepal` family (`/nepal/...`)
+
+| Page | URL | Count |
+|---|---|---|
+| Province | `/nepal/bagmati-province` | 7 |
+| District | `/nepal/bajhang` | 77 |
+| Local level (palika) | `/nepal/bajhang/jayaprithvi` | 753 |
+| Ward | `/nepal/bajhang/jayaprithvi/ward-11` | 6,743 |
+| Village / town (OpenStreetMap) | `/nepal/bajhang/jayaprithvi/chainpur` | ~3,900 |
+| Former VDCs of a district | `/nepal/bajhang/vdc` | 77 |
+| Former VDC, old ward → new ward | `/nepal/bajhang/vdc/chainpur` | ~3,950 |
+
+`/nepal` itself stays the growth page. 301s (worker/explore/redirects.ts): district names at the site root
+(`/dolakha`, `/rammechap`, `/bhajang`), misspellings and old names below `/nepal` (`worker/explore/nepal-geo.json`),
+`ward-08` → `ward-8`, palika type suffixes, and every old `/place/...` URL.
+
+Data, all committed:
+
+- `data/explore/places/source` — local-states-nepal (MIT): provinces, districts, palikas, ward counts.
+- `data/explore/nepal/vdc-wards.json` — World Bank 2011→2018 ward mapping via nepal-address-data (CC0);
+  refresh with `scripts/explore/nepal/vendor_vdc.py`.
+- `data/explore/nepal/osm-*.json` — OpenStreetMap ward boundaries, villages and landmarks (ODbL), from
+  `scripts/explore/nepal/osm_wards.py`; the **Nepal wards: OpenStreetMap import** workflow refreshes them monthly
+  by pull request. `osm-report.json` shows coverage (wards matched, palikas matched, points per ward).
+
+The same data drives the map at `/nepalmap` (`scripts/explore/nepal/build-map.mjs`, run by `npm run build`).
 
 ## Deploying
 
