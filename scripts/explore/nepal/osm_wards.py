@@ -231,6 +231,8 @@ def similarity(a: str, b: str) -> float:
         return 0.0
     if a == b:
         return 1.0
+    if min(len(a), len(b)) >= 4 and (a in b or b in a):
+        return 0.9  # "Doramba" in "Doramba Shailung", "Bardaghat" in "Nawalparasi West / Bardaghat Susta West"
     return difflib.SequenceMatcher(None, a, b).ratio()
 
 
@@ -408,6 +410,8 @@ def main() -> None:
             district_polys.append(a)
     dgrid = Grid(district_polys)
     report["districts_matched"] = len({a["district_id"] for a in district_polys})
+    report["districts_unmatched"] = {"source": [d["name"] for d in districts if d["id"] not in {a["district_id"] for a in district_polys}],
+                                     "osm": [a["tags"].get("name:en") or a["tags"].get("name") for a in by_level.get(lv_district, []) if "district_id" not in a]}
 
     def district_at(lon, lat):
         p = dgrid.find(lon, lat)
@@ -438,6 +442,42 @@ def main() -> None:
         used_osm.add(oid)
         palika_osm[mid] = oid
     osm_by_id = {a["id"]: a for a in osm_palikas}
+    # Second pass, inside each district, for palikas renamed since the source was made (Sukidaha → Sunil Smriti...):
+    # pair the leftovers by number of ward boundaries inside them (must equal the source ward count), then by name.
+    ward_areas = by_level.get(lv_ward, []) if lv_ward else []
+    ward_reps: list = []
+    def wards_inside(a):
+        if not ward_reps:
+            ward_reps.extend(rep_point(w["rings"]) for w in ward_areas)
+        g = Grid([a])
+        x0, y0, x1, y1 = a["bbox"]
+        return sum(1 for x, y in ward_reps if x0 <= x <= x1 and y0 <= y <= y1 and g.find(x, y))
+    left_src = collections.defaultdict(list)
+    for m in palikas:
+        if m["id"] not in palika_osm:
+            left_src[m["district_id"]].append(m)
+    second = []
+    for a in osm_palikas:
+        if a["id"] in used_osm or a.get("district_id") not in left_src:
+            continue
+        n_wards = None
+        for m in left_src[a["district_id"]]:
+            if m["id"] in palika_osm:
+                continue
+            if n_wards is None:
+                n_wards = wards_inside(a)
+            same = n_wards == int(str(m["wards"]).replace(",", ""))
+            score = max(similarity(skeleton(a["tags"].get("name:en") or a["tags"].get("name")), skeleton(m["name"])),
+                        similarity(ne_skeleton(a["tags"].get("name:ne") or a["tags"].get("name")), ne_skeleton(m["ne"].get("name"))))
+            if same or len(left_src[a["district_id"]]) == 1:
+                second.append((same, score, a["id"], m["id"]))
+    second.sort(reverse=True)
+    for same, score, oid, mid in second:
+        if oid in used_osm or mid in palika_osm:
+            continue
+        used_osm.add(oid)
+        palika_osm[mid] = oid
+        report.setdefault("palikas_second_pass", []).append(f"{osm_by_id[oid]['tags'].get('name')} → {next(m['name'] for m in palikas if m['id'] == mid)} (wards equal: {same})")
     matched_polys = []
     for mid, oid in palika_osm.items():
         a = osm_by_id[oid]
@@ -460,8 +500,16 @@ def main() -> None:
         lon, lat = rep_point(a["rings"])
         p = pgrid.find(lon, lat)
         if not p:
-            ward_problems["outside-matched-palika"] += 1
-            continue
+            # No matched palika boundary here: use the palika name in the ward's own name ("Nepalgunj-05").
+            did = district_at(lon, lat)
+            base = skeleton(strip_ward(a["tags"].get("name:en") or a["tags"].get("name")))
+            best = max(pal_by_district.get(did, []), key=lambda m: similarity(base, skeleton(m["name"])), default=None)
+            if best is not None and similarity(base, skeleton(best["name"])) >= 0.8:
+                p = {"palika_id": best["id"]}
+                ward_problems["assigned-by-name"] += 1
+            else:
+                ward_problems["outside-matched-palika"] += 1
+                continue
         n = ward_number(a["tags"])
         if not n or n > src_wards[p["palika_id"]]:
             ward_problems["no-or-bad-number"] += 1
