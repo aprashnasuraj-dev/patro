@@ -51,23 +51,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: cho-oyu-288180659
-  name_en: Cho Oyu
-  name_ne: चोयु
-  lat: 28.096746
-  lon: 86.659634
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/288180659
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8201
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: gokyo-ri
   name_en: Gokyo Ri
   name_ne: Gokyo Ri
@@ -119,57 +102,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: imja-tse
-  name_en: Imja Tse
-  name_ne: इम्जा छे
-  lat: 27.920014
-  lon: 86.934646
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/477904053
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 6165
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: dhaulagiri-530579647
-  name_en: Dhaulagiri
-  name_ne: धौलागिरी
-  lat: 28.697609
-  lon: 83.489488
-  district: Myagdi
-  district_ne: म्याग्दी
-  province: Gandaki
-  source: osm
-  osm: node/530579647
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8167
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: sarangkot-tower
-  name_en: Sarangkot Tower
-  name_ne: सराङ्गकोट टावर
-  lat: 28.246251
-  lon: 83.948753
-  district: Kaski
-  district_ne: कास्की
-  province: Gandaki
-  source: osm
-  osm: node/570126093
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 1592
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: araniko-chuli
   name_en: Araniko Chuli
   name_ne: Araniko Chuli
@@ -187,40 +119,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: lower-kyanjin-ri
-  name_en: Lower Kyāṅjiṅ Ri
-  name_ne: Lower Kyāṅjiṅ Ri
-  lat: 28.21767
-  lon: 85.570688
-  district: Rasuwa
-  district_ne: रसुवा
-  province: Bagamati
-  source: osm
-  osm: node/632389897
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 4300
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: kyanjin-ri
-  name_en: Kyāṅjiṅ Ri
-  name_ne: Kyāṅjiṅ Ri
-  lat: 28.223594
-  lon: 85.575775
-  district: Rasuwa
-  district_ne: रसुवा
-  province: Bagamati
-  source: osm
-  osm: node/632390009
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 4604
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: tserko-ri
   name_en: Tserko Ri
   name_ne: Tserko Ri
@@ -228,7 +126,7 @@ peaks:
   lon: 85.600452
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/632393142
   curated: false
@@ -269,23 +167,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 6441
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: machapuchare
-  name_en: Machapuchare
-  name_ne: माछापुच्छ्रे
-  lat: 28.49798
-  lon: 83.945876
-  district: Kaski
-  district_ne: कास्की
-  province: Gandaki
-  source: osm
-  osm: node/727108156
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 6993
   range: ''
   note_en: ''
   note_ne: ''
@@ -398,7 +279,7 @@ peaks:
   lon: 85.661505
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/982195586
   curated: false
@@ -415,7 +296,7 @@ peaks:
   lon: 85.778648
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/982202124
   curated: false
@@ -432,7 +313,7 @@ peaks:
   lon: 85.622026
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/982209975
   curated: false
@@ -466,7 +347,7 @@ peaks:
   lon: 85.974303
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/1026419629
   curated: false
@@ -490,23 +371,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 7871
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: everest-south-peak
-  name_en: Everest South Peak
-  name_ne: सगरमाथा दक्षिण
-  lat: 27.985032
-  lon: 86.925163
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/1326607409
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8749
   range: ''
   note_en: ''
   note_ne: ''
@@ -704,7 +568,7 @@ peaks:
   lon: 85.68376
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/2119335339
   curated: false
@@ -874,7 +738,7 @@ peaks:
   lon: 85.384363
   district: Kathmandu
   district_ne: काठमाडौं
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/2662582253
   curated: false
@@ -915,23 +779,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 6859
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: lobuche-west
-  name_en: Lobuche West
-  name_ne: Lobuche West
-  lat: 27.96966
-  lon: 86.781725
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/2683857479
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 6135
   range: ''
   note_en: ''
   note_ne: ''
@@ -983,23 +830,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 6942
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: lhotse-nup-i
-  name_en: Lhotse Nup I
-  name_ne: ल्होत्से नुप १
-  lat: 27.960942
-  lon: 86.930971
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/2687648807
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8415
   range: ''
   note_en: ''
   note_ne: ''
@@ -1119,40 +949,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 7485
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: annapurna-middle-peak
-  name_en: Annapurna Middle Peak
-  name_ne: Annapurna Middle Peak
-  lat: 28.595574
-  lon: 83.82726
-  district: Kaski
-  district_ne: कास्की
-  province: Gandaki
-  source: osm
-  osm: node/2883814659
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8013
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: annapurna-east
-  name_en: Annapurna East
-  name_ne: Annapurna East
-  lat: 28.597583
-  lon: 83.833434
-  district: Kaski
-  district_ne: कास्की
-  province: Gandaki
-  source: osm
-  osm: node/2883814661
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7980
   range: ''
   note_en: ''
   note_ne: ''
@@ -1452,7 +1248,7 @@ peaks:
   lon: 86.474182
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3120550378
   curated: false
@@ -1469,7 +1265,7 @@ peaks:
   lon: 86.472192
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3120550379
   curated: false
@@ -1486,7 +1282,7 @@ peaks:
   lon: 86.3279
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3134662214
   curated: false
@@ -1622,7 +1418,7 @@ peaks:
   lon: 86.522573
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3213654329
   curated: false
@@ -1639,7 +1435,7 @@ peaks:
   lon: 86.448888
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3213673457
   curated: false
@@ -1656,7 +1452,7 @@ peaks:
   lon: 86.411548
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3213674432
   curated: false
@@ -1673,7 +1469,7 @@ peaks:
   lon: 86.377999
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3213674464
   curated: false
@@ -1690,7 +1486,7 @@ peaks:
   lon: 86.358613
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3213674497
   curated: false
@@ -1775,7 +1571,7 @@ peaks:
   lon: 85.61514
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3421331023
   curated: false
@@ -1792,7 +1588,7 @@ peaks:
   lon: 85.667905
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3423250736
   curated: false
@@ -1809,7 +1605,7 @@ peaks:
   lon: 85.662211
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3423250762
   curated: false
@@ -1826,7 +1622,7 @@ peaks:
   lon: 85.627653
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3423536207
   curated: false
@@ -1843,7 +1639,7 @@ peaks:
   lon: 85.574121
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3425952086
   curated: false
@@ -1860,7 +1656,7 @@ peaks:
   lon: 85.552625
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3425970429
   curated: false
@@ -1877,30 +1673,13 @@ peaks:
   lon: 85.533383
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3425977446
   curated: false
   coord_verified: true
   kind: peak
   height_m: 5710
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: langtang-lirung-3426381138
-  name_en: Langtang Lirung
-  name_ne: लाङटाङ लिरुङ
-  lat: 28.256353
-  lon: 85.516651
-  district: Rasuwa
-  district_ne: रसुवा
-  province: Bagamati
-  source: osm
-  osm: node/3426381138
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7227
   range: ''
   note_en: ''
   note_ne: ''
@@ -1911,7 +1690,7 @@ peaks:
   lon: 85.630524
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3430211463
   curated: false
@@ -1945,7 +1724,7 @@ peaks:
   lon: 85.605527
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3490608502
   curated: false
@@ -1962,7 +1741,7 @@ peaks:
   lon: 85.406712
   district: Kavrepalanchok
   district_ne: काभ्रेपलाञ्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3490869705
   curated: false
@@ -1979,7 +1758,7 @@ peaks:
   lon: 85.875102
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3495849770
   curated: false
@@ -1996,7 +1775,7 @@ peaks:
   lon: 85.871344
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3495849773
   curated: false
@@ -2013,7 +1792,7 @@ peaks:
   lon: 85.678542
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3496949863
   curated: false
@@ -2030,7 +1809,7 @@ peaks:
   lon: 85.548391
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3496949868
   curated: false
@@ -2041,13 +1820,13 @@ peaks:
   note_en: ''
   note_ne: ''
 - id: peak-3499802029
-  name_en: 'बिलासपुर '
+  name_en: बिलासपुर
   name_ne: 'बिलासपुर '
   lat: 27.887019
   lon: 85.218346
   district: Nuwakot
   district_ne: नुवाकोट
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3499802029
   curated: false
@@ -2064,7 +1843,7 @@ peaks:
   lon: 85.271043
   district: Nuwakot
   district_ne: नुवाकोट
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3499802030
   curated: false
@@ -2081,7 +1860,7 @@ peaks:
   lon: 85.443434
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3499821919
   curated: false
@@ -2098,7 +1877,7 @@ peaks:
   lon: 85.415912
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3499821920
   curated: false
@@ -2183,7 +1962,7 @@ peaks:
   lon: 85.470199
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3515267701
   curated: false
@@ -2200,7 +1979,7 @@ peaks:
   lon: 85.498672
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3515267718
   curated: false
@@ -2217,7 +1996,7 @@ peaks:
   lon: 86.523289
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3523141653
   curated: false
@@ -2948,7 +2727,7 @@ peaks:
   lon: 85.079578
   district: Dhading
   district_ne: धादिङ
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3620710221
   curated: false
@@ -3016,7 +2795,7 @@ peaks:
   lon: 85.187181
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3633381719
   curated: false
@@ -3033,7 +2812,7 @@ peaks:
   lon: 85.162826
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/3633381723
   curated: false
@@ -3295,108 +3074,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 3175
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-shar-iii
-  name_en: Nuptse Shar III
-  name_ne: नुप्त्से शार ३
-  lat: 27.960213
-  lon: 86.913435
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097627
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7686
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-ii
-  name_en: Nuptse II
-  name_ne: नुप्त्से २
-  lat: 27.966105
-  lon: 86.889092
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097629
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7827
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-nup-i
-  name_en: Nuptse Nup I
-  name_ne: नुप्त्से नुप १
-  lat: 27.969143
-  lon: 86.881894
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097630
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7775
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-nup-ii
-  name_en: Nuptse Nup II
-  name_ne: नुप्त्से नुप २
-  lat: 27.972798
-  lon: 86.875694
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097631
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7732
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-shar-i
-  name_en: Nuptse Shar I
-  name_ne: नुप्त्से शार १
-  lat: 27.964395
-  lon: 86.891036
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097632
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7815
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nuptse-shar-ii
-  name_en: Nuptse Shar II
-  name_ne: नुप्त्से शार २
-  lat: 27.962584
-  lon: 86.893846
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/3696097633
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7795
   range: ''
   note_en: ''
   note_ne: ''
@@ -3849,7 +3526,7 @@ peaks:
   lon: 86.082794
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4081345607
   curated: false
@@ -4053,7 +3730,7 @@ peaks:
   lon: 86.224962
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526887660
   curated: false
@@ -4070,7 +3747,7 @@ peaks:
   lon: 86.204114
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526887664
   curated: false
@@ -4087,7 +3764,7 @@ peaks:
   lon: 86.105776
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526887677
   curated: false
@@ -4104,7 +3781,7 @@ peaks:
   lon: 86.12453
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526887686
   curated: false
@@ -4121,7 +3798,7 @@ peaks:
   lon: 86.540954
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526921982
   curated: false
@@ -4155,7 +3832,7 @@ peaks:
   lon: 86.50888
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526922890
   curated: false
@@ -4189,7 +3866,7 @@ peaks:
   lon: 86.480588
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526922899
   curated: false
@@ -4206,7 +3883,7 @@ peaks:
   lon: 86.441623
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526922904
   curated: false
@@ -4223,7 +3900,7 @@ peaks:
   lon: 86.414895
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4526922905
   curated: false
@@ -4257,7 +3934,7 @@ peaks:
   lon: 85.741104
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165504
   curated: false
@@ -4274,7 +3951,7 @@ peaks:
   lon: 85.817487
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165505
   curated: false
@@ -4291,7 +3968,7 @@ peaks:
   lon: 85.817487
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165506
   curated: false
@@ -4308,7 +3985,7 @@ peaks:
   lon: 85.838433
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165508
   curated: false
@@ -4325,7 +4002,7 @@ peaks:
   lon: 85.815404
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165510
   curated: false
@@ -4342,7 +4019,7 @@ peaks:
   lon: 85.773626
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165512
   curated: false
@@ -4359,7 +4036,7 @@ peaks:
   lon: 85.747904
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165513
   curated: false
@@ -4376,7 +4053,7 @@ peaks:
   lon: 85.736021
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4543165514
   curated: false
@@ -4393,7 +4070,7 @@ peaks:
   lon: 85.633739
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4548383663
   curated: false
@@ -4410,7 +4087,7 @@ peaks:
   lon: 85.741091
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4548479310
   curated: false
@@ -4427,7 +4104,7 @@ peaks:
   lon: 85.858433
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4549146537
   curated: false
@@ -4444,7 +4121,7 @@ peaks:
   lon: 85.712698
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4549896892
   curated: false
@@ -4461,7 +4138,7 @@ peaks:
   lon: 85.714613
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4549896900
   curated: false
@@ -4478,7 +4155,7 @@ peaks:
   lon: 85.612964
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4552913762
   curated: false
@@ -4495,7 +4172,7 @@ peaks:
   lon: 85.610776
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4552913764
   curated: false
@@ -4512,7 +4189,7 @@ peaks:
   lon: 85.687705
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4560651050
   curated: false
@@ -4529,7 +4206,7 @@ peaks:
   lon: 85.663533
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4560651051
   curated: false
@@ -4546,7 +4223,7 @@ peaks:
   lon: 85.533284
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4560651061
   curated: false
@@ -4563,7 +4240,7 @@ peaks:
   lon: 85.721327
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/4578177659
   curated: false
@@ -4767,7 +4444,7 @@ peaks:
   lon: 85.254074
   district: Kathmandu
   district_ne: काठमाडौं
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/5554697988
   curated: false
@@ -4784,30 +4461,13 @@ peaks:
   lon: 85.267088
   district: Kathmandu
   district_ne: काठमाडौं
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/5554703308
   curated: false
   coord_verified: true
   kind: peak
   height_m: 2128
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: nagarkot-5554725036
-  name_en: Nagarkot
-  name_ne: Nagarkot
-  lat: 27.692055
-  lon: 85.52
-  district: Kavrepalanchok
-  district_ne: काभ्रेपलाञ्चोक
-  province: Bagamati
-  source: osm
-  osm: node/5554725036
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 2150
   range: ''
   note_en: ''
   note_ne: ''
@@ -4818,7 +4478,7 @@ peaks:
   lon: 85.575441
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/5590154673
   curated: false
@@ -5066,23 +4726,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: mera-peak-central
-  name_en: Mera Peak Central
-  name_ne: Mera Peak Central
-  lat: 27.70659
-  lon: 86.871192
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/5656532521
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 6461
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: amayangri-3771m
   name_en: Amayangri (3771m)
   name_ne: आमा याङ्ग्री (3771m)
@@ -5090,7 +4733,7 @@ peaks:
   lon: 85.569292
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/5707897459
   curated: false
@@ -5294,7 +4937,7 @@ peaks:
   lon: 85.205426
   district: Makwanpur
   district_ne: मकवानपुर
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/6333301847
   curated: false
@@ -5311,7 +4954,7 @@ peaks:
   lon: 85.276354
   district: Kathmandu
   district_ne: काठमाडौं
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/6336921181
   curated: false
@@ -5328,7 +4971,7 @@ peaks:
   lon: 85.223369
   district: Kathmandu
   district_ne: काठमाडौं
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/6336971048
   curated: false
@@ -5627,23 +5270,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: manaslu-east-pinnacle
-  name_en: Manaslu East Pinnacle
-  name_ne: Manaslu East Pinnacle
-  lat: 28.554615
-  lon: 84.562379
-  district: Gorkha
-  district_ne: गोरखा
-  province: Gandaki
-  source: osm
-  osm: node/7872060427
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7992
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: naike-peak
   name_en: Naike Peak
   name_ne: Naike Peak
@@ -5668,7 +5294,7 @@ peaks:
   lon: 85.42663
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/7902792149
   curated: false
@@ -5838,7 +5464,7 @@ peaks:
   lon: 85.229945
   district: Makwanpur
   district_ne: मकवानपुर
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8572745423
   curated: false
@@ -5855,7 +5481,7 @@ peaks:
   lon: 85.726642
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8669229404
   curated: false
@@ -5872,7 +5498,7 @@ peaks:
   lon: 85.899352
   district: Sindhupalchowk
   district_ne: सिन्धुपाल्चोक
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8669484506
   curated: false
@@ -5889,7 +5515,7 @@ peaks:
   lon: 85.198064
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8674322706
   curated: false
@@ -5906,7 +5532,7 @@ peaks:
   lon: 85.159611
   district: Dhading
   district_ne: धादिङ
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8677075865
   curated: false
@@ -5923,7 +5549,7 @@ peaks:
   lon: 85.656447
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8688837493
   curated: false
@@ -5940,7 +5566,7 @@ peaks:
   lon: 86.065172
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8704424642
   curated: false
@@ -5957,7 +5583,7 @@ peaks:
   lon: 86.148228
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/8758932291
   curated: false
@@ -6144,7 +5770,7 @@ peaks:
   lon: 85.432019
   district: Nuwakot
   district_ne: नुवाकोट
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573019200
   curated: false
@@ -6161,7 +5787,7 @@ peaks:
   lon: 85.444373
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573019216
   curated: false
@@ -6178,7 +5804,7 @@ peaks:
   lon: 85.440041
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573092422
   curated: false
@@ -6195,7 +5821,7 @@ peaks:
   lon: 85.443345
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573092426
   curated: false
@@ -6212,7 +5838,7 @@ peaks:
   lon: 85.439347
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573092457
   curated: false
@@ -6229,7 +5855,7 @@ peaks:
   lon: 85.420601
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/9573092615
   curated: false
@@ -6355,23 +5981,6 @@ peaks:
   coord_verified: true
   kind: peak
   height_m: 6893
-  range: ''
-  note_en: ''
-  note_ne: ''
-- id: lhotse-nup-ii
-  name_en: Lhotse Nup II
-  name_ne: ल्होत्से नुप २
-  lat: 27.959204
-  lon: 86.923045
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/9861633064
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 7942
   range: ''
   note_en: ''
   note_ne: ''
@@ -6698,23 +6307,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: lobuche-east-10731513040
-  name_en: Lobuche East
-  name_ne: Lobuche East
-  lat: 27.959357
-  lon: 86.79174
-  district: Solukhumbu
-  district_ne: सोलुखुम्बु
-  province: Koshi
-  source: osm
-  osm: node/10731513040
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 6090
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: arakam-tse
   name_en: Arakam Tse
   name_ne: Arakam Tse
@@ -6739,7 +6331,7 @@ peaks:
   lon: 86.489224
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/10741320069
   curated: false
@@ -6790,7 +6382,7 @@ peaks:
   lon: 86.453829
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/11045467753
   curated: false
@@ -7157,23 +6749,6 @@ peaks:
   range: ''
   note_en: ''
   note_ne: ''
-- id: yalung-kang
-  name_en: Yalung Kang
-  name_ne: Yalung Kang
-  lat: 27.705168
-  lon: 88.137784
-  district: Taplejung
-  district_ne: ताप्लेजुङ
-  province: Koshi
-  source: osm
-  osm: node/11867698454
-  curated: false
-  coord_verified: true
-  kind: peak
-  height_m: 8505
-  range: ''
-  note_en: ''
-  note_ne: ''
 - id: patmara-bisauni
   name_en: patmara bisauni
   name_ne: patmara bisauni
@@ -7232,7 +6807,7 @@ peaks:
   lon: 86.431781
   district: Ramechhap
   district_ne: रामेछाप
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/12106410282
   curated: false
@@ -7283,7 +6858,7 @@ peaks:
   lon: 86.094871
   district: Dolakha
   district_ne: दोलखा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/12144525079
   curated: false
@@ -7402,7 +6977,7 @@ peaks:
   lon: 85.551931
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/12196879845
   curated: false
@@ -7419,7 +6994,7 @@ peaks:
   lon: 85.545063
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/12204867001
   curated: false
@@ -7946,7 +7521,7 @@ peaks:
   lon: 85.273215
   district: Rasuwa
   district_ne: रसुवा
-  province: Bagamati
+  province: Bagmati
   source: osm
   osm: node/14133187082
   curated: false
