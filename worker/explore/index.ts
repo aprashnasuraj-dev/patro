@@ -5,7 +5,8 @@
  *   if (explore) return explore;
  *
  * Returns null for every path it does not own, so all existing routes behave exactly as before.
- * Owns: /sitemap-explore.xml, /sitemap-x-{family}-{n}.xml and each enabled family prefix (families.json).
+ * Owns: /sitemap-explore.xml, /sitemap-x-{family}[-{group}]-{n}.xml, each enabled family prefix (families.json, limited
+ * to its `segments` when set) and the 301s in redirects.ts (district names at the root, old /place URLs).
  *
  * Read path, built for heavy traffic:
  *   1. Cloudflare edge cache (Cache API, 1 day + 7 days stale-while-revalidate) — most views stop here.
@@ -17,6 +18,7 @@
  */
 import { familyById, familyForPath, isExplorePath, pageKey, SITEMAP_INDEX_PATH, SITEMAP_SHARD_RE, sitemapKey, type ExploreFamily } from "./families";
 import { isIndexable, renderNotFound, renderPage, type ExploreRecord } from "./render";
+import { exploreRedirect } from "./redirects";
 
 export { isExplorePath } from "./families";
 
@@ -37,8 +39,10 @@ export async function exploreResponse(request: Request, env: ExploreEnv, ctx?: C
     return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD", "content-type": "text/plain; charset=utf-8" } });
   }
 
-  // One canonical URL per page: lower-case, no trailing slash. Query strings are ignored by cache and canonical.
-  const clean = url.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+  // One canonical URL per page: lower-case, no trailing slash, canonical spellings (redirects.ts).
+  // Query strings are ignored by cache and canonical.
+  const lower = url.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+  const clean = exploreRedirect(lower) ?? lower;
   if (clean !== url.pathname) {
     const target = new URL(url.toString());
     target.pathname = clean;
@@ -97,7 +101,8 @@ async function build(path: string, site: string, bucket: R2Like): Promise<Respon
   const shard = path.match(SITEMAP_SHARD_RE);
   if (shard) return familyById(shard[1]) ? sitemapFile(bucket, path.slice(1)) : plainNotFound();
 
-  const family = familyForPath(path)!;
+  const family = familyForPath(path);
+  if (!family) return plainNotFound();
   // Same slug grammar the build enforces; anything else cannot exist, so skip the storage read.
   if (path.length > 300 || !/^\/[a-z0-9-]+(\/[a-z0-9-]+)*$/.test(path)) return notFound(family);
   const object = await bucket.get(pageKey(path));
