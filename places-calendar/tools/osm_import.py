@@ -45,6 +45,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import time
 import re
 import sys
 import unicodedata
@@ -67,24 +68,34 @@ OVERPASS_ENDPOINTS = [
 PROVINCES_NE = {"Koshi": "कोशी", "Madhesh": "मधेश", "Bagmati": "बागमती", "Gandaki": "गण्डकी",
                 "Lumbini": "लुम्बिनी", "Karnali": "कर्णाली", "Sudurpashchim": "सुदूरपश्चिम"}
 
-BOUNDARY_QUERY = """
-[out:json][timeout:600];
-(area["ISO3166-1"="NP"][admin_level=2]; area(id:3600184633);)->.np;
+NEPAL_AREA = '(area["ISO3166-1"="NP"][admin_level=2]; area(3600184633);)->.np;'
+
+BOUNDARY_QUERY = f"""
+[out:json][timeout:300];
+{NEPAL_AREA}
 relation["boundary"="administrative"]["admin_level"~"^(4|6)$"](area.np);
 out tags geom qt;
 """
 
-QUERY = """
-[out:json][timeout:600][maxsize:1073741824];
-(area["ISO3166-1"="NP"][admin_level=2]; area(id:3600184633);)->.np;
+# Nepal spans roughly lon 80.0–88.3; querying in strips keeps each request small
+# enough for the public Overpass servers.
+STRIPS = [(80.0, 81.4), (81.4, 82.8), (82.8, 84.0), (84.0, 85.0), (85.0, 85.6), (85.6, 86.4), (86.4, 87.3), (87.3, 88.3)]
+
+
+def strip_query(lon0: float, lon1: float) -> str:
+    bbox = f"26.3,{lon0},30.5,{lon1}"
+    return f"""
+[out:json][timeout:180];
+{NEPAL_AREA}
 (
-  nwr["amenity"="place_of_worship"]["name"](area.np);
-  nwr["historic"="monastery"]["name"](area.np);
-  node["natural"="peak"]["name"](area.np);
-  node["tourism"="viewpoint"]["name"](area.np);
+  nwr["amenity"="place_of_worship"]["name"](area.np)({bbox});
+  nwr["historic"="monastery"]["name"](area.np)({bbox});
+  node["natural"="peak"]["name"](area.np)({bbox});
+  node["tourism"="viewpoint"]["name"](area.np)({bbox});
 );
 out center tags;
 """
+
 
 # Name keyword -> festivals. Order matters: first match per group wins.
 RULES = [
@@ -113,14 +124,15 @@ def slugify(s: str) -> str:
 
 def fetch(query: str) -> dict:
     """Try each public Overpass endpoint in turn, with a pause between tries."""
-    import time
     data = urllib.parse.urlencode({"data": query}).encode()
     last = None
-    for attempt in range(2):
+    for attempt in range(3):
+        if attempt:
+            time.sleep(60 * attempt)
         for url in OVERPASS_ENDPOINTS:
             try:
                 req = urllib.request.Request(url, data=data, headers={"User-Agent": "aafnaipatro-places-importer/1.1 (+https://aafnaipatro.com)"})
-                with urllib.request.urlopen(req, timeout=700) as r:
+                with urllib.request.urlopen(req, timeout=400) as r:
                     res = json.load(r)
                 remark = res.get("remark", "")
                 if not res.get("elements") or "error" in remark.lower():
@@ -264,7 +276,18 @@ def main() -> None:
     args = ap.parse_args()
 
     try:
-        raw = json.loads(args.from_file.read_text()) if args.from_file else fetch(QUERY)
+        if args.from_file:
+            raw = json.loads(args.from_file.read_text())
+        else:
+            seen, elements = set(), []
+            for i, (a, b) in enumerate(STRIPS, 1):
+                part = fetch(strip_query(a, b))
+                new = [e for e in part["elements"] if (e["type"], e["id"]) not in seen]
+                seen.update((e["type"], e["id"]) for e in new)
+                elements += new
+                print(f"  strip {i}/{len(STRIPS)} lon {a}–{b}: {len(new)} features")
+                time.sleep(5)
+            raw = {"elements": elements}
     except RuntimeError as e:
         if os.environ.get("GITHUB_ACTIONS"):
             print(f"::error title=OpenStreetMap import failed::{str(e)[:400]}")
