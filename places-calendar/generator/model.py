@@ -547,7 +547,9 @@ def place_festival_ctx(pid: str, fid: str, key: str, lang: str) -> dict | None:
     yl = it.label(lang)
     dl = date_long(o.date, lang)
     tb = timings_block(p, rule, o, lang)
-    lvl = crowd(rule, fe, o.date)
+    curated = p.get("curated", True)
+    # Crowd forecasts come from what we know about the place; imported places get none.
+    lvl = crowd(rule, fe, o.date) if curated else None
     bt = best_time(rule, lang, tb["pc"], tb["kw"])
     slug = f"{fid}-{it.key}"
     path = ("places", pid, slug)
@@ -592,7 +594,8 @@ def place_festival_ctx(pid: str, fid: str, key: str, lang: str) -> dict | None:
                         f"{lunar.tithi_name(o.tithi, lang)} {bs.fmt_bs(o.tithi_start.date(), lang)} {t(o.tithi_start, lang)} मा सुरु भई {bs.fmt_bs(o.tithi_end.date(), lang)} {t(o.tithi_end, lang)} मा समाप्त हुन्छ।"))
         faq.append((f"{fname}को दिन {pname}मा सूर्योदय कति बजे हुन्छ?", f"सूर्योदय {t(tb['pc'].sunrise, lang)} र सूर्यास्त {t(tb['pc'].sunset, lang)} मा हुन्छ।"))
         faq.append((f"{fname} सार्वजनिक बिदा हो?", f"{holiday}।"))
-        faq.append((f"{fname}मा {pname}मा कत्तिको भीड हुन्छ?", f"{tr(lang, 'crowd')}: {tr(lang, 'crowd_levels')[lvl]}। {bt}"))
+        if lvl is not None:
+            faq.append((f"{fname}मा {pname}मा कत्तिको भीड हुन्छ?", f"{tr(lang, 'crowd')}: {tr(lang, 'crowd_levels')[lvl]}। {bt}"))
     else:
         faq.append((f"When is {fname} {yl} at {pname}?", f"{fname} falls on {dl['bs']}, which is {dl['weekday']}, {dl['ad']}. {span_txt}".strip()))
         if o.tithi_start:
@@ -600,7 +603,8 @@ def place_festival_ctx(pid: str, fid: str, key: str, lang: str) -> dict | None:
                         f"{lunar.tithi_name(o.tithi, lang)} begins at {t(o.tithi_start, lang)} on {bs.fmt_ad(o.tithi_start.date())} and ends at {t(o.tithi_end, lang)} on {bs.fmt_ad(o.tithi_end.date())}."))
         faq.append((f"What time is sunrise at {pname} on {fname}?", f"Sunrise is at {t(tb['pc'].sunrise, lang)} and sunset at {t(tb['pc'].sunset, lang)}."))
         faq.append((f"Is {fname} a public holiday in Nepal?", f"{holiday}."))
-        faq.append((f"How crowded is {pname} on {fname}?", f"Expected crowd: {tr(lang, 'crowd_levels')[lvl].lower()}. {bt}"))
+        if lvl is not None:
+            faq.append((f"How crowded is {pname} on {fname}?", f"Expected crowd: {tr(lang, 'crowd_levels')[lvl].lower()}. {bt}"))
 
     page_u = abs_url(url(lang, *path))
     jsonld = [event_ld(f"{fname} {yl} — {pname}", o, p, lang, nm(rule, lang, "summary"), og, page_u), faq_ld(faq)]
@@ -624,7 +628,7 @@ def place_festival_ctx(pid: str, fid: str, key: str, lang: str) -> dict | None:
         "timings_title": tr(lang, "timings_at", place=pname),
         "timings_note": tr(lang, "timings_note", place=pname, lat=num(f"{p['lat']:.4f}", lang), lon=num(f"{p['lon']:.4f}", lang)),
         "crowd_lvl": lvl,
-        "crowd_txt": tr(lang, "crowd_levels")[lvl],
+        "crowd_txt": tr(lang, "crowd_levels")[lvl] if lvl is not None else "",
         "best_time": bt,
         "about_title": tr(lang, "about_festival", festival=fname),
         "about": nm(rule, lang, "summary"),
@@ -655,7 +659,7 @@ def place_festival_ctx(pid: str, fid: str, key: str, lang: str) -> dict | None:
                   "bs_date": "-".join(map(str, o.bs)), "source": o.source, "approximate": o.approximate,
                   "tithi_start": o.tithi_start.isoformat() if o.tithi_start else None,
                   "tithi_end": o.tithi_end.isoformat() if o.tithi_end else None,
-                  "panchang": tb["pc"].as_json(), "crowd": lvl},
+                  "panchang": tb["pc"].as_json(), "crowd": lvl, "curated": curated},
     })
     return ctx
 

@@ -432,6 +432,8 @@ def main() -> None:
         if lat is None or lon is None:
             continue
         name_en = (tags.get("name:en") or tags.get("name") or "").strip()
+        if name_en and name_en == name_en.lower() and re.search(r"[a-z]", name_en):
+            name_en = " ".join(w[:1].upper() + w[1:] for w in name_en.split())   # "durga temple" -> "Durga Temple"
         name_ne = tags.get("name:ne") or (tags.get("name") if re.search(r"[\u0900-\u097F]", tags.get("name", "")) else None)
         if not name_en:
             continue

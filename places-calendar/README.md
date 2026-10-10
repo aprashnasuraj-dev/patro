@@ -158,10 +158,21 @@ festival-year/place-festival page for the current year to +2 (2,178 cards,
 
 ## Growing further
 
-* **OpenStreetMap import runs on GitHub.** Actions → "Places: OpenStreetMap import"
-  (`.github/workflows/places-osm-import.yml`) fetches every named temple, gumba,
-  mosque, church, peak and viewpoint in Nepal, assigns each to its district and
-  province from OSM boundaries, checks the data still builds, and commits
+* **OpenStreetMap import — done, runs on GitHub.** First run (2026-10-10): 8,721 OSM
+  features → **7,566 places of worship** (temples, gumbas, stupas, 307 mosques, 275
+  churches) and **447 peaks/viewpoints**, all 7 provinces and 76 of 77 districts.
+  Generic names are told apart with the nearest village or town
+  ("Hanuman Mandir, Gaur"). With this data the generator produces about
+  **666,000 pages** (≈10 GB of HTML), 628,000 of them from imported places and
+  served `noindex` until they earn impressions; imported places get no crowd
+  forecast, because nothing is known about their crowds. That volume can only
+  go live through R2 (the explore system), never `dist/`.
+* **How the import works.** Actions → "Places: OpenStreetMap import"
+  (`.github/workflows/places-osm-import.yml`) downloads the Geofabrik Nepal
+  extract (the public Overpass servers reject GitHub's runners), reads every
+  named temple, gumba, mosque, church, peak and viewpoint with pyosmium, assigns
+  each to its district and province from OSM boundaries in the same file, checks
+  the data still builds, and commits
   `data/places_osm.yaml` / `data/peaks_osm.yaml` (to the feature branch, or as a
   PR when run on `main`; monthly by schedule). Imported pages start as noindex
   until they earn impressions. Locally: `python tools/osm_import.py`.

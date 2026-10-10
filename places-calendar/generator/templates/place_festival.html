@@ -17,6 +17,7 @@
 
   {{ m.timings(timings, timings_title, timings_note, t) }}
 
+  {% if crowd_lvl is not none %}
   <section class="crowd" aria-labelledby="h-crowd">
     <h2 id="h-crowd">{{ t.crowd }}</h2>
     <div class="meter" role="img" aria-label="{{ t.crowd }}: {{ crowd_txt }}">
@@ -26,6 +27,7 @@
     <h3>{{ t.best_time }}</h3>
     <p>{{ best_time }}</p>
   </section>
+  {% endif %}
 
   <section aria-labelledby="h-about">
     <h2 id="h-about">{{ about_title }}</h2>
