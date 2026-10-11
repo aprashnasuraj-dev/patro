@@ -1,4 +1,4 @@
-{"generated":"2026-10-10","osm_timestamp":"2026-10-09T20:21:04Z","source":"OpenStreetMap via Geofabrik nepal-latest.osm.pbf","licence":"© OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright","fields":["place","name","name_ne","lat","lng","ele","palika_id","ward","district_id","population","osm_id"],"rows":[["hamlet","Babu Gaun","",28.03598,81.62344,null,null,null,57,null,"n3907744402"],
+{"generated":"2026-10-11","osm_timestamp":"2026-10-09T20:21:04Z","source":"OpenStreetMap via Geofabrik nepal-latest.osm.pbf","licence":"© OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright","fields":["place","name","name_ne","lat","lng","ele","palika_id","ward","district_id","population","osm_id"],"rows":[["hamlet","Babu Gaun","",28.03598,81.62344,null,null,null,57,null,"n3907744402"],
 ["hamlet","Bakauli","",28.01994,81.65541,null,null,null,57,null,"n3907744403"],
 ["hamlet","Balegaun","",28.02678,81.61852,null,null,null,57,null,"n3907744404"],
 ["locality","Balegaun Chok","बालेगाउ चोक",28.02782,81.61984,null,null,null,57,null,"n3903849588"],
