@@ -20,6 +20,10 @@
     district: "",
     query: "",
     me: null,
+    tab: "explore",
+    from: null, // {lat, lng, label}
+    to: null,
+    mode: "car",
   };
   var layers = {}; // id -> {rows, loaded, loading}
   var admin = null;
@@ -52,9 +56,22 @@
     state.district = q.get("d") || "";
     state.minEle = Number(q.get("ele") || (CFG.preset && CFG.preset.minEle) || 0);
     state.query = q.get("q") || "";
+    state.from = parsePoint(q.get("from"));
+    state.to = parsePoint(q.get("to"));
+    if (/^(car|bike|foot)$/.test(q.get("mode") || "")) state.mode = q.get("mode");
+    if (state.from || state.to) state.tab = "route";
     var ll = (q.get("ll") || "").split(",").map(Number);
     return ll.length === 3 && ll.every(isFinite) ? ll : null;
   }
+  function parsePoint(v) {
+    if (!v) return null;
+    var m = String(v).match(/^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)(?:\s*,\s*(.+))?$/);
+    if (!m) return null;
+    var lat = Number(m[1]), lng = Number(m[2]);
+    if (!(lat > 25 && lat < 31.5 && lng > 79 && lng < 89)) return null;
+    return { lat: lat, lng: lng, label: (m[3] || "").slice(0, 80) || lat.toFixed(4) + ", " + lng.toFixed(4) };
+  }
+  var pointParam = function (p) { return p.lat.toFixed(5) + "," + p.lng.toFixed(5) + "," + p.label; };
   var urlTimer;
   function writeUrl() {
     clearTimeout(urlTimer);
@@ -66,6 +83,9 @@
       if (state.religion.size) q.set("r", Array.from(state.religion).join(","));
       if (state.district) q.set("d", state.district);
       if (state.minEle) q.set("ele", String(state.minEle));
+      if (state.from) q.set("from", pointParam(state.from));
+      if (state.to) q.set("to", pointParam(state.to));
+      if ((state.from || state.to) && state.mode !== "car") q.set("mode", state.mode);
       if (map) { var c = map.getCenter(); q.set("ll", c.lat.toFixed(4) + "," + c.lng.toFixed(4) + "," + map.getZoom().toFixed(1)); }
       var s = q.toString();
       history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
@@ -194,7 +214,9 @@
       '<a class="np-btn" target="_blank" rel="noopener" href="https://www.openstreetmap.org/?mlat=' + lat + "&mlon=" + lng + "#map=17/" + lat + "/" + lng + '">OpenStreetMap</a>' +
       (village ? '<a class="np-btn" href="' + esc(village) + '">Village page</a>' : "") +
       (wiki ? '<a class="np-btn" target="_blank" rel="noopener" href="' + esc(wiki) + '">Wikipedia</a>' : "") +
-      '<button class="np-btn" type="button" data-share="' + lat + "," + lng + '">Copy link</button></div></div>';
+      '<button class="np-btn" type="button" data-share="' + lat + "," + lng + '">Copy link</button></div>' +
+      '<div class="np-actions np-route-actions"><button class="np-btn np-btn-a" type="button" data-route="from" data-ll="' + lat + "," + lng + '" data-name="' + esc(row[R.n] || row[R.ne]) + '">A · From here</button>' +
+      '<button class="np-btn np-btn-b" type="button" data-route="to" data-ll="' + lat + "," + lng + '" data-name="' + esc(row[R.n] || row[R.ne]) + '">B · To here</button></div></div>';
     if (popup) popup.remove();
     popup = new maplibregl.Popup({ maxWidth: "300px", offset: 10 }).setLngLat([lng, lat]).setHTML(html).addTo(map);
   }
@@ -345,6 +367,270 @@
   function closePanelOnMobile() { if (window.matchMedia("(max-width: 760px)").matches) document.body.classList.remove("np-panel-open"); }
   function showError(e) { console.error(e); var h = $("#np-list-head"); if (h) h.textContent = "Could not load map data. Please reload."; }
 
+
+  // ---------- From → To routes ----------
+  // Roads and trails from OpenStreetMap, routed by OSRM on the FOSSGIS servers that openstreetmap.org itself uses
+  // (CORS-enabled, no key; fair use). If routing is unavailable we still show the straight line and hand off to
+  // Google Maps for turn-by-turn navigation.
+  var ROUTER = CFG.router || "https://routing.openstreetmap.de/";
+  var PROFILES = { car: ["routed-car", "driving"], bike: ["routed-bike", "driving"], foot: ["routed-foot", "driving"] };
+  var ALONG = ["worship", "peak", "lake", "sight", "waterfall", "park", "airport", "village"];
+  var routeSeq = 0;
+  var routeData = null;
+  var markers = { from: null, to: null };
+  var picking = null;
+
+  function setTab(tab) {
+    state.tab = tab;
+    document.querySelectorAll(".np-tabs [data-tab]").forEach(function (b) { var on = b.getAttribute("data-tab") === tab; b.classList.toggle("on", on); b.setAttribute("aria-selected", String(on)); });
+    $("#np-route").hidden = tab !== "route";
+    document.querySelector(".np-explore").hidden = tab === "route";
+    if (map) map.resize();
+  }
+  function marker(which) {
+    var p = state[which];
+    if (markers[which]) { markers[which].remove(); markers[which] = null; }
+    if (!p || !map) return;
+    var el = document.createElement("div");
+    el.className = "np-pin-wrap";
+    el.innerHTML = '<div class="np-pin ' + (which === "from" ? "a" : "b") + '"><span>' + (which === "from" ? "A" : "B") + "</span></div>";
+    markers[which] = new maplibregl.Marker({ element: el, draggable: true, anchor: "bottom" }).setLngLat([p.lng, p.lat]).addTo(map);
+    markers[which].on("dragend", function () {
+      var ll = markers[which].getLngLat();
+      setPoint(which, { lat: ll.lat, lng: ll.lng, label: "Pinned point " + ll.lat.toFixed(4) + ", " + ll.lng.toFixed(4) });
+    });
+  }
+  function setPoint(which, p, quiet) {
+    state[which] = p;
+    $(which === "from" ? "#np-from" : "#np-to").value = p ? p.label : "";
+    marker(which);
+    if (!quiet) { setTab("route"); computeRoute(); }
+    writeUrl();
+  }
+  /** A search result (see search()) → a point, or null when it has no single location. */
+  function resultPoint(r) {
+    if (r.cat) { var row = layers[r.cat].rows[r.i]; return { lat: row[R.lat], lng: row[R.lng], label: r.label + (r.sub ? ", " + r.sub.split(" · ").pop() : "") }; }
+    if (r.ll) return { lat: r.ll[0], lng: r.ll[1], label: r.label + (r.sub ? ", " + r.sub.split(" · ")[0] : "") };
+    if (r.district) {
+      var d = admin.districts.find(function (x) { return x.slug === r.district; });
+      if (d && d.bbox) return { lat: (d.bbox[1] + d.bbox[3]) / 2, lng: (d.bbox[0] + d.bbox[2]) / 2, label: d.name + " District" };
+    }
+    return null;
+  }
+  function suggest(which) {
+    var input = $(which === "from" ? "#np-from" : "#np-to");
+    var box = $(which === "from" ? "#np-from-sugg" : "#np-to-sugg");
+    var q = input.value;
+    clearTimeout(box._t);
+    box._t = setTimeout(function () {
+      Promise.all(SEARCH_CATS.map(ensure)).then(function () {
+        var res = search(q).filter(function (r) { return resultPoint(r); }).slice(0, 12);
+        box.hidden = !q.trim();
+        box.innerHTML = res.length ? res.map(function (r, k) {
+          return '<li><button type="button" data-k="' + k + '"><b>' + esc(r.label) + "</b>" + (r.ne ? ' <span lang="ne">' + esc(r.ne) + "</span>" : "") + "<small>" + esc(r.sub || "") + "</small></button></li>";
+        }).join("") : '<li class="np-empty">No match. Try another spelling, a palika with its ward ("Jayaprithvi 11"), or pick the point on the map with 📌.</li>';
+        box._res = res;
+      }).catch(showError);
+    }, 160);
+  }
+  function chooseSuggestion(which, k) {
+    var box = $(which === "from" ? "#np-from-sugg" : "#np-to-sugg");
+    var r = box._res && box._res[k];
+    box.hidden = true;
+    if (r) setPoint(which, resultPoint(r));
+  }
+  function dimPlaces(dim) {
+    CATS.forEach(function (c) {
+      if (map.getLayer("p-" + c.id)) map.setPaintProperty("p-" + c.id, "circle-opacity", dim ? 0.35 : 1);
+      if (map.getLayer("c-" + c.id)) map.setPaintProperty("c-" + c.id, "circle-opacity", dim ? 0.3 : 0.85);
+    });
+  }
+  function clearRoute() {
+    routeData = null;
+    if (map && styleReady) dimPlaces(false);
+    if (map && map.getSource("np-route")) map.getSource("np-route").setData({ type: "FeatureCollection", features: [] });
+    if (map && map.getSource("np-along")) map.getSource("np-along").setData({ type: "FeatureCollection", features: [] });
+    $("#np-route-sum").hidden = true;
+    $("#np-along-wrap").hidden = true;
+    $("#np-steps-wrap").hidden = true;
+  }
+  function ensureRouteLayers() {
+    if (!styleReady || map.getSource("np-route")) return;
+    map.addSource("np-route", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+    map.addLayer({ id: "np-route-casing", type: "line", source: "np-route", layout: { "line-cap": "round", "line-join": "round" },
+      paint: { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 6, 5, 14, 11], "line-opacity": 0.9 } });
+    map.addLayer({ id: "np-route-line", type: "line", source: "np-route", filter: ["!=", ["get", "straight"], true], layout: { "line-cap": "round", "line-join": "round" },
+      paint: { "line-color": "#1565c0", "line-width": ["interpolate", ["linear"], ["zoom"], 6, 3, 14, 7] } });
+    map.addLayer({ id: "np-route-straight", type: "line", source: "np-route", filter: ["==", ["get", "straight"], true],
+      paint: { "line-color": "#5f6b62", "line-width": ["interpolate", ["linear"], ["zoom"], 6, 3, 14, 6], "line-dasharray": [2, 2] } });
+    map.addSource("np-along", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+    map.addLayer({ id: "np-along-dot", type: "circle", source: "np-along",
+      paint: { "circle-color": ["get", "color"], "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 4, 13, 8], "circle-stroke-color": "#1565c0", "circle-stroke-width": 2 } });
+    map.on("click", "np-along-dot", function (e) { var p = e.features[0].properties; openPopup(p.cat, p.i); });
+  }
+  var fmtTime = function (sec) {
+    var m = Math.round(sec / 60);
+    if (m < 60) return m + " min";
+    var h = Math.floor(m / 60), r = m % 60;
+    return h + " h" + (r ? " " + r + " min" : "");
+  };
+  function stepText(st) {
+    var m = st.maneuver || {}, mod = m.modifier ? m.modifier.replace("sharp ", "sharp ").replace("slight ", "slightly ") : "";
+    var road = st.name || st.ref || "";
+    var onto = road ? " onto " + road : "";
+    switch (m.type) {
+      case "depart": return "Start" + (road ? " on " + road : "") + (m.bearing_after != null ? " heading " + compass(m.bearing_after) : "");
+      case "arrive": return "Arrive at " + (state.to ? state.to.label.split(",")[0] : "your destination");
+      case "turn": return (mod === "straight" ? "Go straight" : "Turn " + mod) + onto;
+      case "new name": return "Continue" + onto;
+      case "continue": return (mod && mod !== "straight" ? "Keep " + mod : "Continue") + onto;
+      case "merge": return "Merge" + (mod ? " " + mod : "") + onto;
+      case "on ramp": case "off ramp": case "fork": return "Keep " + (mod || "straight") + onto;
+      case "end of road": return "At the end of the road, turn " + mod + onto;
+      case "roundabout": case "rotary": case "roundabout turn": return "At the roundabout, take exit " + (m.exit || 1) + onto;
+      case "exit roundabout": case "exit rotary": return "Leave the roundabout" + onto;
+      default: return (mod ? "Go " + mod : "Continue") + onto;
+    }
+  }
+  function compass(b) { return ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"][Math.round(((b % 360) + 360) % 360 / 45) % 8]; }
+  function googleUrl() {
+    var tm = { car: "driving", bike: "two-wheeler", foot: "walking" }[state.mode];
+    return "https://www.google.com/maps/dir/?api=1&origin=" + state.from.lat + "," + state.from.lng + "&destination=" + state.to.lat + "," + state.to.lng + "&travelmode=" + (tm === "two-wheeler" ? "driving" : tm);
+  }
+  function computeRoute() {
+    clearRoute();
+    var msg = $("#np-route-msg");
+    if (!state.from || !state.to) { msg.hidden = false; msg.textContent = state.from ? "Now choose where you want to go (B)." : state.to ? "Now choose where you start (A), or use your location." : "Choose where you start and where you want to go, or tap any place on the map and pick From here / To here."; return; }
+    if (!styleReady) return;
+    ensureRouteLayers();
+    var seq = ++routeSeq;
+    var a = state.from, b = state.to;
+    var prof = PROFILES[state.mode];
+    msg.hidden = false; msg.textContent = "Finding the way…";
+    var url = ROUTER + prof[0] + "/route/v1/" + prof[1] + "/" + a.lng.toFixed(6) + "," + a.lat.toFixed(6) + ";" + b.lng.toFixed(6) + "," + b.lat.toFixed(6) + "?overview=full&geometries=geojson&steps=true&alternatives=false";
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+    fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("router " + r.status)); })
+      .then(function (j) {
+        clearTimeout(timer);
+        if (seq !== routeSeq) return;
+        if (!j.routes || !j.routes.length) throw new Error(j.code || "no route");
+        showRoute(j.routes[0], false);
+      })
+      .catch(function (e) {
+        clearTimeout(timer);
+        if (seq !== routeSeq) return;
+        console.warn("route", e);
+        // Straight line so the reader still sees direction and distance.
+        var d = km(a.lat, a.lng, b.lat, b.lng);
+        showRoute({ distance: d * 1000, duration: null, geometry: { type: "LineString", coordinates: [[a.lng, a.lat], [b.lng, b.lat]] }, legs: [] }, true);
+      });
+  }
+  function showRoute(route, straight) {
+    routeData = route;
+    dimPlaces(true);
+    var coords = route.geometry.coordinates;
+    map.getSource("np-route").setData({ type: "Feature", properties: { straight: straight }, geometry: route.geometry });
+    var bb = coords.reduce(function (acc, c) { return [Math.min(acc[0], c[0]), Math.min(acc[1], c[1]), Math.max(acc[2], c[0]), Math.max(acc[3], c[1])]; }, [180, 90, -180, -90]);
+    var wide = window.matchMedia("(max-width: 760px)").matches ? { top: 40, bottom: 160, left: 30, right: 30 } : 50;
+    map.fitBounds([[bb[0], bb[1]], [bb[2], bb[3]]], { padding: wide, maxZoom: 15 });
+    var dist = route.distance / 1000;
+    var modeWord = { car: "by car or bus", bike: "by motorbike or bicycle", foot: "on foot" }[state.mode];
+    $("#np-route-msg").hidden = !straight;
+    $("#np-route-msg").textContent = straight ? "We could not get road directions right now (or there is no road or trail between these points in OpenStreetMap). The dashed line shows the direction and the distance as the crow flies." : "";
+    var sum = $("#np-route-sum");
+    sum.hidden = false;
+    sum.innerHTML = '<div class="np-sum"><b>' + fmtKm(dist) + "</b>" + (straight ? " in a straight line" : "") +
+      (route.duration ? ' · about <b>' + fmtTime(route.duration * (state.mode === "car" ? 1.25 : 1)) + "</b> " + esc(modeWord) : "") + "</div>" +
+      '<div class="np-route-ends"><span class="np-dot a">A</span> ' + esc(state.from.label) + '<br><span class="np-dot b">B</span> ' + esc(state.to.label) + "</div>" +
+      (route.duration && state.mode === "car" ? '<p class="np-note">Hill roads are slow and conditions change with the season; the time includes a margin but check locally before you travel.</p>' : "") +
+      (route.duration && state.mode === "foot" ? '<p class="np-note">Walking time on flat ground. On trekking trails, add time for climbs: roughly 1 hour per 300–400 m of ascent.</p>' : "") +
+      '<div class="np-actions"><a class="np-btn" target="_blank" rel="noopener" href="' + esc(googleUrl()) + '">Navigate in Google Maps</a>' +
+      '<button class="np-btn" type="button" id="np-route-share">Copy route link</button>' +
+      '<button class="np-btn" type="button" id="np-route-clear">Clear</button></div>';
+    var steps = (route.legs[0] && route.legs[0].steps) || [];
+    $("#np-steps-wrap").hidden = !steps.length;
+    $("#np-steps").innerHTML = steps.map(function (st) {
+      return "<li>" + esc(stepText(st)) + (st.distance > 30 && st.maneuver.type !== "arrive" ? ' <span class="np-n">' + fmtKm(st.distance / 1000) + "</span>" : "") + "</li>";
+    }).join("");
+    Promise.all(ALONG.map(ensure)).then(function () { alongTheWay(coords, straight); }).catch(showError);
+    closePanelOnMobile();
+    writeUrl();
+  }
+  /** Places within ~1.5 km of the route, in the order you pass them. */
+  function alongTheWay(coords, straight) {
+    var BUF = 1.5;
+    // Resample the line every ~0.5 km and bucket the samples in a 0.02° grid.
+    var samples = [], grid = {}, run = 0;
+    var put = function (lat, lng, at) { var k = Math.floor(lat / 0.02) + ":" + Math.floor(lng / 0.02); (grid[k] = grid[k] || []).push(samples.length); samples.push([lat, lng, at]); };
+    put(coords[0][1], coords[0][0], 0);
+    for (var i = 1; i < coords.length; i++) {
+      var a = coords[i - 1], b = coords[i];
+      var seg = km(a[1], a[0], b[1], b[0]);
+      var n = Math.max(1, Math.ceil(seg / 0.5));
+      for (var s2 = 1; s2 <= n; s2++) { var t = s2 / n; put(a[1] + (b[1] - a[1]) * t, a[0] + (b[0] - a[0]) * t, run + seg * t); }
+      run += seg;
+    }
+    var found = [];
+    ALONG.forEach(function (id) {
+      var L = layers[id];
+      if (!L || !L.loaded) return;
+      for (var r = 0; r < L.rows.length; r++) {
+        var row = L.rows[r];
+        if (id === "village" && !/city|town|village/.test(row[R.sub] || "")) continue;
+        var cy = Math.floor(row[R.lat] / 0.02), cx = Math.floor(row[R.lng] / 0.02), best = null;
+        for (var dy = -1; dy <= 1; dy++) for (var dx = -1; dx <= 1; dx++) {
+          var list = grid[(cy + dy) + ":" + (cx + dx)];
+          if (!list) continue;
+          for (var q = 0; q < list.length; q++) {
+            var smp = samples[list[q]];
+            var d = km(smp[0], smp[1], row[R.lat], row[R.lng]);
+            if (d <= BUF && (!best || d < best.off)) best = { off: d, at: smp[2] };
+          }
+        }
+        if (best) found.push({ id: id, i: r, off: best.off, at: best.at, wiki: !!row[R.wiki] });
+      }
+    });
+    // Spread the list along the whole route: split it into ~30 stretches and keep the best few of each
+    // (a Wikipedia article or Nepali name first, then the closest to the road), plus one town per stretch.
+    found.sort(function (x, y) { return x.at - y.at; });
+    var bins = Math.max(1, Math.min(30, Math.ceil(run / 2)));
+    var size = (run || 1) / bins, buckets = [];
+    found.forEach(function (f) { var k = Math.min(bins - 1, Math.floor(f.at / size)); (buckets[k] = buckets[k] || []).push(f); });
+    var rank = function (f) { var row = layers[f.id].rows[f.i]; return (f.wiki ? 0 : 2) + (row[R.ne] ? 0 : 1) + f.off; };
+    var shown = [];
+    buckets.forEach(function (list) {
+      if (!list) return;
+      var lm = list.filter(function (f) { return f.id !== "village"; }).sort(function (x, y) { return rank(x) - rank(y); }).slice(0, 3);
+      var tw = list.filter(function (f) { return f.id === "village"; }).sort(function (x, y) { return rank(x) - rank(y); }).slice(0, 1);
+      shown = shown.concat(lm, tw);
+    });
+    shown.sort(function (x, y) { return x.at - y.at; });
+    map.getSource("np-along").setData({ type: "FeatureCollection", features: shown.map(function (f) {
+      var row = layers[f.id].rows[f.i];
+      return { type: "Feature", geometry: { type: "Point", coordinates: [row[R.lng], row[R.lat]] }, properties: { cat: f.id, i: f.i, color: CAT[f.id].color } };
+    }) });
+    var counts = {};
+    found.forEach(function (f) { counts[f.id] = (counts[f.id] || 0) + 1; });
+    $("#np-along-wrap").hidden = !found.length;
+    $("#np-along-head").textContent = found.length
+      ? Object.keys(counts).map(function (id) { return counts[id].toLocaleString("en-IN") + " " + (CAT[id].label || id).toLowerCase(); }).join(" · ") + " within " + BUF + " km of the " + (straight ? "line" : "route") + (shown.length < found.length ? ". Showing " + shown.length + " spread along the way." : ".")
+      : "";
+    $("#np-along").innerHTML = shown.map(function (f) {
+      var row = layers[f.id].rows[f.i];
+      var where = placeLine(row);
+      return '<li><button type="button" data-go="' + f.id + ":" + f.i + '"><i style="background:' + CAT[f.id].color + '"></i><span><b>' + esc(row[R.n] || row[R.ne]) + "</b>" + (row[R.n] && row[R.ne] ? ' <span lang="ne">' + esc(row[R.ne]) + "</span>" : "") +
+        "<small>" + (f.at < 0.5 ? "near A" : f.at > run - 0.5 ? "near B" : fmtKm(f.at) + " from A") + " · " + (f.off < 0.15 ? "on the way" : fmtKm(f.off) + " off the way") + " · " + esc(kindText(f.id, row)) + (where ? " · " + esc(where.text) : "") + "</small></span></button></li>";
+    }).join("");
+  }
+  function startPicking(which) {
+    picking = which;
+    map.getCanvas().style.cursor = "crosshair";
+    $("#np-route-msg").hidden = false;
+    $("#np-route-msg").textContent = "Tap the map to set " + (which === "from" ? "A (start)" : "B (destination)") + ".";
+    closePanelOnMobile();
+  }
+
   // ---------- boot ----------
   function boot() {
     var ll = readUrl();
@@ -378,6 +664,12 @@
       return refresh();
     }).then(function () {
       if (state.query) { $("#np-q").value = state.query; onSearch(); }
+      ensureRouteLayers();
+      setTab(state.tab);
+      if (state.from) setPoint("from", state.from, true);
+      if (state.to) setPoint("to", state.to, true);
+      document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-mode") === state.mode); });
+      if (state.from && state.to) computeRoute();
     }).catch(showError);
     map.on("moveend", function () { renderList(); writeUrl(); });
 
@@ -420,6 +712,64 @@
       var parts = b.getAttribute("data-go").split(":");
       go(parts[0], Number(parts[1]));
     });
+    document.querySelector(".np-tabs").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-tab]");
+      if (b) { setTab(b.getAttribute("data-tab")); writeUrl(); }
+    });
+    ["from", "to"].forEach(function (which) {
+      var input = $(which === "from" ? "#np-from" : "#np-to");
+      var box = $(which === "from" ? "#np-from-sugg" : "#np-to-sugg");
+      input.addEventListener("input", function () { suggest(which); });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && box._res && box._res[0]) { e.preventDefault(); chooseSuggestion(which, 0); }
+        if (e.key === "Escape") box.hidden = true;
+      });
+      box.addEventListener("click", function (e) { var b = e.target.closest("[data-k]"); if (b) chooseSuggestion(which, Number(b.getAttribute("data-k"))); });
+    });
+    $("#np-route").addEventListener("click", function (e) {
+      var pk = e.target.closest("[data-pick]");
+      if (pk) startPicking(pk.getAttribute("data-pick"));
+      var md = e.target.closest("[data-mode]");
+      if (md) {
+        state.mode = md.getAttribute("data-mode");
+        document.querySelectorAll(".np-modes [data-mode]").forEach(function (b) { b.classList.toggle("on", b === md); });
+        computeRoute();
+      }
+      if (e.target.id === "np-route-clear") { setPoint("from", null, true); setPoint("to", null, true); clearRoute(); computeRoute(); }
+      if (e.target.id === "np-route-share") {
+        var btn = e.target;
+        writeUrl();
+        setTimeout(function () {
+          var link = location.href;
+          (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(function () { btn.textContent = "Copied"; }, function () { prompt("Copy this link", link); });
+        }, 450);
+      }
+      var g = e.target.closest("[data-go]");
+      if (g) { var parts = g.getAttribute("data-go").split(":"); go(parts[0], Number(parts[1])); }
+    });
+    $("#np-swap").addEventListener("click", function () { var f = state.from; setPoint("from", state.to, true); setPoint("to", f, true); computeRoute(); });
+    $("#np-me-from").addEventListener("click", function () {
+      if (!navigator.geolocation) { $("#np-route-msg").textContent = "Your browser cannot share your location."; return; }
+      $("#np-route-msg").hidden = false; $("#np-route-msg").textContent = "Finding your location…";
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        state.me = [pos.coords.latitude, pos.coords.longitude];
+        setPoint("from", { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "My location" });
+      }, function () { $("#np-route-msg").textContent = "Location permission was not given. Type a place for A instead, or pick it on the map with 📌."; }, { enableHighAccuracy: true, timeout: 15000 });
+    });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest && e.target.closest("[data-route]");
+      if (!b) return;
+      var ll = b.getAttribute("data-ll").split(",").map(Number);
+      if (popup) popup.remove();
+      setPoint(b.getAttribute("data-route"), { lat: ll[0], lng: ll[1], label: b.getAttribute("data-name") || ll.join(", ") });
+    });
+    map.on("click", function (e) {
+      if (!picking) return;
+      var which = picking;
+      picking = null;
+      map.getCanvas().style.cursor = "";
+      setPoint(which, { lat: e.lngLat.lat, lng: e.lngLat.lng, label: "Pinned point " + e.lngLat.lat.toFixed(4) + ", " + e.lngLat.lng.toFixed(4) });
+    });
     $("#np-toggle").addEventListener("click", function () { document.body.classList.toggle("np-panel-open"); });
     $("#np-reset").addEventListener("click", function () {
       state.district = ""; state.religion.clear(); state.minEle = 0; $("#np-q").value = "";
@@ -428,6 +778,6 @@
       setDistrict("");
     });
   }
-  window.__nepalmap = { state: state, layers: layers, search: function (q) { return search(q); }, get map() { return map; } };
+  window.__nepalmap = { state: state, layers: layers, search: function (q) { return search(q); }, setPoint: function (w, p) { setPoint(w, p); }, get route() { return routeData; }, get map() { return map; } };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();

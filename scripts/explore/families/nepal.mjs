@@ -336,7 +336,8 @@ function formerText(entries) {
   return [...entries].map(([v, olds]) => `${v.title} ${wardWord(olds)} ${runs(olds)}`).join("; ");
 }
 
-const commonLinks = (c) => [
+const commonLinks = (c, name) => [
+  ...(c ? [{ href: `/nepalmap?to=${c[0]},${c[1]},${encodeURIComponent(name || "")}`, label: `Route to ${name || "here"} on the Nepal map · बाटो` }] : []),
   ...(c ? [{ href: osmMap(c), label: "Open in OpenStreetMap" }] : []),
   { href: "/nepalmap", label: "Nepal map: temples, gumbas, peaks · नेपाल नक्सा" },
   { href: "/nepal/time", label: "Time in Nepal now" },
@@ -438,7 +439,7 @@ export async function* records({ root = process.cwd() } = {}) {
         { q: `Which province is ${d.en} in?`, a: `${d.en} is in ${p.en}.` },
       ],
       child_heading: `Local levels and former VDCs of ${d.en}`, child_heading_ne: `${d.neName}का स्थानीय तह`,
-      website: d.website, links: commonLinks(hq), sources: sources("states", "vdc", "osm"), lastmod: LASTMOD,
+      website: d.website, links: commonLinks(hq, `${d.headquarter}, ${d.en}`), sources: sources("states", "vdc", "osm"), lastmod: LASTMOD,
     };
 
     // ---------- former VDC hub ----------
@@ -506,7 +507,7 @@ export async function* records({ root = process.cwd() } = {}) {
           ],
           tables: rows.length ? [{ heading: `Old ${v.n} wards and their new wards`, heading_ne: "साबिकको वडा → हालको वडा", head: ["Old ward", "Now"], rows: linkRows }] : [],
           faq,
-          links: commonLinks(named ? [named.lat, named.lng] : null), sources: sources("vdc", "states"), lastmod: LASTMOD,
+          links: commonLinks(named ? [named.lat, named.lng] : null, `${v.title}, ${d.en}`), sources: sources("vdc", "states"), lastmod: LASTMOD,
           ...(targets.length ? {} : { quality: { allow_index: false, reason: "no-current-palika-in-mapping" } }),
         };
       }
@@ -555,7 +556,7 @@ export async function* records({ root = process.cwd() } = {}) {
         { q: `Which district is ${m.name} in?`, a: `${m.en} is in ${d.en} District, ${p.en}.` },
       ],
       child_heading: `Wards and villages of ${m.en}`, child_heading_ne: `${m.neName}का वडा र गाउँहरू`,
-      website: m.website, links: commonLinks(c), sources: sources("states", "vdc", "osm"), lastmod: LASTMOD,
+      website: m.website, links: commonLinks(c, `${m.en}, ${d.en}`), sources: sources("states", "vdc", "osm"), lastmod: LASTMOD,
     };
 
     // ---------- wards ----------
@@ -605,7 +606,7 @@ export async function* records({ root = process.cwd() } = {}) {
           { q: `Which district is ${m.name} ward ${n} in?`, a: `${m.en} ward ${n} is in ${d.en} District, ${p.en}, Nepal.` },
           ...(neighbours.length ? [{ q: `Which wards border ${m.name} ward ${n}?`, a: `${neighbours.map((x) => x.title).join(", ")}.` }] : []),
         ],
-        links: commonLinks(c2), sources: sources("states", ...(former ? ["vdc"] : []), ...(wg || wSettle.length || wPois.length ? ["osm"] : [])), lastmod: LASTMOD,
+        links: commonLinks(c2, `${m.en} ward ${n}, ${d.en}`), sources: sources("states", ...(former ? ["vdc"] : []), ...(wg || wSettle.length || wPois.length ? ["osm"] : [])), lastmod: LASTMOD,
         ...(hasData ? {} : { quality: { allow_index: false, reason: "ward-without-data" } }),
       };
     }
@@ -641,7 +642,7 @@ export async function* records({ root = process.cwd() } = {}) {
           ...poiLists(nearPois, { limit: 12, near }).map((l) => ({ ...l, heading: `${l.heading.replace(/ \(.*\)$/, "")} within 3 km` })),
           { heading: "Nearby villages and settlements", heading_ne: "नजिकका गाउँ", items: nearVillages.map(({ o, k }) => ({ title: o.name, ...(o.name_ne ? { title_ne: o.name_ne } : {}), ...(villagePath.has(o) ? { href: o.path } : {}), note: `${dist(k)} ${bearing(s.lat, s.lng, o.lat, o.lng)}` })) },
         ],
-        links: [{ href: `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`, label: `Directions to ${s.name} (Google Maps)` }, ...commonLinks(near)],
+        links: [{ href: `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}`, label: `Directions to ${s.name} (Google Maps)` }, ...commonLinks([s.lat, s.lng], `${s.name}, ${d.en}`)],
         sources: sources("osm", "states", ...(former || oldUnit ? ["vdc"] : [])), lastmod: LASTMOD,
         ...(indexable ? {} : { quality: { allow_index: false, reason: "village-thin" } }),
       };

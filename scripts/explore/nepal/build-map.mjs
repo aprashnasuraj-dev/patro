@@ -152,6 +152,20 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <div class="np-app">
 <aside class="np-panel" aria-label="Search and filters">
 <button id="np-toggle" type="button" aria-label="Show or hide the panel"></button>
+<div class="np-tabs" role="tablist"><button type="button" role="tab" data-tab="explore" aria-selected="true" class="on">Explore · खोज्नुहोस्</button><button type="button" role="tab" data-tab="route" aria-selected="false">🧭 From → To · बाटो</button></div>
+<div id="np-route" class="np-route" hidden>
+<div class="np-scroll">
+<div class="np-field"><span class="np-dot a">A</span><input id="np-from" type="search" placeholder="From: place, village, palika + ward…" autocomplete="off" aria-label="From"><button type="button" class="np-mini" data-pick="from" title="Pick on the map">📌</button><ul class="np-sugg" id="np-from-sugg" hidden></ul></div>
+<div class="np-swaprow"><button type="button" id="np-me-from" class="np-mini wide">📍 From my location</button><button type="button" id="np-swap" class="np-mini" title="Swap From and To" aria-label="Swap">⇅</button></div>
+<div class="np-field"><span class="np-dot b">B</span><input id="np-to" type="search" placeholder="To: temple, peak, lake, town…" autocomplete="off" aria-label="To"><button type="button" class="np-mini" data-pick="to" title="Pick on the map">📌</button><ul class="np-sugg" id="np-to-sugg" hidden></ul></div>
+<div class="np-modes" role="radiogroup" aria-label="Travel by"><button type="button" data-mode="car" class="on">🚗 Car / bus</button><button type="button" data-mode="bike">🏍️ Bike</button><button type="button" data-mode="foot">🚶 Walk / trek</button></div>
+<p id="np-route-msg" class="np-note">Choose where you start and where you want to go, or tap any place on the map and pick <b>From here</b> / <b>To here</b>.</p>
+<div id="np-route-sum" hidden></div>
+<div id="np-along-wrap" hidden><h3>Along the way · बाटोमा पर्ने ठाउँ</h3><p class="np-note" id="np-along-head"></p><ol id="np-along"></ol></div>
+<details id="np-steps-wrap" hidden><summary>Turn-by-turn directions</summary><ol id="np-steps"></ol></details>
+</div>
+</div>
+<div class="np-explore">
 <div class="np-search"><input id="np-q" type="search" placeholder="Search a temple, peak, village, palika or ward…" autocomplete="off" aria-label="Search the map"><ul id="np-results" hidden></ul></div>
 <div class="np-scroll">
 <div class="np-row"><select id="np-district" aria-label="District"><option value="">All of Nepal</option></select><button id="np-near" type="button">📍 Near me</button><button id="np-reset" type="button">Reset</button></div>
@@ -162,11 +176,12 @@ function shell({ path, title, description, h1, intro, preset, content, schema })
 <p id="np-list-head">Loading the map…</p>
 <ol id="np-list"></ol>
 </div>
+</div>
 </aside>
 <div id="np-map" role="region" aria-label="Map of Nepal"></div>
 </div>
 <main class="np-content">${content}</main>
-<footer>Places © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> (ODbL), matched to wards by Aafnai Patro. Base map © <a href="https://openfreemap.org" rel="nofollow noopener">OpenFreeMap</a>. Last updated ${LASTMOD}. Spotted a missing temple or a wrong place? Add or fix it on OpenStreetMap and it appears here after the next monthly refresh, or <a href="/corrections">tell us</a>.</footer>
+<footer>Places © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a> (ODbL), matched to wards by Aafnai Patro. Base map © <a href="https://openfreemap.org" rel="nofollow noopener">OpenFreeMap</a>. Routes © <a href="https://www.openstreetmap.org/copyright" rel="nofollow noopener">OpenStreetMap contributors</a>, computed by <a href="https://project-osrm.org/" rel="nofollow noopener">OSRM</a> on <a href="https://routing.openstreetmap.de/about.html" rel="nofollow noopener">FOSSGIS</a> servers. Last updated ${LASTMOD}. Spotted a missing temple or a wrong place? Add or fix it on OpenStreetMap and it appears here after the next monthly refresh, or <a href="/corrections">tell us</a>.</footer>
 <script>window.NEPALMAP=${JSON.stringify(config).replace(/</g, "\\u003c")};</script>
 <script src="${MAPLIBRE}.js" defer></script>
 <script src="/nepalmap/app.js?v=${version}" defer></script>
@@ -192,7 +207,7 @@ pages.push({
     title: "Nepal Map: Temples, Gumbas, Mountains, Lakes, Villages & Wards | आफ्नै पात्रो",
     description: `Interactive map of Nepal with ${fmt(countOf("worship"))} temples, gumbas, mosques and churches, ${fmt(countOf("peak"))} peaks, ${fmt(countOf("lake"))} lakes, ${fmt(countOf("village"))} villages and every ward. Search, filter by district and get directions.`,
     h1: "Nepal map: temples, gumbas, mountains, villages and wards",
-    intro: `${fmt(totalPlaces)} named places from OpenStreetMap, each placed in its palika and ward. Search by name in English or Nepali, pick a district, turn kinds of places on and off, or tap “Near me”.`,
+    intro: `${fmt(totalPlaces)} named places from OpenStreetMap, each placed in its palika and ward. Search by name in English or Nepali, pick a district, turn kinds of places on and off, or tap “Near me”. Plan a trip with “From → To” to see the road or trail and every temple, peak and lake along the way.`,
     content: `<section><h2>What's on the map</h2><div class="np-cards">${cards}</div></section>
 <section><h2>By province</h2><div class="tw"><table><thead><tr><th>Province</th><th>Hindu temples</th><th>Gumbas</th><th>Peaks</th><th>Lakes</th><th>Schools</th></tr></thead><tbody>${provinceRows}</tbody></table></div></section>
 <section><h2>Districts of Nepal</h2><p>Every district page lists its palikas, all wards, the former VDCs and what each old ward is now.</p><ul class="cols">${districtLinks}</ul></section>
