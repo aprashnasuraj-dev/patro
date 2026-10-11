@@ -145,3 +145,8 @@ Disallow: /admin/
 Disallow: /auth/
 
 Sitemap: https://aafnaipatro.com/sitemap.xml
+Sitemap: https://aafnaipatro.com/sitemap-explore.xml
+Sitemap: https://aafnaipatro.com/sitemap-places.xml
+Sitemap: https://aafnaipatro.com/sitemap-nepalmap.xml
+Sitemap: https://aafnaipatro.com/advancetools/sitemap.xml
+Sitemap: https://aafnaipatro.com/sitemap-worldcal.xml

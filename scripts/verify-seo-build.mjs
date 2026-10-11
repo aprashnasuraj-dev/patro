@@ -60,7 +60,9 @@ expect(dayHtml.includes('"@type":"BreadcrumbList"') || dayHtml.includes('"@type"
 
 const robots = await read("public/robots.txt");
 const robotsSitemapLines = robots.split("\n").filter((line) => /^sitemap:/i.test(line.trim()));
-expect(robotsSitemapLines.length === 1 && robotsSitemapLines[0].trim() === `Sitemap: ${SITE}/sitemap.xml`, "robots.txt must contain exactly one sitemap index line");
+const discoverySitemaps = ["sitemap.xml", "sitemap-explore.xml", "sitemap-places.xml", "sitemap-nepalmap.xml", "advancetools/sitemap.xml", "sitemap-worldcal.xml"];
+const expectedSitemapLines = discoverySitemaps.map((file) => `Sitemap: ${SITE}/${file}`);
+expect(JSON.stringify(robotsSitemapLines.map(line => line.trim())) === JSON.stringify(expectedSitemapLines), "robots.txt must declare root and independent sitemap families exactly once");
 expect((await read("dist/robots.txt")) === robots, "dist/robots.txt differs from public/robots.txt");
 for (const path of ["/api/", "/compat-api/", "/me/", "/admin/", "/auth/"]) expect(robots.includes(`Disallow: ${path}`), `robots missing private boundary ${path}`);
 
@@ -76,6 +78,9 @@ const indexXml = await read("dist/sitemap.xml");
 const indexEntries = parseSitemapIndex(indexXml);
 expect(indexEntries.length >= 90 && indexEntries.length <= 140, `sitemap child count out of range: ${indexEntries.length}`);
 const indexFiles = new Set(indexEntries.map((entry) => entry.file));
+for (const independent of discoverySitemaps.slice(1)) {
+  expect(!indexFiles.has(independent), `independent sitemap index must not be nested under /sitemap.xml: ${independent}`);
+}
 expect(indexFiles.has("sitemap-history-events.xml"), "history event sitemap missing from sitemap index");
 expect(JSON.stringify([...indexFiles].sort()) === JSON.stringify([...(manifest.sitemap_files || [])].sort()), "manifest sitemap_files drifted from sitemap index");
 for (const year of windowYears) {

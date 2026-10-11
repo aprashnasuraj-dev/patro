@@ -54,11 +54,23 @@ const crawlerAgents = [
   "Claude-SearchBot", "Claude-User", "ClaudeBot", "PerplexityBot", "Perplexity-User",
   "Applebot", "Applebot-Extended", "Amazonbot", "DuckDuckBot", "YandexBot", "NaverBot"
 ];
+// Do not nest these independent sitemap indexes in /sitemap.xml: Google rejects
+// sitemap indexes that point at other sitemap indexes. robots.txt supports
+// multiple Sitemap directives, so Googlebot and Bingbot can find every family.
+const independentSitemaps = [
+  "sitemap-explore.xml",
+  "sitemap-places.xml",
+  "sitemap-nepalmap.xml",
+  "advancetools/sitemap.xml",
+  "sitemap-worldcal.xml"
+];
 const robots = [
   "# Aafnai Patro crawl policy — public pages are discoverable; private/auth surfaces are not.",
   "# Cloudflare bot-management settings must remain consistent with this file; a dashboard-level AI-bot block can override robots.txt.",
   ...crawlerAgents.map(crawlerGroup),
-  `Sitemap: ${SITE}/sitemap.xml`, ""
+  `Sitemap: ${SITE}/sitemap.xml`,
+  ...independentSitemaps.map((file) => `Sitemap: ${SITE}/${file}`),
+  ""
 ].join("\n");
 
 const llms = [
