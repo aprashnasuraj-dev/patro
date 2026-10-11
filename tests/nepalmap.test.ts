@@ -78,4 +78,17 @@ describe("Nepal map pages", () => {
     for (const rule of ['"!/nepalmap"', '"!/nepalmap/*"', '"!/sitemap-nepalmap.xml"']) expect(wrangler).toContain(rule);
     expect(existsSync("scripts/explore/nepal/map/app.js")).toBe(true);
   });
+
+  it("offers From → To routes with places along the way", () => {
+    const html = readFileSync(join(out, "nepalmap.html"), "utf8");
+    for (const id of ['data-tab="route"', 'id="np-from"', 'id="np-to"', 'data-mode="car"', 'data-mode="foot"', 'id="np-along"', 'id="np-steps"', "routing.openstreetmap.de"]) expect(html, id).toContain(id);
+    const app = readFileSync("scripts/explore/nepal/map/app.js", "utf8");
+    // Router: OSRM on the FOSSGIS servers (CORS, no key); the CSP must allow exactly that origin.
+    expect(app).toContain("https://routing.openstreetmap.de/");
+    expect(app).toContain('data-route="from"');
+    const headers = readFileSync("public/_headers", "utf8");
+    const block = headers.slice(headers.indexOf("\n/nepalmap\n"));
+    expect(block).toContain("https://routing.openstreetmap.de");
+    expect(headers.split(/\n\n/)[0]).not.toContain("routing.openstreetmap.de");
+  });
 });
