@@ -65,6 +65,7 @@
     "seo:preserve-urls": "node scripts/verify-url-preservation.mjs && node scripts/verify-url-preservation.mjs dist",
     "test:voice": "node --test tests/voice-server-contract.test.mjs tests/voice-engine-contract.test.mjs tests/voice-features-contract.test.mjs",
     "test:place-birthday": "node --test tests/place-birthday-contract.test.mjs",
+    "test:places-calendar": "vitest run tests/places-calendar-route.test.ts",
     "seo:growth": "node scripts/prerender-growth.mjs",
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:explore": "vitest run tests/explore-engine.test.ts tests/nepalmap.test.ts",

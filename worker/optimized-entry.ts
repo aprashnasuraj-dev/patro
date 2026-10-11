@@ -1,5 +1,6 @@
 import { growthPageResponse } from "./growth";
 import { exploreResponse } from "./explore";
+import { placesCalendarResponse } from "./places-calendar";
 import { worldcalResponse } from "./worldcal";
 import { dailyHtmlResponse } from "./daily-html";
 import connectedWorker from "./connected-entry";
@@ -50,6 +51,10 @@ const optimizedWorker = {
     // Explore families own only their new prefixes and /sitemap-explore.xml + /sitemap-x-*.xml; null for everything else.
     const explore = await exploreResponse(request, env as any, ctx);
     if (explore) return explore;
+    // Places-calendar pages own only /kati, /janma, /shraddha, /mountains, /treks (+ /ne/), their assets and
+    // /sitemap-places.xml + /sitemaps/{section}-N.xml; null for everything else.
+    const placesCalendar = await placesCalendarResponse(request, env as any, ctx);
+    if (placesCalendar) return placesCalendar;
     // World calendars own only /nameday, /ethiopian-calendar, /bali-calendar, /weton, /mondkalender, /calendario-lunar(e)
     // and /sitemap-worldcal.xml + /sitemap-wc-*.xml; null for everything else.
     const worldcal = await worldcalResponse(request, env as any, ctx);

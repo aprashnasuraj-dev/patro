@@ -145,11 +145,20 @@ festival-year/place-festival page for the current year to +2 (2,178 cards,
 
 ## Deploying on aafnaipatro.com
 
+**Production (Cloudflare):** `.github/workflows/places-calendar-deploy.yml` builds `kati, janma, shraddha,
+mountains, treks` (each also under `/ne/`) weekly and on demand, and syncs them to R2 under `pc/v1/`;
+`worker/places-calendar.ts` serves them. `/festivals` and `/places` are **not** published there: `/festivals`
+already belongs to the site's own festival pages, and place links point to the site's Nepal map
+(`/nepalmap?q=…`) instead. Submit `https://aafnaipatro.com/sitemap-places.xml` in Search Console after the
+first run.
+
+**Standalone hosting** (anything else):
+
 * Copy `build/` to the server and include `deploy/nginx.conf` in your
   `server {}` block. It serves only these paths: `/places`, `/festivals`,
   `/mountains`, `/treks`, `/kati`, `/janma`, `/shraddha` (each also under `/ne/`),
   `/og/`, `/static/places/`, `/places-data/`, `/sitemap-places.xml`, `/sitemaps/`.
-* Add `Sitemap: https://www.aafnaipatro.com/sitemap-places.xml` to `robots.txt`
+* Add `Sitemap: https://aafnaipatro.com/sitemap-places.xml` to `robots.txt`
   and submit it in Search Console.
 * Daily rebuild example (standalone hosting only): `deploy/rebuild-workflow.example.yml`.
 * Docker: `docker build -f deploy/Dockerfile -t aafnai-places .`

@@ -25,7 +25,7 @@ TITLE = re.compile(r"<title>(.*?)</title>", re.S)
 DESC = re.compile(r'<meta name="description" content="(.*?)">')
 OG = re.compile(r'<meta property="og:image" content="https?://[^/]+(/og/[^"]+)">')
 # Paths served by the existing aafnaipatro.com app, not by this build
-SITE_PATHS = ("/date/", "/tools/", "/calendar/", "/convert", "/rashifal", "/guides/", "/samudaya", "/methodology")
+SITE_PATHS = ("/date/", "/tools/", "/calendar/", "/convert", "/rashifal", "/guides/", "/samudaya", "/methodology", "/nepalmap")
 ALT = re.compile(r'<link rel="alternate" hreflang="(en|ne)" href="https?://[^/]+(/[^"]*)">')
 
 

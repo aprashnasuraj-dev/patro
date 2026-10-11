@@ -288,7 +288,7 @@ def main():
     ap.add_argument("--years", default=None, help="BS year range, e.g. 2083-2090 (default: current BS year to 2100)")
     ap.add_argument("--langs", default="en,ne")
     ap.add_argument("--only", default=SECTIONS, help=f"Sections to build (default: {SECTIONS})")
-    ap.add_argument("--base-url", default="https://www.aafnaipatro.com")
+    ap.add_argument("--base-url", default="https://aafnaipatro.com")
     ap.add_argument("--asset-prefix", default="/static/places")
     ap.add_argument("--path-root", default="", help='Mount all sections under a prefix, e.g. "/explore"')
     ap.add_argument("--today", default=None, help="Build date YYYY-MM-DD (default: today in Nepal)")
@@ -304,7 +304,8 @@ def main():
     years = a.years or f"{model.CFG.current_bs_year}-2100"
     y0, y1 = (int(x) for x in years.split("-"))
     cfg = {"base_url": a.base_url, "first_year": y0, "last_year": y1, "asset_prefix": a.asset_prefix,
-           "index_osm": a.index_osm, "path_root": a.path_root.rstrip("/")}
+           "index_osm": a.index_osm, "path_root": a.path_root.rstrip("/"),
+           "sections": tuple(x.strip() for x in a.only.split(",") if x.strip())}
     if a.today:
         cfg["today"] = date.fromisoformat(a.today)
     if a.image_years:
