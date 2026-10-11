@@ -90,17 +90,21 @@ describe('voice + tts helpers', () => {
     expect(worker).not.toContain('aiEnvOverlay');
     expect(worker).not.toContain('env.DB');
   });
-  it('detects configured server STT and exposes it as a selectable recognition mode', () => {
+  it('makes voice typing and Notes browser-only with no AI audio uploads', () => {
     const hook = readFileSync(new URL('../src/patro-tools/language/react/useNepaliDictation.ts', import.meta.url), 'utf8');
     const tool = readFileSync(new URL('../src/patro-tools-integration/VoiceTypingTool.tsx', import.meta.url), 'utf8');
-    expect(hook).toContain('/api/nepali/speech-capabilities');
-    expect(hook).toContain('payload?.stt?.server === true');
-    expect(hook).toContain("setMode('server')");
-    expect(hook).toContain('selectMode');
-    expect(tool).toContain('dictation.serverAvailable');
-    expect(tool).toContain('dictation.selectMode("server")');
-    expect(tool).toContain('Server transcription');
-    expect(tool).toContain('Accurate');
+    const diary = readFileSync(new URL('../src/components/MyDiary.tsx', import.meta.url), 'utf8');
+    const quick = readFileSync(new URL('../src/components/HomeQuickNote.tsx', import.meta.url), 'utf8');
+    expect(hook).toContain('serverAvailable: false');
+    expect(hook).toContain('recognition.lang = language');
+    expect(hook).not.toContain('/api/nepali/stt');
+    expect(hook).not.toContain('/api/nepali/speech-capabilities');
+    expect(hook).not.toContain('MediaRecorder');
+    expect(tool).toContain('Live Browser recognition');
+    expect(tool).not.toContain('Server transcription');
+    expect(tool).not.toContain('dictation.selectMode("server")');
+    expect(diary).not.toContain('serverFallback:true');
+    expect(quick).not.toContain('serverFallback:true');
   });
 });
 

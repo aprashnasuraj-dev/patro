@@ -41,7 +41,7 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   const [noteDate,setNoteDate]=useState(new URLSearchParams(location.search).get("date")||new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu"}).format(new Date()));
  const textarea=useRef<HTMLTextAreaElement>(null);
  const insertFinal = useDictationEditor(text, setText, textarea);
- const dictation=useNepaliDictation({language:voiceLang,serverFallback:true,onFinal:insertFinal});const listening=dictation.listening;
+ const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal});const listening=dictation.listening;
   const worker=useRef<Worker|null>(null);
   const requestId=useRef(0);
 
@@ -92,7 +92,7 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
     <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/><InlineDictationPreview textarea={textarea} interim={dictation.interim}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
     <label>मितिमा सुरक्षित गर्नुहोस्<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)} required/></label>{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>
-    <VoiceHelp unsupported={dictation.mode==="unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} serverAvailable={dictation.serverAvailable} language={dictation.language}/>
+    <VoiceHelp unsupported={dictation.mode==="unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} language={dictation.language}/>
     {life.notes.length>0&&<div className="mp-note-list"><h3>{noteDate} · सुरक्षित नोटहरू</h3>{life.notes.filter(note=>(note.date||note.createdAt.slice(0,10))===noteDate).map(note=><article key={note.id}><div><small>{formatNeDate(note.createdAt,{time:true})} · {modeLabel(note.inputMode)}</small><p>{note.text}</p></div><button type="button" aria-label="नोट हटाउनुहोस्" onClick={()=>removeNote(note.id)}><Trash2 size={16}/></button></article>)}</div>}
   </section>;
 }

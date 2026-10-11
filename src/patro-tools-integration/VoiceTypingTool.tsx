@@ -50,20 +50,15 @@ export function VoiceTypingTool() {
   const appendFinal = useDictationEditor(text, setText, textarea);
   const dictation = useNepaliDictation({
     language,
-    serverFallback: true,
     onFinal: appendFinal,
     spokenNumbers, transliterateLatin,
   });
   const meta = LANGUAGE_META[language];
-  const modeText = dictation.processing
-    ? (language === "ne-NP" ? "आवाजलाई पाठमा बदलिँदैछ…" : "Transcribing recording…")
-    : dictation.mode === "browser"
-      ? `${meta.short} · Live recognition`
-      : dictation.mode === "server"
-        ? `${meta.short} · Accurate server transcription`
-        : dictation.capabilitiesChecked
-          ? "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन"
-          : "Voice service जाँच हुँदैछ…";
+  const modeText = dictation.mode === "browser"
+    ? `${meta.short} · Live Browser recognition`
+    : dictation.capabilitiesChecked
+      ? "यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन"
+      : "Browser recognition जाँच हुँदैछ…";
 
   function chooseLanguage(next: DictationLanguage) {
     if (next === language || dictation.processing) return;
@@ -104,7 +99,7 @@ export function VoiceTypingTool() {
   return (
     <ToolPage
       title="आवाजबाट टाइपिङ · Voice to Text"
-      description="नेपाली वा English छानेर बोलाइलाई सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। Live recognition वा अझ भरपर्दो recorded server transcription मध्ये उपलब्ध विकल्प छान्न सकिन्छ।"
+      description="नेपाली वा English छानेर Live Browser recognition बाट बोलाइलाई सम्पादन गर्न मिल्ने पाठमा बदल्नुहोस्। आफ्नै पात्रोले आवाज AI/server मा अपलोड गर्दैन।"
     >
       <section className="patro-tool-card voice-typing-card">
         <div className="voice-language-panel">
@@ -137,46 +132,17 @@ export function VoiceTypingTool() {
           </div>
         </div>
 
-        {(dictation.browserAvailable || dictation.serverAvailable) ? (
-          <div className="voice-engine-panel">
-            <div>
-              <span className="tool-badge">पहिचान विधि · Recognition mode</span>
-              <p className="tool-muted">Live mode तुरुन्तै लेख्छ। Server mode ले बोल्दै गर्दा प्रत्येक छोटो recording को पाठ तयार गर्छ।</p>
-            </div>
-            <div className="voice-engine-picker" role="group" aria-label="Voice recognition engine">
-              {dictation.browserAvailable ? (
-                <button
-                  type="button"
-                  className={dictation.mode === "browser" ? "is-active" : ""}
-                  aria-pressed={dictation.mode === "browser"}
-                  onClick={() => dictation.selectMode("browser")}
-                  disabled={dictation.listening || dictation.processing}
-                >
-                  <strong>⚡ Live</strong>
-                  <small>Browser recognition</small>
-                </button>
-              ) : null}
-              {dictation.serverAvailable ? (
-                <button
-                  type="button"
-                  className={dictation.mode === "server" ? "is-active" : ""}
-                  aria-pressed={dictation.mode === "server"}
-                  onClick={() => dictation.selectMode("server")}
-                  disabled={dictation.listening || dictation.processing}
-                >
-                  <strong>🎯 Accurate</strong>
-                  <small>Server transcription</small>
-                </button>
-              ) : null}
-            </div>
+        <div className="voice-engine-panel" role="group" aria-label="Voice recognition engine">
+          <div>
+            <span className="tool-badge">पहिचान विधि · Recognition mode</span>
+            <p className="tool-muted">⚡ Live Browser recognition · बोल्दाबोल्दै पाठ देखिन्छ। Server/AI recording छैन।</p>
           </div>
-        ) : null}
-
-        {dictation.mode === "server" && (dictation.listening || dictation.processing || dictation.progress.completed > 0) ? (
-          <span className="tool-badge" role="status" aria-live="polite">
-            {dictation.progress.elapsedSeconds}s · {dictation.progress.completed} {language === "ne-NP" ? "खण्ड तयार" : "chunks ready"} · {dictation.progress.pending} {language === "ne-NP" ? "प्रतीक्षामा" : "pending"}
-          </span>
-        ) : null}
+          <div className="voice-engine-picker">
+            <button type="button" className="is-active" aria-pressed="true" disabled>
+              <strong>⚡ Live</strong><small>Browser recognition</small>
+            </button>
+          </div>
+        </div>
         {dictation.localStatus === "downloadable" ? <button type="button" className="tool-secondary-button" onClick={() => void dictation.installLocalRecognition()} disabled={dictation.localInstalling || dictation.listening || dictation.processing}>{dictation.localInstalling ? "अफलाइन आवाज डाउनलोड हुँदैछ…" : "अफलाइन आवाज डाउनलोड गर्नुहोस्"}</button> : null}
         {dictation.localStatus === "available" ? <label><input type="checkbox" checked={dictation.localEnabled} disabled={dictation.listening || dictation.processing} onChange={event => dictation.selectLocalRecognition(event.target.checked)}/> यस उपकरणमा आवाज पहिचान · On-device recognition</label> : null}
         {language === "ne-NP" ? <fieldset className="voice-cleanup-options"><legend>पाठ मिलाउने विकल्प · Optional cleanup</legend>
@@ -189,9 +155,6 @@ export function VoiceTypingTool() {
           <div className="voice-capture-status">
             <span className="tool-badge" aria-live="polite">{modeText}</span>
             <p>{meta.punctuation}</p>
-            {dictation.mode === "server" ? (
-              <p className="tool-muted">हरेक 12 सेकेन्डमा recording transcription का लागि पठाइन्छ। Stop थिच्दा बाँकी आवाज पनि पठाइन्छ।</p>
-            ) : null}
           </div>
           {!dictation.listening ? (
             <button
@@ -201,11 +164,7 @@ export function VoiceTypingTool() {
               disabled={dictation.mode === "unsupported" || dictation.processing}
               aria-busy={dictation.processing}
             >
-              {dictation.processing
-                ? (language === "ne-NP" ? "⏳ पाठ तयार हुँदैछ…" : "⏳ Transcribing…")
-                : dictation.mode === "server"
-                  ? (language === "ne-NP" ? "🎙 रेकर्ड सुरु गर्नुहोस्" : "🎙 Start recording")
-                  : meta.start}
+              {meta.start}
             </button>
           ) : (
             <button type="button" className="tool-secondary-button voice-record-button is-listening" onClick={dictation.stop}>
@@ -215,7 +174,7 @@ export function VoiceTypingTool() {
           )}
         </div>
 
-        <VoiceHelp unsupported={dictation.mode === "unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} serverAvailable={dictation.serverAvailable} language={language}/>
+        <VoiceHelp unsupported={dictation.mode === "unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} language={language}/>
         {dictation.error ? <p className="tool-status" role="alert">{dictation.error}</p> : null}
 
         <label className="tool-block-label voice-transcript-label">
@@ -252,7 +211,7 @@ export function VoiceTypingTool() {
       <ToolResult title={language === "ne-NP" ? "टाइप भएको पाठ" : "English transcript"} speechText={text}>
         <p className="tool-preview" lang={language === "ne-NP" ? "ne" : "en"}>{text || meta.empty}</p>
         <p className="tool-muted">
-          Live mode मा Patro ले audio संग्रह गर्दैन। Server transcription प्रयोग हुँदा छोटो recording transcription का लागि मात्र पठाइन्छ; Patro ले recording संग्रह गर्दैन।
+          Patro मा recording वा AI transcription अपलोड हुँदैन। Browser recognition को data processing भने प्रयोग भएको ब्राउजरको नीतिअनुसार हुन सक्छ।
         </p>
       </ToolResult>
     </ToolPage>

@@ -21,7 +21,7 @@ export function HomeQuickNote({ language }: { language: Lang }) {
   const [notes, setNotes] = useState<StoredNote[]>(() => { try { return readLife().notes; } catch { return []; } });
   const textarea = useRef<HTMLTextAreaElement>(null);
   const insertFinal = useDictationEditor(text, setText, textarea, () => setUsedVoice(true));
-  const dictation=useNepaliDictation({language:voiceLang,serverFallback:true,onFinal:insertFinal});const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
+  const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal});const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
 
   useEffect(() => {
     const refresh = () => setNotes(readLife().notes);
@@ -60,7 +60,7 @@ export function HomeQuickNote({ language }: { language: Lang }) {
       <GoogleAuthButton language={language} compact/>
       <button type="button" className="qn-save" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}>{l("सुरक्षित गर्नुहोस्", "Save")}</button>
     </div>
-    <VoiceHelp unsupported={!supported} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} serverAvailable={dictation.serverAvailable} language={voiceLang}/>
+    <VoiceHelp unsupported={!supported} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} language={voiceLang}/>
     {status ? <p className="qn-status" role="status">{status}</p> : null}
     {notes.length ? <ul className="qn-list">{notes.filter(n=>(n.date||n.createdAt.slice(0,10))===noteDate).map((n) => <li key={n.id}><small>{formatDate(n.createdAt, language, { year: false, time: true })}{n.inputMode === "voice" ? " · 🎙" : ""}</small><p>{n.text}</p></li>)}</ul> : null}
     <footer className="hx-foot"><span /><a href="/me/notes">{l("सबै टिपोट", "All notes")} →</a></footer>
