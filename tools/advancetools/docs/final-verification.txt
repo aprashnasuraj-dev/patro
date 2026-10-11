@@ -1,0 +1,153 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> aafnai-advance-tools@1.0.0 verify
+> npm run build && npm test && node scripts/verify.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> aafnai-advance-tools@1.0.0 build
+> node scripts/build.mjs
+
+{
+  "version": "1.0.0",
+  "origin": "https://aafnaipatro.com",
+  "assetPrefix": "/advancetools/assets/99c41b796a9f",
+  "pages": 2029,
+  "omittedChordCombinations": 0,
+  "files": 2067,
+  "bytes": 55913231,
+  "counts": {
+    "knittingCalculators": 41,
+    "knittingCharts": 3,
+    "instrumentTunings": 11,
+    "chordPages": 1848,
+    "threadPages": 99,
+    "workshopCalculators": 6,
+    "fontDirections": 6,
+    "paperTypes": 8
+  }
+}
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> aafnai-advance-tools@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ Knitting defaults: cast-on (1.656754ms)
+✔ Knitting defaults: rows (0.123547ms)
+✔ Knitting defaults: finished-width (0.084097ms)
+✔ Knitting defaults: finished-height (1.253355ms)
+✔ Knitting defaults: stitch-gauge (0.144368ms)
+✔ Knitting defaults: row-gauge (0.099891ms)
+✔ Knitting defaults: gauge-adjustment (0.119521ms)
+✔ Knitting defaults: row-adjustment (0.065519ms)
+✔ Knitting defaults: pattern-repeats (0.088594ms)
+✔ Knitting defaults: yarn-substitution (0.131498ms)
+✔ Knitting defaults: skeins (0.075835ms)
+✔ Knitting defaults: yarn-length (0.051177ms)
+✔ Knitting defaults: yarn-weight (0.03956ms)
+✔ Knitting defaults: swatch-yardage (0.053891ms)
+✔ Knitting defaults: blanket-yardage (0.037927ms)
+✔ Knitting defaults: scarf-yardage (0.037206ms)
+✔ Knitting defaults: sweater-yardage (0.046511ms)
+✔ Knitting defaults: ease (0.042154ms)
+✔ Knitting defaults: sweater-body (0.037577ms)
+✔ Knitting defaults: sleeve-taper (0.134974ms)
+✔ Knitting defaults: raglan-increases (0.048503ms)
+✔ Knitting defaults: neckline-pickup (0.042094ms)
+✔ Knitting defaults: sock-cast-on (0.035814ms)
+✔ Knitting defaults: heel-flap (0.036525ms)
+✔ Knitting defaults: sock-toe (0.037476ms)
+✔ Knitting defaults: hat-cast-on (0.035263ms)
+✔ Knitting defaults: hat-crown (0.064718ms)
+✔ Knitting defaults: blanket-cast-on (0.040912ms)
+✔ Knitting defaults: granny-squares (0.046901ms)
+✔ Knitting defaults: border-yardage (0.032258ms)
+✔ Knitting defaults: increase-spacing (0.067863ms)
+✔ Knitting defaults: decrease-spacing (0.05971ms)
+✔ Knitting defaults: buttonhole-spacing (0.112871ms)
+✔ Knitting defaults: ribbing-repeat (0.043756ms)
+✔ Knitting defaults: crochet-chain (0.055244ms)
+✔ Knitting defaults: granny-rounds (0.042064ms)
+✔ Knitting defaults: project-time (0.05949ms)
+✔ Knitting defaults: yarn-cost (0.040672ms)
+✔ Knitting defaults: cm-inch (0.028493ms)
+✔ Knitting defaults: yard-metre (0.412914ms)
+✔ Knitting defaults: ounce-gram (0.085248ms)
+✔ Independent cast-on, yarn and conversion checks (0.199802ms)
+✔ Distribution sums and evenly splits across edge cases (87.986484ms)
+✔ Invalid gauge, shaping and repeat boundaries reject (0.774671ms)
+✔ Known open D guitar chord and spelling (14.490947ms)
+✔ Every generated mandolin-gdae voicing has exactly valid chord tones (23.912198ms)
+✔ Every generated bouzouki-gdad voicing has exactly valid chord tones (15.244105ms)
+✔ Every generated bouzouki-gdae voicing has exactly valid chord tones (13.562694ms)
+✔ Every generated charango-standard voicing has exactly valid chord tones (39.509829ms)
+✔ Every generated cavaquinho-dgbd voicing has exactly valid chord tones (12.830876ms)
+✔ Every generated baritone-ukulele-dgbe voicing has exactly valid chord tones (16.19634ms)
+✔ Every generated tenor-banjo-cgda voicing has exactly valid chord tones (14.320309ms)
+✔ Every generated irish-tenor-banjo-gdae voicing has exactly valid chord tones (17.950656ms)
+✔ Every generated guitar-dadgad voicing has exactly valid chord tones (185.855022ms)
+✔ Every generated guitar-open-d voicing has exactly valid chord tones (196.541832ms)
+✔ Every generated guitar-drop-d voicing has exactly valid chord tones (142.014025ms)
+✔ Thread reference dimensions are positive, unique and self-consistent (0.58174ms)
+✔ M10 geometry, cutting tap and limits-based fits (0.514708ms)
+✔ Converter known sample: krutidev (0.445583ms)
+✔ Converter known sample: bijoy (0.660859ms)
+✔ Converter known sample: fm-abhaya (13.205451ms)
+✔ Converter known sample: bamini (0.496401ms)
+✔ Converter known sample: zawgyi (1.302409ms)
+✔ Converter known sample: unicode-zawgyi (1.427718ms)
+✔ FM upstream full-sentence fixture 1 (10.767276ms)
+✔ FM upstream full-sentence fixture 2 (19.848307ms)
+✔ FM upstream full-sentence fixture 3 (19.369128ms)
+✔ FM upstream full-sentence fixture 4 (10.647785ms)
+✔ FM upstream full-sentence fixture 5 (12.454106ms)
+✔ FM upstream full-sentence fixture 6 (12.588278ms)
+✔ Bijoy reordering Avgvi †mvbvi evsjv (0.435208ms)
+✔ Bijoy reordering (†iKW©) (0.153783ms)
+✔ Bijoy reordering Kg©KZ©vi (0.228074ms)
+✔ Bijoy reordering we¯ÍvwiZ (0.230168ms)
+✔ Bijoy reordering msµvšÍ (0.09917ms)
+✔ Bijoy reordering †gvt b~iæj (0.09238ms)
+✔ Bijoy reordering wkÿv (0.119901ms)
+✔ Bijoy reordering cÖavbgš¿x (0.233803ms)
+✔ Bamini ambiguity is retained and reported (0.310639ms)
+✔ Kruti pre-base i, conjunct and reph (0.485444ms)
+✔ Unicode Zawgyi round trips for ordinary words (1.17733ms)
+✔ Converters bound input and preserve newlines (35.608796ms)
+✔ Paper graph SVG and PDF are dimensioned and bounded (2.10323ms)
+✔ Paper dots SVG and PDF are dimensioned and bounded (34.008427ms)
+✔ Paper isometric SVG and PDF are dimensioned and bounded (3.385106ms)
+✔ Paper hex SVG and PDF are dimensioned and bounded (116.304731ms)
+✔ Paper music SVG and PDF are dimensioned and bounded (0.406675ms)
+✔ Paper handwriting SVG and PDF are dimensioned and bounded (0.530893ms)
+✔ Paper ruled SVG and PDF are dimensioned and bounded (0.356348ms)
+✔ Paper planner SVG and PDF are dimensioned and bounded (0.854552ms)
+✔ Paper rejects invalid sizes and untrusted colors (0.232571ms)
+✔ Local integration is scoped, idempotent and never deploys (418.812009ms)
+✔ Postbuild preserves root sitemap and robots and adds module discovery once (131.872969ms)
+✔ entry loads no tool engine through static imports (6.878528ms)
+✔ knitting engine has no unrelated engine imports (1.764467ms)
+✔ workshop engine has no unrelated engine imports (1.02543ms)
+✔ chords engine has no unrelated engine imports (0.818988ms)
+✔ paper engine has no unrelated engine imports (1.18386ms)
+✔ krutidev converter loads only its chosen mapping (3.693304ms)
+✔ bijoy converter loads only its chosen mapping (1.240435ms)
+✔ fm-abhaya converter loads only its chosen mapping (2.192114ms)
+✔ bamini converter loads only its chosen mapping (1.246745ms)
+✔ zawgyi converter loads only its chosen mapping (1.341778ms)
+✔ unicode-zawgyi converter loads only its chosen mapping (1.014053ms)
+ℹ tests 104
+ℹ suites 0
+ℹ pass 104
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1220.85278
+{
+  "pages": 2029,
+  "uniqueTitles": 2029,
+  "internalPageLinks": 55331,
+  "sitemapUrls": 2029,
+  "verifiedChecksums": 2066
+}

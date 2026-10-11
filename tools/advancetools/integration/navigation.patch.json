@@ -1,0 +1,13 @@
+{
+  "file": "src/components/AppChrome.tsx",
+  "replacements": [
+    {
+      "from": "const FEATURED_EXPERIENCES=[\n",
+      "to": "const FEATURED_EXPERIENCES=[\n [\"/advancetools/\",\"◈\",\"विशेष उपकरण\",\"बुनाइ, संगीत, वर्कशप, युनिकोड र प्रिन्ट\"],\n"
+    },
+    {
+      "from": "<a href=\"/guides\">",
+      "to": "<a href=\"/advancetools/\">{ne?\"विशेष उपकरण\":\"Advanced tools\"}</a><a href=\"/guides\">"
+    }
+  ]
+}

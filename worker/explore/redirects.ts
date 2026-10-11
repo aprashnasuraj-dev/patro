@@ -6,6 +6,7 @@
  *   /nepal/bajhang/jayaprithvi-municipality  → /nepal/bajhang/jayaprithvi  (type suffix; old /place URL style)
  *   /nepal/bajhang/jayaprithvi/ward-08       → /nepal/bajhang/jayaprithvi/ward-8
  *   /place/{province}/{district}/{palika}    → /nepal/{district}/{palika}   (the first explore release, Oct 2026)
+ *   /advancetools/kinitingcalculators/...    → /advancetools/knittingcalculators/...  (typo in early links)
  *
  * Root aliases are district names only; tests/explore-engine.test.ts proves none of them is a published URL,
  * a file in dist/ or a route the app knows, so nothing that worked before changes.
@@ -44,6 +45,9 @@ export function exploreRedirect(path: string): string | null {
   if (!parts[0] || parts.some((p) => !/^[a-z0-9-]+$/.test(p))) return null;
 
   if (parts.length === 1 && ROOT_ALIAS.has(parts[0])) return `/nepal/${ROOT_ALIAS.get(parts[0])}`;
+
+  // Advanced tools (static, tools/advancetools): the knitting collection was first shared with a typo.
+  if (parts[0] === "advancetools" && parts[1] === "kinitingcalculators") return ["/advancetools/knittingcalculators", ...parts.slice(2)].join("/") + "/";
 
   if (parts[0] === "place") {
     if (parts.length === 1) return "/nepal";

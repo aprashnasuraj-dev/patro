@@ -69,6 +69,8 @@
     "test:growth-pages": "vitest run tests/growth-pages.test.ts",
     "test:explore": "vitest run tests/explore-engine.test.ts tests/nepalmap.test.ts",
     "test:worldcal": "vitest run tests/worldcal.test.ts",
+    "advancetools:test": "node --test tools/advancetools/tests/*.test.mjs tests/advancetools-integration.test.mjs",
+    "advancetools:build": "node tools/advancetools/scripts/build.mjs --repo",
     "nepalmap:build": "node scripts/explore/nepal/build-map.mjs",
     "explore:build": "node --max-old-space-size=6144 scripts/explore/build.mjs",
     "test:birthday-modules": "node --test tests/birthday-modules.test.mjs",

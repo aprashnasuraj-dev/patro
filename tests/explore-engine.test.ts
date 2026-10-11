@@ -88,6 +88,18 @@ describe("isolation from existing routes", () => {
     }
   });
 
+  it("redirects the early advanced-tools typo and nothing else under /advancetools", async () => {
+    expect(exploreRedirect("/advancetools/kinitingcalculators")).toBe("/advancetools/knittingcalculators/");
+    expect(exploreRedirect("/advancetools/kinitingcalculators/stitch-gauge")).toBe("/advancetools/knittingcalculators/stitch-gauge/");
+    for (const p of ["/advancetools", "/advancetools/knittingcalculators", "/advancetools/chordlibrary/guitar-standard/c-major"]) {
+      expect(exploreRedirect(p), p).toBeNull();
+      expect(isExplorePath(p), p).toBe(false);
+    }
+    const res = (await exploreResponse(req("/advancetools/kinitingcalculators/"), env))!;
+    expect(res.status).toBe(301);
+    expect(res.headers.get("location")).toBe(SITE + "/advancetools/knittingcalculators/");
+  });
+
   it("claims exactly the province and district slugs below /nepal", () => {
     const nepal = EXPLORE_FAMILIES.find((f) => f.id === "nepal")!;
     expect(nepal.serve_root).toBe(false);
