@@ -3,7 +3,8 @@ import { createPortal } from "react-dom";
 import "./pwa-install.css";
 import { MorningInstallationCompletion } from "./MorningNotificationSetup";
 
-const INSTALL_NOTICE_DELAY_MS=4000;
+const INSTALL_NOTICE_DELAY_MS=32000; // Android Chrome may need 30 seconds of engagement.
+const MANUAL_GUIDE_NOTICE_DELAY_MS=4000;
 const SITE_LINK="https://aafnaipatro.com/";
 const CHROME_INTENT="intent://aafnaipatro.com/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https%3A%2F%2Faafnaipatro.com%2F;end";
 type InstallChoice={outcome:"accepted"|"dismissed";platform:string};
@@ -52,6 +53,8 @@ export function PwaInstallExperience(){
       if(candidate&&typeof candidate.prompt==="function"){
         setPromptEvent(candidate);
         setInstallStatus("");
+        // Prefer a real native prompt as soon as Chromium provides one.
+        setShowNotice(true);
       }
     };
     const onBeforeInstall=(event:Event)=>{
@@ -72,7 +75,7 @@ export function PwaInstallExperience(){
     syncPrompt(); // May have been fired BEFORE the React JS loaded.
     const timer=window.setTimeout(()=>{
       if(!isStandalone()&&!noticed.current){noticed.current=true;setShowNotice(true)}
-    },INSTALL_NOTICE_DELAY_MS);
+    },browser.android&&!browser.embedded?INSTALL_NOTICE_DELAY_MS:MANUAL_GUIDE_NOTICE_DELAY_MS);
     setFooter(document.querySelector<HTMLElement>(".ap-footer"));
     window.addEventListener("beforeinstallprompt",onBeforeInstall);
     window.addEventListener("patro:install-prompt-ready",syncPrompt);

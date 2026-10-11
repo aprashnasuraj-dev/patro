@@ -88,7 +88,7 @@ export function registerPatroServiceWorker() {
     }).catch(() => undefined);
     runWhenIdle(() => { void prewarmOfflineModules(); });
   });
-  window.addEventListener("load", () => {
+  const register = () => {
     navigator.serviceWorker.register(`/sw.js?rev=${encodeURIComponent(SW_REVISION)}`, { scope: "/", updateViaCache: "none" }).then(async (registration) => {
       try {
         await clearStaleRuntimeCaches();
@@ -100,5 +100,11 @@ export function registerPatroServiceWorker() {
         if (installed || isInstalledApp()) prepareInstalledFeatures();
       } catch { /* app remains usable if service worker setup fails */ }
     }).catch((error) => console.warn("Service worker registration failed", error));
-  });
+  };
+  // Register before slow page images/fonts finish loading; handle late JS startup too.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", register, { once: true });
+  } else {
+    register();
+  }
 }

@@ -107,6 +107,19 @@ async function providePrompt(page, outcome) {
     await early.waitForFunction(()=>window.__installPromptCalls===1,{timeout:5000});
     await earlyContext.close();
 
+    // Android Chrome does not receive a native prompt until its installability event.
+    const chromeContext=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:"block",userAgent:"Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36"});
+    const chromePage=await chromeContext.newPage();
+    await chromePage.goto(BASE+"/",{waitUntil:"domcontentloaded",timeout:30000});
+    await chromePage.locator(".ap-install-footer").waitFor({state:"visible",timeout:10000});
+    await chromePage.waitForTimeout(4750);
+    if(await chromePage.locator(".ap-install-notice").isVisible())throw new Error("Android Chrome prompted before native installability");
+    await providePrompt(chromePage,"accepted");
+    await chromePage.locator(".ap-install-notice").waitFor({state:"visible",timeout:5000});
+    await chromePage.locator(".ap-install-primary").click();
+    await chromePage.waitForFunction(()=>window.__installPromptCalls===1,{timeout:5000});
+    await chromeContext.close();
+
     // Embedded Android browsers cannot silently install PWAs. Their first tap
     // must open a prominent dialog with a real Chrome deep link.
     const embeddedContext=await browser.newContext({
@@ -125,7 +138,7 @@ async function providePrompt(page, outcome) {
     console.log(JSON.stringify({
       ok: true, nativePromptFromCard: true, acceptedNotYetInstalled: true,
       appInstalledState: true, dismissedNotInstalled: true,
-      noNativePromptGuide: true, iosGuide: true, embeddedChromeAction: true, earlyCapturedPrompt: true, visibleFallbackDialog: true, alwaysInstallNow: true
+      noNativePromptGuide: true, iosGuide: true, embeddedChromeAction: true, earlyCapturedPrompt: true, androidChromeReadiness: true, visibleFallbackDialog: true, alwaysInstallNow: true
     }, null, 2));
   } finally {
     await browser.close();
