@@ -189,7 +189,10 @@ describe("Cloudflare Free plan (static default)", () => {
   it("wrangler config keeps growth paths out of run_worker_first", async () => {
     const { readFileSync } = await import("node:fs");
     const cfg = readFileSync(new URL("../wrangler.jsonc", import.meta.url), "utf8");
-    for (const x of ["!/moon/*", "!/eclipse/*", "!/nepal/*", "!/us/*", "!/weather/*", "!/de/*", "!/fr/*", "!/es/*", "!/it/*"]) expect(cfg).toContain(`"${x}"`);
+    for (const x of ["!/moon/*", "!/eclipse/*", "!/nepal", "!/nepal/time", "!/nepal/year", "!/nepal/trek-weather", "!/nepal/trek-weather/*", "!/us/*", "!/weather/*", "!/de/*", "!/fr/*", "!/es/*", "!/it/*"]) expect(cfg).toContain(`"${x}"`);
+    // /nepal/{district}/... are Worker pages (explore engine): a path excluded here never reaches the Worker when no
+    // static file matches (Cloudflare answers 404 itself), so /nepal/* must not be excluded as a whole.
+    expect(cfg).not.toContain(`"!/nepal/*"`);
   });
 });
 
