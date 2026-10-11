@@ -1,0 +1,13 @@
+name: diag live urls (temporary)
+on:
+  push:
+    branches: [diag/browser-checks]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in /nepal/bajhang /nepal/bajhang/vdc/chainpur /nepal/kathmandu /dolakha /place/koshi /nepalmap /nepal/time /nepal/zzz-not-a-district /sitemap-x-nepal-wards-0.xml /sitemap-explore.xml "/nepal/bajhang?x=1"; do
+            h=$(curl -s -o /tmp/b -D - -A "Mozilla/5.0 diag" "https://aafnaipatro.com$u" | tr -d '\r' | grep -iE "^(HTTP|location|x-explore-cache|cache-control|cf-cache-status|x-robots-tag|content-type|server)" | tr '\n' ' ')
+            echo "::notice title=$u::$h :: $(head -c 300 /tmp/b | tr '\n' ' ')"
+          done
