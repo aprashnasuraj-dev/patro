@@ -1,0 +1,8 @@
+import {readFile,writeFile} from 'node:fs/promises';import {stripTypeScriptTypes} from 'node:module';
+const read=p=>readFile(new URL('../'+p,import.meta.url),'utf8');const write=(p,s)=>writeFile(new URL('../'+p,import.meta.url),s);
+await write('src/vendor/bijoy.mjs','// Vendored MIT source; see /advancetools/licenses/Bijoy-LICENSE.txt\n'+stripTypeScriptTypes(await read('src/vendor/bijoy.ts')));
+for(const [file,name] of [['zawgyi-z2u','getAllRulesZ2U'],['zawgyi-u2z','getAllRulesU2Z']])await write(`src/vendor/${file}.mjs`,'// Google Myanmar Tools, Apache-2.0; see bundled licenses.\n'+await read(`src/vendor/${file}.js`)+`\nexport {${name}};\n`);
+const dart=await read('reference/kruti.dart');function array(name){const raw=dart.match(new RegExp(`${name} = \\[([\\s\\S]*?)\\];`))[1].replace(/\/\/[^\n]*/g,'');return JSON.parse('['+raw+']');}
+const kd=array('chars_kd'),unicode=array('chars_unicode');if(kd.length!==unicode.length)throw Error('Kruti mapping size mismatch');await write('src/vendor/kruti-map.mjs','// Mapping adapted from ravitaak/krutidevtounicode under MIT.\nexport const pairs='+JSON.stringify(kd.map((k,i)=>[k,unicode[i]]))+';\n');
+const bm=await read('reference/bamini.js');const pairs=[];for(const m of bm.matchAll(/text = text\.replace\(\/(.*?)\/g, ("(?:[^"\\]|\\.)*")\);/g)){if(!/[\u0b80-\u0bff]/.test(m[1]))continue;pairs.push([JSON.parse(m[2]),m[1]]);}await write('src/vendor/bamini-map.mjs','// Mapping adapted from Pakeetharan/unicode-bamini-converter under MIT.\nexport const pairs='+JSON.stringify(pairs)+';\n');
+const fm=JSON.parse(await read('src/vendor/fm-abhaya.json'));await write('src/vendor/fm-abhaya.mjs','// akuruAI/Pandukabhaya MIT mapping; proprietary fonts are NOT bundled.\nexport default '+JSON.stringify(fm.mappings)+';\n');
