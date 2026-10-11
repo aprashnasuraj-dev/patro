@@ -112,7 +112,8 @@ jobs:
           set -euo pipefail
           curl -fsSL https://rclone.org/install.sh | sudo bash >/dev/null
           bucket="$(cat /tmp/r2-bucket)"
-          if [[ "${{ inputs.allow_shrink }}" == "true" ]]; then max_delete=-1; else max_delete=$(( PREV_PAGES / 5 + 100 )); fi
+          # +1000 lets a release retire a few hundred URLs (Oct 2026: /place/* became 301s to /nepal/*) without allow_shrink.
+          if [[ "${{ inputs.allow_shrink }}" == "true" ]]; then max_delete=-1; else max_delete=$(( PREV_PAGES / 5 + 1000 )); fi
           # Only unchanged-checksum files are skipped; only paths under explore/v1/ are ever written or deleted.
           rclone sync .cloudflare/explore/pages "r2:${bucket}/${PREFIX}/pages" --checksum --fast-list --transfers 64 --checkers 64 \
             --max-delete "${max_delete}" --header-upload "Content-Type: application/json; charset=utf-8" --stats 60s --stats-one-line

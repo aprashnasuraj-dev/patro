@@ -9,10 +9,11 @@ import { adToBs, bsToAd, daysInBsMonth } from "../../packages/core/src/bsDate";
 import { nsFromAd } from "../../src/patro-tools/nepal-sambat/engine";
 import { sunriseSunset } from "../../src/patro-tools/core/astro";
 import { breadcrumbs, esc, notFound, redirect, shell, siteOrigin, type GrowthEnv } from "./html";
+import nepalGeo from "../explore/nepal-geo.json";
 
 const NPT = "Asia/Kathmandu";
 const BS_MONTHS_EN = ["Baisakh", "Jestha", "Asar", "Shrawan", "Bhadra", "Ashwin (Asoj)", "Kartik", "Mangsir", "Poush", "Magh", "Falgun", "Chaitra"];
-const NAV = `<a href="/nepal">Nepal</a><a href="/nepal/time">Nepal time</a><a href="/nepal/year">Nepali year</a><a href="/nepal/trek-weather">Trek weather</a><a href="/moon">Moon</a><a href="/eclipse">Eclipses</a>`;
+const NAV = `<a href="/nepal">Nepal</a><a href="/nepal/time">Nepal time</a><a href="/nepal/year">Nepali year</a><a href="/nepal/trek-weather">Trek weather</a><a href="/nepalmap">Nepal map</a><a href="/moon">Moon</a><a href="/eclipse">Eclipses</a>`;
 const FOOT = `Aafnai Patro is a Nepali calendar. Dates come from its validated Bikram Sambat archive; times from the IANA time-zone database. <a href="/">नेपाली पात्रो</a> · <a href="/methodology">Methodology</a>`;
 
 const timeIn = (d: Date, tz: string, opts: Intl.DateTimeFormatOptions = {}) => new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit", ...opts }).format(d);
@@ -197,6 +198,11 @@ function trekHub(request: Request, env: GrowthEnv) {
   return shell(request, env, { title: "Nepal Trekking Weather: Everest Base Camp, Annapurna & Langtang Forecasts by Altitude", description: "10-day weather forecasts at the altitude of Lukla, Namche, Gorak Shep, Everest Base Camp, Annapurna Base Camp, Thorong La, Manang and Kyanjin Gompa.", body, nav: NAV, footer: FOOT, sMaxAge: 86_400, backend: "growth-nepal-trek-hub" });
 }
 
+const DISTRICT_LINKS = [...(nepalGeo as { districts: { slug: string; name: string }[] }).districts]
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((d) => `<a href="/nepal/${d.slug}">${esc(d.name)}</a>`)
+  .join("");
+
 function hub(request: Request, env: GrowthEnv, now: Date) {
   const bs = adToBs(ymdIn(now, NPT));
   const body = `<p class="crumbs"><a href="/">Aafnai Patro</a> › Nepal</p><h1>Nepal: Time, Calendar and Mountain Weather</h1>
@@ -204,7 +210,10 @@ function hub(request: Request, env: GrowthEnv, now: Date) {
 <section class="grid"><div class="card"><h2><a href="/nepal/time">Time in Nepal</a></h2><p>Current time, the +5:45 offset explained, time difference from 23 cities.</p></div>
 <div class="card"><h2><a href="/nepal/year">Nepal is in ${bs.year}</a></h2><p>How the Bikram Sambat calendar works and this year's months.</p></div>
 <div class="card"><h2><a href="/nepal/trek-weather">Trek weather</a></h2><p>Forecasts at altitude for Everest, Annapurna and Langtang.</p></div>
-<div class="card"><h2><a href="/festivals">Festivals</a></h2><p>Dates of Dashain, Tihar, Holi and more from Nepal's official list.</p></div></section>`;
+<div class="card"><h2><a href="/festivals">Festivals</a></h2><p>Dates of Dashain, Tihar, Holi and more from Nepal's official list.</p></div>
+<div class="card"><h2><a href="/nepalmap">Nepal map</a></h2><p>Temples, gumbas, peaks, lakes, villages and schools with search, filters and directions.</p></div></section>
+<section class="card"><h2>Districts, palikas and wards</h2><p>Every district with its local levels, all wards, the villages in each ward and the former VDCs with their new ward numbers.</p>
+<p class="links">${DISTRICT_LINKS}</p></section>`;
   return shell(request, env, { title: "Nepal Time, Calendar & Trekking Weather | Aafnai Patro", description: `Current time in Nepal, today's Nepali date (${bs.year} BS), and forecasts at altitude for Nepal's trekking routes.`, body, nav: NAV, footer: FOOT, sMaxAge: 300, backend: "growth-nepal-hub" });
 }
 

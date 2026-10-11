@@ -1,0 +1,705 @@
+{
+ "_comment": "Canonical /nepal slugs and display names (official Government of Nepal spellings) keyed by local-states-nepal ids, plus the misspellings and old names that 301 to them. Used by worker/explore (routing + redirects) and scripts/explore/families/nepal.mjs (pages). Aliases at the site root (/dolakha) only redirect when tests/explore-engine.test.ts proves the path is not used by anything else.",
+ "provinces": [
+  {
+   "id": 1,
+   "slug": "koshi-province",
+   "name": "Koshi Province",
+   "aliases": [
+    "koshi",
+    "province-1",
+    "province-no-1",
+    "pradesh-1"
+   ]
+  },
+  {
+   "id": 2,
+   "slug": "madhesh-province",
+   "name": "Madhesh Province",
+   "aliases": [
+    "madhesh",
+    "province-2",
+    "province-no-2",
+    "pradesh-2"
+   ]
+  },
+  {
+   "id": 3,
+   "slug": "bagmati-province",
+   "name": "Bagmati Province",
+   "aliases": [
+    "bagmati",
+    "province-3",
+    "province-no-3",
+    "pradesh-3"
+   ]
+  },
+  {
+   "id": 4,
+   "slug": "gandaki-province",
+   "name": "Gandaki Province",
+   "aliases": [
+    "gandaki",
+    "province-4",
+    "province-no-4",
+    "pradesh-4"
+   ]
+  },
+  {
+   "id": 5,
+   "slug": "lumbini-province",
+   "name": "Lumbini Province",
+   "aliases": [
+    "lumbini",
+    "province-5",
+    "province-no-5",
+    "pradesh-5"
+   ]
+  },
+  {
+   "id": 6,
+   "slug": "karnali-province",
+   "name": "Karnali Province",
+   "aliases": [
+    "karnali",
+    "province-6",
+    "province-no-6",
+    "pradesh-6"
+   ]
+  },
+  {
+   "id": 7,
+   "slug": "sudurpashchim-province",
+   "name": "Sudurpashchim Province",
+   "aliases": [
+    "sudurpaschim",
+    "sudurpaschim-province",
+    "sudurpashchim",
+    "far-western-province",
+    "province-7",
+    "province-no-7",
+    "pradesh-7"
+   ]
+  }
+ ],
+ "districts": [
+  {
+   "id": 1,
+   "province_id": 1,
+   "slug": "bhojpur",
+   "name": "Bhojpur",
+   "aliases": []
+  },
+  {
+   "id": 2,
+   "province_id": 1,
+   "slug": "dhankuta",
+   "name": "Dhankuta",
+   "aliases": []
+  },
+  {
+   "id": 3,
+   "province_id": 1,
+   "slug": "ilam",
+   "name": "Ilam",
+   "aliases": [
+    "illam"
+   ]
+  },
+  {
+   "id": 4,
+   "province_id": 1,
+   "slug": "jhapa",
+   "name": "Jhapa",
+   "aliases": []
+  },
+  {
+   "id": 5,
+   "province_id": 1,
+   "slug": "khotang",
+   "name": "Khotang",
+   "aliases": []
+  },
+  {
+   "id": 6,
+   "province_id": 1,
+   "slug": "morang",
+   "name": "Morang",
+   "aliases": []
+  },
+  {
+   "id": 7,
+   "province_id": 1,
+   "slug": "okhaldhunga",
+   "name": "Okhaldhunga",
+   "aliases": [
+    "okhaldunga"
+   ]
+  },
+  {
+   "id": 8,
+   "province_id": 1,
+   "slug": "panchthar",
+   "name": "Panchthar",
+   "aliases": [
+    "pachthar",
+    "panchather",
+    "panchtar"
+   ]
+  },
+  {
+   "id": 9,
+   "province_id": 1,
+   "slug": "sankhuwasabha",
+   "name": "Sankhuwasabha",
+   "aliases": [
+    "sankhuwa-sabha",
+    "sankhuwasava"
+   ]
+  },
+  {
+   "id": 10,
+   "province_id": 1,
+   "slug": "solukhumbu",
+   "name": "Solukhumbu",
+   "aliases": [
+    "solu-khumbu",
+    "solu"
+   ]
+  },
+  {
+   "id": 11,
+   "province_id": 1,
+   "slug": "sunsari",
+   "name": "Sunsari",
+   "aliases": []
+  },
+  {
+   "id": 12,
+   "province_id": 1,
+   "slug": "taplejung",
+   "name": "Taplejung",
+   "aliases": []
+  },
+  {
+   "id": 13,
+   "province_id": 1,
+   "slug": "tehrathum",
+   "name": "Tehrathum",
+   "aliases": [
+    "terhathum",
+    "terathum",
+    "tehrathum-district"
+   ]
+  },
+  {
+   "id": 14,
+   "province_id": 1,
+   "slug": "udayapur",
+   "name": "Udayapur",
+   "aliases": [
+    "udaypur"
+   ]
+  },
+  {
+   "id": 15,
+   "province_id": 2,
+   "slug": "parsa",
+   "name": "Parsa",
+   "aliases": []
+  },
+  {
+   "id": 16,
+   "province_id": 2,
+   "slug": "bara",
+   "name": "Bara",
+   "aliases": []
+  },
+  {
+   "id": 17,
+   "province_id": 2,
+   "slug": "rautahat",
+   "name": "Rautahat",
+   "aliases": []
+  },
+  {
+   "id": 18,
+   "province_id": 2,
+   "slug": "sarlahi",
+   "name": "Sarlahi",
+   "aliases": []
+  },
+  {
+   "id": 19,
+   "province_id": 2,
+   "slug": "siraha",
+   "name": "Siraha",
+   "aliases": []
+  },
+  {
+   "id": 20,
+   "province_id": 2,
+   "slug": "dhanusha",
+   "name": "Dhanusha",
+   "aliases": [
+    "dhanusa"
+   ]
+  },
+  {
+   "id": 21,
+   "province_id": 2,
+   "slug": "saptari",
+   "name": "Saptari",
+   "aliases": []
+  },
+  {
+   "id": 22,
+   "province_id": 2,
+   "slug": "mahottari",
+   "name": "Mahottari",
+   "aliases": [
+    "mahotari"
+   ]
+  },
+  {
+   "id": 23,
+   "province_id": 3,
+   "slug": "bhaktapur",
+   "name": "Bhaktapur",
+   "aliases": []
+  },
+  {
+   "id": 24,
+   "province_id": 3,
+   "slug": "chitwan",
+   "name": "Chitwan",
+   "aliases": [
+    "chitawan"
+   ]
+  },
+  {
+   "id": 25,
+   "province_id": 3,
+   "slug": "dhading",
+   "name": "Dhading",
+   "aliases": []
+  },
+  {
+   "id": 26,
+   "province_id": 3,
+   "slug": "dolakha",
+   "name": "Dolakha",
+   "aliases": [
+    "dolkha"
+   ]
+  },
+  {
+   "id": 27,
+   "province_id": 3,
+   "slug": "kathmandu",
+   "name": "Kathmandu",
+   "aliases": []
+  },
+  {
+   "id": 28,
+   "province_id": 3,
+   "slug": "kavrepalanchok",
+   "name": "Kavrepalanchok",
+   "aliases": [
+    "kavre",
+    "kabhre",
+    "kavrepalanchowk",
+    "kabhrepalanchok",
+    "kabhrepalanchowk"
+   ]
+  },
+  {
+   "id": 29,
+   "province_id": 3,
+   "slug": "lalitpur",
+   "name": "Lalitpur",
+   "aliases": []
+  },
+  {
+   "id": 30,
+   "province_id": 3,
+   "slug": "makwanpur",
+   "name": "Makwanpur",
+   "aliases": [
+    "makawanpur"
+   ]
+  },
+  {
+   "id": 31,
+   "province_id": 3,
+   "slug": "nuwakot",
+   "name": "Nuwakot",
+   "aliases": []
+  },
+  {
+   "id": 32,
+   "province_id": 3,
+   "slug": "ramechhap",
+   "name": "Ramechhap",
+   "aliases": [
+    "ramechap",
+    "rammechap",
+    "ramechaap",
+    "ramechhap-district"
+   ]
+  },
+  {
+   "id": 33,
+   "province_id": 3,
+   "slug": "rasuwa",
+   "name": "Rasuwa",
+   "aliases": []
+  },
+  {
+   "id": 34,
+   "province_id": 3,
+   "slug": "sindhuli",
+   "name": "Sindhuli",
+   "aliases": []
+  },
+  {
+   "id": 35,
+   "province_id": 3,
+   "slug": "sindhupalchok",
+   "name": "Sindhupalchok",
+   "aliases": [
+    "sindhupalchowk",
+    "sindupalchok"
+   ]
+  },
+  {
+   "id": 36,
+   "province_id": 4,
+   "slug": "baglung",
+   "name": "Baglung",
+   "aliases": []
+  },
+  {
+   "id": 37,
+   "province_id": 4,
+   "slug": "gorkha",
+   "name": "Gorkha",
+   "aliases": []
+  },
+  {
+   "id": 38,
+   "province_id": 4,
+   "slug": "kaski",
+   "name": "Kaski",
+   "aliases": []
+  },
+  {
+   "id": 39,
+   "province_id": 4,
+   "slug": "lamjung",
+   "name": "Lamjung",
+   "aliases": []
+  },
+  {
+   "id": 40,
+   "province_id": 4,
+   "slug": "manang",
+   "name": "Manang",
+   "aliases": []
+  },
+  {
+   "id": 41,
+   "province_id": 4,
+   "slug": "mustang",
+   "name": "Mustang",
+   "aliases": []
+  },
+  {
+   "id": 42,
+   "province_id": 4,
+   "slug": "myagdi",
+   "name": "Myagdi",
+   "aliases": []
+  },
+  {
+   "id": 43,
+   "province_id": 4,
+   "slug": "nawalpur",
+   "name": "Nawalpur (Nawalparasi East)",
+   "aliases": [
+    "nawalparasi-east",
+    "nawalparasi-purba",
+    "nawalparasi-bardaghat-susta-east"
+   ]
+  },
+  {
+   "id": 44,
+   "province_id": 4,
+   "slug": "parbat",
+   "name": "Parbat",
+   "aliases": [
+    "parwat"
+   ]
+  },
+  {
+   "id": 45,
+   "province_id": 4,
+   "slug": "syangja",
+   "name": "Syangja",
+   "aliases": [
+    "syanja"
+   ]
+  },
+  {
+   "id": 46,
+   "province_id": 4,
+   "slug": "tanahun",
+   "name": "Tanahun",
+   "aliases": [
+    "tanahu"
+   ]
+  },
+  {
+   "id": 47,
+   "province_id": 5,
+   "slug": "kapilvastu",
+   "name": "Kapilvastu",
+   "aliases": [
+    "kapilbastu"
+   ]
+  },
+  {
+   "id": 48,
+   "province_id": 5,
+   "slug": "parasi",
+   "name": "Parasi (Nawalparasi West)",
+   "aliases": [
+    "nawalparasi-west",
+    "nawalparasi-paschim",
+    "nawalparasi-bardaghat-susta-west"
+   ]
+  },
+  {
+   "id": 49,
+   "province_id": 5,
+   "slug": "rupandehi",
+   "name": "Rupandehi",
+   "aliases": []
+  },
+  {
+   "id": 50,
+   "province_id": 5,
+   "slug": "arghakhanchi",
+   "name": "Arghakhanchi",
+   "aliases": []
+  },
+  {
+   "id": 51,
+   "province_id": 5,
+   "slug": "gulmi",
+   "name": "Gulmi",
+   "aliases": []
+  },
+  {
+   "id": 52,
+   "province_id": 5,
+   "slug": "palpa",
+   "name": "Palpa",
+   "aliases": []
+  },
+  {
+   "id": 53,
+   "province_id": 5,
+   "slug": "dang",
+   "name": "Dang",
+   "aliases": [
+    "dang-deukhuri"
+   ]
+  },
+  {
+   "id": 54,
+   "province_id": 5,
+   "slug": "pyuthan",
+   "name": "Pyuthan",
+   "aliases": []
+  },
+  {
+   "id": 55,
+   "province_id": 5,
+   "slug": "rolpa",
+   "name": "Rolpa",
+   "aliases": []
+  },
+  {
+   "id": 56,
+   "province_id": 5,
+   "slug": "rukum-east",
+   "name": "Rukum East",
+   "aliases": [
+    "eastern-rukum",
+    "rukum-purba",
+    "purbi-rukum"
+   ]
+  },
+  {
+   "id": 57,
+   "province_id": 5,
+   "slug": "banke",
+   "name": "Banke",
+   "aliases": []
+  },
+  {
+   "id": 58,
+   "province_id": 5,
+   "slug": "bardiya",
+   "name": "Bardiya",
+   "aliases": [
+    "bardia"
+   ]
+  },
+  {
+   "id": 59,
+   "province_id": 6,
+   "slug": "rukum-west",
+   "name": "Rukum West",
+   "aliases": [
+    "western-rukum",
+    "rukum-paschim",
+    "paschim-rukum"
+   ]
+  },
+  {
+   "id": 60,
+   "province_id": 6,
+   "slug": "salyan",
+   "name": "Salyan",
+   "aliases": []
+  },
+  {
+   "id": 61,
+   "province_id": 6,
+   "slug": "dolpa",
+   "name": "Dolpa",
+   "aliases": []
+  },
+  {
+   "id": 62,
+   "province_id": 6,
+   "slug": "humla",
+   "name": "Humla",
+   "aliases": []
+  },
+  {
+   "id": 63,
+   "province_id": 6,
+   "slug": "jumla",
+   "name": "Jumla",
+   "aliases": []
+  },
+  {
+   "id": 64,
+   "province_id": 6,
+   "slug": "kalikot",
+   "name": "Kalikot",
+   "aliases": []
+  },
+  {
+   "id": 65,
+   "province_id": 6,
+   "slug": "mugu",
+   "name": "Mugu",
+   "aliases": []
+  },
+  {
+   "id": 66,
+   "province_id": 6,
+   "slug": "surkhet",
+   "name": "Surkhet",
+   "aliases": []
+  },
+  {
+   "id": 67,
+   "province_id": 6,
+   "slug": "dailekh",
+   "name": "Dailekh",
+   "aliases": []
+  },
+  {
+   "id": 68,
+   "province_id": 6,
+   "slug": "jajarkot",
+   "name": "Jajarkot",
+   "aliases": []
+  },
+  {
+   "id": 69,
+   "province_id": 7,
+   "slug": "darchula",
+   "name": "Darchula",
+   "aliases": []
+  },
+  {
+   "id": 70,
+   "province_id": 7,
+   "slug": "bajhang",
+   "name": "Bajhang",
+   "aliases": [
+    "bhajang",
+    "bhajhang",
+    "bajang",
+    "bajhanga"
+   ]
+  },
+  {
+   "id": 71,
+   "province_id": 7,
+   "slug": "bajura",
+   "name": "Bajura",
+   "aliases": []
+  },
+  {
+   "id": 72,
+   "province_id": 7,
+   "slug": "baitadi",
+   "name": "Baitadi",
+   "aliases": []
+  },
+  {
+   "id": 73,
+   "province_id": 7,
+   "slug": "doti",
+   "name": "Doti",
+   "aliases": []
+  },
+  {
+   "id": 74,
+   "province_id": 7,
+   "slug": "achham",
+   "name": "Achham",
+   "aliases": [
+    "acham"
+   ]
+  },
+  {
+   "id": 75,
+   "province_id": 7,
+   "slug": "dadeldhura",
+   "name": "Dadeldhura",
+   "aliases": []
+  },
+  {
+   "id": 76,
+   "province_id": 7,
+   "slug": "kanchanpur",
+   "name": "Kanchanpur",
+   "aliases": []
+  },
+  {
+   "id": 77,
+   "province_id": 7,
+   "slug": "kailali",
+   "name": "Kailali",
+   "aliases": []
+  }
+ ]
+}

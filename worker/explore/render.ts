@@ -21,6 +21,16 @@ export type ExploreRecord = {
   child_heading?: string;
   child_heading_ne?: string;
   geo?: { lat: number; lng: number };
+  /** schema.org type of the page's main entity when it differs from the family's (e.g. "Place" for a village). */
+  schema_type?: string;
+  /** Data tables (sunrise times, ward lists, old-to-new ward mapping). Cells may link. */
+  tables?: { heading: string; heading_ne?: string; intro?: string; head: string[]; rows: (string | { text: string; href?: string })[][]; note?: string }[];
+  /** Named lists (villages, schools, temples...). Items link when they have an href. */
+  lists?: { heading: string; heading_ne?: string; intro?: string; items: { title: string; title_ne?: string; href?: string; note?: string }[] }[];
+  /** Questions people search for, answered from the facts above (also emitted as FAQPage data). */
+  faq?: { q: string; a: string }[];
+  /** All sources used on the page; replaces source_name/source_url when present. */
+  sources?: { name: string; url?: string }[];
   website?: string;
   links?: { href: string; label: string }[];
   source_name?: string;
@@ -53,6 +63,8 @@ a{color:var(--accent)}h1{font-size:1.6rem;line-height:1.25;margin:.2em 0}h2{font
 nav.crumbs{font-size:.9rem;padding:10px 16px}nav.crumbs a{text-decoration:none}table{width:100%;border-collapse:collapse}
 th,td{padding:9px 6px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{width:40%;font-weight:600}
 ul.links{columns:2;column-gap:20px;padding-left:18px;margin:0}@media (max-width:560px){ul.links{columns:1}}
+.tw{overflow-x:auto}.tw table{min-width:420px}thead th{width:auto;font-size:.9rem;color:var(--muted)}.note{color:var(--muted);font-size:.9rem}
+dl.faq dt{font-weight:600;margin-top:.8em}dl.faq dd{margin:.2em 0 0}
 footer{font-size:.85rem;color:var(--muted);padding:6px 4px 30px}`;
 
 const neSpan = (value?: string) => (value ? ` <span class="ne" lang="ne">${esc(value)}</span>` : "");
@@ -69,7 +81,7 @@ export function renderPage(site: string, family: ExploreFamily, r: ExploreRecord
   const crumbs = [{ path: "/", title: "आफ्नै पात्रो" }, ...r.ancestors.map((a) => ({ path: a.path, title: label(a) })), { path: r.path, title: heading }];
   const parent = r.ancestors.at(-1);
 
-  const entity: Record<string, unknown> = { "@type": family.schema_type, "@id": canonical + "#entity", name: heading, url: canonical, description: r.description };
+  const entity: Record<string, unknown> = { "@type": r.schema_type || family.schema_type, "@id": canonical + "#entity", name: heading, url: canonical, description: r.description };
   if (headingNe) entity.alternateName = headingNe;
   if (parent && parent.path !== family.prefix) entity.containedInPlace = { "@type": family.schema_type, name: parent.title, url: site + parent.path };
   if (r.geo) entity.geo = { "@type": "GeoCoordinates", latitude: r.geo.lat, longitude: r.geo.lng };
@@ -81,6 +93,7 @@ export function renderPage(site: string, family: ExploreFamily, r: ExploreRecord
       { "@type": "WebPage", "@id": canonical, url: canonical, name: titleFull, description: r.description, inLanguage: ["en", "ne"], dateModified: r.lastmod, about: { "@id": canonical + "#entity" } },
       entity,
       { "@type": "BreadcrumbList", itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, item: site + c.path })) },
+      ...(r.faq?.length ? [{ "@type": "FAQPage", mainEntity: r.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
     ],
   };
 
@@ -92,10 +105,22 @@ export function renderPage(site: string, family: ExploreFamily, r: ExploreRecord
     .join("");
 
   const linkList = (rows: LinkRef[]) => `<ul class="links">${rows.map((l) => `<li><a href="${esc(l.path)}">${esc(l.title)}</a>${neSpan(l.title_ne)}</li>`).join("")}</ul>`;
+  const cell = (c: string | { text: string; href?: string }) =>
+    typeof c === "string" ? esc(c) : c.href ? `<a href="${esc(safeHref(c.href))}">${esc(c.text)}</a>` : esc(c.text);
+  const tables = (r.tables || [])
+    .map((t) => `<section><h2>${esc(t.heading)}${neSpan(t.heading_ne)}</h2>${t.intro ? `<p>${esc(t.intro)}</p>` : ""}<div class="tw"><table><thead><tr>${t.head.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.rows.map((row) => `<tr>${row.map((c) => `<td>${cell(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${t.note ? `<p class="note">${esc(t.note)}</p>` : ""}</section>`)
+    .join("");
+  const lists = (r.lists || [])
+    .filter((l) => l.items.length)
+    .map((l) => `<section><h2>${esc(l.heading)}${neSpan(l.heading_ne)}</h2>${l.intro ? `<p>${esc(l.intro)}</p>` : ""}<ul class="links">${l.items.map((i) => `<li>${i.href ? `<a href="${esc(safeHref(i.href))}">${esc(i.title)}</a>` : esc(i.title)}${neSpan(i.title_ne)}${i.note ? ` <span class="note">${esc(i.note)}</span>` : ""}</li>`).join("")}</ul></section>`)
+    .join("");
+  const faq = r.faq?.length ? `<section><h2>Questions</h2><dl class="faq">${r.faq.map((f) => `<dt>${esc(f.q)}</dt><dd>${esc(f.a)}</dd>`).join("")}</dl></section>` : "";
   const sections = (r.sections || []).map((s) => `<section><h2>${esc(s.heading)}${neSpan(s.heading_ne)}</h2><p>${esc(s.text)}</p></section>`).join("");
   const more = r.children_total > r.children.length ? `<p>Showing ${r.children.length} of ${r.children_total}.</p>` : "";
   const extraLinks = [...(r.links || []), { href: "/today", label: "Today's Nepali date · आजको मिति" }, { href: "/festivals", label: "Festivals · चाडपर्व" }];
-  const source = r.source_url
+  const source = r.sources?.length
+    ? `Sources: ${r.sources.map((x) => (x.url ? `<a href="${esc(safeHref(x.url))}" rel="nofollow noopener">${esc(x.name)}</a>` : esc(x.name))).join("; ")}. `
+    : r.source_url
     ? `Source: <a href="${esc(safeHref(r.source_url))}" rel="nofollow noopener">${esc(r.source_name || r.source_url)}</a>. `
     : r.source_name
       ? `Source: ${esc(r.source_name)}. `
@@ -113,9 +138,10 @@ export function renderPage(site: string, family: ExploreFamily, r: ExploreRecord
 <article><h1>${esc(heading)}${headingNe ? `<br><span class="ne" lang="ne">${esc(headingNe)}</span>` : ""}</h1>
 <p>${esc(r.summary || r.description)}</p>${r.summary_ne ? `<p lang="ne">${esc(r.summary_ne)}</p>` : ""}
 ${facts ? `<table>${facts}</table>` : ""}</article>
-${sections}
+${tables}${lists}${sections}
 ${r.children.length ? `<section><h2>${esc(r.child_heading || "Inside " + heading)}${neSpan(r.child_heading_ne)}</h2>${linkList(r.children)}${more}</section>` : ""}
 ${r.siblings.length && parent ? `<section><h2>More in ${esc(label(parent))}</h2>${linkList(r.siblings)}</section>` : ""}
+${faq}
 <section><h2>More on आफ्नै पात्रो</h2><ul class="links">${extraLinks.map((l) => `<li><a href="${esc(safeHref(l.href))}">${esc(l.label)}</a></li>`).join("")}</ul></section>
 <footer>${source}Last updated <time datetime="${esc(r.lastmod)}">${esc(r.lastmod)}</time>. Found a mistake? <a href="/corrections">Report a correction</a>.</footer>
 </main></body></html>`;

@@ -8,6 +8,7 @@
  * Adding a family = one entry in families.json + one adapter in scripts/explore/families/<id>.mjs.
  */
 import config from "./families.json";
+import { exploreRedirect } from "./redirects";
 
 export type ExploreFamily = {
   id: string;
@@ -18,6 +19,10 @@ export type ExploreFamily = {
   min_facts: number;
   min_description: number;
   enabled: boolean;
+  /** false = the bare prefix belongs to another handler (e.g. the /nepal growth page); only paths below it are claimed. */
+  serve_root?: boolean;
+  /** When set, only these first segments below the prefix are claimed (/nepal/bajhang yes, /nepal/time no). */
+  segments?: string[];
 };
 
 export const EXPLORE_CONFIG = config as {
@@ -31,13 +36,25 @@ export const EXPLORE_CONFIG = config as {
 export const EXPLORE_FAMILIES: readonly ExploreFamily[] = EXPLORE_CONFIG.families;
 
 export const SITEMAP_INDEX_PATH = "/sitemap-explore.xml";
-/** /sitemap-x-{family}-{shard}.xml — deliberately not matching any existing sitemap writer's patterns. */
-export const SITEMAP_SHARD_RE = /^\/sitemap-x-([a-z0-9]+)-(\d{1,5})\.xml$/;
+/**
+ * /sitemap-x-{family}-{shard}.xml or /sitemap-x-{family}-{group}-{shard}.xml (one file set per page type, so Search
+ * Console reports indexing per type) — deliberately not matching any existing sitemap writer's patterns.
+ */
+export const SITEMAP_SHARD_RE = /^\/sitemap-x-([a-z0-9]+)(?:-([a-z]+))?-(\d{1,5})\.xml$/;
+
+const SEGMENTS = new Map(EXPLORE_FAMILIES.filter((f) => f.segments).map((f) => [f.id, new Set(f.segments)]));
 
 export function familyForPath(pathname: string): ExploreFamily | null {
   for (const family of EXPLORE_FAMILIES) {
     if (!family.enabled) continue;
-    if (pathname === family.prefix || pathname.startsWith(family.prefix + "/")) return family;
+    if (pathname === family.prefix) {
+      if (family.serve_root === false) continue;
+      return family;
+    }
+    if (!pathname.startsWith(family.prefix + "/")) continue;
+    const allowed = SEGMENTS.get(family.id);
+    if (allowed && !allowed.has(pathname.slice(family.prefix.length + 1).split("/")[0])) continue;
+    return family;
   }
   return null;
 }
@@ -50,7 +67,7 @@ export function familyById(id: string): ExploreFamily | null {
 export function isExplorePath(pathname: string): boolean {
   if (pathname === SITEMAP_INDEX_PATH || SITEMAP_SHARD_RE.test(pathname)) return true;
   const lower = pathname.toLowerCase().replace(/\/+$/, "") || "/";
-  return familyForPath(lower) !== null;
+  return familyForPath(lower) !== null || exploreRedirect(lower) !== null;
 }
 
 /** R2 object key of a page record. /place/koshi → explore/v1/pages/place/koshi.json */

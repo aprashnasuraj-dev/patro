@@ -59,6 +59,7 @@ async function adapterFor(family) {
 
 /** Quality gate. Returns null when indexable, else the reason. Pages that fail are still served (noindex, follow). */
 function rejectReason(rec, family, seenContent) {
+  if (rec.path === family.prefix && family.serve_root === false) return "root-served-elsewhere";
   if (rec.quality && rec.quality.allow_index === false) return rec.quality.reason || "adapter-held-back";
   if ((rec.facts?.length ?? 0) < family.min_facts) return "too-few-facts";
   if (String(rec.description).length < family.min_description) return "description-too-short";
@@ -90,6 +91,8 @@ for (const family of families) {
     if (!rec?.description) problems.push("description missing");
     if (!ISO_DATE.test(String(rec?.lastmod || ""))) problems.push("lastmod must be YYYY-MM-DD");
     if (index.has(rec?.path)) problems.push("duplicate path");
+    if (family.segments && rec?.path !== family.prefix && !family.segments.includes(String(rec?.path).slice(family.prefix.length + 1).split("/")[0])) problems.push("first segment not in the family's segments list");
+    if (rec?.sitemap_group != null && !/^[a-z]+$/.test(String(rec.sitemap_group))) problems.push("sitemap_group must be [a-z]+");
     if (problems.length) {
       fatal.push(`${where}: ${problems.join("; ")}`);
       if (fatal.length > 50) break;
@@ -99,7 +102,7 @@ for (const family of families) {
     if (reason) stats.rejected[reason] = (stats.rejected[reason] || 0) + 1;
     else stats.indexable++;
     stats.pages++;
-    index.set(rec.path, { parent: rec.parent, sort: Number(rec.sort) || 0, title: String(rec.title), title_ne: rec.title_ne || undefined, indexable: !reason, lastmod: rec.lastmod, family: family.id });
+    index.set(rec.path, { parent: rec.parent, sort: Number(rec.sort) || 0, title: String(rec.title), title_ne: rec.title_ne || undefined, indexable: !reason, lastmod: rec.lastmod, family: family.id, group: rec.sitemap_group || "" });
     if (rec.parent) {
       let list = childrenOf.get(rec.parent);
       if (!list) childrenOf.set(rec.parent, (list = []));
@@ -169,7 +172,7 @@ if (WRITE_PAGES) {
         title: entry.title,
         ...(entry.title_ne ? { title_ne: entry.title_ne } : {}),
         description: String(rec.description),
-        ...pick(rec, ["summary", "summary_ne", "facts", "sections", "child_heading", "child_heading_ne", "geo", "website", "links", "source_name", "source_url"]),
+        ...pick(rec, ["summary", "summary_ne", "facts", "sections", "child_heading", "child_heading_ne", "geo", "website", "links", "source_name", "source_url", "schema_type", "tables", "lists", "faq", "sources"]),
         lastmod: rec.lastmod,
         indexable: entry.indexable,
         ancestors,
@@ -198,8 +201,13 @@ const shardSize = config.sitemap_shard_size;
 if (shardSize > 50_000) throw new Error("sitemap_shard_size must be ≤ 50,000 (sitemaps.org limit)");
 const shardEntries = [];
 for (const family of families) {
-  const paths = [];
-  for (const [path, e] of index) if (e.family === family.id && e.indexable) paths.push(path);
+  const groups = new Map(); // "" = the family's default file set
+  for (const [path, e] of index) {
+    if (e.family !== family.id || !e.indexable) continue;
+    if (!groups.has(e.group)) groups.set(e.group, []);
+    groups.get(e.group).push(path);
+  }
+  for (const [group, paths] of [...groups].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))) {
   paths.sort(); // stable shard membership between builds
   for (let n = 0; n * shardSize < paths.length; n++) {
     const slice = paths.slice(n * shardSize, (n + 1) * shardSize);
@@ -209,9 +217,10 @@ for (const family of families) {
       if (lm > lastmod) lastmod = lm;
       return `  <url><loc>${xmlEsc(SITE + p)}</loc><lastmod>${lm}</lastmod></url>`;
     });
-    const file = `sitemap-x-${family.id}-${n}.xml`;
+    const file = `sitemap-x-${family.id}${group ? `-${group}` : ""}-${n}.xml`;
     await writeFile(join(OUT, "sitemaps", file), ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', ...lines, "</urlset>", ""].join("\n"));
     shardEntries.push({ file, lastmod, urls: slice.length });
+  }
   }
 }
 await writeFile(
