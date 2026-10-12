@@ -1,5 +1,6 @@
 import intentCatalog from "../seo/search-intents.json";
 import "./seo-search-support.css";
+import { SeoShareActions } from "./components/SeoShareActions";
 
 type Faq={q:string;a:string};
 type IntentMeta={title:string;description:string;steps?:string[];faqs?:Faq[]};
@@ -49,6 +50,7 @@ export function SeoSearchSupport({path}:{path:string}){
         <p>{PRACTICAL_GUIDANCE[path].details}</p>
         <nav className="ap-search-related" aria-label="More helpful pages">{PRACTICAL_GUIDANCE[path].links.map(([href,label])=><a href={href} key={href}>{label}</a>)}</nav>
       </section> : null}
+      <SeoShareActions path={path} title={meta.title} />
       <nav className="ap-search-related" aria-label="सम्बन्धित tools">{related.map(([href,label])=><a href={href} key={href}>{label}</a>)}</nav>
     </div>
   </section>

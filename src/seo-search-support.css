@@ -7,3 +7,5 @@
 .ap-search-related{display:flex;flex-wrap:wrap;gap:8px;padding-top:2px}.ap-search-related a{font-size:.86rem;font-weight:700;text-decoration:none;padding:8px 11px;border-radius:11px;border:1px solid color-mix(in srgb,currentColor 11%,transparent);color:inherit}.ap-search-related a:hover,.ap-search-related a:focus-visible{border-color:#287356;outline:none;box-shadow:0 0 0 3px rgba(40,115,86,.12)}
 @media(max-width:640px){.ap-search-support{padding:18px 12px 94px}.ap-search-support-inner{border-radius:19px;padding:18px}.ap-search-support-head p,.ap-search-faqs details p,.ap-search-support-panel ol{font-size:.94rem}}
 @media(prefers-reduced-motion:no-preference){.ap-search-faqs details,.ap-search-related a{transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}}
+
+.ap-seo-share{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.ap-seo-share button{border:1px solid #267352;border-radius:12px;padding:10px 14px;background:#e8f6ec;color:#155236;font:inherit;font-weight:700;cursor:pointer}.ap-seo-share button:hover,.ap-seo-share button:focus-visible{outline:2px solid #287356;outline-offset:2px}.ap-seo-share [role="status"]{font-size:.85rem}
