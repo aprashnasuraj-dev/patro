@@ -66,7 +66,7 @@ function relatedLinks(path) {
     ["/", "आजको नेपाली मिति"], ["/today", "आज कति गते?"], ["/convert", "BS ↔ AD मिति रूपान्तरण"],
     ["/tools/nepali-typing", "नेपाली टाइपिङ"], ["/tools/preeti-converter", "Preeti ↔ Unicode"],
     ["/tools/bstoad", "BS to AD"], ["/tools/adtobs", "AD to BS"], ["/tools/sait", "शुभ साइत"],
-    ["/rashifal", "राशिफल"], ["/janmapatro", "जन्मपत्रो"], ["/janmapatro/milan.html", "३६ गुण मिलान"], ["/on-this-day", "इतिहासमा आज"], ["/tools", "सबै नेपाली tools"], ["/guides", "उपकरण प्रयोग निर्देशिका"]
+    ["/rashifal", "राशिफल"], ["/janmapatro", "जन्मपत्रो"], ["/janmapatro/milan.html", "३६ गुण मिलान"], ["/on-this-day", "इतिहासमा आज"], ["/moon", "चन्द्र पात्रो"], ["/fm", "नेपाली FM रेडियो"], ["/festivals", "नेपाली चाडपर्व"], ["/tools", "सबै नेपाली tools"], ["/guides", "उपकरण प्रयोग निर्देशिका"]
   ];
   if (path.startsWith("/calendar/")) {
     const [, , y] = path.split("/");

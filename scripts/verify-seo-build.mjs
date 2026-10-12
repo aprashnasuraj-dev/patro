@@ -60,7 +60,7 @@ expect(dayHtml.includes('"@type":"BreadcrumbList"') || dayHtml.includes('"@type"
 
 const robots = await read("public/robots.txt");
 const robotsSitemapLines = robots.split("\n").filter((line) => /^sitemap:/i.test(line.trim()));
-const discoverySitemaps = ["sitemap.xml", "sitemap-explore.xml", "sitemap-places.xml", "sitemap-nepalmap.xml", "advancetools/sitemap.xml", "sitemap-worldcal.xml"];
+const discoverySitemaps = ["sitemap.xml", "sitemap-explore.xml", "sitemap-places.xml", "sitemap-nepalmap.xml", "advancetools/sitemap.xml", "sitemap-worldcal.xml", "sitemap-atlas.xml"];
 const expectedSitemapLines = discoverySitemaps.map((file) => `Sitemap: ${SITE}/${file}`);
 expect(JSON.stringify(robotsSitemapLines.map(line => line.trim())) === JSON.stringify(expectedSitemapLines), "robots.txt must declare root and independent sitemap families exactly once");
 expect((await read("dist/robots.txt")) === robots, "dist/robots.txt differs from public/robots.txt");

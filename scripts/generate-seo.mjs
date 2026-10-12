@@ -62,7 +62,8 @@ const independentSitemaps = [
   "sitemap-places.xml",
   "sitemap-nepalmap.xml",
   "advancetools/sitemap.xml",
-  "sitemap-worldcal.xml"
+  "sitemap-worldcal.xml",
+  "sitemap-atlas.xml"
 ];
 const robots = [
   "# Aafnai Patro crawl policy — public pages are discoverable; private/auth surfaces are not.",

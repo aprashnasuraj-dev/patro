@@ -33,11 +33,14 @@ export function SiteFooter({ language }: { language: UiLanguage }) {
         <a href="/"><CalendarDays size={15}/>{ne?"आजको पात्रो":"Today"}</a>
         <a href="/jyotish/rashifal"><MoonStar size={15}/>{ne?"राशिफल":"Horoscope"}</a>
         <a href="/convert"><BookOpenText size={15}/>{ne?"मिति रूपान्तरण":"Date Converter"}</a>
+        <a href="/moon"><MoonStar size={15}/>{ne?"चन्द्र पात्रो":"Moon Calendar"}</a>
       </section>
       <section><h3>{ne?"सुविधाहरू":"Features"}</h3>
         <a href="/tv"><Tv size={15}/>{ne?"लाइभ टिभी":"Live TV"}</a>
         <a href="/fm"><Radio size={15}/>{ne?"रेडियो":"Radio"}</a>
         <a href="/tools"><Wrench size={15}/>{ne?"उपयोगी उपकरण":"Tools"}</a>
+        <a href="/tools/nepali-typing"><Wrench size={15}/>{ne?"नेपाली टाइपिङ":"Nepali Typing"}</a>
+        <a href="/time-machine"><BookOpenText size={15}/>{ne?"समययन्त्र":"Time Machine"}</a>
       </section>
       <section><h3>{ne?"कम्पनी":"Company"}</h3>
         <a href="/about"><Info size={15}/>{ne?"हाम्रो बारेमा":"About"}</a>
