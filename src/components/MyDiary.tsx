@@ -36,12 +36,16 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   const[text,setText]=useState("");
   const[mode,setMode]=useState<NoteMode>("nepali");
   const[voiceLang,setVoiceLang]=useState<"ne-NP"|"en-US">("ne-NP");
+  const[spokenNumbers,setSpokenNumbers]=useState(false);
+  const[transliterateLatin,setTransliterateLatin]=useState<((text:string)=>string)|undefined>();
+  const[cleanupError,setCleanupError]=useState("");
   const[suggestions,setSuggestions]=useState<Suggestion[]>([]);
   const[status,setStatus]=useState("नेपाली शब्द सुझाव तयार हुँदैछन्…");
   const [noteDate,setNoteDate]=useState(new URLSearchParams(location.search).get("date")||new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu"}).format(new Date()));
  const textarea=useRef<HTMLTextAreaElement>(null);
  const insertFinal = useDictationEditor(text, setText, textarea);
- const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal});const listening=dictation.listening;
+ // Reuse the main Voice Typing recognizer and its identical cleanup options.
+ const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal,spokenNumbers,transliterateLatin});const listening=dictation.listening;
   const worker=useRef<Worker|null>(null);
   const requestId=useRef(0);
 
@@ -83,13 +87,34 @@ function NoteComposer({life,onLife,onSync}:{life:LifeState;onLife:(next:LifeStat
   }
   function removeNote(id:string){const next=updateLife(current=>({...current,notes:current.notes.filter(n=>n.id!==id)}));onLife(next);void syncLifeTools();}
   function chooseMode(next:"english"|"nepali"){setVoiceLang(next==="english"?"en-US":"ne-NP");setMode(next);}
-  function startVoice(){if(listening)dictation.stop();else{setMode("voice");void dictation.start();}}
+  function startVoice(){if(listening){dictation.stop();return;}if(dictation.mode==="unsupported")return;setMode("voice");void dictation.start();}
+  async function toggleTransliteration(enabled:boolean){
+    if(!enabled){setTransliterateLatin(undefined);return;}
+    try{
+      const engine=await import("../patro-tools/language/roman-keyboard");
+      setTransliterateLatin(()=>engine.transliterateRoman);setCleanupError("");
+    }catch{setCleanupError("Roman लिप्यन्तरण उपलब्ध छैन; English शब्द जस्ताको तस्तै रहन्छन्।");}
+  }
 
   return <section className="mp-card mp-diary-native mp-note-composer">
     <header><div><p className="eyebrow">निजी · अफलाइनमा पनि उपयोगी</p><h2>आफ्नै नोट लेख्नुहोस्</h2><p>English, नेपाली शब्द सुझाव वा voice typing प्रयोग गरेर सहज रूपमा लेख्नुहोस्।</p></div><a className="community-button secondary" href="/tools/nepali-typing"><Languages size={16}/> पूर्ण नेपाली टाइपिङ / Preeti</a></header>
-    <div className="mp-note-modes" role="group" aria-label="नोट लेख्ने तरिका"><button type="button" className={mode==="english"?"active":""} onClick={()=>chooseMode("english")}>English</button><button type="button" className={mode==="nepali"?"active":""} onClick={()=>chooseMode("nepali")}>नेपाली</button><button type="button" className={mode==="voice"||listening?"active":""} onClick={startVoice} disabled={dictation.mode==="unsupported" || (dictation.processing && !listening)}>{listening?<MicOff size={16}/>:<Mic size={16}/>} बोलेर</button></div>
+    <div className="mp-note-modes" role="group" aria-label="नोट लेख्ने तरिका"><button type="button" className={mode==="english"?"active":""} onClick={()=>chooseMode("english")}>English</button><button type="button" className={mode==="nepali"?"active":""} onClick={()=>chooseMode("nepali")}>नेपाली</button><button type="button" className={mode==="voice"||listening?"active":""} onClick={startVoice} disabled={dictation.mode==="unsupported" || (dictation.processing && !listening)} aria-pressed={listening} title={dictation.mode==="unsupported"?"आवाज उपलब्ध छैन; तल सहायता हेर्नुहोस्।":undefined}>{listening?<MicOff size={16}/>:<Mic size={16}/>} {listening?"■ रोक्नुहोस्":"🎙 बोलेर"}</button></div>
+    <div className="mp-note-voice-settings" aria-label="मुख्य Voice Typing सँग मिलेको आवाज सेटिङ">
+      <div className="mp-note-voice-languages" role="group" aria-label="बोल्ने भाषा">
+        <button type="button" aria-pressed={voiceLang==="ne-NP"} onClick={()=>setVoiceLang("ne-NP")}>नेपाली बोल्ने</button>
+        <button type="button" aria-pressed={voiceLang==="en-US"} onClick={()=>setVoiceLang("en-US")}>Speak English</button>
+      </div>
+      <p role="status" aria-live="polite">{listening?"🎙 सुन्दैछ · Live Browser recognition":dictation.mode==="browser"?"आवाज तयार · Live Browser recognition":dictation.capabilitiesChecked?"यो ब्राउजरमा आवाज टाइपिङ उपलब्ध छैन":"Browser recognition जाँच हुँदैछ…"}</p>
+      {dictation.localStatus==="downloadable"&&<button type="button" onClick={()=>void dictation.installLocalRecognition()} disabled={dictation.localInstalling||listening}>{dictation.localInstalling?"अफलाइन आवाज डाउनलोड हुँदैछ…":"अफलाइन आवाज डाउनलोड गर्नुहोस्"}</button>}
+      {dictation.localStatus==="available"&&<label><input type="checkbox" checked={dictation.localEnabled} onChange={e=>dictation.selectLocalRecognition(e.target.checked)} disabled={listening}/> यस उपकरणमै आवाज पहिचान · On-device</label>}
+      {voiceLang==="ne-NP"&&<div className="mp-note-voice-cleanup">
+        <label><input type="checkbox" checked={spokenNumbers} onChange={e=>setSpokenNumbers(e.target.checked)}/> बोलेका सामान्य अंक बदल्नुहोस्</label>
+        <label><input type="checkbox" checked={!!transliterateLatin} onChange={e=>void toggleTransliteration(e.target.checked)}/> Roman अक्षर देवनागरीमा</label>
+      </div>}
+      {cleanupError&&<p role="alert">{cleanupError}</p>}
+    </div>
     <div className="mp-note-account"><GoogleAuthButton language="ne"/></div>
-    <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"}/><InlineDictationPreview textarea={textarea} interim={dictation.interim}/></label>
+    <label className="mp-note-editor"><span>नोट</span><textarea ref={textarea} value={text} onChange={e=>setText(e.target.value)} rows={7} maxLength={20000} placeholder={mode==="nepali"?"nepa वा नेपा लेखेर शब्द सुझाव हेर्नुहोस्…":mode==="voice"?"बोलेर लेख्न ‘बोलेर’ बटन थिच्नुहोस्…":"Write your note…"} lang={voiceLang==="ne-NP"?"ne":"en"} spellCheck={voiceLang==="en-US"}/><InlineDictationPreview textarea={textarea} interim={dictation.interim}/></label>
     {mode==="nepali"&&suggestions.length>0&&<div className="mp-note-suggestions" role="listbox" aria-label="नेपाली शब्द सुझाव">{suggestions.map((item,index)=><button type="button" key={`${item.word}-${index}`} onClick={()=>useSuggestion(item.word)}>{item.word}</button>)}</div>}
     <label>मितिमा सुरक्षित गर्नुहोस्<input type="date" value={noteDate} onChange={e=>setNoteDate(e.target.value)} required/></label>{dictation.error&&<p role="alert">{dictation.error}</p>}<div className="mp-note-actions"><small role="status">{status}</small><button type="button" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}><Save size={16}/> नोट सुरक्षित गर्नुहोस्</button></div>
     <VoiceHelp unsupported={dictation.mode==="unsupported"} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} language={dictation.language}/>
