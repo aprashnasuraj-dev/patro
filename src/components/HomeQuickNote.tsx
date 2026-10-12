@@ -17,11 +17,16 @@ export function HomeQuickNote({ language }: { language: Lang }) {
   const [voiceLang, setVoiceLang] = useState<"ne-NP" | "en-US">("ne-NP");
   const [noteDate,setNoteDate]=useState(new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kathmandu"}).format(new Date()));
   const [usedVoice, setUsedVoice] = useState(false);
+  const [spokenNumbers, setSpokenNumbers] = useState(false);
+  const [transliterateLatin, setTransliterateLatin] = useState<((text: string) => string) | undefined>();
+  const [cleanupError, setCleanupError] = useState("");
   const [status, setStatus] = useState("");
   const [notes, setNotes] = useState<StoredNote[]>(() => { try { return readLife().notes; } catch { return []; } });
   const textarea = useRef<HTMLTextAreaElement>(null);
   const insertFinal = useDictationEditor(text, setText, textarea, () => setUsedVoice(true));
-  const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal});const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
+  // Keep Notes on exactly the same recognition engine and cleanup pipeline as VoiceTypingTool.
+  const dictation=useNepaliDictation({language:voiceLang,onFinal:insertFinal,spokenNumbers,transliterateLatin});
+  const listening=dictation.listening;const supported=dictation.mode!=="unsupported";
 
   useEffect(() => {
     const refresh = () => setNotes(readLife().notes);
@@ -29,7 +34,14 @@ export function HomeQuickNote({ language }: { language: Lang }) {
     return () => window.removeEventListener("patro:life-updated",refresh);
   }, []);
 
-  function toggleVoice(){if(listening)dictation.stop();else void dictation.start();}
+  function toggleVoice(){if(listening)dictation.stop();else if(supported)void dictation.start();}
+  async function toggleTransliteration(enabled:boolean){
+    if(!enabled){setTransliterateLatin(undefined);return;}
+    try{
+      const engine=await import("../patro-tools/language/roman-keyboard");
+      setTransliterateLatin(()=>engine.transliterateRoman);setCleanupError("");
+    }catch{setCleanupError("Roman लिप्यन्तरण उपलब्ध छैन; English शब्द जस्ताको तस्तै रहन्छन्।");}
+  }
 
   async function save() {
     const value = text.trim();
@@ -59,6 +71,16 @@ export function HomeQuickNote({ language }: { language: Lang }) {
       </div>
       <GoogleAuthButton language={language} compact/>
       <button type="button" className="qn-save" onClick={save} disabled={!text.trim()||!noteDate||listening||dictation.processing}>{l("सुरक्षित गर्नुहोस्", "Save")}</button>
+    </div>
+    <div className="qn-voice-settings" aria-label={l("आवाज टाइपिङ सेटिङ", "Voice typing settings")}>
+      <p role="status" aria-live="polite">{listening ? l("🎙 सुन्दैछ · Live Browser recognition", "🎙 Listening · Live Browser recognition") : supported ? l("आवाज तयार · Live Browser recognition", "Voice ready · Live Browser recognition") : dictation.capabilitiesChecked ? l("यो ब्राउजरमा आवाज उपलब्ध छैन", "Voice unavailable in this browser") : l("आवाजको उपलब्धता जाँच्दै…", "Checking microphone support…")}</p>
+      {dictation.localStatus==="downloadable"&&<button type="button" onClick={()=>void dictation.installLocalRecognition()} disabled={dictation.localInstalling||listening}>{dictation.localInstalling?l("अफलाइन आवाज डाउनलोड हुँदैछ…","Downloading offline speech…"):l("अफलाइन आवाज डाउनलोड गर्नुहोस्","Download offline speech")}</button>}
+      {dictation.localStatus==="available"&&<label><input type="checkbox" checked={dictation.localEnabled} onChange={e=>dictation.selectLocalRecognition(e.target.checked)} disabled={listening}/> {l("यस उपकरणमै आवाज पहिचान", "On-device speech recognition")}</label>}
+      {voiceLang==="ne-NP"&&<div className="qn-voice-cleanup">
+        <label><input type="checkbox" checked={spokenNumbers} onChange={e=>setSpokenNumbers(e.target.checked)}/> बोलेका अंक बदल्नुहोस्</label>
+        <label><input type="checkbox" checked={!!transliterateLatin} onChange={e=>void toggleTransliteration(e.target.checked)}/> Roman अक्षर देवनागरीमा</label>
+      </div>}
+      {cleanupError&&<p role="alert">{cleanupError}</p>}
     </div>
     <VoiceHelp unsupported={!supported} checked={dictation.capabilitiesChecked} browserFailure={dictation.browserFailure} language={voiceLang}/>
     {status ? <p className="qn-status" role="status">{status}</p> : null}
