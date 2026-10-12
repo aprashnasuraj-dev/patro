@@ -9,3 +9,5 @@
 @media(prefers-reduced-motion:no-preference){.ap-search-faqs details,.ap-search-related a{transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}}
 
 .ap-seo-share{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.ap-seo-share button{border:1px solid #267352;border-radius:12px;padding:10px 14px;background:#e8f6ec;color:#155236;font:inherit;font-weight:700;cursor:pointer}.ap-seo-share button:hover,.ap-seo-share button:focus-visible{outline:2px solid #287356;outline-offset:2px}.ap-seo-share [role="status"]{font-size:.85rem}
+
+.ap-favorite-tools{display:grid;gap:10px}.ap-favorite-tools>button{justify-self:start;border:1px solid #b5d1c0;border-radius:12px;background:#fff;color:#155236;padding:9px 13px;font:inherit;font-weight:700;cursor:pointer}.ap-favorite-tools>button[aria-pressed="true"]{background:#e9f5eb}.ap-favorite-tools nav{display:flex;flex-wrap:wrap;gap:7px}.ap-favorite-tools nav a{padding:7px 10px;border:1px solid #d1e3d7;border-radius:8px;color:inherit;text-decoration:none;text-transform:capitalize}
