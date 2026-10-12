@@ -92,6 +92,10 @@ function bodyFor(path, meta, indexed) {
     extra = `<p><strong>आज कति गते?</strong> नेपाल समय (Asia/Kathmandu) अनुसार आजको Bikram Sambat मिति, तिथि, चाडपर्व र बिदा हेर्नुहोस्।</p>`;
   } else if (path === "/today") {
     extra = `<p>नेपाल समयअनुसार आजको नेपाली मिति, बार, तिथि र सम्बन्धित पात्रो जानकारी एउटै पृष्ठमा हेर्नुहोस्। विदेशमा हुँदा पनि नेपालको “आज” यही पृष्ठबाट जाँच गर्न सकिन्छ।</p>`;
+  } else if (path === "/fm") {
+    extra = `<h2>नेपाली FM रेडियो अनलाइन</h2><p>स्टेशन खोजेर उपलब्ध लाइभ स्ट्रिम सुन्नुहोस्। प्रसारणको उपलब्धता रेडियो स्टेशन र इन्टरनेट जडानमा निर्भर हुन्छ। <a href="/tv">अन्य लाइभ मिडिया</a> पनि हेर्नुहोस्।</p>`;
+  } else if (path === "/tools/nepali-typing") {
+    extra = `<h2>Roman बाट नेपाली Unicode टाइपिङ</h2><p>Roman Nepali टाइप गरेर देवनागरी सुझाव छान्नुहोस्। उदाहरण: namaste → नमस्ते। <a href="/tools/preeti-converter">Preeti to Unicode</a> र <a href="/tools/voice-typing">voice typing</a> पनि उपलब्ध छन्।</p>`;
   } else if (path === "/convert" || path === "/tools/bstoad" || path === "/tools/adtobs") {
     extra = `<p>नेपाली मिति (Bikram Sambat/BS) र Gregorian/AD बीच दुवैतर्फ मिति रूपान्तरण गर्नुहोस्। परिणाम आफ्नै पात्रोको पात्रो अभिलेखअनुसार देखाइन्छ।</p>`;
   }

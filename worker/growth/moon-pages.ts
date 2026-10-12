@@ -104,7 +104,7 @@ ${moonLiveBlock({ quarters: quartersBetween(new Date(now.getTime() - 40 * 86_400
     breadcrumbs(env, [["Aafnai Patro", "/"], ["Moon", "/moon"]]),
   ] };
   return shell(request, env, {
-    title: `Moon Phase Today (${fmtDate(now, ET, "short")}): ${name}, ${pct(illum)} Lit | Is Tonight a Full Moon?`,
+    title: "Moon Phase Today | Full Moon Dates & Lunar Calendar",
     description: `Moon phase today: ${name}, ${pct(illum)} illuminated, ${age.toFixed(1)} days old. Next full moon: ${fmtDate(nextFull.instant, ET)} ${fmtTime(nextFull.instant, ET)} ET. Moonrise & moonset for US cities.`,
     body, schema, sMaxAge: 900, backend: "growth-moon-today", alternates: moonTodayAlternates(),
   });
