@@ -9,7 +9,7 @@ const shell=`<main class="seo-prerender ap-prerender-home" data-seo-prerender="t
   <section class="ap-prerender-hero">
     <span>आज · नेपाली पात्रो</span>
     <h1>आजको नेपाली पात्रो</h1>
-    <p>नेपाली मिति, तिथि, नेपाल संवत्, चाडपर्व र सार्वजनिक बिदा स्पष्ट रूपमा हेर्नुहोस्।</p>
+    <p>नेपाली मिति, तिथि, नेपाल संवत्, चाडपर्व र सार्वजनिक बिदा स्पष्ट रूपमा हेर्नुहोस्। नेपाली Unicode टाइपिङ, BS–AD मिति रूपान्तरण, <a href="/moon">चन्द्र पात्रो</a>, <a href="/fm">FM रेडियो</a> र इतिहासका उपयोगी लिंक यही पृष्ठबाट खोल्नुहोस्।</p>
     <div class="ap-prerender-actions"><a href="/rashifal">आजको राशिफल</a><a href="/convert">मिति रूपान्तरण</a><a href="/tools/nepali-typing">नेपाली टाइपिङ</a><a href="/me">आफ्नै ठाउँ</a></div>
   </section>
   <section class="ap-prerender-calendar" aria-label="नेपाली पात्रो महिना">

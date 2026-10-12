@@ -259,6 +259,16 @@ export function ReferenceHomePage({ calendarYear, calendarMonth }: { calendarYea
       <aside className="rh-side" aria-label={l(language, "पात्रो सहायक सामग्री", "Calendar shortcuts")}>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "आगामी", "Upcoming")}</span><h2>{l(language, "नजिकका चाडपर्व", "Upcoming festivals")}</h2></div></header><div className="rh-upcoming">{upcoming.length ? upcoming.map((item, index) => <a href={`/date/${festivalDate(item)}`} key={`${festivalDate(item)}-${index}`}><strong>{festivalName(item, language)}</strong><small>{festivalTiming(festivalDate(item), today, language)}</small></a>) : <p className="rh-muted">{l(language, "यो महिनाका थप चाडपर्व विवरण उपलब्ध छैनन्।", "No additional festival entries are available for this month.")}</p>}</div></section>
         <section className="rh-card"><header className="rh-card-head"><div><span className="rh-kicker">{l(language, "छिटो पहुँच", "Quick access")}</span><h2>{l(language, "दैनिक प्रयोग", "Daily tools")}</h2></div></header><div className="rh-quick-grid"><a href="/tools/nepali-typing"><b>ने</b><span>{l(language, "नेपाली टाइपिङ", "Nepali typing")}</span></a><a href="/time-machine"><b>⌛</b><span>{l(language, "समययन्त्र", "Time Machine")}</span></a><a href="/samudaya"><b>समु</b><span>{l(language, "समुदाय पात्रो", "Community calendars")}</span></a><a href="/tools/astro"><b>☾</b><span>{l(language, "खगोलीय पात्रो", "Astronomical calendar")}</span></a></div></section>
+        <section className="rh-card" aria-label="Aafnai Patro useful tools">
+          <header className="rh-card-head"><div><span className="rh-kicker">{l(language, "थप खोज्नुहोस्", "Explore more")}</span><h2>{l(language, "क्यालेन्डर र उपयोगी टुल", "Calendars and tools")}</h2></div></header>
+          <p className="rh-muted">{l(language, "नेपाली टाइपिङ, अंग्रेजी–नेपाली मिति रूपान्तरण, चन्द्र पात्रो र प्रत्यक्ष रेडियो एउटै ठाउँमा हेर्नुहोस्।", "Find Nepali typing, BS–AD dates, lunar calendars and online radio in one place.")}</p>
+          <nav className="rh-quick-grid" aria-label="Explore tools">
+            <a href="/moon"><b>☾</b><span>{l(language, "चन्द्र पात्रो", "Moon calendar")}</span></a>
+            <a href="/convert"><b>मि</b><span>{l(language, "मिति रूपान्तरण", "Date converter")}</span></a>
+            <a href="/fm"><b>FM</b><span>{l(language, "नेपाली रेडियो", "Nepali radio")}</span></a>
+            <a href="/on-this-day"><b>आज</b><span>{l(language, "इतिहासमा आज", "Today in history")}</span></a>
+          </nav>
+        </section>
         <HomeHistoryCard language={language} todayAd={today} />
         <DeferredHomeSkyFact language={language} />
       </aside>
