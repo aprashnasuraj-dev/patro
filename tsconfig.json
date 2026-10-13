@@ -27,7 +27,8 @@
       "@/patro-tools/*": [
         "src/patro-tools/*"
       ]
-    }
+    },
+    "allowImportingTsExtensions": true
   },
   "include": [
     "src"

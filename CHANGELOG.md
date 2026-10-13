@@ -4,6 +4,13 @@ All notable migration-facing changes are recorded here. Product-feature history 
 
 ## Unreleased
 
+### Added — Nepali dictionary (`/tool/nepalidictionary`, feat/nepali-dictionary)
+
+- 49,119-headword Nepali ↔ English dictionary from open sources plus original editorial definitions (9,101 defined), with English → Nepali pages, pronunciation, A1–B2 word lists, spaced-repetition flashcards, SEE/Lok Sewa quizzes, a Nepali spell checker, rhymes, ukhan and tap-to-translate on reading pages. See `docs/dictionary/README.md`.
+- Data is generated at build time into `public/data/dict/v1` (256-way shards, ~2,050 files); `worker/dictionary.ts` server-renders word, A–Z, rhyme and English pages from it with variant/inflection 301s, so the deploy stays at ~7,900 / 19,500 static files.
+- D1: `0007_dictionary_learning.sql` (`dict_saved_words`, `dict_quiz_results`, mirrored in `ensureAuthSchema`), `/api/v1/dictionary/{cards,quiz}` on the existing session; included in `/api/v1/my-data` export and account deletion.
+- `sitemap-nepalidictionary.xml` (~15.7k URLs). The 29 canonical tools, their sitemap and catalog are unchanged.
+
 ### Fixed — sitemaps (fix/sitemap-seo)
 
 - Sitemaps now submit only indexable, self-canonical URLs: BS calendar/day archives are limited to the current BS year ±10 (`SITEMAP_MIN_BS_YEAR`/`SITEMAP_MAX_BS_YEAR` in `scripts/seo-config.mjs`), matching the Worker's historical `noindex` cutoff, which now lives in `worker/seo-window.ts` with the identical formula. The index drops from 422 to 47 child sitemaps (~8.3k URLs instead of ~77k); the full 77,070-row archive remains served from R2.

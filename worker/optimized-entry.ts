@@ -16,6 +16,7 @@ import { staticFestivalResponse } from "./festival-static";
 import { quotaCachedResponse } from "./quota-cache";
 import { speechApiResponse } from "./speech";
 import { nativeRashifalResponse } from "./rashifal-native";
+import { dictionaryResponse } from "./dictionary";
 
 /** Canonicalize human-entered dates such as /date/2026-8-06 to /date/2026-08-06. */
 function canonicalDateRedirect(request: Request): Response | null {
@@ -48,6 +49,10 @@ const optimizedWorker = {
   async fetch(request: Request, env: Record<string, unknown>, ctx: ExecutionContext) {
     const normalizedDate = canonicalDateRedirect(request);
     if (normalizedDate) return normalizedDate;
+    // Nepali dictionary owns /tool/nepalidictionary/<word>, /akshar/*, /anupras/<word>, /en/<word> and /api/v1/dictionary/*;
+    // its fixed pages are prerendered and fall through to connected-entry. null for everything else.
+    const dictionary = await dictionaryResponse(request, env as any, ctx);
+    if (dictionary) return dictionary;
     // Explore families own only their new prefixes and /sitemap-explore.xml + /sitemap-x-*.xml; null for everything else.
     const explore = await exploreResponse(request, env as any, ctx);
     if (explore) return explore;

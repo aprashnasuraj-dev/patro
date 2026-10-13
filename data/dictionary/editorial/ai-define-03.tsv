@@ -1,0 +1,338 @@
+# AI DRAFT (Claude: multi-agent draft + independent reviewer pass) — NEEDS REVIEW by a Nepali editor before publishing. Original content, CC BY-SA 4.0.
+काल	n	कुनै घटना वा अवस्था रहेको समय वा युग।	time, period, era	राणा कालमा धेरै मानिस पढ्न पाउँदैनथे।	In the Rana period many people could not study.
+काल	n	मृत्यु वा मृत्युको देवता।	death	बाढीले धेरैलाई कालको मुखमा पुर्यायो।	The flood brought many to the jaws of death.
+न्यूनीकरण	n	कुनै कुरालाई घटाउने वा कम गर्ने काम।	reduction, mitigation	विपद् न्यूनीकरणका लागि गाउँमा तालिम दिइयो।	Training was given in the village for disaster mitigation.
+विकृति	n	समाज वा व्यवस्थामा देखिने बिग्रिएको वा गलत रूप।	distortion, malpractice, social ill	दाइजो प्रथा समाजको एउटा विकृति हो।	The dowry system is a social ill.
+राजकुमार	n	राजाको छोरा।	prince	राजकुमार घोडा चढेर आए।	The prince came riding a horse.
+प्रदूषण	n	हावा, पानी वा माटो फोहोर र हानिकारक हुने अवस्था।	pollution	सहरमा वायु प्रदूषण बढ्दै गएको छ।	Air pollution is increasing in the city.
+लाइसेन्स	n	कुनै काम गर्न अधिकारीबाट पाइने आधिकारिक अनुमतिपत्र।	license, permit	उसले गाडी चलाउने लाइसेन्स लियो।	He got a driving license.
+छाप	n	कुनै वस्तु थिचेर बनेको चिनो वा आधिकारिक मोहर।	stamp, seal, imprint	कागजमा कार्यालयको छाप लगाइयो।	The office stamp was put on the paper.
+छाप	n	मनमा परेको प्रभाव।	impression	उनको भाषणले राम्रो छाप छोड्यो।	Her speech left a good impression.
+साहित्यिक	adj	साहित्यसँग सम्बन्धित।	literary	शनिबार साहित्यिक कार्यक्रम हुँदै छ।	A literary program is being held on Saturday.
+चरम	adj	सबैभन्दा माथिल्लो वा अन्तिम सीमामा पुगेको।	extreme, utmost, peak	गर्मी अहिले चरम अवस्थामा छ।	The heat is now at its peak.
+आयुक्त	n	कुनै आयोगको सदस्य वा उच्च प्रशासनिक अधिकारी।	commissioner	निर्वाचन आयुक्तले पत्रकार सम्मेलन गरे।	The election commissioner held a press conference.
+खानी	n	जमिनमुनिबाट खनिज पदार्थ निकाल्ने ठाउँ।	mine, quarry	त्यो पहाडमा फलामको खानी छ।	There is an iron mine in that hill.
+भोजपुर	n	नेपालको कोशी प्रदेशमा पर्ने एक पहाडी जिल्ला।	Bhojpur (district of Nepal)	भोजपुर खुकुरीका लागि चिनिन्छ।	Bhojpur is known for its khukuris.
+युवक	n	जवान उमेरको पुरुष।	young man, youth	गाउँका युवकहरूले बाटो सफा गरे।	The young men of the village cleaned the road.
+सर्त	n	कुनै सम्झौता वा काम पूरा हुन मान्नुपर्ने कुरा।	condition, term	उनले एउटा सर्तमा मात्र सहमति दिए।	He agreed only on one condition.
+समर्थक	n	कुनै व्यक्ति, विचार वा दललाई साथ दिने मानिस।	supporter	खेलाडीका समर्थकहरू मैदानमा नाचे।	The player's supporters danced on the field.
+सौन्दर्य	n	राम्रो र आकर्षक हुनुको गुण।	beauty	हिमालको सौन्दर्य हेर्न पर्यटक आउँछन्।	Tourists come to see the beauty of the Himalayas.
+गैरसरकारी	adj	सरकारको नभएको वा सरकारबाहिरको।	non-governmental	उनी एउटा गैरसरकारी संस्थामा काम गर्छिन्।	She works at a non-governmental organization.
+महाकाली	n	नेपालको पश्चिमी सिमानामा बग्ने ठुलो नदी।	Mahakali River	महाकाली नदीमा पुल बनाइँदै छ।	A bridge is being built over the Mahakali River.
+महाकाली	n	हिन्दु धर्ममा पुजिने काली देवीको एक उग्र रूप।	Mahakali (goddess)	भक्तहरूले महाकालीको पूजा गरे।	The devotees worshipped Mahakali.
+माल	n	बेच्न वा ढुवानी गर्न राखिएको सामान।	goods, merchandise	ट्रकबाट माल झारियो।	The goods were unloaded from the truck.
+स्पेन	n	युरोपको दक्षिणपश्चिममा रहेको एक देश।	Spain	स्पेन फुटबलका लागि प्रसिद्ध छ।	Spain is famous for football.
+अभिलेख	n	कुनै कुराको लिखित वा सुरक्षित राखिएको विवरण।	record, archive, inscription	कार्यालयले सबै खर्चको अभिलेख राख्छ।	The office keeps a record of all expenses.
+छिन्नु	v	मुद्दा, विवाद आदिको फैसला गरेर टुङ्गो लगाउनु।	to decide, to settle (a case or dispute)	अदालतले धेरै वर्षपछि जग्गाको मुद्दा छिन्यो।	The court decided the land case after many years.
+तनहुँ	n	नेपालको गण्डकी प्रदेशमा पर्ने एक जिल्ला।	Tanahun (district of Nepal)	दमौली तनहुँ जिल्लाको सदरमुकाम हो।	Damauli is the headquarters of Tanahun district.
+विरोधी	n	कुनै व्यक्ति, विचार वा कामको विरोध गर्ने।	opponent, rival, anti-	उनले विरोधीको कुरा पनि ध्यान दिएर सुने।	He listened carefully even to his opponent.
+मर्म	n	कुनै कुराको भित्री सार वा मुख्य अर्थ।	essence, core meaning	कानुनको मर्म बुझेर काम गर्नुपर्छ।	One should act understanding the spirit of the law.
+बिस्तारै	adv	हतार नगरी, ढिलो गतिमा।	slowly, gradually	हजुरआमा बिस्तारै हिँड्नुहुन्छ।	Grandmother walks slowly.
+चोक	n	धेरै बाटो मिल्ने खुला ठाउँ।	square, intersection	हामी चोकमा भेटौँला।	Let's meet at the square.
+मुआब्जा	n	हानि वा नोक्सानीबापत दिइने रकम।	compensation	जग्गा गुमाउनेले मुआब्जा पाए।	Those who lost land received compensation.
+गुट	n	ठुलो समूह वा दलभित्रको सानो पक्ष।	faction, clique	पार्टीमा दुई गुट देखिए।	Two factions appeared in the party.
+स्कुटर	n	सानो पाङ्ग्रा भएको दुईपाङ्ग्रे मोटर गाडी।	scooter	उनी स्कुटर चढेर अफिस जान्छिन्।	She rides a scooter to the office.
+अशोक	n	रातो-सुन्तला फूल फुल्ने एक सदाबहार रुख।	Ashoka tree	मन्दिरको छेउमा अशोकको रुख छ।	There is an Ashoka tree beside the temple.
+मार्च	n	अङ्ग्रेजी पात्रोको तेस्रो महिना।	March	मार्चमा मौसम न्यानो हुन थाल्छ।	The weather starts getting warm in March.
+भाउ	n	कुनै वस्तुको बजार मूल्य।	price, rate	आज तरकारीको भाउ बढेको छ।	The price of vegetables has gone up today.
+भत्कनु	v	घर, पर्खाल आदि टुटेर ढल्नु।	to collapse, to be demolished	भुइँचालोमा पुरानो घर भत्क्यो।	The old house collapsed in the earthquake.
+विद्यमान	adj	अहिले रहेको वा चलिरहेको।	existing, current	विद्यमान कानुनमा सुधार आवश्यक छ।	The existing law needs reform.
+गणना	n	सङ्ख्या गन्ने काम।	count, counting, census	मतगणना बेलुकासम्म चल्यो।	The vote count went on until evening.
+रेलमार्ग	n	रेल गुड्ने फलामे बाटो।	railway, rail line	नयाँ रेलमार्ग बनाउने योजना छ।	There is a plan to build a new railway.
+पल	n	धेरै छोटो समय।	moment, instant	त्यो पल म कहिल्यै बिर्सन्नँ।	I will never forget that moment.
+प्रतिस्पर्धी	n	प्रतिस्पर्धा गर्ने व्यक्ति वा पक्ष।	competitor, rival	उसले आफ्नो प्रतिस्पर्धीलाई हरायो।	He defeated his competitor.
+करार	n	दुई पक्षबिच लिखित रूपमा गरिएको सम्झौता।	contract, agreement	उनी करारमा शिक्षक भएका छन्।	He has become a teacher on contract.
+गेट	n	घर वा परिसरमा पस्ने ठुलो ढोका।	gate	विद्यालयको गेट बिहानै खुल्छ।	The school gate opens early in the morning.
+सशक्त	adj	बलियो र प्रभाव पार्न सक्ने।	strong, empowered, powerful	महिलाहरू आर्थिक रूपमा सशक्त हुँदै छन्।	Women are becoming economically empowered.
+उत्तम	adj	सबैभन्दा राम्रो।	best, excellent	यो काम गर्ने उत्तम तरिका के हो?	What is the best way to do this work?
+विश्वकर्मा	n	हिन्दु धर्ममा शिल्प र निर्माणका देवता।	Vishwakarma (god of craftsmanship)	कारखानामा विश्वकर्माको पूजा गरियो।	Vishwakarma was worshipped in the factory.
+परिमार्जन	n	कमी हटाएर सुधार गर्ने काम।	revision, refinement	प्रस्तावमा केही परिमार्जन गरियो।	Some revisions were made to the proposal.
+पैदल	adv	गाडी नचढी खुट्टाले हिँडेर।	on foot	हामी पैदल बजार गयौँ।	We went to the market on foot.
+गहिरो	adj	सतहदेखि तलसम्म धेरै दुरी भएको।	deep	यो पोखरी निकै गहिरो छ।	This pond is very deep.
+गहिरो	adj	धेरै बलियो वा तीव्र।	profound, intense	दुवैबिच गहिरो मित्रता छ।	There is a deep friendship between the two.
+चुरे	n	नेपालको तराईको उत्तरतिर फैलिएको होचो पहाडी शृङ्खला।	Chure (Siwalik) hills	चुरे क्षेत्रमा वन जोगाउनुपर्छ।	Forests in the Chure region must be protected.
+सिरहा	n	नेपालको मधेस प्रदेशमा पर्ने एक जिल्ला।	Siraha (district of Nepal)	सिरहामा धान खेती धेरै हुन्छ।	A lot of rice is farmed in Siraha.
+वसन्त	n	जाडोपछि आउने फूल फुल्ने ऋतु।	spring (season)	वसन्तमा रुखमा नयाँ पात पलाउँछन्।	New leaves sprout on trees in spring.
+सुत्केरी	n	भर्खरै बच्चा जन्माएकी महिला।	woman who has recently given birth	सुत्केरीलाई पोसिलो खाना चाहिन्छ।	A new mother needs nutritious food.
+तपाईँ	pron	आदर गरिने व्यक्तिलाई सम्बोधन गर्दा प्रयोग हुने दोस्रो पुरुष सर्वनाम।	you (polite)	तपाईँ कहाँ बस्नुहुन्छ?	Where do you live?
+चल	adj	एक ठाउँबाट अर्को ठाउँमा सार्न सकिने।	movable	गाडी र गहना चल सम्पत्ति हुन्।	Vehicles and jewelry are movable property.
+कर्ण	n	सुन्ने अङ्ग, कान।	ear	उनको कर्णमा समस्या देखियो।	A problem was found in his ear.
+आस्था	n	कुनै कुरामा गहिरो विश्वास वा श्रद्धा।	faith, belief	उनको धर्ममा ठुलो आस्था छ।	She has great faith in religion.
+सेमिफाइनल	n	फाइनलअघिको प्रतियोगिताको खेल।	semifinal	नेपाल सेमिफाइनलमा पुग्यो।	Nepal reached the semifinal.
+उन	n	भेडा आदिको रौँबाट बनेको धागो।	wool	आमाले उनबाट स्वेटर बुन्नुभयो।	Mother knitted a sweater from wool.
+सिस्टम	n	मिलेर काम गर्ने अङ्ग वा नियमहरूको व्यवस्था।	system	अफिसको कम्प्युटर सिस्टम बिग्रियो।	The office computer system broke down.
+जिप	n	कच्ची बाटोमा पनि चल्ने बलियो सानो मोटर गाडी।	jeep	हामी जिपमा गाउँ गयौँ।	We went to the village by jeep.
+पावर	n	शक्ति वा बिजुलीको क्षमता।	power	यो मोटरको पावर धेरै छ।	This motor has a lot of power.
+सरस्वती	n	हिन्दु धर्ममा विद्या र कलाकी देवी।	Saraswati (goddess of learning)	विद्यार्थीले सरस्वतीको पूजा गरे।	The students worshipped Saraswati.
+सन्धि	n	दुई देश वा पक्षबिच भएको औपचारिक सम्झौता।	treaty	दुई देशबिच व्यापार सन्धि भयो।	A trade treaty was signed between the two countries.
+सन्धि	n	व्याकरणमा दुई वर्ण जोडिँदा हुने परिवर्तन।	sandhi (sound joining in grammar)	कक्षामा सन्धिको पाठ पढाइयो।	A lesson on sandhi was taught in class.
+हटाउनु	v	कुनै ठाउँबाट अलग गर्नु वा पन्छाउनु।	to remove, to dismiss	बाटोबाट ढुङ्गा हटाऊ।	Remove the stones from the road.
+मिलन	n	भेट हुने वा एक ठाउँमा आउने अवस्था।	meeting, union, reunion	लामो समयपछि दुई साथीको मिलन भयो।	The two friends met after a long time.
+सार्क	n	दक्षिण एसियाली देशहरूको क्षेत्रीय सहयोग सङ्गठन।	SAARC	सार्कको सचिवालय काठमाडौँमा छ।	The SAARC secretariat is in Kathmandu.
+ठक्कर	n	दुई वस्तु वेगले एकआपसमा ठोक्किने काम।	collision, crash	बस र ट्रकबिच ठक्कर भयो।	A bus and a truck collided.
+गाली	n	रिसले भनिने नराम्रो वा अपमानजनक कुरा।	abuse, scolding	ढिलो आएकोमा उसले गाली खायो।	He got scolded for coming late.
+गाउँले	n	गाउँमा बस्ने मानिस।	villager	गाउँलेहरूले मिलेर पुल बनाए।	The villagers built the bridge together.
+मुस्किल	adj	गर्न गाह्रो पर्ने।	difficult, hard	यो प्रश्न निकै मुस्किल छ।	This question is very difficult.
+गोल्डकप	n	विजेतालाई सुनको कप दिइने खेल प्रतियोगिता।	gold cup (tournament)	सहरमा फुटबल गोल्डकप सुरु भयो।	A football gold cup started in the city.
+सत्र	n	सभा, संसद् वा कक्षाको निश्चित अवधिको बैठक।	session	संसद्को नयाँ सत्र आजदेखि सुरु भयो।	A new session of parliament began today.
+सत्र	num	सोह्रपछिको सङ्ख्या, १७।	seventeen	उनी सत्र वर्षकी भइन्।	She turned seventeen.
+ग्रुप	n	मानिस वा वस्तुहरूको समूह।	group	हामी ग्रुपमा पढ्छौँ।	We study in a group.
+बढुवा	n	जागिरमा माथिल्लो पदमा पुग्ने काम।	promotion	उनको गत महिना बढुवा भयो।	She got a promotion last month.
+पैदा	adj	जन्मिएको वा उत्पन्न भएको।	born, produced	यो गाउँमा धेरै खेलाडी पैदा भए।	Many athletes were born in this village.
+तारिख	n	महिनाको कुनै निश्चित दिन।	date	परीक्षाको तारिख तोकियो।	The exam date was fixed.
+तारिख	n	अदालतमा उपस्थित हुन तोकिएको दिन।	court date, hearing date	उनी अदालतमा तारिखमा गए।	He went to court on his hearing date.
+संयोजन	n	विभिन्न कुरा वा काम मिलाएर जोड्ने काम।	coordination, combination	कार्यक्रमको संयोजन उनले गरे।	He coordinated the program.
+सिकार	n	जङ्गली जनावर मार्ने वा समात्ने काम।	hunting, prey	संरक्षित क्षेत्रमा सिकार गर्न पाइँदैन।	Hunting is not allowed in protected areas.
+नेटवर्क	n	एकआपसमा जोडिएका मानिस, यन्त्र वा संस्थाको जालो।	network	गाउँमा मोबाइल नेटवर्क कमजोर छ।	The mobile network is weak in the village.
+शान्त	adj	हल्ला, रिस वा चञ्चलता नभएको।	calm, quiet, peaceful	बिहान ताल एकदम शान्त थियो।	The lake was very calm in the morning.
+जाम	n	सवारीसाधन अड्केर बाटो रोकिएको अवस्था।	traffic jam	आज सडकमा ठुलो जाम छ।	There is a big traffic jam on the road today.
+जाम	n	फलफूल र चिनी पकाएर बनाइने गुलियो लेदो।	jam (food)	उसले रोटीमा जाम लगायो।	He spread jam on the bread.
+परिचयपत्र	n	व्यक्तिको नाम, फोटो आदि भएको पहिचान खुलाउने कार्ड।	identity card	भित्र जान परिचयपत्र देखाउनुहोस्।	Show your identity card to go inside.
+मनोनयन	n	कुनै पद वा चुनावका लागि नाम प्रस्ताव वा नियुक्त गर्ने काम।	nomination	उम्मेदवारले आज मनोनयन दर्ता गरे।	The candidate filed the nomination today.
+बाबा	n	बुबा, पिता।	father, dad	बाबा बिहानै खेतमा जानुभयो।	Father went to the field early in the morning.
+बाबा	n	साधु वा सन्त।	holy man, sadhu	मन्दिरमा एक जना बाबा बसेका थिए।	A holy man was sitting at the temple.
+मन्त्रिपरिषद	n	प्रधानमन्त्री र मन्त्रीहरू मिलेर बनेको सरकारको निकाय।	council of ministers, cabinet	मन्त्रिपरिषद्को बैठकले नयाँ नीति पास गर्यो।	The cabinet meeting passed a new policy.
+साफ	adj	फोहोर नभएको, सफा।	clean, clear	आज आकाश साफ छ।	The sky is clear today.
+सभ्यता	n	कुनै समाजको विकसित जीवनशैली, संस्कृति र व्यवस्था।	civilization	सिन्धु घाटी सभ्यता धेरै पुरानो हो।	The Indus Valley civilization is very old.
+लन्डन	n	बेलायतको राजधानी सहर।	London	उनी पढ्न लन्डन गइन्।	She went to London to study.
+दान	n	बदलामा केही नलिई अरूलाई दिइने वस्तु वा रकम।	donation, charity	उनले विद्यालयलाई किताब दान गरे।	He donated books to the school.
+बेलायती	adj	बेलायतसँग सम्बन्धित वा बेलायतको।	British	बेलायती सेनामा नेपालीहरू पनि छन्।	There are Nepalis in the British army too.
+लाखौं	adj	धेरै लाख, अत्यन्त धेरै सङ्ख्यामा।	hundreds of thousands	मेलामा लाखौं मानिस आए।	Hundreds of thousands of people came to the fair.
+निकासी	n	देशबाट विदेशमा सामान पठाउने काम।	export	नेपालबाट अलैँचीको निकासी बढ्यो।	The export of cardamom from Nepal increased.
+विद्या	n	पढेर वा सिकेर पाइने ज्ञान।	knowledge, learning	विद्या कसैले चोर्न सक्दैन।	No one can steal knowledge.
+लक्षण	n	रोग वा कुनै अवस्था चिनाउने सङ्केत।	symptom, sign	ज्वरो यो रोगको मुख्य लक्षण हो।	Fever is the main symptom of this disease.
+आश्वासन	n	कुनै काम गरिदिने भनी दिइने भरोसा।	assurance, promise	मन्त्रीले बाटो बनाउने आश्वासन दिए।	The minister gave an assurance to build the road.
+घुस	n	गलत काम गराउन गोप्य रूपमा दिइने रकम।	bribe	घुस लिने कर्मचारी पक्राउ परे।	The official who took a bribe was arrested.
+स्वच्छ	adj	सफा र शुद्ध।	clean, pure, fair	सबैलाई स्वच्छ पानी चाहिन्छ।	Everyone needs clean water.
+सैद्धान्तिक	adj	सिद्धान्तसँग सम्बन्धित, व्यवहारमा नभई विचारमा आधारित।	theoretical, in principle	दुवै पक्ष सैद्धान्तिक रूपमा सहमत भए।	Both sides agreed in principle.
+बेलुका	n	दिनको अन्त्य र रातको सुरुको समय।	evening	म बेलुका घर फर्कन्छु।	I return home in the evening.
+चक्र	n	घुम्ने गोलो वस्तु, पाङ्ग्रा।	wheel, disc	रथको चक्र टुट्यो।	The chariot's wheel broke.
+चक्र	n	पटकपटक दोहोरिने क्रम।	cycle	ऋतुको चक्र हरेक वर्ष दोहोरिन्छ।	The cycle of seasons repeats every year.
+सयौं	adj	धेरै सय, धेरै सङ्ख्यामा।	hundreds	सयौं विद्यार्थी परीक्षामा सामेल भए।	Hundreds of students took the exam.
+सत्तारुढ	adj	सत्तामा रहेको।	ruling, in power	सत्तारुढ दलले बैठक बोलायो।	The ruling party called a meeting.
+स्वरूप	n	कुनै कुराको रूप, आकार वा प्रकृति।	form, nature, shape	सहरको स्वरूप धेरै फेरियो।	The shape of the city changed a lot.
+मेलम्ची	n	सिन्धुपाल्चोक जिल्लामा बग्ने एक खोला र त्यहाँको बस्ती।	Melamchi (river and town)	मेलम्चीको पानी काठमाडौँ ल्याइयो।	Water from Melamchi was brought to Kathmandu.
+स्वाद	n	जिब्रोले थाहा पाइने खानेकुराको गुण।	taste, flavor	यो अचारको स्वाद अमिलो छ।	This pickle has a sour taste.
+ठिक	adj	गलत नभएको, उचित वा सही; राम्रो अवस्थामा रहेको।	right, correct, okay, fine	तिम्रो उत्तर ठिक छ।	Your answer is correct.
+प्रकरण	n	कुनै विशेष घटना वा मामला।	case, affair, episode	भ्रष्टाचार प्रकरणको छानबिन भइरहेको छ।	The corruption case is being investigated.
+स्वभाव	n	व्यक्तिको बानी र व्यवहारको स्थायी गुण।	nature, temperament	उनको स्वभाव निकै नरम छ।	She has a very gentle nature.
+पाठ्यक्रम	n	कुनै तह वा विषयमा पढाइने विषयवस्तुको योजना।	curriculum, syllabus	नयाँ पाठ्यक्रम यसै वर्ष लागु भयो।	The new curriculum was implemented this year.
+फुट	n	लम्बाइ नाप्ने बाह्र इन्चको एकाइ।	foot (unit of length)	त्यो ढोका छ फुट अग्लो छ।	That door is six feet tall.
+फुट	n	समूहमा हुने विभाजन वा मतभेद।	split, division, rift	पार्टीमा फुट देखियो।	A split appeared in the party.
+सङ्घीय	adj	सङ्घ वा सङ्घीय सरकारसँग सम्बन्धित।	federal	सङ्घीय संसद्को बैठक बस्यो।	The federal parliament met.
+मानसिकता	n	सोच्ने तरिका वा मनको झुकाव।	mentality, mindset	हामीले आफ्नो मानसिकता बदल्नुपर्छ।	We need to change our mindset.
+संघसंस्था	n	विभिन्न सङ्घ र संस्थाहरू।	organizations, associations	स्थानीय संघसंस्थाले राहत बाँडे।	Local organizations distributed relief.
+महानिर्देशक	n	कुनै विभागको सबैभन्दा माथिल्लो प्रशासनिक प्रमुख।	director general	विभागका महानिर्देशकले निरीक्षण गरे।	The department's director general made an inspection.
+सन	n	ईसा संवत् अनुसारको वर्ष गणना।	year of the Common Era (AD)	उनी सन २००० मा जन्मिएका हुन्।	He was born in the year 2000 AD.
+स्वास्थ्यकर्मी	n	अस्पताल वा स्वास्थ्य सेवामा काम गर्ने व्यक्ति।	health worker	स्वास्थ्यकर्मीले गाउँमा खोप लगाए।	Health workers gave vaccines in the village.
+कमाइ	n	काम वा व्यापारबाट प्राप्त हुने रकम।	earnings, income	उसको महिनाको कमाइ राम्रो छ।	His monthly income is good.
+सिम	n	मोबाइल फोनमा हाल्ने नम्बर भएको सानो कार्ड।	SIM card	मैले नयाँ सिम किनेँ।	I bought a new SIM card.
+छेउ	n	कुनै वस्तु वा ठाउँको किनार वा नजिकको भाग।	edge, side, nearby	खोलाको छेउमा घर छ।	There is a house beside the river.
+रोक्नु	v	चलिरहेको कुरा अघि बढ्न नदिनु।	to stop, to prevent	प्रहरीले गाडी रोक्यो।	The police stopped the vehicle.
+गुठी	n	मन्दिर, पर्व वा सामाजिक कामका लागि बनेको परम्परागत संस्था वा ट्रस्ट।	guthi (traditional trust)	गुठीले हरेक वर्ष जात्रा चलाउँछ।	The guthi runs the festival procession every year.
+सुरुङ	n	पहाड वा जमिनमुनि खनेर बनाइएको बाटो।	tunnel	पहाड छेडेर सुरुङ बनाइयो।	A tunnel was built through the hill.
+खाडी	n	तीनतिर जमिनले घेरिएको समुद्रको भाग।	gulf, bay	धेरै नेपाली खाडी मुलुकमा काम गर्छन्।	Many Nepalis work in the Gulf countries.
+राजनैतिक	adj	राजनीतिसँग सम्बन्धित।	political	देशमा राजनैतिक स्थिरता चाहिन्छ।	The country needs political stability.
+आत्मनिर्भर	adj	अरूमा भर नपरी आफैँ सक्षम भएको।	self-reliant	गाउँ खाद्यान्नमा आत्मनिर्भर बन्यो।	The village became self-reliant in food grains.
+सम्पादक	n	पत्रिका, पुस्तक आदिको सामग्री छानेर मिलाउने व्यक्ति।	editor	पत्रिकाका सम्पादकले लेख छापे।	The newspaper's editor published the article.
+उदयपुर	n	नेपालको कोशी प्रदेशमा पर्ने एक जिल्ला।	Udayapur (district of Nepal)	गाईघाट उदयपुरको सदरमुकाम हो।	Gaighat is the headquarters of Udayapur.
+सक्रियता	n	सक्रिय हुनुको अवस्था।	activeness, involvement	युवाको सक्रियताले गाउँ बदलियो।	The village changed through the involvement of youth.
+डोल्पा	n	नेपालको कर्णाली प्रदेशमा पर्ने एक हिमाली जिल्ला।	Dolpa (district of Nepal)	शे-फोक्सुन्डो ताल डोल्पामा छ।	Shey-Phoksundo Lake is in Dolpa.
+नहर	n	सिँचाइका लागि खनिएको पानी बग्ने लामो बाटो।	canal	नहरले खेतमा पानी पुर्याउँछ।	The canal brings water to the fields.
+जापानी	adj	जापान वा त्यहाँका मानिस र भाषासँग सम्बन्धित।	Japanese	उनी जापानी भाषा सिक्दै छिन्।	She is learning Japanese.
+माला	n	फूल, मोती आदि धागोमा उनेर बनाइने हार।	garland, necklace	अतिथिलाई फूलको माला लगाइयो।	The guest was garlanded with flowers.
+नत्र	conj	यसो नगरे भने।	otherwise, or else	छिटो हिँड, नत्र बस छुट्छ।	Walk fast, otherwise we will miss the bus.
+आयल	n	इन्धन वा मेसिनमा प्रयोग हुने तेल।	oil	गाडीको आयल फेर्नुपर्छ।	The car's oil needs changing.
+ज्येष्ठ	adj	उमेर वा पदमा सबैभन्दा ठुलो।	senior, eldest	ज्येष्ठ नागरिकलाई भत्ता दिइन्छ।	Senior citizens are given an allowance.
+ज्येष्ठ	n	विक्रम संवत्को दोस्रो महिना, जेठ।	Jestha (second month of the Nepali calendar)	ज्येष्ठमा धेरै गर्मी हुन्छ।	It is very hot in Jestha.
+सहुलियत	n	कुनै कुरामा दिइने छुट वा सुविधा।	concession, relief, subsidy	किसानलाई मलमा सहुलियत दिइयो।	Farmers were given a concession on fertilizer.
+क्षण	n	धेरै छोटो समय।	moment, instant	एक क्षणमै सबै बदलियो।	Everything changed in a moment.
+सास्ती	n	कष्ट, दुःख वा हैरानी।	hardship, trouble, suffering	बाटो नहुँदा गाउँलेले सास्ती भोगे।	The villagers suffered hardship without a road.
+रोड	n	सवारीसाधन हिँड्ने बाटो।	road	यो रोड सिधै बजार जान्छ।	This road goes straight to the market.
+गर्भ	n	आमाको पेटभित्र बच्चा रहने ठाउँ वा गर्भावस्था।	womb, pregnancy	गर्भमा रहेको बच्चा स्वस्थ छ।	The baby in the womb is healthy.
+बौद्धिक	adj	बुद्धि वा ज्ञानसँग सम्बन्धित।	intellectual	उनी बौद्धिक बहसमा सहभागी भए।	He took part in an intellectual debate.
+भित्री	adj	भित्रपट्टिको।	inner, internal	घरको भित्री कोठा चिसो छ।	The inner room of the house is cold.
+दृष्टि	n	हेर्ने क्षमता वा हेराइ।	sight, vision	उमेरसँगै दृष्टि कमजोर हुन्छ।	Eyesight weakens with age.
+दृष्टि	n	कुनै कुरालाई हेर्ने विचार वा दृष्टिकोण।	point of view, perspective	कानुनी दृष्टिले यो गलत हो।	From a legal point of view this is wrong.
+उखु	n	गुलियो रस हुने, चिनी बनाइने लामो डाँठे बाली।	sugarcane	किसानले उखु मिलमा बेचे।	The farmers sold sugarcane to the mill.
+डोटी	n	नेपालको सुदूरपश्चिम प्रदेशमा पर्ने एक पहाडी जिल्ला।	Doti (district of Nepal)	डोटीमा देउडा गीत लोकप्रिय छ।	Deuda songs are popular in Doti.
+खपत	n	प्रयोग भएर सकिने मात्रा।	consumption	जाडोमा बिजुलीको खपत बढ्छ।	Electricity consumption rises in winter.
+मोह	n	कुनै व्यक्ति वा वस्तुप्रतिको गहिरो लगाव।	attachment, fondness	उसलाई पैसाको मोह छैन।	He has no attachment to money.
+तालिका	n	विवरण पङ्क्ति र स्तम्भमा मिलाएर राखिएको सूची।	table, chart	तालिकामा नतिजा देखाइएको छ।	The results are shown in the table.
+तालिका	n	काम वा कार्यक्रमको समय तोकिएको सूची।	schedule, timetable	परीक्षाको तालिका निस्कियो।	The exam schedule came out.
+गर्भवती	adj	पेटमा बच्चा भएकी।	pregnant	गर्भवती महिलाले नियमित जाँच गराउनुपर्छ।	Pregnant women should get regular check-ups.
+बसपार्क	n	बसहरू रोकिने र यात्रु चढ्ने ठाउँ।	bus park, bus station	म बसपार्कमा तिमीलाई पर्खन्छु।	I will wait for you at the bus park.
+रारा	n	मुगु जिल्लामा रहेको नेपालको सबैभन्दा ठुलो ताल।	Rara Lake	रारा ताल घुम्न धेरै पर्यटक जान्छन्।	Many tourists go to visit Rara Lake.
+कोषाध्यक्ष	n	संस्थाको पैसाको हिसाब राख्ने पदाधिकारी।	treasurer	क्लबका कोषाध्यक्षले खर्च बताए।	The club treasurer reported the expenses.
+नवीन	adj	नयाँ वा आधुनिक।	new, novel	उनले नवीन प्रविधि प्रयोग गरे।	He used a new technology.
+हुम्ला	n	नेपालको कर्णाली प्रदेशमा पर्ने एक हिमाली जिल्ला।	Humla (district of Nepal)	हुम्ला नेपालको उत्तरपश्चिममा पर्छ।	Humla lies in the northwest of Nepal.
+फर्कनु	v	गएको ठाउँबाट पहिलेको ठाउँमा आउनु।	to return, to come back	दाइ विदेशबाट घर फर्कनुभयो।	Elder brother returned home from abroad.
+एयरलाइन्स	n	हवाईजहाज चलाएर यात्रु र सामान ढुवानी गर्ने कम्पनी।	airline	त्यो एयरलाइन्सले नयाँ उडान थाल्यो।	That airline started a new flight.
+जुट	n	बोरा र डोरी बनाउन प्रयोग हुने रेसादार बोट र त्यसको रेसा।	jute	विराटनगरमा जुट उद्योग छ।	There is a jute industry in Biratnagar.
+बेर	n	समयको अवधि।	while, time, duration	धेरै बेर पर्खेपछि बस आयो।	The bus came after waiting a long while.
+बेर	n	सानो गोलो खट्टामिठो फल।	jujube (fruit)	बच्चाहरूले रुखबाट बेर टिपे।	The children picked jujubes from the tree.
+मृत	adj	मरेको।	dead	सडकमा एउटा मृत कुकुर थियो।	There was a dead dog on the road.
+ख्याल	n	कुनै कुराप्रतिको ध्यान वा हेरचाह।	care, attention	आफ्नो स्वास्थ्यको ख्याल राख।	Take care of your health.
+चिन्तन	n	कुनै विषयमा गहिरो रूपमा सोच्ने काम।	reflection, contemplation	पार्टीले चिन्तन बैठक बोलायो।	The party called a reflection meeting.
+दोब्बर	adj	दुई गुणा।	double, twice	यस वर्ष उत्पादन दोब्बर भयो।	Production doubled this year.
+उद्यमी	n	आफैँ व्यवसाय वा उद्योग सुरु गरेर चलाउने व्यक्ति।	entrepreneur	युवा उद्यमीले कफी पसल खोले।	A young entrepreneur opened a coffee shop.
+उत्पादक	n	कुनै वस्तु उत्पादन गर्ने व्यक्ति वा संस्था।	producer, manufacturer	दूध उत्पादक किसानले भाउ बढाउन माग गरे।	Milk-producing farmers demanded a higher price.
+मोटर	n	बिजुली वा इन्धनले चल्ने यन्त्र वा त्यसले चल्ने गाडी।	motor, motor vehicle	पानी तान्न मोटर चलाइयो।	A motor was run to pump water.
+ढिला	adj	तोकिएको समयभन्दा पछि वा बिस्तारो।	late, slow	आज म अफिस ढिला पुगेँ।	I reached the office late today.
+अन्याय	n	न्यायविपरीतको काम वा व्यवहार।	injustice	अन्यायविरुद्ध आवाज उठाउनुपर्छ।	One should speak up against injustice.
+जनावर	n	मानिसबाहेकका जीवजन्तु, पशु।	animal	जङ्गलमा धेरै जनावर बस्छन्।	Many animals live in the forest.
+घरपरिवार	n	एउटै घरमा बस्ने परिवारका सदस्यहरू।	household, family	चाडमा घरपरिवार भेला भयो।	The family gathered for the festival.
+याद	n	सम्झना।	memory, remembrance	मलाई गाउँको याद आयो।	I missed my village.
+गुणा	n	कुनै सङ्ख्यालाई त्यति पटक जोड्ने गणितीय क्रिया; पटक।	multiplication, times	दुई गुणा तीन बराबर छ।	Two times three equals six.
+प्रतिफल	n	कुनै काम वा लगानीबाट पाइने नतिजा वा फाइदा।	return, result, reward	मेहनतको प्रतिफल राम्रो आयो।	The hard work paid off well.
+रसुवा	n	नेपालको बागमती प्रदेशमा पर्ने एक हिमाली जिल्ला।	Rasuwa (district of Nepal)	लाङटाङ क्षेत्र रसुवामा पर्छ।	The Langtang area lies in Rasuwa.
+एजेन्डा	n	बैठकमा छलफल गरिने विषयहरूको सूची वा मुख्य उद्देश्य।	agenda	बैठकको पहिलो एजेन्डा बजेट थियो।	The first agenda item of the meeting was the budget.
+रामेछाप	n	नेपालको बागमती प्रदेशमा पर्ने एक जिल्ला।	Ramechhap (district of Nepal)	रामेछापमा सुन्तला धेरै फल्छ।	A lot of oranges grow in Ramechhap.
+जाजरकोट	n	नेपालको कर्णाली प्रदेशमा पर्ने एक जिल्ला।	Jajarkot (district of Nepal)	जाजरकोटमा नयाँ सडक बन्दै छ।	A new road is being built in Jajarkot.
+होम	n	मन्त्र पढ्दै आगोमा घिउ, अन्न आदि चढाउने धार्मिक कर्म।	fire ritual, homa	विवाहमा पुरोहितले होम गरे।	The priest performed a fire ritual at the wedding.
+क्याम्प	n	अस्थायी रूपमा बस्न बनाइएको शिविर।	camp	सेनाले नदी किनारमा क्याम्प बनायो।	The army set up a camp by the river.
+शासक	n	देश वा राज्यमा शासन गर्ने व्यक्ति।	ruler	पुराना शासकले धेरै दरबार बनाए।	Former rulers built many palaces.
+नाग	n	सर्प, विशेषगरी धार्मिक रूपमा पुजिने सर्प।	serpent, cobra, naga	नागपञ्चमीमा नागको पूजा गरिन्छ।	Serpents are worshipped on Nag Panchami.
+ब्रान्ड	n	कुनै कम्पनीको उत्पादन चिनाउने नाम वा चिनो।	brand	यो ब्रान्डको जुत्ता टिकाउ हुन्छ।	Shoes of this brand are durable.
+विद्रोह	n	सत्ता वा व्यवस्थाविरुद्ध गरिने हतियारसहितको वा ठुलो विरोध।	rebellion, revolt	किसानले करविरुद्ध विद्रोह गरे।	The farmers rebelled against the tax.
+नाता	n	परिवार वा व्यक्तिबिचको सम्बन्ध।	relation, kinship	उनीसँग मेरो टाढाको नाता छ।	I have a distant relation with her.
+ताप्लेजुङ	n	नेपालको कोशी प्रदेशमा पर्ने एक हिमाली जिल्ला।	Taplejung (district of Nepal)	पाथिभरा मन्दिर ताप्लेजुङमा छ।	Pathibhara temple is in Taplejung.
+निवारण	n	समस्या वा हानि रोक्ने वा हटाउने काम।	prevention, remedy	रोग निवारणका लागि खोप दिइयो।	Vaccines were given for disease prevention.
+धम्की	n	डर देखाउन भनिएको हानि गर्ने कुरा।	threat	उनलाई फोनमा धम्की आयो।	He received a threat over the phone.
+बोट	n	जमिनमा उम्रने सानो वा ठुलो वनस्पति।	plant	आँगनमा गुलाफको बोट छ।	There is a rose plant in the courtyard.
+बोट	n	पानीमा चलाइने डुङ्गा।	boat	हामीले फेवा तालमा बोट चलायौँ।	We rowed a boat on Phewa Lake.
+डाटा	n	जानकारी वा तथ्याङ्क।	data	कम्प्युटरमा सबै डाटा सुरक्षित छ।	All the data is safe on the computer.
+मेलमिलाप	n	झगडा वा विवादपछि फेरि मिल्ने काम।	reconciliation	दुई परिवारबिच मेलमिलाप भयो।	The two families reconciled.
+सिकाइ	n	नयाँ ज्ञान वा सिप सिक्ने प्रक्रिया।	learning	खेलबाट बालबालिकाको सिकाइ राम्रो हुन्छ।	Children learn well through play.
+सर्लाही	n	नेपालको मधेस प्रदेशमा पर्ने एक जिल्ला।	Sarlahi (district of Nepal)	सर्लाहीमा उखु खेती धेरै हुन्छ।	A lot of sugarcane is grown in Sarlahi.
+कुटपिट	n	कसैलाई हिर्काएर चोट पुर्याउने काम।	beating, assault	झगडामा दुई जनाबिच कुटपिट भयो।	Two people came to blows in the quarrel.
+प्रजातान्त्रिक	adj	प्रजातन्त्रसँग सम्बन्धित।	democratic	देशमा प्रजातान्त्रिक व्यवस्था छ।	The country has a democratic system.
+पाँचथर	n	नेपालको कोशी प्रदेशमा पर्ने एक पहाडी जिल्ला।	Panchthar (district of Nepal)	फिदिम पाँचथरको सदरमुकाम हो।	Phidim is the headquarters of Panchthar.
+तर्जुमा	n	कानुन, नीति वा योजनाको मस्यौदा तयार गर्ने काम।	drafting, formulation	नयाँ ऐनको तर्जुमा सुरु भयो।	Drafting of the new act has begun.
+मनोरञ्जन	n	मन खुसी पार्ने काम वा कार्यक्रम।	entertainment, recreation	बालबालिकाका लागि मनोरञ्जन पार्क बन्यो।	An amusement park was built for children.
+नक्सा	n	कुनै ठाउँको रेखाचित्र।	map, plan	नक्सा हेरेर बाटो पत्ता लगाऊ।	Find the way by looking at the map.
+जगत	n	संसार, दुनियाँ; कुनै क्षेत्रका सबै।	world, sphere	खेल जगतमा उनको नाम चर्चित छ।	His name is well known in the sports world.
+मार्नु	v	कसैको ज्यान लिनु।	to kill	बाघले बाख्रा मार्यो।	The tiger killed a goat.
+मार्नु	v	हिर्काउनु वा प्रहार गर्नु।	to hit, to strike	उसले बललाई जोडले लात मार्यो।	He kicked the ball hard.
+भिड	n	एउटै ठाउँमा जम्मा भएका धेरै मानिस।	crowd	चाडमा बजारमा ठुलो भिड थियो।	There was a big crowd in the market during the festival.
+विपद्	n	भुइँचालो, बाढी आदिले ल्याउने ठुलो सङ्कट।	disaster, calamity	विपद्मा परेकालाई राहत दिइयो।	Relief was given to disaster victims.
+चाडपर्व	n	धार्मिक वा सांस्कृतिक रूपमा मनाइने उत्सवहरू।	festivals	दसैँ नेपालको ठुलो चाडपर्व हो।	Dashain is a big festival of Nepal.
+टेलिफोन	n	टाढाका मानिससँग बोल्न प्रयोग हुने यन्त्र।	telephone	उनले घरमा टेलिफोन गरिन्।	She telephoned home.
+सन्दर्भ	n	कुनै कुरा भनिएको वा भएको परिस्थिति।	context, occasion, reference	दिवसको सन्दर्भमा कार्यक्रम गरियो।	A program was held on the occasion of the day.
+अप्ठ्यारो	adj	गर्न वा भोग्न गाह्रो र असहज।	difficult, awkward, inconvenient	पहिरोले बाटो हिँड्न अप्ठ्यारो भयो।	The landslide made the road difficult to walk.
+सञ्चारमाध्यम	n	समाचार र जानकारी फैलाउने पत्रिका, रेडियो, टिभी आदि।	mass media, news media	सञ्चारमाध्यमले घटनाको समाचार दिए।	The media reported the incident.
+प्रशान्त	adj	धेरै शान्त।	calm, tranquil	बिहानको प्रशान्त वातावरण मन पर्छ।	I like the calm morning atmosphere.
+प्रशान्त	n	संसारको सबैभन्दा ठुलो महासागर।	Pacific Ocean	जापान प्रशान्त महासागरमा छ।	Japan is in the Pacific Ocean.
+हार्दिक	adj	मनदेखि गरिएको।	heartfelt, cordial	तपाईँलाई हार्दिक शुभकामना।	Heartfelt best wishes to you.
+उही	pron	पहिले भनिएकै व्यक्ति वा कुरा, त्यही।	the same, that very	म उही पसलमा फेरि गएँ।	I went to the same shop again.
+टावर	n	अग्लो संरचना वा स्तम्भ।	tower	डाँडामा मोबाइल टावर राखियो।	A mobile tower was put up on the hill.
+सिन्धुली	n	नेपालको बागमती प्रदेशमा पर्ने एक जिल्ला।	Sindhuli (district of Nepal)	सिन्धुलीगढी ऐतिहासिक ठाउँ हो।	Sindhuligadhi is a historic place.
+पुस्तकालय	n	पढ्न किताबहरू राखिएको ठाउँ।	library	म दिउँसो पुस्तकालयमा पढ्छु।	I study at the library in the afternoon.
+प्रशोधन	n	कच्चा वस्तुलाई सफा गरेर प्रयोगयोग्य बनाउने काम।	processing, refining, treatment	फोहोर पानी प्रशोधन केन्द्र बन्यो।	A wastewater treatment plant was built.
+अन्तरक्रिया	n	कुनै विषयमा आपसमा गरिने छलफल।	interaction, discussion	पत्रकारसँग अन्तरक्रिया कार्यक्रम भयो।	An interaction program was held with journalists.
+पृष्ठभूमि	n	कुनै घटना वा व्यक्तिको पहिलेको अवस्था।	background	उनको पारिवारिक पृष्ठभूमि गरिब थियो।	His family background was poor.
+सिरिज	n	एकपछि अर्को गरी हुने खेल, कार्यक्रम आदिको शृङ्खला।	series	नेपालले सिरिज जित्यो।	Nepal won the series.
+तिहाइ	n	कुनै पूरा भागको तीन भागमध्ये एक।	one third	संसद्मा दुई तिहाइ मत चाहिन्छ।	A two-thirds vote is needed in parliament.
+दिमाग	n	सोच्ने अङ्ग, मस्तिष्क वा बुद्धि।	brain, mind	उसको दिमाग तेज छ।	He has a sharp mind.
+अर्को	adj	यसबाहेकको वा यसपछिको।	another, other, next	म अर्को हप्ता आउँछु।	I will come next week.
+कटौती	n	रकम वा मात्रा घटाउने काम।	cut, reduction	बजेटमा कटौती गरियो।	The budget was cut.
+कुमारी	n	विवाह नभएकी केटी।	unmarried girl, maiden	कुमारी केटीहरूले पूजा गरे।	Young unmarried girls performed worship.
+कुमारी	n	नेवार परम्परामा देवीका रूपमा पुजिने बालिका।	Kumari (living goddess)	इन्द्रजात्रामा कुमारीको रथ तानिन्छ।	Kumari's chariot is pulled during Indra Jatra.
+पारी	n	खेलमा खेलाडी वा टोलीले पाउने पालो।	innings, turn	नेपालले पहिलो पारीमा दुई सय रन बनायो।	Nepal scored two hundred runs in the first innings.
+प्याकेज	n	एकै ठाउँ बाँधिएका वस्तु वा सँगै दिइने सेवा।	package	सरकारले राहत प्याकेज घोषणा गर्यो।	The government announced a relief package.
+कन्नु	v	दिसा गर्दा वा भारी काम गर्दा सास रोकेर जोड लगाउनु।	to strain, to grunt with effort	भारी उचाल्दा ऊ कन्यो।	He strained while lifting the load.
+पर्खाल	n	घर वा ठाउँ घेर्न बनाइएको भित्तो।	wall, boundary wall	विद्यालयको पर्खाल ढल्यो।	The school's boundary wall collapsed.
+पाइप	n	पानी, ग्यास आदि बगाउने लामो खोक्रो नली।	pipe	पाइपबाट पानी चुहियो।	Water leaked from the pipe.
+कपिलवस्तु	n	नेपालको लुम्बिनी प्रदेशमा पर्ने जिल्ला र बुद्धकालीन राज्यको राजधानी।	Kapilvastu	कपिलवस्तुमा पुराना भग्नावशेष छन्।	There are ancient ruins in Kapilvastu.
+रूपान्तरण	n	एक रूपबाट अर्को रूपमा बदल्ने काम।	transformation, conversion	कृषिको रूपान्तरण आवश्यक छ।	Agriculture needs transformation.
+अफ्रिका	n	युरोपको दक्षिणमा रहेको ठुलो महादेश।	Africa	अफ्रिकामा धेरै देश छन्।	There are many countries in Africa.
+चाल	n	हिँड्ने वा चल्ने ढङ्ग।	gait, movement, pace	उसको चाल ढिलो छ।	His pace is slow.
+चाल	n	कसैलाई फसाउन गरिने युक्ति।	trick, ploy	उसको चाल मैले बुझेँ।	I saw through his trick.
+वकिल	n	अदालतमा मुद्दा लड्ने कानुनी व्यवसायी।	lawyer, advocate	उनले मुद्दाका लागि वकिल राखे।	He hired a lawyer for the case.
+बर्सेनि	adv	हरेक वर्ष।	every year, annually	बर्सेनि यहाँ मेला लाग्छ।	A fair is held here every year.
+खोल	n	कुनै वस्तु छोप्ने बाहिरी आवरण।	cover, case, sheath	सिरानीको खोल धोइदेऊ।	Wash the pillow cover.
+तिब्बत	n	नेपालको उत्तरमा रहेको चीनको स्वशासित क्षेत्र।	Tibet	व्यापारी तिब्बतबाट नुन ल्याउँथे।	Traders used to bring salt from Tibet.
+झगडा	n	आपसमा हुने कडा विवाद वा लडाइँ।	quarrel, fight	सानो कुरामा झगडा नगर।	Don't quarrel over small matters.
+समारोह	n	विशेष अवसरमा गरिने औपचारिक कार्यक्रम।	ceremony, function	दीक्षान्त समारोह भव्य भयो।	The convocation ceremony was grand.
+परिमाण	n	कुनै वस्तुको मात्रा वा सङ्ख्या।	quantity, amount	धानको उत्पादन परिमाण बढ्यो।	The quantity of rice production increased.
+बैतडी	n	नेपालको सुदूरपश्चिम प्रदेशमा पर्ने एक पहाडी जिल्ला।	Baitadi (district of Nepal)	बैतडी महाकाली नदीको किनारमा छ।	Baitadi lies along the Mahakali River.
+विवेक	n	राम्रो-नराम्रो छुट्याउने बुद्धि।	judgment, discretion, conscience	विवेक प्रयोग गरेर निर्णय गर।	Use your judgment to decide.
+अध्यादेश	n	संसद् नबसेको बेला सरकारले जारी गर्ने अस्थायी कानुन।	ordinance	सरकारले नयाँ अध्यादेश ल्यायो।	The government brought a new ordinance.
+दैलेख	n	नेपालको कर्णाली प्रदेशमा पर्ने एक जिल्ला।	Dailekh (district of Nepal)	दैलेखमा प्राकृतिक ग्यास भेटियो।	Natural gas was found in Dailekh.
+डोजर	n	माटो खन्ने र पन्छाउने ठुलो यन्त्र।	bulldozer, excavator	डोजरले बाटो खन्यो।	The bulldozer dug the road.
+बाधा	n	काममा पर्ने अवरोध।	obstacle, hindrance	पानीले खेलमा बाधा पुर्यायो।	The rain disrupted the game.
+नियत	n	मनमा रहेको उद्देश्य वा इरादा।	intention, motive	उसको नियत ठिक थिएन।	His intentions were not good.
+दमक	n	झापा जिल्लामा रहेको एक नगर।	Damak (town in Nepal)	दमक पूर्वी नेपालको एक सहर हो।	Damak is a town in eastern Nepal.
+ओलम्पिक	n	हरेक चार वर्षमा हुने अन्तर्राष्ट्रिय खेलकुद प्रतियोगिता।	Olympics	नेपाली खेलाडी ओलम्पिकमा सहभागी भए।	Nepali athletes took part in the Olympics.
+स्याङ्जा	n	नेपालको गण्डकी प्रदेशमा पर्ने एक पहाडी जिल्ला।	Syangja (district of Nepal)	स्याङ्जामा सुन्तला खेती हुन्छ।	Oranges are farmed in Syangja.
+सङ्गठन	n	कुनै उद्देश्यका लागि बनेको मानिसहरूको समूह वा संस्था।	organization	विद्यार्थी सङ्गठनले आन्दोलन गर्यो।	The student organization held a protest.
+निम्न	adj	तल्लो तहको।	low, lower	निम्न आय भएका परिवारलाई सहयोग दिइयो।	Low-income families were given support.
+निम्न	adj	तल उल्लेख गरिएको।	following	निम्न प्रश्नको उत्तर लेख।	Write answers to the following questions.
+पक्की	adj	ढुङ्गा, इँटा, सिमेन्ट आदिले बलियो बनाइएको।	permanent, paved, concrete	गाउँमा पक्की सडक पुग्यो।	A paved road reached the village.
+वायु	n	हावा।	air, wind	वायु प्रदूषणले स्वास्थ्यमा असर गर्छ।	Air pollution affects health.
+सेक्स	n	यौन सम्पर्क; लिङ्ग।	sex	किशोरकिशोरीलाई सुरक्षित सेक्सबारे शिक्षा दिइयो।	Adolescents were educated about safe sex.
+नवीकरण	n	म्याद सकिएको कुरालाई फेरि चालु गर्ने काम।	renewal	राहदानी नवीकरण गर्न कार्यालय गएँ।	I went to the office to renew my passport.
+मध्यम	adj	न धेरै न थोरै, बिचको।	medium, moderate, middle	मध्यम वर्गका मानिसलाई महँगीले सतायो।	Inflation troubled middle-class people.
+रसिया	n	रुस देश।	Russia	उनी पढ्न रसिया गए।	He went to Russia to study.
+प्रेरणा	n	कुनै काम गर्न मनमा जाग्ने उत्साह।	inspiration, motivation	आमा मेरो प्रेरणा हुनुहुन्छ।	Mother is my inspiration.
+छात्रवृत्ति	n	पढाइ खर्चका लागि विद्यार्थीलाई दिइने आर्थिक सहायता।	scholarship	उनले विदेशमा पढ्न छात्रवृत्ति पाइन्।	She got a scholarship to study abroad.
+वञ्चित	adj	पाउनुपर्ने कुरा नपाएको।	deprived	धेरै बालबालिका शिक्षाबाट वञ्चित छन्।	Many children are deprived of education.
+सुमन	n	फूल।	flower	बगैँचामा सुमन फुलेका छन्।	Flowers have bloomed in the garden.
+निकास	n	कुनै ठाउँबाट बाहिर निस्कने बाटो वा समस्याको समाधान।	outlet, exit, way out	विवादको निकास खोज्न बैठक बस्यो।	A meeting was held to find a way out of the dispute.
+रजत	n	चाँदी; प्रतियोगितामा दोस्रो स्थानको पदक।	silver	नेपालले रजत पदक जित्यो।	Nepal won a silver medal.
+घाँस	n	गाईवस्तुले खाने हरियो बिरुवा।	grass, fodder	उनी गाईलाई घाँस काट्न गइन्।	She went to cut grass for the cow.
+भूभाग	n	जमिनको कुनै क्षेत्र।	territory, land area	त्यो भूभाग नेपालको हो।	That territory belongs to Nepal.
+सङ्कलन	n	विभिन्न ठाउँबाट जम्मा गर्ने काम।	collection, compilation	राहत सामग्री सङ्कलन गरियो।	Relief materials were collected.
+दण्ड	n	अपराध वा गल्तीबापत दिइने सजाय।	punishment, penalty	अपराधीलाई कडा दण्ड दिइयो।	The criminal was given a harsh punishment.
+पत्राचार	n	चिठी वा पत्रमार्फत गरिने सम्पर्क।	correspondence	मन्त्रालयले जिल्लामा पत्राचार गर्यो।	The ministry wrote to the district.
+किबोर्ड	n	कम्प्युटरमा अक्षर टाइप गर्ने बटनहरूको पाटी।	keyboard	किबोर्डको एउटा बटन बिग्रियो।	One key on the keyboard broke.
+ट्रेड	n	व्यापार।	trade	उनी ट्रेड मेलामा पसल राख्छन्।	He has a stall at the trade fair.
+शिर	n	टाउको।	head	उसले शिर झुकाएर नमस्कार गर्यो।	He bowed his head in greeting.
+थलो	n	कुनै काम हुने वा कुनै कुरा रहने ठाउँ।	place, spot, site	यो गाउँ उनको जन्मथलो हो।	This village is his birthplace.
+मेहनत	n	कडा परिश्रम।	hard work, effort	मेहनत गरे सफलता मिल्छ।	Success comes with hard work.
+स्तरीय	adj	राम्रो स्तर वा गुणस्तर भएको।	standard, high-quality	बालबालिकालाई स्तरीय शिक्षा चाहिन्छ।	Children need quality education.
+निज	pron	कानुनी वा कार्यालयी भाषामा उल्लिखित व्यक्ति, उनी।	the said person, he, she	निजलाई कार्यालयमा बोलाइयो।	The said person was called to the office.
+दाजुभाइ	n	दाइ र भाइहरू; आफन्त पुरुषहरू।	brothers, kinsmen	दाजुभाइ मिलेर घर बनाए।	The brothers built the house together.
+बेइजिङ	n	चीनको राजधानी सहर।	Beijing	प्रतिनिधिमण्डल बेइजिङ पुग्यो।	The delegation reached Beijing.
+खस	n	नेपाली भाषा बोल्ने एक प्राचीन जाति वा समुदाय।	Khas (people)	खस जातिको इतिहास कर्णालीसँग जोडिएको छ।	The history of the Khas people is linked with Karnali.
+वरपर	adv	चारैतिर, नजिकै।	around, nearby	घरको वरपर रुख रोप।	Plant trees around the house.
+खाजा	n	मुख्य खानाबाहेक बिचमा खाइने हलुका खाना।	snack, light meal	दिउँसो हामीले चिउरा खाजा खायौँ।	We had beaten rice as a snack in the afternoon.
+त्यहीँ	adv	ठिक त्यही ठाउँमा।	right there, at that very place	किताब त्यहीँ राख।	Put the book right there.
+प्रधानाध्यापक	n	विद्यालयको प्रमुख शिक्षक।	headmaster, principal	प्रधानाध्यापकले विद्यार्थीलाई सम्बोधन गरे।	The headmaster addressed the students.
+सृजना	n	नयाँ कुरा बनाउने वा रचना गर्ने काम।	creation	कविता उनको मौलिक सृजना हो।	The poem is his original creation.
+निरीक्षण	n	राम्ररी हेरेर जाँच गर्ने काम।	inspection	अधिकारीले पुलको निरीक्षण गरे।	Officials inspected the bridge.
+व्यावहारिक	adj	व्यवहारमा प्रयोग गर्न मिल्ने।	practical	यो योजना व्यावहारिक छैन।	This plan is not practical.
+परिकल्पना	n	मनमा बनाइएको योजना वा धारणा।	concept, vision, hypothesis	नयाँ सहरको परिकल्पना गरियो।	A new city was envisioned.
+उपसमिति	n	ठुलो समितिभित्र बनाइएको सानो समिति।	subcommittee	उपसमितिले प्रतिवेदन बुझायो।	The subcommittee submitted its report.
+भेटवार्ता	n	कसैसँग भेटेर गरिने कुराकानी वा अन्तर्वार्ता।	meeting, interview, talks	दुई नेताबिच भेटवार्ता भयो।	The two leaders held talks.
+ओम	n	हिन्दु र बौद्ध परम्परामा पवित्र मानिने ध्वनि।	Om (sacred syllable)	पूजा ओम उच्चारणबाट सुरु भयो।	The worship began with chanting Om.
+लिभरपुल	n	बेलायतको एक बन्दरगाह सहर।	Liverpool	लिभरपुल फुटबलका लागि प्रसिद्ध छ।	Liverpool is famous for football.
+पारदर्शी	adj	भित्रसम्म देखिने; कुनै कुरा नलुकाइएको।	transparent	सरकारी काम पारदर्शी हुनुपर्छ।	Government work should be transparent.
+भूगोल	n	पृथ्वीको सतह, हावापानी र बसोबासबारे अध्ययन गर्ने विषय।	geography	मलाई भूगोल पढ्न मन पर्छ।	I like studying geography.
+बाहिरी	adj	बाहिरपट्टिको।	outer, external	घरको बाहिरी भित्तामा रङ लगाइयो।	The outer wall of the house was painted.
+गफ	n	फुर्सदमा गरिने कुराकानी।	chat, gossip	साथीहरू चिया खाँदै गफ गर्दै थिए।	Friends were chatting over tea.
+शरणार्थी	n	आफ्नो देश छोडेर अर्को देशमा शरण लिने व्यक्ति।	refugee	शिविरमा शरणार्थीहरू बस्छन्।	Refugees live in the camp.
+उड्डयन	n	हवाईजहाज उडाउने काम र त्यससँग सम्बन्धित क्षेत्र।	aviation	नेपालको उड्डयन सुरक्षामा सुधार भयो।	Nepal's aviation safety improved.
+वीरगञ्ज	n	पर्सा जिल्लामा रहेको भारतसँगको सिमाना नजिकको प्रमुख व्यापारिक सहर।	Birgunj (city in Nepal)	वीरगञ्ज नेपालको प्रमुख नाका हो।	Birgunj is a major border point of Nepal.
+सिन्डिकेट	n	बजार वा सेवामा आफ्नो मात्र नियन्त्रण राख्ने समूह।	syndicate, cartel	यातायातमा सिन्डिकेट हटाइयो।	The syndicate in transport was abolished.
+तालमेल	n	दुई वा बढी पक्षबिचको मेल वा सहकार्य।	coordination, alliance	चुनावमा दुई दलबिच तालमेल भयो।	The two parties formed an electoral alliance.
+लय	n	गीत वा सङ्गीतको धुन वा तालको गति।	rhythm, melody	यो गीतको लय मिठो छ।	This song has a sweet melody.
+तत्व	n	कुनै वस्तु बनाउने मूल अंश।	element, component	पानीमा दुई तत्व हुन्छन्।	Water contains two elements.
+निराशा	n	आशा टुटेको दुःखी अवस्था।	disappointment, despair	नतिजाले उसलाई निराशा दियो।	The result disappointed him.
+हेड	n	कुनै संस्था वा विभागको प्रमुख।	head, chief	उनी विभागका हेड हुन्।	He is the head of the department.
+हिन्दी	n	भारतमा व्यापक रूपमा बोलिने एक भाषा।	Hindi	उनी हिन्दी राम्रो बोल्छिन्।	She speaks Hindi well.
+बुझाउनु	v	कुनै कुरा अरूलाई बुझ्ने बनाउनु।	to explain, to make understand	शिक्षकले पाठ राम्ररी बुझाउनुभयो।	The teacher explained the lesson well.
+बुझाउनु	v	कागज, रकम आदि सम्बन्धित ठाउँमा हस्तान्तरण गर्नु।	to submit, to hand over, to pay	उसले फारम कार्यालयमा बुझायो।	He submitted the form at the office.
+विश्वव्यापी	adj	संसारभरि फैलिएको।	worldwide, global	जलवायु परिवर्तन विश्वव्यापी समस्या हो।	Climate change is a global problem.
+ढुक्क	adj	चिन्ता नभएको, निश्चिन्त।	assured, at ease, confident	तपाईँ ढुक्क हुनुहोस्, काम हुन्छ।	Rest assured, the work will be done.
+स्थायित्व	n	लामो समयसम्म टिकिरहने अवस्था।	stability, permanence	सरकारको स्थायित्व आवश्यक छ।	Government stability is necessary.
+महामन्त्री	n	कुनै सङ्गठन वा दलको मुख्य सचिव पद।	general secretary	महासङ्घका महामन्त्रीले प्रेस विज्ञप्ति जारी गरे।	The federation's general secretary issued a press release.
+वक्तव्य	n	औपचारिक रूपमा दिइएको भनाइ वा विचार।	statement	मन्त्रीले संसद्मा वक्तव्य दिए।	The minister gave a statement in parliament.
+मुलुकी	adj	मुलुक वा राष्ट्रसँग सम्बन्धित।	national, of the country	मुलुकी ऐनमा संशोधन भयो।	The national code was amended.
+अवतरण	n	हवाईजहाज आदि जमिनमा ओर्लने काम।	landing, descent	विमान सुरक्षित अवतरण भयो।	The plane landed safely.
+साँच्चै	adv	वास्तवमा, सत्य रूपमा।	really, truly	यो ठाउँ साँच्चै सुन्दर छ।	This place is truly beautiful.
+धुलो	n	माटोका साना सुक्खा कण।	dust	सडकमा धेरै धुलो उड्छ।	A lot of dust blows on the road.
+सल्यान	n	नेपालको कर्णाली प्रदेशमा पर्ने एक पहाडी जिल्ला।	Salyan (district of Nepal)	सल्यानमा अदुवा खेती हुन्छ।	Ginger is farmed in Salyan.
+डिसेम्बर	n	अङ्ग्रेजी पात्रोको बाह्रौँ र अन्तिम महिना।	December	डिसेम्बरमा जाडो हुन्छ।	It is cold in December.
+स्थिर	adj	नचलेको वा नबदलिने।	stable, steady, still	बजारमा भाउ स्थिर छ।	Prices are stable in the market.
+रोगी	n	रोग लागेको व्यक्ति।	patient, sick person	डाक्टरले रोगीको जाँच गरे।	The doctor examined the patient.

@@ -41,7 +41,12 @@ export async function ensureAuthSchema(env:AuthEnv){
         `create index if not exists auth_sessions_user_idx on auth_sessions(user_id)`,
         `create index if not exists auth_sessions_expiry_idx on auth_sessions(expires_at)`,
         `create table if not exists user_calendar_state (user_id text primary key references app_users(id) on delete cascade,notes text not null default '{}',events text not null default '[]',calendars text not null default '[]',preferences text not null default '{}',feedback text not null default '[]',updated_at text not null default (datetime('now')),revision integer not null default 0)`,
-        `create table if not exists user_community_preferences (user_id text primary key references app_users(id) on delete cascade,communities text not null default '[]',updated_at text not null default (datetime('now')))`
+        `create table if not exists user_community_preferences (user_id text primary key references app_users(id) on delete cascade,communities text not null default '[]',updated_at text not null default (datetime('now')))`,
+        // Nepali dictionary learning data (mirrors cloudflare/d1/schema-migrations/0007_dictionary_learning.sql)
+        `create table if not exists dict_saved_words (user_id text not null references app_users(id) on delete cascade,card_id text not null,front text not null,back text not null default '',dir text not null default 'ne-en' check (dir in ('ne-en','en-ne')),ease real not null default 2.5,interval_d integer not null default 0,reps integer not null default 0,due_day integer not null,added_day integer not null,updated_at text not null default (datetime('now')),primary key (user_id,card_id))`,
+        `create index if not exists dict_saved_words_due_idx on dict_saved_words(user_id,due_day)`,
+        `create table if not exists dict_quiz_results (id integer primary key autoincrement,user_id text not null references app_users(id) on delete cascade,mode text not null,level text,score integer not null,total integer not null,created_at text not null default (datetime('now')))`,
+        `create index if not exists dict_quiz_results_user_idx on dict_quiz_results(user_id,created_at)`
       ];
       for(const sql of statements)await env.DB.prepare(sql).bind().run();
       const info=await env.DB.prepare("pragma table_info(user_calendar_state)").bind().all();
@@ -181,18 +186,21 @@ async function communityPreferences(request:Request,env:AuthEnv,session:any){
 }
 async function myData(request:Request,env:AuthEnv,session:any){
   if(request.method==="GET"){
-    const [state,communities,families,push,ics]=await Promise.all([
+    const [state,communities,families,push,ics,dictWords,dictQuiz]=await Promise.all([
       env.DB.prepare("select * from user_calendar_state where user_id=?1").bind(session.user_id).first(),
       env.DB.prepare("select * from user_community_preferences where user_id=?1").bind(session.user_id).first(),
       env.DB.prepare("select f.id,f.name,m.role,m.display_name,m.timezone,m.joined_at from family_members m join families f on f.id=m.family_id where m.user_id=?1 order by m.joined_at").bind(session.user_id).all(),
       env.DB.prepare("select device_id,endpoint,user_agent_family,timezone,quiet_hours,created_at,last_success_at from push_subscriptions where user_id=?1").bind(session.user_id).all(),
-      env.DB.prepare("select created_at from personal_ics_tokens where user_id=?1").bind(session.user_id).first()
+      env.DB.prepare("select created_at from personal_ics_tokens where user_id=?1").bind(session.user_id).first(),
+      env.DB.prepare("select card_id,front,back,dir,ease,interval_d,reps,due_day,added_day,updated_at from dict_saved_words where user_id=?1 order by added_day desc").bind(session.user_id).all(),
+      env.DB.prepare("select mode,level,score,total,created_at from dict_quiz_results where user_id=?1 order by created_at desc limit 500").bind(session.user_id).all()
     ]);
     return json({ok:true,user:publicUser(session),calendar_state:state?{
       notes:safeJson(state.notes,{}),events:safeJson(state.events,[]),calendars:safeJson(state.calendars,[]),
       preferences:safeJson(state.preferences,{}),feedback:safeJson(state.feedback,[]),updated_at:state.updated_at
     }:null,community_preferences:communities?{communities:safeJson(communities.communities,[]),updated_at:communities.updated_at}:null,
-      families:families.results||[],push_subscriptions:push.results||[],personal_ics:ics?{created_at:ics.created_at}:null});
+      families:families.results||[],push_subscriptions:push.results||[],personal_ics:ics?{created_at:ics.created_at}:null,
+      dictionary:{saved_words:dictWords?.results||[],quiz_results:dictQuiz?.results||[]}});
   }
   if(request.method==="DELETE"){
     const uid=session.user_id;
@@ -203,6 +211,8 @@ async function myData(request:Request,env:AuthEnv,session:any){
       env.DB.prepare("delete from user_community_preferences where user_id=?1").bind(uid),
       env.DB.prepare("delete from family_members where user_id=?1").bind(uid),
       env.DB.prepare("delete from user_calendar_state where user_id=?1").bind(uid),
+      env.DB.prepare("delete from dict_saved_words where user_id=?1").bind(uid),
+      env.DB.prepare("delete from dict_quiz_results where user_id=?1").bind(uid),
       env.DB.prepare("delete from auth_sessions where user_id=?1").bind(uid),
       env.DB.prepare("delete from app_users where id=?1").bind(uid)
     ]);

@@ -91,6 +91,7 @@ const toolGroups:{name:string;items:Tool[]}[]=[
  {name:"भाषा र लेखन",items:[
   {icon:"क",title:"नेपाली टाइपिङ",desc:"रोमन अक्षरबाट नेपाली युनिकोड टाइपिङ",href:"/tools/nepali-typing"},
   {icon:"प्री",title:"प्रीति रूपान्तरण",desc:"प्रीति र युनिकोडबीच दुवैतर्फ रूपान्तरण",href:"/tools/preeti-converter"},
+  {icon:"श",title:"नेपाली शब्दकोश",desc:"४९ हजार शब्द, अङ्ग्रेजी अर्थ, उच्चारण, क्विज र शब्द अभ्यास",href:"/tool/nepalidictionary",badge:"नयाँ"},
   {icon:"✓",title:"नेपाली हिज्जे जाँच",desc:"नेपाली पाठको हिज्जे जाँच र सुझाव",href:"/tools/spell-check"},
   {icon:"🎙",title:"बोली टाइपिङ",desc:"बोलेर नेपाली पाठ लेख्नुहोस्",href:"/tools/voice-typing"},
   {icon:"OCR",title:"नेपाली OCR",desc:"तस्बिरबाट नेपाली अक्षर निकाल्नुहोस्",href:"/tools/ocr"},
