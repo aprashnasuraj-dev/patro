@@ -51,10 +51,15 @@ const DevelopersPage=lazy(()=>import("./components/NativeProtectedPages").then(m
 const OfflinePage=lazy(()=>import("./components/NativeProtectedPages").then(m=>({default:m.OfflinePage})));
 const SeoSearchSupport=lazy(()=>import("./SeoSearchSupport").then(m=>({default:m.SeoSearchSupport})));
 
+const ReadingLookup=lazy(()=>import("./features/dictionary/lookup"));
+// Reading pages where a double-click/selection shows a word's meaning (Nepali↔English) from the dictionary.
+const LOOKUP_ROUTES=/^\/(samachar|rashifal|on-this-day|time-machine|guides|date)(\/|$)/;
+const NepaliDictionary=lazy(()=>import("./features/dictionary/routes").then(m=>({default:m.DictionaryApp})));
 const GuidePage=lazy(()=>import("./growth/GuidePage").then(m=>({default:m.GuidePage})));
 const DiscoveryPanel=lazy(()=>import("./growth/DiscoveryPanel").then(m=>({default:m.DiscoveryPanel})));
 
 const DATE_ROUTE_PREFIX="/date/";
+const DICTIONARY_ROUTE="/tool/nepalidictionary";
 const CALENDAR_MONTH_ROUTE=/^\/calendar\/\d{4}\/\d{1,2}$/;
 const HISTORY_DAY_ROUTE=/^\/on-this-day\/(\d{2}-\d{2})$/;
 const COMMUNITY_SUITE_ROUTE=/^\/samudaya\/(lhosar|tharu|mithila|kirat|hijri)$/;
@@ -89,7 +94,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
 };
 const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
-function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")}
+function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
 function currentPath(){return clean(window.location.pathname)}
 function Fallback(){return <main className="ap-page"><div className="ap-state" role="status">लोड हुँदैछ…</div></main>}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(to)},[to]);return <main className="ap-page"><div className="ap-state" role="status">नयाँ ठेगानामा लगिँदैछ…</div></main>}
@@ -134,6 +139,7 @@ export function PatroRouter(){
    if(path==="/tools/nepali-typing"||path==="/tools/type")return <NepaliTools mode="typing"/>;
    if(path==="/tools/preeti"||path==="/tools/preeti-converter"||path==="/tools/preeti-to-unicode"||path==="/tools/preetitounicode")return <NepaliTools mode="preeti-to-unicode"/>;
    if(path==="/tools/unicode-to-preeti"||path==="/tools/unicodetopreeti")return <NepaliTools mode="unicode-to-preeti"/>;
+   if(path==="/tool/nepalidictionary"||path.startsWith(DICTIONARY_ROUTE+"/"))return <NepaliDictionary path={path}/>;
    if(path==="/tools/api")return <DevelopersPage/>;
    const tool=path.match(/^\/tools\/([^/]+)$/);if(tool&&PATRO_TOOL_SLUGS.has(tool[1]))return <PatroToolsShell slug={tool[1]}/>;
    if(path.startsWith("/tools/"))return <UtilitySuite key={path}/>;
@@ -142,5 +148,5 @@ export function PatroRouter(){
    if(path==="/offline")return <OfflinePage/>;
    return <NotFoundPage/>;
  };
- return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><PlaceTimingMount path={path}/><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/></Suspense></>
+ return <><Suspense fallback={<Fallback/>}>{render()}</Suspense><PlaceTimingMount path={path}/><Suspense fallback={null}><SeoSearchSupport path={path}/><DiscoveryPanel path={path}/>{LOOKUP_ROUTES.test(path)&&<ReadingLookup/>}</Suspense></>
 }

@@ -1,0 +1,517 @@
+{
+  "$schema": "./entry.schema.json",
+  "mergeMode": "replace",
+  "_note": "Hand-curated entries (highest priority — override imported + editorial data for the same lemma). Original Patro editorial content, CC BY-SA 4.0.",
+  "entries": [
+    {
+      "lemma": "घर",
+      "romanAlt": ["ghar", "ghaar"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "मानिस बस्नका लागि बनाइएको संरचना; निवास।", "en": ["house", "home"],
+          "examples": [{ "ne": "हाम्रो घर गाउँको बीचमा छ।", "en": "Our house is in the middle of the village." }] },
+        { "id": "s2", "pos": "noun", "ne": "परिवार; घरपरिवार।", "en": ["family", "household"],
+          "examples": [{ "ne": "दसैँमा सबै घर एकै ठाउँ भेला हुन्छन्।", "en": "At Dashain the whole family gathers in one place." }] }
+      ],
+      "synonyms": ["गृह", "निवास", "आवास", "सदन"],
+      "related": ["घरपरिवार", "गाउँ"],
+      "etymology": { "origin": "tadbhav", "from": "गृह", "lang": "sa" },
+      "categories": ["घर-परिवार"],
+      "freq": 40,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "सहर",
+      "variants": ["शहर"],
+      "romanAlt": ["shahar", "sahar"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "धेरै मानिस बस्ने, बजार र सेवा सुविधा भएको ठूलो बस्ती।", "en": ["city", "town"],
+          "examples": [{ "ne": "काम खोज्न ऊ सहर पस्यो।", "en": "He moved to the city to look for work." }] }
+      ],
+      "synonyms": ["नगर", "नगरी"],
+      "antonyms": ["गाउँ"],
+      "etymology": { "origin": "aagantuk", "from": "shahr", "lang": "fa" },
+      "categories": ["ठाउँ"],
+      "freq": 420,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "गाउँ",
+      "romanAlt": ["gaun", "gaau"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "सहरभन्दा सानो, प्रायः खेतीपाती गर्ने मानिसहरूको बस्ती।", "en": ["village"],
+          "examples": [{ "ne": "चाडबाडमा सबै गाउँ फर्कन्छन्।", "en": "Everyone returns to the village for festivals." }] }
+      ],
+      "synonyms": ["ग्राम"],
+      "antonyms": ["सहर"],
+      "etymology": { "origin": "tadbhav", "from": "ग्राम", "lang": "sa" },
+      "categories": ["ठाउँ"],
+      "freq": 310,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "ठाउँ",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "कुनै वस्तु वा व्यक्ति रहने स्थान।", "en": ["place", "spot"],
+          "examples": [{ "ne": "यो ठाउँ निकै शान्त छ।", "en": "This place is very quiet." }] }
+      ],
+      "synonyms": ["स्थान", "जग्गा"],
+      "etymology": { "origin": "tadbhav", "from": "स्थान", "lang": "sa" },
+      "freq": 150,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "नाउँ",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "कसैलाई चिनाउन राखिएको शब्द; नाम।", "en": ["name"], "register": "colloquial" }
+      ],
+      "synonyms": ["नाम"],
+      "etymology": { "origin": "tadbhav", "from": "नाम", "lang": "sa" },
+      "freq": 900,
+      "status": "draft"
+    },
+    {
+      "lemma": "पानी",
+      "romanAlt": ["pani", "paani"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "रङ, गन्ध र स्वाद नभएको, जीवनका लागि अनिवार्य तरल पदार्थ।", "en": ["water"],
+          "examples": [{ "ne": "एक गिलास पानी दिनुहोस् न।", "en": "Please give me a glass of water." }] },
+        { "id": "s2", "pos": "noun", "ne": "वर्षा; झरी।", "en": ["rain"], "register": "colloquial",
+          "examples": [{ "ne": "बेलुकी पानी पर्ला जस्तो छ।", "en": "It looks like it will rain this evening." }] }
+      ],
+      "synonyms": ["जल", "नीर", "वारि"],
+      "etymology": { "origin": "tadbhav", "from": "पानीय", "lang": "sa" },
+      "categories": ["प्रकृति"],
+      "freq": 60,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "रानी",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "राजाकी पत्नी वा राज्य चलाउने महिला।", "en": ["queen"] }
+      ],
+      "synonyms": ["महारानी", "राज्ञी"],
+      "antonyms": ["राजा"],
+      "etymology": { "origin": "tadbhav", "from": "राज्ञी", "lang": "sa" },
+      "freq": 1800,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "कहानी",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "घटना वा कल्पनालाई क्रमैसँग भनिएको वा लेखिएको वर्णन।", "en": ["story", "tale"],
+          "examples": [{ "ne": "हजुरआमाले हरेक रात कहानी सुनाउनुहुन्थ्यो।", "en": "Grandmother used to tell a story every night." }] }
+      ],
+      "synonyms": ["कथा", "आख्यान"],
+      "freq": 1100,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "जवानी",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "बाल्यकाल र बुढेसकालबीचको उमेर; युवावस्था।", "en": ["youth"] }
+      ],
+      "synonyms": ["युवावस्था", "यौवन", "तरुणाई"],
+      "antonyms": ["बुढेसकाल"],
+      "etymology": { "origin": "aagantuk", "from": "javānī", "lang": "fa" },
+      "freq": 2600,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "माया",
+      "romanAlt": ["maya", "maaya"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "कसैप्रति मनमा हुने गहिरो स्नेह; प्रेम।", "en": ["love", "affection"],
+          "examples": [{ "ne": "आमाको माया सधैँ उस्तै रहन्छ।", "en": "A mother's love always stays the same." }],
+          "usageNote": "नेपाली बोलीचालीमा 'माया गर्नु' = to love। दर्शनमा यसको अर्थ 'भ्रम/संसारको मोह' पनि हुन्छ।" },
+        { "id": "s2", "pos": "noun", "ne": "संसारलाई सत्य देखाउने भ्रम; मोह।", "en": ["illusion"], "register": "literary", "domain": "philosophy" }
+      ],
+      "synonyms": ["प्रेम", "स्नेह", "ममता"],
+      "related": ["मायालु"],
+      "etymology": { "origin": "tatsam", "from": "माया", "lang": "sa" },
+      "categories": ["भावना"],
+      "freq": 220,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "मायालु",
+      "senses": [
+        { "id": "s1", "pos": "adjective", "ne": "माया गर्ने; स्नेही।", "en": ["loving", "affectionate"] },
+        { "id": "s2", "pos": "noun", "ne": "प्रेमी वा प्रेमिका।", "en": ["beloved", "sweetheart"], "register": "colloquial" }
+      ],
+      "synonyms": ["प्यारो", "स्नेही"],
+      "related": ["माया"],
+      "freq": 3000,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "छाया",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "प्रकाश छेकिँदा पर्ने अँध्यारो आकृति।", "en": ["shadow", "shade"] }
+      ],
+      "synonyms": ["छायाँ", "परछाइँ"],
+      "etymology": { "origin": "tatsam", "from": "छाया", "lang": "sa" },
+      "freq": 2100,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "काया",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "शरीर; देह।", "en": ["body"], "register": "literary" }
+      ],
+      "synonyms": ["शरीर", "देह", "तन"],
+      "etymology": { "origin": "tatsam", "from": "काय", "lang": "sa" },
+      "freq": 5200,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "मन",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "सोच्ने, अनुभव गर्ने र इच्छा गर्ने भित्री शक्ति।", "en": ["mind", "heart"],
+          "examples": [{ "ne": "आज मन खुसी छ।", "en": "My heart is happy today." }] }
+      ],
+      "synonyms": ["चित्त", "हृदय", "दिल"],
+      "etymology": { "origin": "tadbhav", "from": "मनस्", "lang": "sa" },
+      "categories": ["भावना"],
+      "freq": 90,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "वन",
+      "romanAlt": ["ban", "van"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "रूख र बोटबिरुवाले ढाकिएको ठूलो भूभाग; जङ्गल।", "en": ["forest"] }
+      ],
+      "synonyms": ["जङ्गल", "अरण्य", "कानन"],
+      "etymology": { "origin": "tatsam", "from": "वन", "lang": "sa" },
+      "categories": ["प्रकृति"],
+      "freq": 1400,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "धन",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "पैसा, सम्पत्ति र मूल्यवान् वस्तु।", "en": ["wealth", "money"] }
+      ],
+      "synonyms": ["सम्पत्ति", "दौलत", "पैसा"],
+      "etymology": { "origin": "tatsam", "from": "धन", "lang": "sa" },
+      "freq": 1300,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "जीवन",
+      "romanAlt": ["jiwan", "jeevan", "jiban"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "जन्मदेखि मृत्युसम्मको अवस्था; जिन्दगी।", "en": ["life"],
+          "examples": [{ "ne": "जीवन छोटो छ, राम्रो काम गर।", "en": "Life is short; do good work." }] }
+      ],
+      "synonyms": ["जिन्दगी", "आयु"],
+      "antonyms": ["मृत्यु"],
+      "etymology": { "origin": "tatsam", "from": "जीवन", "lang": "sa" },
+      "freq": 180,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "गगन",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "आकाश।", "en": ["sky"], "register": "literary" }
+      ],
+      "synonyms": ["आकाश", "अम्बर", "नभ"],
+      "etymology": { "origin": "tatsam", "from": "गगन", "lang": "sa" },
+      "freq": 6000,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "आकाश",
+      "romanAlt": ["akash", "aakash", "aakas"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "पृथ्वीमाथि देखिने अनन्त खाली भाग जहाँ बादल, तारा देखिन्छन्।", "en": ["sky"],
+          "examples": [{ "ne": "आज आकाश सफा छ।", "en": "The sky is clear today." }] }
+      ],
+      "synonyms": ["गगन", "अम्बर", "नभ", "आसमान"],
+      "antonyms": ["धरती"],
+      "etymology": { "origin": "tatsam", "from": "आकाश", "lang": "sa" },
+      "categories": ["प्रकृति"],
+      "freq": 700,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "धरती",
+      "variants": ["धर्ती"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "हामी बस्ने ग्रह; भूमि।", "en": ["earth", "land"] }
+      ],
+      "synonyms": ["पृथ्वी", "भूमि", "धरा"],
+      "antonyms": ["आकाश"],
+      "etymology": { "origin": "tadbhav", "from": "धरित्री", "lang": "sa" },
+      "freq": 1600,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "आमा",
+      "romanAlt": ["ama", "aama"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "जन्म दिने स्त्री; माता।", "en": ["mother"],
+          "examples": [{ "ne": "आमा भान्सामा हुनुहुन्छ।", "en": "Mother is in the kitchen." }] }
+      ],
+      "synonyms": ["माता", "जननी", "मुमा"],
+      "antonyms": ["बुबा"],
+      "etymology": { "origin": "deshaj" },
+      "categories": ["घर-परिवार"],
+      "freq": 110,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "सपना",
+      "romanAlt": ["sapana", "sapna"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "निदाएको बेला मनमा देखिने दृश्य वा घटना।", "en": ["dream"],
+          "examples": [{ "ne": "हिजो राति अनौठो सपना देखेँ।", "en": "I had a strange dream last night." }] },
+        { "id": "s2", "pos": "noun", "ne": "पूरा गर्न चाहेको ठूलो इच्छा वा लक्ष्य।", "en": ["aspiration", "dream"] }
+      ],
+      "synonyms": ["स्वप्न"],
+      "etymology": { "origin": "tadbhav", "from": "स्वप्न", "lang": "sa" },
+      "freq": 520,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "झरना",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "अग्लो ठाउँबाट खस्ने पानीको धारा।", "en": ["waterfall", "spring"] }
+      ],
+      "synonyms": ["छहरा", "निर्झर"],
+      "categories": ["प्रकृति"],
+      "freq": 4800,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "फूल",
+      "romanAlt": ["phul", "phool", "ful"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "बोटबिरुवामा फुल्ने रङ्गीन र प्रायः सुगन्धित भाग।", "en": ["flower"],
+          "examples": [{ "ne": "तिहारमा सयपत्री फूलको माला लगाइन्छ।", "en": "Marigold garlands are worn during Tihar." }] }
+      ],
+      "synonyms": ["पुष्प", "कुसुम", "सुमन"],
+      "etymology": { "origin": "tadbhav", "from": "फुल्ल", "lang": "sa" },
+      "categories": ["प्रकृति"],
+      "freq": 640,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "हिमाल",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "सधैँ हिउँले ढाकिएको अग्लो पहाड।", "en": ["snow-capped mountain", "Himalaya"],
+          "examples": [{ "ne": "बिहान हिमाल टलक्क टल्किन्छ।", "en": "In the morning the snowy peaks shine brightly." }] }
+      ],
+      "synonyms": ["हिमालय", "हिमगिरि"],
+      "related": ["पहाड", "तराई"],
+      "etymology": { "origin": "tadbhav", "from": "हिमालय", "lang": "sa" },
+      "categories": ["प्रकृति"],
+      "freq": 800,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "खुसी",
+      "variants": ["खुशी"],
+      "romanAlt": ["khusi", "khushi"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "मनमा हुने आनन्दको भाव।", "en": ["happiness", "joy"] },
+        { "id": "s2", "pos": "adjective", "ne": "प्रसन्न; आनन्दित।", "en": ["happy", "glad"],
+          "examples": [{ "ne": "तिमीलाई भेटेर म खुसी भएँ।", "en": "I am happy to have met you." }] }
+      ],
+      "synonyms": ["आनन्द", "हर्ष", "प्रसन्नता"],
+      "antonyms": ["दुःख", "बेखुसी"],
+      "etymology": { "origin": "aagantuk", "from": "khushī", "lang": "fa" },
+      "categories": ["भावना"],
+      "freq": 260,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "दुःख",
+      "variants": ["दुख"],
+      "roman": "dukha",
+      "romanAlt": ["dukha", "dukh", "dukkha"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "शारीरिक वा मानसिक पीडा; कष्ट।", "en": ["sorrow", "suffering", "trouble"] }
+      ],
+      "synonyms": ["कष्ट", "पीडा", "वेदना"],
+      "antonyms": ["सुख", "खुसी"],
+      "etymology": { "origin": "tatsam", "from": "दुःख", "lang": "sa" },
+      "categories": ["भावना"],
+      "freq": 330,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "सुख",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "आराम र सन्तोषको अवस्था।", "en": ["comfort", "happiness", "well-being"] }
+      ],
+      "synonyms": ["आराम", "चैन", "आनन्द"],
+      "antonyms": ["दुःख"],
+      "etymology": { "origin": "tatsam", "from": "सुख", "lang": "sa" },
+      "categories": ["भावना"],
+      "freq": 450,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "उज्यालो",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "वस्तु देख्न सकिने प्रकाश।", "en": ["light", "brightness"] },
+        { "id": "s2", "pos": "adjective", "ne": "प्रकाश भएको; चम्किलो।", "en": ["bright", "lit"] }
+      ],
+      "synonyms": ["प्रकाश", "रोशनी"],
+      "antonyms": ["अँध्यारो"],
+      "freq": 1500,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "अँध्यारो",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "प्रकाश नभएको अवस्था।", "en": ["darkness"] },
+        { "id": "s2", "pos": "adjective", "ne": "उज्यालो नभएको।", "en": ["dark"] }
+      ],
+      "synonyms": ["अन्धकार", "तम"],
+      "antonyms": ["उज्यालो"],
+      "freq": 1700,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "राम्रो",
+      "senses": [
+        { "id": "s1", "pos": "adjective", "ne": "गुण भएको; असल।", "en": ["good", "fine"] },
+        { "id": "s2", "pos": "adjective", "ne": "हेर्दा मन पर्ने; सुन्दर।", "en": ["beautiful", "pretty"] }
+      ],
+      "synonyms": ["असल", "सुन्दर", "उत्तम"],
+      "antonyms": ["नराम्रो"],
+      "freq": 70,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "ठूलो",
+      "senses": [
+        { "id": "s1", "pos": "adjective", "ne": "आकार, मात्रा वा उमेरमा बढी।", "en": ["big", "large", "elder"] }
+      ],
+      "synonyms": ["विशाल", "महान्"],
+      "antonyms": ["सानो"],
+      "freq": 80,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "सानो",
+      "senses": [
+        { "id": "s1", "pos": "adjective", "ne": "आकार, मात्रा वा उमेरमा कम।", "en": ["small", "little", "younger"] }
+      ],
+      "synonyms": ["लघु", "छोटो"],
+      "antonyms": ["ठूलो"],
+      "freq": 85,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "बाटो",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "हिँड्ने वा गाडी गुड्ने मार्ग।", "en": ["road", "path", "way"] },
+        { "id": "s2", "pos": "noun", "ne": "उपाय; तरिका।", "en": ["way", "means"] }
+      ],
+      "synonyms": ["मार्ग", "पथ", "सडक"],
+      "etymology": { "origin": "tadbhav", "from": "वर्त्म", "lang": "sa" },
+      "freq": 280,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "साथी",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "मनमिल्ने, सँगै रहने मान्छे; मित्र।", "en": ["friend", "companion"],
+          "examples": [{ "ne": "ऊ मेरो बाल्यकालको साथी हो।", "en": "He is my childhood friend." }] }
+      ],
+      "synonyms": ["मित्र", "दोस्त", "सखा"],
+      "antonyms": ["शत्रु"],
+      "etymology": { "origin": "tadbhav", "from": "सार्थिक", "lang": "sa", "note": "Etymology to be verified by an editor." },
+      "freq": 190,
+      "status": "draft"
+    },
+    {
+      "lemma": "किताब",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "पढ्नका लागि पाना जोडेर बनाइएको लेखोट; पुस्तक।", "en": ["book"] }
+      ],
+      "synonyms": ["पुस्तक", "ग्रन्थ"],
+      "etymology": { "origin": "aagantuk", "from": "kitāb", "lang": "ar" },
+      "categories": ["शिक्षा"],
+      "freq": 350,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "समय",
+      "romanAlt": ["samaya", "samay"],
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "घडी, दिन, वर्ष आदिले नापिने निरन्तर बितिरहने अवधि।", "en": ["time"],
+          "examples": [{ "ne": "समय कसैलाई पर्खँदैन।", "en": "Time waits for no one." }] }
+      ],
+      "synonyms": ["काल", "बेला", "वक्त"],
+      "etymology": { "origin": "tatsam", "from": "समय", "lang": "sa" },
+      "freq": 95,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "हृदय",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "छातीभित्र रगत सञ्चार गर्ने अङ्ग; मुटु।", "en": ["heart"], "domain": "anatomy" },
+        { "id": "s2", "pos": "noun", "ne": "भावनाको केन्द्र; मन।", "en": ["heart (feelings)"], "register": "literary" }
+      ],
+      "synonyms": ["मुटु", "दिल", "मन"],
+      "etymology": { "origin": "tatsam", "from": "हृदय", "lang": "sa" },
+      "freq": 1200,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "डर",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "खतरा वा हानिको आशङ्काले हुने भाव।", "en": ["fear"] }
+      ],
+      "synonyms": ["भय", "त्रास"],
+      "antonyms": ["साहस"],
+      "freq": 600,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "लहर",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "पानीको सतहमा उठ्ने तरङ्ग।", "en": ["wave"] },
+        { "id": "s2", "pos": "noun", "ne": "कुनै भाव वा चलनको फैलावट।", "en": ["wave", "trend"] }
+      ],
+      "synonyms": ["तरङ्ग", "छाल"],
+      "freq": 3400,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "नगर",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "सहर।", "en": ["city", "town"], "register": "literary" }
+      ],
+      "synonyms": ["सहर", "पुर"],
+      "etymology": { "origin": "tatsam", "from": "नगर", "lang": "sa" },
+      "freq": 2300,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "अमर",
+      "senses": [
+        { "id": "s1", "pos": "adjective", "ne": "कहिल्यै नमर्ने; सधैँ रहने।", "en": ["immortal", "eternal"] }
+      ],
+      "synonyms": ["अविनाशी", "शाश्वत"],
+      "antonyms": ["मरणशील"],
+      "etymology": { "origin": "tatsam", "from": "अमर", "lang": "sa" },
+      "freq": 3900,
+      "status": "reviewed"
+    },
+    {
+      "lemma": "जल",
+      "senses": [
+        { "id": "s1", "pos": "noun", "ne": "पानी।", "en": ["water"], "register": "literary" }
+      ],
+      "synonyms": ["पानी", "नीर"],
+      "etymology": { "origin": "tatsam", "from": "जल", "lang": "sa" },
+      "freq": 2700,
+      "status": "reviewed"
+    }
+  ]
+}

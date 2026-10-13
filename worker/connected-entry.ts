@@ -98,6 +98,7 @@ function isSpaPath(pathname: string) {
     || path.startsWith("/me/")
     || path.startsWith("/settings/")
     || path.startsWith("/tools/")
+    || path === "/tool/nepalidictionary" || path.startsWith("/tool/nepalidictionary/")
     || path.startsWith("/jyotish/")
     || path.startsWith("/janmapatro");
 }

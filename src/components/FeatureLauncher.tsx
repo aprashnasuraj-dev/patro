@@ -24,6 +24,7 @@ export const ITEMS:LaunchItem[]=[
  {href:"/samudaya/kirat",ne:"किरात पात्रो",en:"Kirat calendar",group:"समुदाय · Community",keywords:"kirat rai limbu calendar किरात",mark:"कि"},
  {href:"/samudaya/hijri",ne:"हिजरी पात्रो",en:"Hijri calendar",group:"समुदाय · Community",keywords:"hijri islamic calendar हिजरी",mark:"हि"},
  {href:"/samudaya/chakra",ne:"समुदाय चक्र",en:"Community chakra",group:"समुदाय · Community",keywords:"community chakra festival समुदाय चक्र",mark:"च"},
+ {href:"/tool/nepalidictionary",ne:"नेपाली शब्दकोश",en:"Nepali dictionary",group:"भाषा · Language",keywords:"dictionary shabdakosh shabdakosh meaning english nepali arth शब्दकोश अर्थ अङ्ग्रेजी पर्यायवाची विपरीतार्थी उखान",mark:"श"},
  {href:"/tools/nepali-typing",ne:"नेपाली टाइपिङ",en:"Nepali typing",group:"भाषा · Language",keywords:"typing roman unicode nepali नेपाली टाइपिङ",mark:"ने"},
  {href:"/tools/preeti-converter",ne:"प्रीति रूपान्तरण",en:"Preeti converter",group:"भाषा · Language",keywords:"preeti unicode converter प्रीति",mark:"प्री"},
  {href:"/tools/spell-check",ne:"नेपाली हिज्जे जाँच",en:"Nepali spell check",group:"भाषा · Language",keywords:"spell check spelling नेपाली हिज्जे",mark:"✓"},

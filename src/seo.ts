@@ -33,6 +33,8 @@ function meta(name:string,content:string,property=false){
   if(!el){el=document.createElement("meta");el.setAttribute(attr,name);document.head.appendChild(el)}el.content=content;
 }
 export function applyRouteSeo(path=location.pathname){
+  // The dictionary (src/features/dictionary) sets its own title, canonical, robots and JSON-LD per word.
+  if(/^\/tool\/nepalidictionary(\/|$)/.test(path))return;
   const row=resolveRouteSeo(path);
   const preview=isPublicPreviewHost(location.hostname);
   const canonicals=Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'));

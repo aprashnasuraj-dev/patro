@@ -1,0 +1,593 @@
+# AI DRAFT (Claude: multi-agent draft + independent reviewer pass) — NEEDS REVIEW by a Nepali editor before publishing. Original content, CC BY-SA 4.0.
+अघि	s1	before, earlier, ago
+सडक	s1	road, street
+अगाडि	s1	in front of, before
+अगाडि	s2	before, earlier, previously
+अगाडि	s3	after that, later, from then on
+कसरी	s1	how, in what way
+पक्राउ	s1	arrest, capture
+महिना	s1	month
+गाउँ	s1	village
+गाउँ	s2	village, rural settlement, countryside
+बस	s1	bus
+किताब	s1	book
+सहर	s1	city, town
+नजिक	s1	near, close by
+आशा	s1	hope, expectation
+छिमेकी	s1	neighbouring, next-door
+छिमेकी	s2	neighbour
+धान	s1	rice (unhusked), paddy
+हिमाल	s1	snow mountain, snow-capped peak, Himalaya
+कहिल्यै	s1	ever, never (with negative)
+गाह्रो	s1	difficult, hard
+गाह्रो	s2	awkward, troublesome
+कहानी	s1	story, tale
+कहानी	s2	long account, long-winded talk
+कहानी	s3	story, piece of fiction
+पसल	s1	shop, store
+इच्छा	s1	wish, desire
+हप्ता	s1	week
+अनुहार	s1	face
+ढोका	s1	door, doorway
+ढोका	s2	gate, gateway
+चामल	s1	rice (husked, uncooked)
+उज्यालो	s1	bright, shining
+उज्यालो	s2	clear, fair
+उज्यालो	s3	cheerful, happy
+खेत	s1	paddy field, rice field, terraced field
+धरती	s1	earth, the world
+सजिलै	s1	easily, without effort
+कुकुर	s1	dog
+अँध्यारो	s1	darkness
+बालुवा	s1	sand
+असल	s1	good, fine
+गर्मी	s1	heat, warmth
+गर्मी	s2	hot, warm
+कपाल	s1	hair (of the head)
+कपाल	s2	head
+सुन्तला	s1	orange, mandarin
+छठ	s1	Chhath (festival of sun worship)
+अग्लो	s1	tall, high
+जुत्ता	s1	shoe, footwear
+होली	s1	Holi (festival of colours)
+कलम	s1	pen
+कलम	s2	instalment, item (in accounts)
+लाज	s1	shame, embarrassment, shyness
+झरना	s1	waterfall
+कमिला	s1	ant
+हवाईजहाज	s1	aeroplane, aircraft
+अऋणी	s1	debt-free, free of debt
+अकडिनु	s1	to become stiff, to turn awkward
+अकडो	s1	awkward, ill-fitting
+अकथनीय	s1	unspeakable, indescribable
+अकथ्य	s1	unspeakable, unutterable
+अकबरी	s1	excellent, superior
+अकबरे	s1	akbare chilli (small round very hot red chilli)
+अकमकाउनु	s1	to be confused, to be at a loss for words
+अकमक्क	s1	confused, bewildered
+अकरण	s1	negative form (of a verb)
+अकर्मक	s1	intransitive (verb)
+अकर्मण्य	s1	idle, lazy, inactive
+अकलुषित	s1	untainted, unblemished
+अकल्पनीय	s1	unimaginable, inconceivable
+अकल्पित	s1	unimagined, unexpected
+अकल्याण	s1	harm, misfortune
+अकल्याणकारी	s1	harmful, detrimental
+अकस्मात्	s1	suddenly, unexpectedly
+अँकाइ	s1	estimation, assessment
+अकाट्य	s1	irrefutable, indisputable
+अकार	s1	the vowel 'a'
+अकारण	s1	without reason, needlessly
+अकारन्त	s1	ending in 'a'
+अकालमृत्यु	s1	untimely death, premature death
+अकास	s1	sky
+अकासिँदो	s1	soaring, skyrocketing
+अकासिनु	s1	to soar, to skyrocket
+अकिञ्चन	s1	destitute, penniless
+अकुण्ठित	s1	unrestrained, unhindered
+अकुत	s1	immeasurable, incalculable
+अकुलिन	s1	of humble lineage, not of a noble family
+अकुशल	s1	unskilled, inexpert
+अकुशलता	s1	lack of skill, inefficiency
+अकेला	s1	alone, lonely
+अकेलोपन	s1	loneliness, solitude
+अक्कर	s1	precipitous place, steep cliff path
+अक्करिलो	s1	steep, rugged, difficult
+अक्कल	s1	wit, intelligence, sense
+अक्कलदार	s1	intelligent, clever
+अक्कली	s1	intelligent, clever
+अक्किल	s1	wit, intelligence, sense
+अक्टोपस	s1	octopus
+अक्ष	s1	axis, orbit, beam (of a balance)
+अक्षमता	s1	inability, incapacity
+अक्षमाला	s1	rosary, prayer beads
+अक्षम्य	s1	unforgivable, inexcusable
+अक्षरजीवी	s1	living by writing, literary (by profession)
+अक्षरपत्ती	s1	alphabet card, flashcard
+अक्षरविन्यास	s1	spelling, arrangement of letters
+अक्षरश	s1	literally, word for word
+अक्षरात्मक	s1	written, alphabetic
+अक्षरारम्भ	s1	initiation into learning the alphabet
+अक्षरेखा	s1	line of latitude, parallel
+अक्षरेपि	s1	even in a single letter, in the slightest
+अक्षांश	s1	latitude
+अक्षुण्ण	s1	unimpaired, uninterrupted, intact
+अक्षुण्णता	s1	continuity, integrity
+अक्सर	s1	often, usually
+अखटो	s1	notched climbing log, ladder
+अखण्डनीय	s1	indivisible
+अखण्डनीय	s2	irrefutable
+अखण्डित	s1	unbroken, whole
+अखण्डित	s2	uninterrupted, unbroken
+अखबारी	s1	journalistic, newspaper
+अखाद्य	s1	inedible
+अखानो	s1	predicament, difficult situation
+अख्तियारनामा	s1	power of attorney, letter of authority
+अख्तियारवाला	s1	authorized, empowered
+अख्रक्क	s1	dried out, stiff
+अख्रनु	s1	to dry out partly, to drain
+अख्रिनु	s1	to dry out partly, to drain
+अगडमबगडम	s1	nonsense, this and that
+अगणनीय	s1	countless, innumerable
+अगति	s1	bad state, plight
+अगतिलो	s1	contemptible, despicable
+अगती	s1	shameless, ill-behaved
+अगम	s1	inaccessible, unreachable
+अगम	s2	incomprehensible, unfathomable
+अगम्य	s1	inaccessible, impassable
+अगम्य	s2	incomprehensible, unknowable
+अगरबत्ती	s1	incense stick, joss stick
+अगर्हित	s1	blameless, uncensured
+अगलबगल	s1	around, on either side of
+अगस्ति	s1	Agastya (legendary sage)
+अगस्ति	s2	gluttonous, voracious
+अगाध	s1	immense, profound
+अगाध	s2	immense, profound
+अँगार	s1	ember, charcoal
+अँगारे	s1	coal-black, pitch black
+अँगाल्नु	s1	to embrace, to hug
+अँगाल्नु	s2	to adopt, to accept
+अगावै	s1	before, beforehand
+अगि	s1	in front of, before
+अगिल्तिर	s1	in front, towards the front
+अगिल्लो	s1	front
+अगिल्लो	s2	previous, former
+अगिसरा	s1	forward-moving, going ahead
+अगुल्टो	s1	firebrand, burning log
+अगेनो	s1	hearth, fireplace
+अगोचर	s1	invisible, imperceptible
+अगोलित	s1	not round, non-spherical
+अगौटे	s1	advance, prior
+अग्घोर	s1	extremely, terribly
+अग्निकण	s1	spark
+अग्निकाण्ड	s1	fire disaster, blaze
+अग्निकुण्ड	s1	fire pit (for sacrificial offerings)
+अग्निज्वाला	s1	flame, blaze
+अग्निपथ	s1	path of fire
+अग्निपथ	s2	perilous path, path of trials
+अग्निपरीक्षा	s1	trial by fire, ordeal by fire
+अग्निपरीक्षा	s2	ordeal, severe test
+अग्निपूजक	s1	fire-worshipping, fire worshipper
+अग्निपूजा	s1	fire worship
+अग्निमन्थ	s1	making fire by friction of wood
+अग्निमन्द	s1	indigestion, weak digestion
+अग्निमोचक	s1	fire extinguisher
+अग्निरेखा	s1	firebreak, fire line
+अग्निवर्धक	s1	digestive, appetizing
+अग्निवाण	s1	fire arrow
+अग्निवाण	s2	sure remedy, infallible medicine
+अग्निविकार	s1	indigestion, digestive disorder
+अग्निशाला	s1	sacrificial fire house
+अग्निशिखा	s1	flame, tongue of fire
+अग्निशुद्धि	s1	purification by fire
+अग्निसंस्कार	s1	purification by fire
+अग्निसंस्कार	s2	cremation, fire rite
+अग्निसाक्षी	s1	rite with fire as witness, marriage vow before fire
+अग्निसात्	s1	burning to ashes, consigning to fire
+अग्निस्थापना	s1	ritual installation of sacred fire
+अग्निहोत्र	s1	fire sacrifice, agnihotra
+अग्निहोत्री	s1	keeper of the sacred fire, agnihotri
+अग्न्यस्त्र	s1	fire weapon (mythological)
+अग्न्यस्त्र	s2	firearm, gun
+अग्रगण्य	s1	foremost, leading
+अग्रगण्यता	s1	pre-eminence, leadership
+अग्रगमन	s1	advance, progress
+अग्रदूत	s1	herald, forerunner
+अग्रदूत	s2	pioneer, leader
+अग्रपंङ्क्ति	s1	front row, first line
+अग्रपंङ्क्ति	s2	first rank, forefront
+अग्रपूजा	s1	first worship, first honour
+अग्रभाग	s1	front part, fore part
+अग्रभूमि	s1	foreground
+अग्रवर्ती	s1	foremost, in front
+अग्रवर्ती	s2	senior, elder
+अग्रसूचक	s1	premonitory, indicative in advance
+अग्रसूचना	s1	advance notice, forewarning
+अग्रसूचित	s1	notified in advance, forewarned
+अग्रस्थान	s1	first place, front position
+अग्रस्वर	s1	front vowel
+अग्राख	s1	heartwood, hardwood
+अग्रासन	s1	front seat, seat of honour
+अग्राह्य	s1	unacceptable, inadmissible
+अग्लाइ	s1	height, tallness
+अग्लिनु	s1	to grow tall, to rise
+अग्लिनु	s2	to seem tall
+अग्ली	s1	tall (feminine)
+अग्ल्याइनु	s1	to be raised, to be made higher
+अग्ल्याउनु	s1	to raise, to make higher
+अघच	s1	steep, rugged
+अघचिलो	s1	awkward, difficult, rough
+अघटित	s1	not happened, unoccurred
+अघाउँजी	s1	to one's fill, to one's heart's content
+अघाउनु	s1	to be full, to be satisfied, to be fed up
+अघोर	s1	terrible, dreadful, extreme
+अघोरी	s1	Aghori (ascetic), greedy person
+अघोरीपन	s1	ruthlessness, extreme greed
+अघोर्याइँ	s1	shamelessness
+अघोर्याइँ	s2	stubbornness, obstinacy
+अघोष	s1	voiceless sound, unvoiced consonant
+अघोषित	s1	undeclared, unannounced
+अङ्कगणित	s1	arithmetic
+अङ्कतालिका	s1	table of figures, mark sheet
+अङ्कधारण	s1	branding (of the body with a mark)
+अङ्कन	s1	marking, stamping
+अङ्कन	s2	recording, depiction
+अङ्कन	s3	marking, grading
+अङ्कनयोजना	s1	marking scheme
+अङ्कमाल	s1	embrace, hug
+अङ्कल	s1	uncle
+अङ्कविद्या	s1	numerology, science of numbers
+अङ्कसारिणी	s1	table of figures, mark sheet
+अङ्कित	s1	marked, stamped, imprinted
+अङ्कित	s2	recorded, mentioned
+अङ्कित	s3	estimated, assessed
+अङ्कुर	s1	sprout, shoot
+अङ्कुरण	s1	germination, sprouting
+अङ्कुराउनु	s1	to sprout, to germinate
+अङ्कुरित	s1	sprouted, germinated
+अङ्कुश	s1	hook, goad
+अङ्कुसे	s1	hooked pole, crook
+अङ्गक्षय	s1	atrophy, loss of a body part
+अङ्गचालन	s1	movement of the limbs
+अङ्गच्छेदन	s1	amputation
+अङ्गदान	s1	organ donation
+अङ्गना	s1	beautiful woman
+अङ्गपतन	s1	loss of a limb, falling off of a body part
+अङ्गपीडन	s1	pain in a body part
+अङ्गप्रत्यङ्ग	s1	all parts of the body, every limb
+अङ्गभङ्ग	s1	mutilation, injury to limbs
+अङ्गमर्दन	s1	massage, body rub
+अङ्गरक्षक	s1	bodyguard
+अङ्गरक्षा	s1	bodily protection, personal security
+अङ्गरखा	s1	long robe, knee-length tunic
+अङ्गराग	s1	cosmetic, body perfume
+अङ्गवाक्य	s1	subordinate clause
+अङ्गविकार	s1	deformity, bodily defect
+अङ्गसञ्चालन	s1	movement of the limbs
+अङ्गहार	s1	ornament, necklace
+अङ्गहीन	s1	limbless, maimed, incomplete
+अङ्गी	s1	having parts, composite
+अङ्गीकार	s1	acceptance, adoption
+अङ्गीकृत	s1	accepted, adopted
+अङ्गीकृत	s2	ratified, legally recognized
+अङ्गीवाक्य	s1	main clause, principal clause
+अङ्गुठो	s1	thumb
+अङ्गुर	s1	grape
+अङ्गुल	s1	finger's breadth, digit (measure)
+अङ्गुलीनिर्देश	s1	pointing (with a finger)
+अङ्गुलीनिर्देश	s2	raising a finger, pointing a finger (in accusation)
+अङ्गोछा	s1	thin towel
+अङ्भर	s1	responsibility
+अङ्भर	s2	promise, pledge
+अचकल्टो	s1	half-ripe, half-cooked
+अचर	s1	immobile, stationary
+अचल	s1	motionless, immovable
+अचल	s2	permanent, lasting
+अचाक्ली	s1	excessively, too much
+अचाक्ली	s2	outrageously, beyond limits
+अचाडु	s1	quarrelsome, unsociable
+अचिन्तनीय	s1	unthinkable, inconceivable
+अचिन्तित	s1	unexpected, unforeseen
+अचिन्त्य	s1	not worth worrying about
+अचुक	s1	unfailing, infallible
+अँचेटाइ	s1	pressing, squeezing
+अचेटो	s1	pressure
+अँचेट्नु	s1	to press, to squeeze
+अचेतन	s1	unconscious, inanimate
+अछापे	s1	unstamped, unprinted
+अछेता	s1	consecrated rice grains, akshata
+अछेद्य	s1	impenetrable, unpierceable
+अजङ्ग	s1	huge, frightful
+अजनबी	s1	unfamiliar, strange
+अजन्मा	s1	unborn, never born
+अजब	s1	strange, wonderful
+अजमाउनु	s1	to try, to test
+अजम्मर	s1	immortal, ageless
+अजम्मरी	s1	immortality, agelessness
+अजस्र	s1	unceasing, incessant
+अजात	s1	casteless, outside the caste order (historical)
+अजात	s2	unborn, not yet produced
+अजान	s1	ignorance
+अजान	s2	ignorant, unknowing
+अजायब	s1	strange, wondrous
+अजायबघर	s1	zoo, menagerie
+अजायबघर	s2	museum
+अजिङ्गर	s1	python
+अजिङ्गर	s2	gluttonous, voracious
+अजिब	s1	strange, odd
+अजीर्ण	s1	indigestion, dyspepsia
+अँजुली	s1	cupped hands, handful
+अज्ञ	s1	ignorant, foolish
+अज्ञता	s1	ignorance
+अज्ञान	s1	ignorance, unconsciousness
+अज्ञान	s2	delusion, spiritual ignorance
+अज्ञान	s3	stupidity, folly
+अज्ञानवश	s1	out of ignorance, unknowingly
+अज्ञानी	s1	ignorant, unwise
+अज्ञानी	s2	deluded, spiritually ignorant
+अज्ञेय	s1	unknowable, incomprehensible
+अटमट्ट	s1	overcrowding, crush
+अटाइनु	s1	to be made to fit, to be accommodated
+अटाउनु	s1	to fit in, to accommodate
+अटाली	s1	balcony, veranda (upper floor)
+अटुट	s1	unbreakable, unbroken
+अटेरी	s1	disobedient, stubborn
+अटेर्याइँ	s1	disobedience, stubbornness
+अटेसमटेस	s1	barely fitting, tight squeeze
+अटोग्राफ	s1	autograph book, autograph
+अट्टहास	s1	loud laughter, guffaw
+अट्टालि	s1	balcony, veranda (upper floor)
+अट्ठा	s1	eight (playing card)
+अट्नु	s1	to fit, to be contained
+अँठिनु	s1	to be gripped tightly
+अँठ्याउनु	s1	to grip tightly, to clutch
+अठ्याङ	s1	difficulty, awkward situation
+अठ्याङमठ्याङ	s1	confusion, muddle
+अडकल	s1	guess, estimate
+अडकलगीता	s1	guesswork, speculation
+अडकलबाज	s1	good at guessing, speculative
+अडकलाइ	s1	guessing, estimation
+अडग	s1	unwavering, steady
+अडङ्गा	s1	obstacle, hindrance
+अडचन	s1	obstacle, hindrance
+अडबाङगो	s1	misshapen, ill-matched
+अडबेखडबे	s1	uneven, bumpy
+अडमिल्दो	s1	misshapen, ill-proportioned
+अडर	s1	order, command
+अडाउनु	s1	to prop up, to lean (something) against
+अडिग	s1	steadfast, unwavering
+अडिनु	s1	to stop, to stand firm
+अडियल	s1	stubborn, obstinate
+अडिलो	s1	supportive, sturdy
+अडेस	s1	support, prop
+अडेसो	s1	prop, support
+अड्काउ	s1	need, want
+अड्काउ	s2	obstacle, hindrance
+अड्को	s1	obstacle, hindrance
+अड्को	s2	necessity, indispensable thing
+अड्को	s3	riddle, puzzle
+अड्कोपड्को	s1	need, necessity
+अड्नु	s1	to stop, to halt
+अण्ड	s1	testicle
+अण्डज	s1	oviparous creature, egg-born animal
+अण्डज	s2	oviparous, egg-laying
+अतः	s1	therefore, hence
+अतएव	s1	therefore, consequently
+अतथ्य	s1	false, untrue
+अतर्कनीय	s1	unarguable, beyond reasoning
+अतलस्पर्शी	s1	bottomless, profound
+अतालिनु	s1	to be restless, to fidget
+अताले	s1	restless, impatient
+अतासिनु	s1	to panic, to be alarmed
+अतिक्रान्त	s1	transgressed, overstepped
+अतिक्रान्त	s2	past, elapsed
+अतिगोप्य	s1	top secret, highly confidential
+अतिचार	s1	oppression, atrocity
+अतिदानी	s1	very generous
+अतिदीर्घ	s1	very long, prolonged
+अतिदीर्घ	s2	overlong vowel, prolated vowel
+अतिदुर्लभ	s1	very rare
+अतिदूर	s1	very far, remote
+अतिमानवीय	s1	superhuman
+अतिमूत्र	s1	polyuria, excessive urination
+अतियथार्थ	s1	hyperrealistic, stark
+अतिरञ्जना	s1	exaggeration
+अतिरेक	s1	excess, surplus
+अतिलोभी	s1	very greedy
+अतिविकट	s1	very remote, very inaccessible
+अतिशय	s1	excessive, abundant
+अतिशय	s2	extremely, exceedingly
+अतिसमीप	s1	very close, very near
+अतिसम्पर्क	s1	close contact, intimacy
+अतिसामान्य	s1	very ordinary, very simple
+अतिसार	s1	dysentery, diarrhoea
+अतिसूक्ष्म	s1	minute, microscopic
+अतीन्द्रिय	s1	supersensory, transcendental
+अतीव	s1	excessive, extreme
+अतुल्य	s1	incomparable, matchless
+अतृप्त	s1	unsatisfied, unsated
+अतृप्त	s2	discontented, dissatisfied
+अतृप्ति	s1	hunger, unsatisfied appetite
+अतृप्ति	s2	dissatisfaction, discontent
+अत्तर	s1	attar, perfume
+अत्तरछाला	s1	membrane, inner skin
+अत्यल्प	s1	very little, minimal
+अत्याइ	s1	panic, alarm
+अत्याउनु	s1	to panic, to become frantic
+अत्याचारी	s1	tyrant, oppressor
+अत्याज्य	s1	indispensable, not to be abandoned
+अत्यास	s1	panic, alarm
+अत्यासलाग्दो	s1	alarming, distressing
+अत्याहट	s1	panic, agitation
+अत्युक्ति	s1	exaggeration, overstatement
+अत्युत्तम	s1	excellent, the very best
+अत्युत्तम	s2	highest, supreme
+अथइति	s1	beginning and end, whole story
+अथर्ववेद	s1	Atharvaveda
+अथाह	s1	fathomless, bottomless
+अथुलाउनु	s1	to grow fat, to become flabby
+अथुलो	s1	fat, flabby
+अदक्षता	s1	lack of skill, inefficiency
+अदना	s1	humble, insignificant, weak
+अदब	s1	respect, deference
+अदब	s2	etiquette, good manners
+अदम्य	s1	indomitable, irrepressible
+अदम्य	s2	excellent, outstanding
+अदलबदल	s1	change, shift
+अदलबदल	s2	exchange, swap
+अदलाबदली	s1	exchange, swap
+अदलीबदली	s1	exchange, swap
+अदायगी	s1	payment, settlement
+अदालती	s1	judicial, of a court
+अदृष्ट	s1	unseen, invisible, vanished
+अदेख	s1	the unseen, unseen place
+अद्भुत	s1	wonderful, amazing
+अद्यतन	s1	up-to-date, current
+अद्यापि	s1	even now, still, to date
+अद्यावधि	s1	to date, until now
+अद्वितीय	s1	unique, unparalleled
+अद्वैत	s1	non-dual, one only
+अद्वैत	s2	non-dualist
+अद्वैतवाद	s1	Advaita, non-dualism
+अधकल्चिनु	s1	to be half-cooked, to be half-ripe
+अधकल्चो	s1	half-ripe, half-cooked
+अधकल्चो	s2	incomplete, half-done
+अधकल्चो	s3	immature, half-baked
+अधपिल्टो	s1	half-broken, halved
+अधपिल्टो	s2	half-dead
+अधबेस्रो	s1	semi-conscious, half-aware
+अधम	s1	base, vile, low
+अधमरो	s1	half-dead
+अधर्म	s1	unrighteousness, sin, wrongdoing
+अधर्मी	s1	sinner, unrighteous person
+अधस्थ	s1	lower, situated below
+अधार्मिक	s1	irreligious, impious
+अधिकतर	s1	most, more
+अधिकर्ता	s1	possessing authority
+अधिकर्ता	s2	authority, authorized person or body
+अधिकारवाला	s1	authorized, entitled
+अधिकारहनन	s1	violation of rights, deprivation of rights
+अधिगत	s1	understood, acquired
+अधिगम	s1	gain, acquisition
+अधिगम	s2	learning, study
+अधिगम्य	s1	attainable, obtainable
+अधिन	s1	control, subjection
+अधिपति	s1	lord, master, ruler
+अधिभार	s1	surcharge, additional tax
+अधिशुल्क	s1	surcharge, extra fee
+अधिष्ठान	s1	seat, abode, base
+अधिष्ठित	s1	situated, installed, seated in office
+अधीनता	s1	subjection, dependence
+अधीनस्थ	s1	subordinate, subject
+अधीनस्थता	s1	subordination
+अधीर	s1	impatient
+अधीरता	s1	impatience
+अधीश	s1	lord, master
+अधीश्वर	s1	supreme lord, sovereign
+अधुनातन	s1	latest, most recent
+अँधेर	s1	dark
+अँधेरी	s1	dark
+अँधेरो	s1	darkness, dark
+अधैर्य	s1	impatience
+अधोगमन	s1	descent, decline
+अधोदृष्टि	s1	downcast gaze, lowering the eyes
+अधोभाग	s1	lower part, bottom
+अधोभूमि	s1	lowland, low-lying land
+अधोमति	s1	degraded mind, perverted intellect
+अधोमार्ग	s1	downward path, path of decline
+अधोरेखा	s1	underline
+अधोवस्त्र	s1	lower garment, trousers
+अधोवायु	s1	flatulence, intestinal gas
+अधोविन्दु	s1	subscript dot, nukta
+अध्ययनकक्ष	s1	study room, reading room
+अध्यवसायी	s1	persevering, diligent
+अध्यापक	s1	teacher
+अध्यापिका	s1	teacher (female)
+अध्यापित	s1	taught
+अध्येय	s1	to be studied, worth studying
+अनकनाउनु	s1	to hesitate, to be reluctant
+अनकन्टार	s1	wilderness, desolate place
+अनगिन्ती	s1	countless, innumerable
+अनङ्ग	s1	bodiless, incorporeal
+अनजान	s1	ignorant, unknowing
+अनतिक्रमण	s1	non-interference, non-violation
+अनदेखी	s1	disregard, ignoring
+अनधिकार	s1	unauthorized, without right
+अनधिकृत	s1	unauthorized, unofficial
+अनधीत	s1	unstudied, unread
+अनन्तता	s1	infinity, endlessness
+अनन्तर	s1	thereafter, afterwards
+अनन्य	s1	exclusive, sole
+अनन्य	s2	intimate, devoted
+अनपत्यार	s1	disbelief, distrust
+अनपाम्मे	s1	matchless, incomparable
+अनपेक्षित	s1	unexpected, unforeseen
+अनपेक्षित	s2	unwanted, undesired
+अनभिज्ञता	s1	ignorance, unawareness
+अनभ्यस्त	s1	unaccustomed, unpractised
+अनमन	s1	estrangement, ill feeling
+अनमेल	s1	discord, disharmony
+अनर्गल	s1	unrestrained, unbridled
+अनर्थ	s1	calamity, disaster, misfortune
+अनर्थकारी	s1	harmful, disastrous
+अनवच्छिन्न	s1	unbroken, continuous
+अनवरत	s1	continuous, incessant
+अनवरुद्ध	s1	unobstructed, unimpeded
+अनवरोध	s1	unobstructed, unhindered
+अनवसर	s1	wrong time, inopportune moment
+अनविश्वास	s1	distrust, mistrust
+अनविश्वासी	s1	untrustworthy
+अनवीकृत	s1	unrenewed, expired
+अनाकर्षक	s1	unattractive
+अनाकर्षण	s1	unattractiveness
+अनागत	s1	future, what is yet to come
+अनागरिक	s1	foreigner, non-citizen, homeless person
+अनाज	s1	grain, cereal crop
+अनाडी	s1	clumsy, inexperienced, unskilled
+अनाथालय	s1	orphanage, shelter for the destitute
+अनादर	s1	disrespect, contempt
+अनादि	s1	beginningless, eternal, primordial
+अनाम	s1	nameless, anonymous
+अनाम	s2	obscure, unknown
+अनामिका	s1	ring finger
+अनामिका	s2	nameless woman, anonymous woman
+अनावासीय	s1	non-residential
+अनावृष्टि	s1	drought, lack of rain
+अनाश्रित	s1	shelterless, unsupported
+अनासक्त	s1	detached, unattached
+अनासक्ति	s1	detachment, non-attachment
+अनास्था	s1	lack of faith, disbelief
+अनाहक	s1	needlessly, for no reason
+अनिकाल	s1	famine
+अनिच्छित	s1	unwanted, undesired
+अनिच्छुक	s1	unwilling, reluctant
+अनिद्रा	s1	insomnia, sleeplessness
+अनिन्दनीय	s1	blameless, irreproachable
+अनिमन्त्रित	s1	uninvited
+अनिमेष	s1	unblinking, fixed (gaze)
+अनियत	s1	unfixed, indefinite
+अनियम	s1	irregularity
+अनिर्णय	s1	indecision, lack of decision
+अनिर्णीत	s1	undecided, unresolved
+अनिर्वाचित	s1	unelected
+अनिश्चितता	s1	uncertainty
+अनिष्ट	s1	harm, evil, misfortune
+अनिष्ट	s2	ominous, inauspicious
+अनिष्टकर	s1	harmful, baneful
+अनिष्टकारी	s1	harmful, baneful
+अनिष्टसूचक	s1	ominous, foreboding
+अनीति	s1	immorality, injustice
+अनीश्वरवाद	s1	atheism
+अनुकथन	s1	repetition, restatement
+अनुकम्पा	s1	compassion, grace, mercy
+अनुकरणशील	s1	imitative
+अनुकरणीय	s1	worth emulating, worthy of imitation
+अनुकरणीय	s2	exemplary, model
+अनुकर्ता	s1	imitator, mimic
+अनुकर्ता	s2	follower, successor
+अनुकूलित	s1	adapted, customized
+अनुक्त	s1	unsaid, unmentioned
+अनुक्रम	s1	sequence, order
+अनुक्रमण	s1	succession, sequencing
+अनुक्रमिक	s1	sequential, successive
+अनुक्रिया	s1	reaction, response

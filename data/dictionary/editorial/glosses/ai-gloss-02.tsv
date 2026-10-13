@@ -1,0 +1,596 @@
+# AI DRAFT (Claude: multi-agent draft + independent reviewer pass) — NEEDS REVIEW by a Nepali editor before publishing. Original content, CC BY-SA 4.0.
+अनुगामी	s1	following, succeeding
+अनुगामी	s2	following, adhering, follower
+अनुगृहीत	s1	obliged, grateful, favoured
+अनुग्रह	s1	favour, kindness, grace
+अनुचर	s1	attendant, servant, follower
+अनुचर	s2	following, accompanying
+अनुच्चरित	s1	unpronounced, silent
+अनुच्चरित	s2	unmentioned, unstated
+अनुतान	s1	intonation
+अनुताप	s1	remorse, regret, repentance
+अनुत्तम	s1	not the best, inferior
+अनुत्तरदायित्व	s1	irresponsibility
+अनुत्तरित	s1	unanswered
+अनुत्तरित	s2	unresolved, unsolvable
+अनुत्तीर्णता	s1	failure (in an exam)
+अनुत्पादकत्व	s1	unproductiveness, barrenness
+अनुत्पादकत्व	s2	unprofitability
+अनुत्साह	s1	lack of enthusiasm, apathy
+अनुत्साहित	s1	unenthusiastic, discouraged
+अनुत्साही	s1	unenthusiastic, listless
+अनुदात्त	s1	ignoble, not lofty
+अनुदात्त	s2	low, lowly
+अनुदात्त	s3	unaccented vowel, grave accent
+अनुदारता	s1	illiberality, narrow-mindedness
+अनुदारवाद	s1	conservatism
+अनुदारवादी	s1	conservative
+अनुपमेय	s1	incomparable, matchless
+अनुपयुक्त	s1	unsuitable, inappropriate
+अनुपयुक्तता	s1	unsuitability, inappropriateness
+अनुपयोग	s1	disuse, non-use
+अनुपयोगी	s1	useless, unusable
+अनुपलब्ध	s1	unavailable
+अनुपलब्धता	s1	unavailability
+अनुपलब्धि	s1	unavailability, non-attainment
+अनुपादेय	s1	useless, of no value
+अनुपादेयता	s1	uselessness
+अनुप्राणित	s1	animated, enlivened
+अनुप्राणित	s2	inspired, motivated
+अनुप्रेरणा	s1	inspiration, encouragement, motivation
+अनुप्रेरित	s1	inspired, motivated
+अनुभवहीन	s1	inexperienced
+अनुभवहीनता	s1	inexperience
+अनुमोदक	s1	approving, endorsing, supporting
+अनुरक्त	s1	devoted, attached
+अनुरक्त	s2	fond, attached
+अनुरक्ति	s1	devotion, attachment, affection
+अनुरणन	s1	reverberation, resonance, echo
+अनुरागी	s1	affectionate, devoted, fond
+अनुरूपता	s1	conformity, similarity, correspondence
+अनुरोधक	s1	requester, petitioner
+अनुर्वर	s1	infertile, barren
+अनुर्वर	s2	sterile, unproductive
+अनुलिपि	s1	copy, transcription
+अनुलेपन	s1	anointing, applying ointment
+अनुवादित	s1	translated
+अनुवाद्य	s1	translatable, to be translated
+अनुशंसा	s1	praise, commendation
+अनुशासनहीन	s1	undisciplined
+अनुशीलन	s1	close study, careful examination
+अनुशीलन	s2	research, investigation
+अनुष्ठानिक	s1	ritual, ceremonial
+अनुष्ठित	s1	ritually performed, duly carried out
+अनुसृत	s1	followed, pursued
+अनुस्यूत	s1	sewn together, interwoven, strung together
+अनूदित	s1	translated
+अनेकता	s1	multiplicity, plurality
+अनेकता	s2	disunity, diversity
+अनेकरूपता	s1	diversity, variety
+अनेकानेक	s1	many and various, numerous
+अनेकौं	s1	many, numerous
+अनौचित्य	s1	impropriety, unfairness
+अन्जाम	s1	outcome, consequence, result
+अन्टसन्ट	s1	nonsense, gibberish
+अन्तःपुर	s1	inner palace, harem, women's quarters
+अन्तरकुन्तर	s1	nooks and crannies, corners
+अन्तरतम	s1	innermost
+अन्तरतम	s2	deepest, most profound
+अन्तरवर्ती	s1	intermediate, in between
+अन्तरात्मा	s1	inner self, conscience, soul
+अन्तर्कथा	s1	inside story, secret, inner sorrow
+अन्तर्कलह	s1	internal strife, infighting
+अन्तर्घात	s1	betrayal from within, treachery
+अन्तर्घाती	s1	treacherous, traitorous
+अन्तर्ज्ञान	s1	intuition, insight
+अन्तर्ज्ञानी	s1	intuitive, insightful
+अन्तर्ज्वाला	s1	inner fire, inner turmoil
+अन्तर्दाह	s1	inner burning, jealousy, heartache
+अन्तर्दृष्टि	s1	insight, inner vision
+अन्तर्धान	s1	sudden disappearance, vanishing
+अन्तर्बोध	s1	intuition, inner knowledge
+अन्तर्भूत	s1	included, contained, inherent
+अन्तर्मन	s1	inner mind, subconscious
+अन्तर्मुखी	s1	introverted, introspective
+अन्तर्विदना	s1	inner pain, anguish
+अन्तर्व्यथा	s1	inner anguish, heartache
+अन्तर्हृदय	s1	inner heart, innermost feelings
+अन्तश्चक्षु	s1	inner eye, mind's eye
+अन्तश्चेतना	s1	inner consciousness
+अन्तस्करण	s1	mind, heart, conscience
+अन्तस्तल	s1	inner layer, depths, core
+अन्तस्थ	s1	internal, inner, situated within
+अन्तस्थ	s2	semivowel (y, r, l, v)
+अन्दाजी	s1	estimated, approximate, guessed
+अन्धकारमय	s1	dark, gloomy, pitch-dark
+अन्धता	s1	blindness, darkness
+अन्धभक्ति	s1	blind devotion, blind faith
+अन्धाधुन्ध	s1	recklessly, indiscriminately, wildly
+अन्धो	s1	blind person
+अन्धो	s2	blind (figuratively), undiscerning, blinded (by passion or ignorance)
+अन्नदाता	s1	provider, breadwinner, benefactor
+अन्नप्राशन	s1	rice-feeding ceremony (first solid food for an infant)
+अन्मनु	s1	to depart for the wedding (at the auspicious time)
+अन्मनु	s2	to get dressed up, to get ready
+अन्यतम	s1	one among others, one of many
+अन्यतम	s2	intimate, dearest
+अन्यत्री	s1	outsider, stranger
+अन्यथा	s1	otherwise, a different state of affairs
+अन्योलमय	s1	confusing, bewildering
+अन्विति	s1	coherence, harmony, agreement
+अन्वेषी	s1	exploring, searching, investigative
+अपकर्म	s1	misdeed, wrongdoing
+अपकर्ष	s1	downward pull, decline, decadence
+अपकार	s1	harm, injury, disservice
+अपकारी	s1	ungrateful, harmful, malevolent
+अपकीर्ति	s1	infamy, disrepute
+अपक्षय	s1	decrease, decline, erosion
+अपगति	s1	reverse motion, regression
+अपच	s1	indigestion
+अपठित	s1	unread, unlettered
+अपत्यारिलो	s1	unbelievable, untrustworthy
+अपभ्रष्ट	s1	corrupted, degenerated
+अपभ्रष्ट	s2	corrupt, depraved
+अपमानजनक	s1	insulting, humiliating, disrespectful
+अपमानित	s1	insulted, humiliated
+अपयश	s1	disrepute, infamy, disgrace
+अपरम्पार	s1	boundless, limitless, infinite
+अपरिपक्वता	s1	unripeness
+अपरिपक्वता	s2	immaturity
+अपरिमित	s1	immeasurable, countless, unlimited
+अपरिमेय	s1	immeasurable, incalculable
+अपरिष्कृत	s1	unrefined, unpolished
+अपरिष्कृत	s2	unprocessed, raw
+अपरोक्ष	s1	direct, visible, before one's eyes
+अपर्झट	s1	suddenly, unexpectedly
+अपर्याप्तता	s1	inadequacy, insufficiency
+अपवित्र	s1	impure, unholy, defiled
+अपवित्र	s2	unclean, dirty
+अपवित्र	s3	unwholesome, unhealthy
+अपवित्रता	s1	impurity, defilement
+अपविद्या	s1	evil knowledge, black arts, false learning
+अपव्यय	s1	waste, extravagance, squandering
+अपशकुन	s1	bad omen, ill omen
+अपशब्द	s1	abuse, insult, harsh words
+अपशब्द	s2	obscene word, profanity
+अपसर्पण	s1	sliding, creeping, slipping away
+अपसोच	s1	sorrow, regret
+अपस्मार	s1	epilepsy
+अपहरित	s1	abducted, kidnapped, hijacked
+अपाक्य	s1	unripe, uncooked
+अपाक्य	s2	uncooked food, raw food
+अपात्र	s1	unworthy person, person of bad character
+अपानवायु	s1	flatulence, fart
+अपायक	s1	inconvenient, out of the way
+अपुग्दो	s1	insufficient, inadequate
+अपुत्र	s1	sonless, without a son
+अपूर्ण	s1	incomplete, unfinished
+अपूर्णता	s1	incompleteness, imperfection
+अपूर्व	s1	unprecedented, never seen before
+अपूर्व	s2	wonderful, extraordinary
+अपेक्षाकृत	s1	relatively, comparatively
+अपौरुष	s1	unmanly, superhuman
+अपौरुषेय	s1	not man-made, of divine origin
+अपौष्टिक	s1	non-nutritious, unwholesome
+अप्रकट	s1	unrevealed, hidden, latent
+अप्रकटित	s1	undisclosed, unrevealed
+अप्रकाशित	s1	unpublished, unrevealed
+अप्रकृत	s1	irrelevant, off-topic
+अप्रचलित	s1	obsolete, out of use, uncommon
+अप्रच्छन्न	s1	uncovered, open, undisguised
+अप्रदर्शित	s1	undisplayed, unexhibited
+अप्रधान	s1	secondary, minor, subordinate
+अप्रधानता	s1	secondary status, minor importance
+अप्रमाणित	s1	unproven, unverified, uncertified
+अप्रशिक्षित	s1	untrained
+अप्रशोधित	s1	unrefined, unprocessed, unpurified
+अप्रसन्न	s1	unhappy, displeased
+अप्रसन्नता	s1	displeasure, unhappiness
+अप्राकृत	s1	unknown, obscure, unrenowned
+अप्राकृतिक	s1	unnatural
+अप्राज्ञ	s1	unlearned, unscholarly
+अप्राप्त	s1	unobtained, not received
+अप्राप्ति	s1	non-receipt, non-attainment
+अप्राप्य	s1	unobtainable, unattainable
+अप्रामाणिक	s1	unauthentic, unsubstantiated
+अप्रासङ्गिक	s1	irrelevant
+अप्रासङ्गिकता	s1	irrelevance
+अप्रिय	s1	unpleasant, disliked, unpopular
+अप्रियता	s1	unpleasantness, unpopularity
+अप्रौढ	s1	immature
+अफबाह	s1	rumour, false report
+अफलता	s1	failure, fruitlessness
+अफिम्ची	s1	opium addict, opium eater
+अफिसरी	s1	officer's work, officialdom
+अबगाल	s1	blame
+अबगाल	s2	disgrace, social dishonour
+अबध्य	s1	inviolable, not to be killed
+अबला	s1	weak, helpless (woman)
+अबाटो	s1	rough path, wrong way
+अबाध	s1	unobstructed, unhindered, free
+अबाधित	s1	unrestricted, unhindered
+अबुझ	s1	obtuse, uncomprehending, stubborn
+अबुद्धि	s1	ignorance, foolishness
+अबोध	s1	innocent, naive, ignorant
+अबोधगम्य	s1	incomprehensible, unintelligible
+अभक्ष्य	s1	inedible, forbidden to eat
+अभक्ष्य	s2	forbidden food
+अभद्र	s1	rude, indecent, uncivil
+अभर	s1	lack of support, unreliability
+अभाग	s1	misfortune, bad luck
+अभिजात	s1	aristocratic, highborn, noble
+अभिज्ञान	s1	token of recognition, keepsake
+अभिनन्दित	s1	honoured, felicitated, welcomed
+अभिनव	s1	new, novel, innovative
+अभिनीत	s1	performed, acted, staged
+अभिन्नता	s1	oneness, inseparability, intimacy
+अभिप्रेरक	s1	motivating, inspiring
+अभिप्रेरणा	s1	motivation
+अभिप्रेरित	s1	motivated
+अभिभूत	s1	overwhelmed, overcome
+अभिमत	s1	opinion, view
+अभिमत	s2	preference, liking
+अभिमान	s1	pride, arrogance, conceit
+अभिमानी	s1	proud, arrogant, conceited
+अभिमुख	s1	facing, turned towards
+अभियोक्ता	s1	accusing, accuser, prosecutor
+अभिराम	s1	beautiful, charming, lovely
+अभिवादक	s1	greeter, one who salutes
+अभिवृत्ति	s1	attitude, outlook
+अभिषिक्त	s1	anointed, consecrated
+अभुक्त	s1	unconsumed, uneaten, unenjoyed
+अभूतपूर्व	s1	unprecedented
+अभेक	s1	inconvenient, out of the way
+अभेद	s1	non-distinction, identity, sameness
+अभोज्य	s1	inedible, not fit to eat
+अभौतिक	s1	immaterial, non-physical
+अभ्यन्तर	s1	interior, inner part
+अभ्यन्तर	s2	inner mind, innermost thoughts
+अभ्यर्थना	s1	humble request, supplication
+अभ्यासात्मक	s1	practical, exercise-based
+अभ्यासी	s1	practising, habituated, practitioner
+अभ्युत्थान	s1	rise, uprising
+अभ्युदय	s1	rise, emergence
+अभ्युदय	s2	prosperity, advancement
+अमङ्गल	s1	misfortune, ill luck, inauspiciousness
+अमनचैन	s1	peace and tranquility, peace and comfort
+अमरता	s1	immortality
+अमरता	s2	lasting fame, renown
+अमरपुर	s1	heaven, city of the immortals
+अमर्यादा	s1	impropriety, indecorum
+अमलेख	s1	abolition of slavery, emancipation
+अमानक	s1	non-standard, substandard
+अमानवीयता	s1	inhumanity, cruelty
+अमान्य	s1	unacceptable, invalid
+अमिट	s1	indelible, permanent
+अमित्र	s1	enemy, unfriendly person
+अमित्रता	s1	unfriendliness, enmity
+अमिल्चो	s1	slightly sour, sourish
+अमुक	s1	so-and-so, such-and-such
+अमुख्य	s1	secondary, minor
+अमूर्तता	s1	abstractness
+अमेरिकाली	s1	American
+अमेरिकाली	s2	American (person)
+अमौलिक	s1	unoriginal, derivative
+अमौलिक	s2	imitated, copied
+अम्मल	s1	intoxicant, addictive substance
+अम्लपित्त	s1	acidity, heartburn
+अम्लान	s1	unfaded, unwithered, fresh
+अयथार्थ	s1	unreal, untrue, inaccurate
+अयथार्थता	s1	unreality, inaccuracy
+अयुग्म	s1	unpaired, odd
+अयोग	s1	absence of union, disjunction
+अयोग	s2	lack of opportunity, bad timing
+अयोग	s3	inopportune moment
+अयोगवाह	s1	anusvara and visarga (sounds between vowels and consonants)
+अयोगात्मक	s1	isolating (language type), non-combining
+अयौगिक	s1	non-compound, simple
+अयौग्यता	s1	ineligibility, incompetence
+अरक	s1	distilled liquor, spirit, arrack
+अरक्षित	s1	unprotected, unguarded
+अरगज्ज	s1	stiff, rigid
+अरट्ठ	s1	stiff, rigid
+अरट्ठिनु	s1	to stiffen, to become rigid
+अररो	s1	stiff, rigid, hard
+अरसिक	s1	humourless, unappreciative
+अराइपराइ	s1	errands, ordering about
+अरिमट्ठ	s1	stiff, rigid
+अरिमट्ठे	s1	millipede
+अरुचि	s1	loss of appetite, distaste
+अरुचिकर	s1	unappetizing, uninteresting, distasteful
+अरुणिमा	s1	redness, ruddy glow
+अरोचक	s1	uninteresting, dull, boring
+अरौटेभरौटे	s1	errand boy, hired hand, lackey
+अर्घेलो	s1	mismatched, incongruous
+अर्घेलो	s2	leftover, remainder
+अर्चनीय	s1	worthy of worship, venerable
+अर्जी	s1	petition, application, request
+अर्जी	s2	application for extension (in court)
+अर्ती	s1	advice, counsel, moral instruction
+अर्थकरी	s1	lucrative, profitable, remunerative
+अर्थगत	s1	semantic, relating to meaning
+अर्थतम्त्र	s1	economy, economic system
+अर्थपूर्ण	s1	meaningful, significant
+अर्थबोध	s1	comprehension, understanding of meaning
+अर्थवान्	s1	meaningful
+अर्थहिन	s1	meaningless, pointless
+अर्थिनु	s1	to be interpreted, to make sense
+अर्थी	s1	bier
+अर्थ्याउनु	s1	to interpret, to explain the meaning
+अर्धगोलाकार	s1	hemispherical, semicircular
+अर्धङ्गी	s1	mentally unsound, half-crazed
+अर्धचन्द्र	s1	half-moon, crescent
+अर्धनिद्रा	s1	half-sleep, drowsiness
+अर्धभाग	s1	half, half portion
+अर्धवयस्क	s1	middle-aged
+अर्धविकसित	s1	half-developed, underdeveloped
+अर्धवृत्त	s1	semicircle
+अर्धाङ्ग	s1	half of the body, husband (as the wife's other half)
+अर्धाङ्गिनी	s1	wife, better half
+अर्धाश	s1	half, half share
+अर्धो	s1	widower (bereaved in middle age)
+अर्पित	s1	offered, dedicated
+अर्पिनु	s1	to be offered, to be dedicated
+अर्वाचीन	s1	later, recent
+अर्वाचीन	s2	modern, contemporary
+अलक	s1	forelock, curl of hair over the forehead
+अलका	s1	forelock, locks of hair over the forehead
+अलकाई	s1	anal swelling, perianal boil
+अलक्षित	s1	unnoticed, unseen, unmarked
+अलक्ष्य	s1	invisible, imperceptible
+अलग्गिनु	s1	to be separated, to be detached
+अलङ्कार	s1	ornament, jewellery
+अलङ्कार	s2	adornment, decoration
+अलङ्कार	s3	figure of speech, rhetorical ornament
+अलङ्कृत	s1	adorned, decorated, embellished
+अलङ्घनीय	s1	insurmountable, inviolable
+अलच्छिन	s1	ill omen, bad sign
+अलच्छिनाहा	s1	ill-omened, unlucky
+अलच्छिनी	s1	ill-omened, unlucky (woman)
+अलनाबिलना	s1	lamentation, pouring out one's woes
+अलप	s1	disappearance, vanishing from sight
+अलपत्रिनु	s1	to be stranded, to be left in the lurch
+अलपत्रे	s1	stranded, abandoned, left unfinished
+अलप्नु	s1	to lament, to wail, to weep bitterly
+अलबल्ले	s1	unmanageable, unwieldy
+अलभ्य	s1	unobtainable, rare
+अलमलिनु	s1	to be confused, to be bewildered
+अलमलिनु	s2	to get entangled, to get into trouble
+अलमलिनु	s3	to be distracted
+अलमल्ल	s1	confused, bewildered
+अलमस्त	s1	carefree, happy-go-lucky
+अलमस्ती	s1	carefreeness, nonchalance
+अलापविलाप	s1	lamentation, airing of grievances
+अलिअलि	s1	a little, slightly, bit by bit
+अलिखित	s1	unwritten
+अलिप्त	s1	uninvolved, detached
+अलिप्त	s2	non-aligned, unattached
+अलेख	s1	incalculable, beyond reckoning
+अलौकिक	s1	supernatural, otherworldly
+अलौकिक	s2	extraordinary, wondrous
+अलौटो	s1	half-dried, not fully dry
+अल्छ्याइँ	s1	laziness, sloth
+अल्झाउनु	s1	to entangle, to get caught
+अल्झिनु	s1	to get entangled, to get caught, to get stuck
+अल्झो	s1	entanglement, snag
+अल्पजीवी	s1	short-lived
+अल्पज्ञ	s1	of little knowledge, ill-informed
+अल्पज्ञ	s2	half-wit, person of little understanding
+अल्पज्ञता	s1	limited knowledge, ignorance
+अल्पज्ञान	s1	limited knowledge, smattering
+अल्पता	s1	scarcity, shortage, paucity
+अल्पबुद्धि	s1	low intelligence, dim-wittedness
+अल्पबुद्धि	s2	dimwit, simpleton
+अल्पभाषी	s1	taciturn, reticent, of few words
+अल्पविकसित	s1	underdeveloped, least developed
+अल्पविराम	s1	comma
+अल्पाउनु	s1	to make disappear, to hide away
+अल्पायु	s1	short life, young age
+अल्पायु	s2	short-lived
+अल्पावधि	s1	short term, short period
+अल्पावधिक	s1	short-term
+अल्पाहार	s1	light meal, snack, refreshment
+अल्पिनु	s1	to disappear, to vanish
+अल्ला	s1	Allah, God
+अल्लारिनु	s1	to become wayward, to loaf about
+अल्लारे	s1	loafing, idle, wandering aimlessly
+अल्लारे	s2	carefree youth, exuberant young
+अवकर्षण	s1	pulling back, repulsion
+अवगत	s1	informed, aware, known
+अवगतार्थ	s1	for information, for one's information
+अवगुण	s1	fault, vice, defect
+अवचेतन	s1	semiconscious, subconscious
+अवचेतन	s2	the subconscious
+अवच्छिन्न	s1	severed, cut off, separated
+अवनत	s1	bent down, bowed, declined
+अवनति	s1	decline, downfall, degeneration
+अवबोध	s1	comprehension, understanding
+अवबोध	s2	awakening, waking up
+अवयवी	s1	whole, having all parts, organic
+अवयस्क	s1	minor, underage
+अवरोहण	s1	descent, alighting
+अवलम्बनीय	s1	adoptable, worth adopting
+अवलोकनीय	s1	worth seeing, noteworthy
+अवलोकनीय	s2	worth reading, worth studying
+अवसाद	s1	dejection, depression, despondency
+अवाइजवाइ	s1	coming and going, traffic
+अवाक्	s1	speechless, dumbstruck
+अवाल	s1	kiln, brick kiln
+अविकल्प	s1	without alternative, sole
+अविकृत	s1	unaltered, undistorted, intact
+अविक्षण	s1	looking, observation
+अविचल	s1	steady, unwavering, immovable
+अविचलित	s1	unmoved, unshaken
+अविचलित	s2	calm, unperturbed
+अविच्छिन्न	s1	unbroken, continuous, uninterrupted
+अविजित	s1	unconquered, undefeated
+अविज्ञ	s1	inexpert, unskilled, ignorant
+अविज्ञता	s1	lack of expertise, ignorance
+अविज्ञात	s1	unknown
+अविदित	s1	unknown, unaware
+अविद्या	s1	ignorance
+अविनाशी	s1	indestructible, imperishable, eternal
+अविपन्न	s1	not poor, well-off
+अविराम	s1	ceaseless, unceasing, restless
+अविराम	s2	continuously, incessantly
+अविलम्ब	s1	immediately, without delay
+अविलम्बित	s1	prompt, undelayed
+अविश्वस्त	s1	untrusted, unreliable
+अविस्तारित	s1	unexpanded, unextended
+अविस्तृत	s1	unexpanded, brief, concise
+अवैज्ञानिक	s1	unscientific
+अवैधानिक	s1	unconstitutional, unlawful, irregular
+अव्यक्त	s1	unexpressed, unmanifest
+अव्यर्थ	s1	unfailing, infallible, effective
+अव्यवस्था	s1	disorder, lawlessness, mismanagement
+अव्यवस्था	s2	mess, chaos, disarray
+अव्यवस्था	s3	mismanagement, bad arrangement
+अव्युत्पादित	s1	underived, non-derived
+अशक्तता	s1	infirmity, weakness, disability
+अशक्य	s1	impossible, impracticable
+अंशभागी	s1	shareholder, heir to a share, co-parcener
+अशान्त	s1	restless, disturbed, troubled
+अशान्त	s2	noisy, tumultuous
+अंशावतार	s1	partial incarnation (of a deity)
+अशास्त्रीय	s1	unscriptural, unorthodox, unscientific
+अशिक्षित	s1	uneducated, illiterate
+अशिष्ट	s1	impolite, rude, ill-mannered
+अशिष्टता	s1	rudeness, impoliteness
+अशुचि	s1	impure, unclean
+अशुद्ध	s1	unclean, impure
+अशुद्ध	s2	incorrect, non-standard
+अशुद्ध	s3	unconsecrated, ritually impure
+अशुद्धि	s1	impurity, error, mistake
+अशुभ	s1	inauspicious, unlucky, ominous
+अशुभ	s2	misfortune, harm
+अशेष	s1	complete, entire, with nothing left
+अश्रद्धा	s1	lack of faith, irreverence, disrespect
+अश्रपूर्ण	s1	tearful, tear-filled
+अश्रुत	s1	unheard, unknown
+अश्रुपात	s1	shedding of tears, weeping
+अश्रेयस्कर	s1	unbeneficial, unwholesome, inadvisable
+अश्लीलता	s1	obscenity, indecency, vulgarity
+अश्वयान	s1	horse-drawn carriage
+अश्वशाला	s1	stable, horse stable
+अश्वारोही	s1	horseman, rider, cavalryman
+अष्टाङ्ग	s1	eight limbs, eight parts
+असक	s1	thin, frail, weak
+असङ्ख्य	s1	countless, innumerable
+असङ्गत	s1	incongruous, inconsistent, irrelevant
+असञ्चित	s1	unaccumulated, not stored
+असतर्क	s1	careless, unwary, heedless
+असती	s1	unchaste (woman), unfaithful (wife)
+असत्यता	s1	falsity, untruthfulness
+असद्भाव	s1	ill will, lack of goodwill
+असन्तोषी	s1	discontented, dissatisfied
+असभ्य	s1	uncivilized, rude, uncouth
+असभ्यता	s1	incivility, rudeness, barbarism
+असमय	s1	wrong time, untimeliness
+असमर्थता	s1	inability, incapacity
+असमापक	s1	non-finite, incomplete
+असम्पन्न	s1	unaccomplished, incomplete
+असम्बद्ध	s1	unrelated, irrelevant, unconnected
+असम्मति	s1	disagreement, dissent
+असम्मान	s1	disrespect, dishonour
+असंयमित	s1	unrestrained, intemperate, uncontrolled
+असंयमी	s1	intemperate, lacking self-control
+असंयुक्त	s1	uncombined, separate, disjoined
+असरदार	s1	effective, influential
+असंलग्नता	s1	non-involvement, non-alignment
+असलियत	s1	truth, reality, real facts
+असंश्लिष्ट	s1	unsynthesized, not integrated
+असहयोगी	s1	uncooperative, unhelpful
+असाध्य	s1	incurable, impossible, unachievable
+असाध्य	s2	extremely, exceedingly
+असाम्प्रदायिक	s1	non-sectarian, secular
+असावधान	s1	careless, inattentive, negligent
+असावधानी	s1	carelessness, negligence
+अंसियार	s1	co-sharer, heir to a share
+असीमित	s1	unlimited, boundless
+असुबिस्ता	s1	inconvenience, discomfort
+अस्ताउनु	s1	to set (of the sun or moon)
+अहिंस्य	s1	not to be harmed, inviolable
+अहोरात्र	s1	day and night, round the clock
+आइजाइ	s1	coming and going
+आउजाउ	s1	coming and going, traffic
+आकर्षकता	s1	attractiveness, appeal
+आकाङ्क्षा	s1	desire, aspiration, wish
+आकाङ्क्षित	s1	desired, wished-for
+आकासिँदो	s1	soaring, skyrocketing
+आकासे	s1	aerial, of the sky
+आकासे	s2	rain-fed (land)
+आकासे	s3	stargazing, walking with one's head in the air
+आकुल	s1	anxious, agitated, distressed
+आकृष्ट	s1	attracted, drawn
+आखिरी	s1	final, last resort, indispensable
+आखेट	s1	hunting, hunt, chase
+आखेटक	s1	hunter
+आख्यात	s1	finite verb
+आख्यात	s2	said, stated, narrated
+आग्रही	s1	insistent, urging, requesting
+आग्रही	s2	stubborn, obstinate
+आग्रही	s3	dogmatic, biased
+आग्लिनु	s1	to grow tall, to become lanky
+आचरणीय	s1	to be practised, to be observed
+आची	s1	poo (child's word), faeces
+आच्छादक	s1	covering, overlaying
+आच्छादन	s1	covering, cover
+आजकाल	s1	nowadays, these days
+आजन्म	s1	lifelong, from birth, for life
+आजित	s1	fed up, weary, exasperated
+आजीवन	s1	lifelong, for life
+आजीविका	s1	livelihood, occupation
+आज्ञाकारी	s1	obedient
+आज्ञानुसार	s1	as ordered, as instructed
+आज्ञापत्र	s1	written order, warrant, permit
+आँटिलो	s1	brave, daring, courageous
+आणविक	s1	atomic, nuclear, molecular
+आँत	s1	insides, bowels, guts
+आँत	s2	heart, courage
+आत्तिनु	s1	to panic, to be flustered
+आत्मगौरव	s1	self-respect, dignity, self-esteem
+आत्मघात	s1	suicide
+आत्मनिवेदन	s1	heartfelt appeal, personal plea
+आत्मरक्षक	s1	self-defensive, self-protecting
+आत्मविद्या	s1	spiritual knowledge, knowledge of the self
+आत्मसंयमी	s1	self-controlled, self-disciplined
+आत्मस्तुति	s1	self-praise
+आत्मानुभव	s1	personal experience
+आत्मानुभूति	s1	personal experience, self-realization
+आत्मिक	s1	personal, spiritual, heartfelt
+आत्मोद्धार	s1	self-liberation, salvation, self-improvement
+आदरणीय	s1	respected, honourable, venerable
+आदरसम्मान	s1	respect and honour
+आदाता	s1	recipient, receiving
+आदानात्मक	s1	receptive, relating to receiving
+आदाब	s1	adab (a respectful greeting)
+आदिकारण	s1	root cause, primary cause
+आदिम	s1	primitive, primeval, original
+आदिमानव	s1	primitive man, first human, early humans
+आदेशानुसार	s1	as ordered, as directed
+आधान	s1	placing, depositing, installation
+आधारतत्त्व	s1	basic element, fundamental principle
+आधारहीन	s1	baseless, without foundation
+आधारहीन	s2	groundless, unfounded
+आधिक्य	s1	abundance, excess, surplus
+आनन्ददायी	s1	pleasant, delightful, enjoyable
+आनन्दमय	s1	blissful, joyful
+आनन्दित	s1	delighted, joyful, happy
+आनन्दी	s1	cheerful, joyful
+आनाकानी	s1	reluctance, dilly-dallying, evasion
+आनुक्रमिक	s1	sequential, serial, in order
+आनुपातिक	s1	proportional, proportionate
+आपत्	s1	calamity, crisis, emergency
+आपत्काल	s1	emergency, time of crisis
+आपत्कालीन	s1	emergency
+आप्त	s1	trusted, reliable
+आफूखुसी	s1	at will, as one pleases, arbitrarily
+आफूसहाउँदो	s1	suitable, convenient for oneself
+आबद्धता	s1	affiliation, attachment
+आबाद	s1	cultivated, tilled
+आबादी	s1	cultivated land, farmland
+आबादी	s2	population
+आबारा	s1	vagabond, vagrant, dissolute
+आभारी	s1	grateful, thankful, indebted
+आभूषण	s1	ornament, jewellery
+आमरण	s1	until death, to the death
