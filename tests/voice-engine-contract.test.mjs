@@ -89,8 +89,8 @@ test('browser guidance distinguishes service failure from permission and removes
   const output = await build({ entryPoints: ['src/patro-tools/language/voice-guidance.ts'], bundle: true, write: false, format: 'cjs' });
   const context = { module: { exports: {} }, URL }; runInNewContext(output.outputFiles[0].text, context);
   const api = context.module.exports;
-  assert.match(api.speechError('en-US', 'not-allowed'), /allow microphone/);
-  assert.doesNotMatch(api.speechError('en-US', 'service-not-allowed'), /allow microphone/);
+  assert.match(api.speechError('en-US', 'not-allowed'), /[Aa]llow microphone/);
+  assert.doesNotMatch(api.speechError('en-US', 'service-not-allowed'), /[Aa]llow microphone/);
   assert.match(api.speechError('en-US', 'service-not-allowed'), /Siri/);
   for (const app of ['FBAN', 'FBAV', 'Instagram', 'Line/14', 'TikTok', 'Viber']) {
     const info = api.voiceBrowserGuidance(`Android ${app}`, 'https://aafnaipatro.com/tools/voice-typing?name=private#secret');
