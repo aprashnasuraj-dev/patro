@@ -54,7 +54,8 @@ jobs:
       - name: Fetch public source leads
         run: |
           python blog-engine/scripts/fetch_sources.py --topics .missionmangal-staging/topics.json --output .missionmangal-staging/sources.json --delay 0.25
-      - name: Build source-mapped perspectives
+      - name: Build source-mapped perspectives (AI enabled)
+        if: inputs.run_drafting
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -63,6 +64,10 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json
+      - name: Build perspectives checklist without model calls
+        if: ${{ !inputs.run_drafting }}
+        run: |
+          python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json --offline
       - name: Draft only evidence-complete packets
         if: inputs.run_drafting
         env:
