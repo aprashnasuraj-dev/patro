@@ -6,7 +6,7 @@ on:
       count:
         description: Number of candidate topics to process (bounded by available unique seeds)
         required: true
-        default: '2000'
+        default: '2500'
       run_drafting:
         description: Attempt drafting only for source packets that already pass strict evidence gates
         required: true
@@ -57,7 +57,7 @@ jobs:
           cd blog-engine && python -m unittest discover -s tests -v
       - name: Discover unique SEO topic candidates
         run: |
-          python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --output .missionmangal-staging/topics.json
+          python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --results-per-seed 40 --output .missionmangal-staging/topics.json
       - name: Fetch public source leads
         run: |
           python blog-engine/scripts/fetch_sources.py --topics .missionmangal-staging/topics.json --output .missionmangal-staging/sources.json --delay 0.25
