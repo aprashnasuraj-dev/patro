@@ -13,14 +13,24 @@ def slug(value):
 
 def request_image(prompt, key, timeout=90):
     url="https://gen.pollinations.ai/image/"+urllib.parse.quote(prompt, safe="")+"?width=768&height=768&safe=true"
-    req=urllib.request.Request(url,headers={"Authorization":"Bearer "+key,"User-Agent":"AafnaiPatroEditorialImageBot/1.0","Accept":"image/jpeg,image/png,image/webp"})
-    with urllib.request.urlopen(req,timeout=timeout) as response:
-        content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
-        data=response.read(15_000_000)
-    if content_type not in ("image/jpeg","image/png","image/webp") or len(data)<4096:
-        raise ValueError("Provider response was not a valid image payload")
-    ext={"image/jpeg":".jpg","image/png":".png","image/webp":".webp"}[content_type]
-    return data,ext,content_type
+    for attempt in range(5):
+        req=urllib.request.Request(url,headers={"Authorization":"Bearer "+key,"User-Agent":"AafnaiPatroEditorialImageBot/1.0","Accept":"image/jpeg,image/png,image/webp"})
+        try:
+            with urllib.request.urlopen(req,timeout=timeout) as response:
+                content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
+                data=response.read(15_000_000)
+            if content_type not in ("image/jpeg","image/png","image/webp") or len(data)<4096:
+                raise ValueError("Provider response was not a valid image payload")
+            ext={"image/jpeg":".jpg","image/png":".png","image/webp":".webp"}[content_type]
+            return data,ext,content_type
+        except urllib.error.HTTPError as e:
+            if e.code not in (408,425,429,500,502,503,504) or attempt==4:
+                raise
+            retry=e.headers.get("Retry-After") if e.headers else None
+            try: wait=min(180,max(1,float(retry))) if retry else min(120,10*(2**attempt))
+            except (ValueError,TypeError): wait=min(120,10*(2**attempt))
+            time.sleep(wait)
+    raise RuntimeError("Image retry budget exhausted")
 
 def main():
     p=argparse.ArgumentParser()
