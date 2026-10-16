@@ -128,7 +128,7 @@ jobs:
           import json, pathlib
           root=pathlib.Path('.missionmangal-staging')
           summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
-          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','image-generation-report.json','site/render-report.json'):
+          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','drafts/image-generation-report.json','site/render-report.json'):
             p=root/name
             if p.exists():
               data=json.loads(p.read_text(encoding='utf-8'))
