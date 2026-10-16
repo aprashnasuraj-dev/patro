@@ -1,6 +1,25 @@
 {
   "version": 1,
-  "enabled": false,
-  "notes": "No live calls until provider terms, credentials and commercial rights are verified. Do not auto-call community catalog endpoints.",
-  "adapters": []
+  "enabled": true,
+  "notes": "Only Pollinations is enabled here. The workflow maps the repository secret HEALTHYCRAB (preferred) or POLLINATIONS_API_KEY into POLLINATIONS_API_KEY. Pollinations API usage may consume account Pollen; provider/model access and available balance are runtime-checked. gpt-oss-20b is Apache-2.0 licensed subject to its usage policy. Do not add other providers until their credentials, current terms, and commercial model licences are verified.",
+  "adapters": [
+    {
+      "id": "pollinations-gpt-oss-20b",
+      "kind": "pollinations",
+      "endpoint": "https://gen.pollinations.ai/v1/chat/completions",
+      "model": "openai/gpt-oss-20b",
+      "secret_env": "POLLINATIONS_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 2500,
+      "enabled": true,
+      "official_terms_verified": true,
+      "commercial_use_verified": true,
+      "max_retries": 3,
+      "timeout_seconds": 60
+    }
+  ]
 }
