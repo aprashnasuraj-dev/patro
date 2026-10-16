@@ -57,6 +57,11 @@ jobs:
         run: |
           python -m compileall -q blog-engine/engine blog-engine/scripts blog-engine/tests
           cd blog-engine && python -m unittest discover -s tests -v
+      - name: Import existing topics from Google Sheets
+        env:
+          TOPIC_SHEET_CSV_URL: ${{ vars.TOPIC_SHEET_CSV_URL }}
+        run: |
+          python blog-engine/scripts/import_sheet_topics.py --seeds blog-engine/data/topic-seeds.json --output .missionmangal-staging/sheet-import-report.json --merged-seeds .missionmangal-staging/merged-topic-seeds.json
       - name: Discover unique SEO topic candidates
         run: |
           python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --results-per-seed 40 --output .missionmangal-staging/topics.json
