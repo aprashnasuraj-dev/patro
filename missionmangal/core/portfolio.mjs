@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 export const SITE='https://aafnaipatro.com';
-export const MAX_ARTICLES=2000;
+export const MAX_ARTICLES=2500;
 export const ROUTES=Object.freeze({article:'articles',blog:'blogs',fact:'facts',answer:'what'});
 export const BYLINE='AafnaiPatro Editor Team';
 export function slugify(input){const s=String(input).normalize('NFKD').toLowerCase().replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,88).replace(/-+$/,'');if(!s)throw Error('Explicit English slug/transliteration required');return s;}
