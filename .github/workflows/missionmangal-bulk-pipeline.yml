@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "preflight validates the isolated pipeline; stage renders only already-approved articles"
+        description: "preflight checks contracts; plan builds SEO opportunity queue; stage renders approved articles only"
         required: true
         type: choice
-        options: [preflight, stage]
+        options: [preflight, plan, stage]
       require_2000:
         description: "Require at least 2,000 approved records before staging"
         required: true
@@ -52,6 +52,8 @@ jobs:
             console.error('Provider activation requires a separate reviewed change.');
             process.exit(1);
           }
+          JSON.parse(fs.readFileSync('blog-engine/data/research-provider-catalog.json','utf8'));
+          JSON.parse(fs.readFileSync('blog-engine/data/topic-seeds.json','utf8'));
           console.log('Contracts parse; unreviewed providers remain disabled.');
           NODE
       - name: Run Mission Mangal tests
@@ -66,12 +68,25 @@ jobs:
           echo "node_status=$NODE_STATUS" >> "$GITHUB_OUTPUT"
           echo "python_status=$PY_STATUS" >> "$GITHUB_OUTPUT"
           if [ "$NODE_STATUS" -ne 0 ] || [ "$PY_STATUS" -ne 0 ]; then
-            echo "Some checks failed; preserve logs and do not publish." >> "$GITHUB_STEP_SUMMARY"
+            echo "Some checks failed; artifacts are diagnostic only and staging is blocked." >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Generate SEO opportunity queue (candidate ideas only)
+        if: inputs.mode == 'plan'
+        run: |
+          python blog-engine/scripts/plan_opportunities.py --limit 2500
+          python - <<'PY'
+          import json
+          p=json.load(open('blog-engine/data/opportunity-queue.json',encoding='utf-8'))
+          print('Candidate ideas:',p['selected'],'Publishable articles:',p['publishable_articles'])
+          PY
+      - name: Block staging on failed tests
+        if: inputs.mode == 'stage' && (steps.tests.outputs.node_status != '0' || steps.tests.outputs.python_status != '0')
+        run: |
+          echo "Staging blocked because one or more test suites failed. Fix and rerun; no production files were changed."
+          exit 1
       - name: Validate registry and staging prerequisites
         id: gate
         if: inputs.mode == 'stage'
-        continue-on-error: true
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
@@ -85,13 +100,14 @@ jobs:
           }
           NODE
           node missionmangal/scripts/build.mjs
-      - name: Upload private staging and diagnostics
-        if: always() && inputs.mode == 'stage'
+      - name: Upload staging, topic queue and diagnostics
+        if: always() && (inputs.mode == 'stage' || inputs.mode == 'plan')
         uses: actions/upload-artifact@v4
         with:
-          name: missionmangal-staging-${{ github.run_id }}
+          name: missionmangal-${{ inputs.mode }}-${{ github.run_id }}
           path: |
             .missionmangal-staging/
+            blog-engine/data/opportunity-queue.json
             missionmangal/config/portfolio.json
             blog-engine/data/article_ledger.jsonl
           if-no-files-found: warn
@@ -100,12 +116,13 @@ jobs:
         if: always()
         run: |
           {
-            echo "## Mission Mangal pipeline gate"
+            echo "## Mission Mangal pipeline"
             echo "- Mode: ${{ inputs.mode }}"
             echo "- Branch: ${GITHUB_REF_NAME}"
             echo "- Runner timeout: 360 minutes"
             echo "- Test step outcome: ${{ steps.tests.outcome }}"
             echo "- Provider adapters remain disabled unless separately reviewed."
+            echo "- SEO queue items are candidates, not articles; no keyword-volume metrics are fabricated."
             echo "- This workflow does not fabricate citations, approve articles, integrate production routes, or deploy."
             echo "- A green workflow is not proof of 2,000 publishable articles."
           } >> "$GITHUB_STEP_SUMMARY"
