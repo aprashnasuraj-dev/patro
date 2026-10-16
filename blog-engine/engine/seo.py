@@ -1,7 +1,7 @@
 """Canonical taxonomy; legacy daily Facts features are NOT modified."""
 import re, unicodedata
 ROOT="https://aafnaipatro.com"
-FOLDERS={"article":"articles","blog":"blogs","fact":"facts","answer":"what"}
+FOLDERS={"article":"articles","blog":"blog","fact":"facts","answer":"what"}
 def slug(title):
     ascii_=unicodedata.normalize("NFKD",title).encode("ascii","ignore").decode().lower()
     result=re.sub(r"[^a-z0-9]+","-",ascii_).strip("-")[:88].strip("-")
