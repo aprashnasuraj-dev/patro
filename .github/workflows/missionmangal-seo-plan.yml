@@ -29,10 +29,14 @@ jobs:
           python-version: '3.12'
       - name: Validate provider catalog and seeds
         run: python -c "import json; json.load(open('blog-engine/data/research-provider-catalog.json')); json.load(open('blog-engine/data/model-provider-catalog.json')); json.load(open('blog-engine/data/topic-seeds.json'))"
+      - name: Compile all pipeline scripts
+        run: python -m compileall -q blog-engine/engine blog-engine/scripts blog-engine/tests
       - name: Test planner and resume ledger
         run: cd blog-engine && python -m unittest discover -s tests -v
       - name: Build SEO opportunity queue
-        run: python blog-engine/scripts/plan_opportunities.py --limit "${{ inputs.limit }}"
+        env:
+          LIMIT: ${{ inputs.limit || '2500' }}
+        run: python blog-engine/scripts/plan_opportunities.py --limit "$LIMIT"
       - name: Upload candidate queue
         uses: actions/upload-artifact@v4
         with:
