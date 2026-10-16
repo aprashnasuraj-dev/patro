@@ -25,4 +25,4 @@ The content workflow discovers candidates from curated seeds plus Wikipedia sear
 - 2,001 candidates are not 2,001 articles. The acceptance target is 2,001 unique, source-backed, rights-cleared, human-reviewed and approved articles with working pages.
 
 ## Repository API catalogue note
-A `public-apis/` directory was not found on `main`, `missionmangal`, or this working branch during repository inspection. The workflow currently uses the explicit JSON research/model catalogues and the public Wikimedia, Crossref, OpenAlex and Commons APIs; it does not silently clone or execute an unverified third-party API list.
+The public-apis clone is present as a submodule at `missionmangal/vendor/public-apis` (alongside other vendor API lists), not as a root `public-apis/` directory. The existing validation workflow imports these lists offline as unverified candidates. The content workflow currently calls only the explicit Wikimedia, Crossref, OpenAlex and Commons endpoints; it does not automatically execute every API from the submodule.
