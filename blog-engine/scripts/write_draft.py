@@ -11,7 +11,7 @@ def main():
  for item in data.get("items",[]):
   # Deliberately require reviewed, source-mapped claims before spending model calls.
   sources=item.get("sources",[]);claims=item.get("claims",[])
-  if not (5<=len(sources)<=20 and claims and all(s.get("verified") and s.get("extract") and s.get("rights_verified") for s in sources)):
+  if not (5<=len(sources)<=20 and claims and all(s.get("verified") and s.get("extract") and s.get("claims_supported") for s in sources)):
    blocked+=1;continue
   try:
    result=router.complete("draft",[{"role":"system","content":"Write original, helpful English using only the supplied source passages. Cite source IDs for each factual claim. Do not invent details, citations, quotations, or media."},{"role":"user","content":json.dumps(item,ensure_ascii=False)}])
