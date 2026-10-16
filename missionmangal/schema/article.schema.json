@@ -27,10 +27,20 @@
     },
     "status": {
       "enum": [
+        "reserved",
+        "discovered",
+        "researching",
+        "sourced",
         "draft",
+        "editing",
+        "verifying",
+        "verified",
         "blocked",
         "review",
-        "approved"
+        "approved",
+        "rendered",
+        "published",
+        "retired"
       ]
     },
     "original_contribution": {
@@ -174,6 +184,20 @@
           }
         }
       }
+    },
+    "type": {
+      "enum": [
+        "article",
+        "blog",
+        "fact",
+        "answer"
+      ]
+    },
+    "author": {
+      "const": "AafnaiPatro Editor Team"
+    },
+    "publish_approved": {
+      "type": "boolean"
     }
   },
   "additionalProperties": true
