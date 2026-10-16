@@ -1,0 +1,150 @@
+name: Generate content (isolated staging)
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: Number of candidate topics to process (bounded by available unique seeds)
+        required: true
+        default: '2500'
+      run_drafting:
+        description: Attempt drafting only for source packets that already pass strict evidence gates
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: aafnaipatro-content-staging-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout the selected working branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate catalogues and input data
+        run: |
+          python - <<'PY'
+          import json
+          for p in [
+            'blog-engine/data/topic-seeds.json',
+            'blog-engine/data/model-provider-catalog.json',
+            'blog-engine/data/research-provider-catalog.json',
+            'missionmangal/config/adapter-allowlist.json',
+            'missionmangal/config/adapter-allowlist.example.json',
+          ]:
+            json.load(open(p, encoding='utf-8'))
+          print('JSON catalogues validated.')
+          PY
+      - name: Restore branch-scoped staging checkpoints
+        uses: actions/cache@v4
+        with:
+          path: .missionmangal-staging
+          key: aafnaipatro-staging-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            aafnaipatro-staging-${{ github.ref_name }}-
+      - name: Compile pipeline and run unit tests
+        run: |
+          python -m compileall -q blog-engine/engine blog-engine/scripts blog-engine/tests
+          cd blog-engine && python -m unittest discover -s tests -v
+      - name: Import existing topics from Google Sheets
+        env:
+          TOPIC_SHEET_CSV_URL: ${{ vars.TOPIC_SHEET_CSV_URL }}
+        run: |
+          python blog-engine/scripts/import_sheet_topics.py --seeds blog-engine/data/topic-seeds.json --output .missionmangal-staging/sheet-import-report.json --merged-seeds .missionmangal-staging/merged-topic-seeds.json
+      - name: Discover unique SEO topic candidates
+        run: |
+          python blog-engine/scripts/discover_topics.py --seeds .missionmangal-staging/merged-topic-seeds.json --count "${{ inputs.count }}" --results-per-seed 40 --output .missionmangal-staging/topics.json
+      - name: Fetch public source leads
+        run: |
+          python blog-engine/scripts/fetch_sources.py --topics .missionmangal-staging/topics.json --output .missionmangal-staging/sources.json --delay 0.25
+      - name: Build source-mapped perspectives (AI enabled)
+        if: inputs.run_drafting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.HEALTHYCRAB || secrets.POLLINATIONS_API_KEY }}
+        run: |
+          python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json
+      - name: Build perspectives checklist without model calls
+        if: ${{ !inputs.run_drafting }}
+        run: |
+          python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json --offline
+      - name: Draft only evidence-complete packets
+        if: inputs.run_drafting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.HEALTHYCRAB || secrets.POLLINATIONS_API_KEY }}
+        run: |
+          python blog-engine/scripts/write_draft.py --perspectives .missionmangal-staging/perspectives.json --output .missionmangal-staging/drafts
+      - name: Edit drafts without adding claims
+        if: inputs.run_drafting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python blog-engine/scripts/edit_drafts.py --input .missionmangal-staging/drafts
+      - name: Generate topic-specific staging images
+        if: inputs.run_drafting
+        env:
+          POLLINATIONS_API_KEY: ${{ secrets.HEALTHYCRAB || secrets.POLLINATIONS_API_KEY }}
+        run: |
+          python blog-engine/scripts/generate_images.py --input .missionmangal-staging/drafts --delay 2 --max-new 2500
+      - name: Audit drafts without auto-approving
+        if: inputs.run_drafting
+        run: |
+          python blog-engine/scripts/verify_content.py --input .missionmangal-staging/drafts --output .missionmangal-staging/verification-report.json
+      - name: Render noindex previews and approval-gated sitemap
+        if: always()
+        run: |
+          python blog-engine/scripts/render_staging.py --input .missionmangal-staging/drafts --output .missionmangal-staging/site
+      - name: Attach images to noindex previews
+        if: always()
+        run: |
+          python blog-engine/scripts/attach_preview_images.py --drafts .missionmangal-staging/drafts --site .missionmangal-staging/site
+      - name: Write accurate batch summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('.missionmangal-staging')
+          summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
+          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','drafts/image-generation-report.json','site/render-report.json','site/image-attachment-report.json'):
+            p=root/name
+            if p.exists():
+              data=json.loads(p.read_text(encoding='utf-8'))
+              summary[name]={k:v for k,v in data.items() if k in ('count','topics','completed','checked','generated','existing','commons_fallback','attached_generated','attached_commons','missing','failed','imported','skipped','merged_unique_count','status','note')}
+          (root/'run-summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Upload complete staging artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aafnaipatro-content-staging-${{ github.run_id }}
+          path: .missionmangal-staging/
+          if-no-files-found: warn
+          retention-days: 14

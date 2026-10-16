@@ -1,0 +1,128 @@
+name: Mission Mangal bulk pipeline gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "preflight checks contracts; plan builds SEO opportunity queue; stage renders approved articles only"
+        required: true
+        type: choice
+        options: [preflight, plan, stage]
+      require_2000:
+        description: "Require at least 2,000 approved records before staging"
+        required: true
+        default: true
+        type: boolean
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: missionmangal-bulk-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout isolated branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify JSON contracts and safe provider defaults
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          for (const p of [
+            'missionmangal/schema/article.schema.json',
+            'missionmangal/config/catalogs.json',
+            'missionmangal/config/providers.json',
+            'missionmangal/config/adapter-allowlist.json',
+            'missionmangal/config/portfolio.json'
+          ]) JSON.parse(fs.readFileSync(p, 'utf8'));
+          const a = JSON.parse(fs.readFileSync('missionmangal/config/adapter-allowlist.json', 'utf8'));
+          if (a.enabled !== false || a.adapters.length !== 0) {
+            console.error('Provider activation requires a separate reviewed change.');
+            process.exit(1);
+          }
+          JSON.parse(fs.readFileSync('blog-engine/data/research-provider-catalog.json','utf8'));
+          JSON.parse(fs.readFileSync('blog-engine/data/topic-seeds.json','utf8'));
+          console.log('Contracts parse; unreviewed providers remain disabled.');
+          NODE
+      - name: Run Mission Mangal tests
+        id: tests
+        continue-on-error: true
+        run: |
+          set +e
+          node --test missionmangal/tests/*.test.mjs
+          NODE_STATUS=$?
+          (cd blog-engine && python -m unittest discover -s tests -v)
+          PY_STATUS=$?
+          echo "node_status=$NODE_STATUS" >> "$GITHUB_OUTPUT"
+          echo "python_status=$PY_STATUS" >> "$GITHUB_OUTPUT"
+          if [ "$NODE_STATUS" -ne 0 ] || [ "$PY_STATUS" -ne 0 ]; then
+            echo "Some checks failed; artifacts are diagnostic only and staging is blocked." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Generate SEO opportunity queue (candidate ideas only)
+        if: inputs.mode == 'plan'
+        run: |
+          python blog-engine/scripts/plan_opportunities.py --limit 2500
+          python - <<'PY'
+          import json
+          p=json.load(open('blog-engine/data/opportunity-queue.json',encoding='utf-8'))
+          print('Candidate ideas:',p['selected'],'Publishable articles:',p['publishable_articles'])
+          PY
+      - name: Block staging on failed tests
+        if: inputs.mode == 'stage' && (steps.tests.outputs.node_status != '0' || steps.tests.outputs.python_status != '0')
+        run: |
+          echo "Staging blocked because one or more test suites failed. Fix and rerun; no production files were changed."
+          exit 1
+      - name: Validate registry and staging prerequisites
+        id: gate
+        if: inputs.mode == 'stage'
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const registry = JSON.parse(fs.readFileSync('missionmangal/config/portfolio.json', 'utf8'));
+          const approved = registry.filter(r => ['approved','rendered','published'].includes(r.status));
+          const require2000 = ${{ inputs.require_2000 }};
+          console.log('Registry records: ' + registry.length + '; eligible for render: ' + approved.length);
+          if (require2000 && approved.length < 2000) {
+            console.error('BLOCKED: fewer than 2,000 eligible approved records. Drafts and placeholders are not counted.');
+            process.exit(2);
+          }
+          NODE
+          node missionmangal/scripts/build.mjs
+      - name: Upload staging, topic queue and diagnostics
+        if: always() && (inputs.mode == 'stage' || inputs.mode == 'plan')
+        uses: actions/upload-artifact@v4
+        with:
+          name: missionmangal-${{ inputs.mode }}-${{ github.run_id }}
+          path: |
+            .missionmangal-staging/
+            blog-engine/data/opportunity-queue.json
+            missionmangal/config/portfolio.json
+            blog-engine/data/article_ledger.jsonl
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Write run summary
+        if: always()
+        run: |
+          {
+            echo "## Mission Mangal pipeline"
+            echo "- Mode: ${{ inputs.mode }}"
+            echo "- Branch: ${GITHUB_REF_NAME}"
+            echo "- Runner timeout: 360 minutes"
+            echo "- Test step outcome: ${{ steps.tests.outcome }}"
+            echo "- Provider adapters remain disabled unless separately reviewed."
+            echo "- SEO queue items are candidates, not articles; no keyword-volume metrics are fabricated."
+            echo "- This workflow does not fabricate citations, approve articles, integrate production routes, or deploy."
+            echo "- A green workflow is not proof of 2,000 publishable articles."
+          } >> "$GITHUB_STEP_SUMMARY"

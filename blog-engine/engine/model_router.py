@@ -11,7 +11,7 @@ def transport(spec,messages,secret):
   url=spec['endpoint'].rstrip('/')+'/models/'+model+':generateContent'
   prompt='\n'.join(m['content'] for m in messages)
   body={'contents':[{'role':'user','parts':[{'text':prompt}]}]};headers={'x-goog-api-key':secret}
- elif kind in ('groq','openrouter','siliconflow','openai'):
+ elif kind in ('groq','openrouter','siliconflow','openai','pollinations'):
   url=spec['endpoint'];body={'model':model,'messages':messages,'temperature':0.35,'stream':False}
   headers={'Authorization':'Bearer '+secret}
   if kind=='openrouter':headers.update({'HTTP-Referer':'https://aafnaipatro.com','X-Title':'Mission Mangal'})
