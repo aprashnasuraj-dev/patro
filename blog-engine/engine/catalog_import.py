@@ -1,4 +1,4 @@
-"""Read all three pinned catalog repositories into an offline, deduplicated candidate inventory.
+"""Read all five pinned catalog repositories into an offline, deduplicated candidate inventory.
 Never run or trust arbitrary catalog-provided code, URLs, keys or advertised quotas.
 """
 import argparse,json,re
@@ -9,6 +9,8 @@ SOURCES={
  "mnfst":("awesome-free-llm-apis","cf97c32fec1b2e96e9936746e2731a81bd5ea33f"),
  "freellm":("awesome-freellm-apis","9f78c9c4de978a0ca5fe4e0f93fd3cd0040036f8"),
  "hidden":("Awesome-Hidden-AI-Credits-Free","ca5b17dcb87024b3e4b9561aaec7730b7e5a36d4"),
+ "public_apis":("public-apis","065455eda4bec6b61984e98b85a585851f7b8cbd"),
+ "public_api_lists":("public-api-lists","6491e2fb2bc32dc7955b95ef6f64001d1b0db764"),
 }
 LINK=re.compile(r'\[([^\]]{2,100})\]\((https?://[^\s)]+)\)')
 SKIP={"github.com","raw.githubusercontent.com","awesome.re","shields.io","freellm.net","youtube.com","www.youtube.com"}
