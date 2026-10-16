@@ -40,6 +40,7 @@ jobs:
             'blog-engine/data/model-provider-catalog.json',
             'blog-engine/data/research-provider-catalog.json',
             'missionmangal/config/adapter-allowlist.json',
+            'missionmangal/config/adapter-allowlist.example.json',
           ]:
             json.load(open(p, encoding='utf-8'))
           print('JSON catalogues validated.')
