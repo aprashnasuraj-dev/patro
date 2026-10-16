@@ -48,6 +48,25 @@ def search_crossref(query):
   date=row.get("published",{}).get("date-parts",[["not supplied by source API"]])[0]
   out.append({"id":"doi-"+doi,"url":"https://doi.org/"+doi,"title":title,"publisher":(row.get("container-title") or ["Crossref-indexed publication"])[0],"author":author,"published_at":str(date),"retrieved_at":now(),"extract":abstract,"claims_supported":[],"license":"Abstract metadata does not grant full-text reuse rights","rights_verified":False,"verified":True,"source_type":"scholarly-metadata","verification_basis":"Crossref metadata API; abstract text available"})
  return out
+def search_openalex(query):
+ url="https://api.openalex.org/works?"+urllib.parse.urlencode({"search":query,"per-page":5,"select":"id,doi,title,authorships,publication_year,primary_location,abstract_inverted_index","mailto":"meroaafnaipatro@gmail.com"})
+ payload=get_json(url);out=[]
+ for row in payload.get("results",[]):
+  title=row.get("title") or "";index=row.get("abstract_inverted_index") or {}
+  words=[]
+  for word,positions in index.items():
+   for pos in positions:words.append((pos,word))
+  abstract=" ".join(word for _,word in sorted(words))
+  if len(abstract)<80 or not title:continue
+  authors=[]
+  for a in row.get("authorships",[])[:4]:
+   name=(a.get("author") or {}).get("display_name")
+   if name:authors.append(name)
+  doi=row.get("doi");url_=doi if doi and doi.startswith("https://") else row.get("id","")
+  if not url_.startswith("https://"):continue
+  source_name=((row.get("primary_location") or {}).get("source") or {}).get("display_name") or "OpenAlex-indexed publication"
+  out.append({"id":"openalex-"+str(row.get("id","")).rsplit("/",1)[-1],"url":url_,"title":title,"publisher":source_name,"author":", ".join(authors) or "Not supplied","published_at":str(row.get("publication_year") or "not supplied by source API"),"retrieved_at":now(),"extract":abstract,"claims_supported":[],"license":"Metadata/abstract discovery; full-text reuse rights not inferred","rights_verified":False,"verified":True,"source_type":"scholarly-metadata","verification_basis":"OpenAlex indexed abstract retrieved through HTTPS API"})
+ return out
 def search_commons(query):
  params={"action":"query","generator":"search","gsrsearch":"filetype:bitmap "+query,"gsrnamespace":6,"gsrlimit":5,"prop":"imageinfo","iiprop":"url|extmetadata","iiurlwidth":1200,"format":"json"}
  payload=get_json("https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode(params));pages=payload.get("query",{}).get("pages",{});out=[]
@@ -72,7 +91,7 @@ def main():
   old=prior.get(t["id"])
   if old and old.get("sources") and old.get("research_status")=="evidence-candidates":
    results.append(old);done+=1;continue
-  q=t.get("primary_query") or t.get("title","");hits=search_wikipedia(q)+search_crossref(q)
+  q=t.get("primary_query") or t.get("title","");hits=search_wikipedia(q)+search_crossref(q)+search_openalex(q)
   unique={s["url"]:s for s in hits if s.get("url")}
   sources=list(unique.values());media=search_commons(q)
   row={"id":t["id"],"title":t.get("title",q),"url":t["url"],"query":q,"sources":sources,"media":media,"source_count":len(sources),"verified_source_count":sum(bool(s.get("verified")) for s in sources),"licensed_media_count":sum(bool(m.get("rights_verified")) for m in media),"research_status":"evidence-candidates" if sources else "source-fetch-failed","publishable":False}
