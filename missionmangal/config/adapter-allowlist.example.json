@@ -93,5 +93,20 @@
       "max_retries": 2,
       "timeout_seconds": 40
     }
+    ,
+    {
+      "id": "pollinations-text",
+      "kind": "pollinations",
+      "endpoint": "https://gen.pollinations.ai/v1/chat/completions",
+      "model": "openai/gpt-oss-20b",
+      "secret_env": "POLLINATIONS_API_KEY",
+      "capabilities": ["draft", "edit", "review"],
+      "daily_limit": 50,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    }
   ]
 }
