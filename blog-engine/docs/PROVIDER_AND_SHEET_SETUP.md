@@ -14,11 +14,12 @@ Open **Settings → Secrets and variables → Actions → New repository secret*
 - `GROQ_API_KEY`
 - `OPENROUTER_API_KEY`
 - `SILICONFLOW_API_KEY`
-- `POLLINATIONS_API_KEY`
+- `HEALTHYCRAB` (the Pollinations secret name you supplied; the workflow maps it to `POLLINATIONS_API_KEY`)
+- `POLLINATIONS_API_KEY` (supported fallback name)
 
 The workflow passes these as environment variables only. It does not log or commit values. Do not paste API keys into source files, workflow YAML, issues, or pull-request comments. A provider name or nickname is not necessarily a valid API credential; verify it in the provider dashboard before use.
 
-The GitHub connector used for this change does not expose repository-secret write access, so credentials cannot be securely installed by this workflow authoring integration. Add them through GitHub's Secrets UI. Empty/missing keys do not enable a provider.
+The GitHub connector used for this change does not expose repository-secret write access, so credentials cannot be securely installed by this workflow authoring integration. The workflow now checks `HEALTHYCRAB` first for Pollinations and falls back to `POLLINATIONS_API_KEY`; set whichever secret name already holds your actual Pollinations API token. A secret's name may be `healthycrab`, but its value still needs to be a valid Pollinations API key issued by enter.pollinations.ai. Empty/missing/invalid keys do not enable a provider.
 
 ## Provider discovery sources reviewed
 
