@@ -107,6 +107,12 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           python blog-engine/scripts/edit_drafts.py --input .missionmangal-staging/drafts
+      - name: Generate topic-specific staging images
+        if: inputs.run_drafting
+        env:
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+        run: |
+          python blog-engine/scripts/generate_images.py --input .missionmangal-staging/drafts --delay 2 --max-new 2500
       - name: Audit drafts without auto-approving
         if: inputs.run_drafting
         run: |
@@ -122,7 +128,7 @@ jobs:
           import json, pathlib
           root=pathlib.Path('.missionmangal-staging')
           summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
-          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','site/render-report.json'):
+          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','image-generation-report.json','site/render-report.json'):
             p=root/name
             if p.exists():
               data=json.loads(p.read_text(encoding='utf-8'))
