@@ -1,6 +1,8 @@
 name: Mission Mangal SEO opportunity planner
 
 on:
+  pull_request:
+    branches: [missionmangal]
   workflow_dispatch:
     inputs:
       limit:
