@@ -1,0 +1,35 @@
+{
+  "note": "Catalogs are discovery references only. No automatic execution. Pin reviewed upstream commits before vendoring.",
+  "catalogs": [
+    {
+      "name": "mnfst free LLMs",
+      "url": "https://github.com/mnfst/awesome-free-llm-apis",
+      "kind": "git",
+      "reviewed_sha": null
+    },
+    {
+      "name": "open free LLMs",
+      "url": "https://github.com/open-free-llm-api/awesome-freellm-apis",
+      "kind": "git",
+      "reviewed_sha": null
+    },
+    {
+      "name": "hidden credits",
+      "url": "https://github.com/oniondas/Awesome-Hidden-AI-Credits-Free",
+      "kind": "git",
+      "reviewed_sha": null
+    },
+    {
+      "name": "public APIs",
+      "url": "https://github.com/public-apis/public-apis",
+      "kind": "git",
+      "reviewed_sha": null
+    },
+    {
+      "name": "RapidAPI free collection",
+      "url": "https://rapidapi.com/collection/list-of-free-apis",
+      "kind": "web",
+      "reviewed_sha": null
+    }
+  ]
+}
