@@ -40,7 +40,19 @@ def main():
   parts=[x for x in parsed.path.split("/") if x]
   if len(parts)!=2 or parts[0] not in ALLOWED or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",parts[1]):continue
   dest=out/parts[0]/parts[1];dest.mkdir(parents=True,exist_ok=True)
-  html_doc='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Editorial preview — not approved for publication"><link rel="canonical" href="'''+html.escape(url,quote=True)+'''"><title>'''+html.escape(title)+''' | AafnaiPatro Preview</title><style>body{font:18px/1.7 system-ui,sans-serif;max-width:850px;margin:3rem auto;padding:0 1.2rem;color:#172033}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f8;padding:1rem;border-radius:8px}.notice{background:#fff4d7;padding:1rem;border-radius:8px}</style></head><body><p class="notice">STAGING PREVIEW — not approved, not indexed, not in the public sitemap.</p><h1>'''+html.escape(title)+'''</h1><main>'''+md_to_html(body)+'''</main><h2>Sources for editorial review</h2><ul>'''
+  media_html=""
+  for media in item.get("media",[]):
+   if media.get("rights_verified") is True and str(media.get("url","" )).startswith("https://"):
+    image_url=html.escape(media["url"],quote=True)
+    alt=html.escape(str(media.get("alt") or media.get("title") or title),quote=True)
+    credit=html.escape(str(media.get("credit") or media.get("publisher") or "Image attribution"))
+    license_name=html.escape(str(media.get("license") or "License metadata"))
+    source_page=str(media.get("source_page") or "")
+    attribution=credit+" — "+license_name
+    if source_page.startswith("https://"): attribution+=' <a rel="nofollow noopener" href="'+html.escape(source_page,quote=True)+'">Source and license</a>'
+    media_html='<figure><img src="'+image_url+'" alt="'+alt+'" loading="lazy" decoding="async" style="max-width:100%;height:auto;border-radius:12px"><figcaption>'+attribution+'</figcaption></figure>'
+    break
+  html_doc='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Editorial preview — not approved for publication"><link rel="canonical" href="'''+html.escape(url,quote=True)+'''"><title>'''+html.escape(title)+''' | AafnaiPatro Preview</title><style>body{font:18px/1.7 system-ui,sans-serif;max-width:850px;margin:3rem auto;padding:0 1.2rem;color:#172033}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f8;padding:1rem;border-radius:8px}.notice{background:#fff4d7;padding:1rem;border-radius:8px}</style></head><body><p class="notice">STAGING PREVIEW — not approved, not indexed, not in the public sitemap.</p><h1>'''+html.escape(title)+'''</h1><main>'''+media_html+md_to_html(body)+'''</main><h2>Sources for editorial review</h2><ul>'''
   for src in item.get("sources",[]):
    su=src.get("url","");st=src.get("title","Source")
    if su.startswith("https://"):html_doc+='<li><a rel="nofollow noopener" href="'+html.escape(su,quote=True)+'">'+html.escape(st)+'</a> — '+html.escape(src.get("publisher",""))+'</li>'
