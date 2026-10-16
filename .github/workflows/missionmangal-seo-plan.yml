@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate provider catalog and seeds
-        run: python -c "import json; json.load(open('blog-engine/data/research-provider-catalog.json')); json.load(open('blog-engine/data/topic-seeds.json'))"
+        run: python -c "import json; json.load(open('blog-engine/data/research-provider-catalog.json')); json.load(open('blog-engine/data/model-provider-catalog.json')); json.load(open('blog-engine/data/topic-seeds.json'))"
       - name: Test planner and resume ledger
         run: cd blog-engine && python -m unittest discover -s tests -v
       - name: Build SEO opportunity queue
