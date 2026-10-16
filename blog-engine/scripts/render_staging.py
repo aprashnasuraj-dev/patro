@@ -50,6 +50,6 @@ def main():
  sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
  for url in sorted(set(approved)):sitemap+="  <url><loc>"+html.escape(url)+"</loc></url>\n"
  sitemap+="</urlset>\n";(out/"sitemap-missionmangal.xml").write_text(sitemap,encoding="utf-8")
- report={"preview_pages":len(rendered),"approved_urls_in_sitemap":len(set(approved)),"sitemap_path":str(out/"sitemap.xml"),"production_changed":False,"note":"Preview pages carry noindex/nofollow. Only explicitly approved and verified records enter the single sitemap; no drafts are auto-approved."}
+ report={"preview_pages":len(rendered),"approved_urls_in_sitemap":len(set(approved)),"sitemap_path":str(out/"sitemap-missionmangal.xml"),"production_changed":False,"note":"Preview pages carry noindex/nofollow. Only explicitly approved and verified records enter the single sitemap; no drafts are auto-approved."}
  (out/"render-report.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8");print(json.dumps(report,indent=2))
 if __name__=="__main__":main()
