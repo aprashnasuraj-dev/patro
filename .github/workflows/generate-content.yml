@@ -94,6 +94,7 @@ jobs:
           COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
           HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
         run: |
           python blog-engine/scripts/write_draft.py --perspectives .missionmangal-staging/perspectives.json --output .missionmangal-staging/drafts
       - name: Edit drafts without adding claims
@@ -121,7 +122,7 @@ jobs:
           import json, pathlib
           root=pathlib.Path('.missionmangal-staging')
           summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
-          for name in ('topics.json','sources.json','perspectives.json','verification-report.json','site/render-report.json'):
+          for name in ('sheet-import-report.json','topics.json','sources.json','perspectives.json','verification-report.json','site/render-report.json'):
             p=root/name
             if p.exists():
               data=json.loads(p.read_text(encoding='utf-8'))
