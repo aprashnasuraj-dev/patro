@@ -8,3 +8,6 @@
 - Existing sitemap families are not modified. No nested sitemap index. Generate canonical URLs from normalized slug, never an LLM-authored arbitrary URL.
 - Build steps: reserve unique IDs/URLs, gather evidence, enforce all gates, approval, render approved content, then generate sitemap from rendered records. Keep sitemap and rendered page set atomic in a staging directory prior to optional production integration. Test direct article HTTP 200, canonical, image rights, references and sitemap coverage; test existing Facts unchanged.
 - No secrets are read in normal PR build. All adapters default disabled. Cloudflare and GitHub secrets are separate; a new Worker binding requires an explicitly reviewed deploy.
+
+## Updated routing decision
+The above blogs-only routing convention is superseded by the implemented four-family scheme: `/articles/{slug}/`, `/blogs/{slug}/`, `/facts/{slug}/`, and `/what/{slug}/`. All 2,000 approved rendered article packages share one `sitemap-missionmangal.xml`; existing `/facts` endpoints and pages are protected by a mandatory future route collision audit. Author: **AafnaiPatro Editor Team**. This update does not change the host Worker, Facts handlers or production build.
