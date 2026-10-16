@@ -17,6 +17,6 @@ class PipelineTests(unittest.TestCase):
    self.assertEqual(transition(p,c["id"],"researching")["status"],"researching")
    with self.assertRaises(ValueError):transition(p,c["id"],"published")
  def test_paths(self):
-  for kind,prefix in [("article","articles"),("blog","blogs"),("fact","facts"),("answer","what")]:
+  for kind,prefix in [("article","articles"),("blog","blog"),("fact","facts"),("answer","what")]:
    self.assertTrue(canonical(kind,"Why does metal feel cold?").startswith("https://aafnaipatro.com/"+prefix+"/"))
 if __name__=="__main__":unittest.main()
