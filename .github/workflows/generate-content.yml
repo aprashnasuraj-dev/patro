@@ -64,7 +64,7 @@ jobs:
           python blog-engine/scripts/import_sheet_topics.py --seeds blog-engine/data/topic-seeds.json --output .missionmangal-staging/sheet-import-report.json --merged-seeds .missionmangal-staging/merged-topic-seeds.json
       - name: Discover unique SEO topic candidates
         run: |
-          python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --results-per-seed 40 --output .missionmangal-staging/topics.json
+          python blog-engine/scripts/discover_topics.py --seeds .missionmangal-staging/merged-topic-seeds.json --count "${{ inputs.count }}" --results-per-seed 40 --output .missionmangal-staging/topics.json
       - name: Fetch public source leads
         run: |
           python blog-engine/scripts/fetch_sources.py --topics .missionmangal-staging/topics.json --output .missionmangal-staging/sources.json --delay 0.25
@@ -76,6 +76,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
         run: |
           python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json
       - name: Build perspectives checklist without model calls
