@@ -27,7 +27,7 @@ def find_col(headers, names):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--url", default=os.environ.get("TOPIC_SHEET_CSV_URL", ""))
+    p.add_argument("--url", default=os.environ.get("TOPIC_SHEET_CSV_URL", "https://docs.google.com/spreadsheets/d/1E7QpDpKjDEo4DVRc5IZM7hlo5YI1SeJK/export?format=csv&gid=0"))
     p.add_argument("--seeds", default="blog-engine/data/topic-seeds.json")
     p.add_argument("--output", default=".missionmangal-staging/sheet-import-report.json")
     p.add_argument("--merged-seeds", default=".missionmangal-staging/merged-topic-seeds.json")
