@@ -136,7 +136,7 @@ jobs:
             p=root/name
             if p.exists():
               data=json.loads(p.read_text(encoding='utf-8'))
-              summary[name]={k:v for k,v in data.items() if k in ('count','topics','completed','checked','generated','existing','commons_fallback','missing','failed','imported','skipped','merged_unique_count','status','note')}
+              summary[name]={k:v for k,v in data.items() if k in ('count','topics','completed','checked','generated','existing','commons_fallback','attached_generated','attached_commons','missing','failed','imported','skipped','merged_unique_count','status','note')}
           (root/'run-summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
           print(json.dumps(summary,indent=2))
           PY
