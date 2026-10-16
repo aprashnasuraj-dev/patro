@@ -92,6 +92,10 @@ jobs:
         if: inputs.run_drafting
         run: |
           python blog-engine/scripts/verify_content.py --input .missionmangal-staging/drafts --output .missionmangal-staging/verification-report.json
+      - name: Render noindex previews and approval-gated sitemap
+        if: always()
+        run: |
+          python blog-engine/scripts/render_staging.py --input .missionmangal-staging/drafts --output .missionmangal-staging/site
       - name: Write accurate batch summary
         if: always()
         run: |
@@ -99,7 +103,7 @@ jobs:
           import json, pathlib
           root=pathlib.Path('.missionmangal-staging')
           summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
-          for name in ('topics.json','sources.json','perspectives.json','verification-report.json'):
+          for name in ('topics.json','sources.json','perspectives.json','verification-report.json','site/render-report.json'):
             p=root/name
             if p.exists():
               data=json.loads(p.read_text(encoding='utf-8'))
