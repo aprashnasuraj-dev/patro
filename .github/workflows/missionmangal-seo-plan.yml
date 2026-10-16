@@ -1,0 +1,49 @@
+name: Mission Mangal SEO opportunity planner
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Maximum candidate ideas to include (not publishable articles)
+        required: true
+        default: '2500'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: missionmangal-seo-plan-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate provider catalog and seeds
+        run: python -c "import json; json.load(open('blog-engine/data/research-provider-catalog.json')); json.load(open('blog-engine/data/topic-seeds.json'))"
+      - name: Test planner and resume ledger
+        run: cd blog-engine && python -m unittest discover -s tests -v
+      - name: Build SEO opportunity queue
+        run: python blog-engine/scripts/plan_opportunities.py --limit "${{ inputs.limit }}"
+      - name: Upload candidate queue
+        uses: actions/upload-artifact@v4
+        with:
+          name: missionmangal-seo-opportunities-${{ github.run_id }}
+          path: blog-engine/data/opportunity-queue.json
+          retention-days: 14
+      - name: Summary
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('blog-engine/data/opportunity-queue.json',encoding='utf-8'))
+          print('Unique candidates:',p['unique_candidates'])
+          print('Selected:',p['selected'])
+          print('Publishable articles:',p['publishable_articles'])
+          print(p['note'])
+          PY
