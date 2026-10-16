@@ -38,14 +38,26 @@ def search_crossref(query):
   date=row.get("published",{}).get("date-parts",[["not supplied by source API"]])[0]
   out.append({"id":"doi-"+doi,"url":"https://doi.org/"+doi,"title":title,"publisher":(row.get("container-title") or ["Crossref-indexed publication"])[0],"author":author,"published_at":str(date),"retrieved_at":now(),"extract":abstract,"claims_supported":[],"license":"Abstract metadata does not grant full-text reuse rights","rights_verified":False,"verified":True,"source_type":"scholarly-metadata","verification_basis":"Crossref metadata API; abstract text available"})
  return out
+def search_commons(query):
+ params={"action":"query","generator":"search","gsrsearch":"filetype:bitmap "+query,"gsrnamespace":6,"gsrlimit":5,"prop":"imageinfo","iiprop":"url|extmetadata","iiurlwidth":1200,"format":"json"}
+ payload=get_json("https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode(params));pages=payload.get("query",{}).get("pages",{});out=[]
+ for page in pages.values():
+  info=(page.get("imageinfo") or [{}])[0];meta=info.get("extmetadata",{})
+  def val(k):return clean((meta.get(k) or {}).get("value",""))
+  license_name=val("LicenseShortName");license_url=val("LicenseUrl");artist=val("Artist");credit=val("Credit") or artist;description=val("ImageDescription") or page.get("title","")
+  allowed=any(term in license_name.casefold() for term in ("cc0","public domain","cc by ","cc by-sa"))
+  source_url="https://commons.wikimedia.org/wiki/"+urllib.parse.quote(page.get("title","").replace(" ","_"))
+  direct=info.get("thumburl") or info.get("url")
+  out.append({"id":"commons-"+str(page.get("pageid")),"type":"image","url":direct,"source_page":source_url,"title":page.get("title",""),"alt":description[:300],"credit":credit,"license":license_name,"license_url":license_url,"rights_verified":bool(allowed and license_url and credit and description and direct),"publisher":"Wikimedia Commons","retrieved_at":now()})
+ return out
 def main():
  p=argparse.ArgumentParser();p.add_argument("--topics",required=True);p.add_argument("--output",required=True);p.add_argument("--delay",type=float,default=.25);a=p.parse_args()
  topics=json.loads(Path(a.topics).read_text(encoding="utf-8")).get("items",[]);results=[]
  for i,t in enumerate(topics):
   q=t.get("primary_query") or t.get("title","");hits=search_wikipedia(q)+search_crossref(q)
   unique={s["url"]:s for s in hits if s.get("url")}
-  sources=list(unique.values())
-  results.append({"id":t["id"],"title":t.get("title",q),"url":t["url"],"query":q,"sources":sources,"source_count":len(sources),"verified_source_count":sum(bool(s.get("verified")) for s in sources),"research_status":"evidence-candidates" if sources else "source-fetch-failed","publishable":False})
+  sources=list(unique.values());media=search_commons(q)
+  results.append({"id":t["id"],"title":t.get("title",q),"url":t["url"],"query":q,"sources":sources,"media":media,"source_count":len(sources),"verified_source_count":sum(bool(s.get("verified")) for s in sources),"licensed_media_count":sum(bool(m.get("rights_verified")) for m in media),"research_status":"evidence-candidates" if sources else "source-fetch-failed","publishable":False})
   if a.delay:time.sleep(a.delay)
   if (i+1)%25==0:print(f"Fetched source passages for {i+1}/{len(topics)} topics")
  Path(a.output).parent.mkdir(parents=True,exist_ok=True);Path(a.output).write_text(json.dumps({"version":1,"topics":len(topics),"items":results,"note":"Verified means retrieved source provenance and a usable passage, not that every claim is proven. Each article still requires 5-20 distinct sources, claim mapping, rights-cleared media, fact checks and editorial review."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
