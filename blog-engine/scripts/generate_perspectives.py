@@ -7,16 +7,23 @@ sys.path.insert(0,str(ROOT))
 from engine.model_router import Router,ExhaustedProviders
 def main():
  p=argparse.ArgumentParser();p.add_argument("--sources",required=True);p.add_argument("--output",required=True);p.add_argument("--providers",default=str(ROOT/".."/"missionmangal"/"config"/"adapter-allowlist.json"));p.add_argument("--offline",action="store_true");a=p.parse_args()
- router=Router.from_file(a.providers);data=json.loads(Path(a.sources).read_text(encoding="utf-8"));out=[];blocked=0
+ router=Router.from_file(a.providers);data=json.loads(Path(a.sources).read_text(encoding="utf-8"));out_path=Path(a.output);out_path.parent.mkdir(parents=True,exist_ok=True);prior={}
+ if out_path.exists():
+  try:prior={v["id"]:v for v in json.loads(out_path.read_text(encoding="utf-8")).get("items",[])}
+  except (ValueError,KeyError,TypeError):prior={}
+ out=[];blocked=0;processed=0
  for item in data.get("items",[]):
+  old=prior.get(item["id"])
+  if old and len(old.get("claims",[]))>=3 and len(old.get("sources",[]))>=5 and not a.offline:
+   out.append(old);processed+=1;continue
   sources=[s for s in item.get("sources",[]) if s.get("verified") and len(s.get("extract",""))>=80]
   record={"id":item["id"],"title":item["title"],"url":item["url"],"primary_query":item["query"],"sources":sources[:20],"media":[m for m in item.get("media",[]) if m.get("rights_verified")],"perspectives":[],"claims":[],"publishable":False,"blockers":[]}
   if len(record["sources"])<5:
    record["blockers"].append("Fewer than five verified source passages; no claims generated")
-   out.append(record);blocked+=1;continue
+   out.append(record);blocked+=1;processed+=1;continue
   if a.offline:
    record["blockers"].append("AI stage disabled by workflow input; no model calls made")
-   out.append(record);blocked+=1;continue
+   out.append(record);blocked+=1;processed+=1;continue
   allowed={s["id"] for s in record["sources"]}
   packet={"title":item["title"],"primary_query":item["query"],"sources":[{"id":s["id"],"title":s["title"],"publisher":s["publisher"],"url":s["url"],"extract":s["extract"][:5000]} for s in record["sources"]]}
   prompt='Return JSON only: {"claims":[{"id":"C1","text":"one factual claim supported by the provided passages","source_ids":["exact source id"]}],"perspectives":[{"angle":"...","question":"..."}]}. Create 5-10 concise claims only when a provided passage supports them. Each claim must cite one or more exact source IDs from the packet. Never add external facts, invented citations, numbers not in passages, or claim a source supports something it does not. No markdown fences. Packet: '+json.dumps(packet,ensure_ascii=False)
