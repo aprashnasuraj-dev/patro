@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "enabled": false,
+  "notes": "No live calls until provider terms, credentials and commercial rights are verified. Do not auto-call community catalog endpoints.",
+  "adapters": []
+}
