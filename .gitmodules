@@ -1,0 +1,9 @@
+[submodule "missionmangal/vendor/awesome-free-llm-apis"]
+	path = missionmangal/vendor/awesome-free-llm-apis
+	url = https://github.com/mnfst/awesome-free-llm-apis.git
+[submodule "missionmangal/vendor/awesome-freellm-apis"]
+	path = missionmangal/vendor/awesome-freellm-apis
+	url = https://github.com/open-free-llm-api/awesome-freellm-apis.git
+[submodule "missionmangal/vendor/Awesome-Hidden-AI-Credits-Free"]
+	path = missionmangal/vendor/Awesome-Hidden-AI-Credits-Free
+	url = https://github.com/oniondas/Awesome-Hidden-AI-Credits-Free.git
