@@ -5,31 +5,47 @@
       "name": "mnfst free LLMs",
       "url": "https://github.com/mnfst/awesome-free-llm-apis",
       "kind": "git",
-      "reviewed_sha": null
+      "reviewed_sha": null,
+      "pinned_sha": "cf97c32fec1b2e96e9936746e2731a81bd5ea33f"
     },
     {
       "name": "open free LLMs",
       "url": "https://github.com/open-free-llm-api/awesome-freellm-apis",
       "kind": "git",
-      "reviewed_sha": null
+      "reviewed_sha": null,
+      "pinned_sha": "9f78c9c4de978a0ca5fe4e0f93fd3cd0040036f8"
     },
     {
       "name": "hidden credits",
       "url": "https://github.com/oniondas/Awesome-Hidden-AI-Credits-Free",
       "kind": "git",
-      "reviewed_sha": null
+      "reviewed_sha": null,
+      "pinned_sha": "ca5b17dcb87024b3e4b9561aaec7730b7e5a36d4"
     },
     {
       "name": "public APIs",
       "url": "https://github.com/public-apis/public-apis",
       "kind": "git",
-      "reviewed_sha": null
+      "reviewed_sha": null,
+      "pinned_sha": "065455eda4bec6b61984e98b85a585851f7b8cbd"
     },
     {
       "name": "RapidAPI free collection",
       "url": "https://rapidapi.com/collection/list-of-free-apis",
       "kind": "web",
       "reviewed_sha": null
+    },
+    {
+      "name": "public API lists",
+      "url": "https://github.com/public-api-lists/public-api-lists",
+      "kind": "git",
+      "pinned_sha": "6491e2fb2bc32dc7955b95ef6f64001d1b0db764"
+    },
+    {
+      "name": "Ray Winkelman public API context article",
+      "url": "https://raywinkelman.com/blog/public-apis-apilayer-github/",
+      "kind": "article",
+      "note": "External contextual page; cannot git clone."
     }
   ]
 }
