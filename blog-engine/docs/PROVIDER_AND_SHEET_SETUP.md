@@ -31,7 +31,7 @@ These are discovery catalogues, not authoritative permission grants or proof of 
 - https://github.com/public-apis/public-apis
 - https://github.com/pollinations/pollinations/blob/main/APIDOCS.md
 
-The public Pollinations API documentation describes OpenAI-compatible text requests at `https://gen.pollinations.ai/v1/chat/completions`, image generation at its `/image/{prompt}` endpoint, bearer authentication for secret keys, and model discovery through `/v1/models`. Limits, available models, account permissions, and commercial terms may change. The Pollinations adapter and allowlist example remain disabled until those are checked. The string previously supplied in chat was not copied into the repository or assumed to be a valid API key.
+The public Pollinations API documentation describes OpenAI-compatible text requests at `https://gen.pollinations.ai/v1/chat/completions`, image generation at its `/image/{prompt}` endpoint, bearer authentication for secret keys, and model discovery through `/v1/models`. The working-branch allowlist now enables `openai/gpt-oss-20b` for draft/edit/review; OpenAI identifies gpt-oss under Apache 2.0, subject to its usage policy. Pollinations API calls may consume account Pollen, so successful use depends on the secret being a valid token, account balance, and current model access. The image stage also calls Pollinations and may consume credits. No secret value is committed.
 
 ## Run and review
 
