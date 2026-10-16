@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "purpose": "Discovery catalogue only. These endpoints are not auto-called until current terms, rate limits, provenance, licensing, and commercial reuse are verified.",
+  "providers": [
+    {
+      "id": "wikipedia-rest",
+      "category": "encyclopedia",
+      "endpoint": "https://en.wikipedia.org/api/rest_v1/",
+      "auth": "none",
+      "cost": "free public API",
+      "use": "Background discovery; Wikipedia text is CC BY-SA and requires attribution/share-alike review; never sole evidence."
+    },
+    {
+      "id": "wikidata-sparql",
+      "category": "structured-data",
+      "endpoint": "https://query.wikidata.org/sparql",
+      "auth": "none",
+      "cost": "free with fair-use limits",
+      "use": "Entity/relationship discovery; verify each fact against primary sources."
+    },
+    {
+      "id": "wikimedia-commons",
+      "category": "licensed-media",
+      "endpoint": "https://commons.wikimedia.org/w/api.php",
+      "auth": "none",
+      "cost": "free",
+      "use": "Media candidate search; verify per-file license, attribution and source page."
+    },
+    {
+      "id": "nasa-open-apis",
+      "category": "space-science",
+      "endpoint": "https://api.nasa.gov/",
+      "auth": "API key; DEMO_KEY has lower limits",
+      "cost": "free tier",
+      "use": "Space and Earth science; check each dataset terms and attribution."
+    },
+    {
+      "id": "nasa-images",
+      "category": "licensed-media",
+      "endpoint": "https://images-api.nasa.gov/",
+      "auth": "none",
+      "cost": "free",
+      "use": "Image discovery; verify item-specific usage rights and third-party credits."
+    },
+    {
+      "id": "usgs",
+      "category": "earth-science",
+      "endpoint": "https://www.usgs.gov/products/data-and-tools/apis",
+      "auth": "varies",
+      "cost": "mostly public",
+      "use": "Geology, earthquakes, water and geography; confirm dataset-specific terms."
+    },
+    {
+      "id": "noaa",
+      "category": "weather-climate",
+      "endpoint": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+      "auth": "token",
+      "cost": "free with token/limits",
+      "use": "Climate and weather records; cite dataset/version and units."
+    },
+    {
+      "id": "openalex",
+      "category": "scholarly",
+      "endpoint": "https://api.openalex.org/",
+      "auth": "email recommended",
+      "cost": "free with polite usage",
+      "use": "Scholarly metadata/discovery, not article full-text rights."
+    },
+    {
+      "id": "crossref",
+      "category": "scholarly",
+      "endpoint": "https://api.crossref.org/",
+      "auth": "none; mailto recommended",
+      "cost": "free",
+      "use": "DOI metadata; not full-text license proof."
+    },
+    {
+      "id": "europe-pmc",
+      "category": "biomedical-literature",
+      "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/",
+      "auth": "none",
+      "cost": "free",
+      "use": "Biomedical abstracts/full-text where open; elevated health claims need expert review."
+    },
+    {
+      "id": "pubmed",
+      "category": "biomedical-literature",
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+      "auth": "API key optional",
+      "cost": "free with limits",
+      "use": "Literature discovery; abstracts are not blanket reuse permission."
+    },
+    {
+      "id": "semantic-scholar",
+      "category": "scholarly",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/",
+      "auth": "key may be required",
+      "cost": "free tier subject to quotas",
+      "use": "Paper metadata and discovery."
+    },
+    {
+      "id": "open-meteo",
+      "category": "weather-climate",
+      "endpoint": "https://api.open-meteo.com/v1/",
+      "auth": "none for non-commercial use; commercial rules apply",
+      "cost": "conditional",
+      "use": "Do not use for commercial publishing products until current license/pricing checked."
+    },
+    {
+      "id": "gbif",
+      "category": "biodiversity",
+      "endpoint": "https://api.gbif.org/v1/",
+      "auth": "none for public API",
+      "cost": "free",
+      "use": "Biodiversity occurrence data; respect dataset attribution and licenses."
+    },
+    {
+      "id": "world-bank",
+      "category": "economics-development",
+      "endpoint": "https://api.worldbank.org/v2/",
+      "auth": "none",
+      "cost": "free",
+      "use": "Development indicators; cite indicator, country and year."
+    },
+    {
+      "id": "our-world-in-data",
+      "category": "data-stories",
+      "endpoint": "https://ourworldindata.org/grapher/",
+      "auth": "none for many charts",
+      "cost": "free; dataset-specific licenses",
+      "use": "Check metadata and license for every chart/dataset."
+    },
+    {
+      "id": "europeana",
+      "category": "culture-history-media",
+      "endpoint": "https://api.europeana.eu/record/v2/",
+      "auth": "API key",
+      "cost": "free tier",
+      "use": "Rights vary per object; filter for clearly reusable media."
+    },
+    {
+      "id": "smithsonian-open-access",
+      "category": "culture-history-media",
+      "endpoint": "https://api.si.edu/openaccess/api/v1.0/",
+      "auth": "API key",
+      "cost": "free",
+      "use": "Use Open Access-marked items; retain credit and rights metadata."
+    },
+    {
+      "id": "loc",
+      "category": "history-culture-media",
+      "endpoint": "https://www.loc.gov/",
+      "auth": "none",
+      "cost": "free public endpoints",
+      "use": "Item-level rights advisory controls reuse."
+    },
+    {
+      "id": "data-gov",
+      "category": "public-data",
+      "endpoint": "https://api.data.gov/",
+      "auth": "API key",
+      "cost": "free with limits",
+      "use": "Catalog for US government datasets; underlying data terms vary."
+    },
+    {
+      "id": "federal-register",
+      "category": "civics-history",
+      "endpoint": "https://www.federalregister.gov/api/v1/",
+      "auth": "none",
+      "cost": "free",
+      "use": "US federal documents; jurisdiction-specific, not general legal advice."
+    },
+    {
+      "id": "archive-org",
+      "category": "books-archives",
+      "endpoint": "https://archive.org/advancedsearch.php",
+      "auth": "none for search",
+      "cost": "free",
+      "use": "Discovery only; item-level copyright status must be checked."
+    },
+    {
+      "id": "openlibrary",
+      "category": "books-history",
+      "endpoint": "https://openlibrary.org/developers/api",
+      "auth": "none",
+      "cost": "free with limits",
+      "use": "Bibliographic metadata; no implied content reuse."
+    },
+    {
+      "id": "unsplash",
+      "category": "licensed-media",
+      "endpoint": "https://api.unsplash.com/",
+      "auth": "access key",
+      "cost": "free API tier with rules",
+      "use": "Follow current API terms and image hotlink/attribution requirements."
+    },
+    {
+      "id": "pexels",
+      "category": "licensed-media",
+      "endpoint": "https://api.pexels.com/v1/",
+      "auth": "API key",
+      "cost": "free API tier with limits",
+      "use": "Follow current API terms and per-image restrictions."
+    }
+  ]
+}
