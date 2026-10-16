@@ -1,6 +1,8 @@
 import unittest
-from engine.seo_opportunity import make_opportunity,rank_opportunities,score_opportunity
+from engine.seo_opportunity import make_opportunity,rank_opportunities,score_opportunity,normalize_query
 class SeoOpportunityTests(unittest.TestCase):
+ def test_normalization_preserves_question_mark(self):
+  self.assertEqual(normalize_query('  Why   is water wet?  '),'Why is water wet?')
  def test_url_and_score(self):
   a=make_opportunity("Why does water look blue in deep oceans?","science","answer")
   self.assertEqual(a["url"],"https://aafnaipatro.com/what/why-does-water-look-blue-in-deep-oceans/")
