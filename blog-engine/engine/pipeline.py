@@ -5,6 +5,7 @@ from .research import source_pack
 from .writer import brief
 from .model_router import ExhaustedProviders,independent_review
 from .fact_checker import structural_verify
+from .verify_content import require_passage_audit,excessive_copy
 def advance(article,ledger_path,router,sources,claims):
  id_=article['id']
  current=load(ledger_path).get(id_)
@@ -31,10 +32,15 @@ def advance(article,ledger_path,router,sources,claims):
   current=transition(ledger_path,id_,'verifying',edited_draft=result['text'],editor_provider=result['provider'])
  if current['status']=='verifying':
   try:
+   verify_package={**article,'sources':sources,'claims':claims,'media':article.get('media',[])}
+   require_passage_audit(verify_package)
+   if excessive_copy(current['edited_draft'],[src['extract'] for src in sources]):raise ValueError('Excessive source copying')
+  except ValueError as e:return transition(ledger_path,id_,'blocked',failure='Evidence audit: '+str(e))
+  try:
    # Independent model review is advisory, NOT evidence itself.
    result=independent_review(router,{'sources':sources,'claims':claims},current['edited_draft'],current['draft_provider'])
   except ExhaustedProviders:return transition(ledger_path,id_,'blocked',failure='No independent review provider')
-  current=transition(ledger_path,id_,'verified',review_notes=result['text'],review_provider=result['provider'],verification_note='Advisory model review; source passages and media rights still need editorial audit')
+  current=transition(ledger_path,id_,'verified',passage_audit_passed=True,review_notes=result['text'],review_provider=result['provider'],verification_note='Advisory model review; source passages and media rights still need editorial audit')
  if current['status']=='verified':
   current=transition(ledger_path,id_,'review',publish_approved=False)
  return current
