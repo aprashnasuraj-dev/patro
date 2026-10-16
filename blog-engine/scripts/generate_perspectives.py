@@ -10,7 +10,7 @@ def main():
  router=Router.from_file(a.providers);data=json.loads(Path(a.sources).read_text(encoding="utf-8"));out=[];blocked=0
  for item in data.get("items",[]):
   sources=[s for s in item.get("sources",[]) if s.get("verified") and len(s.get("extract",""))>=80]
-  record={"id":item["id"],"title":item["title"],"url":item["url"],"primary_query":item["query"],"sources":sources[:20],"perspectives":[],"claims":[],"publishable":False,"blockers":[]}
+  record={"id":item["id"],"title":item["title"],"url":item["url"],"primary_query":item["query"],"sources":sources[:20],"media":[m for m in item.get("media",[]) if m.get("rights_verified")],"perspectives":[],"claims":[],"publishable":False,"blockers":[]}
   if len(record["sources"])<5:
    record["blockers"].append("Fewer than five verified source passages; no claims generated")
    out.append(record);blocked+=1;continue
