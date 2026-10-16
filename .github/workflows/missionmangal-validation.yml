@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          submodules: recursive
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -27,6 +28,8 @@ jobs:
           node -e "for (const f of ['missionmangal/schema/article.schema.json','missionmangal/config/catalogs.json','missionmangal/config/providers.json','missionmangal/config/adapter-allowlist.json']) JSON.parse(require('fs').readFileSync(f,'utf8'))"
       - name: Test 2000 URLs, APA rendering, evidence, sitemap, old Facts isolation
         run: node --test missionmangal/tests/*.test.mjs
+      - name: Import all three pinned API catalogs (offline, unverified)
+        run: cd blog-engine && python -m engine.catalog_import --output data/api_candidates.json
       - name: Test resumable Python article stages
         run: cd blog-engine && python -m unittest discover -s tests -v
       - name: Confirm incomplete article is blocked
