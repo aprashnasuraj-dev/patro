@@ -44,6 +44,13 @@ jobs:
             json.load(open(p, encoding='utf-8'))
           print('JSON catalogues validated.')
           PY
+      - name: Restore branch-scoped staging checkpoints
+        uses: actions/cache@v4
+        with:
+          path: .missionmangal-staging
+          key: aafnaipatro-staging-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            aafnaipatro-staging-${{ github.ref_name }}-
       - name: Compile pipeline and run unit tests
         run: |
           python -m compileall -q blog-engine/engine blog-engine/scripts blog-engine/tests
