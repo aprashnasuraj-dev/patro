@@ -6,13 +6,16 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from engine.model_router import Router,ExhaustedProviders
 def main():
- p=argparse.ArgumentParser();p.add_argument("--sources",required=True);p.add_argument("--output",required=True);p.add_argument("--providers",default=str(ROOT/".."/"missionmangal"/"config"/"adapter-allowlist.json"));a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument("--sources",required=True);p.add_argument("--output",required=True);p.add_argument("--providers",default=str(ROOT/".."/"missionmangal"/"config"/"adapter-allowlist.json"));p.add_argument("--offline",action="store_true");a=p.parse_args()
  router=Router.from_file(a.providers);data=json.loads(Path(a.sources).read_text(encoding="utf-8"));out=[];blocked=0
  for item in data.get("items",[]):
   sources=[s for s in item.get("sources",[]) if s.get("verified") and len(s.get("extract",""))>=80]
   record={"id":item["id"],"title":item["title"],"url":item["url"],"primary_query":item["query"],"sources":sources[:20],"media":[m for m in item.get("media",[]) if m.get("rights_verified")],"perspectives":[],"claims":[],"publishable":False,"blockers":[]}
   if len(record["sources"])<5:
    record["blockers"].append("Fewer than five verified source passages; no claims generated")
+   out.append(record);blocked+=1;continue
+  if a.offline:
+   record["blockers"].append("AI stage disabled by workflow input; no model calls made")
    out.append(record);blocked+=1;continue
   allowed={s["id"] for s in record["sources"]}
   packet={"title":item["title"],"primary_query":item["query"],"sources":[{"id":s["id"],"title":s["title"],"publisher":s["publisher"],"url":s["url"],"extract":s["extract"][:5000]} for s in record["sources"]]}
