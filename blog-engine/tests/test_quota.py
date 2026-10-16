@@ -4,7 +4,7 @@ from engine.quota_store import QuotaStore,QuotaExceeded
 class QuotaTests(unittest.TestCase):
  def test_atomic_limit_and_replay_across_connections(self):
   with tempfile.TemporaryDirectory() as d:
-   p=str(Path(d)/"shared.sqlite");success=[];errors=[]
+   p=str(Path(d)/"shared.sqlite");success=[];errors=[]\n   init=sqlite3.connect(p);QuotaStore(init);init.close()
    def go(i):
     con=sqlite3.connect(p,timeout=10);q=QuotaStore(con)
     try:success.append(q.reserve("groq","2026-10-16",5,"req-"+str(i)))
