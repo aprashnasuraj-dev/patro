@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "note": "Provider discovery catalogue, not an execution allowlist. Before enabling, verify current endpoint/model availability, secret mapping, quotas, terms and commercial-use permissions. Never infer secret existence from a name.",
+  "providers": [
+    {
+      "id": "google-gemini",
+      "protocol": "gemini",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+      "auth": "API key",
+      "candidate_models": [
+        "gemini-2.5-flash",
+        "gemini-2.0-flash"
+      ],
+      "secret_env": "GEMINI_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "groq",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available fast model"
+      ],
+      "secret_env": "GROQ_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "openrouter",
+      "protocol": "openai-compatible",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "provider/model selected after price and license review"
+      ],
+      "secret_env": "OPENROUTER_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "siliconflow",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.siliconflow.com/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "SILICONFLOW_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "cerebras",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.cerebras.ai/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "CEREBRAS_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "sambanova",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.sambanova.ai/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "SAMBANOVA_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "together",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.together.xyz/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "TOGETHER_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "fireworks",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.fireworks.ai/inference/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "FIREWORKS_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "mistral",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.mistral.ai/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "MISTRAL_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "huggingface-inference",
+      "protocol": "openai-compatible",
+      "endpoint": "https://router.huggingface.co/v1/chat/completions",
+      "auth": "HF token",
+      "candidate_models": [
+        "model with suitable license and hosted inference"
+      ],
+      "secret_env": "HF_TOKEN",
+      "status": "review-required"
+    },
+    {
+      "id": "deepinfra",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.deepinfra.com/v1/openai/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "DEEPINFRA_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "novita",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.novita.ai/v3/openai/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "NOVITA_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "pollinations",
+      "protocol": "provider-specific",
+      "endpoint": "https://text.pollinations.ai/",
+      "auth": "varies",
+      "candidate_models": [
+        "current published model"
+      ],
+      "secret_env": "POLLINATIONS_API_KEY",
+      "status": "review-required",
+      "note": "Do not assume unauthenticated endpoints are stable, private, quota-guaranteed, or commercially suitable."
+    },
+    {
+      "id": "openai",
+      "protocol": "openai-compatible",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "OPENAI_API_KEY",
+      "status": "review-required"
+    },
+    {
+      "id": "anthropic",
+      "protocol": "provider-specific",
+      "endpoint": "https://api.anthropic.com/v1/messages",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "ANTHROPIC_API_KEY",
+      "status": "review-required",
+      "note": "Requires its own request/response adapter; not OpenAI-compatible."
+    },
+    {
+      "id": "cohere",
+      "protocol": "provider-specific",
+      "endpoint": "https://api.cohere.com/v2/chat",
+      "auth": "API key",
+      "candidate_models": [
+        "current available model"
+      ],
+      "secret_env": "COHERE_API_KEY",
+      "status": "review-required",
+      "note": "Requires its own adapter."
+    },
+    {
+      "id": "cloudflare-workers-ai",
+      "protocol": "provider-specific",
+      "endpoint": "Cloudflare account AI endpoint",
+      "auth": "Cloudflare token/account ID",
+      "candidate_models": [
+        "account-available model"
+      ],
+      "secret_env": "CLOUDFLARE_API_TOKEN",
+      "status": "review-required",
+      "note": "Do not expose production Worker token to CI unless least-privilege scoped."
+    },
+    {
+      "id": "ollama",
+      "protocol": "self-hosted",
+      "endpoint": "user-controlled local endpoint",
+      "auth": "deployment-specific",
+      "candidate_models": [
+        "locally hosted model"
+      ],
+      "secret_env": "OLLAMA_HOST",
+      "status": "optional-self-hosted",
+      "note": "GitHub hosted runner does not inherit user's local machine."
+    }
+  ]
+}
