@@ -25,3 +25,6 @@ node --test missionmangal/tests/*.test.mjs
 ```
 
 Do not put provider keys, raw private data or customer material in this repository. No attempt will be made to enumerate GitHub secret values.
+
+## Updated content families (supersedes the earlier blogs-only paragraph)
+The current implementation supports `/articles/{slug}/`, `/blogs/{slug}/`, `/facts/{slug}/` and `/what/{slug}/`, chosen according to content format. The published byline is **AafnaiPatro Editor Team**; source author–date citations and an APA-style bibliography are rendered. `blog-engine/` includes an append-only resumable Python ledger and offline-only pipeline and workflow templates. Existing Facts routes must pass a collision audit before any future release. All four families are collected in one private staging sitemap until explicit route integration.
