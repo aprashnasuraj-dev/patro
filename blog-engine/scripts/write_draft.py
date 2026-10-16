@@ -22,6 +22,8 @@ def main():
    result=router.complete("draft",[{"role":"system","content":"Write original, helpful English using only the supplied source passages. Cite source IDs for each factual claim. Do not invent details, citations, quotations, or media."},{"role":"user","content":json.dumps(item,ensure_ascii=False)}])
    doc={**item,"draft":result["text"],"provider":result["provider"],"model":result["model"],"status":"draft","publishable":False}
    target.write_text(json.dumps(doc,ensure_ascii=False,indent=2)+"\n",encoding="utf-8");made+=1
-  except ExhaustedProviders:blocked+=1
+  except Exception as e:
+   blocked+=1
+   print(f"Blocked {item.get('id','unknown')}: {type(e).__name__}")
  print(f"Drafts created: {made}; existing drafts reused: {skipped}; blocked for evidence/provider: {blocked}")
 if __name__=="__main__":main()
