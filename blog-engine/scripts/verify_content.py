@@ -7,7 +7,7 @@ sys.path.insert(0,str(ROOT))
 from engine.verify_content import passage_audit,excessive_copy
 def main():
  p=argparse.ArgumentParser();p.add_argument("--input",required=True);p.add_argument("--output",required=True);a=p.parse_args()
- root=Path(a.input);files=sorted(root.glob("*.json")) if root.is_dir() else [root]
+ root=Path(a.input);files=[f for f in sorted(root.glob("*.json")) if f.name != "image-generation-report.json"] if root.is_dir() else [root]
  results=[];approved=0
  for file in files:
   try:
