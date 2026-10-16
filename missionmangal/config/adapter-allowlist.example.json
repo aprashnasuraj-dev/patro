@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "enabled": false,
+  "notes": "Template only. Copy reviewed entries into adapter-allowlist.json after verifying current provider terms, commercial use, model ID, limits, and adding matching GitHub Actions secrets. Never commit secret values. Do not set the verification flags to true without review.",
+  "adapters": [
+    {
+      "id": "gemini-flash",
+      "kind": "gemini",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta",
+      "model": "gemini-2.5-flash",
+      "secret_env": "GEMINI_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 100,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    },
+    {
+      "id": "groq-chat",
+      "kind": "groq",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "model": "llama-3.3-70b-versatile",
+      "secret_env": "GROQ_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 100,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    },
+    {
+      "id": "openrouter-chat",
+      "kind": "openrouter",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "google/gemini-2.5-flash",
+      "secret_env": "OPENROUTER_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 100,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    },
+    {
+      "id": "siliconflow-chat",
+      "kind": "siliconflow",
+      "endpoint": "https://api.siliconflow.com/v1/chat/completions",
+      "model": "Qwen/Qwen3-8B",
+      "secret_env": "SILICONFLOW_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 100,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    },
+    {
+      "id": "openai-chat",
+      "kind": "openai",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "model": "gpt-4.1-mini",
+      "secret_env": "OPENAI_API_KEY",
+      "capabilities": [
+        "draft",
+        "edit",
+        "review"
+      ],
+      "daily_limit": 100,
+      "enabled": false,
+      "official_terms_verified": false,
+      "commercial_use_verified": false,
+      "max_retries": 2,
+      "timeout_seconds": 40
+    }
+  ]
+}
