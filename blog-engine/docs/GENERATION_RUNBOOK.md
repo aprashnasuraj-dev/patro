@@ -1,13 +1,13 @@
 # Mission Mangal generation runbook
 
 ## Current implementation boundary
-The SEO planner produces candidate opportunities, canonical URL proposals and transparent heuristic scores. It does not claim search volume, ranking likelihood, publication readiness or create fake article bodies. Research adapters must retrieve actual pages, capture publication metadata and excerpts, map every claim to sources, and verify per-asset reuse rights before the editorial pipeline can advance.
+The content workflow produces candidate opportunities and research leads, canonical URL proposals and transparent heuristic scores. It does not claim search volume, ranking likelihood, publication readiness or create fake article bodies. Research adapters must retrieve actual pages, capture publication metadata and excerpts, map every claim to sources, and verify per-asset reuse rights before the editorial pipeline can advance.
 
 ## Start
-1. Open Actions → Mission Mangal SEO opportunity planner → Run workflow on `missionmangal-bulk-generation-ready`.
-2. The workflow tests the isolated Python engine and uploads `missionmangal-seo-opportunities-<run id>`.
+1. Open Actions → Generate content (isolated staging) → Run workflow on `missionmangal-bulk-generation-ready` for the full candidate/research workflow, or use the SEO opportunity planner for discovery only.
+2. The content workflow tests the isolated Python engine, discovers candidate topics, fetches public source leads, prepares editorial perspectives, and uploads `aafnaipatro-content-staging-<run id>`. The number processed is limited by distinct curated seeds; it will report shortages instead of manufacturing topics.
 3. Download the artifact and review duplicate flags, category distribution, canonical routes and titles.
-4. For article generation, configure only reviewed model adapters in the isolated runner. Existing GitHub secret names do not prove the secrets exist or that the credentials are valid. Use repository Actions secrets with exact normalized env mappings; never print them.
+4. For article generation, configure only reviewed model adapters in `missionmangal/config/adapter-allowlist.json` and configure matching GitHub Actions secrets. The workflow never echoes secret values. Existing GitHub secret names do not prove the secrets exist or that the credentials are valid. Use repository Actions secrets with exact normalized env mappings; never print them.
 5. Run in batches with the append-only ledger. Resume from the latest ledger status rather than resetting the file. Retry transient 408/409/425/429/5xx and network errors with bounded backoff; do not retry permanent auth/invalid-request errors indefinitely.
 6. Every candidate must pass source, claims, rights, similarity, fact and editorial review gates before it can be marked approved.
 7. Stage at least 2,001 unique, approved records before the production integration PR. Run the existing route-collision audit, preserve current Facts routes, and verify sitemap URLs equal actual rendered pages. Do not merge into main or deploy until the integration PR is reviewed.
