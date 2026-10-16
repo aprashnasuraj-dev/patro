@@ -4,7 +4,7 @@ from .seo import canonical
 from .discovery import candidate, CATEGORIES
 from .duplicate_checker import check
 
-    return re.sub(r"\s+", " ", str(q or "")).strip(" \t\r\n?.!")
+    return re.sub(r"\s+", " ", str(q or "")).strip()
     return re.sub(r"\\s+", " ", str(q or "")).strip(" \\t\\r\\n?.!")
 
 def score_opportunity(title, category, intent, evidence_depth=0, duplicate=False):
