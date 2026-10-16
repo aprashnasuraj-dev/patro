@@ -35,8 +35,8 @@ def transport(spec,messages,secret):
  if not isinstance(answer,str) or not answer.strip():raise PermanentFailure('Empty provider output')
  return answer
 class Router:
- def __init__(self,specs,transport_fn=None,usage=None,sleep=None):
-  self.specs=specs;self.transport=transport_fn or transport;self.usage=usage if usage is not None else {};self.sleep=sleep or time.sleep;self.failures=[]
+ def __init__(self,specs,transport_fn=None,usage=None,sleep=None,quota=None):
+  self.specs=specs;self.transport=transport_fn or transport;self.usage=usage if usage is not None else {};self.sleep=sleep or time.sleep;self.failures=[];self.quota=quota
  @classmethod
  def from_file(cls,path,**kwargs):
   cfg=json.loads(Path(path).read_text(encoding='utf-8'))
@@ -55,10 +55,20 @@ class Router:
   for p in self.choices(capability,exclude):
    for attempt in range(p.get('max_retries',2)+1):
     if self.usage.get(p['id'],0)>=p['daily_limit']:break
+    if self.quota is not None:
+     import uuid,datetime
+     window=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
+     request_key='mangal:'+uuid.uuid4().hex
+     try:self.quota.reserve(p['id'],window,request_key,p['daily_limit'])
+     except Exception:
+      self.failures.append((p['id'],'shared-quota','Unavailable or exhausted'));break
     self.usage[p['id']]=self.usage.get(p['id'],0)+1
     try:
      answer=self.transport(p,messages,os.environ[p['secret_env']])
      if not isinstance(answer,str) or not answer.strip():raise PermanentFailure('Empty output')
+     if self.quota is not None:
+      try:self.quota.complete(p['id'],window,request_key)
+      except Exception:pass  # Conservatively keep the quota reservation consumed.
      return {'provider':p['id'],'model':p['model'],'text':answer,'attempts':attempt+1}
     except PermanentFailure as e:self.failures.append((p['id'],'permanent',str(e)));break
     except TransientFailure as e:
