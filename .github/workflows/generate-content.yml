@@ -1,0 +1,100 @@
+name: Generate content (isolated staging)
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: Number of candidate topics to process (bounded by available unique seeds)
+        required: true
+        default: '2000'
+      run_drafting:
+        description: Attempt drafting only for source packets that already pass strict evidence gates
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: aafnaipatro-content-staging-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout the selected working branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate catalogues and input data
+        run: |
+          python - <<'PY'
+          import json
+          for p in [
+            'blog-engine/data/topic-seeds.json',
+            'blog-engine/data/model-provider-catalog.json',
+            'blog-engine/data/research-provider-catalog.json',
+            'missionmangal/config/adapter-allowlist.json',
+          ]:
+            json.load(open(p, encoding='utf-8'))
+          print('JSON catalogues validated.')
+          PY
+      - name: Run unit tests
+        run: cd blog-engine && python -m unittest discover -s tests -v
+      - name: Discover unique SEO topic candidates
+        run: |
+          python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --output .missionmangal-staging/topics.json
+      - name: Fetch public source leads
+        run: |
+          python blog-engine/scripts/fetch_sources.py --topics .missionmangal-staging/topics.json --output .missionmangal-staging/sources.json --delay 0.25
+      - name: Build editorial perspectives and evidence checklist
+        run: |
+          python blog-engine/scripts/generate_perspectives.py --sources .missionmangal-staging/sources.json --output .missionmangal-staging/perspectives.json
+      - name: Draft only evidence-complete packets
+        if: inputs.run_drafting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python blog-engine/scripts/write_draft.py --perspectives .missionmangal-staging/perspectives.json --output .missionmangal-staging/drafts
+      - name: Audit drafts without auto-approving
+        if: inputs.run_drafting
+        run: |
+          python blog-engine/scripts/verify_content.py --input .missionmangal-staging/drafts --output .missionmangal-staging/verification-report.json
+      - name: Write accurate batch summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('.missionmangal-staging')
+          summary={'workflow':'isolated-staging','publishable_articles':0,'production_changed':False,'main_branch_changed':False}
+          for name in ('topics.json','sources.json','perspectives.json','verification-report.json'):
+            p=root/name
+            if p.exists():
+              data=json.loads(p.read_text(encoding='utf-8'))
+              summary[name]={
+                'count':data.get('count',data.get('topics',data.get('checked',len(data.get('items',[]))))),
+                'note':data.get('note','')
+              }
+          (root/'run-summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Upload complete staging artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aafnaipatro-content-staging-${{ github.run_id }}
+          path: .missionmangal-staging/
+          if-no-files-found: warn
+          retention-days: 14
