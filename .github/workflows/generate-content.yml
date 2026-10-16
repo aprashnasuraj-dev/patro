@@ -44,8 +44,10 @@ jobs:
             json.load(open(p, encoding='utf-8'))
           print('JSON catalogues validated.')
           PY
-      - name: Run unit tests
-        run: cd blog-engine && python -m unittest discover -s tests -v
+      - name: Compile pipeline and run unit tests
+        run: |
+          python -m compileall -q blog-engine/engine blog-engine/scripts blog-engine/tests
+          cd blog-engine && python -m unittest discover -s tests -v
       - name: Discover unique SEO topic candidates
         run: |
           python blog-engine/scripts/discover_topics.py --count "${{ inputs.count }}" --output .missionmangal-staging/topics.json
