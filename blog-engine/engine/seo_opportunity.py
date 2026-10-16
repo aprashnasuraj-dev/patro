@@ -1,11 +1,11 @@
 """SEO opportunity generation: score intent fit without inventing search-volume metrics."""
 import re
 from .seo import canonical
-from .discovery import candidate, CATEGORIES
+from .discovery import candidate
 from .duplicate_checker import check
 
+def normalize_query(q):
     return re.sub(r"\s+", " ", str(q or "")).strip()
-    return re.sub(r"\\s+", " ", str(q or "")).strip(" \\t\\r\\n?.!")
 
 def score_opportunity(title, category, intent, evidence_depth=0, duplicate=False):
     """Transparent heuristic score (0-100); not a traffic or ranking prediction."""
