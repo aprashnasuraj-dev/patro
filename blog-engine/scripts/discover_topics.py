@@ -18,7 +18,7 @@ def main():
  p=argparse.ArgumentParser()
  p.add_argument("--count",type=int,default=2000);p.add_argument("--output",default="topics.json")
  p.add_argument("--seeds",default=str(ROOT/"data"/"topic-seeds.json"));p.add_argument("--ledger",default=str(ROOT/"data"/"article_ledger.jsonl"))
- p.add_argument("--no-expand",action="store_true");p.add_argument("--results-per-seed",type=int,default=20);p.add_argument("--delay",type=float,default=.15)
+ p.add_argument("--no-expand",action="store_true");p.add_argument("--results-per-seed",type=int,default=40);p.add_argument("--delay",type=float,default=.15)
  a=p.parse_args()
  if a.count<1 or a.count>10000:raise SystemExit("--count must be 1..10000")
  seeds=json.loads(Path(a.seeds).read_text(encoding="utf-8"));ledger=load(a.ledger);raw=[]
