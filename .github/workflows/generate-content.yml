@@ -90,6 +90,16 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python blog-engine/scripts/write_draft.py --perspectives .missionmangal-staging/perspectives.json --output .missionmangal-staging/drafts
+      - name: Edit drafts without adding claims
+        if: inputs.run_drafting
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python blog-engine/scripts/edit_drafts.py --input .missionmangal-staging/drafts
       - name: Audit drafts without auto-approving
         if: inputs.run_drafting
         run: |
