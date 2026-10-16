@@ -1,0 +1,737 @@
+[
+  {
+    "title": "Why does water look blue in deep oceans?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why does water look blue in deep oceans?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why does ice float on water?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why does ice float on water?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why does metal feel colder than wood?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why does metal feel colder than wood?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do rainbows form?",
+    "category": "science",
+    "type": "answer",
+    "intent": "How do rainbows form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why is the sky blue?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why is the sky blue?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do we see lightning before hearing thunder?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why do we see lightning before hearing thunder?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do magnets attract iron?",
+    "category": "science",
+    "type": "answer",
+    "intent": "How do magnets attract iron?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why does salt melt ice?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why does salt melt ice?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does a solar panel turn sunlight into electricity?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How does a solar panel turn sunlight into electricity?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do batteries store energy?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How do batteries store energy?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do airplanes leave white trails?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why do airplanes leave white trails?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does noise-cancelling technology work?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does noise-cancelling technology work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What causes the northern lights?",
+    "category": "space",
+    "type": "article",
+    "intent": "What causes the northern lights?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do scientists measure the age of Earth?",
+    "category": "science",
+    "type": "article",
+    "intent": "How do scientists measure the age of Earth?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between weather and climate?",
+    "category": "nature",
+    "type": "article",
+    "intent": "What is the difference between weather and climate?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do tides work?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How do tides work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do deserts get cold at night?",
+    "category": "nature",
+    "type": "answer",
+    "intent": "Why do deserts get cold at night?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do plants know which way to grow?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do plants know which way to grow?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do leaves change color in autumn?",
+    "category": "nature",
+    "type": "answer",
+    "intent": "Why do leaves change color in autumn?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do trees move water from roots to leaves?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do trees move water from roots to leaves?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do some animals glow in the dark?",
+    "category": "nature",
+    "type": "article",
+    "intent": "Why do some animals glow in the dark?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do migratory birds navigate?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do migratory birds navigate?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do bees communicate with each other?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do bees communicate with each other?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do cats purr?",
+    "category": "nature",
+    "type": "answer",
+    "intent": "Why do cats purr?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do octopuses change color?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do octopuses change color?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What makes a volcano erupt?",
+    "category": "geography",
+    "type": "article",
+    "intent": "What makes a volcano erupt?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How are mountains formed?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How are mountains formed?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do earthquakes happen?",
+    "category": "geography",
+    "type": "article",
+    "intent": "Why do earthquakes happen?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do glaciers shape landscapes?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How do glaciers shape landscapes?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What causes ocean currents?",
+    "category": "geography",
+    "type": "article",
+    "intent": "What causes ocean currents?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do satellites stay in orbit?",
+    "category": "space",
+    "type": "article",
+    "intent": "How do satellites stay in orbit?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How far away is the Moon?",
+    "category": "space",
+    "type": "answer",
+    "intent": "How far away is the Moon?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do eclipses work?",
+    "category": "space",
+    "type": "article",
+    "intent": "How do eclipses work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is a light-year in simple terms?",
+    "category": "space",
+    "type": "answer",
+    "intent": "What is a light-year in simple terms?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do black holes form?",
+    "category": "space",
+    "type": "article",
+    "intent": "How do black holes form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between a comet and an asteroid?",
+    "category": "space",
+    "type": "article",
+    "intent": "What is the difference between a comet and an asteroid?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do rockets escape Earth's gravity?",
+    "category": "space",
+    "type": "article",
+    "intent": "How do rockets escape Earth's gravity?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What can we learn from meteorites?",
+    "category": "space",
+    "type": "article",
+    "intent": "What can we learn from meteorites?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does GPS determine your location?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does GPS determine your location?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does the internet send information around the world?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does the internet send information around the world?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does fiber-optic internet carry data?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does fiber-optic internet carry data?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between Wi-Fi and mobile data?",
+    "category": "technology",
+    "type": "article",
+    "intent": "What is the difference between Wi-Fi and mobile data?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do QR codes store information?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How do QR codes store information?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does a search engine rank web pages?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does a search engine rank web pages?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do recommendation algorithms work?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How do recommendation algorithms work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is encryption and why does it matter?",
+    "category": "technology",
+    "type": "article",
+    "intent": "What is encryption and why does it matter?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does a touchscreen detect your finger?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does a touchscreen detect your finger?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do electric vehicles recover energy when braking?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do electric vehicles recover energy when braking?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do bridges distribute loads?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do bridges distribute loads?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do tall buildings sway in the wind?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "Why do tall buildings sway in the wind?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does concrete harden?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How does concrete harden?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do engineers measure land elevation?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do engineers measure land elevation?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do dams generate electricity?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do dams generate electricity?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does a heat pump work?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How does a heat pump work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do roads crack in winter?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "Why do roads crack in winter?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do ancient civilizations track time?",
+    "category": "history",
+    "type": "article",
+    "intent": "How do ancient civilizations track time?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How did paper change the spread of knowledge?",
+    "category": "history",
+    "type": "article",
+    "intent": "How did paper change the spread of knowledge?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why did ancient cities develop near rivers?",
+    "category": "history",
+    "type": "article",
+    "intent": "Why did ancient cities develop near rivers?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How did the printing press change society?",
+    "category": "history",
+    "type": "article",
+    "intent": "How did the printing press change society?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How did early maps represent the world?",
+    "category": "history",
+    "type": "article",
+    "intent": "How did early maps represent the world?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do calendars need leap years?",
+    "category": "history",
+    "type": "article",
+    "intent": "Why do calendars need leap years?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How did people navigate before GPS?",
+    "category": "history",
+    "type": "article",
+    "intent": "How did people navigate before GPS?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What makes a language change over time?",
+    "category": "language",
+    "type": "article",
+    "intent": "What makes a language change over time?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do languages borrow words from each other?",
+    "category": "language",
+    "type": "article",
+    "intent": "Why do languages borrow words from each other?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do writing systems develop?",
+    "category": "language",
+    "type": "article",
+    "intent": "How do writing systems develop?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between a proverb and an idiom?",
+    "category": "language",
+    "type": "article",
+    "intent": "What is the difference between a proverb and an idiom?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do musical instruments produce different sounds?",
+    "category": "arts",
+    "type": "article",
+    "intent": "How do musical instruments produce different sounds?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do optical illusions fool the brain?",
+    "category": "science",
+    "type": "article",
+    "intent": "Why do optical illusions fool the brain?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do museums decide what to preserve?",
+    "category": "culture",
+    "type": "article",
+    "intent": "How do museums decide what to preserve?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do UNESCO World Heritage sites get selected?",
+    "category": "culture",
+    "type": "article",
+    "intent": "How do UNESCO World Heritage sites get selected?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What makes a map projection distort the world?",
+    "category": "geography",
+    "type": "article",
+    "intent": "What makes a map projection distort the world?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do scientists estimate animal populations?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do scientists estimate animal populations?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is biodiversity and why does it matter?",
+    "category": "nature",
+    "type": "article",
+    "intent": "What is biodiversity and why does it matter?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do coral reefs support marine life?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do coral reefs support marine life?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does soil form?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How does soil form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do scientists study ancient climates?",
+    "category": "science",
+    "type": "article",
+    "intent": "How do scientists study ancient climates?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between renewable and nonrenewable energy?",
+    "category": "science",
+    "type": "article",
+    "intent": "What is the difference between renewable and nonrenewable energy?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does geothermal energy work?",
+    "category": "science",
+    "type": "article",
+    "intent": "How does geothermal energy work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do wind turbines generate electricity?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do wind turbines generate electricity?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the water cycle?",
+    "category": "nature",
+    "type": "article",
+    "intent": "What is the water cycle?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do scientists detect exoplanets?",
+    "category": "space",
+    "type": "article",
+    "intent": "How do scientists detect exoplanets?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the Fermi paradox?",
+    "category": "space",
+    "type": "article",
+    "intent": "What is the Fermi paradox?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do time zones work?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How do time zones work?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why are there different calendar systems?",
+    "category": "culture",
+    "type": "article",
+    "intent": "Why are there different calendar systems?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do earthquakes create tsunamis?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How do earthquakes create tsunamis?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do engineers inspect bridges for damage?",
+    "category": "engineering",
+    "type": "article",
+    "intent": "How do engineers inspect bridges for damage?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does 3D printing build objects layer by layer?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How does 3D printing build objects layer by layer?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do barcodes differ from QR codes?",
+    "category": "technology",
+    "type": "article",
+    "intent": "How do barcodes differ from QR codes?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do some materials conduct electricity?",
+    "category": "science",
+    "type": "article",
+    "intent": "Why do some materials conduct electricity?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does sound travel through air?",
+    "category": "science",
+    "type": "answer",
+    "intent": "How does sound travel through air?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why does a mirror reverse left and right?",
+    "category": "science",
+    "type": "answer",
+    "intent": "Why does a mirror reverse left and right?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do clouds form?",
+    "category": "nature",
+    "type": "answer",
+    "intent": "How do clouds form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why do stars twinkle?",
+    "category": "space",
+    "type": "answer",
+    "intent": "Why do stars twinkle?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do scientists classify living things?",
+    "category": "nature",
+    "type": "article",
+    "intent": "How do scientists classify living things?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What is the difference between a lake and a sea?",
+    "category": "geography",
+    "type": "article",
+    "intent": "What is the difference between a lake and a sea?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do caves form?",
+    "category": "geography",
+    "type": "article",
+    "intent": "How do caves form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "Why are some beaches black?",
+    "category": "geography",
+    "type": "answer",
+    "intent": "Why are some beaches black?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do fossils form?",
+    "category": "science",
+    "type": "article",
+    "intent": "How do fossils form?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do archaeologists date ancient objects?",
+    "category": "history",
+    "type": "article",
+    "intent": "How do archaeologists date ancient objects?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do historians evaluate conflicting evidence?",
+    "category": "history",
+    "type": "article",
+    "intent": "How do historians evaluate conflicting evidence?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How does a compass point north?",
+    "category": "technology",
+    "type": "answer",
+    "intent": "How does a compass point north?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "What makes a good scientific experiment?",
+    "category": "science",
+    "type": "article",
+    "intent": "What makes a good scientific experiment?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do public datasets reveal long-term trends?",
+    "category": "data",
+    "type": "article",
+    "intent": "How do public datasets reveal long-term trends?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How can you tell correlation from causation?",
+    "category": "data",
+    "type": "article",
+    "intent": "How can you tell correlation from causation?",
+    "evidence_depth": 0
+  },
+  {
+    "title": "How do statistics summarize uncertainty?",
+    "category": "data",
+    "type": "article",
+    "intent": "How do statistics summarize uncertainty?",
+    "evidence_depth": 0
+  }
+]
