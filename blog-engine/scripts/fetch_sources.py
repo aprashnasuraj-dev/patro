@@ -4,11 +4,21 @@ import argparse,json,re,time,urllib.parse,urllib.request,urllib.error
 from pathlib import Path
 UA="AafnaiPatroResearchBot/1.0 (editorial research; contact: meroaafnaipatro@gmail.com)"
 def get_json(url,headers=None):
- req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json",**(headers or {})})
- try:
-  with urllib.request.urlopen(req,timeout=18) as r:return json.load(r)
- except (urllib.error.URLError,TimeoutError,OSError,ValueError) as e:
-  return {"_error":type(e).__name__}
+ for attempt in range(5):
+  req=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"application/json",**(headers or {})})
+  try:
+   time.sleep(.15)
+   with urllib.request.urlopen(req,timeout=18) as r:return json.load(r)
+  except urllib.error.HTTPError as e:
+   if e.code not in (408,425,429,500,502,503,504) or attempt==4:return {"_error":"HTTP "+str(e.code)}
+   retry=e.headers.get("Retry-After") if e.headers else None
+   try:delay=min(30,max(1,float(retry))) if retry else min(16,2**attempt)
+   except (ValueError,TypeError):delay=min(16,2**attempt)
+   time.sleep(delay)
+  except (urllib.error.URLError,TimeoutError,OSError,ValueError) as e:
+   if attempt==4:return {"_error":type(e).__name__}
+   time.sleep(min(16,2**attempt))
+ return {"_error":"retry-exhausted"}
 def clean(text):
  return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",text or "")).strip()
 def now():return time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime())
@@ -52,14 +62,28 @@ def search_commons(query):
  return out
 def main():
  p=argparse.ArgumentParser();p.add_argument("--topics",required=True);p.add_argument("--output",required=True);p.add_argument("--delay",type=float,default=.25);a=p.parse_args()
- topics=json.loads(Path(a.topics).read_text(encoding="utf-8")).get("items",[]);results=[]
+ topics=json.loads(Path(a.topics).read_text(encoding="utf-8")).get("items",[]);out_path=Path(a.output);out_path.parent.mkdir(parents=True,exist_ok=True)
+ prior={}
+ if out_path.exists():
+  try:prior={v["id"]:v for v in json.loads(out_path.read_text(encoding="utf-8")).get("items",[])}
+  except (ValueError,KeyError,TypeError):prior={}
+ results=[];done=0
  for i,t in enumerate(topics):
+  old=prior.get(t["id"])
+  if old and old.get("sources") and old.get("research_status")=="evidence-candidates":
+   results.append(old);done+=1;continue
   q=t.get("primary_query") or t.get("title","");hits=search_wikipedia(q)+search_crossref(q)
   unique={s["url"]:s for s in hits if s.get("url")}
   sources=list(unique.values());media=search_commons(q)
-  results.append({"id":t["id"],"title":t.get("title",q),"url":t["url"],"query":q,"sources":sources,"media":media,"source_count":len(sources),"verified_source_count":sum(bool(s.get("verified")) for s in sources),"licensed_media_count":sum(bool(m.get("rights_verified")) for m in media),"research_status":"evidence-candidates" if sources else "source-fetch-failed","publishable":False})
+  row={"id":t["id"],"title":t.get("title",q),"url":t["url"],"query":q,"sources":sources,"media":media,"source_count":len(sources),"verified_source_count":sum(bool(s.get("verified")) for s in sources),"licensed_media_count":sum(bool(m.get("rights_verified")) for m in media),"research_status":"evidence-candidates" if sources else "source-fetch-failed","publishable":False}
+  results.append(row);done+=1
   if a.delay:time.sleep(a.delay)
-  if (i+1)%25==0:print(f"Fetched source passages for {i+1}/{len(topics)} topics")
- Path(a.output).parent.mkdir(parents=True,exist_ok=True);Path(a.output).write_text(json.dumps({"version":1,"topics":len(topics),"items":results,"note":"Verified means retrieved source provenance and a usable passage, not that every claim is proven. Each article still requires 5-20 distinct sources, claim mapping, rights-cleared media, fact checks and editorial review."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+  if done%10==0 or done==len(topics):
+   completed_ids={r["id"] for r in results};results.extend(v for k,v in prior.items() if k not in completed_ids)
+   out_path.write_text(json.dumps({"version":1,"topics":len(topics),"completed":done,"items":results,"note":"Verified means retrieved source provenance and a usable passage, not that every claim is proven. Each article still requires 5-20 distinct sources, claim mapping, rights-cleared media, fact checks and editorial review."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+   results=[r for r in results if r["id"] in completed_ids]
+  if done%25==0:print(f"Processed {done}/{len(topics)} topics (checkpoint saved)")
+ completed_ids={r["id"] for r in results};results.extend(v for k,v in prior.items() if k not in completed_ids)
+ out_path.write_text(json.dumps({"version":1,"topics":len(topics),"completed":done,"items":results,"note":"Verified means retrieved source provenance and a usable passage, not that every claim is proven. Each article still requires 5-20 distinct sources, claim mapping, rights-cleared media, fact checks and editorial review."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(f"Wrote source records for {len(results)} topics to {a.output}")
 if __name__=="__main__":main()
