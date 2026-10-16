@@ -12,7 +12,8 @@ export function renderApproved(article,record){
  if(article.id!==record.id||article.slug!==record.slug||record.url!==canonical(article.slug))throw Error('Article does not match reserved URL');
  if(!['approved','rendered','published'].includes(record.status))throw Error('Registry approval required');
  const refs=article.sources.map((s,i)=>'<li id="source-'+esc(s.id)+'"><a rel="noopener noreferrer" href="'+esc(s.url)+'">'+esc(s.title)+'</a> — '+esc(s.publisher)+'</li>').join('');
- const claimLedger='<h2>Verified claims</h2><ul>'+article.claims.map(c=>'<li>'+esc(c.text)+' '+c.source_ids.map(id=>'<a href="#source-'+esc(id)+'">['+esc(id)+']</a>').join(' ')+'</li>').join('')+'</ul>';\n const art=esc(article.body_md).replace(/\n\n/g,'</p><p>').replace(/\n/g,'<span> </span>');
+ const claimLedger='<h2>Verified claims</h2><ul>'+article.claims.map(c=>'<li>'+esc(c.text)+' '+c.source_ids.map(id=>'<a href="#source-'+esc(id)+'">['+esc(id)+']</a>').join(' ')+'</li>').join('')+'</ul>';
+ const art=esc(article.body_md).replace(/\n\n/g,'</p><p>').replace(/\n/g,'<span> </span>');
  const image=article.media.find(m=>['image','chart','diagram'].includes(m.type));
  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(article.title)+' | Aafnai Patro</title><link rel="canonical" href="'+esc(record.url)+'"><meta name="description" content="'+esc(article.description||article.intent)+'"></head><body><main><article><h1>'+esc(article.title)+'</h1><figure><img loading="lazy" src="'+esc(image.url)+'" alt="'+esc(image.alt)+'"><figcaption>'+esc(image.credit)+' · '+esc(image.license)+'</figcaption></figure><p>'+art+'</p>'+claimLedger+'<h2>Sources</h2><ol>'+refs+'</ol></article></main></body></html>';
 }
