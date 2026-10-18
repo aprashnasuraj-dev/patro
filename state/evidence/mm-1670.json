@@ -1,0 +1,128 @@
+{
+  "id": "mm-1670",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Meme and Variations: A Computational Model of Cultural Evolution",
+      "publisher": "CogPrints (University of Southampton)",
+      "author": "Liane M. Gabora",
+      "published_at": "1995-01-01",
+      "url": "https://openalex.org/W1588022204",
+      "retrieved_at": "2026-10-18T15:48:51.691Z",
+      "sha256": "daf59cfb33db3edfb87f84e002b2f5ff7b0a96b6107f2c7119795d95e4e02714",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper describes a computational model of how ideas, or memes, evolve through the processes of variation, selection, and replication.",
+        "Every iteration, each neural-network based agent in an artificial society has the opportunity to acquire a new meme, either through 1) INNOVATION, by mutating a previously-learned meme, or 2) IMITATION, by copying a meme performed by a neighbor.",
+        "Imitation, mental simulation, and using past experience to bias mutation all increase the rate at which fitter memes evolve.",
+        "Memes at epistatic loci converged more slowly than memes at over- or underdominant loci.",
+        "The higher the ratio of innovation to imitation, the greater the meme diversity, and the higher the fitness of the fittest meme.",
+        "Optimization is fastest for the society as a whole with an innovation to imitation ratio of 2:1, but diversity is comprimized."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Meme",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19312",
+      "retrieved_at": "2026-10-18T15:48:51.691Z",
+      "sha256": "c4b95ddbb45e070ee411a2c16239aec915d04c3f47719e865332be380efd0088",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A meme ( ; MEEM) is an idea, behavior, or style that spreads by means of imitation (mimesis) from person to person within a culture and often carries symbolic meaning representing a particular phenomenon or theme.",
+        "A meme acts as a unit for carrying cultural ideas, symbols, or practices, that can be transmitted from one mind to another through writing, speech, gestures, rituals, or other imitable phenomena with a mimicked theme.",
+        "Supporters of the concept regard memes as cultural analogues to genes in that they self-replicate, mutate, and respond to selective pressures.",
+        "In popular language, a meme may refer to an Internet meme, typically an image, that is remixed, copied, and circulated in a shared cultural experience online.",
+        "Proponents theorize that memes are a viral phenomenon that may evolve by natural selection in a manner analogous to that of biological evolution.",
+        "Memes do this through processes analogous to those of variation, mutation, competition, and inheritance, each of which influences a meme's reproductive success.",
+        "Memes spread through the behavior that they generate in their hosts.",
+        "Memes that propagate less prolifically may become extinct, while others may survive, spread, and (for better or for worse) mutate.",
+        "Memes that replicate most effectively enjoy more success, and some may replicate effectively even when they prove to be detrimental to the welfare of their hosts.",
+        "A field of study called memetics arose in the 1990s to explore the concepts and transmission of memes in terms of an evolutionary model.",
+        "Criticism from a variety of fronts has challenged the notion that academic study can examine memes empirically.",
+        "However, developments in neuroimaging may make empirical study possible."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Memetics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19770",
+      "retrieved_at": "2026-10-18T15:48:51.691Z",
+      "sha256": "1a935f3daf3cdbc6d38d64d0f7b273125b645a23dc5b05161c372b65d2790fe3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Memetics, or the study of memes, is an emerging discipline in cultural evolution, based on the idea that culture can be reduced to the study of cultural units, called memes: ideas, behaviors, beliefs, and expressions that spread from person to person in a culture through imitation.",
+        "The term \"meme\" was coined by biologist Richard Dawkins in his 1976 book The Selfish Gene, to illustrate the principle that he later called \"Universal Darwinism\".",
+        "All evolutionary processes depend on information being copied, varied, and selected, a process also known as variation with selective retention.",
+        "The conveyor of the information being copied is known as the replicator, with the gene functioning as the replicator in biological evolution.",
+        "Dawkins proposed that the same process drives cultural evolution, and he called this second replicator the \"meme\", citing examples such as musical tunes, catchphrases, fashions, and technologies.",
+        "Like genes, memes are selfish replicators and have causal efficacy; in other words, their properties influence their chances of being copied and passed on.",
+        "Some succeed because they are valuable or useful to their human hosts while others are more like viruses.",
+        "Just as genes can work together to form co-adapted gene complexes, so form groups of memes acting together co-adapted meme complexes or memeplexes.",
+        "Memeplexes include (among many other things) languages, traditions, scientific theories, financial institutions, and religions.",
+        "Dawkins famously referred to religions as \"viruses of the mind\".",
+        "Among proponents of memetics are psychologist Susan Blackmore, author of The Meme Machine, who argues that when our ancestors began imitating behaviours, they let loose a second replicator and co-evolved to become the \"meme machines\" that copy, vary, and select memes in culture.",
+        "Philosopher Daniel Dennett develops memetics extensively, notably in his books Darwin's Dangerous Idea, and From Bacteria to Bach and Back."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Internet meme",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1616492",
+      "retrieved_at": "2026-10-18T15:48:51.691Z",
+      "sha256": "afbd5ae3b0e910b8f3a668ea593d96428b4e313847c5ccff5c48815ad0a5d55f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An Internet meme, or meme (), is a cultural item (such as an idea, behavior, or style) that spreads across the Internet, now primarily through social media platforms.",
+        "Internet memes manifest in a variety of formats, including images, videos (e.g.",
+        "Key characteristics of memes include their tendency to be parodied, their use of intertextuality, their viral dissemination, and their continual evolution.",
+        "The term meme was originally introduced by Richard Dawkins in his 1976 book The Selfish Gene to describe a conceptual unit of cultural transmission, analogous to (and sounding like) the gene in biology.",
+        "The term Internet meme was coined by Mike Godwin in 1993 in reference to the way memes proliferated through early online communities, including message boards, Usenet groups, and email.",
+        "The emergence of social media platforms such as YouTube, Twitter, Facebook, and Instagram further diversified memes and accelerated their spread.",
+        "Dank and surrealist memes are some of the newer genres, with newer formats like short-form videos popularized by platforms like Vine and TikTok.",
+        "Newer internet memes (specifically those of low quality) are often classified as brain rot, AI slop, or both.",
+        "Memes are now recognized as a significant aspect of Internet culture and are the subject of academic research.",
+        "They appear across a broad spectrum of contexts, including marketing, economics, finance, politics, social movements, religion, and healthcare.",
+        "While memes are often viewed as falling under fair use protection, their incorporation of material from pre-existing works can result in copyright disputes."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Meme Machine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7929246",
+      "retrieved_at": "2026-10-18T15:48:51.691Z",
+      "sha256": "87023577ee73c7a95ddacbb6611a4fc3053cefdc7fa75063ac99a8d63ac864bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Meme Machine is a popular science book by Susan Blackmore on the subject of memes.",
+        "Blackmore attempts to constitute memetics as a science by discussing its empirical and analytic potential, as well as some important problems with memetics.",
+        "The first half of the book tries to create greater clarity about the definition of the meme as she sees it.",
+        "The last half of the book consists of a number of possible memetic explanations for such different problems as the origin of language, the origin of the human brain, sexual phenomena, the Internet and the notion of the self.",
+        "These explanations, in her view, give simpler and clearer explanations than trying to create genetic explanations in these fields.",
+        "The idea of memes, and the word itself, were originally speculated by Richard Dawkins in his book The Selfish Gene although similar, or analogous, concepts had been in currency for a while before its publishing.",
+        "In the book, Blackmore examines the difficulties associated with the meme including its definition and how to spot one as well as the difficulties which arise from seeing it as being like the gene.",
+        "She sees the meme in terms of being a universal replicator, of which the gene is but an example, rather than being like the gene itself.",
+        "Universal replicators possess three key characteristics: high fidelity replication, high levels of fecundity (and therefore many copies) and longevity.",
+        "She believes that while memes have attained/evolved a sufficiently high level of these characteristics to qualify as replicators, they are not as effective replicators as genes, based on these key characteristics.",
+        "While others have accepted the possible existence of memes, they are sometimes seen as subordinate to genes.",
+        "The author suggests that this is not the case now and that memes are independent replicators."
+      ]
+    }
+  ]
+}

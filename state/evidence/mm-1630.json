@@ -1,0 +1,80 @@
+{
+  "id": "mm-1630",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Subjunctive mood",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=287913",
+      "retrieved_at": "2026-10-18T15:45:16.863Z",
+      "sha256": "2beda4eff4900ca417f00ea46cd25e0a6ec292eec19fc7b600d83387eada0256",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The subjunctive (also known as the conjunctive in some languages) is a grammatical mood—a feature of an utterance that indicates the speaker's attitude toward it.",
+        "Subjunctive forms of verbs are typically used to express various states of unreality, such as wish, emotion, possibility, judgment, opinion, obligation, or action that has not yet occurred.",
+        "The precise situations in which they are used vary from language to language.",
+        "The subjunctive is one of the irrealis moods, which refer to what is not necessarily real.",
+        "It is often contrasted with the indicative, a realis mood which principally indicates that something is a statement of fact.",
+        "In Modern English, subjunctive forms usually employ the bare form of the verb in the present subjunctive (with the third person singular lacking the -s ending), or the use of were instead of was in past subjunctive constructions.",
+        "Subjunctives occur most often, although not exclusively, in subordinate clauses—particularly that-clauses.",
+        "Examples of the subjunctive in English are found in the sentences \"I suggest that you be careful\" and \"It is important that she stay by your side.\""
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Bajan language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=997991",
+      "retrieved_at": "2026-10-18T15:45:16.863Z",
+      "sha256": "4893117b289f97d5a34d74cc27dbba510a88394207af16ec3db93f987ac4a36b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bajan, also known as Bajan Creole (, BAY-jən), is a Caribbean English-based creole language with West/Central African and British influences spoken on the Caribbean island of Barbados.",
+        "Bajan is primarily a spoken language, meaning that in general, standard English is used in print, in the media, in the judicial system, in government, and in day-to-day business, while Bajan is reserved for less formal situations, in music, or in social commentary.",
+        "Ethnologue reports that, as of 2018, 260,000 Barbadians natively spoke Bajan, while 30,000 were native English speakers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mixtec languages",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5331946",
+      "retrieved_at": "2026-10-18T15:45:16.863Z",
+      "sha256": "7487878148ca8525a7fcfad745fa5fe45285d95e9be1fa81097bac87bfe22043",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Mixtec () languages belong to the Mixtecan group of the Oto-Manguean language family.",
+        "Mixtec is spoken in Mexico and is closely related to Trique and Cuicatec.",
+        "The varieties of Mixtec are spoken by over half a million people.",
+        "Identifying how many Mixtec languages there are in this complex dialect continuum poses challenges at the level of linguistic theory.",
+        "Depending on the criteria for distinguishing dialects from languages, there may be as few as a dozen or as many as fifty-three Mixtec languages."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Basque verbs",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12784134",
+      "retrieved_at": "2026-10-18T15:45:16.864Z",
+      "sha256": "87e91166ae56d8fc5c487ec81bde2304e686e4cfa99831f78ed18d39e032934d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The verb is one of the most complex parts of Basque grammar.",
+        "It is sometimes represented as a difficult challenge for learners of the language, and many Basque grammars devote most of their pages to lists or tables of verb paradigms.",
+        "This article does not give a full list of verb forms; its purpose is to explain the nature and structure of the system."
+      ]
+    }
+  ]
+}

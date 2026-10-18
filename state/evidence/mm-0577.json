@@ -1,0 +1,137 @@
+{
+  "id": "mm-0577",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why is Productivity Growing Faster?",
+      "publisher": "National Bureau of Economic Research",
+      "author": "Feldstein, Martin",
+      "published_at": "2003-03",
+      "url": "https://doi.org/10.3386/w9530",
+      "retrieved_at": "2026-10-18T15:10:05.438Z",
+      "sha256": "02f247151db63e9c03904d8853bcee17aed92102ebc5286e31b83604b4cf3679",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "ųP�: �*\u001bb&ѥ�u�����.�⫰\u0010Dc\u0010Z�u�|,��$0C��\b:�>�\u0001\u000e͒!Z\u0007�3\b�!5��G���Y��\u0014�h�#�\u001e�\u0012\u0016�$�%l�9�wx ����d���p�!",
+        "!a�S-i\u001e�\u0013J�*A�ki� k��`\u0001�*\u0004p�\u0013k^�۹ɩ��\u0006�kr>'\u0013�������\b����[#�;��w���\\��\\��\u0015qZr�熡�+�bi:��kE\u0017�p,ϒL2��H�\"���j�m�:��ܷ�ׯk;�����ql'N\u001a'� �1�%Y\u0006M6 \u0004�\u001b \u0010ݦ��n� �)�P�-^���J\u0003\u001be\u001bH# M�mMWQh�\u001f�C\u001b�V�I٫4R��j\u0012K��\\Gkw�s?�\u001bY�=����T\u0005Y��2��-~��k�kXUF)!��֤�&�26����� �*s�j\u0016�F!",
+        "��U\u0003 ��NO\u0018�\u00113�\u001e\u000eԸ:�\"\u001c\u0005Yf�[�T\\E� \u001en�#\u001a��5;��\"�2���ܢ�\u001cB=��9���rCiŻU>X�!�I�c��g��|�I�BGcVæ�Mq��M�2x���\u000e����\u001f\u000fD���6aOsd,\b\u001b�Ϯt��,lho%�����O���1�$h#m\u0011�b���HH�s���t�\"�\u001d�J�o��>6n������\u001fw��}��>|g��k�K��%�\b�.m��[H\u0019�5@H�R�N�Ҡ�I�p��%\u0011���\u0012�\u0005��\u0004-B�m���E��4AQ': ZV ��QU��\u001bC դ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Three wireless technologies that could make 5G even faster",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Dohler, Mischa",
+      "published_at": "2015-03-23",
+      "url": "https://theconversation.com/three-wireless-technologies-that-could-make-5g-even-faster-39140",
+      "retrieved_at": "2026-10-18T15:10:05.782Z",
+      "sha256": "38f0469e71db722c09b827620bc9582f787302cbb0eacb6133dd7066a4da2d37",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Three wireless technologies that could make 5G even faster Skip to content Academic rigor, journalistic flair Three wireless technologies that could make 5G even faster Published: March 23, 2015 9:57am EDT 5G, wringing out the network cloth for the most capacity possible.",
+        "But this improvement isn’t due to improving connectivity technologies such as WiFi, 2G, 3G and so on, which have contributed only a five-fold increase.",
+        "Using additional radio frequency spectrum to carry network traffic accounts for a 25-fold improvement – but the largest single improvement, accounting for a 1,600-fold increase, is via shrinking the size of the network “cells” that constitute the network.",
+        "In other words, installing more physical network towers, repeaters and other equipment to create a more dense network of nodes that can carry greater network traffic.",
+        "But this has been very expensive – digging for cables, putting up towers and base stations, installation and maintenance, and all the planning and bureaucratic requirements that entails.",
+        "So much of the next generation 5G mobile network design focuses on squeezing greater speed and capacity from what we already have, without the costs of adding more infrastructure.",
+        "Decoupling send and receive One area under investigation is the concept of downlink (DL) and uplink (UL) decoupling, dubbed by some of its co-inventors DUDe .",
+        "From the first generation mobile networks to the latest 4G, the downlink (or receive) and uplink (or send) connections of any communication session have been coupled together.",
+        "This means a mobile phone associates with one base station at a time and data is both sent and received through the same connection.",
+        "Historically this was a near-optimal approach, since that way the base station and mobile phone would establish the strongest connection that could be provided in both directions.",
+        "However as mobile networks have become more diverse, mixing together network cells of different sizes and transmission towers of different transmission power, it now makes more sense to separate the two.",
+        "A phone could receive information through a high-power, large network cell for maximum speed, and use smaller cells to send data through its lower-power radio."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Verizon (wireless service)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=468631",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "9db6b3633d2d27ede7875baeaf161a4a1646ca53bb77f6d9e67d80da0d8440dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cellco Partnership, trading as Verizon and formerly Verizon Wireless, is an American wireless network operator.",
+        "It has the largest network in the United States with their LTE network covering 2.68 million sq.",
+        "It was founded on April 4, 2000 as a joint venture of American telecommunications firm Bell Atlantic Corporation, which would soon become Verizon Communications, and British multinational telecommunications company Vodafone.",
+        "Verizon Communications became the sole owner in 2014 after buying Vodafone's 45-percent stake in the company.",
+        "In a 2019 reorganization, Verizon moved the wireless products and services into the divisions Verizon Consumer and Verizon Business, and stopped using the Verizon Wireless name.",
+        "It operates national 5G and 4G LTE networks covering about 99 percent of the U.S.",
+        "population, which in the first half of 2024 won top honors in five out of eight categories of the RootMetrics RootScore Reports, along with the most awards in both state and metro testing.",
+        "Notably, Verizon won the United States Overall and Data RootScore Awards outright, along with outright wins for accessibility and video performance.",
+        "Verizon Wireless offers mobile phone services through a variety of devices.",
+        "Its LTE in Rural America Program, with 21 rural wireless carriers participating, covers 2.7 million potential users in 169 rural counties.",
+        "Verizon Wireless announced in 2015 that it was developing a 5G, or fifth-generation, network.",
+        "In 2020, 230 million people were able to access Verizon's 5G, or fifth-generation, dynamic spectrum sharing (DSS) technology network; by 2024, 250 million people were covered by Verizon's 5G Ultra Wideband network."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Rivada Networks",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22874969",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "b1096eba890faf8d0879ff24ba81078978ddc3952511fc7df9f1b784365a0860",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rivada Networks  is a US-based communications technology business with offices in the US and Ireland.",
+        "Rivada Networks was founded on July 6, 2004 and its current CEO and chairman is Irish businessman Declan Ganley.",
+        "Karl Rove, who is a paid lobbyist for Rivada, and Newt Gingrich have been lobbying since early 2019 for the DoD/Rivada deal which CNN says, would be \"premium real estate for the booming and lucrative 5G market.\" Rivada says that is \"not interested in a nationalized 5G network.\""
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "5G",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23475353",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "5eb5b3849fa7f9bcd3b297cafaa894bcedcd5a13ce7cfa72f942f4a75d8895ee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "5G refers to the fifth and current generation of cellular network technology and the successor to 4G.",
+        "In common commercial use, the term refers primarily to mobile networks based on the 3rd Generation Partnership Project (3GPP) 5G system and its New Radio (NR) air interface, which were first specified in 3GPP Release 15.",
+        "5G was developed to meet the International Telecommunication Union's IMT-2020 framework for fifth-generation mobile systems.",
+        "Large-scale commercial deployments began in 2019, including South Korea's national 5G rollout.",
+        "5G networks may be deployed in non-standalone mode, using existing LTE core-network infrastructure, or in standalone mode with a dedicated 5G Core.",
+        "Like earlier cellular systems, 5G networks divide service areas into smaller zones called cells, which are served by fixed cell sites.",
+        "Compatible devices connect by radio to local base stations, which are linked to an operator's core network and to external networks such as the Internet through backhaul connections.",
+        "5G can be deployed using low-band, mid-band, and high-band radio spectrum, with coverage and performance depending heavily on the frequencies used, network design, congestion, and device capabilities.",
+        "Compared with 4G, 5G is designed to provide higher data rates, greater network capacity, lower latency, improved support for dense device deployments, and more flexible network management.",
+        "Actual user speeds are typically much lower than peak values and vary by operator, location, spectrum band, signal quality, and network load.",
+        "5G is used for mobile broadband, fixed wireless access, private and industrial networks, and machine-type communications.",
+        "Its standards support features such as network slicing, edge computing, non-public networks, and ultra-reliable low-latency services, although these capabilities are not present in every deployment."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Samsung Galaxy S21",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=66351666",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "0a4254659d800bede7f2855c4f8bb32d3c19ae1b735c2e6409507febf79e5af0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Samsung Galaxy S21 is a series of high-end Android-based smartphones developed, marketed, and manufactured by Samsung Electronics as part of its flagship Galaxy S series.",
+        "They collectively serve as the successor to the Galaxy S20 series.",
+        "The first three smartphones (Galaxy S21, Galaxy S21+, Galaxy S21 Ultra) were unveiled at Samsung's Galaxy Unpacked event on January 14, 2021, while the Galaxy S21 FE was unveiled at Samsung's CES on January 4, 2022.",
+        "The first three phones were released in the United States and Europe on January 29, 2021, while the Fan Edition was released globally on January 7, 2022.",
+        "All four S21 series models were the first Samsung candybar flagships not given a 4G version.",
+        "They were succeeded by the Galaxy S22 series announced on February 9, 2022."
+      ]
+    }
+  ]
+}

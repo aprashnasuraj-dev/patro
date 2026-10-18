@@ -1,0 +1,106 @@
+{
+  "id": "mm-1781",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Long Has This Been Going On?",
+      "publisher": "University of Pittsburgh Press",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.2307/j.ctt7zw955.44",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Death and the Soaps",
+      "publisher": "Theology in Scotland",
+      "author": "Elizabeth M. Henderson",
+      "published_at": "2006-06-01",
+      "url": "https://openalex.org/W1538951219",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "e6483e42855627ded426a5b5891ba48c6bae20a9ceafed165b3dd145128c8bce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the face of criticism that TV soap operas may not be the best place to debate the way the media covers issues relating to death and dying, Elizabeth Henderson identifies key areas of soaps’ make-up that gives them a surprisingly pertinent take on the subject.",
+        "She goes on to look at how particular soaps handle the question of death and funerals and at what this says about modern views of the issues involved.",
+        "She also raises the question of whether soaps play a role in encouraging the view that churches are becoming increasingly irrelevant with regard to funeral practice."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Soap",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57875",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "e689ce06a3c994ec94485f50378d820db4f205268bb6d5abc23acacf7737d3a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Soap is a salt of a fatty acid (sometimes other carboxylic acids) used for cleaning and lubricating products as well as other applications.",
+        "In a domestic setting, soaps, specifically \"toilet soaps\", are surfactants typically used for washing, bathing, and other types of housekeeping.",
+        "In industrial settings, soaps are used as thickeners, components of some lubricants, emulsifiers, and catalysts.",
+        "Soaps are often produced by mixing fats and oils with a base.",
+        "Humans have used soap for millennia, and evidence exists for the production of soap-like materials in ancient Babylon around 2800 BC."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Ivory (soap)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1307645",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "7a2cc6c1e2ad8abeb369ec175479b16fd75815bcda9dd04bb0d88da6b9ac8733",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ivory (French: Savon d'Ivoire) is an American flagship personal care brand created by the Procter & Gamble Company (P&G), including varieties of white and mildly scented bar soap that became famous for its claim of purity and for floating on water.",
+        "Over the years, the brand has been extended to other varieties and products."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lifebuoy (soap)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6758741",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "4bccec79e7f29d1eca988622bb9227b53651e1037d197f5064f3bad7c9ea4640",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lifebuoy was originally, and for much of its history, a carbolic soap containing phenol (carbolic acid, a compound extracted from coal tar).",
+        "The soaps manufactured today under the Lifebuoy brand do not contain phenol."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Pears (soap)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9389885",
+      "retrieved_at": "2026-10-18T15:49:30.101Z",
+      "sha256": "8ea6c45b52d3858ab0e8e515c0281a2071ef0f26697886d32f8b3595b995c85c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pears Glycerin soap is a British brand of soap first produced and sold in 1807 by Andrew Pears, at a factory just off Oxford Street in London.",
+        "English actress and socialite Lillie Langtry was recruited to become the poster-girl for Pears in 1882, and in doing so, she became the first celebrity to endorse a commercial product.",
+        "Products under the Pears brand are currently manufactured in India and Saudi Arabia for global distribution."
+      ]
+    }
+  ]
+}

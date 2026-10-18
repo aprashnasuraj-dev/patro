@@ -1,0 +1,177 @@
+{
+  "id": "mm-0165",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How are stars born? : The second gravitational collapse and its consequences",
+      "publisher": "Agence Bibliographique de l'Enseignement Supérieur",
+      "author": "Ahmad, Adnan Ali",
+      "published_at": null,
+      "url": "https://doi.org/10.70675/4f14fc36za837z4048z84a0z05566f348f76",
+      "retrieved_at": "2026-10-18T14:54:18.601Z",
+      "sha256": "4a33147d37b740d399a30b94e3bb090b480aee17ba9231f015a05747b969ea6d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        ": Le second effondrement et ses conséquences Les étoiles se forment à la suite de l'effondrement de coeurs denses gravitationnellement instables.",
+        "À cet égard, les simulations numériques ont offert des informations inestimables qui ont ouvert la voie à une grande partie de notre compréhension dans ce domaine.",
+        "Plus particulièrement, ceux-ci ont révélé une séquence évolutive en deux étapes dans laquelle se forme un premier coeur en équilibre hydrostatique, qui lui-même s'effondre à nouveau pour former une protoétoile.",
+        "Ce deuxième effondrement gravitationnel est un processus hautement dynamique et, en tant que tel, constitue une entreprise difficile d'un point de vue numérique.",
+        "Au cours de ma thèse, j'ai réalisé des simulations magnétohydrodynamiques résistives radiatives de pointe de l'effondrement de coeurs denses turbulents jusqu'à des densités stellaires.",
+        "La plage dynamique impliquant 25 ordres de grandeur en densité et 8 en étendue spatiale est abordée avec le code de maillage adaptatif RAMSES.",
+        "Les propriétés de la protoétoile nouvellement née et celles de son disque circumstellaire sont étudiées avec un niveau de détails sans précédent, et les calculs vont au-delà de nombreux articles antérieurs.",
+        "Je présenterai les informations que nous avons acquises sur certaines questions majeures liées à la formation des étoiles grâce à ces simulations.",
+        "Tout d'abord, j'ai effectué des calculs d'hydrodynamique radiative en symétrie sphérique dans le but d'étudier les propriétés et le comportement de la protoétoile, où j'ai constaté qu'elle était turbulente à la naissance malgré sa stabilité aux mouvements convectifs.",
+        "Cela est dû à une instabilité au niveau du choc d'accrétion qui se déclenche peu après la naissance de la protoétoile.",
+        "Cela a des implications sur les modèles d'évolution pré-stellaire, ainsi que sur l'évolution du champ magnétique implanté dans la protoétoile à la naissance.",
+        "À la suite de cela, j'ai réalisé des simulations avec de la turbulence dans le coeur dense initial, qui conduisent à la formation de disques circumstellaires entourant la protoétoile."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The pillars of creation - a glimpse into how stars are born",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Hill, Tanya",
+      "published_at": "2015-05-01",
+      "url": "https://theconversation.com/the-pillars-of-creation-a-glimpse-into-how-stars-are-born-41039",
+      "retrieved_at": "2026-10-18T14:54:18.928Z",
+      "sha256": "6f1f2d8657454e0988f55c163111cfe78fc6b59bcc378d2bb183e07a652b3436",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Partners Museums Victoria provides funding as a member of The Conversation AU.",
+        "View all partners DOI https://doi.org/10.64628/AA.mg4tmerww Then and now - Hubble’s beautiful pillars of creation.",
+        "It turned around five years of public mockery by demonstrating loud and clear that Hubble would live up to – and grow to exceed – the high expectations that had been placed on it.",
+        "Dubbed the ‘ Pillars of Creation ’, this image evokes a response from all people, whether you are into science or not.",
+        "But one thing scientists want to do is to better understand the pillars and discover what they tell us about the dark, hidden regions where stars form.",
+        "The new study, led by PhD student Anna Mc Leod (ESO), was recently published in the journal Monthly Notices of the Royal Astronomical Society .",
+        "As part of the study, the authors estimate that these pillars won’t be around for long by cosmic standards.",
+        "Within three million years they will have completely evaporated away.",
+        "That’s provided they are not blown apart by a supernova before then - or perhaps that’s already happened and we’re still waiting for the message to reach us.",
+        "One thing’s for certain, star formation is a fascinating and highly captivating process.",
+        "The Eagle Nebula It’s not often realised that the famous pillars of creation are embedded in a beautiful gas cloud known as the Eagle Nebula.",
+        "The nebula is around 6,500 light-years away and the pillars can be found right in the central region of the cloud."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How stars are born.",
+      "publisher": "OpenAlex",
+      "author": "Anthony C. Danks; Peter A. Shaver",
+      "published_at": "1978-03-01",
+      "url": "https://openalex.org/works/W3043587947",
+      "retrieved_at": "2026-10-18T14:54:21.764Z",
+      "sha256": "75fccc1b5fd1c5d7dc365ad940509708430109e899b63c33c5d17f9e58601215",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "| OpenAlex Log in Get started Work Add to collection How stars are born.",
+        "Shaver Language: English Topic: Astrophysics and Star Formation Studies Subfield: Astronomy and Astrophysics Field: Physics and Astronomy Domain: Physical Sciences Open Access status: closed OpenAlex ID: W3043587947 FWCI: Cites: Cited by: 2 Related to: 20"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Natures of the Stars",
+      "publisher": "The Physics Video Demonstration Database (Cornell University)",
+      "author": "<ns0:vcard>BEGIN:vCardVERSION:3.0FN:James KalerORG:University of IllinoisADR;TYPE=WORK,POSTAL,PARCEL:;;Department of Astronomy;1002 West Green St.;Urbana;IL;61801;USTEL;TYPE=Department:+(217) 333-9382TEL;TYPE=FAX:+(217) 244-7638 EMAIL;TYPE=INTERNET,Departmental:kaler@astro.uiuc.eduEND:vCard</ns0:vcard>",
+      "published_at": null,
+      "url": "https://openalex.org/W7112351747",
+      "retrieved_at": "2026-10-18T14:54:22.123Z",
+      "sha256": "6c5119d19e65975827232e11990fc19e326e6d49c0a4ba9e9020b58e3591d102",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is the purpose of this site to provide a deep, non-technical review of stars and their natures for the beginner.",
+        "This page presents facts about stars as we know them without delving into the details of discovery.",
+        "A parallel site that explores the spectra of the stars examines how we have learned so much of what is presented here.",
+        "The two sites are linked, allowing you to go back and forth between them to see how stars are born, live their lives, and die, in the process creating other stars, perhaps other earths, and all that is around us."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Star",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26808",
+      "retrieved_at": "2026-10-18T14:54:22.123Z",
+      "sha256": "e605a3483556e349598bc6f5b289e46d496e545e78c9d597b7d06d171bccf59e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A star is a luminous spheroid of plasma held together by self-gravity.",
+        "Many other stars are visible to the naked eye at night; their immense distances from Earth make them appear as fixed points of light.",
+        "The most prominent stars have been categorised into constellations and asterisms, and many of the brightest stars have proper names.",
+        "Astronomers have assembled star catalogues that identify the known stars and provide standardized stellar designations.",
+        "The observable universe contains an estimated 1022 to 1024 stars.",
+        "Only about 4,000 of these stars are visible to the naked eye—all within the Milky Way galaxy.",
+        "A star's life begins with the gravitational collapse of a gaseous nebula of material largely comprising hydrogen, helium, and traces of heavier elements.",
+        "Its total mass mainly determines its evolution and eventual fate.",
+        "A star shines for most of its active life due to the thermonuclear fusion of hydrogen into helium in its core.",
+        "This process releases energy that traverses the star's interior and radiates into outer space.",
+        "At the end of a star's lifetime, fusion ceases and its core becomes a stellar remnant: a white dwarf, a neutron star, or—if it is sufficiently massive—a black hole.",
+        "Stellar nucleosynthesis in stars or their remnants creates almost all naturally occurring chemical elements heavier than lithium."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Stars Are Born",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44498052",
+      "retrieved_at": "2026-10-18T14:54:22.123Z",
+      "sha256": "5bd2c997c50d4a63ba77e196c367555e0d1b733e7166d4855c466cbbec809c00",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stars Are Born is an early American television series which aired in New York City during 1951.",
+        "A local series, it aired on DuMont Television Network's flagship station WABD, and like most WABD series was likely considered eligible to be picked up as a network series.",
+        "It ran for several months, and aired in a 30-minute time-slot.",
+        "It is not known if the series had a sponsor (surviving kinescopes of DuMont and WABD series suggest that, if it had a sponsor, the running time was about 24–25 minutes excluding commercials).",
+        "The series featured dance numbers performed by children enrolled in various dancing schools in New York City.",
+        "The program is likely lost, as most \"local\" shows of the 1950s are lost."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Michael Burnham",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=55282815",
+      "retrieved_at": "2026-10-18T14:54:22.123Z",
+      "sha256": "a0a9a7aec579a8d39dca6d350a18074c2e71b6b7cfa368fc6dc9697ad31686c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Michael Burnham is the protagonist of Star Trek: Discovery, portrayed by American actress Sonequa Martin-Green.",
+        "She originally appears as the First Officer of USS Shenzhou under Philippa Georgiou (Michelle Yeoh) until she commits mutiny, for which she is stripped of rank and sent to prison for life.",
+        "Burnham is later recruited by Gabriel Lorca (Jason Isaacs) on USS Discovery as a science specialist after serving only six months of her sentence, with Lorca viewing Burnham as an asset in the war against the Klingons.",
+        "The character is introduced as a xeno-anthropologist helping the Earth-based Starfleet understand and engage with new cultures in outer space.",
+        "Bryan Fuller conceived the character based on the cultural impact of Nichelle Nichols' portrayal of Uhura, as well as that of Mae Jemison and Ruby Bridges.",
+        "She is also revealed as the adoptive sister to Spock (Ethan Peck).",
+        "Burnham is an orphan, after her parents are killed by Klingons, until she is taken in by Sarek (James Frain).",
+        "Controversy arose among fans from the decision to connect her history to Spock's family, with fans debating whether this is consistent with established continuity.",
+        "Development of the character was largely praised by critics leading up to the debut for having a black woman lead for the first time in Star Trek history, and reviews of Martin-Green's performance have been positive."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Thushara Pillai",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=69497612",
+      "retrieved_at": "2026-10-18T14:54:22.123Z",
+      "sha256": "da9bdac78688582ddf873b92c421feb7bd3008595acacc93d6563fbdf9a39eb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Thushara Pillai is an Indian astrophysicist and astronomer with a senior research scientist position at Boston University's Institute for Astrophysical Research and MIT Haystack Observatory.",
+        "Her research interests have included molecular clouds, high-mass star formation, magnetic fields, astrochemistry, and the Galactic Center.",
+        "She is known for her work that looked to understand star formation by observing magnetized interstellar clouds, and Pillai is the first astronomer to capture images of magnetic fields reorienting near areas of star formation."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "mq-0388",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=752",
+      "retrieved_at": "2026-10-18T16:47:16.207Z",
+      "sha256": "ca8dab7ce81a5b9d60143e75f87312c9191fedf77dd1a3451647f3737d52f7f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+        "There is no generally agreed definition of what constitutes art, and its interpretation has varied greatly throughout history and across cultures.",
+        "In the Western tradition, the three classical branches of visual art are painting, sculpture, and architecture.",
+        "Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of \"the arts\".",
+        "Until the 17th century, art referred to any skill or mastery and was not differentiated from crafts or sciences.",
+        "In modern usage after the 17th century, where aesthetic considerations are paramount, the fine arts are separated and distinguished from acquired skills in general, such as the decorative or applied arts.",
+        "The nature of art and related concepts, such as creativity and interpretation, are explored in a branch of philosophy known as aesthetics.",
+        "The resulting artworks are studied in the professional fields of art criticism and art history."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mongolia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19271",
+      "retrieved_at": "2026-10-18T16:47:16.207Z",
+      "sha256": "795f81c3ae718f47a0e35c43d98d26784ad416027b83040fbe210b4af88e8aa5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With a population of 3.5 million, Mongolia is the world's most sparsely populated sovereign state.",
+        "The country constitutes a significant portion of the Mongolian Plateau, and its natural environment is characterized by grassy steppe, mountains to the north and west, and the Gobi Desert to the south.",
+        "Ulaanbaatar, the capital and largest city, is home to roughly half of the country's population.",
+        "The territory of modern-day Mongolia has been ruled by various nomadic empires, including the Xiongnu, the Xianbei, the Rouran, the First Turkic Khaganate, the Second Turkic Khaganate, the Uyghur Khaganate and others.",
+        "In 1206, Genghis Khan founded the Mongol Empire, which became the largest contiguous land empire in history.",
+        "His grandson Kublai Khan conquered China proper and established the Yuan dynasty.",
+        "After the collapse of the Yuan, the Mongols retreated to Mongolia and resumed their earlier pattern of factional conflict, except during the era of Dayan Khan and Tumen Zasagt Khan.",
+        "By the early 20th century, almost one-third of the adult male population were Buddhist monks.",
+        "After the collapse of the Qing dynasty in 1911, Mongolia declared independence and achieved actual independence from the Republic of China in 1921.",
+        "Shortly thereafter, the country became a satellite state of the Soviet Union.",
+        "In 1924, the Mongolian People's Republic was founded as a socialist state.",
+        "After the anti-communist revolutions of 1989, Mongolia conducted its own peaceful democratic revolution in 1990."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T16:47:16.207Z",
+      "sha256": "a1b6f774cf68cc8788be4f0f9294829354fddb3d06d6cbe4b776cd8defefb254",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Imperial examination",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=244479",
+      "retrieved_at": "2026-10-18T16:47:16.207Z",
+      "sha256": "9c429e69a90d3cc395fc625ffd2e9e7a06d73352216332407a0398c7420c5d61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The imperial examination (Chinese: 科舉) was a civil service examination system in Imperial China administered for the purpose of selecting candidates for the state bureaucracy.",
+        "The concept of choosing bureaucrats by merit rather than by birth started early in Chinese history, and the first earnest use of written examinations as a method of recruitment appeared under the Sui dynasty (581–618).",
+        "Its systematic implementation began during the Tang dynasty (618–907), when examinations became a regular channel for bureaucratic appointment and the dominant path to high office.",
+        "The system lasted for 1,300 years until its abolition during the late Qing dynasty reforms in 1905.",
+        "The key sponsors for abolition were Yuan Shikai, Yinchang, and Zhang Zhidong.",
+        "Aspects of the imperial examination still exist for entry into the civil service of both China and Taiwan.",
+        "The exams served to ensure a common knowledge of writing, Chinese classics, and literary style among state officials.",
+        "This common culture helped to unify the empire, and the ideal of achievement by merit gave legitimacy to imperial rule.",
+        "The examination system played a significant role in tempering the power of hereditary aristocracy and military authority, and in the rise of a gentry class of scholar-bureaucrats.",
+        "Starting with the Song dynasty, the imperial examination system became a more formal system and developed into a roughly three-tiered ladder from local to provincial to court exams.",
+        "During the Ming dynasty (1368–1644), authorities narrowed the content down to mostly texts on Neo-Confucian orthodoxy; the highest degree, the jinshi, became essential for the highest offices.",
+        "On the other hand, holders of the basic degree, the shengyuan, became vastly oversupplied, resulting in holders who could not hope for office."
+      ]
+    }
+  ]
+}

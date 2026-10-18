@@ -1,0 +1,118 @@
+{
+  "id": "mm-1815",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dental elevators",
+      "publisher": "BSI British Standards",
+      "author": null,
+      "published_at": null,
+      "url": "/products/dental-elevators-bein-elevators",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "cd351096de1cc8aec71f61ed31a000be2678536fdd8935021c3af757d9af7fe7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "BSI recommends this version of standard for organisations operating in or with the UK.",
+        "Product Details Descriptors Dental handpieces Dental instruments Dimensions Dental equipment ICS Codes 11.060.20 Dental equipment 11.060.25 Dental instruments Committee CH/106 International relationships Identical to : ISO 15087-5:2000 EN ISO 15087-5:2000 ISBN 0 580 36020 2 Publisher BSI"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Simulation study for an elevator system",
+      "publisher": "DR-NTU (Nanyang Technological University)",
+      "author": "Hao Chang",
+      "published_at": "2011-01-01",
+      "url": "https://openalex.org/W2528827321",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "373c0955efffeb0bc6c378427ba8c5a3ab41f9a1db9e79bdf02312b508d7dece",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The purpose of this report is to summarize the work done by the author for her Final Year Project.",
+        "The objective for this project is to study the dispatching policy of the elevator systems and develop an algorithm to give suggestions on the effects of different parameters to the elevator system.",
+        "\\n \\nThe background information and objective for this project are presented in the first chapter.",
+        "Followed by the literature review on the knowledge related to different types of elevators and existing dispatching policies.",
+        "\\n \\nThe third chapter of this report describes in detail the simulation process conducted to study how the elevator system works.",
+        "The author’s personal experience and conclusions are included as well.",
+        "\\n \\nA section further elaborates the simulation problem of the elevator system is presented in Chapter 4.",
+        "By developing an algorithm on the dispatching problem of elevator system, method to improve the elevator system performance is suggested.",
+        "The report ends with a summary of the author’s views on this project."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The 13th Floor Elevators",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=151360",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "821fbd816b10cc2d59e8263da0e5e8c6196f9bd6b7b6868186f650d3fe8e884e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 13th Floor Elevators was an American rock band from Austin, Texas, United States, formed by guitarist and vocalist Roky Erickson, electric jug player Tommy Hall, and guitarist Stacy Sutherland.",
+        "The band was together from 1965 to 1969, and during that period released four albums and seven singles for the International Artists record label.",
+        "Their debut single \"You're Gonna Miss Me\" was a national Billboard No.",
+        "Considered pioneers of psychedelic rock, the Elevators were the first band to refer to their music as such, with the first-known use of the term appearing on their business card in January 1966, likely coined by member Tommy Hall.",
+        "As open proponents of drugs such as LSD, the group was targeted by local law enforcement, resulting in the 1969 arrest of Erickson for drug possession, effectively ending the group.",
+        "With their inclusion on the 1972 compilation Nuggets: Original Artyfacts from the First Psychedelic Era, 1965-1968, they also came to be recognized as precursors of punk rock.",
+        "Their contemporary influence has been acknowledged by a wide range of artists.",
+        "In 2009, International Artists released a ten-CD box set entitled Sign of the 3-Eyed Men, which included the mono and new, alternative, stereo mixes of the original albums, together with two albums of previously unreleased material and a number of rare live recordings."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Shabbat elevator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1157968",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "b0734cc5d6235f8bd91fe323567a2e872373119fe729278438c62a19c47908bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Shabbat elevator is an elevator which works in a special mode, operating automatically, to satisfy the Jewish religious law requiring Jews to abstain from operating electrical switches on Shabbat.",
+        "These are also known as Sabbath elevators or Shabbos elevators."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Elevator operator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2828266",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "6fb8a642a98b2d7e82617ca90b71b4120c99ae9765ea7539e5d946cf7649f8a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An elevator operator (North American English), liftman (in Commonwealth English, usually lift attendant), or lift girl (in British English), is a person specifically employed to operate a manually operated elevator.",
+        "While largely considered an obsolete occupation, elevator operators continue to work in historic installations and fill modern-day niches."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Elevator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19373997",
+      "retrieved_at": "2026-10-18T15:53:13.969Z",
+      "sha256": "e2c8e5e4af13bce62accb8cef6ba7cdb55a2b50a7bbff459d793c392a95e4c0a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An elevator (North American English, Philippine English) or lift (Commonwealth English except Canada) is a machine that vertically transports people or freight between levels.",
+        "They are typically powered by electric motors that drive traction cables and counterweight systems such as a hoist, although some pump hydraulic fluid to raise a cylindrical piston like a jack.",
+        "Elevators are used in agriculture and manufacturing to lift materials.",
+        "There are various types, like chain and bucket elevators, grain augers, and hay elevators.",
+        "Modern buildings often have elevators to ensure accessibility, especially where ramps are not feasible.",
+        "Smart elevators enable multi-elevator coordination, enhancing the riding experience while reducing costs."
+      ]
+    }
+  ]
+}

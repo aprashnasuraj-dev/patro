@@ -1,0 +1,151 @@
+{
+  "id": "mm-1416",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Vision: How to Catch Fast Signals With Slow Detectors",
+      "publisher": "American Physiological Society",
+      "author": "Demontis, Gian Carlo; Cervetto, Luigi",
+      "published_at": "2002-06",
+      "url": "https://doi.org/10.1152/nips.01364.2001",
+      "retrieved_at": "2026-10-18T15:40:33.764Z",
+      "sha256": "88cd89b3be498316f73e2e66d8dddbb6e540ac7d68dfacc6ddc7296f856f5e89",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The visual system is equipped with highly sensitive but slow detectors, yet it can resolve light changes up to 60 Hz.",
+        "Processes taking place in retinal circuits go beyond the intrinsic limits of the transduction machinery by an unconventional exploitation of voltage-dependent conductances, cleverly lined up to generate a cascade of band-pass amplification stages."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Deep Learning-Based Gain Estimation for Multi-User Software-Defined Radios in Aircraft Communications",
+      "publisher": "MDPI AG",
+      "author": "Gajjar, Viraj K.; Kosbar, Kurt L.",
+      "published_at": "2025-01-22",
+      "url": "https://doi.org/10.3390/signals6010003",
+      "retrieved_at": "2026-10-18T15:40:33.989Z",
+      "sha256": "90ecfc05217bd39029e5cf066a21a44c30156e3f35e18ae3052e669940f8e1c9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It may be helpful to integrate multiple aircraft communication and navigation functions into a single software-defined radio (SDR) platform.",
+        "To transmit these multiple signals, the SDR would first sum the baseband version of the signals.",
+        "This outgoing composite signal would be passed through a digital-to-analog converter (DAC) before being up-converted and passed through a radio frequency (RF) amplifier.",
+        "To prevent non-linear distortion in the RF amplifier, it is important to know the peak voltage of the composite.",
+        "While this is reasonably straightforward when a single modulation is used, it is more challenging when working with composite signals.",
+        "This paper describes a machine learning solution to this problem.",
+        "We demonstrate that a generalized gamma distribution (GGD) is a good fit for the distribution of the instantaneous voltage of the composite waveform.",
+        "A deep neural network was trained to estimate the GGD parameters based on the parameters of the modulators.",
+        "This allows the SDR to accurately estimate the peak of the composite voltage and set the gain of the DAC and RF amplifier, without having to generate or directly observe the composite signal."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Digital Front-End Signal Processing with Widely-Linear Signal Models in Radio Devices",
+      "publisher": "Tampere University Institutional Repository (Tampere University)",
+      "author": "Lauri Anttila",
+      "published_at": "2011-10-14",
+      "url": "https://openalex.org/W2185768863",
+      "retrieved_at": "2026-10-18T15:40:34.537Z",
+      "sha256": "c5a36f3a46c8c68028ffef221b80c29933103d19b5faaa86ac0ba2aa32286812",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Necessitated by the demand for ever higher data rates, modern communications waveforms have increasingly wider bandwidths and higher signal dynamics.",
+        "Furthermore, radio devices are expected to transmit and receive a growing number of different waveforms from cellular networks, wireless local area networks, wireless personal area networks, positioning and navigation systems, as well as broadcast systems.",
+        "Under these diametric constraints, in order to keep the overall implementation cost and size feasible, the use of simplified radio architectures and relatively low-cost radio electronics are necessary.",
+        "This notion is even more relevant for multiple antenna systems, where each antenna has a dedicated radio front-end.",
+        "Instead of tightening the specifications and tolerances of the analog circuits themselves, a more cost-effective solution in many cases is to compensate for these nonidealities in the digital domain.",
+        "This line of research has been gaining increasing interest in the last 10-15 years, and is also the main topic area of this work.\\n\\n\\nThe direct-conversion radio principle is the current and future choice for building low-cost but flexible, multi-standard radio transmitters and receivers.",
+        "The direct-conversion radio, while simple in structure and integrable on a single chip, suffers from several performance degrading circuit impairments, which have historically prevented its use in wideband, high-rate, and multi-user systems.",
+        "In the last 15 years, with advances in integrated circuit technologies and digital signal processing, the direct-conversion principle has started gaining popularity.",
+        "Still, however, much work is needed to fully realize the potential of the direct-conversion principle.\\n\\n\\nThis thesis deals with the analysis and digital mitigation of the implementation nonidealities of direct-conversion transmitters and receivers.",
+        "First, techniques are proposed for the joint estimation and predistortion of in-phase/quadrature-phase (I/Q) imbalance, power amplifier (PA) nonlinearity, and local oscillator (LO) leakage in wideband direct-conversion transmitters.",
+        "Second, methods are developed for estimation and compensation of I/Q imbalance in wideband direct-conversion receivers, based on second-order statistics of the received communication waveforms.",
+        "Third, these second-order statistics are analyzed for second-order stationary and cyclostationary signals under several other system impairments related to circuit implementation and the radio channel."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Railway signalling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=276071",
+      "retrieved_at": "2026-10-18T15:40:34.537Z",
+      "sha256": "67968fc4f5aff74dff4c549a0eeace192af59374245179bdf74bfd7087aba427",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Railway signalling (British English), or railroad signaling (American English), is a system used to control the movement of railway traffic.",
+        "Trains move on fixed rails, making them uniquely susceptible to collision.",
+        "This susceptibility is exacerbated by the enormous weight and inertia of a train, which makes it difficult to quickly stop when encountering an obstacle.",
+        "In the UK, the Regulation of Railways Act 1889 introduced a series of requirements on matters such as the implementation of interlocked block signalling and other safety measures as a direct result of the Armagh rail disaster in that year.",
+        "Most forms of train control involve movement authority being passed from those responsible for each section of a rail network (e.g.",
+        "The set of rules and the physical equipment used to accomplish this determine what is known as the method of working (UK), method of operation (US) or safe-working (Aus.).",
+        "Not all these methods require the use of physical signals, and some systems are specific to single-track railways.",
+        "Hand and arm signals were used to direct the \"train drivers\".",
+        "Foggy and poor-visibility conditions later gave rise to flags and lanterns.",
+        "Wayside signalling dates back as far as 1832, and used elevated flags or balls that could be seen from afar."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Automatic Warning System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1185168",
+      "retrieved_at": "2026-10-18T15:40:34.537Z",
+      "sha256": "2dba0677c860793a5e4f6816de9c964360fe26cce05bc73e76ad60af4868d500",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Automatic Warning System (AWS) is a railway safety system invented in the United Kingdom.",
+        "It provides a train driver with an audible indication of whether the next signal they are approaching is clear or at caution.",
+        "Depending on the upcoming signal state, the AWS will either produce a 'horn' sound (as a warning indication), or a 'bell' sound (as a clear indication).",
+        "If the train driver fails to acknowledge a warning indication, an emergency brake application is initiated by the AWS; if the driver correctly acknowledges the warning indication, by pressing an acknowledgement button, a visual 'sunflower' is displayed to the driver, as a reminder of the warning."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "UK railway signalling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2997491",
+      "retrieved_at": "2026-10-18T15:40:34.537Z",
+      "sha256": "bf7b8fa49cd1e5e156c3ccfae0998438a5396a3a190d08206f50cadd979ff499",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The railway signalling system used across the majority of the United Kingdom rail network uses lineside signals to control the movement and speed of trains.",
+        "The modern-day system mostly uses two, three, and four aspect colour-light signals using track circuit – or axle counter – block signalling.",
+        "It is a development of the original absolute block signalling that is still being used on many secondary lines.",
+        "The use of lineside signals in Britain is restricted to railways with a maximum speed limit of up to 125 miles per hour (201 km/h).",
+        "This is the maximum speed at which the train can travel safely using line-side signalling; if the train runs any faster, it will not be possible for the train driver to safely read colour-light signalling.",
+        "Trains operating at speeds faster than 125 mph (for example on High Speed 1) use an in-cab signalling system that automatically determines and calculates speed restrictions."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Deadliest Catch",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3846673",
+      "retrieved_at": "2026-10-18T15:40:34.537Z",
+      "sha256": "9ffcb5bacf1f8409840366964fa7fc7e11c0273dc05b5b2c2a2d7e0f35ca28f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Deadliest Catch is an American reality television series that premiered on the Discovery Channel on April 12, 2005.",
+        "The show follows crab fishermen aboard fishing vessels in the Bering Sea during the Alaskan king crab and snow crab fishing seasons.",
+        "The base of operations for the fishing fleet is the Aleutian Islands port of Dutch Harbor, Alaska.",
+        "Produced for the Discovery Channel, the show's title is derived from the inherent high risk of injury or death associated with this line of work.",
+        "Season 22 began airing on May 8, 2026 and concluded on September 27, 2026."
+      ]
+    }
+  ]
+}

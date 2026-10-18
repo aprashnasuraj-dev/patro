@@ -1,0 +1,131 @@
+{
+  "id": "mm-0474",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Earth Heat and Lunar Gravity Geothermal And Tidal Energy",
+      "publisher": "Oxford University Press",
+      "author": "McElroy, Michael B.",
+      "published_at": "2016-10-06",
+      "url": "https://doi.org/10.1093/oso/9780190490331.003.0017",
+      "retrieved_at": "2026-10-18T15:05:47.165Z",
+      "sha256": "41b01fb3b068e84bf7a87a106a0c00cfe528e1b3fb17e381ab6bb443cb9b143e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "To this point, we have discussed the current status and future prospects of energy from coal, oil, natural gas, nuclear, wind, solar, and hydro.",
+        "We turn now to a discussion of the potential for generation of electricity from geothermal sources and ocean tides.",
+        "Decay of radioactive elements in the Earth’s interior provides the dominant source for the former; energy extracted from the gravitational interaction of the Earth and moon is the primary source for the latter.",
+        "There are two main contributions to the energy reaching the surface from the Earth’s interior.",
+        "The first involves convection and conduction of heat from the mantle and core.",
+        "The second reflects the contribution from decay of radioactive elements in the crust, notably uranium, thorium, and potassium.",
+        "The composite geothermal source, averaged over the Earth, amounts to about 8 × 10– 2 W m– 2, approximately 3,000 times less than the energy absorbed from the sun.",
+        "As a consequence of the presence of the internal source, temperatures increase at an average rate of about 25°C per kilometer as a function of depth below the Earth’s surface.",
+        "The rate of increase is greater in regions that are tectonically active, notably in the western United States and in the region surrounding the Pacific Ocean (the so- called Ring of Fire) — less in others.",
+        "The water contained in hydrothermal reservoirs is supplied for the most part by percolation from the surface through overlying porous rock.",
+        "The conditions required for production of these hydrothermal systems are relatively specialized."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Carbon dioxide",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5906",
+      "retrieved_at": "2026-10-18T15:05:52.544Z",
+      "sha256": "4d3b8904e74ae43bfe7b6c1efca7db5314e4ad92840c55a2c6a6127d1fd63f7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carbon dioxide is a chemical compound with the chemical formula CO2.",
+        "It is made up of molecules that each have one carbon atom covalently double bonded to two oxygen atoms.",
+        "It is found in a gas state at room temperature and at normally-encountered concentrations it is odorless.",
+        "As the source of carbon in the carbon cycle, atmospheric CO2 is the primary carbon source for life on Earth.",
+        "In the air, carbon dioxide is transparent to visible light but absorbs infrared radiation, acting as a greenhouse gas.",
+        "Carbon dioxide is soluble in water and is found in groundwater, lakes, ice caps, and seawater.",
+        "It is a trace gas in Earth's atmosphere at 428 parts per million (ppm), or about 0.043% (as of July 2025) having risen from pre-industrial levels of 280 ppm or about 0.028%.",
+        "Burning fossil fuels is the main cause of these increased CO2 concentrations, which are the primary cause of climate change.",
+        "Its concentration in Earth's pre-industrial atmosphere since late in the Precambrian was regulated by organisms and geological features.",
+        "Plants, algae and cyanobacteria use energy from sunlight to synthesize carbohydrates from carbon dioxide and water in a process called photosynthesis, which produces oxygen as a waste product.",
+        "In turn, oxygen is consumed and CO2 is released as waste by all aerobic organisms when they metabolize organic compounds to produce energy by respiration.",
+        "CO2 is released from organic materials when they decay or combust, such as in forest fires."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Space colonization",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29248",
+      "retrieved_at": "2026-10-18T15:05:52.544Z",
+      "sha256": "a998cbf28dcada2173fcf073aa434acb5ca0e0465124063f985d708456da6cef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Space colonization, or extraterrestrial colonization, is the establishment of human settlements or colonies in outer space and on astronomical bodies.",
+        "The concept, in its broadest sense, has been applied to any permanent human presence in space, such as a space habitat or other extraterrestrial settlements.",
+        "It may involve notions of territorial occupation, resource control for economic or military purposes, such as extraterrestrial mining, or military practice ground as shown in a space force.",
+        "Making territorial claims in space is under prohibition by international space law (ISL), defining space as a common heritage.",
+        "International space law has had the goal to prevent colonial claims and militarization of space, and has advocated the installation of international regimes to regulate access to and sharing of space, particularly for specific locations such as the limited space of geostationary orbit or the Moon.",
+        "To date, no permanent space settlement other than temporary space habitats have been established, nor has any extraterrestrial territory or land been internationally claimed.",
+        "Currently there are also no plans for building a space colony by any government.",
+        "However, many proposals, speculations, and designs, particularly for extraterrestrial settlements have been made through the years, and a considerable number of space colonization advocates and groups are active.",
+        "Currently, the dominant private launch provider SpaceX, has been the most prominent organization planning space colonization on Mars, though having not reached a development stage beyond launch and landing systems.",
+        "Space colonization raises numerous socio-political questions.",
+        "Many arguments for and against space settlement have been made.",
+        "The mere construction of an extraterrestrial settlement, with the needed infrastructure, presents daunting technological, economic and social challenges."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Desalination",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=156787",
+      "retrieved_at": "2026-10-18T15:05:52.544Z",
+      "sha256": "eb889b5924e6d448db82874b8055145d7e6edbddc3e9f097019b33e057c96f57",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Desalination is the artificial process by which salt water (generally sea water) is converted to fresh water.",
+        "More generally, desalination is the removal of salts and minerals from a substance.",
+        "It is possible to desalinate saltwater, especially sea water, to produce water for human consumption or irrigation, producing brine as a by-product.",
+        "Interest in desalination mostly focuses on cost-effective provision of fresh water for human use.",
+        "Along with recycled wastewater, it is one of the few water resources independent of rainfall.",
+        "As stress on the need for freshwater intensifies globally, desalination has become a key part of strategies for global water security.",
+        "According to a 2019 review in Science of the Total Environment, around 95 million cubic meters per day of desalinated water is produced worldwide, and the demand for desalinated water is expected to grow significantly to help close the global water supply gap.",
+        "Due to its energy consumption, desalinating sea water is generally more costly than fresh water from surface water or groundwater, water recycling and water conservation.",
+        "However, these alternatives are not always available and depletion of reserves is a critical problem worldwide.",
+        "Desalination processes use either thermal methods (in the case of distillation) or membrane-based methods (e.g.",
+        "As of 2020, global desalination capacity stood at roughly 97 million m3/day from over 16,800 operating plants, with contracted projects pushing total potential capacity beyond 114 million m3 /day worldwide.",
+        "In 2018, the global energy intensity of desalination was about 3 kWh/m3 (in 2018), improved by a factor of 10 from 20–30 kWh/m3 in 1970."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Green Deal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34709200",
+      "retrieved_at": "2026-10-18T15:05:52.544Z",
+      "sha256": "7e8e4cc7f67babf41e90f70245c8507c1288d064cc6e5b60438b703172462b58",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Green Deal was a UK government policy initiative that gave homeowners, landlords and tenants the opportunity to pay for energy efficient home improvements through the savings on their energy bills from 2012 to 2015.",
+        "At the heart of the Green Deal was the rule that savings on bills would exceed the cost of the work.",
+        "By meeting this 'Golden Rule', consumers were able to receive energy savings without direct cost.",
+        "Consumers then paid back the cost of such improvements through the expected savings in their energy bills.",
+        "However, there is no guarantee that the eventual savings made by consumers will match the cost of the loans they take out to make the improvements and industry bodies recognised there was a risk consumers could end up out of pocket.",
+        "There were 45 different types of improvements available under the Green Deal, ranging from loft and cavity wall insulation, innovative hot water systems and condensing boilers to more costly measures such as solar thermal energy or solid wall insulation.",
+        "This was a unique financial structure with no debtor, instead the burden stayed with the property no matter the tenant.",
+        "This means new tenants or owners become liable for the payments for the energy efficiency improvements, requiring new legislation in English law.",
+        "Ultimately only 1,754 householders signed up to the scheme and it was discontinued to save taxpayer money"
+      ]
+    }
+  ]
+}

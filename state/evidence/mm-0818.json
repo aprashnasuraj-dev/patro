@@ -1,0 +1,154 @@
+{
+  "id": "mm-0818",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Possible Secular Drift of Atomic Clocks",
+      "publisher": "Qeios Ltd",
+      "author": "Sanejouand, Yves Henri",
+      "published_at": "2026-01-22",
+      "url": "https://doi.org/10.32388/rhvo2z",
+      "retrieved_at": "2026-10-18T15:18:45.927Z",
+      "sha256": "cdee6234bc9c3f403de3c768c181f8e92eeee74345327be4f3bbff5e449daf24",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Arguments in favor of the hypothesis that the tick rate of atomic clocks is drifting are examined.",
+        "The main one is the existence of a preferred value for the relative drift of the period of millisecond pulsars, which is otherwise left unexplained.",
+        "Other arguments, like the drift of the frequency of sapphire oscillators, the Earth-Moon distance and the Pioneer anomalies are less convincing since other factors are known to play a key role.",
+        "Interestingly, the corresponding drift of atomic spectra could contribute significantly to the value of the Hubble constant, thus eliminating the age problem of \\(\\Lambda\\)CDM, which has recently been exacerbated by the discovery of mature galaxies at redshifts as high as 14.",
+        "Such a drift is likely due to an increase of the gravitational field felt by the atomic clocks."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A possible secular drift of atomic clocks",
+      "publisher": "Elsevier BV",
+      "author": "sanejouand, yves-henri",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6451177",
+      "retrieved_at": "2026-10-18T15:18:45.927Z",
+      "sha256": "fe3bea6e0c1db89ddd51031db8ccf0fb15c5a1faf73cd0c8e977aa8fc9782ad4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Arguments in favor of the hypothesis that the tick rate of atomic clocks is drifting are examined.",
+        "The main one is the existence of a preferred value for the relative drift of the period of millisecond pulsars, which is otherwise hardly explained.",
+        "Other arguments, like the Earth-Moon distance and the Pioneer anomalies are less conclusive since other factors are known to play a key role.",
+        "Interestingly, the corresponding drift of atomic spectra could contribute signi cantly to the value of the Hubble constant, thus eliminating the age problem of ΛCDM, which has recently been exacerbated by the discovery of mature galaxies at redshifts as high as 14.",
+        "Such a drift is likely due to an increase of the gravitational eld felt by the atomic clocks.",
+        "Keywords: Atomic clocks, Millisecond pulsars, Sapphire oscillators,Earth Moon distance, Pioneer anomaly, Hubble constant PACS: 97.60.Gb, 06.30.FtEmail addressyves-henri.sanejouand@univ-nantes.fr (Yves-Henri Sanejouand)"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Inhibiting phase drift in multi-atom clocks using the quantum Zeno effect",
+      "publisher": "Research Square Platform LLC",
+      "author": "Shringarpure, S. U.; Franson, J. D.",
+      "published_at": "2022-08-08",
+      "url": "https://doi.org/10.21203/rs.3.rs-1926510/v1",
+      "retrieved_at": "2026-10-18T15:18:46.151Z",
+      "sha256": "ef7811120f7c107e30a505048c7c3126bcf61f2d02490870163137a32abf2058",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The accuracy of an atomic clock depends in part on the bandwidth of the relevant atomic transitions.",
+        "Here we consider an ensemble of atoms whose transition frequencies have been independently perturbed by environmental effects or other factors.",
+        "Practical applications may require \\(N&gt;&gt;1\\) in order to achieve a good signal-to-noise ratio."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Central processing unit",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5218",
+      "retrieved_at": "2026-10-18T15:18:46.151Z",
+      "sha256": "6e6495d0b47b7f1fc842275c22650453665c3120b26153279dfed9b4cc4861d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A central processing unit (CPU), also known as a central processor, main processor, or simply processor, is the primary processor in a given computer.",
+        "Its electronic circuitry executes instructions of a computer program, such as arithmetic, logic, controlling, and input/output (I/O) operations.",
+        "This role contrasts with that of external components, such as main memory and I/O circuitry, and specialized coprocessors such as graphics processing units (GPUs).",
+        "The form, design, and implementation of CPUs have changed over time, but their fundamental operation remains almost unchanged.",
+        "Modern CPUs devote a lot of semiconductor area to caches and instruction-level parallelism to increase performance and to CPU modes to support operating systems and virtualization.",
+        "Most modern CPUs are implemented on integrated circuit (IC) microprocessors, with one or more CPUs on a single IC chip.",
+        "Microprocessor chips with multiple CPUs are called multi-core processors (MCPs).",
+        "The individual physical CPUs, called processor cores, can also be multithreaded to support CPU-level multithreading.",
+        "An IC that contains a CPU may also contain memory, peripheral interfaces, and other components of a computer; such integrated devices are variously called microcontrollers or systems on chip (SoCs)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Clock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6449",
+      "retrieved_at": "2026-10-18T15:18:46.151Z",
+      "sha256": "e2a71f804167a584363854a7899ea193c2438a174852eefc9728205b902cd3dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A clock or chronometer is a device that measures and displays time.",
+        "The clock is one of the oldest human inventions, meeting the need to measure intervals of time shorter than the natural units such as the day, the lunar month, and the year.",
+        "Devices operating on several physical processes have been used over the millennia.",
+        "Some predecessors to the modern clock may be considered \"clocks\" that are based on movement in nature: A sundial shows the time by displaying the position of a shadow on a flat surface.",
+        "There is a range of duration timers, a well-known example being the hourglass.",
+        "Water clocks, along with sundials, are possibly the oldest time-measuring instruments.",
+        "A major advance occurred with the invention of the verge escapement, which made possible the first mechanical clocks around 1300 in Europe, which kept time with oscillating timekeepers like balance wheels.",
+        "Traditionally, in horology (the study of timekeeping), the term clock was used for a striking clock, while a clock that did not strike the hours audibly was called a timepiece.",
+        "Watches and other timepieces that can be carried on one's person are usually not referred to as clocks.",
+        "The next development in accuracy occurred after 1656 with the invention of the pendulum clock by Christiaan Huygens.",
+        "A major stimulus to improving the accuracy and reliability of clocks was the importance of precise time-keeping for navigation.",
+        "The mechanism of a timepiece with a series of gears driven by a spring or weights is referred to as clockwork; the term is used by extension for a similar mechanism not used in a timepiece."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "History of computing hardware",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13636",
+      "retrieved_at": "2026-10-18T15:18:46.151Z",
+      "sha256": "21bc02f4f0d940195f2486529f352fe7ad6b9430662950e44ac78452535a6f89",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of computing hardware spans developments from early devices used for simple calculations to today's complex computers, encompassing advances in both analog and digital technology.",
+        "The first aids to computation were purely mechanical devices which required the operator to set up the initial values of an elementary arithmetic operation, then manipulate the device to obtain the result.",
+        "In later stages, computing devices began representing numbers in continuous forms, such as by distance along a scale, rotation of a shaft, or a specific voltage level.",
+        "Numbers could also be represented in the form of digits, automatically manipulated by a mechanism.",
+        "Although this approach generally required more complex mechanisms, it greatly increased the precision of results.",
+        "The development of transistor technology, followed by the invention of integrated circuit chips, led to revolutionary breakthroughs.",
+        "Transistor-based computers and, later, integrated circuit-based computers enabled digital systems to gradually replace analog systems, increasing both efficiency and processing power.",
+        "Metal-oxide-semiconductor (MOS) large-scale integration (LSI) then enabled semiconductor memory and the microprocessor, leading to another key breakthrough, the miniaturized personal computer (PC), in the 1970s.",
+        "The cost of computers gradually became so low that personal computers by the 1990s, and then mobile computers (smartphones and tablets) in the 2000s, became ubiquitous."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Vector clock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1376702",
+      "retrieved_at": "2026-10-18T15:18:46.151Z",
+      "sha256": "30ad88c2263e2b1b2ee6ecdbe16997d6469abf3cb357a5d00cc082987d1e9864",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A vector clock is a data structure used for determining the partial ordering of events in a distributed system and detecting causality violations.",
+        "Just as in Lamport timestamps, inter-process messages contain the state of the sending process's logical clock.",
+        "A vector clock of a system of n processes is a vector (equivalently, a 1-dimensional array) of n logical clocks, one clock per process.",
+        "Besides maintaining its own clock, every process also keeps track of the largest value of each of the other processes' clocks that it has so far been informed of.",
+        "Each time a process experiences an internal event, it increments its own logical clock in the vector by one.",
+        "Each time a process sends a message, it increments its own logical clock in the vector by one (as in the bullet above, but not twice for the same event) then it pairs the message with a copy of its own vector and finally sends the pair.",
+        "Each time a process receives a message-vector clock pair, it increments its own logical clock in the vector by one and updates each element in its vector by taking the maximum of the value in its own vector clock and the value in the vector in the received pair (for every element)."
+      ]
+    }
+  ]
+}

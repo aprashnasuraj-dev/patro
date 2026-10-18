@@ -1,0 +1,129 @@
+{
+  "id": "mm-0348",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "zipcodeR: Data &amp; Functions for Working with US ZIP Codes",
+      "publisher": "The R Foundation",
+      "author": "Rozzi, Gavin",
+      "published_at": "2020-09-17",
+      "url": "https://CRAN.R-project.org/package=zipcodeR",
+      "retrieved_at": "2026-10-18T15:01:44.219Z",
+      "sha256": "0888ebfc2a19bac440016ef7d9b5ea0f313f1e0045bb856d7199a73fb8a8b2e5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "CRAN: Package zipcodeR zipcodeR: Data & Functions for Working with US ZIP Codes Make working with ZIP codes in R painless with an integrated dataset of U.S.",
+        "Search ZIP codes by multiple geographies, including state, county, city & across time zones.",
+        "Also included are functions for relating ZIP codes to Census data, geocoding & distance calculations.",
+        "New analyses can select an immutable modern data bundle through the next-generation API, while the historical interface remains compatible with version 0.3.5 for reproducible research."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Purchasing Power Profile of Milwaukee ZIP Code 53206",
+      "publisher": "Minds at UW (University of Wisconsin)",
+      "author": "John Pawasarat; Lois M. Quinn; Frank Stetzer",
+      "published_at": "2001-01-01",
+      "url": "https://openalex.org/W2530635266",
+      "retrieved_at": "2026-10-18T15:01:45.689Z",
+      "sha256": "d4e20a954940233f528fb70bfd9478e2c8e8a85f49eadf642bffd003a1f98563",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Census Bureau conducts detailed analyses of the spending habits of residents by their household size, type, and income levels.",
+        "These Consumer Expenditures Surveys are used by marketing firms to estimate expenditures of consumers and to assist retail companies in deciding where to locate and what populations to target for their consumer items and services.",
+        "In most cases, marketing firms have based their data and recommendations on average household income of residents by geographic locations, while ignoring the advantages of urban density and the concentrated spending that takes place in city neighborhoods.",
+        "Using a state-of-the-art methodology developed by the Employment and Training Institute, the most recent expenditure survey data are combined with detailed state income tax files disaggregated by family types.",
+        "These Purchasing Power Profiles offer current and reliable estimates of the spending power of neighborhoods throughout Southeastern Wisconsin."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Code",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5225",
+      "retrieved_at": "2026-10-18T15:01:45.689Z",
+      "sha256": "8fb9af5b4d8e91d9427968bac61b1564a74cb78bf7e714af84f4358241856186",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In communications and information processing, a code is a system of rules to convert information—such as a letter, word, sound, image, or gesture—into another form, sometimes shortened or secret, for communication through a communication channel or storage in a storage medium.",
+        "An early example of a code is language, which enables a person, through speech, to communicate what they think, see, hear, or feel to others.",
+        "But speech limits the range of communication to the distance a voice can carry and limits the audience to those present when the speech is uttered.",
+        "The invention of writing, which converted spoken language into visual symbols, extended the range of communication across space and time.",
+        "The process of encoding converts information from a source into symbols for communication or storage.",
+        "Decoding is the reverse process, converting code symbols back into a form that the recipient understands.",
+        "One role of coding is to enable communication in places where ordinary plain language, spoken or written, is difficult or impossible.",
+        "For example, semaphore, where the configuration of flags held by a signaler or the arms of a semaphore tower encodes parts of the message, typically individual letters and numbers.",
+        "Another person standing a great distance away can interpret the flags and reproduce the words sent."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Atherton, California",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=108100",
+      "retrieved_at": "2026-10-18T15:01:45.689Z",
+      "sha256": "70ff44817961753f94a4a98ea19d65f7898d4eaef72b3b291e897ba7a38062c5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Atherton ( ATH-ər-tən) is an incorporated town in San Mateo County, California, United States.",
+        "A Silicon Valley bedroom community, Its population was 6,823 as of July 2023 estimates.",
+        "The town has historically been known for its concentration of high income earners.",
+        "Atherton had the highest per capita income among American towns (populations between 2,500 and 9,999) in both 1990 and 2019.",
+        "It regularly ranks as having the highest cost of living in the United States.",
+        "The town's zip code, 94027, had the highest median home prices in America from 2017 to 2024, in 2023 it was at $7.95 million.",
+        "Median home price in the area climbed to $9.93 million in 2026."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "ZIP (file format)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188488",
+      "retrieved_at": "2026-10-18T15:01:45.689Z",
+      "sha256": "26eee2841409f59f6f91a4efe55648e02fe6968a27a2d7230d8064ec47250374",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "ZIP is an archive file format that supports lossless data compression.",
+        "A ZIP file may contain one or more files or directories that may have been compressed.",
+        "The ZIP file format permits a number of compression algorithms, though DEFLATE is the most common.",
+        "This format was originally created in 1989 and was first implemented in PKWARE, Inc.'s PKZIP utility, as a replacement for the previous ARC compression format by Thom Henderson.",
+        "The ZIP format was then quickly supported by many software utilities other than PKZIP.",
+        "The ZIP format is natively supported on major operating systems (e.g.",
+        "It is typically built into an operating system's file management application.",
+        "ZIP files generally use the file extensions .zip or .ZIP and the MIME media type application/zip.",
+        "ZIP is used as a base file format by many programs, usually under a different name.",
+        "When navigating a file system via a user interface, graphical icons representing ZIP files often appear as a document or other object prominently featuring a zipper."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Turkey in the Straw",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=855144",
+      "retrieved_at": "2026-10-18T15:01:45.689Z",
+      "sha256": "cd2675bf79b619fa2b3b24ab299618281001fc976cd1977e455527404322a96e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Turkey in the Straw\" is an American folk song that first gained popularity in the 19th century.",
+        "Early versions of the tune were titled \"Zip Coon\", which were first published around 1834 and performed in minstrel shows, with different people claiming authorship of the song.",
+        "The song is related to a number of tunes of the 19th century and the origin of these songs has been widely debated.",
+        "Links to older Irish/Scottish/English ballads have been proposed, such as \"The Old Rose Tree\".",
+        "The song became highly popular and many variations of the song exist."
+      ]
+    }
+  ]
+}

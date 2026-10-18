@@ -1,0 +1,192 @@
+{
+  "id": "mm-0312",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How we got Logarithms",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2009-07-20",
+      "url": "https://www.cambridge.org/core/books/odd-numbers/how-we-got-logarithms/12FFB1EB461E6F2CF8A7BC60D1CA3768",
+      "retrieved_at": "2026-10-18T15:01:23.625Z",
+      "sha256": "0c13372faf2ecaf5ca427bc8e294f16224eda6ecbda3fb0f89efe6eb5e7c4f0b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How we got Logarithms - Odd Numbers Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "Please use the Get access link above for information on how to access this content.",
+        "22 - 36 DOI: https://doi.org/10.1017/CBO9780511702440.004 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2009 First published in: 1940 Access options Get access to the full version of this content by using one of the access options below.",
+        "(Log in options will check for institutional or personal access.",
+        "Accessibility Information Accessibility compliance for the PDF of this chapter is currently unknown and may be updated in the future.",
+        "Save book to Kindle To save this book to your Kindle, first ensure no-reply@cambridge.org is added to your Approved Personal Document E-mail List under your Personal Document Settings on the Manage Your Content and Devices page of your Amazon account.",
+        "Then enter the ‘name’ part of your Kindle email address below.",
+        "Note you can select to save to either the @free.kindle.com or @kindle.com variations.",
+        "‘@free.kindle.com’ emails are free but can only be saved to your device when it is connected to wi-fi.",
+        "‘@kindle.com’ emails can be delivered even when you are not connected to wi-fi, but note that service fees apply.",
+        "How we got Logarithms Herbert McKay Book: Odd Numbers Online publication: 07 September 2010 Chapter DOI: https://doi.org/10.1017/CBO9780511702440.004 Your Kindle email address Please provide your Kindle email."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Relevance of Logarithms : A study in two parts on the relevance of logarithms for students in upper secondary school",
+      "publisher": "BIBSYS Brage (BIBSYS (Norway))",
+      "author": "Anders Wiik",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2763844171",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "2289630dee5afe7ecd4760ebc0d86d39d8396a10bc4f69140ecf36d015538997",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The topic of this master's thesis is the relevance of mathematics, specifically of logarithms, to students in upper secondary school.",
+        "The aim of my research is to provide students with an answer to this question.",
+        "Study 1 aimed at figuring out by whom, how and why logarithms are used.",
+        "Information about this was obtained by literature searches and expert appraisal.",
+        "Using Cultural-historical Activity Theory (ChAT), these interviews were analysed to find out what views these students had on the video and on the relevance of logarithms.\\nThe research questions were 1) how can the question \"why do I need to learn about logarithms\" be answered?",
+        "In fact, some students indicated that their teachers could inform them more about applications of mathematical concepts.",
+        "However, a larger study is required to determine what presentation form and content balance is best suited for demonstrating the relevance of mathematical topics to students in upper secondary school.\\nKeywords: Mathematics, Education, Relevance, Logarithms, Upper-Secondary"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A Conceptual Framework for Student Understanding of Logarithms",
+      "publisher": "ScholarsArchive  (Brigham Young University)",
+      "author": "Heather R. Williams",
+      "published_at": "2011-01-01",
+      "url": "https://openalex.org/W752043771",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "2d0a13c1aec381bed4f837b430e06a9ebe345d02531de454fc1c4583008175dc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the past, frameworks for what it means for students to understand elementary mathematical concepts like addition have been well-researched.",
+        "These frameworks are useful for identifying what students must understand to have a good grasp of the concept.",
+        "Few such research-based frameworks exist for secondary mathematical topics.",
+        "The intent of this study was to create such a framework for what it means for students to understand logarithms, a topic that has been under-researched up to this point.",
+        "Four task-based interviews were conducted with each of four different preservice secondary mathematics teachers in order to test a preliminary framework I had constructed to describe what it means for students to understand logarithms.",
+        "The framework was adjusted according to the findings from the interviews to better reflect what it means for students to have a good understanding of logarithms.",
+        "Also, a common practice taught to students learning logarithms, switching from logarithmic form to exponential form, was found to possibly have negative effects on student understanding of logarithms.",
+        "The refined, research-based framework for what it means for students to understand logarithms is described in full in this document.",
+        "The implications of the results of this study for mathematics teachers as well as for mathematics education researchers are also discussed."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "An Inquiry into High School Students'' Understanding of Logarithms",
+      "publisher": "Summit (Simon Fraser University)",
+      "author": "Tetyana Berezovski",
+      "published_at": "2008-06-04",
+      "url": "https://openalex.org/W2165633863",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "daf71b64798f1a9a97343ab7ada35e2e68b1a8f1fe567be49269215881244104",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The mathematical concept of logarithms plays a crucial role in many aspects of human existence.",
+        "This study aimed to analyze and describe the issues involved in high school students' understanding of logarithms and to highlight the most common difficulties students face as they develop their understanding.",
+        "Two general theoretical ideas guided this investigation: mathematical understanding and obstacles.",
+        "The adapted version of Confrey's model for students' understanding of exponents was applied to investigate students' understanding of logarithms.",
+        "As a result, a description of students' difficulties with logarithms, and suggestions of possible explanations of the sources of these difficulties were presented.",
+        "As for teaching practice, I focused on the initial introduction of the logarithms.",
+        "In the traditional curriculum, logarithms are introduced as exponents.",
+        "However, historically logarithms were developed completely independently of exponents.",
+        "Further research will investigate the feasibility and the benefits of the historical approach for teaching."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Euler's formula",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9613",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "dfbb87ad1136065f93552c4da336a4c80aebc564633bac2db84d07dfc5c620e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Euler's formula is a mathematical formula in complex analysis that establishes the fundamental relationship between the trigonometric functions and the complex exponential function.",
+        "It is named after Leonhard Euler, who mentioned the formula in his influential 1748 treatise Introductio in analysin infinitorum.",
+        "This complex exponential function is sometimes denoted cis x (\"cosine plus i sine\").",
+        "The formula is still valid if x is a complex number, and is also called Euler's formula in this more general case.",
+        "Euler's formula is ubiquitous in mathematics, physics, chemistry, and engineering.",
+        "The physicist Richard Feynman called the equation \"our jewel\" and \"the most remarkable formula in mathematics\".",
+        "When x = π, Euler's formula may be rewritten as eiπ = −1 or eiπ + 1 = 0, which is known as Euler's identity."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Prime number theorem",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23692",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "27e5b09401d3caba22d04d67a65b6399fa1462c9b48011862ff9679ef7ea1e55",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the prime number theorem (PNT) describes the asymptotic distribution of  prime numbers among the positive integers.",
+        "It formalizes the intuitive idea that primes become less common as they become larger by precisely quantifying the rate at which this occurs.",
+        "The theorem was proved independently by Jacques Hadamard and Charles Jean de la Vallée Poussin in 1896 using ideas introduced by Bernhard Riemann (in particular, the Riemann zeta function).",
+        "The first such distribution found is π(N) ~ ⁠N/log(N)⁠, where π(N) is the prime-counting function (the number of primes less than or equal to N) and log(N) is the natural logarithm of N.",
+        "This means that for large enough N, the probability that a random integer not greater than N is prime is very close to 1 / log(N).",
+        "In other words, the average gap between consecutive prime numbers among the first N integers is roughly log(N).",
+        "Consequently, a random integer with at most 2n digits (for large enough n) is about half as likely to be prime as a random integer with at most n digits.",
+        "For example, among the positive integers of at most 1000 digits, about one in 2300 is prime (log(101000) ≈ 2302.6), whereas among positive integers of at most 2000 digits, about one in 4600 is prime (log(102000) ≈ 4605.2)."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Slide rule",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28743",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "0a74e4923368c82da924095190bf79583552386937fd01b93057183d569c421e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A slide rule is a hand-operated mechanical calculator consisting of slidable rulers for conducting mathematical operations such as multiplication, division, exponents, roots, logarithms, and trigonometry.",
+        "Slide rules exist in a diverse range of styles and generally appear in a linear, circular or cylindrical form.",
+        "Slide rules manufactured for specialized fields such as aviation or finance feature scales that aid in specialized calculations particular to those fields.",
+        "The slide rule is closely related to nomograms used for application-specific computations.",
+        "Though similar in name and appearance to a standard ruler, the slide rule is not meant to be used for measuring length or drawing straight lines.",
+        "Maximum accuracy for standard linear slide rules is about three decimal significant digits, while scientific notation is used to keep track of the order of magnitude of results.",
+        "English mathematician and clergyman Reverend William Oughtred and others developed the slide rule in the 17th century based on the emerging work on logarithms by John Napier.",
+        "It made calculations faster and less error-prone than evaluating on paper.",
+        "Before the advent of the scientific pocket calculator, it was the most commonly used calculation tool in science and engineering.",
+        "The slide rule's ease of use, ready availability, and low cost caused its use to continue to grow through the 1950s and 1960s even with the introduction of mainframe digital electronic computers.",
+        "But after the handheld HP-35 scientific calculator was introduced in 1972 and became inexpensive in the mid-1970s, slide rules became largely obsolete and no longer were in use by the advent of personal desktop computers in the 1980s.",
+        "In the United States, the slide rule is colloquially called a slipstick."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Big O notation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44578",
+      "retrieved_at": "2026-10-18T15:01:25.861Z",
+      "sha256": "b29cf904085851553ffd93e029944a6403daedf35dcffe6b33b9c54bab4f8494",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Big O notation is a mathematical notation that describes the approximate size of a function on a domain.",
+        "Big O is a member of a family of notations invented by the German mathematicians Paul Bachmann and Edmund Landau and expanded by others, collectively called Bachmann–Landau notation.",
+        "The letter O stands for Ordnung, that is, the order of approximation.",
+        "In computer science, big O notation is used to classify algorithms by how their run time or space requirements grow with the input.",
+        "In analytic number theory, big O notation expresses bounds on the growth of an arithmetical function, as for the remainder term in the prime number theorem.",
+        "In mathematical analysis, including calculus, Big O notation bounds the error when truncating a power series and expresses the quality\nof approximation of a real or complex valued function by a simpler function.",
+        "Often, big O notation characterizes functions according to their growth rates as the variable becomes large: different functions with the same asymptotic growth rate may be represented using the same O notation.",
+        "The letter O is used because the growth rate of a function is also referred to as the order of the function.",
+        "A description of a function in terms of big O notation only provides an upper bound on the growth rate of the function.",
+        "Bachmann proposed the notation in 1894 and Landau extended it in 1909.",
+        "An earlier notation was proposed by Paul du Bois-Reymond in 1870."
+      ]
+    }
+  ]
+}

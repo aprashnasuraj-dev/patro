@@ -1,0 +1,209 @@
+{
+  "id": "mm-1698",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "An Evaluation of the Ergonomics of the QWERTY Keyboards",
+      "publisher": "Trans Tech Publications, Ltd.",
+      "author": "Ciobanu, Octavian",
+      "published_at": "2014-10",
+      "url": "https://doi.org/10.4028/www.scientific.net/amm.657.1051",
+      "retrieved_at": "2026-10-18T15:48:55.776Z",
+      "sha256": "e2603cee17cbbdde5024696023f442ccc58b04ec4cfa351cc029f92f83b4c55c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The ergonomic design of a keyboard layout needs expertise in design and ergonomic standards.",
+        "The existence of different categories of users with slow typing skills, visually searching the apparently random keyboard, including novice users, elder persons and disabled persons conducts to the need of new keyboard layouts.",
+        "Paper analyses some papers approaching the QWERTY keyboard layouts, the typing abilities of slow typing skills persons and discusses the existing standards in computer devices design and makes observations about design standards and ergonomic design features.",
+        "There are presented some considerations about the necessity to implement the principles of Transgenerational Design, Inclusive Design, Design for All and Universal design to the design of new keyboard layouts."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Performance evaluation of QWERTY keyboards on foldable smartphones: keyboard layout and phrase complexity",
+      "publisher": "Design Research Society",
+      "author": "Dai, Mengya; Zhang, Jun; Dai, Ningyi",
+      "published_at": "2023-10-09",
+      "url": "https://doi.org/10.21606/iasdr.2023.404",
+      "retrieved_at": "2026-10-18T15:48:56.398Z",
+      "sha256": "c6393a5f2c2abc9aa8adf452d8556ab67def202be585ffa06472831c7c431e42",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "QWERTY keyboard as the main input method contains two layouts: standard and split.",
+        "This research studied how standard and split layout affected performance of QWERTY keyboard input on foldable smartphones, with phrase complexity and language difference under consideration.",
+        "16 testers were requested to text in 80 different phrases that covered all influencing factors above.",
+        "Input time per phrase, words per minute, corrected errors, uncorrected error rates, and perceived usability were five criteria under analysis.",
+        "It turned out that split layout lowered error rate at the cost of significant loss in input speed in Chinese.",
+        "The reduction in error rate was more pronounced for simple sentences, while the loss in input speed was not affected by text complexity, both of which showed significant performance.",
+        "These findings are to contribute optimizing text input design on foldable smartphones.",
+        "(eds.), IASDR 2023: Life-Changing Design , 9-13 October, Milan, Italy.",
+        "QWERTY keyboard as the main input method contains two layouts: standard and split.",
+        "This research studied how standard and split layout affected performance of QWERTY keyboard input on foldable smartphones, with phrase complexity and language difference under consideration.",
+        "16 testers were requested to text in 80 different phrases that covered all influencing factors above.",
+        "Input time per phrase, words per minute, corrected errors, uncorrected error rates, and perceived usability were five criteria under analysis."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Path Dependence and the Quest for Historical Economics: One More chorus of Ballad of QWERTY",
+      "publisher": "RePEc: Research Papers in Economics",
+      "author": "Paul A. David",
+      "published_at": "1997-11-01",
+      "url": "https://openalex.org/W1493329524",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "9b3e7b50bfa4cad8c13a7247d00646086a9ea2f05f691e972603caa702b66904",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term path dependence (PD) here refers to a dynamic property of allocative processes, pertaining to non-ergodic stochastic systems -- those whose asymptotic distributions evolve as a function of the history of the process itself.",
+        "PD is shown to be neither necessary nor sufficient for the existence of market failure, although the two properties may arise from common structural features.",
+        "A variety of stochastic models are PD and yet exhibit diverse properties in regard to predictability and lock-in.",
+        "Margolis (1995), along with the latters interpretation of lock-in and accidents of history are shown at best to be of limited usefulness in the study historical phenomena, and misleading as to the possible implications of PF for economic policy analysis."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Instrumental Dissolution of Typing: Why AI Challenges the Keyboard Era in Knowledge Work",
+      "publisher": "arXiv (Cornell University)",
+      "author": "Wei Roy Hua",
+      "published_at": "2026-04-18",
+      "url": "https://openalex.org/W7155245262",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "3604cb03d02e84d8847b0b6f2a2f6e8f9bd62126c41bd37ce7b3cfd2eb7ad834",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "For four decades, the QWERTY keyboard organized white-collar knowledge work.",
+        "Typing's dominance was instrumental, not cognitively necessary.",
+        "As multimodal AI achieves human-parity understanding of speech and gesture, this necessity dissolves.",
+        "We introduce instrumental dissolution -- loss of institutional-default status while persisting in specialist niches.",
+        "The keyboard era ends not through hardware replacement but through migration of its function into AI systems.",
+        "The central contribution identifies the verification bottleneck: as AI collapses production friction, the primary constraint shifts from generation to evaluation.",
+        "Knowledge workers become adversarial auditors rather than keystroke-producers.",
+        "This restructures professional expertise, organizational communication, and how productive labor is recognized.",
+        "Converging evidence from history, philosophy, neuroscience, technology, organizational studies, and cultural analysis supports this thesis.",
+        "We map synthetic literacy -- oral input generating literate output -- as the defining feature of this transition.",
+        "Under three scenarios (optimistic: 2028-2035; base: 2035-2045; pessimistic: 2045-2060), we specify disconfirmation criteria that would weaken the thesis if observed.",
+        "We propose seven interface primitives operationalizing verification-centered HCI."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Separating Myth from Probability: The Origins and Evolution of QWERTY",
+      "publisher": "Strathprints: The University of Strathclyde institutional repository (University of Strathclyde)",
+      "author": "Neil M. Kay",
+      "published_at": "2011-11-05",
+      "url": "https://openalex.org/W1516123266",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "e447ff35a15d2c6a7ac39a1294be3a6fcfbef48ef138566fc9c9c18007785ed0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We use basic probability theory and simple replicable electronic search experiments to evaluate some reported 'myths' surrounding the origins and evolution of the QWERTY standard.",
+        "The resulting evidence is strongly supportive of arguments put forward by Paul David (1985) and W.",
+        "Brian Arthur (1989) that QWERTY was path dependent with its course of development strongly influenced by specific historical circumstances.",
+        "The results also include the unexpected finding that QWERTY was as close to an optimal solution to a serious but transient problem as could be expected with the resources at the disposal of its designers in 1873."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Russian ruble",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=233596",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "9d3ab26b861e9a6cbe5cfdbf5b6c889a937995362b32cb7e6041b7dc334ffcd7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The ruble (or rouble) (Russian: рубль, romanized: rublʹ, [ˈrublʲ] ; symbol: ₽; ISO code: RUB) is the official currency of the Russian Federation.",
+        "Banknotes and coins are issued by the Central Bank of Russia, which is Russia's monetary authority independent of all other government bodies.",
+        "Each ruble is technically subdivided into 100 kopeyka (kopecks), but kopeck-denominated coins are now rarely used due to inflation.",
+        "It is the second-oldest currency in continuous use, after British sterling.",
+        "The ruble was the currency of the Russian Empire and later the Soviet Union, where it was known as the Soviet ruble (code: SUR, 810).",
+        "Following the dissolution of the Soviet Union in 1991, the Soviet ruble was replaced in Russia with the Russian ruble (code: RUR, 810) at par in the following year.",
+        "The Russian ruble continued to be used in 11 post-Soviet states, forming a \"ruble zone\" until 1993.",
+        "In 1998, the ruble was redenominated (code: RUB, 643) shortly before the 1998 financial crisis, at a rate of 1000 RUR = 1 RUB.",
+        "The ruble is a free-floating currency, and in 2023, the digital ruble was introduced.",
+        "The Russian ruble is also used as a de facto legal tender in Baikonur, Abkhazia and South Ossetia."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Languages of Canada",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=701320",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "b167b972cfb93db34455395647873767090a28ec44ffc36e5e0c3026b230f84a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Prior to Confederation, the territories that would become Canada were home to over 70 distinct languages across 12 or so language families.",
+        "Today, a majority of those indigenous languages are still spoken; however, most are endangered and only about 0.6% of the Canadian population report an indigenous language as their mother tongue.",
+        "Since the establishment of the Canadian state, English and French have been the co-official languages and are, by far, the most-spoken languages in the country.",
+        "According to the 2021 census, English and French are the mother tongues of 56.6% and 20.2% of Canadians respectively.",
+        "According to the 2016 census, a total of 86.2% of Canadians could conduct a conversation in English, while 29.8% could conduct a conversation in French.",
+        "Under the Official Languages Act of 1969, both English and French have official status throughout Canada in respect of federal government services and most courts.",
+        "Provincially, only in New Brunswick are both English and French official to the same extent.",
+        "French is Quebec's official language, although legislation is enacted in both French and English and court proceedings may be conducted in either language.",
+        "English is the official language of Ontario, Manitoba and Alberta, but government services are available in French in many regions of each, particularly in regions and cities where Francophones form the majority.",
+        "Legislation is enacted in both languages and courts conduct cases in both.",
+        "In 2022, Nova Scotia recognized Mi'kmawi'simk as the first language of the province, and maintains two provincial language secretariats: the Office of Acadian Affairs and Francophonie (French language) and the Office of Gaelic Affairs (Canadian Gaelic).",
+        "The remaining provinces (British Columbia, Saskatchewan, Prince Edward Island, and Newfoundland and Labrador) do not have an official provincial language per se but government is primarily English-speaking."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Historical institutionalism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4118642",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "107bc22865c98a7f29aa12d432ac4375b522a539628068421498d5386f13b5a0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Historical institutionalism (HI) is a new institutionalist social science approach that emphasizes how timing, sequences and path dependence affect institutions, and shape social, political, economic behavior and change.",
+        "Unlike functionalist theories and some rational choice approaches, historical institutionalism tends to emphasize that many outcomes are possible, small events and flukes can have large consequences, actions are hard to reverse once they take place, and that outcomes may be inefficient.",
+        "A critical juncture may set in motion events that are hard to reverse, because of issues related to path dependency.",
+        "Historical institutionalists tend to focus on history (longer temporal horizons) to understand why specific events happen.",
+        "The term \"Historical Institutionalism\" began appearing in publications in the early 1990s, although it had been used in the late 1980s.",
+        "The most widely cited historical institutionalist scholars are Peter Hall, Paul Pierson, Theda Skocpol, Douglass North, and Kathleen Thelen.",
+        "Prominent works of historical institutionalist scholarship have used both sociological and rationalist methods.",
+        "Due to a focus on events involving causal complexity (equifinality, complex interaction effects and path dependency), historical institutionalist works tend to employ detailed comparative case studies."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Subtitles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7224224",
+      "retrieved_at": "2026-10-18T15:48:56.622Z",
+      "sha256": "2af6a788019c007ad9d811c8cd9abaa0c7b7ebdec46cd59472e92b764d5c42ea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Subtitles are texts representing the contents of the audio in a film, television show, opera or other audiovisual media.",
+        "Subtitles might provide a transcription or translation of spoken dialogue.",
+        "Although naming conventions can vary, captions are subtitles that include written descriptions of other elements of the audio, like music or sound effects.",
+        "Captions are thus especially helpful to deaf or hard-of-hearing people.",
+        "Subtitles may also add information that is not present in the audio.",
+        "For example, a subtitle could be used to explain to an audience unfamiliar with sake that it is a type of Japanese wine.",
+        "Lastly, subtitles are sometimes used for humor, as in Annie Hall, where subtitles show the characters' inner thoughts, which contradict what they were saying in the audio.",
+        "Creating, delivering, and displaying subtitles is a complicated and multi-step endeavor.",
+        "When there is plenty of time to prepare, this process can be done by hand.",
+        "However, for media produced in real-time, like live television, it may be done by stenographers or using automated speech recognition.",
+        "Subtitles written by fans, rather than more official sources, are referred to as fansubs.",
+        "Regardless of who does the writing, they must include information on when each line of text should be displayed."
+      ]
+    }
+  ]
+}

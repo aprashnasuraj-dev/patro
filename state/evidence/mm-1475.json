@@ -1,0 +1,131 @@
+{
+  "id": "mm-1475",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Smart Road Safety and Vehicle Accident Prevention System for Mountain Roads",
+      "publisher": "CVR Journal of Science & Technology",
+      "author": "Vangala Praveen Kumar; Dr. Kalagotla Chenchireddy; Varikuppala Manohar",
+      "published_at": "2025-01-01",
+      "url": "https://openalex.org/W7220313029",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "197bc4f0b4b5d7f14f2361001d19843d9fc16274c0a712d4a4e1d674d8fc6f46",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract: Roads that lead through mountains present unique challenges for drivers due to their winding paths, steep inclines, and unpredictable weather conditions.",
+        "The SRSP deploys a network of sensors along mountainous routes to gather real-time data on various factors including road conditions, weather patterns, and traffic density.",
+        "Utilizing AI algorithms, this data is then analyzed to identify potential hazards and predict areas prone to accidents.",
+        "Moreover, the system incorporates vehicle-to-infrastructure (V2I) and vehicle-to-vehicle (V2V) communication protocols to enable proactive safety measures such as adaptive speed control, hazard alerts, and emergency braking assistance.",
+        "In the event of an impending collision, the SRSP automatically notifies drivers and nearby vehicles while also alerting emergency services for rapid response.",
+        "Furthermore, the system furnishes valuable insights to road authorities, aiding in the optimization of maintenance schedules and the enhancement of road infrastructure to further bolster safety measures.",
+        "Ultimately, the SRSP offers a comprehensive solution to mitigate the risks associated with mountain road travel, thereby saving lives, and diminishing the economic and social toll of accidents.",
+        "Index Terms: Mountain roads, Smart Road Safety, Vehicle Accident Prevention System, IoT, Artificial Intelligence, Machine Learning, Senslives Real-time data, Hazard prediction."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "HOW PASSING CARS AFFECT THE CAPACITY OF TWO-LANE ROADS",
+      "publisher": "XIIIth World meeting of the International Road FederationInternational Road Federation",
+      "author": "Cristián Morales",
+      "published_at": "1997-01-01",
+      "url": "https://openalex.org/W609641360",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "d4aa4475131e8c4bfbba3c878380a04204c0e2f42af69cac6de1b2be3c4bf203",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Two-lane highways are the most predominant systems worldwide.",
+        "They make up approximately 85% of Latin America's road network which carries 76% of its traffic.",
+        "A large proportion of this traffic volume consists of heavy vehicles and 45% of the roads are built on mountain or rough terrain.",
+        "The paper explains the differences between the HCM and actual conditions, it will also establish the effect of maneuvers and two-lane highway capacity."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Road bicycle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39112",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "d3390fe4c01fde7da161e128f878d113b00ed329fa1b3935282aa6dcca8d1884",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term road bicycle is used to describe bicycles built for traveling at speed on paved roads.",
+        "Other sources specifically exclude racing bicycles from the definition, using the term to mean a bicycle of a similar style but built more for endurance and less the fast bursts of speed desired in a racing bicycle; as such, they usually have more gear combinations and fewer hi-tech racing features.",
+        "Certain of these bicycles have been referred to as 'sportive' bicycles to distinguish them from racing bicycles.",
+        "They either use disc brakes or rim brakes (although there might be technical differences, for example, road bike calliper brakes use shorter and wider pads than mountain bike cantilevers)\nThe bicycle is of lightweight construction using materials such as aluminium alloys or carbon fibre.",
+        "They usually use clipless pedals and special shoes in contrast to flat pedals, usually installed on mountain bikes.",
+        "The term road bicycle can also describe any type of bike used primarily on paved roads, in contrast to bikes primarily intended for off-road use, such as mountain bikes.",
+        "Several variations of road bikes include:\n\nTouring bicycles are designed for bicycle touring: they are robust, comfortable, and capable of carrying heavy loads\nHybrid bicycles are designed for a variety of recreational and utility purposes.",
+        "While primarily intended for use on pavement, they may also be used on relatively smooth unpaved paths or trails.",
+        "Utility bicycles are designed for utility cycling: are a traditional bicycle for commuting, shopping and running errands in towns and cities.",
+        "A roadster is a specific form of utility bicycle developed in the UK.",
+        "Recumbent bicycles are designed for a variety of recreational and utility purposes, but are characterised by the reclined riding position in which the cyclist is seated.",
+        "Vintage road bicycles, also known as classic lightweight bicycles, are generally older bicycles with frames which are manufactured using steel tubing and lugs."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mountain biking",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188773",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "9519b122ce0da3c41846a28f7822b661cf6a1b5146c386031b72f39c0fc3ed7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "MTB) is a sport of riding bicycles off-road, often over rough terrain, usually using specially designed mountain bikes.",
+        "Mountain biking can generally be broken down into distinct categories: cross country, trail, all mountain, enduro, downhill and freeride."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Inca road system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=453286",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "d44fcd1ae1e312e8abca4d57e8cbb06e6621dab8c77537cb8fd80b3798bdb55a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Inca road system (also spelled Inka road system and in Quechua: Qhapaq Ñan meaning \"royal road\") was the most extensive and advanced transportation system in pre-Columbian South America.",
+        "The construction of the roads required a large expenditure of time and effort.",
+        "The network was composed of formal roads carefully planned, engineered, built, marked and maintained; paved where necessary, with stairways to gain elevation, bridges and accessory constructions such as retaining walls, and water drainage systems.",
+        "It was based on two north–south roads: one along the coast and the second and most important inland and up the mountains, both with numerous branches.",
+        "It can be directly compared with the road network built during the Roman Empire, although the Inca road system was built one thousand years later.",
+        "The road system allowed for the transfer of information, goods, soldiers and persons, without the use of wheels, within the Tawantinsuyu or Inca Empire throughout a territory covering almost 2,000,000 km2 (770,000 sq mi) and inhabited by about 12 million people.",
+        "The roads were bordered, at intervals, with buildings to allow the most effective usage: at short distance there were relay stations for chasquis, the running messengers; at a one-day walking interval tambos allowed support to the road users and flocks of llama pack animals.",
+        "Administrative centers with warehouses, called qullqas, for re-distribution of goods were found along the roads.",
+        "Towards the boundaries of the Inca Empire and in newly conquered areas pukaras (fortresses) were found.",
+        "Part of the road network was built by cultures that precede the Inca Empire, notably the Wari culture in the northern central Peru and the Tiwanaku culture in Bolivia.",
+        "Different organizations such as UNESCO and IUCN have been working to protect the network in collaboration with the governments and communities of the six countries (Colombia, Ecuador, Peru, Bolivia, Chile and Argentina) through which the Great Inca Road passes.",
+        "In modern times some remnant of the roads see heavy use from tourism, such as the Inca Trail to Machu Picchu, which is well known by trekkers."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Transfăgărășan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1761960",
+      "retrieved_at": "2026-10-18T15:44:35.332Z",
+      "sha256": "bf0a173de7d9a27279eb74a33e3ba15c6208fda3d2baf66042c737cc6bfeac87",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Transfăgărășan (trans + Făgăraș), or DN7C, is a paved mountain road crossing the southern section of the Carpathian Mountains of Romania.",
+        "It has national-road ranking and is the second-highest paved road in the country after the Transalpina.",
+        "It starts near the village of Bascov, near Pitești, and stretches 90 kilometres (56 mi) to the crossroad between the DN1 and Sibiu, between the highest peaks in the country, Moldoveanu and Negoiu.",
+        "The road, built in the early 1970s as a strategic military route, connects the historic regions of Transylvania and Wallachia."
+      ]
+    }
+  ]
+}

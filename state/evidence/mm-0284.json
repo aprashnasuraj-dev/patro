@@ -1,0 +1,131 @@
+{
+  "id": "mm-0284",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dolphins in Space: Quantifying the Relative Positions of Bottlenose Dolphins (Tursiops truncatus)",
+      "publisher": "CUNY Academic Works (City University of New York)",
+      "author": "Megan S McGrath",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W2921843448",
+      "retrieved_at": "2026-10-18T14:59:33.318Z",
+      "sha256": "b5f7ca1fc20b3838b21f7e288d02d1a357f458b6b454feba7fa25905c754da40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bottlenose dolphins (Tursiops truncatus) are socially sophisticated mammals with high fission-fusion dynamics and complex communication.",
+        "The relative positioning of individual dolphins as they swim within their social group may aid in the expression of social roles.",
+        "This study sought to quantify relative positioning in a small social group of female bottlenose dolphins at the National Aquarium in Baltimore that included two mother-daughter pairs, maternal and paternal half-sisters, a half-aunt and niece, and one unrelated female.",
+        "We devised a method for scoring relative positioning in three dimensions.",
+        "We found that the two mothers and their juvenile and adult daughters often swam in pairs, indicating that the mother-offspring relationship continued to be an important affiliation later in life.",
+        "The two dolphins without a mother or daughter in the group, as well as the youngest juvenile female (one of the daughters), spent more time swimming alone than with others.",
+        "Both of the mother-daughter pairs frequently swam in a position known as the infant position in the literature, despite the fact that both of the daughters in our group were 8 and 13 years of age.",
+        "Among frequently associating non-mother/daughter pairs, there was some evidence that one dolphin typically stayed in front of the other, possibly indicating leader/follower roles.",
+        "Conversely, there was no evidence that any dolphin stayed to the left or right of another; to the inside or outside of another in relation to the pool wall; or above or below another.",
+        "A discussion of the application of developing technologies, such as machine learning techniques and unmanned aerial vehicles, to future research on relative positioning in cetacean social groups is included."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cetacean",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7626",
+      "retrieved_at": "2026-10-18T14:59:33.318Z",
+      "sha256": "9118ef0c88617266e6c22a497c1884607d3fc5dd4635a532031163d1ac63935b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cetaceans are marine mammals belonging to the infraorder Cetacea (), a secondarily aquatic clade under the order Artiodactyla that include whales, dolphins, porpoises and extinct groups such as Basilosaurus.",
+        "Most cetaceans live in marine environments, particularly the pelagic zone, but some reside solely in brackish or fresh water.",
+        "Having a cosmopolitan distribution, they can be found in some rivers and all of Earth's oceans.",
+        "Many species migrate seasonally over vast ranges for food advantages.",
+        "Key characteristics of cetaceans are their fully aquatic life cycle, streamlined, fish-like body shape, the need to periodically surface and breathe air, and exclusively carnivorous diet.",
+        "Some cetaceans — the toothed whales — are capable of echolocation.",
+        "As nektonic animals, cetaceans propel themselves through the water with powerful up-and-down movements of their tails, which have evolved into in a horizontal paddle-like fluke.",
+        "Their hindlimbs have disappeared with only some vestigial skeleton of the pelvis and femurs, and their forelimbs have evolved into flippers which they use to paddle and steer.",
+        "Some fast-swimming groups, most notably the smaller dolphins and porpoises, have a dorsal fin to facilitate directional stability.",
+        "Cetaceans also have large brains and have high intelligence, complex social behaviour, and song-like communication.",
+        "Some cetaceans have large bodies, such as the blue whale, which reaches a maximum confirmed length of 29.9 meters (98 feet) and a weight of 173 tonnes (190 short tons), making it the largest animal known to have existed.",
+        "Despite their highly modified bodies and carnivorous lifestyle, genetic and fossil evidence places cetaceans within the terrestrial even-toed ungulates, most closely related to the hippopotamids."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Dolphin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9061",
+      "retrieved_at": "2026-10-18T14:59:33.318Z",
+      "sha256": "be732fd41bac25e22e4cb7c13d04a34bd049a5f32962b6c0d2636f733811cce0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "All these families belong to the parvorder Odontoceti, i.e., toothed whales, which also include the closely related families Monodontidae (beluga and narwhal) and Phocoenidae (porpoises), as well as the more distant families Physeteroidea (sperm whales) and Ziphiidae (beaked whales).",
+        "Dolphins range in sizes from the human-sized 1.7-metre-long (5 ft 7 in) and 50-kilogram (110-pound) Maui's dolphin; to the 9.5 m (31 ft) and 10-tonne (11-short-ton) apex predator, the orca.",
+        "Various species of dolphins exhibit sexual dimorphism where the males are larger than females.",
+        "They have streamlined, fish-like bodies with the two forelimbs evolving into flippers, complete loss of hindlimbs (with only vestigial pelvic skeleton), and the tail forming a horizontal fluke.",
+        "Though not quite as flexible as the semiaquatic seals, they are faster and more agile in water; some dolphins can briefly travel at speeds of 29 kilometres per hour (18 mph) or leap about 9 metres (30 ft).",
+        "Dolphins use their conical teeth to capture fast-moving prey such as forage fish, coleoids and shrimps.",
+        "They have well-developed hearing which is adapted for both air and water; so well developed that some can survive even if they are blind.",
+        "Like other aquatic mammals, they have a thick layer of subcutaneous adipose tissue, i.e., blubber, to keep the body warm in the cold water.",
+        "Dolphins are widespread, mostly in pelagic marine environments but some thrive in brackish and freshwater bodies.",
+        "Most species prefer the warm waters of the tropic zones, but some, such as the right whale dolphin, prefer colder climates.",
+        "Male dolphins typically mate with multiple females every year, but females only mate every two to three years.",
+        "Calves are typically born in the spring and summer months and females bear all the responsibility for raising them."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bottlenose dolphin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=296994",
+      "retrieved_at": "2026-10-18T14:59:33.318Z",
+      "sha256": "d67f0a0952e9340171e813e73350452801e4791e25d26839a9906593022dce80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The bottlenose dolphin is a toothed whale in the genus Tursiops.",
+        "They are common, cosmopolitan members of the family Delphinidae, the family of oceanic dolphins.",
+        "Molecular studies show the genus contains three species: the common bottlenose dolphin (Tursiops truncatus), the Indo-Pacific bottlenose dolphin (Tursiops aduncus), and Tamanend's bottlenose dolphin (Tursiops erebennus).",
+        "Others, like the Burrunan dolphin (Tursiops (aduncus) australis), may be alternately considered their own species or be subspecies of T.",
+        "Bottlenose dolphins inhabit warm and temperate seas worldwide, being found everywhere except for the Arctic and Antarctic Circle regions.",
+        "Their name derives from the Latin tursio (dolphin) and truncatus for the truncated teeth (the type specimen was old and had worn down teeth; this is not a typical characteristic of most members of the species).",
+        "Numerous investigations of bottlenose dolphin intelligence have been conducted, examining mimicry, use of artificial language, object categorization, and self-recognition.",
+        "They can use tools (sponging; using marine sponges to forage for food sources they normally could not access) and transmit cultural knowledge from generation to generation, and their considerable intelligence has driven interaction with humans.",
+        "Bottlenose dolphins gained popularity from aquarium shows and television programs such as Flipper.",
+        "They have also been trained by militaries to locate sea mines or detect and mark enemy divers.",
+        "In some areas, they cooperate with local fishermen by driving fish into their nets and eating the fish that escape.",
+        "Some encounters with humans are harmful to the dolphins: people hunt them for food, and dolphins are killed inadvertently as a bycatch of tuna fishing and by getting caught in crab traps."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Non-rapid eye movement sleep",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=776322",
+      "retrieved_at": "2026-10-18T14:59:33.318Z",
+      "sha256": "d4c9582ffd4d25a892040c182f993aa80da00f6eb6adc06d1a66a0be5edd1122",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Non-rapid eye movement sleep (NREM), also known as quiescent sleep, is, collectively, sleep stages 1–3, previously known as stages 1–4.",
+        "There are distinct electroencephalographic and other characteristics seen in each stage.",
+        "Unlike REM sleep, there is usually little or no eye movement during these stages.",
+        "Dreaming occurs during both sleep states, and muscles are not paralyzed as in REM sleep.",
+        "People who do not go through the sleeping stages properly get stuck in NREM sleep, and because muscles are not paralyzed a person may be able to sleepwalk.",
+        "According to studies, the mental activity that takes place during NREM sleep is believed to be thought-like, whereas REM sleep includes hallucinatory and bizarre content.",
+        "NREM sleep is characteristic of dreamer-initiated friendliness, compared to REM sleep where it is more aggressive, implying that NREM is in charge of simulating friendly interactions.",
+        "The mental activity that occurs in NREM and REM sleep is a result of two different mind generators, which also explains the difference in mental activity.",
+        "In addition, there is a parasympathetic dominance during NREM.",
+        "The reported differences between the REM and NREM activity are believed to arise from differences in the memory stages that occur during the two types of sleep."
+      ]
+    }
+  ]
+}

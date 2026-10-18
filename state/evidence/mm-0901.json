@@ -1,0 +1,98 @@
+{
+  "id": "mm-0901",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Protestant Missions Transformed the Indo‐Myanmar Frontier",
+      "publisher": "Wiley",
+      "author": "Chophy, G. Kanato",
+      "published_at": "2025-01",
+      "url": "https://doi.org/10.1111/rec3.70013",
+      "retrieved_at": "2026-10-18T15:22:54.370Z",
+      "sha256": "609ce67344dec1b940c937f22dc2f4ba1009fc3ffad4aab43da06e51167e2a08",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "ABSTRACT What makes the Indo‐Myanmar frontier is the 1,021‐mile borderline between India and Myanmar.",
+        "Notably, this frontier region lies at the junction of East, South, and South East Asia, forming a kind of geopolitical space where the culture, economy, and politics of India, Myanmar, China, and Bangladesh have exerted considerable influence.",
+        "Though hemmed in by these nations, the Indo‐Myanmar frontier region stands out for its Western Protestantism roots, which has far‐reaching impact on the society, politics, and culture of the region’s diverse ethnic communities.",
+        "This article explores how the Protestant missions, especially the American Baptist mission, starting from the second half of the nineteenth century transformed this backwater of British India into arguably one of the most successful Christian missionary legacies in the whole of Asia."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Doppler radar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=78446",
+      "retrieved_at": "2026-10-18T15:22:54.370Z",
+      "sha256": "362c216dba30ea48bff73f45cfe680074d100aaa75e6372554cd608ca3285925",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Doppler radar is a specialized radar that uses the Doppler effect to produce velocity data about objects at a distance.",
+        "It does this by bouncing a microwave signal off a desired target and analyzing how the object's motion has altered the frequency of the returned signal.",
+        "This variation gives direct and highly accurate measurements of the radial component of a target's velocity relative to the radar.",
+        "The term applies to radar systems in many domains like aviation, police radar detectors, navigation, meteorology, etc."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Magnetoreception",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1506351",
+      "retrieved_at": "2026-10-18T15:22:54.370Z",
+      "sha256": "fd47611acd4cf3fe3c2a47f4b0edfd4ca952b62b46ae746d0f096aea73917e9a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Magnetoreception is a sense which allows an organism to detect the Earth's magnetic field.",
+        "Animals with this sense include some arthropods, molluscs, and vertebrates (fish, amphibians, reptiles, birds, and mammals).",
+        "The sense is mainly used for orientation and navigation, but it may help some animals to form regional maps.",
+        "Experiments on migratory birds provide evidence that they make use of a cryptochrome protein in the eye, relying on the quantum radical pair mechanism to perceive magnetic fields.",
+        "This effect is extremely sensitive to weak magnetic fields, and readily disturbed by radio-frequency interference, unlike a conventional iron compass.",
+        "Some bacteria orient passively using magnetite crystals; the mechanism has not been reliably detected in eukaryotes.",
+        "Cartilaginous fish including sharks and stingrays can detect small variations in electric potential with their electroreceptive organs, the ampullae of Lorenzini.",
+        "These appear to be able to detect magnetic fields by induction.",
+        "There is some evidence that these fish use magnetic fields in navigation."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Moral compass",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2394608",
+      "retrieved_at": "2026-10-18T15:22:54.370Z",
+      "sha256": "53781b8ea3b584852e41407c1a8e9745fa608a43fd4ba897819fd10fb9ac37f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A moral compass is a metaphor for a moral value system that provides guidance on \"good\" or \"right\" choices in human interaction and especially in decision-making situations.",
+        "This value system can be very personal or represented by a larger group.",
+        "Examples might be a certain philosophy, a religion, or the embodiment of this value system by a certain person or defined organization."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Portolan chart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5167318",
+      "retrieved_at": "2026-10-18T15:22:54.370Z",
+      "sha256": "281b8d7685ef0eada3e8d14798160600deb9571cb6d01a5db9f27dabc868e9b1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Besides those showing the entire area on a single map field, there are also portolan charts that show smaller territorial extents, either as separate editions or as a series of charts  that together form portolan atlases.",
+        "The word portolan comes from the Italian portolano, meaning \"related to ports or harbors\", and which since at least the 17th century designates \"a collection of sailing directions\".",
+        "Their most perplexing features are the extremely realistic portrayal of coastlines and a complete historical lack of their evolutionary path because the oldest known samples have already been made to a highly developed stage, and later-made charts and atlases have not become more accurate over time."
+      ]
+    }
+  ]
+}

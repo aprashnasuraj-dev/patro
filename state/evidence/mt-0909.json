@@ -1,0 +1,80 @@
+{
+  "id": "mt-0909",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T16:20:27.063Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Seismic Coupling and Hydrological Responses",
+      "publisher": "UWSpace (University of Waterloo)",
+      "author": "Shahid Rashid",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W1596024089",
+      "retrieved_at": "2026-10-18T16:20:32.279Z",
+      "sha256": "98fa0ff4e0ab435f1f22a6b0fb7d9ec921ec971e4a6d2d9dafce0f4a7d6090c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In seismology, the capability of an earthquake to induce other seismic events has been widely accepted for decades.",
+        "For example, the term aftershock involves a strong relation of such a seismic event with the incidence of a main shock.",
+        "Moreover, hydrological changes (water level in wells and streams, geyser eruption and remote seismicity) in response to remote earthquakes have been reported for many years.",
+        "A matter of current debate concerns the spatiotemporal scale of interaction among seismic events.",
+        "However, there appears to be no clear image of what is the exact method of transmission of the triggering energy for the phenomena listed above.",
+        "This leaves some other wave as a possible triggering energy sources.",
+        "\\nThis thesis is based on a diffusion-dynamic theory that predicts a low velocity displacement wave, called a soliton wave, propagating in liquid-saturated porous media with velocity ~100-300 m/s, analogous to a tsunami that travels with the loss of little energy.",
+        "This is hypothesized to be the mechanism for energy transfer that could be sufficient to promote changes in local pore pressure and therefore to alter the ambient effective stresses.",
+        "under water reservoirs, in areas of active hydrothermalism, in tectonically active areas, and so on).",
+        "\\nThis thesis undertakes a review of some of these phenomena, and finds that the evidence as to what is the triggering mechanism is not clear.",
+        "Also, it appears that the soliton hypothesis is not at all disproved by the data, and there may be some evidence of its existence.",
+        "To reveal the evidence of this kind of wave (soliton) in nature, real sequence and K-Q cases velocity data bases of earthquake interactions in the year of 2003 have been constructed by using information from Incorporated Seismological Research Institute (IRIS)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Imaging Patterns of Fault Creep: Implications for Earthquakes on the Hayward Fault",
+      "publisher": "Digital Commons - University of South Florida (University of South Florida)",
+      "author": "Kevin P. Furlong; R. Malservisi; Christine R. Gans",
+      "published_at": "2004-01-01",
+      "url": "https://openalex.org/W3006726701",
+      "retrieved_at": "2026-10-18T16:20:32.280Z",
+      "sha256": "6392a39b9202fb6d4174dc64f2dde66362bc8320453f853e496ce1f4e9810ba8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The slip deficit that accumulates on a fault constrains the potential slip (and moment) for subsequent earthquakes on the fault.",
+        "Fault creep will reduce the rate at which this slip deficit accumulates, at least on those patches of the fault that undergo such aseismic slip.",
+        "Mapping the spatial and temporal patterns of such creep then becomes an important component of assessments of earthquake potential on a fault such as the Hayward.",
+        "In regions where faults are creeping at or near the surface, the pattern of surface deformation can be used to constrain fault creep in the upper few kilometers.",
+        "Determination of the patterns of creep on deeper sections of a fault is poorly constrained by near-fault surface observations.",
+        "The inclusion of micro-seismicity in analyzing patterns of fault creep adds an additional constraint on locations of locked and creeping patches on the fault.",
+        "A second consideration in assessing the accumulation of slip deficit is the potential for timedependent creep behavior – particularly driven by post-earthquake viscous relaxation.",
+        "We are investigating the potential role of such transient behavior in both biasing observations of creep rate, and also modifying the rate at which slip deficit accumulates.",
+        "Including the effects of a simulated 1868-like earthquake in our models of Hayward Fault creep indicate a significant variations in both the spatial pattern and rate of fault creep during the first 50-100 years after the earthquake."
+      ]
+    }
+  ]
+}

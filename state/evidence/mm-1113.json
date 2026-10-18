@@ -1,0 +1,134 @@
+{
+  "id": "mm-1113",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Figure 4.5. Estimated energy supply balance for 2009",
+      "publisher": "Organisation for Economic Co-Operation and Development  (OECD)",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.1787/888932377067",
+      "retrieved_at": "2026-10-18T15:31:22.817Z",
+      "sha256": "9049b633a5d2083e4a3c813ff08620f4dfcacb36179b4f1ac3766cf98a3b221c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "-- Statlink -------------------------------- OECD Economic Surveys: United Kingdom - � OECD 2011.",
+        "[0.79]; combustible renewables and waste [5.34]; electricity [0.25] 6.83"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Autarkic energy systems: balancing supply and demand with energy storage and controls in local energy micro-grids",
+      "publisher": "Strathprints: The University of Strathclyde institutional repository (University of Strathclyde)",
+      "author": "Andrew D. Peacock; Edward H. Owens; Susan Roaf",
+      "published_at": "2014-12-08",
+      "url": "https://openalex.org/W1487786921",
+      "retrieved_at": "2026-10-18T15:31:23.122Z",
+      "sha256": "88499cf93aeb7cffe7ace5b7da71865d3109283cea7aed085979dba9db4b803b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy autarky can be described as a location that relies on its own energy resources for generating the useful energy required to sustain the society within that region or a situation in which a region does not import substantial amounts of energy resources.",
+        "Functioning autarkic energy systems typically require a micro-grid, well understood energy demand and supply characteristics, opportunities for energy storage of various types and controls able to manage the harmonisation of system components.",
+        "A critical additional ingredient is users who can work within constraints created by the adoption of autarkic principles.",
+        "In addition, monitored data from a community micro-grid system in Northern Scotland is analysed and presented to provide additional understanding of the complexities and opportunities created by an autarkic approach.",
+        "The output from the workshop identified that whilst it is probable that a dogmatic interpretation of energy autarkic will not be universally applicable, the underlying principles represent a bottom up way of widening participation in the development of future energy provision models.",
+        "Whilst a number of issues and barriers were raised regarding its adoption, the attendees recognised that energy autarky represented a very positive and empowering vision for translating global scale issues to local energy transition.",
+        "Similarities were found between the types of behaviour necessary to create load responses relevant to energy networks containing large penetrations of renewable generation and communities set up along energy autarkic principles."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Grid energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1646838",
+      "retrieved_at": "2026-10-18T15:31:23.122Z",
+      "sha256": "f3efba5ab5520af13792c448fee143a8f843a7531c0ba2990f2fd585b061e9be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Grid energy storage, also known as large-scale energy storage, is a set of technologies connected to the electrical power grid that store energy for later use.",
+        "These systems help balance supply and demand by storing excess electricity from variable renewables such as solar and inflexible sources like nuclear power, releasing it when needed.",
+        "They further provide essential grid services, such as helping to restart the grid after a power outage.",
+        "As of 2023, the largest form of grid storage is pumped-storage hydroelectricity, with utility-scale batteries and behind-the-meter batteries coming second and third.",
+        "Lithium-ion batteries are well suited for short-duration storage (under 8 hours), due to their lower cost and sensitivity to degradation at high states of charge.",
+        "Flow batteries and compressed air energy storage may provide storage for medium-duration.",
+        "Two forms of storage are suited for long-duration storage: green hydrogen, produced via electrolysis and thermal energy storage.",
+        "Another solution is the use of more dispatchable power plants that can change their output rapidly, for instance peaking power plants to fill in supply gaps.",
+        "Demand response can shift load to other times and interconnections between regions can balance out fluctuations in renewables production.",
+        "The price of storage technologies typically goes down with experience.",
+        "For instance, lithium-ion batteries have been getting some 20% cheaper for each doubling of worldwide capacity.",
+        "Systems with under 40% variable renewables need only short-term storage."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "National Grid plc",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2654679",
+      "retrieved_at": "2026-10-18T15:31:23.122Z",
+      "sha256": "1a6fafe5fc1e41be00ed40254573b87b0733eab7454882fdee650248a2bccbf7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "National Grid plc is a British multinational electricity and gas utility company headquartered in London, England.",
+        "National Grid plc is one of the largest investor-owned utility companies in the world; it has a primary listing on the London Stock Exchange where it is a constituent of the FTSE 100 Index, and a secondary listing in the form of its American depositary receipts on the New York Stock Exchange."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Photovoltaic system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15677755",
+      "retrieved_at": "2026-10-18T15:31:23.122Z",
+      "sha256": "6bf3640c33e394447178466e600380c9b517543e2aeab8abe37e5c5e3db7c362",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A photovoltaic system, also called a PV system or solar power system, is an electric power system designed to supply usable solar power by means of photovoltaics.",
+        "It consists of an arrangement of several components, including solar panels to absorb and convert sunlight into electricity, a solar inverter to convert the output from direct to alternating current, as well as mounting, cabling, and other electrical accessories to set up a working system.",
+        "Many utility-scale PV systems use tracking systems that follow the sun's daily path across the sky to generate more electricity than fixed-mounted systems.",
+        "Photovoltaic systems convert light directly into electricity and are not to be confused with other solar technologies, such as concentrated solar power or solar thermal, used for heating and cooling.",
+        "A solar array only encompasses the solar panels, the visible part of the PV system, and does not include all the other hardware, often summarized as the balance of system (BOS).",
+        "PV systems range from small, rooftop-mounted or building-integrated systems with capacities ranging from a few to several tens of kilowatts to large, utility-scale power stations of hundreds of megawatts.",
+        "Nowadays, off-grid or stand-alone systems account for a small portion of the market.",
+        "Operating silently and without any moving parts or air pollution, PV systems have evolved from niche market applications into a mature technology used for mainstream electricity generation.",
+        "Due to the growth of photovoltaics, prices for PV systems have rapidly declined since their introduction; however, they vary by market and the size of the system.",
+        "Nowadays, solar PV modules account for less than half of the system's overall cost, leaving the rest to the remaining BOS components and to soft costs, which include customer acquisition, permitting, inspection and interconnection, installation labor, and financing costs."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Electrical grid",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20344155",
+      "retrieved_at": "2026-10-18T15:31:23.122Z",
+      "sha256": "b01742256a6d39cfb91b55bbe2433a4accea63da0e454d60278dbbc3d9f580f3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electrical grid (or electricity network) is an interconnected network for electricity delivery from producers to consumers.",
+        "Electrical grids consist of power stations, electrical substations to step voltage up or down, electric power transmission to carry power over long distances, and finally electric power distribution to customers.",
+        "In that last step, voltage is stepped down again to the required service voltage.",
+        "Power stations are typically built close to energy sources and far from densely populated areas.",
+        "Electrical grids vary in size and can cover whole countries or continents.",
+        "From small to large there are microgrids, wide area synchronous grids, and super grids.",
+        "The combined transmission and distribution network is part of electricity delivery, known as the power grid.",
+        "Grids are nearly always synchronous, meaning all distribution areas operate with three phase alternating current (AC) frequencies synchronized (so that voltage swings occur at almost the same time).",
+        "This allows transmission of AC power throughout the area, connecting the electricity generators with consumers.",
+        "Although electrical grids are widespread, as of 2016, 1.4 billion people worldwide were not connected to an electricity grid.",
+        "As electrification increases, the number of people with access to grid electricity is growing.",
+        "11% of the World's population, had no access to grid electricity in 2017, down from 1.2 billion in 2010."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "mt-1211",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T16:27:55.308Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T16:27:56.333Z",
+      "sha256": "d49bfb4841a9a6ce8966194a735e98e709ccd17007c06c49e78980c1a818c752",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Embargo period",
+      "publisher": "Qeios",
+      "author": null,
+      "published_at": "2019-11-08",
+      "url": "https://doi.org/10.32388/996576",
+      "retrieved_at": "2026-10-18T16:27:57.836Z",
+      "sha256": "ada8e6bb6f7a752be6e2ddefed1995a9cdd6c1266591599fc37a17df91ae4352",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Embargo period - Definition (v1) by Public Domain | Qeios There is a newer version available for this {{ publicationType }}.",
+        "This is an open access publication distributed under the terms of the CC BY 4.0 License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+        "Info Check the {{ publicationType | capitalize }} Source for copyright and license information.",
+        "{{ publication.doi_url }} {{ publication.title }} Declarations Abstract Source Listen on Compose your Definition Related Definitions ({{ publication.ranked_siblings.length }}) # {{ sibling.position_in_ranking }} Thank you for your contribution to the community."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T16:27:57.837Z",
+      "sha256": "b32e64e4e8b59f927e00153041c866232f89c7cd0a6c126898e55678f312e8ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Beatles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29812",
+      "retrieved_at": "2026-10-18T16:27:57.837Z",
+      "sha256": "0e92db8ee74d9a0983720f8d425d79eb0b82aade07a2c29bf753b81b21a50d11",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Beatles were an English rock band formed in Liverpool in 1960.",
+        "The band comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr.",
+        "They are regarded as the most influential band in popular music and were integral to the development of 1960s counterculture and the recognition of popular music as an art form.",
+        "Rooted in skiffle, beat and 1950s rock 'n' roll, their sound incorporated elements of classical music and traditional pop in innovative ways.",
+        "They also explored styles ranging from folk and Indian music to psychedelia and hard rock.",
+        "As pioneers in recording, songwriting and artistic presentation, the Beatles revolutionised many aspects of the music industry and were often portrayed as leaders of the era's youth and sociocultural movements.",
+        "Led by primary songwriters Lennon and McCartney, the Beatles evolved from Lennon's previous group, the Quarrymen, and built their reputation by playing clubs in Liverpool and in Hamburg, West Germany, starting in 1960.",
+        "Lennon, McCartney and Harrison, together since 1958, went through a succession of drummers before Starr officially joined in 1962.",
+        "Manager Brian Epstein moulded them into a professional act, and producer George Martin developed their recordings, greatly expanding their domestic success after they signed with EMI and achieved their first hit, \"Love Me Do\", in late 1962.",
+        "As their popularity grew into the fan frenzy dubbed \"Beatlemania\", the band acquired the nickname \"the Fab Four\".",
+        "By early 1964, the Beatles were international stars and had achieved unprecedented levels of critical and commercial success.",
+        "They became a leading force in Britain's cultural resurgence, ushering in the British Invasion of the United States pop market."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Wolfgang Amadeus Mozart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33163",
+      "retrieved_at": "2026-10-18T16:27:57.837Z",
+      "sha256": "289c0398d9b9320b253f76a3ede5c4611c224716765535fd72be7a54015e7431",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wolfgang Amadeus Mozart (27 January 1756 – 5 December 1791) was a Classical composer and musician.",
+        "He completed more than 800 works in his life—including outstanding examples of most of the genres of his time: symphonies, concertos, chamber music, opera and choral music.",
+        "He is regarded as one of the greatest composers in the history of Western music.",
+        "Born in Salzburg, Mozart quickly emerged as a child prodigy under the training of his father Leopold, a skilled pedagogue.",
+        "At the age of five he was already competent on keyboard and violin, had begun to compose, and had performed before European royalty.",
+        "His father took him on a grand tour of Europe and then three trips to Italy.",
+        "At 17 he was a musician at the Salzburg court but grew restless and travelled in search of a better position.",
+        "A fruitless journey in search of employment (1777–1779) led him to Paris, Mannheim, Munich and eventually back to Salzburg.",
+        "During this time he wrote his five violin concertos, the Sinfonia Concertante, various masses and the opera Idomeneo.",
+        "While he was visiting Vienna in 1781, Mozart's quarrels with his Salzburg employers came to a head and he was dismissed.",
+        "He chose to remain in Vienna, where he stayed for the rest of his life, achieving fame and some financial success, but no long-term security.",
+        "During Mozart's early years in Vienna he produced several notable works, such as the opera Die Entführung aus dem Serail, the Great Mass in C minor, the \"Haydn\" Quartets and a number of symphonies."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Oedipus Rex",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=87770",
+      "retrieved_at": "2026-10-18T16:27:57.837Z",
+      "sha256": "37d09db117481d32f4a414f95c770bf61d8e2f15bb3538abfdf968be8ab6b769",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Oedipus Rex, also known by its Greek title, Oedipus Tyrannus (Ancient Greek: Οἰδίπους Τύραννος, pronounced [oidípuːs týrannos]), or Oedipus the King, is an Athenian tragedy written by Sophocles.",
+        "Although the play won only second place at its initial performance, it was later considered by Aristotle to be one of the greatest Greek tragedies, and is now widely considered one of the greatest plays of Western literature, and the most famous of all Greek tragedies.",
+        "Oedipus Rex is likely the fourth out of the seven surviving plays by Sophocles.",
+        "It is one of three surviving plays that deal with the story of Oedipus and Thebes.",
+        "Of the three, Oedipus Rex was the second to be written, following Antigone by about a dozen years.",
+        "However, in terms of the chronology of events described by the plays, it comes first, followed by Oedipus at Colonus and then Antigone.",
+        "Prior to the start of Oedipus Rex, Oedipus has become the king of Thebes while unwittingly fulfilling a prophecy that he would kill his father, Laius (the previous king), and marry his mother, Jocasta (whom Oedipus took as his queen after solving the riddle of the Sphinx).",
+        "The action of Sophocles' play concerns Oedipus' search for the murderer of Laius in order to end a plague ravaging Thebes, unaware that the killer he is looking for is none other than himself.",
+        "At the end of the play, after the truth finally comes to light, Jocasta hangs herself while Oedipus, horrified at his patricide and incest, proceeds to gouge out his own eyes in despair.",
+        "In his Poetics, Aristotle refers several times to the play in order to exemplify aspects of the genre of tragedy."
+      ]
+    }
+  ]
+}
