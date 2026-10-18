@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-childcare-final",
-  "note": "Bounded final two-topic rerun with childcare-incident regulator research expansion alongside the prior topic-specific research paths. Require exact-topic evidence, three independent publisher domains, grounded claims, minimum length and release gate; no production publish."
+  "mode": "research-grounding-query-final",
+  "note": "Bounded final rerun using focused regulator/scientific queries plus the exact-question search fallback. Must pass exact-topic relevance, three independent publisher domains, source-grounded claims, minimum word count and editorial release gate. No production publish."
 }
