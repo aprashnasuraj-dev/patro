@@ -1,0 +1,106 @@
+{
+  "id": "mq-0542",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Iran",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14653",
+      "retrieved_at": "2026-10-18T18:56:33.541Z",
+      "sha256": "16ace6b6055f2b58ea74eb03ab4ba2011f516b8594f605c9f48dd8da8f7a05ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Iran, officially the Islamic Republic of Iran, and historically known as Persia, is a country in West Asia.",
+        "It borders Iraq to the west; Turkey, Azerbaijan, and Armenia to the northwest; the Caspian Sea to the north, Turkmenistan to the northeast; Afghanistan to the east; Pakistan to the southeast; and the Gulf of Oman and the Persian Gulf to the south.",
+        "With a population of over 92 million, Iran ranks 17th globally in both geographic size and population.",
+        "Tehran is the nation's capital and largest city and serves as its primary economic center.",
+        "Home to one of the world's oldest continuous major civilizations, the territory of present-day Iran was first unified under the Medes in the 7th century BC and reached its territorial height in the 6th century BC, when Cyrus the Great founded the Achaemenid Empire.",
+        "Alexander the Great conquered the empire in the 4th century BC.",
+        "An Iranian rebellion in the 3rd century BC established the Parthian Empire, which later liberated the country.",
+        "In the 3rd century AD, the Parthians were succeeded by the Sasanian Empire, which oversaw a golden age in the history of Iranian civilization.",
+        "Ancient Iran saw some of the earliest developments of writing, agriculture, urbanization, religion, and administration.",
+        "Once a center for Zoroastrianism, Iran underwent Islamization following the 7th century Muslim conquest.",
+        "Innovations in literature, philosophy, mathematics, medicine, astronomy and art were renewed during the Islamic Golden Age and Iranian Intermezzo, a period during which Iranian Muslim dynasties ended Arab rule and revived the Persian language.",
+        "This era was followed by Seljuk and Khwarazmian rule, Mongol conquests and the Timurid Renaissance from the 11th to 14th centuries."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Kazakhstan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16642",
+      "retrieved_at": "2026-10-18T18:56:33.541Z",
+      "sha256": "b051ec9c7248fa10115c7a38f048cbb0e7aa4b8642dbf176390e14d049529d21",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kazakhstan, officially the Republic of Kazakhstan, is a landlocked country situated primarily in Central Asia, with a portion of its territory extending into Eastern Europe.",
+        "It borders Russia to the north and west, China to the east, Kyrgyzstan to the southeast, Uzbekistan to the south, and Turkmenistan to the southwest, and it has a coastline along the Caspian Sea.",
+        "The capital is Astana, and the country's largest city and principal cultural and economic center is Almaty, which served as the capital until 1997.",
+        "Kazakhstan is the world's ninth-largest country by land area and the largest landlocked country.",
+        "Hilly plateaus and plains account for nearly half its vast territory, with lowlands composing another third; its southern and eastern frontiers are composed of mountainous regions.",
+        "Kazakhstan has a population of 20.6 million and one of the lowest population densities in the world, with fewer than 8 people per square kilometre (21 people/mi2).",
+        "Ethnic Kazakhs constitute a majority, while ethnic Russians form a significant minority.",
+        "Officially secular, Kazakhstan is a Muslim-majority country with a sizeable Christian community.",
+        "In antiquity, various nomadic Iranian peoples such as the Saka, Massagetae, and Scythians.",
+        "In the 13th century, the area was subjugated by the Mongol Empire under Genghis Khan.",
+        "Following the disintegration of the Golden Horde in the 15th century, the Kazakh Khanate was established over an area roughly corresponding with modern Kazakhstan.",
+        "By the 18th century, the Kazakh Khanate had fragmented into three jüz (tribal divisions), which were gradually absorbed and conquered by the Russian Empire; by the mid-19th century, all of Kazakhstan was nominally under Russian rule."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Swastika",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45943",
+      "retrieved_at": "2026-10-18T18:56:33.541Z",
+      "sha256": "a087fac94cf209df7bcc1ed5d604d90257e47202c4d9489e57405d75c7336152",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The swastika ( SWOS-tih-kə, Sanskrit: [ˈsʋɐstikɐ], Sanskrit Devanagari: स्वस्तिक ; 卐 or 卍) is an ancient cross-cultural geometrical symbol that has been used in many cultures and religions of Eurasia, as well as a few in Africa and the Americas, for thousands of years.",
+        "The swastika was and continues to be used as a symbol of divinity and spirituality in several religions, including Hinduism, Buddhism, and Jainism.",
+        "In the Western world, it is predominantly associated with Nazism, being appropriated and widely displayed in Nazi symbolism.",
+        "This appropriation continues with the symbol's popularity among neo-Nazis around the world.",
+        "The English word swastika is originally of the Sanskrit language (स्वस्तिक, lit.",
+        "In Hinduism, the right-facing symbol (卐) is called swastika, symbolizing surya, prosperity, and good luck; while the left-facing symbol (卍) is sometimes called sauvastika, symbolising night or tantric aspects of Kali.",
+        "In Jain symbolism, it is a part of the Jain flag, and represents Suparshvanatha—the seventh of 24 Tirthankaras (spiritual teachers and saviours).",
+        "In Buddhist symbolism, it represents the auspicious footprints of the Buddha.",
+        "In different Indo-European traditions, the swastika symbolises fire, lightning bolts and the Sun.",
+        "The symbol is found in the archaeological remains of the Indus Valley Civilization and the Neolithic-era Samarra culture of Mesopotamia.",
+        "It has also been recorded in early Byzantine and Christian artwork.",
+        "The swastika was seen as a symbol of auspiciousness and good luck for most of the Western world until the 1930s."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Canaan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50250",
+      "retrieved_at": "2026-10-18T18:56:33.541Z",
+      "sha256": "f4abf265c767578e098e6d9a07b6b00536e4a6e091cac1469451a4a68280cb1e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Canaan was an ancient Semitic-speaking civilization and region of the Southern Levant during the late 2nd millennium BC.",
+        "Canaan had significant geopolitical importance in the Late Bronze Age Amarna Period (14th century BC) as the area where the spheres of interest of the Egyptian, Hittite, Mitanni, and Assyrian Empires converged or overlapped.",
+        "Much of present-day knowledge about Canaan stems from 20th century archaeological excavations in this area at sites such as Tel Hazor, Tel Megiddo, En Esur, and Gezer.",
+        "The name \"Canaan\" appears throughout the Bible as a geography associated with the \"Promised Land\".",
+        "The demonym \"Canaanites\" serves as an ethnic catch-all term covering various indigenous populations—both settled and nomadic-pastoral groups—throughout the regions of the southern Levant.",
+        "It is by far the most frequently used ethnic term in the Bible.",
+        "Biblical scholar Mark Smith, citing archaeological findings, suggests \"that the Israelite culture largely overlapped with and derived from Canaanite culture ...",
+        "In short, Israelite culture was largely Canaanite in nature.\"\nThe name \"Canaanites\" is attested, many centuries later, as the endonym of the people later known to the Ancient Greeks from c.",
+        "500 BC as Phoenicians, and after the emigration of Phoenicians and Canaanite-speakers to Carthage (founded in the 9th century BC), was also used as a self-designation by the Punics (as \"Chanani\") of North Africa during Late Antiquity."
+      ]
+    }
+  ]
+}

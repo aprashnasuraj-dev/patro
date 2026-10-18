@@ -1,0 +1,176 @@
+{
+  "id": "mm-1848",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why chemical reactions happen",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.001.0001",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "c2599bd458a674391f3a0479bd7c89bcd568ac6e67571c95cf06b543a6d43b6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Why Chemical Reactions Happen provides all the tools and concepts needed to think like a chemist.",
+        "The text takes a unified approach to the subject, aiming to help with the development of a real overview of chemical processes, by avoiding the traditional divisions of physical, inorganic, and organic chemistry.",
+        "To understand how chemical reactions happen we need to know about the bonding in molecules, how molecules interact, what determines whether an interaction is favourable or not, and what the outcome will be.",
+        "Answering these questions requires an understanding of topics from quantum mechanics, through thermodynamics, to ‘curly arrows’."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Reactions",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0007",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "da108db36b47d5032a7ea57220bc7ed6839ce80b93228115c810391999d253d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter explains the relationship between molecular orbital and chemical reactions.",
+        "It shows how energies of the orbitals help us understand why the reaction occurs.",
+        "Knowing the shapes is vital in understanding how the reaction takes place.",
+        "Moreover, the chapter uses the formation of lithium borohydride to showcase chemical reactions.",
+        "It notes the nucleophilic addition to a carbonyl group as one of the most significant reactions in organic chemistry.",
+        "The chapter also analyses nucleophilic attack on carbonyl, carbon–carbon double bond, and acyl chlorides.",
+        "Finally, the chapter hints at the possibility of a reversible reaction between carboxylic acid and alcohol."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Equilibrium",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0008",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "bd9909139143c8edfc7efb7124e76e8572e3331fbea4bef9f26c9cf41ceb8014",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It starts with the concept of the Second Law of Thermodynamics and Gibbs energy impacting entropy.",
+        "It notes the general chemical equilibrium in terms of gas, solid, liquid, and solution.",
+        "The chapter uses diagrams and equations to show how equilibrium is achieved in relation to Gibbs energy and equilibrium constants.",
+        "It investigates how temperature, dimerization, extraction of metals, concentration, the Haber process, and coupling reactions influence the position of equilibrium.",
+        "Additionally the chapter explores the rates of reaction in terms of equilibrium."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Leaving groups",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0013",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "628f393c09fb82cb129bbb7aef49c8bea1e5ac992dd0bc12051fee35dcf27df5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It discusses the energy profile in line with leaving groups by using a diagram to emphasize its points.",
+        "The chapter notes bond strength and stability as factors which are important for a good leaving group.",
+        "Leaving group ability is a good guide to working out which reactions will go and which will not.",
+        "The chapter highlights how some reactions do not occur despite their predicted mechanisms.",
+        "It shares how relative energies of the species are vital in predicting whether reactions will go readily or not.",
+        "The chapter also shows how to reverse reactions that do not take place by using ketone reacting to acyl chlorides as an example."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tornado",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37530",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "6f260859e3e2f6b05838d313b75fd29041a18e5b7109384daea216a34ed45657",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tornado, also known as a twister, is a rapidly rotating column of air that extends vertically from the surface of the Earth to the base of a cumulonimbus or cumulus cloud.",
+        "Tornadoes are often (but not always) visible in the form of a condensation funnel originating from the cloud base, with a cloud of rotating debris and dust close to the ground.",
+        "Most tornadoes have wind speeds less than 180 kilometers per hour (110 miles per hour), are about 80 meters (250 feet) across, and travel several kilometers (a few miles) before dissipating.",
+        "The most extreme tornadoes can attain wind speeds of more than 480 kilometers per hour (300 mph), can be more than 3 kilometers (2 mi) in diameter, and can stay on the ground for more than 100 km (62 mi).",
+        "Types of tornadoes include the multiple-vortex tornado, landspout, and waterspout.",
+        "Waterspouts are characterized by a spiraling funnel-shaped wind current, connecting to a large cumulus or cumulonimbus cloud.",
+        "They are generally classified as non-supercellular tornadoes that develop over bodies of water, but there is disagreement about whether to classify them as true tornadoes.",
+        "These spiraling columns of air often develop in tropical areas close to the equator, and are less common at high latitudes.",
+        "Similar phenomena in nature include the gustnado, dust devil, fire whirl, and steam devil.",
+        "Tornadoes most commonly occur in North America, particularly in central and southeastern regions of the United States colloquially known as Tornado Alley; the United States has by far the most tornadoes of any country in the world.",
+        "Tornadoes also occur in South Africa, much of Europe (except most of the Alps), western and eastern Australia, New Zealand, Bangladesh and adjacent eastern India, Japan, the Philippines, and southeastern South America (Uruguay and Argentina).",
+        "Tornadoes can be detected before or as they occur through the use of pulse-Doppler radar by recognizing patterns in velocity and reflectivity data, such as hook echoes or debris balls, as well as through the efforts of storm spotters."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Tornadoes in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18436515",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "ee1fe8dc48104488d7769afab548e37d37c1e7477ae378318cb6e7416dc0a473",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tornadoes in the United States are more common than in any other country.",
+        "The United States receives more than 1,200 tornadoes annually—four times the amount seen in Europe.",
+        "Violent tornadoes—those rated EF4 or EF5 on the Enhanced Fujita scale—occur more often in the United States than in any other country."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "2011 Super Outbreak",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31587832",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "8f49d7970c041a199811a25442b79401ece697d7fbc7abe32c6e7f0dbff188fc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2011 Super Outbreak was the largest and costliest tornado outbreak ever recorded, taking place in the Southern, Midwestern, and Northeastern United States from April 25 to 28, 2011, leaving catastrophic destruction in its wake.",
+        "Over 175 tornadoes struck Alabama, Mississippi, and Tennessee, which were the most severely damaged states.",
+        "Other destructive tornadoes occurred in Arkansas, Georgia, Kentucky, Louisiana, New York, and Virginia, with storms also affecting other states in the Southern and Eastern United States.",
+        "In total, 368 tornadoes were confirmed by NOAA's National Weather Service (NWS) and Government of Canada's Environment Canada in 21 states from Texas to New York to southern Canada.",
+        "Widespread and destructive tornadoes occurred on each day of the outbreak.",
+        "April 27 was the most active day, with a record 224 tornadoes touching down that day from midnight to midnight CDT (05:00–05:00 UTC).",
+        "Four of the tornadoes were rated EF5, which is the highest ranking on the Enhanced Fujita scale; typically these tornadoes are recorded no more than once a year, and may not be recorded for several consecutive years.",
+        "In total, 348 people were killed as a result of the outbreak, including 324 tornado-related deaths across six states and 24 fatalities caused by other thunderstorm-related events such as straight-line winds, hail, flash flooding or lightning.",
+        "In Alabama alone, 238 tornado-related deaths were confirmed by the Storm Prediction Center (SPC) and the state's Emergency Management Agency.",
+        "April 27's 316 fatalities were the most tornado-related fatalities in the United States in a single day since the \"Tri-State\" outbreak on March 18, 1925 (when at least 751 people were killed).",
+        "Nearly 500 preliminary local storm reports were received for tornadoes over four days, including 292 in 16 states on April 27 alone.",
+        "This event was the costliest tornado outbreak in United States history, with total damage reaching $10.2 billion (equivalent to $15 billion in 2025)."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Twisters (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72034602",
+      "retrieved_at": "2026-10-18T18:11:23.699Z",
+      "sha256": "711d8c69bc00b170a91153eb9116c0bbf6310e6ac2ac5955e7c00b6eaf9218bb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Twisters is a 2024 American disaster film directed by Lee Isaac Chung and written by Mark L.",
+        "A standalone sequel to Twister (1996), the ensemble cast includes Daisy Edgar-Jones, Glen Powell, Anthony Ramos, Brandon Perea, Maura Tierney, and Sasha Lane.",
+        "It follows clashing groups of storm chasers who investigate a tornado outbreak in Oklahoma.",
+        "Talks for a sequel to Twister began in 2020, with Kosinski pitching an idea to Warner Bros.",
+        "Helen Hunt, who starred in the original, had also expressed interest in developing a follow-up that was ultimately rejected.",
+        "Several other directors were approached before Chung was hired in December 2022.",
+        "The cast joined in early-2023 and filming took place around Oklahoma that summer, with a brief hiatus due to the SAG-AFTRA strike.",
+        "Twisters premiered at the Empire Leicester Square in London on July 8, 2024, and was released internationally by Warner Bros.",
+        "Pictures on July 10, and in the United States and Canada by Universal Pictures on July 19.",
+        "It received generally positive reviews from critics and grossed over $372 million worldwide on a $155 million budget."
+      ]
+    }
+  ]
+}

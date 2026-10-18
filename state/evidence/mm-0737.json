@@ -1,0 +1,157 @@
+{
+  "id": "mm-0737",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why They Exist",
+      "publisher": "Oxford University PressNew York, NY",
+      "author": "Barany, Zoltan",
+      "published_at": "2026-03-17",
+      "url": "https://doi.org/10.1093/9780197679708.003.0003",
+      "retrieved_at": "2026-10-18T17:29:48.355Z",
+      "sha256": "81349391d89f1d6a2ee8202fcd084bccba013dc4404f9b88e02111865ccff496",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract This chapter emphasizes the pivotal events that lead political elites to contemplate abolishing an extant army or to decide not to have one in the first place.",
+        "The focus is on a thorough assessment of the historical processes that led to the abolition of the army in Costa Rica and Panama.",
+        "The other primary case-study states—Iceland, Mauritius, and the Solomon Islands—did not establish armed forces after gaining independence from their colonial masters.",
+        "In these instances, I probe the reasons for remaining armyless and whether their leaders might have been tempted to create armies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Radical Contingentism, or; Why Not Even Numbers Exist Necessarily",
+      "publisher": "Oxford University Press",
+      "author": "Simons, Peter",
+      "published_at": "2018-10-18",
+      "url": "https://doi.org/10.1093/oso/9780198792161.003.0005",
+      "retrieved_at": "2026-10-18T17:29:48.355Z",
+      "sha256": "5ccdf96f14c56195d98eee8c1cb8663f505230bba73e825590a3989371c9a1d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bob Hale championed the view that some objects exist of necessity, most prominently, mathematical objects like numbers.",
+        "In contrast, this chapter upholds radical contingentism, the view that no object exists necessarily, and seeks to undermine the idea that the best possible candidates for necessary existence, the natural numbers, exist necessarily, despite there being in fact many contingent objects.",
+        "Even the best neo-Fregean arguments for the existence of natural numbers depend on assumptions a nominalist may reject.",
+        "A positive account of cardinalities as belonging to multitudes shows that every finite cardinality is exemplified only if there are two or more individuals, but that there are at least two individuals is not a necessary truth.",
+        "Hence, even if numbers were admitted to abstract existence contingently upon their being exemplified—which the chapter denies—they would not exist necessarily."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why Does Anything Exist?",
+      "publisher": "Wiley",
+      "author": "Bennett, Michael Timothy",
+      "published_at": "2026-04-10",
+      "url": "https://doi.org/10.22541/au.177499235.58145822/v3",
+      "retrieved_at": "2026-10-18T17:29:48.355Z",
+      "sha256": "326616d2d59ec41556aebba02296362e3ff5dfadd3ec2acdac8c9c4da2995e94",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "I argue the interpreter problem and the origins of life are the same problem, but the interpreter is not a primitive.",
+        "It is a state defined only by its difference from the other changes.",
+        "As a timeline progresses, it preserves some aspects of reality and destroys others.",
+        "That preservation is already a value judgement, before any organism exists.",
+        "I define a persistence ordering for each trajectory and prove different trajectories induce different orderings.",
+        "Persistence favours self-producing systems, because they recover from perturbations that destroy rigid structures.",
+        "I show it is implied by change, and I prove that adding any representational commitment beyond viability strictly reduces persistence.",
+        "This is a novel, bottom-up proof of the Psychophysical Principle of Causality.",
+        "Prior work derived it top-down, assuming an organism and minimising free energy.",
+        "Objects and properties are patterns in attraction and repulsion.",
+        "To sum up, change implies all possible timelines, not a subset.",
+        "That is why I say anything exists instead of asserting a particular timeline."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Deep web",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=454403",
+      "retrieved_at": "2026-10-18T17:29:48.580Z",
+      "sha256": "ff55ef835d24caca1706fcec553a7b181820ada9cc675bbd169b18545392d495",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The deep web, also known as the invisible web or the hidden web, is the parts of the World Wide Web whose contents are not indexed by standard web search-engine programs.",
+        "This is in contrast to the surface web, which is accessible to anyone using the Internet.",
+        "Bergman is credited with inventing the term in 2001 as a search-indexing term.",
+        "Deep web sites can be accessed by a direct URL or IP address, but may require entering a password or other security information to access actual content.",
+        "Uses of deep web sites include web mail, online banking, cloud storage, restricted-access social-media pages and profiles, and web forums that require registration for viewing content.",
+        "It also includes paywalled services such as video on demand and some online magazines and newspapers."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Reverse Turing test",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=723435",
+      "retrieved_at": "2026-10-18T17:29:48.580Z",
+      "sha256": "9fc79971859951d518b25814e1322fc2ea9bc9ed68d46204010101f2171b91ea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A reverse Turing test is a Turing test in which failure suggests that the test-taker is human, while success suggests the test-taker is automated.",
+        "Conventionally, the Turing test is conceived as having a few computer AI subjects communicate with each other and one human subject which attempts to also appear as a computer AI.",
+        "After a few questions the AI subjects need to correctly guess which of the participants is a human subject."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Google",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1092923",
+      "retrieved_at": "2026-10-18T17:29:48.580Z",
+      "sha256": "eab4671f2b00e3c1d35d3eebef2e98db1d0a83cb37ed0a3a8260f7c28704f7fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Google LLC ( , GOO-gəl) is an American multinational technology corporation focused on information technology, online advertising, search engine technology, email, cloud computing, software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI).",
+        "It has been referred to as \"the most powerful company in the world\" by the BBC, and is one of the world's most valuable brands.",
+        "Google's parent company, Alphabet Inc., has been described as a Big Tech company.",
+        "Google was founded in 1998 by American computer scientists Larry Page and Sergey Brin.",
+        "Together, they own about 14% of its publicly listed shares and control 56% of its stockholder voting power through super-voting stock.",
+        "The company went public via an initial public offering (IPO) in 2004.",
+        "In 2015, Google was reorganized as a wholly owned subsidiary of Alphabet Inc.",
+        "Google is Alphabet's largest subsidiary and is a holding company for Alphabet's internet properties and interests.",
+        "Sundar Pichai was appointed CEO of Google in 2015, replacing Larry Page, who became the CEO of Alphabet.",
+        "After the success of its original service, Google Search (often known simply as \"Google\"), the company has rapidly grown to offer a multitude of products and services.",
+        "Many of these products and services are dominant in their respective industries, as is Google Search.",
+        "Discontinued Google products include gaming (Stadia), Glass, Google+, Reader, Play Music, Nexus, Hangouts, and Inbox by Gmail."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "YouTube",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3524766",
+      "retrieved_at": "2026-10-18T17:29:48.580Z",
+      "sha256": "372892b9c9a5db1fb82441c5759bd6d6e603aab37579623be8abb44da159331f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "YouTube  is an American online video-sharing platform owned by Google.",
+        "YouTube was founded on February 14, 2005, by Chad Hurley, Jawed Karim, and Steve Chen, all of whom were former employees at PayPal.",
+        "Headquartered in San Bruno, California, it is the second-most-visited website in the world, after Google itself.",
+        "In January 2024, YouTube had reached more than 2.7 billion monthly active users, who collectively watched more than one billion hours of video every day.",
+        "As of May 2019, videos were being uploaded to the platform at a rate of more than 500 hours of video per minute, and as of mid-2024, there were approximately 14.8 billion videos in total.",
+        "On November 13, 2006, YouTube was purchased by Google for 1.65 billion USD (equivalent to $2.44 billion in 2025).",
+        "Google expanded YouTube's business model from generating revenue through advertisements alone to paid offerings such as movies and exclusive programming explicitly produced for YouTube.",
+        "It also offers YouTube Premium, a paid subscription option for watching videos without ads.",
+        "YouTube incorporated the Google AdSense program, generating more revenue for both YouTube and approved users.",
+        "Since its purchase by Google, YouTube has expanded beyond the core website, creating mobile apps, network television, games, and the ability to link with other platforms.",
+        "Video categories on YouTube include music videos, video clips, news, short and feature films, songs, documentaries, movie trailers, teasers, TV spots, live streams, vlogs, and more.",
+        "Most submissions are generated by individuals, including collaborations between YouTubers and corporate sponsors."
+      ]
+    }
+  ]
+}

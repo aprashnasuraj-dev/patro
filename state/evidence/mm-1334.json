@@ -1,0 +1,101 @@
+{
+  "id": "mm-1334",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Preservation of Tofu With Liquid Smoke From Coconut Shell",
+      "publisher": "Universitas Warmadewa",
+      "author": "Ni Putu Chiana Adi Arandini; Ni Made Ayu Suardani Singapurwa; Anak Agung Made Semariyani",
+      "published_at": "2022-10-24",
+      "url": "https://doi.org/10.22225/seas.6.2.5377.102-111",
+      "retrieved_at": "2026-10-18T17:59:09.326Z",
+      "sha256": "c9eed11f8f0f44bdf5e017ff187e45f75cf17167c2f3bb0827b355fd56d5425b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tofu is one of the processed soybean products which is processed through the clumping of soy protein extract.",
+        "Under normal conditions (room temperature) the average shelf life of tofu is 1-2 days.",
+        "If it is more than this limit, the taste of tofu will become sour and rotten so it is not suitable for consumption.",
+        "This study aims to determine the effect of coconut shell smoke and storage time on the chemical, microbiological, and organoleptic characteristics of tofu stored at room temperature.",
+        "This study used a Completely Randomized Design (CRD) with two factors and two replications The first factor was concentrations (0%, 2%, 4%, 6%, and 8%) and the second factor was storage time (1, 2, 3 and 4 days).",
+        "Observations were made objectively including total phenol, water content, ash content, fat content, and protein content.",
+        "Microbiological analysis by testing Escherichia coli and Salmonella sp.",
+        "While organoleptic parameters subjectively observed include color, aroma, texture, taste, and overall acceptance.",
+        "The shelf life of soaked tofu with a concentration of 6% coconut shell liquid smoke at room temperature is 3 days."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How the Streets Were Made",
+      "publisher": "University of North Carolina Press",
+      "author": "Bailey, Yelena",
+      "published_at": "2020-12-18",
+      "url": "https://doi.org/10.5149/northcarolina/9781469660592.003.0002",
+      "retrieved_at": "2026-10-18T17:59:09.326Z",
+      "sha256": "e5a61b540e0094d0d13b8e76a1ce6a138b55964d5944a1aa14f5a931ddcdbf30",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Beyond a history of housing segregation, Chapter 1 examines how policy contributed to the conceptualization of Black space as morally deficient.",
+        "Finally, this chapter establishes a connection between the implementation of U.S.",
+        "housing policy and the way Black life is depicted in media, marketing, and popular culture."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Stinky tofu",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1419747",
+      "retrieved_at": "2026-10-18T17:59:09.326Z",
+      "sha256": "06f0479a0bb352561485f007113fc138665d6084afb8ff19a7d59a318f30224f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stinky tofu (Chinese: 臭豆腐; pinyin: chòu dòufu) is a traditional Chinese delicacy made from fermented tofu, renowned for its distinctive and pungent aroma.",
+        "Despite its strong odor, it typically has a surprisingly mild and savoury flavour.",
+        "It is commonly sold as a snack at night markets or roadside stalls, or served as a side dish in casual eateries rather than in formal restaurants.",
+        "Traditionally, stinky tofu is fermented for several months in a brine containing vegetables and meat.",
+        "In contrast, most modern factory-produced versions are soaked in specially prepared brine for just one or two days to develop their characteristic odour.",
+        "As its primary ingredient is tofu, the fermentation process—driven by edible moulds—also increases the production of B vitamins while providing a variety of minerals and trace elements."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of How It's Made episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15187735",
+      "retrieved_at": "2026-10-18T17:59:09.326Z",
+      "sha256": "09205d038d6861216f8af172a1c62155a4d7c43729ea280b530983a1faf91516",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How It's Made is a documentary television series that premiered on January 6, 2001, on the Discovery Channel in Canada and Science in the United States.",
+        "The program is produced in the Canadian province of Quebec by Productions MAJ, Inc.",
+        "In the United Kingdom, it is broadcast on Discovery Channel, Quest, and DMAX."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tofu",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22419013",
+      "retrieved_at": "2026-10-18T17:59:09.326Z",
+      "sha256": "06b980acb4b6d406113505ace4256830f22c3a4550ab1af280e48878f91dd422",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tofu (Japanese: 豆腐, Hepburn: tōfu; Chinese: 豆腐; pinyin: dòufu;\nKorean: 두부; RR: dubu) or bean curd is a food prepared by pressing the curds of coagulated soy milk into solid white blocks of varying softness: 'silken', 'soft', 'firm', and 'extra (or super) firm'.",
+        "It originated in China and has been consumed for over 2,000 years.",
+        "Tofu is a traditional component of many East Asian and Southeast Asian cuisines; in modern Western cooking, it is commonly used as a meat substitute.",
+        "Nutritionally, tofu is low in calories, while providing a rich source of protein.",
+        "Cultivation of soybeans has one of the lowest needs for land use (1.3 m2/ 1000 kcal) and emits some of the lowest amounts of greenhouse gas emissions per gram of edible protein of any food (1.6 kg CO2/ 100 g protein)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "mt-0048",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "HISTORICAL TEXTS",
+      "publisher": "Italica Press, Inc.",
+      "author": "Musto, Ronald G.",
+      "published_at": "2019-03-01",
+      "url": "https://doi.org/10.2307/j.ctvfxv8s0.7",
+      "retrieved_at": "2026-10-18T18:15:58.968Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    }
+  ]
+}

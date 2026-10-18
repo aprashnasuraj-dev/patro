@@ -1,0 +1,144 @@
+{
+  "id": "mm-0771",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why and how social media addiction affects employee outcomes: role of sleep deprivation in the hospitality industry",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Rasheed, Muhammad Imran; Saba, Shafique",
+      "published_at": "2023-07-20",
+      "url": "https://doi.org/10.21203/rs.3.rs-3135229/v1",
+      "retrieved_at": "2026-10-18T17:33:57.615Z",
+      "sha256": "1603b36903bc83f39a393fbf8803542db0a44a00a025e092789bf035d6513706",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Background The purpose of this study was to investigate the outcomes of social media addiction, such as sleep deprivation, employee productivity, and engagement among hospitality industry workers.",
+        "Method Using a time-lagged, three-waive survey, this study collected data from 298 employees at international food chain restaurants in Pakistan.",
+        "Two-step path modelling tested the direct and indirect hypotheses using partial least squares (PLS).",
+        "Results The results revealed that social media addiction negatively influences employee productivity in the hospitality industry.",
+        "However, the relationship between social media addiction and employee engagement in the hospitality industry was insignificant.",
+        "Nonetheless, concerning mediated relationships, sleep deprivation was found to be an underlying psychological mechanism in the association between social media addiction, employee productivity, and employee engagement.",
+        "Conclusion Theoretically, this research draws the attention of scholars towards relatively rarely studied variables, such as social media addiction and sleep deprivation, in the hospitality literature.",
+        "Our findings will also help managers address employee engagement and productivity issues, while understanding the impact of social media addiction and sleep deprivation among hospitality workers."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Sleepiness as motivation: a potential mechanism for how sleep deprivation affects behavior",
+      "publisher": "Oxford University Press (OUP)",
+      "author": "Axelsson, John; Ingre, Michael; Kecklund, Göran",
+      "published_at": "2019-11-29",
+      "url": "https://doi.org/10.1093/sleep/zsz291",
+      "retrieved_at": "2026-10-18T17:33:57.615Z",
+      "sha256": "ffa051e71154690fbadd78fca3a911df487f4ee1cf70c953ad79e39c1f1939d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Study Objectives To determine how sleepiness and sleep deprivation drive the motivation to engage in different behaviors.",
+        "Methods We studied the sleepiness of 123 participants who had been randomized to sleep deprivation or normal sleep, and their willingness to engage in a range of everyday behaviors.",
+        "Results Self-reported sleepiness was a strong predictor of the motivation to engage in sleep-preparatory behaviors such as shutting one’s eyes (OR = 2.78, 95% CI: 2.19–3.52 for each step up on the Karolinska Sleepiness Scale) and resting (OR = 3.20, CI: 2.46–4.16).",
+        "Sleepiness was also related to the desire to be cared for by a loved one (OR = 1.49, CI: 1.22–1.82), and preparedness to utilize monetary and energy resources to get to sleep.",
+        "Conversely, increased sleepiness was associated with a decreased motivation for social and physical activities (e.g.",
+        "be with friends OR = 0.71, CI: 0.61–0.82; exercise OR = 0.65, CI: 0.56–0.76).",
+        "Sleep deprivation had similar effects as sleepiness on these behaviors.",
+        "Neither sleepiness nor sleep deprivation had strong associations with hunger, thirst, or food preferences.",
+        "Conclusions Our findings indicate that sleepiness is a dynamic motivational drive that promotes sleep-preparatory behaviors and competes with other drives and desired outcomes.",
+        "Consequently, sleepiness may be a central mechanism by which impaired alertness, for example, due to insufficient sleep, contributes to poor quality of life and adverse health.",
+        "We propose that sleepiness helps organize behaviors toward the specific goal of assuring sufficient sleep, in competition with other needs and incentives.",
+        "A theoretical framework on sleepiness and its behavioral consequences are likely to improve our understanding of several disease mechanisms."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mood (psychology)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=170803",
+      "retrieved_at": "2026-10-18T17:33:58.517Z",
+      "sha256": "34f1884485a28851e5d1d00b937e6b4b4fe3ca8403facd909cb72f38d5a5dafc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In contrast to emotions or feelings, moods are less specific, less intense and less likely to be provoked or instantiated by a particular stimulus or event.",
+        "Moods are typically described as having either a positive or negative valence.",
+        "In other words, people usually talk about being in a good mood or a bad mood.",
+        "There are many different factors that influence mood, and these can lead to positive or negative effects on mood.",
+        "Mood also differs from temperament or personality traits which are even longer-lasting.",
+        "Nevertheless, personality traits such as optimism and neuroticism predispose certain types of moods.",
+        "Long-term disturbances of mood such as clinical depression and bipolar disorder are considered mood disorders.",
+        "Mood is an internal, subjective state, but it often can be inferred from posture and other behaviors.",
+        "\"We can be sent into a mood by an unexpected event, from the happiness of seeing an old friend to the anger of discovering betrayal by a partner."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sensory deprivation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=294793",
+      "retrieved_at": "2026-10-18T17:33:58.517Z",
+      "sha256": "5622d299f73ab5dd199ab2f0567e6e5652b340ee9cb53e21e48ce70bfd0983e2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sensory deprivation or perceptual isolation is the deliberate reduction or removal of stimuli from one or more of the senses.",
+        "Simple devices such as blindfolds or hoods and earmuffs can cut off sight and hearing, while more complex devices can also cut off the sense of smell, touch, taste, thermoception (heat-sense), and the ability to know which way is down.",
+        "Sensory deprivation has been used in various alternative medicines and in psychological experiments (e.g.",
+        "When deprived of sensation, the brain attempts to restore sensation in the form of hallucinations.",
+        "Short-term sessions of sensory deprivation are described as relaxing and conducive to meditation; however, extended or forced sensory deprivation can result in extreme anxiety, hallucinations, bizarre thoughts, and depression.",
+        "A related phenomenon is perceptual deprivation, also called the Ganzfeld effect.",
+        "In this case a constant uniform stimulus is used instead of attempting to remove the stimuli; this leads to effects which have similarities to sensory deprivation.",
+        "Sensory deprivation techniques were developed by some of the armed forces within NATO, as a means of interrogating prisoners within international treaty obligations.",
+        "The European Court of Human Rights ruled that the use of the five techniques by British security forces in Northern Ireland amounted to a practice of inhuman and degrading treatment."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Five techniques",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2392212",
+      "retrieved_at": "2026-10-18T17:33:58.517Z",
+      "sha256": "1287e5cf3043cc6b16b027e2b16e374067011706d5434438d2fc2a90c89bc635",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The five techniques, also known as deep interrogation, were a group of interrogation methods developed by the United Kingdom during the 20th century and are currently regarded as a form of torture.",
+        "They are most notable for being applied to detainees in Northern Ireland during the Troubles.",
+        "The five collective methods were prolonged wall-standing, hooding, subjection to noise, deprivation of sleep, and deprivation of food and drink.",
+        "The use of the techniques was controversial, and in 1972 the UK government accepted the findings of an inquiry chaired by Lord Parker, the Lord Chief Justice of England that the techniques were illegal under British and Northern Irish law and issued directives prohibiting their use.",
+        "In 1976, the European Commission of Human Rights ruled that the five techniques amounted to torture.",
+        "The case was then referred to the European Court of Human Rights.",
+        "In 1978, the court ruled that the techniques were \"inhuman and degrading\" and breached Article 3 of the European Convention on Human Rights but did not amount to torture.",
+        "In 2014, after new information was uncovered that showed the decision to use the five techniques in Northern Ireland in 1971–1972 had been taken by ministers, the Irish Government asked the European Court of Human Rights to review its judgement.",
+        "In 2021, the Supreme Court of the United Kingdom found that the use of the five techniques amounted to torture."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Affect heuristic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3044780",
+      "retrieved_at": "2026-10-18T17:33:58.518Z",
+      "sha256": "c53698a71bd1793344e2a10837a470c300b5ed89e5e32dc2f134759341cbdb67",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The affect heuristic is a  heuristic, a mental shortcut that allows people to make decisions and solve problems quickly and efficiently, in which current emotion—fear, pleasure, surprise, etc.—influences decisions.",
+        "In other words, it is a type of heuristic in which emotional response, or \"affect\" in psychological terms, plays a lead role.",
+        "It is a subconscious process that shortens the decision-making process and allows people to function without having to complete an extensive search for information.",
+        "It is shorter in duration than a mood, occurring rapidly and involuntarily in response to a stimulus.",
+        "Reading the words \"lung cancer\" usually generates an affect of dread, while reading the words \"mother's love\" usually generates a feeling of affection and comfort.",
+        "The affect heuristic is typically used while judging the risks and benefits of something, depending on the positive or negative feelings that people associate with a stimulus.",
+        "If their feelings towards an activity are positive, then people are more likely to judge the risks as low and the benefits high.",
+        "On the other hand, if their feelings towards an activity are negative, they are more likely to perceive the risks as high and benefits low."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "mm-0590",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dictionary Attack with Transformed Russian Words using QWERTY Keyboard Layout",
+      "publisher": "Center for Open Science",
+      "author": "Müller, Lea; Juozapavičius, Aušrius; Okhrimchuk, Volodymyr",
+      "published_at": "2024-08-30",
+      "url": "https://doi.org/10.31219/osf.io/mfqrw",
+      "retrieved_at": "2026-10-18T17:09:08.520Z",
+      "sha256": "12e491e9b6809c79d165233617c38ef906760dfe8a95430c52d341d018b47076",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Despite the vulnerability of passwords to various types of attacks, the combination of username and password remains the most commonly used authentication method worldwide.",
+        "Although the necessity for complex passwords that cannot be easily guessed is widely acknowledged, a considerable number of users opt for simple passwords that can be easily recalled, such as a word or a combination of a word and numbers.",
+        "Dictionary attacks exploit this vulnerability by attempting to guess a password using a dictionary or wordlist.",
+        "This paper presents a novel approach to dictionary attacks targeting Russian-speaking users.",
+        "This approach is predicated on the assumption that Russian-speaking users may have their keyboard configuration set to the QWERTY layout, yet still type their passwords according to the Russian keyboard layout.",
+        "Thus, typing a Russian word in accordance with this approach would result in a seemingly random sequence of characters.",
+        "To test this assumption, a dictionary comprising transformed Russian words was compared with a set of one million unique Russian passwords.",
+        "The results demonstrated that approximately 1% of these passwords exhibited the assumed transformation, while a further 6% of the passwords were at least partially composed of a transformed Russian word."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Comparative Evaluation of Usability between QWERTY-Based Arabic and Non-QWERTY-Based Arabic Keyboard Layout: Empirical Evidence",
+      "publisher": "Fakultas Ilmu Komputer Universitas Brawijaya",
+      "author": "Aknuranda, Ismiarta; Syawli, Almira; Setiawan, Budi Darma",
+      "published_at": "2020-07-29",
+      "url": "https://doi.org/10.25126/jitecs.202052199",
+      "retrieved_at": "2026-10-18T17:09:09.527Z",
+      "sha256": "daea28e3874f0503abb715e8ce688c22aec17cb7791e818aa41ad374fdaab73b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "QWERTY-based Arabic keyboard layouts have been in existence in order to assist QWERTY users in Arabic typing.",
+        "However, there was lack of empirical evidence presenting the comparative usability of this layout and the common non-QWERTY-based Arabic keyboard layout.",
+        "This study examined the usability of a QWERTY-based Arabic keyboard layout (QB) and the common non-QWERTY-based Arabic keyboard layout (NQB) from the perspective of QWERTY users, and compared the evaluation results between the two layouts.",
+        "After experiments using within-subjects and between-subjects designs, the results showed that QB is significantly better in efficiency and learnability than NQB.",
+        "QB also enabled more effective typing in almost all experiment designs, except in one between-subjects study.",
+        "The relatively short interaction time of participantsâ€™ first encounter with Arabic keyboards possibly caused this exception.",
+        "Most participants subjectively preferred QB to NQB in their overall usability."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Airbus A380",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=181173",
+      "retrieved_at": "2026-10-18T17:09:09.527Z",
+      "sha256": "4cbee0cf9e7bced3790976c540addaaa5daba6f276b4418135e41fdae1e4cf1d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Airbus A380 is a large wide-body airliner, developed and produced by Airbus from 2003 to 2021.",
+        "It is the world's largest passenger airliner and the only full-length double-deck jet airliner.",
+        "Airbus studies started in 1988, and the project was announced in 1990 to challenge the dominance of the Boeing 747 in the long-haul market.",
+        "The then-designated A3XX project was presented in 1994 and Airbus launched the €9.5 billion (US$10.7 billion) A380 programme on 19 December 2000.",
+        "The first prototype was unveiled in Toulouse, France on 18 January 2005, commencing its first flight on 27 April 2005.",
+        "It then obtained its type certificate from the European Aviation Safety Agency (EASA) and the US Federal Aviation Administration (FAA) on 12 December 2006.",
+        "Due to difficulties with the electrical wiring, the initial production was delayed by two years and the development costs almost doubled.",
+        "It was first delivered to Singapore Airlines on 15 October 2007 and entered service on 25 October.",
+        "Production peaked at 30 per year in both 2012 and 2014, with manufacturing of the aircraft ending in 2021.",
+        "The A380's estimated $25 billion development cost was not recouped by the time Airbus ended production.",
+        "The full-length double-deck aircraft has a typical seating for 525 passengers, with a maximum certified capacity for 853 passengers.",
+        "The quadjet is powered by Engine Alliance GP7200 or Rolls-Royce Trent 900 turbofans providing a range of 8,000 nmi (14,800 km; 9,200 mi)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Languages of Canada",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=701320",
+      "retrieved_at": "2026-10-18T17:09:09.527Z",
+      "sha256": "b167b972cfb93db34455395647873767090a28ec44ffc36e5e0c3026b230f84a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Prior to Confederation, the territories that would become Canada were home to over 70 distinct languages across 12 or so language families.",
+        "Today, a majority of those indigenous languages are still spoken; however, most are endangered and only about 0.6% of the Canadian population report an indigenous language as their mother tongue.",
+        "Since the establishment of the Canadian state, English and French have been the co-official languages and are, by far, the most-spoken languages in the country.",
+        "According to the 2021 census, English and French are the mother tongues of 56.6% and 20.2% of Canadians respectively.",
+        "According to the 2016 census, a total of 86.2% of Canadians could conduct a conversation in English, while 29.8% could conduct a conversation in French.",
+        "Under the Official Languages Act of 1969, both English and French have official status throughout Canada in respect of federal government services and most courts.",
+        "Provincially, only in New Brunswick are both English and French official to the same extent.",
+        "French is Quebec's official language, although legislation is enacted in both French and English and court proceedings may be conducted in either language.",
+        "English is the official language of Ontario, Manitoba and Alberta, but government services are available in French in many regions of each, particularly in regions and cities where Francophones form the majority.",
+        "Legislation is enacted in both languages and courts conduct cases in both.",
+        "In 2022, Nova Scotia recognized Mi'kmawi'simk as the first language of the province, and maintains two provincial language secretariats: the Office of Acadian Affairs and Francophonie (French language) and the Office of Gaelic Affairs (Canadian Gaelic).",
+        "The remaining provinces (British Columbia, Saskatchewan, Prince Edward Island, and Newfoundland and Labrador) do not have an official provincial language per se but government is primarily English-speaking."
+      ]
+    }
+  ]
+}

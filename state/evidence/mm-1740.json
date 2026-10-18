@@ -1,0 +1,121 @@
+{
+  "id": "mm-1740",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Revolutionizing Cinema. How AI is Democratizing Production and Deepening Creative Content",
+      "publisher": "Milano University Press",
+      "author": "De Masi, Vincenzo; Li, Siyi; Pessoa Serafim, Flavia",
+      "published_at": "2025-09-08",
+      "url": "https://doi.org/10.54103/connessioni/28718",
+      "retrieved_at": "2026-10-18T18:11:12.775Z",
+      "sha256": "9fc48f60817ac93175f29c98290b6ae12212e67f28edfcb717ecb476e6cac8e1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article explores how artificial intelligence (AI) is reshaping the landscape of film and video production, with particular attention to gender and geographical inclusivity.",
+        "By analyzing recent innovations across the entire production pipeline, from scriptwriting and directing to post-production and distribution, it highlights how AI tools reduce barriers of entry and redefine creative labor.",
+        "A special focus is given to China’s role in advancing generative AI technologies, especially through open-source and low-cost platforms that make professional-grade video tools accessible to independent creators.",
+        "The article also examines the gendered implications of these changes, considering how AI can support female filmmakers by easing time constraints, offering flexible workflows, and potentially mitigating some of the industry’s long-standing structural inequalities.",
+        "While AI presents significant opportunities for democratizing access and amplifying diverse voices, the article also addresses key ethical and creative risks, such as algorithmic bias, homogenization of content, and labor displacement.",
+        "Drawing on recent case studies and policy developments, the article argues that for AI to truly foster inclusion and innovation, it must be developed and adopted with human values at its core, ensuring that technology empowers rather than replaces creative agency."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T18:11:12.775Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "OpenAI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48795986",
+      "retrieved_at": "2026-10-18T18:11:12.775Z",
+      "sha256": "397c6945b424b9aa1105ce931b2170e670e0fdca3c454163778313de1e7f7982",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "OpenAI is an American artificial intelligence (AI) public benefit corporation (PBC) headquartered in San Francisco, California, led by CEO Sam Altman.",
+        "It develops \"frontier\" generative AI models, particularly its generative pre-trained transformer (GPT) series of large language models.",
+        "Its release of ChatGPT in November 2022 accelerated an AI boom, leading to widespread use of generative AI; as of September 2026, ChatGPT is the fifth-most-visited website globally.",
+        "OpenAI also releases the GPT Image models and Codex, an AI coding agent.",
+        "In March 2026, OpenAI closed a funding round with a post-money valuation of US$852 billion, making it one of the most valuable AI pure play companies in the world, rivalled only by Anthropic.",
+        "OpenAI was founded in 2015 as a nonprofit, with Elon Musk and Sam Altman as co-chairs; Musk resigned in 2018.",
+        "A for-profit subsidiary was created in 2019, and a 2025 restructuring converted the subsidiary into OpenAI Group PBC, that is 26% owned by the nonprofit OpenAI Foundation.",
+        "OpenAI partners with the US government via the Stargate Project infrastructure venture, and with the Department of Defense, Los Alamos National Laboratory, and arms company Anduril Industries.",
+        "Former OpenAI personnel have founded competing AI companies including Anthropic, Safe Superintelligence Inc., SpaceXAI, and Thinking Machines Lab.",
+        "OpenAI has faced multiple lawsuits for alleged deaths linked to its chatbots and copyright infringement against authors and media companies.",
+        "Several US states have sued, alleging harm to children, claiming it coaches self-harm and encourages delusions.",
+        "In November 2023, OpenAI's board removed Sam Altman as CEO, citing a lack of confidence, but reinstated him five days later after a board reconstruction."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Character.ai",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72191411",
+      "retrieved_at": "2026-10-18T18:11:12.775Z",
+      "sha256": "c1076dfc704fb49c04b9dfe909bf9fb2bf2be09b961cb71e99156cf1afd3139e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Character.ai (also known as c.ai, char.ai or Character AI) is a generative AI chatbot service where users can engage in conversations with customizable characters.",
+        "It was designed by the developers of Google LaMDA, Noam Shazeer and Daniel de Freitas.",
+        "Users can create \"characters\", craft their \"personalities\", set specific parameters, and then publish them to the community for others to chat with.",
+        "Many characters are based on fictional media sources or celebrities, while others are original, some being made with certain goals in mind, such as assisting with creative writing, or playing a text-based adventure game.",
+        "The beta version was made available to the public on September 16, 2022, and retired in September 2024, when it was replaced by the current website.",
+        "In May 2023, a mobile app was released for iOS and Android, which received over 1.7 million downloads within a week.",
+        "On October 12, 2026, Character.ai filed for Chapter 11 bankruptcy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T18:11:12.775Z",
+      "sha256": "6b443323923df348d75161f4eab413c7f47bbbe91eb8233989a6ca3d27b54b5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    }
+  ]
+}

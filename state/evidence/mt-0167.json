@@ -1,0 +1,162 @@
+{
+  "id": "mt-0167",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T18:19:47.073Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T18:19:48.202Z",
+      "sha256": "50fe10a64aec047f270bb4d0a1ccbd52e7a77a93a3aa90787c1df8cab3a4a911",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Embargo period",
+      "publisher": "Qeios",
+      "author": null,
+      "published_at": "2019-11-08",
+      "url": "https://doi.org/10.32388/996576",
+      "retrieved_at": "2026-10-18T18:19:50.324Z",
+      "sha256": "0d8f0236e7d7d218e4dcd31a98707e2af3297541470df2a523a3be6b9ee8776e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Embargo period - Definition (v1) by Public Domain | Qeios There is a newer version available for this {{ publicationType }}.",
+        "This is an open access publication distributed under the terms of the CC BY 4.0 License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+        "Info Check the {{ publicationType | capitalize }} Source for copyright and license information.",
+        "{{ publication.doi_url }} {{ publication.title }} Declarations Abstract Source Listen on Compose your Definition Related Definitions ({{ publication.ranked_siblings.length }}) # {{ sibling.position_in_ranking }} Thank you for your contribution to the community."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Augustine of Hippo",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2030",
+      "retrieved_at": "2026-10-18T18:19:50.324Z",
+      "sha256": "4d97c8e89060c7b24e87c1792b49f18aa6ad7ff8ace46fa015491387b1cedf59",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Augustine of Hippo ( aw-GUST-in, US also  AW-gə-steen; Latin: Aurelius Augustinus Hipponensis; 13 November 354 – 28 August 430), also well-known as Saint Augustine, was a Christian theologian and philosopher from Thagaste, Numidia Cirtensis and the Bishop of Hippo Regius.",
+        "He is generally regarded as one of the most influential philosophers in the history of the Western world, and is viewed as one of the most important Church Fathers of the Latin Church in the Patristic Period.",
+        "In his youth he was drawn to the Manichaean faith, and later to the Hellenistic philosophy of Neoplatonism.",
+        "After his conversion to Christianity and baptism in 386 by Saint Ambrose, Augustine developed his own approach to philosophy and theology, making significant contributions in a wide variety of areas.",
+        "He is known as Doctor Gratiae (\"Doctor of Grace\") for the vast influence of his views on the necessity of unmerited, prevenient grace, for salvation and the nature of original sin.",
+        "Additionally, he made important contributions in ecclesiology, noting the validity of sacraments regardless of the merit of the celebrant against the views of the Donatists.",
+        "In his book The City of God, Augustine imagined the Church as a spiritual City, distinct from the material Earthly City, against the backdrop of the fall of the Western Roman Empire.",
+        "He is also widely recognized for his contributions to just war theory.",
+        "His other notable works include On the Trinity, On Christian Doctrine, and Confessions, the latter of which was the first Western autobiography.",
+        "Augustine is recognized as a saint in the Catholic Church, the Eastern Orthodox Church, the Lutheran churches, and the Anglican Communion.",
+        "Generally regarded as one of the greatest theologians and philosophers in the history of the Catholic Church, he is one of the four Great Latin Church Fathers, along with Ambrose, Jerome, and Pope Gregory I.",
+        "His thoughts profoundly influenced the Medieval worldview, and he was the most cited author in the Summa Theologiae of St."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Horace",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13693",
+      "retrieved_at": "2026-10-18T18:19:50.324Z",
+      "sha256": "33abcc0039c9be53b0b806cd073263bb0164434e8ed6ec8dfb078379ccc26c72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Quintus Horatius Flaccus (Classical Latin: [ˈkʷiːntʊs (h)ɔˈraːtiʊs ˈfɫakːʊs]; 8 December 65 BC – 27 November 8 BC), commonly known in the English-speaking world as Horace ( HORR-iss), was the leading Roman lyric poet during the time of Augustus (also known as Octavian).",
+        "The hexameters are amusing yet serious works, friendly in tone, leading the ancient satirist Persius to comment: \"as his friend laughs, Horace slyly puts his finger on his every fault; once let in, he plays about the heartstrings\".",
+        "His career coincided with Rome's momentous change from a republic to an empire.",
+        "An officer in the republican army defeated at the Battle of Philippi in 42 BC, he was befriended by Octavian's right-hand man in civil affairs, Maecenas, and became a spokesman for the new regime.",
+        "For some commentators, his association with the regime was a delicate balance in which he maintained a strong measure of independence (he was \"a master of the graceful sidestep\") but for others he was, in John Dryden's phrase, \"a well-mannered court slave\"."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Patterson–Gimlin film",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23512",
+      "retrieved_at": "2026-10-18T18:19:50.324Z",
+      "sha256": "4ad13fe77cade1fd5dcc1cc58347f501367592e92ca057f6fe37e2a3cc769219",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Patterson–Gimlin film is a 1967 American short motion picture, created by Roger Patterson and Robert Gimlin, that depicts an unidentified subject that the filmmakers stated was a Bigfoot.",
+        "The footage was shot in 1967 in Northern California, and has since been subjected to many attempts to authenticate or debunk it.",
+        "The footage was filmed alongside  a tributary of the Klamath River, about 25 logging-road miles (40 km) northwest of Orleans, California, in Del Norte County on the Six Rivers National Forest.",
+        "The film site is roughly 38 miles (60 km) south of Oregon and 18 miles (30 km) east of the Pacific Ocean.",
+        "For decades, the exact location of the site was lost, primarily because of re-growth of foliage in the streambed after the flood of 1964.",
+        "It is just south of a north-running segment of the creek informally known as \"the bowling alley\".",
+        "The filmmakers were Roger Patterson (1933–1972) and Robert \"Bob\" Gimlin (born 1931).",
+        "Patterson died of cancer in 1972 and \"maintained right to the end that the creature on the film was real\".",
+        "Patterson's friend, Gimlin, has always denied being involved in any part of a hoax with Patterson.",
+        "Gimlin mostly avoided publicly discussing the subject from at least the early 1970s until about 2005 (except for three appearances), when he began giving interviews and appearing at Bigfoot conferences.",
+        "The film is 23.85 feet (7.27 m) long (preceded by 76.15 feet or 23.21 meters of \"horseback\" footage), has 954 frames, and runs for 59.5 seconds at 16 frames per second.",
+        "If the film was shot at 18 fps, as Grover Krantz believed, the event lasted 53 seconds."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Rubber Soul",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=74961",
+      "retrieved_at": "2026-10-18T18:19:50.324Z",
+      "sha256": "5a4edbdcf8ef33f7c433b8d2e7976da8f86e886928a93d12d5ff8565eae21e0f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rubber Soul is the sixth studio album by the English rock band the Beatles.",
+        "It was released on 3 December 1965 in the United Kingdom on EMI's Parlophone label, accompanied by the non-album double A-side single \"We Can Work It Out\" / \"Day Tripper\".",
+        "The original North American release, issued by Capitol Records, contains ten of the fourteen songs and two tracks withheld from the band's Help!",
+        "Rubber Soul was described as an important artistic achievement by the band, meeting a highly favourable critical response and topping sales charts in Britain and the United States for several weeks.",
+        "The recording sessions took place in London over a four-week period beginning in October 1965.",
+        "For the first time in their career, the Beatles were able to record an album free of concert, radio or film commitments.",
+        "Often referred to as a folk rock album, particularly in its Capitol configuration, Rubber Soul incorporates a mix of pop, soul and folk musical styles.",
+        "The title derives from the colloquialism \"plastic soul\" and was the Beatles' way of acknowledging their lack of authenticity compared to the African-American soul artists they admired.",
+        "After A Hard Day's Night (1964), it was the second Beatles LP to contain only original material.",
+        "The songs demonstrate the Beatles' increasing maturity as lyricists, and in their incorporation of brighter guitar tones and new instrumentation such as sitar, harmonium and fuzz bass, the group striving for more expressive sounds and arrangements for their music.",
+        "The project marked a progression in the band's treatment of the album format as an artistic platform, an approach they continued to develop with Revolver (1966) and Sgt.",
+        "The four songs omitted by Capitol, including the February 1966 single \"Nowhere Man\", later appeared on the North American release Yesterday and Today (1966)."
+      ]
+    }
+  ]
+}

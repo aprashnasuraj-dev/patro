@@ -1,0 +1,98 @@
+{
+  "id": "mm-0635",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Jefferson Airplane",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72806",
+      "retrieved_at": "2026-10-18T17:29:36.845Z",
+      "sha256": "c036773960589bab9f9d9bc3ed5ffab0379d718457c38f538f8393de73932361",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jefferson Airplane was an American rock band formed in San Francisco in 1965.",
+        "One of the pioneering bands of psychedelic rock, the group defined the San Francisco Sound and was the first from the Bay Area to achieve international commercial success.",
+        "They appeared at the Monterey Pop Festival (1967), the first Isle of Wight Festival (1968) as headliners, Woodstock (1969), and Altamont Free Concert (1969).",
+        "Their 1967 breakout album Surrealistic Pillow was one of the most significant recordings of the Summer of Love.",
+        "Two songs from that album, \"Somebody to Love\" and \"White Rabbit\", are among Rolling Stone's \"500 Greatest Songs of All Time\".",
+        "After 1973, Jefferson Airplane effectively split into two groups.",
+        "Kaukonen and Casady moved on full-time to their own band, Hot Tuna.",
+        "Slick, Kantner, and the remaining members of Jefferson Airplane recruited new members and regrouped as Jefferson Starship in 1974, with Balin eventually rejoining them.",
+        "Jefferson Airplane received a Grammy Lifetime Achievement Award in 2016."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "De Havilland Comet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=182728",
+      "retrieved_at": "2026-10-18T17:29:36.845Z",
+      "sha256": "e5bdb0d9dc1b9b9d436d03b21c8c2a5fb35bb8b5e8934c3796afd475e838af72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The de Havilland DH.106 Comet is a four-engine narrow body aircraft developed and manufactured by de Havilland in the United Kingdom.",
+        "The world's first commercial jet airliner, the Comet 1 prototype first flew in 1949.",
+        "It features an aerodynamically clean design with four de Havilland Ghost turbojet engines located in the wing roots, a pressurised cabin, and large windows.",
+        "For the era, it offered a relatively quiet, comfortable passenger cabin and was commercially promising at its debut in 1952.",
+        "Within a year of the airliner's entry into service, three Comets were lost in highly publicised accidents after suffering catastrophic mishaps mid-flight.",
+        "Two of these were found to be caused by structural failure resulting from metal fatigue in the airframe, a phenomenon not fully understood at the time; the other was due to overstressing of the airframe during flight through severe weather.",
+        "The Comet was withdrawn from service and extensively tested.",
+        "Design and construction flaws, including dangerous stress concentrations around square cut-outs for the ADF (automatic direction finder) antennas were ultimately identified.",
+        "As a result, the Comet was extensively redesigned, with structural reinforcements and other changes.",
+        "Rival manufacturers heeded the lessons learned from the Comet when developing their own aircraft.",
+        "Although sales never fully recovered, the improved Comet 2 and the prototype Comet 3 culminated in the redesigned Comet 4 series which debuted in 1958 and remained in commercial service until 1981.",
+        "The Comet was also adapted for a variety of military roles such as VIP, medical and passenger transport, as well as surveillance; the last Comet 4, used as a research platform, made its final flight in 1997."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Airplane",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1396249",
+      "retrieved_at": "2026-10-18T17:29:36.845Z",
+      "sha256": "0db60ff72db0fce849777159f123bfbb15d387f757ce3e3c23b03cbc3539fc15",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An airplane (American English), or aeroplane (Commonwealth English), also plane, is a fixed-wing aircraft that is propelled forward by thrust from a jet engine, propeller, or rocket engine.",
+        "Airplanes come in a variety of sizes, shapes, and wing configurations.",
+        "The broad spectrum of uses for airplanes includes recreation, transportation of goods and people, military, and research.",
+        "Worldwide, commercial aviation transports more than four billion passengers annually on airliners and transports more than 200 billion tonne-kilometers of cargo annually, which is less than 1% of the world's cargo movement.",
+        "Most airplanes are flown by a pilot on board the aircraft, but some are designed to be remotely or computer-controlled, such as drones.",
+        "The Wright brothers invented and flew the first airplane in 1903, recognized as \"the first sustained and controlled heavier-than-air powered flight\".",
+        "Lilienthal's flight attempts in 1891 are seen as the beginning of human flight.",
+        "Following its limited use in World War I, aircraft technology continued to develop.",
+        "Airplanes had a presence in all the major battles of World War II.",
+        "The first jet aircraft was the German Heinkel He 178 in 1939.",
+        "The first jet airliner, the de Havilland Comet, was introduced in 1952.",
+        "The Boeing 707, the first widely successful commercial jet, was in commercial service for more than 60 years, from 1958 to 2019."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "BOAC Flight 781",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3686275",
+      "retrieved_at": "2026-10-18T17:29:36.845Z",
+      "sha256": "0df44b2da91f1285c6e6bc4bf2f2877caf4651c737c5d4c8d529d1022e932443",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "BOAC Flight 781 was a scheduled British Overseas Airways Corporation passenger flight from Singapore to London.",
+        "On 10 January 1954, a de Havilland Comet passenger jet operating the flight suffered an explosive decompression at altitude and crashed, killing all 35 people on board.",
+        "The aircraft, registered G-ALYP, had taken off shortly before from Ciampino Airport in Rome, en route to Heathrow Airport in London, on the final leg of its flight from Singapore.",
+        "After it exploded, the debris from the explosion fell into the sea near the island of Elba, off the Italian coast."
+      ]
+    }
+  ]
+}

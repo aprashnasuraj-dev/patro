@@ -1,0 +1,86 @@
+{
+  "id": "mm-0533",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Food preservation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10834",
+      "retrieved_at": "2026-10-18T17:09:04.519Z",
+      "sha256": "0a0e4095fbd3254e7fdb8613d52bd7ae2fac29826bc5354b9150a42b86439fea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Food preservation includes processes that make food more resistant to microorganism growth and slow the oxidation of fats.",
+        "This slows down the decomposition and rancidification process.",
+        "Food preservation may also include processes that inhibit visual deterioration, such as the enzymatic browning reaction in apples after they are cut during food preparation.",
+        "By preserving food, food waste can be reduced, which is an important way to decrease production costs and increase the efficiency of food systems, improve food security and nutrition and contribute towards environmental sustainability.",
+        "For instance, it can reduce the environmental impact of food production.",
+        "Many processes designed to preserve food involve more than one food preservation method.",
+        "Preserving fruit by turning it into jam, for example, involves boiling (to reduce the fruit's moisture content and to kill bacteria, etc.), sugaring (to prevent their re-growth) and sealing within an airtight jar (to prevent recontamination).",
+        "Different food preservation methods have different impacts on the quality of the food and food systems.",
+        "Some traditional methods of preserving food have been shown to have a lower energy input and carbon footprint compared to modern methods.",
+        "Some methods of food preservation are also known to create carcinogens."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Sourdough",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=189345",
+      "retrieved_at": "2026-10-18T17:09:04.519Z",
+      "sha256": "b0b869b145685326c6100332cc05a97c6f86f8a568dae7bc21956e6497c3a148",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sourdough is a leavening agent containing naturally occurring yeast and lactobacillus bacteria.",
+        "The term is used to describe bread baked with sourdough, while the sourdough itself is referred to as a starter.",
+        "In addition to leavening the bread, the fermentation process produces lactic acid, which gives the bread its distinctive sour taste and improves its keeping qualities."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Lactic acid fermentation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=200201",
+      "retrieved_at": "2026-10-18T17:09:04.519Z",
+      "sha256": "0331095ba71f60334b7d949af0d58203680d29f19e0a67a41b1e196ea7660d3d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lactic acid fermentation is a metabolic process by which glucose or other six-carbon sugars (also, disaccharides of six-carbon sugars, e.g.",
+        "sucrose or lactose) are converted into cellular energy and the metabolite lactate, which is lactic acid in solution.",
+        "It is an anaerobic fermentation reaction that occurs in some bacteria and animal cells, such as muscle cells.",
+        "It is also used extensively to preserve food and create novel flavours.",
+        "If oxygen is present in the cell, many organisms will bypass fermentation and undergo cellular respiration; however, facultative anaerobic organisms will both ferment and undergo respiration in the presence of oxygen.",
+        "Sometimes even when oxygen is present and aerobic metabolism is happening in the mitochondria, if pyruvate is building up faster than it can be metabolized, the fermentation will happen anyway.",
+        "Lactate dehydrogenase catalyzes the interconversion of pyruvate and lactate with concomitant interconversion of NADH and NAD+.",
+        "In homolactic fermentation, one molecule of glucose is ultimately converted to two molecules of lactic acid.",
+        "Heterolactic fermentation, by contrast, yields carbon dioxide and ethanol in addition to lactic acid, in a process called the phosphoketolase pathway."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Whole sour cabbage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2507792",
+      "retrieved_at": "2026-10-18T17:09:04.519Z",
+      "sha256": "bf48e1c23812b3ff11c9b66762534b50760aa5c6b5f3833a707014667530e852",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Whole sour cabbage is a fermented vegetable food preserve,  popular in Eastern European and Balkan cuisines.",
+        "It is similar to sauerkraut, with the difference that it is prepared through the lacto-fermentation for several weeks of whole heads of cabbage, not separate leaves or grated mass.",
+        "It is a homemade food preserve, commonly prepared in large barrels filled with whole cabbage heads and water salted with sea salt."
+      ]
+    }
+  ]
+}

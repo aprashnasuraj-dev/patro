@@ -1,0 +1,110 @@
+{
+  "id": "mm-1947",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Structural bearings and expansion joints for bridges",
+      "publisher": "International Association for Bridge and Structural Engineering (IABSE)",
+      "author": "Ramberger, Günter",
+      "published_at": "2002",
+      "url": "https://doi.org/10.2749/sed006",
+      "retrieved_at": "2026-10-18T18:15:30.279Z",
+      "sha256": "27d2ce49fddbae53e1af3c47681caf6ebe3767b05e44e236a90f64d98cf96176",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;Bridge superstructures have to be designed to permit thermal and live load strains to occur without unintended restraints.",
+        "Bridge bearings have to transfer forces from the superstructure to the substructure, allowing all movements in directions defined by the designer.",
+        "The two functions -transfer the loads and allow movements only in the required directions for a long service time with little maintenance - are not so easy to fulfil.",
+        "Differ­ent bearings for different purposes and requirements have been developed so, that the bridge designer can choose the most suitable bearing.&lt;/p&gt; &lt;p&gt;By the movement of a bridge, gaps are necessary between superstructure and substructure.",
+        "Expansion joints fill the gaps, allowing traffic loads tobe carried and allowing all expected displacements with low resistance.",
+        "Ex­pansion joints should provide a smooth transition, avoid noise emission as far as possible and withstand all mechanical actions and chemical attacks (de-icing) for a long time."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Bridge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3397",
+      "retrieved_at": "2026-10-18T18:15:32.654Z",
+      "sha256": "221803bc1be34e586f6adebda3ce37e6bf0e97493a38dbf6b79e8953325062e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A bridge is a structure designed to span an obstacle, such as a river or railway, allowing vehicles, pedestrians, and other loads to pass across.",
+        "Most bridges consist of a flat deck, supported by beams, arches, or cables.",
+        "These structures rest on a foundation that is carefully designed to transfer the weight of the bridge to the subsoil without settling.",
+        "Bridges can be constructed in a wide variety of forms, determined by the location, intended purpose, and available construction technologies.",
+        "Simple bridge structures include beam bridges made from logs, and suspension bridges made of ropes or vines.",
+        "The Romans and ancient Chinese built major arch bridges of timber, stone, and brick.",
+        "During the Renaissance, advances in science and engineering led to wider bridge spans and more elegant designs.",
+        "Concrete was perfected in the early 19th century, and arch bridges are now built primarily of concrete or steel.",
+        "With the Industrial Revolution came mass-produced steel, which enabled the creation of more complex forms – including truss and cantilever bridges – that permitted bridges to cross wide rivers or deep valleys.",
+        "The longest spans use suspension or cable-stayed designs, both of which rely on high-strength steel cables to support the deck.",
+        "Over time, the maximum achievable span of bridges has steadily increased, reaching 2 kilometers (1.2 miles) in 2022.",
+        "Other bridge forms include multi-span viaducts, which can cross wide valleys; trestles, a common design for carrying heavy trains; and movable bridges including drawbridges and swing bridges."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Interstate Bridge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=949897",
+      "retrieved_at": "2026-10-18T18:15:32.654Z",
+      "sha256": "96cb9d999812e2a777f02677a43b3a5856085381d074241d6da063583e16bc51",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The present-day northbound bridge opened to traffic in 1917 as a single bridge carrying two-way traffic.",
+        "Its name is a simple descriptive one as a bridge connecting two states, decades before the Interstate Highway System existed.",
+        "A second twin bridge, which carries southbound traffic, opened in 1958.",
+        "The twin bridges are each over 3,500 feet (1,067 m) long and carry three lanes of traffic.",
+        "It was added to the National Register of Historic Places in 1982, as the \"Portland–Vancouver Highway Bridge\".",
+        "Since 2005, several proposals for replacing the bridge have been produced and debated.",
+        "The bridge is considered responsible for traffic congestion of both road and river vehicles.",
+        "Plans for a replacement bridge, known as the Columbia River Crossing (CRC) project, estimated to cost at least $3.4 billion, had come together by 2012 after many delays, but were very controversial, with both strong support and strong opposition.",
+        "In late June 2013, the CRC project was canceled, after the Washington state legislature declined to authorize funding for the project."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Expansion joint",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5648302",
+      "retrieved_at": "2026-10-18T18:15:32.654Z",
+      "sha256": "d4cd38bcb242bb2c3807dbbbd5110cfd914fe3e34ce5750e41a816997016ebd6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An expansion joint, or movement joint, is an assembly designed to hold parts together while safely absorbing temperature-induced expansion and contraction of building materials.",
+        "They are commonly found between sections of buildings, bridges, sidewalks, railway tracks (where it's known as a breather switch), piping systems, ships, and other structures.",
+        "Building faces, concrete slabs, and pipelines expand and contract due to warming and cooling from diurnal and seasonal variation, or due to other heat sources.",
+        "Before expansion joint gaps were built into these structures, they would crack under the stress induced."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Viking expansion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19333309",
+      "retrieved_at": "2026-10-18T18:15:32.654Z",
+      "sha256": "75f9ed1b7cfdd073986c6eb63a6936c3ae15cbcca02732780fd975fb2d355fd2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "To the west, Vikings under Leif Erikson (the heir to Erik the Red) reached North America and set up a short-lived settlement in present-day L'Anse aux Meadows, Newfoundland, Canada.",
+        "Longer lasting and more established Norse settlements were formed in Greenland, Iceland, the Faroe Islands, Russia, Ukraine, Britain, Ireland, Normandy and Sicily.",
+        "By the 11th century expansion largely ceased, but many areas were left with populations of Viking descent, integrated into other local populations in various ways.",
+        "Some Viking descendents formed ruling dynasties or elites, while elsewhere they settled down as farmers."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "mm-1971",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "On Intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1196709",
+      "retrieved_at": "2026-10-18T18:15:36.686Z",
+      "sha256": "dd27d55c2399061bc20cd5deab275840522400086bd0fd3dc5bc9634a9a01b3e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On Intelligence: How a New Understanding of the Brain will Lead to the Creation of Truly Intelligent Machines is a 2004 book by Jeff Hawkins and Sandra Blakeslee.",
+        "The book explains Hawkins' memory-prediction framework theory of the brain and describes some of its consequences."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Timeline of the far future",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30154014",
+      "retrieved_at": "2026-10-18T18:15:36.686Z",
+      "sha256": "616b6f85ad3df7edf7afb06e6b92880e0b6ab948f1828810c3724dd10706c664",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "While, due to indeterminacy and possibly free will, the future cannot be predicted with certainty, present understanding in various scientific fields allows for the prediction of some far-future events, if only in the broadest outline.",
+        "These timelines begin at the start of the 4th millennium in 3001 CE, and continue until the furthest and most remote reaches of future time.",
+        "They include alternative future events that address unresolved scientific questions, such as whether humans will become extinct, whether the Earth survives when the Sun expands to become a red giant and whether proton decay will be the eventual end of all matter in the universe."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Physics of the Future",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31865376",
+      "retrieved_at": "2026-10-18T18:15:36.686Z",
+      "sha256": "ce9d269f5ad16eed33b331f910d642ae108afac7341248e247b729c3143b222e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Physics of the Future: How Science Will Shape Human Destiny and Our Daily Lives by the Year 2100 is a 2011 book by theoretical physicist Michio Kaku, author of Hyperspace and Physics of the Impossible.",
+        "In it Kaku speculates about possible future technological development over the next 100 years.",
+        "He interviews notable scientists about their fields of research and lays out his vision of coming developments in medicine, computing, artificial intelligence, nanotechnology, and energy production.",
+        "The book was on the New York Times Bestseller List for five weeks.",
+        "Kaku writes how he hopes his predictions for 2100 will be as successful as science fiction writer Jules Verne's 1863 novel Paris in the Twentieth Century.",
+        "Postmaster General John Wanamaker, who in 1893 predicted that mail would still be delivered by stagecoach and horseback in 100 years' time, and IBM chairman Thomas J.",
+        "Watson, who in 1943 is alleged to have said \"I think there is a world market for maybe five computers.\"  Kaku points to this long history of failed predictions against progress to underscore his notion \"that it is very dangerous to bet against the future\"."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Kay Tye",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48542628",
+      "retrieved_at": "2026-10-18T18:15:36.686Z",
+      "sha256": "c22dc127f4cfafed60d0e0ef197b3dcf4ba2874789f4828d0e20b6498821fa4e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "1981) is an American neuroscientist and professor and Wylie Vale Chair in the Salk Institute for Biological Sciences.",
+        "Her research has focused on using optogenetics to identify connections in the brain that are involved in innate emotion, motivation and social behaviors."
+      ]
+    }
+  ]
+}

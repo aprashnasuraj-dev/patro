@@ -1,0 +1,157 @@
+{
+  "id": "mm-0860",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "HOW FIRE RUNS",
+      "publisher": "Ohio University Press",
+      "author": null,
+      "published_at": "2020-10-13",
+      "url": "https://doi.org/10.2307/j.ctv224v0mv.2",
+      "retrieved_at": "2026-10-18T17:37:40.046Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "AI and you: how confusion about the technology that runs our world threatens democracy",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Zerilli, John",
+      "published_at": "2021-03-12",
+      "url": "https://theconversation.com/ai-and-you-how-confusion-about-the-technology-that-runs-our-world-threatens-democracy-156820",
+      "retrieved_at": "2026-10-18T17:37:40.265Z",
+      "sha256": "89daa7c9ebbbce23eb73020f1f46eea31749a8ddabbacaf2dc6e2fd42553f862",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "But whatever else he was (or wasn’t), he was a firm believer in what he called the “ suffrage of the people ” — what today we’d call democracy.",
+        "The democracy he had in mind, of course, wasn’t a truly “general suffrage” of all citizens: in its most ambitious form it enfranchised only male taxpayers and soldiers.",
+        "It was also far removed from the classical ideal set by Ancient Athens, in which all eligible citizens gathered regularly to debate and settle policy.",
+        "Still, even Jefferson’s limited and strictly “representative” version of democracy required something vital if it was to function properly: not just an able and knowledgeable public service, but a well-informed voting public.",
+        "But in the face of scientific and technological progress over the course of the 20th century, many political scientists, futurists and journalists have been left wondering about the future of democracy.",
+        "In the quest to figure out where we’re headed, an obvious question looms.",
+        "Just how well-informed can we expect the average citizen to be in a world that grows ever more complex and befuddling by the day?",
+        "It would be naïve to think that the rise of science and technology hasn’t made it more difficult to fully comprehend the problems we face as citizens.",
+        "Unless you happen to belong to a handful of experts who are well-informed on geology, meteorology and oceanography, you have to make a serious effort to understand the intricacies of climate science.",
+        "Add global warming scepticism to the news and it’s no wonder climate scepticism is so high in some countries.",
+        "In the US, up to 20% of US citizens don’t think human activity contributes much, or anything at all, to climate change.",
+        "In Australia, 38% of people surveyed don’t consider climate change to be a major threat."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Chicken wire, AI and mobile phones on sticks: how the drone war in Ukraine is driving a fierce battle of innovation",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Layton, Peter",
+      "published_at": "2024-07-25",
+      "url": "https://theconversation.com/chicken-wire-ai-and-mobile-phones-on-sticks-how-the-drone-war-in-ukraine-is-driving-a-fierce-battle-of-innovation-235503",
+      "retrieved_at": "2026-10-18T17:37:40.396Z",
+      "sha256": "00419b88cf91c779a459752c00e0fb198a99c44dc01205f03750c6abdde9b679",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Chicken wire, AI and mobile phones on sticks: how the drone war in Ukraine is driving a fierce battle of innovation Skip to content Academic rigor, journalistic flair Ukrainian air defence intercepts a Shahed drone mid-air, Kyiv, May 30 2023.",
+        "A few miniature aircraft designs were used in the war’s early days , but an incredible array of drones have now evolved.",
+        "There are different types, sizes and levels of sophistication.",
+        "They are used for many roles including short- and long-range attack, reconnaissance, electronic disruption, communications relay and supply.",
+        "Many are repurposed consumer drones, such as the low-cost Chinese DJI designs sold in electronics stores.",
+        "Such drones are modified as combat demands require and are being flown in their hundreds every day in Ukraine.",
+        "Before the war, military aircraft were very expensive and military forces could field very few.",
+        "Drones have completely upended this situation, hugely increasing the numbers of air systems.",
+        "Ukraine is now making more than 3,000 first-person view (or FPV) drones each day (that is not a typo).",
+        "These allow an operator to see from the drone’s camera in real time.",
+        "A new multinational drone coalition , of which Australia is part, plans to deliver one million of these.",
+        "They can be assembled from commercially available digital electronics in small workshops and people’s homes."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Edge computing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5276122",
+      "retrieved_at": "2026-10-18T17:37:40.598Z",
+      "sha256": "6df58fd6f9a4c3f6679fecf2bc135e9eb5be81b2382e6310a482998bab4edfe3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Edge computing is a distributed computing model that brings computation and data storage closer to the sources of data.",
+        "More broadly, it refers to any design that pushes computation physically closer to a user, so as to reduce the latency compared to when an application runs on a centralized data center.",
+        "The term began being used in the 1990s to describe content delivery networks—these were used to deliver website and video content from servers located near users.",
+        "In the early 2000s, these systems expanded their scope to hosting other applications, leading to early edge computing services.",
+        "These services could do things like find dealers, manage shopping carts, gather real-time data, and place ads.",
+        "The Internet of things (IoT), where devices are connected to the Internet, is often linked with edge computing."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Microsoft Copilot",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73312151",
+      "retrieved_at": "2026-10-18T17:37:40.598Z",
+      "sha256": "cc4c61a9c7ca3f73d77f60f9964e2741423d4679440f8d96c02f5fa6ba2f3af0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Microsoft Copilot is a generative artificial intelligence chatbot developed by Microsoft AI, a division of Microsoft.",
+        "Based on the Microsoft Prometheus large language model, it was launched in February of 2023 as Microsoft's main replacement for the discontinued Cortana from Windows 10.",
+        "The service was introduced in February 2023 under the name Bing Chat, as a built-in feature for Microsoft Bing and Microsoft Edge but would later be integrated into Windows and Microsoft 365 under various names.",
+        "Over the course of 2023, Microsoft began to unify the Copilot branding across its various chatbot products, cementing the \"copilot\" analogy.",
+        "Microsoft introduced the Microsoft 365 Copilot app in January of 2025, which was a rebranded version of the Microsoft 365 app.",
+        "The app works differently than the consumer version of Copilot, being centred more on work, business and education users.",
+        "Copilot utilizes the Microsoft Prometheus model, built upon OpenAI's GPT large language models, which in turn have been fine-tuned using both supervised and reinforcement learning techniques.",
+        "Copilot's conversational interface style resembles that of ChatGPT.",
+        "The chatbot is able to cite sources, create poems, generate songs, and use numerous languages and dialects.",
+        "Several default chatbots are available in the free version of Microsoft Copilot, including the standard Copilot chatbot as well as Microsoft Designer, which is oriented towards using its Image Creator to generate images based on text prompts."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Pixel 8",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73742543",
+      "retrieved_at": "2026-10-18T17:37:40.598Z",
+      "sha256": "92a735b3e46ad7941658c3bd807b66ae4fbed9cf1803b0936c8a1fe99a0eb465",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Pixel 8 and Pixel 8 Pro are a pair of Android-based smartphones designed, developed, and marketed by Google as part of the Google Pixel product line.",
+        "They serve as the successors to the Pixel 7 and Pixel 7 Pro, respectively.",
+        "Visually, the phones resemble their respective predecessors, with incremental upgrades to their displays and performance.",
+        "Powered by the third-generation Google Tensor system-on-chip, Google placed heavy emphasis on their artificial intelligence–powered features, especially in the realm of generative AI and photo editing.",
+        "The Pixel 8 and Pixel 8 Pro were officially announced on October 4, 2023, at the annual Made by Google event and were released in the United States on October 12.",
+        "They received generally positive reviews from critics, who praised both the hardware and software despite their modest upgrades.",
+        "The phones' AI features, Google's historic promise of seven years of software updates, and the Pro model's unconventional inclusion of a temperature sensor received significant attention and was heavily scrutinized, drawing mixed reactions.",
+        "The Pixel 8 and Pixel 8 Pro are the last Google Pixel phones to ship with Google Assistant as the default out-of-box assistant, as the Pixel 9 series and later ship with Gemini as the default assistant."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Pixel 9",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75689349",
+      "retrieved_at": "2026-10-18T17:37:40.598Z",
+      "sha256": "e36c67484ce735004951a8b93c064a86dde4848972975ccd68c38c1c5d891c7b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Pixel 9, Pixel 9 Pro, and Pixel 9 Pro XL are a group of Android-based smartphones designed, developed, and marketed by Google as part of the Google Pixel product line.",
+        "They serve as the successor to the Pixel 8 and Pixel 8 Pro, respectively.",
+        "Sporting a redesigned appearance and powered by the fourth-generation Google Tensor system-on-chip, the phones are heavily integrated with Gemini-branded artificial intelligence features.",
+        "The Pixel 9, Pixel 9 Pro, and Pixel 9 Pro XL were officially announced on August 13, 2024, at the annual Made by Google event, and were released in the United States on August 22 and September 4 for the Pixel 9 Pro Fold."
+      ]
+    }
+  ]
+}

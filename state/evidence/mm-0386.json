@@ -1,0 +1,94 @@
+{
+  "id": "mm-0386",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Big Bang",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4116",
+      "retrieved_at": "2026-10-18T17:04:48.430Z",
+      "sha256": "c115862501a569f589dbe9aa86554ea501a9649502c8eeeea784c8c2872fcf26",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Big Bang is a physical theory that describes how the universe expanded from an early state of high density and temperature.",
+        "Various cosmological models based on the Big Bang concept explain a broad range of phenomena, including the abundance of light elements, the cosmic microwave background (CMB) radiation, the redshift of galaxies and the large-scale structure of the universe.",
+        "The observed uniformity of the universe, which leads to the horizon and flatness problems, is explained through cosmic inflation: a phase of accelerated expansion during the earliest stages.",
+        "Detailed measurements of the expansion rate of the universe place the cosmic inflation at an estimated 13.787±0.02 billion years ago, which is considered the age of the universe.",
+        "A wide range of empirical evidence strongly favors the Big Bang model, which is now widely accepted.",
+        "Extrapolating this cosmic expansion backward in time using the known laws of physics, the models describe an extraordinarily hot and dense primordial universe.",
+        "The original Big Bang model extrapolated the universe back towards a Big Bang singularity.",
+        "However, the modern view incorporates inflationary cosmology, whereby the universe emerged out of inflation in a supercooled state.",
+        "This was followed by a reheating event that converted the energy that drove inflation into a hot and dense plasma, initiating the hot Big Bang.",
+        "As the universe expanded, it cooled sufficiently to allow the formation of subatomic particles, and later atoms.",
+        "These primordial elements—mostly hydrogen, with some helium and lithium—then coalesced under the force of gravity aided by dark matter, forming early stars and galaxies.",
+        "Measurements of the redshifts of supernovae indicate that the expansion of the universe is accelerating, an observation attributed to a concept called dark energy."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Inflation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38286",
+      "retrieved_at": "2026-10-18T17:04:48.430Z",
+      "sha256": "7bd425b1e3857377ef4fd08065a351bb829fdbd408a433d7ff500a20dd383d2f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In economics, inflation is an increase in the average price of goods and services in terms of money, though it originally referred to the increase of the money supply (monetary inflation) that can cause such a universal shift.",
+        "This increase is measured using a price index, typically a consumer price index (CPI).",
+        "When the general price level rises, each unit of currency buys fewer goods and services; consequently, inflation corresponds to a reduction in the purchasing power of money.",
+        "The opposite of inflation is deflation, a decrease in the general price level of goods and services.",
+        "The common measure of inflation is the inflation rate, the annualized percentage change in a general price index.",
+        "Moderate inflation affects economies in both positive and negative ways.",
+        "Positive effects include reducing unemployment due to nominal wage rigidity, allowing the central bank greater freedom in carrying out monetary policy, encouraging loans and investment instead of money hoarding, and avoiding the inefficiencies associated with deflation.",
+        "Today, most economists favour a low and steady rate of inflation.",
+        "The task of keeping the rate of inflation low and stable is usually given to central banks that control monetary policy, normally through the setting of interest rates and by carrying out open market operations."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Real and nominal value",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=717591",
+      "retrieved_at": "2026-10-18T17:04:48.430Z",
+      "sha256": "c784b1c09504ca75ff214cae5aaefdb898cbe6f3a323ab4c4cc346eec0fe53fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In economics, nominal value refers to value measured in terms of absolute money amounts, whereas real value is considered and measured against the actual goods or services for which it can be exchanged at a given time.",
+        "Real value takes into account inflation and the value of an asset in relation to its purchasing power.",
+        "In macroeconomics, the real gross domestic product compensates for inflation so economists can exclude inflation from growth figures, and see how much an economy actually grows."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Cold inflation pressure",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2137828",
+      "retrieved_at": "2026-10-18T17:04:48.430Z",
+      "sha256": "e26da369166f5fd0b82f0d50e1bd0f73ffcbb8a6a8901fae3e05207b39c6087b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cold inflation pressure is the inflation pressure of a tire as measured before a car is driven and the tires warmed up.",
+        "Recommended cold inflation pressure is displayed in the owner's manual and on the Tire Information Placard attached to the vehicle door edge, pillar, glovebox door or fuel filler flap.",
+        "Cold inflation pressure is a gauge pressure and not an absolute pressure.",
+        "Tire pressure is commonly measured in psi in the imperial and US customary systems, in the metric unit bar, or in kilopascals (kPa), an SI unit.",
+        "Under-inflated tires reduce fuel economy, decrease performance, cause increased wear on the edges of the tread surface, and can lead to overheating and premature failure of the tire.",
+        "Over-inflated tires on the other hand may lead to discomfort, decreased performance, and increased wear on the center part of the tread surface.",
+        "A 2001 NHTSA study found that 40% of passenger cars have at least one tire under-inflated by 0.4 bars (6 psi) or more.",
+        "The number one cause of tire failure was determined to be under-inflation.",
+        "Drivers are encouraged to make sure their tires are adequately inflated at all times."
+      ]
+    }
+  ]
+}

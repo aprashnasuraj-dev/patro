@@ -1,0 +1,139 @@
+{
+  "id": "mm-1752",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Biology of Death",
+      "publisher": "Oxford University PressNew York",
+      "author": "Howard, Gary C.",
+      "published_at": "2021-10-21",
+      "url": "https://doi.org/10.1093/oso/9780190687724.001.0001",
+      "retrieved_at": "2026-10-18T18:11:16.220Z",
+      "sha256": "2c508c8db0767757644bbef01ada5587639e09cc8ecf381dfbbf23e21b76d4fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Death is interwoven into our growth, development, protection against disease, and more.",
+        "Will medical advances continue to extend human life span and even defeat death?",
+        "Most amazingly, living organisms evolved systems to use death to their advantage.",
+        "The death of specific cells refines our immune system, gives us fingers, allows fruit to drop from trees, and tadpoles to become frogs.",
+        "Even single-celled organisms use “quorum sensing” to eliminate some cells to ensure the overall survival of the colony in harsh environments.",
+        "Death is far more than dying, and this book looks at how death is part of life at every level, including cells, tissues, organisms, and populations."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Dying",
+      "publisher": "Oxford University PressNew York",
+      "author": "Howard, Gary C.",
+      "published_at": "2021-11-04",
+      "url": "https://doi.org/10.1093/oso/9780190687724.003.0005",
+      "retrieved_at": "2026-10-18T18:11:16.578Z",
+      "sha256": "009164c4b102ee6c1ec77b3babc85a14aef6fc3e9049dd34b1374ff4717328f5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Physicians sometimes notice what is called a terminal drop in basic physiological systems that seems to presage death, but those signs do not occur in every case.",
+        "In the “twilight of death,” not every cell in the body dies at the same rate.",
+        "However, once death occurs, the signs are more clear and involve a loss of respiration and heartbeat, rigor mortis, and the pooling of blood, among other things.",
+        "Some people report near-death experiences, and one might wonder if those provide a glimpse of the afterlife.",
+        "Yet most of the features of near-death experiences can be explained physiologically.",
+        "Consciousness and its relationship to the physical brain remain to be understood."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Exponential growth",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=191933",
+      "retrieved_at": "2026-10-18T18:11:16.578Z",
+      "sha256": "401404abe43df7ffa4bd6c270a4d382671d4b3515b3e125dfac39d8bda4b7232",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Exponential growth occurs when a quantity grows as an exponential function of time.",
+        "The quantity grows at a rate directly proportional to its present size.",
+        "For example, when it is 3 times as big as it is now, it will be growing 3 times as fast as it is now.",
+        "In more technical language, its instantaneous rate of change (that is, the derivative) of a quantity with respect to an independent variable is proportional to the quantity itself.",
+        "Described as a function, a quantity undergoing exponential growth is an exponential function of time, that is, the variable representing time is the exponent (in contrast to other types of growth, such as quadratic growth or cubic growth).",
+        "Terms like \"exponential growth\" are sometimes incorrectly interpreted as \"rapid growth.\" Indeed, something that grows exponentially can in fact be growing slowly at first.",
+        "Also, not all cases of growth at an always increasing rate are instances of exponential growth.",
+        "For example the function \n  \n    \n      \n        f\n        (\n        x\n        )\n        =\n        \n          x\n          \n            3\n          \n        \n      \n    \n    {\\textstyle f(x)=x^{3}}\n  \n grows at an ever increasing rate, but is much slower than growing exponentially.",
+        "For example, when \n  \n    \n      \n        x\n        =\n        1\n        ,\n      \n    \n    {\\textstyle x=1,}\n  \n it grows at 3 times its size, but when \n  \n    \n      \n        x\n        =\n        10\n      \n    \n    {\\textstyle x=10}\n  \n it grows at 30% of its size.",
+        "If an exponentially growing function grows at a rate that is 3 times its present size, then it always grows at a rate that is 3 times its present size: when it is 10 times as big as it is now, it will grow 10 times as fast.",
+        "On the other hand, functions may also grow faster than exponentially, for instance, the factorial or double exponential function.",
+        "If the constant of proportionality is negative, then the quantity decreases over time, and is said to be undergoing exponential decay instead."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Crystallization",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1266658",
+      "retrieved_at": "2026-10-18T18:11:16.578Z",
+      "sha256": "e54523488d825b95476fa3eab8ed115f8c3b96c058320a8be369ded33d9e6e92",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crystallization is a process that leads to solids with a uniform pattern of atoms or molecules, i.e.",
+        "The uniform nature of a crystalline solid can be contrasted with amorphous solids in which atoms or molecules lack regular organization.",
+        "Crystallization can occur by various routes including precipitation from solution, freezing of a liquid, or deposition from a gas.",
+        "Attributes of the resulting crystal can depend largely on factors such as temperature, air pressure, cooling rate, or solute concentration.",
+        "The first is nucleation, the appearance of a crystalline phase from either a supercooled liquid or a supersaturated solvent.",
+        "The second step is known as crystal growth, which is the increase in the size of particles and leads to a crystal state.",
+        "An important feature of this step is that loose particles form layers at the crystal's surface and lodge themselves into open inconsistencies such as pores, cracks, etc.",
+        "Crystallization is also a chemical solid–liquid separation technique, in which mass transfer of a solute from the liquid solution to a pure solid crystalline phase occurs.",
+        "In chemical engineering, crystallization occurs in a crystallizer.",
+        "Crystallization is therefore related to precipitation, although the result is not amorphous or disordered, but a crystal."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Human overpopulation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4599275",
+      "retrieved_at": "2026-10-18T18:11:16.578Z",
+      "sha256": "c87646e22653742f4e69fb0774dfeb8381233c7336a661bba527c036fa99fb6e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Human overpopulation or human population overshoot is the condition in which human populations may become too large to be sustained by their environment or resources in the long term.",
+        "Human overpopulation or population overshoot is usually discussed in the context of world population, though it may concern individual nations, regions, and cities.",
+        "Since 1804, the global living human population has increased from 1 billion to 8 billion due to medical advancements and improved agricultural productivity.",
+        "Annual world population growth peaked at 2.1% in 1968 and has since dropped to 1.1%.",
+        "According to the most recent United Nations' projections, the global human population is expected to reach 9.7 billion in 2050 and would peak at around 10.4 billion people in the 2080s, before decreasing, noting that fertility rates are falling worldwide.",
+        "Other models agree that the population will stabilize before or after 2100.",
+        "Conversely, some researchers analyzing national birth registries data from 2022 and 2023—which cover half the world's population—argue that the 2022 UN projections overestimated fertility rates by 10 to 20% and were already outdated by 2024.",
+        "They suggest that the global fertility rate may have already fallen below the sub-replacement fertility level for the first time in human history and that the global population will peak at approximately 9.5 billion by 2061.",
+        "The 2024 UN projections report estimated that world population would peak at 10.29 billion in 2084 and decline to 10.18 billion by 2100, which was 6% lower than the UN had estimated in 2014.",
+        "Early discussions of overpopulation in English were spurred by the work of Thomas Malthus.",
+        "Discussions of overpopulation follow a similar line of inquiry as Malthusianism and its Malthusian catastrophe, a hypothetical event where population exceeds agricultural capacity, causing famine or war over resources, resulting in poverty and environmental collapses.",
+        "More recent discussion of overpopulation was popularized by Paul Ehrlich in his 1968 book The Population Bomb and subsequent writings."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Measures of pollutant concentration",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5571106",
+      "retrieved_at": "2026-10-18T18:11:16.578Z",
+      "sha256": "6456613af124779cc6d2418119c98d008242b494a7d65e8ee487b6c0cb9fb09f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Measures of pollutant concentration are used to determine risk assessment in public health.",
+        "Industry is continually synthesizing new chemicals, the regulation of which requires evaluation of the potential danger for human health and the environment.",
+        "Risk assessment is nowadays considered essential for making these decisions on a scientifically sound basis.",
+        "Measures or defined limits include:\n\nno-observed-adverse-effect level (NOAEL), also called no-effect concentration (NEC),  no-observed-effect concentration (NOEC) or similarly\nlowest-observed-adverse-effect level (LOAEL)\nacceptable operator exposure level (AOEL)\nECx (in percentage)."
+      ]
+    }
+  ]
+}

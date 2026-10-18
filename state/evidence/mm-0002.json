@@ -1,0 +1,95 @@
+{
+  "id": "mm-0002",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Editorial: Why Is Grass Green?",
+      "publisher": "JSTOR",
+      "author": "Dieter, Michael P.",
+      "published_at": "1994-12",
+      "url": "https://doi.org/10.2307/3431980",
+      "retrieved_at": "2026-10-18T16:48:43.528Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Green Green Grass",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2099143",
+      "retrieved_at": "2026-10-18T16:48:44.820Z",
+      "sha256": "2aa1a5c466ba767cbfaef6edafe53f08d9f18c5d4a326fdfd89f6690eaff62ac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Green Green Grass is a BBC television sitcom, created and initially written by John Sullivan, and produced by BBC Studios Comedy Productions and Shazam Productions for the BBC.",
+        "It serves as both a sequel and a spin-off of the long-running sitcom Only Fools and Horses and stars John Challis, Sue Holderness, and Jack Doolan.",
+        "Four series and three Christmas specials were originally broadcast on BBC One between 2005 and 2009.",
+        "The series follows three supporting characters from Only Fools and Horses: Boycie (John Challis), his wife Marlene (Sue Holderness), and their teenage son Tyler.",
+        "In the first episode, they are forced to flee from Peckham to escape the wrath of the Driscoll brothers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Green Grass, Running Water",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22328973",
+      "retrieved_at": "2026-10-18T16:48:44.820Z",
+      "sha256": "36035fbd6e9a3f2fa12c74f011e3cb55105ca572fb7c5df9b3f9b49df3c8f2f3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Green Grass, Running Water is a 1993 novel by American-born Canadian author Thomas King.",
+        "The novel is set in a contemporary First Nations Blackfoot community in Alberta, Canada.",
+        "It gained attention due to its unique use of structure, narrative, and the fusion of oral and written literary traditions.",
+        "The novel is rife with humor and satire, particularly regarding Judeo-Christian beliefs as well as Western government and society.",
+        "Green Grass, Running Water was a finalist for the 1993 Governor General's Award in Fiction."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Green Green Grass (song)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70546591",
+      "retrieved_at": "2026-10-18T16:48:44.820Z",
+      "sha256": "fe30df850b23a1b08c3e797e812038a1dbb98576104cd9417e00790820816d87",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Green Green Grass\" is a song by British singer-songwriter George Ezra.",
+        "It was released on 22 April 2022, as the second single from Ezra's third studio album Gold Rush Kid.",
+        "The song reached number three on the UK Singles Chart, becoming Ezra's seventh top ten song there and was nominated for the Brit Award for Song of the Year at the 2023 Brit Awards."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Smell of freshly cut grass",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=74478754",
+      "retrieved_at": "2026-10-18T16:48:44.820Z",
+      "sha256": "f4ae8637194819180cbd2053d876d285368ca93643cca5b0c0f149e0ce1fd0b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The smell of freshly cut grass is an odour caused by green leaf volatiles (GLVs) released when it is damaged.",
+        "Mechanical damage to grass from activities such as lawnmowing results in the release of cis-3-hexenal and other compounds that contribute to a grassy or \"green\" smell.",
+        "cis-3-Hexenal has a low odour detection threshold that humans can perceive at concentrations as low as 0.25 parts per billion.",
+        "The GLVs responsible for the smell of freshly cut grass play a role in plant communication and plant defence against herbivory, functioning as a distress signal warning other plants of imminent danger and, in some instances, as a way to attract predators of grass-eating insects.",
+        "For humans, the smell of freshly cut grass is connected through olfactory memory to past experiences involving the odour and may evoke nostalgia, eliciting associations with spring or summer."
+      ]
+    }
+  ]
+}

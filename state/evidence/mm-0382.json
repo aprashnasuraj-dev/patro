@@ -1,0 +1,126 @@
+{
+  "id": "mm-0382",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Coda: The Rosetta Stone",
+      "publisher": "Edinburgh University Press",
+      "author": "Schotter, Jesse",
+      "published_at": "2018-09-20",
+      "url": "https://doi.org/10.3366/edinburgh/9781474424776.003.0008",
+      "retrieved_at": "2026-10-18T17:01:06.042Z",
+      "sha256": "34af534dff1d3f38875a8367ec08984f3dbab39609eebbfc86e057daaed7ea69",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hieroglyphs have persisted for so long in the Western imagination because of the malleability of their metaphorical meanings.",
+        "Emblems of readability and unreadability, universality and difference, writing and film, writing and digital media, hieroglyphs serve to encompass many of the central tensions in understandings of race, nation, language and media in the twentieth century.",
+        "For Pound and Lindsay, they served as inspirations for a more direct and universal form of writing; for Woolf, as a way of treating the new medium of film and our perceptions of the world as a kind of language.",
+        "For Conrad and Welles, they embodied the hybridity of writing or the images of film; for al-Hakim and Mahfouz, the persistence of links between ancient Pharaonic civilisation and a newly independent Egypt.",
+        "For Joyce, hieroglyphs symbolised the origin point for the world’s cultures and nations; for Pynchon, the connection between digital code and the novel.",
+        "In their modernist interpretations and applications, hieroglyphs bring together writing and new media technologies, language and the material world, and all the nations and languages of the globe...."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Rosetta Stone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26428",
+      "retrieved_at": "2026-10-18T17:01:17.622Z",
+      "sha256": "3ed58ea7a2ad68369fd4f12194bccd52996492aa4cdd182ccc489772c8993164",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Rosetta Stone is a stele of granodiorite inscribed with three versions of a decree issued in 196 BC during the Ptolemaic dynasty of Egypt, on behalf of King Ptolemy V Epiphanes.",
+        "The top and middle texts are in Ancient Egyptian using hieroglyphic and Demotic scripts, respectively, while the bottom is in Ancient Greek.",
+        "The decree has only minor differences across the three versions, making the Rosetta Stone key to deciphering the Egyptian scripts.",
+        "The stone was carved during the Hellenistic period and is believed to have originally been displayed within a temple, possibly at Sais.",
+        "It was probably moved in late antiquity or during the Mamluk period, and was eventually used as building material in the construction of Fort Julien near the town of Rashid (Rosetta) in the Nile Delta.",
+        "It was found there in July 1799 by French army officer Pierre-François Bouchard during France's invasion of Egypt.",
+        "It was the first Ancient Egyptian bilingual text recovered in modern times, and it aroused widespread public interest with its potential to decipher this previously untranslated hieroglyphic script.",
+        "Lithographic copies and plaster casts soon began circulating among European museums and scholars.",
+        "When the British defeated the French, they took the stone to London under the terms of the Capitulation of Alexandria in 1801.",
+        "Since 1802, it has been on public display at the British Museum almost continuously and it is the most visited object there.",
+        "Study of the decree was already underway when the first complete translation of the Greek text was published in 1803.",
+        "Jean-François Champollion announced the transliteration of the Egyptian scripts in Paris in 1822; it took longer still before scholars were able to read Ancient Egyptian inscriptions and literature confidently."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Jean-François Champollion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=55434",
+      "retrieved_at": "2026-10-18T17:01:17.622Z",
+      "sha256": "8a88477b066570be2cdaac3d7e97f713ace93605ca85f5bac723355045e6a84f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jean-François Champollion (French: [ʒɑ̃ fʁɑ̃swa ʃɑ̃pɔljɔ̃]), also known as Champollion le jeune ('the Younger'; 23 December 1790 – 4 March 1832), was a French philologist and orientalist, known primarily as the decipherer of Egyptian hieroglyphs and a founding figure in the field of Egyptology.",
+        "Partially raised by his brother, the scholar Jacques Joseph Champollion-Figeac, Champollion was a child prodigy in philology, giving his first public paper on the decipherment of Demotic in his late teens.",
+        "As a young man he was renowned in scientific circles, and read Coptic, Ancient Greek, Latin, Hebrew and Arabic.",
+        "During the early 19th century, French culture experienced a period of 'Egyptomania', brought on by Napoleon's discoveries in Egypt during his campaign there (1798–1801), which also brought to light the trilingual Rosetta Stone.",
+        "Scholars debated the age of Egyptian civilization and the function and nature of the hieroglyphic script, which language if any it recorded, and the degree to which the signs were phonetic (representing speech sounds) or ideographic (recording semantic concepts directly).",
+        "Many thought that the script was used only for sacred and ritual functions, and that as such it was unlikely to be decipherable since it was tied to esoteric and philosophical ideas, and did not record historical information.",
+        "The significance of Champollion's decipherment was that he showed these assumptions to be wrong, and made it possible to begin to retrieve many kinds of information recorded by the ancient Egyptians.",
+        "Champollion lived in a period of political turmoil in France, which continuously threatened to disrupt his research in various ways.",
+        "During the Napoleonic Wars, he was able to avoid conscription, but his Napoleonic allegiances meant that he was considered suspect by the subsequent Royalist regime.",
+        "His own actions, sometimes brash and reckless, did not help his case.",
+        "His relations with important political and scientific figures of the time, such as Joseph Fourier and Silvestre de Sacy, helped him, although in some periods he lived exiled from the scientific community.",
+        "In 1820, Champollion embarked in earnest on the project of the decipherment of hieroglyphic script, soon overshadowing the achievements of British polymath Thomas Young, who had made the first advances in decipherment before 1819."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Rosetta (spacecraft)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=179100",
+      "retrieved_at": "2026-10-18T17:01:17.622Z",
+      "sha256": "51111a2f390ed5a90624a067a935c62e01bd1ff961aeddc21c233c876b290103",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rosetta was a space probe built by the European Space Agency that launched on 2 March 2004.",
+        "Along with Philae, its lander module, Rosetta performed a detailed study of comet 67P/Churyumov–Gerasimenko (67P).",
+        "During its journey to the comet, the spacecraft performed flybys of Earth, Mars, and the asteroids 21 Lutetia and 2867 Šteins.",
+        "It was launched as the third cornerstone mission of the ESA's Horizon 2000 programme, after SOHO / Cluster and XMM-Newton.",
+        "The total cost of the mission was about €1.3 billion (US$1.8 billion).",
+        "On 6 August 2014, the spacecraft reached the comet and performed a series of manoeuvers to eventually orbit the comet at distances of 30 to 10 kilometres (19 to 6 mi).",
+        "On 12 November, its lander module Philae performed the first successful landing on a comet, though its battery power ran out two days later.",
+        "Communications with Philae were briefly restored in June and July 2015, but due to diminishing solar power, Rosetta's communications module with the lander was turned off on 27 July 2016.",
+        "On 30 September 2016, the Rosetta spacecraft ended its mission by hard-landing on the comet in its Ma'at region."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Philae (spacecraft)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=524434",
+      "retrieved_at": "2026-10-18T17:01:17.622Z",
+      "sha256": "9e56e6bc3c0dc6e2928d5f0622c8f889d997fb4eb114a54a40e70384e34d7cfd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Philae ( or ) is a robotic European Space Agency lander that accompanied the Rosetta spacecraft until it separated to land on comet 67P/Churyumov–Gerasimenko, ten years and eight months after departing Earth.",
+        "On 12 November 2014, Philae touched down on the comet, but it bounced when its anchoring harpoons failed to deploy and a thruster designed to hold the probe to the surface did not fire.",
+        "After bouncing off the surface twice, Philae achieved the first-ever \"soft\" (nondestructive) landing on a comet nucleus, although the lander's final, uncontrolled touchdown left it in a non-optimal location and orientation.",
+        "Philae transmitted images and data back to earth for about 64 hours.",
+        "Despite the landing problems, the probe's instruments obtained the first images from a comet's surface.",
+        "Several of the instruments on Philae made the first in-situ analysis of a comet nucleus, sending back data regarding the composition of the surface and outgassing from the subsurface.",
+        "In October 2020, scientific journal Nature published an article revealing what Philae had discovered while it was operational on the surface of 67P/Churyumov–Gerasimenko.",
+        "On 15 November 2014 Philae entered safe mode, or hibernation, after its batteries ran down due to reduced sunlight and an off-nominal spacecraft orientation at the crash site.",
+        "Mission controllers hoped that additional sunlight on the solar panels might be sufficient to reboot the lander.",
+        "Philae communicated sporadically with Rosetta from 13 June to 9 July 2015, but contact was then lost.",
+        "The lander's location was known to within a few tens of metres but it could not be seen.",
+        "Its location was finally identified in photographs taken by Rosetta on 2 September 2016 as the orbiter was sent on orbits closer to the comet."
+      ]
+    }
+  ]
+}

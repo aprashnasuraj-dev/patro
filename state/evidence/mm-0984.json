@@ -1,0 +1,91 @@
+{
+  "id": "mm-0984",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mylodon",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=89069",
+      "retrieved_at": "2026-10-18T17:45:51.847Z",
+      "sha256": "7980a151d24fa128cd72bd9fedc8dd11f8d04a24bbf0f815ef48d1a8cb54beb0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mylodon is an extinct genus of ground sloth belonging to the family Mylodontidae, known from southern South America.",
+        "With a total length of 3 to 4 m and a body mass of 1-2 tonnes, it is one of the largest mylodontids, though it was considerably exceeded in size by the mylodontid Lestodon.",
+        "The oldest finds probably date to the Lower Pleistocene; however, most of the fossil remains date to the Late Pleistocene (spanning the Ensenadan and Lujanian faunal stages).",
+        "In addition to skeletal remains, Mylodon is also known from preserved skin and hair.",
+        "Preserved dung (coprolites) indicates that Mylodon was a primarily a grazer, feeding on grasses and sedges.",
+        "Mylodon has generally only a single recognised species, Mylodon darwini, which was described by Richard Owen in 1840 based on remains collected in the Pampas by Charles Darwin (for whom the species is named) during the Voyage of the Beagle.",
+        "Some recent authors suggest that there were two species, with M.",
+        "darwini restricted to the Pampas, with the Patagonian remains belonging to the separate species Mylodon listai.",
+        "Mylodon became extinct at the end of the Late Pleistocene-beginning of the Holocene, around 12–10,000 years ago, as part of the end-Pleistocene extinction event, along with other ground sloths and most large animals across the Americas.",
+        "Mylodon chronologically overlapped with Paleoindians, the first humans to inhabit the Americas; evidence from several sites suggest that they may have hunted Mylodon.",
+        "The extinction of Mylodon may be the result of climatic change, hunting by Paleoindians, or a combination of both factors."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "United States intervention in Chile",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=506956",
+      "retrieved_at": "2026-10-18T17:45:51.847Z",
+      "sha256": "d90e80bcf2bc252a6e8a8697795dc2a54da555fa6827ca40c579d855e9957341",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "United States intervention in Chilean politics started during the War of Chilean Independence (1812–1826).",
+        "The influence of United States in both the economic and the political arenas of Chile has since gradually increased over the last two centuries and continues to be significant."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "New Mexican cuisine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2281834",
+      "retrieved_at": "2026-10-18T17:45:51.847Z",
+      "sha256": "bfaab0990f29bfa8150b5b74f8a1097bd48f22c45c257d76415bc2cb6e8d0827",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "New Mexican cuisine is the regional cuisine of the Southwestern US state of New Mexico.",
+        "It is known for its fusion of Pueblo Native American cuisine with Hispano Spanish and Mexican culinary traditions, rooted in the historical region of Nuevo México.",
+        "New Mexican cuisine not only spans a broad Southwestern geographic area, but it is also a globally recognized ethnic cuisine, particularly for the Oasisamericans, Hispanos, and those connected to caballero cowboy culture or anyone originally from New Mexico.",
+        "The evolution of New Mexican cuisine reflects diverse influences over time.",
+        "It was shaped early on by the Pueblo people, along with nearby Apache and Navajo culinary practices and the broader culinary traditions of New Spain and the Spanish Empire.",
+        "Additional influences came from French, Italian, Portuguese, and other Mediterranean cuisines, which introduced new ingredients and techniques.",
+        "Early European settlers also contributed with their bed and breakfasts and cafés, adding to the culinary landscape.",
+        "During the American territorial phase, cowboy chuckwagons and Western saloons left their mark, followed by American diner culture along Route 66, Mexican-American cuisine, fast food, and global culinary trends after statehood in 1912.",
+        "Despite these diverse influences, New Mexican cuisine developed largely in isolation, preserving its indigenous, Spanish, Mexican, and Latin roots.",
+        "This has resulted in a cuisine that is distinct from other Latin American cuisines found in the contiguous United States.",
+        "It stands out for its emphasis on local spices, herbs, flavors, and vegetables, particularly the iconic red and green New Mexico chile peppers, anise (used in biscochitos), and piñon (used as a snack or in desserts)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Chinchorro mummies",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3244110",
+      "retrieved_at": "2026-10-18T17:45:51.847Z",
+      "sha256": "7048b8048933047336cbe9d31d276a35fe2a2dcdb4c4c3e9e33b311613fcf5e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Chinchorro mummies are naturally and artificially preserved human remains associated with the Chinchorro culture, an Indigenous people who lived along the Pacific coast of what is now northern Chile and southern Peru.",
+        "The oldest known naturally preserved Chinchorro individual dates to about 7020 BCE, while deliberate mummification began by about 5050 BCE, making the Chinchorro mummies the oldest known examples of purposefully preserved human bodies in the world.",
+        "The Chinchorro artificially preserved men, women and children from across their communities rather than restricting elaborate funerary treatment to a social elite.",
+        "Their methods included reconstructing and reinforcing bodies, modelling them with clay, and adding wigs and mineral pigments.",
+        "Several forms of mummification developed and overlapped during a tradition that continued for about 3,000 years, ending around 1800 BCE.",
+        "In 2021, settlements and cemeteries associated with the Chinchorro culture and its tradition of artificial mummification in Chile's Arica and Parinacota Region were designated a World Heritage Site by UNESCO."
+      ]
+    }
+  ]
+}

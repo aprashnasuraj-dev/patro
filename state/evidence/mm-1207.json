@@ -1,0 +1,152 @@
+{
+  "id": "mm-1207",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Blue Skies, Red Sunsets, and the Green Flash",
+      "publisher": "Optica Publishing Group",
+      "author": "Greenler, Robert",
+      "published_at": "1983",
+      "url": "https://doi.org/10.1364/mo.1983.tha1",
+      "retrieved_at": "2026-10-18T17:50:55.602Z",
+      "sha256": "43fe0aacb8141ec70f39b76786a994fd3d4889122536e089396ee7e3d549b07f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many beautiful sky effects can be easily seen that result from light scattering in the atmosphere.",
+        "Slides are shown to illustrate many of these effects and several scattering demonstrations help explain the mechanisms."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why are sunsets so pretty in winter? There’s a simple explanation",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Wilkins, Chloe",
+      "published_at": "2025-06-12",
+      "url": "https://theconversation.com/why-are-sunsets-so-pretty-in-winter-theres-a-simple-explanation-258192",
+      "retrieved_at": "2026-10-18T17:50:55.850Z",
+      "sha256": "677b792ed97f3b5e7d13a29a337df3c42cdd44bb58c28d584145e6e06925a44c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "There’s a simple explanation Skip to content Academic rigor, journalistic flair nelo2309/Shutterstock Why are sunsets so pretty in winter?",
+        "The colours are brighter and bolder, and they linger longer in the sky.",
+        "Why are sunsets “better” at some times of the year compared to others?",
+        "There are many ingredients for a “good” sunset, but the main three are clear skies, low humidity, and the Sun sitting low in the sky.",
+        "In winter, sunsets sometimes look much more vivid that in summer – and yes, temperature plays a role.",
+        "Jeremy Bishop/Unsplash From light to colour To understand why we get such vibrant sunsets in the colder months of the year, we first need to know how colours appear in the sky.",
+        "All visible light is actually energy that travels in waves ; the length of those waves determines the colour that our eyes see.",
+        "Although sunlight might look white to us, it’s actually a mix of different wavelengths of light that make up all the visible colours – from fiery reds and oranges (longer wavelengths) to deep blues and purples (shorter wavelengths).",
+        "At shorter wavelengths, the colours are purple and blue, while at longer wavelengths they are red and orange.",
+        "DrSciComm/Wikimedia Commons , CC BY-SA These individual colours become visible when sunlight is “ scattered ”, which is precisely what happens when it passes through the invisible gas molecules in Earth’s atmosphere – mostly nitrogen and oxygen.",
+        "When sunlight hits these molecules, it’s absorbed and shot back out (scattered) in different directions.",
+        "Blue and violet light is scattered more strongly than red and orange light – this is also why the sky looks blue during the day."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Red Sunsets",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": null,
+      "published_at": "1884-09-06",
+      "url": "https://www.scientificamerican.com/article/red-sunsets/",
+      "retrieved_at": "2026-10-18T17:50:57.737Z",
+      "sha256": "8ca4503b0519d6521b81bd61b3ac08b2979022b1bbf1f59f61c996938bd63cea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "We leverage third party services to both verify and deliver email.",
+        "By providing your email address, you also consent to having the email address shared with third parties for those purposes.",
+        "That’s why I and the journalists here at Scientific American hope you’ll join our community.",
+        "Our editors and reporters are often experts in their fields, which means they understand the nuances of big discoveries and can untangle the breakthroughs from the hype.",
+        "With a subscription, you are also supporting rigorous fact-checking to ensure the words we publish are precise and accurate.",
+        "And you’re supporting original illustrations, graphics and photos that bring you closer to an advanced laboratory, an ice sheet in Antarctica or a space mission in orbit.",
+        "You’re helping us craft other types of high-quality journalism as well: Our newsletters are carefully written, edited and curated by staffers you have or will come to know and love.",
+        "Our Science Quickly podcast is based on original reporting, collaboration with editors and scientists and exacting production.",
+        "Subscriptions keep this engine running so we can continue to deliver thoughtful, rigorous and independent science journalism to you."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sunset",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=190933",
+      "retrieved_at": "2026-10-18T17:50:57.737Z",
+      "sha256": "5c57960570339327306b6483e9b42a4f1a8724751a5c2380095b1486617c8126",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sunset (or sundown) is the disappearance of the Sun at the end of the Sun path, below the horizon of the Earth (or any other astronomical object in the Solar System) due to its rotation.",
+        "As viewed from everywhere on Earth, it is a phenomenon that happens approximately once every 24 hours, except in areas close to the poles.",
+        "The equinox Sun sets due west at the moment of both the spring and autumn equinoxes.",
+        "As viewed from the Northern Hemisphere, the Sun sets to the northwest (or not at all) in the spring and summer, and to the southwest in the autumn and winter; these seasons are reversed for the Southern Hemisphere.",
+        "The sunset is defined in astronomy as the moment the upper limb of the Sun disappears below the horizon.",
+        "Near the horizon, atmospheric refraction causes sunlight rays to be distorted to such an extent that geometrically the solar disk is already about one diameter below the horizon when a sunset is observed.",
+        "Sunset is distinct from twilight, which is divided into three stages.",
+        "The first one is civil twilight, which begins once the Sun has disappeared below the horizon, and continues until it descends to 6 degrees below the horizon.",
+        "The early to intermediate stages of twilight coincide with predusk.",
+        "The second phase is nautical twilight, between 6 and 12 degrees below the horizon.",
+        "The third phase is astronomical twilight, which is the period when the Sun is between 12 and 18 degrees below the horizon.",
+        "Dusk is at the very end of astronomical twilight, and is the darkest moment of twilight just before night."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Diffuse sky radiation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=212101",
+      "retrieved_at": "2026-10-18T17:50:57.737Z",
+      "sha256": "91aaa3bdc64ec7078a7541073e4a2db1973956f8d454151e47b7f2f760435427",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Diffuse sky radiation, is solar radiation reaching the Earth's surface after having been scattered from the direct solar beam by molecules or particulates in the atmosphere.",
+        "It is also called sky radiation,  the determinative process for changing the colors of the sky.",
+        "It is normally measured on a horizontal surface, thus frequently termed diffuse horizontal irradiance (DHI), often in the unit of watts per square meter (W/m2).",
+        "Approximately 23% of direct incident radiation of total sunlight is removed from the direct solar beam by scattering into the atmosphere; of this amount (of incident radiation)  about two-thirds ultimately reaches the earth as photon diffused skylight radiation.",
+        "The dominant radiative scattering processes in the atmosphere are Rayleigh scattering and Mie scattering; they are elastic, meaning that a photon of light can be deviated from its path without being absorbed and without changing wavelength.",
+        "Under an overcast sky, there is no direct sunlight, and all light results from diffused skylight radiation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Manhattanhenge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5350525",
+      "retrieved_at": "2026-10-18T17:50:57.737Z",
+      "sha256": "002288776dcee14084dacc8ff4207f154b118253ee71dd2b7414d0ace9a2ca12",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Manhattanhenge, also called the Manhattan Solstice, is an event during which the setting sun or the rising sun is aligned with the east–west streets of the main street grid of the Manhattan borough of New York City.",
+        "The astrophysicist Neil deGrasse Tyson claims to have coined the term, by analogy with Stonehenge.",
+        "The sunsets and sunrises each align twice a year, on dates evenly spaced around the summer solstice and winter solstice.",
+        "The sunrise alignments occur around December 5 and January 8.",
+        "Manhattan has a phenomenon of this kind due to its extensive urban canyons and its rectilinear street grid that is rotated 29° clockwise from the orthogonal.",
+        "Many numbered streets align with the view of the Manhattanhenge including 14th, 23rd, 34th, 42nd, and 57th Streets."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Sunset (color)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25417327",
+      "retrieved_at": "2026-10-18T17:50:57.737Z",
+      "sha256": "c4c3b44ad538fce6616eab2945dd2815e95c1d8a0decab45ff6c7673e82bab12",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is a representation of the average color of clouds when the sunlight from a sunset is reflected from them.",
+        "The first recorded use of sunset as a color name in English was in 1916."
+      ]
+    }
+  ]
+}
