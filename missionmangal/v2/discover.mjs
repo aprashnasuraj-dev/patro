@@ -21,6 +21,17 @@ export function isRelevantEvidence(topic,evidence){
  return matches.length>=required;
 }
 
+export function rankCandidateLinks(urls,topic=''){
+ const terms=[...new Set(String(topic).toLowerCase().match(/[a-z0-9]+/g)||[])].filter(w=>w.length>=4&&!STOPWORDS.has(w));
+ const authority=h=>/(^|\\.)gov(\\.[a-z]{2,})?$/.test(h)?5:/(^|\\.)edu$/.test(h)?5:
+  ['nature.com','science.org','cell.com','pnas.org','nih.gov','ncbi.nlm.nih.gov','who.int','un.org','worldbank.org','nasa.gov','noaa.gov','usgs.gov','cdc.gov','gov.uk','europa.eu'].some(d=>h===d||h.endsWith('.'+d))?5:
+  h.endsWith('.edu')?5:h.endsWith('.org')?3:2;
+ const score=u=>{try{const x=new URL(u),h=x.hostname.toLowerCase().replace(/^www\\./,'');
+  const path=(x.pathname+' '+x.search).toLowerCase();const topical=terms.reduce((n,t)=>n+(h+' '+path).includes(t)?1:0,0);
+  return authority(h)*10+Math.min(terms.length,topical)*2+(x.pathname.length>1?1:0);
+ }catch{return -1;}};
+ return [...new Set(urls)].map((url,index)=>({url,index,score:score(url)})).sort((a,b)=>b.score-a.score||a.index-b.index).map(x=>x.url);
+}
 export function isTrusted(url,disc={}){
  try{
   const u=new URL(url),h=u.hostname.toLowerCase().replace(/^www\./,'');
@@ -106,7 +117,7 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
   searchWebLinks(topic,{fetchImpl,max:disc.max_links_per_topic})
  ]);
  const pools=[openAlexLinks,expandedSearchLinks,exactSearchLinks,wikiLinks],ordered=[];for(let i=0;i<Math.max(...pools.map(p=>p.length),0);i++)for(const pool of pools)if(pool[i])ordered.push(pool[i]);
- const links=[...new Set(ordered)].filter(u=>isTrusted(u,disc)&&!have.has(u));
+ const links=rankCandidateLinks([...new Set(ordered)].filter(u=>isTrusted(u,disc)&&!have.has(u)),topic);
  log?.('research candidates: '+links.length+' unique HTTPS links; cached relevant sources: '+evidence.length);
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
