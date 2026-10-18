@@ -105,7 +105,8 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
   searchWebLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic}),
   searchWebLinks(topic,{fetchImpl,max:disc.max_links_per_topic})
  ]);
- const links=[...new Set([...openAlexLinks,...expandedSearchLinks,...exactSearchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
+ const pools=[openAlexLinks,expandedSearchLinks,exactSearchLinks,wikiLinks],ordered=[];for(let i=0;i<Math.max(...pools.map(p=>p.length),0);i++)for(const pool of pools)if(pool[i])ordered.push(pool[i]);
+ const links=[...new Set(ordered)].filter(u=>isTrusted(u,disc)&&!have.has(u));
  log?.('research candidates: '+links.length+' unique HTTPS links; cached relevant sources: '+evidence.length);
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
