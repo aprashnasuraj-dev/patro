@@ -5,12 +5,12 @@ import {readFile,writeFile,readdir,mkdir} from 'node:fs/promises';import {join,r
 import {classify,ROUTE_ORDER} from './classify.mjs';
 const rank={approved:3,review:2,blocked:1,retry_later:0};
 export async function loadState(stateDir){
- const latest=new Map(),evidence=new Map(),content=new Map();
+ const latest=new Map(),evidence=new Map();
  for(const d of await readdir(stateDir).catch(()=>[])){
   const base=join(stateDir,d);
   for(const l of (await readFile(join(base,'ledger.jsonl'),'utf8').catch(()=>'')).split('\n').filter(Boolean)){let j;try{j=JSON.parse(l);}catch{continue;}
    const p=latest.get(j.id);if(!p||(rank[j.status]??0)>(rank[p.status]??0)||((rank[j.status]??0)===(rank[p.status]??0)&&j.at>p.at))latest.set(j.id,{...j,_dir:d});}
-  for(const f of await readdir(join(base,'evidence')).catch(()=>[])){try{const e=JSON.parse(await readFile(join(base,'evidence',f),'utf8'));const prev=evidence.get(e.id);if(!prev||(e.evidence||[]).length>prev.length)evidence.set(e.id,e.evidence||[]);}catch{}}
+  for(const f of await readdir(join(base,'evidence')).catch(()=>[])){try{const e=JSON.parse(await readFile(join(base,'evidence',f),'utf8'));const prev=evidence.get(e.id)||[];const merged=new Map();for(const item of [...prev,...(e.evidence||[])]){if(!item?.url)continue;const key=item.url;const old=merged.get(key);if(!old||(item.excerpts||[]).length>(old.excerpts||[]).length)merged.set(key,item);}evidence.set(e.id,[...merged.values()].map((item,i)=>({...item,id:'s'+(i+1)})));}catch{}}
  }
  return {latest,evidence};
 }
