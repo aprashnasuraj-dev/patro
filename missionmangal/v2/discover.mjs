@@ -17,6 +17,13 @@ export async function wikipediaLinks(titles,{fetchImpl=fetch,max=40}={}){
    for(const p of Object.values(j.query?.pages||{}))for(const l of p.extlinks||[])links.push(l['*']||l.url);}catch{}}
  return [...new Set(links.filter(Boolean))];
 }
+export async function wikipediaSearchTitles(topic,{fetchImpl=fetch,max=3}={}){
+ if(!topic?.trim())return [];
+ try{const u='https://en.wikipedia.org/w/api.php?'+new URLSearchParams({action:'query',list:'search',srsearch:topic,srlimit:String(max),format:'json'});
+ const r=await fetchImpl(u,{headers:{'user-agent':UA}});if(!r.ok)return [];
+ const j=await r.json();return (j.query?.search||[]).map(x=>x.title).filter(Boolean).slice(0,max);
+ }catch{return [];}
+}
 export function scraplingExtract(urls,{python='python3',script,delayMs=1200,timeoutMs=120_000}={}){
  return new Promise(resolve=>{if(!urls.length)return resolve([]);
   const p=spawn(python,[script,String(delayMs/1000)],{stdio:['pipe','pipe','ignore']});let out='';const t=setTimeout(()=>{p.kill();resolve([]);},timeoutMs);
@@ -24,8 +31,8 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1200,time
   p.on('close',()=>{clearTimeout(t);try{resolve(JSON.parse(out));}catch{resolve([]);}});p.stdin.end(JSON.stringify(urls));});
 }
 // Returns NEW evidence items (ids assigned by caller). Never stores page text: excerpts + sha256 only.
-export async function discoverEvidence({evidence,disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
- const have=new Set(evidence.map(e=>e.url)),titles=wikiTitles(evidence);if(!titles.length)return [];
+export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
+ const have=new Set(evidence.map(e=>e.url));let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});if(!titles.length)return [];
  const links=(await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic})).filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
  const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2)found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
