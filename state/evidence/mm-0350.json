@@ -1,0 +1,115 @@
+{
+  "id": "mm-0350",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why are Chinese characters so damn hard",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "author": "Michał Kosek",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2618500005",
+      "retrieved_at": "2026-10-18T15:17:55.738Z",
+      "sha256": "e052bb9516c60e7a3edf244d60715ab06748ec79ab6277239607e4dc228334e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This thesis looks into the problem of learning Chinese characters for foreign language learners and focuses on learning approaches that stress recognising characters without writing them by hand, which are becoming popular due to the widespread use of computer-based input methods.",
+        "Mistaking characters for each other has been identified as an important problem that learners need to overcome.",
+        "The empirical investigations in the thesis include a self-observation diary study and connectionist simulations of learning Chinese characters.",
+        "The diary study collected over 1,500 pairs of characters that had been mistaken for one another in the process of learning.",
+        "The analysis of these cases revealed an interplay of various factors that led to character confusion: graphical, semantic and phonetic similarity, as well as association caused by frequent co-occurrence of given characters in some words.",
+        "A more detailed analysis distinguished character components that have a semantic or phonetic value in modern Chinese.",
+        "It showed how the presence of similar components may contribute to character confusion, and found more complex cases of relationships between the value of the components of the target character and the actual pronunciation and meaning of the character it was confused with.",
+        "The connectionist simulation of character acquisition presented in this thesis is based on the DISLEX model, which consists of two self-organising maps and aims to provide a neurobiologically plausible account of word learning.",
+        "An evaluation of the first version of the model showed that the pairs of confused characters collected in the diary study were represented significantly closer to each other than the average.",
+        "Nevertheless, the model had major flaws, which were addressed in the second version.",
+        "It included a more sophisticated representation of the semantic, phonetic and graphemic features of the characters.",
+        "The second model showed a significant improvement over the first one."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Pinyin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23588",
+      "retrieved_at": "2026-10-18T15:17:55.738Z",
+      "sha256": "87bf3de477f297d3ce231f0356dc268a835faa616e986de49c56d989185a6e5f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Chinese Phonetic Alphabet, commonly called Hanyu Pinyin or simply pinyin (pīnyīn), is the most common romanization system for Standard Chinese.",
+        "Hanyu literally means 'Han language' — that is, the Chinese language — while pinyin literally means 'spelled sounds'.",
+        "Pinyin is the official romanization system used in China, Singapore and the United Nations.",
+        "Its use has become the standard method for transliterating Standard Chinese in most regions, though it is less commonly used in Taiwan.",
+        "It is employed to teach Standard Chinese, normally written with Chinese characters, to students in mainland China and Singapore.",
+        "Pinyin is also used by various input methods on computers and to categorize entries in some Chinese dictionaries.",
+        "In pinyin, each Chinese syllable is spelled in terms of an optional initial and a final, each of which is represented by one or more letters.",
+        "Initials are initial consonants, whereas finals are all possible combinations of medials (semivowels coming before the vowel), a nucleus vowel, and coda (final vowel or consonant).",
+        "Diacritics are used to indicate the four tones found in Standard Chinese, though these are often omitted in various contexts, such as when spelling Chinese names in non-Chinese texts.",
+        "Hanyu Pinyin was developed in the 1950s by a group of Chinese linguists including Wang Li, Lu Zhiwei, Li Jinxi, Luo Changpei and, particularly,  Zhou Youguang, who has been called the \"father of pinyin\".",
+        "They based their work in part on earlier romanization systems.",
+        "The system was originally promulgated at the Fifth Session of the 1st National People's Congress in 1958, and has seen several rounds of revisions since."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Chinese compound surname",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1137633",
+      "retrieved_at": "2026-10-18T15:17:55.738Z",
+      "sha256": "839c4cf751b1a50ab36e1e2324f54e65a32bd11f4748ce678f8648019de76c46",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Chinese compound surname is a Chinese surname using more than one character.",
+        "Many of these compound surnames derive from Zhou dynasty Chinese noble and official titles, professions, place names and other areas, to serve a purpose.",
+        "Some are originally from various tribes that lived in ancient China, while others were created by joining two one-character family names.",
+        "Ouyang [歐陽/欧阳], Shangguan [上官], Sima [司馬/司马], Zhuge [諸葛/诸葛], Situ [司徒], Xiahou [夏侯], Huangfu [皇甫], and Huyan [呼延]) can still be found quite commonly in modern times with Ouyang, Shangguan, Sima and Situ appearing most frequently.",
+        "Many clans eventually took on a single-character surname for various reasons.",
+        "Lists below are arranged alphabetically by their Mandarin pinyin spellings."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Transcription into Chinese characters",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3920499",
+      "retrieved_at": "2026-10-18T15:17:55.738Z",
+      "sha256": "dda50ed674bebbbd1af57ed49193f9ec032483bc2f939d9cb198375175eae3be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Transcription into Chinese characters is the use of traditional or simplified Chinese characters to phonetically transcribe the sound of terms and names of foreign words to the Chinese language.",
+        "Transcription is distinct from translation into Chinese whereby the meaning of a foreign word is communicated in Chinese.",
+        "Since English classes are now standard in most secondary schools, it is increasingly common to see foreign names and terms left in their original form in Chinese texts.",
+        "However, for official and marketing use, and transliteration of names or words of Chinese minorities, transcription into characters remains very common.",
+        "Except for a handful of traditional exceptions, most modern transcription in mainland China uses the standardized Mandarin pronunciations exclusively."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "March 7th (Honkai: Star Rail)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=82451414",
+      "retrieved_at": "2026-10-18T15:17:55.738Z",
+      "sha256": "42b4217c7787fb3aa579784d6e360458aea58db92aed93b085984f60ea2578ae",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "March 7th (Chinese: 三月七; pinyin: Sān Yuè Qī) is a character in the video game Honkai: Star Rail, developed by miHoYo.",
+        "In the game, she is one of the members of the fictional organization known as the Astral Express crew, and frequently accompanies the protagonist Trailblazer on adventures.",
+        "She is also the game's mascot and is featured on the game's app icons.",
+        "In 2025, an alternate version of her called Evernight (长夜月; Chángyè Yuè; 'Long Night Moon') was released.",
+        "March 7th has generally received positive reviews due to her cute personality."
+      ]
+    }
+  ]
+}

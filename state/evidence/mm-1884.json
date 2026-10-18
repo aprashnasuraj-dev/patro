@@ -1,0 +1,119 @@
+{
+  "id": "mm-1884",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The denitrification-decomposition (DNDC) model",
+      "publisher": "Burleigh Dodds Science Publishing Limited",
+      "author": "; Proctor, Kyle W.; Chatterjee, Nilovna",
+      "published_at": "2025-12-30",
+      "url": "https://doi.org/10.19103/as.2025.0155.09",
+      "retrieved_at": "2026-10-18T17:04:23.030Z",
+      "sha256": "cb7e6b4c0c69bf25783b8bfdbecdb00858edefe0a63f7a41626432aad7fb3cde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "DNDC is a well-established biogeochemical crop model that has been featured in over 400 peer-reviewed publications and excels at quantifying agricultural impact under diverse environmental and management conditions.",
+        "DNDC employs a thermal time-driven biomass accumulation sub-model across all crops with differences arising from regionspecific parameters which serve as proxies for genetic variation and from simulation approaches tailored to crop physiology and environment.",
+        "For instance, DNDC simulates the nitrogen fixation of legumes and nitrous oxide emissions from flooded rice fields.",
+        "Deriving these parameters for new locations requires calibration data, typically sourced from site-specific literature.",
+        "This chapter outlines DNDC’s history and functionality and introduces a methodology that uses aggregated yield data to generate local crop parameters.",
+        "A case study in the US Corn Belt compares simulated yield results from parameters calibrated with different approaches.",
+        "The chapter highlights that less data- intensive calibration methodologies are critical for maximizing the benefits of models like DNDC."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Echinoderm",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=43143",
+      "retrieved_at": "2026-10-18T17:04:27.811Z",
+      "sha256": "27825cab9d5a02d8ba348cc1c5380082c9e2fd7c0eaeadacc17f8b81b2f8cf44",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An echinoderm () is any animal of the phylum Echinodermata (), which includes starfish, brittle stars, sea urchins, sand dollars and sea cucumbers, as well as the sessile sea lilies or \"stone lilies\".",
+        "While bilaterally symmetrical as larvae, as adults echinoderms are recognisable by their usually five-pointed radial symmetry (pentamerous symmetry), and are found on the sea bed at every ocean depth from the intertidal zone to the abyssal zone.",
+        "The phylum contains about 7,600 living species, making it the second-largest group of deuterostomes after the chordates, as well as the largest marine-only phylum.",
+        "The first definitive echinoderms appeared near the start of the Cambrian.",
+        "Echinoderms are important both ecologically and geologically.",
+        "Ecologically, there are few other groupings so abundant in the deep sea, as well as shallower oceans.",
+        "Most echinoderms are able to reproduce asexually and regenerate tissue, organs and limbs; in some cases, they can undergo complete regeneration from a single limb.",
+        "Geologically, the value of echinoderms is in their ossified dermal endoskeletons, which are major contributors to many limestone formations and can provide valuable clues as to the geological environment.",
+        "They were the most used species in regenerative research in the 19th and 20th centuries.",
+        "Further, some scientists hold that the radiation of echinoderms was responsible for the Mesozoic Marine Revolution."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Starfish",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=228613",
+      "retrieved_at": "2026-10-18T17:04:27.811Z",
+      "sha256": "8ba35b8059d887f8cc877c42721e8a96b9d1103e07e9cba3a984438a9b37d6b1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Starfish or sea stars are a class of echinoderms generally shaped like a star polygon.",
+        "(In common usage, these names are also often applied to ophiuroids, which are correctly referred to as brittle stars or basket stars.) Starfish are also known as asteroids because they form the taxonomic class Asteroidea ().",
+        "About 1,900 species of starfish live on the seabed, and are found in all the world's oceans, from warm, tropical zones to frigid, polar regions.",
+        "They can occur from the intertidal zone down to abyssal depths, at 6,000 m (20,000 ft) below the surface.",
+        "Starfish typically have a central disc and usually five arms, though some species have a larger number of arms.",
+        "The aboral or upper surface may be smooth, granular or spiny, and is covered with overlapping plates.",
+        "Many species are brightly coloured in various shades of red or orange, while others are blue, grey or brown.",
+        "Starfish have tube feet operated by a hydraulic system and a mouth at the centre of the oral or lower surface.",
+        "They are opportunistic feeders and are mostly predators on benthic invertebrates.",
+        "Several species have specialized feeding behaviours including eversion of their stomachs and suspension feeding.",
+        "They have complex life cycles and can reproduce both sexually and asexually.",
+        "Most can regenerate damaged parts or lost arms and they can shed arms as a means of defense."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Regeneration (biology)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=854081",
+      "retrieved_at": "2026-10-18T17:04:27.811Z",
+      "sha256": "ff925868eb77259061cdd853cd1c2c59462f6e06240cf5e68b87a89838dac009",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Regeneration in biology is the process of renewal, restoration, and tissue growth that makes genomes, cells, organisms, and ecosystems resilient to natural fluctuations or events that cause disturbance or damage.",
+        "Every species is capable of regeneration, from bacteria to humans.",
+        "Regeneration can either be complete where the new tissue is the same as the lost tissue, or incomplete after which the necrotic tissue becomes fibrotic.",
+        "At its most elementary level, regeneration is mediated by the molecular processes of gene regulation and involves the cellular processes of cell proliferation, morphogenesis and cell differentiation.",
+        "Regeneration in biology, however, mainly refers to the morphogenic processes that characterize the phenotypic plasticity of traits allowing multi-cellular organisms to repair and maintain the integrity of their physiological and morphological states.",
+        "Above the genetic level, regeneration is fundamentally regulated by asexual cellular processes.",
+        "For example, hydra perform regeneration but reproduce by the method of budding.",
+        "The regenerative process occurs in two multi-step phases: the preparation phase and the redevelopment phase.",
+        "Regeneration begins with an amputation which triggers the first phase.",
+        "Right after the amputation, migrating epidermal cells form a wound epithelium which thickens, through cell division, throughout the first phase to form a cap around the site of the wound.",
+        "The cells underneath this cap then begin to rapidly divide and form a cone shaped end to the amputation known as a blastema.",
+        "Included in the blastema are skin, muscle, and cartilage cells that de-differentiate and become similar to stem cells in that they can become multiple types of cells."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Autotomy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2078585",
+      "retrieved_at": "2026-10-18T17:04:27.811Z",
+      "sha256": "6648d72f9a9f1a0975bbc3f0a5a95771e3536b38c2951e77bf70ea24b6716c68",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autotomy ('self-amputation', from the Ancient Greek auto-, \"self-\" and tome, \"severing\") is the behaviour whereby an animal sheds or discards an appendage, usually as a self-preservation mechanism to elude a predator's grasp or to distract the predator and thereby allow escape.",
+        "Some animals are able to regenerate the lost body part later.",
+        "Autotomy is thought to have evolved independently at least nine times."
+      ]
+    }
+  ]
+}

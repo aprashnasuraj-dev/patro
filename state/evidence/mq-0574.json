@@ -1,0 +1,41 @@
+{
+  "id": "mq-0574",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Ozone Trends Determined from the Dobson Ozone Network",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Angell, JK",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36603s",
+      "retrieved_at": "2026-10-18T18:58:58.781Z",
+      "sha256": "765a8768bcad54fb5d05c8a7ab0ad1faca4bd6257ec2df5c5fa8483eb4146c2e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the southern hemisphere the total O3 increased slightly prior to 1968 and has decreased slightly since, but neither change approaches significance.",
+        "It is shown that for the past 12 years the trend in total O3 amount in north temperate latitudes has been closely related to the trend in stratospheric water vapor in Washington, D.",
+        "and equatorial tropopause temperature, but inversely related to the trend in stratospheric temperature in north temperate latitudes."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Detection and Interpretation of Trends in Oxidant Air Quality",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Wayne, LG; Wilson, KW; Boyd, CL",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36606s",
+      "retrieved_at": "2026-10-18T18:59:11.270Z",
+      "sha256": "959505fa9c2164b2dbd1a0a5483967e4d1c865954f5b65d939094cfe279cfdd5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ambient air concentrations of photochemical oxidants, monitored over a five-year period in Philadelphia, Denver, and five regions in California, were examined for evidence of trends in air quality.",
+        "Statistically significant trends were identified in the cases of Denver and the San Francisco Bay area.",
+        "The oxidant air quality in the San Francisco Bay area was found to be significantly related to the rates of emission of oxidant precursors.",
+        "The relation is positive in the case of hydrocarbons, but negative for oxides of nitrogen.",
+        "Geographical and meteorological factors are also important in determining the distribution of oxidant levels, and various indexes of oxidant air quality show different statistical behavior in regard to the detection of trends."
+      ]
+    }
+  ]
+}

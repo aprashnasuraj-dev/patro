@@ -1,0 +1,82 @@
+{
+  "id": "mm-1546",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bruce Willis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=64673",
+      "retrieved_at": "2026-10-18T16:51:21.516Z",
+      "sha256": "7a2e97da2ad7975fdf74b3ea643a8c109e393abd3ed36d4decb45934c39da928",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Walter Bruce Willis (born March 19, 1955) is a retired American actor.",
+        "In the last years of his career, he starred in many low-budget direct-to-video films, which were poorly received.",
+        "Willis retired in 2022 due to aphasia and was diagnosed with frontotemporal dementia in 2023.",
+        "Willis has received various accolades throughout his career, including a Golden Globe Award, two Primetime Emmy Awards and two People's Choice Awards.",
+        "Films featuring Willis have grossed between US$2.64 billion and US$3.05 billion at North American box offices, and he was the eighth-highest-grossing leading actor in 2010s."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Renting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=342324",
+      "retrieved_at": "2026-10-18T16:51:21.516Z",
+      "sha256": "b868fa0d9a12e57a936ca63c299a778b474c1903af0d87d7aac3fcf1c3f100ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Renting, also known as hiring or letting, is an agreement where a payment is made for the use of a good, service or property owned by another over a fixed period of time.",
+        "Typically a written agreement is signed to establish the roles and expectations of both the tenant and landlord.",
+        "There are many different types; a rental agreement tends to refer to short-term rental, whereas lease refers to longer-term rental, also known as leasing."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Rent control in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=419900",
+      "retrieved_at": "2026-10-18T16:51:21.516Z",
+      "sha256": "03bd72b5e646175a497084f2bbf323c17bbf2454a4c122b10b98b1be4b5f61d7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the United States, rent control refers to laws or ordinances that set price controls on the rent of residential housing to function as a price ceiling.",
+        "As of 2022, seven states (California, New York, New Jersey, Maryland, Maine, Oregon, and Minnesota) and the District of Columbia have localities in which some form of residential rent control is in effect (for normal structures, excluding mobile homes).",
+        "Thirty-seven states either prohibit or preempt rent control, while seven states allow their cities to enact rent control but have no cities that have implemented it.",
+        "There is a consensus among economists that rent control reduces the quality and quantity of rental housing units."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Untouchables (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3842730",
+      "retrieved_at": "2026-10-18T16:51:21.516Z",
+      "sha256": "2ecef4aa0cdd4423c0b2fcc4e1e64a902571bcc1113c553014543b2ab4dd9568",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Untouchables is a 1987 American crime film directed by Brian De Palma, produced by Art Linson and written by David Mamet.",
+        "It stars Kevin Costner, Charles Martin Smith, Andy García, Robert De Niro and Sean Connery.",
+        "Set in 1930 Chicago, the film follows Eliot Ness (Costner) as he forms the Untouchables team to bring Al Capone (De Niro) to justice during Prohibition.",
+        "It is the fourth film on which De Niro and De Palma collaborated, after Greetings (1968, De Niro's first lead in a feature role), The Wedding Party (1969) and Hi, Mom!",
+        "The screenplay is loosely based on Ness's and Oscar Fraley's 1957 book The Untouchables and the real-life events on which it is based, although most of its plot is fictionalized.",
+        "The Academy Award-nominated, Grammy Award-winning score is composed by Ennio Morricone and features period music by Duke Ellington.",
+        "The Untouchables premiered on June 2, 1987, in New York City, and went into general release by Paramount Pictures on June 3, 1987, in the United States.",
+        "The film grossed $187 million worldwide and received generally positive reviews from critics.",
+        "It was nominated for four Academy Awards; Connery won the Academy Award for Best Supporting Actor, as well as the Golden Globe Award for Best Supporting Actor – Motion Picture."
+      ]
+    }
+  ]
+}

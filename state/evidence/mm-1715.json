@@ -1,0 +1,108 @@
+{
+  "id": "mm-1715",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Feasibility of Extremely Heavy Lift Hot Air Balloons and Airships",
+      "publisher": "Medwin Publishers",
+      "author": "MV, Shubov",
+      "published_at": "2022-10-12",
+      "url": "https://doi.org/10.23880/psbj-16000221",
+      "retrieved_at": "2026-10-18T17:00:06.410Z",
+      "sha256": "def7543b9badc8e963f4de1976bc523d264df70214eef09df4ec45a1549638a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "State of the art airships and aerostats (air vehicles) use hydrogen and helium as lifting gases.",
+        "Hydrogen is extremely flammable, while helium is rare and expensive.",
+        "In the present work, feasibility of air vehicles using hot air, hot nitrogen, and/or hot mixture as lifting gases is demonstrated.",
+        "Thermal power requirements for air vehicles using hot lifting gases are calculated.",
+        "1) It is shown that for extremely heavy aerial vehicles, whose gross takeoff mass exceeding 3,000 tons, required thermal power is proportional to 1/3 Mvehicle where Mvehicle is an air vehicle mass.",
+        "2) For lighter aerial vehicles, whose gross takeoff mass is below 100 tons, required thermal power is proportional to 2/3 Mvehicle .",
+        "Specific thermal power requirement is low for extremely heavy vehicles and high for light vehicles (For 1000 ton gross takeoff weight, specific thermal power requirements are from is 41 W/ kg to 52 W/kg).",
+        "3) Using hot nitrogen and/or nitrogenhydrogen mixture decreases thermal power requirements by 10% to 24%."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Aerostat",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=704287",
+      "retrieved_at": "2026-10-18T17:00:11.389Z",
+      "sha256": "725c6e977814a486fce1d06763acd4b23b45d8d5362ba0c42c4d391adc53d56b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An aerostat (from Ancient Greek  ἀήρ (aḗr) 'air' and  στατός (statós) 'standing', via French) or lighter-than-air aircraft is an aircraft that relies on buoyancy to maintain flight.",
+        "Aerostats include unpowered balloons (free-flying or tethered) and powered airships.",
+        "The relative density of an aerostat as a whole is lower than that of the surrounding atmospheric air (hence the name \"lighter-than-air\").",
+        "Its main component is one or more gas capsules made of lightweight skins, containing a lifting gas (hot air, or any gas with lower density than air, typically hydrogen or helium) that displaces a large volume of air to generate enough buoyancy to overcome its own weight.",
+        "Payload (passengers and cargo) can then be carried on attached components such as a basket, a gondola, a cabin or various hardpoints.",
+        "With airships, which need to be able to fly against wind, the lifting gas capsules are often protected by a more rigid outer envelope or an airframe, with other gasbags such as ballonets to help modulate buoyancy.",
+        "Aerostats are so named because they use aerostatic buoyant force that does not require any forward movement through the surrounding air mass, resulting in the inherent ability to levitate and perform vertical takeoff and landing.",
+        "This contrasts with the heavier-than-air aerodynes that primarily use aerodynamic lift, which must have consistent airflow over an aerofoil (wing) surface to stay airborne.",
+        "The term has also been used in a narrower sense, to refer to the statically tethered balloon in contrast to the free-flying airship."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Balloon (aeronautics)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=809005",
+      "retrieved_at": "2026-10-18T17:00:11.389Z",
+      "sha256": "a2a94c673e4cc11cdb46cbdd81e56679fb858079c9a2cfc327351b17a16a20f5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In aeronautics, a balloon is an unpowered aerostat, which remains aloft or floats due to its buoyancy.",
+        "It may use hot air as a lifting gas, or it will use gas that is not air like hydrogen or helium.",
+        "A balloon may be free, moving with the wind, or tethered to a fixed point.",
+        "It is distinct from an airship, which is a powered aerostat that can propel itself through the air in a controlled manner.",
+        "Many balloons have a basket, gondola, or capsule suspended beneath the main envelope for carrying people or equipment (including cameras and telescopes, and flight-control mechanisms)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gas balloon",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1244402",
+      "retrieved_at": "2026-10-18T17:00:11.389Z",
+      "sha256": "b56f7bc8f96478ffddbbe39ec990ac5612c8b4b1e79d9aa16bbd63affe81afce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A gas balloon is a balloon that rises and floats in the air because it is filled with a gas lighter than air (such as helium or hydrogen).",
+        "When not in flight, it is tethered to prevent it from flying away and is sealed at the bottom to prevent the escape of gas.",
+        "A gas balloon may also be called a Charlière for its inventor, the Frenchman Jacques Charles.",
+        "Today, familiar gas balloons include large blimps and small latex party balloons.",
+        "For nearly 200 years, well into the 20th century, manned balloon flight utilized gas balloons before hot-air balloons became dominant.",
+        "Without power, heat or fuel, untethered flights of gas balloons depended on the skill of the pilot.",
+        "Gas balloons have greater lift for a given volume, so they do not need to be so large, and they can stay up for much longer than hot air balloons."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Hot air ballooning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4282957",
+      "retrieved_at": "2026-10-18T17:00:11.389Z",
+      "sha256": "ca8d455499a531095b080c4ec4932cfc49168ed7b0d61e669052da2c83d785f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hot air ballooning is the recreational and competitive adventure sport of flying hot air balloons.",
+        "Attractive aspects of ballooning include the exceptional quiet  (except when the propane burners are firing), the lack of a feeling of movement, and the bird's-eye view.",
+        "Since the balloon moves with the direction of the winds, the passengers feel absolutely no wind, except for brief periods during the flight when the balloon climbs or descends into air currents of different direction or speed.",
+        "Hot air ballooning has been recognized by Fédération Aéronautique Internationale (FAI) as the safest air sport in aviation, and fatalities in hot air balloon accidents are rare, according to statistics from the National Transportation Safety Board (NTSB)."
+      ]
+    }
+  ]
+}

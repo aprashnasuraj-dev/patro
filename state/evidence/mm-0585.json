@@ -1,0 +1,123 @@
+{
+  "id": "mm-0585",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "1 Institutional Economics and the Minimum Wage: Broadening the Theoretical and Policy Debate",
+      "publisher": "OpenAlex",
+      "author": "Bruce E. Evan Kaufman",
+      "published_at": "2008-01-01",
+      "url": "https://openalex.org/W7214272747",
+      "retrieved_at": "2026-10-18T15:35:04.225Z",
+      "sha256": "b5f09fd9f0f387e72488046776c7481277c051104b51804cbf1f382be25a3f9b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract: Debate among labor economists on the pros and cons of a minimum wage law has come to focus on whether labor markets are competitive or monopsonistic.",
+        "The purpose of this paper is, first, to suggest that this perspective is too narrow and, second, to use principles and concepts of institutional economics to demonstrate why.",
+        "One revisionist implication is that a minimum wage under plausible conditions may increase economic efficiency even in a purely competitive labor market.",
+        "The minimum wage once had strong support among labor economists, most of who were affiliated with or sympathetic to the institutional school."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Minimum wage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18862",
+      "retrieved_at": "2026-10-18T15:35:04.225Z",
+      "sha256": "701c54a90ebc9bd7ed1fe609d9102b744c0e744cb0d4508ab28ad29854e381e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A minimum wage is the lowest remuneration that employers can legally pay their employees—the price floor below which employees may not sell their labor.",
+        "Most countries had introduced minimum wage legislation by the end of the 20th century.",
+        "Because minimum wages increase the cost of labor, companies often try to avoid minimum wage laws by using gig workers, by moving labor to locations with lower or nonexistent minimum wages, or by automating job functions.",
+        "Minimum wage policies can vary significantly between countries or even within a country, with different regions, sectors, or age groups having their own minimum wage rates.",
+        "These variations are often influenced by the cost of living, regional economic conditions, and industry-specific factors.",
+        "The movement for minimum wages was initially motivated by a desire to stop the exploitation of workers in sweatshops by employers who were thought to have unfair bargaining power over them.",
+        "Over time, minimum wages came to be seen as a way to help lower-income families.",
+        "Modern national laws enforcing compulsory union membership and prescribing minimum wages for members were first passed in New Zealand in 1894.",
+        "Although minimum wage laws are now in effect in many jurisdictions, differences of opinion exist about the benefits and drawbacks of a minimum wage.",
+        "Because it acts as a price floor on labor, standard supply and demand models predict that minimum wages will lead to a surplus of labor (unemployment), particularly among low-skilled workers.",
+        "However, they can increase labor market efficiency and employment in monopsony scenarios, where individual employers have some wage-setting power over the market as a whole.",
+        "Supporters of the minimum wage say it increases the standard of living of workers, reduces poverty, reduces inequality, and boosts morale."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Price floor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1434747",
+      "retrieved_at": "2026-10-18T15:35:04.225Z",
+      "sha256": "9f7ab937e169c712d37d20dacaf9984d164e647db5e22a2bcc5b4ff50c61c620",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A price floor is a government- or group-imposed price control or limit on how low a price can be charged for a product, good, commodity, or service.",
+        "It is one type of price support; other types include supply regulation and guarantee government purchase price.",
+        "A price floor must be higher than the equilibrium price in order to be effective.",
+        "Governments use price floors to keep certain prices from going too low.",
+        "Two common price floors are minimum wage laws and supply management in Canadian agriculture.",
+        "Other price floors include regulated US airfares prior to 1978 and minimum price per-drink laws for alcohol.",
+        "While price floors are often imposed by governments, there are also price floors which are implemented by non-governmental organizations such as companies, such as the practice of resale price maintenance.",
+        "A related government- or group-imposed intervention, which is also a price control, is the price ceiling; it sets the maximum price that can legally be charged for a good or service, with a common government-imposed example being rent control."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Minimum wage in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11477230",
+      "retrieved_at": "2026-10-18T15:35:04.225Z",
+      "sha256": "7c8f128d113f03a1ab274da2c96cb3830dc70d9c6e0e20a25aa2043cf5a666bc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the United States, the minimum wage is set by federal U.S.",
+        "The first federal minimum wage was instituted in the National Industrial Recovery Act of 1933, signed into law by President Franklin D.",
+        "In 1938, the Fair Labor Standards Act established it at 25¢ an hour ($5.72 in 2025).",
+        "In 1968, its purchasing power peaked at $1.60 ($14.81 in 2025).",
+        "As a result of inflation in the decades since, this remains the highest purchasing power the minimum wage has ever had.",
+        "In 2009, Congress increased it to $7.25 per hour with the Fair Minimum Wage Act of 2007.",
+        "Employers have to pay workers the highest minimum wage of those prescribed by federal, state, and local laws.",
+        "As of July 2025, 22 states and the District of Columbia have minimum wages above the federal level.",
+        "In 2024, 843,000 hourly paid workers earned the federal minimum wage or less, representing 1.0 percent of hourly paid workers.",
+        "Workers under age 25 accounted for 43 percent of that group, and nearly three quarters worked in service occupations, mostly in food preparation and serving jobs.",
+        "The estimates exclude overtime pay, tips, and commissions and do not measure coverage under federal, state, or local minimum-wage laws.",
+        "In January 2020, almost 90% of Americans earning the minimum wage were earning more than the federal minimum wage due to local minimum wages."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Wage compression",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38868622",
+      "retrieved_at": "2026-10-18T15:35:04.225Z",
+      "sha256": "2f613d41477bc6614926c2a8431b65e0f3f6e27d9b4b7b1c36a67bdeaa14f2f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wage compression (also known as salary compression and pay compression) refers to the empirical regularity that wages for low-skilled workers and wages for high-skilled workers tend toward one another.",
+        "As a result, the prevailing wage for a low-skilled worker exceeds the market-clearing wage, resulting in unemployment for low-skilled workers.",
+        "Meanwhile, the prevailing wage for high-skilled workers is below the market-clearing wage, creating a short supply of high-skilled workers (and thus no unemployment of high-skilled workers).",
+        "Perfectly competitive labour markets can still exhibit a wage compression effect.",
+        "In a perfectly competitive market, workers of different skill levels receive different wages  and workers of the same skill level will receive the same wage no matter which firm they work in.",
+        "However,  the distribution of the skills of employees may be wider than the distribution of their wages.",
+        "Akerlof and Yellen (1990) propose a model that uses the fair-wage hypothesis to explain wage compression.",
+        "The fair-wage hypothesis suggests that the effort put forth by a worker is proportional to the fairness of her wage, as compared to other workers within the firm.",
+        "Accordingly, if executives of a given firm are compensated much more highly than the firm's unskilled workers, the unskilled workers will exert a lower level of effort.",
+        "In equilibrium, high-skilled wages tend downward, while low-skilled wages tend upward, which defines wage compression.",
+        "Moene and Wallerstein (2006) argue that intentional wage compression led to a shift in favour of higher-productivity industries in Scandinavia, as it made low productivity industries less profitable and high productivity industries more profitable.",
+        "Companies that experience salary compression are more likely to experience salary compression with less experienced new or existing employees than with more experienced tenured employees."
+      ]
+    }
+  ]
+}

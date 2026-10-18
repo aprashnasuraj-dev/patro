@@ -1,0 +1,130 @@
+{
+  "id": "mm-0414",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why doesn’t water help with spicy food? What about milk or beer?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Eldridge, Daniel",
+      "published_at": "2024-06-13",
+      "url": "https://theconversation.com/why-doesnt-water-help-with-spicy-food-what-about-milk-or-beer-226624",
+      "retrieved_at": "2026-10-18T15:18:37.069Z",
+      "sha256": "d7e6a1aafb4a65ff30f35c5e47292d5c76d74365123dac67b47fc5feaebc59c2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Hello Dinny/Shutterstock Why doesn’t water help with spicy food?",
+        "It’s found in chillies, jalapeños, cayenne pepper, and is even the active ingredient in pepper spray .",
+        "The burning sensation comes from receptors in the mouth reacting to capsaicin and sending a signal to the brain that something is very hot.",
+        "That’s why the “hot” chilli sensation feels so real – we even respond by sweating.",
+        "To alleviate the heat, you need to remove the capsaicin from your mouth.",
+        "So why doesn’t drinking water help make that spicy feeling go away?",
+        "Water-loving and water-hating molecules To help us choose what might wash the capsaicin away most effectively, it’s helpful to know that capsaicin is a hydrophobic molecule.",
+        "That means it hates being in contact with water and will not easily mix with it.",
+        "Look what happens when you try to mix hydrophobic sand with water.",
+        "On the other hand, hydrophilic molecules love water and are very happy to mix with it.",
+        "You can easily dissolve hydrophilic sugar in water, but it’s hard to wash away hydrophobic oils from your pan using tap water alone.",
+        "If you try to wash hydrophobic capsaicin away with water, it won’t be very effective, because hydrophilic and hydrophobic substances don’t mix."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Will Low-Income Populations Love Spicy Foods More? Accounting for Tastes",
+      "publisher": "Munich Personal RePEc Archive (Ludwig Maximilian University of Munich)",
+      "author": "Chao Ma; Ze Song; Xuhui Sun",
+      "published_at": "2015-12-15",
+      "url": "https://openalex.org/W2204654225",
+      "retrieved_at": "2026-10-18T15:18:37.281Z",
+      "sha256": "6aa968f6b3fd1fcdf9fff7e9237cc183d542401a862c0f80180f9eaba5c0f9ac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Based on the Theory of Rational Addiction (TORA), this paper identifies the correlation between income and the preference for spicy foods by analysing the China Health and Nutrition Survey (CHNS) data.",
+        "The results show that compare with high-income residents of same area, the low-income residents prefer to spicy foods in China.",
+        "According to the result, the channel of health behaviours and health awareness are possible causal channels for the negative correlation between income and the preference for spicy foods, rather than health capital stock and food selection."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Vietnamese cuisine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32546",
+      "retrieved_at": "2026-10-18T15:18:37.281Z",
+      "sha256": "1267ab0b32ce083c10cf4f2ed7e34cd64f4c27f0d61ba7b75a6b07177018e5e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vietnamese cuisine encompasses the foods and beverages originated from Vietnam.",
+        "Meals feature a combination of five fundamental tastes (ngũ vị): sweet, salty, bitter, sour, and spicy.",
+        "The distinctive nature of each dish reflects one or more elements (such as nutrients and colors), which are also based around a five-pronged philosophy.",
+        "Vietnamese recipes use ingredients like lemongrass, ginger, mint, Vietnamese mint, brown sugar, long coriander, Saigon cinnamon, bird's eye chili, soy sauce, lime, and Thai basil leaves.",
+        "Traditional Vietnamese cooking has often been characterised as using fresh ingredients, not using much dairy or oil, having interesting textures, and making use of herbs and vegetables.",
+        "The cuisine is also low in sugar and is almost always naturally gluten-free, as many of the dishes are rice-based instead of wheat-based, made with rice noodles, bánh tráng rice paper wrappers and rice flour."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Capsaicin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57421",
+      "retrieved_at": "2026-10-18T15:18:37.281Z",
+      "sha256": "1e3cff32c478b8b72ad9440f1f6344c434e9f0d3ddf9e74e927575d87cce7e13",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Capsaicin (8-methyl-N-vanillyl-6-nonenamide) (, commonly ) is a toxin that is the main active component of chili peppers and gives them their distinct pungent, \"spicy\" or \"hot\" taste.",
+        "It is a potent irritant for mammals  for which it produces a sensation of burning in any tissue with which it comes into contact.",
+        "Capsaicin and several related amides (capsaicinoids) are produced as secondary metabolites by chili peppers, likely as deterrents against eating by mammals and against the growth of fungi.",
+        "Pure capsaicin is a hydrophobic, highly pungent (i.e., spicy) crystalline solid."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Pungency",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25003876",
+      "retrieved_at": "2026-10-18T15:18:37.281Z",
+      "sha256": "126d5f011124e2c30b4a7223b0858fe67e34bf08af0952f06fe9c446a4b7ea38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pungency (  PUN-jən-see), commonly referred to as spiciness, hotness or heat,  is a sensation that contributes to the flavor of certain foods such as chili peppers.",
+        "The term piquancy ( PEEK-ən-see) is sometimes applied to foods with a lower degree of pungency that are \"agreeably stimulating to the palate\".",
+        "In addition to chili peppers, piquant ingredients include wasabi, horseradish and mustard.",
+        "The primary substances responsible for pungency are capsaicin (in chilis), piperine (in peppercorns) and allyl isothiocyanate (in radishes, mustard and wasabi)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Hot Ones",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54547079",
+      "retrieved_at": "2026-10-18T15:18:37.281Z",
+      "sha256": "8a64301d91394648e71add5f32e934f9e693bf5b01dd32cd94637213a62986aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hot Ones is an American YouTube talk show, created by Sean Evans and Chris Schonberger, hosted by Evans and produced by First We Feast and formerly Complex Media.",
+        "Its basic premise involves celebrities being interviewed by Evans over a platter of increasingly spicy chicken wings.",
+        "Several spin-offs have been produced, including the game show Hot Ones: The Game Show on the cable television network TruTV, and Truth or Dab, a truth or dare style competition that also airs on the First We Feast YouTube channel.",
+        "Hot Ones is also a food brand as frozen chicken wings and hot sauces have been released under the Hot Ones brand based on sauces and flavors from the show.",
+        "Hot Ones branded Hot Pockets and Pringles have also been released.",
+        "As of August 7, 2025, the show has produced twenty-seven seasons (with three seasons per calendar year since 2018).",
+        "Most seasons produce between 10 and 16 episodes, though prior to 2018 there were longer seasons consisting of more episodes; approximately 40 episodes air per year.",
+        "Each season features a different line-up of hot sauces, though certain sauces remain from year-to-year, including three self-produced sauces, \"Hot Ones – The Classic\" in spot 1, \"Hot Ones – Los Calientes\" in either spot 4 or 5, and \"Hot Ones – The Last Dab\" as the final sauce.",
+        "Since Season 2, \"Da' Bomb Beyond Insanity\" has occupied spot 8.",
+        "Guests who do not complete the gauntlet of hot sauces are placed in the \"Hall of Shame\" or, beginning in Season 17, the \"Wall-Most Made it.\"\nThe show has been nominated for several awards, winning two Streamy Awards and its host, Sean Evans, has been nominated for Daytime Emmy Award.",
+        "In 2022, Hot Ones received a nomination for the Daytime Emmy Award for Outstanding Talk Show Entertainment.",
+        "The show has been noted for its deep-probing questions, often digging up material from a celebrity's background not often discussed on other interview shows, with Hollywood Insider calling it \"the hottest celebrity interview right now\" in 2021."
+      ]
+    }
+  ]
+}

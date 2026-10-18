@@ -1,0 +1,151 @@
+{
+  "id": "mm-0086",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Gravitational waves are helping us crack the mystery of how pairs of black holes form",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Mandel, Ilya",
+      "published_at": "2017-08-23",
+      "url": "https://theconversation.com/gravitational-waves-are-helping-us-crack-the-mystery-of-how-pairs-of-black-holes-form-82789",
+      "retrieved_at": "2026-10-18T14:58:55.045Z",
+      "sha256": "5676882d759833ee6632913ed110c8f0811c9e302b2f2a00cfa269def656d712",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This was the first ever observation of a “gravitational wave” – a minute ripple in the structure of spacetime itself – predicted by Albert Einstein a century ago.",
+        "The signal came from two black holes merging more than a billion light years away, and reached our planet on that very morning.",
+        "Two more detections followed (and a third likely one), all from mergers of pairs of black holes.",
+        "Already, these measurements are starting to help scientists unravel some of the universe’s best-kept secrets.",
+        "Our new study, published in Nature , shows just how close we are to working out how pairs of black holes form.",
+        "The black holes studied by LIGO – each weighing in at between 10 and 30 times the mass of the sun – collide while moving at half the speed of light, twisting space and time as they do so.",
+        "The merger of two black holes releases more energy in a fraction of a second than all of the stars in the visible universe combined.",
+        "Kanijoman/Flickr , CC BY-SA However, by the time the spacetime distortions, travelling at the speed of light for more than a billion years, get to the Earth, the ripples are very weak indeed – stretching and squeezing space by less than one part in 10 21 .",
+        "That means they make the mirrors in the LIGO detector move by less than a thousandth of the size of an atomic nucleus.",
+        "The incomplete science of black holes Black holes are infinitely dense remnants of massive stars.",
+        "Studying them provides astrophysicists with a glimpse into the lives of these stars.",
+        "And one of the key questions puzzling us since the first gravitational wave detection is: how did these heavy black hole pairs get close enough to merge?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How did the odd black holes detected by LIGO form – and can we spot them in the sky?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Smartt, Stephen",
+      "published_at": "2016-02-16",
+      "url": "https://theconversation.com/how-did-the-odd-black-holes-detected-by-ligo-form-and-can-we-spot-them-in-the-sky-54672",
+      "retrieved_at": "2026-10-18T14:58:56.082Z",
+      "sha256": "94a49d7e2620437ba882702240c3b1746ed5d1225868c7193b7778efda5245b7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How did the odd black holes detected by LIGO form – and can we spot them in the sky?",
+        "Skip to content Academic rigor, journalistic flair How did the odd black holes detected by LIGO form – and can we spot them in the sky?",
+        "Published: February 16, 2016 10:07am EST A needle in a haystack?",
+        "Pan Starrs telescope is scanning billions of galaxies to find the black holes emitting gravitational waves.",
+        "Just days after the announcement that gravitational waves from two merging black holes have been detected , astrophysicists are already pondering what this means for our understanding of stars.",
+        "New studies are already being released and we can expect a flood of creative ideas in the near future.",
+        "One of the most surprising things about the discovery is the huge size of the black holes involved which is challenging our understanding of how they form.",
+        "One way is by pinpointing the black holes on the sky so we can try to study them using regular telescopes.",
+        "Massive mystery LIGO, the observatory that detected the gravitational waves, is a so-called laser interferometer .",
+        "It estimated that the two merging black holes would have masses of about 36 and 29 times that of the sun respectively (described as 36 and 29 “ solar masses ”), calculated from the frequency of the gravitational waves.",
+        "Black holes form after huge supernovae explosions , which can only be produced by massive stars.",
+        "The masses of the black holes in our own galaxy can be measured by looking at the speed of stars orbiting a black hole."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Black hole",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4650",
+      "retrieved_at": "2026-10-18T14:58:56.792Z",
+      "sha256": "dc10f60912d8f4efee577d5ddfe7ecba701009e49c4cab5a2885a6ee0b65c673",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A black hole is an astronomical body so compact that its gravity prevents anything, including light, from escaping.",
+        "Albert Einstein's theory of general relativity, which describes gravitation as the curvature of spacetime, predicts that any sufficiently compact mass will form a black hole.",
+        "In general relativity, crossing a black hole's event horizon traps an object inside but produces no locally detectable change.",
+        "General relativity also predicts that every black hole should have a central singularity, where the curvature of spacetime is infinite.",
+        "Objects whose gravitational fields are too strong for light to escape were first considered in the 18th century.",
+        "In 1916, the first solution of general relativity that would characterise a black hole was found.",
+        "By the late 1950s, this solution began to be interpreted physically as a region of space from which nothing can escape.",
+        "Black holes were long considered a mathematical curiosity; it was not until the 1960s that theoretical work showed they were a generic prediction of general relativity.",
+        "The first widely accepted black hole was Cygnus X-1, an x-ray source  proposed as a black hole binary through several studies between 1971 and 1974.",
+        "Black holes typically form as part of a supernova event when massive stars collapse at the end of their life cycle.",
+        "After a black hole has formed, it can grow by absorbing mass from its surroundings.",
+        "Supermassive black holes of millions of solar masses may form by absorbing stars and merging with other black holes, or via direct collapse of gas clouds."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Supermassive black hole",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=215706",
+      "retrieved_at": "2026-10-18T14:58:56.792Z",
+      "sha256": "2fc062454ef917183f36ed372b95ec7075e3f007bcff06321a59b5bde22b8797",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A supermassive black hole (SMBH or sometimes SBH) is the largest type of black hole, with its mass being on the order of hundreds of thousands, or millions to billions, of times the mass of the Sun (M☉).",
+        "Black holes are a class of astronomical objects that have undergone gravitational collapse, leaving behind spheroidal regions of space that nothing, not even light, can escape.",
+        "Observational evidence indicates that almost every large galaxy has a supermassive black hole at its center.",
+        "For example, the Milky Way galaxy has a supermassive black hole at its center, corresponding to the radio source Sagittarius A*.",
+        "Accretion of interstellar gas onto supermassive black holes is the process responsible for powering active galactic nuclei (AGNs) and quasars.",
+        "Two supermassive black holes have been directly imaged by the Event Horizon Telescope; these are Sagittarius A*, at the center of the Milky Way, and the black hole at the center of Messier 87, a giant elliptical galaxy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Micro black hole",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=709427",
+      "retrieved_at": "2026-10-18T14:58:56.792Z",
+      "sha256": "6d8b8b216da1ad7ddbaec03bf9ecae399d0276acd89616f2a3d68785ebf1b029",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Micro black holes, also known as mini black holes and quantum mechanical black holes, are hypothetical tiny (<1 M☉) black holes, for which quantum mechanical effects play an important role.",
+        "The concept that black holes may exist that are smaller than stellar mass was introduced in 1971 by Stephen Hawking.",
+        "It is possible that such black holes were created in the high-density environment of the early universe (or Big Bang), or possibly through subsequent phase transitions (referred to as primordial black holes).",
+        "They might be possible to observe through the particles they are expected to emit by Hawking radiation.",
+        "Some hypotheses involving additional space dimensions predict that micro black holes could be formed at energies as low as the teraelectronvolt (TeV) range, which are available in particle accelerators such as the Large Hadron Collider.",
+        "Popular concerns have then been raised over end-of-the-world scenarios (see Safety of particle collisions at the Large Hadron Collider).",
+        "However, such quantum black holes would instantly evaporate, either totally or leaving only a very weakly interacting residue.",
+        "Beside the theoretical arguments, cosmic rays hitting the Earth do not produce any damage, although they reach energies in the range of hundreds of TeV."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Black hole information paradox",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=851008",
+      "retrieved_at": "2026-10-18T14:58:56.792Z",
+      "sha256": "a915211ad4130fc80ced0595c750b2d51eac26a95afb66f365ce5c3f314a7744",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The black hole information paradox is an unsolved problem in physics and a paradox that appears when the predictions of quantum mechanics and general relativity are combined.",
+        "The theory of general relativity predicts the existence of black holes that are regions of spacetime from which nothing—not even light—can escape.",
+        "In the 1970s, Stephen Hawking applied the semiclassical approach of quantum field theory in curved spacetime to such systems and found that an isolated black hole would emit a form of radiation (now called Hawking radiation in his honor).",
+        "He also argued that the detailed form of the radiation would be independent of the initial state of the black hole, and depend only on its mass, electric charge and angular momentum.",
+        "The information paradox appears when one considers a process in which a black hole is formed through a physical process and then evaporates away entirely through Hawking radiation.",
+        "Hawking's calculation suggests that the final state of radiation would retain information only about the total mass, electric charge and angular momentum of the initial state.",
+        "Since many different states can have the same mass, charge and angular momentum, this suggests that many initial physical states could evolve into the same final state.",
+        "Therefore, information about the details of the initial state would be permanently lost.",
+        "However, this loss violates a core precept of quantum physics known as unitarity.",
+        "In quantum mechanics the state of the system is encoded by its wave function and the evolution of the wave function is determined by a unitary operator.",
+        "This means the wave function at any instant of time can be used to determine the wave function either in the past or the future.",
+        "Hawking radiation would seem to conflict with the unitarity principle."
+      ]
+    }
+  ]
+}

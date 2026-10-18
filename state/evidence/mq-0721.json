@@ -1,0 +1,67 @@
+{
+  "id": "mq-0721",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Ozone Trends Determined from the Dobson Ozone Network",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Angell, JK",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36603s",
+      "retrieved_at": "2026-10-18T19:05:38.854Z",
+      "sha256": "765a8768bcad54fb5d05c8a7ab0ad1faca4bd6257ec2df5c5fa8483eb4146c2e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the southern hemisphere the total O3 increased slightly prior to 1968 and has decreased slightly since, but neither change approaches significance.",
+        "It is shown that for the past 12 years the trend in total O3 amount in north temperate latitudes has been closely related to the trend in stratospheric water vapor in Washington, D.",
+        "and equatorial tropopause temperature, but inversely related to the trend in stratospheric temperature in north temperate latitudes."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Air Quality Analysis of Ulaanbaatar",
+      "publisher": "World Bank, Washington, DC",
+      "author": null,
+      "published_at": "2011-12",
+      "url": "https://doi.org/10.1596/26802",
+      "retrieved_at": "2026-10-18T19:05:40.613Z",
+      "sha256": "07010d82ec02be9981456b599ad189469dfa8f2dc510cc44c42703f8475f7d49",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Open Knowledge Repository Maigret Publication: Air Quality Analysis of Ulaanbaatar: Improving Air Quality to Reduce Health Impacts c b Post Like Share Loading...",
+        "Files in English English PDF (5.79 MB) 894 downloads English Text (430.72 KB) 137 downloads Published 2011-12 ISSN Date 2017-05-31 Author(s) World Bank Editor(s) Post Like Share Abstract Air pollution has major health impacts on people living in Ulaanbaatar.",
+        "The excessively high particulate matter concentrations, especially in the winter and in the ger areas, increase the incidence of heart and lung diseases, and lead to premature deaths.",
+        "Improving air quality management in Ulaanbaatar and reducing pollution concentrations would prevent illnesses, save lives and avoid enormous health costs.",
+        "The implementation of the Air Monitoring and Health Impact Baseline (AMHIB) study has brought together Mongolian and international air quality experts as well as public health experts and economists who have taken an synergetic approach of linking public health, air quality and economic issues.",
+        "This report builds upon the discussion paper air pollution in Ulaanbaatar: initial assessment of current situation and effects of abatement measures that was published in December 2009, and reflects the final results and recommendations from the AMHIB project.",
+        "Air Quality Analysis of Ulaanbaatar: Improving Air Quality to Reduce Health Impacts .",
+        "Air pollution from outdoor and household sources jointly account for more than 7 million deaths (3.7 million from ambient air pollution and 4.3 million from household air pollution).",
+        "Chapter two presents the results of a desk-based portfolio review of World Bank projects that are relevant to reduction of air pollution.",
+        "This is followed, in chapter three, by an examination of case studies of World Bank projects whose objectives include addressing ambient air pollution, highlighting good practices and lessons for future work of the Bank in supporting clients.",
+        "Chapter four presents possible approaches for enhancing future Bank support in helping clients to improve air quality and reduce the associated adverse health outcomes.",
+        "Chapter five presents overall conclusions and recommendations."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Detection and Interpretation of Trends in Oxidant Air Quality",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Wayne, LG; Wilson, KW; Boyd, CL",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36606s",
+      "retrieved_at": "2026-10-18T19:05:45.320Z",
+      "sha256": "959505fa9c2164b2dbd1a0a5483967e4d1c865954f5b65d939094cfe279cfdd5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ambient air concentrations of photochemical oxidants, monitored over a five-year period in Philadelphia, Denver, and five regions in California, were examined for evidence of trends in air quality.",
+        "Statistically significant trends were identified in the cases of Denver and the San Francisco Bay area.",
+        "The oxidant air quality in the San Francisco Bay area was found to be significantly related to the rates of emission of oxidant precursors.",
+        "The relation is positive in the case of hydrocarbons, but negative for oxides of nitrogen.",
+        "Geographical and meteorological factors are also important in determining the distribution of oxidant levels, and various indexes of oxidant air quality show different statistical behavior in regard to the detection of trends."
+      ]
+    }
+  ]
+}

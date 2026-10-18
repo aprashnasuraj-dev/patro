@@ -1,0 +1,175 @@
+{
+  "id": "mm-1205",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Has dark matter been detected in the Milky Way?",
+      "publisher": "Front Matter",
+      "author": "McGaugh, Stacy",
+      "published_at": "2025-12-20",
+      "url": "https://doi.org/10.59350/eaeeg-dhz24",
+      "retrieved_at": "2026-10-18T16:19:07.851Z",
+      "sha256": "e7349c0d860ae31849fa634e63b0f3024de61292a74511f68ec59b4c12a02add",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "If a title is posed as a question, the answer is usually No.",
+        "There has been a little bit of noise that dark matter might have been detected near the center of the Milky Way.",
+        "The chatter seems to have died down quickly, for, as usual, this claim is greatly exaggerated.",
+        "Indeed, the claim isn't … Continue reading Has dark matter been detected in the Milky Way?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Has dark matter been detected in the Milky Way?",
+      "publisher": "Front Matter",
+      "author": "McGaugh, Stacy",
+      "published_at": "2025-12-20",
+      "url": "https://doi.org/10.59350/3eq02-97f83",
+      "retrieved_at": "2026-10-18T16:19:07.851Z",
+      "sha256": "e7349c0d860ae31849fa634e63b0f3024de61292a74511f68ec59b4c12a02add",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "If a title is posed as a question, the answer is usually No.",
+        "There has been a little bit of noise that dark matter might have been detected near the center of the Milky Way.",
+        "The chatter seems to have died down quickly, for, as usual, this claim is greatly exaggerated.",
+        "Indeed, the claim isn't … Continue reading Has dark matter been detected in the Milky Way?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Axion Dark Matter: How to detect it?",
+      "publisher": "arXiv (Cornell University)",
+      "author": "Yannis Kyriakos Semertzidis; SungWoo Youn",
+      "published_at": "2021-05-03",
+      "url": "https://openalex.org/W3159218206",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "05ddcb5fc06972a5e8f5d61b0b7d1c9fd1cb8d2352c61d9a078c9f7b7c2b8eab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The axion, originated from the Peccei-Quinn mechanism proposed to solve the strong-CP problem, is a well motivated and popular dark matter candidate.",
+        "Experimental searches for this hypothetical particle are starting to reach theoretically interesting sensitivity levels.",
+        "However, only a small fraction of the allowed parameter space has been explored so far, mostly in the $\\mu$eV (GHz) region, relying on large volume solenoid magnetic fields and microwave resonators with signals read out by quantum noise limited amplifiers.",
+        "There have been intensive experimental efforts to widen the search range by devising various techniques as well as to enhance sensitivities by implementing advanced technologies.",
+        "The developments and improvements in these orthogonal approaches will enable us to explore most of the parameter space of the axion and axion-like particles within the next five to ten years.",
+        "We review the experimental aspects of axion physics and discuss the past, present and future of the individual search programs."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How can we make sure we detect dark matter",
+      "publisher": "OpenAlex",
+      "author": "Paolo Gondolo A",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W3044106957",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "f6be1556146b7ba0d83d0f928a177fb9a51154e65f5932354db2946700e1fb57",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "More and more claims of having detected WIMP dark matter are being put forward.",
+        "Some are discussed here, stressing the importance of exploiting distinctive signatures to ascertain their WIMP origin.",
+        "The best signals for WIMP discovery are characterized by special features that make them recognizable as due to WIMPs and nothing else.",
+        "Sometimes, however, a single feature, although accountable for in theoretical models, may not be enough to make sure that we have detected WIMPs.",
+        "This is because the theory of WIMPs and their distribution in the galaxy is still very uncertain, and allows for many possibilities.",
+        "What are needed are experimental verifications of the claimed signals, either by discovering unmistakable features, or by detecting several kinds of signals that can all be explained by the same WIMP model."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dark matter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8651",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "5fa013f222177005258cf5bf90e8cfd5635bf78a096e466a6197fd720fa23b65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In astronomy and cosmology, dark matter is an invisible and hypothetical form of matter that does not interact with electromagnetic radiation, including light.",
+        "Dark matter is implied by gravitational effects that cannot be explained by general relativity unless more matter is present than can be observed.",
+        "Such effects occur in the context of formation and evolution of galaxies, gravitational lensing, the observable universe's current structure, mass position in galactic collisions, the motion of galaxies within galaxy clusters, and cosmic microwave background anisotropies.",
+        "Dark matter is thought to serve as gravitational scaffolding for cosmic structures.",
+        "After the Big Bang, dark matter clumped into blobs along narrow filaments with superclusters of galaxies forming a cosmic web at scales on which entire galaxies appear like tiny particles.",
+        "In the standard Lambda-CDM model of cosmology, the mass–energy content of the universe is 5% ordinary matter, 26.8% dark matter, and 68.2% a form of energy known as dark energy.",
+        "Thus, dark matter constitutes 85% of the total mass, while dark energy and dark matter constitute 95% of the total mass–energy content.",
+        "While the density of dark matter is significant in the halo around a galaxy, its local density in the Solar System is much less than normal matter.",
+        "The total of all the dark matter out to the orbit of Neptune would add up to about 1017 kg, the same as a large asteroid.",
+        "Dark matter is classified as \"cold\", \"warm\", or \"hot\" according to velocity (more precisely, its free streaming length).",
+        "Recent models have favored a cold dark matter scenario, in which structures emerge by the gradual accumulation of particles.",
+        "Dark matter is not known to interact with ordinary baryonic matter and radiation except through gravity, making it difficult to detect in the laboratory."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Cold dark matter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=183999",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "aba6b2ab57c6cb203d0274d3a5fbe228ab37ef75a088837d48d699ab73e5a737",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In cosmology and physics, cold dark matter (CDM) is a hypothetical type of dark matter.",
+        "According to the current standard model of cosmology, the Lambda-CDM model, approximately 27% of the universe is dark matter and 68% is dark energy, with only a small fraction being the ordinary baryonic matter that composes stars, planets, and living organisms.",
+        "Cold refers to the dark matter moving slowly compared to the speed of light, giving it a vanishing equation of state.",
+        "Dark indicates that it interacts very weakly with ordinary matter and electromagnetic radiation.",
+        "Proposed candidates for CDM include weakly interacting massive particles, primordial black holes, and axions, as well as most flavors of neutrinos."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Self-interacting dark matter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6527803",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "02416e85826adc6b3f5191e7fd66753d0d3aa508dd08bcb4740816f7ae120c83",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In astrophysics and particle physics, self-interacting dark matter (SIDM) is an alternative class of dark matter particles that have strong interactions, in contrast to the standard cold dark matter model (CDM).",
+        "SIDM was postulated in 2000 as a solution to the core-cusp problem.",
+        "In the simplest models of dark matter self-interactions, a Yukawa-type potential and a force carrier φ mediates between two dark matter particles.",
+        "On galactic scales, dark matter self-interaction leads to energy and momentum exchange between dark matter particles.",
+        "Over cosmological time scales this results in isothermal cores in the central region of dark matter haloes.",
+        "The equation naturally correlates the dark matter distribution to that of the baryonic matter distribution.",
+        "With this correlation, the self-interacting dark matter can explain phenomena such as the Tully–Fisher relation.",
+        "Self-interacting dark matter has also been postulated as an explanation for the DAMA annual modulation signal.",
+        "Moreover, it is shown that it can serve the seed of supermassive black holes at high redshift.",
+        "In July 2024 a study proposed SIDM solves the \"final-parsec problem\", two months later another study proposed the same with fuzzy cold dark matter."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Microbial dark matter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45668969",
+      "retrieved_at": "2026-10-18T16:19:20.298Z",
+      "sha256": "1c593dd186131aa737d9e256d8ebcef2449db76688974d00ef3425c787071c66",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Microbial dark matter (MDM) comprises the vast majority of microbial organisms (usually bacteria and archaea) that microbiologists are unable to culture in the laboratory (such as fastidious microorganisms), due to lack of knowledge or ability to supply the required growth conditions.",
+        "Microbial dark matter is analogous to the dark matter of physics and cosmology due to its elusiveness in research and importance to our understanding of biological diversity.",
+        "Microbial dark matter can be found ubiquitously and abundantly across multiple ecosystems, but remains challenging to study due to difficulties in detecting and culturing these species.",
+        "It was previously proposed that as little as one percent of microbes in a given ecological niche are culturable , but this estimate has been debated .",
+        "The estimated proportion of unculturable microbes varies based on ecological niche and measurement techniques .",
+        "In recent years, more effort has been directed towards deciphering microbial dark matter by means of recovering genomic DNA sequences from environmental samples via culture independent methods such as single cell genomics and metagenomics.",
+        "These studies have enabled insights into the evolutionary history and the metabolism of the sequenced genomes, providing valuable knowledge required for the cultivation of microbial dark matter lineages.",
+        "Other methods like culturomics have been developed to learn how to culture microbial dark matter alongside techniques like gene sequencing to identify species of previously undiscovered microbes.",
+        "However, microbial dark matter research remains comparatively undeveloped and is hypothesized to provide insight into processes radically different from known biology, new understandings of microbial communities, and increasing understanding of how life survives in extreme environments.",
+        "Many members of the microbial dark matter have a wide diversity of habitats, ways of surviving and thriving in those habitats, and even novel products made through biochemical pathways.",
+        "This diversity includes microbes that live in very harsh environments, work together to support survival of the population, and even make new antibiotics to compete with other microbes."
+      ]
+    }
+  ]
+}

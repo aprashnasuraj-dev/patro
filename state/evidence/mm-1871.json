@@ -1,0 +1,93 @@
+{
+  "id": "mm-1871",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Baseball",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3850",
+      "retrieved_at": "2026-10-18T17:04:15.969Z",
+      "sha256": "1d4b6e39d682b6571f5315faaa5c5569df0794371cae675195027e6877ce1fb8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding.",
+        "Gameplay centers around the pitcher on the fielding team throwing a baseball to a batter on the opposing team, who tries to hit it into the field of play.",
+        "Successfully batted balls allow players on the batting team advance around a circuit of four bases and score runs.",
+        "Meanwhile, the fielding team attempts to \"put out\" the batters and baserunners, removing them from play and preventing them from scoring.",
+        "Once the fielding team records three outs, the offensive and defensive sides switch roles.",
+        "Play continues until a defined number of innings have been completed, whereupon the team with the most runs wins.",
+        "Baseball evolved from older bat-and-ball games that gained popularity in England during the mid-18th century.",
+        "Immigrants brought these games to North America, where modern baseball developed into organized clubs playing under codified rules by the mid-19th century.",
+        "Baseball's American origins, as well as its reputation as a source of escapism during troubled points in American history such as the American Civil War and the Great Depression, have led the sport to receive the moniker of \"America's Pastime\".",
+        "Since the late 19th century, it has been unofficially recognized as the national sport of the United States, though in modern times is less popular than some other sports.",
+        "In addition to North America, baseball spread throughout the rest of the Americas and the Asia–Pacific in the 19th and 20th centuries, and is now among the most popular sports in parts of Central and South America, the Caribbean, and East Asia, particularly in Japan, South Korea, and Taiwan.",
+        "In Major League Baseball (MLB), the highest level of professional baseball in the United States and Canada, teams are divided into the National League (NL) and American League (AL), each with three divisions: East, West, and Central."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Babylonian cuneiform numerals",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=152323",
+      "retrieved_at": "2026-10-18T17:04:15.969Z",
+      "sha256": "89771b44d762138d951636f936d0d3f707046938a2b873cb444d2c6ebe556d99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The numeral system of the Babylonians, also used in Assyria and Chaldea, was written in cuneiform using a wedge-tipped reed stylus to print a mark on a soft clay tablet, which would be exposed in the sun to harden to create a permanent record.",
+        "The Babylonians were famous for their astronomical observations, as well as their calculations (aided by their invention of the abacus), and used a sexagesimal (base-60) number system inherited from either the Sumerian or the Akkadian civilizations.",
+        "The Babylonian system, however, was positional (having a convention for which \"end\" of the numeral represented the units)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why Did I Get Married Too?",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22824908",
+      "retrieved_at": "2026-10-18T17:04:15.969Z",
+      "sha256": "af1bf65b0ef68a1798b655ac8e61d209c8e55b0afcd917733f3e8d35fe10a861",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is a 2010 American comedy-drama film directed by Tyler Perry and starring Janet Jackson, Tyler Perry, Tasha Smith, Jill Scott, Louis Gossett Jr., Malik Yoba, Michael Jai White, Sharon Leal, Richard T.",
+        "Produced by Lionsgate and Tyler Perry Studios, it is the sequel to Why Did I Get Married?",
+        "The film explores the interactions of four couples who undertake another week-long retreat to improve their relationships that experience upheaval with further personal revelations within themselves.",
+        "The movie received mixed reviews from critics and grossed $60 million worldwide.",
+        "White and Smith reprised their roles for the spinoff For Better or Worse in 2011."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "13 Reasons Why",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25247887",
+      "retrieved_at": "2026-10-18T17:04:15.969Z",
+      "sha256": "10614724de16cf0a50d7f2d9429e5ae4a0dd08581fb5afa9c92e7d52f8b3db50",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "13 Reasons Why (also stylized as TH1RTEEN R3ASONS WHY) is an American teen drama television series based on the 2007 novel Thirteen Reasons Why by author Jay Asher.",
+        "Developed for Netflix by Brian Yorkey and with Selena Gomez serving as an executive producer, the series stars Dylan Minnette and Katherine Langford alongside an ensemble cast.",
+        "The series follows the students of the fictional Liberty High School and the wide range of social issues affecting modern youth.",
+        "The show originally revolved around Clay Jensen (Minnette) and the aftermath of the suicide of fellow student Hannah Baker (Langford).",
+        "Before her death, she leaves behind a box of cassette tapes in which she details the reasons why she chose to kill herself as well as the people she believes are responsible for her death.",
+        "It became the second most watched series on Netflix at the time of its release.",
+        "Netflix renewed 13 Reasons Why for a second season due to the success of the initial 13 episodes; the second season was released on May 18, 2018.",
+        "A third season was released on August 23, 2019; that same month, the series was renewed for a fourth and final season, which was released on June 5, 2020.",
+        "The first season received positive reviews from critics and audiences, who praised its themes, emotional weight, subject matter, character development and acting, particularly the performances of Minnette and Langford.",
+        "Subsequently, it prompted concerns from mental health professionals due to its graphic depiction of issues such as suicide, sexual assault, and bullying, along with other mature content.",
+        "The later three seasons were met with a negative critical response.",
+        "Coinciding with the release of the second season, Netflix released a video with the cast that cautioned viewers about some of the topics covered in the show and provided a support website with crisis numbers for people affected by depression, anxiety, and other mental health issues."
+      ]
+    }
+  ]
+}

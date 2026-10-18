@@ -1,0 +1,152 @@
+{
+  "id": "mm-0512",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Cities are sinking – but citywide averages hide the real problem",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Colven, Emma; Shabrina, Zahratu",
+      "published_at": "2026-10-15",
+      "url": "https://theconversation.com/cities-are-sinking-but-citywide-averages-hide-the-real-problem-294213",
+      "retrieved_at": "2026-10-18T15:31:00.779Z",
+      "sha256": "503fcd07e916d0829c6480260fd51ade1cbfcde1a4ee71807f10252088af4a8f",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Cities are sinking – but citywide averages hide the real problem Skip to content Academic rigor, journalistic flair Flooding in Muara Angke, a fast-sinking area in north Jakarta.",
+        "Some neighbourhoods may be far more affected than others close by, with serious consequences for their residents.",
+        "Land subsidence – the gradual sinking of the ground surface – is a global urban problem.",
+        "Rapid development often drives excessive groundwater extraction, which can cause underground sediments to compact and the land above to sink.",
+        "The risk of flooding is exacerbated by rising sea levels and more intense rainfall associated with climate change.",
+        "One recent study estimated that about 71% of the global coastal population lives in subsiding regions, many of which are densely populated and already threatened by sea-level rise.",
+        "Advances in satellite monitoring now allow researchers to measure subsidence across cities at fine spatial scales.",
+        "In a new study in Nature Cities a team of Chinese scientists used nine years of these satellite images to assess 465 large cities worldwide.",
+        "They found cities in Asia are subsiding fastest, and that cities in developing countries are generally sinking faster than those in wealthier countries.",
+        "But citywide patterns can conceal big differences within individual cities, with important implications for where flood protection is most needed.",
+        "Jakarta – among the world’s fastest sinking cities We have become very aware of this in our own research in the Indonesian capital Jakarta.",
+        "Now the world’s most populous city , Jakarta has for many years been the poster child for sinking cities."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What the Averages and Medians Hide: The Reality of Wages, Housing, and Affordability&amp;nbsp;",
+      "publisher": "Elsevier BV",
+      "author": "Alexandrov, Alexei",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7482078",
+      "retrieved_at": "2026-10-18T15:31:00.779Z",
+      "sha256": "da402050c5b8a0a88ac278aabeafa14b59ae1908e6074d1c25c1cedeb57a4902",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;span&gt;&lt;span&gt;Real earnings have risen since 2019 on nearly every measure, and fastest for the lowest-paid — yet affordability remains Americans' leading economic concern.",
+        "Using public Federal government data, I show what the aggregates hide.",
+        "Real earnings growth is below its pre-pandemic trend, and is near zero over the past year.",
+        "Each year, roughly one in six low-wage workers leaves employment, and about half of all workers report no real raise.",
+        "Homeowners with fixed mortgages faced much lower out-of-pocket expenses than the official inflation statistics indicate; while aspiring and new homebuyers much higher.",
+        "Unexpected expenses strike all incomes about equally, but lower-income households have no cushion to absorb them.",
+        "Household debt and the spread of tipping play little role.&lt;/span&gt;&lt;/span&gt;"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Benchmark Averages Hide the Failures That Matter: Quantizing ESM-2 for Protein Variant-Effect Prediction",
+      "publisher": "openRxiv",
+      "author": "Shao, Qing",
+      "published_at": "2026-08-15",
+      "url": "https://doi.org/10.64898/2026.08.10.744024",
+      "retrieved_at": "2026-10-18T15:31:00.779Z",
+      "sha256": "61173fe1e89071d594df5c83f327b36a7006c26854a4dc9db30f6b60e224ffb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract We benchmark six numerical precision configurations for ESM-2 protein language models across throughput, memory footprint and predictive accuracy, on two workloads with sharply different characteristics: bulk embedding extraction and deep mutational scanning (DMS) variant-effect scoring.",
+        "Accuracy is evaluated on the complete ProteinGym substitution benchmark — 201 assays, 2.41M variants — at three model scales spanning 650M to 15B parameters , with a paired bootstrap clustered on protein.",
+        "Three findings follow, and each contradicts a common practice.",
+        "First, benchmark averages conceal the failure that decides deployability : no configuration shifts mean correlation by more than 0.007 at any scale, yet INT8 dynamic quantization — indistinguishable from fp32 on that mean at 3B ( p = 0.34) — takes a single assay from ρ = 0.591 to 0.223.",
+        "Third, quantizing a large model is dominated by using a small one : of eighteen scale/configuration combinations only three are Pareto-optimal over accuracy, memory and speed, and all three are 650M.",
+        "The one catastrophic failure we observe is a defect of default symmetric activation scaling, not of W8A8 itself: asymmetric activation quantization, a one-line change needing no calibration, removes every damaged assay.",
+        "We also give a label-free screen for at-risk targets, and report four measurement artifacts encountered during this study, three of which inverted the result they were meant to measure."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Awful Truth",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61522",
+      "retrieved_at": "2026-10-18T15:31:00.992Z",
+      "sha256": "ce89f18b18e511761ed0a0d1abf0efafeebbeb078b5f36fedbbc1886301cab72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Awful Truth is a 1937 American screwball comedy film directed by Leo McCarey, and starring Irene Dunne and Cary Grant.",
+        "Based on the 1922 play The Awful Truth by Arthur Richman, the film recounts a distrustful rich couple who begin divorce proceedings, only to interfere with one another's romances.",
+        "This was McCarey's first film for Columbia Pictures, with the dialogue and comic elements largely improvised by the director and actors.",
+        "Although Grant tried to leave the production due to McCarey's directorial style, The Awful Truth saw his emergence as an A-list star and proponent of on-the-set improvisation.",
+        "The film was a huge box office success and was nominated for six Academy Awards, including Best Picture, Best Actress (Dunne), and Best Supporting Actor (Ralph Bellamy), winning for Best Director (McCarey).",
+        "The film was selected in 1996 for preservation in the Library of Congress' National Film Registry, having been deemed \"culturally, historically, or aesthetically significant\".",
+        "The Awful Truth was the first of three films co-starring Grant and Dunne, followed by My Favorite Wife (1940) and Penny Serenade (1941)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Why Women Kill",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58567222",
+      "retrieved_at": "2026-10-18T15:31:00.992Z",
+      "sha256": "b66936f7dee9a93857b5f1c6d61e7cac4b153a146506fa1275b18985672402d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Why Women Kill is an American dark comedy anthology series created by Marc Cherry, which depicts the events leading to deaths caused by women.",
+        "The first season, which premiered on August 15, 2019, on CBS All Access, consists of 10 episodes and is set in multiple periods.",
+        "The second season, containing 10 episodes, premiered on June 3, 2021, on Paramount+ and focuses on a single time period.",
+        "In December 2021, the series was renewed for a third season.",
+        "However, in July 2022, the third season was scrapped before production could begin."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "The Truth vs. Alex Jones",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=76443250",
+      "retrieved_at": "2026-10-18T15:31:00.992Z",
+      "sha256": "c88fe8133875e02af8ad2d553e2753ed3132793ec32c54b0a94d5512dd42ddf8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Alex Jones is a 2024 American documentary film, directed and produced by Dan Reed.",
+        "It follows families of victims of the Sandy Hook Elementary School shooting, taking radio show host and conspiracy theorist Alex Jones to court for spreading lies about the shooting.",
+        "It had its world premiere at South by Southwest on March 11, 2024, and was released on March 26, 2024, by HBO."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Avatar: Seven Havens",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=76761615",
+      "retrieved_at": "2026-10-18T15:31:00.992Z",
+      "sha256": "b68d8447f5e60302e4f7b702c6fc39e973f756f663e3c663f577656b2f642b56",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Avatar: Seven Havens is an American animated fantasy action television series created by Michael Dante DiMartino and Bryan Konietzko for Paramount+.",
+        "It serves as a sequel series to Avatar: The Last Airbender (2005–2008) and The Legend of Korra (2012–2014).",
+        "It follows Avatar Pavi, as she and her long-lost twin sister Avatar Nisha, the reincarnations of Korra, uncover their mysterious origins and protect the Seven Havens—cities that stand as last bastions of civilization after a global cataclysm.",
+        "The principal voice cast includes Saheli Khan as Avatar Pavi, alongside Aishu Devan, Akshay Khanna, Major Curda, Sakina Jaffrey, Darren Barnet, Dianne Doan, and Dee Bradley Baker.",
+        "Creatives from both The Last Airbender and The Legend of Korra returned, including Jeremy Zuckerman creating original music and Ethan Spaulding, who was a story artist and director on both shows, executive producing.",
+        "The series is produced by Nickelodeon Animation and Avatar Studios, and La Chouette Compagnie provides animation.",
+        "The first season of Avatar: Seven Havens, titled Book 1: Survival, premiered on October 9, 2026, on Paramount+, with the concurrent release of its first three episodes.",
+        "The other ten episodes are being released weekly in batches of three to four episodes through October 30."
+      ]
+    }
+  ]
+}

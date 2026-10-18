@@ -1,0 +1,199 @@
+{
+  "id": "mm-1024",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mobile Money",
+      "publisher": "Oxford University Press",
+      "author": "Suri, Tavneet",
+      "published_at": "2021-04-01",
+      "url": "https://doi.org/10.1093/oso/9780198851820.003.0010",
+      "retrieved_at": "2026-10-18T15:56:59.298Z",
+      "sha256": "71cc0b1cb7d314f20e25f5417bc057743bdadfd5d5fb3ba018b27c45ea96dfe8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The chapter focuses on mobile money—one of the most celebrated innovations in the developing economies, that adds service over the mobile phone.",
+        "The chapter highlights the economics behind the product, what may have driven to the wide adoption of mobile money in developing countries and the impacts it has had on the users of the financial product.",
+        "The focus is mainly on the Kenya-based M-PESA given its success, but also discusses more recent innovations that build on mobile money systems to deliver additional financial services and value.",
+        "It is noted that although these innovations exist, they have not given rise to a thriving Fintech sector.",
+        "The chapter therefore also discusses the constraints to the growth of mobile money and what this implies for the future of mobile money in developing economies, and where the most exciting opportunities for research may be."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mobile Money and Economic Activity: Evidence from Kenya",
+      "publisher": "Published by Oxford University Press on behalf of the World Bank",
+      "author": "Fabregas, Raissa; Yokossi, Tite",
+      "published_at": "2022-05-17",
+      "url": "https://doi.org/10.1596/dspace/60453",
+      "retrieved_at": "2026-10-18T15:57:06.145Z",
+      "sha256": "98a2e89cf162c42a2ebad1ea22393c32da78baa9820df047a920154c6ee71af4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Open Knowledge Repository Maigret Publication: Mobile Money and Economic Activity: Evidence from Kenya Post Like Share Loading...",
+        "The analysis combines data from the early expansion of the mobile agent network in Kenya with a local-level measure of economic performance proxied by the intensity of nighttime lights.",
+        "Leveraging the variation in areas that gained access to mobile money services at different times and the high resolution of the data, the paper shows that access to mobile money services increased local economic activity and that these effects increased over time.",
+        "The positive effects are more pronounced for areas that were initially more affluent, urban, and better connected to infrastructure.",
+        "These results suggest that mobile money can complement, rather than just substitute for, other alternatives that enable people to connect, trade, and allocate investments within their networks.",
+        "Link to Data Set Citation “ Fabregas, Raissa ; Yokossi, Tite .",
+        "Users also downloaded Showing related downloaded files Publication Unlocking the Power of Healthy Longevity ( Washington, DC: World Bank , 2024-09-12 ) World Bank Show more Noncommunicable diseases (NCDs) are among the major health and development challenges of our time.",
+        "This makes up about 74 percent of all deaths globally, the majority of which are in low- and middle-income countries (LMICs).",
+        "The risk of developing NCDs and deaths from them can both be lowered with appropriate attention to prevention and treatment.",
+        "However, weak health systems and limited access to affordable care and information, especially in LMICs, contribute to lapses in seeking and receiving appropriate and timely care.",
+        "This compendium is a compilation of 18 chapters, each exploring a different but related topic in the nexus of NCDs, human capital, and productivity.",
+        "The HLI presents one of a growing set of efforts to increase the urgency of policy response to NCDs across the world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Effect of Mobile Money on Monetary Policy in Kenya",
+      "publisher": "Elsevier BV",
+      "author": "Ngari, Wamu",
+      "published_at": "2024",
+      "url": "https://doi.org/10.2139/ssrn.4908675",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "612515e548fdbf58fcde96439c1fa71e38640660e95dc66e0d761319075cc2d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The mobile money transfer service is one of the financial innovations that is making big strides in the financial sector.",
+        "It is part of a broader concept emerging in the electronic payment.",
+        "The aim of this study was to establish the effect of mobile money transfers on monetary policy in Kenya.",
+        "With the current Corona Virus (COVID-19) pandemic, mobile money has been crucial in ensuring a continuous velocity of money in a time where using cash to transact in any way has been deemed risky.",
+        "This study employed an explanatory research design which shows how variables relate to each other by establishing a cause and effect between variables.",
+        "The study used secondary data sources to gather information relevant in reaching the research objectives.",
+        "The data was collected from the Central Bank of Kenya (CBK) and the Kenya National Bureau of Statistics (KNBS) reports.",
+        "The study used a time series data from 2012-2020 applying a Vector Error Correction Model (VECM) analysis method because the Johansen Co-integration test revealed presence of co-integration where the p-value was more than 0.05 between the independent variables.",
+        "The dependent variables were velocity of money and interest rate.",
+        "The results from the VECM analysis revealed that the measures of mobile money had an insignificant effect on monetary policy.",
+        "Although the findings of this study indicate insignificance of mobile money, it is expected that this financial innovation will grow to have a massive impact on the way money moves within and outside of the economy.",
+        "This will eventually impact the decisions of monetary authorities in establishing a monetary policy stance."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How did the introduction of a mobile money tax in Kenya influence the usage of mobile money",
+      "publisher": "Lund University Publications Student Papers (Lund University)",
+      "author": "Jonas Fehling",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W2971739992",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "7c405b1e59fc32b2e9723047d411c87d37d387831f16ec97825b0c553eaaf139",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The global spread of mobile phones provides developing countries with new opportunities to spark economic growth and to improve the quality of life of their people.",
+        "One specific service that emerged in this context is mobile money.",
+        "Widely recognized as the most successful example is the service M-PESA in Kenya.",
+        "In 2013 Kenya introduced a 10% excise fee on all financial transaction fees, including mobile money.",
+        "This tax was criticized by public media and the mobile money providers for hindering the financial inclusion of the poor.",
+        "This thesis uses a Difference-in-Differences model to estimate the effect of the introduction of the mobile money tax on the usage of mobile money.",
+        "The results show that the observed decline of mobile money transactions in the first quarter of 2013 are part of regional trend rather than caused by the tax.",
+        "The paper cannot explain the cause for this regional phenomenon and therefore calls for further research about macroeconomic factors influencing mobile money usage.",
+        "Finally, a negative effect of taxation on mobile in the case of Kenya in 2013 was not found."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lead Market Potential of Developing Countries: The Succes of Mobile Money in Kenya",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "author": "Kay Potters",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2775495260",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "013ca64ccc543f39437e3f256133d01039af14fe9c8e2b97e2cb09f9a222629f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mobile money has just started to emerge in Western countries; however Kenyans have already been using phones for transactions for 10 years mainly through the mobile money system MPesa.",
+        "This hints towards a largely ignored innovation potential residing in developing countries that can even allow them to lead the path of innovation for specific sectors.",
+        "To assess the potential for developing countries to become lead markets a framework was created based on the literature of lead markets and frugal innovation, a case study on MPesa and interviews on mobile money.",
+        "The framework can be used for policy makers to assess whether their domestic market is suitable for the market introduction and further development of an innovation, thereby contributing to the effectiveness of innovation policy.",
+        "The lead market potential of developing countries resides mainly in their capability of redefining the fulfilment of basic needs."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Kenya",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188171",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "d68f992a2ca21826747e5b9f28ca68639b9e9081902face2aa02093a66c51088",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kenya, officially the Republic of Kenya, is a country located in East Africa.",
+        "With an estimated population of more than 54.2 million as of mid-2026, it is the 26th-most populous country in the world and the seventh-most populous in Africa.",
+        "The second-largest and oldest city is Mombasa, a port city located on Mombasa Island.",
+        "Other major cities within the country include Kisumu, Nakuru and Eldoret.",
+        "Going clockwise, Kenya is bordered by South Sudan to the northwest, Ethiopia to the north, Somalia to the east, the Indian Ocean to the southeast, Tanzania to the southwest, and Lake Victoria and Uganda to the west.",
+        "In western Rift Valley counties, the landscape includes cold, snow-capped mountaintops (such as Batian, Nelion, and Point Lenana on Mount Kenya) with surrounding forests, wildlife, and fertile agricultural regions in temperate climates.",
+        "In other areas there are dry, arid, and semi-arid climates, as well as absolute deserts (such as the Chalbi Desert and Nyiri Desert).",
+        "Kenya's earliest inhabitants included some of the first humans to evolve from ancestral members of the genus Homo.",
+        "Ample fossil evidence for this evolutionary history has been found at Koobi Fora.",
+        "Later, Kenya was inhabited by hunter-gatherers similar to the present-day Hadza people.",
+        "According to archaeological dating of associated artefacts and skeletal material, Cushitic speakers first settled in the region's lowlands between 3,200 and 1,300 BC, a phase known as the Lowland Savanna Pastoral Neolithic.",
+        "Nilotic-speaking pastoralists (ancestral to Kenya's Nilotic speakers) began migrating from present-day South Sudan into Kenya around 500 BC."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Worldreader",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30480445",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "21fda038e5381cfe8e29f647ba950e585d41cbe6b7b4c044160ae4070c9c7250",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Worldreader is a 501(c)(3) global nonprofit organization working with partners to get children reading at least 25 books a year with understanding.",
+        "Since 2010, Worldreader has supported more than 22 million readers in over 100 countries.",
+        "Worldreader's BookSmart experience provides children the tools they need to build their reading skills through locally relevant books, activities that reinforce reading, and where they are celebrated for their reading success.",
+        "The organization is headquartered in Seattle, Washington and has programmatic operations in Kenya and the United States."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Public bank",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37801828",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "1c2b4f64471f4c49b02717811b1a44baf4ab75a1bea59e69d66a8fbab6a6da62",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A public bank is a bank, a financial institution, in which a state, municipality, or public actors are the owners.",
+        "Prominent among current public banking models are the Bank of North Dakota, the Sparkassen-Finanzgruppe in Germany, and many nations' postal bank systems.",
+        "Public or 'state-owned' banks proliferated globally in the late 19th and early 20th centuries as vital agents of industrialisation in capitalist and socialist countries alike; as late as 2012, state banks still owned and controlled up to 25 per cent of total global banking assets.",
+        "The 2015 Addis Ababa Financing for Development Action Agenda noted that public banks should have an important role in achieving the new Sustainable Development Goals.",
+        "Increasingly, major international financial institutions are recognising the positive and catalytic role public banks can serve in the coming low carbon climate resilient transition.",
+        "Further, international NGOs and critical scholars argue that public banks can play a significant role in financing a just and equitable energy transition."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Isis Nyong'o",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40309727",
+      "retrieved_at": "2026-10-18T15:57:06.147Z",
+      "sha256": "1f3f7816c605b7d8f8f389e9ea8a8a025e29f592859c65259351deb0fa465bde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Isis Nyong’o Madison is a Kenyan–American media and technology entrepreneur.",
+        "Currently the principal at strategic advisory firm Asphalt & Ink, she has also previously worked with InMobi, Google and MTV Africa.",
+        "is also the founder of Mum's Village, an online platform transforming the mother-child experience in Kenya."
+      ]
+    }
+  ]
+}

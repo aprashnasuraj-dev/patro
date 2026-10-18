@@ -1,0 +1,52 @@
+{
+  "id": "mt-0688",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Aging brain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=749745",
+      "retrieved_at": "2026-10-18T17:45:39.861Z",
+      "sha256": "f6cb0e3708a180f97c30f64b54f747a4ad852957d1e6645d9504ef34c433be9a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aging brain refers to biological and functional changes that occur in the brain as individuals advance in age.",
+        "It encompasses both the normal alterations which are universally experienced and abnormalities induced by illnesses, diagnosed or not.",
+        "Aging is a major risk factor for most common neurodegenerative diseases, including mild cognitive impairment, dementias including Alzheimer's disease, cerebrovascular disease, Parkinson's disease, and Amyotrophic Lateral Sclerosis.",
+        "While much research has focused on diseases of aging, there are few informative studies on the molecular biology of the aging brain[1] in the absence of neurodegenerative disease or the neuropsychological profile of healthy older adults.",
+        "However, research suggests that the aging process is associated with several structural, chemical, and functional changes in the brain as well as a host of neurocognitive changes.",
+        "Recent reports in model organisms suggest that as organisms age, there are distinct changes in the expression of genes at the single neuron level.",
+        "This page is an overview of the changes associated with human brain aging, including aging without concomitant diseases."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Marine life",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2056572",
+      "retrieved_at": "2026-10-18T17:45:39.861Z",
+      "sha256": "38ae0b0bae623f5f7fc5895595284133672cdc1dc7eb1180e61ae2f947fa4bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As of 2023, more than 242,000 marine species have been documented, and perhaps two million marine species are yet to be documented.",
+        "On average, researchers describe about 2,300 new marine species each year.",
+        "The study of marine life spans multiple fields, primarily marine biology, as well as biological oceanography.",
+        "By volume, oceans provide about 90% of the living space on Earth, and served as the cradle of life and vital biotic sanctuaries throughout Earth's geological history.",
+        "The earliest known life forms evolved as anaerobic prokaryotes (archaea and bacteria) in the Archean oceans around the deep sea hydrothermal vents, before photoautotrophs appeared and allowed the microbial mats to expand into shallow water marine environments.",
+        "The Great Oxygenation Event of the early Proterozoic significantly altered the marine chemistry, which likely caused a widespread anaerobe extinction event but also led to the evolution of eukaryotes through symbiogenesis between surviving anaerobes and aerobes.",
+        "Complex life eventually arose out of marine eukaryotes during the Neoproterozoic, and which culminated in a large evolutionary radiation event of mostly sessile macrofaunae known as the Avalon Explosion.",
+        "This was followed in the early Phanerozoic by a more prominent radiation event known as the Cambrian Explosion, where actively moving eumetazoan became prevalent.",
+        "These marine life also expanded into fresh waters, where fungi and green algae that were washed ashore onto riparian areas started to take hold later during the Ordovician before rapidly expanding inland during the Silurian and Devonian, paving the way for terrestrial ecosystems to develop.",
+        "Today, marine species range in size from the microscopic phytoplankton, which can be as small as 0.02–micrometers; to huge cetaceans like the blue whale, which can reach 33 m (108 ft) in length.",
+        "Marine microorganisms have been variously estimated as constituting about 70% or about 90% of the total marine biomass.",
+        "Marine primary producers, mainly cyanobacteria and chloroplastic algae, produce oxygen and sequester carbon via photosynthesis, which generate enormous biomass and significantly influence the atmospheric chemistry."
+      ]
+    }
+  ]
+}

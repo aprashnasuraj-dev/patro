@@ -1,0 +1,146 @@
+{
+  "id": "mm-0820",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Meta just launched the largest ‘open’ AI model in history. Here’s why it matters",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Mirjalili, Seyedali",
+      "published_at": "2024-08-01",
+      "url": "https://theconversation.com/meta-just-launched-the-largest-open-ai-model-in-history-heres-why-it-matters-235689",
+      "retrieved_at": "2026-10-18T15:52:29.789Z",
+      "sha256": "bee7feca6d3e867d450a53d575a8c05a03305566aa3239d92d84ec8dc0dd3adc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Here’s why it matters Skip to content Academic rigor, journalistic flair Thibault Camus/AP Meta just launched the largest ‘open’ AI model in history.",
+        "On one side are companies that believe in keeping the datasets and algorithms behind their advanced software private and confidential.",
+        "On the other are companies that believe in allowing the public to see what’s under the hood of their sophisticated AI models.",
+        "Think of this as the battle between open- and closed-source AI.",
+        "In recent weeks, Meta, the parent company of Facebook, took up the fight for open-source AI in a big way by releasing a new collection of large AI models.",
+        "These include a model named Llama 3.1 405B, which Meta’s founder and chief executive, Mark Zuckerberg, says is “the first frontier-level open source AI model”.",
+        "For anyone who cares about a future in which everybody can access the benefits of AI, this is good news.",
+        "The danger of closed-source AI – and the promise of open-source AI Closed-source AI refers to models, datasets and algorithms that are proprietary and kept confidential.",
+        "Examples include ChatGPT , Google’s Gemini and Anthropic’s Claude .",
+        "Though anyone can use these products, there is no way to find out what dataset and source codes have been used to build the AI model or tool.",
+        "While this is a great way for companies to protect their intellectual property and their profits, it risks undermining public trust and accountability.",
+        "Making AI technology closed-source also slows down innovation and makes a company or other users dependent on a single platform for their AI needs."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Applied AI matters: AI4Code",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "author": "Talamadupula, Kartik",
+      "published_at": "2021-03",
+      "url": "https://doi.org/10.1145/3465074.3465080",
+      "retrieved_at": "2026-10-18T15:52:29.789Z",
+      "sha256": "3267094d468795ae66510561559967d24b527185b1c00c7c2b0ee108d110836b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The marriage of Artificial Intelligence (AI) techniques to problems surrounding the generation, maintenance, and use of source code has come to the fore in recent years as an important AI application area1.",
+        "A large chunk of this recent attention can be attributed to contemporaneous advancements in Natural Language Processing (NLP) techniques and sub-fields.",
+        "This development has contributed to a spate of work in the community --- much of it captured in a survey by Allamanis, Barr, Devanbu, and Sutton (2018) that focuses on classifying these approaches by the type of probabilistic model applied to source code.",
+        "This increase in the variety of AI techniques applied to source code has found various manifestations in the industry at large.",
+        "Code and software form the backbone that underpins almost all modern technical advancements: it is thus natural that breakthroughs in this area should reflect in the emergence of real world deployments."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "OpenAI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48795986",
+      "retrieved_at": "2026-10-18T15:52:30.817Z",
+      "sha256": "3c8ea7649b648c08e9dbc1789d00c8ca80d7943cf54e765bf180323daf5b6fbe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "OpenAI is an American artificial intelligence (AI) public benefit corporation (PBC) headquartered in San Francisco, California, led by CEO Sam Altman.",
+        "It develops \"frontier\" generative AI models, particularly its generative pre-trained transformer (GPT) series of large language models.",
+        "Its release of ChatGPT in November 2022 accelerated an AI boom, leading to widespread use of generative AI; as of September 2026, ChatGPT is the fifth-most-visited website globally.",
+        "OpenAI also releases the GPT Image models and Codex, an AI coding agent.",
+        "In March 2026, OpenAI closed a funding round with a post-money valuation of US$852 billion, making it one of the most valuable AI pure play companies in the world, rivalled only by Anthropic.",
+        "OpenAI was founded in 2015 as a nonprofit, with Elon Musk and Sam Altman as co-chairs; Musk resigned in 2018.",
+        "A for-profit subsidiary was created in 2019, and a 2025 restructuring converted the subsidiary into OpenAI Group PBC, that is 26% owned by the nonprofit OpenAI Foundation.",
+        "OpenAI partners with the US government via the Stargate Project infrastructure venture, and with the Department of Defense, Los Alamos National Laboratory, and arms company Anduril Industries.",
+        "Former OpenAI personnel have founded competing AI companies including Anthropic, Safe Superintelligence Inc., SpaceXAI, and Thinking Machines Lab.",
+        "OpenAI has faced multiple lawsuits for alleged deaths linked to its chatbots and copyright infringement against authors and media companies.",
+        "Several US states have sued, alleging harm to children, claiming it coaches self-harm and encourages delusions.",
+        "In November 2023, OpenAI's board removed Sam Altman as CEO, citing a lack of confidence, but reinstated him five days later after a board reconstruction."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Open source",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59126142",
+      "retrieved_at": "2026-10-18T15:52:30.817Z",
+      "sha256": "230f71667d15482fe4471edced510dbee8794dab12892356b516cf70838e316f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Open source is the practice of publishing digital resources publicly alongside their source code or source files, enabling use, study, modification, and redistribution.",
+        "It is historically and commonly associated with open-source software, software released with its source code.",
+        "The concept has also been applied beyond software to other digital resources made available alongside their source files or design documents, such as open-source hardware, open-source educational resources or open-source fonts.",
+        "The rights to reuse this type of digital resources are guaranteed through a specific legal framework, whether with open licenses or public domain dedication.",
+        "The development of open source resources can be based on open collaboration, a decentralized and peer-to-peer model of production.",
+        "Open source resources are a shared component across openness movements — such as open-source software, open hardware, open education or open music — with each domain having distinct types of source files and distribution formats to manage.",
+        "While the sharing of source code is an established practice with software, open resources in other fields may not systematically provide their source files, restricting the ability to modify these digital resources despite the rights granted to users.",
+        "The term open source can also refer to publicly available sources of information, notably in intelligence field with open-source intelligence (OSINT).",
+        "By analogy to such practices of public access and collaboration, the notion is also used more loosely across many domains."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Open-source artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=74399351",
+      "retrieved_at": "2026-10-18T15:52:30.817Z",
+      "sha256": "c4ff79b7297c9c72c42db0d01549af21a9d958fbed5d51cfaff9b9d1b0ad1ba7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Open-source artificial intelligence, as defined by the Open Source Initiative, is an AI system that is freely available to use, study, modify, and share.",
+        "This includes datasets used to train the model, its code, and its model parameters, promoting a collaborative and transparent approach to AI development so someone could create a substantially similar result.",
+        "The debate over what should count as 'open-source' given a range of openness among AI projects has been significant.",
+        "Some large language models touted as open-sourced that are merely open weights and do not release training data and code have been criticized as \"openwashing\" systems that are mostly closed.",
+        "For example, Artificial Analysis gives an \"Openness Index\" of 83% to Nvidia's Nemotron family, for its greater transparency in methodology, pre-training data, and post-training data, while China's frontier open weights models broadly score under 50%.",
+        "Open-source AI is a major issue in geopolitics and artificial intelligence controversies, sometimes characterized as an AI arms race or AI Cold War between the US and China.",
+        "Broadly, models released by Chinese companies, such as DeepSeek, Alibaba Cloud, Moonshot AI and Z.ai, use an open weights framework, under more permissive software licenses like Apache or MIT.",
+        "United States AI companies, including OpenAI, Anthropic, SpaceXAI, Google DeepMind largely favor a proprietary software framework, especially for larger models.",
+        "These are in part national government policy decisions, because public access to AI technology has many consequences.",
+        "Some US politicians have called to restrict US public access to Chinese AI tools.",
+        "Popular open-source artificial intelligence project categories include large language models (LLM), machine translation tools, and chatbots.",
+        "Debate over the benefits and risks of open-sourced AI involve a range of factors like security, privacy and technological advancement."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Claude (AI)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75879512",
+      "retrieved_at": "2026-10-18T15:52:30.817Z",
+      "sha256": "112738d44b4d6ea28b4aa35b9a40aabaf644dfff0f006bed978acd0d6b5b6620",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Claude is a series of large language models (LLMs) developed by American software company Anthropic.",
+        "Anthropic sells Claude-based agentic tools including Claude Code, a terminal coding agent, and Claude Cowork, a similar tool for non-programmers.",
+        "Claude is trained using a constitution, a technique developed by Anthropic to improve ethical and legal compliance.",
+        "Since Claude 3, each generation has typically been released in three sizes, named Haiku (the least capable), Sonnet, and Opus (the most capable).",
+        "In 2026, a more capable model named Claude Mythos was released to a handful of companies and organizations; this was followed by the release of Claude Fable, a version of Mythos with stricter safeguards, to the general public.",
+        "In February 2026, the United States Department of Defense designated Anthropic a \"supply chain risk\" and federal agencies were ordered to phase out Claude after the company refused to remove contractual prohibitions on using Claude for mass domestic surveillance and fully autonomous weapons.",
+        "A federal judge blocked the designation in March 2026 and permanently set it aside in August 2026 as unconstitutional retaliation."
+      ]
+    }
+  ]
+}

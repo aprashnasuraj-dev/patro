@@ -1,0 +1,126 @@
+{
+  "id": "mm-0627",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How do keys open locks?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Craver, Scott",
+      "published_at": "2022-04-25",
+      "url": "https://theconversation.com/how-do-keys-open-locks-178602",
+      "retrieved_at": "2026-10-18T15:39:24.663Z",
+      "sha256": "dbee899a9ba8a66e19304f30a40ac6ffca645c3fe36f591b28ea7b44feca4475",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair The depths of the valleys on a key act like a code that must match the lock.",
+        "Robin Smith/The Image Bank via Getty Images How do keys open locks?",
+        "If you have a question you’d like an expert to answer, send it to curiouskidsus@theconversation.com .",
+        "– Noli, age 12, Wisconsin Have you ever wondered how keys work?",
+        "I teach a course in computer security where we learn how locks function – and also how they can be broken or bypassed.",
+        "We do this because locks teach important principles about security in general.",
+        "Scott Craver , CC BY-ND If you look closely at a key, you’ll see its top edge has a bunch of V-shaped valleys.",
+        "If you inspect the key more closely, perhaps with a ruler, you’ll notice the bottoms of these valleys are equally spaced.",
+        "The depth of the valleys encodes a sequence that is accepted by the lock, with each valley contributing one value to the combination.",
+        "Inside the lock is a cylinder – the part that moves when you stick your key in and turn it.",
+        "The key can turn only if all its valleys are the right depth for your particular lock.",
+        "But how does your lock detect whether your key’s valleys have the right sequence of depths?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Keys and Bar Locks",
+      "publisher": "Archaeopress Publishing Ltd",
+      "author": null,
+      "published_at": "2020-01-30",
+      "url": "https://doi.org/10.2307/j.ctv1zcm1gj.6",
+      "retrieved_at": "2026-10-18T15:39:29.002Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Locksmithing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18375",
+      "retrieved_at": "2026-10-18T15:39:30.289Z",
+      "sha256": "dba9d55fbc771d0dcdee78b0915b1ada9dae8b172a7ecd6c40098bd9e0d565aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Locksmithing is a traditional trade and in many countries requires completion of an apprenticeship.",
+        "The level of formal education legally required varies by country, ranging from no formal education to a training certificate awarded by an employer, or a full diploma from an engineering college, along with time spent as an apprentice."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Alicia Keys",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59720",
+      "retrieved_at": "2026-10-18T15:39:30.289Z",
+      "sha256": "a9b61432fc2b0319926074ae1decd80aea687ef6888d1a6a2a202eec693db9ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Alicia Augello Cook (born January 25, 1981), known professionally as Alicia Keys, is an  American singer, songwriter, and pianist.",
+        "A classically trained pianist, Keys began composing songs at the age of 12 and was signed by Columbia Records at 15.",
+        "After disputes with the label, she signed with J Records to release her debut studio album, Songs in A Minor (2001).",
+        "Met with critical acclaim and commercial success, the album sold over 12 million copies worldwide and won five awards at the 44th Annual Grammy Awards.",
+        "It contained the Billboard Hot 100-number one single \"Fallin'\".",
+        "Her second album, The Diary of Alicia Keys (2003), was met with continued success, selling eight million units worldwide and spawning the US top-five singles \"You Don't Know My Name\" and \"If I Ain't Got You\".",
+        "Her 2004 duet with Usher, \"My Boo\", became her second number-one single in the US.",
+        "Keys's first live album, Unplugged (2005), spawned the single \"Unbreakable\" and made her the first female artist to have an MTV Unplugged project debut atop the Billboard 200.",
+        "Her third album, As I Am (2007), sold seven million units worldwide and yielded her third Billboard Hot 100-number one single, \"No One\".",
+        "In 2007, Keys made her film debut in the action-thriller Smokin' Aces, and performed the theme song to the James Bond film Quantum of Solace with her single \"Another Way to Die\" (with Jack White) the following year.",
+        "Her fourth album, The Element of Freedom (2009), peaked atop the UK Albums Chart, sold four million copies worldwide, and was supported by the singles \"Doesn't Mean Anything\", \"Try Sleeping with a Broken Heart\", and \"Un-Thinkable (I'm Ready)\".",
+        "Keys guest appeared on Jay-Z's 2009 single \"Empire State of Mind\", which became her fourth number-one hit in the US."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Linus Yale Jr.",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=349816",
+      "retrieved_at": "2026-10-18T15:39:30.289Z",
+      "sha256": "b83068c8bd46201fc226b89a02153ca03f62e1a9c74d476a17299b136e2618ed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "(April 4, 1821 – December 25, 1868) was an American businessman, inventor, mechanical engineer, and metalsmith.",
+        "Towne of the Yale Lock Company, which became the premier manufacturer of locks in the United States.",
+        "He was the country's leading expert on bank locks and its most important maker.",
+        "By the early 20th century, about three-quarters of all banks in America used his bank locks.",
+        "He is best remembered for his inventions of locks, especially the cylinder lock, and his basic lock design is still widely distributed today, and constitutes a majority of personal locks and safes."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Combination lock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=377018",
+      "retrieved_at": "2026-10-18T15:39:30.289Z",
+      "sha256": "9b6d20ab707a9718d481c250c763283cca475cc23146017815a888be5fd749f3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A combination lock is a type of locking device in which a sequence of symbols, usually numerical digits, is used to open the lock.",
+        "The sequence may be entered using a single rotating dial which interacts with several discs or cams, by using a set of several rotating discs with inscribed symbols which directly interact with the locking mechanism, or through an electronic or mechanical keypad.",
+        "Types range from inexpensive three-digit luggage locks to high-security safes.",
+        "Unlike ordinary padlocks, combination locks do not use keys."
+      ]
+    }
+  ]
+}

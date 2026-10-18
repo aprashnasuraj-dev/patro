@@ -1,0 +1,129 @@
+{
+  "id": "mm-0693",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Maple syrup urine disease",
+      "publisher": "Qeios",
+      "author": null,
+      "published_at": "2020-02-10",
+      "url": "https://doi.org/10.32388/yt2eqm",
+      "retrieved_at": "2026-10-18T15:39:52.447Z",
+      "sha256": "d7b1fdc5580dc3a7bb59ec4a6b1002d6261d7a78f006bef996e8ceb598625854",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Maple syrup urine disease - Definition (v1) by INSERM | Qeios There is a newer version available for this {{ publicationType }}.",
+        "This is an open access publication distributed under the terms of the CC BY 4.0 License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+        "Info Check the {{ publicationType | capitalize }} Source for copyright and license information.",
+        "{{ publication.doi_url }} {{ publication.title }} Declarations Abstract Source Listen on Compose your Definition Related Definitions ({{ publication.ranked_siblings.length }}) # {{ sibling.position_in_ranking }} Thank you for your contribution to the community."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "From Tap to Table: Consumer Values, Producer Attitudes, and Vermont Maple Syrup in a Dynamic Landscape",
+      "publisher": "ScholarWorks -A service of University of Vermont Libraries (University of Vermont)",
+      "author": "Aidan Conor McCracken",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3082265127",
+      "retrieved_at": "2026-10-18T15:39:53.150Z",
+      "sha256": "f6f1f8103236a9db724ccca5922a0f334da37cc3a4c5fb6bbb6bb44de318fce1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Harvesting the sap of maple trees [Acer saccharum] for use in the production of syrups and sugars has a storied history stretching back to the pre-Columbian practices of North America’s indigenous peoples.",
+        "Since its adaptation by European settlers in the late seventeenth century and into the present day, the production of maple syrup has become especially integral to the livelihoods and cultural identities of farmers in Vermont.",
+        "Adapting to challenges posed by climate change, competition in commodity markets, and a shifting regulatory environment is necessary for maple producers.",
+        "However, maple enterprises differ in fundamental ways that can shape their perceptions of risks and their willingness – or ability – to adapt.",
+        "Regional stakeholders – especially maple consumers – are also aware of the pressures bringing change to the industry and concerned about what the consequences entail for producers, communities, and rural landscapes.",
+        "This thesis uses data collected from surveys of Vermont residents and maple sugarmakers to explore consumers’ purchasing behavior and how producers prioritize different threats to their enterprise.",
+        "I first examine how the ways consumers define local products and perceive threats to the regional maple industry affect their willingness to pay for “Made in Vermont” maple syrup.",
+        "Then I show how concerns expressed by maple producers to different social-ecological threats relate to specific enterprise characteristics, production practices, and types of maple enterprises.",
+        "Findings seek to better understand the concerns expressed by Vermont maple producers and consumers – and what implications these attitudes may have for the industry."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Maple syrup",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19886",
+      "retrieved_at": "2026-10-18T15:39:53.150Z",
+      "sha256": "58cd503896a4395d08ca787ecffd743488250aebe9a5737ca2e51ea2e2dbd7c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Maple syrup is a sweet syrup made from the sap of maple trees.",
+        "In cold climates these trees store starch in their trunks and roots before winter; the starch is then converted to sugar that rises in the sap in late winter and early spring.",
+        "Maple trees are tapped by drilling holes into their trunks and collecting the sap, which is heated to evaporate much of the water, leaving the concentrated syrup.",
+        "Maple syrup was first made by the Indigenous people of Northeastern North America.",
+        "The practice was adopted by European settlers, who gradually changed production methods.",
+        "Technological improvements in the 1970s further refined syrup processing.",
+        "Almost all of the world's maple syrup is produced in Canada and the United States, with Quebec alone accounting for 72% of global output.",
+        "In Canada syrups must be made exclusively from maple sap to qualify as maple syrup and must also be at least 66 per cent sugar.",
+        "Maple syrup is often used as a condiment for pancakes, waffles, French toast, oatmeal or porridge.",
+        "It is also used as an ingredient in baking and as a sweetener or flavouring agent."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Birch syrup",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1637064",
+      "retrieved_at": "2026-10-18T15:39:53.150Z",
+      "sha256": "4c97d2751a901cb0d49f3edcc1dd7fbd10e4186bbc223075d12f7c23c2247adc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Birch syrup is a sweet and tangy tree syrup made from birch sap, and produced in much the same way as maple syrup.",
+        "The flavor profile of the syrup varies throughout the season and the early syrup can be used on pancakes, waffles and breakfast items while the later syrup is more often used as an ingredient paired with meat and seafood dishes in sauces, glazes, and dressings.",
+        "It is condensed from the sap, which has about 1% sugar content, depending on the species of birch, location, weather, and season.",
+        "Birch sap sugar is about 42–54% fructose and 45% glucose, with a small amount of sucrose and trace amounts of galactose.",
+        "The main sugar in maple syrup is the more complex sucrose, and the chemical contents of maple syrup are also different, leading to a distinct flavor.",
+        "The flavor of the early run birch syrup is sweet and caramel-like which becomes darker and tangier and more molasses-like towards the end of the season.",
+        "Different types of birch will produce slightly different flavor profiles; some more copper, others with hints of wildflower honey.",
+        "While birch syrup has the same sugar content of maple, it is darker, stronger, and more complex."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Maple taffy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1657999",
+      "retrieved_at": "2026-10-18T15:39:53.150Z",
+      "sha256": "75083048d6076364e6ffc9131b0cdd1da67d442f61ab1c1e3f4afa6b3d46016c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is part of traditional culture in Quebec, Eastern Ontario, New Brunswick and northern New England.",
+        "In these regions, it is poured onto the snow, then lifted either with a small wooden stick, such as a popsicle stick, or a metal dinner fork."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Maple butter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8581261",
+      "retrieved_at": "2026-10-18T15:39:53.150Z",
+      "sha256": "b1f335556db6a620950a533cba11b84b47c749adcdafbdb209764534faf54f7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Maple butter, also known as maple spread or maple cream, is a confection made from maple syrup, by heating the syrup to approximately 112 °C (234 °F), cooling it to around 52 °C (126 °F), and beating it until it reaches a smooth consistency.",
+        "It is usually made from Grade A Light Amber syrup (sometimes known as Fancy), and is a light tan color.",
+        "The consistency of maple butter is light and spreadable, very similar to the consistency of peanut butter.",
+        "Its name comes from the fact that it is \"buttery\" or \"creamy\" smooth, not because it contains any dairy product (it is dairy-free).",
+        "It is sometimes used as a spread instead of butter, or as a frosting.",
+        "Cinnamon is sometimes added to create \"maple cinnamon butter\".",
+        "Maple butter can also refer to blending maple syrup and butter, a typical recipe made of two parts butter to one part syrup."
+      ]
+    }
+  ]
+}

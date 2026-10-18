@@ -1,0 +1,126 @@
+{
+  "id": "mm-0863",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Trade Facilitation and Landlocked countries",
+      "publisher": "Lund University Publications Student Papers (Lund University)",
+      "author": "Christabel Ariekot",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2594792411",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "807a111accb09904f16fc02eb5a4704e410bfaea416b32bc8f88b90b077531a0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper presents a stepping stone into analyzing the effect that border barriers associated with trade facilitation have on landlocked developing countries.",
+        "Using the ‘time taken to import’ as the main trade facilitation indicator, simulations show a negative effect between trade facilitation and landlocked countries.",
+        "The results suggest that when it comes to landlocked countries, trade decreases by 0.19 percent for a 1 percent increase in the time delays.",
+        "Understanding this effect offers important insights into how landlocked countries can increase trade by negotiating better trade deals that are focused towards improving trade facilitation with their trading partners, despite their asymmetric geographical differences."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Economic Development Problems of Landlocked Countries",
+      "publisher": "Institutional Repository (IHS Vienna)",
+      "author": "Landis MacKellar; Andreas Wörgötter; Julia Wörz",
+      "published_at": "2000-01-01",
+      "url": "https://openalex.org/W1563863168",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "7901cac6506112a6ba5d9d34b719db7b8b142bb25e3dc000f621d67c0cb4dbfe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract: Do landlocked countries face special economic development problems?",
+        "Whereas traditional neoclassical theory is ambiguous, more recent directions in trade theory and the theory of economic growth suggest reasons why landlocked countries might be at a disadvantage.",
+        "Our empirical evidence confirms the hypothesis that landlocked countries experience slower economic growth.;"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Newly industrialized country",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=209424",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "cae1a9893bd6f64b57af1be41629d96fccfe0d36e5a177cfe78edf316d38798c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The category of newly industrialized country (NIC), newly industrialized economy (NIE) or middle-income country is a socioeconomic classification applied to several countries around the world by political scientists and economists.",
+        "They represent a subset of developing countries whose economic growth is much higher than that of other developing countries; and where the social consequences of industrialization, such as urbanization, are reorganizing society."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Least developed countries",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=209428",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "76bc67e775a4c9b4773215568a6e9285a3e90d24830515f9bca97c38e5c1313b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The least developed countries (LDCs) are developing countries listed by the United Nations that exhibit the lowest indicators of socioeconomic development.",
+        "The concept of LDCs originated in the late 1960s and the first group of LDCs was listed by the UN in its resolution 2768 (XXVI) on 18 November 1971.",
+        "A country can be classified among the least developed countries when it meets the three following criteria:\n\nPoverty – adjustable criterion based on the gross national income (GNI) per capita averaged over three years.",
+        "As of 2024, a country must have GNI per capita less than US$1,088 to be included on the list, and over $1,306 to graduate from it ($3,918 under income-only threshold).",
+        "Low levels of human assets (based on indicators of nutrition, health, education and adult literacy).",
+        "A country must have human assets index (HAI) score less than 60 to be included on the list, and over 66 to graduate from it.",
+        "A country must have Economic Vulnerability Index (EVI) score over 36 to be included on the list, and less than 32 to graduate from it.",
+        "As of December 2024, 44 countries were still classified as LDC, while eight graduated between 1994 and 2024.",
+        "The World Trade Organization (WTO) recognizes the UN list and says that \"Measures taken in the framework of the WTO can help LDCs increase their exports to other WTO members and attract investment.",
+        "In many developing countries, pro-market reforms have encouraged faster growth, diversification of exports, and more effective participation in the multilateral trading system.\""
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Landlocked country",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=297503",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "96a49dc9dc9126e41de7826fe24d7dffff4bf8e22f18e7ecb1aa0cb8d9fc3f2f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As of 2026, there are 44 landlocked countries, two of them doubly landlocked due to being surrounded by other landlocked nations (Liechtenstein and Uzbekistan), and three landlocked de facto states in the world, South Ossetia, Kosovo and Transnistria.",
+        "Kazakhstan is the world's largest landlocked country by area, Kyrgyzstan is the farthest landlocked country from any ocean, and Ethiopia is the world's most populous landlocked country.",
+        "Generally, being landlocked creates political and economic disadvantages that having access to international waters would avoid.",
+        "For this reason, nations large and small throughout history have fought to gain access to open waters, even at great expense in wealth, bloodshed, and political capital.",
+        "The economic disadvantages of being landlocked can be alleviated or aggravated depending on degree of development, surrounding trade routes and freedom of trade, commonality of language, and other considerations.",
+        "Some landlocked countries in Europe are affluent, such as Andorra, Austria, Liechtenstein, Luxembourg, San Marino, Switzerland, and Vatican City.",
+        "With the exception of Luxembourg (a founding member of NATO), these nations frequently practice neutrality in global political issues.",
+        "However, 32 out of the 44 landlocked countries, including those in Africa, Asia, and South America, have been classified as Landlocked Developing Countries (LLDCs) by the United Nations.",
+        "Nine of the twelve countries with the lowest Human Development Index rankings are landlocked.",
+        "International initiatives are aimed at reducing inequalities resulting from issues such as these, such as the United Nations Sustainable Development Goal 10, which aims to reduce inequality substantially by 2030."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Landlocked developing countries",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3439019",
+      "retrieved_at": "2026-10-18T15:53:12.115Z",
+      "sha256": "450c6f1dd57509f94900a2df8538f387f7af3b1d18e8704fb4adb179e6a630c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The landlocked developing countries (LLDC) are developing countries that are landlocked.",
+        "Due to the economic and other disadvantages suffered by such countries, the majority of landlocked countries are least developed countries (LDCs), with inhabitants of these countries occupying the bottom billion tier of the world's population in terms of poverty.",
+        "Outside of Europe, there is not a single highly developed landlocked country as measured by the Human Development Index (HDI), and nine of the twelve countries with the lowest HDI scores are landlocked.",
+        "Landlocked European countries are exceptions in terms of development outcomes due to their close integration with the regional European market.",
+        "Landlocked countries that rely on transoceanic trade usually suffer a cost of trade that is double that of their maritime neighbours.",
+        "Landlocked countries experience 6% less economic growth than non-landlocked countries, holding other variables constant.",
+        "32 out of the world's 44 landlocked countries, including all the landlocked countries in Africa, Asia, and South America, have been classified as Landlocked Developing Countries by the United Nations.",
+        "As of 2012, approximately 442.8 million people lived in these LDCs."
+      ]
+    }
+  ]
+}

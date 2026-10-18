@@ -1,0 +1,100 @@
+{
+  "id": "mt-1768",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T18:33:55.493Z",
+      "sha256": "242c9f6af409dca36114098e308f49fd1e6221155e14c3e6cf3dc00ea7a0d24f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Marine life",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2056572",
+      "retrieved_at": "2026-10-18T18:33:55.493Z",
+      "sha256": "38ae0b0bae623f5f7fc5895595284133672cdc1dc7eb1180e61ae2f947fa4bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As of 2023, more than 242,000 marine species have been documented, and perhaps two million marine species are yet to be documented.",
+        "On average, researchers describe about 2,300 new marine species each year.",
+        "The study of marine life spans multiple fields, primarily marine biology, as well as biological oceanography.",
+        "By volume, oceans provide about 90% of the living space on Earth, and served as the cradle of life and vital biotic sanctuaries throughout Earth's geological history.",
+        "The earliest known life forms evolved as anaerobic prokaryotes (archaea and bacteria) in the Archean oceans around the deep sea hydrothermal vents, before photoautotrophs appeared and allowed the microbial mats to expand into shallow water marine environments.",
+        "The Great Oxygenation Event of the early Proterozoic significantly altered the marine chemistry, which likely caused a widespread anaerobe extinction event but also led to the evolution of eukaryotes through symbiogenesis between surviving anaerobes and aerobes.",
+        "Complex life eventually arose out of marine eukaryotes during the Neoproterozoic, and which culminated in a large evolutionary radiation event of mostly sessile macrofaunae known as the Avalon Explosion.",
+        "This was followed in the early Phanerozoic by a more prominent radiation event known as the Cambrian Explosion, where actively moving eumetazoan became prevalent.",
+        "These marine life also expanded into fresh waters, where fungi and green algae that were washed ashore onto riparian areas started to take hold later during the Ordovician before rapidly expanding inland during the Silurian and Devonian, paving the way for terrestrial ecosystems to develop.",
+        "Today, marine species range in size from the microscopic phytoplankton, which can be as small as 0.02–micrometers; to huge cetaceans like the blue whale, which can reach 33 m (108 ft) in length.",
+        "Marine microorganisms have been variously estimated as constituting about 70% or about 90% of the total marine biomass.",
+        "Marine primary producers, mainly cyanobacteria and chloroplastic algae, produce oxygen and sequester carbon via photosynthesis, which generate enormous biomass and significantly influence the atmospheric chemistry."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Gut microbiota",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3135637",
+      "retrieved_at": "2026-10-18T18:33:55.493Z",
+      "sha256": "83b40b664382722987394e10afe3344788e9152ec3d33eef369cdd0541722d64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gut microbiota, gut microbiome, or gut flora are the microorganisms, including bacteria, archaea, fungi, and viruses, that live in the digestive tracts of animals.",
+        "The gastrointestinal metagenome is the aggregate of all the genomes of the gut microbiota.",
+        "The gut microbiota has broad impacts, including effects on colonization, resistance to pathogens, maintaining the intestinal epithelium, metabolizing dietary and pharmaceutical compounds, controlling immune function, and even behavior through the gut–brain axis.",
+        "Imbalances in the gut microbiota (dysbiosis) have been associated with numerous diseases, including inflammatory bowel disease, certain cancers, and even neurological disorders, prompting increased efforts to develop microbiome-targeted therapies.",
+        "The microbial composition of the gut microbiota varies across regions of the digestive tract.",
+        "The colon contains the highest microbial density of any human-associated microbial community studied so far, representing between 300 and 1000 different species.",
+        "Bacteria are the largest and to date, best studied component and 99% of gut bacteria come from about 30 or 40 species.",
+        "Over 99% of the bacteria in the gut are anaerobes, but in the cecum, aerobic bacteria reach high densities.",
+        "It is estimated that the human gut microbiota has around a hundred times as many genes as there are in the human genome."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T18:33:55.493Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

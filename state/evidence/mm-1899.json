@@ -1,0 +1,73 @@
+{
+  "id": "mm-1899",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "User interface",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45249",
+      "retrieved_at": "2026-10-18T17:08:37.788Z",
+      "sha256": "d87ecc98bfaaad8f1eaa083038c803b01f0d7ac1e88eb9720090db905fff22b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the industrial design field of human–computer interaction, a user interface (UI) is the space where interactions between humans and machines occur.",
+        "The goal of this interaction is to allow effective operation and control of the machine from the human end, while the machine simultaneously feeds back information that aids the operators' decision-making process.",
+        "Examples of this broad concept of user interfaces include the interactive aspects of computer operating systems, hand tools, heavy machinery operator controls and process controls.",
+        "The design considerations applicable when creating user interfaces are related to, or involve such disciplines as, ergonomics and psychology.",
+        "Generally, the goal of user interface design is to produce a user interface that makes it easy, efficient, and enjoyable (user-friendly) to operate a machine in the way which produces the desired result (i.e.",
+        "This generally means that the operator needs to provide minimal input to achieve the desired output, and also that the machine minimizes undesired outputs to the user.",
+        "User interfaces are composed of one or more layers, including a human–machine interface (HMI) that typically interfaces machines with physical input hardware (such as keyboards, mice, or game pads) and output hardware (such as computer monitors, speakers, and printers).",
+        "A device that implements an HMI is called a human interface device (HID).",
+        "User interfaces that dispense with the physical movement of body parts as an intermediary step between the brain and the machine use no input or output devices except electrodes alone; they are called brain–computer interfaces (BCIs) or brain–machine interfaces (BMIs).",
+        "Other terms for human–machine interfaces are man–machine interface (MMI) and, when the machine in question is a computer, human–computer interface.",
+        "Additional UI layers may interact with one or more human senses, including: tactile UI (touch), visual UI (sight), auditory UI (sound), olfactory UI (smell), equilibria UI (balance), and gustatory UI (taste).",
+        "Composite user interfaces (CUIs) are UIs that interact with two or more senses."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Brain–computer interface",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=623686",
+      "retrieved_at": "2026-10-18T17:08:37.788Z",
+      "sha256": "b734a270deaa1aab3fcf9000f00f5f6f0c7273c0100a5afb461995000d6a9d8c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A brain–computer interface (BCI), sometimes called a brain–machine interface (BMI), is a system that measures brain activity and translates it into functionally useful outputs, allowing interaction with an external or internal system, most commonly a computer or robotic limb.",
+        "BCIs are often directed at researching, mapping, assisting, augmenting, or repairing human cognitive or sensory-motor functions.",
+        "Due to the cortical plasticity of the brain, signals from implanted prostheses can, after adaptation, be handled by the brain like natural sensor or effector channels.",
+        "They are often conceptualized as a human–machine interface that skips the intermediary of moving body parts (e.g.",
+        "BCI implementations range from non-invasive (EEG, MEG, MRI) and partially invasive (ECoG and endovascular) to invasive (microelectrode array) based on how physically close electrodes are to brain tissue.",
+        "Research on BCIs began in the 1970s by Jacques Vidal at the University of California, Los Angeles (UCLA) under a grant from the National Science Foundation.",
+        "This was followed by a contract from the Defense Advanced Research Projects Agency (DARPA) that prompted further research into the technology.",
+        "Vidal's 1973 paper introduced the expression brain–computer interface into scientific literature.",
+        "Following years of animal experimentation, the first neuroprosthetic devices were implanted in humans in the mid-1990s"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Brain implant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1894504",
+      "retrieved_at": "2026-10-18T17:08:37.788Z",
+      "sha256": "e7d2bbb905c601d9671a02433afb1c102b6365d00e22f4fd19b2c5b22e75d25b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Brain implants, often referred to as neural implants, are technological devices that connect directly to a biological subject's brain – usually placed on the surface of the brain, or attached to the brain's cortex.",
+        "A common purpose of modern brain implants and the focus of much current research is establishing a biomedical prosthesis circumventing areas in the brain that have become dysfunctional after a stroke or other head injuries.",
+        "Other brain implants are used in animal experiments simply to record brain activity for scientific reasons.",
+        "Some brain implants involve creating interfaces between neural systems and computer chips.",
+        "This work is part of a wider research field called brain–computer interfaces."
+      ]
+    }
+  ]
+}
