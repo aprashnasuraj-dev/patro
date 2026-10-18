@@ -1,0 +1,101 @@
+{
+  "id": "mm-0777",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Understanding Cloud Computing: How Data Storage Works in the Cloud",
+      "publisher": "International Journal for Multidisciplinary Research (IJFMR)",
+      "author": "-, Anil Kumar Reddy Avula",
+      "published_at": "2024-12-20",
+      "url": "https://doi.org/10.36948/ijfmr.2024.v06i06.33472",
+      "retrieved_at": "2026-10-18T15:14:22.535Z",
+      "sha256": "3388984d6f2076419ff7356345fb6e86da7e76fdddf32d5f0883c4fb2b7d5791",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cloud computing has revolutionized the digital landscape, fundamentally transforming how organizations and individuals store, access, and manage data.",
+        "This comprehensive article examines the evolution of cloud computing from its early days as a basic storage solution to its current status as a critical enabler of digital transformation.",
+        "The article covers the core architecture of cloud storage systems, exploring how distributed networks of data centers ensure reliability and fault tolerance.",
+        "The article particularly highlights the synergy between cloud computing and emerging technologies like generative AI, showing how this combination is reshaping the future of digital infrastructure and business operations."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "DATA STORAGE IN THE CLOUD: A HISTORICAL PERSPECTIVE",
+      "publisher": "Lafia Journal of Library and Information Science",
+      "author": "Osamuyimen Vincent EKHAGUOSA; Harry O. Omorogbe; Lucky Tijani Abdulsalami",
+      "published_at": "2025-07-09",
+      "url": "https://openalex.org/W7220147211",
+      "retrieved_at": "2026-10-18T15:14:25.287Z",
+      "sha256": "07a2c4293e7d8d0baee61278bcd53bb4982ea8fc63380e9bb3d01b2045208ed2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The study sought to establish cloud computing and Data storage learning on the integration of computer technology into the future.",
+        "The focus of the study is on the security of data storage from cloud computing, providing users with insight into the security of data storage in the cloud.",
+        "When cloud computing was new, questions spun around the ability of cloud service providers to keep their infrastructure secure.",
+        "As more businesses began migrating to the cloud, it became obvious that the major cloud service providers were better fortified than most organizations to secure their networks, and customers of cloud services continue to seek better ways to secure their data.",
+        "Learning how cloud storage works today and how to protect yourself from its dangers will help you become a smarter and safer consumer as cloud technologies continue to evolve."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Computer data storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5300",
+      "retrieved_at": "2026-10-18T15:14:25.287Z",
+      "sha256": "f241064963937f651471e2e07be78d1be058267b883b2bd9822d74d82702c43f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Computer data storage or digital data storage is the retention of digital data via technology consisting of computer components and recording media.",
+        "Digital data storage is a core function and fundamental component of computers.",
+        "Generally, the faster and volatile storage components are referred to as \"memory\", while slower persistent components are referred to as \"storage\".",
+        "This distinction was extended in the Von Neumann architecture, where the central processing unit (CPU) consists of two main parts: The control unit and the arithmetic logic unit (ALU).",
+        "The former controls the flow of data between the CPU and memory, while the latter performs arithmetic and logical operations on data.",
+        "In practice, almost all computers use a memory hierarchy, which puts memory close to the CPU and storage further away.",
+        "In modern computers, hard disk drives (HDDs) or solid-state drives (SSDs) are usually used as storage."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "File-hosting service",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1693035",
+      "retrieved_at": "2026-10-18T15:14:25.287Z",
+      "sha256": "914c78315c0ead76c698ccc9475c4978aeaaad5a141f4a457c27dbb7c36ec87b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A file-hosting service, also known as cloud-storage service, online file-storage provider, or cyberlocker, is an internet hosting service specifically designed to host user files.",
+        "These services allow users to upload files that can be accessed over the internet after providing a username and password or other authentication.",
+        "Typically, file hosting services allow HTTP access, and in some cases, FTP access.",
+        "Other related services include content-displaying hosting services (i.e.",
+        "video and image), virtual storage, and remote backup solutions."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Cloud storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11295734",
+      "retrieved_at": "2026-10-18T15:14:25.287Z",
+      "sha256": "b51dea5ce2e2cab789e4ff370fe83673446a70aa48bd2a67ab16d4aa31bb6501",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cloud storage is a model of computer data storage in which data, said to be on \"the cloud\", is stored remotely in logical pools and is accessible to users over a network, typically the Internet.",
+        "The physical storage spans multiple servers (sometimes in multiple locations), and the physical environment is typically owned and managed by a cloud computing provider.",
+        "These cloud storage providers are responsible for keeping the data available and accessible, and the physical environment secured, protected, and running.",
+        "People and organizations buy or lease storage capacity from the providers to store user, organization, or application data.",
+        "Cloud storage services may be accessed through a colocated cloud computing service, a web service application programming interface (API) or by applications that use the API, such as cloud desktop storage, a cloud storage gateway or Web-based content management systems."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "mq-0057",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Magnitude–Frequency Kink in the 2020–2024 Noto Peninsula Earthquake Swarm",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Pasupuleti, RamaKrishna",
+      "published_at": "2026-10-13",
+      "url": "https://doi.org/10.21203/rs.3.rs-11298654/v1",
+      "retrieved_at": "2026-10-18T17:02:15.940Z",
+      "sha256": "b7a59c7dcdbe118d6abc46f2e4171fa1aca5b1b3d07089771beed6586d611dde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The 2020–2024 earthquake swarm beneath the northeastern Noto Peninsula, central Japan, preceded the 1 January 2024 Mw 7.5 earthquake and has been linked to deep fluid supply, aseismic slip and fault-valve behaviour.",
+        "Using the published double-difference relocated catalogue of Yoshida et al.",
+        "(2024; 31,158 events, 2003–2024), we examine the magnitude–frequency distribution (FMD) of the 2021–2023 swarm (14,810 events, M_JMA ≥ 1.2) in three depth bands.",
+        "Shallow events (&lt; 10 km) follow a single Gutenberg–Richter (GR) law.",
+        "The departure persists after nearest-neighbour declustering and when only JMA velocity magnitudes are used (≈ 98% of events across the break).",
+        "The break magnitude is similar at all depths (M ≈ 1.8–2.1), but the departure is much stronger at depth.",
+        "The departure was first indicated by a GR-conditioned residual of magnitude dispersion (Z_C), which measures dispersion beyond that implied by the b-value.",
+        "The results caution against interpreting single b-values from this catalogue without specifying the magnitude range and depth."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Analyzing Earthquake Focal Depth Distribution in the Southern Korean Peninsula",
+      "publisher": "Copernicus GmbH",
+      "author": "Sheen, Dong-Hoon",
+      "published_at": "2025-03-18",
+      "url": "https://doi.org/10.5194/egusphere-egu25-14240",
+      "retrieved_at": "2026-10-18T17:02:16.174Z",
+      "sha256": "e1b5e2a5c808a6935323517e27005a02cabc0cc7279d934844c52fafc5e0c9f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The distribution of focal depths can enhance the understanding of seismogenic characteristics in a region.",
+        "However, determining accurate focal depths is highly challenging, and the reliability of such determination is often limited, requiring careful consideration during analysis and interpretation.",
+        "This study investigates the depth distribution of earthquakes in the southern Korean Peninsula to better understand regional seismicity.",
+        "To minimize focal depth errors, the criteria for reliable focal depth determination were examined.",
+        "(2011), P- and S-wave travel times were computed under conditions of arbitrary seismic networks with a 150 km aperture, consisting of 1,680 seismic stations and originating from focal depths of 5 to 25 km.",
+        "From these conditions, 10 seismic stations were randomly selected to determine the hypocenter of an event, which was then compared with the original focal depth.",
+        "This process was repeated 100,000 times for each focal depth without noise and an additional 100,000 times with random noise ranging from -2 to 2 seconds added to the travel times.",
+        "Consequently, a total of 4.2 million sets of arrival times were generated.",
+        "To account for epistemic uncertainty in the crustal structure, three local velocity models, including that of Kim et al.",
+        "Various metrics were evaluated to develop selection criteria for ground truth events with well-located hypocenters.",
+        "The Gradient Boosting method identified the minimum distance to a station as the most important metric.",
+        "In this study, a new metric was introduced by gridding the epicentral distance within 100 km and the azimuth while considering the distribution of seismic stations within each grid."
+      ]
+    }
+  ]
+}

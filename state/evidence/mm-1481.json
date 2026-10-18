@@ -1,0 +1,93 @@
+{
+  "id": "mm-1481",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dendrochronology",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37800",
+      "retrieved_at": "2026-10-18T15:45:26.152Z",
+      "sha256": "4250fb7c799646bc8ebf560747a4c136047bacccc2a4c5ba8479ddcbd07725ea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dendrochronology  (or tree-ring dating) is the scientific method of dating tree rings (also called growth rings) to the exact year they were formed in a tree.",
+        "As well as dating them, this can give data for dendroclimatology, the study of climate and atmospheric conditions during different periods in history from the wood of old trees.",
+        "Dendrochronology derives from the Ancient Greek dendron (δένδρον), meaning \"tree\", khronos (χρόνος), meaning \"time\", and -logia (-λογία), \"the study of\".",
+        "Dendrochronology is useful for determining the precise age of samples, especially those that are too recent for radiocarbon dating, which always produces a range rather than an exact date.",
+        "However, for a precise date of the death of the tree a full sample to the edge is needed, which most trimmed timber will not provide.",
+        "It also gives data on the timing of events and rates of change in the environment (most prominently climate) and also in wood found in archaeology or works of art and architecture, such as old panel paintings.",
+        "It is also used as a check in radiocarbon dating to calibrate radiocarbon ages.",
+        "New growth in trees occurs in a layer of cells near the bark.",
+        "A tree's growth rate changes in a predictable pattern throughout the year in response to seasonal climate changes, resulting in visible growth rings.",
+        "Each ring marks a complete cycle of seasons, or one year, in the tree's life.",
+        "As of 2020, securely dated tree-ring data for the Northern Hemisphere is available going back 13,910  BP (years before 1950).",
+        "A new method is based on measuring variations in oxygen isotopes in each ring, and this 'isotope dendrochronology' can yield results on samples which are not suitable for traditional dendrochronology due to too few or too similar rings."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Methuselah (pine tree)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5423528",
+      "retrieved_at": "2026-10-18T15:45:26.152Z",
+      "sha256": "fd89723fb61ee1f3f9e5260bdd597ba5c17f5b2db4fa8ddcb0eb68a8865230a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Methuselah is a 4,858-year-old Great Basin bristlecone pine (Pinus longaeva) tree growing high in the White Mountains of Inyo County in eastern California.",
+        "It is recognized as the non-clonal tree with the greatest confirmed age in the world.",
+        "Its old age is a result of harsh weather and a lack of nutrients, which slow down the decaying process.",
+        "The tree's name refers to the biblical patriarch Methuselah, who is said to have reached 969 years of age before his death, thus becoming synonymous with longevity or old age in many European languages including English."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Twelve Days of Christmas (song)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8776627",
+      "retrieved_at": "2026-10-18T15:45:26.152Z",
+      "sha256": "9d8427ff7cf03205e9e9c61fbfeeec5ca8291003138274c8d5ac86e617bf4220",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"The Twelve Days of Christmas\" is an English Christmas carol and nursery rhyme.",
+        "A classic example of a cumulative song, the lyrics detail a series of increasingly numerous gifts given to the speaker by their \"true love\" on each of the twelve days of Christmas (the twelve days that make up the Christmas season, starting with Christmas Day).",
+        "The carol, whose words were first published in England in the late eighteenth century, has a Roud Folk Song Index number of 68.",
+        "A large number of different melodies have been associated with the song, of which the best known is derived from a 1909 arrangement of a traditional folk melody by English composer Frederic Austin."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of oldest trees",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11337053",
+      "retrieved_at": "2026-10-18T15:45:26.152Z",
+      "sha256": "209ccf4d6c162beecf8c770ba0e1fc7dd47ad58f133e6d34cccd0d33ee4016a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Definitions of longevity vary between clonal trees, ones where parts of the tree continue to live after the death of the first trunk or trunks, and non-clonal trees.",
+        "Tree ages are derived from a variety of sources, including documented \"tree-ring\" (dendrochronological) count core samples, radiocarbon dating, girth-to-age formulas, and estimates from growth rates.",
+        "For these reasons, there are three lists of \"oldest trees\" here, using different criteria.",
+        "The first table describes trees for which a minimum age has been directly determined, either through counting or cross-referencing tree rings or through radiocarbon dating.",
+        "Many of these trees may be even older than their listed ages, but the oldest wood in the tree has rotted away.",
+        "For some old trees, so much of the center is missing that their age cannot be directly determined.",
+        "Instead, estimates are made based on the tree's size and presumed growth rate.",
+        "The last table lists clonal colonies in which no individual tree trunks may be remarkably old but in which the organism as a whole is thought to be very old.",
+        "The record-holders for individual, non-clonal trees are the Great Basin bristlecone pine trees from California and Nevada, in the United States.",
+        "Through tree-ring cross-referencing, they have been shown to be almost five thousand years old.",
+        "A clonal colony can survive for much longer than an individual tree.",
+        "A colony of 48,000 quaking aspen trees (nicknamed Pando), covering 106 acres (43 ha) in the Fishlake National Forest of Utah, is considered one of the oldest and largest organisms in the world."
+      ]
+    }
+  ]
+}

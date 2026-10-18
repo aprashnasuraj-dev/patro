@@ -1,0 +1,113 @@
+{
+  "id": "mm-0463",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Gross National Happiness in Bhutan: A Living Example of an Alternative Approach to Progress",
+      "publisher": "ScholarlyCommons (University of Pennsylvania)",
+      "author": "Alejandro Adler",
+      "published_at": "2009-01-01",
+      "url": "https://openalex.org/W2729420672",
+      "retrieved_at": "2026-10-18T15:02:07.222Z",
+      "sha256": "ca1c3086305b5ab2ff706f4a239216ade0637a539bc9ee2da938d3fdfb8ba6f0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As a society we care about what we measure, we use what we measure, and what we measure drives policies and society in a particular direction.",
+        "If societies blindly accept GDP as their measure of progress, they might be trying to maximize the wrong indicator for society.",
+        "In this paper I present Bhutan as a living example of a society that has opened a national dialogue about what progress means, and they have created the Gross National Happiness (GNH) index to reflect their understanding of progress.",
+        "Furthermore, the political and economic architecture of Bhutan is structured around maximizing GNH rather than GDP.",
+        "Institutions in Bhutan use the GNH index and a series of instruments of policy to construct policies that promote GNH.",
+        "We can draw a number of lessons from the Bhutanese experiment, namely that each individual society should strive to answer the following three questions: What does progress mean?",
+        "How de we use indicators to shape policies and institutions?",
+        "The question is not whether societies desire welfare or not.",
+        "And how do we use indicators to organize society and its institutions so as to maximize wellbeing?\\nAnswering these complex questions is a challenging endeavor, especially given the diversity of values and worldviews around the globe.",
+        "However, at the center of the essential questions of development and progress lie the indicators we use as a society to measure wellbeing and develop policies.",
+        "As Hazel Henderson said, “Statistical indicators are the structural DNA codes of nations.",
+        "They reflect a society’s values and goals and become the key drivers of economic and technological choices.”"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Happiness",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=169409",
+      "retrieved_at": "2026-10-18T15:02:07.222Z",
+      "sha256": "fd3b8d3afc2f4b9cad86ace0c4cf5b5f8dcc949d4551938a1a19cf85b85d3125",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Happiness is a complex and multifaceted mental state that encompasses a range of positive feelings, from contentment to intense joy.",
+        "It is often associated with positive life experiences, such as achieving goals, spending time with loved ones, or engaging in enjoyable activities.",
+        "However, happiness can also arise spontaneously, without any apparent external cause.",
+        "Happiness is closely linked to well-being and overall life satisfaction.",
+        "Studies have shown that individuals who experience higher levels of happiness tend to have better physical and mental health, stronger social relationships, and greater resilience in the face of adversity.",
+        "The pursuit of happiness has been a central theme in philosophy and psychology for centuries.",
+        "While there is no single, universally accepted definition of happiness, it is generally understood to be a state of mind characterized by positive emotions, a sense of purpose, and a feeling of fulfillment."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Gross National Happiness",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1433722",
+      "retrieved_at": "2026-10-18T15:02:07.222Z",
+      "sha256": "5ab30d1956d137bb9da6c013080d0a4d394a4b93c5ae3ce95a13a6593f741d50",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gross National Happiness, (GNH; Dzongkha: རྒྱལ་ཡོངས་དགའ་སྐྱིད་དཔལ་འཛོམས།) sometimes called Gross Domestic Happiness (GDH), is a philosophy that the government of Bhutan follows.",
+        "It includes an index for measuring a population's collective happiness and well-being.",
+        "The Gross National Happiness Index was instituted as the goal of the government of Bhutan in the Constitution of Bhutan, enacted on 18 July 2008."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bhutan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2421391",
+      "retrieved_at": "2026-10-18T15:02:07.222Z",
+      "sha256": "79aac902488518b35ec75f30fa5f4a196fe89ee665959af8092c207805a6c96f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bhutan, officially the Kingdom of Bhutan, is a landlocked country in South Asia, located in the Eastern Himalayas, bordering China's Tibet Autonomous Region to the north and northwest and India to the south and southeast.",
+        "With a population of over 800,000 (800,871) and a territory of 38,394 square kilometres (14,824 sq mi), Bhutan ranks 133rd in land area and 160th in population.",
+        "It is a democratic constitutional monarchy with a king as the head of state and a prime minister as the head of government.",
+        "The Je Khenpo is the head of the state religion, Vajrayana Buddhism.",
+        "The Himalayan mountains in the north rise from the country's lush subtropical plains in the south.",
+        "In the Bhutanese Himalayas, there are peaks higher than 7,000 metres (23,000 ft) above sea level.",
+        "Gangkhar Puensum is Bhutan's highest peak and is the highest unclimbed mountain in the world.",
+        "The wildlife of Bhutan is notable for its diversity, including the Himalayan takin and golden langur.",
+        "The capital and largest city is Thimphu, with close to 15% of the population living there.",
+        "Bhutan and neighbouring Tibet experienced the spread of Buddhism, which originated in South Asia during the lifetime of Buddha.",
+        "In the first millennium, the Vajrayana school of Buddhism spread to Bhutan from the southern Pala Empire of Bengal.",
+        "During the 16th century, Zhabdrung Ngawang Namgyal unified the valleys of Bhutan into a single state."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Happiness economics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7257476",
+      "retrieved_at": "2026-10-18T15:02:07.222Z",
+      "sha256": "b0cc9120ad9739600b401272ec57479b96e3d932639630396f539ffd452a9322",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It typically treats subjective happiness-related measures, as well as more objective quality of life indices, rather than wealth, income or profit, as something to be maximized.",
+        "The field has grown substantially since the late 20th century, for example by the development of methods, surveys and indices to measure happiness and related concepts, as well as quality of life.",
+        "Happiness findings have been described as a challenge to the theory and practice of economics.",
+        "Nevertheless, furthering gross national happiness, as well as a specified Index to measure it, has been adopted explicitly in the Constitution of Bhutan in 2008, to guide its economic governance."
+      ]
+    }
+  ]
+}

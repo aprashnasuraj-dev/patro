@@ -1,0 +1,139 @@
+{
+  "id": "mm-0068",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Foot powered washing machine",
+      "publisher": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+      "author": "Razali, Noor Athiqah Najwa",
+      "published_at": "2024-01-01",
+      "url": "https://openalex.org/W7112128900",
+      "retrieved_at": "2026-10-18T14:52:33.997Z",
+      "sha256": "e903d5fca74cf66b56503f9b3f4306def1e0ddbc025460fda6e9c81d684f7b6b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this modern era, a variety of products require electricity to do something fungal.",
+        "The washing machine is a very important machine in everyday life.",
+        "The electric washing machines used in these days are used to wash clothes and dry the laundry.",
+        "So, this project was created to make life easier when the power supply was cut off.",
+        "The project can also help humans save water and electricity.",
+        "The drum rotates around a horizontal axis and is more water-efficient.",
+        "The impeller spins or rotates in place, which rubs clothes against each other.",
+        "Next, this project used morphological analysis to create the final design, the internet for research, and publications as a guide to make my task easier.",
+        "In conclusion, this project expected to be successful and can be used well."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Agitated to Clean: How the Washing Machine Changed Life for the American Woman",
+      "publisher": "ScholarWorks (Boise State University)",
+      "author": "Cassie J Green; Leslie Madsen‐Brooks",
+      "published_at": "2015-01-01",
+      "url": "https://openalex.org/W1204504218",
+      "retrieved_at": "2026-10-18T14:52:33.997Z",
+      "sha256": "59eb187ce60679c907326e903e02501e8b1d712b2d6e290fa1b4258553745924",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "For most historians there exists a minimal understanding of women’s domestic life in the past.",
+        "This project explores the tools used for washing clothing and provides insight into the lives of the individuals who used them, and how the evolution of these tools changed their way of life.",
+        "Using a method based on the works of Jules David Prown, an interpretive analysis is being completed for multiple artifacts selected from the Idaho State Historical Society’s collection.",
+        "The steps of this method include a thorough description of the artifact, making deductions about the artifact based on the description, as well as creating and testing hypotheses about what the artifact signifies.",
+        "The overall purpose of this research is to ignite an interest in the history of domestic women, as well as promote the preservation of the artifacts they used on a regular basis."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Laundry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=147699",
+      "retrieved_at": "2026-10-18T14:52:34.638Z",
+      "sha256": "32b0484b0e28a9367c3a9a4cda74c1311b6f7d47e77f072e195fa8f0b73907f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Laundry is the washing of clothing and other textiles, and, more broadly, their drying and ironing as well.",
+        "Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.",
+        "Laundry work has traditionally been highly gendered, with the responsibility in most cultures falling to women (formerly known as laundresses or washerwomen).",
+        "The Industrial Revolution gradually led to mechanized solutions to laundry work, notably the washing machine and later the tumble dryer.",
+        "Laundry, like cooking and child care, is still done both at home and by commercial establishments outside the home.",
+        "The word \"laundry\" may refer to the clothing itself, or to the place where the cleaning happens.",
+        "An individual home may have a laundry room; a utility room includes, but is not restricted to, the function of washing clothes.",
+        "An apartment building or student hall of residence may have a shared laundry facility.",
+        "A stand-alone business is referred to as a self-service laundry (launderette in British English or laundromat in North American English)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Washing machine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=172111",
+      "retrieved_at": "2026-10-18T14:52:34.638Z",
+      "sha256": "d947f99b282d87541f16df15c0435b126348b71a6e85046efd457447044569dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A washing machine (laundry machine, clothes washer, or washer) is a machine designed to launder clothing.",
+        "Other ways of doing laundry include dry cleaning (which uses alternative cleaning fluids and is performed by specialist businesses) and ultrasonic cleaning.",
+        "Modern-day home appliances use electric power to automatically clean clothes.",
+        "The user adds laundry detergent, which is sold in liquid, powder, or dehydrated sheet form, to the wash water.",
+        "The machines are also found in commercial laundromats where customers pay-per-use.",
+        "Before the invention of washing machines and indoor plumbing, clothes had to be washed by hand in a multi-step process that often occupied an entire day of work, plus drying and ironing.",
+        "The first English patent under the category of washing machines was issued in 1691.",
+        "Electric washing machines were advertised and discussed in newspapers as early as 1904, and the first automatic washing machine was introduced in 1937.",
+        "The spread of the washing machine has been seen to be a force behind the improvement of women's position in society, and has been compared to the contraceptive pill, abortion rights, and the refrigerator.",
+        "Irish feminist Mary Frances McDonald has described washing machines as the single most life-changing invention for women, and Swedish statistician Hans Rosling suggested that its positive impact makes it \"the greatest invention of the Industrial Revolution\"."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dry cleaning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=172118",
+      "retrieved_at": "2026-10-18T14:52:34.638Z",
+      "sha256": "570b4eb3142fe0de0e54692f703516c98df144d6383bb837dddc87e60279499a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dry cleaning is any cleaning process for clothing and textiles using a solvent other than water.",
+        "Clothes are instead soaked in a water-free liquid organic solvent (usually non-polar, as opposed to water which is a polar solvent) typically inside a specialised dry-cleaning machine.",
+        "The most commonly used solvent is perchloroethylene (known as \"PCE\" or \"perc\" for short), although other solvents such as hydrocarbon mixtures and decamethylcyclopentasiloxane are also used.",
+        "Historical solvents include gasoline, kerosene, benzene, Stoddard solvent, carbon tetrachloride, trichloroethylene, trichlorotrifluoroethane, trichloroethane, and n-propyl bromide.",
+        "Most natural fibers can be washed in water but some synthetics (e.g., viscose) react poorly with water and should be dry cleaned if possible.",
+        "If not, this could result in changes in texture, colour, strength, and shape.",
+        "Additionally, certain specialty fabrics, including silk and acetate, may benefit from dry cleaning to prevent damage."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Washing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=253830",
+      "retrieved_at": "2026-10-18T14:52:34.638Z",
+      "sha256": "fb8849209b2256c1657798c5ebc15b7adfe04ca993e87724a49e4117695a9f84",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Washing is a method of cleaning, usually with water and soap or detergent.",
+        "Regularly washing and then rinsing both body and clothing is an essential part of good hygiene and health.",
+        "Often people use soaps and detergents to assist in the emulsification of oils and dirt particles so they can be washed away.",
+        "The soap can be applied directly, or with the aid of a washcloth or assisted with sponges or similar cleaning tools.",
+        "In social contexts, washing refers to the act of bathing, or washing different parts of the body, such as hands, hair, or faces.",
+        "Excessive washing may damage the hair, causing dandruff, or cause rough skin/skin lesions.",
+        "Some washing of the body is done ritually in religions like Christianity and Judaism, as an act of purification.",
+        "For example, washing of clothing or other cloth items, like bedsheets, or washing dishes or cookware.",
+        "Keeping objects clean, especially if they interact with food or the skin, can help with sanitation.",
+        "Other kinds of washing focus on maintaining cleanliness and durability of objects that get dirty, such washing one's car like car wash parts by lathering the exterior with car soap, or washing tools used in a dirty process."
+      ]
+    }
+  ]
+}

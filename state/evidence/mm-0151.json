@@ -1,0 +1,145 @@
+{
+  "id": "mm-0151",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Explorando la Secuencia de Fibonacci",
+      "publisher": "Universidad Pedagógica y Tecnológica de Colombia",
+      "author": "Velasco segura, Monica alejandra",
+      "published_at": "2025-05-16",
+      "url": "https://doi.org/10.19053/uptc.22158391.18090",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "a2301d707f5d8bc45de24aa357e944d7c52c002695a2de0a3f59c1a8d3e5582d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Esta investigación formativa (Gómez, 2004) considera la secuencia de Fibonacci desde una perspectiva científica y matemática.",
+        "El objetivo del estudio es comprender cómo esta secuencia de números, caracterizada por la suma de los dos términos anteriores para obtener el siguiente término, aparece en los fenómenos naturales y las estructuras matemáticas.",
+        "En esta investigación formativa (Gómez, 2004) se dan aportes hacía la respuesta de la pregunta ¿Cómo se reflejan los números de Fibonacci en el mundo natural y cómo pueden entenderse a través del ente de las matemáticas?",
+        "Dando un resultado donde muestra que los números de Fibonacci están presentes en las hojas de las plantas, la estructura de las conchas de los moluscos y los patrones de crecimiento de las flores.",
+        "Además, se destacan las relaciones ocultas matemáticas donde se explican estas observaciones.",
+        "Este estudio revela la estrecha relación entre los números de Fibonacci y la ciencia el cual destaca su papel fundamental en la comprensión de la estructura y el orden del mundo natural."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Fibonacci Sequence",
+      "publisher": "Huskie Commons (Northern Illinois University)",
+      "author": "Asna Qureshi",
+      "published_at": "2011-01-01",
+      "url": "https://openalex.org/W3107394394",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "9894a2e209efb24a0b497dca47609f72404381c818aa073fec2ad06f277a699c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In number theory a very famous sequence of numbers is the Fibonacci sequence.",
+        "It has the form 1, 1,2,3,5,8 ..., where each subsequent number in the sequence is formed by adding together the two previous numbers.",
+        "The Fibonacci sequence has many interesting properties and connections with art forms, nature and elsewhere and can be found through the Golden Ratio, otherwise known as Phi, or"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Fibonacci Sequence: Its History, Significance, and Manifestations in Nature",
+      "publisher": "Digital Commons (Liberty University)",
+      "author": "Anna Grigas",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W52993449",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "ad896a4b94f212952771bd07a6e09320de758b16cda5c9fdf769436eb2ec359e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The discoveries of Leonard of Pisa, better known as Fibonacci, are revolutionary contributions to the mathematical world.",
+        "His best-known work is the Fibonacci sequence, in which each new number is the sum of the two numbers preceding it.",
+        "When various operations and manipulations are performed on the numbers of this sequence, beautiful and incredible patterns begin to emerge.",
+        "The numbers from this sequence are manifested throughout nature in the forms and designs of many plants and animals and have also been reproduced in various manners in art, architecture, and music."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Fibonacci sequence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10918",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "33c176524454c94f6e0fa7921501f5967c6e29324088401726a61aa2ae72ee2b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the Fibonacci sequence is a sequence in which each element is the sum of the two elements that precede it.",
+        "Numbers that are part of the Fibonacci sequence are known as Fibonacci numbers, commonly denoted Fn .",
+        "The initial elements of the sequence are F1 = 1 and F2 = 1, though many authors also include a zeroth element F0 = 0.",
+        "Starting from F0, the sequence begins\n\n0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...",
+        "(sequence A000045 in the OEIS)\n\nThe Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Pingala on enumerating possible patterns of Sanskrit poetry formed from syllables of two lengths.",
+        "They are named after the Italian mathematician Leonardo of Pisa, also known as Fibonacci, who introduced the sequence to Western European mathematics in his 1202 book Liber Abaci.",
+        "Fibonacci numbers appear unexpectedly often in mathematics, so much so that there is an entire journal dedicated to their study, the Fibonacci Quarterly.",
+        "Applications of Fibonacci numbers include computer algorithms such as the Fibonacci search technique and the Fibonacci heap data structure, and graphs called Fibonacci cubes used for interconnecting parallel and distributed systems.",
+        "They also appear in biological settings, such as branching in trees, the arrangement of leaves on a stem, the fruit sprouts of a pineapple, the flowering of an artichoke, and the arrangement of a pine cone's bracts, though they do not occur in all species.",
+        "Fibonacci numbers are also strongly related to the golden ratio: Binet's formula expresses the n-th Fibonacci number in terms of n and the golden ratio, and implies that the ratio of two consecutive Fibonacci numbers tends to the golden ratio as n increases.",
+        "Fibonacci numbers are also closely related to Lucas numbers, which obey the same recurrence relation and with the Fibonacci numbers form a complementary pair of Lucas sequences."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Golden ratio",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12386",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "afe6218b9d3c2d42d0a488d99d0f7a077acd92a0b9e21df89acc52ddbcf0f7ee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, two quantities are in the golden ratio if their ratio is the same as the ratio of their sum to the larger of the two quantities.",
+        "The golden ratio was called the extreme and mean ratio by Euclid, and the divine proportion by Luca Pacioli; it also goes by other names.",
+        "Mathematicians have studied the golden ratio's properties since antiquity.",
+        "It is the ratio of a regular pentagon's diagonal to its side and thus appears in the construction of the dodecahedron and icosahedron.",
+        "A golden rectangle –  that is, a rectangle with an aspect ratio of ⁠\n  \n    \n      \n        φ\n      \n    \n    {\\displaystyle \\varphi }\n  \n⁠ –  may be cut into a square and a smaller rectangle with the same aspect ratio.",
+        "The golden ratio has been used to analyze the proportions of natural objects and artificial systems such as financial markets, in some cases based on dubious fits to data.",
+        "The golden ratio appears in some patterns in nature, including the spiral arrangement of leaves and other parts of vegetation.",
+        "Some 20th-century artists and architects, including Le Corbusier and Salvador Dalí, have proportioned their works to approximate the golden ratio, believing it to be aesthetically pleasing."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Mandelbrot set",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19562",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "78e6fbf1c965c60a296737297fca57ee2c9b9b4ca9c451b83c5c3c777ecef362",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Brooks and Peter Matelski in 1978, as part of a study of Kleinian groups.",
+        "Afterwards, in 1980, Benoit Mandelbrot obtained high-quality visualizations of the set while working at IBM's Thomas J.",
+        "Images of the Mandelbrot set exhibit an infinitely complicated boundary that reveals progressively ever-finer recursive detail at increasing magnifications; mathematically, the boundary of the Mandelbrot set is a fractal curve.",
+        "The \"style\" of this recursive detail depends on the region of the set boundary being examined.",
+        "The Mandelbrot set is well-known, even outside mathematics, for how it exhibits complex fractal structures when visualized and magnified, despite having a relatively simple definition, and is commonly cited as an example of mathematical beauty."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Elliott wave principle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=289430",
+      "retrieved_at": "2026-10-18T14:54:49.256Z",
+      "sha256": "4f3f9e0c43b0d2c6c015e16c4f48d9a0a56864459af3fd4757db02bb94ecd021",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Elliott wave principle, or Elliott wave theory, is a form of technical analysis that helps financial traders analyze market cycles and forecast market trends by identifying extremes in investor psychology and price levels, such as highs and lows, by looking for patterns in prices.",
+        "Ralph Nelson Elliott (1871–1948), an American accountant, developed a model for the underlying social principles of financial markets by studying their price movements, and developed a set of analytical tools in the 1930s.",
+        "He proposed that market prices unfold in specific patterns, which practitioners today call Elliott waves, or simply waves.",
+        "Elliott published his theory of market behavior in the book The Wave Principle in 1938, summarized it in a series of articles in Financial World magazine in 1939, and covered it most comprehensively in his final major work, Nature's Laws: The Secret of the Universe in 1946.",
+        "Elliott stated that \"because man is subject to rhythmical procedure, calculations having to do with his activities can be projected far into the future with a justification and certainty heretofore unattainable\"."
+      ]
+    }
+  ]
+}

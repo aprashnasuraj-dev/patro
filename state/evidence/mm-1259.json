@@ -1,0 +1,156 @@
+{
+  "id": "mm-1259",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Privacy-Preserving Fine-Tuning of Artificial Intelligence (AI) Foundation Models with Federated Learning, Differential Privacy, Offsite Tuning, and Parameter-Efficient Fine-Tuning (PEFT)",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "author": "Zhao, Jun",
+      "published_at": "2023-10-02",
+      "url": "https://doi.org/10.36227/techrxiv.24191886.v1",
+      "retrieved_at": "2026-10-18T15:32:15.816Z",
+      "sha256": "82cd79fcd72978537442f01a4710af42db72c7290be23b51af6276017cd651cc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial Intelligence (AI) Foundation Models (FMs), pre-trained on massive datasets, have recently emerged as a pivotal asset in a wide array of tasks.",
+        "Examples of FMs include Large Language Models (LLMs), Large Vision Models (LVMs), and Large Multimodal Models (LMMs).",
+        "The adaptability of FMs, achieved through finetuning, enables these models to perform exceptionally across diverse domains.",
+        "However, the fine-tuning process often entails data centralization, which raises privacy concerns.",
+        "For instance, in healthcare, hospitals might want to fine-tune an AI model on patient records.",
+        "Sending this data to a central server for fine-tuning can raise privacy concerns."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Privacy-Preserving Fine-Tuning of Artificial Intelligence (AI) Foundation Models with Federated Learning, Differential Privacy, Offsite Tuning, and Parameter-Efficient Fine-Tuning (PEFT)",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "author": "Zhao, Jun",
+      "published_at": "2023-10-02",
+      "url": "https://doi.org/10.36227/techrxiv.24191886",
+      "retrieved_at": "2026-10-18T15:32:15.816Z",
+      "sha256": "2ae3e84837ac54be8601cee214b9d46fd914942c84136eae76b018b7459123bc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;Artificial Intelligence (AI) Foundation Models (FMs), pre-trained on massive datasets, have recently emerged as a pivotal asset in a wide array of tasks.",
+        "Examples of FMs include Large Language Models (LLMs), Large Vision Models (LVMs), and Large Multimodal Models (LMMs).",
+        "The adaptability of FMs, achieved through finetuning, enables these models to perform exceptionally across diverse domains.",
+        "However, the fine-tuning process often entails data centralization, which raises privacy concerns.",
+        "For instance, in healthcare, hospitals might want to fine-tune an AI model on patient records.",
+        "Sending this data to a central server for fine-tuning can raise privacy concerns."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Investigation of fine-tuning methods in large language models",
+      "publisher": "DR-NTU (Nanyang Technological University)",
+      "author": "Qi Cao",
+      "published_at": "2025-01-01",
+      "url": "https://openalex.org/W7126284473",
+      "retrieved_at": "2026-10-18T15:32:16.204Z",
+      "sha256": "2a79d5ca9ecb17b56e690b7e6711d745c7c6802b0eeda5f6618893e1d5684702",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With the rapid development of large-scale language models (LLM), its performance in various natural language processing (NLP) tasks has been significantly improved.",
+        "However, its universality makes it inefficient when applied to specific fields.",
+        "Therefore, fine tuning has become an important way to improve the adaptability of the model and the accuracy of specific tasks.",
+        "This paper studies several fine-tuning techniques of LLM, and pays special attention to how these methods affect the performance of automatic relevance evaluation.",
+        "The discussion covers full-parameters and parameter-efficient tuning paradigms, such as LoRA, prefix tuning and adapter tuning.",
+        "And their efficiency, scalability and effectiveness were evaluated.",
+        "To ground these comparisons in practice, we use the open-source WANDS dataset to apply the selected fine-tuning strategies to search relevance evaluation in commercial contexts.",
+        "In addition to traditional optimization, we also proposed a decomposition scoring and self-explanation prompt framework to decompose correlation judgments into explainable components.",
+        "This design improves the clarity and consistency of reasoning in the reasoning process.",
+        "Overall, this study aims to provide empirical insights and practical guidance for customizing LLMs to adapt to specific relevance assessment tasks, thus contributing to more efficient and effective model adaptation in real-world NLP applications."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Fine-tuned universe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=573880",
+      "retrieved_at": "2026-10-18T15:32:16.204Z",
+      "sha256": "b6c09cac4839172c54fd52a1cc574f48f3837d579f15208522e182a05bf9c959",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The fine-tuned universe is the hypothesis that, because \"life as we know it\" could not exist if the constants of nature—such as the electron charge or the gravitational constant—had been even slightly different, the universe must be tuned specifically for life.",
+        "In practice, this hypothesis is formulated in relation to dimensionless physical constants.",
+        "These physical constants, parameters, and initial conditions of the universe at or around the Big Bang played a key role in allowing life to emerge and evolve.",
+        "There are about 31 physical constants in the Standard Model of particle physics and the standard model of cosmology combined, and they seem to have unusual precision."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Generative pre-trained transformer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72970020",
+      "retrieved_at": "2026-10-18T15:32:16.204Z",
+      "sha256": "277d240ec2488c162c4bc79543d5a2664cad43a84f2ca7ea1eef3ee7bf009bfc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A generative pre-trained transformer (GPT) is a type of large language model (LLM) that is widely used in generative artificial intelligence chatbots.",
+        "GPTs are based on a deep learning architecture called the transformer.",
+        "They are pre-trained on large datasets of unlabeled content, and able to generate novel content.",
+        "OpenAI was the first to apply generative pre-training to the transformer architecture, introducing the GPT-1 model in 2018.",
+        "The chatbot ChatGPT, released in late 2022 (using GPT-3.5), was followed by many competitor chatbots using their own generative pre-trained transformers to generate text, such as Gemini, DeepSeek and Claude.",
+        "GPTs are primarily used to generate text, but can be trained to generate other kinds of data.",
+        "Multimodal GPTs can process or generate multiple types of data, such as text, images and audio.",
+        "To improve performance on complex tasks, reasoning GPTs allocate more computation time analyzing the problem before generating an output."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Fine-tuning (deep learning)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73250406",
+      "retrieved_at": "2026-10-18T15:32:16.204Z",
+      "sha256": "7827863c82846209d421dc937466e65b81fd4225ef2496e7014646e0139dc535",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In deep learning, fine-tuning is the process of adapting a computational model trained for one task (the upstream task) to perform a different, usually more specific, task (the downstream task).",
+        "It is considered a form of transfer learning, as it reuses knowledge learned from the original training objective.",
+        "Fine-tuning involves applying additional training (e.g., on new data) to the parameters of a neural network that have been pre-trained.",
+        "The additional training can be applied to the entire neural network, or to only a subset of its layers, in which case the layers that are not being fine-tuned are \"frozen\" (i.e., not changed during backpropagation).",
+        "A model may also be augmented with \"adapters\"—lightweight modules inserted into the model's architecture that nudge the embedding space for domain adaptation.",
+        "These contain far fewer parameters than the original model and can be fine-tuned in a parameter-efficient way by tuning only their weights and leaving the rest of the model's weights frozen.",
+        "Models that are pre-trained on large, general corpora are usually fine-tuned by reusing their parameters as a starting point and adding a task-specific layer trained from scratch.",
+        "Fine-tuning the full model is also common and often yields better results, but is more computationally expensive.",
+        "Fine-tuning is typically accomplished via supervised learning, but there are also techniques to fine-tune a model using weak supervision.",
+        "Fine-tuning can be combined with a reinforcement learning from human feedback-based objective to produce language models such as ChatGPT (a fine-tuned version of GPT models) and Sparrow."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Llama (language model)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73306787",
+      "retrieved_at": "2026-10-18T15:32:16.204Z",
+      "sha256": "96f2932a54a1cd3822e663de1c2e4641cdb64b04ba50734662c27fe1c136b419",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Llama (\"Large Language Model Meta AI\" serving as a backronym) was a family of large language models (LLMs) released by Meta AI from February 2023 to April 2025.",
+        "Llama models come in different sizes, ranging from 1 billion to 2 trillion parameters.",
+        "Initially only a foundation model, starting with Llama 2, Meta AI released instruction fine-tuned versions alongside foundation models.",
+        "Model weights for the first version of Llama were only available to researchers on a case-by-case basis, under a non-commercial license.",
+        "Unauthorized copies of the first model were shared via BitTorrent.",
+        "Subsequent versions of Llama were made accessible outside academia and released under licenses that permitted some commercial use.",
+        "Alongside the release of Llama 3, Meta rolled out Meta AI, an AI assistant built on Llama.",
+        "Meta AI has a dedicated website and is available on Facebook and WhatsApp.",
+        "In April 2026, Meta Superintelligence Labs released Muse Spark as a replacement for Llama powering chatbots on various Meta services."
+      ]
+    }
+  ]
+}

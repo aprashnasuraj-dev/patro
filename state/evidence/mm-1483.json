@@ -1,0 +1,147 @@
+{
+  "id": "mm-1483",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why mosquitoes bite some people more than others",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Halfpenny, Richard",
+      "published_at": "2018-08-17",
+      "url": "https://theconversation.com/why-mosquitoes-bite-some-people-more-than-others-101353",
+      "retrieved_at": "2026-10-18T15:45:27.793Z",
+      "sha256": "18682862c2bcef4df0d40a68866833a4be5ada94b3329b7281f046eef2eaca0d",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why mosquitoes bite some people more than others Skip to content Academic rigor, journalistic flair Don’t scratch it!",
+        "Instead, most are opportunistic feeders – feeding when they are able and from lots of different sources.",
+        "But Aedes aegypti and Anopheles gambiae are well known for their preference for human blood and their role as vectors which transmit disease in humans.",
+        "Not only do certain mosquito species show very strong preferences for obtaining their blood meals from humans, they also appear to discriminate between people when choosing their next meal .",
+        "I’ve shared rooms with people who end up covered in bites while I escape with only a nibble or two.",
+        "I’m sure you’ve noticed something similar, whichever side of the arrangement you might fall.",
+        "Although this is only an anecdote, it is backed up by research.",
+        "There are many old wives’ tales on the matter, some more plausible than others.",
+        "Some think that blood type, having fair skin, being sweaty and even eating foods with garlic or apple cider vinegar can influence biting rates one way or the other.",
+        "There are plenty of these anecdotes and for the most part they don’t appear to have much influence when scientifically tested .",
+        "But a great deal of research effort is spent on understanding mosquito feeding choices, primarily in the hope of manipulating their behaviour to control disease in humans.",
+        "Only female mosquitoes bite, and only then when they’re ovulating."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Health Check: why mosquitoes seem to bite some people more",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Webb, Cameron",
+      "published_at": "2015-01-25",
+      "url": "https://theconversation.com/health-check-why-mosquitoes-seem-to-bite-some-people-more-36425",
+      "retrieved_at": "2026-10-18T15:45:28.013Z",
+      "sha256": "35d2acd443a92f5495bd7ff50489c2bed9b0c31d5e1afc5515bbdf23fe93757b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What is it about these unlucky chosen few that makes them mosquito magnets?",
+        "There are hundreds of mosquito species and they all have slightly different preferences when it comes to what or who they bite.",
+        "But only females bite; they need a nutritional hit to develop eggs.",
+        "Finding someone to bite Mosquitoes are stimulated by a number of factors when seeking out a blood meal.",
+        "Initially, they’re attracted by the carbon dioxide we exhale.",
+        "Body heat is probably important too, but once the mosquito gets closer, she will respond to the smell of a potential blood source’s skin.",
+        "Studies have suggested blood type ( particularly type O ), pregnancy and beer drinking all make you marginally more attractive to mosquitoes.",
+        "Switch to another species and the results are likely to be different.",
+        "There are up to 400 chemical compounds on human skin that could play a role in attracting ( and perhaps repulsing ) mosquitoes.",
+        "This smelly mix, produced by bacteria living on our skin and exuded in sweat, varies from person to person and is likely to explain why there is substantial variation in how many mozzies we attract .",
+        "Genetics probably plays the biggest role in this, but a little of it may be down to diet or physiology.",
+        "One of the best studied substances contained in sweat is lactic acid ."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mosquito",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37789",
+      "retrieved_at": "2026-10-18T15:45:29.798Z",
+      "sha256": "000ef03969d765c549586ecc736bdc8314df3372cf1bf6de0483137b1491ea6d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mosquitoes, the Culicidae, are a family of small flies consisting of 3,600 species.",
+        "The word mosquito (formed by mosca and diminutive -ito) is Spanish and Portuguese for little fly.",
+        "Mosquitoes have a slender, segmented body, one pair of wings, three pairs of long hair-like legs, and a specialized, highly elongated set of mouthparts forming a proboscis, adapted for piercing and sucking.",
+        "All mosquitoes drink nectar from flowers; females of many species have adapted to also drink blood.",
+        "Evolutionary biologists view mosquitoes as micropredators, small animals that parasitise larger ones by drinking their blood without immediately killing them.",
+        "Medical parasitologists view mosquitoes as vectors of disease, carrying protozoan parasites or bacterial or viral pathogens from one host to another.",
+        "The mosquito lifecycle consists of four stages: egg, larva, pupa, and adult.",
+        "Eggs are laid on the water surface; they hatch into motile larvae that feed on aquatic algae and organic material.",
+        "These larvae are important food sources for many freshwater animals, such as dragonfly nymphs, many fish, and some birds.",
+        "Adult females of many species have mouthparts adapted to pierce the skin of a host and feed on blood of a wide range of vertebrate hosts, and some invertebrates, primarily other arthropods.",
+        "The mosquito's saliva is transferred to the host during the bite, and can cause an itchy rash.",
+        "In addition, blood-feeding species can ingest pathogens while biting and transmit them to other hosts."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Aedes albopictus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=348202",
+      "retrieved_at": "2026-10-18T15:45:29.798Z",
+      "sha256": "df2696a8de93132e4656724d655dd1aa2e8dddb8794d1f177aae9affb5c66093",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aedes albopictus (synonym Stegomyia albopicta), from the mosquito (Culicidae) family, also known as the (Asian) tiger mosquito or forest mosquito, is a species of mosquito native to the tropical and subtropical areas of Southeast Asia.",
+        "In the past few centuries, it has spread to many countries through the transport of goods and international travel.",
+        "It is characterized by the white bands on its legs and body.",
+        "This mosquito has become a significant pest in many communities because it closely associates with humans (rather than living in wetlands), and typically flies and feeds in the daytime in addition to at dusk and dawn.",
+        "The insect is called a tiger mosquito as it has stripes, as does a tiger.",
+        "albopictus is an epidemiologically important vector for the transmission of many viral pathogens, including the yellow fever virus, dengue fever, and Chikungunya fever, as well as several filarial nematodes such as Dirofilaria immitis.",
+        "Aedes albopictus is capable of hosting the Zika virus and is considered a potential vector for Zika transmission among humans."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Bed bug",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=952459",
+      "retrieved_at": "2026-10-18T15:45:29.798Z",
+      "sha256": "2c6a38a3903ed47b753b3c26d00fbbc37b548b0d3bfcf6e335f7598505d9f591",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bed bugs are insects from the family Cimicidae, primarily from the genus Cimex, which are parasites that feed on blood, usually at night.",
+        "Their bites can result in a number of health issues, including skin rashes, psychological effects, and allergic symptoms.",
+        "Bed bug bites may lead to skin changes ranging from small areas of redness to prominent blisters.",
+        "Symptoms may take between minutes to days to appear and itchiness is generally present.",
+        "Their bites are not known to transmit any infectious disease.",
+        "Complications may rarely include areas of dead skin or vasculitis.",
+        "Bed bug bites are caused primarily by two species of insects: Cimex lectularius (the common bed bug) and Cimex hemipterus, found primarily in the tropics.",
+        "They spread by crawling between nearby locations or by being carried within personal items.",
+        "Infestation is rarely due to a lack of hygiene but is more common in high-density areas.",
+        "Diagnosis involves both finding the bugs and the occurrence of compatible symptoms.",
+        "Bed bugs spend much of their time in dark, hidden locations like mattress seams, or cracks in a wall.",
+        "Eliminating bed bugs from the home is often difficult, partly because bed bugs can survive up to approximately 300 days without feeding."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Mosquito control",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2887318",
+      "retrieved_at": "2026-10-18T15:45:29.798Z",
+      "sha256": "102f08b29cececd464e85cf6d7d911f5da9715379a728259a2935ac31a66a925",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The population of mosquitoes is managed to reduce their damage to human health, economies, and enjoyment.",
+        "Control strategies range from habitat modification and chemical insecticides to biological agents and mechanical traps.",
+        "Rising global temperatures have expanded mosquito habitats and disease risks, prompting a greater focus on community-led education programs to play key roles in reducing breeding grounds and tracking mosquito populations."
+      ]
+    }
+  ]
+}

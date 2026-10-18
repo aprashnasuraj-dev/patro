@@ -1,0 +1,143 @@
+{
+  "id": "mm-1704",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "“The impacts of climate variability and upland land cover on shoreline erosion, and coastal subsidence in the Bangladesh Delta Region”",
+      "publisher": "Copernicus GmbH",
+      "author": "Srivastava, Neelay; Nghia, Bui",
+      "published_at": "2023-05-15",
+      "url": "https://doi.org/10.5194/egusphere-egu23-777",
+      "retrieved_at": "2026-10-18T15:53:37.266Z",
+      "sha256": "64db246d1b7193509619a1827f3bbafb19d6fbbafc1313e0f83190811800ee97",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract : Sea-level rise and coastal subsidence are two of the most significant impacts of climate change in the Bangladesh Delta Region.",
+        "Landcover in the uplands of Bangladesh are largely regulating water flows and sedimentation to the delta.",
+        "However, deforestation and land-use change in the uplands can also have a negative impact on the delta.",
+        "This study attempts to analyze the impacts of climate variables, and changes in upland landcover in deliberation with regional sea-level rise, erosion, and subsidence at a regional scale., This study aims to find a distinctive correlation between these phenomena in a GIS environment.",
+        "Trend analysis of regional and local sea level rise on Bangladesh coast was taken from&amp;#160; Department of Environment, Ministry of Environment and Forests from 1992 to 2012.",
+        "GMSL reference&amp;#160; was from AR4 and AR5 from 1901 to 2012.",
+        "The study would help to anticipate the risk and &amp;#160;planning required on long run to restore coastal ecosystems, and &amp;#160;livelihood security."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Preparations for the Bangladesh Delta Plan",
+      "publisher": "Socio-Environmental Systems Modeling",
+      "author": "Giasuddin Ahmed Choudhury; Catharien Terwisscha van Scheltinga; L.M.J. van den Bergh",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2587847374",
+      "retrieved_at": "2026-10-18T15:53:37.789Z",
+      "sha256": "69152c5cb74dc3f4e621be441c7fedd983f77e5cf61e5283d48d21c828254f25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "strong involvement of a wide range of stakeholders (government, knowledge institutes, NGOs and private sector) in the development of the Bangladesh Delta Plan; 2.",
+        "the development of a shared vision using socio-economic, water management and climate change scenarios; and 3.",
+        "a parallel implementation process in order to place starting implementation projects within the framework of the Bangladesh Delta Plan, already during the formulation of the plan."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bangladesh",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3454",
+      "retrieved_at": "2026-10-18T15:53:37.789Z",
+      "sha256": "8c3936c784493134514c370b25e0e3969a0aca08decf3b502789788e0d0ce7dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bangladesh, officially the People's Republic of Bangladesh, is a country in South Asia.",
+        "It is the eighth-most populous country in the world with a population of almost 180 million within an area of 148,461 square kilometres (57,321 sq mi).",
+        "Bangladesh shares land borders with India to the north, west, and east, and Myanmar to the southeast.",
+        "It has a coastline along the Bay of Bengal to its south and is separated from Bhutan and Nepal by the Siliguri Corridor, and from China by the Indian states of West Bengal and Sikkim to its north.",
+        "Dhaka, the capital and largest city, is the nation's political, financial, and cultural centre.",
+        "Chittagong is the second-largest city and the busiest port of the country.",
+        "The territory of present-day Bangladesh was ruled by successive Hindu and Buddhist dynasties in antiquity.",
+        "Following the Muslim conquest in 1204, the region came under Sultanate and Mughal rule.",
+        "As the largest subdivision of the Mughal Empire, Bengal became a major commercial centre, known for its textile industry and agricultural output.",
+        "The Battle of Plassey in 1757 began British colonial rule, which lasted nearly two centuries; colonial policies redirected wealth from Bengal to Britain, while the region itself suffered repeated deadly famines.",
+        "After the Partition of India in 1947, East Bengal became the eastern wing of the newly formed Dominion of Pakistan and was later renamed East Pakistan.",
+        "During more than two decades of political and economic marginalisation under the government based in West Pakistan, East Pakistan saw growing civil unrest that culminated in the 1948–52 language movement, 1969 mass uprising and the 1971 non-cooperation movement."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "River delta",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=166931",
+      "retrieved_at": "2026-10-18T15:53:37.789Z",
+      "sha256": "cdef6e2713d177cf6d5ab0dd9747fb99b40417678e97dbfa4ee97ca17b64fbdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A river delta is a landform, typically triangular, created by the deposition of the sediments that are carried by the waters of a river, where the river merges with a body of slow-moving water or with a body of stagnant water.",
+        "The creation of a river delta occurs at the river mouth, where the river merges into an ocean, a sea, or an estuary, into a lake, a reservoir, or (more rarely) into another river that cannot carry away the sediment supplied by the feeding river.",
+        "Etymologically, the term river delta derives from the triangular shape (Δ) of the uppercase Greek letter delta.",
+        "In hydrology, the dimensions of a river delta are determined by the balance between the watershed processes that supply sediment and the watershed processes that redistribute, sequester, and export the supplied sediment into the receiving basin.",
+        "River deltas are important in human civilization, as they are major agricultural production centers and population centers.",
+        "They can provide coastline defence and can impact drinking water supply.",
+        "They are also ecologically important, with different species' assemblages depending on their landscape position.",
+        "On geologic timescales, they are also important carbon sinks."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Sundarbans",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1490376",
+      "retrieved_at": "2026-10-18T15:53:37.789Z",
+      "sha256": "20c26dd9b6fefa3e3819298173b0f82b7ba6eef4df3be21ce4e1274c39cc3cc7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sundarbans is a mangrove forest area in the Ganges Delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal.",
+        "It spans the area from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh's Khulna Division.",
+        "It comprises closed and open mangrove forests, land used for agricultural purpose, mudflats and barren land, and is intersected by multiple tidal streams and channels.",
+        "Spread across 10,277 km2 (3,968 sq mi), it is the world's largest mangrove forest.",
+        "It covers over 6,017 km2 (2,323 sq mi) in Bangladesh's Khulna Division.",
+        "In West Bengal's Presidency division, they extend over 4,260 km2 (1,640 sq mi) in the South 24 Parganas and North 24 Parganas districts.",
+        "Four protected areas in the Sundarbans are enlisted as UNESCO World Heritage Sites, viz.",
+        "Sundarbans West, Sundarbans South, Sundarbans East in Bangladesh and Sundarbans National Park in India.",
+        "The Indian Sundarbans were considered endangered in a 2020 assessment under the IUCN Red List of Ecosystems framework.",
+        "The most abundant tree species are sundri (Heritiera fomes) and gewa (Excoecaria agallocha).",
+        "The forests provide habitat to 453 fauna wildlife, including 290 bird, 120 fish, 42 mammal, 35 reptile and eight amphibian species.",
+        "Despite a total ban on all killing or capture of wildlife other than fish and some invertebrates, there has been a consistent pattern of depleted biodiversity or loss of species in the 20th century, with the ecological quality of the forest declining."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of rivers of Bangladesh",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2096869",
+      "retrieved_at": "2026-10-18T15:53:37.789Z",
+      "sha256": "8c1e91ad9f459e06fce3b954a7e5932253c44a385462dff92b465cdfb8a7d853",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "According to Bangladesh Water Development Board (BWDB), about 907 rivers currently flow in Bangladesh (during summer and winter), although the numbers stated in some sources are ambiguous.",
+        "As stated by a publication called Bāṅlādēśēr Nôd-Nôdī ('Rivers of Bangladesh') by BWDB, 310 rivers flow in the summer although they republished another study in 6 volumes where stated 405 rivers.",
+        "The number differs widely due to lack of research on the counts and the fact that these rivers change flow in time and season.",
+        "According to Banglapedia, 700 rivers flow in Bangladesh, but the information is old and obsolete.",
+        "Although, historical sources state about 700 to 800 rivers, most of them have dried up or are extinct due to pollution and lack of attention.",
+        "The numbers also differ because the same rivers may change names in different regions and through history.",
+        "A total of 60 international rivers flow through Bangladesh, 54 from India and 3 from Myanmar.",
+        "The number of international rivers can be 58 as Brahmaputra is called nôd while the general term for river is nôdi.",
+        "The gender division of rivers is interesting from history and mainly depending on the source of the river but not the size or flow briskness.",
+        "Sangu and Halda are the only two internal rivers originated and finished within Bangladesh.",
+        "Of the three major rivers, the Jamuna (part of the Brahmaputra) is the longest, Padma (eastern and main distributary of the Ganga) is the swiftest, and Meghna is the widest.",
+        "There is an including tributaries flow through the country constituting a waterway of total length around 24,145 kilometres (15,003 mi)."
+      ]
+    }
+  ]
+}

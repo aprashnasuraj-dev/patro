@@ -1,0 +1,160 @@
+{
+  "id": "mt-0028",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "[Effects of androgen deprivation therapy for prostate cancer on gut microbiota and treatment].",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36597735/",
+      "retrieved_at": "2026-10-18T16:23:35.429Z",
+      "sha256": "c9f61f0ab924369f69db664fc0925d790429b341bbd72a9e759e3fde42a9a3b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Androgen deprivation therapy is widely regarded as the first-line therapy for advanced prostate cancer.",
+        "Although the initial efficacy is significant, clinical complications that arise after the therapy can reduce the patient's life quality, affect the efficacy, and even endanger their health or life due to the progression to castration-resistant prostate cancer (CRPC).",
+        "The gut microbiota is associated not only with local diseases of the intestinal tract but also with systemic diseases such as liver or neurological diseases, but its relationship with prostate cancer is less frequently studied.",
+        "Androgen deprivation therapy for prostate cancer affects the gut microbiota of prostate cancer patients, thereby inducing relevant complications and promoting CRPC formation.",
+        "In this review, we present the microecological effects of androgen deprivation therapy for prostate cancer on gut microbiota from the perspectives of gut microbiota diversity, intestinal microbiota structure, and functional pathways."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Microglia-Mediated Neuroinflammation: A Potential Target for the Treatment of Cardiovascular Diseases.",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35642214/",
+      "retrieved_at": "2026-10-18T16:23:35.429Z",
+      "sha256": "d8006e02a908ca94a8ba73b1c78718431d7418321742a2b399a79fc4df8773dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Microglia are tissue-resident macrophages of the central nervous system (CNS).",
+        "In the CNS, microglia play an important role in the monitoring and intervention of synaptic and neuron-level activities.",
+        "Interventions targeting microglia have been shown to improve the prognosis of various neurological diseases.",
+        "Recently, studies have observed the activation of microglia in different cardiovascular diseases.",
+        "In addition, different approaches that regulate the activity of microglia have been shown to modulate the incidence and progression of cardiovascular diseases.",
+        "The change in autonomic nervous system activity after neuroinflammation may be a potential intermediate link between microglia and cardiovascular diseases.",
+        "Here, in this review, we will discuss recent updates on the regulatory role of microglia in hypertension, myocardial infarction and ischemia/reperfusion injury.",
+        "We propose that microglia serve as neuroimmune modulators and potential targets for cardiovascular diseases."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "BMI, Alcohol Consumption and Gut Microbiome Species Richness Are Related to Structural and Functional Neurological Abnormalities.",
+      "publisher": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34835999/",
+      "retrieved_at": "2026-10-18T16:23:35.429Z",
+      "sha256": "4af5ea34891db5458747133a5098a36293b378d67d2638e5099087e93685b8e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Background:  The incidence of neurological diseases is increasing throughout the world.",
+        "The aim of the present study was to identify nutrition and microbiome factors related to structural and functional neurological abnormalities to optimize future preventive strategies.",
+        "A binomial logistic regression model was applied for risk calculation and functional pathway analysis to show which functional pathway could discriminate cases and healthy controls.",
+        "Results:  Detailed analysis of more than 60 macro- and micronutrients revealed no distinct significant difference between cases and controls, whereas BMI, insulin resistance and metabolic inflammation in addition to alcohol consumption were major drivers of an overall neurological disease risk.",
+        "The Shannon index showed a beneficial effect (OR = 0.59 (95%-CI (0.40, 0.87);  p  = 8 &#xd7; 10 -3 ).",
+        "Cases were clearly discriminated from healthy controls by environmental information processing, signal transduction, two component system and membrane transport as significantly different functional pathways."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T16:23:40.546Z",
+      "sha256": "242c9f6af409dca36114098e308f49fd1e6221155e14c3e6cf3dc00ea7a0d24f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T16:23:40.546Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Endocannabinoid system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4617112",
+      "retrieved_at": "2026-10-18T16:23:40.546Z",
+      "sha256": "0e7bd4c68c38be5a32f2945352a2973851ccee315a1b71d79409ef509e299aa0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The endocannabinoid system (ECS) is a biological system composed of endocannabinoids, which are neurotransmitters that bind to cannabinoid receptors, and cannabinoid receptor proteins that are expressed throughout the central nervous system (including the brain) and peripheral nervous system.",
+        "It is found in animals as simple as hydras, but absent in insects, who are hypothesized to have lost it due to a lack of arachidonic acid.",
+        "The ECS plays an important role in multiple aspects of neural functions, including the control of movement and motor coordination, learning and memory, emotion and motivation, addictive-like behavior and pain modulation, among others.",
+        "Two primary cannabinoid receptors have been identified: CB1, first cloned (or isolated) in 1990; and CB2, cloned in 1993.",
+        "CB1 receptors are found predominantly in the brain and nervous system, as well as in peripheral organs and tissues, and are the main molecular target of the fatty-acid neurotransmitter anandamide, as well as the most known active component of cannabis, tetrahydrocannabinol (THC).",
+        "Another endocannabinoid, 2-arachidonoylglycerol (2-AG), also interacts with both CB receptors.",
+        "It is significantly more abundant in the mammalian brain than anandamide, exceeding it by two to three orders of magnitude.",
+        "The endocannabinoid system is sometimes called the endocannabinoidome or the expanded endocannabinoid system, as it includes a broader range of lipid mediators, receptors, and enzymes beyond CB1 and CB2."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T16:23:40.546Z",
+      "sha256": "97494dbdbf222545369d34a6f525867539086ece4c18e0ccc1fb2dacc1eabe38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    }
+  ]
+}

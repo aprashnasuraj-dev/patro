@@ -1,0 +1,12 @@
+{
+  "shard": 14,
+  "shards": 25,
+  "attempt": 1,
+  "queued": 201,
+  "approved": 0,
+  "review": 0,
+  "blocked": 144,
+  "retry_later": 57,
+  "stopped_for_deadline": 0,
+  "finished_at": "2026-10-18T17:19:23.008Z"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "mm-1868",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Seeing red: why cyclists ride through traffic lights",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Johnson, Marilyn",
+      "published_at": "2013-03-24",
+      "url": "https://theconversation.com/seeing-red-why-cyclists-ride-through-traffic-lights-12916",
+      "retrieved_at": "2026-10-18T16:10:46.567Z",
+      "sha256": "eedbe304dc5490778780254370e797db8c098e7be3f86e383dd1fd764d49742d",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Seeing red: why cyclists ride through traffic lights Skip to content Academic rigor, journalistic flair We all know the rules, and yet some of us seem happy to break them.",
+        "You’re driving your car and you come to a stop at the traffic lights.",
+        "You’re mindful of traffic infringement fines and public safety, then someone on a bike rides past you, unconcerned, straight through the red lights.",
+        "Riding through red lights is arguably the most hated cyclist behaviour – but why does it happen?",
+        "Is the answer to fine every cyclist who rides through every red light?",
+        "We conducted a national survey – the results of which were published in Accident Analysis and Prevention earlier this year – in which 2,061 cyclists were asked the following question: When you are riding do you stop at red lights?",
+        "The majority (63%) said yes, while over a third (37%) said they had ridden through a red light at some time when they were riding.",
+        "What follows are the main reasons given by those who had ridden through a red light.",
+        "“I was turning left” Turning left against the red light was the most common reason cyclists gave for infringement (32%), with safety and continued travel cited as the main motivations.",
+        "Some respondents considered it was safer to turn left against the red than to wait for the green light.",
+        "Going through meant they would clear the intersection ahead of turning motorised vehicle traffic, considered safer than negotiating the turn with cars.",
+        "There was a perception that there was little risk from the crossing vehicle traffic as cyclist ride close to the curb and do not enter the line of traffic."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "AI-Driven Traffic Lights in Brno",
+      "publisher": "Brno University of Technology Digital Library (Brno University of Technology)",
+      "author": "Vsevolod Tiemnohorov",
+      "published_at": "2026-01-01",
+      "url": "https://openalex.org/W7165505551",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "f4406187a7331a74ad141b3f63a4e13a48d5fbe9d62427f342134ecb27ac628f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Adaptivní řízení dopravy založené na strojovém učení bývá motivováno možností fungovat bez nákladné dedikované detektorové infrastruktury.",
+        "Všechny tři adaptivní řídicí strategie výrazně snižují simulovanou čekací dobu oproti pevnému časování, avšak při shodném rozhodovacím intervalu žádný z RL řadičů nevykazuje měřitelnou výhodu oproti max-pressure, a to napříč pěti testovanými dopravními profily.",
+        "Samostatné měření ukazuje jen 57,5 % shodu mezi natrénovanou politikou DQN a rozhodovacím pravidlem max-pressure a ablační studie identifikuje, které komponenty návrhu RL řadiče skutečně přispívají k jeho chování.",
+        "Práce dále diskutuje omezení porovnání, reprodukovatelnost a směry budoucí práce."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Improving the Effectiveness of Nighttime Temporary Traffic Control Warning Devices, Volume 2: Evaluation of Nighttime Mobile Warning Lights",
+      "publisher": "Illinois Digital Environment for Access to Learning and Scholarship (University of Illinois at Urbana-Champaign)",
+      "author": "Douglas A. Steele; Jessica L. Marcon; Laura Zimmerman",
+      "published_at": "2013-11-01",
+      "url": "https://openalex.org/W601555382",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "6a7210131262dff693b627b07e7224ca632e2d958c1df6e468a40c5dc98097b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vehicle-mounted warning lights for nighttime mobile highway operations provide critical protection to workers and the driving public.",
+        "Alerting the traveling public of the approaching work activity and providing guidance is vital to maintaining safety and mobility.",
+        "Previous research conducted for IDOT on mobile lane closures (Steele and Vavrik 2009) identified driver confusion as a concern to the safety of nighttime highway operations.",
+        "Users are subject to warning lights from multiple agencies with varying characteristics and configurations, but we know little about driver comprehension of these signals and their influence on driver behavior.",
+        "We used a cognitive model of driver mental processes to analyze this information and better understand the interaction between warning lights and driver perception and behavior, and to identify and evaluate potential improvements to current practice.",
+        "The research showed that drivers view current vehicle-mounted warning lights as highly visible, attention-getting, and effective at conveying the message caution/alert.",
+        "However, intense lights can cause discomfort glare and multiple light sets on individual vehicles, or multiple vehicles at a location, can be distracting, annoying, or anxiety-inducing.",
+        "Complex visual scenes can confuse drivers and take longer to process cognitively, leading to slower reaction times.",
+        "Often, information provided by flashing arrows, signs, and changeable message signs can be interfered with by other warning lights on the same vehicle."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Light-emitting diode",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18290",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "f16f96cdace0e69f9498684a4ae9c9233f8e078ee7f6cb373d76ad947ed860aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A light-emitting diode (LED) is an electronic component that uses a semiconductor to emit light when current flows through it.",
+        "Electrons in the semiconductor recombine with electron holes, thereby releasing energy in the form of photons.",
+        "The color of the light (corresponding to the energy of the photons) is determined by the energy required for electrons to cross the band gap of the semiconductor.",
+        "White light is obtained by using multiple semiconductors or a layer of light-emitting phosphor on the semiconductor device.",
+        "Appearing as practical electronic components in 1962, the earliest LEDs emitted low-intensity infrared (IR) light.",
+        "Infrared LEDs are used in remote-control circuits, such as those used with a wide variety of consumer electronics.",
+        "The first visible-light LEDs were of low intensity and limited to red.",
+        "Early LEDs were often used as indicator lamps, replacing small incandescent bulbs, and in seven-segment displays.",
+        "Later developments produced LEDs available in visible, ultraviolet (UV), and infrared wavelengths with high, low, or intermediate light output; for instance, white LEDs suitable for room and outdoor lighting.",
+        "LEDs have also given rise to new types of displays and sensors, while their high switching rates have uses in advanced communications technology.",
+        "LEDs have been used in diverse applications such as aviation lighting, fairy lights, strip lights, automotive headlamps, advertising, stage lighting, general lighting, traffic signals, camera flashes, lighted wallpaper, horticultural grow lights, and medical devices.",
+        "LEDs have many advantages over incandescent light sources, including lower power consumption, reduced waste heat, a longer lifetime, improved physical robustness, smaller sizes, and faster switching."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Traffic light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=163395",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "e89f90cc7dbfd3cb3c2821d358bec6cf511937ece0cadf4cb989e8bad363ceca",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic lights, traffic signals, or stoplights – also known as robots in South Africa, Zambia, and Namibia – are signaling devices positioned at road intersections, pedestrian crossings, and other locations to control the flow of traffic.",
+        "Traffic lights usually consist of three signals, conveying meaningful information to road users through colors and symbols, including arrows and bicycle symbols.",
+        "The usual traffic light colors are red to stop traffic, amber to signal a change, and green to allow traffic to proceed.",
+        "These are arranged vertically or horizontally in that order.",
+        "Although this is internationally standardized, variations in traffic light sequences and laws exist on national and local scales.",
+        "Traffic lights were first introduced in December 1868 on Parliament Square in London to reduce the need for police officers to control traffic.",
+        "Since then, electricity and computerized control have advanced traffic light technology and increased intersection capacity.",
+        "The system is also used for other purposes, including the control of pedestrian movements, variable lane control (such as tidal flow systems or smart motorways), and railway level crossings."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Emergency vehicle lighting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2843559",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "904b5bfa8f61a7dd263d49a28cbe4467b114d546a85b0d2846b531340614657e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Emergency vehicle lighting, also known as simply emergency lighting or emergency lights, is a type of vehicle lighting used to visually announce a vehicle's presence to other road users.",
+        "A sub-type of emergency vehicle equipment, emergency vehicle lighting is generally used by emergency vehicles and other authorized vehicles in a variety of colors.",
+        "These lights may be dedicated emergency lights, such as a beacon or a lightbar, or modified stock lighting, such as a wig-wag or hideaway light, and are additional to any standard lighting on the car such as hazard lights.",
+        "They are often used along with a siren system to increase their effectiveness and provide audible warnings alongside the visual warnings produced by the lights.",
+        "In many jurisdictions, the use of emergency lights may afford the user specific legal powers, and may place requirements on other road users to behave differently, such as compelling them to pull to the side of the road and yield right-of-way in traffic so the vehicle may proceed through unimpeded.",
+        "Laws regarding and restricting the use of these lights vary widely among jurisdictions, and in some areas non-emergency vehicles such as school buses, and semi-emergency vehicles such as tow trucks, may be permitted to use similar lights."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Lester Wire",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5088192",
+      "retrieved_at": "2026-10-18T16:10:47.368Z",
+      "sha256": "b4c3a707b36eb58f66b63fadd546ad3baf781e470d5b0f6e4e61761e3333477b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lester Farnsworth Wire (September 3, 1887 – April 14, 1958) was an American police officer and inventor.",
+        "He is credited with the invention of the electric traffic light in 1912.",
+        "A native of Salt Lake City, Utah, Wire worked as a traffic officer and later as a detective for the Salt Lake City Police Department (SLCPD).",
+        "His first traffic light, a manually operated wooden model, was built while he was head of the SLCPD's Traffic Bureau and installed in downtown Salt Lake City in 1912.",
+        "Though Wire's traffic light was originally viewed with curiosity and disapproval, the public gradually accepted it over time, and by the 1920s Salt Lake City had developed an automated traffic light system inspired by Wire's invention.",
+        "Wire continued to work on traffic light designs throughout his life, and later fully redesigned his traffic light using a metal frame.",
+        "Wire never patented his traffic lights, and by the 1960s both of the original models had been lost.",
+        "However, his work played a significant role in the development and adoption of the traffic light in the United States.",
+        "Replicas of Wire's traffic lights have been built since the loss of the originals, and his contributions to traffic management are memorialized by the Utah Department of Transportation (UDOT)."
+      ]
+    }
+  ]
+}

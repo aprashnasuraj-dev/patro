@@ -1,0 +1,113 @@
+{
+  "id": "mm-1382",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Penicillin was discovered 90 years ago – and despite resistance, the future looks good for antibiotics",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Hay, Alastair",
+      "published_at": "2018-09-06",
+      "url": "https://theconversation.com/penicillin-was-discovered-90-years-ago-and-despite-resistance-the-future-looks-good-for-antibiotics-100684",
+      "retrieved_at": "2026-10-18T15:40:54.461Z",
+      "sha256": "f04939eef8fcd29961a4ad4f8eccf885ad3792ecc1680f1fc6e555875b3c48b7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Discovered in September 1928 by Alexander Fleming , it was first used as a cure when George Paine treated eye infections with it in 1930.",
+        "A method for mass production was devised by Howard Florey and Ernst Chain in 1940, and it was first mass produced in 1942, with half of that total supply used for one patient being treated for streptococcal septicaemia.",
+        "In 1944, 2.3m doses were produced in time for the Normandy landings of World War II.",
+        "And it was then that the miracle of penicillin became clear.",
+        "Soldiers who had previously died from septicaemia were surviving.",
+        "If penicillin could cure septicaemia, what about other serious infections like meningitis, pneumonia and kidney infections?",
+        "And what about nasty chest infections and troublesome sinusitis?",
+        "Or inconvenient sore throats which could affect wedding days or job interviews – should these be treated with penicillin?",
+        "It seems (and for good reason) that we all wanted to be part of the 20th-century miracle that was penicillin.",
+        "Patients didn’t want to be patients and doctors wanted to cure – why else did we come into medicine?",
+        "Today, tens of millions of prescriptions are written in the UK every year, mostly by GPs and nurses in primary care.",
+        "Fleming was aware of the problem as soon as he discovered penicillin."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Alexander Fleming",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1937",
+      "retrieved_at": "2026-10-18T15:40:59.890Z",
+      "sha256": "c521633a337ebfe91344c2732d7a257beb107e892299e8ce9544bb910965579a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sir Alexander Fleming (6 August 1881 – 11 March 1955) was a Scottish physician and microbiologist.",
+        "He shared the 1945 Nobel Prize in Physiology or Medicine with Howard Florey and Ernst Chain \"for the discovery of penicillin and its curative effect in various infectious diseases\".",
+        "His discovery in 1928 of what was later named benzylpenicillin (or penicillin G) from the mould Penicillium rubens has been described as the \"single greatest victory ever achieved over disease\".",
+        "He also discovered the enzyme lysozyme from his nasal discharge in 1922, and along with it a bacterium he named Micrococcus lysodeikticus, later renamed Micrococcus luteus.",
+        "Fleming was knighted for his scientific achievements in 1944.",
+        "In 1999, he was named in Time magazine's list of the 100 Most Important People of the 20th century.",
+        "In 2002, he was included in the BBC's television poll of the 100 Greatest Britons, and in 2009, he was also voted third \"greatest Scot\" in an opinion poll conducted by STV, behind only Robert Burns and William Wallace."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Penicillin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23312",
+      "retrieved_at": "2026-10-18T15:40:59.890Z",
+      "sha256": "fce885539e1b5301c1318b0afa70dd366e7e6015e2a7fd9784fbc83dc8549d03",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Penicillins (P, PCN or PEN) are a group of β-lactam antibiotics originally obtained from Penicillium moulds, principally P.",
+        "Eight species of Penicillium, in the section Chrysogena, produce penicillins.",
+        "A number of natural penicillins have been discovered, but only two purified compounds are in clinical use: penicillin G (intramuscular or intravenous use) and penicillin V (given by mouth).",
+        "Penicillins were among the first medications to be effective against many bacterial infections caused by staphylococci and streptococci.",
+        "They are still widely used today for various bacterial infections, though many types of bacteria have developed resistance following extensive use.",
+        "In the United States, 10% of the population claims penicillin allergies, but because the frequency of positive skin test results decreases by 10% with each year of avoidance, 90% of these patients can eventually tolerate penicillin.",
+        "Additionally, those with penicillin allergies can usually tolerate cephalosporins (another group of β-lactam) because the immunoglobulin E (IgE) cross-reactivity is only 3%.",
+        "Penicillin was discovered in 1928 by the Scottish physician Alexander Fleming as a crude extract of P.",
+        "Fleming's student Cecil George Paine was the first to successfully use penicillin to treat eye infection (neonatal conjunctivitis) in 1930.",
+        "The purified compound (penicillin F) was isolated in 1940 by a research team led by Howard Florey and Ernst Boris Chain at the University of Oxford.",
+        "Fleming first used the purified penicillin to treat streptococcal meningitis in 1942.",
+        "The 1945 Nobel Prize in Physiology or Medicine was shared by Chain, Fleming and Florey."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Serendipity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27006",
+      "retrieved_at": "2026-10-18T15:40:59.890Z",
+      "sha256": "071c60c33858b4927e8ebec4d11569ddcee9500aeaf1048c0fe1f5c24cb3df90",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term was coined by Horace Walpole in 1754, after he read a Persian fairy tale called The Three Princes of Serendip, whose heroes constantly made lucky discoveries.",
+        "The concept is often associated with scientific and technological breakthroughs, where accidental discoveries led to new insights or inventions.",
+        "Many significant discoveries in history were serendipitous, including penicillin, Post-it notes, Popsicles, and the microwave oven, arising from unforeseen circumstances that were then recognized and capitalized upon."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Penicillin-binding proteins",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4152874",
+      "retrieved_at": "2026-10-18T15:40:59.890Z",
+      "sha256": "1cc9e77d618e5bfb0041aba144bcb3dd4afaf08f23e20b579769622751738fb4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Penicillin-binding proteins (PBP) are a group of proteins that are characterized by their affinity for and binding of penicillin.",
+        "They are a normal constituent of many bacteria; the name just reflects the way by which the protein was discovered.",
+        "All β-lactam antibiotics (except for tabtoxinine-β-lactam, which inhibits glutamine synthetase) bind to PBPs, which are essential for bacterial cell wall synthesis.",
+        "PBPs are members of a subgroup of transpeptidase enzymes called DD-transpeptidases."
+      ]
+    }
+  ]
+}

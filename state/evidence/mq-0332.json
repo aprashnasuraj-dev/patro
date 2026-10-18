@@ -1,0 +1,105 @@
+{
+  "id": "mq-0332",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=752",
+      "retrieved_at": "2026-10-18T17:10:31.414Z",
+      "sha256": "ca8dab7ce81a5b9d60143e75f87312c9191fedf77dd1a3451647f3737d52f7f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+        "There is no generally agreed definition of what constitutes art, and its interpretation has varied greatly throughout history and across cultures.",
+        "In the Western tradition, the three classical branches of visual art are painting, sculpture, and architecture.",
+        "Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of \"the arts\".",
+        "Until the 17th century, art referred to any skill or mastery and was not differentiated from crafts or sciences.",
+        "In modern usage after the 17th century, where aesthetic considerations are paramount, the fine arts are separated and distinguished from acquired skills in general, such as the decorative or applied arts.",
+        "The nature of art and related concepts, such as creativity and interpretation, are explored in a branch of philosophy known as aesthetics.",
+        "The resulting artworks are studied in the professional fields of art criticism and art history."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Ankara",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=802",
+      "retrieved_at": "2026-10-18T17:10:31.414Z",
+      "sha256": "6bb2d97724585b3e5173b2460b24d040c869acaa5199793d249cb74e462f4970",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Located in the central part of Anatolia, the city has a population of over 5.3 million residents in its urban center, out of 6 million residents in Ankara Province.",
+        "Ankara is Turkey's second-largest city by population after Istanbul.",
+        "Serving as the capital of the ancient Celtic state of Galatia (280–64 BC), and later of the Roman province with the same name (25 BC–7th century), Ankara has various Hattian, Hittite, Lydian, Phrygian, Galatian, Greek, Persian, Roman, Byzantine, and Ottoman archeological sites.",
+        "The Ottomans made the city the capital of the Anatolia Eyalet (1393 – late 15th century), the Angora Eyalet (1827–1864), and the Angora Vilayet (1867–1922).",
+        "On 23 April 1920, the Grand National Assembly of Turkey was established in Ankara, which became the headquarters of the Turkish National Movement during the Turkish War of Independence.",
+        "Ankara became the new Turkish capital upon the establishment of the Republic on 29 October 1923, succeeding the former Ottoman capital Istanbul following the fall of the Ottoman Empire.",
+        "The historical center of Ankara is a rocky hill rising 150 m (500 ft) over the left bank of the Ankara River, a tributary of the Sakarya River.",
+        "Few of its outworks have survived, but there are well-preserved examples of Roman and Ottoman architecture throughout the city.",
+        "The government is a prominent employer, but Ankara is also an important commercial and industrial city located at the center of Turkey's road and railway networks.",
+        "The city gave its name to the Angora wool shorn from Angora rabbits, the long-haired Angora goat (the source of mohair), and the Angora cat.",
+        "The area is also known for its pears, honey and Muscat grapes.",
+        "Although situated in one of the driest regions of Turkey and surrounded mostly by steppe vegetation (except for the forested areas on the southern periphery), Ankara can be considered a green city in terms of green areas per inhabitant, at 72 square meters (775 square feet) per head."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hong Kong",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13404",
+      "retrieved_at": "2026-10-18T17:10:31.414Z",
+      "sha256": "fca422e45d40ae17dee1ba16637b1bce126c57ce8ee5815a2be3852722f385d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Situated on China's southern coast just south of Shenzhen, it consists of Hong Kong Island, Kowloon, and the New Territories.",
+        "With 7.5 million residents in a 1,114-square-kilometre (430 sq mi) territory, Hong Kong is the fourth-most densely populated region in the world.",
+        "Hong Kong was established as a colony of the British Empire after the Qing dynasty ceded Hong Kong Island in 1841–1842 as a result of losing the First Opium War.",
+        "The colony expanded to the Kowloon Peninsula in 1860 and was further extended when the United Kingdom obtained a 99-year lease of the New Territories in 1898.",
+        "Hong Kong was occupied by Japan from 1941 to 1945 during World War II.",
+        "The territory was handed over from the United Kingdom to China in 1997.",
+        "Hong Kong maintains separate governing and economic systems from those of mainland China under the principle of one country, two systems.",
+        "Originally an area of farming and fishing villages, Hong Kong is now one of the world's most significant financial centres.",
+        "Hong Kong is the world's third-ranked global financial centre behind New York City and London, the ninth-largest exporter, and the eighth-largest importer in the world.",
+        "Its currency, the Hong Kong dollar, is the ninth-most traded currency globally.",
+        "Home to the third-highest number of billionaires of any city in the world, Hong Kong has the second largest number of ultra high-net-worth individuals.",
+        "The city has one of the highest per capita incomes, although severe income inequality still exists among the population."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T17:10:31.414Z",
+      "sha256": "a1b6f774cf68cc8788be4f0f9294829354fddb3d06d6cbe4b776cd8defefb254",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    }
+  ]
+}
