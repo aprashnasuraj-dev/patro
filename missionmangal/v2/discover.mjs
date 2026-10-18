@@ -23,10 +23,10 @@ export function isRelevantEvidence(topic,evidence){
 
 export function rankCandidateLinks(urls,topic=''){
  const terms=[...new Set(String(topic).toLowerCase().match(/[a-z0-9]+/g)||[])].filter(w=>w.length>=4&&!STOPWORDS.has(w));
- const authority=h=>/(^|\\.)gov(\\.[a-z]{2,})?$/.test(h)?5:/(^|\\.)edu$/.test(h)?5:
+ const authority=h=>/(^|\.)gov(\.[a-z]{2,})?$/.test(h)?5:/(^|\.)edu$/.test(h)?5:
   ['nature.com','science.org','cell.com','pnas.org','nih.gov','ncbi.nlm.nih.gov','who.int','un.org','worldbank.org','nasa.gov','noaa.gov','usgs.gov','cdc.gov','gov.uk','europa.eu'].some(d=>h===d||h.endsWith('.'+d))?5:
   h.endsWith('.edu')?5:h.endsWith('.org')?3:2;
- const score=u=>{try{const x=new URL(u),h=x.hostname.toLowerCase().replace(/^www\\./,'');
+ const score=u=>{try{const x=new URL(u),h=x.hostname.toLowerCase().replace(/^www\./,'');
   const path=(x.pathname+' '+x.search).toLowerCase();const topical=terms.reduce((n,t)=>n+(h+' '+path).includes(t)?1:0,0);
   return authority(h)*10+Math.min(terms.length,topical)*2+(x.pathname.length>1?1:0);
  }catch{return -1;}};
