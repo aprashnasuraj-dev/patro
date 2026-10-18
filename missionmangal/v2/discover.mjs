@@ -5,6 +5,22 @@ import {createHash} from 'node:crypto';
 import {snapshot,excerptsFrom} from '../research/scraper.mjs';
 const UA='AafnaiPatroResearchBot/1.0 (+https://aafnaipatro.com/editorial-guidelines/)';
 export const hostOf=u=>{try{return new URL(u).hostname.toLowerCase().replace(/^www\./,'');}catch{return '';}};
+const STOPWORDS=new Set('a an and are as at be because been but by can could did do does for from had has have how i in into is it its of on or our should still that the their them then there these they this those to was were what when where which who why will with would'.split(' '));
+const SYNONYMS={rise:['rise','rises','rose','rising','uplift','uplifts','uplifted','uplifting','elevation','elevate','elevated','upward','grow','grows','growing','growth','increase','increases','increasing'],change:['change','changes','changing','changed','shift','shifts','shifting','evolve','evolves','evolving','evolution','vary','varies','variation']};
+const stem=w=>w.replace(/ies$/,'y').replace(/(ing|ed|es|s)$/,'');
+export function isRelevantEvidence(topic,evidence){
+ const terms=[...new Set(String(topic||'').toLowerCase().match(/[a-z0-9]+/g)||[])].filter(w=>w.length>=4&&!STOPWORDS.has(w));
+ if(!terms.length)return true;
+ const text=[evidence?.title,evidence?.url,...(evidence?.excerpts||[])].filter(Boolean).join(' ').toLowerCase();
+ const words=new Set((text.match(/[a-z0-9]+/g)||[]).map(stem));
+ const matches=terms.filter(term=>{
+  const group=Object.values(SYNONYMS).find(xs=>xs.includes(term));
+  return group?group.some(x=>words.has(stem(x))):words.has(stem(term));
+ });
+ const required=terms.length<=2?terms.length:Math.max(2,Math.ceil(terms.length*0.5));
+ return matches.length>=required;
+}
+
 export function isTrusted(url,disc={}){
  try{
   const u=new URL(url),h=u.hostname.toLowerCase().replace(/^www\./,'');
@@ -67,11 +83,11 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
  const links=[...new Set([...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
- const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2)found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
+ const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2&&isRelevantEvidence(topic,{title:title||hostOf(url),url,excerpts:ex}))found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
  const rows=await extract(pick,{script:scriptPath,delayMs:disc.domain_delay_ms});const ok=new Set(),policyBlocked=new Set();
  for(const r of rows){if(r.ok&&r.text){ok.add(r.url);add(r.url,r.title,r.text,r.published,'scrapling');}
   else if(/robots|redirect|non-public|local host|DNS resolution|opt-out|policy unknown/i.test(r.error||''))policyBlocked.add(r.url);}
  for(const u of pick){if(found.length+evidence.length>=need+2)break;if(ok.has(u)||policyBlocked.has(u))continue;
-  try{const s=await snapshot(u,{fetchImpl,renderer:render,now});if(s.excerpts.length>=2)found.push({title:s.title||hostOf(u),publisher:hostOf(u),author:null,published_at:s.published?String(s.published).slice(0,10):null,url:s.canonical||s.url,retrieved_at:s.retrieved_at,sha256:s.sha256,rendered:s.rendered,scraped:true,method:'snapshot',excerpts:s.excerpts});}catch(e){log('  snapshot '+hostOf(u)+': '+e.message);}}
+  try{const s=await snapshot(u,{fetchImpl,renderer:render,now});if(s.excerpts.length>=2&&isRelevantEvidence(topic,{title:s.title||hostOf(u),url:s.canonical||s.url,excerpts:s.excerpts}))found.push({title:s.title||hostOf(u),publisher:hostOf(u),author:null,published_at:s.published?String(s.published).slice(0,10):null,url:s.canonical||s.url,retrieved_at:s.retrieved_at,sha256:s.sha256,rendered:s.rendered,scraped:true,method:'snapshot',excerpts:s.excerpts});}catch(e){log('  snapshot '+hostOf(u)+': '+e.message);}}
  return found;
 }
