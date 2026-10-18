@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {mkdtemp,readFile,mkdir,writeFile} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {classify} from '../v2/classify.mjs';import {makeLlmV2} from '../v2/llm.mjs';import {decideV2} from '../v2/gate.mjs';
-import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks,isRelevantEvidence,openAlexSearchLinks} from '../v2/discover.mjs';
+import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks,isRelevantEvidence,openAlexSearchLinks,rankCandidateLinks} from '../v2/discover.mjs';
 import {lint,fix} from '../core/voice.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
 import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';
 const config=JSON.parse(await readFile(new URL('../v2/config.json',import.meta.url),'utf8'));
@@ -38,6 +38,15 @@ test('discovery ladder: wikipedia extlinks -> scrapling extraction (injected), t
  const text='Chlorophyll absorbs red and blue light most strongly, which is why leaves look green to us. Plants reflect green wavelengths instead of absorbing them. ';
  const got=await discoverEvidence({evidence:[{url:'https://en.wikipedia.org/wiki/Grass',publisher:'Wikipedia',title:'Grass'}],disc:config.discovery,need:3,fetchImpl,extract:async urls=>urls.map(u=>({url:u,ok:true,title:'T',text:text.repeat(3)}))});
  assert.equal(got.length,2);assert.ok(got.every(e=>e.method==='scrapling'&&e.sha256.length===64&&e.excerpts.length>=2&&!('text' in e)));
+});
+test('P2: candidate ranking prefers authoritative domains while preserving topic relevance and stable ties',()=>{
+ const ranked=rankCandidateLinks(['https://random.example/himalayas','https://www.nasa.gov/himalayas','https://www.nature.com/articles/tectonic-uplift'],'Himalayas tectonic uplift');
+ assert.equal(ranked[0],'https://www.nature.com/articles/tectonic-uplift');
+ assert.ok(ranked.indexOf('https://www.nasa.gov/himalayas')<ranked.indexOf('https://random.example/himalayas'));
+});
+test('P2: general route policy uses a 300-word floor and two-source baseline without expanded research discovery',()=>{
+ assert.equal(config.routes.general.min_words,300);
+ assert.equal(config.routes.general.min_sources,2);
 });
 test('llm router: skips unhealthy provider, splits budget per worker, stops cleanly with NO_BUDGET, disables on 402',async()=>{
  const adapters=[{id:'a',endpoint:'https://a/x',secret_env:'A_KEY'},{id:'b',endpoint:'https://b/x',secret_env:'B_KEY'},{id:'c',endpoint:'https://c/x',secret_env:'C_KEY'}];
@@ -88,7 +97,7 @@ test('runner e2e: writes from cached evidence with 2 LLM calls and approves with
  const excerpt=(k,n)=>'Grass looks green because chlorophyll in leaf '+k+' reflects green light while absorbing red and blue wavelengths, number '+n+'.';
  const evidence=[1,2,3].map(i=>({id:'s'+i,title:'Source '+i,publisher:'nasa.gov',url:'https://source'+i+'.gov/'+i,retrieved_at:'2026-10-19T00:00:00Z',sha256:'h'.repeat(64),excerpts:[excerpt(i,1),excerpt(i,2),excerpt(i,3)]}));
  const mkReg=id=>({id,type:'topic',slug:'why-grass-is-green-'+id,url:'https://aafnaipatro.com/why-grass-is-green-'+id+'/',intent:'Answer: Why grass is green',status:'reserved',meta:{category:'Nature & Plants',title:'Why Grass Is Green? The Full Story',question:'Why grass is green'}});
- const registry=[mkReg('mm-01'),mkReg('mm-02')];let n=0;const body=Array.from({length:70},(_,i)=>['Leaves','Sunlight','Chlorophyll','Pigments','Grass'][i%5]+' detail '+i+' shows one more separate fact about how leaves treat sunlight each day.').join(' ');
+ const registry=[mkReg('mm-01'),mkReg('mm-02')];let n=0;const body=Array.from({length:70},(_,i)=>['Leaves','Sunlight','Chlorophyll','Pigments','Grass'][i%5]+' detail '+i+' shows one more separate fact about how leaves treat sunlight each day.').join(' ')+' [[s1]]';
  const llm={available:()=>true,stats:()=>[],async json(){n++;if(n===1)return {value:{title:'Why grass looks green to us',description:'d',sections:[1,2,3].map(s=>({heading:'H'+s,purpose:'p',claims:[{id:'a',text:'Leaf '+s+' reflects green light',source_id:'s'+s,passage:excerpt(s,1)},{id:'b',text:'Leaf '+s+' absorbs red and blue',source_id:'s'+s,passage:excerpt(s,2)}]}))}};
    if(n===2)return {value:{markdown:body,faq:[{question:'q',answer:'a'}]}};throw Object.assign(new Error('NO_BUDGET: spent'),{code:'NO_BUDGET'});}};
  const plan={rows:[{id:'mm-01',route:'general'},{id:'mm-02',route:'general'}]};
