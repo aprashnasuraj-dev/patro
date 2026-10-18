@@ -103,7 +103,7 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
   openAlexSearchLinks(topic,{fetchImpl,max:disc.max_links_per_topic,disc}),
   searchWebLinks(topic+' scientific evidence',{fetchImpl,max:disc.max_links_per_topic})
  ]);
- const links=[...new Set([...wikiLinks,...openAlexLinks,...searchLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
+ const links=[...new Set([...openAlexLinks,...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
  const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2&&isRelevantEvidence(topic,{title:title||hostOf(url),url,excerpts:ex}))found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
