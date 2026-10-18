@@ -12,9 +12,10 @@ export function decideV2(article,{route,policy,allowYmyl=false,seen=[],maxSimila
  if(route==='ymyl'&&!allowYmyl)why.push('HELD_YMYL');
  if(wc(article.body_md)<policy.min_words)why.push('TOO_SHORT: '+wc(article.body_md)+' < '+policy.min_words);
  const distinct=new Set(article.claims.map(c=>c.source_ids[0])).size;if(distinct<policy.min_sources)why.push('FEW_SOURCES: '+distinct+' < '+policy.min_sources);
- const hosts=new Set((article.sources||[]).map(s=>{try{return new URL(s.url).hostname.toLowerCase().replace(/^www\./,'');}catch{return '';}}).filter(Boolean));
- const minIndependentDomains=Math.min(2,policy.min_sources);
- if(hosts.size<minIndependentDomains)why.push('SOURCE_INDEPENDENCE: '+hosts.size+' domains < '+minIndependentDomains);
+ const aggregators=['wikipedia.org','openalex.org','doi.org','crossref.org','semanticscholar.org'];
+ const hosts=new Set((article.sources||[]).map(s=>{try{return new URL(s.url).hostname.toLowerCase().replace(/^www\./,'');}catch{return '';}}).filter(h=>h&&!aggregators.some(a=>h===a||h.endsWith('.'+a))));
+ const minIndependentDomains=Math.min(3,policy.min_sources);
+ if(hosts.size<minIndependentDomains)why.push('SOURCE_INDEPENDENCE: '+hosts.size+' independent publisher domains < '+minIndependentDomains+' required (aggregators do not count)');
  for(const s of seen)if(similarity(article.body_md,s.body)>maxSimilarity){why.push('NEAR_DUPLICATE of '+s.id);break;}
  if(why.length)return {ok:false,why};
  const a={...article,status:'approved',ai_assisted:true,quality_policy:{route,min_sources:policy.min_sources,require_media:false},
