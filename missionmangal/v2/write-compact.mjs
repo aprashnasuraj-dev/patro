@@ -4,6 +4,22 @@
 import {checkGrounding} from '../research/grounding.mjs';
 import {lint,fix} from '../core/voice.mjs';
 import {VOICE} from '../research/writer.mjs';
+export function validateInlineCitations(body,allowedSourceIds){
+ const problems=[];
+ for(const block of String(body||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean)){
+  const lines=block.split('\n').map(x=>x.trim()).filter(x=>x&&!/^#{1,6}\s/.test(x));
+  if(!lines.length)continue;
+  const listLines=lines.some(x=>/^\s*(?:[-*]|\d+[.)])\s+/.test(x));
+  const chunks=listLines?lines:[lines.join('\n')];
+  for(const chunk of chunks){
+   const markers=[...chunk.matchAll(/\[\[([A-Za-z0-9_-]+)\]\]/g)].map(m=>m[1]);
+   if(!markers.length)problems.push('Paragraph/list item missing inline source marker');
+   if(!/\[\[[A-Za-z0-9_-]+\]\]\s*$/.test(chunk))problems.push('Inline source marker must end each paragraph/list item');
+   for(const id of markers)if(!allowedSourceIds.has(id))problems.push('Unknown inline source marker: '+id);
+  }
+ }
+ return [...new Set(problems)];
+}
 export async function writeCompact({llm,meta,title,evidence,need,targetWords=900,minWords=400}){
  const nSections=Math.max(3,Math.min(5,Math.round(targetWords/260)));
  const minClaims=Math.max(4,nSections*2-1);
@@ -36,12 +52,14 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
   wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
  }
  const allowedSourceIds=new Set(ok.map(c=>c.source_id));
- const paragraphs=body.split(/\n\s*\n/).map(p=>p.trim()).filter(p=>p&&!/^#{1,6}\s/.test(p));
- const citationProblems=[];
- for(const p of paragraphs){
-  const markers=[...p.matchAll(/\[\[([A-Za-z0-9_-]+)\]\]/g)].map(m=>m[1]);
-  if(!markers.length)citationProblems.push('Paragraph missing inline source marker');
-  for(const id of markers)if(!allowedSourceIds.has(id))citationProblems.push('Unknown inline source marker: '+id);
+ let citationProblems=validateInlineCitations(body,allowedSourceIds);
+ if(citationProblems.length){
+  w=await llm.json('Repair only inline citation placement and coverage in this draft. Every factual paragraph and every factual list item must end with one or more [[source_id]] markers. Use only these allowed source IDs: '+[...allowedSourceIds].join(', ')+'. Do not add facts, remove relevant supported content, or change the exact question focus. Preserve the minimum length of '+minWords+' words. Return JSON {"markdown":"...","faq":[{"question":"","answer":""}]}.' ,
+   'Exact question: '+question+'\nCitation issues: '+citationProblems.join('; ')+'\nCurrent draft:\n'+body+'\nGrounded outline and source mappings:\n'+plan);
+  body=String(w.value.markdown||'').trim();
+  if(lint(body).length)body=fix(body);
+  wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
+  citationProblems=validateInlineCitations(body,allowedSourceIds);
  }
  if(citationProblems.length)throw Object.assign(new Error('INLINE_CITATION_FAILED: '+citationProblems.slice(0,6).join('; ')),{code:'INLINE_CITATION_FAILED'});
  voiceProblems=lint(body);
