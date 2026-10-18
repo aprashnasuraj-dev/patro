@@ -86,7 +86,9 @@ test('gate: approves a grounded article with independent sources and zero images
  const policy={min_sources:3,min_words:400};
  assert.equal(decideV2(base(),{route:'general',policy}).ok,true);
  const aggregatorOnly=base();aggregatorOnly.sources.forEach((s,i)=>s.url=['https://en.wikipedia.org/wiki/A','https://openalex.org/W1','https://doi.org/10.1234/x'][i]);
- assert.equal(decideV2(aggregatorOnly,{route:'general',policy}).ok,true,'general route uses grounded cached evidence without an independent-domain research floor');
+ const generalResult=decideV2(aggregatorOnly,{route:'general',policy});
+ assert.equal(generalResult.ok,true,'general route uses grounded cached evidence without an independent-domain research floor');
+ assert.ok(generalResult.article.sources.every(s=>s.verification.includes('general route cached-evidence policy')),'verification metadata must not claim an independent-domain check ran');
  assert.ok(decideV2(aggregatorOnly,{route:'research',policy}).why.some(x=>x.startsWith('SOURCE_INDEPENDENCE')),'research route still requires independent publisher domains');
  assert.deepEqual(decideV2(base(),{route:'ymyl',policy}).why,['HELD_YMYL']);
  assert.ok(decideV2({...base(),body_md:'short'},{route:'general',policy}).why[0].startsWith('TOO_SHORT'));
