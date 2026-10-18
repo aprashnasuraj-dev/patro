@@ -45,7 +45,7 @@ test('P2: candidate ranking prefers authoritative domains while preserving topic
  assert.ok(ranked.indexOf('https://www.nasa.gov/himalayas')<ranked.indexOf('https://random.example/himalayas'));
 });
 test('P2: general route policy uses a 300-word floor and two-source baseline without expanded research discovery',()=>{
- assert.equal(config.routes.general.min_words,300);
+ assert.ok(Object.values(config.routes).every(route=>route.min_words===300),'all v2 routes use a 300-word minimum');
  assert.equal(config.routes.general.min_sources,2);
 });
 test('llm router: skips unhealthy provider, splits budget per worker, stops cleanly with NO_BUDGET, disables on 402',async()=>{
