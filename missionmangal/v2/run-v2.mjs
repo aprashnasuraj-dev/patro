@@ -10,7 +10,9 @@ import {makeLlmV2} from './llm.mjs';import {writeCompact} from './write-compact.
 const here=dirname(fileURLToPath(import.meta.url));
 const arg=(k,d)=>{const i=process.argv.indexOf('--'+k);return i<0?d:process.argv[i+1];};
 const TRANSIENT=/NO_PROVIDER|HTTP 429|HTTP 5\d\d|ETIMEDOUT|ECONNRESET|fetch failed|rate limit|timeout/i;
-const independentHost=e=>{try{const h=new URL(e.url).hostname.toLowerCase().replace(/^www\\./,'');if(['wikipedia.org','openalex.org','doi.org','crossref.org','semanticscholar.org'].some(x=>h===x||h.endsWith('.'+x)))return '';return h;}catch{return '';}};\nconst independentEvidenceHosts=ev=>new Set(ev.map(independentHost).filter(Boolean));\nconst pickEvidence=(ev,cap=12)=>{const seen=new Map();return [...ev].sort((a,b)=>(b.excerpts||[]).length-(a.excerpts||[]).length).filter(e=>{const h=(()=>{try{return new URL(e.url).host;}catch{return e.url;}})();seen.set(h,(seen.get(h)||0)+1);return seen.get(h)<=3;}).slice(0,cap).map(e=>({...e,excerpts:(e.excerpts||[]).slice(0,6)}));};
+const independentHost=e=>{try{const h=new URL(e.url).hostname.toLowerCase().replace(/^www\./,'');if(['wikipedia.org','openalex.org','doi.org','crossref.org','semanticscholar.org'].some(x=>h===x||h.endsWith('.'+x)))return '';return h;}catch{return '';}};
+const independentEvidenceHosts=ev=>new Set(ev.map(independentHost).filter(Boolean));
+const pickEvidence=(ev,cap=12)=>{const seen=new Map();return [...ev].sort((a,b)=>(b.excerpts||[]).length-(a.excerpts||[]).length).filter(e=>{const h=(()=>{try{return new URL(e.url).host;}catch{return e.url;}})();seen.set(h,(seen.get(h)||0)+1);return seen.get(h)<=3;}).slice(0,cap).map(e=>({...e,excerpts:(e.excerpts||[]).slice(0,6)}));};
 export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,deadlineMs=Date.now()+335*60_000,limit=Infinity,llm,config,plan,evidenceByTopic,registry,allowYmyl=false,fetchImpl=fetch,extract,render=null,scriptPath=join(here,'scrapling_worker.py'),now=()=>new Date(),log=console.log,clock=()=>Date.now()}){
  const byId=new Map(registry.map(r=>[r.id,r]));
  const mine=plan.rows.filter((_,i)=>i%workers===worker).slice(0,limit);
