@@ -16,15 +16,21 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
  const ok=claims.filter(c=>!bad.has(c.id));const used=new Set(ok.map(c=>c.source_id));
  if(ok.length<Math.max(4,nSections*2-1)||used.size<need)throw Object.assign(new Error('GROUNDING_FAILED: '+ok.length+' grounded claims, '+used.size+' sources (need '+need+')'),{code:'GROUNDING_FAILED'});
  const plan=secs.map((s,i)=>'## '+s.heading+' ('+s.purpose+')\n'+ok.filter(c=>c.id.startsWith('c'+(i+1)+'-')).map(c=>'- '+c.text+' (source '+c.source_id+')').join('\n')).join('\n\n');
- const w=await llm.json('Write a complete, publication-quality answer to the exact reader question in Markdown, aiming for '+targetWords+' words and never fewer than '+minWords+' words. Use one \"## heading\" per planned section, in order. The opening paragraph must answer the question directly in plain language, then explain the mechanisms with evidence. Stay tightly on-question throughout. Do not replace the requested explanation with general geography, country summaries, travel writing, or generic background. Every paragraph must add a relevant, supported fact or explanation. Do not invent evidence or sources. Do not use em dashes. Avoid filler, repeated explanations, formulaic openings, and generic conclusions. '+VOICE+' Also write up to 3 useful FAQ items that answer the exact question or meaningful follow-ups. Return JSON {\"markdown\":\"...\",\"faq\":[{\"question\":\"\",\"answer\":\"\"}]}.' ,'Exact question: '+question+'\nRequired title: '+title+'\nFocused outline and source-grounded claims:\n'+plan);
+ let w=await llm.json('Write a complete, publication-quality answer to the exact reader question in Markdown, aiming for '+targetWords+' words and never fewer than '+minWords+' words. Use one \"## heading\" per planned section, in order. The opening paragraph must answer the question directly in plain language, then explain the mechanisms with evidence. Stay tightly on-question throughout. Do not replace the requested explanation with general geography, country summaries, travel writing, or generic background. Every paragraph must add a relevant, supported fact or explanation. Do not invent evidence or sources. Do not use em dashes. Avoid filler, repeated explanations, formulaic openings, and generic conclusions. '+VOICE+' Also write up to 3 useful FAQ items that answer the exact question or meaningful follow-ups. Return JSON {\"markdown\":\"...\",\"faq\":[{\"question\":\"\",\"answer\":\"\"}]}.' ,'Exact question: '+question+'\nRequired title: '+title+'\nFocused outline and source-grounded claims:\n'+plan);
  let body=String(w.value.markdown||'').trim();
  if(lint(body).length)body=fix(body);
+ let wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
+ if(wordCount<minWords){
+  w=await llm.json('The draft is under the required minimum. Expand it to at least '+minWords+' words by explaining additional relevant, evidence-supported mechanisms and uncertainties from the supplied claims. Do not add new facts, pad with generic background, repeat ideas, or drift from the exact question. Preserve the direct answer in the opening. Return JSON {"markdown":"...","faq":[{"question":"","answer":""}]}.' ,'Exact question: '+question+'\nCurrent draft ('+wordCount+' words):\n'+body+'\nGrounded outline and claims to draw from:\n'+plan);
+  body=String(w.value.markdown||'').trim();
+  if(lint(body).length)body=fix(body);
+  wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
+ }
  const voiceProblems=lint(body);
  if(voiceProblems.length)throw Object.assign(new Error('VOICE_GATE_FAILED: '+voiceProblems.join('; ')),{code:'VOICE_GATE_FAILED'});
  const faq=Array.isArray(w.value.faq)?w.value.faq.slice(0,3):[];
  const faqSeen=new Set();
  const cleanFaq=faq.filter(f=>{const k=String(f.question||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();if(!k||faqSeen.has(k))return false;faqSeen.add(k);return true;});
- const wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
  if(wordCount<minWords)throw Object.assign(new Error('ARTICLE_TOO_SHORT: '+wordCount+' < '+minWords+' required words'),{code:'ARTICLE_TOO_SHORT'});
  return {title,description:String(d.description||'').slice(0,158),body_md:body,word_count:wordCount,claims:ok.map(c=>({id:c.id,text:c.text,source_id:c.source_id,passage:c.passage})),headings:secs.map(s=>s.heading),faq:cleanFaq,voice_problems_after:voiceProblems,provider:w.provider};
 }
