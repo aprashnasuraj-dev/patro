@@ -1,7 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {mkdtemp,readFile,mkdir,writeFile} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {classify} from '../v2/classify.mjs';import {makeLlmV2} from '../v2/llm.mjs';import {decideV2} from '../v2/gate.mjs';
-import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence} from '../v2/discover.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
+import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks} from '../v2/discover.mjs';
+import {lint,fix} from '../core/voice.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
 import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';
 const config=JSON.parse(await readFile(new URL('../v2/config.json',import.meta.url),'utf8'));
 const rec=(category,question,primary_api)=>({id:'t',status:'reserved',intent:'Answer: '+question,meta:{category,question,title:question,primary_api}});
@@ -16,7 +17,7 @@ test('classifier: general / structured / ymyl / research, and open-data statisti
 });
 test('discover: trusted-domain filter blocks social/doi/wikipedia and extracts wiki titles',()=>{
  const d=config.discovery;assert.ok(isTrusted('https://www.nasa.gov/a',d));assert.ok(isTrusted('https://data.cdc.gov/x',d));
- for(const u of ['https://twitter.com/x','https://doi.org/10.1/x','https://en.wikipedia.org/wiki/A','http://nasa.gov/a','https://random-blog.example/x'])assert.equal(isTrusted(u,d),false,u);
+ for(const u of ['https://twitter.com/x','https://doi.org/10.1/x','https://en.wikipedia.org/wiki/A','http://nasa.gov/a','http://random-blog.example/x'])assert.equal(isTrusted(u,d),false,u);
  assert.deepEqual(wikiTitles([{url:'https://en.wikipedia.org/wiki/Grass_green',publisher:'Wikipedia',title:'Grass green'}]),['Grass green']);
 });
 test('discovery ladder: wikipedia extlinks -> scrapling extraction (injected), trusted hosts only, excerpts+hash only',async()=>{
@@ -101,4 +102,25 @@ test('recovery: union complementary evidence caches by URL and renumber source I
  await mkdir(join(root,dir,'evidence'),{recursive:true});await writeFile(join(root,dir,'evidence','x.json'),JSON.stringify({id:'x',evidence:items}));
  }
  const state=await loadState(root);assert.equal(state.evidence.get('x').length,2);assert.deepEqual(state.evidence.get('x').map(e=>e.id),['s1','s2']);assert.equal(state.evidence.get('x')[0].excerpts.length,2);
+});
+
+test('editorial voice gate rejects em dashes and repeated sentences; fix removes both',()=>{
+ const sentence='Plants reflect green wavelengths, which helps explain their visible colour.';
+ const draft=sentence+' '+sentence+' This final sentence adds a distinct, evidence-based detail about chlorophyll.';
+ assert.ok(lint(draft).some(p=>p.startsWith('repeated sentence')));
+ const repaired=fix(draft+' Leaves contain pigments that absorb different wavelengths.');
+ assert.equal(repaired.includes('—'),false);
+ assert.equal(lint(repaired).some(p=>p.startsWith('repeated sentence')),false);
+ assert.ok(lint('This sentence has an em dash — and it should fail.').some(p=>p.startsWith('em dash prohibited')));
+});
+test('open-web discovery accepts public HTTPS domains outside the legacy allowlist',()=>{
+ assert.equal(isTrusted('https://museum.example.org/exhibit',config.discovery),true);
+ assert.equal(isTrusted('https://localhost/private',config.discovery),false);
+ assert.equal(isTrusted('http://museum.example.org/exhibit',config.discovery),false);
+ assert.equal(isTrusted('https://www.wikipedia.org/wiki/Plants',config.discovery),false);
+});
+test('Brave web search links are discovered without restricting results to a small allowlist',async()=>{
+ const fetchImpl=async()=>({ok:true,json:async()=>({web:{results:[{url:'https://museum.example.org/page'},{url:'https://research.example.net/report'}]}})});
+ const links=await searchWebLinks('plant pigments',{fetchImpl,env:{BRAVE_SEARCH_API_KEY:'test-key'},max:10});
+ assert.deepEqual(links,['https://museum.example.org/page','https://research.example.net/report']);
 });
