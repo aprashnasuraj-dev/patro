@@ -1,0 +1,151 @@
+{
+  "id": "mm-0617",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How a Bitcoin Standard Works",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2023-03-31",
+      "url": "https://www.cambridge.org/core/books/better-money/how-a-bitcoin-standard-works/E091FEDE8F44A63948B40EF31EB5A0A6",
+      "retrieved_at": "2026-10-18T15:18:48.535Z",
+      "sha256": "0935cacb7a70c9b5a31bbb2b7bffbd92e6cdd4307c87531cfd8420510346df96",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How a Bitcoin Standard Works (Chapter 5) - Better Money Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "Bitcoin emerged in 2009 from a community of libertarian cryptographers who sought an alternative payment system free from fiat inflation and from government payment surveillance and censorship.",
+        "Today it provides an alternative payment rail that circumvents central banks.",
+        "Bitcoin serves as a medium of exchange in some transactions, but not yet as a commonly accepted medium of exchange.",
+        "The Bitcoin source code keeps the number of Bitcoin in circulation growing, at an ever-slowing rate, along a programmed quantity path.",
+        "The costs of the Bitcoin industry are borne by its users, not by third parties, to the same extent as those of any energy-using private industry.",
+        "The non-zero chance of its serving as a future global money means that Bitcoin has a fundamental value.",
+        "It does not inherently rest on an unsustainable chain-letter or “bigger fool” process.",
+        "Keywords Bitcoin cryptocurrency libertarian surveillance censorship-resistant Information Type Chapter Information Better Money Gold, Fiat, or Bitcoin?",
+        "153 - 190 DOI: https://doi.org/10.1017/9781009327466.006 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2023 Access options Get access to the full version of this content by using one of the access options below.",
+        "(Log in options will check for institutional or personal access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mastering Bitcoin: The Secret Tips on Making Money Through Bitcoin Mining and Investment",
+      "publisher": "OpenAlex",
+      "author": "Ayato Akiko",
+      "published_at": "2018-01-25",
+      "url": "https://openalex.org/W2891434257",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "c4c2b630cc11ffe7087b47b25313b5ec250c15e1007510783915123770f8c8bb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Do you know that you can be your Boss by setting up your hardware mining and start making money?",
+        "Do you know that you can be financially independent with Bitcoin mining and investment?",
+        "Mastering Bitcoin is your ultimate guide that will change your perception and bring out the investor in you.",
+        "In this book titled Mastering Bitcoin the author, Ayato Akiko will walk you through a step-by-step process of becoming a master in Bitcoin mining and investment."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "BITCOIN MINING AND ITS ENVIRONMENTAL EFFECTS",
+      "publisher": "DergiPark (Istanbul University)",
+      "author": "Şerif Dilek; yunus furuncu",
+      "published_at": "2018-05-12",
+      "url": "https://openalex.org/W2912659615",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "f1167223cd9a0e72091b4112463c6d45dfbdc81427fa4e0b98bbc177bdadba33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bitcoin, with its market value among cryptocurrenciesand being the biggest in terms of its processing volume, carries greatpotential in terms of low cost, speedy processing and low-level risk while alsobringing with it important global-level change and transformation.",
+        "On the otherhand, the fact that cryptocurrencies and Bitcoin specifically are new, ofunclear legal status, and carry the risk of being involved in illegal activity,there is the potential for their use as an extremely volatile and speculativeinvestment tool and have environmental effects.",
+        "This study examines Bitcoinmining and blockchain technology and investigates the high amounts of energyconsumed by Bitcoin and its environmental effects.",
+        "It is argued that the energyconsumed as a result of increased Bitcoin mining will have environmental andsocial consequences, such as global warming and climate change."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bitcoin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28249265",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "a3d417c6d8276735549af9d53fac0bda909913722c524384bd10650060ff0734",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bitcoin (abbreviation: BTC; sign: ₿) is the first decentralized cryptocurrency.",
+        "Based on a free-market ideology, bitcoin was invented in 2008 when an unknown person published a white paper under the pseudonym of Satoshi Nakamoto.",
+        "Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.",
+        "From 2021 to 2025, El Salvador adopted it as legal tender currency before revoking it.",
+        "As bitcoin is pseudonymous, its use by criminals has attracted the attention of regulators, leading to its ban by several countries.",
+        "Bitcoin works through the collaboration of computers, each of which acts as a node in the peer-to-peer bitcoin network.",
+        "Each node maintains an independent copy of a public distributed ledger of transactions, called a blockchain, without central oversight.",
+        "Transactions are validated through the use of cryptography, preventing one person from spending another person's bitcoin, as long as the owner of the bitcoin keeps certain sensitive data secret.",
+        "Consensus between nodes about the content of the blockchain is achieved using a computationally intensive process based on proof of work, called mining, which is performed by purpose-built computers.",
+        "Mining consumes large quantities of electricity and has been criticized for its environmental impact."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Cryptocurrency",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36662188",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "cadcabfc056e37f33f52e9a29b711300aa7606b2ca87ff13647b0ce9d053c83e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cryptocurrency is a type of digital asset that uses distributed ledger, or blockchain, technology to enable a secure transaction.",
+        "Individual coin ownership records are stored in a digital ledger or blockchain, which is a computerized database that uses a consensus mechanism to secure transaction records, control the creation of additional coins, and verify the transfer of coin ownership.",
+        "The two most common consensus mechanisms are proof of work and proof of stake.",
+        "Cryptocurrencies are generally viewed as a distinct asset class in practice."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bitcoin protocol",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39488873",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "691b8e5254c63245055cd7a1d77f2c2fea9c56ac6dd7e321a591b2f991d80b78",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The bitcoin protocol is the set of rules that govern the functioning of bitcoin.",
+        "Its key components and principles are: a peer-to-peer decentralized network with no central oversight; the blockchain technology, a public ledger that records all bitcoin transactions; mining and proof of work, the process to create new bitcoins and verify transactions; and cryptographic security.",
+        "Users broadcast cryptographically signed messages to the network using bitcoin cryptocurrency wallet software.",
+        "These messages are proposed transactions, changes to be made in the ledger.",
+        "Each node has a copy of the ledger's entire transaction history.",
+        "If a transaction violates the rules of the bitcoin protocol, it is ignored, as transactions only occur when the entire network reaches a consensus that they should take place.",
+        "This \"full network consensus\" is achieved when each node on the network verifies the results of a proof-of-work operation called mining.",
+        "Mining packages groups of transactions into blocks, and produces a hash code that follows the rules of the bitcoin protocol.",
+        "Creating this hash requires expensive energy, but a network node can verify the hash is valid using very little energy.",
+        "If a miner proposes a block to the network, and its hash is valid, the block and its ledger changes are added to the blockchain, and the network moves on to yet unprocessed transactions.",
+        "In case there is a dispute, then the longest chain is considered to be correct.",
+        "Changes to the bitcoin protocol require consensus among the network participants."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "GHash.io",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=43433340",
+      "retrieved_at": "2026-10-18T15:18:48.700Z",
+      "sha256": "7646393d9bb28e3743245c70001215142f09d7584e022061f955bb9b04ce1f11",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "GHash.io was a bitcoin mining pool subsidiary of CEX.io that operated from 2013 to 2016.",
+        "The pool gained notoriety for briefly controlling more than half of bitcoin's computing power in 2014 (notable in that bitcoin was supposedly outside any party's control)."
+      ]
+    }
+  ]
+}

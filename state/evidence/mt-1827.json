@@ -1,0 +1,46 @@
+{
+  "id": "mt-1827",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Class-level DILI saturation and hERG-driven risk stratification among 2024–2025 FDA-approved kinase inhibitors: an in silico multi-platform safety analysis",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Küçük Yılmaz, Nihan; Baskın, Veysel",
+      "published_at": "2026-05-02",
+      "url": "https://doi.org/10.1007/s10637-026-01615-1",
+      "retrieved_at": "2026-10-18T16:57:33.182Z",
+      "sha256": "52d121159e2f9ef6a0042f5154c381406f48ee41966524dd53a7063ce1a88b9b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Summary Newly approved kinase inhibitors (2024–2025) have limited post-approval safety data.",
+        "We developed a weighted ToxPi framework to prioritize multi-endpoint liabilities spanning hERG cardiotoxicity, DILI, Ames genotoxicity, and CYP3A4-mediated drug-drug interaction potential.",
+        "Thirteen compounds (12 KIs approved in 2024–2025 plus imatinib as a historical reference anchor) were profiled using ADMETlab 3.0, vNN-ADMET, and SwissADME (formula inputs) and integrated into a weighted composite (wToxPi = 0.30 × hERG + 0.30 × DILI + 0.20 × Ames + 0.20 × CYP3A4).",
+        "Robustness was assessed across weighting schemes and sensitivity analyses addressing fusion-recoding scenarios, CYP3A4 platform asymmetry, and combination-regimen confounding.",
+        "DILI signal saturation dominated the cohort: 12 of 13 compounds showed DILIcon ≥ 0.80, limiting hepatic discrimination and shifting differentiation to hERG and Ames variability.",
+        "Sevabertinib (0.860), Zongertinib (0.840), and Lazertinib (0.775) ranked highest, whereas Mirdametinib (0.080) was the structural outlier.",
+        "Exploratory FAERS findings provided supportive post-marketing context.",
+        "This framework provides transparent, reproducible, hypothesis-generating prioritization of newly approved KIs.",
+        "Class-level DILI saturation reinforces the need for close hepatic surveillance in pharmacovigilance interpretation regardless of composite rank; hERG and Ames provide the main inter-compound discriminatory signal.",
+        "Sevabertinib, Zongertinib, and Lazertinib ranked highest, whereas Mirdametinib was the structural outlier; for Inavolisib and Tovorafenib, endpoint-specific hepatic surveillance remains warranted irrespective of composite rank.",
+        "The model should support pharmacovigilance prioritization rather than replace clinical monitoring or individualized risk assessment."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "New Drugs Approved by the FDA; New Dosage Forms and Indications Approved by the FDA; Agents Pending FDA Approval; New Drug/Biologics License Applications Filed by Manufacturer; Significant Labeling Changes or “Dear Health Professional” Letters Related to Safety",
+      "publisher": "SAGE Publications",
+      "author": "Baker, Danial E.",
+      "published_at": "2010-03",
+      "url": "https://doi.org/10.1310/hpj4503-253",
+      "retrieved_at": "2026-10-18T16:57:33.182Z",
+      "sha256": "d049ad660a41ef470df7290f1bbc292d6275a6c8ef6abf39f990874577181519",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This monthly feature will help readers keep current on new drugs, new indications, dosage forms, and safety-related changes in labeling or use.",
+        "Efforts have been made to ensure the accuracy of this information; however, if there are any questions, please let us know at bakerdan@wsu.edu ."
+      ]
+    }
+  ]
+}

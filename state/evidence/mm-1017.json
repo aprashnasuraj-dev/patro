@@ -1,0 +1,91 @@
+{
+  "id": "mm-1017",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Political Economy of Open Source Software",
+      "publisher": "RePEc: Research Papers in Economics",
+      "author": "Steven Weber",
+      "published_at": "2000-06-01",
+      "url": "https://openalex.org/W1896406334",
+      "retrieved_at": "2026-10-18T15:27:48.678Z",
+      "sha256": "b4e5d920d54d7d6410123cacff9627fb6c26d331c60cd9ba9593cde838903701",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "B6; Scott Berinato, \"Catering to the Linux Appetite,\" PC Week 7 June 1999, p.",
+        "103; Denis Caruso, \"Netscape Decision Could Alter Software Industry,\" New York Times 2 Feb.",
+        "John Markoff, \"Sun Microsystems is Moving to \"Open Source\" Model, New York Times 8 Dec.",
+        "1998, and the \"Halloween Memo\" in which Microsoft targets Linux as a major competitor: www.linux.miningco.com/library/blhalloween.html..This memo was written by Vinod Valloppillil in August 1998.4 Mitchell Stoltz, \"A Software Revolution\", unpublished ms.page 3.",
+        "54).For a fuller statement see www.gnu.org/philosophy/why-free.html.16 Free Software Foundation, \"GNU General Public License, v.",
+        "2.0\" 1991.www.gnu.org/copyleft/gpl.html.Emphasis added.There are several different modifications to these specific provisions, but the general principle is clear."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Open-source license",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22290",
+      "retrieved_at": "2026-10-18T15:27:48.678Z",
+      "sha256": "66480a887ae81005632ba2ec69cd6fb3cd33cc2d42b62b48606d0b7becffa0eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Open-source licenses are software licenses that allow content to be used, modified, and shared.",
+        "They facilitate free and open-source software (FOSS) development.",
+        "Intellectual property (IP) laws restrict the modification and sharing of creative works.",
+        "Free and open-source licenses use these existing legal structures for an inverse purpose.",
+        "They grant the recipient the rights to use the software, examine the source code, modify it, and distribute the modifications.",
+        "These criteria are outlined in The Open Source Definition (OSD).",
+        "After 1980, the United States began to treat software as a literary work covered by copyright law.",
+        "Richard Stallman founded the free software movement in response to the rise of proprietary software.",
+        "The term \"open source\" was used by the Open Source Initiative (OSI), founded by free-software developers Bruce Perens and Eric S.",
+        "\"Open source\" emphasizes the strengths of the open development model rather than software freedoms.",
+        "While the goals behind the terms are different, open-source licenses and free-software licenses describe the same type of licenses.",
+        "The two main categories of open-source licenses are permissive and copyleft."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fork (software development)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=301506",
+      "retrieved_at": "2026-10-18T15:27:48.678Z",
+      "sha256": "ed27eec8225dedf9239f86cf2e9210b547ab616e57378de0fcfc03d578c721fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Template:Use of dates\n\nIn software development, a fork is a codebase that is created by copying an existing codebase and modifying it independently from the original.",
+        "Software built from a fork initially has identical behavior as software built from the original code, but as the source code is increasingly modified, the resulting software tends to have increasingly different behavior compared to the original.",
+        "A fork is a form of branching, but generally involves storing the forked files separately from the original – not in the repository.",
+        "Reasons for forking a codebase include user preference, stagnated or discontinued development of the original software or a schism in the developer community.",
+        "Forking proprietary software (such as Unix) is prohibited by copyright law without explicit permission, but free and open-source software,stop definition, may be forked without permission."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Open-source software movement",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25190769",
+      "retrieved_at": "2026-10-18T15:27:48.678Z",
+      "sha256": "7bc6f1367ab0aefad6015686faa399be1de6765b4b268079bc7e91c9bdad4ced",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The open-source software movement is a social movement that supports the use of open-source licenses for some or all software, as part of the broader notion of open collaboration.",
+        "The movement emerged to promote the development and adoption of open-source software.",
+        "Programmers participating in the open-source movement contribute to software development through voluntary collaboration and code sharing.",
+        "Open-source licenses typically require that source code be made available without restrictions on modification or redistribution, and prohibit discrimination against individuals or groups.",
+        "Under this development model, anyone can obtain, modify, and redistribute open-source code.",
+        "Modifications are typically shared with the broader community, creating a collaborative development process where contributions are tracked and attributed.",
+        "This collaborative approach differs from proprietary software development models in its emphasis on transparency and community participation."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "mq-0509",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Investigation of the infrared profiles of exoplanet HD 209458 b secondary eclipses",
+      "publisher": "Special Astrophysical Observatory of the Russian Academy of Sciences",
+      "author": "Fedotov, A.; Baluev, R.",
+      "published_at": "2024-12-27",
+      "url": "https://doi.org/10.26119/vak2024.130",
+      "retrieved_at": "2026-10-18T17:13:12.459Z",
+      "sha256": "4da8deaca5efe6854f91fbf83c0f43a53cbe4c5763e10a6360e629840a4683bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this work we process infrared light curves for 13 secondary eclipses of the exoplanet HD 209458 b, obtained with the Spitzer Space Telescope.",
+        "The objective of the study was to identify any discrepancies that might be attributed to the inhomogeneity of the planet's surface brightness or a difference of the planet's shape from a sphere.",
+        "Firstly, an attempt was made to ascertain whether the observed midpoint of the secondary eclipse exhibited a shift from the ephemeris moment.",
+        "This could indicate the presence of a hot spot on the planet's surface that is shifted from the central meridian.",
+        "The analysis allowed for the correlated noise that remained in the IRAC detector data after aperture photometry by approximating the noise with a Gaussian random process.",
+        "As a result, we detected two components of red noise with different time scales: $\\sim\\!10$ s and $\\sim\\!5$ min.",
+        "In addition, we constructed a unified model of the effect of inhomogeneous pixel sensitivity as a periodic function of the brightness centroid coordinates, which works well for all the analyzed eclipses.",
+        "According to the results, the main parameters of the HD 209458 b eclipse coincided with those obtained by other authors: a depth of $0.125 \\pm 0.004$% and a shift of the observed midpoint of $-0.53 \\pm 0.61$ min."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Discovery of an exoplanet quartet transiting HD 108236",
+      "publisher": "Wiley",
+      "author": "Daylan, Tansu",
+      "published_at": "2020-09-14",
+      "url": "https://doi.org/10.1002/essoar.10504295.1",
+      "retrieved_at": "2026-10-18T17:13:12.459Z",
+      "sha256": "93f7c263703c21248612eaf9afa77c8c0f7c66d54f80455fbc6783bfd99154c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We report the discovery and validation of four extrasolar planets hosted by the nearby, bright, Sun-like (G3V) star HD~108236 using data from the Transiting Exoplanet Survey Satellite (TESS).",
+        "We present transit photometry, reconnaissance and precise Doppler spectroscopy as well as high-resolution imaging, to validate the planetary nature of the objects transiting HD~108236, also known as the TESS Object of Interest (TOI) 1233.",
+        "The innermost planet is a possibly-rocky super-Earth with a period of 3.79523+0.00047−0.00044 days and has a radius of 1.586±0.098 R⊕.",
+        "The outer planets are sub-Neptunes, with potential gaseous envelopes, having radii of 2.068+0.10−0.091 R⊕, 2.72±0.11 R⊕, and 3.12+0.13−0.12 R⊕ and periods of 6.20370+0.00064−0.00052 days, 14.17555+0.00099−0.0011 days, and 19.5917+0.0022−0.0020 days, respectively.",
+        "With V and Ks magnitudes of 9.2 and 7.6, respectively, the bright host star makes the transiting planets favorable targets for mass measurements and, potentially, for atmospheric characterization via transmission spectroscopy.",
+        "HD~108236 is the brightest Sun-like star in the visual (V) band known to host four or more transiting exoplanets."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T17:13:15.238Z",
+      "sha256": "b62977e1edd9449960dfc887dccbb0508a918122f37088f855a80f60a057841c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Variable star",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63025",
+      "retrieved_at": "2026-10-18T17:13:15.725Z",
+      "sha256": "7c307b9b9b622095e46349c6dd3cc87549c815f3a125ceb0707d7c523fb5e97a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A variable star is a star whose brightness as seen from Earth (its apparent magnitude) changes systematically with time.",
+        "This variation may be caused by a change in emitted light or by something partly blocking the light, so variable stars are classified as either:\n\nIntrinsic variables, whose inherent luminosity changes; for example, because the star swells and shrinks.",
+        "Extrinsic variables, whose apparent changes in brightness are due to changes in the amount of their light that can reach Earth; for example, because the star has an orbiting companion that sometimes eclipses it.",
+        "Depending on the type of star system, this variation can include cyclical, irregular, fluctuating, or transient behavior.",
+        "Changes can occur on time scales that range from under an hour to multiple years.",
+        "Many, possibly most, stars exhibit at least some oscillation in luminosity: the energy output of the Sun, for example, varies by about 0.1% over an 11-year solar cycle.",
+        "At the opposite extreme, a supernova event can briefly outshine an entire galaxy.",
+        "Of the 58,200 variable stars that have been catalogued as of 2023, the most common type are pulsating variables with just under 30,000, followed by eclipsing variables with over 10,000.",
+        "Variable stars have been observed since the dawn of human history.",
+        "The first documented periodic variable was the eclipsing binary Algol.",
+        "The periodic variable Omicron Ceti, later named Mira, was discovered in the 17th century, followed by Chi Cygni then R Hydrae.",
+        "Variable star discovery increased rapidly with the advent of photographic plates."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Extraterrestrial atmosphere",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11346753",
+      "retrieved_at": "2026-10-18T17:13:15.725Z",
+      "sha256": "fb6fd588a03531c782b40ee8c8c4051a39707c7d708de0c0618e3aea501ea8a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The study of extraterrestrial atmospheres is an active field of research, both as an aspect of astronomy and to gain insight into Earth's atmosphere.",
+        "In addition to Earth, many of the other astronomical objects in the Solar System have atmospheres.",
+        "These include all the giant planets, as well as the other planets Mars, Venus and Titan, Triton, and Pluto.",
+        "Several moons and other bodies also have atmospheres, as do comets and the Sun.",
+        "There is evidence that extrasolar planets can have an atmosphere.",
+        "Comparisons of these atmospheres to one another and to Earth's atmosphere broaden our basic understanding of atmospheric processes such as the greenhouse effect, aerosol and cloud physics, and atmospheric chemistry and dynamics.",
+        "In September 2022, astronomers were reported to have formed a new group, called \"Categorizing Atmospheric Technosignatures\" (CATS), to list the results of exoplanet atmosphere studies for biosignatures, technosignatures and related."
+      ]
+    }
+  ]
+}

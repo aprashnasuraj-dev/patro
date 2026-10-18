@@ -1,0 +1,109 @@
+{
+  "id": "mm-1153",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bolivia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3462",
+      "retrieved_at": "2026-10-18T15:31:42.161Z",
+      "sha256": "170ca886d81d807f48115d4920c1c9fd62b978dd54c4272182bddde2e67716e8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bolivia, officially the Plurinational State of Bolivia, is a landlocked country located in central South America.",
+        "Its geography primarily consists of an Andean region to the west and tropical lowlands to the east and north.",
+        "The country has a diverse environment, including the vast Amazonian plain, the Gran Chaco, temperate valleys, the high-altitude Altiplano plateau, snow-capped peaks, and mountains, encompassing a wide range of climates and biomes across its regions and cities.",
+        "It includes part of the Pantanal, the largest tropical wetland in the world, along its eastern border.",
+        "Bolivia is bordered by Brazil to the north and east, Paraguay to the southeast, Argentina to the south, Chile to the southwest, and Peru to the west.",
+        "The seat of government is La Paz, which contains the executive, legislative, and electoral branches of government, while the constitutional capital is Sucre, the seat of the judiciary.",
+        "While most population and urban centers lie in the Andean region, the largest city and principal industrial center is Santa Cruz de la Sierra, located in the eastern tropical lowlands.",
+        "Bolivia is a constitutionally unitary state divided into nine departments.",
+        "Its geographic Andean-lowland divide is matched by economic and cultural differences such as those associated with the camba and colla demonyms.",
+        "One-third of the country is within the Andean mountain range.",
+        "With an area of 1,098,581 square kilometers (424,164 sq mi), Bolivia is the fifth-largest country in South America and, alongside Paraguay, is one of two landlocked countries in the Americas.",
+        "It is the largest landlocked country in the Southern Hemisphere; it has inland ports accessing the Atlantic Ocean through two river systems: Acre-Purus-Amazon and Paraguay-Paraná."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Indonesia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14579",
+      "retrieved_at": "2026-10-18T15:31:42.161Z",
+      "sha256": "4d2a6d13433e8e0e7efe02ad86135f10f0253eea77c9877d2633e380e5786e3c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Indonesia, officially the Republic of Indonesia, is a country in Southeast Asia and Oceania, between the Indian and Pacific oceans.",
+        "Comprising between 13,000 and 17,000 islands—including Sumatra, Java, Sulawesi, and parts of Borneo and New Guinea—it is the world's largest archipelagic state and the 14th-largest country by area.",
+        "Indonesia has extensive tropical forests and marine ecosystems that support some of the world's highest levels of biodiversity.",
+        "The Indonesian archipelago has been inhabited since prehistoric times, with early human presence evidenced by fossils of Homo erectus and Homo sapiens, and megalithic sites.",
+        "It became connected to regional and international maritime trade networks by the first millennium BCE.",
+        "Hindu and Buddhist kingdoms developed by early centuries CE, followed by the spread of Islam and the growth of Islamic states from the late medieval period.",
+        "European powers later competed to monopolise trade in the Spice Islands of Maluku during the Age of Discovery.",
+        "Dutch commercial and colonial control expanded from the 17th century and was consolidated over most of the archipelago during the 19th and early 20th centuries, before Indonesia proclaimed its independence in the aftermath of World War II.",
+        "Since independence, Indonesia has experienced separatist conflicts, corruption, political upheaval and natural disasters, alongside democratisation and rapid economic growth.",
+        "The country today is a presidential republic with an elected legislature and consists of 38 provinces, some of which enjoy greater autonomy than others.",
+        "Home to over 280 million people, Indonesia ranks fourth in the world by population and has the largest Muslim population of any country.",
+        "More than half of Indonesians live on Java, the most heavily populated island in the world, while the capital Jakarta is the world's most populous city."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Biodiversity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45086",
+      "retrieved_at": "2026-10-18T15:31:42.161Z",
+      "sha256": "98f2aab95eb8f224e142a2f869a7d1b1a2e2a0530ad8e248aba2a54dd6023ec3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It can be measured on various levels, for example, genetic variability, species diversity, ecosystem diversity, and phylogenetic diversity.",
+        "Diversity is not distributed evenly on Earth — it is greater in the tropics as a result of the warm climate and high primary productivity in the region near the equator.",
+        "Tropical forest ecosystems cover less than one-fifth of Earth's terrestrial area and contain about 50% of the world's species.",
+        "There are latitudinal gradients in species diversity for both marine and terrestrial taxa.",
+        "Since life began on Earth, five  major mass extinctions and several minor events have led to large and sudden drops in biodiversity.",
+        "The Phanerozoic aeon (the last 540 million years) marked a rapid growth in biodiversity via the Cambrian explosion.",
+        "In this period, the majority of multicellular phyla first appeared.",
+        "The next 400 million years included repeated, massive biodiversity losses.",
+        "Those events have been classified as mass extinction events.",
+        "In the Carboniferous, rainforest collapse may have led to a great loss of plant and animal life.",
+        "The Permian–Triassic extinction event, 251 million years ago, was the worst; vertebrate recovery took 30 million years.",
+        "Human activities have led to an ongoing biodiversity loss and an accompanying loss of genetic diversity."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Whale fall",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1419205",
+      "retrieved_at": "2026-10-18T15:31:42.162Z",
+      "sha256": "a8b1389a014a69fa938a8c60972381ac33e9496993523ab5f6bf5272e7759b18",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A whale fall occurs when the carcass of a whale has fallen onto the ocean floor, typically at a depth greater than 1,000 m (3,300 ft), putting them in the bathyal or abyssal zones.",
+        "On the sea floor, these carcasses can create complex localized ecosystems that supply sustenance to deep-sea organisms for decades.",
+        "In some circumstances, particularly in cases with lower water temperatures, they can be found at much shallower depths, with at least one natural instance recorded at 150 m (500 ft) and multiple experimental instances in the range of 30–382 m (100–1,300 ft).",
+        "Whale falls were first observed in the late 1970s with the development of deep-sea robotic exploration.",
+        "Since then, several natural and experimental whale falls have been monitored through the use of observations from submersibles and remotely operated underwater vehicles (ROVs) in order to understand patterns of ecological succession on the deep seafloor.",
+        "Deep sea whale falls are thought to be hotspots of adaptive radiation for specialized fauna.",
+        "Organisms that have been observed at deep-sea whale fall sites include chordates, arthropods, cnidarians, echinoderms, mollusks, nematodes, and annelids.",
+        "New species have been discovered, including some potentially specializing in whale falls.",
+        "It has been postulated that whale falls generate biodiversity by providing evolutionary stepping stones for multiple lineages to move and adapt to new, environmentally challenging habitats.",
+        "Researchers estimate that 690,000 carcasses/skeletons of the nine largest whale species are in one of the four stages of succession at any one time.",
+        "This estimate implies an average spacing of 12 km (7.5 mi) and as little as 5 km (3.1 mi) along migration routes.",
+        "They hypothesize that this distance is short enough to allow larvae to disperse/migrate from one to another."
+      ]
+    }
+  ]
+}

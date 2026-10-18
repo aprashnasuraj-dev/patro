@@ -1,0 +1,149 @@
+{
+  "id": "mm-0005",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why is the sky blue?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Freedman, Daniel",
+      "published_at": "2025-01-20",
+      "url": "https://theconversation.com/why-is-the-sky-blue-246393",
+      "retrieved_at": "2026-10-18T14:50:38.163Z",
+      "sha256": "2b53b89d7a2ac8861bc51c6c803792dcab8c63480a24dd330f539a75d7df0537",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Light at the blue end of the rainbow is scattered more efficiently than the other colors.",
+        "If you have a question you’d like an expert to answer, send it to CuriousKidsUS@theconversation.com .",
+        "– Mariana A-E., age 11, Tucson, Arizona You might think that explaining why the sky is blue would be kind of simple.",
+        "But even a brief explanation of it requires a lot of science.",
+        "The colors of everything you see are produced in different ways.",
+        "Some of those colors are explained with physics, others by my own field of chemistry .",
+        "The nitrogen and oxygen that you are breathing right now are made up of very small particles called molecules.",
+        "Each molecule is only about 0.4 nanometers, or 16 billionths of an inch.",
+        "It would take 250,000 nitrogen molecules to equal the width of one strand of your hair.",
+        "You can think of the molecules as behaving like very tiny balls that constantly bounce around.",
+        "When sunlight travels through the atmosphere, it passes between lots of those teensy nitrogen and oxygen molecules.",
+        "In short, the sky looks blue because the blue portion of sunlight is much more likely to bounce off the molecules in the atmosphere than the other colors of light."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why the sky is blue? / Rosilawati Othman",
+      "publisher": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+      "author": "Rosilawati Othman",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W3165807806",
+      "retrieved_at": "2026-10-18T14:50:40.300Z",
+      "sha256": "1623c7fcca5d5650692f5eb5172acc18ec60bb7e0f9558fe5900608288855d8a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sunlight is made up of seven colors such as red, orange, yellow, green, blue, indigo and violet.",
+        "It also travels very quickly which is around 300,000 kilometers a second.",
+        "Light can travel through space, air, water and solids like glass or Perspex.",
+        "When the sunlight shines through the atmosphere most of the light passes straight through down to the ground.",
+        "When light beams interact with particles suspended in air, the energy can be scattered or absorbed.",
+        "Energy that is scattered causes a change in direction of the light path.",
+        "The amount of light that is being scattered is a function of the size of the particle relative to the wavelength of the light falling on the particle.",
+        "Particles that are tiny compared to the wavelength of the light scatter selectively according to wavelength.",
+        "While all colors are scattered by air molecules, violet and blue are scattered most.",
+        "The sky looks blue, not violet, because our eyes are more sensitive to blue light and the sun also emits more energy as blue light than as violet.",
+        "At sunset and sunrise, the sunlight passes through more atmosphere than during the day when the sun is higher in the sky.",
+        "More atmospheres mean more molecules to scatter the violet and blue light."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "John William Strutt, 3rd Baron Rayleigh",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18381",
+      "retrieved_at": "2026-10-18T14:50:40.716Z",
+      "sha256": "8122f5e5fa12102c038dfea9bdd82a1eee3e9b3224a7f8fc6a1f03ebc8359f25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "John William Strutt, 3rd Baron Rayleigh ( RAY-lee; 12 November 1842 – 30 June 1919), was a British physicist and hereditary peer who received the Nobel Prize in Physics in 1904 for his discovery of argon.",
+        "In 1871, Rayleigh published the first theoretical treatment of the elastic scattering of light by particles much smaller than the light's wavelength, a phenomenon now known as Rayleigh scattering, which notably explains why the sky is blue.",
+        "He studied and described transverse surface waves in solids, now known as Rayleigh waves.",
+        "He contributed extensively to fluid dynamics, with concepts such as the Rayleigh number (a dimensionless number associated with natural convection), Rayleigh flow, the Rayleigh–Taylor instability, and Rayleigh's criterion for the stability of Taylor–Couette flow.",
+        "Rayleigh also formulated the circulation theory of aerodynamic lift.",
+        "In optics, he proposed a well-known criterion for angular resolution.",
+        "His derivation of the Rayleigh–Jeans law for classical black-body radiation later played an important role in the birth of quantum mechanics (see ultraviolet catastrophe).",
+        "His textbook, The Theory of Sound (1877), is still used today by acousticians and engineers.",
+        "He introduced the Rayleigh test for circular non-uniformity, which the Rayleigh plot visualises.",
+        "Rayleigh served as President of the Royal Society from 1905 to 1908, and as Chancellor of the University of Cambridge from 1908 until his death in 1919."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Rayleigh scattering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26176",
+      "retrieved_at": "2026-10-18T14:50:40.716Z",
+      "sha256": "3c5ec7a9ee2d004d4bf49280fd18023a3745c823baacb055df63f37f35b64b8f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rayleigh scattering ( RAY-lee) is the scattering or deflection of light, or other electromagnetic radiation, by particles with a size much smaller than the wavelength of the radiation.",
+        "For light frequencies well below the resonance frequency of the scattering medium (normal dispersion regime), the amount of scattering is inversely proportional to the fourth power of the wavelength (e.g., a blue color is scattered much more than a red color as light propagates through air).",
+        "The phenomenon is named after the 19th-century British physicist Lord Rayleigh (John William Strutt).",
+        "Rayleigh scattering results from the electric polarizability of the particles.",
+        "The oscillating electric field of a light wave acts on the charges within a particle, causing them to move at the same frequency.",
+        "The particle, therefore, becomes a small radiating dipole whose radiation we see as scattered light.",
+        "The particles may be individual atoms or molecules; it can occur when light travels through transparent solids and liquids, but is most prominently seen in gases.",
+        "Rayleigh scattering of sunlight in Earth's atmosphere causes diffuse sky radiation.",
+        "Since blue light wavelengths scatter more, the diffuse sky seen in daytime is blue.",
+        "At twilight the sunlight on the horizon is missing the scattered blue light wavelengths giving a yellowish to reddish hue to the low Sun.",
+        "Scattering by particles with a size comparable to, or larger than, the wavelength of the light is typically treated by the Mie theory, the discrete dipole approximation and other computational techniques.",
+        "Rayleigh scattering applies to particles that are small with respect to wavelengths of light, and that are optically \"soft\" (i.e., with a refractive index close to 1)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Diffuse sky radiation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=212101",
+      "retrieved_at": "2026-10-18T14:50:40.716Z",
+      "sha256": "91aaa3bdc64ec7078a7541073e4a2db1973956f8d454151e47b7f2f760435427",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Diffuse sky radiation, is solar radiation reaching the Earth's surface after having been scattered from the direct solar beam by molecules or particulates in the atmosphere.",
+        "It is also called sky radiation,  the determinative process for changing the colors of the sky.",
+        "It is normally measured on a horizontal surface, thus frequently termed diffuse horizontal irradiance (DHI), often in the unit of watts per square meter (W/m2).",
+        "Approximately 23% of direct incident radiation of total sunlight is removed from the direct solar beam by scattering into the atmosphere; of this amount (of incident radiation)  about two-thirds ultimately reaches the earth as photon diffused skylight radiation.",
+        "The dominant radiative scattering processes in the atmosphere are Rayleigh scattering and Mie scattering; they are elastic, meaning that a photon of light can be deviated from its path without being absorbed and without changing wavelength.",
+        "Under an overcast sky, there is no direct sunlight, and all light results from diffused skylight radiation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Blue Sky Studios",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=921577",
+      "retrieved_at": "2026-10-18T14:50:40.716Z",
+      "sha256": "56ed7fcecf39ffd558e6d0fe235bb0562a32c5a8fbd99db414881bcb375bdfb0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "was an American visual effects and computer animation studio, which was based in Greenwich, Connecticut.",
+        "It was founded on February 22, 1987 by Chris Wedge, Michael Ferraro, Carl Ludwig, Alison Brown, David Brown and Eugene Troubetzkoy after their employer, Mathematical Applications Group (MAGI), one of the visual effects studios behind Tron (1982), got sold to Vidmax Canada and eventually closed.",
+        "Using its in-house rendering software, the studio created visual effects for commercials and films before dedicating itself to animated film production.",
+        "It produced 13 feature films, the first being Ice Age (2002) and the final one being Spies in Disguise (2019).",
+        "Disney closed down Blue Sky on 10 April 2021 and absorbed its library and IPs into 20th Century Animation.",
+        "Ice Age and Rio were the studio's most commercially successful franchises, while Robots (2005), Horton Hears a Who!",
+        "(2008), The Peanuts Movie (2015), and the aforementioned Spies in Disguise were among its most critically praised films.",
+        "Scrat, a character from the Ice Age franchise, was the studio's mascot."
+      ]
+    }
+  ]
+}

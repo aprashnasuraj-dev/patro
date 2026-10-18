@@ -1,0 +1,102 @@
+{
+  "id": "mt-0076",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T16:14:45.479Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Gut microbiota",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3135637",
+      "retrieved_at": "2026-10-18T16:14:45.479Z",
+      "sha256": "83b40b664382722987394e10afe3344788e9152ec3d33eef369cdd0541722d64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gut microbiota, gut microbiome, or gut flora are the microorganisms, including bacteria, archaea, fungi, and viruses, that live in the digestive tracts of animals.",
+        "The gastrointestinal metagenome is the aggregate of all the genomes of the gut microbiota.",
+        "The gut microbiota has broad impacts, including effects on colonization, resistance to pathogens, maintaining the intestinal epithelium, metabolizing dietary and pharmaceutical compounds, controlling immune function, and even behavior through the gut–brain axis.",
+        "Imbalances in the gut microbiota (dysbiosis) have been associated with numerous diseases, including inflammatory bowel disease, certain cancers, and even neurological disorders, prompting increased efforts to develop microbiome-targeted therapies.",
+        "The microbial composition of the gut microbiota varies across regions of the digestive tract.",
+        "The colon contains the highest microbial density of any human-associated microbial community studied so far, representing between 300 and 1000 different species.",
+        "Bacteria are the largest and to date, best studied component and 99% of gut bacteria come from about 30 or 40 species.",
+        "Over 99% of the bacteria in the gut are anaerobes, but in the cecum, aerobic bacteria reach high densities.",
+        "It is estimated that the human gut microbiota has around a hundred times as many genes as there are in the human genome."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Endocannabinoid system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4617112",
+      "retrieved_at": "2026-10-18T16:14:45.479Z",
+      "sha256": "0e7bd4c68c38be5a32f2945352a2973851ccee315a1b71d79409ef509e299aa0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The endocannabinoid system (ECS) is a biological system composed of endocannabinoids, which are neurotransmitters that bind to cannabinoid receptors, and cannabinoid receptor proteins that are expressed throughout the central nervous system (including the brain) and peripheral nervous system.",
+        "It is found in animals as simple as hydras, but absent in insects, who are hypothesized to have lost it due to a lack of arachidonic acid.",
+        "The ECS plays an important role in multiple aspects of neural functions, including the control of movement and motor coordination, learning and memory, emotion and motivation, addictive-like behavior and pain modulation, among others.",
+        "Two primary cannabinoid receptors have been identified: CB1, first cloned (or isolated) in 1990; and CB2, cloned in 1993.",
+        "CB1 receptors are found predominantly in the brain and nervous system, as well as in peripheral organs and tissues, and are the main molecular target of the fatty-acid neurotransmitter anandamide, as well as the most known active component of cannabis, tetrahydrocannabinol (THC).",
+        "Another endocannabinoid, 2-arachidonoylglycerol (2-AG), also interacts with both CB receptors.",
+        "It is significantly more abundant in the mammalian brain than anandamide, exceeding it by two to three orders of magnitude.",
+        "The endocannabinoid system is sometimes called the endocannabinoidome or the expanded endocannabinoid system, as it includes a broader range of lipid mediators, receptors, and enzymes beyond CB1 and CB2."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Autism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29113700",
+      "retrieved_at": "2026-10-18T16:14:45.479Z",
+      "sha256": "b64258554a52626374679602d4f5cb7a6b624f6ff48e773289481407927e1414",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autism, also known as autism spectrum disorder (ASD), is a condition characterized by impairment in social communication and interaction, as well as a need or strong preference for predictability and routine, sensory processing differences, focused interests, or repetitive behaviors.",
+        "Features of autism are present from early childhood and the condition typically persists throughout life.",
+        "Autism is classified as a neurodevelopmental disorder, and a diagnosis requires professional assessment that these characteristics cause significant challenges in daily life beyond what is expected given a person's age and social environment.",
+        "Because autism is a spectrum disorder, presentations vary and support needs range from minimal assistance to full-time, 24-hour care.",
+        "Autism diagnoses have risen since the 1990s, largely because of broader diagnostic criteria, greater awareness, and wider access to assessment.",
+        "The World Health Organization estimates that about 1 in 100 children were diagnosed between 2012 and 2021, noting an increasing trend.",
+        "Surveillance studies suggest a similar share of the adult population would meet diagnostic criteria if formally assessed.",
+        "Autism is highly heritable and involves many genes, while environmental factors appear to play a smaller, mainly prenatal role.",
+        "Boys are diagnosed several times more often than girls, with girls being better at hiding autistic traits.",
+        "Conditions such as anxiety, depression, attention deficit hyperactivity disorder (ADHD), epilepsy, as well as intellectual disability, are more common among autistic people.",
+        "Autistic people are also more likely to be a part of the LGBTQ community.",
+        "Certain savant abilities are also more common in autistic people than in other groups."
+      ]
+    }
+  ]
+}

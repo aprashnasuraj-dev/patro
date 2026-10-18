@@ -1,0 +1,154 @@
+{
+  "id": "mm-1708",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Do We Tip Taxicab Drivers?",
+      "publisher": "Elsevier BV",
+      "author": "Flath, David J.",
+      "published_at": "2009",
+      "url": "https://doi.org/10.2139/ssrn.1403812",
+      "retrieved_at": "2026-10-18T15:56:56.168Z",
+      "sha256": "264d2361cafcba5c375df3152a264368f791f9d176eaf841528771f020b37b3d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The leading economic explanation for tipping - that is, explanation why the practice is socially beneficial, not why individuals leave tips even though it is not narrowly advantageous to them - is that it confers an incentive to provide personal services.",
+        "This fits many instances in which tipping is common but does not fit the taxicab business very well.",
+        "I propose a novel explanation for tipping that does fit the taxi case.",
+        "It is that tipping amounts to Lindahl pricing of the services of vacant cabs (essentially, reduced waiting time), a local public good for taxi customers."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "TripAdvisor helps us choose hotels and restaurants – so why not where we end our days?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Walter, Tony",
+      "published_at": "2017-08-01",
+      "url": "https://theconversation.com/tripadvisor-helps-us-choose-hotels-and-restaurants-so-why-not-where-we-end-our-days-81529",
+      "retrieved_at": "2026-10-18T15:56:56.868Z",
+      "sha256": "82eb59aad795ca4eff19793889f3d8447ee8411b4ef2c600da9e39d76bd56684",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "TripAdvisor helps us choose hotels and restaurants – so why not where we end our days?",
+        "Skip to content Academic rigor, journalistic flair TripAdvisor helps us choose hotels and restaurants – so why not where we end our days?",
+        "So how were we, her children, supposed to gauge the quality of other establishments offering care?",
+        "Our saviour turned out to be Alison – my mother’s hairdresser.",
+        "As a specialist in older, housebound clients, she had continued to do her customers’ hair as they moved to various hospitals or care homes.",
+        "Alison gave us the names of three places nearby that our mother might prefer, and we arranged her transfer within 36 hours.",
+        "It was a move which transformed the quality of her last few months of life.",
+        "Unlike formal inspectors, Alison was an unthreatening, secret observer of each of the institutions she visited.",
+        "Without her, my mother’s life could have ended very differently.",
+        "The trouble is, not every family is lucky enough to know an Alison.",
+        "In the UK, people are expected to make their own choices about their own care in the final months and years of life.",
+        "But how can people become well informed about different care providers, especially when a crisis forces decisions to be made at short notice?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Business Case for (and Against) Restaurant Tipping",
+      "publisher": "Cornell Peter and Stephanie Nolan School of Hotel Administration (Cornell University)",
+      "author": "Michael Lynn",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2424738238",
+      "retrieved_at": "2026-10-18T15:56:57.389Z",
+      "sha256": "1cc93731d8a4545197b93e2347adcad20c68d74507fb3d0ece60bbd3816f3054",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recent interest in replacing tipping with service charges or higher service-inclusive menu pricing prompted this review of empirical evidence on the advantages and disadvantages to restaurants of these different compensation systems.",
+        "The evidence indicates that these different pricing systems affect the attraction and retention of service workers, the satisfaction of customers with service, the actual and perceived costs of eating out, and the costs of hiring employees and doing business.",
+        "However, the author comes away from the data believing that the biggest reason for restaurateurs to replace tipping is that the practice takes revenue away from them in the form of lower prices and gives it to servers in the form of excessively high tip income.",
+        "The biggest reason for restaurateurs to keep tipping is that it allows them to reduce menu prices, which increases demand.",
+        "Thus, restaurateurs’ decisions to keep voluntary tipping or not should ultimately depend on the relative strengths of these benefits.",
+        "The more that a restaurant’s servers are overpaid relative to the back of house and the wealthier and less price-sensitive a restaurant’s customers are, the more the owner of that restaurant should consider abandoning tipping.",
+        "By this reasoning, many upscale, expensive restaurants (especially those in states with no or small tip credits) probably should replace tipping with one of its alternatives."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gratuity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=157901",
+      "retrieved_at": "2026-10-18T15:56:57.389Z",
+      "sha256": "44a6709031dc22c2b86c11701d238380592cedf04ac747c28f7ae38496bac27f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A gratuity (often called a tip) is a sum of money customarily given by a customer to certain service sector workers such as hospitality for the service they have performed, in addition to the basic price of the service.",
+        "Tips and their amount are a matter of social custom and etiquette, and the custom varies between countries and between settings.",
+        "In some countries, it is customary to tip servers in bars and restaurants, taxi drivers, tattoo artists, hair stylists and so on.",
+        "However, in some places tipping is not expected and may be discouraged or considered insulting.",
+        "The customary amount of a tip can be a specific range or a certain percentage of the bill based on the perceived quality of the service given.",
+        "It is illegal to offer tips to some groups of workers, such as U.S.",
+        "government workers and more widely police officers, as the tips may be regarded as bribery.",
+        "A fixed percentage service charge is sometimes added to bills in restaurants and similar establishments.",
+        "Tipping may not be expected when a fee is explicitly charged for the service.",
+        "Department of Labor, a tipped employee is a worker who receives more than $30 per month on tips.",
+        "He or she is required to be paid $2.13 hourly in direct wages provided that the amount combined with the amount received as a tip equals the federal minimum wage.",
+        "If the combined amount does not reach the applicable minimum wage, the employer is expected to make up the difference."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Waiting staff",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=309917",
+      "retrieved_at": "2026-10-18T15:56:57.389Z",
+      "sha256": "6b4dc498a736c35e6bab73ffc03b7d8832db0f4028717bf9c968152a13773c5b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Waiting staff (BrE), waiters (masc/neutr) / waitresses (fem), or servers (AmE) are those who work at a restaurant, a diner, or a bar and sometimes in private homes, attending to customers by supplying them with food and drink as requested.",
+        "Waiting staff follow rules and guidelines determined by the manager.",
+        "Waiting staff carry out many different tasks, such as taking orders, food-running, polishing dishes and silverware, helping bus tables, entertaining patrons, restocking working stations with needed supplies, and handing out the bill.",
+        "Waiting on tables is part of the service sector and among the most common occupations.",
+        "In the United States, the Bureau of Labor Statistics estimated that, as of May 2023, there were about 2.2 million people employed as servers in the country.",
+        "Many restaurants choose a specific uniform for their waiting staff to wear.",
+        "Waiting staff may receive tips as a minor or major part of their earnings, with customs varying widely from country to country."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Ofer Azar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52850767",
+      "retrieved_at": "2026-10-18T15:56:57.389Z",
+      "sha256": "9de4efc26be4c2532296d93f32864a8eefc8aec0ce2d51f8abd16bbf622fa645",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Azar (Hebrew: עופר עזר) is an economics professor at Ben-Gurion University of the Negev in Beersheba, Israel.",
+        "From 2013-2021 he was the editor-in-chief of the Journal of Behavioral and Experimental Economics.",
+        "He does research in behavioral economics and industrial organization, among other fields.",
+        "For example, he has published numerous studies on the practice of tipping.",
+        "These studies include one which estimated that Americans tip about $42 billion per year at full-service restaurants."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Salt Bae",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53141409",
+      "retrieved_at": "2026-10-18T15:56:57.389Z",
+      "sha256": "1949595e95cdf59574463dfc82f1c11128d311742dd7240aabd9557450fa25a1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nusret Gökçe (Turkish: [nusˈɾet ɟœcˈtʃe]; born 9 August 1983), better known as Salt Bae, is a Turkish butcher, chef, and restaurateur of Kurdish origin.",
+        "Gökçe's performance of a technique for preparing and seasoning meat became an Internet meme in January 2017.",
+        "As of 2021, Nusr-Et has branches in Turkey, Greece, the United States, the United Kingdom, Italy, Spain, the United Arab Emirates, Qatar, and Saudi Arabia.",
+        "The name of the restaurant chain comes from his own name and et, which means \"meat\" in Turkish."
+      ]
+    }
+  ]
+}

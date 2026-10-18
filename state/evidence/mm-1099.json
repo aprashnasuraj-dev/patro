@@ -1,0 +1,111 @@
+{
+  "id": "mm-1099",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How AI helps conservationists better understand and protect giraffes",
+      "publisher": "Mongabay",
+      "author": "Kidangoor, Abhishyant",
+      "published_at": "2025-09-16",
+      "url": "https://news.mongabay.com/2025/09/how-ai-helps-conservationists-better-understand-and-protect-giraffes/",
+      "retrieved_at": "2026-10-18T15:27:53.786Z",
+      "sha256": "b7a51d2bb307bd9c81c897de87cf72c3b4914f2064fd2840f9eee9273776af89",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Facebook Linkedin Threads Whatsapp Reddit Email Page link Cite article Scientists have deployed artificial intelligence models to identify and re-identify endangered giraffes in Tanzania.",
+        "The Wild Nature Institute partnered with Microsoft’s AI For Good Lab to launch Project GIRAFFE which uses open-source AI tools to identify and re-identify individual giraffes based on spot patterns on their bodies.",
+        "The data has helped scientists come up with estimates on survival and reproduction rates, movements, and behavior of the animals.",
+        "See All Key Ideas Monica Bond and Derek Lee’s “love and obsession” for giraffes started during a trip to Uganda in 2005.",
+        "Since then, they said, their mission was clear: return to Africa and lead the “world’s greatest giraffe study.” Five years later, the duo co-founded the nonprofit Wild Nature Institute, based in Tanzania, where the Masai giraffe ( Giraffa tippelskirchi ) is the national animal.",
+        "Here, their team has focused on identifying individual giraffes based on the unique patterns on their bodies.",
+        "For years, the team did the work manually, after which they experimented with different iterations of technology.",
+        "Neither approach yielded the results they were looking for, however.",
+        "Now, artificial intelligence models — developed in collaboration with Microsoft’s AI For Good Lab — are helping the team speed up their work.",
+        "Project GIRAFFE (Generalized Image-based Re-identification using AI for Fauna Feature Extraction) is an AI-based, open-source tool that’s helping Bond and Lee efficiently identify and re-identify individual giraffes.",
+        "“It can now be done in minutes, and we can have the output the same day we collect the data,” Lee told Mongabay in a video interview.",
+        "Identifying individual giraffes, and being able to subsequently re-identify them, is crucial to understanding the areas that are important for their survival."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Applications of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15893057",
+      "retrieved_at": "2026-10-18T15:27:55.988Z",
+      "sha256": "fb294b56f234a3939dd45251711bbd5f8581d9be9025ab1e9efec7dded178747",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) and its subfields have been used in applications throughout industry and academia.",
+        "Machine learning has been used for various scientific and commercial purposes, including language translation, image recognition, decision-making, credit scoring, and e-commerce.",
+        "Since the 2020s, massive advancements have been made in the field of generative AI (GenAI) as a result of the 2017 inception of Transformer Model architecture.",
+        "GenAI has the ability to create text, images, voice, music, videos, and other forms of data from chat-based prompting."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Selina Wamucii",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57032780",
+      "retrieved_at": "2026-10-18T15:27:55.988Z",
+      "sha256": "d5f2d171b16e3a3e6960eda7595282511b85297067e3ac58a539ccba1a582a11",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It uses technology to manage the produce grown by smallholder farmers.",
+        "The company's headquarters are located in Nairobi and is best known as Kenya's largest exporter of avocado."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence in India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60669244",
+      "retrieved_at": "2026-10-18T15:27:55.988Z",
+      "sha256": "ac2c7f4e904d5bbe86b34e1945116107a975f0bb9c7ba38f6fa63483ab258f94",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The artificial intelligence (AI) market in India is projected to reach $8 billion by 2025, growing at 40% CAGR from 2020 to 2025.",
+        "India has many AI Hardware startups, AI Datacenter, Supercomputing and HPC companies such as Netweb Technologies.",
+        "In India, the development of AI has been similarly transformative, with applications in healthcare, finance, and education, bolstered by government initiatives like NITI Aayog's 2018 National Strategy for Artificial Intelligence.",
+        "Institutions such as the Indian Statistical Institute and the Indian Institute of Science published breakthrough AI research papers and patents.",
+        "India's transformation to AI is primarily being driven by startups and government initiatives & policies like Digital India.",
+        "By fostering technological trust through digital public infrastructure, India is tackling socioeconomic issues by taking a bottom-up approach to AI.",
+        "NASSCOM and Boston Consulting Group estimate that by 2027, India's AI services might be valued at $17 billion.",
+        "According to 2025 Technology and Innovation Report, by UN Trade and Development, India ranks 10th globally for private sector investments in AI.",
+        "According to Mary Meeker, India has emerged as a key market for AI platforms, accounting for the largest share of ChatGPT's mobile app users and having the third-largest user base for DeepSeek in 2025.",
+        "While AI presents significant opportunities for economic growth and social development in India, challenges such as data privacy concerns, skill shortages, and ethical considerations need to be addressed for responsible AI deployment.",
+        "The growth of AI in India has also led to an increase in the number of cyberattacks that use AI to target organizations."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Farmers Business Network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61875259",
+      "retrieved_at": "2026-10-18T15:27:55.988Z",
+      "sha256": "d07b0fb64eb8bebab190e2426d7c13a2139093a939c1ab5fab7cd2c82999c50e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Farmers Business Network (FBN) is a North American farmer-to-farmer network, e-commerce and fintech  platform based in San Carlos, California.",
+        "In July 2025, the company said its network had grown to more than 117,000 member farms across about 187 million acres.",
+        "In 2016, FBN launched an online input buying system called FBN Direct.",
+        "The platform aggregates data on seed prices and performances to assist farmers in agronomic resource management.",
+        "The company introduced their first non-GMO corn and soybean seed offerings with F2F Genetics Network in August 2018.",
+        "Some farmer members have reported saving thousands of dollars through the purchase of FBN seeds.",
+        "FBN also sells seed from third-party brands; Seitec Genetics seed is available to growers in selected U.S."
+      ]
+    }
+  ]
+}

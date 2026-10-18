@@ -1,0 +1,125 @@
+{
+  "id": "mm-0592",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "J M Keynes on the Definition of Uncertainty: Why  Uncertainty Must Come in Degrees and Has Nothing to Do with Ergodicity or Non Ergodicity",
+      "publisher": "Elsevier BV",
+      "author": "Brady, Michael Emmett",
+      "published_at": "2016",
+      "url": "https://doi.org/10.2139/ssrn.2718714",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "677ce2956b2778fa2710104c8129d3f8ca4b36caf74e2e8c60eb1a4d7c36ec84",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "There is no discussion of the definition of Uncertainty in his exchanges with Jan Tinbergen in 1939-40 in the Economic Journal.",
+        "Paul Davidson and his Post Keynesian-Institutionalist supporters base their Ergodic-Non Ergodic approach to the definitions of uncertainty and risk on the inductive fallacy of Conditional A priorism (Long Runism).",
+        "Davidson bases his binary approach to uncertainty, which rules out any concept of different degrees to knowledge (certainty) and unknowledge (uncertainty), on both metaphysical speculations and/or a priori claims to knowledge.",
+        "There can be no such thing as probable knowledge under this binary approach."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Training evaluation with 360-degree feedback",
+      "publisher": "University of Twente Research Information",
+      "author": "Froukje Jellema",
+      "published_at": "2002-01-01",
+      "url": "https://openalex.org/W2889743400",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "87c42b1df3676a21cdede634415c6b9ed3aa9639236af6cc139c23d0c9cb3ae5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Training evaluation is an important issue in many organizations.",
+        "Even though organizations are becoming more interested to measure the effects of their training investments, organizations often lack the tools for the measurement of training effects, especially at the level of changed behavior.",
+        "This paper will focus on the use of 360-degree feedback for evaluation of changed behavior as a result of training.",
+        "The results of an experimental study in a large Dutch hospital will be described and discussed."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Angle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1196",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "2f2d8d9ccff88e299e7786b10441554839aaad85c6f3a336e54f11c1013ced08",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In geometry, an angle is formed by two lines that meet at a point.",
+        "Each line is called a side of the angle, and the point they share is called the vertex of the angle.",
+        "The term angle is used to denote both geometric figures and their size or magnitude as associated quantity.",
+        "Angular measure or measure of angle are sometimes used to distinguish between the measure of the quantity and figure itself.",
+        "The measurement of angles is intrinsically linked with circles and rotation, and this is often visualized or defined using the arc of a circle centered at the vertex and lying between the sides."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Minute and second of arc",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2431",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "be44f3a59fb6339da6759eb279b27d6a57f18c5090b091a09ca7a88489be2de4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A minute of arc, arcminute (abbreviated as arcmin), arc minute, or minute arc, denoted by the symbol ′, is a unit of angular measurement equal to ⁠1/60⁠ of a degree.",
+        "Since one degree is ⁠1/360⁠ of a turn, or complete rotation, one arcminute is ⁠1/21600⁠ of a turn.",
+        "The nautical mile (nmi) was originally defined as the arc length of a minute of latitude on a spherical Earth; therefore, the actual Earth's circumference is approximately 21600 nmi.",
+        "A second of arc, arcsecond (abbreviated as arcsec), or arc second, denoted by the symbol ″, is a unit of angular measurement equal to ⁠1/60⁠ of a minute of arc, ⁠1/3600⁠ of a degree, ⁠1/1296000⁠ of a turn, and ⁠π/648000⁠ (about ⁠1/206264.8⁠) of a radian.",
+        "These units originated in Babylonian astronomy as sexagesimal (base 60) subdivisions of the degree; they are used in fields that involve very small angles, such as astronomy, optometry, ophthalmology, optics, navigation, land surveying, and marksmanship.",
+        "To express even smaller angles, standard SI prefixes can be employed; the milliarcsecond (mas) and microarcsecond (μas), for instance, are commonly used in astronomy.",
+        "For a two-dimensional area, such as on (the surface of) a sphere, square arcminutes or seconds may be used."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Circle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6220",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "af3e44168615f0296d10929c3cfe87b139e481d4b83901b972e17650487fe910",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A circle is a shape consisting of all points in a plane that are at a given distance from a given point, the centre.",
+        "The distance between any point of the circle and the centre is called the radius.",
+        "The length of a line segment connecting two points on the circle and passing through the centre is called the diameter.",
+        "The circle has been known since before the beginning of recorded history.",
+        "Natural circles are common, such as the full moon or a slice of round fruit.",
+        "The circle is the basis for the wheel, which, with related inventions such as gears, makes much of modern machinery possible.",
+        "In mathematics, the study of the circle has helped inspire the development of geometry, astronomy and calculus."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Azimuth",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47487",
+      "retrieved_at": "2026-10-18T15:15:12.510Z",
+      "sha256": "5164fed17ab3a2ef83df2607f688a712365fe1fee304614105fc6917606416b0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An azimuth ( ; from Arabic: اَلسُّمُوت, romanized: as-sumūt, lit.",
+        "'the directions') is the horizontal angle from a cardinal direction, most commonly north, in a local or observer-centric spherical coordinate system.",
+        "Mathematically, the relative position vector from an observer (origin) to a point of interest is projected perpendicularly onto a reference plane (the horizontal plane); the angle between the projected vector and a reference vector on the reference plane is called the azimuth.",
+        "When used as a celestial coordinate, the azimuth is the horizontal direction of a star or other astronomical object in the sky.",
+        "The star is the point of interest, the reference plane is the local area (e.g.",
+        "a circular area with a 5 km radius at sea level) around an observer on Earth's surface, and the reference vector points to true north.",
+        "The azimuth is the angle between the north vector and the star's vector on the horizontal plane.",
+        "Azimuth is usually measured in degrees (°), in the positive range 0° to 360° or in the signed range -180° to +180°.",
+        "The concept is used in navigation, astronomy, engineering, mapping, geodesy, mining, and ballistics."
+      ]
+    }
+  ]
+}

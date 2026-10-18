@@ -1,0 +1,120 @@
+{
+  "id": "mm-1858",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Parametrical analysis of vacuum contact devices for wall climbing robots",
+      "publisher": "CLAWAR Association Ltd.",
+      "author": null,
+      "published_at": "2020-08-24",
+      "url": "https://doi.org/10.13180/clawar.2020.24-26.08.25",
+      "retrieved_at": "2026-10-18T16:10:12.064Z",
+      "sha256": "72359b21d5876c6737afa8faa01445a12f0ac9d3596cc934238a96869c653cbd",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "� \u0010�\"�\u0018���J�:Y U�b�*i6�.��\u0012�B�J��\"�N�~\u0010'�^��cz\u0016x\u0012������d\u0010M !�%K���Ҹ8)-:�p$�\u0019 j\"NL͇G~��g����K���#0\u0006���4��\u0007� Z�叧`ʑ\u0013�N�3��|�8A�v��\u0014�ϑ�w���]� ��#�T2�PT�ܮ��D%\u0013u��H\u0015��\u0014JZ��hu*�\u0012ƚ�Y\u0001\u001d8\u001f ���\" 﩯��S����?",
+        "\u0016�(Y|l�i�\u00171(;��\u0014��o��!���YO\u0013/RA�;�Q\u001e�>��@v\u000e,��\u0002M��y�Qى\u0006K���/���|\u0019�W�Q>Hm\u0013\u0003H�Y\u0018c�z�z\u001ce��7e!",
+        "]���-:e���/ ��\u0010�� �g)\u0011�a�3\u001fl�\u0010\u0007\u0016C��?�6\u0001�G�F����]\u000fO[�B\u0015���\u000f�Y%�0�\u001e� 8���7��=R���~j;��&��i1i�n�ѵ W�.�M9n%N �v�X�S�5s'��\"c �m�\u0013�2��_*��\b;\u0019,㺞��ij�Am &�e�Mj�v��?���i�O ��bD f����\u001a��|\u0010 ��WJ�dI��&���@ҡPZ��T�d2G�4�\u0012�ht:��\u000f�t�#�h�[]FJ9(�Z��\u0019\u0000\u0001�����|r��Jd�6~���\u0000\u001b�� ^��󮍮���]:���hط��ta(T\u0001J\u000fH֧!",
+        "�s\b�f���R�}?�\u0012zh�7 l�u�\\�c\u0011��\u0005V�HW۲��O�Ҡy����-�y�Y\u0001��}=��b&�ync�\bE\u0007����>3Y'.",
+        "L���_�n��oaujl�3 �`�Ff�ޥ���\u0013\u001f�����C�_x\u0012�/[�v��~ii)��N\u000f\"30�X^���#m�J�:�Y)�\u0000\u0015��\\\u001c|D\u0000��yr�F��6qp\u0000?��D�/����rG�\u00008��)�G����\u001b��a�\u0000\u0015�n?s\u0007\u001f*fW\u0017�\b�\u001dE\u001f�/�����\u001e\u001c�>#����ە6$�s�u�����oC:+\"$iNN�0DE�@�c��uȒl\u0001�F���d\u0000ܝ�\u0016}�)��v�m����֙\u001c |̉5�ѝ\u0010�o+,����\u001e?",
+        "�K���\u0015W��� � #Y��l��[Ff\u001c��ը�l����vr.�a��M# ݇�`��T�w$\"�� ��'A�5b�\u001e{�Xe��R�\u001a �׬\u0018�K�b6~�� ���[��\b:a�k���ZϬ�-��.o�iX����D[|R,�9�dǹ�\u0010Si\u0016�U��\u0002�K%wiJAX\u00034@\u001e~ ?",
+        "/\u0004�P\\��b�w\u001a͟ 2�e\u0007���8`+��ɪH=oI�\u0014��ą�8VM���s�\u0019����!����5=`y�\u0001\u0011\u0013�����!�\u000e\u0004��C�W��`��\u001e(u��Y����\u0005��}�� \u0006�AK��l\u000e��ű��?���@)OW�� ��\u0011;\u0018֎X͙���.\u0015 �`)���p��*�I�\u0014*5� ��B!_\b��˔_z.Mt�P�\u001eZ�|2�,�0��s�Tg����H�Qžqu)�ʼ��j��&7����\u0001\u0006786�\u000f\u0004\u0012����Ӗ6��\u0005��l����g��K_ C?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Robot",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25781",
+      "retrieved_at": "2026-10-18T16:10:12.073Z",
+      "sha256": "3adcf27cf278aafcf9fa66bef6c2b6501a4f82259af2010843cc30f6d482646e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A robot is a machine, especially one programmable via a computer, capable of automatically carrying out a complex series of actions.",
+        "A robot can be guided by an external or internal control device.",
+        "Robots may be humanoid, but most are task-performing machines prioritizing functionality over aesthetics.",
+        "By mimicking a lifelike appearance or automating movements, a robot may convey a sense of intelligence or thought of its own.",
+        "Autonomous things are expected to proliferate in the future, with home robotics and the autonomous car as some of the main drivers.",
+        "The branch of technology that deals with the design, construction, operation, and application of robots, as well as computer systems for their control, sensory feedback, and information processing is robotics.",
+        "These technologies deal with automated machines that can take the place of humans in dangerous environments or manufacturing processes, or resemble humans in appearance, behavior, or cognition.",
+        "Many of today's robots are inspired by nature contributing to the field of bio-inspired robotics.",
+        "These robots have also created a newer branch of robotics: soft robotics.",
+        "From the time of ancient civilization, there have been many accounts of user-configurable automated devices and even automata, resembling humans and other animals, such as animatronics, designed primarily as entertainment.",
+        "As mechanical techniques developed through the Industrial age, there appeared more practical applications such as automated machines, remote control and wireless remote-control.",
+        "Electronics evolved into the driving force of development with the advent of the first electronic autonomous robots created by William Grey Walter in Bristol, England, in 1948, as well as computer numerical control (CNC) machine tools in the late 1940s by John T."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Speed of light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28736",
+      "retrieved_at": "2026-10-18T16:10:12.073Z",
+      "sha256": "2b6478600ea0b6342311bfd6df45ca6b9a3496c3750440527749f24afa34e48f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Light travels at slower speed inside materials like glass or water; its highest speed is in a vacuum.",
+        "The speed of light in vacuum is a universal physical constant denoted c (in ISO and IEC standards \n  \n    \n      \n        \n          c\n          \n            0\n          \n        \n      \n    \n    {\\displaystyle c_{0}}\n  \n),  exactly equal to 299792458 m⋅s−1.",
+        "It is exact because, by international agreement, a metre is defined as the length of the path travelled by light in vacuum during a time interval of 1⁄299792458 second.",
+        "The value 299,792,458 metres per second is approximately 1 billion kilometres per hour; 700 million miles per hour.",
+        "For other approximations of c, valid for various units and size scales see the infobox.",
+        "The shorter form, speed of light, means speed of light in vacuum in any context where the vacuum is implied.",
+        "All forms of electromagnetic radiation, including visible light, travel in vacuum at the speed c as do massless particles and field perturbations, such as gravitational waves.",
+        "The speed of light in vacuum is the same for all observers, no matter their relative velocity.",
+        "As a result, massless particles and waves travel at c in a vacuum regardless of the motion of the source or the inertial reference frame of the observer.",
+        "The speed of light in vacuum is the upper limit for the speed at which information, matter, or energy can travel through space.",
+        "Particles with nonzero rest mass can be accelerated to approach c but can never reach it, regardless of the frame of reference in which their speed is measured.",
+        "For long distances and sensitive measurements, the finite speed of light has noticeable effects."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Autonomous robot",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48049",
+      "retrieved_at": "2026-10-18T16:10:12.073Z",
+      "sha256": "fb719abd56e6926ff790042d2e6f37fa411cf605f9ae4c809eb36482320189bb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An autonomous robot is a robot that acts without recourse to human control.",
+        "Industrial robot arms that work on assembly lines inside factories may also be considered autonomous robots, though their autonomy is restricted due to a highly structured environment and their inability to locomote."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Automation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=173354",
+      "retrieved_at": "2026-10-18T16:10:12.073Z",
+      "sha256": "7a292c89a5eb648188db5043e3be7c3ee34aead4adb5513f0cf272b98a5b9731",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Automation describes a wide range of technologies that reduce human intervention in processes, mainly by predetermining decision criteria, subprocess relationships, and related actions, as well as embodying those predeterminations in machines.",
+        "Automation has been achieved by various means including mechanical, hydraulic, pneumatic, electrical, electronic devices, and computers, usually in combination.",
+        "Complicated systems, such as modern factories, airplanes, and ships typically use combinations of all of these techniques.",
+        "The benefits of automation includes labor savings, reducing waste, savings in electricity costs, savings in material costs, and improvements to quality, accuracy, and precision.",
+        "Automation includes the use of various equipment and control systems such as machinery, processes in factories, boilers, and heat-treating ovens, switching on telephone networks, steering, stabilization of ships, aircraft and other applications and vehicles with reduced human intervention.",
+        "Examples range from a household thermostat controlling a boiler to a large industrial control system with tens of thousands of input measurements and output control signals.",
+        "In the simplest type of an automatic control loop, a controller compares a measured value of a process with a desired set value and processes the resulting error signal to change some input to the process, in such a way that the process stays at its set point despite disturbances.",
+        "This closed-loop control is an application of negative feedback to a system.",
+        "The mathematical basis of control theory began in the 18th century and advanced rapidly in the 20th.",
+        "The term automation, inspired by the earlier word automatic (coming from automaton), was not widely used before 1947, when Ford established an automation department.",
+        "It was during this time that the industry was rapidly adopting feedback controllers, technological advancements introduced in the 1930s revolutionized various industries significantly.",
+        "The World Bank's World Development Report of 2019 shows evidence that the new industries and jobs in the technology sector outweigh the economic effects of workers being displaced by automation."
+      ]
+    }
+  ]
+}

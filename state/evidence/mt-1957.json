@@ -1,0 +1,28 @@
+{
+  "id": "mt-1957",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "We are scientists and engineers testing NASA's James Webb Space Telescope, which is the scientific successor to the Hubble, AMA!",
+      "publisher": "Wiley",
+      "author": "NASAWebbTelescope; AMAs, r/Science",
+      "published_at": "2017-10-20",
+      "url": "https://doi.org/10.15200/winn.150841.17462",
+      "retrieved_at": "2026-10-18T17:02:10.557Z",
+      "sha256": "d49725eb2255898a1f18374f17cea9d583b6e36f23050be170e67fac444c021b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We are scientists and engineers working at NASA Goddard, and leading the current testing on the James Webb Space Telescope in NASA Johnson’s historic Chamber A.",
+        "Chamber A is a giant thermal vacuum chamber, and our telescope is undergoing a ~100 day, end-to-end test at extremely cold temperatures, in a space-like vacuum inside of it.",
+        "We’ll answer questions about why Webb has to perform in extreme cold, why NASA built a giant, infrared telescope, and what cryogenic testing is all about.",
+        "We’ll be online for an hour or so on Thursday October 19th, at 1pm ET for questions, and we will be checking back in periodically after the Q&amp;A for other questions.",
+        "NASA’s James Webb Space Telescope (Webb) is the world’s premier space telescope of the next decade.",
+        "It will delve deeper into our solar system, look beyond to distant worlds around other stars, and help us to learn more about the universe and our place in it.",
+        "Webb is an international collaboration among NASA, the European Space Agency (ESA), and the Canadian Space Agency (CSA).",
+        "ETA: We are about done for today - but we’ll check back in tomorrow.",
+        "Thanks so much for all the excellent questions, we had a great time!"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "mm-1632",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Should the Pythagorean Theorem Actually be Called the 'Pythagorean' Theorem",
+      "publisher": "TSpace (University of Toronto)",
+      "author": "Amreen Moledina",
+      "published_at": "2013-12-05",
+      "url": "https://openalex.org/W2757654107",
+      "retrieved_at": "2026-10-18T15:52:54.957Z",
+      "sha256": "527e3c0d4d1356b810818c04704efe26aa979c992647b24da628b2ddc439c38c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper investigates whether it is reasonable to bestow credit to one person or group for the famed theorem that relates to the side lengths of any right-angled triangle, a theorem routinely referred to as the “Pythagorean Theorem”.",
+        "The author investigates the first-documented occurrences of the theorem, along with its first proofs.",
+        "In addition, proofs that stem from different branches of mathematics and science are analyzed in an effort to display that credit for the development of the theorem should be shared amongst its many contributors rather than crediting the whole of the theorem to one man and his supporters."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Using Technology and Media-Rich Platforms to help teach the Pythagorean Theorem",
+      "publisher": "NSUWorks (Nova Southeastern University)",
+      "author": "Angie Su; Denise Gates; Janice Haramis",
+      "published_at": "2016-12-28",
+      "url": "https://openalex.org/W2594056919",
+      "retrieved_at": "2026-10-18T15:52:55.641Z",
+      "sha256": "6eed4a2aaf9198177037edae1f9dc9bf4702fc9cb09868833e1e21b4e910ee0a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of mathematics is quite extensive, dating back to ancient times and elapsing several centuries.",
+        "Many great mathematicians, philosophers, scientists, and scholars have contributed to mathematics on the subject we see today.",
+        "For the purpose of this research project, we have chosen to highlight the great mathematician Pythagoras and his famous Pythagorean Theorem.",
+        "We investigate the history of the Pythagorean Theorem, relationships among Pythagorean numbers, and unusual proofs of the Theorem.",
+        "This paper provides a suggestive lesson plan, activity, and presentation for classroom use."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "History of mathematics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14220",
+      "retrieved_at": "2026-10-18T15:52:55.642Z",
+      "sha256": "0dc5d23ef5350cf82e35d904a72ca88fb54ef97751c3c7928cfa07a64e480334",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of mathematics deals with the origin of discoveries in mathematics and the mathematical methods and notation of the past.",
+        "Before the modern age and worldwide spread of knowledge, written examples of new mathematical developments have come to light only in a few locales.",
+        "From 3000 BC the Mesopotamian states of Sumer, Akkad and Assyria, followed closely by Ancient Egypt and the Levantine state of Ebla began using arithmetic, algebra and geometry for taxation, commerce, trade, and in astronomy, to record time and formulate calendars.",
+        "The earliest mathematical texts available are from Mesopotamia and Egypt – Plimpton 322 (Babylonian c.",
+        "2000 – 1900 BC), the Rhind Mathematical Papyrus (Egyptian c.",
+        "All these texts mention the so-called Pythagorean triples, so, by inference, the Pythagorean theorem seems to be the most ancient and widespread mathematical development, after basic arithmetic and geometry.",
+        "The study of mathematics as a \"demonstrative discipline\" began in the 6th century BC with the Pythagoreans, who coined the term \"mathematics\" from the ancient Greek μάθημα (mathema), meaning \"subject of instruction\".",
+        "Greek mathematics greatly refined the methods (especially through the introduction of deductive reasoning and mathematical rigor in proofs) and expanded the subject matter of mathematics.",
+        "The ancient Romans used applied mathematics in surveying, structural engineering, mechanical engineering, bookkeeping, creation of lunar and solar calendars, and even arts and crafts.",
+        "Chinese mathematics made early contributions, including a place value system and the first use of negative numbers.",
+        "The Hindu–Arabic numeral system and the rules for the use of its operations, in use throughout the world today, evolved over the course of the first millennium AD in India and were transmitted to the Western world via Islamic mathematics through the work of Khwārizmī.",
+        "Islamic mathematics, in turn, developed and expanded the mathematics known to these civilizations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Pythagoras",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23275",
+      "retrieved_at": "2026-10-18T15:52:55.642Z",
+      "sha256": "9bbcd64ac05ec944c6c5ffb5cc2b0163cb3d813049c2d1948f91489be9e5e78b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "495 BC) was an ancient Ionian Greek philosopher, polymath, and the eponymous founder of Pythagoreanism.",
+        "His political and religious teachings were well known in Magna Graecia and influenced the philosophies of Plato, Aristotle, and, through them, Western philosophy.",
+        "Modern scholars disagree regarding Pythagoras's education and influences, but most agree that he travelled to Croton in southern Italy around 530 BC, where he founded a school in which initiates were allegedly sworn to secrecy and lived a communal, ascetic lifestyle.",
+        "He was reputedly the first man to call himself a philosopher (\"lover of wisdom\").",
+        "Historians debate whether Pythagoras made these discoveries and pronouncements, as some of the accomplishments credited to him likely originated earlier or were made by his colleagues or successors, such as Hippasus and Philolaus.",
+        "The teaching most securely identified with Pythagoras is the \"transmigration of souls\" or metempsychosis, which holds that every soul is immortal and, upon death, enters into a new body.",
+        "He may have also devised the doctrine of musica universalis, which holds that the planets move according to mathematical ratios and thus resonate to produce an inaudible symphony of music.",
+        "Following Croton's decisive victory over Sybaris in around 510 BC, Pythagoras's followers came into conflict with supporters of democracy, and their meeting houses were burned.",
+        "Pythagoras may have been killed during this persecution, or he may have escaped to Metapontum and died there.",
+        "Pythagoras influenced Plato whose dialogues (especially Timaeus) exhibit Pythagorean ideas.",
+        "A major revival of his teachings occurred in the first century BC among Middle Platonists, coinciding with the rise of Neopythagoreanism.",
+        "Pythagoras continued to be regarded as a great philosopher throughout the Middle Ages and Pythagoreanism had an influence on scientists such as Nicolaus Copernicus, Johannes Kepler, and Isaac Newton."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Ancient Greek mathematics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1503369",
+      "retrieved_at": "2026-10-18T15:52:55.642Z",
+      "sha256": "5d33c54c0d7fe88a7a81c6772763959fdd5540798818fe90ea0add05e303edb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ancient Greek mathematics refers to the history of mathematical ideas and texts in Ancient Greece during classical and late antiquity, mostly from the 5th century BC to the 6th century AD.",
+        "Greek mathematicians lived in cities spread around the shores of the ancient Mediterranean, from Anatolia to Italy and North Africa, but were united by Greek culture and the Greek language.",
+        "The development of mathematics as a theoretical discipline and the systematization of the use of deductive reasoning and proofs is an important difference between Greek mathematics and those of preceding civilizations.",
+        "The early history of Greek mathematics is obscure, and traditional narratives of mathematical theorems found before the fifth century BC are regarded as later inventions.",
+        "It is now generally accepted that treatises of deductive mathematics written in Greek began circulating around the mid-fifth century BC, but the earliest complete work on the subject is Euclid's Elements, written during the Hellenistic period.",
+        "The works of renowned mathematicians Archimedes and Apollonius, as well as of the astronomer Hipparchus, also belong to this period.",
+        "In the Imperial Roman era, Ptolemy used trigonometry to determine the positions of stars in the sky, while Nicomachus and other ancient philosophers revived ancient number theory and harmonics.",
+        "During late antiquity, Pappus of Alexandria wrote his Collection, summarizing the work of his predecessors, while Diophantus' Arithmetica dealt with the solution of arithmetic problems by way of pre-modern algebra.",
+        "Later authors such as Theon of Alexandria, his daughter Hypatia, and Eutocius of Ascalon wrote commentaries on the authors making up the ancient Greek mathematical corpus.",
+        "The works of ancient Greek mathematicians were copied in the Byzantine period and translated into Arabic and Latin, where they exerted influence on mathematics in the Islamic world and in Medieval Europe.",
+        "During the Renaissance, the texts of Euclid, Archimedes, Apollonius, and Pappus in particular went on to influence the development of early modern mathematics.",
+        "Some problems in Ancient Greek mathematics were solved only in the modern era by mathematicians such as Carl Gauss, and attempts to prove or disprove Euclid's parallel line postulate spurred the development of non-Euclidean geometry."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Geometry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18973446",
+      "retrieved_at": "2026-10-18T15:52:55.642Z",
+      "sha256": "8e62b8c3a27d13c789716e2ec19fdffb54ca4f35b838eaabc77190842a42247b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Geometry is a branch of mathematics concerned with properties of space such as the distance, shape, size, and relative position of figures.",
+        "Geometry is, along with arithmetic, one of the oldest branches of mathematics.",
+        "A mathematician who works in the field of geometry is called a geometer.",
+        "Until the 19th century, geometry was almost exclusively devoted to Euclidean geometry, which includes the notions of point, line, plane, distance, angle, surface, and curve, as fundamental concepts.",
+        "Originally developed to model the physical world, geometry has applications in almost all sciences, and also in art, architecture, and other activities that are related to graphics.",
+        "Geometry also has applications in areas of mathematics that are apparently unrelated.",
+        "For example, methods of algebraic geometry are fundamental in Wiles's proof of Fermat's Last Theorem, a problem that was stated in terms of elementary arithmetic, and remained unsolved for several centuries.",
+        "During the 19th century, several discoveries enlarged dramatically the scope of geometry.",
+        "One of the oldest such discoveries is Carl Friedrich Gauss's Theorema Egregium (\"remarkable theorem\") that asserts roughly that the Gaussian curvature of a surface is independent from any specific embedding in a Euclidean space.",
+        "This implies that surfaces can be studied intrinsically, that is, as stand-alone spaces, and has been expanded into the theory of manifolds and Riemannian geometry.",
+        "Later in the 19th century, it appeared that geometries without the parallel postulate (non-Euclidean geometries) can be developed without introducing any contradiction.",
+        "The geometry that underlies general relativity is a famous application of non-Euclidean geometry."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "mm-1747",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dynamic Salience with Intermittent Billing: Evidence from Smart Electricity Meters",
+      "publisher": "National Bureau of Economic Research",
+      "author": "Gilbert, Ben; Graff Zivin, Joshua",
+      "published_at": "2013-10",
+      "url": "https://doi.org/10.3386/w19510",
+      "retrieved_at": "2026-10-18T15:57:44.058Z",
+      "sha256": "2c97903923398ed72166f4c64aee1e98e2f122139c361196476e7f8014357363",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "��A�\u0000�(\u0002�\u0015S;�\u0000�X?� �\u0000�\u0014y����\u0007�\u0004\u001f�\"�-�U ��A�\u0000�(\u0002�\u0015S;�\u0000�X?� �\u0000�\u0014y����\u0007�\u0004\u001f�\"�-�U ��A�\u0000�(\u0002�\u0015JK���w6����\u0004��\u0002���5�sç�\u0012\u0011�p�g� SQlM�j�3\u0005R�@\u0003�Oj�'U�Xq\u001d��.",
+        "��-��5[���\u000f\u0017}\u0011�\u001b\u001c�H����q��DެĔ�hv�6�A6�B�X�Δ��d��X��N�\u001fqF�\u0014d)|\u0003r�5D\u000f�\u0001ğ�Vͺ�P- � ����+����w�a�G-�\u0006T�G}�b��� �t���\u000f�\u0005듛�\u0016_��os��&�۹���k˨iW)3�E��n֘퓹(�:F�ϴՇ��\u0019�L\u00125\u0016~��r�}�.���Rv�\u00166)�Ā�0U������K�|#�طc��qiaD���Ev x���r���k�$èFF�,7��F��\u0003���U��Kޒ z.",
+        "�\u0019\u0010\u0007��0�^D��,��F�\\�/��fFB.\u0000kh} ��:6�\u000eG\u0016��IQ\u0013Xa����Sb/��ț5\u0014 ��\u0007�\u0016�\u0002�*�\u0017ޡ�\u0013��w䂩��}��Dȕ�u>z��Q>�j����&9nc\u0002 ���c�2e.0�w���/|FJ>�k\u001dV|1{JD�d���n?�?��{i�;��8�f\u0014\u0011\u0000/�\u001b��4�S�Ez.�\u001c�Y k\u0019L �?",
+        "\u0003�\u000e�_��,ݿ��_2���8|,�\u001f��* ��\u000f\u0003�@濠�\u001f���\u001f���\u0017t�Gƿ�V\u000e��\b�ab�\u000f�\u0011��OC\u001fS4v�6����X|������2��\u000fz�Y�\u0007?\u0016�(���?�X>\\-?��\u001f����d�p��\u001f�G���\u001f��?�:��@�?",
+        "�~�8;\u0017/\u0007��/;�E\u000e�\u0001�Ԁ\",l�Rҿ�⡇=\u0014\u0006р�@r\u001e�����=�����g�����r�]\u001ev\u0010��rc�Ö��9da\u0016p���� �\u0003�����\u0018\u000f�x@ �7���ZB \u0000'�?�C��\u001f�_�puv~\u0018�\u001fY?",
+        "General Economics and Teaching - General - Behavioral Economics; Underlying Principles 2."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Evaluation of new Electricity Meters",
+      "publisher": "Lund University Publications Student Papers (Lund University)",
+      "author": "Victor García",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2190650360",
+      "retrieved_at": "2026-10-18T15:57:44.061Z",
+      "sha256": "ba8203f6c3524ac86b89c060c051e4c8846aa3d7aa967ca4eadf687dd969b0af",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "New technologies developed (new ways of energy generation and consumption) are promoting the introduction of improvements at electricity networks.",
+        "Currently, European legislation is promoting changes in electricity networks of member states.",
+        "These changes include new technologies to facilitate the introduction of renewable energy sources to the grid and have a more efficient use of energy.",
+        "One of the important issues at smart grids is the requirement of having good measures (to be able to control the power grid) and good communication between all the electricity market participants.",
+        "Smart meters are part of the smart grid technologies and are actually useful to solve this task Smart meters have a lot of features, but the most important is the two-way communication.",
+        "This really differentiates this meter and electronic meters.",
+        "This Master Thesis is going to study deeply this communication to understand how it works, by developing an own program able to read the measurements taken by the meter."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Information Security in Smart Electricity Metering",
+      "publisher": "Theseus (Ammattikorkeakoulujen)",
+      "author": "Lauri Siiteri",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W2211490172",
+      "retrieved_at": "2026-10-18T15:57:44.061Z",
+      "sha256": "0c0c4c6309c300caa3aea14956d6d2cfc259cb391e02709ddbfe673af9e22555",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Finnish government wants that before the end of the year 2013, at least 80 percentage of electricity metering is made by meters capable of remote reading, so called smart meters.",
+        "As most of the Finnish electricity utilities have installed the needed amount of meters, other kinds of topics have been left open.",
+        "When the installing process is almost over, there have been rising questions of the likelihood of someone trying to get advantage of the information the meters hold and who might be able to use that information.",
+        "\\n \\nIn this research I will check the security issues of smart metering for my client company, which is selling remote reading services for one Finnish electricity utility.",
+        "I will also take a look at how large devastation it might cause if someone is able to break in to the systems of metering service provider.",
+        "This research will be used by the company to make their processes and systems more secured and to ensure as secured metering system as possible.",
+        "Because this research is about information security and there are also topics of holes in the systems, there will be some classified data left out of it.",
+        "For the same reason I will not talk about the company with its name.",
+        "It will take a look at every step the data goes from the meter to the utilities systems.",
+        "Even though the smart meters have become common and there are lots of researches about them, it is really hard to get a research of their security.",
+        "\\n \\nI have made interviews with two smart metering experts and also used researches and news that some international press have published in internet as my background data while doing my research."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How smart are electricity users with ‘Smart Metering’? A Behavioural Economics experiment",
+      "publisher": "Lund University Publications (Lund University)",
+      "author": "Simon Laursen Bager; Luis Mundaca T.",
+      "published_at": "2015-01-01",
+      "url": "https://openalex.org/W2204975755",
+      "retrieved_at": "2026-10-18T15:57:44.062Z",
+      "sha256": "7a25d3a54dbbd6263c366851724d806b9c13368191a95564bdccba39698be743",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The purpose of this paper is to examine how behavioural biases affect consumers’ response to energy-use information provided through smart meters (SM).",
+        "We take insights from behavioural economics and carry out two real-life experiments with SMs and electricity users.",
+        "The experiments were conducted in Copenhagen (Denmark) to identify and assess the potential of two economic behavioural biases, salience and loss aversion.",
+        "installation of SM without further intervention) generally aligned with electricity use reductions found in previous research, and indicate that it may be reasonable to expect a reduction in electricity use in the medium-term (weeks/months) of ~5-7% approximately.",
+        "introduction of SM with and without intervention) show that subjecting participants to loss aversion and salience seems to affect their behaviour toward electricity use, as the intervention group reduced their consumption roughly twice as much as the reference group.",
+        "With due limitations, the results suggest that the delivery of information to energy users needs to take into account not only its pure provision, but how it is designed, framed and presented.",
+        "At all events, the results and reviewed studies strongly suggest that increased energy efficiency and energy conservation need to be addressed with a mix of policies – not only information schemes or the provision of feedback alone."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Net metering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=843050",
+      "retrieved_at": "2026-10-18T15:57:44.062Z",
+      "sha256": "080b8cfabce59dbef536ad39a2eca55fc76e7895525bb1901a9fbaca8acfe056",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Net metering (or net energy metering, NEM) is an electricity billing mechanism that allows consumers who generate some or all of their own electricity to use that electricity anytime, instead of when it is generated.",
+        "This is particularly important with renewable energy sources like wind and solar, which are non-dispatchable (when not coupled to storage).",
+        "Monthly net metering allows consumers to use solar power generated during the day at night, or wind from a windy day later in the month.",
+        "Annual net metering rolls over a net kilowatt-hour (kWh) credit to the following month, allowing solar power that was generated in July to be used in December, or wind power from March in August.",
+        "Net metering policies can vary significantly by country and by state or province: if net metering is available, if and how long banked credits can be retained, and how much the credits are worth (retail/wholesale).",
+        "Most net metering laws involve monthly rollover of kWh credits, a small monthly connection fee, require a monthly payment of deficits (i.e.",
+        "normal electric bill), and annual settlement of any residual credit.",
+        "Net metering uses a single, bi-directional meter and can measure the current flowing in two directions.",
+        "Net metering can be implemented solely as an accounting procedure, and requires no special metering, or even any prior arrangement or notification.",
+        "Net metering is an enabling policy designed to foster private investment in renewable energy."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Electricity meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1138590",
+      "retrieved_at": "2026-10-18T15:57:44.062Z",
+      "sha256": "f02788cafad6213510e0c95170148229bd211ff9b91cc14f6c53e04f81186e33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electricity meter, electric meter, electrical meter, energy meter, kilowatt-hour meter, or power meter is a device that measures the amount of electric energy consumed by a residence, a business, or an electrically powered device over a time interval.",
+        "Electric utilities use electric meters installed at customers' premises for billing and monitoring purposes.",
+        "They are typically calibrated in billing units, the most common one being the kilowatt hour (kWh).",
+        "When energy savings during certain periods are desired, some meters may measure demand, the maximum use of power in some interval.",
+        "\"Time of day\" metering allows electric rates to be changed during a day, to record usage during peak high-cost periods and off-peak, lower-cost, periods.",
+        "Also, in some areas meters have relays for demand response load shedding during peak load periods."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Gas meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1420809",
+      "retrieved_at": "2026-10-18T15:57:44.062Z",
+      "sha256": "c065dbb35feb6fa9577c22bf810bcc0f5afd7647f1b996c0ba9165aeab098434",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A gas meter is a specialized flow meter, used to measure the volume of fuel gases such as natural gas and liquefied petroleum gas.",
+        "Gas meters are used at residential, commercial, and industrial buildings that consume fuel gas supplied by a gas utility.",
+        "Gases are more difficult to measure than liquids, because measured volumes are highly affected by temperature and pressure.",
+        "Gas meters measure a defined volume, regardless of the pressurized quantity or quality of the gas flowing through the meter.",
+        "Temperature, pressure, and heating value compensation must be made to measure actual amount and value of gas moving through a meter.",
+        "Several different designs of gas meters are in common use, depending on the volumetric flow rate of gas to be measured, the range of flows anticipated, the type of gas being measured, and other factors.",
+        "Gas meters that exist in colder climates in buildings built prior to the 1970s were typically located inside the home, typically in the basement or garage.",
+        "Since then, the vast majority are now placed outside though there are a few exceptions especially in older cities."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Smart meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3895745",
+      "retrieved_at": "2026-10-18T15:57:44.062Z",
+      "sha256": "68e141f085e2681180f1d812074092805b7c56c43d0a3491776d89ea22bb11e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A smart meter is an electronic device that records information—such as consumption of electric energy, voltage levels, current, and power factor—and communicates the information to the consumer and electricity suppliers.",
+        "Advanced metering infrastructure (AMI) differs from automatic meter reading (AMR) in that it enables two-way communication between the meter and the supplier."
+      ]
+    }
+  ]
+}

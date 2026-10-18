@@ -1,0 +1,193 @@
+{
+  "id": "mm-1327",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "I studied what happens to reef fish after coral bleaching. What I saw still makes me nauseous",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Rummer, Jodie",
+      "published_at": "2020-03-27",
+      "url": "https://theconversation.com/i-studied-what-happens-to-reef-fish-after-coral-bleaching-what-i-saw-still-makes-me-nauseous-134247",
+      "retrieved_at": "2026-10-18T15:40:27.060Z",
+      "sha256": "597d5547f9f97c504883ba193773e100fcac9ea900386af3b3bc3b12973a8f74",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What I saw still makes me nauseous Skip to content Academic rigor, journalistic flair Victor Huertas , Author provided I studied what happens to reef fish after coral bleaching.",
+        "It follows the record-breaking mass bleaching event in 2016 that killed a third of Great Barrier Reef corals, immediately followed by another in 2017 .",
+        "While we don’t know if fish populations declined from the 2016 bleaching disaster, one 2018 study did show the types of fish species on some coral reefs changed.",
+        "I was part of an international team of scientists that, for the first time, tracked wild populations of five species of coral reef fish before, during, and after the 2016 marine heatwave.",
+        "From a scientific perspective, the results are fascinating and world-first.",
+        "Marine heatwaves are now becoming more frequent and more severe with climate change.",
+        "Jodie Rummer , Author provided We used gene expression as a tool to survey how well fish can handle hotter waters.",
+        "Gene expression is the process where a gene is read by cell machinery and creates a product such as a protein, resulting in a physical trait.",
+        "We know many tropical coral reef fish are already living at temperatures close to their upper limits.",
+        "Our findings can help predict which of these species will be most at risk from repeated heatwaves.",
+        "Read more: ‘This situation brings me to despair’: two reef scientists share their climate grief But from a personal perspective, I still feel nauseous thinking about what the reef looked like during this project.",
+        "Back then we didn’t know the reef was about to bleach and lead to widespread ecological devastation."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A reef manager's guide to coral bleaching",
+      "publisher": "GBRMPA ELibrary (Great Barrier Reef Marine Park Authority)",
+      "author": "Paul Marshall; Heidi Schuttenberg",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W1547910011",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "50195e9a499b3c2b7d5d6c10b6ce35ce6fbb96f09dde83d8f9f3d86302bbc7da",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Scientists agree that tropical seas will continue to warm over coming decades, increasing both \\nthe probability and severity of mass bleaching events8-11.",
+        "These scenarios pose particular \\nchallenges to coral reef managers, not the least because the main cause of mass coral \\nbleaching–anomalously warm sea temperatures–is largely beyond their control.Yet, managers \\ncan play a critical role in helping reefs survive the threat of coral bleaching.",
+        "Managers are in a \\nunique position to increase our understanding of the phenomenon of coral bleaching, to take \\nmeaningful action during a bleaching event, and to develop strategies to support the natural \\nresilience of reefs in the face of long-term changes in climate.",
+        "\\nBecause of increasingly strong collaborations between reef managers and scientists, strategies \\nare being developed to directly address the threat of coral bleaching.",
+        "Management needs and \\npreliminary strategies were first documented in 2000, when the IUCN published \\nManagement of Bleached and Severely Damaged Coral Reefs12.",
+        "In 2002, the US Coral Reef Task \\nForce called for a collaborative effort to identify actions local managers could take to address \\nthe impacts of climate change and mass bleaching on coral reefs.",
+        "In response, three US \\ngovernment agencies (the National Oceanic and Atmospheric Administration, Environmental \\nProtection Agency, and the Department of the Interior) convened an international workshop \\nentitled 'Coral Reefs, Climate Change and Coral Bleaching' in June 2003.",
+        "This workshop \\nsignificantly advanced thinking about the strategies that could support managers in their \\nefforts to respond to coral bleaching."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Coral Bleaching and Marine Protected Areas",
+      "publisher": "OpenAlex",
+      "author": "Rodney V. Salm; Steve L. Coles",
+      "published_at": "2001-09-01",
+      "url": "https://openalex.org/W421623049",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "d7a49a9a3d0d758bda3ad21a7d73bd8343a4d7deb72eb309441f4ba139533916",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Proceedings of a workshop to discuss coral reef research, monitoring, and marine protected area (MPA) management.",
+        "It includes workshop summary information, specific papers presented during the event, and relevant appendixes."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Management of bleached and severely damaged coral reefs",
+      "publisher": "AquaDocs  (United Nations Educational, Scientific and Cultural Organization)",
+      "author": "Susie Westmacott; Kristian A. Teleki; Sue Wells",
+      "published_at": "2000-01-01",
+      "url": "https://openalex.org/W2782032849",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "f392b3836308e17a4b13389d0b0ec9cc9de0edff27d3b002f8dc9c1dcee876d1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Coral reefs are one of the most threatened ecosystems in the \\nworld.",
+        "Rivalling terrestrial rainforests in their biological \\ndiversity, and providing major economic benefits from \\nfisheries and tourism, coral reefs ecosystems are of global \\nconcern.",
+        "In addition, reefs provide many vital functions in \\ndeveloping countries, especially in Small Island Developing \\nStates.",
+        "\\nUntil recently, stresses caused by human activities – such \\nas land-based sources of pollution and destructive fishing \\npractices – were considered to be the primary dangers to \\ncoral reefs.",
+        "While these problems still persist, the last two \\ndecades have seen the emergence of yet another, potentially \\nmuch greater threat.",
+        "Coral reefs have been affected, with \\nincreasing incidence and severity, by coral bleaching, a \\nphenomenon associated with a variety of stresses, especially \\nincreased sea water temperatures.",
+        "Severe and prolonged \\nbleaching can lead to widespread coral mortality, and the \\nunprecedented coral bleaching and mortality event in 1998 \\naffected large areas of coral reef in the Indo-Pacific."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Coral",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47700",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "6d21abb25f58f7c7f805eafd9a8e3936c120f86d1de9f9ba0353edd44fd8e327",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Corals are colonial marine invertebrates within the subphylum Anthozoa of the phylum Cnidaria.",
+        "They typically form compact colonies of many identical individual polyps.",
+        "Coral species include the important reef builders that inhabit tropical oceans and secrete calcium carbonate to form a hard skeleton.",
+        "A coral \"group\" is a colony of very many genetically identical polyps.",
+        "Each polyp is a sac-like animal typically only a few millimeters in diameter and a few centimeters in height.",
+        "Over many generations, the colony thus creates a skeleton characteristic of the species which can measure up to several meters in size.",
+        "Corals also breed sexually (two parts completing a whole) by spawning: polyps of the same species release gametes simultaneously overnight, often around a full moon.",
+        "Fertilized eggs form planulae, a mobile early form of the coral polyp which, when mature, settles to form a new colony.",
+        "Although some corals are able to catch plankton and small fish using stinging cells on their tentacles, most corals obtain the majority of their energy and nutrients from photosynthesis of symbiotic unicellular dinoflagellates of the genus Symbiodinium, which live within coral tissues.",
+        "These are commonly known as zooxanthellae and give the coral color.",
+        "Such corals require sunlight and grow in clear, shallow water, typically at depths less than 60 metres (200 feet; 33 fathoms), but corals in the genus Leptoseris have been found as deep as 172 metres (564 feet; 94 fathoms).",
+        "Corals are major contributors to the physical structure of the coral reefs that develop in tropical and subtropical waters, such as the Great Barrier Reef off the coast of Australia."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Coral reef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=87410",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "f3e0976cbc38ee816ddbf50e73691fc31aa6689d03908ec6d2d3299fdb4493aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A coral reef is an underwater ecosystem characterized by reef-building corals.",
+        "Reefs are formed of colonies of coral polyps held together by calcium carbonate.",
+        "Most coral reefs are built from stony corals, whose polyps cluster in groups.",
+        "Coral belongs to the class Anthozoa in the animal phylum Cnidaria, which includes sea anemones and jellyfish.",
+        "Unlike sea anemones, corals secrete hard carbonate exoskeletons that support and protect the coral.",
+        "Most reefs grow best in warm, shallow, clear, sunny, and agitated water.",
+        "Coral reefs first appeared 485 million years ago, at the dawn of the Early Ordovician, displacing the microbial and sponge reefs of the Cambrian.",
+        "Sometimes called rainforests of the sea, shallow coral reefs form some of Earth's most diverse ecosystems.",
+        "They occupy less than 0.1% of the world's ocean area, about half the area of France.",
+        "Yet, they provide a home for at least 25% of all marine species, including fish, mollusks, worms, crustaceans, echinoderms, sponges, tunicates and other cnidarians.",
+        "Coral reefs flourish in ocean waters that provide few nutrients.",
+        "They are most commonly found at shallow depths in tropical waters, but deep water and cold water coral reefs exist on smaller scales in other areas."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "El Niño–Southern Oscillation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=317311",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "d1e34868c92391c2986d42854a1d3e270da09bba67589208d8cb41b74fcc7676",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "El Niño–Southern Oscillation (ENSO) is a global climate phenomenon that emerges from variation in winds and sea surface temperatures over the tropical Pacific Ocean.",
+        "Those variations have an irregular pattern, but do have some appearance of cycles.",
+        "It affects the climate of much of the tropics and subtropics, and has links (teleconnections) to higher-latitude regions of the world.",
+        "The warming phase of the sea surface temperature is known as \"El Niño\" and the cooling phase as \"La Niña\".",
+        "The Southern Oscillation is the accompanying atmospheric oscillation, which is coupled with the sea temperature change.",
+        "El Niño is associated with higher than normal sea level air pressure over Indonesia and Australia, and across the Indian Ocean to the Atlantic Ocean.",
+        "La Niña has roughly the reverse pattern: high pressure over the central and eastern Pacific and lower pressure through much of the rest of the tropics and subtropics.",
+        "The two phenomena typically last approximately one year each and typically occur every two to seven years with varying intensity, with neutral periods of lower intensity interspersed.",
+        "El Niño events can be more intense, but La Niña events may repeat and last longer.",
+        "A key mechanism of ENSO is the Bjerknes feedback (named after Jacob Bjerknes in 1969) in which the atmospheric changes alter the sea temperatures that, in turn, alter the atmospheric winds in a positive feedback.",
+        "Weaker easterly trade winds result in a surge of warm surface waters to the east and reduced ocean upwelling on the equator.",
+        "In turn, this leads to warmer sea surface temperatures (called El Niño), a weaker Walker circulation (an east—west overturning circulation in the atmosphere) and even weaker trade winds."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Environmental issues with coral reefs",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27687935",
+      "retrieved_at": "2026-10-18T15:40:27.653Z",
+      "sha256": "8eff8570c88cc57274ec670240fd5499c7fad3a02f71aff9fe6f249c3dbcb1ec",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Human activities have substantial impact on coral reefs, contributing to their worldwide decline.",
+        "Damaging activities encompass coral mining, pollution (both organic and non-organic), overfishing, blast fishing, as well as the excavation of canals and access points to islands and bays.",
+        "Additional threats comprise disease, destructive fishing practices, and the warming of oceans.",
+        "Importantly, the jeopardy faced by coral reefs extends far beyond coastal regions.",
+        "The ramifications of climate change, notably global warming, induce an elevation in ocean temperatures that triggers coral bleaching—a potentially lethal phenomenon for coral ecosystems.",
+        "Scientists estimate that between 2020 and 2040, about 70 to 90% of all coral reefs will disappear, with primary causes being warming ocean waters, ocean acidity, and pollution.",
+        "Others believe that the mass mortality events over this time frame will give way to the expansion of thermally tolerant mutant populations, but at the cost of coral genetic diversity.",
+        "In 2008, a worldwide study estimated that 19% of the existing area of coral reefs had already been lost.",
+        "Less than 20% of the world's reefs could be currently regarded as in good health and about 75% of the world's reefs may be at risk due to destructive, human-related activities.",
+        "The threat to the health of reefs is particularly strong in Southeast Asia, where 95% of reefs are endangered.",
+        "By the 2030s, 90% of reefs are expected to be at risk from both human activities and climate change; by 2050, it is predicted that all coral reefs will be in danger."
+      ]
+    }
+  ]
+}

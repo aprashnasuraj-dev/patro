@@ -1,0 +1,130 @@
+{
+  "id": "mm-1164",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Tadpoles of invasive cane toads (Bufo marinus) do not respond behaviourally to chemical cues from tadpoles of four species of Australian frogs",
+      "publisher": "CSIRO Publishing",
+      "author": "Hagman, Mattias; Shine, Richard",
+      "published_at": "2008-12-22",
+      "url": "https://doi.org/10.1071/zo08005",
+      "retrieved_at": "2026-10-18T15:31:46.389Z",
+      "sha256": "eb591b328511181bcf5d0281d4e66ee3a4a5eae81e4008920bcddfa42e3cbef7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In previous work, we have shown that tadpoles of invasive cane toads (Bufo marinus) strongly avoid scent cues from crushed conspecific tadpoles.",
+        "Thus, identifying the identity of the chemical involved may provide novel approaches to toad control, by manipulating the behaviour of toad tadpoles.",
+        "A first step in the search for that chemical is to see whether toad tadpoles are similarly repelled by chemical cues from crushed tadpoles of other species.",
+        "Our experimental trials with four native Australian frogs (three hylids, one myobatrachid) show that toads do not respond to chemical cues from these taxa.",
+        "Hence, the specific chemicals that induce avoidance cannot be generic ones (e.g.",
+        "body fluids, tissue fragments) but instead, must reflect some underlying chemical divergence in body composition between the tadpoles of cane toads versus the other anurans that we have tested."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Myxosporean Parasites in Australian Frogs and Tadpoles",
+      "publisher": "UPT. Syiah Kuala University Library (Syiah Kuala University)",
+      "author": "Ashlie Hartigan",
+      "published_at": "2012-03-30",
+      "url": "https://openalex.org/W195462964",
+      "retrieved_at": "2026-10-18T15:31:46.697Z",
+      "sha256": "27378983267dd1b31ee953effa8a1043eefbeeb618da423117c1f7e2d9d3db8b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The investigation of new threats to amphibian conservation is a priority of researchers and wildlife managers.",
+        "Emerging infectious diseases are one of the most threatening processes to wildlife around the world including amphibians.",
+        "Australian frogs have suffered large scale declines and extinctions from pathogens such as chytrid fungus (Batrochochytrium dendrobatidis).",
+        "The once overly abundant Green and golden bell frog (Litoria aurea) has declined over 90% of its range with disease listed as a key threat.",
+        "A routine pathogen screen of tadpoles from a captive breeding population of Green and golden bell frogs found an unknown parasitic infection in the brains, bile ducts and gallbladders of tadpoles (later confirmed as Myxosporea).",
+        "It was this preliminary identification that was the impetus for my thesis.",
+        "Myxosporean parasites found in Australian frog gallbladders were thought to be Cystodiscus immersus from Central and South America.",
+        "The parasite was assumed to have been introduced to Australia with the Cane toad (Rhinella marina, syn.",
+        "Cystodiscus immersus was supposed to have translocated with the Cane toad from native Brazil and was infecting a broad range of Australian frog species with no apparent host impact.",
+        "The aim of this thesis was to challenge all aspects of this assumption, to establish the true myxosporean species present in Australian frogs, if it was an exotic infection, if it was an emerging pathogen and what threat did it pose to hosts.",
+        "The parasite found in Australian frogs and tadpoles was examined using histological and ultrastructural morphology as well as molecular identification.",
+        "This revealed there was in fact two myxosporean species in multiple species of frogs and tadpoles."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Frog",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38498",
+      "retrieved_at": "2026-10-18T15:31:46.697Z",
+      "sha256": "705bf3b3f37d329d2038c764d2610e37ee7114a949c8ece00535819ac2c0b1c5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A frog is any member of a diverse and largely semiaquatic group of short-bodied, tailless amphibian vertebrates composing the order Anura (coming from the Ancient Greek ἀνούρα, literally 'without tail').",
+        "Frog species with rough skin texture due to wart-like parotoid glands tend to be called toads, but the distinction between frogs and toads is informal and purely cosmetic, and does not reflect taxonomy or evolutionary history.",
+        "Frogs are widely distributed, ranging from the tropics to subarctic regions, but the greatest concentration of species diversity is in tropical rainforest and associated wetlands.",
+        "They account for around 88% of extant amphibian species, and are one of the five most diverse vertebrate orders.",
+        "The oldest fossil \"proto-frog\" Triadobatrachus is known from the Early Triassic of Madagascar (250 million years ago), but molecular clock dating suggests their divergence from other amphibians may extend further back to the Permian, 265 million years ago.",
+        "Adult frogs have a stout body, protruding eyes, anteriorly-attached tongue, limbs folded underneath, and no tail (the \"tail\" of tailed frogs is an extension of the male cloaca).",
+        "Frogs have glandular skin, with secretions ranging from distasteful to toxic.",
+        "Their skin varies in colour from well-camouflaged dappled brown, grey and green, to vivid patterns of bright red or yellow and black to show toxicity and ward off predators (aposematism).",
+        "Adult frogs live in both fresh water and on dry land; some species are adapted for living underground or in trees.",
+        "As their skin is semi-permeable, making them susceptible to dehydration, they either live in moist niches or have special adaptations to deal with drier habitats.",
+        "Frogs produce a wide range of vocalisations, particularly in their breeding season, and exhibit many different kinds of complex behaviors to attract mates, to fend off predators and to generally survive.",
+        "The eggs then hatch into fully aquatic larvae called tadpoles, which have tails and internal gills."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Glass frog",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2385158",
+      "retrieved_at": "2026-10-18T15:31:46.697Z",
+      "sha256": "7e57a2ab0ca0b4e1f855fe8618aa51842b9aa65dc65ca89eeb4622471b7cbdf8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The glass frogs belong to the amphibian family Centrolenidae (order Anura), native to the Central American and Colombian rainforests.",
+        "The general background coloration of most glass frogs is primarily lime green, while the abdominal skin of some members of this family is transparent and translucent, giving the glass frog its common name.",
+        "The internal viscera, including the heart, liver, and gastrointestinal tract, are visible through the skin.",
+        "When active, their blood makes them visible; when sleeping, most of the blood is concealed in the liver, hiding them.",
+        "Glass frogs are arboreal, living mainly in trees, feeding on small insects and only coming out for mating season.",
+        "Their transparency conceals them very effectively when sleeping on a green leaf, as they habitually do.",
+        "However, climate change and habitat fragmentation have been threatening the survival rates of the family."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Boreal chorus frog",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5043184",
+      "retrieved_at": "2026-10-18T15:31:46.697Z",
+      "sha256": "2237dfe6e964f9e108af8eb3cfe1fad5d4aa2e484727f2e7419f7311308513b9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The boreal chorus frog (Pseudacris maculata) is a species of chorus frog native to Canada from central Quebec to eastern British Columbia and north to the Northwest Territories and the southern portion of the Yukon.",
+        "It occurs in the USA throughout Montana, Minnesota, northwestern Wisconsin, northeastern Arizona, northern New Mexico, and southwestern Utah."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Sudell's frog",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6867471",
+      "retrieved_at": "2026-10-18T15:31:46.697Z",
+      "sha256": "3f6935ab1cd9f40b99579a424280a8c5546d12d79fc6e8c5679ab8da9c2bafa5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sudell's frog, painted burrowing frog (Neobatrachus sudellae), trilling frog or desert trilling frog (formerly Neobatrachus centralis) is a species of burrowing frog common to a large part of southeastern Australia.",
+        "It is found on and west of the Great Dividing Range of New South Wales to  western Victoria and southern Queensland, as well as far eastern South Australia, and southern regions of the Northern Territory."
+      ]
+    }
+  ]
+}

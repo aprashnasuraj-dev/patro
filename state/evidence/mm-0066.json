@@ -1,0 +1,109 @@
+{
+  "id": "mm-0066",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "27.4 How Banks Create Money",
+      "publisher": "OpenAlex",
+      "author": "Steven A. Greenlaw; David Shapiro",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/works/W3004411558",
+      "retrieved_at": "2026-10-18T14:51:08.656Z",
+      "sha256": "641210dd613415ae6b40a4ff0e5a4d3aef8f4b58f3317cd3ead1467541e5b736",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "27.4 How Banks Create Money | OpenAlex Log in Get started Work Add to collection 27.4 How Banks Create Money HTML Details Locations Year: 2017 Type: article Authors: Steven A.",
+        "Greenlaw, David Shapiro Language: Persian Topic: Banking stability, regulation, efficiency Subfield: Finance Field: Economics, Econometrics and Finance Domain: Social Sciences Open Access status: closed OpenAlex ID: W3004411558 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Paper money",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=313914",
+      "retrieved_at": "2026-10-18T14:51:09.072Z",
+      "sha256": "08413bb950b43a40994b9954a3a90142dd9b58f4ebc90e255a74b86feb6a9cca",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Paper money, often referred to as a note or a bill (North American English), is a type of negotiable promissory note that is payable to the bearer on demand, making it a form of currency.",
+        "The main types of paper money are government notes, which are directly issued by political authorities, and banknotes issued by banks, namely banks of issue including central banks.",
+        "In some cases, paper money may be issued by other entities than governments or banks, for example merchants in pre-modern China and Japan.",
+        "\"Banknote\" is often used synonymously for paper money, not least by collectors, but in a narrow sense banknotes are only the subset of paper money that is issued by banks.",
+        "Paper money is often, but not always, legal tender, meaning that courts of law are required to recognize them as satisfactory payment of money debts.",
+        "Counterfeiting, including the forgery of paper money, is an inherent challenge.",
+        "It is countered by anticounterfeiting measures in the printing of paper money.",
+        "Fighting the counterfeiting of notes (and, for banks of cheques) has been a principal driver of security printing methods development in recent centuries."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Money creation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1297457",
+      "retrieved_at": "2026-10-18T14:51:09.073Z",
+      "sha256": "82bcf45c7598630ccfad8418de2ed054773fb077a76c5f710d85949902d2aaf1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Money creation, or money issuance, is the process by which the money supply of a country or economic region is increased.",
+        "In most modern economies, both central banks and commercial banks create money.",
+        "Central banks issue money as a liability, typically called reserve deposits, which is available only for use by central bank account holders.",
+        "These account holders are generally large commercial banks and foreign central banks.",
+        "Central banks can increase the quantity of reserve deposits directly by making loans to account holders, purchasing assets from account holders, or by recording an asset (such as a deferred asset) and directly increasing liabilities.",
+        "However, the majority of the money supply that the public uses for conducting transactions is created by the commercial banking system in the form of commercial bank deposits.",
+        "Bank loans issued by commercial banks expand the quantity of bank deposits.",
+        "Money creation occurs when the amount of loans issued by banks increases relative to the repayment and default of existing loans.",
+        "Governmental authorities, including central banks and other bank regulators, can use various policies—mainly setting short-term interest rates—to influence the amount of bank deposits that commercial banks create."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Money",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8983183",
+      "retrieved_at": "2026-10-18T14:51:09.073Z",
+      "sha256": "0040d50ff80ad11b1820e62248cba3edd496e38a08aab7f028e8260df847a2bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Money is any item or verifiable record that is generally accepted as payment for goods and services and repayment of debts, such as taxes, in a particular country or socio-economic context.",
+        "The primary functions which distinguish money are: medium of exchange, a unit of account, a store of value and sometimes, a standard of deferred payment.",
+        "Money was historically an emergent market phenomenon that possessed intrinsic value as a commodity; nearly all contemporary money systems are based on unbacked fiat money without use value.",
+        "Its value is consequently derived by social convention, having been declared by a government or regulatory entity to be legal tender; that is, it must be accepted as a form of payment within the boundaries of the country, for \"all debts, public and private\", in the case of the United States dollar.",
+        "The money supply of a country comprises all currency in circulation (banknotes and coins currently issued) and, depending on the definition used, one or more types of bank money (the balances held in checking accounts, savings accounts, and other types of bank accounts).",
+        "Bank money, whose value exists on the books of financial institutions and can be converted into physical notes or used for cashless payment, forms by far the largest part of broad money in developed countries."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Bank",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19360669",
+      "retrieved_at": "2026-10-18T14:51:09.073Z",
+      "sha256": "c23ef339ec6128baaf3e47e6bbea53c7c743f9eae49359181e856d947fac3672",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A bank is a financial institution that accepts deposits from the public and creates a demand deposit while making loans.",
+        "Lending activities can be directly performed by the bank or indirectly through capital markets.",
+        "Banks play an important role in financial stability and the economy of a country, so most countries exercise a high degree of regulation over banks.",
+        "Most countries have institutionalized a system known as fractional-reserve banking, under which banks hold liquid assets equal to only a portion of their current liabilities.",
+        "In addition to other regulations intended to ensure liquidity, banks are generally subject to minimum capital requirements based on an international set of capital standards, the Basel Accords.",
+        "Banking in its modern sense evolved in the 14th century in the prosperous cities of Renaissance Italy but, in many ways, functioned as a continuation of ideas and concepts of credit and lending that have their roots in the ancient world.",
+        "In the history of banking, a number of banking dynasties –  notably, the Medicis, the Pazzi, the Fuggers, the Welsers, the Berenbergs, and the Rothschilds –  have played a central role over many centuries.",
+        "The oldest existing retail bank is Banca Monte dei Paschi di Siena (founded in 1472), while the oldest existing merchant bank is Berenberg Bank (founded in 1590).",
+        "A banker is a person who engages in the business of banking."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "mt-0835",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "An analysis of Granger causality between sovereign credit rating and economic growth in Sub-Saharan Africa",
+      "publisher": "LLC CPC Business Perspectives",
+      "author": "Mutize, Misheck; V. Mugobo, Virimai",
+      "published_at": "2020-11-09",
+      "url": "https://doi.org/10.21511/imfi.17(4).2020.08",
+      "retrieved_at": "2026-10-18T16:30:55.457Z",
+      "sha256": "583f3ac59752d9b0beb905e8137d6f2840319cc52b8083df7aa560a544e686dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Interest in the relationship between credit rating and economic growth is growing as emerging economies increasingly integrate into international financial markets.",
+        "Without credit ratings, developing economies would not have been able to successfully issue their sovereign bonds to support economic growth.",
+        "Therefore, this paper examines a causality relationship between Standard &amp;amp;amp; Poor’s long-term foreign currency sovereign credit ratings and economic growth in 19 Sub-Saharan countries over the period from 2003 to 2018.",
+        "The results of the Granger causality tests show a unidirectional causality from sovereign credit ratings to economic growth, not vice versa.",
+        "This implies that economic growth is not significant in determining sovereign credit ratings.",
+        "It can thus be concluded from these findings that sovereign credit ratings are proactive actions by rating agencies that are relevant in determining future economic growth.",
+        "Thus, investors benefit from utilizing credit ratings to prevent inherent information asymmetry in fundamental economic factors.",
+        "Therefore, it is important for policy makers to pay attention to sovereign credit ratings when formulating macroeconomic policies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Eswatini",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27451",
+      "retrieved_at": "2026-10-18T16:30:56.012Z",
+      "sha256": "d8fb19793e947959dcfe13d233fefd9c8e300e01af2a6cefa9d92f82138adac7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Eswatini, formally the Kingdom of Eswatini (historically called KaNgwane), also known by its former official names Swaziland and the Kingdom of Swaziland, is a landlocked country in Southern Africa.",
+        "It is bordered by South Africa on all sides except the east, where it shares a border with Mozambique.",
+        "At no more than 200 km (120 mi) north to south and 130 km (81 mi) east to west, Eswatini is the second smallest country in continental Africa.",
+        "However, its climate and topography are diverse, ranging from a cool and mountainous highveld to a hot and dry lowveld.",
+        "The executive capital is Mbabane, and the legislative capital is Lobamba.",
+        "The Swazis established their kingdom in the mid-18th century under the leadership of Ngwane III.",
+        "The country and the Swazi take their names from Mswati II, the 19th-century king under whose rule the country was expanded and unified.",
+        "Its boundaries were drawn up in 1881 in the midst of the European Scramble for Africa.",
+        "After the Second Boer War, the kingdom, under the name of Swaziland, was a British high commission territory from 1903 until it regained its full independence on 6 September 1968.",
+        "In April 2018, the king changed the official name from Kingdom of Swaziland to Kingdom of Eswatini, the name commonly used in the Swazi language.",
+        "Eswatini is a developing country that is classified as having a lower-middle income economy.",
+        "As a member of the Southern African Customs Union and the Common Market for Eastern and Southern Africa, its main local trading partner is South Africa; to ensure economic stability, Eswatini's currency, the lilangeni, is pegged to the South African rand."
+      ]
+    }
+  ]
+}

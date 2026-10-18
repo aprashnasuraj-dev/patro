@@ -1,0 +1,74 @@
+{
+  "id": "mt-1421",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Artificial Intelligence Empowers Global Infectious Disease Prevention and Control: Opportunities and Challenges",
+      "publisher": "Medwin Publishers",
+      "author": "W, Sijia; L, Jue",
+      "published_at": "2025-07-27",
+      "url": "https://doi.org/10.23880/jidtm-16000195",
+      "retrieved_at": "2026-10-18T16:51:06.374Z",
+      "sha256": "26d02ad2ef7951805f67b426ac3874e7f0c20a06fe0e2fab065f5676071224ad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) has rapidly emerged as a powerful tool in the global effort to prevent and control infectious diseases.",
+        "With the growing burden of pandemics, antimicrobial resistance (AMR), and travel-related outbreaks, traditional public health responses face significant challenges in speed, scale, and coordination.",
+        "AI technologies—ranging from machine learning (ML) and natural language processing (NLP) to deep learning and generative models—offer new capabilities across surveillance, early outbreak detection, diagnostics, modeling, vaccine development, public communication, and resource allocation.",
+        "This review synthesizes the expanding applications of AI in infectious disease prevention and control and highlights its transformative potential in improving preparedness and response.",
+        "AI enables real-time integration of heterogeneous data sources, supports precision diagnostics in low-resource settings, accelerates vaccine target identification, and enhances public health communication during crises.",
+        "These include data quality and bias, privacy and security, technical limitations, transparency and trust, ethical concerns, misinformation, regulatory gaps, cost and infrastructure constraints, and system fragmentation.",
+        "To maximize AI’s benefits, policy frameworks should promote equitable data access, interdisciplinary collaboration, and inclusive governance mechanisms.",
+        "Technical development should also prioritize transparency, adaptability, and contextual relevance.",
+        "AI has the potential to reshape global infectious disease prevention and contr"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Prevention of infectious disease",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2009-10-29",
+      "url": "https://www.cambridge.org/core/books/biomedical-engineering-for-global-health/prevention-of-infectious-disease/0F80A80F442A105A4152C9C839A57628",
+      "retrieved_at": "2026-10-18T16:51:07.652Z",
+      "sha256": "056f73b5ceb7a75465d95bb7e1291ed907bfce591d030855f22891ba3354a67e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Prevention of infectious disease (Chapter 8) - Biomedical Engineering for Global Health Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "Please use the Get access link above for information on how to access this content.",
+        "Information Type Chapter Information Biomedical Engineering for Global Health , pp.",
+        "186 - 228 DOI: https://doi.org/10.1017/CBO9780511802744.010 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2009 Access options Get access to the full version of this content by using one of the access options below.",
+        "(Log in options will check for institutional or personal access.",
+        "Content may require purchase if you do not have access.) Book purchase Temporarily unavailable References Stern , AM , Markel , H .",
+        "The history of vaccines and immunization: familiar patterns, new challenges .",
+        "Mortality: Revised Global Burden of Disease (2002) Estimates .",
+        "Google Scholar Kasper , DL , Braunwald , E , Fauci , AS , Hauser , SL , Longo , DL , Jameson , JL , eds.",
+        "Google Scholar ,Centers for Disease Control and Prevention .",
+        "Epidemiology and Prevention of Vaccine-Preventable Diseases ."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Early Measles Vaccination in Infants Less than 12 Months: Global Practices, Immunity Outcomes, and Implications for Disease Prevention",
+      "publisher": "Oxford University Press (OUP)",
+      "author": "AlSaihati, Amna; Chaudhary, Manu; Olarte, Liset",
+      "published_at": "2026-02",
+      "url": "https://doi.org/10.1093/jpids/piag018",
+      "retrieved_at": "2026-10-18T16:51:07.654Z",
+      "sha256": "84bac9da7fe6535dd2ab2807d01a6233d9c27def6b9368049e81f268fb8944e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Measles continues to be a global threat that can lead to serious complications, especially in young infants.",
+        "The World Health Organization recommends a two-dose vaccine series at different timeframes depending on local measles transmission rates; starting at 9 months in areas with ongoing transmission and 12 months in areas with low transmission.",
+        "This leaves the majority of infants under 12 months of age at risk of infection.",
+        "Early vaccination has been proposed, however, the interplay between early vaccination, presence of maternal antibodies, and immaturity of the infant immune system may lead to a less robust immune response as suggested by some studies.",
+        "Other studies suggest that infants vaccinated early have a similar response to older infants, especially after receiving the full vaccination series.",
+        "The implications of early vaccination are discussed in both outbreak and non-outbreak settings, though further studies are needed to guide optimal timing of early vaccination."
+      ]
+    }
+  ]
+}
