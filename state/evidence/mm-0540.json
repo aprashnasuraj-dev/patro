@@ -1,0 +1,163 @@
+{
+  "id": "mm-0540",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How AI Detects Financial Fraud: A Review of Emerging Deep Learning Methods",
+      "publisher": "Center for Open Science",
+      "author": "Mori, Misato",
+      "published_at": "2025-07-16",
+      "url": "https://doi.org/10.31219/osf.io/5yjm4_v1",
+      "retrieved_at": "2026-10-18T15:05:26.220Z",
+      "sha256": "4061ff98cb26d149655d6040cfbb15bfa9685a3e21cab5b7e6c6e590f7192c65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Financial fraud generates persistent risk and capital loss across sectors.",
+        "This study investigates artificial intelligence (AI) methodologies for financial fraud detection, with emphasis on Retrieval-Augmented Generation (RAG).",
+        "The review covers supervised classification, unsupervised anomaly detection, and graph-based relational modeling using deep neural networks, transformers, and hybrid architectures.",
+        "Challenges include class imbalance, concept drift, and decision interpretability.",
+        "We describe the RAG framework integrating retrievers and generative language models with external knowledge bases.",
+        "Empirical comparisons on synthetic and real-time fraud datasets show improved F1-score, precision, and contextual reasoning in contrast to fine-tuned transformers and static classifiers.",
+        "Applications include transaction monitoring, policy violation detection, account takeover analysis, and social engineering prevention.",
+        "Evaluation highlights retrieval-grounded generation as an effective fraud signal augmentation mechanism.",
+        "The paper concludes with architectural implications for deploying scalable, compliant, and adaptive fraud detection pipelines in multi-domain financial systems."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Epilepsy: how an AI algorithm detects related brain abnormalities – new research",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Wagstyl, Konrad; Adler, Sophie",
+      "published_at": "2022-08-12",
+      "url": "https://theconversation.com/epilepsy-how-an-ai-algorithm-detects-related-brain-abnormalities-new-research-188610",
+      "retrieved_at": "2026-10-18T15:05:26.554Z",
+      "sha256": "d75b4a5de5eac3d49c85825d754b78e9ee742713c161f37fcb39535ed7b29f9d",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "While anti-seizure medications are available and effective for the majority of people with the condition, 20%-30% don’t respond to medications.",
+        "Abnormalities in the brain are one of the leading causes of this drug-resistant epilepsy, which is usually identified by MRI scans before surgery is carried out to cure the patient.",
+        "However, identifying these abnormal areas from MRIs is an ongoing challenge for clinicians, as these scans can look normal.",
+        "We wanted to see if an artificial intelligence (AI) algorithm could help find these subtle brain abnormalities (known as focal cortical dysplasia or FCD).",
+        "Our results, published in the journal Brain , show the AI was successful in detecting abnormalities in two thirds more cases than MRI scans alone.",
+        "To develop a reliable AI algorithm you need to train it on examples from a wide variety of patients.",
+        "Individual epilepsy surgery centres typically treat only small numbers of patients each year with this abnormality, so we created the Multicentre Epilepsy Lesion Detection project (MELD) to collect over 1,000 MRI scans from 22 centres across the world.",
+        "We then used this data to train an AI algorithm to detect these abnormalities.",
+        "MRI scans can show abnormalities, but our AI is better at identifying them.",
+        "Shutterstock To develop the algorithm, we quantified features from the MRI scans, such as how thick or folded the brain surface was, and measured these at around 300,000 locations in each participant’s brain.",
+        "Expert radiologists in our team then labelled areas on the MRI scans as either being healthy or abnormal.",
+        "We then trained the algorithm to recognise patterns of features that characterise this particular FCD brain abnormality."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "AI detects thickened heart muscle using routine measurements",
+      "publisher": "National Institute for Health Research",
+      "author": null,
+      "published_at": "2023-11-24",
+      "url": "http://evidence.nihr.ac.uk/alert/ai-detects-thickened-heart-muscle-using-routine-measurements/",
+      "retrieved_at": "2026-10-18T15:05:27.898Z",
+      "sha256": "75f7fb0216c96332de06eaa7a50b014aff05911956ddda542e1bedaee99affbe",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The views expressed are those of the author(s) and reviewer(s) at the time of publication.",
+        "When heart muscles thicken (hypertrophy), they become less able to pump blood around the body.",
+        "New research shows that artificial intelligence (AI) techniques can predict thickening of the heart muscle from electrocardiogram (ECG) readings and health data, such as blood pressure.",
+        "Researchers developed an AI tool that uses this routine information to detect hypertrophy.",
+        "Among 37,500 people, it correctly identified 8 out of 10 of those with thickening of the heart muscle on the left side of the heart.",
+        "With further, real-world testing, the tool could help clinicians identify people who would benefit from a specialised heart scan (MRI scan), researchers say.",
+        "This could avoid unnecessary tests for people unlikely to have the condition, and free up clinicians’ time.",
+        "For more information on diseases of the heart muscle, see the NHS website.",
+        "The issue: can AI use ECG readings to predict heart muscle thickening?",
+        "Cardiomyopathy is a general term for diseases that cause heart muscles to thicken, become stiff and less able to pump blood.",
+        "When this occurs on the left side of the heart, it is known as left ventricular hypertrophy.",
+        "People with this condition have an increased chance of heart attack and death."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T15:05:28.327Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Applications of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15893057",
+      "retrieved_at": "2026-10-18T15:05:28.327Z",
+      "sha256": "fb294b56f234a3939dd45251711bbd5f8581d9be9025ab1e9efec7dded178747",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) and its subfields have been used in applications throughout industry and academia.",
+        "Machine learning has been used for various scientific and commercial purposes, including language translation, image recognition, decision-making, credit scoring, and e-commerce.",
+        "Since the 2020s, massive advancements have been made in the field of generative AI (GenAI) as a result of the 2017 inception of Transformer Model architecture.",
+        "GenAI has the ability to create text, images, voice, music, videos, and other forms of data from chat-based prompting."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Artificial intelligence in healthcare",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52588198",
+      "retrieved_at": "2026-10-18T15:05:28.327Z",
+      "sha256": "6ab0dfaac19a02b6f561053b4edb1e16a3dcd67cc155e086e1d54bc2659f1014",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence in healthcare refers to the application of artificial intelligence (AI) to medical and healthcare data in areas including disease diagnosis, treatment planning, patient monitoring, drug development, and clinical decision support systems.",
+        "The use of AI in healthcare has also raised ethical, technical, and regulatory concerns, including related to issues such as data privacy, automation of jobs, and amplifying already existing algorithmic bias.",
+        "Studies have also examined concerns among patients, health professionals, and the public about trust and empathy in care involving AI."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Explainable artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54575571",
+      "retrieved_at": "2026-10-18T15:05:28.327Z",
+      "sha256": "6c51b42bf23ebc21bce9d4ee8ef8edf269af257d71965bdb02a0de527dbcdcaa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The main focus is on the reasoning behind the decisions or predictions made by the AI algorithms, to make them more understandable and transparent.",
+        "This addresses the need for users to know the safety of the algorithms and scrutinize the automated decision-making in applications.",
+        "XAI counters the \"black box\" tendency of machine learning, where even the AI's designers cannot explain why it arrived at a specific decision.",
+        "XAI seeks to help users of AI-powered systems perform more effectively by improving their understanding of how those systems reason.",
+        "XAI may be an implementation of the social right to explanation.",
+        "Even if there is no such legal right or regulatory requirement, XAI can improve the user experience of a product or service by helping end users trust that the AI is making good decisions.",
+        "XAI aims to explain what has been done, what is being done, what will be done next, and what information these actions are based on.",
+        "This makes it possible to confirm and challenge existing knowledge, and generate new assumptions."
+      ]
+    }
+  ]
+}

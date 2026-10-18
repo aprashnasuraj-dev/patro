@@ -1,0 +1,178 @@
+{
+  "id": "mm-1831",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Review on Applications of Graph Theory in Computer Science: Exploring the applications of graph theory in computer science",
+      "publisher": "Journal of Advances in Science and Technology",
+      "author": "Dr. Poonam  Chaudhary Dr. Poonam  Chaudhary; Dr. Vishal  Kumar Dr. Vishal  Kumar",
+      "published_at": "2020-03-01",
+      "url": "https://openalex.org/W7218079398",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "d117e5701dfd7fce2c4f0a7a9479527c951a6632937ef9c227bb5fb1e12d9cff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mathematics plays an important function in a variety of industries.",
+        "Structural models rely on abranch of mathematics known as graph theory.",
+        "Inventions and alterations to the present environment canbe made because of this arrangement of diverse things or technology.",
+        "Every engineering discipline reliesheavily on mathematics, including computer science, networking, electrical engineering, and many more.That makes current approaches and algorithms more effective and applicable.",
+        "Graphs may be used toillustrate a wide range of practical issues.",
+        "In general, the theory of graphs may be used in a broad varietyof contexts.",
+        "A number of various aspects of graph theory are examined in this work, including howcomputer systems may be used to represent graphs, as well as graph-theoretic data structures like listsand matrixes.",
+        "Heterogeneous domains but especially computer science applications employing graphtheoretical notions are covered."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A Hike Through the Forest: The Knapsack Problem in Graph Theory",
+      "publisher": "Journal of Media Literacy Education",
+      "author": "Bridget Kinsella Druken",
+      "published_at": "2008-01-01",
+      "url": "https://openalex.org/W101428307",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "e51f69b19daa447522a8f0947dd6d0ef47a5da7789de11e1d3b001f9ebf4fc83",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Graph theory is a branch of mathematics which studies graphs a collection of a set of edges and vertices used to sometimes model structures.",
+        "My interest in graph theory began last semester in a math/computer science course entitled “Discrete Structures.\" One aspect which makes graph theory an appealing area to research is the amount of understanding that comes from a relatively short amount of time spent learning the subject material.",
+        "The visual appeal of being able to draw a graph along practical applications that surface daily make graph theory a prime candidate for further research.",
+        "Through research of the history of graph theory, reading of research papers, and manipulation of theorems and definitions, the importance of communication within the realm of mathematics is discovered, resulting in an appreciation of what math research entails.",
+        "By learning more about open graph theory research problems and seeing how many of the problems, if solved, provide a solution for many other research problems, the importance of math research, specifically graph theory research, is demonstrated.",
+        "After deepening knowledge about definitions of terms, solving home- work problems and proving theorems, I selected a certain subset of graph theory, namely the Knapsack combinatorial optimization problem, to try to create new techniques for obtaining approximations of solutions.",
+        "Through experimentation and trial and error, conclusions are drawn about the open research problem."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A Study of Graphs Decomposing Labeling, and Covering in Mathematical Graph Theory: Exploring labelings and decompositions in mathematical graph theory",
+      "publisher": "Journal of Advances and Scholarly Researches in Allied Education",
+      "author": "Prashant  Kumar Prashant  Kumar",
+      "published_at": "2018-02-04",
+      "url": "https://openalex.org/W7218115062",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "04ac5d62303ea541e7fa9f5b7e1a0ac87dd62e61ccd2e51d0d824239a022a308",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Graph theory applies in many fields of computer science, social science and natural science.",
+        "The theory is also closely linked to numerous mathematical branches, including matrix theory, numerical analysis, probability, topology and combination.",
+        "In fact, the graph theory is a mathematical component of any binary system.",
+        "During the last 50 years, the theory of graphics has become an important mathematical tool for solving numerous problems.",
+        "In appointing the distinct qualities of an entire number to each vertex, and then connecting the supreme distinction of these qualities to its extreme vertices, the differences in labelling in graph are recognized.",
+        "Exploring the labelings for cycles, the results of two Cartesian graphs, rectangular and n-solid matrices which deteriorate the graphs into indicated pieces, are currently under consideration.",
+        "The comparative issue for additional substance labels is also examined."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Applications of graph theory in architectural analysis: past, present and future research.",
+      "publisher": "NOVA (University of Newcastle Australia)",
+      "author": "Michael J. Dawes; Michael J. Ostwald",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W2528804527",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "d86353226baee5f2fc8c7cd0fbdaa34abf91d5c7abe3d77fbca32a7bf3921d4a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the 1970s architectural scholars adopted graph theory to support several major analytical approaches to interior and urban design.",
+        "This chapter undertakes a review of architectural applications of graph theory, spanning from its initial use for solving pedestrian circulation problems, through to more recent applications providing insights into access planning, design psychology and way-finding.",
+        "Through this critical review, three mapping or abstraction techniques, which are a precursor to graph theory analysis, are described and demonstrated.",
+        "Finally, the chapter identifies three areas that could be the subject of future applications of graph theory in design."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Graph theory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12401",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "0b055d3ea878f1c490196ef4a2ff94d595313891f92e70ad6daa38bc15b4706f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics and computer science, graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects.",
+        "A graph in this context is made up of vertices (also called nodes or points) which are connected by edges (also called arcs, links, or lines).",
+        "A distinction is made between undirected graphs, where edges link two vertices symmetrically, and directed graphs, where edges link two vertices asymmetrically.",
+        "Graphs are one of the principal objects of study in discrete mathematics."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Leonhard Euler",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17902",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "26a8fa5875943131d427366fa230e02689ec2acff239a5c40156364515c248e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Leonhard Euler ( OY-lər; 15 April 1707 – 18 September 1783) was a Swiss polymath who was active as a mathematician, physicist, astronomer, logician, geographer, music theorist and engineer.",
+        "He founded the studies of graph theory and topology and made influential discoveries in many other branches of mathematics, such as analytic number theory, complex analysis, and infinitesimal calculus.",
+        "He also introduced much of modern mathematical terminology and notation, including the notion of a mathematical function.",
+        "He is known for his work in mechanics, fluid dynamics, optics, astronomy, and music theory.",
+        "Euler has been called a \"universal genius\" who \"was fully equipped with almost unlimited powers of imagination, intellectual gifts and extraordinary memory\".",
+        "He spent most of his adult life in Saint Petersburg, Russia, and in Berlin, then the capital of Prussia.",
+        "He gave the current definition of the constant \n  \n    \n      \n        e\n      \n    \n    {\\displaystyle e}\n  \n, the base of the natural logarithm, now known as Euler's number.",
+        "Euler made contributions to applied mathematics and engineering, such as his study of ships helping navigation, his three volumes on optics, which contributed to the design of microscopes and telescopes, and his studies of beam bending and column critical loads.",
+        "Euler is credited with being the first to develop graph theory (partly as a solution for the problem of the Seven Bridges of Königsberg, which is also considered the first practical application of topology).",
+        "He also became famous for, among many other accomplishments, solving several unsolved problems in number theory and analysis, including the famous Basel problem.",
+        "Euler has also been credited for discovering that the sum of the numbers of vertices and faces minus the number of edges of a polyhedron that has no holes equals 2, a number now commonly known as the Euler characteristic.",
+        "In physics, Euler reformulated Isaac Newton's laws of motion into new laws in his two-volume work Mechanica to better explain the motion of rigid bodies."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Handshaking lemma",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9607933",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "a96c2322749d03a909eaa4c06d4870a066d127fbee60897c3d825fe643891e0b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In graph theory, the handshaking lemma is the statement that, in every finite undirected graph, the number of vertices that touch an odd number of edges is even.",
+        "For example, if there is a party of people who shake hands, the number of people who shake an odd number of other people's hands is even.",
+        "The handshaking lemma is a consequence of the degree sum formula, also sometimes called the handshaking lemma, according to which the sum of the degrees (the numbers of times each vertex is touched) equals twice the number of edges in the graph.",
+        "Both results were proven by Leonhard Euler (1736) in his famous paper on the Seven Bridges of Königsberg that began the study of graph theory.",
+        "Beyond the Seven Bridges of Königsberg Problem, which subsequently formalized Eulerian Tours, other applications of the degree sum formula include proofs of certain combinatorial structures.",
+        "For example, in the proofs of Sperner's lemma and the mountain climbing problem the geometric properties of the formula commonly arise.",
+        "The complexity class PPA encapsulates the difficulty of finding a second odd vertex, given one such vertex in a large implicitly-defined graph."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Königsberg",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15413504",
+      "retrieved_at": "2026-10-18T16:13:56.634Z",
+      "sha256": "d0c7b83eda113db94e47814a06c6a139344740ce57317c2ed1253598f5614ecd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Königsberg (, German: [ˈkøːnɪçsbɛʁk]  or [ˈkøːnɪksbɛʁk] ) was a German city established in the 13th century, which after the defeat of Nazi Germany became part of the Soviet Union and was renamed to Kaliningrad in 1946.",
+        "After the fall of the USSR, Kaliningrad became part of Russia.",
+        "A Baltic port city, it successively became the capital of the State of the Teutonic Order and the Duchy of Prussia.",
+        "Königsberg remained the coronation city of the Prussian monarchy from 1701 onwards, though the capital was Berlin.",
+        "From the 13th century, it was inhabited by Germans and Old Prussians, then also by Poles, Lithuanians and French Huguenots from the 14th, 15th and 17th centuries, respectively.",
+        "It was a leading centre of the Protestant Reformation and a publishing centre of Lutheran literature.",
+        "A university city, home of the Albertina University (founded in 1544), Königsberg developed into an important German intellectual and cultural center, being the residence of Simon Dach, Immanuel Kant, Johann Georg Hamann, Käthe Kollwitz, E.",
+        "Hoffmann, David Hilbert, Agnes Miegel, Hannah Arendt, Michael Wieck, and others.",
+        "It was the easternmost large city in Germany until World War II.",
+        "Between the wars, it was in the exclave of East Prussia, separated from the bulk of Germany by the Polish Corridor.",
+        "The city was heavily damaged by Allied bombing in 1944 and during the Battle of Königsberg in early 1945, when it was occupied by the Soviet Red Army; it was annexed by the Soviet Union on 9 April 1945, and the Potsdam Agreement later that year placed it provisionally under Soviet administration.",
+        "Its small Lithuanian population was allowed to remain, but the Germans were expelled."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "mm-0867",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Electric clothes washer-dryers for household use - Methods for measuring the performance",
+      "publisher": "BSI British Standards",
+      "author": null,
+      "published_at": null,
+      "url": "/products/electric-clothes-washer-dryers-for-household-use-methods-for-measuring-the-performance",
+      "retrieved_at": "2026-10-18T15:10:25.501Z",
+      "sha256": "839078c113fe3fd25ecd21c5b219ce40b56f05a9abd5cb367d067d1a9b721c21",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Methods for measuring the performance Published: 31 Dec 2020 • Withdrawn: 7 Jun 2024 1 Scope This International Standard specifies the test methods for the testing of household combined washer-dryers in their function to wash and dry textiles.",
+        "This International Standard does not apply for testing individual washing or drying functions.",
+        "The object is to state and define the principal performance characteristics of household electric washer-dryers of interest to users and to describe standard methods for measuring these characteristics."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Electric clothes washer-dryers for household use. Methods of measuring the performance",
+      "publisher": "BSI British Standards",
+      "author": null,
+      "published_at": null,
+      "url": "/products/electric-clothes-washer-dryers-for-household-use-methods-of-measuring-the-performance-4",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "71c75edce98fea048b739a6f1932960a9bbb56f2a957f584d99e1f93449b6f97",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Methods of measuring the performance Current • Published: 1 Dec 2023 1 Scope This International Standard specifies the test methods for the testing of household combined washer-dryers in their function to wash and dry textiles.",
+        "This International Standard does not apply for testing individual washing or drying functions.",
+        "The object is to state and define the principal performance characteristics of household electric washer-dryers of interest to users and to describe standard methods for measuring these characteristics.",
+        "This document provides a measurement procedure for EU regulations on ecodesign and energy labelling on household combined washer-dryers in their function to wash and dry textiles.",
+        "NOTE Washer-dryers for communal use in blocks of flats or in launderettes are also included within the scope of this document.",
+        "It does not apply to washer-dryers for commercial laundries."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "An Empirical Study of Energy Efficiency of Clothes Dryers",
+      "publisher": "OpenAlex",
+      "author": "Jay Lee; Norbert Hoeller; Damian A. S. Rogers",
+      "published_at": "2009-01-01",
+      "url": "https://openalex.org/W2371910316",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "20f35d203caa2a070b5b7cf1818405b3a12df540326fa921090a783e84419708",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The domestic clothes dryer is one of the most energy-consumptive appliances in the residential sector, but there has been relatively little work to study its environmental aspects and improve upon its design and efficiency.",
+        "Our research group is beginning such a project, the ultimate goal of which is to provide decision-making tools for the public (e.g.",
+        "Our first step is to study the behaviour of a clothes dryer to (a) gain experience with the devices and (b) create baseline empirical models of their general behaviour.",
+        "In this article, we will report our results to date, including what how we modelled and analyzed a specific test dryer, and the results we gathered from experiments.",
+        "We identify behavioural characteristics of the dryer that may suggest either re-design opportunities or guidelines for dryer use.",
+        "While studying a single dryer is clearly a limiting factor, we do expect to find general trends to be consistent with other dryers of similar design."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Energy conservation with clothes dryers: evaluation of techniques",
+      "publisher": "VTechWorks (Virginia Tech)",
+      "author": "Irene Stoneman Ellis",
+      "published_at": "1982-01-01",
+      "url": "https://openalex.org/W2913317102",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "e1170c5b34eb454f60b04fda06b5641e904e522926806e5acba53c3f100e0b43",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The purpose of this study was to determine an answer to the question: What are the effects of washer rinse temperature, final washer spin time, or dryer setting on the energy consumption of a household electric clothes dryer?",
+        "The data were collected in July and August, 1981, using a Maytag washer and dryer.",
+        "The preconditioned load used was a variation of the Association of Home Appliance Manufacturers' standard eight pound load with fiber content of cotton and polyester.",
+        "Eight combinations of the independent variables, rinse temperature, spin time, and dryer setting, were replicated five times.",
+        "Room temperature, relative humidity, and barometric pressure were monitored.",
+        "Statistical procedures utilized in data analysis included Pearson product-moment correlation coefficients, means, standard deviations, ranges and analysis of variance.",
+        "The combination requiring the most energy, 3.403 kwh, was cold rinse, short spin time, and extra dry higher setting, and the combination requiring the least energy, 2.588 kwh, was warm rinse, long spin time, and normal dryer setting.",
+        "However, it was calculated that it required 2.3 kwh to heat the warm water used in rinsing.",
+        "Therefore, it is recommended that consumers can save the most energy using a combination of cold rinse, long spin time, and normal dryer setting."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Super efficient dryer",
+      "publisher": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+      "author": "Muhamad Nuriman Zul; Ismail Muhamad",
+      "published_at": "2016-10-01",
+      "url": "https://openalex.org/W7136095476",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "5f3a8c8a77930d753607fca7a861e2e9072a028f6c07a1e729d019bdf1905da1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Today, technology is growing and more of the benefits of expanding it.",
+        "For those who are busy working and do not have time to manage daily activities such as washing clothes, a project microcontroller clothes dryer is built to simplify daily work.",
+        "It’s because the weather can change from sunny to rainy days.",
+        "This project use Microcontroller PIC16F877A which is only need to create and enter the coding to conduct this system properly.",
+        "During sunny day, the clothes will stay outside if oppositely the clothes will retrieve-in when it is a rain.",
+        "Lighting or bulb also is part of a tool to help dry clothes.",
+        "There are three sensors used in this project which are humidity sensor, temperature sensor and rain sensor.",
+        "Humidity sensor used to detect how wet the area and give instructions to the PIC to work according to the length of time that has been record.",
+        "Rain sensor used to detect the presence of water and sending information to the PIC to retrieve-in the clothes.",
+        "If no water detected the clothes stay at outside and the temperature sensor used to record the temperature at outside the garage.",
+        "This process will occur in garage and timing for drying clothes depending on the humidity and it will conduct automatically after given instructions.",
+        "When the clothes are dry the system will automatically turn off."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Laundry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=147699",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "32b0484b0e28a9367c3a9a4cda74c1311b6f7d47e77f072e195fa8f0b73907f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Laundry is the washing of clothing and other textiles, and, more broadly, their drying and ironing as well.",
+        "Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.",
+        "Laundry work has traditionally been highly gendered, with the responsibility in most cultures falling to women (formerly known as laundresses or washerwomen).",
+        "The Industrial Revolution gradually led to mechanized solutions to laundry work, notably the washing machine and later the tumble dryer.",
+        "Laundry, like cooking and child care, is still done both at home and by commercial establishments outside the home.",
+        "The word \"laundry\" may refer to the clothing itself, or to the place where the cleaning happens.",
+        "An individual home may have a laundry room; a utility room includes, but is not restricted to, the function of washing clothes.",
+        "An apartment building or student hall of residence may have a shared laundry facility.",
+        "A stand-alone business is referred to as a self-service laundry (launderette in British English or laundromat in North American English)."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Washing machine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=172111",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "d947f99b282d87541f16df15c0435b126348b71a6e85046efd457447044569dd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A washing machine (laundry machine, clothes washer, or washer) is a machine designed to launder clothing.",
+        "Other ways of doing laundry include dry cleaning (which uses alternative cleaning fluids and is performed by specialist businesses) and ultrasonic cleaning.",
+        "Modern-day home appliances use electric power to automatically clean clothes.",
+        "The user adds laundry detergent, which is sold in liquid, powder, or dehydrated sheet form, to the wash water.",
+        "The machines are also found in commercial laundromats where customers pay-per-use.",
+        "Before the invention of washing machines and indoor plumbing, clothes had to be washed by hand in a multi-step process that often occupied an entire day of work, plus drying and ironing.",
+        "The first English patent under the category of washing machines was issued in 1691.",
+        "Electric washing machines were advertised and discussed in newspapers as early as 1904, and the first automatic washing machine was introduced in 1937.",
+        "The spread of the washing machine has been seen to be a force behind the improvement of women's position in society, and has been compared to the contraceptive pill, abortion rights, and the refrigerator.",
+        "Irish feminist Mary Frances McDonald has described washing machines as the single most life-changing invention for women, and Swedish statistician Hans Rosling suggested that its positive impact makes it \"the greatest invention of the Industrial Revolution\"."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Clothes dryer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=317900",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "4e0382b8d9ed2fcf22420b65fe2e81476f783c995caf8e400db39d13c0a641d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A clothes dryer (tumble dryer, drying machine, drying device, or simply dryer) is a powered household appliance that is used to remove moisture from a load of clothing, bedding and other textiles, usually after they are washed in the washing machine.",
+        "Many dryers consist of a rotating drum called a \"tumbler\" through which heated air is circulated to evaporate moisture while the tumbler is rotated to maintain air space between the articles.",
+        "Using such a machine may cause clothes to shrink or become less soft (by loss of short soft fibers).",
+        "A simpler non-rotating machine called a \"drying cabinet\" may be used for delicate fabrics and other items not suitable for a tumble dryer.",
+        "Other machines include steam to de-shrink clothes and eliminate the need for ironing."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Clothes line",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=893432",
+      "retrieved_at": "2026-10-18T15:10:26.465Z",
+      "sha256": "95d343e6afa9f31db76c5ea21baa06b2db54ce69c98be73cc3b07493fd4acbd9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A clothes line, also spelled clothesline, also known as a wash line, is a device for hanging clothes on for the purpose of drying or airing out the articles.",
+        "It is made of any type of rope, cord, wire, or twine that has been stretched between two points (e.g.",
+        "Washing lines are attached either from a post or a wall, and are frequently located in back gardens, or on balconies.",
+        "Longer washing lines often have props holding up the mid-section so the weight of the clothing does not pull the clothesline down to the ground.",
+        "Clothing that has recently been washed is hung over the line to dry.",
+        "Nowadays it is held in place with clothespins, but until the 19th century laundry was simply draped over the line (and often blew away), as is visible in artistic depictions of clotheslines from earlier periods.",
+        "More elaborate rotary washing lines save space and are typically retractable and square or triangular in shape, with multiple lines being used (such as the Hills Hoist from Australia).",
+        "In Scotland, many tenement buildings have a \"drying green\", which is a communal area predominantly used for clothes lines.",
+        "A \"drying green\" may also be used as a recreational space for tenants.",
+        "The overhead clothes airer is an indoor version hung at ceiling level and also raised and lowered with pulleys."
+      ]
+    }
+  ]
+}

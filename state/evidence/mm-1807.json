@@ -1,0 +1,201 @@
+{
+  "id": "mm-1807",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "INDEX",
+      "publisher": "UNP - Bison Books",
+      "author": null,
+      "published_at": "2019-05-01",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.21",
+      "retrieved_at": "2026-10-18T16:09:34.745Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Introduction",
+      "publisher": "UNP - Bison Books",
+      "author": null,
+      "published_at": "2019-05-01",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.6",
+      "retrieved_at": "2026-10-18T16:09:34.922Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "BIBLIOGRAPHY",
+      "publisher": "UNP - Bison Books",
+      "author": null,
+      "published_at": "2019-05-01",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.20",
+      "retrieved_at": "2026-10-18T16:09:35.082Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Epilogue",
+      "publisher": "UNP - Bison Books",
+      "author": null,
+      "published_at": "2019-05-01",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.18",
+      "retrieved_at": "2026-10-18T16:09:35.322Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "How do horizontal neutral winds create vertical plasma flows",
+      "publisher": "AGUFM",
+      "author": "Vytenis M. Vasyliunas",
+      "published_at": "2012-12-01",
+      "url": "https://openalex.org/works/W3012538430",
+      "retrieved_at": "2026-10-18T16:09:35.960Z",
+      "sha256": "12c532534af0eae2bd8707cb70c100704f666727b3c84b7d5dcf7067c62898c5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How do horizontal neutral winds create vertical plasma flows | OpenAlex Log in Get started Work Add to collection How do horizontal neutral winds create vertical plasma flows HTML Details Locations Year: 2012 Type: article Source: AGUFM Author: V.",
+        "Vasyliūnas Language: English Topic: Ionosphere and magnetosphere dynamics Subfield: Astronomy and Astrophysics Field: Physics and Astronomy Domain: Physical Sciences Open Access status: closed OpenAlex ID: W3012538430 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "How massive and clumpy must a quasar wind be to create emission line blueshifts?",
+      "publisher": "arXiv (Cornell University)",
+      "author": "James Matthews",
+      "published_at": "2026-07-27",
+      "url": "https://openalex.org/W7171902637",
+      "retrieved_at": "2026-10-18T16:09:35.961Z",
+      "sha256": "4c449b9711b80819934899465edbaba348bf21e3866eee50d70dfef28abb29ae",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Blue asymmetries (``Blueshifts'') in the C IV 1550A emission line are common in luminous quasars.",
+        "If they are formed in winds, how much energy, momentum and mass do those winds transport?",
+        "We address this question by considering how much mass must be supplied through the line-forming region to maintain a given density and ionization state.",
+        "Using a combination of 1D analytic and 2D numerical models, we find that for blueshifted C IV lines to form in a wind, the wind must have mass outflow rates of $\\sim 50 f_V$ times the accretion rate, where $f_V \\leq 1$ is the volume filling factor accounting for clumping.",
+        "The power of the outflow depends on the square of the terminal velocity of the flow, $v_\\infty$.",
+        "If the wind is also the BAL outflow, with $v_\\infty \\sim10,000~{\\rm km~s}^{-1}$, the wind power is significant and important for feedback.",
+        "There are various caveats which moderate our conclusions, motivating i) a better theoretical understanding of wind driving and clump formation physics and ii) improved observational constraints on the physical conditions where the lines are formed."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Wind chill",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=154910",
+      "retrieved_at": "2026-10-18T16:09:36.296Z",
+      "sha256": "4d36a750951b6efb5c0810b9674b0a77d215b46879f6e68228df7df7c98d7148",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wind chill is the sensation of cold produced by the wind for a given ambient air temperature on exposed skin as the air motion accelerates the rate of heat transfer from the body to the surrounding atmosphere.",
+        "The measurement of wind chill is called wind chill index or wind chill factor.",
+        "The most common measurement is the wind chill temperature and its values are always lower than the air temperature in the range where the formula is valid.",
+        "When the apparent temperature is higher than the air temperature, the heat index is used instead."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Gone with the Wind (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2804704",
+      "retrieved_at": "2026-10-18T16:09:36.296Z",
+      "sha256": "786555738f24e572e14ca89a3ad7acfd019cf2e2177f3c9dec6eddefe726deee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gone with the Wind is a 1939 American epic historical romance film adapted from the 1936 novel by Margaret Mitchell.",
+        "Selznick of Selznick International Pictures and directed by Victor Fleming.",
+        "The start of filming was delayed for two years until January 1939 because Selznick was determined to secure Gable for the role of Rhett, and filming concluded in July.",
+        "The role of Scarlett was challenging to cast, and 1,400 unknown women were interviewed for the part.",
+        "Sidney Howard's initial screenplay underwent many revisions by several writers to reduce it to a suitable length.",
+        "The original director, George Cukor, was fired shortly after filming began and was replaced by Fleming, who in turn was briefly replaced by Sam Wood while taking some time off due to exhaustion.",
+        "Post-production concluded in November 1939, just a month before its premiere.",
+        "Gone With the Wind received generally positive reviews upon its release on December 15, 1939.",
+        "While the casting was widely praised, the long running time received criticism.",
+        "It set records for the total number of wins and nominations at the time.",
+        "Gone with the Wind was immensely popular when first released.",
+        "It became the highest-earning film made up to that point and held the record for over a quarter of a century."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Wind",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15440316",
+      "retrieved_at": "2026-10-18T16:09:36.296Z",
+      "sha256": "0bd0b295c2e0fa60c0cdf9436533b7f27e9f20637c29df0f53b9b7a9d22f6bc0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wind is the natural movement of air or other gases relative to a planet's surface.",
+        "Winds occur on a range of scales, from thunderstorm flows lasting tens of minutes, to local breezes generated by heating of land surfaces and lasting a few hours, to global winds resulting from the difference in absorption of solar energy between the climate zones on Earth.",
+        "The two main causes of large-scale atmospheric circulation are the differential heating between the equator and the poles, and the rotation of the planet, which is called the Coriolis effect.",
+        "Within the tropics and subtropics, thermal low circulations over terrain and high plateaus can drive monsoon circulations.",
+        "In coastal areas the sea breeze/land breeze cycle can define local winds; in areas that have variable terrain, mountain and valley breezes can prevail.",
+        "Winds are commonly classified by their spatial scale, their speed and direction, the forces that cause them, the regions in which they occur, and their effect.",
+        "Winds have various defining aspects such as velocity (wind speed), the density of the gases involved, and energy content or wind energy.",
+        "In meteorology, winds are often referred to according to their strength, and the direction from which the wind is blowing.",
+        "The convention for directions refer to where the wind comes from; therefore, a 'western' or 'westerly' wind blows from the west to the east, a 'northern' wind blows south, and so on.",
+        "Strong winds of intermediate duration (around one minute) are termed squalls.",
+        "Long-duration winds have various names associated with their average strength, such as breeze, gale, storm, and hurricane.",
+        "In outer space, solar wind is the movement of gases or charged particles from the Sun through space, while planetary wind is the outgassing of light chemical elements from a planet's atmosphere into space."
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Salvation is Created",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17057117",
+      "retrieved_at": "2026-10-18T16:09:36.296Z",
+      "sha256": "f09a10e10a7ff5d7ceb8279c8f19b72dddbedacea9e13bdba0dae8d10dbe13ec",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Thou Hast Wrought Salvation\" is a choral work composed by Pavel Chesnokov in 1912 as the fifth in his Ten Communion Hymns (Op.",
+        "It was one of the last sacred works he composed before he turned to secular arts when the Soviet government began to suppress Christianity.",
+        "Although he never heard his own composition performed, his children had the opportunity following his death.",
+        "\"Thou Hast Wrought Salvation'\" was originally published in 1913 by J.",
+        "and its popularity drove editors to produce many different versions in both Russian and English.",
+        "Scored for six voices (SATTBB), the work is a communion hymn based on a synodal Kievan chant melody and Psalm 74 (73 in the Greek version).",
+        "The original Church Slavonic text is as follows:\n\nCyrillic script: Cпасение coдeлaл еси посреде земли, Боже.",
+        "Latin alphabet: Spaséniye sodélal yesí posredé ziemlí, Bózhe.",
+        "English translation: Thou hast wrought salvation in the midst of the earth, O God.",
+        "Note: The source of the common mistranslation \"Salvation is Created\" appears to be the 1913 edition by J.",
+        "The keys of B minor and D major are the work's primary key centers, and it is cast in AA’ or two part strophic form."
+      ]
+    }
+  ]
+}

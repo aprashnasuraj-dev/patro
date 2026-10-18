@@ -1,0 +1,190 @@
+{
+  "id": "mq-0775",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Say hello to the Earth’s nearest exoplanet neighbour: Proxima Centauri b",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Horner, Jonti; Hill, Tanya",
+      "published_at": "2016-08-24",
+      "url": "https://theconversation.com/say-hello-to-the-earths-nearest-exoplanet-neighbour-proxima-centauri-b-64351",
+      "retrieved_at": "2026-10-18T17:30:27.502Z",
+      "sha256": "b044818abf36f5238558137f135630470ec402c9f0cddf0ad04d582fb415afe5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Say hello to the Earth’s nearest exoplanet neighbour: Proxima Centauri b Skip to content Academic rigor, journalistic flair An artist’s impression shows the planet Proxima b orbiting the red dwarf star Proxima Centauri, the closest star to our solar system.",
+        "The details are published in Nature today , and this is potentially the single most exciting exoplanet discovery to date.",
+        "The planet, named Proxima Centauri b (Proxima b for short), is probably slightly more massive than the Earth, and is about the right distance from Proxima that it could have liquid water on its surface.",
+        "Proxima Centauri is a faint red dwarf star, just 4.24 light years from Earth.",
+        "Despite its proximity, the star is too faint to be seen with the naked eye, which leaves its neighbour, Alpha Centauri, as the closest star that can be seen without a telescope.",
+        "Proxima is almost certainly bound to Alpha Centauri, which is itself a binary star, moving with it through space in a stately celestial waltz.",
+        "A view of the southern skies over the ESO 3.6-metre telescope, at the La Silla Observatory in Chile, showing positions of the stars Proxima Centauri and the double star Alpha Centauri.",
+        "Zamani Proxima has been the target of planet-search observations since the dawn of the exoplanet era.",
+        "The new discovery used observations taken from the European Southern Observatory between 2000 and 2014, and an additional suite of data taken between January 19 and March 31 this year.",
+        "The technique used for the discovery is the Doppler wobble method , where observers measure the line-of-sight velocity of a star with exquisite precision, and watch for any evidence of the star rocking back and forth in space.",
+        "Introducing Proxima Centauri b The evidence is strong that Proxima Centauri is host to at least one planet.",
+        "The new world orbits the red dwarf star roughly every 11.2 days, at a distance of about seven million kilometres (far closer than Mercury orbits the sun)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Proxima Centauri, n.",
+      "publisher": "Oxford University Press",
+      "author": null,
+      "published_at": "2023-03-02",
+      "url": "https://www.oed.com/",
+      "retrieved_at": "2026-10-18T17:30:29.232Z",
+      "sha256": "0a7244d4f022fe61dab1af3f4a812e01a6eed3786af6f4fb9862f8bfe9c8b969",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "cod) in lye, then cooking the fish to a gelatinous consistency.",
+        "Word lists Access our word lists and commentaries on an array of fascinating topics, from film-based coinages to Tex-Mex terms.",
+        "World Englishes Explore our World Englishes hub and access our resources on the varieties of English spoken throughout the world by people of diverse cultural backgrounds.",
+        "History of English Here you can find a series of commentaries on the History of English, charting the history of the English language from Old English to the present day.",
+        "We will only use your personal information for providing you with this service.",
+        "Email address (required) First name (required) Last name (required) Submit"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Proxima Centauri, 30 ans de création et d’exploration musicales",
+      "publisher": "Consortium Erudit",
+      "author": null,
+      "published_at": "2022-08-31",
+      "url": "https://doi.org/10.7202/1091909ar",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "e39fae7cc724105b2b4bffc5c0f56e2cf566170cb94fa6983fcccb54d01218df",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites.",
+        "This can and does cause downtime for the websites, which makes their resources inaccessible for everyone.",
+        "Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam.",
+        "The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive.",
+        "Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn&#39;t need to be presented to users that are much more likely to be legitimate.",
+        "Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable.",
+        "Please disable JShelter or other such plugins for this domain.",
+        "Sadly, you must enable JavaScript to get past this challenge.",
+        "This is required because AI companies have changed the social contract around how website hosting works."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Interior heating of rocky exoplanets from stellar flares with application to Trappist-1 and Proxima Centauri",
+      "publisher": "Copernicus GmbH",
+      "author": "Grayver, Alexander; Bower, Dan; Saur, Joachim",
+      "published_at": "2023-05-15",
+      "url": "https://doi.org/10.5194/egusphere-egu23-5578",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "271b219386e24f1f99bc28463c5c9641ff15e48e620ac999d3442c399eb3ec68",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many stars of different spectral types with planets in the habitable zone are known to emit flares.",
+        "Until now, studies that investigated the long-term impact of stellar flares and associated Coronal Mass Ejections (CMEs) assumed that the planet's interior remains unaffected by interplanetary CMEs, only considering the effect of energetic particles interactions on the atmosphere of planets.",
+        "Here, we show that the magnetic flux carried by flare-associated CMEs results in planetary interior heating by ohmic dissipation and leads to a family of new interior&amp;#8211;exterior interactions.",
+        "We construct a physical model to study this effect and apply it to the TRAPPIST-1 and Proxima Centauri stars whose flaring activity has been constrained by Kepler and TESS observations.",
+        "We pose our model in a stochastic manner to account for uncertainty and variability in major input parameters.",
+        "Our results suggest that the heat dissipated in the silicate mantle is both of sufficient magnitude and longevity to drive geological processes and hence facilitate volcanism and outgassing particularly for the innermost planets.",
+        "Furthermore, our model predicts that Joule heating can further be enhanced for planets with an intrinsic magnetic field compared to those without.",
+        "The associated volcanism and outgassing may continuously replenish the atmosphere and thereby mitigate the erosion of the atmosphere caused by the direct impact of flares and CMEs."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Extraterrestrial life",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9588",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "97617c740d8f2a2c363b0c9e90fd22029fb9f3dcb7044be510fdb33572a920c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Extraterrestrial life, or alien life (colloquially aliens), is life that originates from another world rather than on Earth.",
+        "Such life might range from simple forms such as microbes to intelligent beings, possibly bringing forth civilizations that might be far more, or far less, advanced than humans.",
+        "The Drake equation speculates about the existence of sapient life elsewhere in the universe.",
+        "The science of extraterrestrial life is known as astrobiology.",
+        "Speculation about inhabited worlds beyond Earth dates back to antiquity.",
+        "Early Christian writers, including Augustine, discussed ideas from thinkers like Democritus and Epicurus about countless worlds in the vast universe.",
+        "Pre-modern writers typically assumed extraterrestrial \"worlds\" were inhabited by living beings.",
+        "William Vorilong, in the 15th century, acknowledged the possibility Jesus could have visited extraterrestrial worlds to redeem their inhabitants.",
+        "In 1440, Nicholas of Cusa suggested Earth is a \"brilliant star\"; he theorized that all celestial bodies, even the Sun, could host life.",
+        "Descartes wrote that there were no means to prove the stars were not inhabited by \"intelligent creatures\", but their existence was a matter of speculation.",
+        "In comparison to the life-abundant Earth, the vast majority of intrasolar and extrasolar planets and moons have harsh surface conditions and disparate atmospheric chemistry, or lack an atmosphere.",
+        "However, there are many extreme and chemically harsh ecosystems on Earth that do support forms of life and are often hypothesized to be the origin of life on Earth."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Sun",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26751",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "8dd87fe21dd2311c24a395e8c316e3146af716273485b9f059c54a5d72a4d70c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sun is the star located at the centre of the Solar System.",
+        "It is a massive sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core, radiating the energy from its surface mainly as visible light and infrared radiation, with 10% at ultraviolet energies.",
+        "The Sun has been an object of veneration in many cultures and a central subject of astronomical research since antiquity.",
+        "The Sun orbits the Galactic Center at a distance of 24,000 to 28,000 light-years.",
+        "Its mean distance from Earth is about 1.496×108 kilometres or about 8 light-minutes.",
+        "The distance between the Sun and the Earth was used to define a unit of length called the astronomical unit (au), now defined to be 149.5978707×106 kilometres.",
+        "It is the largest and most massive object in the Solar System; its diameter is about 1,391,400 km (864,600 mi), around 109 times that of Earth.",
+        "The Sun's mass is around 330,000 times that of Earth, making up about 99.86% of the total mass of the Solar System.",
+        "The mass of the Sun's surface layer, its photosphere, consists mostly of hydrogen (~73%) and helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron.",
+        "The Sun formed approximately 4.6 billion years ago from the gravitational collapse of matter within a region of a large molecular cloud.",
+        "Most of this matter gathered in the centre; the rest flattened into an orbiting disk that became the Solar System.",
+        "The central mass became so hot and dense that it eventually initiated nuclear fusion in its core."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Wolf 359",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=205659",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "8c63653e05ed625ddb05d9daf1e712cefd13a9707281a0212a539cae69c6d0d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wolf 359 is a red dwarf star located in the constellation Leo, near the ecliptic.",
+        "At a distance of 7.86 light-years (2.41 parsecs) from Earth, it has an apparent magnitude of 13.54 and can only be seen with a large telescope.",
+        "Wolf 359 is one of the nearest stars to the Sun with only the Alpha Centauri system (including Proxima Centauri), Barnard's Star, and the brown dwarfs Luhman 16 (WISE 1049-5319) and WISE 0855−0714 known to be closer.",
+        "Its proximity to Earth has led to its mention in several works of fiction.",
+        "Wolf 359 is one of the faintest and least-massive nearby stars known.",
+        "At the light-emitting layer called the photosphere, it has a temperature of ~2,800 K, low enough for chemical compounds to form and survive.",
+        "The absorption lines of compounds such as water and titanium(II) oxide have been observed in its spectrum.",
+        "The star's surface has a magnetic field hundreds of times as strong as that of the Sun, generated by its thorough internal convection.",
+        "As a result of this significant magnetic activity, Wolf 359 is a flare star that can undergo sudden and great increases in luminosity, which can persist for several minutes.",
+        "These flares emit strong bursts of X-ray and gamma ray radiation that have been observed by space telescopes.",
+        "It is a relatively young star with an estimated age of less than a billion years.",
+        "No planetary companions for Wolf 359 have been confirmed so far, though there is one unverified candidate; as of yet, no debris disks have been found."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "List of smallest known stars",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40260097",
+      "retrieved_at": "2026-10-18T17:30:30.806Z",
+      "sha256": "3df837fa16897d09ee1c644c6edd7086f7afec255e0a3a661441383c947cd55f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of the smallest known stars, brown dwarfs and stellar remnants, sorted by increasing size.",
+        "The list is divided into sublists, and contain notable objects up to 350,000 km in radius, or 0.50 R☉, as well as all red dwarfs smaller than 0.1 R☉ and all neutron stars with accurately measured radii."
+      ]
+    }
+  ]
+}

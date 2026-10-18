@@ -1,0 +1,186 @@
+{
+  "id": "mm-0940",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The AI Writes the Code, the Student Writes the Model: A Theory and Measurement Programme for Learning by Construction with Generative AI",
+      "publisher": "MDPI AG",
+      "author": "Gousopoulos, Dimitrios",
+      "published_at": "2026-08-03",
+      "url": "https://doi.org/10.20944/preprints202608.0072.v1",
+      "retrieved_at": "2026-10-18T15:22:38.387Z",
+      "sha256": "abe6ecca0a33a93d4e5ff9cb8b73d45bb1e2999cc07cccd0164a538d269798d6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence can turn a sentence of ordinary language into working code, and upper-secondary students have begun to use it for exactly that.",
+        "Schools have answered mostly with rules about permission, and the AI-literacy literature has asked what students should understand about these systems.",
+        "Neither line of work tells a teacher how to design a lesson in which students build software with AI and come away understanding the subject the software is about.",
+        "This article develops a theoretical framework for that design problem and equips it for empirical test.",
+        "The framework, Code-to-Learn with Generative AI (CtL-GenAI), is built for learners aged roughly fifteen to eighteen and rests on a synthesis of constructionism, cognitive load theory, self-regulated learning, the ICAP model, productive failure, and sociocultural accounts of scaffolding.",
+        "Its organising claim is that the AI may write the code while the student must write the model.",
+        "First, it defines model authorship as a construct with four facets and four ordered levels, each with observable indicators, and specifies a partial-credit measurement model whose unidimensionality and cumulativity are themselves falsifiable.",
+        "Third, it recasts verification of AI output as a signal-detection problem, separating discriminability from response criterion, which explains why verification teaches only learners who already command enough of the domain to detect error.",
+        "An evidence audit of twenty-four studies published between 2021 and 2026 locates what has and has not been tested, and six hypotheses are stated with designs, measures, competing explanations and falsification criteria.",
+        "Whether generative AI helps or harms learning turns on how the task is designed rather than on whether the tool is present, so the unit of analysis for research and policy should be the task."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "When AI Writes the Code, Where Is the Skill? Measuring Effective AI Use in Software Development",
+      "publisher": "Elsevier BV",
+      "author": "Mukherjee, Amritendu",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7118201",
+      "retrieved_at": "2026-10-18T15:22:38.387Z",
+      "sha256": "34f9a3c884856dfd92167328a0d7de95596111e6bab578c96775047d49abd615",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI coding assistants are now widely used in software development and technical assessments.",
+        "In these settings, actions such as prompts, AI suggestions, edits, test runs, and final submissions can be recorded.",
+        "However, simple measures such as prompt count, acceptance rate, completion time, or the amount of AI-generated code do not reliably show whether a developer used the assistant well.",
+        "This paper proposes a framework for measuring effective AI use during programming tasks.",
+        "The main idea is that skill is better shown by whether a candidate correctly accepts, edits, or rejects AI suggestions based on their actual quality and whether those decisions are supported by suitable testing and clear prompts.",
+        "The study aims to measure performance on AI-assisted tasks involving implementation, debugging, and exploration.",
+        "Each AI suggestion is to be evaluated independently using hidden tests, security checks, static analysis and expert review.",
+        "Signal detection measures are to be used to separate judgment accuracy from a general tendency to trust or reject the suggestions provided by the AI assistant.",
+        "The study also proposes to measure verification behavior, prompt quality, final code quality, and improvement over the no-AI baseline.",
+        "Mixed-effects models are proposed to test whether these behavioral measures predict performance better than simple usage counts and whether their importance changes across task types.",
+        "Non-parametric correlation tests are also suggested to understand the relationship between candidates' self-assessments with their observed performance.",
+        "The framework provides a practical way to study effective AI use, but its results must be interpreted carefully because the tasks, measurements, fairness concerns, privacy risks and changing AI systems may all affect the findings."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "When the Machine Writes the Ad: How Consumers Evaluate AI-Generated Advertising",
+      "publisher": "Elsevier BV",
+      "author": "Caldeira-Souza, Lucas",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7198982",
+      "retrieved_at": "2026-10-18T15:22:38.387Z",
+      "sha256": "91920f0a66bc2478270c8017bc2f61027b27859a4b373ad84d1171ddde43b0d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative AI tools now produce advertising content at scale, yet little is known about how consumers evaluate advertising when they become aware of its nonhuman origin.",
+        "Existing theories of persuasion knowledge, source credibility, and perceived effort were developed for human persuasion agents and do not account for the evaluative challenges posed by a nonhuman source.",
+        "The framework identifies two dimensions of recalibration (agent recalibration and production recalibration), a disclosure-independent effort pathway, four moderating conditions, and derives eleven propositions and one research question.",
+        "Implications for brand management and advertising governance under the EU AI Act are discussed.",
+        "The paper argues that AI-generated advertising does not simply weaken existing evaluative processes but transforms them, producing a qualitatively different consumer response."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Creativity Code: How AI is learning to write, paint and think",
+      "publisher": "Medical Entomology and Zoology",
+      "author": "Tomer du Sautoy",
+      "published_at": "2019-03-07",
+      "url": "https://openalex.org/W2990810159",
+      "retrieved_at": "2026-10-18T15:22:39.615Z",
+      "sha256": "7c5eaff31886e55667efec1a360b660a3ae05d167be5f4a02c6015cd0c2897e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Will a computer ever compose a symphony, write a prize-winning novel, or paint a masterpiece?",
+        "As humans, we have an extraordinary ability to create works of art that elevate, expand and transform what it means to be alive.",
+        "Yet in many other areas, new developments in AI are shaking up the status quo, as we find out how many of the tasks humans engage in can be done equally well, if not better, by machines.",
+        "Will they soon be able to learn from the art that moves us, and understand what distinguishes it from the mundane?",
+        "In The Creativity Code, Marcus du Sautoy examines the nature of creativity, as well as providing an essential guide into how algorithms work, and the mathematical rules underpinning them.",
+        "He asks how much of our emotional response to art is a product of our brains reacting to pattern and structure, and exactly what it is to be creative in mathematics, art, language and music.",
+        "Marcus finds out how long it might be before machines come up with something creative, and whether they might jolt us into being more imaginative in turn.",
+        "The result is a fascinating and very different exploration into both AI and the essence of what it means to be human."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Anthropic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6206236",
+      "retrieved_at": "2026-10-18T15:22:39.615Z",
+      "sha256": "21fe2fa2fd3032bfc928d9f392ad9ebfb97e6bb4a989c68a462f11269e00f875",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Anthropic, PBC (stylized as ANTHROP\\C or A\\) is an American artificial intelligence (AI) public benefit corporation headquartered in San Francisco, California.",
+        "Its flagship product is Claude, a series of proprietary large language models (LLMs).",
+        "In January 2021, with the goal of promoting AI safety, Anthropic was founded by former members of OpenAI, including siblings Daniela Amodei and Dario Amodei, who are president and CEO, respectively.",
+        "The company is privately held but plans an initial public offering in November 2026.",
+        "At $965 billion in a May 2026 Series H, Anthropic is the world's most valuable AI pure play, rivaled by OpenAI.",
+        "Anthropic develops the LLM Claude in four tiers: Fable, Opus, Sonnet, and Haiku.",
+        "Claude is accessible via an online chatbot, an API, and Anthropic's agent harnesses: Claude Code, Cowork, Design, and Science.",
+        "Its model class Claude Mythos, a less restricted version of Fable, is available only to approved US organizations with a cybersecurity and life sciences focus.",
+        "Anthropic's Project Panama, internally described as an \"effort to destructively scan all the books in the world\", provides training data for Claude.",
+        "Before Project Panama, Anthropic downloaded pirated books and was sued, settling in 2025 a copyright infringement lawsuit from authors for $1.5 billion.",
+        "Anthropic conducts LLM research including on mechanistic interpretability, safety, alignment, and societal impact.",
+        "Notable researchers working at Anthropic include Andrej Karpathy, John M."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T15:22:39.615Z",
+      "sha256": "e4531256855586c54c18b8f69b54f624dac41a4654c857e6565c0dfca2593138",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Claude (AI)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75879512",
+      "retrieved_at": "2026-10-18T15:22:39.615Z",
+      "sha256": "112738d44b4d6ea28b4aa35b9a40aabaf644dfff0f006bed978acd0d6b5b6620",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Claude is a series of large language models (LLMs) developed by American software company Anthropic.",
+        "Anthropic sells Claude-based agentic tools including Claude Code, a terminal coding agent, and Claude Cowork, a similar tool for non-programmers.",
+        "Claude is trained using a constitution, a technique developed by Anthropic to improve ethical and legal compliance.",
+        "Since Claude 3, each generation has typically been released in three sizes, named Haiku (the least capable), Sonnet, and Opus (the most capable).",
+        "In 2026, a more capable model named Claude Mythos was released to a handful of companies and organizations; this was followed by the release of Claude Fable, a version of Mythos with stricter safeguards, to the general public.",
+        "In February 2026, the United States Department of Defense designated Anthropic a \"supply chain risk\" and federal agencies were ordered to phase out Claude after the company refused to remove contractual prohibitions on using Claude for mass domestic surveillance and fully autonomous weapons.",
+        "A federal judge blocked the designation in March 2026 and permanently set it aside in August 2026 as unconstitutional retaliation."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Vibe coding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=79371410",
+      "retrieved_at": "2026-10-18T15:22:39.615Z",
+      "sha256": "ae37332a56595c956c1d7e0d9ff902283382dce6f9739bef4515e1faeca8cc3a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vibe coding is the software development practice assisted by artificial intelligence (AI) where the software developer describes a project or task in natural languages to a large language model (LLM), which generates source code automatically.",
+        "Vibe coding may involve accepting AI-generated code without thorough review of the output, instead relying on results and follow-up prompts to guide changes.",
+        "The term was coined in February 2025 by computer scientist Andrej Karpathy, a co-founder of OpenAI and former AI leader at Tesla.",
+        "In March 2025, Merriam-Webster listed the term as a \"slang & trending\" expression.",
+        "It was also named the Collins English Dictionary Word of the Year for 2025.",
+        "Advocates of vibe coding say it allows amateur programmers to produce software without the extensive training and skills required for software engineering.",
+        "Critics say there is a lack of accountability, maintainability, and an increased risk of introducing security vulnerabilities in the resulting software."
+      ]
+    }
+  ]
+}

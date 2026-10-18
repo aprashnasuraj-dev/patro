@@ -1,0 +1,109 @@
+{
+  "id": "mm-0973",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A production analysis of the musical, Peter Pan",
+      "publisher": "University of North Texas Digital Library (University of North Texas)",
+      "author": "Wheelice Wilson",
+      "published_at": "1975-08-01",
+      "url": "https://openalex.org/W3140031840",
+      "retrieved_at": "2026-10-18T15:26:11.341Z",
+      "sha256": "f733bf1f7da84b021a6e7239d086f19cdb73601262bf1bfb03b6669f885313b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This investigation is concerned with the analysis of a production of Peter Pan, a large-scale musical play, which was presented at Dallas Repertory Theatre in February of 1975.",
+        "This analysis is intended to be both an educative discussion of the experimental nature of the show and a practical guide to the production of a typical musical play by a non-professional company."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Iron Chef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36540",
+      "retrieved_at": "2026-10-18T15:26:11.341Z",
+      "sha256": "19fd0b66a9533a9426df41b6bcbad3db0d5eacdf81dda131d9bbbf5d8279b1c0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Iron Chef (料理の鉄人, Ryōri no Tetsujin; literally \"Iron People of Cooking\") is a Japanese television cooking show produced by Fuji Television.",
+        "The series, which premiered on October 10, 1993, is a stylized cook-off featuring guest chefs challenging one of the show's resident \"Iron Chefs\" in a timed cooking battle built around a specific theme ingredient.",
+        "The series ended on September 24, 1999, although four occasional specials were produced from January 5, 2000, to January 2, 2002.",
+        "Repeats are regularly aired on the Food Network in Canada, the Cooking Channel in the United States until Asian-American specialty television channel ChimeTV took over reruns in 2022, and on Special Broadcasting Service in Australia; in the United States, it is streamed by Peacock TV and Pluto TV.",
+        "There are 5 spinoffs, with the latest being Iron Chef: Quest for an Iron Legend.",
+        "Fuji TV aired a new version of the show, titled Iron Chef (アイアンシェフ, Aian Shefu), premiering on October 26, 2012."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of highest-grossing films",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59892",
+      "retrieved_at": "2026-10-18T15:26:11.341Z",
+      "sha256": "f9baa2b98e6c272f9408ae22871b162466b4e067e0e4387bd3c5af88cc7e13a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Films generate income from several revenue streams, including theatrical exhibition, home video, television broadcast rights, and merchandising.",
+        "However, theatrical box-office earnings are the primary metric for trade publications in assessing the success of a film, mostly because of the availability of the data compared to sales figures for home video and broadcast rights, but also because of historical practice.",
+        "All charts are ranked by international theatrical box-office performance where possible, excluding income derived from home video, broadcasting rights, and merchandise.",
+        "Traditionally, war films, musicals, and historical dramas have been the most popular genres, but franchise films have been among the best performers of the 21st century.",
+        "There is strong interest in the superhero genre, with eleven films in the Marvel Cinematic Universe featuring among the nominal top-earners.",
+        "The most successful superhero film, Avengers: Endgame, is also the highest-grossing film on the nominal earnings chart, and there are four films in total based on the Avengers comic books charting in the top twenty-five.",
+        "Other Marvel Comics adaptations have also had success with the Spider-Man and X-Men properties, while films based on Batman and Superman from DC Comics have generally performed well.",
+        "Beyond the superhero genre, Star Wars, with four films, is the most represented franchise in the nominal earnings chart.",
+        "Avatar, in second place on the nominal chart, is the highest-grossing film that is not a sequel or an adaptation of a pre-existing property.",
+        "Animated family films have performed consistently well, with Disney films enjoying lucrative re-releases prior to the home-video era.",
+        "Disney also enjoyed later success with films such as Frozen and its sequel, Zootopia and its sequel, and The Lion King (along with its computer-animated remake), as well as its Pixar division, of which Inside Out 2, Incredibles 2, and Toy Story 3, 4 and 5 have been the best performers.",
+        "Beyond Disney and Pixar animation, China's Ne Zha 2 (the highest-grossing animated film), and the Despicable Me and Shrek series have met with the most success."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Cats (musical)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=215013",
+      "retrieved_at": "2026-10-18T15:26:11.341Z",
+      "sha256": "97760c10cfb3aa49556a0fb168d945fa9eb0d077bbe5792e5a4e9d01f52ff373",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cats is a sung-through musical with music by Andrew Lloyd Webber.",
+        "It is based on the 1939 poetry collection Old Possum's Book of Practical Cats by T.",
+        "The musical tells the story of a tribe of cats called the Jellicles and the night they make the \"Jellicle choice\" by deciding which cat will ascend to the Heaviside Layer and come back to a new life.",
+        "As of 2024, Cats remains the fifth-longest-running Broadway show and the eighth-longest-running West End show.",
+        "Lloyd Webber began setting Eliot's poems to music in 1977, and the compositions were first presented as a song cycle in 1980.",
+        "Producer Cameron Mackintosh then recruited director Trevor Nunn and choreographer Gillian Lynne to turn the songs into a complete musical.",
+        "Cats opened to positive reviews at the New London Theatre in the West End in 1981 and then to mixed reviews at the Winter Garden Theatre on Broadway in 1982.",
+        "It won numerous awards including Best Musical at both the Laurence Olivier and Tony Awards.",
+        "Despite its unusual premise that deterred investors initially, the musical turned out to be an unprecedented commercial success, with a worldwide gross of US$3.5 billion by 2012.",
+        "The London production ran for 21 years and 8,949 performances, while the Broadway production ran for 18 years and 7,485 performances, making Cats the longest-running musical in both theatre districts for a number of years.",
+        "Cats has since been revived in the West End twice and on Broadway twice.",
+        "It has also been translated into multiple languages and performed around the world many times."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Le Creuset",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2895287",
+      "retrieved_at": "2026-10-18T15:26:11.341Z",
+      "sha256": "c9db995736271a8fbb2861308bb89679cdcdc06c5958539e70c2caf1e562422a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "They are best known for producing enamelled cast-iron cookware.",
+        "The company first manufactured their products in the town of Fresnoy-le-Grand in France in 1925, and now makes many other types of cookware and bakeware, from fondue sets to tagines."
+      ]
+    }
+  ]
+}

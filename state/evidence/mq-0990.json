@@ -1,0 +1,107 @@
+{
+  "id": "mq-0990",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Afghanistan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=737",
+      "retrieved_at": "2026-10-18T17:34:34.035Z",
+      "sha256": "82bf04f5719f81c5cbd4fd3e6bcc5b4f137ae259f687e660e26d22580bd3c3cf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Afghanistan, officially the Islamic Emirate of Afghanistan, is a landlocked country located at the crossroads of Central and South Asia.",
+        "It is bordered by Pakistan to the east and south, Iran to the west, Turkmenistan to the northwest, Uzbekistan to the north, Tajikistan to the northeast, and China to the northeast and east.",
+        "Occupying 652,864 square kilometers (252,072 sq mi) of land, the country is predominantly mountainous with plains in the north and the southwest, which are separated by the Hindu Kush mountain range.",
+        "Afghanistan's population is estimated to be between 35 and 50 million.",
+        "Human habitation in Afghanistan dates to the Middle Paleolithic era.",
+        "The country's land has witnessed numerous military campaigns, including those by the Achaemenids, Alexander the Great, the Maurya Empire, Arab Muslims, the Mongols, the British, the Soviet Union, and a United States-led coalition.",
+        "Afghanistan also served as the source from which the Greco-Bactrians and the Mughals, among others, rose to form major empires.",
+        "Because of the various conquests and periods in both the Iranian and Indian cultural spheres, the area was a center for Zoroastrianism, Buddhism, Hinduism, and later Islam.",
+        "The modern state of Afghanistan began with the Durrani Empire in the 18th century under Ahmad Shah Durrani, although Dost Mohammad Khan is sometimes considered to be the founder of the first modern Afghan state.",
+        "Afghanistan became a buffer state in the Great Game between the British Empire and the Russian Empire.",
+        "From India, the British attempted to subjugate Afghanistan but were repelled in the First Anglo-Afghan War; the Second Anglo-Afghan War saw a British victory.",
+        "Following the Third Anglo-Afghan War in 1919, Afghanistan became free of foreign political hegemony, and emerged as the independent Kingdom of Afghanistan in 1926; this monarchy lasted almost half a century."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Iran",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14653",
+      "retrieved_at": "2026-10-18T17:34:34.035Z",
+      "sha256": "bfbdb7a170d7884c47b007e2f8d6a9c631784ab1e3eeffed88fe56776e860949",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Iran, officially the Islamic Republic of Iran, and historically known as Persia, is a country in West Asia.",
+        "It borders Iraq to the west; Turkey, Azerbaijan, and Armenia to the northwest; the Caspian Sea to the north, Turkmenistan to the northeast; Afghanistan to the east; Pakistan to the southeast; and the Gulf of Oman and the Persian Gulf to the south.",
+        "With a population of over 92 million, Iran ranks 17th globally in both geographic size and population.",
+        "Tehran is the nation's capital and largest city and serves as its primary economic center.",
+        "Home to one of the world's oldest continuous major civilizations, the territory of present-day Iran was first unified under the Medes in the 7th century BC and reached its territorial height in the 6th century BC, when Cyrus the Great founded the Achaemenid Empire.",
+        "Alexander the Great conquered the empire in the 4th century BC.",
+        "An Iranian rebellion in the 3rd century BC established the Parthian Empire, which later liberated the country.",
+        "In the 3rd century AD, the Parthians were succeeded by the Sasanian Empire, which oversaw a golden age in the history of Iranian civilization.",
+        "Ancient Iran saw some of the earliest developments of writing, agriculture, urbanization, religion, and administration.",
+        "Once a center for Zoroastrianism, Iran underwent Islamization following the 7th century Muslim conquest.",
+        "Innovations in literature, philosophy, mathematics, medicine, astronomy and art were renewed during the Islamic Golden Age and Iranian Intermezzo, a period during which Iranian Muslim dynasties ended Arab rule and revived the Persian language.",
+        "This era was followed by Seljuk and Khwarazmian rule, Mongol conquests and the Timurid Renaissance from the 11th to 14th centuries."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Kazakhstan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16642",
+      "retrieved_at": "2026-10-18T17:34:34.035Z",
+      "sha256": "b051ec9c7248fa10115c7a38f048cbb0e7aa4b8642dbf176390e14d049529d21",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kazakhstan, officially the Republic of Kazakhstan, is a landlocked country situated primarily in Central Asia, with a portion of its territory extending into Eastern Europe.",
+        "It borders Russia to the north and west, China to the east, Kyrgyzstan to the southeast, Uzbekistan to the south, and Turkmenistan to the southwest, and it has a coastline along the Caspian Sea.",
+        "The capital is Astana, and the country's largest city and principal cultural and economic center is Almaty, which served as the capital until 1997.",
+        "Kazakhstan is the world's ninth-largest country by land area and the largest landlocked country.",
+        "Hilly plateaus and plains account for nearly half its vast territory, with lowlands composing another third; its southern and eastern frontiers are composed of mountainous regions.",
+        "Kazakhstan has a population of 20.6 million and one of the lowest population densities in the world, with fewer than 8 people per square kilometre (21 people/mi2).",
+        "Ethnic Kazakhs constitute a majority, while ethnic Russians form a significant minority.",
+        "Officially secular, Kazakhstan is a Muslim-majority country with a sizeable Christian community.",
+        "In antiquity, various nomadic Iranian peoples such as the Saka, Massagetae, and Scythians.",
+        "In the 13th century, the area was subjugated by the Mongol Empire under Genghis Khan.",
+        "Following the disintegration of the Golden Horde in the 15th century, the Kazakh Khanate was established over an area roughly corresponding with modern Kazakhstan.",
+        "By the 18th century, the Kazakh Khanate had fragmented into three jüz (tribal divisions), which were gradually absorbed and conquered by the Russian Empire; by the mid-19th century, all of Kazakhstan was nominally under Russian rule."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Surrealism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28766",
+      "retrieved_at": "2026-10-18T17:34:34.035Z",
+      "sha256": "8e2093e2e7e530d4193f555fda0a874775dd45fc01280996e048f3d6772aac7e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Surrealism is an art and cultural movement that developed in Europe in the aftermath of World War I in which artists aimed to allow the unconscious mind to express itself, often resulting in the depiction of illogical or dreamlike scenes and ideas.",
+        "Its intention was, according to leader André Breton, to \"resolve the previously contradictory conditions of dream and reality into an absolute reality, a super-reality\", or surreality.",
+        "It produced works of painting, writing, photography, theatre, filmmaking, music, comedy and other media as well.",
+        "Works of Surrealism feature the element of surprise, unexpected juxtapositions and non sequitur.",
+        "Leader Breton was explicit in his assertion that Surrealism was, above all, a revolutionary movement.",
+        "At the time, the movement was associated with political causes such as communism and anarchism.",
+        "The term \"Surrealism\" originated with Guillaume Apollinaire in 1917.",
+        "However, the Surrealist movement was not officially established until after October 1924, when the Surrealist Manifesto published by Breton succeeded in claiming the term for his group over a rival faction led by Yvan Goll, who had published his own surrealist manifesto two weeks prior.",
+        "The most important center of the movement was Paris, France.",
+        "From the 1920s onward, the movement spread around the globe, impacting the visual arts, literature, theatre, film, and music of many countries and languages, as well as political thought and practice, philosophy, and social and cultural theories."
+      ]
+    }
+  ]
+}

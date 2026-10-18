@@ -1,0 +1,194 @@
+{
+  "id": "mm-1379",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Benchmarking Meta-embeddings: What Works and What Does Not",
+      "publisher": "Association for Computational Linguistics",
+      "author": "García-Ferrero, Iker; Agerri, Rodrigo; Rigau, German",
+      "published_at": "2021",
+      "url": "https://doi.org/10.18653/v1/2021.findings-emnlp.333",
+      "retrieved_at": "2026-10-18T15:43:22.090Z",
+      "sha256": "6e6467bd4a27d24c5a00de724f5c64ca4f25fbdbbb74ff2b3cb353d5f9eecef3",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Benchmarking Meta-embeddings: What Works and What Does Not - ACL Anthology Benchmarking Meta-embeddings: What Works and What Does Not Iker García-Ferrero , Rodrigo Agerri , German Rigau Correct Metadata for Use this form to create a GitHub issue with structured data describing the correction.",
+        "Once you create that issue, the correction will be reviewed by a staff member.",
+        "⚠️ Mobile Users: Submitting this form to create a new issue will only work with github.com, not the GitHub Mobile app.",
+        "Please use this form only to correct data that is out of line with the PDF.",
+        "See our corrections guidelines if you need to change the PDF.",
+        "You may use &lt;b>...&lt;/b> for bold , &lt;i>...&lt;/i> for italic , &lt;u>...&lt;/u> for underline , &lt;sc>...&lt;/sc> for small-caps , &lt;tt>...&lt;tt> for typewriter text , &lt;url>...&lt;/url> for URLs, &lt;a href=...> for hyperlinks, and &lt;par/> for paragraph breaks.",
+        "Verification against PDF Ensure that the new title/authors match the snapshot below.",
+        "(If there is no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above—including middle initials, hyphens, and accents.",
+        "Create GitHub issue for staff review Abstract In the last few years, several methods have been proposed to build meta-embeddings.",
+        "The general aim was to obtain new representations integrating complementary knowledge from different source pre-trained embeddings thereby improving their overall quality.",
+        "However, previous meta-embeddings have been evaluated using a variety of methods and datasets, which makes it difficult to draw meaningful conclusions regarding the merits of each approach.",
+        "In this paper we propose a unified common framework, including both intrinsic and extrinsic tasks, for a fair and objective meta-embeddings evaluation."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What do you know, BERT ? Exploring the linguistic competencies of Transformer-based contextual word embeddings",
+      "publisher": "Agence Bibliographique de l'Enseignement Supérieur",
+      "author": "Metheniti, Eleni",
+      "published_at": null,
+      "url": "https://doi.org/10.70675/2f81071bz4724z44ecz999dz1acee85d8951",
+      "retrieved_at": "2026-10-18T15:43:22.091Z",
+      "sha256": "b01cda270292b30c53c4624ab9921688662a2e4657c703adcc4206cc60b61df2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cette partie de l'étude a examiné si les modèles BERT en anglais contiennent des informations sur les préférences sélectives, en examinant la probabilité qu'ils attribuent au mot dépendant compte tenu de la présence de son mot principal dans une phrase.",
+        "Ces probabilités ont été comparées aux annotations humaines.",
+        "Nous avons exploré, avec deux séries d'expériences, si les modèles peuvent identifier et apprendre la télicité et la durée.",
+        "Nous avons effectué des analyses quantitatives avec des modèles pré-entraînés et affinés, ainsi que des analyses qualitatives pour observer le comportement des modèles dans des cas difficiles.",
+        "Bien que ces modèles pré-entraînés soient insensibles à l'ordre des mots permutés, nous avons observé que les modèles affinés pouvaient apprendre et sélectionner la position correcte de l'adjectif.",
+        "Les modèles attribuent des probabilités élevées aux tokens fréquents, mais ne peuvent pas créer de classes ou de groupes de mots selon le contenu.",
+        "Les plongements de verbes peuvent capturer des informations syntactico-sémantiques importantes, mais les adjectifs n'ont pas d'influence.",
+        "Les modèles sont sensibles à la syntaxe et apprennent des schémas syntaxiques rudimentaires.",
+        "Sur le plan sémantique, les modèles s'appuient sur des caractéristiques de fréquence et de surface, même lorsque le contexte suggère le contraire."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Theoretical foundations and limits of word embeddings: What types of meaning can they capture?",
+      "publisher": "Center for Open Science",
+      "author": "Arseniev-Koehler, Alina",
+      "published_at": "2021-07-22",
+      "url": "https://doi.org/10.31235/osf.io/vrwk3",
+      "retrieved_at": "2026-10-18T15:43:22.091Z",
+      "sha256": "811440d251a813bcad63df5f915ef855212c24a77dcf1d3b867560f2ffe1f280",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This preprint is an earlier version of the published article: Arseniev-Koehler, Alina.",
+        "\"Theoretical foundations and limits of word embeddings: what types of meaning can they capture?.\" Sociological Methods &amp;amp; Research (2021): 00491241221140142."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "What embedded LDV measurements can do for boundary layer investigation of rotating blades",
+      "publisher": "OpenAlex",
+      "author": "C. Barla; Éric Berton; Daniel Favier",
+      "published_at": "2004-01-01",
+      "url": "https://openalex.org/works/W2948699770",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "c0f96cca1aa1539e6ed0628b5ece91ae7ed6be4abf816a0de9c48cd1c73a4f1b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What embedded LDV measurements can do for boundary layer investigation of rotating blades | OpenAlex Log in Get started Work Add to collection What embedded LDV measurements can do for boundary layer investigation of rotating blades HTML Details Locations Year: 2004 Type: article Authors: C.",
+        "Nsi Language: English Topic: Turbomachinery Performance and Optimization Subfield: Aerospace Engineering Field: Engineering Domain: Physical Sciences Open Access status: closed OpenAlex ID: W2948699770 FWCI: Cites: Cited by: Related to: 19"
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "What is an Embedding? : A Problem for Category-theoretic Structuralism",
+      "publisher": "Lund University Publications (Lund University)",
+      "author": "Staffan Angere",
+      "published_at": "2014-01-01",
+      "url": "https://openalex.org/W1743294285",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "d2dfbe5bbc56e34943ae572684eafa66130af4e415d4b67d109a3d3badcc748b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper concerns the proper definition of embeddings in purely category-theoretical terms.",
+        "It is argued that plain category theory cannot capture what, in the general case, constitutes an embedding of one structure in another.",
+        "We discuss three available solutions to this problem: variants of monics, concrete categories, and allegories.",
+        "The first and last of these are found to be unable to solve the problem, and the second to be philosophically unsatisfactory.",
+        "Instead, we introduce a theory of forms and relators, which, like allegory theory, attempts to abstract from relation algebras in the way that categories abstract from monoids, but which does not have the shortcomings we have identified in allegories.",
+        "We show that the theory in question does indeed solve the problem of defining embeddings."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Embedded system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46630",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "7e33e66a8d23b6184ba306d0e44b11130122a4e0bf22f49354ba41d290795dc9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An embedded system is a specialized computer system—a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system.",
+        "It is embedded as part of a complete device, often including electrical or electronic hardware and mechanical parts.",
+        "In 2009, it was estimated that 98% of all microprocessors manufactured were used in embedded systems.",
+        "Because an embedded system typically controls physical operations of the machine that it is embedded within, it often has real-time computing constraints.",
+        "Modern embedded systems are often based on microcontrollers (i.e., microprocessors with integrated memory and peripheral interfaces), but ordinary microprocessors (using external chips for memory and peripheral interface circuits) are also common, especially in more complex systems.",
+        "In either case, the processor(s) used may be types ranging from general purpose to those specialized in a certain class of computations, or even custom designed for the application at hand.",
+        "A common standard class of dedicated processors is the digital signal processor (DSP).",
+        "Since the embedded system is dedicated to specific tasks, design engineers can optimize it to reduce the size and cost of the product and increase its reliability and performance.",
+        "Some embedded systems are mass-produced, benefiting from economies of scale.",
+        "Embedded systems range in size from portable personal devices such as digital watches and MP3 players to bigger machines like home appliances, industrial assembly lines, robots, transport vehicles, traffic light controllers, and medical imaging systems.",
+        "Often they constitute subsystems of other machines like avionics in aircraft and astrionics in spacecraft.",
+        "Large installations like factories, pipelines, and electrical grids rely on multiple embedded systems networked together."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Embedding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52119",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "9112cdc96985e14c89f1c3552cb18f8bcc2a4f58ca5d031d082d4431926d89d8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, an embedding (or imbedding) is one instance of some mathematical structure contained within another instance, such as a group that is a subgroup.",
+        "The precise meaning of \"structure-preserving\" depends on the kind of mathematical structure of which \n  \n    \n      \n        X\n      \n    \n    {\\displaystyle X}\n  \n and \n  \n    \n      \n        Y\n      \n    \n    {\\displaystyle Y}\n  \n are instances.",
+        "In the terminology of category theory, a structure-preserving map is called a morphism.",
+        "In many cases of interest there is a standard (or \"canonical\") embedding, like those of the natural numbers in the integers, the integers in the rational numbers, the rational numbers in the real numbers, and the real numbers in the complex numbers."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Book embedding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3987703",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "bd3d42976d2a9d41eacbecf535878da251cf52320235ac2efe4a2dd30292b9a0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In graph theory, a book embedding is a generalization of planar embedding of a graph to embeddings in a book, a collection of half-planes all having the same line as their boundary.",
+        "Usually, the vertices of the graph are required to lie on this boundary line, called the spine, and the edges are required to stay within a single half-plane.",
+        "The book thickness of a graph is the smallest possible number of half-planes for any book embedding of the graph.",
+        "Book thickness is also called pagenumber, stacknumber or fixed outerthickness.",
+        "Book embeddings have also been used to define several other graph invariants including the pagewidth and book crossing number.",
+        "Every graph with n vertices has book thickness at most \n  \n    \n      \n        ⌈\n        n\n        \n          /\n        \n        2\n        ⌉\n      \n    \n    {\\displaystyle \\lceil n/2\\rceil }\n  \n, and this formula gives the exact book thickness for complete graphs.",
+        "The graphs with book thickness one are the outerplanar graphs.",
+        "The graphs with book thickness at most two are the subhamiltonian graphs, which are always planar; more generally, every planar graph has book thickness at most four.",
+        "It is NP-hard to determine the exact book thickness of a given graph, with or without knowing a fixed vertex ordering along the spine of the book.",
+        "Testing the existence of a three-page book embedding of a graph, given a fixed ordering of the vertices along the spine of the embedding, has unknown computational complexity: it is neither known to be solvable in polynomial time nor known to be NP-hard.",
+        "One of the original motivations for studying book embeddings involved applications in VLSI design, in which the vertices of a book embedding represent components of a circuit and the wires represent connections between them.",
+        "Book embedding also has applications in graph drawing, where two of the standard visualization styles for graphs, arc diagrams and circular layouts, can be constructed using book embeddings."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Windows IoT",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8969589",
+      "retrieved_at": "2026-10-18T15:43:22.949Z",
+      "sha256": "7ed1de35059175b9d4c69c4491480b86f2ea2ab9bb8c9b9b7d020368543d30a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Windows IoT is short for Windows Internet of Things and formerly known as Windows Embedded, is a family of operating systems from Microsoft designed for use in embedded systems.",
+        "Microsoft has three different sub families of operating systems for embedded devices targeting a wide market, ranging from small-footprint, real-time devices to point of sale (POS) devices like kiosks.",
+        "Windows Embedded operating systems are available to original equipment manufacturers (OEMs), who make it available to end users preloaded with their hardware, in addition to volume license customers in some cases.",
+        "In April 2018, Microsoft released Azure Sphere, another operating system designed for IoT applications running on the Linux kernel."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "mm-0875",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Accurate Runway Surface Friction Measurement Should Matter to Airports",
+      "publisher": "Purdue e-Pubs (Purdue University System)",
+      "author": "Alex Sydney",
+      "published_at": "2018-01-01",
+      "url": "https://openalex.org/W2793876213",
+      "retrieved_at": "2026-10-18T15:13:58.223Z",
+      "sha256": "2f4a9cf64f9870e9745e9783039e8442a80651cd1913675f56cf4d78b9a0e184",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This presentation details airport pavement friction concepts, testing, and evaluation.",
+        "Examples of how friction affects winter operations, pavement maintenance, and pavement repair will be discussed."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Heathrow Airport",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13595",
+      "retrieved_at": "2026-10-18T15:13:58.223Z",
+      "sha256": "f9b411cc6185ea06c6d084442a2237434520c25e80e2632ec1e03cd6e2dd60e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "London Heathrow Airport (IATA: LHR, ICAO: EGLL) – named London Airport until 1966 – is the primary and largest international airport serving London, the capital of England and the United Kingdom.",
+        "It is the largest of the six international airports in the London airport system (the others being Gatwick, Stansted, Luton, City, and Southend).",
+        "The airport is owned and operated by Heathrow Airport Holdings.",
+        "In 2025, Heathrow was the busiest airport in Europe, the fifth-busiest airport in the world by passenger traffic and the second-busiest airport in the world by international passenger traffic.",
+        "Heathrow was the airport with the most international connections in the world in 2024.",
+        "Heathrow was founded as a small airfield in 1930 but was developed into a much larger airport after World War II.",
+        "It lies 14 miles (23 km) west of Central London on a site that covers 4.74 square miles (12.3 km2).",
+        "It was gradually expanded over 75 years and now has two parallel east–west runways, four operational passenger terminals and one cargo terminal.",
+        "The airport is the primary hub for British Airways and Virgin Atlantic."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Tenerife airport disaster",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=92734",
+      "retrieved_at": "2026-10-18T15:13:58.223Z",
+      "sha256": "f42f7b46918d4daed574c3e3c7b1b8a7d53529abe27b323b50b3266c99030ad4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On March 27, 1977, two Boeing 747 passenger jets collided on a runway at Los Rodeos Airport on the Spanish island of Tenerife, killing 583 people and injuring 61 others in the deadliest accident in aviation history.",
+        "The incident occurred at 17:06 GMT (UTC +0) in dense fog, when KLM Flight 4805 initiated its takeoff run, colliding with the right side of Pan Am Flight 1736, which was on the runway.",
+        "The impact and the resulting fire killed all 248 people on board the KLM plane and 335 of the 396 people on board the Pan Am plane, with all 61 survivors being in the front section of the aircraft.",
+        "The two aircraft had landed at Los Rodeos earlier that Sunday and were among a number of aircraft diverted to Los Rodeos due to a bomb explosion at their intended destination of Gran Canaria Airport.",
+        "Los Rodeos had become congested with parked planes blocking the only taxiway, forcing departing aircraft to taxi on the runway.",
+        "Patches of thick fog were drifting across the airfield, so visibility was greatly reduced for pilots and the control tower.",
+        "Dutch investigators placed a greater emphasis on a mutual misunderstanding in radio communications between the KLM crew and ATC, but ultimately KLM admitted that its crew was responsible for the accident and the airline agreed to financially compensate the relatives of all of the victims.",
+        "The accident had a lasting influence on the industry, highlighting in particular the vital importance of using standard phraseology in radio communications.",
+        "Cockpit procedures were also reviewed, contributing to the establishment of crew resource management as a fundamental part of airline pilots' training.",
+        "The captain is no longer considered infallible, and combined crew input is encouraged during aircraft operations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Runway",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=165094",
+      "retrieved_at": "2026-10-18T15:13:58.223Z",
+      "sha256": "46016ca672faf3ae82ba32d9813cddb5e4601a3b6b894dbb0668cc39a3dda48b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In aviation, a runway is an elongated, rectangular surface designed for the landing and takeoff of an aircraft.",
+        "Runways may be a human-made surface (often asphalt, concrete, or a mixture of both) or a natural surface (grass, dirt, gravel, ice, sand or salt).",
+        "Runways, taxiways and ramps, are sometimes referred to as \"tarmac\", though very few runways are built using tarmac.",
+        "Takeoff and landing areas defined on the surface of water for seaplanes are generally referred to as waterways.",
+        "Runway lengths are now commonly given in meters worldwide, except in North America where feet are commonly used."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Blue ice (glacial)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2639407",
+      "retrieved_at": "2026-10-18T15:13:58.223Z",
+      "sha256": "84144ef02965a77744a52b9c46e4cbf99d5bbedd78e0c425ed07f24085815273",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It has been highly compressed by the weight of the overlying snow such that the ice crystals become enlarged.",
+        "It is this enlargement that is responsible for the ice's blue color."
+      ]
+    }
+  ]
+}

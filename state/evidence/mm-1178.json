@@ -1,0 +1,185 @@
+{
+  "id": "mm-1178",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Novel VM Allocation Method for Dedicated Servers in Large Scaled Data Centers",
+      "publisher": "International Journal of Scientific Engineering and Research",
+      "author": "Bala, Minu",
+      "published_at": "2017-07-27",
+      "url": "https://www.ijser.in/abstract.php?paperid=IJSER171720",
+      "retrieved_at": "2026-10-18T15:35:21.087Z",
+      "sha256": "a6539c39e87551179c0a40fb41f2189f58e51dd54b426b7bcef30645e6edf079",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "community to think more critically on optimal utilization of host resources.",
+        "VMs hosted on dedicated servers are not allowed to migrate during their lifetime, thus it is very important for service providers to adopt that VM allocation policy which utilizes the resources of servers in an optimal way in order to improve the performance of whole data center.",
+        "Efficient utilization of resources of data center is quite challenging due to unpredictability of workload.",
+        "Host machines in a cloud data center deal with heterogeneous VMs which have different RAM and CPU requirements.",
+        "Compute intensive VMs require more computing power than RAM where as data intensive VMs require less computing power than RAM.",
+        "Similarly other VMs like Small and Micro too have different RAM and computing capacity requirements.",
+        "An improper VM allocation policy to place different types of VMs in hosts, sometimes leads to uneven usage of host resources and results in wastage of Hosts?",
+        "In the present work, a novel VM allocation policy has been proposed that allocates VMs to hosts keeping in view the RAM and CPU consumption of host in a proportionate way.",
+        "It uses the concept of Dis-proportionality Coefficient to measure the unevenness in usage of host resources and allocates VM to that host machine which has least value of Dis-proportionality Coefficient.",
+        "The results obtained are compared with the simple First Fit VM allocation policy and it has been found that proportionate usage of RAM and CPU capacity of the host machine accommodates more VMs than the Simple First Fit policy and also reduces data center?s total energy consumption.",
+        "Moreover results are also compared with Power Aware VM allocation policy and found better in case of the proposed policy.",
+        "Keywords: Cloud Computing, Load Balancing, Virtual Machine, Energy Consumption, VM allocation, Dis-proportionality Coefficient View Article PDF Rate This Article Top"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Energy Efficiency for Information Technology: How to Reduce Power Consumption in Servers and Data Centers",
+      "publisher": "Intel Press eBooks",
+      "author": "L. Minas; B. Ellison",
+      "published_at": "2009-08-10",
+      "url": "https://openalex.org/W638697221",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "02c6117e18065546a67e7cf2f8cb934da70a9cc5d4f9535a3c65f977655544b2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Minimizing power consumption is one of the primary technical challenges that today's IT organizations face.",
+        "Laurie Minas and Brad Ellison highlight how power consumption has grown quickly, driven by the sheer number of servers deployed in datacenters.",
+        "The operational expense for energy over a three year period of operation will soon equal the capital expense of hardware.",
+        "Rack and blade servers concentrate heat in smaller spaces and demand sophisticated cooling systems, which themselves consume power.",
+        "While servers dominate the power consumed by IT systems, storage systems and network switches draw power as well."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cool job allocation: measuring the power savings of placing jobs at cooling-efficient locations in the data center",
+      "publisher": "USENIX Annual Technical Conference",
+      "author": "Cullen E. Bash; George Forman",
+      "published_at": "2007-06-17",
+      "url": "https://openalex.org/W2108812856",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "284304d212e3651e01e21be21790b4b00e56ded06d01eae0f43f1e35de973fde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Data center costs for computer power and cooling are staggering.",
+        "Because certain physical locations inside the data center are more efficient to cool than others, this suggests that allocating heavy computational workloads onto those servers that are in more efficient places might bring substantial savings.",
+        "This simple idea raises two critical research questions that we address: (1) How should one measure and rank the cooling efficiency of different places in a data center?",
+        "We performed a set of experiments in a thermally isolated portion of a real data center, and validated that the potential savings is substantial and therefore warrants further work in this area to exploit the savings opportunity."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Cooling Data Centers with Cooling Towers",
+      "publisher": "OpenAlex",
+      "author": "Jonathan B. Maxwell; Gary A. Epstein",
+      "published_at": "2007-01-01",
+      "url": "https://openalex.org/W2181796910",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "a0597d8f4fddb46d6b05c8dd69784454d1128e28080ceaf631c520f3073103a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Thousands of data centers and server farms have been installed in the last 10 years.",
+        "Each data center requires a reliable cooling system to prevent the computers from overheating.",
+        "From an energy use perspective, evaporative heat rejection using cooling towers seems well-suited for data center cooling, yet design engineers often specify dry condensers instead, even for large cooling plants.",
+        "The paper presents an example application from California’s Silicon Valley, where a customer upgraded from an air-cooled to a water-cooled HVAC system for their new data center.",
+        "The customer’s electricity usage budget for data-center cooling dropped by half.",
+        "They realized a 50 percent internal rate of return and a $9 million present value.",
+        "There were barriers to implementing the upgrade, however, few of which were technical or economic.",
+        "This paper examines the barriers and describes how they were overcome.",
+        "The lessons learned lead to unconventional energy-efficiency program policy recommendations regarding maintenance of objectivity in program administration and regarding standardized incentives.",
+        "Specifically, the authors recommend encourage allowing advocacy when operating utility programs, rather then just objective arbitration, and recommend reconsidering prescriptive incentives for large high efficiency air-cooled packaged air conditioners.",
+        "The recommendations apply to data center cooling in particular but also to the topic of large industrial upgrades generally.",
+        "Background An energy study was performed at an office building leased by a computer hardware design firm in California’s Silicon Valley."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Data center",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=579730",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "508e9865c60f0de80d4170e51905e879609ba9e6b8645e273ac7c5bf578291bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A data center is a physical room, building, or facility for storing, managing, and disseminating data and information, including computer systems and associated components, housing IT infrastructure, and training artificial intelligence.",
+        "military's Electrical Numerical Integrator and Computer (ENIAC) as an early example.",
+        "Data centers have different models depending on their workloads.",
+        "They frequently contain thousands of servers and many miles of high-speed data connection equipment, with the largest occupying up to 10,000,000 sq ft (930,000 m2).",
+        "Managed service data centers have third-party managers hired on behalf of a company, which leases the equipment and infrastructure instead of buying it.",
+        "Colocation data centers allow companies to rent space in an off-site data center owned by others, with the colocation data center hosting the infrastructure while the company provides and manages the components.",
+        "Edge data centers are smaller, decentralized facilities located closer to end users and devices.",
+        "Data Center Energy Usage Report, Lawrence Berkeley National Laboratory estimated that hyperscale and colocation centers contained 74% of computer servers in 2023.",
+        "Large data centers require significant energy to operate, with the largest consuming over 3,000 MW, raising concerns about energy use.",
+        "The International Energy Agency (IEA) estimated that electricity consumption from these data centers amounted to around 415 terawatt hours (TWh), about 1.5% of global electricity consumption in 2024, with a growth rate of 12% per year over the previous five years.",
+        "The IEA projects that this amount could double to reach around 945 TWh by 2030, growing by around 15% per year.",
+        "alone, which has almost nine times more data centers than any other country, power consumption by data centers is projected to account for \"almost half of the growth in electricity demand between now and 2030.\" This includes increased electricity costs."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Computer cooling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=798370",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "9d106dbc66a3531540d2fd3f71c90bcfccc3f64309cd10f15426865d784f702f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Computer cooling is required to remove the waste heat produced by computer hardware to keep components within permissible operating temperature limits.",
+        "Components that are susceptible to temporary malfunction or permanent failure if overheated include integrated circuits such as central processing units (CPUs), chipsets, graphics cards, hard disk drives, and solid state drives (SSDs).",
+        "Components are often designed to generate as little heat as possible, and computers and operating systems may be designed to reduce power consumption and consequent heating according to workload, but more heat may still be produced than can be removed without attention to cooling.",
+        "Use of heatsinks cooled by airflow reduces the temperature rise produced by a given amount of heat.",
+        "Attention to patterns of airflow can prevent the development of hotspots.",
+        "Computer fans are widely used along with heatsink fans to reduce temperature by actively exhausting hot air.",
+        "There are also other cooling techniques, such as liquid cooling.",
+        "All modern day processors are designed to cut out or reduce their voltage or clock speed if the internal temperature of the processor exceeds a specified limit.",
+        "This is generally known as thermal throttling in the case of reduction of clock speeds, or thermal shutdown in the case of a complete shutdown of the device or system.",
+        "Cooling may be designed to reduce the ambient temperature within the case of a computer, such as by exhausting hot air, or to cool a single component or small area (spot cooling).",
+        "Components commonly individually cooled include the CPU, graphics processing unit (GPU) and the northbridge."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Google data centers",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2030607",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "da0b31277f8b5dd71a6251c219809c8e841dca36ed276f0ffdfd15a341c981e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "There is no official data on how many servers are in Google data centers, but Gartner estimated in a July 2016 report that Google at the time had 2.5 million servers.",
+        "This number is changing as the company expands capacity and refreshes its hardware.",
+        "Originally designed in the early 2000s around clusters of commodity personal computers to serve Google Search, the facilities have since evolved into hyperscale campuses powering Google Cloud Platform (GCP), YouTube, and artificial intelligence (AI) workloads.",
+        "Modern sites integrate custom-designed Tensor Processing Unit (TPU) accelerators, Arm-based CPUs, and optical circuit switching fabrics, operating at a fleet-wide average power usage effectiveness (PUE) of 1.09 as of 2025."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Immersion cooling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=49108687",
+      "retrieved_at": "2026-10-18T15:35:21.732Z",
+      "sha256": "d6d2b85fa7a1c40ffc73d3222dbed3b85d125f1ebb7ac07f01993c93b8643b17",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Immersion cooling is a method where electronic parts or whole servers are put into a special, electrically safe liquid for cooling.",
+        "The liquid removes heat much faster than air, which lowers energy costs, prevent noisy fans being used, and allows more heat-generating computer components in a tight space.",
+        "This includes systems using single-phase or two-phase dielectric liquids, leveraging their thermal capabilities to manage and dissipate heat generated by electronic components.",
+        "Heat is removed from the system by putting the coolant in direct contact with hot components, and circulating the heated liquid through heat exchangers.",
+        "This practice is highly effective as liquid coolants can absorb more heat from the system than air.",
+        "Immersion cooling has many benefits, including but not limited to: sustainability, performance, reliability, and cost.",
+        "The fluids used in immersion cooling are dielectric liquids to ensure that they can safely come into contact with energized electronic components.",
+        "Commonly used dielectric liquids in immersion cooling are synthetic hydrocarbons, esters (natural and synthetic) and fluorochemicals."
+      ]
+    }
+  ]
+}

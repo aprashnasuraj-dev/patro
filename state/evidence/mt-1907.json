@@ -1,0 +1,169 @@
+{
+  "id": "mt-1907",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T17:11:04.328Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T17:11:05.454Z",
+      "sha256": "8315cc9ad6770b94a4f74893b8340566610318ecf08edb7f618562fa98209604",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Embargo period",
+      "publisher": "Qeios",
+      "author": null,
+      "published_at": "2019-11-08",
+      "url": "https://doi.org/10.32388/996576",
+      "retrieved_at": "2026-10-18T17:11:07.308Z",
+      "sha256": "c9761d9160b43e46929cfb481c8ef44426ad5957f4d59b1a7569b0b6cd291084",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Embargo period - Definition (v1) by Public Domain | Qeios There is a newer version available for this {{ publicationType }}.",
+        "This is an open access publication distributed under the terms of the CC BY 4.0 License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+        "Info Check the {{ publicationType | capitalize }} Source for copyright and license information.",
+        "{{ publication.doi_url }} {{ publication.title }} Declarations Abstract Source Listen on Compose your Definition Related Definitions ({{ publication.ranked_siblings.length }}) # {{ sibling.position_in_ranking }} Thank you for your contribution to the community."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Giuseppe Verdi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12958",
+      "retrieved_at": "2026-10-18T17:11:07.308Z",
+      "sha256": "ddf9f2f3d02cac41e1bcabbf1d6e23cd4153af6cdaa818464d5fb2b56ace632e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Giuseppe Fortunino Francesco Verdi ( VAIR-dee; Italian: [dʒuˈzɛppe ˈverdi]; 9 or 10 October 1813 – 27 January 1901) was an Italian composer best known for his operas.",
+        "He was born near Busseto, a small town in the modern province of Parma, to a family of moderate means, receiving a musical education with the help of a local patron named Antonio Barezzi.",
+        "Verdi came to dominate the Italian opera scene after the era of Gioachino Rossini, Vincenzo Bellini, and Gaetano Donizetti, whose works significantly influenced him.",
+        "He was also strongly influenced by the French Grand opera style, particularly Giacomo Meyerbeer and Gaspare Spontini.",
+        "In his early operas, Verdi demonstrated sympathy with the Risorgimento movement which sought the unification of Italy.",
+        "The chorus \"Va, pensiero\" from his early opera Nabucco (1842), and similar choruses in later operas, were much in the spirit of the unification movement, and the composer himself became esteemed as a representative of these ideals.",
+        "An intensely private person, Verdi did not seek to ingratiate himself with popular movements.",
+        "As he became professionally successful, he was able to reduce his operatic workload and sought to establish himself as a landowner in his native region.",
+        "He found further fame with the three peaks of his \"middle period\": Rigoletto (1851), Il trovatore and La traviata (both 1853).",
+        "He surprised the musical world by returning, after his success with the opera Aida (1871), with three late masterpieces: his Requiem (1874), and the operas Otello (1887) and Falstaff (1893).",
+        "Verdi's operas remain among the most popular in the repertoire.",
+        "In 2013, the bicentenary of his birth was widely celebrated around the world with television and radio broadcasts and live performances."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Italy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14532",
+      "retrieved_at": "2026-10-18T17:11:07.308Z",
+      "sha256": "cb7d9ad84bfa777fb504c20f96d30d173fc5b8862c0251e1e5bf64eca2f04587",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Italy, officially the Italian Republic, is a country in Southern and Western Europe.",
+        "It consists of a peninsula, which extends into the Mediterranean Sea, with the Alps on its northern land border, as well as nearly 800 islands, notably Sicily and Sardinia.",
+        "Italy shares land borders with France to the west; Switzerland and Austria to the north; Slovenia to the east; and the two enclaves of Vatican City and San Marino.",
+        "It is the tenth-largest country in Europe by area, covering 301,340 km2 (116,350 sq mi), and the third-most populous member state of the European Union, with nearly 59 million inhabitants.",
+        "Rome is the capital of Italy; other major cities include Milan, Naples, Turin, Palermo, Bologna, Florence, Genoa, Bari, and Venice.",
+        "The history of Italy goes back to numerous Italic peoples, notably including the ancient Romans, who conquered the Mediterranean world during the Roman Republic and ruled it for centuries during the Roman Empire.",
+        "With the spread of Christianity, Rome became the seat of the Catholic Church and the Papacy.",
+        "Barbarian invasions and other factors led to the decline and fall of the Western Roman Empire between late antiquity and the Early Middle Ages.",
+        "By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.",
+        "The Italian Renaissance flourished during the 15th and 16th centuries and spread to the rest of Europe.",
+        "Italian explorers discovered new routes to the Far East and the New World, contributing significantly to the Age of Discovery.",
+        "After centuries of political and territorial divisions, the Kingdom of Italy was established in 1861, following wars of independence and the Expedition of the Thousand."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Wolfgang Amadeus Mozart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33163",
+      "retrieved_at": "2026-10-18T17:11:07.308Z",
+      "sha256": "289c0398d9b9320b253f76a3ede5c4611c224716765535fd72be7a54015e7431",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wolfgang Amadeus Mozart (27 January 1756 – 5 December 1791) was a Classical composer and musician.",
+        "He completed more than 800 works in his life—including outstanding examples of most of the genres of his time: symphonies, concertos, chamber music, opera and choral music.",
+        "He is regarded as one of the greatest composers in the history of Western music.",
+        "Born in Salzburg, Mozart quickly emerged as a child prodigy under the training of his father Leopold, a skilled pedagogue.",
+        "At the age of five he was already competent on keyboard and violin, had begun to compose, and had performed before European royalty.",
+        "His father took him on a grand tour of Europe and then three trips to Italy.",
+        "At 17 he was a musician at the Salzburg court but grew restless and travelled in search of a better position.",
+        "A fruitless journey in search of employment (1777–1779) led him to Paris, Mannheim, Munich and eventually back to Salzburg.",
+        "During this time he wrote his five violin concertos, the Sinfonia Concertante, various masses and the opera Idomeneo.",
+        "While he was visiting Vienna in 1781, Mozart's quarrels with his Salzburg employers came to a head and he was dismissed.",
+        "He chose to remain in Vienna, where he stayed for the rest of his life, achieving fame and some financial success, but no long-term security.",
+        "During Mozart's early years in Vienna he produced several notable works, such as the opera Die Entführung aus dem Serail, the Great Mass in C minor, the \"Haydn\" Quartets and a number of symphonies."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Toxoplasmosis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73592",
+      "retrieved_at": "2026-10-18T17:11:07.308Z",
+      "sha256": "a5efe528089ed12ed5c22a0494f4ba756a574115a0390c9218314663f4563434",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Toxoplasmosis is a parasitic disease caused by Toxoplasma gondii, an apicomplexan.",
+        "Infections with toxoplasmosis are associated with a variety of neuropsychiatric and behavioral conditions.",
+        "Occasionally, infected individuals may experience a few weeks or months of mild, flu-like illness such as muscle aches and tender lymph nodes.",
+        "In those with a weakened immune system, severe symptoms such as seizures and poor coordination may occur.",
+        "If a woman becomes infected during pregnancy, a condition known as congenital toxoplasmosis may affect the child.",
+        "Toxoplasmosis is usually spread by eating poorly cooked food that contains cysts, by exposure to infected cat feces, or from an infected woman to her baby during pregnancy.",
+        "Rarely, the disease may be spread by blood transfusion or other organ transplant.",
+        "It is thought to not otherwise spread between people, but broader transmissibility remains a matter of scientific debate.",
+        "gondii in human semen and have proposed sexual transmission as a possible route, though this has not been established as a primary mode of spread.",
+        "The parasite is only known to reproduce sexually in the cat family.",
+        "It can infect most types of warm-blooded animals, including humans.",
+        "Diagnosis is typically by testing blood for antibodies or by testing the amniotic fluid in a pregnant patient for the parasite's DNA."
+      ]
+    }
+  ]
+}

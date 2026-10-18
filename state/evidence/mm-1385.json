@@ -1,0 +1,127 @@
+{
+  "id": "mm-1385",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Bear the Burden of Student Loans?",
+      "publisher": "Duke University Press",
+      "author": "Park, Hyewon",
+      "published_at": "2026-10-09",
+      "url": "https://doi.org/10.1215/00219118-12603064",
+      "retrieved_at": "2026-10-18T15:43:24.620Z",
+      "sha256": "b6d06f86ee92b9deca43cd6d5da81c5264865343b856bd597318c53558843784",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract This essay investigates what it means for young people in East Asia to go to college by looking at the growing number of young adults who attend higher education using National Student Loans.",
+        "In-depth interviews with nineteen low-income young adults in South Korea and Japan revealed that the decision to attend college has become more common in both societies, with positive evaluations of National Student Loans and student debts.",
+        "They strategically positioned their student loans by distinguishing them from other loans.",
+        "In addition, the author found that higher education has more complex meanings in East Asia than simply a means of economic benefit.",
+        "For example, in South Korea, higher education was equated with gaining prestige goods, while in Japan, going to college was considered the ideal way for young people to spend their twenties."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Student Loans as Taxes",
+      "publisher": "Scholarship - GEORGETOWN LAW (Georgetown University)",
+      "author": "John R. Brooks",
+      "published_at": "2016-04-25",
+      "url": "https://openalex.org/W2500176836",
+      "retrieved_at": "2026-10-18T15:43:25.370Z",
+      "sha256": "dbf594cc540a46a5e2ab4895b530f310dafb325fad7a1b8d2a71fc1ad8510587",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The growth of college tuition and the corresponding rise in student loan debt have become major issues of public importance.",
+        "Total outstanding student debt is at least $1.3 trillion, and tuitions keep growing, even while we arguably need to invest more in higher education to add skills and grow our economy.",
+        "Bernie Sanders, I-Vt., has made higher education reform a major part of his Democratic presidential campaign platform, proposing a new financial transactions tax to pay for large grants to states that offer free tuition to public universities.",
+        "His opponent, Hillary Clinton, has proposed grants to states to offer ‘‘no-debt-tuition,’’ paid for in part by repealing several tax expenditures.",
+        "These and other plans would essentially increase federal spending on higher education through expanded progressive taxation."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Student loan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=464990",
+      "retrieved_at": "2026-10-18T15:43:25.370Z",
+      "sha256": "d9e830d983d360b1360b29825b23e60975362c2b9d472628fd480176f4ac095c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A student loan is a type of loan designed to help students pay for tertiary education and the associated fees, such as tuition, books and supplies, and living expenses.",
+        "It may differ from other types of loans in the fact that the interest rate may be substantially lower and the repayment schedule may be deferred while the student is still in school.",
+        "It also differs in many countries in the strict laws regulating renegotiating and bankruptcy.",
+        "This article highlights the differences of the student loan system in several major countries.",
+        "The financial risk of student loan defaults can be carried by the tertiary education institution.",
+        "A student loan is one of many forms of student financial aid."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "College tuition in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4585857",
+      "retrieved_at": "2026-10-18T15:43:25.370Z",
+      "sha256": "e66e33e5d7733fc2aac2da3a7f9b1f41159b1f0c00b09ccb9c2bc5136884cf0e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "College tuition in the United States is the cost of higher education collected by educational institutions in the United States, and paid by individuals.",
+        "It does not include the tuition covered through general taxes or from other government funds, or that which is paid from university endowment funds or gifts.",
+        "Tuition for college has increased as the value, quality, and quantity of education have increased.",
+        "Many feel that increases in cost have not been accompanied by increases in quality, and that administrative costs are excessive.",
+        "The value of a college education has become a topic of national debate in the U.S."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Student loans in New Zealand",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10904516",
+      "retrieved_at": "2026-10-18T15:43:25.370Z",
+      "sha256": "7fb8b45a00fa4861a1b581df0c1562005d350bd31210cd44bb96c0ff9e28c107",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Student loans in New Zealand are provided by the Student Loan Scheme (SLS), introduced in New Zealand in 1992, which provides student loans and allowances for course fees, course-related costs, and living costs to tertiary students who meet StudyLink's funding criteria.",
+        "StudyLink is the public organisation under the Ministry for Social Development that is responsible for administering student loans and allowances.",
+        "Repayment of student loans is required as soon as the income threshold of $22,828 (2024 tax year) is reached, this applies even if the borrower is still studying.",
+        "Repayments are managed by the Inland Revenue Department (IRD), and information about the borrower's loans can be accessed through their myIR account.",
+        "The loan repayment rate is 12% of every dollar over the income threshold, re-calculated at the start of the tax year."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Student loans in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10905128",
+      "retrieved_at": "2026-10-18T15:43:25.370Z",
+      "sha256": "a78f3d2ab8c86670ba46eefb88c42b8353bedcd2cab918a3ea0194b35b02807e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the United States, student loans are a form of financial aid intended to help students access higher education.",
+        "In 2018, 70 percent of higher education graduates had used loans to cover some or all of their expenses.",
+        "With notable exceptions, student loans must be repaid, in contrast to other forms of financial aid such as scholarships and bursaries which are not repaid, and grants, which rarely have to be repaid.",
+        "Student loans may be discharged through bankruptcy, but this is difficult.",
+        "Research shows that access to student loans increases credit-constrained students' degree completion and later-life earnings while having no impact on overall debt.",
+        "At the end of the second quarter of federal fiscal year 2026, on March 31, the federal student loan portfolio included $1.7239 trillion in outstanding principal and interest for 42.6 million unduplicated recipients.",
+        "In 2019, students who borrowed to complete a bachelor's degree had about $30,000 of debt upon graduation.",
+        "Almost half of all loans are for graduate school, typically in much higher amounts.",
+        "Loan amounts vary widely based on race, social class, age, institution type, and degree sought.",
+        "As of 2017, student debt constituted the largest non-mortgage liability for US households.",
+        "Research indicates that increasing borrowing limits drives tuition increases.",
+        "Student loan defaults are disproportionately common in the for-profit college sector."
+      ]
+    }
+  ]
+}

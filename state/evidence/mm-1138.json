@@ -1,0 +1,129 @@
+{
+  "id": "mm-1138",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Government Websites Must Enable AI-Mediated Access",
+      "publisher": "Elsevier BV",
+      "author": "Jessee, Ryan",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6321738",
+      "retrieved_at": "2026-10-18T15:30:37.114Z",
+      "sha256": "e5838c4840531530ced41cac050c9c4e82b19db9175d98b68c77b98a24361fed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI-mediated search has become a primary channel through which citizens access government information, yet most federal agencies block AI crawlers by default.",
+        "This paper argues that the failure to enable structured AI access carries measurable costs: degraded information quality for citizens, increased contact center demand, and lost return on existing digital investment.",
+        "The Government Publishing Office's Model Context Protocol server provides a federal precedent; what is missing is the policy framework to extend it government-wide."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Usability of volunteer brokerage websites : The why and how of user testing",
+      "publisher": "Research portal (Tilburg University)",
+      "author": "E.C.H. van Gilst; Aize van der Sluis; Len A. M. van de Goor",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3014932760",
+      "retrieved_at": "2026-10-18T15:30:38.076Z",
+      "sha256": "e97e258f7434cd36210241b6151e42b089027cf1af98f19b74052b005085b397",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dutch volunteer centers offer online volunteer brokerage via their websites.",
+        "Usability is a crucial factor for the success of this service.",
+        "It determines whether or not visitors or potential volunteers stay on the website and a match can be made.",
+        "In this article, user testing is applied to the websites of five volunteer centers.",
+        "The results provide information on the usability of these specific websites.",
+        "In addition, other volunteer centers are offered insight into the various problems of usability and a tool to test this."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "HTTPS",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13586",
+      "retrieved_at": "2026-10-18T15:30:38.076Z",
+      "sha256": "7fb728258277570b8474149086a596dfa33b8d3b5873e964149e3aaac02c73fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP).",
+        "It uses encryption for secure communication over a computer network, and is widely used on the Internet.",
+        "In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).",
+        "The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL.",
+        "The principal motivations for HTTPS are authentication of the accessed website and protection of the privacy and integrity of the exchanged data while it is in transit.",
+        "It protects against man-in-the-middle attacks, and the bidirectional block cipher encryption of communications between a client and server protects the communications against eavesdropping and tampering.",
+        "The authentication aspect of HTTPS requires a trusted third party to sign server-side digital certificates.",
+        "This was historically an expensive operation, which meant fully authenticated HTTPS connections were usually found only on secured payment transaction services and other secured corporate information systems on the World Wide Web.",
+        "In 2016, a campaign by the Electronic Frontier Foundation with the support of web browser developers led to the protocol becoming more prevalent.",
+        "HTTPS has since 2018 been used more often by web users than non-secure HTTP, primarily to protect page authenticity on all types of websites, secure accounts, and keep user communications, identity, and web browsing private."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "World Wide Web",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33139",
+      "retrieved_at": "2026-10-18T15:30:38.076Z",
+      "sha256": "e9e44e242f458287d9b51a0480a211a54f340fbe3728d4fafad085b05614e235",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The World Wide Web (also known as WWW, W3, or simply the Web) is a global interconnected information system that enables content sharing over the Internet.",
+        "It facilitates access to documents and other web resources according to specific rules of the Hypertext Transfer Protocol (HTTP).",
+        "The Web was invented by English computer scientist Tim Berners-Lee while at CERN in 1989 and opened to the public in 1993.",
+        "It was conceived as a \"universal linked information system\".",
+        "Documents and other media content are made available to the network through web servers and can be accessed by programs such as web browsers.",
+        "Servers and resources on the World Wide Web are identified and located through a character string called a uniform resource locator (URL).",
+        "The original and still very common document type is a web page formatted in Hypertext Markup Language (HTML).",
+        "This markup language supports plain text, images, embedded video and audio contents, and scripts (short programs) that implement complex user interaction.",
+        "The HTML language also supports hyperlinks (embedded URLs), which provide immediate access to other web resources.",
+        "Web navigation, or web surfing, is the common practice of following such hyperlinks across multiple websites.",
+        "Web applications are web pages that function as application software.",
+        "The information on the Web is transferred across the Internet using HTTP."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Web browser",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33173",
+      "retrieved_at": "2026-10-18T15:30:38.076Z",
+      "sha256": "809bd8b7b5e3eff36c8f7eb98dea85ed5f64592218fc393de958a29dd498033a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A web browser, often abbreviated as browser, is an application for accessing websites.",
+        "When a user requests a web page from a particular website, the browser retrieves its files from a web server and then displays the page on the user's screen.",
+        "Browsers can also display content stored locally on the user's device.",
+        "Browsers are used on a range of devices, including desktops, laptops, tablets, smartphones, smartwatches, smart televisions and consoles.",
+        "As of 2026, the most used browsers worldwide are Google Chrome (~69% market share), Safari (~16%), Edge (~5%), Firefox (~2%), Samsung Browser (~2%), and Opera (~2%).",
+        "As of 2023, an estimated 5.4 billion people had used a browser."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Static web page",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7123267",
+      "retrieved_at": "2026-10-18T15:30:38.076Z",
+      "sha256": "884e78e3bca9aaa27390e96080f6b835679e22d7f9d4ccd8ba2b504b370d97d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A static web page, sometimes called a flat page or a stationary page, is a web page that is delivered to a web browser exactly as stored, in contrast to dynamic web pages which are generated by a web application.",
+        "Consequently, a static web page displays the same information for all users, from all contexts, subject to modern capabilities of a web server to negotiate content-type or language of the document where such versions are available and the server is configured to do so.",
+        "However, a webpage's JavaScript can introduce dynamic functionality which may make the static web page dynamic."
+      ]
+    }
+  ]
+}

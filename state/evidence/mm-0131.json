@@ -1,0 +1,133 @@
+{
+  "id": "mm-0131",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "First Impressions Matter: How CS Syllabi Communicate and Reflect Accessibility Norms",
+      "publisher": "University of Denver, University Libraries",
+      "author": "Fatima, Muskan; Oleson, Alannah",
+      "published_at": null,
+      "url": "https://doi.org/10.56902/etdcrp.2026.32",
+      "retrieved_at": "2026-10-18T14:53:12.563Z",
+      "sha256": "25bf175dd2869ae9658b1fd1b08584a074480a24d0132e4ef11ccc7ced52ec80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Although accessible and inclusive teaching practices have gained recent attention in computing education literature, relatively little is known about how accessibility policies are represented in course materials shared with students.",
+        "This paper explores how computer science syllabi from varied post-secondary U.S.-based institutions frame accessibility information in the course materials provided to students.",
+        "We collected and analyze 34 syllabi from 11 institutions representing CS1, data structures &amp; algorithms (DSA), and human-computer interaction (HCI) courses to understand how each frames accessibility and accommodation information across different types of computing courses.",
+        "We found that while most syllabi acknowledge accessibility and disability, fewer provide the actionable details that would most help disabled students succeed in CS courses.",
+        "Based on these insights, we discuss implications for inclusive CS teaching across different areas, providing preliminary recommendations for how to effectively communicate accessibility information in CS syllabi."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cognitive Organization of Person Impressions.",
+      "publisher": "Defense Technical Information Center (DTIC)",
+      "author": "Thomas M. Ostrom; John H. Lingle; John Barron Pryor",
+      "published_at": "1979-08-01",
+      "url": "https://openalex.org/W52644342",
+      "retrieved_at": "2026-10-18T14:53:12.965Z",
+      "sha256": "d3a14d2c9be9699e40bce90285005b1ff1d19ee2985e9a11df54b11f0e98a550",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The first series examines the effect of making first impression judgments on memory for information about the person.",
+        "It was found that even up to one week later, people have a better memory for facts relevant to the judgment than for irrelevant facts.",
+        "The second series of studies deals with how memory is searched when making a decision or judgment about another person.",
+        "It was found that people do not systematically review previously obtained facts about the person.",
+        "Rather, they recall previous judgments they made about the person, even if those judgments are irrelevant to the present decision, and use that as the basis for the required decision."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Precedent",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23004",
+      "retrieved_at": "2026-10-18T14:53:12.965Z",
+      "sha256": "5ba0271a6591f2cc26f0988b78b21c883dd4bee68eacbd33bd508d3894121e0f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Precedent is a judicial decision that serves as an authority for courts when deciding subsequent identical or similar cases.",
+        "Fundamental to common law legal systems, precedent operates under the principle of stare decisis (\"to stand by things decided\"), where past judicial decisions serve as case law to guide future rulings, thus promoting consistency and predictability.",
+        "Precedent is a defining feature that sets common law systems apart from civil law systems.",
+        "In common law, precedent can either be something courts must follow (binding) or something they can consider but do not have to follow (persuasive).",
+        "Civil law systems, in contrast, are characterized by comprehensive codes and detailed statutes, with little emphasis on precedent (see jurisprudence constante), and where judges primarily focus on fact-finding and applying the codified law.",
+        "Courts in common law systems rely heavily on case law, which refers to the collection of precedents and legal principles established by previous judicial decisions on specific issues or topics.",
+        "The development of case law depends on the systematic publication and indexing of these decisions in law reports, making them accessible to lawyers, courts, and the general public."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Impression management",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=601795",
+      "retrieved_at": "2026-10-18T14:53:12.965Z",
+      "sha256": "c24258de3b4fb63c214023db74b8c3fe5147baa80b793581b9f7cb7eeea23779",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Impression management is a conscious or subconscious process in which people attempt to influence the perceptions of other people about a person, object or event by regulating and controlling information in social interaction.",
+        "It was first conceptualized by Erving Goffman in 1956 in The Presentation of Self in Everyday Life, and then was expanded upon in 1967.",
+        "Impression management behaviors include accounts (providing \"explanations for a negative event to escape disapproval\"), excuses (denying \"responsibility for negative outcomes\"), and opinion conformity (\"speak(ing) or behav(ing) in ways consistent with the target\"), along with many others.",
+        "By utilizing such behaviors, those who partake in impression management are able to control others' perception of them or events pertaining to them.",
+        "Impression management is possible in nearly any situation, such as in sports (wearing flashy clothes or trying to impress fans with their skills), or on social media (only sharing positive posts).",
+        "Impression management can be used with either benevolent or malicious intent.",
+        "Impression management is usually used synonymously with self-presentation, in which a person tries to influence the perception of their image.",
+        "The notion of impression management was first applied to face-to-face communication, but then was expanded to apply to computer-mediated communication.",
+        "The concept of impression management is applicable to academic fields of study such as psychology and sociology as well as practical fields such as corporate communication and media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dental impression",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4639751",
+      "retrieved_at": "2026-10-18T14:53:12.965Z",
+      "sha256": "0231e49f16514466c6dd4a1f47fea869b1a2c12252fc383a742494c3b7e6bca2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A dental impression is a negative imprint of hard and soft tissues in the mouth from which a positive reproduction, such as a cast or model, can be formed.",
+        "It is made by placing an appropriate material in a dental impression tray which is designed to roughly fit over the dental arches.",
+        "The impression material is liquid or semi-solid when first mixed and placed in the mouth.",
+        "It then sets to become an elastic solid, which usually takes a few minutes depending upon the material.",
+        "This leaves an imprint of a person's dentition and surrounding structures of the oral cavity.",
+        "Digital impressions using computerized scanning are now available."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Liver",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17384301",
+      "retrieved_at": "2026-10-18T14:53:12.965Z",
+      "sha256": "90c738e70fa354d18fb364f379bdd1f5dbb6654bb0a948932b4a5aaa880368c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The liver is a major metabolic organ exclusively found in vertebrates which performs many essential biological functions, such as detoxification of the organism and the synthesis of various proteins and other biochemicals necessary for digestion and growth.",
+        "In humans, it is located in the right upper quadrant of the abdomen, below the diaphragm and mostly shielded by the lower right rib cage.",
+        "Its other metabolic roles include carbohydrate metabolism, the production of a number of hormones, conversion and storage of nutrients such as glucose and glycogen, and the decomposition of red blood cells.",
+        "Anatomical and medical terminology often use the prefix hepat- from ἡπατο-, from the Greek word for liver, such as hepatology, and hepatitis.",
+        "The liver is also an accessory digestive organ that produces bile, an alkaline fluid containing cholesterol and bile acids, which emulsifies and aids the break up of dietary fat.",
+        "The gallbladder, a small hollow pouch that sits just under the right lobe of liver, stores and concentrates the bile produced by the liver, which is later excreted to the duodenum to help with digestion.",
+        "The liver's highly specialized tissue, consisting mostly of hepatocytes, regulates a wide variety of high-volume biochemical reactions, including the synthesis and breakdown of small and complex organic molecules, many of which are necessary for normal vital functions.",
+        "Estimates regarding the organ's total number of functions vary, but are generally cited as being around 500.",
+        "For this reason, the liver has sometimes been described as the body's chemical factory.",
+        "It is not known how to compensate for the absence of liver function in the long term, although liver dialysis techniques can be used in the short term.",
+        "Artificial livers have not been developed to promote long-term replacement in the absence of the liver.",
+        "As of 2018, liver transplantation is the only option for complete liver failure."
+      ]
+    }
+  ]
+}

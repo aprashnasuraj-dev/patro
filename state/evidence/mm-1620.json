@@ -1,0 +1,143 @@
+{
+  "id": "mm-1620",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why does some rain fall harder than other rain?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Halverson, Jeffrey",
+      "published_at": "2020-08-13",
+      "url": "https://theconversation.com/why-does-some-rain-fall-harder-than-other-rain-143402",
+      "retrieved_at": "2026-10-18T16:00:01.279Z",
+      "sha256": "bfe93c4e8cd7f29a2febe4312b3b37034bc87380ef328f92182ebaf326972808",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair A downpour or a drizzle: What causes the difference?",
+        "David Pinzer Photography/Moment via Getty Images Why does some rain fall harder than other rain?",
+        "If you have a question you’d like an expert to answer, send it to curiouskidsus@theconversation.com .",
+        "– Naomi B., age 9, San Fancisco, California There are some days when the rain falls peacefully and gently, nourishing the Earth.",
+        "But on some other days the rain comes down in a torrential downpour that meteorologists like me call a cloudburst.",
+        "Standing outside in one of these intense rainstorms can feel like being smothered in a heavy, wet towel.",
+        "These storms can flood the lands below them and lead to great destruction.",
+        "All rain comes from a combination of two things: moisture in the air – usually in the form of clouds – and currents of air moving upwards.",
+        "As moist air rises up through a cloud, the air cools and the water in it turns into tiny raindrops.",
+        "This is the same thing that happens when you can see your breath on a cold evening .",
+        "The temperature change from warm to cool causes water droplets to form in your breath.",
+        "In a cloud, these tiny raindrops are very light and float as the rising air pushes them up."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why reforming Britain’s electoral system will be harder than ever",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Kelso, Alexandra",
+      "published_at": "2015-05-11",
+      "url": "https://theconversation.com/why-reforming-britains-electoral-system-will-be-harder-than-ever-41631",
+      "retrieved_at": "2026-10-18T16:00:01.904Z",
+      "sha256": "e249eb5c6326a6f80a9ef6703cab13557416e3b077f3bd386a37cb1e3bed4b68",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why reforming Britain’s electoral system will be harder than ever Skip to content Academic rigor, journalistic flair Why reforming Britain’s electoral system will be harder than ever Published: May 11, 2015 11:33am EDT Will the system be different by 2020?",
+        "It’s easy to point to almost any detail from the election outcome to support this claim .",
+        "A Conservative majority government was formed with 50.1% of seats in the House of Commons but just 36.9% of the national vote.",
+        "The Scottish National Party secured 95% of Scottish seats on a 50% share of the Scottish vote.",
+        "The UKIP story is especially illuminating as the party came second in 120 constituencies, became the third largest national party in terms of vote share, yet in the end made no electoral gains.",
+        "Considering UKIP and the Green Party together, they won over five million votes between them, but only two seats out of 650.",
+        "Analysis by the Electoral Reform Society shows that 63% of those who voted on May 7 did so for losing candidates, and that almost half of elected MPs won less than 50% of their constituency vote.",
+        "Looking at numbers like these, something seems decidedly rotten with our electoral system.",
+        "Alternative election outcomes Had the 2015 general election been run under a more proportional system , we would almost certainly have got the hung parliament that most of the forecasters had assured us we were destined for.",
+        "Under the Alternative Vote (AV) system, UKIP and the Greens would probably have won 82 and 24 seats respectively, while the Conservative majority would have disappeared.",
+        "Such figures are only estimates because there’s no guarantee that people would vote the same way under a different electoral system.",
+        "We were given the opportunity to adopt the AV system in a 2011 referendum, yet it was decisively rejected , with 68% of voters opting for No on a 42% turnout, in part the result of the abject failure of electoral reform advocates to craft a convincing case in favour of change."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T16:00:01.904Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Tay (chatbot)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=49933350",
+      "retrieved_at": "2026-10-18T16:00:01.904Z",
+      "sha256": "c10baf91254eebd2a80fca46621d817884a88c44dbd3cefa3e5e998d937059de",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tay was a chatbot that was originally released by Microsoft Corporation as a Twitter bot on March 23, 2016.",
+        "It caused controversy when the bot began to post inflammatory and offensive tweets through its Twitter account, causing Microsoft to shut down the service only 16 hours after its launch.",
+        "According to Microsoft, this was caused by trolls who \"attacked\" the service as the bot made replies based on its interactions with people on Twitter."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Hallucination (artificial intelligence)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72607666",
+      "retrieved_at": "2026-10-18T16:00:01.904Z",
+      "sha256": "ae92e4997c7a81b6a676109cba2fc7f7a7acb1fb4a0de3dde0ca95968747c754",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the field of artificial intelligence (AI), a hallucination or artificial hallucination (also called bullshitting, confabulation, delusion, or mirage) is a response generated by AI that contains false or misleading information presented as fact.",
+        "These terms draw a loose analogy with human psychology, where a hallucination typically involves false percepts.",
+        "Chatbots powered by large language models (LLMs), like ChatGPT, may embed plausible-sounding random falsehoods within their generated content, such as fabricated citations.",
+        "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+        "Some software engineers and statisticians have criticized the specific term \"AI hallucination\" for unreasonably anthropomorphizing computers.",
+        "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T16:00:01.904Z",
+      "sha256": "6b443323923df348d75161f4eab413c7f47bbbe91eb8233989a6ca3d27b54b5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    }
+  ]
+}

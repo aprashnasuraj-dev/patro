@@ -1,0 +1,137 @@
+{
+  "id": "mm-1635",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Second Skyscraper City",
+      "publisher": "University of Illinois Press",
+      "author": "Leslie, Thomas",
+      "published_at": "2023-06-20",
+      "url": "https://doi.org/10.5622/illinois/9780252044953.003.0001",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "086fdffaa9c07e14f18785013a89729d990c708bb2a78f1ea64796851dd2f259",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chicago in 1950 was economically and architecturally moribund; after eight decades of unprecedented economic growth, the Great Depression crushed the city’s real estate market.",
+        "The 1934 Field Building would be the last skyscraper built in the Loop for twenty years and, despite efforts by civic boosters the “Second City” saw only stagnation and decline.",
+        "A new generation of architects and engineers, however, stood waiting.",
+        "Some were products of the city’s prior booms, opening firms that were hungry for any opportunity to innovate.",
+        "Others were new arrivals—in particular Ludwig Mies van der Rohe, whose arrival as the new director of the Armour Institute’s (later the Illinois Institute of Technology) architecture program in 1937 promised an architectural resurgence."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "COMPARISON OF SKYSCRAPER BUILDING DESIGN: ISOLATED FOUNDATIONS VS. NON-ISOLATED FOUNDATIONS",
+      "publisher": "Altinbas University",
+      "author": "RAHIMI, Mahdi; NAİMİ, Sepanta",
+      "published_at": "2023-06-30",
+      "url": "https://doi.org/10.53600/ajesa.1321190",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "30222aa8634f8c9d7cbdb71a3c9373bc1126253baee226fa973d0af739a34ca9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As the population grows, the need for safe and comfortable places to live and work increases.",
+        "Tall buildings are becoming a popular option as they enable efficient use of urban space and provide solutions to the challenges of urbanization.",
+        "However, the safety of these buildings against natural hazards such as earthquakes is crucial.",
+        "Engineers are putting a lot of effort into the construction and design of tall buildings, some of which have been successfully completed, while others have been halted due to design difficulties.",
+        "High-rise buildings have challenged engineers' endurance due to their height and number of floors.",
+        "Efforts have been made to increase the resistance of tall buildings to natural factors and the weight of the building.",
+        "One of the most important factors is the building's vibration movement, which must be resistant to wind, loads on the building, and earthquakes.",
+        "One way to increase the strength of the building is to use isolated foundations.",
+        "This article investigates whether using an isolated foundation has an effect on the strength of tall buildings.",
+        "Two 51-floor tall buildings were designed, one with an isolated foundation and one without.",
+        "The differences between the buildings were evaluated in terms of earthquakes, the greatest risk for buildings.",
+        "Using the ETABS program and following international standards, these two buildings were designed to withstand the forces of wind, earthquakes, and loads on the building."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Burj Khalifa",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=794957",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "d1858da1f278c4ad5c63e5685a3f308bed9054b27a23785e4f1babc2fa4ac638",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Burj Khalifa (previously known as Burj Dubai prior to inauguration) is a megatall skyscraper in Dubai, United Arab Emirates.",
+        "Designed by the SOM architectural firm, it is the world's tallest structure, with a total height of 829.8 m (2,722 ft, or just over half a mile) and a roof height (excluding the antenna, but including a 242.6 m spire) of 828 m (2,717 ft).",
+        "It has been the tallest building in the world since its complete inauguration in 2011, surpassing Taipei 101, which had held the record since 2004.",
+        "Construction of the Burj Khalifa began in 2004; the exterior was completed five years later.",
+        "Some of the structural steel for the building was salvaged from the demolished Palace of the Republic in East Berlin.",
+        "The building was opened in 2010 as part of a new development called Downtown Dubai.",
+        "It was designed to be the centrepiece of large-scale, mixed-use development.",
+        "The building became fully operational with the opening of its last major facility in 2011.",
+        "The building is named after the former president of the United Arab Emirates (UAE), Sheikh Khalifa bin Zayed Al Nahyan.",
+        "The United Arab Emirates government provided Dubai with financial support as the developer, Emaar Properties, experienced financial problems during the Great Recession.",
+        "Then-president of the United Arab Emirates, Khalifa bin Zayed, organised federal financial support.",
+        "For his support, Mohammed bin Rashid, Ruler of Dubai, changed the name from \"Burj Dubai\" to \"Burj Khalifa\" during inauguration."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "22 Bishopsgate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2129645",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "b9b6b43f36e444fb724ad1d8ab04814eb8550b6ca6089c4bb2b05937149ed410",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "22 Bishopsgate is a commercial skyscraper in London, England.",
+        "Completed in 2020, it is located in Bishopsgate, in the City of London financial district, and stands 278 m (912 ft) tall with 62 storeys.",
+        "It replaced an earlier plan for a 288 m (945 ft) tower named The Pinnacle, on which construction was started in 2008 but suspended in 2012 following the Great Recession, with only the concrete core of the first seven storeys completed.",
+        "The structure was later re-designed to reduce construction costs, and was re-named after its postal address, 22 Bishopsgate.",
+        "It is the second tallest building in the United Kingdom and the seventeenth tallest building in Europe.",
+        "Under the original plans, The Pinnacle was to become the second-tallest building in both the United Kingdom and the European Union after The Shard, also in London.",
+        "The Economic Development Corporation of Saudi Arabia and its development manager, Arab Investments, which largely funded the construction, invested £500 million in it in return for a majority stake in the structure.",
+        "However, the build was put on hold due to a lack of additional funding and letting commitments.",
+        "In 2013 it was reported that a review of the design and construction process, undertaken by original architects Kohn Pedersen Fox, agents CBRE and the developers, had been completed, with the building's \"helter skelter\" style exterior set to be retained.",
+        "In 2015, the site was sold to a consortium led by Axa Real Estate and a re-design with a simpler exterior, ultimately excluding the costly \"helter skelter\" shape, was submitted for public consultation before application for planning permission.",
+        "In April 2016, it was confirmed that property company Lipton Rogers and its joint venture partner, Axa IM – Real Assets, would complete the £1bn development in 2019.",
+        "At 278 metres, the building was set to be the tallest in the City of London at that time and, due to potential loss of light to surrounding buildings, there had been objections to the development from several parties."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Jeddah Tower",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16746099",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "0f682583535b7cf5d56bda777d1de8f9ca88834d75a1493aaaad7deb8b6d51b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jeddah Tower is a megatall skyscraper currently under construction in Jeddah, Saudi Arabia.",
+        "Located in the north of the city, it is the centrepiece of the Jeddah Economic City project.",
+        "Jeddah Tower is planned to be the first 1-kilometre-tall (1,000 m; 3,300 ft) building and, upon completion, would become the world's tallest building or structure, standing at least 180 metres (590 ft) taller than the Burj Khalifa.",
+        "As of 9 October 2026, construction has surpassed the 118th floor and reached a height over 470 metres (1,540 ft)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of visionary tall buildings and structures",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20060066",
+      "retrieved_at": "2026-10-18T16:00:08.097Z",
+      "sha256": "b384562ad0b7b187ae0b9fcef9b420891d0e8415f3b6dca3479bc5a820f3758a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of buildings and other structures that have been envisioned.",
+        "The definition of \"vision\" is that used by the Council on Tall Buildings and Urban Habitat.",
+        "The list does not include under construction buildings; these are listed at List of tallest buildings § Buildings under construction."
+      ]
+    }
+  ]
+}

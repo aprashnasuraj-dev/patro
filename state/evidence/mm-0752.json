@@ -1,0 +1,105 @@
+{
+  "id": "mm-0752",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Don’t We Use Roman Numerals Anymore?",
+      "publisher": "Oxford University PressNew York, NY",
+      "author": "Pickover, Clifford A",
+      "published_at": "2001-01-04",
+      "url": "https://doi.org/10.1093/oso/9780195133424.003.0002",
+      "retrieved_at": "2026-10-18T15:09:41.487Z",
+      "sha256": "22baa6de409537c55da71cb0b68ad2eb40a73a3da7e35ab9479ac5f7830518df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Googol, “I can answer your question, but before I tell you, you must solve a small puzzle with Roman numerals.",
+        "I don’t think this puzzle dates back to Roman times, but it looks so simple that it could well be quite ancient.” Dr.",
+        "Googol drew the Roman numerals I, II, and III on 6 columns as schematically illustrated in the aerial view in Figure 2.1."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Roman numerals",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25657",
+      "retrieved_at": "2026-10-18T15:09:43.645Z",
+      "sha256": "3d322ca60776788b3c7a18c1a882cf45ab7521143f6db04271592abad78f71d6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Roman numerals are a numeral system that originated in ancient Rome and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.",
+        "Like many other ancient numeral systems, Roman numerals are based on the additive principle: a number is written by concatenating individual symbols, each representing a fixed value, and the value of the resulting numeral phrase is the sum of the individual values of each letter.",
+        "The modern style of Roman numerals uses only seven letters from the Latin alphabet as symbols: I meaning 1, V meaning 5, X meaning 10, L meaning 50, C meaning 100, D meaning 500, and M meaning 1000.",
+        "For example, the Roman numeral XXVII represents the number 10 + 10 + 5 + 1 + 1 = 27.",
+        "When a smaller numeral symbol precedes a larger one, subtraction is implied; for example, the notation IV represents 5 − 1 = 4 and IX represents 10 − 1 = 9.",
+        "The use of Roman numerals has continued long after the decline of the Roman Empire.",
+        "From the 14th century on, Roman numerals began to be replaced by the positional Hindu–Arabic numeral system; however, this process was gradual, and the use of Roman numerals has persisted in some contexts, such as on clock faces.",
+        "For instance, on the clock of Big Ben (designed in 1852), the hours from 1 to 12 are written as:\n\nOther common uses include year numbers on monuments and buildings and copyright dates on the title screens of films and television programmes.",
+        "MCM signifies 1000 + 1000 − 100 = 1900, so 1912 is written MCMXII.",
+        "For the years of the 21st century, MM indicates 2000, so 2026 (the current year) is written MMXXVI."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "0",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34513",
+      "retrieved_at": "2026-10-18T15:09:43.645Z",
+      "sha256": "d9e5a7ae087e72b2d0b449996e04fa4ee13bff32f11d8af1eb14675dbdd2b718",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Adding zero to or subtracting zero from any number leaves that number unchanged.",
+        "In mathematical terminology, 0 is the additive identity of the integers, rational numbers, real numbers, complex numbers, and algebraic structures.",
+        "Multiplying any number by 0 results in 0; therefore, division by zero is generally regarded as undefined in arithmetic.",
+        "Any number to the power of 0 equals 1, except that zero to the power of zero is sometimes regarded as undefined.",
+        "As a numerical digit, 0 plays a crucial role in positional notation (i.e.,  place value notation): it means that the zero position does not increase or decrease the number's total value.",
+        "For example, 205 in decimal notation means two hundreds, no tens, and five ones, which equals two hundreds plus five ones.",
+        "The same principle applies in place-value notations that uses a base other than ten, such as binary and hexadecimal notations.",
+        "This use of zero derives from Indian mathematics, which was transmitted to Europe by medieval Islamic mathematicians and popularized by Fibonacci.",
+        "Common names for the number 0 in English include zero, nought, naught (), and nil.",
+        "In contexts where at least one adjacent digit distinguishes it from the letter O, the number is sometimes pronounced as oh or o ().",
+        "Historically, ought, aught (), and cipher have also been used."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Babylonian cuneiform numerals",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=152323",
+      "retrieved_at": "2026-10-18T15:09:43.645Z",
+      "sha256": "89771b44d762138d951636f936d0d3f707046938a2b873cb444d2c6ebe556d99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The numeral system of the Babylonians, also used in Assyria and Chaldea, was written in cuneiform using a wedge-tipped reed stylus to print a mark on a soft clay tablet, which would be exposed in the sun to harden to create a permanent record.",
+        "The Babylonians were famous for their astronomical observations, as well as their calculations (aided by their invention of the abacus), and used a sexagesimal (base-60) number system inherited from either the Sumerian or the Akkadian civilizations.",
+        "The Babylonian system, however, was positional (having a convention for which \"end\" of the numeral represented the units)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Binary number",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=238686",
+      "retrieved_at": "2026-10-18T15:09:43.645Z",
+      "sha256": "7cf5f65b072233b34b7e7d742a49d24d48828b52001f8533e4c4f47751c829ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method for representing numbers that uses only two symbols for the natural numbers: typically 0 (zero) and 1 (one).",
+        "A binary number may also refer to a rational number that has a finite representation in the binary numeral system, that is, the quotient of an integer by a power of two.",
+        "The base-2 numeral system is a positional notation with a radix of 2."
+      ]
+    }
+  ]
+}

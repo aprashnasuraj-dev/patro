@@ -1,0 +1,124 @@
+{
+  "id": "mt-0587",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T16:45:25.831Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Giuseppe Verdi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12958",
+      "retrieved_at": "2026-10-18T16:45:26.094Z",
+      "sha256": "ddf9f2f3d02cac41e1bcabbf1d6e23cd4153af6cdaa818464d5fb2b56ace632e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Giuseppe Fortunino Francesco Verdi ( VAIR-dee; Italian: [dʒuˈzɛppe ˈverdi]; 9 or 10 October 1813 – 27 January 1901) was an Italian composer best known for his operas.",
+        "He was born near Busseto, a small town in the modern province of Parma, to a family of moderate means, receiving a musical education with the help of a local patron named Antonio Barezzi.",
+        "Verdi came to dominate the Italian opera scene after the era of Gioachino Rossini, Vincenzo Bellini, and Gaetano Donizetti, whose works significantly influenced him.",
+        "He was also strongly influenced by the French Grand opera style, particularly Giacomo Meyerbeer and Gaspare Spontini.",
+        "In his early operas, Verdi demonstrated sympathy with the Risorgimento movement which sought the unification of Italy.",
+        "The chorus \"Va, pensiero\" from his early opera Nabucco (1842), and similar choruses in later operas, were much in the spirit of the unification movement, and the composer himself became esteemed as a representative of these ideals.",
+        "An intensely private person, Verdi did not seek to ingratiate himself with popular movements.",
+        "As he became professionally successful, he was able to reduce his operatic workload and sought to establish himself as a landowner in his native region.",
+        "He found further fame with the three peaks of his \"middle period\": Rigoletto (1851), Il trovatore and La traviata (both 1853).",
+        "He surprised the musical world by returning, after his success with the opera Aida (1871), with three late masterpieces: his Requiem (1874), and the operas Otello (1887) and Falstaff (1893).",
+        "Verdi's operas remain among the most popular in the repertoire.",
+        "In 2013, the bicentenary of his birth was widely celebrated around the world with television and radio broadcasts and live performances."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T16:45:26.094Z",
+      "sha256": "b32e64e4e8b59f927e00153041c866232f89c7cd0a6c126898e55678f312e8ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Romanticism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26094",
+      "retrieved_at": "2026-10-18T16:45:26.094Z",
+      "sha256": "5b0c69b3788418c8dfd8aa83a3a502ed193e42a81f8144d6370ebc13d58f40b6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Romanticism (also known as the Romantic movement or Romantic era) was an artistic and intellectual movement that originated in Europe towards the end of the 18th century.",
+        "The purpose of the  movement was to advocate for the importance of subjectivity, imagination, and appreciation of nature in society and culture in response to the Age of Enlightenment and the Industrial Revolution.",
+        "Romanticists rejected the social conventions of the time in favour of a moral outlook known as individualism.",
+        "They argued that passion and intuition were crucial to understanding the world, and that beauty is more than merely an affair of form, but rather something that evokes a strong emotional response.",
+        "The Romanticist movement had a particular fondness for the Middle Ages, which to them represented an era of chivalry, heroism, and a more organic relationship between humans and their environment.",
+        "This idealization contrasted sharply with the values of their contemporary industrial society, which they considered alienating for its economic materialism and environmental degradation.",
+        "The movement's illustration of the Middle Ages was a central theme in debates, with allegations that Romanticist portrayals often overlooked the downsides of medieval life.",
+        "The consensus is that Romanticism peaked from 1800 until 1850.",
+        "However, a \"Late Romantic\" period and \"Neoromantic\" revivals are also discussed.",
+        "These extensions of the movement are characterized by a resistance to the increasingly experimental and abstract forms that culminated in modern art, and the deconstruction of traditional tonal harmony in music.",
+        "They continued the Romantic ideal, stressing depth of emotion in art and music while showcasing technical mastery in a mature Romantic style.",
+        "By the time of World War I, though, the cultural and artistic climate had changed to such a degree that Romanticism essentially dispersed into subsequent movements."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Legend of Zelda",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30035",
+      "retrieved_at": "2026-10-18T16:45:26.094Z",
+      "sha256": "d68e0ba305d70d3fcb07412bb8098df1ce254a26c9159ca0e4f7bb71c8354eed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Legend of Zelda is a video game series created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka.",
+        "It is primarily developed and published by Nintendo, but some installments and re-releases have been outsourced to Flagship, Grezzo, and Tantalus Media.",
+        "The series centers on the various incarnations of Link, a courageous young boy of the elf-like Hylian race, and Princess Zelda, a princess within the bloodline of the goddess Hylia.",
+        "They fight to save the land of Hyrule from Ganon, an evil warlord turned demon king who wishes to use the Triforce, a sacred relic that can grant any wish its user desires when complete, to remake the world in his own dark image.",
+        "Zelda's role has often been that of a damsel in distress or donor who assists Link.",
+        "If someone with a heart that does not possess a balance of Power, Courage, and Wisdom, attempts to touch the Triforce, it will split into three triangles and bond with three people whose hearts embody the required virtue.",
+        "While the conflict with Ganon serves as a backbone for the series, some games have featured other settings and antagonists, with Link traveling or being sent to these other lands in their time of need.",
+        "Since The Legend of Zelda was released in 1986, the series has expanded to include 21 entries on all of Nintendo's major game consoles, as well as a number of spin-offs.",
+        "An American animated TV series based on the games aired in 1989 and manga adaptations commissioned by Nintendo have been produced in Japan since 1997.",
+        "The Legend of Zelda is one of the best-selling video game franchises of all time, having sold over 150 million copies as of September 2024.",
+        "The series is also known for its high level of quality, with many of its entries considered among the greatest video games of all time."
+      ]
+    }
+  ]
+}

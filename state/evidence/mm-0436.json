@@ -1,0 +1,132 @@
+{
+  "id": "mm-0436",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Solution Branching and Dive Plane Reversal of Submarines at Low Speeds",
+      "publisher": "The Society of Naval Architects and Marine Engineers",
+      "author": "Papoulias, Fotis A.; Riedel, Jeffery S.",
+      "published_at": "1994-09-01",
+      "url": "https://doi.org/10.5957/jsr.1994.38.3.203",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "0e97181a552333fc4f68dc04eb13364becc0c68387ebe1d83c5af2fb38c285bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The problem of multiple steady-state solutions in the dive plane of submarines under depth control at low speeds is analyzed.",
+        "This phenomenon occurs regardless of the particular means used for depth control, manual or automatic, and linear or nonlinear.",
+        "It is shown that the primary bifurcation parameter is a Froude-like number based on the vehicle speed and metacentric height.",
+        "Generic solution branching is shown to occur below a critical Froude number.",
+        "Singularity theory techniques are employed to quantify the effects that various vehicle geometric properties and hydrodynamic characteristics have on steady-state motion.",
+        "It is demonstrated that a comprehensive bifurcation study provides a systematic and effective way of predicting the phenomenon of dive plane reversal at low speeds.",
+        "A complete characterization of the parameters in the problem, both in deep water and at periscope depth, is achieved through the organizing center of the pitchfork singularity."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Laser Communication to Submarine",
+      "publisher": "Electro-optics & Passive Countermeasures",
+      "author": "Pei Nan",
+      "published_at": "2004-01-01",
+      "url": "https://openalex.org/W2387751212",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "3a59551852a80156a170acfce2c5b7baee27133d9eeca161ad99753b972683b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The submarine, as an important fighting platform, plays an unsubstituted role in the war.",
+        "yet once it dives into the sea, the communication between the submarine and the water surface or the headquarters becomes extremely difficult because the water would attenuate the electromagnetic wave highly.",
+        "How to solve the communication problem to the submarine has turned into one of the subjects that the militarists of all over the world commonly concern.",
+        "We put forward a method to solve this problem and analyze the feasibility based on the theory of laser atmosphere communication and the optical fiber communication."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Voices from the deep - Acoustic communication with a submarine at the bottom of the Mariana Trench",
+      "publisher": "OpenAlex",
+      "author": "Paul Roberts; Nick Andronis; Alessandro Ghiotto",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2189522556",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "142aa30349e488c9d8d08e39d724f7905bddc1af38e3d8f03a666e07bbe64f5c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In March 2012 the first solo submarine dive to the bottom of the Mariana Trench was successfully completed by movie director and explorer, James Cameron.",
+        "An Australian built submarine was piloted untethered 10.9 km downwards to the deepest ocean point on earth, whilst maintaining reliable voice and data communications to two surface vessels throughout the journey.",
+        "This paper gives an account of the dive, and describes how the communications equipment was made to perform reliably in these unique circumstances."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Submarine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28825",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "212ddd5afc986c179dc0aac14c4a01cbeb49accfac1c7b2e5ba3ca6ad2e17968",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A submarine (often shortened to sub) is a watercraft capable of independent operation underwater.",
+        "(It differs from a submersible, which has more limited underwater capability.) The term \"submarine\" is also sometimes used historically or informally to refer to remotely operated vehicles and robots, or to medium-sized or smaller vessels (such as the midget submarine and the wet sub).",
+        "Submarines are referred to as boats rather than ships regardless of their size.",
+        "Although experimental submarines had been built earlier, submarine design took off during the 19th century, and submarines were adopted by several navies.",
+        "They were first used widely during World War I (1914–1918), and are now used in many navies, large and small.",
+        "Their civilian uses include: marine science; salvage; exploration; and facility inspection and maintenance.",
+        "Submarines can be modified for specialized functions such as search-and-rescue missions and undersea cable repair.",
+        "They are also used in the tourism industry and in undersea archaeology.",
+        "Modern deep-diving submarines derive from the bathyscaphe, which evolved from the diving bell.",
+        "Most large submarines consist of a cylindrical body with hemispherical (or conical) ends and a vertical structure, usually located amidships, which houses communications and sensing devices as well as periscopes.",
+        "In modern submarines, this structure is called the \"sail\" in American usage and \"fin\" in European usage.",
+        "A feature of earlier designs was the \"conning tower\": a separate pressure hull above the main body of the boat that enabled the use of shorter periscopes."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "British K-class submarine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1691134",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "93ee2a12d2694e1546fb2d79a39272386edb1bdf5ccecac0e5b079341981abb0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The K-class submarines were a class of steam-propelled submarines of the Royal Navy designed in 1913.",
+        "Intended as large, fast vessels with the endurance and speed to operate with the battle fleet, they gained notoriety and the nickname of \"Kalamity class\" for being involved in many accidents.",
+        "Of the 18 built, none were lost through enemy action, but six sank, with significant loss of life, in accidents.",
+        "Only one ever engaged an enemy vessel, K-7 hitting a U-boat amidships, though the torpedo failed to explode with what has been described as typical \"K\" luck; K-7 escaped retaliation by steaming away at speed.",
+        "The class found favour with Commodore Roger Keyes, then Inspector Captain of Submarines, and with Admirals John Jellicoe, Commander-in-Chief of the Grand Fleet, and David Beatty, Commander-in-Chief Battlecruiser Squadrons.",
+        "Former (and future) First Sea Lord Admiral Jacky Fisher was opposed; he responded to the proposal of the class in 1913 that \"The most fatal error imaginable would be to put steam engines in submarines.\"\nWhen the class was designed, the use of submarines was still in its infancy.",
+        "Submarines, which later acted only by stealth, are no longer expected to be within a surface warship formation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "History of submarines",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4551386",
+      "retrieved_at": "2026-10-18T15:01:04.157Z",
+      "sha256": "0d62941c622a1e2b08f2da16e24c19b7e97157d799f03517e1f4fa2c96b44eb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Humanity has employed a variety of methods to travel underwater for exploration, recreation, research and significantly, warfare.",
+        "While early attempts, such as those by Alexander the Great, were rudimentary, the advent of new propulsion systems, fuels, and sonar, propelled an increase in submarine technology.",
+        "The introduction of the diesel engine, then the nuclear submarine, saw great expansion in submarine use — and specifically military use — during World War I, World War II, and the Cold War.",
+        "The Second World War use of the U-Boat by the Kriegsmarine against the Royal Navy and commercial shipping, and the Cold War's use of submarines by the United States and Russia, helped solidify the submarine's place in popular culture.",
+        "The latter conflicts also saw an increasing role for the military submarine as a tool of subterfuge, hidden warfare, and nuclear deterrent.",
+        "The military use of submarines continues to this day, predominantly by North Korea, China, the United States and Russia.",
+        "Beyond their use in warfare, submarines continue to have recreational and scientific uses.",
+        "They are heavily employed in the exploration of the sea bed, and the deepest places of the ocean floor.",
+        "They are used extensively in search and rescue operations for other submarines, surface vessels, and air craft, and offer a means to descend vast depths beyond the reach of scuba diving for both exploration and recreation.",
+        "They remain a focus of popular culture and the subject of numerous books and films."
+      ]
+    }
+  ]
+}
