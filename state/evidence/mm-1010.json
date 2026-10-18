@@ -1,0 +1,162 @@
+{
+  "id": "mm-1010",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Can we train our taste buds for health? A neuroscientist explains how genes and diet shape taste",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Dus, Monica",
+      "published_at": "2023-06-16",
+      "url": "https://theconversation.com/can-we-train-our-taste-buds-for-health-a-neuroscientist-explains-how-genes-and-diet-shape-taste-205456",
+      "retrieved_at": "2026-10-18T15:13:53.890Z",
+      "sha256": "bdbe4b0f110a78ce85c84c2e0c27e4acb10094f188c455a7f55d522d29a1f0a6",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "A neuroscientist explains how genes and diet shape taste Skip to content Academic rigor, journalistic flair Researchers are increasingly learning that early diet can shape taste preferences but that our taste buds can also be trained to prefer healthier foods.",
+        "RichVintage/E+ via Getty Images Can we train our taste buds for health?",
+        "Unlike sparrows, finches and most other birds, hummingbirds can taste sweetness because they carry the genetic instructions necessary to detect sugar molecules.",
+        "Like hummingbirds, we humans can sense sugar because our DNA contains gene sequences coding for the molecular detectors that allow us to detect sweetness.",
+        "Our ability to sense sweetness, as well as other tastes, involves a delicate dance between our genetic makeup and the foods we encounter from the womb to the dinner table.",
+        "Neuroscientists like me are working to decipher how this intricate interplay between genes and diet shapes taste.",
+        "In my laboratory at the University of Michigan, we are diving deeply into one specific aspect, which is how consuming too much sugar dulls the sense of sweetness .",
+        "Taste is so central to our eating habits that understanding how genes and the environment shape it has crucial implications for nutrition , food science and disease prevention .",
+        "The role of genes in sensing taste As with hummingbirds, the human ability to discern what food tastes like depends on the presence of taste receptors.",
+        "These molecular detectors are found on the sensory cells, which are housed inside the taste buds, the sensory organs on the surface of the tongue.",
+        "The interactions between taste receptors and food molecules give rise to the five basic taste qualities: sweetness, savoriness, bitterness, saltiness and sourness, which are transmitted from the mouth to the brain via specific nerves.",
+        "A diagram of a taste bud, indicating different types of cells and the sensory nerve."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Truth About Taste Buds",
+      "publisher": "Polygence",
+      "author": "Govindaraju, Adithi",
+      "published_at": "2024-02-24",
+      "url": "https://doi.org/10.58445/rars.983",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "87489418cec5b2bb6e4091bcb01078839e4342e49bcf03886ff9be2040519627",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Taste bud growth begins at the prenatal stage of development, and different cell types and regions of the tongue are sensitive to different flavors.",
+        "For example, the greatest sensitivity to sweet is at the tip of the tongue, whereas the greatest sensitivity to sour is at the upper sides of the tongue.",
+        "Eventually, babies begin to develop certain taste preferences and, as they age, genetic changes, such as allele expression, can cause individuals to be more sensitive to some flavors over others.",
+        "This contributes to the differences observed in infant versus adult sensory perception.",
+        "Similarly, the sex of a person can drastically vary their ability to detect certain basic traits.",
+        "Aside from biological factors including age and sex, the environment also affects taste preferences and perception.",
+        "The simple topic of taste buds is much more complex than anticipated and is important for humans to become more knowledgeable about something they use in their everyday lives.",
+        "“The Influence of Age and Oral Health on Taste Perception in Older Adults: A Case-Control Study.” Nutrients, vol.",
+        "“Why Do Some People Think Cilantro Tastes Like Soap?” Allrecipes, www.allrecipes.com/article/why-does-cilantro-taste-like-soap/.",
+        "“Bitter Receptor Gene (TAS2R38), 6-n-Propylthiouracil (PROP) Bitterness and Alcohol Intake.” Alcoholism: Clinical & Experimental Research, vol.",
+        "1629–1637, https://doi.org/10.1097/01.alc.0000145789.55183.d4 .",
+        "“Genetic Variation in Taste Perception: Does It Have a Role in Healthy Eating?” Proceedings of the Nutrition Society, vol."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Taste Coding and Feedforward/Feedback Signaling in Taste Buds",
+      "publisher": "Oxford University Press",
+      "author": "Roper, Stephen D.; Chaudhari, Nirupa",
+      "published_at": "2017-12",
+      "url": "https://doi.org/10.1093/med/9780190636111.003.0032",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "24490a01d225092ac1960a49145742f8299e53490e434d8683efafa7949f28fb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Taste buds are the sensory end organs of the gustatory system.",
+        "Thousands of these tiny sensory structures are embedded throughout the lingual epithelium and palate.",
+        "As well-defined anatomical structures, taste buds can provide valuable insight into microcircuit organization.",
+        "This chapter presents an overview of how cell-cell communication and synaptic transmission within taste buds might underlie information processing in these sensory end organs, and perhaps also sheds light on the problem of taste coding, at least at its initial stages in the periphery."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Umami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62462",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "296e0fc68cceaa2c56303483462cdcaf792e06c474af1a5fa70d2155c07f60a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Umami ( from Japanese: うま味, pronounced [ɯmami]), or savoriness, is one of the five basic tastes.",
+        "People taste umami through taste receptors that typically respond to glutamates and  nucleotides, which are widely present in meat broths and fermented products.",
+        "Glutamates are commonly added to some foods in the form of monosodium glutamate (MSG), and nucleotides are commonly added in the form of disodium guanylate,  inosine monophosphate (IMP) or guanosine monophosphate (GMP).",
+        "Since umami has its own receptors rather than arising out of a combination of the traditionally recognized taste receptors, scientists now consider umami to be a distinct taste.",
+        "In 1908, Kikunae Ikeda of the University of Tokyo scientifically identified umami as a distinct taste attributed to glutamic acid.",
+        "As a result, in 1909, Ikeda and Saburōsuke Suzuki founded Ajinomoto Co., Inc.",
+        "which introduced the world's first umami seasoning: monosodium glutamate (MSG), marketed in Japan under the name \"Ajinomoto.\" MSG subsequently spread worldwide as a seasoning capable of enhancing umami in a wide variety of dishes.",
+        "In 2000, researchers at the University of Miami identified the presence of umami receptors on the tongue, and in 2006, Ajinomoto's research laboratories found similar receptors in the stomach."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dysgeusia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=205156",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "c65b31838d02548175bb5cd6afed428a7e6c506a61bd2a848eb3cdc53f2e054a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dysgeusia, also known as parageusia, is a distortion of the sense of taste.",
+        "Dysgeusia is also often associated with ageusia, which is the complete lack of taste, and hypogeusia, which is a decrease in taste sensitivity.",
+        "An alteration in taste or smell may be a secondary process in various disease states, or it may be the primary symptom.",
+        "The distortion in the sense of taste is the only symptom, and diagnosis is usually complicated since the sense of taste is tied together with other sensory systems.",
+        "Common causes of dysgeusia include chemotherapy, asthma treatment with albuterol, and zinc deficiency.",
+        "Liver disease, hypothyroidism, and rarely, certain types of seizures can also lead to dysgeusia.",
+        "Different drugs can also be responsible for altering taste and resulting in dysgeusia.",
+        "Due to the variety of causes of dysgeusia, there are many possible treatments that are effective in alleviating or terminating the symptoms.",
+        "These include artificial saliva, pilocarpine, zinc supplementation, alterations in drug therapy, and alpha lipoic acid."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Special senses",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2961628",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "2f940cb1db823a25e589acd09184a9263e7fc54402685e7bc510e18e31b3fdb7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In contrast, the other sense, touch, is a somatic sense which does not have a specialized organ but comes from all over the body, most noticeably the skin but also the internal organs (viscera).",
+        "Touch includes mechanoreception (pressure, vibration and proprioception), pain (nociception) and heat (thermoception), and such information is carried in general somatic afferents and general visceral afferents."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Taste",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21282070",
+      "retrieved_at": "2026-10-18T15:13:55.785Z",
+      "sha256": "900561e28b3dc0ddbca906d041f68571b18b3e90acc98eeb41dd0a372c7f9172",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The gustatory system or sense of taste is the sensory system that is partially responsible for the perception of taste.",
+        "Taste is the perception stimulated when a substance in the mouth reacts chemically with taste receptor cells located on taste buds in the oral cavity, mostly on the tongue.",
+        "Taste, along with the sense of smell and trigeminal nerve stimulation (registering texture, pain, and temperature), determines flavors of food and other substances.",
+        "Humans have taste receptors on taste buds and other areas, including the upper surface of the tongue and the epiglottis.",
+        "The gustatory cortex is responsible for the perception of taste.",
+        "The tongue is covered with thousands of small bumps called papillae, which are visible to the naked eye.",
+        "The exceptions to this are the filiform papillae, which do not contain taste buds.",
+        "There are between 2000 and 5000 taste buds that are located on the back and front of the tongue.",
+        "Others are located on the roof, sides and back of the mouth, and in the throat.",
+        "Taste receptors in the mouth sense the five basic tastes: sweetness, sourness, saltiness, bitterness, and savoriness (also known as savory or umami).",
+        "Scientific experiments have demonstrated that these five tastes exist and are distinct from one another.",
+        "Taste buds are able to tell different tastes apart when they interact with different molecules or ions."
+      ]
+    }
+  ]
+}

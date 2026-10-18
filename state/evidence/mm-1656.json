@@ -1,0 +1,169 @@
+{
+  "id": "mm-1656",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Untapped Potential of Solar Panels: A Research Paper to Make Electricity More Affordable and Environmentally-Friendly",
+      "publisher": "Polygence",
+      "author": "Chinni, Tejas",
+      "published_at": "2023-10-23",
+      "url": "https://doi.org/10.58445/rars.637",
+      "retrieved_at": "2026-10-18T15:37:34.055Z",
+      "sha256": "9f6061bc6b0b6bcfa4fd9efd4e930658c1db0440af0d00c2b488eceea7d692a8",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "But there are still ways to increase the productivity of solar panels, along with all the benefits they bring.",
+        "My solution to this issue is a new electricity billing plan that uses predicted weather data and average electricity consumption in California, the state I live in, to predict days in which solar energy is high.",
+        "During these days, the model will send a notification out to customers, telling them that electricity prices will be decreased during certain times of the day because of excess electricity produced by solar panels.",
+        "This allows customers to put off high-electricity activities such as washing clothes when electricity is cheaper, saving them money and using more solar panel generated electricity than before.",
+        "The data I used in this research paper includes Accuweather’s weather forecasts, PG&E’s electricity data, and various other sources to calculate solar panel production.",
+        "Using this plan, we can greatly increase solar panel productivity, reduce electricity costs, and reduce harmful greenhouse gasses contributing to the never-ending climate change.",
+        "References “Average Annual Sunshine by State.” Current Results, www.currentresults.com/Weather/ US/average-annual-state-sunshine.php.",
+        "“Solar Panels Reduce CO2 Emissions More Per Acre Than Trees — And Much More Than Corn Ethanol.” State of the Planet, 26 Oct.",
+        "columbia.edu/2022/10/26/solar-panels-reduce-co2-emissions-more-per-acre-than-trees-and-much-more-than-corn-ethanol.",
+        "“Electricity Usage: How Much Energy Does an Average House Use?” Anker, 1 June 2023, www.anker.com/blogs/home-power-backup/electricity-usage-how-much-energy-does-an-average-house-use.",
+        "“Types of Solar Panels for Homes.” Architectural Digest, 7 May 2023, www.architecturaldigest.com/reviews/solar/types-of-solar-panels#:~:text=Monocrystalline%20Panels,longer%20than%20other%20solar%20panels.",
+        "“How Much Power Does a Solar Panel Produce?” Rhythm, 2 June 2022, www.gotrhythm.com/ blog/solar-energy/how-much-power-does-a-solar-panel-produce."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "From waste to power: how floating solar panels on wastewater ponds could help solve NZ’s electricity security crisis",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Jeremiah, Faith",
+      "published_at": "2024-09-24",
+      "url": "https://theconversation.com/from-waste-to-power-how-floating-solar-panels-on-wastewater-ponds-could-help-solve-nzs-electricity-security-crisis-237455",
+      "retrieved_at": "2026-10-18T15:37:34.130Z",
+      "sha256": "830674d185855473e43601638b1138375e376227e824457fb5c191d5db110880",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "But their underutilised surfaces could help tackle two problems at once – high power prices and algal growth.",
+        "Floating solar panels on wastewater ponds offer a multifaceted answer.",
+        "They generate renewable energy , improve water quality in the treatment ponds and reduce costs .",
+        "Leading this approach is the 2020 installation of New Zealand’s first floating solar array at the Rosedale wastewater treatment plant in Auckland.",
+        "This project demonstrates how New Zealand could double the country’s power supply without requiring additional land .",
+        "It serves as a test for future deployments on other reservoirs and dams.",
+        "The project comprises 2,700 solar panels and 4,000 floating pontoons .",
+        "It covers one hectare of the treatment pond, making excellent use of a marginal land asset in a dense urban environment.",
+        "The floating solar array generates 1,040 kilowatts of electricity and reduces 145 tonnes of carbon dioxide annually .",
+        "The electricity it generates, alongside biogas co-generation, meets 25% of the plant’s energy needs.",
+        "The floating solar panel array, together with biogas generation, meets a quarter of the Rosedale wastewater treatment plant’s energy needs.",
+        "Lynn Grieveson/Getty Images The project represents the first use of floating solar and the first megawatt-sized solar project in the country."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Quantum dot technology could make solar panels more efficient",
+      "publisher": "AIP Publishing",
+      "author": null,
+      "published_at": "2011-12-19",
+      "url": "https://physicstoday.aip.org/news/quantum-dot-technology-could-make-solar-panels-more-efficient",
+      "retrieved_at": "2026-10-18T15:37:34.942Z",
+      "sha256": "5349d84a5afcb2bfd5c49fc633d0b7d3dd1681455f5b3f2cfd327ddbce9e0c51",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "When high-energy photons from the Sun hit a semiconducting material in a solar cell, they excite the semiconductor’s electrons from a static position so they can conduct.",
+        "But the photons carry more energy than is needed, and the rest gets lost as heat.",
+        "Several years ago, it was found that the high-energy photons can excite more than one electron if the semiconductor consists of nanometer-sized particles called quantum dots.",
+        "The NREL group used the process, known as multiple exciton generation (MEG), in their quantum dot solar cell to achieve a 5% overall efficiency at converting light to electricity.",
+        "That efficiency is still well below conventional silicon solar cells, which make better use of the full solar spectrum.",
+        "But the device is the first to collect more electrical charges than the number of photons that struck the quantum dots—a convincing demonstration of MEG.",
+        "September 17, 2026 09:01 PM Get PT newsletters in your inbox PT The Week in Physics A collection of PT&#x27;s content from the previous week delivered every Monday.",
+        "One email per week PT New Issue Alert Be notified about the new issue with links to highlights and the full TOC.",
+        "One email per month PT Webinars & White Papers The latest webinars, white papers and other informational resources."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Solar energy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27743",
+      "retrieved_at": "2026-10-18T15:37:35.294Z",
+      "sha256": "05a4cea7981cdc5e5ccac27112e92d4ab3890ebf6929e824859331e1f15c88bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Solar energy is the radiant energy from the Sun's light and heat, which can be harnessed using a range of technologies such as solar electricity, solar thermal energy (including solar water heating) and solar architecture.",
+        "It is an essential source of renewable energy, and its technologies are broadly characterized as either passive solar or active solar depending on how they capture and distribute solar energy or convert it into solar power.",
+        "Active solar techniques include the use of photovoltaic systems, concentrated solar power, and solar water heating to harness the energy.",
+        "Passive solar techniques include designing a building for better daylighting, selecting materials with favorable thermal mass or light-dispersing properties, and organizing spaces that naturally circulate air.",
+        "In 2011, the International Energy Agency said that \"the development of affordable, inexhaustible and clean solar energy technologies will have huge longer-term benefits.",
+        "It will increase countries' energy security through reliance on an indigenous, inexhaustible, and mostly import-independent resource, enhance sustainability, reduce pollution, lower the costs of mitigating global warming ...."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Solar panel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3507365",
+      "retrieved_at": "2026-10-18T15:37:35.294Z",
+      "sha256": "fcc003e0dcf07f809243d37a83c0a11471b374eb2174f6c74c170dc61c76996f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A solar panel is a device that converts sunlight into electricity by using multiple solar modules that consist of photovoltaic (PV) cells.",
+        "PV cells are made of materials that produce excited electrons when exposed to light.",
+        "These electrons flow through a circuit and produce direct current electricity, which can be used to power various devices or be stored in batteries.",
+        "Solar panels can be known as solar cell panels, or solar electric panels.",
+        "Solar panels are usually arranged in groups called arrays or systems.",
+        "A photovoltaic system consists of one or more solar panels, an inverter that converts direct current electricity to alternating current where it is necessary, and sometimes other components such as charge controllers, meters, or solar trackers to maximize direct sunlight.",
+        "Most panels are in solar farms or rooftop solar panels, which supply the electricity grid.",
+        "Solar panels use a renewable and clean source of energy, and reduce greenhouse gas emissions compared to hydrocarbon-sourced energy.",
+        "However, they depend on the availability and intensity of sunlight, require cleaning, and have high initial costs.",
+        "Solar panels are widely used for residential, commercial, and industrial purposes, as well as in space, often together with batteries."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Solar panels on spacecraft",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4526198",
+      "retrieved_at": "2026-10-18T15:37:35.294Z",
+      "sha256": "595d724031dddea383d26dd46ba7dc2dd1c5e057ef1b4fca46f1fd29384d2eb2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Photovoltaic solar panels are the power source for almost all spacecraft ever launched.",
+        "Modern spacecraft typically use multi-junction solar cell and gallium arsenide-based panels.",
+        "The first solar-powered spacecraft was Vanguard 1, the second artificial satellite.",
+        "Near geocentric orbit, spacecraft extensively use solar panels.",
+        "As well as almost all satellites, all crewed space stations have utilized solar panels; the International Space Station's array is the largest ever assembled in space, at 3,244 m2 and a 73 m wingspan.",
+        "Solar power has been used other crewed spacecraft including Soyuz, Shenzhou, Crew Dragon, and Orion.",
+        "As distance from the Sun increased, solar radiation weakens, making radioisotope thermoelectric generators (RTGs) a more favorable power source for missions to Mars, to the outer planets, and those leaving the Solar System.",
+        "Larger solar arrays have nonetheless been used extensively around Mars, and by the Jupiter missions of Juno, Jupiter Icy Moons Explorer, and Europa Clipper, partially due to a global shortage of plutonium-238.",
+        "Other nuclear power alternatives in space include specialized fission reactors, such as aboard the SNAP-10A and US-A satellites, and NASA's modern Kilopower project."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Solar power in the United Kingdom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11634792",
+      "retrieved_at": "2026-10-18T15:37:35.294Z",
+      "sha256": "838248a0c6faa12bb068a85dbf096d002f08e046c2dda785fac59b1a4cf97aa6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Solar power has a growing role in electricity production in the United Kingdom, contributing around 6.4% of the UK's annual power generation in 2025.",
+        "As of 2025, on sunny days, it provides over 30% of the UK's power consumption at times.",
+        "Solar generation reached an all-time high of 15,420 MW at 13:00 on 23 April 2026.",
+        "There were few installations until 2010, when the UK government mandated subsidies in the form of a feed-in tariff (FIT), paid for by all electricity consumers.",
+        "In the following years the cost of photovoltaic (PV) panels fell, and the FIT rates for new installations were reduced in stages until the scheme closed to new applications in 2019.",
+        "The total installed capacity at the end of November 2025 was 21.5 GW, an increase of over 13% on the previous year.",
+        "PV panels have a capacity factor of around 10% in the UK climate.",
+        "Home rooftop solar panels installed in 2022 were estimated to pay back their cost in ten to twenty years."
+      ]
+    }
+  ]
+}

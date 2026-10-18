@@ -1,0 +1,129 @@
+{
+  "id": "mm-0337",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Silent Drift: How Extended AI Conversations Systematically Degrade in Quality -and Why Users Can't Tell",
+      "publisher": "Elsevier BV",
+      "author": "Brogan, Michael",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6325838",
+      "retrieved_at": "2026-10-18T15:00:31.423Z",
+      "sha256": "44eff279505ce00554d834a98a848166f4a8945de5c0bdfcda723266d30c1272",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;When professionals use AI for high-stakes advisory work, the conversations that feel most productive may be the most dangerous.",
+        "This paper introduces Iterative Coupling Drift (ICD), a framework describing how extended AI conversations systematically degrade in quality while appearing to improve.",
+        "ICD represents a distinctive and undertheorized hazard: an AI failure mode that is strongest precisely where trust is highest and hardest to detect.",
+        "It is structural, directional, and invisible to the user.&lt;/p&gt; &lt;p&gt;ICD is most severe in Judgment-Dependent Expertise Requests (JDERs): high-stakes interactions where the same expertise gap that motivates the query prevents the user from evaluating the response.",
+        "In these conditions, a set of compounding mechanisms pulls the conversation away from the user's original intent.",
+        "Models optimize for approval over accuracy, users progressively offload judgment, and early uncertainties harden into confident-sounding conclusions.",
+        "The exchange feels fluent, collaborative, and authoritative.",
+        "The user has no way to know it isn't — and no mechanism to find out.&lt;/p&gt; &lt;p&gt;The framework argues this failure mode is structurally resistant to market correction."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Lithium-ion battery",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=201485",
+      "retrieved_at": "2026-10-18T15:00:31.423Z",
+      "sha256": "55aa548bf4a879cec8913713f52f2a6f54a02512f518dbc601161b9c6e68d0b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A lithium-ion battery or Li-ion battery is a type of rechargeable battery that uses the reversible intercalation of lithium ions (Li+) into electronically conducting solids to store energy.",
+        "There are many different varieties, which are usually categorized by the materials used in the cathode.",
+        "Compared to other rechargeable battery types, they generally have higher specific energy, energy density, and energy efficiency and a longer cycle life and calendar life.",
+        "In the three decades since Li-ion batteries were first sold in 1991, their volumetric energy density increased threefold while their cost dropped tenfold.",
+        "In late 2024, global demand passed 1 terawatt-hour per year, while production capacity was more than twice that.",
+        "The invention and commercialization of Li-ion batteries has had a large impact on technology, as recognized by the 2019 Nobel Prize in Chemistry, which was awarded to contributors to the development of Li-ion batteries.",
+        "Li-ion batteries have enabled portable consumer electronics, laptop computers, cellular phones, and electric cars.",
+        "They are used for grid-scale energy storage and in military and aerospace applications.",
+        "in the spirit of the AA battery) and they come in various and unique form factors depending on device and vendor.",
+        "Stanley Whittingham conceived intercalation electrodes in the 1970s and created the first rechargeable lithium-ion battery, based on a titanium disulfide cathode and a lithium-aluminium anode, although it suffered from safety problems and was never commercialized.",
+        "John Goodenough expanded on this work in 1980 by using lithium cobalt oxide as a cathode.",
+        "The first prototype of the modern Li-ion battery, which uses a carbonaceous anode rather than lithium metal, was developed by Akira Yoshino in 1985 and commercialized by a Sony and Asahi Kasei team led by Yoshio Nishi in 1991."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Battery charger",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2885000",
+      "retrieved_at": "2026-10-18T15:00:31.423Z",
+      "sha256": "c61610dc36d66db60baee7ca5fa2d2299f7dabe1cd1007fd9e33bef73e28e8cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A battery charger, recharger, or simply charger, is a device that stores energy in an electric battery by running current through it.",
+        "The charging protocol—how much voltage and current, for how long and what to do when charging is complete—depends on the size and type of the battery being charged.",
+        "Some battery types have high tolerance for overcharging after the battery has been fully charged and can be recharged by connection to a constant voltage source or a constant current source, depending on battery type.",
+        "Simple chargers of this type must be manually disconnected at the end of the charge cycle.",
+        "Other battery types use a timer to cut off when charging should be complete.",
+        "Other battery types cannot withstand over-charging, becoming damaged (reduced capacity, reduced lifetime), over heating or even exploding.",
+        "The charger may have temperature or voltage sensing circuits and a microprocessor controller to safely adjust the charging current and voltage, determine the state of charge, and cut off at the end of charge.",
+        "Chargers may elevate the output voltage proportionally with current to compensate for impedance in the wires.",
+        "A trickle charger provides a relatively small amount of current, only enough to counteract self-discharge of a battery that is idle for a long time.",
+        "Some battery types cannot tolerate trickle charging; attempts to do so may result in damage.",
+        "Lithium-ion batteries cannot handle indefinite trickle charging.",
+        "Slow battery chargers may take several hours to complete a charge."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Flow battery",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3133405",
+      "retrieved_at": "2026-10-18T15:00:31.423Z",
+      "sha256": "ae8686242ec9223a5829bfe68445c29a9c32c740b69dae35564b7834ebdd512c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A flow battery, or redox flow battery (after reduction–oxidation), is a type of electrochemical cell where chemical energy is provided by two chemical components dissolved in liquids that are pumped through the system on separate sides of a membrane.",
+        "Ion transfer inside the cell (accompanied by current flow through an external circuit) occurs across the membrane while the liquids circulate in their respective spaces.",
+        "A flow battery may be used like a fuel cell (where new charged negolyte (a.k.a.",
+        "oxidant) are added to the system) or like a rechargeable battery (where an electric power source drives regeneration of the reducer and oxidant).",
+        "The fundamental difference between conventional and flow batteries is that energy is stored in the electrode material in conventional batteries, while in flow batteries it is stored in the electrolyte in separate tanks.",
+        "According to Battery Council International, this provides flow batteries with advantages for scalability and long-duration energy storage capabilities, making them ideal for stationary applications that demand consistent and reliable power.",
+        "However, flow batteries suffer from a lower cycle energy efficiency (50–80%).",
+        "This drawback stems from the need to operate flow batteries at high (≥ 100 mA/cm2) current densities to reduce the effect of internal crossover (through the membrane/separator) and to reduce the cost of power (size of stacks).",
+        "Also, most flow batteries (Zn−Cl2, Zn−Br2 and H2−LiBrO4 are exceptions) have lower specific energy (heavier weight) than lithium-ion batteries.",
+        "The heavier weight results mostly from the need to use a solvent (usually water) to maintain the redox active species in the liquid phase.",
+        "Cell voltage is chemically determined by the Nernst equation and ranges, in practical applications, from 1.0 to 2.43 volts.",
+        "The energy capacity increased with the volume of the fluids in the tanks,  and the power increases with the size of the stack."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lithium iron phosphate battery",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8534292",
+      "retrieved_at": "2026-10-18T15:00:31.423Z",
+      "sha256": "b9a6056e4990dcb1980c49a5c789ff65b6ec354700300b7ba107df8cc78b05f1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The lithium iron phosphate battery (LiFePO4 battery) or LFP battery (lithium ferrophosphate) is a type of lithium-ion battery using  lithium iron phosphate (LiFePO4) as the cathode material, and a graphitic carbon electrode with a metallic backing as the anode.",
+        "Because of their low cost, high safety, low toxicity, long cycle life and other factors, LFP batteries are finding a number of roles in vehicle use, utility-scale stationary applications, and backup power.",
+        "As of September 2022, LFP type battery market share for EVs reached 31%, and of that, 68% were from EV makers Tesla and BYD alone.",
+        "In 2022, Chinese manufacturers held a near-monopoly of LFP battery type production.",
+        "With patents having started to expire in 2022 and the increased demand for cheaper EV batteries, LFP type production is expected to rise further and surpass lithium nickel manganese cobalt oxides (NMC) type batteries.",
+        "The specific energy of LFP batteries is lower than that of other common lithium-ion battery types such as nickel manganese cobalt (NMC) and nickel cobalt aluminum (NCA).",
+        "As of 2024, the specific energy of CATL's LFP battery is claimed to be 205 watt-hours per kilogram (Wh/kg) on the cell level.",
+        "The best NMC batteries exhibit specific energy values of over 300 Wh/kg.",
+        "Notably, the specific energy of Panasonic's \"2170\" NCA batteries used in Tesla's 2020 Model 3 mid-size sedan is around 260 Wh/kg, which is 70% of its \"pure chemicals\" value.",
+        "LFP batteries also have a lower operating voltage than other lithium-ion battery types."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "mt-0388",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T15:59:35.329Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Endocannabinoid system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4617112",
+      "retrieved_at": "2026-10-18T15:59:35.330Z",
+      "sha256": "829d17d1828b7eea9dd9fa8d2756a73b3adb68ad79effa677b77b6f42d7e215b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The endocannabinoid system (ECS) is a biological system composed of endocannabinoids, which are neurotransmitters that bind to cannabinoid receptors, and cannabinoid receptor proteins that are expressed throughout the central nervous system (including the brain) and peripheral nervous system.",
+        "It is found in animals as simple as hydras, but absent in insects, who are hypothesized to have lost it due to a lack of arachidonic acid.",
+        "The ECS plays an important role in multiple aspects of neural functions, including the control of movement and motor coordination, learning and memory, emotion and motivation, addictive-like behavior and pain modulation, among others.",
+        "Two primary cannabinoid receptors have been identified: CB1, first cloned (or isolated) in 1990; and CB2, cloned in 1993.",
+        "CB1 receptors are found predominantly in the brain and nervous system, as well as in peripheral organs and tissues, and are the main molecular target of the fatty-acid neurotransmitter anandamide, as well as the most known active component of cannabis, tetrahydrocannabinol (THC).",
+        "Another endocannabinoid, 2-arachidonoylglycerol (2-AG), also interacts with both CB receptors.",
+        "It is significantly more abundant in the mammalian brain than anandamide, exceeding it by two to three orders of magnitude.",
+        "The endocannabinoid system is sometimes called the endocannabinoidome or the expanded endocannabinoid system, as it includes a broader range of lipid mediators, receptors, and enzymes beyond CB1 and CB2."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T15:59:35.330Z",
+      "sha256": "f4282c7a698b0eb76288cc8e03a2f6d67c86e236658f0e9ec22261e01830feea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Autism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29113700",
+      "retrieved_at": "2026-10-18T15:59:35.330Z",
+      "sha256": "b64258554a52626374679602d4f5cb7a6b624f6ff48e773289481407927e1414",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autism, also known as autism spectrum disorder (ASD), is a condition characterized by impairment in social communication and interaction, as well as a need or strong preference for predictability and routine, sensory processing differences, focused interests, or repetitive behaviors.",
+        "Features of autism are present from early childhood and the condition typically persists throughout life.",
+        "Autism is classified as a neurodevelopmental disorder, and a diagnosis requires professional assessment that these characteristics cause significant challenges in daily life beyond what is expected given a person's age and social environment.",
+        "Because autism is a spectrum disorder, presentations vary and support needs range from minimal assistance to full-time, 24-hour care.",
+        "Autism diagnoses have risen since the 1990s, largely because of broader diagnostic criteria, greater awareness, and wider access to assessment.",
+        "The World Health Organization estimates that about 1 in 100 children were diagnosed between 2012 and 2021, noting an increasing trend.",
+        "Surveillance studies suggest a similar share of the adult population would meet diagnostic criteria if formally assessed.",
+        "Autism is highly heritable and involves many genes, while environmental factors appear to play a smaller, mainly prenatal role.",
+        "Boys are diagnosed several times more often than girls, with girls being better at hiding autistic traits.",
+        "Conditions such as anxiety, depression, attention deficit hyperactivity disorder (ADHD), epilepsy, as well as intellectual disability, are more common among autistic people.",
+        "Autistic people are also more likely to be a part of the LGBTQ community.",
+        "Certain savant abilities are also more common in autistic people than in other groups."
+      ]
+    }
+  ]
+}

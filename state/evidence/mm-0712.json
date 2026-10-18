@@ -1,0 +1,111 @@
+{
+  "id": "mm-0712",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "CALCULATORS DO IMPROVE SAT MATH SCORES",
+      "publisher": "American Academy of Pediatrics (AAP)",
+      "author": "L., J. F.",
+      "published_at": "1994-07-01",
+      "url": "https://doi.org/10.1542/peds.94.1.a35",
+      "retrieved_at": "2026-10-18T15:09:41.944Z",
+      "sha256": "c0e48479306ec9009dfa9bf9f9c40019f17173407f2223a4b21621471efef8e1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Will permitting the use of calculators artificially increase SAT math test scores?",
+        "Only marginally, so they should be allowed—but scores should be adjusted to offset the effect.",
+        "The folks who run the Scholastic Aptitude Test, which will allow the use of calculators during the college entrance examination starting next year, initially said the correct answer was A.",
+        "Now, after a field test on calculator use involving 200,000 students last spring, the testing service has disclosed that C is their answer."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Calculator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7593",
+      "retrieved_at": "2026-10-18T15:09:42.056Z",
+      "sha256": "92c88b09696a8bf0d88447ab774d4eca8637439c3fed00b07245c90cce257205",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A calculator is typically a portable electronic device used to perform calculations, ranging from basic arithmetic to complex mathematics.",
+        "The first solid-state electronic calculator was created in the early 1960s.",
+        "Pocket-sized devices became available in the 1970s, especially after the Intel 4004, the first microprocessor, was developed by Intel for the Japanese calculator company Busicom.",
+        "Modern electronic calculators vary from cheap, give-away, credit-card-sized models to sturdy desktop models with built-in printers.",
+        "They became popular in the mid-1970s as the incorporation of integrated circuits reduced their size and cost.",
+        "By the end of that decade, prices had dropped to the point where a basic calculator was affordable to most and they became common in schools.",
+        "In addition to general-purpose calculators, there are those designed for specific markets.",
+        "For example, there are scientific calculators, which include trigonometric and statistical calculations.",
+        "Some calculators even have the ability to do computer algebra.",
+        "Graphing calculators can be used to graph functions defined on the real line, or higher-dimensional Euclidean space.",
+        "As of 2016, basic calculators cost little, but scientific and graphing models tend to cost more.",
+        "Computer operating systems as far back as early Unix have included interactive calculator programs such as dc and hoc, and interactive BASIC could be used to do calculations on most 1970s and 1980s home computers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Order of operations",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=212980",
+      "retrieved_at": "2026-10-18T15:09:42.056Z",
+      "sha256": "252855a409536f3510a5252ad2e56f0a7783132d9a7459e6af55f52b1afcebea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics and computer programming, the order of operations is a collection of conventions about which arithmetic operations to perform first in order to evaluate a given mathematical expression.",
+        "These conventions are formalized with a ranking of the operations.",
+        "The rank of an operation is called its precedence, and an operation with a higher precedence is performed before operations with lower precedence.",
+        "Calculators generally perform operations with the same precedence from left to right, but some programming languages and calculators adopt different conventions.",
+        "For example, multiplication is granted a higher precedence than addition, and it has been this way since the introduction of modern algebraic notation.",
+        "Thus, in the expression 1 + 2 × 3, the multiplication is performed before addition, and the expression has the value 1 + (2 × 3) = 7, and not (1 + 2) × 3 = 9.",
+        "When exponents were introduced in the 16th and 17th centuries, they were given precedence over both addition and multiplication and placed as a superscript to the right of their base.",
+        "These conventions exist to avoid notational ambiguity while allowing notation to remain brief.",
+        "Where it is desired to override the precedence conventions, or even simply to emphasize them, parentheses ( ) can be used.",
+        "For example, (2 + 3) × 4 = 20 forces addition to precede multiplication, while (3 + 5)2 = 64 forces addition to precede exponentiation.",
+        "If multiple pairs of parentheses are required in a mathematical expression (such as in the case of nested parentheses), the parentheses may be replaced by other types of brackets to avoid confusion, as in [2 × (3 + 4)] − 5 = 9.",
+        "These conventions are meaningful only when the usual notation (called infix notation) is used."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Math rock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=221484",
+      "retrieved_at": "2026-10-18T15:09:42.056Z",
+      "sha256": "72792f4359cfa4a91fc23f3a9b98831bbd0f8bc5bf0e52c2df65550199db250b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Math rock is a style of alternative and indie rock with roots in bands such as King Crimson, Yes, and Rush.",
+        "It is characterized by complex, atypical rhythmic structures (including irregular stopping and starting), counterpoint, odd time signatures, and extended chords.",
+        "Math rock has been classified as a derivative or subgenre of experimental rock, sharing its avant-garde ethos and emphasis on through-composed structure rather than traditional song forms.",
+        "The genre has additionally been described as bearing similarities to post-rock, as the \"opposite side of the same coin\".",
+        "Opting for a \"rockier\" approach to songwriting and timbres, the style is often performed by smaller ensembles which emphasize the role of the guitar."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Graphing calculator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=335004",
+      "retrieved_at": "2026-10-18T15:09:42.056Z",
+      "sha256": "a283de1c672c179db20c3b250385b9587092662d76e20d5fc6f7ed95ca78b255",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A graphing calculator (also graphics calculator or graphic display calculator) is a handheld computer that is capable of plotting graphs, solving simultaneous equations, and performing other tasks with variables.",
+        "Most popular graphing calculators are programmable calculators, allowing the user to create customized programs, typically for scientific, engineering or education applications.",
+        "They have large screens that display several lines of text and calculations."
+      ]
+    }
+  ]
+}

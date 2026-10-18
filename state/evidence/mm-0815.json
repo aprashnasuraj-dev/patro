@@ -1,0 +1,93 @@
+{
+  "id": "mm-0815",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bubble tea",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4045",
+      "retrieved_at": "2026-10-18T15:10:12.822Z",
+      "sha256": "62546f96bc8fa8d0da32fea9722d10cf1aaad6e8ef41b5c891d6d480bebe4830",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bubble tea (also known as pearl milk tea, bubble milk tea, tapioca milk tea, boba tea, or boba; Chinese: 珍珠奶茶; pinyin: zhēnzhū nǎichá, 波霸奶茶; bōbà nǎichá) is a tea-based drink most often containing chewy tapioca pearls, milk, and flavoring.",
+        "It originated in Taiwan in the 1980s and spread to other countries where there is a large East Asian diaspora population.",
+        "Bubble tea is most commonly made with tapioca pearls (also known as \"boba\" or \"balls\"), but it can be made with other toppings as well, such as grass jelly, aloe vera, red bean, and popping boba.",
+        "It has many varieties and flavors, but the two most popular varieties are pearl black milk tea and pearl green milk tea (\"pearl\" for the tapioca balls at the bottom).",
+        "Some of the largest global bubble tea chains include Chatime, CoCo Fresh Tea & Juice, Gong Cha, and Xing Fu Tang.",
+        "Two Taiwanese tea rooms, Chun Shui Tang in Taichung, and Hanlin Tea Room in Tainan, claim the invention of bubble tea in 1987 and 1986 respectively; litigation between them resulted in a 2019 ruling that bubble tea was non-patentable.",
+        "Introduced to the United States in the 1990s, where it is more commonly called boba, the drink gained popularity in the 2010 and became a symbol of Asian American cultural identity, including the terms \"boba life\" and \"boba liberal\".",
+        "There are ongoing debates over the drink's impact on health.",
+        "While the drink most often contains green or black tea, which offers many health benefits, it also has a high sugar and caloric content, which could exacerbate chronic diseases consumed daily."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Eternal inflation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4006167",
+      "retrieved_at": "2026-10-18T15:10:12.822Z",
+      "sha256": "f5a2156282ed9ea938ac03eba2390ab027a455bab5ba3121f05e774dd73aecd7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In cosmology, eternal inflation is a prediction of some forms of the model of cosmic inflation, a theory developed to explain issues in the original Big Bang theory.",
+        "According to eternal inflation, the decay of the meta-stable false vacuum in one region led to the inflationary phase of the universe's expansion.",
+        "In surrounding regions, the false vacuum continues to expand and decay can occur in surrounding regions, resulting in other universes inaccessibly distant from ours.",
+        "Eternal inflation, therefore, produces a hypothetically infinite multiverse, in which only an insignificant fractal volume ends inflation.",
+        "Paul Steinhardt, one of the original researchers of the inflationary model, introduced the first example of eternal inflation in 1983, and Alexander Vilenkin showed that it is generic.",
+        "Alan Guth's 2007 paper, \"Eternal inflation and its implications\", states that under reasonable assumptions \"Although inflation is generically eternal into the future, it is not eternal into the past\".",
+        "Guth detailed what was known about the subject at the time, and demonstrated that eternal inflation was still considered the likely outcome of inflation, more than 20 years after eternal inflation was first introduced by Steinhardt."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Guinness",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19345094",
+      "retrieved_at": "2026-10-18T15:10:12.822Z",
+      "sha256": "eeceb24855f026914a0d15d7a807df48f086a396f2e1f0f17f2489824f2348db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Guinness ( ) is a stout that originated in the brewery of Arthur Guinness at St.",
+        "It is now owned by the British multinational alcoholic beverage maker Diageo.",
+        "It is one of the most successful alcohol brands worldwide, brewed in almost 50 countries, and available in over 120.",
+        "Sales in 2011 amounted to 850,000,000 litres (190,000,000 imp gal; 220,000,000 U.S.",
+        "It is the highest-selling beer in both Ireland and the United Kingdom.",
+        "Since opening in 2000, it has received over 20 million visitors.",
+        "Adopted in 1862 by the incumbent proprietor, Benjamin Lee Guinness, the Guinness harp motif is modelled on the Trinity College harp (which is the national symbol of Ireland), with the right-facing harp registered as a trademark for Guinness in 1876.",
+        "Guinness's flavour derives from malted barley and roasted unmalted barley.",
+        "The unmalted barley is a relatively modern addition that became part of the grist in the mid-20th century.",
+        "For many years, a portion of aged brew was blended with freshly brewed beer to give a sharp lactic acid flavour.",
+        "Although Guinness's palate still features a characteristic \"tang\", the company has refused to confirm whether this type of blending still occurs.",
+        "The draught beer's thick and creamy head comes from mixing the beer with nitrogen and carbon dioxide."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Bubble (game show)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26117942",
+      "retrieved_at": "2026-10-18T15:10:12.822Z",
+      "sha256": "dad58e59d1ed6d367e74f0d2ca3b92447d4e4863452eaa8c8e4581b6c679439a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Bubble is a British television quiz show hosted by David Mitchell, and made for the BBC by Hat Trick Productions.",
+        "Each week, three comedians are tasked to differentiate real news stories from fake ones, after four days of isolation in 'The Bubble', a remote country house.",
+        "A first series was broadcast on BBC Two from 19 February 2010, running for six episodes.",
+        "A second series was planned but later abandoned due to Mitchell's commitments to the Channel 4 series 10 O'Clock Live."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "mq-0264",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Search for circum‐planetary material and orbital period variations of short‐period <i>Kepler</i> exoplanet candidates",
+      "publisher": "Wiley",
+      "author": "Garai, Z.; Zhou, G.; Budaj, J.",
+      "published_at": "2014-12",
+      "url": "https://doi.org/10.1002/asna.201312126",
+      "retrieved_at": "2026-10-18T16:38:28.880Z",
+      "sha256": "6cd06661415aea3b6c21ee0d5afd627f41dd15e4f9e356edb40cc7795a73e164",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract A unique short‐period ( P = 0.65356(1) d) Mercury‐size Kepler exoplanet candidate KIC012557548b has been discovered recently by Rappaport et al.",
+        "This object is a transiting disintegrating exoplanet with a circum‐planetary material–comet‐like tail.",
+        "Close‐in exoplanets, like KIC012557548b, are subjected to the greatest planet‐star interactions.",
+        "In certain cases it may cause formation of the comet‐like tail.",
+        "Strong interaction with the host star, and/or presence of an additional planet may lead to variations in the orbital period of the planet.",
+        "Our main aim is to search for comet‐like tails similar to KIC012557548b and for long‐term orbital period variations.",
+        "We are curious about frequency of comet‐like tail formation among short‐period Kepler exoplanet candidates.",
+        "We concentrate on a sample of 20 close‐in candidates with a period similar to KIC012557548b from the Kepler mission.",
+        "We first improved the preliminary orbital periods and obtained the transit light curves.",
+        "Subsequently we searched for the signatures of a circum‐planetary material in these light curves.",
+        "For this purpose the final transit light curve of each planet was fitted with a theoretical light curve, and the residuals were examined for abnormalities.",
+        "We then searched for possible long‐term changes of the orbital periods using the method of phase dispersion minimization."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T16:38:30.864Z",
+      "sha256": "a9fc7defffe5edb9c4c7c6b71ea6d7738fdc12ba1afb1f27e23626d054f3c61b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A Search for Lost Planets in the Kepler Multi-planet Systems and the Discovery of the Long-period, Neptune-sized Exoplanet Kepler-150 f",
+      "publisher": "American Astronomical Society",
+      "author": "Schmitt, Joseph R.; Jenkins, Jon M.; Fischer, Debra A.",
+      "published_at": "2017-03-28",
+      "url": "https://doi.org/10.3847/1538-3881/aa62ad",
+      "retrieved_at": "2026-10-18T16:38:30.865Z",
+      "sha256": "bb5cd2c78dd6607b8aaa662a17745ff5387fa3202994c010ab4047947e9b1005",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The vast majority of the 4700 confirmed planets (CPs) and planet candidates discovered by the Kepler mission were first found by the Kepler pipeline.",
+        "In the pipeline, after a transit signal is found, all data points associated with those transits are removed, creating a “Swiss cheese”-like light curve full of holes, which is then used for subsequent transit searches.",
+        "These holes could render an additional planet undetectable (or “lost”).",
+        "We examine a sample of 114 stars with 3+ CPs to evaluate the effect of this “Swiss cheesing.” A simulation determines that the probability that a transiting planet is lost due to the transit masking is low, but non-negligible, reaching a plateau at ∼3.3% lost in the period range of P = 400–500 days.",
+        "We then model all planet transits and subtract out the transit signals for each star, restoring the in-transit data points, and use the Kepler pipeline to search the transit-subtracted (i.e., transit-cleaned) light curves.",
+        "However, the pipeline did not discover any credible new transit signals.",
+        "This demonstrates the validity and robustness of the Kepler pipeline’s choice to use transit masking over transit subtraction.",
+        "However, a follow-up visual search through all the transit-subtracted data, which allows for easier visual identification of new transits, revealed the existence of a new, Neptune-sized exoplanet (Kepler-150 f) and a potential single transit of a likely false positive (FP) (Kepler-208).",
+        "Kepler-150 f ( P = 637.2 days, R ⊕ ) is confirmed with &gt;99.998% confidence using a combination of the planet multiplicity argument, an FP probability analysis, and a transit duration analysis."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "White dwarf",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33501",
+      "retrieved_at": "2026-10-18T16:38:31.258Z",
+      "sha256": "18bc1f9bbc1cc3e42bb427069a558c948ba53c6bf1eb969912a3ce32613c2c12",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A white dwarf is a very dense type of star: in an Earth-sized volume, it packs a mass that is comparable to the Sun.",
+        "A white dwarf radiates light from residual heat and eventual crystallization, not from nuclear fusion.",
+        "Stars like the Sun, whose mass is not high enough to collapse into a neutron star or black hole, are expected to become white dwarf stars later in their evolution.",
+        "The nearest known white dwarf is Sirius B, at 8.6 light years, the smaller component of the Sirius binary star.",
+        "In 1910, Henry Norris Russell, Edward Charles Pickering and Williamina Fleming discovered that, despite being a dim star, 40 Eridani B was of spectral type A, or white.",
+        "The name white dwarf was coined by Willem Jacob Luyten in 1922.",
+        "In 1931 Subrahmanyan Chandrasekhar developed a physical model of white dwarfs and he won the 1983 Nobel Prize in Physics for studies in the evolution of stars.",
+        "These compact stars are composed mostly of a highly compressed form of matter.",
+        "The composition of the white dwarf produced will depend on the initial mass of the star.",
+        "Once formed, the material in a white dwarf no longer undergoes fusion reactions and thus lacks a heat source to support it against gravitational collapse.",
+        "Instead, it is supported only by electron degeneracy pressure, causing it to be extremely dense.",
+        "The physics of degeneracy yields a maximum mass for a non-rotating white dwarf, the Chandrasekhar limit— approximately 1.44 times the mass of the Sun — beyond which electron degeneracy pressure cannot support it."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Rare Earth hypothesis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=827792",
+      "retrieved_at": "2026-10-18T16:38:31.258Z",
+      "sha256": "7c80f8d7ac32d61dacbaa93276126ccbb74de3d159b7399eb517cee7a25d7024",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "According to the hypothesis, complex extraterrestrial life is an improbable phenomenon and likely to be rare throughout the universe as a whole.",
+        "The term \"Rare Earth\" originates from Rare Earth: Why Complex Life Is Uncommon in the Universe (2000), a book by Peter Ward, a geologist and paleontologist, and Donald E.",
+        "Brownlee, an astronomer and astrobiologist, both faculty members at the University of Washington.",
+        "The hypothesis has been argued to be a possible solution to the Fermi paradox.",
+        "In the 1970s and 1980s, Carl Sagan and Frank Drake, among others, argued that Earth is a typical rocky planet in a typical planetary system, located in a non-exceptional region of a common galaxy, now known to be a barred spiral galaxy.",
+        "From the principle of mediocrity (extended from the Copernican principle), they argued that the evolution of life on Earth, including human beings, was also typical, and therefore complex life should be common throughout the universe.",
+        "In contrast, Ward and Brownlee argue that planets which meet all the requirements for complex life are in fact exceedingly rare."
+      ]
+    }
+  ]
+}

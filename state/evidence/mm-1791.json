@@ -1,0 +1,168 @@
+{
+  "id": "mm-1791",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Everywhere Pregnant Women Appear",
+      "publisher": "University of Arkansas Press",
+      "author": "NELSON, ERIC",
+      "published_at": "1993-01-01",
+      "url": "https://doi.org/10.2307/j.ctv2n06jf8.153",
+      "retrieved_at": "2026-10-18T15:45:49.818Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "CONCLUSION",
+      "publisher": "Russell Sage Foundation",
+      "author": null,
+      "published_at": "2019-11-22",
+      "url": "https://doi.org/10.7758/9781610448895.11",
+      "retrieved_at": "2026-10-18T15:45:49.919Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "REFERENCES",
+      "publisher": "Russell Sage Foundation",
+      "author": null,
+      "published_at": "2019-11-22",
+      "url": "https://doi.org/10.7758/9781610448895.13",
+      "retrieved_at": "2026-10-18T15:45:50.020Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "ACKNOWLEDGMENTS",
+      "publisher": "Russell Sage Foundation",
+      "author": null,
+      "published_at": "2019-11-22",
+      "url": "https://doi.org/10.7758/9781610448895.4",
+      "retrieved_at": "2026-10-18T15:45:50.123Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Normal distribution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21462",
+      "retrieved_at": "2026-10-18T15:45:50.123Z",
+      "sha256": "6343c67c9c6f8bc88859c08862a6b8a8064ed01dc43a9fea80caed92a420e36f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In probability theory and statistics, a normal distribution or Gaussian distribution is a type of continuous probability distribution for a real-valued random variable.",
+        "The standard deviation of the distribution is the positive value ⁠\n  \n    \n      \n        σ\n      \n    \n    {\\displaystyle \\sigma }\n  \n⁠ (sigma).",
+        "A random variable with a Gaussian distribution is said to be normally distributed and is called a normal deviate.",
+        "Normal distributions are important in statistics and are often used in the natural and social sciences to represent real-valued random variables whose distributions are not known.",
+        "Their importance is partly due to the central limit theorem.",
+        "It states that the average of many statistically independent samples (observations) of a random variable with finite mean and variance is itself a random variable—whose distribution converges to a normal distribution as the number of samples increases.",
+        "Therefore, physical quantities that are expected to be the sum of many independent processes, such as measurement errors, often have distributions that are nearly normal.",
+        "Moreover, Gaussian distributions have some unique properties that are valuable in analytic studies.",
+        "For instance, any linear combination of a fixed collection of independent normal deviates is a normal deviate.",
+        "Many results and methods, such as propagation of uncertainty and least squares parameter fitting, can be derived analytically in explicit form when the relevant variables are normally distributed.",
+        "However, normal distributions are frequently misused in contexts where the assumption that the data are normally distributed is not met and the normal distribution is a poor model.",
+        "A normal distribution is sometimes informally called a bell curve."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Ida B. Wells",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=394117",
+      "retrieved_at": "2026-10-18T15:45:50.123Z",
+      "sha256": "75febdb240d5aa4e6436ddbd9eb30e3ce56a3b5cf706feee8dcdf33d7aa17b3c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ida Bell Wells-Barnett (July 16, 1862 – March 25, 1931) was an American investigative journalist, sociologist, educator, and early leader in the civil rights movement.",
+        "She was one of the founders of the National Association for the Advancement of Colored People (NAACP).",
+        "Wells dedicated her career to combating prejudice and violence, and advocating for African-American equality—especially for women.",
+        "Wells exposed the brutality of lynching, and analyzed its sociology, arguing that whites used lynching to terrorize African Americans in the South because they represented economic and political competition—and thus a threat of loss of power—for whites.",
+        "She aimed to demonstrate the truth about this violence and advocate for measures to stop it.",
+        "She was freed as an infant under the Emancipation Proclamation, when Union Army troops captured Holly Springs.",
+        "At the age of 16, she lost both her parents and her infant brother in the 1878 yellow fever epidemic.",
+        "She got a job teaching and kept the rest of the family together with the help of her grandmother, later moving with some of her siblings to Memphis, Tennessee.",
+        "Soon, Wells co-owned and wrote for the Memphis Free Speech and Headlight newspaper, where her reporting covered incidents of racial segregation and inequality.",
+        "Eventually, her investigative journalism was carried nationally in Black-owned newspapers.",
+        "Subjected to continued threats and criminal violence, including when a white mob destroyed her newspaper office and presses, Wells left Memphis for Chicago, Illinois.",
+        "Barnett in 1895 and had a family while continuing her work writing, speaking, and organizing for civil rights and the women's movement for the rest of her life."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Hubbert peak theory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=601621",
+      "retrieved_at": "2026-10-18T15:45:50.123Z",
+      "sha256": "99b63ef6d713cbc10ee5136de7015955df88a4fd2d93a9bab69f4a8565fa64d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Hubbert peak theory says that for any given geographical area, from an individual oil-producing region to the planet as a whole, the rate of petroleum production tends to follow a bell-shaped curve.",
+        "Choosing a particular curve determines a point of maximum production based on discovery rates, production rates, and cumulative production.",
+        "Early in the curve (pre-peak), the production rate increases due to the discovery rate and the addition of infrastructure.",
+        "Late in the curve (post-peak), production declines because of resource depletion.",
+        "The Hubbert peak theory is based on the observation that the amount of oil under the ground in any region is finite; therefore, the rate of discovery, which initially increases quickly, must reach a maximum and then decline.",
+        "In the US, oil extraction followed the discovery curve after a time lag of 32 to 35 years.",
+        "King Hubbert, who created a method of modeling the production curve given an assumed ultimate recovery volume."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "B.o.B",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20116909",
+      "retrieved_at": "2026-10-18T15:45:50.123Z",
+      "sha256": "28357469ab462c42f29b70c95ad87063b340f3d573081897e7867eb0b7c4851b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "(born November 15, 1988), known professionally as B.o.B, is an American rapper, singer, songwriter, and record producer.",
+        "Raised in Decatur, Georgia, Simmons signed with record producer Jim Jonsin's Rebel Rock Entertainment in 2006.",
+        "Two years later, he signed a joint venture recording contract with fellow Georgia rapper T.I.'s Grand Hustle Records, an imprint of Atlantic Records.",
+        "Following his major-label deal, Simmons quickly achieved commercial success when his 2009 single, \"Nothin' on You\" (featuring Bruno Mars), topped the U.S.",
+        "Billboard Hot 100 chart and received three nominations—Record of the Year, Best Rap Song, and Best Rap/Sung Collaboration—at the 53rd Grammy Awards.",
+        "His 2010 follow-up singles, \"Airplanes\" (featuring Hayley Williams of Paramore) and \"Magic\" (featuring Rivers Cuomo), peaked at numbers two and ten on the Billboard Hot 100, respectively.",
+        "All three preceded the release of Simmons' debut studio album The Adventures of Bobby Ray (2010), which was promoted by two extended plays (EPs) and several self-released mixtapes.",
+        "The album peaked atop the Billboard 200, received double platinum certification by the Recording Industry Association of America (RIAA), and saw critical praise for its blending of alternative hip-hop, pop rap, and rock.",
+        "Simmons was named the ninth \"Hottest MC in the Game of 2010\" by MTV on their annual list.",
+        "The following year, he guest appeared on English singer Jessie J's 2011 single \"Price Tag\", which peaked atop the UK Singles Chart and at number 23 on the Billboard Hot 100.",
+        "Simmons' dubstep-influenced 2011 single, \"Strange Clouds\" (featuring Lil Wayne), became his fourth top-ten hit on the Billboard Hot 100.",
+        "His third studio album, Underground Luxury (2013), explored darker subject matter and adopted a grittier tone, spawning the club-oriented singles \"HeadBand\" (featuring 2 Chainz) and \"We Still in This Bitch\" (featuring T.I."
+      ]
+    }
+  ]
+}

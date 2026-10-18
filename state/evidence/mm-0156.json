@@ -1,0 +1,130 @@
+{
+  "id": "mm-0156",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why trains stay on tracks",
+      "publisher": "American Association of Physics Teachers (AAPT)",
+      "author": "Shayak, B.",
+      "published_at": "2017-03-01",
+      "url": "https://doi.org/10.1119/1.4973370",
+      "retrieved_at": "2026-10-18T14:57:23.998Z",
+      "sha256": "ebea2d736806c0e295da5e42e2af1935bd2f061c32ce58739a0aced577d9dcae",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this article, we give both qualitative and quantitative explanations of why a train stays on its track, in spite of perturbations that could cause it to derail.",
+        "We show that train stability originates from the conical shape of the wheels, which gives rise to a restoring normal force in response to a lateral disturbance.",
+        "We first demonstrate translational stabilization in a simple situation where the rails are assumed frictionless and the steering motion of the wheel is neglected.",
+        "We then develop a more comprehensive model, taking friction and steering into account.",
+        "We show that rolling friction couples the rotational motion to the translational motion, enhancing overall stability.",
+        "Finally, we find approximate formulae for the parameters governing stability, and show good agreement with parameters of a real railway coach."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "<i>Two Trains Running</i>: blood on the tracks",
+      "publisher": "Cambridge University Press",
+      "author": "Bottoms, Stephen",
+      "published_at": "2007-11-29",
+      "url": "https://www.cambridge.org/core/books/cambridge-companion-to-august-wilson/two-trains-running-blood-on-the-tracks/715DE317B8942001E5FF43DAB56C16F6",
+      "retrieved_at": "2026-10-18T14:57:25.417Z",
+      "sha256": "5cf0f577f66b537501835ba9db2a655223c2ec5002d40ba0d8f08abebac18253",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Two Trains Running: blood on the tracks (Chapter 11) - The Cambridge Companion to August Wilson Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "As Wilson himself remarks in the prefatory notes for his 1950s play Fences (1985), the 'hot winds of change' that began to gather in the postwar era 'would make the sixties a turbulent, racing, dangerous and provocative decade'.",
+        "By the early 1960s, though, Malcolm X's calls, from the pulpits of the Nation of Islam, for black self-determination 'by any means necessary' had begun to rally support for a more aggressively defiant, anti-assimilationist stance.",
+        "Information Type Chapter Information The Cambridge Companion to August Wilson , pp.",
+        "145 - 157 DOI: https://doi.org/10.1017/CCOL0521866065.011 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2007 Access options Get access to the full version of this content by using one of the access options below.",
+        "(Log in options will check for institutional or personal access.",
+        "Accessibility Information Accessibility compliance for the PDF of this chapter is currently unknown and may be updated in the future.",
+        "Save book to Kindle To save this book to your Kindle, first ensure no-reply@cambridge.org is added to your Approved Personal Document E-mail List under your Personal Document Settings on the Manage Your Content and Devices page of your Amazon account.",
+        "Then enter the ‘name’ part of your Kindle email address below.",
+        "Note you can select to save to either the @free.kindle.com or @kindle.com variations.",
+        "‘@free.kindle.com’ emails are free but can only be saved to your device when it is connected to wi-fi."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Level crossing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=193595",
+      "retrieved_at": "2026-10-18T14:57:25.418Z",
+      "sha256": "0ca8e2b4ef1b816a556268e735a6a353766e9e2c8767154b1f9148e472084467",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A level crossing is an intersection where a railway line crosses a road, path, or (in rare situations) airport runway, at the same level, as opposed to the crossing using an overpass or tunnel.",
+        "The term also applies when a light rail line with separate right-of-way or reserved track crosses a road in the same fashion.",
+        "Other names include railway level crossing, railway crossing (chiefly Australian; Canadian; and New Zealander), grade crossing/railroad crossing (chiefly American), railroad xing (Philippines), road through railroad, criss-cross, train crossing, and RXR.",
+        "There are more than 100,000 level crossings in Europe and more than 200,000 in North America.",
+        "Road-grade crossings are considered incompatible with high-speed rail and are virtually non-existent in European high-speed train operations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Planes, Trains and Automobiles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1397377",
+      "retrieved_at": "2026-10-18T14:57:25.418Z",
+      "sha256": "0783d8490d629c0a65ac08746ac6511a32fa163e41e34d980d93e13c53569b04",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Planes, Trains and Automobiles is a 1987 American road trip comedy film written, produced, and directed by John Hughes.",
+        "The film stars Steve Martin as Neal Page, an uptight advertising executive, and John Candy as Del Griffith, an overly-friendly traveling salesman, who become unlikely companions after a snowstorm disrupts their travel plans.",
+        "Stranded far from home, the pair embarks on a series of misadventures while attempting to get Neal home to his family in Chicago in time for Thanksgiving.",
+        "Produced by Paramount Pictures and Hughes Entertainment, the film was shot primarily in New York state during 1987.",
+        "Rewrites by Hughes and improvisation between Martin and Candy resulted in an initial cut that ran nearly four hours before being substantially shortened for theatrical release.",
+        "Released on November 25, 1987, Planes, Trains and Automobiles was both a critical and commercial success.",
+        "It grossed $49.5 million against a $15 million budget and received praise for its blend of comedy and sentiment, as well as the performances of Martin and Candy.",
+        "Critics also noted the film as a departure from Hughes's then-established reputation for teen-oriented comedies.",
+        "In the years following its release, the film developed a cult following and became closely associated with the Thanksgiving holiday in the United States.",
+        "In an interview, Hughes described a disastrous trip from Chicago to New York City he experienced while an advertising executive, which apparently inspired the movie."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "2005 Glendale train crash",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1434052",
+      "retrieved_at": "2026-10-18T14:57:25.418Z",
+      "sha256": "4b856c3c3d1459214d5746e9e0d112ffe60488434df46be00b49ca61c302d692",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2005 Glendale train crash occurred on January 26, 2005, at 6:03 a.m.",
+        "PST, when a Metrolink commuter train collided with a sport utility vehicle that had been parked on the tracks by a man in an industrial area of Glendale, California, just east of the Los Angeles city limits, causing the deaths of 11 people and injuring 177 more.",
+        "The driver of the car, who was allegedly trying to commit suicide and had changed his mind shortly before the impact but was unable to move his car from the wet tracks, survived the incident and was charged with eleven counts of murder and one count of arson."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Through service",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16191626",
+      "retrieved_at": "2026-10-18T14:57:25.418Z",
+      "sha256": "4e3e98b8df09be2ce2ffe1a2f89de3e1bf1660baad8be4336c827ceef59c4b95",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A through service is a concept of passenger transport that involves a vehicle travelling between lines, networks or operators on a regularly specified schedule, on which the passenger can remain on board without alighting.",
+        "It may be in either of the following forms:\n\nA service where the vehicle travels between different lines, or systems of infrastructure – for example, a through train service between the mainline and underground railways.",
+        "A service where the vehicle changes its identity en-route without requiring passengers to alight – for example, a through tram service which runs as route 1 initially, then runs as route 2 for the latter half of the journey.",
+        "This is in contrast with direct service, where a through service may be a circuitous route but allows the passenger on board for the whole circuitous journey.",
+        "This is to be distinguished with operating arrangement which a vehicle changes its service route between revenue journeys at a terminus, but requires passengers to alight or retender fare."
+      ]
+    }
+  ]
+}

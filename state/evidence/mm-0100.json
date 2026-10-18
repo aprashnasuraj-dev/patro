@@ -1,0 +1,105 @@
+{
+  "id": "mm-0100",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Platform Vernaculars: How AI Image Generators Create New Forms of Visual Bias",
+      "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)",
+      "author": "Varghese, Jinu K",
+      "published_at": "2025-10-15",
+      "url": "https://doi.org/10.1609/aies.v8i3.36799",
+      "retrieved_at": "2026-10-18T14:55:47.507Z",
+      "sha256": "aae90e543bac39baf45bad741e552451cfc732da578f2ca2cc395af82e0a1bfb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This study investigates how AI image generation plat-forms develop distinct platform vernaculars systematic visual languages with recognizable aesthetic signatures that create new forms of cultural bias.",
+        "Through mixed-methods analysis combining content analysis of 306 AI-generated images, interviews with 16 visual professionals, and survey validation from 430 respondents, we document three key phenomena.",
+        "First, platform choice ac-counts for 54% of variance in visual outcomes (η² = 0.542, p &lt; 0.001), with professionals achieving distinct recognition accuracy: Flux (82%), Midjourney (78%), Stable Diffusion (71%).",
+        "Second, rather than displacement, 71.9% of professionals report AI enhances creative capabilities through strategic integration models.",
+        "Third, systematic cultural bias manifests through 73% Western demographic defaults in neutral prompts, though professionals develop sophisticated mitigation strategies achieving 82% bias reduction effectiveness.",
+        "These findings establish platform vernaculars as algorithmic aesthetic hierarchies that require new forms of visual literacy, challenging assumptions about AI homogenization while revealing persistent representational inequities demanding professional resistance strategies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "ASCII art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1884",
+      "retrieved_at": "2026-10-18T14:55:48.249Z",
+      "sha256": "f072d950d0e410fc2d90d6e4c02acb218afd23f4fc205c77215382ded616fd8e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term is also loosely used to refer to text-based visual art in general.",
+        "ASCII art can be created with any text editor, and is often used with free-form languages.",
+        "Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier or Consolas for presentation.",
+        "Among the oldest known examples of ASCII art are the\ncreations by computer-art pioneer Kenneth Knowlton from around 1966, who was working for Bell Labs at the time.",
+        "\"Studies in Perception I\" by Knowlton and Leon Harmon from 1966 shows some examples of their early ASCII art.",
+        "ASCII art was invented, in large part, because early printers often lacked graphics ability and thus, characters were used in place of graphic marks.",
+        "Also, to mark divisions between different print jobs from different users, bulk printers often used ASCII art to print large banner pages, making the division easier to spot so that the results could be more easily separated by a computer operator or clerk.",
+        "ASCII art was also used in early e-mail when images could not be embedded."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Digital art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=148113",
+      "retrieved_at": "2026-10-18T14:55:48.249Z",
+      "sha256": "1d88554ab4e72bfcdac3d22486c7ca5e2fbbdd2e2095f64c2c3490dc1a4cc50f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Digital art, or the digital arts, is artistic work that uses digital technology as part of the creative or presentational process.",
+        "It can also refer to computational art that uses and engages with digital media.",
+        "Since the 1960s, various names have been used to describe digital art, including computer art, electronic art, multimedia art, and new media art.",
+        "Digital art includes pieces stored on physical media, such as with digital painting, as well as digital galleries on websites."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "AI art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60639760",
+      "retrieved_at": "2026-10-18T14:55:48.249Z",
+      "sha256": "9c7bd8a19a1971340b00019b6ba44506ca266cce353ae49dcfd316afa8780a73",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence visual art, or AI art, is artistic content generated or assisted by artificial intelligence (AI) programs.",
+        "The classification of AI output as \"art\" remains controversial, and AI-created works have been variously rejected or recognized by existing artistic institutions.",
+        "The application of robotics or primitive algorithms to art has been discussed or practiced since antiquity; however, the term primarily refers to visual works created by modern generative AI trained on preexisting content.",
+        "During the AI boom of the 2020s, text-to-image models such as Midjourney, DALL-E and Stable Diffusion became widely available to the public, allowing users to quickly generate imagery with little effort.",
+        "AI art frequently constitutes AI slop, mass-produced content for online engagement at the expense of quality.",
+        "In August 2023, a United States district court ruled that AI art is ineligible for copyright due to failure to meet human authorship.",
+        "In March 2026, it declined to hear a case over whether AI-generated art can be subject to copyright."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Midjourney",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=71151961",
+      "retrieved_at": "2026-10-18T14:55:48.249Z",
+      "sha256": "d69ea9fccaf103bbd20ceb45d855abafa32e689526071c376410944cba907550",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Midjourney is a generative AI program and service created and hosted by the San Francisco–based \"independent research lab\" Midjourney, Inc.",
+        "Midjourney generates images from natural language descriptions, called prompts, similar to OpenAI's DALL-E and Stability AI's Stable Diffusion.",
+        "The Midjourney team is led by David Holz, who co-founded Leap Motion.",
+        "Holz told The Register in August 2022 that the company was already profitable.",
+        "Users generate images with Midjourney using Discord bot commands or the official website."
+      ]
+    }
+  ]
+}

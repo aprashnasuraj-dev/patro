@@ -1,0 +1,182 @@
+{
+  "id": "mm-0033",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why the Frontend Keeps Getting Harder",
+      "publisher": "Front Matter",
+      "author": "Ydenberg, Casey",
+      "published_at": "2020-02-28",
+      "url": "https://doi.org/10.59350/mnb45-vq412",
+      "retrieved_at": "2026-10-18T14:50:35.826Z",
+      "sha256": "aa704783ae6f4cec297e4794e6c31c0da986651f58008d0ee0a1df0b48f9d5a4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "I gave a talk recently extolling the virtues of PouchDB and how you can use it build web experiences that feel very much like native apps.",
+        "In short, with PouchDB you can give users app-like experiences with no login, and that store data while offline.",
+        "And yet they still have the best feature of web app: they can found with a URL."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why the Frontend Keeps Getting Harder",
+      "publisher": "Front Matter",
+      "author": "Ydenberg, Casey",
+      "published_at": "2020-02-28",
+      "url": "https://doi.org/10.59350/qsdm0-79564",
+      "retrieved_at": "2026-10-18T14:50:35.826Z",
+      "sha256": "aa704783ae6f4cec297e4794e6c31c0da986651f58008d0ee0a1df0b48f9d5a4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "I gave a talk recently extolling the virtues of PouchDB and how you can use it build web experiences that feel very much like native apps.",
+        "In short, with PouchDB you can give users app-like experiences with no login, and that store data while offline.",
+        "And yet they still have the best feature of web app: they can found with a URL."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Renewables are getting cheaper all the time – here’s why",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "McBain, Bonnie",
+      "published_at": "2016-09-08",
+      "url": "https://theconversation.com/renewables-are-getting-cheaper-all-the-time-heres-why-64799",
+      "retrieved_at": "2026-10-18T14:50:36.637Z",
+      "sha256": "183f9373ec951f9261b4b38d82b0d87b2d2387e1fbff22ceaeac133cd27f37ba",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Renewables are getting cheaper all the time – here’s why Skip to content Academic rigor, journalistic flair Connecting renewable energy across Australia will help generate reliable electricity.",
+        "Our fossil fuel infrastructure is ageing, which means we will soon need to invest in new power generators.",
+        "New technologies such as battery storage could revolutionise long-standing business models .",
+        "With care, the transitions away from fossil fuels could offer greater job opportunities .",
+        "Our latest research , which corroborates previous work, shows the technology already exists to solve many of the remaining questions around technological capability.",
+        "For instance, the fact that wind and solar don’t generate electricity when the wind isn’t blowing and the sun isn’t shining can be dealt with by installing a network of diverse generators across a wide area, or by increasing our use of energy storage.",
+        "One of the biggest remaining barriers to transition is cost.",
+        "Much work is going into reducing the cost of renewable energy, including the latest funding announcement from the Australian Renewable Energy Agency (ARENA) of A$92 million for 12 solar projects.",
+        "The cost of building renewable energy The cost of renewable energy is highly variable across the world and even within Australia.",
+        "The picture is not simple, but it does help to start by looking at the big picture.",
+        "Average capital costs of constructing new wind, solar PV and ocean/tidal generators are already lower than equivalent coal generation infrastructure.",
+        "Research suggests that, overall, the cost of moving to 100% renewable energy is not significantly higher than the cost of hitting a lower target ."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Batteries are getting cheaper while gas gets pricier. Here’s why",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Gilmore, Joel",
+      "published_at": "2026-07-28",
+      "url": "https://theconversation.com/batteries-are-getting-cheaper-while-gas-gets-pricier-heres-why-287956",
+      "retrieved_at": "2026-10-18T14:50:36.710Z",
+      "sha256": "bd8cece1f95241eaddc4aa388203086e9526cf305cddb5fa81f34abaa85469c9",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Here’s why Skip to content Academic rigor, journalistic flair Australia is shifting away from coal-fired power plants, as batteries and other renewable technologies gain traction.",
+        "mikulas1/Getty Batteries are getting cheaper while gas gets pricier.",
+        "Across the east coast, gas-fired power stations – long viewed as the only way to keep the grid functioning on our hottest or coldest days – barely ran .",
+        "The amount of energy generated by fossil gas this year dropped to its lowest point in 25 years .",
+        "Batteries are now filling this gap, as a cheaper, cleaner alternative at peak times.",
+        "And wholesale electricity prices are 47% lower than this time last year, thanks to record renewable and battery generation.",
+        "This shift sits at the heart of the CSIRO’s latest GenCost report , which tells a story of two technologies heading in opposite directions: batteries getting cheaper and gas getting more expensive.",
+        "The steady shift away from coal In Australia, most of our electricity historically came from coal .",
+        "But each year we’re becoming less reliant on this finite and polluting resource.",
+        "In the first three months of 2026, renewables supplied a record 45% of electricity in Australia’s east coast grid.",
+        "This matters because electricity generation produces 32% of Australia’s carbon emissions .",
+        "These emissions are worsening climate change , leading to more extreme weather and leaving many Australians physically and financially vulnerable ."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Fermi paradox",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11579",
+      "retrieved_at": "2026-10-18T14:50:36.710Z",
+      "sha256": "667d1790ca8b0033bd892c62b6dfecf0a30e1942efacfbcedc77256485f66d34",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Fermi paradox is the seeming inconsistency between the lack of  evidence of extraterrestrial civilizations and the apparently high likelihood of their existence.",
+        "In simple terms, the Fermi paradox asks why, given the vast number of stars and potentially habitable planets in our observable universe, there is no clear evidence of extraterrestrial civilizations.",
+        "The paradox is named after physicist Enrico Fermi who blurted out the question—remembered by Emil Konopinski as \"But where is everybody?\"—during lunchtime after the conversation had already moved on to other topics.",
+        "This happened at Los Alamos in 1950 with colleagues Konopinski, Edward Teller, and Herbert York.",
+        "The paradox first appeared in print in a 1963 paper by Carl Sagan, and the paradox has since been more fully described by scientists.",
+        "Early formulations of the paradox have also been identified in writings by Bernard Le Bovier de Fontenelle (1686) and Jules Verne (1865), and by Soviet rocket scientist Konstantin Tsiolkovsky (1933).",
+        "There have been many attempts to resolve the Fermi paradox, such as suggesting that intelligent extraterrestrial beings are extremely rare, that the lifetime of such civilizations is short, or that they exist but (for various reasons) humans see no evidence."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "District heating",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1669741",
+      "retrieved_at": "2026-10-18T14:50:36.710Z",
+      "sha256": "312e3cd9a538c9f0685f27a1b3985ba60d54246d9231e8964cd98b625ae01626",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "District heating (also known as heat networks) is a system for distributing heat generated in a centralized location through a system of insulated pipes for residential and commercial heating requirements such as space heating and water heating.",
+        "The heat is often obtained from a cogeneration plant burning fossil fuels or biomass, but heat-only boiler stations, geothermal heating, heat pumps and central solar heating are also used, as well as heat waste from factories and nuclear power electricity generation.",
+        "District heating plants can provide higher efficiencies and better pollution control than localized boilers.",
+        "According to some research, district heating with combined heat and power (CHPDH) is the cheapest method of cutting carbon emissions, and has one of the lowest carbon footprints of all fossil generation plants.",
+        "District heating is ranked number 27 in Project Drawdown's 100 solutions to global warming."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Solar tracker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4232526",
+      "retrieved_at": "2026-10-18T14:50:36.710Z",
+      "sha256": "2561d68da62f06db2a2e95710497ff1cec6b0ee8449695bb8bda5e798679687d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A solar tracker is a device that orients a payload toward the Sun.",
+        "Payloads are usually solar panels, parabolic troughs, Fresnel reflectors, lenses, or the mirrors of a heliostat.",
+        "For flat-panel photovoltaic systems, trackers are used to minimize the angle of incidence between the incoming sunlight and a photovoltaic panel, sometimes known as the cosine error.",
+        "Reducing this angle increases the amount of energy produced from a fixed amount of installed power-generating capacity.",
+        "As the pricing, reliability, and performance of single-axis trackers have improved, the systems have been installed in an increasing percentage of utility-scale projects.",
+        "The global solar tracker market was 14 gigawatts in 2017 73 GW in 2022, and 94 GW in 2023.",
+        "By 2024 the solar tracker market was 111 GW and 99% of new utility-scale solar projects used single-axis tracking due to lower LCoE.",
+        "By contrast, fixed-tilt was primarily used in places with difficult terrain, brownfields, or high winds.",
+        "In concentrator photovoltaics (CPV) and concentrated solar power (CSP) applications, trackers are used to enable the optical components in the CPV and CSP systems.",
+        "The optics in concentrated solar applications accept the direct component of sunlight light and therefore must be oriented appropriately to collect energy.",
+        "Tracking systems are found in all concentrator applications because such systems collect the sun's energy with maximum efficiency when the optical axis is aligned with incident solar radiation."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Energy policy of India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8865423",
+      "retrieved_at": "2026-10-18T14:50:36.710Z",
+      "sha256": "c727977d032fea004ccc91a1458be342ab1aa740c5e25e9675861cdda99d11a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The energy policy of India is to increase the locally produced energy in India and reduce energy poverty, with more focus on developing alternative sources of energy, particularly nuclear, solar and wind energy.",
+        "The primary energy consumption in India grew by 13.3% in FY2022-23 and is the third biggest with a 6% global share after China and the US.",
+        "In 2018, India's net imports are nearly 205.3 million tons of crude oil and its products, 26.3 Mtoe of LNG and 141.7 Mtoe coal totaling to 373.3 Mtoe of primary energy which is equal to 46.13% of total primary energy consumption.",
+        "India is largely dependent on fossil fuel imports to meet its energy demands – by 2030, India's dependence on energy imports is expected to exceed 53% of the country's total energy consumption.",
+        "India's energy policy increasingly emphasizes energy transition and decarbonization strategies, particularly in sectors such as transportation.",
+        "According to a report by The Energy and Resources Institute (TERI), the country is focusing on electric mobility, alternative fuels, and policy-driven approaches to reduce carbon emissions and improve long-term energy sustainability.",
+        "About 80% of India's electricity generation is from fossil fuels.",
+        "India is surplus in electricity generation and also a marginal exporter of electricity in 2017.",
+        "Since the end of the calendar year 2015, huge power generation capacity has been idling for want of electricity demand.",
+        "India ranks second after China in renewables production with 208.7 Mtoe in 2016.",
+        "The carbon intensity in India was 0.29 kg of CO2 per kWhe in 2016 which is more than that of USA, China and EU.",
+        "The total manmade CO2 emissions from energy, process emissions, methane, and flaring is 2797.2 million tons of CO2 in CY2021, which was 7.2% of global emissions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "mm-1895",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the brain can miraculously switch off pain",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Baumgardt, Dan",
+      "published_at": "2025-02-10",
+      "url": "https://theconversation.com/how-the-brain-can-miraculously-switch-off-pain-248333",
+      "retrieved_at": "2026-10-18T15:49:31.048Z",
+      "sha256": "bd15d1c81ea370c051ffb1e065cfbbd89979fec0d4f4b97c4099e7f42626f419",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "In some cases, the injury was as severe as losing part of a limb.",
+        "A truly remarkable phenomenon had come into play – the effects of fear, stress and emotion on the brain had switched off their pain.",
+        "But how does this work – and how can we use it to our advantage?",
+        "You can listen to more articles from The Conversation, narrated by Noa, here .",
+        "The burning of indigestion, the wince of a scald from the kettle.",
+        "But despite its unpleasantness, pain has a critically important purpose, designed to protect the body rather than harm it.",
+        "A fundamental concept to first understand is that you do not detect pain – it is a sensation.",
+        "A sensation that your brain has created – from information it receives from the countless neurons (nerve cells) which supply your skin.",
+        "These specialised neurons are called nociceptors – they detect stimuli which are noxious, or potentially damaging to the body.",
+        "This stimulation might range from a mechanical cut or crush injury, to extreme hot or cold temperatures.",
+        "So, if you touch a hot iron, or stand on a sharp nail, the correct reaction is to move your hand or foot away from it.",
+        "The brain responds to pain by initiating muscle contractions in your arm or leg."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Digital detox: how to switch off without paying the price – new research",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Hoang, Quynh",
+      "published_at": "2025-12-17",
+      "url": "https://theconversation.com/digital-detox-how-to-switch-off-without-paying-the-price-new-research-272037",
+      "retrieved_at": "2026-10-18T15:49:31.297Z",
+      "sha256": "c727f022f3953888186cfcd7b602e85bb3b029472a69d7f67e723d6f629fe15e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Much like the smoking cessation boom of the 1990s, the digital detox business – spanning hardware, apps, telecoms, workplace wellness providers, digital “wellbeing suites” and tourism – is now a global industry in its own right.",
+        "People are increasingly willing to pay to escape the technology they feel trapped by .",
+        "The global digital detox market is currently valued at around US$2.7 billion (£2bn), and forecast to double in size by 2033.",
+        "Hardware manufacturers such as Light Phone, Punkt, Wisephone and Nokia sell minimalist “dumb phones” at premium prices, while subscription-based website blockers such as Freedom, Forest, Offtime and RescueTime have turned restraint into a lucrative revenue stream .",
+        "Wellness tourism operators have capitalised too: tech-free travel company Unplugged recently expanded to 45 phone-free cabins across the UK and Spain, marketing disconnection as a high-value experience.",
+        "However, my new research , with colleagues at Lancaster University, suggests this commercialised form of abstinence rarely extinguishes digital cravings – instead merely acting as a temporary pause.",
+        "We carried out a 12-month netnography focusing on the NoSurf Reddit community of people interested in increasing their productivity, plus 21 in-depth interviews (conducted remotely) with participants living in different countries.",
+        "We found that rather than actively confronting their habits, participants often reported outsourcing self-discipline to blocker apps, timed lockboxes and minimalist phones.",
+        "Joan*, a NoSurf participant, explained how she relies on app-blocking software not to bolster her self-control, but to negate the need for it entirely.",
+        "“To me, it’s less about using willpower, which is a precious resource … and more about removing the need to exert willpower in the first place.” Philosopher Slavoj Žižek defines this kind of behaviour – delegating the work of self-regulation to a market product – as “interpassivity”.",
+        "This produces what he calls “false activity”: people thinking they are addressing a problem by engaging with consumer solutions that actually leave their underlying patterns unchanged.",
+        "Several of our detoxing participants described a cycle in which each relapse prompted them to try yet another tool, entrenching their dependency on the commercial ecosystem."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Assassin's Quest",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=840204",
+      "retrieved_at": "2026-10-18T15:49:31.298Z",
+      "sha256": "6612cb8896b9cc1f1e821053180ec83a1f4b9b6baaa15b7ec79a0544465d1e1a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Assassin's Quest is a 1997 fantasy novel by American writer Robin Hobb, the third and final book in The Farseer Trilogy.",
+        "While Fitz's narrative continues in The Tawny Man Trilogy, the Liveship Traders Trilogy is next in the chronology of the Realm of the Elderlings."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Kettle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=953864",
+      "retrieved_at": "2026-10-18T15:49:31.298Z",
+      "sha256": "bf88f09de9e9d90dfaa241a420810fe6167ab7896906eebf8986053cdc50670a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A kettle, sometimes called a tea kettle or teakettle, is a device specialized for boiling water, commonly with a lid, spout, and handle.",
+        "There are two main types: the stovetop kettle, which uses heat from a hob, and the electric kettle, which is a small kitchen appliance with an internal heating element.",
+        "Kettles are used mainly in the preparation of hot beverages, but also in food preparation."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "PythagoraSwitch",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4753558",
+      "retrieved_at": "2026-10-18T15:49:31.298Z",
+      "sha256": "d23ce1f3776249281fb723a62b65c518057e56a9e440bb645b1b61b168b26c30",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "PythagoraSwitch (ピタゴラスイッチ, Pitagora Suitchi) is a 15-minute Japanese children's puppet animated preschool educational television program that has been aired by NHK since April 9, 2002.",
+        "It encourages augmenting children's \"way of thinking\" under the supervision of Masahiko Satō (佐藤雅彦) and Masumi Uchino (内野真澄).",
+        "A five-minute format called PythagoraSwitch Mini is also available.",
+        "During the beginning and ending of each episode, and between each corner (segment), there are Pythagorean Devices (ピタゴラ装置, Pitagora Sōchi).",
+        "\"Pythagorean device\" is the equivalent Japanese colloquialism for the American \"Rube Goldberg machine\" and British \"Heath Robinson\" contraption.",
+        "The main focus of the program is a puppet show, but the subject is mainly advanced by small corners.",
+        "World phenomena, principles, characteristics, and the like are introduced in an entertaining way.",
+        "At the end of each segment, the show's title is sung as a kind of punchline."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Electric water boiler",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7156988",
+      "retrieved_at": "2026-10-18T15:49:31.298Z",
+      "sha256": "1025309c46b5e4f5f534bf8eb7ceee2e03b3717a8c7e99b40b5dac3033e1cbee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electric water boiler, also called a thermo pot, is a consumer electronics small appliance used for boiling water and maintaining it at a constant temperature in an enclosed reservoir.",
+        "It is typically used to provide an immediate source of hot water for making tea, hot chocolate, coffee, instant noodles, or baby formula, or for any other household use where clean hot water is required.",
+        "They are a common component of Japanese kitchens and the kitchens of many East Asian countries, but are found in varying use globally.",
+        "Some thermo pots are designed with a feature that can purify water."
+      ]
+    }
+  ]
+}

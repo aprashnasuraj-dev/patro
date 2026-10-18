@@ -1,0 +1,101 @@
+{
+  "id": "mm-1489",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Introduction: how language works in politics",
+      "publisher": "Policy Press",
+      "author": "Williams, Matthew",
+      "published_at": "2018-06-26",
+      "url": "https://doi.org/10.1332/policypress/9781529200201.003.0001",
+      "retrieved_at": "2026-10-18T15:26:54.868Z",
+      "sha256": "63d306c7b887fc2f4f4ec5a8264647c52b30714b32019209181bfc28b0dcae4b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This book examines how language works in democratic politics and how it impacts the effectiveness of policy.",
+        "Using evidence from the first computer-assisted analysis of all 41.5 million words of legislation enacted from 1900 to 2015, it tracks the major changes in form and function that Parliament's use of language has undergone over time and the reasons for such changes.",
+        "More importantly, it explores the policy and social implications of changes in legislative language as well as the issue of legislative indeterminacy.",
+        "This introductory chapter discusses the questions, arguments and aims of the book and reviews the literature on the operation of language in British politics, along with the impact of legislative language on policy effectiveness.",
+        "It also explains what specifically the book contributes to the existing literature, describes the research design, and provides an overview of the chapters that follow."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Adrenochrome",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70838",
+      "retrieved_at": "2026-10-18T15:26:56.683Z",
+      "sha256": "1388dd8e366d5f936dffabd437841a2f619c0a7317dd34eabaac6ce6eec0e45c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Adrenochrome is a chemical compound produced by the oxidation of adrenaline (epinephrine).",
+        "It was the subject of limited research from the 1950s through to the 1970s as a potential cause of schizophrenia.",
+        "While adrenochrome has no currently proven medical application, the semicarbazide derivative, carbazochrome, is a hemostatic medication.",
+        "Adrenochrome is mass produced and commercially available to the public, and is not a controlled substance.",
+        "Despite its name, adrenochrome has no connection to the element chromium.",
+        "The suffix '-chrome' refers to color, as solid adrenochrome is deep violet."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Epinephrine autoinjector",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=285897",
+      "retrieved_at": "2026-10-18T15:26:56.683Z",
+      "sha256": "a1dbc386b80f4dbb0246ad63cb63975097ca2fb57c169b3062c535ac64e192f3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An epinephrine autoinjector (or adrenaline autoinjector, also known by the trademark EpiPen) is a medical device for injecting a measured dose or doses of epinephrine (adrenaline) by means of autoinjector technology.",
+        "The first epinephrine autoinjector was brought to market in 1983."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Point Break",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=483274",
+      "retrieved_at": "2026-10-18T15:26:56.683Z",
+      "sha256": "c2f10635d1af5a5d6ba0f04fcb58e5654daff3ed894148ed55b52dac5ac838b3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Point Break is a 1991 American action film directed by Kathryn Bigelow and written by W.",
+        "It stars Patrick Swayze, Keanu Reeves, Gary Busey and Lori Petty.",
+        "The title refers to the surfing term \"point break\", where a wave breaks as it hits a point of land jutting out from the coastline.",
+        "The film features Reeves as an undercover FBI agent who is tasked with investigating the identities of a group of bank robbers while he develops a complex relationship with the group's leader (Swayze).",
+        "Development of Point Break began in 1986, when Iliff wrote an initial script for the film.",
+        "Bigelow soon developed it with her husband, James Cameron, and filming took place four years later.",
+        "It was shot across the western coast of the continental United States and was budgeted at $24 million.",
+        "Point Break premiered in Westwood on July 10, 1991 before being released by 20th Century Fox on July 12, 1991.",
+        "The film opened to generally positive reviews, with critics praising the chemistry between Reeves and Swayze.",
+        "During its theatrical run, it grossed over $83.5 million, and has since gained a cult following."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Crank (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5930667",
+      "retrieved_at": "2026-10-18T15:26:56.684Z",
+      "sha256": "5b1c08ed54b86a795f5c71c9a0d948a1da898aed2c4ae85a8ceabdb89a686928",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crank is a 2006 American action thriller film written and directed by Mark Neveldine and Brian Taylor (in their directorial debut).",
+        "It stars Jason Statham, Amy Smart, Jose Pablo Cantillo, Efren Ramirez and Dwight Yoakam.",
+        "In the film, Chev Chelios (Statham), an LA–based American assassin, is poisoned by a synthetic drug and must keep his adrenaline flowing constantly to keep himself alive, while trying to track down the culprits responsible for poisoning him."
+      ]
+    }
+  ]
+}

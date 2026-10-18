@@ -1,0 +1,147 @@
+{
+  "id": "mm-1125",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How do astronauts go to the bathroom in space?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Gregg, Tracy",
+      "published_at": "2021-03-15",
+      "url": "https://theconversation.com/how-do-astronauts-go-to-the-bathroom-in-space-153370",
+      "retrieved_at": "2026-10-18T15:18:04.102Z",
+      "sha256": "d2b5e1222877bac2e28ffcbd8bb1a66f6be542e7aa85f78290af71a7852f10c2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Toilets in space are a bit more complicated than those on Earth.",
+        "Don DeBold via Wikipedia , CC BY-ND How do astronauts go to the bathroom in space?",
+        "If you have a question you’d like an expert to answer, send it to CuriousKidsUS@theconversation.com .",
+        "– Henry D., age 7, Cambridge, Massachusetts Whether you use a hole in the ground or a fancy gold-plated toilet, on Earth, gravity pulls your waste down and away from you.",
+        "For astronauts, “doing their duty” is a bit more complicated.",
+        "Without gravity, any loose drops or dribbles could float out of the toilet.",
+        "That’s not good for astronauts’ health, nor for the sensitive equipment inside the space station.",
+        "I study volcanoes on other planets , and I’m interested in how people can work in extreme environments like space.",
+        "So how do you go to the bathroom in space or on the International Space Station?",
+        "The new toilet is more comfortable, easier to use for both men and women, and lighter.",
+        "NASA/James Blair via Wikimedia Commons A bathroom vacuum In 1961, Alan Shepard became the first American in space.",
+        "His trip was supposed to be short, so there was no plan for pee ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How much radiation damage do astronauts really suffer in space?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Archer, Martin",
+      "published_at": "2016-06-16",
+      "url": "https://theconversation.com/how-much-radiation-damage-do-astronauts-really-suffer-in-space-60475",
+      "retrieved_at": "2026-10-18T15:18:04.256Z",
+      "sha256": "63e9ed8cfa8276195fe8e790ce3487ea5e6c46bd8ebf47619765d29a6475071c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How much radiation damage do astronauts really suffer in space?",
+        "Skip to content Academic rigor, journalistic flair Tim Peake, Yuri Malenchenko and Tim Kopra are about to return to Earth after a six-month stay at the ISS.",
+        "NASA/Victor Zelentsov How much radiation damage do astronauts really suffer in space?",
+        "These can cause damage to the cells in your body by breaking up the atoms and molecules that they’re made of.",
+        "But what are these sources of radiation and exactly how much is an astronaut on the International Space Station exposed to over the course of a six-month stay?",
+        "With the latest expedition about to return to the safety of planet Earth on June 18, I thought I’d have a look at the data to find out.",
+        "The US National Oceanic and Atmospheric Administration monitors the levels of radiation at low Earth orbit using the instruments on board five polar orbiting environmental satellites.",
+        "Since the Earth rotates underneath them, this allows us to build up a pretty comprehensive view of the space radiation at similar altitudes to the ISS every day.",
+        "By flying the space station through the radiation map each day, we can work out the total amount of radiation astronauts receive.",
+        "While some of it comes from the sun, cosmic rays from unknown regions within our galaxy are also an issue – but have by far the smallest effect.",
+        "But for missions further away from the Earth’s protective magnetic field, cosmic rays would be more of a problem.",
+        "On its journey to Mars, the Curiosity rover provided crucial data on this and it was higher than expected."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How animal astronauts paved the way for human space flight",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Young, Robert",
+      "published_at": "2016-01-06",
+      "url": "https://theconversation.com/how-animal-astronauts-paved-the-way-for-human-space-flight-52528",
+      "retrieved_at": "2026-10-18T15:18:04.619Z",
+      "sha256": "b8e5edf53aa7a569699168ad001ff73bdac6a733e2991f79bd3aa774725a7455",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "I was surprised how much excitement this had caused in my kids, but then one of my earliest memories is sitting with my father watching Neil Armstrong step on the moon; I can still recall it vividly.",
+        "The history of aeronautical and space exploration is one full not only of human heroes such as Yuri Gagarin but also of animal explorers, albeit passive ones.",
+        "It was the Montgolfier brothers in 1783, worried about the effects of high altitude on human health, who hung a basket containing a live sheep, cockerel and duck below one of their earliest balloons.",
+        "This also turns out to be an early example of a controlled experiment: the sheep was there to represent human physiological responses, the duck as a control because they are accustomed to high altitudes and the cockerel as a second control since it is a bird not accustomed to high altitudes.",
+        "All three survived their brief flight, in front of King Louis XVI and Marie Antoinette, and subsequently man took to the air.",
+        "If sheep could fly … Expérience aerostatique faite Versailles le 19 sept.",
+        "1783 Like the Montgolfier brothers, early space scientists were concerned about whether humans would be able to survive travel in space.",
+        "So in 1947, a few fruit flies were the first animals in space, launched on top of an American V2 rocket and safely returned to earth, unlike many of the animals that followed them in the next decades.",
+        "During the late 1940s and 1950s a series of American rhesus monkeys all called Albert made trips with varying degrees of success into space.",
+        "They showed humans could survive the rigour of space travel, or at least straight-up, straight-down missions.",
+        "The Russians’ chosen species to be their animal astronaut was the “stray dog”.",
+        "Dogs were chosen for their physiological similarities to humans and strays were preferred as they already had experience of toughing it out on the freezing streets of Russia."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of spaceflight-related accidents and incidents",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=201912",
+      "retrieved_at": "2026-10-18T15:18:04.620Z",
+      "sha256": "24481f53885ece886cddfd411872b69b23f9cd23177df562d78756a4f30132cf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article lists verifiable spaceflight-related accidents and incidents resulting in human death or serious injury.",
+        "These include incidents during flight or training for crewed space missions and testing, assembly, preparation, or flight of crewed and robotic spacecraft.",
+        "Not included are accidents or incidents associated with intercontinental ballistic missile (ICBM) tests, death or injury to test animals, uncrewed space flights, rocket-powered aircraft projects of World War II, or conspiracy theories about alleged unreported Soviet space accidents.",
+        "As of April 2026, 19 people have died during spaceflights that crossed or were intended to cross the boundary of space as defined by the United States, that being 50 mi (80 km) above sea level.",
+        "Astronauts have also died while training for space missions, such as the Apollo 1 launch pad fire that killed an entire crew of three.",
+        "There have also been some non-astronaut deaths during spaceflight-related activities.",
+        "As of April 2026, more than 188 people have died in spaceflight-related incidents.",
+        "From the breakup, Siebold suffered serious injuries to his eyes, face, right arm and the right side of his chest, which required multiple surgeries in the weeks following the crash."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Effect of spaceflight on the human body",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1614102",
+      "retrieved_at": "2026-10-18T15:18:04.620Z",
+      "sha256": "15152cb81202596c5b3c97e78e072fd1036c3783f52c52597d5af8fb9aefdef8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The effects of spaceflight on the human body are complex and largely harmful over both short and long term.",
+        "Significant adverse effects of long-term weightlessness include muscle atrophy and deterioration of the skeleton (spaceflight osteopenia).",
+        "Other significant effects include a slowing of cardiovascular system functions, decreased production of red blood cells (space anemia), balance disorders, eyesight disorders and changes in the immune system.",
+        "Additional symptoms include fluid redistribution (causing the \"moon-face\" appearance typical in pictures of astronauts experiencing weightlessness), loss of body mass, nasal congestion, sleep disturbance, and excess flatulence.",
+        "A 2024 assessment noted that \"well-known problems include bone loss, heightened cancer risk, vision impairment, weakened immune systems, and mental health issues...",
+        "[y]et what's going on at a molecular level hasn't always been clear\", arousing concerns especially vis a vis private and commercial spaceflight now occurring without any scientific or medical research being conducted among those populations regarding effects.",
+        "Overall, NASA refers to the various deleterious effects of spaceflight on the human body by the acronym RIDGE (i.e., \"space radiation, isolation and confinement, distance from Earth, gravity fields, and hostile and closed environments\").",
+        "The engineering problems associated with leaving Earth and developing space propulsion systems have been examined for more than a century, and millions of hours of research have been spent on them.",
+        "In recent years, there has been an increase in research on the issue of how humans can survive and work in space for extended and possibly indefinite periods of time.",
+        "This question requires input from the physical and biological sciences and has now become the greatest challenge (other than funding) facing human space exploration.",
+        "A fundamental step in overcoming this challenge is trying to understand the effects of long-term space travel on the human body.",
+        "In October 2015, the NASA Office of Inspector General issued a health hazards report related to space exploration, including a human mission to Mars."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Astronaut training",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34892999",
+      "retrieved_at": "2026-10-18T15:18:04.620Z",
+      "sha256": "cb9fff897850a07c8fa508398560fe39773dc0e811175be1ade24c5125ad10e3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Virtual and physical training facilities have been integrated to familiarize astronauts with the conditions they will encounter during all phases of flight and prepare astronauts for a microgravity environment.",
+        "Special considerations must be made during training to ensure a safe and successful mission, which is why the Apollo astronauts received training for geology field work on the Lunar surface and why research is being conducted on best practices for future extended missions, such as trips to Mars."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "mq-0142",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/265hs-8fj68",
+      "retrieved_at": "2026-10-18T16:35:20.208Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/0b253-ma907",
+      "retrieved_at": "2026-10-18T16:35:20.208Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    }
+  ]
+}

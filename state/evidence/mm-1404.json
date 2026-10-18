@@ -1,0 +1,82 @@
+{
+  "id": "mm-1404",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Coprophagia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7720",
+      "retrieved_at": "2026-10-18T15:26:28.531Z",
+      "sha256": "35a2df84297e30f536f412708301d1927fe19e225dd0ddde1d36d7fd7230ff3a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Coprophagia ( KOP-rə-FAY-jee-ə) or coprophagy ( kə-PROF-ə-jee) is the consumption of feces.",
+        "The word is derived from the Ancient Greek κόπρος kópros \"feces\" and φαγεῖν phageîn \"to eat\".",
+        "Coprophagy refers to many kinds of feces-eating, including eating feces of other species (heterospecifics), of other individuals (allocoprophagy), or one's own (autocoprophagy).",
+        "Feces may be already deposited or taken directly from the anus.",
+        "Some animal species eat feces as a normal behavior, but in most species, coprophagia indicates a pathological condition."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Fairy ring",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=449924",
+      "retrieved_at": "2026-10-18T15:26:28.531Z",
+      "sha256": "cfe778ec7d0a605f514dba549e8577764b10e73f945187619bf670ea4be1e295",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A fairy ring, also known as fairy circle, elf circle, elf ring or pixie ring, is a naturally occurring ring or arc of mushrooms.",
+        "They are found mainly in forested areas, but also appear in grasslands or rangelands.",
+        "Fairy rings are detectable by sporocarps (fungal spore pods) in rings or arcs, as well as by a necrotic zone (dead grass), or a ring of dark green grass.",
+        "The rings may grow to over 10 metres (33 ft) in diameter, and they become stable over time as the fungus grows and seeks food underground.",
+        "Fairy rings are the subject of much folklore and myth worldwide, particularly in Western Europe.",
+        "They are alternately seen as hazardous or dangerous places linked with witches or the Devil, or as a sign of good fortune."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Long-tailed weasel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=534313",
+      "retrieved_at": "2026-10-18T15:26:28.531Z",
+      "sha256": "3cf0457dad51b3376bd01a1c79556c6db4fa0893574e17f7bc9c2924653b2af5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The long-tailed weasel (Neogale frenata), also known as the bridled weasel, masked ermine, or big stoat, is a species of weasel found in North, Central, and South America.",
+        "Long-tailed weasels exhibit scale-dependent patterns of habitat selection, favoring forest patches, fencerows, and drainage ditches while avoiding agricultural fields.",
+        "They typically make their habitats in forests and underground in burrows of other small mammals."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Small mammals as pets",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2007884",
+      "retrieved_at": "2026-10-18T15:26:28.531Z",
+      "sha256": "7bf0d3aa216bc4677a13df9a7b37b27ee7f401fb614b342889805630bd8a4cb0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The domestication of small mammals to keep as pets is a relatively recent development, arising only after large-scale industrialization.",
+        "Historically, Western society was more agrarian than today, with rodents as a whole seen as vermin that were carriers for disease and a threat to crops.",
+        "Animals that hunted such pests, such as terriers, ferrets and cats, were prized.",
+        "Many small animals kept as household pets are rodents, including: fancy mice, fancy rats, hamsters (golden hamsters and dwarf hamsters), gerbils (Mongolian jirds and duprasi gerbils), common degus, common chinchillas, and guinea pigs (cavies).",
+        "Non-rodents, including rabbits, hedgehogs and sugar gliders, are also kept.",
+        "Some of these small mammals are prohibited from being kept as pets in certain jurisdictions for being invasive; California, Hawaii, Alberta and New Zealand have strict regulations to protect their native environments and agricultural operations.",
+        "Gerbils, degus, and domesticated rats have various prohibitions on their ownership."
+      ]
+    }
+  ]
+}

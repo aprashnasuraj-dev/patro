@@ -1,0 +1,98 @@
+{
+  "id": "mm-1495",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Laser",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17556",
+      "retrieved_at": "2026-10-18T15:33:02.815Z",
+      "sha256": "184e5ff4b0364ef5435fb7aefc64fc08a40dadabee1dee10008fd39166f21622",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A laser is a device that emits light through a process of optical amplification based on the stimulated emission of electromagnetic radiation.",
+        "The word laser originated as an acronym for light amplification by stimulated emission of radiation.",
+        "The first laser was built in 1960 by Theodore Maiman at Hughes Research Laboratories, based on theoretical work by Charles H.",
+        "Townes and Arthur Leonard Schawlow and the optical amplifier patented by Gordon Gould.",
+        "A laser differs from other sources of light in that it emits light that is coherent.",
+        "Spatial coherence allows a laser to be focused to a tight spot, enabling uses such as optical communication, laser cutting, and lithography.",
+        "It also allows a laser beam to stay narrow over great distances (collimation), used in laser pointers, lidar, and free-space optical communication.",
+        "Lasers can also have high temporal coherence, which permits them to emit light with a very narrow frequency spectrum.",
+        "Temporal coherence can also be used to produce ultrashort pulses of light with a broad spectrum but durations measured in attoseconds.",
+        "The laser is regarded as one of the greatest inventions of the 20th century."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Laser cutting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=531911",
+      "retrieved_at": "2026-10-18T15:33:02.815Z",
+      "sha256": "43787d7b7e00ad30be880836951a8b8b78b07eea55451e07a6b9ccd1af32af35",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Laser cutting is a technology that uses a laser to vaporize materials, resulting in a cut edge.",
+        "While typically used for industrial manufacturing applications, it is now used by schools, small businesses, architecture, and hobbyists.",
+        "Laser cutting works by directing the output of a high-power laser most commonly through optics.",
+        "The laser optics and CNC (computer numerical control) are used to direct the laser beam to the material.",
+        "A commercial laser for cutting materials uses a motion control system to follow a CNC or G-code of the pattern to be cut onto the material.",
+        "The focused laser beam is directed at the material, which then either melts, burns, vaporizes away, or is blown away by a jet of gas, leaving an edge with a high-quality surface finish that can be classified according to various standards: ISO 9013, etc."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Laser engraving",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=763693",
+      "retrieved_at": "2026-10-18T15:33:02.815Z",
+      "sha256": "0261600bc22734c31de6b64f60de44c375c7272dad4ec2fdb0f1659849dd19e1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Laser engraving is the practice of using lasers to engrave an object.",
+        "The engraving process renders a design by physically cutting into the object to remove material.",
+        "The technique does not involve the use of inks or tool bits that contact the engraving surface and wear out, giving it an advantage over alternative marking technologies, where inks or bit heads have to be replaced regularly.",
+        "That process is distinct from laser marking, which involves using a laser to mark an object via any of a variety of methods, including color change due to chemical alteration, charring, foaming, melting, ablation, and more.",
+        "Laser marking is a common method for applying variable dates, lot and batch codes, 2D codes, alphanumeric text, and graphics to products and packaging during production.",
+        "However, the term laser marking is also used as a generic term covering a broad spectrum of surfacing techniques including printing, hot-branding, and laser bonding.",
+        "The machines for laser engraving and laser marking are sometimes the same, so the two terms are sometimes confused by those without relevant expertise.",
+        "The impact of laser marking has been more pronounced for specially designed \"laserable\" materials and also for some paints.",
+        "These include laser-sensitive polymers and novel metal alloys."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Project Excalibur",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4593332",
+      "retrieved_at": "2026-10-18T15:33:02.815Z",
+      "sha256": "bc17c172da8854a10dd1492599da6559e2daa8ab0ec97321952b5072aef38731",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Project Excalibur was a Lawrence Livermore National Laboratory (LLNL) Cold War–era research program to develop an X-ray laser system as a ballistic missile defense (BMD) for the United States.",
+        "The concept involved packing large numbers of expendable X-ray lasers around a nuclear device, which would orbit in space.",
+        "During an attack, the device would be detonated, with the X-rays released focused by each laser to destroy multiple incoming target missiles.",
+        "Because the system would be deployed above the Earth's atmosphere, the X-rays could reach missiles thousands of kilometers away, providing protection over a wide area.",
+        "Anti-ballistic missile (ABM) systems of the time only attacked the enemy nuclear warheads after they were released by ICBMs.",
+        "A single ICBM could carry as many as a dozen warheads, so dozens of defense missiles were required per attacking missile.",
+        "A single Excalibur device contained up to fifty lasers and could potentially destroy a corresponding number of missiles, with all of the warheads still on board.",
+        "A single Excalibur could thus destroy dozens of ICBMs and hundreds of warheads for the cost of a single nuclear bomb, improving the cost-exchange ratio that had previously doomed ABM systems.",
+        "The basic concept behind Excalibur was conceived in the 1970s by George Chapline Jr.",
+        "After a successful test in 1980, in 1981 Teller and Lowell Wood began talks with US president Ronald Reagan about the concept.",
+        "These talks, combined with strong support from The Heritage Foundation, helped Reagan ultimately to announce the Strategic Defense Initiative (SDI) in 1983.",
+        "Further underground nuclear tests through the early 1980s suggested progress was being made, and this influenced the 1986 Reykjavík Summit, where Reagan refused to give up the possibility of proof-testing SDI technology with nuclear testing in space."
+      ]
+    }
+  ]
+}

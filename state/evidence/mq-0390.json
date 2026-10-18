@@ -1,0 +1,141 @@
+{
+  "id": "mq-0390",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T16:38:50.966Z",
+      "sha256": "bd7ff5bcbca9fda0a4b0bfe1f2f47b36d6a9b7240f6125179b852633586587c9",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Explainable Machine Learning Prediction of Unknown Exoplanet Masses from Stellar and Orbital Parameters",
+      "publisher": "Elsevier BV",
+      "author": "Das, Swapan; Bhardwaj, Vinod  Kumar; Chakraborty, Janajit",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7292112",
+      "retrieved_at": "2026-10-18T16:38:50.966Z",
+      "sha256": "45d20c18ccaccc03544e6da48c010d113d15a54f1381547aa2f26ab0bf135ea7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This study presents an explainable machine learning framework for predicting unknown exoplanet masses using stellar and orbital parameters obtained from the NASA Exoplanet Archive.",
+        "Following data preprocessing and feature selection, five ensemble regression algorithms—Random Forest, Gradient Boosting, XGBoost, LightGBM, and CatBoost—were developed and evaluated using an 80:20 train-test split and five-fold cross-validation.",
+        "Model performance was assessed using the coefficient of determination (R²), Root Mean Square Error (RMSE) and Mean Absolute Error (MAE).",
+        "Statistical differences among the models were examined using Friedman, Wilcoxon signed rank, and Nemenyi post-hoc tests.",
+        "Although XGBoost achieved the highest predictive accuracy on the independent test dataset (R² = 0.1281), Gradient Boosting demonstrated the strongest overall generalisation during cross-validation (R² = 0.2852) and was selected as the final prediction model.",
+        "To improve model interpretability, SHapley Additive exPlanations (SHAP) were employed to quantify feature contributions, identifying the orbital period, planetary radius, stellar mass, system distance, and stellar surface gravity as the most influential predictors of planetary mass.",
+        "Furthermore, 95\\% prediction intervals were generated to quantify the uncertainty for each estimated planetary mass.",
+        "The proposed framework provides an interpretable and statistically validated approach for estimating unknown exoplanet masses, together with prediction uncertainty estimates, to support future exoplanet characterisation and observational planning."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Helium in Exoplanet Exospheres: Orbital and Stellar Influences",
+      "publisher": "American Astronomical Society",
+      "author": "Krishnamurthy, Vigneshwaran; Cowan, Nicolas B.",
+      "published_at": "2024-06-25",
+      "url": "https://doi.org/10.3847/1538-3881/ad5441",
+      "retrieved_at": "2026-10-18T16:38:51.091Z",
+      "sha256": "9f1aa17a02020afd0b015805b8ccd22971cdc45030fdeb71cb89892b7e467cf7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Searches for helium in the exospheres of exoplanets via the metastable near-infrared triplet have yielded 17 detections and 40 nondetections.",
+        "We performed a comprehensive reanalysis of published studies to investigate the influence of stellar X-ray and extreme-ultraviolet (XUV) flux and orbital parameters on the detectability of helium in exoplanetary atmospheres.",
+        "We identified a distinct “orbital sweet spot” for helium detection, 0.03 to 0.08 au from the host star, where the majority of detections occurred.",
+        "This sweet spot is influenced by the stellar luminosity and planet size.",
+        "Notably, a lower ratio of XUV flux to mid-UV flux is preferred for planets compared to nondetections.",
+        "We also found that helium detections occur for planets around stars with effective temperatures of 4400–6500 K (i.e., spectral type K and G stars), with a sharp gap between 5400 and 6000 K, where no detections occur.",
+        "We also report an upper-limit efficiency of 6% for energy-limited atmospheric escape from our analysis.",
+        "Additionally, our analysis of the cumulative XUV flux versus escape velocity shows planets with helium detections above the “cosmic shoreline,” where atmospheres are not thought to be present, suggesting the shoreline needs revision.",
+        "The unexpected trends revealed in our meta-analysis can contribute to a better understanding of star–planet interaction and exosphere evolution."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Wolf 359",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=205659",
+      "retrieved_at": "2026-10-18T16:38:51.091Z",
+      "sha256": "8c63653e05ed625ddb05d9daf1e712cefd13a9707281a0212a539cae69c6d0d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wolf 359 is a red dwarf star located in the constellation Leo, near the ecliptic.",
+        "At a distance of 7.86 light-years (2.41 parsecs) from Earth, it has an apparent magnitude of 13.54 and can only be seen with a large telescope.",
+        "Wolf 359 is one of the nearest stars to the Sun with only the Alpha Centauri system (including Proxima Centauri), Barnard's Star, and the brown dwarfs Luhman 16 (WISE 1049-5319) and WISE 0855−0714 known to be closer.",
+        "Its proximity to Earth has led to its mention in several works of fiction.",
+        "Wolf 359 is one of the faintest and least-massive nearby stars known.",
+        "At the light-emitting layer called the photosphere, it has a temperature of ~2,800 K, low enough for chemical compounds to form and survive.",
+        "The absorption lines of compounds such as water and titanium(II) oxide have been observed in its spectrum.",
+        "The star's surface has a magnetic field hundreds of times as strong as that of the Sun, generated by its thorough internal convection.",
+        "As a result of this significant magnetic activity, Wolf 359 is a flare star that can undergo sudden and great increases in luminosity, which can persist for several minutes.",
+        "These flares emit strong bursts of X-ray and gamma ray radiation that have been observed by space telescopes.",
+        "It is a relatively young star with an estimated age of less than a billion years.",
+        "No planetary companions for Wolf 359 have been confirmed so far, though there is one unverified candidate; as of yet, no debris disks have been found."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Planetary habitability",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2592906",
+      "retrieved_at": "2026-10-18T16:38:51.091Z",
+      "sha256": "adcd4f2f3ce3e275db9d393481039cb8804cbad60a8dfdf828739e4a268d7056",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Planetary habitability is a measure used in astrobiology to characterize a planet's or a natural satellite's potential to develop and sustain an environment hospitable to life.",
+        "The Planetary Habitability Laboratory maintains a catalog of potentially habitable exoplanets.",
+        "Research suggests that life on a planetary body may develop through abiogenesis or be transferred from one body to another, through a hypothetical process known as panspermia.",
+        "Environments do not need to contain life to be considered habitable nor are accepted habitable zones (HZ) the only areas in which life might arise.",
+        "As the existence of life beyond Earth is not known, planetary habitability is largely an extrapolation of conditions on Earth and the characteristics of the Sun and Solar System which appear favorable to life's flourishing.",
+        "Of particular interest are those factors that have sustained complex, multicellular organisms on Earth and not just simpler, unicellular creatures.",
+        "Research and theory in this regard is a component of a number of natural sciences, such as astronomy, planetary science, and the emerging discipline of astrobiology.",
+        "An absolute requirement for life is an energy source, and the notion of planetary habitability implies that many other geophysical, geochemical, and astrophysical criteria must be met before an astronomical body can support life.",
+        "In its astrobiology roadmap, NASA has defined the principal habitability criteria as \"extended regions of liquid water, conditions favorable for the assembly of complex organic molecules, and energy sources to sustain metabolism\"."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "LTT 1445",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63102592",
+      "retrieved_at": "2026-10-18T16:38:51.091Z",
+      "sha256": "4368e7ea2d1a2b909a74aa6498428332ea36011e369f40cb9bf1d2ac63646223",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "LTT 1445 is a triple M-dwarf system 22.4 light-years (6.9 parsecs) distant in the constellation Eridanus.",
+        "The primary LTT 1445 A hosts two exoplanets—one discovered in 2019 that transits the star every 5.36 days, and another found in 2021 that transits the star every 3.12 days, close to a 12:7 resonance.",
+        "As of October 2022 it is the second closest transiting exoplanet system discovered, with the closest being HD 219134 bc."
+      ]
+    }
+  ]
+}

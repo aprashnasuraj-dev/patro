@@ -1,0 +1,130 @@
+{
+  "id": "mm-1191",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Patterns in language, patterns in the mind",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2015-11-19",
+      "url": "https://www.cambridge.org/core/books/crucible-of-language/patterns-in-language-patterns-in-the-mind/14B580FE55CD85FFEDA693A698FA80D1",
+      "retrieved_at": "2026-10-18T15:18:31.136Z",
+      "sha256": "f8f16a56c91e7b2f9fb19d60b771b0e67ba06fb319ec564a63f1f0a574d8340a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Patterns in language, patterns in the mind (Chapter 3) - The Crucible of Language Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "I don't especially recommend you try it, but I promise it's possible.",
+        "We got on, the sex worked, I loved the fact that he loved me – and that was it.",
+        "And then, after we were married, I fell in love with Oliver, not simply at all, but very complicatedly, entirely against my instincts and my reason.",
+        "I also felt intensely excited, intensely alive, intensely sexy.",
+        "No, as a matter of fact we didn't ‘have an affair’, as the saying goes.",
+        "Just because I'm half French people start muttering ménage a trois .",
+        "And besides, Oliver and I didn't sleep with one another until Stuart and I had separated.",
+        "Everyone ‘knows’ that it was all about sex, that Stuart wasn't much good in bed, whereas Oliver was terrific, and that while I might look pretty level-headed I'm a flirt and a tart and probably a bitch as well.",
+        "So if you really want to know, the first time Oliver and I went to bed together he had a serious attack of first-night nerves and absolutely nothing happened.",
+        "In a funny sort of way, he's much more insecure in that area than Stuart."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Origami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52293",
+      "retrieved_at": "2026-10-18T15:18:32.557Z",
+      "sha256": "4dc5bec5abbeabaebe83d02e24f68bd569ee032f9576d5ebd2987f35b21dcbe6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It also refers to the two- and three-dimensional forms created in the process.",
+        "The use of the term has been extended in modern times to include other materials such as metal, textiles, and it is also used in the biological sciences to describe folded structures like DNA.",
+        "Although the word origami has Japanese roots, the practice itself is universal and its origin remains unknown.",
+        "The goal is to transform a flat square sheet of paper into a finished sculpture through folding and sculpting techniques.",
+        "Modern origami practitioners generally discourage the use of cuts, glue, or markings on the paper.",
+        "Origami folders often use the Japanese word kirigami to refer to designs which use cuts.",
+        "In the detailed Japanese classification, origami is divided into stylized ceremonial origami (儀礼折り紙, girei origami) and recreational origami (遊戯折り紙, yūgi origami), and only recreational origami is generally recognized as origami.",
+        "In Japan, ceremonial origami is generally called \"origata\" (ja:折形) to distinguish it from recreational origami.",
+        "The small number of basic origami folds can be combined in a variety of ways to make intricate designs.",
+        "In general, these designs begin with a square sheet of paper whose sides may be of different colors, prints, or patterns.",
+        "Traditional Japanese origami, which has been practiced since the Edo period (1603–1868), has often been less strict about these conventions, sometimes cutting the paper or using nonsquare shapes to start with.",
+        "The principles of origami are also used in stents, packaging, and other engineering applications."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Pattern",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=68351",
+      "retrieved_at": "2026-10-18T15:18:32.557Z",
+      "sha256": "c5b69b7f6bca54286936a619f451744b213c2395630bfe8d767ffefff525ed33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A pattern is a regularity in the world, in human-made design, or in abstract ideas.",
+        "As such, the elements of a pattern repeat in a predictable and logical manner.",
+        "There exists countless kinds of unclassified patterns, present in everyday nature, fashion, many artistic areas, as well as a connection with mathematics.",
+        "A geometric pattern is a type of pattern formed of repeating geometric shapes and typically repeated like a wallpaper design.",
+        "Conversely, abstract patterns in science, mathematics, or language may be observable only by analysis.",
+        "Direct observation in practice means seeing visual patterns, which are widespread in nature and in art.",
+        "Visual patterns in nature are often chaotic, rarely exactly repeating, and often involve fractals.",
+        "Natural patterns include spirals, meanders, waves, foams, tilings, cracks, and those created by symmetries of rotation and reflection.",
+        "Patterns have an underlying mathematical structure; indeed, mathematics can be seen as the search for regularities, and the output of any function is a mathematical pattern.",
+        "Similarly in the sciences, theories explain and predict regularities in the world.",
+        "In many areas of the decorative arts, from ceramics and textiles to wallpaper, \"pattern\" is used for an ornamental design that is manufactured, perhaps for many different shapes of object.",
+        "In art and architecture, decorations or visual motifs may be combined and repeated to form patterns designed to have a chosen effect on the viewer."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Voronoi diagram",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=177668",
+      "retrieved_at": "2026-10-18T15:18:32.557Z",
+      "sha256": "29d0d944a7a869cbbcd44d626100694cca2be69e592bd977e34b00735ae9aa3f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, a Voronoi diagram is a partition of a plane into regions close to each of a given set of objects.",
+        "In the simplest case, these objects are just finitely many points in the plane (called seeds, sites, or generators).",
+        "For each seed there is a corresponding region, called a Voronoi cell comprising all points of the plane closer to that seed than to any other.",
+        "The Voronoi diagram of a set of points is dual to that set's Delaunay triangulation.",
+        "The Voronoi diagram is named after mathematician Georgy Voronoy, and is also called a Voronoi tessellation, a Voronoi decomposition, a Voronoi partition, or a Dirichlet tessellation (after Peter Gustav Lejeune Dirichlet).",
+        "Voronoi cells are also known as Thiessen polygons, after Alfred H.",
+        "Voronoi diagrams have practical and theoretical applications in many fields, mainly in science and technology, but also in visual art."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tessellation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=321671",
+      "retrieved_at": "2026-10-18T15:18:32.557Z",
+      "sha256": "6229a372632766f65dc41c7f2b0e885072d41e478c5ceb8dc828d7c5a52e182e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tessellation or tiling is the covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps.",
+        "In mathematics, tessellation can be generalized to higher dimensions and a variety of geometries.",
+        "Some special kinds include regular tilings with regular polygonal tiles all of the same shape, and semiregular tilings with regular tiles of more than one shape and with every corner identically arranged.",
+        "The patterns formed by periodic tilings can be categorized into 17 wallpaper groups.",
+        "A tiling that lacks a repeating pattern is called \"non-periodic\".",
+        "An aperiodic tiling uses a small set of tile shapes that cannot form a repeating pattern (an aperiodic set of prototiles).",
+        "A tessellation of space, also known as a space filling or honeycomb, can be defined in the geometry of higher dimensions.",
+        "A real physical tessellation is a tiling made of materials such as cemented ceramic squares or hexagons.",
+        "Such tilings may be decorative patterns, or may have functions such as providing durable and water-resistant pavement, floor, or wall coverings.",
+        "Historically, tessellations were used in Ancient Rome and in Islamic art such as in the Moroccan architecture and decorative geometric tiling of the Alhambra palace.",
+        "Escher often made use of tessellations, both in ordinary Euclidean geometry and in hyperbolic geometry, for artistic effect.",
+        "Tessellations are sometimes employed for decorative effect in quilting."
+      ]
+    }
+  ]
+}

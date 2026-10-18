@@ -1,0 +1,110 @@
+{
+  "id": "mm-0174",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Global dataset of thermohaline staircases obtained from Argo floats and Ice Tethered Profilers",
+      "publisher": "Copernicus GmbH",
+      "author": null,
+      "published_at": "2020-08-28",
+      "url": "https://doi.org/10.5194/essd-2020-197-rc1",
+      "retrieved_at": "2026-10-18T14:57:52.238Z",
+      "sha256": "3cd766d8dfce682572541d46a3aa8c9a00864315e85953f2f49baa4e695275c7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "�̠��asx0L \u0003%�$o\u0006�Je��6��6�I���L��W%ͶHY�_����(\u001b��+;�\u0007�C~����\u0018�&)�\u0004ױ�`We1�\u0011hD\u001e���Q`��$� i�e��\u001a[?",
+        "\u0000���\u001a�5\u0017�',\u0019\u0017\u0000\u0010�\u0002\u0005� O��� 0�O�\u001d\u0000\u0005�\u001c!..O�\u0000� �\u0016\u0006t�?�\u0000� �8�\u001c\\��\u0010x��8�%\u0004�9?e8>Ş���]�.",
+        "��1�\\σ불��,�P�1I(�唌�EQ�\u001e�xݭd��x ����a��\u001c �&��\u0007O�\u001dm#�2����,]�\u0017�\u0015x�[�MoWq�F�6�F�[1�8kg��'T�Ѭ��f�4]#��w�g��\u0013~Y�GS%��&_a���/�חg>�]\u0002E�R���.v�s��S}� ��ώGG$�\u001f�Եt�ѳ�i�ƀ$��BCL?�q�A{*����F\u001ba��; ?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Soft drink",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27061",
+      "retrieved_at": "2026-10-18T14:57:52.239Z",
+      "sha256": "a465d1020fbc43a5e6fe98af39c81a6062bbb757d275e8a432aab48d33433086",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A soft drink (see § Terminology for other names) is a class of beverage containing no alcohol, usually (but not necessarily) carbonated, and typically including added sweetener.",
+        "The sweetener may be a sugar, high-fructose corn syrup, fruit juice, a sugar substitute (in the case of diet sodas), or some combination of these.",
+        "Soft drinks may also contain caffeine, colorings, preservatives and other ingredients.",
+        "Soft drinks are called \"soft\" in contrast with \"hard\" alcoholic drinks and non-alcoholic drinks.",
+        "Small amounts of alcohol may be present in a soft drink, but the alcohol content must be less than 0.5% of the total volume of the drink (ABV) in many countries and localities if the drink is to not be considered alcoholic.",
+        "Examples of soft drinks include lemon-lime drinks, orange soda, cola, grape soda, cream soda, ginger ale and root beer.",
+        "Soft drinks may be served cold, over ice cubes, or at room temperature.",
+        "They are available in many container formats, including cans, glass bottles, and plastic bottles.",
+        "Containers come in a variety of sizes, ranging from small bottles to large multi-liter containers.",
+        "Soft drinks are widely available at fast food restaurants, movie theaters, convenience stores, casual-dining restaurants, dedicated soda stores, vending machines and bars from soda fountain machines.",
+        "Within a decade of the invention of carbonated water by Joseph Priestley in 1767, inventors in Europe had used his concept to produce the drink in greater quantities.",
+        "Schweppe, formed Schweppes in 1783 and began selling the world's first bottled soft drink."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ice cream",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48212",
+      "retrieved_at": "2026-10-18T14:57:52.239Z",
+      "sha256": "f877f8204f6151b7fa801254ebc5d06cf2a5cd297a8f54a71bd278f0bd115f91",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ice cream is a frozen dessert typically made from milk or cream that has been flavoured with a sweetener, either sugar or an alternative, and a spice, such as cocoa or vanilla, or with fruit, such as strawberries or peaches.",
+        "Food colouring is sometimes added in addition to stabilizers.",
+        "The mixture is cooled below the freezing point of water and stirred to incorporate air spaces and prevent detectable ice crystals from forming.",
+        "It can also be made by whisking a flavoured cream base and liquid nitrogen together.",
+        "The result is a smooth, semi-solid foam that is solid at very low temperatures (below 2 °C or 35 °F).",
+        "Ice cream may be served in dishes, eaten with a spoon, or licked from edible wafer hand-held ice cream cones as finger food.",
+        "Ice cream may be served with other desserts such as cake or pie, used as an ingredient in cold dishes such as ice cream floats, sundaes, milkshakes, and ice cream cakes, or in baked items such as Baked Alaska.",
+        "It is often sold in dedicated ice cream parlors, carts, stands or vans.",
+        "The Italian word for ice cream, gelato (\"frozen\"), is often used in English.",
+        "Soft serve is softer and is often served at amusement parks and fast-food restaurants in the United States.",
+        "Ice creams made from cow's milk alternatives, such as goat's or sheep's milk, or milk substitutes (e.g., soy, oat, cashew, coconut, almond milk, or tofu), are available for those who are lactose intolerant, allergic to dairy protein, or vegan.",
+        "Banana \"nice cream\" is a 100% fruit-based vegan alternative."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Root beer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54587",
+      "retrieved_at": "2026-10-18T14:57:52.239Z",
+      "sha256": "293c721b5fa989992aad82b9dd7f6440630e1a396ea1dc06bd3e693a9605b87c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Root beer is a North American beverage traditionally made using the root bark of the sassafras tree Sassafras albidum or the sarsaparilla vine Smilax ornata (also used to make a soft drink called sarsaparilla) as the primary flavor.",
+        "Today, root beer is usually a sweet, carbonated soft drink that is generally non-alcoholic and caffeine-free.",
+        "Since safrole, a key component of sassafras, was banned by the US Food and Drug Administration in 1960 due to its carcinogenicity, most commercial root beers have been flavored using artificial sassafras flavoring, but a few (e.g.",
+        "A common use is to add vanilla ice cream to make a root beer float."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Milkshake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=241554",
+      "retrieved_at": "2026-10-18T14:57:52.239Z",
+      "sha256": "170a8c71382be9a3ad4762c2437f43e23f07aee04b1a95db0e5c71c4b8b72338",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A milkshake (sometimes simply called a shake) is a sweet beverage made by blending milk, ice cream, and flavorings or sweeteners such as butterscotch, caramel sauce, chocolate syrup, or fruit syrup into a thick, sweet, cold mixture.",
+        "It may also be made using a base made from non-dairy products, including plant milks such as almond milk, coconut milk, or soy milk.",
+        "Milkshakes originated in the United States around the turn of the 20th century and gained widespread popularity after the introduction of electric blenders in the following decades.",
+        "During this period, ice cream shops became popular social gathering spots for young people, and milkshakes came to symbolize the simplicity and innocence of youth culture."
+      ]
+    }
+  ]
+}

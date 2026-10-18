@@ -1,0 +1,138 @@
+{
+  "id": "mm-0335",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "New Theory Describes Why We See Colors",
+      "publisher": "JSTOR",
+      "author": null,
+      "published_at": "1964-08-22",
+      "url": "https://doi.org/10.2307/3947999",
+      "retrieved_at": "2026-10-18T15:00:29.905Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Markets for Technology (Why Do We See Them, Why Don't We See More of Them, and Why Should We Care)",
+      "publisher": "Elsevier BV",
+      "author": "Fosfuri, Andrea; Arora, Ashish; Gambardella, Alfonso",
+      "published_at": "1999",
+      "url": "https://doi.org/10.2139/ssrn.150594",
+      "retrieved_at": "2026-10-18T15:00:30.233Z",
+      "sha256": "0e3eb8ba62d7e35f42d1c1ca85d3fa8dcd78fef6d4808088c4d127408d83fa62",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This essay explores the nature, the functioning, and the economic and policy implications of markets for technology.",
+        "Today, the outsourcing of research and development activities is more common than in the past, and specialized technology suppliers have emerged in many industries.",
+        "In a sense, the Schumpeterian vision of integrating R&amp;D with manufacturing and distribution is being confronted by the older Smithian vision of division of labor.",
+        "The existence and efficacy of markets for technology can profoundly influence the creation and diffusion of new knowledge, and hence, economic growth of countries and the competitive position of companies.",
+        "The economic and managerial literatures have touched upon some aspects of the nature of these markets.",
+        "However, a thorough understanding of how markets for technology work is still lacking.",
+        "First, what are the factors that enable a market for technology to exist and function effectively?",
+        "Specifically we look at the role of industry structure, the nature of knowledge, and intellectual property rights and related institutions.",
+        "Second, we ask what the implications of such markets are for the boundaries of the firm, the specialization and division of labor in the economy, industry structure, and economic growth.",
+        "We build on this discussion to develop the implications of our work for public policy and corporate strategy."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Color",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5921",
+      "retrieved_at": "2026-10-18T15:00:30.388Z",
+      "sha256": "7c75428f715fcfa3deded5e6dffa60d0ac548300f8dd8718d91eb5710711d1fe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Color (or colour in Commonwealth English) is the visual perception produced by the activation of the different types of cone cells in the eye caused by light.",
+        "Though color is not an inherent property of matter, color perception is related to an object's light absorption, emission, reflection and transmission.",
+        "For most humans, visible wavelengths of light are the ones perceived in the visible light spectrum, with three types of cone cells (trichromacy).",
+        "Other animals may have a different number of cone cell types or have eyes sensitive to different wavelengths, such as bees that can distinguish ultraviolet, and thus have a different color sensitivity range.",
+        "Animal perception of color originates from different light wavelength or spectral sensitivity in cone cell types, which is then processed by the brain.",
+        "Colors have perceived properties such as hue, colorfulness, and lightness.",
+        "Colors can also be additively mixed (mixing light) or subtractively mixed (mixing pigments).",
+        "If one color is mixed in the right proportions, because of metamerism, they may look the same as another stimulus with a different reflection or emission spectrum.",
+        "For convenience, colors can be organized in a color space, which when being abstracted as a mathematical color model can assign each region of color with a corresponding set of numbers.",
+        "Thus, color spaces are an essential tool for color reproduction in print, photography, computer monitors, and television.",
+        "Some of the most well-known color models and color spaces are RGB, CMYK, HSL/HSV, CIE Lab, and YCbCr/YUV.",
+        "Because the perception of color is an important aspect of human life, different colors have been associated with emotions, activity, and nationality."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "HSL and HSV",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=252814",
+      "retrieved_at": "2026-10-18T15:00:30.388Z",
+      "sha256": "9ad4b8d8d29a1b5d9413871e66e224d939e6aff13ca3a280b4b2c98fbebc9e03",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "HSL and HSV are the two most common cylindrical-coordinate representations of points in an RGB color model.",
+        "The two representations rearrange the geometry of RGB in an attempt to be more intuitive and perceptually relevant than the cartesian (cube) representation.",
+        "Developed in the 1970s for computer graphics applications, HSL and HSV are used today in color pickers, in image editing software, and less commonly in image analysis and computer vision.",
+        "HSL stands for hue, saturation, and lightness, and is often also called HLS.",
+        "HSV stands for hue, saturation, and value, and is also often called HSB (B for brightness).",
+        "A third model, common in computer vision applications, is HSI, for hue, saturation, and intensity.",
+        "However, while typically consistent, these definitions are not standardized, and any of these abbreviations might be used for any of these three or several other related cylindrical models.",
+        "(For technical definitions of these terms, see below.)\nIn each cylinder, the angle around the central vertical axis corresponds to \"hue\", the distance from the axis corresponds to \"saturation\", and the distance along the axis corresponds to \"lightness\", \"value\" or \"brightness\".",
+        "Note that while \"hue\" in HSL and HSV refers to the same attribute, their definitions of \"saturation\" differ dramatically.",
+        "Because HSL and HSV are simple transformations of device-dependent RGB models, the physical colors they define depend on the colors of the red, green, and blue primaries of the device or of the particular RGB space, and on the gamma correction used to represent the amounts of those primaries.",
+        "Each unique RGB device therefore has unique HSL and HSV spaces to accompany it, and numerical HSL or HSV values describe a different color for each basis RGB space.",
+        "Both of these representations are used widely in computer graphics, and one or the other of them is often more convenient than RGB, but both are also criticized for not adequately separating color-making attributes, or for their lack of perceptual uniformity."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Flag of Colombia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=458980",
+      "retrieved_at": "2026-10-18T15:00:30.388Z",
+      "sha256": "51f679b8acda3dbd65ab8321a163934de5b70f32aee94c0237c4fb052349b06e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The flag of the Republic of Colombia, also known as El Tricolor Nacional (The National Tricolor), is the national flag representing the country and, alongside the coat of arms and the national anthem, constitutes one of its official national symbols.",
+        "The flag consists of a rectangle divided into three horizontal bands featuring the primary colors of the RYB color model.",
+        "The upper band occupies half of the total height, following a proportional ratio of 2:1:1.",
+        "Its design is inspired by the flag created in 1801 by Venezuelan patriots Francisco de Miranda and Lino de Clemente for the First Republic of Venezuela, which was later approved by the Constituent Congress of that country in 1811.",
+        "These colors were successively adopted by the Congresses of Gran Colombia on December 17, 1819, and the Republic of New Granada on May 9, 1834.",
+        "The current arrangement of the colors was officially adopted on November 26, 1861, and subsequently regulated by Decrees No.",
+        "Due to their shared historical origin, the Colombian flag bears resemblance to the national flags of Ecuador and Venezuela, which were once part of the former state of Gran Colombia.",
+        "Among these, the Ecuadorian flag is the most similar, with its legislation recognizing two official versions that closely mirror the proportions and layout of Colombia's flag, differing only in the specific shades used.",
+        "In the case of Colombia, the use of the national coat of arms on the flag is mandatory exclusively in official institutional contexts.",
+        "As a national symbol, the flag is employed by the Government and state institutions, with specific variations in its design depending on its intended use by diplomatic, civil, or military bodies."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "De Colores",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7098574",
+      "retrieved_at": "2026-10-18T15:00:30.388Z",
+      "sha256": "edeffa8d8146a5763e2bab8b47ac5c32bb50c93caaada01f91d2d5c4e731244d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"De colores\" ([Made] of Colors) is a traditional Spanish language folk song that is well known throughout the Spanish-speaking world.",
+        "It is widely used in the Catholic Cursillo movement and related communities such as the Great Banquet, Chrysalis Flight, Tres Días, Walk to Emmaus, and Kairos Prison Ministry.",
+        "The song is also associated with the United Farm Workers union, as one of the most commonly heard songs during rallies."
+      ]
+    }
+  ]
+}

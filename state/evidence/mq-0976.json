@@ -1,0 +1,98 @@
+{
+  "id": "mq-0976",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=752",
+      "retrieved_at": "2026-10-18T16:48:18.687Z",
+      "sha256": "cc8335c16dd5ef9c0a28427f64dbbbac2ca7041a59ebbfc1117f71873de8b464",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Art is a diverse range of cultural activity centered around works utilizing creative or imaginative talents, which are expected to evoke a worthwhile experience, generally through an expression of emotional power, conceptual ideas, technical proficiency, or beauty.",
+        "There is no generally agreed definition of what constitutes art, and its interpretation has varied greatly throughout history and across cultures.",
+        "In the Western tradition, the three classical branches of visual art are painting, sculpture, and architecture.",
+        "Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of \"the arts\".",
+        "Until the 17th century, art referred to any skill or mastery and was not differentiated from crafts or sciences.",
+        "In modern usage after the 17th century, where aesthetic considerations are paramount, the fine arts are separated and distinguished from acquired skills in general, such as the decorative or applied arts.",
+        "The nature of art and related concepts, such as creativity and interpretation, are explored in a branch of philosophy known as aesthetics.",
+        "The resulting artworks are studied in the professional fields of art criticism and art history."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cyprus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5593",
+      "retrieved_at": "2026-10-18T16:48:18.688Z",
+      "sha256": "193cec59dd1b8e67484f0b5bfd2d13b9883843c204672195bc274620f2eec80a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cyprus, officially the Republic of Cyprus, is an island country in the eastern Mediterranean Sea, located off the coast of the Levant mainland in West Asia.",
+        "The island of Cyprus, which is the third largest and third most populous island in the Mediterranean, is divided along the United Nations Buffer Zone between the internationally recognised Republic of Cyprus and the Turkish Republic of Northern Cyprus, which is recognised only by Turkey.",
+        "The south of the island also hosts the British sovereign military bases of Akrotiri and Dhekelia.",
+        "Cyprus was first settled by hunter-gatherers around 13,000 years ago, with farming communities emerging by 8500 BC.",
+        "The late Bronze Age saw the emergence of Alashiya, an urbanised society closely connected to the wider Mediterranean world.",
+        "Cyprus experienced waves of settlement by Mycenaean Greeks at the end of the 2nd millennium BC.",
+        "Successive rule by the Ptolemaic Empire, the Classical and Eastern Roman Empire, Arab caliphates, the French Lusignans, and the Venetians was followed by over three centuries of Ottoman dominion (1571–1878).",
+        "Cyprus was placed under British administration in 1878 pursuant to the Cyprus Convention and formally annexed by the United Kingdom in 1914.",
+        "The island's future became contested by its Greek and Turkish communities.",
+        "Greek Cypriots sought enosis, or union with Greece, which became a Greek national policy in the 1950s.",
+        "Turkish Cypriots initially advocated for continued British rule, then demanded the annexation of the island to Turkey, with which they established the policy of taksim: partitioning Cyprus and creating a Turkish polity in the north.",
+        "Following nationalist violence in the 1950s, Cyprus was granted independence in 1960."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Christendom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6704",
+      "retrieved_at": "2026-10-18T16:48:18.688Z",
+      "sha256": "37eda0f44f17b01342f9143068ae8288df2e36e58429557f1a2d3214bb2c173a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Christendom or the Christian world are terms commonly used to refer to the global Christian community, Christian states, Christian-majority countries or countries in which Christianity is dominant or prevails.",
+        "Following the spread of Christianity from the Levant to Europe and North Africa during the early Roman Empire, Christendom has been divided in the pre-existing Greek East and Latin West.",
+        "After the fall of Constantinople in 1453, Latin Christendom rose to a central role in the Western world.",
+        "Following the Reformation, Protestantism emerged as the third main branch of Christianity in the 16th century.",
+        "The history of the Christian world spans about 2,000 years and includes a variety of socio-political developments, as well as advancements in the arts, architecture, literature, science, philosophy, politics and technology."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T16:48:18.688Z",
+      "sha256": "1cbe4ee7da7782e35d88aa5281e10fa6f57c7cd94d57635dba76d0bc5c96115f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "mt-0839",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T16:12:05.263Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T16:12:07.428Z",
+      "sha256": "b21b1882350c559f874f09167a4264076ae5833e147a8722ad4e3f856eec703e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Nineveh",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21699",
+      "retrieved_at": "2026-10-18T16:12:07.428Z",
+      "sha256": "e7a3d600a727e9664414070166521e7ca7608ae55121d9e76ef47c9cc4fbfd65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nineveh was an ancient Near Eastern city of Upper Mesopotamia, located in the modern-day city of Mosul in northern Iraq.",
+        "It is located on the eastern bank of the Tigris River and was the capital and largest city of the Neo-Assyrian Empire, and potentially the wealthiest city in the ancient world.",
+        "Today, it is a common name for the half of Mosul that lies on the eastern bank of the Tigris, and the country's Nineveh Governorate takes its name from it.",
+        "It was the largest city in the world for approximately fifty years until the year 612 BC when, after a bitter period of civil war in Assyria, it was sacked by a coalition of its former subject peoples including the Babylonians, Medes, and Scythians.",
+        "The city was never again a political or administrative centre, but by Late Antiquity it was the seat of a bishop of the Church of the East.",
+        "It declined relative to Mosul during the Middle Ages and was mostly abandoned by the 14th century AD after the massacres and dispersal of Assyrian Christians by Timur.",
+        "Its ruins lie across the river from the historical city center of Mosul.",
+        "The two main tells, or mound-ruins, within the walls are Tell Kuyunjiq and Tell Nabī Yūnus, site of a shrine to Jonah.",
+        "According to the Hebrew Bible and the Quran, Jonah was a prophet who preached to Nineveh.",
+        "Large numbers of Assyrian sculptures and other artifacts have been excavated from the ruins of Nineveh, and are now located in museums around the world.",
+        "The location of Nineveh was known, to some, continuously through the Middle Ages.",
+        "Benjamin of Tudela visited it in 1170; Petachiah of Regensburg soon after."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gangs of New York",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188902",
+      "retrieved_at": "2026-10-18T16:12:07.428Z",
+      "sha256": "c00ef0f27ef50dcd53944968a50c56c3bbc0b296a899404ecb55359aa563ed61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gangs of New York is a 2002 epic historical drama film directed by Martin Scorsese and written by Jay Cocks, Steven Zaillian, and Kenneth Lonergan, based on Herbert Asbury's 1928 book The Gangs of New York.",
+        "The film stars Leonardo DiCaprio, Daniel Day-Lewis, and Cameron Diaz, along with Jim Broadbent, John C.",
+        "Reilly, Henry Thomas and Brendan Gleeson in supporting roles.",
+        "The film also marks the start of a collaboration between DiCaprio and Scorsese.",
+        "The film is set from 1846 to 1863 when a long-running Catholic–Protestant feud erupts into violence, just as an Irish immigrant group is protesting the threat of conscription during the Civil War.",
+        "Scorsese spent 20 years developing the project until Miramax Films acquired it in 1999.",
+        "Principal photography took place in Cinecittà Studios in Rome, and Long Island City, New York City.",
+        "Gangs of New York was completed by 2001 but its release was delayed due to the September 11 attacks.",
+        "The film was theatrically released in the United States on December 20, 2002, and grossed $193.8 million worldwide.",
+        "It was met with generally positive reviews from critics, and Day-Lewis's performance was highly acclaimed.",
+        "It received 10 nominations at the 75th Academy Awards, including Best Picture, Best Director for Scorsese, and Best Actor for Day-Lewis, but did not win in any category."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "James VI and I",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=269055",
+      "retrieved_at": "2026-10-18T16:12:07.428Z",
+      "sha256": "af42fa42fe311b871715e16e0ebd7c0d4d7a2027ff3969d2c75da18e13fe3a9e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "James VI and I (James Charles Stuart; 19 June 1566 – 27 March 1625) was King of Scotland as James VI from 24 July 1567, and King of England and Ireland as James I from the union of the Scottish and English crowns on 24 March 1603, until his death in 1625.",
+        "Though he long attempted to get both countries to adopt a closer political union, the kingdoms of Scotland and England remained sovereign states ruled by James in personal union, with their own parliaments, judiciaries and laws.",
+        "James was the son of Mary, Queen of Scots, and a great-great-grandson of Henry VII, King of England and Lord of Ireland, and thus a potential successor to all three thrones.",
+        "He acceded to the Scottish throne at the age of thirteen months, after his mother was forced to abdicate.",
+        "Although his mother was a Catholic, James was raised as a Protestant.",
+        "Four regents governed during his minority, which ended officially in 1578, though he did not gain full control of his government until 1583.",
+        "Three of their children survived to adulthood: Henry Frederick, Elizabeth, and Charles.",
+        "In 1603, James succeeded his cousin Elizabeth I, the last Tudor monarch of England and Ireland, who had died childless.",
+        "He reigned in all three kingdoms for 22 years, a period known as the Jacobean era, until he died in 1625.",
+        "After the Union of the Crowns in 1603, he based himself in England, returning to Scotland only once in 1617, and styled himself King of Great Britain and Ireland.",
+        "He advocated for a single parliament for England and Scotland.",
+        "During his reign, the Plantation of Ulster and the English colonisation of the Americas began."
+      ]
+    }
+  ]
+}
