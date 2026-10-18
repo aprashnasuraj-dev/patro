@@ -22,16 +22,17 @@ const FORMATS={
  'Myth-Buster':'State the common myth, then what the sources actually show, point by point, with a clear verdict section.',
  'Perspectives Roundup':'Compare the different viewpoints or schools of thought present in the sources fairly; end with where they agree.',
  'Data Story':'Explain what the figures in the sources show, define the units, and say what the numbers do and do not prove.'};
-export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,deadlineMs=Date.now()+335*60_000,limit=Infinity,client,llm,render,fetchImpl,now=()=>new Date(),log=console.log,autoApprove=false,allowYmyl=false,imageFetch,imageOrder}){
+export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,deadlineMs=Date.now()+335*60_000,limit=Infinity,client,llm,render,fetchImpl,now=()=>new Date(),log=console.log,autoApprove=false,allowYmyl=false,imageFetch,imageOrder,minMs=0,sleep=ms=>new Promise(r=>setTimeout(r,ms)),clock=()=>Date.now()}){
  const registry=await loadRegistry(join(root,'config','portfolio.json'));
  const mine=registry.filter(r=>r.status==='reserved'&&parseInt(createHash('sha256').update(r.id).digest('hex').slice(0,8),16)%shards===shard).slice(0,limit);
  const out=join(root,'state','shard-'+shard);await mkdir(join(out,'content'),{recursive:true});await mkdir(join(out,'evidence'),{recursive:true});
  const ledger=join(out,'ledger.jsonl'),stats={queued:mine.length,approved:0,review:0,blocked:0,stopped_for_deadline:0};
- const usedImages=new Set(),seen=[];
+ const usedImages=new Set(),seen=[],t0=clock(),slot=mine.length?minMs/mine.length:0;let idx=0;
  const note=async(r,status,extra={})=>{await appendFile(ledger,JSON.stringify({id:r.id,status,at:now().toISOString(),...extra})+'\n');stats[status]=(stats[status]||0)+1;};
  if(!llm.available())log('No LLM secret present: shard '+shard+' will research only (NO_PROVIDER).');
  for(const r of mine){
   if(Date.now()>deadlineMs){stats.stopped_for_deadline=mine.length-stats.approved-stats.review-stats.blocked;log('Deadline reached; remaining records stay reserved.');break;}
+  if(slot){const due=t0+idx*slot,wait=Math.min(due,deadlineMs)-clock();if(wait>0)await sleep(wait);}idx++;
   const meta=r.meta||{},title=meta.title||r.intent.replace(/^Answer:\s*/,''),question=meta.question||title;
   try{
    let cands=[];
@@ -72,6 +73,6 @@ if(process.argv[1]?.endsWith('run-batch.mjs')){
  const apis=await loadApis(join(root,'config','research-apis.json'));
  const adapters=await loadAdapters(join(root,'config','adapter-allowlist.json'));
  const render=process.env.CF_ACCOUNT_ID&&process.env.CF_BROWSER_TOKEN?cloudflareRenderer({accountId:process.env.CF_ACCOUNT_ID,token:process.env.CF_BROWSER_TOKEN}):null;
- const stats=await runBatch({root,shard:+arg('shard',0),shards:+arg('shards',1),deadlineMs:Date.now()+(+arg('deadline-minutes',335))*60_000,limit:+arg('limit',Infinity),client:makeClient({apis}),llm:makeLlm({adapters}),render,autoApprove:process.argv.includes('--auto-approve'),allowYmyl:process.argv.includes('--allow-ymyl')});
+ const stats=await runBatch({root,shard:+arg('shard',0),shards:+arg('shards',1),deadlineMs:Date.now()+(+arg('deadline-minutes',335))*60_000,limit:+arg('limit',Infinity),minMs:(+arg('min-minutes',0))*60_000,client:makeClient({apis}),llm:makeLlm({adapters}),render,autoApprove:process.argv.includes('--auto-approve'),allowYmyl:process.argv.includes('--allow-ymyl')});
  console.log(JSON.stringify(stats));
 }

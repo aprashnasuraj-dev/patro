@@ -9,6 +9,9 @@ on:
       deadline_minutes:
         description: "Stop starting new topics after this many minutes (must leave time to upload)"
         default: "335"
+      min_minutes:
+        description: "Spread each shard's topics over at least this many minutes (gentle on API quotas, no rush)"
+        default: "100"
       auto_approve:
         description: "Auto-approve drafts that pass automated gates (grounding, image+credit, uniqueness, length)"
         default: "true"
@@ -79,6 +82,7 @@ jobs:
           node missionmangal/scripts/run-batch.mjs
           --shard ${{ matrix.shard }} --shards ${{ inputs.shards }}
           --deadline-minutes ${{ inputs.deadline_minutes }}
+          --min-minutes ${{ inputs.min_minutes }}
           ${{ inputs.auto_approve == 'true' && '--auto-approve' || '' }}
           ${{ inputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
           ${{ inputs.limit_per_shard != '' && format('--limit {0}', inputs.limit_per_shard) || '' }}
