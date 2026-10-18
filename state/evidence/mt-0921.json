@@ -1,0 +1,52 @@
+{
+  "id": "mt-0921",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Analyzing Recent Tectonic Activity Along the Karak Wadi Al Fayha Fault System Using Seismic, Earthquake, and Remote Sensing Data",
+      "publisher": "MDPI AG",
+      "author": "Al Hseinat, Mu’ayyad; AlZidaneen, Malek; Sweidan, Ghassan",
+      "published_at": "2025-05-14",
+      "url": "https://doi.org/10.3390/geosciences15050177",
+      "retrieved_at": "2026-10-18T16:16:17.235Z",
+      "sha256": "446c93c7c113c50d2137b7bbe45645a2976a9e667c03bf93cf114dccfc6a23f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Karak Wadi Al Fayha Fault (KWF) is a major NW-trending intraplate wrench fault system extending over 325 km from Western Karak in Jordan to Wadi Al Fayha in Saudi Arabia.",
+        "Structurally linked to the Precambrian Najd Fault System, the KWF has been previously mapped using field observations, gravity, magnetic, and reflection seismic methods.",
+        "However, these approaches lacked the vertical resolution necessary to characterize its shallow structure, leaving its influence on recent deposits and surface topography poorly understood.",
+        "This study employs reflection seismic sections integrated with a Digital Elevation Model to refine terrain analysis and enhance fault mechanism solutions for determining the regional stress field pattern.",
+        "We suggest that the reactivation of the KWF has been influenced by changing stress fields from the Late Cretaceous (Turonian) to the present.",
+        "The Northwestern Arabian plate has undergone multiple tectonic stress transitions, including WNW–ESE compression associated with the Syrian Arc Fold-Belt system (Turonian–Plio-Pleistocene) and subsequent NNE–SSW extension linked to Red Sea rifting (Neogene–present).",
+        "The analysis of fault mechanism solutions suggests that the latest fault movements result from the continued activity of the Irbid Rift event (Eocene) and the Dead Sea Transform Fault since the Miocene."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T16:16:17.674Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    }
+  ]
+}

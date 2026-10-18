@@ -1,0 +1,150 @@
+{
+  "id": "mm-0130",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "This Is How the Heart Beats",
+      "publisher": "The New Press",
+      "author": "Naughton, Jake; Kushner, Jacob",
+      "published_at": "2020-02-04",
+      "url": "https://doi.org/10.2307/jj.26193363.5",
+      "retrieved_at": "2026-10-18T14:55:26.908Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "This Is How My Heart Beats",
+      "publisher": "JSTOR",
+      "author": "Hellman, David",
+      "published_at": "1999",
+      "url": "https://doi.org/10.2307/25008500",
+      "retrieved_at": "2026-10-18T14:55:26.987Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Back Matter",
+      "publisher": "The New Press",
+      "author": null,
+      "published_at": "2020-02-04",
+      "url": "https://doi.org/10.2307/jj.26193363.7",
+      "retrieved_at": "2026-10-18T14:55:27.085Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Heart rate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=304942",
+      "retrieved_at": "2026-10-18T14:55:27.299Z",
+      "sha256": "4808b886590bcbe5576cda5f04a51c9957e5d2874c8894414fb1b5741c03715e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Heart rate is the frequency of the heartbeat measured by the number of contractions of the heart per minute (beats per minute or bpm).",
+        "The heart rate varies according to the body's physical needs, including the need to absorb oxygen and excrete carbon dioxide.",
+        "It is also modulated by numerous factors, including genetics, physical fitness, stress or psychological status, diet, drugs, hormonal status, environment, and disease/illness, as well as the interaction between these factors.",
+        "It is usually equal or close to the pulse rate measured at any peripheral point.",
+        "The American Heart Association states the normal resting adult human heart rate is 60–100 bpm.",
+        "An ultra-trained athlete may have a resting heart rate of 37–38 bpm.",
+        "Tachycardia is a high heart rate, defined as above 100 bpm at rest.",
+        "Bradycardia is a low heart rate, defined as below 60 bpm at rest.",
+        "When a human sleeps, a heartbeat with rates around 40–50 bpm is common and considered normal.",
+        "When the heart is not beating in a regular pattern, this is referred to as a arrhythmia.",
+        "Abnormalities of heart rate sometimes indicate heart disease."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Supraventricular tachycardia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=877702",
+      "retrieved_at": "2026-10-18T14:55:27.299Z",
+      "sha256": "3dab1a1a2471267ed7ea45e39368408cf46fe4ea32d68f6a1b727694877c7fa1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Supraventricular tachycardia (SVT) is an umbrella term for fast heart rhythms arising from the upper part of the heart.",
+        "This is in contrast to the other group of fast heart rhythms – ventricular tachycardia, which starts within the lower chambers of the heart.",
+        "There are four main types of SVT: atrial fibrillation, atrial flutter, paroxysmal supraventricular tachycardia (PSVT), and Wolff–Parkinson–White syndrome.",
+        "The symptoms of SVT include palpitations, feeling of faintness, sweating, shortness of breath, and/or chest pain.",
+        "These abnormal rhythms start from either the atria or atrioventricular node.",
+        "They are generally due to one of two mechanisms: re-entry or increased automaticity.",
+        "Diagnosis is typically by electrocardiogram (ECG), Holter monitor, or event monitor.",
+        "Blood tests may be done to rule out specific underlying causes such as hyperthyroidism, pheochromocytomas, or electrolyte abnormalities.",
+        "A resting heart rate of more than 100 beats per minute is defined as a tachycardia.",
+        "During an episode of SVT, the heart beats about 150 to 220 times per minute.",
+        "Specific treatment depends on the type of SVT and may include medications, medical procedures, or surgery.",
+        "Directing patients to execute Vagal maneuvers such as the Valsalva maneuver, or conducting a procedure known as catheter ablation, may be effective in certain types."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Heart rate variability",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1789188",
+      "retrieved_at": "2026-10-18T14:55:27.299Z",
+      "sha256": "02f06869db45b7e6c4a8d55bda52e5b421c8ec8fdac8aa1415ac46a7379e482c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Heart rate variability (HRV) is the physiological phenomenon of variation in the time interval between heartbeats.",
+        "It is measured by the variation in the beat-to-beat interval.",
+        "Other terms used include cycle length variability, R–R variability (where R is a point corresponding to the peak of the QRS complex of the ECG wave; and R–R is the interval between successive Rs), and heart period variability.",
+        "Measurement of the R–R interval (often termed normal-to-normal or N–N interval when additional filtering is used) is used to derive heart rate variability.",
+        "Methods used to detect beats include ECG, blood pressure, ballistocardiograms, and the pulse wave signal derived from a photoplethysmograph (PPG).",
+        "ECG is considered the gold standard for HRV measurement  because it provides a direct reflection of cardiac electric activity."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Angel Beats!",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22988148",
+      "retrieved_at": "2026-10-18T14:55:27.299Z",
+      "sha256": "8c4cd4fb4c614d96fddd3e16659bbc9659c37f20a18659354f85780cb1a9d80f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is a 13-episode Japanese anime television series produced by P.A.",
+        "The story was originally conceived by Jun Maeda, who also wrote the screenplay and composed the music with the group Anant-Garde Eyes, with original character design by Na-Ga; both Maeda and Na-Ga are from the visual novel brand Key, who produced such titles as Kanon, Air, and Clannad.",
+        "The anime aired in Japan between April 3 and June 26, 2010, on CBC.",
+        "An original video animation (OVA) episode was released in December 2010, and a second OVA was released in June 2015.",
+        "The story takes place in the afterlife and focuses on Otonashi, a boy who lost his memories of his life after dying.",
+        "He is enrolled into the afterlife school and meets a girl named Yuri who invites him to join the Afterlife Battlefront, an organization she leads which fights against the student council president Kanade Tachibana, a girl also known as Angel with supernatural powers.",
+        "Key worked in collaboration with Dengeki G's Magazine published by ASCII Media Works to produce the project into a media franchise.",
+        "Four manga series are serialized in Dengeki G's Magazine and Dengeki G's Comic: two illustrated by Haruka Komowata and two drawn by Yuriko Asami.",
+        "A series of illustrated short stories written by Maeda and illustrated by GotoP were also serialized in Dengeki G's Magazine between the November 2009 and May 2010 issues.",
+        "Two Internet radio shows were produced to promote Angel Beats!.",
+        "1st Beat was produced by Key and released for Windows on June 26, 2015.",
+        "The integration of various individual elements together, such as musical performances, humor and action, was commended in one review but panned in another, saying that the story was overloaded with too many elements."
+      ]
+    }
+  ]
+}

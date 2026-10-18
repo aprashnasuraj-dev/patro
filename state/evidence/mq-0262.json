@@ -1,0 +1,107 @@
+{
+  "id": "mq-0262",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Iran",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14653",
+      "retrieved_at": "2026-10-18T16:50:48.858Z",
+      "sha256": "16ace6b6055f2b58ea74eb03ab4ba2011f516b8594f605c9f48dd8da8f7a05ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Iran, officially the Islamic Republic of Iran, and historically known as Persia, is a country in West Asia.",
+        "It borders Iraq to the west; Turkey, Azerbaijan, and Armenia to the northwest; the Caspian Sea to the north, Turkmenistan to the northeast; Afghanistan to the east; Pakistan to the southeast; and the Gulf of Oman and the Persian Gulf to the south.",
+        "With a population of over 92 million, Iran ranks 17th globally in both geographic size and population.",
+        "Tehran is the nation's capital and largest city and serves as its primary economic center.",
+        "Home to one of the world's oldest continuous major civilizations, the territory of present-day Iran was first unified under the Medes in the 7th century BC and reached its territorial height in the 6th century BC, when Cyrus the Great founded the Achaemenid Empire.",
+        "Alexander the Great conquered the empire in the 4th century BC.",
+        "An Iranian rebellion in the 3rd century BC established the Parthian Empire, which later liberated the country.",
+        "In the 3rd century AD, the Parthians were succeeded by the Sasanian Empire, which oversaw a golden age in the history of Iranian civilization.",
+        "Ancient Iran saw some of the earliest developments of writing, agriculture, urbanization, religion, and administration.",
+        "Once a center for Zoroastrianism, Iran underwent Islamization following the 7th century Muslim conquest.",
+        "Innovations in literature, philosophy, mathematics, medicine, astronomy and art were renewed during the Islamic Golden Age and Iranian Intermezzo, a period during which Iranian Muslim dynasties ended Arab rule and revived the Persian language.",
+        "This era was followed by Seljuk and Khwarazmian rule, Mongol conquests and the Timurid Renaissance from the 11th to 14th centuries."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mongolia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19271",
+      "retrieved_at": "2026-10-18T16:50:48.858Z",
+      "sha256": "795f81c3ae718f47a0e35c43d98d26784ad416027b83040fbe210b4af88e8aa5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With a population of 3.5 million, Mongolia is the world's most sparsely populated sovereign state.",
+        "The country constitutes a significant portion of the Mongolian Plateau, and its natural environment is characterized by grassy steppe, mountains to the north and west, and the Gobi Desert to the south.",
+        "Ulaanbaatar, the capital and largest city, is home to roughly half of the country's population.",
+        "The territory of modern-day Mongolia has been ruled by various nomadic empires, including the Xiongnu, the Xianbei, the Rouran, the First Turkic Khaganate, the Second Turkic Khaganate, the Uyghur Khaganate and others.",
+        "In 1206, Genghis Khan founded the Mongol Empire, which became the largest contiguous land empire in history.",
+        "His grandson Kublai Khan conquered China proper and established the Yuan dynasty.",
+        "After the collapse of the Yuan, the Mongols retreated to Mongolia and resumed their earlier pattern of factional conflict, except during the era of Dayan Khan and Tumen Zasagt Khan.",
+        "By the early 20th century, almost one-third of the adult male population were Buddhist monks.",
+        "After the collapse of the Qing dynasty in 1911, Mongolia declared independence and achieved actual independence from the Republic of China in 1921.",
+        "Shortly thereafter, the country became a satellite state of the Soviet Union.",
+        "In 1924, the Mongolian People's Republic was founded as a socialist state.",
+        "After the anti-communist revolutions of 1989, Mongolia conducted its own peaceful democratic revolution in 1990."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Surrealism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28766",
+      "retrieved_at": "2026-10-18T16:50:48.858Z",
+      "sha256": "8e2093e2e7e530d4193f555fda0a874775dd45fc01280996e048f3d6772aac7e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Surrealism is an art and cultural movement that developed in Europe in the aftermath of World War I in which artists aimed to allow the unconscious mind to express itself, often resulting in the depiction of illogical or dreamlike scenes and ideas.",
+        "Its intention was, according to leader André Breton, to \"resolve the previously contradictory conditions of dream and reality into an absolute reality, a super-reality\", or surreality.",
+        "It produced works of painting, writing, photography, theatre, filmmaking, music, comedy and other media as well.",
+        "Works of Surrealism feature the element of surprise, unexpected juxtapositions and non sequitur.",
+        "Leader Breton was explicit in his assertion that Surrealism was, above all, a revolutionary movement.",
+        "At the time, the movement was associated with political causes such as communism and anarchism.",
+        "The term \"Surrealism\" originated with Guillaume Apollinaire in 1917.",
+        "However, the Surrealist movement was not officially established until after October 1924, when the Surrealist Manifesto published by Breton succeeded in claiming the term for his group over a rival faction led by Yvan Goll, who had published his own surrealist manifesto two weeks prior.",
+        "The most important center of the movement was Paris, France.",
+        "From the 1920s onward, the movement spread around the globe, impacting the visual arts, literature, theatre, film, and music of many countries and languages, as well as political thought and practice, philosophy, and social and cultural theories."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Swastika",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45943",
+      "retrieved_at": "2026-10-18T16:50:48.858Z",
+      "sha256": "a087fac94cf209df7bcc1ed5d604d90257e47202c4d9489e57405d75c7336152",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The swastika ( SWOS-tih-kə, Sanskrit: [ˈsʋɐstikɐ], Sanskrit Devanagari: स्वस्तिक ; 卐 or 卍) is an ancient cross-cultural geometrical symbol that has been used in many cultures and religions of Eurasia, as well as a few in Africa and the Americas, for thousands of years.",
+        "The swastika was and continues to be used as a symbol of divinity and spirituality in several religions, including Hinduism, Buddhism, and Jainism.",
+        "In the Western world, it is predominantly associated with Nazism, being appropriated and widely displayed in Nazi symbolism.",
+        "This appropriation continues with the symbol's popularity among neo-Nazis around the world.",
+        "The English word swastika is originally of the Sanskrit language (स्वस्तिक, lit.",
+        "In Hinduism, the right-facing symbol (卐) is called swastika, symbolizing surya, prosperity, and good luck; while the left-facing symbol (卍) is sometimes called sauvastika, symbolising night or tantric aspects of Kali.",
+        "In Jain symbolism, it is a part of the Jain flag, and represents Suparshvanatha—the seventh of 24 Tirthankaras (spiritual teachers and saviours).",
+        "In Buddhist symbolism, it represents the auspicious footprints of the Buddha.",
+        "In different Indo-European traditions, the swastika symbolises fire, lightning bolts and the Sun.",
+        "The symbol is found in the archaeological remains of the Indus Valley Civilization and the Neolithic-era Samarra culture of Mesopotamia.",
+        "It has also been recorded in early Byzantine and Christian artwork.",
+        "The swastika was seen as a symbol of auspiciousness and good luck for most of the Western world until the 1930s."
+      ]
+    }
+  ]
+}

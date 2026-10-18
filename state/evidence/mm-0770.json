@@ -1,0 +1,135 @@
+{
+  "id": "mm-0770",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Antibiotics Work?",
+      "publisher": "BENTHAM SCIENCE PUBLISHERS",
+      "author": "Aftab, Hina; Sumra, Ayesha Ahmed; Fakhr-un-Nisa",
+      "published_at": "2025-06-26",
+      "url": "https://doi.org/10.2174/9789815313628125010006",
+      "retrieved_at": "2026-10-18T15:20:17.149Z",
+      "sha256": "889f1ec397f77923c66d76c241ca95b08587ab1f1e22f34252d1358fca1d6e5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter provides an overview of the relationship between antibiotics and reproduction.",
+        "It covers a wide range of topics, including the fundamentals of antibiotics, different forms of reproduction, the reproductive system, common reproductive health issues, and the use of antibiotics in assisted reproduction and conception.",
+        "The chapter also explains the importance of administering antibiotics correctly, along with the potential risks and side effects.",
+        "It also discusses the challenges associated with antibiotic use in reproduction, such as disruption of the natural microbiota and antibiotic resistance, and offers possible solutions.",
+        "The overall goal of this chapter is to explore the complex relationship between antibiotics and reproduction, focusing on their effect on pregnancy, fertility, and assisted reproductive technologies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How antibiotics work: protein synthesis.",
+      "publisher": "PubMed",
+      "author": "John H. Walters",
+      "published_at": "1993-09-01",
+      "url": "https://openalex.org/W201127876",
+      "retrieved_at": "2026-10-18T15:20:19.244Z",
+      "sha256": "085af0aaf7a7c9518486547020b25a0caa817d653d0b0de6ca4db3c23892badd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Antibiotics are important agents for the treatment of infections.",
+        "They are special chemicals produced by a few species of microorganisms which inhibit the growth of other micro-organisms.",
+        "They inhibit growth by attacking one of five sensitive sites.",
+        "A selection of antibiotics attacking the protein synthesis mechanism are identified and their modes of action described."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Antimicrobial resistance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1914",
+      "retrieved_at": "2026-10-18T15:20:19.741Z",
+      "sha256": "c3b81f5e56e47295d3294f89d96f70c3fb24fe084aca3391ae9f4449030526d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Antimicrobial resistance (AMR or AR) occurs when microbes evolve mechanisms that protect them from antimicrobials, which are drugs used to treat infections in humans, animals, and plants.",
+        "Any microbe can develop resistance, including bacteria (antibiotic resistance), viruses (antiviral resistance), parasites (antiparasitic resistance), and fungi (antifungal resistance).",
+        "Together, these adaptations fall under the AMR umbrella, posing a challenge to all countries and all demographics.",
+        "Misuse and improper management of antimicrobials are primary drivers of this resistance, though it can also occur naturally through genetic mutations and the spread of resistant genes.",
+        "Microbes resistant to multiple drugs are termed multidrug-resistant (MDR) and are sometimes called superbugs.",
+        "Resistance arises through spontaneous mutation, horizontal gene transfer, and increased selective pressure from antibiotic overuse, both in medicine and agriculture, which accelerates resistance development.",
+        "Preventive measures, such as using narrow-spectrum antibiotics and improving hygiene practices, aim to reduce the spread of resistance.",
+        "The World Health Organization (WHO) claims that AMR is one of the top global public health and development threats, estimating that bacterial AMR was directly responsible for 1.27 million global deaths in 2019 and contributed to over  4 million deaths in 2021.",
+        "The burden of AMR is immense, with nearly 5 million annual deaths associated with resistant infections.",
+        "Infections from AMR microbes are more challenging to treat and often require costly alternative therapies that may have more severe side effects.",
+        "Moreover, the WHO and other international bodies warn that AMR could lead to up to 10 million deaths annually by 2050 unless actions are taken.",
+        "Global initiatives, such as calls for international AMR treaties, emphasize coordinated efforts to limit misuse, fund research, and provide access to necessary antimicrobials in developing nations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Penicillin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23312",
+      "retrieved_at": "2026-10-18T15:20:19.741Z",
+      "sha256": "fce885539e1b5301c1318b0afa70dd366e7e6015e2a7fd9784fbc83dc8549d03",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Penicillins (P, PCN or PEN) are a group of β-lactam antibiotics originally obtained from Penicillium moulds, principally P.",
+        "Eight species of Penicillium, in the section Chrysogena, produce penicillins.",
+        "A number of natural penicillins have been discovered, but only two purified compounds are in clinical use: penicillin G (intramuscular or intravenous use) and penicillin V (given by mouth).",
+        "Penicillins were among the first medications to be effective against many bacterial infections caused by staphylococci and streptococci.",
+        "They are still widely used today for various bacterial infections, though many types of bacteria have developed resistance following extensive use.",
+        "In the United States, 10% of the population claims penicillin allergies, but because the frequency of positive skin test results decreases by 10% with each year of avoidance, 90% of these patients can eventually tolerate penicillin.",
+        "Additionally, those with penicillin allergies can usually tolerate cephalosporins (another group of β-lactam) because the immunoglobulin E (IgE) cross-reactivity is only 3%.",
+        "Penicillin was discovered in 1928 by the Scottish physician Alexander Fleming as a crude extract of P.",
+        "Fleming's student Cecil George Paine was the first to successfully use penicillin to treat eye infection (neonatal conjunctivitis) in 1930.",
+        "The purified compound (penicillin F) was isolated in 1940 by a research team led by Howard Florey and Ernst Boris Chain at the University of Oxford.",
+        "Fleming first used the purified penicillin to treat streptococcal meningitis in 1942.",
+        "The 1945 Nobel Prize in Physiology or Medicine was shared by Chain, Fleming and Florey."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Β-Lactam antibiotic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52784",
+      "retrieved_at": "2026-10-18T15:20:19.741Z",
+      "sha256": "517a88cfdb16fb0985be9e17f625c3f620ec2ec986971220d17fc8cbf8cd2527",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "β-Lactam antibiotics (beta-lactam antibiotics) are antibiotics that contain a β-lactam ring in their chemical\nstructure.",
+        "This includes penicillin derivatives (penams), cephalosporins and cephamycins (cephems), monobactams, carbapenems and carbacephems.",
+        "Most β-lactam antibiotics work by inhibiting cell wall biosynthesis in the bacterial organism and are the most widely used group of antibiotics.",
+        "Until 2003, when measured by sales, more than half of all commercially available antibiotics in use were β-lactam compounds.",
+        "The first β-lactam antibiotic discovered, penicillin, was isolated from a strain of Penicillium rubens (named as Penicillium notatum at the time).",
+        "Bacteria often develop resistance to β-lactam antibiotics by synthesizing a β-lactamase, an enzyme that attacks the β-lactam ring.",
+        "To overcome this resistance, β-lactam antibiotics can be given with β-lactamase inhibitors such as clavulanic acid."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Sulfonamide (medicine)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=499685",
+      "retrieved_at": "2026-10-18T15:20:19.741Z",
+      "sha256": "007dfe786f698d6af6f97a131cd8c64f7d5cac348c37a7120b55bcad85a810b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sulfonamide is a functional group (a part of a molecule) that is the basis of several groups of drugs, which are called sulphonamides, sulfa drugs or sulpha drugs.",
+        "The original antibacterial sulfonamides are synthetic antimicrobial agents that contain the sulfonamide group.",
+        "Some sulfonamides are also devoid of antibacterial activity, e.g., the anticonvulsant sultiame.",
+        "The sulfonylureas and thiazide diuretics are newer drug groups based upon the antibacterial sulfonamides.",
+        "The overall incidence of adverse drug reactions to sulfa antibiotics is approximately 3%, close to penicillin; hence medications containing sulfonamides are prescribed carefully.",
+        "Sulfonamide drugs were the first broadly effective antibacterials used systemically, and paved the way for the antibiotic revolution in medicine."
+      ]
+    }
+  ]
+}

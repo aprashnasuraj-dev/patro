@@ -1,0 +1,135 @@
+{
+  "id": "mm-0791",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "FAT BIRDS: HOW HUMAN MEDICAL DEVICES REVEAL PATTERNS OF STARVATION AND REFUELING IN A POPULATION OF SONGBIRDS",
+      "publisher": "Michigan Technological University",
+      "author": "Resendiz, Elisa",
+      "published_at": null,
+      "url": "https://doi.org/10.37099/mtu.dc.etdr/2065",
+      "retrieved_at": "2026-10-18T15:24:19.067Z",
+      "sha256": "5751b72756ffd3fb839299190616e59ce844fb76be058cea2e081bf9200bda84",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Brzeski Abstract Habitat quality is often difficult to measure directly, particularly for songbirds occupying heterogeneous landscapes and experiencing shifting energetic demands across the annual cycle.",
+        "Physiological indicators provide an objective, mechanistic basis for inference by revealing whether birds are depositing or mobilizing energy at the time of capture.",
+        "β-hydroxybutyrate and triglycerides are widely used as indicators of catabolic and anabolic state, reflecting fasting and fat deposition, respectively.",
+        "I quantify variation in these metabolites across a community of passerines and near-passerines captured in Michigan’s western Upper Peninsula across life-cycle phases.",
+        "I assess whether metabolite distributions differ among phases and among banding stations, identify the periods in which spatial patterns are most interpretable as signals of habitat quality, and evaluate which species and metabolite metrics most reliably reproduce station-level differences.",
+        "Our broad sampling provides baseline metabolic profiles across species, and across life cycle phases, producing the first metabolite library across migratory and resident species.",
+        "Recommended Citation Resendiz, Elisa, \"FAT BIRDS: HOW HUMAN MEDICAL DEVICES REVEAL PATTERNS OF STARVATION AND REFUELING IN A POPULATION OF SONGBIRDS\", Open Access Master's Thesis, Michigan Technological University, 2026."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Daily patterns of global urban populations reveal how cities breathe",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Zimmer, Andrew; Adams, Daniel; Poudyal, Lucas",
+      "published_at": "2026-10-09",
+      "url": "https://doi.org/10.21203/rs.3.rs-11053040/v1",
+      "retrieved_at": "2026-10-18T15:24:19.067Z",
+      "sha256": "f5986cc4fea96206af7028abf0f3fdc23c7ea45e60f61d7292e554039698aea9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Urban populations are dynamic, yet globally consistent data used to understand and plan cities are usually residential, ambient or otherwise temporally static.",
+        "We combine LandScan Mosaic daytime and nighttime population grids with independently delineated physical boundaries for more than 50,000 urban centers to measure urban population breathing: expansion, contraction and internal redistribution between day and night.",
+        "Global urban population is 148 million higher by day than at night, but this net increase conceals 731 million in offsetting gains and losses.",
+        "Small and intermediate centers contribute more redistribution than their population share.",
+        "Larger centers tend toward aggregate balance: wider footprints contain more fine-scale variation, while coherent redistribution across broad relative zones declines with population.",
+        "Radial and directional signatures define a continuous global morphology spanning broad stability, outward expansion, inward concentration and directional reorganization.",
+        "These patterns show where static population denominators may misrepresent infrastructure demand, service needs and exposure."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Core-periphery patterns in knowledge graphs reveal digital visibility hierarchies of South American languages",
+      "publisher": "IOP Publishing",
+      "author": "Vera Zúñiga, Javier; Cornejo Meza, Dina",
+      "published_at": "2025-10-01",
+      "url": "https://doi.org/10.1209/0295-5075/ae1253",
+      "retrieved_at": "2026-10-18T15:24:19.067Z",
+      "sha256": "b199dc27c7186d0b675af8a38d092cf7300c426724f08e93dbb819667116b264",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract We analyze the digital representation of indigenous South American languages through a statistical-physics perspective, applying onion decomposition to a semantically enriched knowledge graph built from Wikipedia, Wikidata, and Glottolog.",
+        "Quantitatively, core languages have, on average, ten times the degree of peripheral ones and are seven times more likely to possess complete genealogical metadata.",
+        "The results provide measurable evidence of systemic biases in the digital documentation of cultural heritage.",
+        "Beyond diagnosis, the analysis identifies strategic targets for intervention: intermediate-layer languages as potential bridges to enhance peripheral visibility, and completely isolated cases as priorities for urgent preservation.",
+        "This approach offers a transferable framework for quantifying representational inequalities in cultural knowledge systems."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Infographic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=992525",
+      "retrieved_at": "2026-10-18T15:24:19.319Z",
+      "sha256": "634fe65d4aef6257e00fb38e26ecf6c974456235b1f0930489014e7f65f22c72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Infographics (a clipped compound of \"information\" and \"graphics\") are graphic visual representations of information, data, or knowledge intended to present information quickly and clearly.",
+        "They can improve cognition by using graphics to enhance the human visual system's ability to see patterns and trends.",
+        "Similar pursuits are information visualization, data visualization, statistical graphics, information design, or information architecture.",
+        "Infographics have evolved in recent years to be for mass communication, and thus are designed with fewer assumptions about the readers' knowledge base than other types of visualizations.",
+        "Isotypes are an early example of infographics conveying information quickly and easily to the masses."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Fractal curve",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4972605",
+      "retrieved_at": "2026-10-18T15:24:19.319Z",
+      "sha256": "fb3de55738317c01992ae91e41056cd9611a0865a47e466a9443a6a2e3461a4a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A fractal curve is loosely a mathematical curve whose shape retains the same general pattern of irregularity, regardless of how high it is magnified or scaled, that is, its graph is either space-filling or takes the form of a fractal.",
+        "In general, fractal curves are nowhere rectifiable — that is, they do not have finite length — and every subarc longer than a single point has infinite length."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Line chart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6879051",
+      "retrieved_at": "2026-10-18T15:24:19.319Z",
+      "sha256": "208e4ce8f4c94f299af0d11e6ab6983f518c5d751148b2f3289d5bef368bb553",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A line chart or line graph, also known as curve chart, is a type of chart that displays information as a series of data points called 'markers' connected by straight line segments.",
+        "It is similar to a scatter plot except that the measurement points are ordered (typically by their x-axis value) and joined with straight line segments.",
+        "A line chart is often used to visualize a trend in data over intervals of time – a time series – thus the line is often drawn chronologically."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Radar chart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8432961",
+      "retrieved_at": "2026-10-18T15:24:19.319Z",
+      "sha256": "38f8556ffb1181b2bd9c8a7ef4d1676a16470950aa7ade0d9e5d98b5b0112ddd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point.",
+        "Radar charts are also known as web charts, spider charts, spider graphs, spider web charts, star charts, star plots, cobweb charts, irregular polygons, polar charts, and Kiviat diagrams.",
+        "It is equivalent to a parallel coordinates plot, with the axes arranged radially."
+      ]
+    }
+  ]
+}

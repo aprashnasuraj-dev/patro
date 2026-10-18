@@ -1,0 +1,135 @@
+{
+  "id": "mm-1391",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "&lt;strong&gt;The “Double Triangle” Paradigm:&lt;/strong&gt; National Redemption in Bi-generational Love Triangles from Agnon to Oz",
+      "publisher": "Indiana University Press",
+      "author": "Halevi-Wise",
+      "published_at": "2006",
+      "url": "https://doi.org/10.2979/pft.2006.26.3.309",
+      "retrieved_at": "2026-10-18T15:41:13.273Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "RE-TRIANGLE: Does TRIANGLE Enable Multimodal Alignment Beyond Cosine Similarity in Retrieval?",
+      "publisher": "arXiv (Cornell University)",
+      "author": "Arijit Ghosh; Aritra Bandyopadhyay; Chiranjeev Bindra",
+      "published_at": "2026-05-22",
+      "url": "https://openalex.org/W7162817497",
+      "retrieved_at": "2026-10-18T15:41:14.508Z",
+      "sha256": "e7549e0cc90ce80c82b6cb6f39f5d639ad4a38be2ead25702cbb13c21de2605f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Multimodal alignment is critical for bridging the semantic gap in information retrieval.",
+        "However, traditional pairwise strategies introduce a geometric blind spot: while they align anchor modalities (e.g., text) with others, they lack constraints to enforce mutual consistency between peripheral modalities (e.g., video and audio).",
+        "The TRIANGLE framework addresses this by minimizing the area of modality triplets on a hypersphere to enforce holistic alignment.",
+        "In this reproducibility study, we verify the robustness of this geometric objective for retrieval tasks.",
+        "We confirm that TRIANGLE outperforms pairwise baselines in zero-shot settings, achieving Recall@1 gains of up to +8.7 points, though benefits are domain-dependent.",
+        "However, we fail to reproduce the reported learning-from-scratch results.",
+        "Analysis using a synthetic toy dataset attributes this to instability when jointly optimizing geometric alignment with Data-Text Matching (DTM) loss.",
+        "Furthermore, we find that cosine regularization primarily stabilizes text-to-video retrieval, and fine-tuning with domain supervision amplifies geometric benefits but reduces cross-dataset generalization.",
+        "Our findings support the efficacy of geometric alignment while highlighting critical optimization sensitivities.",
+        "Code available at https://github.com/ARIJIT00171/RE-TRIANGLE."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bermuda Triangle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4854",
+      "retrieved_at": "2026-10-18T15:41:14.508Z",
+      "sha256": "deed46d36b303947e231c3770bbaef771e1aba78ea6661cc816bedca64150654",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Bermuda Triangle, also known as the Devil's Triangle, is a loosely defined region in the North Atlantic Ocean, roughly bounded by Florida, Bermuda, and Puerto Rico.",
+        "Since the mid-20th century, it has been the focus of an urban legend suggesting that many aircraft, ships, and people have disappeared there under mysterious circumstances.",
+        "However, extensive investigations by reputable sources, including the U.S.",
+        "federal government and scientific organizations, have found no evidence of unusual activity, attributing reported incidents to natural phenomena, human error, and misinterpretation."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Triangle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30654",
+      "retrieved_at": "2026-10-18T15:41:14.508Z",
+      "sha256": "e694a253635b0f170b9818c2361af40ada77a8e4cf2f60e03d43fb5753f88b43",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A triangle or trigon is a polygon consisting of three sides connected at three corners.",
+        "It is one of the basic shapes in geometry and the simplest of polygons.",
+        "The corners, also called vertices, are zero-dimensional points while the sides connecting them, also called edges, are one-dimensional line segments.",
+        "A triangle has three internal angles, each one bounded by a pair of adjacent sides; the sum of angles of a triangle always equals a straight angle (180 degrees or π radians).",
+        "The triangle is a plane figure and its interior is a planar region.",
+        "Sometimes an arbitrary edge is chosen to be the base, in which case the opposite vertex is called the apex; the shortest segment between the base and apex is the height.",
+        "The area of a triangle equals one-half the product of height and base length.",
+        "In Euclidean geometry, any two points determine a unique line segment situated within a unique straight line, and any three points that do not all lie on the same straight line determine a unique triangle situated within a unique flat plane.",
+        "More generally, four points in three-dimensional Euclidean space determine a solid figure called tetrahedron.",
+        "In non-Euclidean geometries, three \"straight\" segments also determine a \"triangle\", for instance, a spherical triangle or hyperbolic triangle.",
+        "A geodesic triangle is a region of a general two-dimensional surface enclosed by three sides that are straight relative to the surface (geodesics).",
+        "A curvilinear triangle is a shape with three curved sides, for instance, a circular triangle with circular-arc sides."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Triangle Shirtwaist Factory fire",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=352479",
+      "retrieved_at": "2026-10-18T15:41:14.508Z",
+      "sha256": "8f25ff63d37e7514fddea36606a2cf8238d6c11301e8b2239d28c0ad9bb31cd5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Triangle Shirtwaist Factory fire occurred in the Greenwich Village neighborhood of Manhattan, a borough of New York City, on Saturday, March 25, 1911.",
+        "The fire was the deadliest industrial disaster in the history of the city, and one of the deadliest in U.S.",
+        "The fire caused the deaths of 146 garment workers—123 women and girls and 23 men—who died from either the fire, smoke inhalation, or falling or jumping to their deaths.",
+        "Most of the victims were recent Italian and Jewish immigrants aged 14 to 23.",
+        "The factory was located on the 8th, 9th, and 10th floors of the Asch Building (later the Brown Building), which was built in 1901 and remains standing on the New York University (NYU) campus at 23–29 Washington Place, near Washington Square Park.",
+        "The building has been designated a National Historic Landmark and a New York City landmark.",
+        "Because the doors to the stairwells and exits were locked—a common practice at the time to prevent workers from taking unauthorized breaks and to reduce theft—many of the workers could not escape from the burning building and jumped from the high windows.",
+        "The fire led to legislation requiring improved factory safety standards and helped spur the growth of the International Ladies' Garment Workers' Union (ILGWU), which fought for better working conditions for sweatshop workers."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Nazi concentration camp badge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=447379",
+      "retrieved_at": "2026-10-18T15:41:14.508Z",
+      "sha256": "c25d6d0492a5514dc38791d5be49a7f64f3d1a9e4eafe4904d091b5259d364af",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Badges, primarily triangles, were used in Nazi concentration camps in German-occupied countries to identify the reason the prisoners were there.",
+        "The triangles were made of fabric and were sewn onto the prisoners' jackets and trousers.",
+        "They had specific meanings indicated by their colour and shape.",
+        "For example, a guard, at a glance, could see if someone was a convicted criminal (green patch) and might assume they had a tough temperament suitable for kapo duty.",
+        "Someone wearing a badge indicating a suspected escape attempt was usually not assigned to work squads operating outside the camp fence.",
+        "Someone wearing an \"F\" could be called upon to help translate a guard's spoken instructions to a trainload of new arrivals from France.",
+        "Some historical monuments quote the badge-imagery, with the use of a triangle being a visual shorthand to symbolise all camp victims.",
+        "The modern-day use of a pink triangle emblem to symbolise gay rights is a response to the camp identification patches.",
+        "The black, blue, purple, and red triangles have also been reclaimed by various remembrance and anti-fascist groups, particularly in Europe.",
+        "Such groups include the Association of Persecutees of the Nazi Regime – Federation of Antifascists (VVN-BdA) in Germany and other members of the International Federation of Resistance Fighters – Association of Anti-Fascists (FIR)."
+      ]
+    }
+  ]
+}

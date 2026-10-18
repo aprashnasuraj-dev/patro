@@ -1,0 +1,152 @@
+{
+  "id": "mm-0887",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why do gravel bed rivers meander",
+      "publisher": "AGUFM",
+      "author": "Christian A. Braudrick; William Eric Dietrich",
+      "published_at": "2011-12-01",
+      "url": "https://openalex.org/works/W3004617904",
+      "retrieved_at": "2026-10-18T15:25:03.158Z",
+      "sha256": "0cf4736565ed495582cc2022c47257e8872496b48ba284aad9704cbfcf557f24",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why do gravel bed rivers meander | OpenAlex Log in Get started Work Add to collection Why do gravel bed rivers meander HTML Details Locations Year: 2011 Type: article Source: AGUFM Authors: C.",
+        "Dietrich Language: English Topic: Hydrology and Sediment Transport Processes Subfield: Ecology Field: Environmental Science Domain: Physical Sciences Open Access status: closed OpenAlex ID: W3004617904 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why do mountain river meanders reflect typhoon climatology",
+      "publisher": "AGUFM",
+      "author": "C. P. Stark",
+      "published_at": "2011-12-01",
+      "url": "https://openalex.org/works/W3036614323",
+      "retrieved_at": "2026-10-18T15:25:03.505Z",
+      "sha256": "79f97b337614dc3bd7376b810046fe792466869b58a16dc5c45566b1e2611587",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why do mountain river meanders reflect typhoon climatology | OpenAlex Log in Get started Work Add to collection Why do mountain river meanders reflect typhoon climatology HTML Details Locations Year: 2011 Type: article Source: AGUFM Author: C.",
+        "Stark Language: English Topic: Hydrology and Sediment Transport Processes Subfield: Ecology Field: Environmental Science Domain: Physical Sciences Open Access status: closed OpenAlex ID: W3036614323 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Analysis and modelling of river meandering",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "author": "Alessandra Crosato",
+      "published_at": "2008-09-22",
+      "url": "https://openalex.org/W1602734998",
+      "retrieved_at": "2026-10-18T15:25:03.902Z",
+      "sha256": "92d150f9c9eb0d6725def112796757a718a424f77a817167b4c0512da99edf56",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This thesis examines the morphological changes of non-tidal meandering rivers at the spatial scale of several meanders.",
+        "With this purpose, a physics-based mathematical model, MIANDRAS, has been developed for the simulation of the medium-term to long-term evolution of meandering rivers.",
+        "Application to several real rivers shows that MIANDRAS can properly simulate both equilibrium river bed topography and planimetric changes.",
+        "Three models of different complexity can be obtained by applying different degrees of simplification to the equations.",
+        "These models, along with experimental tests and field data, constitute the tools for several analyses.",
+        "At conditions of initiation of meandering, it is found that river bends can migrate upstream and downstream.",
+        "This depends on meander wave length and width-to-depth ratio, irrespective of whether the parameters are in the subresonant or the superresonant range.",
+        "Varying lag distances between flow velocity and bed topography are found to offer an explanation why local channel migration rates reach a maximum at a certain bend sharpness, in addition to previous explanations based on flow separation.",
+        "A new method has been developed to calculate the number of bars in a river channel with given width.",
+        "It predicts successfully whether reducing or enlarging the river width would lead to meandering or braiding.",
+        "Channel migration coefficients are demonstrated to depend not only on physical properties of the eroding bank, but also on physical properties of the accreting bank and the numerical scheme.",
+        "Model results and a re-examination of experimental observations suggest that intrinsic initiation of meandering is not necessarily related to steady bars due to a permanent upstream disturbance."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Meander",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3335767",
+      "retrieved_at": "2026-10-18T15:25:03.902Z",
+      "sha256": "f340b36a3a6158e78ec85d7e40da677c3389880918163741ef1eb1a940f5aa3c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A meander is one of a series of regular sinuous curves in the channel of a stream.",
+        "It is produced as a watercourse erodes the sediments of an outer, concave bank (cut bank or river cliff) and deposits sediments on an inner, convex bank which is typically a point bar.",
+        "The result of this coupled erosion and sedimentation is the formation of a sinuous course as the channel migrates back and forth across the axis of a floodplain.",
+        "The zone within which a meandering stream periodically shifts its channel is known as a meander belt.",
+        "It typically ranges from 15 to 18 times the width of the channel.",
+        "Over time, meanders migrate downstream, sometimes in such a short time as to create civil engineering challenges for local municipalities attempting to maintain stable roads and bridges.",
+        "The degree of meandering of the channel of a river, stream, or other watercourse is measured by its sinuosity.",
+        "The sinuosity of a watercourse is the ratio of the length of the channel to the straight line down-valley distance.",
+        "Streams or rivers with a single channel and sinuosities of 1.5 or more are defined as meandering streams or rivers."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Point bar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12310667",
+      "retrieved_at": "2026-10-18T15:25:03.902Z",
+      "sha256": "bc89aed983e98c10c4ec655950d59cc94464801afb89f4a687e23cda96082973",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A point bar is a depositional feature made of alluvium that accumulates on the inside bend of streams and rivers below the slip-off slope.",
+        "Point bars are found in abundance in mature or meandering streams.",
+        "They are crescent-shaped and located on the inside of a stream bend, being very similar to, though often smaller than, towheads, or river islands.",
+        "Point bars are composed of sediment that is well sorted and typically reflects the overall capacity of the stream.",
+        "They also have a very gentle slope and an elevation very close to water level.",
+        "Since they are low-lying, they are often overtaken by floods and can accumulate driftwood and other debris during times of high water levels.",
+        "Due to their near flat topography and the fact that the water speed is slow in the shallows of the  point bar they are popular rest stops for boaters and rafters.",
+        "However, camping on a point bar can be dangerous as a flash flood that raises the stream level by as little as a few inches or centimetres can overwhelm a campsite in moments.",
+        "A point bar is an area of deposition whereas a cut bank is an area of erosion.",
+        "Point bars are formed as the secondary flow of the stream sweeps and rolls sand, gravel and small stones laterally across the floor of the stream and up the shallow sloping floor of the point bar."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "River",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18842395",
+      "retrieved_at": "2026-10-18T15:25:03.902Z",
+      "sha256": "330d4bc58d5c3f02ec4be9fe322cb65f0464e6be2a4e097179302c43f3776c77",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A river is a natural stream of fresh water that flows on land or inside caves towards another body of water at a lower elevation, such as an ocean, lake, or another river.",
+        "A river may run dry before reaching the end of its course if it runs out of water, or only flow during certain seasons.",
+        "Rivers are regulated by the water cycle, the processes by which water moves around the Earth.",
+        "Water first enters rivers through precipitation, whether from rainfall, the runoff of water down a slope, the melting of glaciers or snow, or seepage from aquifers beneath the surface of the Earth.",
+        "Rivers flow in channeled watercourses and merge in confluences to form drainage basins, areas where surface water eventually flows to a common outlet.",
+        "Drainage divides keep rivers separated from other courses of water and causes upstream water within the confines of the divide to fall into the downhill stream.",
+        "They may regularly overflow their banks and flood the surrounding area, spreading nutrients to it.",
+        "Sediment or alluvium carried by rivers shapes the landscape around it, forming deltas and islands where the flow slows down.",
+        "Rivers seldom run a straight course, but instead meander (bend); the locations of a river's banks can change frequently.",
+        "Rivers take up their alluvium by erosion of their beds, which carves rock and soil into canyons and valleys.",
+        "Rivers have sustained human and animal life for millennia, including the first human civilizations.",
+        "The organisms that live around or in a river such as fish, aquatic plants, and insects have different roles, including processing organic matter and predation."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Panchganga River",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23240869",
+      "retrieved_at": "2026-10-18T15:25:03.902Z",
+      "sha256": "7034ebcb4082b2e63e7d17549d0ea5d924dc3d5d8e6f982e057fea9a3d4c7037",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Panchganga River is one of the important rivers of India located in Maharashtra.",
+        "It is a major tributary of Krishna River, which it flows into at Narsobawadi."
+      ]
+    }
+  ]
+}

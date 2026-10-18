@@ -1,0 +1,52 @@
+{
+  "id": "mt-0012",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "IMPULSE: Ongoing verification of the use of digital heritage objects within the emerging platforms",
+      "publisher": "Lirias",
+      "author": "Vandermeulen, Bruno; Rontzova, Theodora",
+      "published_at": "2024-10-30",
+      "url": "https://openalex.org/W7112460534",
+      "retrieved_at": "2026-10-18T16:06:06.572Z",
+      "sha256": "1dea46c7aa460a4998af2661dbb92ec80d54c0afc1b10687606ed23146de66bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The following document is the first Deliverable of WP3 within the scope of the IMPULSE project (funded by Horizon Europe).",
+        "The Deliverable 3.1.(D17) presents an overview of the ongoing verification of the use of digital heritage objects within emerging platforms.",
+        "The first section offers an introduction to IMPULSE, a project that received funding under the Cluster 2 of Horizon Europe dedicated to “Culture, creativity and inclusive society”, specifically the call on: Re-visiting the digitisation of cultural heritage: what, how and why?",
+        "(HORIZON-CL2-2023-HERITAGE-01-03) (European Commission, 2022).",
+        "The axes of the analysis are the different data types, therefore the current state of art in cultural heritage digitisation is examined separately for each type of data.",
+        "The scoping review results into the conclusions, which offers a recap of the principal findings, academic and institutional gaps as well as recommendations for future research directions.",
+        "Finally, there is an appendix with all the scoping sources used in our review, ranging from academic papers and EU documents to guidelines, standards, EU- funded projects and novel immersive environments dealing with digital heritage artifacts.",
+        "The scoping review will continue throughout the duration of the project.",
+        "It is important to note that while this deliverable maintains academic integrity, the perspective of WP3, and thus this report, is primarily focused on institutional practices.",
+        "This deliverable aligns with and complements the work developed within the other Work Packages."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Of Monks, Medieval Scribes, and Middlemen",
+      "publisher": "eYLS (Yale Law School)",
+      "author": "Peter K. Yu",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W2262204951",
+      "retrieved_at": "2026-10-18T16:06:06.572Z",
+      "sha256": "cf30c6b90a33dbca422801a650caaa7360943077dc8d39f0af66b753cca02388",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Today's copyright debate has generally focused on the digital dilemma created by Internet and new media technologies.",
+        "Threats created by emerging communications technologies, however, are not new.",
+        "Throughout history, there have been remarkable similarities between the threats created by new technologies and those posed by older ones.",
+        "During the oral argument in Metro-Goldwyn-Mayer Studios, Inc.",
+        "Grokster, Ltd., Justice Stephen Breyer questioned whether the petitioners' counsel would apply the test proposed for the new technology to some once-new technologies, such as the photocopying machine, the videocassette recorder, the iPod, and the printing press.",
+        "Many legal scholars have described copyright as a response to the emergence of the printing press.",
+        "However, very few have examined the press's impact on a group of contemporary middlemen - the medieval scribes.",
+        "This Essay undertakes this inquiry and explores the impact of the then-new technology on the now-obsolete scribal industry.",
+        "It begins by tracing the emergence of medieval scribes and the printing press and concludes with observations on the policy responses to the challenge created by the Internet and new communications technologies."
+      ]
+    }
+  ]
+}

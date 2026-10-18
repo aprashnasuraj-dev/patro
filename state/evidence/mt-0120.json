@@ -1,0 +1,107 @@
+{
+  "id": "mt-0120",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Nature meets machine: the AI renaissance in natural product drug discovery",
+      "publisher": "Natural Products and Bioprospecting",
+      "author": "Rajesh Muthuraj; Jaikanth Chandrasekaran",
+      "published_at": "2026-03-02",
+      "url": "https://doi.org/10.1007/s13659-025-00589-6",
+      "retrieved_at": "2026-10-18T16:09:14.227Z",
+      "sha256": "9b908e14543e9adc0b69ad7ede9de720da939d4c51a3a0ec0d3485807ef99f6d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Natural products (NPs) have long served as a cornerstone of drug discovery, yielding landmark therapeutics such as paclitaxel and artemisinin and providing sustained access to biologically relevant chemical space.",
+        "Despite this legacy, NP-based discovery has gradually declined with the rise of synthetic chemistry and high-throughput screening, even as many contemporary \"synthetic\" drugs remain structurally inspired by natural scaffolds.",
+        "Classical NP workflows-centered on phenotypic screening and bioassay-guided fractionation-continue to face persistent bottlenecks, including structural complexity, low bioactive yield, frequent rediscovery, and limited scalability.",
+        "Rather than competing with NP research, artificial intelligence (AI) offers a complementary methodological framework to address these longstanding challenges.",
+        "This review critically examines the bottlenecks inherent to traditional NP discovery and outlines how AI can be systematically integrated across the pipeline.",
+        "We discuss AI-enabled advances ranging from natural language processing for mining ethnopharmacological knowledge to machine learning-driven dereplication, cheminformatics, and genome mining, with platforms such as GNPS2 exemplifying scalable progress.",
+        "Case studies in antibiotic and anticancer discovery, as well as the modernization of traditional medicine, illustrate how AI-NP integration can accelerate early-stage discovery while enhancing translational relevance.",
+        "Looking ahead, we examine emerging paradigms-including quantum machine learning, federated data ecosystems, and AI-assisted molecular design-that may further expand the scope of NP-based research.",
+        "Collectively, this review presents a forward-looking framework in which AI functions not as a replacement for NP science, but as a synergistic discipline that enables more efficient, scalable, and informed exploration of nature-derived chemical diversity."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Historical insights at scale: A corpus-wide machine learning analysis of early modern astronomic tables",
+      "publisher": "Science Advances",
+      "author": "Oliver Eberle; Jochen Büttner; Hassan El-Hajj",
+      "published_at": "2024-10-23",
+      "url": "https://doi.org/10.1126/sciadv.adj1719",
+      "retrieved_at": "2026-10-18T16:09:14.227Z",
+      "sha256": "1ec65b75abddca0f84d193ef18295c817e2513852cbb68cadf68d9a75397c29d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Understanding the evolution and dissemination of human knowledge over time faces challenges due to the abundance of historical materials and limited specialist resources.",
+        "However, the digitization of historical archives presents an opportunity for AI-supported analysis.",
+        "This study advances historical analysis by using an atomization-recomposition method that relies on unsupervised machine learning and explainable AI techniques.",
+        "Focusing on the \"Sacrobosco Collection,\" consisting of 359 early modern printed editions of astronomy textbooks from European universities (1472-1650), totaling 76,000 pages, our analysis uncovers temporal and geographic patterns in knowledge transformation.",
+        "We highlight the relevant role of astronomy textbooks in shaping a unified mathematical culture, driven by competition among educational institutions and market dynamics.",
+        "This approach deepens our understanding by grounding insights in historical context, integrating with traditional methodologies.",
+        "Case studies illustrate how communities embraced scientific advancements, reshaping astronomic and geographical views and exploring scientific roots amidst a changing world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Manuscript Albums and their Cultural Contexts",
+      "publisher": "De Gruyter eBooks",
+      "author": "Janine Droese; Karolewski, Janina 1980-",
+      "published_at": "2023-11-17",
+      "url": "https://doi.org/10.1515/9783111321462",
+      "retrieved_at": "2026-10-18T16:09:14.227Z",
+      "sha256": "ed67672c82c02f9e6e9846841db88c63c8bf9f9f92da96a17899668608158ed1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Manuscript albums are oftentimes contradictory objects: ephemeral yet monumental, coherent yet inviting change.",
+        "Collecting items made by others, owners form their albums as representations of their selves, their worlds, and their traditions.",
+        "The volume’s contributors – who come from musicology, European history, English literary studies, and Islamic art history – explore a set of these challenging manuscripts while addressing questions of manuscript studies through their respective disciplinary lenses.",
+        "The albums under investigation range from Early Modern Stammbücher , or alba amicorum , to albums assembled jointly by nineteenth-century cultural elites, and from muraqqaʿs of the Persianate world to English and North American friendship albums, including some kept by women.",
+        "This book is the first contribution to the comparative study of manuscript albums, focusing on their materiality and analysing the practices of all those involved in making and using them.",
+        "Moreover, the collection introduces this hard-to-grasp type of written artefact to the field of cross-disciplinary manuscript studies and suggests albums as a touchstone for manuscriptological theories and terminologies."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Trans Histories of the Medieval Book",
+      "publisher": "OpenAlex",
+      "author": "J. D. Sargan",
+      "published_at": "2025-01-01",
+      "url": "https://doi.org/10.1353/book.131102",
+      "retrieved_at": "2026-10-18T16:09:14.227Z",
+      "sha256": "e30792e1cff6b04c586d64960e47344aced28aad3669ae6a85ad396e898a5b42",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Archival collections are political spaces: the decisions that govern whose histories are preserved, when, and by whom are not neutral.",
+        "For most of western history queer, trans, and gender non-conforming people were excluded from such communities.",
+        "Premodern trans experiences went largely unreported and reconstructing such histories relies on the piecing together of ephemeral glimpses.",
+        "Literary scholars developed tactics and tools to read through the traces, with hugely generative results that highlight the richness of non-normative premodern genders.",
+        "But how do we move beyond the limits of the trace to uncover a more expansive history of premodern gender non-conformity?",
+        "An experiment in applying trans approaches to the study of the premodern book offers alternatives both for trans histories and for book historical methods."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Quantitative Approaches to Versification",
+      "publisher": "Digital Repository (National Repository of Grey Literature)",
+      "author": "Petr Plecháč",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W7135790978",
+      "retrieved_at": "2026-10-18T16:09:14.227Z",
+      "sha256": "cd59961f73827356f9ad55922d4c02e49ba795fd569edfb24f0c5ca91b9be263",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This volume presents a wide range of quantitative approaches to versification.",
+        "What they all share in common is that versification is being studied in the context of other linguistic phenomena that may affect or determine it.",
+        "Analyses of large corpora go hand in hand with comparative approaches.",
+        "It is shown that quantitative approaches can be used for the purpose of authorship attribution, to build reasonable typologies as well as to understand why certain forms play such a dominant roles in our cultural tradition(s)."
+      ]
+    }
+  ]
+}

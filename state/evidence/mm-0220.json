@@ -1,0 +1,151 @@
+{
+  "id": "mm-0220",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Self-driving cars are poorly prepared for high-risk road situations – here’s how AI can improve them",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Liu, Mingming",
+      "published_at": "2026-02-17",
+      "url": "https://theconversation.com/self-driving-cars-are-poorly-prepared-for-high-risk-road-situations-heres-how-ai-can-improve-them-275841",
+      "retrieved_at": "2026-10-18T14:57:43.073Z",
+      "sha256": "4c7a430f3daefc8471cfb5b59ff27d7129d90adeb3cd5fdb9bf4e3925703b073",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "They can follow lanes, keep their distance, and navigate familiar routes with ease.",
+        "However, despite years of development, they still struggle with one critical problem: the rare and dangerous situations that cause the most serious accidents.",
+        "These “edge cases” include sharp bends on wet roads, sudden changes in slope, or situations where a vehicle approaches its physical limits of grip and stability.",
+        "In real-world deployments, which often involve some level of shared control between driver and automation, such moments can arise from human misjudgment or from automated systems failing to anticipate rapidly changing conditions.",
+        "They happen infrequently, but when they occur, the consequences can be severe.",
+        "A car might handle a thousand gentle curves perfectly, but fail on the one sharp bend taken a little too fast.",
+        "Current autonomous systems are not trained well enough to handle these moments reliably.",
+        "From a data perspective, these events form what scientists call a “long tail” : they are statistically rare, but disproportionately important.",
+        "Collecting more real world data does not fully solve the problem, because deliberately seeking out dangerous conditions is costly, slow, and risky.",
+        "Many of these scenarios are simply too dangerous to practise in real life.",
+        "We cannot deliberately put vehicles into near-crashes on public roads just to see whether the software can cope.",
+        "If an AI system rarely sees extreme situations during training, it has little chance to respond well when they occur in real life."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Before hitting the road, self-driving cars should have to pass a driving test",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Saripalli, Srikanth",
+      "published_at": "2018-02-22",
+      "url": "https://theconversation.com/before-hitting-the-road-self-driving-cars-should-have-to-pass-a-driving-test-90364",
+      "retrieved_at": "2026-10-18T14:57:44.576Z",
+      "sha256": "7115b67cf98080e88cb98b157eba4ff679ded0921a4cbbf3fcbcac2945f7fb87",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Before autonomous cars are on the road, everyone should know how they’ll respond in unexpected situations.",
+        "I develop, test and deploy autonomous shuttles , identifying methods to ensure self-driving vehicles are safe and reliable.",
+        "But there’s no testing track like the country’s actual roads, and no way to test these new machines as thoroughly as modern human-driven cars have been, with trillions of miles driven every year for decades.",
+        "When self-driving cars do hit the road , they crash in ways both serious and minor .",
+        "Yet all their decisions are made electronically, so how can people be confident they’re driving safely?",
+        "Fortunately, there’s a common, popular and well-studied method to ensure new technologies are safe and effective for public use: The testing system for new medications.",
+        "The basic approach involves ensuring these systems do what they’re intended to, without any serious negative side effects – even if researchers don’t fully understand how they work.",
+        "Wide-ranging effects Self-driving cars are expected to improve road safety , freeing up drivers’ time and attention and transforming cities and even societies.",
+        "The regulations that are created for self-driving cars will have massive effects that ripple throughout the economy and society .",
+        "The rules are likely to come from some combination of the two current automotive regulators, the federal National Highway Traffic Safety Administration and state departments of transportation .",
+        "Federal rules focus primarily on safety standards for structural, mechanical and electrical components of the vehicles, like airbags and seat belts.",
+        "States can enforce their own safety rules – for example, regulating emissions and handling driver licensing and vehicle registration, which often also includes requiring insurance coverage."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Self-driving car",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=245926",
+      "retrieved_at": "2026-10-18T14:57:44.577Z",
+      "sha256": "eef2ec8e8be0b9c0004263ffcb04cc4c3948c3142d3c1d68321cc39458f5f857",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A self-driving car, also known as an autonomous car, driverless car, robotic car, or robo-car, is a car that is capable of operating with reduced or no human input.",
+        "They are sometimes called robotaxis, though this term refers specifically to self-driving cars operated for a ridesharing company.",
+        "As of 2026, the term \"self-driving\" lacks an agreed standard definition and is also subject to commercial advertising and branding considerations.",
+        "Following a history of experimentation and development of advanced driver assistance systems (ADAS) after World War II, two main technologies are now primarily used: LiDAR (Light Detection and Ranging), and visual sensors (cameras) which capture images and video like human eyes.",
+        "These are combined with systems such as Global Positioning System (GPS), neural networks, artificial intelligence, and established ADAS engineering to deliver levels of driving autonomy.",
+        "The primary obstacle to self-driving is the advanced software and mapping required to make them work safely across the wide variety of conditions that drivers experience.",
+        "However, the software is not yet advanced enough to handle all circumstances and has caused accidents and deaths.",
+        "Other issues include security of over-the-air updates, legal and regulatory issues, ethics, and consumer confidence.",
+        "Methods of testing and monitoring the reliability of cars have evolved in parallel with deployment, with various standards being proposed.",
+        "Implications for urban infrastructure and the economy have also been discussed.",
+        "Public perception and acceptance of autonomous cars has been mixed.",
+        "A survey in 2022 found only 27% of the world's population would feel safe in one."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Waymo",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29156200",
+      "retrieved_at": "2026-10-18T14:57:44.577Z",
+      "sha256": "b982cb58fd7b692fad1e13428072c94d4a1468971f80c818f1c6e59df52d64f3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Waymo LLC ( WAY-moh) is an American autonomous driving technology company headquartered in Mountain View, California.",
+        "It is a subsidiary of Alphabet Inc., Google's parent company.",
+        "As of June 2026, Waymo operates public commercial robotaxi services in 10 US metropolitan areas, has 3,871 robotaxis in service, provides 500,000 paid rides per week, and has logged 200 million fully autonomous miles.",
+        "The company traces its origins to the Stanford University Racing Team, which competed in the 2005 and 2007 Defense Advanced Research Projects Agency (DARPA) Grand Challenges.",
+        "Google's development of self-driving technology began in January 2009, and the project was revealed in October 2010.",
+        "In December 2016, the project was renamed Waymo and spun out of Google as part of Alphabet.",
+        "In October 2020, Waymo became the first company to offer service to the public without safety drivers.",
+        "Co-CEOs Tekedra Mawakana and Dmitri Dolgov have run Waymo since April 2021.",
+        "The company raised $11 billion in multiple outside funding rounds by 2024.",
+        "In February 2026, Waymo raised $16 billion, which valued the company at $126 billion."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "History of self-driving cars",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44787757",
+      "retrieved_at": "2026-10-18T14:57:44.577Z",
+      "sha256": "259e40a9b98269b5c59300247cab783ed4ea5fdf9a2db3131bd2b0fc701e809d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Self-driving cars were anticipated by experiments in radio control during the 1920s, and the development of advanced driver assistance (ADAS) after WWII.",
+        "Trials of self-driving vehicles began in the 1950s with the first semi-autonomous car developed in 1977 by Japan's Tsukuba Mechanical Engineering Laboratory.",
+        "In the United States, Carnegie Mellon University's Navlab began semi-autonomous vehicle projects in 1984, funded by the Defense Advanced Research Projects Agency (DARPA).",
+        "In Europe, similar projects were led by Mercedes-Benz and the University of the Bundeswehr Munich's EUREKA Prometheus Project, beginning in 1987.",
+        "The United States allocated US$650 million in 1991 for research on the National Automated Highway System, which demonstrated automated driving combining highway-embedded automation with vehicle technology.",
+        "Until the second DARPA Grand Challenge in 2005, automated vehicle research in the United States was primarily funded by DARPA, the US Army and the US Navy, producing incremental advances in speed, driving competence, control, and sensor systems.",
+        "Since then, numerous private companies and both private and public research organizations around the world have developed working autonomous vehicles.",
+        "In 2015, the Cruise subsidiary of General Motors began road testing in California.",
+        "Two years later, Waymo was the first to commercialize a robotaxi service in Phoenix, Arizona, followed by a similar service by DeepRoute.ai in Shenzhen.",
+        "Cruise later shut down in 2024, with several other manufacturers scaling back plans for self-driving technology in 2022, including Ford and Volkswagen due to misgivings about commercial viability.",
+        "Legal and regulatory developments to accommodate the testing and facilitation of self-driving vehicles have also taken place worldwide.",
+        "In the 2010s and 2020s, some UNECE and EU members developed rules and regulations related to automated vehicles, with various cities planning to operate transport systems for driverless cars and to allow testing of robotic cars in traffic."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Tesla Autopilot",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50984053",
+      "retrieved_at": "2026-10-18T14:57:44.577Z",
+      "sha256": "26b08146d786b2a15edb7e8066696b4b0ce2e25e27958f53d383a47897be5f70",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tesla Autopilot/Full Self-Driving is an advanced driver-assistance system (ADAS) developed by Tesla, Inc.",
+        "that provides partial vehicle automation, corresponding to Level 2 automation as defined by SAE International.",
+        "All Tesla vehicles produced from April 2019 to January 2026 included Autopilot, which provides autosteer and traffic-aware cruise control.",
+        "In May 2026, the National Highway Traffic Safety Administration (NHTSA) said that recent Tesla Model Ys are the first cars to pass the agency’s new benchmark for advanced driver assistance systems."
+      ]
+    }
+  ]
+}

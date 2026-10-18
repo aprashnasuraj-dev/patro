@@ -1,0 +1,123 @@
+{
+  "id": "mm-0376",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Atmospheric Light Pollution by Proposed Reflect Orbital Space Mirrors",
+      "publisher": "American Astronomical Society",
+      "author": "Kocifaj, Miroslav; Bakos, Gáspár Á.; Kundracik, František",
+      "published_at": "2026-08-31",
+      "url": "https://doi.org/10.3847/2041-8213/ae9551",
+      "retrieved_at": "2026-10-18T15:00:41.563Z",
+      "sha256": "7c9aadc91eb2863743457a2b23d6e1854c0be2351e04c44400eac4c953c6288e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract ReflectOrbital is planning to launch an 18 × 18 m mirror in space at a ∼600 km altitude to illuminate a 2.5 km radius circular patch on Earth.",
+        "The pilot satellite, called EARENDIL-1, is a pathfinder for a constellation of ∼50,000 larger mirrors, each with 54 × 54 m in diameter, with the explicit goal to provide space-borne illumination on Earth.",
+        "We calculate the sky brightness caused by the Rayleigh scattering and aerosol scattering of the incoming beam from one such satellite and by the light reflected back by the illuminated patch for various atmospheric properties and ground albedos under cloud-free conditions.",
+        "We demonstrate that the light pollution caused by one of these satellites is very significant, altering the nighttime environment up to distances of ∼30 km.",
+        "The results show that for an observer within the beam of a single 54 m satellite, the mirror will appear as a −16.7 mag point-like source, i.e., about 4 mag brighter than the full Moon.",
+        "The diffuse sky background will be similar to the dusk sky shortly after sunset; too bright to see even the brightest stars.",
+        "From a distance of 14 km, the glow from a single mirror will exceed the luminance of the full-Moon sky for the majority of the sky.",
+        "From a distance of 34 km the sky will still appear brighter than the Moon-lit sky in the direction of the beam.",
+        "If 400 such mirrors illuminate the same patch simultaneously, the glow will be obvious from 80 km."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mirror",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20545",
+      "retrieved_at": "2026-10-18T15:00:41.753Z",
+      "sha256": "d7e4a110f313824fd83b9f2aeb7ffaeb1dca8ba16b2656284752f87872d88ad6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mirror, also known as a looking glass, is an object that reflects an image.",
+        "Light that bounces off a mirror forms an image of whatever is in front of it, which is then focused through the lens of the eye or a camera.",
+        "Mirrors reverse the direction of light at an angle equal to its incidence.",
+        "This allows the viewer to see themselves or objects behind them, or even objects that are at an angle from them but out of their field of view, such as around a corner.",
+        "Natural mirrors have existed since prehistoric times, such as the surface of water, but people have been manufacturing mirrors out of a variety of materials for thousands of years, like stone, metals, and glass.",
+        "In modern mirrors, metals like silver or aluminium are often used due to their high reflectivity, applied as a thin coating on glass because of its naturally smooth and hard surface.",
+        "Light consists of waves, and when light waves reflect from the flat surface of a mirror, those waves retain the same degree of curvature and vergence, in an equal yet opposite direction, as the original waves.",
+        "This allows the waves to form an image when they are focused through a lens, just as if the waves had originated from the direction of the mirror.",
+        "The light can also be pictured as rays (imaginary lines radiating from the light source, that are always perpendicular to the waves).",
+        "These rays are reflected at an equal yet opposite angle from which they strike the mirror (incident light).",
+        "This property, called specular reflection, distinguishes a mirror from objects that diffuse light, breaking up the wave and scattering it in many directions (such as flat-white paint).",
+        "Thus, a mirror can be any surface in which the texture or roughness of the surface is smaller (smoother) than the wavelength of the waves."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Reflection (physics)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=521267",
+      "retrieved_at": "2026-10-18T15:00:41.753Z",
+      "sha256": "aff281d8bc721914e104e20efeeea7c57445235b05a8a45532769f6eedf5f37e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Reflection is the change in direction of a wavefront at an interface between two different media so that the wavefront returns into the medium from which it originated.",
+        "Common examples include the reflection of light, sound and water waves.",
+        "The law of reflection says that for specular reflection (for example at a mirror) the angle at which the wave is incident on the surface equals the angle at which it is reflected.",
+        "In acoustics, reflection causes echoes and is used in sonar.",
+        "Reflection is observed with surface waves in bodies of water.",
+        "Reflection is observed with many types of electromagnetic wave, besides visible light.",
+        "Reflection of VHF and higher frequencies is important for radio transmission and for radar.",
+        "Even hard X-rays and gamma rays can be reflected at shallow angles with special \"grazing\" mirrors."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Curved mirror",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5732433",
+      "retrieved_at": "2026-10-18T15:00:41.753Z",
+      "sha256": "abed3a1866e147164ebe360cf8fa4d4345fe1658abfd41399b6fb50ad70e42eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A curved mirror is a mirror with a curved reflecting surface.",
+        "The surface may be either convex (bulging outward) or concave (recessed inward).",
+        "Most curved mirrors have surfaces that are shaped like part of a sphere, but other shapes are sometimes used in optical devices.",
+        "The most common non-spherical type are parabolic reflectors, found in optical devices such as reflecting telescopes that need to image distant objects, since spherical mirror systems, like spherical lenses, suffer from spherical aberration.",
+        "They have convex and concave regions that produce deliberately distorted images.",
+        "They also provide highly magnified or highly diminished (smaller) images when the object is placed at certain distances.",
+        "Convex mirrors are often used for security and safety in shops and parking lots."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Plane mirror",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11439770",
+      "retrieved_at": "2026-10-18T15:00:41.753Z",
+      "sha256": "71dc5495952d5a35657d7c53300b8ca3298269e411960ecae71e8cfc6f1bb48e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A plane mirror is a mirror with a flat (planar) reflective surface.",
+        "For light rays striking a plane mirror, the angle of reflection equals the angle of incidence.",
+        "The angle of the incidence is the angle between the incident ray and the surface normal (an imaginary line perpendicular to the surface).",
+        "Therefore, the angle of reflection is the angle between the reflected ray and the normal and a collimated beam of light does not spread out after reflection from a plane mirror, except for diffraction effects.",
+        "A plane mirror makes an image of objects behind the mirror; these images appear to be behind the plane in which the mirror lies.",
+        "A straight line drawn from part of an object to the corresponding part of its image makes a right angle with, and is bisected by, the surface of the plane mirror.",
+        "The image formed by a plane mirror is a virtual (meaning that the light rays do not actually come from the image) and not a real image (meaning that the light rays do actually come from the image).",
+        "The image is always upright, and of the same shape and size as the object it is reflecting.",
+        "A virtual image is a copy of an object formed at the location from which the light rays appear to come.Images formed in plane mirrors are laterally inverted.",
+        "For instance, if a person is reflected in a plane mirror, the image of his right hand appears to be the left hand of the image.",
+        "However the focal length of a plane mirror is infinity; its optical power is zero.",
+        "However, the images formed by them are not of the same size as the object like they are in a plane mirror in all conditions rather specific one ."
+      ]
+    }
+  ]
+}

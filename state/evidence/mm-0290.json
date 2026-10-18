@@ -1,0 +1,134 @@
+{
+  "id": "mm-0290",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Memory, imprinting, and the brain : an inquiry into mechanisms",
+      "publisher": "OpenAlex",
+      "author": "Gabriel Horn",
+      "published_at": "1985-01-01",
+      "url": "https://openalex.org/W637423891",
+      "retrieved_at": "2026-10-18T15:00:17.581Z",
+      "sha256": "945a04663d8d5a04c042457ede74631fb88487d4caa7cefcb4a4294cfc21acf8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Approaches to the analysis of the neural bases of memory Biochemical consequences of imprinting Real effects of learning?",
+        "Cerebral localization Brain lesions, acquisition, and retention Imprinting and associative learning How many stores?",
+        "Cerebral asymmetry and imprinting Predispositions and preferences Physiological constraints on memory and imprinting Physiological and morphological consequences of training A structure for memory?",
+        "Towards a synthesis Appendix: A sketch of the avian brain with particular reference to the domestic chick Indexes."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Trauma and Memory: Brain and Body in a Search for the Living Past: A Practical Guide for Understanding and Working with Traumatic Memory",
+      "publisher": "OpenAlex",
+      "author": "Peter A. Levine; Bessel A. van der Kolk",
+      "published_at": "2015-10-27",
+      "url": "https://openalex.org/W2899819297",
+      "retrieved_at": "2026-10-18T15:00:17.581Z",
+      "sha256": "5e5050636d605667e5dea65922959cdd754f93986b40d6169e881f31e78af880",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Peter Levine (creator of the Somatic Experiencing approach) tackles one of the most difficult and controversial questions of PTSD/trauma therapy: Can we trust our memories?",
+        "While some argue that traumatic memories are unreliable and not useful, others insist that we absolutely must rely on memory to make sense of past experience.",
+        "Building on his 45 years of successful treatment of trauma and utilizing case studies from his own practice, Dr.",
+        "Levine suggests that there are elements of truth in both camps.",
+        "While acknowledging that memory can be trusted, he argues that the only truly useful memories are those that might initially seem to be the least reliable: memories stored in the body and not necessarily accessible by our conscious mind.",
+        "By learning how to better understand this complex interplay of past and present, brain and body, we can adjust our relationship to past trauma and move into a more balanced, relaxed state of being.",
+        "Written for trauma sufferers as well as mental health care practitioners, Trauma and Memory is a groundbreaking look at how memory is constructed and how influential memories are on our present state of being\"..."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Henry Molaison",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=464411",
+      "retrieved_at": "2026-10-18T15:00:17.581Z",
+      "sha256": "bb8e05a788434f6a3ea3f746b72740f24f3d0a2a8b6a857829ea53dfeb45d02e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Although the surgery was partially successful in controlling his epilepsy, a severe side effect was that he became unable to form new memories.",
+        "A childhood bicycle accident is often advanced as the likely cause of H.M.'s epilepsy.",
+        "began to have minor seizures at age 10; from 16 years of age, the seizures became major.",
+        "Despite high doses of anticonvulsant medication, H.M.'s seizures were incapacitating.",
+        "was offered an experimental procedure by neurosurgeon William Beecher Scoville.",
+        "Previously, Scoville had only ever performed the surgery on psychotic patients.",
+        "was extensively studied from late 1957 until his death in 2008.",
+        "He resided in a care institute in Windsor Locks, Connecticut, where he was the subject of ongoing investigations.",
+        "Molaison's brain was kept at University of California, San Diego, where it was sliced into histological sections on December 4, 2009.",
+        "The brain atlas constructed from him was made publicly available in 2014."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Episodic memory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=579359",
+      "retrieved_at": "2026-10-18T15:00:17.582Z",
+      "sha256": "bc8f033c3d2e0694e50abc46a0e7cb36c11a904dc1ccf10743cf923944cd628b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Episodic memory is the memory of everyday events (such as times, location geography, associated emotions, and other contextual information) that can be explicitly stated or conjured.",
+        "It is the collection of past personal experiences that occurred at particular times and places; for example, the party on one's 7th birthday.",
+        "Along with semantic memory, it comprises the category of explicit memory, one of the two major divisions of long-term memory (the other being implicit memory).",
+        "The term \"episodic memory\" was coined by Endel Tulving in 1972, referring to the distinction between knowing and remembering: knowing is factual recollection (semantic) whereas remembering is a feeling that is located in the past (episodic).",
+        "One of the main components of episodic memory is the process of recollection, which elicits the retrieval of contextual information pertaining to a specific event or experience that has occurred.",
+        "Events that are recorded into episodic memory may trigger episodic learning, i.e.",
+        "a change in behavior that occurs as a result of an event, such as a fear of dogs after being bitten by a dog."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Elevated plus maze",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17446992",
+      "retrieved_at": "2026-10-18T15:00:17.582Z",
+      "sha256": "8e9547f5c5e8a6efaab5e6de0520d3996d160e69f073acb328859c79937b964a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The elevated plus maze (EPM) is a test measuring anxiety in laboratory animals that usually uses rodents as a screening test for putative anxiolytic or anxiogenic compounds and as a general research tool in neurobiological anxiety research such as PTSD and TBI.",
+        "The model is based on the test animal's aversion to open spaces and tendency to be thigmotaxic.",
+        "In the EPM, this anxiety is expressed by the animal spending more time in the enclosed arms.",
+        "The validity of the model has been criticized as non-classical clinical anxiolytics produce mixed results in the EPM test.",
+        "Despite this, the model is still commonly used for screening putative anxiolytics and for general research into the brain mechanisms of anxiety."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Memory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31217535",
+      "retrieved_at": "2026-10-18T15:00:17.582Z",
+      "sha256": "fe8917f6af7098c1a38ec8bc8069a208e338b1f415af4b6545260370a04c6b88",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Memory is the faculty of the mind by which data or information is encoded, stored, and retrieved when needed.",
+        "It is the retention of information over time for the purpose of influencing future action.",
+        "If past events could not be remembered, it would be impossible for language, relationships, or personal identity to develop.",
+        "Memory loss is usually described as forgetfulness or a disorder such as amnesia.",
+        "Memory is often understood as an information processing system with explicit and implicit functioning that is made up of a sensory processor, short-term (or working) memory, and long-term memory.",
+        "The sensory processor allows information from the outside world to be sensed in the form of chemical and physical stimuli and attended to various levels of focus and intent.",
+        "Working memory serves as an encoding and retrieval processor.",
+        "Information in the form of stimuli is encoded in accordance with explicit or implicit functions by the working memory processor.",
+        "The working memory also retrieves information from previously stored material.",
+        "Finally, the function of long-term memory is to store information through various categorical models or systems.",
+        "Declarative, or explicit memory, is the conscious storage and recollection of data.",
+        "Under declarative memory resides semantic and episodic memory."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "mm-1389",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Tongue Twisters",
+      "publisher": "JSTOR",
+      "author": null,
+      "published_at": "1960-01",
+      "url": "https://doi.org/10.2307/1498019",
+      "retrieved_at": "2026-10-18T15:41:11.922Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Tongue Twisters",
+      "publisher": "Bison Books",
+      "author": null,
+      "published_at": "2023-11-01",
+      "url": "https://doi.org/10.2307/jj.7492234.17",
+      "retrieved_at": "2026-10-18T15:41:12.022Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Nicholas Brendon",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=213735",
+      "retrieved_at": "2026-10-18T15:41:12.022Z",
+      "sha256": "f553505ba0bf73677a5e157163e4354a9f08d15d25991f4bba1b07c806fc01e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nicholas Brendon Schultz (April 12, 1971 – March 20, 2026) was an American actor, artist, and writer.",
+        "He was best known for playing Xander Harris in the television series Buffy the Vampire Slayer (1997–2003) and Kevin Lynch in Criminal Minds (2007–2014).",
+        "Brendon continued to work steadily as an actor, with recurring roles on television and starring roles in independent films such as Coherence and Big Gay Love (both 2013).",
+        "He also pursued visual art, exhibiting and selling his paintings and photography.",
+        "Brendon struggled for many years with alcoholism and faced a series of legal issues, including multiple arrests and convictions for vandalism, theft, and domestic violence."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Golden Raspberry Awards",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=229124",
+      "retrieved_at": "2026-10-18T15:41:12.022Z",
+      "sha256": "c07a81ca561750382d2d3b5a61189e7ff740200c90cba61bd794ea8179d72c79",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Golden Raspberry Awards, commonly known as the Razzie Awards or simply the Razzies, are parody awards presented for the worst films and performances of the year.",
+        "Co-founded by UCLA film graduates and film industry veterans John J.",
+        "Wilson and Mo Murphy, the annual satirical ceremony was created as a tongue-in-cheek counterpart to the Academy Awards, which predates it by about five decades.",
+        "The term raspberry is used in its irreverent sense, as in \"blowing a raspberry\".",
+        "The award statuette consists of a golf ball-sized raspberry mounted on a Super 8 mm film reel, which sits atop a 35 mm film core wrapped in brown wood-grain shelf paper and placed on a gold-painted jar lid.",
+        "The Golden Raspberry Foundation has said the award \"encourages well-known filmmakers and top-notch performers to own their badness\".",
+        "Wilson's living room alcove in Hollywood, honoring the worst films of the 1980 film season."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Finisterra (album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3087559",
+      "retrieved_at": "2026-10-18T15:41:12.022Z",
+      "sha256": "5255ce2641ef54690e5691480004908d3bf772c23a467060fde23ce64d851668",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Finisterra is the fourth studio album by the Spanish folk metal band Mägo de Oz, which was released in 2000.",
+        "It is their first double album and their second rock opera since Jesús de Chamberí.",
+        "It narrates the story of Satania, a fictional society in the future where life depends on the Internet and computers."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Beginner Books",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4672693",
+      "retrieved_at": "2026-10-18T15:41:12.022Z",
+      "sha256": "15efc89f586aefabfbd682d90830f93cf4c94c9cdf9befca98f6fb8ba4c39162",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Beginner Books is the Random House imprint for young children ages 3–9, co-founded by Phyllis Cerf with Ted Geisel, more often known as Dr.",
+        "Seuss's The Cat in the Hat (1957), whose title character appears in the brand's logo.",
+        "Cerf compiled a list of 379 words as the basic vocabulary for young readers, along with another 20 slightly harder \"emergency\" words.",
+        "No more than 200 words were taken from that list to write The Cat in the Hat.",
+        "Subsequent books in the series were modeled on the same requirement.",
+        "Beginner Books had only four titles in their catalog in 1958.",
+        "Two years later, they were earning 1 million dollars a year.",
+        "Random House acquired Beginner Books in 1960 and was the largest publisher of children's books in the United States."
+      ]
+    }
+  ]
+}

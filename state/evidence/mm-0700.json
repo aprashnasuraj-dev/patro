@@ -1,0 +1,110 @@
+{
+  "id": "mm-0700",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How You Understand Your Story",
+      "publisher": "Oxford University Press",
+      "author": "Poeuv, Socheata",
+      "published_at": "2017-10-05",
+      "url": "https://doi.org/10.1093/oxfordhb/9780199766024.013.27",
+      "retrieved_at": "2026-10-18T15:12:31.197Z",
+      "sha256": "2dcd287b9e54a2b75eaa846af9a5a95b58b0a3848f74b8dc291118c4b65eb849",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter argues that Cambodian and Cambodian American survivors of genocide avoid telling and documenting their personal stories of trauma because the rendering of these stories complicates the community’s understanding of morality.",
+        "This is in part because the circumstances of the Khmer Rouge genocide were such that no clear “other” enemy emerged—a genocide perpetrated by and on Cambodians.",
+        "By speaking out and telling their stories through oral histories, films, books, etc., Cambodians can implicate themselves, evoking shame and guilt in addition to trauma.",
+        "The author examines and compares the relative “silence” among Cambodians with regard to the history of the telling of survivor stories among Holocaust survivors in the United States and Europe."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Voice user interface",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2144362",
+      "retrieved_at": "2026-10-18T15:12:34.489Z",
+      "sha256": "dffc996d0afdb442d609a7091657eae80e730810e6828f73469bd723cbd7e3d9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A voice user interface (VUI) enables spoken human interaction with computers, using speech recognition to understand spoken commands and answer questions, and typically text to speech to play a reply.",
+        "A voice command device is a device controlled with a voice user interface.",
+        "Voice user interfaces have been added to automobiles, home automation systems, computer operating systems, home appliances like washing machines and microwave ovens, and television remote controls.",
+        "They are the primary way of interacting with virtual assistants on smartphones and smart speakers.",
+        "Newer voice command devices are speaker-independent, so they can respond to multiple voices, regardless of accent or dialectal influences.",
+        "They are also capable of responding to several commands at once, separating vocal messages, and providing appropriate feedback, accurately imitating a natural conversation."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Virtual assistant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19024298",
+      "retrieved_at": "2026-10-18T15:12:34.489Z",
+      "sha256": "f5adc1fdbdb1e14d7a2f73a6cdcd700ef7b1d5dd68153d33b3d3cf36273850e6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A virtual assistant (VA) is a software agent that can perform a range of tasks or services for a user based on user input, such as commands or questions, including verbal ones.",
+        "Such technologies often incorporate chatbot capabilities to streamline task execution.",
+        "The interaction may be via text, graphical interface, or voice, as some virtual assistants are able to interpret human speech and respond via synthesized voices.",
+        "In many cases, users can ask their virtual assistants questions, control home automation devices and media playback, and manage other basic tasks such as email, to-do lists, and calendars – all with verbal commands.",
+        "In recent years, prominent virtual assistants for direct consumer use have included Apple Siri, Amazon Alexa, Google Assistant (Gemini), Microsoft Copilot and Samsung Bixby.",
+        "Also, companies in various industries often incorporate some kind of virtual assistant technology into their customer service or support.",
+        "Into the 2020s, the emergence of artificial intelligence based chatbots, such as ChatGPT, has brought increased capability and interest to the field of virtual assistant products and services."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Siri",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26086272",
+      "retrieved_at": "2026-10-18T15:12:34.489Z",
+      "sha256": "65052930789ce913b56e212f47ac24b9444af7d8a9531f94c1ba8116b9059452",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Siri (  SEER-ee) is an intelligent assistant and chatbot purchased, developed, and popularized by Apple, which is included in the iOS, iPadOS, watchOS, macOS, Apple TV, audioOS, and visionOS operating systems.",
+        "It uses voice queries, gesture based control, focus-tracking and a natural-language user interface to answer questions, make recommendations, and perform actions by delegating requests to a set of Internet services.",
+        "With continued use, it adapts to users' individual language usages, searches, and preferences, returning individualized results.",
+        "Siri is a spin-off from a project developed by the SRI International Artificial Intelligence Center.",
+        "Its speech recognition engine was provided by Nuance Communications, and it uses advanced machine learning technologies to function.",
+        "Its original American, British, and Australian voice actors recorded their respective voices around 2005, unaware of the recordings' eventual usage.",
+        "Two months later, Apple acquired it and integrated it into the iPhone 4s at its release on October 14, 2011, removing the separate app from the iOS App Store.",
+        "Siri has since been an integral part of Apple's products, having been adapted into other hardware devices including newer iPhone models, iPad, iPod Touch, Mac, AirPods, Apple TV, HomePod, and Apple Vision Pro.",
+        "Siri supports a wide range of user commands, including performing phone actions, checking basic information, scheduling events and reminders, handling device settings, searching the Internet, navigating areas, finding information on entertainment, and being able to engage with iOS-integrated apps.",
+        "With the release of iOS 10, in 2016, Apple opened up limited third-party access to Siri, including third-party messaging apps, as well as payments, ride-sharing, and Internet calling apps.",
+        "With the release of iOS 11, Apple updated Siri's voice and added support for follow-up questions, language translation, and additional third-party actions.",
+        "iOS 17 and iPadOS 17 enabled users to activate Siri by simply saying \"Siri\", while the previous command, \"Hey Siri\", is still supported."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Cortana (virtual assistant)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=42119832",
+      "retrieved_at": "2026-10-18T15:12:34.489Z",
+      "sha256": "de3415bdffc0def867b7650fc48d65a88894d4968e5bc39ff2cea63d93ca8514",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cortana is a deprecated and discontinued virtual assistant developed by Microsoft and first released in April 2014 that used the Bing search engine to perform tasks such as setting reminders and answering questions for users.",
+        "Cortana was available in English, Portuguese, French, German, Italian, Spanish, Chinese, and Japanese language editions, depending on the software platform and region in which it was used.",
+        "In 2019, Microsoft began reducing the prevalence of Cortana and converting it from an assistant into different software integrations.",
+        "In January 2020, the Cortana mobile app was removed from certain markets, and on March 31, 2021, the Cortana mobile app was shut down globally.",
+        "On June 2, 2023, Microsoft announced that support for the Cortana standalone app on Microsoft Windows would end in late 2023 and would be replaced by Microsoft Copilot, an AI chatbot.",
+        "Support for Cortana in the Microsoft Outlook and Microsoft 365 mobile apps was discontinued in late 2023."
+      ]
+    }
+  ]
+}

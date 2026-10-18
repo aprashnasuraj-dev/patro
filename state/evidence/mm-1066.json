@@ -1,0 +1,125 @@
+{
+  "id": "mm-1066",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why did unemployment respond so differently to the global financial crisis across countries? Insights from Okun’s Law",
+      "publisher": "Walter de Gruyter GmbH",
+      "author": "Cazes, Sandrine; Verick, Sher; Al Hussami, Fares",
+      "published_at": "2013-08-06",
+      "url": "https://doi.org/10.1186/2193-9004-2-10",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "85c9717750f0b07e74a143f3e6d47eb3a65ab138adc0d5a3de51f1dc8419f344",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The global financial crisis deeply impacted labour markets around the globe.",
+        "In the case of the United States, some commentators have argued that the subsequent rise in unemployment exceeded previous estimates of the elasticity of the unemployment rate with respect to output growth, a statistical relationship known as Okun’s law.",
+        "In contrast, others find a stable, long-term estimate of Okun’s coefficient implying that the deviation in unemployment during the crisis resulted from a larger output gap (not a structural shift in the trend).",
+        "Ultimately, estimates of this relationship will depend on the methodology and data period utilized.",
+        "Focusing more on short-term fluctuations, changes in unemployment are decomposed to identify the association with other channels of labour market adjustment (hours, productivity and labour force).",
+        "Results presented in this paper confirm the cross-country variation in the responsiveness of unemployment in the wake of the Great Recession.",
+        "In the United States, Canada, Spain and other severely affected economies, estimates of Okun’s coefficient increased sharply, departing from pre-crisis levels.",
+        "In other countries, where unemployment has remained subdued, such as Germany and the Netherlands, the coefficient has fallen dramatically over the short-term.",
+        "In this regard, empirical evidence confirms that the responsiveness in the unemployment rate during the global downturn was lower in countries where workers are afforded greater employment protection such as Germany."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Welfare Is Measured and Why Scientists Do It Differently",
+      "publisher": "University of Toronto Press Inc. (UTPress)",
+      "author": "Swanson, Janice C.",
+      "published_at": "2010-03",
+      "url": "https://doi.org/10.3138/jvme.37.1.89",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "ce6a066cbccb4c96841d9bb951d27477127547f6e4d698c79e0bb94cebf77835",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Scientists studying the welfare of animals use approaches that best answer the research question.",
+        "The research question, experimental approach, variables selected for measurement, and data interpretation can differ depending on the scientist's disciplinary training and his or her values framework.",
+        "For example, a veterinary medical scientist may value measures of biological functioning over other measures of animal welfare, whereas an applied ethologist may place greater emphasis on behavioral measures.",
+        "Animal care and husbandry recommendations, guidelines and standards, assessment strategies, and laws can reflect these differences with respect to the importance attached to the accommodation of different aspects of animal well-being."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Unemployment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31741",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "e3ccf54ab75b9cd03f3112c8445c7d1423695949dc0f5dae0fd86a0237983f27",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Unemployment is the state of not being in paid employment or self-employment but rather currently available for work.",
+        "Unemployment is measured by the unemployment rate, which is the number of people who are unemployed as a percentage of the labour force (the total number of people employed above a specified age added to those unemployed) during the reference period."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Phillips curve",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=153390",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "a7c958927aebffeebe438e1d816225585de917313102b03e9b77a768e1cb7e1d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Phillips curve is a representation of the relationship between unemployment and inflation in the macroeconomy, where a tradeoff between low unemployment and price stability exists.",
+        "Identified by economist Bill Phillips, the curve shows a relationship between lowering unemployment with increasing wages in an economy.",
+        "While Phillips did not directly link employment and inflation, this was a trivial deduction from his statistical findings.",
+        "Classical economists Paul Samuelson and Robert Solow made the connection explicit, followed by the theoretical arguments developed by Milton Friedman and Edmund Phelps.",
+        "While there is a short-run tradeoff between unemployment and inflation, as of 1997 it had not been observed in the long run.",
+        "In 1967 and 1968, Friedman and Phelps asserted that the Phillips curve was only applicable in the short run and that, in the long run, inflationary policies would not decrease unemployment.",
+        "In the 2010s the slope of the Phillips curve appears to have declined and there has been controversy over the usefulness of the Phillips curve in predicting inflation.",
+        "A 2022 study found that the slope of the Phillips curve is small and was small even during the early 1980s.",
+        "Nonetheless, the Phillips curve is still used by central banks in understanding and forecasting inflation."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Unemployment in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28688759",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "6d05590d201d04afbbc874cb9b10a74feb9626ae2374f329dc72f61f7b5395a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Unemployment in the United States discusses the causes and measures of U.S.",
+        "Job creation and unemployment are affected by factors such as economic conditions, global competition, education, automation, and demographics.",
+        "These factors can affect the number of workers, the duration of unemployment, and wage levels."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Unemployment in the United Kingdom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32689330",
+      "retrieved_at": "2026-10-18T15:29:13.404Z",
+      "sha256": "e33ab845c1393cfe0925f5c99c6d37f8c8615675fab2ce5bfce5a198956e46e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Unemployment in the United Kingdom is measured by the Office for National Statistics.",
+        "In 2024, there were 11 million economically inactive people in the UK.",
+        "In the three-month figures (July to September 2022) the unemployment rate was estimated at 3.6%, which is 0.2 percentage points lower than the previous three-month period.",
+        "The ONS said the employment rate, or percentage of people in work for those aged between 16 and 64, was estimated to be 75.5%.",
+        "This was largely unchanged compared with the previous three-month period and 1.1 percentage points lower than before the pandemic (December 2019 to February 2020).",
+        "The economic inactivity rate (is the proportion of people aged between 16 and 64 years who are not in the labour force) was 21.6%.",
+        "The figures are compiled through the Labour Force Survey, which asks a sample of 53,000 households and is conducted every 3 months.",
+        "Unemployment levels and rates are published each month by the Office for National Statistics in the Labour Market Statistical Bulletin.",
+        "Estimates are available by sex, age, duration of unemployment and by area of the UK."
+      ]
+    }
+  ]
+}

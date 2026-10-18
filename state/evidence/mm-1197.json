@@ -1,0 +1,108 @@
+{
+  "id": "mm-1197",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Giant panda",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12713",
+      "retrieved_at": "2026-10-18T15:32:57.630Z",
+      "sha256": "b3f46c4f3fc3f817b627e9b815afd0b4a5b850427cb71b7097c29fdd29f9eca8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The giant panda (Ailuropoda melanoleuca), also known as the panda bear or simply panda, is a bear species endemic to China.",
+        "It is characterised by its white coat with black patches around the eyes, ears, legs and shoulders.",
+        "Its body is rotund; adult individuals weigh 100 to 115 kg (220 to 254 lb) and are typically 1.2 to 1.9 m (3 ft 11 in to 6 ft 3 in) long.",
+        "It is sexually dimorphic, with males being typically 10–20% larger than females.",
+        "A thumb is visible on its forepaw, which helps in holding bamboo in place for feeding.",
+        "It has large molar teeth and expanded temporal fossae to meet its dietary requirements.",
+        "It can digest starch and is mostly herbivorous with a diet consisting almost entirely of bamboo and bamboo shoots.",
+        "The giant panda lives exclusively in six montane regions in a few Chinese provinces at elevations of up to 3,000 m (9,800 ft).",
+        "It relies on olfactory communication and uses scent marks as chemical cues and on landmarks like rocks or trees.",
+        "As a result of farming, deforestation and infrastructural development, the giant panda has been driven out of the lowland areas where it once lived.",
+        "Since 2016, it has been listed as Vulnerable on the IUCN Red List.",
+        "In July 2021, Chinese authorities also classified the giant panda as vulnerable."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Kazakhstan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16642",
+      "retrieved_at": "2026-10-18T15:32:57.630Z",
+      "sha256": "5b8ac0ba2595bbacfec3558addd34068fd7c5a80eb51e374f674f2df0c478252",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kazakhstan, officially the Republic of Kazakhstan, is a landlocked country situated primarily in Central Asia, with a portion of its territory extending into Eastern Europe.",
+        "It borders Russia to the north and west, China to the east, Kyrgyzstan to the southeast, Uzbekistan to the south, and Turkmenistan to the southwest, and it has a coastline along the Caspian Sea.",
+        "The capital is Astana, and the country's largest city and principal cultural and economic center is Almaty, which served as the capital until 1997.",
+        "Kazakhstan is the world's ninth-largest country by land area and the largest landlocked country.",
+        "Hilly plateaus and plains account for nearly half its vast territory, with lowlands composing another third; its southern and eastern frontiers are composed of mountainous regions.",
+        "Kazakhstan has a population of 20.6 million and one of the lowest population densities in the world, with fewer than 8 people per square kilometre (21 people/mi2).",
+        "Ethnic Kazakhs constitute a majority, while ethnic Russians form a significant minority.",
+        "Officially secular, Kazakhstan is a Muslim-majority country with a sizeable Christian community.",
+        "In antiquity, various nomadic Iranian peoples such as the Saka, Massagetae, and Scythians.",
+        "In the 13th century, the area was subjugated by the Mongol Empire under Genghis Khan.",
+        "Following the disintegration of the Golden Horde in the 15th century, the Kazakh Khanate was established over an area roughly corresponding with modern Kazakhstan.",
+        "By the 18th century, the Kazakh Khanate had fragmented into three jüz (tribal divisions), which were gradually absorbed and conquered by the Russian Empire; by the mid-19th century, all of Kazakhstan was nominally under Russian rule."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mountaineering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20341",
+      "retrieved_at": "2026-10-18T15:32:57.630Z",
+      "sha256": "0786575b070f1f193e1e8344679e24750361ec83a9af8f5cda28d9e7e0388c70",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mountaineering is a set of outdoor activities that involves ascending mountains.",
+        "Mountaineering-related activities include traditional outdoor climbing, skiing, and traversing via ferratas that have become sports in their own right.",
+        "Indoor climbing, sport climbing, and bouldering are also considered variants of mountaineering by some, but are part of a wide group of mountain sports.",
+        "In everyday language, the term \"mountaineering\" is synonymous with mountain climbing or alpinism.",
+        "Unlike most sports, mountaineering lacks widely applied formal rules, regulations, and governance; mountaineers adhere to a large variety of techniques and philosophies (including grading and guidebooks) when climbing mountains.",
+        "Numerous local alpine clubs support mountaineers by hosting resources and social activities.",
+        "A federation of alpine clubs, the International Climbing and Mountaineering Federation (UIAA), is the International Olympic Committee-recognized world organization for mountaineering and climbing.",
+        "The consequences of mountaineering on the natural environment can be seen in terms of individual components of the environment (land relief, soil, vegetation, fauna, and landscape) and the location/zone of mountaineering activity (hiking, trekking, or climbing zone).",
+        "However, it should be borne in mind that tourism in mountain areas, by shifting the sector from agriculture to services, has a positive balance of change - agriculture is more invasive.",
+        "Mountaineering impacts communities on economic, political, social, and cultural levels, often leading to changes in people's worldviews influenced by globalization, specifically foreign cultures and lifestyles.",
+        "In terms of both its impact on the natural environment and local communities, the significance of this impact depends on the location in the vertical (altitude above sea level) and horizontal (zone) dimensions, and is therefore an example of environmental determinism."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mount Everest",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=42179",
+      "retrieved_at": "2026-10-18T15:32:57.630Z",
+      "sha256": "a12b5255787da43ea1e9923497518ca0cdca43308078ff307aced6c1144e9340",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mount Everest (known in Nepali as Sagarmāthā, in Sherpa as Chamolangma, and in Tibetan  as Jomolangma/Čhomolangma) is the highest mountain on Earth above sea level.",
+        "It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China–Nepal border at its summit.",
+        "Its height was most recently measured in 2020 through a joint survey by Nepalese and Chinese authorities as 8,848.86 m (29,031 ft 8+1⁄2 in).",
+        "Mount Everest attracts many climbers, including highly experienced mountaineers.",
+        "There are two main climbing routes, one approaching the summit from the southeast in Nepal (known as the standard route) and the other from the north in China.",
+        "While not posing substantial technical climbing challenges on the standard route, Everest presents dangers such as altitude sickness, weather, and wind, as well as hazards from avalanches and the Khumbu Icefall.",
+        "Over 200 bodies remain on the mountain and have not been removed due to the dangerous conditions.",
+        "Climbers typically ascend only part of Mount Everest's elevation, as the mountain's full elevation is measured from the geoid, which approximates sea level.",
+        "The closest sea to Mount Everest's summit is the Bay of Bengal, almost 700 km (430 mi) away.",
+        "To approximate a climb of the entire height of Mount Everest, one would need to start from this coastline, a feat accomplished by Tim Macartney-Snape's team in 1990.",
+        "Climbers usually begin their ascent from base camps above 5,000 m (16,404 ft).",
+        "The amount of elevation climbed from below these camps varies."
+      ]
+    }
+  ]
+}

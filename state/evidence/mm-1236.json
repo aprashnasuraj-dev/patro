@@ -1,0 +1,100 @@
+{
+  "id": "mm-1236",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mediterranean Versus Northern Range Ports. Why Do Italian Containers Still Prefer Routing Via the Northern Range Ports? Advice for a New Policy",
+      "publisher": "Elsevier BV",
+      "author": "Cazzaniga Francesetti, Dionisia; Foschi, Alga D.",
+      "published_at": "2003",
+      "url": "https://doi.org/10.2139/ssrn.385142",
+      "retrieved_at": "2026-10-18T15:32:58.565Z",
+      "sha256": "0a685222c8e62cd7284cf8031cddfd22f0201c6fd4746dfc93d3f73b23f899e8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Given this framework, it is surprising that a non marginal share of containers in northern Italy does not sail from/to Italian ports, but is routed via the Northern European ports instead, especially for traffic from/to Asia.",
+        "The volumes of TEU confirm that this abnormality is due to the superiority of the Northern Range ports as regards time, costs and rail-based intermodal services in comparison to the Italian situation, despite the modernization that has been undertaken in Italy.",
+        "We wish to emphasize that this is the first published study reporting data on the quantity of Italian containers handled by the Northern Range ports."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Containerization",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50387",
+      "retrieved_at": "2026-10-18T15:33:00.617Z",
+      "sha256": "d0650b19ba92e25de2215423271f85df28897e19e77a1deb3e8325304dbf2f7b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Containerization, also referred as container stuffing or container loading,  is a system of intermodal freight transport using intermodal containers.",
+        "Containerization is the predominant form of unitization of export cargoes today, as opposed to other systems such as the barge system or palletization.",
+        "They can be loaded and unloaded, stacked, transported efficiently over long distances, and transferred from one mode of transport to another—container ships, rail transport flatcars, and semi-trailer trucks—without being opened.",
+        "The handling system is mechanized so that all handling is done with cranes and special forklift trucks.",
+        "All containers are numbered and tracked using computerized systems.",
+        "Containerization originated several centuries ago but was not well developed or widely applied until after World War II, when it dramatically reduced the costs of transport, supported the post-war boom in international trade, and was a major element in globalization.",
+        "Containerization eliminated manual sorting of most shipments and the need for dock front warehouses, while displacing many thousands of dock workers who formerly simply handled break bulk cargo.",
+        "Containerization reduced congestion in ports, significantly shortened shipping time, and reduced losses from damage and theft.",
+        "Containers can be made from a wide range of materials such as steel, fibre-reinforced polymer, aluminum or a combination.",
+        "Containers made from weathering steel are used to minimize maintenance needs."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Port Newark–Elizabeth Marine Terminal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=444157",
+      "retrieved_at": "2026-10-18T15:33:00.617Z",
+      "sha256": "ff3ca8db607d2d6448e869e70fb6ca9f71d87e818a8a47b46b66893f50f0b133",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Port Newark–Elizabeth Marine Terminal, a major component of the Port of New York and New Jersey, is the principal container ship facility for goods entering and leaving the New York metropolitan area and the northeastern quadrant of North America.",
+        "Located on Newark Bay, the facility is run by the Port Authority of New York and New Jersey.",
+        "Its two components, Port Newark and the Elizabeth Marine Terminal (sometimes called Port Elizabeth) sit side by side within the cities of Newark and Elizabeth, New Jersey, just east of the New Jersey Turnpike and Newark Liberty International Airport."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Dockworker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=526998",
+      "retrieved_at": "2026-10-18T15:33:00.617Z",
+      "sha256": "f143595e6ecfcc9bce87343526602251bb74c8d0c09faecdc586832fedd3a97b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A dockworker (also called a docker, longshoreman, lumper, stevedore, wharfman or wharfie) is a waterfront manual laborer who loads and unloads ships.",
+        "As a result of the intermodal shipping container revolution, the required number of dockworkers has declined by over 90% since the 1960s."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Port security",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4174010",
+      "retrieved_at": "2026-10-18T15:33:00.617Z",
+      "sha256": "d5fd847453ce1526aaca2a6c8241336e4b3009b8ec80ed9245c3b6d66cc6b7ac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Port security is part of a broader definition concerning maritime security.",
+        "It refers to the defense, law and treaty enforcement, and Counterterrorism activities that fall within the port and maritime domain.",
+        "It includes the protection of the seaports themselves and the protection and inspection of the cargo moving through the ports.",
+        "Security risks related to ports often focus on either the physical security of the port, or security risks within the maritime supply chain.",
+        "Internationally, port security is governed by rules issued by the International Maritime Organization and its 2002 International Ship and Port Facility Security Code.",
+        "Additionally, some United States–based programs have become de facto global port security programs, including the Container Security Initiative and the Customs Trade Partnership against Terrorism.",
+        "However, some businesses argue that port security governance measures are ineffective and costly and that it negatively impacts maritime transport costs."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mt-0312",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Quantitative Approaches to Versification",
+      "publisher": "Digital Repository (National Repository of Grey Literature)",
+      "author": "Petr Plecháč",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W7135790978",
+      "retrieved_at": "2026-10-18T16:09:37.838Z",
+      "sha256": "cd59961f73827356f9ad55922d4c02e49ba795fd569edfb24f0c5ca91b9be263",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This volume presents a wide range of quantitative approaches to versification.",
+        "What they all share in common is that versification is being studied in the context of other linguistic phenomena that may affect or determine it.",
+        "Analyses of large corpora go hand in hand with comparative approaches.",
+        "It is shown that quantitative approaches can be used for the purpose of authorship attribution, to build reasonable typologies as well as to understand why certain forms play such a dominant roles in our cultural tradition(s)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Of Monks, Medieval Scribes, and Middlemen",
+      "publisher": "eYLS (Yale Law School)",
+      "author": "Peter K. Yu",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W2262204951",
+      "retrieved_at": "2026-10-18T16:09:37.838Z",
+      "sha256": "cf30c6b90a33dbca422801a650caaa7360943077dc8d39f0af66b753cca02388",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Today's copyright debate has generally focused on the digital dilemma created by Internet and new media technologies.",
+        "Threats created by emerging communications technologies, however, are not new.",
+        "Throughout history, there have been remarkable similarities between the threats created by new technologies and those posed by older ones.",
+        "During the oral argument in Metro-Goldwyn-Mayer Studios, Inc.",
+        "Grokster, Ltd., Justice Stephen Breyer questioned whether the petitioners' counsel would apply the test proposed for the new technology to some once-new technologies, such as the photocopying machine, the videocassette recorder, the iPod, and the printing press.",
+        "Many legal scholars have described copyright as a response to the emergence of the printing press.",
+        "However, very few have examined the press's impact on a group of contemporary middlemen - the medieval scribes.",
+        "This Essay undertakes this inquiry and explores the impact of the then-new technology on the now-obsolete scribal industry.",
+        "It begins by tracing the emergence of medieval scribes and the printing press and concludes with observations on the policy responses to the challenge created by the Internet and new communications technologies."
+      ]
+    }
+  ]
+}

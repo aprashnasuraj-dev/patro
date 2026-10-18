@@ -1,0 +1,136 @@
+{
+  "id": "mm-0905",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Central Banks Should Not Burst Bubbles",
+      "publisher": "Elsevier BV",
+      "author": "Posen, Adam S.",
+      "published_at": "2006",
+      "url": "https://doi.org/10.2139/ssrn.880450",
+      "retrieved_at": "2026-10-18T15:25:07.695Z",
+      "sha256": "b0414d92b632cc3571fdb14268fe32ccfa27af1ff3dd7baac473209e57c9aec5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Central banks should not be in the business of trying to prick asset price bubbles.",
+        "Bubbles generally arise out of some combination of irrational exuberance, technological jumps, and financial deregulation (with more of the second in equity price bubbles and more of the third in real estate booms).",
+        "Accordingly, the connection between monetary conditions and the rise of bubbles is rather tenuous, and anything short of inducing a recession by tightening credit conditions prohibitively is unlikely to stem their rise.",
+        "Even if a central bank were willing to take that one-in-three or less shot at cutting off a bubble, the cost-benefit analysis hardly justifies such preemptive action.",
+        "However, where financial fragility does exist, as in Japan in the 1990s, the costs of inducing a recession go up significantly, so the relative disadvantages of monetary preemption over letting the bubble run its course mount.",
+        "In the end, there is no monetary substitute for financial stability, and no market substitute for monetary ease during severe credit crunch.",
+        "These two realities imply that the central bank should not take asset prices directly into account in monetary policymaking but should be anything but laissez-faire in responding to sharp movements in inflation and output, even if asset price swings are their source."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "WHY BUBBLE-BURSTING IS UNPREDICTABLE: WELFARE EFFECTS OF ANTI-BUBBLE POLICY WHEN CENTRAL BANKS MAKE MISTAKES",
+      "publisher": "RePEc: Research Papers in Economics",
+      "author": "Guo Kai; John R. Conlon",
+      "published_at": "2007-10-01",
+      "url": "https://openalex.org/W2145746838",
+      "retrieved_at": "2026-10-18T15:25:08.383Z",
+      "sha256": "fd65345e76329e579b343940dbdeb5a443aa065eff5212084932847cd5336245",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper examines the effect of bubble-bursting policy in the case where the central bank sometimes tries to deflate an asset which is not, in fact, overpriced.",
+        "We consider the case of a “semi-bubble, ” where some traders know that an asset is overpriced, but others do not.",
+        "Unlike most previous papers on bubble policy, our framework assumes rational traders.",
+        "We also assume a finite time horizon, to rule out infinite horizon type bubbles.",
+        "The market’s “fulfilled expectations” equilibria are derived, and standard tools of welfare economics are applied to evaluate the effect of anti-bubble policy.",
+        "Under the assumption that the announcements of the financial authority can help less informed traders to learn more about a risky asset, market equilibria are presented and compared.",
+        "We show that, if sellers care relatively more about the states where the central bank makes a negative bubble-bursting announcement, an announcement policy interferes with the asset’s ability to share risks.",
+        "Conversely, if sellers care relatively less about the announcement states, an announcement policy improves risk sharing.",
+        "“Information leakage” plays an important role in our analysis.",
+        "Because of this leakage, central bank announcements can initiate further information revelation between traders.",
+        "That is, the leakage effect can reveal information that the central bank, itself, does not have.",
+        "However, this information leakage may not be welfare improving."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Dot-com bubble",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9021",
+      "retrieved_at": "2026-10-18T15:25:08.811Z",
+      "sha256": "d37fb6a9eed9e3d40905f5dcd4d5bf1ae839f40ce630066b67d5835b3ac8157c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The dot-com bubble (or dot-com boom) was a stock market bubble that developed during the late 1990s and peaked on March 10, 2000.",
+        "This period of market growth coincided with the widespread adoption of the World Wide Web and the Internet, resulting in a dispensation of available venture capital and the rapid growth of valuations in new dot-com startups.",
+        "Between 1995 and its peak in March 2000, investments in the Nasdaq Composite stock market index rose by 600%, only to fall 78% from its peak by October 2002, giving up all its gains during the bubble.",
+        "During the dot-com crash, many online shopping companies like Pets.com, Webvan, and Boo.com, as well as several communication companies, such as WorldCom, NorthPoint Communications, and Global Crossing, failed and shut down; WorldCom was renamed to MCI Inc.",
+        "Others, like Lastminute.com, MP3.com and PeopleSound were bought out.",
+        "Larger companies like Amazon and Cisco Systems lost large portions of their market capitalization, with the latter losing 80% of its stock value."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Economic bubble",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=139993",
+      "retrieved_at": "2026-10-18T15:25:08.811Z",
+      "sha256": "4720c2585d1724ab8eb9358b0a28ae6d361d46fb0c560575fc291030700cf39a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An economic bubble (also called a speculative bubble, asset bubble, or simply financial bubble) is a period when current asset prices greatly exceed their intrinsic valuation, being the valuation that the underlying long-term fundamentals justify.",
+        "Bubbles can be caused by overly optimistic projections about the scale and sustainability of growth (e.g.",
+        "dot-com bubble), and/or by the belief that intrinsic valuation is no longer relevant when making an investment (e.g.",
+        "They have appeared in most asset classes, including stocks (e.g.",
+        "Bubbles usually form as a result of either excess liquidity in markets, and/or changed investor psychology.",
+        "1980s Japanese asset bubble and the 2020–21 Everything bubble) are attributed to central banking liquidity (e.g.",
+        "In the early stages of a bubble, many investors do not recognise the bubble for what it is, often thinking that the increase in asset prices is justified.",
+        "Therefore, bubbles are often conclusively identified only in retrospect, after the bubble has already \"popped\" (or \"burst\") and prices have crashed."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Soap bubble",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=370648",
+      "retrieved_at": "2026-10-18T15:25:08.811Z",
+      "sha256": "329d321f8339d35b7ead12d80c95df13649455adb947a0a25395e11304982391",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A soap bubble (commonly referred to as simply a bubble) is an extremely thin film of soap or detergent and water enclosing air that forms a hollow sphere with an iridescent surface.",
+        "Soap bubbles usually last for only a few seconds before bursting, either on their own or on contact with another object.",
+        "They are often used for children's enjoyment, but they are also used in artistic performances.",
+        "When light shines onto a bubble it appears to change colour.",
+        "Unlike those seen in a rainbow, which arise from differential refraction, the colours seen in a soap bubble arise from light wave interference, reflecting off the front and back surfaces of the thin soap film.",
+        "Depending on the thickness of the film, different colours interfere constructively and destructively."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Real-estate bubble",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1972328",
+      "retrieved_at": "2026-10-18T15:25:08.811Z",
+      "sha256": "a73cf3a2371d5a8666e20f1d5b4b0040f0ad797bfae4aa6280100de141b961ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A real-estate bubble or property bubble (or housing bubble for residential markets) is a type of economic bubble that occurs periodically in local or global real estate markets, and it typically follows a land boom or reduced interest rates.",
+        "A land boom is a rapid increase in the market price of real property, such as housing, until prices reach unsustainable levels and then decline.",
+        "Bubbles in housing markets have often been more severe than stock market bubbles.",
+        "Historically, equity price busts occur on average every 13 years, last for 2.5 years, and result in about a 4 percent loss in GDP.",
+        "Housing price busts are less frequent, but last nearly twice as long and lead to output losses that are twice as large (IMF World Economic Outlook, 2003).",
+        "A 2012 laboratory experimental study also shows that, compared to financial markets, real estate markets involve more extended boom and bust periods.",
+        "Prices decline slower because the real estate market is less liquid.",
+        "The 2008 financial crisis was caused by the bursting of real estate bubbles that had begun in various countries during the 2000s."
+      ]
+    }
+  ]
+}
