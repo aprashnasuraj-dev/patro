@@ -81,7 +81,7 @@ test('gate: approves a grounded article with independent sources and zero images
 });
 test('runner e2e: writes from cached evidence with 2 LLM calls and approves with zero images; stops on NO_BUDGET without burning topics',async()=>{
  const root=await mkdtemp(join(tmpdir(),'mmv2-'));
- const excerpt=(k,n)=>'Chlorophyll in leaf '+k+' reflects green light while absorbing red and blue wavelengths, number '+n+'.';
+ const excerpt=(k,n)=>'Grass looks green because chlorophyll in leaf '+k+' reflects green light while absorbing red and blue wavelengths, number '+n+'.';
  const evidence=[1,2,3].map(i=>({id:'s'+i,title:'Source '+i,publisher:'nasa.gov',url:'https://source'+i+'.gov/'+i,retrieved_at:'2026-10-19T00:00:00Z',sha256:'h'.repeat(64),excerpts:[excerpt(i,1),excerpt(i,2),excerpt(i,3)]}));
  const mkReg=id=>({id,type:'topic',slug:'why-grass-is-green-'+id,url:'https://aafnaipatro.com/why-grass-is-green-'+id+'/',intent:'Answer: Why grass is green',status:'reserved',meta:{category:'Nature & Plants',title:'Why Grass Is Green? The Full Story',question:'Why grass is green'}});
  const registry=[mkReg('mm-01'),mkReg('mm-02')];let n=0;const body=Array.from({length:70},(_,i)=>['Leaves','Sunlight','Chlorophyll','Pigments','Grass'][i%5]+' detail '+i+' shows one more separate fact about how leaves treat sunlight each day.').join(' ');
