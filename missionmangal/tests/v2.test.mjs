@@ -81,3 +81,10 @@ test('runner e2e: writes from cached evidence with 2 LLM calls and approves with
  const led=(await readFile(join(root,'state','v2-0','ledger.jsonl'),'utf8')).trim().split('\n').map(JSON.parse);assert.equal(led.length,1);assert.equal(led[0].status,'approved');
  const art=JSON.parse(await readFile(join(root,'state','v2-0','content','mm-01.json'),'utf8'));assert.equal(art.media.length,0);assert.equal(art.quality_policy.route,'general');assert.deepEqual(auditArticle(art),[]);
 });
+
+test('plan: review-held articles remain eligible for recovery; approved ones do not',()=>{
+ const registry=[{...rec('Nature','Why is grass green'),id:'reviewed'},{...rec('Nature','Why is the sky blue'),id:'approved'}];
+ const state={latest:new Map([['reviewed',{status:'review'}],['approved',{status:'approved'}]]),evidence:new Map()};
+ const result=buildPlan(registry,state,{config});
+ assert.deepEqual(result.rows.map(r=>r.id),['reviewed']);
+});
