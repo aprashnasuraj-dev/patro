@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-source-priority-final",
-  "note": "Final bounded rerun after prioritizing question-specific Wikipedia citation trails ahead of broad search results and expanding retrieval to twelve candidates per topic. Exact-topic relevance, three independent publishers, word-count, claim grounding and editorial gates remain mandatory; no production publish."
+  "mode": "research-grounding-scholarly-final",
+  "note": "Bounded rerun with OpenAlex scholarly search resolving to actual publisher landing pages, citation-first ordering, and exact-topic relevance. Two topics max; require three independent publisher domains, grounded claims, word count and release gate; production untouched."
 }
