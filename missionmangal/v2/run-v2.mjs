@@ -36,7 +36,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
    }
    if(row.route!=='general'&&(evidence.length<need||independentEvidenceHosts(evidence).size<Math.min(3,need))){addAll(await discoverEvidence({evidence,topic:question,disc:config.discovery,need,fetchImpl,extract,scriptPath,render,now,log}));}
    if(changed)await writeFile(join(out,'evidence',r.id+'.json'),JSON.stringify({id:r.id,evidence},null,2));
-   if(evidence.length<need||independentEvidenceHosts(evidence).size<Math.min(3,need)){await note(r.id,'blocked',{route:row.route,reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources; '+independentEvidenceHosts(evidence).size+' independent publisher domains (need '+need+' sources and '+Math.min(3,need)+' domains) after cache + discovery'});continue;}
+   if(evidence.length<need||(row.route!=='general'&&independentEvidenceHosts(evidence).size<Math.min(3,need))){const reason=row.route==='general'?'NEEDS_EVIDENCE: '+evidence.length+' cached source records (need '+need+')':'NEEDS_RESEARCH: '+evidence.length+' usable sources; '+independentEvidenceHosts(evidence).size+' independent publisher domains (need '+need+' sources and '+Math.min(3,need)+' domains) after cache + discovery';await note(r.id,'blocked',{route:row.route,reason});continue;}
    if(!llm.available()){await note(r.id,'retry_later',{route:row.route,reason:'NO_PROVIDER: no healthy LLM at preflight; evidence_sources='+evidence.length});continue;}
    const use=pickEvidence(evidence);
    const w=await writeCompact({llm,meta,title,evidence:use,need:Math.min(need,use.length),targetWords:policyCfg.target_words,minWords:policyCfg.min_words});
