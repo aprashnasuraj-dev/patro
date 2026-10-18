@@ -31,7 +31,8 @@ Improve evidence quality, editorial usefulness, source transparency, and reader-
 ### Route-specific floors
 
 Keep configurable route floors in `config.json`, but enforce these principles:
-- General explainers: direct answer early, sufficient primary/authoritative evidence, plain language, one meaningful example when supported.
+- General explainers: direct answer early, plain language, one meaningful example when supported. Use the cached evidence ledger without launching the expanded web-discovery stage or requiring independent publisher-domain counts; retain at least two cached source records and exact claim-to-passage grounding. This removes the research-route burden without allowing unsupported factual claims.
+- All routes: 300-word minimum. The minimum is a hard floor, not a target; avoid padding and keep the answer focused.
 - Structured/open-data pages: deterministic rendering from source data wherever possible; show units, period, geography, methodology, missingness, revision date, and downloadable/source links. Prefer this over LLM prose for stable tables.
 - Research pages: broader source diversity, competing explanations, methods and limitations, primary-source priority.
 - YMYL: keep high-risk advice out of automatic release unless it meets a stricter route-specific evidence policy and stays informational. If automated checks cannot establish safe, supportable scope, hold the item rather than creating a manual queue for 5,000 articles. No personalized diagnosis, legal determination, or financial recommendation. Disclaimers do not repair unsupported claims.
@@ -60,7 +61,7 @@ Keep configurable route floors in `config.json`, but enforce these principles:
 
 Use a clean, expandable **Sources & further reading** section rather than forcing APA parenthetical citations throughout general-interest pages. This is a readability choice, not permission to hide provenance.
 
-- In the body, use compact numbered source markers such as `[1]` after factual claims or paragraphs. Each marker links to the exact reference entry and is keyboard accessible.
+- In the generated Markdown body, require explicit `[[source_id]]` markers after factual paragraphs and factual list items. The renderer maps valid IDs to compact numbered links such as `[1]` beside the claim; missing or unknown markers block the draft. Each marker links to the exact reference entry and is keyboard accessible.
 - At the bottom, render numbered reference cards: title, publisher/author, publication/update date when known, accessed date, and a descriptive “Read source” link. Add source type labels such as Primary data, Research paper, Government, or Background.
 - Provide a “Why this source?” note for important claims and distinguish primary evidence from contextual reading.
 - Offer an optional “Show inline citations” mode; never make citations hover-only or inaccessible on mobile.
