@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-relevance-smoke-test",
-  "note": "Second retry after discovering search result keyword collisions: cached and newly scraped evidence must match the exact topic; irrelevant search results cannot count as sources. Two topics max, one worker, ten-minute deadline, no production publish."
+  "mode": "research-grounding-relevance-smoke-test-rerun-2",
+  "note": "Bounded rerun after aligning the synthetic test fixture with the new exact-topic relevance requirement. Two topics maximum, one worker, ten-minute deadline, fail-closed gate, no production publish."
 }
