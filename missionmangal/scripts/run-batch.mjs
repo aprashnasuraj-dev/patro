@@ -43,7 +43,9 @@ export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,d
     if(c.abstract){add(c,excerptsFrom(c.abstract),createHash('sha256').update(c.abstract).digest('hex'),c.url,now().toISOString());continue;}
     try{const s=await snapshot(c.url,{fetchImpl,renderer:render,now});add(c,s.excerpts,s.sha256,s.canonical||s.url,s.retrieved_at,s.rendered,true);}catch{}}
    await writeFile(join(out,'evidence',r.id+'.json'),JSON.stringify({id:r.id,evidence},null,2));
-   const normalNeed=Math.min(20,Math.max(5,Math.ceil((meta.min_citations||5)*0.6)));\n   const lowRiskRescue=attempt>1&&isLowRiskGeneralQuestion(meta,question);\n   const need=lowRiskRescue?5:normalNeed;
+   const normalNeed=Math.min(20,Math.max(5,Math.ceil((meta.min_citations||5)*0.6)));
+   const lowRiskRescue=attempt>1&&isLowRiskGeneralQuestion(meta,question);
+   const need=lowRiskRescue?5:normalNeed;
    if(evidence.length<need){await note(r,'blocked',{reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources (<'+need+')'});continue;}
    if(!llm.available()){await note(r,'retry_later',{reason:'NO_PROVIDER'});continue;}
    const w=await writeArticle({llm,meta,title,evidence,need,attempt});
