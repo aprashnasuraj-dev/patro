@@ -16,7 +16,7 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
  const ok=claims.filter(c=>!bad.has(c.id));const used=new Set(ok.map(c=>c.source_id));
  if(ok.length<Math.max(4,nSections*2-1)||used.size<need)throw Object.assign(new Error('GROUNDING_FAILED: '+ok.length+' grounded claims, '+used.size+' sources (need '+need+')'),{code:'GROUNDING_FAILED'});
  const plan=secs.map((s,i)=>'## '+s.heading+' ('+s.purpose+')\n'+ok.filter(c=>c.id.startsWith('c'+(i+1)+'-')).map(c=>'- '+c.text+' (source '+c.source_id+')').join('\n')).join('\n\n');
- let w=await llm.json('Write a complete, publication-quality answer to the exact reader question in Markdown, aiming for '+targetWords+' words and never fewer than '+minWords+' words. Use one \"## heading\" per planned section, in order. The opening paragraph must answer the question directly in plain language, then explain the mechanisms with evidence. Stay tightly on-question throughout. Do not replace the requested explanation with general geography, country summaries, travel writing, or generic background. Every paragraph must add a relevant, supported fact or explanation. Do not invent evidence or sources. Do not use em dashes. Avoid filler, repeated explanations, formulaic openings, and generic conclusions. '+VOICE+' Also write up to 3 useful FAQ items that answer the exact question or meaningful follow-ups. Return JSON {\"markdown\":\"...\",\"faq\":[{\"question\":\"\",\"answer\":\"\"}]}.' ,'Exact question: '+question+'\nRequired title: '+title+'\nFocused outline and source-grounded claims:\n'+plan);
+ let w=await llm.json('Write a complete, publication-quality answer to the exact reader question in Markdown, aiming for '+targetWords+' words and never fewer than '+minWords+' words. Use one \"## heading\" per planned section, in order. The opening paragraph must answer the question directly in plain language, then explain the mechanisms with evidence. Stay tightly on-question throughout. Do not replace the requested explanation with general geography, country summaries, travel writing, or generic background. Every factual paragraph and every factual list item must end with one or more source markers in the exact form [[source_id]], using only source IDs in the supplied grounded claims. Place markers immediately after the sentence or paragraph they support. Do not invent evidence or sources. Do not use em dashes. Avoid filler, repeated explanations, formulaic openings, and generic conclusions. '+VOICE+' Also write up to 3 useful FAQ items that answer the exact question or meaningful follow-ups. Return JSON {\"markdown\":\"...\",\"faq\":[{\"question\":\"\",\"answer\":\"\"}]}.' ,'Exact question: '+question+'\nRequired title: '+title+'\nFocused outline and source-grounded claims:\n'+plan);
  let body=String(w.value.markdown||'').trim();
  if(lint(body).length)body=fix(body);
  let wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
@@ -26,6 +26,15 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
   if(lint(body).length)body=fix(body);
   wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
  }
+ const allowedSourceIds=new Set(ok.map(c=>c.source_id));
+ const paragraphs=body.split(/\\n\\s*\\n/).map(p=>p.trim()).filter(p=>p&&!/^#{1,6}\\s/.test(p));
+ const citationProblems=[];
+ for(const p of paragraphs){
+  const markers=[...p.matchAll(/\\[\\[([A-Za-z0-9_-]+)\\]\\]/g)].map(m=>m[1]);
+  if(!markers.length)citationProblems.push('Paragraph missing inline source marker');
+  for(const id of markers)if(!allowedSourceIds.has(id))citationProblems.push('Unknown inline source marker: '+id);
+ }
+ if(citationProblems.length)throw Object.assign(new Error('INLINE_CITATION_FAILED: '+citationProblems.slice(0,6).join('; ')),{code:'INLINE_CITATION_FAILED'});
  const voiceProblems=lint(body);
  if(voiceProblems.length)throw Object.assign(new Error('VOICE_GATE_FAILED: '+voiceProblems.join('; ')),{code:'VOICE_GATE_FAILED'});
  const faq=Array.isArray(w.value.faq)?w.value.faq.slice(0,3):[];
