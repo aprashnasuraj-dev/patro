@@ -42,7 +42,7 @@ test('full run with auto-approve: sourced, grounded, multi-imaged, approved; ide
  const s=await runBatch({root,client,llm:smartLlm({sameBody:true}),fetchImpl:async()=>({ok:false}),autoApprove:true,imageOrder:[img],log:()=>{}});
  assert.equal(s.approved,1);assert.equal(s.review,1);const led=readFileSync(join(root,'state','shard-0','ledger.jsonl'),'utf8');assert(/NEAR_DUPLICATE/.test(led));
  const a=JSON.parse(readFileSync(join(root,'state','shard-0','content','mm-0.json'),'utf8'));assert.equal(a.status,'approved');assert(a.media.length>=3&&a.media.every(m=>m.credit==='NASA'));assert(a.sources.length>=5);assert(a.faq.length>=1);}finally{rmSync(root,{recursive:true,force:true});}});
-test('pacing spreads topics across the minimum run time instead of rushing',async()=>{
+test('pacing spreads topics across the minimum run time and preserves retryable failures',async()=>{
  const root=mkdtempSync(join(tmpdir(),'mmpace-'));try{mkdirSync(join(root,'config'),{recursive:true});let reg=[];for(let i=0;i<4;i++)reg=reserve(reg,{id:'mm-'+i,type:'topic',slug:'p-'+i,title:'T'+i,intent:'Answer: Why surfaces get wet '+i});writeFileSync(join(root,'config','portfolio.json'),JSON.stringify(reg));
  let now=1_000_000;const waits=[];const s=await runBatch({root,client:{apis:[],async query(){return {data:{}};}},llm:{available:()=>false},fetchImpl:async()=>({ok:false}),minMs:100*60_000,deadlineMs:now+200*60_000,clock:()=>now,sleep:async ms=>{waits.push(ms);now+=ms;},log:()=>{}});
- assert.equal(s.blocked,4);assert.deepEqual(waits,[25*60_000,25*60_000,25*60_000]);assert(now-1_000_000>=75*60_000);}finally{rmSync(root,{recursive:true,force:true});}});
+ assert.equal(s.retry_later,4);assert.deepEqual(waits,[25*60_000,25*60_000,25*60_000]);assert(now-1_000_000>=75*60_000);}finally{rmSync(root,{recursive:true,force:true});}});
