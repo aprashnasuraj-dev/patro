@@ -43,8 +43,8 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
     claims:w.claims.map(c=>({id:c.id,text:c.text,source_ids:[c.source_id],passage:c.passage})),
     sources:usedEv.map(e=>({id:e.id,url:e.url,title:e.title,publisher:e.publisher,author:e.author||undefined,published_at:e.published_at||undefined,retrieved_at:e.retrieved_at,sha256:e.sha256,verified:false,claim_ids:w.claims.filter(c=>c.source_id===e.id).map(c=>c.id)})),
     media:[],provenance:{sources_n:usedEv.length,first_retrieved:when[0],last_retrieved:when[when.length-1],hosts:[...new Set(usedEv.map(e=>new URL(e.url).host))],scraped:usedEv.some(e=>e.scraped),route:row.route,engine:'v2'},voice:{residual:w.voice_problems_after},generation:{engine:'v2',writer:'compact',llm:w.provider,at:now().toISOString()}};
-   const v=decideV2(article,{route:row.route,policy,allowYmyl,seen,now});let status='review',extra={};
-   if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else extra={held:v.why};
+   const v=decideV2(article,{route:row.route,policy,allowYmyl,seen,now});let status='blocked',extra={};
+   if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else extra={held:v.why,reason:'AUTOMATED_QUALITY_GATE_FAILED'};
    await writeFile(join(out,'content',r.id+'.json'),JSON.stringify(article,null,2));await note(r.id,status,{route:row.route,...extra});
   }catch(e){
    if(e.code==='NO_BUDGET'){stats.stopped_for_budget=mine.length-i+1;log('Provider budget spent; remaining topics stay queued for the next run.');break;}
