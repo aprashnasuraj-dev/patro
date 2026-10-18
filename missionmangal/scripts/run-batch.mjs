@@ -36,7 +36,7 @@ export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,d
    const evidence=[];const add=(c,ex,hash,url,when,rendered=false,scraped=false)=>{if(ex.length>=2)evidence.push({id:'s'+(evidence.length+1),title:c.title,publisher:c.publisher,author:c.author,published_at:c.published_at,url,retrieved_at:when,sha256:hash,rendered,scraped,excerpts:ex});};
    // 1) structured data API named in the sheet (planner picks parameters; adapters validate + allowlist hosts)
    const key=adapterFor(meta.primary_api);const apis=[];
-   if(key&&llm.available()){try{const params=await planParams(llm,key,topic);for(const c of await fetchEvidence(key,params,{fetchImpl,now})){const ex=excerptsFrom(c.abstract,{min:30,max:30});add(c,ex,createHash('sha256').update(c.abstract).digest('hex'),c.url,c.retrieved_at);apis.push(key);}}catch(e){log('  data-api '+key+': '+e.message);}}
+   if(key&&(llm.available()||key==='restcountries')){try{const params=await planParams(llm,key,topic);for(const c of await fetchEvidence(key,params,{fetchImpl,now})){const ex=excerptsFrom(c.abstract,{min:30,max:30});add(c,ex,createHash('sha256').update(c.abstract).digest('hex'),c.url,c.retrieved_at);apis.push(key);}}catch(e){log('  data-api '+key+': '+e.message);}}
    // 2) open text APIs (abstracts straight from the API; scraping only when an abstract is missing)
    let cands=[];for(const api of client.apis.filter(a=>EVIDENCE_APIS.includes(a.id))){try{const q=await client.query(api.id,question);cands.push(...candidatesFrom(api.id,q.data));}catch(e){log('  '+api.id+': '+e.message);}}
    for(const c of dedupeByHost(cands,4).slice(0,40)){if(evidence.length>=22)break;
@@ -46,8 +46,8 @@ export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,d
    const normalNeed=Math.min(20,Math.max(5,Math.ceil((meta.min_citations||5)*0.6)));
    const lowRiskRescue=attempt>1&&isLowRiskGeneralQuestion(meta,question);
    const need=lowRiskRescue?5:normalNeed;
+   if(!llm.available()){await note(r,'retry_later',{reason:'NO_PROVIDER; evidence_sources='+evidence.length});continue;}
    if(evidence.length<need){await note(r,'blocked',{reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources (<'+need+')'});continue;}
-   if(!llm.available()){await note(r,'retry_later',{reason:'NO_PROVIDER'});continue;}
    const w=await writeArticle({llm,meta,title,evidence,need,attempt});
    const used=[...new Set(w.claims.map(c=>c.source_id))],usedEv=evidence.filter(e=>used.includes(e.id));
    const want=Math.max(3,Math.min(8,meta.images_needed||4));
