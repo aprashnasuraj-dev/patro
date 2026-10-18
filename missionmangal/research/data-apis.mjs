@@ -30,18 +30,18 @@ export const adapterFor=name=>byName.get(String(name).toLowerCase())||null;
 const restCountryNameFromTopic=topic=>{
  const q=String(topic.question||'').trim(),t=String(topic.title||'').trim();
  const patterns=[
-  /\\b(?:capital|population|area|currency|language|region|country|facts|profile|overview)\\s+(?:of|for|about)\\s+([A-Z][A-Za-z.' -]{1,39})/i,
-  /\\b(?:facts|profile|overview|information)\\s+about\\s+([A-Z][A-Za-z.' -]{1,39})/i,
-  /^([A-Z][A-Za-z.' -]{1,39})\\s+(?:country|facts|profile|population|capital|area|currency|languages?)\\b/i
+  /\b(?:capital|population|area|currency|language|region|country|facts|profile|overview)\s+(?:of|for|about)\s+([A-Z][A-Za-z.' -]{1,39})/i,
+  /\b(?:facts|profile|overview|information)\s+about\s+([A-Z][A-Za-z.' -]{1,39})/i,
+  /^([A-Z][A-Za-z.' -]{1,39})\s+(?:country|facts|profile|population|capital|area|currency|languages?)\b/i
  ];
- for(const s of [q,t])for(const re of patterns){const m=s.match(re);if(m){const name=m[1].replace(/[?.!,;:]+$/,'').trim().replace(/\\s+(?:and|with|that|which|where|when|because|compared|according)\\b.*$/i,'').trim();if(name.length>=2&&name.length<=40)return name;}}
+ for(const s of [q,t])for(const re of patterns){const m=s.match(re);if(m){const name=m[1].replace(/[?.!,;:]+$/,'').trim().replace(/\s+(?:and|with|that|which|where|when|because|compared|according)\b.*$/i,'').trim();if(name.length>=2&&name.length<=40)return name;}}
  return null;
 };
 export async function planParams(llm,key,topic){
  const a=ADAPTERS[key];
  // REST Countries has a simple, public {name} schema. Prefer deterministic extraction so a provider outage cannot block this lookup.
  if(key==='restcountries'){const name=restCountryNameFromTopic(topic);if(name)return {name};}
- const {value}=await llm.json('You output ONLY a JSON object of request parameters for a public data API. Schema: '+a.schema+'. Choose values that best answer the topic. No commentary.','Topic: '+topic.title+'\\nQuestion: '+topic.question+'\\nAngle: '+(topic.angle||''));
+ const {value}=await llm.json('You output ONLY a JSON object of request parameters for a public data API. Schema: '+a.schema+'. Choose values that best answer the topic. No commentary.','Topic: '+topic.title+'\nQuestion: '+topic.question+'\nAngle: '+(topic.angle||''));
  return value;
 }
 export async function fetchEvidence(key,params,{fetchImpl=fetch,now=()=>new Date()}={}){
