@@ -2,19 +2,141 @@
   "version": 1,
   "note": "Research-DATA sources for evidence discovery. Every entry ships approved:false; a human flips it only after reading the provider's terms. A search result or API answer is a lead, never a citation by itself.",
   "apis": [
-    {"id":"wikipedia","name":"Wikipedia REST","endpoint":"https://en.wikipedia.org/api/rest_v1/page/summary/{q}","auth":"none","license_note":"CC BY-SA text; attribute and share-alike","rps":5,"approved":false},
-    {"id":"wikidata","name":"Wikidata","endpoint":"https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&search={q}","auth":"none","license_note":"CC0","rps":5,"approved":false},
-    {"id":"crossref","name":"Crossref works","endpoint":"https://api.crossref.org/works?query={q}&rows=10","auth":"none","license_note":"Metadata is facts; send a mailto in the User-Agent","rps":5,"approved":false},
-    {"id":"openalex","name":"OpenAlex","endpoint":"https://api.openalex.org/works?search={q}&per-page=10","auth":"none","license_note":"CC0","rps":5,"approved":false},
-    {"id":"europepmc","name":"Europe PMC","endpoint":"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&format=json&pageSize=10","auth":"none","license_note":"Check per-article licence","rps":3,"approved":false},
-    {"id":"arxiv","name":"arXiv","endpoint":"https://export.arxiv.org/api/query?search_query=all:{q}&max_results=10","auth":"none","license_note":"Metadata free; check paper licence","rps":0.3,"approved":false},
-    {"id":"worldbank","name":"World Bank indicators","endpoint":"https://api.worldbank.org/v2/country/all/indicator/{q}?format=json&per_page=100","auth":"none","license_note":"CC BY 4.0","rps":3,"approved":false},
-    {"id":"restcountries","name":"REST Countries","endpoint":"https://restcountries.com/v3.1/name/{q}","auth":"none","license_note":"Check terms","rps":3,"approved":false},
-    {"id":"openmeteo","name":"Open-Meteo","endpoint":"https://api.open-meteo.com/v1/forecast?{q}","auth":"none","license_note":"CC BY 4.0; non-commercial free tier only, commercial needs a plan","rps":3,"approved":false},
-    {"id":"usgs-quakes","name":"USGS earthquakes","endpoint":"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&{q}","auth":"none","license_note":"US Government public domain","rps":3,"approved":false},
-    {"id":"nasa","name":"NASA open APIs","endpoint":"https://api.nasa.gov/planetary/apod?api_key={KEY}&{q}","auth":"key","secret_env":"NASA_API_KEY","license_note":"Per-asset media rights vary","rps":1,"approved":false},
-    {"id":"gbif","name":"GBIF species","endpoint":"https://api.gbif.org/v1/species/search?q={q}","auth":"none","license_note":"Per-dataset licence","rps":3,"approved":false},
-    {"id":"openlibrary","name":"Open Library","endpoint":"https://openlibrary.org/search.json?q={q}","auth":"none","license_note":"Check terms","rps":2,"approved":false},
-    {"id":"nepal-open-data","name":"Open Data Nepal / Nepal government datasets","endpoint":"https://opendatanepal.com/api/3/action/package_search?q={q}","auth":"none","license_note":"Per-dataset licence","rps":2,"approved":false}
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia REST",
+      "endpoint": "https://en.wikipedia.org/api/rest_v1/page/summary/{q}",
+      "auth": "none",
+      "license_note": "CC BY-SA text; attribute and share-alike",
+      "rps": 5,
+      "approved": false
+    },
+    {
+      "id": "wikidata",
+      "name": "Wikidata",
+      "endpoint": "https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&search={q}",
+      "auth": "none",
+      "license_note": "CC0",
+      "rps": 5,
+      "approved": false
+    },
+    {
+      "id": "crossref",
+      "name": "Crossref works",
+      "endpoint": "https://api.crossref.org/works?query={q}&rows=10",
+      "auth": "none",
+      "license_note": "Metadata is facts; send a mailto in the User-Agent",
+      "rps": 5,
+      "approved": false
+    },
+    {
+      "id": "openalex",
+      "name": "OpenAlex",
+      "endpoint": "https://api.openalex.org/works?search={q}&per-page=10",
+      "auth": "none",
+      "license_note": "CC0",
+      "rps": 5,
+      "approved": false
+    },
+    {
+      "id": "europepmc",
+      "name": "Europe PMC",
+      "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&format=json&pageSize=10",
+      "auth": "none",
+      "license_note": "Check per-article licence",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query?search_query=all:{q}&max_results=10",
+      "auth": "none",
+      "license_note": "Metadata free; check paper licence",
+      "rps": 0.3,
+      "approved": false
+    },
+    {
+      "id": "worldbank",
+      "name": "World Bank indicators",
+      "endpoint": "https://api.worldbank.org/v2/country/all/indicator/{q}?format=json&per_page=100",
+      "auth": "none",
+      "license_note": "CC BY 4.0",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "restcountries",
+      "name": "REST Countries",
+      "endpoint": "https://restcountries.com/v3.1/name/{q}",
+      "auth": "none",
+      "license_note": "Check terms",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "openmeteo",
+      "name": "Open-Meteo",
+      "endpoint": "https://api.open-meteo.com/v1/forecast?{q}",
+      "auth": "none",
+      "license_note": "CC BY 4.0; non-commercial free tier only, commercial needs a plan",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "usgs-quakes",
+      "name": "USGS earthquakes",
+      "endpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&{q}",
+      "auth": "none",
+      "license_note": "US Government public domain",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "nasa",
+      "name": "NASA open APIs",
+      "endpoint": "https://api.nasa.gov/planetary/apod?api_key={KEY}&{q}",
+      "auth": "key",
+      "secret_env": "NASA_API_KEY",
+      "license_note": "Per-asset media rights vary",
+      "rps": 1,
+      "approved": false
+    },
+    {
+      "id": "gbif",
+      "name": "GBIF species",
+      "endpoint": "https://api.gbif.org/v1/species/search?q={q}",
+      "auth": "none",
+      "license_note": "Per-dataset licence",
+      "rps": 3,
+      "approved": false
+    },
+    {
+      "id": "openlibrary",
+      "name": "Open Library",
+      "endpoint": "https://openlibrary.org/search.json?q={q}",
+      "auth": "none",
+      "license_note": "Check terms",
+      "rps": 2,
+      "approved": false
+    },
+    {
+      "id": "nepal-open-data",
+      "name": "Open Data Nepal / Nepal government datasets",
+      "endpoint": "https://opendatanepal.com/api/3/action/package_search?q={q}",
+      "auth": "none",
+      "license_note": "Per-dataset licence",
+      "rps": 2,
+      "approved": false
+    },
+    {
+      "id": "openalex-topics",
+      "name": "OpenAlex topics (discovery)",
+      "endpoint": "https://api.openalex.org/topics?search={q}&per-page=25",
+      "auth": "none",
+      "license_note": "CC0",
+      "rps": 5,
+      "approved": false
+    }
   ]
 }

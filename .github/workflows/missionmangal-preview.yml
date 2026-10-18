@@ -1,0 +1,29 @@
+name: Mission Mangal preview build + smoke (no deploy)
+
+on:
+  workflow_dispatch:
+    inputs:
+      expect_urls:
+        description: "Exact number of approved pages expected in the sitemap"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: missionmangal-content }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: node --test missionmangal/tests/*.test.mjs
+      - run: npm run build                      # existing root build, unchanged
+      - run: node missionmangal/scripts/build.mjs  # renders approved pages only (fail-closed)
+      - run: MANGAL_INTEGRATION_APPROVED=YES node missionmangal/scripts/integrate.mjs   # collision-checked copy into dist/
+      - run: node -e "import('./missionmangal/scripts/smoke-dist.mjs').then(m=>m.smoke('dist',{expect:+process.argv[1]})).then(n=>console.log('smoke ok',n))" ${{ inputs.expect_urls }}
+      - uses: actions/upload-artifact@v4
+        with: { name: mission-mangal-dist, path: dist, retention-days: 7 }

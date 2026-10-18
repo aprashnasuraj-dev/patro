@@ -1,0 +1,110 @@
+name: Mission Mangal generate (manual, sharded, no auto-publish)
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: "Parallel shards (each job is capped at 360 min)"
+        default: "20"
+      deadline_minutes:
+        description: "Stop starting new topics after this many minutes (must leave time to upload)"
+        default: "335"
+      limit_per_shard:
+        description: "Optional cap on topics per shard (blank = all reserved)"
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: missionmangal-generate
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node --test missionmangal/tests/*.test.mjs
+      - name: Plan sums to target and registry fits
+        run: |
+          node -e "
+          const p=require('./missionmangal/config/plan-3000.json');
+          const sum=p.clusters.reduce((a,c)=>a+c.quota,0);
+          if(sum!==p.core_target+p.buffer)throw Error('plan quotas '+sum+' != '+(p.core_target+p.buffer));
+          const r=require('./missionmangal/config/portfolio.json');
+          console.log('plan '+sum+' | registry '+r.length+' | reserved '+r.filter(x=>x.status==='reserved').length);"
+      - id: matrix
+        run: |
+          n=${{ inputs.shards }}
+          echo "list=$(node -e "console.log(JSON.stringify(Array.from({length:$n},(_,i)=>i)))")" >> "$GITHUB_OUTPUT"
+    outputs:
+      list: ${{ steps.matrix.outputs.list }}
+
+  generate:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 360            # GitHub-hosted job maximum
+    environment: mission-mangal-generation   # scope secrets + optional required reviewers here
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        shard: ${{ fromJson(needs.validate.outputs.list) }}
+    env:
+      # GitHub secret names allow only letters, digits and underscores. Recreate 'Gemini API Key' / 'healthy-crab api' accordingly.
+      GROQ_API_KEY: ${{ secrets.GROQ_API }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER }}
+      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS }}
+      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+      CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}   # optional JS-render fallback
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Run shard
+        run: >
+          node missionmangal/scripts/run-batch.mjs
+          --shard ${{ matrix.shard }} --shards ${{ inputs.shards }}
+          --deadline-minutes ${{ inputs.deadline_minutes }}
+          ${{ inputs.limit_per_shard != '' && format('--limit {0}', inputs.limit_per_shard) || '' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.shard }}
+          path: missionmangal/state/shard-${{ matrix.shard }}
+          retention-days: 14
+          if-no-files-found: ignore
+
+  merge:
+    needs: generate
+    if: always() && needs.generate.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write               # pushes ONLY to missionmangal-content, never main
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: missionmangal }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/download-artifact@v4
+        with: { path: missionmangal/state, pattern: shard-*, merge-multiple: false }
+      - run: |
+          cd missionmangal/state && for d in shard-*/shard-*; do [ -d "$d" ] && mv "$d" . ; done; cd -
+          node missionmangal/scripts/merge-shards.mjs
+          node --test missionmangal/tests/*.test.mjs
+      - name: Commit drafts for human review
+        run: |
+          git config user.name "mission-mangal-bot"; git config user.email "bot@users.noreply.github.com"
+          rm -rf missionmangal/state/*/evidence.tmp
+          git checkout -B missionmangal-content
+          git add missionmangal/config/portfolio.json missionmangal/content missionmangal/reports missionmangal/state
+          git diff --cached --quiet || git commit -m "Mission Mangal: drafts for human review (not approved, not published)"
+          git push -f origin missionmangal-content
