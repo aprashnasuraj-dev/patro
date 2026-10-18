@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-relevance-final",
-  "note": "Final bounded rerun after separating the exact reader question used for relevance checks from the search-query context. Two topics max, one worker, ten-minute deadline, no production publish; all source and editorial gates remain fail-closed."
+  "mode": "research-grounding-source-priority-final",
+  "note": "Final bounded rerun after prioritizing question-specific Wikipedia citation trails ahead of broad search results and expanding retrieval to twelve candidates per topic. Exact-topic relevance, three independent publishers, word-count, claim grounding and editorial gates remain mandatory; no production publish."
 }
