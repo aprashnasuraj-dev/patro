@@ -1,15 +1,3 @@
-# V14 — Accessible elder mode
+Internal documentation withheld from the public source distribution.
 
-Opt-in large transcript and hold-to-talk button. Pointer release/cancel, lost
-capture, blur and Space/Enter release stop recording. Late permission/start
-completion also stops after release. Existing TTS reads settled final text only
-when recording and uploads stop; manual read/stop controls remain accessible.
-No persistence; shared engine hint is the only additional storage read.
-
-## Preserved behaviours
-- [x] Standard editor, all controls, URLs, data and language defaults.
-- [x] Existing TTS and dictation contracts; no D1/CSP/calendar changes.
-
-## Validation and rollback
-TypeScript and hold lifecycle contract pass. Mocked browser acceptance and actual
-device testing are tracked separately. Revert this item; no migration.
+Authorized maintainers should use approved internal records for operational procedures, project plans, product specifications, release notes, and implementation details. Do not place credentials, private data, or access tokens in this file.

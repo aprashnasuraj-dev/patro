@@ -1,16 +1,3 @@
-# F5 — Local eclipse contacts
+Internal documentation withheld from the public source distribution.
 
-Explicit search uses astronomy-engine locally. Solar contacts carry horizon
-visibility; lunar contacts test local Moon altitude and rise during the eclipse.
-Contacts, coverage and native share/copy are available. Sutak is never displayed
-without the reviewed rule configuration. Public solar-safety text is included.
-No network/database call or storage write. Engine API reference:
-https://github.com/cosinekitty/astronomy/blob/master/source/js/README.md
-
-## Preserved behaviours
-- [x] All previous pages and official data; only saved-place users see the panel.
-- [x] Existing CSP, calendar algorithms, storage and API contracts unchanged.
-
-## Validation and rollback
-TypeScript, contact ordering, Cádiz 2027 totality reference and null-sutak tests
-pass. Revert this item or clear saved place. Religious signoff remains pending.
+Authorized maintainers should use approved internal records for operational procedures, project plans, product specifications, release notes, and implementation details. Do not place credentials, private data, or access tokens in this file.

@@ -1,14 +1,3 @@
-# V12 — Voice transcript to Preeti
+Internal documentation withheld from the public source distribution.
 
-An additive copy button lazy-loads packages/core/src/preeti.ts. Unicode transcript,
-ordinary Copy, Clear and spell-check handoff stay unchanged. Clipboard failures
-are visible; Preeti font selection and visual review are required. Existing
-converter mappings and their limitations are preserved. No new storage/network.
-
-## Preserved behaviours
-- [x] Existing transcript, controls, conversion engine and URLs/canonicals.
-- [x] Existing storage, archive values, CSP and D1 request counts.
-
-## Validation and rollback
-TypeScript and executable conversion/Latin-preservation contracts pass.
-Revert this item to remove the button; no migration or content rewrite.
+Authorized maintainers should use approved internal records for operational procedures, project plans, product specifications, release notes, and implementation details. Do not place credentials, private data, or access tokens in this file.
