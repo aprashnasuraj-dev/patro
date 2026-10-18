@@ -6,7 +6,7 @@ import {loadRegistry} from '../core/engine.mjs';import {loadAdapters} from '../c
 import {adapterFor,planParams,fetchEvidence} from '../research/data-apis.mjs';import {excerptsFrom} from '../research/scraper.mjs';
 import {BYLINE} from '../core/portfolio.mjs';import {cloudflareRenderer} from '../research/scraper.mjs';
 import {createHash} from 'node:crypto';
-import {makeLlmV2} from './llm.mjs';import {writeCompact} from './write-compact.mjs';import {decideV2} from './gate.mjs';import {discoverEvidence} from './discover.mjs';import {loadState} from './plan.mjs';
+import {makeLlmV2} from './llm.mjs';import {writeCompact} from './write-compact.mjs';import {decideV2} from './gate.mjs';import {discoverEvidence,isRelevantEvidence} from './discover.mjs';import {loadState} from './plan.mjs';
 const here=dirname(fileURLToPath(import.meta.url));
 const arg=(k,d)=>{const i=process.argv.indexOf('--'+k);return i<0?d:process.argv[i+1];};
 const TRANSIENT=/NO_PROVIDER|HTTP 429|HTTP 5\d\d|ETIMEDOUT|ECONNRESET|fetch failed|rate limit|timeout/i;
@@ -26,7 +26,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
   const meta=r.meta||{},title=meta.title||r.intent.replace(/^Answer:\s*/,''),question=meta.question||title,policyCfg=config.routes[row.route];
   const policy={min_sources:policyCfg.min_sources,min_words:policyCfg.min_words};const need=policy.min_sources;
   try{
-   let evidence=(evidenceByTopic.get(r.id)||[]).map(e=>({...e}));let changed=false;
+   let evidence=(evidenceByTopic.get(r.id)||[]).map(e=>({...e})).filter(e=>isRelevantEvidence(question,e));let changed=false;
    const addAll=items=>{const urls=new Set(evidence.map(e=>e.url));for(const it of items){if(!it?.url||urls.has(it.url)||!(it.excerpts||[]).length)continue;urls.add(it.url);evidence.push({...it,id:'s'+(evidence.length+1)});changed=true;stats.discovered_sources++;}};
    // structured topics: official dataset first (deterministic for REST Countries; planner call otherwise)
    const key=row.route==='structured'?adapterFor(meta.primary_api):null;
