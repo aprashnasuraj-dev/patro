@@ -1,26 +1,14 @@
-name: Mission Mangal generate (manual, sharded, automated approval; merge to main stays manual)
+name: Mission Mangal generate (5,000 pages, sharded, self-healing; merge to main stays manual)
 
 on:
   workflow_dispatch:
     inputs:
-      shards:
-        description: "Parallel shards (each job is capped at 360 min)"
-        default: "20"
-      deadline_minutes:
-        description: "Stop starting new topics after this many minutes (must leave time to upload)"
-        default: "335"
-      min_minutes:
-        description: "Spread each shard's topics over at least this many minutes (gentle on API quotas, no rush)"
-        default: "100"
-      auto_approve:
-        description: "Auto-approve drafts that pass automated gates (grounding, image+credit, uniqueness, length)"
-        default: "true"
-      allow_ymyl:
-        description: "Also auto-approve health/money topics (adds a not-professional-advice note)"
-        default: "false"
-      limit_per_shard:
-        description: "Optional cap on topics per shard (blank = all reserved)"
-        default: ""
+      shards:        { description: "Pass-1 shards (each job capped at 360 min)", default: "25" }
+      deadline_minutes: { description: "Stop starting new topics after N minutes (leave time for upload)", default: "335" }
+      min_minutes:   { description: "Spread each shard's topics over at least N minutes (gentle on quotas, never rushes)", default: "100" }
+      auto_approve:  { description: "Auto-approve drafts that pass automated gates", default: "true" }
+      allow_ymyl:    { description: "Also publish health/money topics (adds not-professional-advice note)", default: "false" }
+      limit_per_shard: { description: "Optional cap per shard (blank = all) - use 2 for a smoke test", default: "" }
 
 permissions:
   contents: read
@@ -29,94 +17,148 @@ concurrency:
   group: missionmangal-generate
   cancel-in-progress: false
 
+env:
+  GROQ_API_KEY: ${{ secrets.GROQ_API }}
+  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER }}
+  SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS }}
+  PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+  UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+  NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+  CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      list: ${{ steps.m.outputs.list }}
+      providers: ${{ steps.p.outputs.n }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node --test missionmangal/tests/*.test.mjs
-      - name: Plan sums to target and registry fits
+      - name: Registry sanity (5,000 reserved root URLs, no reserved-slug collisions)
         run: |
           node -e "
-          const p=require('./missionmangal/config/plan-3000.json');
-          const sum=p.clusters.reduce((a,c)=>a+c.quota,0);
-          if(sum!==p.core_target+p.buffer)throw Error('plan quotas '+sum+' != '+(p.core_target+p.buffer));
           const r=require('./missionmangal/config/portfolio.json');
-          console.log('plan '+sum+' | registry '+r.length+' | reserved '+r.filter(x=>x.status==='reserved').length);"
-      - id: matrix
+          const u=new Set(r.map(x=>x.url));if(u.size!==r.length)throw Error('duplicate urls');
+          console.log('registry',r.length,'reserved',r.filter(x=>x.status==='reserved').length);"
+      - id: p
+        name: Count configured LLM secrets (fail early instead of wasting hours)
         run: |
-          n=${{ inputs.shards }}
-          echo "list=$(node -e "console.log(JSON.stringify(Array.from({length:$n},(_,i)=>i)))")" >> "$GITHUB_OUTPUT"
-    outputs:
-      list: ${{ steps.matrix.outputs.list }}
+          n=0; for v in GROQ_API_KEY OPENROUTER_API_KEY SILICONFLOW_API_KEY GEMINI_API_KEY POLLINATIONS_API_KEY; do [ -n "${!v}" ] && n=$((n+1)); done
+          echo "n=$n" >> "$GITHUB_OUTPUT"; echo "LLM providers configured: $n"
+          [ "$n" -ge 1 ] || { echo "::error::No LLM secret configured. Add at least one of GROQ_API, OPENROUTER, SILICONFLOW_API, GEMINI_API_KEY, POLLINATIONS to the repo/environment secrets."; exit 1; }
+      - id: m
+        run: echo "list=$(node -e "console.log(JSON.stringify(Array.from({length:${{ inputs.shards }}},(_,i)=>i)))")" >> "$GITHUB_OUTPUT"
 
   generate:
     needs: validate
     runs-on: ubuntu-latest
-    timeout-minutes: 360            # GitHub-hosted job maximum
-    environment: mission-mangal-generation   # scope secrets + optional required reviewers here
+    timeout-minutes: 360
+    environment: mission-mangal-generation
+    permissions: { contents: write }          # checkpoint branches only (mm-state-shard-N)
     strategy:
-      fail-fast: false
+      fail-fast: false                        # one failing shard never stops the others
       max-parallel: 20
       matrix:
         shard: ${{ fromJson(needs.validate.outputs.list) }}
-    env:
-      # GitHub secret names allow only letters, digits and underscores. Recreate 'Gemini API Key' / 'healthy-crab api' accordingly.
-      GROQ_API_KEY: ${{ secrets.GROQ_API }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER }}
-      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS }}
-      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-      CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}   # optional JS-render fallback
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - name: Run shard
+      - name: Checkpoint loop (backup every 15 min)
+        run: |
+          ( while true; do sleep 900; GITHUB_TOKEN=${{ github.token }} bash missionmangal/scripts/checkpoint.sh ${{ matrix.shard }} || true; done ) &
+      - name: Run shard (pass 1)
+        continue-on-error: true               # still upload what exists
         run: >
-          node missionmangal/scripts/run-batch.mjs
-          --shard ${{ matrix.shard }} --shards ${{ inputs.shards }}
-          --deadline-minutes ${{ inputs.deadline_minutes }}
-          --min-minutes ${{ inputs.min_minutes }}
-          ${{ inputs.auto_approve == 'true' && '--auto-approve' || '' }}
-          ${{ inputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
+          node missionmangal/scripts/run-batch.mjs --shard ${{ matrix.shard }} --shards ${{ inputs.shards }} --attempt 1
+          --deadline-minutes ${{ inputs.deadline_minutes }} --min-minutes ${{ inputs.min_minutes }}
+          ${{ inputs.auto_approve == 'true' && '--auto-approve' || '' }} ${{ inputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
           ${{ inputs.limit_per_shard != '' && format('--limit {0}', inputs.limit_per_shard) || '' }}
+      - name: Final checkpoint
+        if: always()
+        run: GITHUB_TOKEN=${{ github.token }} bash missionmangal/scripts/checkpoint.sh ${{ matrix.shard }} || true
       - uses: actions/upload-artifact@v4
         if: always()
-        with:
-          name: shard-${{ matrix.shard }}
-          path: missionmangal/state/shard-${{ matrix.shard }}
-          retention-days: 14
-          if-no-files-found: ignore
+        with: { name: "shard-${{ matrix.shard }}", path: "missionmangal/state/shard-${{ matrix.shard }}", retention-days: 14, if-no-files-found: ignore }
 
-  merge:
-    needs: generate
-    if: always() && needs.generate.result != 'cancelled'
+  rescue:
+    # Backup plan #3: anything still reserved (transient API/LLM failures, thin evidence, deadline cut-offs) is retried with rotated shard
+    # assignment, a lower length bar (still fully grounded), and provider failover.
+    needs: [validate, generate]
+    if: always() && needs.validate.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write               # pushes ONLY to missionmangal-content, never main
+    timeout-minutes: 360
+    environment: mission-mangal-generation
+    permissions: { contents: write }
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: { shard: [0,1,2,3,4,5,6,7,8,9] }
     steps:
       - uses: actions/checkout@v4
-        with: { ref: missionmangal }
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - uses: actions/download-artifact@v4
-        with: { path: missionmangal/state, pattern: shard-*, merge-multiple: false }
-      - run: |
-          cd missionmangal/state && for d in shard-*/shard-*; do [ -d "$d" ] && mv "$d" . ; done; cd -
-          node missionmangal/scripts/merge-shards.mjs
-          node --test missionmangal/tests/*.test.mjs
-      - name: Commit drafts for human review
+        continue-on-error: true
+        with: { path: missionmangal/state-in, pattern: "shard-*" }
+      - name: Rebuild state (artifacts first, checkpoint branches as fallback)
         run: |
-          git config user.name "mission-mangal-bot"; git config user.email "bot@users.noreply.github.com"
-          rm -rf missionmangal/state/*/evidence.tmp
+          mkdir -p missionmangal/state
+          for d in missionmangal/state-in/shard-*; do [ -d "$d" ] && cp -r "$d" "missionmangal/state/$(basename $d)"; done || true
+          bash missionmangal/scripts/restore-checkpoints.sh ${{ inputs.shards }}
+          node missionmangal/scripts/merge-shards.mjs
+          rm -rf missionmangal/state-in
+      - name: Rescue pass
+        continue-on-error: true
+        run: >
+          node missionmangal/scripts/run-batch.mjs --shard ${{ matrix.shard }} --shards 10 --attempt 2
+          --deadline-minutes ${{ inputs.deadline_minutes }} --min-minutes 30
+          ${{ inputs.auto_approve == 'true' && '--auto-approve' || '' }} ${{ inputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
+          ${{ inputs.limit_per_shard != '' && format('--limit {0}', inputs.limit_per_shard) || '' }}
+      - name: Checkpoint rescue state
+        if: always()
+        run: |
+          mv missionmangal/state/shard-${{ matrix.shard }} missionmangal/state/rescue-${{ matrix.shard }} 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "rescue-${{ matrix.shard }}", path: "missionmangal/state/rescue-${{ matrix.shard }}", retention-days: 14, if-no-files-found: ignore }
+
+  finalize:
+    needs: [generate, rescue]
+    if: always() && needs.validate.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: missionmangal-3000-root-urls }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { path: missionmangal/state-in }
+      - name: Merge everything (artifacts, then checkpoint branches for any missing shard)
+        run: |
+          mkdir -p missionmangal/state
+          for d in missionmangal/state-in/*/; do cp -r "$d" "missionmangal/state/$(basename $d)"; done || true
+          bash missionmangal/scripts/restore-checkpoints.sh ${{ inputs.shards }}
+          node missionmangal/scripts/merge-shards.mjs
+          node missionmangal/scripts/validate-approved.mjs
+          rm -rf missionmangal/state-in
+      - name: Tests
+        run: node --test missionmangal/tests/*.test.mjs
+      - name: Commit for merge (branch missionmangal-content; main untouched)
+        run: |
+          git config user.name mission-mangal-bot; git config user.email bot@users.noreply.github.com
           git checkout -B missionmangal-content
-          git add missionmangal/config/portfolio.json missionmangal/content missionmangal/reports missionmangal/state
-          git diff --cached --quiet || git commit -m "Mission Mangal: drafts for human review (not approved, not published)"
+          git add missionmangal/config/portfolio.json missionmangal/content missionmangal/reports
+          git diff --cached --quiet || git commit -qm "Mission Mangal: generated pages (automated checks passed)"
           git push -f origin missionmangal-content
+          cat missionmangal/reports/final-report.json

@@ -1,6 +1,6 @@
 // Rights-aware image finder. A candidate is auto-accepted ONLY if the provider's own licence metadata is on the allowlist.
 // Sources: NASA Image Library, Wikimedia Commons, Openverse. Output carries visible credit + source link for small-print attribution.
-const OK_LIC=/^(cc0|public domain|pd\b|pdm|cc[- ]by([- ]sa)?\b(?![- ]n[cd]))/i;
+const OK_LIC=/^(cc0|public domain|pd\b|pdm|pexels license|unsplash license|cc[- ]by([- ]sa)?\b(?![- ]n[cd]))/i;
 const BAD_LIC=/\b(nc|nd|gfdl|fair use|all rights|non-?commercial|no derivatives)\b/i;
 export const licenceOk=l=>!!l&&OK_LIC.test(String(l).trim())&&!BAD_LIC.test(l);
 const strip=h=>String(h||'').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;|&#39;/g,"'").replace(/\s+/g,' ').trim();
@@ -20,4 +20,16 @@ export async function findImage(topic,{fetchImpl=fetch,used=new Set(),order=[nas
   const best=list.filter(c=>/^https:\/\//.test(c.url||'')&&!used.has(c.url)&&licenceOk(c.licence_raw)&&relevance(topic.query,c.text||c.title)>=minRelevance).sort((a,b)=>relevance(topic.query,b.text)-relevance(topic.query,a.text))[0];
   if(best)return {media:{type:'image',url:best.url,alt:('Image related to '+topic.title+': '+(best.title||topic.query)).slice(0,160),credit:best.credit,license:best.license,provider:best.provider,source_url:best.source_url,rights_verified:true,rights_basis:'provider licence metadata allowlist (automated)'},errors};}
  return {media:null,errors};
+}
+
+export async function met(q,f){const d=await get(f,'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isPublicDomain=true&q='+encodeURIComponent(q),UA);const out=[];
+ for(const id of (d.objectIDs||[]).slice(0,5)){try{const o=await get(f,'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+id,UA);if(o.isPublicDomain&&o.primaryImageSmall)out.push({provider:'The Met Open Access',url:o.primaryImageSmall,title:o.title,text:[o.title,o.objectName,o.culture,o.period,o.medium,o.tags?.map?.(t=>t.term).join(' ')].filter(Boolean).join(' '),credit:(o.artistDisplayName||'Unknown artist')+', '+(o.objectDate||''),license:'CC0 (Met Open Access)',source_url:o.objectURL,licence_raw:'cc0'});}catch{}}return out;}
+export const pexels=env=>async(q,f)=>{if(!env.PEXELS_API_KEY)throw Error('no key');const r=await f('https://api.pexels.com/v1/search?per_page=8&query='+encodeURIComponent(q),{headers:{authorization:env.PEXELS_API_KEY,'user-agent':UA}});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();return (d.photos||[]).map(p=>({provider:'Pexels',url:p.src.large2x||p.src.large,title:p.alt,text:p.alt,credit:p.photographer,license:'Pexels License',source_url:p.url,licence_raw:'Pexels License'}));};
+export const unsplash=env=>async(q,f)=>{if(!env.UNSPLASH_ACCESS_KEY)throw Error('no key');const r=await f('https://api.unsplash.com/search/photos?per_page=8&query='+encodeURIComponent(q),{headers:{authorization:'Client-ID '+env.UNSPLASH_ACCESS_KEY,'user-agent':UA}});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();return (d.results||[]).map(p=>({provider:'Unsplash',url:p.urls.regular,title:p.alt_description||p.description,text:(p.alt_description||'')+' '+(p.description||''),credit:p.user?.name,license:'Unsplash License',source_url:p.links?.html,licence_raw:'Unsplash License'}));};
+export function providerOrder(preferred,env=process.env){const all={'wikimedia commons api':commons,'the met collection':met,'the metropolitan museum of art':met,'pexels api':pexels(env),'unsplash api':unsplash(env),nasa:nasa};const base=[nasa,commons,met,pexels(env),unsplash(env),openverse];const first=all[String(preferred||'').toLowerCase()];return first?[first,...base.filter(x=>x!==first)]:base;}
+// Several distinct images per article: one query per section heading (plus the main question), global de-duplication, each with credit.
+export async function findImages(topic,{n=4,queries=[],fetchImpl=fetch,used=new Set(),order,minRelevance=0.34}={}){
+ const media=[],errors=[];const qs=[topic.query,...queries].filter(Boolean);
+ for(const q of qs){if(media.length>=n)break;const r=await findImage({query:q,title:topic.title},{fetchImpl,used,order,minRelevance});errors.push(...r.errors);if(r.media){used.add(r.media.url);media.push(r.media);}}
+ return {media,errors};
 }

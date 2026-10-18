@@ -8,7 +8,7 @@ export const ROOT_TYPE='topic';
 export const RESERVED_ROOT=Object.freeze(new Set(['api','compat-api','admin','admin-console','me','auth','index','sitemap','robots','assets','static','public','aap','advancetools','data','embed','festive','fonts','nepali-tools','nepali-typing','vendor','today','tools','jyotish','astro','convert','festivals','fm','janmadin','my-diary','on-this-day','rashifal','samachar','settings','time-machine','tv','abhyas','en','pariksha','shuddha','sikau','articles','blogs','facts','what','editorial-guidelines','favicon','manifest','sw','ads','login','logout','search','tag','category','page','feed','rss','wp-admin','404']));
 export const isType=t=>t===ROOT_TYPE||Object.hasOwn(ROUTES,t);
 export const folderFor=t=>t===ROOT_TYPE?'':ROUTES[t];
-export const BYLINE='AafnaiPatro Editor Team';
+export const BYLINE='Suraj Dahal';
 export function slugify(input){const s=String(input).normalize('NFKD').toLowerCase().replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,88).replace(/-+$/,'');if(!s)throw Error('Explicit English slug/transliteration required');return s;}
 export function safeSlug(s){return typeof s==='string'&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s)&&s.length<=88&&!['api','admin','index','sitemap'].includes(s);}
 export function pathFor(type,slug){if(!isType(type)||!safeSlug(slug))throw Error('Invalid content type/slug');if(type===ROOT_TYPE){if(RESERVED_ROOT.has(slug)||/^sitemap/.test(slug))throw Error('Reserved root slug: '+slug);return '/'+slug+'/';}return '/'+ROUTES[type]+'/'+slug+'/';}
