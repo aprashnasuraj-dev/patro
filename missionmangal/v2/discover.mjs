@@ -68,9 +68,10 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
  const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2)found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
- const rows=await extract(pick,{script:scriptPath,delayMs:disc.domain_delay_ms});const ok=new Set();
- for(const r of rows)if(r.ok&&r.text){ok.add(r.url);add(r.url,r.title,r.text,r.published,'scrapling');}
- for(const u of pick){if(found.length+evidence.length>=need+2)break;if(ok.has(u))continue;
+ const rows=await extract(pick,{script:scriptPath,delayMs:disc.domain_delay_ms});const ok=new Set(),policyBlocked=new Set();
+ for(const r of rows){if(r.ok&&r.text){ok.add(r.url);add(r.url,r.title,r.text,r.published,'scrapling');}
+  else if(/robots|redirect|non-public|local host|DNS resolution|opt-out|policy unknown/i.test(r.error||''))policyBlocked.add(r.url);}
+ for(const u of pick){if(found.length+evidence.length>=need+2)break;if(ok.has(u)||policyBlocked.has(u))continue;
   try{const s=await snapshot(u,{fetchImpl,renderer:render,now});if(s.excerpts.length>=2)found.push({title:s.title||hostOf(u),publisher:hostOf(u),author:null,published_at:s.published?String(s.published).slice(0,10):null,url:s.canonical||s.url,retrieved_at:s.retrieved_at,sha256:s.sha256,rendered:s.rendered,scraped:true,method:'snapshot',excerpts:s.excerpts});}catch(e){log('  snapshot '+hostOf(u)+': '+e.message);}}
  return found;
 }
