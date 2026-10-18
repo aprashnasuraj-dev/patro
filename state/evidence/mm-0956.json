@@ -1,0 +1,161 @@
+{
+  "id": "mm-0956",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Rockets and feathers: Why competition matters for petrol pricing",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "King, Stephen",
+      "published_at": "2015-01-20",
+      "url": "https://theconversation.com/rockets-and-feathers-why-competition-matters-for-petrol-pricing-36489",
+      "retrieved_at": "2026-10-18T16:17:40.705Z",
+      "sha256": "a48988dab705bf73598e13ac28cefc6b5ddae4a90f23d9fe97fe8901642583d4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Petrol provides a great example of the effects of local competition.",
+        "Costco entered the Sydney market selling petrol about a bit over a year ago.",
+        "But if the Costco outlet is close to you, then it matters a lot.",
+        "Following a reader’s comment, I started to track the effect of Costco’s price on the local petrol market around Casula in Sydney’s west.",
+        "For example, in March last year, motorists could save between 3 to 8 cents per litre by filling up at Costco rather than an alternative outside the ‘Liverpool’ area.",
+        "And the savings were even bigger if you filled up at Costco rather than, say, on the north shore, where the gap could be up to 20 cents per litre.",
+        "Now, few people are going to drive from Lane Cove to Casula just to save $5 to $10 on a tank of petrol.",
+        "The time, effort and fuel used up would eliminate most of the gain.",
+        "So the real interest from Costco’s petrol pricing is on local competition.",
+        "Not only could you save by buying petrol from Costco, you could also save, for example, by buying petrol at Woolworths in Prestons compared to Woolworths in Seven Hills.",
+        "Costco’s discount petrol not only drives down its price, but its immediate competitors have to follow it down.",
+        "But, as the Australian Competition and Consumer Commission has long argued, competition occurs in local petrol markets."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A staged launch rocket computer model",
+      "publisher": "Journal of Production and Automation (JPAUT)",
+      "author": "Mariana da Cruz de Souza; A. Hetem",
+      "published_at": "2023-12-21",
+      "url": "https://openalex.org/W7220521382",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "aa82178b0683f4c4e53d9a52219e1e63899c7171fe0f2357549ff73e3afd51fc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this work, studies were developed based on specialized bibliography and computational models to create a staged rocket simulator, with the aim of developing a teaching tool.",
+        "A staged rocket is a vehicle that uses two or more stages, each of which contains its own engines and propellants.",
+        "The effective result is equivalent to two or more rockets that, taken together, are often called a launch vehicle.",
+        "Two-stage rockets are very common but launch vehicles with up to five stages have been used.",
+        "Discarding the lower stages (already exhausted) reduces the mass of the rocket, which allows the remaining stages to accelerate the rocket more easily to its final speed and altitude.",
+        "This work brings together some pedagogical axes, seeking important aspects of the training of an aerospace engineer: creativity and innovation, application guidance, practice of teamwork, systemic and collaborative and immersion in academic and cultural diversity."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Taming Liquid Hydrogen: The Centaur Upper Stage Rocket 1958-2002",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "author": "Mark D. Bowles; Virginia P. Dawson",
+      "published_at": "2004-07-02",
+      "url": "https://openalex.org/W853512944",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "fca187f36464fbb5a7a0199cfbe51dd8335d498fcdaae5d8f6a416b8e0f6be47",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Centaur is one of the most powerful rockets in the world.",
+        "As an upper-stage rocket for the Atlas and Titan boosters it has been a reliable workhorse for NASA for over forty years and has played an essential role in many of NASA's adventures into space.",
+        "In this CD-ROM you will be able to explore the Centaur's history in various rooms to this virtual museum.",
+        "Visit the \"Movie Theater\" to enjoy several video documentaries on the Centaur.",
+        "Enter the \"Interview Booth\" to hear and read interviews with scientists and engineers closely responsible for building and operating the rocket.",
+        "Go to the \"Photo Gallery\" to look at numerous photos of the rocket throughout its history.",
+        "Wander into the \"Centaur Library\" to read various primary documents of the Centaur program.",
+        "Finally, stop by the \"Observation Deck\" to watch a virtual Centaur in flight."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Single-stage-to-orbit",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29398",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "b0a4fa5662f84fafabffe7c6dce9e2babec3fb1af0575122757c91592e00faaa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A single-stage-to-orbit (SSTO) vehicle reaches orbit from the surface of a body using only propellants and fluids and without expending tanks, engines, or other major hardware.",
+        "The term usually, but not exclusively, refers to reusable vehicles.",
+        "To date, no Earth-launched SSTO launch vehicles have ever been flown; orbital launches from Earth have been performed by multi-stage rockets, either fully or partially expendable.",
+        "The main projected advantage of the SSTO concept is elimination of the hardware replacement inherent in expendable launch systems.",
+        "However, the non-recurring costs associated with design, development, research and engineering (DDR&E) of reusable SSTO systems are much higher than expendable systems due to the substantial technical challenges of SSTO, assuming that those technical issues can in fact be solved.",
+        "SSTO vehicles may also require a significantly higher degree of regular maintenance.",
+        "It is considered to be marginally possible to launch a single-stage-to-orbit chemically fueled spacecraft from Earth.",
+        "Advances in rocketry in the 21st century have resulted in a substantial fall in the cost to launch a kilogram of payload to either low Earth orbit or the International Space Station, reducing the main projected advantage of the SSTO concept.",
+        "However, despite showing some promise, none of them have come close to achieving orbit yet due to problems with finding a sufficiently efficient propulsion system and discontinued development."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Multistage rocket",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=402018",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "8343b76da6c91b0bbf0a50b554969fad1c0745c503045a09fed4aa02638964e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A multistage rocket or step rocket is a launch vehicle that uses two or more rocket stages, each of which contains its own engines and propellant.",
+        "A tandem or serial stage is mounted on top of another stage; a parallel stage is attached alongside another stage.",
+        "The result is effectively two or more rockets stacked on top of or attached next to each other.",
+        "Two-stage rockets are common, but rockets with as many as five separate stages have been successfully launched.",
+        "By jettisoning stages when they run out of propellant, the mass of the remaining rocket is decreased.",
+        "Each successive stage can also be optimized for its specific operating conditions, such as decreased atmospheric pressure at higher altitudes.",
+        "This staging allows the thrust of the remaining stages to more easily accelerate the rocket to its final velocity and height by Newton's First Law.",
+        "In serial or tandem staging schemes, the first stage is at the bottom and is usually the largest, the second stage and subsequent upper stages are above it, usually decreasing in size.",
+        "In parallel staging schemes solid or liquid rocket boosters are used to assist with launch.",
+        "In the typical case, the first-stage and booster engines fire to propel the entire rocket upwards.",
+        "When the boosters run out of fuel, they are detached from the rest of the rocket (usually with some kind of small explosive charge or explosive bolts) and fall away.",
+        "This leaves a smaller rocket, with the second stage on the bottom, which then fires."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Liquid rocket propellant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1078982",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "ac3b7ea22e6d542c6cbf3c2c85be721a527fd31a4bc346bfdaf21fc4a8e71319",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The highest specific impulse chemical rockets use liquid propellants (liquid-propellant rockets).",
+        "They can consist of a single chemical (a monopropellant) or a mix of two chemicals, called bipropellants.",
+        "Bipropellants can further be divided into two categories; hypergolic propellants, which ignite when the fuel and oxidizer make contact, and non-hypergolic propellants which require an ignition source.",
+        "About 170 different propellants made of liquid fuel have been tested, excluding minor changes to a specific propellant such as propellant additives, corrosion inhibitors, or stabilizers.",
+        "alone at least 25 different propellant combinations have been flown.",
+        "Many factors go into choosing a propellant for a liquid-propellant rocket engine.",
+        "The primary factors include ease of operation, cost, hazards/environment and performance."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "R-7 (rocket family)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16829787",
+      "retrieved_at": "2026-10-18T16:17:40.706Z",
+      "sha256": "bd87d333691e2ed2b6cbd6a540e20c9bfa1ad890a8902591dcb7328fc73f1098",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The R-7 (Russian: Р-7) rocket family is a series of launch vehicles descended from the Soviet R-7 Semyorka, developed in the 1950s as the world's first intercontinental ballistic missile (ICBM).",
+        "While the R-7 proved impractical as a weapon, it became a cornerstone of the Soviet and subsequent Russian space programs.",
+        "Over time, its design was largely standardized into the Soyuz rocket, which continues to operate in its modernized form, the Soyuz-2.",
+        "More R-7 rockets have been launched than any other family of orbital rockets."
+      ]
+    }
+  ]
+}

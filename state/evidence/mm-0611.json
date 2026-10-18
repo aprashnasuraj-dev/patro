@@ -1,0 +1,219 @@
+{
+  "id": "mm-0611",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Phantom Words",
+      "publisher": "Oxford University Press",
+      "author": "Deutsch, Diana",
+      "published_at": "2019-06-20",
+      "url": "https://doi.org/10.1093/oso/9780190206833.003.0008",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "9475711edce51df10572b20d59a2bdc296b65ccb932576f827f41e05ee677ef7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chapter 7 discusses the fact that when listening to speech, the words and phrases we hear are strongly influenced by our knowledge, beliefs, and expectations.",
+        "We therefore often mishear words and phrases, and are subject to compelling illusions.",
+        "One illusion that was created by the author is called phantom words, and examples of this illusion are presented.",
+        "A sequence is played consisting of two words, or a single word composed of two syllables, and these are repeated many times.",
+        "The same sequence is presented via two stereo loudspeakers, but offset in time so that when the first sound is coming from the speaker on the left, the second sound is coming from the speaker on the right, and vice versa.",
+        "Because the signals from the two speakers are mixed in the air, we can create in our minds many different combinations of sounds.",
+        "Many people initially hear a jumble of meaningless sounds, but distinct words and phrases later emerge, followed by new words and phrases.",
+        "Nonsense words and musical sounds sometimes appear mixed in with meaningful words.",
+        "The words and phrases often appear to be spoken in strange or “foreign” accents—presumably listeners are perceptually organizing the sounds into words and phrases that are meaningful to them, even though they appear distorted in consequence.",
+        "These phantom words are similar to those reported by people who believe they come from the spirit world.",
+        "Also discussed is the technique of recording spoken phrases backward and playing them forward, leading to the claim that satanic messages can be heard from these recordings."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Some Musical Illusions Are Discovered",
+      "publisher": "Oxford University Press",
+      "author": "Deutsch, Diana",
+      "published_at": "2019-06-20",
+      "url": "https://doi.org/10.1093/oso/9780190206833.003.0003",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "0e857f83ab8eac16ea3dc9ce9775bc99b3003a4f308a4c2f7f801bef739f937e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chapter 2 focuses on musical illusions that involve stereo sounds that were discovered by the author.",
+        "In each illusion, two simultaneous streams of tones are played, one to the listener’s right and the other to their left.",
+        "The tones are perceptually reorganized in space, so that the melodies we hear are quite different from those that are really being played.",
+        "Most people tend to hear the higher tones as coming from their right and the lower tones as coming from their left, but other people hear the illusions differently.",
+        "These perceptual differences depend statistically on the listener’s handedness, so that left-handers are more likely than right-handers to obtain different illusions.",
+        "So not only do we hear these patterns “wrongly,” but we also hear them differently from each other.",
+        "The illusions also show that listeners are strongly influenced by their assumptions concerning what is likely to occur—termed unconscious inference or top-down processing .",
+        "In each illusion, sequences coming from both the right and the left channels consist of tones that leap around in pitch.",
+        "However, listeners instead create in their minds patterns that do not really exist: They perceive two smooth melodies, each in a different pitch range.",
+        "The illusions are not simply quirks of artificial sounds generated in the laboratory.",
+        "Instead, related effects occur in music that is produced by natural instrument sounds, and can even be found in conventional orchestral music."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How a Brain Sees: Constructing Reality",
+      "publisher": "Oxford University Press",
+      "author": "Grossberg, Stephen",
+      "published_at": "2021-06-25",
+      "url": "https://doi.org/10.1093/oso/9780190070557.003.0003",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "75dd398e3ec09ca41995354736ba9f2a1c60b7140313f47b1e46e1ebf2c432e6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Why we do not see the big holes in, and occluders of, our retinas that block light from reaching our photoreceptors is explained, leading to the realization that essentially all percepts are visual illusions.",
+        "The computationally complementary properties of boundary completion and surface filling-in are introduced and their unifying explanatory power is illustrated, including that “all conscious qualia are surface percepts”.",
+        "Neon color spreading provides a vivid example, as do self-luminous, glary, and glossy percepts.",
+        "How brains embody general-purpose self-organizing architectures for solving modal problems, more general than AI algorithms, but less general than digital computers, is described.",
+        "New concepts and mechanisms of such architectures are explained, including hierarchical resolution of uncertainty.",
+        "Examples from the visual arts and technology are described to illustrate them, including paintings of Baer, Banksy, Bleckner, da Vinci, Gene Davis, Hawthorne, Hensche, Matisse, Monet, Olitski, Seurat, and Stella.",
+        "Paintings by different artists and artistic schools instinctively emphasize some brain processes over others.",
+        "The role of perspective, T-junctions, and end gaps are used to explain how 2D pictures can induce percepts of 3D scenes."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Musical Illusions and Phantom Words",
+      "publisher": "Oxford University Press",
+      "author": "Deutsch, Diana",
+      "published_at": "2019-06-20",
+      "url": "https://doi.org/10.1093/oso/9780190206833.001.0001",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "355f5744b886a34684ac2439b6a24dc67b84a04ebf06c9f0a68996d13ee8fe81",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this groundbreaking synthesis of art and science, Diana Deutsch, one of the world’s leading experts on the psychology of music, shows how illusions of music and speech – many of which she discovered - have fundamentally altered thinking about the brain.",
+        "These astonishing illusions show that people can differ strikingly in how they hear musical patterns - differences that reflect both variations in brain organization and influences of language on music perception.",
+        "They lead Deutsch to examine questions such as: When an orchestra performs a symphony, what is the ‘real’ music?",
+        "Is it in the mind of the composer, or the conductor, or different members of the audience?",
+        "Deutsch also explores extremes of musical ability, and other rare responses to music and speech.",
+        "Why do we hear a spoken phrase as sung just because it is presented repeatedly?",
+        "In evaluating these questions, she also shows how music and speech are intertwined, and argues that they stem from an early form of communication that had elements of both.",
+        "Many of the illusions described here are so striking and paradoxical that you need to hear them to believe them.",
+        "So the book enables you to listen to the sounds that are described while reading about them."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Optical Illusions: What Are They, and Why Do They Occur?",
+      "publisher": "Illinois Digital Environment for Access to Learning and Scholarship (University of Illinois at Urbana-Champaign)",
+      "author": "Ananya Sampathkumar",
+      "published_at": "2024-01-01",
+      "url": "https://openalex.org/W7220760647",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "55e8a68dd089c5bb36db0342d158b1e6924e37382610fba5e4702e965bc4bcd8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Optical illusions are commonly used in psychology classes in order to show how the brain can be easily manipulated.",
+        "These illusions all target different parts of the visual pathway.",
+        "As a result, researchers are able to find the specific reasons for some illusions, such as the Hermann Grid.",
+        "However, scientists currently have no specific reason that all illusions trick us.",
+        "As further research is done, optical illusions will be better understood, and scientists will be able to use them to further understand the visual pathway."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Studying Geometric Optical Illusions through the Lens of a Convolutional Neural Network",
+      "publisher": "Scholarship - Claremont (Claremont Colleges)",
+      "author": "Nick LaBerge",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W2949199735",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "41cfbbb11eb14aa5addb13dd00f96296f83401321d6ee56b8f9b46a7f8b4f055",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Geometrical optical illusions such as the Muller Lyer illusion and the Ponzo illusion have been widely researched over the past 100+ years, yet researchers have not reached a consensus on why human perception is deceived by these illusions or which illusions are the results of the same effects.",
+        "In this paper, I study these illusions through the lens of a convolutional neural network.",
+        "First, I successfully train the network to correctly classify how a human would perceive a particular class of illusion (such as the Muller Lyer illusion), then I test the network’s ability to generalize to illusions that it was not trained on (like the Ponzo illusion).",
+        "Tests to better understand how the network learns to classify these illusions suggest the networks are checking for image data in specific ‘activation regions’ in order to make classifications rather than analyzing the entire illusions."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Optical illusion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53497",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "eff948a791b064dcee07c48f55dd27a78bb240c3647309244ae000f67ce7eacf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In visual perception, an optical illusion (also called a visual illusion) is an illusion caused by the visual system and characterized by a visual percept that arguably appears to differ from reality.",
+        "Illusions come in a wide variety; their categorization is difficult because the underlying cause is often not clear but a classification proposed by Richard Gregory is useful as an orientation.",
+        "According to that, there are three main classes: physical, physiological, and cognitive illusions, and in each class there are four kinds: Ambiguities, distortions, paradoxes, and fictions.",
+        "A classical example for a physical distortion would be the apparent bending of a stick half immersed in water; an example for a physiological paradox is the motion aftereffect (where, despite movement, position remains unchanged).",
+        "Three typical cognitive distortions are the Ponzo, Poggendorff, and Müller-Lyer illusion.",
+        "Cognitive visual illusions are the result of unconscious inferences and are perhaps those most widely known.",
+        "Pathological visual illusions arise from pathological changes in the physiological visual perception mechanisms causing the aforementioned types of illusions; they are discussed e.g.",
+        "Optical illusions, as well as multi-sensory illusions involving visual perception, can also be used in the monitoring and rehabilitation of some psychological disorders, including phantom limb syndrome and schizophrenia."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Auditory illusion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=89798",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "dd17ef86c4726e654f01217d2b9a88dab79c3873459aba7943153d8278809e7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Auditory illusions are illusions of real sound or outside stimulus.",
+        "These false perceptions are the equivalent of an optical illusion: the listener hears either sounds which are not present in the stimulus, or sounds that should not be possible given the circumstance on how they were created.",
+        "Humans are fairly susceptible to illusions, despite an innate ability to process complex stimuli.",
+        "Confirmation bias is believed to be largely responsible for the inaccurate judgments that people make when evaluating information, given that humans typically interpret and recall information that appeals to their own biases.",
+        "Amongst these misinterpretations, known as illusions, falls the category of auditory illusions.",
+        "The brain uses multiple senses simultaneously to process information, \nspatial information is processed with greater detail and accuracy in vision than in hearing.",
+        "Auditory illusions highlight areas where the human ear and brain, as organic survival tools, differentiate from perfect audio receptors; this shows that it is possible for a human being to hear something that is not there and be able to react to the sound they supposedly heard.",
+        "When someone is experiencing an auditory illusion, their brain is falsely interpreting its surroundings and distorting their perception of the world around them."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Spatial disorientation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=888928",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "fa2d825b62f08e955be7ec242d70c7d78c591678c7730a6adb2bbb16d6134104",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Spatial disorientation is the inability to determine position or relative motion, commonly occurring during periods of challenging visibility, since vision is the dominant sense for orientation.",
+        "In aviation, spatial disorientation can result in improper perception of the attitude of the aircraft, referring to the orientation of the aircraft relative to the horizon.",
+        "If a pilot relies on this improper perception, this can result in inadvertent turning, ascending or descending.",
+        "For aviators, proper recognition of aircraft attitude is most critical at night or in poor weather, when there is no visible horizon; in these conditions, aviators may determine aircraft attitude by reference to an attitude indicator.",
+        "Spatial disorientation can occur in other situations where visibility is reduced, such as diving operations."
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Jastrow illusion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2176490",
+      "retrieved_at": "2026-10-18T15:21:38.112Z",
+      "sha256": "daac23d7936bca91f3ee93ab83dda76fa9d739bdfea6cea76ee4ffa4d793bcf9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Jastrow illusion is an optical illusion attributed to the Polish-American psychologist Joseph Jastrow.",
+        "This optical illusion is known under different names: Ring-Segment illusion, Jastrow illusion, Wundt Area illusion, Wundt-Jastrow illusion, or the Boomerang Illusion.",
+        "The two toy railway tracks pictured are identical, although the lower one appears to be larger.",
+        "There are three competing theories on how this illusion occurs.",
+        "This illusion is often included in magic kits and several versions are sold in magic shops, where it is commonly known under the name Boomerang Illusion."
+      ]
+    }
+  ]
+}

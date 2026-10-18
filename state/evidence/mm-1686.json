@@ -1,0 +1,101 @@
+{
+  "id": "mm-1686",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Global Positioning System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11866",
+      "retrieved_at": "2026-10-18T17:21:05.759Z",
+      "sha256": "88cbbfbfe880b983ecb22ef1ae89635b56338e332add3f4b376cc24a10644257",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Global Positioning System (GPS) is a satellite-based hyperbolic navigation system owned by the United States Space Force and operated by Mission Delta 31.",
+        "It is one of the global navigation satellite systems (GNSS) that provide geolocation and time information to a GPS receiver anywhere on or near the Earth where signal quality permits.",
+        "It does not require the user to transmit any data, and operates independently of any telephone or Internet reception, though these technologies can enhance the usefulness of the GPS positioning information.",
+        "It provides critical positioning capabilities to military, civil, and commercial users around the world.",
+        "Although the United States government created, controls, and maintains GPS, it is freely accessible to anyone with a GPS receiver.",
+        "The prototype spacecraft was launched in 1978 and the ultimate constellation of 24 satellites became operational in 1993.",
+        "After Korean Air Lines Flight 007 was shot down when it mistakenly entered Soviet airspace, President Ronald Reagan made the GPS system available for civilian use as of 1988.",
+        "Initially civilian use was limited to an average accuracy of 100 meters (330 ft) by use of Selective Availability (SA), a deliberate error introduced into the GPS data that military receivers could correct.",
+        "As civilian GPS usage grew, pressure grew to remove this limitation.",
+        "The SA system was temporarily disabled during the Gulf War, as a shortage of military GPS units meant that many US soldiers were using civilian GPS units.",
+        "In the 1990s, differential GPS systems from the US Coast Guard, Federal Aviation Administration, and similar agencies in other countries began to broadcast local GPS corrections, reducing the effect of both SA degradation and atmospheric effects (that military receivers also corrected).",
+        "The military also developed methods to perform local GPS jamming, eliminating the need to globally degrade the system."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "General relativity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12024",
+      "retrieved_at": "2026-10-18T17:21:05.759Z",
+      "sha256": "8cdfcfffa3a5dc99baa1e67e30822c1a54f5a537b24df1059dc6eee7a16e949e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "General relativity, also known as the general theory of relativity, and as Einstein's theory of gravity, is the geometric theory of gravitation published by Albert Einstein in May 1916 and is the accepted description of the gravitation of macroscopic objects in modern physics.",
+        "General relativity generalizes special relativity and refines Isaac Newton's law of universal gravitation, providing a unified description of gravity as a geometric property of space and time, or four-dimensional spacetime.",
+        "In particular, the curvature of spacetime is directly related to the energy, momentum, and stress of whatever is present, including matter and radiation.",
+        "The relation is specified by the Einstein field equations, a system of second-order partial differential equations.",
+        "Some predictions of general relativity, however, are beyond Newton's law of universal gravitation in classical physics.",
+        "These predictions concern the passage of time, the geometry of space, the motion of bodies in free fall, and the propagation of light, and include gravitational time dilation, gravitational lensing, the gravitational redshift of light, the Shapiro time delay, singularities and black holes.",
+        "So far, all tests of general relativity have been in agreement with the theory.",
+        "The time-dependent solutions of general relativity enable us to extrapolate the history of the universe into the past and future, and have provided the modern framework for cosmology, thus leading to the discovery of the Big Bang and cosmic microwave background radiation.",
+        "Despite the introduction of a number of alternative theories, general relativity continues to be the simplest theory consistent with experimental data.",
+        "Reconciliation of general relativity with the laws of quantum physics remains a problem, however, as no self-consistent theory of quantum gravity has been found.",
+        "It is not yet known how gravity can be unified with the three non-gravitational interactions: strong, weak and electromagnetic.",
+        "Einstein's theory has astrophysical implications, including the prediction of black holes—regions of space in which space and time are distorted in such a way that nothing, not even light, can escape from them."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Speed of light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28736",
+      "retrieved_at": "2026-10-18T17:21:05.759Z",
+      "sha256": "2b6478600ea0b6342311bfd6df45ca6b9a3496c3750440527749f24afa34e48f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Light travels at slower speed inside materials like glass or water; its highest speed is in a vacuum.",
+        "The speed of light in vacuum is a universal physical constant denoted c (in ISO and IEC standards \n  \n    \n      \n        \n          c\n          \n            0\n          \n        \n      \n    \n    {\\displaystyle c_{0}}\n  \n),  exactly equal to 299792458 m⋅s−1.",
+        "It is exact because, by international agreement, a metre is defined as the length of the path travelled by light in vacuum during a time interval of 1⁄299792458 second.",
+        "The value 299,792,458 metres per second is approximately 1 billion kilometres per hour; 700 million miles per hour.",
+        "For other approximations of c, valid for various units and size scales see the infobox.",
+        "The shorter form, speed of light, means speed of light in vacuum in any context where the vacuum is implied.",
+        "All forms of electromagnetic radiation, including visible light, travel in vacuum at the speed c as do massless particles and field perturbations, such as gravitational waves.",
+        "The speed of light in vacuum is the same for all observers, no matter their relative velocity.",
+        "As a result, massless particles and waves travel at c in a vacuum regardless of the motion of the source or the inertial reference frame of the observer.",
+        "The speed of light in vacuum is the upper limit for the speed at which information, matter, or energy can travel through space.",
+        "Particles with nonzero rest mass can be accelerated to approach c but can never reach it, regardless of the frame of reference in which their speed is measured.",
+        "For long distances and sensitive measurements, the finite speed of light has noticeable effects."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Time dilation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=297839",
+      "retrieved_at": "2026-10-18T17:21:05.759Z",
+      "sha256": "e6837846b3c718134d96f357e533dab11efb258c3a6acac37aa2ac0bd84d0170",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Time dilation is the difference in elapsed time as measured by two clocks, either because of a relative velocity, a consequence of special relativity, or a difference in gravitational potential between their locations due to gravitational time dilation.",
+        "When unspecified, \"time dilation\" usually refers to the effect due to velocity.",
+        "The dilation compares co-moving clock readings between events measured in different inertial frames and is not observed by visual comparison of clocks across moving frames.",
+        "These predictions of the theory of relativity have been repeatedly confirmed by experiment, and they are of practical concern, for instance in the operation of satellite navigation systems such as GPS and Galileo."
+      ]
+    }
+  ]
+}

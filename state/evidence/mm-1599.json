@@ -1,0 +1,125 @@
+{
+  "id": "mm-1599",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Flamenco Became Art",
+      "publisher": "Yale University Press",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.2307/j.ctt1xp3s6b.14",
+      "retrieved_at": "2026-10-18T17:17:02.874Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "When and How Contemporary Art Became Political",
+      "publisher": "Yale University Press",
+      "author": null,
+      "published_at": "2023-11-14",
+      "url": "https://doi.org/10.2307/jj.7583924.5",
+      "retrieved_at": "2026-10-18T17:17:03.165Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Origami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52293",
+      "retrieved_at": "2026-10-18T17:17:04.013Z",
+      "sha256": "4dc5bec5abbeabaebe83d02e24f68bd569ee032f9576d5ebd2987f35b21dcbe6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It also refers to the two- and three-dimensional forms created in the process.",
+        "The use of the term has been extended in modern times to include other materials such as metal, textiles, and it is also used in the biological sciences to describe folded structures like DNA.",
+        "Although the word origami has Japanese roots, the practice itself is universal and its origin remains unknown.",
+        "The goal is to transform a flat square sheet of paper into a finished sculpture through folding and sculpting techniques.",
+        "Modern origami practitioners generally discourage the use of cuts, glue, or markings on the paper.",
+        "Origami folders often use the Japanese word kirigami to refer to designs which use cuts.",
+        "In the detailed Japanese classification, origami is divided into stylized ceremonial origami (儀礼折り紙, girei origami) and recreational origami (遊戯折り紙, yūgi origami), and only recreational origami is generally recognized as origami.",
+        "In Japan, ceremonial origami is generally called \"origata\" (ja:折形) to distinguish it from recreational origami.",
+        "The small number of basic origami folds can be combined in a variety of ways to make intricate designs.",
+        "In general, these designs begin with a square sheet of paper whose sides may be of different colors, prints, or patterns.",
+        "Traditional Japanese origami, which has been practiced since the Edo period (1603–1868), has often been less strict about these conventions, sometimes cutting the paper or using nonsquare shapes to start with.",
+        "The principles of origami are also used in stents, packaging, and other engineering applications."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Chinese paper folding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=846692",
+      "retrieved_at": "2026-10-18T17:17:04.013Z",
+      "sha256": "3c73725003f5989ddd2991dbd7f65897a5d72045bb877a0e014085b5f2c14d32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chinese paper folding, or zhezhi (摺紙), is the art of paper folding that originated in medieval China.",
+        "The work of 20th-century Japanese paper artist Akira Yoshizawa widely popularized the Japanese word origami; however, in China and other Chinese-speaking areas, the art is referred to by the Chinese name, zhezhi.",
+        "Traditional Chinese paper folding concentrates mainly on objects like boats or hats rather than the animals and flowers of Japanese origami.",
+        "A recent innovation is from the Golden Venture migrants where large representational objects are made from modular forms."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "History of origami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5762265",
+      "retrieved_at": "2026-10-18T17:17:04.013Z",
+      "sha256": "a292b648a03952d6fd369c4bbd9419c5cc158404c79d0153dd2561aa3751bc23",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of origami followed after the invention of paper and was a result of paper's use in society.",
+        "In the detailed Japanese classification, origami is divided into stylized ceremonial origami (儀礼折り紙, girei origami) and recreational origami (遊戯折り紙, yūgi origami), and only recreational origami is generally recognized as origami.",
+        "However, this page describes the history of both ceremonial and recreational origami.",
+        "The modern growth of interest in origami dates to the design in 1954 by Akira Yoshizawa of a notation to indicate how to fold origami models.",
+        "Today the popularity of origami has given rise to origami societies such as the British Origami Society and OrigamiUSA.",
+        "The first known origami social group was founded in Zaragoza, Spain during the 1940s."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Lillian Oppenheimer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8711511",
+      "retrieved_at": "2026-10-18T17:17:04.013Z",
+      "sha256": "e4f3423381589cbcd8471f7ba68c86fcc849a976659f5046431cbd19e04a3e6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lillian Vorhaus Oppenheimer (née Lillian Rose Vorhaus, formerly Lillian Vorhaus Kruskal; October 24, 1898 – July 24, 1992) was an American origami pioneer from New York City.",
+        "During the latter half of her life, Oppenheimer became a leading figure in origami and is credited with popularizing the art form in the United States.",
+        "She adopted the Japanese word origami because she liked the sound of it and felt like the English term paper folding was too vague.",
+        "In 1928, Oppenheimer entertained her sick daughter with an origami book.",
+        "After reading Robert Harbin's Paper Magic (1956), Oppenheimer stopped thinking of origami only as a pastime and began to consider it an art form in its own right.",
+        "She began to teach origami professionally and corresponded with prominent paper folders, including Akira Yoshizawa of Japan and Ligia Montoya of Argentina.",
+        "In 1958, The New York Times ran an article on Oppenheimer which gave origami more publicity in the U.S.",
+        "To capitalize on the attention, Oppenheimer started holding regular lessons in New York City and dubbed her informal group \"the Origami Center\".",
+        "In 1980, Oppenheimer and her colleagues established The Friends of The Origami Center of America, a nonprofit sister organization.",
+        "The Friends were renamed OrigamiUSA in 1994 and is the main origami organization in the United States, with numerous regional branches."
+      ]
+    }
+  ]
+}

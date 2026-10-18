@@ -1,0 +1,131 @@
+{
+  "id": "mm-0878",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Trailing the One-Horned Wonder",
+      "publisher": "Oxford University Press",
+      "author": "Bose, Shibani",
+      "published_at": "2020-07-02",
+      "url": "https://doi.org/10.1093/oso/9780190120412.003.0002",
+      "retrieved_at": "2026-10-18T16:04:35.034Z",
+      "sha256": "cf0665bfd3af3430504534b32847a2cb18f635dd1542069b2832e21b80a24526",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The rhinoceros has received scant attention in wildlife histories as against the iconic status enjoyed by elephants, cheetahs, and lions.",
+        "The narrative helps us map the geographical retreat of the animal to its present-day havens.",
+        "The details of this retreat are integral to understanding aspects of the environmental history of ancient India."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Economic Incentives and Poaching of the One-Horned Indian Rhinoceros in Nepal: Poaching of the One-Horned Indian Rhinoceros in the Chitwan Valley, Nepal - a Retrospective Econometric Analysis",
+      "publisher": "Elsevier BV",
+      "author": "Poudyal, Mahesh; Knowler, Duncan",
+      "published_at": "2005",
+      "url": "https://doi.org/10.2139/ssrn.849286",
+      "retrieved_at": "2026-10-18T16:04:35.034Z",
+      "sha256": "ee6dbbc39441ebfe3ced9c12403b5db6e28ece13f4a4f5b21b6f9587c0e97e5c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Despite a relatively successful conservation programme for the endangered one-horned rhinoceros in the National Parks of the Terai region, poaching remains one of the major threats to its survival in Nepal.",
+        "In recent years, there has been an alarming rise in the number of rhinos poached; over 100 rhinos were taken in and around the Royal Chitwan National Park (RCNP) between 1998 and 2003.",
+        "Although rhino poaching levels are influenced by the price of rhino horn on the international black market (amongst a host of other socio-economic factors), there have not been any attempts to study the reasons behind poaching in Nepal using econometric models developed and applied elsewhere.",
+        "This study uses econometric models to explain changes in the level of poaching in the RCNP over a 30-year period.",
+        "The results indicate that anti-poaching units (APUs), in their original organisational and operational form were highly successful in controlling the level of poaching in the RCNP.",
+        "Furthermore, the availability of local economic opportunities seemed to reduce the level of poaching significantly.",
+        "However, the penalties imposed on the convicted poachers were found to have little or no effect on the level of rhino poaching in the RCNP.",
+        "The results also indicate a sharp rise in the number of rhinos poached during the years of the Maoist insurgency in the country, compared to the years before.",
+        "Although the analysis is still very simplistic, it provides valuable insights into the factors that have affected the level of poaching in the RCNP over the years.",
+        "It is hoped that these insights will be helpful in formulating effective policies to tackle rhino poaching, especially in and around the RCNP where Nepal's largest population of one-horned rhinoceros is found."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Analysis of the One-Horned Rhinoceros (Rhinoceros Unicornis) Habitat in the Royal Chitwan National Park, Nepal.",
+      "publisher": "University of North Texas Libraries",
+      "author": "Thapa, Vivek",
+      "published_at": null,
+      "url": "https://doi.org/10.12794/metadc4926",
+      "retrieved_at": "2026-10-18T16:04:35.034Z",
+      "sha256": "0864f74920d6ba2b7227589bb2260a72e615d9ae6ffa108fd9155ee27997b314",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This study analyzes the remaining suitable habitat of the one-horned rhinoceros, Rhinoceros unicornis, in Royal Chitwan National Park of Nepal.",
+        "An April 2003 Landsat image was classified into eight land cover types: wetland, sand, water, mixed forest, sal forest, agriculture, settlement, and grassland.",
+        "This image was converted into habitat suitability maps using cover, food, and water.",
+        "The rhinoceros prefers grassland habitat with oxbow lakes and closed canopy during the monsoon season.",
+        "Nominal values of five parameters were used to create a map of habitat suitability index.",
+        "The map was categorized into four habitat classes: highly unsuitable, unsuitable, moderately suitable habitat, and suitable.",
+        "Landscape metrics, patch metrics and class metrics associated with habitat were determined through the use of FRAGSTATS."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "An Application Of The Contingent Valuation Method: The Case Of One Horned Rhinos Of Kaziranga National Park, Assam",
+      "publisher": "Green Publication",
+      "author": "Bharali, Dr. Abinash",
+      "published_at": "2023",
+      "url": "https://doi.org/10.53555/kuey.v29i3.5953",
+      "retrieved_at": "2026-10-18T16:04:35.034Z",
+      "sha256": "2f5420bf6645b1278c28c47e8f6f2db5ab862b18655b06a4ae6c30b58a412d2e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kaziranga National Park (KNP) is a habitat of the one-horned Indian rhinos.",
+        "About ninety percent of the total population of one-horned rhinos is found in KNP and Pobitora Wildlife Sanctuary of Assam.",
+        "Poaching of wild animals especially rhinos has been a great challenge to the authority of KNP and it is continuously going on because of superstitious beliefs of people regarding aphrodisiac and medicinal value of rhino’s horn and these are sold in the black international market at a very high rate.",
+        "But, most of the tourists visiting the park for viewing this unique endangered wild animal have an escalating influence on economic value of the park.",
+        "In the present study, influence of the one-horned rhinos on economic value of KNP is estimated by using dichotomous choice of contingent valuation method.",
+        "In the present study, primary data is used to estimate economic value of the park and 300 visitors are interviewed randomly using a structured schedule with a single respondent from each group or family chosen in the sample.",
+        "The study found that economic value of KNP will be reduced by INR 2.63 million, if the Government fails to conserve this unique wild animal of the national park and it also reflects the existence value of rhinos of the park.",
+        "So, the Government should take various scientific steps towards the protection and conservation of one-horned rhinos of the national park to sustain eco-tourism in KNP."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "All the King’s Horses, All the King’s Elephants: The Fates of Royal Animals in Nepal’s Post-Monarchy Period",
+      "publisher": "Bucknell Digital Commons (Bucknell University)",
+      "author": "Anne T. Mocko; Shaunna Barnhart",
+      "published_at": "2018-01-01",
+      "url": "https://openalex.org/W2890277139",
+      "retrieved_at": "2026-10-18T16:04:35.034Z",
+      "sha256": "c82f6eb3a4972ef76e211e46c8404a9187662ba71532689bf3707676062f7d47",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In May of 2008, Nepal’s 240-year-old monarchy was legally dissolved.",
+        "In the wake of this dissolution, the new interim government sought to replace royal institutions, procedures, and ceremonies with new, parallel processes.",
+        "One unexpected royal legacy that politicians needed to resolve was that of the former royal animals that had been connected to the position of the King.",
+        "The king of Nepal and palace institutions had been responsible for the welfare of a range of animals: private royal horses, a palace dairy herd, elephants in Chitwan, and an aviary of pheasants.",
+        "Many of Nepal’s ex-royal animals have survived for years after the monarchy’s collapse, and many of them were left vulnerable, with no one clearly responsible for or dedicated to them in the new political context.",
+        "The peculiar and marginalized fates of Nepal’s ex-royal animals highlight the profound institutional complexity the monarchy once entailed, and the far-reaching consequences of its dissolution.",
+        "They also reveal the grudging and complex ways that parliamentary politicians and bureaucrats have handled some of the more inconvenient legacies of the institution they eliminated."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Species reintroduction",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=477117",
+      "retrieved_at": "2026-10-18T16:04:35.963Z",
+      "sha256": "62f136fd713f702e920cef4af108bc7dd45340b520915d0c4688700f0c5e7754",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Species reintroduction is the deliberate release of a species into the wild, from captivity or other areas where the organism is capable of survival.",
+        "The goal of species reintroduction is to establish a healthy, genetically diverse, self-sustaining population to an area where it has been extirpated, or to augment an existing population.",
+        "Species that may be eligible for reintroduction are typically threatened or endangered in the wild.",
+        "However, reintroduction of a species can also be for pest control; for example, wolves being reintroduced to a wild area to curb an overpopulation of deer.",
+        "Because reintroduction may involve returning native species to localities where they had been extirpated, some prefer the term \"reestablishment\".",
+        "Humans have been reintroducing species for food and pest control for thousands of years.",
+        "However, the practice of reintroducing for conservation is much younger, starting in the 20th century."
+      ]
+    }
+  ]
+}

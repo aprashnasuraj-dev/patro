@@ -1,0 +1,165 @@
+{
+  "id": "mm-0619",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How can robots help us walk?",
+      "publisher": "Sci-Comm Consulting Ltd",
+      "author": "Rouse, Elliott",
+      "published_at": "2021",
+      "url": "https://futurumcareers.com/how-can-robots-help-us-walk",
+      "retrieved_at": "2026-10-18T15:25:06.919Z",
+      "sha256": "fcb89d702583f8b1b1e1e7f8ae1e17a64dc31cd143523b6bda8f6f145dba7851",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Prosthetic legs have enabled thousands of people with a disability walk, but artificial limbs can be stiff and uncomfortable to use.",
+        "Bionic parts are artificial body parts that combine electronic and mechanical devices BIOMECHANICS – the study of how living systems move and function EXOSKELETON – in robotics, an exoskeleton is a wearable electromechanical device.",
+        "They are often used to enhance performance, such as to help someone lift objects heavier than they normally could LOCOMOTION – motions such as walking, running or climbing stairs Robots make our lives easier in so many ways.",
+        "For instance, they help us build cars, explore dangerous environments, and can even help us move our bodies.",
+        "Iron Man might be a fictitious character, but bionic limbs that can adapt to different types of movement in the human body are an exciting new reality.",
+        "Dr Elliott Rouse is an assistant professor at the Neurobionics Lab in the University of Michigan in the US.",
+        "He is also a biomedical and mechanical engineer whose pioneering research aims to help people with a disability and/or amputation.",
+        "His Neurobionics Lab is devoted to overcoming many of the problems with conventional protheses and exoskeletons by understanding more about how we move and developing robotics technologies that leverage this.",
+        "Leg prostheses have enabled many people who have lost part or all of their leg to regain the ability to walk without any need for crutches.",
+        "Conventional prosthetic feet are usually made from carbon composite springs that store and return energy to push the wearer forward while walking.",
+        "This stiffness cannot be changed, which can be fine for walking but can make it more difficult if the wearer wants to do different kinds of activities, like moving from walking to running, or ascending and descending stairs.",
+        "When we walk, we burn energy from food to fuel the movement of our bodies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Understanding How Humans Re-learn to Walk with a Simulated Unilateral Prosthesis",
+      "publisher": "The Knowledge Bank (The Ohio State University)",
+      "author": "Alexander Chaney",
+      "published_at": "2020-05-01",
+      "url": "https://openalex.org/W3113398985",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "df3379a3ec48945787dcbf65093fb491809ed37a49879b20997fe5d50c2f857c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Walking patterns may change due to external reasons such as injuries, disease, and more.",
+        "Understanding such changes would inform approaches to rehabilitation after such injury or disease.",
+        "In some situations, such as after an amputation, humans may need to re-learn how to walk with the new prosthetic device.",
+        "To address these issues, it is important to understand how humans learn to walk and how human walking changes under different conditions.",
+        "Humans learn to walk at a young age, often at around the age of one year old, and continue to develop their walking patterns until they mature.",
+        "It is difficult to study these walking patterns due to the young age that walking is leaned by humans.",
+        "We collected data from ten subjects, after informed consent and International Review Board (IRB) approval.",
+        "Each subject was equipped with light reflective markers on the abdomen, both the left and right foot, shank and hip.",
+        "The markers were used to track movements with a Vicon motion capture system.",
+        "Subjects walked on a treadmill with a left and right force plate to measure the ground reaction forces and torques during each trial.",
+        "Data was collected from each subject walking without the iWALK 2.0 for roughly three minutes and with the device attached to the right leg for roughly 20 minutes.",
+        "Results showed, all subjects displayed a symmetric walking pattern in terms of the vertical ground reaction force while not wearing the device."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Learning to walk using minimum prior knowledge: And a small hexapod robot",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "author": "M.M. Moerdijk",
+      "published_at": "2013-11-18",
+      "url": "https://openalex.org/W636537102",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "c653a68b347627f45334f77c64e860abc66ea3df070fba395f62a93bda70f9a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Future robotic systems are expected to be so complex, that the required information -- or prior knowledge -- to program them is not always available and has thus to be discovered in an alternative way.",
+        "This can be done using Reinforcement Learning (RL) algorithms, that learn from experience.",
+        "This way of programming can also be beneficial for current robotic systems.",
+        "For example robots where small changes in the hardware due to: design evolutions, repairs or production tolerances require updates to the control algorithms.",
+        "A algorithm that learns to complete a task without prior knowledge could do this regardless of the changes and thus make frequent, time consuming, reprogramming and/or tuning unnecessary.",
+        "The robot used in this thesis is a small ant like hexapod robot that is still in development.",
+        "It is developed to take advantage of the high volume to power ratio, at low weights of Shape Memory Alloy actuators and to show collaborative behaviour.",
+        "The task is to find a controller that lets this robot walk as fast as possible from A to B while using minimum prior knowledge.",
+        "Three approaches to achieve this are proposed in this thesis, these are in descending amount of required prior knowledge: Min-Max, Cost Function Search and the Flat approach.",
+        "All use a hierarchical division, where low level actions -- like forward or left -- and the combination of these actions, to reach the goal are learned separately.",
+        "The approaches differ in the way they learn the low level actions.",
+        "Min-Max uses fully defined sub-goals that are assumed to be sufficient to solve the problem."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Robot",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25781",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "3adcf27cf278aafcf9fa66bef6c2b6501a4f82259af2010843cc30f6d482646e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A robot is a machine, especially one programmable via a computer, capable of automatically carrying out a complex series of actions.",
+        "A robot can be guided by an external or internal control device.",
+        "Robots may be humanoid, but most are task-performing machines prioritizing functionality over aesthetics.",
+        "By mimicking a lifelike appearance or automating movements, a robot may convey a sense of intelligence or thought of its own.",
+        "Autonomous things are expected to proliferate in the future, with home robotics and the autonomous car as some of the main drivers.",
+        "The branch of technology that deals with the design, construction, operation, and application of robots, as well as computer systems for their control, sensory feedback, and information processing is robotics.",
+        "These technologies deal with automated machines that can take the place of humans in dangerous environments or manufacturing processes, or resemble humans in appearance, behavior, or cognition.",
+        "Many of today's robots are inspired by nature contributing to the field of bio-inspired robotics.",
+        "These robots have also created a newer branch of robotics: soft robotics.",
+        "From the time of ancient civilization, there have been many accounts of user-configurable automated devices and even automata, resembling humans and other animals, such as animatronics, designed primarily as entertainment.",
+        "As mechanical techniques developed through the Industrial age, there appeared more practical applications such as automated machines, remote control and wireless remote-control.",
+        "Electronics evolved into the driving force of development with the advent of the first electronic autonomous robots created by William Grey Walter in Bristol, England, in 1948, as well as computer numerical control (CNC) machine tools in the late 1940s by John T."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "BEAM robotics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=216254",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "d8192dd454b579f138ee0ee28b82ab289b0fd7ee42dacd9abe39e848bee5998e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "BEAM robotics (from biology, electronics, aesthetics and mechanics) is a style of robotics that primarily uses simple analogue circuits, such as comparators, instead of a microprocessor in order to produce an unusually simple design.",
+        "While not as flexible as microprocessor based robotics, BEAM robotics can be robust and efficient in performing the task for which it was designed.",
+        "A BEAM robot may use a set of analog circuits, mimicking biological neurons, to facilitate the robot's response to its working environment."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Hexapod (robotics)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6779384",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "6829f655aa714e9c678d32b3a3394b98aa5486e8df4121254225e772e6c36321",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A hexapod robot is a mechanical vehicle that walks on six legs.",
+        "Since a robot can be statically stable on three or more legs, a hexapod robot has a great deal of flexibility in how it can move.",
+        "If legs become disabled, the robot may still be able to walk.",
+        "Furthermore, not all of the robot's legs are needed for stability; other legs are free to reach new foot placements or manipulate a payload.",
+        "Many hexapod robots are biologically inspired by Hexapoda locomotion – the insectoid robots.",
+        "Hexapods may be used to test biological theories about insect locomotion, motor control, and neurobiology."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "History of robots",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13946920",
+      "retrieved_at": "2026-10-18T15:25:07.226Z",
+      "sha256": "d8a024db3704caefacba4e63ecc97e681bc7cbb4cf8289310c5e47ac7b5c4161",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "During the Industrial Revolution, humans developed the structural engineering capability to control electricity so that machines could be powered with small motors.",
+        "In the early 20th century, the notion of a humanoid machine was developed.",
+        "The first uses of modern robots were in factories as industrial robots.",
+        "These industrial robots were fixed machines capable of manufacturing tasks which allowed production with less human work.",
+        "Digitally programmed industrial robots with artificial intelligence have been built since the 2000s."
+      ]
+    }
+  ]
+}

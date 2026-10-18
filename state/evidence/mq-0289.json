@@ -1,0 +1,70 @@
+{
+  "id": "mq-0289",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "PubChem compound record",
+      "publisher": "National Center for Biotechnology Information",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/95809/property/MolecularFormula,MolecularWeight,IUPACName,CanonicalSMILES/JSON",
+      "retrieved_at": "2026-10-18T20:16:46.129Z",
+      "sha256": "c56ba67ed6b7fd20137d9691347e9500ed7eea78b1c8140fad52ad55d8ad50d9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "PubChem compound 95809 has the molecular formula C10Cl8 and a molecular weight of 403.7.",
+        "The IUPAC name of PubChem compound 95809 is 1,2,3,4-tetrachloro-5-(2,3,4,5-tetrachlorocyclopenta-2,4-dien-1-ylidene)cyclopenta-1,3-diene."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/265hs-8fj68",
+      "retrieved_at": "2026-10-18T20:16:47.988Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/0b253-ma907",
+      "retrieved_at": "2026-10-18T20:16:47.988Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Positional Regularities in Canonical SMILES: Implications for Molecular Machine Learning",
+      "publisher": "Budapest University of Technology and Economics, Department of Artificial Intelligence and Systems Engineering",
+      "author": "Marosi, Márk; Antal, Péter",
+      "published_at": "2026",
+      "url": "https://doi.org/10.3311/minisy2026-005",
+      "retrieved_at": "2026-10-18T20:16:51.153Z",
+      "sha256": "6fd19ea6b5f0425f6c6abfd15123fd2c7a0b0202d0ab372848fdba55cebea4fc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "These findings suggest that models trained exclusively on canonical SMILES may learn positional shortcuts rather than genuine chemical representations, with implications for generalization and robustness.",
+        "We propose random SMILES augmentation and representation-invariant evaluation as standard practice for molecular ML.",
+        "Description Keywords Collections BME MIT PhD Minisymposium, 2026, 33rd Full item page"
+      ]
+    }
+  ]
+}

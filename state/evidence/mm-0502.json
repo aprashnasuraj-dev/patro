@@ -1,0 +1,105 @@
+{
+  "id": "mm-0502",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "World Out of Joint, or How the Revolution in Philosophy Began",
+      "publisher": "Indiana University Press",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.2307/j.ctt2005tjq.7",
+      "retrieved_at": "2026-10-18T15:17:01.268Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Industrial Revolution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14914",
+      "retrieved_at": "2026-10-18T15:17:02.846Z",
+      "sha256": "1a17cc332c41ebc9ff7110b648b455ae7f8eafec845b37445750ef5f7bc2a6b2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Industrial Revolution, sometimes called the First Industrial Revolution in contrast to the subsequent Second Industrial Revolution, was a transitional period of the global economy toward more widespread, efficient and stable manufacturing processes, succeeding the Second Agricultural Revolution.",
+        "Beginning in Great Britain around 1760, the Industrial Revolution had spread to continental Europe and the United States by about 1840.",
+        "Economic historians agree that the onset of the Industrial Revolution is the most important event in human history, comparable only to the adoption of agriculture for material advancement.",
+        "This transition included going from hand production methods to machines; new chemical manufacturing and iron production processes; the increasing use of water power and steam power; the development of machine tools; and rise of the mechanised factory system.",
+        "Output greatly increased, and the result was an unprecedented rise in population and population growth.",
+        "Many technological and architectural innovations were British.",
+        "By the mid-18th century, Britain was the leading commercial nation, with GDP per capita considerably over the world average.",
+        "The textile industry was the first to use modern production methods, and textiles became the dominant industry in terms of employment, value of output, and capital invested.",
+        "The precise start and end of the Industrial Revolution is debated among historians, as is the pace of economic and social changes.",
+        "Rapid adoption of mechanized textiles spinning occurred in Britain in the 1780s, and high rates of growth in steam power and iron production occurred after 1800.",
+        "Mechanised textile production spread from Britain to continental Europe and the US in the early 19th century.",
+        "A recession occurred from the late 1830s when the adoption of the Industrial Revolution's early innovations, such as mechanised spinning and weaving, slowed as markets matured despite increased adoption of locomotives, steamships, and hot blast iron smelting."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Information Age",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=84632",
+      "retrieved_at": "2026-10-18T15:17:02.846Z",
+      "sha256": "840c8d7154f9a784e0a5e7ba630af70d37f3d8e4ee46363df7d56f242759adf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Information Age is a historical period that began in the mid-20th century.",
+        "It is characterized by a rapid shift from traditional industries, as established during the Industrial Revolution, to an economy centered on information technology.",
+        "The onset of the Information Age has been linked to the development of the transistor in 1947.",
+        "This technological advance has had a significant impact on the way information is processed and transmitted.",
+        "According to the United Nations Public Administration Network, the Information Age was formed by capitalizing on computer miniaturization advances, which led to modernized information systems and internet communications as the driving force of social evolution.",
+        "There is ongoing debate concerning whether the Third Industrial Revolution has already ended and recent breakthroughs in areas such as artificial intelligence and biotechnology have spawned a Fourth Industrial Revolution.",
+        "This next transition has been theorized to harken the advent of the Imagination Age, the Internet of things (IoT), and rapid advances in machine learning."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Second Industrial Revolution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=359626",
+      "retrieved_at": "2026-10-18T15:17:02.846Z",
+      "sha256": "b068629a4388807c152d134c80b192cbab1f2f7537b02da4a305777b761a2820",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Second Industrial Revolution, also known as the Technological Revolution, was a phase of rapid scientific discovery, standardization, mass production and industrialization from the late 19th century into the early 20th century.",
+        "The First Industrial Revolution, which ended in the middle of the 19th century, was punctuated by a slowdown in important inventions before the Second Industrial Revolution started in 1870.",
+        "Advancements in manufacturing and production technology enabled the widespread adoption of technological systems such as telegraph and railroad networks, gas and water supply, and sewage systems, which had earlier been limited to a few select cities.",
+        "The enormous expansion of rail and telegraph lines after 1870 allowed unprecedented movement of people and ideas, which culminated in a new wave of colonialism and globalization.",
+        "In the same time period, new technological systems were introduced, most significantly electrical power and telephones.",
+        "The Second Industrial Revolution continued into the 20th century with early factory electrification and the production line; it ended at the beginning of World War I.",
+        "The Information Age is sometimes also called the Third Industrial Revolution."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Technological revolution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23421828",
+      "retrieved_at": "2026-10-18T15:17:02.846Z",
+      "sha256": "1b86ffe5d38627cfa0738d5a7a72eeda16093d847f2c38f0a310af7bb2478edd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A technological revolution is a period in which one or more technologies is replaced by another new technology in a short amount of time.",
+        "It is a time of accelerated technological progress characterized by innovations whose rapid application and diffusion typically cause an abrupt change in society."
+      ]
+    }
+  ]
+}

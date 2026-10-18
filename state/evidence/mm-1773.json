@@ -1,0 +1,96 @@
+{
+  "id": "mm-1773",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Pisco sour",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1142338",
+      "retrieved_at": "2026-10-18T17:26:13.106Z",
+      "sha256": "51cedeb18e3e0b6139e321a2d60802521e738f4306e5ae2816c0668921cce1b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A pisco sour is an alcoholic cocktail of Peruvian origin, which is made from pisco, a Peruvian brandy, with sour citrus juice and sweetener components.",
+        "The Peruvian pisco sour includes Peruvian pisco with freshly squeezed lime juice, simple syrup, ice, egg white, and Angostura bitters.",
+        "The Chilean version is similar, but has Chilean pisco and Pica lime, and excludes the bitters and egg white.",
+        "Other variants of the cocktail include with fruits like pineapple or plants such as coca leaves.",
+        "Although the preparation of pisco-based mixed beverages possibly dates back to the 1700s, historians and drink experts agree that the cocktail as it is known today was invented in the early 1920s in Lima, the capital of Peru, by the American bartender Victor Vaughen Morris.",
+        "Morris left the United States in 1903 to work in Cerro de Pasco, a city in central Peru.",
+        "In 1916, he opened Morris' Bar in Lima, and his saloon quickly became a popular spot for the Peruvian upper class and English-speaking foreigners.",
+        "The oldest known mentions of the pisco sour are found in newspaper and magazine advertisements, dating to the early 1920s, for Morris and his bar published in Peru and Chile.",
+        "The pisco sour underwent several changes until Mario Bruiget, a Peruvian bartender working at Morris' Bar, created the modern Peruvian recipe for the cocktail in the latter part of the 1920s by adding Angostura bitters and egg whites to the mix.",
+        "Cocktail connoisseurs consider the pisco sour a South American classic.",
+        "Chile and Peru both claim the pisco sour as their national drink, and each asserts ownership of the cocktail's base liquor—pisco; consequently, the pisco sour has become a significant and oft-debated topic of Latin American popular culture.",
+        "Media sources and celebrities commenting on the dispute often express their preference for one cocktail version over the other, sometimes just to cause controversy."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Taste",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21282070",
+      "retrieved_at": "2026-10-18T17:26:13.106Z",
+      "sha256": "900561e28b3dc0ddbca906d041f68571b18b3e90acc98eeb41dd0a372c7f9172",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The gustatory system or sense of taste is the sensory system that is partially responsible for the perception of taste.",
+        "Taste is the perception stimulated when a substance in the mouth reacts chemically with taste receptor cells located on taste buds in the oral cavity, mostly on the tongue.",
+        "Taste, along with the sense of smell and trigeminal nerve stimulation (registering texture, pain, and temperature), determines flavors of food and other substances.",
+        "Humans have taste receptors on taste buds and other areas, including the upper surface of the tongue and the epiglottis.",
+        "The gustatory cortex is responsible for the perception of taste.",
+        "The tongue is covered with thousands of small bumps called papillae, which are visible to the naked eye.",
+        "The exceptions to this are the filiform papillae, which do not contain taste buds.",
+        "There are between 2000 and 5000 taste buds that are located on the back and front of the tongue.",
+        "Others are located on the roof, sides and back of the mouth, and in the throat.",
+        "Taste receptors in the mouth sense the five basic tastes: sweetness, sourness, saltiness, bitterness, and savoriness (also known as savory or umami).",
+        "Scientific experiments have demonstrated that these five tastes exist and are distinct from one another.",
+        "Taste buds are able to tell different tastes apart when they interact with different molecules or ions."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of Skittles products",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21846317",
+      "retrieved_at": "2026-10-18T17:26:13.106Z",
+      "sha256": "bfc9a7c758a6cbcdc187d67dbdc027e502eb406463fd3b7c5434d1904d82351f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Skittles, a brand name of candy products produced by the Wm.",
+        "Most of the varieties are available only in particular regions of the world.",
+        "The first flavor was Original Fruit Skittles, first released in Europe in 1974, and then in the United States in 1979.",
+        "Earlier Skittles products tended to focus on fruit flavors; more recent products have branched out to include flavors such as chocolate, bubble gum, popcorn, mint, and sours.",
+        "The original Skittles flavors in the United States (and other countries except for Europe) are orange, lemon, lime, grape and strawberry.",
+        "In 2013, Skittles changed its original flavor line-up to include green apple, causing a consumer backlash.",
+        "It was rumored that the reason behind this is the green apple flavor outperforming lime in taste tests.",
+        "A \"Long Lost Lime\" variation of Skittles was released in summer 2017 and 2018, bringing the lime flavor back to the original mix of Skittles for a limited time only.",
+        "In September 2021, it was announced that lime would be permanently returning to the original Skittles flavor in October 2021, replacing green apple for the first time since 2013."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "When life gives you lemons, make lemonade",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36961387",
+      "retrieved_at": "2026-10-18T17:26:13.106Z",
+      "sha256": "2b0478166fb65553dc9b0ca7c4e6991ddac5e014886a9515afb92e80b7945599",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "When life gives you lemons, make lemonade is a proverbial phrase used to encourage optimism and a positive can-do attitude in the face of adversity or misfortune.",
+        "Lemons suggest sourness or difficulty in life; making lemonade is turning them into something positive or desirable."
+      ]
+    }
+  ]
+}

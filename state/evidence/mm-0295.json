@@ -1,0 +1,96 @@
+{
+  "id": "mm-0295",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Microwave oven",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58017",
+      "retrieved_at": "2026-10-18T15:04:37.544Z",
+      "sha256": "652df7f289607b4d466b0e6fdbfdfc54ab47d507959fdfa289bf2630150ac728",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A microwave oven, or simply microwave, is an electric oven that heats and cooks food by exposing it to electromagnetic radiation in the microwave frequency range.",
+        "This induces polar molecules in the food to rotate and produce thermal energy (heat) in a process known as dielectric heating.",
+        "Microwave ovens heat food quickly and efficiently; the heating effect is fairly uniform in the outer 25–38 mm (1–1.5 inches) of a homogeneous, high-water-content food item.",
+        "The development of the cavity magnetron in the United Kingdom made possible the production of electromagnetic waves of a small enough wavelength (microwaves) to efficiently heat up water molecules.",
+        "American electrical engineer Percy Spencer is generally credited with developing and patenting the world's first commercial microwave oven, the Raytheon \"Radarange\", which was first sold in 1947.",
+        "He based it on British radar technology which had been developed before and during World War II.",
+        "Raytheon later licensed its patents for a home-use microwave oven that was first sold by Tappan in 1956, but it was still too large and expensive for general home use.",
+        "Sharp Corporation introduced the first microwave oven with a turntable between 1964 and 1966, this feature created more even heating than the earlier microwave stirrer feature.",
+        "The countertop microwave oven was introduced in 1967 by the Amana Corporation, which was, at the time, owned by Raytheon.",
+        "After microwave ovens became affordable for residential use in the late 1970s, their use spread into residential kitchens around the world, and prices fell rapidly during the 1980s.",
+        "In addition to cooking food, microwave ovens are used for heating in many industrial processes.",
+        "Microwave ovens are a common kitchen appliance in households and kitchens and are popular for reheating previously cooked foods and cooking a variety of different foods."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Oven",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=445536",
+      "retrieved_at": "2026-10-18T15:04:37.544Z",
+      "sha256": "676c0fd8df57d85d19d0c967291ba562f70a66ba6d42de6649f3fd553e0b8a21",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An oven is a tool that is used to expose materials to a hot environment.",
+        "Ovens contain a hollow chamber and provide a means of heating the chamber in a controlled way.",
+        "In use since antiquity, they have been used to accomplish a wide variety of tasks requiring controlled heating.",
+        "Because they are used for a variety of purposes, there are many different types of ovens.",
+        "These types differ depending on their intended purpose and based upon how they generate heat.",
+        "Ovens are often used for cooking, usually baking, sometimes broiling; they can be used to heat food to a desired temperature.",
+        "Ovens are also used in the manufacturing of ceramics and pottery; these ovens are sometimes referred to as kilns.",
+        "Metallurgical furnaces are ovens used in the manufacturing of metals, while glass furnaces are ovens used to produce glass.",
+        "There are many methods by which different types of ovens produce heat.",
+        "Some ovens heat materials using the combustion of a fuel, such as wood, coal, or natural gas, while many employ electricity.",
+        "Microwave ovens heat materials by exposing them to microwave radiation, while electric ovens and electric furnaces heat materials using resistive heating.",
+        "Some ovens use forced convection, the movement of gases inside the heating chamber, to enhance the heating process, or, in some cases, to change the properties of the material being heated, such as in the Bessemer method of steel production."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Convection oven",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=636035",
+      "retrieved_at": "2026-10-18T15:04:37.544Z",
+      "sha256": "d755648c8fc49c7e8148af5525a94187e628bd21330dae3343e80a3ab16752bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A convection oven (also known as a fan-assisted oven, turbo broiler or simply a fan oven or turbo) is an oven that has fans to circulate air around food to create an evenly heated environment.",
+        "In an oven without a fan, natural convection circulates hot air unevenly, so that it will be cooler at the bottom and hotter at the top than in the middle.",
+        "Fan ovens cook food faster, and are also used in non-food, industrial applications.",
+        "Small countertop convection ovens for household use are often marketed as air fryers.",
+        "When cooking using a fan-assisted oven, the temperature is usually set lower than for a non-fan oven, often by 20 °C (36 °F), to avoid overcooking the outside of the food."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Freeze drying",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1002536",
+      "retrieved_at": "2026-10-18T15:04:37.544Z",
+      "sha256": "3775be946c6fad88d9ac35854334db6ae8d9235b7e20a071caae6041f6e1472c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Freeze drying, also known as lyophilization or cryodesiccation, is a low-temperature dehydration process that involves freezing the product and lowering pressure, thereby removing the ice by sublimation.",
+        "This is in contrast to dehydration by most conventional methods that evaporate water using heat.",
+        "Because of the low temperatures used in processing, the rehydrated product retains many of its original qualities.",
+        "When solid objects like strawberries are freeze dried the original shape of the product is maintained.",
+        "If the product to be dried is a liquid, as often seen in pharmaceutical applications, the properties of the final product are optimized by the combination of excipients (i.e., inactive ingredients).",
+        "Primary applications of freeze drying include biological (e.g., bacteria and yeasts), biomedical (e.g., surgical transplants), food processing (e.g., coffee), and food preservation."
+      ]
+    }
+  ]
+}

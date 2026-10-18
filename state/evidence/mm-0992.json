@@ -1,0 +1,127 @@
+{
+  "id": "mm-0992",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Step1. Generate Fair and Loaded Dice Sample",
+      "publisher": "Bucharest University of Economic Studies",
+      "author": "Hsieh), Jane Hsieh (Hsing Chuan",
+      "published_at": "2021",
+      "url": "https://doi.org/10.24818/ida-ql/2021.28",
+      "retrieved_at": "2026-10-18T16:26:03.561Z",
+      "sha256": "8f077bfb02aefc5020e266ca26a5f557290fdb309e4b461f0af586236f3fe81c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "DigitalEconomyDecisionAnalytics/DEDA_Hidden Markov Models/Step1.",
+        "Dismiss alert {{ message }} Repository navigation Files Expand file tree master / Step1.",
+        "Generate Fair and Loaded Dice Sample / Copy path Directory actions More options More options Directory actions More options More options Latest commit History History History master / Step1.",
+        "Generate Fair and Loaded Dice Sample / Copy path Top Folders and files Name Name Last commit message Last commit date parent directory ..",
+        "First 200 cases of dice sequence.png First 200 cases of dice sequence.png README.md README.md Sample_Hid.csv Sample_Hid.csv Sample_Obs.csv Sample_Obs.csv Step1.",
+        "Generate Fair and Loaded Dice Sample.py metainfo.txt metainfo.txt View all files README.md Name of Quantlet: Step1."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Dice Questions Answered",
+      "publisher": "TopSCHOLAR (Western Kentucky University)",
+      "author": "W. Nick Campbell; William P Dolan",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3029466200",
+      "retrieved_at": "2026-10-18T16:26:04.476Z",
+      "sha256": "71b839d35e67f204d6c0e2294ffeabefa94222a4e77432f529ca30cba1ddbbc8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Superstitious discussion of fair and unfair dice has pervaded the tabletop gaming industry since its inception.",
+        "Many of these are not based on any quantitative data or studies.",
+        "One dice float test video on Youtube currently has 925,000 views (Fisher, 2015a).",
+        "To combat the flood of misconceptions we investigated the following questions: 1) Are dice cursed?",
+        "2) Are D20s (20-sided dice) less fair than D6s (6-sided dice)?",
+        "5) Are density differences or dimensions more critical to dice fairness?",
+        "Based on tens of thousands of physical dice rolls, billions of simulated dice rolls, and analysis our answer to these questions are as follows.",
+        "3) Float tests tell you nothing about which side of a die will come up more often.",
+        "5) Usually dimensions are more important except for large, off-center bubbles.",
+        "6) The running chi square goodness of fit test is the best way to test dice that we found.",
+        "7) 100 rolls are not enough except possible for loaded dice.",
+        "8) Our preliminary conclusion based on limited tests is that metal dice are not fairer than plastic dice."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fudge (role-playing game system)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11157",
+      "retrieved_at": "2026-10-18T16:26:04.476Z",
+      "sha256": "8fda294576f95d48dd52228a85e890d4324e4173f8bcfa4dd27101e61c77e12e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fudge is a generic role-playing game system for use in freeform role-playing games.",
+        "The name \"FUDGE\" was once an acronym for Freeform Universal Donated (later, Do-it-yourself) Gaming Engine and, though the acronym has since been dropped, that phrase remains a good summation of the game's design goals.",
+        "Fudge has been nominated for an Origins Award for Best Role-Playing Game System for the Deryni Adventure Game.",
+        "Rather than being a rigidly pre-defined set of rules like d20 System or GURPS, Fudge offers a customizable toolkit for building the users' own specialized role-playing game system.",
+        "Such things as what attributes and skills will define characters are left to be determined by the Game Master and players, and several different optional systems for resolving actions and conflicts are offered.",
+        "Fudge is not tied to any particular genre or setting and world builders are encouraged to invent appropriate attributes and rules tailored to the campaign."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gambler's fallacy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12970",
+      "retrieved_at": "2026-10-18T16:26:04.476Z",
+      "sha256": "805afa4c12cd619aab9fcc24d765c8bf73c0ac5f19d4b5b4e151f12ea17b8b75",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The gambler's fallacy, also known as the Monte Carlo fallacy or the fallacy of the maturity of chances, is the belief that an independent and equally probable outcome which happened less frequently than expected is more likely to happen in the future (or vice versa).",
+        "The term  Monte Carlo fallacy originates from an example of the phenomenon, in which the roulette wheel spun black 26 times in succession at the Monte Carlo Casino in 1913."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Horsengoggle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21348069",
+      "retrieved_at": "2026-10-18T16:26:04.476Z",
+      "sha256": "b35c170b6bb67ba3b9f9d07cc950af2244d47d557ed30a87284c782d1061975f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Horsengoggle (also known as horse-and-goggle and horse 'n' goggle and hossengoggle) is a method of selecting a random person from a group.",
+        "Unlike some other methods, such as rock paper scissors, one of the features of horsengoggle is that there is always a winner; it is impossible to tie.",
+        "An arbitrary member of the group is selected by the leader as a starting point.",
+        "All participants simultaneously show between zero and five fingers.",
+        "The leader counts the total number of fingers shown, then counts that many people around the circle.",
+        "In his memoir of growing up in Missouri in the 1940s, Jim Frank mentions the game as \"ein [sic], zwei, drei, horsengoggle\", which he describes as \"an old German system of selection\".",
+        "Horsengoggle is used by a number of youth camps in the United States, and by some Girl Scout units."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Dice.com",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26349507",
+      "retrieved_at": "2026-10-18T16:26:04.476Z",
+      "sha256": "4c2aafb806aad865edc3746f044803d04421a57d827964c19c5913c2c833101d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dice.com is a career website based in New York City with primary sales and development operations in Urbandale, Iowa and Denver.",
+        "It serves information technology and engineering professionals, as well as contract and permanent engineering staffing firms.",
+        "Dice.com typically has approximately 80,000 tech job listings.",
+        "The website claims to have 3 million registered technology professionals and approximately 2.4 million unique visitors each month.",
+        "Of those registered users, 75% have a bachelor's degree or higher and 65% have 10 or more years of experience in their field."
+      ]
+    }
+  ]
+}

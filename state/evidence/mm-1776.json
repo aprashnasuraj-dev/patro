@@ -1,0 +1,146 @@
+{
+  "id": "mm-1776",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Social Relevance of Currency, or Why Study Banknotes and Coins",
+      "publisher": "Bloomsbury Publishing Plc",
+      "author": null,
+      "published_at": "2025",
+      "url": "https://doi.org/10.5040/9781350451469.ch-001",
+      "retrieved_at": "2026-10-18T17:26:15.363Z",
+      "sha256": "4262dbd702216aac804debfdcbf08e05e1f05e52b6fdd263e974dee8e7f90490",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Semiotics of Banknotes and Coins --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why edges are needed",
+      "publisher": "John Benjamins Publishing Company",
+      "author": "Boeckx, Cedric",
+      "published_at": "2010-06-23",
+      "url": "https://doi.org/10.1075/la.156.04boe",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "2f212891ed303db407a9b921c354ad6a803145edde1424bf3e4ad897971be45b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term edge has become ubiquitous in syntactic theory in recent years: one reads of the left edge of the clause or the edge of VP in cartographic approaches, of the edge of phases in phase-based computations, of edge features driving movement, and even of edge features underlying merge.",
+        "In this contribution I look at all these different meanings of edge and conclude that they all reduce to a property underlying labelling at the heart of structure building.",
+        "That is to say, the reason edges are needed is the same as the reason why labels are needed.",
+        "Since the necessity of labels has been disputed in the recent minimalist literature, I reassert the need for labels and attempt to derive it from interface legibility conditions."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hard Optimization Problems have Soft Edges",
+      "publisher": "Research Square Platform LLC",
+      "author": "Marino, Raffaele; Kirkpatrick, Scott",
+      "published_at": "2022-09-21",
+      "url": "https://doi.org/10.21203/rs.3.rs-2078415/v1",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "e617fb8277741ac2d9ac5f9cf8e0833a9eee3759822e0c884301e295a548bbe4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Finding a Maximum Clique is a classic property test from graph theory; find any one of the largest complete subgraphs in an Erdös-Rényi G(N, p) random graph.",
+        "It is the simplest of many such problems in which algorithms requiring only a small power of N steps cannot reach solutions which probabilistic arguments show must exist, exposing an inherently \"hard\" phase within the solution space of the problem.",
+        "Such \"hard\" phases are seen in many NP-Complete problems, in the limit when N → ∞.",
+        "But optimization problems arise and must be solved at finite N.",
+        "We use this simplest case, MaxClique, to explore the structure of the problem as a function of N and K, the clique size.",
+        "It displays a complex phase boundary, a staircase of steps at each of which 2log2 N and Kmax, the maximum size of clique that can be found, increase by 1.",
+        "Each of its boundaries have finite width, and these widths allow local algorithms to find cliques beyond the limits defined by the study of infinite systems.",
+        "We explore the performance of a number of extensions of traditional fast local algorithms, and find that much of the \"hard\" space remains accessible at finite N.",
+        "The \"hidden clique\" problem embeds a clique somewhat larger than those which occur naturally in a G(N, p) random graph.",
+        "Since such a clique is unique, we find that local searches which stop early, once evidence for the hidden clique is found, may outperform the best message passing or spectral algorithms."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Euro coins",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53939",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "2c5bd864d2618c0bee8ebe8e2c462b1168834632481a9f3b169b4a4846aa6f97",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "There are eight denominations of euro coins, ranging from one cent to two euro (the euro is divided into a hundred cents).",
+        "They have a common reverse, portraying a map of Europe, but each country in the eurozone has its own design on the obverse, which means that each coin has a verity of different designs in circulation at once.",
+        "Four European microstates that are not members of the European Union (Andorra, Monaco, San Marino, and the Vatican City) use the euro as their currency and also have the right to mint coins with their own designs on the obverse side.",
+        "The coins are minted at numerous national mints across the eurozone to strict national quotas.",
+        "Obverse designs are chosen nationally, while the reverse and the currency as a whole is managed by the European Central Bank (ECB)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Glossary of numismatics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2893298",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "10be16070a375dc1a533332d967fadd8664f143e599c4bcfe197ed6345ef6593",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This glossary of numismatics is a list of definitions of terms and concepts relevant to numismatics and coin collecting, as well as sub-fields and related disciplines, with concise explanations for the beginner or professional.",
+        "Numismatics (Ancient Greek: νομισματική, meaning 'monetary') is the scientific study of money and its history in all its varied forms.",
+        "While numismatists are often characterized as studying coins, the discipline also includes the study of other types of money, such as banknotes, stock certificates, medals, medallions, and tokens.",
+        "Sub-fields and related fields of numismatics include:\n\nExonumia, the study of coin-like objects such as token coins and medals, and other items used in place of legal currency or for commemoration.",
+        "Scripophily, the study and collection of company share certificates and bonds."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "1 euro cent coin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6138104",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "f6e93c9691bfab2e25b1ddc187c237a26f3cd814fc5e856a686a8e5a56976ec2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 1 euro cent coin (€0.01) has a value of one hundredth of a euro and is composed of copper-covered steel.",
+        "It is the lowest-value coin in the Eurozone; the next lowest are the 2 and 5 euro cent coins.",
+        "All euro coins have a common reverse and a country-specific (national) obverse.",
+        "The coin has been used since 2002 and was not redesigned in 2007 as was the case with the higher-value coins."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "2 euro cent coin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6138171",
+      "retrieved_at": "2026-10-18T17:26:15.364Z",
+      "sha256": "1b89dbe6e48d7037ebd045eae9873e2d391954ee43ef79a9ede5b91cc4817343",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2 euro cent coin (€0.02) has a value of one fiftieth of a euro and is composed of copper-plated steel.",
+        "All euro coins have a common reverse and country-specific (national) obverse.",
+        "The coin has been used since 2002 and was not redesigned in 2007 as were the higher-value coins."
+      ]
+    }
+  ]
+}

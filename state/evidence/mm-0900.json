@@ -1,0 +1,163 @@
+{
+  "id": "mm-0900",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "AI-Based Crypto Tokens: The Illusion of Decentralized AI?",
+      "publisher": "Center for Open Science",
+      "author": "Mafrur, Rischan",
+      "published_at": "2025-05-08",
+      "url": "https://doi.org/10.31219/osf.io/yrzj5_v1",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "bc20d5ca9242486b43c8fd995ff0c55daab0fb0156b1d1a0f3cd51f81d210a7f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The convergence of blockchain and artificial intelligence (AI) has led to the emergence of AI-based tokens, which are cryptographic assets designed to power decentralized AI platforms and services.",
+        "This paper provides a comprehensive review of leading AI-token projects, examining their technical architectures, token utilities, consensus mechanisms, and underlying business models.",
+        "We explore how these tokens operate across various blockchain ecosystems and assess the extent to which they offer value beyond traditional centralized AI services.",
+        "Based on this assessment, our analysis identifies several core limitations.",
+        "From a technical perspective, many platforms depend extensively on off-chain computation, exhibit limited capabilities for on-chain intelligence, and encounter significant scalability challenges.",
+        "From a business perspective, many models appear to replicate centralized AI service structures, simply adding token-based payment and governance layers without delivering truly novel value.",
+        "In light of these challenges, we also examine emerging developments that may shape the next phase of decentralized AI systems.",
+        "These include approaches for on-chain verification of AI outputs, blockchain-enabled federated learning, and more robust incentive frameworks.",
+        "Collectively, while emerging innovations offer pathways to strengthen decentralized AI ecosystems, significant gaps remain between the promises and the realities of current AI-token implementations.",
+        "Our findings contribute to a growing body of research at the intersection of AI and blockchain, highlighting the need for critical evaluation and more grounded approaches as the field continues to evolve."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Tokens, Watts, and Geography -&amp;nbsp;AI infrastructure",
+      "publisher": "Elsevier BV",
+      "author": "Djouad, Djellal",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6879018",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "0dd7c67b54f7c17cce6c0ac5e46c381851f3b3e4cff35d1aacd0c27866a55953",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;The sell-side consensus on AI infrastructure prices capex in absolute terms — six hundred billion here, seven hundred billion there — and prices inference output in narrative terms — “the price of intelligence is collapsing.” Both framings miss the same thing.",
+        "And electricity is not priced globally, it is priced by interconnect.",
+        "This paper develops a four-tier framework for the geographic pricing of AI inference between 2026 and 2030.",
+        "Tier 1 (Sovereign Capable) — China, the Gulf, the Nordic countries, France — combines low marginal electricity cost with state-backed capacity expansion.",
+        "Tier 2 (Emerging Stretched) — India, South Korea, Japan — has committed hundreds of billions to sovereign compute on grids that are not yet stable enough to clear it.",
+        "Tier 4 (Arbitrage Suppliers) — Russian Siberia, Canadian hydro, the Brazilian Norte/Nordeste, Australian Pilbara — owns the cheapest electrons on earth and is now exporting them, increasingly, to Tier 1 workloads via cross-border power agreements and dual-resident cloud structures.",
+        "We derive a simple unit-economics identity for token output — marginal cost equals energy per token times utilization-adjusted delivered electricity price, plus capex amortization — and quantify the spread across tiers using 2024–2026 data.",
+        "We then show that Shanghai Futures Exchange’s preliminary AI-token futures, which most coverage treats as a domestic Chinese compute-hedging tool, will function instead as the world’s first tradable instrument on the cross-tier electricity risk premium of AI inference.",
+        "We close with five testable predictions for Q3 2026 to Q4 2027.",
+        "We are arguing that pricing models which ignore the floor are mispriced by an order of magnitude that the market has not yet been forced to confront.&lt;/p&gt;"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Non-Fungible Tokens: What Every Estate Planner Needs to Know",
+      "publisher": "Elsevier BV",
+      "author": "Beyer, Gerry W.",
+      "published_at": "2021",
+      "url": "https://doi.org/10.2139/ssrn.3965888",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "aef4b83a228f9d41c661b04693446ac024ca11268974a532cfc7bccb9c1ab6f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Your client may own non-fungible tokens (NFTs) and ask you for estate planning advice.",
+        "Would you be caught off-guard and give your client the classic “deer in the headlights” look?",
+        "To make sure this doesn’t happen to you, this article uses a FAQ approach to provide you with the background and information you need so that you will understand NFTs and how to give your client sage advice on how to handle them during the client’s lifetime and upon death."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "6b443323923df348d75161f4eab413c7f47bbbe91eb8233989a6ca3d27b54b5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Llama (language model)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73306787",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "96f2932a54a1cd3822e663de1c2e4641cdb64b04ba50734662c27fe1c136b419",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Llama (\"Large Language Model Meta AI\" serving as a backronym) was a family of large language models (LLMs) released by Meta AI from February 2023 to April 2025.",
+        "Llama models come in different sizes, ranging from 1 billion to 2 trillion parameters.",
+        "Initially only a foundation model, starting with Llama 2, Meta AI released instruction fine-tuned versions alongside foundation models.",
+        "Model weights for the first version of Llama were only available to researchers on a case-by-case basis, under a non-commercial license.",
+        "Unauthorized copies of the first model were shared via BitTorrent.",
+        "Subsequent versions of Llama were made accessible outside academia and released under licenses that permitted some commercial use.",
+        "Alongside the release of Llama 3, Meta rolled out Meta AI, an AI assistant built on Llama.",
+        "Meta AI has a dedicated website and is available on Facebook and WhatsApp.",
+        "In April 2026, Meta Superintelligence Labs released Muse Spark as a replacement for Llama powering chatbots on various Meta services."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Claude (AI)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75879512",
+      "retrieved_at": "2026-10-18T16:08:14.680Z",
+      "sha256": "112738d44b4d6ea28b4aa35b9a40aabaf644dfff0f006bed978acd0d6b5b6620",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Claude is a series of large language models (LLMs) developed by American software company Anthropic.",
+        "Anthropic sells Claude-based agentic tools including Claude Code, a terminal coding agent, and Claude Cowork, a similar tool for non-programmers.",
+        "Claude is trained using a constitution, a technique developed by Anthropic to improve ethical and legal compliance.",
+        "Since Claude 3, each generation has typically been released in three sizes, named Haiku (the least capable), Sonnet, and Opus (the most capable).",
+        "In 2026, a more capable model named Claude Mythos was released to a handful of companies and organizations; this was followed by the release of Claude Fable, a version of Mythos with stricter safeguards, to the general public.",
+        "In February 2026, the United States Department of Defense designated Anthropic a \"supply chain risk\" and federal agencies were ordered to phase out Claude after the company refused to remove contractual prohibitions on using Claude for mass domestic surveillance and fully autonomous weapons.",
+        "A federal judge blocked the designation in March 2026 and permanently set it aside in August 2026 as unconstitutional retaliation."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "15.ai",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=78635504",
+      "retrieved_at": "2026-10-18T16:08:14.681Z",
+      "sha256": "a3f5452b0d417f8aeb146936b708e5fa6585eb8ef22d082606b0e5a116946588",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "15.ai was a free, non-commercial web application and research project that used artificial intelligence to generate text-to-speech voices of fictional characters from popular media.",
+        "The platform was able to generate convincing voice output using minimal training data; the name \"15.ai\" referenced the creator's statement that a voice could be cloned with just 15 seconds of audio.",
+        "Described by AI researchers as unusually advanced for its time, with its voice synthesis outperforming contemporary models, 15.ai was one of the first mainstream applications of generative artificial intelligence during the initial stages of the AI boom.",
+        "Launched in March 2020, 15.ai became an international Internet phenomenon in early 2021 when content utilizing it went viral on social media and quickly gained widespread use among Internet fandoms, such as the My Little Pony: Friendship Is Magic, Team Fortress 2, and SpongeBob SquarePants fandoms.",
+        "The service featured emotional context through emojis, precise pronunciation control, and multi-speaker capabilities.",
+        "Critics praised 15.ai's accessibility and emotional control but criticized its technical limitations in prosody options and non-English language support, with mixed results depending on character complexity.",
+        "15.ai is credited as the first platform to popularize AI voice cloning in memes and content creation.",
+        "Voice actors and industry professionals debated 15.ai's implications, raising concerns about employment impacts, voice-related fraud, and potential misuse.",
+        "In January 2022, it was discovered that a company called Voiceverse had generated voice lines using 15.ai without attribution, promoted them as the byproduct of their own technology, and sold them as non-fungible tokens (NFT) without permission.",
+        "News publications universally characterized this incident as the company having stolen from 15.ai.",
+        "The service went offline in September 2022 due to legal issues surrounding artificial intelligence and copyright.",
+        "Its shutdown was followed by the emergence of commercial alternatives whose founders have acknowledged 15.ai's pioneering influence in the field of deep learning speech synthesis."
+      ]
+    }
+  ]
+}

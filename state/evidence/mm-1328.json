@@ -1,0 +1,125 @@
+{
+  "id": "mm-1328",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "I studied what happens to reef fish after coral bleaching. What I saw still makes me nauseous",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Rummer, Jodie",
+      "published_at": "2020-03-27",
+      "url": "https://theconversation.com/i-studied-what-happens-to-reef-fish-after-coral-bleaching-what-i-saw-still-makes-me-nauseous-134247",
+      "retrieved_at": "2026-10-18T17:00:31.774Z",
+      "sha256": "597d5547f9f97c504883ba193773e100fcac9ea900386af3b3bc3b12973a8f74",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What I saw still makes me nauseous Skip to content Academic rigor, journalistic flair Victor Huertas , Author provided I studied what happens to reef fish after coral bleaching.",
+        "It follows the record-breaking mass bleaching event in 2016 that killed a third of Great Barrier Reef corals, immediately followed by another in 2017 .",
+        "While we don’t know if fish populations declined from the 2016 bleaching disaster, one 2018 study did show the types of fish species on some coral reefs changed.",
+        "I was part of an international team of scientists that, for the first time, tracked wild populations of five species of coral reef fish before, during, and after the 2016 marine heatwave.",
+        "From a scientific perspective, the results are fascinating and world-first.",
+        "Marine heatwaves are now becoming more frequent and more severe with climate change.",
+        "Jodie Rummer , Author provided We used gene expression as a tool to survey how well fish can handle hotter waters.",
+        "Gene expression is the process where a gene is read by cell machinery and creates a product such as a protein, resulting in a physical trait.",
+        "We know many tropical coral reef fish are already living at temperatures close to their upper limits.",
+        "Our findings can help predict which of these species will be most at risk from repeated heatwaves.",
+        "Read more: ‘This situation brings me to despair’: two reef scientists share their climate grief But from a personal perspective, I still feel nauseous thinking about what the reef looked like during this project.",
+        "Back then we didn’t know the reef was about to bleach and lead to widespread ecological devastation."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Coral",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47700",
+      "retrieved_at": "2026-10-18T17:00:32.214Z",
+      "sha256": "6d21abb25f58f7c7f805eafd9a8e3936c120f86d1de9f9ba0353edd44fd8e327",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Corals are colonial marine invertebrates within the subphylum Anthozoa of the phylum Cnidaria.",
+        "They typically form compact colonies of many identical individual polyps.",
+        "Coral species include the important reef builders that inhabit tropical oceans and secrete calcium carbonate to form a hard skeleton.",
+        "A coral \"group\" is a colony of very many genetically identical polyps.",
+        "Each polyp is a sac-like animal typically only a few millimeters in diameter and a few centimeters in height.",
+        "Over many generations, the colony thus creates a skeleton characteristic of the species which can measure up to several meters in size.",
+        "Corals also breed sexually (two parts completing a whole) by spawning: polyps of the same species release gametes simultaneously overnight, often around a full moon.",
+        "Fertilized eggs form planulae, a mobile early form of the coral polyp which, when mature, settles to form a new colony.",
+        "Although some corals are able to catch plankton and small fish using stinging cells on their tentacles, most corals obtain the majority of their energy and nutrients from photosynthesis of symbiotic unicellular dinoflagellates of the genus Symbiodinium, which live within coral tissues.",
+        "These are commonly known as zooxanthellae and give the coral color.",
+        "Such corals require sunlight and grow in clear, shallow water, typically at depths less than 60 metres (200 feet; 33 fathoms), but corals in the genus Leptoseris have been found as deep as 172 metres (564 feet; 94 fathoms).",
+        "Corals are major contributors to the physical structure of the coral reefs that develop in tropical and subtropical waters, such as the Great Barrier Reef off the coast of Australia."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Coral reef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=87410",
+      "retrieved_at": "2026-10-18T17:00:32.214Z",
+      "sha256": "f3e0976cbc38ee816ddbf50e73691fc31aa6689d03908ec6d2d3299fdb4493aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A coral reef is an underwater ecosystem characterized by reef-building corals.",
+        "Reefs are formed of colonies of coral polyps held together by calcium carbonate.",
+        "Most coral reefs are built from stony corals, whose polyps cluster in groups.",
+        "Coral belongs to the class Anthozoa in the animal phylum Cnidaria, which includes sea anemones and jellyfish.",
+        "Unlike sea anemones, corals secrete hard carbonate exoskeletons that support and protect the coral.",
+        "Most reefs grow best in warm, shallow, clear, sunny, and agitated water.",
+        "Coral reefs first appeared 485 million years ago, at the dawn of the Early Ordovician, displacing the microbial and sponge reefs of the Cambrian.",
+        "Sometimes called rainforests of the sea, shallow coral reefs form some of Earth's most diverse ecosystems.",
+        "They occupy less than 0.1% of the world's ocean area, about half the area of France.",
+        "Yet, they provide a home for at least 25% of all marine species, including fish, mollusks, worms, crustaceans, echinoderms, sponges, tunicates and other cnidarians.",
+        "Coral reefs flourish in ocean waters that provide few nutrients.",
+        "They are most commonly found at shallow depths in tropical waters, but deep water and cold water coral reefs exist on smaller scales in other areas."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "El Niño–Southern Oscillation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=317311",
+      "retrieved_at": "2026-10-18T17:00:32.214Z",
+      "sha256": "d1e34868c92391c2986d42854a1d3e270da09bba67589208d8cb41b74fcc7676",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "El Niño–Southern Oscillation (ENSO) is a global climate phenomenon that emerges from variation in winds and sea surface temperatures over the tropical Pacific Ocean.",
+        "Those variations have an irregular pattern, but do have some appearance of cycles.",
+        "It affects the climate of much of the tropics and subtropics, and has links (teleconnections) to higher-latitude regions of the world.",
+        "The warming phase of the sea surface temperature is known as \"El Niño\" and the cooling phase as \"La Niña\".",
+        "The Southern Oscillation is the accompanying atmospheric oscillation, which is coupled with the sea temperature change.",
+        "El Niño is associated with higher than normal sea level air pressure over Indonesia and Australia, and across the Indian Ocean to the Atlantic Ocean.",
+        "La Niña has roughly the reverse pattern: high pressure over the central and eastern Pacific and lower pressure through much of the rest of the tropics and subtropics.",
+        "The two phenomena typically last approximately one year each and typically occur every two to seven years with varying intensity, with neutral periods of lower intensity interspersed.",
+        "El Niño events can be more intense, but La Niña events may repeat and last longer.",
+        "A key mechanism of ENSO is the Bjerknes feedback (named after Jacob Bjerknes in 1969) in which the atmospheric changes alter the sea temperatures that, in turn, alter the atmospheric winds in a positive feedback.",
+        "Weaker easterly trade winds result in a surge of warm surface waters to the east and reduced ocean upwelling on the equator.",
+        "In turn, this leads to warmer sea surface temperatures (called El Niño), a weaker Walker circulation (an east—west overturning circulation in the atmosphere) and even weaker trade winds."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Exploring the Reef with Jean-Michel Cousteau",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24451306",
+      "retrieved_at": "2026-10-18T17:00:32.214Z",
+      "sha256": "cf9e91cac55e191c8ad2c679bb05e823e8b6086222d7b40720eb38b47f66b1dc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Exploring the Reef with Jean-Michel Cousteau (also simply referred to as Exploring the Reef) is a live-action/animated short documentary film included on the fullscreen version of disc 2 of the Finding Nemo 2-Disc Collector's Edition DVD, which was released on November 4, 2003.",
+        "It features Jean-Michel Cousteau in a documentary film he is trying to make about coral reefs, but Marlin (Albert Brooks), Dory (Ellen DeGeneres) and Nemo (Alexander Gould) interrupt him."
+      ]
+    }
+  ]
+}

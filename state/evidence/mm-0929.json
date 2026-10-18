@@ -1,0 +1,131 @@
+{
+  "id": "mm-0929",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Intermediate and Lateral Plate Mesoderm",
+      "publisher": "Oxford University Press",
+      "author": "Barresi, Michael J. F.; Gilbert, Scott F.",
+      "published_at": "2023-03-01",
+      "url": "https://doi.org/10.1093/hesc/9780197574591.003.0025",
+      "retrieved_at": "2026-10-18T16:17:05.236Z",
+      "sha256": "161a78dca0a9199520c7df83bc5c2a3f7c27b797c6b831514b42e2ef9594d4cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter talks about the intermediate mesoderm, which forms the kidneys, adrenal glands, and gonads and is specified through interactions with the paraxial mesoderm that require Pax2, Pax8, and Lim1.",
+        "It describes the metanephric kidney of mammals which is formed by reciprocal interactions of the metanephric mesenchyme and a branch of the nephric duct called the ureteric bud.",
+        "It also assesses the two layers of the lateral plate mesoderm: the dorsal layer, which underlies the ectoderm and forms the somatopleure, and the ventral layer, which overlies the endoderm and forms the splanchnopleure.",
+        "The chapter reviews Tbx transcription factors that are critical for specifying the heart chambers.",
+        "It looks into the hematopoietic stem cell (HSC) and shows how this depends on stem cell factor (SCF), which is provided primarily by the perivascular cells of the sinusoids contained in the stem cell niche."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How different breathing pressure levels affect blood flow to the kidneys in mechanically ventilated patients after surgery",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "De Rosa, Silvia; Lassola, Sergio",
+      "published_at": "2026-09-21",
+      "url": "https://doi.org/10.1186/isrctn42492132",
+      "retrieved_at": "2026-10-18T16:17:05.774Z",
+      "sha256": "c2de53ba787aa78f281ba8730055e364cbfd6bdff41ae0d7ac4bf69beed08996",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "If you want to download trial data, please consult the FAQs page where the section \"Finding trial information\" includes details about the XML API.",
+        "Please do not scrape this site - the API is a much more efficient way of getting trial data."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Kidney",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17025",
+      "retrieved_at": "2026-10-18T16:17:05.774Z",
+      "sha256": "47077e256e81f48d40a382da64e28d13e5a9e45676fa232a919a88ada296dfeb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In humans, the kidneys are two reddish-brown bean-shaped blood-filtering organs that are a multilobar, multipapillary form of mammalian kidneys, usually without signs of external lobulation.",
+        "They are located on the left and right in the retroperitoneal space, and in adult humans are about 12 centimetres (4+1⁄2 inches) in length.",
+        "They receive blood from the paired renal arteries; blood exits into the paired renal veins.",
+        "Each kidney is attached to a ureter, a tube that carries excreted urine to the bladder.",
+        "The kidney participates in the control of the volume of various body fluids, fluid osmolality, acid–base balance, various electrolyte concentrations, and removal of toxins.",
+        "Filtration occurs in the glomerulus: one-fifth of the blood volume that enters the kidneys is filtered.",
+        "Examples of substances reabsorbed are solute-free water, sodium, bicarbonate, glucose, and amino acids.",
+        "Examples of substances secreted are hydrogen, ammonium, potassium and uric acid.",
+        "The nephron is the structural and functional unit of the kidney.",
+        "Each adult human kidney contains around 1 million nephrons, while a mouse kidney contains only about 12,500 nephrons.",
+        "The kidneys also carry out functions independent of the nephrons.",
+        "For example, they convert a precursor of vitamin D to its active form, calcitriol; and synthesize the hormones erythropoietin and renin."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Kidney failure",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=284027",
+      "retrieved_at": "2026-10-18T16:17:05.774Z",
+      "sha256": "714b7b5aed5f12acb85000ae69858c493167e7711cd13c0d6bb874a99b82325d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kidney failure, also known as renal failure or end-stage renal disease (ESRD), is a medical condition in which the kidneys can no longer adequately filter waste products from the blood, functioning at less than 15% of normal levels.",
+        "Kidney failure is classified as either acute kidney failure, which develops rapidly and may resolve; and chronic kidney failure, which develops slowly and can often be irreversible.",
+        "Symptoms may include leg swelling, feeling tired, vomiting, loss of appetite, and confusion.",
+        "Complications of acute and chronic failure include uremia, hyperkalemia, and volume overload.",
+        "Complications of chronic failure also include heart disease, high blood pressure, and anaemia.",
+        "Causes of acute kidney failure include low blood pressure, blockage of the urinary tract, certain medications, muscle breakdown, and hemolytic uremic syndrome.",
+        "Causes of chronic kidney failure include diabetes, high blood pressure, nephrotic syndrome, and polycystic kidney disease.",
+        "Diagnosis of acute failure is often based on a combination of factors such as decreased urine production or increased serum creatinine.",
+        "Diagnosis of chronic failure is based on a glomerular filtration rate (GFR) of less than 15 or the need for renal replacement therapy.",
+        "Treatment of chronic  failure may include hemodialysis, peritoneal dialysis, or a kidney transplant.",
+        "Hemodialysis uses a machine to filter the blood outside the body.",
+        "In peritoneal dialysis specific fluid is placed into the abdominal cavity and then drained, with this process being repeated multiple times per day."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Kidney disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=636229",
+      "retrieved_at": "2026-10-18T16:17:05.774Z",
+      "sha256": "0e38ebff38d3c6cac0efd3ffa20c1aaab67a67e6588d0511dcf69ef0257f7512",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "When used colloquially, the term kidney disease may refer to chronic kidney disease (CKD), an umbrella term for any progressive loss of kidney function over at least three months, from any cause.",
+        "In contrast, kidney damage over a shorter period of time is known as acute kidney injury.",
+        "Glomerular disease, or glomerulonephritis, can be further divided into the nephritic and nephrotic syndromes, which are respectively characterized by blood and protein leaking into the urine.",
+        "All forms of kidney disease, glomerular or otherwise, have the potential to damage all four components of the kidney, culminating in end-stage renal disease—the stage of disease at which dialysis or a kidney transplant is necessary.",
+        "Rates for both chronic kidney disease and mortality have increased, associated with the rising prevalence of diabetes and the aging global population.",
+        "Researchers estimate that by 2040, Kidney diseases will become the 5th highest cause of death globally.",
+        "Researchers estimate that by 2040, Kidney diseases will become the 5th highest cause of death globally."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Artificial kidney",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2400647",
+      "retrieved_at": "2026-10-18T16:17:05.774Z",
+      "sha256": "7b5186ab003b412324b38e79f910202d1bb32eda700edb341834a07d9c921465",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial kidney is often a synonym for hemodialyzer, but may also refer to the other renal replacement therapies (with exclusion of kidney transplantation) that are in use and/or in development.",
+        "This article deals mainly with bio-artificial kidneys featuring cells that are grown from renal cell lines/renal tissue.",
+        "The first successful artificial kidney was developed by Willem Kolff in the Netherlands during the early 1940s: Kolff was the first to construct a working dialyzer in 1943.",
+        "Some of the commercial artificial kidney manufacturing companies are Care AG, Asahi Kasei, Medtronic, Vantive, Nipro, Fresenius among many others."
+      ]
+    }
+  ]
+}

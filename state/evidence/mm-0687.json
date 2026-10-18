@@ -1,0 +1,151 @@
+{
+  "id": "mm-0687",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How does the ozone layer protect Earth from radiation?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Gies, Peter",
+      "published_at": "2012-09-11",
+      "url": "https://theconversation.com/how-does-the-ozone-layer-protect-earth-from-radiation-9206",
+      "retrieved_at": "2026-10-18T15:33:43.946Z",
+      "sha256": "4eea113abb2593c83fa5e47be1b962cc9a105248690a4c5da07839ef3bd68475",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair How does the ozone layer protect Earth from radiation?",
+        "Published: September 11, 2012 4:23pm EDT This is bad, but it would be a lot worse without the ozone layer.",
+        "The ozone layer acts as a filter for the shorter wavelength and highly hazardous ultraviolet radiation (UVR) from the sun, protecting life on Earth from its potentially harmful effects.",
+        "When the sky is clear, there is an inverse relationship between stratospheric ozone and solar UVR measured at the Earth’s surface.",
+        "That is,the lower the ozone levels, the higher the solar UVR.",
+        "The level of UVR from the sun measured at the Earth’s surface varies linearly with latitude.",
+        "There are higher UVR levels nearer the equator and lower UVR nearer the poles (see Figure 1).",
+        "Australia has high levels of solar UVR, due mainly to its geographical position.",
+        "We have capital cities at latitudes ranging from 12°30’S (Darwin) close to the equator down to 42°52’S (Hobart).",
+        "For comparison with some Northern Hemisphere locations, the south of France is 43°N and London is 51°32’N, while Melbourne at 37°46’S is as far from the equator as the coast of North Africa (37°16’N).",
+        "The southern hemisphere generally has higher levels of solar UVR than the northern hemisphere, because the Earth is approximately 1.7% closer to the sun in January (summer) than at the equinox and 1.7% further away in July (northern hemisphere summer).",
+        "The intensity of solar UVR is proportional to the square of the distance, so this means solar UVR levels are already 3.4% higher in the southern Hemisphere than at equinox and 3.4% lower for an equivalent location in the northern hemisphere."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How science saved the ozone layer",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Clerbaux, Cathy",
+      "published_at": "2023-11-29",
+      "url": "https://theconversation.com/how-science-saved-the-ozone-layer-218839",
+      "retrieved_at": "2026-10-18T15:33:44.119Z",
+      "sha256": "a30539ad88934dc97e0d1b220f885767d1caaf8cf943e403ca3424e17f2b7194",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How science saved the ozone layer Skip to content Academic rigor, journalistic flair Concentration of ozone (in Dobson units) as of mid-September 2022, based on measurements by the IASI infrared sounder over 15 years above Antarctica.",
+        "The extent of damage and geographical distribution of the hole (in blue) varies according to weather conditions.",
+        "It highlighted that this protective barrier is on track toward recovery and should be fully restored by the second half of the 21st century.",
+        "There is an urgent need for solutions to help limit climate disruption, yet effective decision-making remains challenging.",
+        "In light of this context, it is worthwhile to recall the scientific saga that led to the signing of the 1987 Montreal Protocol.",
+        "Resulting from the outstanding coordinated efforts of scientists, industrialists and policymakers, that text was the first environmental agreement to be unanimously ratified.",
+        "Today, the treaty and its subsequent amendments are paving the way toward complete elimination of the substances that destroy the ozone layer.",
+        "Indispensable ozone As pointed out by the 2023 annual report, the ozone hole over Antarctica returns every year from September to November.",
+        "During this three-month period, ozone concentrations falling below 220 Dobson units .",
+        "Ozone protects us from solar radiation by absorbing the most powerful ultraviolet rays into the upper reaches of the atmosphere (10 to 50 km above the Earth’s surface).",
+        "We have long known which chemical processes produce and destroy this atmospheric compound filling the stratosphere.",
+        "In fact, ozone measurements have been carried out since the Interwar period (1919–39)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ozone layer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22834",
+      "retrieved_at": "2026-10-18T15:33:44.342Z",
+      "sha256": "37f89823c239a9095103294126ff1feeb374cb73cb4df23abeed8e98a43e464a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The ozone layer or ozone shield is a region of Earth's stratosphere that absorbs most of the Sun's ultraviolet radiation.",
+        "It contains a high concentration of ozone (O3) in relation to other parts of the atmosphere, although still small in relation to other gases in the stratosphere.",
+        "The ozone layer peaks at 8 to 15 parts per million of ozone, while the average ozone concentration in Earth's atmosphere as a whole is about 0.3 parts per million.",
+        "The ozone layer is mainly found in the lower portion of the stratosphere, from approximately 15 to 35 kilometers (9 to 22 mi) above Earth, although its thickness varies seasonally and geographically.",
+        "The ozone layer was discovered in 1913 by French physicists Charles Fabry and Henri Buisson.",
+        "It was deduced that the missing radiation was being absorbed by something in the atmosphere.",
+        "Eventually the spectrum of the missing radiation was matched to only one known chemical, ozone.",
+        "Its properties were explored in detail by the British meteorologist G.",
+        "Dobson, who developed a simple spectrophotometer (the Dobsonmeter) that could be used to measure stratospheric ozone from the ground.",
+        "Between 1928 and 1958, Dobson established a worldwide network of ozone monitoring stations, which continue to operate to this day.",
+        "The \"Dobson unit\" (DU), a convenient measure of the amount of ozone overhead, is named in his honor.",
+        "The ozone layer absorbs 97 to 99 percent of the Sun's medium-frequency ultraviolet light (from about 200 nm to 315 nm wavelength), which otherwise would potentially damage exposed life forms near the surface."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Ozone depletion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44183",
+      "retrieved_at": "2026-10-18T15:33:44.342Z",
+      "sha256": "cabfe53613d832107ac7c4edd3dacfae9ea1d208fc7aa99649df1c8c12c6767a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ozone depletion in the stratosphere (the ozone layer) consists of two related phenomena observed since the late 1970s: a lowered total amount of ozone in Earth's upper stratosphere, and a much larger springtime decrease in around Earth's polar regions.",
+        "The latter phenomenon over the south pole is referred to as the ozone hole.",
+        "There are also springtime polar tropospheric ozone depletion events in addition to these stratospheric events.",
+        "The main causes of ozone depletion and the ozone hole are manufactured chemicals, especially manufactured halocarbon refrigerants, solvents, propellants, and foam-blowing agents (chlorofluorocarbons (CFCs), HCFCs, halons), referred to as ozone-depleting substances (ODS).",
+        "These compounds are transported into the stratosphere by turbulent mixing after being emitted from the surface, mixing much faster than the molecules can settle.",
+        "Once in the stratosphere, they release atoms from the halogen group through photodissociation, which catalyze the breakdown of ozone (O3) into oxygen (O2).",
+        "Ozone depletion in both the upper and lower stratosphere were observed to increase as emissions of halocarbons increased.",
+        "Ozone depletion and the ozone hole have generated worldwide concern over increased cancer risks and other negative effects.",
+        "The ozone layer prevents harmful wavelengths of ultraviolet (UVB) light from passing through the Earth's atmosphere.",
+        "These wavelengths cause skin cancer, sunburn, permanent blindness, and cataracts, which were projected to increase dramatically as a result of thinning ozone, as well as harming plants and animals.",
+        "These concerns led to the adoption of the Montreal Protocol in 1987, which bans the production of CFCs, halons, and other ozone-depleting chemicals.",
+        "Over time, scientists have developed new refrigerants with lower global warming potential (GWP) to replace older ones."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Pokémon: Destiny Deoxys",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1054845",
+      "retrieved_at": "2026-10-18T15:33:44.342Z",
+      "sha256": "19cfcc1a71f64ea239e96a1ef60ad0411656a0fc8167f92919edd7cf58fb3a4d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pokémon: Destiny Deoxys is a 2004 Japanese anime film directed by Kunihiko Yuyama.",
+        "It is the seventh film of the Pokémon anime series and the second film of Pokémon the Series: Ruby and Sapphire.",
+        "The film stars the voices of Rica Matsumoto, Ikue Otani, Yuji Ueda, Kaori, Fushigi Yamada, Noriko Hidaka, Koichi Yamadera, Susumu Chiba, Kenji Nojima and Becky.",
+        "The events of the film take place during Pokémon: Advanced Challenge.",
+        "The English adaptation was produced by 4Kids Entertainment and distributed by Miramax Films and debuted on Kids' WB on January 22, 2005.",
+        "The ending theme for the Japanese version is \"Lovely (Yumemiru Lovely Boy)\" (L•O•V•E•L•Y～夢見るLOVELY BOY～; \"Lovely: Dreaming Lovely Boy\") by Tomoko Kawase under her alias Tommy February6 while the English version is titled \"This Side of Paradise\" by Bree Sharp."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Susan Solomon",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9613870",
+      "retrieved_at": "2026-10-18T15:33:44.342Z",
+      "sha256": "d0ff0d6d4079cffb7f3419e0eaf3feb1c9c578c90068fe10d5060c1b435265e1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Susan Solomon (born 1956) is an American atmospheric chemist, working for most of her career at the National Oceanic and Atmospheric Administration (NOAA).",
+        "In 2011, Solomon joined the faculty at the Massachusetts Institute of Technology, where she serves as the Ellen Swallow Richards Professor of Atmospheric Chemistry & Climate Science.",
+        "Solomon, with her colleagues, was the first to propose the chlorofluorocarbon free radical reaction mechanism that is the cause of the Antarctic ozone hole.",
+        "Her most recent book, Solvable: how we healed the earth, and how we can do it again (2024) focuses on solutions to current problems, as do books by data scientist Hannah Ritchie, marine biologist, Ayana Elizabeth Johnson and climate scientist Katharine Hayhoe.",
+        "National Academy of Sciences, the European Academy of Sciences, and the French Academy of Sciences.",
+        "In 2002, Discover magazine recognized her  as one of the 50 most important women in science.",
+        "In 2008, Solomon was selected by Time magazine as one of the 100 most influential people in the world.",
+        "She also serves on the Science and Security Board for the Bulletin of the Atomic Scientists."
+      ]
+    }
+  ]
+}

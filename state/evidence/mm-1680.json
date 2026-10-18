@@ -1,0 +1,130 @@
+{
+  "id": "mm-1680",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "[Illustrations]",
+      "publisher": "University of California Press",
+      "author": null,
+      "published_at": "2023-11-15",
+      "url": "https://doi.org/10.2307/jj.8500953.9",
+      "retrieved_at": "2026-10-18T17:17:33.371Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Introduction",
+      "publisher": "University of California Press",
+      "author": null,
+      "published_at": "2023-11-15",
+      "url": "https://doi.org/10.2307/jj.8500953.5",
+      "retrieved_at": "2026-10-18T17:17:33.584Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hagia Sophia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=42764",
+      "retrieved_at": "2026-10-18T17:17:33.584Z",
+      "sha256": "d2b42403404e9b3a16a86b1e7c159ae819a57ef76bbe84f47107d648da45a1bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hagia Sophia, officially the Hagia Sophia Grand Mosque, is a mosque and a major cultural and historical site in Istanbul, Turkey.",
+        "It was formerly a church (360–1453) and a museum (1935–2020).",
+        "The last of three church buildings to be successively erected on the site by the Eastern Roman Empire, it was completed in AD 537, becoming the world's largest interior space and among the first to employ a fully pendentive dome.",
+        "It is considered the epitome of Byzantine architecture and is said to have \"changed the history of architecture\".",
+        "From its dedication in 360 until 1453, Hagia Sophia served as the cathedral of Constantinople in the Byzantine liturgical tradition, except for the period 1204–1261 when the Latin Crusaders installed their own hierarchy.",
+        "After the fall of Constantinople in 1453, it served as a mosque, having its minarets added soon after.",
+        "The site became a museum in 1935, and was redesignated as a mosque in 2020.",
+        "The current structure was built by the Byzantine emperor Justinian I as the Christian basilica of Constantinople between 532–537 and was designed by the Greek geometers Isidore of Miletus and Anthemius of Tralles.",
+        "It was formally called the Temple of God's Holy Wisdom, (Greek: Ναὸς τῆς Ἁγίας τοῦ Θεοῦ Σοφίας, romanized: Naòs tês Hagías toû Theoû Sophías) the third church of the same name to occupy the site, as the prior one had been destroyed in the Nika riots.",
+        "As the episcopal see of the ecumenical patriarch of Constantinople, it remained the world's largest church for more than five hundred years, until the abbey church at Cluny was completed in the 12th century.",
+        "Hagia Sophia became the quintessential model for Eastern Orthodox church architecture, and its architectural style was emulated by Ottoman mosques a thousand years later.",
+        "The Hagia Sophia served as an architectural inspiration for many other religious buildings including the Hagia Sophia in Thessaloniki, Panagia Ekatontapiliani, the Şehzade Mosque, the Süleymaniye Mosque, the Rüstem Pasha Mosque and the Kılıç Ali Pasha Complex."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "NCSA Mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=43303",
+      "retrieved_at": "2026-10-18T17:17:33.584Z",
+      "sha256": "650d3ed5d6853931a95bd30fea269ee18348b57f9ada0fee5bfa0e8fb346448a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "NCSA Mosaic, colloquially Mosaic, is a discontinued web browser that was instrumental in popularizing the World Wide Web and the general Internet during the 1990s.",
+        "Although not the first web browser (preceded by WorldWideWeb, Erwise, and ViolaWWW), it was the first browser to display images inline with text instead of a separate window.",
+        "It supported various Internet protocols such as HTTP, FTP, NNTP, and Gopher.",
+        "Its interface, reliability, personal computer support, and simple installation contributed to Mosaic's initial popularity.",
+        "Mosaic was developed at the National Center for Supercomputing Applications (NCSA) at the University of Illinois at Urbana–Champaign beginning in December 1992, released in January 1993, with official development and support until January 1997.",
+        "Mosaic lost market share to Netscape Navigator in late 1994, and had only a tiny fraction of users left by 1997, when the project was discontinued.",
+        "Microsoft licensed one of the derivative commercial products, Spyglass Mosaic, to create Internet Explorer in 1995."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61309",
+      "retrieved_at": "2026-10-18T17:17:33.584Z",
+      "sha256": "c8bdecba1e0664de44d7103f4ebdc4789563b5bf45464af2bc29feafa42b56db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mosaic () is a pattern or image made of small regular or irregular pieces of colored stone, glass or ceramic, held in place by plaster/mortar, and covering a surface.",
+        "Mosaics are often used as floor and wall decoration, and were particularly popular in the Ancient Roman world.",
+        "Mosaic today includes murals and pavements, but also artwork, hobby crafts, industrial and construction forms.",
+        "Mosaics have a long history, starting in Mesopotamia in the 3rd millennium BC.",
+        "Pebble mosaics were made in Tiryns in Mycenean Greece; mosaics with patterns and pictures became widespread in classical times, both in Ancient Greece and Ancient Rome.",
+        "Early Christian basilicas from the 4th century onwards were decorated with wall and ceiling mosaics.",
+        "Mosaic art flourished in the Byzantine Empire from the 6th to the 15th centuries; that tradition was adopted by the Norman Kingdom of Sicily in the 12th century, by the eastern-influenced Republic of Venice, and among the Rus.",
+        "Mosaic fell out of fashion in the Renaissance, though artists like Raphael continued to practice the old technique.",
+        "Roman and Byzantine influence led Jewish artists to decorate 5th and 6th century synagogues in the Middle East with floor mosaics.",
+        "Figurative mosaic, but mostly without human figures, was widely used on religious buildings and palaces in early Islamic art, including Islam's first great religious building, the Dome of the Rock in Jerusalem, and the Umayyad Mosque in Damascus.",
+        "Such mosaics went out of fashion in the Islamic world after the 8th century, except for geometrical patterns in techniques such as zellij, which remain popular in many areas.",
+        "Modern mosaics are made by artists and craftspeople around the world."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Alexander Mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=262891",
+      "retrieved_at": "2026-10-18T17:17:33.584Z",
+      "sha256": "1559ac0fb8e87582127ef9d4c130cfd41af284d045a72252c0685f13525b319d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Alexander Mosaic, also known as the Battle of Issus Mosaic, is a Roman floor mosaic originally from the House of the Faun in Pompeii, Italy.",
+        "120 and 100 BC and depicts a battle between the armies of Alexander the Great and Darius III of Persia.",
+        "This work of art is a combination of different artistic traditions such as Italic, Hellenistic, and Roman.",
+        "The mosaic is considered Roman based on the broader context of its time and location in relation to the later Roman Republic.",
+        "The original is preserved in the National Archaeological Museum, Naples.",
+        "The mosaic is believed to be a copy of a late fourth-century BC or early third-century BC Hellenistic painting, perhaps by Philoxenus of Eretria or Apelles."
+      ]
+    }
+  ]
+}

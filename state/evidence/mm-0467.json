@@ -1,0 +1,140 @@
+{
+  "id": "mm-0467",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Fire detection and fire alarm systems",
+      "publisher": "BSI British Standards",
+      "author": null,
+      "published_at": null,
+      "url": "/products/fire-detection-and-fire-alarm-systems-smoke-detectors-line-detectors-using-an-optical-beam",
+      "retrieved_at": "2026-10-18T15:13:10.069Z",
+      "sha256": "fd77aaf0de3469e439de8d76477e125e15c72833c37478f60b6e46910d684f9f",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Line detectors using an optical beam Current, Under Review • Published: 30 Apr 2015 What is BS EN 54-12 – Requirements for line detectors about?",
+        "BS EN 54-12 provides for the assessment and verification of constancy of performance (AVCP) of line detectors using an optical beam to this EN.",
+        "BS EN 54-12 on portable foam equipment is useful for: Smoke detectors manufacturers Quality control authorities Safety department Why should you use BS EN 54-12 - Requirements for line detectors ?",
+        "An optical beam smoke detector is a device that uses a projected beam of light to detect smoke across large areas.",
+        "BS EN 54-12 provides requirements that can be followed while manufacturing the smoke detectors.",
+        "This will ensure the quality and maintain the standard in factory production.",
+        "BS EN 54-12 provides test methods that help determine the efficiency and the performance of the smoke detectors which ensure their durability.",
+        "BS EN 54-12 :2015 includes some technical changes with respect to BS EN 54-12:2002 ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Combinational Smoke Detector",
+      "publisher": "Digital WPI",
+      "author": "Keith Edward Flanders",
+      "published_at": "2009-04-30",
+      "url": "https://openalex.org/W2916250260",
+      "retrieved_at": "2026-10-18T15:13:10.070Z",
+      "sha256": "7502af614f2010d3ada15c5c3f292a559b65f876158436f069582463161a3f1b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The focus of this project was to design and create a combinational smoke detector to sense different fire characteristics.",
+        "Research was completed on the background of detectors and different thresholds of characteristic signatures from a fire that could be identified.",
+        "Fire signatures identified for the detector were smoke, carbon monoxide and heat.",
+        "Individual sensors that could recognize these signatures were used in the design of a smoke detector that could reduce the number of false alarms caused by nuisance sources by looking for a combination of signals to indicate alarm."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Smoke detector",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=341287",
+      "retrieved_at": "2026-10-18T15:13:10.070Z",
+      "sha256": "62906eb745b9b570d97335b91437179d0091e6444a034567194e485163c4e3ae",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A smoke detector is a device that senses smoke, typically as an indicator of fire.",
+        "Smoke detectors/alarms are usually housed in plastic enclosures, typically shaped like a disk about 125 millimetres (5 in) in diameter and 25 millimetres (1 in) thick, but shape and size vary.",
+        "Smoke can be detected either optically (photoelectric) or by physical process (ionization).",
+        "Sensitive detectors can be used to detect and deter smoking in banned areas.",
+        "Smoke detectors in large commercial and industrial buildings are usually connected to a central fire alarm system.",
+        "Household smoke detectors, also known as smoke alarms, generally issue an audible or visual alarm from the detector itself or several detectors if there are multiple devices interconnected.",
+        "Household smoke detectors range from individual battery-powered units to several interlinked units with battery backup.",
+        "With interlinked units, if any unit detects smoke, alarms will trigger all of the units.",
+        "Residential smoke alarms are usually powered with a 9-volt battery, a non-removable \"10 Year Sealed\" battery, or by mains electricity.",
+        "Some smoke alarms use a combination of the two, usually using a battery as an extra power source should loss of mains power occur.",
+        "Commercial smoke detectors issue a signal to a fire alarm control panel as part of a fire alarm system.",
+        "Usually, an individual commercial smoke detector unit does not issue an alarm; some, however, have built-in sounders."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Carbon monoxide detector",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2930061",
+      "retrieved_at": "2026-10-18T15:13:10.070Z",
+      "sha256": "635f7c0c1aaa0aa60e6f346555d65b8376911882574466f8937172e53611cbac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A carbon monoxide detector or CO detector is a device which detects the presence of carbon monoxide (CO) gas, and is used to prevent carbon monoxide poisoning.",
+        "Most CO detectors use a sensor with a defined, limited lifespan, and will not work indefinitely.",
+        "In the late 1990s, Underwriters Laboratories (UL) changed the definition of a single station CO detector with a sound device to carbon monoxide (CO) alarm.",
+        "This applies to all CO safety alarms that meet the UL 2034 standard; however for passive indicators and system devices that meet UL 2075, UL refers to these as carbon monoxide detectors.",
+        "CO is a colorless, tasteless, and odorless gas produced by incomplete combustion of carbon-containing materials.",
+        "It is often referred to as the \"silent killer\" because it is virtually undetectable by humans.",
+        "In a study by UL, \"Sixty percent of Americans could not identify any potential signs of a CO leak in the home\".",
+        "Elevated levels of CO can be dangerous to humans depending on the amount present and length of exposure.",
+        "Smaller concentrations can be harmful over longer periods while increasing concentrations require diminishing exposure times to be harmful.",
+        "CO detectors are designed to measure CO levels over time and sound an alarm before dangerous levels of CO accumulate in an environment, giving people adequate warning to safely ventilate the area or evacuate.",
+        "Some system-connected detectors also alert a monitoring service that can dispatch emergency services if necessary.",
+        "While CO detectors do not serve as smoke detectors and vice versa, combined smoke/CO detectors are also sold."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Aspirating smoke detector",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3035913",
+      "retrieved_at": "2026-10-18T15:13:10.070Z",
+      "sha256": "39c1a86f12bc09db3b3ba07577e538013b84d25d8fc66371f4c67b9a660815b3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An aspirating smoke detector (ASD) is a system used in active fire protection, consisting of a central detection unit which draws air through a network of pipes to detect smoke.",
+        "The sampling chamber is based on a nephelometer that detects the presence of smoke particles suspended in air by detecting the light scattered by them in the chamber.",
+        "ASDs can typically detect smoke before it is visible to the naked eye.",
+        "In most cases aspirating smoke detectors require a fan unit to draw in a sample of air from the protected area through its network of pipes."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Kashiwazaki-Kariwa Nuclear Power Plant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11996462",
+      "retrieved_at": "2026-10-18T15:13:10.070Z",
+      "sha256": "dd387486baeaf2ebef146e62b48d16811409030b93e040995f16f9186e8ca59f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is the first nuclear power plant in the world to use an advanced boiling water reactor.",
+        "The plant is owned and operated by Tokyo Electric Power Company (TEPCO), and it is the largest nuclear generating station in the world by net electrical power rating.",
+        "On 16 July 2007, the Chūetsu offshore earthquake took place, with its epicenter located only 19 km (12 mi) from the plant.",
+        "The earthquake registered Mw 6.6, ranking it among the strongest earthquakes to occur in the immediate range of a nuclear power plant.",
+        "This shook the plant beyond design basis and initiated an extended shutdown for inspection, which indicated that greater earthquake-proofing was needed before the operation could be resumed.",
+        "The plant was completely shut down for 21 months following the earthquake.",
+        "Unit 7 was restarted after seismic upgrades on 19 May 2009, followed later by units 1, 5, and 6.",
+        "(Units 2, 3, and 4 were not restarted by the time of the March 2011 earthquake.)\nThe four restarted and operating units at the plant were not affected by the 11 March 2011 earthquake, but thereupon all units were shut down to carry out safety improvements.",
+        "TEPCO regained permission to restart units 6 and 7 from the Nuclear Regulation Authority (NRA) in 2017.",
+        "In December 2023, the NRA approved the reloading of fuel at the plant, citing improvements in the safety management system.",
+        "TEPCO first restarted Unit 6 in January 2026 only to take it offline twice due to an alarm and later a repairs, and was subsequently restarted, entering commercial operations on 16 April 2026."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "mm-1219",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "What is a Turing Test for emotional AI?",
+      "publisher": "Center for Open Science",
+      "author": "Ho, Tung Manh",
+      "published_at": "2022-07-20",
+      "url": "https://doi.org/10.31219/osf.io/xjzfv",
+      "retrieved_at": "2026-10-18T16:46:51.094Z",
+      "sha256": "14c06185249c0beca3bdd8058c2a3f735ead18eda1253da17e573394c519a681",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This essay has provided some considerations of features of the Turing Test for emotional AI, which includes the control of training emotional data, the use of cultural differences in emotions, the use of dialogue, the use of causal relationships among emotion, reason, and action.",
+        "These tools serve as initial parameters for evaluating whether an emotional AI has achieved the status of general and strong emotional intelligence.",
+        "It also highlights the tension in theoretical debates on what emotions are, whether they are biologically hardwired or constructed, and speculates that a disembodied affect-sensing algorithm cannot pass the Turing test for emotional intelligence.",
+        "It is clear that laden in our understanding of emotions is our presumptions of what constitutes a mind and its relationship with the world"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Turing test—from every angle",
+      "publisher": "Oxford University Press",
+      "author": "Proudfoot, Diane",
+      "published_at": "2017-01-26",
+      "url": "https://doi.org/10.1093/oso/9780198747826.003.0037",
+      "retrieved_at": "2026-10-18T16:46:51.237Z",
+      "sha256": "eb783fb514081eddcf77e9448b792ec1b47c61b8aa66fa9edf5e3bc3f64058f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On the sixtieth anniversary of his death, the University of Reading announced that a ‘historic milestone in artificial intelligence’ had been reached at the Royal Society: a computer program had passed the ‘iconic’ Turing test.",
+        "According to an organizer, this was ‘one of the most exciting’ advances in human understanding.",
+        "In a frenzy of worldwide publicity, the news was described as a ‘breakthrough’ showing that ‘robot overlords creep closer to assuming control’ of human beings.",
+        "Yet after only a single day it was claimed that ‘almost everything about the story is bogus’: it was ‘nonsense, complete nonsense’ to say that the Turing test had been passed.",
+        "The backlash spread to the test itself; critics said that the ‘whole concept of the Turing Test is kind of a joke .",
+        "In 1948, in a report entitled ‘Intelligent machinery’, Turing described a ‘little experiment’ that, he said, was ‘a rather idealized form of an experiment I have actually done’.",
+        "Player A plays chess as he/she normally would, while player B is proxy for a computer program, following a written set of rules and working out what to do using pencil and paper—this ‘paper machine’ was the only sort of programmable computer freely available in 1948 (see Ch.",
+        "Turing said, ‘Two rooms are used with some arrangement for communicating moves, and a game is played between C and either A or the paper machine’.",
+        "According to Turing, ‘C may find it quite difficult to tell which he is playing’.",
+        "This is the first version of what has come to be known as ‘Turing’s imitation game’ or the ‘Turing test’."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Alan Turing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1208",
+      "retrieved_at": "2026-10-18T16:46:51.237Z",
+      "sha256": "301279b23e8d4e6539c1fa609b8a9ef4fb9a205c8286f1fc21edcb446e40d1ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Alan Mathison Turing (; 23 June 1912 – 7 June 1954) was an English mathematician and logician widely regarded as the father of theoretical computer science.",
+        "He formalised the concepts of algorithm and computation with the Turing machine, a model of a general-purpose computer, and his contributions to cryptanalysis helped the Allies of World War II decipher messages encrypted by the German Enigma machine.",
+        "He also contributed the Turing test to philosophy of artificial intelligence and the Turing pattern concept to mathematical and theoretical biology.",
+        "Born in London and raised in southern England, Turing graduated from King's College, Cambridge, and earned a doctorate from Princeton University in 1938.",
+        "During World War II, he worked at the Government Code and Cypher School at Bletchley Park, Britain's codebreaking centre, and focused on decrypting German naval messages as the head of Hut 8.",
+        "His techniques improved on the pre-war Polish bomba method and hastened cryptanalysis of the Enigma ciphering system.",
+        "The resulting intelligence, known as Ultra, proved helpful in the Battle of the Atlantic.",
+        "After the war, Turing joined the National Physical Laboratory, where he designed the Automatic Computing Engine, an early stored-program computer.",
+        "In 1948, he joined Max Newman's Computing Machine Laboratory at the University of Manchester, contributing to the development of early Manchester computers.",
+        "He also turned to mathematical biology, working on the chemical basis of morphogenesis and theorizing chemical oscillators independently of their experimental observation.",
+        "In 1952, after acknowledging a sexual relationship with another man, Turing was prosecuted for gross indecency.",
+        "He received probation conditional on chemical castration and lost his security clearance."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Chinese room",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6216",
+      "retrieved_at": "2026-10-18T16:46:51.237Z",
+      "sha256": "85979f75ce7e33e5cdf9de47460cab920f6768438200994e072a308e2a8e1dfc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Chinese room argument holds that a computer executing a program cannot have a mind, understanding, or consciousness, regardless of how intelligently or human-like the program may make the computer behave.",
+        "The argument was presented in a 1980 paper by the American philosopher John Searle, entitled \"Minds, Brains, and Programs\" and published in the journal Behavioral and Brain Sciences.",
+        "Precursor arguments had been made by Gottfried Wilhelm Leibniz, Peter Winch, Anatoly Dneprov, et al.; Searle's version has been widely discussed in the years since.",
+        "The centerpiece of Searle's argument is the \"Chinese room\" thought experiment.",
+        "Searle supposes a computer program which receives and outputs Chinese characters, carrying out instructions so perfectly that humans cannot distinguish it from a Chinese-speaking person.",
+        "Searle then supposes he is in a room, receiving Chinese characters slipped under the door.",
+        "He follows an English version of the computer program step-by-step, which instructs him to return output Chinese characters.",
+        "Searle argues that as he would not understand the conversation, and there is no essential difference between his role and the computer's, that a computer is not capable of understanding.",
+        "The argument is directed against the philosophical positions of functionalism and computationalism, which hold that the mind may be viewed as an information-processing system operating on formal symbols, and that simulation of a given mental state is sufficient for its presence.",
+        "Widely discussed, the argument has been subject to significant debate among philosophers of mind and AI researchers, and is a touchstone of contemporary philosophy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T16:46:51.237Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Minimum intelligent signal test",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3897595",
+      "retrieved_at": "2026-10-18T16:46:51.237Z",
+      "sha256": "6e49581f7ed2770de2c19ad7c845279aac18dbb01055e1b0d4dc1bb9b706b1e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The minimum intelligent signal test, or MIST, is a variation of the Turing test proposed by Chris McKinstry in which only boolean (yes/no or true/false) answers may be given to questions.",
+        "The purpose of such a test is to provide a quantitative statistical measure of humanness, which may subsequently be used to optimize the performance of artificial intelligence systems intended to imitate human responses.",
+        "McKinstry gathered approximately 80,000 propositions that could be answered yes or no, e.g.:\n\nIs Earth a planet?",
+        "These questions test both specific knowledge of aspects of culture, and basic facts about the meaning of various words and concepts.",
+        "It could therefore be compared with the SAT, intelligence testing and other controversial measures of mental ability.",
+        "McKinstry's aim was not to distinguish between shades of intelligence but to identify whether a computer program could be considered intelligent at all.",
+        "According to McKinstry, a program able to do much better than chance on a large number of MIST questions would be judged to have some level of intelligence and understanding.",
+        "For example, on a 20-question test, if a program were guessing the answers at random, it could be expected to score 10 correct on average.",
+        "But the probability of a program scoring 20 out of 20 correct by guesswork is only one in 220, i.e.",
+        "one in 1,048,576; so if a program were able to sustain this level of performance over several independent trials, with no prior access to the propositions, it should be considered intelligent."
+      ]
+    }
+  ]
+}
