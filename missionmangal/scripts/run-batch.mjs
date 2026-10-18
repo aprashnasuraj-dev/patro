@@ -17,6 +17,9 @@ import {BYLINE} from '../core/portfolio.mjs';
 const arg=(k,d)=>{const i=process.argv.indexOf('--'+k);return i<0?d:process.argv[i+1];};
 const EVIDENCE_APIS=['wikipedia-search','openalex','crossref','europepmc'];
 const TRANSIENT=/NO_PROVIDER|HTTP 429|HTTP 5\d\d|ETIMEDOUT|ECONNRESET|fetch failed|rate limit|timeout/i;
+// Rescue simple, low-risk explanatory questions with a five-source floor; high-risk topics retain normal thresholds.
+const HIGH_RISK=/\b(health|medical|medicine|disease|diagnos|treatment|drug|medication|nutrition|financial|finance|investment|investing|loan|tax|legal|law|suicide|self.harm|weapon|explosive|poison|emergency|injury|safety-critical)\b/i;
+const isLowRiskGeneralQuestion=(meta,question)=>{const q=String(question||'').trim();const context=String(meta.category||'')+' '+q;return !YMYL.test(meta.category||'')&&!HIGH_RISK.test(context)&&/^(why|what|how|does|do|is|are|can|where|when|who)\b/i.test(q);};
 export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,deadlineMs=Date.now()+335*60_000,limit=Infinity,client,llm,render,fetchImpl,now=()=>new Date(),log=console.log,autoApprove=false,allowYmyl=false,imageFetch,imageOrder,minMs=0,sleep=ms=>new Promise(r=>setTimeout(r,ms)),clock=()=>Date.now(),attempt=1,env=process.env}){
  const registry=await loadRegistry(join(root,'config','portfolio.json'));
  const mine=registry.filter(r=>r.status==='reserved'&&parseInt(createHash('sha256').update(r.id+':'+attempt).digest('hex').slice(0,8),16)%shards===shard).slice(0,limit);
