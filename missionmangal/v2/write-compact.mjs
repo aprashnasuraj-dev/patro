@@ -27,6 +27,14 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
   if(lint(body).length)body=fix(body);
   wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
  }
+ let voiceProblems=lint(body);
+ if(voiceProblems.length){
+  w=await llm.json('Rewrite this article draft to fix the listed editorial voice problems. Preserve every supported fact, all valid [[source_id]] markers, the exact question focus, section order, and at least '+minWords+' words. Do not add facts, sources, or citations that are not in the grounded outline. Vary sentence openings and lengths; avoid sentences averaging more than about 25 words. Return JSON {"markdown":"...","faq":[{"question":"","answer":""}]}.' ,
+   'Exact question: '+question+'\\nVoice problems to fix: '+voiceProblems.join('; ')+'\\nCurrent draft:\\n'+body+'\\nGrounded outline and allowed claims:\\n'+plan);
+  body=String(w.value.markdown||'').trim();
+  if(lint(body).length)body=fix(body);
+  wordCount=(body.match(/\\b[\\w’'-]+\\b/g)||[]).length;
+ }
  const allowedSourceIds=new Set(ok.map(c=>c.source_id));
  const paragraphs=body.split(/\n\s*\n/).map(p=>p.trim()).filter(p=>p&&!/^#{1,6}\s/.test(p));
  const citationProblems=[];
@@ -36,7 +44,7 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
   for(const id of markers)if(!allowedSourceIds.has(id))citationProblems.push('Unknown inline source marker: '+id);
  }
  if(citationProblems.length)throw Object.assign(new Error('INLINE_CITATION_FAILED: '+citationProblems.slice(0,6).join('; ')),{code:'INLINE_CITATION_FAILED'});
- const voiceProblems=lint(body);
+ voiceProblems=lint(body);
  if(voiceProblems.length)throw Object.assign(new Error('VOICE_GATE_FAILED: '+voiceProblems.join('; ')),{code:'VOICE_GATE_FAILED'});
  const faq=Array.isArray(w.value.faq)?w.value.faq.slice(0,3):[];
  const faqSeen=new Set();
