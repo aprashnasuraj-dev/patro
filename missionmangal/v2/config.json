@@ -59,7 +59,7 @@
   "budget_safety": 0.85,
   "discovery": {
     "max_links_per_topic": 40,
-    "max_fetches_per_topic": 8,
+    "max_fetches_per_topic": 12,
     "domain_delay_ms": 1500,
     "trusted_suffixes": [],
     "blocked_suffixes": [
