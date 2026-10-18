@@ -4,7 +4,7 @@ name: Mission Mangal v2 (adaptive, cache-first, budget-aware; merge to main stay
 # Start a run by (a) committing missionmangal/v2/run-request.json on this branch (works without touching main), or (b) "Run workflow" once this file is on the default branch.
 on:
   push:
-    branches: [missionmangal-v2]
+    branches: [missionmangal-v2, missionmangal-v2-editorial-strengthening]
     paths: ["missionmangal/v2/run-request.json"]
   workflow_dispatch:
     inputs:
