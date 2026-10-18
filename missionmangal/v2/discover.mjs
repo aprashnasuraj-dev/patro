@@ -27,7 +27,7 @@ export function rankCandidateLinks(urls,topic=''){
   ['nature.com','science.org','cell.com','pnas.org','nih.gov','ncbi.nlm.nih.gov','who.int','un.org','worldbank.org','nasa.gov','noaa.gov','usgs.gov','cdc.gov','gov.uk','europa.eu'].some(d=>h===d||h.endsWith('.'+d))?5:
   h.endsWith('.edu')?5:h.endsWith('.org')?3:2;
  const score=u=>{try{const x=new URL(u),h=x.hostname.toLowerCase().replace(/^www\./,'');
-  const path=(x.pathname+' '+x.search).toLowerCase();const topical=terms.reduce((n,t)=>n+(h+' '+path).includes(t)?1:0,0);
+  const path=(x.pathname+' '+x.search).toLowerCase();const topical=terms.reduce((n,t)=>n+((h+' '+path).includes(t)?1:0),0);
   return authority(h)*10+Math.min(terms.length,topical)*2+(x.pathname.length>1?1:0);
  }catch{return -1;}};
  return [...new Set(urls)].map((url,index)=>({url,index,score:score(url)})).sort((a,b)=>b.score-a.score||a.index-b.index).map(x=>x.url);
