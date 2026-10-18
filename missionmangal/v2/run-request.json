@@ -6,5 +6,5 @@
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Two-article smoke test after P2/P3 fixes, ranking-score correction, inline citation regression fix, and 300-word minimum on every route. No production publish."
+  "note": "Final two-article smoke after removing the independent-domain research floor for general topics while retaining grounded cached-source citations. All routes min 300 words. No production publish."
 }
