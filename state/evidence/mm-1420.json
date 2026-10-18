@@ -1,0 +1,167 @@
+{
+  "id": "mm-1420",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Non-Living Intelligence Brings Life to Music: A Philosophical, Cognitive, and Structural Analysis of AI-Created Sound",
+      "publisher": "Elsevier BV",
+      "author": "Salah, ziad",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6276478",
+      "retrieved_at": "2026-10-18T15:29:12.799Z",
+      "sha256": "f2803d7881c525a019b5a946c6b9ca28863a5f8c8b8d4a88418179fc989cf68e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The question of whether artificially generated music can be considered \"alive\" in any meaningful aesthetic sense has been framed, almost universally, as a question about the machine.",
+        "Artificial intelligence, understood not as a creative agent but as a high-dimensional structural amplifier, does not challenge this relationship; it clarifies it.",
+        "This paper introduces the concept of Delegated Vitality , a framework describing the conditions under which perceived aliveness in sound emerges independently of the originating system's phenomenological status.",
+        "The contribution is not a defence of AI art, nor a critique of it.",
+        "It is a more precise description of what music actually is, and why that description has always accommodated the non-living."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A GI Bill for Country Music",
+      "publisher": "University of North Carolina Press",
+      "author": "Thompson, Joseph M.",
+      "published_at": "2024-04-02",
+      "url": "https://doi.org/10.5149/northcarolina/9781469678368.003.0003",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "90de692a6bd0552dd2a5fc904ae0634ef0a8c5e7ca0103baa4f50a4142391a08",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chapter two explains how and why country music emerged as such a powerful tool for military recruitment campaigns in the 1950s.",
+        "This analysis follows the story of Faron Young, a singer who received an early-career boost when the US Army drafted him in 1952.",
+        "Soon after his induction, Young won a televised talent contest that the army used to boost recruitment.",
+        "The army then put Young to work as a voice of entertainment and recruitment, booking him on radio and television programs where he could play his songs and tout the economic benefits of armed service like the GI Bill.",
+        "This pairing of genre and recruitment, along with the boosterism of politicians like Tennessee Governor Frank G.",
+        "Clement, helped grow the country music business while making a statement about the kinds of soldiers that the US military desired in the ranks."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cold War Country",
+      "publisher": "University of North Carolina Press",
+      "author": "Thompson, Joseph M.",
+      "published_at": "2024-04-02",
+      "url": "https://doi.org/10.5149/northcarolina/9781469678368.001.0001",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "a4156c1739ce6b0caef5a3924c32ff4981987756f84432f29492c49126fd3560",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Country music maintains a special, decades-long relationship to American military life, but these ties didn't just happen.",
+        "This readable history reveals how country music's Nashville-based business leaders on Music Row created partnerships with the Pentagon to sell their audiences on military service while selling the music to servicemembers.",
+        "Beginning in the 1950s, the military flooded armed forces airwaves with the music, hosted tour dates at bases around the world, and drew on artists from Johnny Cash to Lee Greenwood to support recruitment programs.",
+        "Over the last half of the twentieth century, the close connections between the Defense Department and Music Row gave an economic boost to the white-dominated sounds of country while marginalizing Black artists and fueling divisions over the meaning of patriotism.",
+        "This story is filled with familiar stars like Roy Acuff, Elvis Presley, and George Strait, as well as lesser-known figures: industry executives who worked the halls of Congress, country artists who dissented from the stereotypically patriotic trappings of the genre, and more.",
+        "Thompson argues convincingly that the relationship between Music Row and the Pentagon helped shape not only the evolution of popular music but also race relations, partisanship, and images of the United States abroad."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Perspectives on AI and Music : Representation, Detection, and Explanation in the Age of AI-Generated Music",
+      "publisher": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+      "author": "Cros Vila, Laura",
+      "published_at": "2025-01-01",
+      "url": "https://openalex.org/W7112394716",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "8d32159b6e528f6ba0ecd47895f4a08deb6eb6f0d283e860252e76177e87926f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The development and commercial exploitation of AI systems for generating music is impacting how music is created, distributed, and used.",
+        "The results contribute practical methods for music analysis and detection using AI, and highlight key limitations in current approaches.",
+        "Overall, this thesis lays a foundation for future work on robust evaluation frameworks and improved explanation methods tailored for music AI systems."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial intelligence in music",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21659435",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "0f50b0337bf1bce2acda7f18dd2f2da13db2b4d57829144ff44fbd50230f1482",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Music software utilizes artificial intelligence (AI) to generate, classify, or recommend music.",
+        "Similar to its applications in other fields, AI in music simulates complex human cognitive processes.",
+        "A prominent feature is the capability of an AI algorithm to learn from historical data, such as in computer accompaniment technology, where the AI listens to a human performer and accompanies them in real-time.",
+        "AI also drives interactive composition technologies that respond dynamically to live performances.",
+        "Modern applications expand across the entire industry lifecycle, transforming music composition, production, and performance, as well as how music is marketed and consumed.",
+        "Furthermore, conversational agents leverage voice recognition and natural language processing to enable voice-controlled music playback, bridging current research in music theory with advanced digital sound processing."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "d3aa5b37afd542977ef56f75604a3b343d4ea50b4d284cc4f01a8e505cc3758e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "AI boom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291899",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "b502e4010efe81417b37cdd5474ef17abf1954b9c3a223bb7f8c128f4cf4c8f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The AI boom is the period of rapid growth in the field of artificial intelligence in the 2020s.",
+        "Generative AI technologies include large language models (LLM), which generate text and code, image models, and video models, and world models.",
+        "This period is sometimes referred to as an AI spring, a term used to contrast it with previous AI winters.",
+        "Key advances preceding the boom include the transformer (2017), generative pre-trained transformer (2018) and reinforcement learning from human feedback.",
+        "During the boom, LLMs have evolved via the reasoning model, mixture of experts technique, and multimodal learning.",
+        "As of 2026, leading proprietary LLMs have been released by Anthropic, OpenAI, and divisions of Google, Meta, and SpaceX in the United States.",
+        "In China, companies favour open weights releases, led by Alibaba Cloud, DeepSeek, Moonshot AI, and Z.ai.",
+        "Since 2018, observers including Ian Bremmer, Nicholas Thompson, and Kai-Fu Lee have argued an AI arms race or AI Cold War exists between the US and China.",
+        "The boom has impacted the semiconductor industry, causing a global memory supply shortage; As of second quarter 2026, Nvidia is the world's largest corporation by capitalization while TSMC, Broadcom, and Samsung are among the ten largest."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "AI slop",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=77986589",
+      "retrieved_at": "2026-10-18T15:29:13.031Z",
+      "sha256": "403528758453538d5892f9b571975459e4bffe646b5f7a50079b0e6ee761eef4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI slop, also known as slop content or simply slop, is digital content made with generative artificial intelligence that is perceived as lacking in effort, quality, or meaning, and usually produced in high volume to gain advantage, to earn money, or to deceive people.",
+        "It is a form of synthetic media usually linked to the monetization in the creator economy of social media and online advertising.",
+        "Coined in the 2020s, the term has a pejorative connotation similar to spam.",
+        "\"Slop\" was selected as the 2025 Word of the Year by both Merriam-Webster and the American Dialect Society.",
+        "AI slop has been defined as \"digital clutter\", \"filler content prioritizing speed and quantity over substance and quality\", and \"shoddy or unwanted AI content in social media, art, books [and] search results\".",
+        "Jonathan Gilmore, a philosophy professor at the City University of New York, describes the material as having an \"incredibly banal, realistic style\" that is easy for the viewer to process.",
+        "The effect of increasing AI slop on the web has been likened to the increase in entropy as driven by the Second Law of Thermodynamics."
+      ]
+    }
+  ]
+}

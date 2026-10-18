@@ -1,0 +1,188 @@
+{
+  "id": "mm-0058",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Принципы работы сети Wi-Fi",
+      "publisher": "Institute for Education and Consulting Development, LLC",
+      "author": "Мизаев, М.М.; Назаева, М.И.; Мурзаев, Х.А.",
+      "published_at": "2020-12-06",
+      "url": "https://doi.org/10.34755/irok.2020.36.52.188",
+      "retrieved_at": "2026-10-18T14:52:58.255Z",
+      "sha256": "4008f80df6f05dc7abcdf25dc5fd38aa4087c60c5f2ba0c7b12e63c8add93f5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "В данной работе рассмотрены и изучены самые распространенные стандарты сети Wi-Fi.",
+        "Также изучены основные принципы работы Wi-Fi на разных частотах, а также при использовании разных стандартов сети.",
+        "Также в данной работе описана разница между Wi-Fi-сетью на 2,4 ГГц и Wi-Fi-сетью на 5,0 ГГц.",
+        "In the current article the most common standards of the Wi-Fi network are considered and studied.",
+        "The basic principles of Wi-Fi at different frequencies, as well as using different network standards are also considered.",
+        "Moreover, the most promising technologies in the field of wireless data transmission arereviewed.",
+        "This paper also describes the difference between a 2.4 GHz Wi-Fi network and a 5.0 GHz Wi-Fi network.",
+        "Also, on the basis of the studies, the corresponding conclusions are made."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How does Wi-Fi work? An electrical engineer explains",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Krishnamachari, Bhaskar",
+      "published_at": "2021-01-12",
+      "url": "https://theconversation.com/how-does-wi-fi-work-an-electrical-engineer-explains-148156",
+      "retrieved_at": "2026-10-18T14:52:58.474Z",
+      "sha256": "7c70d21331748ebca2fb8c0469dff5e4edbc11ee572fe3e44f52f461c7a41e4c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "An electrical engineer explains Skip to content Academic rigor, journalistic flair The Wi-Fi symbol, like the technology it represents, has become ubiquitous.",
+        "Smith Collection/Gado via Getty Images How does Wi&#8209;Fi work?",
+        "For most people, some of those radio waves are Wi-Fi signals.",
+        "Wi-Fi is the catchy name an industry alliance came up with to market devices that transmit large amounts of data over short distances using radio waves.",
+        "Wi-Fi, like broadcast radio and cellular telephone signals, is based on scientific discoveries dating back to the late 19th century.",
+        "When electrons moving through a wire are made to alternate directions periodically, something magical happens.",
+        "Electrons in another wire, located at a distance, start to move up and down in sync, as though they were telepathically connected.",
+        "This phenomenon was first observed by Heinrich Hertz in 1887, confirming a mathematical theory proposed by James Clerk Maxwell in 1864.",
+        "Maxwell’s elegant theory explains how the alternating current in the first wire causes a “radio wave” of alternating electrical and magnetic fields to radiate out in all directions at the speed of light.",
+        "The wave, in turn, causes an alternating current in the second wire.",
+        "The electromagnetic spectrum includes visible light, which alternates at a much higher frequency than radio waves.",
+        "There is a mystery to ponder here: Human bodies have evolved to see light but not radio waves."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Developing Smart Free Public Wi-Fi in South Africa: Can Public Wi-Fi Help Redress Digital Inequality, and If So, How? Emerging Lessons from South Africa's Diverse Implementations",
+      "publisher": "Elsevier BV",
+      "author": "Geerdts, Christopher; Gillwald, Alison Norah",
+      "published_at": "2017",
+      "url": "https://doi.org/10.2139/ssrn.3043690",
+      "retrieved_at": "2026-10-18T14:52:58.474Z",
+      "sha256": "a55180fd0ca09712868d9ecce9159be20ca684d2118da28f9c30f9498129f3c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Free Public Wi-Fi (FPW) has been deployed in many countries for over a decade for a range of economic and municipal governance reasons.",
+        "However a literature review found that although previous research on Free Public Wi-Fi (FPW) did exist, it pertained largely to projects initiated in the early 2000’s, the pre-smartphone era and related to wealthier countries, with minimal consideration of socially inclusive access.",
+        "At that time Wi-Fi was early in its ‘hype cycle’ and no evaluations of current projects were done, meaning that there is no foundation of evaluative methodology on which to build.",
+        "The recent increase in smartphone penetration into lower income groups has led to FPW gaining greater traction as a socially inclusive solution to broadband access.",
+        "Many municipalities in South Africa (SA) have embarked on FPW projects.",
+        "SA’ two major metros, Johannesburg and Cape Town, used different funding approaches to their FPW, providing a natural experiment from which there are significant learnings which, although context specific, will provide insights for the extension of FPW into smaller towns and less developed towns.",
+        "It should also have wider application for other developing counties.",
+        "There is no clear winner and loser arising from the experiment, with the different approaches and funding models producing various positive and negative outcomes across the two projects.",
+        "The paper does however distill some factors for success relating to cost, funding, deployment, the user experience and project replicability and sustainability for policy makers in developing countries.",
+        "Wi-Fi is never ‘free’ and a basic taxonomy is suggested based on who pays for the service (typically the end-customer, government, advertisers or owners of the site being covered) and what parties stand to gain.",
+        "Only one of the projects studied aimed at full government sponsorship, a situation which the municipality is reviewing.",
+        "This paper suggest what has worked abut each approach, although emphasising that different contexts call for different solutions."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Real 802.11 Security: Wi-Fi Protected Access and 802.11i",
+      "publisher": "Medical Entomology and Zoology",
+      "author": "Edney; William A. Arbaugh",
+      "published_at": "2003-07-15",
+      "url": "https://openalex.org/W1498841687",
+      "retrieved_at": "2026-10-18T14:53:08.469Z",
+      "sha256": "cd673924986593a16356e4dc6ff0ff7fe8572aea00a9e745ee8a08ce607ae07c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Attacks Against the Previous IEEE 802.11 Security Mechanisms.",
+        "Layer 2 Denial-of-Service Attacks Against All Wi-Fi-Based Standards."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Wi-Fi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63973",
+      "retrieved_at": "2026-10-18T14:53:08.469Z",
+      "sha256": "7bc2a6d4cc4b4d007fadd93a7ac985a4e1a9c811bbcc41dafc6c632e111ca35f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wi-Fi () is a family of wireless network protocols based on the IEEE 802.11 family of standards, which are commonly used for local area networking of devices and Internet access, allowing nearby digital devices to exchange data by radio waves.",
+        "These are the most widely used computer networks, used globally in home and small office networks to link devices and to provide Internet access with wireless routers and wireless access points in public places such as coffee shops, restaurants, hotels, libraries, and airports.",
+        "Wi-Fi is a trademark of the Wi-Fi Alliance, which restricts the use of the term \"Wi-Fi Certified\" to products that successfully complete interoperability certification testing.",
+        "Non-compliant hardware is simply referred to as WLAN, and it may or may not work with \"Wi-Fi Certified\" devices.",
+        "As of 2017, the Wi-Fi Alliance consisted of more than 800 companies from around the world.",
+        "As of 2019, over 3.05 billion Wi-Fi-enabled devices are shipped globally each year.",
+        "Wi-Fi uses multiple parts of the IEEE 802 protocol family and is designed to work well with its wired sibling, Ethernet.",
+        "Compatible devices can network through wireless access points with each other as well as with wired devices and the Internet.",
+        "Different versions of Wi-Fi are specified by various IEEE 802.11 protocol standards, with different radio technologies determining radio bands, maximum ranges, and speeds that may be achieved.",
+        "Wi-Fi most commonly uses the 2.4 gigahertz (120 mm) UHF and 5 gigahertz (60 mm) SHF radio bands, with the 6 gigahertz SHF band used in newer generations of the standard; these bands are subdivided into multiple channels.",
+        "Channels can be shared between networks, but, within range, only one transmitter can transmit on a channel at a time.",
+        "Common obstructions, such as walls, pillars, home appliances, etc., may greatly reduce range, but this also helps minimize interference between different networks in crowded environments."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Wi-Fi Protected Access",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=422017",
+      "retrieved_at": "2026-10-18T14:53:08.469Z",
+      "sha256": "fe058a5eba1108fd8967319de142a14523161024c4d15e43ef0d74f33ad1541a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wi-Fi Protected Access (WPA), Wi-Fi Protected Access 2 (WPA2), and Wi-Fi Protected Access 3 (WPA3)  are the three security certification programs developed after 2000 by the Wi-Fi Alliance to secure wireless computer networks.",
+        "The Alliance defined these in response to serious weaknesses researchers had found in the previous system, Wired Equivalent Privacy (WEP).",
+        "WPA (sometimes referred to as the TKIP standard) became available in 2003.",
+        "The Wi-Fi Alliance intended it as an intermediate measure in anticipation of the availability of the more secure and complex WPA2, which became available in 2004 and is a common shorthand for the full IEEE 802.11i (or IEEE 802.11i-2004) standard.",
+        "In January 2018, the Wi-Fi Alliance announced the release of WPA3, which has several security improvements over WPA2.",
+        "As of 2023, most computers that connect to a wireless network have support for using WPA, WPA2, or WPA3."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Wi-Fi calling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4385443",
+      "retrieved_at": "2026-10-18T14:53:08.469Z",
+      "sha256": "502252b221122b429be9f2ce30cc4e64f47175f2ef002686735077b51b67ce95",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wi-Fi calling, also called Voice over wireless LAN (VoWLAN) and VoWiFi, refers to mobile phone voice calls and data that are made over IP networks using Wi-Fi, instead of the cell towers provided by cellular networks.",
+        "In essence, it is voice over IP (VoIP) over a Wi-Fi network.",
+        "Using this feature, compatible handsets are able to route regular cellular calls through a wireless LAN (Wi-Fi) network with broadband Internet, while seamlessly changing connections between the two where necessary.",
+        "This feature makes use of the Generic Access Network (GAN) protocol, also known as Unlicensed Mobile Access (UMA).",
+        "Essentially, GAN/UMA allows cell phone packets to be forwarded to a network access point over the internet, rather than over-the-air using GSM/GPRS, UMTS or similar.",
+        "A separate device known as a \"GAN Controller\" (GANC) receives this data from the Internet and feeds it into the phone network as if it were coming from an antenna on a tower.",
+        "Calls can be placed from or received to the handset as if it were connected over-the-air directly to the GANC's point of presence, making the call invisible to the network as a whole.",
+        "This can be useful in locations with poor cell coverage where some other form of internet access is available, especially at the home or office.",
+        "The system offers seamless handoff, so the user can move from cell to Wi-Fi and back again with the same invisibility that the cell network offers when moving from tower to tower.",
+        "Since the GAN system works over the internet, a UMA-capable handset can connect to its service provider from any location with internet access.",
+        "This is particularly useful for travelers, who can connect to their provider's GANC and make calls into their home service area from anywhere in the world.",
+        "This is subject to the quality of the internet connection, however, and may not work well over limited bandwidth or long-latency connection."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Wi-Fi Protected Setup",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9228804",
+      "retrieved_at": "2026-10-18T14:53:08.469Z",
+      "sha256": "b4e93b4de0224045e6abce14750ef8d40afb6c085b6e19137491af37d459c210",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wi‑Fi Protected Setup (WPS), referred to as Wi‑Fi Simple Configuration in the specification, and branded as WPS, is a standard designed to ease the setup of Wi‑Fi networks in home and small office environments.",
+        "It is used by devices made by HP, Brother, and Canon, especially for their printers.",
+        "WPS is a wireless method that is used to connect certain Wi‑Fi devices, such as printers and security cameras, to the Wi‑Fi network without using any password.",
+        "In addition, another way to connect is called WPS PIN; this is used by some devices to connect to the wireless network.",
+        "A major security flaw was revealed in December 2011 that affects wireless routers with the WPS PIN feature, which most recent models have enabled by default.",
+        "The flaw allows a remote attacker to recover the WPS PIN in 4–10 hours with a brute-force attack and, with the WPS PIN, the network's WPA/WPA2 pre-shared key (PSK).",
+        "Users have been urged to turn off the WPS PIN feature, although this may not be possible on some router models."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "mm-1993",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How to keep track of your sources",
+      "publisher": "Bloomsbury",
+      "author": null,
+      "published_at": "2023",
+      "url": "https://doi.org/10.5040/9781350886100",
+      "retrieved_at": "2026-10-18T15:42:18.368Z",
+      "sha256": "f4a628687ea8c3b040a3045945ebaddc20fbc1ecaea69970c71cd2d7a3c53b2f",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "ctrcol-99 --> Cite Them Right - How to keep track of your sources --> Skip to main content Sign in to Your Personal/Admin Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "With an admin account, you can also access customisation features on this platform to display to your institutional users.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Emissions trading",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37104",
+      "retrieved_at": "2026-10-18T15:42:18.614Z",
+      "sha256": "c0870234ef237dee65532c5a040432b60655c4a004bd2af5ca94049f82056115",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Emissions trading is a market-oriented approach to controlling pollution by providing economic incentives for reducing the emissions of pollutants.",
+        "The concept is also known as cap and trade (CAT) or emissions trading scheme (ETS).",
+        "One prominent example is carbon emission trading for CO2 and other greenhouse gases which is a tool for climate change mitigation.",
+        "In an emissions trading scheme, a central authority or governmental body allocates or sells a limited number (a \"cap\") of permits that allow a discharge of a specific quantity of a specific pollutant over a set time period.",
+        "Polluters are required to hold permits in amount equal to their emissions.",
+        "Polluters that want to increase their emissions must buy permits from others willing to sell them.",
+        "Emissions trading is a type of flexible environmental regulation that allows organizations and markets to decide how best to meet policy targets.",
+        "This is in contrast to command-and-control environmental regulations such as best available technology (BAT) standards and government subsidies."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of countries by carbon dioxide emissions per capita",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1758281",
+      "retrieved_at": "2026-10-18T15:42:18.614Z",
+      "sha256": "482317a831ebc476a2a0909f3f21e17ea0a437d079167737faf969b08c90e311",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of sovereign states and territories by per capita carbon dioxide emissions due to certain forms of human activity, based on the EDGAR database created by European Commission.",
+        "The following table lists the annual per capita CO2 emissions estimates (in kilotons of CO2 per year) for the year 2023, as well as the change from the year 2000.",
+        "Emissions from international shipping or bunker fuels are also not included in national figures, which can make a large difference for small countries with important ports.",
+        "Measures of territorial-based emissions, also known as production-based emissions, do not account for emissions embedded in global trade, where emissions may be imported or exported in the form of traded goods, as it only reports emissions emitted within geographical boundaries.",
+        "Accordingly, a proportion of the CO2 produced and reported in Asia and Africa is for the production of goods consumed in Europe and North America.",
+        "According to the review of the scientific literature conducted by the Intergovernmental Panel on Climate Change (IPCC), carbon dioxide is the most important anthropogenic greenhouse gas by warming contribution.",
+        "The other major anthropogenic greenhouse gases) are not included in the following list, nor are humans emissions of water vapor (H2O), the most important greenhouse gases, as they are negligible compared to naturally occurring quantities.",
+        "According to Science for Policy report in 2024 by the Joint Research Centre (JRC – the European Commission's science and knowledge service) and International Energy Agency (IEA), in 2023, global GHG emissions primarily consisted of CO2, resulting from the combustion of fossil fuels (73.7%)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Climate change",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5042951",
+      "retrieved_at": "2026-10-18T15:42:18.614Z",
+      "sha256": "804ac887913cc33bd1a27506e8b9cc17cb7e6eda62986265963205d9d8bd7186",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Present-day climate change includes both global warming—the ongoing increase in global average temperature—and its wider effects on Earth's climate system.",
+        "In a broader sense, climate change also includes previous long-term changes to Earth's climate.",
+        "The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution.",
+        "Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
+        "These gases absorb some of the heat that the Earth radiates after it warms from sunlight, warming the lower atmosphere.",
+        "Earth's atmosphere now has roughly 50% more carbon dioxide, the main gas driving global warming, than it did at the end of the pre-industrial era, reaching levels not seen for millions of years.",
+        "Climate change has an increasingly large impact on the environment.",
+        "Amplified warming in the Arctic has contributed to thawing permafrost, retreat of glaciers and sea ice decline.",
+        "Higher temperatures are also causing more intense storms, droughts, and other weather extremes.",
+        "Rapid environmental change in mountains, coral reefs, and the Arctic is forcing many species to relocate or become extinct.",
+        "Even if efforts to minimize future warming are successful, some effects will continue for centuries.",
+        "These include ocean heating, ocean acidification and sea level rise."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Greenhouse gas emissions",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9528025",
+      "retrieved_at": "2026-10-18T15:42:18.614Z",
+      "sha256": "56b5a72ebf5ac187d1e24794a0ca12f309e9c0e9d985821ff884183b6c821425",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Greenhouse gas emissions (GHG emissions) from human activities intensify the greenhouse effect which contributes to climate change.",
+        "Carbon dioxide (CO2) from burning fossil fuels (such as coal, oil, and natural gas) is the main cause of climate change.",
+        "The largest annual emissions are from China followed by the United States, which has higher emissions per capita.",
+        "The main producers fueling the emissions globally are large oil and gas companies.",
+        "Emissions from human activities have increased atmospheric carbon dioxide by about 50% over pre-industrial levels.",
+        "The growing levels of emissions have varied, but have been consistent among all greenhouse gases.",
+        "Over 60 billion tons were emitted in 2025, higher than any year before.",
+        "Total cumulative emissions from 1870 to 2022 were 703 GtC (2575 GtCO2), of which 484±20 GtC (1773±73 GtCO2) from fossil fuels and industry, and 219±60 GtC (802±220 GtCO2) from land use change.",
+        "Land-use change, such as  deforestation, caused about 31% of cumulative emissions over 1870–2022, coal 32%, oil 24%, and gas 10%.",
+        "Carbon dioxide is the main greenhouse gas resulting from human activities.",
+        "Methane (CH4) emissions have almost the same short-term impact.",
+        "Nitrous oxide (N2O) and fluorinated gases (F-gases) play a lesser role in comparison."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "mm-0459",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "From Hype to Output: How AI Investment Translates to Real Productivity Gains",
+      "publisher": "Elsevier BV",
+      "author": "Wyonch, Rosalie",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6676299",
+      "retrieved_at": "2026-10-18T15:03:41.267Z",
+      "sha256": "9d10d1d71b452e5d4419d0b34324dd83385a712ce66f0ca5e049e42414f3932a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;ul&gt; &lt;li&gt;&lt;span&gt;Artificial intelligence has renewed optimism about improving Canada’s long-standing productivity problem, but history shows that general-purpose technologies often take decades to produce measurable economy-wide gains.",
+        "Governments can support this by improving regulatory clarity, expanding data access, strengthening AI literacy, and encouraging firms to experiment and integrate AI into their operations.&lt;/span&gt;&lt;/li&gt; &lt;/ul&gt;"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How AI could help safeguard Indigenous languages",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Daigneault, Anna",
+      "published_at": "2025-05-11",
+      "url": "https://theconversation.com/how-ai-could-help-safeguard-indigenous-languages-255359",
+      "retrieved_at": "2026-10-18T15:03:41.535Z",
+      "sha256": "a2f1ee54f0091fbbfd092a7d3b51542de80c43f673b3bb1a0ab35ed308d5e0d9",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How AI could help safeguard Indigenous languages Skip to content Academic rigor, journalistic flair Chief Roger William of the Tsilhqot'in First Nation stands next to a mockup of a highway sign with English and the Indigenous names of towns in British Columbia in 2015.",
+        "In our current era, 3,000 languages are at risk of extinction due to the pressures of colonization, globalization, forced cultural assimilation, environmental devastation and other factors.",
+        "According to Canada’s Commission for Indigenous Languages , “research shows that no Indigenous language in Canada is safe and that all are in varying stages of endangerment.” Our society is also being shaped by the rapid rise of artificial intelligence.",
+        "Can AI be used for the benefit of Indigenous language survival in Canada and elsewhere?",
+        "According to the World Economic Forum , most AI chatbots are trained on 100 of the world’s 7,000 languages.",
+        "This scenario leaves the bulk of the world’s languages in the dust.",
+        "In the coming years, will AI contribute to language revitalization, or language oppression?",
+        "A language in a box In a 2023 TEDx talk , Northern Cheyenne computer engineer Michael Running Wolf shared his design of a cedar box that looks both ancient and contemporary.",
+        "Running Wolf is the technical director of the First Languages AI Reality initiative at the Québec Institute for Artificial Intelligence.",
+        "The program propels Indigenous scholars and technologists towards creating innovative solutions regarding language loss.",
+        "A TEDx Talk by Michael Running Wolf on how AI can assist Indigenous langauge learning.",
+        "Voice-controlled tools trained via machine learning could serve as AI assistants for speakers who wish to hear unfamiliar sounds pronounced accurately, and practice their own pronunciation."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Google Translate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3235536",
+      "retrieved_at": "2026-10-18T15:03:41.706Z",
+      "sha256": "9340525392568e5ae87590652ab45ed57bd90f3d57c586415eed8b36ad1adf09",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Google Translate is a multilingual neural machine translation service developed by Google to translate text, documents and websites from one language into another.",
+        "It offers a website interface, a mobile app for Android and iOS, and an API that helps developers build browser extensions and software applications.",
+        "As of October 2026, Google Translate supports 249 languages and language varieties at various levels.",
+        "It served over 200 million people daily in May 2013, and over 500 million total users as of April 2016, with more than 100 billion words translated daily.",
+        "Launched on April 28, 2006 as a statistical machine translation service, it originally used United Nations and European Parliament documents and transcripts to gather linguistic data.",
+        "Rather than translating languages directly, it first translated text to English and then pivoted to the target language in most of the language combinations it posited in its grid, with a few exceptions including Catalan–Spanish.",
+        "During a translation, it looked for patterns in millions of documents to help decide which words to choose and how to arrange them in the target language.",
+        "In recent years, it has used a deep learning model to power its translations.",
+        "Its accuracy, which has been criticized on several occasions, has been measured to vary greatly across languages.",
+        "In November 2016, Google announced that Google Translate would switch to a neural machine translation engine – Google Neural Machine Translation (GNMT) – which translated \"whole sentences at a time, rather than just piece by piece.",
+        "It uses this broader context to help it figure out the most relevant translation, which it then rearranges and adjusts to be more like a human speaking with proper grammar\"."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T15:03:41.706Z",
+      "sha256": "7f114c82f04affa9033e6fdad8d9584f4d7cb102b3aa63d30f47b686fd583997",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T15:03:41.706Z",
+      "sha256": "d3aa5b37afd542977ef56f75604a3b343d4ea50b4d284cc4f01a8e505cc3758e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Galaxy AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=76177386",
+      "retrieved_at": "2026-10-18T15:03:41.706Z",
+      "sha256": "fbf7209716b5415f3c28bd73fb90910abca74efcdcea88cb819418efc3df0b6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Galaxy AI is a collection of artificial intelligence (AI) features developed by Samsung Electronics for use in Galaxy-branded mobile devices.",
+        "First released with the Samsung Galaxy S24 series in January 2024, the system integrates both on-device and cloud-based processing to support features such as language translation, image editing, and content search.",
+        "These tools operate within various Samsung applications and are intended to assist with everyday tasks.",
+        "According to Samsung: \"In essence, Bixby is like a personal assistant ready to respond to your verbal commands, while Galaxy AI is like a smart companion that's always working to make your device smarter and your life easier.\""
+      ]
+    }
+  ]
+}

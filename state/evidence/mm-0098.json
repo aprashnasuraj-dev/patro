@@ -1,0 +1,132 @@
+{
+  "id": "mm-0098",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Europe Wakes Up, Slowly",
+      "publisher": "Haus Publishing",
+      "author": null,
+      "published_at": "2012-04-17",
+      "url": "https://doi.org/10.2307/j.ctt1hfr2v3.8",
+      "retrieved_at": "2026-10-18T14:56:12.833Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Optimizing the Critical Rendering Path for Decreased Website Loading Time",
+      "publisher": "Doria (University of Helsinki)",
+      "author": "Gabriel Kivilohkare",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3027292941",
+      "retrieved_at": "2026-10-18T14:56:13.833Z",
+      "sha256": "c233cf588c01702a52cb0dfd4c5ddf80a02bc78152e55e7488fd88ff072e4b80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Users expect websites to load faster while websites are becoming larger and more complex.",
+        "Simultaneously, users prefer mobile devices that use networks with high latencies.",
+        "This thesis aims to evaluate different optimization strategies for decreasing website loading time.",
+        "General optimization strategies, as well as optimization strategies for above-the-fold content, are presented and tested in this thesis.",
+        "Finally, tests are run using all optimization strategies to evaluate their combined effect.",
+        "The conclusion is that even large websites can load above-the-fold content in a short time, resulting in a good user experience."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "HTTPS",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13586",
+      "retrieved_at": "2026-10-18T14:56:14.220Z",
+      "sha256": "1f0885fdf83442480005071d5c231fc045cd03f07b9a5b5e869fc9ab13c49b32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP).",
+        "It uses encryption for secure communication over a computer network, and is widely used on the Internet.",
+        "In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).",
+        "The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL.",
+        "The principal motivations for HTTPS are authentication of the accessed website and protection of the privacy and integrity of the exchanged data while it is in transit.",
+        "It protects against man-in-the-middle attacks, and the bidirectional block cipher encryption of communications between a client and server protects the communications against eavesdropping and tampering.",
+        "The authentication aspect of HTTPS requires a trusted third party to sign server-side digital certificates.",
+        "This was historically an expensive operation, which meant fully authenticated HTTPS connections were usually found only on secured payment transaction services and other secured corporate information systems on the World Wide Web.",
+        "In 2016, a campaign by the Electronic Frontier Foundation with the support of web browser developers led to the protocol becoming more prevalent.",
+        "HTTPS has since 2018 been used more often by web users than non-secure HTTP, primarily to protect page authenticity on all types of websites, secure accounts, and keep user communications, identity, and web browsing private."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Load (album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18761",
+      "retrieved_at": "2026-10-18T14:56:14.220Z",
+      "sha256": "4be567e2052ea27e47b346f939fe9d48030b19776e3efcab8a219c7001dc6087",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Load is the sixth studio album by American heavy metal band Metallica, released on June 4, 1996, through Elektra Records in the United States and Vertigo Records internationally.",
+        "It was recorded between May 1995 and April 1996 primarily in Sausalito, California, with additional sessions in New York City.",
+        "Bob Rock returned as producer, having previously produced their fifth studio album, Metallica, in 1991.",
+        "Compared to previous albums, the recording sessions were more relaxed and productive, resulting in almost 30 songs being recorded.",
+        "While a double album was considered, the band decided to split the material into two albums; half appeared on Load, and the other half was released as Reload the following year.",
+        "For Load, Metallica strayed away from their thrash metal roots in favor of a hard rock sound.",
+        "The band members became influenced by non-metal artists during the writing process, resulting in an array of musical styles such as Southern rock, blues rock, country rock, alternative rock, and grunge.",
+        "The band also changed up their playing styles, with lead guitarist Kirk Hammett playing rhythm guitar parts for the first time.",
+        "Compared to previous albums, the lyrics on Load are more personal and reflective, resulting from lead singer James Hetfield's internal struggles and personal life.",
+        "The cover artwork is an abstract painting by artist Andres Serrano, created by mixing blood and semen.",
+        "Metallica adopted a new image during the period, which included short hair, leather jackets, and make-up.",
+        "The new look and change in sound were criticized by many fans before Load's release."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Web design",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34035",
+      "retrieved_at": "2026-10-18T14:56:14.220Z",
+      "sha256": "3952baede46342263bd5c0708546bb64d36ff579dd7d84c8bd5689b558ffd1f7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Web design encompasses many different skills and disciplines in the production and maintenance of websites.",
+        "The different areas of web design include web graphic design; user interface design (UI design); authoring, including standardised code and proprietary software; user experience design (UX design); and search engine optimization.",
+        "Often, many individuals will work in teams covering different aspects of the design process, although some designers will cover them all.",
+        "The term \"web design\" is normally used to describe the design process relating to the front-end (client side) design of a website including writing markup.",
+        "Web design partially overlaps web engineering in the broader scope of web development.",
+        "Web designers are expected to have an awareness of usability and be up to date with web accessibility guidelines."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Time to first byte",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5434576",
+      "retrieved_at": "2026-10-18T14:56:14.220Z",
+      "sha256": "15193a027df2dc5d321831da3da409928dae553b31a399b6663195a1ff822f6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Time to first byte (TTFB) is a measurement used as an indication of the responsiveness of a web server or other network  resource.",
+        "TTFB measures the duration from the user or client making an HTTP request to the first byte of the page being received by the client's browser.",
+        "This time is made up of the socket connection time, the time taken to send and the time taken to get the first byte of the page.",
+        "Although sometimes misunderstood as a post-DNS calculation, the original calculation of TTFB in networking always includes network latency in measuring the time it takes for a resource to begin loading.",
+        "Often, a smaller (faster) TTFB size is seen as a benchmark of a well-configured server application.",
+        "For example, a lower time to first byte could point to fewer dynamic calculations being performed by the webserver, although this is often due to caching at either the DNS, server, or application level.",
+        "More commonly, a very low TTFB is observed with statically served web pages, while larger TTFB is often seen with larger, dynamic data requests being pulled from a database."
+      ]
+    }
+  ]
+}

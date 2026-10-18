@@ -1,0 +1,128 @@
+{
+  "id": "mm-0124",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "ELEPHANTS NEVER FORGET",
+      "publisher": "University of Iowa Press",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.2307/j.ctt20q1szb.21",
+      "retrieved_at": "2026-10-18T14:56:41.826Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "An Elephant Never Forgets ... The Right Microclimate : Thermal Comfort and Microclimatic Design of Asian Elephant Zoo Enclosures",
+      "publisher": "The Atrium (University of Guelph)",
+      "author": "Erin L. Crawford",
+      "published_at": "2012-12-01",
+      "url": "https://openalex.org/W2550829924",
+      "retrieved_at": "2026-10-18T14:56:42.470Z",
+      "sha256": "0dde976453457893f3785cbfcb8c8357c4e332f51ad5bee362f0a6414ee926ad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An animal’s ability to find thermal comfort can be can be limited within a zoo enclosure.",
+        "This creates a need to design comfortable microclimates for the animal within their enclosure space.",
+        "This is an exploratory study intended to investigate the relationships between an elephant’s movements throughout their space and the microclimatic conditions within its zoological enclosure.",
+        "By outlining an understanding of microclimates and how they are affected by the landscape combined with knowledge of elephant behaviours it will be possible design or plan for microclimatic use within zoo enclosures.",
+        "Observational data were collected from five Asian elephants (Elephas maximus).",
+        "The movements of the elephants were monitored along with the use of microclimates within their enclosure.",
+        "Thermal regulatory movements involving microclimatic use typically involved water and shade use, however evidence suggests that the animals were also avoiding terrestrial radiation from some of the gunite walls.",
+        "It is important that animals are given the opportunity to find microclimates within the space to regulate their body temperature.",
+        "Designing landscapes that incorporate microclimates within their habitats is crucial to the welfare and health of zoo elephants."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Musth",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=657696",
+      "retrieved_at": "2026-10-18T14:56:42.470Z",
+      "sha256": "db8fa4a20d0dd85d3f3882aba7c03c8cb15bb34c59d3778fd3a416183d95269f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Musth or must is a periodic condition in bull (male) elephants characterized by aggressive behavior and accompanied by a large rise in reproductive hormones.",
+        "It has been known in Asian elephants for 3,000 years, but was only described in African elephants in 1981.",
+        "Evidence indicates that similar behaviour occurred in extinct proboscideans like gomphotheres and mastodons.",
+        "Elephants often discharge a thick, tar-like secretion called temporin from the temporal gland during musth.",
+        "Behavioral management for captive bull elephants in musth includes physical restraint and a starvation diet for several days to a week."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Elephant cognition",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10909065",
+      "retrieved_at": "2026-10-18T14:56:42.470Z",
+      "sha256": "39a3cab7b56f9c94859b1318769f25cdeb3e09e3d477c129b65399c61ee1378d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Elephant cognition is animal cognition as present in elephants.",
+        "Most contemporary ethologists view the elephant as one of the world's most intelligent animals.",
+        "Elephants manifest a wide variety of behaviors, including those associated with grief, learning, mimicry, playing, altruism, tool use, compassion, cooperation, self-awareness, memory, and communication.",
+        "They can also exhibit negative qualities such as revenge towards those perceived to have harmed them or their families.",
+        "Duncan McNair, a lawyer and founder of conservation charity Save The Asian Elephants, told Newsweek that ...",
+        "\"although gentle creatures, elephants can be dangerous and deadly\".",
+        "Evidence suggests elephants may understand pointing, the ability to nonverbally communicate an object by extending their multi-purpose trunks.",
+        "An elephant brain weighs around 5 kg (11 lb), which is about four times the size of a human brain and the heaviest of any terrestrial animal.",
+        "It has about 257 billion neurons, which is about three times the number of neurons as a human brain.",
+        "However, the cerebral cortex, which is the major center of cognition, has only about one-third of the number of neurons as a human's cerebral cortex.",
+        "While elephant brains look similar to those of humans and other mammals and has the same functional areas, there are certain unique structural differences.",
+        "The intelligence of elephants is described as on par with cetaceans and various primates."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Cultural depictions of elephants",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18451259",
+      "retrieved_at": "2026-10-18T14:56:42.470Z",
+      "sha256": "42bf242b9e545767624bf00e66948bd1e20015ce055b200736fa3fbb105ca7d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Elephants have been depicted in mythology, symbolism and popular culture.",
+        "They are both revered in religion and respected for their prowess in war.",
+        "They also have negative connotations such as being a symbol for an unnecessary burden.",
+        "Ever since the Stone Age, when elephants were represented by ancient petroglyphs and cave art, they have been portrayed in various forms of art, including pictures, sculptures, music, film, and even architecture."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Jumbo (2008 film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20682290",
+      "retrieved_at": "2026-10-18T14:56:42.470Z",
+      "sha256": "0b736bb93298d602db92b7622f995ade8f5bf561c852e8cdb7e0adb1a6f64622",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jumbo is a 2008 Indian animated adventure film directed by Kompin Kemgumnird, produced by Percept Picture Company and features the voices of Akshay Kumar, Lara Dutta, Dimple Kapadia, Rajpal Yadav, Asrani, and Gulshan Grover.",
+        "Jayveer Singh, aka Jumbo, is a little elephant who tries to find his father, and the journey of finding his father made him a war elephant.",
+        "The film is a Hindi remake and  Hindi dubbed version of the 2006 Thai film Khan Kluay, which is based on \"Chao Praya Prab Hongsawadee\" by Ariya Jintapanichkarn.",
+        "The film was dubbed and released in Hindi where the creative direction on the film was done by Mayur Puri.",
+        "Jumbo was released worldwide on Christmas Day 2008, but performed poorly at the box office, grossing ₹21 crore (US$2.2 million).",
+        "Kumar was reportedly paid ₹13 crore (US$1.3 million) for the dubbing and two promotional songs.",
+        "In 2011, a direct-to-DVD sequel titled Jumbo 2: The Return of the Big Elephant was released."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mt-1336",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T16:18:26.188Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

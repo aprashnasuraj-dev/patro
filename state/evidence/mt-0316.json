@@ -1,0 +1,100 @@
+{
+  "id": "mt-0316",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T15:46:30.290Z",
+      "sha256": "dc4d246eebfda03373636261d39f231c419a52be688b20b1c8c52aeba0b7eb99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Gut microbiota",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3135637",
+      "retrieved_at": "2026-10-18T15:46:30.290Z",
+      "sha256": "83b40b664382722987394e10afe3344788e9152ec3d33eef369cdd0541722d64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gut microbiota, gut microbiome, or gut flora are the microorganisms, including bacteria, archaea, fungi, and viruses, that live in the digestive tracts of animals.",
+        "The gastrointestinal metagenome is the aggregate of all the genomes of the gut microbiota.",
+        "The gut microbiota has broad impacts, including effects on colonization, resistance to pathogens, maintaining the intestinal epithelium, metabolizing dietary and pharmaceutical compounds, controlling immune function, and even behavior through the gut–brain axis.",
+        "Imbalances in the gut microbiota (dysbiosis) have been associated with numerous diseases, including inflammatory bowel disease, certain cancers, and even neurological disorders, prompting increased efforts to develop microbiome-targeted therapies.",
+        "The microbial composition of the gut microbiota varies across regions of the digestive tract.",
+        "The colon contains the highest microbial density of any human-associated microbial community studied so far, representing between 300 and 1000 different species.",
+        "Bacteria are the largest and to date, best studied component and 99% of gut bacteria come from about 30 or 40 species.",
+        "Over 99% of the bacteria in the gut are anaerobes, but in the cecum, aerobic bacteria reach high densities.",
+        "It is estimated that the human gut microbiota has around a hundred times as many genes as there are in the human genome."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Autism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29113700",
+      "retrieved_at": "2026-10-18T15:46:30.290Z",
+      "sha256": "b64258554a52626374679602d4f5cb7a6b624f6ff48e773289481407927e1414",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autism, also known as autism spectrum disorder (ASD), is a condition characterized by impairment in social communication and interaction, as well as a need or strong preference for predictability and routine, sensory processing differences, focused interests, or repetitive behaviors.",
+        "Features of autism are present from early childhood and the condition typically persists throughout life.",
+        "Autism is classified as a neurodevelopmental disorder, and a diagnosis requires professional assessment that these characteristics cause significant challenges in daily life beyond what is expected given a person's age and social environment.",
+        "Because autism is a spectrum disorder, presentations vary and support needs range from minimal assistance to full-time, 24-hour care.",
+        "Autism diagnoses have risen since the 1990s, largely because of broader diagnostic criteria, greater awareness, and wider access to assessment.",
+        "The World Health Organization estimates that about 1 in 100 children were diagnosed between 2012 and 2021, noting an increasing trend.",
+        "Surveillance studies suggest a similar share of the adult population would meet diagnostic criteria if formally assessed.",
+        "Autism is highly heritable and involves many genes, while environmental factors appear to play a smaller, mainly prenatal role.",
+        "Boys are diagnosed several times more often than girls, with girls being better at hiding autistic traits.",
+        "Conditions such as anxiety, depression, attention deficit hyperactivity disorder (ADHD), epilepsy, as well as intellectual disability, are more common among autistic people.",
+        "Autistic people are also more likely to be a part of the LGBTQ community.",
+        "Certain savant abilities are also more common in autistic people than in other groups."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T15:46:30.290Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

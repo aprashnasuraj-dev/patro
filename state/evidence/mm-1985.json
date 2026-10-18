@@ -1,0 +1,113 @@
+{
+  "id": "mm-1985",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Freelancing ‘for the Sake of Reputation’",
+      "publisher": "Oxford University PressOxford",
+      "author": "Pulignano, Valeria; Domecka, Markieta",
+      "published_at": "2025-02-04",
+      "url": "https://doi.org/10.1093/oso/9780198888130.003.0007",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "b19aba3ea7fd8af822bb4907362aabb062eed994cecdaf91d1d7d4822d2d06c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The chapter empirically illustrates the politics of unpaid labour in the online platform sector in Belgium, the Netherlands, France, Italy, and Poland.",
+        "Online platforms for freelancers vary, with different business models creating different conditions for freelancers.",
+        "Dependent on a well-developed online reputation to secure a living income, many online freelancers sacrifice themselves and their family life for the sake of reputation.",
+        "This situation highlights how class-based circumstances intersect with platform structures, strategies, and dynamics, influencing the economic realities experienced by freelancers."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Freelancing Expertise: Contract Professionals in the New Economy",
+      "publisher": "eCommons (Cornell University)",
+      "author": "Debra Osnowitz",
+      "published_at": "2010-10-15",
+      "url": "https://openalex.org/W1557148901",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "53d569d4dc3edac96c4cd9095b8241846a4b13b5664a7eee391320bc5748c2cf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The abstract, table of contents, and first twenty-five pages are published with permission from the Cornell University Press.",
+        "For ordering information, please visit the Cornell University Press at http://www.cornellpress.cornell.edu/."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Freelancer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=484030",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "6114bc01470154741d61dc12524cedf00c6fbbdddc2481e80fd08ece74e17186",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Freelance (sometimes spelled free-lance or free lance), freelancer, and freelance worker are common terms for a person who is self-employed and not necessarily committed to a particular employer long-term.",
+        "Freelance workers are sometimes represented by a company or a temporary agency that resells freelance labor to clients.",
+        "Others work independently or use professional associations or websites to get work.",
+        "While the term independent contractor is preferred in a legal or financial context, such as to designate the tax and employment classes of this type of worker, the term \"freelancing\" is most common in culture and creative industries, and use of this term may indicate participation therein."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Fiverr",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31452088",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "e425ab5ee3ca9890a30c5e5b8a6cf0e56591003e0b3cfe8eeb87741be20869b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fiverr is an Israeli multinational online marketplace for freelance services.",
+        "It connects freelancers to people or businesses looking for services.",
+        "Fiverr takes its name from the $5 asking price attached to all tasks when the company was founded, though many sellers now charge more.",
+        "Listings on Fiverr are described as diverse, ranging from \"get a well-designed business card\" to \"help with HTML, JavaScript, CSS, and jQuery\".",
+        "The highest-paying jobs on Fiverr include website design, social media manager, proofreading, copywriting, and resume writing.",
+        "The platform is global, with freelancers and businesses spanning an estimated 160 countries."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Gig economy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48218964",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "00b9f4de4852d2d9672421f72a0835e9492a618176e592c2b33699f3dfdd7bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The gig economy is the economic system by which a workforce of people (known as gig workers) engage in freelance or side-employment by corporate entities.",
+        "This sector of the economy, which is now often performed through digital platforms, has been on the rise in the 21st century."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Freelancing in India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52634988",
+      "retrieved_at": "2026-10-18T15:42:16.002Z",
+      "sha256": "9cd4958f9e63c11c1b8892d5e93b5d4a7861c2d886709467bc2b54128f7f092c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India had an estimated 15 million independent workers or freelancers in 2020, with industries like Information Technology, finance, Human Resource and design increasingly hiring people on a project basis.",
+        "70 percent of freelancers from India reported working exclusively as freelancers, with 48 percent of them dedicating 30 hours or less per week to their work.",
+        "In a report of (National Institution for Transforming India) NITI Aayog has estimated that India’s gig workforce or freelancing will grow to 2.35 crore by 2029-30.",
+        "Of this 26.6 lakh gig workers were from sales and retail trade.",
+        "India’s workforce is increasingly drawn to freelance and contractual work.",
+        "With one of the world’s largest working-age populations, India is considered to have the potential to become a leading hub of the global gig economy."
+      ]
+    }
+  ]
+}

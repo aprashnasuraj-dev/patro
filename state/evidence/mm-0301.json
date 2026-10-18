@@ -1,0 +1,219 @@
+{
+  "id": "mm-0301",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Financial Crises Spread so Fast - Lessons From History &amp;amp; Today",
+      "publisher": "Elsevier BV",
+      "author": "Heda, Riti",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7512720",
+      "retrieved_at": "2026-10-18T15:00:42.688Z",
+      "sha256": "7bd9e53b8083ec06892ea676f59c1401abe114693602a973a95def45b5ccf8d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Financial crises always spread for the same underlying reason.",
+        "It is not the size of the crisis, but the system in which it occurs that determines the speed of its spread.",
+        "Leverage, connectedness, and self-fulfilling panic create a common mechanism through which financial crises erupt.",
+        "The cases of the Great Depression, the 2008 crisis, and the pandemic of 2020 show how these mechanisms play out across three very different economic systems."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why anti-vaccine beliefs and ideas spread so fast on the internet",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Joubert, Marina; Schalkwyk, Francois",
+      "published_at": "2019-02-13",
+      "url": "https://theconversation.com/why-anti-vaccine-beliefs-and-ideas-spread-so-fast-on-the-internet-111431",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "6d67c9c96076868d24c96d9ec9ff3ffb40b663145e7a04b998696ddb0ff58230",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why anti-vaccine beliefs and ideas spread so fast on the internet Skip to content Academic rigor, journalistic flair Why anti&#8209;vaccine beliefs and ideas spread so fast on the internet Published: February 13, 2019 7:57am EST Vaccines are an important health intervention.",
+        "This can be seen in recent measles outbreaks in parts of the world where it was thought to have been eradicated .",
+        "This has prompted the World Health Organisation to list “vaccine hesitancy” (the reluctance or refusal to vaccinate despite the availability of vaccines) as one of 10 global health threats in 2019.",
+        "While there are many complex reasons why people choose not to vaccinate, changes in the way that information is accessed may provide one explanation for the rise in vaccine hesitancy.",
+        "We are involved in projects at the South African Research Chair in Science Communication at Stellenbosch University which explores vaccine communication.",
+        "In a world where people are increasingly encountering science information online , particularly on social media, it’s important to understand why people are vulnerable to anti-vaccination messages and why this kind of information spreads so easily.",
+        "Effective communication strategies will be crucial if scientists want to counter the worrying trend of increases in vaccine hesitancy.",
+        "New media change the way people process science In recently completed research , author Francois shed some light on how the anti-vaccination movement uses social media to amplify doubt and fuel hesitancy.",
+        "The research found that “anti-vaxxers” select and share scientific information from open access journal articles on social media to escalate uncertainty in the broader population.",
+        "Anybody, including activists with specific agendas, can produce and share information online.",
+        "This is heightened on social media, where people are connected in real time on a global scale.",
+        "Most online media don’t benefit from the quality control of journalists and editors that shapes the content of traditional mass media."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why Do Rumors Spread So Fast on Twitter?",
+      "publisher": "EWA Publishing",
+      "author": "Xie, Weijie",
+      "published_at": "2023-03-22",
+      "url": "https://doi.org/10.54254/2755-2721/2/20220621",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "135fccc694d6202ede3d0764c7729a22b16719ace6c4ab8173d38b96bdbbe11b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This research aims to find out why rumors spread so fast on Twitter.",
+        "So based on the concept of social networks and Katz Centrality, I decide to use “Crawlers” to collect data from Twit-ter and generate “Real News Spreading Network”, “Rumors Spreading Network” as well as graphs that illustrate their variation with post time delay.",
+        "And I find that although the original size of rumors may not be as large as the original size of real news, more and more people spread rumors as time goes by, while the amount of people who read real news only grows a little.",
+        "What’s more, it is users who are not very important(judging from their Katz Centrality value’s rank in certain news spreading networks) in the social network that play key roles in spreading the news(both rumors and real news).",
+        "So I deduce that it might be ordinary users (they are not Internet celebrities, and don’t have many followers) who should be aware of being informed of many rumors because they might be the key factors to spreading or stopping rumors."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Why Is China Growing So Fast?",
+      "publisher": "International Monetary Fund",
+      "author": null,
+      "published_at": "1997-06",
+      "url": "https://doi.org/10.5089/9781557756411.051.ch001",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "fb19a4a5c7ee88d9e2157fa06a44967b595b10e568e75a60c26695ebccfed865",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Since 1978 the Chinese economy has grown on average more than 9 percenta year.",
+        "Per capita income has nearly quadrupled in the past 15 years andsome analysts predict that within 20 years the Chinese economy will belarger than that of the United States.",
+        "This pamphlet analyzes the reasonsfor the extraordinary growth of the Chinese economy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Black Death And The Future Of Medicine",
+      "publisher": "Human Biology",
+      "author": "Sarah Frances Vanneste",
+      "published_at": "2010-01-01",
+      "url": "https://openalex.org/W1546303302",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "beea16d5f1bf8eed9f0f5cc1cf5754d227a7ffa5c6748317a4404a000efec297",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "ABSTRACT THE BLACK DEATH AND THE FUTURE OF MEDICINE by SARAH FRANCES VANNESTE May 2010 Advisor: Dr.",
+        "Hans Hummer Major: History Degree: Master of Arts The Black Death was a catastrophic event in Europe's history.",
+        "It had both devastating immediate effects and deep long-term consequences.",
+        "Historians, however, have not agreed on the extent of the Black Death's effects on the development of medicine and medical practices in Europe.",
+        "Some historians credit it with revealing the general failure of medieval medicine and directly sparking a reassessment and reformation of medical practices, while other historians minimize its effects on medicine or omit the Black Death entirely from their discussions of medicine's development.",
+        "This paper investigates the nature and gravity of the Black Death's effects on medicine and finds the Black Death's place of importance to be in between the two extremes.",
+        "The Black Death did reveal the shortcomings of the existing medical system in Europe, wherein the top medical practitioners focused on theories of causation and prevention of disease rather than practical medicine, as physicians were unable to successfully treat the plague.",
+        "The Black Death sent physicians scrambling to both develop treatments for the plague and take measures to secure their status at the top of the medical hierarchy by producing writings on the plague and pushing for the regulation of medical practices.",
+        "For surgeons, the Black Death provided an opportunity to challenge the position of the physicians and to assert their own authority as medical practitioners proficient in both theory and practice.",
+        "The Black Death helped cause a shift in medicine toward greater emphasis on practice than there had been before, and intensified the struggle for status between physicians and surgeons.",
+        "Yet, it did not completely destroy the existing medical system.",
+        "Education based on the works of Hippocrates and Galen survived in the universities, however, the teaching of surgery and anatomy were gradually included as well were they had not been before and strengthened where they were already being taught."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Contesting the Cause and Severity of the Black Death: A Review Essay*",
+      "publisher": "IIASA PURE (International Institute of Applied Systems Analysis)",
+      "author": "Andrew Noymer",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2404177092",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "6afc906bc92d3ed10fa068f3ff724571902bf8bbf356e5e582b163e29a38975a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Benedictow's \"The Black Death, 1346-1353: The Complete History\".",
+        "It discusses the history, demography, and epidemiology of the Black Death, an epidemic that struck fourteenth-century Europe with a severity that has not be equaled by any other epidemic in recorded history, before or since."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Black Death",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4501",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "b85ebbb485a41bb2425b34f12bb77db84e1f782de5c51f15b065658bc35e0ff7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Black Death was a plague pandemic that occurred in Europe from 1346 to 1353.",
+        "It was one of the most fatal pandemics in human history, leading to the death of up to 50 million people, around 30% to 60% of the European population and approximately 33% of the Middle Eastern population.",
+        "The disease was caused by the bacterium Yersinia pestis, which is primarily spread by flea bites, though it may also spread through contact with infected tissues or fluids and, in pneumonic cases, through respiratory droplets.",
+        "The Black Death had far-reaching population, economic, and cultural effects.",
+        "It has been tentatively considered as the second plague pandemic, despite each of these outbreaks being separated by around 500–600 years.",
+        "The Black Death was the second great natural disaster to strike Europe during the late Middle Ages (the first one being the Great Famine of 1315–1317).",
+        "There were further outbreaks throughout the Late Middle Ages.",
+        "Due to the crisis of the late Middle Ages, the European population did not regain its 14th century level until the 16th century.",
+        "Outbreaks of the plague recurred around the world until the early 19th century."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "The Dark Knight",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4276475",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "5e420f29cd92c4a8bb121750301f25a724b5c15e315872fd597a034b1c0c3f9f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Dark Knight is a 2008 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan.",
+        "Based on the DC Comics superhero Batman, it is the sequel to Batman Begins (2005), and the second installment in The Dark Knight trilogy.",
+        "The plot follows the vigilante Batman, police lieutenant James Gordon, and district attorney Harvey Dent, who form an alliance to dismantle organized crime in Gotham City.",
+        "Their efforts are derailed by the Joker, an anarchistic mastermind who seeks to test how far Batman will go to save the city from chaos.",
+        "The cast includes Christian Bale, Michael Caine, Heath Ledger, Gary Oldman, Aaron Eckhart, Maggie Gyllenhaal, and Morgan Freeman.",
+        "Pictures prioritized a sequel following the successful reinvention of the Batman film series with Batman Begins.",
+        "Goyer developed the story elements, making Dent the central protagonist caught up in the battle between Batman and the Joker.",
+        "In writing the screenplay, the Nolans were influenced by 1980s Batman comics and crime drama films, and sought to continue Batman Begins' heightened sense of realism.",
+        "From April to November 2007, filming took place with a $185 million budget in Chicago and Hong Kong, and on sets in England.",
+        "The Dark Knight was the first major motion picture to be filmed with high-resolution IMAX cameras.",
+        "Nolan avoided using computer-generated imagery unless necessary, insisting on practical stunts such as flipping an 18-wheel truck and blowing up a factory.",
+        "The Dark Knight was marketed with an innovative interactive viral campaign that initially focused on countering criticism of Ledger's casting by those who believed he was a poor choice to portray the Joker."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Dominic Toretto",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17128740",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "f60875c4c0c3be767c987f793ed8db8082dc4f02f2d8210f669141f85bd79e1d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dominic \"Dom\" Toretto is a fictional character and the main protagonist of the Fast & Furious franchise.",
+        "He is portrayed by Vin Diesel and first appeared on film with the other fellow protagonist Brian O'Conner in The Fast and the Furious (2001).",
+        "Dominic was created by screenwriter Gary Scott Thompson, who was inspired by an article on street racing that was published in the May 1998 issue of Vibe magazine, while Diesel was heavily sought after to play the character.",
+        "The character also appears in the animated television series Fast & Furious Spy Racers (2019–2021) and the video game Fast & Furious Crossroads (2020), both voiced by Diesel.",
+        "As the patriarch of a group of street racers Dom acts as an influential voice.",
+        "He was forced into the role of primary caregiver following his father's untimely passing.",
+        "As the leader, he initially worked as an auto mechanic but eventually progressed to orchestrating carjackings, a multi-million-dollar heist, and illicit jobs for government agencies.",
+        "Dominic is gruff and strong and has a volatile temper, especially when his family is in danger.",
+        "He preaches morality and loyalty and is often seen as affectionate and religious.",
+        "He is also implied to be the group's strongest and most skilled  racer, a title that is challenged persistently by friend and brother-in-law Brian O'Conner.",
+        "The role made Diesel a Hollywood star, and remains the role with which he is most associated.",
+        "He won the 2002 and 2014 MTV Movie Awards for Best On-Screen Team with Paul Walker for his performances."
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Theories of the Black Death",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20155412",
+      "retrieved_at": "2026-10-18T15:00:43.165Z",
+      "sha256": "17697b4ca9e630f94137781a5d9fb53c3dd8ada71317803e3ee15028596cd8d8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Theories of the Black Death are a variety of explanations that have been advanced to explain the nature and transmission of the Black Death (1347–51).",
+        "A number of epidemiologists from the 1980s to the 2000s challenged the traditional view that the Black Death was caused by plague based on the type and spread of the disease.",
+        "The confirmation in 2010 and 2011 that Yersinia pestis DNA was associated with a large number of plague sites has led researchers to conclude that \"Finally, plague is plague.\""
+      ]
+    }
+  ]
+}

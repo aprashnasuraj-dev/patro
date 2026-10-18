@@ -1,0 +1,130 @@
+{
+  "id": "mq-0313",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Evolução Orbital dos Exoplanetas (TRAPPIST-1e e TRAPPIST-1g) que estão na Zona Habitável da Estrela TRAPPIST-1",
+      "publisher": "Universidade Estadual de Feira de Santana",
+      "author": "Maciel, Samara Rebeka Pita; Carvalho, Jean Paulo dos Santos",
+      "published_at": "2020-12-30",
+      "url": "https://doi.org/10.13102/sscf.v16i.6010",
+      "retrieved_at": "2026-10-18T16:33:55.832Z",
+      "sha256": "bdb358ee8f322e9f14e8e0775f75406a194bd06fdf1269182548f392d05d39a2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Apresentamos uma análise da evolução orbital dos exoplanetas que estão na zona habitável da estrela.",
+        "O software Maple é usado para fazer as integrações numéricas, outro software também utilizado é o Universe Sandbox para comparar o resultado obtido das integrações das equações analíticas devido a perturbação do terceiro corpo.",
+        "Mostramos que os exoplanetas (TRAPPIST-1e e TRAPPIST-1g) que estão na zona habitável da estrela TRAPPIST-1 permanecem dentro da zonal habitável ao longo do tempo."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Nonlinear dynamics of the Trappist-1-Trappist-1e exoplanetary system",
+      "publisher": "Research Square Platform LLC",
+      "author": "Hysa, Azem",
+      "published_at": "2023-05-09",
+      "url": "https://doi.org/10.21203/rs.3.rs-2890633/v1",
+      "retrieved_at": "2026-10-18T16:33:55.832Z",
+      "sha256": "c7779fe69141e9cb337d81928345d565fa417659c10fb3181cc65002baed70e6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this paper we will first present some general information on the Trappist-1 exoplanetary system.",
+        "Then we will determine the position of the Lagrange points for the Trappist-1-Trappist-1e system as well as the values of the Jacoby constant for each positions of the Lagrange points.",
+        "We will than construct trajectories for zero velocity, studying the motion of a particle in this system.",
+        "So, for this we will perform some numerical experiments in MATLAB® 2020.",
+        "Finaly, we will also study the possibility of the existence of an exomoon in this very impressive exoplanetary system."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T16:33:59.421Z",
+      "sha256": "1679a7cd23bf179735fb6776a64a518fb72eb2625045a0476139a5d654ff1083",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Investigation of the Influence of Stellar Particle Events and Galactic Cosmic Rays on the Atmosphere of TRAPPIST-1e",
+      "publisher": "Copernicus GmbH",
+      "author": "Bartenschlager, Andreas; Grenfell, John Lee; Herbst, Konstantin",
+      "published_at": "2023-05-15",
+      "url": "https://doi.org/10.5194/egusphere-egu23-11789",
+      "retrieved_at": "2026-10-18T16:33:59.421Z",
+      "sha256": "607d17649d2fcbd87a3bbfe814894b68a9b47a74eb54adb11a3ea5808d6f7625",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The launch of the James Webb Space Telescope (JWST) in December 2021 opens up the possibility of studying the composition of exoplanetary atmospheres in habitable zones, such as TRAPPIST-1e, in the near future.",
+        "With the help of numerical models of the exoplanetary atmospheres, the observations and the processes behind them can be better understood and interpreted (Herbst et al., 2022).",
+        "We investigate the influence of stellar energetic particles (SEPs) and galactic cosmic rays (GCRs) on the atmospheric chemistry of exoplanets around a very active M-star using the ion chemistry model ExoTIC.",
+        "A further specification regarding the scenarios results from the distinction between dead and alive atmospheres, whose atmospheric composition is characterized by a lower or higher oxygen fraction in the initial conditions.",
+        "Within ExoTIC we can calculate the impact of the ionization events on these atmospheres both as a single and as a series of events with different strengths.",
+        "Preliminary results show a significant impact of SEP events on the chemical composition of the atmosphere, including biosignatures such as O3 .",
+        "The strength and structure of these impacts depend on the composition of the starting atmosphere, in particular on the availability of oxygen as well as nitrogen and water vapour."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of exoplanet extremes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5036959",
+      "retrieved_at": "2026-10-18T16:33:59.421Z",
+      "sha256": "a4ad34418c0dc803b513414f892341b8b9bb0d154c51aeaf17323529fda30595",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The following are lists of extremes among the known exoplanets.",
+        "The properties listed here are those for which values are known reliably.",
+        "The study of exoplanets is one of the most dynamic emerging fields of science, thus these values may change as new discoveries are made."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "TRAPPIST-1",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50402274",
+      "retrieved_at": "2026-10-18T16:33:59.421Z",
+      "sha256": "93043a0f174d7fe687cff7cfc3fbea3035e657f40dfaa7c7f1aa51c53c65d497",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "TRAPPIST-1 (also known as 2MASS J23062928−0502285 or SPECULOOS-1) is a red dwarf star with seven known exoplanets.",
+        "It lies in the constellation Aquarius approximately 40.66 light-years (12.47 pc) away from Earth.",
+        "An ultra-cool dwarf, it has a surface temperature of about 2,566 K (2,290 °C; 4,160 °F).",
+        "Its radius is slightly larger than Jupiter's and it has a mass of about 9% of the Sun.",
+        "It is estimated to be 7.6 billion years old, making it older than the Solar System.",
+        "Observations in 2016 from TRAPPIST–South (Transiting Planets and Planetesimals Small Telescope project) at La Silla Observatory in Chile and other telescopes led to the discovery of two terrestrial planets in orbit around TRAPPIST-1.",
+        "In 2017, further analysis of the original observations identified five more terrestrial planets.",
+        "The seven planets take between 1.5 and 19 days to orbit the star in circular orbits.",
+        "They are all likely tidally locked to TRAPPIST-1, and it is therefore believed that each planet is in permanent day on one side and permanent night on the other.",
+        "Their masses are comparable to that of Earth and they all lie in the same plane; seen from Earth, they pass in front of the star.",
+        "This placement allowed the planets to be detected: when they pass in front of the star, its apparent magnitude dims.",
+        "Up to four of the planets—designated d, e, f, and g—orbit at distances where temperatures are likely suitable for the existence of liquid water, and are thus potentially hospitable to life."
+      ]
+    }
+  ]
+}

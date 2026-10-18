@@ -1,0 +1,180 @@
+{
+  "id": "mm-1951",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why should mitochondria define species?",
+      "publisher": "openRxiv",
+      "author": "Stoeckle, M.Y.; Thaler, D.S.",
+      "published_at": "2018-03-07",
+      "url": "https://doi.org/10.1101/276717",
+      "retrieved_at": "2026-10-18T15:41:51.860Z",
+      "sha256": "455dd006c76d02511788a59b2103bf7c188bd61d2ca82399cfb727018aa5c5ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "More than a decade of DNA barcoding encompassing about five million specimens covering 100,000 animal species supports the generalization that mitochondrial DNA clusters largely overlap with species as defined by domain experts.",
+        "What evolutionary mechanisms account for synonymous clusters being largely coincident with species?",
+        "The answer depends on whether variants are phenotypically neutral.",
+        "To the degree that variants are selectable, purifying selection limits variation within species and neighboring species may have distinct adaptive peaks.",
+        "Phenotypically neutral variants are only subject to demographic processes—drift, lineage sorting, genetic hitchhiking, and bottlenecks.",
+        "The evolution of modern humans has been studied from several disciplines with detail unique among animal species.",
+        "Mitochondrial barcodes provide a commensurable way to compare modern humans to other animal species.",
+        "Barcode variation in the modern human population is quantitatively similar to that within other animal species.",
+        "Several convergent lines of evidence show that mitochondrial diversity in modern humans follows from sequence uniformity followed by the accumulation of largely neutral diversity during a population expansion that began approximately 100,000 years ago.",
+        "A straightforward hypothesis is that the extant populations of almost all animal species have arrived at a similar result consequent to a similar process of expansion from mitochondrial uniformity within the last one to several hundred thousand years."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How to define games and why we need to",
+      "publisher": "Center for Open Science",
+      "author": "Arjoranta, Jonne",
+      "published_at": "2019-04-11",
+      "url": "https://doi.org/10.31235/osf.io/abhdm",
+      "retrieved_at": "2026-10-18T15:41:51.861Z",
+      "sha256": "7cbb5e7bc2472d793d0fa2c611bc816cc910eec684f00bf30565f96a1f12403a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article provides guidelines on how to make useful game definitions and discusses when that is a worthwhile undertaking.",
+        "It examines a recent article attempting to define videogames (Bergonse, 2017), and uses it as an example to discuss game definitions in general.",
+        "It concludes with reasons why making a final definition of games is not possible and why we need to continue to define games."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Music in urban poverty",
+      "publisher": "Oxford University Press",
+      "author": "Harrison, Klisala",
+      "published_at": "2020-11-19",
+      "url": "https://doi.org/10.1093/oso/9780197535066.003.0002",
+      "retrieved_at": "2026-10-18T15:41:51.861Z",
+      "sha256": "b172677c9c590f285a8d67af016111a1e233696b9f2efd64d0e0346511183971",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In urban contexts internationally, organizations, administrators, culture workers, artists and academics put vast effort into facilitating music and other arts in attempt to alleviate “poverty.” Poverty, according to recent definitions, refers to a broad array of social deprivations.",
+        "These include deprivations of entitlements, which are widely understood as rights, and deprivations of human development, of which capability development is an example.",
+        "Are specific human rights promoted, strengthened, threatened, violated, and respected in music-making by urban poor?"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Why is Islamophobia so hard to define?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Hargreaves, Julian",
+      "published_at": "2025-07-01",
+      "url": "https://theconversation.com/why-is-islamophobia-so-hard-to-define-258522",
+      "retrieved_at": "2026-10-18T15:41:51.940Z",
+      "sha256": "1f1d7971237468521d75502f142f4ee2fda0b804ac4acd6144ddde689c8f36ab",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Shutterstock Why is Islamophobia so hard to define?",
+        "It aims to settle long-running political debates over the term.",
+        "The concept of Islamophobia describes anti-Muslim and anti-Islamic prejudices and their impact on Muslim communities.",
+        "The term became familiar in the UK following publication of the Runnymede Trust report , Islamophobia: A Challenge for Us All, in 1997.",
+        "The concept is now used to discuss negative public opinion towards Muslims and Islam, biased media reporting, verbal and physical assaults and online attacks.",
+        "It is also used when discussing social and economic inequalities , discrimination within various institutional settings and unfair treatment from the police and security services.",
+        "Previous definitions have been controversial, failing to unite politicians, academics and British Muslims, and leading to charged debates over free speech.",
+        "Some academics have argued that the word “Islamophobia” – which suggests a phobia or fear of Islam – is an inaccurate label for a prejudice which often targets skin colour, ethnicity and culture.",
+        "Many Muslim-led organisations accept that the term is imperfect and interchangeable with others such as “anti-Muslim hatred” .",
+        "However, they maintain the term “Islamophobia” is needed to focus attention on a growing problem .",
+        "The Runnymede Trust revised its definition in a follow-up report published in 2017.",
+        "A longer, second version amends the United Nation’s 1965 definition of “racial discrimination”."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Golden ratio",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12386",
+      "retrieved_at": "2026-10-18T15:41:51.940Z",
+      "sha256": "afe6218b9d3c2d42d0a488d99d0f7a077acd92a0b9e21df89acc52ddbcf0f7ee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, two quantities are in the golden ratio if their ratio is the same as the ratio of their sum to the larger of the two quantities.",
+        "The golden ratio was called the extreme and mean ratio by Euclid, and the divine proportion by Luca Pacioli; it also goes by other names.",
+        "Mathematicians have studied the golden ratio's properties since antiquity.",
+        "It is the ratio of a regular pentagon's diagonal to its side and thus appears in the construction of the dodecahedron and icosahedron.",
+        "A golden rectangle –  that is, a rectangle with an aspect ratio of ⁠\n  \n    \n      \n        φ\n      \n    \n    {\\displaystyle \\varphi }\n  \n⁠ –  may be cut into a square and a smaller rectangle with the same aspect ratio.",
+        "The golden ratio has been used to analyze the proportions of natural objects and artificial systems such as financial markets, in some cases based on dubious fits to data.",
+        "The golden ratio appears in some patterns in nature, including the spiral arrangement of leaves and other parts of vegetation.",
+        "Some 20th-century artists and architects, including Le Corbusier and Salvador Dalí, have proportioned their works to approximate the golden ratio, believing it to be aesthetically pleasing."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Signal-to-noise ratio",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=41706",
+      "retrieved_at": "2026-10-18T15:41:51.940Z",
+      "sha256": "83870e9f00d37b4b044b88ce9fb717290a28780763c0864111b6696650a905a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Signal-to-noise ratio (SNR or S/N) is a measure used in science and engineering that compares the level of a desired signal to the level of background noise.",
+        "SNR is defined as the ratio of signal power to noise power, often expressed in decibels.",
+        "A ratio higher than 1:1 (greater than 0 dB) indicates more signal than noise.",
+        "SNR is an important parameter that affects the performance and quality of systems that process or transmit signals, such as communication systems, audio equipment, radar systems, imaging systems, and data acquisition systems.",
+        "A high SNR means that the signal is clear and easy to detect or interpret, while a low SNR means that the signal is corrupted or obscured by noise and may be difficult to distinguish or recover.",
+        "SNR can be improved by various methods, such as increasing the signal strength, reducing the noise level, filtering out unwanted noise, or using error correction techniques.",
+        "SNR also determines the maximum possible amount of data that can be transmitted reliably over a given channel, which depends on its bandwidth and SNR.",
+        "This relationship is described by the Shannon–Hartley theorem, which is a fundamental law of information theory.",
+        "SNR can be calculated using different formulas depending on how the signal and noise are measured and defined.",
+        "The most common way to express SNR is in decibels, which is a logarithmic scale that makes it easier to compare large or small values.",
+        "Other definitions of SNR may use different factors or bases for the logarithm, depending on the context and application."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Interval (music)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=49171",
+      "retrieved_at": "2026-10-18T15:41:51.940Z",
+      "sha256": "44f413adcb8d6dcc8b63c769f6c4737fe23edf4f397c4360b1101f448da60f80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In music theory, an interval is a difference in pitch between two sounds.",
+        "An interval may be described as horizontal, linear, or melodic if it refers to successively sounding tones, such as two adjacent pitches in a melody, and vertical or harmonic if it pertains to simultaneously sounding tones, such as in a chord.",
+        "In Western music, intervals are most commonly differencing between notes of a diatonic scale.",
+        "Intervals between successive notes of a scale are also known as scale steps.",
+        "They can be formed using the notes of various kinds of non-diatonic scales.",
+        "Some of the very smallest ones are called commas, and describe small discrepancies, observed in some tuning systems, between enharmonically equivalent notes such as C♯ and D♭.",
+        "Intervals can be arbitrarily small, and even imperceptible to the human ear.",
+        "In physical terms, an interval is the ratio between two sonic frequencies.",
+        "For example, any two notes an octave apart have a frequency ratio of 2:1.",
+        "This means that successive increments of pitch by the same interval result in an exponential increase of frequency, even though the human ear perceives this as a linear increase in pitch.",
+        "For this reason, intervals are often measured in cents, a unit derived from the logarithm of the frequency ratio.",
+        "In Western music theory, the most common naming scheme for intervals describes two properties of the interval: the quality (perfect, major, minor, augmented, diminished) and number (unison, second, third, etc.)."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Musica universalis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=318648",
+      "retrieved_at": "2026-10-18T15:41:51.940Z",
+      "sha256": "73c7a22315de28ac48c21940af458b4a50dcb59c30cc16868a4c1d6bf0e01874",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The musica universalis (literally universal music), also called music of the spheres or harmony of the spheres, is a philosophical concept that regards proportions in the movements of celestial bodies—the Sun, Moon, and planets—as a form of music.",
+        "The theory, originating in ancient Greece, was a tenet of Pythagoreanism, and was later developed by 16th-century astronomer Johannes Kepler.",
+        "Kepler did not believe this \"music\" to be audible, but felt that it could nevertheless be heard by the soul.",
+        "The idea continued to appeal to scholars until the end of the Renaissance, influencing many schools of thought, including humanism."
+      ]
+    }
+  ]
+}

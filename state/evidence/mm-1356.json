@@ -1,0 +1,128 @@
+{
+  "id": "mm-1356",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Seat Belts and Second Chances",
+      "publisher": "Oxford University Press",
+      "author": "Bryan, Craig J.",
+      "published_at": "2021-06",
+      "url": "https://doi.org/10.1093/med-psych/9780190050634.003.0008",
+      "retrieved_at": "2026-10-18T15:25:28.105Z",
+      "sha256": "0acd3e39c33016cc11b939e2717e72cd94f91a8b61d2c88663bf95789b35b4d6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter argues for a potentially high-impact but underutilized strategy: restricting or limiting access to highly lethal methods for suicide, especially firearms.",
+        "It begins by describing the role of seatbelts in traffic fatality prevention.",
+        "Prevention through design assumes that injuries, illnesses, and fatalities can be most effectively reduced or controlled by designing and building systems that eliminate or remove potential hazards from the very beginning, before they can cause any harm.",
+        "The chapter then considers the life-saving effects of laws and policies designed to reduce access to firearms, discussing firearm suicide in the United States."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Symposium: The Seat Belt Defense in Practice The Seat Belt Defense: State of the Law",
+      "publisher": "Marquette law review",
+      "author": "John J. Kircher",
+      "published_at": "1970-01-01",
+      "url": "https://openalex.org/W1587411458",
+      "retrieved_at": "2026-10-18T15:25:30.229Z",
+      "sha256": "96acdb3115b66a23e044494d019857aa55810ff8c8dff7b86412dcee351ba469",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The question of whether a plaintiff in an automobile personal injury action should be barred from recovery or have his damages reduced because he failed to make use of available automotive  belts has been under consideration for less than a decade.",
+        "Despite the recent origin of the seat  defense, a good deal of attention has been given to the topic in law reviews and other legal periodicals.",
+        "The nature and elements of the defense were fully explained in a Defense Research Institute monograph on the subject.3 However, some misconceptions as to the status of the case law construing it appear to have developed since the original monograph was published.",
+        "The purpose of this article is to analyze the case law and re-examine the nature and elements of the   defense as they relate to the cases.",
+        "It should be noted that the general term seat belt refers to many restraint devices other than the familiar lap belt.",
+        "The term as used herein includes the shoulder strap-lap  combination, which is standard on newer vehicles, as well as such less frequently used devices as the harness type of restraint.",
+        "The   defense is equally applicable to all automobile restraint devices currently available, as well as those which may be developed in the future.",
+        "Thirty-six reported decisions have been found in which the defense was considered, but these were concerned with the law of only twenty- three jurisdictions.",
+        "Therefore, at least as far as  courts are concerned, the   defense has not been considered in over one- half of the jurisdictions.",
+        "The highest appellate courts of only five states and one Canadian province have been called upon to consider the defense with three of these approving it, two rejecting it, and one failing to consider its merits due to other factors involved in the case..."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Nirvana fallacy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1262979",
+      "retrieved_at": "2026-10-18T15:25:30.229Z",
+      "sha256": "f9ab307fb5e9a6459a29ed7846fcc802ec4098ea80ca581d96aec7a5fcbd72e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The nirvana fallacy is the informal fallacy of comparing actual things with unrealistic, idealized alternatives.",
+        "It can also refer to the tendency to assume there is a perfect solution to a particular problem.",
+        "A closely related concept is the \"perfect solution fallacy\".",
+        "By creating a false dichotomy that presents one option which is obviously advantageous—while at the same time being completely unrealistic—a person using the nirvana fallacy can attack any opposing idea because it is imperfect.",
+        "Under this fallacy, the choice is not between real world solutions; it is, rather, a choice between one realistic achievable possibility and another unrealistic solution that could in some way be \"better\"."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Neglect of probability",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4724667",
+      "retrieved_at": "2026-10-18T15:25:30.229Z",
+      "sha256": "1256bc4ec87bf7b926aee2025d7e375f37d21fd959543fca3eafe8f31f147cf6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The neglect of probability, a type of cognitive bias, is the tendency to disregard probability when making a decision under uncertainty and is one simple way in which people regularly violate the normative rules for decision making.",
+        "Small risks are typically either neglected entirely or hugely overrated.",
+        "The term probability neglect was coined by American legal scholar Cass Sunstein.",
+        "There are many related ways in which people violate the normative rules of decision making with regard to probability including the hindsight bias, base rate neglect, and the gambler's fallacy.",
+        "However, rather than incorrectly using probability, in this instance the actor disregards it.",
+        "According to Swiss author on decision-making and critical thinking Rolf Dobelli, \"We have no intuitive grasp of risk and thus distinguish poorly among different threats.",
+        "The more serious the threat and the more emotional the topic (such as radioactivity), the less reassuring a reduction in risk seems to us.\""
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Benz Patent-Motorwagen",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5090402",
+      "retrieved_at": "2026-10-18T15:25:30.229Z",
+      "sha256": "a387a6bb7ef1b25743142a319109a2784c1d240eb3d25e20060efdd870c9aecb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Benz Patent-Motorwagen (\"patent motorcar\") was the world's first practical production automobile, built by Benz & Cie between 1885 and 1893.",
+        "Featuring three wheels, a single-cylinder four-stroke engine and belt-drive, Benz & Cie used the designation \"Patent-Motorwagen\" for their four-wheel cars until c.1900, but these are known today by their other names, such as Viktoria and Velo.",
+        "All these cars used the same layout and belt-drive technology for which Benz received patent number DRP37435 in 1886, hence the designation.",
+        "The original Patent-Motorwagen was developed over the period 1884 – 1887 by the German engineer Carl Benz and is widely regarded as the first practical automobile.",
+        "In the first vehicles this was horizontal and the vehicles had a single belt-drive.",
+        "Each belt-drive gave a single transmission ratio; from 1886 the single-belt-drive vehicles also had a reduction gearbox which provided a second transmission ratio.",
+        "Production ceased after Benz had perfected two-wheel steering and began manufacturing four-wheel models from late 1892.",
+        "Around 1895 the Sales Manager at Benz & Cie sought to recreate the form which the original vehicle took in early 1886 before it was given a new body.",
+        "The rebuilt vehicle was given to the Deutsches Museum in 1906; replicas of it have been produced from the mid-twentieth century."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Police duty belt",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11539633",
+      "retrieved_at": "2026-10-18T15:25:30.229Z",
+      "sha256": "e9567279f13b17e7881e5abd5653908f66fa6f0e95da413b9adbea937ecfdd40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This belt can carry various items, including handcuffs and guns.",
+        "The duty belt came into use in the early 1900s, in lieu of carrying the required equipment in greatcoat pockets or additional bags.",
+        "These early types were almost exclusively made of dark colored leather with simple pockets or clip systems attached, such as the Sam Browne belt.",
+        "However, there are some issues with the use of a duty belt, with the large amount of equipment carried on modern duty belts often weighing more than 20 lbs (9 kg)."
+      ]
+    }
+  ]
+}

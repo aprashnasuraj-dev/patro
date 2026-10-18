@@ -1,0 +1,26 @@
+{
+  "id": "mt-1744",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Aging brain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=749745",
+      "retrieved_at": "2026-10-18T16:22:32.155Z",
+      "sha256": "3e8f602c1b7feb713eca30a5bddaa29f36e970ee7e1704b988e0a29bbc63605c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aging brain refers to biological and functional changes that occur in the brain as individuals advance in age.",
+        "It encompasses both the normal alterations which are universally experienced and abnormalities induced by illnesses, diagnosed or not.",
+        "Aging is a major risk factor for most common neurodegenerative diseases, including mild cognitive impairment, dementias including Alzheimer's disease, cerebrovascular disease, Parkinson's disease, and Amyotrophic Lateral Sclerosis.",
+        "While much research has focused on diseases of aging, there are few informative studies on the molecular biology of the aging brain[1] in the absence of neurodegenerative disease or the neuropsychological profile of healthy older adults.",
+        "However, research suggests that the aging process is associated with several structural, chemical, and functional changes in the brain as well as a host of neurocognitive changes.",
+        "Recent reports in model organisms suggest that as organisms age, there are distinct changes in the expression of genes at the single neuron level.",
+        "This page is an overview of the changes associated with human brain aging, including aging without concomitant diseases."
+      ]
+    }
+  ]
+}

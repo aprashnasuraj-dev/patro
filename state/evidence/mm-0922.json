@@ -1,0 +1,113 @@
+{
+  "id": "mm-0922",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Pollination networks between orchids and orchid bees: the effect of phenology on mutualistic interactions",
+      "publisher": "Investigative News in Education (Universidad de Costa Rica)",
+      "author": "Nicolás Rengifo Alfonso",
+      "published_at": "2025-01-31",
+      "url": "https://openalex.org/W7135359531",
+      "retrieved_at": "2026-10-18T15:16:23.318Z",
+      "sha256": "51c114ba478389ba80e3283900034ba7bf3c7d251c5e0925e06bf951bd4ac2ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "La polinización es una interacción clave para la biodiversidad y los ecosistemas.",
+        "En los trópicos, las abejas Euglossini desempeñan un papel crucial en la polinización de las orquídeas, pero se sabe poco sobre cómo los cambios climáticos, como las precipitaciones, afectan a estas interacciones.",
+        "Aunque las abejas dependen de los recursos florales, la dinámica de estas relaciones varía con el tiempo.",
+        "La fenología estudia los ciclos biológicos y sus relaciones con el clima, que afectan a la abundancia de insectos a lo largo del año.",
+        "Este estudio analiza cómo interactúan las abejas Euglossini y las orquídeas en un bosque tropical húmedo de Costa Rica y cómo influye la precipitación en esas interacciones.",
+        "La investigación se llevó a cabo en la Estación Biológica La Selva, Costa Rica, que se caracteriza por un clima tropical húmedo.",
+        "Se recogieron muestras mensuales de machos de abejas Euglossini mediante cebos químicos.",
+        "Un total de 4994 machos fueron contados y fueron capturados 623 machos que contenían 643 polinarios.",
+        "Se encontraron patrones de estacionalidad en 20 especies de euglosinos, y 4 mostraron correlaciones significativas con las precipitaciones.",
+        "La red durante la estación lluviosa fue relativamente grande, pero ambas estaciones tuvieron valores similares de anidamiento.",
+        "Hubo una correlación positiva entre la abundancia de machos euglosinos y polinarios.",
+        "Este estudio es pionero en documentar la fenología de las interacciones entre las abejas Euglossini y las orquídeas en la región Neotropical, destacando el impacto de la precipitación en estas redes ecológicas."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Climbing Mount Improbable",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1145116",
+      "retrieved_at": "2026-10-18T15:16:23.318Z",
+      "sha256": "3acf736b4109e88c5fe8ce701a22e8d2edf01a190745f70566629afd6bfeefb7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Climbing Mount Improbable is a 1996 popular science book by Richard Dawkins.",
+        "The book’s central metaphor describes complex adaptations, which evolve gradually through a series of intermediates.",
+        "This happens through the cumulative, nonrandom process of natural selection.",
+        "The book grew out of Dawkins’s Royal Institution Christmas Lectures, Growing Up in the Universe and shares its title with the third lecture.",
+        "Dawkins dedicated it to Robert Winston, “a good doctor and a good man.”"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Wolf in sheep's clothing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3570349",
+      "retrieved_at": "2026-10-18T15:16:23.318Z",
+      "sha256": "38e89e9112e4876082b82f61e97a5801fe8e7a7196f4f5c74f250cd614dd1558",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A wolf in sheep's clothing is an idiom from Jesus's Sermon on the Mount as narrated in the Gospel of Matthew.",
+        "The gospel regards such individuals (particularly false teachers) as dangerous.",
+        "Fables based on the idiom, dated no earlier than the 12th century CE, have been falsely credited to ancient Greek storyteller Aesop (620–564 BCE).",
+        "The confusion arises from the similarity of themes in Aesop's Fables concerning wolves that are mistakenly trusted, with the moral that human nature eventually shows through any disguise.",
+        "In the modern era, zoologists have applied the idiom to the use of aggressive mimicry by predators, whether the disguise is as the prey itself, or as a different but harmless species."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Aggressive mimicry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12360129",
+      "retrieved_at": "2026-10-18T15:16:23.318Z",
+      "sha256": "26ff85d12b0fc2de2f41053deb61c4c943c1b058ebcefffcaad565cdc7769942",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aggressive mimicry is a form of mimicry in which predators, parasites, or parasitoids share similar signals, using a harmless model, allowing them to avoid being correctly identified by their prey or host.",
+        "Zoologists have repeatedly compared this strategy to a wolf in sheep's clothing.",
+        "In its broadest sense, aggressive mimicry could include various types of exploitation, as when an orchid exploits a male insect by mimicking a sexually receptive female (see pseudocopulation), but will here be restricted to forms of exploitation involving feeding.",
+        "For example, indigenous Australians who dress up as and imitate kangaroos when hunting would not be considered aggressive mimics, nor would a human angler, though they are undoubtedly practising self-decoration camouflage.",
+        "Treated separately is molecular mimicry, which shares some similarity; for instance a virus may mimic the molecular properties of its host, allowing it access to its cells.",
+        "An alternative term, Peckhamian mimicry, has been suggested (after George and Elizabeth Peckham), but it is seldom used.",
+        "Aggressive mimicry is opposite in principle to defensive mimicry, where the mimic generally benefits from being treated as harmful.",
+        "The mimic may resemble its own prey, or some other organism which is beneficial or at least not harmful to the prey.",
+        "the organism being 'imitated', may experience increased or reduced fitness, or may not be affected at all by the relationship.",
+        "On the other hand, the signal receiver inevitably suffers from being tricked, as is the case in most mimicry complexes.",
+        "Aggressive mimicry often involves the predator employing signals which draw its potential prey towards it, a strategy which allows predators to simply sit and wait for prey to come to them.",
+        "However, this need not be the case; as long as the predator's true identity is concealed, it may be able to approach prey more easily than would otherwise be the case."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of Curious George episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16922138",
+      "retrieved_at": "2026-10-18T15:16:23.318Z",
+      "sha256": "5ed00ea5220dfc29bb61b0c7cdd8cda02b113188b09569ad0ef93d73fbe5523a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of episodes from the children's animated television series, Curious George.",
+        "In the city, George lives in an apartment building with The Man in the Yellow Hat and in the country they share a small house near Lake Wanasinklake.",
+        "This allows George to mirror the experiences of kids who live in an urban environment and those who live in a rural environment.",
+        "There are exceptions to this; some episodes take place in alternative settings such as an airport or a train station."
+      ]
+    }
+  ]
+}

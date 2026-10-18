@@ -1,0 +1,97 @@
+{
+  "id": "mt-0364",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T15:55:30.966Z",
+      "sha256": "dc4d246eebfda03373636261d39f231c419a52be688b20b1c8c52aeba0b7eb99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T15:55:30.966Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cavernous hemangioma",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36135963",
+      "retrieved_at": "2026-10-18T15:55:30.966Z",
+      "sha256": "b265be2fdfee56a54bfa218452b6ae5f7a0c950b6be07807ed564cd65f65099c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cavernous hemangioma, also called cavernous angioma, venous malformation, or cavernoma, is a type of venous malformation due to endothelial dysmorphogenesis from a lesion which is present at birth.",
+        "A cavernoma in the brain is called a cerebral cavernous malformation or CCM.",
+        "Despite its designation as a hemangioma, a cavernous hemangioma is a benign (but not harmless) condition, not a malignant tumor, as it does not display endothelial hyperplasia.",
+        "The abnormal tissue causes a slowing of blood flow through the cavities, or \"caverns\".",
+        "The blood vessels do not form the necessary junctions with surrounding cells, and the structural support from the smooth muscle is hindered, causing leakage into the surrounding tissue.",
+        "It is the leakage of blood (hemorrhage) that causes a variety of symptoms associated with the condition."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T15:55:30.966Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

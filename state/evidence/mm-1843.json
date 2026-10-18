@@ -1,0 +1,106 @@
+{
+  "id": "mm-1843",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Coral",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47700",
+      "retrieved_at": "2026-10-18T15:41:45.115Z",
+      "sha256": "bd38d8c759295ba7c1dc6cfb5e1532db1ed4f9690077ce246a792b362ef29815",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Corals are colonial marine invertebrates within the subphylum Anthozoa of the phylum Cnidaria.",
+        "They typically form compact colonies of many identical individual polyps.",
+        "Coral species include the important reef builders that inhabit tropical oceans and secrete calcium carbonate to form a hard skeleton.",
+        "A coral \"group\" is a colony of very many genetically identical polyps.",
+        "Each polyp is a sac-like animal typically only a few millimeters in diameter and a few centimeters in height.",
+        "Over many generations, the colony thus creates a skeleton characteristic of the species which can measure up to several meters in size.",
+        "Corals also breed sexually (two parts completing a whole) by spawning: polyps of the same species release gametes simultaneously overnight, often around a full moon.",
+        "Fertilized eggs form planulae, a mobile early form of the coral polyp which, when mature, settles to form a new colony.",
+        "Although some corals are able to catch plankton and small fish using stinging cells on their tentacles, most corals obtain the majority of their energy and nutrients from photosynthesis of symbiotic unicellular dinoflagellates of the genus Symbiodinium, which live within coral tissues.",
+        "These are commonly known as zooxanthellae and give the coral color.",
+        "Such corals require sunlight and grow in clear, shallow water, typically at depths less than 60 metres (200 feet; 33 fathoms), but corals in the genus Leptoseris have been found as deep as 172 metres (564 feet; 94 fathoms).",
+        "Corals are major contributors to the physical structure of the coral reefs that develop in tropical and subtropical waters, such as the Great Barrier Reef off the coast of Australia."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Great Barrier Reef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70983",
+      "retrieved_at": "2026-10-18T15:41:45.115Z",
+      "sha256": "9a29a6bc4e94ecefca1bbeb7f6fa91bfb0d00d7f1a754def6b0cd1cb38d3fa61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Great Barrier Reef is the world's largest coral reef system, composed of over 2,900 individual reefs and 900 islands stretching for over 2,300 kilometres (1,400 mi) over an area of approximately 344,400 square kilometres (133,000 mi2).",
+        "The reef is located in the Coral Sea, off the coast of Queensland, Australia.",
+        "It is separated from the coast by a channel 160 kilometres (100 mi) wide in places and over 61 metres (200 ft) deep.",
+        "The Great Barrier Reef can be seen from outer space and is the world's biggest single structure made by living organisms.",
+        "This reef structure is composed of and built by billions of tiny organisms, known as coral polyps.",
+        "It supports a wide diversity of life and was selected as a World Heritage Site in 1981.",
+        "CNN labelled it one of the Seven Natural Wonders of the World in 1997.",
+        "Australian World Heritage places included it in its list in 2007.",
+        "The Queensland National Trust named it a state icon of Queensland in 2006.",
+        "A large part of the reef is protected by the Great Barrier Reef Marine Park, which helps to limit the impact of human use, such as fishing and tourism.",
+        "Other environmental pressures on the reef and its ecosystem include runoff of humanmade pollutants, climate change accompanied by mass coral bleaching, dumping of dredging sludge and cyclic population outbreaks of the crown-of-thorns starfish.",
+        "The Great Barrier Reef has long been known to and used by the Aboriginal Australian and Torres Strait Islander peoples, and is an important part of local groups' cultures and spirituality."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Coral reef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=87410",
+      "retrieved_at": "2026-10-18T15:41:45.115Z",
+      "sha256": "e09ea57aabc17b75fe71853a148e8fc13ac1ac3249cfe4b5156bbe68d8203a33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A coral reef is an underwater ecosystem characterized by reef-building corals.",
+        "Reefs are formed of colonies of coral polyps held together by calcium carbonate.",
+        "Most coral reefs are built from stony corals, whose polyps cluster in groups.",
+        "Coral belongs to the class Anthozoa in the animal phylum Cnidaria, which includes sea anemones and jellyfish.",
+        "Unlike sea anemones, corals secrete hard carbonate exoskeletons that support and protect the coral.",
+        "Most reefs grow best in warm, shallow, clear, sunny, and agitated water.",
+        "Coral reefs first appeared 485 million years ago, at the dawn of the Early Ordovician, displacing the microbial and sponge reefs of the Cambrian.",
+        "Sometimes called rainforests of the sea, shallow coral reefs form some of Earth's most diverse ecosystems.",
+        "They occupy less than 0.1% of the world's ocean area, about half the area of France.",
+        "Yet, they provide a home for at least 25% of all marine species, including fish, mollusks, worms, crustaceans, echinoderms, sponges, tunicates and other cnidarians.",
+        "Coral reefs flourish in ocean waters that provide few nutrients.",
+        "They are most commonly found at shallow depths in tropical waters, but deep water and cold water coral reefs exist on smaller scales in other areas."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Reef",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=240844",
+      "retrieved_at": "2026-10-18T15:41:45.115Z",
+      "sha256": "118574c12d80c87d2b752f98d2d3f47488fe3d1c48b34a87dbfdb15dc2f54a67",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A reef is a ridge or shoal of rock, coral, or similar relatively stable material lying beneath the surface of a natural body of water.",
+        "Many reefs result from natural, abiotic (non-living) processes such as deposition of sand or wave erosion planing down rock outcrops.",
+        "However, reefs such as the coral reefs of tropical waters are formed by biotic (living) processes, dominated by corals and coralline algae.",
+        "Artificial reefs, such as shipwrecks and other man-made underwater structures, may occur intentionally or as the result of an accident.",
+        "These are sometimes designed to increase the physical complexity of featureless sand bottoms to attract a more diverse range of organisms.",
+        "They provide shelter to various aquatic animals which help prevent extinction.",
+        "Another reason reefs are put in place is for aquaculture, and fish farmers who are looking to improve their businesses sometimes invest in them.",
+        "Reefs are often quite near to the surface, but not all definitions require this.",
+        "Earth's largest coral reef system is the Great Barrier Reef in Australia, at a length of over 2,300 kilometres (1,400 miles)."
+      ]
+    }
+  ]
+}

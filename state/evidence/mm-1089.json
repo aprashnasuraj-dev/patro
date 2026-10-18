@@ -1,0 +1,151 @@
+{
+  "id": "mm-1089",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the lungs supply enough oxygen",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "1984-07-27",
+      "url": "https://www.cambridge.org/core/books/scaling/how-the-lungs-supply-enough-oxygen/3BA387FF392A04B5E57EE0685E33FCD7",
+      "retrieved_at": "2026-10-18T15:20:50.890Z",
+      "sha256": "f0b6478366e717799b496300b6e040c7d75a864204920a9eaabaf172671412de",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How the lungs supply enough oxygen (Chapter 9) - Scaling Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "From the viewpoint of scaling, much attention has been given to the supply of oxygen, and relatively little to the supply of fuel.",
+        "In this and the next two chapters we shall focus on the gas transport system, especially as it pertains to oxygen.",
+        "First we shall consider the effects of scale on gas-exchange organs: lungs and gills.",
+        "These organs must have a size and diffusion capacity adequately scaled to the need for oxygen.",
+        "In the next chapter, the role of blood in gas transport will be considered, and because information is available mostly for vertebrates, in particular for mammals, the discussion will be limited to these.",
+        "Following that we shall examine the circulatory system, which consists of a pump (the heart) and conduits through which blood is pumped.",
+        "When we analyze the function of the respiratory system from the viewpoint of scale, we should keep in mind that most of the available information has been obtained for animals at rest.",
+        "The normal animal, if not asleep, spends much of its time being active and moving about, and the supply system for oxygen must be scaled to meet these extra demands (except during brief periods of non-steady-state conditions, such as a burst of maximal activity).",
+        "Information Type Chapter Information Scaling Why is Animal Size so Important?",
+        "99 - 114 DOI: https://doi.org/10.1017/CBO9781139167826.010 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 1984 Access options Get access to the full version of this content by using one of the access options below."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Oxygen exchange in silicone rubber capillaries.",
+      "publisher": "PubMed",
+      "author": "F.G. Heineken; PK Predecki; Filley Gf",
+      "published_at": "1978-06-01",
+      "url": "https://openalex.org/W2414511740",
+      "retrieved_at": "2026-10-18T15:20:52.256Z",
+      "sha256": "4f1fab5e1d9eef164771505f7332b0598d21141353f9f4c384763c401c4879b2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Capillaries of 7 and 12.5 mu diameter have been fabricated in silicone rubber.",
+        "Whole blood treated with heparin has been perfused through these capillaries.",
+        "Under flowing conditions, no clotting or other clumping effects have been observed and red cells appear to maintain a constant velocity.",
+        "Oxygen transfer data to and from saline perfusing the 12.5 mu diameter capillaries have been obtained in order to determine how rapidly O2 will permeate the silicone rubber film.",
+        "The data indicate that the capillaries simulate lung tissue oxygen exchange and will allow for the first time the experimental determination of oxygen exchange kinetics in flowing whole blood."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Lung",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36863",
+      "retrieved_at": "2026-10-18T15:20:52.256Z",
+      "sha256": "472d07c2adda6e5595657d3a753889c746a2d66bbcde2f80bedfd7a2266760e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The lungs are the primary organs of the respiratory system in many animals, including humans.",
+        "In mammals and most other tetrapods, two lungs are located near the backbone on either side of the heart.",
+        "Their function in the respiratory system is to extract oxygen from the atmosphere and transfer it into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere, in a process of gas exchange.",
+        "Respiration is driven by different muscular systems in different species.",
+        "Mammals, reptiles and birds use their musculoskeletal systems to support and foster breathing.",
+        "In early tetrapods, air was driven into the lungs by the pharyngeal muscles via buccal pumping, a mechanism still seen in amphibians.",
+        "In humans, the primary muscle that drives breathing is the diaphragm.",
+        "The lungs also provide airflow that makes vocalisation including speech possible.",
+        "The right lung is bigger than the left, and the left lung shares space in the chest with the heart.",
+        "The lungs together weigh approximately 1.3 kilograms (2.9 lb), and the right is heavier.",
+        "The lungs are part of the lower respiratory tract that begins at the trachea and branches into the bronchi and bronchioles, which receive air breathed in via the conducting zone.",
+        "These divide until air reaches microscopic alveoli, where gas exchange takes place."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Respiratory system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=66723",
+      "retrieved_at": "2026-10-18T15:20:52.257Z",
+      "sha256": "86a811753648ab9742195ddf387e6254077eb1c4e26f06c156fa31ffcd9156c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The respiratory system (also respiratory apparatus, ventilatory system) is a biological system consisting of specific organs and structures used for gas exchange in animals and plants.",
+        "In land animals, the respiratory surface is internalized as linings of the lungs.",
+        "Gas exchange in the lungs occurs in millions of small air sacs.",
+        "In mammals and reptiles, these are called alveoli, and in birds, they are known as atria.",
+        "These microscopic air sacs have a rich blood supply, bringing the air into close contact with the blood.",
+        "The bronchioles, or parabronchi, generally open into the microscopic alveoli (in mammals) and atria (in birds).",
+        "Air has to be pumped from the environment into the alveoli or atria by the process of breathing which involves the muscles of respiration.",
+        "In most fish, and a number of other aquatic animals (both vertebrates and invertebrates), the respiratory system consists of gills, which are either partially or completely external organs, bathed in the watery environment.",
+        "This water flows over the gills by a variety of active or passive means.",
+        "Gas exchange takes place in the gills which consist of thin or very flat filaments and lammellae which expose a very large surface area of highly vascularized tissue to the water.",
+        "Other animals, such as insects, have respiratory systems with very simple anatomical features, and in amphibians, even the skin plays a vital role in gas exchange.",
+        "Plants also have respiratory systems but the directionality of gas exchange can be opposite to that in animals."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Pulmonary alveolus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=102359",
+      "retrieved_at": "2026-10-18T15:20:52.257Z",
+      "sha256": "d435757f4571f404e795b7d346d27da705660f212cfa495a91357941efeac1db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "alveoli; from Latin  alveolus 'little cavity'), also called an air sac or air space, is one of millions of hollow, distensible cup-shaped cavities in the lungs where pulmonary gas exchange takes place.",
+        "Oxygen is exchanged for carbon dioxide at the blood–air barrier between the alveolar air and the pulmonary capillary.",
+        "Alveoli make up the functional tissue of the mammalian lungs known as the lung parenchyma, which takes up 90 percent of the total lung volume.",
+        "Alveoli are first located in the respiratory bronchioles that mark the beginning of the  respiratory zone.",
+        "They are located sparsely in these bronchioles, line the walls of the alveolar ducts, and are more numerous in the blind-ended alveolar sacs.",
+        "The acini are the basic units of respiration, with gas exchange taking place in all the alveoli present.",
+        "The alveolar membrane is the gas exchange surface, surrounded by a network of capillaries.",
+        "Oxygen is diffused across the membrane into the capillaries and carbon dioxide is released from the capillaries into the alveoli to be breathed out.",
+        "Different structures are involved in gas exchange in other vertebrates."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Gas exchange",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=379303",
+      "retrieved_at": "2026-10-18T15:20:52.257Z",
+      "sha256": "27f46a2a58f0e86e9abe2ffa3d6bf03ebe708d79d9c959a0a3990ae9e9290387",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gas exchange is the physiological process by which gases move passively by diffusion across a surface.",
+        "For example, this surface might be the air/water interface of a water body, the surface of a gas bubble in a liquid, a gas-permeable membrane, or a biological membrane that forms the boundary between an organism and its extracellular environment.",
+        "Gases are constantly consumed and produced by cellular and metabolic reactions in most living things, so an efficient system for gas exchange between, ultimately, the interior of the cell(s) and the external environment is required.",
+        "Small, particularly unicellular organisms, such as bacteria and protozoa, have a high surface-area to volume ratio.",
+        "In these creatures the gas exchange membrane is typically the cell membrane.",
+        "Some small multicellular organisms, such as flatworms, are also able to perform sufficient gas exchange across the skin or cuticle that surrounds their bodies.",
+        "However, in most larger organisms, which have small surface-area to volume ratios, specialised structures with convoluted surfaces such as gills, pulmonary alveoli and spongy mesophylls provide the large area needed for effective gas exchange.",
+        "These convoluted surfaces may sometimes be internalised into the body of the organism.",
+        "This is the case with the alveoli, which form the inner surface of the mammalian lung, the spongy mesophyll, which is found inside the leaves of some kinds of plant, or the gills of those molluscs that have them, which are found in the mantle cavity.",
+        "In aerobic organisms, gas exchange is particularly important for respiration, which involves the uptake of oxygen (O2) and release of carbon dioxide (CO2).",
+        "Conversely, in oxygenic photosynthetic organisms such as most land plants, uptake of carbon dioxide and release of both oxygen and water vapour are the main gas-exchange processes occurring during the day.",
+        "Other gas-exchange processes are important in less familiar organisms: e.g."
+      ]
+    }
+  ]
+}
