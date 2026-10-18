@@ -15,7 +15,13 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
  const ok=claims.filter(c=>!bad.has(c.id));const used=new Set(ok.map(c=>c.source_id));
  if(ok.length<Math.max(4,nSections*2-1)||used.size<need)throw Object.assign(new Error('GROUNDING_FAILED: '+ok.length+' grounded claims, '+used.size+' sources (need '+need+')'),{code:'GROUNDING_FAILED'});
  const plan=secs.map((s,i)=>'## '+s.heading+' ('+s.purpose+')\n'+ok.filter(c=>c.id.startsWith('c'+(i+1)+'-')).map(c=>'- '+c.text+' (source '+c.source_id+')').join('\n')).join('\n\n');
- const w=await llm.json('Write the full article in Markdown, about '+targetWords+' words, one "## heading" per planned section, in order. Use only the facts in the claims; paraphrase, never copy passages. '+VOICE+' Also write 3 FAQ items using only these facts. Return JSON {"markdown":"...","faq":[{"question":"","answer":""}]}.','Question: '+(meta.question||title)+'\nPlan and claims:\n'+plan);
- let body=String(w.value.markdown||'').trim();if(lint(body).length)body=fix(body);
- return {title:d.title||title,description:String(d.description||'').slice(0,158),body_md:body,claims:ok.map(c=>({id:c.id,text:c.text,source_id:c.source_id,passage:c.passage})),headings:secs.map(s=>s.heading),faq:Array.isArray(w.value.faq)?w.value.faq.slice(0,3):[],voice_problems_after:lint(body),provider:w.provider};
+ const w=await llm.json('Write the full article in Markdown, about '+targetWords+' words, one "## heading" per planned section, in order. Answer the exact reader question early. Make every section specific to this subject, with varied sentence length and paragraph rhythm. Do not use em dashes. Avoid formulaic openings, filler, repeated explanations, generic conclusions, and FAQ items that merely restate headings. Use only facts in the claims; paraphrase, never copy passages. '+VOICE+' Also write up to 3 useful FAQ items using only these facts. Return JSON {"markdown":"...","faq":[{"question":"","answer":""}]}.','Question: '+(meta.question||title)+'\nPlan and claims:\n'+plan);
+ let body=String(w.value.markdown||'').trim();
+ if(lint(body).length)body=fix(body);
+ const voiceProblems=lint(body);
+ if(voiceProblems.length)throw Object.assign(new Error('VOICE_GATE_FAILED: '+voiceProblems.join('; ')),{code:'VOICE_GATE_FAILED'});
+ const faq=Array.isArray(w.value.faq)?w.value.faq.slice(0,3):[];
+ const faqSeen=new Set();
+ const cleanFaq=faq.filter(f=>{const k=String(f.question||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();if(!k||faqSeen.has(k))return false;faqSeen.add(k);return true;});
+ return {title:d.title||title,description:String(d.description||'').slice(0,158),body_md:body,claims:ok.map(c=>({id:c.id,text:c.text,source_id:c.source_id,passage:c.passage})),headings:secs.map(s=>s.heading),faq:cleanFaq,voice_problems_after:voiceProblems,provider:w.provider};
 }
