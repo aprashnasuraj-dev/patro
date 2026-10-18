@@ -1,0 +1,151 @@
+{
+  "id": "mm-0680",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "BIBLIOGRAPHY",
+      "publisher": "Anthem Press",
+      "author": null,
+      "published_at": "2025-08-05",
+      "url": "https://doi.org/10.2307/jj.33382218.14",
+      "retrieved_at": "2026-10-18T15:41:34.971Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "EPILOGUE",
+      "publisher": "Anthem Press",
+      "author": null,
+      "published_at": "2025-08-05",
+      "url": "https://doi.org/10.2307/jj.33382218.12",
+      "retrieved_at": "2026-10-18T15:41:35.124Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Psychology and Art-Painting",
+      "publisher": "New Trends in Psychology",
+      "author": "Cosmina-Marilena Manea",
+      "published_at": "2020-03-16",
+      "url": "https://openalex.org/W7215432202",
+      "retrieved_at": "2026-10-18T15:41:36.565Z",
+      "sha256": "fddbcea5d7e189c21564b670380ac80b78c5f5128b9ab1b3f26d8637655f9a7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Psychology and art seem to have two areas that do not have much in common but the twohave been combined in such a way that the psychology of art has appeared.",
+        "A product of this psychologyis even art therapy, and painting is one of the most effective methods used in this therapy.",
+        "Alsopsychology topics are played in many paintings over time, and this may be one of the reasons why weare attracted to certain paintings."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Green",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12460",
+      "retrieved_at": "2026-10-18T15:41:36.565Z",
+      "sha256": "51c21d6207930c336feda55f9c363a79edfbcaf4ab6aa8270c207a1142addf0b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Green is the color between cyan and yellow on the visible spectrum.",
+        "It is evoked by light which has a dominant wavelength of roughly 495–570 nm.",
+        "By far the largest contributor to green in nature is chlorophyll, the chemical by which plants photosynthesize and convert sunlight into chemical energy.",
+        "Many creatures have adapted to their green environments by taking on a green hue themselves as camouflage.",
+        "Several minerals have a green color, including the emerald, which is colored green by its chromium content.",
+        "During post-classical and early modern Europe, green was the color commonly associated with wealth, merchants, bankers, and the gentry, while red was reserved for the nobility.",
+        "For this reason, the costume of the Mona Lisa by Leonardo da Vinci and the benches in the British House of Commons are green while those in the House of Lords are red.",
+        "It also has a long historical tradition as the color of Ireland and of Gaelic culture.",
+        "It is the historic color of Islam, representing the lush vegetation of Paradise.",
+        "It was the color of the banner of Muhammad, and is found in the flags of nearly all Islamic countries.",
+        "In surveys made in American, European, and Islamic countries, green is the color most commonly associated with nature, life, health, youth, spring, hope, and envy.",
+        "In the European Union and the United States, green is also sometimes associated with toxicity and poor health, but in China and most of Asia, its associations are very positive, as the symbol of fertility and happiness."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Yellow",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34368",
+      "retrieved_at": "2026-10-18T15:41:36.565Z",
+      "sha256": "f45632675777a2bff4cc5026d9469c20292055057c04353be5347f0aa4a4bbbf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Yellow is a color between green and orange on the spectrum of light.",
+        "It is evoked by light with a dominant wavelength of roughly 575–585 nm.",
+        "It is a primary color in subtractive color systems, used in painting or color printing.",
+        "In the RGB color model, used to create colors on television and computer screens, yellow is a secondary color made by combining red and green at equal intensity.",
+        "Carotenoids give the characteristic yellow color to autumn leaves, corn, canaries, daffodils, and lemons, as well as egg yolks, buttercups, and bananas.",
+        "They absorb light energy and protect plants from photo damage in some cases.",
+        "Sunlight has a slight yellowish hue when the Sun is near the horizon, due to atmospheric scattering of shorter wavelengths (green, blue, and violet).",
+        "Because it was widely available, yellow ochre pigment was one of the first colors used in art; the Lascaux cave in France has a painting of a yellow horse, dated to about 17,000 years ago.",
+        "Ochre and orpiment pigments were used to represent gold and skin color in Egyptian tombs, then in the murals in Roman villas.",
+        "In the early Christian church, yellow was the color associated with the Pope and the golden keys of the Kingdom, but it was also associated with Judas Iscariot and used to mark heretics.",
+        "In the 20th century, Jews in Nazi-occupied Europe were forced to wear a yellow star.",
+        "In China, bright yellow was the color of the Middle Kingdom, and could be worn only by the emperor and his household; special guests were welcomed on a yellow carpet."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Composition (visual arts)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1822919",
+      "retrieved_at": "2026-10-18T15:41:36.565Z",
+      "sha256": "1ea862e2bc406466da22e624f304fd6e41f330e428e5f685bd234675537472e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In visual arts, composition (meaning \"putting together\") is the organization of an artwork.",
+        "It is often used interchangeably with various terms such as design, form, visual ordering, or formal structure, depending on the context.",
+        "In graphic design for press and desktop publishing, composition is commonly referred to as page layout.",
+        "The composition of a picture is different from its subject (what is depicted), whether a moment from a story, a person or a place.",
+        "Many subjects, for example Saint George and the Dragon, are often portrayed in art, but using a great range of compositions even though the two figures are typically the only ones shown."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "White",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17599355",
+      "retrieved_at": "2026-10-18T15:41:36.565Z",
+      "sha256": "fc28df306cd1371955df56745e62a6ade957f160996fd156a548b57a76867afa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "White is the lightest color and is achromatic (having no chroma).",
+        "It is the color of objects such as snow, chalk, and milk, and is the opposite of black.",
+        "White objects fully (or almost fully) reflect and scatter all the visible wavelengths of light.",
+        "White on television and computer screens is created by a mixture of red, blue, and green light.",
+        "The color white can be given with white pigments, especially titanium dioxide.",
+        "In ancient Egypt and ancient Rome, priestesses wore white as a symbol of purity, and Romans wore white togas as symbols of citizenship.",
+        "In the Middle Ages and Renaissance a white unicorn symbolized chastity, and a white lamb sacrifice and purity.",
+        "It was the royal color of the kings of France as well as the flag of monarchist France from 1815 to 1830, and of the monarchist movement that opposed the Bolsheviks during the Russian Civil War (1917–1922).",
+        "Greek temples and Roman temples were faced with white marble, and beginning in the 18th century, with the advent of neoclassical architecture, white became the most common color of new churches, capitols, and other government buildings, especially in the United States.",
+        "It was also widely used in 20th century modern architecture as a symbol of modernity and simplicity.",
+        "According to surveys in Europe and the United States, white is the color most often associated with perfection, the good, honesty, cleanliness, the beginning, the new, neutrality, and exactitude.",
+        "The pope, the head of the Roman Catholic Church, has worn white since 1566, as a symbol of purity and sacrifice."
+      ]
+    }
+  ]
+}

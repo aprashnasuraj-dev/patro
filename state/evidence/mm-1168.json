@@ -1,0 +1,100 @@
+{
+  "id": "mm-1168",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Hail",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14458",
+      "retrieved_at": "2026-10-18T16:19:44.147Z",
+      "sha256": "2a72a59cbf0550331252086adca1672a0d4874b2944a4bb233be20b6d011e89a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is distinct from ice pellets (American English \"sleet\"), though the two are often confused.",
+        "It consists of balls or irregular lumps of ice, each of which is called a hailstone.",
+        "Ice pellets generally fall in cold weather, while hail growth is greatly inhibited during low surface temperatures.",
+        "Unlike other forms of water ice precipitation, such as graupel (which is made of rime ice), ice pellets (which are smaller and translucent), and snow (which consists of tiny, delicately crystalline flakes or needles), hailstones usually measure between 5 mm (0.2 in) and 15 cm (6 in) in diameter.",
+        "The METAR reporting code for hail 5 mm (0.20 in) or greater is GR, while smaller hailstones and graupel are coded GS.",
+        "Hail is possible during most thunderstorms (as it is produced by cumulonimbus), as well as within 2 nmi (3.7 km) of the parent storm.",
+        "Hail formation requires environments of strong, upward motion of air within the parent thunderstorm (similar to tornadoes) and lowered heights of the freezing level.",
+        "In the mid-latitudes, hail forms near the interiors of continents, while, in the tropics, it tends to be confined to high elevations.",
+        "There are methods available to detect hail-producing thunderstorms using weather satellites and weather radar imagery.",
+        "Hailstones generally fall at higher speeds as they grow in size, though complicating factors such as melting, friction with air, wind, and interaction with rain and other hailstones can slow their descent through Earth's atmosphere.",
+        "Severe weather warnings are issued for hail when the stones reach a damaging size, as it can cause serious damage to human-made structures, and, most commonly, farmers' crops."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Collatz conjecture",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37895",
+      "retrieved_at": "2026-10-18T16:19:44.147Z",
+      "sha256": "f462736fc6c985e2b5d5342a4e2c10cd1b202f3a87a18b7d2c15261a384b6640",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Collatz conjecture is one of the most famous unsolved problems in mathematics.",
+        "The conjecture asks whether repeating two simple arithmetic operations will eventually transform every positive integer into 1.",
+        "It concerns sequences of integers in which each term is obtained from the previous term as follows: if a term is even, the next term is one half of it.",
+        "If a term is odd, the next term is 3 times the previous term plus 1.",
+        "The conjecture is that these sequences always reach 1, no matter which positive integer is chosen to start the sequence.",
+        "The conjecture has been shown to hold for all positive integers up to 2.36×1021, but no general proof has been found.",
+        "It is named after the mathematician Lothar Collatz, who introduced the idea in 1937, two years after receiving his doctorate.",
+        "The sequence of numbers involved is sometimes referred to as the hailstone sequence, hailstone numbers or hailstone numerals (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as wondrous numbers.",
+        "Paul Erdős said about the Collatz conjecture: \"Mathematics may not be ready for such problems.\" Jeffrey Lagarias stated in 2010 that the Collatz conjecture \"is an extraordinarily difficult problem, completely out of reach of present day mathematics\".",
+        "However, though the Collatz conjecture itself remains open, efforts to solve the problem have led to new techniques and many partial results."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cumulonimbus cloud",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47530",
+      "retrieved_at": "2026-10-18T16:19:44.147Z",
+      "sha256": "057a96f13f7471bb7b1be9857742c673245f9b0670fe4258a0c6958e1d670c77",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cumulonimbus (from Latin  cumulus 'heap' and  nimbus 'rain cloud') is a dense, towering, vertical cloud types, typically forming from water vapor condensing in the lower troposphere that builds upward carried by powerful buoyant air currents.",
+        "Above the lower portions of the cumulonimbus the water vapor becomes ice crystals, such as snow and graupel, the interaction of which can lead to hail and to lightning formation, respectively.",
+        "When causing thunderstorms, these clouds may be called thunderheads.",
+        "Cumulonimbus can form alone, in clusters, or along squall lines.",
+        "These clouds are capable of producing lightning and other dangerous severe weather, such as tornadoes, hazardous winds, and large hailstones.",
+        "Cumulonimbus progress from overdeveloped cumulus congestus clouds and may further develop as part of a supercell."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Polytunnel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=808986",
+      "retrieved_at": "2026-10-18T16:19:44.147Z",
+      "sha256": "35de9fcd2ab1ec1c119591a183c0300b04fcd506917d1da4c4caeda6d6bd00da",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A polytunnel (also known as a polyhouse, hoop greenhouse, or hoophouse, grow tunnel or high tunnel) is a tunnel typically made from steel and covered in polyethylene, usually semi-circular, square or elongated in shape.",
+        "The interior heats up because incoming solar radiation from the sun warms plants, soil, and other things inside the building faster than heat can escape the structure.",
+        "Air warmed by the heat from hot interior surfaces is retained in the building by the roof and wall.",
+        "Temperature, humidity, and ventilation can be controlled by equipment fixed in the polytunnel or by manual opening and closing of vents.",
+        "Polytunnels are mainly used in temperate regions in similar ways to glass greenhouses and row covers.",
+        "Besides the passive solar heating that every polytunnel provides, every variation of auxiliary heating (from hothouse heating through minimal heating to unheated houses) is represented in current practice.",
+        "The nesting of row covers and low tunnels inside high tunnels is also common.",
+        "Polytunnels can be used to provide a higher temperature and/or humidity than that which is available in the environment but can also protect crops from intense heat, bright sunlight, winds, hailstones, and cold waves.",
+        "This allows fruits and vegetables to be grown at times usually considered off season; market gardeners commonly use polytunnels for season extension.",
+        "Beyond season extension, polytunnels are also used to allow cold-hardy crops to overwinter in regions where their hardiness is not quite strong enough for them to survive outdoors.",
+        "Temperature increases of only 5 to 15 °C (9 to 27 °F) above outdoor ambient, coupled with protection from the drying effect of wind, are enough to let selected plant varieties grow slowly but healthily instead of dying.",
+        "The effect is to create a microclimate that simulates the temperatures of a location several hardiness zones closer to the equator (and protects from wind as well)."
+      ]
+    }
+  ]
+}

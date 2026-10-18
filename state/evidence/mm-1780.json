@@ -1,0 +1,164 @@
+{
+  "id": "mm-1780",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Comparing Performance Feedback from Human Managers to AI Managers: Effects on Employees‘ Perceptions, Basic Needs, and Work Engagement",
+      "publisher": "Center for Open Science",
+      "author": "Grünwald, Klara; Hudecek, Matthias F. C.",
+      "published_at": "2026-04-23",
+      "url": "https://doi.org/10.31234/osf.io/c6qpb_v1",
+      "retrieved_at": "2026-10-18T16:49:55.202Z",
+      "sha256": "daa0be07585161b59f5ac10b6470ccb9b5ec9b933a58dd728262249454e2991d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI is increasingly implemented for managerial tasks, such as providing employee performance feedback.",
+        "Yet, empirical research investigating employees’ perception and the impact of AI-assisted performance feedback on employees’ work engagement is scarce.",
+        "We conducted two experimental studies and compared feedback from AI managers to human managers, drawing on self-determination theory.",
+        "In both studies, we observed that feedback from AI managers is less accepted, perceived as lower in quality, and results in decreased relatedness satisfaction and work engagement compared to identical feedback provided by human managers.",
+        "Moreover, we suggest three underlying mechanisms explaining how AI-assisted performance feedback diminishes employees’ work engagement.",
+        "Overall, our studies close current research gaps on the effects of delegating managerial tasks to AI on employees, focusing on performance feedback, and allow to derive concrete practical implications for the successful implementation of AI."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "MediFact at MEDIQA-CORR 2024: Why AI Needs a Human Touch",
+      "publisher": "Association for Computational Linguistics",
+      "author": "Saeed, Nadia",
+      "published_at": "2024",
+      "url": "https://doi.org/10.18653/v1/2024.clinicalnlp-1.32",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "6047cbc3ff9e03257f84c59ba9de038baef83b0883538c84584246be536b6abe",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "MediFact at MEDIQA-CORR 2024: Why AI Needs a Human Touch - ACL Anthology M edi F act at MEDIQA - CORR 2024: Why AI Needs a Human Touch Nadia Saeed Correct Metadata for Use this form to create a GitHub issue with structured data describing the correction.",
+        "Once you create that issue, the correction will be reviewed by a staff member.",
+        "⚠️ Mobile Users: Submitting this form to create a new issue will only work with github.com, not the GitHub Mobile app.",
+        "Please use this form only to correct data that is out of line with the PDF.",
+        "See our corrections guidelines if you need to change the PDF.",
+        "You may use &lt;b>...&lt;/b> for bold , &lt;i>...&lt;/i> for italic , &lt;u>...&lt;/u> for underline , &lt;sc>...&lt;/sc> for small-caps , &lt;tt>...&lt;tt> for typewriter text , &lt;url>...&lt;/url> for URLs, &lt;a href=...> for hyperlinks, and &lt;par/> for paragraph breaks.",
+        "Verification against PDF Ensure that the new title/authors match the snapshot below.",
+        "(If there is no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above—including middle initials, hyphens, and accents.",
+        "Create GitHub issue for staff review Abstract Accurate representation of medical information is crucial for patient safety, yet artificial intelligence (AI) systems, such as Large Language Models (LLMs), encounter challenges in error-free clinical text interpretation.",
+        "This paper presents a novel approach submitted to the MEDIQA-CORR 2024 shared task k (Ben Abacha et al., 2024a), focusing on the automatic correction of single-word errors in clinical notes.",
+        "Unlike LLMs that rely on extensive generic data, our method emphasizes extracting contextually relevant information from available clinical text data.",
+        "Leveraging an ensemble of extractive and abstractive question-answering approaches, we construct a supervised learning framework with domain-specific feature engineering."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Beyond Behavior: Why AI Evaluation Needs a Cognitive Revolution",
+      "publisher": "Elsevier BV",
+      "author": "Konigsberg, Amir",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6842982",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "6aa83a02bed6fede1af4e9d86d3fc21049aa4a5c5d8840ca887f0b13ad15caff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 1950, Alan Turing proposed replacing the question “Can machines think?” with a behavioral test: if a machine’s outputs are indistinguishable from those of a thinking being, the question of whether it truly thinks can be set aside.",
+        "This paper argues that Turing’s move was not only a pragmatic simplification but also an epistemological commitment, a decision about what kind of evidence counts as relevant to intelligence attribution, and that this commitment has quietly constrained AI research for seven decades.",
+        "We argue that the field requires an epistemological transition comparable to the cognitive revolution: not an abandonment of behavioral evidence, but a recognition that behavioral evidence alone is insufficient for the construct claims the field wishes to make.",
+        "We articulate what a post-behaviorist epistemology for AI would involve and identify the specific questions it would make askable that the field currently has no way to ask."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "AI alignment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50785023",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "529ef1b91daaff4aa9dfc5b345ac3922cf1bbc88a1f7562a59f43059847b0688",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the field of artificial intelligence (AI), alignment aims to steer AI systems toward a person's or group's intended goals, preferences, or ethical principles.",
+        "An AI system is considered aligned if it advances the intended objectives.",
+        "It is often difficult for AI designers to specify the full range of desired and undesired behaviors.",
+        "Therefore, the designers often use simpler proxy goals, such as gaining human approval.",
+        "But proxy goals can overlook necessary constraints or reward the AI system for merely appearing aligned.",
+        "AI systems may also find loopholes that allow them to accomplish their proxy goals efficiently but in unintended, sometimes harmful, ways (reward hacking).",
+        "Advanced AI systems may develop unwanted instrumental strategies, such as seeking power or self-preservation because such strategies help them achieve their assigned final goals.",
+        "Furthermore, they might develop undesirable emergent behaviour that could be hard to detect before the system is deployed and encounters new situations and data distributions.",
+        "Empirical research in 2024 found that advanced large language models (LLMs) such as OpenAI o1 or Claude 3 sometimes engage in strategic deception to achieve their goals or prevent them from being changed.",
+        "Some of these issues affect existing commercial systems such as LLMs, robots, autonomous vehicles, and social media recommendation engines.",
+        "Some AI researchers argue that more capable future systems will be more severely affected because these problems partially result from high capabilities.",
+        "Many prominent AI researchers and AI company leaders have argued or asserted that AI is approaching human-like (AGI) and superhuman cognitive capabilities (ASI), and could endanger human civilization if misaligned."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "AI safety",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72360809",
+      "retrieved_at": "2026-10-18T16:49:56.212Z",
+      "sha256": "5ce2c8c56f470f148fc1cbd19911ec37f414b27365fd6c5059857387d955bd14",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI safety is an interdisciplinary field focused on preventing accidents, misuse, or other harmful consequences arising from artificial intelligence systems.",
+        "It encompasses AI alignment (which aims to ensure AI systems behave as intended) as well as monitoring AI systems for risks and enhancing their robustness.",
+        "The field is particularly concerned with existential risks posed by advanced AI models.",
+        "Beyond technical research, AI safety involves developing norms and policies that promote safety, including advocacy for regulations at different levels of government.",
+        "The field gained significant popularity in 2023, with rapid progress in generative AI and public concerns voiced by researchers and CEOs about potential dangers.",
+        "During the 2023 AI Safety Summit, the United States and the United Kingdom both established their own AI Safety Institute.",
+        "However, researchers have expressed concern that AI safety measures are not keeping pace with the rapid development of AI capabilities."
+      ]
+    }
+  ]
+}

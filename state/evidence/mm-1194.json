@@ -1,0 +1,161 @@
+{
+  "id": "mm-1194",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Three ways to assess how Liverpool’s tidal energy plan will affect the environment",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Kang, Kenneth",
+      "published_at": "2025-01-20",
+      "url": "https://theconversation.com/three-ways-to-assess-how-liverpools-tidal-energy-plan-will-affect-the-environment-247029",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "71bf18a6670ff37ac2819c38e5bc1cd3f1667aa31d9eae003c34a1b1f2d8685e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This multi-billion pound infrastructure project, which could span several miles across the river and power up to a million homes , exemplifies the complex challenge of planning large-scale renewable energy projects.",
+        "The project uses the “Rochdale envelope” approach in its environmental planning.",
+        "This allows environmental assessors to evaluate potential knock-on effects while technical details of a new project are still evolving.",
+        "Within this framework, three distinct assessment styles emerge, each resembling a different kind of traveller: the map follower, the explorer and the seasoned navigator.",
+        "Understanding these approaches helps explain why an environmental assessment is not just about ticking boxes.",
+        "It’s about finding the right balance between what’s practical and what’s thorough.",
+        "The map follower Like a hiker relying on trusted maps and familiar trails, the first approach focuses on understanding environmental changes we can predict based on current knowledge.",
+        "To make these predictions, engineers and scientists use sophisticated computer models that simulate different aspects of the estuary.",
+        "These models examine changes to water flows and levels, sediment movement patterns and potential impacts on marine life – from plankton to fish populations.",
+        "For example, hydrodynamic models can show how the proposal might change local flood risks by altering tidal patterns.",
+        "Sediment transport models predict whether mud flats – crucial feeding grounds for birds – might grow or shrink.",
+        "Water quality models examine how changes could affect the estuary’s ability to naturally clean itself."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Implementation of Tidal Energy in Indian Coastline",
+      "publisher": "International Journal of Progressive Research in Science and Engineering",
+      "author": "Pratiksha Alhat; Kavita Bawdekar; Shivam Chavan",
+      "published_at": "2021-06-01",
+      "url": "https://openalex.org/W3175747513",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "13aa7ffafc5485a9f861cbb31e619f4bd4fc62ded76bf74a538eac24735a3bcc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The development of renewable energy around the world has been given increased importance due to concerns regarding energy supply and climate change.",
+        "Wave and tidal energy are very important components of the renewable energies that can be extracted from the oceans.",
+        "Different locations around the India have good natural conditions for one of these forms of energy, with some locations even being suitable for both."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Tidal energy theory and turbine array design in constricted channels",
+      "publisher": "Otago University Research Archive (University of Otago)",
+      "author": "Malcolm Smeaton",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3085609569",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "6fd99e4b85b02d44769b41803f1282086436d2288414aa4e20179e750e7ec5cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This thesis extends existing tidal energy theory to include the effects of channel constriction - previous general theoretical works have been limited to unconstricted rectangular channel geometries.",
+        "This work uses a combination of 1-D and 2-D mathematical modelling to explore how channel constriction affects the upper-limits of tidal energy generation, how turbine arrays should be designed in constricted channels and how turbine arrays will affect constricted channels when they are operational.",
+        "1-D modelling is fast and efficient and is particularly suitable for performing a broad systematic study.",
+        "However, flow in constricted channels is a multi-dimensional phenomenon.",
+        "Thus, a 2-D depth-averaged model is adopted to examine how 2-D flow, more realistic geometries, and more realistic tidal forcing impact on the derived 1-D theory.",
+        "As the 1-D model used here is similar to models used to build the foundations of tidal energy theory for unconstricted channels, this comparison serves to validate findings in these works also.",
+        "Initial work treats turbines as an arbitrary amount of drag in a basic 1-D channel model, this drag is increased in a myriad of test channels with differing degrees of constriction.",
+        "Both channels connecting two ocean bodies (regular channels), and channels connecting an ocean body to a lagoon or bay (lagoon channels) are tested.",
+        "Findings show that for channels of similar size, more constriction in the channel results in less power available for extraction (channel potential).",
+        "Faster flows in the constricted region result in greater energy loss to friction and less energy is available for electricity generation.",
+        "Lagoon channels can be geometrically modified (by increasing/decreasing the degree of constriction) to increase channel potential.",
+        "A simple approximation for channel potential in the literature is extended to constricted channels."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Tide",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30718",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "8f6472bc5488cbe2d8012fc31fbf8489a85e7ba14a1f2fd3871654dd354c8255",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tides are the periodic rise and fall of sea level resulting from the differential gravitational forces exerted primarily by the Moon and the Sun, combined with inertial effects associated with the Earth–Moon system’s orbital motion and the Earth's rotation.",
+        "Tides vary on timescales ranging from hours to years due to a number of factors, which determine the lunitidal interval.",
+        "To make accurate records, tide gauges at fixed stations measure water level over time.",
+        "Gauges ignore variations caused by waves with periods shorter than minutes.",
+        "These data are compared to the reference (or datum) level usually called mean sea level.",
+        "While tides are usually the largest source of short-term sea-level fluctuations, sea levels are also subject to change from thermal expansion, wind, and barometric pressure changes, resulting in storm surges, especially in shallow seas and near coasts.",
+        "Tidal phenomena are not limited to the oceans, but can occur in other systems whenever a gravitational field that varies in time and space is present.",
+        "For example, the shape of the solid part of the Earth is affected slightly by Earth tide, though this is not as easily seen as the water tidal movements."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "European Marine Energy Centre",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13475612",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "78c99d93a419d49e1e0ccd27fe99fb31d329947f689b5f2bd2c4b532bd66c88e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is the world's leading test and research centre focused on wave and tidal power development, based in the Orkney Islands off the mainland of Scotland.",
+        "The centre provides developers with the opportunity to test full-scale grid-connected prototype devices in wave and tidal conditions, at pre-consented test sites.",
+        "EMEC also has sites for testing smaller-scale prototypes, as well as subsystems and components, in more sheltered conditions.",
+        "In addition to EMEC's wave and tidal sites, EMEC has an onshore R&D facility in Eday, next to the tidal energy test site, where projects looking at renewables and energy systems integration take place.",
+        "EMEC has hosted projects exploring green hydrogen, battery storage, e-fuels, refuelling technologies and data centres.",
+        "EMEC was established in 2003 by a grouping of public sector organisations following a recommendation by the House of Commons Science and Technology Committee in 2001.",
+        "In addition to providing access to areas of the sea with high wave and tidal energy potential, the centre also offers various kinds of support regarding regulatory issues, grid connection, and meteorological monitoring, as well as local research and engineering support."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Tidal stream generator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29433051",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "eeb5d1330d2344bae75258ce1a9b6ec6e17c103b04b5ba0cada04a77b77cece6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tidal stream generator, often referred to as a tidal energy converter (TEC), is a machine that extracts energy from moving masses of water, in particular tides, although the term is often used in reference to machines designed to extract energy from the run of a river or tidal estuarine sites.",
+        "Certain types of these machines function very much like underwater wind turbines and are thus often referred to as tidal turbines.",
+        "They were first conceived in the 1970s during the oil crisis.",
+        "Tidal stream generators are the cheapest and least ecologically damaging among the four main forms of tidal power generation."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Morlais",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75409934",
+      "retrieved_at": "2026-10-18T16:19:47.603Z",
+      "sha256": "f0e0761f23b8e0280279d282431b470634e8838a948025e2478db2b85560b7d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Morlais is a grid connected tidal stream energy project located in the Irish Sea just off the west coast of Holy Island, Anglesey, Wales (Welsh: Ynys Cybi, Ynys Môn, Cymru).",
+        "It is being developed by the social enterprise agency Menter Môn.",
+        "The site has the potential for up to 240 MW of renewable energy to be harnessed from the tides, using a mixture of seabed mounted and floating tidal energy devices from different companies.",
+        "The 35 km2 (14 sq mi) site was designated for tidal energy by The Crown Estate in 2010, as the West Anglesey Demonstration Zone, and has been leased for 45 years.",
+        "Consent for the scheme was obtained in December 2021 from Natural Resources Wales.",
+        "The scheme was awarded £31m from the European Regional Development Fund in March 2022, possibly the last significant project from this fund.",
+        "Following this, construction started in 2022, with phased installation so that any environmental impacts could be understood.",
+        "The first devices to harvest power from the tides are expected to be installed in 2026.",
+        "Before then, preparatory works including the grid connection are being constructed.",
+        "Mark Drakeford officially opened the onshore substation in October 2023, noting that \"Morlais is a groundbreaking project and a key part of our transition to a low carbon economy\".",
+        "In February 2025, it was announced the Welsh Government had invested £8 million for an equity stake in the project.",
+        "These funds will be used to improve the grid capacity at Parc Cybi, Holyhead."
+      ]
+    }
+  ]
+}

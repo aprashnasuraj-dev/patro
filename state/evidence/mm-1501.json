@@ -1,0 +1,87 @@
+{
+  "id": "mm-1501",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The First Emperor: China's Terracotta Army , and: The Terracotta Army: China's First Emperor and the Birth of a Nation , and: The First Emperor of China (review)",
+      "publisher": "Project MUSE",
+      "author": null,
+      "published_at": "2008",
+      "url": "https://doi.org/10.1353/cri.0.0185",
+      "retrieved_at": "2026-10-18T16:41:19.674Z",
+      "sha256": "724a78aee800d3e089a1169ffc3391f51f0eea992be07dbc8e03fce82b573087",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "In order to better serve you and keep this site secure, please complete this challenge.",
+        "If you are trying to perform text/data mining, please contact Customer Service for assistance."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Qin Shi Huang",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=99598",
+      "retrieved_at": "2026-10-18T16:41:20.986Z",
+      "sha256": "accc5894740969d695a7644ecf45350d5532bb16456957652705cbe608c40ae5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Qin Shi Huang (February 259 – 12 July 210 BC) was the founder of the Qin dynasty and the first emperor of China (Chinese: 皇帝; pinyin: Huángdì).",
+        "He invented the title huángdì rather than reuse the existing title for \"king\" (Chinese: 王; pinyin: wáng); the new title was used by monarchs in China and other countries for the next two millennia.",
+        "Born in Handan, the capital of Zhao, as Ying Zheng (嬴政) or Zhao Zheng (趙政), his parents were King Zhuangxiang of Qin and Lady Zhao.",
+        "The wealthy merchant Lü Buwei assisted him in succeeding his father as the king of Qin, after which he became King Zheng of Qin (秦王政).",
+        "By 221 BC, he had conquered all the other warring states and unified all of China, and he ascended the throne as China's first emperor.",
+        "Qin Shi Huang also worked with his minister Li Si to enact major economic and political reforms aimed at the standardization of the diverse practices among earlier Chinese states.",
+        "He is traditionally said to have banned and burned many books and executed scholars.",
+        "His public works projects included the incorporation of diverse state walls into a single Great Wall of China and a massive new national road system, as well as his city-sized mausoleum guarded by a life-sized Terracotta Army.",
+        "He ruled until his death in 210 BC, during his fifth tour of eastern China.",
+        "Qin Shi Huang has often been portrayed as a tyrant and strict Legalist—characterizations that stem partly from the scathing assessments made during the Han dynasty that succeeded the Qin.",
+        "Since the mid-20th century, scholars have begun questioning this evaluation, inciting considerable discussion on the actual nature of his policies and reforms.",
+        "According to the sinologist Michael Loewe \"few would contest the view that the achievements of his reign have exercised a paramount influence on the whole of China's subsequent history, marking the start of an epoch that closed in 1911.\""
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Mummy: Tomb of the Dragon Emperor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=957331",
+      "retrieved_at": "2026-10-18T16:41:20.986Z",
+      "sha256": "e9a842c8223071e75e0eb4cbf664c9852a83db9adf18bbca894dee316fdad6a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Mummy: Tomb of the Dragon Emperor is a 2008 American action adventure film directed by Rob Cohen from a script written by Alfred Gough and Miles Millar.",
+        "The film is set in China rather than Egypt and focuses on the Terracotta Army's origins.",
+        "It is the third installment in Stephen Sommers' The Mummy film trilogy and a standalone sequel to The Mummy Returns (2001).",
+        "It stars Brendan Fraser, Jet Li, Maria Bello (replacing Rachel Weisz, who played Evelyn in the first two films), John Hannah, Luke Ford, Anthony Wong, and Michelle Yeoh.",
+        "The Mummy: Tomb of the Dragon Emperor premiered in Moscow on July 24, 2008, and was released in the United States on August 1.",
+        "The film received negative reviews from critics and grossed $406 million against a production budget of $145 million, becoming the lowest-grossing film in the trilogy.",
+        "A direct sequel to the second film titled The Mummy: Book of the Dead, is set to be released on October 15, 2027."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Titus (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=963023",
+      "retrieved_at": "2026-10-18T16:41:20.986Z",
+      "sha256": "ad9eedc9f150684303c05f6fc87efc501dffab934b040149bc850d77c577ffd4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Titus is a 1999 historical drama film written, co-produced, and directed by Julie Taymor in her feature directorial debut, based on William Shakespeare's tragedy Titus Andronicus.",
+        "A co-production between Italy, the United Kingdom, and the United States, the film stars Anthony Hopkins as the eponymous character, a Roman army general, chronicling his downfall following a victorious return from war.",
+        "It was produced by Overseas Filmgroup and Clear Blue Sky Productions and released by Fox Searchlight Pictures.",
+        "The film received mixed-to-positive reviews from critics and was a box-office bomb, grossing approximately $2.9 million worldwide against a budget of $18 million.",
+        "At the 72nd Academy Awards, it received a nomination for the Best Costume Design."
+      ]
+    }
+  ]
+}

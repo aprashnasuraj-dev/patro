@@ -1,0 +1,197 @@
+{
+  "id": "mm-1362",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Desert Wildflowers",
+      "publisher": "JSTOR",
+      "author": "Sandwith, N. Y.; Munz, Philip A.",
+      "published_at": "1964",
+      "url": "https://doi.org/10.2307/4108286",
+      "retrieved_at": "2026-10-18T16:33:23.717Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mojave Desert Wildflowers: A Field Guide to High Desert Wildflowers of California, Nevada, and Arizona",
+      "publisher": "Wiley",
+      "author": "Schmid, Rudolf; Stewart, Jon Mark",
+      "published_at": "1998-08",
+      "url": "https://doi.org/10.2307/1223625",
+      "retrieved_at": "2026-10-18T16:33:23.822Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "California Desert Wildflowers",
+      "publisher": "University of California Press",
+      "author": "Munz, Philip A.",
+      "published_at": "2024-03-29",
+      "url": "https://doi.org/10.2307/jj.13083382",
+      "retrieved_at": "2026-10-18T16:33:24.777Z",
+      "sha256": "c2a278f18356f6bea7d01328ba20f123628e2ecb843052428b417196f1f86b24",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "California Desert Wildflowers California Desert Wildflowers Record type Monograph Published 29 March 2024 Authors Philip A.",
+        "Munz DOI https://doi.org/10.2307/jj.13083382 The publisher of this work supports co-access.",
+        "Munz&#39;, &#39;chairs&#39;: None, &#39;supplementary_ids&#39;: None} https://doi.org/10.2307/jj.13083382 JSON XML"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Wildflower Season: A Semi-somnolescent Retrospective",
+      "publisher": "Journal of the Arkansas Academy of Science",
+      "author": "Connor Johnson",
+      "published_at": "2026-05-01",
+      "url": "https://openalex.org/W7167293570",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "f043003462eb2970a90421eb4c0f22835c9efca9d1110b5da5803fe4f2ae3a00",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "I came to graduate school under the impression that I would be working on my own.",
+        "I believed the process of playwriting to be an individualistic pursuit, where my plays came from my mind and my mind alone."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "A monitoring study of vertebrate community ecology in the northern Sonoran Desert, Arizona",
+      "publisher": "UA Campus Repository (The University of Arizona)",
+      "author": "Philip C. Rosen",
+      "published_at": "2000-01-01",
+      "url": "https://openalex.org/W416338711",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "6d777311b3c7b64b9e5f03519101158fc5ffdaf961f776ea3336fb09dc844479",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "I synthesized monitoring results for vertebrates at Organ Pipe Cactus National Monument (ORPI), 1987-1998.",
+        "Small mammals, lizards, and predators were studied using ongoing Ecological Monitoring Program (EMP) protocols (trap grids; transects) and other methods (drift-fences, visual encounter, road-cruising).",
+        "EMP protocols for rodents and lizards performed well, but some recalibration is needed.",
+        "Populations declined to observed minima during a 1989-1990 drought, and increased with strong rains during 1990-1995.",
+        "Small rodents (pocket mice) increased fastest, but declined first, after 1992.",
+        "The medium-sized Merriam's kangaroo rat: increased to a 1994 peak and then also collapsed.",
+        "The larger packrat increased most slowly, not declining until after 1995.",
+        "These temporal differences are consistent with a tradeoff of capacity for increase with resistance to predation pressure.",
+        "After post-drought increases, most lizard populations declined when predator pressure became high, after 1992, and then increased during dry years after 1995, while predators declined.",
+        "Endothermic predators were monitored by simple daily record-keeping.",
+        "They increased 3-4 fold from 1989-1995, with subsequent declines.",
+        "A literature review showed two subguilds: a small-prey group, which increased rapidly in 1991-1993, and a larger-prey group, which increased more slowly."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Desert Plants, Volume 23, Number 1 (June 2007)",
+      "publisher": "UA Campus Repository (The University of Arizona)",
+      "author": null,
+      "published_at": "2007-06-01",
+      "url": "https://openalex.org/W7209576947",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "3e0d409da380658a3687d92657a9379ecdd8a73d16861b47257725bb115312d7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Desert Plants is published by The University of Arizona for the Boyce Thompson Southwestern Arboretum.",
+        "For more information about this unique botanical journal, please email the College of Agriculture and Life Sciences Publications Office at pubs@cals.arizona.edu."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Death Valley",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46797",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "149f934981dbd6c395d00aeb9b1b9765950e9cbdfc05994255dae3211cbd1e10",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Death Valley (Panamint: Tümpisa [tɨmbiʃa]) is a desert valley in Eastern California, United States, in the northern Mojave Desert, bordering the Great Basin Desert.",
+        "The World Meteorological Organization lists Death Valley as the site of the hottest surface temperature recorded on Earth.",
+        "In the afternoon hours of July 10, 1913, the United States Weather Bureau recorded a temperature of 134 °F (56.7 °C) at Furnace Creek in Death Valley, which stands as the highest ambient air temperature ever recorded on the surface of the Earth.",
+        "However, this reading and several others taken in that period are disputed by some modern experts due to observer issues and regional disparities in temperature values.",
+        "The highest reliable temperature in Death Valley is 130 °F (54.4 °C) recorded at Furnace Creek on August 16, 2020 and July 9, 2021.",
+        "This is still the highest reliable temperature recorded globally.",
+        "Lying mostly in Inyo County, California, near the border of California and Nevada, in the Great Basin, east of the Sierra Nevada mountains, Death Valley constitutes much of Death Valley National Park and is the principal feature of the Mojave and Colorado Deserts Biosphere Reserve.",
+        "It runs from north to south between the Amargosa Range on the east and the Panamint Range on the west.",
+        "The Grapevine Mountains and the Owlshead Mountains form its northern and southern boundaries, respectively.",
+        "The highest point in Death Valley National Park is Telescope Peak, in the Panamint Range, which has an elevation of 11,043 feet (3,366 m).",
+        "Death Valley is home to the Timbisha tribe of Native Americans, formerly known as the Panamint Shoshone.",
+        "They have inhabited the valley for at least the past millennium."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Common sunflower",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57622",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "40dc0c0c9bb8f4c7c627d206b55016b6ff1cf9887ef07958670e47636980e2e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The common sunflower (Helianthus annuus) is a large annual forb in the daisy family Asteraceae.",
+        "The most common varieties have large yellow orange flowers heads, that are a tall stem.",
+        "The flowers produce seeds in a floret, that follows the fibonacci sequence.",
+        "The domesticated form of common sunflower is harvested for its edible seeds, which come in two types: oil and confectionery seeds.",
+        "Oilseed sunflowers are widely grown globally and represent the fourth most used vegetable oil in the world.",
+        "They also are used widely as bird food or as food for livestock.",
+        "In contrast, confectionery sunflower seeds are often eaten as a snack food or in baking.Though first domesticate in the Americas, production of sunflowers commercially is concentrated in Russia, Ukraine, and the European Union.",
+        "There also are horticultural sunflower varieties that are used as plantings in domestic gardens for aesthetics.",
+        "In some cultivation practices sunflowers are used for phytoremediation, removing chemicals from the soil, and as cover crop because root exudates help with suppression of certain kinds of weeds.",
+        "Wild plants are known for their multiple flower heads, whereas the domestic sunflower often possesses a single large flower head atop an unbranched stem."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "List of one-hit wonders in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=154265",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "a485eb58569b44499ba443a38acf7c26b9400f8c21a253b3f9a5db9ed83a1c2c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A one-hit wonder is a musical artist who is successful with one hit song, but without a comparable subsequent hit.",
+        "The term may also be applied to an artist who is remembered for only one hit despite other successes.",
+        "This article contains artists known primarily for one hit song in the United States, who are regarded as one-hit wonders by at least two sources in media, even though the artist may have had multiple hits abroad."
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "List of Curious George episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16922138",
+      "retrieved_at": "2026-10-18T16:33:24.778Z",
+      "sha256": "5ed00ea5220dfc29bb61b0c7cdd8cda02b113188b09569ad0ef93d73fbe5523a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of episodes from the children's animated television series, Curious George.",
+        "In the city, George lives in an apartment building with The Man in the Yellow Hat and in the country they share a small house near Lake Wanasinklake.",
+        "This allows George to mirror the experiences of kids who live in an urban environment and those who live in a rural environment.",
+        "There are exceptions to this; some episodes take place in alternative settings such as an airport or a train station."
+      ]
+    }
+  ]
+}

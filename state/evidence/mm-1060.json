@@ -1,0 +1,150 @@
+{
+  "id": "mm-1060",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Reward-Free Reinforcement Learning Before Knowing What Will Matter",
+      "publisher": "Elsevier BV",
+      "author": "Yang, Ivy X.",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7169378",
+      "retrieved_at": "2026-10-18T16:11:48.962Z",
+      "sha256": "408ed123f1ec83808330822d5e9b5ca14180582c731d708ee7694b6d83e9ea86",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Economic diagnosis often begins before its eventual objective is known.",
+        "This paper studies a reward-free information contract in which controlled transition data are collected at that earlier date, frozen, and reused after one or more objectives are disclosed.",
+        "A regulator chooses between collecting broadly now and waiting to target data after the diagnostic margin is known.",
+        "Suppose tasks arrive at rate 𝜆, the transition law expires at rate 𝛿, and margin 𝑗 must meet root mean squared error tolerance 𝜀 𝑗.",
+        "Collecting before disclosure is optimal exactly when the expected number of tasks before expiration, 𝜆/𝛿, exceeds a precision-weighted task-diversity threshold.",
+        "With quadratic diagnostic loss, the optimal allocation places more observations on noisy, valuable, and more likely margins.",
+        "A designed repeated-response economy then shows the continuation value preserved by a frozen model.",
+        "Against the same exact-policy benchmark, sequential planning loses 0.0003 units of expected value in the assurance task, compared with 0.0919 for the one-step rule at the registered cost.",
+        "Passive histories and institutional records delimit the certificate by showing which deviations are observed and feasible."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What is dopamine doing in model-based reinforcement learning?",
+      "publisher": "Center for Open Science",
+      "author": "Akam, Thomas; Walton, Mark",
+      "published_at": "2020-10-30",
+      "url": "https://doi.org/10.31234/osf.io/z2fmw",
+      "retrieved_at": "2026-10-18T16:11:48.962Z",
+      "sha256": "5b27e3bef0a82a8fc750097c7437bca63ddedb9c5bfbe7226e36c10bfed20d4b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Experiments have implicated dopamine in model-based reinforcement learning (RL).",
+        "These findings are unexpected as dopamine is thought to encode a reward prediction error (RPE), which is the key teaching signal in model-free RL."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "What is a choice in reinforcement learning",
+      "publisher": "eScholarship (California Digital Library)",
+      "author": "Milena Rmus; Anne Gabrielle Eva Collins",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W3135025295",
+      "retrieved_at": "2026-10-18T16:11:49.108Z",
+      "sha256": "8e0362708f496bf27e9f25d235d7b1ff6458cc70db063bd073c38d2d4b222a16",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "n reinforcement learning (RL) experiments, participantslearn to associate stimuli with rewarding responses.",
+        "RLmodels capture such learning by estimating stimulus-responsevalues.",
+        "RL algorithms can model anyresponse type, whether it is a basic motor action (e.g.",
+        "In this study, we examine differences betweenlearning a rewarding association between (1) a stimulus and amotor action and (2) two stimuli.",
+        "We show that learningdiffers between these two conditions, contrary to the commonimplicit assumption that response type does not matter.Specifically, participants were slower and less accurate inlearning to select a rewarding stimulus.",
+        "Using computationalmodeling, we show that the values of motor actions interferedwith the values of stimulus responses, resulting in moreincorrect choices in the latter condition."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Reinforcement learning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=66294",
+      "retrieved_at": "2026-10-18T16:11:49.108Z",
+      "sha256": "8de15f93732db381293d4ad378b975237ce4aeb7ec6d3cd9347562e5c508f56d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In machine learning and optimal control, reinforcement learning (RL) (also known as approximate dynamic programming) is concerned with how an intelligent agent should take actions in a dynamic environment in order to maximize a reward signal.",
+        "Reinforcement learning is one of the three basic machine learning paradigms, alongside supervised learning and unsupervised learning.",
+        "While supervised learning and unsupervised learning algorithms respectively attempt to discover patterns in labeled and unlabeled data, reinforcement learning involves training an agent through interactions with its environment.",
+        "To learn to maximize rewards from these interactions, the agent makes decisions between trying new actions to learn more about the environment (exploration), or using current knowledge of the environment to take the best action (exploitation).",
+        "The search for the optimal balance between these two strategies is known as the exploration–exploitation dilemma.",
+        "The environment is typically stated in the form of a Markov decision process, as many reinforcement learning algorithms use dynamic programming techniques.",
+        "The main difference between classical dynamic programming methods and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the Markov decision process, and they target large Markov decision processes where exact methods become infeasible."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Reinforcement",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=211960",
+      "retrieved_at": "2026-10-18T16:11:49.108Z",
+      "sha256": "080d5e06594b522952eefa4424b934a14da63925af9ae1eb2c0335a44413bb76",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In behavioral psychology, reinforcement refers to consequences that increase the likelihood of an organism's future behavior, typically in the presence of a particular antecedent stimulus.",
+        "For example, a rat can be trained to push a lever to receive food whenever a light is turned on; in this example, the light is the antecedent stimulus, the lever pushing is the operant behavior, and the food is the reinforcer.",
+        "Likewise, a student that receives attention and praise when answering a teacher's question will be more likely to answer future questions in class; the teacher's question is the antecedent, the student's response is the behavior, and the praise and attention are the reinforcements.",
+        "Punishment is the inverse to reinforcement, referring to any behavior that decreases the likelihood that a response will occur.",
+        "In operant conditioning terms, punishment does not need to involve any type of pain, fear, or physical actions; even a brief spoken expression of disapproval is a type of punishment.",
+        "Consequences that lead to appetitive behavior such as subjective \"wanting\" and \"liking\" (desire and pleasure) function as rewards or positive reinforcement.",
+        "There is also negative reinforcement, which involves taking away an undesirable stimulus.",
+        "An example of negative reinforcement would be taking an aspirin to relieve a headache.",
+        "Reinforcement is an important component of operant conditioning and behavior modification.",
+        "The concept has been applied in a variety of practical areas, including parenting, coaching, therapy, self-help, education, and management."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Q-learning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1281850",
+      "retrieved_at": "2026-10-18T16:11:49.108Z",
+      "sha256": "898e7e58446a69d759e8da61fc427d282403b5ea3acc83571565470263d526df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Q-learning is a reinforcement learning algorithm that trains an agent to assign values to its possible actions based on its current state, without requiring a model of the environment (model-free).",
+        "It can handle problems with stochastic transitions and rewards without requiring adaptations.",
+        "For example, in a grid maze, an agent learns to reach an exit worth 10 points.",
+        "At a junction, Q-learning might assign a higher value to moving right than left if right gets to the exit faster, improving this choice by trying both directions over time.",
+        "For any finite Markov decision process, Q-learning finds an optimal policy in the sense of maximizing the expected value of the total reward over any and all successive steps, starting from the current state.",
+        "Q-learning can identify an optimal action-selection policy for any given finite Markov decision process, given infinite exploration time and a partly random policy.",
+        "\"Q\" refers to the function that the algorithm computes: the expected reward—that is, the quality—of an action taken in a given state."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Deep reinforcement learning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60105148",
+      "retrieved_at": "2026-10-18T16:11:49.108Z",
+      "sha256": "04315e2dd7ab13323756fb0bb52cec2c1abd4fe3470c1051ae5e40177265ffac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Deep reinforcement learning (deep RL) is a subfield of machine learning that combines reinforcement learning (RL) and deep learning.",
+        "RL considers the problem of a computational agent learning to make decisions by trial and error.",
+        "Deep RL incorporates deep learning into the solution, allowing agents to make decisions from unstructured input data without manual engineering of the state space.",
+        "Deep RL algorithms are able to take in very large inputs (e.g.",
+        "every pixel rendered to the screen in a video game) and decide what actions to perform to optimize an objective (e.g.",
+        "Deep reinforcement learning has been used for a diverse set of applications including but not limited to robotics, video games, natural language processing, computer vision, education, transportation, finance and healthcare."
+      ]
+    }
+  ]
+}

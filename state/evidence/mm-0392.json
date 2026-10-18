@@ -1,0 +1,121 @@
+{
+  "id": "mm-0392",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Cryptography After Prime Time",
+      "publisher": "OpenAlex",
+      "author": "Lennart Braun",
+      "published_at": "2024-09-06",
+      "url": "https://openalex.org/W7160579219",
+      "retrieved_at": "2026-10-18T14:56:47.979Z",
+      "sha256": "6ca574a75da08c790db62b5b8fb255197c3b5423a157faa1cfbadd953c8abfa3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many cryptographic constructions make extensive use of the properties of prime numbers, often in the form of finite prime fields and prime-order groups.",
+        "In this thesis we explore different constructions that use rings Z2k and groups of unknown order instead.",
+        "Zero-knowledge proof systems are typically designed for the statements encoded as Boolean or arithmetic circuits over finite fields F2 or Fp .",
+        "While the field properties are very useful for protocol design, actual computer programs and CPUs, however, usually work on 32- or 64-bit integers instead which can be modeled as rings Z2k for k ∈ {32, 64}.",
+        "When such arithmetic is emulated in prime fields, the incurring overhead is significant.",
+        "Designing efficient protocols that support Z2k natively is challenging due to the fact that Z2k is not a field (for k > 1), but a ring with zero-divisors and many commonly used techniques no longer work in this setting.",
+        "In the first part of this thesis we construct highly efficient and scalable interactive zero-knowledge proofs for Z2k with linear proof size and running time.",
+        "These are based on ideas from recent constructions for finite fields using information-theoretic MACs and vector oblivious linear evaluation (VOLE).",
+        "We design linearly homomorphic commitments for Z2k and show how to prove multiplicative relations to obtain zero-knowledge for general computation over Z2k .",
+        "In the second part of this thesis we construct the first actively secure threshold version of the linearly homomorphic cryptosystem based on class groups from the so-called CL framework (Castagnos and Laguillaumie, 2015).",
+        "For our distributed key generation and decryption protocols with static and adaptive security, we present new constructions for integer verifiable secret sharing schemes and (batched) zero-knowledge proofs in this setting.",
+        "We use the statically secure variant of our threshold encryption scheme to construct general MPC with active security and guaranteed output delivery in the universal composability (UC) model while requiring only a transparent setup."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Elliptic-curve cryptography",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9966",
+      "retrieved_at": "2026-10-18T14:56:47.979Z",
+      "sha256": "00a407c8f07878fedd5fc84dc61a9ef7d3e2c5b80a4c30715daf2de87dbc13f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Elliptic-curve cryptography (ECC) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields.",
+        "ECC allows smaller keys to provide equivalent security, compared to cryptosystems based on modular exponentiation in finite fields, such as the RSA cryptosystem and  ElGamal cryptosystem.",
+        "Elliptic curves are applicable for key agreement, digital signatures, pseudo-random generators and other tasks.",
+        "Indirectly, they can be used for encryption by combining the key agreement with a symmetric encryption scheme.",
+        "They are also used in several integer factorization algorithms that have applications in cryptography, such as Lenstra elliptic-curve factorization."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Prime number",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23666",
+      "retrieved_at": "2026-10-18T14:56:47.980Z",
+      "sha256": "9a2133fdfc769f1ffa12590292d86d127e2780ef7ea802e73dab20d132a71580",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A prime number (or a prime) is a natural number greater than 1 that is not a product of two smaller natural numbers.",
+        "A natural number greater than 1 that is not prime is called a composite number.",
+        "For example, 5 is prime because the only ways of writing it as a product, 1 × 5 or 5 × 1, involve 5 itself.",
+        "However, 4 is composite because it is a product (2 × 2) in which both numbers are smaller than 4.",
+        "Primes are central in number theory because of the fundamental theorem of arithmetic: every natural number greater than 1 is either a prime itself or can be factorized as a product of primes that is unique up to their order.",
+        "Faster algorithms include the Miller–Rabin primality test, which is fast but has a small chance of error, and the AKS primality test, which always produces the correct answer in polynomial time but is too slow to be practical.",
+        "Particularly fast methods are available for numbers of special forms, such as Mersenne primes, and these have been used to find large prime numbers.",
+        "There are infinitely many primes, as demonstrated by Euclid around 300 BC.",
+        "No known simple formula separates prime numbers from composite numbers.",
+        "However, the distribution of primes within the natural numbers in the large can be statistically modelled.",
+        "The first result in that direction is the prime number theorem, proven at the end of the 19th century, which says roughly that the probability of a randomly chosen large number being prime is inversely proportional to its number of digits, that is, to its logarithm.",
+        "Several historical questions regarding prime numbers are still unsolved."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Public-key cryptography",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24222",
+      "retrieved_at": "2026-10-18T14:56:47.980Z",
+      "sha256": "ef4529dca804c9aa44ec3077420c0ef20968e1c70c8d5f5213fed3869cf37dbc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Public-key cryptography, or asymmetric cryptography, is the field of cryptographic systems that use pairs of related keys.",
+        "Each key pair consists of a public key and a corresponding private key.",
+        "Key pairs are generated with algorithms based on mathematical problems termed one-way functions.",
+        "Security of public-key cryptography depends on keeping the private key secret; the public key can be openly distributed without compromising security.",
+        "There are many kinds of public-key cryptosystems, with different security goals, including digital signature, Diffie–Hellman key exchange, public-key key encapsulation, and public-key encryption.",
+        "Public key algorithms are fundamental security primitives in modern cryptosystems, including applications and protocols that offer assurance of the confidentiality and authenticity of electronic communications and data storage.",
+        "They underpin numerous Internet standards, such as Transport Layer Security (TLS), SSH, S/MIME, and PGP.",
+        "Compared to symmetric cryptography, public-key cryptography can be too slow for many purposes, so these protocols often combine symmetric cryptography with public-key cryptography in hybrid cryptosystems."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Largest known prime number",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1669332",
+      "retrieved_at": "2026-10-18T14:56:47.980Z",
+      "sha256": "2d7828567989bbae9cca2c9e287f153b2d0773a0bce74bf9d8c24c61b52f2431",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The largest known prime number as of October 2026 is 2136,279,841 − 1, a number that has 41,024,320 digits when written in the decimal system.",
+        "It was found on October 12, 2024, on a cloud-based virtual machine volunteered by Luke Durant, a researcher from San Jose, California, to the Great Internet Mersenne Prime Search (GIMPS).",
+        "A prime number is a natural number greater than 1 with no divisors other than 1 and itself.",
+        "Euclid's theorem proves that for any given prime number, there will always be a higher one, and thus there are infinitely many; there is no largest prime.",
+        "Many of the largest known primes are Mersenne primes, numbers that are one less than a power of two, because they can be verified by a specialized primality test that is faster than the general one.",
+        "As of October 2024, the seven largest known primes are Mersenne primes.",
+        "The binary representation of any Mersenne prime is composed of all ones, since the binary form of 2k − 1 is simply k ones.",
+        "Finding larger prime numbers is sometimes presented as a means to stronger encryption, but this is not true.",
+        "While large primes with hundreds of digits are indeed used for cryptography, primes with millions of digits are not."
+      ]
+    }
+  ]
+}

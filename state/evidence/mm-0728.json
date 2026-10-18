@@ -1,0 +1,105 @@
+{
+  "id": "mm-0728",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Global Ocean Tide Model From TOPEX/POSEIDON Altimetry: GOT99.2",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "author": "Richard D. Ray",
+      "published_at": "1999-09-01",
+      "url": "https://openalex.org/W1600003635",
+      "retrieved_at": "2026-10-18T15:54:20.813Z",
+      "sha256": "a5f3b72ea5018fb0c523a306bc6532bf593e853bcfdc9e095f612d0e8946ec57",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Goddard Ocean Tide model GOT99.2 is a new solution for the amplitudes and phases of the global oceanic tides, based on over six years of sea-surface height measurements by the TOPEX/POSEIDON satellite altimeter.",
+        "Comparison with deep-ocean tide-gauge measurements show that this new tidal solution is an improvement over previous global models, with accuracies for the main semidiurnal lunar constituent M2 now below 1.5 cm (deep water only).",
+        "The new solution benefits from use of prior hydrodynamic models, several in shallow and inland seas as well as the global finite-element model FES94.1.",
+        "This report describes some of the data processing details involved in handling the altimetry, and it provides a comprehensive set of global cotidal charts of the resulting solutions.",
+        "Various derived tidal charts are also provided, including tidal loading deformation charts, tidal gravimetric charts, and tidal current velocity (or transport) charts.",
+        "Finally, low-degree spherical harmonic coefficients are computed by numerical quadrature and are tabulated for the major short-period tides; these are useful for a variety of geodetic and geophysical purposes, especially in combination with similar estimates from satellite laser ranging."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Tide",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30718",
+      "retrieved_at": "2026-10-18T15:54:20.813Z",
+      "sha256": "8f6472bc5488cbe2d8012fc31fbf8489a85e7ba14a1f2fd3871654dd354c8255",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tides are the periodic rise and fall of sea level resulting from the differential gravitational forces exerted primarily by the Moon and the Sun, combined with inertial effects associated with the Earth–Moon system’s orbital motion and the Earth's rotation.",
+        "Tides vary on timescales ranging from hours to years due to a number of factors, which determine the lunitidal interval.",
+        "To make accurate records, tide gauges at fixed stations measure water level over time.",
+        "Gauges ignore variations caused by waves with periods shorter than minutes.",
+        "These data are compared to the reference (or datum) level usually called mean sea level.",
+        "While tides are usually the largest source of short-term sea-level fluctuations, sea levels are also subject to change from thermal expansion, wind, and barometric pressure changes, resulting in storm surges, especially in shallow seas and near coasts.",
+        "Tidal phenomena are not limited to the oceans, but can occur in other systems whenever a gravitational field that varies in time and space is present.",
+        "For example, the shape of the solid part of the Earth is affected slightly by Earth tide, though this is not as easily seen as the water tidal movements."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why did the chicken cross the road?",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=171635",
+      "retrieved_at": "2026-10-18T15:54:20.813Z",
+      "sha256": "c7b83a85f77dae7ae10508695eb19740aa6c5de2bf6319d21b9ed50549938d80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Why did the chicken cross the road?\" is a common riddle joke with the answer being \"To get to the other side.\" It is an example of anti-humor, in that the curious setup of the joke leads the listener to expect a traditional punchline, but they are instead given a simple statement of fact.",
+        "The joke has become iconic as an exemplary generic joke to which most people know the answer, and has been repeated and changed numerous times over the course of history."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Physical oceanography",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=387440",
+      "retrieved_at": "2026-10-18T15:54:20.813Z",
+      "sha256": "8fe04a4ac4b0ba1805e1ac1229122289420142052be78b9c0bdd09045e6c9ccc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Physical oceanography is the study of physical conditions and physical processes within the ocean, especially the motions and physical properties of ocean waters.",
+        "Physical oceanography is one of several sub-domains into which oceanography is divided.",
+        "Others include biological, chemical and geological oceanography.",
+        "Like the study of atmospheric physics, physical oceanography is founded upon principles of thermodynamics and fluid mechanics.",
+        "Physical oceanography may be subdivided into descriptive and dynamical physical oceanography.",
+        "Descriptive physical oceanography seeks to research the ocean through observations and complex numerical models that describe temperature, salinity, density, currents and other ocean features as accurately and completely as possible.",
+        "Dynamical physical oceanography focuses primarily upon the processes that govern the motion of fluids with emphasis upon theoretical research and numerical models.",
+        "These are part of the large field of Geophysical Fluid Dynamics (GFD) that is shared together with meteorology.",
+        "GFD is a sub field of fluid dynamics  describing flows occurring on spatial and temporal scales that are greatly influenced by the Coriolis force."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tide clock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2759662",
+      "retrieved_at": "2026-10-18T15:54:20.813Z",
+      "sha256": "0fab6fafbf65a0293f2701d2bd8bc021e2fd79c1ebac35966c157406c786ab37",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tide clock is a specially designed clock that keeps track of the Moon's apparent motion around the Earth.",
+        "Along many coastlines, the Moon contributes the major part (67%) of the combined lunar and solar tides.",
+        "The exact interval between tides is influenced by the position of the Moon and Sun relative to the Earth, as well as the specific location on Earth where the tide is being measured.",
+        "Due to the Moon's orbital prograde motion, it takes a particular point on the Earth (on average) 24 hours and 50.5 minutes to rotate under the Moon, so the time between high lunar tides fluctuates between 12 and 13 hours.",
+        "A tide clock is divided into two roughly 6 hour tidal periods that show the average length of time between high and low tides in a semi-diurnal tide region, such as most areas of the Atlantic Ocean."
+      ]
+    }
+  ]
+}

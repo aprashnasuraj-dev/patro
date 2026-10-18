@@ -1,0 +1,190 @@
+{
+  "id": "mm-0861",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "North American Transportation During COVID-19: What Really Changed?",
+      "publisher": "Center for Open Science",
+      "author": "Palm, Matthew",
+      "published_at": "2022-09-02",
+      "url": "https://doi.org/10.31219/osf.io/dx258",
+      "retrieved_at": "2026-10-18T15:58:53.103Z",
+      "sha256": "cea88f871851b1beff4a35194ec11dadf09007db132b5e66afdb23270c5b71cf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "COVID-19 arrived in the United States and Canada at a time when the future of sustainable urban travel across the continent looked uncertain.",
+        "A decade-long trend in transit ridership growth appeared to have stalled in many cities (Boisjoly et al., 2018), while automobile ownership grew.",
+        "This chapter synthesizes unfolding evidence on how COVID-19 disrupted some of these existing trends in North American urban transportation while accelerating others.",
+        "This synthesis is organized around three themes emerging from COVID-19 in the region: declining transit ridership, increased auto ownership or auto purchase plans, and a possible ‘new normal’ of increased telecommuting.",
+        "I evaluate each theme in the context of prior trends and public policy choices feeding those trends.",
+        "Untangling hype from data, the chapter concludes with recommendations on how to support travelers in the region while calling for clearer thinking from urban thought leaders and researchers on the likely long-term impact of the crisis."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mind the Gap: Finding What Updates Have (Really) Changed in Android Applications",
+      "publisher": "SCITEPRESS - Science and Technology Publications",
+      "author": "Feichtner, Johannes; Neugebauer, Lukas; Ziegler, Dominik",
+      "published_at": "2019",
+      "url": "https://doi.org/10.5220/0008119303060313",
+      "retrieved_at": "2026-10-18T15:58:54.488Z",
+      "sha256": "67ce0dd3fc7e5116f644a4fac87a772fd6b75b2d2bf483fe111d57d821d66b26",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "SciTePress - Publication Details Home About Us Ethics of Publication Ethics of Review Contacts Sitemap Papers Papers/2022 Papers Papers/2022 Login Sign-Up The Search is performed on all of the following fields: Note: Please use complete words only.",
+        "Publication Title Abstract Publication Keywords DOI Proceeding Title Proceeding Foreword ISBN (Completed) Insticc Ontology Author Affiliation Author Name Editor Name If you already have a Primoris Account you can use the same username/password here.",
+        "{1} ##LOC[OK]## {1} ##LOC[OK]## ##LOC[Cancel]## {1} ##LOC[OK]## ##LOC[Cancel]## Research.Publish.Connect.",
+        "The Search is performed on all of the following fields: Note: Please use complete words only.",
+        "Publication Title Abstract Publication Keywords DOI Proceeding Title Proceeding Foreword ISBN (Completed) Insticc Ontology Author Affiliation Author Name Editor Name If you're looking for an exact phrase use quotation marks on text fields.",
+        "Related Ontology Subjects/Areas/Topics: Information and Systems Security ; Security and Privacy in Mobile Systems ; Software Security Abstract: Android apps often receive updates that introduce new functionality or tackle problems, ranging from critical security issues to usability-related bugs.",
+        "Although developers tend to briefly denote changes when releasing new versions, it remains unclear what has actually been modified in the program code.",
+        "Verifying even subtle changes between two Android apps is challenging due to the widespread use of code transformations and obfuscation techniques.",
+        "In this paper, we present a new framework to precisely pinpoint differences between Android apps.",
+        "By pursuing a multi-level comparison strategy that targets resources and obfuscation-invariant code elements, we succeed in highlighting similarities and changes among apps.",
+        "In case studies, we demonstrate the need and practical benefits of our solution and show how well it is suited to verify changelogs.",
+        "Full Text Download Generate New Image Enter text above before pressing [Download] (case sensitive) CC BY-NC-ND 4.0 Guests can use SciTePress Digital Library without having a SciTePress account."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "In 2000, Australia was defined by the Olympics, border politics and reconciliation. So what really has changed?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Black, Joshua",
+      "published_at": "2025-03-19",
+      "url": "https://theconversation.com/in-2000-australia-was-defined-by-the-olympics-border-politics-and-reconciliation-so-what-really-has-changed-250791",
+      "retrieved_at": "2026-10-18T15:58:55.652Z",
+      "sha256": "760c9c0a291a7f3f2f8752e50fa07e2320ca4852c58114496d80460b83673bf4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "In 2000, Australia was defined by the Olympics, border politics and reconciliation.",
+        "Skip to content Academic rigor, journalistic flair Mike Powell/Allsport, Jed Jacobsohn/Allsport In 2000, Australia was defined by the Olympics, border politics and reconciliation.",
+        "A million people lined the harbour to ring in the new millennium (though some said it was actually the final year of the old one) on January 1.",
+        "US television reporters called it “the biggest party in Australian history”.",
+        "Bill Gates, chairman of Microsoft, whose corporation seemed to represent the coming age, was among those watching on .",
+        "Australians saw in the new millennium with fireworks over Sydney Harbour.",
+        "RUSSELL MCPHEDRAN/AP Sydney offered not only a world-leading party, but also a litmus test for the much-feared Y2K bug, which threatened to knock planes out of the sky and bring the global economy to a halt.",
+        "Australia and New Zealand were said to be the “tripwire for the world’s computer systems”.",
+        "It was fine in the end, although plenty of work had in fact been undertaken behind the scenes to make Australia’s systems more millennium-proof than they might have been.",
+        "An advertisement offering Y2K advice in December 1999 in the The Times in Victor Harbour, South Australia.",
+        "The Times (Victor Harbour, SA)/National Library of Australia This was arguably the defining feature of Australia in the year 2000: a confident display for the world concealing a lot of angst and uncertainty.",
+        "Australia was the “oldest continent on Earth”, the US broadcasters told their viewers, but it was “much more of an Asian nation”, and much closer to the rest of the world “thanks to technology”."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Paving the way for a public health renaissance",
+      "publisher": "OpenAlex",
+      "author": "Razali Ismail",
+      "published_at": "2000-01-01",
+      "url": "https://openalex.org/W1675778799",
+      "retrieved_at": "2026-10-18T15:58:55.653Z",
+      "sha256": "ae7047d8825a14791401ef45320b69823817d866350d43c7664e876892ec7e40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Public  has been defined as “the provision of health care to groups of  \r\npopulations using public health strategies focusing on preventive aspects of health”.",
+        "Hence, a Public   would mean a revival of sorts in the field of  \r\nhealth care provision to the public from the Public  viewpoint.",
+        "In the first place, is there really a need for a Public  Renaissance?",
+        "Have  \r\nthe public and/or powers-that-be been so disillusioned with the present state of affairs  \r\nas to warrant a revival of the whole domain of Public Health?",
+        "Or is it just a term  \r\ncoined up by a few visionaries for something that has been and is already taking  \r\nplace within the domain realm?",
+        "Are we not already in the midst of this so-called  \r\nRenaissance?",
+        "And if we are, where are we, how far have we gone and in what  \r\nform is the Renaissance taking place?",
+        "Come to think of it, what does the process of undergoing a Renaissance  \r\nreally entail?",
+        "Does it essentially involve paradigm shifts and mindset changes of  \r\nindividuals or is it a total revolutionary migration of visions and missions of whole  \r\nvast organisations and systems?",
+        "Is it a slow, evolutionary process, allowed to  \r\ngradually unfold or is it a drastic all-or-nothing event?",
+        "And does it refer to the New  \r\nPublic Health that we have been talking about in recent times?"
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Medieval music",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19956",
+      "retrieved_at": "2026-10-18T15:58:55.653Z",
+      "sha256": "f093663f43f6c8f8b1535159e55844405439f4ed8e765dbe300fd40eb8fbc087",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Medieval music encompasses the sacred and secular music of Western Europe during the Middle Ages, from approximately the 6th to 15th centuries.",
+        "It is the first and longest major era of Western classical music and is followed by the Renaissance music; the two eras comprise what musicologists generally term as early music, preceding the common practice period.",
+        "Following the traditional division of the Middle Ages, medieval music can be divided into Early (500–1000), High (1000–1300), and Late (1300–1400) medieval music.",
+        "Medieval music includes liturgical music used for the church, other sacred music, and secular or non-religious music.",
+        "Much medieval music is purely vocal music, such as Gregorian chant.",
+        "Other music used only instruments or both voices and instruments (typically with the instruments accompanying the voices).",
+        "The medieval period saw the creation and adaptation of systems of music notation which enabled creators to document and transmit musical ideas more easily, although notation coexisted with and complemented oral tradition."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Renaissance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25532",
+      "retrieved_at": "2026-10-18T15:58:55.653Z",
+      "sha256": "b43c5bffd6852cffefc5ab0a314119fdcb239cd690604d9f553df6b82370dde0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Renaissance (UK:  rin-AY-sənss, US:   REN-ə-sahnss, \"rebirth\") was an European period of history and cultural movement taking place at the end of the Late Middle Ages and the beginning of the early modern era.",
+        "It is variously defined as covering the 15th and 16th centuries or, more broadly, as lasting from the 14th century to the 17th.",
+        "It was characterized by the European rediscovery and revival of the literary, philosophical, and artistic achievements of classical antiquity.",
+        "Associated with great change in art, architecture, politics, literature, exploration and technology, the Renaissance was first centered in the Republic of Florence, then spread to the rest of Italy and later throughout Europe.",
+        "The Renaissance's intellectual basis was founded in its version of humanism, derived from the concept of Roman humanitas and the rediscovery of classical Greek philosophy, such as that of Protagoras, who said that \"man is the measure of all things\".",
+        "It saw myriad artistic developments and contributions from such polymaths as Leonardo da Vinci and Michelangelo, who inspired the term \"Renaissance man\".",
+        "In politics, the Renaissance contributed to the development of the customs and conventions of diplomacy.",
+        "The period also saw revolutions in printing and navigation, as well as the introduction of modern banking and the field of accounting."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Disney Renaissance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18413584",
+      "retrieved_at": "2026-10-18T15:58:55.653Z",
+      "sha256": "b9ba913a7aaeb9f7ef112639e0b17415a340825ff7d3dfc8a4b66e691e88821b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Disney Renaissance was a period from 1989 to 1999 during which Walt Disney Feature Animation returned to producing commercially and/or critically successful animated films.",
+        "The ten feature films associated with this period are The Little Mermaid (1989), The Rescuers Down Under (1990), Beauty and the Beast (1991), Aladdin (1992), The Lion King (1994), Pocahontas (1995), The Hunchback of Notre Dame (1996), Hercules (1997), Mulan (1998), and Tarzan (1999).",
+        "The Great Mouse Detective (1986), Oliver & Company (1988) and Fantasia 2000 (1999) are also often included, the first two being precursors of the period and the last being the final animated feature film to follow the same artistic pattern as classic Disney films.",
+        "The films were mostly musical adaptations of well-known stories, similar to ones produced by Walt Disney from the 1930s to 1960s.",
+        "They saw great success at the domestic and foreign box office, earning much greater profits."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Cowboy Carter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=76067619",
+      "retrieved_at": "2026-10-18T15:58:55.653Z",
+      "sha256": "3f2fdf3d588428543ad2d39313390a0a48c773f74c5680c9ae3431bfad637b0e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cowboy Carter (stylized in all caps; also referred to as Act II: Cowboy Carter) is the eighth studio album by American singer and songwriter Beyoncé.",
+        "It was released on March 29, 2024, by Parkwood Entertainment and Columbia Records.",
+        "A concept album, Cowboy Carter is the second of a planned trilogy of albums, following Renaissance (2022).",
+        "Beyoncé conceived the album as a journey through a reinvention of Americana, spotlighting the overlooked contributions of Black pioneers to American musical and cultural history.",
+        "A genre-blending album rooted in country music, Cowboy Carter is influenced by Beyoncé's upbringing in Texas, incorporating eclectic styles of music of the Southern United States.",
+        "Conceptually, the album is presented as a radio broadcast, with country singers Dolly Parton, Linda Martell, and Willie Nelson acting as disc jockeys.",
+        "The album's songs feature rising Black country artists such as Shaboozey, Tanner Adell, Brittney Spencer, Tiera Kennedy, Reyna Roberts, and Willie Jones.",
+        "The music is driven by a range of acoustic instruments played by musicians including Stevie Wonder, Paul McCartney, and Nile Rodgers, among others.",
+        "Cowboy Carter was met with universal acclaim and appeared on multiple year-end lists; critics stated that the album's genre experimentation, expansive scope and eclectic references aided an ambitious reimagining of Americana and country through the lens of their Black roots.",
+        "At the 67th Grammy Awards, Beyoncé became the first Black woman in 25 years to win Album of the Year and the first Black artist to win Best Country Album; the album's third single, \"II Most Wanted\", won Best Country Duo/Group Performance.",
+        "The album increased the listenership of country music, drove cultural conversations on Black musicians' place within the genre, boosted the careers of rising country artists, and increased the popularity of Western wear and culture.",
+        "Cowboy Carter debuted at number one in several countries and broke multiple chart and streaming records."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "mt-1286",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Fault Analysis Projection System (FAPS) - A new seismic interpretation and structural geological interpretation tool.",
+      "publisher": "Australian Society of Exploration Geophysicists",
+      "author": "Freeman, B.; Badley, M.; Yielding, G.",
+      "published_at": "1989",
+      "url": "https://doi.org/10.1071/eg989001",
+      "retrieved_at": "2026-10-18T18:58:06.862Z",
+      "sha256": "cacb9ae7d5198a3deb32a54f129a5e753141a017cfd5039e55df29438264f709",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recent research has demonstrated that the displacement on faults varies in a systematic manner, both vertically and laterally.",
+        "Contours of displacement on strike projections display ordered patterns for isolated normal faults, strike-slip faults and syn-sedimentary faults.",
+        "Recognition of these ordered patterns forms the basis for a new seismic interpretation and structural/geological interpretation tool, enabling objective verification of fault correlation, identification of bad fault or horizon picks, and a better understanding of the overall kinematic framework.",
+        "The Fault Analysis Projection System (FAPS) is a computerized implementation of this technique designed to run on UNIX-based workstations.",
+        "The FAPS uses the X-windows graphics system which permits different elements of the interpretation/analysis to be viewed at the same time and is designed to make adjustments to interpretations a simple task.",
+        "For example, an interpreter may work on a map in one window, a set of sections in another window, perform a graphics screen-edit on data in a third window and view the results of an analysis in a separate, fourth window."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "2011 Tōhoku earthquake and tsunami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31150160",
+      "retrieved_at": "2026-10-18T18:58:07.101Z",
+      "sha256": "5ede3d720494a64967536c533d8269723dfaae758544c37c987b4c3ece861300",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On 11 March 2011, at 14:46:24 local time (UTC+9), a Mw 9.0–9.1 undersea megathrust earthquake occurred in the Pacific Ocean, 72 km (45 mi) east of the Oshika Peninsula of the Tōhoku region of Japan.",
+        "It is sometimes known in Japan as the \"Great East Japan Earthquake\" (東日本大震災, Higashi Nihon Daishinsai), among other names.",
+        "It is often referred to by its numerical date, 3.11 (read San ten Ichi-ichi in Japanese).",
+        "The earthquake was the most powerful ever recorded in Japan, and the fourth most powerful recorded in the world since modern seismography began in 1900.",
+        "It triggered powerful tsunami waves that may have reached heights of up to 40.5 m (133 ft) in Miyako in Tōhoku's Iwate Prefecture, and which, in the Sendai area, traveled at 700 km/h (435 mph) and up to 10 km (6 mi) inland.",
+        "Residents of Sendai had only eight to ten minutes of warning, and more than a hundred evacuation sites were washed away.",
+        "The snowfall which accompanied the tsunami and the freezing temperature hindered rescue works; for instance, in Ishinomaki, the city with the most deaths, the temperature was 0 °C (32 °F) as the tsunami hit.",
+        "Official figures released in 2021 reported 19,759 deaths, 6,242 injured, 284 firefighters dead from attempts to close preventative fire gates, and 2,553 missing.",
+        "A report in 2015 found that 228,863 people were still living away from their home either temporarily or permanently.",
+        "The tsunami caused the Fukushima Daiichi nuclear disaster, primarily the meltdowns of three of its reactors, the discharge of radioactive water in Fukushima and the associated evacuation zones affecting hundreds of thousands of residents.",
+        "The loss of electrical power halted cooling systems, causing heat to build.",
+        "Without ventilation, hydrogen gas accumulated within the upper refueling hall and exploded, forcefully ejecting the refueling hall's blast panels."
+      ]
+    }
+  ]
+}

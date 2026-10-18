@@ -1,0 +1,144 @@
+{
+  "id": "mm-0180",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why there’s so much inconsistency in school shooting data",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Wallace, Lacey",
+      "published_at": "2018-09-04",
+      "url": "https://theconversation.com/why-theres-so-much-inconsistency-in-school-shooting-data-102318",
+      "retrieved_at": "2026-10-18T14:52:45.767Z",
+      "sha256": "084a2f582373e3e094103b254829d8b401ecc5937dbd85b4aee2987ca0125e86",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why there’s so much inconsistency in school shooting data Skip to content Academic rigor, journalistic flair A Texas school’s tribute to the school shooting in Parkland, Florida.",
+        "When National Public Radio investigated the inconsistency , they found that 161 of the Department of Education’s 240 shootings either did not occur or could not be confirmed by the school districts involved.",
+        "Similarly, the American Civil Liberties Union contacted each school that allegedly had a shooting and found that 138 of the reported shootings were errors.",
+        "The laws on guns in schools Students are legally prohibited from bringing guns to school.",
+        "That means they can be in serious trouble, even if they never fire the gun.",
+        "The Gun-Free Schools Act of 1994 requires schools in any state receiving certain federal funding to implement a one-year expulsion rule for students who bring a firearm to school.",
+        "Students found in possession of a firearm must also be referred to the criminal justice or juvenile justice system.",
+        "Each year, schools must report any firearm-related expulsions.",
+        "Those can include shootings, but also firearm possession and other firearm crimes.",
+        "Schools report firearm offenses like these to the Civil Rights Data Collection (CRDC) , which is operated by of the Department of Education.",
+        "Department of Education used the results of this question to estimate the number of school shootings for 2015-2016.",
+        "Schools are expected to report any incidents that occur during school hours on school grounds."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why AI needs social science",
+      "publisher": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+      "author": "Dorobantu, Cosmina; Helen Zerlina Margetts",
+      "published_at": "2025-09-29",
+      "url": "https://openalex.org/W7113015317",
+      "retrieved_at": "2026-10-18T14:52:45.909Z",
+      "sha256": "b8692b5de41f6f4e2b2602b9b61dca9ea62453c3ce4ab33427ded5ec572297ad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Helen Margetts and Cosmina Dorobantu make the case that AI needs to be shaped not just by computer science, but by social science – the study of humans and their systems of organisation.",
+        "At the same time, AI can help revolutionise social science, much like it has the natural sciences."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T14:52:45.909Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Data center",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=579730",
+      "retrieved_at": "2026-10-18T14:52:45.909Z",
+      "sha256": "508e9865c60f0de80d4170e51905e879609ba9e6b8645e273ac7c5bf578291bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A data center is a physical room, building, or facility for storing, managing, and disseminating data and information, including computer systems and associated components, housing IT infrastructure, and training artificial intelligence.",
+        "military's Electrical Numerical Integrator and Computer (ENIAC) as an early example.",
+        "Data centers have different models depending on their workloads.",
+        "They frequently contain thousands of servers and many miles of high-speed data connection equipment, with the largest occupying up to 10,000,000 sq ft (930,000 m2).",
+        "Managed service data centers have third-party managers hired on behalf of a company, which leases the equipment and infrastructure instead of buying it.",
+        "Colocation data centers allow companies to rent space in an off-site data center owned by others, with the colocation data center hosting the infrastructure while the company provides and manages the components.",
+        "Edge data centers are smaller, decentralized facilities located closer to end users and devices.",
+        "Data Center Energy Usage Report, Lawrence Berkeley National Laboratory estimated that hyperscale and colocation centers contained 74% of computer servers in 2023.",
+        "Large data centers require significant energy to operate, with the largest consuming over 3,000 MW, raising concerns about energy use.",
+        "The International Energy Agency (IEA) estimated that electricity consumption from these data centers amounted to around 415 terawatt hours (TWh), about 1.5% of global electricity consumption in 2024, with a growth rate of 12% per year over the previous five years.",
+        "The IEA projects that this amount could double to reach around 945 TWh by 2030, growing by around 15% per year.",
+        "alone, which has almost nine times more data centers than any other country, power consumption by data centers is projected to account for \"almost half of the growth in electricity demand between now and 2030.\" This includes increased electricity costs."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T14:52:45.909Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "AI boom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291899",
+      "retrieved_at": "2026-10-18T14:52:45.910Z",
+      "sha256": "8da1c263aa2ac2f6e219f9595ac75c821c54d49102a546d16261448bf5c93c65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The AI boom is the period of rapid growth in the field of artificial intelligence in the 2020s.",
+        "Generative AI technologies include large language models (LLM), which generate text and code, image models, and video models, and world models.",
+        "This period is sometimes referred to as an AI spring, a term used to contrast it with previous AI winters.",
+        "Key advances preceding the boom include the transformer (2017), generative pre-trained transformer (2018) and reinforcement learning from human feedback.",
+        "During the boom, LLMs have evolved via the reasoning model, mixture of experts technique, and multimodal learning.",
+        "As of 2026, leading proprietary LLMs have been released by Anthropic, OpenAI, and divisions of Google, Meta, and SpaceX in the United States.",
+        "In China, companies favour open weights releases, led by Alibaba Cloud, DeepSeek, Moonshot AI, and Z.ai.",
+        "Since 2018, observers including Ian Bremmer, Nicholas Thompson, and Kai-Fu Lee have argued an AI arms race or AI Cold War exists between the US and China.",
+        "The boom has impacted the semiconductor industry, causing a global memory supply shortage; As of second quarter 2026, Nvidia is the world's largest corporation by capitalization while TSMC, Broadcom, and Samsung are among the ten largest."
+      ]
+    }
+  ]
+}

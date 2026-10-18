@@ -1,0 +1,119 @@
+{
+  "id": "mm-1996",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When Workflows Stay Stable but Meaning Moves in Agentic Analyst Pipelines",
+      "publisher": "AHFE International",
+      "author": "Russell, Stephen",
+      "published_at": "2026",
+      "url": "https://doi.org/10.54941/ahfe1007675",
+      "retrieved_at": "2026-10-18T17:03:24.955Z",
+      "sha256": "847b1cd948f081022fa9800ee162f2f0b66d7bfadd22ab10afe196653671958b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Agentic analyst pipelines can keep a workflow object stable while its operational meaning shifts underneath.",
+        "A coded event, alert, or dashboard tile may persist unchanged while the reporting frame moves from accident to attack, or from outage to state-linked operation.",
+        "This semantic movement can reach the analyst undetected, degrading situation awareness while the interface appears organized.",
+        "This research proposes a measurement and governance layer for detecting semantic frame shifts in agentic analyst workflows, using 1032 headline and snippet records organized into 37 adjudicated event-window states across 10 event families.",
+        "Three findings bear directly on human-agentic workflow design.",
+        "Third, LLM coding agents varied materially by model and prompt policy, paralleling the variation observed across human coders, which means that consensus among human judgment, semantic metrics, and LLM signals cannot be assumed and must be treated as an active governance variable in workflow design.",
+        "Together these findings support an orchestration layer that routes high-reframing or high-disagreement cases to human review while allowing semantically stable outputs to pass forward.",
+        "As demonstration, the proposed metrics and approach are implemented in an open source intelligence system."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Honey bee",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58261",
+      "retrieved_at": "2026-10-18T17:03:27.114Z",
+      "sha256": "d9d618d9422983f17f7df3886874d627a056b781abdda14f2d3b36cd9ee62991",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A honey bee (also spelled honeybee) is a eusocial flying insect from the genus Apis of the largest bee family, Apidae.",
+        "Honey bees are known for their creation of perennial nests within cavities (i.e.",
+        "Although honey bees represent only a small fraction of the roughly 20,000 known species of bees, they are the bee clade most familiar to humans and are also the most valuable beneficial insects to agriculture and horticulture.",
+        "The best-known honey bee species is the western honey bee (Apis mellifera), which was domesticated and farmed (i.e.",
+        "The only other domesticated species is the eastern honey bee (Apis cerana), which are raised in South, Southeast and East Asia.",
+        "Only members of the genus Apis are true honey bees, but some other bee species also produce and store honey and have been kept by humans for that purpose, including the stingless bees belonging to the genus Melipona and the Indian stingless or dammar bee Tetragonula iridipennis.",
+        "In addition to harvesting honey, modern humans also use beeswax in making candles, soap, lip balms and various cosmetics, as a lubricant and in mould-making using the lost wax process.",
+        "Other honey bee secretions such as royal jelly and bee venom are used pharmaceutically, especially in alternative medicine."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Culture",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58623",
+      "retrieved_at": "2026-10-18T17:03:27.114Z",
+      "sha256": "d88bf76112d67589850b641b43cefe241ea01ade4c3102889c38ba108da3993c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Culture is a fictional interstellar post-scarcity society created by the Scottish writer Iain M.",
+        "Banks and features in a number of his space opera novels and works of short fiction, collectively called the Culture series.",
+        "The Culture is composed primarily of humanoid aliens, artificial intelligences (A.I.), and a number of other sentient life forms.",
+        "intelligence covers a spectrum; simple programs performing a specific function (e.g.",
+        "controlling spacesuits), human-equivalent drones and hyper-intelligent Minds who organise and oversee the society.",
+        "Beyond scarcity, the Culture has no need for money; instead, Minds organise society to maximise the well-being of its citizenry.",
+        "The protagonists, almost always humanoids, are generally those who have chosen to work for the Culture's diplomatic or espionage organs and interact with other civilisations whose citizens act under different ideologies, morals, and technologies.",
+        "The Culture generally has more advanced technology relative to most other civilisations it shares the galaxy with.",
+        "Most of the Culture's citizens do not live on planets but in artificial habitats such as orbitals and ships, the largest of which are home to billions of individuals.",
+        "The Culture's citizens have been genetically enhanced to live for as long as they desire and have modified mental control over their physiology, including the ability to introduce a variety of psychoactive drugs into their systems, change biological sex, or switch off pain at will.",
+        "The Culture's technology is able to transfer individuals into vastly different body forms, although the Culture's standard form remains fairly humanoid.",
+        "The Culture holds peace and individual freedom as its core values."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Marc Andreessen",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=331986",
+      "retrieved_at": "2026-10-18T17:03:27.114Z",
+      "sha256": "27a42633f7ce4690bb41aa2129c823de80b49c2857b7883dbf585d98275be221",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Marc Lowell Andreessen ( an-DREE-sən; born July 9, 1971) is an American businessman, venture capitalist, and former software engineer.",
+        "He is the co-author of Mosaic, the first web browser to display inline images; co-founder of Netscape; and co-founder and general partner of Silicon Valley venture capital firm Andreessen Horowitz.",
+        "He co-founded and later sold the software company Opsware to Hewlett-Packard; he also co-founded Ning, a company that provides a platform for social networking websites.",
+        "As of June 2026, Forbes estimated Andreessen's net worth at $1.9 billion."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Houthis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17240332",
+      "retrieved_at": "2026-10-18T17:03:27.114Z",
+      "sha256": "650d85caa7bcf0f8d3d1051847fa472b29ca7c3f5394f1ab36e02d039cef7f75",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Houthis, officially known as Ansar Allah or Ansarullah, are a Zaydi revivalist and Shia Islamist political and paramilitary organization that emerged from Yemen in the 1990s.",
+        "It is predominantly made up of Zaydis, whose namesake leadership is drawn largely from the al-Houthi family.",
+        "The Houthis are backed by Iran, and they are widely considered part of the Iranian-led Axis of Resistance.",
+        "The group has been a central player in Yemen's civil war, drawing widespread international condemnation for its human rights abuses, including targeting civilians and using child soldiers.",
+        "The movement is designated as a terrorist organization by some countries.",
+        "Under the leadership of Zaydi religious leader Hussein al-Houthi, the Houthis emerged as an opposition movement to Yemeni president Ali Abdullah Saleh, whom they accused of corruption and being backed by Saudi Arabia and the United States.",
+        "In 2003, influenced by the Lebanese Shia political and military organization Hezbollah, the Houthis adopted their official slogan against the United States, Israel, and the Jewish people.",
+        "Al-Houthi resisted Saleh's order for his arrest, and he was killed by the Yemeni military in Saada in 2004.",
+        "Since then, the movement has been mostly led by his brother Abdul-Malik al-Houthi.",
+        "The organization played a role in the Yemeni Revolution of 2011 by participating in street protests and coordinating with other Yemeni opposition groups.",
+        "They joined Yemen's National Dialogue Conference but later rejected the 2011 reconciliation deal.",
+        "In late 2014, the Houthis repaired their relationship with Saleh, and with his help they took control of the capital city."
+      ]
+    }
+  ]
+}

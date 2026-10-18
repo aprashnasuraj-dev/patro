@@ -1,0 +1,86 @@
+{
+  "id": "mm-1812",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Creativity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=142910",
+      "retrieved_at": "2026-10-18T16:49:59.961Z",
+      "sha256": "fcffd39944df3595ce4bca3df3c0a28b38876c7a60a270c1dff93d9adac9eb35",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Creativity is the ability to generate novel and valuable ideas or works through the exercise of imagination.",
+        "The products of creativity may be classified as either intangible or physical.",
+        "Intangible products of creativity include ideas, scientific theories, literary works, musical compositions, and jokes.",
+        "Physical products of creativity include inventions, dishes or meals, pieces of jewelry, costumes, and paintings.",
+        "Creativity may also describe the ability to find new solutions to problems or new methods to accomplish a goal.",
+        "Therefore, creativity enables people to solve problems in new ways.",
+        "Most ancient cultures (including ancient Greece, ancient China, and ancient India) lacked the concept of creativity, seeing art as a form of discovery rather than a form of creation.",
+        "In the Judeo-Christian-Islamic tradition, creativity is seen as the sole province of God, and human creativity was considered an expression of God's work; the modern conception of creativity came about during the Renaissance, influenced by humanist ideas.",
+        "Scholarly interest in creativity is found in several disciplines, primarily psychology, business studies, and cognitive science.",
+        "It is also present in education and the humanities (including philosophy and the arts)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Distributed creativity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3245476",
+      "retrieved_at": "2026-10-18T16:49:59.961Z",
+      "sha256": "ee4e11b3377c4e6d7845deac2cae3678d2d16dec0c6cbcae8e8c5dd2c958278c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Distributed creativity is a sociocultural framework for understanding how creativity emerges from the interactions of people, objects and their environment.",
+        "It is a response to cognitive accounts of creativity exemplified by the widely used four Ps framework.",
+        "According to Vlad Petre Glǎveanu, \"instead of an individual, an objects or a place in which to 'locate' creativity, [the] aim here is to distribute it between people, objects and places.\""
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Computational creativity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16300571",
+      "retrieved_at": "2026-10-18T16:49:59.961Z",
+      "sha256": "e20ca7505b23d7aa136f16327b69701c3a698226a78990530b95155677828be6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Is the application of computer systems to emulate human-like creative processes, facilitating the generation of artistic and design outputs that mimic innovation and originality.",
+        "The goal of computational creativity is to model, simulate or replicate creativity using a computer, to achieve one of several ends:\n\nTo construct a program or computer capable of human-level creativity.",
+        "To better understand human creativity and to formulate an algorithmic perspective on creative behavior in humans.",
+        "To design programs that can enhance human creativity without necessarily being creative themselves.",
+        "The field of computational creativity concerns itself with theoretical and practical issues in the study of creativity.",
+        "Theoretical work on the nature and proper definition of creativity is performed in parallel with practical work on the implementation of systems that exhibit creativity, with one strand of work informing the other.",
+        "The applied form of computational creativity is known as media synthesis."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Teresa Amabile",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20249860",
+      "retrieved_at": "2026-10-18T16:49:59.961Z",
+      "sha256": "92e8f756709feb9611533681678c1340e68e9138176debaa8fef8734ab7ad817",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Amabile (born 1950) is an American psychologist, academic, and author whose research has focused on creativity, intrinsic motivation, innovation, and organizational behavior.",
+        "She is the Edsel Bryant Ford Professor of Business Administration, Emerita, at the Harvard Business School, where she served on the faculty from 1995 until her retirement in 2024.",
+        "She joined Harvard after 18 years on the psychology faculty at Brandeis University.",
+        "Amabile is known for developing the componential theory of creativity, a framework explaining how domain expertise, creative thinking skills, and intrinsic motivation interact to produce creative performance.",
+        "Her theoretical and empirical work has substantially influenced research in psychology, management, education, and organizational studies."
+      ]
+    }
+  ]
+}

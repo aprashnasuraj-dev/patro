@@ -1,0 +1,118 @@
+{
+  "id": "mm-1661",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "What Makes a Text Historical?",
+      "publisher": "SBL Press",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.2307/j.ctt5hjgpw.18",
+      "retrieved_at": "2026-10-18T16:49:48.997Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Dead Sea",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8530",
+      "retrieved_at": "2026-10-18T16:49:49.198Z",
+      "sha256": "1f3909b4687262c6e29003bdabdaa2a936a992a05f714350cfea76035cbfc528",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Dead Sea (Arabic: اَلْبَحْر الْمَيِّت, romanized: al-Baḥr al-Mayyit; or اَلْبَحْر الْمَيْت, al-Baḥr al-Mayt; Hebrew: יַם הַמֶּלַח, romanized: Yam hamMelaḥ), also known by other names, is a landlocked salt lake bordered by Jordan to the east, the West Bank to the west and Israel to the southwest.",
+        "It lies in the endorheic basin of the Jordan Rift Valley, and its main tributary is the Jordan River.",
+        "As of 2025, the lake's surface is 439.78 metres (1,443 ft) below sea level, making its shores the lowest land-based elevation on Earth.",
+        "It is 304 m (997 ft) deep, which makes it the deepest hypersaline lake in the world.",
+        "With a salinity of 342 g/kg, or 34.2% (in 2011), it is one of the world's saltiest bodies of water, 9.6 times as salty as the ocean—and has a density of 1.24 kg/L, which makes swimming similar to floating.",
+        "This salinity makes for a harsh environment in which plants and animals cannot flourish, hence its name.",
+        "The Dead Sea's main, northern basin is 50 kilometres (31 mi) long and 15 kilometres (9 mi) wide at its widest point.",
+        "The Dead Sea has attracted visitors from around the Mediterranean basin for thousands of years.",
+        "It was one of the world's first health resorts, and it has been the supplier of a wide variety of products, from asphalt for Egyptian mummification to potash for fertilisers.",
+        "Today, tourists visit the sea on its Israeli, Jordanian and West Bank coastlines.",
+        "The Dead Sea is receding at a swift rate; its surface area today is 605 km2 (234 sq mi), having been 1,050 km2 (410 sq mi) in 1930.",
+        "Multiple canal and pipeline proposals, such as the scrapped Red Sea–Dead Sea Water Conveyance project, have been made to reduce its recession."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Papyrus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23664",
+      "retrieved_at": "2026-10-18T16:49:49.198Z",
+      "sha256": "5914022ce6b94ea676b61795e99fc45cb789766b2383c78921a9fd7861636e5e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Papyrus ( pə-PY-rəs) is a substance used in ancient times as a writing surface.",
+        "Similar to thick paper, it was first known to have been used in Egypt (at least as far back as the First Dynasty) as the papyrus plant from which it was created was once abundant across the Nile Delta.",
+        "Papyrus was made from the pith of the papyrus plant, Cyperus papyrus, a wetland sedge.",
+        "Papyrus (plural: papyri or papyruses) can also refer to a document written on sheets of such material, joined side by side and rolled up into a scroll, an early form of a book.",
+        "Papyrus was also used as a writing material in the Mediterranean region.",
+        "In addition to writing material, ancient Egyptians used the papyrus reeds in the construction of other products, such as reed boats, mats, rope, sandals, and baskets."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Dead Sea Scrolls",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=77712",
+      "retrieved_at": "2026-10-18T16:49:49.198Z",
+      "sha256": "c458de792c92d318cb175a3221870a69881bfe666319e4644986dafd14a91cbb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Dead Sea Scrolls (DSS), which mostly consist of the Qumran Caves Scrolls, are a set of ancient Jewish biblical manuscripts from the Second Temple period.",
+        "They were discovered over a period of ten years, between 1946 and 1956, at the Qumran Caves near Ein Feshkha in the West Bank, on the northern shore of the Dead Sea and some nearby places.",
+        "As such, they cast new light on the emergence of Rabbinic Judaism and of Christianity, and their relationship with Jewish religious traditions.",
+        "In the wider sense, the Dead Sea Scrolls also include similar findings from elsewhere in the Judaean Desert, and are sometimes called Judaean Desert scrolls.",
+        "Some of the scrolls found outside Qumran are from later centuries.",
+        "Almost all of the 15,000 scrolls and scroll fragments are held in the Shrine of the Book at the Israel Museum in Jerusalem.",
+        "Many thousands of written fragments have been discovered in the Dead Sea area – most have been published, together with the details of their discovery, in the 40-volume Discoveries in the Judaean Desert.",
+        "They represent the remnants of larger manuscripts damaged by natural causes or through human interference, with the vast majority holding only small scraps of text.",
+        "However, a small number of well-preserved and nearly intact manuscripts have survived—fewer than a dozen among those from the Qumran Caves.",
+        "Researchers have assembled a collection of 981 different manuscripts (discovered in 1946/1947 and in 1956) from 11 caves, which lie in the immediate vicinity of the Hellenistic Jewish settlement at the site of Khirbet Qumran in the eastern Judaean Desert in the West Bank.",
+        "The caves are located about 1.5 kilometres (1 mi) west of the northwestern shore of the Dead Sea, whence the scrolls derive their name.",
+        "Archaeologists have long associated the scrolls with the ancient Jewish sect known as the Essenes, although some recent interpretations have challenged this connection and argue that priests in Jerusalem or other unknown Jewish groups wrote the scrolls."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "History in the Dead Sea Scrolls",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=79491052",
+      "retrieved_at": "2026-10-18T16:49:49.198Z",
+      "sha256": "24f1ccc6053e4d9308c9fdf69dd6dee12f707024990e62383dc1e2cdaaf4f750",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "History in the Dead Sea Scrolls refers to the exploration of the historical significance of the discovery of the Dead Sea Scrolls.",
+        "These ancient manuscripts can offer valuable historical insights into the history of Israel and the period of Second Temple Judaism, as well as the emergence of Christianity and rabbinic Judaism.",
+        "The Qumran sectarian writings were clearly not intended to be historical texts, as such, in their modern meaning.",
+        "These texts primarily focus on religious and legal issues, reflecting the beliefs and practices of the Qumran community, rather than providing a comprehensive historical account of the period.",
+        "And yet, the scrolls contain references to figures like Antiochus IV and other Seleucid rulers, providing some insights into the political context of the Hasmonean period.",
+        "So they provide a unique perspective on the development of Jewish religious thought and practice during this period.",
+        "The scrolls can contribute to our understanding of the Hasmonean period, and help to clarify the political history, religious beliefs, and social structures of the time.",
+        "Thus, some elements of real history can be found in the Qumran writings.",
+        "For example, there are numerous direct references to the historical people and places.",
+        "“Michael Wise (2003, 65-81) lists in chronological order the 31 items from all the compositions that mention a recognizable place, person or process, from the high priesthood of Onias III in 174 B.C.E.",
+        "Some of Wise’s historical identifications may be challenged, but he is clearly referring to a wide range of compositions of various genres.”"
+      ]
+    }
+  ]
+}

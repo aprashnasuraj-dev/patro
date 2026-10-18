@@ -1,0 +1,139 @@
+{
+  "id": "mm-1682",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why does my hair turn green from the swimming pool?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Wajrak, Magdalena",
+      "published_at": "2023-09-20",
+      "url": "https://theconversation.com/why-does-my-hair-turn-green-from-the-swimming-pool-211736",
+      "retrieved_at": "2026-10-18T16:49:50.369Z",
+      "sha256": "e3dc2b8a12afce5dd6ec8df6942ba6ed1ab4431cf52bb533e01d91ca657e7a16",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Shutterstock Why does my hair turn green from the swimming pool?",
+        "In fact, the green tinge happens to everyone, but it’s less visible on dark hair and those whose hair isn’t damaged by chemical treatments such as bleaching.",
+        "But what exactly causes this green discoloration, and what can we do about it?",
+        "However, although chlorine does play a part, it is not the main culprit.",
+        "The element to blame for the green staining of hair is copper.",
+        "The main source of copper is copper sulfate (CuSO₄), a compound added to swimming pools to prevent the growth of algae.",
+        "Contact with algae can cause skin irritation and respiratory issues, and ingesting water with algae can lead to serious gastrointestinal problems.",
+        "Only a small amount (around 0.5mg per litre or 0.5 parts per million) of copper sulfate is needed to prevent algal growth.",
+        "However, copper can also enter swimming pools through the corrosion of water pipes, so concentrations may be higher in some pools.",
+        "So, when hair comes into contact with copper ions – a positively charged variant of a copper atom with a deficiency of electrons – those ions get absorbed by the hair and cause the greenish hue.",
+        "Scientists were fascinated by the green “pool hair” phenomenon as far back as the 1970s, so we actually have research data on copper being the cause.",
+        "One very interesting study in 1978 performed experiments by immersing hair samples into water containing different concentrations of copper ions, chlorine and various pH values (neutral and basic)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Curious Kids: Why does my snot turn green when I have a cold?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Murphy, Kim",
+      "published_at": "2018-07-10",
+      "url": "https://theconversation.com/curious-kids-why-does-my-snot-turn-green-when-i-have-a-cold-98379",
+      "retrieved_at": "2026-10-18T16:49:50.479Z",
+      "sha256": "318ecf8654c314867f429b535a28491d6d563829cd1b7bbed3350b2d3fd700b9",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Curious Kids: Why does my snot turn green when I have a cold?",
+        "Shutterstock Curious Kids: Why does my snot turn green when I have a cold?",
+        "The Conversation is asking kids to send in questions they’d like an expert to answer.",
+        "When we are healthy, snot is just what scientists call mucus.",
+        "Mucus is a gel that lines our nose, our intestines, and even our lungs.",
+        "This is because mucus is designed to help keep the germs and bugs out of our body.",
+        "Any bugs that try and get in, should just get stuck in this mucus and then blown out or swallowed (where they would mostly be destroyed by our powerful stomach acids).",
+        "Read more: Curious Kids: Why do tears come out of our eyes when we cry?",
+        "A cold is caused by a virus, and these like to get inside of our cells and make us sick.",
+        "When we get sick our immune system needs to get rid of the virus and make us better.",
+        "Our immune system Our immune system is made up of lots of different parts.",
+        "Neutrophils like to eat bugs, or our own cells that are damaged by infections like viruses that cause a cold."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Potato",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23501",
+      "retrieved_at": "2026-10-18T16:49:50.973Z",
+      "sha256": "a2cfc1fa10790f5aef63f9820d16661b5a7758187c7ab415c40ae1db690d7948",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The potato () is a starchy tuberous vegetable native to the Americas that is consumed as a staple food in many parts of the world.",
+        "Potatoes are underground stem tubers of the plant Solanum tuberosum, a perennial in the nightshade family Solanaceae.",
+        "Wild potato species can be found from the southern United States to southern Chile.",
+        "Genetic studies show that the cultivated potato has a single origin, in the area of present-day southern Peru and extreme northwestern Bolivia.",
+        "Potatoes were domesticated there about 7,000–10,000 years ago from a species in the S.",
+        "Many varieties of the potato are cultivated in the Andes region of South America, where the species is indigenous.",
+        "The Spanish introduced potatoes to Europe in the second half of the 16th century from the Americas.",
+        "They are a staple food in many parts of the world and an integral part of much of the world's food supply.",
+        "Following centuries of selective breeding, there are now over 5,000 different varieties of potatoes.",
+        "Like the tomato and the nightshades, the potato is in the genus Solanum.",
+        "Normal potato tubers that have been grown and stored properly produce glycoalkaloids in negligible amounts, but if sprouts and potato skins are exposed to light, tubers can become toxic."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Potassium deficiency (plants)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=157887",
+      "retrieved_at": "2026-10-18T16:49:50.973Z",
+      "sha256": "51418c65ee031684a991506925e35c55b0c9d3318cfcd42bd76ccb63f9951300",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Potassium deficiency, also known as potash deficiency, is a plant disorder caused by the depletion of potassium ions (K+) in the soil.",
+        "Potassium deficiency causes brown scorching and curling of leaf tips, as well as chlorosis (yellowing) between leaf veins.",
+        "It is most common in light, sandy soils with a low clay content, as potassium is highly soluble and will easily leach from soils that lack colloids."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Brute fact",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1378866",
+      "retrieved_at": "2026-10-18T16:49:50.973Z",
+      "sha256": "701788a6e7fb5d2881e3e9b9c7b06970b26cfa417ee5c194b1d404a31335ec69",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In contemporary philosophy, a brute fact is a fact that cannot be explained in terms of a deeper, more \"fundamental\" fact.",
+        "There are two main ways to explain something: say what \"brought it about\", or describe it at a more \"fundamental\" level.",
+        "For example, a cat displayed on a computer screen can be explained, more \"fundamentally\", in terms of certain voltages in bits of metal in the screen, which in turn can be explained, more \"fundamentally\", in terms of certain subatomic particles moving in a certain manner.",
+        "If one were to keep explaining the world in this way and reach a point at which no more \"deeper\" explanations can be given, then one would have found some facts which are brute or inexplicable, in the sense that we cannot give them an ontological explanation.",
+        "As it might be put, there may exist some things that just are.",
+        "To reject the existence of brute facts is to think that everything can be explained (\"Everything can be explained\" is sometimes called the principle of sufficient reason)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Paris green",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2939274",
+      "retrieved_at": "2026-10-18T16:49:50.973Z",
+      "sha256": "3690bd6ab4239b170e580b04cf5967ea79c5753a74b07dc308d94b6a193ad6e1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Paris green (copper(II) acetate triarsenite or copper(II) acetoarsenite) is an arsenic- and copper-containing  pigment.",
+        "It is an emerald-green crystalline powder that is also known as Mitis green, Schweinfurt green, Sattler green, emerald green, Vienna green, emperor green or mountain green.",
+        "It is highly toxic and has thus also been used as a rodenticide and insecticide.",
+        "It was invented in 1814 to be a pigment to make a vibrant green paint, and was used by many notable painters in the 19th century.",
+        "The color of Paris green is said to range from a pale blue-green when very finely ground to a deeper green when coarsely ground.",
+        "Due to the presence of arsenic, the pigment is extremely toxic."
+      ]
+    }
+  ]
+}

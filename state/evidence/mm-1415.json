@@ -1,0 +1,122 @@
+{
+  "id": "mm-1415",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Vision: How to Catch Fast Signals With Slow Detectors",
+      "publisher": "American Physiological Society",
+      "author": "Demontis, Gian Carlo; Cervetto, Luigi",
+      "published_at": "2002-06",
+      "url": "https://doi.org/10.1152/nips.01364.2001",
+      "retrieved_at": "2026-10-18T16:37:11.980Z",
+      "sha256": "88cd89b3be498316f73e2e66d8dddbb6e540ac7d68dfacc6ddc7296f856f5e89",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The visual system is equipped with highly sensitive but slow detectors, yet it can resolve light changes up to 60 Hz.",
+        "Processes taking place in retinal circuits go beyond the intrinsic limits of the transduction machinery by an unconventional exploitation of voltage-dependent conductances, cleverly lined up to generate a cascade of band-pass amplification stages."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Deep Learning-Based Gain Estimation for Multi-User Software-Defined Radios in Aircraft Communications",
+      "publisher": "MDPI AG",
+      "author": "Gajjar, Viraj K.; Kosbar, Kurt L.",
+      "published_at": "2025-01-22",
+      "url": "https://doi.org/10.3390/signals6010003",
+      "retrieved_at": "2026-10-18T16:37:12.123Z",
+      "sha256": "90ecfc05217bd39029e5cf066a21a44c30156e3f35e18ae3052e669940f8e1c9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It may be helpful to integrate multiple aircraft communication and navigation functions into a single software-defined radio (SDR) platform.",
+        "To transmit these multiple signals, the SDR would first sum the baseband version of the signals.",
+        "This outgoing composite signal would be passed through a digital-to-analog converter (DAC) before being up-converted and passed through a radio frequency (RF) amplifier.",
+        "To prevent non-linear distortion in the RF amplifier, it is important to know the peak voltage of the composite.",
+        "While this is reasonably straightforward when a single modulation is used, it is more challenging when working with composite signals.",
+        "This paper describes a machine learning solution to this problem.",
+        "We demonstrate that a generalized gamma distribution (GGD) is a good fit for the distribution of the instantaneous voltage of the composite waveform.",
+        "A deep neural network was trained to estimate the GGD parameters based on the parameters of the modulators.",
+        "This allows the SDR to accurately estimate the peak of the composite voltage and set the gain of the DAC and RF amplifier, without having to generate or directly observe the composite signal."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Railway signal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=275874",
+      "retrieved_at": "2026-10-18T16:37:12.123Z",
+      "sha256": "d1b5f58c1d9354d46867de198ed4d1b7a8ec128eae118caddf293babc2b54743",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A railway signal is a visual display device that conveys instructions or provides warning of instructions regarding the driver's authority to proceed.",
+        "The driver interprets the signal's indication and acts accordingly.",
+        "Typically, a signal might inform the driver of the speed at which the train may safely proceed or it may instruct the driver to stop."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Railway signalling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=276071",
+      "retrieved_at": "2026-10-18T16:37:12.123Z",
+      "sha256": "67968fc4f5aff74dff4c549a0eeace192af59374245179bdf74bfd7087aba427",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Railway signalling (British English), or railroad signaling (American English), is a system used to control the movement of railway traffic.",
+        "Trains move on fixed rails, making them uniquely susceptible to collision.",
+        "This susceptibility is exacerbated by the enormous weight and inertia of a train, which makes it difficult to quickly stop when encountering an obstacle.",
+        "In the UK, the Regulation of Railways Act 1889 introduced a series of requirements on matters such as the implementation of interlocked block signalling and other safety measures as a direct result of the Armagh rail disaster in that year.",
+        "Most forms of train control involve movement authority being passed from those responsible for each section of a rail network (e.g.",
+        "The set of rules and the physical equipment used to accomplish this determine what is known as the method of working (UK), method of operation (US) or safe-working (Aus.).",
+        "Not all these methods require the use of physical signals, and some systems are specific to single-track railways.",
+        "Hand and arm signals were used to direct the \"train drivers\".",
+        "Foggy and poor-visibility conditions later gave rise to flags and lanterns.",
+        "Wayside signalling dates back as far as 1832, and used elevated flags or balls that could be seen from afar."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Automatic Warning System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1185168",
+      "retrieved_at": "2026-10-18T16:37:12.123Z",
+      "sha256": "2dba0677c860793a5e4f6816de9c964360fe26cce05bc73e76ad60af4868d500",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Automatic Warning System (AWS) is a railway safety system invented in the United Kingdom.",
+        "It provides a train driver with an audible indication of whether the next signal they are approaching is clear or at caution.",
+        "Depending on the upcoming signal state, the AWS will either produce a 'horn' sound (as a warning indication), or a 'bell' sound (as a clear indication).",
+        "If the train driver fails to acknowledge a warning indication, an emergency brake application is initiated by the AWS; if the driver correctly acknowledges the warning indication, by pressing an acknowledgement button, a visual 'sunflower' is displayed to the driver, as a reminder of the warning."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Deadliest Catch",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3846673",
+      "retrieved_at": "2026-10-18T16:37:12.123Z",
+      "sha256": "9ffcb5bacf1f8409840366964fa7fc7e11c0273dc05b5b2c2a2d7e0f35ca28f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Deadliest Catch is an American reality television series that premiered on the Discovery Channel on April 12, 2005.",
+        "The show follows crab fishermen aboard fishing vessels in the Bering Sea during the Alaskan king crab and snow crab fishing seasons.",
+        "The base of operations for the fishing fleet is the Aleutian Islands port of Dutch Harbor, Alaska.",
+        "Produced for the Discovery Channel, the show's title is derived from the inherent high risk of injury or death associated with this line of work.",
+        "Season 22 began airing on May 8, 2026 and concluded on September 27, 2026."
+      ]
+    }
+  ]
+}

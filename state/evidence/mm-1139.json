@@ -1,0 +1,191 @@
+{
+  "id": "mm-1139",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The AI Act and Prediction Markets: Why Horizontal AI Regulation Cannot Comprehensively Govern Platform-Level Risk",
+      "publisher": "Elsevier BV",
+      "author": "Ostojski, Przemyslaw",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6646938",
+      "retrieved_at": "2026-10-18T16:15:55.554Z",
+      "sha256": "11ad41d6ab93865e33cd99cd3998a5ae0ab0dbb40834bc55b0d7af8cf6a3aac4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Can the EU Artificial Intelligence Act govern consumer-facing prediction markets?",
+        "The short answer is: partially, but not primarily, and not comprehensively.",
+        "These are different levels of a complex regulatory problem, and a horizontal AI instrument is not designed to govern at all of them.",
+        "To map this mismatch, the article develops a four-step AI Act Applicability Matrix and runs it across the four harm pathways.",
+        "The Act performs genuine work at the component level: it constrains AI-enabled deception, vulnerability exploitation, and synthetic-content risks.",
+        "What it does not address are the structural determinants of harm embedded in trading conduct, interface design, and platform-wide information dynamics.",
+        "That work falls to MiCA, the Digital Services Act, the Unfair Commercial Practices Directive, the GDPR, and national gambling law-regimes the AI Act complements but cannot, under current law, replace.",
+        "It offers a doctrinal account of the AI Act's systematic incompleteness in this domain, distinguishing incompleteness from incapacity.",
+        "It introduces the Applicability Matrix as a transferable diagnostic tool for any AI-enabled but structurally sectoral product.",
+        "And it provides a comparative analysis explaining why each sectoral alternative is currently better suited than the AI Act to each primary harm dimension.",
+        "The framework extends beyond prediction markets: the interaction between horizontal AI regulation and sector-specific product governance is one of the foundational design challenges of the EU's emerging digital regulatory order, and this article offers a method for approaching it.",
+        "The conclusions are grounded in law and enforcement practice as of mid-2026, and identify the concrete conditions under which the incompleteness analysis would need to be revised."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The AI Regulation: Entering an AI Regulatory Winter? Why An Ad Hoc Directive on Ai in Employment Is Required",
+      "publisher": "Elsevier BV",
+      "author": "Ponce del Castillo, Aida",
+      "published_at": "2021",
+      "url": "https://doi.org/10.2139/ssrn.3873786",
+      "retrieved_at": "2026-10-18T16:15:55.554Z",
+      "sha256": "7628fad5587dc7ae3d874c9d20c6e3205763cdf5c1bd769449cf9fb69d3efa63",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Policy issues • AI systems in the context of employment are intrusive and have negative impacts on workers.",
+        "The proposed Regulation fails to address the specificity of AI uses in employment, including platform work.",
+        "An ad hoc directive on AI in employment is therefore necessary.",
+        "• As a consequence of focusing the regulatory approach on highrisk applications, the majority of use cases are considered lowrisk, not subject to any evaluation and de facto authorised.",
+        "• High-risk uses are permitted subject to compliance with specific requirements and an ex ante conformity assessment based on internal control checks.",
+        "This approach stacks the deck in favour of tech providers when the priority of this Regulation should have been to protect EU citizens and workers’ rights."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ten Reasons Why - The Case for More and Better AI Regulation",
+      "publisher": "Elsevier BV",
+      "author": "Wörsdörfer, Manuel",
+      "published_at": "2025",
+      "url": "https://doi.org/10.2139/ssrn.5627390",
+      "retrieved_at": "2026-10-18T16:15:55.554Z",
+      "sha256": "5f60c79ddf4733dba9c3c73ef08340fcdfe9091e1b811c29981df2848b19de5c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;span&gt;In recent months, there has been a noticeable shift toward AI deregulation and soft law, particularly in the U.S.",
+        "– exemplified by Trump’s revocation of Biden’s executive order – and, to a lesser extent, in the E.U., as seen in the adoption of a voluntary code of conduct for providers of general-purpose AI.",
+        "In contrast to these political trends, this paper argues that the significant risks posed by AI technologies call for stronger and more effective governance mechanisms.",
+        "Finally, the paper explores potential pathways for future AI regulation (soft vs.",
+        "AI guardrails) and proposes strategies to enhance existing regulatory frameworks, such as the E.U.’s AI Act and competition policy.&lt;/span&gt;&lt;span&gt;&lt;/span&gt;"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Paris Jackson underwent ECT for severe depression. Here’s why the treatment remains debated",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Read, John",
+      "published_at": "2026-08-26",
+      "url": "https://theconversation.com/paris-jackson-underwent-ect-for-severe-depression-heres-why-the-treatment-remains-debated-290269",
+      "retrieved_at": "2026-10-18T16:15:55.740Z",
+      "sha256": "356abb83482795ba5634335d013645a04ee383c9e7cf6ecf98063988f75cafef",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Here’s why the treatment remains debated Skip to content Academic rigor, journalistic flair Kathy Hutchins/ Shutterstock Paris Jackson underwent ECT for severe depression.",
+        "In the interview , Jackson said that although she felt the treatment “was working”, she said getting “shocked once a month for the rest of my life” wasn’t feasible for her.",
+        "ECT involves inducing a seizure by applying electricity to the head under general anaesthetic.",
+        "Each series of ECT involves between six and 12 treatments over a period of two to four weeks.",
+        "ECT is primarily used for depression , but is also given to people diagnosed with schizophrenia, catatonia (a condition where people exhibit abnormal movements and behaviour) and bipolar disorder.",
+        "The National Institute for Health and Care Excellence recommends that ECT is only used in extreme circumstances such as when a patient is suicidal and when other treatments have failed.",
+        "Some people think that ECT was abandoned long ago, but 2012 data estimated it was given to at least a million people annually , including about 2,500 in England according to 2019 estimates.",
+        "ECT has been controversial since it was first introduced in 1938, and remains debated today .",
+        "The gold standard for assessing a treatment’s effectiveness are randomised controlled trials.",
+        "In ECT studies, one group receives ECT, while the placebo group are given “sham ECT”, where they’re put under general anaesthesia but the electricity is withheld.",
+        "There have only been 11 placebo-controlled studies of ECT for depression.",
+        "A review I co-authored in 2019 assessed the quality of those 11 studies."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T16:15:55.740Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Existential risk from artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46583121",
+      "retrieved_at": "2026-10-18T16:15:55.740Z",
+      "sha256": "3a1cf7de81aa3f49a28489a8bec294d23a3373568e4ef6da45914d2de21ee242",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It has been hypothesized that substantial progress toward artificial superintelligence (ASI) will lead to human extinction or another irreversible global catastrophe.",
+        "Debates center on whether AI can achieve the capabilities needed for human extinction, the speed of self-improvement, and the effectiveness of strategies to keep it aligned with human values.",
+        "Controlling a superintelligent machine or instilling human-compatible values in it may be difficult.",
+        "Many researchers believe a superintelligent machine would likely resist attempts to disable it or change its goals, as that would prevent it from accomplishing its present goals.",
+        "It would be extremely challenging to align a superintelligence with the full breadth of significant human values and constraints.",
+        "In contrast, skeptics such as computer scientist Yann LeCun argue that superintelligent machines will have no intrinsic desire for self-preservation unless programmed to.",
+        "A June 2025 Anthropic study showed that in some circumstances, models may break laws and disobey direct commands to prevent shutdown or replacement, even at the cost of human lives.",
+        "Researchers warn that a rapid, recursive cycle of AI self-improvement could boost AI capabilities too quickly for safety measures to be implemented, especially if AI companies are racing to get the most powerful AI models.",
+        "In May 2023, hundreds of AI experts and other notable figures signed a statement by the American Center for AI Safety declaring, \"Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war\".",
+        "Following increased concern over AI risks, government leaders such as former Prime Minister of the United Kingdom Rishi Sunak, Secretary-General of the United Nations António Guterres, and California governor Gavin Newsom called for an increased focus on global AI regulation.",
+        "In October 2025, hundreds of public figures, including AI experts, five Nobel Prize laureates, and former senior US national security officials such as Michael Mullen and Susan Rice signed a statement calling for a ban on the development of superintelligence.",
+        "In July 2026, OpenAI CEO Sam Altman and SpaceXAI CEO Elon Musk said the singularity, the hypothetical point at which computers become autonomous and beyond human control, had arrived."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Government by algorithm",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63424816",
+      "retrieved_at": "2026-10-18T16:15:55.741Z",
+      "sha256": "5ba4d0fb74343dc9849da45312f87c681fa7db24cabd1a0b681f819e59ec4851",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Government by algorithm encompasses a range of approaches involving the application of computer algorithms to aspects of society and governance.",
+        "This term, also referred to as algorithmic regulation, regulation by algorithms, algorithmic governance, algocratic governance, algorithmic legal order, or algocracy, describes the use of algorithms to influence or govern sectors such as law enforcement, transportation, and land registration.",
+        "The term \"government by algorithm\" was first introduced in academic literature in 2013 as an alternative for \"algorithmic governance\".",
+        "A related term, algorithmic regulation, involves the use of computational algorithms to set standards, monitor, and modify behavior within specific contexts, such as the automation of the judiciary.",
+        "Government by algorithm raises challenges that are not fully addressed in the existing e-government literature or public administration practice.",
+        "Some sources equate cyberocracy, which is a hypothetical form of government that rules by the effective use of information, with algorithmic governance, although algorithms are not the only means of processing information.",
+        "Nello Cristianini and Teresa Scantamburlo argued that the combination of a human society and certain regulation algorithms (such as reputation-based scoring) forms a social machine."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Regulation of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63451675",
+      "retrieved_at": "2026-10-18T16:15:55.741Z",
+      "sha256": "e620f22b0f92149c5e234f81a901d62e0065dce2915523315d44b3b79ee71e91",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Regulation of artificial intelligence is the development of public sector policies and laws for promoting and regulating artificial intelligence (AI).",
+        "The regulatory and policy landscape for AI is an emerging issue in jurisdictions worldwide, including for international organizations without direct enforcement power like the IEEE or the OECD.",
+        "Since 2016, numerous AI ethics guidelines have been published in order to maintain social control over the technology.",
+        "Furthermore, organizations deploying AI have a central role to play in creating and implementing trustworthy AI, adhering to established principles, and taking accountability for mitigating risks.",
+        "The European Union adopted in 2024 a common legal framework for AI with the AI Act.",
+        "AI governance is a term used in policy, industry, and academic contexts to describe how AI systems are directed and overseen.",
+        "A 2025 systematic literature review defined it as encompassing the questions of who is accountable for AI systems, what elements are governed, when governance occurs within the development lifecycle, and how it is implemented through frameworks, tools, or models.",
+        "Charlotte Stix noted that related terms, including \"trustworthy AI\", \"responsible AI\", and \"ethical AI\", have shifted in meaning over time and are often used interchangeably."
+      ]
+    }
+  ]
+}
