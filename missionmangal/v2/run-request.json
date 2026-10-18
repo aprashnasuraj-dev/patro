@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-smoke-test-rerun",
-  "note": "Rerun after correcting the HTTPS discovery parser. Two topics max, one worker, ten-minute deadline, no YMYL, no production publish. Require exact-question answer, three independent publisher domains, minimum word count, and fail-closed editorial gate."
+  "mode": "research-grounding-relevance-smoke-test",
+  "note": "Second retry after discovering search result keyword collisions: cached and newly scraped evidence must match the exact topic; irrelevant search results cannot count as sources. Two topics max, one worker, ten-minute deadline, no production publish."
 }
