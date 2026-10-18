@@ -1,0 +1,177 @@
+name: Mission Mangal v2 (adaptive, cache-first, budget-aware; merge to main stays manual)
+
+# v2 shares LLM quotas with the v1 rescue run, so pushing this branch does NOT start it.
+# Start a run by (a) committing missionmangal/v2/run-request.json on this branch (works without touching main), or (b) "Run workflow" once this file is on the default branch.
+on:
+  push:
+    branches: [missionmangal-v2]
+    paths: ["missionmangal/v2/run-request.json"]
+  workflow_dispatch:
+    inputs:
+      source_run_id:  { description: "Run id holding pass-1 shard-* and rescue-* artifacts", default: "39137761297" }
+      resume_run_id:  { description: "Optional: previous v2 run id (continues where it stopped; budgets reset daily)", default: "" }
+      workers:        { description: "Parallel v2 workers (each gets daily_limit/workers of every provider)", default: "8" }
+      deadline_minutes: { description: "Stop starting new topics after N minutes", default: "330" }
+      allow_ymyl:     { description: "Also write health/money advice topics (adds not-professional-advice note)", default: "false" }
+      limit_per_worker: { description: "Optional cap per worker (blank = all) - use 3 for a smoke test", default: "" }
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: missionmangal-v2
+  cancel-in-progress: false
+
+env:
+  GROQ_API_KEY: ${{ secrets.GROQ_API }}
+  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER }}
+  SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_HEALTHY_CRAB }}
+  CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}
+
+jobs:
+  cfg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      source_run_id: ${{ steps.c.outputs.source_run_id }}
+      resume_run_id: ${{ steps.c.outputs.resume_run_id }}
+      workers: ${{ steps.c.outputs.workers }}
+      list: ${{ steps.c.outputs.list }}
+      deadline: ${{ steps.c.outputs.deadline }}
+      allow_ymyl: ${{ steps.c.outputs.allow_ymyl }}
+      limit: ${{ steps.c.outputs.limit }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: c
+        name: Resolve configuration (dispatch inputs, else missionmangal/v2/run-request.json)
+        env:
+          IN_SOURCE: ${{ needs.cfg.outputs.source_run_id }}
+          IN_RESUME: ${{ needs.cfg.outputs.resume_run_id }}
+          IN_WORKERS: ${{ inputs.workers }}
+          IN_DEADLINE: ${{ inputs.deadline_minutes }}
+          IN_YMYL: ${{ inputs.allow_ymyl }}
+          IN_LIMIT: ${{ inputs.limit_per_worker }}
+        run: node missionmangal/v2/cfg.mjs
+
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: v2 unit tests
+        run: node --test missionmangal/tests/v2.test.mjs
+      - name: Provider health (1 tiny call per provider, tries candidate models)
+        run: node missionmangal/v2/preflight.mjs missionmangal/v2-work/health.json
+      - uses: actions/upload-artifact@v4
+        with: { name: v2-health, path: missionmangal/v2-work/health.json, retention-days: 14 }
+
+  plan:
+    needs: [cfg, preflight]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Pass-1 shards + rescue output (source run)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { run-id: "${{ needs.cfg.outputs.source_run_id }}", github-token: "${{ github.token }}", path: missionmangal/state-in, pattern: "{shard-*,rescue-*}" }
+      - name: Previous v2 output (resume)
+        if: needs.cfg.outputs.resume_run_id != ''
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { run-id: "${{ needs.cfg.outputs.resume_run_id }}", github-token: "${{ github.token }}", path: missionmangal/state-in, pattern: "v2-out-*" }
+      - name: Reconcile state (artifacts, then checkpoint branches)
+        run: bash missionmangal/v2/gather.sh 25
+      - name: Classify + plan (no network)
+        run: node missionmangal/v2/plan.mjs ${{ needs.cfg.outputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
+      - uses: actions/upload-artifact@v4
+        with: { name: v2-base, path: "missionmangal/state\nmissionmangal/v2-work/plan.json", retention-days: 14 }
+
+  work:
+    needs: [cfg, plan, preflight]
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions: { contents: write, actions: read }
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        worker: ${{ fromJson(needs.cfg.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Scrapling (robots-aware extraction worker; v1 snapshot() remains the fallback)
+        continue-on-error: true
+        run: pip install -q "scrapling[fetchers]"
+      - uses: actions/download-artifact@v4
+        with: { name: v2-base, path: missionmangal }
+      - uses: actions/download-artifact@v4
+        with: { name: v2-health, path: missionmangal/v2-work }
+      - name: Checkpoint loop (backup every 15 min)
+        run: ( while true; do sleep 900; GITHUB_TOKEN=${{ github.token }} bash missionmangal/v2/checkpoint.sh ${{ matrix.worker }} || true; done ) &
+      - name: Run v2 worker
+        continue-on-error: true
+        run: >
+          node missionmangal/v2/run-v2.mjs --worker ${{ matrix.worker }} --workers ${{ needs.cfg.outputs.workers }}
+          --deadline-minutes ${{ needs.cfg.outputs.deadline }}
+          ${{ needs.cfg.outputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
+          ${{ needs.cfg.outputs.limit != '' && format('--limit {0}', needs.cfg.outputs.limit) || '' }}
+      - name: Final checkpoint
+        if: always()
+        run: GITHUB_TOKEN=${{ github.token }} bash missionmangal/v2/checkpoint.sh ${{ matrix.worker }} || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "v2-out-${{ matrix.worker }}", path: "missionmangal/state/v2-${{ matrix.worker }}", retention-days: 14, if-no-files-found: ignore }
+
+  finalize:
+    needs: [cfg, plan, work]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: write, actions: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Source-run artifacts (pass-1 + rescue)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { run-id: "${{ needs.cfg.outputs.source_run_id }}", github-token: "${{ github.token }}", path: missionmangal/state-in, pattern: "{shard-*,rescue-*}" }
+      - name: Earlier v2 output (resume)
+        if: needs.cfg.outputs.resume_run_id != ''
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { run-id: "${{ needs.cfg.outputs.resume_run_id }}", github-token: "${{ github.token }}", path: missionmangal/state-in, pattern: "v2-out-*" }
+      - name: This run's v2 output
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: { path: missionmangal/state-in, pattern: "v2-out-*" }
+      - name: Merge everything (best outcome per topic wins; nothing is ever downgraded)
+        run: |
+          bash missionmangal/v2/gather.sh 25
+          node missionmangal/scripts/merge-shards.mjs
+          node missionmangal/scripts/validate-approved.mjs
+          node missionmangal/v2/report.mjs
+      - name: Tests
+        run: node --test missionmangal/tests/v2.test.mjs
+      - name: Commit for merge (branch missionmangal-content-v2; main and missionmangal-content untouched)
+        run: |
+          git config user.name mission-mangal-bot; git config user.email bot@users.noreply.github.com
+          git checkout -B missionmangal-content-v2
+          git add missionmangal/config/portfolio.json missionmangal/content missionmangal/reports
+          git diff --cached --quiet || git commit -qm "Mission Mangal v2: generated pages (route gates passed)"
+          git push -f origin missionmangal-content-v2
+          cat missionmangal/reports/v2-summary.json

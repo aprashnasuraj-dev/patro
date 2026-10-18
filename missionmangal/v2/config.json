@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "routes": {
+    "general":    { "priority": 1, "min_sources": 3, "target_words": 900,  "min_words": 400, "images": "off", "mode": "compact" },
+    "structured": { "priority": 2, "min_sources": 2, "target_words": 700,  "min_words": 300, "images": "off", "mode": "compact" },
+    "research":   { "priority": 4, "min_sources": 5, "target_words": 1400, "min_words": 600, "images": "off", "mode": "compact" },
+    "ymyl":       { "priority": 5, "min_sources": 5, "target_words": 1200, "min_words": 600, "images": "off", "mode": "compact" }
+  },
+  "providers": {
+    "groq":        { "rpm": 25, "daily": 1000 },
+    "gemini":      { "rpm": 10, "daily": 1000 },
+    "openrouter":  { "rpm": 15, "daily": 200 },
+    "siliconflow": { "rpm": 30, "daily": 1000 },
+    "pollinations":{ "rpm": 10, "daily": 1000 }
+  },
+  "budget_safety": 0.85,
+  "discovery": {
+    "max_links_per_topic": 40,
+    "max_fetches_per_topic": 8,
+    "domain_delay_ms": 1200,
+    "trusted_suffixes": [".gov", ".edu", ".ac.uk", ".gov.uk", ".gc.ca", ".europa.eu", ".int", ".nih.gov", "nasa.gov", "noaa.gov", "usgs.gov", "who.int", "un.org", "worldbank.org", "oecd.org", "nature.com", "science.org", "britannica.com", "nationalgeographic.com", "smithsonianmag.com", "sciencedaily.com", "royalsociety.org", "nhm.ac.uk", "si.edu", "loc.gov", "bbc.com", "bbc.co.uk", "theconversation.com", "phys.org", "newscientist.com"],
+    "blocked_suffixes": ["facebook.com", "twitter.com", "x.com", "instagram.com", "youtube.com", "linkedin.com", "reddit.com", "pinterest.com", "archive.org", "web.archive.org", "doi.org", "wikipedia.org", "wikimedia.org", "wikidata.org"]
+  }
+}
