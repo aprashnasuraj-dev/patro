@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-publisher-priority-final",
-  "note": "Final bounded two-topic rerun with scholarly publisher landing pages prioritized ahead of broad web results and Wikipedia external links. Exact-topic evidence filter, three independent publisher domains, claim grounding, minimum length and editorial release gate are mandatory; production untouched."
+  "mode": "research-grounding-synonym-final",
+  "note": "Bounded final two-topic rerun after improving relevance matching for Himalayan/Himalaya and related research terminology. Keep three independent publisher domains, exact-question grounding, minimum word count and editorial release gate; no production publish."
 }
