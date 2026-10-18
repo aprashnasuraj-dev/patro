@@ -1,0 +1,183 @@
+{
+  "id": "mm-0964",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Explainer: why do snakes flick their tongues?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Durso, Andrew",
+      "published_at": "2014-07-31",
+      "url": "https://theconversation.com/explainer-why-do-snakes-flick-their-tongues-29935",
+      "retrieved_at": "2026-10-18T15:22:20.799Z",
+      "sha256": "d79d7f4d2eec7f1eb4e0f233ff4720c43620a36fd8d70113ec114ba8a4f97cd4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Explainer: why do snakes flick their tongues?",
+        "Published: July 31, 2014 1:05am EDT Speaks with a forked tongue.",
+        "Every so often, the snake waves it around rapidly, then retracts it.",
+        "Theories explaining the forked tongues of snakes have been around for thousands of years.",
+        "Aristotle reasoned that it provided snakes with “a twofold pleasure from savours, their gustatory sensation being as it were doubled”.",
+        "Italian astronomer Giovanni Hodierna thought snake tongues were for cleaning dirt out of their noses.",
+        "Some 17th century writers claimed to have watched snakes catch flies or other animals between the forks of their tongues, using them like forceps.",
+        "It is a common myth even today that snakes can sting you with their tongues.",
+        "Most animals with tongues use them for tasting, to clean themselves or others, or to capture or manipulate their prey.",
+        "Over the past 20 years, Kurt Schwenk , an evolutionary biologist at the University of Connecticut, has been working on understanding the function of snake tongues, and “smelling” is the closest description of what snakes do with their tongues.",
+        "Tongues that smell Snakes use their tongues for collecting chemicals from the air or ground.",
+        "Instead, these receptors are in the vomeronasal, or Jacobson’s Organ, which is in the roof of the mouth."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Smelling in stereo – the real reason snakes have flicking, forked tongues",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Schwenk, Kurt",
+      "published_at": "2021-06-16",
+      "url": "https://theconversation.com/smelling-in-stereo-the-real-reason-snakes-have-flicking-forked-tongues-142363",
+      "retrieved_at": "2026-10-18T15:22:20.928Z",
+      "sha256": "f6779441a7c7deec0d59eaef712d11ac52c632e3fcb1d8a831aca4592b89d57a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Smelling in stereo – the real reason snakes have flicking, forked tongues Skip to content Academic rigor, journalistic flair Long misunderstood, snake tongues have fascinated naturalists for centuries.",
+        "Perhaps to avoid being trampled by their giant kin, some of these early lizards sought refuge underground .",
+        "Here they evolved long, slender bodies and reduced limbs to negotiate the narrow nooks and crevices beneath the surface.",
+        "Without light, their vision faded , but to take its place, an especially acute sense of smell evolved.",
+        "It was during this period that these proto-snakes evolved one of their most iconic traits – a long, flicking, forked tongue .",
+        "These reptiles eventually returned to the surface, but it wasn’t until the extinction of dinosaurs many millions of years later that they diversified into myriad types of modern snakes .",
+        "As an evolutionary biologist , I am fascinated by these bizarre tongues – and the role they have played in snakes’ success .",
+        "A puzzle for the ages Snake tongues are so peculiar they have fascinated naturalists for centuries.",
+        "Aristotle believed the forked tips provided snakes a “twofold pleasure” from taste – a view mirrored centuries later by French naturalist Bernard Germain de Lacépède, who suggested the twin tips could adhere more closely to “ the tasty body ” of the soon-to-be snack.",
+        "Smelling with tongues Clues to the true significance of snake tongues began to emerge in the early 1900s when scientists turned their attention to two bulblike organs located just above the snake’s palate, below its nose.",
+        "Known as Jacobson’s, or vomeronasal, organs, each opens to the mouth through a tiny hole in the palate .",
+        "Vomeronasal organs are found in a variety of land animals, including mammals, but not in most primates, so humans don’t experience whatever sensation they provide."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "1. How we smell",
+      "publisher": "Oxford University Press",
+      "author": "Cobb, Matthew",
+      "published_at": "2020-05-28",
+      "url": "https://doi.org/10.1093/actrade/9780198825258.003.0001",
+      "retrieved_at": "2026-10-18T15:22:20.928Z",
+      "sha256": "ea722e710c30b3f06c292bbded5cb2b1a66f20f77c0451be2252c32c9d40ac32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "‘How we smell’ explains the processes, mechanisms, and anatomy behind smell or olfaction.",
+        "Ancient Greek and Roman philosophers argued that pleasant smells were made up of round atoms and unpleasant smells of pointed ones; while the detail is incorrect, the theory is accurate.",
+        "When we smell something, olfactory neurons send a response into the brain where they converge with cells with the same receptor type to form a ball-shaped structure, the glomerulus.",
+        "Higher order neurons then combine signals across glomeruli to extract olfactory information from the environment.",
+        "All animals with a brain share this basic wiring diagram for detecting smells."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Snakes",
+      "publisher": "VTechWorks (Virginia Tech)",
+      "author": "James A. Parkhurst",
+      "published_at": "2009-05-01",
+      "url": "https://openalex.org/W7134338038",
+      "retrieved_at": "2026-10-18T15:22:21.104Z",
+      "sha256": "4fe9c22490686fbbd7c041a3b91e68915f996d373e0999123cb9d175e93c4d14",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This publication describes the biology, behavior, and economic impacts of snakes in Virginia.",
+        "It also describes strategies to control snakes in occupied spaces and in yards and public spaces."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Reptile",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25409",
+      "retrieved_at": "2026-10-18T15:22:21.104Z",
+      "sha256": "0d71931606c1b9df09e0983cab94504921319410a028ab086ebfba684e4e5086",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Reptiles, as commonly defined, are tetrapod vertebrate animals with an ectothermic metabolism and amniotic development.",
+        "Reptiles traditionally comprise four orders: Testudines (turtles), Crocodilia (crocodiles, alligators and gharials), Squamata (lizards and snakes) and Rhynchocephalia (tuatara), with about 12,000 extant species listed in the Reptile Database.",
+        "The study of the traditional reptile orders, customarily in combination with the study of modern amphibians, is called herpetology.",
+        "Reptiles have been subject to several conflicting taxonomic definitions.",
+        "In classical evolutionary taxonomy, reptiles are gathered together under the class Reptilia ( rep-TIL-ee-ə), which corresponds to common usage.",
+        "Many cladistic systems therefore redefine Reptilia as a clade (monophyletic group) including birds, though the precise definition of this clade varies between authors.",
+        "A similar concept is clade Sauropsida, which refers to all amniotes more closely related to modern reptiles than to mammals.",
+        "The earliest known members of the reptile lineage appeared during the late Carboniferous period, having evolved from advanced reptiliomorph tetrapods which became increasingly adapted to life on dry land.",
+        "Genetic and fossil data argues that the two largest lineages of reptiles, Archosauromorpha (crocodilians, birds, and kin) and Lepidosauromorpha (lizards, and kin), diverged during the Permian period.",
+        "In addition to the living reptiles, there are many diverse groups that are now extinct, in some cases due to mass extinction events.",
+        "In particular, the Cretaceous–Paleogene extinction event wiped out the pterosaurs, plesiosaurs, and all non-avian dinosaurs alongside many species of crocodyliforms and squamates (e.g., mosasaurs).",
+        "Modern non-bird reptiles inhabit all the continents except Antarctica."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Snake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29370",
+      "retrieved_at": "2026-10-18T15:22:21.104Z",
+      "sha256": "7474ddc87e398687e22dcf449932bc0d247a4cadc5c182518ae481e3b665fd54",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Snakes are limbless reptiles of the squamate suborder Serpentes.",
+        "Snakes have skulls with significantly fewer sutures and more hypermobile articulations (i.e.",
+        "cranial kinesis) than their lizard relatives, enabling them to greatly widen the mouth and swallow prey much larger than their heads.",
+        "To accommodate their narrow bodies, snakes' paired organs (such as kidneys) appear one in front of the other instead of side by side, and most only have one functional lung.",
+        "Despite being tetrapods from a cladistic prospective, snakes lack limbs completely, although pythons and boids retain a vestigial pelvic girdle.",
+        "Additionally, secondarily aquatic groups such as the sea snakes are widespread throughout the Indo-Pacific regions, while water snakes are found worldwide.",
+        "Around thirty families are currently recognized, comprising about 520 genera and about more than 4,170 species.",
+        "They range in size from the tiny, 10.4 cm-long (4.1 in) Barbados threadsnake to the reticulated python up to 6.95 m (22.8 ft) in length.",
+        "The fossil species Titanoboa cerrejonensis was 12.8 meters (42 ft) long.",
+        "Snakes are thought to have evolved from either burrowing or aquatic lizards, perhaps during the Jurassic period, with the earliest known fossils dating to between 143 and 167 Ma ago.",
+        "The diversity of modern snakes appeared during the Paleocene epoch (c.",
+        "66 to 56 Ma ago, after the Cretaceous–Paleogene extinction event)."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Rattlesnake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=458086",
+      "retrieved_at": "2026-10-18T15:22:21.105Z",
+      "sha256": "a14e0f5f11a673a88dfa01666bd2928d681afa063b3a96f63595f3e0832a946e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rattlesnakes are venomous snakes that form the genera Crotalus and Sistrurus of the subfamily Crotalinae (the pit vipers).",
+        "Rattlesnakes are predators that live in a wide array of habitats, hunting small animals such as birds and rodents.",
+        "Rattlesnakes receive their name from the rattle located at the end of their tails, which makes a loud rattling noise when vibrated that deters predators.",
+        "Rattlesnakes are the leading contributor to snakebite injuries in North America, but rarely bite unless provoked or threatened; if treated promptly, the bites are seldom fatal.",
+        "The 36 known species of rattlesnakes have between 65 and 70 subspecies, all native to the Americas, ranging from central Argentina to southern Canada.",
+        "The largest rattlesnake, the eastern diamondback, can measure up to 2.4 m (7.9 ft) in length.",
+        "Rattlesnakes are preyed upon by hawks, weasels, kingsnakes, and a variety of other species.",
+        "Rattlesnakes are heavily preyed upon as neonates, while they are still weak and immature.",
+        "Rattlesnake populations in many areas are severely threatened by habitat destruction, poaching, and extermination campaigns."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Licking",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=928652",
+      "retrieved_at": "2026-10-18T15:22:21.105Z",
+      "sha256": "c4489e169889772e7f1d4005749fa4f5b5aec23f6b068f3d92cf57b5318f7722",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Licking is the action of passing the tongue over a surface, typically either to deposit saliva onto the surface, or to collect liquid, food or minerals onto the tongue for ingestion, or to communicate with other animals.",
+        "Many animals both groom themselves, eat or drink by licking."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "id": "mm-0313",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Soft Power Works",
+      "publisher": "Elsevier BV",
+      "author": "Vuving, Alexander",
+      "published_at": "2009",
+      "url": "https://doi.org/10.2139/ssrn.1466220",
+      "retrieved_at": "2026-10-18T14:56:27.824Z",
+      "sha256": "ef3fe72a629929b2f2d48f9b0c0029211e2f759cbd82ada555747d1a48b624b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Central questions of paper are: How does soft power works, and what makes soft power.",
+        "I argue that the concept of soft power is often misunderstood; and that is not only because of its analytic fuzziness and the popular view of power as resources.",
+        "The concept of power currency will enable one to draw a distinction between different ways of shaping preferences.",
+        "I also assemble a list of common policy tools to project soft power."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Power Systems - How Power Works in Different Systems",
+      "publisher": "Elsevier BV",
+      "author": "Fink, Gerhard",
+      "published_at": "2019",
+      "url": "https://doi.org/10.2139/ssrn.3475007",
+      "retrieved_at": "2026-10-18T14:56:27.824Z",
+      "sha256": "0f7299f9af38f3f69b1329a645054350589a2afc06173fe872803bc010fc64d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Three major power systems are described: The ‘inclusive’ totalitarian system, the ‘non-inclusive’ bureaucratic system, and the ‘exclusive’ plan targeting system.",
+        "The totalitarian system is aiming at controlling the whole population of a social system and based on resource exploitation.",
+        "The bureaucratic system is aimed at information collection and decision making according to pre-established rules.",
+        "The post-Taylor plan targeting system is aimed at determining and controlling the operative work of individual workers.",
+        "As previous communist country experiences have shown, all three systems suffer from systemic constraints, that even if the three power systems are woven together, they are finally leading to the demise of a social system.",
+        "Hope for change may come from moves towards cooperative management practices, as e.g.",
+        "suggested by William Edwards Deming, and more complex theories with higher levels of integrity and complexity, as e.g.",
+        "suggested by Steven Wallis, Foundation for the Advancement of Social Theory."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Nuclear Power in China: How It Really Works",
+      "publisher": "Griffith Research Online",
+      "author": "Xu Yi‐chong",
+      "published_at": "2012-03-01",
+      "url": "https://openalex.org/W2215376998",
+      "retrieved_at": "2026-10-18T14:56:29.619Z",
+      "sha256": "919afd840f604c7a7d4d3ab0489df11811bac83e7723d3d353a1aa21a91a611a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "China is one of the few countries in the world firmly committed to rapidly expanding the use of nuclear power.",
+        "In so doing it has adopted the formal trappings of international standards and regulations.",
+        "Despite this, Xu Yi-chong argues that the corporate, governmental and regulatory framework in China remains confusing and captive to many entrenched interests that interfere with a clear and safe regulatory environment."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "A Guide to Nuclear Power Technology: A Resource for Decision Making",
+      "publisher": "Medical Entomology and Zoology",
+      "author": "Frank J. Rahn; Achilles G. Adamantiades; J.E. Kenton",
+      "published_at": "1984-10-15",
+      "url": "https://openalex.org/W1598940973",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "77f70c0b56f86ab95fb4099c8694db1150b56d8c8e31a6e9a0e025d16fc2aac7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A comprehensive sourcebook on all aspects of nuclear technology.",
+        "This guide examines the production of nuclear power, describing the structure of the nuclear plant, how the plant operates, and how the fuel cycle works.",
+        "Topics covered include the relationship between nuclear power and proliferation, the effects of radiation on the planet, the behavior of radiation in the environment, uranium mining, reactor operations, waste disposal and decommissioning."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "How a Power Plant Works",
+      "publisher": "The University of North Carolina at Chapel Hill Digital Collections (The University of North Carolina at Chapel Hill)",
+      "author": "Betty. Debnam",
+      "published_at": "1986-12-01",
+      "url": "https://openalex.org/W7212205189",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "dfe12a0884b29a979172a09368a457192bd5a1aa88437b81ed04d8f76e185801",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How a Power Plant WorksIt takes energy to make electricity.Here are the energy sources for power plants: Co N ectric S6 percent 16 percent 11 percent • 6.",
+        "Transmission Line water How a Coal Power Plant Works 1.The coal is piled near the plant.nearby river or bay, cools the steam and 2."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Nuclear reactor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22151",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "5793205eda78d7970d529cebc12e65ffecd6a92c553382cdcace9b03d9aa9007",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A nuclear reactor is a device used to sustain a controlled fission nuclear chain reaction.",
+        "They are used for commercial electricity, marine propulsion, weapons production, and research.",
+        "Fissile nuclei (primarily uranium-235 or plutonium-239) absorb single neutrons and split, releasing energy and multiple neutrons, which can induce further fission.",
+        "Reactors stabilize this, regulating neutron absorbers and moderators in the core.",
+        "Fuel efficiency is exceptionally high; low-enriched uranium is 120,000 times more energy-dense than coal.",
+        "When the fissile nuclei splits, it generates heat; which is then passed to a coolant, usually water.",
+        "In commercial reactors, this drives turbines and electrical generator shafts.",
+        "Some reactors are used for district heating, and isotope production for medical and industrial use.",
+        "After the discovery of fission in 1938, many countries launched military nuclear research programs.",
+        "In 1942, the first artificial critical nuclear reactor, Chicago Pile-1, was built by the Metallurgical Laboratory.",
+        "From 1944, for weapons production, the first large-scale reactors were operated at the Hanford Site.",
+        "The pressurized water reactor design, used in about 70% of commercial reactors, was developed for US Navy submarine propulsion, beginning with S1W in 1953."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Nuclear power",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22153",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "406cec1bf49b48e0a5e538adfcfe9fb91bc1eaa4c6ab7dfbc3dde2838cc4862a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nuclear power is the use of nuclear reactions to produce electricity.",
+        "Nuclear power can be obtained from nuclear fission, nuclear decay and nuclear fusion reactions.",
+        "Presently, the vast majority of electricity from nuclear power is produced by nuclear fission of uranium and plutonium in nuclear power plants.",
+        "Nuclear decay processes are used in niche applications such as radioisotope thermoelectric generators in some space probes such as Voyager 2.",
+        "Reactors producing controlled fusion power have been operated since 1958 but have yet to generate net power and are not expected to be commercially available in the near future.",
+        "The global installed nuclear capacity grew to 100 GW in the late 1970s, and then expanded during the 1980s, reaching 300 GW by 1990.",
+        "The 1979 Three Mile Island accident in the United States and the 1986 Chernobyl disaster in the Soviet Union resulted in increased regulation and public opposition to nuclear power plants.",
+        "Nuclear power plants supplied 2,602 terawatt hours (TWh) of electricity in 2023, equivalent to about 9% of global electricity generation, and were the second largest low-carbon power source after hydroelectricity.",
+        "As of November 2025, there are 416 civilian fission reactors in the world, with overall capacity of 376 GW, 63 under construction and 87 planned, with a combined capacity of 66 GW and 84 GW, respectively.",
+        "The United States has the largest fleet of nuclear reactors, generating almost 800 TWh per year with an average capacity factor of 92%.",
+        "Most new reactors under construction are generation III reactors in Asia.",
+        "Nuclear power is a safe and sustainable energy source that reduces carbon emissions."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Nuclear power plant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=207347",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "a211bc14ef726568cc340c721e69cca984780d38df6c8b70bbb5e38d7adfddda",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A nuclear power plant (NPP), also known as a nuclear power station (NPS), nuclear generating station (NGS) or atomic power station (APS) is a thermal power station in which the heat source is a nuclear reactor.",
+        "As is typical of thermal power stations, heat is used to generate steam that drives a steam turbine connected to a generator that produces electricity.",
+        "As of October 2025, the International Atomic Energy Agency reported that there were 416 nuclear power reactors in operation in 31 countries around the world, and 62 nuclear power reactors under construction.",
+        "Most nuclear power plants use thermal reactors with enriched uranium in a once-through fuel cycle.",
+        "Fuel is removed when the percentage of neutron absorbing atoms becomes so large that a chain reaction can no longer be sustained, typically three years.",
+        "It is then cooled for several years in on-site spent fuel pools before being transferred to long-term storage.",
+        "The spent fuel, though low in volume, is high-level radioactive waste.",
+        "While its radioactivity decreases exponentially, it must be isolated from the biosphere for hundreds of thousands of years, though newer technologies (like fast reactors) have the potential to significantly reduce this.",
+        "Because the spent fuel is still mostly fissionable material, some countries (e.g.",
+        "France and Russia) reprocess their spent fuel by extracting fissile and fertile elements for fabrication into new fuel, although this process is more expensive than producing new fuel from mined uranium.",
+        "All reactors breed some plutonium-239, which is found in the spent fuel, and because Pu-239 is the preferred material for nuclear weapons, reprocessing is seen as a weapon proliferation risk.",
+        "Building a nuclear power plant often spans five to ten years, which can accrue significant financial costs, depending on how the initial investments are financed."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Angra Nuclear Power Plant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1405420",
+      "retrieved_at": "2026-10-18T14:56:30.275Z",
+      "sha256": "961ea6c989fff266d0c18dc99a1a349c896e02777c9008ba179e55303cb2f9bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Angra Nuclear Power Plant is Brazil's only nuclear power plant.",
+        "It is located at the Central Nuclear Almirante Álvaro Alberto (CNAAA) on the Itaorna Beach in Angra dos Reis, Rio de Janeiro.",
+        "It consists of two pressurized water reactors (PWR), Angra I, with a net output of 609 MWe, first connected to the power grid in 1985 and Angra II, with a net output of 1,275 MWe, connected in 2000.",
+        "Work on a third reactor, Angra III, with a projected output of 1,245 MWe, began in 1984 but was halted in 1986.",
+        "Work started again on 1 June 2010 for entry into service in 2015 and later delayed into the 2020s."
+      ]
+    }
+  ]
+}

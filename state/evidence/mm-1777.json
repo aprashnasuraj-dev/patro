@@ -1,0 +1,166 @@
+{
+  "id": "mm-1777",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "BGP/MPLS IP Virtual Private Networks (VPNs)",
+      "publisher": "RFC Editor",
+      "author": "Rosen, E.; Rekhter, Y.",
+      "published_at": "2006-02",
+      "url": "https://www.rfc-editor.org/info/rfc4364/",
+      "retrieved_at": "2026-10-18T16:06:17.844Z",
+      "sha256": "5d0e61b83b4f265908fa1600cddd6f16abf086c2bbc98171a2afc0619943e895",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "RFC 4364: BGP&#x2F;MPLS IP Virtual Private Networks (VPNs) | RFC Editor Your browser has JavaScript disabled.",
+        "Most of this site works without JS, but some features require it.",
+        "If something seems broken please try enabling JavaScript and reloading the page.",
+        "The JavaScript used by this site is served directly from IETF infrastructure and does not include any code that links to a third party service.",
+        "February 2006 BGP/MPLS IP Virtual Private Networks (VPNs) Status of This Memo This document specifies an Internet standards track protocol for the Internet community, and requests discussion and suggestions for improvements.",
+        "Please refer to the current edition of the &quot;Internet Official Protocol Standards&quot; (STD 1) for the standardization state and status of this protocol.",
+        "Abstract This document describes a method by which a Service Provider may use an IP backbone to provide IP Virtual Private Networks (VPNs) for its customers.",
+        "Data packets are tunneled through the backbone, so that the core routers do not need to know the VPN routes.",
+        "Rosen & Rekhter Standards Track [Page 1] RFC 4364 BGP/MPLS IP VPNs February 2006 Table of Contents 1 .",
+        "Introduction ....................................................",
+        "Virtual Private Networks ...................................",
+        "Customer Edge and Provider Edge ............................"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Applicability Statement for BGP/MPLS IP Virtual Private Networks (VPNs)",
+      "publisher": "RFC Editor",
+      "author": "Rosen, E.",
+      "published_at": "2006-02",
+      "url": "https://www.rfc-editor.org/info/rfc4365/",
+      "retrieved_at": "2026-10-18T16:06:18.855Z",
+      "sha256": "81c6a7ea03f1ab704566874058f4e3b6930f21f5953addc2b5881828139ab883",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "RFC 4365: Applicability Statement for BGP&#x2F;MPLS IP Virtual Private Networks (VPNs) | RFC Editor Your browser has JavaScript disabled.",
+        "Most of this site works without JS, but some features require it.",
+        "If something seems broken please try enabling JavaScript and reloading the page.",
+        "The JavaScript used by this site is served directly from IETF infrastructure and does not include any code that links to a third party service.",
+        "Category: Informational February 2006 Applicability Statement for BGP/MPLS IP Virtual Private Networks (VPNs) Status of This Memo This memo provides information for the Internet community.",
+        "Abstract This document provides an Applicability Statement for the Virtual Private Network (VPN) solution described in RFC 4364 and other documents listed in the References section.",
+        "Introduction ....................................................",
+        "SP Provisioning Model ...........................................",
+        "Supported Topologies and Traffic Types ..........................",
+        "Isolated Exchange of Data and Routing Information ...............",
+        "Access Control and Authentication ...............................",
+        "Security Considerations ........................................."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Analysis of the Security of BGP/MPLS IP Virtual Private Networks (VPNs)",
+      "publisher": "RFC Editor",
+      "author": "Behringer, M.",
+      "published_at": "2006-02",
+      "url": "https://www.rfc-editor.org/info/rfc4381/",
+      "retrieved_at": "2026-10-18T16:06:30.481Z",
+      "sha256": "0634a5d1019d35a6c9b45d6df567eb78b3ebdfafaf2b289d75fc35515c380069",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "RFC 4381: Analysis of the Security of BGP&#x2F;MPLS IP Virtual Private Networks (VPNs) | RFC Editor Your browser has JavaScript disabled.",
+        "Most of this site works without JS, but some features require it.",
+        "If something seems broken please try enabling JavaScript and reloading the page.",
+        "The JavaScript used by this site is served directly from IETF infrastructure and does not include any code that links to a third party service.",
+        "Behringer Request for Comments: 4381 Cisco Systems Inc Category: Informational February 2006 Analysis of the Security of BGP/MPLS IP Virtual Private Networks (VPNs) Status of This Memo This memo provides information for the Internet community.",
+        "IESG Note The content of this RFC was at one time considered by the IETF, and therefore it may resemble a current IETF work in progress or a published IETF work.",
+        "This RFC is not a candidate for any level of Internet Standard.",
+        "The IETF disclaims any knowledge of the fitness of this RFC for any purpose, and in particular notes that the decision to publish is not based on IETF review for such things as security, congestion control or inappropriate interaction with deployed protocols.",
+        "The RFC Editor has chosen to publish this document at its discretion.",
+        "Readers of this RFC should exercise caution in evaluating its value for implementation and deployment.",
+        "Abstract This document analyses the security of the BGP/MPLS IP virtual private network (VPN) architecture that is described in RFC 4364 , for the benefit of service providers and VPN users.",
+        "The analysis shows that BGP/MPLS IP VPN networks can be as secure as traditional layer-2 VPN services using Asynchronous Transfer Mode (ATM) or Frame Relay."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Virtual private network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=147130",
+      "retrieved_at": "2026-10-18T16:06:30.482Z",
+      "sha256": "34f80ab5d390c6fe1121fef6259e1f30fdd76721d6bb8682595d5573640b565a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A virtual private network (VPN) is an overlay network that uses network virtualization to extend a private network across a public network, such as the Internet, via the use of encryption and tunneling protocols.",
+        "In a VPN, a tunneling protocol is used to transfer network messages from one network host to another.",
+        "Host-to-network VPNs are commonly used by organizations to allow off-site users secure access to an office network over the Internet.",
+        "Site-to-site VPNs connect two networks, such as an office network and a datacenter.",
+        "Provider-provisioned VPNs isolate parts of the provider's own network infrastructure in virtual segments, in ways that make the contents of each segment private with respect to the others.",
+        "Individuals also use VPNs to encrypt and attempt to anonymize their network traffic, with VPN services selling access to their own private networks.",
+        "VPNs can enhance usage privacy by making an ISP unable to access the private data exchanged across the VPN.",
+        "However, the VPN provider and the online service being accessed via the VPN may have visibility of the user's activities.",
+        "Through encryption, VPNs enhance confidentiality and reduce the risk of successful external data sniffing attacks."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "OpenVPN",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=858492",
+      "retrieved_at": "2026-10-18T16:06:30.482Z",
+      "sha256": "fe8baa15c48e2943eceee60e963a57d5095759b71e0ce0cc0464389595a7c8c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "OpenVPN is a virtual private network (VPN) system that implements techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.",
+        "OpenVPN allows peers to authenticate each other using pre-shared secret keys, certificates or username/password.",
+        "When used in a multiclient-server configuration, it allows the server to release an authentication certificate for every client, using signatures and certificate authority.",
+        "It uses the OpenSSL encryption library extensively, as well as the TLS protocol, and contains many security and control features.",
+        "As it uses a custom security protocol that utilizes SSL/TLS for key exchange.",
+        "It is capable of traversing network address translators (NATs) and firewalls.",
+        "SoftEther VPN, a multi-protocol VPN server, also has an implementation of the OpenVPN protocol.",
+        "It was written by James Yonan and is free software, released under the terms of the GNU General Public License version 2 (GPLv2)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Private browsing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19142892",
+      "retrieved_at": "2026-10-18T16:06:30.482Z",
+      "sha256": "9b9028f0b6d3c386dcaa7fbffdf3811117334f44bc93ab70bf41497f03de66df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Private browsing (also known as incognito mode or private mode) is a feature in most web browsers that enhances user privacy.",
+        "In this mode, the browser initiates a temporary session separate from its main session and user data.",
+        "The primary purpose of these modes is to ensure that data and history from a specific browsing session do not remain on the device or get accessed by another user of the same device.",
+        "In web development, it can be used to quickly test displaying pages as they appear to first-time visitors.",
+        "Private browsing modes do not necessarily protect users from being tracked by other websites or their Internet service provider (ISP).",
+        "This is usually why some people mistake private browsing for a virtual private network."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "NordVPN",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=56428874",
+      "retrieved_at": "2026-10-18T16:06:30.482Z",
+      "sha256": "3cd182bae9453055194b5eeb72d9767e1433f5452bdec79b248206d5fc614196",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Founded in 2012, NordVPN is developed by the Dutch company Nord Security (formerly Nordsec Ltd), a division of Cyberspace B.V.",
+        "Nord Security is a cybersecurity software company operating within the broader network of Tesonet, a Lithuanian startup accelerator and business incubator.",
+        "Its offices are located in Lithuania, the United Kingdom, Panama, and the Netherlands.",
+        "The service has applications for Microsoft Windows, macOS, Linux, Android, iOS, Android TV, and tvOS."
+      ]
+    }
+  ]
+}

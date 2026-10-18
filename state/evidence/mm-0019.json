@@ -1,0 +1,159 @@
+{
+  "id": "mm-0019",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How to Learn and Teach Economics with Large Language Models, Including GPT",
+      "publisher": "Elsevier BV",
+      "author": "Cowen, Tyler; Tabarrok, Alexander T.",
+      "published_at": "2023",
+      "url": "https://doi.org/10.2139/ssrn.4391863",
+      "retrieved_at": "2026-10-18T14:53:49.622Z",
+      "sha256": "b7c479cea330101e649f5e7a6004c7aa58dd6f45f2f5752b48bdc0174f292919",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "GPTs, such as ChatGPT and Bing Chat, are capable of answering economics questions, solving specific economic models, creating exams, assisting with research, generating ideas, and enhancing writing, among other tasks.",
+        "This paper highlights how these innovative tools differ from prior software and necessitate novel methods of interaction.",
+        "By providing examples, tips, and guidance, we aim to optimize the use of GPTs and LLMs for learning and teaching economics effectively."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Towards Making Transformer-Based Language Models Learn How Children Learn",
+      "publisher": "Boise State University, Albertsons Library",
+      "author": "Mahdy, Yousra",
+      "published_at": null,
+      "url": "https://doi.org/10.18122/td.1975.boisestate",
+      "retrieved_at": "2026-10-18T14:53:50.591Z",
+      "sha256": "0581a607564e0983523b19052862dabb945ac8977431cf089b7909b4fd4425a2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Transformer-based Language Models (LMs), learn contextual meanings for words using a huge amount of unlabeled text data.",
+        "These models show outstanding performance on various Natural Language Processing (NLP) tasks.",
+        "However, what the LMs learn is far from what the meaning is for humans, partly due to the fact that humans can differentiate between concrete and abstract words, but language models make no distinction.",
+        "Concrete words are words that have a physical representation in the world such as “chair”, while abstract words are ideas such as “democracy”.",
+        "The process of learning word meanings starts from early childhood when children acquire their first language.",
+        "Children learn their first language through interacting with the physical world by using simple referring expressions.",
+        "They do not need many examples to learn from, and they learn concrete words first from interacting with their physical world and abstract words later, yet language models are not capable of referring to objects or learning concrete aspects of words.",
+        "In this thesis, I derived motivation from the way children acquire language and combined a concrete representation of certain words into LMs while leveraging its existing training regime.",
+        "My methodology involves using referring expressions to visual objects as a way of linking the visual world representations (images) with text.",
+        "This takes place by extracting word-level visual embeddings for concrete words from images, while extracting word-level contextual embeddings for abstract words from text and then using them to train language models.",
+        "In order to enable the model to differentiate between concrete and abstract words, I use a dataset that gives an indication of the level of concreteness for words to determine how information about each word was applied during training.",
+        "The work presented in this thesis is evaluated using a standard language understanding benchmark by analyzing the effect of using the proposed training regime on the language model and comparing its performance with traditional language models trained on large corpus data."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "From Data to Knowledge: Evaluating How Efficiently Language Models Learn Facts",
+      "publisher": "Association for Computational Linguistics",
+      "author": "Christoph, Daniel; Ploner, Max; Haller, Patrick",
+      "published_at": "2025",
+      "url": "https://doi.org/10.18653/v1/2025.l2m2-1.3",
+      "retrieved_at": "2026-10-18T14:53:51.441Z",
+      "sha256": "833ea603f956ab8dba6343c2f58b434a799480dc301b5ffbaf59eae4251ca7da",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Once you create that issue, the correction will be reviewed by a staff member.",
+        "⚠️ Mobile Users: Submitting this form to create a new issue will only work with github.com, not the GitHub Mobile app.",
+        "Please use this form only to correct data that is out of line with the PDF.",
+        "See our corrections guidelines if you need to change the PDF.",
+        "You may use &lt;b>...&lt;/b> for bold , &lt;i>...&lt;/i> for italic , &lt;u>...&lt;/u> for underline , &lt;sc>...&lt;/sc> for small-caps , &lt;tt>...&lt;tt> for typewriter text , &lt;url>...&lt;/url> for URLs, &lt;a href=...> for hyperlinks, and &lt;par/> for paragraph breaks.",
+        "Verification against PDF Ensure that the new title/authors match the snapshot below.",
+        "(If there is no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above—including middle initials, hyphens, and accents.",
+        "Create GitHub issue for staff review Abstract Sample efficiency is a crucial property of language models with practical implications for training efficiency.",
+        "In real-world text, information follows a long-tailed distribution.",
+        "Yet, we expect models to learn and recall frequent and infrequent facts.",
+        "Sample efficient models are better equipped to handle this challenge of learning and retaining rare information without requiring excessive exposure.",
+        "This study analyzes multiple models of varying architectures and sizes, all trained on the same pre-training data."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1911810",
+      "retrieved_at": "2026-10-18T14:53:51.441Z",
+      "sha256": "ec332bb5676e39ba7e6cd37b8d14c3527c2580794462da7484d6c47c79cadcdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A language model is a computational model that predicts sequences in natural language.",
+        "Large language models (LLMs), currently their most advanced form as of 2026, are predominantly based on transformers trained on larger datasets (frequently using texts scraped from the public internet).",
+        "They have superseded recurrent neural network-based models, which had previously superseded the purely statistical models, such as the word n-gram language model."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "BERT (language model)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62026514",
+      "retrieved_at": "2026-10-18T14:53:51.441Z",
+      "sha256": "5ce4da7855e221e33df1cc56e2d70609840fa9abc6f81ff2513c68e343cfb54f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bidirectional encoder representations from transformers (BERT) is a language model introduced in October 2018 by researchers at Google.",
+        "It learns to represent text as a sequence of vectors using self-supervised learning.",
+        "BERT dramatically improved the state of the art for large language models.",
+        "As of 2026, BERT is a common methodological component in natural language processing (NLP) research.",
+        "BERT is trained by masked token prediction and next sentence prediction.",
+        "With this training, BERT learns contextual, latent representations of tokens in their context, similar to ELMo and GPT-2.",
+        "It found applications for many natural language processing tasks, such as coreference resolution and polysemy resolution.",
+        "It improved on ELMo and spawned the study of \"BERTology\", which attempts to interpret what is learned by BERT.",
+        "BERT was originally implemented in the English language at two model sizes, BERTBASE (110 million parameters) and BERTLARGE (340 million parameters).",
+        "Both were trained on the Toronto BookCorpus (800M words) and English Wikipedia  (2,500M words).",
+        "On March 11, 2020, 24 smaller models were released, the smallest being BERTTINY with just 4 million parameters."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Foundation model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70984276",
+      "retrieved_at": "2026-10-18T14:53:51.441Z",
+      "sha256": "31f65b0c3b4cfc34f7e70a9a2dd61028330d32b600be534ea6b28c477300e90f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In artificial intelligence, a foundation model (FM), also known as large x model (LxM, where \"x\" is a variable representing any text, image, sound, etc.), is a machine learning or deep learning model trained on vast datasets so that it can be applied across a wide range of use cases.",
+        "Generative AI applications like large language models (LLMs) are common examples of foundation models.",
+        "Building foundation models is often highly resource-intensive, with the most advanced models costing hundreds of millions of dollars to cover the expenses of acquiring, curating, and processing massive datasets, as well as the computational power required for training.",
+        "These costs stem from the need for sophisticated infrastructure, extended training times, and advanced hardware, such as graphics processing units.",
+        "In contrast, adapting an existing foundation model for a specific task or using it directly is far less costly, as it uses pre-trained capabilities and typically requires only fine-tuning on smaller, task-specific datasets.",
+        "Early examples of foundation models are language models like OpenAI's GPT series.",
+        "In addition to text, foundation models have been developed for visual images, including DALL-E and Stable Diffusion."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Generative pre-trained transformer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72970020",
+      "retrieved_at": "2026-10-18T14:53:51.441Z",
+      "sha256": "277d240ec2488c162c4bc79543d5a2664cad43a84f2ca7ea1eef3ee7bf009bfc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A generative pre-trained transformer (GPT) is a type of large language model (LLM) that is widely used in generative artificial intelligence chatbots.",
+        "GPTs are based on a deep learning architecture called the transformer.",
+        "They are pre-trained on large datasets of unlabeled content, and able to generate novel content.",
+        "OpenAI was the first to apply generative pre-training to the transformer architecture, introducing the GPT-1 model in 2018.",
+        "The chatbot ChatGPT, released in late 2022 (using GPT-3.5), was followed by many competitor chatbots using their own generative pre-trained transformers to generate text, such as Gemini, DeepSeek and Claude.",
+        "GPTs are primarily used to generate text, but can be trained to generate other kinds of data.",
+        "Multimodal GPTs can process or generate multiple types of data, such as text, images and audio.",
+        "To improve performance on complex tasks, reasoning GPTs allocate more computation time analyzing the problem before generating an output."
+      ]
+    }
+  ]
+}

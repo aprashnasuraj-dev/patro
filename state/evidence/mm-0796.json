@@ -1,0 +1,159 @@
+{
+  "id": "mm-0796",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Eiffel Tower gets bigger every summer – here’s why",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Gordejuela, Federico",
+      "published_at": "2025-08-06",
+      "url": "https://theconversation.com/the-eiffel-tower-gets-bigger-every-summer-heres-why-261904",
+      "retrieved_at": "2026-10-18T15:13:51.329Z",
+      "sha256": "260f4ff476f47d7e4e9b70267f76630c7b7e10c920d2e24a5514838277e1b1a0",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The name was proposed by engineers Maurice Koechlin and Émile Nougier to Gustave Eiffel, who oversaw the tower’s construction.",
+        "It hinted at the desire to build something extraordinary, a technological feat that would set a new height record.",
+        "However, as temperatures rise during the summer months, the Eiffel Tower grows even taller than its original design.",
+        "A lightweight iron structure The Eiffel Tower was erected at the 1889 World’s Fair to commemorate the centenary of the French Revolution.",
+        "Eiffel chose puddled iron for its construction, a material he knew well and had used in previous projects with good results.",
+        "This ferrous material can withstand high levels of stress , which allowed for the construction of a large, very light tower that would be safe from horizontal wind forces.",
+        "To give an idea of how light the tower is, its weight of 7,300 tonnes is close to the weight of the volume of air contained within it – around 6,300 tonnes.",
+        "The Eiffel Tower was intended to be a prime observation point, as well as a base for radio broadcasting.",
+        "The tower itself is a gigantic triangular lattice structure , much like the Garabit Viaduct (also designed by Eiffel’s office) and the Forth Bridge in Scotland, both from the same period.",
+        "All of these structures grow when the temperature of the material increases.",
+        "However, unlike bridges, which behave in a more complex manner, the Eiffel Tower experiences mainly vertical growth and shrinkage due to changes in temperature.",
+        "Read more: How the Eiffel Tower became silent cinema’s icon Materials that grow and shrink We know that most solids expand when the temperature rises and contract when it falls."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Eiffel Tower–Anti",
+      "publisher": "Duke University Press",
+      "author": null,
+      "published_at": "2024-09-01",
+      "url": "https://doi.org/10.1215/9781478059189-013",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "e8751927d384708099e181caa078707fa02d98eb87081750277d55b8f10b0189",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "If the Ferris wheel shows the way the wheels of capitalism turned ever faster as it ratcheted down violence and reinforced the desires of the market, Tatlin’s Tower could be said to be an attempt to do the reverse.",
+        "Anchored to a Russian Constructivist vision of modernity in which science meets a form of violent intensity, Tatlin’s Tower could be said to combine a heavy dose of functionalism with telluric mythology.",
+        "If the Babel-like exoskeleton of Tatlin’s Tower reveals the intensity of the theological, its internal vault system shows the rationality of science and what Svetlana Boym once called “enchanted technology.” It was a technology that was many miles from the telluricism of Mao."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Otterbein Towers Spring 2007",
+      "publisher": "Digital Commons - Otterbein (Otterbein University)",
+      "author": "Otterbein Towers",
+      "published_at": "2007-01-01",
+      "url": "https://openalex.org/W3123543787",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "1cdd969c215187f2bdeebe566309fcea1c7164dbe3be3036589290899dc9e112",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Otterbein Students Learning from Afar; Features: Snapshots from Abroad; Alumni Step Forward for Science; Integration of the Sciences; Regulars: College News: Former Board of Trustees Reunite; New Home Page; Martin Luther King Jr.",
+        "Convocation; Chemistry Students at National Meeting; Letters; Classnotes; Milestones; The “O” Club; Investing in Otterbein; Alumni Notes, etc."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Eiffel Tower",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9232",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "ffee0d8f72f52019abf44bfa557483c59582bb6f3371915f70d58c658d7fd5e3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a lattice tower on the Champ de Mars in Paris, France.",
+        "It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+        "Locally nicknamed \"La dame de fer\" (French for \"Iron Lady\") for its use of wrought iron, it was constructed as the centrepiece of the 1889 World's Fair, and to crown the centennial anniversary of the French Revolution.",
+        "Although initially criticised by some of France's leading artists and intellectuals for its design, it has since become a global cultural icon of France and one of the most recognisable structures in the world.",
+        "The Eiffel Tower is the most visited monument with an entrance fee in the world: 6.91 million people ascended it in 2015.",
+        "It was designated a monument historique in 1964, and was named part of a UNESCO World Heritage Site (\"Paris, Banks of the Seine\") in 1991.",
+        "The tower is 330 metres (1,083 ft) tall, about the same height as an 81-storey building, and the tallest structure in Paris.",
+        "Its base is square, measuring 125 metres (410 ft) on each side.",
+        "During its construction, the Eiffel Tower surpassed the Washington Monument to become by far the tallest human-made structure in the world, a title it held for 41 years until the Chrysler Building in New York City was finished in 1930.",
+        "It was the first structure in the world to surpass both the 200-metre and 300-metre mark in height.",
+        "Due to the addition of a broadcasting aerial at the top of the tower in 1957, it is now taller than the Chrysler Building by 11 metres (36 ft).",
+        "Excluding transmitters, the Eiffel Tower is the second tallest free-standing structure in France after the Millau Viaduct."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Paris",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22989",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "d79ff1b92620dd0eef0735ff339bb67de49849b24a758ff491b26f9259d05d5b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), as of January 2026, and a metropolitan population of 13.3 million (2023).",
+        "Located on the Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU).",
+        "Paris is nicknamed the \"City of Light\" mainly due to its leading role in the Age of Enlightenment.",
+        "Administratively, Paris is divided into twenty arrondissements (districts), each with their own cultural identity.",
+        "Haussmann's renovation of Paris, which created new boulevards, parks, and public works, gave birth to a modern city known as the \"capital of the 19th century\".",
+        "Paris is a major railway, motorway, and air-transport hub; in 2024 Charles de Gaulle Airport was the EU's busiest airport.",
+        "Paris has one of the most sustainable transportation systems in the world and is one of only two cities that have received the Sustainable Transport Award twice.",
+        "Its Art Nouveau-decorated Métro has become a symbol of the city.",
+        "Parts of the city along the Seine have been designated a UNESCO World Heritage Site since 1991.",
+        "The president of France and both houses of the French Parliament sit in Paris.",
+        "The city hosts many sporting events, such as the French Open, and is the home of the association football club Paris Saint-Germain and the rugby union club Stade Français.",
+        "Paris has also hosted the Summer Olympics three times, in 1900, 1924 and 2024."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Statue of Liberty",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28617",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "e9c857c71a04fae9937a03db2a491aa7cffa38f634f3df9aa131f2595dae1f30",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Statue of Liberty (Liberty Enlightening the World, French: La Liberté éclairant le monde; colloquially known as Lady Liberty) is a colossal neoclassical sculpture of a robed and crowned woman on Liberty Island, part of New York City, in New York Harbor.",
+        "The copper-clad statue, a gift to the United States from the people of France, was designed by French sculptor Frédéric Auguste Bartholdi, and its metal framework built by Gustave Eiffel.",
+        "The statue is a figure of a classically draped woman, inspired by the Roman goddess of liberty, Libertas.",
+        "She holds a torch above her head with her right hand, and in her left hand carries a tabula ansata inscribed JULY IV MDCCLXXVI (July 4, 1776, in Roman numerals), the date of the U.S.",
+        "With her left foot she steps on a broken chain and shackle, commemorating the national abolition of slavery following the American Civil War.",
+        "In 1865, the French historian and abolitionist Édouard de Laboulaye proposed a monument to commemorate the upcoming centennial of U.S.",
+        "independence (1876), the perseverance of American democracy and the liberation of the nation's slaves.",
+        "The Franco-Prussian War delayed progress until 1875, when Laboulaye proposed that the people of France finance the statue and the United States provide the site and build the pedestal.",
+        "Bartholdi completed the head and the torch-bearing arm before the statue was fully designed, and these pieces were exhibited for publicity at international expositions.",
+        "The torch-bearing arm was displayed at the Centennial Exposition in Philadelphia in 1876, and in Madison Square Park in Manhattan from 1876 to 1882.",
+        "Fundraising proved difficult, especially for the Americans; publisher Joseph Pulitzer of the New York World started a drive for donations to finish the project.",
+        "The statue was built in France, shipped overseas in crates, and assembled on the completed pedestal on what was then called Bedloe's Island."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "List of one-hit wonders in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=154265",
+      "retrieved_at": "2026-10-18T15:13:57.339Z",
+      "sha256": "a485eb58569b44499ba443a38acf7c26b9400f8c21a253b3f9a5db9ed83a1c2c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A one-hit wonder is a musical artist who is successful with one hit song, but without a comparable subsequent hit.",
+        "The term may also be applied to an artist who is remembered for only one hit despite other successes.",
+        "This article contains artists known primarily for one hit song in the United States, who are regarded as one-hit wonders by at least two sources in media, even though the artist may have had multiple hits abroad."
+      ]
+    }
+  ]
+}

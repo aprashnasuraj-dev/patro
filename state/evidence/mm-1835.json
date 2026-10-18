@@ -1,0 +1,101 @@
+{
+  "id": "mm-1835",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Preserving the lighthouses of Martha's Vineyard.",
+      "publisher": "Digital WPI",
+      "author": "Benjamin Falk; Joel E. Smith; Justin Paul Wahlstrom",
+      "published_at": "1999-01-01",
+      "url": "https://openalex.org/W2954853664",
+      "retrieved_at": "2026-10-18T16:06:33.258Z",
+      "sha256": "c6c251a2561a59201ac2d5ae0c404764f673693f814e8ad5e9edc8cbc5bea15b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This project prepared for the Martha's Vineyard Historical Society describes the steps needed to preserve the Lighthouses leased by the Society.",
+        "This evaluation examines preservation against weather, structural failure, erosion, and human tampering.",
+        "Financing the preservation involves investigating grant studies, enhancing donation expectations and tour profits through advertisement, as well as miscellaneous contributions.",
+        "Tourists, the local community, and history buffs honor the Lighthouses; a plan for the future of these monuments needs to be established."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Augustin-Jean Fresnel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1141",
+      "retrieved_at": "2026-10-18T16:06:33.258Z",
+      "sha256": "b6c2a617e01054ca0cba7718dd10c3f8fd31bdea6fefdaab96cf4b3b3bf10354",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Augustin-Jean Fresnel (10 May 1788 – 14 July 1827) was a French civil engineer and physicist whose research in optics led to the almost unanimous acceptance of the wave theory of light, fully supplanting Newton's corpuscular theory, from the late 1830s  until the end of the 19th century.",
+        "He is perhaps better known for inventing the catadioptric (reflective/refractive) Fresnel lens and for pioneering the use of \"stepped\" lenses to extend the visibility of lighthouses, saving countless lives at sea.",
+        "The simpler dioptric (purely refractive) stepped lens, first proposed by Count Buffon  and independently reinvented by Fresnel, is used in screen magnifiers and in condenser lenses for overhead projectors.",
+        "Fresnel gave the first satisfactory explanation of diffraction by straight edges, including the first satisfactory wave-based explanation of rectilinear propagation.",
+        "By further supposing that light waves are purely transverse, Fresnel explained the nature of polarization.",
+        "Fresnel had a lifelong battle with tuberculosis, to which he succumbed at the age of 39.",
+        "He lived just long enough to receive recognition from his peers, including (on his deathbed) the Rumford Medal of the Royal Society, and his name is ubiquitous in the modern terminology of optics and waves.",
+        "After the wave theory of light was subsumed by Maxwell's electromagnetic theory in the 1860s, some attention was diverted from the magnitude of Fresnel's contribution."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fresnel lens",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63978",
+      "retrieved_at": "2026-10-18T16:06:33.258Z",
+      "sha256": "e66122ab2b94f3313cab1a15d404d6300b2191d2e4bb0512db5011da66f2adab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Fresnel lens ( FRAY-nel, -⁠nəl;  FREN-el, -⁠əl; or  fray-NEL) is a type of composite compact lens which reduces the amount of material required compared to a conventional lens by dividing the lens into a set of concentric annular sections.",
+        "The simpler dioptric (purely refractive) form of the lens was first proposed by Georges-Louis Leclerc, Comte de Buffon, and independently reinvented by the French physicist Augustin-Jean Fresnel (1788–1827) for use in lighthouses.",
+        "The design allows the construction of lenses of large aperture and short focal length without the mass and volume of material that would be required by a lens of conventional design.",
+        "A Fresnel lens can be made much thinner than a comparable conventional lens, in some cases taking the form of a flat sheet.",
+        "Because of its use in lighthouses, it has been called \"the invention that saved a million ships\"."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Spurn",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=108238",
+      "retrieved_at": "2026-10-18T16:06:33.258Z",
+      "sha256": "e222723b27b07e790e217fa2695e710eb4fbb3b6362d20284f86753696805c19",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Spurn is a narrow sand tidal island located off the tip of the coast of the East Riding of Yorkshire, England that reaches into the North Sea and forms the north bank of the mouth of the Humber Estuary.",
+        "It was a spit with a semi-permanent connection to the mainland, but a storm in 2013 made the road down to the end of Spurn impassable to vehicles at high tide.",
+        "The island is over three miles (five kilometres) long, almost half the width of the estuary at that point, and as little as 50 yards (45 metres) wide in places.",
+        "The southernmost tip is known as Spurn Head or Spurn Point and was, until early 2023, the home to an RNLI lifeboat station and two disused lighthouses.",
+        "Spurn Head covers 280 acres (113 hectares) above high water and 450 acres (181 hectares) of foreshore.",
+        "It has been owned since 1960 by the Yorkshire Wildlife Trust and is a designated national nature reserve, heritage coast and is part of the Humber Flats, Marshes and Coast Special Protection Area."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Smeaton's Tower",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1434727",
+      "retrieved_at": "2026-10-18T16:06:33.258Z",
+      "sha256": "7a43b50c5bd9d244b401983f62e6469bbfd7d1f1d2beb4f2e5cf38942a6eb2b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Smeaton's Tower is the reconstructed upper section of the third Eddystone Lighthouse, now a memorial to its designer, civil engineer John Smeaton.",
+        "A major step forward in lighthouse design, Smeaton's structure was in use from 1759 to 1877, until erosion of the ledge it was built upon forced new construction.",
+        "The tower was largely dismantled and rebuilt on Plymouth Hoe in Plymouth, Devon, where it stands today."
+      ]
+    }
+  ]
+}

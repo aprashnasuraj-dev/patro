@@ -1,0 +1,117 @@
+{
+  "id": "mm-0147",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Front Matter",
+      "publisher": "University of Pennsylvania Press, Inc.",
+      "author": null,
+      "published_at": "2022-09-27",
+      "url": "https://doi.org/10.2307/j.ctv2g7v1hk.1",
+      "retrieved_at": "2026-10-18T14:53:57.563Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "City of Ada Elevator: Economic Emergency Program",
+      "publisher": "University of Minnesota Digital Conservancy (University of Minnesota)",
+      "author": "Brigid Tuck; Rani A Bhattacharyya; Neil Linscheid",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W2266577684",
+      "retrieved_at": "2026-10-18T14:53:57.563Z",
+      "sha256": "06db4f720489cd7863cbcdbbd9a069765f4fc73b2eb7efe50a0e6b154f150b67",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This archival publication may not reflect current scientific knowledge or recommendations.",
+        "Current information available from the University of Minnesota Extension: https://www.extension.umn.edu."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The 13th Floor Elevators",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=151360",
+      "retrieved_at": "2026-10-18T14:53:58.301Z",
+      "sha256": "821fbd816b10cc2d59e8263da0e5e8c6196f9bd6b7b6868186f650d3fe8e884e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 13th Floor Elevators was an American rock band from Austin, Texas, United States, formed by guitarist and vocalist Roky Erickson, electric jug player Tommy Hall, and guitarist Stacy Sutherland.",
+        "The band was together from 1965 to 1969, and during that period released four albums and seven singles for the International Artists record label.",
+        "Their debut single \"You're Gonna Miss Me\" was a national Billboard No.",
+        "Considered pioneers of psychedelic rock, the Elevators were the first band to refer to their music as such, with the first-known use of the term appearing on their business card in January 1966, likely coined by member Tommy Hall.",
+        "As open proponents of drugs such as LSD, the group was targeted by local law enforcement, resulting in the 1969 arrest of Erickson for drug possession, effectively ending the group.",
+        "With their inclusion on the 1972 compilation Nuggets: Original Artyfacts from the First Psychedelic Era, 1965-1968, they also came to be recognized as precursors of punk rock.",
+        "Their contemporary influence has been acknowledged by a wide range of artists.",
+        "In 2009, International Artists released a ten-CD box set entitled Sign of the 3-Eyed Men, which included the mono and new, alternative, stereo mixes of the original albums, together with two albums of previously unreleased material and a number of rare live recordings."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Grain elevator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=255158",
+      "retrieved_at": "2026-10-18T14:53:58.301Z",
+      "sha256": "b7f58aedffa52d94a4762a4dc3bcef64fac458352e06d853f4b22e21f5795737",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A grain elevator or grain terminal is a facility designed to stockpile or store grain.",
+        "In the grain trade, the term \"grain elevator\" also describes a tower containing a bucket elevator or a pneumatic conveyor, which scoops up grain from a lower level and deposits it in a silo or other storage facility.",
+        "In most cases, the term \"grain elevator\" also describes the entire elevator complex, including receiving and testing offices, weighbridges, and storage facilities.",
+        "It may also mean organizations that operate or control several individual elevators, in different locations.",
+        "In Australia, the term describes only the lifting mechanism.",
+        "Before the advent of the grain elevator, grain was usually handled in bags rather than in bulk (large quantities of loose grain).",
+        "The Dart elevator was a major innovation—it was invented by Joseph Dart, a merchant, and Robert Dunbar, an engineer, in 1842, in Buffalo, New York.",
+        "Using the steam-powered flour mills of Oliver Evans as their model, they invented the marine leg, which scooped loose grain out of the hulls of ships and elevated it to the top of a marine tower.",
+        "Early grain elevators and bins were often built of framed or cribbed wood, and were prone to fire.",
+        "The first Peavey-Haglin Experimental Concrete Grain Elevator still stands today in St.",
+        "The Peavey invented elevator was the first cylindrical concrete grain elevator in the world and is now widely used across Canada and the US.",
+        "Grain elevator bins, tanks, and silos are now usually made of steel or reinforced concrete."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Sky lobby",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1169501",
+      "retrieved_at": "2026-10-18T14:53:58.301Z",
+      "sha256": "52a0591c5936d8d782aad802bb48e1820181f43bd1ece938020bd27081bdc708",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A sky lobby is an intermediate interchange floor in a skyscraper where people can change from an express elevator that stops only at the sky lobby to a local elevator that stops at a subset of higher floors.",
+        "Early uses of the sky lobby include the original Twin Towers of the World Trade Center and 875 North Michigan Avenue (John Hancock Center) in Chicago."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Elevator operator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2828266",
+      "retrieved_at": "2026-10-18T14:53:58.301Z",
+      "sha256": "6fb8a642a98b2d7e82617ca90b71b4120c99ae9765ea7539e5d946cf7649f8a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An elevator operator (North American English), liftman (in Commonwealth English, usually lift attendant), or lift girl (in British English), is a person specifically employed to operate a manually operated elevator.",
+        "While largely considered an obsolete occupation, elevator operators continue to work in historic installations and fill modern-day niches."
+      ]
+    }
+  ]
+}

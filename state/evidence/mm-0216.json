@@ -1,0 +1,168 @@
+{
+  "id": "mm-0216",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Giant batteries to store wind and solar power can speed up South Africa’s energy transition – how that can happen",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Apata, Gbenga",
+      "published_at": "2024-08-26",
+      "url": "https://theconversation.com/giant-batteries-to-store-wind-and-solar-power-can-speed-up-south-africas-energy-transition-how-that-can-happen-236114",
+      "retrieved_at": "2026-10-18T14:54:32.725Z",
+      "sha256": "85f103f13e643fb8feb6d2cf865275a65b73eb3a112a1036fc3f8ee4fec98146",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Giant batteries to store wind and solar power can speed up South Africa’s energy transition – how that can happen Skip to content Academic rigor, journalistic flair A massive battery energy storage system next to the Source Energy Technology solar energy project in Zhangye, China.",
+        "Storage of renewable energy is very important for this transition.",
+        "To keep the national grid stable, renewable energy must be stored somewhere and supplied reliably.",
+        "The country has already made strides in integrating renewable energy into its power grid through the Renewable Energy Independent Power Producer Procurement Programme .",
+        "Since 2010, this has attracted 110 private independent power projects that have invested R277.2 billion (US$14.6 billion) in renewable energy.",
+        "But South Africa’s path to a sustainable energy future is complicated by problems with energy storage technologies.",
+        "As an electrical engineer and researcher , I focus on energy transitions and the various barriers to the renewable energy rollout across sub-Saharan Africa.",
+        "My recent research investigates the role of energy storage in South Africa’s energy transition.",
+        "I reviewed all the existing literature on energy storage technologies, policies and market trends in South Africa to determine the overall state of renewable energy storage.",
+        "I also wanted to find out how renewable energy storage can bring more renewable energy into the national grid, and make the grid more reliable.",
+        "For example, lithium-ion batteries can store energy in various amounts, from small (phone-sized) to large (town-sized), depending on their size and purpose.",
+        "This is done by pumping water from a lower dam to an upper dam during off-peak hours, and then releasing it to generate electricity when needed."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Batteries Store and Release Energy: Explaining\nBasic Electrochemistry",
+      "publisher": "American Chemical Society (ACS)",
+      "author": "Schmidt-Rohr, Klaus",
+      "published_at": "2018-08-23",
+      "url": "https://doi.org/10.1021/acs.jchemed.8b00479",
+      "retrieved_at": "2026-10-18T14:54:32.726Z",
+      "sha256": "35abe3c7d0af200f008c4321878c0065653eb62bd1072cee8cfca09bf80691ee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Batteries are valued as devices that store chemical energy and convert it into electrical energy.",
+        "Unfortunately, the standard description of electrochemistry does not explain specifically where or how the energy is stored in a battery; explanations just in terms of electron transfer are easily shown to be at odds with experimental observations.",
+        "Importantly, the Gibbs energy reduction in an electrochemical reaction in a battery also involves atom transfer between different phases.",
+        "The ionization energy in water can be calculated as the sum of gas-phase ionization energies and the hydration energy of the metal ion.",
+        "Entropy plays only a limited role, for instance, driving the processes in concentration cells.",
+        "The prediction of the energy of batteries in terms of cohesive and aqueous ionization energies is in excellent agreement with experiment.",
+        "Since the electrical energy released is equal to the reduction in Gibbs energy, which is the hallmark of a spontaneous process, the analysis also explains why specific electrochemical processes occur.",
+        "In several important cases, including the classical Zn/Cu battery, the difference in the bulk-metal cohesive energies is the origin of the electrical energy released.",
+        "For instance, metallic Zn, Cd, or Mg lack stabilization by bonding via unoccupied d-orbitals and are therefore of higher energy than most transition metals.",
+        "Indeed, metallic zinc is shown to be the high-energy material in the alkaline household battery.",
+        "The lead–acid car battery is recognized as an ingenious device that splits water into 2 H+(aq) and O2– during charging and derives much of its electrical energy from the formation of the strong O–H bonds of H2O during discharge.",
+        "The analysis provides an explanation of basic electrochemistry that will help students better understand this important topic."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Could one million smart pool pumps ‘store’ renewable energy better than giant batteries?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Meyn, Sean",
+      "published_at": "2015-06-12",
+      "url": "https://theconversation.com/could-one-million-smart-pool-pumps-store-renewable-energy-better-than-giant-batteries-41937",
+      "retrieved_at": "2026-10-18T14:54:33.702Z",
+      "sha256": "ab61cc28d9303d2c39ba6195833971938b703dbf5baa89402e7a0406652dfcd6",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Could one million smart pool pumps ‘store’ renewable energy better than giant batteries?",
+        "Skip to content Academic rigor, journalistic flair Could one million smart pool pumps ‘store’ renewable energy better than giant batteries?",
+        "Published: June 12, 2015 6:18am EDT Lots of wind blowing – often at night when there’s little demand for power.",
+        "California plans to spend billions of dollars for batteries to even out the flow of power from solar and wind, much the way shock absorbers smooth out bumps on the road.",
+        "In my research , I’ve found that we can accommodate a grid powered 50% by renewable energy without the use of batteries.",
+        "Systems flexible enough to accommodate the ups and downs of solar and wind production can be made by adjusting the power at millions of homes and businesses on a minute-by-minute or even second-by-second basis.",
+        "This approach requires no new hardware, some control software and a bit of consumer engagement.",
+        "Massive balancing act Already, electric power procured from the wind or sun is leading to large and small “bumps” in the energy fed to the grid.",
+        "For example, on a typical week in the Pacific Northwest, power can increase or decrease by more than one gigawatt in an hour.",
+        "That’s the equivalent of the output from one huge nuclear power plant able to supply a million homes.",
+        "Wind power generation is volatile and not always in sync with the actual demand for power (red line, below the blue).",
+        "Bonneville Power Administration This is an enormous challenge to grid operators in this region."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24130",
+      "retrieved_at": "2026-10-18T14:54:33.703Z",
+      "sha256": "af36f2e22b45415d47061425677440b20742a8bd466f80742d3aff79d0610a16",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy storage is the capture of energy produced at one time for use at a later time to reduce imbalances between energy demand and energy production.",
+        "A device that stores energy is generally called an accumulator or battery.",
+        "Energy comes in multiple forms including radiation, chemical, gravitational potential, electrical potential, electricity, elevated temperature, latent heat, potential and kinetic.",
+        "Energy storage involves converting energy from forms that are difficult to store to more conveniently or economically storable forms.",
+        "Some technologies provide short-term energy storage, while others can endure for much longer.",
+        "Bulk energy storage is currently dominated by hydroelectric dams, both conventional as well as pumped.",
+        "Grid energy storage is a collection of methods used for energy storage on a large scale within an electrical power grid.",
+        "Fossil fuels such as coal and gasoline store ancient energy derived from sunlight by organisms that later died, became buried and over time were then converted into these fuels.",
+        "Food (which is made by the same process as fossil fuels) is a form of energy stored in chemical form."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Thermal energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2465250",
+      "retrieved_at": "2026-10-18T14:54:33.703Z",
+      "sha256": "24c2db0b668ee63d91290c5aa20a62b9c4442dc7a7384fba3d340e45b7764287",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Thermal energy storage (TES) is the storage of thermal energy for later reuse.",
+        "Employing widely different technologies, it allows thermal energy to be stored for hours, days, or months.",
+        "Scale, both of storage and use, vary from small to large – from individual processes to district, town, or region as part of a thermal energy network.",
+        "Usage examples are the balancing of energy demand between daytime and nighttime, storing summer heat for winter heating, or winter cold for summer cooling (seasonal thermal energy storage).",
+        "Heat storage, both seasonal and short term, is considered an important means for cheaply balancing high shares of variable renewable electricity production and integration of electricity and heating sectors in energy systems almost or completely fed by renewable energy."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Battery electric vehicle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=16105212",
+      "retrieved_at": "2026-10-18T14:54:33.703Z",
+      "sha256": "78028fc6607a763855ee0f3e09e0ef13b095b08ba69effd1247b32e9f202608d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "BEVs include – but are not limited to  – all battery-driven electric cars, buses, trucks, forklifts, motorcycles and scooters, bicycles, skateboards, railcars, boat and personal watercraft, although in common usage the term usually refers specifically to passenger cars.",
+        "In 2016, there were 210 million electric bikes worldwide used daily.",
+        "Cumulative global sales of highway-capable light-duty pure electric car vehicles passed the one million unit milestone in September 2016.",
+        "As of September 2024, the world's top-selling all-electric car in history is the Tesla Model Y, with an estimated 3.4 million sales, followed by the Tesla Model 3 with over 2.6 million sales, and the Wuling Hongguang Mini EV with 1.4 million sales as of May 2024."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Electric battery",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19174720",
+      "retrieved_at": "2026-10-18T14:54:33.703Z",
+      "sha256": "206e278cc6b6aa966f93a2cdb792ba85f4dc56f2eda51bc16684d3dd17c3e8cd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electric battery is a source of electric power consisting of one or more electrochemical cells with external connections for powering electrical devices.",
+        "When a battery is supplying power, its positive terminal is the cathode and its negative terminal is the anode.",
+        "When a battery is connected to an external electric load, those negatively charged electrons flow through the circuit and reach  the positive terminal, thus causing a redox reaction by attracting positively charged ions, or cations.",
+        "Thus, higher energy reactants are converted to lower energy products, and the free-energy difference is delivered to the external circuit as electrical energy.",
+        "Historically the term \"battery\" specifically referred to a device composed of multiple cells; however, the usage has evolved to include devices composed of a single cell.",
+        "Primary (single-use or \"disposable\") batteries are used once and discarded, as the electrode materials are irreversibly changed during discharge; a common example is the alkaline battery used for flashlights and a multitude of portable electronic devices.",
+        "Secondary (rechargeable) batteries can be discharged and recharged multiple times using an applied electric current; the original composition of the electrodes can be restored by reverse current.",
+        "Examples include the lead–acid automotive battery  used in internal combustion engine vehicles,  and lithium-ion batteries used for portable electronics  and electric cars.",
+        "Batteries come in many shapes and sizes, from miniature cells used to power hearing aids and wristwatches to, at the largest extreme, huge battery banks the size of rooms that provide standby or emergency power for telephone exchanges and computer data centers.",
+        "Batteries have much lower specific energy (energy per unit mass) than common fuels such as gasoline.",
+        "In automobiles, this is somewhat offset by the higher efficiency of electric motors in converting electrical energy to mechanical work, compared to combustion engines."
+      ]
+    }
+  ]
+}

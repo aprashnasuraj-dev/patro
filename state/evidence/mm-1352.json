@@ -1,0 +1,144 @@
+{
+  "id": "mm-1352",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Team Sudoku",
+      "publisher": "Rowman & Littlefield Publishers",
+      "author": null,
+      "published_at": "2022",
+      "url": "https://doi.org/10.5040/9798216420231.ch-2",
+      "retrieved_at": "2026-10-18T15:40:08.151Z",
+      "sha256": "d3e65c197856935c09abe45a01b8148c6a795a46fa69a2e103632ec33fa80699",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Why and How Sudoku in Schools --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Sudoku Variants on the Torus",
+      "publisher": "Scholarship @ Claremont (The Claremont Colleges)",
+      "author": "Kira A Wyld",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2624888407",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "7d48ebc3071e604c7e27cfbf22193605299335c6acb60b5a8e7415d493fe8d3d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper examines the mathematical properties of Sudoku puzzles defined on a Torus.",
+        "We seek to answer the questions for these variants that have been explored for the traditional Sudoku.",
+        "The end result of this paper is a deeper mathematical understanding of logic puzzles of this type, as well as a fun new puzzle which could be played."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mathematics of Sudoku: Enumeration of the 16x16 Magic X Sudokus",
+      "publisher": "Digital WPI",
+      "author": "Ethan Douglas Thompson",
+      "published_at": "2006-04-27",
+      "url": "https://openalex.org/W3033476877",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "1a8796b4db63b635b8a2a64e5867ed31a56812392bed92d99bd5117c1a27eab3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A 16x16 Magic X Sudoku is a Sudoku with the additional constraints that each block is a Magic Square and each number appears once on the two long diagonals.",
+        "Nine binary orthogonal symmetries were discovered, for a reduction of the solution space by a factor of 512, and 1 non-orthogonal binary symmetry, which further reduces the problem by a factor between 1 and 2.",
+        "Enumerating the 16x16 Magic X Sudokus requires significantly more computational resources than available even after optimization."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "P versus NP problem",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6115",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "60263a9fbb432768b21030b8468a02a15dd889291b235ef83a8f01f54e24e76d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The P versus NP problem is a major unsolved problem in theoretical computer science.",
+        "Informally, it asks whether every decision problem for which a proposed positive answer can be quickly verified can also be quickly solved.",
+        "Here, \"quickly\" means an algorithm exists that solves the task and runs in polynomial time (as opposed to, say, exponential time), meaning the task completion time is bounded above by a polynomial function on the size of the input to the algorithm.",
+        "The general class of questions that some algorithm can answer in polynomial time is \"P\" or \"class P\".",
+        "For some questions, there is no known way to find an answer quickly, but if provided with an answer, it can be verified quickly.",
+        "The class of questions where an answer can be verified in polynomial time is \"NP\", standing for \"nondeterministic polynomial time\".",
+        "An answer to the P versus NP question would determine whether problems that can be verified in polynomial time can also be solved in polynomial time.",
+        "If P ≠ NP, which is widely believed, it would mean that there are problems in NP that are harder to compute than to verify: they could not be solved in polynomial time, but the answer could be verified in polynomial time.",
+        "The problem has been called the most important open problem in computer science.",
+        "Aside from being an important problem in computational theory, a proof either way would have profound implications for mathematics, cryptography, algorithm research, artificial intelligence, game theory, multimedia processing, philosophy, economics and many other fields.",
+        "It is one of the seven Millennium Prize Problems selected by the Clay Mathematics Institute, each of which carries a US$1,000,000 prize for the first correct solution."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Recreational mathematics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26446",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "c84f50e8289fd94df69f53558d85b267b7b03cfae7b4bd13862358f7a75bf29c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recreational mathematics is mathematics carried out for recreation (entertainment) rather than as a strictly research-and-application-based professional activity or as a part of a student's formal education.",
+        "The Mathematical Association of America (MAA) has seventeen Special Interest Groups which includes a recreational math group called SIGMAA-Rec.",
+        "Mathematical competitions (such as those sponsored by mathematical associations) are also categorized under recreational mathematics."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of unsolved problems in mathematics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=183091",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "bfc1697f0cb924e2fe097443b9fa86a5a788e20378941c471b12c548586ea3ed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many mathematical problems have been stated but not yet solved.",
+        "Some problems belong to more than one discipline and are studied using techniques from different areas.",
+        "Prizes are often awarded for the solution to a long-standing problem, and some lists of unsolved problems, such as the Millennium Prize Problems, receive considerable attention.",
+        "This list is a composite of notable unsolved problems mentioned in previously published lists, including but not limited to lists considered authoritative, and the problems listed here vary widely in both difficulty and importance."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Sudoku",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1365807",
+      "retrieved_at": "2026-10-18T15:40:08.152Z",
+      "sha256": "30f8b6fc1924c4096ffd6080712cd3c29aff580db4b650bd328eb930ebf7664d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "'digit-single'; originally called Number Place) is a logic-based, combinatorial number-placement puzzle.",
+        "In classic sudoku, the objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid (also called \"boxes\", \"blocks\", or \"regions\") contains all of the digits from 1 to 9.",
+        "The puzzle setter provides a partially completed grid, which, for a well-posed puzzle, has a single solution.",
+        "Although single-digit numbers are conventionally used as the nine symbols in the puzzle, the puzzle would be the same if other symbols were used, as no calculations are applied to the numbers when solving a conventional sudoku puzzle.",
+        "French newspapers featured similar puzzles in the 19th century, and the modern form of the puzzle first appeared in 1979 puzzle books by Dell Magazines under the name Number Place."
+      ]
+    }
+  ]
+}

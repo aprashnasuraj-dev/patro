@@ -1,0 +1,199 @@
+{
+  "id": "mm-1577",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Blockchain and privacy: How decentralized systems reshaped data security",
+      "publisher": "Wiley",
+      "author": "Mollashaik, Arfi Siddik",
+      "published_at": "2025-07-28",
+      "url": "https://doi.org/10.22541/au.175373167.76782088/v1",
+      "retrieved_at": "2026-10-18T15:56:55.093Z",
+      "sha256": "bc025d0327338a5dee6d4dc0d0ac4fbac12caed2ec8ed5b615ea24d915c1c177",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This research evaluates how blockchain technology transforms data security functions, especially regarding privacy protection.",
+        "The rise of decentralized systems led to Blockchain emerging as an answer for resolving traditional data security problems from breaches to centralization risks.",
+        "This research investigates blockchain technology, which advanced from its initial cryptocurrency framework into an all-encompassing data protection solution.",
+        "Research shows that Blockchain improves privacy through encryption methods and distributed operations.",
+        "A qualitative research approach enables examination of blockchain solutions with privacy components alongside analysis of zero-knowledge proofs and decentralized storage facilities.",
+        "Technology solutions provide users with comprehensive data visibility and reduce exposure to unauthorized intruders and free them from central control systems.",
+        "The adaptive security structure of blockchain technology functions as the industry-leading answer to privacy breaches by establishing strengthened data protection protocols for all operational activities."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Blockchain and AI Enable Personal Data Privacy and Support Cybersecurity",
+      "publisher": "IntechOpen",
+      "author": "Heister, Stanton; Yuthas, Kristi",
+      "published_at": "2022-01-12",
+      "url": "https://doi.org/10.5772/intechopen.96999",
+      "retrieved_at": "2026-10-18T15:56:55.093Z",
+      "sha256": "5e5d9692ba8bece3ae6ae89b4fdd7e166facbc371fd1663764527db120b0ac32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recent increases in security breaches and digital surveillance highlight the need for improved privacy and security, particularly over users’ personal data.",
+        "Advances in cybersecurity and new legislation promise to improve data protection.",
+        "Blockchain and distributed ledger technologies provide novel opportunities for protecting user data through decentralized identity and other privacy mechanisms.",
+        "These systems can allow users greater sovereignty through tools that enable them to own and control their own data.",
+        "Artificial intelligence provides further possibilities for enhancing system and user security, enriching data sets, and supporting improved analytical models."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How blockchain could prevent future data breaches",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Lemieux, Victoria",
+      "published_at": "2020-01-21",
+      "url": "https://theconversation.com/how-blockchain-could-prevent-future-data-breaches-130122",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "3a64c355733e07f85f12071e16aace32b543344a6330bf3ff17e01c0fa1a5b7c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How blockchain could prevent future data breaches Skip to content Academic rigor, journalistic flair As data breaches occur more frequently, could blockchain provide greater protection for our health data?",
+        "The data included name, address, email, login, passwords, date of birth, health card number and lab test results.",
+        "This event would be distressing enough, but it came on the heel of reports that, over a nine-month period in 2019, 19 million Canadians had already had their data breached .",
+        "Consumers’ burden Unfortunately, it appears that there is not much individual consumers can do to protect themselves.",
+        "The only way that consumers can protect themselves is to use strong passwords and authentication, regularly check credit card statements, credit applications and histories, insurance claims and the like.",
+        "This passes a large portion of the burden onto individual consumers.",
+        "Read more: LifeLabs data breach: Hackers could still hold health records of 15M Canadians The cost of such data breaches is high for society as a whole, too.",
+        "The result is an erosion of trust and a reluctance to use services that gather sensitive health information, even if consumers could greatly benefit from receiving a service that diagnoses health risks and supports the maintenance or improvement their overall health.",
+        "This reluctance may stem from uncertainty about how health data services will store and use their data over time.",
+        "The Atlantic looks at DNA home-testing kits and related privacy issues.",
+        "Recent revelations about how platforms like Facebook and 23andMe use individuals’ sensitive personal data validates concerns that data may be shared with third parties without informed consent, adding to consumer concerns about data theft.",
+        "Faced with the threat of ongoing data breaches and unauthorized secondary use of their data, some Canadians seem willing to try novel solutions, such as blockchain technology , to address the issue."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Digital Twins and Blockchain: How Trustworthy Data Exchange Can Drive Better Business in Construction and Beyond",
+      "publisher": "Design Computation",
+      "author": "Geater, Jon",
+      "published_at": "2021-10-20",
+      "url": "https://doi.org/10.47330/cbc.2021.ovri6760",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "9982fd0ee11cf08ff4b3bf51433d44c2a72f39407535ad407cc5347b0638076c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Advanced digital technology including Digital Twins and Blockchain promise significant improvements in efficiency and innovation in the physical world of construction by streamlining processes through automation, and improving operations through detailed data insights.",
+        "However, this opportunity comes with a risk: importing data and software from external parties creates a complex and fast-moving supply chain that requires constant verification, else bad data can poison automata and compromise business operations.",
+        "This work presents Dynamic Resilience: a paradigm for trustworthy contextual decision-making based on zero trust principles that aim to keep operations safe and secure even with changing conditions and emerging threats."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Blockchain: Blueprint for a New Economy",
+      "publisher": "OpenAlex",
+      "author": "Melanie Swan",
+      "published_at": "2015-01-24",
+      "url": "https://openalex.org/W893234787",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "bbeacf9390570275836673ade7fe00212d5277afef9fb7a6c0926cbd6ea9d8e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bitcoin is starting to come into its own as a digital currency, but the blockchain technology behind it could prove to be much more significant.",
+        "This book takes you beyond the currency (Blockchain 1.0) and smart contracts (Blockchain 2.0) to demonstrate how the blockchain is in position to become the fifth disruptive computing paradigm after mainframes, PCs, the Internet, and mobile/social networking.",
+        "Topics include:Concepts, features, and functionality of Bitcoin and the blockchain Using the blockchain for automated tracking of all digital endeavors Enabling censorship?",
+        "Mastering Bitcoin: Unlocking Digital Crypto-Currencies introduces Bitcoin and describes the technology behind Bitcoin and the blockchain.",
+        "Blockchain: Blueprint for a New Economy considers theoretical, philosophical, and societal impact of cryptocurrencies and blockchain technologies."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bitcoin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28249265",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "a3d417c6d8276735549af9d53fac0bda909913722c524384bd10650060ff0734",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bitcoin (abbreviation: BTC; sign: ₿) is the first decentralized cryptocurrency.",
+        "Based on a free-market ideology, bitcoin was invented in 2008 when an unknown person published a white paper under the pseudonym of Satoshi Nakamoto.",
+        "Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.",
+        "From 2021 to 2025, El Salvador adopted it as legal tender currency before revoking it.",
+        "As bitcoin is pseudonymous, its use by criminals has attracted the attention of regulators, leading to its ban by several countries.",
+        "Bitcoin works through the collaboration of computers, each of which acts as a node in the peer-to-peer bitcoin network.",
+        "Each node maintains an independent copy of a public distributed ledger of transactions, called a blockchain, without central oversight.",
+        "Transactions are validated through the use of cryptography, preventing one person from spending another person's bitcoin, as long as the owner of the bitcoin keeps certain sensitive data secret.",
+        "Consensus between nodes about the content of the blockchain is achieved using a computationally intensive process based on proof of work, called mining, which is performed by purpose-built computers.",
+        "Mining consumes large quantities of electricity and has been criticized for its environmental impact."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Proof of stake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=41143378",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "6af3873138e5f098e45eb5d47e2992da405032de83b7cd2ea2c67ce94d3a3f88",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Proof-of-stake (PoS) protocols are a class of consensus mechanisms for blockchains that work by selecting validators in proportion to their quantity of holdings in the associated cryptocurrency.",
+        "This is done to avoid the computational cost of proof-of-work (PoW) schemes.",
+        "The first functioning use of PoS for cryptocurrency was Peercoin in 2012, although its scheme, on the surface, still resembled a PoW."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Blockchain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44065971",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "21a35f48fa2010ff829fb8ffe241ff57adb0305cb62e3ef077640b4a252e04f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A blockchain is a distributed ledger with growing lists of records (blocks) that are securely linked together via cryptographic hashes.",
+        "Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data (generally represented as a Merkle tree, where data nodes are represented by leaves).",
+        "Since each block contains information about the previous block, they effectively form a chain (viz.",
+        "linked list data structure), with each additional block linking to the ones before it.",
+        "Consequently, blockchain transactions are resistant to alteration because, once recorded, the data in any given block cannot be changed retroactively without altering all subsequent blocks and obtaining network consensus to accept these changes.",
+        "Blockchains are typically managed by a peer-to-peer (P2P) computer network for use as a public distributed ledger, where nodes collectively adhere to a consensus algorithm protocol to add and validate new transaction blocks.",
+        "Although blockchain records are not unalterable, since blockchain forks are possible, blockchains may be considered secure by design and exemplify a distributed computing system with high Byzantine fault tolerance.",
+        "A blockchain was created by a person (or group of people) using the name (or pseudonym) Satoshi Nakamoto in 2008 to serve as the public distributed ledger for bitcoin cryptocurrency transactions, based on previous work by Stuart Haber, W.",
+        "The implementation of the blockchain within bitcoin made it the first digital currency to solve the double-spending problem without the need for a trusted authority or central server.",
+        "The bitcoin design has inspired other applications and blockchains that are readable by the public and are widely used by cryptocurrencies.",
+        "Computerworld called the marketing of such privatized blockchains without a proper security model \"snake oil\"; however, others have argued that permissioned blockchains, if carefully designed, may be more decentralized and therefore more secure in practice than permissionless ones."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Non-fungible token",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57306201",
+      "retrieved_at": "2026-10-18T15:56:55.231Z",
+      "sha256": "4e368a2ed7cbab2a5d2de65d5d22ec3033de9990c6fccfa21101079e860c2824",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A non-fungible token (NFT) is a unique digital identifier that is recorded on a blockchain and is used to certify ownership and authenticity.",
+        "They typically contain references to digital files such as artworks, photos, videos, and audio.",
+        "Because NFTs are uniquely identifiable, they differ from cryptocurrencies (which are fungible, hence the name non-fungible token), and as a result they cannot be copied, substituted, or subdivided.",
+        "Their ownership can be transferred by the owner, allowing NFTs to be sold and traded.",
+        "Initially pitched in 2017 as a new class of investment asset, NFT trading increased from US$82 million in 2020 to US$17 billion in 2021.",
+        "Its market was occasionally compared to an economic bubble or a Ponzi scheme.",
+        "In 2022, the NFT market collapsed; a May 2022 estimate was that the number of sales was down over 90% compared to 2021.",
+        "By September 2023 one report claimed that over 95% of NFT collections had zero monetary value.",
+        "Proponents claim that NFTs provide a public certificate of authenticity or proof of ownership, but the legal rights conveyed by an NFT can be uncertain.",
+        "The ownership of an NFT as defined by the blockchain has no inherent legal meaning and does not necessarily grant copyright, intellectual property rights, or other legal rights over its associated digital file.",
+        "An NFT does not restrict the sharing or copying of its associated digital file and does not prevent the creation of NFTs that reference identical files.",
+        "NFTs have been used as speculative investments and have drawn criticism for the energy cost and carbon footprint associated with some types of blockchain, as well as their use in art scams."
+      ]
+    }
+  ]
+}

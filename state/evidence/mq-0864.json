@@ -1,0 +1,102 @@
+{
+  "id": "mq-0864",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Cyprus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5593",
+      "retrieved_at": "2026-10-18T17:19:20.893Z",
+      "sha256": "193cec59dd1b8e67484f0b5bfd2d13b9883843c204672195bc274620f2eec80a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cyprus, officially the Republic of Cyprus, is an island country in the eastern Mediterranean Sea, located off the coast of the Levant mainland in West Asia.",
+        "The island of Cyprus, which is the third largest and third most populous island in the Mediterranean, is divided along the United Nations Buffer Zone between the internationally recognised Republic of Cyprus and the Turkish Republic of Northern Cyprus, which is recognised only by Turkey.",
+        "The south of the island also hosts the British sovereign military bases of Akrotiri and Dhekelia.",
+        "Cyprus was first settled by hunter-gatherers around 13,000 years ago, with farming communities emerging by 8500 BC.",
+        "The late Bronze Age saw the emergence of Alashiya, an urbanised society closely connected to the wider Mediterranean world.",
+        "Cyprus experienced waves of settlement by Mycenaean Greeks at the end of the 2nd millennium BC.",
+        "Successive rule by the Ptolemaic Empire, the Classical and Eastern Roman Empire, Arab caliphates, the French Lusignans, and the Venetians was followed by over three centuries of Ottoman dominion (1571–1878).",
+        "Cyprus was placed under British administration in 1878 pursuant to the Cyprus Convention and formally annexed by the United Kingdom in 1914.",
+        "The island's future became contested by its Greek and Turkish communities.",
+        "Greek Cypriots sought enosis, or union with Greece, which became a Greek national policy in the 1950s.",
+        "Turkish Cypriots initially advocated for continued British rule, then demanded the annexation of the island to Turkey, with which they established the policy of taksim: partitioning Cyprus and creating a Turkish polity in the north.",
+        "Following nationalist violence in the 1950s, Cyprus was granted independence in 1960."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T17:19:20.893Z",
+      "sha256": "a1b6f774cf68cc8788be4f0f9294829354fddb3d06d6cbe4b776cd8defefb254",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Indian art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1789504",
+      "retrieved_at": "2026-10-18T17:19:20.893Z",
+      "sha256": "b847b2b5b2aab8fc027dd37513a3dc18419839b788b31ca796e11cb62ecbff11",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Indian art consists of a variety of art forms, including painting, sculpture, pottery, and textile arts such as woven silk.",
+        "Geographically, it spans South Asia, including what is now India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, and at times Afghanistan, the Maldives, and Tibet, amongst a few other places.",
+        "A strong sense of design is characteristic of Indian art and can be observed in its modern and traditional forms.",
+        "The earliest Indian art originated during the prehistoric settlements of the 3rd millennium BCE, such as the rock shelters of Bhimbetka, which contain some of the world's oldest known cave paintings.",
+        "On its way to modern times, Indian art has had cultural influences, as well as religious influences such as Hinduism, Buddhism, Jainism, Sikhism and Islam.",
+        "In spite of this complex mixture of religious traditions, generally, the prevailing artistic style at any time and place has been shared by the major religious groups.",
+        "In historic art, sculpture in stone and metal, mainly religious, has survived the Indian climate better than other media and provides most of the best remains.",
+        "Many of the most important ancient finds that are not in carved stone come from the surrounding, drier regions rather than India itself.",
+        "Indian funeral and philosophic traditions exclude grave goods, which is the main source of ancient art in other cultures.",
+        "Indian artist styles historically followed Indian religions out of the subcontinent, having an especially large influence in Tibet, Southeast Asia and China.",
+        "Indian art has itself received influences at times, especially from Central Asia, Iran, and Europe."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Visual arts education",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2071765",
+      "retrieved_at": "2026-10-18T17:19:20.893Z",
+      "sha256": "9f7ba09996064b539363d85b0a9cb99429445bf550fc3b2715ac82932ce508fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Visual arts education is the area of learning that is based upon visual art forms such as—drawing, painting, sculpture, printmaking.",
+        "Within these forms of art may be designs in jewelry, pottery, weaving, fabrics, and design applied to more practical fields such as commercial graphics and home furnishings.",
+        "Contemporary topics include photography, video, film, design, and computer art.",
+        "Overall, Art education focuses on students creating art, on learning to criticize or appreciate art, or some combination of the two.",
+        "The key components of teaching art is different among different  groups of people, depending on their teaching style, culture, or even the country that they live in.",
+        "Visual Arts education has been adapted in many ways, even to those members of special education"
+      ]
+    }
+  ]
+}

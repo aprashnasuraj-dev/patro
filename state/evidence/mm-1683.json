@@ -1,0 +1,86 @@
+{
+  "id": "mm-1683",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Polar bear",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24408",
+      "retrieved_at": "2026-10-18T16:06:14.406Z",
+      "sha256": "b99c148391e87a1840da8d28ae829209330235629c76d31e4604d4982010e5f6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The polar bear (Ursus maritimus) is a large bear native to the Arctic and nearby areas.",
+        "It is closely related to the brown bear, and the two species can interbreed.",
+        "The polar bear is the largest extant species of bear and land carnivore by body mass, with adult males weighing 300–800 kg (660–1,760 lb).",
+        "The species is sexually dimorphic, as adult females are much smaller.",
+        "The polar bear is white or yellowish-furred with black skin and a thick layer of fat.",
+        "It is more slender than the brown bear, with a narrower skull, longer neck and lower shoulder hump.",
+        "The paws are large and allow the bear to walk on ice and paddle in the water.",
+        "Polar bears are both terrestrial and pagophilic (ice-living) and are considered marine mammals because of their dependence on marine ecosystems.",
+        "They prefer the annual sea ice but live on land when the ice melts in the summer.",
+        "They are mostly carnivorous and specialized for preying on seals, particularly ringed seals.",
+        "Such prey is typically taken by ambush; the bear may stalk its prey on the ice or in the water, but also will stay at a breathing hole or ice edge to wait for prey to swim by.",
+        "Other prey include walruses, beluga whales and some terrestrial animals."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Yogi Bear (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19994247",
+      "retrieved_at": "2026-10-18T16:06:14.406Z",
+      "sha256": "98ac44fbcad12cf07825cfe314d64e5c8a2c02807b5fa3d9af3575a19fbaa1ee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Yogi Bear is a 2010 American live-action/animated comedy film directed by Eric Brevig and written by Brad Copeland, Joshua Sternin and Jennifer Ventimilia.",
+        "Based on the animated television series The Yogi Bear Show, the film features the voices of Dan Aykroyd and Justin Timberlake as Yogi Bear and Boo-Boo Bear, and also stars Anna Faris, Tom Cavanagh and T.J.",
+        "The film centers on Yogi as he teams up with his best friend Boo-Boo, Ranger Smith, and nature documentary filmmaker Rachel Johnson to stop their home, Jellystone Park, from being logged.",
+        "Production on the film took place in New Zealand in October 2008.",
+        "Yogi Bear premiered in Westwood on December 11, 2010, and was theatrically released by Warner Bros.",
+        "The film received negative reviews and grossed $204 million against an $80 million budget."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Grizzly bear",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=35783123",
+      "retrieved_at": "2026-10-18T16:06:14.407Z",
+      "sha256": "896c6987dbda1d985955e09c8b8e697d5fe6082c898ef2c03d38d6b92ca2945b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The grizzly bear (Ursus arctos horribilis), also known as the North American brown bear or simply grizzly, is a population or subspecies of the brown bear inhabiting North America.",
+        "In addition to the mainland grizzly (Ursus arctos horribilis), other forms of brown bear are sometimes identified as grizzly bears.",
+        "lasiotus), inhabiting parts of northeast Asia, is sometimes referred to as the \"black grizzly\", although it is no more closely related to North American brown bears than other subspecies of the brown bear around the world."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Yamamoto Heikichi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75055986",
+      "retrieved_at": "2026-10-18T16:06:14.407Z",
+      "sha256": "7c2b2d99ae23252266a390d3c8ec919c3989b7dfa1e33f2d977f0052d2722cde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Yamamoto Heikichi (Japanese: 山本 兵吉; 1858 – July 1950) was a Japanese hunter.",
+        "He is best known as a local hero for killing Kesagake, the giant brown bear involved in the Sankebetsu brown bear incident.",
+        "He is reported to have killed over 300 brown bears in his lifetime.",
+        "A resident of On'ne-no-sawa, Onishika, Rumoi District, Hokkaido (now Onishikatashiro, Obira), his main hunting grounds were the mountains of what was then Teshio Province, such as Mount Onishika."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "mq-0316",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Analysis of Depth and Magnitude Heterogeneity in Cluster-Based Segmentation of Andaman and Nicobar Earthquake Data",
+      "publisher": "India Meteorological Department",
+      "author": "Samanta, Debasri; Dolai, Rajib",
+      "published_at": "2026-09-28",
+      "url": "https://doi.org/10.54302/mausam.v77i4.6595",
+      "retrieved_at": "2026-10-18T17:07:20.744Z",
+      "sha256": "665feaa175603448fc380b2305f26bef857461237e39856e124616e5de47845e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The dimension of space (depth from ground) and magnitude of each earthquake play a crucial role in explaining its characteristics.",
+        "Our study examines seismic characteristics in the Andaman and Nicobar region using power spectral density (PSD) analysis and probability density function (PDF).",
+        "The dataset is segmented into clusters using the K-means clustering algorithm, determined through the silhouette score method.",
+        "Analysis of depth shows dominant frequencies concentrated in low-frequency ranges across clusters 1, 2, and 4, indicative of interactions at plate boundaries or subduction zones.",
+        "Clusters 3 and 5 show heterogeneity in dominant frequencies, likely linked to diverse geological structures and seismic sources.",
+        "Conversely, analysis of magnitude demonstrates a concentration of seismic energy at lower magnitudes in Clusters 1 and 2, with wider magnitude ranges observed in Clusters 3 to 5.",
+        "PDF analysis identifies higher probabilities of seismic occurrences, particularly at depths of 29 to 30 km across Clusters 2 to 5.",
+        "Additionally, Cluster 1 displays localized seismic activity around 12 km depth, potentially associated with unique geological features.",
+        "Furthermore, the clusters show varying probabilities of earthquake occurrence, indicating distinct seismic hazards across the region."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A Depth-Dependent Break in the Magnitude–Frequency Distribution of the 2021–2023 Noto Earthquake Swarm",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Pasupuleti, RamaKrishna",
+      "published_at": "2026-10-13",
+      "url": "https://doi.org/10.21203/rs.3.rs-11305143/v1",
+      "retrieved_at": "2026-10-18T17:07:21.177Z",
+      "sha256": "c9d837771299fcc62fda355f1ea33853e1bca7e492244777f4fd3dfb7c4f53d8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The 2020–2024 earthquake swarm beneath the northeastern Noto Peninsula, central Japan, preceded the 1 January 2024 Mw 7.5 earthquake and has been linked to deep fluid supply, aseismic slip and fault-valve behaviour.",
+        "Using the published double-difference relocated catalogue of Yoshida et al.",
+        "(2024; 31,158 events, 2003–2024), we examine the magnitude–frequency distribution (FMD) of the 2021–2023 swarm (14,810 events, M_JMA ≥ 1.2) in three depth bands.",
+        "Shallow events (&lt; 10 km) follow a single Gutenberg–Richter (GR) law.",
+        "Relative to its own single-GR extrapolation the deep band contains 37 events of M ≥ 3 against 7 expected; relative to shallow events, however, the deep population is enriched in the smallest events, not in large ones.",
+        "The departure persists after nearest-neighbour declustering and when only JMA velocity magnitudes are used.",
+        "The deep and shallow magnitude distributions differ strongly (p ≈ 10⁻⁵¹), also within the velocity-magnitude subset (p ≈ 10⁻¹⁰); because a magnitude transformation common to all depths cannot create such a difference, a common magnitude-scale effect cannot by itself explain the depth dependence.",
+        "A published M_J–M_w relation for Japanese microearthquakes, if applicable here, would steepen rather than remove the small-magnitude branch.",
+        "Single b-values from this catalogue should be interpreted with their magnitude range and depth."
+      ]
+    }
+  ]
+}

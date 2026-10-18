@@ -1,0 +1,226 @@
+{
+  "id": "mm-0631",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Helping Soldiers Heal",
+      "publisher": "Cornell University Press",
+      "author": "Srinivasan, Jayakanth; Ivany, Christopher",
+      "published_at": "2021-12-15",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.001.0001",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "3a2f4586d05514e6ae5951af2e60fae92d4caacd0a71db71eea2b0354ed13a3a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This book tells the story of the US Army's transformation from a disparate collection of poorly standardized, largely disconnected clinics into one of the nation's leading mental health care systems.",
+        "It is a step-by-step guidebook for military and civilian health care systems alike.",
+        "The book provides a unique insider–outsider perspective as key participants in the process, sharing how they confronted the challenges first-hand and helped craft and guide the unfolding change.",
+        "The Army's system was being overwhelmed with mental health problems among soldiers and their family members impeding combat readiness.",
+        "The key to the transformation was to apply the tenets of “learning” health care systems.",
+        "Building a learning health care system is hard; building a learning mental health care system is even harder.",
+        "As the book recounts, the Army overcame the barriers to success, and its experience is full of lessons for any health care system seeking to transform."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Leading a Learning System",
+      "publisher": "Cornell University Press",
+      "author": "Srinivasan, Jayakanth; Ivany, Christopher",
+      "published_at": "2021-12-15",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0009",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "a05193df68f3f8440860f8caa644cbd1398ee1ba8ac9bdce6265d8f2d8171bd5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter highlights the importance of leaders and leadership in a learning behavioral health system.",
+        "By creating a positive culture, remaining focused on the patient's best interests, and thinking across different levels of the system, leaders create the foundation for learning to occur.",
+        "They shepherd their teams through the learning process to perpetuate cycles of data gathering, solution development, and implementation of change.",
+        "As the US Army grasped the importance of great leadership, it developed a selection process to put the best people in those jobs.",
+        "This selection process drew from potential leaders across the system and involved input from the system-level behavioral health team, but retained for hospital leaders the final say regarding who would become the new chief.",
+        "Thus, it achieved the objective of using the entire system to improve the quality of leaders at the hospital level."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Introduction",
+      "publisher": "Cornell University Press",
+      "author": "Srinivasan, Jayakanth; Ivany, Christopher",
+      "published_at": "2021-12-15",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0001",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "a3a835a21876a44aad6188cc688b3d8601faec5af0fbbb1e09bd3694ef8d74c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This introductory chapter provides a background of how the US Army created a well-defined mental health care system with patient-centered, recovery-oriented care as its foundation, which uses real-time knowledge to improve patient outcomes, measure performance, and reward high-value care.",
+        "Today, the Army has overcome what was once a kind of “organized anarchy” to achieve a standardized system of care—an important step toward ensuring a consistent care experience irrespective of care location.",
+        "It also establishes care ownership, a necessary prerequisite for patient-centered care.",
+        "The Army's transformed system of care provides transparency of patient flows, visibility to care delivered, and conformance to workload standards.",
+        "The Army is building the capability to go beyond proxy measures to use patient-reported outcomes to answer whether beneficiaries are actually getting better.",
+        "Ultimately, the foundations of a learning health care system that can measure performance and improve quality of care have taken root."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Organizing a Learning Health Care System",
+      "publisher": "Cornell University Press",
+      "author": "Srinivasan, Jayakanth; Ivany, Christopher",
+      "published_at": "2021-12-15",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0004",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "fe2c3379a9aab9c9ccc8a4e114d22c8fba10a4486034357fcec924f7af42a7fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter examines the US Army's pursuit of a learning mental health system.",
+        "The transformation of the Army's behavioral health clinics started with the creation of a leadership structure that stretched from the system to the clinic level.",
+        "The Behavioral Health Service Line incorporated all behavioral health-related personnel actions and authorities into its organization.",
+        "Four key functional areas emerged and were incorporated into the enterprise-level team in the Office of the Surgeon General: service line leadership, clinical program management, analytics, and fiscal and administrative oversight.",
+        "The chapter then considers the challenge of delivering mental health care and differentiates between intentional and unintentional variance in health care systems.",
+        "Learning health care systems encourage and support intentional variance while identifying and minimizing unintentional variance.",
+        "The Army learned that the key to successful clinical operations across an organization is a fully established and empowered behavioral health leadership structure operating at all levels of the system."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Teaching the metric system",
+      "publisher": "MOspace Institutional Repository (University of Missouri)",
+      "author": "John B. Leake",
+      "published_at": "1975-01-01",
+      "url": "https://openalex.org/W3128315918",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "296a5397c95e52a68cded72e25181cf9eae7e5ed74c4dccca3837f19a645f49e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gradually the United States is moving toward the adoption of Systeme International (SI) units of measurement.",
+        "SI units will become more important for measurement in schools until the use of English units will no longer be practical.",
+        "On the farm it has been the practice to measure feed by scoops, apples by bushels, and milk by buckets.",
+        "Farmers still struggle with bushels, pecks, and gallons for measuring.",
+        "Soon, the liter wi II replace all measurement of volume as a fundamental unit.",
+        "Next year American vintners will bottle wine using bottles marked in liters and fractions of liters.",
+        "Think of a liter as a liter, not as how much more or less it is than a quart.) They are forced to use metric units because they compete with vintners in foreign countries.",
+        "Stores and markets are beginning to use grams as units on canned goods and centimeters as units on clothing patterns.",
+        "Automobile garages are having to use two sets of tools-one metric, one Englishbecause there are so many foreign cars sold in the United States.",
+        "Soon, more and more United States industries will be forced to compete internationally.",
+        "Some states take leadership roles for change to the metric system for many reasons related to the economy of the state.",
+        "In Missouri there has not been powerful need to change the system of measuring units."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "The Development of Validated Metric Teaching Materials : Length",
+      "publisher": "Open PRAIRIE (South Dakota State University)",
+      "author": "Joanne Parry Dankey",
+      "published_at": "1976-01-01",
+      "url": "https://openalex.org/W3099102790",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "029d50765918d2cd56f84f28c526d0f287a99af3fdc792c157b783b66a858450",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The purpose of the present study was to develop a Metric Length self-instructional program to teach adult male and female consumers how to use the meter, the basic unit of length in the metric system.",
+        "The goal of the project was to create a self-paced program containing instructional materials that were totally individualized.",
+        "The researcher chose this approach because adult education programs have found individualized instruction to be very effective.",
+        "Self-instructional programming has been found to be effective for mastery level learning.",
+        "The goal of this program is to help consumers think metric and to use these units in their daily lives, a goal which consumers need to reach at the mastery level.",
+        "The materials were empirically developed following the steps of developmental recommended for linear programs.",
+        "Field testing of the self-instructional program was another purpose.",
+        "The results of the field test indicated how well the subjects had achieved the objectives of the self-instructional program."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "International System of Units",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26764",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "db5a76d8e4cf8adf030abb0f859d4c368da19027da5c486ee156bd8e15c86ab3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The International System of Units, internationally known by the abbreviation SI (from its official French name, Système international d'unités), is the modern form of the metric system and the world's most widely used system of measurement.",
+        "It is the only system of measurement with official status in nearly every country in the world, employed in science, technology, industry, and everyday commerce.",
+        "The International Bureau of Weights and Measures (abbreviated BIPM from French: Bureau international des poids et mesures) coordinates the SI.",
+        "The system can accommodate coherent units for an unlimited number of additional quantities.",
+        "These are called coherent derived units, which can always be represented as products of powers of the base units.",
+        "Twenty-two coherent derived units have been provided with special names and symbols.",
+        "The 7 base units and the 22 coherent derived units with special names and symbols may be used in combination to express other coherent derived units.",
+        "power-of-ten) multiples and sub-multiples of the coherent unit.",
+        "The current way of defining the SI is a result of a decades-long move towards definitions of the units that do not depend on artefacts made as physical realisations.",
+        "A consequence is that as science and technologies develop, new and potentially superior realisations may be introduced without the need to redefine the unit.",
+        "One problem with artefacts is that they can be lost, damaged, or changed; another is that they introduce uncertainties that cannot be reduced by advancements in science and technology.",
+        "The system was published in 1960 as a result of an initiative that began in 1948, and is based on the metre–kilogram–second system of units (MKS) combined with ideas from the development of the CGS system."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Metric prefix",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26874",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "57f6752da756f159b02acd7fbc1f5e9142537f2d8f85cc54fce8999f18dd9d3f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A metric prefix is a unit prefix that precedes a basic unit of measure to indicate a multiple or submultiple of the unit.",
+        "Each prefix has a unique symbol that is prepended to any unit symbol.",
+        "The prefix kilo, for example, may be added to gram to indicate multiplication by one thousand: one kilogram is equal to one thousand grams.",
+        "The prefix milli, likewise, may be added to metre to indicate division by one thousand, so one millimetre is equal to one thousandth of a metre.",
+        "Decimal multiplicative prefixes have been a feature of all forms of the metric system, with six of these dating back to the system's introduction in the 1790s.",
+        "Metric prefixes have also been used with some non-metric units.",
+        "The SI prefixes are metric prefixes that were standardised for use in the International System of Units (SI) by the International Bureau of Weights and Measures (BIPM) in resolutions dating from 1960 to 2022.",
+        "Since 2009, they have formed part of the ISO/IEC 80000 standard.",
+        "They are also used in the Unified Code for Units of Measure (UCUM)."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Metric system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44142",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "d50b3a44301afcd58c0e42bc814c7ad96a9acd4e22c6fb1d8e0687d54a024200",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A system of measurement is a frame in which physical qualities (such as length, weight, temperature, etc.) can be quantified with numbers.",
+        "Among many systems of measurement, the metric system refers to ones that standardise a set of base units and a nomenclature describing relatively large and small quantities using decimal-based multiplicative unit prefixes (such as kilo and milli).",
+        "The International System of Units (SI) is a good example, and there are other widely accepted systems (less popular than SI) mainly used in specific fields, such as the Gaussian units for electromagnetism.",
+        "Though rules governing the metric system have changed over time, the modern definition in the International System of Units prescribes the metric prefixes and seven base units: metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol), and candela (cd).",
+        "An SI derived unit is a named combination of base units, such as the hertz (cycles per second), newton (kg⋅m/s2), and tesla (1 kg⋅s−2⋅A−1).",
+        "In the case of degrees Celsius (°C), it is a shifted scale derived from the kelvin (273.15 K is equal to 0 °C while 1 K interval is same to the 1 °C interval).",
+        "The SI system derives from the older metre-kilogram-second (MKS) system of units, though the definitions of the base units have evolved over time.",
+        "Today, all base units are defined by physical constants – not by prototypes in the form of physical objects, as they were in the past.",
+        "Other metric system variants include the centimetre–gram–second system of units, the metre–tonne–second system of units, and the gravitational metric system.",
+        "Each has unaffiliated metric units, and some of these systems are still used in limited contexts.",
+        "Particular non-SI units such as the litre remain widely used."
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Metric time",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47014",
+      "retrieved_at": "2026-10-18T15:05:20.793Z",
+      "sha256": "3c90b9e12c6133dc6cffcdcffb0b53925d3ca5b0985b5bee412ac22a706cd0eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Metric time is the measure of time intervals using the metric system.",
+        "The modern form of the metric system, the SI, defines the second as the base unit of time, and forms multiples and submultiples with metric prefixes such as kiloseconds and milliseconds.",
+        "Metric time is a measure of time intervals, while decimal time is a means of recording time of day."
+      ]
+    }
+  ]
+}

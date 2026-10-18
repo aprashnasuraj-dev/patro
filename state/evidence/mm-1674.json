@@ -1,0 +1,172 @@
+{
+  "id": "mm-1674",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Effective are Energy Labels? Evidence from the 2021 EU Reform",
+      "publisher": "Elsevier BV",
+      "author": "Grzybowski, Lukasz; Verboven, Frank; Doganoglu, Toker",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6515174",
+      "retrieved_at": "2026-10-18T16:02:01.580Z",
+      "sha256": "6c3afc3b04de85dc04da09753ad4bcac83942ffd4edd8b4680e04f4059ec0d1f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy labels are often used to promote the adoption of more energy-efficient domestic appliances.",
+        "This paper provides evidence on the impact of the 2021 revision of the EU energy labeling regulation using product-level sales data on refrigerators in four European countries (Belgium, France, Germany, and Poland).",
+        "We first document substantial cross-country differences in sales-weighted energy consumption, reflecting differences in product portfolios and consumer preferences.",
+        "Controlling for product characteristics, average energy consumption declines by between 3.3% in France and 4.2% in Belgium following the reform.",
+        "We subsequently estimate a product-level demand model that incorporates energy labels in utility either directly or through their associated 15-year electricity costs.",
+        "The results indicate that consumers undervalue future energy costs under both labeling regimes, although the degree of undervaluation declines under the new labels.",
+        "Counterfactual simulations suggest that the labeling reform generated only modest energy efficiency gains.",
+        "Larger gains could be achieved through alternative policies: stricter minimum standards (banning the least efficient appliances) or fiscal incentives (a feebate scheme subsidizing efficient appliances while taxing inefficient ones)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Confused about your building’s energy performance? Here’s how to understand Europe’s new labels",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Rukh, Lala",
+      "published_at": "2026-07-15",
+      "url": "https://theconversation.com/confused-about-your-buildings-energy-performance-heres-how-to-understand-europes-new-labels-287309",
+      "retrieved_at": "2026-10-18T16:02:01.863Z",
+      "sha256": "540001ca6791d9e7079541017b5810b73fb05ef9cbc0530448543f39de1d67d3",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Here’s how to understand Europe’s new labels Skip to content Academic rigor, journalistic flair Bartolomiej Pietrzyk/Shutterstock Confused about your building’s energy performance?",
+        "In Germany, the same apartment could earn a C on a scale that runs to H.",
+        "In Brussels, it might land on B, one of more than 15 subclasses.",
+        "In the Netherlands, where the scale climbs to A+, it would look positively mediocre.",
+        "Same walls, same boiler, same physics, eight different letters .",
+        "Energy performance certificates or EPCs are used across most of Europe.",
+        "In France, Diagnostic de Performance Énergétique (DPE) were introduced under EU law in 2002.",
+        "The result became known in building-policy circles as the Babel tower of EPCs : dozens of national ladders slicing the same quantity – kilowatt-hours per square metre per year – into incompatible alphabets.",
+        "Denmark even labels its best homes by vintage, with classes indicating year of construction called A2020, A2015 and A2010 .",
+        "The recast energy performance of buildings directive, in force since May 2024, requires all 27 member states to rebuild their certificates on a single closed scale from A to G.",
+        "This EU directive had a transposition deadline (the final date by which an EU member state must update its national laws) of May 29 2026 .",
+        "Class A is reserved for zero-emission buildings: highly efficient homes using no fossil fuels."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Have you been labelled at work by your gender, age or ethnicity? Here’s how those labels can delegitimize you",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Mangen, Claudine",
+      "published_at": "2023-01-25",
+      "url": "https://theconversation.com/have-you-been-labelled-at-work-by-your-gender-age-or-ethnicity-heres-how-those-labels-can-delegitimize-you-197325",
+      "retrieved_at": "2026-10-18T16:02:02.058Z",
+      "sha256": "64893bbed2d6944888c74343eb1b2b7d30e3676b8c4af6c65f6631e215f5fd69",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Have you been labelled at work by your gender, age or ethnicity?",
+        "Here’s how those labels can delegitimize you Skip to content Academic rigor, journalistic flair Women who are seen as assertive can often be negatively labelled at work.",
+        "(Shutterstock) Have you been labelled at work by your gender, age or ethnicity?",
+        "Labels can often be mundane because we use them spontaneously on an everyday basis.",
+        "Labels convey value judgments and serve to control the behaviour of the people they’re applied to.",
+        "My explanations of labelling draw on research, including my own.",
+        "I head a research program on gender inequalities and organizational leadership at Concordia University.",
+        "My research is concerned with everyday practices like labelling , how they arise and what they do.",
+        "Differing expectations To understand labels, we have to look at how we interact with the world around us.",
+        "We make sense of this world by using mental shortcuts that enable us to save our mental resources.",
+        "Shortcuts draw on categories ; one of the most salient categories is gender.",
+        "We instantaneously and spontaneously categorize people around us in gender categories, relying on information accumulated throughout our lives."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Food energy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=182303",
+      "retrieved_at": "2026-10-18T16:02:02.058Z",
+      "sha256": "12ce91bacb8bae3bd553a4af0dd7b28c9cd65578c518fda65f097d95326495f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Food energy is chemical energy that animals derive from food to sustain their metabolism and muscular activity.",
+        "Most animals derive most of their energy from aerobic respiration, namely combining the carbohydrates, fats, and proteins with oxygen from air or dissolved in water.",
+        "Other smaller components of the diet, such as organic acids, polyols, and ethanol (drinking alcohol) may contribute to the energy input.",
+        "Some diet components that provide little or no food energy, such as water, minerals, vitamins, cholesterol, and fiber, may still be necessary for health and survival for other reasons.",
+        "Some organisms have instead anaerobic respiration, which extracts energy from food by reactions that do not require oxygen.",
+        "The energy content of a given mass of food is usually expressed in the metric (SI) unit of energy, the joule (J), and its multiple the kilojoule (kJ); or in the traditional unit of heat energy, the calorie (cal).",
+        "In nutritional contexts, the latter is often (especially in US) the \"large\" variant of the unit, also written \"Calorie\" (with symbol Cal, both with capital \"C\") or \"kilocalorie\" (kcal), and equivalent to 4184 J or 4.184 kJ.",
+        "Thus, for example, fats and ethanol have the greatest amount of food energy per unit mass, 37 and 29 kJ/g (9 and 7 kcal/g), respectively.",
+        "Proteins and most carbohydrates have about 17 kJ/g (4 kcal/g), though there are differences between different kinds.",
+        "For example, the values for glucose, sucrose, and starch are 15.57, 16.48 and 17.48 kilojoules per gram (3.72, 3.94 and 4.18 kcal/g) respectively.",
+        "The differing energy density of foods (fat, alcohols, carbohydrates and proteins) lies mainly in their varying proportions of carbon, hydrogen, and oxygen atoms.",
+        "Carbohydrates that are not easily absorbed, such as fibre, or lactose in lactose-intolerant individuals, contribute less food energy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Energy drink",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=367453",
+      "retrieved_at": "2026-10-18T16:02:02.058Z",
+      "sha256": "e01639412a6c1401b05fd2e04d2aca7d418d7b8cfc2c6c8a0741abc0671d1bf6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "They may or may not be carbonated and may also contain sugar, as well as other sweeteners, or herbal extracts, among numerous other possible ingredients.",
+        "While both energy drinks and sugar-sweetened beverages typically contain high levels of sugar, energy drinks include stimulants like caffeine and taurine and are marketed for energy, and sugar-sweetened beverages like sodas and fruit juices usually are not.",
+        "They are a subset of the larger group of energy products, which includes bars and gels, and are distinct from sports drinks, which are advertised to enhance sports performance.",
+        "Energy drinks have the effects of caffeine and sugar, but there is little or no evidence that the wide variety of other ingredients have any effect.",
+        "Most effects of energy drinks on cognitive performance, such as increased attention and reaction speed, are primarily due to the presence of caffeine.",
+        "Other studies ascribe those performance improvements to the effects of the combined ingredients.",
+        "Advertising for energy drinks usually features increased muscle strength and endurance, but there is no scientific consensus to support these claims.",
+        "Energy drinks have been associated with many health risks, such as an increased rate of injury when usage is combined with alcohol, and excessive or repeated consumption can lead to cardiac and psychiatric conditions.",
+        "Populations at risk for complications from energy drink consumption include youth, caffeine-naive or caffeine-sensitive, pregnant, competitive athletes and people with underlying cardiovascular disease."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Energy Star",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=401897",
+      "retrieved_at": "2026-10-18T16:02:02.058Z",
+      "sha256": "4b31882333ddccfc8b31087bdc7e79fe2ffdd0a7a5317ae730a9cac4d22dd6de",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "government energy-efficiency program established by the U.S.",
+        "In March 2026, the DOE was designated the lead federal agency, with the transfer of program responsibilities targeted for completion by July 2027.",
+        "Energy Star establishes energy efficiency specifications, and those that meet these specifications are eligible to display the Energy Star logo.",
+        "More than 75 product categories are eligible for the Energy Star label, including appliances, electronics, lighting, heating and cooling systems, and commercial equipment such as food service products.",
+        "In the United States, the Energy Star label often appears with the EnergyGuide label of eligible appliances to highlight energy-efficient products and compare energy use and operating costs.",
+        "One of the most successful voluntary initiatives introduced by the U.S.",
+        "government, the program has saved 5 trillion kilowatt-hours of electricity, more than US$500 billion in energy costs, and prevented 4 billion metric tons of greenhouse gas emissions.",
+        "According to the EPA, more than 790,000 Americans were employed in manufacturing or installing Energy Star-certified products, based on employment estimates from the 2024 U.S.",
+        "The 2026 report separately estimated that approximately 344,000 Americans worked in the broader energy-efficiency manufacturing sector in 2025.",
+        "Outside the United States, elements of the Energy Star program are implemented in Canada, Japan, and Switzerland.",
+        "Previous international agreements, including those with the European Union and the European Free Trade Association, have expired."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Environmentally friendly process",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1021673",
+      "retrieved_at": "2026-10-18T16:02:02.058Z",
+      "sha256": "48f34ffa5c32e0c95beb1111a1e61deed7b65f32809ad7d1b133fa6f947ce16d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Companies use these ambiguous terms to promote goods and services, sometimes with additional, more specific certifications, such as ecolabels.",
+        "To ensure the successful meeting of Sustainable Development Goals (SDGs) companies are advised to employ environmental friendly processes in their production.",
+        "Specifically, Sustainable Development Goal 12 measures 11 targets and 13 indicators \"to ensure sustainable consumption and production patterns\".",
+        "The International Organization for Standardization has developed ISO 14020 and ISO 14024 to establish principles and procedures for environmental labels and declarations that certifiers and eco-labellers should follow.",
+        "In particular, these standards relate to the avoidance of financial conflicts of interest, the use of sound scientific methods and accepted test procedures, and openness and transparency in the setting of standards."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "mm-0018",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Archaeology in the Czech Media: Does anyone care?",
+      "publisher": "Council for British Archaeology",
+      "author": "Šámal, Zdeněk",
+      "published_at": "2019-02",
+      "url": "https://doi.org/10.11141/ia.51.6",
+      "retrieved_at": "2026-10-18T14:52:26.315Z",
+      "sha256": "5f04bee6626b38a4d50afe26b2fbb729ebe1390fdbd71409d030ebfb21d3a727",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article discusses the possibilities and effectiveness of the presentation of archaeological information and topics in Czech Television News in the context of continuing media convergence.",
+        "Comparisons are made between the output efficiency in linear television broadcasting and online platforms.",
+        "Quantitative analysis is given of audience and attendance data on five particular archaeological themes prepared by the public service television news."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Binding Precedent Does Not Belong in Arbitration",
+      "publisher": "Elsevier BV",
+      "author": "Tu, Liwen",
+      "published_at": "2024",
+      "url": "https://doi.org/10.2139/ssrn.4887774",
+      "retrieved_at": "2026-10-18T14:52:26.315Z",
+      "sha256": "73854bef6c1bac4c45b59467b57599f4ff86d5529440800a1f91284c199987a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This essay explores the contentious issue of applying the doctrine of precedent in international arbitration, arguing that its integration could diminish arbitration's core advantages such as flexibility, party autonomy, and confidentiality.",
+        "Through a detailed examination, the essay discusses how the inclusion of precedent might lead arbitration to mimic litigation's rigidity, potentially undermining its appeal as a flexible and confidential dispute resolution method.",
+        "Citing various legal instruments and cases, the paper highlights the lack of statutory support for binding precedents in arbitration.",
+        "Furthermore, it argues that the varied nature of international legal frameworks and the private essence of arbitration agreements resist the formal adoption of precedent.",
+        "Despite these arguments against precedent, the essay acknowledges the occasional reference to past decisions within arbitral awards to ensure consistency and predictability.",
+        "Nonetheless, the acknowledgement is rebutted with practical difficulty in enforcing such a system of binding precedent.",
+        "Having observed the pros and cons of binding precedent in arbitration, this essay arrives at a conclusion that the binding precedent should not be applied to arbitration, addressing possible solutions such as promoting award repository and arbitrator education to uphold the integrity of arbitration."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why and How Does Receding Belong to Inception?",
+      "publisher": "Indiana University Press",
+      "author": null,
+      "published_at": "2023-09-05",
+      "url": "https://doi.org/10.2307/jj.4820340.70",
+      "retrieved_at": "2026-10-18T14:52:27.843Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Internet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14539",
+      "retrieved_at": "2026-10-18T14:52:27.843Z",
+      "sha256": "44f21f4b35b876edda2e27619893f78505490a32ace262cca44e652f2eab0fee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Internet (or internet) is the global system of interconnected computer networks that uses the Internet protocol suite (TCP/IP) to communicate between networks and devices.",
+        "It is a network of networks that comprises private, public, academic, business, and government networks of local to global scope, linked by electronic, wireless, and optical networking technologies.",
+        "The Internet carries a vast range of information services and resources, such as the interlinked hypertext documents and applications of the World Wide Web (WWW), electronic mail, discussion groups, internet telephony, streaming media and file sharing.",
+        "Most traditional communication media, including telephone, radio, television, paper mail, newspapers, and print publishing, have been transformed by the Internet, giving rise to new media such as email, online music, digital newspapers, news aggregators, and audio and video streaming websites.",
+        "The Internet has enabled and accelerated new forms of personal interaction through instant messaging, Internet forums, and social networking services.",
+        "Online shopping has also grown to occupy a significant market across industries, enabling firms to extend brick and mortar presences to serve larger markets.",
+        "Business-to-business and financial services on the Internet affect supply chains across entire industries.",
+        "The origins of the Internet date back to research that enabled the time-sharing of computer resources, the development of packet switching, and the design of computer networks for data communication.",
+        "The Internet has no single centralized governance in either technological implementation or policies for access and usage.",
+        "The overarching definitions of the two principal name spaces on the Internet, the Internet Protocol address (IP address) space and the Domain Name System (DNS), are directed by a maintainer organization, the Internet Corporation for Assigned Names and Numbers (ICANN).",
+        "The technical underpinning and standardization of the core protocols is an activity of the non-profit Internet Engineering Task Force (IETF)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of Internet phenomena",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=597727",
+      "retrieved_at": "2026-10-18T14:52:27.843Z",
+      "sha256": "54a1f06ead8c2a999ca3e62bf0f0bdb157db928371d6a8d1b3e56b313c354cb3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Internet phenomena are social and cultural phenomena specific to the Internet, such as Internet memes, which include popular catchphrases, images, viral videos, and jokes.",
+        "When such fads and sensations occur online, they tend to grow rapidly and become more widespread because the instant communication facilitates word of mouth transmission.",
+        "This list focuses on the Internet phenomena which are accessible regardless of local internet regulations."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Wikipedia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5043734",
+      "retrieved_at": "2026-10-18T14:52:27.843Z",
+      "sha256": "90b2f63e83307ec339f28ed5d6721515fbd2c9e30f0f86798cbd2a2b58eafe10",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wikipedia is a free online encyclopedia written and maintained by a community of volunteer editors, known as Wikipedians, through open collaboration and the wiki software MediaWiki.",
+        "Founded by Jimmy Wales and Larry Sanger in 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers.",
+        "Wikipedia is the largest and most read reference work in history.",
+        "Initially available only in English, Wikipedia has grown to over 300 languages and is one of the world's most visited websites as of 2026.",
+        "The English Wikipedia, with over 7 million articles, remains the largest of the editions, which together comprise more than 68 million articles and attract more than 1.5 billion unique device visits and 13 million edits per month (about five edits per second on average)  as of April 2024.",
+        "As of December 2025, over 25% of Wikipedia's traffic comes from the United States, while Japan accounts for nearly 7%, and the United Kingdom, Germany, and Russia each represent around 5%.",
+        "Wikipedia has been praised for its internal structure and culture, enabling the democratization of knowledge, and for its extensive coverage on various topics.",
+        "The encyclopedia has also been criticized for systemic bias, such as a gender bias against women and a geographical bias against the Global South.",
+        "The reliability of Wikipedia was frequently criticized in the 2000s, but has received greater praise from the late 2010s onward.",
+        "Censorship of Wikipedia by national governments has ranged from censoring specific pages to the entire site, sometimes due to its criticism of the government, or for content considered blasphemous.",
+        "Wikipedia articles on breaking news are accessed as sources for up-to-date information by many."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Anonymous (hacker group)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15716827",
+      "retrieved_at": "2026-10-18T14:52:27.843Z",
+      "sha256": "dbf16a75bed2822699b7a42743b7f5a0b01cc9e263971f7f0ad8aec17deafa43",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Anonymous is an international collective, organized as a decentralized group of activist and hacktivist individuals, best known for orchestrating cyberattacks against governments, government institutions, agencies, corporations, and the Church of Scientology.",
+        "Anonymous originated in 2003 on the imageboard 4chan representing the concept of many online and offline community users simultaneously existing as an \"anarchic\", digitized \"global brain\" or \"hivemind\".",
+        "Anonymous members (known as anons) can sometimes be distinguished in public by the wearing of Guy Fawkes masks in the style portrayed in the graphic novel and film V for Vendetta.",
+        "Some anons also opt to mask their voices through voice changers or text-to-speech programs.",
+        "Dozens of people have been arrested for involvement in Anonymous cyberattacks in countries including the United States, the United Kingdom, Australia, the Netherlands, South Africa, Spain, India, and Turkey.",
+        "Evaluations of the group's actions and effectiveness vary widely.",
+        "Supporters have called the group \"freedom fighters\" and digital Robin Hoods, while critics have described them as \"a cyber lynch-mob\" or \"cyber terrorists\".",
+        "In 2012, Time called Anonymous one of the \"100 most influential people\" in the world.",
+        "Anonymous's media profile diminished by 2018, but the group re-emerged in 2020 to support the George Floyd protests and other causes."
+      ]
+    }
+  ]
+}

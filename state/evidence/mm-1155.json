@@ -1,0 +1,149 @@
+{
+  "id": "mm-1155",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How electric cars can help save the grid",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Andrich, Mark; Green, Jemma",
+      "published_at": "2017-03-21",
+      "url": "https://theconversation.com/how-electric-cars-can-help-save-the-grid-73914",
+      "retrieved_at": "2026-10-18T15:30:37.775Z",
+      "sha256": "beb3c02e22d5a7b6938978c1ff20581eb60372bf8e30a69cd531662f177520ff",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How electric cars can help save the grid Skip to content Academic rigor, journalistic flair Just think of it as a battery that can also take you to the shops.",
+        "But help could be at hand from a surprising source: electric vehicles.",
+        "By electrifying our motoring, we would boost demand for renewable energy from the grid, while smoothing out some of the destabilising effects that the recent boom in household solar has had on our energy networks.",
+        "Australia’s electricity infrastructure was built largely without renewable energy in mind, and primarily to maintain reliability for when demand peaks.",
+        "The high uptake of solar panels, while good for reducing carbon emissions, has reduced grid demand by 5-10% in Australia , and as a side-effect has lowered the value of network assets , raised power prices, and made the grid trickier to manage .",
+        "Electric vehicles can ease the pressure on spikes in electricity prices by adding storage capacity.",
+        "They are effectively a distributed storage system - with smart meters they can feed electricity back into the grid when prices are high.",
+        "These vehicles’ battery reserves can thus help with the balancing of the grid and provide energy in the peak period.",
+        "Electric vehicles would also add battery storage to the grid at the same time, which can reduce the need to size the grid for demand peaks.",
+        "One way to think of electric vehicles is essentially as batteries you can drive.",
+        "So before the government pursues plans such as spending A$2 billion on expanding the Snowy Hydro scheme , it should do a cost-benefit analysis comparing the returns from similar infrastructure investment in electric vehicles.",
+        "According to the Office of the Chief Economist , Australia produced 6 billion kilowatt hours of solar PV in 2015 – enough to run almost 2 million cars, equivalent to 10% of Australia’s total current passenger vehicle fleet ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Hybrid cars -- fuel economy.",
+      "publisher": "Digital WPI",
+      "author": "Catherine Marie Price; Michael Brokhin; Eric Andrew Johnson",
+      "published_at": "2002-01-01",
+      "url": "https://openalex.org/W3207347741",
+      "retrieved_at": "2026-10-18T15:30:38.386Z",
+      "sha256": "19a0092b344b1402cc7b5f9a1b6426d145f87eda8a5f504df026995cad67a384",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With the increase in vehicle population in the United States over past decades, there has become a growing concern on the impact to our environment.",
+        "Through the use of hybrid cars it is possible to greatly reduce the gasoline consumption in Massachusetts and the nation.",
+        "This technology can have such an impact that by replacing 73.1 percent of the current vehicle population in the United States with the Toyota Prius, the importation of oil from non-OPEC nations is unnecessary."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "HYBRID CARS",
+      "publisher": "Galaxy International Interdisciplinary Research Journal",
+      "author": "H. R. Gaffarov; M. N.  Saidov",
+      "published_at": "2021-12-18",
+      "url": "https://openalex.org/W7217526319",
+      "retrieved_at": "2026-10-18T15:30:39.378Z",
+      "sha256": "4b7fa5a94e77820af3b5d065811a2e00511b467b13b2531d2888342d2d0dcc8b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The article provides information about modern hybrid cars and their shortcomings.",
+        "Based on the results of the research, a technical development has been provided."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Volkswagen Golf",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=182188",
+      "retrieved_at": "2026-10-18T15:30:39.378Z",
+      "sha256": "5900b58584d5e5ecbb6c220409db5711258a225d08b4007a27146bf4031234d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Golf is Volkswagen's bestseller and the third best-selling automobile of all time, with over 37 million units sold worldwide.",
+        "The original Golf Mk1 was a front-engined, front-wheel drive replacement for the air-cooled, rear-engined, rear-wheel drive Volkswagen Beetle.",
+        "Initially, most Golfs were hatchbacks, with the three-door version being somewhat more popular than the five-door.",
+        "Other variants include an estate (Variant, from 1993), convertible (Cabriolet or Cabrio, from 1979), and a Golf-based saloon called the Jetta, Vento (from 1992), or Bora (from 1999).",
+        "The Golf covers economy to high-performance market segments.",
+        "The Golf has won awards, including the World Car of the Year in 2009, with the Mk6 and in 2013 with the Mk7.",
+        "Along with the Renault Clio and the Vauxhall Astra, the Golf is one of only three cars to have won European Car of the Year twice, in 1992 and 2013.",
+        "The Golf has made the annual Car and Driver 10Best list multiple times.",
+        "The Mk7 won the Motor Trend Car of the Year award in 2015, and the Mk1 GTI also won the award in 1985."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Plug-in hybrid",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1611987",
+      "retrieved_at": "2026-10-18T15:30:39.378Z",
+      "sha256": "3cd780d9df597780411dab1a265b0a343172e6ff0863961a884012841d2e2cac",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "While PHEVs are predominantly passenger cars, there are also plug-in hybrid variants of sports cars, commercial vehicles, vans, utility trucks, buses, trains, motorcycles, mopeds, military vehicles and boats.",
+        "Similar to battery electric vehicles (BEVs), plug-in hybrids can use centralized generators of renewable energy (e.g., solar, wind or hydroelectric) to be largely emission-free, or a fossil plant in which case they displace greenhouse gas emissions from the car tailpipe exhaust to the power station.",
+        "Additionally, PHEVs can support longer and more frequent all-electric range driving, and their electric motors often have higher power output and torque, are more responsive during acceleration, and, overall, have lower operating costs.",
+        "Although a PHEV's battery pack is smaller than that of all-electric vehicles of the same weight, as it must accommodate its combustion engine and hybrid drivetrain, it provides the added flexibility of reverting to the use of its gasoline/diesel engine if the battery charge is depleted.",
+        "This feature helps alleviate range anxiety, particularly in areas lacking sufficient charging infrastructure.",
+        "Mass-produced PHEVs have been available to the public in China and the United States since 2012, with the introduction of the Toyota Prius PHV, which was the best selling PHV until it was surpassed by the Mitsubishi Outlander PHEV.",
+        "By 2021, BYD Auto emerged as the largest plug-in hybrid vehicle manufacturer in the world.",
+        "As of May 2024, BYD plug-in hybrid cumulative sales surpassed 3.6 million units.",
+        "The BYD Song DM line of SUVs contributed over 1.05 million units.",
+        "China currently has the largest stock of PHEVs in the world, with cumulative sales of 9.31 million units (including EREV) through December 2024.",
+        "In 2024, over 76% of global PHEV sales was contributed by the Chinese market.",
+        "In addition, the five largest producers of PHEVs globally are Chinese manufacturers, which are BYD, Geely, Chery, Li Auto, and Changan."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Monroney sticker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1663056",
+      "retrieved_at": "2026-10-18T15:30:39.378Z",
+      "sha256": "5144a99eb864e29ef511b5e52e3cfc500218efb70e085b53c6da2fb856fce3ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Monroney sticker or window sticker is a label required in the United States to be displayed in all new automobiles.",
+        "It includes the listing of certain official information about the car.",
+        "The window sticker was named after Almer Stillwell \"Mike\" Monroney, a United States Senator from Oklahoma who sponsored the bill that resulted in the label mandate."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Water-fuelled car",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7091330",
+      "retrieved_at": "2026-10-18T15:30:39.378Z",
+      "sha256": "dd73ab9d47ef84cbf1d47246df92dbf555ebbeffcaac3138adc44c11d4d99198",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A water-fuelled car is an automobile that hypothetically derives its energy directly from water.",
+        "Water-fuelled cars have been the subject of numerous international patents, newspaper and popular science magazine articles, local television news coverage, and websites.",
+        "The claims for these devices have been found to be pseudoscience and some were found to be tied to investment frauds.",
+        "These vehicles may be claimed to produce fuel from water on board with no other energy input, or may be a hybrid claiming to derive some of its energy from water in addition to a conventional source (such as gasoline).",
+        "There is no way to extract chemical energy from water alone which is consistent with the laws of physics."
+      ]
+    }
+  ]
+}

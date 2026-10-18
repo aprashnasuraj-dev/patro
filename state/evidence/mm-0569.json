@@ -1,0 +1,121 @@
+{
+  "id": "mm-0569",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why These Scars?",
+      "publisher": "Anthem Press",
+      "author": null,
+      "published_at": "2019-11-15",
+      "url": "https://doi.org/10.2307/j.ctvq4bzvr.29",
+      "retrieved_at": "2026-10-18T15:01:31.706Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "WITHDRAWN: Transverse Trapping in Recurrent Attractor Networks: Why Behavioral Scars Live Off-Axis",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Khaliq, Shamim",
+      "published_at": "2026-02-18",
+      "url": "https://doi.org/10.21203/rs.3.rs-8896248/v1",
+      "retrieved_at": "2026-10-18T15:01:32.102Z",
+      "sha256": "ab8816fb5640fafa48ab298b872c9c817d35b6d83b8be9e93edf70284aab137e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Large language models and recurrent neural networks exhibit persistent behavioral changes after adversarial or high-intensity prompting — hedging, refusal, and caution that linger beyond the triggering context.",
+        "These effects are commonly attributed to hidden memory, account-level moderation, or Hebbian-like plasticity.",
+        "We present a systematic experimental investigation using toy recurrent networks (2 to 64 neurons) to isolate the dynamical mechanisms underlying persistent behavioral deformation.",
+        "Through a sequence of increasingly refined experiments — Hebbian strength sweeps, eigenvalue probes, hysteresis protocols, and directional perturbation analysis — we characterize the geometry of attractor basins under stress and recovery.",
+        "Our central finding inverts the intuitive prediction: the dominant slow eigenmode of the recurrent Jacobian (\\(\\:{\\lambda\\:}_{1}\\approx\\:0.90\\)) acts as a recovery highway, not a scar carrier.",
+        "Perturbations aligned with this slow mode produce large initial displacements but strong return to baseline (persistence ratio 0.36 at magnitude 5.0).",
+        "Conversely, perturbations in fast-decaying transverse directions produce smaller displacements that persist through “trapping by neglect” — the absence of a restoring force.",
+        "We propose that behavioral stickiness in neural networks arises from anisotropic basin geometry rather than explicit memory or weight modification.",
+        "This framework — topology as source, Hebbian as amplifier — offers testable predictions for alignment research and reframes safety-relevant phenomena as properties of attractor manifold curvature.",
+        "Repeated cycling without Hebbian plasticity saturates in a single shot, while moderate Hebbian produces genuine cumulative deepening — but excessive plasticity under heavy load destabilizes attractors, a novel degradation regime.",
+        "The geometry of scarring depends not merely on whether attractors exist but on their type and the stress regime."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Scarification",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=148105",
+      "retrieved_at": "2026-10-18T15:01:32.103Z",
+      "sha256": "abd9bed3a9b4b78f56bb48772576e0a3fb227599da905980f57afd2025e1c0f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Scarification involves scratching, etching, burning/branding, or superficially cutting designs, pictures, or words into the skin as a permanent body modification or body art.",
+        "In the process of body scarification, scars are purposely formed by cutting or branding the skin by various methods (sometimes using further sequential aggravating wound-healing methods at timed intervals, like irritation)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Healing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=239217",
+      "retrieved_at": "2026-10-18T15:01:32.103Z",
+      "sha256": "5bdbb366c3b982a30cf9227402fca0a30985aeeb44d61bd234f0630dd2f0ee70",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Regarding physical trauma or disease suffered by an organism, healing involves the repairing of damaged tissue(s), organs and the biological system as a whole and resumption of (normal) functioning.",
+        "Medicine includes the process by which the cells in the body regenerate and repair to reduce the size of a damaged or necrotic area and replace it with new living tissue.",
+        "The replacement can happen in two ways: by regeneration in which the necrotic cells are replaced by new cells that form \"like\" tissue as was originally there; or by repair in which injured tissue is replaced with scar tissue.",
+        "Within surgery, healing is more often referred to as recovery, and postoperative recovery has historically been viewed simply as restitution of function and readiness for discharge.",
+        "More recently, it has been described as an energy‐requiring process to decrease physical symptoms, reach a level of emotional well‐being, regain functions, and re‐establish activities.",
+        "Healing is also referred to in the context of the grieving process.",
+        "In psychiatry and psychology, healing is the process by which neuroses and psychoses are resolved to the degree that the client is able to lead a normal or fulfilling existence without being overwhelmed by psychopathological phenomena.",
+        "This process may involve psychotherapy, pharmaceutical treatment or alternative approaches such as traditional spiritual healing."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Daron Malakian",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=267678",
+      "retrieved_at": "2026-10-18T15:01:32.103Z",
+      "sha256": "4cdeb4d1fecb480f60176456b7fe20cfd51d5d8d1b0a5e633896bd3ef7e0fffc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Daron Malakian (Armenian: Տարոն Մալաքյան; Western Armenian: Տարօն Մալաքեան; born July 18, 1975) is an Armenian-American musician.",
+        "He is the guitarist, songwriter, and second vocalist of the metal band System of a Down, and the lead vocalist, lead guitarist, multi-instrumentalist, and songwriter of Daron Malakian and Scars on Broadway.",
+        "Malakian was ranked 47th in Loudwire's list of \"Top 50 Hard Rock + Metal Guitarists of All Time\" and number 11 in MusicRadar's poll \"The 20 Greatest Metal Guitarists Ever\".",
+        "He placed 30th in Guitar World's list of \"The 100 Greatest Heavy Metal Guitarists of All Time\"."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Scars (Soil album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2695281",
+      "retrieved_at": "2026-10-18T15:01:32.103Z",
+      "sha256": "301c14983f0355a47274b040ed2d10495f1c2602ad1d52e974298dedb1d4ec25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Scars is the second studio album by American rock band Soil, released on September 11, 2001, via J Records.",
+        "It was the band's major label debut, and J Records' first rock album.",
+        "The album's lead single, \"Halo\", peaked at number 22 on the Billboard Mainstream Rock Chart and number 74 in the United Kingdom, becoming the band's breakthrough single.",
+        "Although the album only managed to peak at number 193 on the US Billboard 200 chart and number 150 on the UK Albums Chart, Scars proved to be Soil's greatest commercial success, having sold 222,000 copies in the United States by July 2004.",
+        "The album was also certified Silver by the British Phonographic Industry (BPI) in 2011, representing the sale of 60,000 copies in the UK."
+      ]
+    }
+  ]
+}
