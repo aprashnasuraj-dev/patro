@@ -1,0 +1,155 @@
+{
+  "id": "mm-0642",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Knowledge is Technically Unteachable",
+      "publisher": "Elsevier BV",
+      "author": "Hyde, B.V.E.",
+      "published_at": "2023",
+      "url": "https://doi.org/10.2139/ssrn.4517809",
+      "retrieved_at": "2026-10-18T15:18:55.509Z",
+      "sha256": "68c5d5f3c0897370263757bded8f5b1da356f3c4a00ddda6d715a54eeb82ba19",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is a challenging read but appears to argue that there are four reasons why knowledge cannot be taught.",
+        "The first is that there is luck involved in the acquisition of knowledge.",
+        "dependent upon a subject) and therefore cannot be taught because its transfer to a different subject alters the knowledge, making it different knowledge, technically speaking.",
+        "The third argument is that a priori knowledge cannot be taught because, for something to be taught it must in the first case be unknown and that cannot be the case for a priori knowledge.",
+        "The discussion of the first and second cases – a discussion alluded to at the beginning of the essay – also appears incomplete."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Technically Speaking",
+      "publisher": "National Academies Press",
+      "author": null,
+      "published_at": "2002-03-13",
+      "url": "https://doi.org/10.17226/10250",
+      "retrieved_at": "2026-10-18T15:18:56.919Z",
+      "sha256": "83bbb92c61c6f85e6d6a7c19d5e2fc448850bbda00f37f377d7aa084c12ca63e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Explore the Latest News and Stories The latest news and stories, with context you can trust.",
+        "Events Convening Activities Roundtables and Forums Workshops Seminar/Webinar/Lecture Series Events Upcoming events Replay See all events Right Now & Next Up Stay in the loop with can’t-miss sessions, live events, and activities happening over the next two days.",
+        "Login or Download as guest You must be logged in to save this publication.",
+        "Login Select Book Type Paperback - $63.00 Ebook - $33.29 Buy the book Request an exam or desk copy Cell phones .",
+        "But an even more interesting question might be what would we do if we had to actually explain how they worked?",
+        "The United States is riding a whirlwind of technological change.",
+        "To be sure, there have been periods, such as the late 1800s, when new inventions appeared in society at a comparable rate.",
+        "But the pace of change today, and its social, economic, and other impacts, are as significant and far reaching as at any other time in history.",
+        "And it seems that the faster we embrace new technologies, the less we're able to understand them.",
+        "What is the long-term effect of this galloping technological revolution?",
+        "In today's new world, it is nothing less than a matter of responsible citizenship to grasp the nature and implications of technology.",
+        "Technically Speaking provides a blueprint for bringing us all up to speed on the role of technology in our society, including understanding such distinctions as technology versus science and technological literacy versus technical competence."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Attribution Trilemma: Why DORA's Incident-reporting Regime Is Technically Unsatisfiable in Multi-agent AI Systems",
+      "publisher": "Elsevier BV",
+      "author": "Avsuvarova, Khanim",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7277838",
+      "retrieved_at": "2026-10-18T15:18:56.922Z",
+      "sha256": "03024efa7edb7dca47c70c5737cc241af7f201daff1fec71045f798860a568cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It closes by examining what compliance could realistically mean under this constraint.",
+        "That means a shift from posthoc causal reconstruction toward provenance-by-design, runtime enforcement and a legal reinterpretation of \"root cause\" as control-failure attribution, together with the cost each path imposes."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Food",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10646",
+      "retrieved_at": "2026-10-18T15:18:56.922Z",
+      "sha256": "30226046ae0f3d741a94e7d13ce29a95c673d5c018b339438d40afc7cb96c392",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Food is any substance that is consumed by an organism for nutritional support.",
+        "Food usually consists of plant, animal, or fungal origin and contains essential nutrients such as carbohydrates, fats, proteins, vitamins, or minerals.",
+        "The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, encourage physical requirements, and support growth.",
+        "Different species of animals have different feeding behaviours that satisfy the needs of their metabolisms and have evolved to fill specific ecological niches within specific geographical contexts.",
+        "Omnivorous humans are highly adaptable and have adapted to obtaining food in many different ecosystems.",
+        "Humans generally use cooking to prepare food for consumption.",
+        "The majority of the food energy required is supplied by the industrial food industry, which produces food through intensive agriculture and distributes it through complex food processing and food distribution systems.",
+        "This system of conventional agriculture relies heavily on fossil fuels, which means food and agricultural systems are one of the major contributors to climate change, accounting for as much as 37% of total greenhouse gas emissions.",
+        "The food system has a significant impact on a wide range of other social and political issues, including sustainability, biological diversity, economics, population growth, water supply, and food security.",
+        "Food safety and security are monitored by international agencies, like the International Association for Food Protection, the World Resources Institute, the World Food Programme, the Food and Agriculture Organization, and the International Food Information Council."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Gin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12988",
+      "retrieved_at": "2026-10-18T15:18:56.922Z",
+      "sha256": "fbd88ded907e885428d8219300183f14538e5cb17fb5aa0fb6234afc79be1182",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gin () is a distilled alcoholic drink flavoured with juniper berries and other botanical ingredients.",
+        "It originated as a medicinal liquor made by monks and alchemists in the 12th Century in Salerno, Italy.",
+        "The modern gin was modified in Flanders and the Netherlands to provide aqua vita from distillates of grapes and grains, becoming an object of commerce in the spirits industry.",
+        "Gin became popular in England after the introduction of jenever, a Dutch and Belgian liquor.",
+        "Although this development had been taking place since the early 17th century, gin became widespread after the 1688 Glorious Revolution led by William of Orange and subsequent import restrictions on French brandy.",
+        "Gin emerged as the national alcoholic drink of England during the Gin Craze of 1695–1735.",
+        "Gin is produced from a wide range of herbal ingredients in a number of distinct styles and brands.",
+        "After juniper, gin tends to be flavoured with herbs, spices, floral or fruit flavours, or often a combination.",
+        "Gin is also used as a base spirit to produce flavoured, gin-based liqueurs, for example sloe gin, traditionally produced by the addition of fruit, flavourings and sugar."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Banana",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38940",
+      "retrieved_at": "2026-10-18T15:18:56.922Z",
+      "sha256": "5ae5880aa98e9426b2f26b377c60687386aaec979b8f0aeaaa8cddfbd03e0f58",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A banana is an elongated, edible fruit that is botanically a berry produced by several kinds of large treelike herbaceous flowering plants in the genus Musa.",
+        "In some countries, cooking bananas are called plantains, distinguishing them from dessert bananas.",
+        "The fruit is variable in size, color and firmness, but is usually elongated and curved, with soft flesh rich in starch covered with a peel, which may have a variety of colors when ripe.",
+        "Almost all modern edible seedless (parthenocarp) cultivated bananas come from two wild species – Musa acuminata and Musa balbisiana, or their hybrids.",
+        "Musa species are native to tropical Indomalaya and Australia; they were probably domesticated in New Guinea.",
+        "They are grown in 135 countries, primarily for their fruit, and to a lesser extent to make banana paper and textiles, while some are grown as ornamental plants.",
+        "The world's largest producers of bananas in 2022 were India and China, which together accounted for approximately 26% of total production.",
+        "Bananas are eaten raw or cooked in recipes varying from curries to banana chips, fritters, fruit preserves, or simply baked or steamed.",
+        "The term \"banana\" is applied also to other members of the Musa genus, such as the scarlet banana (Musa coccinea), the pink banana (Musa velutina), and the Fe'i bananas.",
+        "Members of the genus Ensete, such as the snow banana (Ensete glaucum) and the economically important false banana (Ensete ventricosum) of Africa are sometimes included.",
+        "Banana plantations can be damaged by parasitic nematodes and insect pests, and to fungal and bacterial diseases, one of the most serious being Panama disease which is caused by a Fusarium fungus.",
+        "This and black sigatoka threaten the production of Cavendish bananas, the main kind eaten in the Western world, which is a triploid Musa acuminata."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "List of enclaves and exclaves",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4848506",
+      "retrieved_at": "2026-10-18T15:18:56.922Z",
+      "sha256": "a43a8f8af67af69ddf39e79dbfdb6a19c69d1bcf9ea3414461584a8e0bfbda2a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In political geography, an enclave is a piece of land belonging to one territory that is totally surrounded by another territory.",
+        "An exclave is a piece of land that is politically attached to a larger piece but not physically contiguous with it (connected to it) because they are completely separated by an unrelated territory or territories."
+      ]
+    }
+  ]
+}

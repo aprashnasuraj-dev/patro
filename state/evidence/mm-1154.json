@@ -1,0 +1,109 @@
+{
+  "id": "mm-1154",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bolivia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3462",
+      "retrieved_at": "2026-10-18T15:31:38.882Z",
+      "sha256": "fcb4e2ad4863313d27893c868e613c280e335709405e800a1dfc948c0cd89d3d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bolivia, officially the Plurinational State of Bolivia, is a landlocked country located in central South America.",
+        "Its geography primarily consists of an Andean region to the west and tropical lowlands to the east and north.",
+        "The country has a diverse environment, including the vast Amazonian plain, the Gran Chaco, temperate valleys, the high-altitude Altiplano plateau, snow-capped peaks, and mountains, encompassing a wide range of climates and biomes across its regions and cities.",
+        "It includes part of the Pantanal, the largest tropical wetland in the world, along its eastern border.",
+        "Bolivia is bordered by Brazil to the north and east, Paraguay to the southeast, Argentina to the south, Chile to the southwest, and Peru to the west.",
+        "The seat of government is La Paz, which contains the executive, legislative, and electoral branches of government, while the constitutional capital is Sucre, the seat of the judiciary.",
+        "While most population and urban centers lie in the Andean region, the largest city and principal industrial center is Santa Cruz de la Sierra, located in the eastern tropical lowlands.",
+        "Bolivia is a constitutionally unitary state divided into nine departments.",
+        "Its geographic Andean-lowland divide is matched by economic and cultural differences such as those associated with the camba and colla demonyms.",
+        "One-third of the country is within the Andean mountain range.",
+        "With an area of 1,098,581 square kilometers (424,164 sq mi), Bolivia is the fifth-largest country in South America and, alongside Paraguay, is one of two landlocked countries in the Americas.",
+        "It is the largest landlocked country in the Southern Hemisphere; it has inland ports accessing the Atlantic Ocean through two river systems: Acre-Purus-Amazon and Paraguay-Paraná."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Lithuania",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17675",
+      "retrieved_at": "2026-10-18T15:31:38.882Z",
+      "sha256": "d9b29378e7593e81251dfbd6c408ee3f798be2a9c7926e1718db62f59e5937e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lithuania, officially the Republic of Lithuania, is a country in the Baltic region of Europe.",
+        "It is one of three Baltic states and lies on the eastern shore of the Baltic Sea, bordered by Latvia to the north, Belarus to the east and south, Poland to the south, and the Russian semi-exclave of Kaliningrad Oblast to the southwest, with a maritime border with Sweden to the west.",
+        "Lithuania covers an area of 65,300 km2 (25,200 sq mi), and has a population of 2.9 million.",
+        "Its capital and largest city is Vilnius; other major cities include Kaunas, Klaipėda, Šiauliai and Panevėžys.",
+        "Lithuanians are the titular nation, belong to the ethnolinguistic group of Balts, and speak Lithuanian.",
+        "For millennia, the southeastern shores of the Baltic Sea were inhabited by various Baltic tribes.",
+        "In the 1230s, Lithuanian lands were united for the first time by Mindaugas, who formed the Kingdom of Lithuania on 6 July 1253.",
+        "Subsequent expansion and consolidation resulted in the Grand Duchy of Lithuania, which by the 14th century was the largest country in Europe.",
+        "In 1386, the grand duchy entered into a de facto personal union with the Crown of the Kingdom of Poland.",
+        "The two realms were united into the Polish-Lithuanian Commonwealth in 1569, forming one of the largest and most prosperous states in Europe.",
+        "The commonwealth lasted more than two centuries, until neighbouring countries gradually dismantled it between 1772 and 1795, with the Russian Empire annexing most of Lithuania's territory.",
+        "Towards the end of World War I, Lithuania declared independence in 1918, founding the modern Republic of Lithuania."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Biodiversity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45086",
+      "retrieved_at": "2026-10-18T15:31:38.882Z",
+      "sha256": "98f2aab95eb8f224e142a2f869a7d1b1a2e2a0530ad8e248aba2a54dd6023ec3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It can be measured on various levels, for example, genetic variability, species diversity, ecosystem diversity, and phylogenetic diversity.",
+        "Diversity is not distributed evenly on Earth — it is greater in the tropics as a result of the warm climate and high primary productivity in the region near the equator.",
+        "Tropical forest ecosystems cover less than one-fifth of Earth's terrestrial area and contain about 50% of the world's species.",
+        "There are latitudinal gradients in species diversity for both marine and terrestrial taxa.",
+        "Since life began on Earth, five  major mass extinctions and several minor events have led to large and sudden drops in biodiversity.",
+        "The Phanerozoic aeon (the last 540 million years) marked a rapid growth in biodiversity via the Cambrian explosion.",
+        "In this period, the majority of multicellular phyla first appeared.",
+        "The next 400 million years included repeated, massive biodiversity losses.",
+        "Those events have been classified as mass extinction events.",
+        "In the Carboniferous, rainforest collapse may have led to a great loss of plant and animal life.",
+        "The Permian–Triassic extinction event, 251 million years ago, was the worst; vertebrate recovery took 30 million years.",
+        "Human activities have led to an ongoing biodiversity loss and an accompanying loss of genetic diversity."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Whale fall",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1419205",
+      "retrieved_at": "2026-10-18T15:31:38.882Z",
+      "sha256": "916feb201377d7d55f586e09df2954a8dea6c4d86ff70f7fc55c579eeb0c7545",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A whale fall occurs when the carcass of a whale has fallen onto the ocean floor, typically at a depth greater than 1,000 m (3,300 ft), putting them in the bathyal or abyssal zones.",
+        "On the sea floor, these carcasses can create complex localized ecosystems that supply sustenance to deep-sea organisms for decades.",
+        "In some circumstances, particularly in cases with lower water temperatures, they can be found at much shallower depths, with at least one natural instance recorded at 150 m (500 ft) and multiple experimental instances in the range of 30–382 m (100–1,300 ft).",
+        "Whale falls were first observed in the late 1970s with the development of deep-sea robotic exploration.",
+        "Since then, several natural and experimental whale falls have been monitored through the use of observations from submersibles and remotely operated underwater vehicles (ROVs) in order to understand patterns of ecological succession on the deep seafloor.",
+        "Deep sea whale falls are thought to be hotspots of adaptive radiation for specialized fauna.",
+        "Organisms that have been observed at deep-sea whale fall sites include chordates, arthropods, cnidarians, echinoderms, mollusks, nematodes, and annelids.",
+        "New species have been discovered, including some potentially specializing in whale falls.",
+        "It has been postulated that whale falls generate biodiversity by providing evolutionary stepping stones for multiple lineages to move and adapt to new, environmentally challenging habitats.",
+        "Researchers estimate that 690,000 carcasses/skeletons of the nine largest whale species are in one of the four stages of succession at any one time.",
+        "This estimate implies an average spacing of 12 km (7.5 mi) and as little as 5 km (3.1 mi) along migration routes.",
+        "They hypothesize that this distance is short enough to allow larvae to disperse/migrate from one to another."
+      ]
+    }
+  ]
+}

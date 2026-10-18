@@ -1,0 +1,75 @@
+{
+  "id": "mq-0869",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Restricted Maximum Likelihood Framework for Earthquake Magnitude Conversion in Data-limited Regions of the East African Rift",
+      "publisher": "Copernicus GmbH",
+      "author": "Al-Ajamee, Mohammed",
+      "published_at": "2026-03-13",
+      "url": "https://doi.org/10.5194/egusphere-egu26-664",
+      "retrieved_at": "2026-10-18T17:18:17.563Z",
+      "sha256": "c57d1e660dc356bc0ba8610ce8f2d4f3b881eb391a1ac10e567804a59e3754f6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The East African Rift System (EARS) is an active continental rift that experiences frequent earthquakes, yet seismic hazard assessment across the region remains difficult.",
+        "Challenges stem from sparse monitoring networks, the absence of standardized guidelines, and numerous active faults that remain unmapped or poorly characterized.",
+        "In addition, regional earthquake catalogs are incomplete and often depend on limited data, introducing considerable uncertainty into seismic hazard estimates.",
+        "Despite these issues, conventional least-squares regression methods are still commonly used for magnitude conversion, even though they are sensitive to outliers, rely on assumptions that are made but rarely validated, and possess several limitations.",
+        "REML is particularly advantageous for data-scarce regions such as EARS, as it explicitly accounts for measurement uncertainties, non-constant variance, and the prevalence of outliers common in mixed-magnitude earthquake catalogs.",
+        "The resulting magnitude conversion relationships exhibit significantly reduced uncertainty and provide confidence bounds, thereby enhancing the reliability of homogenized earthquake catalogs.",
+        "The proposed approach strengthens the consistency of earthquake datasets across East Africa and offers a valuable tool for improving seismic hazard and risk assessments in similar data- limited regions worldwide."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "East African Rift Valley: a tale of two cities",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2015-11-05",
+      "url": "https://www.cambridge.org/core/books/earthquake-time-bombs/east-african-rift-valley-a-tale-of-two-cities/F5A891338BB72B1A21EE0CF31A3DF5AB",
+      "retrieved_at": "2026-10-18T17:18:18.281Z",
+      "sha256": "7309151d4736a7b62b9fd1bfe7195dbc87aa1bd1d711153f6dbda5102a1e06be",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "East African Rift Valley: a tale of two cities (Chapter 27) - Earthquake Time Bombs Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "PART I EARTHQUAKES, DEEP TIME, AND THE POPULATION EXPLOSION PART II EARTHQUAKE TIME BOMBS PART III SUMMARY AND RECOMMENDATIONS References Index Get access Share Cite Summary INTRODUCTION East Africa is tectonically coming apart.",
+        "The ancient African continent, hundreds of millions of years old, is being broken up by faults accompanied by volcanoes and lava flows.",
+        "Millions of years from now, if you think about the region's future as a geologist might, it will probably be a group of large islands that are actually small continents in the Indian Ocean, like the island of Madagascar.",
+        "In fact, the northeastern part of Africa has already broken away from the rest of the continent to form the Arabian Peninsula.",
+        "Arabia and Africa are now separated by the Red Sea, a newly formed ocean.",
+        "This chapter discusses two cities in the Rift Valley, Nairobi and Addis Ababa (Figure 27.1), both of which have a major earthquake hazard (Gouin, 1979); however, the hazard differs between the two cities.",
+        "NAIROBI West and south of the Red Sea, the African continent appears to be still together, but it is cut by huge faults that form the African Rift Valleys.",
+        "The eastern Rift Valley, called the Gregory Rift in Kenya, is bounded by great faults, and the center of the valley is downdropped below a high plateau, similar to the much larger continental plateau marking the tectonically more stable part of Africa to the west.",
+        "Kenya's largest city, Nairobi, is on the plateau at an elevation of 5400 feet (1645 m), about the same elevation as Nairobi's sister city of Denver, Colorado.",
+        "The high elevation means that even though Nairobi is on the Equator, it has a comfortable climate, accounting for its recent growth as a major commercial center, with a population greater than 3.1 million."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "THE Malaŵi Earthquake of March 10, 1989: DEep faulting within the East African Rift System",
+      "publisher": "American Geophysical Union (AGU)",
+      "author": "Jackson, James; Blenkinsop, Tom",
+      "published_at": "1993-10",
+      "url": "https://doi.org/10.1029/93tc01064",
+      "retrieved_at": "2026-10-18T17:18:18.283Z",
+      "sha256": "8e1fdacbd4815d874107f4a6ee857160eabb7318f806d1d123077ed8a76b6d00",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Since 1964 there have been six earthquakes of M w ≥ 5.5 in east Africa whose centroid depths have been demonstrated to be in the range of 25–40 km.",
+        "These depths are significantly greater than the 5‐ to 15‐km range typical of most other regions of continental extension.",
+        "The March 10, 1989 earthquake ( M w 6.1) in Malaŵi is the first such deep event to have occurred within the main topographic expression of the late Cenozoic east African rift system.",
+        "Its focal mechanism and depth (32 ± 5 km) allow it to be plausibly associated with slip on a deep part of a major normal fault zone bounding the Malaŵi rift.",
+        "We cannot determine whether the earthquake occurred in the crust or mantle or whether the postulated fault zone exists as a continuous seismogenic surface from the upper crust to depths of ∼30 km: it is possible that the fault zone exists as an aseismic shear zone in the lower crust.",
+        "In the Malaŵi rift the width of the half graben (up to 50 km), the effective elastic thickness of the lithosphere (∼35 km), and probably the largest fault segment lengths (&gt;50 km) are greater than is typical in rifts outside Africa.",
+        "We suggest that these features and the greater earthquake depths are all related to the likelihood that the upper part of the lithosphere is colder and stronger than is typical elsewhere.",
+        "These observations are consistent with earlier suggestions that normal faulting and significant strength can exist throughout the bulk of the crustal thickness.",
+        "If this is the case, wide half graben can form without requiring shear strengths on the bounding faults to be greater than 1–10 MPa (10–100 bars), which is the typical level of stress drop observed in earthquakes."
+      ]
+    }
+  ]
+}

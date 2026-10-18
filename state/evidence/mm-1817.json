@@ -1,0 +1,121 @@
+{
+  "id": "mm-1817",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Inexpensive Piezoelectric Elements for Nozzle Contact Detection and Build Platform Leveling in FFF 3D Printers",
+      "publisher": "MDPI AG",
+      "author": "Simpson, Michael; Khoury, Simon",
+      "published_at": "2018-01-25",
+      "url": "https://doi.org/10.3390/inventions3010008",
+      "retrieved_at": "2026-10-18T16:01:46.782Z",
+      "sha256": "424d6f8d2700df23bd009fe483f44991ef53a8adf70fc47dc31484dd833ef45e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Inexpensive piezoelectric diaphragms can be used as sensors to facilitate both nozzle height setting and build platform leveling in Fused Filament Fabrication (FFF) 3D printers.",
+        "Tests simulating nozzle contact are conducted to establish the available output and an output of greater than 8 Volts found at 20 °C, a value which is readily detectable by simple electronic circuits.",
+        "Tests are also conducted at a temperature of 80 °C and, despite a reduction of greater than 80% in output voltage, this is still detectable.",
+        "The reliability of piezoelectric diaphragms is investigated by mechanically stressing samples over 100,000 cycles at both 20 and 80 °C, and little loss of output over the test duration is found.",
+        "The development of a nozzle contact sensor using a single piezoelectric diaphragm is described."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Inexpensive Piezoelectric Elements for Nozzle Contact Detection and Build Platform Leveling in FFF 3D Printers",
+      "publisher": "MDPI AG",
+      "author": "Simpson, Michael; Khoury, Simon",
+      "published_at": "2018-01-12",
+      "url": "https://doi.org/10.20944/preprints201711.0181.v3",
+      "retrieved_at": "2026-10-18T16:01:46.782Z",
+      "sha256": "ddae8ef2fa57dba710a1efabdd8b72553aa24b43e5388e10241504f42962d32e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Inexpensive piezoelectric diaphragms can be used as sensors to facilitate both nozzle height setting and build platform leveling in FFF (Fused Filament Fabrication) 3D printers.",
+        "Tests simulating nozzle contact are conducted to establish the available output and an output of greater than 8 Volts found at 20 &amp;ordm;C, a value which is readily detectable by simple electronic circuits.",
+        "Tests are also conducted at a temperature of 80 &amp;ordm;C and, despite a reduction of greater than 80% in output voltage, this is still detectable.",
+        "The reliability of piezoelectric diaphragms is investigated by mechanically stressing samples over 100,000 cycles at both 20 &amp;ordm;C and 80 &amp;ordm;C and little loss of output over the test duration is found.",
+        "The development of a nozzle contact sensor using a single piezoelectric diaphragm is described."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "3D printing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1305947",
+      "retrieved_at": "2026-10-18T16:01:47.866Z",
+      "sha256": "636a852ca760877eabf8ce87afe14d5d60f2e5c2121ce984561e7b8504aef810",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "3D printing, also called additive manufacturing, is the construction of a three-dimensional object from a CAD model or a digital 3D model.",
+        "It can be done in a variety of processes in which material is deposited, joined or solidified under computer control, with the material being added together (e.g.",
+        "plastics, liquids, or powder grains being fused), typically layer by layer.",
+        "In the 1980s, 3D printing techniques were considered suitable only for the production of functional or aesthetic prototypes, and a more appropriate term for it at the time was rapid prototyping.",
+        "As of 2019, the precision, repeatability, and material range of 3D printing have increased to the point that some 3D printing processes are considered viable as an industrial-production technology; in this context, the term additive manufacturing can be used synonymously with 3D printing.",
+        "One of the key advantages of 3D printing is the ability to produce very complex shapes or geometries that would be otherwise infeasible to construct by hand, including hollow parts or parts with internal truss structures to reduce weight while creating less material waste.",
+        "Fused deposition modeling (FDM), which uses a continuous filament of a thermoplastic material, is the most common 3D printing process in use as of 2020."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "3D Systems",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4234010",
+      "retrieved_at": "2026-10-18T16:01:47.866Z",
+      "sha256": "6904a1f3b37e8522cb46ec219d9bb23279af5a1550c18b4250dfe0d645338de6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "3D Systems Corporation is an American company based in Rock Hill, South Carolina, that engineers, manufactures, and sells 3D printers, 3D printing materials, 3D printed parts, and application engineering services.",
+        "The company creates product concept models, precision and functional prototypes, master patterns for tooling, as well as production parts for direct digital manufacturing.",
+        "It uses proprietary processes to fabricate physical objects using input from computer-aided design and manufacturing software, or 3D scanning and 3D sculpting devices.",
+        "3D Systems' technologies and services are used in the design, development, and production stages of many industries, including aerospace, automotive, healthcare, dental, entertainment, and durable goods.",
+        "The company offers a range of professional- and production-grade 3D printers, as well as software, materials, and the online rapid part printing service on demand.",
+        "It is notable within the 3D printing industry for developing stereolithography and the STL file format.",
+        "Chuck Hull, CTO and former president, pioneered stereolithography and obtained a patent for the technology in 1986.",
+        "As of 2020, 3D Systems employed over 2,400 people in 25 offices worldwide."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "3D printing processes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53292993",
+      "retrieved_at": "2026-10-18T16:01:47.866Z",
+      "sha256": "530385d8bb5de72132c662034c821a9e14c490f1859945ec7ea4052a7c5d20b6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A variety of processes, equipment, and materials are used in the production of a three-dimensional object via additive manufacturing.",
+        "Techniques include jetting, extrusion, additive friction stir deposition, powder bed fusion, binder jetting, stereolithography, computed axial lithography, liquid alternative, lamination, directed energy deposition, selective powder deposition, and cryogenic manufacturing."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Desktop Metal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=55885774",
+      "retrieved_at": "2026-10-18T16:01:47.866Z",
+      "sha256": "45d94930fd06fba69e6172cb877bd7e611b71fcd8e8423af7335e93010dd3bb9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is a public American technology company that designs and markets 3D printing systems.",
+        "Headquartered in Burlington, Massachusetts, the company has raised $438 million in venture funding since its founding from investors such as Google Ventures, BMW, and Ford Motor Company.",
+        "Desktop Metal launched its first two products in April 2017: the Studio System, a metal 3D printing system catered to engineers and small production runs, and the Production System, intended for manufacturers and large-scale printing.",
+        "In November 2019, the company launched two new printer systems: the Shop System for machine shops, and the Fiber industrial-grade composites printer for automated fiber placement.",
+        "The World Economic Forum named Desktop Metal a Technology Pioneer in 2017."
+      ]
+    }
+  ]
+}

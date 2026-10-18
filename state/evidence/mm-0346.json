@@ -1,0 +1,124 @@
+{
+  "id": "mm-0346",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Has Stored Value Not Caught on?",
+      "publisher": "Elsevier BV",
+      "author": "Chakravorti, Sujit",
+      "published_at": "2001",
+      "url": "https://doi.org/10.2139/ssrn.294516",
+      "retrieved_at": "2026-10-18T15:10:57.472Z",
+      "sha256": "8d8fda8e1e8434e64671ff3dbf1c57843833fff7cd01693bc3efd35de9ece6c5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Why have general-purpose stored-value cards been unsuccessful in penetrating the U.S.",
+        "This article discusses the credit card industry's success in meeting these necessary conditions and stored-value issuers' failure to meet these conditions to date."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Gold Has a Real Return – The Definitive Gibson’s Paradox Solution",
+      "publisher": "Elsevier BV",
+      "author": "Van Erlach, Julian",
+      "published_at": "2015",
+      "url": "https://doi.org/10.2139/ssrn.2684493",
+      "retrieved_at": "2026-10-18T15:10:57.648Z",
+      "sha256": "1a7c3a2ec396b68796d39e69834ea00233fb2bc3fb9affcfe0a78c1823f03659",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gold is shown to obtain a real return in terms of global purchasing power per Troy oz.",
+        "Whereas fiat money obtains a negative return equal to the inflation rate (loss of purchasing power) which is directly related to the excess of money stock growth to real GDP, gold obtains a real yield due to inherent above-ground stock growth below the rate of world real GDP growth.",
+        "This effect has historically been masked by measuring the price of gold in currencies that have appreciated and not in global purchasing power.",
+        "A novel solution of the Gold Standard Gibson’s Paradox proves that gold is valued according to a constant real yield."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Gold",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12240",
+      "retrieved_at": "2026-10-18T15:10:57.696Z",
+      "sha256": "3c981cce6c787c3089eaf437d9763b0094b820cd91fab94426134b286e18647b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gold is a chemical element; its chemical symbol is Au (from Latin aurum) and atomic number 79.",
+        "In its pure form, it is a bright-metallic-yellow, dense, soft, malleable, and ductile metal.",
+        "Chemically, gold is a transition metal, a group 11 element, and one of the noble metals.",
+        "It is one of the least reactive chemical elements, being the second lowest in the reactivity series, with only platinum ranked as less reactive.",
+        "Gold often occurs as the free element (native state), as nuggets or grains, in rocks, veins, and alluvial deposits.",
+        "It occurs in a solid solution series with the native element silver (as in electrum), naturally alloyed with other metals such as copper, platinum, and palladium, as well as mineral inclusions such as within pyrite.",
+        "Less commonly, it occurs in minerals as gold compounds, often with tellurium (gold tellurides).",
+        "Gold is resistant to most acids, though it does dissolve in aqua regia (a mixture of nitric acid and hydrochloric acid), forming a soluble tetrachloroaurate anion.",
+        "Gold is insoluble in nitric acid alone, which dissolves silver and base metals, a property long used to refine gold and confirm the presence of gold in metallic substances, giving rise to the term \"acid test\".",
+        "Gold dissolves in alkaline solutions of cyanide, which are used in mining and electroplating.",
+        "Gold also dissolves in mercury, forming amalgam alloys, and as the gold acts simply as a solute, this is not a chemical reaction.",
+        "A relatively rare element when compared to silver (though thirty times more common than platinum), gold is a precious metal that has been used for coinage, jewelry, and other works of art throughout recorded history."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Store of value",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=312449",
+      "retrieved_at": "2026-10-18T15:10:57.696Z",
+      "sha256": "1f8bd9c545cdf5fb739dfe84f08e82df21f84fc48edb7c3c54d87a1777d66ab7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A store of value is any commodity or asset that would normally retain purchasing power into the future and is the function of the asset that can be saved, retrieved and exchanged at a later time, and be predictably useful when retrieved.",
+        "The most common store of value in modern times has been money, currency, or a commodity like a precious metal or financial capital.",
+        "The point of any store of value is risk management due to a stable demand for the underlying asset."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Par value",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1522672",
+      "retrieved_at": "2026-10-18T15:10:57.696Z",
+      "sha256": "2eb9458bad6af1906b7989ab1bbb7b6cf8cca0ddcfb3017947d66a0f8688cf5b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In finance and accounting, par value means stated value or face value of a financial instrument.",
+        "Expressions derived from this term include at par (equal to par value), above par (greater than par value), below par (smaller than par value) and no-par (has no par value)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Gold coin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39740796",
+      "retrieved_at": "2026-10-18T15:10:57.696Z",
+      "sha256": "933b2612cb260707c807244548645edfa6d575b808e0a156893df845b0f4fd90",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A gold coin is a coin that is made mostly or entirely of gold.",
+        "Most gold coins minted since 1800 are 90.0–92.0 % gold (22‑karat), while most of today's gold bullion coins are pure gold, such as the Britannia, Canadian Maple Leaf, Vienna Philharmonic, and American Buffalo.",
+        "Alloyed gold coins, like the American Gold Eagle and South African Krugerrand, are typically 91.7 ‰ gold by weight, with the remainder being silver and copper.",
+        "Until about the 1930s, gold coins were circulation coins, including coin-like bracteates and dinars.",
+        "Since then, gold coins have mainly been produced as bullion coins for investors and as commemorative coins for collectors.",
+        "While modern gold coins are still legal tender, they are not used in everyday financial transactions, as the metal value invariably exceeds the nominal value.",
+        "For example, the quarter-ounce American Gold Eagle has a denomination of $10, but a metal value of approximately $1,100 (as of January 2026).",
+        "The gold reserves of central banks are dominated by gold bars, but gold coins may occasionally contribute.",
+        "It is fungible, with a low difference between the prices to buy and sell.",
+        "Gold is easily transportable, as it has a high value-to-weight ratio compared to other precious metals such as silver.",
+        "Gold can be re-coined, divided into smaller units, or melted into larger units such as gold bars, without destroying its metal value.",
+        "The density of gold is higher than most other metals, making it difficult to pass counterfeits."
+      ]
+    }
+  ]
+}

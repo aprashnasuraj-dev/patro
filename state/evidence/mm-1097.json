@@ -1,0 +1,139 @@
+{
+  "id": "mm-1097",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "bigreadr: Read Large Text Files",
+      "publisher": "The R Foundation",
+      "author": "Privé, Florian",
+      "published_at": "2018-07-30",
+      "url": "https://CRAN.R-project.org/package=bigreadr",
+      "retrieved_at": "2026-10-18T15:27:53.351Z",
+      "sha256": "950f063172b67268f8af0e6286197248f70d1e99071921eb1105ddddcf7ab988",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "CRAN: Package bigreadr bigreadr: Read Large Text Files Read large text files by splitting them in smaller files.",
+        "Package 'bigreadr' also provides some convenient wrappers around fread() and fwrite() from package 'data.table'."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Implementation and testing of a blackbox and a whitebox fuzzer for file compression routines",
+      "publisher": "Journal of International Crisis and Risk Communication Research",
+      "author": "Toby Tobkin",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W2621444183",
+      "retrieved_at": "2026-10-18T15:27:53.849Z",
+      "sha256": "be730d3c0b5591fe921105d13b383de13a65aa585196c3a025174a4f8d53839b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fuzz testing is a software testing technique that has risen to prominence over the past two decades.",
+        "The unifying feature of all fuzz testers (fuzzers) is their ability to somehow automatically produce random test cases for software.",
+        "Fuzzers can generally be placed in one of two classes: black-box or white-box.",
+        "Blackbox fuzzers do not derive information from a program's source or binary in order to restrict the domain of their generated input while white-box fuzzers do.",
+        "The question of how blackbox and whitebox fuzzing should be used together for ideal economy of software testing has been posed and even speculated about, however, to my knowledge, no publically available study with the intent of characterizing an answer exists.",
+        "The purpose of this thesis is to provide an initial exploration of the bug-finding characteristics of blackbox and whitebox fuzzers.",
+        "A blackbox fuzzer is implemented and extended with a concolic execution program to make it whitebox.",
+        "Both versions of the fuzzer are then used to run tests on some small programs and some parts of a file compression library."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Lossy compression",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18208",
+      "retrieved_at": "2026-10-18T15:27:53.849Z",
+      "sha256": "2482f468e3af935e5b5e4c0bc8607af3579e85c23df11e13511de87da3d40880",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In information technology, lossy compression, or irreversible compression, is the class of data compression methods that uses inexact approximations and partial data discarding to represent the content.",
+        "These techniques are used to reduce data size for storing, handling, and transmitting content.",
+        "Higher degrees of approximation create coarser images as more details are removed.",
+        "This is opposed to lossless data compression (reversible data compression) which does not degrade the data.",
+        "The amount of data reduction possible using lossy compression is much higher than using lossless techniques.",
+        "Well-designed lossy compression technology often reduces file sizes significantly before degradation is noticed by the end-user.",
+        "Even when noticeable by the user, further data reduction may be desirable (e.g., for real-time communication or to reduce transmission times or storage needs).",
+        "The most widely used lossy compression algorithm is the discrete cosine transform (DCT), first published by Nasir Ahmed, T.",
+        "Lossy compression is most commonly used to compress multimedia data (audio, video, and images), especially in applications such as streaming media and internet telephony.",
+        "By contrast, lossless compression is typically required for text and data files, such as bank records and text articles.",
+        "It can be advantageous to make a master lossless file which can then be used to produce additional copies from.",
+        "This allows one to avoid basing new compressed copies on a lossy source file, which would yield additional artifacts and further unnecessary information loss."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Lossless compression",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18209",
+      "retrieved_at": "2026-10-18T15:27:53.849Z",
+      "sha256": "4d82ced1770393b44ed6291b1030fa889a1e54420f4c14246e7c05dc99a2907d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lossless compression is a class of data compression that allows the original data to be perfectly reconstructed from the compressed data with no loss of information.",
+        "Lossless compression is possible because most real-world data exhibits statistical redundancy.",
+        "By contrast, lossy compression permits reconstruction only of an approximation of the original data, though usually with greatly improved compression rates (and therefore reduced media sizes).",
+        "By operation of the pigeonhole principle, no lossless compression algorithm can shrink the size of all possible data: Some data will get longer by at least one symbol or bit.",
+        "Compression algorithms are usually effective for human- and machine-readable documents and cannot shrink the size of random data that contain no redundancy.",
+        "Different algorithms exist that are designed either with a specific type of input data in mind or with specific assumptions about what kinds of redundancy the uncompressed data are likely to contain.",
+        "For example, it is used in the ZIP file format and in the GNU tool gzip.",
+        "It is also often used as a component within lossy data compression technologies (e.g.",
+        "lossless mid/side joint stereo preprocessing by MP3 encoders and other lossy audio encoders).",
+        "Lossless compression is used in cases where it is important that the original and the decompressed data be identical, or where deviations from the original data would be unfavourable.",
+        "Common examples are executable programs, text documents, and source code.",
+        "Some image file formats, like PNG or GIF, use only lossless compression, while others like TIFF and MNG may use either lossless or lossy methods."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "MP3",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19673",
+      "retrieved_at": "2026-10-18T15:27:53.849Z",
+      "sha256": "4d119643c6e95658ea8223cd4c3c54630ee07bab6b2da67f7fca66fb273c2859",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "MP3 (formally MPEG-1 Audio Layer III or MPEG-2 Audio Layer III) is an audio coding format developed largely by the Fraunhofer Society in Germany under the lead of Karlheinz Brandenburg.",
+        "In popular usage, MP3 often refers to files of sound or music recordings stored in the MP3 file format (.mp3) on consumer electronic devices.",
+        "MPEG-1 Audio Layer III was originally defined in 1991 as one of the three possible audio codecs of the MPEG-1 standard (along with MPEG-1 Audio Layer I and  MPEG-1 Audio Layer II).",
+        "All three options were retained and further extended—defining additional bit rates and support for more audio channels (supporting surround sound—in the subsequent MPEG-2 standard).",
+        "MP3 as a file format commonly designates files containing an elementary stream of MPEG-1 Audio or MPEG-2 Audio encoded data.",
+        "Concerning audio compression, which is its most apparent element to end-users, MP3 uses lossy compression to reduce precision of encoded data and to partially discard data, allowing for a large reduction in file sizes when compared to uncompressed audio.",
+        "The combination of small size and acceptable fidelity led to a boom in the distribution of music over the Internet in the late 1990s, with MP3 serving as an enabling technology at a time when bandwidth and storage were still at a premium.",
+        "The MP3 format soon became associated with controversies surrounding copyright infringement, music piracy, and the file-ripping and sharing services MP3.com and Napster, among others.",
+        "With the advent of portable media players (including MP3 players), a product category also including smartphones, MP3 support became near-universal and it remains a de facto standard for digital audio despite the creation of newer coding formats such as AAC and FLAC."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "PDF",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24077",
+      "retrieved_at": "2026-10-18T15:27:53.849Z",
+      "sha256": "496804c75d7b64c05143d17ac5a128c30ff8f4a5be1f452f5e69764f5aff6d6d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Portable Document Format (PDF), standardized as ISO 32000, is a file format developed by Adobe in 1993 used to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems.",
+        "Based on the PostScript language, a PDF file encapsulates a complete description of a fixed-layout document, including the text, fonts, vector graphics, raster images and other information needed to display it.",
+        "PDF has its roots in \"The Camelot Project\" initiated by Adobe co-founder John Warnock in 1991.",
+        "It is maintained by ISO TC 171 SC 2 WG8, of which the PDF Association is the committee manager.",
+        "The last edition as ISO 32000-2:2020 was published in December 2020.",
+        "PDF files may contain a variety of content besides flat text and graphics including logical structuring elements, interactive elements such as annotations and form-fields, layers, rich media (including video content), three-dimensional objects using U3D or PRC, and various other data formats.",
+        "The PDF specification also provides for encryption and digital signatures, file attachments, and metadata to enable workflows requiring these features."
+      ]
+    }
+  ]
+}

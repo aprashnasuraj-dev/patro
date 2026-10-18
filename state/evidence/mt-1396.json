@@ -1,0 +1,51 @@
+{
+  "id": "mt-1396",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "GUT MICROBIOME IN ALZHEIMER'S AND PARKINSON'S: EMERGING INSIGHTS AND MECHANISMS",
+      "publisher": "Iterative International Publishers (IIP)",
+      "author": "Ramachandran, Surekha",
+      "published_at": "2026-06-01",
+      "url": "https://doi.org/10.58532/nbennur3174c15",
+      "retrieved_at": "2026-10-18T16:54:17.632Z",
+      "sha256": "e98fd547291f25afde07f6d6cca0281e83b804d6c827e32ce477cf6cb8a93dc3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The gut–brain axis represents a bidirectional communication network that has emerged as a pivotal framework for understanding neurodegeneration.",
+        "The trillions of microorganisms inhabiting the human gastrointestinal tract collectively termed the gut microbiome produce metabolites, regulate immune signaling, and influence neuroinflammatory cascades that profoundly affect brain health.",
+        "Converging evidence now implicates gut microbial dysbiosis in the pathogenesis of two of the most prevalent neurodegenerative disorders: Alzheimer's disease (AD) and Parkinson's disease (PD).",
+        "Key mechanisms discussed include microbiome-mediated neuroinflammation, short-chain fatty acid (SCFA) signaling, vagal nerve transmission, and the leaky gut hypothesis.",
+        "Emerging therapeutic avenues including probiotics, prebiotics, fecal microbiota transplantation (FMT), and dietary modulation are critically evaluated.",
+        "This chapter aims to provide a comprehensive and mechanistic perspective on the gut–brain axis as a therapeutic frontier in neurodegenerative disease."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T16:54:18.147Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    }
+  ]
+}

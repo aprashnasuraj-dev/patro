@@ -1,0 +1,142 @@
+{
+  "id": "mm-0822",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Hoe the Quakers Invented America",
+      "publisher": "Rowman & Littlefield Publishers",
+      "author": null,
+      "published_at": "2007",
+      "url": "https://doi.org/10.5040/9798216410904.ch-001",
+      "retrieved_at": "2026-10-18T15:19:34.477Z",
+      "sha256": "091b7905a3da209a8428af8943d64f1d9394e29df93f1e03f9808a25cab3925a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - How the Quakers Invented America --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Network Nation: Inventing American Telecommunications",
+      "publisher": "OpenAlex",
+      "author": "Richard R. John",
+      "published_at": "2010-05-21",
+      "url": "https://openalex.org/W273192793",
+      "retrieved_at": "2026-10-18T15:19:34.478Z",
+      "sha256": "1908ca0d34ab5f4116a7355b60c3f2594ec86b99ca8f18ff86c8f90f24bdd7f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The telegraph and the telephone were the first electrical communications networks to become hallmarks of modernity.",
+        "Yet they were not initially expected to achieve universal accessibility.",
+        "John demonstrates how access to these networks was determined not only by technological imperatives and economic incentives but also by political decision making at the federal, state, and municipal levels.",
+        "In the decades between the Civil War and the First World War, Western Union and the Bell System emerged as the dominant providers for the telegraph and telephone.",
+        "Both operated networks that were products not only of technology and economics but also of a distinctive political economy.",
+        "Western Union arose in an antimonopolistic political economy that glorified equal rights and vilified special privilege.",
+        "The Bell System flourished in a progressive political economy that idealized public utility and disparaged unnecessary waste.",
+        "The popularization of the telegraph and the telephone was opposed by business lobbies that were intent on perpetuating specialty services.",
+        "In fact, it wasn't until 1900 that the civic ideal of mass access trumped the elitist ideal of exclusivity in shaping the commercialization of the telephone.",
+        "The telegraph did not become widely accessible until 1910, sixty-five years after the first fee-for-service telegraph line opened in 1845.",
+        "Network Nation places the history of telecommunications within the broader context of American politics, business, and discourse.",
+        "This engrossing and provocative book persuades us of the critical role of political economy in the development of new technologies and their implementation."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bell Labs",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3712",
+      "retrieved_at": "2026-10-18T15:19:34.478Z",
+      "sha256": "c7e58b8626a1197718c46ccfae3b0ddb292f12b212fc6ad554d931f08cc35480",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nokia Bell Labs, commonly referred to as Bell Labs, is an American industrial research and development company owned by the Finnish technology company Nokia.",
+        "With headquarters located in Murray Hill, New Jersey, the company operates several laboratories in the United States and around the world.",
+        "Eleven Nobel Prizes and five Turing Awards have been awarded for work completed at Bell Laboratories.",
+        "Bell Labs had its origin in the complex corporate organization of the Bell System telephone conglomerate.",
+        "The laboratory began operating in the late 19th century as the Western Electric Engineering Department, located at 463 West Street in New York City.",
+        "After years of advancing telecommunication innovations, the department was reformed into Bell Telephone Laboratories in 1925 and placed under the shared ownership of Western Electric and the American Telephone and Telegraph Company.",
+        "In the 1960s, laboratory and company headquarters were moved to Murray Hill, New Jersey.",
+        "Its alumni during this time include a plethora of world-renowned scientists and engineers.",
+        "With the breakup of the Bell System, Bell Labs became a subsidiary of AT&T Technologies in 1984, which resulted in a drastic decline in its funding.",
+        "In 1996, AT&T spun off AT&T Technologies, which was renamed to Lucent Technologies, using the Murray Hill site for headquarters.",
+        "Bell Laboratories was split with AT&T retaining parts as AT&T Laboratories.",
+        "In 2006, Lucent merged with French telecommunication company Alcatel to form Alcatel-Lucent, which was acquired by Nokia in 2016."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Telephone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30003",
+      "retrieved_at": "2026-10-18T15:19:34.478Z",
+      "sha256": "9e35a77af8c464ed2ffccb0a9ee48de8be5610072fc391e2cfd3728dd3fc5ec4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A telephone, commonly shortened to phone, is a telecommunications device that enables two or more users to conduct a conversation when they are too far apart to be easily heard directly.",
+        "A telephone converts sound, typically and most efficiently the human voice, into electronic signals that are transmitted via cables and other communication channels to another telephone which reproduces the sound to the receiving user.",
+        "The term is derived from Ancient Greek: τῆλε, romanized: tēle, lit.",
+        "'far' and φωνή (phōnē, voice), together meaning distant voice.",
+        "In 1876, Alexander Graham Bell was the first to be granted a United States patent for a device that produced clearly intelligible replication of the human voice at a second device.",
+        "This instrument was further developed by many others, and became rapidly indispensable in business, government, and in households.",
+        "The essential elements of a telephone are a microphone (transmitter) to speak into and an earphone (receiver) which reproduces the voice at a distant location.",
+        "The receiver and transmitter are usually built into a handset which is held up to the ear and mouth during conversation.",
+        "The transmitter converts the sound waves to electrical signals which are sent through the telecommunications system to the receiving telephone, which converts the signals into audible sound in the receiver or sometimes a loudspeaker.",
+        "Telephones permit transmission in both directions simultaneously.",
+        "Most telephones also contain an alerting feature, such as a ringer or a visual indicator, to announce an incoming telephone call.",
+        "Telephone calls are initiated most commonly with a keypad or dial, affixed to the telephone, to enter a telephone number, which is the address of the call recipient's telephone in the telecommunications system, but other methods existed in the early history of the telephone."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Yellow pages",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=642748",
+      "retrieved_at": "2026-10-18T15:19:34.478Z",
+      "sha256": "ec81498bb9e099264e927b49346dd57d0aded6348382fd038bcd6d55d63cc2ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The yellow pages are telephone directories of businesses, organized by category rather than alphabetically by business name, in which advertising is sold.",
+        "The traditional term \"yellow pages\" is now also applied to online directories of businesses.",
+        "However, in the United States, neither the name nor the logo were registered as trademarks by AT&T, and they are freely used by several publishers."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Invention of the telephone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2193804",
+      "retrieved_at": "2026-10-18T15:19:34.478Z",
+      "sha256": "11a31fbb0a4f9471a9f6d99791e36bacaa29ec29a706053d018f05a25b643d09",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The invention of the telephone was the culmination of work done by many different people, and led to an array of lawsuits relating to the conflicting patent claims made by several individuals and numerous companies.",
+        "Notable people included in this process were Antonio Meucci, Philipp Reis, Elisha Gray and Alexander Graham Bell."
+      ]
+    }
+  ]
+}

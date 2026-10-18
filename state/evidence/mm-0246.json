@@ -1,0 +1,140 @@
+{
+  "id": "mm-0246",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Calculating how long it takes for a diffusion process to effectively reach steady state without computing the transient solution",
+      "publisher": "American Physical Society (APS)",
+      "author": "Carr, Elliot J.",
+      "published_at": "2017-07-10",
+      "url": "https://doi.org/10.1103/physreve.96.012116",
+      "retrieved_at": "2026-10-18T15:06:12.135Z",
+      "sha256": "52d6bba7543b54d581cd472bfb82d2b89114184392ba6b6529cb6672e4c16144",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Calculating how long it takes for a diffusion process to effectively reach steady state without computing the transient solution | Phys.",
+        "Carr * open icon close icon School of Mathematical Sciences, Queensland University of Technology (QUT), Brisbane, Australia * elliot.carr@qut.edu.au PDF Share open icon close icon X Facebook Mendeley LinkedIn Reddit Sina Weibo Phys.",
+        "Calculating a finite transition time, defined as the time required for the transient solution to transition to within a small prescribed tolerance of the steady-state solution, is much more useful in practice.",
+        "In this paper, we study estimates of finite transition times that avoid explicit calculation of the transient solution by using the property that the transition to steady state defines a cumulative distribution function when time is treated as a random variable.",
+        "In total, three approaches are studied: (i) mean action time, (ii) mean plus one standard deviation of action time, and (iii) an approach we derive by approximating the large time asymptotic behavior of the cumulative distribution function.",
+        "Our approach leads to a simple formula for calculating the finite transition time that depends on the prescribed tolerance δ and the ( k − 1 ) th and k th moments ( k ≥ 1 ) of the distribution.",
+        "Results comparing exact and approximate finite transition times lead to two key findings.",
+        "First, although the first two approaches are useful at characterizing the time scale of the transition, they do not provide accurate estimates for diffusion processes.",
+        "Second, the new approach allows one to calculate finite transition times accurate to effectively any number of significant digits using only the moments with the accuracy increasing as the index k is increased.",
+        "locked icon locked icon Close Prev Next View figure in article locked icon locked icon Physics Subject Headings (PhySH) Classical transport Diffusion Transport phenomena Probability theory Authorization Required We need you to provide your credentials before accessing this content.",
+        "Log in via your institution If your institution provides access using Shibboleth/OpenAthens log in.",
+        "Log in via APS Member Subscription If you have a personal subscription through your APS membership please log in."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Tell me how long it takes for light to travel and I will tell you how fast you go",
+      "publisher": "IOP Publishing",
+      "author": "Russo, Ivan; Iuele, Giuseppe; Iovane, Gerardo",
+      "published_at": "2022-01-24",
+      "url": "https://doi.org/10.1088/1361-6552/ac47e2",
+      "retrieved_at": "2026-10-18T15:06:12.135Z",
+      "sha256": "c722e2d87ff734f45782cf816f17a71bbfb456a0eebc21d2d70888a02d8e61c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The Italian Government’s Ministry of Public Education has introduced the special theory of relativity for students in their last year of high school.",
+        "For this reason, we often organize in-depth lessons on modern physics, in general, and on relativity theory in particular.",
+        "For example, we would like to show, in a subsequence lesson in the classroom, a relation proposed by the first author of this paper, a distinguished jurist and lover of general science.",
+        "This relation allows us to deduce the Lorentz factor without knowing the relative velocity between the reference frames."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Speed of light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28736",
+      "retrieved_at": "2026-10-18T15:06:13.063Z",
+      "sha256": "2b6478600ea0b6342311bfd6df45ca6b9a3496c3750440527749f24afa34e48f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Light travels at slower speed inside materials like glass or water; its highest speed is in a vacuum.",
+        "The speed of light in vacuum is a universal physical constant denoted c (in ISO and IEC standards \n  \n    \n      \n        \n          c\n          \n            0\n          \n        \n      \n    \n    {\\displaystyle c_{0}}\n  \n),  exactly equal to 299792458 m⋅s−1.",
+        "It is exact because, by international agreement, a metre is defined as the length of the path travelled by light in vacuum during a time interval of 1⁄299792458 second.",
+        "The value 299,792,458 metres per second is approximately 1 billion kilometres per hour; 700 million miles per hour.",
+        "For other approximations of c, valid for various units and size scales see the infobox.",
+        "The shorter form, speed of light, means speed of light in vacuum in any context where the vacuum is implied.",
+        "All forms of electromagnetic radiation, including visible light, travel in vacuum at the speed c as do massless particles and field perturbations, such as gravitational waves.",
+        "The speed of light in vacuum is the same for all observers, no matter their relative velocity.",
+        "As a result, massless particles and waves travel at c in a vacuum regardless of the motion of the source or the inertial reference frame of the observer.",
+        "The speed of light in vacuum is the upper limit for the speed at which information, matter, or energy can travel through space.",
+        "Particles with nonzero rest mass can be accelerated to approach c but can never reach it, regardless of the frame of reference in which their speed is measured.",
+        "For long distances and sensitive measurements, the finite speed of light has noticeable effects."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Halo: Reach",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23047813",
+      "retrieved_at": "2026-10-18T15:06:13.063Z",
+      "sha256": "10a5a37d95f71d77daf878425c052eebdc34155b284de3aa2ab266f8b12ca345",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Halo: Reach is a 2010 first-person shooter video game developed by Bungie and published by Microsoft Game Studios for the Xbox 360 console.",
+        "It is the sixth installment in the Halo series, and a direct prequel to Halo: Combat Evolved.",
+        "The game takes place in the year 2552, where humanity is locked in a war with an alien theocracy known as the Covenant, which seeks to exterminate humanity.",
+        "Players control Noble Six, a member of an elite squad of supersoldiers, known as Noble Team, attempting to stage a defense of the human world known as Reach, which falls under Covenant attack.",
+        "After releasing Halo 3 in 2007, Bungie split into teams to develop two different games—what would become Halo 3: ODST and Reach.",
+        "The developers decided to create a prequel to the original Halo game trilogy, freeing themselves from the obligation of addressing old story threads.",
+        "As the game would take place on a human world doomed to be destroyed, they focused on making the environment a character unto itself.",
+        "Longtime Halo composers Martin O'Donnell and Michael Salvatori returned to compose Reach's music, aiming for a more somber sound to match the story.",
+        "Reach was announced at E3 2009 in Los Angeles, and the first in-engine trailer was shown at the 2009 Spike Video Game Awards.",
+        "Players who purchased ODST were eligible to participate in a Reach multiplayer beta in May 2010; the beta allowed Bungie to gain player feedback for fixing bugs and making gameplay tweaks before shipping the final version.",
+        "Microsoft gave Reach its biggest game marketing budget yet and created award-winning live-action commercials, action figures, and interactive media to promote the game.",
+        "Reach was released worldwide in September 2010, and grossed US$200 million on its launch day, setting a new record for the franchise."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Rømer's determination of the speed of light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24896900",
+      "retrieved_at": "2026-10-18T15:06:13.063Z",
+      "sha256": "bcc4595fdbe73f22819a4737aa2b0f998f94cd096ef2f05d9ade011df34413b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 1676, the Danish astronomer Ole Rømer demonstrated that light has a measurable speed and so does not travel instantaneously.",
+        "Rømer was working at the Royal Observatory in Paris at the time.",
+        "By timing the eclipses of Jupiter's moon Io, Rømer estimated that light would take about 22 minutes to travel a distance equal to the diameter of Earth's orbit around the Sun.",
+        "Using modern orbits, this would imply a speed of light of 226,663 kilometres per second, 24.4% lower than the true value of 299,792 km/s.",
+        "In his calculations Rømer used the idea and observations that the apparent time between eclipses would be greater while the Earth is moving further from Jupiter and lesser while moving closer.",
+        "Rømer's theory was controversial at the time that he announced it and he never convinced the director of the Paris Observatory, Giovanni Domenico Cassini, to fully accept it.",
+        "However, it quickly gained support among other natural philosophers of the period such as Christiaan Huygens and Isaac Newton.",
+        "It was finally confirmed nearly two decades after Rømer's death, with the explanation in 1729 of stellar aberration by the English astronomer James Bradley."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Timeline of the far future",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30154014",
+      "retrieved_at": "2026-10-18T15:06:13.063Z",
+      "sha256": "58f52bcae3990e1021267b429fec63eafdb97056ffe8b030b596e440e9c77071",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "While, due to indeterminacy and possibly free will, the future cannot be predicted with certainty, present understanding in various scientific fields allows for the prediction of some far-future events, if only in the broadest outline.",
+        "These timelines begin at the start of the 4th millennium in 3001 CE, and continue until the furthest and most remote reaches of future time.",
+        "They include alternative future events that address unresolved scientific questions, such as whether humans will become extinct, whether the Earth survives when the Sun expands to become a red giant and whether proton decay will be the eventual end of all matter in the universe."
+      ]
+    }
+  ]
+}

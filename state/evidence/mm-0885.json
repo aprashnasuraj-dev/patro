@@ -1,0 +1,149 @@
+{
+  "id": "mm-0885",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Seven Earth-sized exoplanets discovered in habitable zone",
+      "publisher": "Cactus Communications - Editage",
+      "author": "Insights, Editage",
+      "published_at": null,
+      "url": "https://www.editage.com/insights/seven-earth-sized-exoplanets-discovered-in-habitable-zone",
+      "retrieved_at": "2026-10-18T15:23:38.661Z",
+      "sha256": "6fdca93532c3f75729344e16a702386b4eeb1d7f49eb52529e714e5961550927",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "All seven planets closely circle around a single dwarf star Trappist-1.",
+        "The system is about 40 light years away from Earth in the constellation Aquarius.",
+        "Of the seven, three planets are in the habitable zone and have the highest chances of having life.",
+        "The size of the planets is similar to that of Earth, and interestingly, this system’s orbit is so tightly knit that it takes them around 1.5 to 20 days to rotate around their star.",
+        "they might have only one side facing the star, and thus, one side of the planet might always be dark and the other always bright.",
+        "As a result, the atmosphere on these planets is likely to be very different from that of the Earth.",
+        "Following up on this discovery, NASA&#8217;s Hubble Space Telescope will screen the planets in the habitable zone for signs of life.",
+        "Tags: Science Update Related post Quantum computing gets a boost from invention...",
+        "November 29, 2017 Artificial photosynthesis gets a boost from new...",
+        "November 21, 2017 15,000 scientists from 184 countries issue warning...",
+        "November 17, 2017 Full disclosure: Editage Insights is a product of Editage, a global provider of world-class scientific communication solutions.",
+        "Editage Insights is funded by Editage and endorses services provided by Editage but is editorially independent."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "More than 1,000 new exoplanets discovered – but still no Earth twin",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Norton, Andrew",
+      "published_at": "2016-05-11",
+      "url": "https://theconversation.com/more-than-1-000-new-exoplanets-discovered-but-still-no-earth-twin-59274",
+      "retrieved_at": "2026-10-18T15:23:39.078Z",
+      "sha256": "d3b83906aed20e150082277545816ed7df5bfe63041a135dbbf635cc3fca9276",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "More than 1,000 new exoplanets discovered – but still no Earth twin Skip to content Academic rigor, journalistic flair kepler all planets may.",
+        "It’s impressive – 1,284 new planets have been announced, including around 550 which are of comparable size to the Earth.",
+        "However just nine of these may be in their stars’ habitable zones – where it is plausible that liquid water could exist on the surface of a planet.",
+        "Kepler discovers planets by looking for a tiny dip in light as a planet passes across the face of its parent star, blocking a fraction of the starlight.",
+        "This so-called transit is exactly the same phenomenon as many of us witnessed on May 9 with the transit of Mercury across the face of the sun.",
+        "But, unlike Mercury or Venus, which we can see from Earth when they transit the sun, astronomers cannot image an exoplanet or even its star as anything other than a point of light, simply because they are so far away.",
+        "For an exoplanet similar to Jupiter the dip in light can be as much as 1% of the star’s brightness, and measuring such dips has been routine for a decade with ground-based telescopes such as SuperWASP .",
+        "The advantage of Kepler, which is in space, is that it can measure the tiny dips due to Earth-sized planets – which may be up to 100 times smaller still.",
+        "Even so, transits are only visible from those systems aligned edge-on to our line of sight; for every transiting exoplanet found, there will be hundreds more that cannot be detected.",
+        "Not everything that looks like a transit really is an exoplanet.",
+        "Sometimes a bright single star is aligned with a fainter “eclipsing binary” – a pair of stars orbiting their common centre of mass such that each passes in front of the other, blocking a large fraction of the total light.",
+        "On its own, the eclipsing binary may produce deep eclipses that are clearly distinguishable from transits, but when the light is diluted by the single star lying along the same line of sight, the result can look like an exoplanetary transit ."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Exoplanet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9763",
+      "retrieved_at": "2026-10-18T15:23:50.187Z",
+      "sha256": "e6691f51cbbff9584582de7827d08aa8e0c49072c13fb8e2562a3d08e56ba5fe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An exoplanet or extrasolar planet is a planet outside the Solar System.",
+        "The first confirmed detection of an exoplanet was in 1992 around a pulsar, and the first detection around a main-sequence star was in 1995.",
+        "A different planet, first detected in 1988, was confirmed in 2003.",
+        "In 2016, it was recognized that the first possible evidence of an exoplanet had been noted in 1917, a precovery.",
+        "As of 8 October 2026, there are 6,445 confirmed exoplanets in 4,834 planetary systems, with 1,070 systems having more than one planet.",
+        "Transit photometry and Doppler spectroscopy have found the most, but these methods suffer from a clear observational bias favoring the detection of large planets close to the star.",
+        "About 1 in 5 Sun-like stars are estimated to have an \"Earth-sized\" planet in the habitable zone.",
+        "Assuming there are 200 billion stars in the Milky Way, it can be hypothesized that there are 11 billion potentially habitable Earth-sized planets in the Milky Way, rising to 40 billion if planets orbiting the numerous red dwarfs are included.",
+        "The least massive exoplanet known is Draugr, which is about twice the mass of the Moon.",
+        "The most massive exoplanet listed on the NASA Exoplanet Archive is HR 2562 b, about 30 times the mass of Jupiter.",
+        "However, according to some definitions of a planet (based on the nuclear fusion of deuterium), it is too massive to be a planet and might be a brown dwarf.",
+        "Known orbital times for exoplanets vary from less than an hour (for those closest to their star) to thousands of years."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of transiting exoplanets",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30549370",
+      "retrieved_at": "2026-10-18T15:23:50.187Z",
+      "sha256": "1ea9703fc95c4595ac18e27bb0f83959c0b68347248986de410bb639a0d10543",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of transiting extrasolar planets sorted by orbital periods.",
+        "As of 2026, 6,160 confirmed exoplanets have been discovered.",
+        "This list consist of all transiting exoplanets through 2012, and notable discoveries since.",
+        "All the transiting planets have true masses, radii and most have known inclinations.",
+        "Radius is determined by how much the star dims during the transit and inclination is determined from Rossiter–McLaughlin effect.",
+        "True mass is determined by the minimum mass determined from radial velocity observations divided by the sine of inclination.",
+        "The first known planet to be discovered with the transit method was OGLE-TR-56b.",
+        "The first planetary transit observed (by already known exoplanet) was caused by HD 209458 b.",
+        "The most massive transiting exoplanet is KELT-1b which masses 27.23 MJ (making it a brown dwarf) while the least massive is Kepler-42d which masses less than 0.003 MJ or 0.9 M🜨.",
+        "The smallest exoplanet known is also Kepler-42d which is 0.051 RJ or 0.57 R🜨.",
+        "The densest transiting exoplanet known is CoRoT-3b, which has density of 26.4 g/cm3; the diffusest transiting planet known is Kepler-12b, which has density of only 0.111 g/cm3.",
+        "Previously, the longest period of any transiting planets was Kepler-1647b, which takes 1107 days to orbit its (double) stars."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Kepler-452b",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47318223",
+      "retrieved_at": "2026-10-18T15:23:50.187Z",
+      "sha256": "1c1c8696224870a82bca701cbb82e363c515b76be383f1560edb72d1576c7337",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kepler-452b (sometimes quoted to be an Earth 2.0 or Earth's Cousin based on its characteristics; also known by its Kepler object of interest designation KOI-7016.01) is a disputed super-Earth exoplanet candidate.",
+        "Initial reports claim it is orbiting within the inner edge of the habitable zone of the sun-like star Kepler-452 and is the only planet in the system discovered by the Kepler space telescope.",
+        "It is located about 1,800 light-years (550 pc) from Earth in the constellation of Cygnus.",
+        "Two subsequent reports refuted the claim but additional work has reestablished the claim.",
+        "It is the first potentially rocky super-Earth planet discovered orbiting within the habitable zone of a very Sun-like star.",
+        "However, it is unknown if it is entirely habitable, as it is receiving slightly more energy from its star than Earth and could be subjected to a runaway greenhouse effect.",
+        "The Kepler space telescope identified the exoplanet, and its discovery was announced by NASA on 23 July 2015.",
+        "The planet is about 1,800 light-years (550 pc) away from the Solar System.",
+        "At the speed of the New Horizons spacecraft, at about 59,000 km/h (16,000 m/s; 37,000 mph), it would take approximately 30 million years to get there."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of exoplanets discovered before 2000",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54084725",
+      "retrieved_at": "2026-10-18T15:23:50.187Z",
+      "sha256": "8050b5766f91051bec471c123c7dc56d9f0855302005291f63955c6ba1b25de5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "For exoplanets detected only by radial velocity, the mass value is actually a lower limit.",
+        "(See Minimum mass for more information.)\nWhile the existence of a substellar companion to Gamma Cephei was suspected since 1988, the planet Gamma Cephei Ab was not confirmed until 2003, and that is listed as its discovery year in exoplanet databases.",
+        "Thus, this planet is in the List of exoplanets discovered between 2000–2009."
+      ]
+    }
+  ]
+}

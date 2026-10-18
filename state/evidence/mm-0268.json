@@ -1,0 +1,126 @@
+{
+  "id": "mm-0268",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why ‘accidents’ can happen during intense exercise",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Taylor, Adam",
+      "published_at": "2026-09-18",
+      "url": "https://theconversation.com/why-accidents-can-happen-during-intense-exercise-291904",
+      "retrieved_at": "2026-10-18T15:10:19.962Z",
+      "sha256": "848c3124f90bdcaaf9348654788b945ff8550507d58d6707b8e5db0894e8f8b1",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "But a recent viral story highlighted one of the more embarrassing – and potentially dangerous – issues that can occur when your body reaches it limit with exercise.",
+        "Joanna Wietrzyk, the winner of the recent women’s pro Hyrox race in Beijing (a challenging fitness race that blends running and strength), found herself in the spotlight not for her performance – but because she soiled herself during the event.",
+        "While there has been plenty of commentary about what happened – and discussions over whether she should have been allowed to continue competing – one thing that hasn’t been said is that such occurrences are not uncommon in athletes.",
+        "Those who watched the 2005 London Marathon will remember Paula Radcliffe stopping at the 22-mile mark to “do her business” on the side of the road.",
+        "Triathlete Taylor Knibb also suffered a similar incident during 2024’s Dubai T100.",
+        "Gastrointestinal problems, including diarrhoea, are up to three times more common in professional athletes than in recreational athletes.",
+        "The impact it has on runners is so common it has even has its own term: runner’s diarrhoea .",
+        "It’s estimated that up to 90% of runners experience this issue at some point.",
+        "But diarrhoea isn’t the only symptom people undertaking strenuous exercise for a prolonged period will suffer from.",
+        "Abdominal pain, heartburn , nausea , vomiting and even gastrointestinal bleeding may all occur.",
+        "There are a few key reasons why intense exercise can have such a detrimental effect on our gastrointestinal system.",
+        "The human digestive tract is approximately three times our height."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Traffic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=43081",
+      "retrieved_at": "2026-10-18T15:10:20.188Z",
+      "sha256": "5f11f94b81ca1d1383c8235cc6d5fb99abff226d78e2506b218b1a7d59d41ab0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic is the movement of vehicles and pedestrians along land routes.",
+        "Traffic laws govern and regulate traffic, while rules of the road include traffic laws and informal rules that may have developed over time to facilitate the orderly and timely flow of traffic.",
+        "Organized traffic generally has well-established priorities, lanes, right-of-way, and traffic control at intersections.",
+        "(International Regulations for Preventing Collisions at Sea govern the oceans and influence some laws for navigating domestic waters.)\nTraffic is formally organized in many jurisdictions, with marked lanes, junctions, intersections, interchanges, traffic signals, cones, or signs.",
+        "Traffic is often classified by type: heavy motor vehicle (e.g., car, truck), other vehicle (e.g., moped, bicycle), and pedestrian.",
+        "Different classes may share speed limits and easement, or may be segregated.",
+        "Some jurisdictions may have very detailed and complex rules of the road while others rely more on drivers' common sense and willingness to cooperate.",
+        "Organization typically produces a better combination of travel safety and efficiency.",
+        "Events which disrupt the flow and may cause traffic to degenerate into a disorganized mess include road construction, collisions, and debris in the roadway.",
+        "On particularly busy freeways, a minor disruption may persist in a phenomenon known as traffic waves.",
+        "A complete breakdown of organization may result in traffic congestion and gridlock.",
+        "Simulations of organized traffic frequently involve queuing theory, stochastic processes and equations of mathematical physics applied to traffic flow."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Roundabout",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59257",
+      "retrieved_at": "2026-10-18T15:10:20.188Z",
+      "sha256": "1f9f8a8973626607d9abbaa2f6e004af5e502026870bde70dd711e1dd316b73e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A roundabout, a rotary and a traffic circle are types of circular road in which traffic is permitted to flow in one direction around a central island.",
+        "In the United States, engineers use the term modern roundabout to refer to junctions installed after 1960 that incorporate design rules to increase safety.",
+        "Compared to stop signs, traffic signals, and earlier forms of roundabouts, modern roundabouts reduce the likelihood and severity of collisions greatly by reducing traffic speeds through horizontal deflection and minimising T-bone and head-on collisions.",
+        "Variations on the basic concept include integration with tram or train lines, two-way flow, higher speeds and many others.",
+        "For pedestrians, traffic exiting the roundabout comes from one direction, instead of three, simplifying the pedestrian's visual environment.",
+        "Traffic moves slowly enough to allow visual engagement with pedestrians, encouraging deference towards them.",
+        "Other benefits include reduced driver confusion associated with perpendicular junctions and reduced queuing associated with traffic lights.",
+        "They allow U-turns within the normal flow of traffic, often not possible at other forms of junction.",
+        "Moreover, since vehicles with internal combustion engines typically spend less time idling at roundabouts than at signalled intersections, using a roundabout potentially leads to less pollution.",
+        "When entering vehicles only need to give way, they do not always perform a full stop; as a result, by keeping their momentum, the engine will require less work to regain the initial speed, resulting in lower emissions.",
+        "Research has also shown that slow-moving traffic in roundabouts makes less noise than traffic that must stop and start, speed up and brake.",
+        "Modern roundabouts were first standardised in the UK in 1966 and were found to be a significant improvement over previous traffic circles and rotaries."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Traffic enforcement camera",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=143861",
+      "retrieved_at": "2026-10-18T15:10:20.188Z",
+      "sha256": "ef6f80bb527aa1cff12145794f498909e05dcd3240b1e966506eb06f949586a1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A worldwide review of studies found that speed cameras led to a reduction of \"11% to 44% for fatal and serious injury crashes\".",
+        "The UK's Department for Transport estimated that cameras had led to a 22% reduction in personal injury collisions and 42% fewer people being killed or seriously injured at camera sites.",
+        "The British Medical Journal reported that speed cameras were effective at reducing accidents and injuries in their vicinity and recommended wider deployment.",
+        "An LSE study in 2017 found that \"adding another 1,000 cameras to British roads could save up to 190 lives annually, reduce up to 1,130 collisions and mitigate 330 serious injuries.\" Research indicates that automated traffic enforcement alleviates biases associated with police stops.",
+        "The latest automatic number-plate recognition systems can be used for the detection of average speeds and raise concerns over loss of privacy and the potential for governments to establish mass surveillance of vehicle movements and therefore by association also the movement of the vehicle's owner.",
+        "Vehicle owners are often required by law to identify the driver of the vehicle and a case was taken to the European Court of Human Rights which found that human rights were not being breached.",
+        "Some groups, such as the American Civil Liberties Union in the US, claim that \"the common use of speed traps as a revenue source also undercuts the legitimacy of safety efforts.\""
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Traffic congestion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=234226",
+      "retrieved_at": "2026-10-18T15:10:20.188Z",
+      "sha256": "a8a037b07d292102f0d18d4f7286acbc67373964f8bebcc787c8ed638175f44a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic congestion is a condition in transport that is characterized by slower speeds, longer trip times, and increased vehicular queuing.",
+        "Traffic congestion on urban road networks has increased substantially since the 1950s, resulting in many of the roads becoming obsolete.",
+        "When traffic demand is great enough that the interaction between vehicles slows the traffic stream, this results in congestion.",
+        "While congestion is a possibility for any mode of transportation, this article will focus on automobile congestion on public roads.",
+        "Mathematically, traffic is modeled as a flow through a fixed point on the route, analogously to fluid dynamics.",
+        "As demand approaches the capacity of a road (or of the intersections along the road), extreme traffic congestion sets in.",
+        "When vehicles are fully stopped for periods of time, this is known as a traffic jam, a traffic snarl-up (informally) or a tailback.",
+        "Drivers and driver-focused road planning departments commonly propose to alleviate congestion by adding another lane to the road; however, this is ineffective as increasing road capacity induces more demand for driving."
+      ]
+    }
+  ]
+}

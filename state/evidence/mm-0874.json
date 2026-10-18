@@ -1,0 +1,79 @@
+{
+  "id": "mm-0874",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "China's Informal Stock Market: How it Developed, How it Works and How it Might Grow",
+      "publisher": "Elsevier BV",
+      "author": "Liu, Ti; Green, Stephen Paul",
+      "published_at": "2004",
+      "url": "https://doi.org/10.2139/ssrn.504043",
+      "retrieved_at": "2026-10-18T15:23:37.234Z",
+      "sha256": "44ea1c42595e582fcc532ef86f5fdcc214eba58404a3aabcbb5e54e82f8a66b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The shares of over 1,000 companies are traded and some 3m investors take part in a market in corporate equities organised in various locales outside the two stock exchanges in Shanghai and Shenzhen.",
+        "China's informal share market has appeared in a number of different guises since the establishment of the stock market in the late 1980s, partly as a result of the government's restrictions as to which type and what number of firms can publicly issue shares.",
+        "While the central government has at various times attempted to close down these informal markets, they continue to flourish as shareholding firms seek to raise capital and owners of firms seek to transfer their ownership rights outside the bounds of the formal financial sector.",
+        "This suggests that the government should move to formalise these markets, a move that would recognise the incipient demand for shares and allow the government to introduce a basic regulatory framework for a market which evidently can not be easily suppressed.",
+        "The first provides a brief historical overview of the development of informal share markets in reform China, from the kerb markets of the mid-1980s to the Internet-based brokers of 2003.",
+        "The second section looks in detail at the organisation of the market today; how shares are issued, traded and settled.",
+        "Third, and last, the paper identifies the problems inherent in the market at present and outlines the possibilities for its future."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Hydrogen compressor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6402491",
+      "retrieved_at": "2026-10-18T15:23:37.234Z",
+      "sha256": "a3a34449e877ba216656af475b4f70ccf27386032c5de40bf704458220df69d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A hydrogen compressor is a device that increases the pressure of hydrogen by reducing its volume resulting in compressed hydrogen or liquid hydrogen.",
+        "Traditionally, applications for hydrogen compressors included Chlorine electrolyser and many chemical applications like the production of hydrogen peroxide (HPPO).",
+        "The newer applications related to green and environmentally friendly technologies include fuel cells and electrolysis for hydrogen production."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Intermountain Power Plant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28708200",
+      "retrieved_at": "2026-10-18T15:23:37.234Z",
+      "sha256": "48e1fbf582ccca2c3d608b97c1321089056439755e3e6bbd7283e2952e1a678f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Intermountain Power Plant is a large coal-fired power plant at Delta, Utah, US.",
+        "It has an installed capacity of 1,900 MW, is owned by the Intermountain Power Agency, and is operated by the Los Angeles Department of Water and Power (LADWP).",
+        "It is scheduled for replacement in 2025 with an 840 MW natural gas plant, designed to also burn green hydrogen."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Green Planet Energy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45623538",
+      "retrieved_at": "2026-10-18T15:23:37.234Z",
+      "sha256": "7d1c1cb651180c1d0f32d59a65afbcb15de9b8c26ab606a32b5ac2e30ba56e37",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Green Planet Energy (formerly named Greenpeace Energy) is a German electric utility in the form of a registered association.",
+        "The stated goal of the cooperative is the provision of environmentally friendly energy to the electrical grid.",
+        "holds only five shares at €55 in the cooperative, otherwise the environmental group and the company are financially and legally independent, although they share the same office building in Hamburg.",
+        "The former use of the Greenpeace name was licensed under the condition that the energy cooperative met the Greenpeace e.V.",
+        "In 2021, after a significant media controversy on its fossil gas sales, Greenpeace Energy changed its name to Green Planet Energy in order to clarify the independence of the two separate entities Greenpeace e.V."
+      ]
+    }
+  ]
+}

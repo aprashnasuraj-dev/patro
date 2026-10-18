@@ -1,0 +1,83 @@
+{
+  "id": "mt-1888",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T17:02:00.632Z",
+      "sha256": "dc4d246eebfda03373636261d39f231c419a52be688b20b1c8c52aeba0b7eb99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T17:02:00.632Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T17:02:00.632Z",
+      "sha256": "f4282c7a698b0eb76288cc8e03a2f6d67c86e236658f0e9ec22261e01830feea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    }
+  ]
+}

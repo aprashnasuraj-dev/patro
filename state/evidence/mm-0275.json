@@ -1,0 +1,205 @@
+{
+  "id": "mm-0275",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Search Engines Work (or Do Not Work) with the Invisible Web",
+      "publisher": "ABC-CLIO, LLC",
+      "author": null,
+      "published_at": "2012",
+      "url": "https://doi.org/10.5040/9798400663291.ch-002",
+      "retrieved_at": "2026-10-18T15:10:22.570Z",
+      "sha256": "e37bf4f51874df7c5d6139973fe7f631b16ee92565213e645289d950886d8cd9",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - The Hidden Web --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A comprehensive study on car engines / Nadrah Zaabar",
+      "publisher": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+      "author": "Nadrah Zaabar",
+      "published_at": "2003-01-01",
+      "url": "https://openalex.org/W2949247209",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "dd0c4153ccd5e8b6b2ebf4c0124a2da171b3450313125cea8173e0ee302f83d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Over the recent years, there has been an immediate demand on producing low and zero emission car.",
+        "In order to accomplish this, other fuel sources such as solar and electric powered vehicles have been the main research focus of many car makers to replace the use of hydrocarbons.",
+        "Now, most of their efforts are a reality by the introduction of electric car, hybrid car and drive-by-wire car.",
+        "Some can already be seen on road, and more advance model is yet to come.",
+        "However, the very basic workings of a vehicle remains largely the same.",
+        "To understand this, I had to start from the very basic car engine construction and by dissembling Proton Saga 4G13 engine model.",
+        "It is a four cylinder engine that uses gasoline as its fuel.",
+        "From there, I familiarize myself with each parts, studied each function and the process flow.",
+        "Chapter one is mainly about the background of the engine, reasons of choosing that particular model as a datum, what I hope to achieve from this study and how I was going to achieve it.",
+        "Chapter two is a continuation of the previous chapter focus is on other car systems that complement the engine operations, the chemical processes and the corporate profile of Proton.",
+        "In chapter three, the classification of engines is discussed in details together with types of IC engines.",
+        "The following chapter four, the function, work principle and construction of each part and other parts that make up the engine is further explained."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Dynamic design of the v-belt wheel with absorber for engine of cars",
+      "publisher": "Machinery Design and Manufacture",
+      "author": "Jianye Guo",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W2367432185",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "e06cdf1f30da8ae4d21832bf8651e710ce29600b9e430b475f0dea8a8f3055c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the treatise introduced a V-belt wheel with absorber at engine of cars, and its structure, demand to it, its work philosophy and design fundamental rules.",
+        "The V-belt wheel consists of a wheel disc, a rubber ring, a outside ring with V-grooves.",
+        "Physics parameters of every part have different influence on effect of vibration damping.",
+        "These parameters are torsional rigidity of the crankshaft and rubber ring, damper coefficient of the rubber ring and moment of inertia of the outside ring and wheel disc.",
+        "In the moment of inertia of the wheel disc also included that moments of inertia to be converted to it from crankshaft and rolling parts at it.",
+        "Deduced out a frequency response formula on torsional vibration of the crankshaft.",
+        "Base on frequency response curves explained how make a best choice from each different parameter group and get an excellent design by an instance."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Fuel consuptiom monitor for car gas-engine",
+      "publisher": "Digital Repository (National Repository of Grey Literature)",
+      "author": "Tomáš Klásek",
+      "published_at": null,
+      "url": "https://openalex.org/W7135433634",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "472e3abb81c931239c806b3f14057948b22e68c3922091c4c3f8143488822be3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This work introduces readers into the principles of fuel injection and injection types in the modern combustion engines.",
+        "The basic focus of this work is in the description of how the modern fuel injectors work.",
+        "Then we describe the most important car sensors for our task.",
+        "In the next part we will try to determine the normalized immediate fuel consumption by acquiring the data from the automobile.",
+        "Finally, we will process the data by using an electronical platform and display them on a suitable indicator."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Frame design and fabrication of Engine Dynamometers for FSAE cars",
+      "publisher": "Journal of Innovative Ideas in Engineering and Technology",
+      "author": "Pranaya Pokharel; Trevon Antoine; Garvin Joseph",
+      "published_at": "2024-08-01",
+      "url": "https://openalex.org/W7220333505",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "14f9d2366b7d51b699b54b2a061d6f02ea22ab4967d7fc4547e8f5792d24aae3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Engine dynamometers (dynos) are used to test and validate design concepts in cars.",
+        "In our application, we will test engines 710cc and under, as per Formula Society of Automotive Engineers (FSAE) guidelines.",
+        "To do this, a cost effective, and efficient dyno was designed.",
+        "The dyno is modular which allows it to mount different size engines.",
+        "To achieve this modularity, the front and rear engine mounts were made moveable.",
+        "The dyno consists of components such as an engine, radiator, fuel tank, dynamometer control, laptop, and the eddy current brake.",
+        "The eddy current will provide resistance to the engine via a shaft to simulate the load that the engine will be under in the FSAE car.",
+        "From this project, we are able to tune the engine and collect information for various sub-teams before the designs are integrated into the car.",
+        "The dyno collects powertrain data such as the cylinder pressure, oil pressure, and power output.",
+        "We are also able to test electrical sensors, plan electrical system design, and log data.",
+        "The car’s drivetrain system can test final drive ratios and obtain power values being sent to the differential.",
+        "The eddy brake is calibrated to match values from the tire data for the tires we will be using on the car."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Reciprocating engine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25995",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "b4d7684718effb36229f50c0dd8e040b08d8f3218b944bee50b98a9c09d5622f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A reciprocating engine, more often known as a piston engine, is a heat engine that uses one or more reciprocating pistons to convert high temperature and high pressure into a rotating motion.",
+        "The main types are: the internal combustion engine, used extensively in motor vehicles; the steam engine, the mainstay of the Industrial Revolution; and the Stirling engine for niche applications."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Petrol engine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=166194",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "7cf0193e13f8bd3850bde6ae2920d7bafd89e62717af013ce39e3c1b4d62d672",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A petrol engine is an internal combustion engine that runs on petrol (gasoline).",
+        "Petrol engines can often be adapted to also run on fuels such as liquefied petroleum gas and ethanol blends (such as E10 and E85).",
+        "They may be designed to run on petrol with a higher octane rating, as sold at petrol stations.",
+        "Most petrol engines use spark ignition, unlike diesel engines which run on diesel fuel and typically use compression ignition.",
+        "Another key difference to diesel engines is that petrol engines typically have a lower compression ratio."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Four-stroke engine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=170045",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "830121f2cfb5c13c4dd395caa9dea6529cf7e77f810862a05189041c0d7ba142",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A four-stroke (also four-cycle) engine is an internal combustion engine (ICE or IC engine) in which the piston completes four separate strokes while turning the crankshaft.",
+        "A stroke refers to the full travel of the piston along the cylinder, in either direction.",
+        "The four separate strokes are termed:\n\nIntake: Also known as induction or suction.",
+        "This stroke of the piston begins at top dead center (T.D.C.) and ends at bottom dead center (B.D.C.).",
+        "In this stroke the intake valve must be in the open position while the piston pulls an air-fuel mixture into the cylinder by producing a partial vacuum (negative pressure) in the cylinder through its downward motion.",
+        "Compression: This stroke begins at B.D.C, or just at the end of the suction stroke, and ends at T.D.C.",
+        "In this stroke the piston compresses the air-fuel mixture in preparation for ignition during the power stroke  (below).",
+        "Both the intake and exhaust valves are closed during this stage.",
+        "This is the start of the second revolution of the four stroke cycle.",
+        "At this point the crankshaft has completed a full 360 degree revolution.",
+        "(the end of the compression stroke) the compressed air-fuel mixture is ignited by a spark plug (in a gasoline engine) or by heat generated by high compression (diesel engines), forcefully returning the piston to B.D.C.",
+        "This stroke produces mechanical work from the engine to turn the crankshaft."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Motor oil",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=216189",
+      "retrieved_at": "2026-10-18T15:10:22.757Z",
+      "sha256": "d23caabcb5c95e4982f3fbcc6ab663285e8de503f12c7211e905d8d8d1642cbd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Motor oil, engine oil, or engine lubricant is any one of various substances used for the lubrication of internal combustion engines.",
+        "Motor oils typically consist of base oils enhanced with various additives, particularly antiwear additives, detergents, dispersants, and, for multi-grade oils, viscosity index improvers.",
+        "The main function of motor oil is to reduce friction and wear on moving parts and to clean the engine from sludge (one of the functions of dispersants) and varnish (detergents).",
+        "It also neutralizes acids that originate from fuel and from oxidation of the lubricant (detergents), improves the sealing of piston rings, and cools the engine by carrying heat away from moving parts.",
+        "In addition to the aforementioned basic constituents, almost all lubricating oils contain corrosion and oxidation inhibitors.",
+        "Motor oil may be composed of only a lubricant base stock in the case of non-detergent oil, or a lubricant base stock plus additives to improve the oil's detergency, extreme pressure performance, and ability to inhibit corrosion of engine parts.",
+        "Motor oils are blended using base oils composed of petroleum-based hydrocarbons, polyalphaolefins (PAOs), or their mixtures in various proportions, sometimes with up to 20% by weight of esters for better dissolution of additives."
+      ]
+    }
+  ]
+}

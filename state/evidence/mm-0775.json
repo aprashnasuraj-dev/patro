@@ -1,0 +1,103 @@
+{
+  "id": "mm-0775",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Mercurial Thermometers are made",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": null,
+      "published_at": "1870-08-06",
+      "url": "https://www.scientificamerican.com/article/how-mercurial-thermometers-are-made/",
+      "retrieved_at": "2026-10-18T15:19:05.613Z",
+      "sha256": "ec550bbe75421b72ce4b6968564e026e6d8a77fb16c7f4f3d61be159bef3d1f0",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "We leverage third party services to both verify and deliver email.",
+        "By providing your email address, you also consent to having the email address shared with third parties for those purposes.",
+        "That’s why I and the journalists here at Scientific American hope you’ll join our community.",
+        "Our editors and reporters are often experts in their fields, which means they understand the nuances of big discoveries and can untangle the breakthroughs from the hype.",
+        "With a subscription, you are also supporting rigorous fact-checking to ensure the words we publish are precise and accurate.",
+        "And you’re supporting original illustrations, graphics and photos that bring you closer to an advanced laboratory, an ice sheet in Antarctica or a space mission in orbit.",
+        "You’re helping us craft other types of high-quality journalism as well: Our newsletters are carefully written, edited and curated by staffers you have or will come to know and love.",
+        "Our Science Quickly podcast is based on original reporting, collaboration with editors and scientists and exacting production.",
+        "Subscriptions keep this engine running so we can continue to deliver thoughtful, rigorous and independent science journalism to you."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Clinical thermometers",
+      "publisher": "BSI British Standards",
+      "author": null,
+      "published_at": null,
+      "url": "/products/clinical-thermometers-phase-change-type-dot-matrix-thermometers",
+      "retrieved_at": "2026-10-18T15:19:06.963Z",
+      "sha256": "b7c8f6874eb13c38acc51b2abb916d64e5f63d72a6d5379dc9b6b162329cdcf2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This European Standard does not apply to clinical thermometers designed for special applications (e.g.",
+        "thermometers for hypothermia) which owing to their measurement range, scale interval or maximum permissible error do not meet the requirements specified in this Standard."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fahrenheit",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11524",
+      "retrieved_at": "2026-10-18T15:19:07.244Z",
+      "sha256": "8f225cdc88d2a2e2a1058f2948a9fdf436259afa1967318663765559da1128a0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Fahrenheit scale () is a temperature scale based on one proposed in 1724 by Daniel Gabriel Fahrenheit (1686–1736).",
+        "Several accounts of how he originally defined his scale exist, but the original paper suggests the lower defining point, 0 °F, was established as the freezing temperature of a solution of brine made from a mixture of water, ice, and ammonium chloride (a salt).",
+        "The other limit established was his best estimate of the average human body temperature, originally set at 90 °F, then 96 °F (about 2.6 °F less than the modern value due to a later redefinition of the scale).",
+        "For much of the 20th century, the Fahrenheit scale was defined by two fixed points with a 180 °F separation: the temperature at which pure water freezes was defined as 32 °F and the boiling point of water was defined to be 212 °F, both at sea level and under standard atmospheric pressure.",
+        "Fahrenheit is still used alongside the Celsius scale in other countries that use the U.S.",
+        "meteorological service, such as Antigua and Barbuda, Saint Kitts and Nevis, the Bahamas, and Belize.",
+        "A handful of British Overseas Territories, including the Virgin Islands, Montserrat, Anguilla, and Bermuda, also still use both scales.",
+        "All other countries now use Celsius (\"centigrade\" until 1948), which was developed 18 years after the Fahrenheit scale."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Thermometer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30993",
+      "retrieved_at": "2026-10-18T15:19:07.244Z",
+      "sha256": "da1871160d0d538eb4233660629eefe1b59a2fea4561ba909d0ed1e1570e3e9b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A thermometer is a device that measures temperature (the hotness or coldness of an object).",
+        "A thermometer has two important elements: (1) a temperature sensor (e.g.",
+        "the bulb of a mercury-in-glass thermometer or the pyrometric sensor in an infrared thermometer) in which some change occurs with a change in temperature; and (2) some means of converting this change into a numerical value (e.g.",
+        "the visible scale that is marked on a mercury-in-glass thermometer or the digital readout on an infrared model).",
+        "Thermometers are widely used in technology and industry to monitor processes, in meteorology, in medicine (medical thermometer), in scientific research, and for cooking."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Indoor–outdoor thermometer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25501419",
+      "retrieved_at": "2026-10-18T15:19:07.244Z",
+      "sha256": "c9913ec34e8cfa2394713e6a28197a9f6068bf2dfcc1cae9caae87ab480bf439",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An indoor–outdoor thermometer is a thermometer that simultaneously provides a measurement of the indoor and outdoor temperatures.",
+        "The outdoor part of the thermometer requires some kind of remote temperature sensing device.",
+        "Conventionally, this was done by extending the bulb of the thermometer to the remote site.",
+        "Modern instruments are more likely to use some form of electronic transducer."
+      ]
+    }
+  ]
+}
