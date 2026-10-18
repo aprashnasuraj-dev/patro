@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-query-final",
-  "note": "Bounded final rerun using focused regulator/scientific queries plus the exact-question search fallback. Must pass exact-topic relevance, three independent publisher domains, source-grounded claims, minimum word count and editorial release gate. No production publish."
+  "mode": "research-grounding-interleaved-final",
+  "note": "Final bounded two-topic rerun after interleaving OpenAlex, expanded search, exact-question search, and Wikipedia-derived candidates so one source provider cannot crowd out the others. Fail closed on source independence, topic relevance, claim grounding, length and editorial quality; no production publish."
 }
