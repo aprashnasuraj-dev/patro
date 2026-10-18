@@ -58,8 +58,8 @@ test('plan: cached evidence goes straight to writing; thin evidence needs resear
  assert.deepEqual(rows.map(r=>r.id+':'+r.stage),['a:write_from_cache','b:research_then_write']);assert.equal(tally.ymyl_held,1);
 });
 test('gate: approves a grounded article with independent sources and zero images; holds ymyl, short and duplicate',()=>{
- const body=Array.from({length:60},(_,i)=>'Sentence number '+i+' explains one separate detail about leaves and light.').join(' ');
- const base=()=>{const sources=[1,2,3].map(i=>({id:'s'+i,url:'https://x.gov/'+i,title:'T'+i,publisher:'P',retrieved_at:'2026-10-19T00:00:00Z',verified:false,claim_ids:['c'+i]}));
+ const body=Array.from({length:60},(_,i)=>['Leaves','Chlorophyll','Sunlight','Pigments','Plants'][i%5]+' detail '+i+' explains one separate fact about leaves and light.').join(' ');
+ const base=()=>{const sources=[1,2,3].map(i=>({id:'s'+i,url:'https://source'+i+'.gov/'+i,title:'T'+i,publisher:'P',retrieved_at:'2026-10-19T00:00:00Z',verified:false,claim_ids:['c'+i]}));
   return {id:'abc',title:'A long enough title',intent:'Answer: something',original_contribution:'x'.repeat(40),sources,claims:[1,2,3].map(i=>({id:'c'+i,text:'A grounded claim '+i,source_ids:['s'+i],passage:'p'})),media:[],body_md:body};};
  const policy={min_sources:3,min_words:400};
  assert.equal(decideV2(base(),{route:'general',policy}).ok,true);
@@ -73,7 +73,7 @@ test('runner e2e: writes from cached evidence with 2 LLM calls and approves with
  const excerpt=(k,n)=>'Chlorophyll in leaf '+k+' reflects green light while absorbing red and blue wavelengths, number '+n+'.';
  const evidence=[1,2,3].map(i=>({id:'s'+i,title:'Source '+i,publisher:'nasa.gov',url:'https://source'+i+'.gov/'+i,retrieved_at:'2026-10-19T00:00:00Z',sha256:'h'.repeat(64),excerpts:[excerpt(i,1),excerpt(i,2),excerpt(i,3)]}));
  const mkReg=id=>({id,type:'topic',slug:'why-grass-is-green-'+id,url:'https://aafnaipatro.com/why-grass-is-green-'+id+'/',intent:'Answer: Why grass is green',status:'reserved',meta:{category:'Nature & Plants',title:'Why Grass Is Green? The Full Story',question:'Why grass is green'}});
- const registry=[mkReg('mm-01'),mkReg('mm-02')];let n=0;const body=Array.from({length:70},(_,i)=>'Fact '+i+' about grass shows one more separate detail of how leaves treat sunlight each day.').join(' ');
+ const registry=[mkReg('mm-01'),mkReg('mm-02')];let n=0;const body=Array.from({length:70},(_,i)=>['Leaves','Sunlight','Chlorophyll','Pigments','Grass'][i%5]+' detail '+i+' shows one more separate fact about how leaves treat sunlight each day.').join(' ');
  const llm={available:()=>true,stats:()=>[],async json(){n++;if(n===1)return {value:{title:'Why grass looks green to us',description:'d',sections:[1,2,3].map(s=>({heading:'H'+s,purpose:'p',claims:[{id:'a',text:'Leaf '+s+' reflects green light',source_id:'s'+s,passage:excerpt(s,1)},{id:'b',text:'Leaf '+s+' absorbs red and blue',source_id:'s'+s,passage:excerpt(s,2)}]}))}};
    if(n===2)return {value:{markdown:body,faq:[{question:'q',answer:'a'}]}};throw Object.assign(new Error('NO_BUDGET: spent'),{code:'NO_BUDGET'});}};
  const plan={rows:[{id:'mm-01',route:'general'},{id:'mm-02',route:'general'}]};
