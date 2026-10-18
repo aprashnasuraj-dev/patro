@@ -46,7 +46,7 @@ export async function searchWebLinks(topic,{fetchImpl=fetch,env=process.env,max=
  if(out.length===0){try{
   const u='https://html.duckduckgo.com/html/?'+new URLSearchParams({q:topic});
   const r=await fetchImpl(u,{headers:{'user-agent':UA,'accept':'text/html'}});
-  if(r.ok){const html=await r.text();for(const m of html.matchAll(/<a\\b(?=[^>]*\\bclass=["'][^"']*\\bresult__a\\b[^"']*["'])[^>]*\\bhref=["']([^"']+)["'][^>]*>/gi)){
+  if(r.ok){const html=await r.text();for(const m of html.matchAll(/<a\b(?=[^>]*\bclass=["'][^"']*\bresult__a\b[^"']*["'])[^>]*\bhref=["']([^"']+)["'][^>]*>/gi)){
    try{const href=m[1].replace(/&amp;/g,'&');const parsed=new URL(href,'https://html.duckduckgo.com');const target=parsed.searchParams.get('uddg');const resolved=target?decodeURIComponent(target):parsed.href;if(/^https:\\/\\//i.test(resolved))out.push(resolved);}catch{}
   }}
  }catch{}}
