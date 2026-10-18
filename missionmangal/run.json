@@ -1,1 +1,7 @@
-{"shards":4,"limit_per_shard":3,"min_minutes":0,"deadline_minutes":60,"auto_approve":"true","allow_ymyl":"false"}
+{
+  "shards": 25,
+  "min_minutes": 100,
+  "deadline_minutes": 335,
+  "auto_approve": "true",
+  "allow_ymyl": "false"
+}
