@@ -1,0 +1,77 @@
+{
+  "id": "mt-0736",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Major depressive disorder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8389",
+      "retrieved_at": "2026-10-18T16:51:32.823Z",
+      "sha256": "242c9f6af409dca36114098e308f49fd1e6221155e14c3e6cf3dc00ea7a0d24f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Major depressive disorder (MDD), also known as clinical depression, is a mental disorder characterized by at least two weeks of pervasive low mood, low self-esteem, and loss of interest or pleasure in normally enjoyable activities.",
+        "Introduced by a group of US clinicians in the mid-1970s, the term was adopted by the American Psychiatric Association for this symptom cluster under mood disorders in the 1980 version of the Diagnostic and Statistical Manual of Mental Disorders (DSM-III), and has become widely used since.",
+        "The disorder causes the second-most years lived with disability, after lower back pain.",
+        "The diagnosis of major depressive disorder is based on the person's experiences, and behavior reported by family or friends, and a mental status examination.",
+        "There is no laboratory test for the disorder, but blood testing and similar may be done to rule out physical conditions that can cause similar symptoms.",
+        "Men are much less likely to report than women, with approximately 33.2% of men and 43.0% of women with depressive symptoms reporting seeking help, possibly due to pressures of masking for men.",
+        "The course of the disorder varies widely, from one episode lasting months to a lifelong disorder with recurrent episodes.",
+        "Those with major depressive disorder are typically treated with psychotherapy and antidepressant medication.",
+        "While a mainstay of treatment, the clinical efficacy of antidepressants is controversial.",
+        "Hospitalization (which may be involuntary) may be necessary in cases with associated self-neglect or a significant risk of harm to self or others.",
+        "Major depressive disorder is believed to be caused by a combination of genetic, environmental, and psychological factors, with about 40% of the risk being genetic.",
+        "Risk factors include a family history of the condition, major life changes, childhood traumas, environmental lead exposure, certain medications, chronic health problems, and substance use disorders."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T16:51:32.823Z",
+      "sha256": "97494dbdbf222545369d34a6f525867539086ece4c18e0ccc1fb2dacc1eabe38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T16:51:32.823Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

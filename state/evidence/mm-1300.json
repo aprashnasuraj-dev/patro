@@ -1,0 +1,156 @@
+{
+  "id": "mm-1300",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Solving Emergency Department Triage with Small Language Models: Why Large Commercial Models Fail and How Specialized Training Achieves Clinical Accuracy",
+      "publisher": "openRxiv",
+      "author": "Belski, Vadim; Lukina, Kate",
+      "published_at": "2026-05-05",
+      "url": "https://doi.org/10.64898/2026.05.04.26352355",
+      "retrieved_at": "2026-10-18T16:03:17.743Z",
+      "sha256": "12ffae03ddd6437b4981d17d9d9d33b9fef6c1f75ea2d0ee9f25341dfb25600e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Emergency department (ED) triage assigns patients a five-level Emergency Severity Index (ESI) score that determines care priority.",
+        "Off-the-shelf large models achieve only 45–55% exact ESI accuracy while being impractical for clinical deployment due to privacy constraints, cost, and latency.",
+        "Our specialized BiomedBERT [4] pipeline achieves 88.9% exact accuracy with 97.2% adjacent accuracy (±1 ESI) on a 50-case expert-labeled evaluation set, approaching nurse inter-rater agreement.",
+        "A Qwen3.5-9B model [16] fine-tuned with chain-of-thought supervision achieves 75.0% exact / 97.2% adjacent accuracy on a 36-case narrative evaluation.",
+        "Ongoing GRPO training [13] with a clinically asymmetric reward function and 2,776 ESI-1 narrative training cases (previously 22, due to a discovered extraction bug) shows strong early reward signal.",
+        "We document 37+ BERT experiments, multiple LLM training cycles, systematic data quality audits, and the specific engineering decisions that enabled progress, including the discovery that 71% of training labels for altered mental status were false positives."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Food prices are rising but farmers’ profits are still small – here’s why",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Jack, Lisa",
+      "published_at": "2023-05-19",
+      "url": "https://theconversation.com/food-prices-are-rising-but-farmers-profits-are-still-small-heres-why-205870",
+      "retrieved_at": "2026-10-18T16:03:18.097Z",
+      "sha256": "64268dec34803f57fff3fab5b972fde02aae3ba01fece65da3eb89df26d1fb60",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Food prices are rising but farmers’ profits are still small – here’s why Skip to content Academic rigor, journalistic flair Farmers need a fair deal.",
+        "It was billed as an opportunity to brainstorm solutions to rising food prices, falling production and uncertainty over trade agreements with overseas partners.",
+        "Reports from attendees after the event have been mixed, with many seeing it only as a first step forward .",
+        "A report issued by the government after the event showcased long-term government investment in infrastructure and the environment, which was welcomed by the National Union of Farmers .",
+        "But it only had one short section on fair supply chains – and that didn’t address the underlying problems.",
+        "My research into unseen food supply costs shows transparency and fairness is vital to tackling current food-related challenges in the UK.",
+        "The UK needs healthy, nutritious and affordable food provided in a way that is fair to everyone involved.",
+        "In a cost of living crisis, the media spotlight is going to fall on those in food poverty and on rising food prices.",
+        "These are crucial issues to address, but to have any real impact, the discussion must extend even further to cover the systemic unfairness throughout the UK food supply system.",
+        "Our food system is dominated by supermarket-style retailing and mass catering, which deal in bulk orders, food storage and big premises, making it very expensive to run with surprisingly few economies of scale .",
+        "The overheads – the everyday expenses of these businesses, such as paying for staff and electricity – are huge.",
+        "The Food Research Collaboration , Author provided I carried out research on food costs and pricing for Sustain , an organisation that represents the farming and fishing industries."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Language Without Propositions: Why Large Language Models Hallucinate",
+      "publisher": "MDPI AG",
+      "author": "Mácha, Jakub",
+      "published_at": "2026-01-20",
+      "url": "https://doi.org/10.20944/preprints202601.1447.v1",
+      "retrieved_at": "2026-10-18T16:03:18.098Z",
+      "sha256": "0a6f7f7ea48685396344f74e5cc964eb554a51b5cfd95faf3c9bd28d12d34377",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper defends the thesis that LLM hallucinations are best explained as a truth representation problem: Current models lack an internal representation of propositions as truth-bearers, so truth and falsity cannot constrain generation in the way factual discourse requires.",
+        "It begins by surveying leading explanations—computational limits on self-verification, deficiencies in training data as truth sources, and architectural factors—and argues that they converge on the same underlying representational deficit.",
+        "Finally, the paper offers a positive proposal: Atomic propositions should be represented in the basic vector layer, reviving a logical-atomist program as a principled route to reducing hallucination."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Natural language processing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21652",
+      "retrieved_at": "2026-10-18T16:03:18.893Z",
+      "sha256": "a4506d9a1884698bbadad0e2b4ac16ec264c3c9a728769866f886051ffec3ac3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Natural language processing (NLP) is the processing of natural language information by a computer.",
+        "NLP is a subfield of computer science and is closely associated with artificial intelligence.",
+        "NLP is also related to information retrieval, knowledge representation, computational linguistics, and linguistics more broadly.",
+        "Major processing tasks in an NLP system include: speech recognition, text classification, natural language understanding, and natural language generation."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Spanish language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26825",
+      "retrieved_at": "2026-10-18T16:03:18.893Z",
+      "sha256": "9178c4c5e2680d4bddfc8d07a5ce9af320da3b49509afee55b2feed56d2705c5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Spanish (español) or Castilian (castellano) is a Romance language of the Indo-European language family that evolved from the Vulgar Latin spoken on the Iberian Peninsula of Europe.",
+        "It originated in the Kingdom of Castile, a kingdom in north-central Iberia.",
+        "Today, it is a global language with 519 million native speakers, mainly in the Americas and Spain, and about 636 million speakers total, including second-language speakers.",
+        "Spanish is the official language of 21 countries, as well as one of the six official languages of the United Nations.",
+        "Spanish is the world's second-most spoken native language after Mandarin Chinese; the world's fourth-most spoken language overall after English, Mandarin Chinese, and Hindustani (Hindi-Urdu); and the world's most widely spoken Romance language.",
+        "The country with the largest population of native speakers is Mexico, with 130M speakers, almost triple that of the United States of America.",
+        "Spanish is part of the Ibero-Romance language group, which evolved from several dialects of Vulgar Latin in Iberia after the collapse of the Western Roman Empire in the 5th century.",
+        "The oldest Latin texts with traces of Spanish come from mid-northern Iberia in the 9th century, and the first systematic written use of the language happened in Toledo, a prominent city of the Kingdom of Castile, in the 13th century.",
+        "Spanish colonialism in the early modern period spurred the introduction of the language to overseas locations, most notably to the Americas.",
+        "About 75% of modern Spanish vocabulary is Latin in origin, including Latin borrowings from Ancient Greek.",
+        "Alongside English and French, it is also one of the most taught foreign languages throughout the world.",
+        "Spanish is well represented in the humanities and social sciences."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "VHDL",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=43410",
+      "retrieved_at": "2026-10-18T16:03:18.893Z",
+      "sha256": "4d90b19484a98402e65f0b79d6023a1565e3d91838e27b6ca4dc82ca6656a8fe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "VHDL (VHSIC hardware description language) is a hardware description language that can model the behavior and structure of digital systems at multiple levels of abstraction, ranging from the system level down to that of logic gates.",
+        "It can be used for design entry, documentation, and verification.",
+        "The language was developed for the US military VHSIC program in the 1980s, and has been standardized by the Institute of Electrical and Electronics Engineers (IEEE) as IEEE Std 1076; the latest version of which is IEEE Std 1076-2019.",
+        "To model analog and mixed-signal systems, an IEEE-standardized HDL based on VHDL called VHDL-AMS (officially IEEE 1076.1) has been developed."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Metal Gear Rising: Revengeance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23048153",
+      "retrieved_at": "2026-10-18T16:03:18.893Z",
+      "sha256": "47f6eb18fe0d42a13247f10cd3393e8e3595dac7a727e7a210028144a4111870",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Metal Gear Rising: Revengeance is a 2013 action-adventure game developed by PlatinumGames and published by Konami.",
+        "It was released for the PlayStation 3 and Xbox 360 in February 2013, Windows and OS X in January and September 2014, and Nvidia Shield TV in January 2016.",
+        "It is a spin-off in the Metal Gear series, set four years after the events of Metal Gear Solid 4: Guns of the Patriots.",
+        "It features returning Metal Gear character Raiden as he confronts a private military company (PMC) that intends to destabilize peaceful nations for profit.",
+        "The gameplay focuses on fighting enemies using a sword and other weapons to perform combos and counterattacks.",
+        "Through the use of \"Blade Mode\", Raiden can dismember enemies in slow motion and steal health items from their bodies.",
+        "The series' usual stealth elements are also optional, serving as a means to avoid combat.",
+        "Two downloadable content chapters were also released, set before the main campaign and centers on Raiden's enemies.",
+        "The game was originally developed by Kojima Productions, which announced the game in 2009 under the title of Metal Gear Solid: Rising.",
+        "However, the team faced difficulties in developing a game based on swordplay, and supervising director Hideo Kojima subsequently halted development until a solution could be found.",
+        "The project resurfaced in late 2011 under its finalized title, with PlatinumGames as the new developer.",
+        "The game underwent significant changes in gameplay mechanics and storyline with PlatinumGames' involvement, although Kojima Productions retained responsibility for the overall plot and Raiden's design."
+      ]
+    }
+  ]
+}

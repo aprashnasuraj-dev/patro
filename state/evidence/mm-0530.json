@@ -1,0 +1,105 @@
+{
+  "id": "mm-0530",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Hepatitis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38238",
+      "retrieved_at": "2026-10-18T15:24:12.876Z",
+      "sha256": "a1928b760c89f7ec026658ef2ee013e7ad91c05fa10b5fb6ec9a8b1ef9bcfd38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Some people or animals with hepatitis have no symptoms, whereas others develop yellow discoloration of the skin and whites of the eyes (jaundice), poor appetite, vomiting, tiredness, abdominal pain, and diarrhea.",
+        "Hepatitis is acute if it resolves within six months, and chronic if it lasts longer than six months.",
+        "Acute hepatitis can resolve on its own, progress to chronic hepatitis, or (rarely) result in acute liver failure.",
+        "Chronic hepatitis may progress to scarring of the liver (cirrhosis), liver failure, and liver cancer.",
+        "Hepatitis is most commonly caused by the virus hepatovirus A, B, C, D, and E.",
+        "Other viruses can also cause liver inflammation, including cytomegalovirus, Epstein–Barr virus, and yellow fever virus.",
+        "Other common causes of hepatitis include heavy alcohol use, certain medications, toxins, other infections, autoimmune diseases, and non-alcoholic steatohepatitis (NASH).",
+        "Hepatitis A and E are mainly spread by contaminated food and water.",
+        "Hepatitis B is mainly sexually transmitted, but may also be passed from mother to baby during pregnancy or childbirth and spread through infected blood.",
+        "Hepatitis C is commonly spread through infected blood; for example, during needle sharing by intravenous drug users.",
+        "Hepatitis D can only infect people already infected with hepatitis B.",
+        "Antiviral medications are recommended in all with chronic hepatitis C, except those with conditions that limit their life expectancy."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Schistosomiasis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=191304",
+      "retrieved_at": "2026-10-18T15:24:12.876Z",
+      "sha256": "9bd93de770af22ca4d0db5b0e613db5b7c39ce80d3a7380ef362bfb14bcab0c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Schistosomiasis, also known as snail fever, bilharzia, and Katayama fever is a tropical disease, specifically a helminthiasis caused by the parasitic flatworm of the genus Schistosoma.",
+        "Symptoms include abdominal pain, diarrhea, bloody stool, or blood in the urine.",
+        "Those who have had a schistosomiasis infection for a long time may experience liver damage, kidney failure, infertility, or bladder cancer.",
+        "In children, schistosomiasis may cause failure to thrive, poor growth, and learning difficulties.",
+        "Schistosomiasis is spread by contact with fresh water contaminated with parasites released from infected freshwater snails.",
+        "Medical diagnosis is made by finding the parasite's eggs in a person's urine or stool.",
+        "Diagnosis can also be confirmed by finding antibodies against the disease in the blood.",
+        "Methods of preventing the disease include improving access to clean water and reducing the number of snails.",
+        "In areas where the disease is common, the medication praziquantel may be given once a year to the entire at-risk group.",
+        "This is done to decrease the number of people infected, and consequently, the spread of the disease.",
+        "Praziquantel is also the treatment recommended by the World Health Organization (WHO) for those who are known to be infected.",
+        "The disease is especially common among children in developing countries, as children there are more likely to play in contaminated water."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Offal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=342509",
+      "retrieved_at": "2026-10-18T15:24:12.876Z",
+      "sha256": "7a79aa044d18d51befc60e02cb6856a8a99e9e691b2dac35a198a018b2c21ef9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Offal (), also called variety meats, pluck or organ meats, is the internal organs of a butchered animal.",
+        "Offal may also refer to the by-products of milled grains, such as corn or wheat.",
+        "Some cultures strongly consider offal consumption to be taboo, while others use it as part of their everyday food, such as lunch meats, or, in many instances, as delicacies.",
+        "Certain offal dishes—including foie gras and pâté—are often regarded as gourmet food in the culinary arts.",
+        "Others remain part of traditional regional cuisine and are consumed especially during holidays; some examples are sweetbread, Jewish chopped liver, Scottish haggis, U.S.",
+        "Depending on the context, offal may refer only to those parts of an animal carcass discarded after butchering or skinning.",
+        "Offal not used directly for human or animal consumption is often processed in a rendering plant, producing material that is used for fertilizer or fuel; in some cases, it may be added to commercially produced pet food.",
+        "In earlier times, mobs sometimes threw offal and other rubbish at condemned criminals as a show of public disapproval."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hepatitis B",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15925628",
+      "retrieved_at": "2026-10-18T15:24:12.876Z",
+      "sha256": "a22d417e5ca8381bb3a0c72faeff60d7110bbef3e8cbe6e9219540ba75bfc453",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hepatitis B is an infectious disease caused by the hepatitis B virus (HBV) that affects the liver; it is a type of viral hepatitis.",
+        "For others, symptoms may appear 30 to 180 days after exposure and can include a rapid onset of sickness with nausea, vomiting, yellowish skin, fatigue, yellow urine, and abdominal pain.",
+        "Symptoms during acute infection typically last for a few weeks, though some people may feel sick for up to six months.",
+        "An HBV infection lasting longer than six months is usually considered chronic.",
+        "The likelihood of developing chronic hepatitis B is higher for those who are infected with HBV at a younger age.",
+        "About 90% of those infected during or shortly after birth develop chronic hepatitis B, while less than 10% of those infected after the age of five develop chronic cases.",
+        "Most of those with chronic disease have no symptoms; however, cirrhosis and liver cancer eventually develop in about 25% of those with chronic HBV.",
+        "The virus is transmitted by exposure to infectious blood or body fluids.",
+        "In areas where the disease is common, infection around the time of birth or from contact with other people's blood during childhood are the most frequent methods by which hepatitis B is acquired.",
+        "In areas where the disease is rare, intravenous drug use and sexual intercourse are the most frequent routes of infection.",
+        "Other risk factors include working in healthcare, blood transfusions, dialysis, living with an infected person, travel in countries with high infection rates, and living in group living situations.",
+        "Tattooing and acupuncture led to a significant number of cases in the 1980s; however, this has become less common with improved sterilization."
+      ]
+    }
+  ]
+}

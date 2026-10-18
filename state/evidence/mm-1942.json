@@ -1,0 +1,101 @@
+{
+  "id": "mm-1942",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Panama",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22997",
+      "retrieved_at": "2026-10-18T16:36:45.873Z",
+      "sha256": "1c54e96c218cee2d4e640a49bbe2c549aa6fe10abb3ea26430fc587bf7b177e3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Panama, officially the Republic of Panama, is a country located at the southern end of Central America in North America, bordering South America.",
+        "It is bordered by Costa Rica to the west, Colombia to the southeast, the Caribbean Sea to the north, and the Pacific Ocean to the south.",
+        "Its capital and largest city is Panama City, whose metropolitan area is home to nearly half of the country's over 4 million inhabitants.",
+        "Before the arrival of Spanish colonists in the 16th century, Panama was inhabited by a number of different Indigenous peoples.",
+        "It broke away from Spain in 1821 and joined the Republic of Gran Colombia, a union of Nueva Granada, Ecuador, and Venezuela.",
+        "After Gran Colombia dissolved in 1831, Panama and Nueva Granada eventually became the Republic of Colombia.",
+        "With the backing of the United States, Panama seceded from Colombia in 1903, allowing the construction of the Panama Canal to be completed by the United States Army Corps of Engineers between 1904 and 1914.",
+        "The 1977 Torrijos–Carter Treaties agreed to transfer the canal from the United States to Panama on December 31, 1999.",
+        "Revenue from canal tolls has continued to represent a significant portion of Panama's GDP, especially after the Panama Canal expansion project (finished in 2016) doubled its capacity.",
+        "In 2019, Panama ranked 57th in the world in terms of the Human Development Index.",
+        "In 2018, Panama was ranked the seventh-most competitive economy in Latin America, according to the World Economic Forum's Global Competitiveness Index.",
+        "Panama was ranked 82nd in the Global Innovation Index in 2025."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Panama Canal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24849",
+      "retrieved_at": "2026-10-18T16:36:45.873Z",
+      "sha256": "ad474e4b70d12a109c3bf7947785a28fc29c1d723dedecfbd74793dc1b38bb3f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Panama Canal (Spanish: Canal de Panamá) is an artificial 82-kilometer (51-mile) waterway in Panama that connects the Caribbean Sea in the Atlantic Ocean with the Pacific Ocean.",
+        "It cuts across the narrowest point of the Isthmus of Panama and is a conduit for maritime trade between the Atlantic Ocean and the Pacific Ocean.",
+        "Locks at each end lift ships up to Gatun Lake, an artificial fresh water lake 26 meters (85 ft) above sea level, created by damming the Chagres River and Lake Alajuela to reduce the amount of excavation work required for the canal.",
+        "The original locks are 33.5 meters (110 ft) wide and allow the passage of Panamax ships.",
+        "A third, wider lane of locks was constructed between September 2007 and May 2016.",
+        "The expanded waterway began commercial operation on 26 June 2016.",
+        "The new locks allow for the transit of larger, Neopanamax ships.",
+        "An average of 200,000,000 litres (52 million US gallons) of fresh water is used in a single passing of a ship.",
+        "The canal is threatened by low water levels during droughts.",
+        "The Panama Canal shortcut greatly reduces the time for ships to travel between the Atlantic and Pacific oceans, enabling them to avoid the lengthy, hazardous route around the southernmost tip of South America via the Drake Passage, the Strait of Magellan or the Beagle Channel.",
+        "Its construction was one of the largest and most difficult engineering projects ever undertaken.",
+        "Colombia, France, and later the United States controlled the territory surrounding the canal during construction."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Panama City",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57361",
+      "retrieved_at": "2026-10-18T16:36:45.873Z",
+      "sha256": "5cc4b6562544a0e79dfbb7bd7539ae0984973b9dee989f61e760240c73174d27",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Panama City, also known as Panama, is the capital and largest city of the Republic of Panama.",
+        "It has a total population of 410,354 in the city proper and 1,086,990 in the Panamá District, which includes the outer corregimientos of the city.",
+        "The city is at the Pacific entrance of the Panama Canal, in the province of Panama.",
+        "The city is the political and administrative center of the country, as well as a hub for banking and commerce.",
+        "The city of Panama was founded on 15 August 1519, by Spanish conquistador Pedro Arias Dávila.",
+        "The city was the starting point for expeditions that conquered the Inca Empire of Peru.",
+        "It was a stopover point on one of the most important trade routes in the American continent, leading to the fairs of Nombre de Dios and Portobelo, through which passed most of the gold and silver that Spain mined from the Americas.",
+        "On 28 January 1671, the original city was destroyed by a fire when the privateer Henry Morgan sacked and set fire to it.",
+        "The city was formally reestablished two years later on 21 January 1673, on a peninsula 8 km (5 miles) from the original settlement.",
+        "The site of the previously devastated city is still in ruins, and is now a World Heritage Site and popular tourist attraction."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Panama Canal Zone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=315787",
+      "retrieved_at": "2026-10-18T16:36:45.873Z",
+      "sha256": "9e5e528fe8c2bf267cdb9318712920d04b498b77f838ca23d95e8587e8431bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Panama Canal Zone (Spanish: Zona del Canal de Panamá), also known simply as the Canal Zone, was a concession of the United States located in the Isthmus of Panama that existed from 1903 to 1979.",
+        "It consisted of the Panama Canal and an area generally extending five miles (8 km) on each side of the centerline but excluding Panama City and Colón.",
+        "The Panama Canal Zone was created on November 18, 1903, from the territory of Panama; it was established with the signing of the Hay–Bunau-Varilla Treaty, which allowed for the construction of the Panama Canal within the territory by the United States.",
+        "In 1904, the Isthmian Canal Convention was proclaimed, granting the United States in perpetuity the use, occupation, and control of a zone of land and land underwater for the construction, maintenance, operation, sanitation, and protection of the canal.",
+        "From 1903 to 1979, the territory was controlled by the United States, which had purchased the land from its private and public owners, built the canal and financed its construction.",
+        "The Canal Zone was abolished on October 1, 1979, as a term of the Torrijos–Carter Treaties two years earlier; the canal itself was later under joint U.S.–Panamanian control until it was fully turned over to Panama in 1999."
+      ]
+    }
+  ]
+}

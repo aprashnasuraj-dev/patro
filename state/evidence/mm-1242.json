@@ -1,0 +1,119 @@
+{
+  "id": "mm-1242",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Plants are flowering earlier than ever – here’s how they sense the seasons",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Ashton, Paul",
+      "published_at": "2024-02-29",
+      "url": "https://theconversation.com/plants-are-flowering-earlier-than-ever-heres-how-they-sense-the-seasons-223930",
+      "retrieved_at": "2026-10-18T15:58:29.134Z",
+      "sha256": "3814a38de9791a01964f6ad335b3d55a7d6f68283a673ca716e23d4e7284fd38",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Plants are flowering earlier than ever – here’s how they sense the seasons Skip to content Academic rigor, journalistic flair Apple and cherry blossom on a Spring day.",
+        "Although a welcome sign after a wet and gloomy winter, the early flowering brings unease for experienced season watchers.",
+        "Has this plant always flowered in mid-February, I wondered, or is something changing?",
+        "Fortunately, the science of recording and understanding seasonal events, phenology, has a long history in Britain.",
+        "Robert Marsham , an 18th-century naturalist, kept records of the appearance of the flowers, birds and insects in his Norfolk village as far back as 1736.",
+        "The Woodland Trust maintains the tradition with Nature’s Calendar , a scheme in which members of the public are invited to record various seasonal events.",
+        "Detailed analysis of almost half a million plant records by scientists in 2022 showed that when all species were considered together the average flowering time in the UK had advanced by a month over the last 40 years.",
+        "Hawthorn, the common hedgerow plant, is generally flowering 13 days earlier than it did in the early 1980s while the flowers of the horse chestnut tree appear ten days earlier.",
+        "By flowering earlier, plants recognise that winters are becoming shorter and milder.",
+        "They sense the days getting warmer and alter their spring development in a manner akin to humans feeling warmth on their skin and so stepping out with fewer layers of clothing.",
+        "The precise mechanisms for detecting these cues differ between plants and animals, but both are responding to the climate as it changes.",
+        "Detecting light and heat without eyes and skin Plants detect the shortening days of autumn with a pigment called phytochrome that is particularly sensitive to wavelengths in the red region of the electromagnetic spectrum."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Gravity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38579",
+      "retrieved_at": "2026-10-18T15:58:30.025Z",
+      "sha256": "ff779ce741f91543f649f675c00218da43d8f1b59da3fab5cd78477e5455e864",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In physics, gravity (from Latin  gravitas 'weight'), also known as gravitation or a gravitational interaction, is a fundamental interaction, which may be described as the force that draws material objects towards each other.",
+        "The gravitational attraction between clouds of primordial hydrogen and clumps of dark matter in the early universe caused the hydrogen gas to coalesce, eventually condensing and fusing to form stars.",
+        "At larger scales this resulted in galaxies and clusters, so gravity is a primary driver for the large-scale structures in the universe.",
+        "Gravity has an infinite range, although its effects become weaker as objects get farther away.",
+        "Gravity is described by the general theory of relativity, proposed by Albert Einstein in 1915, which describes gravity in terms of the curvature of spacetime, caused by the uneven distribution of mass.",
+        "The most extreme example of this curvature of spacetime is a black hole, from which nothing—not even light—can escape once past the black hole's event horizon.",
+        "Scientists are looking for a theory that describes gravity in the framework of quantum mechanics (quantum gravity), which would unify gravity and the other known fundamental interactions of physics in a single mathematical framework (a theory of everything).",
+        "On the surface of a planetary body such as on Earth, the force of gravity operates towards the center of the body and is modified by the centrifugal effects arising from the rotation of the body.",
+        "In this context, gravity gives weight to physical objects and is essential to understanding the mechanisms that are responsible for surface water waves, lunar tides and substantially contributes to weather patterns.",
+        "Gravitational weight also has many important biological functions, helping to guide the growth of plants through the process of gravitropism and influencing the circulation of fluids in multicellular organisms."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Gravitational biology",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8599335",
+      "retrieved_at": "2026-10-18T15:58:30.025Z",
+      "sha256": "f6791e19793829492860e5f44d3cf14c9acc0aae81f4afa8ddded9ce5543ffba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gravitational biology is the study of the effects gravity has on living organisms.",
+        "Throughout the history of the Earth, life has evolved to survive changing conditions, such as changes in the climate and habitat.",
+        "However, one constant factor in evolution since life first began on Earth is the force of gravity.",
+        "As a result, many biological processes have adapted to the constant force of gravity and even small variations in this force can have significant impact on the health and function of organisms.",
+        "These processes include the gravity sensing ability of organisms known as graviperception and the ability of unicellular organisms and cells to move in relation to gravity known as gravitaxis.",
+        "These processes also include more complex processes which exist at the multicellular level such as the directed growth of plants relative to gravity known as gravitropism.",
+        "Additionally, changes to the force of gravity, like those in microgravity, have been known to cause adverse health effects like bone and muscle atrophy making the understanding of the effects that microgravity has on organisms an important focus in the field of gravitational biology."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Plant perception (physiology)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8651984",
+      "retrieved_at": "2026-10-18T15:58:30.025Z",
+      "sha256": "c81b4e3a0cf81036074f6754f44e005dc030e73023b3deabf1573bc1209de167",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Plant perception is the ability of plants to sense and respond to the environment by adjusting their morphology and physiology.",
+        "Botanical research has revealed that plants are capable of reacting to a broad range of stimuli, including chemicals, gravity, light, moisture, infections, temperature, oxygen and carbon dioxide concentrations, parasite infestation, disease, physical disruption, sound, and touch.",
+        "The scientific study of plant perception is informed by numerous disciplines, such as plant physiology, ecology, and molecular biology."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Sense",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23416874",
+      "retrieved_at": "2026-10-18T15:58:30.025Z",
+      "sha256": "5db36f79dc1524e8e0f26e167e70e4916fc5688d6da8407c175547a808da92c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A sense is a biological system used by an organism for sensation, the process of  gathering information about the surroundings through the detection of stimuli.",
+        "During sensation, sense organs collect various stimuli (such as a sound or smell) for transduction, meaning transformation into a form that can be understood by the brain.",
+        "Sensation and perception are fundamental to nearly every aspect of an organism's cognition, behavior and thought.",
+        "Although, in some cultures, five human senses were traditionally identified as such (namely sight, smell, touch, taste, and hearing), many more are now recognized.",
+        "Senses used by non-human organisms are even greater in variety and number.",
+        "In organisms, a sensory organ consists of a group of interrelated sensory cells that respond to a specific type of physical stimulus.",
+        "Sensory systems, or senses, are often divided into external (exteroception) and internal (interoception) sensory systems.",
+        "Human external senses are based on the sensory organs of the eyes, ears, skin, nose, and mouth.",
+        "Internal sensation detects stimuli from internal organs and tissues.",
+        "Internal senses possessed by humans include spatial orientation, proprioception (body position) and nociception (pain).",
+        "Further internal senses lead to signals such as hunger, thirst, suffocation, and nausea, or different involuntary behaviors, such as vomiting.",
+        "Some animals are able to detect electrical and magnetic fields, air moisture, or polarized light, while others sense and perceive through alternative systems, such as echolocation."
+      ]
+    }
+  ]
+}

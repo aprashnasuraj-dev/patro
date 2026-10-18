@@ -1,0 +1,159 @@
+{
+  "id": "mm-0500",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why AI Cannot Think",
+      "publisher": "transcript Verlag",
+      "author": "Feige, Daniel Martin",
+      "published_at": "2023-12-04",
+      "url": "https://doi.org/10.14361/9783839467107-004",
+      "retrieved_at": "2026-10-18T15:19:56.338Z",
+      "sha256": "9a32dc7e35c2bb618dddb53744ff46ed66e9d908524f612cdcd0839c25aadcb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the context of the recent interest in large language models (LLMs) and image creation using artificial intelligence, the debate about whether AI is capable of reasoning arises again and again.",
+        "This paper argues that it is a mistake to understand the outputs of artificial intelligence in terms of an expression of thinking.",
+        "To be a thinking being one also has to be a bearer of a form of life."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "WHY HOBBITS CANNOT EXIST",
+      "publisher": "Cambridge University Press (CUP)",
+      "author": "Kotzee, Ben; Smit, J.P.",
+      "published_at": "2009",
+      "url": "https://doi.org/10.1017/s1477175608000353",
+      "retrieved_at": "2026-10-18T15:19:56.338Z",
+      "sha256": "c93dc5d0024e0e201e05cf952e25ebb5578cf8da40fc7c609f8ca1302fe3d029",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kotzee and Smit explain why, if unicorns don't exist, then they could not possibly have existed.",
+        "In fact, even if horned horses were discovered somewhere, they would not necessarily be unicorns.",
+        "The key to understanding why this is so lies in understanding how so-called natural kind terms function."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The AI Risk Economy: Why Insurance Cannot Price What Governance Cannot Prove",
+      "publisher": "Elsevier BV",
+      "author": "Puglisi, Basil",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6823580",
+      "retrieved_at": "2026-10-18T15:19:56.339Z",
+      "sha256": "5eb0cff66badf290b22390bb4dbc5d88c96de729edaf9fb61abc35ec46ac9090",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The commercial insurance industry is responding to artificial intelligence risk through exclusion endorsements, conditional coverage, and standalone AI liability products.",
+        "This paper identifies the emerging practice by which carriers sort AI deployments by governance maturity and proposes a five-tier insurance maturity model mapping organizational AI governance posture to insurability.",
+        "The paper documents exclusion filings from seven confirmed carriers beginning in 2024, with at least one form bearing a mid-2023 revision date, affirmative coverage from seven providers offering eight distinct products, and regulatory adoption of the NAIC AI Model Bulletin across 24 U.S.",
+        "The evidence base was assembled through a parallel multi-AI research methodology using 12 independent platforms with hallucination detection.",
+        "The paper's central finding is an actuarial gap: no published empirical study quantifies governance maturity as a pricing factor for AI liability insurance.",
+        "The frameworks proposed here represent the author's professional judgment applied to observed market signals, offered as a starting point for a field that does not yet have one."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T15:19:56.339Z",
+      "sha256": "15da2c0429b344ab1f18dc68098b348f9b90ef2da51d92584d41b76ac402e663",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T15:19:56.339Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "History of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2894560",
+      "retrieved_at": "2026-10-18T15:19:56.339Z",
+      "sha256": "216abdf69c1c864e3d5d3256f45917f7b2c564c893de746de859aea9cc13d985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of artificial intelligence (AI) began in antiquity, with myths, stories, and rumors of artificial beings endowed with intelligence by master craftsmen.",
+        "The field of research that eventually evolved into what is widely described as artificial intelligence was founded at a workshop held on the campus of Dartmouth College in 1956.",
+        "At the workshop, a concept of the first AI program, Logic Theorist, was presented by future Turing Awardee Allen Newell and future Nobel Laureate Herbert A.",
+        "The software architecture of this program differed from modern AI systems in that it was a hand-written fixed script.",
+        "Attendees of the workshop became the leaders of AI research for decades.",
+        "Many of them predicted that machines as intelligent as humans would exist within a generation.",
+        "Despite the eventual success of its attendees and the field as a whole, the workshop was considered a failure.",
+        "\"When the workshop failed to deliver, AI was dismissed as a pipe dream and research funding dried up\".",
+        "It became apparent that researchers had underestimated the complexity of this objective.",
+        "In 1974, criticism from James Lighthill and pressure from the U.S.",
+        "and British Governments to stop funding undirected research into artificial intelligence.",
+        "Seven years later, a visionary initiative by the Japanese Government and the success of expert systems  reinvigorated investment in AI, and by the late 1980s, the industry had grown into a billion-dollar enterprise."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Existential risk from artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46583121",
+      "retrieved_at": "2026-10-18T15:19:56.339Z",
+      "sha256": "3a1cf7de81aa3f49a28489a8bec294d23a3373568e4ef6da45914d2de21ee242",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It has been hypothesized that substantial progress toward artificial superintelligence (ASI) will lead to human extinction or another irreversible global catastrophe.",
+        "Debates center on whether AI can achieve the capabilities needed for human extinction, the speed of self-improvement, and the effectiveness of strategies to keep it aligned with human values.",
+        "Controlling a superintelligent machine or instilling human-compatible values in it may be difficult.",
+        "Many researchers believe a superintelligent machine would likely resist attempts to disable it or change its goals, as that would prevent it from accomplishing its present goals.",
+        "It would be extremely challenging to align a superintelligence with the full breadth of significant human values and constraints.",
+        "In contrast, skeptics such as computer scientist Yann LeCun argue that superintelligent machines will have no intrinsic desire for self-preservation unless programmed to.",
+        "A June 2025 Anthropic study showed that in some circumstances, models may break laws and disobey direct commands to prevent shutdown or replacement, even at the cost of human lives.",
+        "Researchers warn that a rapid, recursive cycle of AI self-improvement could boost AI capabilities too quickly for safety measures to be implemented, especially if AI companies are racing to get the most powerful AI models.",
+        "In May 2023, hundreds of AI experts and other notable figures signed a statement by the American Center for AI Safety declaring, \"Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war\".",
+        "Following increased concern over AI risks, government leaders such as former Prime Minister of the United Kingdom Rishi Sunak, Secretary-General of the United Nations António Guterres, and California governor Gavin Newsom called for an increased focus on global AI regulation.",
+        "In October 2025, hundreds of public figures, including AI experts, five Nobel Prize laureates, and former senior US national security officials such as Michael Mullen and Susan Rice signed a statement calling for a ban on the development of superintelligence.",
+        "In July 2026, OpenAI CEO Sam Altman and SpaceXAI CEO Elon Musk said the singularity, the hypothetical point at which computers become autonomous and beyond human control, had arrived."
+      ]
+    }
+  ]
+}

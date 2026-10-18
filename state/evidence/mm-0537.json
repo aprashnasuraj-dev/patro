@@ -1,0 +1,108 @@
+{
+  "id": "mm-0537",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Video Works: From Broadcast to the Cloud",
+      "publisher": "CERN Document Server (European Organization for Nuclear Research)",
+      "author": "Diana Weynand; Vance Piccin",
+      "published_at": "2015-08-14",
+      "url": "https://openalex.org/W2910193941",
+      "retrieved_at": "2026-10-18T15:27:46.614Z",
+      "sha256": "2cc1a61a7001d586e8bd8e32b6c96bd71126d86bb117c483884d8638bbccda96",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How Video Works　raises the curtain on how video is created, scanned, transmitted, stored, compressed, encoded, delivered and streamed to its multitude of destinations.",
+        "In today’s digital world, every content creator—individual as well as network or corporation—must understand the process of how video works in order to deliver not only the best quality video, but a digital video file with the most appropriate specifications for each particular use.",
+        "Whether you are a professional or new video technician discovering the ins and outs of digital distribution, this book has the information you need to succeed."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Streaming media",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28682",
+      "retrieved_at": "2026-10-18T15:27:46.614Z",
+      "sha256": "bceeacb7cf6659704d56e9993b0a7c560900832d0c6b43713ce859968faa9a6b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Streaming media is the method by which multimedia data is delivered through a network for playback using a digital media player or media player software.",
+        "Media is transferred in a stream of packets from a server to a client and is rendered in real-time or near real-time; this contrasts with file downloading, a process in which the end-user obtains an entire media file before consuming the content.",
+        "Streaming is more commonly used for video on demand, streaming television, and music streaming services over the Internet.",
+        "While streaming is most commonly associated with multimedia from a remote server over the Internet, it also includes offline multimedia between devices on a local area network.",
+        "For example, using DLNA and a home server, or in a personal area network between two devices using Bluetooth (which uses radio waves rather than IP).",
+        "Online streaming was initially popularized by RealNetworks and Microsoft in the 1990s and has since grown to become the globally most popular method for consuming music and videos, with numerous competing subscription services being offered since the 2010s.",
+        "Audio streaming to wireless speakers, often using Bluetooth, is another use that has become prevalent during that decade.",
+        "Live streaming is the real-time delivery of content during production, much as live television broadcasts content via linear and cable channels.",
+        "Distinguishing delivery methods from the media applies specifically to, as most of the traditional media delivery systems are either inherently streaming (e.g., radio, television) or inherently non-streaming (e.g., books, videotapes, audio CDs).",
+        "The term \"streaming media\" can apply to media other than video and audio, such as live closed captioning and real-time text, which are all considered \"streaming text\"."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Direct-to-video",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=221720",
+      "retrieved_at": "2026-10-18T15:27:46.614Z",
+      "sha256": "bb6de1b4f6429891dfc4f05ae7fe8493164da5ac4e11228b5b4ef918f102ea46",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Direct-to-video or straight-to-video refers to the release of a film or television series on home video formats without an initial theatrical release or television premiere.",
+        "This distribution strategy was prevalent before streaming platforms came to dominate the TV and movie distribution markets.",
+        "Because sequels or prequels of larger-budget films may be released direct-to-video, review references to direct-to-video releases are often pejorative.",
+        "Direct-to-video release has also become profitable for independent filmmakers and smaller companies.",
+        "Some direct-to-video genre films (with a high-profile star) can generate well in excess of $50 million revenue worldwide."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How It Works",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3164056",
+      "retrieved_at": "2026-10-18T15:27:46.614Z",
+      "sha256": "c1203a9b258ff3df14eb7dcf6d2faf6f450ccdf57d0897cbbf8c2a948e7b24f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How It Works is the fourth studio album from Australian punk-rock group Bodyjar.",
+        "The track \"Not the Same\" was featured in the 2001 skateboarding video game Tony Hawk's Pro Skater 3 as well as the 2002 motocross video game MX Superfly.",
+        "The album was released in the US through Nitro Records to coincide with the band's appearance on the 2001 Warped Tour."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "HTTP Live Streaming",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23558983",
+      "retrieved_at": "2026-10-18T15:27:46.614Z",
+      "sha256": "98dd3b68224855288b03d9cb54e8e45497761242e7f442600395e71e5f68a0eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "HTTP Live Streaming (also known as HLS) is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc.",
+        "Support for the protocol is widespread in media players, web browsers, mobile devices, and streaming media servers.",
+        "As of 2022, an annual video industry survey has consistently found it to be the most popular streaming format.",
+        "HLS resembles MPEG-DASH in that it works by breaking the overall stream into a sequence of small HTTP-based file downloads, each downloading one short chunk of an overall potentially unbounded transport stream.",
+        "A list of available streams, encoded at different bit rates, is sent to the client using an extended M3U playlist.",
+        "Based on standard HTTP transactions, HTTP Live Streaming can traverse any firewall or proxy server that lets through standard HTTP traffic, unlike UDP-based protocols such as RTP.",
+        "This also allows content to be offered from conventional HTTP servers and delivered over widely available HTTP-based content delivery networks.",
+        "The standard also includes a standard encryption mechanism and secure-key distribution using HTTPS, which together provide a simple DRM system.",
+        "Later versions of the protocol also provide for trick-mode fast-forward and rewind and for integration of subtitles.",
+        "Apple has documented HTTP Live Streaming as an Internet Draft (Individual Submission), the first stage in the process of publishing it as a Request for Comments (RFC).",
+        "As of December 2015, the authors of that document have requested the RFC Independent Stream Editor (ISE) to publish the document as an informational (non-standard) RFC outside of the IETF consensus process.",
+        "In August 2017, RFC 8216 was published to describe version 7 of the protocol."
+      ]
+    }
+  ]
+}

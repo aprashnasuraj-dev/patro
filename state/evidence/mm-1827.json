@@ -1,0 +1,87 @@
+{
+  "id": "mm-1827",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "2001 Nisqually earthquake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=424550",
+      "retrieved_at": "2026-10-18T16:28:10.740Z",
+      "sha256": "db409b2d91085481f7bae1d13ebf43b778679c4f3168e5195908ba3d43e64ff1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2001 Nisqually earthquake occurred at 10:54:32 local time on February 28, 2001, and lasted nearly a minute.",
+        "The intraslab earthquake had a moment magnitude of 6.8 and a maximum Mercalli intensity of VIII (Severe).",
+        "The epicenter was in the southern Puget Sound, northeast of Olympia, but the shock was felt in Oregon, British Columbia, eastern Washington, and Idaho.",
+        "This was the most recent of several large earthquakes that occurred in the Puget Sound region over a 52-year period and caused property damage valued at $1–4 billion.",
+        "One person died of a heart attack and several hundred were injured."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Earthquake engineering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2111048",
+      "retrieved_at": "2026-10-18T16:28:10.740Z",
+      "sha256": "d0162bdd0493f7dd76b16d335aa08a40221a0522f507798affd3a478908e5356",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Earthquake engineering is an interdisciplinary branch of engineering that designs and analyzes structures, such as buildings and bridges, with earthquakes in mind.",
+        "Its overall goal is to make such structures more resistant to earthquakes.",
+        "An earthquake (or seismic) engineer aims to construct structures that will not be damaged in minor shaking and will avoid serious damage or collapse in a major earthquake.",
+        "A properly engineered structure does not necessarily have to be extremely strong or expensive.",
+        "It has to be properly designed to withstand the seismic effects while sustaining an acceptable level of damage."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ceramic house",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9823850",
+      "retrieved_at": "2026-10-18T16:28:10.740Z",
+      "sha256": "621f058d190a3ca04154d65412720c40237901fc981ce10430be9bcaafc3ab06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ceramic houses are buildings made of an earth mixture which is high in clay, and fired to become ceramic.",
+        "The process of building and firing such houses was developed by Iranian architect Nader Khalili in the late 1970s; he named it Geltaftan.",
+        "\"Gel\" means \"clay\" and \"taftan\" means \"firing, baking, and weaving clay\" in Persian language.",
+        "Khalili's research into creating ceramic houses was strongly based on the idea that permanent, water-resistant, and earthquake-resistant houses could be built with the implementation of the four elements: earth and water to build the forms, and fire and air to finish them.",
+        "His impassioned work led to a few small scale projects in Iran, including the Javadabad Elementary School, and the Ghaled Mofid restoration project.",
+        "Aside from Khalili's own documented work, there seems to be little widespread research on ceramic houses."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "1997 Umbria–Marche earthquakes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24192190",
+      "retrieved_at": "2026-10-18T16:28:10.740Z",
+      "sha256": "7199b49dd6d35d90736191da9f340c1461accd3d72b08d145f7e646f13510985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 1997 Umbria and Marche earthquakes occurred in the regions of Umbria and Marche, central Italy over a period of several months from September 1997 to April 1998.",
+        "It consisted of eight earthquakes with magnitudes greater than Mw 5.",
+        "The first of the larger shocks, which measured Mw 5.7, occurred at 02:33 CEST (00:33 UTC) on 26 September 1997.",
+        "It was preceded by several foreshocks, beginning with a Mw 4.5 event on 3 September.",
+        "A second and slightly larger shock occurred about nine hours later at 11:40 CEST (09:40 UTC), rated Mw 6.0.",
+        "The epicentres of first two larger earthquakes were in Annifo.",
+        "The shaking associated with first two larger shocks was estimated at VIII (Severe) and X (Extreme) on the Mercalli intensity scale, respectively.",
+        "There were several thousands of foreshocks and aftershocks from May 1997 to April 1998, more than thirty of which had a magnitude more than 3.5.",
+        "Eleven people died and approximately 100 were injured, with significant damage to buildings including the partial collapse of the ceiling vault in the Basilica of Saint Francis of Assisi.",
+        "The earthquakes occurred along faults oriented parallel to the Apennine Mountains and demonstrated how seismic events can influence subsequent earthquakes through alterations in stresses within the upper crust."
+      ]
+    }
+  ]
+}

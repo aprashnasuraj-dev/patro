@@ -1,0 +1,160 @@
+{
+  "id": "mm-1428",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Carbon Is Priced in Cryptocurrencies",
+      "publisher": "Elsevier BV",
+      "author": "Lashkaripour, Mohammadhossein",
+      "published_at": "2023",
+      "url": "https://doi.org/10.2139/ssrn.4560309",
+      "retrieved_at": "2026-10-18T16:11:41.794Z",
+      "sha256": "5e4675e9fe2eab85274faa1dcd0044b50c8a60bb090a1b210dfe6b38e4b55242",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper develops a general equilibrium framework to analyze how carbon emissions from cryptocurrency mining influence cryptocurrency pricing.",
+        "The model incorporates the dual roles of carbon emissions in cryptocurrency mining: while higher emissions signal stronger network security, they also generate adverse environmental externalities.",
+        "The equilibrium CAPM-like pricing relation yields three main insights.",
+        "First, ceteris paribus, cryptocurrencies exhibit a lower \"carbon alpha\" than equities.",
+        "This occurs because, although both asset classes are expected to deliver a positive alpha to compensate for environmental externalities, carbon emissions in cryptocurrencies simultaneously increase convenience yields by strengthening network security, thereby lowering carbon alpha.",
+        "Second, under stringent environmental policies, systematic risk (i.e., beta exposure) rises with carbon intensity in cryptocurrencies, although this effect can be mitigated through the adoption of green energy in the mining process.",
+        "Third, speculative behavior weakens carbon sensitivity, thereby lowering carbon premium in cryptocurrencies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Might a Natural Resource Be Priced?",
+      "publisher": "Elsevier BV",
+      "author": "Lahiri, Somdeb",
+      "published_at": "2007",
+      "url": "https://doi.org/10.2139/ssrn.966013",
+      "retrieved_at": "2026-10-18T16:11:42.190Z",
+      "sha256": "f59624c397cd74c96b754aab7a833862b021adabc85d1532bd74cfbefc8ce881",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We try to develop a price theory for auctions of natural resources.",
+        "We show that in our model of a uniform price mechanism with uncertain terminating bids, truthful revelation of price and quantity bids is a Nash Equilibrium of a game that incorporates this pricing information in its design.",
+        "In the special case when all bidders have perfectly elastic demand curves, truthful revelation of price-bids is in fact a dominant strategy."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Problem of Low-Priced Cooperative Apartments: An Experiment at Sunnyside Gardens",
+      "publisher": "JSTOR",
+      "author": "Emmerich, Herbert",
+      "published_at": "1928-08",
+      "url": "https://doi.org/10.2307/3139140",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Co-op Debt and the Pricing of Apartments",
+      "publisher": "OpenAlex",
+      "author": "Erik Dahlqvist; Frej Andreassen; Bachelor Thesis",
+      "published_at": "2011-01-01",
+      "url": "https://openalex.org/W2546520096",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "4387db35d278bdf359ef3237992b9c1b5007b48efb46e46c4c1595839e115ee6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We test for market efficiency in the Swedish market for co-op shares by examining how buyers take the debt held by a co-op into account when buying a co-op share.",
+        "We argue that - in an efficient market - debt on co-op level should be reflected in the price of the co-op share.",
+        "We use the tax reform of 2006 as a natural experiment and as means to test whether buyers of co-op shares take co-op leverage into account.",
+        "The tax reform meant that a beneficial tax treatment of co-op debt disappeared; this should translate into a different valuation of co-op debt after the reform.",
+        "More specifically we would expect that apartments in co-ops with little or no debt on the co-op level to increase in price relatively to those in highly levered co-ops.",
+        "However, our results show that such a change in price did not occur, which means that buyers of co-op shares do not properly account for the debt held at the co-op level.",
+        "We thereby reject the hypothesis that the Swedish market for co-op shares is efficient.",
+        "Our results show that apartments in highly levered co-ops are overvalued."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Apartment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=265567",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "c255388e6018aaaecd7e966e2cc0addb353788ec51748b30ab14efe311c4fd4f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An apartment (North American English), flat (British English, Indian English, South African English) or unit (Australian English), is a self-contained housing unit that occupies part of a building.",
+        "The housing tenure of apartments also varies considerably, from large-scale public housing, to owner occupancy within what is legally a condominium (strata title or commonhold) or leasehold, to tenants renting from a private landlord.",
+        "The buildings that contain apartments may be called different things depending on size or country (see below)."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Penthouse apartment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=571100",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "816ea6a2f86558b2aad7fff92ce65a02a30cd5c7f7e9c76ebfb9b2c378d6ef79",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A penthouse is an apartment or housing unit traditionally on the highest floor of an apartment building, condominium, hotel, or tower.",
+        "The term \"penthouse\" originally referred, and sometimes still does refer, to a separate smaller \"house\" that was constructed on the roof of an apartment building.",
+        "Architecturally, it refers specifically to a structure on the roof of a building that is set back from its outer walls.",
+        "These structures do not have to occupy the entire roof deck.",
+        "These penthouse apartments are not typically set back from the building's outer walls, but are instead flush with the rest of the building and simply differ in size, luxury, and consequently price.",
+        "High-rise buildings can also have structures known as mechanical penthouses that enclose machinery or equipment such as the drum mechanisms for an elevator."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Pearl Bank Apartments",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12687782",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "2f7b040c5e02b4deb87cadb06c173c4b4ddb9a68abc6f9bb0d1e56a09888aeff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pearl Bank Apartments (Chinese: 珍珠苑; pinyin: Zhēnzhū yuàn) was a high-rise private residential building on Pearl's Hill in Outram, near the Chinatown area of Singapore.",
+        "As the tallest and densest residential building in Singapore when completed in June 1976, Pearl Bank Apartments was one of Singapore's pioneers of high-rise high-density living and influenced urban development in Singapore and other cities across Southeast Asia."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Asian Games Village (Delhi)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27636331",
+      "retrieved_at": "2026-10-18T16:11:42.811Z",
+      "sha256": "627b964e6762c1fca6b0fa72031ec67978b24381e9a7a4b398958f7419682b4a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Asian Games Village is located in the Siri Fort area, near Hauz Khas in South Delhi, India.",
+        "The site was developed as the athletes' village for the 1982 Asian Games held in New Delhi.",
+        "This site was designed by Raj Rewal The village is the first of its kind in the Games series.",
+        "Built on the remains of the 15th Century Khalji Dynasty's Siri Fort over an area of 800 acres (3.2 km2), this residential colony has 853 flats of which 793 house top officials of PSUs, bureaucrats, public servants,  and union ministers.",
+        "Former President of India APJ Abdul Kalam was a resident in the colony before his nomination to that position.",
+        "Asian Games Village is one of the most desirable and posh areas of New Delhi, as it is surrounded by the lush green spaces of Siri Fort Ridge and located next to the Siri Fort sports complex, which hosted the squash and badminton tournaments during the 2010 Commonwealth Games.",
+        "A simple 2 BHK flat here is priced at USD 1 million, with full-fledged bungalows starting at USD 4 million.",
+        "The hierarchy of Courtyards is present at different levels of the complex.",
+        "The complex consists of 700 housing units, out of which 200 were individual houses and 500 apartments, which vary from 2 to 4-story structures.",
+        "Clustering of buildings\nCourtyard providing public space within the building.",
+        "Streets are narrow, shaded, broken up into small units, creating pauses, points of rest, and changing points.",
+        "Green areas and Courtyards are spread all over the site, which can be accessed from almost all sides of the site."
+      ]
+    }
+  ]
+}

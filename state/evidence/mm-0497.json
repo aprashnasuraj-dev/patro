@@ -1,0 +1,186 @@
+{
+  "id": "mm-0497",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why freemium software has no place in our classrooms",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Johnson, Lucas",
+      "published_at": "2022-06-13",
+      "url": "https://theconversation.com/why-freemium-software-has-no-place-in-our-classrooms-181148",
+      "retrieved_at": "2026-10-18T15:19:22.989Z",
+      "sha256": "a2c68dc6dbb43f7dcabc8e1a125f6747b49b8fcb7c215e58e15044e551885159",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why freemium software has no place in our classrooms Skip to content Academic rigor, journalistic flair Freemium software in education exacerbates the digital divide for students who may be economically disadvantaged compared to their peers.",
+        "By April 2020, not long after the onset of the pandemic, Google Classroom had doubled its users to more than 100 million .",
+        "For educational technology companies, the pandemic accelerated opportunities to grow markets and profits .",
+        "Whether for facilitating learning, assessing learning or communicating with parents and guardians, digital tools are increasingly part of many children’s and parents’ school experiences.",
+        "In our ever-connected classrooms and societies, one notable element is the use of freemium software — software that is free for all users to obtain and use, but only with limited features.",
+        "For a fee or monthly subscription, users can unlock further features.",
+        "Educational settings should focus on equity, especially when it comes to decisions related to the use of technology for teaching and learning.",
+        "In educational settings, software — whether for teaching and learning or parent-teacher communication — should not have tiered offerings where users who have the financial means to pay are privy to a better version of the software with additional features and tools.",
+        "School boards and provincial education ministries should focus on implementing universally accessible tools to eliminate two-tier access for learners and families that is enabled with freemium software.",
+        "This may include licensing commercial software that has been carefully evaluated and assessed for how it supports student learning.",
+        "Read more: Investing in technologies for student learning: 4 principles school boards and parents should consider Marketing strategy Freemium software is an excellent marketing strategy and economic driver , and it’s become popular for multiple applications.",
+        "Spotify software is one popular example for everyday music listening."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Mental Disorders are not Like Software Bugs",
+      "publisher": "Cambridge University Press (CUP)",
+      "author": "Fagerberg, Harriet",
+      "published_at": "2022-02-11",
+      "url": "https://doi.org/10.1017/psa.2022.7",
+      "retrieved_at": "2026-10-18T15:19:22.989Z",
+      "sha256": "54f1a20e380d2db8b701570516f4ccb2532f85e0881bf6071341dbc83b1bbe59",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract According to the Argument for Autonomous Mental Disorder (AAMD), mental disorder can occur in the absence of brain disorder, just as software problems can occur in the absence of hardware problems in a computer.",
+        "I begin by introducing the “natural dysfunction analysis” of disorder, before outlining the AAMD.",
+        "I then analyze the necessary conditions for realizer autonomous dysfunction.",
+        "Building on this, I show that software functions disassociate from hardware functions in a way that mental functions do not disassociate from brain functions.",
+        "It follows that mental disorders are brain disorders necessarily."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cooperative Bug Isolation",
+      "publisher": "OpenAlex",
+      "author": "Benjamin R. Liblit; Alex Aiken",
+      "published_at": "2007-01-01",
+      "url": "https://openalex.org/W2156515608",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "ff84f943ac8202bb6755b6f9e34fb203ff147aa3ea281f17d244d54d4c47d1c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Static analysis, in-house testing, and good software engineering practices can catch or prevent many problems before software is distributed.",
+        "Yet mainstream commercial software still ships with both known and unknown bugs.",
+        "The need remains to identify and repair bugs that are only discovered, or whose importance is only revealed, after the software is released.",
+        "Unfortunately we know almost nothing about how software behaves (and misbehaves) in the hands of end users.",
+        "Traditional post-deployment feedback mechanisms, such as technical support phone calls or hand-composed bug reports, are informal, inconsistent, and highly dependent on manual, human intervention.",
+        "This approach clouds the view, preventing engineers from seeing a complete and truly representative picture of how and why problems occur.",
+        "This dissertation proposes a system to support debugging based on feedback from actual users.",
+        "Cooperative Bug Isolation (CBI) leverages the key strength of user communities: their overwhelming numbers.",
+        "We propose a low-overhead instrumentation strategy for gathering information from the executions experienced by large numbers of software end users.",
+        "Our approach limits overhead using sparse random sampling rather than complete data collection, while simultaneously ensuring that the observed data is an unbiased, representative subset of the complete program behavior across all runs.",
+        "We discuss a number of specific instrumentation schemes that may be coupled with the general sampling transformation to produce feedback data that we have found to be useful for isolating the causes of a wide variety of bugs.",
+        "Collecting feedback from real code, especially real buggy code, is a nontrivial exercise."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Understanding the Impact of Diversity in Software Bugs on Bug Prediction Models",
+      "publisher": "RIT Scholar Works (Rochester Institute of Technology)",
+      "author": "Harold Valdivia-Garcia",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2587579378",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "a757b457dec8ee0e7db0ec10a2e963ede683a0dc2c1e85a7ec6de8e6dbce0d54",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Nowadays, software systems are essential for businesses, users and society.",
+        "At the same time such systems are growing both in complexity and size.",
+        "In this context, developing high-quality software is a challenging and expensive activity for the software industry.",
+        "Since software organizations are always limited by their budget, personnel and time, it is not a trivial task to allocate testing and code-review resources to areas that require the most attention.",
+        "To overcome the above problem, researchers have developed software bug prediction models that can help practitioners to predict the most bug-prone software entities.",
+        "Although, software bug prediction is a very popular research area, yet its industrial adoption remains limited.\\nIn this thesis, we investigate three possible issues with the current state-of-the-art in software bug prediction that affect the practical usability of prediction models.",
+        "First, we argue that current bug prediction models implicitly assume that all bugs are the same without taking into consideration their impact.",
+        "We study the impact of bugs in terms of experience of the developers required to fix them.",
+        "Second, only few studies investigate the impact of specific type of bugs.",
+        "Therefore, we characterize a severe type of bug called Blocking bugs, and provide approaches to predict them early on.",
+        "Third, false-negative files are buggy files that bug prediction models incorrectly as non-buggy files.",
+        "We argue that a large number of false-negative files makes bug prediction models less attractive for developers."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Software testing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29090",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "66b347e1135879f95e187dec1bcede771d73cad6032025fc72f5fef246788c6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Software testing is the act of checking whether software meets its intended objectives and satisfies expectations.",
+        "Software testing can provide objective, independent information about the quality of software and the risk of its failure to a user or sponsor or any other stakeholder.",
+        "Software testing can determine the correctness of software for specific scenarios but cannot determine correctness for all scenarios.",
+        "Based on the criteria for measuring correctness from an oracle, software testing employs principles and mechanisms that might recognize a problem.",
+        "Examples of oracles include specifications, contracts, comparable products, past versions of the same product, inferences about intended or expected purpose, user or customer expectations, relevant standards, and applicable laws.",
+        "Software testing can be functional or non-functional in nature.",
+        "Software testing is often dynamic in nature: running the software to verify actual output matches expected.",
+        "It can also be static in nature: reviewing code and its associated documentation.",
+        "Software testing is often used to answer the question: Does the software do what it is supposed to do and what it needs to do?",
+        "Information learned from software testing may be used to improve the process by which software is developed.",
+        "A commonly suggested approach to automated testing is the \"test pyramid,\" wherein most of the tests are unit tests, followed by a smaller set of integration tests and finally a few end-to-end (e2e) tests."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Linus's law",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70370",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "9a6ebd0f854b55b53836ce0d4d41cd1842d53cf52e1f833c4bad8543cc7f754c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In software development, Linus's law is the assertion that \"given enough eyeballs, all bugs are shallow\".",
+        "Raymond in his essay and book The Cathedral and the Bazaar (1999), and was named in honor of Linus Torvalds.",
+        "Researchers and practitioners have repeatedly shown the effectiveness of reviewing processes in finding bugs and security issues."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Vulnerability (computer security)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1129827",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "1c8f8ab63922006eb5c04080df310a46919f653ef9f51d6247924df103ff2933",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In computer security, a vulnerability is a flaw or weakness in a system's design, implementation, or management that can be exploited by a malicious actor to compromise its security.",
+        "Despite a system administrator's best efforts to achieve complete correctness, virtually all hardware and software contain bugs where the system does not behave as expected.",
+        "If the bug could enable an attacker to compromise the confidentiality, integrity, or availability of system resources, it can be considered a vulnerability.",
+        "Insecure software development practices as well as design factors such as complexity can increase the burden of vulnerabilities.",
+        "Vulnerability management includes identifying systems and prioritizing which are most important, scanning for vulnerabilities, and taking action to secure the system.",
+        "Vulnerability management typically is a combination of remediation, mitigation, and acceptance.",
+        "Vulnerabilities can be scored for severity according to the Common Vulnerability Scoring System (CVSS) and added to vulnerability databases such as the Common Vulnerabilities and Exposures (CVE) database.",
+        "As of April 2026, more than 327,000 vulnerabilities had been recorded in the CVE database.",
+        "A vulnerability is initiated when it is introduced into hardware or software.",
+        "It becomes active and exploitable when the software or hardware containing the vulnerability is running.",
+        "The vulnerability may be discovered by the administrator, vendor, or a third party.",
+        "Publicly disclosing the vulnerability (through a patch or otherwise) is associated with an increased risk of compromise, as attackers can use this knowledge to target existing systems before patches are implemented."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Software project management",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4016710",
+      "retrieved_at": "2026-10-18T15:19:23.178Z",
+      "sha256": "7f3bc601e5498dd81cbb6d700844d93c219426e8e4199236c04876f2f55e2e68",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Software project management is the process of planning and leading software projects.",
+        "It is a sub-discipline of project management in which software projects are planned, implemented, monitored and controlled."
+      ]
+    }
+  ]
+}

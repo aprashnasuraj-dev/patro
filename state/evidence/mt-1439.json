@@ -1,0 +1,151 @@
+{
+  "id": "mt-1439",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T17:11:21.767Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T17:11:23.434Z",
+      "sha256": "93a3e118f74041c75773b37cdcc7d852760e759bcaa8bbaf282d588fc869f0cf",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Giuseppe Verdi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12958",
+      "retrieved_at": "2026-10-18T17:11:23.435Z",
+      "sha256": "ddf9f2f3d02cac41e1bcabbf1d6e23cd4153af6cdaa818464d5fb2b56ace632e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Giuseppe Fortunino Francesco Verdi ( VAIR-dee; Italian: [dʒuˈzɛppe ˈverdi]; 9 or 10 October 1813 – 27 January 1901) was an Italian composer best known for his operas.",
+        "He was born near Busseto, a small town in the modern province of Parma, to a family of moderate means, receiving a musical education with the help of a local patron named Antonio Barezzi.",
+        "Verdi came to dominate the Italian opera scene after the era of Gioachino Rossini, Vincenzo Bellini, and Gaetano Donizetti, whose works significantly influenced him.",
+        "He was also strongly influenced by the French Grand opera style, particularly Giacomo Meyerbeer and Gaspare Spontini.",
+        "In his early operas, Verdi demonstrated sympathy with the Risorgimento movement which sought the unification of Italy.",
+        "The chorus \"Va, pensiero\" from his early opera Nabucco (1842), and similar choruses in later operas, were much in the spirit of the unification movement, and the composer himself became esteemed as a representative of these ideals.",
+        "An intensely private person, Verdi did not seek to ingratiate himself with popular movements.",
+        "As he became professionally successful, he was able to reduce his operatic workload and sought to establish himself as a landowner in his native region.",
+        "He found further fame with the three peaks of his \"middle period\": Rigoletto (1851), Il trovatore and La traviata (both 1853).",
+        "He surprised the musical world by returning, after his success with the opera Aida (1871), with three late masterpieces: his Requiem (1874), and the operas Otello (1887) and Falstaff (1893).",
+        "Verdi's operas remain among the most popular in the repertoire.",
+        "In 2013, the bicentenary of his birth was widely celebrated around the world with television and radio broadcasts and live performances."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Italy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14532",
+      "retrieved_at": "2026-10-18T17:11:23.435Z",
+      "sha256": "cb7d9ad84bfa777fb504c20f96d30d173fc5b8862c0251e1e5bf64eca2f04587",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Italy, officially the Italian Republic, is a country in Southern and Western Europe.",
+        "It consists of a peninsula, which extends into the Mediterranean Sea, with the Alps on its northern land border, as well as nearly 800 islands, notably Sicily and Sardinia.",
+        "Italy shares land borders with France to the west; Switzerland and Austria to the north; Slovenia to the east; and the two enclaves of Vatican City and San Marino.",
+        "It is the tenth-largest country in Europe by area, covering 301,340 km2 (116,350 sq mi), and the third-most populous member state of the European Union, with nearly 59 million inhabitants.",
+        "Rome is the capital of Italy; other major cities include Milan, Naples, Turin, Palermo, Bologna, Florence, Genoa, Bari, and Venice.",
+        "The history of Italy goes back to numerous Italic peoples, notably including the ancient Romans, who conquered the Mediterranean world during the Roman Republic and ruled it for centuries during the Roman Empire.",
+        "With the spread of Christianity, Rome became the seat of the Catholic Church and the Papacy.",
+        "Barbarian invasions and other factors led to the decline and fall of the Western Roman Empire between late antiquity and the Early Middle Ages.",
+        "By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.",
+        "The Italian Renaissance flourished during the 15th and 16th centuries and spread to the rest of Europe.",
+        "Italian explorers discovered new routes to the Far East and the New World, contributing significantly to the Age of Discovery.",
+        "After centuries of political and territorial divisions, the Kingdom of Italy was established in 1861, following wars of independence and the Expedition of the Thousand."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Ludwig van Beethoven",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17914",
+      "retrieved_at": "2026-10-18T17:11:23.435Z",
+      "sha256": "8ca5de74ad581ed5492a5789414ab9d273de2101d67277055253d384b99ef101",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ludwig van Beethoven (baptised 17 December 1770 – 26 March 1827) was a German composer and pianist.",
+        "A seminal figure in the history of music, his personal style was a key driver of the transition from Classical to Romantic music.",
+        "He expanded instrumental forms such as the symphony, the piano sonata, and the string quartet.",
+        "Beethoven is widely revered as one of the greatest composers of all time, and his compositions are among the most performed in the world.",
+        "He was initially taught intensively by his father, Johann van Beethoven, and later by Christian Gottlob Neefe.",
+        "He found relief from a dysfunctional home life with the family of Helene von Breuning, whose children he loved, befriended, and taught piano.",
+        "At age 21, he moved to Vienna, which became his base, and studied composition with Joseph Haydn.",
+        "Beethoven gained a reputation as a virtuoso pianist, and was soon patronized by Karl Alois, Prince Lichnowsky for compositions, which resulted in his three Piano Trios, Op.",
+        "1, the earliest works to which he accorded an opus number, in 1795.",
+        "Around this time, Beethoven began experiencing symptoms of hearing loss.",
+        "In the first, he composed in the classical style of Haydn and Wolfgang Amadeus Mozart.",
+        "Beethoven's First Symphony premiered in 1800, and his first set of string quartets was published in 1801."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T17:11:23.435Z",
+      "sha256": "a1b6f774cf68cc8788be4f0f9294829354fddb3d06d6cbe4b776cd8defefb254",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    }
+  ]
+}

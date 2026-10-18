@@ -1,0 +1,139 @@
+{
+  "id": "mm-1359",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "American animation VS. Japanese Animation",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "author": "Stian Olsen; Frank Trethan Johnsen",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2483466327",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "623c8dc3f2cf12f9acbaa76c1a6273f00b2b90ae9d9900d7b35359f835465a98",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This bachelor thesis is a comparative study between American animation and Japanese animation.",
+        "We take a look into differences, taking into account the culture, history, production- and the animation techniques employed.",
+        "The main theoretical questions that are answered in this study are:\\n- How has each side of animation influenced the culture surrounding it, and vice versa?",
+        "-Why can Japanese animation studios presumably produce more than twice the amount that an American animation studio produces?",
+        "- What are some of the structural differences when looking at similar, but ultimately different, productions from each side of animation?\\nWe have come to decisive conclusions to each theoretical question.",
+        "The biggest cultural influence for Japanese animation is the Shinto religion.",
+        "It is at the core of Japanese animation, and influences both storytelling and visual elements.",
+        "In American animation, a shift happened in the culture, making its animation oriented towards children.",
+        "This gave birth to adult-oriented animated sitcoms, which has become the norm in America.\\nJapanese animation studios produce content faster than American animation studios.",
+        "The biggest reasons for this is their budgets, how detailed the work is, and how hard the studio pushes themselves.",
+        "Japanese anime is not as detailed as American animation, therefore it doesn’t take as long to produce.",
+        "Japanese animation usually gives characters a mix of both good and bad qualities, while American animation clearly defines a good hero, and an evil villain."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Exploring the Benefits of Animation in User Interface Design",
+      "publisher": "Tuwhera (Auckland University of Technology)",
+      "author": "Yutong Zhou",
+      "published_at": "2021-01-01",
+      "url": "https://openalex.org/W3158921588",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "04c863d5ad394022d6f1725412cd74656c9ea248bb88c62195ca81543f58185f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The design of animations in user interface design remains under-studied.",
+        "The range of possibilities with animations in user interfaces is vast, and the movement can have positive and negative effects in shaping the user experience.",
+        "This study sets out to explore how animations can be used by interface designers to improve how people interact with applications, especially as they are learning a new system.",
+        "Through usability tests, we study how to incorporate animation iteratively by testing new interface designs and listening to participants who are invited to contribute their own ideas and suggestions.",
+        "This study is conducted in a research approach that prioritises practice and it generates three research outcomes: an exegesis, a design portfolio (the artefact) and an annotated portfolio that bridges between these two.",
+        "The results indicate that animations should be applied based on the task context and users’ need, otherwise it can cause a negative user experience."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "History of animation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=323858",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "dff1667aa3876499d262e44d318a7ba73bf30f06b894862bb22c42a34ac22b64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Animation, the method for creating moving pictures from still images, has an early history and a modern history that began with the advent of celluloid film in 1888.",
+        "Between 1895 and 1920, during the rise of the cinematic industry, several different animation techniques were developed or re-invented, including stop-motion with objects, puppets, clay or cutouts, and drawn or painted animation.",
+        "Hand-drawn animation, which mostly consisted of a succession of still images painted on cels, was the dominant technique of the 20th century and became known as traditional animation.",
+        "Today, computer animation is the dominant animation technique in most regions, although traditional animation, like Japanese anime and European hand-drawn productions, remains popular outside of the United States.",
+        "Computer animation is mostly associated with a three-dimensional appearance with detailed shading and detailed highlights, although many different animation styles have been generated or simulated with computers.",
+        "Some productions may be recognized as Flash animations, but in practice, computer animation with a relatively two-dimensional appearance, stark outlines and little shading, will generally be considered \"traditional animation\" even if it is created on a computer.",
+        "The first feature movie made on computers, without a camera, is The Rescuers Down Under (1990), but its style can hardly be distinguished from cel animation."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Thaumatrope",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1064372",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "c5e8f7fa14de50fb4958db2bdc4fb70b47a871fd32f938cc5a1bc8933861f0f5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A thaumatrope is an optical toy that was introduced in 1825.",
+        "When the strings attached to the small illustrated disk are twirled quickly between the fingers, the depicted elements on either side of the disk appear to blend into one image.",
+        "It was explained as the result of visual impressions lingering in the mind for about one-eighth of a second after the image has been removed.",
+        "Examples of common thaumatrope pictures include a bare tree on one side of the disk, and its leaves on the other, or a bird on one side and a cage on the other.",
+        "Many classic thaumatropes also included riddles or short poems, with one line on each side.",
+        "In addition to superimposing images, its \"persistence of vision\" effect is a disputed explanation for the cause of illusory motion in stroboscopic animation and film.",
+        "Thaumatropes can provide an illusion of motion with the two sides of the disc each depicting a different phase of the motion, but no examples are known to have been produced until long after the introduction of the first widespread animation device: the phenakistiscope.",
+        "Thaumatropes are often seen as important antecedents of motion pictures and in particular of animation.",
+        "The name translates roughly as \"wonder turner\", from Ancient Greek: θαῦμα \"wonder\" and τρόπος \"turn\"."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "How to Train Your Dragon (novel series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5829721",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "53cc8ba41b274ac6fc47f71518240a78c0693bb76fbdbd76ff056a2c7a206b33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How to Train Your Dragon is a series of children's books written by the British author Cressida Cowell.",
+        "The books are set in a fictional Fantasy Viking world, and focus on the experiences of protagonist Hiccup Horrendous Haddock the Third, as he overcomes obstacles on his journey of \"becoming a hero, the hard way\".",
+        "The books were published by Hodder Children's Books in the UK and by Little, Brown and Company in the United States.",
+        "The first book was published in 2003 and the 12th and final one in 2015.",
+        "By 2015, the series had sold more than seven million copies around the world.",
+        "The books have subsequently been adapted into a media franchise consisting of three animated feature films, several television series, a live-action remake, and other media, all produced by DreamWorks Animation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "How a Mosquito Operates",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19238871",
+      "retrieved_at": "2026-10-18T16:11:08.160Z",
+      "sha256": "18d5bf6bd18671b738893eaa4665aa3668a275110406ac62a5c47ab6e7ff614d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How a Mosquito Operates is a 1912 silent animated short film by the American cartoonist Winsor McCay.",
+        "The six-minute short depicts a giant mosquito tormenting a sleeping man.",
+        "The film is one of the earliest works of animation, and its technical quality is considered far ahead of its time.",
+        "It is also known under the titles The Story of a Mosquito and Winsor McCay and his Jersey Skeeters.",
+        "McCay had a reputation for his proficient drawing skills, best remembered in the elaborate cartooning of the children's comic strip Little Nemo in Slumberland he began in 1905.",
+        "He delved into the emerging art of animation with the film Little Nemo (1911), and followed its success by adapting an episode of his comic strip Dream of the Rarebit Fiend into How a Mosquito Operates.",
+        "McCay gave the film a more coherent story and more developed characterization than in the Nemo film, with naturalistic timing, motion, and weight in the animation.",
+        "How a Mosquito Operates had an enthusiastic reception when McCay first showed it as part of his vaudeville act.",
+        "He further developed the character animation he introduced in Mosquito with his best-known animated work, Gertie the Dinosaur (1914).",
+        "The film is also the first animation known to incorporate smear frames."
+      ]
+    }
+  ]
+}

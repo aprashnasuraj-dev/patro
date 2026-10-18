@@ -1,0 +1,104 @@
+{
+  "id": "mm-1955",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Windmills",
+      "publisher": "Human Kinetics",
+      "author": null,
+      "published_at": "2022",
+      "url": "https://doi.org/10.5040/9781350869424",
+      "retrieved_at": "2026-10-18T16:36:49.395Z",
+      "sha256": "928d5945f2fcb249505944b0e41e518831014341cf9679790149b81c89b771c3",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "hklp-62 --> Human Kinetics Library Platform - Windmills --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Human Kinetics Library Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Windmills and the production of gunpowder in Malta",
+      "publisher": "OAR@UM (University of Malta)",
+      "author": "Simon Mercieca; Joseph Muscat",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W2345409390",
+      "retrieved_at": "2026-10-18T16:36:49.606Z",
+      "sha256": "fe13cef6195c20f1bf4073c2ccdf5d9585e1aac78a45035990cc25ecee1914b1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Old maps of the Grand Harbour have clearly documented the use of windmills in Malta forthe exclusive production of gunpowder at the turn of the seventeenth century.",
+        "For security reasons, gunpowder mills were mostly situated within the city walls.",
+        "However, in the absence of historical records, the major difficulties are: which of these windmills were used for milling grain?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Millstone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=167364",
+      "retrieved_at": "2026-10-18T16:36:49.606Z",
+      "sha256": "701b3c2fa9937970783453ca7f073914c344426bc1fdbab2d41569d8fb1ee02d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Millstones or mill stones are stones used in gristmills, used for triturating, crushing or, more specifically, grinding wheat or other grains.",
+        "They are sometimes referred to as grindstones or grinding stones.",
+        "Millstones come in pairs: a stationary base with a convex rim known as the bedstone (or nether millstone) and a concave-rimmed runner stone that rotates.",
+        "The movement of the runner on top of the bedstone creates a \"scissoring\" action that grinds grain trapped between the stones.",
+        "Millstones are constructed so that their shape and configuration help to channel ground flour to the outer edges of the mechanism for collection.",
+        "The runner stone is supported by a cross-shaped metal piece (millrind or rynd) fixed to a \"mace head\" topping the main shaft or spindle leading to the driving mechanism of the mill (wind, water (including tide), or other means)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Heckington Windmill",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=419270",
+      "retrieved_at": "2026-10-18T16:36:49.606Z",
+      "sha256": "961b2bd4a822367a57c90d40fad6d93a7d3399453ea3e53ff927cb0e3cbcbadd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Heckington Windmill is the only eight-sailed tower windmill still standing in the United Kingdom with its sails intact.",
+        "Heckington is located between Sleaford and Boston in Lincolnshire, England.",
+        "The mill stands very close to Heckington railway station, hence its name of the 'Station Mill' in the 19th century."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Miller",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2159644",
+      "retrieved_at": "2026-10-18T16:36:49.606Z",
+      "sha256": "bd815f6f4694439c5dfaa0ac12bade53055cd95169c47f24bfdde6e28948790c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A miller is a person who operates a mill, a machine to grind a grain (for example corn or wheat) to make flour.",
+        "Milling existed in hunter-gatherer communities, and later millers were important to the development of agriculture.",
+        "The materials ground by millers are often foodstuffs and particularly grain.",
+        "The physical grinding of the food allows for the easier digestion of its nutrients and saves wear on the teeth.",
+        "Non-food substances needed in a fine, powdered form, such as building materials, may be processed by a miller."
+      ]
+    }
+  ]
+}

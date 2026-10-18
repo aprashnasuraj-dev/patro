@@ -1,0 +1,21 @@
+{
+  "id": "mt-1668",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Back Matter",
+      "publisher": "University of California Press",
+      "author": null,
+      "published_at": "2023-09-01",
+      "url": "https://doi.org/10.2307/jj.5973049.14",
+      "retrieved_at": "2026-10-18T17:18:51.557Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    }
+  ]
+}

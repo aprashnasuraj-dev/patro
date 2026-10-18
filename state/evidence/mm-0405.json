@@ -1,0 +1,173 @@
+{
+  "id": "mm-0405",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the Big Bang Ends Up Inside a Black Hole",
+      "publisher": "MDPI AG",
+      "author": "Gaztanaga, Enrique",
+      "published_at": "2022-04-21",
+      "url": "https://doi.org/10.3390/universe8050257",
+      "retrieved_at": "2026-10-18T15:10:57.846Z",
+      "sha256": "94c949e732eeda6befbc3442568d3007f4d613f43e7631ff7f7dffce07241f69",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The standard model of cosmology assumes that our Universe began 14 Gyrs (billion years) ago from a singular Big Bang creation.",
+        "This can explain a vast range of different astrophysical data from a handful of free cosmological parameters.",
+        "However, we have no direct evidence or fundamental understanding of some key assumptions: Inflation, Dark Matter and Dark Energy.",
+        "Here we review the idea that cosmic expansion originates instead from gravitational collapse and bounce.",
+        "The collapse generates a Black Hole (BH) of mass M≃5×1022M⊙ that formed 25 Gyrs ago.",
+        "As there is no pressure support, the cold collapse can continue inside in free fall until it reaches atomic nuclear saturation (GeV), when is halted by Quantum Mechanics, as two particles cannot occupy the same quantum state.",
+        "The collapse then bounces like a core-collapse supernovae, producing the Big Bang expansion.",
+        "During collapse, perturbations exit the horizon to re-enter during expansion, giving rise to the observed universe without the need for Inflation or Dark Energy.",
+        "Using Ockham’s razor, this makes the BH Universe (BHU) model more compelling than the standard singular Big Bang creation."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How large is the universe?",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2015-11-30",
+      "url": "https://www.cambridge.org/core/books/new-cosmos/how-large-is-the-universe/671C00545C158BD4304CADEB3096BE3E",
+      "retrieved_at": "2026-10-18T15:10:59.413Z",
+      "sha256": "833b73969b2990635c9167d01a33f8dbb172a73beb6e9f65fb01ebe48450405b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "(Chapter 12) - The New Cosmos Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "8 Planets everywhere… 9 The Milky Way as barred spiral 10 Here comes Milkomeda 11 The Big Bang's cosmic echo 12 How large is the universe?",
+        "13 The mystery of dark matter 14 The bigger mystery of dark energy 15 Black holes are ubiquitous 16 What is the universe's fate?",
+        "17 The meaning of life in the universe Glossary Bibliography Index 12 - How large is the universe?",
+        "Published online by Cambridge University Press: 05 December 2015 David J.",
+        "Eicher Foreword by Alex Filippenko Show author details David J.",
+        "8 Planets everywhere… 9 The Milky Way as barred spiral 10 Here comes Milkomeda 11 The Big Bang's cosmic echo 12 How large is the universe?",
+        "13 The mystery of dark matter 14 The bigger mystery of dark energy 15 Black holes are ubiquitous 16 What is the universe's fate?",
+        "17 The meaning of life in the universe Glossary Bibliography Index Get access Share Cite Summary It is absolutely amazing to know that shortly after the Big Bang, the universe was a relatively small, nearly infinitely dense place.",
+        "The expanding universe means the entirety of what we know is now incredibly large, and is getting larger every day.",
+        "This is one area that two generations of science fiction movies have seriously distorted in the minds of the public at large."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Mass of Our Observable Universe",
+      "publisher": "MDPI AG",
+      "author": "Gaztanaga, Enrique",
+      "published_at": "2023-01-18",
+      "url": "https://doi.org/10.20944/preprints202301.0337.v1",
+      "retrieved_at": "2026-10-18T15:10:59.414Z",
+      "sha256": "cdaf924e2e65d6a92130182157779ba1b541bce2791aeba3345f92b3de22dfad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The standard Cosmological model (LCDM) assumes that the expanding spacetime around us is infinite, which is inconsistent with the observed cosmic acceleration unless we include Dark Energy (DE) or a Cosmological Constant ($\\Lambda$).",
+        "But the observed cosmic expansion can also be explained with a finite mass $M$, inside a uniform expanding sphere, with empty space outside.",
+        "When $M$ is all contained within $r_S$, this is a Black Hole (BH).",
+        "Nothing can escape from $r_S$, which becomes a boundary for the inside dynamics.",
+        "In the limit where there is nothing outside, the inside corresponds to a local isolated Universe.",
+        "The $r_S$ boundary condition corresponds to an effective force which is mathematically equivalent to $\\Lambda=3/r_S^2$.",
+        "We can therefore interpret cosmic acceleration as a measurement of the gravitational boundary of our Universe, with a mass $M = \\frac{c^2}{2G}\\sqrt{3/\\Lambda} \\simeq 6 \\times 10^{22} M_{\\odot}$.",
+        "Such BH Universe (BHU) is observationally very similar to the LCDM, except for the very large scale perturbations, which are bounded by $r_S$."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Big Bang",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4116",
+      "retrieved_at": "2026-10-18T15:10:59.414Z",
+      "sha256": "c115862501a569f589dbe9aa86554ea501a9649502c8eeeea784c8c2872fcf26",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Big Bang is a physical theory that describes how the universe expanded from an early state of high density and temperature.",
+        "Various cosmological models based on the Big Bang concept explain a broad range of phenomena, including the abundance of light elements, the cosmic microwave background (CMB) radiation, the redshift of galaxies and the large-scale structure of the universe.",
+        "The observed uniformity of the universe, which leads to the horizon and flatness problems, is explained through cosmic inflation: a phase of accelerated expansion during the earliest stages.",
+        "Detailed measurements of the expansion rate of the universe place the cosmic inflation at an estimated 13.787±0.02 billion years ago, which is considered the age of the universe.",
+        "A wide range of empirical evidence strongly favors the Big Bang model, which is now widely accepted.",
+        "Extrapolating this cosmic expansion backward in time using the known laws of physics, the models describe an extraordinarily hot and dense primordial universe.",
+        "The original Big Bang model extrapolated the universe back towards a Big Bang singularity.",
+        "However, the modern view incorporates inflationary cosmology, whereby the universe emerged out of inflation in a supercooled state.",
+        "This was followed by a reheating event that converted the energy that drove inflation into a hot and dense plasma, initiating the hot Big Bang.",
+        "As the universe expanded, it cooled sufficiently to allow the formation of subatomic particles, and later atoms.",
+        "These primordial elements—mostly hydrogen, with some helium and lithium—then coalesced under the force of gravity aided by dark matter, forming early stars and galaxies.",
+        "Measurements of the redshifts of supernovae indicate that the expansion of the universe is accelerating, an observation attributed to a concept called dark energy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Universe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31880",
+      "retrieved_at": "2026-10-18T15:10:59.414Z",
+      "sha256": "d4f99574b866096d3298b3e86ced55f2e00ede96fcb1dd08858ea0ad29c402d7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The universe comprises all of existence: all forms of matter and energy in space and time, and the structures they form, from subatomic particles to entire galactic filaments.",
+        "Since the early 20th century, the field of cosmology has established that the universe has been expanding for 13.8 billion years, starting from a dense fireball in an event called the Big Bang.",
+        "The observable portion of the universe is approximately 93 billion light-years in diameter at present.",
+        "Some of the earliest cosmological models of the universe were geocentric, placing Earth at the center.",
+        "During the Scientific Revolution, astronomical observations led to a heliocentric model.",
+        "Further observational improvements led to the realization that the Sun is one of a few hundred billion stars in the Milky Way, which is one of a few hundred billion galaxies in the observable universe.",
+        "At the largest scale, galaxies are distributed uniformly and the same in all directions.",
+        "At smaller scales, galaxies are distributed in clusters and superclusters, which form immense filaments and voids in space, creating a vast foam-like structure.",
+        "Discoveries in the early 20th century, including general relativity, led to the modern view of an expanding, isotropic, homogeneous universe.",
+        "Evidence accumulated supporting the Big Bang theory: an initial hot fireball cooled and becoming less dense as the universe expanded, allowing the first subatomic particles and simple atoms to form.",
+        "Giant clouds of hydrogen and helium were gradually drawn to the places where matter was most dense, forming the first galaxies, stars, and eventually, everything else.",
+        "From studying the effects of gravity on both matter and light, it has been discovered that the universe contains much more matter than is accounted for by visible objects; stars, galaxies, nebulae and interstellar gas."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Observable universe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=251399",
+      "retrieved_at": "2026-10-18T15:10:59.414Z",
+      "sha256": "f2386eef3b45e8d4e393476c28012a066ac435132cacc97a118300e1a2875ff0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The observable universe is a spherical region of the universe consisting of all matter that can be observed from Earth; the electromagnetic radiation from these astronomical objects has had time to reach the Solar System and Earth since the beginning of the cosmological expansion.",
+        "The radius of this region is about 14.26 gigaparsecs (46.5 billion light-years or 4.40×1026 m).",
+        "The word observable in this sense does not refer to the capability of modern technology to detect light or other information from an object, or whether there is anything to be detected.",
+        "It refers to the physical limit created by the speed of light itself.",
+        "No signal can travel faster than light and the universe has only existed for about 14 billion years.",
+        "Objects which emit light but which exist too far away for that light to have reached Earth are beyond the particle horizon, outside the observable universe.",
+        "Every location in the universe has its own observable universe, which may or may not overlap with the one centered on Earth.",
+        "According to calculations, the current comoving distance to particles from which the cosmic microwave background radiation (CMBR) was emitted, which represents the radius of the visible universe, is about 14.0 billion parsecs (about 45.7 billion light-years).",
+        "The comoving distance to the edge of the observable universe is about 14.3 billion parsecs (about 46.6 billion light-years), about 2% larger.",
+        "The radius of the observable universe is therefore estimated to be about 46.5 billion light-years.",
+        "Using the critical density and the diameter of the observable universe, the total mass of ordinary matter in the universe can be calculated to be about 1.5×1053 kg.",
+        "In November 2018, astronomers reported that extragalactic background light (EBL) amounted to 4×1084 photons."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Heat death of the universe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=362722",
+      "retrieved_at": "2026-10-18T15:10:59.414Z",
+      "sha256": "cc683e24ec7ea978557071a409385706b57ce5e09a2dc222114663808cd2f07e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Heat death does not imply any particular absolute temperature; it only requires that temperature differences or other processes may no longer be exploited to perform work.",
+        "In the language of physics, this is when the universe reaches thermodynamic equilibrium.",
+        "If the curvature of the universe is hyperbolic or flat, or if dark energy is a positive cosmological constant, the universe will continue expanding forever, and a heat death is expected to occur, with the universe cooling to approach equilibrium at a very low temperature after a long time period.",
+        "The theory of heat death stems from the ideas of Lord Kelvin who, in the 1850s, took the theory of heat as mechanical energy loss in nature (as embodied in the first two laws of thermodynamics) and extrapolated it to larger processes on a universal scale.",
+        "This also allowed Kelvin to formulate the heat death paradox, which disproves an infinitely old universe."
+      ]
+    }
+  ]
+}

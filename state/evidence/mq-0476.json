@@ -1,0 +1,25 @@
+{
+  "id": "mq-0476",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Impacts of COVID-19 on Air Quality through Traffic Reduction.",
+      "publisher": "Europe PMC",
+      "author": "Hwang H, Lee JY.",
+      "published_at": "2022-02-02",
+      "url": "https://doi.org/10.3390/ijerph19031718",
+      "retrieved_at": "2026-10-18T17:30:30.792Z",
+      "sha256": "8f4bbb9e7d25b86673235b1c178273ae2049f2483ee77c6f053aa321a5bf990e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 2020, the first case of COVID-19 was confirmed in Korea, and social distancing was implemented to prevent its spread.",
+        "This reduced the movement of people, and changes in air quality were expected owing to reduced emissions.",
+        "In the present paper, the impact of traffic volume change caused by COVID-19 on air quality in Seoul, Korea, is examined.",
+        "The regression results show that traffic decreased by 0.00431% per COVID-19 case; when traffic fell by 1%, the PM 10 , PM 2.5 , CO, NO 2 , O 3 , and SO 2 concentrations fell by 0.48%, 0.94%, 0.39%, 0.74%, 0.16%, and -0.01%, respectively.",
+        "This mechanism accounts for air quality improvements in PM 10 , PM 2.5 , CO, NO 2 , and O 3 in Seoul during 2020-2021.",
+        "From these results, the majority of the reduction in pollutant concentrations in 2020-2021 appears to be the result of a long-term declining trend rather than COVID-19."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "mm-1912",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Reform Worked in China",
+      "publisher": "The MIT Press",
+      "author": "Qian, Yingyi",
+      "published_at": "2017-12-08",
+      "url": "https://doi.org/10.7551/mitpress/9780262534246.003.0002",
+      "retrieved_at": "2026-10-18T16:36:39.642Z",
+      "sha256": "66637f87247b6e61b148605294a203eafa6709c261f64dc2a073d9667a5cee6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "China’s reform worked and produced one of the most impressive growth in the largest developing and transition economy in the world in the past twenty-two years.",
+        "That China has managed to grow so rapidly despite the absence of many conventional institutions such as rule of law and secure private property rights is puzzling.",
+        "To understand how reform works in a developing and transition economy that has great growth potential, it is not enough to study the conventional “best-practice institutions” as a desirable goal.",
+        "One should also study how feasible, imperfect institutions have evolved to complement the initial conditions and to function as stepping stones in the transition toward the goal."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How to Use the Slide Rule",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Honey, Frederic R.",
+      "published_at": "1908-12-19",
+      "url": "https://www.scientificamerican.com/article/how-to-use-the-slide-rule/",
+      "retrieved_at": "2026-10-18T16:36:40.579Z",
+      "sha256": "322a4931f704132170556c9359340c48067efb0ee2c29517aaee507b7b1426bf",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "We leverage third party services to both verify and deliver email.",
+        "By providing your email address, you also consent to having the email address shared with third parties for those purposes.",
+        "That’s why I and the journalists here at Scientific American hope you’ll join our community.",
+        "Our editors and reporters are often experts in their fields, which means they understand the nuances of big discoveries and can untangle the breakthroughs from the hype.",
+        "With a subscription, you are also supporting rigorous fact-checking to ensure the words we publish are precise and accurate.",
+        "And you’re supporting original illustrations, graphics and photos that bring you closer to an advanced laboratory, an ice sheet in Antarctica or a space mission in orbit.",
+        "You’re helping us craft other types of high-quality journalism as well: Our newsletters are carefully written, edited and curated by staffers you have or will come to know and love.",
+        "Our Science Quickly podcast is based on original reporting, collaboration with editors and scientists and exacting production.",
+        "Subscriptions keep this engine running so we can continue to deliver thoughtful, rigorous and independent science journalism to you."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The slide rule and how to use it : a text-work book",
+      "publisher": "Follett Pub. Co. eBooks",
+      "author": "Hobart H. Sommers; Harry Drell; T. W. Wallschlaeger",
+      "published_at": "1950-01-01",
+      "url": "https://openalex.org/works/W599878852",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "6089704d00037202691c1669fbb896454a8914829f840f4d5c5f09ede937a481",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The slide rule and how to use it : a text-work book | OpenAlex Log in Get started Work Add to collection The slide rule and how to use it : a text-work book HTML Details Locations Year: 1950 Type: book Source: Follett Pub.",
+        "Wallschlaeger Language: English Topic: History and Theory of Mathematics Subfield: Theoretical Computer Science Field: Mathematics Domain: Physical Sciences Open Access status: closed OpenAlex ID: W599878852 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Slide rule short cuts",
+      "publisher": "New Zealand Engineering",
+      "author": "H Crownshaw",
+      "published_at": "1947-10-01",
+      "url": "https://openalex.org/W2548499652",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "aadcf7db4dfdf2523cb0abc051036e4a12d809dd8cd0f16c8b657c5bf6336912",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The tool of greatest value to the electrical engineer is probably his slide rule.",
+        "Most electrical engineers and many mechanics and wiremen own and regularly use one.",
+        "How many, however, fully appreciate the value of the instrument they possess and obtain from it the maximum possible assistance in their daily work?"
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "How Slide Rules Won a War",
+      "publisher": "OpenAlex",
+      "author": "Alex E. S. Green",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W2189287349",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "b8c02ead3c10581210e5e9a922b845d9157874b4715cdd8af8aab72e59cfd162",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article is a supplement to a report previously published in the Journal of the Oughtred Society (JOS) [1] that gave technical details about a two-dimensional programmable slide rule system.",
+        "The system was developed and fabricated in the China, Burma, India (CBI) and the Pacific combat theaters in World War II.",
+        "This article develops the thesis that these and other slide rules used by the 20th Air Force (AF) were responsible for our victory over Japan.",
+        "Slide Rules A history of the slide rule has been given in the Tenth Anniversary Issue of JOS [2].",
+        "In brief, Napier’s discovery of logarithms in 1610 enabled the determination of the product of two numbers by adding their logarithms and taking the anti-logarithm of the result.",
+        "In eect to obtain the product z = xy, one calculates log z = log x + log y and takes the antilog of the sum.",
+        "In 1620, using Napier’s work, Gunter made a scale in which numbers from unity were positioned at distances proportional to their logarithms.",
+        "He then used two dividers graphically to add the logarithm of the two numbers and read the product on the same scale.",
+        "In 1630, William Oughtred used two Gunter type scales in a sliding arrangement to mechanically add logarithms to obtain their product.",
+        "The same system could be used for division by subtracting the logarithm of the two numbers.",
+        "Many other inventors, including such giants as Isaac Newton and James Watt, generalized Oughtred’s device to multiply or divide functions of numbers using scales with distances proportioned by the logarithm of these functions to obtain F(x)G(y)=H.",
+        "During this same period, a number of general-purpose engineering slide rules were developed and fabricated by companies such as Keuel and Esser, Dietzgen, Hemmi, Astro-werke, and others."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Slide rule",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28743",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "0a74e4923368c82da924095190bf79583552386937fd01b93057183d569c421e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A slide rule is a hand-operated mechanical calculator consisting of slidable rulers for conducting mathematical operations such as multiplication, division, exponents, roots, logarithms, and trigonometry.",
+        "Slide rules exist in a diverse range of styles and generally appear in a linear, circular or cylindrical form.",
+        "Slide rules manufactured for specialized fields such as aviation or finance feature scales that aid in specialized calculations particular to those fields.",
+        "The slide rule is closely related to nomograms used for application-specific computations.",
+        "Though similar in name and appearance to a standard ruler, the slide rule is not meant to be used for measuring length or drawing straight lines.",
+        "Maximum accuracy for standard linear slide rules is about three decimal significant digits, while scientific notation is used to keep track of the order of magnitude of results.",
+        "English mathematician and clergyman Reverend William Oughtred and others developed the slide rule in the 17th century based on the emerging work on logarithms by John Napier.",
+        "It made calculations faster and less error-prone than evaluating on paper.",
+        "Before the advent of the scientific pocket calculator, it was the most commonly used calculation tool in science and engineering.",
+        "The slide rule's ease of use, ready availability, and low cost caused its use to continue to grow through the 1950s and 1960s even with the introduction of mainframe digital electronic computers.",
+        "But after the handheld HP-35 scientific calculator was introduced in 1972 and became inexpensive in the mid-1970s, slide rules became largely obsolete and no longer were in use by the advent of personal desktop computers in the 1980s.",
+        "In the United States, the slide rule is colloquially called a slipstick."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "List of Sliders episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=165144",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "79678ac48d975ce0a56c575bb338b8107f1acbc5d64a29fdf41438c4bce38a4d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The following is a list of episodes for the Fox and Sci Fi Channel original series Sliders.",
+        "The series aired on Fox from March 1995 to May 1997 and on the Sci Fi Channel from June 1998 to February 2000."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Slide It In",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2209102",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "387c1d78a2bafe4e13af605b4eeed9b7ff6e7ef2f53dfccbc631ac88729558fc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Slide It In is the sixth studio album by British rock band Whitesnake, released on 30 January 1984 in Europe, and on 6 February in the UK by Liberty and EMI Records.",
+        "To cater to the American market, the album was remixed and resequenced, and subsequently released on 16 April 1984 in North America through Geffen Records, after the group was signed to the label prior to its release.",
+        "The album is widely regarded as a pivotal release for Whitesnake, as it marked their initial success in the United States and laid the groundwork for their breakthrough later in the 1980s.",
+        "Notably, it was the last Whitesnake album to feature the band’s original \"snake\" logo.",
+        "Two distinct editions of the album exist, each reflecting a different production approach.",
+        "The original mix was criticised for its \"flat\" sound, while the remix adopted a more modern and polished production style, aligning with the growing popularity of the American glam metal scene.",
+        "The remix proved instrumental in refining Whitesnake's sound, helping the band establish a stronger identity in the competitive U.S.",
+        "Critics have described the album as a blend of blues rock and glam metal.",
+        "The remixed version, in particular, was praised for its energy and accessibility, which resonated with American audiences.",
+        "During the promotional tour for Slide It In, the band underwent significant lineup changes.",
+        "Founding guitarist Micky Moody, left the group after the album's recording and was replaced by John Sykes, formerly of Thin Lizzy and Tygers of Pan Tang, while bassist Colin Hodgkinson was replaced by a returning Neil Murray.",
+        "Guitarist Mel Galley also left due to a nerve injury, while longtime keyboardist Jon Lord departed the band, to rejoin the reformed Deep Purple and play on their comeback album Perfect Strangers, which was released later the same year."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "History of logarithms",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8185549",
+      "retrieved_at": "2026-10-18T16:36:41.436Z",
+      "sha256": "95d51956ef0ba38893ef3bf03faff78023ea505b59bba1d747cddd30ff089bfb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hobson called it \"one of the very greatest scientific discoveries that the world has seen.\" Henry Briggs introduced common (base 10) logarithms, which were easier to use.",
+        "Tables of logarithms were published in many forms over four centuries.",
+        "The idea of logarithms was also used to construct the slide rule (invented around 1620–1630), which was ubiquitous in science and engineering until the 1970s.",
+        "A breakthrough generating the natural logarithm was the result of a search for an expression of area against a rectangular hyperbola, and required the assimilation of a new function into standard mathematics."
+      ]
+    }
+  ]
+}

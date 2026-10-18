@@ -1,0 +1,100 @@
+{
+  "id": "mm-1180",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Microsoft Bing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4325491",
+      "retrieved_at": "2026-10-18T15:49:26.945Z",
+      "sha256": "2e6ac350eab149f972dc9a832151ae9aa0a2656ee28b686c671a67c141c956cc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Microsoft Bing (also known simply as Bing) is a search engine owned and operated by Microsoft, and developed by Microsoft AI.",
+        "The service traces its roots back to Microsoft's earlier search engines, including MSN Search, Windows Live Search, and Live Search.",
+        "Bing offers a broad spectrum of search services, encompassing web, video, image, and map search products, all developed using ASP.NET.",
+        "The transition from Live Search to Bing was announced by Microsoft CEO Steve Ballmer on May 28, 2009, at the All Things Digital conference in San Diego, California.",
+        "Bing introduced several notable features at its inception, such as search suggestions during query input and a list of related searches, known as the \"Explore pane\".",
+        "These features leveraged semantic technology from Powerset, a company Microsoft acquired in 2008.",
+        "Microsoft made significant strides towards open-source technology in 2016, making the BitFunnel search engine indexing algorithm and various components of Bing open source.",
+        "In February 2023, Microsoft launched Bing Chat (later renamed Microsoft Copilot), an artificial intelligence chatbot experience based on GPT-4, integrated directly into the search engine.",
+        "This was well-received, with Bing reaching 100 million active users by the following month.",
+        "As of April 2024, Bing holds the position of the second-largest search engine worldwide, with a market share of 3.64%, behind Google's 90.91%.",
+        "Other competitors include Yandex with 1.61%, Baidu with 1.15%, and Yahoo!, which is largely powered by Bing, with 1.13%.",
+        "Approximately 27.43% of Bing's monthly global traffic comes from China, 22.16% from the United States, 4.85% from Japan, 4.18% from Germany and 3.61% from France."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Weather Company",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28318386",
+      "retrieved_at": "2026-10-18T15:49:26.945Z",
+      "sha256": "37c99365b9a3e62aac9f6344c51bce2b01bcea2ba4d8f01522ee9544e6f3019e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Weather Company LLC is a weather forecasting and information technology company that owns and operates the Weather Channel app and its website weather.com and Weather Underground; it also owns the Weather Channel brand.",
+        "The Weather Company also produces a weather API of data and analytics tools used in advertising and aviation.",
+        "The company originated from the Weather Channel, founded in 1980, and was restructured in 2012 to distinguish its media (the Weather Channel) and data (the Weather Company) operations.",
+        "From 2016 to 2023, the Weather Company was a subsidiary of the Watson & Cloud Platform business unit of IBM.",
+        "In February 2024, the private equity firm Francisco Partners completed the acquisition of the Weather Company, which operates as a standalone company."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Google DeepMind",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=41755648",
+      "retrieved_at": "2026-10-18T15:49:26.945Z",
+      "sha256": "8261dab428ce5a9650cd3bce2d983e9d61e64226df1b9038e64b3461558753d0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "DeepMind Technologies Limited, trading as Google DeepMind or simply DeepMind, is a British-American artificial intelligence (AI) research laboratory which is a subsidiary of Alphabet Inc.",
+        "Founded in the UK in 2010, it was acquired by Google in 2014, and merged with Google AI's Google Brain division to become Google DeepMind in April 2023.",
+        "The company is headquartered in London, with research centres in the United States, Canada, France, Germany, and Switzerland.",
+        "In 2014, DeepMind introduced neural Turing machines (neural networks that can access external memory like a conventional Turing machine).",
+        "The company has created many neural network models trained with reinforcement learning to play video games and board games.",
+        "It made headlines in 2016 after its AlphaGo program beat Lee Sedol, a Go world champion, in a five-game match, which was later featured in the documentary AlphaGo.",
+        "A more general program, AlphaZero, beat the most powerful programs playing go, chess and shogi (Japanese chess) after a few days of play against itself using reinforcement learning.",
+        "DeepMind has since trained models for game-playing (MuZero, AlphaStar), for mathematics (AlphaGeometry, FunSearch), and for algorithm discovery (AlphaEvolve, AlphaDev, AlphaTensor).",
+        "In 2020, DeepMind made significant advances in the problem of protein folding with AlphaFold, which achieved state of the art records on benchmark tests for protein folding prediction.",
+        "In July 2022, it was announced that over 200 million predicted protein structures, representing virtually all known proteins, would be released on the AlphaFold database.",
+        "Google DeepMind has become responsible for the development of two large language model families: the proprietary Gemini and open-weight Gemma, as well as other generative AI models, such as Imagen (text-to-image), Veo (text-to-video), and Lyria (text-to-music)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence in India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60669244",
+      "retrieved_at": "2026-10-18T15:49:26.945Z",
+      "sha256": "ac2c7f4e904d5bbe86b34e1945116107a975f0bb9c7ba38f6fa63483ab258f94",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The artificial intelligence (AI) market in India is projected to reach $8 billion by 2025, growing at 40% CAGR from 2020 to 2025.",
+        "India has many AI Hardware startups, AI Datacenter, Supercomputing and HPC companies such as Netweb Technologies.",
+        "In India, the development of AI has been similarly transformative, with applications in healthcare, finance, and education, bolstered by government initiatives like NITI Aayog's 2018 National Strategy for Artificial Intelligence.",
+        "Institutions such as the Indian Statistical Institute and the Indian Institute of Science published breakthrough AI research papers and patents.",
+        "India's transformation to AI is primarily being driven by startups and government initiatives & policies like Digital India.",
+        "By fostering technological trust through digital public infrastructure, India is tackling socioeconomic issues by taking a bottom-up approach to AI.",
+        "NASSCOM and Boston Consulting Group estimate that by 2027, India's AI services might be valued at $17 billion.",
+        "According to 2025 Technology and Innovation Report, by UN Trade and Development, India ranks 10th globally for private sector investments in AI.",
+        "According to Mary Meeker, India has emerged as a key market for AI platforms, accounting for the largest share of ChatGPT's mobile app users and having the third-largest user base for DeepSeek in 2025.",
+        "While AI presents significant opportunities for economic growth and social development in India, challenges such as data privacy concerns, skill shortages, and ethical considerations need to be addressed for responsible AI deployment.",
+        "The growth of AI in India has also led to an increase in the number of cyberattacks that use AI to target organizations."
+      ]
+    }
+  ]
+}

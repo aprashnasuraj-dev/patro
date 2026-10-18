@@ -1,0 +1,131 @@
+{
+  "id": "mm-1412",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Unkillable Learning Styles Myth",
+      "publisher": "Elsevier BV",
+      "author": "Blasie, Michael",
+      "published_at": "2024",
+      "url": "https://doi.org/10.2139/ssrn.4733065",
+      "retrieved_at": "2026-10-18T16:11:15.093Z",
+      "sha256": "912684420bb630c47cf69646a3e02f50a81bed875d719eb9ebc79e4042662441",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Is it time to kill the Learning Styles Myth in law school classrooms?",
+        "This article details the absence of scientific or empirical evidence supporting the utility of learning styles but then layers in the classroom realities of personalities and student dynamics to suggest how professors can effectively empower students to learn in any mode."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Learning Styles: Moving Forward from the Myth",
+      "publisher": "Canadian Journal for New Scholars in Education/ Revue canadienne des jeunes chercheures et chercheurs en éducation",
+      "author": "Andrea Antoniuk",
+      "published_at": "2019-12-01",
+      "url": "https://openalex.org/W3001867935",
+      "retrieved_at": "2026-10-18T16:11:16.944Z",
+      "sha256": "f8545712ac9301281751cfc9771b9218d29f8afb369c6e1f16d844b326176f6a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Learning styles attempt to describe individual differences among students by identifying students’ preferences in how they learn, and adapting their learning to accommodate that style.",
+        "Since their inception, learning styles have gained mass popularity among teachers, researchers, and the public.",
+        "Numerous assessments and self-help books are available to discover one’s individual learning style.",
+        "Learning styles, however, have been heavily criticized by researchers who contend that learning styles lack evidence supporting their effectiveness and possess unreliable diagnostic tools.",
+        "I posit that the case against learning styles is not limited to those two claims; in addition, that learning styles outcomes can be associated with confounding factors, and that learning styles may lead to ineffective teaching practices that negatively affect students and teachers.",
+        "Through evidence-based practices, we can move forward from learning styles and create learning environments that have a greater probability of positive effects."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Language acquisition",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18614",
+      "retrieved_at": "2026-10-18T16:11:16.944Z",
+      "sha256": "ca7386df1da336f3f0d9ca267c51462b136495149008b93bcd169f75928d7049",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Language acquisition is the process by which humans acquire the capacity to perceive and comprehend language.",
+        "In other words, it is how human beings gain the ability to be aware of language, to understand it, and to produce and use words and sentences to communicate.",
+        "Language acquisition involves structures, rules, and representation.",
+        "The capacity to successfully use language requires human beings to acquire a range of tools, including phonology, morphology, syntax, semantics, and an extensive vocabulary.",
+        "Language can be vocalized as in speech, or manual as in sign.",
+        "Even though human language capacity is finite, one can say and understand an effectively infinite number of sentences, which is based on a syntactic principle called recursion.",
+        "Evidence suggests that every individual has three recursive mechanisms that allow sentences to go indeterminately.",
+        "These three mechanisms are: relativization, complementation and coordination.",
+        "There are two main guiding principles in first-language acquisition: speech perception always precedes speech production, and the gradually evolving system by which a child learns a language is built up one step at a time, beginning with the distinction between individual phonemes.",
+        "For many years, linguists interested in child language acquisition have questioned how language is acquired.",
+        "state, \"The question of how these structures are acquired, then, is more properly understood as the question of how a learner takes the surface forms in the input and converts them into abstract linguistic rules and representations.\"\nLanguage acquisition usually refers to first-language acquisition.",
+        "It studies infants' acquisition of their native language, whether that is a spoken language or a sign language, though it can also refer to bilingual first language acquisition (BFLA), referring to an infant's simultaneous acquisition of two native languages."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Anansi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=99498",
+      "retrieved_at": "2026-10-18T16:11:16.944Z",
+      "sha256": "1b04cf5e217fef1821b2720aa411b9bcc9318dde240c2a346fba2dcd8d155ed8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Anansi or Ananse ( ə-NAHN-see; literally translates to spider)  is a character in Akan religion and folklore associated with stories, wisdom, knowledge, wit, mischievousness, cunning, and trickery, most commonly depicted as a spider.",
+        "Anansi is a character who reflects the culture that he originates from.",
+        "The Akan people are a close-knit people from present-day southern Ghana who rely on social order, which translates through the stories that come out of their culture.",
+        "In many ways, Anansi is a paradoxical character whose actions defy this social order, but in incorporating rebellion and doubt into faith, his folkloric presence strengthens it.",
+        "Taking the role of a trickster, he is also one of the most important characters of West African, African-American and Caribbean folklore.",
+        "These spider tales were spread to the Americas via the Atlantic slave trade.",
+        "Anansi is best known for his ability to outsmart and triumph over more powerful opponents through his use of cunning, creativity and wit.",
+        "Despite taking on a trickster role, Anansi often takes centre stage in stories and is commonly portrayed as both the protagonist and antagonist."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Learning styles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1005416",
+      "retrieved_at": "2026-10-18T16:11:16.944Z",
+      "sha256": "f8b18b27083bdec6828f0004c15c5d4468b6789a860419a5012e016126c0ee5e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Learning styles refer to a range of theories that aim to account for differences in individuals' learning.",
+        "Although there is ample evidence that individuals express personal preferences on how they prefer to receive information, few studies have found validity in using learning styles in education.",
+        "Many theories share the proposition that humans can be classified according to their \"style\" of learning, but differ on how the proposed styles should be defined, categorized and assessed.",
+        "A common concept is that individuals differ in how they learn.",
+        "The idea of individualized learning styles became popular in the 1970s.",
+        "This has greatly influenced education despite the criticism that the idea has received from some researchers.",
+        "Proponents recommend that teachers run a needs analysis to assess the learning styles of their students and adapt their classroom methods to best fit each student's learning style.",
+        "There are many different types of learning models that have been created and used since the 1970s.",
+        "Many of the models have similar fundamental ideas and are derived from other existing models, such as the change from the VAK model to the VARK model.",
+        "However, critics of learning styles claim that there is no consistent evidence that better student outcomes result from identifying individual students' learning style and matching teaching to specific learning styles."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Daniel T. Willingham",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=35197754",
+      "retrieved_at": "2026-10-18T16:11:16.944Z",
+      "sha256": "359a5740f74ed3c73dd2faa133bd00f3c3701a7852aba69399ba9e953688fcf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Willingham (born 1961) is an American psychologist and professor in the Department of Psychology at the University of Virginia.",
+        "His research focuses on applying findings from cognitive psychology and neuroscience to K-12 education.",
+        "Willingham is known for his advocacy of evidence-based teaching practices and his criticism of unsupported educational theories such as learning styles.",
+        "His work has reached broader audiences through popular books including Why Don't Students Like School?"
+      ]
+    }
+  ]
+}
