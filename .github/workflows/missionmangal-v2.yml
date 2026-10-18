@@ -29,6 +29,8 @@ env:
   SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
   POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_HEALTHY_CRAB }}
+  BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+  TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
   CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
   CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}
 
@@ -67,7 +69,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: v2 unit tests
-        run: node --test missionmangal/tests/v2.test.mjs
+        run: node --test missionmangal/tests/*.test.mjs
       - name: Provider health (1 tiny call per provider, tries candidate models)
         run: node missionmangal/v2/preflight.mjs missionmangal/v2-work/health.json
       - uses: actions/upload-artifact@v4
@@ -170,6 +172,7 @@ jobs:
           bash missionmangal/v2/gather.sh 25
           node missionmangal/scripts/merge-shards.mjs
           node missionmangal/scripts/validate-approved.mjs
+          node missionmangal/v2/release-gate.mjs
           node missionmangal/v2/report.mjs
       - name: Tests
         run: node --test missionmangal/tests/v2.test.mjs
