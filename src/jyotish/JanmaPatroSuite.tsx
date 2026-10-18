@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { calculateChart, calculateGuna, type BirthInput, type ChartResult, type GunaResult, SIGNS } from "./jyotishEngine";
 import { calculateNameGuna, nameSyllableFromNakshatra, type NameGunaResult } from "../../packages/engine/src/name-guna.js";
 import { createJanmaPatroShareUrl, readJanmaPatroShareState } from "../../packages/engine/src/share-state.js";
+import { adToBs, bsToAd, daysInBsMonth } from "../../packages/core/src/bsDate";
 import "./janmapatro.css";
 
 type Language="ne"|"en";
@@ -31,17 +32,8 @@ function isProfile(value:unknown):value is ProfileInput{
  const v=value as Partial<ProfileInput>;
  return typeof v.name==="string"&&typeof v.date==="string"&&typeof v.time==="string"&&typeof v.location==="string"&&Number.isFinite(v.lat)&&Number.isFinite(v.lng);
 }
-async function resolveBsDate(year:number,month:number,day:number){
- const approxYear=year-57,approxMonth=(month+2)%12;
- const center=new Date(Date.UTC(approxYear+(month>=10?1:0),approxMonth,15)),start=new Date(center),end=new Date(center);
- start.setUTCDate(start.getUTCDate()-31);end.setUTCDate(end.getUTCDate()+31);
- const query=new URLSearchParams({start:start.toISOString().slice(0,10),end:end.toISOString().slice(0,10)});
- const response=await fetch("/api/v1/sync?"+query.toString(),{headers:{Accept:"application/json"}});
- if(!response.ok)throw new Error("वि.सं. जन्ममिति रूपान्तरण अहिले हुन सकेन। फेरि प्रयास गर्नुहोस्।");
- const payload=await response.json() as {days?:Array<{query_date:string;calendars:{bikram_sambat_detail:{year:number;month:number;day:number}}}>};
- const hit=payload.days?.find((x)=>{const b=x.calendars.bikram_sambat_detail;return b.year===year&&b.month===month&&b.day===day;});
- if(!hit)throw new Error("छानिएको वि.सं. मिति उपलब्ध पात्रो दायराभन्दा बाहिर छ।");
- return hit.query_date;
+function resolveBsDate(year:number,month:number,day:number){
+ return bsToAd({year,month,day});
 }
 function dateText(date:Date){return date.toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"2-digit",timeZone:"UTC"});}
 function degreeText(value:number){const d=Math.floor(value),m=Math.floor((value-d)*60);return d+"° "+m+"′";}
@@ -57,14 +49,15 @@ function ProfileForm({value,onChange,prefix,language}:{value:ProfileInput;onChan
  const[calendar,setCalendar]=useState<"AD"|"BS">("AD"),[bs,setBs]=useState({year:2051,month:9,day:17}),[busy,setBusy]=useState(false),[localError,setLocalError]=useState<string|null>(null);
  const set=<K extends keyof ProfileInput>(key:K,val:ProfileInput[K])=>onChange({...value,[key]:val});
  const chooseDistrict=(name:string)=>{const row=DISTRICTS.find((x)=>x[0]===name);if(row)onChange({...value,location:row[0],lat:row[1],lng:row[2]});};
- const applyBs=async()=>{setBusy(true);setLocalError(null);try{set("date",await resolveBsDate(bs.year,bs.month,bs.day));}catch(e){setLocalError(e instanceof Error?e.message:"मिति रूपान्तरण हुन सकेन।");}finally{setBusy(false);}};
+ const applyBs=()=>{setBusy(true);setLocalError(null);try{set("date",resolveBsDate(bs.year,bs.month,bs.day));}catch(e){setLocalError(e instanceof Error?e.message:"मिति रूपान्तरण हुन सकेन।");}finally{setBusy(false);}};
+ const changeCalendar=(next:"AD"|"BS")=>{setLocalError(null);if(next==="BS"){try{setBs(adToBs(value.date));}catch(e){setLocalError(e instanceof Error?e.message:"AD date is outside supported BS calendar range.");}}setCalendar(next);};
  return <fieldset className="jp-profile"><legend>{prefix}</legend>
   <div className="jp-form-grid">
    <label>{tx(language,"नाम","Name")}<input value={value.name} onChange={(e)=>set("name",e.target.value)} placeholder={tx(language,"नाम","Name")}/></label>
    <label>{tx(language,"पिता / अभिभावक","Father / Guardian")}<input value={value.father||""} onChange={(e)=>set("father",e.target.value)} placeholder={tx(language,"ऐच्छिक","Optional")}/></label>
-   <label>{tx(language,"पात्रो","Calendar")}<select value={calendar} onChange={(e)=>setCalendar(e.target.value as "AD"|"BS")}><option>AD</option><option>BS</option></select></label>
+   <label>{tx(language,"पात्रो","Calendar")}<select value={calendar} onChange={(e)=>changeCalendar(e.target.value as "AD"|"BS")}><option>AD</option><option>BS</option></select></label>
    {calendar==="AD"?<label>{tx(language,"जन्ममिति","Birth date")}<input type="date" value={value.date} onChange={(e)=>set("date",e.target.value)}/></label>:
-   <div className="jp-bs-date"><label>BS year<input type="number" value={bs.year} onChange={(e)=>setBs({...bs,year:Number(e.target.value)})}/></label><label>Month<input type="number" min="1" max="12" value={bs.month} onChange={(e)=>setBs({...bs,month:Number(e.target.value)})}/></label><label>Day<input type="number" min="1" max="32" value={bs.day} onChange={(e)=>setBs({...bs,day:Number(e.target.value)})}/></label><button type="button" onClick={applyBs} disabled={busy}>{busy?tx(language,"रूपान्तरण हुँदैछ…","Converting…"):tx(language,"वि.सं. मिति प्रयोग गर्नुहोस्","Use BS date")}</button></div>}
+   <div className="jp-bs-date"><label>BS year<input type="number" value={bs.year} onChange={(e)=>setBs({...bs,year:Number(e.target.value)})}/></label><label>Month<input type="number" min="1" max="12" value={bs.month} onChange={(e)=>setBs({...bs,month:Number(e.target.value)})}/></label><label>Day<input type="number" min="1" max={(()=>{try{return daysInBsMonth(bs.year,bs.month)}catch{return 32}})()} value={bs.day} onChange={(e)=>setBs({...bs,day:Number(e.target.value)})}/></label><button type="button" onClick={applyBs} disabled={busy}>{busy?tx(language,"रूपान्तरण हुँदैछ…","Converting…"):tx(language,"वि.सं. मिति प्रयोग गर्नुहोस्","Use BS date")}</button></div>}
    <label>{tx(language,"जन्म समय","Exact time")}<input type="time" value={value.time} onChange={(e)=>set("time",e.target.value)}/></label>
    <label>{tx(language,"जन्मस्थान","District")}<select value={DISTRICTS.some((x)=>x[0]===value.location)?value.location:""} onChange={(e)=>chooseDistrict(e.target.value)}><option value="">{tx(language,"अन्य स्थान · Coordinates","Other · Coordinates")}</option>{DISTRICTS.map((x)=><option key={x[0]}>{x[0]}</option>)}</select></label>
    <label>Latitude<input type="number" step=".0001" value={value.lat} onChange={(e)=>set("lat",Number(e.target.value))}/></label>
