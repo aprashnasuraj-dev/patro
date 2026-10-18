@@ -3,9 +3,9 @@
   "routes": {
     "general": {
       "priority": 1,
-      "min_sources": 3,
-      "target_words": 900,
-      "min_words": 400,
+      "min_sources": 2,
+      "target_words": 650,
+      "min_words": 300,
       "images": "off",
       "mode": "compact"
     },
