@@ -1,0 +1,117 @@
+{
+  "id": "mm-0713",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Giant batteries to store wind and solar power can speed up South Africa’s energy transition – how that can happen",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Apata, Gbenga",
+      "published_at": "2024-08-26",
+      "url": "https://theconversation.com/giant-batteries-to-store-wind-and-solar-power-can-speed-up-south-africas-energy-transition-how-that-can-happen-236114",
+      "retrieved_at": "2026-10-18T15:13:43.505Z",
+      "sha256": "85f103f13e643fb8feb6d2cf865275a65b73eb3a112a1036fc3f8ee4fec98146",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Giant batteries to store wind and solar power can speed up South Africa’s energy transition – how that can happen Skip to content Academic rigor, journalistic flair A massive battery energy storage system next to the Source Energy Technology solar energy project in Zhangye, China.",
+        "Storage of renewable energy is very important for this transition.",
+        "To keep the national grid stable, renewable energy must be stored somewhere and supplied reliably.",
+        "The country has already made strides in integrating renewable energy into its power grid through the Renewable Energy Independent Power Producer Procurement Programme .",
+        "Since 2010, this has attracted 110 private independent power projects that have invested R277.2 billion (US$14.6 billion) in renewable energy.",
+        "But South Africa’s path to a sustainable energy future is complicated by problems with energy storage technologies.",
+        "As an electrical engineer and researcher , I focus on energy transitions and the various barriers to the renewable energy rollout across sub-Saharan Africa.",
+        "My recent research investigates the role of energy storage in South Africa’s energy transition.",
+        "I reviewed all the existing literature on energy storage technologies, policies and market trends in South Africa to determine the overall state of renewable energy storage.",
+        "I also wanted to find out how renewable energy storage can bring more renewable energy into the national grid, and make the grid more reliable.",
+        "For example, lithium-ion batteries can store energy in various amounts, from small (phone-sized) to large (town-sized), depending on their size and purpose.",
+        "This is done by pumping water from a lower dam to an upper dam during off-peak hours, and then releasing it to generate electricity when needed."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24130",
+      "retrieved_at": "2026-10-18T15:13:44.240Z",
+      "sha256": "af36f2e22b45415d47061425677440b20742a8bd466f80742d3aff79d0610a16",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy storage is the capture of energy produced at one time for use at a later time to reduce imbalances between energy demand and energy production.",
+        "A device that stores energy is generally called an accumulator or battery.",
+        "Energy comes in multiple forms including radiation, chemical, gravitational potential, electrical potential, electricity, elevated temperature, latent heat, potential and kinetic.",
+        "Energy storage involves converting energy from forms that are difficult to store to more conveniently or economically storable forms.",
+        "Some technologies provide short-term energy storage, while others can endure for much longer.",
+        "Bulk energy storage is currently dominated by hydroelectric dams, both conventional as well as pumped.",
+        "Grid energy storage is a collection of methods used for energy storage on a large scale within an electrical power grid.",
+        "Fossil fuels such as coal and gasoline store ancient energy derived from sunlight by organisms that later died, became buried and over time were then converted into these fuels.",
+        "Food (which is made by the same process as fossil fuels) is a form of energy stored in chemical form."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Rechargeable battery",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=201487",
+      "retrieved_at": "2026-10-18T15:13:44.240Z",
+      "sha256": "d79a086c511f1f6f683b3cadd0fe8db34805f132473769c9ee1a5922fa68b20d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term \"accumulator\" is used as it accumulates and stores energy through a reversible electrochemical reaction.",
+        "Rechargeable batteries are produced in many different shapes and sizes, ranging from button cells to megawatt systems connected to stabilize an electrical distribution network.",
+        "Several different combinations of electrode materials and electrolytes are used, including lead–acid, zinc–air, nickel–cadmium (NiCd), nickel–metal hydride (NiMH), lithium-ion (Li-ion), lithium iron phosphate (LiFePO4), and lithium-ion polymer (Li-ion polymer).",
+        "Rechargeable batteries typically initially cost more than disposable batteries but have a much lower total cost of ownership and environmental impact, as they can be recharged inexpensively many times before they need replacing.",
+        "Some rechargeable battery types are available in the same sizes and voltages as disposable types, and can be used interchangeably with them.",
+        "Billions of dollars in research are being invested around the world for improving batteries as industry focuses on building better batteries."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Thermal energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2465250",
+      "retrieved_at": "2026-10-18T15:13:44.240Z",
+      "sha256": "24c2db0b668ee63d91290c5aa20a62b9c4442dc7a7384fba3d340e45b7764287",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Thermal energy storage (TES) is the storage of thermal energy for later reuse.",
+        "Employing widely different technologies, it allows thermal energy to be stored for hours, days, or months.",
+        "Scale, both of storage and use, vary from small to large – from individual processes to district, town, or region as part of a thermal energy network.",
+        "Usage examples are the balancing of energy demand between daytime and nighttime, storing summer heat for winter heating, or winter cold for summer cooling (seasonal thermal energy storage).",
+        "Heat storage, both seasonal and short term, is considered an important means for cheaply balancing high shares of variable renewable electricity production and integration of electricity and heating sectors in energy systems almost or completely fed by renewable energy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Solar panel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3507365",
+      "retrieved_at": "2026-10-18T15:13:44.240Z",
+      "sha256": "fcc003e0dcf07f809243d37a83c0a11471b374eb2174f6c74c170dc61c76996f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A solar panel is a device that converts sunlight into electricity by using multiple solar modules that consist of photovoltaic (PV) cells.",
+        "PV cells are made of materials that produce excited electrons when exposed to light.",
+        "These electrons flow through a circuit and produce direct current electricity, which can be used to power various devices or be stored in batteries.",
+        "Solar panels can be known as solar cell panels, or solar electric panels.",
+        "Solar panels are usually arranged in groups called arrays or systems.",
+        "A photovoltaic system consists of one or more solar panels, an inverter that converts direct current electricity to alternating current where it is necessary, and sometimes other components such as charge controllers, meters, or solar trackers to maximize direct sunlight.",
+        "Most panels are in solar farms or rooftop solar panels, which supply the electricity grid.",
+        "Solar panels use a renewable and clean source of energy, and reduce greenhouse gas emissions compared to hydrocarbon-sourced energy.",
+        "However, they depend on the availability and intensity of sunlight, require cleaning, and have high initial costs.",
+        "Solar panels are widely used for residential, commercial, and industrial purposes, as well as in space, often together with batteries."
+      ]
+    }
+  ]
+}

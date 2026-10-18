@@ -1,0 +1,114 @@
+{
+  "id": "mm-1044",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Manager Selection vs. Strategy Labels: How Investment Process Explains Performance Dispersion Across Asset Classes",
+      "publisher": "Elsevier BV",
+      "author": "Sing, Chung Hei",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7247739",
+      "retrieved_at": "2026-10-18T15:31:13.418Z",
+      "sha256": "c6c99f21a1e3796eaf4f31b4e3db69fd943396347705b61ca37a7a5dfd2075f1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Institutional portfolios are organized around asset class and strategy labels that facilitate governance, benchmarking, and communication.",
+        "However, these categories describe where capital is allocated rather than how returns are generated.",
+        "Evidence across asset classes shows substantial performance dispersion among managers operating within the same strategies, indicating that manager-specific investment processes are a primary driver of outcomes.",
+        "This paper argues that while strategy labels remain necessary for institutional portfolio construction, they provide only a partial explanation of performance.",
+        "A process-oriented perspective focused on sourcing, underwriting, portfolio construction, value creation capabilities, and risk management offers a more granular framework for manager selection and portfolio analysis.",
+        "Integrating strategy classification with process evaluation and underlying risk exposures improves decision-making and provides a clearer understanding of how capital compounds."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cetacean",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7626",
+      "retrieved_at": "2026-10-18T15:31:13.418Z",
+      "sha256": "9118ef0c88617266e6c22a497c1884607d3fc5dd4635a532031163d1ac63935b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cetaceans are marine mammals belonging to the infraorder Cetacea (), a secondarily aquatic clade under the order Artiodactyla that include whales, dolphins, porpoises and extinct groups such as Basilosaurus.",
+        "Most cetaceans live in marine environments, particularly the pelagic zone, but some reside solely in brackish or fresh water.",
+        "Having a cosmopolitan distribution, they can be found in some rivers and all of Earth's oceans.",
+        "Many species migrate seasonally over vast ranges for food advantages.",
+        "Key characteristics of cetaceans are their fully aquatic life cycle, streamlined, fish-like body shape, the need to periodically surface and breathe air, and exclusively carnivorous diet.",
+        "Some cetaceans — the toothed whales — are capable of echolocation.",
+        "As nektonic animals, cetaceans propel themselves through the water with powerful up-and-down movements of their tails, which have evolved into in a horizontal paddle-like fluke.",
+        "Their hindlimbs have disappeared with only some vestigial skeleton of the pelvis and femurs, and their forelimbs have evolved into flippers which they use to paddle and steer.",
+        "Some fast-swimming groups, most notably the smaller dolphins and porpoises, have a dorsal fin to facilitate directional stability.",
+        "Cetaceans also have large brains and have high intelligence, complex social behaviour, and song-like communication.",
+        "Some cetaceans have large bodies, such as the blue whale, which reaches a maximum confirmed length of 29.9 meters (98 feet) and a weight of 173 tonnes (190 short tons), making it the largest animal known to have existed.",
+        "Despite their highly modified bodies and carnivorous lifestyle, genetic and fossil evidence places cetaceans within the terrestrial even-toed ungulates, most closely related to the hippopotamids."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Krill",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=231145",
+      "retrieved_at": "2026-10-18T15:31:13.418Z",
+      "sha256": "f9d12e4aed48863947b67187338eeab5a06d8b3075e7256d78f896f3037a7bd4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Krill (Euphausiids) (sing.: krill) are small and exclusively marine crustaceans of the order Euphausiacea, found in all of the world's oceans.",
+        "The name \"krill\" comes from the Norwegian word krill, meaning \"small fry of fish\", which is also often attributed to species of fish.",
+        "Krill are considered an important trophic level connection near the bottom of the food chain.",
+        "They feed on phytoplankton and, to a lesser extent, zooplankton, and are also the main source of food for many larger animals.",
+        "In the Southern Ocean, one species, the Antarctic krill, makes up an estimated biomass of around 379 million tonnes (418 million tons), making it among the species with the largest total biomass.",
+        "Over half of this biomass is eaten by whales, seals, penguins, seabirds, squid, and fish each year.",
+        "Most krill species display large daily vertical migrations, providing food for predators near the surface at night and in deeper waters during the day.",
+        "Krill are fished commercially in the Southern Ocean and in the waters around Japan.",
+        "The total global harvest amounts to 150,000 to 200,000 tonnes (170,000 to 220,000 tons) annually, mostly from the Scotia Sea.",
+        "Most krill catch is used for aquaculture and aquarium feeds, as bait in sport fishing, or in the pharmaceutical industry.",
+        "Krill are also used for human consumption in several countries.",
+        "They are known as okiami (オキアミ) in Japan and (?) in the Philippines."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Animal song",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3058258",
+      "retrieved_at": "2026-10-18T15:31:13.418Z",
+      "sha256": "ef3c3e1e2f53dbb291084a3b9a0aa64a92c76188a3528b240c98ebec7ba2485c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Animal song is not a well-defined term in scientific literature, and the use of the more broadly defined term vocalizations is in more common use.",
+        "Song generally consists of several successive vocal sounds incorporating multiple syllables.",
+        "Some sources distinguish between simpler vocalizations, termed \"calls\", reserving the term \"song\" for more complex productions.",
+        "Song-like productions have been identified in several groups of animals, including cetaceans (whales and dolphins), birds, frogs, and humans.",
+        "Social transmission of song has been found in groups including birds and cetaceans."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Ocean Alliance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10828733",
+      "retrieved_at": "2026-10-18T15:31:13.418Z",
+      "sha256": "c60a2c82fd88fc22171f7f354ae57dee73cfa47569cfc419c824c5cbfd4dcb17",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ocean Alliance, Inc., is a 501(c)(3) organization founded in 1971 as one of the world's first organizations dedicated to cetacean (whales, dolphins, and porpoises) conservation.",
+        "The organization is headquartered in the iconic Tarr & Wonson Paint Manufactory  building in Gloucester, Massachusetts, USA.",
+        "Ocean Alliance's mission is to protect whales and their ocean environment through research, scientific collaboration, education, and the arts.",
+        "They use drone technology to advance whale science, particularly through their SnotBot® program."
+      ]
+    }
+  ]
+}

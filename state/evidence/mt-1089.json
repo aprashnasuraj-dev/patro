@@ -1,0 +1,57 @@
+{
+  "id": "mt-1089",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Real-Time BGP Monitoring with BMP and Streaming Telemetry",
+      "publisher": "SCITEPRESS - Science and Technology Publications",
+      "author": "Hiremath, Vishwanath",
+      "published_at": "2025",
+      "url": "https://doi.org/10.5220/0014185900004932",
+      "retrieved_at": "2026-10-18T16:33:54.572Z",
+      "sha256": "5a8569ac60cf7703f2d1555552e73cb1bf003a12e751dd024fb39e397f790df3",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "SciTePress - Publication Details Home About Us Ethics of Publication Ethics of Review Contacts Sitemap Papers Papers/2022 Papers Papers/2022 Login Sign-Up The Search is performed on all of the following fields: Note: Please use complete words only.",
+        "Publication Title Abstract Publication Keywords DOI Proceeding Title Proceeding Foreword ISBN (Completed) Insticc Ontology Author Affiliation Author Name Editor Name If you already have a Primoris Account you can use the same username/password here.",
+        "{1} ##LOC[OK]## {1} ##LOC[OK]## ##LOC[Cancel]## {1} ##LOC[OK]## ##LOC[Cancel]## Research.Publish.Connect.",
+        "The Search is performed on all of the following fields: Note: Please use complete words only.",
+        "Publication Title Abstract Publication Keywords DOI Proceeding Title Proceeding Foreword ISBN (Completed) Insticc Ontology Author Affiliation Author Name Editor Name If you're looking for an exact phrase use quotation marks on text fields.",
+        "Keyword(s): BGP Monitoring, BMP, Streaming Telemetry, Route Anomaly Detection, Real‑Time Network Analytics.",
+        "Abstract: The Border Gateway Protocol (BGP) plays a critical role in inter-domain routing across the Internet, yet it lacks native support for real-time monitoring and anomaly detection.",
+        "This limitation exposes networks to risks such as prefix hijacking, route leaks, and misconfigurations that can severely impact routing integrity.",
+        "Traditional monitoring solutions like SNMP polling and log-based analysis fail to capture the dynamic nature of BGP events due to their reactive approach and limited granularity.",
+        "To address these challenges, this paper presents a real-time BGP monitoring system that integrates the BGP Monitoring Protocol (BMP) with streaming telemetry.",
+        "BMP enables routers to export unfiltered pre-RIB updates, offering deep visibility into all route advertisements and withdrawals, while telemetry facilitates low-latency, push-based data transport to centralized processing systems.",
+        "The proposed architecture leverages a modular pipeline built with open-source tools including Kafka for scalable message brokering, InfluxDB for high-performance time-series storage, and Grafana for real-time visualization."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T16:33:55.533Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    }
+  ]
+}

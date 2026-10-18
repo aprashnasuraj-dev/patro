@@ -1,0 +1,118 @@
+{
+  "id": "mm-0780",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "AI is changing how Americans find jobs, get promoted and succeed at work",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Rymsha, Catherine",
+      "published_at": "2023-05-22",
+      "url": "https://theconversation.com/ai-is-changing-how-americans-find-jobs-get-promoted-and-succeed-at-work-203318",
+      "retrieved_at": "2026-10-18T15:13:48.869Z",
+      "sha256": "a5e463843e7a54e4eec566c12dbc93d4a5718d717963679e8265d9175d5a4cba",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "AI is changing how Americans find jobs, get promoted and succeed at work Skip to content Academic rigor, journalistic flair Insights from artificial intelligence will influence promotions and detect bias in the workplace.",
+        "Advancements in human capital management systems , more strategic and data-driven human resource and talent management practices , and increased attention to bias are all factors that are changing how people are hired, developed, promoted and fired.",
+        "I teach and work in talent management and leadership development.",
+        "I’ve used these programs and practices in the real world and continue to learn and research how these practices are changing.",
+        "Artificial intelligence and systems are already big business, grossing over US$38 billion in 2021 .",
+        "Without a doubt, AI-driven software has the potential to advance quickly and change how companies make strategic decisions about their employees.",
+        "Applying Imagine you apply for a job in the very near future.",
+        "You upload your carefully written résumé through the company website, noting that the platform looks eerily similar to other platforms you’ve used to apply for other jobs.",
+        "After your résumé is saved, you provide demographic information and complete countless fields with the same data from your résumé.",
+        "You then hit “submit” and hope for a follow-up email from a person.",
+        "Your data now lives within this company’s human capital management system.",
+        "Even if they collect them, very few companies are looking at résumés anymore; they’re looking at the info you type into those tiny boxes to help make comparisons between you, dozens or hundreds of other applicants, and the job requirements."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Will AI replace coders… How to read the next AI jobs hype cycle",
+      "publisher": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+      "author": "Kate Vredenburgh; Lauren Wong",
+      "published_at": "2026-03-12",
+      "url": "https://openalex.org/W7160006687",
+      "retrieved_at": "2026-10-18T15:13:50.402Z",
+      "sha256": "602f5eba3c7bd003cff0e18e5cd5ff8ce37c1a207dc2e2443ad90cb37bdfbcf1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The threat of AI replacing jobs in any number of sectors is often just over the horizon.",
+        "Drawing on the history of frontier technologies and a series of interviews with coders under threat of AI replacement, Kate Vredenburgh and Lauren Wong set out what we should be asking about how AI is changing work."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Anthropic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6206236",
+      "retrieved_at": "2026-10-18T15:13:50.402Z",
+      "sha256": "21fe2fa2fd3032bfc928d9f392ad9ebfb97e6bb4a989c68a462f11269e00f875",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Anthropic, PBC (stylized as ANTHROP\\C or A\\) is an American artificial intelligence (AI) public benefit corporation headquartered in San Francisco, California.",
+        "Its flagship product is Claude, a series of proprietary large language models (LLMs).",
+        "In January 2021, with the goal of promoting AI safety, Anthropic was founded by former members of OpenAI, including siblings Daniela Amodei and Dario Amodei, who are president and CEO, respectively.",
+        "The company is privately held but plans an initial public offering in November 2026.",
+        "At $965 billion in a May 2026 Series H, Anthropic is the world's most valuable AI pure play, rivaled by OpenAI.",
+        "Anthropic develops the LLM Claude in four tiers: Fable, Opus, Sonnet, and Haiku.",
+        "Claude is accessible via an online chatbot, an API, and Anthropic's agent harnesses: Claude Code, Cowork, Design, and Science.",
+        "Its model class Claude Mythos, a less restricted version of Fable, is available only to approved US organizations with a cybersecurity and life sciences focus.",
+        "Anthropic's Project Panama, internally described as an \"effort to destructively scan all the books in the world\", provides training data for Claude.",
+        "Before Project Panama, Anthropic downloaded pirated books and was sued, settling in 2025 a copyright infringement lawsuit from authors for $1.5 billion.",
+        "Anthropic conducts LLM research including on mechanistic interpretability, safety, alignment, and societal impact.",
+        "Notable researchers working at Anthropic include Andrej Karpathy, John M."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T15:13:50.402Z",
+      "sha256": "e4531256855586c54c18b8f69b54f624dac41a4654c857e6565c0dfca2593138",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "AI boom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291899",
+      "retrieved_at": "2026-10-18T15:13:50.402Z",
+      "sha256": "8da1c263aa2ac2f6e219f9595ac75c821c54d49102a546d16261448bf5c93c65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The AI boom is the period of rapid growth in the field of artificial intelligence in the 2020s.",
+        "Generative AI technologies include large language models (LLM), which generate text and code, image models, and video models, and world models.",
+        "This period is sometimes referred to as an AI spring, a term used to contrast it with previous AI winters.",
+        "Key advances preceding the boom include the transformer (2017), generative pre-trained transformer (2018) and reinforcement learning from human feedback.",
+        "During the boom, LLMs have evolved via the reasoning model, mixture of experts technique, and multimodal learning.",
+        "As of 2026, leading proprietary LLMs have been released by Anthropic, OpenAI, and divisions of Google, Meta, and SpaceX in the United States.",
+        "In China, companies favour open weights releases, led by Alibaba Cloud, DeepSeek, Moonshot AI, and Z.ai.",
+        "Since 2018, observers including Ian Bremmer, Nicholas Thompson, and Kai-Fu Lee have argued an AI arms race or AI Cold War exists between the US and China.",
+        "The boom has impacted the semiconductor industry, causing a global memory supply shortage; As of second quarter 2026, Nvidia is the world's largest corporation by capitalization while TSMC, Broadcom, and Samsung are among the ten largest."
+      ]
+    }
+  ]
+}

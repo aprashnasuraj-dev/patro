@@ -1,0 +1,113 @@
+{
+  "id": "mm-0522",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Oldest of the Old:",
+      "publisher": "Purdue University Press",
+      "author": null,
+      "published_at": "2022-03-01",
+      "url": "https://doi.org/10.2307/j.ctv1zjgbm7.10",
+      "retrieved_at": "2026-10-18T15:04:43.959Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Oldest Trees",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2023-04-04",
+      "url": "https://doi.org/10.2307/j.ctv2z861rd.7",
+      "retrieved_at": "2026-10-18T15:04:44.096Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of individual trees",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=404534",
+      "retrieved_at": "2026-10-18T15:04:44.229Z",
+      "sha256": "ea461ac7d6f9df961666760dd0554bec1d5afbb0b3f1d96e5f2af6f2fd6593c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Trees listed here are regarded as important or specific by their historical, national, locational, natural or mythological context.",
+        "The list includes actual trees located throughout the world, as well as trees from myths and religions."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Methuselah (pine tree)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5423528",
+      "retrieved_at": "2026-10-18T15:04:44.229Z",
+      "sha256": "fd89723fb61ee1f3f9e5260bdd597ba5c17f5b2db4fa8ddcb0eb68a8865230a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Methuselah is a 4,858-year-old Great Basin bristlecone pine (Pinus longaeva) tree growing high in the White Mountains of Inyo County in eastern California.",
+        "It is recognized as the non-clonal tree with the greatest confirmed age in the world.",
+        "Its old age is a result of harsh weather and a lack of nutrients, which slow down the decaying process.",
+        "The tree's name refers to the biblical patriarch Methuselah, who is said to have reached 969 years of age before his death, thus becoming synonymous with longevity or old age in many European languages including English."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of oldest trees",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11337053",
+      "retrieved_at": "2026-10-18T15:04:44.229Z",
+      "sha256": "209ccf4d6c162beecf8c770ba0e1fc7dd47ad58f133e6d34cccd0d33ee4016a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Definitions of longevity vary between clonal trees, ones where parts of the tree continue to live after the death of the first trunk or trunks, and non-clonal trees.",
+        "Tree ages are derived from a variety of sources, including documented \"tree-ring\" (dendrochronological) count core samples, radiocarbon dating, girth-to-age formulas, and estimates from growth rates.",
+        "For these reasons, there are three lists of \"oldest trees\" here, using different criteria.",
+        "The first table describes trees for which a minimum age has been directly determined, either through counting or cross-referencing tree rings or through radiocarbon dating.",
+        "Many of these trees may be even older than their listed ages, but the oldest wood in the tree has rotted away.",
+        "For some old trees, so much of the center is missing that their age cannot be directly determined.",
+        "Instead, estimates are made based on the tree's size and presumed growth rate.",
+        "The last table lists clonal colonies in which no individual tree trunks may be remarkably old but in which the organism as a whole is thought to be very old.",
+        "The record-holders for individual, non-clonal trees are the Great Basin bristlecone pine trees from California and Nevada, in the United States.",
+        "Through tree-ring cross-referencing, they have been shown to be almost five thousand years old.",
+        "A clonal colony can survive for much longer than an individual tree.",
+        "A colony of 48,000 quaking aspen trees (nicknamed Pando), covering 106 acres (43 ha) in the Fishlake National Forest of Utah, is considered one of the oldest and largest organisms in the world."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of the oldest buildings in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17253689",
+      "retrieved_at": "2026-10-18T15:04:44.229Z",
+      "sha256": "08526df2b18f89671cdd3b943197803612466a4c19e3870bd5a12a17a85bc468",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article lists the oldest buildings in the United States and its territories.",
+        "The list includes sites in current states and territories which were not part of the original Thirteen Colonies when the United States of America was founded in 1776."
+      ]
+    }
+  ]
+}

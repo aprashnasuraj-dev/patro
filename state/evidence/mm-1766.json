@@ -1,0 +1,176 @@
+{
+  "id": "mm-1766",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When galaxies collide",
+      "publisher": "AIP Publishing",
+      "author": null,
+      "published_at": "2008-06-01",
+      "url": "https://physicstoday.aip.org/backscatter/when-galaxies-collide",
+      "retrieved_at": "2026-10-18T15:57:22.596Z",
+      "sha256": "851e91825d37a85aef64ec6ba1affcfbf39b90e62f954edcbf0d433aefb12afc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "When galaxies collide - Physics Today Back Share BlueSky LinkedIn Facebook --> Twitter --> --> Email Download Back Scatter / Article When galaxies collide JUN 01, 2008 DOI: 10.1063/1.2947659 Physics Today Galaxy mergers were much more common in the early universe than they are today.",
+        "Detailed observations of nearby mergers help astronomers assess the energetic nature of their distant counterparts.",
+        "To mark the 18th anniversary of the launch of the Hubble Space Telescope , in April NASA and the European Space Agency released 59 new images of colliding galaxies, culled from the telescope’s 32 terabytes of data.",
+        "This image from the collection is a false-color composite of pictures taken in the 0.4-µm and 0.9-µm bands.",
+        "It shows a pair of spiral galaxies, collectively known as UGC 09618, in their early stages of interaction 450 million light-years from Earth.",
+        "Already, this so-called luminous infrared galaxy merger is emitting more than 20 times the total energy of our Milky Way galaxy.",
+        "The emission is a combination of light from young, bright stars–formed as gravitationally shocked gas is compressed–and from a bright accretion disk surrounding a supermassive black hole in the center of one or both galaxies.",
+        "The emitted light heats local dust grains in the merger, and the dust re-radiates the energy as IR light.",
+        "Over the next hundred million years, the amount of emitted energy will increase as the two galaxies continue to merge under their mutual gravitational pull.",
+        "In the process, stars, dust, and gas will be drawn out of each galaxy to form long “tidal” tails, and star formation and black hole accretion will ramp up as gas is siphoned into the active central region.",
+        "The ongoing star formation will generate more light and produce more dust through stellar mass loss, and the merger will continue to glow as one of the brightest IR objects in the sky.",
+        "To submit candidate images for Back Scatter, visit http://www.physicstoday.org/backscatter.html ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "When galaxies collide: the growth of supermassive black holes",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Ravi, Vikram; Shannon, Ryan",
+      "published_at": "2013-10-18",
+      "url": "https://theconversation.com/when-galaxies-collide-the-growth-of-supermassive-black-holes-19321",
+      "retrieved_at": "2026-10-18T15:57:23.048Z",
+      "sha256": "84d2604ce7446560c6e58219ea9d70598551f068bb724d3c9cd987867800f3f7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "When galaxies collide: the growth of supermassive black holes Skip to content Academic rigor, journalistic flair New research shows supermassive black holes are bigger than the sum of their parts.",
+        "At the heart of every galaxy lies a supermassive black hole, including in our own Milky Way .",
+        "Black holes in some nearby galaxies contain ten billion times the mass of our sun in a volume a few times the size of our solar system.",
+        "That’s a lot of mass in a very small space - not even light travels fast enough to escape a black hole’s gravity.",
+        "In the journal Science today, we tested a commonly-held view that black holes become supermassive by merging with other black holes - and found the answer is not quite that simple.",
+        "Searching for gravitational waves The answer may lie in a related question: when two galaxies collide to form a new galaxy, what happens to their black holes?",
+        "The colliding galaxies’ black holes sink to the centre of this new galaxy and orbit each other, eventually combining to form a new, bigger black hole.",
+        "Black holes, as the name suggests, are very hard to observe.",
+        "But orbiting black holes are the strongest emitters in the universe of an exotic form of energy called gravitational waves .",
+        "NASA Gravitational waves are a prediction of Einstein’s General Theory of Relativity and are produced by very massive, compact objects changing speed or direction.",
+        "This, in turn, causes the measured distances between objects to change.",
+        "For example, a gravitational wave passing through your computer screen will cause it to first stretch in one direction, then in a perpendicular direction, over and over again."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "If galaxies are all moving apart at ever increasing speed, how can they collide?",
+      "publisher": "Scientific American",
+      "author": "T. M. Davis",
+      "published_at": "2009-04-01",
+      "url": "https://openalex.org/works/W2562435718",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "49d9e3e7c665b765bf4dbc55ecd5d891e73a25d3a94db92d19e336e91031825e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "If galaxies are all moving apart at ever increasing speed, how can they collide?",
+        "| OpenAlex Log in Get started Work Add to collection If galaxies are all moving apart at ever increasing speed, how can they collide?",
+        "HTML Details Locations Year: 2009 Type: article Source: Scientific American Author: T.",
+        "Davis Language: English Topic: Galaxies: Formation, Evolution, Phenomena Subfield: Astronomy and Astrophysics Field: Physics and Astronomy Domain: Physical Sciences Open Access status: closed OpenAlex ID: W2562435718 FWCI: 0.169 Cites: Cited by: 3 Related to: 10"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "An Automated Approach to the Study and Classification of Colliding and Interacting Galaxies",
+      "publisher": "OpenAlex",
+      "author": "Steven Boada",
+      "published_at": "2009-01-01",
+      "url": "https://openalex.org/W2135582199",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "f825e7cfbd86870f19b47584d4508a274c54ed90f175b158fa28ce6b0342c716",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Colliding galaxies are perhaps the greatest events changing and evolving our Universe.",
+        "Consequently, the need for an understanding of how that interaction originated is very important.",
+        "This thesis presents a framework in which the study of these events can be conducted in a timely and efficient manner.",
+        "A genetic algorithm coupled with an initial conditions generator, a physics engine and an analysis package performs an automated search to visually match an unknown galactic interaction with a known event, thus providing the starting conditions that created such an interaction."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Galaxy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12558",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "ad32160669f4d58f569d035da1f0ca0d1181a7dddc24036b52293d2fe7de6249",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A galaxy is a physical system of stars, planetary systems, stellar remnants, substellar objects, interstellar gas, dust, and dark matter bound together by gravity.",
+        "The word is derived from the Greek galaxias (γαλαξίας), meaning 'milky', a reference to the Milky Way galaxy that contains the Solar System.",
+        "Galaxies, averaging an estimated 100 million stars, range in size from dwarfs with less than a thousand stars to the largest galaxies known—supergiants with one hundred trillion stars, each orbiting its galaxy's center of mass.",
+        "Most of the mass in a typical galaxy is in the form of dark matter, with only a few percent of that mass visible in the form of stars and nebulae.",
+        "Supermassive black holes are a common feature at the centers of galaxies.",
+        "Galaxies are categorised according to their visual characteristics such as elliptical, spiral, or irregular.",
+        "In addition to shape, galaxies may be notable due to special properties, such as interacting with another galaxy, producing stars at an unusual rate, or having an active galactic nucleus.",
+        "It is estimated that there are between 200 billion (2×1011) and 2 trillion galaxies in the observable universe.",
+        "Most galaxies are 1,000 to 100,000 parsecs in diameter (approximately 3,000 to 300,000 light years) and are separated by distances in the order of millions of parsecs (or megaparsecs).",
+        "For comparison, the Milky Way has a diameter of at least 26,800 parsecs (87,400 ly).",
+        "Its nearest large neighbour, the Andromeda Galaxy, is just over 750,000 parsecs (2.4 million ly) away.",
+        "Most galaxies are gravitationally organised into groups, clusters and superclusters."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of galaxies",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=428086",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "bd0441b62c72887a03baa3cd631cbab04a118649e3e06b7988209f9dacd7de13",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An estimated 2 trillion+  galaxies occupy the observable universe.",
+        "On the order of 100,000 galaxies make up the Local Supercluster, and about 51 galaxies are in the Local Group (see list of nearest galaxies for a complete list).",
+        "In the 1980s, the Lyons Groups of Galaxies listed 485 galaxy groups with 3,933 member galaxies.",
+        "Galaxy Zoo is a project aiming at a more comprehensive list: launched in July 2007, it has classified over one million galaxy images from The Sloan Digital Sky Survey, The Hubble Space Telescope and the Cosmic Assembly Near-Infrared Deep Extragalactic Legacy Survey."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Antennae Galaxies",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1111758",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "f95a2365e660443794517d6ad71f43888395982480950f8f0fcc69313445161b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Antennae Galaxies (also known as NGC 4038/NGC 4039 or Caldwell 60/Caldwell 61) are a pair of interacting galaxies in the constellation Corvus.",
+        "They are currently going through a starburst phase, in which the collision of clouds of gas and dust, with entangled magnetic fields, causes rapid star formation."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Mice Galaxies",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3192980",
+      "retrieved_at": "2026-10-18T15:57:24.494Z",
+      "sha256": "fbdf47791f7a2928774c363a8cb7246effdba0cf8fa4992e1883609c945af6c8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "NGC 4676, or the Mice Galaxies, are two spiral galaxies in the constellation Coma Berenices.",
+        "About 105.8 megaparsecs (345 million light-years) distant, they have begun the process of colliding and merging.",
+        "Their \"mice\" name refers to the long tails produced by tidal action—the relative difference between gravitational pulls on the near and far parts of each galaxy—known here as a galactic tide.",
+        "It is a possibility that both galaxies, which are members of the Coma Cluster, have experienced a collision, and will continue colliding until they coalesce.",
+        "In NGC 4676A a core with some dark markings is surrounded by a bluish white remnant of spiral arms.",
+        "The tail is unusual, starting out blue and terminating in a more yellowish color, despite the fact that the beginning of each arm in virtually every spiral galaxy starts yellow and terminates in a bluish color.",
+        "NGC 4676B has a yellowish core and two arcs; arm remnants underneath are bluish as well.",
+        "The galaxies were photographed in 2002 by the Hubble Space Telescope.",
+        "In the background of the Mice Galaxies, there are over 3000 galaxies, at distances up to 13 billion light-years."
+      ]
+    }
+  ]
+}

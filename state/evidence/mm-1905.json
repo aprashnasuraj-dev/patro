@@ -1,0 +1,185 @@
+{
+  "id": "mm-1905",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Banks Got \"Too Big to Fail\"",
+      "publisher": "Digital Commons (University of Georgia School of Law)",
+      "author": "Mehrsa Baradaran",
+      "published_at": "2018-09-11",
+      "url": "https://openalex.org/W2895244102",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "54f456b42fe417d36cbf864e95af9fb604aa17725592ecfff63aedde190865d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The phrase \"too big to fail\" is closely associated with the financial crisis of a decade ago, and it was used as a justification for government bailouts.",
+        "There was a time when most banks were small, and they liked it that way.",
+        "Today, just six banks manage more than half the assets in the entire U.S.",
+        "We'll trace how it happened, and talk to the owner of a very different \"Lehman\" business about what it was like living through 2008.",
+        "Plus, we'll answer more listener questions about trade and take a look at just how well FEMA's prepared for hurricane season."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How to Make Banks Too Safe to Fail",
+      "publisher": "Penn Carey Law Legal Scholarship Repository (University of Pennsylvania)",
+      "author": "Natasha Sarin",
+      "published_at": "2019-08-02",
+      "url": "https://openalex.org/W2965428119",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "6ce629f0182096744af7db93da713d36d5353ee974dd0f3acfa5ca582ef1a28f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "There is widespread consensus that the Great Recession did not have to be as Great: Had regulators acted earlier and more aggressively to stem the financial panic, its consequences would have been less severe.",
+        "Instead, the average American household lost nearly a third of its net worth; two-and-a-half million businesses closed their doors; and nine million families lost their homes.",
+        "Two explanations are typically offered for the lack of aggressive response at the onset of the Great Recession.",
+        "The first is that financial crises occur unexpectedly, offering little time for intervention by even nimble and alert regulators.",
+        "The second is that even those who realized that a downturn was on the horizon were constrained by their lack of legal authority to fortify large financial institutions.",
+        "First, there was significant time between the onset of the crisis and its peak: Between the summer of 2007 and the collapse of Lehman Brothers in September 2008, warning signs appeared in financial markets and many commentators sounded the alarms.",
+        "Second, regulators had at their disposal significant legal authority to bolster banks and prevent failures.",
+        "In fact, they used this authority with respect to small banks, but not large systemically important firms.",
+        "There is an alternative explanation for the tepid early response to the crisis.",
+        "Regulators’ default is inaction until regulatory measures of bank health signal distress.",
+        "These measures are slow to update—in many cases, the day before banks failed, their regulatory capital measures suggested no cause for concern.",
+        "In the absence of significant change, regulators will inevitably be fire-fighting future financial crises ex-post; rather than successfully policing financial markets ex-ante."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Too Big to Fail Banks: Examining the 'How' of Breaking Up",
+      "publisher": "Digital Access to Scholarship at Harvard (DASH) (Harvard University)",
+      "author": "Aditi Puri Singh",
+      "published_at": "2013-01-01",
+      "url": "https://openalex.org/W1938616534",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "4d3a1d89c067983c44491513de1fd8c4be4479e585ce1ffe1dda855dbab2b4cf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The newfound understanding that systemic risk is the central problem of financial regulation, has informed both institutional and regulatory responses to the global financial crisis.",
+        "At the forefront of the systemic risk debate is the problem of too-big-to-fail, which has become increasingly intractable as a result of little analytical certainty and myriad policy options.",
+        "Dodd Frank proposes several structural, behavioral and conduct based regulatory tools to counteract the financial industry’s incentives to assume significant risks and to provide a solution to the systemic risk problem.",
+        "This article examines the policy solution of limiting the size of too-big-to-fail banks, specifically the issue of breaking up a bank that exceeds a certain size threshold.",
+        "Breaking up of banks is an idea that has started to gain increasing traction from politicians, regulators and financial analysts alike.",
+        "However, the debate so far has failed to address fundamental questions relating to how the break up is to be achieved.",
+        "This article attempts to venture into the hitherto unexplored territory of the manner of breaking up of a too-big-to-fail bank, without examining the merits of whether the breakup itself is advisable or not.",
+        "The article develops a three-pronged approach to address this question.",
+        "First, it examines how shifting regulatory and investor perspectives, in the milieu of a fragile economic environment, have prompted banks to downsize.",
+        "Second, it analyzes the first-order questions that need to be answered to determine the manner of breaking up, including, questions relating to relevant size, entity and jurisdictional concerns.",
+        "Third, it presupposes a situation, where a political commitment to breaking up of too-big-to-fail banks has been made and subsequently proposes a paradigm to enable the same.",
+        "The ‘break-up’ paradigm is based on the ‘functional divestiture’ model under anti-trust laws and seeks to create an optimal and administrable way of breaking up a too-big-to-fail bank with minimum disruption to the financial system."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How Big Is the Implicit Subsidy for Banks Considered Too Important to Fail",
+      "publisher": "SSRN Electronic Journal",
+      "author": "Frederic J. Lambert; Kenichi Ueda; Pragyan Deb",
+      "published_at": "2014-03-31",
+      "url": "https://openalex.org/W1547949232",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "c2f5e111d578ec51333ca415a1d5a4b51e3d624fd220eec2aca7b7fb440ac6cc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper looks at the issue of too-important-to-fail and provides new estimates of the implicit funding subsidy received by systemically important banks.",
+        "The subsidy comes from the expectation that the government will support large banks if they get into distress.",
+        "Although financial reforms have helped reduce this subsidy, it remains sizeable.",
+        "Policymakers should aim to remove this advantage to protect taxpayers, ensure a level playing field, and promote financial stability."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Too big to fail",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9896437",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "d037f08445fd04e51a4d576ad7120d78ced127c0d45a4955a6bb4a864d757f7e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The colloquial term \"too big to fail\" was popularized by U.S.",
+        "congressman Stewart McKinney in a 1984 Congressional hearing, discussing the Federal Deposit Insurance Corporation's intervention with Continental Illinois.",
+        "The term had previously been used occasionally in the press, and similar thinking had motivated earlier bank bailouts.",
+        "The term emerged as prominent in public discourse following the 2008 financial crisis.",
+        "Critics see the policy as counterproductive and argue that large banks or other institutions should be left to fail if their risk management is ineffective.",
+        "In 2014, the International Monetary Fund and others said the problem still had not been dealt with."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bank failure",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17608177",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "832ad1a5c79a153efda24b76e12cefb0232aee19d7a18a51c9f2fce03d5c7687",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A bank failure occurs when a bank is unable to meet its obligations to its depositors or other creditors because it has become insolvent or too illiquid to meet its liabilities.",
+        "Failing banks share commonalities: rising asset losses, deteriorating solvency, and an increasing reliance on expensive noncore funding.",
+        "A bank typically fails economically when the market value of its assets falls below the market value of its liabilities.",
+        "The insolvent bank either borrows from other solvent banks or sells its assets at a lower price than its market value to generate liquid money to pay its depositors on demand.",
+        "The inability of the solvent banks to lend liquid money to the insolvent bank creates a bank panic among the depositors as more depositors try to take out cash deposits from the bank.",
+        "As such, the bank is unable to fulfill the demands of all of its depositors on time.",
+        "A bank may be taken over by the regulating government agency if its shareholders' equity are below the regulatory minimum.",
+        "The failure of a bank is generally considered to be of more importance than the failure of other types of business firms because of the interconnectedness and fragility of banking institutions.",
+        "Research has shown that the market value of customers of the failed banks is adversely affected at the date of the failure announcements.",
+        "Thereby, the spill over effect of bank panic or systemic risk has a multiplier effect on all banks and financial institutions leading to a greater effect of bank failure in the economy.",
+        "As a result, banking institutions are typically subjected to rigorous regulation, and bank failures are of major public policy concern in countries across the world."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "List of bank failures in the United States (2008–present)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18718423",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "55560540393cbc2b68a557fc6db00c40f9f01123ab5ac86e3c1ea6143b6e8d72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On average, between 1980 and 1994, a US bank failed every three days.",
+        "The pace of bankruptcies peaked immediately after the 2008 financial crisis.",
+        "The 2008 financial crisis led to many bank failures in the United States.",
+        "The Federal Deposit Insurance Corporation (FDIC) closed 465 failed banks from 2008 to 2012.",
+        "In contrast, in the five years prior to 2008, only 10 banks failed.",
+        "At the end of 2022, the US banking industry had a total of about $620 billion in unrealized losses as a result of investments weakened by rising interest rates.",
+        "A bank failure is the closing of a bank by a federal or state banking regulatory agency.",
+        "The FDIC is named as receiver for a bank's assets when its capital levels are too low, or it cannot meet obligations the next day.",
+        "After a bank's assets are placed into receivership, the FDIC acts in two capacities—first, it pays insurance to the depositors, up to the deposit insurance limit, for assets not sold to another bank.",
+        "Second, as the receiver of the failed bank, it assumes the task of selling and collecting the assets of the failed bank and settling its debts, including claims for deposits in excess of the insured limit.",
+        "The FDIC insures up to $250,000 per depositor, per insured bank, as a result of the Emergency Economic Stabilization Act of 2008, which raised the limit from $100,000.",
+        "The receivership of Washington Mutual Bank by federal regulators on September 26, 2008, was the largest bank failure in U.S."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Too Big to Fail (film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27810619",
+      "retrieved_at": "2026-10-18T16:05:28.489Z",
+      "sha256": "665aa7449954c84e083d50c622c4015ec43bc2d382fab71761c90c62e2a7f38d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Too Big to Fail is a 2011 American biographical drama television film directed by Curtis Hanson and written by Peter Gould, based on Andrew Ross Sorkin's 2009 non-fiction book Too Big to Fail.",
+        "The cast includes William Hurt, Edward Asner, Billy Crudup, Paul Giamatti, Topher Grace, Cynthia Nixon, Bill Pullman, Tony Shalhoub, and James Woods.",
+        "The film chronicles the 2008 financial crisis, focusing on the collapse of Lehman Brothers investment bank and the subsequent ripple effects on the global economy.",
+        "As the firm's negotiations with potential buyers fail due to toxic assets and regulatory obstacles, the firm declares bankruptcy, triggering market chaos.",
+        "Treasury Secretary Henry Paulson (Hurt) and Federal Reserve Chair Ben Bernanke (Giamatti) lead efforts to stabilize the system, including rescuing AIG and lobbying Congress to pass the Troubled Asset Relief Program (TARP).",
+        "It received 11 nominations at the 63rd Primetime Emmy Awards; Paul Giamatti's portrayal of Ben Bernanke earned him the Screen Actors Guild Award for Outstanding Performance by a Male Actor in a Miniseries or Television Movie at the 18th Screen Actors Guild Awards."
+      ]
+    }
+  ]
+}

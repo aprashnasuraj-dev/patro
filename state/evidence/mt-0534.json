@@ -1,0 +1,125 @@
+{
+  "id": "mt-0534",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Figure 3.18. GDP growth vs. GHG emissions growth in Latin America and the Caribbean (1990-2015)",
+      "publisher": "Organisation for Economic Co-Operation and Development  (OECD)",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.1787/888933936824",
+      "retrieved_at": "2026-10-18T16:21:22.278Z",
+      "sha256": "1af4703f02e1b83b92ada4a4695736ccc7606782579d6626c19935f8a09b2a4a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "J>_�|`����|����^�\u0015u�������\\��~B��7\u001fn\u001e��� �������0�p����)�~��� 3pf����g;��\u000f�{]����\u001f{ ��\\�q�����˟O�?\\_=\\�g�v�������ե\u001b\\�\"m��Kg�\u000f��-��ww�r���Z��?",
+        "~\u001a{���\u0013�\u001e\u001c?��Qz�����3ki��Z�7��c����O��O�������w��?���B�Ϸ�c��\u0006?"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Economy of Russia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25705",
+      "retrieved_at": "2026-10-18T16:21:24.064Z",
+      "sha256": "4122a8e10bb41c6d265627b5854ec69dc6be4d5b05bdef6b30f392bc26f8b8b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Russia has a developing market-oriented mixed economy considered high-income and highly industrialized.",
+        "It has the eighth-largest economy in the world by nominal GDP and the fourth-largest economy by GDP (PPP).",
+        "Due to a volatile currency exchange rate, its GDP measured in nominal terms fluctuates sharply.",
+        "Russia was the last major economy to join the World Trade Organization (WTO), becoming a member in 2012.",
+        "The country has large amounts of energy resources throughout its vast landmass, particularly natural gas and petroleum, which play a crucial role in its energy self-sufficiency and exports.",
+        "The country is a petrostate, with it having the largest natural gas reserves in the world, the second-largest coal reserves, the eighth-largest oil reserves, and the largest oil shale reserves in Europe.",
+        "Russia is the third-largest natural gas exporter, the second-largest natural gas producer, the second-largest oil exporter and producer, and the third-largest coal exporter.",
+        "As of 2026, its foreign exchange reserves are the fourth-largest in the world.",
+        "The large oil and gas sector accounted up to 30% of Russia's federal budget revenues in 2024, down from 50% in the mid-2010s, suggesting economic diversification.",
+        "Its human development is ranked as \"very high\" in the annual Human Development Index.",
+        "The country has the world's twelfth-largest consumer market.",
+        "Russia has the fifth-highest number of billionaires in the world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Economy of the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32022",
+      "retrieved_at": "2026-10-18T16:21:24.064Z",
+      "sha256": "d226167f0aded659cc84b50010915a19e21056e28c72a0dd9c7041eff1a6192e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The United States has a highly developed and diversified market-oriented economy.",
+        "It is the world's largest economy by nominal GDP, generating 26% of global economic output.",
+        "ranks ninth-highest nominal GDP per capita and 10th-highest GDP per capita by PPP.",
+        "dollar is the world's foremost reserve currency with widespread international usage and serve as reference standard for the petrodollar and eurodollar.",
+        "economy has achieved relatively steady growth, low unemployment and inflation, along with rapid advances in technology.",
+        "The American economy is fueled by high productivity, technology, well-developed transportation infrastructure, and extensive natural resources.",
+        "The nation is the second-largest manufacturer, with American manufacturing making up a fifth of the global total.",
+        "trading partners are Mexico, Canada, China, Japan, and Germany.",
+        "is the world's largest importer and second-largest exporter.",
+        "The country is the world's largest producer of petroleum, natural gas, and blood products.",
+        "Within the American banking system, as of 2026, commercial banks maintain $25 trillion in assets.",
+        "treasuries market and hosts the world's largest gold reserves."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Data center",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=579730",
+      "retrieved_at": "2026-10-18T16:21:24.064Z",
+      "sha256": "508e9865c60f0de80d4170e51905e879609ba9e6b8645e273ac7c5bf578291bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A data center is a physical room, building, or facility for storing, managing, and disseminating data and information, including computer systems and associated components, housing IT infrastructure, and training artificial intelligence.",
+        "military's Electrical Numerical Integrator and Computer (ENIAC) as an early example.",
+        "Data centers have different models depending on their workloads.",
+        "They frequently contain thousands of servers and many miles of high-speed data connection equipment, with the largest occupying up to 10,000,000 sq ft (930,000 m2).",
+        "Managed service data centers have third-party managers hired on behalf of a company, which leases the equipment and infrastructure instead of buying it.",
+        "Colocation data centers allow companies to rent space in an off-site data center owned by others, with the colocation data center hosting the infrastructure while the company provides and manages the components.",
+        "Edge data centers are smaller, decentralized facilities located closer to end users and devices.",
+        "Data Center Energy Usage Report, Lawrence Berkeley National Laboratory estimated that hyperscale and colocation centers contained 74% of computer servers in 2023.",
+        "Large data centers require significant energy to operate, with the largest consuming over 3,000 MW, raising concerns about energy use.",
+        "The International Energy Agency (IEA) estimated that electricity consumption from these data centers amounted to around 415 terawatt hours (TWh), about 1.5% of global electricity consumption in 2024, with a growth rate of 12% per year over the previous five years.",
+        "The IEA projects that this amount could double to reach around 945 TWh by 2030, growing by around 15% per year.",
+        "alone, which has almost nine times more data centers than any other country, power consumption by data centers is projected to account for \"almost half of the growth in electricity demand between now and 2030.\" This includes increased electricity costs."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Economy of India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1472206",
+      "retrieved_at": "2026-10-18T16:21:24.064Z",
+      "sha256": "8d8a39fa1ac4238c66c168d82d05098e2ab59159a255d4d6d5f98416d0c181e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India has a developing market-oriented economy with substantial state participation in strategic sectors.",
+        "As of April 2026, it is the world's sixth-largest economy by nominal GDP and the third-largest by purchasing power parity (PPP).",
+        "By per capita income, the nation ranks 149th by nominal GDP and 119th by PPP-adjusted GDP as of 2026.",
+        "From independence in 1947 until 1991, economic development was characterised by protectionist economic policies, with extensive state intervention, central planning, public ownership of key industries, and regulation.",
+        "An acute balance-of-payments crisis in 1991 led India to adopt broad economic liberalisation.",
+        "Nearly 70% of India's GDP comes from domestic consumption, and the nation consistently the world's third-largest consumer market.",
+        "As of 2025, the service sector accounts for around 55% of GDP.",
+        "Beyond private consumption, India's GDP is driven by government spending, investments, and exports.",
+        "As of 2025, India is the world's 7th-largest importer and the 10th-largest exporter.",
+        "India is often described as the \"pharmacy of the world\", supplying around one-fifth of global demand for pharmaceuticals to over 200 countries.",
+        "India is the world's largest vaccine manufacturer by volume, accounting for over 60% of the global production.",
+        "India is the world's fifth-largest manufacturer, representing 3.2% of global manufacturing output."
+      ]
+    }
+  ]
+}

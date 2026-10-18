@@ -1,0 +1,172 @@
+{
+  "id": "mm-0953",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Soybean peroxidase reduces greenhouse gas emissions during dairy manure composting",
+      "publisher": "Elsevier BV",
+      "author": "Wardhani, Riuh; Shin, Jinho; Lee, Seunghun",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6293183",
+      "retrieved_at": "2026-10-18T15:31:10.133Z",
+      "sha256": "5f06338da26836d58b8d7fa4b25d6c4c6aef8e2d965939ef57cdd9f3432d8ee0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Greenhouse gas (GHG) emissions are an unavoidable issue during manure composting.",
+        "While soybean peroxidase (SBP), a low-value by-product of soybean processing, has been widely studied for odor mitigation, its potential to mitigate GHG emissions during composting remains poorly understood.",
+        "To address this knowledge gap, this study investigated the effects of two SBP application strategies, single and split addition, on GHG emission reduction.",
+        "The results indicate that SBP application helps prevent nitrogen loss and reduces CO2 emissions by 12–14%, CH4 emissions by 5–8%, and N2O emissions by 30–49%.",
+        "As CO2 is a biogenic product, total GHGs calculated from CH4 and N2O are reduced by 26-39%.",
+        "Microbial analysis emphasized the roles of nitrifying and denitrifying bacteria in influencing N2O emissions.",
+        "Furthermore, ROS-related bacteria were observed, which likely influence the overall reduction in GHGs.",
+        "Correlation heatmaps revealed relationships between environmental parameters and GHG emissions, highlighting the complexity and dynamics of the composting process.",
+        "This study demonstrates that a single SBP addition is more effective than a split addition in mitigating GHG emissions, which may be due to the higher SBP addition on the initial day, leading to more stable and sustained chemical oxidation effects.",
+        "Overall, this study suggests the potential of peroxidase-based additives, also present in other food by-products, as bio-based solutions for reducing GHG emissions."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Reduced GHG emissions due to compost production and compost use in Egypt",
+      "publisher": "Organic Eprints (International Centre for Research in Organic Food Systems, and Research Institute of Organic Agriculture)",
+      "author": "Boki Luske",
+      "published_at": "2010-01-01",
+      "url": "https://openalex.org/W120805000",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "9d43a0d647de072dbe8acfb72600c86aa82adec2fb4254d24583fbf5926e1f92",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Composting has been acknowledged as an emission reduction methodology by the UNFCCC.",
+        "The emission reduction reached by a composting project is determined by comparing the composting scenario with the applicable baseline scenario.",
+        "The objective of this study was on the one hand to clarify the emission reduction methodology of a composting facility in Egypt and on the other hand to extend this methodology with an example to illustrate the effect of compost use on greenhouse gas emissions.",
+        "In this study, the emissions in a scenario where compost originating from a compost facility near Alexandria is used on a citrus farm in Egypt, were compared with a hypothetical baseline scenario where organic waste is not recycled and chemical fertilizer is used on the farm.",
+        "The results show that the composting scenario causes significant lower emissions than the baseline scenario.",
+        "This is mainly due to the avoidance of methane emissions from organic waste dumping, but also emissions due to chemical fertilizer production are avoided.",
+        "The third reason for lower emission in the composting scenario is soil carbon sequestration.",
+        "The composting scenario on the other hand also causes extra emissions due the transportation of biomass and fuel use for windrow turning.",
+        "Although not showed in this study, it must be mentioned that compost has other beneficial effects, like improving soil fertility, improving the buffering capacity and reducing the risk for pathogens."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Greenhouse gas emissions from food and garden waste composting",
+      "publisher": "Epsilon Open Archive (Sveriges lantbruksuniversitet biblioteket (Swedish University of Agricultural Sciences))",
+      "author": "Evgheni Ermolaev",
+      "published_at": "2015-05-20",
+      "url": "https://openalex.org/W833573083",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "154e8b7e4d17422dc1f385458455ad32b7245edb5a0f298556a3ba018707bc9e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Use of finished compost enables plant nutrient recycling, carbon sequestration, soil structure improvement and mineral fertiliser replacement.",
+        "However, composting also emits greenhouse gases (GHG) such as methane (CH₄) and nitrous oxide (N₂O) with high global warming potential (GWP).",
+        "\\n \\nThis thesis analysed emissions of CH₄ and N₂O during composting as influenced by management and process conditions and examined how these emissions could be reduced.",
+        "The GHG emissions from home-scale, large-scale and reactor composting were determined.",
+        "At small scale, 18 home compost units were analysed over one year.",
+        "At large scale, the effects of aeration strategies on emissions were studied in 10-20 m long windrow composts.",
+        "Finally, reactor composting was studied in two sets of experiments under a controlled laboratory environment to investigate the influence of specific process conditions on CH₄ and N₂O emissions.",
+        "\\n \\nMethane emissions increased almost 1000-fold when moisture content in the compost substrate increased from about 44% to 66% in the reactor.",
+        "Moreover, CH₄ emissions increased 100-fold as a result of poor aeration.",
+        "In home composting CH₄ emissions were low, but increased with temperature, mixing frequency and moisture.",
+        "In windrow composting, high CH₄ emissions were associated with thermophilic temperatures and large moisture gradients.",
+        "Moisture content from about 44% to 59% significantly affected N₂O emissions in the reactor studies, with N₂O emissions increasing at lower moisture."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Compost",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5966",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "a9acc3d5a7c9c368fc74023133e96894ad8fb818e2a7f203d4cc371d1c729640",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Compost is a mixture of ingredients used as plant fertilizer and to improve soil's physical, chemical, and biological properties.",
+        "It is commonly prepared by decomposing plant and food waste, recycling organic materials, and manure.",
+        "The resulting mixture is rich in plant nutrients and beneficial organisms, such as bacteria, protozoa, nematodes, and fungi.",
+        "Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, reducing dependency on commercial chemical fertilizers.",
+        "The benefits of compost include providing nutrients to crops as fertilizer, acting as a soil conditioner, increasing the humus or humic acid contents of the soil, and introducing beneficial microbes that help to suppress pathogens in the soil and reduce soil-borne diseases.",
+        "At the most basic level, composting requires gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips).",
+        "The materials break down into humus in a process taking months.",
+        "Composting can be a multistep, closely monitored process with measured inputs of water, air, and carbon- and nitrogen-rich materials.",
+        "The decomposition process is aided by shredding the plant matter, adding water, and ensuring proper aeration by regularly turning the mixture in a process using open piles or windrows.",
+        "Fungi, earthworms, and other detritivores further break up the organic material.",
+        "Aerobic bacteria and fungi manage the chemical process by converting the inputs into heat, carbon dioxide, and ammonium ions.",
+        "Composting is an important part of waste management, since food and other compostable materials make up about 20% of waste in landfills, and due to anaerobic conditions, these materials take longer to biodegrade in the landfill."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Aerated static pile composting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4548267",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "4966dd32eb8006ae7128e77c130bbd6c8d394327931653c83bf2abcb0acc05f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aerated static pile (ASP) composting refers to systems using forced aeration to keep compost material aerobic without physical manipulation.",
+        "This is typically done by placing mixed feedstocks on perforated piping where air is then either pumped up (positive aeration), sucked down (negative aeration), or pumped and sucked (reversing aeration) through the material.",
+        "If air is sucked through the material (negative and reversing aeration) it is typically then run through a scrubber like a biofilter to remove odor and emissions.",
+        "ASPs are typically constructed outdoors in mass beds or bunker configurations (see image for example of bunker style ASP).",
+        "They can also be constructed within open-sided buildings, enclosed bunkers known as tunnels, or windrows.",
+        "Many ASPs are protected from rain and precipitation with a roof, reducing leachate generation and allowing operators to evaporate detained water through biodrying.",
+        "When properly designed and operated, aerated composting facilities have 95% less odor/emissions and 25% of the footprint of a comparable windrow facility.",
+        "For these reasons, ASPs are typically implemented at sites composting putrescible feedstocks (manures, biosolids or food waste) with a higher potential for adverse environmental impact.",
+        "They are also used at sites that are land constrained or managing wet dense feedstocks."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Climate change",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5042951",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "804ac887913cc33bd1a27506e8b9cc17cb7e6eda62986265963205d9d8bd7186",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Present-day climate change includes both global warming—the ongoing increase in global average temperature—and its wider effects on Earth's climate system.",
+        "In a broader sense, climate change also includes previous long-term changes to Earth's climate.",
+        "The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution.",
+        "Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
+        "These gases absorb some of the heat that the Earth radiates after it warms from sunlight, warming the lower atmosphere.",
+        "Earth's atmosphere now has roughly 50% more carbon dioxide, the main gas driving global warming, than it did at the end of the pre-industrial era, reaching levels not seen for millions of years.",
+        "Climate change has an increasingly large impact on the environment.",
+        "Amplified warming in the Arctic has contributed to thawing permafrost, retreat of glaciers and sea ice decline.",
+        "Higher temperatures are also causing more intense storms, droughts, and other weather extremes.",
+        "Rapid environmental change in mountains, coral reefs, and the Arctic is forcing many species to relocate or become extinct.",
+        "Even if efforts to minimize future warming are successful, some effects will continue for centuries.",
+        "These include ocean heating, ocean acidification and sea level rise."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Bokashi (horticulture)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53776689",
+      "retrieved_at": "2026-10-18T15:31:11.051Z",
+      "sha256": "9842722714d721154cc5f9d4f9523fb973fc42ad53de1c64cdf09435e1180792",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bokashi (also referred to as bokashi composting, bokashi fermentation and fermented composting) is an anaerobic composting method that converts food waste and organic matter into a soil amendment using specialized bran.",
+        "The result of this process is similar in many ways to traditional compost.",
+        "The nature of bokashi reduces risk of nutrient leaching,  and does not emit the greenhouse gas nor heat typically released by traditional hot compost methods.",
+        "These factors make it appealing for urban agriculturists, as it can be easily done inside a home or apartment in manageable quantities without odor.",
+        "Bokashi composting originated in Korea, and has spread widely around the globe, particularly in dense urban areas of eastern Asia, where it is viewed as a way to reduce waste and promote healthy cities."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "mm-0242",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Sunflower Moth and its Impact on Cultivated Sunflowers in Eastern South Dakota",
+      "publisher": "Open PRAIRIE (South Dakota State University)",
+      "author": "Tom A. Royer",
+      "published_at": "1983-01-01",
+      "url": "https://openalex.org/W3200592686",
+      "retrieved_at": "2026-10-18T14:59:00.328Z",
+      "sha256": "17792811322ddf50613694c8aeac1e3f832b7ade8989c03789e221521169aec1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cultivated sunflowers (Helianthus annuus L.) are an increasingly important cash crop in the agricultural economy of South Dakota.",
+        "Sunflower hectarage increased in South Dakota from an estimated 59,711 ha.",
+        "Most of the sunflowers are grown in the eastern half of South Dakota, and a large percentage is growing the northeastern quarter of the state (Figure 1).",
+        "The expanding hectarage has necessitated an increase in insecticide application to control the several insect pests associated with them.",
+        "Walgenbach, South Dakota State University, Personal Communication)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Vincent van Gogh",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32603",
+      "retrieved_at": "2026-10-18T14:59:00.328Z",
+      "sha256": "e204d3f61ea1cd4b0bc5413077285ba1e2470abf472a2474cef8280aae11e1db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləɱ vɑŋ ˈɣɔx] ; 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art.",
+        "In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life.",
+        "They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art.",
+        "His suicide at age 37 followed years of mental illness and poverty.",
+        "Born into an upper-middle-class family in Zundert, Van Gogh drew as a child and was serious, quiet and thoughtful.",
+        "As a young man he worked as an art dealer, often travelling, but became depressed after he was transferred to London.",
+        "He turned to religion, and spent time as a Protestant missionary in southern Belgium.",
+        "He drifted in ill health and solitude before taking up painting in 1881, having moved back home with his parents.",
+        "His younger brother Theo supported him financially, and the two kept up a long correspondence by letter.",
+        "His early works, mostly still lifes and depictions of peasant labourers, contain few signs of the vivid colour that distinguished his later work.",
+        "In 1886, he moved to Paris, where he met members of the avant-garde, including Émile Bernard and Paul Gauguin, who were reacting against the Impressionist sensibility.",
+        "As his work developed he created a new approach to still lifes and local landscapes."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Common sunflower",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57622",
+      "retrieved_at": "2026-10-18T14:59:00.328Z",
+      "sha256": "f89d57ac4ca613c89585b3fcf280304b1da665bf0f112a05c2d08227b8e1a9c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The common sunflower (Helianthus annuus) is a large annual forb in the daisy family Asteraceae.",
+        "The domesticated form of common sunflower is harvested for its edible seeds, which come in two types: oil and confectionery seeds.",
+        "Oilseed sunflowers are widely grown globally and represent the fourth most used vegetable oil in the world.",
+        "They also are used widely as bird food or as food for livestock.",
+        "In contrast, confectionery sunflower seeds are often eaten as a snack food or in baking.",
+        "There also are horticultural sunflower varieties that are used as plantings in domestic gardens for aesthetics.",
+        "Wild plants are known for their multiple flower heads, whereas the domestic sunflower often possesses a single large flower head atop an unbranched stem."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Helios",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67230",
+      "retrieved_at": "2026-10-18T14:59:00.328Z",
+      "sha256": "b7395fb65ba4cd642e8a80d1b616c96bc1255a0cc9a8e3749c940f82531ce536",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In ancient Greek religion and mythology, Helios (; Ancient Greek: Ἥλιος, pronounced [hɛ̌ːlios], lit.",
+        "'Sun'; Homeric Greek: Ἠέλιος) is the god who personifies the Sun.",
+        "His name is also Latinized as Helius, and he is often given the epithets Hyperion (\"the one above\") and Phaethon (\"the shining\").",
+        "Helios is often depicted in art with a radiant crown and driving a horse-drawn chariot through the sky.",
+        "Though Helios was a relatively minor deity in Classical Greece, his worship grew more prominent in late antiquity thanks to his identification with several major solar divinities of the Roman period, particularly Apollo and Sol.",
+        "The Roman Emperor Julian made Helios the central divinity of his short-lived revival of traditional Roman religious practices in the 4th century AD.",
+        "Helios figures prominently in several works of Greek mythology, poetry, and literature, in which he is often described as the son of the Titans Hyperion and Theia and brother of the goddesses Selene (the Moon) and Eos (the Dawn).",
+        "Helios's most notable role in Greek mythology is the story of his mortal son Phaethon.",
+        "In the Homeric epics, his most notable role is the one he plays in the Odyssey, where Odysseus's men despite his warnings impiously kill and eat Helios's sacred cattle that the god kept at Thrinacia, his sacred island.",
+        "Once informed of their misdeed, Helios, in wrath, asks Zeus to punish those who wronged him, and Zeus, agreeing, strikes their ship with a thunderbolt, killing everyone except Odysseus himself, the only one who had not harmed the cattle and was allowed to live.",
+        "Due to his position as the Sun, he was believed to be an all-seeing witness and thus was often invoked in oaths.",
+        "He also played a significant part in ancient magic and spells."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Helianthus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=851640",
+      "retrieved_at": "2026-10-18T14:59:00.328Z",
+      "sha256": "8353d4afd82a9f57b60415e5367a7010ae04fffd74383f203515223a5b60335b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Helianthus () is a genus comprising around 50 species of annual and perennial flowering plants in the daisy family Asteraceae commonly known as sunflowers.",
+        "The best-known species is the common sunflower (Helianthus annuus).",
+        "tuberosus), are cultivated in temperate regions and some tropical regions, as food crops for humans, cattle, and poultry, and as ornamental plants.",
+        "annuus typically grows during the summer and into early fall, with the peak growth season being mid-summer.",
+        "Several perennial Helianthus species are grown in gardens, but have a tendency to spread rapidly and can become aggressive.",
+        "On the other hand, the whorled sunflower, Helianthus verticillatus, was listed as an endangered species in 2014 when the U.S.",
+        "Fish and Wildlife Service issued a final rule protecting it under the Endangered Species Act.",
+        "The primary threats to this species are industrial forestry and pine plantations in Alabama, Georgia, and Tennessee.",
+        "They grow to 1.8 metres (6 feet) and are primarily found in woodlands, adjacent to creeks and moist, prairie-like areas.",
+        "The common sunflower is the national flower of Ukraine, cultivated there for several centuries."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "mm-1321",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Rice: Chief Food of More Than One-Half the World",
+      "publisher": "No publisher",
+      "author": "Juanito M, Beo,",
+      "published_at": "1966",
+      "url": "https://doi.org/10.58837/chula.taic.3018",
+      "retrieved_at": "2026-10-18T15:43:56.954Z",
+      "sha256": "87651d8eb22fc20ac5f6912a0d66c8430f7b1637c50e67a44d3e82dd51eee640",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Considers problem of population growth related to insufficient food production.",
+        "Notes establishment of International Rice Research Institute (IRRI) for study and improvement of rice culture, and the designation of International Rice Year.",
+        "Explains reasons for inadequate rice supply, citing Vietnam war.",
+        "Covers scientific research being done to improve rice plants, for disease and pest control, and training programs and international symposia for scientists."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Half Heads, Half Tails",
+      "publisher": "Indiana University Press",
+      "author": null,
+      "published_at": "2020-03-17",
+      "url": "https://doi.org/10.2307/j.ctvwh8dr6.34",
+      "retrieved_at": "2026-10-18T15:43:57.263Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Rice: It Feeds the World",
+      "publisher": "UNI ScholarWorks (University of Northern Iowa)",
+      "author": "Kelly Davidson",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2743921659",
+      "retrieved_at": "2026-10-18T15:43:57.445Z",
+      "sha256": "d03e66b5e86bceae40f1292115c44a9d2b77e7390c2b47ee7566091570304979",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Students will identify countries mentioned in the text and locate them on a world map.",
+        "Students will use an atlas to identify the climatic conditions necessary for growing rice.",
+        "Students will explain the movement of cultural traditions from a country or origin to a new country."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Rice",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36979",
+      "retrieved_at": "2026-10-18T15:43:57.445Z",
+      "sha256": "d779743c21fed6b022be78356c003a06157c36d1f261b917d6426f5984459c65",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rice is a cereal grain and, in its domesticated form, is the staple food of over half of the world's population, particularly in Africa and Asia.",
+        "Rice is the seed of the grass species Oryza sativa (Asian rice)—or, less commonly, Oryza glaberrima (African rice).",
+        "Asian rice was domesticated in China some 13,500 to 8,200 years ago; African rice was domesticated independently in West Africa about 3,000 years ago.",
+        "Rice has become commonplace in many cultures worldwide; in 2023, 800 million tons were produced, placing it third after sugarcane and maize.",
+        "China, India, and Indonesia are the largest consumers of rice.",
+        "A substantial amount of the rice produced in developing nations is lost after harvest through factors such as poor transport and storage.",
+        "Rice yields can be reduced by pests including insects, rodents, and birds, as well as by weeds, and by diseases such as rice blast.",
+        "Traditional rice polycultures such as rice-duck farming, and modern integrated pest management seek to control damage from pests in a sustainable way.",
+        "Dry rice grain is milled to remove the outer layers; depending on how much is removed, products range from brown rice to rice with germ and white rice.",
+        "Rice contains no gluten; it provides protein but not all the essential amino acids needed for good health.",
+        "The composition of starch components within the grain, amylose and amylopectin, gives it different texture properties.",
+        "Long-grain rice, from the Indica cultivar, tends to stay intact on cooking, and is dry and fluffy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Breadbasket",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=218191",
+      "retrieved_at": "2026-10-18T15:43:57.445Z",
+      "sha256": "52bf4074f7c7a0be427320b12dd79fd4c299c53d65ec0031b39736626fc21bec",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The breadbasket of a country or of a region is an area which, because of the richness of the soil and/or advantageous climate, produces large quantities of wheat or other grain.",
+        "Rice bowl is a similar term used to refer to Southeast Asia; California's Salinas Valley is sometimes referred to as America's salad bowl.",
+        "Such regions may be the subject of fierce political disputes, which may even escalate into full military conflicts.",
+        "Breadbaskets have become important within the global food system by concentrating global food-production in a small number of countries and, in countries such as India, in small geographic regions.",
+        "As climate change increases weather variability around the world, the likelihood of multiple breadbaskets failing at a time increases dramatically.",
+        "The 2022 food crises has been in part facilitated by a series of failures in key breadbasket regions, and the 2022 Russian invasion of Ukraine has created significant potential disruption of the respective breadbasket regions that are important for global wheat and oil seed production."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Malnutrition",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=258979",
+      "retrieved_at": "2026-10-18T15:43:57.445Z",
+      "sha256": "dee1bd89258b349f93f3ef0be9ab0274a01bed459e5bb0acde0a7e97e962ee25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Malnutrition occurs when an organism gets too few or too many nutrients, resulting in health problems.",
+        "Specifically, it is a deficiency, excess, or imbalance of energy, protein and other nutrients which adversely affects the body's tissues and form.",
+        "Malnutrition is a category of diseases that includes undernutrition and overnutrition.",
+        "Undernutrition is a lack of nutrients, which can result in stunted growth, wasting, and being underweight.",
+        "A surplus of nutrients causes overnutrition, which can result in obesity or toxic levels of micronutrients.",
+        "In some developing countries, overnutrition in the form of obesity is beginning to appear within the same communities as undernutrition.",
+        "Malnutrition is reported to occur in US healthcare and worldwide up to 40% of hospitalized patients are estimated to be affected by disease-related malnutrition.",
+        "Most clinical studies use the term 'malnutrition' to refer to undernutrition.",
+        "However, the use of 'malnutrition' instead of 'undernutrition' makes it impossible to distinguish between undernutrition and overnutrition, a less acknowledged form of malnutrition."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Fried rice",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=509468",
+      "retrieved_at": "2026-10-18T15:43:57.445Z",
+      "sha256": "fbf7559c1a571b980e273e8de1cc5680ebfbadc499d7cd415526477dfdd4fe4d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fried rice is a dish of cooked rice that has been stir-fried in a wok or a frying pan and is usually mixed with other ingredients such as eggs, vegetables, seafood, or meat.",
+        "It is often eaten as a main dish or as an accompaniment to another dish.",
+        "Fried rice is a popular component of East Asian, Southeast Asian and South Asian cuisines.",
+        "As a homemade dish, fried rice is typically made with ingredients left over from other dishes, leading to countless variations.",
+        "Fried rice first developed during the Sui dynasty in China and later spread across the world through the migration of the Chinese diaspora.",
+        "Many varieties of fried rice have their own specific list of ingredients.",
+        "In China, common varieties include Yangzhou fried rice and Hokkien fried rice.",
+        "Japanese chāhan is considered a Japanese Chinese dish, having derived from Chinese fried rice dishes.",
+        "In Southeast Asia, similarly constructed Indonesian, Malaysian, and Singaporean nasi goreng and Thai khao phat are popular dishes.",
+        "In the West, most restaurants catering to vegetarians have invented their own varieties of fried rice, including egg fried rice.",
+        "Fried rice is also seen on the menus of non-Asian countries’ restaurants offering cuisines with no native tradition of the dish.",
+        "Additionally, the cuisine of some Latin American countries includes variations on fried rice, including Ecuadorian chaulafan, Peruvian arroz chaufa, Cuban arroz frito, and Puerto Rican arroz mampostea(d)o."
+      ]
+    }
+  ]
+}

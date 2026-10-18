@@ -1,0 +1,27 @@
+{
+  "id": "mq-0792",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Cascadia megathrust earthquake rupture model constrained by geodetic fault locking",
+      "publisher": "California Digital Library (CDL)",
+      "author": "Li, Duo; Liu, Yajing",
+      "published_at": "2022-01-31",
+      "url": "https://doi.org/10.31223/x5kw3s",
+      "retrieved_at": "2026-10-18T16:53:43.131Z",
+      "sha256": "3dc78bb192c90d3c8f907d550a74cb88dbf5ec677776e5b2831a1a430bd0d2f0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Paleo-earthquakes along the Cascadia subduction zone inferred from offshore sediments and Japan coastal tsunami deposits approximated to M9+ and ruptured the entire margin.",
+        "However, due to the lack of modern megathrust earthquake records and generally quiescence of subduction fault seismicity, the potential megathrust rupture scenario and influence of downdip limit of the seismogenic zone are still obscure.",
+        "In this study we present a numerical simulation of Cascadia subduction zone earthquake sequences in the laboratory-derived rate-and-state friction framework to investigate the potential influence of the geodetic fault locking on the megathrust sequences.",
+        "We consider the rate-state friction stability parameter constrained by geodetic fault locking models derived from decadal GPS records, tidal gauge, and leveling-derived uplift rate data along the Cascadia margin.",
+        "We incorporate historical coseismic subsidence inferred from coastal marine sediments to validate our coseismic rupture scenarios.",
+        "Earthquake rupture pattern is strongly controlled by the downdip width of the seismogenic, velocity-weakening zone, and by the earthquake nucleation zone size.",
+        "In our model, along-strike heterogeneous characteristic slip distance is required to generate margin-wide ruptures that result in reasonable agreement between the synthetic and observed coastal subsidence for the A.D.",
+        "Our results suggest geodetically inferred fault locking model can provide a useful constraint on earthquake rupture scenarios in subduction zones."
+      ]
+    }
+  ]
+}

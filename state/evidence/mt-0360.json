@@ -1,0 +1,23 @@
+{
+  "id": "mt-0360",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Quantitative Approaches to Versification",
+      "publisher": "Digital Repository (National Repository of Grey Literature)",
+      "author": "Petr Plecháč",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W7135790978",
+      "retrieved_at": "2026-10-18T16:17:17.646Z",
+      "sha256": "cd59961f73827356f9ad55922d4c02e49ba795fd569edfb24f0c5ca91b9be263",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This volume presents a wide range of quantitative approaches to versification.",
+        "What they all share in common is that versification is being studied in the context of other linguistic phenomena that may affect or determine it.",
+        "Analyses of large corpora go hand in hand with comparative approaches.",
+        "It is shown that quantitative approaches can be used for the purpose of authorship attribution, to build reasonable typologies as well as to understand why certain forms play such a dominant roles in our cultural tradition(s)."
+      ]
+    }
+  ]
+}

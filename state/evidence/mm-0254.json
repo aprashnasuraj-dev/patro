@@ -1,0 +1,115 @@
+{
+  "id": "mm-0254",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Popcorn Pops",
+      "publisher": "Indiana University Press",
+      "author": null,
+      "published_at": "2020-03-17",
+      "url": "https://doi.org/10.2307/j.ctvwh8dr6.88",
+      "retrieved_at": "2026-10-18T14:59:24.453Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Exploding Food: Figure Out Why Popcorn Pops.",
+      "publisher": "OpenAlex",
+      "author": "Cynthia Graber",
+      "published_at": "1999-01-01",
+      "url": "https://openalex.org/works/W282972527",
+      "retrieved_at": "2026-10-18T14:59:25.158Z",
+      "sha256": "390d5aaf0a266a68f07f40e6e4d4c96a64a42bd75904f8ead161d3dbb6552cac",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "| OpenAlex Log in Get started Work Add to collection Exploding Food: Figure Out Why Popcorn Pops.",
+        "HTML Details Locations Year: 1999 Type: article Author: Cynthia Graber Language: English Topic: Food composition and properties Subfield: Nutrition and Dietetics Field: Nursing Domain: Health Sciences Open Access status: closed OpenAlex ID: W282972527 FWCI: Cites: Cited by: 1 Related to: 20"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Popcorn",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=232176",
+      "retrieved_at": "2026-10-18T14:59:25.158Z",
+      "sha256": "446d9523cea9371d2e95e5b48e0a0ec09eaac7905f8eda2049c92c5d18696146",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Popcorn (also called popped corn, popcorns, or pop-corn) is a variety of corn kernel which expands and puffs up when heated.",
+        "The term also refers to the snack food produced by the expansion.",
+        "It is one of the oldest snacks, with evidence of popcorn dating back thousands of years in the Americas.",
+        "It is commonly eaten salted, buttered, sweetened, or with artificial flavorings.",
+        "A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.",
+        "Pressure from the steam continues to build until the hull ruptures, allowing the kernel to forcefully expand, to 20 to 50 times its original size, and then cool.",
+        "Some strains of corn (taxonomized as Zea mays) are cultivated specifically as popping corns.",
+        "The Zea mays variety everta, a special kind of flint corn, is the most common of these.",
+        "Popcorn is one of six major types of corn, alongside dent corn, flint corn, pod corn, flour corn, and sweet corn."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Pop Carn",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14271357",
+      "retrieved_at": "2026-10-18T14:59:25.158Z",
+      "sha256": "eac51ce77c237a8d57265f3f7ec771927ecc70805aeeb1e97f62645199c020d9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pop Carn is a 2003 Indian Tamil-language romantic drama film written and directed by Nassar.",
+        "The film stars Mohanlal and Simran, and introduces Simran's younger sister Jyothi Naval.",
+        "The title is short for \"Pop Carnival\" and a play on the word \"popcorn\", with a storyline focusing on why marriages between celebrities can suffer due to conflicts between egos."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Binturong",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20352309",
+      "retrieved_at": "2026-10-18T14:59:25.158Z",
+      "sha256": "055e541384a32d8ba3a6c0d0ed5fa5ea1260292ad0e020ea3c529e436437f055",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The binturong (Arctictis binturong) (; bin-TURE-ong, BIN-ture-ong), also known as the bearcat, is an arboreal viverrid native to South and Southeast Asia.",
+        "It is the only species in the genus Arctictis, and it is divided into nine subspecies.",
+        "It has long, thick hair, and is primarily dark in appearance, but can also have a whitish speckled pelage.",
+        "It is unique in morphology with its popcorn-scented musk glands, and its long, bushy, prehensile tail.",
+        "The binturong is an omnivore, feeding on plants, insects, and smaller animals.",
+        "It is primarily nocturnal, but also exhibits crepuscular behaviour.",
+        "Females are able to enact delayed implantation, where a fertilized egg is not attached to the uterine walls until external conditions are ideal.",
+        "The major threats to the binturong include habitat loss and forest degradation, as well as illegal hunting and trading."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Maddie's Do You Know?",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59620239",
+      "retrieved_at": "2026-10-18T14:59:25.158Z",
+      "sha256": "53609cf47971ed0f482982445efb05c78a5f9f37df883ed63b083192977b2293",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "for its first two series) is a British children's television series, produced by Banijay subsidiary 7 Wonder for the BBC channel CBeebies, and presented by Maddie Moate.",
+        "A third series aired in 2019, followed by a fourth in April 2020 running until September 2020."
+      ]
+    }
+  ]
+}

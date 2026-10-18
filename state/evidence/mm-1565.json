@@ -1,0 +1,153 @@
+{
+  "id": "mm-1565",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Multimessenger approaches to exploring dense matter in neutron stars",
+      "publisher": "University Library J. C. Senckenberg",
+      "author": "; Weih, Lukas",
+      "published_at": null,
+      "url": "https://doi.org/10.21248/gups.61856",
+      "retrieved_at": "2026-10-18T15:52:28.089Z",
+      "sha256": "b66fdf54d6a8202c8c1d753aa5a4886882d29a5e886c2e36b1f21c118720270e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "High-energy astrophysics plays an increasingly important role in the understanding of our universe.",
+        "On one hand, this is due to ground-breaking observations, like the gravitational-wave detections of the LIGO and Virgo network or the black-hole shadow observations of the EHT collaboration.",
+        "On the other hand, the field of numerical relativity has reached a level of sophistication that allows for realistic simulations that include all four fundamental forces of nature.",
+        "A prime example of how observations and theory complement each other can be seen in the studies following GW170817, the first detection of gravitational waves from a binary neutron-star merger.",
+        "The same detection is also the chronological starting point of this Thesis.",
+        "The plethora of information and constraints on nuclear physics derived from GW170817 in conjunction with theoretical computations will be presented in the first part of this Thesis.",
+        "The second part goes beyond this detection and prepares for future observations when also the high-frequency postmerger signal will become detectable.",
+        "Specifically, signatures of a quark-hadron phase transition are discussed and the specific case of a delayed phase transition is analyzed in detail.",
+        "Finally, the third part of this Thesis focuses on the inclusion of radiative transport in numerical astrophysics.",
+        "In the context of binary neutron-star mergers, radiation in the form of neutrinos is crucial for realistic long-term simulations.",
+        "Two methods are introduced for treating radiation: the approximate state-of-the-art two-moment method (M1) and the recently developed radiative Lattice-Boltzmann method.",
+        "The latter promises to be more accurate than M1 at a comparable computational cost."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Connecting heavy-ion collisions to strange dense matter in neutron stars",
+      "publisher": "Elsevier BV",
+      "author": "YANG, Yumu",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7303759",
+      "retrieved_at": "2026-10-18T15:52:28.089Z",
+      "sha256": "3f2e4f6024cc39600d11515401c6ec781d5f96e46a3149b975e75a3dad594654",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Properties of dense matter at vanishing temperatures can change depending on the isospin asymmetry of the system.",
+        "Thus, it is common to use the isospin symmetry-energy expansion to connect the limits of isospin-symmetric matter, probed in heavy-ion collisions and nuclear experiments, to the isospin-asymmetric matter found in neutron stars.",
+        "We generalize this expansion to systems that contain strange particles, by redefining the isospin asymmetry parameter directly from the Gell-Mann--Nishijima formula.",
+        "Using a chiral mean field model and NLO perturbative QCD, we show that the new parameter recovers the correct ground state of nuclear matter at finite strangeness and that, in weak equilibrium, the expansion necessitates a cubic term."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Black hole",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4650",
+      "retrieved_at": "2026-10-18T15:52:28.525Z",
+      "sha256": "dc10f60912d8f4efee577d5ddfe7ecba701009e49c4cab5a2885a6ee0b65c673",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A black hole is an astronomical body so compact that its gravity prevents anything, including light, from escaping.",
+        "Albert Einstein's theory of general relativity, which describes gravitation as the curvature of spacetime, predicts that any sufficiently compact mass will form a black hole.",
+        "In general relativity, crossing a black hole's event horizon traps an object inside but produces no locally detectable change.",
+        "General relativity also predicts that every black hole should have a central singularity, where the curvature of spacetime is infinite.",
+        "Objects whose gravitational fields are too strong for light to escape were first considered in the 18th century.",
+        "In 1916, the first solution of general relativity that would characterise a black hole was found.",
+        "By the late 1950s, this solution began to be interpreted physically as a region of space from which nothing can escape.",
+        "Black holes were long considered a mathematical curiosity; it was not until the 1960s that theoretical work showed they were a generic prediction of general relativity.",
+        "The first widely accepted black hole was Cygnus X-1, an x-ray source  proposed as a black hole binary through several studies between 1971 and 1974.",
+        "Black holes typically form as part of a supernova event when massive stars collapse at the end of their life cycle.",
+        "After a black hole has formed, it can grow by absorbing mass from its surroundings.",
+        "Supermassive black holes of millions of solar masses may form by absorbing stars and merging with other black holes, or via direct collapse of gas clouds."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Neutron",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21272",
+      "retrieved_at": "2026-10-18T15:52:28.525Z",
+      "sha256": "1ac2f5be9e59803506c5b9e424989bb3585f69c212339a8e7fa0a3010f2aa84b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A neutron is a subatomic particle, symbol n or n0, that has no electric charge, and a mass slightly greater than that of a proton.",
+        "The neutron was discovered by James Chadwick in 1932, leading to the discovery of nuclear fission in 1938, the first self-sustaining nuclear reactor (Chicago Pile-1, 1942), and the first nuclear weapon (Trinity, 1945).",
+        "Neutrons are found, together with a similar number of protons, in the nuclei of atoms.",
+        "Atoms of a chemical element that differ only in neutron number are called isotopes.",
+        "Free neutrons are produced copiously in nuclear fission and fusion.",
+        "They are a primary contributor to the nucleosynthesis of chemical elements within stars through fission, fusion, and neutron capture processes.",
+        "Neutron stars, formed from massive collapsing stars, consist of neutrons at the density of atomic nuclei but a total mass more than the Sun.",
+        "Neutron properties and interactions are described by nuclear physics.",
+        "Neutrons are not elementary particles; each is composed of three quarks.",
+        "A free neutron spontaneously decays to a proton, an electron, and an antineutrino, with a mean lifetime of about 15 minutes.",
+        "The neutron is essential to the production of nuclear power.",
+        "Dedicated neutron sources like neutron generators, research reactors and spallation sources produce free neutrons for use in irradiation and in neutron scattering experiments."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Supernova",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27680",
+      "retrieved_at": "2026-10-18T15:52:28.525Z",
+      "sha256": "8c5b6a286bf6f9769542ac9b08bea46932fed9b89d82f5431e3f863c1bf20d85",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A supernova (pl.: supernovae) is a powerful and luminous explosion of a star.",
+        "A supernova occurs during the last evolutionary stages of a massive star, or when a white dwarf is triggered into runaway nuclear fusion.",
+        "The original object, called the progenitor, either collapses to a neutron star or black hole, or is completely destroyed to form a diffuse nebula.",
+        "The peak optical luminosity of a supernova can be comparable to that of an entire galaxy before fading over several weeks or months.",
+        "It is expected that supernovae in our galaxy occur on average once every 61 years, although the last to be observed was Kepler's Supernova in 1604.",
+        "SN 1987A occurred in the Large Magellanic Cloud, a satellite galaxy of our galaxy, in 1987.",
+        "Several thousand supernovae are typically seen in distant galaxies every year.",
+        "Theoretical studies indicate that most supernovae are triggered by one of two basic mechanisms: the sudden re-ignition of nuclear fusion in a white dwarf, or the sudden gravitational collapse of a massive star's core.",
+        "In the re-ignition of a white dwarf, the object's temperature is raised enough to trigger runaway nuclear fusion, completely disrupting the star.",
+        "Possible causes are an accumulation of material from a binary companion through accretion, or by a stellar merger.",
+        "Supernovae can expel several solar masses of material at speeds up to several percent of the speed of light.",
+        "This drives an expanding shock wave into the surrounding interstellar medium, sweeping up an expanding shell of gas and dust observed as a supernova remnant."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Stellar evolution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27980",
+      "retrieved_at": "2026-10-18T15:52:28.525Z",
+      "sha256": "ed636734fdee283c05a5aefc5f7b56b58afa610412a2976302e4a72e5ede8db3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stellar evolution is the process by which a star changes over the course of time.",
+        "Depending on the mass of the star, its lifetime can range from a few million years for the most massive to trillions of years for the least massive, which is considerably longer than the current age of the universe.",
+        "The table shows the lifetimes of stars as a function of their masses.",
+        "All stars are formed from collapsing clouds of gas and dust, often called nebulae or molecular clouds.",
+        "Over the course of millions of years, these protostars settle down into a state of equilibrium, becoming what is known as a main-sequence star.",
+        "Initially the energy is generated by the fusion of hydrogen atoms at the core of the main-sequence star.",
+        "Later, as the preponderance of atoms at the core becomes helium, stars like the Sun begin to fuse hydrogen along a spherical shell surrounding the core.",
+        "This process causes the star to gradually grow in size, passing through the subgiant stage until it reaches the red-giant phase.",
+        "Stars with at least half the mass of the Sun can also begin to generate energy through the fusion of helium at their core, whereas more-massive stars can fuse heavier elements along a series of concentric shells.",
+        "Once a star like the Sun has exhausted its nuclear fuel, its core collapses into a dense white dwarf and the outer layers are expelled as a planetary nebula.",
+        "Stars with around ten or more times the mass of the Sun can explode in a supernova as their inert iron cores collapse into an extremely dense neutron star or black hole.",
+        "Although the universe is not old enough for any of the smallest red dwarfs to have reached the end of their existence, stellar models suggest they will slowly become brighter and hotter before running out of hydrogen fuel and becoming low-mass white dwarfs."
+      ]
+    }
+  ]
+}

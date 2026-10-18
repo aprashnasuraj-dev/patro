@@ -1,0 +1,107 @@
+{
+  "id": "mm-0379",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Digitally Dysfunctional: How HCI Researchers Examine BIPOC Interactions with Recommendation Algorithms",
+      "publisher": "Illinois Digital Environment for Access to Learning and Scholarship (University of Illinois at Urbana-Champaign)",
+      "author": "Jiarun Dai; Sehba Wani; Zauryn Robinson",
+      "published_at": "2024-03-20",
+      "url": "https://openalex.org/W7220810210",
+      "retrieved_at": "2026-10-18T15:04:32.923Z",
+      "sha256": "4a80af0e3d25f88c9687f48baf137f79d81feea3ed629127c0d3a501bdb9e864",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recommendation algorithms are often used in many mainstream media apps to provide content suggestions to users based on factors like individual preferences and virality.",
+        "As a result, social media platforms circulate and popularize content trends.",
+        "However, like other algorithmic approaches, recommender systems have been found to reinforce biases, particularly towards marginalized communities.",
+        "This poster presents a preliminary literature review of how the Human-Computer Interaction (HCI) community has approached scholarship on both Black, Indigenous, and People of Color (BIPOC) individuals and recommendation algorithms.",
+        "Our findings showcase a lack of focus at the intersection of BIPOC experiences and recommendation algorithms, with the technology and the population often being studied separately.",
+        "Based on the gaps we identify in the literature, we propose future work aimed at understanding how BIPOC individuals experience recommendation algorithms, specifically on TikTok.",
+        "Without proper recognition of the biases, lack of representation, and understanding of the offline impacts of the information that recommendation algorithms can create, certain populations could be at risk of encountering material that is untrue and harmful to their well-being."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Machine learning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=233488",
+      "retrieved_at": "2026-10-18T15:04:32.923Z",
+      "sha256": "0a24db625432afbccf049e9c1f1f1db21e325ad09a170b418890b4bbe4b6415a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from  data and generalize to unseen data, and thus perform tasks without being explicitly programmed.",
+        "Statistics and mathematical optimisation methods compose the foundations of machine learning.",
+        "Data mining is a related field of study, focusing on exploratory data analysis (EDA) through unsupervised learning.",
+        "From a theoretical viewpoint, probably approximately correct learning provides a mathematical and statistical framework for describing machine learning.",
+        "Most traditional machine learning and deep learning algorithms can be described as empirical risk minimisation under this framework.",
+        "Advances in the field of deep learning have allowed neural networks, a class of statistical algorithms, to surpass many previous machine learning approaches in performance.",
+        "The resulting dominance of machine learning within the field of AI from the late 2000s and early 2010s onwards was such that the terms \"machine learning\" and \"artificial intelligence\" are now often used interchangeably, even though they are not synonymous."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Recommender system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=596646",
+      "retrieved_at": "2026-10-18T15:04:32.923Z",
+      "sha256": "f8bf6fe85e6536ec9df93ba1d788cd95765d0930016af70b9e849057b1bba6cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A recommender system, also called a recommendation engine or content discovery platform is a type of information filtering system that aims to suggest items most relevant for some input or to a particular user.",
+        "In the context of social media, search engines, and other online services, a recommender system for a given service might sometimes informally but erroneously be referred to as the service's \"algorithm\".",
+        "The use of recommender systems is pervasive, with commonly recognised examples including the generation of playlists for video and music streaming services, product recommendations for e-commerce platforms, and topics and individual items posted on social media platforms and the open web.",
+        "Online services employ machine learning or specialized deep learning recommendation models (DLRMs) that analyze user behavior and preferences to generate personalized content feeds for millions of users at any moment.",
+        "The value of these systems becomes particularly evident in scenarios where users must select from a large number of options, such as products, media, or content.",
+        "Suggestions are typically designed to shorten or work as a substitute for decision-making processes, including the selection of a product, musical selection, or online news source to read."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Algorithm aversion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=68676673",
+      "retrieved_at": "2026-10-18T15:04:32.923Z",
+      "sha256": "84cb62d0d34368c23b50db5c16b9ac1033b6a62e9aecfbafa8e0d7920ad8f7d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Algorithms, particularly those utilizing machine learning methods or artificial intelligence (AI), play a growing role in decision-making across various fields.",
+        "Examples include recommender systems in e-commerce for identifying products a customer might like and AI systems in healthcare that assist in diagnoses and treatment decisions.",
+        "Despite their proven ability to outperform humans in many contexts, algorithmic recommendations are often met with resistance or rejection, which can lead to inefficiencies and suboptimal outcomes.",
+        "The study of algorithm aversion is critical as algorithms become increasingly embedded in our daily lives.",
+        "Factors such as perceived accountability, lack of transparency, and skepticism towards machine judgment contribute to this aversion.",
+        "Conversely, there are scenarios where individuals are more likely to trust and follow algorithmic advice over human recommendations, a phenomenon referred to as algorithm appreciation.",
+        "Understanding these dynamics is essential for improving human-algorithm interactions and fostering greater acceptance of AI-driven decision-making."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Algorithmic culture",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72135653",
+      "retrieved_at": "2026-10-18T15:04:32.923Z",
+      "sha256": "015054814ba34f6ab0aa26390b79f4ef48cfce894c77d0818854c39c95809387",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the digital humanities, \"algorithmic culture\" is part of an emerging synthesis of rigorous, algorithm-driven software design that couples software and highly structured data-driven design with human-oriented sociocultural attributes.",
+        "Other definitions include Ted Striphas' work, where algorithmic culture refers to how the logic of big data and large-scale computation (including algorithms) alters how culture is practiced, experienced, and understood.",
+        "Diggit Magazine offers another perspective, describing algorithmic culture as the influence of computational processes on cultural practices.",
+        "Edward Burnett Tylor is often credited with modern discussion of culture in his 1871 work on primitive culture.",
+        "A similar process is occurring in strictly sociological interactions."
+      ]
+    }
+  ]
+}

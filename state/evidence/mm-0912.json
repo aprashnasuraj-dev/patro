@@ -1,0 +1,127 @@
+{
+  "id": "mm-0912",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Planetary Sustainability the Age of Transition to Sustainablility: The End of the Exponential Growth Period",
+      "publisher": "VTechWorks (Virginia Tech)",
+      "author": "John Cairns",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W2591365145",
+      "retrieved_at": "2026-10-18T15:27:33.022Z",
+      "sha256": "f3a34385cae21a06bebbba039a5d661b1a650f075d48428235582b09784887ba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Arguably, no curve in the world increases indefinitely--- certainly no growth curve of human society.",
+        "The quest for sustainable use of the planet involves estimating levels of activity, particularly resource use, that can continue indefinitely.",
+        "Since the biosphere is dynamic, this continuation is not a stagnant, steady-state situation but rather a mutualistic interactive relationship between human society and the planet's ecological life support system.",
+        "Human technology, creativity, and ingenuity may modify natural laws, but cannot be used to repeal them.",
+        "Attempts to maintain the recent exponential growth of the human population, affluence, and artifacts cannot continue forever, or probably even for another century.",
+        "At best, quality of life will be diminished, and, at worst, a substantial loss of human life will occur if both ethical and ecological issues are not freely and openly discuessed.",
+        "Sustainability may be visionary and unattainable, but it does offer an opportunity to improve the quality of life for futrure generations of humans and other life forms, an opportunity that is far greater than possible with present unsustainable practices."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cholesterol",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6437",
+      "retrieved_at": "2026-10-18T15:27:33.022Z",
+      "sha256": "dad6d7ee3903126155627607984edf94299816b3d1a57b06654adb869c912bcd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cholesterol is the principal sterol of all animals, distributed in body tissues, especially the brain and spinal cord, and in animal fats and oils.",
+        "Cholesterol is biosynthesized by all animal cells and is an essential structural and signaling component of animal cell membranes.",
+        "In vertebrates, hepatic cells typically produce the greatest amounts of it.",
+        "In the brain, astrocytes produce cholesterol and transport it to neurons.",
+        "It is absent among prokaryotes (bacteria and archaea), although there are some exceptions, such as Mycoplasma, which require cholesterol for growth.",
+        "Cholesterol also serves as a precursor for the biosynthesis of steroid hormones, bile acid, and vitamin D.",
+        "Elevated levels of cholesterol in the blood, especially when bound to low-density lipoprotein (LDL, often referred to as \"bad cholesterol\"), may increase the risk of cardiovascular disease.",
+        "François Poulletier de la Salle first identified cholesterol in solid form in gallstones in 1769.",
+        "In 1815, chemist Michel Eugène Chevreul named the compound \"cholesterine\"."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hasidic Judaism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14436",
+      "retrieved_at": "2026-10-18T15:27:33.022Z",
+      "sha256": "db6475947ca72ca2354f55c69a3c5b0dac3037add5529f63cba4b5a648fe0831",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hasidism (Hebrew: חסידות, romanized: Ḥăsīdūt) or Hasidic Judaism is a religious movement within Judaism that arose in the 18th century as a spiritual revival movement in contemporary Western Ukraine before spreading rapidly throughout Eastern Europe.",
+        "Today, most of those affiliated with the movement, known as hassidim, reside in Israel and in the United States, and to a lesser extent in Canada, the United Kingdom, Argentina and Belgium.",
+        "Israel Ben Eliezer, the \"Baal Shem Tov\", is regarded as its founding father, and his disciples developed and disseminated it.",
+        "Present-day Hasidism is a sub-group within Haredi Judaism and is noted for its religious conservatism and social seclusion.",
+        "Its members aim to adhere closely both to Orthodox Jewish practice – with the movement's own unique emphases – and the prewar lifestyle of Eastern European Jews.",
+        "Many elements of the latter, including various special styles of dress and the use of the Yiddish language, are nowadays associated almost exclusively with Hasidism.",
+        "Hasidic thought draws heavily on Lurianic Kabbalah, and, to an extent, is a popularization of it.",
+        "Teachings emphasize God's immanence in the universe, the need to cleave and be one with him at all times, the devotional aspect of religious practice, and the spiritual dimension of corporeality and mundane acts.",
+        "Hasidim, the adherents of Hasidism, are organized in independent sects known as \"courts\" or dynasties, each headed by its own hereditary male leader, a Rebbe.",
+        "Reverence and submission to the Rebbe are key tenets, as he is considered a spiritual authority with whom the follower must bond to gain closeness to God.",
+        "The various \"courts\" share basic convictions, but operate apart and possess unique traits and customs.",
+        "Affiliation is often retained in families for generations, and being Hasidic is as much a sociological factor – entailing birth into a specific community and allegiance to a dynasty of Rebbes – as it is a religious one."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mammal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18838",
+      "retrieved_at": "2026-10-18T15:27:33.022Z",
+      "sha256": "bce73334ef49c5d061686c26addfc86aa1c14a0ee6cb979b81090a64e9619ca8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mammal (from Latin  mamma 'breast') is a vertebrate animal of the class Mammalia ().",
+        "Mammals are characterized by the presence of milk-producing mammary glands for feeding their young, a broad neocortex region of the brain, fur or hair, and three middle ear bones.",
+        "These characteristics distinguish them from reptiles and birds, from which their ancestors diverged in the Carboniferous period over 300 million years ago.",
+        "Around 6,640 extant species of mammals have been described and divided into 27 orders.",
+        "The largest orders of mammals, by number of species, are the rodents, bats, and eulipotyphlans (including hedgehogs, moles and shrews).",
+        "The next three are the primates (including humans, monkeys and lemurs), the even-toed ungulates (including pigs, bovids and whales), and the Carnivora (including cats, dogs, and seals).",
+        "Mammals are the only living members of Synapsida; this clade, together with Sauropsida (reptiles and birds), constitutes the larger Amniota clade.",
+        "Early synapsids are referred to as \"pelycosaurs.\" The more advanced therapsids became dominant during the Guadalupian.",
+        "Mammals originated from cynodonts, an advanced group of therapsids, during the Late Triassic to Early Jurassic.",
+        "Mammals achieved their modern diversity in the Paleogene and Neogene periods of the Cenozoic era, after the extinction of non-avian dinosaurs, and have been the dominant terrestrial animal group from 66 million years ago to the present.",
+        "The basic mammalian body type is quadrupedal, with most mammals using four limbs for terrestrial locomotion; but in some, the limbs are adapted for life at sea, in the air, in trees or underground.",
+        "The bipeds have adapted to move using only the two lower limbs, while the rear limbs of cetaceans and the sea cows are mere internal vestiges."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tyrannosaurus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30467",
+      "retrieved_at": "2026-10-18T15:27:33.022Z",
+      "sha256": "ab9d952ce2809e13eaae6fd6e7dafd0b36afd3bfc0007c8ee35159135c73783d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The type species Tyrannosaurus rex (rex meaning 'king' in Latin), often shortened to T.",
+        "rex or colloquially T-Rex, is one of the best represented theropods.",
+        "It lived throughout what is now western North America, on what was then an island continent known as Laramidia.",
+        "Tyrannosaurus had a much wider range than other tyrannosaurids.",
+        "Fossils are found in geological formations which have been dated to the late Maastrichtian age of the late Cretaceous period, 69 to 66 million years ago, with isolated specimens possibly indicating an earlier origin in the middle Campanian age.",
+        "It was one of the last known members of the tyrannosaurids and among the last non-avian dinosaurs to exist before the Cretaceous–Paleogene extinction event.",
+        "Like other tyrannosaurids, Tyrannosaurus was a bipedal carnivore with a massive skull balanced by a long, heavy tail.",
+        "Relative to its large and powerful hind limbs, the forelimbs of Tyrannosaurus were short but unusually powerful for their size, and they had two clawed digits.",
+        "The most complete specimen measures 12.3–12.4 m (40–41 ft) in length, but according to most modern estimates, Tyrannosaurus could have exceeded sizes of 13 m (43 ft) in length, 3.7–4 m (12–13 ft) in hip height, and 8.8 t (8.7 long tons; 9.7 short tons) in mass.",
+        "Although some other theropods might have rivaled or exceeded Tyrannosaurus in size, it is still among the largest known land predators, with its estimated bite force being the largest among all terrestrial animals.",
+        "By far the largest carnivore in its environment, Tyrannosaurus rex was most likely an apex predator, preying upon hadrosaurs, juvenile armored herbivores like ceratopsians and ankylosaurs, and possibly sauropods.",
+        "The question of whether Tyrannosaurus was an apex predator or a pure scavenger was among the longest debates in paleontology."
+      ]
+    }
+  ]
+}

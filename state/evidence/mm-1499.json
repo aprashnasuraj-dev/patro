@@ -1,0 +1,125 @@
+{
+  "id": "mm-1499",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Redefining the Operating Model: How AI-Native Organizations Differ from AI-Augmented Ones",
+      "publisher": "Elsevier BV",
+      "author": "Shaik, Ali Sadhik",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6811920",
+      "retrieved_at": "2026-10-18T15:48:48.340Z",
+      "sha256": "b47d01cd923e8b3c60f393a1684947fb19c2145e74b607f3f93b8ef7bc8645ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Most enterprises approach artificial intelligence as an augmentation layer-bolting AI tools onto existing workflows, decision structures, and incentive systems.",
+        "A smaller cohort of organizations, predominantly born-digital firms, have built their operating models around AI-first principles from inception.",
+        "This paper draws a systematic distinction between AI-augmented and AI-native operating models, examining how they differ across four organizational dimensions: decision rights architecture, incentive structures, talent models, and information flows.",
+        "Using comparative case analysis of born-digital companies and legacy incumbents attempting AI transformation, the paper demonstrates that augmentation strategies tend to plateau because they preserve the very decision-making structures that AI is meant to replace.",
+        "The paper finds that the transition from AI-augmented to AI-native requires not incremental improvement but a discontinuous redesign of the operating model.",
+        "Implications are developed for Chief Strategy Officers designing AI operating models, Chief Operating Officers restructuring workflows, and organizational design practitioners navigating the augmentation-to-native transition."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Central processing unit",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5218",
+      "retrieved_at": "2026-10-18T15:48:49.381Z",
+      "sha256": "6e6495d0b47b7f1fc842275c22650453665c3120b26153279dfed9b4cc4861d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A central processing unit (CPU), also known as a central processor, main processor, or simply processor, is the primary processor in a given computer.",
+        "Its electronic circuitry executes instructions of a computer program, such as arithmetic, logic, controlling, and input/output (I/O) operations.",
+        "This role contrasts with that of external components, such as main memory and I/O circuitry, and specialized coprocessors such as graphics processing units (GPUs).",
+        "The form, design, and implementation of CPUs have changed over time, but their fundamental operation remains almost unchanged.",
+        "Modern CPUs devote a lot of semiconductor area to caches and instruction-level parallelism to increase performance and to CPU modes to support operating systems and virtualization.",
+        "Most modern CPUs are implemented on integrated circuit (IC) microprocessors, with one or more CPUs on a single IC chip.",
+        "Microprocessor chips with multiple CPUs are called multi-core processors (MCPs).",
+        "The individual physical CPUs, called processor cores, can also be multithreaded to support CPU-level multithreading.",
+        "An IC that contains a CPU may also contain memory, peripheral interfaces, and other components of a computer; such integrated devices are variously called microcontrollers or systems on chip (SoCs)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Microprocessor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19553",
+      "retrieved_at": "2026-10-18T15:48:49.381Z",
+      "sha256": "d61c633a312764f42fcfbfe08bfd56c861ffc2215ad3edfe919b21a0aace5680",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A microprocessor is a computer processor for which the data processing logic and control is included on a single integrated circuit (IC), or a small number of ICs.",
+        "The microprocessor contains the arithmetic, logic, and control circuitry required to perform the functions of a computer's central processing unit (CPU).",
+        "The microprocessor is capable of interpreting and executing machine code and performing arithmetic operations.",
+        "The microprocessor is a multipurpose, clock-driven, register-based, digital integrated circuit that accepts binary data as input, processes it according to instructions stored in its memory, and provides results (also in binary form) as output.",
+        "Microprocessors contain both combinational logic and sequential digital logic, and operate on numbers and symbols represented in the binary number system.",
+        "The integration of a whole CPU onto a single or a few integrated circuits using very-large-scale integration (VLSI) greatly reduced the cost of computing.",
+        "Integrated circuit processors are produced in large numbers by highly automated metal–oxide–semiconductor (MOS) fabrication processes, resulting in a relatively low unit price.",
+        "Single-chip processors increase reliability because there are fewer electrical connections that can fail.",
+        "As microprocessor designs improve, the cost of manufacturing a chip (with smaller components built on a semiconductor chip the same size) generally stays the same, according to Rock's law.",
+        "Before microprocessors, small computers had been built using racks of circuit boards with many medium- and small-scale integrated circuits.",
+        "Microprocessors combined this into one or a few large-scale ICs.",
+        "While there is disagreement over who deserves credit for the invention of the microprocessor, the first commercially available microprocessor was the Intel 4004, designed by Federico Faggin and introduced in 1971."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "CPU cache",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=849181",
+      "retrieved_at": "2026-10-18T15:48:49.381Z",
+      "sha256": "8c312355cf02c38bcc3fa58a0db37c6e85d565326c3612abf57a3924bd179107",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A CPU cache is a hardware cache used by the central processing unit (CPU) of a computer to reduce the average cost (time or energy) to access data from the main memory.",
+        "A cache is a smaller, faster memory, located closer to a processor core, which stores copies of the data from frequently used main memory locations, avoiding the need to always refer to main memory which may be tens to hundreds of times slower to access.",
+        "Cache memory is typically implemented with static random-access memory (SRAM), which requires multiple transistors to store a single bit.",
+        "This makes it expensive in terms of the area it takes up, and in modern CPUs the cache is typically the largest part by chip area.",
+        "The size of the cache needs to be balanced with the general desire for smaller chips which cost less.",
+        "Some modern designs implement some or all of their cache using the physically smaller eDRAM, which is slower to use than SRAM but allows larger amounts of cache for any given amount of chip area.",
+        "Most CPUs have a hierarchy of multiple cache levels (L1, L2, often L3, and rarely even L4), with separate instruction-specific (I-cache) and data-specific (D-cache) caches at level 1.",
+        "The different levels are implemented in different areas of the chip; L1 is located as close to a CPU core as possible and thus offers the highest speed due to short signal paths, but requires careful design.",
+        "L2 caches are physically separate from the CPU and operate slower, but place fewer demands on the chip designer and can be made much larger without impacting the CPU design.",
+        "Other types of caches exist (that are not counted towards the \"cache size\" of the most important caches mentioned above), such as the translation lookaside buffer (TLB) which is part of the memory management unit (MMU) which most CPUs have.",
+        "Input/output sections also often contain data buffers that serve a similar purpose."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "History of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2894560",
+      "retrieved_at": "2026-10-18T15:48:49.381Z",
+      "sha256": "216abdf69c1c864e3d5d3256f45917f7b2c564c893de746de859aea9cc13d985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of artificial intelligence (AI) began in antiquity, with myths, stories, and rumors of artificial beings endowed with intelligence by master craftsmen.",
+        "The field of research that eventually evolved into what is widely described as artificial intelligence was founded at a workshop held on the campus of Dartmouth College in 1956.",
+        "At the workshop, a concept of the first AI program, Logic Theorist, was presented by future Turing Awardee Allen Newell and future Nobel Laureate Herbert A.",
+        "The software architecture of this program differed from modern AI systems in that it was a hand-written fixed script.",
+        "Attendees of the workshop became the leaders of AI research for decades.",
+        "Many of them predicted that machines as intelligent as humans would exist within a generation.",
+        "Despite the eventual success of its attendees and the field as a whole, the workshop was considered a failure.",
+        "\"When the workshop failed to deliver, AI was dismissed as a pipe dream and research funding dried up\".",
+        "It became apparent that researchers had underestimated the complexity of this objective.",
+        "In 1974, criticism from James Lighthill and pressure from the U.S.",
+        "and British Governments to stop funding undirected research into artificial intelligence.",
+        "Seven years later, a visionary initiative by the Japanese Government and the success of expert systems  reinvigorated investment in AI, and by the late 1980s, the industry had grown into a billion-dollar enterprise."
+      ]
+    }
+  ]
+}

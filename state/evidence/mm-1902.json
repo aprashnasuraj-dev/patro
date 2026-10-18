@@ -1,0 +1,174 @@
+{
+  "id": "mm-1902",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Gutenberg Bible (B 42) of 1454",
+      "publisher": "Haus Publishing",
+      "author": null,
+      "published_at": "2020-03-01",
+      "url": "https://doi.org/10.2307/jj.17072703.8",
+      "retrieved_at": "2026-10-18T16:05:25.144Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Burgos Bible",
+      "publisher": "Haus Publishing",
+      "author": null,
+      "published_at": "2020-03-01",
+      "url": "https://doi.org/10.2307/jj.17072703.10",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "American Children Encountering the Bible: Ensuring Engagement through the American Education System and the Children’s Bible",
+      "publisher": "HIMALAYA",
+      "author": "Zachary S Teicher",
+      "published_at": "2007-01-01",
+      "url": "https://openalex.org/W1531605735",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "24e7521cc28180e1fd48fab033771bbeea8af3c6762b6a59becc0f9e20d8a50b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Society and parents continue to ensure that American children are familiar with the stories of the bible.",
+        "The bible is part of the American cultural milieu and has been inculcated in successive generations through schools and children’s bibles.",
+        "Parents in the twenty-first century have turned to adapted children’s bibles as the principal means by which to teach their children the bible.",
+        "This is due in large part to the bible loosing its place in the curriculum of American public schools.",
+        "This paper examines how children's bibles developed, why teaching the bible has been a priority, and who have been the teachers and adaptors of the bible for children."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "New Media and Competition: Printing and Europe's Transformation after Gutenberg",
+      "publisher": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+      "author": "Jeremiah E. Dittmar; Skipper Seabold",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W2917674348",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "e42b6dfbf03322a555796a1e8b274fae4c915ed8a42ce8e0000c667544d71f4e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We study the role of book content in economic, religious, and institutional development after the introduction of printing, and the role of competition in determining the amount and content of local printing.",
+        "We focus on (1) business education content and (2) religious ideas during the Protestant Reformation.",
+        "We construct data on printing output and competition in European cities 1454-1600.We document positive relationships between business education content and city growth, and Protestant content and institutional change.",
+        "We confirm the relationships between competition, content, and outcomes using printer deaths as a source of exogenous variation."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Bible",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3390",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "48c0ba71a269eeb45eacf471585588cfeaf220e75f3e119ca09fd2f8c6f79421",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Bible is an anthology of religious texts that are central to Judaism and Christianity, and important in other Abrahamic religions such as Islam.",
+        "The texts include instructions, stories, poetry, letters, prophecies, and other genres.",
+        "The religious texts, or scriptures, were compiled by different religious communities into various official collections, called biblical canons.",
+        "Believers generally consider the Bible to be a product of divine inspiration, but the way they understand what that means and how they interpret the text varies.",
+        "The Hebrew Bible, originally written in Hebrew, with some parts in Aramaic, is divided into three sections: the Torah (\"Teaching\"), Nevi'im (\"Prophets\") and Ketuvim (\"Writings\").",
+        "The acronym Tanakh (Hebrew: תָּנָ״ךְ‎, romanized: Tanaḵ) is an alternate term for the Hebrew Bible.",
+        "The Masoretic Text, a medieval edition of the Tanakh, is considered the authoritative text of the Hebrew Bible by all branches of modern Rabbinic Judaism.",
+        "The Christian Bible is divided into the Old Testament and the New Testament.",
+        "The Old Testament is a reorganization of the books of the Hebrew Bible and the deuterocanonical books, derived from historical editions of those texts.",
+        "Christianity began as an outgrowth of Second Temple Judaism and the early Church continued the Jewish tradition of writing and incorporating what it saw as inspired, authoritative religious books.",
+        "The gospels, which are narratives about the life and teachings of Jesus, along with the Pauline epistles and other texts quickly coalesced into the New Testament, originally written in Koine Greek, mostly in the 1st century CE.",
+        "With estimated total sales of over five billion copies, the Christian Bible is the best-selling publication of all time."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Vulgate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32576",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "11e0057f6e930d75fe0ce344ebda7d2bea1cc392bbbba8de944973ae569d598a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Vulgate () is a late-4th-century Latin translation of the Bible.",
+        "It is largely the work of Saint Jerome, who was commissioned by Pope Damasus I in 382 to revise the Vetus Latina Gospels used by the Roman Church.",
+        "Later, of his own initiative, Jerome extended this work of revision and translation to include most of the books of the Bible.",
+        "The Vulgate was progressively adopted as the Bible text within the Western Church.",
+        "Over succeeding centuries, it eventually eclipsed the Vetus Latina texts.",
+        "By the 13th century it had taken over from the former version the designation versio vulgata (the \"version commonly used\") or vulgata for short.",
+        "The Vulgate also contains some Vetus Latina translations that Jerome did not work on.",
+        "The Catholic Church affirmed the Vulgate as its official Latin Bible at the Council of Trent (1545–1563), though there was no single authoritative edition of the book in any language at that time.",
+        "Eventually an official edition of the Vulgate was produced, to be promulgated among the Catholic Church as the Sixtine Vulgate (1590), then as the Clementine Vulgate (1592), and then as the Nova Vulgata (1979).",
+        "The Clementine edition of the Vulgate became the standard Bible text of the Roman Rite of the Catholic Church, and remained so until 1979 when the Nova Vulgata was promulgated."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Book of Judith",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=420456",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "d44f2d13d266e33d6c38cb046539fb075040e4490d872435cf88290315319b74",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Book of Judith is a deuterocanonical book included in the Septuagint and the Catholic, Eastern Orthodox, Oriental Orthodox, and Church of the East Old Testament of the Bible.",
+        "It is excluded from the Hebrew canon and assigned by Protestants to the apocrypha.",
+        "It tells of a Jewish widow, Judith, who uses her beauty and charm to kill an Assyrian general who has besieged her city, Bethulia.",
+        "With this act, she saves nearby Jerusalem from total destruction.",
+        "The name Judith (Hebrew: יְהוּדִית, Modern: Yəhūdīt, Tiberian: Yŭhūḏīṯ), meaning \"praised\" or \"Jewess\", is the feminine form of Judah.",
+        "The extant translated manuscripts from antiquity appear to contain several historical anachronisms, which is why the majority of modern scholars consider the book ahistorical.",
+        "Instead, the book has been re-classified as a parable, theological novel, or even the first historical novel.",
+        "Although the majority of Catholic scholars and clergy now view the book as fictional, the Catholic Church had traditionally maintained the book's historicity, assigning its events to the reign of King Manasseh of Judah and that the names were changed in later centuries for an unknown reason.",
+        "The Jewish Encyclopedia identifies Shechem (modern day Nablus) as \"Bethulia\", and argues that the name was changed because of the feud between the Jews and Samaritans.",
+        "If this is the case, it would explain why other names seem anachronistic as well."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Douay–Rheims Bible",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=424499",
+      "retrieved_at": "2026-10-18T16:05:25.644Z",
+      "sha256": "9ed7bcd19e708b838bcdefd14b683508cdc90648927443558e2cf0f95fbc7326",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The New Testament portion was published in Rheims, France, in 1582, in one volume, with extensive commentary and notes.",
+        "The Old Testament portion was published in two volumes by the University of Douai.",
+        "The first volume, covering Genesis to Job, was published in 1609.",
+        "The second, covering the Book of Psalms to 2 Maccabees (spelled \"Machabees\"), and the three apocryphal books of the Vulgate appendix following the Old Testament (Prayer of Manasseh, 3 Esdras, and 4 Esdras), was published in 1610.",
+        "Marginal notes on translation, and the Hebrew and Greek source texts of the Vulgate, compose majority portions of the edition.",
+        "In 1589, William Fulke collated the complete Rheims text and notes in parallel columns with those of the Bishops' Bible.",
+        "That work sold widely in England, prompting its re-issue in three further editions by 1633.",
+        "Fulke's editions of the Rheims New Testament were of crucial significance to 17th-century English exegesis.",
+        "Much of the first edition employed Latin vocabulary, rendering it particularly difficult to read.",
+        "Consequently, a revision of the translation was undertaken by Bishop Richard Challoner: the New Testament in three editions of 1749, 1750, and 1752; and the Old Testament (minus the Vulgate apocrypha) in 1750.",
+        "Subsequent editions of the Challoner revision contain minor changes to the text.",
+        "Challoner's New Testament was extensively revised by Bernard MacMahon in a series of Dublin editions from 1783 to 1810."
+      ]
+    }
+  ]
+}
