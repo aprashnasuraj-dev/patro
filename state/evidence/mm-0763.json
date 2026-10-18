@@ -1,0 +1,184 @@
+{
+  "id": "mm-0763",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Are Flamingos Pink?",
+      "publisher": "Front Matter",
+      "author": "Frey, Erzsebet",
+      "published_at": "2023-12-10",
+      "url": "https://doi.org/10.59350/pznah-7nk68",
+      "retrieved_at": "2026-10-18T15:46:19.178Z",
+      "sha256": "4adc9685b73400c3a7588c2f12472bd356597feb92656faa8da307bb9456aa52",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ever wondered why these elegant birds are associated with pink?",
+        "In this article, we'll delve into the fascinating world of flamingo appearance and explore the reasons behind their unique hues.",
+        "Their diet, rich in carotenoids, is responsible for the stunning transformation of their plumage."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Are Flamingos Pink?",
+      "publisher": "Front Matter",
+      "author": "Frey, Erzsebet",
+      "published_at": "2023-12-10",
+      "url": "https://doi.org/10.59350/tmm44-03p76",
+      "retrieved_at": "2026-10-18T15:46:19.178Z",
+      "sha256": "4adc9685b73400c3a7588c2f12472bd356597feb92656faa8da307bb9456aa52",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ever wondered why these elegant birds are associated with pink?",
+        "In this article, we'll delve into the fascinating world of flamingo appearance and explore the reasons behind their unique hues.",
+        "Their diet, rich in carotenoids, is responsible for the stunning transformation of their plumage."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Beyond the Pink Flamingo",
+      "publisher": "Deep Blue (University of Michigan)",
+      "author": "Christian Runge",
+      "published_at": "2009-01-01",
+      "url": "https://openalex.org/W2768391335",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "b3f6c73979c367862a7032c298c25fcb019102fc06d8ee94bd31e8c9a0f4dc06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An ecological urban landscape must have one foot anchored in local history and culture, and the other foot striding towards a new and adaptive future.",
+        "Baltimore, with its diverse ecosystems and unique cultures, provides fertile ground for generating place-specific urban landscapes that have the potential to evolve over time.",
+        "Diverse cultural hallmarks such as window screen paintings, John Waters’ films, Cockeysville marble, and the Chesapeake Bay Blue Crab are surveyed for their potential use as inspiration for a lasting urban ecological design."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bright Pink Flamingos and Bright Pink Secretaries: Meaning from Unexpected Input",
+      "publisher": "eScholarship (California Digital Library)",
+      "author": "Harshada Vinaya; Ben D. Amsel; Marta Kutas A",
+      "published_at": "2026-01-01",
+      "url": "https://openalex.org/W7214516419",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "735efb1c98b730d97ef44ed12bd425d7b609e9263d5475988e08a683a0db8d24",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Understanding how different sources of our semantic knowledge contribute to language comprehension, especially under unpredictable conditions, remains a challenge.",
+        "Using vision-language CLIP, and language-only GPT2 representations, we examined whether these information sources differentially predict single-trial EEG responses to expected (i.e., high cloze probability) and unexpected (i.e., near-zero cloze probability) words in constraining sentence contexts.",
+        "We also assess whether these effects vary across semantic processing by analyzing 100-ms intervals from 200-700 ms post word onset.",
+        "GPT2 provided stronger fits for both expected and unexpected words from 300 to 500 ms.",
+        "CLIP explained variance beyond GPT2 from 300 ms for expected, and from 400 ms for unexpected words.",
+        "For the unexpected words, CLIP performed better than GPT2 in the 500-600 ms interval.",
+        "Results show that both pure distributional and vision-informed language semantic information explain unique variance in EEG responses, with systematic differences due to word predictability as well as processing time."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "In search of the why: Developing a system for answering why-questions",
+      "publisher": "Radboud Repository (Radboud University)",
+      "author": "Suzan Verberne",
+      "published_at": "2010-01-01",
+      "url": "https://openalex.org/W1555509531",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "fe4b97bdcedb7b91811c86609be7a67c2646f632a352803a8beaa9fc8027e73c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Information searching was once a task performed almost exclusively by librarians and domain experts.",
+        "The web pages are ranked according to their estimated relevance to the input query.",
+        "Ad-hoc document retrieval and ranking is the core business of the large web search engines Google, Yahoo and Bing.\\nThe value of ad-hoc document retrieval for the user depends on his/her information need.",
+        "For example, the query \"flamingos habitat\" requires scrolling through at least one of the retrieved documents in order to satisfy the user’s information need.\\nQuestions in natural language such as \"where do flamingos nest?\" tend to be even more specific.",
+        "In this thesis we address the problem of answering questions that start with why: \"why are flamingos pink?\" Why-questions require a different approach than factive questions because their answers tend to be longer and more complex.",
+        "Moreover, because of the complexity of the problem, why-question answering (why-QA) is an interesting case study for a linguistically motivated approach to information retrieval."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "European bison",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39059",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "13d1e677bb97047f7747c9794feecbd7684a47959037c43eeaf97902879eb099",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The European bison (pl.: bison) (Bison bonasus) or the European wood bison, also known as the wisent ( or ), the zubr (), or sometimes colloquially as the European buffalo, is a European species of bison.",
+        "It is one of two extant species of bison, alongside the American bison.",
+        "The European bison is the heaviest wild land animal in Europe, and individuals in the past may have been even larger than their modern-day descendants.",
+        "During late antiquity and the Middle Ages, bison became extinct in most of Europe and Asia, surviving into the 20th century only in northern-central Europe and the northern Caucasus Mountains.",
+        "During the early years of the 20th century, the remaining bison were hunted to extinction in the wild, with domestic bison later reintroduced into the wild.",
+        "By the late 2010s, the species numbered several thousand and had been returned to the wild by captive breeding programmes.",
+        "It is no longer in immediate danger of extinction, but remains absent from most of its historical range.",
+        "It is not to be confused with the aurochs (Bos primigenius), the extinct ancestor of domestic cattle, with which it once co-existed.",
+        "In the 19th century, there were scattered reports of wolves, lions, tigers, and bears hunting bison.",
+        "In the past, especially during the Middle Ages, humans commonly killed bison for their hide, meat and other uses such as drinking horns.",
+        "European bison were hunted to extinction in the wild in the early 20th century, with the last wild animals of the B.",
+        "bonasus subspecies being shot in the Białowieża Forest (on today's Belarus–Poland border) in 1921."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Flamingo",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=165927",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "30851b580c5356483eebf2fb5326bcaf0041f398f75baf31af90fe23c0a511d1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Flamingos or flamingoes () are a type of wading bird in the family Phoenicopteridae, which is the only extant family in the order Phoenicopteriformes.",
+        "There are four flamingo species distributed throughout the Americas (including the Caribbean), and two species native to Afro-Eurasia."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Pink",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=215567",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "4491c2ac09e8dcf15e54dfed9947c556e570779bae290f238845ab0f2e693d2f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pink is a pale tint of red or rose, the color of the pink flower.",
+        "A combination of pink and white is associated with innocence, whereas a combination of pink and black links to eroticism and seduction.",
+        "In the 21st century, pink is seen as a symbol of femininity, though it has not always been seen this way.",
+        "Prior to the second half of the 20th century, pink frequently reflected masculinity.",
+        "Scholars have linked the decisive feminization of pink to the emergence of Barbie in 1959."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Flamingo Las Vegas",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1901121",
+      "retrieved_at": "2026-10-18T15:46:19.307Z",
+      "sha256": "04186cb97901d769ba5d9b419b532ecc8d68ee733de71d84b5ab0b5ceefabc1a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Flamingo Las Vegas (formerly the Flamingo Hilton) is a casino hotel on the Las Vegas Strip in Paradise, Nevada.",
+        "The Flamingo includes a 72,299 sq ft (6,716.8 m2) casino and a 28-story hotel with 3,460 rooms.",
+        "The resort was originally proposed by Billy Wilkerson, founder of The Hollywood Reporter, who purchased the land in 1945.",
+        "Early the following year, he partnered with a trio of mobsters to obtain financing.",
+        "Among his partners was Benjamin \"Bugsy\" Siegel, who proceeded to take over the $1 million project, to Wilkerson's dismay.",
+        "Construction costs rose under Siegel's management, with a final price of $6 million.",
+        "The Flamingo's casino opened on December 26, 1946, followed by a three-story hotel on March 1, 1947.",
+        "It is the oldest continuously operating resort on the Strip, and was the third to open there.",
+        "Siegel was killed by an unknown shooter in June 1947, and numerous ownership changes would take place in the years to come.",
+        "Hilton Hotels Corporation bought the resort in the early 1970s, and renamed it the Flamingo Hilton, a name it would retain until 2001.",
+        "The first 28-story addition was completed in 1978, and others would follow over the next two decades, with the final one finished in 1995.",
+        "The three-story hotel, the last remaining structure from the original Flamingo, was demolished in 1993, helping make way for the final high-rise addition."
+      ]
+    }
+  ]
+}

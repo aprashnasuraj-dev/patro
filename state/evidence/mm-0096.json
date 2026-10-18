@@ -1,0 +1,108 @@
+{
+  "id": "mm-0096",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Is Ice Slippery?",
+      "publisher": "AIP Publishing",
+      "author": "Rosenberg, Robert",
+      "published_at": "2005-12-01",
+      "url": "https://doi.org/10.1063/1.2169444",
+      "retrieved_at": "2026-10-18T14:52:21.240Z",
+      "sha256": "3e1be6233ddca3d1993803775da559ca71a01e31528efb04b44e7524e8495aaf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 1859 Michael Faraday postulated that a thin film of liquid covers the surface of ice—even at temperatures well below freezing.",
+        "Neglected for nearly a century, the dynamics of ice surfaces has now grown into an active research topic."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Ice",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14946",
+      "retrieved_at": "2026-10-18T14:52:21.240Z",
+      "sha256": "ae1870f85097199dc80cb942dcc3b5141a8253d35495d68320178a032c6e867b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ice is water that is frozen into a solid state, typically forming at or below temperatures of 0 °C, 32 °F, or 273.15 K.",
+        "It occurs naturally on Earth, on other planets, in Oort cloud objects, and as interstellar ice.",
+        "As a naturally occurring crystalline inorganic solid with an ordered structure, ice is considered to be a mineral.",
+        "Depending on the presence of impurities such as particles of soil or bubbles of air, it can appear transparent or a more or less opaque bluish-white color.",
+        "Virtually all of the ice on Earth is of a hexagonal crystalline structure denoted as ice Ih (spoken as \"ice one h\").",
+        "Depending on temperature and pressure, at least nineteen phases (packing geometries) can exist.",
+        "The most common phase transition to ice Ih occurs when liquid water is cooled below 0 °C (273.15 K, 32 °F) at standard atmospheric pressure.",
+        "When water is cooled rapidly (quenching), up to three types of amorphous ice can form.",
+        "Interstellar ice is overwhelmingly low-density amorphous ice (LDA), which likely makes LDA ice the most abundant type in the universe.",
+        "When cooled slowly, correlated proton tunneling occurs below −253.15 °C (20 K, −423.67 °F) giving rise to macroscopic quantum phenomena.",
+        "Ice is abundant on the Earth's surface, particularly in the polar regions and above the snow line, where it can aggregate from snow to form glaciers and ice sheets.",
+        "As snowflakes and hail, ice is a common form of precipitation, and it may also be deposited directly by water vapor as frost."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ice skating",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15146",
+      "retrieved_at": "2026-10-18T14:52:21.240Z",
+      "sha256": "a93d41bff76f5d739b272d0b1f78366d1ac1a1a1438a9e3a1e4bdf75db4fab5d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ice skating is the self-propulsion and gliding of a person across a flat ice surface, using metal-bladed ice skates.",
+        "People skate for various reasons, including recreation (fun), exercise, competitive sports, and commuting.",
+        "Ice skating may be performed on naturally frozen bodies of water, such as ponds, lakes, canals, and rivers, and on human-made ice surfaces both indoors and outdoors.",
+        "Natural ice surfaces used by skaters can accommodate a variety of winter sports which generally require an enclosed area, but are also used by skaters who need ice tracks and trails for distance skating and speed skating.",
+        "Man-made ice surfaces include ice rinks, ice hockey rinks, bandy fields, ice tracks required for the sport of ice cross downhill, and arenas.",
+        "Various formal sports involving ice skating have emerged since the 19th century.",
+        "Ice hockey, bandy, rinkball, and ringette are team sports played with, respectively, a flat sliding puck, a ball, and a rubber ring.",
+        "Synchronized skating is a unique artistic team sport derived from figure skating.",
+        "Figure skating, ice cross downhill, speed skating, and barrel jumping (a discipline of speed skating) are among the sporting disciplines for individuals."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sled",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=153862",
+      "retrieved_at": "2026-10-18T14:52:21.240Z",
+      "sha256": "fcd663f994a3baefa345b02bb5ca48d9b0bf342b012c4dd7457abe175ebce7e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A sled, sledge, or sleigh is a vehicle that slides across a surface, usually of ice or snow.",
+        "It is built with a smooth underside or a separate body supported by runners that reduce friction with the surface.",
+        "Some designs are pulled by humans, animals, or machines to transport passengers or cargo across relatively level ground.",
+        "Others are designed to travel downhill for recreation or competition.",
+        "Terminology varies by region, for example \"sled\", \"sledge\", and \"sleigh\" have different common uses in British, American, and Australian English."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Slippery rail",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8079739",
+      "retrieved_at": "2026-10-18T14:52:21.240Z",
+      "sha256": "439079e8bb9c3777cf138eef6ba74f69e2309d90f4a6a6bc5c17cb20a0f4475d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Slippery rail, or low railhead adhesion, is a condition of railways (railroads) where contamination of the railhead reduces the traction between the wheel and the rail.",
+        "This can lead to wheelslip when the train is taking power, and wheelslide when the train is braking.",
+        "One common cause of contamination is fallen leaves that adhere to the railhead (top surface) of railway tracks.",
+        "The condition results in significant reduction in friction between train wheels and rails, and in extreme cases can render the track temporarily unusable.",
+        "In Britain, the situation is colloquially referred to as \"leaves on the line\"."
+      ]
+    }
+  ]
+}

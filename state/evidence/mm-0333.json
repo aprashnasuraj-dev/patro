@@ -1,0 +1,92 @@
+{
+  "id": "mm-0333",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Flavoring",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10591",
+      "retrieved_at": "2026-10-18T15:28:57.661Z",
+      "sha256": "90b32f434ce4b63c143c5ad1989ef50c68b8b24c3f5a4b7aa23c33f1032ea3b2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A flavoring (or flavouring), also known as flavor (or flavour) or flavorant, is a food additive that is used to improve the taste or smell of food.",
+        "It changes the perceptual impression of food as determined primarily by the chemoreceptors of the gustatory and olfactory systems.",
+        "Along with additives, other components, like sugars, determine the taste of food.",
+        "A flavoring is defined as a substance that gives another substance taste, altering the characteristics of the solute, causing it to become sweet, sour, tangy, etc.",
+        "Although the term, in common language, denotes the combined chemical sensations of taste and smell, the same term is used in the fragrance and flavors industry to refer to edible chemicals and extracts that alter the flavor of food and food products through the sense of smell.",
+        "Owing to the high cost, or unavailability, of natural flavor extracts, most commercial flavorings are \"nature-identical\", which means that they are the chemical equivalent of natural flavors, but chemically synthesized rather than having been extracted from source materials.",
+        "Identification of components of natural foods, for example a raspberry, may be done using technology such as headspace techniques, so the flavorist can imitate the flavor by using a few of the same chemicals present.",
+        "In the EU legislation, the term \"natural-identical flavoring\" does not exist.",
+        "The legislation is specified on what is a \"flavoring\" and a \"natural flavoring\"."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Brining",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52865",
+      "retrieved_at": "2026-10-18T15:28:57.661Z",
+      "sha256": "80ae39a92a56ad276be70657b64644c08eb97fde78b3524691f50e972b41b698",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Brining is treating food with brine or coarse salt which preserves and seasons the food while enhancing tenderness.",
+        "Flavor can be further developed with additions such as herbs, spices, sugar, caramel or vinegar.",
+        "Meat and fish are typically brined for less than twenty-four hours while vegetables, cheeses and fruit are brined in a much longer process known as pickling.",
+        "Brining is similar to marination, except that a marinade usually includes a significant amount of acid, such as vinegar or citrus juice.",
+        "Brining is also similar to curing, which usually involves significantly drying the food, and is done over a much longer time period."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Monosodium glutamate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62289",
+      "retrieved_at": "2026-10-18T15:28:57.661Z",
+      "sha256": "3902fe7228e4339ac541c016da82213373d3e3fd4fe12880f23428070d06a917",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Monosodium glutamate (MSG), also known as sodium glutamate,  is a sodium salt of glutamic acid.",
+        "MSG is found naturally in some foods including tomatoes and cheese in this glutamic acid form, and is used in cooking as a flavor enhancer that intensifies the umami flavor of food, as naturally occurring glutamate does in foods such as stews and meat soups.",
+        "MSG was first extracted in 1908 by Japanese biochemist Kikunae Ikeda, who tried to isolate and duplicate the savory taste of kombu, an edible seaweed used as a broth (dashi)  ingredient in Japanese cuisine.",
+        "It also balances, blends, and rounds the perception of other tastes.",
+        "MSG, along with disodium ribonucleotides, is commonly used and found in stock (bouillon) cubes, soups, ramen, gravy, stews, condiments, savory snacks, etc.",
+        "Food and Drug Administration has given MSG its generally recognized as safe (GRAS) designation.",
+        "It is a popular misconception that MSG can cause headaches and other feelings of discomfort, known as \"Chinese restaurant syndrome\".",
+        "Several blinded studies show no such effects when MSG is combined with food in normal concentrations, and are inconclusive when MSG is added to broth in large concentrations.",
+        "The European Union classifies it as a food additive permitted in certain foods and subject to quantitative limits."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Umami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62462",
+      "retrieved_at": "2026-10-18T15:28:57.661Z",
+      "sha256": "296e0fc68cceaa2c56303483462cdcaf792e06c474af1a5fa70d2155c07f60a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Umami ( from Japanese: うま味, pronounced [ɯmami]), or savoriness, is one of the five basic tastes.",
+        "People taste umami through taste receptors that typically respond to glutamates and  nucleotides, which are widely present in meat broths and fermented products.",
+        "Glutamates are commonly added to some foods in the form of monosodium glutamate (MSG), and nucleotides are commonly added in the form of disodium guanylate,  inosine monophosphate (IMP) or guanosine monophosphate (GMP).",
+        "Since umami has its own receptors rather than arising out of a combination of the traditionally recognized taste receptors, scientists now consider umami to be a distinct taste.",
+        "In 1908, Kikunae Ikeda of the University of Tokyo scientifically identified umami as a distinct taste attributed to glutamic acid.",
+        "As a result, in 1909, Ikeda and Saburōsuke Suzuki founded Ajinomoto Co., Inc.",
+        "which introduced the world's first umami seasoning: monosodium glutamate (MSG), marketed in Japan under the name \"Ajinomoto.\" MSG subsequently spread worldwide as a seasoning capable of enhancing umami in a wide variety of dishes.",
+        "In 2000, researchers at the University of Miami identified the presence of umami receptors on the tongue, and in 2006, Ajinomoto's research laboratories found similar receptors in the stomach."
+      ]
+    }
+  ]
+}

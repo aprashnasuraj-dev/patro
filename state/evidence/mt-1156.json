@@ -1,0 +1,109 @@
+{
+  "id": "mt-1156",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T17:38:23.801Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Marine life",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2056572",
+      "retrieved_at": "2026-10-18T17:38:23.801Z",
+      "sha256": "38ae0b0bae623f5f7fc5895595284133672cdc1dc7eb1180e61ae2f947fa4bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As of 2023, more than 242,000 marine species have been documented, and perhaps two million marine species are yet to be documented.",
+        "On average, researchers describe about 2,300 new marine species each year.",
+        "The study of marine life spans multiple fields, primarily marine biology, as well as biological oceanography.",
+        "By volume, oceans provide about 90% of the living space on Earth, and served as the cradle of life and vital biotic sanctuaries throughout Earth's geological history.",
+        "The earliest known life forms evolved as anaerobic prokaryotes (archaea and bacteria) in the Archean oceans around the deep sea hydrothermal vents, before photoautotrophs appeared and allowed the microbial mats to expand into shallow water marine environments.",
+        "The Great Oxygenation Event of the early Proterozoic significantly altered the marine chemistry, which likely caused a widespread anaerobe extinction event but also led to the evolution of eukaryotes through symbiogenesis between surviving anaerobes and aerobes.",
+        "Complex life eventually arose out of marine eukaryotes during the Neoproterozoic, and which culminated in a large evolutionary radiation event of mostly sessile macrofaunae known as the Avalon Explosion.",
+        "This was followed in the early Phanerozoic by a more prominent radiation event known as the Cambrian Explosion, where actively moving eumetazoan became prevalent.",
+        "These marine life also expanded into fresh waters, where fungi and green algae that were washed ashore onto riparian areas started to take hold later during the Ordovician before rapidly expanding inland during the Silurian and Devonian, paving the way for terrestrial ecosystems to develop.",
+        "Today, marine species range in size from the microscopic phytoplankton, which can be as small as 0.02–micrometers; to huge cetaceans like the blue whale, which can reach 33 m (108 ft) in length.",
+        "Marine microorganisms have been variously estimated as constituting about 70% or about 90% of the total marine biomass.",
+        "Marine primary producers, mainly cyanobacteria and chloroplastic algae, produce oxygen and sequester carbon via photosynthesis, which generate enormous biomass and significantly influence the atmospheric chemistry."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T17:38:23.801Z",
+      "sha256": "f4282c7a698b0eb76288cc8e03a2f6d67c86e236658f0e9ec22261e01830feea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Autism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29113700",
+      "retrieved_at": "2026-10-18T17:38:23.801Z",
+      "sha256": "b64258554a52626374679602d4f5cb7a6b624f6ff48e773289481407927e1414",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autism, also known as autism spectrum disorder (ASD), is a condition characterized by impairment in social communication and interaction, as well as a need or strong preference for predictability and routine, sensory processing differences, focused interests, or repetitive behaviors.",
+        "Features of autism are present from early childhood and the condition typically persists throughout life.",
+        "Autism is classified as a neurodevelopmental disorder, and a diagnosis requires professional assessment that these characteristics cause significant challenges in daily life beyond what is expected given a person's age and social environment.",
+        "Because autism is a spectrum disorder, presentations vary and support needs range from minimal assistance to full-time, 24-hour care.",
+        "Autism diagnoses have risen since the 1990s, largely because of broader diagnostic criteria, greater awareness, and wider access to assessment.",
+        "The World Health Organization estimates that about 1 in 100 children were diagnosed between 2012 and 2021, noting an increasing trend.",
+        "Surveillance studies suggest a similar share of the adult population would meet diagnostic criteria if formally assessed.",
+        "Autism is highly heritable and involves many genes, while environmental factors appear to play a smaller, mainly prenatal role.",
+        "Boys are diagnosed several times more often than girls, with girls being better at hiding autistic traits.",
+        "Conditions such as anxiety, depression, attention deficit hyperactivity disorder (ADHD), epilepsy, as well as intellectual disability, are more common among autistic people.",
+        "Autistic people are also more likely to be a part of the LGBTQ community.",
+        "Certain savant abilities are also more common in autistic people than in other groups."
+      ]
+    }
+  ]
+}

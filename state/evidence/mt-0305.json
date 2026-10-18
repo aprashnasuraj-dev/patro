@@ -1,0 +1,91 @@
+{
+  "id": "mt-0305",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Proceedings from the Fourth Mesoamerican Symposium \"Dr. Roberto Navarro López\" on Emerging Zoonotic Disease and Arboviruses: Commenting Insights and Research Findings.",
+      "publisher": "Europe PMC",
+      "author": "Fernández-Santos NA, Rodríguez-Pérez MA, Segovia-Mancillas S, Rodríguez LL, Hamer SA, Hamer GL, Correa-Morales F, Medina-Jaramillo S, Palacios-Mendoza MG, Cruz-Aldán E, Rodriguez-Dominguez GDC, Gomez-Hernandez CH, Larraga-Guillén A, López González I, Rodríguez-Martínez LM, Ortega-Morales AI, Salazar MI, Valdez-Gómez HE, Márquez Ruiz MA, Perteguer MJ, Gómez-Gordillo BG, Aguilar-Durán JA, Becker Fauser ID, Weaver SC, Turell MJ, Kramer LD, Estrada-Franco JG.",
+      "published_at": "2025-07-31",
+      "url": "https://doi.org/10.2147/rrtm.s512767",
+      "retrieved_at": "2026-10-18T17:13:56.130Z",
+      "sha256": "aee778f34be7be21423b1652724e61e2b60e6d49acbd78b076a50f605b2d521e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Zoonotic pathogens such as arboviruses, arenaviruses, filoviruses, coronaviruses, highly pathogenic Avian Influenza A (H5N1) viruses, vesiculoviruses, and many others are emerging and reemerging worldwide, jeopardizing global veterinary and public health.",
+        "Parasitic diseases such as visceral and cutaneous leishmaniasis, trypanosomiasis ( Trypanosoma cruzi ), myiasis, and river blindness ( Onchocerca volvulus ) are also paramount for public health in the Americas and elsewhere.",
+        "In the fall 2024, a group of experts convened in Chiapas, Mexico, for the Fourth Mesoamerican Symposium \"Dr.",
+        "Roberto Navarro López\" on Arboviruses and Emerging Zoonotic Diseases.",
+        "Here, we highlight the importance of some zoonotic pathogens and parasites affecting human health that are being impacted by anthropogenic activities.",
+        "In this context, there are drivers such as changes in climate and landscape transformations, unsound agricultural practices, and wildlife niche replacement delivering numerous opportunities for zoonotic pathogens to emerge and threaten human health and food security."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A Non-Invasive Diagnostic Platform for Canine Leishmaniasis Using VOC Analysis and Distributed Veterinary Infrastructure.",
+      "publisher": "Europe PMC",
+      "author": "Mihailescu MI, Simion VE, Ursachi A, Somaudon V, Jaimes-Mogollón AL, Acevedo CMD, Cuastumal C, Lixandru LM, Llauradó X, Bari NE, Bouchikhi B, Laouini D, Diouani MF, Bessou ABE, Messaoudi N, Zeroual F, Marascu V.",
+      "published_at": "2025-08-04",
+      "url": "https://doi.org/10.3390/vetsci12080732",
+      "retrieved_at": "2026-10-18T17:13:56.130Z",
+      "sha256": "af7d3ca549a059fea687ac7d96caf958d596c4da7da3aeb90c78ddf2acb4cb16",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article describes a new software architecture for the non-invasive detection of canine leishmaniasis disease.",
+        "The proposed platform combines gas-sensing technologies, artificial intelligence (AI), and modular cloud-based software components to identify disease-specific volatile organic compounds (VOCs) found in dog breath and hair samples.",
+        "The system, which has a multi-tier architecture that includes data collection, pre-processing, machine learning-based analysis, diagnosis-request processing, and user interfaces for veterinarians, faculty researchers, and dog owners, has been integrated into a Li-ion Power website plug-in.",
+        "The primary goal of implementing the proposed platform is to detect parasites at any point they are infectious to a host.",
+        "This includes detecting parasites at all stages of their life cycle, where they can infect a new host.",
+        "In addition, this is crucial for accurate diagnosis, effective treatment, and preventing further transmission."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Understanding the Second Year of the COVID-19 Pandemic From a Nursing Perspective: A Multi-Country Descriptive Study.",
+      "publisher": "Europe PMC",
+      "author": "Squires A, Dutton HJ, Casales-Hernandez MG, López JIR, Saldarriaga-Dixon P, Jimenez-Sanchez J, Lee SA, Lee T, Smichenko J, Lickiewicz J, Malinowska-Lipien I, Damiran D, Khatun S, Skela-Savič B, Anyorikeya M, Cheng HY, Rojas DM, Skipalska H, Yanjmaa E, Castillo TP, Zisberg A, Aborigo R, Burka L, Zhuo L, Engel P, Mobarki A, Jones S.",
+      "published_at": "2025-11-11",
+      "url": "https://doi.org/10.1111/jan.70380",
+      "retrieved_at": "2026-10-18T17:13:56.130Z",
+      "sha256": "03adab091fe5e6928cdcadb7d8f04bc012d2cef72f631f39e95352eeca0f072c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aim(s) To determine common and distinct factors experienced by nurses working in acute care settings during the second year of the COVID-19 pandemic.",
+        "Design An online qualitative descriptive study with eight open-ended questions and a comprehensive demographic profile administered via the Qualtrics XM survey software.",
+        "Methods Thirteen countries formed teams and led online data collection in their respective countries through various approaches.",
+        "The data collection period occurred between January 1, 2021, and February 28, 2022.",
+        "Descriptive thematic analysis was conducted in English (with translation), Spanish, and Korean to analyse the qualitative data.",
+        "Descriptive statistics summarised the responses to the demographic profile.",
+        "Results Worldwide, a final sample size of n = 1814 produced 6483 qualitative data points for analysis.",
+        "The results identified ongoing occupational risk factors for nurses during the pandemic's second year, including mental health issues, yet showed some improvements in access to personal protective equipment and resources.",
+        "Four themes emerged from the qualitative analysis, highlighting role changes, living states, and insights into the implementation of pandemic response measures.",
+        "Conclusion Despite individual occupational risks nurses described, structural factors associated with healthcare delivery produced common nursing experiences during the pandemic.",
+        "Additionally, at least two distinct stages of pandemic response implementation were demarcated by treatment availability (e.g., vaccine development).",
+        "Implications for the profession and/or patient care There is potential for common pandemic response policies for nurses, centered on specific factors, such as the increased provision of mental health support services by healthcare organisations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Paramedic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75006",
+      "retrieved_at": "2026-10-18T17:13:56.195Z",
+      "sha256": "def6f3b02c8567e65d4934f0ca0185f867e6f9d097419fc9f17de6889af2adbf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A paramedic is a healthcare professional trained in the medical model, whose main role has historically been to respond to emergency calls for medical help outside of a hospital.",
+        "Paramedics work as part of the emergency medical services (EMS), most often in ambulances.",
+        "They also have roles in emergency medicine, primary care, transfer medicine and remote/offshore medicine.",
+        "The scope of practice of a paramedic varies between countries, but generally includes autonomous decision making around the emergency care of patients.",
+        "Not all ambulance personnel are paramedics, although the term is sometimes used informally to refer to any ambulance personnel.",
+        "In some English-speaking countries, there is an official distinction between paramedics and emergency medical technicians (or emergency care assistants), in which paramedics have additional educational requirements and scope of practice."
+      ]
+    }
+  ]
+}

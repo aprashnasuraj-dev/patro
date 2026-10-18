@@ -1,0 +1,99 @@
+{
+  "id": "mm-1597",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Affordable Arsenic Detection Device Using Handmade Lokta Paper for Decentralized and Sustainable Manufacturing",
+      "publisher": "American Chemical Society (ACS)",
+      "author": "Shrestha, Ramdeep; Neupane, Bhanu Bhakta; Giri, Basant",
+      "published_at": "2025-01-16",
+      "url": "https://doi.org/10.26434/chemrxiv-2025-xsxgn",
+      "retrieved_at": "2026-10-18T16:37:47.004Z",
+      "sha256": "7986a8084a958b7e6b2ad1ee193f8b987b16c29a4e6a8102ebb59100a5454c5d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The reliance on centralized manufacturing systems often shows vulnerability of global supply chains, as evidenced by disruptions during the COVID-19 pandemic and geopolitical conflicts.",
+        "This study reports an affordable and portable paper strip sensor for arsenic detection in groundwater, developed using distributed manufacturing and sustainability principles.",
+        "Handmade Lokta Paper (HLP), produced in the laboratory from bark of a native Lokta plant, Daphne, through eco-friendly methods, served as the sensor substrate.",
+        "The HLP strip employed the Gutzeit reaction and integrated smartphone imaging for qualitative, semi-quantitative, and quantitative arsenic analysis.",
+        "The assay optimization was achieved with 1% (w/v) HgBr₂ impregnation, 5-minute dipping time, 15-minute arsine exposure, and imaging within minutes.",
+        "Testing of 21 groundwater samples from Nepal revealed strong agreement between the HLP strip and a commercial kit (Cohen’s kappa = 0.811).",
+        "The HLP strip demonstrated a lower limit of detection (18 μg/L vs.",
+        "Most samples had arsenic concentrations below 10 μg/L, with few reaching Nepal’s regulatory limit of 50 μg/L.",
+        "In addition to robust analytical performance, the HLP strip exemplifies the scalability and cost-effectiveness of arsenic sensors, with a production cost of USD 0.37 per test—significantly lower than commercial alternatives.",
+        "This innovation may foster local economic growth, minimize supply chain dependency, and reduce environmental impact through the sustainable utilization of Lokta paper.",
+        "The study highlights the potential of integrating traditional materials with advanced analytical techniques to address global health and environmental challenges while promoting regional resilience and sustainability."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Characterization of handmade Nepali paper as a platform for paper analytical device to determine anti-diabetic drug",
+      "publisher": "American Chemical Society (ACS)",
+      "author": "Bhattarai, Ram; Pudasaini, Sanam; Sah, Mukesh",
+      "published_at": "2021-12-26",
+      "url": "https://doi.org/10.26434/chemrxiv-2021-413x6",
+      "retrieved_at": "2026-10-18T16:37:47.004Z",
+      "sha256": "e5658a9241956721e7c391bc804adc5b6742cab08712a36d5c5f03f39a6ad243",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The COVID-19 pandemic has highlighted the need of eco-friendly and locally or distributed manufacturing of diagnostic and safety products.",
+        "Here, we characterized five handmade papers for their potential application to make paper analytical device (PADs).",
+        "The handmade papers were made from locally available plant fiber using eco-friendly method.",
+        "Thickness, grammage, and apparent density of the paper samples ranged from 198 μm to 314 μm, 49 g/m2 to 117.8 g/m2, and 0.23 to 0.39 g/cm3, respectively.",
+        "Moisture content, water filtration and wicking speed ranged from 5.2% to 7.1%, 35.7 to 156.7, and 0.062 to 0.124 mms-1, respectively.",
+        "Further, water contact angle and porosity ranged from 76˚ to 112˚ and 79% to 83%, respectively.",
+        "The best paper sample one was chosen to fabricate PADs which were used for the determination of metformin.",
+        "The metformin assay on PADs followed linear range from 0.0625 to 0.5 mg/mL.",
+        "The assay had limit of detection and limit of quantitation of 0.05 mg/mL and 0.18 mg/mL respectively.",
+        "The new method was used to test metformin samples (n=20) collected from local pharmacies.",
+        "The average amount of metformin concentration in samples was 465.6 ± 15.1mg/tablet.",
+        "When compared with spectrophotometric method, PADs assay correctly predicted 18 out of 20 samples."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Affordable Arsenic Detection Device Using Handmade Lokta Paper for Decentralized and Sustainable Manufacturing",
+      "publisher": "Wiley",
+      "author": "Shrestha, Ramdeep; Neupane, Bhanu Bhakta; Giri, Basant",
+      "published_at": "2026-01",
+      "url": "https://doi.org/10.1155/jamc/9918530",
+      "retrieved_at": "2026-10-18T16:37:47.004Z",
+      "sha256": "f50fe23e33e1738b00eee0e0e2ce9f5b5f52227ef85a35fee6ef5768a1eb01a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The reliance on centralized manufacturing systems often shows vulnerability of global supply chains, as evidenced by disruptions during the COVID‐19 pandemic and geopolitical conflicts.",
+        "This study reports an affordable and portable paper strip sensor for arsenic detection in groundwater, developed using distributed manufacturing and sustainability principles.",
+        "Handmade Lokta Paper (HLP), produced in the laboratory from bark of a native Lokta plant, Daphne , through eco‐friendly methods, served as the sensor substrate.",
+        "The HLP strip employed the Gutzeit reaction and integrated smartphone imaging for qualitative, semiquantitative, and quantitative arsenic analyses.",
+        "The assay optimization was achieved with 1% (w/v) HgBr 2 impregnation, 5‐min dipping time, 15‐min arsine exposure, and imaging within 25 min.",
+        "Testing of 21 groundwater samples from Nepal revealed strong agreement between the HLP strip and a commercial kit Econo‐Quick (EQ) (Cohen’s kappa = 0.811).",
+        "The HLP strip demonstrated a lower limit of detection (18 vs.",
+        "Most water samples had arsenic concentrations below 10 µg/L, with few reaching Nepal’s regulatory limit of 50 µg/L.",
+        "In addition to robust analytical performance, the HLP strip exemplifies the scalability and cost‐effectiveness of arsenic sensors, with a production cost of USD 0.37 per test—significantly lower than commercial alternatives.",
+        "This innovation may foster local economic growth, minimize supply chain dependency, and reduce environmental impact through the sustainable utilization of Lokta paper.",
+        "The study highlights the potential of integrating traditional materials with advanced analytical techniques to address global health and environmental challenges while promoting regional resilience and sustainability."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Surface Treatment of Handmade Lokta Paper by Atmospheric Pressure Dielectric Barrier Discharge Using 50 Hz Line Frequency",
+      "publisher": "Gruenwald Laboratories",
+      "author": "Chhetri, Ganesh Kuwar; Guragain, Rajesh Prakash; Joshi, Ujjwal Man",
+      "published_at": "2021-09-28",
+      "url": "https://doi.org/10.31281/jtsp.v2i1.19",
+      "retrieved_at": "2026-10-18T16:37:47.004Z",
+      "sha256": "bb607e0cc37b6ebf4ccbd0f977c4cbb35b6ebe4d635a17ebb564e5db299fa6fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The discharge was generated between two rectangular parallel-plate copper electrodes using a sinusoidal voltage of 12.8 kV (rms) of frequency 50 Hz and characterized using electrical and optical measurements.",
+        "The effects of the discharge on the wicking property and weight loss of Lokta paper were studied respectively by the wicking test and gravimetric method.",
+        "The estimated value of electron density and electron temperature in the discharge were 8.47×108 cm-3 and 1.29 eV.",
+        "The results showed a significant improvement in water absorption ability and considerable weight loss (%) in Lokta paper after the plasma treatment."
+      ]
+    }
+  ]
+}

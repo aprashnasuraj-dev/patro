@@ -1,0 +1,98 @@
+{
+  "id": "mm-0994",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Electric light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9656",
+      "retrieved_at": "2026-10-18T15:50:28.636Z",
+      "sha256": "f9f539143ba80e14afd8e137e91744ef9d4cb8e467aa929b2e9695a2dd452bab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electric light, lamp, or light bulb is an electrical device that produces light from electricity.",
+        "Lamps usually have a base made of ceramic, metal, glass, or plastic that secures them in the socket of a light fixture.",
+        "The electrical connection to the socket may be made with a screw-thread base, two metal pins, two metal caps or a bayonet mount.",
+        "The energy efficiency of electric lighting has significantly improved since the first demonstrations of arc lamps and incandescent light bulbs in the 19th century.",
+        "Modern electric light sources come in a profusion of types and sizes adapted to many applications.",
+        "Most modern electric lighting is powered by centrally generated electric power, but lighting may also be powered by mobile or standby electric generators or battery systems.",
+        "Battery-powered light is often reserved for when and where stationary lights fail, often in the form of flashlights or electric lanterns, as well as in vehicles."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Incandescent light bulb",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47139",
+      "retrieved_at": "2026-10-18T15:50:28.636Z",
+      "sha256": "77c2052b6ff9a857b5a1f9d962dcad70aea199ff8c8f78a58933874fbd6405be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An incandescent light bulb, also known as an incandescent lamp or incandescent light globe, is an electric light that produces illumination by Joule heating a filament until it glows.",
+        "The filament is enclosed in a glass bulb that is either evacuated or filled with inert gas to protect the filament from oxidation.",
+        "Electric current is supplied to the filament by terminals or wires embedded in the glass.",
+        "A bulb socket provides mechanical support and electrical connections.",
+        "Incandescent bulbs are manufactured in a wide range of sizes, light output, and voltage ratings, from 1.5 volts to about 300 volts.",
+        "They require no external regulating equipment, have low manufacturing costs, and work equally well on either alternating current or direct current.",
+        "As a result, the incandescent bulb became widely used in household and commercial lighting, for portable lighting such as table lamps, car headlamps, and flashlights, and for decorative and advertising lighting.",
+        "Incandescent bulbs are much less efficient than other types of electric lighting.",
+        "Less than 5% of the energy they consume is converted into visible light; the rest is released as heat.",
+        "The luminous efficacy of a typical incandescent bulb is 16 lumens per watt (lm/W) for a 120 V bulb or 13 lm/W for a 230 V bulb, compared with 60 lm/W for a compact fluorescent bulb or 100 lm/W for typical white LED lamps.",
+        "As a result, incandescent bulbs have declined in market share compared to LED bulbs.",
+        "This has been accelerated by government bans aimed at reducing energy consumption."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Compact fluorescent lamp",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1201545",
+      "retrieved_at": "2026-10-18T15:50:28.636Z",
+      "sha256": "2582c0d80406df1584e95ebc9dd03a81d3433a70b94ceca1eacfc30130167954",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A compact fluorescent lamp (CFL), also called compact fluorescent light, energy-saving light and compact fluorescent tube, is a fluorescent lamp designed to replace an incandescent light bulb; some types fit into light fixtures designed for incandescent bulbs.",
+        "The lamps use a tube that is curved or folded to fit into the space of an incandescent bulb, and a compact electronic ballast in the base of the lamp.",
+        "Compared to general-service incandescent lamps giving the same amount of visible light, CFLs use one-fourth to one-third the electric power, and last eight to fifteen times longer.",
+        "A CFL has a higher purchase price than an incandescent lamp, but can save over five times its purchase price in electricity costs over the lamp's lifetime.",
+        "Like all fluorescent lamps, CFLs contain toxic mercury, which complicates their disposal.",
+        "In many countries, governments have banned the disposal of CFLs together with regular garbage.",
+        "These countries have established special collection systems for CFLs and other hazardous waste.",
+        "CFLs radiate a spectral power distribution that is different from that of incandescent lamps.",
+        "Improved phosphor formulations have improved the perceived color of the light emitted by CFLs, so that some sources rate the best \"soft white\" CFLs as subjectively similar in color to standard incandescent lamps.",
+        "White LED lamps compete with CFLs for high-efficiency lighting.",
+        "General Electric has since stopped production of domestic CFL lamps in the United States in favour of LEDs."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Incandescent light bulb ban",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14148559",
+      "retrieved_at": "2026-10-18T15:50:28.636Z",
+      "sha256": "6ca1e575407c4f1de641fc4f66376768343274599e3e1175829583e965feb8e3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Incandescent light bulb bans have been enacted by several governments that prohibit the manufacture or importation of incandescent light bulbs for general lighting in favor of more energy-efficient alternatives.",
+        "The regulations are generally based on efficiency, rather than use of incandescent technology.",
+        "In 2009, the European Union and several other nations began the process of banning incandescent bulbs.",
+        "In the early to mid 2010s, the bans continued in various other nations.",
+        "In 2023, the United States banned most general service incandescent lamps, but had exclusions for specific bulb implementations.",
+        "Objections to banning incandescent light bulbs include the higher initial cost of alternatives, lower quality of light of fluorescent lamps, and concerns of government overreach.",
+        "Additional objections focus on the potentially hazardous materials in some alternative lamps."
+      ]
+    }
+  ]
+}

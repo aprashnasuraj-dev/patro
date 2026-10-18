@@ -1,0 +1,27 @@
+{
+  "id": "mq-0398",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "openFDA drug data",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://api.fda.gov/drug/enforcement.json?limit=10&search=product_description:%22gabapentin%22",
+      "retrieved_at": "2026-10-18T18:11:45.596Z",
+      "sha256": "0f336e69800b22dc9e564eb57e82038373c3c69cf5c517d7f7d271de36e2f287",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "FDA enforcement report D-0337-2015 (classification Class II, initiated 20141215): Failed Capsule/Tablet Specifications: Actavis has received several complaint for clumping and breaking of capsules with some bottles showing popped out bottle b.",
+        "FDA enforcement report D-0354-2023 (classification Class III, initiated 20230217): Presence of Foreign Tablets/Capsules: Pharmacist reported presence of some Gabapentin tablets 800 mg comingled in Gabapentin 600 mg 500 count bottles..",
+        "FDA enforcement report D-0208-2020 (classification Class II, initiated 20190812): Lack of Assurance of Sterility.",
+        "FDA enforcement report D-1232-2020 (classification Class II, initiated 20200318): CGMP Deviations: Products were manufactured in a processing area in which water leakage was observed.",
+        "FDA enforcement report D-696-2015 (classification Class II, initiated 20141114): Penicillin Cross Contamination: All lots of all products repackaged and distributed between 01/05/12 and 02/12/15 are being recalled because they were repackage.",
+        "FDA enforcement report D-0031-2026 (classification Class II, initiated 20251010): Failed Impurities/Degradation Specifications: an out of specification result obtained during routine stability testing for Highest Unknown Impurity ..",
+        "FDA enforcement report D-0320-2025 (classification Class II, initiated 20250313): CGMP Deviations.",
+        "FDA enforcement report D-0312-2025 (classification Class III, initiated 20250304): Cross Contamination.",
+        "FDA enforcement report D-329-2013 (classification Class III, initiated 20130405): Chemical Contamination: Gabapentin Sodium tablets is recalled due to complaints related to an off - odor described as moldy, musty or fishy in nature..",
+        "FDA enforcement report D-0336-2015 (classification Class II, initiated 20141215): Failed Capsule/Tablet Specifications: Actavis has received several complaint for clumping and breaking of capsules with some bottles showing popped out bottle b."
+      ]
+    }
+  ]
+}

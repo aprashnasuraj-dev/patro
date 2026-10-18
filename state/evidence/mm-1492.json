@@ -1,0 +1,158 @@
+{
+  "id": "mm-1492",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the Brain Works",
+      "publisher": "The MIT Press",
+      "author": "Oliveira, Arlindo",
+      "published_at": "2017-04-03",
+      "url": "https://doi.org/10.7551/mitpress/9780262036030.003.0008",
+      "retrieved_at": "2026-10-18T16:33:38.348Z",
+      "sha256": "b998a2cf2ad4adcc83b08059dfbb30574a0d0da93850ff3302e0b85ae8766376",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter provides a brief introduction to the way the brain works.",
+        "It starts by describing the physical mechanisms used by neurons to send and receive electrical signals, and some of the experiments that led to the understanding of these mechanisms.",
+        "It then describes how neurons are organized in networks and uses some particular structures in the brain, namely the brain visual cortex, to illustrate the signal processing that takes place in the brain.",
+        "The chapter also covers, very briefly, the few known mechanisms that are used by brains to self-organize and create the structures that are present in fully developed brains.",
+        "Mechanisms that lead to brain plasticity and the creation of memories are also examined, with a special emphasis of the synapse reinforcement process that is known as Hebb’s rule."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Computing the Mind",
+      "publisher": "Oxford University PressNew York, NY",
+      "author": "Edelman, Shimon",
+      "published_at": "2008-09-08",
+      "url": "https://doi.org/10.1093/oso/9780195320671.001.0001",
+      "retrieved_at": "2026-10-18T16:33:38.348Z",
+      "sha256": "8a303dcbe388828a9d743d1052ac1aede566bc2aef4bfe4b2847ff86febc35ca",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract In a culmination of humanity's millennia-long quest for self knowledge, the sciences of the mind are now in a position to offer concrete, empirically validated answers to the most fundamental questions about human nature.",
+        "What are the principles behind cognitive functions such as perception, memory, language, thought, and consciousness?",
+        "By analyzing the tasks facing any sentient being that is subject to stimulation and a pressure to act, Shimon Edelman identifies computation as the common denominator in the emerging answers to all these questions.",
+        "Any system composed of elements that exchange signals with each other and occasionally with the rest of the world can be said to be engaged in computation.",
+        "A brain composed of neurons is one example of a system that computes, and the computations that the neurons collectively carry out constitute the brain's mind.",
+        "Edelman presents a computational account of the entire spectrum of cognitive phenomena that constitutes the mind.",
+        "He begins with sentience, and uses examples from visual perception to demonstrate that it must, at its very core, be a type of computation.",
+        "Throughout his account, Edelman acknowledges the human mind's biological origins.",
+        "Along the way, he also demystifies traits such as creativity, language, and individual and collective consciousness, and hints at how naturally evolved minds can transcend some of their limitations by moving to computational substrates other than brains.",
+        "The account that Edelman gives in this book is accessible, yet unified and rigorous, and the big picture he presents is supported by evidence ranging from neurobiology to computer science.",
+        "The book should be read by anyone seeking a comprehensive and current introduction to cognitive psychology."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "In the Pandemic Crisis we Must Understand How Placebo Works",
+      "publisher": "Journal of Medical Research and Health Sciences",
+      "author": "Prof. Maria Kuman",
+      "published_at": "2022-06-20",
+      "url": "https://openalex.org/W7219361957",
+      "retrieved_at": "2026-10-18T16:33:38.681Z",
+      "sha256": "dd8893bbdf7474d91ca8d21e68e6f985a9230e07b382ad71fc978b2184f03712",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many years ago, in a Pandemic much worse than the present one, called black plaque, a young scientist was the first to report at the Austrian Academy of Sciences that he had found what causes the plaque – a small organism, which he called “virus”.",
+        "He showed a small bottle with insulated viruses and said this amount would be enough to kill the whole population of the city of Vienne.",
+        "One of them stepped forward and saying: “Young man you are talking nonsense and I am going to prove it”, he took the small bottle and swallowed the whole content.",
+        "The young man was horrified, he saw in his mind the Academician lying on the floor in convulsions, but nothing like this happened.",
+        "Now, when we know that viruses exist, how we can explain something like this.",
+        "The Academician was so convinced that nothing would happen that indeed nothing happened."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Placebo",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=142821",
+      "retrieved_at": "2026-10-18T16:33:38.681Z",
+      "sha256": "5df4b6fd8e5eb8059b6d0c00ef32810dfdb3f174cb96c87745d976dde86c1eb9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A placebo ( pluh-SEE-boh) is a medicine or treatment intended to appear genuine to its recipient, but which has no pharmaceutical effect.",
+        "Common placebos include inert tablets (like sugar pills), inert injections (like saline), sham surgery, and other procedures.",
+        "Placebos are used in randomized clinical trials to test the efficacy of medical treatments.",
+        "In a placebo-controlled trial, any change in the control group is known as the placebo response, and the difference between this and the result of no treatment is the placebo effect.",
+        "Placebos in clinical trials should ideally be indistinguishable from so-called verum treatments under investigation, except for the latter's particular hypothesized medicinal effect.",
+        "This is to shield test participants (with their consent) from knowing who is getting the placebo and who is getting the treatment under test, as patients' and clinicians' expectations of efficacy can influence results.",
+        "The idea of a \"placebo effect\" was discussed in 18th century psychology, but became more prominent in the 20th century.",
+        "Modern studies find that placebos can affect some outcomes such as pain and nausea, but otherwise do not generally have important clinical effects.",
+        "Improvements that patients experience after being treated with a placebo can also be due to unrelated factors, such as regression to the mean (a statistical effect where an unusually high or low measurement is likely to be followed by a less extreme one).",
+        "The use of placebos in clinical medicine raises ethical concerns, especially if they are disguised as an active treatment, as this introduces dishonesty into the doctor–patient relationship and bypasses informed consent.",
+        "Placebos are also popular because they can sometimes produce relief through psychological mechanisms (a phenomenon known as the \"placebo effect\").",
+        "They can affect how patients perceive their condition and encourage the body's chemical processes for relieving pain and a few other symptoms, but have no impact on the disease itself."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Placebo (band)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=241263",
+      "retrieved_at": "2026-10-18T16:33:38.681Z",
+      "sha256": "4c2b580223dabbfff9ab538d4ff52b80382ce807549b38beb2c3f0b4fb4ba791",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Placebo ( plə-SEE-boh) are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence.",
+        "Molko and Olsdal were joined by drummer Robert Schultzberg for a demo, a split single, and their eponymous debut album in 1996.",
+        "Shortly after the album's release, Steve Hewitt replaced Schultzberg on drums.",
+        "Placebo gained exposure in 1997 after the single \"Nancy Boy\" (a song notorious at the time for its gender-bending content) became popular in the UK.",
+        "The band stood out amongst the Britpop scene of the time because of their androgynous appearance and musical content, as well as Molko's distinctive voice and lyrics which openly discussed sexuality, mental health, and drug use.",
+        "Their 1998 album Without You I’m Nothing was a massive international breakthrough, going platinum in the UK and gold in France.",
+        "It spawned a pair of UK top-five singles for the band, \"Pure Morning\" and \"You Don't Care About Us\", as well as the No.",
+        "Hewitt left Placebo in 2007 due to personal and musical differences.",
+        "Placebo released two albums with Forrest, who left in 2015 to pursue his own musical career.",
+        "Since 2015, Placebo have officially been a duo, though augmented with studio and live musicians.",
+        "Placebo have collaborated with various artists over the years, including David Bowie, Justin Warfield, Michael Stipe, and Alison Mosshart.",
+        "Placebo have released eight studio albums (all of which have reached the Top 20 in the UK), recorded 15 top-40 singles in the UK, and have sold around 14 million records worldwide."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bicameral mentality",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2181792",
+      "retrieved_at": "2026-10-18T16:33:38.681Z",
+      "sha256": "03e5978e6182beb895da111480f8417d47667fddbd1af3f579308baa717ce6fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bicameral mentality is a psychological hypothesis proposed by American psychologist Julian Jaynes.",
+        "It suggests that early modern humans experienced thoughts and emotions not as originating within themselves but as commands from external \"gods\".",
+        "According to the hypothesis, the human mind once functioned with a division in which one part generated verbal instructions while a second part obeyed, forming a \"bicameral mind\".",
+        "The eventual collapse of this mental structure is proposed to have led to the development of self-reflective consciousness in humans."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Henry K. Beecher",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4544521",
+      "retrieved_at": "2026-10-18T16:33:38.681Z",
+      "sha256": "9d246aba1ca6669d010deb9510eaf619b8eade6b4824c113b689abc3189448d9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Henry Knowles Beecher (February 4, 1904 – July 25, 1976) was a pioneering American anesthesiologist, medical ethicist, and investigator of the placebo effect at Harvard Medical School.",
+        "An article by Beecher's in 1966 on unethical medical experimentation in The New England Journal of Medicine — \"Ethics and Clinical Research\" — was instrumental in the implementation of federal rules on human experimentation and informed consent.",
+        "of UNC Chapel Hill and published in an American Society of Anesthesiologists newsletter—describes Beecher as an influential figure in the development of medical ethics and research techniques, though he has not been without controversy.",
+        "Beecher, is awarded annually by Harvard Medical School to a medical student who has produced exceptional work in the field of medical ethics.",
+        "Beecher Award by The Hastings Center was established in 1976 in honour of Henry K."
+      ]
+    }
+  ]
+}

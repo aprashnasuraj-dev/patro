@@ -1,0 +1,100 @@
+{
+  "id": "mt-0824",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Demographics of the United Kingdom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31725",
+      "retrieved_at": "2026-10-18T17:25:07.861Z",
+      "sha256": "e8992b00e455e0dbb3faafe9157d41567a32b3cd0346d698cfb47e94eadc7cdb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The population of the United Kingdom was estimated at 69.5 million in 2025.",
+        "It is the 21st most populated country in the world and has a population density of 287 people per square kilometre (740 people/mi2), with England having significantly greater density than Wales, Scotland, and Northern Ireland.",
+        "Almost a third of the population lives in south east England, which is predominantly urban and suburban, with 9,122,909 people in the capital city, London, whose population density was 5,804 inhabitants per square kilometre (15,030/sq mi) in 2025.",
+        "This growth through 'natural change' has been accompanied in the past three decades by growth through net immigration into the United Kingdom, which since 1999 has exceeded natural change.",
+        "The United Kingdom's high literacy rate of 99% at age 15 and above, is attributable to universal state education, introduced at the primary level in 1870 (Scotland 1872, free 1890) and at the secondary level in 1900.",
+        "Parents are obliged to have their children educated from the ages of 5 to 16 years.",
+        "In England, 16–17-year olds should remain in education, employment or training in the form of A-Levels, vocational training, and apprenticeships, until the age of 18.",
+        "The United Kingdom's population is predominantly White British (75.98% at the 2021 Census), but due to migration mostly from Commonwealth nations, Britain has become ethnically diverse.",
+        "The second and third largest non-white racial groups are Asian British at 8.6% of the population, followed by Black British people at 3.71%.",
+        "Scots is widely spoken in many parts of Scotland, as is Scottish Gaelic, a Celtic language.",
+        "Cornish and Irish have been revived to a limited degree in Cornwall and Northern Ireland, but the predominant language in all these areas is English.",
+        "Welsh is widely spoken as a first language in parts of North and West Wales, and to lesser extent in South East Wales, where English is the dominant first language."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Demographics of France",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67475",
+      "retrieved_at": "2026-10-18T17:25:07.861Z",
+      "sha256": "73ee4f7874567e3dfc7030500f5a4dadce75c85ca17e06ad67e9f6450132b5da",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The demography of France is monitored by the Institut national d'études démographiques (INED) and the Institut national de la statistique et des études économiques (INSEE).",
+        "As of 1 January 2026,  in Metropolitan France 66,792,845 people lived, while 2,289,151 lived in overseas France, for a total of 69,081,996 inhabitants in the French Republic.",
+        "In the 2010s and until 2017, the population of France grew by 1 million people every three years – an average annual increase of 340,000 people, or +0.6%.",
+        "During the Middle Ages, more than one-quarter of Europe's total population was French; by the seventeenth century, this had decreased slightly to one-fifth.",
+        "By the beginning of the nineteenth century, other European countries, such as Germany and Russia, had caught up with France and overtaken it in number of people.",
+        "The country's population sharply increased with the baby boom following World War II, as it did in other European countries.",
+        "According to INSEE, from the year 2004, 200,000 immigrants entered the country annually.",
+        "One out of two was born in Europe and one in three in Africa.",
+        "Between 2009 and 2012, the number of Europeans migrating to France increased sharply (an annual increase of 12%), but this percentage decreased steadily until 2022, supplanted by a rise in the number of immigrants from Africa.",
+        "The national birth rate, after dropping for a time, began to rebound in the 1990s, and the country's fertility rate was close to the replacement level until about 2014.",
+        "In 2021, the total fertility rate of France was 1.82 children per woman, and 7.7% of all births were a women's 4th or more child.",
+        "Among the 802,000 babies born in metropolitan France in 2010, 80.1% had two French parents, 13.3% had one French parent, and 6.6% had two non-French parents."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Greater Los Angeles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=81605",
+      "retrieved_at": "2026-10-18T17:25:07.861Z",
+      "sha256": "4c2df751d87f2045f2faa36413669fe8525e62aa03dd2c103945c3573649d678",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Greater Los Angeles is the most populous metropolitan area in the U.S.",
+        "state of California, encompassing five counties in Southern California extending from Ventura County in the west to San Bernardino County and Riverside County in the east, with the city of Los Angeles and Los Angeles County at its center, and Orange County to the southeast.",
+        "The Los Angeles–Long Beach combined statistical area (CSA) covers 33,954 square miles (87,940 km2), making it the largest metropolitan region in the United States by land area.",
+        "The contiguous urban area is 2,281 square miles (5,910 km2), whereas the remainder mostly consists of mountain and desert areas.",
+        "Census Bureau, 2023), it is the second-largest metropolitan area in the country, behind New York, as well as one of the largest megacities in the world.",
+        "In addition to being the nexus of the global entertainment industry, including films, television, and recorded music, Greater Los Angeles is also an important center of international trade, education, media, business, tourism, technology, and sports.",
+        "It is the third-largest metropolitan area by nominal GDP in the world with an economy exceeding $1 trillion in output, behind New York City and Tokyo.",
+        "The Census Bureau designates the latter as the Los Angeles–Long Beach–Anaheim metropolitan statistical area (MSA), the fourth largest metropolitan area in the Western Hemisphere and the second-largest metropolitan area in the United States, by population of 13 million as of the 2020 U.S.",
+        "Although San Diego–Tijuana borders the Greater Los Angeles area at San Clemente and Temecula, it is not part of it as the two urban areas are not geographically contiguous due to the presence of Camp Pendleton.",
+        "However, both form part of the Southern California megalopolis which extends into Tijuana, Baja California, Mexico."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Migrant worker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1981818",
+      "retrieved_at": "2026-10-18T17:25:07.861Z",
+      "sha256": "62d4c0b472f1564ea9ec7aa8ba21bc51c846c104703021fcc3532e72e6132e1a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A migrant worker is a person who migrates within a home country or outside it to pursue work.",
+        "Migrant workers usually do not have an intention to stay permanently in the country or region in which they work.",
+        "Migrant workers who work outside their home nation are also known as foreign workers.",
+        "They may also be called expatriates or guest workers, especially when they have been sent for or invited to work in the host country before leaving the home country.",
+        "The International Labour Organization estimated in 2019 that there were 169 million international migrants worldwide."
+      ]
+    }
+  ]
+}

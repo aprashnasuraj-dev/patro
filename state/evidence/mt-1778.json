@@ -1,0 +1,51 @@
+{
+  "id": "mt-1778",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Fault Analysis Projection System (FAPS) - A new seismic interpretation and structural geological interpretation tool.",
+      "publisher": "Australian Society of Exploration Geophysicists",
+      "author": "Freeman, B.; Badley, M.; Yielding, G.",
+      "published_at": "1989",
+      "url": "https://doi.org/10.1071/eg989001",
+      "retrieved_at": "2026-10-18T17:53:47.981Z",
+      "sha256": "cacb9ae7d5198a3deb32a54f129a5e753141a017cfd5039e55df29438264f709",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recent research has demonstrated that the displacement on faults varies in a systematic manner, both vertically and laterally.",
+        "Contours of displacement on strike projections display ordered patterns for isolated normal faults, strike-slip faults and syn-sedimentary faults.",
+        "Recognition of these ordered patterns forms the basis for a new seismic interpretation and structural/geological interpretation tool, enabling objective verification of fault correlation, identification of bad fault or horizon picks, and a better understanding of the overall kinematic framework.",
+        "The Fault Analysis Projection System (FAPS) is a computerized implementation of this technique designed to run on UNIX-based workstations.",
+        "The FAPS uses the X-windows graphics system which permits different elements of the interpretation/analysis to be viewed at the same time and is designed to make adjustments to interpretations a simple task.",
+        "For example, an interpreter may work on a map in one window, a set of sections in another window, perform a graphics screen-edit on data in a third window and view the results of an analysis in a separate, fourth window."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Apollo 13",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1770",
+      "retrieved_at": "2026-10-18T17:53:48.263Z",
+      "sha256": "e45b4a4afcb0886202ef370be09baec7ad17524cc9a68414a01cf62442f0048c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Apollo 13 (April 11–17, 1970) was the seventh crewed mission in the Apollo space program and would have been the third Moon landing.",
+        "The craft was launched from Kennedy Space Center on April 11, 1970, but the landing was aborted after an oxygen tank in the service module (SM) exploded two days into the mission, disabling its electrical and life-support system.",
+        "The crew, supported by backup systems on the Apollo Lunar Module, instead looped around the Moon in a circumlunar trajectory and returned safely to Earth on April 17.",
+        "The mission was commanded by Jim Lovell, with Jack Swigert as command module (CM) pilot and Fred Haise as Lunar Module (LM) pilot.",
+        "Swigert was a late replacement for Ken Mattingly, who was grounded after exposure to rubella.",
+        "A routine stir of an oxygen tank ignited damaged wire insulation inside it, causing an explosion that vented the contents of both of the SM's oxygen tanks to space.",
+        "Without oxygen, needed for breathing and for generating electrical power, the SM's propulsion and life support systems could not operate.",
+        "The CM's systems had to be shut down to conserve its remaining resources for reentry, forcing the crew to transfer to the LM as a lifeboat.",
+        "With the lunar landing canceled, mission controllers worked to bring the crew home alive.",
+        "Although the LM was designed to support two men on the lunar surface for two days, Mission Control in Houston improvised new procedures so it could support three men for four days.",
+        "The crew experienced great hardship, caused by limited power, a chilly and wet cabin and a shortage of drinking water.",
+        "There was a critical need to adapt the CM's cartridges for the carbon dioxide scrubber system to work in the LM; the crew and mission controllers were successful in improvising a solution."
+      ]
+    }
+  ]
+}

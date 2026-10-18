@@ -1,0 +1,28 @@
+{
+  "id": "mq-0379",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Earthquake history of the Milas Fault: An active dextral fault in an extensional province (SW Anatolia, Turkey)",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "KIRKAN, Erdem; Akyüz, H. Serdar; Basmenji, Mehran",
+      "published_at": "2022-03-31",
+      "url": "https://doi.org/10.21203/rs.3.rs-1131503/v1",
+      "retrieved_at": "2026-10-18T18:11:44.744Z",
+      "sha256": "9f0148ab82101a86a8a2e9660ed4b8dd8c8134c160cf1723c825eed3b114e9b4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The Milas Fault (MF) is a poorly known active fault located between the Büyük Menderes Graben to the north and the Gökova Graben to the south within the Anatolia-Aegean Region, SW Turkey.",
+        "This dextral strike-slip fault has a length of 55 km between the Bafa Lake in the northwest and Çamlıca village in the southeast with a general strike of N60°W as its surface geometry displays two separate segments.",
+        "We mapped the geomorphological and geological features of the MF by using Google Earth© images, Digital Elevation Models (DEMs) and field observations.",
+        "The surface traces and kinematic characteristics of the MF are defined by rarely seen carbonate rocks, morphological lineaments and offsets streams, which all suggests a dominantly horizontal deformation for this peculiar tectonic structure.",
+        "Moreover, we excavated three paleoseismological trenches in order to expose the signature of paleoearthquakes of the MF and to evaluate its seismic hazard potential.",
+        "Evidences of three paleoearthquake events were revealed in trenches depending on the stratigraphical and structural relations of the exposed strata of latest Quaternary period.",
+        "These earthquakes are dated as 1702±260 BC-2963±67 BC, 7152±600 BC-13502±3359 BC, and before 13502±3359 BC by means of combined OSL and 14 C dating results from youngest to oldest, respectively.",
+        "These events are supposed to be around or larger than M 7.0 earthquakes.",
+        "Even there is no constrained dates to propose recurrence interval, combined data from field observations, morphology, seismic records and paleoseismology indicate that the Milas Fault is an active structure and have a potential to produce a similar magnitude earthquake in the future."
+      ]
+    }
+  ]
+}

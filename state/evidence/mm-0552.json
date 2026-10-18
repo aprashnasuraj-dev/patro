@@ -1,0 +1,119 @@
+{
+  "id": "mm-0552",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the Earth is Weighed and Measured",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": null,
+      "published_at": "1876-04-15",
+      "url": "https://www.scientificamerican.com/article/how-the-earth-is-weighed-and-measur/",
+      "retrieved_at": "2026-10-18T15:41:59.690Z",
+      "sha256": "a4588be77bfc91bea59ebe46d9d7236e53f59c9499dbd0905a5faff22c90a144",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "We leverage third party services to both verify and deliver email.",
+        "By providing your email address, you also consent to having the email address shared with third parties for those purposes.",
+        "That’s why I and the journalists here at Scientific American hope you’ll join our community.",
+        "Our editors and reporters are often experts in their fields, which means they understand the nuances of big discoveries and can untangle the breakthroughs from the hype.",
+        "With a subscription, you are also supporting rigorous fact-checking to ensure the words we publish are precise and accurate.",
+        "And you’re supporting original illustrations, graphics and photos that bring you closer to an advanced laboratory, an ice sheet in Antarctica or a space mission in orbit.",
+        "You’re helping us craft other types of high-quality journalism as well: Our newsletters are carefully written, edited and curated by staffers you have or will come to know and love.",
+        "Our Science Quickly podcast is based on original reporting, collaboration with editors and scientists and exacting production.",
+        "Subscriptions keep this engine running so we can continue to deliver thoughtful, rigorous and independent science journalism to you."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Euclidean geometry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9417",
+      "retrieved_at": "2026-10-18T15:41:59.914Z",
+      "sha256": "fccf34865ec5d05f07e6f45cab7ef3028522132b993810b279c3f44cd2cc220e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Euclidean geometry is a mathematical system attributed to Euclid, an ancient Greek mathematician, which he described in his textbook on geometry, Elements.",
+        "Euclid's approach consists in assuming a small set of intuitively appealing axioms (postulates) and deducing many other propositions (theorems) from these.",
+        "One of those is the parallel postulate which relates to parallel lines on a Euclidean plane.",
+        "Although many of Euclid's results had been stated earlier, Euclid was the first to organize these propositions into a logical system in which each result is proved from axioms and previously proved theorems.",
+        "The Elements begins with plane geometry, still taught in secondary school (high school) as the first axiomatic system and the first examples of mathematical proofs.",
+        "Much of the Elements states results of what are now called algebra and number theory, explained in geometrical language.",
+        "For more than two thousand years, the adjective \"Euclidean\" was unnecessary because\nEuclid's axioms seemed so intuitively obvious (with the possible exception of the parallel postulate) that theorems proved from them were deemed absolutely true, and thus no other sorts of geometry were possible.",
+        "Today, however, two other self-consistent non-Euclidean geometries are known, hyperbolic and elliptic geometry.",
+        "An implication of Albert Einstein's theory of general relativity is that physical space itself is not Euclidean, and Euclidean space is a good approximation for it only over short distances and weak gravity.",
+        "Euclidean geometry is an example of synthetic geometry, in that it proceeds logically from axioms describing basic properties of geometric objects such as points and lines, to propositions about those objects.",
+        "This is in contrast to analytic geometry, introduced almost 2,000 years later by René Descartes, which uses coordinates to express geometric properties by means of algebraic formulas.",
+        "Classical geometry is sometimes used to refer to Euclid's methods of proof, by contrast with more recent methods, such as the use of coordinates (analytic geometry), the use of transformation groups (Erlangen program), or the use of calculus (differential geometry)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "History of geometry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11953",
+      "retrieved_at": "2026-10-18T15:41:59.914Z",
+      "sha256": "60a08e78363410d112acc4fa0a3ea1c858edd725f1dd561788bfd0084f3be856",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Geometry (from the Ancient Greek: γεωμετρία; geo- \"earth\", -metron \"measurement\") arose as the field of knowledge dealing with spatial relationships.",
+        "Geometry was one of the two fields of pre-modern mathematics, the other being the study of numbers (arithmetic).",
+        "Classic geometry was focused in compass and straightedge constructions.",
+        "Geometry was revolutionized by Euclid, who introduced mathematical rigor and the axiomatic method still in use today.",
+        "His book, The Elements is widely considered the most influential textbook of all time, and was known to all educated people in the West until the middle of the 20th century.",
+        "In modern times, geometric concepts have been generalized to a high level of abstraction and complexity, and have been subjected to the methods of calculus and abstract algebra, so that many modern branches of the field are barely recognizable as the descendants of early geometry."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Geometry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18973446",
+      "retrieved_at": "2026-10-18T15:41:59.914Z",
+      "sha256": "72d19ffd03e1f4621f1a0ed72d791bd661da5536d3ff3649d1fbc2711f2713e2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Geometry is a branch of mathematics concerned with properties of space such as the distance, shape, size, and relative position of figures.",
+        "Geometry is, along with arithmetic, one of the oldest branches of mathematics.",
+        "A mathematician who works in the field of geometry is called a geometer.",
+        "Until the 19th century, geometry was almost exclusively devoted to Euclidean geometry, which includes the notions of point, line, plane, distance, angle, surface, and curve, as fundamental concepts.",
+        "Originally developed to model the physical world, geometry has applications in almost all sciences, and also in art, architecture, and other activities that are related to graphics.",
+        "Geometry also has applications in areas of mathematics that are apparently unrelated.",
+        "For example, methods of algebraic geometry are fundamental in Wiles's proof of Fermat's Last Theorem, a problem that was stated in terms of elementary arithmetic, and remained unsolved for several centuries.",
+        "During the 19th century, several discoveries enlarged dramatically the scope of geometry.",
+        "One of the oldest such discoveries is Carl Friedrich Gauss's Theorema Egregium (\"remarkable theorem\") that asserts roughly that the Gaussian curvature of a surface is independent from any specific embedding in a Euclidean space.",
+        "This implies that surfaces can be studied intrinsically, that is, as stand-alone spaces, and has been expanded into the theory of manifolds and Riemannian geometry.",
+        "Later in the 19th century, it appeared that geometries without the parallel postulate (non-Euclidean geometries) can be developed without introducing any contradiction.",
+        "The geometry that underlies general relativity is a famous application of non-Euclidean geometry."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Vertical and horizontal",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38773637",
+      "retrieved_at": "2026-10-18T15:41:59.914Z",
+      "sha256": "641c142d8d6cba3da1dd73f88deac4938d639b36b840d2d7561d9f4959230a09",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In astronomy, geography and related sciences, a line or plane passing by a given point is said to be vertical if it contains the local gravity direction at that point.",
+        "Conversely, a line or plane is said to be horizontal (or leveled) if it is perpendicular to the vertical at a given point.",
+        "By extension, the concept applies to finite objects contained by a line or a plane, such as line segments, plane regions, vectors, directions, etc.",
+        "A surface is horizontal if its tangent planes are everywhere perpendicular to the gravity vector at the tangent point or, equivalently, if the surface normal vector is everywhere parallel to gravity, as in an equigeopotential surface.",
+        "More generally, something that is vertical can be drawn from \"up\" to \"down\" (or down to up), such as the y-axis in the Cartesian coordinate system."
+      ]
+    }
+  ]
+}

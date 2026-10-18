@@ -1,0 +1,208 @@
+{
+  "id": "mm-1218",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Site specific emulators for tsunami run-up simulations",
+      "publisher": "Copernicus GmbH",
+      "author": "Storrøsten, Erlend; Gibbons, Steven; Løvholt, Finn",
+      "published_at": "2023-05-15",
+      "url": "https://doi.org/10.5194/egusphere-egu23-7459",
+      "retrieved_at": "2026-10-18T16:07:41.760Z",
+      "sha256": "930443a5e32972ac893588b08f87810a895f6b5011cc6f5f91e5ef76e7bb0964",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Local Probabilistic Tsunami Hazard Analysis (PTHA) aims to quantify the probability distribution of inundation intensity parameters, such as maximum flow-depth, at a given location over a specified period of time.",
+        "In a Monte Carlo framework such an analysis is dependent on the simulation of a large number of scenarios.",
+        "A particularly expensive step, from a computational point of view, is the solving of the nonlinear shallow water equations associated with the tsunami run-up.",
+        "This problem is even more pronounced in the context of Tsunami Early Warning and Probabilistic Tsunami Forecasting (PTF).",
+        "A site specific (local) tsunami run-up emulator, trained on precalculated simulation results, enables rapid estimation of inundation maps allowing an assessment of a large number of scenarios with limited computational resources.",
+        "While high dimensional input and output, dependence on topography and nonlinear dynamics has made the problem intractable for traditional statistical methods, the problem has recently been approached using new techniques developed within the field of Machine Learning.",
+        "In this work we consider the problem of predicting onshore maximal flow-depth based on timeseries associated with simulated offshore gauge measurements.",
+        "The dataset comprises more than 32,000 tsunami simulations for different earthquake sources in the Mediterranean Sea.",
+        "Promising results have been obtained using only a small fraction of the total number of simulations as training data.",
+        "The ML-based inundation predictions for locations close to the water's edge, which are flooded in many of the scenarios, show excellent correspondence with the numerical simulation results.",
+        "Predicting inundation at locations further inland, which are flooded in only a small number of the simulations, is more challenging."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Do We Get Nostalgic About Good Old Games?",
+      "publisher": "Rowman & Littlefield",
+      "author": null,
+      "published_at": "2016",
+      "url": "https://doi.org/10.5040/9798216403067.ch-0004",
+      "retrieved_at": "2026-10-18T16:07:43.132Z",
+      "sha256": "b1994c8ab1b097e4d2594289e488b1638968c043d3a75fa3eb388354f579b67b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Getting Gamers --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "DOS Today: Running Vintage MS-DOS Games and Apps on a Modern Computer",
+      "publisher": "OpenAlex",
+      "author": "Brian Schell",
+      "published_at": "2016-06-25",
+      "url": "https://openalex.org/W2981759870",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "f2f7c7f6818d5275943d041bb83680462e58994084c117010901d3658b1b09bb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "DOS TODAY MS-DOS and its clones were all the PC world had to choose from back in the 80s and early 90s, but faded fast once Windows 95 and its successors were released.",
+        "Still, tens of thousands of powerful applications and awesomely enjoyable games were released in those years.",
+        "Some, such as SimCity and Tomb Raider, have been regularly updated and modernized, but what about all the rest?",
+        "M.U.L.E., Wing Commander, Chessmaster, Kings Quest, Leisure Suit Larry, Pinball Construction Set, and literally thousands of other games have been ignored for decades.",
+        "And thats not to mention all the powerful non-gaming applications.",
+        "WordStar, WordPerfect, dBase, Lotus, WildCat, TBBS, Telix, and many, many more run as well today as they did in their prime (or maybe better, since all the bugs were worked out decades ago).",
+        "Although its possible to find and restore an old computer from thirty years ago, parts are getting scarce.",
+        "This book explains the ins and outs of DOS emulation on modern Mac and PC computers.",
+        "How to install and configure the emulators, how to install DOS or a clone, how to work with VIRTUALBOX or DOSBOX to make it all work."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Using Genetic Programming for Agents in Non-Deterministic Games",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "author": "Bjarte Johansen",
+      "published_at": "2012-08-01",
+      "url": "https://openalex.org/W2226561238",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "70241402009a58701fc2c6718758635e7a57852b1c5fa4b7f744e6139f58cbcf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The aim of this thesis is to explore the possibility of using Genetic Programming to create agents that play non-deterministic games at a human level.",
+        "The reason for choosing this game is that there is a competition whose object it is to create an agent for the game only using the visual data of the game.",
+        "This allows me to compare my results against human players and, others who have been trying to solve the same problem.",
+        "The best score a human has achieved is 921,360 points by Abdner Ashman in 2005, while the agents in the competition have only received a score of 36,280 points.",
+        "A modified emulator is used to run the original binary of the game.",
+        "The modifications are made to allow the agents easier access to key properties of the game.",
+        "They also make it possible to run the game as a background process, which allows more than one emulator to run in parallel over multiple machines.",
+        "This makes it easier to run larger populations over many generations.",
+        "The ideas around how to solve the problem sees large changes during the development of the project.",
+        "A path-finding algorithm, A*, is introduced to decrease the search space for the GP Library.",
+        "The algorithm is modified by the agents to control where to move.",
+        "Even though the results from the thesis are not as good as hoped, we do see agents that perform near competition level."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Games and Rules",
+      "publisher": "Directory of Open access Books (OAPEN Foundation)",
+      "author": null,
+      "published_at": "2019-03-15",
+      "url": "https://openalex.org/W7137450200",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "61aa4963e29f834844f08f1ac06a6122d23ed9ac87fbc0d366dfabc15241955f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The contributors of »Games and Rules« take a closer look at the core of each game and the motivational system that is the game mechanics.",
+        "Games are control circuits that organize the game world with their (joint) players and establish motivations in a dedicated space, a »Magic Circle«, whereas game mechanics are constructs of rules designed for interactions that provide gameplay.",
+        "Those rules form the base for all the excitement and frustration we experience in games.",
+        "This anthology contains individual essays by authors with backgrounds in Game Design and Game Studies, who lead the discourse to get to the bottom of game mechanics in video games and the real world."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Olympic Games",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22576",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "c4b8ceb3861eb7e11f51d87605d260dbea69e0ee7fcbed972ccda8443b6ce15c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The modern Olympic Games (Olympics; French: Jeux olympiques) are a series of international multi-sport events.",
+        "Considered among the biggest sporting events in the world, the Olympics are organised into distinct Summer and Winter Games, each featuring different sports.",
+        "The Olympic Games, open to both amateur and professional athletes, involve thousands of athletes and more than 200 teams, each team representing a sovereign state or territory.",
+        "The Games often, but not always, substitute for any world championships during the year in which they take place.",
+        "The Summer and Winter Olympics are each held every four years, and themselves occur two years apart within the four-year Olympiad.",
+        "This arrangement has been in place since the 1994 Winter Olympics, prior to which the Summer and Winter Games were held in the same year.",
+        "Their creation was inspired by the ancient Olympic Games, held in Olympia, Greece, from the 8th century BC to the 4th century AD.",
+        "Baron Pierre de Coubertin founded the International Olympic Committee (IOC) in 1894, leading to the first modern Games in Athens in 1896.",
+        "The IOC is the governing body of the Olympic Movement, which encompasses all entities and individuals involved in the Olympic Games.",
+        "The evolution of the Olympic Movement during the 20th and 21st centuries has resulted in numerous changes to the Olympic Games.",
+        "The IOC also endorses the Deaflympics and the Special Olympics.",
+        "The IOC has adapted to a variety of economic, political, and technological advancements."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Speedrunning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=501086",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "2d95bf868ced3aac5fa0a2b6ebbf9974cb8b10120590d0784186cc8cb6eb28a7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Speedrunning is the act of playing a video game, or section of a video game, with the goal of completing it as fast as possible.",
+        "Speedrunning often involves following planned routes, which may incorporate sequence breaking and exploit glitches that allow sections to be skipped or completed more quickly than intended.",
+        "Tool-assisted speedrunning (TAS) is a subcategory of speedrunning that uses emulation software or additional tools to create a precisely controlled sequence of inputs or to slow down the game to perfect movements.",
+        "Many online communities revolve around speedrunning specific games; community leaderboard rankings for individual games form the primary competitive metric for speedrunning.",
+        "Racing between two or more speedrunners is also a popular form of competition.",
+        "Videos and livestreams of speedruns are shared via the internet on sites such as YouTube and Twitch.",
+        "Speedruns are sometimes showcased at marathon events, which are gaming conventions that feature multiple people performing speedruns in a variety of games."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Retro gaming",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2491812",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "d428284e04623eacab154df32d1d01dc927de958a4d5a9ab23a6a02a510cf358",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Retro gaming, also known as classic gaming and old school gaming, is the playing and collection of personal computers, consoles, and video games from earlier decades.",
+        "Usually, retro gaming is based upon systems that are outmoded or discontinued, although ported retro gaming allows games to be played on modern hardware via ports, emulations or compilations.",
+        "It is typically for nostalgia, preservation, or authenticity.",
+        "A new game could be retro styled, such as an RPG with turn-based combat and pixel art in isometric camera perspective, as well as chip-tune styled music.",
+        "Retro gaming has existed since the early years of the video game industry, and was popularized with the Internet and emulation technology.",
+        "It is argued that the main reasons players are drawn to retro games are nostalgia for different eras, the idea that older games are more innovative and original, and the simplicity of the games.",
+        "Retro gaming and retrocomputing have been described as preservation activity and as aspects of the remix culture."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Video games and Linux",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9914431",
+      "retrieved_at": "2026-10-18T16:07:43.652Z",
+      "sha256": "cd3f7497c3bbcbefd07a0240789f493be0c6b2c5dd0ca6513ca707bb06039964",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Linux-based operating systems can be used for playing video games.",
+        "Because fewer games natively support the Linux kernel than Windows, various software has been made to run Windows games, software, and programs, such as Wine, Cedega, DXVK, and Proton, and managers such as Lutris and PlayOnLinux.",
+        "The Linux gaming community has a presence on the internet with users who attempt to run games that are not officially supported on Linux."
+      ]
+    }
+  ]
+}

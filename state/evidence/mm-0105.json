@@ -1,0 +1,133 @@
+{
+  "id": "mm-0105",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Do Term Structures in Different Currencies Comove?",
+      "publisher": "Elsevier BV",
+      "author": "Jotikasthira, Chotibhak; Le, Anh; Lundblad, Christian T.",
+      "published_at": "2012",
+      "url": "https://doi.org/10.2139/ssrn.2001788",
+      "retrieved_at": "2026-10-18T14:52:22.659Z",
+      "sha256": "edcac2b3c40be015769981f1d1d4252bc34217c2a80d8a7aabf4ed2fd8198d59",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Yield curve fluctuations across different currencies are highly correlated.",
+        "This paper investigates this phenomenon by exploring the channels through which macroeconomic shocks are transmitted across borders.",
+        "Macroeconomic shocks affect current and expected future short-term rates as central banks react to changing economic environments.",
+        "Investors may also respond to these shocks by altering their required compensation for risk.",
+        "Macroeconomic shocks thus influence bond yields both through a “policy” channel as well as through a “risk compensation” channel.",
+        "Using data from the U.S., the U.K., and Germany, we find that world inflation and U.S.",
+        "yield level together explain over two-thirds of the co-variance of yields at all maturities.",
+        "Further, these effects operate largely through the risk compensation channel for long-term bonds."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Do Different Countries Use Different Currencies?",
+      "publisher": "International Monetary Fund (IMF)",
+      "author": "Kocherlakota, Narayana; Krueger, Thomas",
+      "published_at": "1998-02",
+      "url": "https://doi.org/10.5089/9781451923087.001",
+      "retrieved_at": "2026-10-18T14:52:22.659Z",
+      "sha256": "c5620d1b7862e64b112bce84eaff65c993c51b0d3478cb8561d4369ad4425571",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "During long periods of history, countries have pegged their currencies to an international standard (such as gold or the U.S.",
+        "dollar), severely restricting their ability to create money and affect output, prices, or government revenue.",
+        "Nevertheless, countries generally have maintained their own currencies.",
+        "The paper presents a model where agents have heterogeneous preferences—that are private information—over goods of different national origin.",
+        "In this environment, it may be optimal for countries to have different currencies; we also identify conditions where separate national currencies do not expand the set of optimal allocations."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Reserve currency",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=177666",
+      "retrieved_at": "2026-10-18T14:52:22.732Z",
+      "sha256": "afbfac4f244252749b9f285abeac45b43a5099163744032342c8b4235d611f05",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A reserve currency is a foreign currency that is held by governments, central banks or other monetary authorities as part of their foreign exchange reserves.",
+        "The reserve currency can be used in international transactions, international investments and all aspects of the global economy.",
+        "It is often considered a hard currency or safe-haven currency.",
+        "Before World War II, foreign exchange such as the British pound made up less than 30% of global reserves, gold being the primary exchange asset held by central banks.",
+        "However, by the middle of the 20th century, the United States dollar had become the world's dominant reserve currency.",
+        "Because other countries must obtain the reserve currency to pay for goods and services (and bear the associated, albeit small, transaction costs) the issuing country can purchase everyday goods at comparatively low prices.",
+        "At the same time, strong global demand for the reserve currency enables the issuing country to borrow on more favorable terms, including lower interest rates."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Pound sterling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=270673",
+      "retrieved_at": "2026-10-18T14:52:22.732Z",
+      "sha256": "f5e2d5c349549dce57339edaadab4b60c444924ffa4ff91eb29d6927aef675a7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sterling (symbol: £; code: GBP) is the currency of the United Kingdom and nine of its dependent territories and formerly of the Kingdom of England.",
+        "The pound is the base unit of sterling, and the word pound is also used to refer to the British currency generally, often qualified in international contexts as the British pound or pound sterling.",
+        "Since 1971, each pound has been divided into 100 pence (singular is 'penny').",
+        "Sterling is the world's oldest currency in continuous use since its inception.",
+        "In 2025, it was the fourth-most-traded currency in the foreign exchange market, after the United States dollar, the euro, and the Japanese yen.",
+        "Together with those three currencies and the renminbi, it forms the basket of currencies that calculate the value of IMF special drawing rights.",
+        "As of early 2026, sterling is also the fourth  most-held reserve currency in global reserves.",
+        "The Bank of England is the central bank for sterling, issuing its own banknotes (as used in England and Wales) and regulating issuance of banknotes by private banks in Scotland, such as the Bank of Scotland and Clydesdale Bank, and in Northern Ireland, such as by Danske Bank.",
+        "Sterling banknotes issued by other jurisdictions are not regulated by the Bank of England; their governments guarantee convertibility at par.",
+        "Historically, sterling was also used to varying degrees by the colonies and territories of the British Empire."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Foreign exchange market",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=648277",
+      "retrieved_at": "2026-10-18T14:52:22.732Z",
+      "sha256": "86eeff65e0d64fa28ab7b671b55d2d81a248720ae2b3927021bdc1e43f12d203",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The foreign exchange market (forex, FX, or currency market) is a global decentralized or over-the-counter (OTC) market for the trading of currencies.",
+        "This market determines foreign exchange rates for every currency.",
+        "By trading volume, it is by far the largest market in the world, followed by the credit market.",
+        "Financial centres function as anchors of trading between a range of multiple types of buyers and sellers around the clock, with the exception of weekends.",
+        "As currencies are always traded in pairs, the market does not set a currency's absolute value, but rather determines its relative value by setting the market price of one currency if paid for with another.",
+        "The market works through financial institutions and operates on several levels.",
+        "Behind the scenes, banks turn to a smaller number of financial firms known as \"dealers\", who are involved in large quantities of trading.",
+        "Most foreign exchange dealers are banks, so this behind-the-scenes market is sometimes called the \"interbank market\".",
+        "Trades between dealers can be very large, involving hundreds of millions of dollars.",
+        "Because of the sovereignty issue when involving two currencies, Forex has little supervisory entity regulating its actions.",
+        "In a typical foreign exchange transaction, a party purchases some quantity of one currency by paying with some quantity of another currency.",
+        "The foreign exchange market assists international trade and investments by enabling currency conversion."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Par value",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1522672",
+      "retrieved_at": "2026-10-18T14:52:22.732Z",
+      "sha256": "2eb9458bad6af1906b7989ab1bbb7b6cf8cca0ddcfb3017947d66a0f8688cf5b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In finance and accounting, par value means stated value or face value of a financial instrument.",
+        "Expressions derived from this term include at par (equal to par value), above par (greater than par value), below par (smaller than par value) and no-par (has no par value)."
+      ]
+    }
+  ]
+}

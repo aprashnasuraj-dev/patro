@@ -1,0 +1,149 @@
+{
+  "id": "mm-1434",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How a new mapping tool helps Florida planners protect wildlife corridors as the state grows",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Lockhart, Sarah; Hoctor, Thomas",
+      "published_at": "2026-04-13",
+      "url": "https://theconversation.com/how-a-new-mapping-tool-helps-florida-planners-protect-wildlife-corridors-as-the-state-grows-276833",
+      "retrieved_at": "2026-10-18T16:28:35.231Z",
+      "sha256": "858d2fc121f34a5b0c77a6db00b6b05cec12ab1042f150dbd0f4a24a520229d6",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How a new mapping tool helps Florida planners protect wildlife corridors as the state grows Skip to content Academic rigor, journalistic flair As Florida’s human population grows, wildlife increasingly has nowhere to go.",
+        "On any given day, a Florida county commission or municipality may approve a new subdivision, a transportation agency may select the route of a highway expansion, or a rancher may decide whether to sell land for development.",
+        "As new neighborhoods, roads and infrastructure spread across the state, they reshape not only communities but also the natural systems wildlife depends on.",
+        "But taken together, these choices determine whether wildlife can move across Florida’s landscapes to find food, reproduce and adapt to a changing climate – or become isolated in shrinking fragments of habitat.",
+        "In 2011, Florida eliminated the Department of Community Affairs , which had monitored and coordinated land use and development throughout the state.",
+        "Since then, there has been limited oversight of local and county governments when it comes to urban planning and land development.",
+        "As conservation researchers, we study how scientific data can support real-world planning decisions.",
+        "That led us to develop the Florida Ecological Connectivity Planning Viewer in collaboration with our colleagues at the University of Florida’s Center for Landscape Conservation Planning and GeoPlan Center .",
+        "This online mapping platform helps decision-makers and conservationists understand how land across Florida fits together as a connected ecological network.",
+        "Seeing this network alongside a suite of other related planning and conservation data can help them avoid impacts that would disrupt or disconnect it.",
+        "Over the past 20 years, housing and development have increasingly encroached on important natural lands across Florida.",
+        "Michael Warren/iStock via Getty Images Plus A cautionary tale from the ‘Last Green Thread’ Scientists have known for decades that connected landscapes benefit both animals and people ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "DESIGNING AND MANAGING WILDLIFE CORRIDORS",
+      "publisher": "Anthem Press",
+      "author": null,
+      "published_at": "2024-06-11",
+      "url": "https://doi.org/10.2307/jj.15729465.7",
+      "retrieved_at": "2026-10-18T16:28:35.642Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Landscape Structure & Functional Connectivity of Wildlife Corridors.",
+      "publisher": "University of North Texas Digital Library (University of North Texas)",
+      "author": "Reilly Elaine 05/17/2003- Neville",
+      "published_at": "2026-07-01",
+      "url": "https://openalex.org/W7221841624",
+      "retrieved_at": "2026-10-18T16:28:35.961Z",
+      "sha256": "3c948d6aff1351854398703fbaa84d05936cf6abf3f9a9aba162513d3f97381c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The development and management of conservation corridors remains the most frequently cited conservation intervention to safeguard wildlife from human land use and climate change.",
+        "Resultantly, numerous government agencies and conservation organizations worldwide are investing millions of dollars annually in the construction and management of conservation corridors.",
+        "However, the utility of these structures is mostly based on intuitive or theoretical assumptions, and most quantitative studies provide equivocal support for their functionality.",
+        "For my thesis, I used a dataset of 11 mammal species across 15 corridor-containing landscapes in six countries, collected using an experimental design, to quantitatively test corridor efficacy.",
+        "My work advances this analysis of corridor functionality in three important ways.",
+        "Firstly, in Chapter 2, I tested the efficacy of a metric called the Corridor Success Index (CSI) that was originally conceptualized to evaluate corridor success using a replicated landscape experimental design.",
+        "Theoretically, the CSI reconciles structural metrics with functional biological indicators of gene flow (including He, Ho, Ar, FST, Nm).",
+        "I found that the CSI successfully distinguishes actual functional connectivity from mere physical presence.",
+        "Conversely, the CSI also identified critical failures, such as the Poland Martes martes in Corridor 1, which lacked significant genetic patterns of connectivity despite its structural appearance, highlighting the risks of \"blind\" conservation.",
+        "In Chapter 3, I use the CSI values for our 15 corridor-containing landscapes to investigate the drivers of corridor success.",
+        "Using Structural Equation Modeling (SEM) to synthesize landscape resistance modeling and population genetics, I evaluated how specific landscape configurations influence actual gene flow.",
+        "The SEM explained 95.0% of the variance in corridor success, identifying landscape Cohesion as a significant positive predictor (β = 0.87, p = 0.0026) and Contagion as a negative predictor (β = -0.96, p = 0.0031), particularly for small mammals (p = 0.019)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Wildlife–vehicle collision",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=261105",
+      "retrieved_at": "2026-10-18T16:28:35.961Z",
+      "sha256": "9eb2b134980964da175b0abe720002191178a124fbb24b9f780107e1f74ed4be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A wildlife–vehicle collision is a traffic collision with an animal; if the animal dies, its corpse is referred to as roadkill.",
+        "Wildlife-vehicle collisions (WVC) have increasingly been the topic of academic research to understand the causes, and how they can be mitigated."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Yellowstone to Yukon Conservation Initiative",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2562219",
+      "retrieved_at": "2026-10-18T16:28:35.961Z",
+      "sha256": "734bc029dce1a603f76844c978008ed83f648ac688a7166c75ecdbed7573ec0f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Yellowstone to Yukon Conservation Initiative or Y2Y is a transboundary Canada–United States not-for-profit organization that aims to connect and protect the 2,100 miles (3,400 kilometres) Yellowstone-to-Yukon region.",
+        "Its mission proposes to maintain and restore habitat integrity and connectivity along the spine of North America's Rocky Mountains stretching from the Greater Yellowstone ecosystem to Canada's Yukon Territory.",
+        "It is the only organization dedicated to securing the long-term ecological health of the region.",
+        "Since 1993, more than 700 partner groups have joined forces to support the shared mission and vision.",
+        "Existing national, state, and provincial parks and wilderness areas anchor the system, while the creation of new protected and special management areas provide the additional cores and corridors needed to complete it.",
+        "This network is built upon the principles of conservation biology, various focal species assessments, the knowledge of local and traditional residents, and the requirements for sustainable economies."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Wildlife Conservation Network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32609269",
+      "retrieved_at": "2026-10-18T16:28:35.961Z",
+      "sha256": "3b9e7a8348ab7765e230fe0d3aeb3640e496e8f8a4bef68437eb3438e878adce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Wildlife Conservation Network (WCN) is a United States–based 501(c)(3) non-profit organization that protects endangered wildlife by supporting conservationists in the field who promote coexistence between wildlife and people.",
+        "WCN does this by providing its partners with capital, strategic capacity-building services, training, and operational support.",
+        "WCN has been given a top rating amongst wildlife conservation charities, with a four star rating on Charity Navigator.",
+        "Founded in 2002, Wildlife Conservation Network was built on a venture capital fundraising model to identify entrepreneurial conservationists and projects and give them the support they need to effectively run their programs.",
+        "WCN brings donors together with field conservationists to develop personal relationships and allow donors to see how their support is making an impact for wildlife.",
+        "WCN's 100% donation model means every dollar donated to a specific species is guaranteed to go to the conservationists who protect that species."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Florida Wildlife Corridor",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=35264179",
+      "retrieved_at": "2026-10-18T16:28:35.961Z",
+      "sha256": "5fa44f2a495437232d865645ea0094fc6ec6425dd9ced7aaee025cf9fa4e6177",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Florida Wildlife Corridor (FLWC) is a statewide network of nearly 18 million acres of connected ecosystems containing state parks, national forests, and wildlife management areas that support wildlife and human occupation.",
+        "It is championed by the Florida Wildlife Corridor Foundation and other major organizations, including Walt Disney World.",
+        "The corridor consists of more than 40% of the state including planned areas of conservation.",
+        "The FLWC is made possible by a bipartisan law passed in 2021 and involves efforts by government leaders and businessmen as well as conservationist.",
+        "The initiative also has public support from Florida residents as it also helps to protect privately owned farmland.",
+        "Many of these species such as the Florida black bear, Florida panther and Florida scrub jay have seen an increase in survival rates."
+      ]
+    }
+  ]
+}

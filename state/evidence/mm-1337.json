@@ -1,0 +1,146 @@
+{
+  "id": "mm-1337",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Making fiber optic cables",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2007-04-16",
+      "url": "https://www.cambridge.org/core/books/competing-for-the-future/making-fiber-optic-cables/B39A739DF754A7656AEA770205B9B902",
+      "retrieved_at": "2026-10-18T16:16:09.181Z",
+      "sha256": "d38e7cdb3557e77ba973417a091746d194b53a6efdf27bded28ed78acb865fc2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Making fiber optic cables (Appendix 1.8) - Competing for the Future Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "Each of these types is distinguished by its refractive index profile.",
+        "The refractive index profile is a key part of fiber design because it determines the product's ability to propagate short pulses and maintain their shapes over long distances.",
+        "The topmost illustration shows the simplest stepped-index profile fiber (also called multimode).",
+        "This is the least costly type to manufacture, but it has the poorest pulse propagation characteristics.",
+        "Single mode fiber with a tailored stepped refractive index profile, shown in the second illustration, is much better at keeping the pulse shape intact, but it is costlier.",
+        "This type of fiber is used for high-data-rate communications over long distances.",
+        "Finally, in the illustration at the bottom of the figure, we have a multimode, graded-index fiber that falls between the two profiles above it.",
+        "This fiber has applications in intermediate distance transmission.",
+        "In all three examples the glass fibers are encased in claddings.",
+        "Large numbers of individual cladded fibers are enclosed in cables that protect them from external forces and the elements."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "DETERMINANTS OF EFFECTIVE IMPLEMENTATION OF FIBER OPTIC CABLE PROJECTS IN KENYA",
+      "publisher": "International Journal of Social Sciences Management and Entrepreneurship (IJSSME)",
+      "author": "Ochieng Daniel Omenda; Karanja Ngugi",
+      "published_at": "2017-05-01",
+      "url": "https://openalex.org/W3026905425",
+      "retrieved_at": "2026-10-18T16:16:09.183Z",
+      "sha256": "1943aa12d7aeed6ecbbefb91a2575c8612acd1986c4d5a846e0134401cb77199",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This study examined the determinants of effective implementation of fiber optic cable projects in Kenya.",
+        "Findings from various sources have indicated that most Telecommunication organizations are slowly embracing fiber optic cable technology, but the implementation process of these projects remains a challenge, due to the failures of well-formulated strategies at critical stages of implementation.",
+        "To outline the key concepts, the study was based on various theories i.e.",
+        "resource dependency, stakeholder’s theory, Rogers innovation diffusion theory and the theory of constraints.",
+        "The sampling frame was made of 290 different fiber optic cable projects where random sampling method shall be used.",
+        "Data was collected using structured questionnaires and analyzed using the SPSS (v.23.0) tool.",
+        "Statistical inferences were used to analyze the data collected in terms of reliability and validity after a pilot study has been conducted.",
+        "Both tests of significance using regression and correlation analysis were used to indicate the significance level amongst the independent variables when assessed against the dependent variable.",
+        "The study found that project team management budgetary control, communication management and logistics management is statistically significant to effective implementation.",
+        "The project team should ensure that budget is well set before the start of the implememnation.",
+        "Proper communication channels should be used, the selected channels should ensure that information is delivered at the right time to avoid delay of some activities."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Internet access",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=300602",
+      "retrieved_at": "2026-10-18T16:16:09.183Z",
+      "sha256": "a006e176e427a8be3082148669539b985860576089d1ca5ffedc32d31be646e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Internet access is a facility or service that provides connectivity for a computer, a computer network, or other network device to the Internet, and for individuals or organizations to access or use applications such as email and the World Wide Web.",
+        "Internet access is offered for sale by an international hierarchy of Internet service providers (ISPs) using various networking technologies.",
+        "At the retail level, many organizations, including municipal entities, also provide cost-free access to the general public.",
+        "Types of connections range from fixed-line cable (such as DSL and fiber optic) to mobile (via cellular) and satellite.",
+        "The availability of Internet access to the general public began with the commercialization of the early Internet in the early 1990s, and has grown with the availability of useful applications, such as the World Wide Web.",
+        "In 1995, only 0.04 percent of the world's population had access, with well over half of those living in the United States  and consumer use was through dial-up.",
+        "By the first decade of the 21st century, many consumers in developed nations used faster broadband technology.",
+        "By 2014, 41 percent of the world's population had access, broadband was almost ubiquitous worldwide, and global average connection speeds exceeded one megabit per second."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hybrid fiber-coaxial",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=617703",
+      "retrieved_at": "2026-10-18T16:16:09.183Z",
+      "sha256": "ce721d35bb7acaf12fda4eb41310601a6e720c52c3e006fcd97e247bb7bf9e05",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hybrid fiber–coaxial (HFC) is a broadband telecommunications network that combines optical fiber and coaxial cable.",
+        "It has been commonly employed globally by cable television operators since the early 1990s.",
+        "The fiber optic trunk lines provide enough bandwidth to allow additional bandwidth-intensive services such as cable internet access through DOCSIS.",
+        "Customers are grouped into service groups, which are groups of customers that share bandwidth among each other since they use the same RF channels to communicate with the company."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Optical fiber",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3372377",
+      "retrieved_at": "2026-10-18T16:16:09.183Z",
+      "sha256": "1e4a43a3052be392b9552469a31b9ed8d875846c042c61e85a0dc37b451a502b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An optical fiber, or optical fibre, is a flexible glass or plastic fiber that can transmit light from one end to the other.",
+        "Such fibers are widely used in fiber-optic communication, where they permit transmission over longer distances and at higher bandwidths (data transfer rates) than electrical cables.",
+        "Fibers are used instead of cables because signals travel along them with less loss and are immune to electromagnetic interference.",
+        "Fibers are also used for illumination and imaging, and are often wrapped in bundles so they may be used to carry light into, or images out of confined spaces, as in the case of a fiberscope.",
+        "Specially designed fibers are also used for a variety of other applications, such as fiber optic sensors and fiber lasers.",
+        "Glass optical fibers are typically made by drawing, while plastic fibers can be made either by drawing or by extrusion.",
+        "Optical fibers typically include a core surrounded by a transparent cladding material with a lower index of refraction.",
+        "Light is kept in the core by the phenomenon of total internal reflection which causes the fiber to act as a waveguide.",
+        "Fibers that support many propagation paths or transverse modes are called multi-mode fibers, while those that support a single mode are called single-mode fibers (SMF).",
+        "Multi-mode fibers generally have a wider core diameter and are used for short-distance communication links and for applications where high power must be transmitted.",
+        "Single-mode fibers are used for most communication links longer than 1,050 meters (3,440 ft).",
+        "Being able to join optical fibers with low loss is important in fiber optic communication."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Fiber to the x",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3492955",
+      "retrieved_at": "2026-10-18T16:16:09.183Z",
+      "sha256": "ffc8653fb1aab00e2a7b30ece68c4ad35ada3731e136fa1fd89dc97be44bd79b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fiber to the x (FTTX; also spelled \"fibre\") or fiber in the loop is a generic term for any broadband network architecture using optical fiber to provide all or part of the local loop used for last mile telecommunications.",
+        "As fiber optic cables are able to carry much more data than copper cables, especially over long distances, copper telephone networks built in the 20th century are being replaced by fiber.",
+        "The carrier equipment for FTTx is often housed in a \"fiber hut\", point of presence or central office.",
+        "FTTX is a generalization for several configurations of fiber deployment, arranged into two groups: FTTP/FTTH/FTTB (fiber laid all the way to the premises/home/building) and FTTC/N (fiber laid to the cabinet/node, with copper wires completing the connection).",
+        "Residential areas already served by balanced pair distribution plant call for a trade-off between cost and capacity.",
+        "The closer the fiber head, the higher the cost of construction and the higher the channel capacity.",
+        "In places not served by metallic facilities, little cost is saved by not running fiber to the home.",
+        "Fiber to the x is the key method used to drive next-generation access (NGA), which describes a significant upgrade to the broadband available by making a step change in speed and quality of the service.",
+        "This is typically thought of as asymmetrical with a download speed of 24 Mbit/s plus and a fast upload speed.",
+        "Fixed wireless and mobile wireless technologies such as Wi-Fi, WiMAX and 3GPP Long Term Evolution (LTE) are an alternative for providing Internet access."
+      ]
+    }
+  ]
+}

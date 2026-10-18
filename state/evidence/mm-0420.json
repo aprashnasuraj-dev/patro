@@ -1,0 +1,94 @@
+{
+  "id": "mm-0420",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Neural network (machine learning)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21523",
+      "retrieved_at": "2026-10-18T15:32:55.218Z",
+      "sha256": "fdb1d93194bca7cd319682bbcde429a98cd3985ab82116c0a9a7eb290f0a71dc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In machine learning, a neural network (NN) or artificial neural network (ANN) is a computational model inspired by the structure and functions of biological neural networks.",
+        "A neural network consists of connected units or nodes called artificial neurons, which loosely model the neurons in the brain.",
+        "These are connected by edges, which model the synapses in the brain.",
+        "Each artificial neuron receives signals from connected neurons, then processes them and sends a signal to other connected neurons.",
+        "The \"signal\" is a real number, and the output of each neuron is computed by some non-linear function of the totality of its inputs, called the activation function.",
+        "The strength of the signal at each connection is determined by a weight, which adjusts as part of the training process.",
+        "Signals travel from the first layer (the input layer) to the last layer (the output layer), typically passing through multiple intermediate layers (hidden layers).",
+        "A network is typically called a deep neural network if it has at least two hidden layers.",
+        "Deep neural networks are capable of learning sophisticated hierarchical representations.",
+        "Training neural networks is a compute-intensive process, accelerated by  the use of graphics processing units (GPUs), and large datasets.",
+        "In reality, such textures and outlines would not be represented by single nodes, but rather by associated weight patterns of multiple nodes.",
+        "Architectural innovations such as convolutional neural networks (CNNs) significantly improved performance in computer vision tasks, while recurrent neural networks (RNNs) enabled modeling of sequential data such as speech and time-series information."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Recurrent neural network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1706303",
+      "retrieved_at": "2026-10-18T15:32:55.218Z",
+      "sha256": "f532c89cb9785e196d14f1d8d5826358b426524353b74c4bd3ad1563d95767cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In artificial neural networks, recurrent neural networks (RNNs) are designed for processing sequential data, such as text, speech, and time series, where the order of elements is important.",
+        "Unlike feedforward neural networks, which process inputs independently, RNNs utilize recurrent connections, where the output of a neuron at one time step is fed back as input to the network at the next time step.",
+        "This enables RNNs to capture temporal dependencies and patterns within sequences.",
+        "The fundamental building block of RNN is the recurrent unit, which maintains a hidden state—a form of memory that is updated at each time step based on the current input and the previous hidden state.",
+        "This feedback mechanism allows the network to learn from past inputs and incorporate that knowledge into its current processing.",
+        "RNNs have been successfully applied to tasks such as unsegmented, connected handwriting recognition, speech recognition, natural language processing, and neural machine translation.",
+        "However, traditional RNNs suffer from the vanishing gradient problem, which limits their ability to learn long-range dependencies.",
+        "This issue was addressed by the development of the long short-term memory (LSTM) architecture in 1997, making it the standard RNN variant for handling long-term dependencies.",
+        "Later, gated recurrent units (GRUs) were introduced as a more computationally efficient alternative.",
+        "Nevertheless, RNNs remain relevant for applications where computational efficiency, real-time processing, or the inherent sequential nature of data is crucial."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Neural network (biology)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1729542",
+      "retrieved_at": "2026-10-18T15:32:55.218Z",
+      "sha256": "d2bf3c47d7d1fcccbf12e07c79fdf15083653021a3563df1197f5d06486c7365",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A neural network, also called a neuronal network, is an interconnected population of neurons typically containing multiple neural circuits.",
+        "Biological neural networks are studied to understand the organization and functioning of nervous systems.",
+        "Artificial neural networks, which are defined as machine learning models, are loosely inspired by biological neural networks.",
+        "They consist of artificial neurons, which are created through mathematical functions that are designed to be mimic to the mechanisms used by neural circuits."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Deep learning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32472154",
+      "retrieved_at": "2026-10-18T15:32:55.218Z",
+      "sha256": "12e3069b23749b9b52a02b068304ac72b511dd469236b47555bc9b9d9f42f3c4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In machine learning, deep learning (DL) focuses on utilizing multilayered neural networks to perform tasks such as classification, regression, and representation learning.",
+        "The field takes inspiration from biological neuroscience and revolves around stacking artificial neurons into layers and \"training\" them to process data.",
+        "The adjective \"deep\" refers to the use of multiple layers (ranging from three to several hundred or thousands) in the network.",
+        "Methods used can be supervised, semi-supervised or unsupervised.",
+        "Some common deep learning network architectures include fully connected networks, deep belief networks, recurrent neural networks, recurrent Random neural networks, convolutional neural networks, generative adversarial networks, transformers, and neural radiance fields.",
+        "Early forms of neural networks were inspired by information processing and distributed communication nodes in biological systems, particularly the human brain.",
+        "However, current neural networks do not intend to model the brain function of organisms, and are generally seen as low-quality models for that purpose."
+      ]
+    }
+  ]
+}

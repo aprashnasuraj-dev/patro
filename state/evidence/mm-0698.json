@@ -1,0 +1,161 @@
+{
+  "id": "mm-0698",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How expired domain names of scientific journals can be a goldmine",
+      "publisher": "Center for Open Science",
+      "author": "Detective-Bard, AI",
+      "published_at": "2023-06-01",
+      "url": "https://doi.org/10.31219/osf.io/74tzj",
+      "retrieved_at": "2026-10-18T15:46:10.435Z",
+      "sha256": "1b8536bd0622005f4e7c8fb025c03deb4e70994a74cce876b973d3408c561f2d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The article is about how expired domain names of scientific journals can be a goldmine.",
+        "Some people buy expired domain names of scientific journals and then create fake versions of the journals."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Domain names, global practice and procedure",
+      "publisher": "ePrints Soton (University of Southampton)",
+      "author": "Concepción Shimizu Wilson",
+      "published_at": "2001-01-01",
+      "url": "https://openalex.org/W199518994",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "c2130aafa27591f087b98cb40ac6f7a9895b42d652068d5496907a63c916a411",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The value of domain names National jurisdictions: Summary information - overview of each country.",
+        "Detailed information: Authority allocating names; registration procedure; registry practice; maintaining the registration; cancellation; resolving conflicts; trade marks and domain names."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Names and Conceptual Domains",
+      "publisher": "OpenAlex",
+      "author": "Joško Žanić",
+      "published_at": "2015-01-01",
+      "url": "https://openalex.org/W2782338403",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "cbb7812478fdc19fbde23f2511ebd520c8f4c0578b4b0d7511927e3f9a6195e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A name is typically given to an entity whilst keeping in mind which class this entity belongs to, which kind it is an instance of.",
+        "It is usually recognized by philosophers of language that there thus exists a connection between a name and a general categorial term which classifies its referent, but the consequences of this connection for the semantics of names have largely been left unexplored.",
+        "The paper proposes that, in the mind, names are connected to conceptual domains (which can be labelled by sortals) that encode the conceptualization of the kind of entity that the name names and that govern the behavior of the name.",
+        "A domain is understood in cognitive linguistics as a coherent region of human knowledge, or a coherent region of conceptual space.",
+        "That this connection exists is also testified to by experimental work on names.",
+        "Examples with names of people, cities and literary works show how a name can shift its reference from the named entity as a whole to certain aspects of it in accordance with the structure of the background domain.",
+        "Some aspects of an entity are usually conceived of as more essential to it than others, and this is exhibited in the behavior of the name.",
+        "Previous work has shown that there is a certain appropriateness to naming, in the sense that there is something wrong with naming your daughter 'John', or 'Fido'.",
+        "However, the paper attempts to uncover a deeper phenomenon: the use of names indicates how we conceive of entities, it reveals our background ontologies, so to speak, because the background domains govern the use of names."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Domain Name System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8339",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "8830e9e30af20da0d054a045b029551bebd3ff77a69caa99ad2a8b00631ab493",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Domain Name System (DNS) is a hierarchical and distributed name service that provides a naming system for computers, services, and other resources on the Internet or other Internet Protocol (IP) networks.",
+        "It associates various information with domain names (identification strings) assigned to each of the associated entities.",
+        "Most prominently, it translates readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices with the underlying network protocols.",
+        "The Domain Name System has been an essential component of the functionality of the Internet since 1985.",
+        "The Domain Name System delegates the responsibility of assigning domain names and mapping those names to Internet resources by designating authoritative name servers for each domain.",
+        "Network administrators may delegate authority over subdomains of their allocated name space to other name servers.",
+        "This mechanism provides distributed and fault-tolerant service and was designed to avoid a single large central database.",
+        "In addition, the DNS specifies the technical functionality of the database service that is at its core.",
+        "It defines the DNS protocol, a detailed specification of the data structures and data communication exchanges used in the DNS, as part of the Internet protocol suite.",
+        "The Internet maintains two principal namespaces, the domain name hierarchy and the IP address spaces.",
+        "The Domain Name System maintains the domain name hierarchy and provides translation services between it and the address spaces.",
+        "Internet name servers and a communication protocol implement the Domain Name System."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Domain name",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39878",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "57f22f80dff770b68151697a7c41519d5869b15ebef90941ac08056c4730acb4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the Internet, a domain name is a string that identifies a realm of administrative autonomy, authority, or control.",
+        "Domain names are often used to identify services provided through the Internet, such as websites, email services, and more.",
+        "Domain names are used in various networking contexts and for application-specific naming and addressing purposes.",
+        "In general, a domain name identifies a network domain or an Internet Protocol (IP) resource, such as a personal computer used to access the Internet, or a server computer.",
+        "Domain names are formed by the rules and procedures of the Domain Name System (DNS).",
+        "Domain names are organized in subordinate levels (subdomains) of the DNS root domain, which is nameless.",
+        "The first-level set of domain names are the top-level domains (TLDs), including the generic top-level domains (gTLDs), such as the prominent domains com, info, net, edu, and org, and the country code top-level domains (ccTLDs).",
+        "The registration of a second- or third-level domain name is usually administered by a domain name registrar who sell its services to the public.",
+        "A fully qualified domain name (FQDN) is a domain name that is completely specified with all labels in the hierarchy of the DNS, having no parts omitted.",
+        "Traditionally a FQDN ends in a dot (.) to denote the top of the DNS tree.",
+        "Labels in the Domain Name System are case-insensitive, and may therefore be written in any desired capitalization method, but most commonly domain names are written in lowercase in technical contexts.",
+        "A hostname is a domain name that has at least one associated IP address."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Domain name registry",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=158284",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "698cbfe4e57b571d08fd8310edc42b74c93cca8787e9ffea5487d434ae210874",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A domain name registry is a database of all domain names and the associated registrant information in the top level domains of the Domain Name System (DNS) of the Internet that enables third party entities to request administrative control of a domain name.",
+        "Most registries operate on the top-level and second-level of the DNS.",
+        "A registry operator, sometimes called a network information center (NIC), maintains all administrative data of the domain and generates a zone file which contains the addresses of the nameservers for each domain.",
+        "Each registry is an organization that manages the registration of domain names within the domains for which it is responsible, controls the policies of domain name allocation, and technically operates its domain.",
+        "It may also fulfill the function of a domain name registrar, or may delegate that function to other entities.",
+        "Domain names are managed under a hierarchy headed by the Internet Assigned Numbers Authority (IANA), which manages the top of the DNS tree by administrating the data in the root nameservers.",
+        "IANA also operates the int registry for intergovernmental organizations, the arpa zone for protocol administration purposes, and other critical zones such as root-servers.net.",
+        "IANA delegates all other domain name authority to other domain name registries and a full list is available on their web site.",
+        "Country code top-level domains (ccTLD) are delegated by IANA to national registries such as DENIC in Germany and Nominet in the United Kingdom."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Internationalized domain name",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=407936",
+      "retrieved_at": "2026-10-18T15:46:11.297Z",
+      "sha256": "c05bd0cab0f83f71427dd6ce3bf01734ca3fe5f48d1a327cc23f7bc6fb7e4d67",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An internationalized domain name (IDN) is an Internet domain name that contains at least one label displayed in software applications, in whole or in part, in non-Latin script or alphabet or in the Latin alphabet-based characters with diacritics or ligatures.",
+        "These writing systems are encoded by computers in multibyte Unicode.",
+        "Internationalized domain names are stored in the Domain Name System (DNS) as ASCII strings using Punycode transcription.",
+        "The DNS, which performs a lookup service to translate mostly user-friendly names into network addresses for locating Internet resources, is restricted in practice to the use of ASCII characters, a practical limitation that initially set the standard for acceptable domain names.",
+        "The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the DNS.",
+        "Internationalized domain names can only be used with applications that are specifically designed for such use; they require no changes in the infrastructure of the Internet.",
+        "IDN was originally proposed in December 1987 by Martin Dürst and implemented in 1990 by Tan Juay Kwang and Leong Kok Yong under the guidance of Tan Tin Wee.",
+        "After much debate and many competing proposals, a system called Internationalizing Domain Names in Applications (IDNA) was adopted as a standard, and has been implemented in several top-level domains.",
+        "In IDNA, the term internationalized domain name means specifically any domain name consisting only of labels to which the IDNA ToASCII algorithm (see below) can be successfully applied.",
+        "In March 2008, the IETF formed a new IDN working group to update the current IDNA protocol.",
+        "Chaired by Afilias's Ram Mohan, ASIWG aimed to develop a unified IDN table for the Arabic script.",
+        "In October 2009, the Internet Corporation for Assigned Names and Numbers (ICANN) approved the creation of internationalized country code top-level domains (IDN ccTLDs) in the Internet that use the IDNA standard for native language scripts."
+      ]
+    }
+  ]
+}

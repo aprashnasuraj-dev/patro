@@ -1,0 +1,122 @@
+{
+  "id": "mt-0215",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T17:10:31.455Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Italy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14532",
+      "retrieved_at": "2026-10-18T17:10:33.428Z",
+      "sha256": "cb7d9ad84bfa777fb504c20f96d30d173fc5b8862c0251e1e5bf64eca2f04587",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Italy, officially the Italian Republic, is a country in Southern and Western Europe.",
+        "It consists of a peninsula, which extends into the Mediterranean Sea, with the Alps on its northern land border, as well as nearly 800 islands, notably Sicily and Sardinia.",
+        "Italy shares land borders with France to the west; Switzerland and Austria to the north; Slovenia to the east; and the two enclaves of Vatican City and San Marino.",
+        "It is the tenth-largest country in Europe by area, covering 301,340 km2 (116,350 sq mi), and the third-most populous member state of the European Union, with nearly 59 million inhabitants.",
+        "Rome is the capital of Italy; other major cities include Milan, Naples, Turin, Palermo, Bologna, Florence, Genoa, Bari, and Venice.",
+        "The history of Italy goes back to numerous Italic peoples, notably including the ancient Romans, who conquered the Mediterranean world during the Roman Republic and ruled it for centuries during the Roman Empire.",
+        "With the spread of Christianity, Rome became the seat of the Catholic Church and the Papacy.",
+        "Barbarian invasions and other factors led to the decline and fall of the Western Roman Empire between late antiquity and the Early Middle Ages.",
+        "By the 11th century, Italian city-states and maritime republics expanded, bringing renewed prosperity through commerce and laying the groundwork for modern capitalism.",
+        "The Italian Renaissance flourished during the 15th and 16th centuries and spread to the rest of Europe.",
+        "Italian explorers discovered new routes to the Far East and the New World, contributing significantly to the Age of Discovery.",
+        "After centuries of political and territorial divisions, the Kingdom of Italy was established in 1861, following wars of independence and the Expedition of the Thousand."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T17:10:33.428Z",
+      "sha256": "b21b1882350c559f874f09167a4264076ae5833e147a8722ad4e3f856eec703e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "John Steinbeck",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15825",
+      "retrieved_at": "2026-10-18T17:10:33.428Z",
+      "sha256": "9cfd9f4ac835126362440ead300dafbe378e5bba59ebedbec910068b760ecc9e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "John Ernst Steinbeck ( STYNE-bek; February 27, 1902 – December 20, 1968) was an American writer and novelist.",
+        "He won the 1962 Nobel Prize in Literature \"for his realistic and imaginative writings, combining as they do sympathetic humor and keen social perception\".",
+        "One of the most widely read authors of the 20th century, he was also an independent journalist and war correspondent during World War II and the Vietnam War.",
+        "During his writing career, he authored 33 books, with one book coauthored alongside Edward Ricketts, including 16 novels, 6 non-fiction books, and 2 collections of short stories.",
+        "He is widely known for the comic novels Tortilla Flat (1935) and Cannery Row (1945), the epic East of Eden (1952), and the novellas The Red Pony (1933) and Of Mice and Men (1937).",
+        "The Pulitzer Prize–winning The Grapes of Wrath (1939) is considered Steinbeck's masterpiece and part of the American literary canon.",
+        "By the 75th anniversary of its publishing date, it had sold 14 million copies.",
+        "Much of Steinbeck's work employs settings in his native central California, particularly in the Salinas Valley and the California Coast Ranges region.",
+        "His works frequently explored the themes of fate and injustice, especially as applied to downtrodden or everyman protagonists.",
+        "He was awarded with the Presidential Medal of Freedom from Lyndon B."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Legend of Zelda",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30035",
+      "retrieved_at": "2026-10-18T17:10:33.428Z",
+      "sha256": "d68e0ba305d70d3fcb07412bb8098df1ce254a26c9159ca0e4f7bb71c8354eed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Legend of Zelda is a video game series created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka.",
+        "It is primarily developed and published by Nintendo, but some installments and re-releases have been outsourced to Flagship, Grezzo, and Tantalus Media.",
+        "The series centers on the various incarnations of Link, a courageous young boy of the elf-like Hylian race, and Princess Zelda, a princess within the bloodline of the goddess Hylia.",
+        "They fight to save the land of Hyrule from Ganon, an evil warlord turned demon king who wishes to use the Triforce, a sacred relic that can grant any wish its user desires when complete, to remake the world in his own dark image.",
+        "Zelda's role has often been that of a damsel in distress or donor who assists Link.",
+        "If someone with a heart that does not possess a balance of Power, Courage, and Wisdom, attempts to touch the Triforce, it will split into three triangles and bond with three people whose hearts embody the required virtue.",
+        "While the conflict with Ganon serves as a backbone for the series, some games have featured other settings and antagonists, with Link traveling or being sent to these other lands in their time of need.",
+        "Since The Legend of Zelda was released in 1986, the series has expanded to include 21 entries on all of Nintendo's major game consoles, as well as a number of spin-offs.",
+        "An American animated TV series based on the games aired in 1989 and manga adaptations commissioned by Nintendo have been produced in Japan since 1997.",
+        "The Legend of Zelda is one of the best-selling video game franchises of all time, having sold over 150 million copies as of September 2024.",
+        "The series is also known for its high level of quality, with many of its entries considered among the greatest video games of all time."
+      ]
+    }
+  ]
+}

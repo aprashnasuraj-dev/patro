@@ -1,0 +1,160 @@
+{
+  "id": "mm-0139",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "What Really Drives Teachers to Learn? Insights from an Explainable Machine Learning Approach",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Zhang, Xin; Yang, Mingyu",
+      "published_at": "2026-08-18",
+      "url": "https://doi.org/10.21203/rs.3.rs-10001554/v1",
+      "retrieved_at": "2026-10-18T14:52:27.880Z",
+      "sha256": "1ecc8201dcd44e8469d11b922de0860d927ced8cc02366a6283bd3d86bd1fc9f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Teacher professional learning is a cornerstone of school effectiveness and improvement, yet many teachers lack autonomous motivation for continuous professional development (CPD).",
+        "Traditional linear models may miss complex, non-linear associations among psychological and workplace conditions.",
+        "Grounded in Self-Determination Theory (SDT) and the school effectiveness research tradition, this study applies explainable machine learning to survey data from 472 school teachers in China.",
+        "Among the models compared, XGBoost showed the strongest cross-validated predictive performance (AUC = 0.851).",
+        "SHAP analyses indicated that school leadership and teachers' learning conceptions were among the most influential predictors in the model.",
+        "Because the study is cross-sectional and model-based, these findings should be interpreted as predictive patterns that can inform future causal and longitudinal research and do not provide evidence of causal effects."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Artificial Intelligence Reveal What Student Ratings Really Measure? A Causal Machine Learning Analysis for Evaluation Policy in Mathematics Education",
+      "publisher": "Elsevier BV",
+      "author": "Mgonja, Thomas",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6903220",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "92645c007b83b64200c790305256d5bd637f60639b16e42bd79e1696d235a84e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;&lt;span&gt;This study employs causal machine learning (directed acyclic graphs, double machine learning) to estimate the effect of professor ratings on student success in developmental mathematics.",
+        "Analyzing nearly 30,000 institutional records, the study finds a negligible average effect but substantial individual heterogeneity.",
+        "Age and teaching modality are key modifiers: older and online students benefit, while younger, face to face students do not.",
+        "Results indicate student evaluations capture motivational and contextual factors more than instructional impact.",
+        "As policy-based solution, a multi-source Faculty Assessment Composite for Effective Teaching (FACET) Score is proposed to replace satisfaction-based metrics with learning-centered evaluation systems.&lt;/span&gt;&lt;/p&gt;"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Tell me what you want, what you really, really want",
+      "publisher": "Association for Learning Development in Higher Education",
+      "author": "Rice, Paul; Farmer, Robert",
+      "published_at": "2016-10-14",
+      "url": "https://doi.org/10.47408/jldhe.v0i10.297",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "9ceb0b13763e0de8430adbce6a75dacc2bbce4d4ec6ed62427ad91beed4962ad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Moreover, if it was found they do use educational videos, investigation was required to determine if they are in a format that students want.",
+        "The first stage was a questionnaire which was followed by a focus group.",
+        "It was found that students at Northampton do overwhelmingly use educational videos.",
+        "Furthermore, the research found that students prefer videos to any other resource and that videos can increase motivation.",
+        "Additionally, high-risk production strategies, such as seeing the presenter on screen, and the use of animation, humour and quizzes were identified, and it was found that the use of music in an educational video was considered a negative component of a video.",
+        "The optimum length of the video is less clear, however, it is recommended they are kept to less than 10 minutes (although this is dependent upon the level of study of the student).",
+        "The key recommendation when producing videos is to ensure they have been designed taking cognitive research into account.",
+        "The key strength of a well-designed educational video, it is concluded, is to give the students something additional they cannot find in another resource, in a way which encourages effective learning."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "9d6236e0e8163d381682ed2d1b8332956721b6c0ab8dedd071c6504c739e27ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Time Machine (2002 film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3759215",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "3cd5f152ac95ed31140cb7d9a6be329c1dcc037b1d7fb9ed9cb1ebb2e203c140",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Time Machine is a 2002 American post-apocalyptic science fiction action adventure film loosely adapted by John Logan from the 1895 novel of the same name by H.",
+        "Wells and the 1960 film of the same name by George Pal and David Duncan.",
+        "Arnold Leibovit served as executive producer, and Simon Wells, the great-grandson of the original author, served as director.",
+        "The film stars Guy Pearce, Orlando Jones, Samantha Mumba in her film debut, Mark Addy, and Jeremy Irons, and includes a cameo by Alan Young, who also appeared in the 1960 film adaptation.",
+        "It contains new story elements not present in the original novel or the 1960 film adaptation, including a romantic subplot, a new scenario about how civilization was destroyed, and several new characters, such as an artificially intelligent hologram and a Morlock leader.",
+        "The film received mixed to negative reviews from critics and grossed $123 million worldwide.",
+        "It was nominated for the Academy Award for Best Makeup (John M.",
+        "and Barbara Lorenz) at the 75th Academy Awards, but lost to Frida."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Autoencoder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6836612",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "4ea11c7e62dcb357a8fec27e715504f73993347a44ef0a6cdd4b6ef332f4158e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An autoencoder is a type of artificial neural network used to learn efficient codings of unlabeled data (unsupervised learning).",
+        "An autoencoder learns two functions: an encoding function that transforms the input data, and a decoding function that recreates the input data from the encoded representation.",
+        "The autoencoder learns an efficient representation (encoding) for a set of data, typically for dimensionality reduction, to generate lower-dimensional embeddings for subsequent use by other machine learning algorithms.",
+        "Variants exist which aim to make the learned representations assume useful properties.",
+        "Examples are regularized autoencoders (sparse, denoising and contractive autoencoders), which are effective in learning representations for subsequent classification tasks, and variational autoencoders, which can be used as generative models.",
+        "Autoencoders are applied to many problems, including facial recognition, feature detection, anomaly detection, and learning the meaning of words.",
+        "In terms of data synthesis, autoencoders can also be used to randomly generate new data that is similar to the input (training) data."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Active learning (machine learning)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28801798",
+      "retrieved_at": "2026-10-18T14:52:29.089Z",
+      "sha256": "7d283cd1de003ea29bc3fdcc65221461862a56c3c6ff9e3f1f8821d6808739a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Active learning is a special case of machine learning in which a learning algorithm can interactively query a human user (or some other information source) to label new data points with the desired outputs.",
+        "The human user must possess expertise in the problem domain, including the ability to consult authoritative sources when necessary.",
+        "In statistics literature, it is sometimes also called optimal experimental design.",
+        "There are situations in which unlabeled data is abundant but manual labeling is expensive.",
+        "In such a scenario, learning algorithms can actively query the teacher for labels.",
+        "Since the learner chooses the examples, the number of examples to learn a concept can often be much lower than the number required in normal supervised learning.",
+        "However, there is a risk that the algorithm is overwhelmed by uninformative examples.",
+        "Recent developments are dedicated to multi-label active learning, hybrid active learning and active learning in a single-pass (on-line) context, combining concepts from the field of machine learning (e.g.",
+        "conflict and ignorance) with adaptive, incremental learning policies in the field of online machine learning.",
+        "Using active learning allows for faster development of a machine learning algorithm, when comparative updates would require a quantum or super computer.",
+        "Large-scale active learning projects may benefit from crowdsourcing frameworks such as Amazon Mechanical Turk that include many humans in the active learning loop."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "mm-0857",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bluetooth 1.1: Connect Without Cables, Second Edition",
+      "publisher": "Prentice Hall PTR eBooks",
+      "author": "Jennifer Bray; Charles Sturman",
+      "published_at": "2001-12-01",
+      "url": "https://openalex.org/W170084261",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "627fb063a8767f97c894d87f4941756060a1be8470839c950fec5ba3d67c2b3a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "From the Publisher:\r\nThe first complete guide to the new Bluetooth 1.1 wireless specification!",
+        "The Bluetooth specification has been updated to deliver dramatic improvements in both reliability and interoperability.",
+        "Bluetooth 1.1: Connect Without Cables, Second Edition updates the industry's #1 Bluetooth guide to cover these critical new enhancements?and to offer detailed guidance on every aspect of Bluetooth 1.1 development.",
+        "Bluetooth SIG committee members Jennifer Bray and Charles Sturman place Bluetooth 1.1 in context, covering markets, applications, complementary technologies, key development issues, and explaining every goal of the new release.",
+        "They review the components of a Bluetooth system, explain how Bluetooth connections work, introduce essential concepts such as piconets and scatternets, and cover the Bluetooth protocol stack in detail from top to bottom."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Position Location of Remote Bluetooth Devices",
+      "publisher": "VTechWorks (Virginia Tech)",
+      "author": "Timothy M. Bielawa",
+      "published_at": "2005-06-02",
+      "url": "https://openalex.org/W2186513472",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "06c4d62a3bd4ea29c7eeb1549213203a891b5b6688f2d9bc7ebef698f40d9bd6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The recent proliferation of Bluetooth Devices has caught the attention of hackers.",
+        "With Bluetooth devices being put in everything from cell phones to PDAs to laptops, the abuse of this technology could have an even bigger impact than the viruses and malware running rampant on the internet.",
+        "Bluetooth is a short range wireless technology intended to interconnect consumer electronics devices of all kinds.",
+        "The same features that make Bluetooth so attractive to manufacturers, also makes it attractive to hackers.",
+        "Bluetooth devices can quickly setup up ad-hoc networks with other, previously unknown devices.",
+        "Hackers have started to take advantage of the ease with which a connection can be established along with the average user's lack of computer security knowledge to break into PDAs, cell phones to steal address books and credit card numbers.",
+        "One of the largest obstacles that must be overcome in Bluetooth security is the mobility of devices and the relatively short duration of connections.",
+        "In the Internet, threats can often be traced back to a source, and in many cases the source of the threat can be shut down.",
+        "However, in a Bluetooth Network devices connect directly to one another, and there are no wires to follow to pinpoint the offending device.",
+        "This thesis will explore the techniques for the location of Bluetooth Devices.",
+        "An ideal position location system would be one that operates completely within the Bluetooth Specification.",
+        "Such a system will be able to use any available Bluetooth Device to find the location of other devices."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Discovering Bluetooth",
+      "publisher": "OpenAlex",
+      "author": "Michael Miller",
+      "published_at": "2001-01-01",
+      "url": "https://openalex.org/W2611406146",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "331ff4117ffbfc0655950bc82268cc14efa23223b636d3324412e89c151902df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "From the Publisher:\r\nPrepare for the Coming Bluetooth Revolution!",
+        "Within the next few years thousands of Bluetooth-enabled devices will hit the market, promising a major impact on the way you live and work.",
+        "Discovering Bluetooth offers unparalleled insights into this new wireless technology, discusses its many potential applications, and shows you how you can integrate Bluetooth into your daily routine.",
+        " Distribute digital photos as you take them \r\n Take hands-free devices to a new level \r\n Share data without any cables \r\n\r\nLearn What Bluetooth Is and How It Works ...",
+        "Prepare for the Next Technological Revolution-Get Smart about Bluetooth Today!"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bluetooth",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3742",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "c1f7a2750343d3eacd26310020be816c189776669d886366e571469bc024c478",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bluetooth is a short-range Wireless technology standard that is used for exchanging data between fixed and mobile devices over short distances and building personal area networks (PANs).",
+        "In the most widely used mode, transmission power is limited to 2.5 milliwatts, giving it a very short range of up to 10 metres (33 ft).",
+        "It employs UHF radio waves in the ISM bands, from 2.402 GHz to 2.48 GHz.",
+        "It serves as an alternative to wired connections, and is mainly used to exchange files between nearby portable devices, to connect cell phones and music players with wireless headphones, wireless speakers, HIFI systems, or car audio, and for wireless transmission between TVs and soundbars.",
+        "Bluetooth is managed by the Bluetooth Special Interest Group (Bluetooth SIG), which has more than 35,000 member companies in the areas of telecommunication, computing, networking, and consumer electronics.",
+        "The Institute of Electrical and Electronics Engineers (IEEE) standardized Bluetooth as IEEE 802.15.1 but no longer maintains the standard.",
+        "The Bluetooth SIG oversees the development of the specification, manages the qualification program, and protects the trademarks.",
+        "A manufacturer must meet Bluetooth SIG standards to market it as a Bluetooth device.",
+        "A network of patents applies to the technology, which is licensed to individual qualifying devices.",
+        "As of 2021, 4.7 billion Bluetooth integrated circuit chips are shipped annually.",
+        "Bluetooth was first demonstrated in space in 2024, an early test envisioned to enhance IoT capabilities."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of Bluetooth profiles",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7104225",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "e8b4672820260db84c7e2c178d4d06979623596d0b43ac764bf307924e3f03f0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In order to use Bluetooth, a device must be compatible with the subset of Bluetooth profiles (often called services or functions) necessary to use the desired services.",
+        "A Bluetooth profile is a specification regarding an aspect of Bluetooth-based wireless communication between devices.",
+        "It resides on top of the Bluetooth Core Specification and (optionally) additional protocols.",
+        "While the profile may use certain features of the core specification, specific versions of profiles are rarely tied to specific versions of the core specification, making them independent of each other.",
+        "For example, there are Hands-Free Profile (HFP) 1.5 implementations using both Bluetooth 2.0 and Bluetooth 1.2 core specifications.",
+        "The way a device uses Bluetooth depends on its profile capabilities.",
+        "The profiles provide standards that manufacturers follow to allow devices to use Bluetooth in the intended manner.",
+        "For the Bluetooth Low Energy stack, according to Bluetooth 4.0 a special set of profiles applies.",
+        "A host operating system can expose a basic set of profiles (namely OBEX, HID and Audio Sink) and manufacturers can add additional profiles to their drivers and stack to enhance what their Bluetooth devices can do.",
+        "Devices such as mobile phones can expose additional profiles by installing appropriate apps.",
+        "At a minimum, each profile specification contains information on the following topics:\n\nDependencies on other formats\nSuggested user interface formats\nSpecific parts of the Bluetooth protocol stack used by the profile.",
+        "To perform its task, each profile uses particular options and parameters at each layer of the stack."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of Bluetooth protocols",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9245024",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "57615c9cde7a6f576fac8d2195e71c8b6f152d607cadcc0d57a1f6a9caefdacc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The wireless data exchange standard Bluetooth uses a variety of protocols.",
+        "Core protocols are defined by the trade organization Bluetooth SIG.",
+        "Additional protocols have been adopted from other standards bodies.",
+        "This article gives an overview of the core protocols and those adopted protocols that are widely used.",
+        "The Bluetooth protocol stack is split in two parts: a \"controller stack\" containing the timing critical radio interface, and a \"host stack\" dealing with high level data.",
+        "The controller stack is generally implemented in a low cost silicon device containing the Bluetooth radio and a microprocessor.",
+        "The host stack is generally implemented as part of an operating system, or as an installable package on top of an operating system.",
+        "For integrated devices such as Bluetooth headsets, the host stack and controller stack can be run on the same microprocessor to reduce mass production costs; this is known as a hostless system."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Audio headset",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15460472",
+      "retrieved_at": "2026-10-18T15:46:48.043Z",
+      "sha256": "191e9f50032446029a52ed4ccd7dc7666c92f91ae2b9b5f8340c823a6c08d206",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Headsets connect over a telephone or to a computer, allowing the user to speak and listen while keeping both hands free.",
+        "They are commonly used in customer service and technical support centers, where employees can converse with customers while typing information into a computer.",
+        "They are also common among computer gamers and let them talk with each other and hear others while using their keyboards and mice to play the game."
+      ]
+    }
+  ]
+}

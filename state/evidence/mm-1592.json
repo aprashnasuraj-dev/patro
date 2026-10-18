@@ -1,0 +1,165 @@
+{
+  "id": "mm-1592",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Euler's Identity and the Langlands Program",
+      "publisher": "Elsevier BV",
+      "author": "Alesso, Harry",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7602878",
+      "retrieved_at": "2026-10-18T16:37:20.778Z",
+      "sha256": "beb3660686cfd205da0561c5d5dbbb7f1b68606a941e591644db284d359266d9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "𝑒 𝑖𝜋 =-1 as the archimedean sign of arithmetic Research memo for the AI-Langlands project 2026-09-04 1.",
+        "The thesis Euler's identity says that the exponential map ℝ → 𝑆 1 , 𝑥 ↦ 𝑒 2𝜋𝑖𝑥 , sends 1 2 ⁄ to-1: the unique element of order two on the circle is the image of the midpoint of the fundamental domain."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Euler’s Wonderful Identity",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2010-01-04",
+      "url": "https://doi.org/10.2307/j.ctt7sd75.12",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Euler's identity in unification of the fundamental interactions",
+      "publisher": "Elsevier BV",
+      "author": "Pellis, Stergios",
+      "published_at": "2024",
+      "url": "https://doi.org/10.2139/ssrn.4702100",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "6acdb09de424780de226c087ed9a1f296238d20dbe4059c806fc5bcf99ffc541",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Euler's identity is the most beautiful equation in mathematics.",
+        "It will present new beautiful equations of unification of the fundamental interactions.",
+        "It will calculate new unity formulas that connect the coupling constants of the fundamental forces.",
+        "Also it will present new beautiful equations of the Dimensionless unification of atomic physics and cosmology and it will prove that the shape of the Universe is Poincaré dodecahedral space."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Euler's identity in unification of the fundamental interactions",
+      "publisher": "Wiley",
+      "author": "Pellis, Stergios",
+      "published_at": "2024-02-04",
+      "url": "https://doi.org/10.22541/au.170708920.07667985/v1",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "6acdb09de424780de226c087ed9a1f296238d20dbe4059c806fc5bcf99ffc541",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Euler's identity is the most beautiful equation in mathematics.",
+        "It will present new beautiful equations of unification of the fundamental interactions.",
+        "It will calculate new unity formulas that connect the coupling constants of the fundamental forces.",
+        "Also it will present new beautiful equations of the Dimensionless unification of atomic physics and cosmology and it will prove that the shape of the Universe is Poincaré dodecahedral space."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Euler's formula",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9613",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "81628de2c71b76ccf207348133df39dea626e11c2ce18453a5840149a773ecbc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Euler's formula is a mathematical formula in complex analysis that establishes the fundamental relationship between the trigonometric functions and the complex exponential function.",
+        "It is named after Leonhard Euler, who mentioned the formula in his influential 1748 treatise Introductio in analysin infinitorum.",
+        "This complex exponential function is sometimes denoted cis x (\"cosine plus i sine\").",
+        "The formula is still valid if x is a complex number, and is also called Euler's formula in this more general case.",
+        "Euler's formula is ubiquitous in mathematics, physics, chemistry, and engineering.",
+        "The physicist Richard Feynman called the equation \"our jewel\" and \"the most remarkable formula in mathematics\".",
+        "When x = π, Euler's formula may be rewritten as eiπ = −1 or eiπ + 1 = 0, which is known as Euler's identity.",
+        "This is due to the fact that if $\\pi$ (radians) is substituted in  , $e^{i\\pi }=\\cos\\pi + i \\sin \\pi$ which equals $e^{i\\pi} = -1 + (i \\cdot 0)=-1$ ."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Fibonacci sequence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10918",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "33c176524454c94f6e0fa7921501f5967c6e29324088401726a61aa2ae72ee2b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the Fibonacci sequence is a sequence in which each element is the sum of the two elements that precede it.",
+        "Numbers that are part of the Fibonacci sequence are known as Fibonacci numbers, commonly denoted Fn .",
+        "The initial elements of the sequence are F1 = 1 and F2 = 1, though many authors also include a zeroth element F0 = 0.",
+        "Starting from F0, the sequence begins\n\n0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...",
+        "(sequence A000045 in the OEIS)\n\nThe Fibonacci numbers were first described in Indian mathematics as early as 200 BC in work by Pingala on enumerating possible patterns of Sanskrit poetry formed from syllables of two lengths.",
+        "They are named after the Italian mathematician Leonardo of Pisa, also known as Fibonacci, who introduced the sequence to Western European mathematics in his 1202 book Liber Abaci.",
+        "Fibonacci numbers appear unexpectedly often in mathematics, so much so that there is an entire journal dedicated to their study, the Fibonacci Quarterly.",
+        "Applications of Fibonacci numbers include computer algorithms such as the Fibonacci search technique and the Fibonacci heap data structure, and graphs called Fibonacci cubes used for interconnecting parallel and distributed systems.",
+        "They also appear in biological settings, such as branching in trees, the arrangement of leaves on a stem, the fruit sprouts of a pineapple, the flowering of an artichoke, and the arrangement of a pine cone's bracts, though they do not occur in all species.",
+        "Fibonacci numbers are also strongly related to the golden ratio: Binet's formula expresses the n-th Fibonacci number in terms of n and the golden ratio, and implies that the ratio of two consecutive Fibonacci numbers tends to the golden ratio as n increases.",
+        "Fibonacci numbers are also closely related to Lucas numbers, which obey the same recurrence relation and with the Fibonacci numbers form a complementary pair of Lucas sequences."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Gamma function",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12316",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "6a9310b70313f03b5f2b8c5c04c286f580f2be100a4d8980aa15c33584825ee1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the gamma function, denoted by ⁠\n  \n    \n      \n        Γ\n      \n    \n    {\\displaystyle \\Gamma }\n  \n⁠ (capital Greek letter gamma), is the most common extension of the factorial function to complex numbers.",
+        "{\\displaystyle \\Gamma (n)=(n-1)!}\n  \n for every positive integer ⁠\n  \n    \n      \n        n\n      \n    \n    {\\displaystyle n}\n  \n⁠.",
+        "Since the gamma function has no zeros, its reciprocal \n  \n    \n      \n        1\n        \n          /\n        \n        Γ\n      \n    \n    {\\displaystyle 1/\\Gamma }\n  \n is an entire function.",
+        "{\\displaystyle \\Gamma (z)={\\mathcal {M}}\\{e^{-x}\\}(z).}\n  \n\nOther extensions of the factorial function do exist, but the gamma function is the most popular and useful.",
+        "It appears as a factor in various probability-distribution functions and other formulas in the fields of probability, statistics, analytic number theory, and combinatorics."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Pi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23601",
+      "retrieved_at": "2026-10-18T16:37:21.306Z",
+      "sha256": "f362ef480cb002ee0922139ca5c1e57a5193b0d80130dedc676fd4f344c893ec",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The number π ( ; spelled out as pi) is a mathematical constant, approximately equal to 3.14159, that is the ratio of a circle's circumference to its diameter.",
+        "It appears in many formulae across mathematics and physics, and some of these formulae are commonly used for defining π, to avoid relying on the definition of the length of a curve.",
+        "The number π is an irrational number, meaning that it cannot be expressed exactly as a ratio of two integers, although fractions such as ⁠22/7⁠ are commonly used to approximate it.",
+        "Consequently, its decimal representation never ends, nor does it enter a permanently repeating pattern.",
+        "It is a transcendental number, meaning that it cannot be a solution of an algebraic equation involving only finite sums, products, powers, and integers.",
+        "The transcendence of π implies that it is impossible to solve the ancient problem of squaring the circle with a compass and straightedge.",
+        "The decimal digits of π appear to be evenly distributed, but no proof of this conjecture has been found.",
+        "Mathematicians have long attempted to extend their understanding of π, sometimes by computing its value to a high degree of accuracy.",
+        "Ancient civilizations, including the Egyptians and Babylonians, required fairly accurate approximations of π for practical computations.",
+        "Around 250 BC, the Greek mathematician Archimedes created an algorithm to approximate π with arbitrary accuracy.",
+        "In the 5th century AD, Chinese mathematicians approximated π to seven digits, while Indian mathematicians made a five-digit approximation, both using geometrical techniques.",
+        "The first computational formula for π, based on infinite series, was discovered a millennium later."
+      ]
+    }
+  ]
+}
