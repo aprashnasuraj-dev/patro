@@ -1,6 +1,5 @@
-// Evidence discovery that does NOT depend on the research APIs that rate-limited v1.
-//   1) cached evidence (free)  2) Wikipedia article -> its cited external links (MediaWiki, generous limits)  3) trusted-domain filter
-//   4) extraction: Scrapling worker (robots-aware, polite) -> fallback to the v1 snapshot() -> optional Cloudflare render (inside snapshot)
+// Broad, policy-aware discovery. Search providers and citation trails can surface sources across many domains.
+// Cached/official evidence is preferred; candidate discovery is broad, while every claim still has to pass grounding.
 import {spawn} from 'node:child_process';import {createHash} from 'node:crypto';
 import {snapshot,excerptsFrom} from '../research/scraper.mjs';
 const UA='AafnaiPatroResearchBot/1.0 (+https://aafnaipatro.com/editorial-guidelines/)';
@@ -32,8 +31,12 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1200,time
 }
 // Returns NEW evidence items (ids assigned by caller). Never stores page text: excerpts + sha256 only.
 export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
- const have=new Set(evidence.map(e=>e.url));let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});if(!titles.length)return [];
- const links=(await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic})).filter(u=>isTrusted(u,disc)&&!have.has(u));
+ const have=new Set(evidence.map(e=>e.url));
+ const searchLinks=await searchWebLinks(topic,{fetchImpl,max:disc.max_links_per_topic});
+ let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});
+ const wikiLinks=titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];
+ // Search provider results first, then citation trails. This works even when no Wikipedia seed exists.
+ const links=[...new Set([...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
  const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2)found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
  const rows=await extract(pick,{script:scriptPath,delayMs:disc.domain_delay_ms});const ok=new Set();
