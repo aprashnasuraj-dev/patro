@@ -1,0 +1,27 @@
+{
+  "id": "mq-0132",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "openFDA drug data",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://api.fda.gov/drug/enforcement.json?limit=10&search=product_description:%22amlodipine%22",
+      "retrieved_at": "2026-10-18T17:42:27.002Z",
+      "sha256": "2e910138e4ee95e05a43116b1e3262d051d3ccaea98716cb7750eafaab542a9e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "FDA enforcement report D-332-2014 (classification Class II, initiated 20130808): Chemical Contamination: Novartis Pharmaceuticals Corporation has recalled physician sample bottles of Diovan, Exforge, Exforge HCT,Lescol XL, Stalevo, Tekturna .",
+        "FDA enforcement report D-0542-2025 (classification Class II, initiated 20250702): Labeling: Incorrect or Missing Lot and/or Exp Date: released with wrong expiry date as Feb.2027 instead of Jan.2027.",
+        "FDA enforcement report D-1218-2015 (classification Class II, initiated 20150601): CGMP Deviations: Firm did not adequately investigate customer complaints..",
+        "FDA enforcement report D-0303-2019 (classification Class II, initiated 20181127): CGMP Deviations: FDA laboratory testing confirmed presence of an impurity, N-nitrosodimethylamine (NDEA) in product..",
+        "FDA enforcement report D-1143-2015 (classification Class III, initiated 20150506): Subpotent drug.",
+        "FDA enforcement report D-0305-2019 (classification Class II, initiated 20181127): CGMP Deviations: FDA laboratory testing confirmed presence of an impurity, N-nitrosodimethylamine (NDEA) in product..",
+        "FDA enforcement report D-1138-2018 (classification Class II, initiated 20180817): CGMP Deviations: Carcinogen impurity detected in API used to manufacture drug product..",
+        "FDA enforcement report D-1145-2018 (classification Class II, initiated 20180817): CGMP Deviations: Carcinogen impurity detected in API used to manufacture drug product..",
+        "FDA enforcement report D-0312-2019 (classification Class II, initiated 20181120): CGMP Deviations: FDA lab confirmed presence an impurity, N-nitrosodiethylamine (NDEA) contained in the API used to manufacture the product..",
+        "FDA enforcement report D-0012-2019 (classification Class III, initiated 20181003): Subpotent Drug: One lot of product does not meet the product specification for Assay test at 3 month  long term stability condition.."
+      ]
+    }
+  ]
+}

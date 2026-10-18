@@ -1,0 +1,61 @@
+{
+  "id": "mm-1979",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Intelligent tutoring system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3765637",
+      "retrieved_at": "2026-10-18T16:49:35.853Z",
+      "sha256": "3c0922e2b2d85a5950c85846b84527079e9c39cc474b6fe88490b9b50643c20c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An intelligent tutoring system (ITS) is a computer system that imitates human tutors and aims to provide immediate and customized instruction or feedback to learners, usually without requiring intervention from a human teacher.",
+        "ITSs have the common goal of enabling learning in a meaningful and effective manner by using a variety of computing technologies.",
+        "There are many examples of ITSs being used in both formal education and professional settings in which they have demonstrated their capabilities and limitations.",
+        "There is a close relationship between intelligent tutoring, cognitive learning theories and design; and there is ongoing research to improve the effectiveness of ITS.",
+        "An ITS typically aims to replicate the demonstrated benefits of one-to-one, personalized tutoring, in contexts where students would otherwise have access to one-to-many instruction from a single teacher (e.g., classroom lectures), or no teacher at all (e.g., online homework).",
+        "ITSs are often designed with the goal of providing access to high quality education to each and every student."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Applications of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15893057",
+      "retrieved_at": "2026-10-18T16:49:35.853Z",
+      "sha256": "fb294b56f234a3939dd45251711bbd5f8581d9be9025ab1e9efec7dded178747",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) and its subfields have been used in applications throughout industry and academia.",
+        "Machine learning has been used for various scientific and commercial purposes, including language translation, image recognition, decision-making, credit scoring, and e-commerce.",
+        "Since the 2020s, massive advancements have been made in the field of generative AI (GenAI) as a result of the 2017 inception of Transformer Model architecture.",
+        "GenAI has the ability to create text, images, voice, music, videos, and other forms of data from chat-based prompting."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Online tutoring",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20024432",
+      "retrieved_at": "2026-10-18T16:49:35.853Z",
+      "sha256": "ac6b9dbfb971fd474b08639ba77f5404a49687713a22733a89b3bc6478f368e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Online tutoring is the process of tutoring in an online, virtual, or networked, environment, in which teachers and learners participate from separate physical locations.",
+        "Aside from space, participants can also be separated by time.",
+        "Online tutoring is practiced using many different approaches for distinct sets of users.",
+        "The distinctions are in content and user interface, as well as in tutoring styles and tutor-training methodologies."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "mm-0044",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why dogs stopped flying",
+      "publisher": "Utah State University Press",
+      "author": "Brewer, kenneth W.",
+      "published_at": "2006-05-01",
+      "url": "https://doi.org/10.7330/9780874215403.c001",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "2229d5c535fb5d206e6f590f488220abb942afe4924e286aba1d22bec92e9c3c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why dogs stopped flying Why dogs stopped flying Publication Why Dogs Stopped Flying Record type Book chapter Published 1 May 2006 Authors kenneth W.",
+        "Brewer DOI https://doi.org/10.7330/9780874215403.c001 The publisher of this work supports co-access.",
+        "Brewer&#39;, &#39;chairs&#39;: None, &#39;supplementary_ids&#39;: &#39;10.7330/9780874215403.c001 | 10.7330/9780874215403&#39;} https://doi.org/10.7330/9780874215403.c001 JSON XML"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Dogs Stopped Flying: Poems",
+      "publisher": "OpenAlex",
+      "author": "Kenneth W. Brewer",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W89349096",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "2b16edd44da3835550576340947cb17ace5075ac4ee2890361cbf624498cf85c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The solid rightness of image after image in Ken Brewer's poetry was never better than in Why Dogs Stopped Flying.",
+        "His familiar style is plain-spoken, his humor reliable and self-ironic.",
+        "Yet, in this collection perhaps more than his earlier work, the particularity of the poet's insight into the physical world and the warmth of his affection for it combine to create an unexpected transcendence.",
+        "Beasts and bodies are transformed in his lines, and our dim, unremarkable lives on this shadowed earth become somehow more luminous-small words to the moon, small suns opening in the dark."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cat",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6678",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "96bf03cb8178db2ee9f2d269501e52d281d2e06c2a494a4c4bfb93101767dcdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The cat (Felis catus), also called domestic cat and house cat, is a small domesticated carnivorous mammal.",
+        "It is a member of Felidae, the family of mammals in the order Carnivora also colloquially referred to as cats.",
+        "An obligate carnivore requiring a predominantly meat-based diet, it has retractable claws adapted to killing small prey species such as mice and rats.",
+        "It has a strong, flexible body, quick reflexes, and sharp teeth, and its night vision and sense of smell are well developed.",
+        "It is a social species, but a solitary hunter and a crepuscular predator.",
+        "Cat communication includes meowing, purring, trilling, hissing, growling, grunting, body language, and scent marking.",
+        "It can hear sounds too faint or too high in frequency for human ears, such as those made by small mammals.",
+        "Cat intelligence is evident in its ability to adapt, learn through observation, and solve problems.",
+        "The domestic cat is the only domesticated species of the family Felidae.",
+        "Advances in archaeology and genetics have shown that the domestication of the cat started in the Near East around 7500 BCE.",
+        "Today, the domestic cat occurs across the globe and is valued by humans for companionship and its ability to kill vermin.",
+        "It is commonly kept as a pet, working cat, and pedigreed cat shown at cat fancy events."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Puppy face",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2886155",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "f0024bc0f69930080bdc9542084c4dac3a4c621cea444e714ae49ab20b96a7db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A puppy face is a facial expression that humans make that is based on canine expressions.",
+        "In dogs and other animals, the look is expressed when the head is tilted down and the eyes are looking up.",
+        "This gesture is sometimes performed by children in order to persuade their parents to do something special for them.",
+        "Humans often open their eyes a little wide, pinch and/or raise the eyebrows, and stick the bottom lip out, while tilting their entire head slightly downward and looking upwards at the person to whom they have aimed the gesture.",
+        "It can be a lighthearted expression for begging or an attempt to persuade someone.",
+        "Verbal approximations include: \"Aw, come on!\", \"Please?\", and \"But why not?\", among others."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dog",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4269567",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "07e740ed3c149bae7313cfaf8eb331350f8e733d2fdfcbccf5785fb055fdf57e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The dog (Canis familiaris or Canis lupus familiaris) is a domesticated descendant of wolves.",
+        "Also called the domestic dog, it was selectively bred during the Late Pleistocene by hunter-gatherers.",
+        "Dogs were the first species to be domesticated over 14,000 years ago, before the development of agriculture, though genetic studies suggest the domestication process may have begun over 25,000 years ago.",
+        "Due to their long association with humans, dogs have gained the ability to thrive on a starch-rich diet that would be inadequate for other canids.",
+        "Dogs have been bred for specific behaviors, sensory abilities, and physical traits.",
+        "All dogs have a similar number of bones, although the number can vary with tail length.",
+        "They also have powerful jaws containing about 42 teeth, and well-developed senses of smell, hearing, and sight.",
+        "Compared to humans, dogs have a superior sense of smell and hearing, but less acute vision.",
+        "Dogs serve humans in many ways, including hunting, herding, pulling loads, providing protection and companionship, offering therapeutic support, assisting people with disabilities, and supporting police and military operations.",
+        "Communication in dogs includes eye gaze, facial expression, vocalization, body posture (including movements of bodies and limbs), and chemical communication (scents, pheromones, and taste).",
+        "They mark their territories by urinating on them, which is more likely when entering a new environment.",
+        "Over the millennia, dogs have uniquely adapted to human behavior; this adaptation includes being able to understand and communicate with humans."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Body language of dogs",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53903332",
+      "retrieved_at": "2026-10-18T14:52:14.825Z",
+      "sha256": "78b6c66e88a71dbb868357f2564480c73f27ee29a216110e318ae416bea5b8ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The body language of dogs is one form of non-verbal communication whereby dogs can express emotions and intentions through bodily movements.",
+        "It refers to the interpretation of posture and behaviour of species in the genus Canis.",
+        "This form of visual communication is generally used for identifying emotions and intentions of domestic dogs, though it can also be applied to wild canines such as wolves.",
+        "Understanding the body language of dogs is particularly important in preventing dog bites, especially of children.",
+        "This communication can occur between dogs, or during a dog-human interaction.",
+        "Such movements primarily involve the tail, the ears, and the head/body.",
+        "Tail-wagging is a common tail movement used by dogs to communicate.",
+        "Additionally, ear flattening or heightening are typical movements made using the ears.",
+        "In terms of the head/body, it is of interest to study turning of the head, as well as the overall posture of the dog.",
+        "Because dogs communicate differently from humans, it is more difficult for humans to interpret their emotional states.",
+        "By focusing on the combinations of motions made by dogs, and studying the aftermath of such sequences, humans are able to attribute different emotional states (i.e., contentment, fear, or aggression) as a result of the dog's body language.",
+        "By properly interpreting the body language of dogs, not only are humans able to decipher what a dog is trying to communicate, but are also able to recognize warning signs prior to an attack, decreasing the number of dog bite occurrences."
+      ]
+    }
+  ]
+}

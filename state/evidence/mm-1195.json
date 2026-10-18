@@ -1,0 +1,182 @@
+{
+  "id": "mm-1195",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Here’s what we know about the climate cost of white trails aircraft leave in the sky",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Bellouin, Nicolas",
+      "published_at": "2026-04-27",
+      "url": "https://theconversation.com/heres-what-we-know-about-the-climate-cost-of-white-trails-aircraft-leave-in-the-sky-279505",
+      "retrieved_at": "2026-10-18T16:02:53.867Z",
+      "sha256": "ce72632905574d7f973b524f87939573e41597d84e9f84ae80c87ddaca6c4b7f",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The international cloud atlas, which classifies clouds, has a category just for them: cirrus homogenitus, an example of man-made clouds.",
+        "Contrails contribute to climate change , adding to the warming by the carbon dioxide emitted by aviation .",
+        "Although the exact amount of warming caused by these wispy-looking clouds is uncertain , what is understood now suggests that reducing the number of contrails has the potential to reduce the climate impact of flights.",
+        "These reflect sunlight, causing the Earth’s surface to receive less energy, but at the same time trapping some of Earth’s outgoing infrared radiation.",
+        "Depending on the balance between those two opposite effects, a net loss of energy or a gain of energy, individual contrails can be either warming or cooling over their lifetime, but warming dominates once averaged over the global, annual contrail population.",
+        "Contrails form behind aircraft at around an altitude of 10-11km .",
+        "They only form in sufficiently cold and humid regions of the atmosphere, where water vapour condenses on to the soot particles emitted by aircraft engines to form liquid droplets, which freeze into ice crystals.",
+        "The regions with the most contrails are over Europe, the North Atlantic, and eastern North America.",
+        "Soot particles are needed to form contrails, yet even engines that emit very few soot particles still generate contrails .",
+        "Other particles, often formed in the engine plume, take over and lead to contrail formation .",
+        "But some combinations of fuel and engine technology may yet provide a way to form fewer contrails, or at least contrails with a smaller climate impact.",
+        "The characteristics of a contrail depend initially on the size, shape and engine position of the aircraft that created it, but atmospheric conditions are ultimately more important ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "NACA 0015 Wing Pressure and Trailing Vortex Measurements",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "author": "Kenneth W. McAlister; R. K. Takahashi",
+      "published_at": "1991-11-01",
+      "url": "https://openalex.org/W2170811570",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "c696910ac0a1f4c7b7ec57236eac8b6bb50b7baebaf84be186cc53c1399c1a5d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A NACA 0015 semispan wing was placed in a low-speed wind tunnel, and measurements were made of the pressure on the upper and lower surface of the wing and of velocity across the vortex trailing downstream from the tip of the wing.",
+        "Pressure data were obtained for both 2-D and 3-D configurations.",
+        "These data feature a detailed comparison between wing tips with square and round lateral edges.",
+        "A two-component laser velocimeter was used to measure velocity profiles across the vortex at numerous stations behind the wing and for various combinations of conditions.",
+        "These conditions include three aspect ratios, three chord lengths, a square- and a round lateral-tip, presence or absence of a boundary-layer trip, and three image plane positions located opposite the wing tip.",
+        "Both pressure and velocity measurements were made for the angles of attack 4 deg less than or equal to alpha less than or equal to 12 deg and for Reynolds numbers 1 x 10(exp 6) less than or equal to Re less than or equal to 3 x 10(exp 6)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A search for creative class : trail user experiences along the Katy Trail",
+      "publisher": "UTA ResearchCommons (University of Texas Arlington)",
+      "author": "Shirley Jane Mathews",
+      "published_at": "2008-08-08",
+      "url": "https://openalex.org/W1564316263",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "6534393c5134c1f14a1a3590754fffaf9010c111dae5314e18156d81810c65a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This research focused on preferred urban trail attributes and related these to restorative places and user experiences.",
+        "Restoration was shown in aspects of naturalness and excitement.",
+        "Responses to the interviews indicated that a convergence of multiple physical features contributed significantly to a user's restorative experience on the trail, especially where tree canopy was juxtaposed with distant views and there were connections to active urban villages.",
+        "Where the trail did not enhance the user experience the trail was not seen as contributing to the community in a significant way.",
+        "Themes emerged from the focused interviews regarding naturalness, sociability, distinctiveness, safety, and a fitness-driven lifestyle.",
+        "The Katy Trail, a four-mile urban pedestrian and bicycle trail in Dallas, Texas, served as a laboratory for the study.",
+        "This study broadens knowledge of the quality of restive experiences found on an urban trail."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hiker Trash and Trail Dogs: An Ethnographic Inquiry into Human Nature in the Trail Space",
+      "publisher": "ScholarWorks (Central Washington University)",
+      "author": "Jody A. Chinchen",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2471539638",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "ab7ad193a27739cedd265a63b34500bb4d5a878169a9b0627abfe9e0c5b9f799",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the face of declining trail maintenance budgets and increasing recreational use, we must develop a critical understanding of trail culture, including the motivations, perspectives, and experiences of various users and how they intersect with one another.",
+        "Trail use on National Scenic Trails (NSTs) may represent a deeper symbolic yearning to seek out meaningful connections with nature, self, and community.",
+        "NSTs provide an ideal backdrop for studying how such connections and relationships are formed and sustained.",
+        "Using ethnographic methods, this research will provide a descriptive account of the emergent cultural domain of trail builders and trail users, as two deeply immersed stakeholders.",
+        "Washington State is the terminus for two intersecting National Scenic Trails: the Pacific Crest National Scenic Trail (PCT) and the Pacific Northwest National Scenic Trail (PNT), making it an ideal study area for understanding cultural phenomena associated with deeply immersed trail culture.",
+        "Understanding the well-developed trail culture on the PCT may help provide insight for management challenges associated with the emerging trail culture on the newly designated PNT to provide guidance for better management of NSTs and, to some extent, all trails."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Chemtrail conspiracy theory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=525519",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "05fc14ae634c4215ce2c1cb9125cc0ad8cb5a5bcf6a864e3f4857116d9da410c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The chemtrail conspiracy theory  is the erroneous belief that long-lasting condensation trails left in the sky by high-flying aircraft are actually \"chemtrails\" consisting of chemical or biological agents, sprayed for nefarious purposes undisclosed to the general public.",
+        "Believers in this conspiracy theory say that while normal contrails dissipate relatively quickly, contrails that linger must contain additional substances.",
+        "Chemtrail conspiracy theories emerged in the late 1990s after publication of a 1996 United States Air Force (USAF) report on weather modification, with the Air Force accused of secretly spraying substances via aircraft.",
+        "The theories spread through internet forums and were popularised by radio host Art Bell from 1999.",
+        "There is no evidence that purported chemtrails differ from normal water-based contrails routinely left by high-flying aircraft under certain atmospheric conditions.",
+        "Proponents have tried to prove that chemical spraying occurs, but their analyses have been flawed or based on misconceptions.",
+        "Because of the conspiracy theory's persistence and questions about government involvement, scientists and government agencies around the world have repeatedly explained that the supposed chemtrails are in fact normal contrails."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Airplane",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1396249",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "0db60ff72db0fce849777159f123bfbb15d387f757ce3e3c23b03cbc3539fc15",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An airplane (American English), or aeroplane (Commonwealth English), also plane, is a fixed-wing aircraft that is propelled forward by thrust from a jet engine, propeller, or rocket engine.",
+        "Airplanes come in a variety of sizes, shapes, and wing configurations.",
+        "The broad spectrum of uses for airplanes includes recreation, transportation of goods and people, military, and research.",
+        "Worldwide, commercial aviation transports more than four billion passengers annually on airliners and transports more than 200 billion tonne-kilometers of cargo annually, which is less than 1% of the world's cargo movement.",
+        "Most airplanes are flown by a pilot on board the aircraft, but some are designed to be remotely or computer-controlled, such as drones.",
+        "The Wright brothers invented and flew the first airplane in 1903, recognized as \"the first sustained and controlled heavier-than-air powered flight\".",
+        "Lilienthal's flight attempts in 1891 are seen as the beginning of human flight.",
+        "Following its limited use in World War I, aircraft technology continued to develop.",
+        "Airplanes had a presence in all the major battles of World War II.",
+        "The first jet aircraft was the German Heinkel He 178 in 1939.",
+        "The first jet airliner, the de Havilland Comet, was introduced in 1952.",
+        "The Boeing 707, the first widely successful commercial jet, was in commercial service for more than 60 years, from 1958 to 2019."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Lake Harriet (Minnesota)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2577492",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "db59a5f8d85c02cf75d503cd553cdcc5bccc11c8b7ebe87a855d325e9bf1cb15",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lake Harriet is a lake in southwest Minneapolis, south of Bde Maka Ska and north of Minnehaha Creek.",
+        "The lake is surrounded by parkland as part of Minneapolis’ Chain of Lakes.",
+        "The lake has an area of 335 acres (1.36 km2) and a maximum depth of 85 feet (26 m)."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Democratic Party (United States)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5043544",
+      "retrieved_at": "2026-10-18T16:03:04.852Z",
+      "sha256": "7dcfd2eb3d9fa5b7d13b1750d2048da6b882ce222ca177b14522e3bd37134a03",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Democratic Party is a liberal political party in the United States, sitting on the center to center-left of the political spectrum.",
+        "Founded in 1828, it is the world's oldest active political party.",
+        "Its main rival is the Republican Party, and since the 1850s, both have dominated American politics.",
+        "The Democratic Party initially supported Jacksonian democracy, agrarianism, and geographical expansionism, while opposing a national bank and high tariffs.",
+        "Democrats won six of the eight presidential elections from 1828 to 1856, losing twice to the Whigs.",
+        "In 1860, the party split into Northern and Southern factions over slavery.",
+        "The party remained dominated by agrarian interests, contrasting with Republican support for the big business of the Gilded Age.",
+        "A Democratic candidate won the presidency only twice between 1860 and 1908, although Democratic candidates won the popular vote two more times in that period.",
+        "During the Progressive Era, some factions of the party supported progressive reforms, with Woodrow Wilson being elected president in 1912 and 1916.",
+        "Roosevelt was elected president after campaigning on a strong response to the Great Depression.",
+        "His New Deal programs created a broad Democratic coalition that united white Southerners, Northern workers, labor unions, African Americans, Catholic and Jewish communities, progressives, and liberals.",
+        "From the late 1930s, a conservative minority in the party's Southern wing joined with Republicans as a reaction to progressive domestic reforms."
+      ]
+    }
+  ]
+}

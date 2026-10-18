@@ -1,0 +1,109 @@
+{
+  "id": "mt-0152",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Demographics of Croatia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5576",
+      "retrieved_at": "2026-10-18T16:57:34.757Z",
+      "sha256": "630f419647fa3529c575a1d05a1044801369a5c95415b19827958e0d8f20e02a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The demographic characteristics of the population of Croatia are known through censuses, normally conducted in ten-year intervals and analysed by various statistical bureaus since the 1850s.",
+        "The Croatian Bureau of Statistics has performed this task since the 1990s.",
+        "The latest census in Croatia was performed in autumn of 2021.",
+        "According to final results published on 22 September 2022 the permanent population of Croatia at the 2021 census (31st Aug) stood at 3.87 million.",
+        "The population density is 68.7 inhabitants per square kilometre, and the overall life expectancy in Croatia at birth was 78,2 years in 2018.",
+        "The population rose steadily (with the exception of censuses taken following the two world wars) from 2.1 million in 1857 until 1991, when it peaked at 4.7 million.",
+        "Since 1991, Croatia's death rate has continuously exceeded its birth rate; the natural growth rate of the population is negative.",
+        "Because of this, Croatia's population fell below 4 million again in 2018, and the apex of its mass emigration occurred in 2022, while population didn't increase again until 2023 due to immigration compensating for the negative natural change.",
+        "Croatia is in the fourth (or fifth) stage of the demographic transition.",
+        "In terms of age structure, the population is dominated by the 15 to 64 year‑old segment.",
+        "The median age of the population is 43.4, and the gender ratio of the total population is 0.93 males per 1 female.",
+        "Croatia is inhabited mostly by Croats (91.63%), while minorities include Serbs (3.2%), and 21 other ethnicities (less than 1% each)."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Demographics of Germany",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11929",
+      "retrieved_at": "2026-10-18T16:57:34.757Z",
+      "sha256": "248551243c1da498c5dac58abe32a178e460e349883020a887aff7a0ab06c35a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The demography of Germany is monitored by the Statistisches Bundesamt (Federal Statistical Office of Germany).",
+        "According to the most recent data, Germany's population is 83,467,117 (31 December 2025) making it the most populous country in the European Union and the nineteenth-most populous country in the world.",
+        "The total fertility rate was rated at 1.32 in 2025, significantly below the replacement rate of 2.1.",
+        "Germany has had one of the world's lowest fertility rates of around 1.3 to 1.4 since the 1980s.",
+        "Due to a low birth rate, Germany has recorded more deaths than births every year since 1972, which means 2025 was the 54th consecutive year the German population would have decreased without immigration.",
+        "However, due to immigration the population actually increased by around five million people over the last half-century.",
+        "In 2025, the number of people with a foreign background was about 31%; this category includes foreigners, naturalized citizens, ethnic German repatriates from Eastern Europe and the children of all of the above.",
+        "However, after World War II immigration began to outweigh emigration, as around 14 million ethnic Germans were expelled from the former eastern provinces of the Reich and other areas in Eastern Europe.",
+        "Of these, roughly 12 million made their way to present-day Germany and several hundred thousand settled in Austria and other countries, while several hundred thousand died.",
+        "Some additional 4.5 million ethnic Germans from Eastern Europe repatriated after 1950, especially around the end of the Eastern Bloc and mostly from the former Soviet Union, Poland and Romania.",
+        "Large-scale immigration to West Germany began during the time of the Wirtschaftswunder from the 1950s to early 1970s when Germany had a shortage of workers and let in Southern Europeans from countries like Turkey, Italy and Spain on a temporary basis as guest workers.",
+        "The liberalisation of guest worker legislation allowed many to stay and build a life in West Germany."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Demographics of the United Kingdom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31725",
+      "retrieved_at": "2026-10-18T16:57:34.757Z",
+      "sha256": "e8992b00e455e0dbb3faafe9157d41567a32b3cd0346d698cfb47e94eadc7cdb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The population of the United Kingdom was estimated at 69.5 million in 2025.",
+        "It is the 21st most populated country in the world and has a population density of 287 people per square kilometre (740 people/mi2), with England having significantly greater density than Wales, Scotland, and Northern Ireland.",
+        "Almost a third of the population lives in south east England, which is predominantly urban and suburban, with 9,122,909 people in the capital city, London, whose population density was 5,804 inhabitants per square kilometre (15,030/sq mi) in 2025.",
+        "This growth through 'natural change' has been accompanied in the past three decades by growth through net immigration into the United Kingdom, which since 1999 has exceeded natural change.",
+        "The United Kingdom's high literacy rate of 99% at age 15 and above, is attributable to universal state education, introduced at the primary level in 1870 (Scotland 1872, free 1890) and at the secondary level in 1900.",
+        "Parents are obliged to have their children educated from the ages of 5 to 16 years.",
+        "In England, 16–17-year olds should remain in education, employment or training in the form of A-Levels, vocational training, and apprenticeships, until the age of 18.",
+        "The United Kingdom's population is predominantly White British (75.98% at the 2021 Census), but due to migration mostly from Commonwealth nations, Britain has become ethnically diverse.",
+        "The second and third largest non-white racial groups are Asian British at 8.6% of the population, followed by Black British people at 3.71%.",
+        "Scots is widely spoken in many parts of Scotland, as is Scottish Gaelic, a Celtic language.",
+        "Cornish and Irish have been revived to a limited degree in Cornwall and Northern Ireland, but the predominant language in all these areas is English.",
+        "Welsh is widely spoken as a first language in parts of North and West Wales, and to lesser extent in South East Wales, where English is the dominant first language."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Demographics of France",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67475",
+      "retrieved_at": "2026-10-18T16:57:34.757Z",
+      "sha256": "73ee4f7874567e3dfc7030500f5a4dadce75c85ca17e06ad67e9f6450132b5da",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The demography of France is monitored by the Institut national d'études démographiques (INED) and the Institut national de la statistique et des études économiques (INSEE).",
+        "As of 1 January 2026,  in Metropolitan France 66,792,845 people lived, while 2,289,151 lived in overseas France, for a total of 69,081,996 inhabitants in the French Republic.",
+        "In the 2010s and until 2017, the population of France grew by 1 million people every three years – an average annual increase of 340,000 people, or +0.6%.",
+        "During the Middle Ages, more than one-quarter of Europe's total population was French; by the seventeenth century, this had decreased slightly to one-fifth.",
+        "By the beginning of the nineteenth century, other European countries, such as Germany and Russia, had caught up with France and overtaken it in number of people.",
+        "The country's population sharply increased with the baby boom following World War II, as it did in other European countries.",
+        "According to INSEE, from the year 2004, 200,000 immigrants entered the country annually.",
+        "One out of two was born in Europe and one in three in Africa.",
+        "Between 2009 and 2012, the number of Europeans migrating to France increased sharply (an annual increase of 12%), but this percentage decreased steadily until 2022, supplanted by a rise in the number of immigrants from Africa.",
+        "The national birth rate, after dropping for a time, began to rebound in the 1990s, and the country's fertility rate was close to the replacement level until about 2014.",
+        "In 2021, the total fertility rate of France was 1.82 children per woman, and 7.7% of all births were a women's 4th or more child.",
+        "Among the 802,000 babies born in metropolitan France in 2010, 80.1% had two French parents, 13.3% had one French parent, and 6.6% had two non-French parents."
+      ]
+    }
+  ]
+}

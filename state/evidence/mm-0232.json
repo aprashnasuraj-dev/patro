@@ -1,0 +1,95 @@
+{
+  "id": "mm-0232",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Monte Carlo method",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=56098",
+      "retrieved_at": "2026-10-18T14:55:37.888Z",
+      "sha256": "24a26ec677ac695c68051cb12837935712c9bd30d87c1995543e1d89b6efd3e8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Monte Carlo methods, also called the Monte Carlo experiments or Monte Carlo simulations, are a broad class of computational algorithms based on repeated random sampling for obtaining numerical results, conceptualized by Polish mathematician Stanisław Ulam.",
+        "The underlying concept is to use randomness to solve deterministic problems.",
+        "Monte Carlo methods are mainly used in three distinct problem classes: optimization, numerical integration, and non-uniform random variate generation, available for modeling phenomena with significant input uncertainties, e.g.",
+        "Monte Carlo methods are often implemented using computer simulations.",
+        "They can provide approximate solutions to problems too complex for mathematical analysis."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Luck",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=192727",
+      "retrieved_at": "2026-10-18T14:55:37.888Z",
+      "sha256": "ea6cd10cc474762a070c3416a3535c0885a8d9eaeab9fbe57a27ee8e45870ac5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Luck is a phenomenon or belief that humans may associate with experiencing improbable events, especially improbably positive or negative events.",
+        "Philosophical naturalism, eschewing any supernatural explanations, might suggest that positive or negative events may happen at any time (due to both random and non-random natural and artificial processes), and that even improbable events can happen by random chance.",
+        "In this view, the epithet \"lucky\" or \"unlucky\" is a descriptive label that refers to an event's positivity, negativity, or improbability.",
+        "Supernatural interpretations of luck consider it to be an attribute of a person\nor of an object, or the result of a favorable (or unfavorable) view manifested by a deity\ntowards the lucky (or unlucky) person.",
+        "These interpretations often prescribe how luckiness or unluckiness can be obtained, such as by carrying a lucky charm or offering sacrifices or prayers to a deity.",
+        "Many superstitions are associated with luck,\nSuch superstitions are often specific to a given culture\nor set of related cultures.",
+        "For example, lucky symbols include the number 7 in Christian-influenced cultures and the number 8 in Chinese-influenced cultures.",
+        "Unlucky symbols and events include entering and leaving a house by different doors or breaking a mirror in Greek culture, throwing rocks into a whirlwind in Navajo culture, and ravens in Western culture.",
+        "Some of these associations may derive from related facts or desires.",
+        "For example, in Western culture opening an umbrella indoors might be considered unlucky partly because it could poke someone in the eye, whereas shaking hands with a chimney sweep might be considered lucky partly because it is a kind but unpleasant thing to do given the dirty nature of their work.",
+        "In Chinese  and Japanese culture, the association of the number 4 as a homophone with the word for death may explain why it is considered unlucky.",
+        "Extremely complicated and sometimes contradictory systems for prescribing auspicious and inauspicious times and arrangements of things have been devised, for example feng shui in Chinese culture and systems of astrology in various cultures around the world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A Treatise of Human Nature",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2665685",
+      "retrieved_at": "2026-10-18T14:55:37.888Z",
+      "sha256": "afc7d5417bde322c560f8a952d9394dac9914934022af5da1116cda0955fa21d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Treatise of Human Nature: Being an Attempt to Introduce the Experimental Method of Reasoning into Moral Subjects (1739–40) is a book by Scottish philosopher David Hume, considered by many to be Hume's most important work and one of the most influential works in the history of philosophy.",
+        "The book has appeared in many editions since the death of the author in 1776.",
+        "The Treatise is a classic statement of philosophical empiricism, scepticism, and naturalism.",
+        "In the introduction Hume presents the idea of placing all science and philosophy on a novel foundation: namely, an empirical investigation into human nature.",
+        "Impressed by Isaac Newton's achievements in the physical sciences, Hume sought to introduce the same experimental method of reasoning into the study of human psychology, with the aim of discovering the \"extent and force of human understanding\".",
+        "Against the philosophical rationalists, Hume argues that the passions, rather than reason, cause human behaviour.",
+        "He introduces the famous problem of induction, arguing that inductive reasoning and our beliefs regarding cause and effect cannot be justified by reason; instead, our faith in induction and causation is caused by mental habit and custom.",
+        "Isaiah Berlin wrote of Hume that \"no man has influenced the history of philosophy to a deeper or more disturbing degree\".",
+        "Jerry Fodor wrote of Hume's Treatise that it is \"the foundational document of cognitive science\".",
+        "However, the public in Britain at the time did not agree, nor in the end did Hume himself agree, reworking the material in both An Enquiry Concerning Human Understanding (1748) and An Enquiry Concerning the Principles of Morals (1751).",
+        "But not finding it successful, he was sensible of his error in going to the press too early, and he cast the whole anew in the following pieces, where some negligences in his former reasoning and more in the expression, are, he hopes, corrected.",
+        "Henceforth, the Author desires, that the following Pieces may alone be regarded as containing his philosophical sentiments and principles."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Statistical literacy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3223282",
+      "retrieved_at": "2026-10-18T14:55:37.888Z",
+      "sha256": "1eca42eb6ec833f9b428d5a3ce219096d5ee1ab4becc032645192059f04b9e06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Statistical literacy is the ability to understand and reason with statistics and data.",
+        "The abilities to understand and reason with data, or arguments that use data, are necessary for citizens to understand material presented in publications such as newspapers, television, and the Internet.",
+        "However, scientists also need to develop statistical literacy so that they can both produce rigorous and reproducible research and consume it.",
+        "Numeracy is an element of being statistically literate and in some models of statistical literacy, or for some populations (e.g., students in kindergarten through 12th grade/end of secondary school), it is a prerequisite skill.",
+        "Being statistically literate is sometimes taken to include having the abilities to both critically evaluate statistical material and appreciate the relevance of statistically-based approaches to all aspects of life in general or to the evaluating, design, and/or production of scientific work."
+      ]
+    }
+  ]
+}

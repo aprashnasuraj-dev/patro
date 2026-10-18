@@ -1,0 +1,144 @@
+{
+  "id": "mm-1283",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Termites",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2025-09-09",
+      "url": "https://doi.org/10.2307/jj.27939764.12",
+      "retrieved_at": "2026-10-18T16:11:21.661Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Behaviour and Ecological Impacts of Termites: Fecundity Investigations in Mounds",
+      "publisher": "Walter de Gruyter GmbH",
+      "author": "Wako, Sutuma Edessa",
+      "published_at": "2015-01-01",
+      "url": "https://doi.org/10.1515/eko-2015-0008",
+      "retrieved_at": "2026-10-18T16:11:21.987Z",
+      "sha256": "3708c5fab7c64fc193a3ad673a09ac0cdf47a839bc3ac8136a6f9b4ad9bcf1b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract A radical study was conducted on the behaviour and ecological impacts of termites in Haru District of Western Oromia, Ethiopia.",
+        "It was aimed at investigating the natural behaviour, fecundity in mounds, ecological impacts and recommending possible solutions to termite problems.",
+        "Four mounds in different sites were vertically dug down to display the profile of the queen, soldiers, workers, number of laid eggs, nymphs and colonies of termites.",
+        "On an average, termite queens of the study site may lay about 25 eggs per minute, 36, 000 eggs per day and 13, 140, 000 eggs annually.",
+        "The fourth queen was unearthed to study the structure, size, number of ovaries and fecundity.",
+        "It was examined that the death of a queen does not affect the colony, because four small queens are formed and one of them becomes the queen of queens and replaced the dead queen promptly.",
+        "Accordingly, termites are found to be one of the most destructive agents of our ecosystems and their management requests careful and biological control methods.",
+        "As a result, the negative effect of termites outweighs the positive effect of termites so that minimising the population size is important for human beings."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2594",
+      "retrieved_at": "2026-10-18T16:11:21.987Z",
+      "sha256": "f842330b9ed0c4282dc559ee7459e77c24644d0fd51d8062b587c749b52ba292",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ants are eusocial insects of the family Formicidae and, along with the related wasps and bees, belong to the order Hymenoptera.",
+        "Ants evolved from vespoid wasp ancestors in the Cretaceous period.",
+        "More than 13,800 of an estimated total of 22,000 species have been described.",
+        "They are easily identified by their geniculate (elbowed) antennae and the distinctive node-like structure that forms their slender waists.",
+        "Ants form colonies that range in size from a few dozen individuals often living in small natural cavities to highly organised colonies that may occupy large territories with a sizeable nest (or nests) that consist of millions of individuals.",
+        "In some cases they reach hundreds of millions of individuals in super colonies.",
+        "Typical colonies consist of various castes of sterile, wingless females, most of which are workers (ergates), as well as soldiers (dinergates) and other specialised groups.",
+        "Nearly all ant colonies also have some fertile males called \"drones\" and one or more fertile females called \"queens\" (gynes).",
+        "The colonies are described as superorganisms because the ants appear to operate as a unified entity, collectively working together to support the colony.",
+        "The only places lacking indigenous ants are Antarctica and a few remote or inhospitable islands.",
+        "Ants thrive in moist tropical ecosystems and may exceed the combined biomass of wild birds and mammals.",
+        "Their success in so many environments has been attributed to their social organisation and their ability to modify habitats, tap resources, and defend themselves."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Termite",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54808",
+      "retrieved_at": "2026-10-18T16:11:21.988Z",
+      "sha256": "cc38c51983d8515c5be774fb02e0047d4a754403e3ea44da63db4813bd78fe08",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Termites are a group of eusocial insects which consume a variety of decaying plant material, generally in the form of wood, leaf litter, and soil humus.",
+        "About 2,997 extant species are currently described, 2,125 of which are members of the family Termitidae.",
+        "Termites comprise the infraorder Isoptera, or alternatively the epifamily Termitoidae, within the order Blattodea (the cockroaches).",
+        "Termites were once classified in a separate order from cockroaches, but phylogenetic studies in the 21st century indicate that they evolved from cockroaches, as they are deeply nested within the group (clade), and the sister group to wood-eating cockroaches of the genus Cryptocercus.",
+        "Previous estimates suggested the divergence took place during the Jurassic or Triassic.",
+        "More recent estimates suggest that they have an origin during the Late Jurassic, with later evidence revealing fossils from this time period.",
+        "Termite colonies are commonly described as superorganisms due to the collective behaviors of the individuals which form a self-governing entity: the colony itself.",
+        "Their colonies range in size from a few hundred individuals to enormous societies with several million individuals.",
+        "Most species are rarely seen, having a cryptic life history where they remain hidden within the galleries and tunnels of their nests for most of their lives.",
+        "Similar to ants, along with some bees and wasps of the order Hymenoptera, most termite colonies possess analogous \"worker\" and \"soldier\" castes consisting of mostly sterile individuals which are physically and behaviorally distinct from other castes.",
+        "Unlike ants, most colonies begin from sexually mature individuals known as the \"king\" and \"queen\" that together form a lifelong monogamous pair.",
+        "Also unlike ants, which undergo a complete metamorphosis, termites undergo an incomplete metamorphosis that proceeds through egg, nymph, and adult stages, as with other cockroaches."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Sloth bear",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=399740",
+      "retrieved_at": "2026-10-18T16:11:21.988Z",
+      "sha256": "52ba0875ee6f6c8a3550e6bb6f21a58f80a8eb9e7da47ec47505b3d731fd59d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The sloth bear (Melursus ursinus), also known as the Indian bear, is a myrmecophagous bear species native to the Indian subcontinent.",
+        "It is listed as vulnerable on the IUCN Red List, mainly because of habitat loss and degradation.",
+        "It has also been called \"labiated bear\" because of its long lower lip and palate used for sucking up insects.",
+        "It has long, shaggy fur, a mane around the face, and long, sickle-shaped claws.",
+        "It shares features of insectivorous mammals and evolved during the Pleistocene from the ancestral ursine bear through divergent evolution.",
+        "Sloth bears breed during spring and early summer and give birth near the beginning of winter.",
+        "When their territories are encroached upon by humans, they sometimes attack them.",
+        "Historically, humans have drastically reduced these bears' habitat and diminished their population by hunting them for food and products such as their bacula and claws.",
+        "Sloth bears have been tamed and used as performing animals and as pets."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Short-beaked echidna",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1837721",
+      "retrieved_at": "2026-10-18T16:11:21.988Z",
+      "sha256": "6f99c57c5fcce3dc008db468c6048dfba3d3dbca3abb567b7a7a923d3b0cd5f4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The short-beaked echidna (Tachyglossus aculeatus), also known as the common echidna, or short-nosed echidna, is one of four living species of echidna, and the only member of the genus Tachyglossus, from Ancient Greek ταχύς (takhús), meaning \"fast\", and γλῶσσα (glôssa), meaning \"tongue\".",
+        "It is covered in fur and spines and has a distinctive snout and a specialised tongue, which it uses to catch its insect prey at a great speed.",
+        "Like the other extant monotremes, the short-beaked echidna lays eggs; the monotremes are the only living group of mammals to do so.",
+        "The short-beaked echidna has extremely strong front limbs and claws, which allow it to burrow quickly with great power.",
+        "As it needs to be able to survive underground, it has a significant tolerance to high levels of carbon dioxide and low levels of oxygen.",
+        "It has no weapons or fighting ability but deters  predators by curling into a ball and protecting itself with its spines.",
+        "It cannot sweat or deal well with heat, so it tends to avoid daytime activity in hot weather.",
+        "The snout has mechanoreceptors and electroreceptors that help the echidna to detect its surroundings.",
+        "During the Australian winter, it goes into deep torpor and hibernation, reducing its metabolism to save energy.",
+        "Female echidnas lay one egg a year and the mating period is the only time the otherwise solitary animals meet one another; the male has no further contact with the female or his offspring after mating.",
+        "A newborn echidna is the size of a grape but grows rapidly on its mother's milk, which is very rich in nutrients.",
+        "By seven weeks baby echidnas grow too large and spiky to stay in the pouch and are expelled into the mother's burrow."
+      ]
+    }
+  ]
+}

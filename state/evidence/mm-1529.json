@@ -1,0 +1,164 @@
+{
+  "id": "mm-1529",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Health check: why do we get muscle cramps?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Hayes, Alan",
+      "published_at": "2018-04-13",
+      "url": "https://theconversation.com/health-check-why-do-we-get-muscle-cramps-93493",
+      "retrieved_at": "2026-10-18T16:23:57.785Z",
+      "sha256": "b0d3e2e4854208b0edb67d39fdbbfb17e842efae6e34535bcd68bea43b7ec58c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair Some people experience cramps frequently after vigorous, high-intensity exercise.",
+        "from shutterstock.com Health check: why do we get muscle cramps?",
+        "A cramp is the involuntary contraction of our skeletal muscle, and it hurts.",
+        "Some people often experience cramps after vigorous, high-intensity exercise, but there are also many who experience them with no exercise at all – mostly at night.",
+        "These “nocturnal” cramps occur with increasing frequency as we age, and are common in pregnancy.",
+        "Interestingly, these cramps are usually restricted to the lower limb.",
+        "This is generally the same as athletes experiencing exercise-associated muscle cramps.",
+        "Actually, we don’t really know, but there are several theories.",
+        "We know cramps are rarely seen at the start of a sporting contest, but regularly seen at the end.",
+        "Some researchers have long suggested dehydration and electrolyte imbalance (such as decreased salt content) as a cause.",
+        "But recent reviews have downplayed this theory, as the evidence is mostly observational.",
+        "This means while there may be an association between dehydration, salt depletion and cramps, we can’t prove one caused the other."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why we didn’t get a vaccine by Election Day – but why we may get one soon",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Petri, William",
+      "published_at": "2020-11-10",
+      "url": "https://theconversation.com/why-we-didnt-get-a-vaccine-by-election-day-but-why-we-may-get-one-soon-149690",
+      "retrieved_at": "2026-10-18T16:23:58.180Z",
+      "sha256": "b8a53129d631feb30804f24aac1d5af3d4ea06b4ed2205d583d627f3f4584ad2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why we didn’t get a vaccine by Election Day – but why we may get one soon Skip to content Academic rigor, journalistic flair Why we didn’t get a vaccine by Election Day – but why we may get one soon Published: November 10, 2020 8:23am EST Pfizer stock surged higher on Nov.",
+        "9 after the company announced its vaccine is “90% effective” against COVID-19 infections.",
+        "But there are promising signs that one may be available soon.",
+        "9 by pharmaceutical giant Pfizer suggests that the end is in sight, with preliminary results indicating that its vaccine is 90% effective at preventing symptomatic COVID-19.",
+        "The company said it intends this month to seek emergency use authorization, or EUA, from the FDA, bringing some encouraging news to the fight against the pandemic.",
+        "The Pfizer vaccine is based on a new technology in which a molecule called messenger RNA is injected into the body.",
+        "This mRNA molecule provides the instructions for cells in the body to manufacture a protein, called the spike glycoprotein, that plays an essential role in allowing the SARS-CoV-2 to infect human cells.",
+        "When the immune system detects the spike glycoprotein, it generates an immune response.",
+        "If the vaccinated individual is later exposed to the virus that causes COVID-19, the individual’s immune system is prepared to rapidly attack and destroy the coronavirus.",
+        "I am an infectious diseases specialist at the University of Virginia who cares for patients with COVID-19.",
+        "I am conducting a clinical trial of the Regeneron antibodies against the new coronavirus spike glycoprotein to see if it is possible to prevent household transmission.",
+        "I also do basic research on treatment and prevention of infection by the SARS-CoV-2 virus."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Use of Bananas in Preventing Exercise Associated Muscle Cramps",
+      "publisher": "NDSU Repository (North Dakota State University)",
+      "author": "Hannah Marie Hallissey",
+      "published_at": "2014-01-01",
+      "url": "https://openalex.org/W2308517503",
+      "retrieved_at": "2026-10-18T16:23:58.404Z",
+      "sha256": "0a485ded43b10c76133158162df3f0a48d5fd905bd3c35a0b6b99dec1d3419f5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bananas have been consumed by athletes in the belief that they prevent muscle cramping.",
+        "However, there are no studies in the literature that test plasma potassium concentration as a prevention technique for exercise associated muscle cramps.",
+        "The purpose of this study was to determine if potassium in bananas increased threshold frequency (TF) of an electrically induced muscle cramp (EIMC) in young adults who have a history of muscle cramps.",
+        "On the day of testing, subjects had a baseline blood sample and baseline EIMC, then ate 2 servings (300g) of bananas.",
+        "After 60 minutes of rest, a final blood sample was drawn and a final EIMC was induced.",
+        "Plasma potassium concentration did significantly increase, whereas cramp TF did not.",
+        "Potassium in bananas does not affect cramp TF one hour after ingestion."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Cramps",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30872",
+      "retrieved_at": "2026-10-18T16:23:58.404Z",
+      "sha256": "de894e3ba57022ab899716b9150354df2c2852afc7bc96c8a0ae3050920aee2b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Cramps were an American rock band formed in 1976 and active until 2009.",
+        "Their lineup rotated frequently during their existence, with the duo of singer Lux Interior and guitarist Poison Ivy the only ever-present members.",
+        "The band is credited as progenitors of the psychobilly subgenre, fusing elements of punk rock with rockabilly.",
+        "The addition of guitarist Bryan Gregory and drummer Pam Balam resulted in the first complete lineup in April 1976.",
+        "They released their debut album Songs the Lord Taught Us in 1980.",
+        "The band split after the death of lead singer Interior in 2009."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Silent Gondoliers",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31572",
+      "retrieved_at": "2026-10-18T16:23:58.404Z",
+      "sha256": "7eb09147f0c96cab17bdcdbd702c8ff2f79f1e2e094dc574ec62c4fa3a369d54",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Silent Gondoliers is a 1983 novel by William Goldman, written under the pseudonym of \"S.",
+        "The novel purports to explain why the gondoliers of Venice no longer sing, through the story of the protagonist Luigi.",
+        "Chapters I and II build up further mythology behind the name Morgenstern and the backstory of Gondolierian history, and the tale of Luigi actually starts in Chapter III.",
+        "It was published by Del Rey Books in hardcover in 1983, and a trade paperback version came out from Del Rey in 2001.",
+        "Paul Giovanopoulos provided 20 pen-and-ink illustrations for the story."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Daughters (band)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1446532",
+      "retrieved_at": "2026-10-18T16:23:58.404Z",
+      "sha256": "6252bfe5413d93c0f3209738e53ff137bbd6a5d7356c145e9129b48190a45dfa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Daughters were an American rock band formed in 2002, in Providence, Rhode Island.",
+        "The band's most recent lineup consisted of vocalist Alexis Marshall, guitarist Nick Sadler, drummer Jon Syverson, and bassist Samuel Walker.",
+        "The band started out as a mathgrind outfit, developing their sound with each album, with later albums often described as noise rock.",
+        "Daughters disbanded in August 2009 after Marshall left the band, and their self-titled third album was released in 2010 while the band was broken up.",
+        "In 2018, the band signed to Ipecac Recordings and released the album You Won't Get What You Want, which released to universal critical acclaim, with many critics naming it one of the best albums of the year.",
+        "It marks a significant departure from the band's earlier style, with relatively more conventional song structures and vocals.",
+        "The band went on hiatus in 2021 following allegations of domestic violence against the group's frontman, Alexis Marshall, made by his ex-girlfriend, Kristin Hayter."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Stand Your Ground (Little Barrie album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5964472",
+      "retrieved_at": "2026-10-18T16:23:58.404Z",
+      "sha256": "be8dc23d4dae734d0a37b42f6b82c48af6e866718dab325acdd5531af23528b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stand Your Ground is the second album by the band Little Barrie.",
+        "The album is produced by Dan the Automator and Mike \"Prince Fatty\" Pelanconi.",
+        "The band went for a more straight rock’n’roll sound in their own words as \n\na result of touring the first record ...",
+        "And it’s partly because while we were touring we were getting back into stuff we hadn’t listened to for a while, like old garage stuff, and The Cramps.",
+        "We thought it might be a bit more of a stripped-down, southern fried soul sort of thing.",
+        "We expected it would maybe almost have a Lee Dorsey, Tony Joe White influence.",
+        "But then we started getting into different things – started toughening the beats up, and getting into mad '50s reverb on the guitars.",
+        "I became interested in the energy of those sounds, but still keeping the soulful thing in it.",
+        "We wanted this record to be less psychedelic than the last one, and there's less guitars on it.",
+        "They choose to work with The Automator \n\nbecause of what he'd done with the Jon Spencer Blues Explosion.",
+        "And also the thought of working with someone who wasn't a conventional rock producer.",
+        "We thought he might come up with something a bit less conventional."
+      ]
+    }
+  ]
+}

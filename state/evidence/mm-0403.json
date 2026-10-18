@@ -1,0 +1,142 @@
+{
+  "id": "mm-0403",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Ants",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2025-09-09",
+      "url": "https://doi.org/10.2307/jj.27939764.11",
+      "retrieved_at": "2026-10-18T15:03:38.893Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Lessons from Africa on how to build resilient bee colonies",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Rusch, Neil",
+      "published_at": "2020-03-19",
+      "url": "https://theconversation.com/lessons-from-africa-on-how-to-build-resilient-bee-colonies-131478",
+      "retrieved_at": "2026-10-18T15:03:39.240Z",
+      "sha256": "f5f1b60c9cefb3f04afc5261c085aab01b861d02f09bac32d030cb1a365dcb9c",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Lessons from Africa on how to build resilient bee colonies Skip to content Academic rigor, journalistic flair Lessons from Africa on how to build resilient bee colonies Published: March 19, 2020 9:49am EDT Agave honey bee log hive honey comb harvest.",
+        "These important pollinators are affected by issues of nutrition, habitat loss, pesticides, a changing climate, pathogens and an economic system that lacks ecological accountability.",
+        "Honeybee ( Apis mellifera ) populations are also being wiped out by Colony Collapse Disorder , caused by a cocktail of debilitating factors.",
+        "Industrial-style beekeeping practices are making this worse.",
+        "Since the condition was first reported in 2006, it has killed tens of millions of honey bees.",
+        "Bees compromised by the effects of the disorder are most vulnerable to the deadly varroa mite.",
+        "In many commercial apiaries the parasite is controlled by chemical intervention.",
+        "Chemicals plus the pathogens carried and introduced by Varroa destructor increase the stress bees are facing.",
+        "Research by the Honeybee Genome Sequencing Consortium suggests that Apis mellifera is especially vulnerable because it “has fewer genes for innate immunity” and fewer genes for production of “detoxification enzymes”.",
+        "Yet the species is faring far better in many African countries than elsewhere.",
+        "One of the reasons for this may be the continent’s deeply embedded indigenous knowledge and traditional beekeeping practices.",
+        "The prevalence of wild bee colonies on the African continent also helps bees to remain healthy."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2594",
+      "retrieved_at": "2026-10-18T15:03:39.976Z",
+      "sha256": "f842330b9ed0c4282dc559ee7459e77c24644d0fd51d8062b587c749b52ba292",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ants are eusocial insects of the family Formicidae and, along with the related wasps and bees, belong to the order Hymenoptera.",
+        "Ants evolved from vespoid wasp ancestors in the Cretaceous period.",
+        "More than 13,800 of an estimated total of 22,000 species have been described.",
+        "They are easily identified by their geniculate (elbowed) antennae and the distinctive node-like structure that forms their slender waists.",
+        "Ants form colonies that range in size from a few dozen individuals often living in small natural cavities to highly organised colonies that may occupy large territories with a sizeable nest (or nests) that consist of millions of individuals.",
+        "In some cases they reach hundreds of millions of individuals in super colonies.",
+        "Typical colonies consist of various castes of sterile, wingless females, most of which are workers (ergates), as well as soldiers (dinergates) and other specialised groups.",
+        "Nearly all ant colonies also have some fertile males called \"drones\" and one or more fertile females called \"queens\" (gynes).",
+        "The colonies are described as superorganisms because the ants appear to operate as a unified entity, collectively working together to support the colony.",
+        "The only places lacking indigenous ants are Antarctica and a few remote or inhospitable islands.",
+        "Ants thrive in moist tropical ecosystems and may exceed the combined biomass of wild birds and mammals.",
+        "Their success in so many environments has been attributed to their social organisation and their ability to modify habitats, tap resources, and defend themselves."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Red imported fire ant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=377245",
+      "retrieved_at": "2026-10-18T15:03:39.976Z",
+      "sha256": "d83de0ee953249dc0ca5db930e5abf14b2fe56d637e804d819a47e3c0b538898",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Solenopsis invicta, the fire ant, or red imported fire ant (RIFA), is a species of ant native to South America.",
+        "A member of the genus Solenopsis in the subfamily Myrmicinae, it was described by Swiss entomologist Felix Santschi as a variant of S.",
+        "Its current specific name invicta was given to the ant in 1972 as a separate species.",
+        "However, the variant and species were the same ant, and the name was preserved due to its wide use.",
+        "Though South American in origin, the red imported fire ant has been accidentally introduced in Australia, New Zealand, several Asian and Caribbean countries, Europe and the United States.",
+        "The red imported fire ant is polymorphic, as workers appear in different shapes and sizes.",
+        "The ant's colours are red and somewhat yellowish with a brown or black gaster, but males are completely black.",
+        "Red imported fire ants are dominant in altered areas and live in a wide variety of habitats.",
+        "They can be found in rainforests, disturbed areas, deserts, grasslands, alongside roads and buildings, and in electrical equipment.",
+        "Colonies form large mounds constructed from soil with no visible entrances because foraging tunnels are built and workers emerge far away from the nest.",
+        "These ants exhibit a wide variety of behaviours, such as building rafts when they sense that water levels are rising.",
+        "They also show necrophoric behaviour, where nestmates discard scraps or dead ants on refuse piles outside the nest."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Ant colony",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1056536",
+      "retrieved_at": "2026-10-18T15:03:39.976Z",
+      "sha256": "414046d1735c3bdc384906648ba0ea0b18de4983ed765814ba622746ae65302d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An ant colony is a population of ants, typically from a single species, capable of maintaining their complete lifecycle.",
+        "Ant colonies are eusocial, communal, and efficiently organized and are very much like those found in other social Hymenoptera, though the various groups of these developed sociality independently through convergent evolution.",
+        "The typical colony consists of one or more egg-laying queens, numerous sterile females (workers, soldiers) and, seasonally, many winged sexual males and females.",
+        "In order to establish new colonies, ants undertake flights that occur at species-characteristic times of the day.",
+        "Swarms of the winged sexuals (known as alates) depart the nest in search of other nests.",
+        "The males die shortly thereafter, along with most of the females.",
+        "A small percentage of the females survive to initiate new nests."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Carpenter ant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1978507",
+      "retrieved_at": "2026-10-18T15:03:39.976Z",
+      "sha256": "19e345742d548ee13009460d6996b2bc7ffb5bf91857e3c25b8e88dbc09db2b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Camponotus, the carpenter ants, are a genus of ants in the subfamily Formicinae found nearly worldwide except in Antarctica and a few islands.",
+        "This genus is the most species-rich genus of ants in terms of described species, comprising over 1,500 described species as of 2025.",
+        "Although they are commonly referred to as carpenter ants, only a few members, mostly in the subgenera Camponotus and Myrmentoma, nest in wood.",
+        "True carpenter ants build nests inside wood, consisting of galleries chewed out with their mandibles or jaws, preferably in dead, damp wood.",
+        "However, unlike termites, they do not consume wood, but instead discard a material that resembles sawdust outside their nest.",
+        "They also commonly infest wooden buildings and structures, causing a widespread problem: they are a major cause of structural damage.",
+        "Nevertheless, their ability to excavate wood helps in forest decomposition.",
+        "In their farming, the ants protect the aphids from predators (usually other insects) while they excrete a sugary fluid called honeydew, which the ants get by stroking the aphids with their antennae."
+      ]
+    }
+  ]
+}

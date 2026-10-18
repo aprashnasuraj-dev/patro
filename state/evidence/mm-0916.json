@@ -1,0 +1,143 @@
+{
+  "id": "mm-0916",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Optimal Speed Controller in the Presence of Traffic Lights",
+      "publisher": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+      "author": "Kristoffer Thorin",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2914598981",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "ebbe0545d1182b638d843cac73aec4757ca88f3da5ff2a3ea6a2414915ccc1c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This report presents an approach on how to utilize information on future states of traffic lights to reduce the energy consumption and trip time for a Heavy Duty Vehicle.",
+        "Model Predictive Control is proposed as a solution to handle the optimisation on-line and the concept is tested for various prediction horizons in which information can be received.",
+        "Further on, it is investigated if the implemented controller is robust enough to execute the same task in a scenario where only the current state is known and future states are predicted.",
+        "Comparison with a reference vehicle demonstrates improved fuel economy as well as reduced trip time when the information is given.",
+        "It is shown that the results are improved as the prediction horizon is extended, but converges after 400-500 meters.",
+        "As the phases of the traffic lights are predicted, fuel economy can be improved, but it comes at a price from being non-robust with drastic braking and increased trip time as predictions might be inaccurate."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Coordination of traffic lights evaluation",
+      "publisher": "RECERCAT (Consorci de Serveis Universitaris de Catalunya)",
+      "author": "Enric Ordeig Vila",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W184535922",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "0a52b0844e1cd7b390e561c6ef26267d39069e495c155a6f5ce26863757f3dbd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This case study consists in the evaluation of the Kaunas city traffic speed taking into consideration\\nthat traffic lights were coordinated.",
+        "Moreover, by comfortability has to be borne in mind that a lot of people\\nprefer to drive by car since takes much less time to get to a place and in cold winters\\ndon’t have to reach any bus stop nor waiting for the bus.",
+        "This will allow to see how necessary is the coordination as\\nwell as other conclusions regarding objects in infrastructure."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Modeling and Analysis of Urban Traffic Lights Control Systems Using Timed CP-nets *",
+      "publisher": "OpenAlex",
+      "author": "Yi‐Sheng Huang; Ta‐Hsiang Chung",
+      "published_at": "2008-01-01",
+      "url": "https://openalex.org/W2105992085",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "3d15a136e4b113937bc4f18fbc0530811ec616f5c16710c97d29bfe68b6a8ade",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Petri nets have been utilized as a visual formalism for the modeling of complex system.",
+        "It illuminates the features on describing properties of causality, concurrency and synchronization.",
+        "This paper focuses on the use of Timed Coloured Petri nets (Timed CP-nets) to model a basic traffic control system.",
+        "A module of basic traffic control system of Timed CP-nets model is successfully constructed.",
+        "The advantage of the proposed approach is that any complicated traffic signal models will be easily obtained based on the module.",
+        "Moreover, a real-world supervisor of the urban traffic light system, which consists of three intersections with multiple phases, is implemented by the new methodology.",
+        "And the Occurrence Graphs (OG) is performed to demonstrate how the model enforces the signal lights ’ transitions.",
+        "To our knowledge, this is the first work that proposes the new modeling methodology to design the traffic light control systems by Timed CP-nets."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Traffic light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=163395",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "e89f90cc7dbfd3cb3c2821d358bec6cf511937ece0cadf4cb989e8bad363ceca",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic lights, traffic signals, or stoplights – also known as robots in South Africa, Zambia, and Namibia – are signaling devices positioned at road intersections, pedestrian crossings, and other locations to control the flow of traffic.",
+        "Traffic lights usually consist of three signals, conveying meaningful information to road users through colors and symbols, including arrows and bicycle symbols.",
+        "The usual traffic light colors are red to stop traffic, amber to signal a change, and green to allow traffic to proceed.",
+        "These are arranged vertically or horizontally in that order.",
+        "Although this is internationally standardized, variations in traffic light sequences and laws exist on national and local scales.",
+        "Traffic lights were first introduced in December 1868 on Parliament Square in London to reduce the need for police officers to control traffic.",
+        "Since then, electricity and computerized control have advanced traffic light technology and increased intersection capacity.",
+        "The system is also used for other purposes, including the control of pedestrian movements, variable lane control (such as tidal flow systems or smart motorways), and railway level crossings."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Traffic police",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2149607",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "06314206dce63e7ec40ae2faba493e2b557e176cab5805f9ed83c44db62fb8a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic police (also known as traffic officers,  traffic enforcement officer, traffic enforcement units, traffic cops, traffic monitors, or traffic enforcers) are units and agencies who enforce traffic laws and manage traffic.",
+        "Traffic police help to assist in patrolling highways, directing traffic and address traffic infractions.",
+        "They may be a separate agency from a main police agency, a unit or division within a police agency, or a type of assignment issued to officers; they can also be part of a transportation authority or highway authority.",
+        "It has been noted that:\n\n...traffic police, who are regarded as peripheral to most police forces, participate in both authoritative intervention and symbolic justice.",
+        "Perhaps alone of all the assignments, traffic police are full-service police.",
+        "They are different from the rest, however, because their work is limited to a particular venue—namely, public thoroughfares—and to particular people—namely, those who operate motor vehicles.",
+        "But in terms of work, traffic police are detectives as well as patrol officers."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Emergency vehicle lighting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2843559",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "904b5bfa8f61a7dd263d49a28cbe4467b114d546a85b0d2846b531340614657e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Emergency vehicle lighting, also known as simply emergency lighting or emergency lights, is a type of vehicle lighting used to visually announce a vehicle's presence to other road users.",
+        "A sub-type of emergency vehicle equipment, emergency vehicle lighting is generally used by emergency vehicles and other authorized vehicles in a variety of colors.",
+        "These lights may be dedicated emergency lights, such as a beacon or a lightbar, or modified stock lighting, such as a wig-wag or hideaway light, and are additional to any standard lighting on the car such as hazard lights.",
+        "They are often used along with a siren system to increase their effectiveness and provide audible warnings alongside the visual warnings produced by the lights.",
+        "In many jurisdictions, the use of emergency lights may afford the user specific legal powers, and may place requirements on other road users to behave differently, such as compelling them to pull to the side of the road and yield right-of-way in traffic so the vehicle may proceed through unimpeded.",
+        "Laws regarding and restricting the use of these lights vary widely among jurisdictions, and in some areas non-emergency vehicles such as school buses, and semi-emergency vehicles such as tow trucks, may be permitted to use similar lights."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Variations in traffic light operation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5508817",
+      "retrieved_at": "2026-10-18T15:41:45.525Z",
+      "sha256": "b3187f1c86e8b13e2a62fcd9753c3b523694bd13194d53002bc7ad5b5a7b5783",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In traffic engineering, there are regional and national variations in traffic light operation.",
+        "This may be in the standard traffic light sequence (such as the inclusion of a red–amber phase) or by the use of special signals (such as flashing amber or public transport signals)."
+      ]
+    }
+  ]
+}

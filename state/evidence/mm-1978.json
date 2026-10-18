@@ -1,0 +1,142 @@
+{
+  "id": "mm-1978",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dynamic Cheerios Stickier than Static Ones",
+      "publisher": "American Physical Society (APS)",
+      "author": "Curatolo, Agnese",
+      "published_at": "2023-11-03",
+      "url": "https://doi.org/10.1103/physics.16.s163",
+      "retrieved_at": "2026-10-18T16:45:55.378Z",
+      "sha256": "a3c5c5f5750737a333175ef5388d2f54d6b06c472272e1cbe696bf391b918fc4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "[ 1 ] &times; Pour Cheerios into milk and the oaty Os will likely clump together in both the middle of the bowl and around the edges.",
+        "This phenomenon, called the Cheerios effect, has been known since the 1950s and is caused by a surface-tension-induced force that deforms the air&ndash;liquid interface around each floating Cheerio such that the Os get pulled together.",
+        "This &ldquo;sticky&rdquo; force has been thoroughly studied, but little is known about that force&rsquo;s impact on a dynamical system, for instance, a floating object being lifted off a liquid surface.",
+        "Now Hadrien Bense and co-workers at the Universit&eacute; Libre de Bruxelles show that for a thin glass rod being withdrawn from a silicone-oil bath, the attractive force is at least one order of magnitude higher than for its static counterparts [ 1 ].",
+        "For their experiments, Bense and colleagues pulled either one or two identical thin glass rods from the silicone oil.",
+        "They recorded the process on video and then extracted information about the system from the videos&rsquo; frames.",
+        "For a single rod, they measured the height to which the liquid climbed up the sides of the glass stick as a function of retraction speed.",
+        "They found that this height was greater for a dynamic rod than for a static one and that it increased with increasing speed, following a power law.",
+        "For two rods, the researchers determined the height of the liquid bridge that spanned the glass tubes.",
+        "They found that the height of this bridge was a superposition of the liquid-climbing height for two single rods.",
+        "A higher bridge implies a stronger attractive force and thus a greater Cheerios effect.",
+        "Both results match predictions from analytical formulas that the team derived."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Beyond Vanilla Market Making: How Microstructural Features Outperform Dynamic Strategy Selection",
+      "publisher": "Elsevier BV",
+      "author": "Halili, Mark Joshua; Glanz, Aaron; Rodarte, Andres",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7555758",
+      "retrieved_at": "2026-10-18T16:45:55.644Z",
+      "sha256": "dd82cb12d0598d6163e072bd858dcdaaf555735529a6d519bcea6dc634fda9b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper proposes a dynamic, regime-aware market-making framework that combines out-of-sample Walk-Forward Optimization (WFO) with a Reinforcement Learning (RL) meta-controller.",
+        "We evaluate three foundational market-making paradigms: the classical Avellaneda-Stoikov model, an Inventory-Volatility-Adjusted model, and a Volume-Synchronized Probability of Informed Trading (VPIN) hedging model designed to detect order flow toxicity.",
+        "To capture true market friction, parameter decay is mapped via WFO under strict inventory capacity limits, order-sizing bounds, and exchange transaction fees across six distinct structural regimes (high/low volatility, bullish/bearish, and high/low liquidity).",
+        "The resulting out-of-sample execution logs serve as the foundational state-space for a Proximal Policy Optimization (PPO) agent, which functions as a micro-level meta-controller to dynamically reallocate continuous capital across the underlying algorithms in real time."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Cathode ray tube",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6014",
+      "retrieved_at": "2026-10-18T16:45:56.015Z",
+      "sha256": "bbd11e0399489ef2ad0644c19c2c951e902ef79f51745da9607830da317c15c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A cathode ray tube (CRT) is a vacuum tube containing one or more electron guns, which emit electron beams, which are directed and controlled to display images on a phosphorescent screen.",
+        "The images may represent electrical waveforms on an oscilloscope, a frame of video on an analog television set (TV), digital raster graphics on a computer monitor, or other phenomena like radar targets.",
+        "CRTs have also been used as memory devices, in which case the screen is not intended to be visible to an observer.",
+        "The term cathode ray was used to describe electron beams when they were first discovered, before it was understood that what was emitted from the cathode was a beam of electrons.",
+        "A CRT works by electrically heating a tungsten coil which in turn heats a cathode in the rear of the CRT, causing it to emit electrons which are modulated and focused by electrodes.",
+        "The electrons are steered by deflection coils or plates, and an anode accelerates them towards the phosphor-coated screen, which generates light when hit by the electrons.",
+        "The entire front area of the tube is scanned repeatedly and systematically in a fixed pattern called a raster.",
+        "In color devices, an image is produced by controlling the intensity of each of three electron beams, one for each additive primary color (red, green, and blue).",
+        "In modern CRT monitors and TVs, the beams are bent by magnetic deflection, using a deflection yoke.",
+        "The tube is a glass envelope that is heavy, fragile, and long from the front screen face to its rear end.",
+        "Its interior must be a partial vacuum to prevent the emitted electrons from colliding with air molecules and scattering before they hit the tube's face.",
+        "Thus, the interior is evacuated to less than a millionth of atmospheric pressure."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "OLED",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=191646",
+      "retrieved_at": "2026-10-18T16:45:56.015Z",
+      "sha256": "c56978daf88888621d65e8004a0a08c2d0836e25c5a68ce8b35875508e2db68c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An organic light-emitting diode (OLED), also known as organic electroluminescent (organic EL) diode, is a type of light-emitting diode (LED) in which the emissive electroluminescent layer is an organic compound film that emits light in response to an electric current.",
+        "This organic layer is situated between two electrodes; typically, at least one of these electrodes is transparent.",
+        "OLEDs are fundamentally different from LEDs and do not employ a crystalline structure.",
+        "There are two main families of OLED: those based on small molecules and those employing polymers.",
+        "Adding mobile ions to an OLED creates a light-emitting electrochemical cell (LEC) which has a slightly different mode of operation.",
+        "The invention of OLED can be attributed to two chemists at Eastman Kodak in 1987, namely Ching Wan Tang and Steven Van Slyke.",
+        "Its public commercial use began with a car stereo in 1997 by Pioneer and for more than a decade its use was mainly for small monochrome displays in-car or portable systems, although the first full-color OLED display was implemented in a Kodak digicam in 2003.",
+        "OLED displays took off during the latter half of the 2010s and have since been implemented mainly in wearable devices, smartphones, and high-end televisions."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Dick Grayson",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=369214",
+      "retrieved_at": "2026-10-18T16:45:56.015Z",
+      "sha256": "519da4ceec975323ebe72cf1dc640058f48324116519183fcd4e9fee9f06c8e3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Richard John \"Dick\" Grayson is a superhero appearing in American comic books published by DC Comics, commonly in association with Batman, the Teen Titans, and the Justice League.",
+        "Created by writer Bill Finger and artists Bob Kane and Jerry Robinson, he first appeared in Detective Comics #38 in April 1940.",
+        "Dick is the original and most popular incarnation of Robin, the crime-fighting partner of Batman, with whom he forms the Dynamic Duo.",
+        "The son of master acrobats dubbed the Flying Graysons, he is later adopted by Batman's alter ego Bruce Wayne.",
+        "Dick Grayson's character has evolved since he was introduced in 1940.",
+        "In 1984, he graduated from the role of Robin to become the adult superhero Nightwing, protector of the city of Blüdhaven, an economically troubled neighbor of Gotham City.",
+        "As Bruce's eldest adoptive son, Dick has become an older-brother figure to his male successors as Robin: tearaway Jason Todd, teenage prodigy Tim Drake, and Batman's biological child, trained assassin Damian Wayne.",
+        "In the Batman Family, his closest relationships are with Batman's loyal butler and father figure Alfred Pennyworth, and with one of his romantic interests Barbara Gordon, who served as Batgirl alongside Dick, and who later helps Nightwing as Oracle.",
+        "Dick has also taken up the mantle of Batman on occasions when Bruce was missing, incapacitated, or believed dead.",
+        "Dick is well-connected to other characters across the fictional DC Universe, particularly since 1964, when he became a founding member of the Teen Titans superhero group with other sidekicks of the Justice League.",
+        "Teen Titans establishes many of the character's most significant partnerships, including with his best friends Wally West (Kid Flash), Donna Troy (Wonder Girl), and Roy Harper (Speedy), and his most well-known romantic interest, the Tamaranean princess Starfire.",
+        "Dick is widely recognised as one of the superhero community's greatest strategists, leading the adult Titans team, the Outsiders, and even the Justice League at various times."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Energy harvesting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1406812",
+      "retrieved_at": "2026-10-18T16:45:56.015Z",
+      "sha256": "aad6ec895323c7b59bb6be361e685bbe5c2f8dc4492eda9a501dcbffe4c3ed55",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy harvesters usually provide a very small amount of power for low-energy electronics.",
+        "While the input fuel to some large-scale energy generation costs resources (oil, coal, etc.), the energy source for energy harvesters is present as ambient background.",
+        "For example, temperature gradients exist from the operation of a combustion engine; in urban areas, there is a large amount of electromagnetic energy in the environment due to radio and television broadcasting.",
+        "One of the first examples of ambient energy being used to produce electricity was the successful use of electromagnetic radiation (EMR) to generate the crystal radio.",
+        "The principles of energy harvesting from ambient EMR can be demonstrated with basic components."
+      ]
+    }
+  ]
+}

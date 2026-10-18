@@ -1,0 +1,168 @@
+{
+  "id": "mm-0546",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Homeowners Choose between Fixed and Adjustable Rate Mortgages?",
+      "publisher": "Elsevier BV",
+      "author": "Mugerman, Yevgeny; Ofir, Moran; Wiener, Zvi",
+      "published_at": "2013",
+      "url": "https://doi.org/10.2139/ssrn.2226301",
+      "retrieved_at": "2026-10-18T15:11:46.186Z",
+      "sha256": "5330f5d646bbe8db858579a874b3a183507aca0a316a1fe664026a1287c4e394",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Housing is the most important asset in the portfolio of most households.",
+        "Understanding the households’ decision on housing finance has important implications from a policy perspective, due to the effects it may have on the housing prices, on the housing market stability and on household welfare.",
+        "The theoretical literature on housing finance focused on figuring out the optimal choice between Fixed Rate Mortgages (FRM) and Adjustable Rate Mortgages (ARM).",
+        "We argue that the standard economic criteria are sometimes inadequate to explain household’s choices, which may be motivated by psychological factors.",
+        "In other words, we claim that household’s choice depends only partially on the findings of the theoretical literature.",
+        "We examine the effect of changes in the short term market interest rate on the households’ choice between fixed rate mortgages (FRM) and adjustable rate mortgages (ARM).",
+        "We test this effect using a unique data provided to us by the Bank of Israel, which contains detailed information on the household’s decision between fixed and adjustable rate mortgage contracts in Israel in the past decade.",
+        "The results of our analysis demonstrate a significant association between FRM preference and short term interest rate reduction.",
+        "Moreover, we find that the change in the short term interest rate is more salient to the borrowers in periods of a high interest rate environment.",
+        "We attribute these findings to Tversky and Kahneman (1974) availability and representativeness heuristics."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Reverse Mortgages: What Homeowners (Don’t) Know and How It Matters",
+      "publisher": "Elsevier BV",
+      "author": "Davidoff, Thomas; Gerhard, Patrick; Post, Thomas",
+      "published_at": "2014",
+      "url": "https://doi.org/10.2139/ssrn.2528944",
+      "retrieved_at": "2026-10-18T15:11:46.186Z",
+      "sha256": "380298358612088e21b314f3044041d538afe4260b11e165559d1729773cbc51",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Reverse mortgages allow elderly homeowners to unlock and consume home equity without leaving their homes.",
+        "Relative to the number of elderly homeowners with limited financial resources, the take-up rates of reverse mortgages are low.",
+        "homeowners aged 58 and older assessing their knowledge (literacy) about the most popular reverse mortgage product, the Home Equity Conversion Mortgage (HECM).",
+        "Next, we study the relationship between knowledge and the intention to use a HECM.",
+        "Awareness of reverse mortgages is high, but knowledge of contract terms is limited.",
+        "More knowledgeable homeowners and those with peers who have a reverse mortgage express greater intention to use such a product.",
+        "Respondents who would benefit most from reverse mortgages (those with low incomes and limited savings) express greater intention to use reverse mortgages, but lack knowledge of the contract terms.",
+        "Our findings suggest that take-up rates might be increased through improving knowledge about contract terms or changing the product’s design to make it easier to understand in the first place."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How does a mortgage loan modification work",
+      "publisher": "Sponsored by Credible - which is majority owned by our parent, Fox Corporation, and is solely responsible for its services.",
+      "author": "Kathryn Pomroy",
+      "published_at": "2020-11-23",
+      "url": "https://openalex.org/W3212583817",
+      "retrieved_at": "2026-10-18T15:11:46.186Z",
+      "sha256": "b0f54269e5ec091da50b6857325e5a6c105a8f0a0eaae4688b9839c076833dfc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "If you’re facing foreclosure or can’t make your mortgage payments, mortgage modification is a practical option if you need home loan relief.",
+        "It can be a temporary or permanent way to avoid losing your home, but it doesn’t come without a few drawbacks, and not everyone qualifies."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "What is private mortgage insurance and how does it work",
+      "publisher": "Sponsored by Credible, which is majority owned by our parent, Fox Corporation. Credible is solely responsible for its services.",
+      "author": "Christy Bieber",
+      "published_at": "2020-04-13",
+      "url": "https://openalex.org/works/W3201445775",
+      "retrieved_at": "2026-10-18T15:11:46.808Z",
+      "sha256": "f67ddd1f1e6a3d8af171cb8a63ba6439e1acb4840aaebeaf82fc948d45525cb2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What is private mortgage insurance and how does it work | OpenAlex Log in Get started Work Add to collection What is private mortgage insurance and how does it work HTML Details Locations Year: 2020 Type: article Source: Sponsored by Credible, which is majority owned by our parent, Fox Corporation.",
+        "Author: Christy Bieber Language: English Topic: Housing Market and Economics Subfield: Economics and Econometrics Field: Economics, Econometrics and Finance Domain: Social Sciences Open Access status: closed OpenAlex ID: W3201445775 FWCI: Cites: Cited by: Related to: 20"
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Fixed-rate mortgage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=538292",
+      "retrieved_at": "2026-10-18T15:11:46.808Z",
+      "sha256": "a16fa910fe6748292bb771dea69e2919dc6d2dbe12bd86fecb84434aaee47a4c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A fixed-rate mortgage (FRM) is a mortgage loan where the interest rate on the note remains the same through the term of the loan, as opposed to loans where the interest rate may adjust or \"float\".",
+        "As a result, payment amounts and the duration of the loan are fixed and the person who is responsible for paying back the loan benefits from a consistent, single payment and the ability to plan a budget based on this fixed cost.",
+        "Other forms of mortgage loans include interest only mortgage, graduated payment mortgage, variable rate mortgage (including adjustable-rate mortgages and tracker mortgages), negative amortization mortgage, and balloon payment mortgage.",
+        "Unlike many other loan types, FRM interest payments and loan duration is fixed from beginning to end.",
+        "Fixed-rate mortgages are characterized by amount of loan, interest rate, compounding frequency, and duration.",
+        "With these values, the monthly repayments can be calculated.",
+        "Fixed-rate mortgages usually charge higher interest rates than those with adjustable rates.",
+        "According to scholars, \"borrowers should generally prefer adjustable-rate over fixed-rate mortgages, unless interest rates are low.\""
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Reverse mortgage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=609322",
+      "retrieved_at": "2026-10-18T15:11:46.808Z",
+      "sha256": "4ee4002b32ea965e7df88ed47dd291dbbb152bff4ee5535a4a51e6a1435ba8fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A reverse mortgage is a mortgage loan, usually secured by a residential property, that enables the borrower to access the unencumbered value of the property.",
+        "The loans are typically promoted to older homeowners and typically do not require monthly mortgage payments.",
+        "Borrowers are still responsible for property taxes or homeowner's insurance.",
+        "Reverse mortgages allow older people to immediately access the equity they have built up in their homes, and defer payment of the loan until they die, sell, or move out of the home.",
+        "Because there are no required mortgage payments on a reverse mortgage, the interest is added to the loan balance each month.",
+        "The rising loan balance can eventually exceed the value of the home, particularly in times of declining home values or if the borrower continues to live in the home for many years.",
+        "However, the borrower (or the borrower's estate) is generally not required to repay any additional loan balance in excess of the value of the home.",
+        "Regulators and academics have given mixed commentary on the reverse mortgage market.",
+        "Some economists argue that reverse mortgages may benefit the elderly by smoothing out their income and consumption patterns over time.",
+        "However, regulatory authorities, such as the Consumer Financial Protection Bureau, argue that reverse mortgages are \"complex products and difficult for consumers to understand\", especially in light of \"misleading advertising\", low-quality counseling, and \"risk of fraud and other scams\".",
+        "Moreover, the Bureau claims that many consumers do not use reverse mortgages for the positive, consumption-smoothing purposes advanced by economists.",
+        "In Canada, the borrower must seek independent legal advice before being approved for a reverse mortgage."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Mortgage broker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1457266",
+      "retrieved_at": "2026-10-18T15:11:46.808Z",
+      "sha256": "c1f11683985be41fcb5830bfbf6b1302a8a0336257903d9185cc5d40d8200728",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mortgage broker acts as an intermediary who brokers mortgage loans on behalf of individuals or businesses.",
+        "Traditionally, banks and other lending institutions have sold their own products.",
+        "As markets for mortgages have become more competitive, however, the role of the mortgage broker has become more popular.",
+        "In many developed mortgage markets today, (especially in the United States, Canada,  the United Kingdom, Australia, New Zealand, Spain and Italy), mortgage brokers are the largest sellers of mortgage products for lenders.",
+        "Mortgage brokers exist to find a bank or a direct lender that will be willing to make a specific loan an individual is seeking.",
+        "Mortgage brokers in Canada are paid by the lender and do not charge fees for good credit applications.",
+        "In the US, many mortgage brokers are regulated by their state and by the CFPB to assure compliance with banking and finance laws in the jurisdiction of the consumer."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Rocket Mortgage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4661012",
+      "retrieved_at": "2026-10-18T15:11:46.808Z",
+      "sha256": "462ac6b559c4931c6b2b8c0d74002e63fc48c61f8f25a621157aae70476fdb2d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rocket Mortgage, LLC, formerly Quicken Loans, LLC, is an American mortgage lender, headquartered in Detroit, Michigan.",
+        "Rocket Mortgage uses wholesale funding for loans and online applications as opposed to a branch system."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "mm-1793",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Noise pollution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=66599",
+      "retrieved_at": "2026-10-18T16:40:47.121Z",
+      "sha256": "97332db928eab55ed15bdcda444e8694ca484d88535c8826249869261cd40d7b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Noise pollution is sound with potential harmful effects on humans and animals.",
+        "The main sources of outdoor noise worldwide are machines, transportation, and propagation systems.",
+        "Side-by-side industrial and residential zones can result in noise pollution in residential areas.",
+        "Some of the main sources of noise in residential areas include loud music, transportation (traffic, rail, airplanes, etc.), lawn care maintenance, construction, electrical generators, wind turbines, explosions, and other human activity.",
+        "Documented problems associated with noise in urban environments go back as far as ancient Rome.",
+        "Research suggests that noise pollution in the United States is the highest in low-income and racial minority neighborhoods, and noise pollution associated with household electricity generators is an emerging environmental degradation in many developing nations.",
+        "A national study of modeled transportation noise in the contiguous United States found that census tracts with higher proportions of Black, Hispanic, and Asian population and higher poverty had higher average noise levels than wealthier and mostly White areas.",
+        "The study found that residential segregation and urban land use practices correlate with the high levels of traffic and aviation noise in many communities of color and low-income neighborhoods.",
+        "High noise levels can contribute to cardiovascular effects in humans and an increased incidence of coronary artery disease.",
+        "In animals, noise can increase the risk of death by altering predator or prey detection and avoidance, interfere with reproduction and navigation, and contribute to permanent hearing loss."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Passive smoking",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=712576",
+      "retrieved_at": "2026-10-18T16:40:47.121Z",
+      "sha256": "c1ceeac3f9f963180cde3fc852da64defebd2651ac74140aa66a20591bc6a528",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Passive smoking is the inhalation of tobacco smoke by individuals who are not actively smoking.",
+        "It occurs when tobacco smoke diffuses into the surrounding atmosphere as an aerosol pollutant, which leads to its inhalation by nearby bystanders within the same environment.",
+        "Such pollutant is known by various names, including passive smoke, second-hand smoke  (SHS) or environmental tobacco smoke (ETS).",
+        "Exposure causes many of the same health effects caused by active smoking, although at a lower prevalence due to the reduced concentration of smoke that enters the airway.",
+        "According to a World Health Organization (WHO) report published in 2023, more than 1.3 million deaths are attributed to passive smoking worldwide every year.",
+        "The health risks of passive smoke are a matter of scientific consensus, and have been a major motivation for smoking bans in workplaces and indoor venues, including restaurants, bars and night clubs, as well as some open public spaces.",
+        "Concerns around passive smoking have played a central role in the debate over the harms and regulation of tobacco products.",
+        "Since the early 1970s, the tobacco industry has viewed public concern about the health effects of passive smoking as a serious threat to its business interests.",
+        "Despite the industry's awareness of its harms as early as the 1980s, the tobacco industry coordinated a scientific controversy with the purpose of stopping regulation of their products."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Marine pollution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2127046",
+      "retrieved_at": "2026-10-18T16:40:47.121Z",
+      "sha256": "a0e29c29c52010562485ad766b4beac2c15e951a609dada82089ab20eed1b334",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Marine pollution occurs when substances used or spread by humans, such as industrial, agricultural, and residential waste; particles; noise or light; excess carbon dioxide; or invasive organisms enter the ocean and cause harmful effects there.",
+        "The majority of this waste (80%) comes from land-based activity, although marine transportation significantly contributes as well.",
+        "It is a combination of chemicals and trash, most of which comes from land sources and is washed or blown into the ocean.",
+        "This pollution results in damage to the environment, to the health of all organisms, and to economic structures worldwide.",
+        "Since most inputs come from land, via rivers, sewage, or the atmosphere, it means that continental shelves are more vulnerable to pollution.",
+        "Air pollution is also a contributing factor, as it carries iron, carbonic acid, nitrogen, silicon, sulfur, pesticides, and dust particles into the ocean.",
+        "The pollution often comes from nonpoint sources such as agricultural runoff, wind-blown debris, and dust.",
+        "These nonpoint sources are largely due to runoff that enters the ocean through rivers, but wind-blown debris and dust can also play a role, as these pollutants can settle into waterways and oceans.",
+        "Pathways of pollution include direct discharge, land runoff, ship pollution, bilge pollution, dredging (which can create dredge plumes), atmospheric pollution and, potentially, deep sea mining.",
+        "Different types of marine pollution can be grouped as pollution from marine debris, plastic pollution, including microplastics, ocean acidification, nutrient pollution, toxins, and underwater noise.",
+        "Plastic pollution in the ocean is a type of marine pollution by plastics, ranging in size from large original materials such as bottles and bags, down to microplastics formed from the fragmentation of plastic materials.",
+        "Marine debris is mainly discarded human rubbish that floats on or is suspended in the ocean."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Air pollution",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10934212",
+      "retrieved_at": "2026-10-18T16:40:47.121Z",
+      "sha256": "061ec3ab3e3b30cd12a10853f92355458b642b40135bf19350970ed95082f059",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Air pollution is the presence of substances in the air that are harmful to humans, other living beings or the environment.",
+        "Pollutants can be gases, like ozone or nitrogen oxides, or small particles like soot and dust.",
+        "Outdoor air pollution comes from burning fossil fuels for electricity and transport, wildfires, some industrial processes, waste management, demolition and agriculture.",
+        "Indoor air pollution is often from burning firewood or agricultural waste for cooking and heating.",
+        "Other sources of air pollution include dust storms and volcanic eruptions.",
+        "Many sources of local air pollution, especially burning fossil fuels, also release greenhouse gases that cause global warming.",
+        "It is a significant risk factor for a number of diseases, including stroke, heart disease, chronic obstructive pulmonary disease (COPD), asthma, coronavirus and lung cancer.",
+        "Particulate matter is the most deadly, both for indoor and outdoor air pollution.",
+        "Ozone affects crops, and forests are damaged by the pollution that causes acid rain.",
+        "Overall, the World Bank has estimated that welfare losses (premature deaths) and productivity losses (lost labor) caused by air pollution cost the world economy over $8 trillion per year.",
+        "Key approaches include clean cookers, fire protection, improved waste management, dust control, industrial scrubbers, electric vehicles and renewable energy.",
+        "National air quality laws have often been effective, notably the 1956 Clean Air Act in Britain and the 1963 US Clean Air Act."
+      ]
+    }
+  ]
+}

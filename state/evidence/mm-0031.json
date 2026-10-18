@@ -1,0 +1,137 @@
+{
+  "id": "mm-0031",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why the Controversy over Displacement Currents never Ends?",
+      "publisher": "Institute of Electronics, Information and Communications Engineers (IEICE)",
+      "author": "KITANO, Masao",
+      "published_at": "2024-04-01",
+      "url": "https://doi.org/10.1587/transele.2023rep0004",
+      "retrieved_at": "2026-10-18T14:52:09.561Z",
+      "sha256": "87d01f46c7fd5733d2f27cb4d0dc6cf1944abd769164b827ebd78f39639d5a89",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "IEICE Transactions on Electronics Online ISSN : 1745-1353 Print ISSN : 0916-8524 Journal home Advance online publication All issues About the journal J-STAGE home / IEICE Transactions on Electron ...",
+        "/ Volume E107.C (2024) Issue 4 / Article overview Special Section on Recent Progress in Electromagnetic Theory and Its Application Why the Controversy over Displacement Currents never Ends?",
+        "Its existence implies that electromagnetic disturbance can propagate at the speed of light and finally it led to the discovery of Hertzian waves.",
+        "On the other hand, since magnetic fields can be calculated only with conduction currents using Biot-Savart&apos;s law, a popular belief that displacement current does not produce magnetic fields has started to circulate.",
+        "But some people think if this is correct, what is the displacement current introduced for.",
+        "The controversy over the meaning of displacement currents has been going on for more than hundred years.",
+        "Such confusion is caused by forgetting the fact that in the case of non-stationary currents, neither magnetic fields created by conduction currents nor those created by displacement currents can be defined.",
+        "It is also forgotten that the effect of displacement current is automatically incorporated in the magnetic field calculated by Biot-Savart&apos;s law.",
+        "In this paper, mainly with the help of Helmholtz decomposition, we would like to clarify the confusion surrounding displacement currents and provide an opportunity to end the long standing controversy.",
+        "Share this page feedback Top Register with J-STAGE for free!"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Dualities in the Mind of Pi Molitor Patel A Philosophical Approach to Truth in \"Life of Pi\"",
+      "publisher": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
+      "author": "Gustav Sandgren",
+      "published_at": "2013-03-19",
+      "url": "https://openalex.org/W797642944",
+      "retrieved_at": "2026-10-18T14:52:09.562Z",
+      "sha256": "7d11c560d7cf5f1707027683f7801faf0753fa58705c4304af6948fa9a73e794",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The aim of the essay is to analyze what happens to the protagonist Pi in Martel Yann‟s novel Life of Pi.",
+        "The essay will focus on how he devolves as a sophisticated human being, how the extreme situation he is in triggers a duality in his mind and why he in the end has two versions of his story.",
+        "It will point out that in extreme situation of great peril and desperation hope is necessary for the ability to continue the struggle to survive.",
+        "The essay will also discuss the perception of truth based on choice and belief since this is what creates the two different versions of the story.",
+        "It will bring up empiricism as a method for knowledge and point out some issues with it.",
+        "Ultimately the essay concludes that choice is the deciding factor of what a person will view as truth and that perhaps there can never be any objective record of an external reality to the subjective minds of human beings.",
+        "The protagonist in the novel has made a choice to believe in something that perhaps others will not accept as truth, but in the end that does not matter to him because he needs to believe in it."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Pi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23601",
+      "retrieved_at": "2026-10-18T14:52:09.562Z",
+      "sha256": "a3d2e74c773bdbec0a288a31aee9eadcb51945dfe6a1c6984b6896d0af66b855",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The number π ( ; spelled out as pi) is a mathematical constant, approximately equal to 3.14159, that is the ratio of a circle's circumference to its diameter.",
+        "It appears in many formulae across mathematics and physics, and some of these formulae are commonly used for defining π, to avoid relying on the definition of the length of a curve.",
+        "The number π is an irrational number, meaning that it cannot be expressed exactly as a ratio of two integers, although fractions such as ⁠22/7⁠ are commonly used to approximate it.",
+        "Consequently, its decimal representation never ends, nor does it enter a permanently repeating pattern.",
+        "It is a transcendental number, meaning that it cannot be a solution of an algebraic equation involving only finite sums, products, powers, and integers.",
+        "The transcendence of π implies that it is impossible to solve the ancient problem of squaring the circle with a compass and straightedge.",
+        "The decimal digits of π appear to be evenly distributed, but no proof of this conjecture has been found.",
+        "Mathematicians have long attempted to extend their understanding of π, sometimes by computing its value to a high degree of accuracy.",
+        "Ancient civilizations, including the Egyptians and Babylonians, required fairly accurate approximations of π for practical computations.",
+        "Around 250 BC, the Greek mathematician Archimedes created an algorithm to approximate π with arbitrary accuracy.",
+        "In the 5th century AD, Chinese mathematicians approximated π to seven digits, while Indian mathematicians made a five-digit approximation, both using geometrical techniques.",
+        "The first computational formula for π, based on infinite series, was discovered a millennium later."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Squaring the circle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=201359",
+      "retrieved_at": "2026-10-18T14:52:09.562Z",
+      "sha256": "201d11d94bc5c159d3a507e263a7ff95791f448de85d1e696f150179660b933e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Squaring the circle is a problem in geometry first proposed in Greek mathematics.",
+        "It is the challenge of constructing a square with the area of a given circle by using only a finite number of steps with a compass and straightedge.",
+        "The difficulty of the problem raised the question of whether specified axioms of Euclidean geometry concerning the existence of lines and circles implied the existence of such a square.",
+        "In 1882, the task was proven to be impossible, as a consequence of the Lindemann–Weierstrass theorem, which proves that pi (\n  \n    \n      \n        π\n      \n    \n    {\\displaystyle \\pi }\n  \n) is a transcendental number.",
+        "That is, \n  \n    \n      \n        π\n      \n    \n    {\\displaystyle \\pi }\n  \n is not the root of any polynomial with rational coefficients.",
+        "It had been known for decades that the construction would be impossible if \n  \n    \n      \n        π\n      \n    \n    {\\displaystyle \\pi }\n  \n were transcendental, but that fact was not proven until 1882.",
+        "Approximate constructions with any given non-perfect accuracy exist, and many such constructions have been found.",
+        "Despite the proof that it is impossible, attempts to square the circle have been common in mathematical crankery.",
+        "The expression \"squaring the circle\" is sometimes used as a metaphor for trying to do the impossible.",
+        "The term quadrature of the circle is sometimes used as a synonym for squaring the circle.",
+        "It may also refer to approximate or numerical methods for finding the area of a circle.",
+        "In general, quadrature or squaring may also be applied to other plane figures."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Magnum, P.I.",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=277479",
+      "retrieved_at": "2026-10-18T14:52:09.562Z",
+      "sha256": "44540ab8a4a23a9af0755cd5554f692f9771604dd04e2eae1fde52e117494621",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an American crime drama television series starring Tom Selleck as Thomas Magnum, a private investigator (P.I.) living in Oahu, Hawaii.",
+        "The series ran from December 11, 1980, to May 1, 1988, during its first-run broadcast on the American television network CBS.",
+        "television programs in the Nielsen ratings during the first five years of its original run, finishing as high as number three for the 1982–83 season.",
+        "The series entered syndication in 1986 under the title Magnum in order to differentiate reruns from new episodes still airing under the original title on CBS.",
+        "A remake series of the same name was ordered to series on May 11, 2018, and premiered on September 24, 2018, on CBS."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of Magnum, P.I. episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5587851",
+      "retrieved_at": "2026-10-18T14:52:09.562Z",
+      "sha256": "ff1a134adfbc5123a5de825b5325720e2ff02ab2db3f6b95fcee98bd6bb345a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an American crime drama television series starring Tom Selleck as Thomas Magnum, a private investigator in Hawaii.",
+        "The series ran on CBS, which broadcast 162 first-run episodes over eight seasons, from December 11, 1980, to May 1, 1988."
+      ]
+    }
+  ]
+}

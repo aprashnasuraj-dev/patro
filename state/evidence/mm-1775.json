@@ -1,0 +1,196 @@
+{
+  "id": "mm-1775",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Social Relevance of Currency, or Why Study Banknotes and Coins",
+      "publisher": "Bloomsbury Publishing Plc",
+      "author": null,
+      "published_at": "2025",
+      "url": "https://doi.org/10.5040/9781350451469.ch-001",
+      "retrieved_at": "2026-10-18T16:36:41.591Z",
+      "sha256": "9a5bdcfbd4d4467785eeb3c1cd7be6dbb0b2c5e531fe11fecb328010887af474",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Semiotics of Banknotes and Coins --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why edges are needed",
+      "publisher": "John Benjamins Publishing Company",
+      "author": "Boeckx, Cedric",
+      "published_at": "2010-06-23",
+      "url": "https://doi.org/10.1075/la.156.04boe",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "2f212891ed303db407a9b921c354ad6a803145edde1424bf3e4ad897971be45b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term edge has become ubiquitous in syntactic theory in recent years: one reads of the left edge of the clause or the edge of VP in cartographic approaches, of the edge of phases in phase-based computations, of edge features driving movement, and even of edge features underlying merge.",
+        "In this contribution I look at all these different meanings of edge and conclude that they all reduce to a property underlying labelling at the heart of structure building.",
+        "That is to say, the reason edges are needed is the same as the reason why labels are needed.",
+        "Since the necessity of labels has been disputed in the recent minimalist literature, I reassert the need for labels and attempt to derive it from interface legibility conditions."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hard Optimization Problems have Soft Edges",
+      "publisher": "Research Square Platform LLC",
+      "author": "Marino, Raffaele; Kirkpatrick, Scott",
+      "published_at": "2022-09-21",
+      "url": "https://doi.org/10.21203/rs.3.rs-2078415/v1",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "e617fb8277741ac2d9ac5f9cf8e0833a9eee3759822e0c884301e295a548bbe4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Finding a Maximum Clique is a classic property test from graph theory; find any one of the largest complete subgraphs in an Erdös-Rényi G(N, p) random graph.",
+        "It is the simplest of many such problems in which algorithms requiring only a small power of N steps cannot reach solutions which probabilistic arguments show must exist, exposing an inherently \"hard\" phase within the solution space of the problem.",
+        "Such \"hard\" phases are seen in many NP-Complete problems, in the limit when N → ∞.",
+        "But optimization problems arise and must be solved at finite N.",
+        "We use this simplest case, MaxClique, to explore the structure of the problem as a function of N and K, the clique size.",
+        "It displays a complex phase boundary, a staircase of steps at each of which 2log2 N and Kmax, the maximum size of clique that can be found, increase by 1.",
+        "Each of its boundaries have finite width, and these widths allow local algorithms to find cliques beyond the limits defined by the study of infinite systems.",
+        "We explore the performance of a number of extensions of traditional fast local algorithms, and find that much of the \"hard\" space remains accessible at finite N.",
+        "The \"hidden clique\" problem embeds a clique somewhat larger than those which occur naturally in a G(N, p) random graph.",
+        "Since such a clique is unique, we find that local searches which stop early, once evidence for the hidden clique is found, may outperform the best message passing or spectral algorithms."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Vimy Ridge Day, 2012",
+      "publisher": "Scholars Commons (Wilfrid Laurier University)",
+      "author": "Dean F. Oliver",
+      "published_at": "2015-01-01",
+      "url": "https://openalex.org/W613278125",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "484e1c347a08eb98ba57ce2e16160f2fc3c65024fd51fe0ba3463d57fcfea7df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vimy sits at or near the very centre of whatever national historical psyche Canadians might reasonably be said to possess.",
+        "Vimy is unique, unalloyed, and unparalleled in our commemoration of the nation’s military past.",
+        "It may or may not deserve the honour, but it holds the honour just the same.",
+        "Vimy’s status is as its battle was: epic, indelible, and, in part, inexplicable.",
+        "Vimy nevertheless should be remembered as a whole, and not disaggregated as moral lesson or site of mourning.",
+        "Vimy is place, battle, and memory – a fusion of land, people, and time.",
+        "We forget this, or exaggerate it, to our peril; we misunderstand it, or ignore it, to our shame.",
+        "Resume : Vimy figure en plein cœur, ou tout pres, de toute representation historique nationale que l’on peut ra isonnablement at t r ibuer aux Canadiens.",
+        "Vimy est unique, pure et sans egale dans notre souvenance du passe militaire du pays.",
+        "Qu’elle merite, ou non, cette consecration, elle conserve cet honneur.",
+        "Le statut de Vimy est identique a ce que la bataille fut : epique, inoubliable et, en partie, inexplicable.",
+        "Vimy devrait neanmoins etre evoquee comme un tout, et non pas distinguee isolement comme lecon de morale ou site de deuil."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Wrong Side of the Ridge: Charting the Urban Fabric of the Countryside",
+      "publisher": "Malmö University Publications (Malmö University)",
+      "author": "Oscar Damerham",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2753862767",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "4f96528971e233686e28ce523c1fa90fb1f668d5a9aac54496b2432e5e4bd0be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Echoing through the lecture theatres, conference halls and pages of the contemporary Urban Studies discourse is the oft-repeated refrain that today over half the world’s population live in urban areas, and that by 2050 this proportion is expected to be upwards of 70%.",
+        "The place of the leftover 50% of people inhabiting a vast and seemingly forgotten 98% of the planet’s rural territory is externalised, apparently lying outside the purview of marching urbanisation.",
+        "Yet the theory of ‘Planetary Urbanisation’ has emerged in recent years positing a contentious epistemological questioning of Urban Studies’ focus sites, objects and processes.",
+        "In this it argues for a reorientation of the field towards the ignored rural hinterlands of ‘extended urbanity’ falling under the influence of the fluid process of urbanisation which is transforming the countryside through processes of rationalisation, functionalisation and disintegration.",
+        "Critiqued as overly abstract, empirically shallow and puritanically ignoring form, this paper investigates and experiments with the theory of planetary urbanisation in a grounded study of a corridor of the Swedish countryside and the village of Röstånga.",
+        "It does so by a concrete, detailed and dualistic approach to sites of extended urbanisation, integrating both form and process in its analysis.",
+        "This research exercises this analysis through extricating the city-bound flâneur out into the non-city through a phenomenological 60km, 2 day walk from the city of Malmö to Röstånga.",
+        "Arriving in Röstånga, this paper then turns its attention to multiple, triangulated methodologies of mapping, observations and interviewing in order to bind our flâneur reflections to the built environment of rurality.",
+        "A discussion of these results then exposes a rural realm simultaneously surrendering to its new reality of extended urbanity and desperately searching for meaning and purpose within it; a landscape wilting under what this paper terms as the shadow of post-political urbanisation.",
+        "This research than calls for ‘politics of the possible’ in a re-politicisation of the rural and concludes by challenging planners, architects and governments to re-imagine alternatives for this vital if forgotten space."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Euro coins",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53939",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "2c5bd864d2618c0bee8ebe8e2c462b1168834632481a9f3b169b4a4846aa6f97",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "There are eight denominations of euro coins, ranging from one cent to two euro (the euro is divided into a hundred cents).",
+        "They have a common reverse, portraying a map of Europe, but each country in the eurozone has its own design on the obverse, which means that each coin has a verity of different designs in circulation at once.",
+        "Four European microstates that are not members of the European Union (Andorra, Monaco, San Marino, and the Vatican City) use the euro as their currency and also have the right to mint coins with their own designs on the obverse side.",
+        "The coins are minted at numerous national mints across the eurozone to strict national quotas.",
+        "Obverse designs are chosen nationally, while the reverse and the currency as a whole is managed by the European Central Bank (ECB)."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Glossary of numismatics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2893298",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "10be16070a375dc1a533332d967fadd8664f143e599c4bcfe197ed6345ef6593",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This glossary of numismatics is a list of definitions of terms and concepts relevant to numismatics and coin collecting, as well as sub-fields and related disciplines, with concise explanations for the beginner or professional.",
+        "Numismatics (Ancient Greek: νομισματική, meaning 'monetary') is the scientific study of money and its history in all its varied forms.",
+        "While numismatists are often characterized as studying coins, the discipline also includes the study of other types of money, such as banknotes, stock certificates, medals, medallions, and tokens.",
+        "Sub-fields and related fields of numismatics include:\n\nExonumia, the study of coin-like objects such as token coins and medals, and other items used in place of legal currency or for commemoration.",
+        "Scripophily, the study and collection of company share certificates and bonds."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "1 euro cent coin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6138104",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "f6e93c9691bfab2e25b1ddc187c237a26f3cd814fc5e856a686a8e5a56976ec2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 1 euro cent coin (€0.01) has a value of one hundredth of a euro and is composed of copper-covered steel.",
+        "It is the lowest-value coin in the Eurozone; the next lowest are the 2 and 5 euro cent coins.",
+        "All euro coins have a common reverse and a country-specific (national) obverse.",
+        "The coin has been used since 2002 and was not redesigned in 2007 as was the case with the higher-value coins."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "2 euro cent coin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6138171",
+      "retrieved_at": "2026-10-18T16:36:41.592Z",
+      "sha256": "1b89dbe6e48d7037ebd045eae9873e2d391954ee43ef79a9ede5b91cc4817343",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2 euro cent coin (€0.02) has a value of one fiftieth of a euro and is composed of copper-plated steel.",
+        "All euro coins have a common reverse and country-specific (national) obverse.",
+        "The coin has been used since 2002 and was not redesigned in 2007 as were the higher-value coins."
+      ]
+    }
+  ]
+}

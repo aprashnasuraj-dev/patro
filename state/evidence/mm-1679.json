@@ -1,0 +1,154 @@
+{
+  "id": "mm-1679",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "[Illustrations]",
+      "publisher": "University of California Press",
+      "author": null,
+      "published_at": "2023-11-15",
+      "url": "https://doi.org/10.2307/jj.8500953.9",
+      "retrieved_at": "2026-10-18T16:32:13.505Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Introduction",
+      "publisher": "University of California Press",
+      "author": null,
+      "published_at": "2023-11-15",
+      "url": "https://doi.org/10.2307/jj.8500953.5",
+      "retrieved_at": "2026-10-18T16:32:13.689Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Italian mosaic art 1270 – 1529",
+      "publisher": "Figshare",
+      "author": "Carol Ann Hydes",
+      "published_at": "2017-04-06",
+      "url": "https://openalex.org/W2626329725",
+      "retrieved_at": "2026-10-18T16:32:13.689Z",
+      "sha256": "daae4c005a609df93a543d7ad79d192ede847911a3710a7d8fab2fa447446d01",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The first four chapters largely address these key issues by analysing the two databases that I constructed from primary and secondary sources.",
+        "The first database counts and tracks the installation of wall and ceiling mosaics into Italian churches between 1270 and 1529.",
+        "The second database enumerates the artists who made mosaics during the same period.",
+        "The last two chapters of the thesis consider why some patrons chose to commission mosaics, but why many of them turned away from commissioning the medium.",
+        "Whilst explaining the reasons for the decline in any art form is tricky, I argue that they were caused by the political, economic, religious, social and philosophical changes that happened in Italy, though the reasons often appear intertwined and specific to individual cities.",
+        "¹ The reasons for choosing the dates 1270 to 1529 are explained in the Introduction."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hagia Sophia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=42764",
+      "retrieved_at": "2026-10-18T16:32:14.240Z",
+      "sha256": "d2b42403404e9b3a16a86b1e7c159ae819a57ef76bbe84f47107d648da45a1bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hagia Sophia, officially the Hagia Sophia Grand Mosque, is a mosque and a major cultural and historical site in Istanbul, Turkey.",
+        "It was formerly a church (360–1453) and a museum (1935–2020).",
+        "The last of three church buildings to be successively erected on the site by the Eastern Roman Empire, it was completed in AD 537, becoming the world's largest interior space and among the first to employ a fully pendentive dome.",
+        "It is considered the epitome of Byzantine architecture and is said to have \"changed the history of architecture\".",
+        "From its dedication in 360 until 1453, Hagia Sophia served as the cathedral of Constantinople in the Byzantine liturgical tradition, except for the period 1204–1261 when the Latin Crusaders installed their own hierarchy.",
+        "After the fall of Constantinople in 1453, it served as a mosque, having its minarets added soon after.",
+        "The site became a museum in 1935, and was redesignated as a mosque in 2020.",
+        "The current structure was built by the Byzantine emperor Justinian I as the Christian basilica of Constantinople between 532–537 and was designed by the Greek geometers Isidore of Miletus and Anthemius of Tralles.",
+        "It was formally called the Temple of God's Holy Wisdom, (Greek: Ναὸς τῆς Ἁγίας τοῦ Θεοῦ Σοφίας, romanized: Naòs tês Hagías toû Theoû Sophías) the third church of the same name to occupy the site, as the prior one had been destroyed in the Nika riots.",
+        "As the episcopal see of the ecumenical patriarch of Constantinople, it remained the world's largest church for more than five hundred years, until the abbey church at Cluny was completed in the 12th century.",
+        "Hagia Sophia became the quintessential model for Eastern Orthodox church architecture, and its architectural style was emulated by Ottoman mosques a thousand years later.",
+        "The Hagia Sophia served as an architectural inspiration for many other religious buildings including the Hagia Sophia in Thessaloniki, Panagia Ekatontapiliani, the Şehzade Mosque, the Süleymaniye Mosque, the Rüstem Pasha Mosque and the Kılıç Ali Pasha Complex."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61309",
+      "retrieved_at": "2026-10-18T16:32:14.240Z",
+      "sha256": "c8bdecba1e0664de44d7103f4ebdc4789563b5bf45464af2bc29feafa42b56db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mosaic () is a pattern or image made of small regular or irregular pieces of colored stone, glass or ceramic, held in place by plaster/mortar, and covering a surface.",
+        "Mosaics are often used as floor and wall decoration, and were particularly popular in the Ancient Roman world.",
+        "Mosaic today includes murals and pavements, but also artwork, hobby crafts, industrial and construction forms.",
+        "Mosaics have a long history, starting in Mesopotamia in the 3rd millennium BC.",
+        "Pebble mosaics were made in Tiryns in Mycenean Greece; mosaics with patterns and pictures became widespread in classical times, both in Ancient Greece and Ancient Rome.",
+        "Early Christian basilicas from the 4th century onwards were decorated with wall and ceiling mosaics.",
+        "Mosaic art flourished in the Byzantine Empire from the 6th to the 15th centuries; that tradition was adopted by the Norman Kingdom of Sicily in the 12th century, by the eastern-influenced Republic of Venice, and among the Rus.",
+        "Mosaic fell out of fashion in the Renaissance, though artists like Raphael continued to practice the old technique.",
+        "Roman and Byzantine influence led Jewish artists to decorate 5th and 6th century synagogues in the Middle East with floor mosaics.",
+        "Figurative mosaic, but mostly without human figures, was widely used on religious buildings and palaces in early Islamic art, including Islam's first great religious building, the Dome of the Rock in Jerusalem, and the Umayyad Mosque in Damascus.",
+        "Such mosaics went out of fashion in the Islamic world after the 8th century, except for geometrical patterns in techniques such as zellij, which remain popular in many areas.",
+        "Modern mosaics are made by artists and craftspeople around the world."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Alexander Mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=262891",
+      "retrieved_at": "2026-10-18T16:32:14.240Z",
+      "sha256": "1559ac0fb8e87582127ef9d4c130cfd41af284d045a72252c0685f13525b319d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Alexander Mosaic, also known as the Battle of Issus Mosaic, is a Roman floor mosaic originally from the House of the Faun in Pompeii, Italy.",
+        "120 and 100 BC and depicts a battle between the armies of Alexander the Great and Darius III of Persia.",
+        "This work of art is a combination of different artistic traditions such as Italic, Hellenistic, and Roman.",
+        "The mosaic is considered Roman based on the broader context of its time and location in relation to the later Roman Republic.",
+        "The original is preserved in the National Archaeological Museum, Naples.",
+        "The mosaic is believed to be a copy of a late fourth-century BC or early third-century BC Hellenistic painting, perhaps by Philoxenus of Eretria or Apelles."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Photographic mosaic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5635237",
+      "retrieved_at": "2026-10-18T16:32:14.240Z",
+      "sha256": "79225a7327a99591eb052a20a4e51ff911d5dee17f60fc1652803fe4a3b79e00",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A photographic mosaic or photomosaic is a picture (usually a photograph) that has been divided into tiled sections, usually equal sized, each of which is replaced with another photograph that matches the target photo.",
+        "When viewed at low magnifications, the individual pixels appear as the primary image, while close examination reveals that the image is in fact made up of many hundreds or thousands of smaller images.",
+        "Most of the time they are a computer-created type of montage.",
+        "There are two kinds of mosaic, depending on how the matching is done.",
+        "In the simpler kind, each part of the target image is averaged down to a single color.",
+        "Each of the library images is also reduced to a single color.",
+        "Each part of the target image is then replaced with one from the library where these colors are as similar as possible.",
+        "In effect, the target image is reduced in resolution (by downsampling), and then each of the resulting pixels is replaced with an image whose average color matches that pixel.",
+        "In the more advanced kind of photographic mosaic, the target image is not downsampled, and the matching is done by comparing each pixel in the rectangle to the corresponding pixel from each library image.",
+        "The rectangle in the target is then replaced with the library image that minimizes the total difference.",
+        "This requires much more computation than the simple kind, but the results can be much better since the pixel-by-pixel matching can preserve the resolution of the target image."
+      ]
+    }
+  ]
+}
