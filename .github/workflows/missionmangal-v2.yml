@@ -1,7 +1,7 @@
 name: Mission Mangal v2 (adaptive, cache-first, budget-aware; merge to main stays manual)
 
-# v2 shares LLM quotas with the v1 rescue run, so pushing this branch does NOT start it.
-# Start a run by (a) committing missionmangal/v2/run-request.json on this branch (works without touching main), or (b) "Run workflow" once this file is on the default branch.
+# v2 shares LLM quotas with the v1 rescue run. Production/development runs remain explicitly configured; the editorial branch trigger is for bounded smoke runs via missionmangal/v2/run-request.json only.
+# Normal missionmangal-v2 branch runs are started by updating run-request.json; manual workflow_dispatch remains available once this workflow is on the default branch.
 on:
   push:
     branches: [missionmangal-v2, missionmangal-v2-editorial-strengthening]
