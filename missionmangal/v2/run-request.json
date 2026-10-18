@@ -6,5 +6,5 @@
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Final two-article smoke after removing the independent-domain research floor for general topics while retaining grounded cached-source citations. All routes min 300 words. No production publish."
+  "note": "Final bounded two-article smoke after P2/P3 changes, general-route cached-evidence exemption, 300-word floors, inline citation checks, accurate verification metadata, and a claim-count buffer. No production publish."
 }
