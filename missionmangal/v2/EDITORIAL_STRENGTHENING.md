@@ -40,17 +40,12 @@ Keep configurable route floors in `config.json`, but enforce these principles:
 
 ### Discovery and source ranking
 
-1. Remove Wikipedia as the default discovery bottleneck. Use a multi-source discovery ladder: cached verified evidence; official APIs and open datasets; search-engine/web-index discovery; scholarly indexes and repositories; government, university, standards-body, NGO, museum, archive, and reputable publisher sites; then additional relevant websites discovered from citations and topic-specific directories.
-2. Support discovery across thousands of distinct domains over time, but do not attempt to crawl the whole web indiscriminately. Discover per topic, rank candidates, and fetch only the most useful pages within configured budgets. Expand beyond an initial domain allowlist through source scoring and policy checks, not by trusting every domain.
-3. Keep domain diversity as a discovery goal, not a quality shortcut. A source from a new domain must still pass authority, relevance, evidence, access, and safety checks.
-4. Score sources on authority, directness, recency, topical fit, methodology transparency, and independence. A domain allowlist is a starting filter, not proof of trustworthiness. Do not treat multiple pages from one publisher as independent corroboration.
-5. Capture metadata where available: canonical URL, title, author, publisher, publication/update date, retrieval time, HTTP status, content type, robots decision, declared license, and content hash.
-6. Use bounded per-topic fetch counts, per-host delays, explicit timeouts, response-size caps, concurrency limits, retry budgets, and a shared host cooldown. Do not retry permanent 4xx, robots denials, or opt-outs.
-5. Enforce HTTPS and validate every redirect target. Reject loopback, private, link-local, reserved, and cloud metadata IP ranges after DNS resolution; revalidate redirects to prevent SSRF. Limit response types to expected HTML/text/PDF routes and avoid fetching arbitrary binaries.
-6. Parse robots.txt and opt-out metadata conservatively. If robots cannot be fetched or interpreted, mark policy status unknown and skip or use a documented conservative rule; do not silently assume permission. Respect site terms, copyright, rate limits, and provider commercial-use restrictions. No stealth mode, CAPTCHA bypass, paywall bypass, or anti-bot evasion.
-7. Keep raw page text transient. Persist only the minimum short excerpts needed for claim verification, metadata, and hashes; restrict artifact retention and avoid logging full extracted text or secrets.
-8. Extraction failure must not become evidence. Store the extraction method and quality diagnostics, and keep fallback behavior explicit. Rendered-browser fetching is opt-in, budgeted, and limited to sites where ordinary extraction fails and access is permitted.
-9. Add tests for redirect-to-private-IP, robots disallow, opt-out headers/meta tags, oversized responses, duplicate canonical URLs, repeated host URLs, stale content, and malformed metadata.
+1. Remove Wikipedia as the discovery bottleneck. Use cached evidence, official APIs and open datasets, Brave or Tavily when configured, a public search fallback, and citation trails. Add scholarly and institutional discovery providers as the source layer grows.
+2. Support relevant sources across thousands of distinct domains over time without crawling the entire web indiscriminately. Discover per topic, rank candidates, and fetch only a bounded number of pages. Public HTTPS sites are candidates, not automatically trusted evidence.
+3. Score candidates on authority signals, directness, recency, topical fit, methodology transparency, and independence. Do not treat multiple pages from one publisher as independent corroboration. Require independent domains for automatic approval where the route policy requires corroboration.
+4. Capture metadata where available: canonical URL, title, author, publisher, publication/update date, retrieval time, HTTP status, content type, robots decision, declared license, and content hash.
+5. Use bounded per-topic fetch counts, per-host delays, explicit timeouts, response-size caps, concurrency limits, retry budgets, and a shared host cooldown. Do not retry permanent 4xx, robots denials, or opt-outs.
+6. Validate public address resolution and avoid following unvalidated redirects. If robots policy cannot be read, skip the page instead of assuming permission. Keep raw page text transient. Respect site terms, copyright, rate limits, and provider commercial-use restrictions. Do not bypass CAPTCHAs, paywalls, or anti-bot controls.
 
 ### Source quality and freshness
 
