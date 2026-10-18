@@ -6,5 +6,5 @@
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Two-article smoke test after P2/P3 updates and ranking-score correction; validate full test glob, then generate at most two topics. No production publish."
+  "note": "Two-article smoke test after P2/P3 fixes, ranking correction, and inline citation regression test fix. Run full test glob before generation; no production publish."
 }
