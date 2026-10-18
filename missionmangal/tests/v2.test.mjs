@@ -20,6 +20,11 @@ test('discover: trusted-domain filter blocks social/doi/wikipedia and extracts w
  for(const u of ['https://twitter.com/x','https://doi.org/10.1/x','https://en.wikipedia.org/wiki/A','http://nasa.gov/a','http://random-blog.example/x'])assert.equal(isTrusted(u,d),false,u);
  assert.deepEqual(wikiTitles([{url:'https://en.wikipedia.org/wiki/Grass_green',publisher:'Wikipedia',title:'Grass green'}]),['Grass green']);
 });
+test('search fallback extracts independent HTTPS results even when href precedes class',async()=>{
+ const html='<a href="https://www.nasa.gov/himalayas" class="result__a">NASA</a><a class="result__a" href="https://www.usgs.gov/tectonics">USGS</a>';
+ const got=await searchWebLinks('why Himalayas rise',{fetchImpl:async()=>({ok:true,text:async()=>html}),env:{},max:5});
+ assert.deepEqual(got,['https://www.nasa.gov/himalayas','https://www.usgs.gov/tectonics']);
+});
 test('discovery ladder: wikipedia extlinks -> scrapling extraction (injected), trusted hosts only, excerpts+hash only',async()=>{
  const fetchImpl=async()=>({ok:true,json:async()=>({query:{pages:{1:{extlinks:[{'*':'https://www.nasa.gov/grass'},{'*':'https://twitter.com/x'},{'*':'https://www.usgs.gov/g'}]}}}})});
  const text='Chlorophyll absorbs red and blue light most strongly, which is why leaves look green to us. Plants reflect green wavelengths instead of absorbing them. ';
@@ -63,6 +68,8 @@ test('gate: approves a grounded article with independent sources and zero images
   return {id:'abc',title:'A long enough title',intent:'Answer: something',original_contribution:'x'.repeat(40),sources,claims:[1,2,3].map(i=>({id:'c'+i,text:'A grounded claim '+i,source_ids:['s'+i],passage:'p'})),media:[],body_md:body};};
  const policy={min_sources:3,min_words:400};
  assert.equal(decideV2(base(),{route:'general',policy}).ok,true);
+ const aggregatorOnly=base();aggregatorOnly.sources.forEach((s,i)=>s.url=['https://en.wikipedia.org/wiki/A','https://openalex.org/W1','https://doi.org/10.1234/x'][i]);
+ assert.ok(decideV2(aggregatorOnly,{route:'general',policy}).why.some(x=>x.startsWith('SOURCE_INDEPENDENCE')),'aggregators must not count as independent publishers');
  assert.deepEqual(decideV2(base(),{route:'ymyl',policy}).why,['HELD_YMYL']);
  assert.ok(decideV2({...base(),body_md:'short'},{route:'general',policy}).why[0].startsWith('TOO_SHORT'));
  assert.ok(decideV2(base(),{route:'general',policy,seen:[{id:'z',body}]}).why[0].startsWith('NEAR_DUPLICATE'));
