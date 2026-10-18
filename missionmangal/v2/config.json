@@ -21,7 +21,7 @@
       "priority": 4,
       "min_sources": 5,
       "target_words": 1400,
-      "min_words": 600,
+      "min_words": 300,
       "images": "off",
       "mode": "compact"
     },
@@ -29,7 +29,7 @@
       "priority": 5,
       "min_sources": 5,
       "target_words": 1200,
-      "min_words": 600,
+      "min_words": 300,
       "images": "off",
       "mode": "compact"
     }
