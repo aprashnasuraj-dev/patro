@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {mkdtemp,readFile} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
+import {mkdtemp,readFile,mkdir,writeFile} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {classify} from '../v2/classify.mjs';import {makeLlmV2} from '../v2/llm.mjs';import {decideV2} from '../v2/gate.mjs';
-import {isTrusted,wikiTitles,discoverEvidence} from '../v2/discover.mjs';import {buildPlan} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
+import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence} from '../v2/discover.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
 import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';
 const config=JSON.parse(await readFile(new URL('../v2/config.json',import.meta.url),'utf8'));
 const rec=(category,question,primary_api)=>({id:'t',status:'reserved',intent:'Answer: '+question,meta:{category,question,title:question,primary_api}});
@@ -87,4 +87,18 @@ test('plan: review-held articles remain eligible for recovery; approved ones do 
  const state={latest:new Map([['reviewed',{status:'review'}],['approved',{status:'approved'}]]),evidence:new Map()};
  const result=buildPlan(registry,state,{config});
  assert.deepEqual(result.rows.map(r=>r.id),['reviewed']);
+});
+
+test('discovery: no cached Wikipedia seed searches by topic before citation expansion',async()=>{
+ const urls=[];const fetchImpl=async u=>{urls.push(String(u));return {ok:true,json:async()=>String(u).includes('srsearch=')?{query:{search:[{title:'Grass'}]}}:{query:{pages:{1:{extlinks:[{'*':'https://www.nasa.gov/grass'}]}}}}};};
+ const body='Leaves contain chlorophyll which absorbs red and blue wavelengths while reflecting green light in visible sunlight. '.repeat(5);
+ const got=await discoverEvidence({evidence:[],topic:'Why is grass green',disc:config.discovery,need:2,fetchImpl,extract:async urls=>urls.map(url=>({url,ok:true,text:body,title:'NASA'}))});
+ assert.ok(urls.some(u=>u.includes('srsearch=')));assert.ok(urls.some(u=>u.includes('prop=extlinks')));assert.equal(got.length,1);assert.equal(got[0].scraped,true);
+});
+test('recovery: union complementary evidence caches by URL and renumber source IDs',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'mmv2-cache-'));
+ for(const [dir,items] of [['shard-0',[{url:'https://nasa.gov/a',id:'s1',excerpts:['a']}]],['rescue-0',[{url:'https://nasa.gov/a',id:'s9',excerpts:['a','b']},{url:'https://usgs.gov/b',id:'s1',excerpts:['c']}]]]){
+ await mkdir(join(root,dir,'evidence'),{recursive:true});await writeFile(join(root,dir,'evidence','x.json'),JSON.stringify({id:'x',evidence:items}));
+ }
+ const state=await loadState(root);assert.equal(state.evidence.get('x').length,2);assert.deepEqual(state.evidence.get('x').map(e=>e.id),['s1','s2']);assert.equal(state.evidence.get('x')[0].excerpts.length,2);
 });
