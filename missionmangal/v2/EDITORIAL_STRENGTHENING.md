@@ -20,6 +20,8 @@ Improve evidence quality, editorial usefulness, source transparency, and reader-
 - Build an evidence ledger before drafting. Each factual claim has a stable claim ID, one or more source IDs, exact supporting excerpt(s), and a support type: direct, calculated, contextual, contested, or inference.
 - Keep facts, interpretation, and uncertainty separate. Calculations must expose formula, inputs, units, period, and rounding. Conflicting sources must be represented as a disagreement, not silently averaged.
 - Generate a short brief first: intended reader, exact question, answer in one paragraph, what is known, what remains uncertain, why the page adds value, and planned sections. Do not pad to a word count.
+- Never use em dashes. Use periods, commas, colons, parentheses, or a hyphen for numeric ranges. Treat an em dash as a deterministic release-gate failure.
+- Detect and remove exact repeated sentences and block near-duplicate sentence patterns; avoid repeated openings across the batch, duplicated facts, and conclusions that restate the introduction.
 - Enforce a strict punctuation rule: do not use em dashes (—). Prefer commas, periods, colons, or parentheses where appropriate.
 - Detect and revise repeated or near-duplicate sentences within an article, repeated opening patterns across a batch, duplicated facts, and conclusions that simply restate the introduction. Compare normalized sentence fingerprints and semantic similarity; do not delete repetition when it is necessary for clarity or a defined term.
 - Use concrete examples, explanations of mechanisms, comparisons, useful caveats, and reader-relevant implications where evidence supports them. Avoid generic intros, repeated summaries, empty transitions, canned “in today's world” language, filler transitions, formulaic “delve into” language, and forced FAQs.
@@ -34,7 +36,7 @@ Keep configurable route floors in `config.json`, but enforce these principles:
 - General explainers: direct answer early, sufficient primary/authoritative evidence, plain language, one meaningful example when supported.
 - Structured/open-data pages: deterministic rendering from source data wherever possible; show units, period, geography, methodology, missingness, revision date, and downloadable/source links. Prefer this over LLM prose for stable tables.
 - Research pages: broader source diversity, competing explanations, methods and limitations, primary-source priority.
-- YMYL: default hold for qualified human review; sources appropriate to jurisdiction/date; no personalized diagnosis, legal determination, or financial recommendation. Disclaimers do not repair unsupported claims.
+- YMYL: keep high-risk advice out of automatic release unless it meets a stricter route-specific evidence policy and stays informational. If automated checks cannot establish safe, supportable scope, hold the item rather than creating a manual queue for 5,000 articles. No personalized diagnosis, legal determination, or financial recommendation. Disclaimers do not repair unsupported claims.
 
 ## P2 — broaden discovery across the open web
 
@@ -105,7 +107,7 @@ Before scaling:
 - Validate a stratified sample across routes and topic families, including failures and borderline cases. This is quality-system validation, not a requirement to manually review all 5,000 articles. Score factuality, source fit, readability, originality, usefulness, accessibility, and duplication separately.
 - Compare v1/v2 on accepted-page rate, unsupported-claim rate, source independence, extraction success, cost per accepted article, time-to-review, and reader engagement when available. Do not optimize raw article count alone.
 - Start with a small canary, then 25, 100, and larger batches only after the prior gate passes. Preserve resumability and idempotence.
-- Keep merge and production release manual until the release gate passes and a reviewer checks the generated sample.
+- Keep production release separate from batch generation. Do not publish unless the fail-closed automated release gate passes; manual review of every candidate is not required.
 
 ## Definition of done
 
