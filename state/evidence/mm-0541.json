@@ -1,0 +1,93 @@
+{
+  "id": "mm-0541",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Middle Ages",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18836",
+      "retrieved_at": "2026-10-18T17:18:30.406Z",
+      "sha256": "e6373830e7cf4fa3521a9e5ff400f0eeae569f0c45b846e31cac4fb12d214e1f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the history of Europe, the Middle Ages or medieval period lasted approximately from the 5th to late 15th centuries, comparable with the post-classical period of global history.",
+        "The medieval period is the middle epoch of the three traditional divisions of Western history: classical antiquity, the medieval period, and the modern period.",
+        "The medieval period is itself subdivided into the Early, High, and Late Middle Ages.",
+        "The Middle Ages began with the fall of the Western Roman Empire and transitioned into the Modern age during the Renaissance, the Reformation, the European wars of religion, and the Age of Discovery.",
+        "Early Modernity is a single term adopted to describe this end-stage of the period, during which medieval Europe shades into the modern period.",
+        "Population decline, counterurbanisation, the collapse of centralised authority, invasions, and mass migrations of tribes had begun in late antiquity (c.",
+        "~3rd–8th centuries) and lasted into the Early Middle Ages (c.",
+        "The large-scale movements of the Migration Period, including various Germanic peoples, formed new kingdoms in what remained of the Western Roman Empire.",
+        "In the 7th century, North Africa and the Middle East—once part of the Byzantine Empire—came under the rule of the Umayyad Caliphate, an Islamic empire, after conquest by Muhammad's successors.",
+        "Although there were substantial changes in society and political structures, the break with classical antiquity was incomplete.",
+        "The still-sizeable Byzantine Empire, Rome's direct continuation, survived in the Eastern Mediterranean and remained a major power.",
+        "The empire's law code, the Corpus Juris Civilis or \"Code of Justinian\", was rediscovered in Northern Italy in the 11th century."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Medieval medicine of Western Europe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=482938",
+      "retrieved_at": "2026-10-18T17:18:30.406Z",
+      "sha256": "f3cb32e3083078e3781a6a91141496db04b11502bd752b748c39da1f37581099",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the Middle Ages, the medicine of Western Europe was composed of a mixture of existing ideas from antiquity.",
+        "In the Early Middle Ages, following the fall of the Western Roman Empire, standard medical knowledge was based chiefly upon surviving Greek and Roman texts, preserved in monasteries and elsewhere.",
+        "Medieval medicine is widely misunderstood, thought of as a uniform attitude composed of placing hopes in the church and God to heal all sicknesses, while sickness itself exists as a product of destiny, sin, and astral influences as physical causes.",
+        "But, especially in the second half of the medieval period (c.",
+        "1100–1500 AD), medieval medicine became a formal body of theoretical knowledge and was institutionalized in universities.",
+        "Medieval medicine attributed illnesses, and disease, not to sinful behavior, but to natural causes, and sin was connected to illness only in a more general sense of the view that disease manifested in humanity as a result of its fallen state from God.",
+        "Medieval medicine also recognized that illnesses spread from person to person, that certain lifestyles may cause ill health, and some people have a greater predisposition towards bad health than others."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Early Middle Ages",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=532476",
+      "retrieved_at": "2026-10-18T17:18:30.406Z",
+      "sha256": "c6d4808760c164aabe6c00ce72448ea5b9a2def2816908884b9ed70d7d1879d8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Early Middle Ages (or early medieval period), sometimes controversially referred to as the Dark Ages, is typically regarded by historians as lasting from the late 5th to the 10th century.",
+        "They marked the start of the Middle Ages of European history, following the decline of the Western Roman Empire, and preceding the High Middle Ages (c.",
+        "The alternative term late antiquity, for the early part of the period, emphasizes elements of continuity with the Roman Empire, while Early Middle Ages is used to emphasize developments characteristic of the earlier medieval period.",
+        "The period saw a continuation of trends evident since late classical antiquity, including population decline, especially in urban centres, a decline of trade and increased migration.",
+        "In the 19th century the Early Middle Ages were often labelled the Dark Ages, a characterization based on the relative scarcity of literary and cultural output from this time.",
+        "The Eastern Roman Empire, or Byzantine Empire, survived, though in the 7th century the Rashidun Caliphate and the Umayyad Caliphate conquered the southern part of the Roman territory.",
+        "In 800, the title of Emperor was revived in Western Europe with Charlemagne, whose Carolingian Empire greatly affected later European social structure, arts, culture, and history.",
+        "Europe experienced a return to systematic agriculture in the form of the feudal system, which adopted such innovations as three-field planting and the heavy plough.",
+        "Barbarian migration stabilized in much of Europe, although the Viking expansion greatly affected Northern Europe."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Cockaigne",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=806290",
+      "retrieved_at": "2026-10-18T17:18:30.406Z",
+      "sha256": "d585c77db3e445b988cbee7d6c5b222a769c73ac5b2b70cde13be23cae944cf2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cockaigne or Cockayne () is a land of plenty in medieval myth, an imaginary place of luxury and ease, comfort and pleasure, opposite to the harshness of medieval peasant life.",
+        "In poems like The Land of Cockaigne, it is a land of contraries, where all the restrictions of society are defied (abbots beaten by their monks), sexual liberty is open (nuns showing their bottoms), and food is plentiful (skies that rain cheese).",
+        "It represented both wish fulfillment and resentment at scarcity and Christian asceticism.",
+        "Cockaigne was a \"medieval peasant’s dream, offering relief from backbreaking labor and the daily struggle for meager food.\""
+      ]
+    }
+  ]
+}

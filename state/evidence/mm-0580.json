@@ -1,0 +1,108 @@
+{
+  "id": "mm-0580",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "What is this Book About?",
+      "publisher": "Oxford University Press",
+      "author": "Zubairy, M. Suhail",
+      "published_at": "2020-05-07",
+      "url": "https://doi.org/10.1093/oso/9780198854227.003.0001",
+      "retrieved_at": "2026-10-18T17:18:38.023Z",
+      "sha256": "48ac7e7ec9f829c40734bf111325494fad0cc7db4ba05784e29d571f01ff4761",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter begins with a brief history of how classical mechanics evolved into quantum mechanics.",
+        "Next a bird’s-eye view of the basic aspects of quantum mechanics and its applications is given.",
+        "In subsequent chapters, these topics are discussed with reasonable completeness, with a minimum of mathematical background."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Quantum computing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25220",
+      "retrieved_at": "2026-10-18T17:18:38.023Z",
+      "sha256": "7c4c789dccb2fb54a3a411c416b5a95bda854cd8a4442ec759220d7fd71250a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A quantum computer is a computer that represents and processes information using quantum states.",
+        "Quantum computations exploit phenomena such as superposition, interference, and entanglement.",
+        "Quantum computers have the potential to complete some calculations exponentially faster than classical computers.",
+        "For example, a large-scale quantum computer could break widely used encryption schemes and aid physicists in performing physical simulations.",
+        "However, current hardware implementations of quantum computation are largely experimental and suitable for only certain specialized tasks.",
+        "The basic unit of information in quantum computing, the qubit (quantum bit), serves a similar function as the bit in ordinary or \"classical\" computing.",
+        "Unlike a classical bit, which can be in one of two states (a binary), a qubit can exist in a linear combination of states known as a quantum superposition.",
+        "The result of measuring a qubit is one of the two states, given by a probabilistic rule.",
+        "If a quantum computer manipulates the qubit in a particular way, wave interference effects amplify the probability of the desired measurement result.",
+        "Quantum algorithm design involves creating procedures that allow a quantum computer to perform this amplification.",
+        "Quantum computers are not yet practical for real-world applications.",
+        "If a physical qubit is not sufficiently isolated from its environment, it suffers from quantum decoherence, introducing noise (error) into calculations."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Superconducting quantum computing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1730328",
+      "retrieved_at": "2026-10-18T17:18:38.023Z",
+      "sha256": "5af29b33c3b029757923e88a7911f16cf447371456752e93f1b972cf25a7abff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Superconducting quantum computing is a branch of quantum computing and solid-state physics that implements superconducting electronic circuits as qubits in a quantum processor.",
+        "These devices are typically microwave-frequency electronic circuits containing Josephson junctions, which are fabricated on solid state chips.",
+        "Superconducting circuits are one of many possible physical implementations of qubits, the quantum computer's equivalent of a traditional bit in a classic computer.",
+        "Superconducting quantum computing implementations are categorized as \"solid state\" quantum computers, where qubits are intrinsically integrated in a solid-state device.",
+        "Solid state quantum computers also borrow fabrication techniques developed for solid state classical computation.",
+        "Superconducting architecture is the dominant method in the industry for developing quantum processing units, or QPUs.",
+        "Research in superconducting quantum computing is conducted by companies such as Google, IBM, IMEC, BBN Technologies, Rigetti, and Intel.",
+        "Alternatives to superconducting qubits include trapped ions, and neutral atoms.",
+        "Ongoing research in superconducting quantum computing includes device-level improvement, developing error correction methods, and demonstrating quantum advantage by comparing a quantum processor's performance to a classical computer."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Quantum network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2325953",
+      "retrieved_at": "2026-10-18T17:18:38.023Z",
+      "sha256": "c663d8a9f7e54d7c014f044cfe527c93507e72355f146ab145893723287ba336",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Quantum networks form an important element of quantum computing and quantum communication systems.",
+        "Quantum networks facilitate the transmission of information in the form of quantum bits, also called qubits, between physically separated quantum processors.",
+        "A quantum processor is a machine able to perform quantum circuits on a certain number of qubits.",
+        "Quantum networks work in a similar way to classical networks.",
+        "The main difference is that quantum networking, like quantum computing, is better at solving certain problems, such as modeling quantum systems."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Reservoir computing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10667750",
+      "retrieved_at": "2026-10-18T17:18:38.023Z",
+      "sha256": "479d2775bb98db61412827e205971854b6fc4c3041aaf8e988502a856a2ceebd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Reservoir computing is a framework for computation derived from recurrent neural network theory that maps input signals into higher dimensional computational spaces through the dynamics of a fixed, non-linear system called a reservoir.",
+        "After the input signal is fed into the reservoir, which is treated as a \"black box,\" a simple readout mechanism is trained to read the state of the reservoir and map it to the desired output.",
+        "The first key benefit of this framework is that training is performed only at the readout stage, as the reservoir dynamics are fixed.",
+        "The second is that the computational power of naturally available systems, both classical and quantum mechanical, can be used to reduce the effective computational cost."
+      ]
+    }
+  ]
+}

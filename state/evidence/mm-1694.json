@@ -1,0 +1,91 @@
+{
+  "id": "mm-1694",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Soft drink",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27061",
+      "retrieved_at": "2026-10-18T18:05:52.033Z",
+      "sha256": "a465d1020fbc43a5e6fe98af39c81a6062bbb757d275e8a432aab48d33433086",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A soft drink (see § Terminology for other names) is a class of beverage containing no alcohol, usually (but not necessarily) carbonated, and typically including added sweetener.",
+        "The sweetener may be a sugar, high-fructose corn syrup, fruit juice, a sugar substitute (in the case of diet sodas), or some combination of these.",
+        "Soft drinks may also contain caffeine, colorings, preservatives and other ingredients.",
+        "Soft drinks are called \"soft\" in contrast with \"hard\" alcoholic drinks and non-alcoholic drinks.",
+        "Small amounts of alcohol may be present in a soft drink, but the alcohol content must be less than 0.5% of the total volume of the drink (ABV) in many countries and localities if the drink is to not be considered alcoholic.",
+        "Examples of soft drinks include lemon-lime drinks, orange soda, cola, grape soda, cream soda, ginger ale and root beer.",
+        "Soft drinks may be served cold, over ice cubes, or at room temperature.",
+        "They are available in many container formats, including cans, glass bottles, and plastic bottles.",
+        "Containers come in a variety of sizes, ranging from small bottles to large multi-liter containers.",
+        "Soft drinks are widely available at fast food restaurants, movie theaters, convenience stores, casual-dining restaurants, dedicated soda stores, vending machines and bars from soda fountain machines.",
+        "Within a decade of the invention of carbonated water by Joseph Priestley in 1767, inventors in Europe had used his concept to produce the drink in greater quantities.",
+        "Schweppe, formed Schweppes in 1783 and began selling the world's first bottled soft drink."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Root beer",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=54587",
+      "retrieved_at": "2026-10-18T18:05:52.033Z",
+      "sha256": "293c721b5fa989992aad82b9dd7f6440630e1a396ea1dc06bd3e693a9605b87c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Root beer is a North American beverage traditionally made using the root bark of the sassafras tree Sassafras albidum or the sarsaparilla vine Smilax ornata (also used to make a soft drink called sarsaparilla) as the primary flavor.",
+        "Today, root beer is usually a sweet, carbonated soft drink that is generally non-alcoholic and caffeine-free.",
+        "Since safrole, a key component of sassafras, was banned by the US Food and Drug Administration in 1960 due to its carcinogenicity, most commercial root beers have been flavored using artificial sassafras flavoring, but a few (e.g.",
+        "A common use is to add vanilla ice cream to make a root beer float."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Carbonated water",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=240561",
+      "retrieved_at": "2026-10-18T18:05:52.034Z",
+      "sha256": "7dee8c70c7ede2150012ce093befbb9f4dbfd2af37636b5c4ff862702e8c3ae0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carbonated water is water containing dissolved carbon dioxide gas, either artificially injected under pressure, or occurring due to natural geological processes.",
+        "Carbonation causes small bubbles to form, giving the water an effervescent quality.",
+        "Common forms include sparkling natural mineral water, club soda, and commercially produced sparkling water.",
+        "Club soda, sparkling mineral water, or some other sparkling waters contain added or dissolved minerals such as potassium bicarbonate, sodium bicarbonate, sodium citrate, or potassium sulfate.",
+        "These occur naturally in some mineral waters but are also commonly added artificially to manufactured waters to mimic a natural flavor profile and offset the acidity of introducing carbon dioxide gas, giving one a fizzy sensation.",
+        "Various carbonated waters are sold in bottles and cans, with some also produced on demand by commercial carbonation systems in bars and restaurants, or made at home using a carbon dioxide cartridge.",
+        "It is thought that the first person to aerate water with carbon dioxide was William Brownrigg in the 1740s.",
+        "Joseph Priestley invented carbonated water, independently and by accident, in 1767 when he discovered a method of infusing water with carbon dioxide after having suspended a bowl of water above a beer vat at a brewery in Leeds, Yorkshire.",
+        "He wrote of the \"peculiar satisfaction\" he found in drinking it, and in 1772 he published a paper entitled Impregnating Water with Fixed Air.",
+        "Priestley's apparatus, almost identical to that used by Henry Cavendish five years earlier, which featured a bladder between the generator and the absorption tank to regulate the flow of carbon dioxide, was soon joined by a wide range of others.",
+        "However, it was not until 1781 that companies specialized in producing artificial mineral water were established and began producing carbonated water on a large scale.",
+        "The first factory was built by Thomas Henry of Manchester, England."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of soft drink flavors",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=42644750",
+      "retrieved_at": "2026-10-18T18:05:52.034Z",
+      "sha256": "51747416ffce9cd548af257cced058d1b5763c10aa1b91c817b4c061075307f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A soft drink is a beverage that typically contains carbonated water, one or more flavourings and sweeteners such as sugar, HFCS, fruit juices, and/or sugar substitutes such as sucralose, acesulfame-K, aspartame and cyclamate.",
+        "Soft drinks may also contain caffeine, colorings, preservatives and other ingredients."
+      ]
+    }
+  ]
+}

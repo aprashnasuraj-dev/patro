@@ -1,0 +1,82 @@
+{
+  "id": "mm-0915",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Traffic light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=163395",
+      "retrieved_at": "2026-10-18T17:35:20.887Z",
+      "sha256": "b1bcb3b36692a7551701679ccf7a275ba6fb67dffc00871ff1ca8361371d5030",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic lights, traffic signals, or stoplights – also known as robots in South Africa, Zambia, and Namibia – are signaling devices positioned at road intersections, pedestrian crossings, and other locations to control the flow of traffic.",
+        "Traffic lights usually consist of three signals, conveying meaningful information to road users through colors and symbols, including arrows and bicycle symbols.",
+        "The usual traffic light colors are red to stop traffic, amber to signal a change, and green to allow traffic to proceed.",
+        "These are arranged vertically or horizontally in that order.",
+        "Although this is internationally standardized, variations in traffic light sequences and laws exist on national and local scales.",
+        "Traffic lights were first introduced in December 1868 on Parliament Square in London to reduce the need for police officers to control traffic.",
+        "Since then, electricity and computerized control have advanced traffic light technology and increased intersection capacity.",
+        "The system is also used for other purposes, including the control of pedestrian movements, variable lane control (such as tidal flow systems or smart motorways), and railway level crossings."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Traffic police",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2149607",
+      "retrieved_at": "2026-10-18T17:35:20.887Z",
+      "sha256": "06314206dce63e7ec40ae2faba493e2b557e176cab5805f9ed83c44db62fb8a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traffic police (also known as traffic officers,  traffic enforcement officer, traffic enforcement units, traffic cops, traffic monitors, or traffic enforcers) are units and agencies who enforce traffic laws and manage traffic.",
+        "Traffic police help to assist in patrolling highways, directing traffic and address traffic infractions.",
+        "They may be a separate agency from a main police agency, a unit or division within a police agency, or a type of assignment issued to officers; they can also be part of a transportation authority or highway authority.",
+        "It has been noted that:\n\n...traffic police, who are regarded as peripheral to most police forces, participate in both authoritative intervention and symbolic justice.",
+        "Perhaps alone of all the assignments, traffic police are full-service police.",
+        "They are different from the rest, however, because their work is limited to a particular venue—namely, public thoroughfares—and to particular people—namely, those who operate motor vehicles.",
+        "But in terms of work, traffic police are detectives as well as patrol officers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Variations in traffic light operation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5508817",
+      "retrieved_at": "2026-10-18T17:35:20.887Z",
+      "sha256": "b3187f1c86e8b13e2a62fcd9753c3b523694bd13194d53002bc7ad5b5a7b5783",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In traffic engineering, there are regional and national variations in traffic light operation.",
+        "This may be in the standard traffic light sequence (such as the inclusion of a red–amber phase) or by the use of special signals (such as flashing amber or public transport signals)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Traffic light control and coordination",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21844439",
+      "retrieved_at": "2026-10-18T17:35:20.887Z",
+      "sha256": "5decd33f0845f39518494db9f6f0240b8f2d51caae9899cc3ff7da730176062c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The normal function of traffic lights requires more than sight control and coordination to ensure that traffic and pedestrians move as smoothly and safely as possible.",
+        "A variety of control systems are used to accomplish this, ranging from simple clockwork mechanisms to sophisticated computerized control and coordination systems that self-adjust to minimize delays for people using the junction.",
+        "In the United States, traffic signal timing is traditionally operated to minimize vehicle delay at traffic signals.",
+        "This often affects the safety and mobility of people walking and riding bicycles."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "mm-1072",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why We Are Moral Equals",
+      "publisher": "Oxford University Press",
+      "author": "Sher, George",
+      "published_at": "2017-08-24",
+      "url": "https://doi.org/10.1093/oso/9780190660413.003.0003",
+      "retrieved_at": "2026-10-18T17:40:15.217Z",
+      "sha256": "f28c50bdac375a631e15a0cac988e1e5a5f4c44da3aa0258af251a17479654be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It is widely agreed that all persons have equal moral standing, but it is far less clear why this is so.",
+        "Given the innumerable differences that separate people—they differ in strength, intelligence, and along every other empirical dimension—what could ground the view that they are all equally important?",
+        "In this chapter, I propose an answer to this question: namely, that each person is a distinct subjectivity or center of consciousness.",
+        "Because this feature of persons is all or nothing—because you either have it or you don’t—it is unlike the empirical features that come in degrees.",
+        "In this and other ways, it fits naturally into the slot that an adequate basis of our moral equality must occupy."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why we are moral equals",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2014-07-17",
+      "url": "https://www.cambridge.org/core/books/equality-for-inegalitarians/why-we-are-moral-equals/00640B4BBC9E86ECEAFDBEF620E33178",
+      "retrieved_at": "2026-10-18T17:40:16.057Z",
+      "sha256": "830fe9e3f223881bc9e4667f012ebc4862f18a31311d5681002cbae6b9554b60",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why we are moral equals (Chapter 5) - Equality for Inegalitarians Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "There is a significant body of literature that asks which empirical feature of persons, if any, might ground this equality of standing, and a much larger one that asks which principles or policies might follow from it.",
+        "However, strikingly, these discussions have for the most part proceeded on separate tracks.",
+        "By getting clearer about what grounds the equal status of persons, we may hope to learn both why this status requires the equal distribution of any good among them and why that in turn requires the unequal distribution of wealth and other resources.",
+        "I If a given empirical property is the basis of a person's moral standing, and if all persons are moral equals, then it seems that all persons must possess that property to the same degree.",
+        "This implication is problematic because people vary dramatically along every known empirical dimension.",
+        "They differ not only in size, age, appearance, health, strength, intelligence, knowledge, and talent, but also in empathy, concern for others, and willingness to regulate their behavior in accordance with shared rules.",
+        "They do, it is true, all belong equally to the species Homo sapiens .",
+        "However, if this genetic commonality is to be significant, it must be because of the capacities it supports; and these, no less than other empirical properties, all come in degrees.",
+        "Information Type Chapter Information Equality for Inegalitarians , pp.",
+        "74 - 91 DOI: https://doi.org/10.1017/CBO9780511841859.006 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2014 Access options Get access to the full version of this content by using one of the access options below."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why We Care About Dialogue",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2022-04-21",
+      "url": "https://www.cambridge.org/core/books/law-as-a-conversation-among-equals/why-we-care-about-dialogue/DBF74E667AF7F9A0AFB600CA2184ED98",
+      "retrieved_at": "2026-10-18T17:40:17.054Z",
+      "sha256": "fea0e261bbfca42ae020a7c5d53fad84f2179385fac1b98eff43d946c6b2b725",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why We Care About Dialogue (Chapter 17) - The Law As a Conversation among Equals Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "I begin the chapter by presenting the details of one recent dialogic example -namely the development of Argentina’s debate over abortion - and from that illustration I examine in which cases and for what reasons certain types of democratic dialogues may be considered valuable.",
+        "Keywords Constitutional dialogue Information Type Chapter Information The Law As a Conversation among Equals , pp.",
+        "258 - 269 DOI: https://doi.org/10.1017/9781009105682.018 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2022 Access options Get access to the full version of this content by using one of the access options below.",
+        "(Log in options will check for institutional or personal access.",
+        "Accessibility Information Accessibility compliance for the HTML of this chapter is currently unknown and may be updated in the future.",
+        "Save book to Kindle To save this book to your Kindle, first ensure no-reply@cambridge.org is added to your Approved Personal Document E-mail List under your Personal Document Settings on the Manage Your Content and Devices page of your Amazon account.",
+        "Then enter the ‘name’ part of your Kindle email address below.",
+        "Note you can select to save to either the @free.kindle.com or @kindle.com variations.",
+        "‘@free.kindle.com’ emails are free but can only be saved to your device when it is connected to wi-fi.",
+        "‘@kindle.com’ emails can be delivered even when you are not connected to wi-fi, but note that service fees apply."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Transport Layer Security",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=187813",
+      "retrieved_at": "2026-10-18T17:40:17.055Z",
+      "sha256": "4caf032f98e8af729fe3503cc1917c3ec24505cd5d79f8768ff9290cb78dd985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Transport Layer Security (TLS) is a cryptographic protocol designed to provide secured communications over a computer network, such as the Internet.",
+        "The protocol is widely used in applications such as email, instant messaging, and voice over IP, but its use in securing HTTPS remains the most publicly visible.",
+        "The TLS protocol aims primarily to provide security, including privacy (confidentiality), integrity, and authenticity through the use of cryptography, such as the use of certificates, between two or more communicating computer applications.",
+        "It runs in the presentation layer and is itself composed of two layers: the TLS record and the TLS handshake protocols.",
+        "The closely-related Datagram Transport Layer Security (DTLS) is a communications protocol that provides security to datagram-based applications.",
+        "In technical writing, references to \"(D)TLS\" are often seen when it applies to both versions.",
+        "TLS is a proposed Internet Engineering Task Force (IETF) standard, first defined in 1999, and the current version is TLS 1.3, defined in August 2018.",
+        "TLS builds on the now-deprecated SSL (Secure Sockets Layer) specifications (1994, 1995, 1996) developed by Netscape Communications for adding the HTTPS protocol to their Netscape Navigator web browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Orders of magnitude (numbers)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=260914",
+      "retrieved_at": "2026-10-18T17:40:17.055Z",
+      "sha256": "1342d0927e179b92e701564f26bb5a077caa31f9ddd7967fca7a0594589bb6bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This list contains selected positive numbers in increasing order of magnitude, including counts of things, dimensionless quantities, and probabilities.",
+        "Each number is given a name in the short scale, which is used in English-speaking countries, as well as a name in the long scale, which is used in some of the countries that do not have English as their national language."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "0.999...",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1849799",
+      "retrieved_at": "2026-10-18T17:40:17.055Z",
+      "sha256": "5725b57dccb73f4df93a720e274dd5dfb88571a8cd3b6e962226904dd168417e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Following the standard rules for representing real numbers in decimal notation, its value is the smallest number greater than or equal to every number in the sequence 0.9, 0.99, 0.999, and so on.",
+        "It can be proved that this number is 1; that is,\n\n  \n    \n      \n        0.999\n        …\n        =\n        1.",
+        "{\\displaystyle 0.999\\ldots =1.}\n  \n\nDespite common misconceptions, 0.999...",
+        "is not \"almost exactly 1\" or \"very, very nearly but not quite 1\"; rather, \"0.999...\" and \"1\" represent exactly the same number.",
+        "There are many ways of showing this equality, from intuitive arguments to mathematically rigorous proofs.",
+        "The intuitive arguments are generally based on properties of finite decimals that are extended without proof to infinite decimals.",
+        "An elementary but rigorous proof is given below that involves only elementary arithmetic and the Archimedean property: for each real number, there is a natural number that is greater (for example, by rounding up).",
+        "Other proofs generally involve basic properties of real numbers and methods of calculus, such as series and limits.",
+        "Why some people reject this equality is a question studied in mathematics education.",
+        "= 1 is a special case of the fact that every non-zero terminating decimal has two equal representations (for example, 8.32000...",
+        "Everything that precedes refers to the decimal number system, that is to base 10.",
+        "For other bases, everything remains true with 9 replaced with the largest digit."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Digital root",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8286632",
+      "retrieved_at": "2026-10-18T17:40:17.055Z",
+      "sha256": "88e71a35878e8d2072b996b0a1169e11c25983b49ee50b8f144b0a4ddc735c31",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The digital root (also repeated digital sum) of a natural number in a given radix is the (single digit) value obtained by an iterative process of summing digits, on each iteration using the result from the previous iteration to compute a digit sum.",
+        "The process continues until a single-digit number is reached.",
+        "For example, in base 10, the digital root of the number 12345 is 6 because the sum of the digits in the number is 1 + 2 + 3 + 4 + 5 = 15, then the addition process is repeated for the resulting number 15, so that the sum of 1 + 5 equals 6, which is the digital root of that number.",
+        "In base 10, this is equivalent to taking the remainder upon division by 9 (except when the digital root is 9, where the remainder upon division by 9 will be 0), which allows it to be used as a divisibility rule."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "mt-1884",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Impasto.",
+      "publisher": "Rowman & Littlefield Publishers",
+      "author": null,
+      "published_at": "2016",
+      "url": "https://doi.org/10.5040/9798881832704.0419",
+      "retrieved_at": "2026-10-18T19:14:43.266Z",
+      "sha256": "0e112c461a7ea6ef31b65da045b8e2782d7720bdf259e01c750eb8bb40010231",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Visual Arts Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    }
+  ]
+}

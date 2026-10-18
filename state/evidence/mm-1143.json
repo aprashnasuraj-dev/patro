@@ -1,0 +1,126 @@
+{
+  "id": "mm-1143",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Confusion between Two Forms of EDTA; Identical Name Error which Spans Three Continents; New Form and Strength",
+      "publisher": "SAGE Publications",
+      "author": "Cohen, Michael R.",
+      "published_at": "2006-05",
+      "url": "https://doi.org/10.1310/hpj4105-405",
+      "retrieved_at": "2026-10-18T17:40:23.233Z",
+      "sha256": "64893552c2618f342d547873bff119675e12849097a760bbc9bce9b30e748ce4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "These medication errors have occurred in health care facilities at least once.",
+        "Through education and alertness of personnel and procedural safeguards, they can be avoided.",
+        "You should consider publishing accounts of errors in your newsletters and/or presenting them in your inservice training programs.",
+        "The reports described here were received through the USP Medication Errors Reporting Program (MERP), which is presented in cooperation with the Institute for Safe Medication Practices.",
+        "If you have encountered medication errors and would like to report them, you may call USP toll-free, 24 hours a day, at 800-233-7767 (800-23-ERROR).",
+        "Comments are also invited; the writers' names will be published if desired.",
+        "Errors, close calls, or hazardous conditions may be reported through the ISMP ( www.ismp.org ) or USP ( www.usp.org ) Web sites or communicated directly to ISMP by calling 800-FAIL-SAFE or via E-mail at ismpinfo@ismp.org .",
+        "ISMP guarantees the confidentiality and security of the information received and respects reporters' wishes as to the level of detail included in publications."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Asia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=689",
+      "retrieved_at": "2026-10-18T17:40:23.233Z",
+      "sha256": "a5868bddc7b877dd153b15140f9657c1674bf6197e044cc9767671f7c636356b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Asia (  AY-zhə, UK also  AY-shə) is the largest continent in the world by both land area and population.",
+        "It covers an area of more than 44 million square kilometres, about 30% of Earth's total land area and 8% of Earth's total surface area.",
+        "The continent, which has long been home to the majority of the human population, was the site of many of the first civilisations.",
+        "Its estimated 4.8 billion people in 2025 constituted approximately 59% of the world's population.",
+        "Asia shares the landmass of Eurasia with Europe, and of Afro-Eurasia with both Europe and Africa.",
+        "In general terms, it is bounded on the east by the Pacific Ocean, on the south by the Indian Ocean, and on the north by the Arctic Ocean.",
+        "The border of Asia with Europe is a historical and cultural construct, as there is no clear physical or geographical separation between them.",
+        "A commonly accepted division places Asia east of the Suez Canal, which separates it from Africa; and east of the Turkish Straits, the Ural Mountains, and the Ural River, and south of the Caucasus Mountains and the Caspian and Black Seas, which separate it from Europe.",
+        "Since the concept of Asia derives from the term for the eastern region from a European perspective, Asia is the remaining vast area of Eurasia minus Europe.",
+        "Therefore, Asia is a region where various independent cultures coexist rather than sharing a single culture, and its boundary with Europe is somewhat arbitrary and has moved since its first conception in classical antiquity.",
+        "The division of Eurasia into two continents reflects East–West cultural differences, some of which vary on a spectrum.",
+        "China and India traded places as the largest economies in the world from 1 to 1800 CE."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Europe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9239",
+      "retrieved_at": "2026-10-18T17:40:23.234Z",
+      "sha256": "8e786375b953840771faecb1a7ffa72aea66c1e5295f08e1ac3b0112f92764a9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Europe is a continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere.",
+        "It is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the west, the Mediterranean Sea to the south, and Asia to the east.",
+        "Europe shares the landmass of Eurasia with Asia, and of Afro-Eurasia with both Africa and Asia.",
+        "Europe is commonly considered to be separated from Asia by the watershed of the Ural Mountains, the Ural River, the Caspian Sea, the Greater Caucasus, the Black Sea, and the Turkish straits.",
+        "Europe covers approximately 10,186,000 square kilometres (3,933,000 sq mi), or 2% of Earth's surface (6.8% of Earth's land area), making it the second-smallest continent (using the seven-continent model).",
+        "Politically, Europe is divided into about fifty sovereign states, of which Russia is the largest and most populous, spanning 39% of the continent and comprising 15% of its population.",
+        "Europe had a total population of about 745 million (about 10% of the world population) in 2021; the third-largest after Asia and Africa.",
+        "The European climate is affected by warm Atlantic currents, such as the Gulf Stream, which produce a temperate climate, tempering winters and summers, on much of the continent.",
+        "Further from the sea, seasonal differences are more noticeable, producing more continental climates.",
+        "The culture of Europe consists of a range of national and regional cultures, which form the central roots of the wider Western civilisation, and together commonly reference ancient Greece and ancient Rome, particularly through their Christian successors, as crucial and shared roots.",
+        "Beginning with the fall of the Western Roman Empire in 476 CE, Christian consolidation of Europe in the wake of the Migration Period marked the European post-classical Middle Ages.",
+        "The Italian Renaissance spread across many Western European countries, adapting to local contexts and giving rise to distinct national expressions."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Ottoman Empire",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22278",
+      "retrieved_at": "2026-10-18T17:40:23.234Z",
+      "sha256": "ca5a577eee2740d08ab1b20cdb11e1542d605f538cc60fe6f515ab4fab05d04d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Ottoman Empire, also known historically as Turkey or the Turkish Empire, was a state that spanned much of Southeastern Europe, West Asia, and North Africa from the 14th century to the early 20th century, centred in modern-day Turkey.",
+        "It also controlled parts of southeastern Central Europe between the early 16th and early 18th centuries.",
+        "The empire emerged from a beylik, or principality, founded in northwestern Anatolia in c.",
+        "His successors conquered much of Anatolia and expanded into the Balkans by the mid-14th century, transforming their petty kingdom into a transcontinental empire.",
+        "The Ottomans ended the Byzantine Empire with the conquest of Constantinople in 1453 by Mehmed II.",
+        "Further conquests by Selim I led the Sultans to adopt the title of caliph.",
+        "With its capital at Constantinople and control over a significant portion of the Mediterranean Basin, the Ottoman Empire was at the centre of interactions between the Middle East and Europe for six centuries.",
+        "Ruling over diverse peoples, the empire granted varying levels of autonomy to its many confessional communities, or millets, to manage their own affairs per Islamic law.",
+        "During the reign of Suleiman the Magnificent in the 16th century, the Ottoman Empire became a global power.",
+        "Modern academic consensus posits that the empire began to decline after defeat in the Second Siege of Vienna in 1683, but continued to maintain a flexible and strong economy, society and military into much of the 18th century.",
+        "The Ottoman Empire fell behind technologically from the rest of Europe by the late 18th century as imperial authority fragmented.",
+        "Further defeats from Austria and Russia culminated in the loss of territory, and with rising nationalism after the French Revolution, a number of new states emerged in the Balkans."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Economy of Turkey",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30202",
+      "retrieved_at": "2026-10-18T17:40:23.234Z",
+      "sha256": "0c16a1819e57c39c4198e174bb18119471692abf7263e32521e9782da563a9e8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It ranked as the 16th-largest in the world and 7th-largest in Europe by nominal GDP in 2025.",
+        "It also ranked as the 11th-largest in the world and 5th-largest in Europe by PPP in 2025.",
+        "Ratified in 1995, the European Union–Turkey Customs Union is a free trade area between Turkey and the European Union.",
+        "Turkey experienced an economic boom since the 2000s, later curtailed and moderated by a protracted downturn since 2018.",
+        "It is the fourth-most-visited destination in the world, with its tourism sector generating 10-15% of total GDP.",
+        "It has a large industrial manufacturing base through which it is a leading producer of motor vehicles, consumer electronics, home appliances and defense products.",
+        "Turkish inflation has been a perennial challenge since the 1970s due to historic pro-growth economic and monetary policies."
+      ]
+    }
+  ]
+}

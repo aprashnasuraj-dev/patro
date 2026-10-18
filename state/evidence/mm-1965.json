@@ -1,0 +1,106 @@
+{
+  "id": "mm-1965",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Archaeoastronomy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2864",
+      "retrieved_at": "2026-10-18T18:14:11.027Z",
+      "sha256": "13c216c210e2ecc5622f594a57828cbbf70d1a926d833be54261b3e52f492177",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Archaeoastronomy (also spelled archeoastronomy) is the interdisciplinary or multidisciplinary study of how people in the past \"have understood the phenomena in the sky, how they used these phenomena and what role the sky played in their cultures\".",
+        "Clive Ruggles argues it is misleading to consider archaeoastronomy to be the study of ancient astronomy, as modern astronomy is a scientific discipline, while archaeoastronomy considers symbolically rich cultural interpretations of phenomena in the sky by other cultures.",
+        "It is often twinned with ethnoastronomy, the anthropological study of skywatching in contemporary societies.",
+        "Archaeoastronomy is also closely associated with historical astronomy, the use of historical records of heavenly events to answer astronomical problems and the history of astronomy, which uses written records to evaluate past astronomical practice.",
+        "Archaeoastronomy uses a variety of methods to uncover evidence of past practices including archaeology, anthropology, astronomy, statistics and probability, and history.",
+        "Because these methods are diverse and use data from such different sources, integrating them into a coherent argument has been a long-term difficulty for archaeoastronomers.",
+        "Archaeoastronomy fills complementary niches in landscape archaeology and cognitive archaeology.",
+        "Material evidence and its connection to the sky can reveal how a wider landscape can be integrated into beliefs about the cycles of nature, such as Mayan astronomy and its relationship with agriculture.",
+        "Other examples which have brought together ideas of cognition and landscape include studies of the cosmic order embedded in the roads of settlements.",
+        "Archaeoastronomy can be applied to all cultures and all time periods.",
+        "The meanings of the sky vary from culture to culture; nevertheless there are scientific methods which can be applied across cultures when examining ancient beliefs.",
+        "It is perhaps the need to balance the social and scientific aspects of archaeoastronomy which led Clive Ruggles to describe it as \"a field with academic work of high quality at one end but uncontrolled speculation bordering on lunacy at the other\"."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Near-Earth object",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21626",
+      "retrieved_at": "2026-10-18T18:14:11.027Z",
+      "sha256": "28003c87e1b4c3db7fb9300f74332554c7d30e932e5026aa343d54e2d963c5cb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A near-Earth object (NEO) is by definition any small Solar System body orbiting the Sun whose closest approach to the Sun (perihelion) is less than 1.3 times the Earth–Sun distance (astronomical unit, AU).",
+        "This definition applies to the object's orbit around the Sun, rather than its current position, thus an object with such an orbit is considered a NEO even at times when it is far from making a close approach of Earth.",
+        "If a NEO's orbit crosses the Earth's orbit, and the object is larger than 140 meters (460 ft) across, it is, by definition, considered a potentially hazardous object (PHO).",
+        "Most known PHOs and NEOs are asteroids, but about a third of a percent are comets.",
+        "There are over 37,000 known near-Earth asteroids (NEAs) and over 120 known short-period near-Earth comets (NECs).",
+        "A number of solar-orbiting meteoroids were large enough to be tracked in space before striking Earth.",
+        "It is now widely accepted that collisions in the past have had a significant role in shaping the geological and biological history of Earth.",
+        "Asteroids as small as 20 metres (66 ft) in diameter can cause significant damage to the local environment and human populations around the position of their impact.",
+        "Larger asteroids penetrate the atmosphere to the surface of the Earth, producing craters if they impact a continent or tsunamis if they impact the sea.",
+        "Interest in NEOs has increased since the 1980s because of greater awareness of this risk.",
+        "Asteroid impact avoidance by deflection is possible in principle, and methods of mitigation are being researched.",
+        "Two scales, the simple Torino scale and the more complex Palermo scale, rate the risk presented by an identified NEO based on the probability of it impacting the Earth and on how severe the consequences of such an impact would be."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Halley's Comet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46083",
+      "retrieved_at": "2026-10-18T18:14:11.027Z",
+      "sha256": "6a5eecf4d25efac15e523b00c9ce22cba7a51b3990579a3a34729d5b0751481b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Halley's Comet is the only known short-period comet that is consistently visible to the naked eye from Earth, appearing roughly every 74–79 years.",
+        "It last appeared in the inner parts of the Solar System in 1986 and will next appear in mid-2061.",
+        "Officially designated 1P/Halley, it is also commonly called Comet Halley, or sometimes simply Halley.",
+        "Halley's periodic returns to the inner Solar System have been observed and recorded by astronomers around the world since at least 240 BC, but it was not until 1705 that the English astronomer Edmond Halley understood that these appearances were re-appearances of the same comet.",
+        "As a result of this discovery, the comet is named after Halley.",
+        "These observations supported several longstanding hypotheses about comet construction, particularly Fred Whipple's \"dirty snowball\" model, which correctly predicted that Halley would be composed of a mixture of volatile ices—such as water, carbon dioxide, ammonia—and dust.",
+        "The missions also provided data that substantially reformed and reconfigured these ideas; for instance, it is now understood that the surface of Halley is largely composed of dusty, non-volatile materials, and that only a small portion of it is icy.",
+        "It was also visited by the two spacecraft of the Vega program, Vega 1 & 2, on 6 and 9 March, respectively.",
+        "They went as close as 8,890 km (5,520 mi), and 8,030 km (4,990 mi), providing data on Halley's dimensions, shape, temperature, and surface properties."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "SN 1054",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1782897",
+      "retrieved_at": "2026-10-18T18:14:11.027Z",
+      "sha256": "72cf8d3f4f581fa6245329e04b764d2861bcf73095389f8c6b6a4d233895ebf8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "SN 1054, the Crab Supernova, is a supernova that was first observed on c.",
+        "6 April] 1056.α\nThe event was recorded in contemporary Chinese astronomy, and references to it are also found in a later (13th-century) Japanese document and in a document from the Islamic world.",
+        "Furthermore, there are a number of proposed references from European sources recorded in the 15th century, as well as a pictograph associated with the Ancestral Puebloan culture found near the Peñasco Blanco site in New Mexico, United States.",
+        "The pyramids at Cahokia in the midwestern United States may have been built in response to the supernova's appearance in the sky.",
+        "The remnant of SN 1054, which consists of debris ejected during the explosion, is known as the Crab Nebula.",
+        "It is located in the sky near the star Zeta Tauri (ζ Tauri).",
+        "The core of the exploding star formed a pulsar, called the Crab Pulsar (or PSR B0531+21).",
+        "The nebula and the pulsar that it contains are some of the most studied astronomical objects outside the Solar System.",
+        "It is one of the few Galactic supernovae where the date of the explosion is well known.",
+        "The two objects are the most luminous in their respective categories.",
+        "For these reasons, and because of the important role it has repeatedly played in the modern era, SN 1054 is one of the best-known supernovae in the history of astronomy.",
+        "The Crab Nebula is easily observed by amateur astronomers thanks to its brightness, and was also catalogued early on by professional astronomers, long before its true nature was understood and identified."
+      ]
+    }
+  ]
+}

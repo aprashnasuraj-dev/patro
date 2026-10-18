@@ -1,0 +1,96 @@
+{
+  "id": "mm-0451",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Confidence-Man",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2566321",
+      "retrieved_at": "2026-10-18T17:14:52.463Z",
+      "sha256": "44dacefffb2b847ccd7250f57788a32b19f8686dd211db07af929b2777a1bc5f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Confidence-Man: His Masquerade, first published in New York on April Fool's Day 1857, is the ninth and final novel by American writer Herman Melville.",
+        "The work was published on the exact day of the novel's setting.",
+        "Centered on the title character, The Confidence-Man portrays a group of steamboat passengers travelling on the Mississippi River toward New Orleans.",
+        "The narrative follows a succession of confidence men who, as suggested by the book's title, may be the same man in disguise.",
+        "The confidence man uses various methods of persuasion to sell patent medicine, encourage speculation in fraudulent business, donate to non-existent charities, and other cons.",
+        "In the latter part of the narrative, the confidence man discusses friendship and other topics with the other passengers.",
+        "Interspersed with the dialogues are other texts: essay, short story, ode, and others.",
+        "These additional texts inspire the reader to consider the difference between fiction and reality.",
+        "When the novel was first released, critical reception acknowledged its metaphysical angle, while criticizing its cynical point of view.",
+        "Many reviewers seem not to have understood that the title hinted that one man was represented in multiple disguises and that the book criticized Christianity.",
+        "Elizabeth Foster's introduction to the 1954 edition summarized the critical analysis already done and spurred further study of the work.",
+        "Since then, critics have praised the work for its postmodern sensibilities, like how the confidence man both hides and reveals truth."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Consumer confidence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2678537",
+      "retrieved_at": "2026-10-18T17:14:52.463Z",
+      "sha256": "4b2a581b4796ac2060b7aa48926cdfe899fde0e5b2f68734e87aed91102b8b54",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Consumer confidence is an economic indicator that measures the degree of optimism that consumers feel about the overall state of the economy and their personal financial situation.",
+        "If the consumer has confidence in  the immediate and near future economy and their personal finance, then the consumer will spend more than save.",
+        "When consumer confidence is high, consumers make more purchases.",
+        "When confidence is low, consumers tend to save more and spend less.",
+        "A month-to-month trend in consumer confidence reflects the outlook of consumers with respect to their ability to find and retain good jobs according to their perception of the current state of the economy and their personal financial situation.",
+        "Consumer confidence typically increases when the economy expands, and decreases when the economy contracts.",
+        "In the United States, there is evidence that the measure is a lagging indicator of stock market performance."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fort Confidence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7849757",
+      "retrieved_at": "2026-10-18T17:14:52.463Z",
+      "sha256": "2d791d281d94027dd36433888df0e6f38e37ace8c9c7491e93979c7ccae8e5df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The structure was a log building, and burned down a short time later.",
+        "In 1848, the post was rebuilt by John Bell and used by Sir John Richardson and Dr.",
+        "John Rae as a base of operations during the search for famous explorer Sir John Franklin, who went missing along the Arctic Coast.",
+        "These buildings were still standing in 1902, but had again been destroyed by fire by 1911 when George M.",
+        "Douglas's expedition to the Coppermine River passed through the area.",
+        "The remains of this fort consist of four stone and clay chimneys.",
+        "Fort Confidence was featured in Jules Verne's book The Fur Country."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Brainscape",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=51050410",
+      "retrieved_at": "2026-10-18T17:14:52.463Z",
+      "sha256": "0ec8072e31471727f92fd04a50a5121f59bf5e5f431ac48429cbdd604d97b4fe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Brainscape is a web and mobile education platform that allows students to study adaptive flashcards.",
+        "The website and mobile application allow students, teachers, and corporate trainers to create (or upload) electronic flashcards, and to find flashcards created by other users and publishers around the world.",
+        "Brainscape flashcards and marketing content are also created by expert educators and publishers with whom Brainscape closely partners to create flashcards aligned to strict instructional guidelines.",
+        "Flashcards are all stored in the cloud and can be shared with groups of other learners.",
+        "Brainscape uses spaced repetition, which has been shown to increase rate of learning.",
+        "Users rates their confidence in each flashcard, on a scale of 1-5, which subsequently determines how frequently to repeat the flashcard.",
+        "Lower-confidence items are repeated more frequently until the user upgrades their confidence rating, thereby creating an optimized study stream.",
+        "This is a technique called confidence-based repetition (CBR).",
+        "Brainscape has published a white paper, which cites academic studies proving the viability of the cognitive science research that it applies in this technology, including how Brainscape features use active recall and metacognition."
+      ]
+    }
+  ]
+}

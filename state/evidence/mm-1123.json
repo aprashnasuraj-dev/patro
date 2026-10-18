@@ -1,0 +1,67 @@
+{
+  "id": "mm-1123",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Hummingbird",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=70649",
+      "retrieved_at": "2026-10-18T17:40:20.650Z",
+      "sha256": "f5b600ce727634ee741eea641193769a2216c10457f89b2bfd151b12305e79ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.",
+        "With approximately 375 species and 113 genera, they occur from Alaska to Tierra del Fuego, but most species are found in Central and South America.",
+        "As of 2026, 21 hummingbird species are listed as endangered or critically endangered, with about 255 species declining in population.",
+        "Hummingbirds have varied specialized characteristics to enable rapid, maneuverable flight: exceptional metabolic capacity, adaptations to high altitude, sensitive visual and communication abilities, and long-distance migration in some species.",
+        "Among all birds, male hummingbirds have the widest diversity of plumage color, particularly in blues, greens, and purples.",
+        "Hummingbirds are the smallest mature birds, measuring 7.5–13 cm (3–5 in) in length.",
+        "The smallest is the 5 cm (2.0 in) bee hummingbird, which weighs less than 2.0 g (0.07 oz), and the largest is the 23 cm (9 in) giant hummingbird, weighing 17–31 grams (0.60–1.09 oz).",
+        "Noted for long beaks, hummingbirds are specialized for feeding on flower nectar, but all species also consume small insects.",
+        "Hummingbirds are known by that name because of the humming sound created by their beating wings, which flap at high frequencies audible to other birds and humans.",
+        "They hover at rapid wing-flapping rates, which vary from around 12 beats per second in the largest species to 99 per second in small hummingbirds.",
+        "Hummingbirds have the highest mass-specific metabolic rate of any homeothermic animal.",
+        "To conserve energy when food is scarce and at night when not foraging, they can enter torpor, a state similar to hibernation, and slow their metabolic rate to 1⁄15 of its normal rate."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Calliope hummingbird",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=470364",
+      "retrieved_at": "2026-10-18T17:40:20.650Z",
+      "sha256": "e0f470d545aac5be2562bd3b599b2cd1ae232e3502bd499971f08b5967e1483e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The calliope hummingbird ( kə-LY-ə-pee; Selasphorus calliope) is the smallest bird native to the United States and Canada.",
+        "It has a western breeding range mainly from California to British Columbia, and migrates to the Southwestern United States, Mexico, and Central America for its wintering grounds.",
+        "The calliope hummingbird is the smallest known long-distance bird migrant, completing  migrations twice per year of some 9,000 km (5,600 mi).",
+        "It was previously considered the only member of the genus Stellula (meaning little star), but research evidence suggests its existing placement in the genus Selasphorus."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bird feeder",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=633365",
+      "retrieved_at": "2026-10-18T17:40:20.650Z",
+      "sha256": "a3502c1a6c07b6d943231531e35b98a32ee2e68b5b88283f6e06887d9f612df5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A birdfeeder, bird table, or tray feeder is a device placed outdoors to supply bird food to birds (bird feeding).",
+        "The success of a bird feeder in attracting birds depends upon its placement and the kinds of foods offered, as different species have different preferences.",
+        "Most bird feeders supply seeds or bird food, such as millet, sunflower (oil and striped), safflower, nyjer seed, and rapeseed or canola seed to seed-eating birds.",
+        "Bird feeders often are used for birdwatching and many people keep webcams trained on feeders where birds often congregate, with some even living just near the bird feeder."
+      ]
+    }
+  ]
+}

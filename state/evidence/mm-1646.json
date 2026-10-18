@@ -1,0 +1,125 @@
+{
+  "id": "mm-1646",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why did evolution explode in the Cambrian?",
+      "publisher": "Oxford University Press",
+      "author": "Bromham, Lindell; Cardillo, Marcel",
+      "published_at": "2019-05-02",
+      "url": "https://doi.org/10.1093/hesc/9780199608713.003.0004",
+      "retrieved_at": "2026-10-18T18:01:37.161Z",
+      "sha256": "19dcf4e4b07d96b4789b5c6edab8bd7ed5d92d63682add1cbef5fb3e2a1439c6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This burst of animal diversity has been interpreted as marking an unusually inventive period of evolution, with a greater rate of change in fundamental features of body plan than has ever occurred before or since.",
+        "The Cambrian explosion presents two challenges to Darwinian gradualism: explaining evolution of novel features for which we have little direct evidence of intermediate forms, and explaining why animal phyla appear in a particular time period and not before or since.",
+        "One proposed solution to both these challenges is that body plans evolved not by a long series of gradual changes but by relatively few changes to developmental genes that allowed new distinct new forms to be generated without intermediates.",
+        "The chapter then assesses whether such ‘macromutations’ are possible, and if it is plausible that they could give rise to a successful lineage of animals with a novel body plan."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Stars Explode",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2021-02-09",
+      "url": "https://doi.org/10.2307/j.ctv19fvz66.11",
+      "retrieved_at": "2026-10-18T18:01:37.290Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The Chemistry of Chain Reactions or Why Volcanoes Explode?",
+      "publisher": "Elsevier BV",
+      "author": "Bychkov, Serguei",
+      "published_at": "2022",
+      "url": "https://doi.org/10.2139/ssrn.4280004",
+      "retrieved_at": "2026-10-18T18:01:37.290Z",
+      "sha256": "675d8ffa0b3b66bfa8c5ac14d88f5e8624ef20b718894ae3da8b9dae3a429418",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Terrible volcanic explosions have more than once shaken the foundations of human life and brought terrible suffering to people.",
+        "We all remember the catastrophe depicted in Karl Bryullov's painting “The Last Day of Pompeii”, fig.1, although the eruption of the volcano Vesuvius was more of a \"light clap” compared to the known volcanic explosions measured in tens of megatons of TNT.",
+        "At present the culprit of volcanic explosions is considered to be the gas accumulated in its body, although this conclusion is not supported by any facts and calculations.",
+        "We suggest that the source of volcanic explosions is a chemical chain reaction [1] and propose several options to combat this terrible phenomenon."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sun",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26751",
+      "retrieved_at": "2026-10-18T18:01:37.397Z",
+      "sha256": "5ec8a2ac1aeb837266c6441cee1f66982330ce9227284bb380304cf1a635e623",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sun is the star located at the centre of the Solar System.",
+        "It is a massive sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core, radiating the energy from its surface mainly as visible light and infrared radiation, with 10% at ultraviolet energies.",
+        "The Sun has been an object of veneration in many cultures and a central subject of astronomical research since antiquity.",
+        "The Sun orbits the Galactic Center at a distance of 24,000 to 28,000 light-years.",
+        "Its mean distance from Earth is about 1.496×108 kilometres or about 8 light-minutes.",
+        "The distance between the Sun and the Earth was used to define a unit of length called the astronomical unit (au), now defined to be 149.5978707×106 kilometres.",
+        "It is the largest and most massive object in the Solar System; its diameter is about 1,391,400 km (864,600 mi), around 109 times that of Earth.",
+        "The Sun's mass is around 330,000 times that of Earth, making up about 99.86% of the total mass of the Solar System.",
+        "The mass of the Sun's surface layer, its photosphere, consists mostly of hydrogen (~73%) and helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron.",
+        "The Sun formed approximately 4.6 billion years ago from the gravitational collapse of matter within a region of a large molecular cloud.",
+        "Most of this matter gathered in the centre; the rest flattened into an orbiting disk that became the Solar System.",
+        "The central mass became so hot and dense that it eventually initiated nuclear fusion in its core."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Formation and evolution of the Solar System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6139438",
+      "retrieved_at": "2026-10-18T18:01:37.397Z",
+      "sha256": "4b851b6ac8abcb47576b98c6778173382caa8ec9fa1f1fe5d1bc8aa990418524",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The formation of the Solar System began about 4.6 billion years ago with the gravitational collapse of a small part of a giant molecular cloud.",
+        "Most of the collapsing mass collected in the center, forming the Sun, while the rest flattened into a protoplanetary disk out of which the planets, moons, asteroids, and other small Solar System bodies formed.",
+        "This model, known as the nebular hypothesis, was first developed in the 18th century by Emanuel Swedenborg, Immanuel Kant, and Pierre-Simon Laplace.",
+        "Its subsequent development has interwoven a variety of scientific disciplines including astronomy, chemistry, geology, physics, and planetary science.",
+        "Since the dawn of the Space Age in the 1950s and the discovery of exoplanets in the 1990s, the model has been both challenged and refined to account for new observations.",
+        "The Solar System has evolved considerably since its initial formation.",
+        "Many moons have formed from circling discs of gas and dust around their parent planets, while other moons are thought to have formed independently and later to have been captured by their planets.",
+        "Still others, such as Earth's Moon, may be the result of giant collisions.",
+        "Collisions between bodies have occurred continually up to the present day and have been central to the evolution of the Solar System.",
+        "Several thousand trans-Neptunian objects have been observed.",
+        "Unlike the planets, these trans-Neptunian objects mostly move on eccentric orbits, inclined to the plane of the planets.",
+        "The positions of the planets might have shifted due to gravitational interactions."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "The Boy Who Predicted Earthquakes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36553725",
+      "retrieved_at": "2026-10-18T18:01:37.397Z",
+      "sha256": "e4eebd7575d648f82367a46a2937bcafb85f817e41586a076f5d44b3e49102cc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Boy Who Predicted Earthquakes is a short story by American writer Margaret St.",
+        "It was first published by Maclean's magazine and has been anthologized in both print and television."
+      ]
+    }
+  ]
+}

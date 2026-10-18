@@ -1,0 +1,118 @@
+{
+  "id": "mm-1932",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "INTRODUCTION",
+      "publisher": "University of Iowa Press",
+      "author": null,
+      "published_at": "2025-10-28",
+      "url": "https://doi.org/10.2307/jj.36264886.3",
+      "retrieved_at": "2026-10-18T18:10:36.040Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why we didn’t get a vaccine by Election Day – but why we may get one soon",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Petri, William",
+      "published_at": "2020-11-10",
+      "url": "https://theconversation.com/why-we-didnt-get-a-vaccine-by-election-day-but-why-we-may-get-one-soon-149690",
+      "retrieved_at": "2026-10-18T18:10:36.357Z",
+      "sha256": "b8a53129d631feb30804f24aac1d5af3d4ea06b4ed2205d583d627f3f4584ad2",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why we didn’t get a vaccine by Election Day – but why we may get one soon Skip to content Academic rigor, journalistic flair Why we didn’t get a vaccine by Election Day – but why we may get one soon Published: November 10, 2020 8:23am EST Pfizer stock surged higher on Nov.",
+        "9 after the company announced its vaccine is “90% effective” against COVID-19 infections.",
+        "But there are promising signs that one may be available soon.",
+        "9 by pharmaceutical giant Pfizer suggests that the end is in sight, with preliminary results indicating that its vaccine is 90% effective at preventing symptomatic COVID-19.",
+        "The company said it intends this month to seek emergency use authorization, or EUA, from the FDA, bringing some encouraging news to the fight against the pandemic.",
+        "The Pfizer vaccine is based on a new technology in which a molecule called messenger RNA is injected into the body.",
+        "This mRNA molecule provides the instructions for cells in the body to manufacture a protein, called the spike glycoprotein, that plays an essential role in allowing the SARS-CoV-2 to infect human cells.",
+        "When the immune system detects the spike glycoprotein, it generates an immune response.",
+        "If the vaccinated individual is later exposed to the virus that causes COVID-19, the individual’s immune system is prepared to rapidly attack and destroy the coronavirus.",
+        "I am an infectious diseases specialist at the University of Virginia who cares for patients with COVID-19.",
+        "I am conducting a clinical trial of the Regeneron antibodies against the new coronavirus spike glycoprotein to see if it is possible to prevent household transmission.",
+        "I also do basic research on treatment and prevention of infection by the SARS-CoV-2 virus."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Raymond Carver",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=194037",
+      "retrieved_at": "2026-10-18T18:10:36.357Z",
+      "sha256": "6dee5bd8fcda1994a744487cd4dbd34eddaff8cd6d5f180f243e2ac89c00d834",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "(May 25, 1938 – August 2, 1988) was an American short story writer and poet.",
+        "He published his first collection of stories, Will You Please Be Quiet, Please?, in 1976.",
+        "His breakout collection, What We Talk About When We Talk About Love (1981), received immediate acclaim and established Carver as an important figure in the literary world.",
+        "It was followed by Cathedral (1983), which Carver considered his watershed and is widely regarded as his masterpiece.",
+        "The definitive collection of his stories, Where I'm Calling From, was published shortly before his death in 1988.",
+        "In their 1989 nomination of Carver for the Pulitzer Prize for Fiction, the jury concluded, \"The revival in recent years of the short story is attributable in great measure to Carver's mastery of the form.\""
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Charlie Kaufman",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=537020",
+      "retrieved_at": "2026-10-18T18:10:36.357Z",
+      "sha256": "c271c34e8401c8e2bebb32524bd1469a89685ebac1b5c9dfd52f0136607e07db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Charles Stuart Kaufman (; born November 19, 1958) is an American filmmaker and novelist.",
+        "His work is distinguished by postmodernist and surrealist storytelling, with many critics considering him an auteur.",
+        "One of the most celebrated screenwriters of his era, Kaufman has received numerous accolades, including an Academy Award, three BAFTA Awards, two Independent Spirit Awards, an Emmy Award, and a Writers Guild of America Award.",
+        "Film critic Roger Ebert called Synecdoche, New York \"the best movie of the decade\" in 2009.",
+        "Three of Kaufman's scripts appear in the Writers Guild of America's list of the 101 greatest movie screenplays ever written."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Alexander Rosenberg",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7304484",
+      "retrieved_at": "2026-10-18T18:10:36.357Z",
+      "sha256": "e5dd6b017c71ee6f04738d7a6ccba4c4c5454787fe7fb35125637da15a5d01c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Alexander Rosenberg (born 1 August 1946) is an Austrian-born American philosopher and novelist.",
+        "Taylor Cole Professor of Philosophy at Duke University, well known for contributions to philosophy of biology and philosophy of economics."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Mike Rose (educator)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9480425",
+      "retrieved_at": "2026-10-18T18:10:36.357Z",
+      "sha256": "8201808af886692b3f685df835088a83ff7f8935bae6cdf7e69c69904381876f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mike Rose (May 14, 1944 – August 15, 2021) was an American scholar of education who studied literacy and the struggles of working-class America.",
+        "He was a Research Professor of Social Research Methodology in the UCLA Graduate School of Education and Information Studies."
+      ]
+    }
+  ]
+}

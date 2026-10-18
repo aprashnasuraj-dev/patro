@@ -1,0 +1,135 @@
+{
+  "id": "mm-1377",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Guest Editorial: 5 Reasons Why AI Won’t Take Your Job but Make You Faster, Safer, and Better",
+      "publisher": "Society of Petroleum Engineers (SPE)",
+      "author": "Sood, Diti",
+      "published_at": "2024-07-01",
+      "url": "https://doi.org/10.2118/0724-0010-jpt",
+      "retrieved_at": "2026-10-18T17:57:11.213Z",
+      "sha256": "92e348706c9505e7a366c55e74623405f8d10ec925a0f259b7faebd94ae1c4a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Every decade or so, we see technological disruptions that transform how we live and work.",
+        "The 1990s saw the rise of the internet and in the following decade we combined it with mobility.",
+        "By the 2010s we were talking about cloud computing and big data.",
+        "That brings us to our current decade which is being shaped by the rapid, almost dizzying, advancements in artificial intelligence (AI) technology, particularly with large language models (LLMs) and natural language processing.",
+        "Each of these advancements has made people more efficient in how they work across industries.",
+        "Generative AI, the latest frontier in the field of AI, includes AI algorithms capable of generating content like text, audio, image, video, and code.",
+        "LLMs are a subset of generative AI that excel at comprehending text and mimic human-like natural language.",
+        "This means that you can ask questions and reason with your computer in the same way you would with a coworker.",
+        "The first glimpse of this possibility came in November 2022 with the launch of OpenAI’s ChatGPT 3.5.",
+        "The arrival of such transformative technologies is projected to boost the value and productivity of various industries by an estimated $2.6 to $4.4 trillion annually (McKinsey 2023).",
+        "The oil and gas industry is of course considered one of the most well-positioned to leverage generative AI to help in areas such as seismic interpretation or to drive new operational efficiencies (McKinsey 2024).",
+        "The magnitude of data in oil and gas companies is massive, be it upstream, midstream, downstream, chemicals, or services sector."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why is Productivity Growing Faster?",
+      "publisher": "National Bureau of Economic Research",
+      "author": "Feldstein, Martin",
+      "published_at": "2003-03",
+      "url": "https://doi.org/10.3386/w9530",
+      "retrieved_at": "2026-10-18T17:57:14.036Z",
+      "sha256": "02f247151db63e9c03904d8853bcee17aed92102ebc5286e31b83604b4cf3679",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "ųP�: �*\u001bb&ѥ�u�����.�⫰\u0010Dc\u0010Z�u�|,��$0C��\b:�>�\u0001\u000e͒!Z\u0007�3\b�!5��G���Y��\u0014�h�#�\u001e�\u0012\u0016�$�%l�9�wx ����d���p�!",
+        "!a�S-i\u001e�\u0013J�*A�ki� k��`\u0001�*\u0004p�\u0013k^�۹ɩ��\u0006�kr>'\u0013�������\b����[#�;��w���\\��\\��\u0015qZr�熡�+�bi:��kE\u0017�p,ϒL2��H�\"���j�m�:��ܷ�ׯk;�����ql'N\u001a'� �1�%Y\u0006M6 \u0004�\u001b \u0010ݦ��n� �)�P�-^���J\u0003\u001be\u001bH# M�mMWQh�\u001f�C\u001b�V�I٫4R��j\u0012K��\\Gkw�s?�\u001bY�=����T\u0005Y��2��-~��k�kXUF)!��֤�&�26����� �*s�j\u0016�F!",
+        "��U\u0003 ��NO\u0018�\u00113�\u001e\u000eԸ:�\"\u001c\u0005Yf�[�T\\E� \u001en�#\u001a��5;��\"�2���ܢ�\u001cB=��9���rCiŻU>X�!�I�c��g��|�I�BGcVæ�Mq��M�2x���\u000e����\u001f\u000fD���6aOsd,\b\u001b�Ϯt��,lho%�����O���1�$h#m\u0011�b���HH�s���t�\"�\u001d�J�o��>6n������\u001fw��}��>|g��k�K��%�\b�.m��[H\u0019�5@H�R�N�Ҡ�I�p��%\u0011���\u0012�\u0005��\u0004-B�m���E��4AQ': ZV ��QU��\u001bC դ."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Netflix",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=175537",
+      "retrieved_at": "2026-10-18T17:57:14.037Z",
+      "sha256": "7f1d58386ed99c8139cd8393e4fefa05e8524cac07639acfb27fa82505fc4e7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Netflix is an American subscription video on-demand over-the-top streaming television service.",
+        "The service primarily distributes original and acquired films and television shows from various genres.",
+        "By 2022, \"Netflix Original\" productions accounted for half of its library in the United States and the namesake company had ventured into other categories, such as video game publishing of mobile games through its flagship service.",
+        "As of 2026, Netflix is the 22nd most-visited website in the world, with 21.18% of its traffic coming from the US, followed by the United Kingdom at 6.01%, Canada at 4.94%, and Brazil at 4.24%."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Discovery (Daft Punk album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=976189",
+      "retrieved_at": "2026-10-18T17:57:14.037Z",
+      "sha256": "56f533fcab3cbf4d65813acd86d58fb10e9124014805a74e49445a4bf4dc1856",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Discovery is the second studio album by the French electronic music duo Daft Punk, released on 12 March 2001 by Virgin Records.",
+        "It moved from the Chicago house of their first album, Homework (1997), to a house style inspired by disco, post-disco, garage house, and R&B.",
+        "Thomas Bangalter of Daft Punk described Discovery as an exploration of song structures, musical forms, and childhood nostalgia, compared to the \"raw\" electronic music of Homework.",
+        "Discovery was recorded at Bangalter's home in Paris between 1998 and 2000.",
+        "It features extensive sampling; some samples are from older records, while others were created by Daft Punk.",
+        "The electronic musicians Romanthony, Todd Edwards, and DJ Sneak collaborated on some tracks.",
+        "For the music videos, Daft Punk developed a concept that merged science fiction with the entertainment industry.",
+        "Inspired by their childhood love for Japanese anime, the duo collaborated with Leiji Matsumoto to produce Interstella 5555: The 5tory of the 5ecret 5tar 5ystem, an anime film with Discovery as the soundtrack.",
+        "Before Discovery's release, Daft Punk adopted robot costumes.",
+        "They also launched Daft Club, a website featuring exclusive tracks and bonus material.",
+        "Discovery peaked high on several international charts upon release.",
+        "Critics praised Daft Punk for innovating in house music as they had done with Homework."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Net neutrality",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1398166",
+      "retrieved_at": "2026-10-18T17:57:14.037Z",
+      "sha256": "fce0b865eeeddb0612eaab2b05bcdc0341a0d7188535975dc67d0425cb9f9e62",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Net neutrality was advocated for in the 1990s by the presidential administration of Bill Clinton in the United States.",
+        "Clinton signed the Telecommunications Act of 1996, an amendment to the Communications Act of 1934.",
+        "In 2025, an American court ruled that Internet companies should not be regulated like utilities, which weakened net neutrality regulation and put the decision in the hands of the United States Congress and state legislatures."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Facebook",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7529378",
+      "retrieved_at": "2026-10-18T17:57:14.037Z",
+      "sha256": "4ca467367dfb125da59c58c3120a5107879c339a45fa821205a893f6230f0b96",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Facebook is an American social networking service owned by the American technology conglomerate Meta Platforms.",
+        "It was founded in 2004 by Mark Zuckerberg, along with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.",
+        "The name Facebook derives from the face book directories often given to American university students.",
+        "The service was initially targeted to Harvard students only before gradually expanding to other universities in North America.",
+        "Since 2006, Facebook has permitted registration by individuals aged 13 and older, with the exception of South Korea, Spain, and Quebec, where the minimum age is 14.",
+        "As of December 2023, Facebook reported approximately 3.07 billion monthly active users worldwide.",
+        "As of July 2025, it was ranked as the third-most-visited website in the world, with 23 percent of its traffic originating from the United States.",
+        "Facebook can be accessed from devices with Internet connectivity, such as personal computers, tablets and smartphones.",
+        "After registering, users can create a profile revealing personal information about themselves.",
+        "They can post text, photos, and multimedia which are shared either publicly or exclusively with other users who have agreed to be their friend, depending on privacy settings.",
+        "Users can also communicate directly with each other with Messenger, edit messages (within 15 minutes after sending), join common-interest groups, and receive notifications on the activities of their Facebook friends and the pages they follow.",
+        "Facebook has often been criticized over issues such as user privacy (as with the Facebook–Cambridge Analytica data scandal), political manipulation (as with the 2016 U.S."
+      ]
+    }
+  ]
+}

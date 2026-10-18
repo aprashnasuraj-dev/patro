@@ -1,0 +1,85 @@
+{
+  "id": "mm-0380",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mu-law algorithm",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=41382",
+      "retrieved_at": "2026-10-18T17:14:20.218Z",
+      "sha256": "c8c87b9d724ba16a888747e591de65d1a562d7131e893b896ce5b04e828b3c12",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The μ-law algorithm (sometimes written mu-law, often abbreviated as u-law) is a companding algorithm, primarily used in eight-bit PCM digital telecommunications systems in North America and Japan.",
+        "It is one of the two companding algorithms in the G.711 standard from ITU-T, the other being the similar A-law.",
+        "A-law is used in regions where digital telecommunication signals are carried on E-1 circuits, e.g.",
+        "Companding algorithms reduce the dynamic range of an audio signal.",
+        "In analog systems, this can increase the signal-to-noise ratio (SNR) achieved during transmission; in the digital domain, it can reduce the quantization error (hence increasing the signal-to-quantization-noise ratio).",
+        "These SNR increases can be traded instead for reduced bandwidth for equivalent SNR."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Recommender system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=596646",
+      "retrieved_at": "2026-10-18T17:14:20.218Z",
+      "sha256": "301662625354d780c5888ddf5084a55857a9466d17b04f61b50c46244633acab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A recommender system, also called a recommendation engine or content discovery platform is a type of information filtering system that aims to suggest items most relevant for some input or to a particular user.",
+        "In the context of social media, search engines, and other online services, a recommender system for a given service might sometimes informally but erroneously be referred to as the service's \"algorithm\".",
+        "The use of recommender systems is pervasive, with commonly recognised examples including the generation of playlists for video and music streaming services, product recommendations for e-commerce platforms, and topics and individual items posted on social media platforms and the open web.",
+        "Online services employ machine learning or specialized deep learning recommendation models (DLRMs) that analyze user behavior and preferences to generate personalized content feeds for millions of users at any moment.",
+        "The value of these systems becomes particularly evident in scenarios where users must select from a large number of options, such as products, media, or content.",
+        "Suggestions are typically designed to shorten or work as a substitute for decision-making processes, including the selection of a product, musical selection, or online news source to read."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Algorithm aversion",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=68676673",
+      "retrieved_at": "2026-10-18T17:14:20.218Z",
+      "sha256": "ce9994487da6954963c1d8353fe4e1113fef50816be47846d2b52bb39ed92af5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Algorithms, particularly those utilizing machine learning methods or artificial intelligence (AI), play a growing role in decision-making across various fields.",
+        "Examples include recommender systems in e-commerce for identifying products a customer might like and AI systems in healthcare that assist in diagnoses and treatment decisions.",
+        "Despite their proven ability to outperform humans in many contexts, algorithmic recommendations are often met with resistance or rejection, which can lead to inefficiencies and suboptimal outcomes.",
+        "The study of algorithm aversion is critical as algorithms become increasingly embedded in our daily lives.",
+        "Factors such as perceived accountability, lack of transparency, and skepticism towards machine judgment contribute to this aversion.",
+        "Conversely, there are scenarios where individuals are more likely to trust and follow algorithmic advice over human recommendations, a phenomenon referred to as algorithm appreciation.",
+        "Understanding these dynamics is essential for improving human-algorithm interactions and fostering greater acceptance of AI-driven decision-making."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Algorithmic culture",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72135653",
+      "retrieved_at": "2026-10-18T17:14:20.218Z",
+      "sha256": "c08314fab4004045f397205d93d184327fe70655ddaf6c96e8b1620df660e160",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the digital humanities, \"algorithmic culture\" is part of an emerging synthesis of rigorous, algorithm-driven software design that couples software and highly structured data-driven design with human-oriented sociocultural attributes.",
+        "Other definitions include Ted Striphas' work, where algorithmic culture refers to how the logic of big data and large-scale computation (including algorithms) alters how culture is practiced, experienced, and understood.",
+        "Diggit Magazine offers another perspective, describing algorithmic culture as the influence of computational processes on cultural practices.",
+        "Edward Burnett Tylor is often credited with modern discussion of culture in his 1871 work on primitive culture.",
+        "A similar process is occurring in strictly sociological interactions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "mm-0230",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Dead Languages Work",
+      "publisher": "Oxford University Press",
+      "author": "George, Coulter H.",
+      "published_at": "2020-04-20",
+      "url": "https://doi.org/10.1093/oso/9780198852827.001.0001",
+      "retrieved_at": "2026-10-18T17:09:57.386Z",
+      "sha256": "9d2b6484dd51eae1a27f81896bd6201b577cf510b0b3ad6b8cc00aaa0ba32bb3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "What could a Greek poet or Roman historian say in their language that’s lost in translation?",
+        "After all, different languages have different personalities, and this is especially clear with languages of the ancient and medieval world.",
+        "This book celebrates six such languages—Ancient Greek, Latin, Old English, Sanskrit, Old Irish, and Biblical Hebrew—by first introducing readers to their most distinctive features, then showing how these linguistic traits play out in short excerpts from actual ancient texts.",
+        "It explores, for instance, how Homer’s Greek shows signs of oral composition, how Horace can achieve striking poetic effects through interlaced word order in his Latin, and how the poet of Beowulf achieves a remarkable intensity of expression through the resources of Old English.",
+        "But these are languages that have shared connections as well.",
+        "Readers will see how the Sanskrit of the Rig Veda uses words that come from roots found also in English, how turns of phrase characteristic of the Hebrew Bible found their way into English, and that even as unusual a language as Old Irish still builds on common Indo-European linguistic patterns.",
+        "Since most people don’t have the opportunity to learn these languages, the book throughout aims to give such readers an aesthetic appreciation of just how rich and varied they are."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17524",
+      "retrieved_at": "2026-10-18T17:09:57.601Z",
+      "sha256": "63ed6480dff8b87d14b39121938afef777e2b6f1219e1d80a7531c4a00c2ad8d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Language is a structured system of communication that consists of grammar and vocabulary.",
+        "It is the primary means by which humans convey meaning, both in spoken and signed forms, and may also be conveyed through writing.",
+        "Human language is characterized by its cultural and historical diversity, with significant variations observed between cultures and across time.",
+        "Human languages possess the properties of productivity and displacement, which enable the creation of an infinite number of sentences, and the ability to refer to objects, events, and ideas that are not immediately present in the discourse.",
+        "The use of human language relies on social convention and is acquired through learning.",
+        "A 2026 estimate of the number of \"spoken or signed\" languages remaining was around 7,500 (half of which are described as \"endangered\"), representing an estimated ninety-percent reduction over the past several thousand years.",
+        "Precise estimates depend on an arbitrary distinction (dichotomy) established between languages and dialects.",
+        "Natural languages are spoken, signed, or both; however, any language can be encoded into secondary media using auditory, visual, or tactile stimuli – for example, writing, whistling, signing, or braille.",
+        "In other words, human language is modality-independent, but written or signed language is a way to inscribe or encode the natural human speech or gestures.",
+        "All languages rely on the process of semiosis to relate signs to particular meanings.",
+        "Oral, manual and tactile languages contain a phonological system that governs how symbols are used to form sequences known as words or morphemes, and a syntactic system that governs how words and morphemes are combined to form phrases and utterances.",
+        "Critical examinations of languages, such as philosophy of language, the relationships between language and thought, how words represent experience, etc., have been debated at least since Gorgias and Plato in ancient Greek civilization."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Sign language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27699",
+      "retrieved_at": "2026-10-18T17:09:57.601Z",
+      "sha256": "1fb7bbadd02121c613d603831b66143645380cad6f8a67ce5c0f5d19b3ec2f39",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sign languages (also known as signed languages) are languages that use the visual-manual modality to convey meaning rather than spoken words.",
+        "They are expressed through manual articulation in combination with non-manual markers, and are full-fledged natural languages with their own grammar and lexicon.",
+        "Sign languages are not universal and are usually not mutually intelligible, although there are similarities among different sign languages.",
+        "Wherever communities of deaf and hard of hearing people exist, sign languages have developed as a means of communication and form the core of local Deaf cultures.",
+        "Although signing is used primarily by deaf and hard of hearing people, it is also used by hearing individuals, such as those with deaf family members including children of deaf adults (CODAs).",
+        "Sign languages are distinct from body language, a type of nonverbal communication.",
+        "Linguists also distinguish natural sign languages from other systems that are precursors to them or derived from them, such as constructed manual codes for spoken languages, home sign, baby sign language, and signs used with non-human primates.",
+        "The number of sign languages worldwide is not precisely known.",
+        "Each country generally has its own native sign language, and some have more than one.",
+        "The 2021 edition of Ethnologue lists 150 sign languages, while the SIGN-HUB Atlas of Sign Language Structures lists over 200 and notes that there are more that have not yet been documented.",
+        "As of 2021, Indo-Pakistani Sign Language is the most widely used sign language in the world, and Ethnologue ranks it as the 156th most spoken language in the world.",
+        "Some sign languages have obtained some form of legal recognition."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "British Sign Language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47640",
+      "retrieved_at": "2026-10-18T17:09:57.601Z",
+      "sha256": "a6bdc5cb1e0251e453cf2793a2ba785915e478d2138adaabf299eb694ef568ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "British Sign Language (BSL) is a sign language used in the United Kingdom and is the first or preferred language among the deaf community in the UK.",
+        "Based on the percentage of people who reported 'using British Sign Language at home' on the 2011 Scottish Census, the British Deaf Association estimates there are 151,000 BSL users in the UK, of whom 87,000 are Deaf.",
+        "People who are not deaf may also use BSL, as hearing relatives of deaf people, sign language interpreters or as a result of other contact with the British Deaf community.",
+        "The language makes use of space and involves movement of the hands, body, face and head."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Plains Indian Sign Language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3747686",
+      "retrieved_at": "2026-10-18T17:09:57.601Z",
+      "sha256": "5f6d6d86dbdceea76a8702be7c952d73df36cd57aa3263e9bf90f9cc2818b168",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It was, and continues to be, used across what is now central Canada, the Central United States, the Western United States and Northern Mexico.",
+        "This language was used historically as a lingua franca, notably for international relations, trade, and diplomacy; it is still used for storytelling, oratory, various ceremonies, and by deaf people for ordinary daily use.",
+        "In 1885, it was estimated that there were over 110,000 \"sign-talking Indians\", including Blackfoot, Cheyenne, Sioux, Kiowa,  and Arapaho.",
+        "As a result of the European colonization of the Americas, most notably including American boarding and Canadian residential schools, the number of sign talkers has declined sharply.",
+        "However, growing interest and preservation work on the language has increased its use and visibility in the 21st century.",
+        "Historically, some have likened its more formal register, used by men, to Church Latin in function.",
+        "It is primarily used today by Elders and Deaf citizens of Indigenous nations.",
+        "Some deaf Indigenous children attend schools for the deaf and learn American Sign Language (ASL) having already acquired Plains Sign Language.",
+        "A group studied in 1998 were able to understand each other, though this was likely through the use of International Sign.",
+        "Davis, a leading linguist in documentation efforts, hypothesizes that this contact, combined with potential contact with Martha's Vineyard Sign Language (another potential antecedent to ASL) may suggest that ASL descends in part from Plains Sign Language."
+      ]
+    }
+  ]
+}

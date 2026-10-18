@@ -1,0 +1,106 @@
+{
+  "id": "mm-1093",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Before DIY sourdough starters became popular, there was home economics",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Zwart, Mary-Leah",
+      "published_at": "2020-05-05",
+      "url": "https://theconversation.com/before-diy-sourdough-starters-became-popular-there-was-home-economics-136370",
+      "retrieved_at": "2026-10-18T17:40:19.251Z",
+      "sha256": "04c0a7363c05373d076d552c53378c6202fa3ad83efb09cbec37c37f7ade427b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Before DIY sourdough starters became popular, there was home economics Skip to content Academic rigor, journalistic flair Are people reconnecting with the traditional household activities of their mothers and grandmothers under quarantine?",
+        "The preparation of sourdough begins with a mix of flour, water and natural yeast.",
+        "She’s making sourdough starter for the first time because she couldn’t find any dry yeast.",
+        "It’s like having a newborn for the first three days — keep warm, stir three or four times a day, watch for bubbles, feed regularly after use.",
+        "On cold winter nights, old-timers used to take their sourdough starter to bed with them.",
+        "A well-known flour company has run out of its usual bright yellow bags and has to use white ones instead.",
+        "Are people re-enacting the traditional household activities of their mothers and grandmothers?",
+        "Read more: Making and breaking bread during the coronavirus pandemic: Home cooking could make a comeback We don’t really know.",
+        "Søren Kierkegaard, the father of existentialism , once wrote that we live life forwards and understand it backwards.",
+        "People may simply be stocking up on baking supplies while they’re in quarantine.",
+        "It may or may not be largely limited to women who are baking.",
+        "Caring for one’s sourdough starter will not alleviate the fear of loss of control, but, as psychologists suggest, it offers the physical and emotional comfort of working with one’s hands ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Bread",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=36969",
+      "retrieved_at": "2026-10-18T17:40:19.334Z",
+      "sha256": "40dd405677f4c41f5752e079fa54fd2b82981ecde1abc0c55fb2074bef75fa3d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bread is a baked food product made from water, flour, and often yeast.",
+        "It is a staple food across the world, particularly in Europe and the Middle East.",
+        "Throughout recorded history and around the world, it has been an important part of many cultures' diets.",
+        "It is one of the oldest human-made foods, having been of significance since the dawn of agriculture, and plays an essential role in both religious rituals and secular culture.",
+        "baking soda), industrially produced yeast, or high-pressure aeration, which creates the gas bubbles that fluff up bread.",
+        "In many countries, mass-produced bread often contains additives to improve flavor, texture, color, shelf life, nutrition, and ease of production."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Sourdough",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=189345",
+      "retrieved_at": "2026-10-18T17:40:19.334Z",
+      "sha256": "b0b869b145685326c6100332cc05a97c6f86f8a568dae7bc21956e6497c3a148",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sourdough is a leavening agent containing naturally occurring yeast and lactobacillus bacteria.",
+        "The term is used to describe bread baked with sourdough, while the sourdough itself is referred to as a starter.",
+        "In addition to leavening the bread, the fermentation process produces lactic acid, which gives the bread its distinctive sour taste and improves its keeping qualities."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of sourdough breads",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=66004524",
+      "retrieved_at": "2026-10-18T17:40:19.334Z",
+      "sha256": "790e42fac6f043df18933f8791b78651e79bbb746845d483f3cce2cb01b9883f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sourdough is prepared through the fermentation of dough using naturally occurring lactobacilli and yeast.",
+        "The lactic acid produced by the lactobacilli imbues it with a more sour taste, as well as extending its shelf life compared to other breads.",
+        "Many devotees share starters and tips via the Internet, and hobbyists often proudly share their work on social media."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Carl Griffith's sourdough starter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=69120309",
+      "retrieved_at": "2026-10-18T17:40:19.334Z",
+      "sha256": "54c4e5c84340a90fe012b495dcbadb4b568cdc21c07995a1ee360c87302aa5b3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carl Griffith's sourdough starter, also known as the Oregon Trail Sourdough or Carl's starter, is a sourdough culture, a colony of wild yeast and bacteria cultivated in a mixture of flour and water for use as leavening.",
+        "Carl's starter has a long history, dating back at least to 1847, when it was carried along the Oregon Trail by settlers from Missouri to Oregon.",
+        "It was then passed down as an heirloom within the family of Carl Griffith, who shared it via Usenet in the 1990s.",
+        "Since 2000, it has been maintained and shared by a dedicated historical preservation society; its volunteers keep the starter alive, feeding the organisms flour and water, and mail free samples worldwide on request for use by bakers in seeding their own cultures.",
+        "As with any other sourdough starter, the yeasts in Carl's starter generate carbon dioxide by fermentation when added to bread dough, causing it to rise.",
+        "Bacteria of the genus Lactobacillus produce lactic acid, giving the bread a sour flavor.",
+        "Carl's starter is especially robust, quick-rising, and tolerant of mistreatment, producing a consistent, reliable rise and good flavor."
+      ]
+    }
+  ]
+}

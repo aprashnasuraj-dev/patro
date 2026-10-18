@@ -1,0 +1,95 @@
+{
+  "id": "mt-0952",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Crohn's disease",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63522",
+      "retrieved_at": "2026-10-18T18:51:15.344Z",
+      "sha256": "42e0f42ef92deef9b69a8e67cf2345642633bc7958371549c2318137cdc94399",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Crohn's disease (CD) is a type of inflammatory bowel disease (IBD) that may affect any segment of the gastrointestinal tract.",
+        "Symptoms often include abdominal pain, diarrhea, fever, abdominal distension, and weight loss.",
+        "Complications outside of the gastrointestinal tract may include anemia, skin rashes, arthritis, inflammation of the eye, and fatigue.",
+        "The skin rashes may be due to infections, as well as pyoderma gangrenosum or erythema nodosum.",
+        "Bowel obstruction may occur as a complication of chronic inflammation, and those with the disease are at much greater risk of colorectal cancer and small bowel cancer.",
+        "Although the precise causes of Crohn's disease are unknown, it is believed to be caused by a combination of environmental, immune, and bacterial factors in genetically susceptible individuals.",
+        "It results in a chronic inflammatory disorder, in which the body's immune system defends the gastrointestinal tract, possibly targeting microbial antigens.",
+        "Although Crohn's is an immune-related disease, it does not seem to be an autoimmune disease (the immune system is not triggered by the body itself).",
+        "The exact underlying immune problem is not clear, though it may be immunodeficiency.",
+        "About half of the overall risk is related to genetics, with more than 70 genes involved.",
+        "Tobacco smokers are three times as likely to develop Crohn's disease as non-smokers.",
+        "Crohn's disease is often triggered after a gastroenteritis episode."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Aging brain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=749745",
+      "retrieved_at": "2026-10-18T18:51:15.344Z",
+      "sha256": "3e8f602c1b7feb713eca30a5bddaa29f36e970ee7e1704b988e0a29bbc63605c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aging brain refers to biological and functional changes that occur in the brain as individuals advance in age.",
+        "It encompasses both the normal alterations which are universally experienced and abnormalities induced by illnesses, diagnosed or not.",
+        "Aging is a major risk factor for most common neurodegenerative diseases, including mild cognitive impairment, dementias including Alzheimer's disease, cerebrovascular disease, Parkinson's disease, and Amyotrophic Lateral Sclerosis.",
+        "While much research has focused on diseases of aging, there are few informative studies on the molecular biology of the aging brain[1] in the absence of neurodegenerative disease or the neuropsychological profile of healthy older adults.",
+        "However, research suggests that the aging process is associated with several structural, chemical, and functional changes in the brain as well as a host of neurocognitive changes.",
+        "Recent reports in model organisms suggest that as organisms age, there are distinct changes in the expression of genes at the single neuron level.",
+        "This page is an overview of the changes associated with human brain aging, including aging without concomitant diseases."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Gut microbiota",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3135637",
+      "retrieved_at": "2026-10-18T18:51:15.344Z",
+      "sha256": "83b40b664382722987394e10afe3344788e9152ec3d33eef369cdd0541722d64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gut microbiota, gut microbiome, or gut flora are the microorganisms, including bacteria, archaea, fungi, and viruses, that live in the digestive tracts of animals.",
+        "The gastrointestinal metagenome is the aggregate of all the genomes of the gut microbiota.",
+        "The gut microbiota has broad impacts, including effects on colonization, resistance to pathogens, maintaining the intestinal epithelium, metabolizing dietary and pharmaceutical compounds, controlling immune function, and even behavior through the gut–brain axis.",
+        "Imbalances in the gut microbiota (dysbiosis) have been associated with numerous diseases, including inflammatory bowel disease, certain cancers, and even neurological disorders, prompting increased efforts to develop microbiome-targeted therapies.",
+        "The microbial composition of the gut microbiota varies across regions of the digestive tract.",
+        "The colon contains the highest microbial density of any human-associated microbial community studied so far, representing between 300 and 1000 different species.",
+        "Bacteria are the largest and to date, best studied component and 99% of gut bacteria come from about 30 or 40 species.",
+        "Over 99% of the bacteria in the gut are anaerobes, but in the cecum, aerobic bacteria reach high densities.",
+        "It is estimated that the human gut microbiota has around a hundred times as many genes as there are in the human genome."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T18:51:15.344Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "mm-1876",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Railway signalling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=276071",
+      "retrieved_at": "2026-10-18T18:09:52.599Z",
+      "sha256": "9e6c423276ed97d18058bac4b92523a42dcb4c41922694804739bebe4887ded2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Railway signalling (British English), or railroad signaling (American English), is a system used to control the movement of railway traffic.",
+        "Trains move on fixed rails, making them uniquely susceptible to collision.",
+        "This susceptibility is exacerbated by the enormous weight and inertia of a train, which makes it difficult to quickly stop when encountering an obstacle.",
+        "In the UK, the Regulation of Railways Act 1889 introduced a series of requirements on matters such as the implementation of interlocked block signalling and other safety measures as a direct result of the Armagh rail disaster in that year.",
+        "Most forms of train control involve movement authority being passed from those responsible for each section of a rail network (e.g.",
+        "The set of rules and the physical equipment used to accomplish this determine what is known as the method of working (UK), method of operation (US) or safe-working (Aus.).",
+        "Not all these methods require the use of physical signals, and some systems are specific to single-track railways.",
+        "Hand and arm signals were used to direct the \"train drivers\".",
+        "Foggy and poor-visibility conditions later gave rise to flags and lanterns.",
+        "Wayside signalling dates back as far as 1832, and used elevated flags or balls that could be seen from afar."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Token (railway signalling)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=702958",
+      "retrieved_at": "2026-10-18T18:09:52.599Z",
+      "sha256": "254e415929b89df5a3c08f58d00f550bf80d93050d55e0af607f1e59e6aae827",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In railway signalling, a token is a physical object which a train driver is required to have or see before entering onto a particular section of single track.",
+        "The token is clearly endorsed with the names of the section to which it belongs.",
+        "A token system is more commonly used for single lines because of the greater risk of collision in the event of a mistake being made by a signaller or traincrew than on double lines."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Pacific Southwest Railway Museum",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2763458",
+      "retrieved_at": "2026-10-18T18:09:52.599Z",
+      "sha256": "7b9f7014d57ae289f70efb78dec9bfe097692dc3f028f3f9584bc4b16f723fe3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Pacific Southwest Railway Museum is a railroad museum in Campo, California, on the San Diego and Arizona Eastern Railway line.",
+        "The museum also owns and manages a railroad depot in La Mesa, California."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "UK railway signalling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2997491",
+      "retrieved_at": "2026-10-18T18:09:52.599Z",
+      "sha256": "bf7b8fa49cd1e5e156c3ccfae0998438a5396a3a190d08206f50cadd979ff499",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The railway signalling system used across the majority of the United Kingdom rail network uses lineside signals to control the movement and speed of trains.",
+        "The modern-day system mostly uses two, three, and four aspect colour-light signals using track circuit – or axle counter – block signalling.",
+        "It is a development of the original absolute block signalling that is still being used on many secondary lines.",
+        "The use of lineside signals in Britain is restricted to railways with a maximum speed limit of up to 125 miles per hour (201 km/h).",
+        "This is the maximum speed at which the train can travel safely using line-side signalling; if the train runs any faster, it will not be possible for the train driver to safely read colour-light signalling.",
+        "Trains operating at speeds faster than 125 mph (for example on High Speed 1) use an in-cab signalling system that automatically determines and calculates speed restrictions."
+      ]
+    }
+  ]
+}

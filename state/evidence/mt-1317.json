@@ -1,0 +1,56 @@
+{
+  "id": "mt-1317",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T19:06:19.748Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "B2.4 - Real-Time Telemetry Data Transfer Platform",
+      "publisher": "AMA Service GmbH, Von-Münchhausen-Str. 49, 31515 Wunstorf",
+      "author": "Ufelek, M.; O. Eryigit, H.; Sarper, A.",
+      "published_at": "2026",
+      "url": "https://doi.org/10.5162/ettc2026/b2.4",
+      "retrieved_at": "2026-10-18T19:06:22.384Z",
+      "sha256": "5268dce1ba7a96df4f50d08bc0f304d33cc327c5fb34cdae9716d08d79fce71b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "B2.4 - Real-Time Telemetry Data Transfer Platform &middot; AMA Science Your are using an outdated browser.",
+        "AMA Association for Sensors and Measurement Home B2.4 - Real-Time Telemetry Data Transfer Platform Event ETTC 2026 - European Test and Telemetry Conference 2026-06-09 - 2026-06-11 Nuremberg Chapter Networks & Architectures Author(s) M.",
+        "The speed of operations during test and data analysis activities of indigenously developed aircraft constitutes a critical factor in overall program success.",
+        "System-level and software-based enhancements that shorten the time span between the conceptual design phase and entry into service make substantial benefit to the efficiency and effectiveness of the product development lifecycle.",
+        "During the flight test phase of these platforms, data packets which transmitted from the aircraft to Flight Test Management Centers via Telemetry Systems are visualized and analyzed in real-time by using Real-Time Data Monitoring software.",
+        "In the post-test data analysis phase, processed data sets are shared by telemetry responsible engineers with the relevant design teams to support detailed data analysis activities.",
+        "Through the implementation of a Real-Time Telemetry Data Transfer Platform, the data delivering process — previously conducted using legacy methods and requiring 2 hours — has been reduced to a matter of minutes.",
+        "The core architectural principle of the software is based on extracting data packets not after the completion of flight activities, but from the onset of operations which are categorized according to specific test points and data set groups.",
+        "Following engine shutdown, the relevant data sets are delivered to the responsible design teams within five minutes for analysis.",
+        "The shared data packages include not only time-based parameter data, but also synchronized tower and aircraft tail camera video recordings and screen captures of real-time data monitoring software screens that contain various analytical indicators and visualization tools.",
+        "By accelerating the data distribution workflow, the developed software is expected to make a benefit to project schedules and overall flight test programs execution efficiency."
+      ]
+    }
+  ]
+}

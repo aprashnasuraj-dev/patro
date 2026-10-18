@@ -1,0 +1,103 @@
+{
+  "id": "mm-1270",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Wedding",
+      "publisher": "Hebrew Union College Press",
+      "author": null,
+      "published_at": "2021-05-15",
+      "url": "https://doi.org/10.2307/j.ctv1ks0hd0.27",
+      "retrieved_at": "2026-10-18T17:44:29.599Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wedding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32893",
+      "retrieved_at": "2026-10-18T17:44:29.754Z",
+      "sha256": "d282ae207012930e8dd3c50c8c954b929eabf5b5d528e1c62caa868e0a642f4a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A wedding is a ceremony in which two people are united in marriage.",
+        "Wedding traditions and customs vary greatly between cultures, ethnicities, races, religions, denominations, countries, social classes, and sexual orientations.",
+        "Most wedding ceremonies involve an exchange of marriage vows by a couple; a presentation of a gift (e.g., an offering, rings, a symbolic item, flowers, money, or a dress); and a public proclamation of marriage by an authority figure or celebrant.",
+        "Special wedding garments are often worn, and the ceremony is sometimes followed by a wedding reception.",
+        "Music, poetry, prayers, or readings from religious texts or literature are also commonly incorporated into the ceremony, as well as superstitious customs."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hindu wedding",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2235585",
+      "retrieved_at": "2026-10-18T17:44:29.754Z",
+      "sha256": "703dac5976dada266688713fcd02880ec3afd6e5370edc658f87b988b500cd81",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The weddings celebrations may extend for several days and involve large number of participants.",
+        "The bride's and groom's homes—entrance, walls, floor, roof—are sometimes decorated with colors, flowers, lights and other decorations.",
+        "The word vivāha originated as a sacred union of two people as per Vedic traditions, i.e.",
+        "what many call marriage, but based on cosmic laws and advanced ancient practices.",
+        "Under Vedic Hindu traditions, marriage is viewed as one of the saṁskāras performed during the life of a human being, which are lifelong commitments of one wife and one husband.",
+        "In India, marriage has been looked upon as having been designed by the cosmos and considered as a \"sacred oneness witnessed by fire itself.\" Hindu families have traditionally been patrilocal.",
+        "The Arya Samaj movement popularized the term Vedic wedding among the Hindu expatriates in north during the colonial era, it was however prevalent in south India even before.",
+        "The roots of this tradition are found in hymn 10.85 of the Rigveda Shakala samhita, which is also called the \"Rigvedic wedding hymn\".",
+        "The primary witness of a Hindu marriage is the fire-deity (or the Sacred Fire) Agni, in the presence of family and friends.",
+        "The ceremony is traditionally conducted entirely or at least partially in Sanskrit, considered by Hindus as the language of holy ceremonies.",
+        "The rituals are prescribed in the Gruhya sutra composed by various rishis such as Apastamba, Baudhayana and Ashvalayana.",
+        "The pre-wedding and post-wedding rituals and celebrations vary by region, preference and the resources of the groom, bride and their families."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Marriage and wedding customs in the Philippines",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26255336",
+      "retrieved_at": "2026-10-18T17:44:29.754Z",
+      "sha256": "fd925c04afa54a52d878da7bf192c4e220466514f072a42e59e50ce96c0d148d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Traditional marriage customs in the Philippines  and Filipino wedding practices pertain to the characteristics of marriage and wedding traditions established and adhered by them Filipino men and women in the Philippines after a period of adoption courtship and engagement.",
+        "These traditions extend to other countries around the world where Filipino communities exist.",
+        "Kasalan is the Filipino word for \"wedding\", while its root word – kasal – means \"marriage\".",
+        "The present-day character of marriages and weddings in the Philippines were primarily influenced by the permutation of Christian, both Catholic and Protestant, Hindu, Islam, Chinese, Spanish, and American models."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Islamic marital practices",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26344181",
+      "retrieved_at": "2026-10-18T17:44:29.754Z",
+      "sha256": "47c3ce4baad86c9887dd1b428c218d38d9c779995ffec8d5b5f3bebd43b8b132",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Islamic marital or nikah practices are traditions and practices that relate to wedding ceremonies and marriage rituals between a man and a woman in the Muslim world.",
+        "Muslims are guided by Islamic laws and practices specified in the Quran, but Islamic marriage customs and relations vary by country of origin and government regulations, and non-Muslim practices (cakes, rings, music) sometimes appear despite the efforts of revivalists and reformers.",
+        "Islam encourages early marriage, not preceded by dating between the prospective bride and groom, as Islamic law places \"strict conditions on interactions\" between the opposite sexes.",
+        "Consequently, mainstream Islamic marriages  tend to be \"family affairs\" where parents and other older relatives are involved in match making.",
+        "Islamic marital jurisprudence allows Muslim men to be married to multiple women (a maximum of four at one time)."
+      ]
+    }
+  ]
+}

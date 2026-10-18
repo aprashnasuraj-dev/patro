@@ -1,0 +1,128 @@
+{
+  "id": "mm-1515",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Do Oil Prices and Output Move Together? State-Dependent Evidence",
+      "publisher": "EconJournals",
+      "author": "Jun, Jongbyung",
+      "published_at": "2026-09-02",
+      "url": "https://doi.org/10.32479/ijeep.24534",
+      "retrieved_at": "2026-10-18T17:57:57.302Z",
+      "sha256": "9976fa22f276dc365d116984f3ed5b5a453810d1663a18aac32a64fe66293452",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper reexamines the relationship between oil prices and U.S.",
+        "industrial production using monthly data from January 1974 to August 2025.",
+        "First, the full-sample correlation between oil price changes and industrial production growth is positive, contrary to the conventional view.",
+        "Second, this masks substantial time variation: the correlation is negative before the mid-1980s but mostly positive thereafter.",
+        "Third, positive co-movement becomes substantially stronger during recessions.",
+        "Using a structural vector autoregression (SVAR) that decomposes oil price movements into supply, global demand, and oil-specific demand shocks, we examine the forecast error variance decomposition (FEVD) of the real price of oil.",
+        "The full-sample baseline shows oil prices are dominated by oil-specific demand shocks, with global demand shocks playing a modest role.",
+        "In contrast, state-dependent results reveal that during recessions, global demand shocks account for a substantially larger share of oil price forecast error variance.",
+        "Because global demand shocks move oil prices and output together, this shift explains why positive co-movement is stronger during recessions.",
+        "Rolling estimation further shows that the long-run shift from negative to positive co-movement reflects changes in the transmission of oil shocks rather than a secular increase in the importance of global demand shocks."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Pipeline",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=51111",
+      "retrieved_at": "2026-10-18T17:57:57.525Z",
+      "sha256": "9eee91bfa3345233b0c51637d05e0a891c6b8e44a968a67d8260deb66862fb5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A pipeline is a system of pipes for long-distance transportation of a liquid or gas, typically to a market area for consumption.",
+        "Industry datasets indicate the length of the global trunk/transmission pipeline network is on the order of ~2.19 million km by 2025, with North America accounting for ~44%.",
+        "The United States had 65%, Russia had 8%, and Canada had 3%, thus 76% of all pipeline were in these three countries.",
+        "The main attribute to pollution from pipelines is caused by corrosion and leakage.",
+        "Pipeline and Gas Journal's worldwide survey figures indicate that 118,623 miles (190,905 km) of pipelines are planned and under construction.",
+        "Of these, 88,976 miles (143,193 km) represent projects in the planning and design phase; 29,647 miles (47,712 km) reflect pipelines in various stages of construction.",
+        "Liquids and gases are transported in pipelines, and any chemically stable substance can be sent through a pipeline.",
+        "Pipelines are useful for transporting water for drinking or irrigation over long distances when it needs to move over hills, or where canals or channels are poor choices due to considerations of evaporation, pollution, or environmental impact.",
+        "Oil pipelines are made from steel or plastic tubes which are usually buried.",
+        "The oil is moved through the pipelines by pump stations along the pipeline.",
+        "Natural gas (and similar gaseous fuels) are pressurized into liquids known as natural gas liquids (NGLs).",
+        "Hydrogen pipeline transport is the transportation of hydrogen through a pipe."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Keystone Pipeline",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11675105",
+      "retrieved_at": "2026-10-18T17:57:57.526Z",
+      "sha256": "49d1f79bc0ff27314bdde39ff8ef360032d7c0fe664cd5cbf3d2939a38edf850",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Keystone Pipeline System is an oil pipeline system in Canada and the United States, commissioned in 2010 by TransCanada (later TC Energy).",
+        "It is owned by South Bow, since TC Energy's spin off of its liquids business into a separate publicly traded company, effective October 1, 2024.",
+        "It runs from the Western Canadian Sedimentary Basin in Alberta to refineries in Illinois and Texas, and also to oil tank farms and an oil pipeline distribution center in Cushing, Oklahoma.",
+        "TransCanada Keystone Pipeline GP Ltd, abbreviated here as Keystone, operates four phases of the project.",
+        "In 2013, the first two phases had the capacity to deliver up to 590,000 barrels (94,000 m3) per day of oil into the Midwest refineries.",
+        "Phase III has capacity to deliver up to 700,000 barrels (110,000 m3) per day to the Texas refineries.",
+        "By comparison, production of petroleum in the United States averaged 9.4 million barrels (1.5 million cubic meters) per day in first-half 2015, with gross exports of 500,000 barrels (79,000 m3) per day through July 2015.",
+        "A proposed fourth pipeline, called Keystone XL Pipeline (sometimes abbreviated KXL, with XL standing for \"export limited\"), would have connected the Phase I-pipeline terminals in Hardisty, Alberta, and Steele City, Nebraska, by a shorter route and a larger-diameter pipe.",
+        "It would have run through Baker, Montana, where American-produced light crude oil from the Williston Basin (Bakken formation) of Montana and North Dakota would have been added to the Keystone's throughput of synthetic crude oil (syncrude) and diluted bitumen (dilbit) from the oil sands of Canada.",
+        "It is unclear how much of the oil transported through the pipeline would have reached American consumers instead of being exported to other countries, as most of it would have been refined along the Gulf Coast.",
+        "The pipeline became well known when the proposed KXL extension attracted opposition from environmentalists with concerns about climate change and fossil fuels.",
+        "In 2015, KXL was temporarily delayed by President Barack Obama."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Enbridge Northern Gateway Pipelines",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25948625",
+      "retrieved_at": "2026-10-18T17:57:57.526Z",
+      "sha256": "4f294e39743ef1b497e580c4c0240f1c60b03f7e018d3a916247bc6b9c1de1ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Enbridge Northern Gateway Pipelines were a planned-but-never-built project for a twin pipeline from Bruderheim, Alberta, to Kitimat, British Columbia.",
+        "The eastbound pipeline would have imported natural gas condensate, and the westbound pipeline would have exported diluted bitumen from the Athabasca oil sands to a marine terminal in Kitimat for transportation to Asian markets via oil tankers.",
+        "The project plan was developed by Enbridge Inc., a Canadian crude oil and liquids pipeline and storage company.",
+        "When completed, the pipeline and terminal would have provided 104 permanent operating positions created within the company and 113 positions with the associated marine services.",
+        "First Nations groups, many municipalities, including the Union of BC Municipalities, environmentalists and oil sands opponents, among others, denounced the project because of the environmental, economic, social and cultural risks posed by the pipeline.",
+        "Proponents argued that the pipeline would have provided Indigenous communities with equity ownership, employment, community trust and stewardship programs.",
+        "The Federal Court of Appeal ultimately ruled that consultation with First Nations was inadequate and overturned the approval.",
+        "Groups like the Yinka Dene Alliance organized to campaign against the project.",
+        "In December 2010, 66 First Nations bands in British Columbia, including many along the proposed pipeline route, signed the Save the Fraser Declaration in opposition to the project, and 40 more signed since that time.",
+        "The proposal was also opposed by numerous non-governmental organizations, which cite previous spills, concerns over oil sands expansion, and associated risks in transportation.",
+        "In June 2014 the Northern Gateway pipeline project was approved by the federal government, subject to 209 conditions.",
+        "In 2015 the CBC questioned the silence concerning the Northern Gateway project and suggested that Enbridge might have quietly shelved the project."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Submarine pipeline",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40024054",
+      "retrieved_at": "2026-10-18T17:57:57.526Z",
+      "sha256": "3be004f5c3354e1acf4627e79b17caabb2a7e244a3ad08cb2f6146dbda52fa8d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A submarine pipeline (also known as marine, subsea or offshore pipeline) is a pipeline that is laid on the seabed or below it inside a trench.",
+        "In some cases, the pipeline is mostly on-land but in places it crosses water expanses, such as small seas, straits and rivers.",
+        "Submarine pipelines are used primarily to carry oil or gas, but transportation of water is also important.",
+        "A distinction is sometimes made between a flowline and a pipeline.",
+        "The former is an intrafield pipeline, in the sense that it is used to connect subsea wellheads, manifolds and the platform within a particular development field.",
+        "The latter, sometimes referred to as an export pipeline, is used to bring the resource to shore.",
+        "Sizeable pipeline construction projects need to take into account many factors, such as the offshore ecology, geohazards and environmental loading – they are often undertaken by multidisciplinary, international teams."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "mm-1721",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Medicinal plants",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=822244",
+      "retrieved_at": "2026-10-18T18:05:53.676Z",
+      "sha256": "5531808b9e9558baf6c61fc5916bc77fb24c9df5eb14e1f1a6fe7f658bf1a40e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Medicinal plants, also called medicinal herbs, have been discovered and used in traditional medicine practices since prehistoric times.",
+        "Plants synthesize hundreds of chemical compounds for various functions, including defense and protection against insects, fungi, diseases, against parasites and herbivorous mammals.",
+        "The earliest historical records of herbs are found from the Sumerian civilization, where hundreds of medicinal plants including opium are listed on clay tablets, c.",
+        "The Greek physician Dioscorides, who worked in the Roman army, documented over 1000 recipes for medicines using over 600 medicinal plants in De materia medica, c.",
+        "60 AD; this formed the basis of pharmacopoeias for some 1500 years.",
+        "Drug research sometimes makes use of ethnobotany to search for pharmacologically active substances, and this approach has yielded hundreds of useful compounds.",
+        "These include the common drugs aspirin, digoxin, quinine, and opium.",
+        "The compounds found in plants are diverse, with most in four biochemical classes: alkaloids, glycosides, polyphenols, and terpenes.",
+        "Few of these are scientifically confirmed as medicines or used in conventional medicine.",
+        "Medicinal plants are widely used as folk medicine in non-industrialized societies, mainly because they are readily available and cheaper than modern medicines.",
+        "In many countries, there is little regulation of traditional medicine, but the World Health Organization coordinates a network to encourage safe and rational use.",
+        "The botanical herbal market has been criticized for being poorly regulated and containing placebo and pseudoscience products with no scientific research to support their medical claims."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "List of poisonous plants",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1257003",
+      "retrieved_at": "2026-10-18T18:05:53.676Z",
+      "sha256": "ad37236a5ff691af4fcfe13418b8e76ae1f7a94ba14473bc0dd6bbdf1be95dee",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Plants that cause illness or death after consuming them are referred to as poisonous plants.",
+        "The toxins in poisonous plants affect herbivores, and deter them from consuming the plants.",
+        "Plants cannot move to escape their predators, so they must have other means of protecting themselves from herbivorous animals.",
+        "Some plants have physical defenses such as thorns, spines and prickles, but by far the most common type of protection is chemical.",
+        "Over millennia, through the process of natural selection, plants have evolved the means to produce a vast and complicated array of chemical compounds to deter herbivores.",
+        "Tannin, for example, is a defensive compound that emerged relatively early in the evolutionary history of plants, while more complex molecules such as polyacetylenes are found in younger groups of plants such as the Asterales.",
+        "Many of the known plant defense compounds primarily defend against consumption by insects, though other animals, including humans, that consume such plants may also experience negative effects, ranging from mild discomfort to death.",
+        "Many of these poisonous compounds also have important medicinal benefits.",
+        "The varieties of phytochemical defenses in plants are so numerous that many questions about them remain unanswered, including:\n\nWhich plants have which types of defense?",
+        "Which herbivores, specifically, are the plants defended against?",
+        "What chemical structures and mechanisms of toxicity are involved in the compounds that provide defense?",
+        "These questions and others constitute an active area of research in modern botany, with important implications for understanding plant evolution and medical science."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Plant defense against herbivory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4189740",
+      "retrieved_at": "2026-10-18T18:05:53.677Z",
+      "sha256": "47fcd2226d01e7b2e710efbdce7d556c28e4f4dff1d47eb537bf54e874f1fdf0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Plant defense against herbivory or host-plant resistance is a range of adaptations evolved by plants which improve their survival and reproduction by reducing the impact of herbivores.",
+        "Many plants produce secondary metabolites, known as allelochemicals, that influence the behavior, growth, or survival of herbivores.",
+        "These chemical defenses can act as repellents or toxins to herbivores or reduce plant digestibility.",
+        "Another defensive strategy of plants is changing their attractiveness.",
+        "Plants can sense being touched, and they can respond with strategies to defend against herbivores.",
+        "Plants alter their appearance by changing their size or quality in a way that prevents overconsumption by large herbivores, reducing the rate at which they are consumed.",
+        "Other defensive strategies used by plants include escaping or avoiding herbivores at any time in any place – for example, by growing in a location where plants are not easily found or accessed by herbivores or by changing seasonal growth patterns.",
+        "Another approach diverts herbivores toward eating non-essential parts or enhances the ability of a plant to recover from the damage caused by herbivory.",
+        "Some plants support the presence of natural enemies of herbivores, which protect the plant.",
+        "Each type of defense can be either constitutive (always present in the plant) or induced (produced in reaction to damage or stress caused by herbivores).",
+        "Historically, insects have been the most significant herbivores, and the evolution of land plants is closely associated with the evolution of insects.",
+        "While most plant defenses are directed against insects, other defenses have evolved that are aimed at vertebrate herbivores, such as birds and mammals."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Coccinellidae",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18973752",
+      "retrieved_at": "2026-10-18T18:05:53.677Z",
+      "sha256": "fc84f09e8a0b7f026c1caaa78ade8a4efdbc5dd54e5c1c5e130f75af039d4d4d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "They are commonly known as ladybugs in North America and ladybirds in the United Kingdom, Australia, New Zealand, Ireland, and other English speaking territories; \"lady\" refers to Mary, the mother of Jesus.",
+        "Entomologists use the names ladybird beetles or lady beetles to avoid confusion with true bugs.",
+        "The more than 6,000 described species have a global distribution and are found in a variety of habitats.",
+        "Many of the species have conspicuous aposematic (warning) colours and patterns, such as red with black spots, that warn potential predators that they taste bad.",
+        "Most coccinellid species are carnivorous predators, preying on insects such as aphids and scale insects.",
+        "Other species are known to consume non-animal matter, including plants and fungi.",
+        "They are promiscuous breeders, reproducing in spring and summer in temperate regions and during the wet season in tropical regions.",
+        "Many predatory species lay their eggs near colonies of prey, providing their larvae with a food source.",
+        "Like most insects, they develop from larva to pupa to adult.",
+        "Temperate species hibernate and diapause during the winter; tropical species are dormant during the dry season.",
+        "Species that prey on agricultural pests are considered beneficial insects.",
+        "Several species have been introduced outside their range as biological control agents, with varying degrees of success."
+      ]
+    }
+  ]
+}

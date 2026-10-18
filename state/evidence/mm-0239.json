@@ -1,0 +1,90 @@
+{
+  "id": "mm-0239",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Book",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3778",
+      "retrieved_at": "2026-10-18T17:09:59.404Z",
+      "sha256": "ced5444fa9ace6f100fd0ff619a14befd7cae062643d06bfff3906d5833fa010",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A book is a written work of substantial length created by one or more authors.",
+        "The work is typically printed on many sheets of paper as pages bound together into a bookblock, then glued to the middle of a foldable cover that protects the pages.",
+        "Before the wide adoption of the modern printing press, codices were used to create handwritten manuscripts.",
+        "Nowadays, books can be distributed in other forms like audiobooks, and electronic books (ebooks).",
+        "Books are broadly classified into fiction, which contains invented or imaginary narratives; and non-fiction, which contains content intended as factual truth.",
+        "The book publishing process is the series of steps involved in its creation and dissemination, often undertaken in modern times by a commercial publishing company.",
+        "The publishing industry has recently seen major changes due to new technologies, including ebooks and audiobooks (recordings of books read aloud).",
+        "Awareness of the needs of people with print disabilities has led to a rise in accessible publishing formats such as braille printing and large-print editions.",
+        "Google Books estimated in 2010 that roughly 130 million total unique books have been published.",
+        "Books are sold at general retail stores and specialized bookstores, as well as online, and can be borrowed from libraries or public bookcases.",
+        "The reception of books has led to several social consequences, including censorship.",
+        "Books are sometimes contrasted with periodical literature, such as newspapers or magazines, for which new editions are published according to a regular schedule."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Scribe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=69313",
+      "retrieved_at": "2026-10-18T17:09:59.404Z",
+      "sha256": "3400f602084e84a2854338e975ed6aeedf53288e53ce7e43fb6c7b1443c6cafc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A scribe is a person who serves as a professional copyist, especially one who made copies of manuscripts before the invention of automatic printing.",
+        "The work of scribes can involve copying manuscripts and other scripts as well as secretarial and administrative duties such as the taking of dictation and keeping of business, judicial, and historical records for kings, nobles, temples, and cities.",
+        "Scribes contributed in fundamental ways to ancient and medieval cultures, including Egypt, China, India, Persia, the Roman Empire, and medieval Europe.",
+        "Judaism, Buddhism, and Islam have important scribal traditions.",
+        "Scribes have been essential in these cultures for the preservation of legal codes, religious texts, and artistic and didactic literature.",
+        "In some cultures, social functions of the scribe and of the calligrapher overlap, but the emphasis in scribal writing is on exactitude, whereas calligraphy aims to express the aesthetic qualities of writing apart from its content.",
+        "Previously a prominent fixture in literary cultures, scribes lost most of their prominence and status with the advent of the printing press.",
+        "The generally less prestigious profession of scrivener continued to be important for copying and writing out legal documents and the like.",
+        "In societies with low literacy rates, street-corner letter-writers (and readers) may still be found providing scribe service."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Copying",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=387960",
+      "retrieved_at": "2026-10-18T17:09:59.404Z",
+      "sha256": "efaff3fc5649993d1638c016ce3c05f31abd38d89b818e1cac313acf2ce9a441",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Copying is the duplication of information or an artifact based on an instance of that information or artifact, and not using the process that originally generated it.",
+        "With analog forms of information, copying is only possible to a limited degree of accuracy, which depends on the quality of the equipment used and the skill of the operator.",
+        "There is some inevitable generation loss, deterioration and accumulation of \"noise\" (random small changes) from original to copy when copies are made.",
+        "Copy and paste is frequently used by a computer user when they select and copy an area of text or content."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Commonplace book",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=492321",
+      "retrieved_at": "2026-10-18T17:09:59.404Z",
+      "sha256": "3353ae75982fccd269e97f1e9dc96cd706676f103c7c3e862d5e788253fea5fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Commonplace books (or commonplaces) are personal notebooks used to compile any information the owner finds interesting or useful.",
+        "They can variously contain notes, proverbs, adages, aphorisms, maxims, recipes, quotes, letters, poems, tables of weights and measures, prayers, legal formulas, and other professional references.",
+        "They have been kept from antiquity, and were kept particularly during the Renaissance and in the nineteenth century.",
+        "Entries are most often organized under systematic subject headings and differ functionally from journals or diaries, which are chronological and introspective."
+      ]
+    }
+  ]
+}

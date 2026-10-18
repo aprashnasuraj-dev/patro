@@ -1,0 +1,125 @@
+{
+  "id": "mt-1223",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T19:02:58.127Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cecil B. DeMille",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6176",
+      "retrieved_at": "2026-10-18T19:03:00.588Z",
+      "sha256": "e2fea91d04c9b108181e2792d839d6a7c0bb7db8316536c1fdcd511d1a8ce7b3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cecil Blount DeMille (; August 12, 1881 – January 21, 1959) was an American filmmaker and actor.",
+        "Between 1914 and 1958, he created 70 features including silent and sound films.",
+        "He is acknowledged as a founding father of American cinema and the most commercially successful producer-director in film history, with many films dominating the box office three or four at a time.",
+        "His films were distinguished by their epic scale and by his cinematic showmanship.",
+        "His silent films included social dramas, comedies, Westerns, farces, morality plays, and historical pageants.",
+        "Born in Ashfield, Massachusetts, and raised in New York City, DeMille began his career as a stage actor in 1900.",
+        "He later began to write and direct stage plays, a few with his older brother William de Mille, and some with Jesse L.",
+        "DeMille's first film, The Squaw Man (1914), was the first full-length feature film shot in Hollywood.",
+        "Its interracial love story was commercially successful, and the film marked Hollywood as the new home of the U.S.",
+        "Based on continued film successes, DeMille founded Famous Players-Lasky, which was later reverse merged into Paramount Pictures with Lasky and Adolph Zukor.",
+        "His first biblical epic, The Ten Commandments (1923), was both a critical and commercial success; it held the Paramount revenue record for 25 years.",
+        "DeMille directed The King of Kings (1927), a biography of Jesus, which gained approval for its sensitivity and reached more than 800 million viewers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Giuseppe Verdi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12958",
+      "retrieved_at": "2026-10-18T19:03:00.588Z",
+      "sha256": "ddf9f2f3d02cac41e1bcabbf1d6e23cd4153af6cdaa818464d5fb2b56ace632e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Giuseppe Fortunino Francesco Verdi ( VAIR-dee; Italian: [dʒuˈzɛppe ˈverdi]; 9 or 10 October 1813 – 27 January 1901) was an Italian composer best known for his operas.",
+        "He was born near Busseto, a small town in the modern province of Parma, to a family of moderate means, receiving a musical education with the help of a local patron named Antonio Barezzi.",
+        "Verdi came to dominate the Italian opera scene after the era of Gioachino Rossini, Vincenzo Bellini, and Gaetano Donizetti, whose works significantly influenced him.",
+        "He was also strongly influenced by the French Grand opera style, particularly Giacomo Meyerbeer and Gaspare Spontini.",
+        "In his early operas, Verdi demonstrated sympathy with the Risorgimento movement which sought the unification of Italy.",
+        "The chorus \"Va, pensiero\" from his early opera Nabucco (1842), and similar choruses in later operas, were much in the spirit of the unification movement, and the composer himself became esteemed as a representative of these ideals.",
+        "An intensely private person, Verdi did not seek to ingratiate himself with popular movements.",
+        "As he became professionally successful, he was able to reduce his operatic workload and sought to establish himself as a landowner in his native region.",
+        "He found further fame with the three peaks of his \"middle period\": Rigoletto (1851), Il trovatore and La traviata (both 1853).",
+        "He surprised the musical world by returning, after his success with the opera Aida (1871), with three late masterpieces: his Requiem (1874), and the operas Otello (1887) and Falstaff (1893).",
+        "Verdi's operas remain among the most popular in the repertoire.",
+        "In 2013, the bicentenary of his birth was widely celebrated around the world with television and radio broadcasts and live performances."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T19:03:00.588Z",
+      "sha256": "b21b1882350c559f874f09167a4264076ae5833e147a8722ad4e3f856eec703e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Coca",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=53292",
+      "retrieved_at": "2026-10-18T19:03:00.588Z",
+      "sha256": "a228a87ec588d96c0473f333aa192984025904ff32313df2e74184c8edb79969",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Coca is any of the four cultivated plants in the family Erythroxylaceae, native to western South America.",
+        "It is known worldwide for its psychoactive alkaloid, cocaine.",
+        "The leaves contain cocaine, which acts as a mild stimulant when chewed or consumed as tea; this traditional use involves slower absorption than purified cocaine, and there is no evidence of addiction or withdrawal symptoms from such natural consumption.",
+        "The coca plant is a shrub-like bush with curved branches, oval leaves marked by distinct curved lines, and small yellowish-white flowers that develop into red berries.",
+        "Genomic analysis indicates coca was domesticated two or three separate times from the wild species Erythroxylum gracilipes by different South American groups during the Holocene.",
+        "Chewing coca leaves dates back at least 8,000 years in South America, as evidenced by coca leaves and calcite found in house floors in Peru's Nanchoc Valley, suggesting early communal use alongside the rise of farming.",
+        "The Incas deeply integrated it into their society for labor, religion, and trade, valuing it so highly that they colonized new lands for its cultivation.",
+        "Spanish colonizers later attempted to suppress its use, but ultimately relied on it to sustain enslaved laborers.",
+        "Traditionally, across Andean cultures, coca leaves have been used for medicinal, nutritional, religious, and social purposes—serving as a stimulant, remedy for ailments, spiritual tool, and source of sustenance, primarily through chewing and tea.",
+        "Coca thrives in hot, humid environments and can be harvested multiple times a year from carefully tended plots.",
+        "It is grown as a cash crop in the Argentine Northwest, Bolivia, the Alto Rio Negro Indigenous Territory in Brazil, Colombia, Venezuela, Ecuador, and Peru, including in areas where its cultivation is unlawful.",
+        "There are some reports of cultivation in southern Mexico using seeds imported from South America, as an alternative to smuggling the processed drug cocaine."
+      ]
+    }
+  ]
+}

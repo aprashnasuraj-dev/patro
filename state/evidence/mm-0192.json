@@ -1,0 +1,140 @@
+{
+  "id": "mm-0192",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why prime numbers still fascinate mathematicians, 2,300 years later",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Weissman, Martin",
+      "published_at": "2018-04-02",
+      "url": "https://theconversation.com/why-prime-numbers-still-fascinate-mathematicians-2-300-years-later-92484",
+      "retrieved_at": "2026-10-18T17:06:25.073Z",
+      "sha256": "63ea37b9a306d53c56744f274c2bc18c86d6efd8823ed72a1c0b438078486b69",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why prime numbers still fascinate mathematicians, 2,300 years later Skip to content Academic rigor, journalistic flair Why prime numbers still fascinate mathematicians, 2,300 years later Published: April 2, 2018 6:47am EDT Primes still have the power to surprise.",
+        "Langlands’ research demonstrated how concepts from geometry, algebra and analysis could be brought together by a common link to prime numbers.",
+        "When the King of Norway presents the award to Langlands in May, he will honor the latest in a 2,300-year effort to understand prime numbers, arguably the biggest and oldest data set in mathematics.",
+        "As a mathematician devoted to this “Langlands program,” I’m fascinated by the history of prime numbers and how recent advances tease out their secrets.",
+        "How to find primes To study primes, mathematicians strain whole numbers through one virtual mesh after another until only primes remain.",
+        "This sieving process produced tables of millions of primes in the 1800s.",
+        "It allows today’s computers to find billions of primes in less than a second .",
+        "But the core idea of the sieve has not changed in over 2,000 years.",
+        "“A prime number is that which is measured by the unit alone,” mathematician Euclid wrote in 300 B.C.",
+        "This means that prime numbers can’t be evenly divided by any smaller number except 1.",
+        "By convention, mathematicians don’t count 1 itself as a prime number.",
+        "Euclid proved the infinitude of primes – they go on forever – but history suggests it was Eratosthenes who gave us the sieve to quickly list the primes."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why do we need to know about prime numbers with millions of digits?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Weiss, Ittay",
+      "published_at": "2018-01-12",
+      "url": "https://theconversation.com/why-do-we-need-to-know-about-prime-numbers-with-millions-of-digits-89878",
+      "retrieved_at": "2026-10-18T17:06:25.170Z",
+      "sha256": "1bf61691cab784ca424cf5d10b5ca5d78e8fd758da5fe2f226ae29c4c5bcfd53",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why do we need to know about prime numbers with millions of digits?",
+        "Skip to content Academic rigor, journalistic flair SeventyFour via Shutterstock Why do we need to know about prime numbers with millions of digits?",
+        "They are a mathematical mystery, the secrets of which mathematicians have been trying to uncover ever since Euclid proved that they have no end.",
+        "An ongoing project – the Great Internet Mersenne Prime Search – which aims to discover more and more primes of a particularly rare kind, has recently resulted in the discovery of the largest prime number known to date.",
+        "Stretching to 23,249,425 digits, it is so large that it would easily fill 9,000 book pages.",
+        "By comparison, the number of atoms in the entire observable universe is estimated to have no more than 100 digits.",
+        "The number, simply written as 2⁷⁷²³²⁹¹⁷-1 (two to the power of 77,232,917, minus one) was found by a volunteer who had dedicated 14 years of computing time to the endeavour.",
+        "You may be wondering, if the number stretches to more than 23m digits, why we need to know about it?",
+        "Surely the most important numbers are the ones that we can use to quantify our world?",
+        "We need to know about the properties of different numbers so that we can not only keep developing the technology we rely on, but also keep it secure.",
+        "Secrecy with prime numbers One of the most widely used applications of prime numbers in computing is the RSA encryption system .",
+        "In 1978, Ron Rivest, Adi Shamir and Leonard Adleman combined some simple, known facts about numbers to create RSA."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Fundamental theorem of arithmetic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11556",
+      "retrieved_at": "2026-10-18T17:06:26.351Z",
+      "sha256": "1f185bbad84cb882b9c111d831db9e076dab741917d63377e1fa310c03d92397",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the fundamental theorem of arithmetic, also called the unique factorization theorem and prime factorization theorem, states that every integer greater than 1 is either prime or can be represented uniquely as a product of prime numbers, up to the order of the factors.",
+        "The requirement that the factors be prime is necessary: factorizations containing composite numbers may not be unique (for example, \n  \n    \n      \n        12\n        =\n        2\n        ⋅\n        6\n        =\n        3\n        ⋅\n        4\n      \n    \n    {\\displaystyle 12=2\\cdot 6=3\\cdot 4}\n  \n).",
+        "This failure of unique factorization is one of the reasons for the difficulty of the proof of Fermat's Last Theorem.",
+        "The implicit use of unique factorization in rings of algebraic integers is behind the error of many of the numerous false proofs that have been written during the 358 years between Fermat's statement and Wiles's proof."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "2,147,483,647",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=757681",
+      "retrieved_at": "2026-10-18T17:06:26.351Z",
+      "sha256": "c8dcee34a2a744c5d91c0dff3a16c8eb16ae35556e6243fd04e10a5267e981db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The number 2147483647 is the eighth Mersenne prime, equal to 231 − 1.",
+        "The primality of this number was proven by Leonhard Euler, who reported the proof in a letter to Daniel Bernoulli written in 1772.",
+        "Euler used trial division, improving on Pietro Cataldi's method, so that at most 372 divisions were needed.",
+        "It thus improved upon the previous record-holding prime, 6,700,417 – also discovered by Euler – forty years earlier.",
+        "The number 2,147,483,647 remained the largest known prime until 1867.",
+        "In computing, this number is the largest value that a signed 32-bit integer field can hold."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Music of the Primes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3989011",
+      "retrieved_at": "2026-10-18T17:06:26.351Z",
+      "sha256": "c5bdbd6832943c53fd46c0bdbd46a69f2125142da8411fb79e4d28faef80bf00",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Music of the Primes (British subtitle: Why an Unsolved Problem in Mathematics Matters; American subtitle: Searching to Solve the Greatest Mystery in Mathematics) is a 2003 book by Marcus du Sautoy, a professor in mathematics at the University of Oxford, on the history of prime number theory.",
+        "In particular he examines the Riemann hypothesis, the proof of which would revolutionize our understanding of prime numbers.",
+        "He traces the prime number theorem back through history, highlighting the work of some of the greatest mathematical minds along the way.",
+        "The cover design for the hardback version of the book contains several pictorial depictions of prime numbers, such as the number 73 bus.",
+        "It also has an image of a clock, referring to clock arithmetic, which is a significant theme in the text."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Matter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19673093",
+      "retrieved_at": "2026-10-18T17:06:26.351Z",
+      "sha256": "07505c76a458e355f3a3319adc1d0f5398d0a1b6da919b811f1df2622389908a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In physical science, matter is anything that has mass and occupies space by having volume.",
+        "All everyday objects that can be touched are ultimately composed of atoms, which are made up of interacting subatomic particles.",
+        "In everyday as well as scientific usage, matter generally includes atoms and anything made up of them, and any particles (or combination of particles) that act as if they have both rest mass and volume.",
+        "However it does not include massless particles such as photons, or other energy phenomena or waves such as light or heat.",
+        "These include classical everyday phases such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous steam – but other states are possible, including plasma, Bose–Einstein condensates, fermionic condensates, and quark–gluon plasma.",
+        "Usually, atoms can be imagined as a nucleus consisting of subatomic particles, protons and neutrons and a surrounding \"cloud\" of orbiting electrons that \"take up space\".",
+        "However, this is only somewhat correct because subatomic particles and their properties are governed by their quantum nature, which means they do not act as everyday objects appear to act – they can act like waves as well as particles, and they do not have well-defined sizes or positions.",
+        "In the Standard Model of particle physics, matter is not a fundamental concept because the elementary constituents of atoms are quantum entities which do not have an inherent \"size\" or \"volume\" in any everyday sense of the word.",
+        "For much of the history of the natural sciences, people have contemplated the exact nature of matter.",
+        "The idea that matter was built of discrete building blocks, the so-called particulate theory of matter, appeared in both ancient Greece and ancient India.",
+        "Early philosophers who proposed the particulate theory of matter include the Indian philosopher Kaṇāda (c.",
+        "6th century BCE), and the pre-Socratic Greek philosophers Leucippus (c."
+      ]
+    }
+  ]
+}

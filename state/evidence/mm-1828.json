@@ -1,0 +1,82 @@
+{
+  "id": "mm-1828",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "2001 Nisqually earthquake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=424550",
+      "retrieved_at": "2026-10-18T18:06:18.429Z",
+      "sha256": "db409b2d91085481f7bae1d13ebf43b778679c4f3168e5195908ba3d43e64ff1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 2001 Nisqually earthquake occurred at 10:54:32 local time on February 28, 2001, and lasted nearly a minute.",
+        "The intraslab earthquake had a moment magnitude of 6.8 and a maximum Mercalli intensity of VIII (Severe).",
+        "The epicenter was in the southern Puget Sound, northeast of Olympia, but the shock was felt in Oregon, British Columbia, eastern Washington, and Idaho.",
+        "This was the most recent of several large earthquakes that occurred in the Puget Sound region over a 52-year period and caused property damage valued at $1–4 billion.",
+        "One person died of a heart attack and several hundred were injured."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "1976 Tangshan earthquake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1332690",
+      "retrieved_at": "2026-10-18T18:06:18.429Z",
+      "sha256": "bd1423c12a1d9361a09ed31de2403dac5200f8c5b569123790502673f781231c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 1976 Tangshan earthquake (Chinese: 唐山大地震; pinyin: Tángshān dà dìzhèn; lit.",
+        "'Great Tangshan earthquake') occurred at 19:42:55 UTC on 27 July (03:42:55, 28 July local time).",
+        "The maximum intensity of the Mw 7.6 earthquake around Tangshan, Hebei, China, was XI (Extreme) on the Mercalli scale.",
+        "In minutes, 85 percent of the buildings in Tangshan collapsed or were rendered unusable, all services failed, and most of the highway and railway bridges collapsed or were seriously damaged.",
+        "The official count stated 242,469 deaths, while historians accepted at least 300,000 died, making it the deadliest earthquake in recorded history (excluding the famine deaths from the 1556 Shaanxi earthquake) and one of the worst disasters in China by death toll."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Earthquake engineering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2111048",
+      "retrieved_at": "2026-10-18T18:06:18.429Z",
+      "sha256": "d0162bdd0493f7dd76b16d335aa08a40221a0522f507798affd3a478908e5356",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Earthquake engineering is an interdisciplinary branch of engineering that designs and analyzes structures, such as buildings and bridges, with earthquakes in mind.",
+        "Its overall goal is to make such structures more resistant to earthquakes.",
+        "An earthquake (or seismic) engineer aims to construct structures that will not be damaged in minor shaking and will avoid serious damage or collapse in a major earthquake.",
+        "A properly engineered structure does not necessarily have to be extremely strong or expensive.",
+        "It has to be properly designed to withstand the seismic effects while sustaining an acceptable level of damage."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Ceramic house",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9823850",
+      "retrieved_at": "2026-10-18T18:06:18.429Z",
+      "sha256": "621f058d190a3ca04154d65412720c40237901fc981ce10430be9bcaafc3ab06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ceramic houses are buildings made of an earth mixture which is high in clay, and fired to become ceramic.",
+        "The process of building and firing such houses was developed by Iranian architect Nader Khalili in the late 1970s; he named it Geltaftan.",
+        "\"Gel\" means \"clay\" and \"taftan\" means \"firing, baking, and weaving clay\" in Persian language.",
+        "Khalili's research into creating ceramic houses was strongly based on the idea that permanent, water-resistant, and earthquake-resistant houses could be built with the implementation of the four elements: earth and water to build the forms, and fire and air to finish them.",
+        "His impassioned work led to a few small scale projects in Iran, including the Javadabad Elementary School, and the Ghaled Mofid restoration project.",
+        "Aside from Khalili's own documented work, there seems to be little widespread research on ceramic houses."
+      ]
+    }
+  ]
+}

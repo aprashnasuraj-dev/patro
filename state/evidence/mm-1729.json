@@ -1,0 +1,103 @@
+{
+  "id": "mm-1729",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Monday’s medical myth: the placebo effect only works on the gullible",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Vagg, Michael",
+      "published_at": "2011-10-03",
+      "url": "https://theconversation.com/mondays-medical-myth-the-placebo-effect-only-works-on-the-gullible-3588",
+      "retrieved_at": "2026-10-18T18:05:56.406Z",
+      "sha256": "e0caa194826e2fb79cf63bf96d652f842b4d35f722745d425346a0c8a2170880",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "What if you took a complementary medicine from a health food store instead?",
+        "Or if you were given a sugar pill and you still felt better?",
+        "Medicines, surgery and alternative therapies all inevitably cause some degree of placebo response , but it’s not just the gullible or suggestible who are affected.",
+        "Firstly, you might experience what’s known as the Hawthorne Effect .",
+        "If you’ve identified a problem with your health and sought help for it, you will tend to be making other, related decisions which can reduce your symptoms – or your perception of them.",
+        "So if you feel your knee becoming sore, you’ll probably tend to use it less and be more careful about what you do.",
+        "Both may help reduce your pain, independently of the treatment you seek.",
+        "Having an involved and attentive health professional to empathise with your concerns will likely strengthen your tendency to get on with life instead of fretting about the pain in your knee and what it might mean.",
+        "Secondly, you might succumb to the phenomenon of Regression to the Mean , which is a scientific-sounding way of explaining that any long-term complaint will tend to vary around its average level.",
+        "Some days it will be a bit worse, other days it will feel a bit better than average.",
+        "Our inherent bias is to ignore the good days and focus on the bad.",
+        "If we string together a few days of worsened symptoms, which will happen at some stage, you might be tempted to try something out of the ordinary – such as alternative therapies – to feel better again."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Placebo",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=142821",
+      "retrieved_at": "2026-10-18T18:05:56.406Z",
+      "sha256": "5df4b6fd8e5eb8059b6d0c00ef32810dfdb3f174cb96c87745d976dde86c1eb9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A placebo ( pluh-SEE-boh) is a medicine or treatment intended to appear genuine to its recipient, but which has no pharmaceutical effect.",
+        "Common placebos include inert tablets (like sugar pills), inert injections (like saline), sham surgery, and other procedures.",
+        "Placebos are used in randomized clinical trials to test the efficacy of medical treatments.",
+        "In a placebo-controlled trial, any change in the control group is known as the placebo response, and the difference between this and the result of no treatment is the placebo effect.",
+        "Placebos in clinical trials should ideally be indistinguishable from so-called verum treatments under investigation, except for the latter's particular hypothesized medicinal effect.",
+        "This is to shield test participants (with their consent) from knowing who is getting the placebo and who is getting the treatment under test, as patients' and clinicians' expectations of efficacy can influence results.",
+        "The idea of a \"placebo effect\" was discussed in 18th century psychology, but became more prominent in the 20th century.",
+        "Modern studies find that placebos can affect some outcomes such as pain and nausea, but otherwise do not generally have important clinical effects.",
+        "Improvements that patients experience after being treated with a placebo can also be due to unrelated factors, such as regression to the mean (a statistical effect where an unusually high or low measurement is likely to be followed by a less extreme one).",
+        "The use of placebos in clinical medicine raises ethical concerns, especially if they are disguised as an active treatment, as this introduces dishonesty into the doctor–patient relationship and bypasses informed consent.",
+        "Placebos are also popular because they can sometimes produce relief through psychological mechanisms (a phenomenon known as the \"placebo effect\").",
+        "They can affect how patients perceive their condition and encourage the body's chemical processes for relieving pain and a few other symptoms, but have no impact on the disease itself."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Placebo (band)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=241263",
+      "retrieved_at": "2026-10-18T18:05:56.406Z",
+      "sha256": "4c2b580223dabbfff9ab538d4ff52b80382ce807549b38beb2c3f0b4fb4ba791",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Placebo ( plə-SEE-boh) are a British alternative rock band, formed in London in 1994 by vocalist-guitarist Brian Molko and bassist-guitarist Stefan Olsdal, who have remained the two constant members, with three full-time drummers throughout the band's existence.",
+        "Molko and Olsdal were joined by drummer Robert Schultzberg for a demo, a split single, and their eponymous debut album in 1996.",
+        "Shortly after the album's release, Steve Hewitt replaced Schultzberg on drums.",
+        "Placebo gained exposure in 1997 after the single \"Nancy Boy\" (a song notorious at the time for its gender-bending content) became popular in the UK.",
+        "The band stood out amongst the Britpop scene of the time because of their androgynous appearance and musical content, as well as Molko's distinctive voice and lyrics which openly discussed sexuality, mental health, and drug use.",
+        "Their 1998 album Without You I’m Nothing was a massive international breakthrough, going platinum in the UK and gold in France.",
+        "It spawned a pair of UK top-five singles for the band, \"Pure Morning\" and \"You Don't Care About Us\", as well as the No.",
+        "Hewitt left Placebo in 2007 due to personal and musical differences.",
+        "Placebo released two albums with Forrest, who left in 2015 to pursue his own musical career.",
+        "Since 2015, Placebo have officially been a duo, though augmented with studio and live musicians.",
+        "Placebo have collaborated with various artists over the years, including David Bowie, Justin Warfield, Michael Stipe, and Alison Mosshart.",
+        "Placebo have released eight studio albums (all of which have reached the Top 20 in the UK), recorded 15 top-40 singles in the UK, and have sold around 14 million records worldwide."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bad Science (Goldacre book)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21378384",
+      "retrieved_at": "2026-10-18T18:05:56.406Z",
+      "sha256": "321800b667fe4adef1970ca769fadb2b9fa73ad14990d7461fbf8e81cd2236bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bad Science is a book written by Ben Goldacre which criticises certain physicians and the media for a lack of critical thinking and misunderstanding of evidence and statistics which is detrimental to the public understanding of science.",
+        "In Bad Science, Goldacre explains basic scientific principles to demonstrate the importance of robust research methods, experimental design, and analysis to make informed judgements and conclusions of evidence-based medicine.",
+        "Bad Science is described as an engaging and inspirational book, written in simple language and occasional humour, to effectively explain academic concepts to the reader.",
+        "Bad Science was originally published in the UK by Fourth Estate in September 2008 and later editions have since been published through HarperCollins Publishers.",
+        "The book has generally been well-received with positive reviews by the British Medical Journal and the Daily Telegraph.",
+        "Bad Science reached the Top 10 bestseller list for Amazon Books  and was shortlisted for the BBC Samuel Johnson Prize for Non-Fiction 2009."
+      ]
+    }
+  ]
+}

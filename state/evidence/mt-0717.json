@@ -1,0 +1,57 @@
+{
+  "id": "mt-0717",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Quantifying fault activity over different time scales in the Lower Rhine Graben, towards an improved fault database for seismic hazard assessment.&amp;#160;",
+      "publisher": "Copernicus GmbH",
+      "author": "Lefevre, Marthe; Vanneste, Kris; Demoulin, Alain",
+      "published_at": "2022-03-27",
+      "url": "https://doi.org/10.5194/egusphere-egu22-6469",
+      "retrieved_at": "2026-10-18T18:47:16.298Z",
+      "sha256": "3d3caf7935b87b3f3c05bfac131ae9a42b0ff9779eb463921e393992e1609b4d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&amp;lt;p&amp;gt;The Lower Rhine Graben (LRG) is an area of slow intra-plate extension in north-western Europe.",
+        "Located in a densely populated area, this rift, with moderate but rather continuous seismic activity, poses significant seismic hazard.",
+        "The LRG NW-trending fault system is 200-km long and accommodates a total extension of ~0.1 +/- 0.03mm/yr.",
+        "While the major active faults are well known, the activity of this complex system as a whole remains poorly understood.",
+        "This is partly due to the fact that the tectonic signal issued from such low strain rates deformation is often overprinted by other natural or anthropogenic processes.",
+        "Thus, previous fault models do not integrate minor structures associated with limited deformation and remain elusive about precise fault geometry and branching.",
+        "A high-resolution DEM, created from Lidar-based DEMs recently available in the surrounding countries, allows us to retrieve detailed tectonic information and refine the fault traces and scarp geometry.",
+        "We thus present, for the entire region, a revised and homogeneous fault map, based on morphological observations of fault scarps and offset alluvial terraces, complemented by external information from paleoseismological surveys and geophysical profiles.",
+        "Based on this detailed mapping, we propose a new active faults model for the whole LRG, reflecting the uncertainties in fault geometry.",
+        "In the southern part of the graben, a well-developed terrace allows us to estimate the activity of most faults over the Quaternary, but such an extended marker is missing in the northern part of the LRG, resulting in only few localized data.",
+        "To complement these offset observations, we use several 3D-geological models.",
+        "After a selection of the most representative geological layers, we automatically retrieve their offsets at several locations along each fault, to obtain the spatial slip distribution at different timescales."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T18:47:16.608Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    }
+  ]
+}
