@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-smoke-test",
-  "note": "Second bounded smoke test after research/grounding fixes: exact-question writer, retry underlength drafts, require three independent publisher domains (aggregators excluded), hard minimum word count, fail-closed gate. Two topics max, no production publish."
+  "mode": "research-grounding-smoke-test-rerun",
+  "note": "Rerun after correcting the HTTPS discovery parser. Two topics max, one worker, ten-minute deadline, no YMYL, no production publish. Require exact-question answer, three independent publisher domains, minimum word count, and fail-closed editorial gate."
 }
