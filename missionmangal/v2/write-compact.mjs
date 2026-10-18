@@ -27,10 +27,10 @@ export async function writeCompact({llm,meta,title,evidence,need,targetWords=900
   wordCount=(body.match(/\b[\w’'-]+\b/g)||[]).length;
  }
  const allowedSourceIds=new Set(ok.map(c=>c.source_id));
- const paragraphs=body.split(/\\n\\s*\\n/).map(p=>p.trim()).filter(p=>p&&!/^#{1,6}\\s/.test(p));
+ const paragraphs=body.split(/\n\s*\n/).map(p=>p.trim()).filter(p=>p&&!/^#{1,6}\s/.test(p));
  const citationProblems=[];
  for(const p of paragraphs){
-  const markers=[...p.matchAll(/\\[\\[([A-Za-z0-9_-]+)\\]\\]/g)].map(m=>m[1]);
+  const markers=[...p.matchAll(/\[\[([A-Za-z0-9_-]+)\]\]/g)].map(m=>m[1]);
   if(!markers.length)citationProblems.push('Paragraph missing inline source marker');
   for(const id of markers)if(!allowedSourceIds.has(id))citationProblems.push('Unknown inline source marker: '+id);
  }
