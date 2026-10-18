@@ -1,0 +1,48 @@
+{
+  "id": "mt-0170",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Fault Analysis Projection System (FAPS) - A new seismic interpretation and structural geological interpretation tool.",
+      "publisher": "Australian Society of Exploration Geophysicists",
+      "author": "Freeman, B.; Badley, M.; Yielding, G.",
+      "published_at": "1989",
+      "url": "https://doi.org/10.1071/eg989001",
+      "retrieved_at": "2026-10-18T16:33:04.881Z",
+      "sha256": "cacb9ae7d5198a3deb32a54f129a5e753141a017cfd5039e55df29438264f709",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recent research has demonstrated that the displacement on faults varies in a systematic manner, both vertically and laterally.",
+        "Contours of displacement on strike projections display ordered patterns for isolated normal faults, strike-slip faults and syn-sedimentary faults.",
+        "Recognition of these ordered patterns forms the basis for a new seismic interpretation and structural/geological interpretation tool, enabling objective verification of fault correlation, identification of bad fault or horizon picks, and a better understanding of the overall kinematic framework.",
+        "The Fault Analysis Projection System (FAPS) is a computerized implementation of this technique designed to run on UNIX-based workstations.",
+        "The FAPS uses the X-windows graphics system which permits different elements of the interpretation/analysis to be viewed at the same time and is designed to make adjustments to interpretations a simple task.",
+        "For example, an interpreter may work on a map in one window, a set of sections in another window, perform a graphics screen-edit on data in a third window and view the results of an analysis in a separate, fourth window."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Imaging Patterns of Fault Creep: Implications for Earthquakes on the Hayward Fault",
+      "publisher": "Digital Commons - University of South Florida (University of South Florida)",
+      "author": "Kevin P. Furlong; R. Malservisi; Christine R. Gans",
+      "published_at": "2004-01-01",
+      "url": "https://openalex.org/W3006726701",
+      "retrieved_at": "2026-10-18T16:33:05.145Z",
+      "sha256": "6392a39b9202fb6d4174dc64f2dde66362bc8320453f853e496ce1f4e9810ba8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The slip deficit that accumulates on a fault constrains the potential slip (and moment) for subsequent earthquakes on the fault.",
+        "Fault creep will reduce the rate at which this slip deficit accumulates, at least on those patches of the fault that undergo such aseismic slip.",
+        "Mapping the spatial and temporal patterns of such creep then becomes an important component of assessments of earthquake potential on a fault such as the Hayward.",
+        "In regions where faults are creeping at or near the surface, the pattern of surface deformation can be used to constrain fault creep in the upper few kilometers.",
+        "Determination of the patterns of creep on deeper sections of a fault is poorly constrained by near-fault surface observations.",
+        "The inclusion of micro-seismicity in analyzing patterns of fault creep adds an additional constraint on locations of locked and creeping patches on the fault.",
+        "A second consideration in assessing the accumulation of slip deficit is the potential for timedependent creep behavior – particularly driven by post-earthquake viscous relaxation.",
+        "We are investigating the potential role of such transient behavior in both biasing observations of creep rate, and also modifying the rate at which slip deficit accumulates.",
+        "Including the effects of a simulated 1868-like earthquake in our models of Hayward Fault creep indicate a significant variations in both the spatial pattern and rate of fault creep during the first 50-100 years after the earthquake."
+      ]
+    }
+  ]
+}

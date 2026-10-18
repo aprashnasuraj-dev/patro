@@ -1,0 +1,113 @@
+{
+  "id": "mm-0786",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "CAPITALIST MANIFESTO: How Index Funds Work, Why Ordinary Investors Should Invest in Index Funds, and What to Expect from Index Fund Managers",
+      "publisher": "European Corporate Governance Institute (ECGI)",
+      "author": "Booth, Richard A.",
+      "published_at": "2022-03-01",
+      "url": "https://doi.org/10.67929/ecgi-law-630-2022",
+      "retrieved_at": "2026-10-18T15:34:44.137Z",
+      "sha256": "e33f7cd07e458ec5347599b891b4ba6a8bc28062ff89292b83d5d4e8ab80c3ed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The proposition that a prudent investor should be diversified is widely accepted if not incontrovertible for ordinary investors – investors who have no reasonable expectation of influencing company management or business policy.",
+        "Indeed, fiduciary duty requires that trustees and other investment managers assure that their clients be diversified.",
+        "But the idea of diversification is not well articulated or understood even by sophisticated investors.",
+        "This article fills that gap by laying out the logic (and mathematics) of diversification for ordinary investors who invest in common stock.",
+        "As shown here, diversification can eliminate almost all of the company-specific risk that goes with investing in equities without any sacrifice of expected return.",
+        "The only risk that remains is the risk that the market as a whole may do better or worse than expected.",
+        "Thus, it is often said that diversification is the only free lunch in the market.",
+        "It follows that diversified investors who assume less risk because they are diversified will pay more for the shares in which they invest and will thus dictate market prices.",
+        "It further follows that undiversified stock-picking investors assume more risk than necessary and thus pay too much for the stocks in which they invest.",
+        "The logic of diversification explains why investors have flocked to index funds – which offer maximum diversification for minimum fees – and why almost half of all stock in US companies is held by such funds.",
+        "But the idea of diversification alone does not explain how much to invest in which companies.",
+        "Fortunately, the market provides the answer to this question, and the answer turns out to be indexing."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Exchange-traded fund",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=538170",
+      "retrieved_at": "2026-10-18T15:34:45.367Z",
+      "sha256": "9ca518025ef21c9d0cb7d1af2df8269dae048ba8f41570ebf72bafc82ab2612e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An exchange-traded fund (ETF) is a type of investment fund that is also an exchange-traded product; i.e., it is bought and sold on stock exchanges.",
+        "ETFs own financial assets such as stocks, bonds, currencies, cryptocurrency, debt, and futures contracts, as well as commodities such as gold bars.",
+        "ETFs provide more diversification than owning an individual stock and more market liquidity than owning an individual bond.",
+        "Most equity and fixed-income ETFs are index funds; they use passive management to replicate the performance of a stock market index or bond market index.",
+        "Other ETFs use active management, either by picking stocks or by the use of covered call strategies to generate income.",
+        "For ETFs that invest in bonds, some will focus on government bonds, while others invest in corporate bonds or high-yield debt or focus on specific durations.",
+        "In the United States, actively managed ETF issuers are required by regulators to publish the composition of their portfolios on their websites daily, or monthly in the case of index fund ETFs, or quarterly in the case of active non-transparent ETFs.",
+        "Unlike mutual funds, ETFs are priced continuously throughout the trading day.",
+        "Trading in ETFs may be subject to stockbroker commissions and financial transaction taxes.",
+        "ETFs can be sold short, can be purchased using funds borrowed from a stockbroker (margin), and can be purchased and sold using limit orders, with the buyer or seller aware of the price per share in advance.",
+        "Options, including put options and call options, can be written or purchased on many ETFs.",
+        "ETF investors generally only realize capital gains taxes when they sell their own shares for a gain, making them more attractive tax-wise than mutual funds in some cases."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "John C. Bogle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1542795",
+      "retrieved_at": "2026-10-18T15:34:45.367Z",
+      "sha256": "9f65e2d1028a3d17c66cf086ed030e636b506c2005eacce9b38cf4cf7ebcc182",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "John Clifton \"Jack\" Bogle (May 8, 1929 – January 16, 2019) was an American investor, business magnate and philanthropist who was the founder of The Vanguard Group and is credited with popularizing the index fund.",
+        "An avid investor and money manager himself, he preached investment over speculation, long-term patience over short-term action, and reducing broker fees as much as possible.",
+        "An ideal investment vehicle for Bogle was a low-cost index fund representing the entire US market, held over a lifetime with dividends reinvested.",
+        "His 1999 book Common Sense on Mutual Funds: New Imperatives for the Intelligent Investor became a bestseller and is considered a classic within the investment community."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "MSCI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2193073",
+      "retrieved_at": "2026-10-18T15:34:45.368Z",
+      "sha256": "31f9d3fc3a775363e9e1a63eba7f9d685fa08d68e3393ba69dbe060275e13624",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "(formerly Morgan Stanley Capital International) is an American finance company headquartered in New York City.",
+        "MSCI is a global provider of equity, fixed income, real estate indices, multi-asset portfolio analysis tools, ESG and climate finance products.",
+        "It operates the MSCI World, MSCI Emerging Markets, and MSCI All Country World (ACWI) indices, among others.",
+        "The company is headquartered at 7 World Trade Center in Manhattan.",
+        "Its business primarily consists of licensing its indices to index funds, such as exchange-traded funds (ETFs), which pay a fee of around 0.02 to 0.04 percent of the invested volume for the use of the index.",
+        "As of 2025, funds worth over US$16.5 trillion were based on MSCI indices."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "IShares",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3482457",
+      "retrieved_at": "2026-10-18T15:34:45.368Z",
+      "sha256": "555beabb24f512da323889571d9cf955ef0b73c954906446f78b1bd0c510355b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "iShares is a collection of exchange-traded funds (ETFs) and index mutual funds managed by BlackRock, which acquired the brand and business from Barclays in 2009.",
+        "The first iShares ETFs were known as World Equity Benchmark Shares (WEBS) but have since been rebranded.",
+        "Most iShares funds track a bond or stock market index, although some are actively managed.",
+        "iShares is the largest issuer of ETFs in the US and globally, and also manages index mutual funds."
+      ]
+    }
+  ]
+}

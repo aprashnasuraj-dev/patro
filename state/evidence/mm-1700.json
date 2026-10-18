@@ -1,0 +1,167 @@
+{
+  "id": "mm-1700",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "What Does Independent IT Contract Work Mean for a Company's Human Capital?",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "author": "Murthy, Vijaya; Marjanovic, Olivera",
+      "published_at": "2025-07-28",
+      "url": "https://doi.org/10.1145/3757308.3757313",
+      "retrieved_at": "2026-10-18T16:20:02.058Z",
+      "sha256": "7428217d9254e15bfe8c33e051e85717b8b9a064edbb1c96be734267db8729e2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Retention of the highly skilled IT workforce has been more challenging than ever before.",
+        "Yet, more and more IT professionals are choosing independent contract work.",
+        "This paper investigates what independent IT contract work means for a company's human capital (HC).",
+        "We draw from an empirical case study conducted in a financial organization employing a very large group of independent IT contractors on a mission-critical financial compliance project.",
+        "Grounded in the theory of social capital (SC), our research proposes a theoretical model which explains what happens to a company's HC across different stages of the independent IT contracting lifecycle.",
+        "The model theorizes how when depleted, a company's HC can be not only replenished but also enhanced over time by using SC to ''pull back'' the enhanced HC of former independent contractors.",
+        "Based on the proposed model, this research expands the concept of HC to include relational and temporal dimensions.",
+        "It also highlights the need to consider SC in combination with HC as a new long-term strategy for expanding a valuable company's HC in organizations employing an independent contract workforce in the fast-changing IT industry."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What does it mean to trust facebook?",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "author": "Lankton, Nancy K.; McKnight, D. Harrison",
+      "published_at": "2011-05-24",
+      "url": "https://doi.org/10.1145/1989098.1989101",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "e1311ca12ea3ebf96f8cf8c3853a03da997b6a8a320d7dd7a38dc4739998cd37",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Researchers have recently studied technology trust in terms of the technological artifact itself.",
+        "Two different kinds of trusting beliefs could apply to a website artifact.",
+        "First, the trusting beliefs may relate to the interpersonal characteristics--competence, integrity, and benevolence.",
+        "Second, they may relate to corresponding technology characteristics--functionality, reliability, and helpfulness.",
+        "Since social networking websites like Facebook may demonstrate either interpersonal or technology trust characteristics, researchers may need to carefully choose the beliefs to model.",
+        "Thus it is important to understand not only the conceptual meaning of these beliefs, but also whether human and technology trust beliefs are distinct.",
+        "Using data collected from 362 university-student Facebook users, we test two second-order factor structures that represent alternative ways to model the three interpersonal and three technology trust beliefs.",
+        "We find that the best-fitting measurement model depicts the three conceptually-related pairs of trust beliefs (competence-functionality, integrity-reliability, and benevolence-helpfulness) as three distinct second-order factors.",
+        "This model outperformed the model splitting trusting beliefs into separate interpersonal and technology second-order factors.",
+        "The results show people distinguish among three types of conceptually-related trust attributes, and that they trust Facebook as both a technology and a quasi-person.",
+        "These second-order trust factors can be used in future research to better understand social networking trust and usage continuance intentions"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Information Theory for Vector Databases",
+      "publisher": "Digital Access to Scholarship at Harvard (DASH) (Harvard University)",
+      "author": "Rakhamimov, Joel",
+      "published_at": "2024-01-01",
+      "url": "https://openalex.org/W7112369938",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "ea632dd9671985c9bc2838d9dbad5e0abf5d0fcd3cdd203abe2deaf98a5f54bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vector embeddings are a relatively novel concept that have been rapidly increasing in popularity for uses in data science.",
+        "They are the output of a deep learning model, which usually takes an image or a string of text, as an input.",
+        "An embedding is an element of $\\mathbb{R}^n$, for which it is much easier to perform actions like similarity search than the original image space, which is likely high dimensional.",
+        "As of yet, there is no rigorous information theoretic treatment of vector databases or vector embeddings, leaving the theoretical foundations weak.",
+        "In this work, as part of research done in the Flavio Calmon group, we take the first step to apply information theory to vector databases, using CLIP as our embedding model and CIFAR-10 as our image dataset.",
+        "First, we cover the formulation of the problem of vector embedding, including the theory underlying the embeddings, considering it as a transformation, and viewing the problem of embedding as a Gromov-Wasserstein alignment.",
+        "We then discuss curious statistical properties of the embeddings, including their distribution and mutual distances.",
+        "Part of our findings is that calculating distances between vector embeddings results in significantly faster and more accurate sorting, rather than doing the same for their original images.",
+        "However, the absolute cosine similarity between vectors from similar images is still very low.",
+        "Throughout, we describe dimensionality reduction techniques, product quantization codes, the cone effect, and Gaussianity of embeddings, the last two of which we observe weak results for."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Euclidean vector",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32533",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "2b8e3d764575728a660ed6e7890c4ca9f9a1374b89ef9239aaed4a023250501e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, physics, and engineering, a Euclidean vector or simply a vector (sometimes called a geometric vector or spatial vector) is a geometric object that has magnitude (or length) and direction.",
+        "Euclidean vectors can be added and scaled to form a vector space.",
+        "A vector quantity is a vector-valued physical quantity, including units of measurement and possibly a support, formulated as a directed line segment.",
+        "{\\textstyle {\\stackrel {\\longrightarrow }{AB}}.}\n  \n\nA vector is what is needed to \"carry\" the point A to the point B; the Latin word vector means 'carrier'.",
+        "It was first used by 18th century astronomers investigating planetary revolution around the Sun.",
+        "The magnitude of the vector is the distance between the two points, and the direction refers to the direction of displacement from A to B.",
+        "Many algebraic operations on real numbers such as addition, subtraction, multiplication, and negation have close analogues for vectors, operations which obey the familiar algebraic laws of commutativity, associativity, and distributivity.",
+        "These operations and associated laws qualify Euclidean vectors as an example of the more generalized concept of vectors defined simply as elements of a vector space.",
+        "Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on it can all be described with vectors.",
+        "Many other physical quantities can be usefully thought of as vectors.",
+        "Although most of them do not represent distances (except, for example, position or displacement), their magnitude and direction can still be represented by the length and direction of an arrow.",
+        "The mathematical representation of a physical vector depends on the coordinate system used to describe it."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Common Vulnerability Scoring System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8105109",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "fdef96937a2dfc197aa3b7bc6339337627a12aec2b162b0416edcb196d02b015",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Common Vulnerability Scoring System (CVSS) is a framework for rating the severity of computer system vulnerabilities.",
+        "Scores are calculated from metrics that approximate the ease and impact of exploits.",
+        "While many use only the CVSS Base score for determining severity, temporal and environmental scores also exist, to account for the availability of mitigations and the number of vulnerable systems within an organization, respectively.",
+        "The current version of CVSS (CVSSv4.0) was released in November 2023.",
+        "CVSS is not intended as a method for patch prioritization, but is often used as one regardless.",
+        "A more effective approach is to integrate CVSS with predictive models like the Exploit Prediction Scoring System (EPSS), to prioritize remediation based on the likelihood of real-world exploitation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Vector (mathematics and physics)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23218956",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "260ef197ba46ec244bd84ca8aae62f3f4a9901f60eb20f3371b2580a41eb904b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics and physics, a vector is a generalization of a single number.",
+        "It may denote a vector quantity, i.e., physical quantity that cannot be expressed by a single scalar quantity.",
+        "The term may also be used to refer to elements of vector spaces, that can be added together and multiplied (\"scaled\") by scalars.",
+        "In some contexts, vectors are tuples, which are finite sequences (of numbers or other objects) of a fixed length.",
+        "Historically, vectors were introduced in geometry and physics (typically in mechanics) for quantities that have both a magnitude and a direction, such as displacements, forces and velocity.",
+        "Such quantities are represented by geometric vectors in the same way as distances, masses and time are represented by real numbers.",
+        "A vector space formed by geometric vectors is called a Euclidean vector space, and a vector space formed by tuples is called a coordinate vector space.",
+        "Many vector spaces are considered in mathematics, such as extension fields, polynomial rings, algebras and function spaces.",
+        "The term vector is generally not used for elements of these vector spaces, and is generally reserved for geometric vectors, tuples, and elements of unspecified vector spaces (for example, when discussing general properties of vector spaces)."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Redis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24956915",
+      "retrieved_at": "2026-10-18T16:20:02.601Z",
+      "sha256": "a9dc08a56a0c0568a857505cd41c641337e666e5a93534aa0d696d9feb802deb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Redis (; Remote Dictionary Server) is an in-memory key–value database, used as a distributed cache and message broker, with optional durability.",
+        "Because it holds all data in memory and because of its design, Redis offers low-latency reads and writes, making it particularly suitable for use cases that require a cache.",
+        "The project was developed and maintained by Salvatore Sanfilippo, starting in 2009.",
+        "From 2015 until 2020, he led a project core team sponsored by Redis Labs.",
+        "In 2021 Redis Labs dropped the Labs from its name and now is known simply as \"Redis\".",
+        "In 2018, some modules for Redis adopted a modified Apache 2.0 license with a Commons Clause.",
+        "In 2024, the main Redis code switched from the open-source BSD-3 license to being dual-licensed under the Redis Source Available License v2 and the Server Side Public License v1.",
+        "On May 1, 2025, Redis became tri-licensed beginning with version 8.0, with the GNU Affero General Public License as the third option."
+      ]
+    }
+  ]
+}

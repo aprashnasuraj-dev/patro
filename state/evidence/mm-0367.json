@@ -1,0 +1,114 @@
+{
+  "id": "mm-0367",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Earthquakes Happen",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2021-09-14",
+      "url": "https://doi.org/10.2307/j.ctv1t1kfzg.6",
+      "retrieved_at": "2026-10-18T15:12:29.402Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Earthquake",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10106",
+      "retrieved_at": "2026-10-18T15:13:02.317Z",
+      "sha256": "1ee6f4972b3ffc39b5cd3588addbe0d2d967cef6cb721d74b7b98f8595db3d84",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An earthquake, also called a quake, tremor, or temblor, is the shaking of the Earth's surface resulting from a sudden release of energy in the lithosphere that creates seismic waves.",
+        "Earthquakes can range in intensity, from those so weak they cannot be felt, to those violent enough to propel objects and people into the air, damage critical infrastructure, and wreak destruction across entire cities.",
+        "The seismic activity of an area is the frequency, type, and size of earthquakes experienced over a particular time.",
+        "The seismicity at a particular location in the Earth is the average rate of seismic energy released per unit volume.",
+        "In its most general sense, the word earthquake is used to describe any seismic event that generates seismic waves.",
+        "Earthquakes can occur naturally or be induced by human activities, such as mining, fracking, and nuclear weapons testing.",
+        "The initial point of rupture is called the hypocenter or focus, while the ground level directly above it is the epicenter.",
+        "Earthquakes are primarily caused by geological faults, but also by volcanism, landslides, and other seismic events.",
+        "Significant historical earthquakes include the 1976 Tangshan earthquake in China, with over 300,000 fatalities, and the 1960 Valdivia earthquake in Chile, the largest ever recorded at 9.5 magnitude.",
+        "Earthquakes in some cases may result in various effects, such as ground shaking and soil liquefaction, sometimes leading to significant damage and loss of life.",
+        "When the epicenter of a large earthquake is located offshore, the seabed may be displaced sufficiently to cause a tsunami.",
+        "The occurrence of earthquakes is influenced by tectonic movements along faults, including normal, reverse (thrust), and strike-slip faults, with energy release and rupture dynamics governed by the elastic-rebound theory."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "2004 Indian Ocean earthquake and tsunami",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1328236",
+      "retrieved_at": "2026-10-18T15:13:02.317Z",
+      "sha256": "be7d7f5ed02e2fc08186fa6b2c465a13337b967b5dbc18bec5fc58729df3fedb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "On 26 December 2004, at 07:58:53 local time (UTC+7), a Mw 9.2–9.3 earthquake struck with its epicenter off the west coast of Aceh, in northern Sumatra, Indonesia.",
+        "The undersea megathrust earthquake, known in the scientific community as the Sumatra–Andaman earthquake, was caused by a rupture along the fault boundary between the Burma plate and the Indian plate, and reached a maximum Mercalli intensity of IX in some areas.",
+        "The direct result was severe disruption to living conditions and commerce in coastal provinces of these and other surrounding countries.",
+        "It is the deadliest tsunami in history, the deadliest natural disaster of the 21st century, and one of the deadliest natural disasters in recorded history.",
+        "It is also the worst natural disaster in the history of Indonesia, the Maldives, Sri Lanka, and Thailand.",
+        "The earthquake itself is the most powerful earthquake ever recorded in Asia, the strongest of the 21st century, and the second- or third-most powerful globally since modern seismography began in 1900.",
+        "It had the longest fault rupture ever observed, between 1,200 to 1,300 kilometres (746 to 808 mi), and had the longest duration of faulting ever observed, lasting at least ten minutes.",
+        "Its seismic waves caused measurable vibrations throughout the planet, with displacements of up to 10 mm (0.4 in), and also remotely triggered earthquakes as far away as Alaska.",
+        "Its epicentre was located between Simeulue and mainland Sumatra.",
+        "The plight of the affected people and countries prompted a worldwide humanitarian response, with donations totaling more than US$14 billion (equivalent to US$24 billion in 2025 currency)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Seismic magnitude scales",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6207163",
+      "retrieved_at": "2026-10-18T15:13:02.317Z",
+      "sha256": "65d20c069ae61a574e200d63315e41188d7ee6288a2e1a8b9a4cc0715e6cc7ba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Seismic magnitude scales are used to describe the overall strength or \"size\" of an earthquake.",
+        "These are distinguished from seismic intensity scales that categorize the intensity or severity of ground shaking (quaking) caused by an earthquake at a given location.",
+        "Magnitudes are usually determined from measurements of an earthquake's seismic waves as recorded on a seismogram.",
+        "Magnitude scales vary based on what aspect of the seismic waves are measured and how they are measured.",
+        "Different magnitude scales are necessary because of differences in earthquakes, the information available, and the purposes for which the magnitudes are used."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "1997 Umbria–Marche earthquakes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24192190",
+      "retrieved_at": "2026-10-18T15:13:02.318Z",
+      "sha256": "7199b49dd6d35d90736191da9f340c1461accd3d72b08d145f7e646f13510985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 1997 Umbria and Marche earthquakes occurred in the regions of Umbria and Marche, central Italy over a period of several months from September 1997 to April 1998.",
+        "It consisted of eight earthquakes with magnitudes greater than Mw 5.",
+        "The first of the larger shocks, which measured Mw 5.7, occurred at 02:33 CEST (00:33 UTC) on 26 September 1997.",
+        "It was preceded by several foreshocks, beginning with a Mw 4.5 event on 3 September.",
+        "A second and slightly larger shock occurred about nine hours later at 11:40 CEST (09:40 UTC), rated Mw 6.0.",
+        "The epicentres of first two larger earthquakes were in Annifo.",
+        "The shaking associated with first two larger shocks was estimated at VIII (Severe) and X (Extreme) on the Mercalli intensity scale, respectively.",
+        "There were several thousands of foreshocks and aftershocks from May 1997 to April 1998, more than thirty of which had a magnitude more than 3.5.",
+        "Eleven people died and approximately 100 were injured, with significant damage to buildings including the partial collapse of the ceiling vault in the Basilica of Saint Francis of Assisi.",
+        "The earthquakes occurred along faults oriented parallel to the Apennine Mountains and demonstrated how seismic events can influence subsequent earthquakes through alterations in stresses within the upper crust."
+      ]
+    }
+  ]
+}

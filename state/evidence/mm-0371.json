@@ -1,0 +1,136 @@
+{
+  "id": "mm-0371",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When learning hurts control: inducing cross-task-covariance causes multitasking costs",
+      "publisher": "Center for Open Science",
+      "author": "Garner, Kelly; Butler, Jordan; Jones, Scott",
+      "published_at": "2021-10-14",
+      "url": "https://doi.org/10.31234/osf.io/89bf6",
+      "retrieved_at": "2026-10-18T15:13:04.691Z",
+      "sha256": "809183817ed156d7aa547d141b3c05bd1115fe571893c01a3ded0551d5c9322c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Performing two tasks concurrently typically leads to performance costs.",
+        "Historically, multitasking costs have been assumed to reflect fundamental constraints of cognitive architectures.",
+        "A new perspective proposes that multitasking costs reflect information sharing between constituent tasks; shared information gains representational efficiency, at the expense of multitasking capability.",
+        "We test this theory by determining whether increasing cross-task information harms multitasking.",
+        "48 participants performed multitasks where they mapped keypresses to four shapes.",
+        "In a subsequent statistical learning task, these shapes then formed pairs that were predictive or non-predictive of an upcoming target judgement.",
+        "When participants again responded to these shapes in the multitasking context, performance was poorer when the shape pair had been predictive of target outcomes in the learning phase, relative to non-predictive.",
+        "Thus, associating common information to shape pairings transferred to negatively impact multitasking performance, providing the first causal evidence for the shared representational account of multitasking performance."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Perception of Multitasking",
+      "publisher": "ScholarlyCommons (University of Pennsylvania)",
+      "author": "Shalena Srna",
+      "published_at": "2018-01-01",
+      "url": "https://openalex.org/W2886480449",
+      "retrieved_at": "2026-10-18T15:13:07.121Z",
+      "sha256": "bbb4c9dc2749e9e17571e5827344d5b427bb33723509650fb98dc8780c3cda61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With technological advancements, the desire, ability, and often necessity to engage in multiple activities concurrently are paramount.",
+        "Although multitasking refers to the simultaneous execution of multiple tasks, most activities that require active attention cannot actually be done simultaneously.",
+        "Unlike previous literature, I study how the exact same activity can be perceived as multitasking or single-tasking.",
+        "This work is important because many activities in our lives can be perceived as multitasking or single-tasking and this has implications for performance and engagement.",
+        "The first chapter of this dissertation demonstrates the malleability of people’s multitasking perceptions.",
+        "That is, I explore different factors that make individuals perceive the same activity as multitasking or single-tasking.",
+        "In seven studies, I identify different ways of separating an activity into its components to make people feel like they are multitasking.",
+        "The second, focal chapter of this dissertation explores how the mere perception of multitasking impacts performance across many domains.",
+        "Across 29 studies (N = 7,880), I find that the perception of multitasking improves performance compared to the perception of single-tasking, holding the activity constant.",
+        "The third chapter of this dissertation identifies the mechanism underlying this effect, engagement, using a physiological measure of engagement.",
+        "In seven studies, I show this increase in engagement is a result of the perceived difficulty of multitasking and rule out rival accounts.",
+        "The fourth chapter presents an internal meta-analysis in addition to examining key moderators."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Noise-cancelling headphones",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=269193",
+      "retrieved_at": "2026-10-18T15:13:07.121Z",
+      "sha256": "98f0bf1743d809b474859b5891cc15beef325c4c15a5fcf5c7ae9de337538a6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Noise-cancelling headphones are headphones that reduce unwanted ambient sounds using active noise control (ANC), a technology that electronically minimizes external noise by generating sound waves that interfere destructively with incoming sounds.",
+        "They are commonly used in environments with persistent background noise, including aircraft cabins, trains, offices, industrial workplaces, and urban environments.",
+        "Noise-cancelling headphones differ from traditional passive noise-isolating headphones by actively reducing low-frequency environmental sounds rather than relying solely on physical insulation.",
+        "While passive isolation blocks sound through earcup padding or in-ear seals, active noise cancellation uses microphones, amplifiers, and digital signal processing to detect surrounding sound and produce an inverse waveform intended to cancel the incoming noise before it reaches the listener's ears."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Is Google Making Us Stupid?",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19635605",
+      "retrieved_at": "2026-10-18T15:13:07.121Z",
+      "sha256": "4de611d3176f24ad477c765c6a391e63164341a1263660683d48fb257f935971",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "What the Internet Is Doing to Our Brains!\" (alternatively \"Is Google Making Us Stoopid?\") is a magazine article by technology writer Nicholas G.",
+        "Carr, and is highly critical of the Internet's effect on cognition.",
+        "It was published in the July/August 2008 edition of The Atlantic magazine as a six-page cover story.",
+        "Carr's main argument is that the Internet might have detrimental effects on cognition that diminish the capacity for concentration and contemplation.",
+        "Despite the title, the article is not specifically targeted at Google, but more at the cognitive impact of the Internet and World Wide Web.",
+        "Carr expanded his argument in The Shallows: What the Internet Is Doing to Our Brains, a book published by W.",
+        "The essay was extensively discussed in the media and the blogosphere, with reactions to Carr's argument being polarised.",
+        "At the Britannica Blog, a part of the discussion focused on the apparent bias in Carr's argument toward literary reading.",
+        "In Carr's view, reading on the Internet is generally a shallower form in comparison with reading from printed books in which he believes a more intense and sustained form of reading is exercised.",
+        "Elsewhere in the media, the Internet's impact on memory retention was discussed; and, at the online scientific magazine Edge, several argued that it was ultimately the responsibility of individuals to monitor their Internet usage so that it does not impact their cognition.",
+        "While long-term psychological and neurological studies have yet to yield definitive results justifying Carr's argument, a few studies have provided glimpses into the changing cognitive habits of Internet users."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Nokia Asha platform",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39419809",
+      "retrieved_at": "2026-10-18T15:13:07.121Z",
+      "sha256": "7433cb8d7f526c38074eb51fc03fba9dd1cfa61c0004fa651e7944f58e487533",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Nokia Asha platform is a discontinued mobile operating system (OS) and computing platform designed for low-end borderline smartphones, The Asha platform was active from 2013 and 2014 and replaced Series 40 on Nokia's low-end touchscreen devices in the Nokia Asha series.",
+        "The user interface design team was headed by Peter Skillman, who had worked previously on webOS and the design of MeeGo for the Nokia N9.",
+        "The first phone based on the platform was the Nokia Asha 501, followed by the Asha 500, Asha 502 Dual SIM, and Asha 503, all announced at Nokia World in October 2013.",
+        "Another phone, the Nokia Asha 230 was announced on 24 February 2014, and came pre-installed with Asha platform 1.4."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Pseudolistening",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48010784",
+      "retrieved_at": "2026-10-18T15:13:07.122Z",
+      "sha256": "4862f290171eec725b06110530ec8424f5469df632db442a3d5e1682e7239277",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In communication studies, pseudolistening (from  pseudo- 'fake') is a barrier to active listening that consists of appearing attentive in conversation while ignoring or only partially listening to the other speaker.",
+        "As defined by communication scholars, pseudolistening is an “incompetent” way of listening, as it frequently leads to miscommunication because it does not allow listeners to process what is being said.",
+        "The lack of comprehension makes it difficult to retain what was said in the conversation and even harder to recall information for future encounters.",
+        "Pseudolistening is often used as a coping mechanism to manage personal needs while appearing attentive to others.",
+        "While pseudolistening is not always intended to be malicious, it can come across as deceptive and cause others to view a listener as disrespectful.",
+        "An example of pseudolistening is trying to multitask, talking on the phone to a friend while completing work to meet a deadline in a few hours.",
+        "In this situation, the individual cannot focus on both tasks, yet may not want to disappoint a friend by dismissing the conversation.",
+        "Instead, a person may give enough verbal encouragement to seem attentive when most of their focus is on work."
+      ]
+    }
+  ]
+}

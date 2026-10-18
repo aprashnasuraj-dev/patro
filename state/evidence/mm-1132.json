@@ -1,0 +1,173 @@
+{
+  "id": "mm-1132",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why AI Agents Do Not Need to Overthink",
+      "publisher": "Iconic Digital Lab",
+      "author": null,
+      "published_at": "2026-01-07",
+      "url": "https://www.irejournals.com/paper-details/1713332",
+      "retrieved_at": "2026-10-18T15:54:15.366Z",
+      "sha256": "2237ce49544832726c61a133573913d629f0c09f5c7780d4f4f198403bb9bbcd",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "However, excessive internal reasoning-commonly referred to as overthinking-leads to increased hallucination rates, inefficiency, and compounding errors.",
+        "This paper argues that overthinking is neither necessary nor desirable for reliable agent behaviour.",
+        "Instead, reliability emerges from bounded reasoning, operation-level specialization, scenario-based error handling, temperature-controlled execution, and strict verification loops.",
+        "We propose a system-level framework in which intelligence is expressed through disciplined execution rather than unrestricted deliberation.",
+        "Through practical code-level scenarios and real-world case studies, we demonstrate that non-overthinking agents achieve higher correctness, lower hallucination rates, and improved determinism across domains.",
+        "Keywords AI Agents, Overthinking, Hallucination Mitigation, Error Handling, Autonomous Systems, Verification-Based AI.",
+        "References [1] Yao et al., ReAct: Synergizing Reasoning and Acting in Language Models, NeurIPS 2023.",
+        "[2] Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, NeurIPS 2020.",
+        "[3] Wang et al., Self-Consistency Improves Chain of Thought Reasoning, ICLR 2023.",
+        "[4] Schick et al., Toolformer: Language Models Can Teach Themselves to Use Tools, NeurIPS 2023.",
+        "[5] Qin et al., Tool Learning with Foundation Models, arXiv 2023.",
+        "[6] Park et al., Generative Agents: Interactive Simulacra of Human Behaviour, arXiv 2023."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "overthink, v.²",
+      "publisher": "Oxford University Press",
+      "author": null,
+      "published_at": "2023-03-02",
+      "url": "https://www.oed.com/",
+      "retrieved_at": "2026-10-18T15:54:17.342Z",
+      "sha256": "0a7244d4f022fe61dab1af3f4a812e01a6eed3786af6f4fb9862f8bfe9c8b969",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "cod) in lye, then cooking the fish to a gelatinous consistency.",
+        "Word lists Access our word lists and commentaries on an array of fascinating topics, from film-based coinages to Tex-Mex terms.",
+        "World Englishes Explore our World Englishes hub and access our resources on the varieties of English spoken throughout the world by people of diverse cultural backgrounds.",
+        "History of English Here you can find a series of commentaries on the History of English, charting the history of the English language from Old English to the present day.",
+        "We will only use your personal information for providing you with this service.",
+        "Email address (required) First name (required) Last name (required) Submit"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "overthink, v.¹",
+      "publisher": "Oxford University Press",
+      "author": null,
+      "published_at": "2023-03-02",
+      "url": "https://www.oed.com/",
+      "retrieved_at": "2026-10-18T15:54:18.254Z",
+      "sha256": "0a7244d4f022fe61dab1af3f4a812e01a6eed3786af6f4fb9862f8bfe9c8b969",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "cod) in lye, then cooking the fish to a gelatinous consistency.",
+        "Word lists Access our word lists and commentaries on an array of fascinating topics, from film-based coinages to Tex-Mex terms.",
+        "World Englishes Explore our World Englishes hub and access our resources on the varieties of English spoken throughout the world by people of diverse cultural backgrounds.",
+        "History of English Here you can find a series of commentaries on the History of English, charting the history of the English language from Old English to the present day.",
+        "We will only use your personal information for providing you with this service.",
+        "Email address (required) First name (required) Last name (required) Submit"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Reasons Why We Feed Wild Birds",
+      "publisher": "Cornell University Press",
+      "author": "Jones, Darryl",
+      "published_at": "2018-03-15",
+      "url": "https://doi.org/10.7591/cornell/9781501710780.003.0008",
+      "retrieved_at": "2026-10-18T15:54:18.255Z",
+      "sha256": "7af5c78dc369d11d36f54737d470c24444251a0118a859fd8c71f8f0fab58d72",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Although millions of people are passionately engaged in providing food to wild birds, the reasons and motivations for their participation are often complex and varied.",
+        "Numerous recent studies but social scientists have attempted to discern how what are personal values influence the practice of bird feeding.",
+        "These studies are unpacked with a view to understanding the changing attitudes to the practice."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Analysis paralysis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1220869",
+      "retrieved_at": "2026-10-18T15:54:18.255Z",
+      "sha256": "4886c0d2cfb3fb4c8d4622cdfa5db5f8d9c36b21f2af56421d1fbde9b46cd383",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Analysis paralysis (or paralysis by analysis) is a state of an individual or a group in which excessive analysis of a situation cause forward motion or decision-making to become paralyzed, meaning that no solution or course of action is decided upon within a natural time frame.",
+        "It is one of the results caused by overanalyzing or overthinking a situation.",
+        "A situation may be deemed too complicated and a decision is never made, or made much too late, due to anxiety that a potentially larger problem may arise.",
+        "A person may desire a perfect solution, but may fear making a decision that could result in error, while on the way to a better solution.",
+        "Equally, a person may hold that a superior solution is a short step away, and stall in its endless pursuit, with no concept of diminishing returns.",
+        "On the opposite end of the time spectrum is the phrase extinct by instinct, which is making a fatal decision based on hasty judgment or a gut reaction.",
+        "Analysis paralysis is when the fear of either making an error or forgoing a superior solution outweighs the realistic expectation or potential value of success in a decision made in a timely manner.",
+        "This imbalance results in suppressed decision-making in an unconscious effort to preserve existing options.",
+        "An overload of options can overwhelm the situation and cause this \"paralysis\", rendering one unable to come to a conclusion.",
+        "It can become a larger problem in critical situations where a decision needs to be reached, but a person is not able to provide a response fast enough, potentially causing a bigger issue than they would have had, had they made a decision."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Tom Welling",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1233754",
+      "retrieved_at": "2026-10-18T15:54:18.255Z",
+      "sha256": "81db3186f3ee2906123053168c26c6e596989ab040f72b74a4fc2dac07e06384",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Thomas Joseph Welling  (born April 26, 1977) is an American actor, director, and producer.",
+        "He is best known for his role as Clark Kent in The WB (now The CW) superhero drama Smallville (2001–2011).",
+        "He also co-starred in the third season of the Fox fantasy comedy-drama Lucifer as Lt.",
+        "A high school athlete, Welling initially worked in construction and, in 1997, he began modelling men's clothing for several popular brands including Abercrombie & Fitch, Dior, and Thomas Burberry.",
+        "He has been nominated and received several awards for his role as Clark Kent.",
+        "In 2001, he had a recurring role as Rob \"Karate Rob\" Meltzer in the second season of the CBS legal drama Judging Amy.",
+        "His films include Cheaper by the Dozen (2003), Cheaper by the Dozen 2 (2005), The Fog (2005), Draft Day (2014), and The Choice (2016).",
+        "In 2022, he starred as Samuel Campbell in the dark fantasy series The Winchesters.",
+        "He has also been involved behind the camera as an executive producer and a director."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "We Were Liars",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45498969",
+      "retrieved_at": "2026-10-18T15:54:18.255Z",
+      "sha256": "14fd7f186c5a718b655ac343353383f24d5de08e4bf87d38e6de8236e5d585bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The novel has received critical acclaim and won the Goodreads Choice Award for Best Young Adult Fiction.",
+        "It was also listed as an ALA Top Ten Best Fiction for Young Adults for 2015.",
+        "We Were Liars focuses on the theme of the consequences of one's mistakes.",
+        "It is centered on the wealthy, seemingly perfect Scots-American Sinclair family, who spend every summer sitting gathered on their private island.",
+        "However, not every summer is the same — when something happens to Cadence during the summer of her fifteenth year, the other three \"Liars\" (Johnny, Mirren, and Gat) re-emerge two years later to prompt Cadence to remember the incident."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "The Ramparts of Ice",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75569800",
+      "retrieved_at": "2026-10-18T15:54:18.255Z",
+      "sha256": "b81277c5050b378c538dc4cdff57d215b16fcfa2d7746aff308fa3703dfdf6b9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Ramparts of Ice (Japanese: 氷の城壁, Hepburn: Kōri no Jōheki) is a Japanese web manga series written and illustrated by Kōcha Agasawa.",
+        "It was first published as a webtoon under the Line Manga Indies section, and after collaborating with the Margaret editorial team, it was picked up for official serialization through the Line Manga digital service from January 2020 to April 2022.",
+        "Shueisha published its chapters in 14 tankōbon volumes from July 2023 to February 2025.",
+        "The series follows Koyuki Hikawa, an introverted high schooler who keeps her distance from others, until three of her schoolmates draw her out and help her enjoy her adolescence to the fullest.",
+        "The first season of an anime television series adaptation produced by Studio Kai aired from April to July 2026."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "mt-1348",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Chapter 6 Gut Microbiota in Neurological Disorders – Parkinson’s and Alzheimer’s Disease",
+      "publisher": "Pinkpetals publication",
+      "author": "Ranjan, Dr. Rajesh; Mishra, Dr. Rohit; Singh, Dr. Aishwarya",
+      "published_at": "2026",
+      "url": "https://doi.org/10.70034/ppp/bk/2026gcm.9",
+      "retrieved_at": "2026-10-18T16:53:05.340Z",
+      "sha256": "a0b5d6f6927e3a97c243908a4ce651bacd5df6beb38a404809c0d2fbaf5b0a07",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Kriti Chauhan MBBS (LHMC), MD- CHA, Resident Doctor, NIHFW Dr.",
+        "Prasoon Lata Assistant professor, Dept of dentistry, Saraswathi institute of medical sciences Hapur Pilkhuwa UP Published 18-06-2026 How to Cite Chauhan, D.",
+        "Chapter 6 Gut Microbiota in Neurological Disorders – Parkinson’s and Alzheimer’s Disease."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T16:53:05.340Z",
+      "sha256": "97494dbdbf222545369d34a6f525867539086ece4c18e0ccc1fb2dacc1eabe38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Autism",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29113700",
+      "retrieved_at": "2026-10-18T16:53:05.340Z",
+      "sha256": "b64258554a52626374679602d4f5cb7a6b624f6ff48e773289481407927e1414",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Autism, also known as autism spectrum disorder (ASD), is a condition characterized by impairment in social communication and interaction, as well as a need or strong preference for predictability and routine, sensory processing differences, focused interests, or repetitive behaviors.",
+        "Features of autism are present from early childhood and the condition typically persists throughout life.",
+        "Autism is classified as a neurodevelopmental disorder, and a diagnosis requires professional assessment that these characteristics cause significant challenges in daily life beyond what is expected given a person's age and social environment.",
+        "Because autism is a spectrum disorder, presentations vary and support needs range from minimal assistance to full-time, 24-hour care.",
+        "Autism diagnoses have risen since the 1990s, largely because of broader diagnostic criteria, greater awareness, and wider access to assessment.",
+        "The World Health Organization estimates that about 1 in 100 children were diagnosed between 2012 and 2021, noting an increasing trend.",
+        "Surveillance studies suggest a similar share of the adult population would meet diagnostic criteria if formally assessed.",
+        "Autism is highly heritable and involves many genes, while environmental factors appear to play a smaller, mainly prenatal role.",
+        "Boys are diagnosed several times more often than girls, with girls being better at hiding autistic traits.",
+        "Conditions such as anxiety, depression, attention deficit hyperactivity disorder (ADHD), epilepsy, as well as intellectual disability, are more common among autistic people.",
+        "Autistic people are also more likely to be a part of the LGBTQ community.",
+        "Certain savant abilities are also more common in autistic people than in other groups."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Timeline of aging research",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=67572411",
+      "retrieved_at": "2026-10-18T16:53:05.340Z",
+      "sha256": "70780835e46c1da15e822c885a034e6971682ab24bb0785613bb84cb044e1afd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This timeline lists notable events in the history of research into senescence or biological aging, including the research and development of life extension methods, brain aging delay methods and rejuvenation.",
+        "People have long been interested in making their lives longer and healthier.",
+        "The most ancient Egyptian, Indian and Chinese books contain reasoning about aging.",
+        "Ancient Egyptians used garlic in large quantities to extend their lifespan.",
+        "370 BCE), in his Aphorisms, and Aristotle (384–322 BCE), in On youth and old age, expressed their opinions about reasons for old age and gave advice about lifestyle.",
+        "980 – 1037), known in the West as Avicenna, summarized the achievements of earlier generations about this issue."
+      ]
+    }
+  ]
+}

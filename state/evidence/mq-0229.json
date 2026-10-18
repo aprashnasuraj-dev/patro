@@ -1,0 +1,164 @@
+{
+  "id": "mq-0229",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Investigation of the infrared profiles of exoplanet HD 209458 b secondary eclipses",
+      "publisher": "Special Astrophysical Observatory of the Russian Academy of Sciences",
+      "author": "Fedotov, A.; Baluev, R.",
+      "published_at": "2024-12-27",
+      "url": "https://doi.org/10.26119/vak2024.130",
+      "retrieved_at": "2026-10-18T17:13:48.802Z",
+      "sha256": "4da8deaca5efe6854f91fbf83c0f43a53cbe4c5763e10a6360e629840a4683bd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this work we process infrared light curves for 13 secondary eclipses of the exoplanet HD 209458 b, obtained with the Spitzer Space Telescope.",
+        "The objective of the study was to identify any discrepancies that might be attributed to the inhomogeneity of the planet's surface brightness or a difference of the planet's shape from a sphere.",
+        "Firstly, an attempt was made to ascertain whether the observed midpoint of the secondary eclipse exhibited a shift from the ephemeris moment.",
+        "This could indicate the presence of a hot spot on the planet's surface that is shifted from the central meridian.",
+        "The analysis allowed for the correlated noise that remained in the IRAC detector data after aperture photometry by approximating the noise with a Gaussian random process.",
+        "As a result, we detected two components of red noise with different time scales: $\\sim\\!10$ s and $\\sim\\!5$ min.",
+        "In addition, we constructed a unified model of the effect of inhomogeneous pixel sensitivity as a periodic function of the brightness centroid coordinates, which works well for all the analyzed eclipses.",
+        "According to the results, the main parameters of the HD 209458 b eclipse coincided with those obtained by other authors: a depth of $0.125 \\pm 0.004$% and a shift of the observed midpoint of $-0.53 \\pm 0.61$ min."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Discovery of an exoplanet quartet transiting HD 108236",
+      "publisher": "Wiley",
+      "author": "Daylan, Tansu",
+      "published_at": "2020-09-14",
+      "url": "https://doi.org/10.1002/essoar.10504295.1",
+      "retrieved_at": "2026-10-18T17:13:48.802Z",
+      "sha256": "93f7c263703c21248612eaf9afa77c8c0f7c66d54f80455fbc6783bfd99154c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We report the discovery and validation of four extrasolar planets hosted by the nearby, bright, Sun-like (G3V) star HD~108236 using data from the Transiting Exoplanet Survey Satellite (TESS).",
+        "We present transit photometry, reconnaissance and precise Doppler spectroscopy as well as high-resolution imaging, to validate the planetary nature of the objects transiting HD~108236, also known as the TESS Object of Interest (TOI) 1233.",
+        "The innermost planet is a possibly-rocky super-Earth with a period of 3.79523+0.00047−0.00044 days and has a radius of 1.586±0.098 R⊕.",
+        "The outer planets are sub-Neptunes, with potential gaseous envelopes, having radii of 2.068+0.10−0.091 R⊕, 2.72±0.11 R⊕, and 3.12+0.13−0.12 R⊕ and periods of 6.20370+0.00064−0.00052 days, 14.17555+0.00099−0.0011 days, and 19.5917+0.0022−0.0020 days, respectively.",
+        "With V and Ks magnitudes of 9.2 and 7.6, respectively, the bright host star makes the transiting planets favorable targets for mass measurements and, potentially, for atmospheric characterization via transmission spectroscopy.",
+        "HD~108236 is the brightest Sun-like star in the visual (V) band known to host four or more transiting exoplanets."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T17:13:51.452Z",
+      "sha256": "082d88cbc8bb1b394df85428048984e73f41c3116f3ee95bcec5ac4f139e1ad7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Exoplanet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9763",
+      "retrieved_at": "2026-10-18T17:13:51.828Z",
+      "sha256": "e6691f51cbbff9584582de7827d08aa8e0c49072c13fb8e2562a3d08e56ba5fe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An exoplanet or extrasolar planet is a planet outside the Solar System.",
+        "The first confirmed detection of an exoplanet was in 1992 around a pulsar, and the first detection around a main-sequence star was in 1995.",
+        "A different planet, first detected in 1988, was confirmed in 2003.",
+        "In 2016, it was recognized that the first possible evidence of an exoplanet had been noted in 1917, a precovery.",
+        "As of 8 October 2026, there are 6,445 confirmed exoplanets in 4,834 planetary systems, with 1,070 systems having more than one planet.",
+        "Transit photometry and Doppler spectroscopy have found the most, but these methods suffer from a clear observational bias favoring the detection of large planets close to the star.",
+        "About 1 in 5 Sun-like stars are estimated to have an \"Earth-sized\" planet in the habitable zone.",
+        "Assuming there are 200 billion stars in the Milky Way, it can be hypothesized that there are 11 billion potentially habitable Earth-sized planets in the Milky Way, rising to 40 billion if planets orbiting the numerous red dwarfs are included.",
+        "The least massive exoplanet known is Draugr, which is about twice the mass of the Moon.",
+        "The most massive exoplanet listed on the NASA Exoplanet Archive is HR 2562 b, about 30 times the mass of Jupiter.",
+        "However, according to some definitions of a planet (based on the nuclear fusion of deuterium), it is too massive to be a planet and might be a brown dwarf.",
+        "Known orbital times for exoplanets vary from less than an hour (for those closest to their star) to thousands of years."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Stellar classification",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28927",
+      "retrieved_at": "2026-10-18T17:13:51.828Z",
+      "sha256": "66a1f569aa0387ef3f1951350113e6c625dd5c351c7d86c8e10bc47076dbd8d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In astronomy, stellar classification is the classification of stars based on their spectral characteristics.",
+        "Electromagnetic radiation from the star is analyzed by splitting it with a prism or diffraction grating into a spectrum exhibiting the rainbow of colors interspersed with spectral lines.",
+        "Each line indicates a particular chemical element or molecule, with the line strength indicating the abundance of that element.",
+        "The strengths of the different spectral lines vary mainly due to the temperature of the photosphere, although in some cases there are true abundance differences.",
+        "The spectral class of a star is a short code primarily summarizing the ionization state, giving an objective measure of the photosphere's temperature.",
+        "Most stars are currently classified under the Morgan–Keenan (MK) system using the letters O, B, A, F, G, K, and M, a sequence from the hottest (O-type) to the coolest (M-type).",
+        "Each letter class is then subdivided using a numeric digit with 0 being hottest and 9 being coolest (e.g., A8, A9, F0, and F1 form a sequence from hotter to cooler).",
+        "The sequence has been expanded with three classes for other stars that do not fit in the classical system: W, S and C.",
+        "Some stellar remnants or objects of deviating mass have also been assigned letters: D for white dwarfs and L, T and Y for brown dwarfs (and exoplanets).",
+        "In the MK system, a luminosity class is added to the spectral class using Roman numerals.",
+        "This is based on the width of certain absorption lines in the star's spectrum, which vary with the density of the atmosphere and so distinguish giant stars from dwarfs.",
+        "Luminosity class 0 or Ia+ is used for hypergiants, class I for supergiants, class II for bright giants, class III for regular giants, class IV for subgiants, class V for main-sequence stars, class sd (or VI) for subdwarfs, and class D (or VII) for white dwarfs."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "HD 209458 b",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=453959",
+      "retrieved_at": "2026-10-18T17:13:51.828Z",
+      "sha256": "d3e6a2bfde3eb358083b04cc48d6abe50b89868804d6b9d184cec8699cd75188",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "HD 209458 b is an exoplanet, specifically a hot Jupiter, that orbits the solar analog HD 209458 in the constellation Pegasus, some 157 light-years (48 parsecs) from the Solar System.",
+        "The radius of the planet's orbit is 0.047 AU (7.0 million km; 4.4 million mi), or one-eighth the radius of Mercury's orbit (0.39 AU (36 million mi; 58 million km)).",
+        "This small orbital distance results in a year that is 3.5 Earth-days long and an estimated surface temperature of about 1,000 °C (1,800 °F; 1,300 K).",
+        "Its mass is 220 times that of Earth (0.69 Jupiter masses) and its volume is some 2.5 times greater than that of Jupiter.",
+        "The high mass and volume of HD 209458 b indicate that it is a gas giant.",
+        "HD 209458 b represents a number of milestones in exoplanetary research.",
+        "Based on the application of newer theoretical models, as of April 2007, it is thought to be the first extrasolar planet found to have water vapor in its atmosphere."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "HD 189733",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2847060",
+      "retrieved_at": "2026-10-18T17:13:51.828Z",
+      "sha256": "ee5c744dd4ef6e25b09212c280d507609f9b3b4182c058d7dfb1a174b3beb8c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "HD 189733, also catalogued as V452 Vulpeculae, is a binary star system 64.5 light-years (19.8 parsecs) away in the constellation of Vulpecula (the Fox).",
+        "The primary star is suspected to be an orange dwarf star, while the secondary star is a red dwarf star.",
+        "Given that this system has the same visual magnitude as HD 209458, it promises much for the study of close transiting extrasolar planets.",
+        "The star can be found with binoculars 0.3 degrees east of the Dumbbell Nebula (M27).",
+        "As of 2005, it has been confirmed that an exoplanet, HD 189733 b, orbits the primary star within the system."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "mm-0471",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Visualizing Uncertainty: On Soyer's and Hogarth's 'The Illusion of Predictability: How Regression Statistics Mislead Experts'",
+      "publisher": "Elsevier BV",
+      "author": "Ziliak, Stephen",
+      "published_at": "2012",
+      "url": "https://doi.org/10.2139/ssrn.2104279",
+      "retrieved_at": "2026-10-18T15:25:20.312Z",
+      "sha256": "b102ba406a05609d61b49af02673654b1fe0b6e58eae8e3eb909e6e9cf5062c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This comment was published in the International Journal of Forecasting symposium on the Soyer-Hogarth experiment (Vol.",
+        "The experiment evaluates the ability of expert econometricians to make predictions based on commonly provided regression output.",
+        "Visual displays of quantitative information, including simple plots of data, outperformed predictions based on R-squared, t-statistics, and other common diagnostics.",
+        "Reliance on graphing - on the visualization of uncertainty - was suggested more than a century ago by Karl Pearson, a founding father of English language statistics.",
+        "The results of the Soyer and Hogarth experiment, when combined with evidence produced by Ziliak and McCloskey (2008) and others, suggests that graphing and visualization should receive more attention and tests of statistical significance, less."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "A small difference in how ratings are displayed can unintentionally mislead consumers",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Sirwani, Deepak",
+      "published_at": "2025-04-15",
+      "url": "https://theconversation.com/a-small-difference-in-how-ratings-are-displayed-can-unintentionally-mislead-consumers-250985",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "e2a9385ef4503b865099472241126e0c11faca7443da9a68dd01039d08c2239a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "A small difference in how ratings are displayed can unintentionally mislead consumers Skip to content Academic rigor, journalistic flair Ratings have become as crucial to purchasing decisions as factors like price, brand reputation or recommendations from family and friends.",
+        "Platforms like Amazon, Yelp and Uber Eats bombard users with stars, numbers and symbols that can heavily influence consumer decision-making .",
+        "Research suggests ratings have become as crucial to purchasing decisions as factors like price, brand reputation or recommendations from family and friends, especially in terms of online shopping.",
+        "Even a small increase of 0.2 in a rating can boost sales by 30 to 200 per cent .",
+        "One hotel displays its rating as a visual image of three stars with a fourth partially filled, while the other just lists the numerical score “3.5.” Which one would you be more likely to choose?",
+        "My recent research study with my co-authors found that the way ratings are displayed — as stars versus numbers — can shape consumer perceptions in subtle yet predictable ways.",
+        "Visual star ratings, fractional ones in particular, tend to appear more appealing to consumers than their number rating counterparts.",
+        "Stars versus number ratings We conducted a series of 12 experiments involving thousands of participants.",
+        "In one, participants were asked to plot fractional numbers on an unmarked line; another tested how people visually process partially filled stars.",
+        "In another experiment, respondents were given half ratings (like 1.5 or 2.5) and asked how they might round up or down, while another tested whether one format was more memorable than the other.",
+        "We found that fractional star ratings (a visual image of three stars with the fourth partially filled) tend to be overestimated by roughly 0.12 points, meaning a 3.5-star rating feels more like 3.62.",
+        "In contrast, numeric ratings (like “3.5”) are underestimated by about 0.05 points, making them feel close to 3.45."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Influence of Various Misleading Techniques in Statistics",
+      "publisher": "Our Heritage",
+      "author": "Fahmeeda F. Shaikh; Vernal R. Damor",
+      "published_at": "2020-01-20",
+      "url": "https://openalex.org/W3010380798",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "c9c12535cbf472a8341ac2c1007cedd71a4e5e8c73c96dcae381bad5fc0d346e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We all know that only Statistics can give better and precise conclusion for any data.With the help of statistics one can become aware about the latest trends going on in the world.",
+        "Any Research can be authenticated by applying the various techniques of statistics.But on the other hand, there are statistics which may mislead you.",
+        "In this paper you can see that as statistics conclude the data it may also mislead the conclusion.",
+        "So, from these paper one can learn about the other side of the statistics that how misleading statistical method affect the data.",
+        "As, the use of these methods have been increased by newspapers, news channels, companies etc.",
+        "one should be aware about the misleading techniques to better understand the Statistical methods."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Simpson's paradox",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46096",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "f41cd50527e5f59b26de8536268f82acd0bc53071d8835d008f629104c8e69f1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Simpson's paradox is a phenomenon in probability and statistics in which a trend appears in several groups of data but disappears or reverses when the groups are combined.",
+        "This result is often encountered in social science and medical science statistics, and is particularly problematic when frequency data are unduly given causal interpretations.",
+        "The paradox can be resolved when confounding variables and causal relations are appropriately addressed in the statistical modeling (e.g., through cluster analysis).",
+        "Simpson's paradox has been used to illustrate the kind of misleading results that the misuse of statistics can generate.",
+        "Simpson first described this phenomenon in a technical paper in 1951; the statisticians Karl Pearson (in 1899) and Udny Yule (in 1903) had mentioned similar effects earlier.",
+        "It is also referred to as Simpson's reversal, the Yule–Simpson effect, the amalgamation paradox, or the reversal paradox."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lies, damned lies, and statistics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=302244",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "99a79f620a07a40df7001150686e0e30284d33cc5d2ae59281fa2386f795daba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Lies, damned lies, and statistics\" is a phrase describing the persuasive power of statistics to bolster weak arguments, \"one of the best, and best-known\" critiques of applied statistics.",
+        "It is also sometimes colloquially used to doubt statistics used to prove an opponent's point.",
+        "The phrase was popularized in the United States by Mark Twain (among others), who attributed it to the British prime minister Benjamin Disraeli.",
+        "However, the phrase is not found in any of Disraeli's works and the earliest known appearances were years after his death.",
+        "Several other people have been listed as originators of the quote, and it is often attributed to Twain himself."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Misuse of statistics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1217358",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "ee2fc677f6ccfb2985181222fd3d671b91bebd1d7f459e0405a9993bd00ec218",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Statistics, when used in a misleading fashion, can trick the casual observer into believing something other than what the data shows.",
+        "That is, a misuse of statistics occurs when\na statistical argument asserts a falsehood.",
+        "In others, it is purposeful and for the gain of the perpetrator.",
+        "When the statistical reason involved is false or misapplied, this constitutes a statistical fallacy.",
+        "The consequences of such misinterpretations can be quite severe.",
+        "For example, in medical science, correcting a falsehood may take decades and cost lives; likewise, in democratic societies, misused statistics can distort public understanding, entrench misinformation, and enable governments to implement harmful policies without accountability.",
+        "Professional scientists, mathematicians and even professional statisticians, can be fooled by even some simple methods, even if they are careful to check everything.",
+        "Scientists have been known to fool themselves with statistics due to lack of knowledge of probability theory and lack of standardization of their tests."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Rape statistics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5672810",
+      "retrieved_at": "2026-10-18T15:25:20.602Z",
+      "sha256": "37182c929935f30236b361a4a5dc8762e964fea8411132cf2f8d39429d41cdb2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Statistics on rape and other acts of sexual assault are commonly available in industrialized countries, and have become better documented throughout the world.",
+        "Inconsistent definitions of rape, different rates of reporting, recording, prosecution and conviction for rape can create controversial statistical disparities, and has led to concerns that many rape statistics may not accurately represent the extent of its prevalence.",
+        "In some jurisdictions, male-on-female rape is the only form of rape counted in the statistics.",
+        "Some jurisdictions also don't count being forced to penetrate another as rape, creating further controversy around rape statistics.",
+        "Countries may not define marital rape (forced sex on a spouse) as rape.",
+        "The reasons for not reporting rape vary across countries, and may include fear of retaliation, uncertainty about whether a crime was committed or if the offender intended harm, feelings of shame or humiliation, not wanting the offender to get in trouble, fear of prosecution (e.g.",
+        "due to laws against premarital sex), and doubt in or distrust of local law enforcement.",
+        "In 2005, a United Nations statistical report compiled from government sources showed that more than 250,000 cases of rape or attempted rape were recorded by police annually."
+      ]
+    }
+  ]
+}

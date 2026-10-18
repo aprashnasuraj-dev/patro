@@ -1,0 +1,129 @@
+{
+  "id": "mm-1122",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When Tulips Are in Bloom",
+      "publisher": "JSTOR",
+      "author": "Rathbone, Alice",
+      "published_at": "1918",
+      "url": "https://doi.org/10.2307/25588406",
+      "retrieved_at": "2026-10-18T15:50:44.263Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Nelis personally selected tulip collection",
+      "publisher": "Biodiversity Heritage Library (Smithsonian Institution)",
+      "author": "Nelis Nurseries.",
+      "published_at": "1935-01-01",
+      "url": "https://openalex.org/works/W2998279750",
+      "retrieved_at": "2026-10-18T15:50:45.292Z",
+      "sha256": "8b728b35b0112291854e8389996411280870dd67ca9863c4b575c2fb62854d56",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Nelis personally selected tulip collection | OpenAlex Log in Get started Work Add to collection Nelis personally selected tulip collection HTML PDF Details Locations Year: 1935 Type: book Source: Biodiversity Heritage Library (Smithsonian Institution) Author: Nelis Nurseries.",
+        "Language: English Topic: Flowering Plant Growth and Cultivation Subfield: Plant Science Field: Agricultural and Biological Sciences Domain: Life Sciences Open Access status: green OpenAlex ID: W2998279750 FWCI: Cites: Cited by: Related to:"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "E. E. Cummings",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9591",
+      "retrieved_at": "2026-10-18T15:50:45.292Z",
+      "sha256": "bd68c8b30119b0e9dae092cc8cadfdda314bb90f8bc1c948ff21dc2445ee621a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Edward Estlin Cummings (October 14, 1894 – September 3, 1962), commonly known as e e cummings or E.",
+        "Cummings, was an American poet, painter, essayist, author, and playwright.",
+        "During World War I, he worked as an ambulance driver and was imprisoned in an internment camp, which provided the basis for his novel The Enormous Room (1922).",
+        "The following year he published his first collection of poetry, Tulips and Chimneys, which showed his early experiments with grammar and typography.",
+        "He wrote four plays, the most successful of which were HIM (1927) and Santa Claus: A Morality (1946).",
+        "He wrote EIMI (1933), a travelog of the Soviet Union, and delivered the Charles Eliot Norton Lectures in poetry, published as i—six nonlectures (1953).",
+        "Fairy Tales (1965), a collection of short stories, was published posthumously.",
+        "He is often regarded as one of the most important American poets of the 20th century.",
+        "He is associated with modernist free-form poetry, and much of his work uses idiosyncratic syntax and lower-case spellings for poetic expression.",
+        "Rosenthal wrote:\n\nThe chief effect of Cummings' jugglery with syntax, grammar, and diction was to blow open otherwise trite and bathetic motifs through a dynamic rediscovery of the energies sealed up in conventional usage ...",
+        "He succeeded masterfully in splitting the atom of the cute commonplace.",
+        "For Norman Friedman, Cummings's inventions \"are best understood as various ways of stripping the film of familiarity from language to strip the film of familiarity from the world."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "List of one-hit wonders in the United States",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=154265",
+      "retrieved_at": "2026-10-18T15:50:45.292Z",
+      "sha256": "a485eb58569b44499ba443a38acf7c26b9400f8c21a253b3f9a5db9ed83a1c2c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A one-hit wonder is a musical artist who is successful with one hit song, but without a comparable subsequent hit.",
+        "The term may also be applied to an artist who is remembered for only one hit despite other successes.",
+        "This article contains artists known primarily for one hit song in the United States, who are regarded as one-hit wonders by at least two sources in media, even though the artist may have had multiple hits abroad."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tulip mania",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=203464",
+      "retrieved_at": "2026-10-18T15:50:45.292Z",
+      "sha256": "37d0efeb543d55f507a0e24647054d00d93bffa31c4983b4d75ebcb76ec50648",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tulip mania (Dutch: tulpenmanie) was a period during the Dutch Golden Age when contract prices for some bulbs of the recently introduced and fashionable tulip reached extraordinarily high levels.",
+        "The major acceleration started in 1634 and then dramatically collapsed in February 1637.",
+        "It is generally considered to have been the first recorded speculative bubble or asset bubble in history.",
+        "In many ways, the tulip mania was more of a socio-economic phenomenon than a significant economic crisis.",
+        "It had no critical influence on the prosperity of the Dutch Republic (now the Netherlands), which was one of the world's leading economic and financial powers in the 17th century, with the highest per capita income in the world from circa 1600 to 1720.",
+        "The term tulip mania is now often used metaphorically to refer to any large economic bubble when asset prices deviate from intrinsic values.",
+        "Forward markets appeared in the Dutch Republic during the 17th century.",
+        "At the peak of tulip mania in February 1637, certain tulip bulbs sold for more than 10 times the annual income of a skilled artisan.",
+        "The Semper Augustus was the most expensive tulip during the mania, which at its peak sold for ƒ10,000 (in guilders; equivalent to approximately €130,000 in 2024).",
+        "Research is difficult because of the limited economic data from the 1630s, much of which comes from biased and speculative sources.",
+        "Some modern economists have proposed rational explanations rather than a speculative mania for the rise and fall in prices.",
+        "For example, other flowers such as the hyacinth also had high initial prices at the time of their introduction, which then fell as the plants were propagated."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Rachel Griffiths",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=504161",
+      "retrieved_at": "2026-10-18T15:50:45.292Z",
+      "sha256": "9dd19894a104a368b9d33decf6f9c7b738798e84d7e04bc5f638f764ace53b46",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rachel Anne Griffiths (born 18 December 1968) is an Australian actress.",
+        "Raised primarily in Melbourne, she began her acting career appearing on the Australian series Secrets before being cast in a supporting role in the comedy Muriel's Wedding (1994), which earned her an AACTA Award for Best Actress in a Supporting Role.",
+        "In 1997, she was the lead in Nadia Tass's drama Amy, followed by her portrayal of Hilary du Pré in Hilary and Jackie (1998), for which she received a nomination for the Academy Award for Best Supporting Actress.",
+        "From 2001 to 2005, Griffiths portrayed massage therapist Brenda Chenowith in the HBO series Six Feet Under, for which she earned a Golden Globe Award for Best Actress in 2002 and two Primetime Emmy Award nominations.",
+        "She subsequently appeared on television as Sarah Walker Laurent on the ABC drama series Brothers & Sisters from 2006 to 2011, for which she was nominated for two additional Primetime Emmy Awards.",
+        "She has also had roles in the films Blow (2001), portraying the mother of George Jung; the historical drama Ned Kelly (2003); Step Up (2006), and the Julian Assange television biopic Underground: The Julian Assange Story (2012).",
+        "In 2016, she appeared in a supporting role in Mel Gibson's biographical war drama Hacksaw Ridge, and in the docudrama miniseries When We Rise, written by Dustin Lance Black.",
+        "Onstage, Griffiths appeared in a Melbourne-based production of Proof in 2002, which earned her a Helpmann Award, and later made her Broadway debut in a 2011 critically acclaimed production of Other Desert Cities.",
+        "In addition to acting, she made her directorial debut with the short film Tulip in 1998, and directed several episodes of the Australian television series Nowhere Boys in 2015."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "mm-0548",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Water Diversion, or Water Reuse?",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2023-11-09",
+      "url": "https://doi.org/10.2307/jj.41003595.16",
+      "retrieved_at": "2026-10-18T15:25:22.289Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Future Water in Virginia",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2023-11-09",
+      "url": "https://doi.org/10.2307/jj.41003595.9",
+      "retrieved_at": "2026-10-18T15:25:22.457Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Purified",
+      "publisher": "Princeton University Press",
+      "author": "Annin, Peter",
+      "published_at": "2023-11-09",
+      "url": "https://doi.org/10.2307/jj.41003595",
+      "retrieved_at": "2026-10-18T15:25:22.566Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Notes",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2023-11-09",
+      "url": "https://doi.org/10.2307/jj.41003595.19",
+      "retrieved_at": "2026-10-18T15:25:22.731Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Distilled water",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=106242",
+      "retrieved_at": "2026-10-18T15:25:22.731Z",
+      "sha256": "757490165f4358ca5d4ac6101ee9355720bd7bc57a609798dfc1924595e53e8c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Distilled water is water that has been purified by boiling it into vapor and condensing the vapor back into liquid in a separate container.",
+        "Any impurities in the original water, such as non-volatile or mineral components, that do not boil below or near the boiling point of water remain in the original container.",
+        "For example, water escaping as steam from a boiler of heating system or steam engine, leaves behind any dissolved materials, which leads to mineral deposits known as boiler scale.",
+        "In general, non-purified water can leave behind mineral deposits, or could cause or interfere with chemical reactions.",
+        "Distillation is a method for removing impurities from water and other fluids.",
+        "Distilled water has not been proven to be healthier for drinking than hard water."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Water purification",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=214701",
+      "retrieved_at": "2026-10-18T15:25:22.731Z",
+      "sha256": "6c1f1711b6a3bdc4476e613c5ca65c809363b4de08ba885ca50c2326fae9e99c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Water purification is the process of removing undesirable chemicals, biological contaminants, suspended solids, and gases from water.",
+        "The goal is to produce water that is fit for specific purposes.",
+        "Most water is purified and disinfected for human consumption (drinking water), but water purification may also be carried out for a variety of other purposes, including medical, pharmacological, chemical, and industrial applications.",
+        "The history of water purification includes a wide variety of methods.",
+        "The methods used include physical processes such as filtration, sedimentation, and distillation; biological processes such as slow sand filters or biologically active carbon; chemical processes such as flocculation and chlorination; and the use of electromagnetic radiation such as ultraviolet light.",
+        "Water purification can reduce the concentration of particulate matter including suspended particles, parasites, bacteria, algae, viruses, and fungi as well as reduce the concentration of a range of dissolved and particulate matter.",
+        "The standards for drinking water quality are typically set by governments or by international standards.",
+        "These standards usually include minimum and maximum concentrations of contaminants, depending on the intended use of the water.",
+        "A visual inspection cannot determine if water is of appropriate quality.",
+        "Simple procedures such as boiling or the use of a household point of use water filter (typically with activated carbon) are not sufficient for treating all possible contaminants that may be present in water from an unknown source.",
+        "Even natural spring water—considered safe for all practical purposes in the 19th century—must now be tested before determining what kind of treatment, if any, is needed.",
+        "Chemical and microbiological analysis, while expensive, are the only way to obtain the information necessary for deciding on the appropriate method of purification."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Bottled water",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=402923",
+      "retrieved_at": "2026-10-18T15:25:22.731Z",
+      "sha256": "85ff644dd990d4019f29f28ec5488cdeb40725bcd5bc9f7f1c691ec1560be2df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bottled water is drinking water (e.g., well water, distilled water, reverse osmosis water, mineral water, or spring water) packaged in plastic or glass water bottles.",
+        "Bottled water may be carbonated or not with packaging sizes ranging from small single-serving bottles to large carboys for water coolers.",
+        "The consumption of bottled water is influenced by factors such as convenience, taste, perceived safety, and concerns over the quality of municipal tap water.",
+        "Concerns about the environmental impact of bottled water, including the production and disposal of plastic bottles, have led to calls for more sustainable practices in the industry.",
+        "Some brands have attempted to address the problem of microplastics and chemicals by canning purified water."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Water dispenser",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=620957",
+      "retrieved_at": "2026-10-18T15:25:22.731Z",
+      "sha256": "b43d8edfdb79b86aaafc35fa493e4a2a15661e927c03f87cb33f2d147b3028ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A water dispenser,\nsometimes referred to as a water cooler (if used for cooling only), is a machine that dispenses and often also cools or heats up water with a refrigeration unit.",
+        "It is commonly located near the restroom due to closer access to plumbing.",
+        "A drain line is also provided from the water cooler into the sewer system.",
+        "Water dispensers come in a variety of form factors, ranging from wall-mounted to bottle filler water dispenser combination units, to bi-level units and other formats.",
+        "They are generally broken up into two categories: point-of-use (POU) water dispensers and bottled water dispensers.",
+        "POU water dispensers are connected to a water supply, while bottled water dispensers require delivery (or self-pick-up) of water in large bottles from vendors.",
+        "Bottled water dispensers can be top-mounted or bottom-loaded, depending on the design of the model.",
+        "Bottled water dispensers typically use 5-gallon (18.9 litre) bottles (carboys) commonly located on top of the unit.",
+        "Pressure coolers are a subcategory of water dispensers encompassing drinking water fountains and direct-piping water dispensers.",
+        "Water cooler may also refer to a primitive device for keeping water cool."
+      ]
+    }
+  ]
+}
