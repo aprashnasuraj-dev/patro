@@ -98,13 +98,15 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1500,time
 // Raw text stays transient. Persist excerpts, retrieval metadata, and a hash only.
 export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
  const have=new Set(evidence.map(e=>e.url));
- const expandedQuery=/himalay/i.test(topic)?topic+' Indian Eurasian plate collision tectonic uplift':/accent|dialect/i.test(topic)?topic+' regional language change sociolinguistics':/childcare|child care|daycare|early childhood|incident/i.test(topic)?topic+' childcare centre serious incidents regulator safety report inspection incident statistics':/baby|babies|infant|crying/i.test(topic)?topic+' infant crying caregiver response developmental psychology':topic+' scientific evidence';
- const [wikiLinks,openAlexLinks,searchLinks]=await Promise.all([
+ const expandedQuery=/himalay/i.test(topic)?'Himalaya ongoing uplift Indian Eurasian plate collision geology research':/accent|dialect/i.test(topic)?'regional accent change sociolinguistics Australia study':/childcare|child care|daycare|early childhood|incident/i.test(topic)?'Australia childcare centre serious incidents regulator report safety statistics':/baby|babies|infant|crying/i.test(topic)?'infant crying caregiver response neuroscience developmental psychology study':topic+' scientific evidence';
+ const [wikiLinks,openAlexLinks,expandedSearchLinks,exactSearchLinks]=await Promise.all([
   (async()=>{let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});return titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];})(),
   openAlexSearchLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic,disc}),
-  searchWebLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic})
+  searchWebLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic}),
+  searchWebLinks(topic,{fetchImpl,max:disc.max_links_per_topic})
  ]);
- const links=[...new Set([...openAlexLinks,...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
+ const links=[...new Set([...openAlexLinks,...expandedSearchLinks,...exactSearchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
+ log?.('research candidates: '+links.length+' unique HTTPS links; cached relevant sources: '+evidence.length);
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
  const found=[];const add=(url,title,text,published,method)=>{const ex=excerptsFrom(text,{max:10});if(ex.length>=2&&isRelevantEvidence(topic,{title:title||hostOf(url),url,excerpts:ex}))found.push({title:title||hostOf(url),publisher:hostOf(url),author:null,published_at:published?String(published).slice(0,10):null,url,retrieved_at:now().toISOString(),sha256:createHash('sha256').update(text).digest('hex'),rendered:false,scraped:true,method,excerpts:ex});};
