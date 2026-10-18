@@ -1,0 +1,114 @@
+{
+  "id": "mm-1469",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Countries Differ in Thin Capitalization Rules: The Role of Financial Development",
+      "publisher": "Elsevier BV",
+      "author": "Mardan, Mohammed",
+      "published_at": "2015",
+      "url": "https://doi.org/10.2139/ssrn.2597983",
+      "retrieved_at": "2026-10-18T15:48:22.242Z",
+      "sha256": "9ff88016bdfa816e955db029784f54e2d261204f9107e45de008dfa8c05a1cd2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the absence of financial frictions, the purpose of thin capitalization rules is to limit multinational firms’ possibilities of engaging in tax planning via debt shifting.",
+        "This paper analyzes the effects of thin capitalization rules in the case where firms have limited access to external funding.",
+        "First, we show that a host country allows positive internal interest deductions if its financial development is sufficiently low.",
+        "This amount increases when the financial development of the host country worsens.",
+        "Then we ask which of the two most common thin capitalization rules used in practice is better suited to maximizing welfare of the host country.",
+        "We show that welfare under a safe haven rule is higher than under an earnings stripping rule if firms are not able to manipulate transfer prices.",
+        "Welfare, however, can be higher under an earnings stripping rule if firms are able to manipulate transfer prices.",
+        "The analysis provides an explanation for why countries differ in the strictness and in the type of thin capitalization rule."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Esperanto grammar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10402",
+      "retrieved_at": "2026-10-18T15:48:22.925Z",
+      "sha256": "20484f834d5e80d214bfba8ca06a976a66c11cec9860fb0e38b2c817af894047",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Esperanto is the most widely used constructed language intended for international communication; it was designed with highly regular grammatical rules, and is therefore considered easy to learn.",
+        "Each part of speech has a characteristic ending: nouns end with ‑o; adjectives with ‑a; present‑tense indicative verbs with ‑as, and so on.",
+        "An extensive system of prefixes and suffixes may be freely combined with roots to generate vocabulary, so that it is possible to communicate effectively with a vocabulary of 400 to 500 root words.",
+        "The original vocabulary of Esperanto had around 900 root words, but was quickly expanded."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Grammar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12569",
+      "retrieved_at": "2026-10-18T15:48:22.925Z",
+      "sha256": "16d32673a49adfc19cca5bdb10ffaed7b158c51bf0c6e6f7e487d7560f478be3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In linguistics, grammar is the system of rules that governs how a natural language is structured and used, as evidenced by its speakers or writers.",
+        "Grammar rules may concern the use of clauses, phrases, and words.",
+        "The term may also refer to the study of such rules, a subject that includes phonology, morphology, and syntax, together with phonetics, semantics, and pragmatics.",
+        "There are in effect two different ways to study grammar: traditional grammar and theoretical grammar.",
+        "Fluency in a particular language variety involves a speaker internalizing these rules, many or most of which are acquired by observing other speakers, as opposed to intentional study or instruction.",
+        "Much of this internalization occurs during early childhood; learning a language later in life usually involves more direct instruction.",
+        "The term grammar can also describe the linguistic behaviour of groups of speakers and writers rather than individuals.",
+        "Differences in scale can impact this definition: for example, English grammar could describe the rules followed by every one of the language's speakers.",
+        "At a smaller scale, it may refer to rules shared by smaller groups of speakers.",
+        "A description, study, or analysis of such rules may also be known as a grammar, or as a grammar book.",
+        "A reference work describing the grammar of a language is called a reference grammar or simply a grammar.",
+        "A fully revealed grammar, which describes the grammatical constructions of a particular speech type in great detail, is called descriptive grammar."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17524",
+      "retrieved_at": "2026-10-18T15:48:22.925Z",
+      "sha256": "63ed6480dff8b87d14b39121938afef777e2b6f1219e1d80a7531c4a00c2ad8d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Language is a structured system of communication that consists of grammar and vocabulary.",
+        "It is the primary means by which humans convey meaning, both in spoken and signed forms, and may also be conveyed through writing.",
+        "Human language is characterized by its cultural and historical diversity, with significant variations observed between cultures and across time.",
+        "Human languages possess the properties of productivity and displacement, which enable the creation of an infinite number of sentences, and the ability to refer to objects, events, and ideas that are not immediately present in the discourse.",
+        "The use of human language relies on social convention and is acquired through learning.",
+        "A 2026 estimate of the number of \"spoken or signed\" languages remaining was around 7,500 (half of which are described as \"endangered\"), representing an estimated ninety-percent reduction over the past several thousand years.",
+        "Precise estimates depend on an arbitrary distinction (dichotomy) established between languages and dialects.",
+        "Natural languages are spoken, signed, or both; however, any language can be encoded into secondary media using auditory, visual, or tactile stimuli – for example, writing, whistling, signing, or braille.",
+        "In other words, human language is modality-independent, but written or signed language is a way to inscribe or encode the natural human speech or gestures.",
+        "All languages rely on the process of semiosis to relate signs to particular meanings.",
+        "Oral, manual and tactile languages contain a phonological system that governs how symbols are used to form sequences known as words or morphemes, and a syntactic system that governs how words and morphemes are combined to form phrases and utterances.",
+        "Critical examinations of languages, such as philosophy of language, the relationships between language and thought, how words represent experience, etc., have been debated at least since Gorgias and Plato in ancient Greek civilization."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Transformational grammar",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58439",
+      "retrieved_at": "2026-10-18T15:48:22.925Z",
+      "sha256": "f338234d73aec835eafa7932b7fc3c07883cd1aef2b94dad8558edaffeddcc48",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In linguistics, transformational grammar (TG) or transformational-generative grammar (TGG) was the earliest model of grammar proposed within the research tradition of generative grammar.",
+        "Like current generative theories, it treated grammar as a system of formal rules that generate all and only grammatical sentences of a given language.",
+        "What was distinctive about transformational grammar was that it posited transformation rules that mapped a sentence's deep structure to its pronounced form."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "mm-1116",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Tire",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=65037",
+      "retrieved_at": "2026-10-18T15:31:32.109Z",
+      "sha256": "b6a477e1b696d72ab7d83bedbe10c1a85a75a085777c2b734a724de85c942ed5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tire (North American English) or tyre (Commonwealth English) is a ring-shaped component that surrounds a wheel's rim to transfer a vehicle's load from the axle through the wheel to the ground and to provide traction on the surface over which the wheel travels.",
+        "Most tires, such as those for automobiles and bicycles, are pneumatically inflated structures, providing a flexible cushion that absorbs shock as the tire rolls over rough features on the surface.",
+        "Tires provide a footprint, called a contact patch, designed to match the vehicle's weight and the bearing on the surface that it rolls over by exerting a pressure that will avoid deforming the surface.",
+        "The materials of modern pneumatic tires are synthetic rubber, natural rubber, fabric, and wire, along with carbon black and other chemical compounds.",
+        "The tread provides traction while the body provides containment for a quantity of compressed air.",
+        "Before rubber was developed, tires were metal bands fitted around wooden wheels to hold the wheel together under load and to prevent wear and tear.",
+        "Pneumatic tires are used on many vehicles, including cars, bicycles, motorcycles, buses, trucks, heavy equipment, and aircraft.",
+        "Metal tires are used on locomotives and railcars, and solid rubber (or other polymers) tires are also used in various non-automotive applications, such as casters, carts, lawnmowers, and wheelbarrows.",
+        "Unmaintained tires can lead to severe hazards for vehicles and people, ranging from flat tires making the vehicle inoperable to blowouts, where tires explode during operation and possibly damage vehicles and injure people.",
+        "The manufacture of tires is often highly regulated for this reason.",
+        "Because of the widespread use of tires for motor vehicles, tire waste is a substantial portion of global waste.",
+        "There is a need for tire recycling through mechanical recycling and reuse, such as for crumb rubber and other tire-derived aggregate, and pyrolysis for chemical reuse, such as for tire-derived fuel."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Racing slick",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=632709",
+      "retrieved_at": "2026-10-18T15:31:32.109Z",
+      "sha256": "5399c057c4fc81534a0c4c33b1e58f5f875212c4fb828b3650ea12ccbcc8b1bc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A racing slick or slick tyre is a type of tyre that has a smooth tread for use on paved surfaces in road racing and drag racing events.",
+        "The first production slick tyre was developed by M&H Tires in the early 1950s for use in drag racing.",
+        "By eliminating any grooves cut into the tread, such tyres provide the largest possible contact patch to the road, and maximize dry traction for any given tyre dimension.",
+        "Slick tyres are used on race tracks and in road racing, where acceleration, steering and braking require maximum traction from each wheel.",
+        "Slick tyres are typically used on only the driven (powered) wheels in drag racing, where the only concern is maximum traction to put power to the ground, and are not used in rallying.",
+        "Slick tyres are not suitable for use on common road vehicles, which must be able to operate in all weather conditions.",
+        "They are used in auto racing where competitors can choose different tyres based on the weather conditions and can often change tyres during a race."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Firestone and Ford tire controversy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1195479",
+      "retrieved_at": "2026-10-18T15:31:32.109Z",
+      "sha256": "22cbd427d236338fa24ac178ec044db871cba642e371a2e91b76feda74ae9913",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Firestone and Ford tire controversy of the 1990s saw hundreds of people die in automobile crashes caused by the failure of Firestone tires installed on light trucks and SUVs made by Ford Motor Company.",
+        "Unusually high failure rates of P235/75R15 ATX, ATX II, and Wilderness AT tires installed on the first and second-generation Ford Explorer and similar vehicles caused crashes that killed 238 people and injured around 500 others in the United States alone; more died in other countries.",
+        "The revelations halved the market value of Firestone parent company Bridgestone, which fired or accepted the resignation of several executives and closed the Decatur, Illinois, factory where the tires were manufactured.",
+        "Each company publicly blamed the other for the defects, a disagreement that ended the companies' nearly 100-year relationship.",
+        "Congressional inquiry into the scandal led to the enactment of the Transportation Recall Enhancement, Accountability and Documentation (TREAD) Act in October 2000."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Radial tire",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1372275",
+      "retrieved_at": "2026-10-18T15:31:32.109Z",
+      "sha256": "5ae57d612cc91f2f0f67c80d14f103e89e4594b0799493741dbae095db34b1db",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A radial tire (more properly, a radial-ply tire) is a particular design of vehicular tire.",
+        "In this design, the cord plies are arranged at 90 degrees to the direction of travel, or radially (from the center of the tire).",
+        "Radial tire construction climbed to 100% market share in North America following Consumer Reports finding the superiority of the radial design in 1968, and were standard by 1976."
+      ]
+    }
+  ]
+}

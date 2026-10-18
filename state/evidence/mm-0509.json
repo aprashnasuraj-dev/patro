@@ -1,0 +1,196 @@
+{
+  "id": "mm-0509",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Tolkien’s fantastic imaginary languages have had more impact than Esperanto",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Seargeant, Philip",
+      "published_at": "2017-01-11",
+      "url": "https://theconversation.com/why-tolkiens-fantastic-imaginary-languages-have-had-more-impact-than-esperanto-71094",
+      "retrieved_at": "2026-10-18T15:02:18.386Z",
+      "sha256": "07a2dd5d0e6c6c2fe136df0430cab054f3f613e23e2903e3267c294f046a27cc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "It is the first story in what would become his legendarium – the mythology that underpins The Lord of the Rings.",
+        "But behind the fiction was his interest in another epic act of creation: the construction of imaginary languages.",
+        "That same year, on the other side of Europe, Ludwik Zamenhof died in his native Poland.",
+        "Zamenhof had also been obsessed with language invention, and in 1887 brought out a book introducing his own creation.",
+        "He published this under the pseudonym Doktoro Esperanto, which in time became the name of the language itself.",
+        "The construction of imaginary languages, or conlangs , has a long history, dating back to the 12th century.",
+        "And Tolkien and Zamenhof are two of its most successful proponents.",
+        "Yet their aims were very different, and in fact point to opposing views of what language itself actually is.",
+        "Zamenhof, a Polish Jew growing up in a country where cultural and ethnic animosity was rife, believed that the existence of a universal language was the key to peaceful co-existence.",
+        "Although language is the “ prime motor of civilisation ” he wrote, “difference of speech is a cause of antipathy, nay even of hatred, between people”.",
+        "His plan was to devise something which was simple to learn, not tied to any one nation or culture, and could thus help unite rather than divide humanity.",
+        "As “international auxiliary languages” go, Esperanto has been very successful."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Fanfiction in Esperanto – Esperanto in Fanfiction",
+      "publisher": "Centre for Research and Documentation on World Language Problems",
+      "author": "Mussies, Martine",
+      "published_at": "2025-10",
+      "url": "https://doi.org/10.59718/ees51274",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "2ec72f7cb1c4c0db0278d05dafd144c9f1886adc78a08168b14553e00176ca1c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Esperanto’s role in fanfiction provides a compelling case study of how constructed languages function within digital participatory culture.",
+        "This article examines the ways in which Esperanto appears in fan-created narratives, both as a storytelling device and as a medium for linguistic experimentation.",
+        "It explores Esperanto’s use as a futuristic lingua franca in science fiction, a secret or resistance language in dystopian settings, and a bridging language between cultures and characters.",
+        "Additionally, it considers the phenomenon of fanfiction written entirely in Esperanto, highlighting the language’s use in both translation projects and original narratives.",
+        "Through an analysis of examples, including Ruĝen: rakonto pri intima socialismo and Now You’re Thinking With Portals!",
+        "Wait, That’s Knot Right, the article discusses the challenges of linguistic authenticity, particularly when Esperanto is incorporated via machine translation.",
+        "Furthermore, it examines the expansion of Esperanto fan creativity beyond textual storytelling, as illustrated by La Kanto de Tamar (by the author of this paper), a fan-created song blending science fiction with historical legend.",
+        "This study ultimately demonstrates that Esperanto’s presence in fanfiction extends beyond mere linguistic play; it functions as a dynamic tool for world-building, identity exploration, and alternative storytelling within contemporary fandom culture."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Esperanto als komplexes System: Rezension von The Phenomenon of Esperanto",
+      "publisher": "Centre for Research and Documentation on World Language Problems",
+      "author": "Schubert, Klaus",
+      "published_at": "2018",
+      "url": "https://doi.org/10.59718/ees37459",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "6647f13de230ac7c3b2bf028600f508189a1f7c360e47feff10536d737b4fede",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "So hört man es in der Werbung der Esperanto-Verbände immer wieder.",
+        "Jetzt hat sich ausgerechnet eine Zeitschrift, der es um komplexe Systeme geht, dieser einfachsten aller Sprachen angenommen."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "About Esperanto",
+      "publisher": "KOPS (University of Konstanz)",
+      "author": "Nils M. Bezares-Roder",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W7135282015",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "03f7fa875cd8843be8befb43c202e0ecbf872216fb2d1ce6325fdbf32c17f37b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Esperanto is a mostly snthetic planned language, the grammar and word order of which should be as easy as possible, evading exceptions.",
+        "The actual grammar meaning of a word is given especially by suffixes added to the lexemes.",
+        "The Esperanto rules and categories of the words are briefly described, as well as the logic of the Esperanto verb, which is constructed adding aspectual verb morphemes to a lexeme."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Esperanto and Languages of Internationalism in Revolutionary Russia (Book Review)",
+      "publisher": "OpenMETU (Middle East Technical University)",
+      "author": "Pamir Dietrich, Ayşe",
+      "published_at": "2022-07-01",
+      "url": "https://openalex.org/W7110517967",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "bbe0a61423d82fa33937f5cee8e5f8976a0d6437b0f67e75826ec1b748fca430",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "O’Keeffe states that her book is about Esperanto, a useful prism through which the essence of global language politics and the construction of socialist internationalism during the Russian Revolution is examined.",
+        "In the Introduction the author states that the purpose of her book is to analyze Esperanto, which was a constructed language borrowed from other languages, in Revolutionary Russia.",
+        "It covers the period from the Great Reforms in late imperial Russia to the purges of he late Stalinist Russia.",
+        "O’Keeffe discusses the emergence of Esperanto that was offered by Ludwig Lejzer Zamenhof in 1887, a program designed to revolutionize Russia and to unite all the people in the world by a shared international auxiliary language and the essence.",
+        "In Chapter one, the author highlights the purpose of Zamenhof’s Esperanto as a tool to eradicate ethnic, religious and linguistic chauvinism.",
+        "She also shows the parallelism between Hillelism and Esperanto, whose essential basis was to create a global moral community of new, emancipated people and unite them, despite their differences, through a new language.",
+        "Chapter two sheds light on the efforts of the ordinary Russian Esperantists who tried to start a global Esperanto movement and create a distinctive culture of Esperantism.",
+        "The author discusses the grassroot internationalism of the intellectuals in late imperial period just before World War I.",
+        "In Chapter three, the author discusses the Bolsheviks’ developing approaches to language diversity as an element of their efforts to incite a global revolution.",
+        "This chapter also provides information on why the Bolsheviks changed their prospects for socialist internationalism to building socialism in Russia after the failure of German October of 1923.",
+        "Chapter four talks about the activities of the Union of Soviet Esperantists to promote Soviet achievements abroad.",
+        "However, while advocates of Esperanto regarded the language as being above borders, the Soviets, on the other hand, were engaged in defending very definite ideological linguistic and national borders."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Esperanto",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9248",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "418925d5dcc75bb54e51047606ab3573a3471544e33bc1e3c51c294d7a520f40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Esperanto (; Esperanto: [espeˈranto]) is the world's most widely spoken constructed auxiliary language.",
+        "Zamenhof in 1887 as 'the International Language' (la Lingvo Internacia), it is intended to be a universal second language for international communication.",
+        "Esperanto culture is grounded in the idea that people can interact on an equal footing across language barriers, without linguistic hierarchies, and with respect for linguistic and cultural diversity.",
+        "Esperanto's International Language (known as Unua Libro, the 'first book'), which he published under the pseudonym Doktoro Esperanto.",
+        "Early adopters of the language liked the name Esperanto ('one who hopes') so much, they soon used it to describe the language itself.",
+        "Within the range of constructed languages, Esperanto occupies a middle ground between \"naturalistic\" (imitating existing natural languages) and a priori (where features are not based on existing languages).",
+        "Esperanto's vocabulary, syntax, and semantics derive predominantly from languages of the Indo-European group.",
+        "A substantial majority of its vocabulary (approximately 80%) derives from Romance languages, but it also contains elements derived from Germanic, Greek, and Slavic languages.",
+        "One of the language's most notable features is its extensive system of derivation, where prefixes and suffixes may be freely combined with roots to generate words, making it possible to communicate effectively with a smaller set of words.",
+        "Esperanto is the most successful constructed international auxiliary language and the only such language with a sizeable population of native speakers (denaskuloj), of which there are an estimated 2,000.",
+        "Esperanto speakers are often called Esperantists (Esperantistoj).",
+        "Usage estimates are difficult, but two estimates put the number of Esperantists at around 100,000."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "History of Esperanto",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10400",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "82fdb2eea4ba4b0f8ef613c524a41f6c62878a6d9e205201971b835c9eb74629",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Unua Libro, the first print discussion of the language, appeared in 1887.",
+        "The number of Esperanto speakers have increased gradually since then, without much support from governments and international organizations.",
+        "Its use has, in some instances, been outlawed or otherwise suppressed."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "L. L. Zamenhof",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18100",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "12db6e5ef7b911deef896185c2adfdf9511bc5a23e16cbc57845d4990e09219e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Zamenhof (15 December 1859 – 14 April 1917) was the creator of Esperanto, the most widely used constructed international auxiliary language.",
+        "Zamenhof published Esperanto in 1887, although his initial ideas date back as far as 1873.",
+        "He grew up fascinated by the idea of a world without war and believed that this could happen with the help of a new international auxiliary language (IAL).",
+        "The language was intended as a tool to gather people together through neutral, fair, equitable communication.",
+        "He successfully formed a community which has survived to this day, despite the World Wars of the 20th century and various attempts to reform the language or create more modern IALs (Esperanto itself had displaced another similarly-motivated language, Volapük).",
+        "Additionally, Esperanto has developed like other languages: through the interaction and creativity of its users.",
+        "In light of his achievements, and his support of intercultural dialogue, UNESCO selected Zamenhof as one of its eminent personalities of 2017, on the 100th anniversary of his death.",
+        "According to Esperanto communities, as of 2019 there are approximately 2 million people speaking Esperanto, including approximately 1,000 native speakers, although evidence to that has been heavily disputed, and the last major effort to improve the estimate occurred in 2004."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Ĥ",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=258680",
+      "retrieved_at": "2026-10-18T15:02:18.387Z",
+      "sha256": "276f2126fd1a3038495212b0af6a03e2dcba467395a871152b695989a43cd7dc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ĥ or ĥ is a letter of some extended Latin alphabets, most prominently a consonant in Esperanto orthography, where it represents a voiceless velar fricative [x] or voiceless uvular fricative [χ].",
+        "Its name in Esperanto is ĥo (pronounced /xo/), or ĥi in the Kalocsay abecedary.",
+        "It is also used in the revised Demers/Blanchet/St Onge orthography for Chinook Jargon.",
+        "In the case of the minuscule, some fonts place the circumflex centered above the entire base letter h, others over the riser of the letter, and others over the shoulder.",
+        "Although it is written as hx and hh respectively in the x-system and h-system workarounds, it is normally written as H with a circumflex: ĥ."
+      ]
+    }
+  ]
+}

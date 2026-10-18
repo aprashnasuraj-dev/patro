@@ -1,0 +1,187 @@
+{
+  "id": "mm-1460",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why AI Performs Well on Exams but Struggles With Real-World Clinical Judgment",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Cetin, Hakki Kursat",
+      "published_at": "2026-03-29",
+      "url": "https://doi.org/10.7759/cureus.106053",
+      "retrieved_at": "2026-10-18T15:44:19.050Z",
+      "sha256": "81cb4582cdad794c184f94ce4e7cbe528082b4b721c6f56a1b09aef00b0fcfab",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why AI Performs Well on Exams but Struggles With Real-World Clinical Judgment | Cureus Sign In Create an Account Enter your email address to receive your free PDF download.",
+        "Sign in to Cureus sign in using LinkedIn sign in using Google sign in using Facebook or Sign in with your email address: Email Password Don't have an account?",
+        "Download Cureus Media Kit I would like to receive Cureus newsletters and updates."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why",
+      "publisher": "University Press of Mississippi",
+      "author": "Pigee, Vera",
+      "published_at": "2023-03-02",
+      "url": "https://doi.org/10.14325/mississippi/9781496844637.003.0018",
+      "retrieved_at": "2026-10-18T15:44:19.050Z",
+      "sha256": "e4e2fc049bcb63816c01cf6bc62228b03d56a94da947b672f7d247ccfc96c4e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vera Pigee poses some questions to black Americans and gives some answers.",
+        "Subjects include petitioning the Supreme Court to act on the KKK; the fact that black Americans have not assumed substantially powerful government posts nor have pay equity in any profession; and lamenting the lack of prayer in society."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Peer Review Report For: Analyzing why AI struggles with drawing human hands with CLIP [version 1; peer review: 1 not approved]",
+      "publisher": "F1000 Research Ltd",
+      "author": null,
+      "published_at": "2025-03-07",
+      "url": "https://f1000research.com/articles/14-193",
+      "retrieved_at": "2026-10-18T15:44:19.863Z",
+      "sha256": "4c18df0dac51578c4bc041ca83f1b742be5a1645ea621f210a35b5e4c13b6453",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "| F1000Research --> --> --> Home Browse Analyzing why AI struggles with drawing human hands with CLIP ALL Metrics - Views Downloads Get PDF Get XML Cite How to cite this article Sarkar M, Chatterjee S, Hazra S et al.",
+        "Analyzing why AI struggles with drawing human hands with CLIP [version 1; peer review: 1 not approved] .",
+        "F1000Research 2025, 14 :193 ( https://doi.org/10.12688/f1000research.159688.1 ) NOTE: If applicable, it is important to ensure the information in square brackets after the title is included in all citations of this article.",
+        "Close Copy Citation Details Export Export Citation Sciwheel EndNote Ref.",
+        "Sazid Reza 5 , Mohd Asif Shah https://orcid.org/0009-0000-2821-5423 6-8 Meghna Sarkar 1 , Siddhartha Chatterjee 2 , [...] Sudipta Hazra https://orcid.org/0009-0006-3083-3646 3 , Anurag Sinha https://orcid.org/0000-0002-1034-6334 4 , Md.",
+        "This study explores the limitations of AI in capturing the fine details and proportions of hands, using Contrastive Language Image Pretraining (CLIP) as a case study.",
+        "Methods Our analysis reveals that CLIP struggles to accurately represent hands due to inadequate training data, anatomical complexities, and practical challenges.",
+        "We conducted a series of tests and analyses to identify the primary causes of CLIP&rsquo;s difficulties.",
+        "Results Our results show that CLIP&rsquo;s struggles stem from data biases and insufficient anatomical representation in training datasets.",
+        "Specifically, we found distorted finger relationships, inaccurate proportions, and deviations from expected hand geometry.",
+        "Conclusion This study aims to provide a comprehensive examination of the current limitations and propose possible directions for future research.",
+        "Corresponding Author(s) Mohd Asif Shah ( [email&#160;protected] ) Close Corresponding author: Mohd Asif Shah Competing interests: No competing interests were disclosed."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "‘Intersectional hallucinations’: why AI struggles to understand that a six-year-old can’t be a doctor or claim a pension",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Johnson, Ericka",
+      "published_at": "2024-07-31",
+      "url": "https://theconversation.com/intersectional-hallucinations-why-ai-struggles-to-understand-that-a-six-year-old-cant-be-a-doctor-or-claim-a-pension-234879",
+      "retrieved_at": "2026-10-18T15:44:20.005Z",
+      "sha256": "7d6dd7a190d5c248a53795810f7f87c5f00a2e9c82f3ba596d451f947a6aa7bd",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This lets doctors compare you (your blood, age, sex, health history, scans, etc) to other patients’ results and histories, allowing them to predict, manage and develop new treatments.",
+        "For centuries, this has been the bedrock of scientific research: identify a problem, gather data, look for patterns, and build a model to solve it.",
+        "The hope is that Artificial Intelligence (AI) – the kind called Machine Learning that makes models from data – will be able to do this far more quickly, effectively and accurately than humans.",
+        "However, training these AI models needs a LOT of data, so much that some of it has to be synthetic – not real data from real people, but data that reproduces existing patterns.",
+        "Most synthetic datasets are themselves generated by Machine Learning AI.",
+        "Wild inaccuracies from image generators and chatbots are easy to spot, but synthetic data also produces hallucinations – results that are unlikely, biased, or plain impossible.",
+        "As with images and text, they can be amusing, but the widespread use of these systems in all areas of public life means that the potential for harm is massive.",
+        "Read more: Training AI requires more data than we have — generating synthetic data could help solve this challenge What is synthetic data?",
+        "AI models need much more data than the real world can offer.",
+        "Synthetic data provides a solution – generative AI examines the statistical distributions in a real dataset and creates a new, synthetic one to train other AI models.",
+        "This synthetic ‘pseudo’ data is similar but not identical to the original, meaning it can also ensure privacy, skirt data regulations, and be freely shared or distributed.",
+        "Synthetic data can also supplement real datasets, making them big enough to train an AI system."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T15:44:20.006Z",
+      "sha256": "9d6236e0e8163d381682ed2d1b8332956721b6c0ab8dedd071c6504c739e27ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "International Mathematical Olympiad",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=82208",
+      "retrieved_at": "2026-10-18T15:44:20.006Z",
+      "sha256": "93cf6a05fbbcfcc667204776ec388be22f818a46d6e4874ea1af7be088c17b8f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The International Mathematical Olympiad (IMO) is an annual mathematical competition for pre-university students, and is the oldest of the International Science Olympiads.",
+        "It is widely regarded as the most prestigious mathematical competition in the world.",
+        "Each country sends a team of up to six students, plus one team leader, one deputy leader, and observers.",
+        "The contest takes place over two days, and consists of six problems (three given on each day).",
+        "The problems are extremely difficult, and may include topics not conventionally covered in school, but they avoid the use of calculus.",
+        "Awards are given to approximately the top-scoring 50% of the individual contestants.",
+        "Teams are not officially recognized—all scores are given only to individual contestants, but team scoring is unofficially compared more than individual scores."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "History of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2894560",
+      "retrieved_at": "2026-10-18T15:44:20.006Z",
+      "sha256": "216abdf69c1c864e3d5d3256f45917f7b2c564c893de746de859aea9cc13d985",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The history of artificial intelligence (AI) began in antiquity, with myths, stories, and rumors of artificial beings endowed with intelligence by master craftsmen.",
+        "The field of research that eventually evolved into what is widely described as artificial intelligence was founded at a workshop held on the campus of Dartmouth College in 1956.",
+        "At the workshop, a concept of the first AI program, Logic Theorist, was presented by future Turing Awardee Allen Newell and future Nobel Laureate Herbert A.",
+        "The software architecture of this program differed from modern AI systems in that it was a hand-written fixed script.",
+        "Attendees of the workshop became the leaders of AI research for decades.",
+        "Many of them predicted that machines as intelligent as humans would exist within a generation.",
+        "Despite the eventual success of its attendees and the field as a whole, the workshop was considered a failure.",
+        "\"When the workshop failed to deliver, AI was dismissed as a pipe dream and research funding dried up\".",
+        "It became apparent that researchers had underestimated the complexity of this objective.",
+        "In 1974, criticism from James Lighthill and pressure from the U.S.",
+        "and British Governments to stop funding undirected research into artificial intelligence.",
+        "Seven years later, a visionary initiative by the Japanese Government and the success of expert systems  reinvigorated investment in AI, and by the late 1980s, the industry had grown into a billion-dollar enterprise."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "ChatGPT",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72417803",
+      "retrieved_at": "2026-10-18T15:44:20.006Z",
+      "sha256": "d1ce092d52f20eb84386458ee08c1e6b6c6a53038246472a81cb905b12fd1084",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Originally released on November 30, 2022, the product uses large language models—specifically generative pre-trained transformers (GPTs)—to generate text, speech, and images in response to user prompts.",
+        "ChatGPT accelerated the AI boom, an ongoing period marked by rapid investment and public attention toward the field of artificial intelligence (AI).",
+        "Users can interact with ChatGPT through text, audio, and image prompts.",
+        "ChatGPT was quickly adopted, reaching 100 million monthly active users two months after its release and 900 million weekly active users in February 2026.",
+        "Proponents say that it has the potential to transform numerous professional fields, and it has instigated public debate about the nature of creativity and the future of knowledge work.",
+        "The chatbot has also been criticized for its limitations and potential for unethical use.",
+        "It may generate incorrect or nonsensical answers that sound plausible, known as hallucinations.",
+        "Biases in its training data have been reflected in its responses.",
+        "The chatbot can facilitate academic dishonesty, generate misinformation, and create malicious code.",
+        "The ethics of its development, particularly the use of copyrighted content as training data, have also drawn controversy."
+      ]
+    }
+  ]
+}

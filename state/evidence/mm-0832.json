@@ -1,0 +1,100 @@
+{
+  "id": "mm-0832",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "If ‘correlation doesn’t imply causation’, how do scientists figure out why things happen?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Vally, Hassan",
+      "published_at": "2024-12-11",
+      "url": "https://theconversation.com/if-correlation-doesnt-imply-causation-how-do-scientists-figure-out-why-things-happen-243487",
+      "retrieved_at": "2026-10-18T15:14:16.049Z",
+      "sha256": "80ca677c3eba9c7ff7a47c714abc4a7954896adf1e123a805ded489903d7aa74",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "If ‘correlation doesn’t imply causation’, how do scientists figure out why things happen?",
+        "Skip to content Academic rigor, journalistic flair Denise Jans/Unsplash If ‘correlation doesn’t imply causation’, how do scientists figure out why things happen?",
+        "But understanding how scientists move beyond identifying correlations to establish causation remains a mystery to many.",
+        "Finding out what causes a particular outcome is often the primary goal of scientific research, especially in studies relating to our health.",
+        "We want to know if a certain factor – say, drinking wine or eating chocolate – will lead to better or worse health outcomes.",
+        "That way, we can make more informed decisions about our health.",
+        "Correlation versus causation: the basics It’s easy to find examples of correlations where two variables are linked, but there’s no causal relationship.",
+        "For instance, there’s a correlation between chocolate consumption and the number of Nobel Prize winners per capita in a bunch of countries.",
+        "Correlation between countries’ annual per capita chocolate consumption and the number of Nobel laureates per 10 million population.",
+        "The New England Journal of Medicine ©2012 This correlation likely exists because chocolate consumption serves as a proxy for wealth.",
+        "In turn, wealth relates to educational opportunities and funding for completing high-quality research that might lead to a Nobel Prize.",
+        "Scientists need much more evidence before we can start to assume a causal relationship."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Etiology",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10055",
+      "retrieved_at": "2026-10-18T15:14:17.989Z",
+      "sha256": "497e36f68ec303ea03d58a8ea6c93d625483b4681066874e083c75c61cef5fe7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Etiology (; alternatively spelled aetiology or ætiology) is the study of causation or origination.",
+        "The word is derived from the Greek word αἰτιολογία (aitiología), meaning \"giving a reason for\" (from  αἰτία (aitía) 'cause' and  -λογία (-logía) 'study of').",
+        "More completely, etiology is the study of the causes, origins, or reasons behind the way that things are, or the way they function, or it can refer to the causes themselves.",
+        "Throughout history and to the present day, when and where natural or historical facts are not well understood and/or not well documented, myths often arise to provide etiologies, e.g., causal explanations.",
+        "Thus, an etiological myth, or origin myth, is a myth that functions to explain the origins of some phenomena.",
+        "For example, Virgil's Aeneid is an etiological myth for the Roman Empire.",
+        "In theology, many religions have creation myths explaining the origins of the world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Causality",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37196",
+      "retrieved_at": "2026-10-18T15:14:17.989Z",
+      "sha256": "84e0e0ebfc20dfedb26391c94325d3776daf0544cb9e684da181221fb80093b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The cause of something may also be described as the reason behind the event or process.",
+        "In general, a process can have multiple causes, which are also said to be causal factors for it, and all lie in its past.",
+        "An effect can in turn be a cause of, or causal factor for, many other effects, which all lie in its future.",
+        "Thus, the distinction between cause and effect either follows from or else provides the distinction between past and future.",
+        "While the former viewpoint is more prevalent in physics, some writers have held that causality is metaphysically prior to notions of time and space.",
+        "Causality is an abstraction that indicates how the world progresses.",
+        "As such, it is a basic concept, and one might expect it to be more apt as an explanation of other concepts of progression than as something to be explained by yet more fundamental ideas.",
+        "For this reason, a leap of intuition may be needed to grasp it.",
+        "Accordingly, causality is implicit in the structure of ordinary language, as well as explicit in the language of scientific causal notation.",
+        "In English studies of Aristotelian philosophy, the word \"cause\" is used as a specialized technical term, the translation of Aristotle's term αἰτία, by which Aristotle meant \"explanation\" or \"answer to a 'why' question\".",
+        "Aristotle categorized the four types of answers as material, formal, efficient, and final \"causes\".",
+        "In this case, the \"cause\" is the explanans for the explanandum, and failure to recognize that different kinds of \"cause\" are being considered can lead to futile debate."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Correlation does not imply causation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=39834",
+      "retrieved_at": "2026-10-18T15:14:17.989Z",
+      "sha256": "6779b848f7535209fffc5e59eeb3a96b548815ccd11b74c42547d4ca2dd4cbdd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The phrase \"correlation does not imply causation\" refers to the inability to legitimately deduce a cause-and-effect relationship between two events or variables solely on the basis of an observed association or correlation between them.",
+        "The idea that \"correlation implies causation\" is an example of a questionable-cause logical fallacy, in which two events occurring together are taken to have established a cause-and-effect relationship.",
+        "This fallacy is also known by the Latin phrase cum hoc ergo propter hoc ('with this, therefore because of this').",
+        "This differs from the fallacy known as post hoc ergo propter hoc ('after this, therefore because of this'), in which an event following another is seen as a necessary consequence of the former event, and from conflation, the errant merging of two events, ideas, databases, etc., into one.",
+        "As with any logical fallacy, identifying that the reasoning behind an argument is flawed does not necessarily imply that the resulting conclusion is false.",
+        "Statistical methods have been proposed that use correlation as the basis for hypothesis tests for causality, including the Granger causality test and convergent cross mapping.",
+        "The Bradford Hill criteria, also known as Hill's criteria for causation, are a group of nine principles that can be useful in considering the epidemiologic evidence of a causal relationship\n.",
+        "Ultimately, assumptions are always required to draw causal conclusions, and modern causal inference frameworks focus on interrogating the strength of these assumptions."
+      ]
+    }
+  ]
+}

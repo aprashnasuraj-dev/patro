@@ -1,0 +1,28 @@
+{
+  "id": "mt-1852",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Gut microbiota",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3135637",
+      "retrieved_at": "2026-10-18T16:32:01.214Z",
+      "sha256": "83b40b664382722987394e10afe3344788e9152ec3d33eef369cdd0541722d64",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gut microbiota, gut microbiome, or gut flora are the microorganisms, including bacteria, archaea, fungi, and viruses, that live in the digestive tracts of animals.",
+        "The gastrointestinal metagenome is the aggregate of all the genomes of the gut microbiota.",
+        "The gut microbiota has broad impacts, including effects on colonization, resistance to pathogens, maintaining the intestinal epithelium, metabolizing dietary and pharmaceutical compounds, controlling immune function, and even behavior through the gut–brain axis.",
+        "Imbalances in the gut microbiota (dysbiosis) have been associated with numerous diseases, including inflammatory bowel disease, certain cancers, and even neurological disorders, prompting increased efforts to develop microbiome-targeted therapies.",
+        "The microbial composition of the gut microbiota varies across regions of the digestive tract.",
+        "The colon contains the highest microbial density of any human-associated microbial community studied so far, representing between 300 and 1000 different species.",
+        "Bacteria are the largest and to date, best studied component and 99% of gut bacteria come from about 30 or 40 species.",
+        "Over 99% of the bacteria in the gut are anaerobes, but in the cecum, aerobic bacteria reach high densities.",
+        "It is estimated that the human gut microbiota has around a hundred times as many genes as there are in the human genome."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "mm-1995",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When Workflows Stay Stable but Meaning Moves in Agentic Analyst Pipelines",
+      "publisher": "AHFE International",
+      "author": "Russell, Stephen",
+      "published_at": "2026",
+      "url": "https://doi.org/10.54941/ahfe1007675",
+      "retrieved_at": "2026-10-18T16:05:08.656Z",
+      "sha256": "847b1cd948f081022fa9800ee162f2f0b66d7bfadd22ab10afe196653671958b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Agentic analyst pipelines can keep a workflow object stable while its operational meaning shifts underneath.",
+        "A coded event, alert, or dashboard tile may persist unchanged while the reporting frame moves from accident to attack, or from outage to state-linked operation.",
+        "This semantic movement can reach the analyst undetected, degrading situation awareness while the interface appears organized.",
+        "This research proposes a measurement and governance layer for detecting semantic frame shifts in agentic analyst workflows, using 1032 headline and snippet records organized into 37 adjudicated event-window states across 10 event families.",
+        "Three findings bear directly on human-agentic workflow design.",
+        "Third, LLM coding agents varied materially by model and prompt policy, paralleling the variation observed across human coders, which means that consensus among human judgment, semantic metrics, and LLM signals cannot be assumed and must be treated as an active governance variable in workflow design.",
+        "Together these findings support an orchestration layer that routes high-reframing or high-disagreement cases to human review while allowing semantically stable outputs to pass forward.",
+        "As demonstration, the proposed metrics and approach are implemented in an open source intelligence system."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Cruel Drone: Imagining Drone Warfare in Art, Culture, and Politics",
+      "publisher": "University of Southern Denmark Research Portal (University of Southern Denmark)",
+      "author": "Andreas Immanuel Graae",
+      "published_at": "2019-06-07",
+      "url": "https://openalex.org/W3005486932",
+      "retrieved_at": "2026-10-18T16:05:09.912Z",
+      "sha256": "9d49f82677a72a87a533a9b35fc893d5fefc43fdd1a0cec3e6c5144a721ba9cc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Denne afhandling undersøger, hvordan militære UAV’er (unmanned aerial vehicles), også kaldet droner, er repræsenteret kulturelt og æstetisk som, hvad jeg kalder ”dronens imaginære” – og desuden hvordan dette imaginære felt afspejler radikale transformationer i krigshistorien.",
+        "Med imaginationsteorien som begrebsmæssig ramme analyserer jeg dronen som en kulturel konstruktion, der er drevet af ideologiske og politiske fantasier, herunder frem for alt drømmen om udfrielse fra menneskelig sårbarhed og svaghed i krigssituationer.",
+        "Hovedtanken med afhandlingen er derfor at analysere, hvordan dronens imaginære bygger på fantasien om det perfekte våben; en fantasi der dog er grusom af natur.",
+        "Med andre ord er mit formål at vise, hvordan den populære fascination af droner bygger på fantasier og forestillinger, som er ”grusomme” og selvdestruktive i og med, at de visioner og løfter, de stiller til rådighed om en højere og mere sikker form for krigsførelse, konstant viser sig at fejle.",
+        "Hvert af kapitlerne i afhandlingen undersøger, på baggrund af æstetiske analyser, hvordan disse fantasier og løfter igen og igen viser sig som fejlslagne og ufuldkomne.",
+        "Med en række forskelligartede æstetiske værker (fra litteratur, kunst og drama til film og tv-serier) som prisme analyser jeg denne mørkere side af dronefantasien for derved at afsløre det såkaldte ”supervåbens” indbyggede revner og sprækker.",
+        "Hver af analyserne viser en bestemt måde, dronen er figureret på i såvel sin optimistiske som sin negative udgave.",
+        "Således undersøger hvert kapitel én af disse drone-figurationer for dermed at vise, hvordan de er konfigureret i den bredere forestilling om dronekrig.",
+        "Baseret på nærlæsningsstrategier kombineret med en tværvidenskabelig teoretisk tilgang giver afhandlingen dermed et nyt indblik i et stadigt hurtigere voksende forskningsområde, der dog hidtil primært har været fokuseret på politiske, juridiske og etiske aspekter af dronekrig."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Honey bee",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58261",
+      "retrieved_at": "2026-10-18T16:05:09.912Z",
+      "sha256": "add351fb2d115980d41022e29516001e75c81e7055f776612eeb7a024ce11098",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A honey bee (also spelled honeybee) is a eusocial flying insect from the genus Apis of the largest bee family, Apidae.",
+        "Honey bees are known for their creation of perennial nests within cavities (i.e.",
+        "Although honey bees represent only a small fraction of the roughly 20,000 known species of bees, they are the bee clade most familiar to humans and are also the most valuable beneficial insects to agriculture and horticulture.",
+        "The best-known honey bee species is the western honey bee (Apis mellifera), which was domesticated and farmed (i.e.",
+        "The only other domesticated species is the eastern honey bee (Apis cerana), which are raised in South, Southeast and East Asia.",
+        "Only members of the genus Apis are true honey bees, but some other bee species also produce and store honey and have been kept by humans for that purpose, including the stingless bees belonging to the genus Melipona and the Indian stingless or dammar bee Tetragonula iridipennis.",
+        "In addition to harvesting honey, modern humans also use beeswax in making candles, soap, lip balms and various cosmetics, as a lubricant and in mould-making using the lost wax process.",
+        "Other honey bee secretions such as royal jelly and bee venom are used pharmaceutically, especially in alternative medicine."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Culture",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58623",
+      "retrieved_at": "2026-10-18T16:05:09.912Z",
+      "sha256": "d88bf76112d67589850b641b43cefe241ea01ade4c3102889c38ba108da3993c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Culture is a fictional interstellar post-scarcity society created by the Scottish writer Iain M.",
+        "Banks and features in a number of his space opera novels and works of short fiction, collectively called the Culture series.",
+        "The Culture is composed primarily of humanoid aliens, artificial intelligences (A.I.), and a number of other sentient life forms.",
+        "intelligence covers a spectrum; simple programs performing a specific function (e.g.",
+        "controlling spacesuits), human-equivalent drones and hyper-intelligent Minds who organise and oversee the society.",
+        "Beyond scarcity, the Culture has no need for money; instead, Minds organise society to maximise the well-being of its citizenry.",
+        "The protagonists, almost always humanoids, are generally those who have chosen to work for the Culture's diplomatic or espionage organs and interact with other civilisations whose citizens act under different ideologies, morals, and technologies.",
+        "The Culture generally has more advanced technology relative to most other civilisations it shares the galaxy with.",
+        "Most of the Culture's citizens do not live on planets but in artificial habitats such as orbitals and ships, the largest of which are home to billions of individuals.",
+        "The Culture's citizens have been genetically enhanced to live for as long as they desire and have modified mental control over their physiology, including the ability to introduce a variety of psychoactive drugs into their systems, change biological sex, or switch off pain at will.",
+        "The Culture's technology is able to transfer individuals into vastly different body forms, although the Culture's standard form remains fairly humanoid.",
+        "The Culture holds peace and individual freedom as its core values."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Marc Andreessen",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=331986",
+      "retrieved_at": "2026-10-18T16:05:09.912Z",
+      "sha256": "27a42633f7ce4690bb41aa2129c823de80b49c2857b7883dbf585d98275be221",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Marc Lowell Andreessen ( an-DREE-sən; born July 9, 1971) is an American businessman, venture capitalist, and former software engineer.",
+        "He is the co-author of Mosaic, the first web browser to display inline images; co-founder of Netscape; and co-founder and general partner of Silicon Valley venture capital firm Andreessen Horowitz.",
+        "He co-founded and later sold the software company Opsware to Hewlett-Packard; he also co-founded Ning, a company that provides a platform for social networking websites.",
+        "As of June 2026, Forbes estimated Andreessen's net worth at $1.9 billion."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Interstellar (soundtrack)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44330065",
+      "retrieved_at": "2026-10-18T16:05:09.912Z",
+      "sha256": "5a705ef00658c6e583e03b7246eb2feaf6d8be551702d4956d3690beb4fe0c6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Interstellar: Original Motion Picture Soundtrack is the soundtrack album composed and arranged by Hans Zimmer for the 2014 film Interstellar by Christopher Nolan.",
+        "The soundtrack garnered universal acclaim and was nominated for the Academy Award for Best Original Score and the Grammy Award for Best Score Soundtrack for Visual Media."
+      ]
+    }
+  ]
+}

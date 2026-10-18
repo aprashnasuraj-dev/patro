@@ -1,0 +1,99 @@
+{
+  "id": "mm-1162",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Venus flytrap",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=310678",
+      "retrieved_at": "2026-10-18T15:31:34.307Z",
+      "sha256": "a2b7db7951551e08e6a8730bb88de13df8ec6c2fbfb9177a8dd45c535d8a0f25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Venus flytrap (Dionaea muscipula) is a carnivorous plant native to the temperate and subtropical wetlands of North Carolina and South Carolina, on the East Coast of the United States.",
+        "Although various modern hybrids have been created in cultivation, D.",
+        "muscipula is the only species of the monotypic genus Dionaea.",
+        "It is closely related to the waterwheel plant (Aldrovanda vesiculosa) and the cosmopolitan sundews (Drosera), all of which belong to the family Droseraceae.",
+        "Additionally, when an insect or spider touches one of these hairs, the trap prepares to close, only fully enclosing the prey if a second hair is contacted within (approximately) twenty seconds of the first contact.",
+        "Triggers may occur as quickly as 1⁄10 of a second from initial contact.",
+        "A forest fire, for example, causes them to snap shut, making the plant more resilient to periods of summer fires.",
+        "Although widely cultivated for sale, the population of the Venus flytrap has been rapidly declining in its native range.",
+        "As of 2017, the species was under Endangered Species Act review by the U.S."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Another World (video game)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=800826",
+      "retrieved_at": "2026-10-18T15:31:34.307Z",
+      "sha256": "c9a3aa2f016830ac78eb41271ab3a273bb9afb02b7f960482abe2af30f8650ed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Another World is a cinematic platform action-adventure game designed by Éric Chahi and published by Delphine Software in November 1991.",
+        "The game tells the story of Lester, a young scientist who, as a result of an experiment gone wrong, finds himself on a dangerous alien world where he is forced to fight for his survival.",
+        "Another World was developed by Chahi alone over a period of about two years, with help with the soundtrack from Jean-François Freitas.",
+        "Chahi developed his own game engine, creating all the game's art and animations in vector form to reduce memory use, with some use of rotoscoping to help plan out character movements.",
+        "Both narratively and gameplay-wise, he wanted the game to be told with little to no language or user-interface elements.",
+        "The game was originally developed for the Amiga and Atari ST but has since been widely ported to other contemporary systems, including home and portable consoles and mobile devices.",
+        "Chahi has since overseen release of various anniversary releases of the game.",
+        "Another World was innovative in its use of cinematic effects in both real-time and cutscenes, which earned the game praise among critics and commercial success.",
+        "It also influenced a number of other video games and designers, inspiring such titles as Ico, Metal Gear Solid, Silent Hill, and Delphine's later Flashback."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Utricularia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=871210",
+      "retrieved_at": "2026-10-18T15:31:34.307Z",
+      "sha256": "2ec0312e8e011655629cbc7fc9323d0b8cc8e217b717ceed8e769c8897097765",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Utricularia, commonly and collectively called the bladderworts, is a genus of carnivorous plants consisting of approximately 233 species (precise counts differ based on classification opinions; a 2001 publication lists 215 species).",
+        "They occur in freshwater and wet soil as terrestrial or aquatic species across every continent except Antarctica.",
+        "Utricularia are cultivated for their flowers, which are often compared with those of snapdragons and orchids, especially amongst carnivorous plant enthusiasts.",
+        "All Utricularia are carnivorous and capture small organisms by means of bladder-like traps.",
+        "Terrestrial species tend to have tiny traps that feed on minute prey such as protozoa and rotifers swimming in water-saturated soil.",
+        "The traps can range in size from 0.02 to 1.2 cm (0.008 to 0.5 in).",
+        "vulgaris (common bladderwort), possess bladders that are usually larger and can feed on more substantial prey such as water fleas (Daphnia), nematodes and even fish fry, mosquito larvae and young tadpoles.",
+        "Despite their small size, the traps are extremely sophisticated.",
+        "In the active traps of the aquatic species, prey brush against trigger hairs connected to the trapdoor.",
+        "The bladder, when \"set\", is under negative pressure in relation to its environment so that when the trapdoor is mechanically triggered, the prey, along with the water surrounding it, is sucked into the bladder.",
+        "Once the bladder is full of water, the door closes again, the whole process taking only ten to fifteen milliseconds.",
+        "Bladderworts are unusual and highly specialized plants, and the vegetative organs are not clearly separated into roots, leaves, and stems as in most other angiosperms."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mimosa pudica",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1906305",
+      "retrieved_at": "2026-10-18T15:31:34.307Z",
+      "sha256": "7cc353902d62d7f46b9db8edd00f314b95604a3c0b85d0497dea60af47c6f589",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mimosa pudica (also called sensitive plant, sleepy grass, sleepy plant, action plant, humble plant, touch-me-not, touch-and-die, shame plant or shy plant) is a creeping annual or perennial flowering plant of the pea/legume family Fabaceae.",
+        "It is often grown for its curiosity value: the sensitive compound leaves quickly fold inward and droop when touched or shaken and re-open a few minutes later.",
+        "For this reason, this species is commonly cited as an example of rapid plant movement.",
+        "Like a number of other plant species, it undergoes changes in leaf orientation termed \"sleep\" or nyctinastic movement.",
+        "This was first studied by French scientist Jean-Jacques d'Ortous.",
+        "In the UK it has gained the Royal Horticultural Society's Award of Garden Merit.",
+        "The species is native to the Caribbean and South and Central America, but is now a pantropical weed, and can now be found in the Southern United States, South Asia, East Asia, Southeast Asia, Micronesia, Australia, South Africa, and West Africa as well.",
+        "It is not shade-tolerant and is primarily found on soils with low nutrient concentrations."
+      ]
+    }
+  ]
+}
