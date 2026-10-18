@@ -1,0 +1,125 @@
+{
+  "id": "mm-0138",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Searching for Protections from Search Engines",
+      "publisher": "NYU Press",
+      "author": null,
+      "published_at": "2018-02-20",
+      "url": "https://doi.org/10.2307/j.ctt1pwt9w5.8",
+      "retrieved_at": "2026-10-18T14:53:10.531Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Towards a metric for on-page search engine optimization",
+      "publisher": "OpenAlex",
+      "author": "Goran Matošević",
+      "published_at": "2014-10-07",
+      "url": "https://openalex.org/W2249725935",
+      "retrieved_at": "2026-10-18T14:53:10.708Z",
+      "sha256": "8bfe23de67e47a73864d903d2ac16a031a35b8a4160fa21014be9c118726107b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Search engine optimization (SEO) techniques involve „on-page“ and „off-page“ actions taken by webmasters and SEO specialists with aim to increase the ranking of web pages in search engine results pages (SERP) by following recommendations from major search engine companies.",
+        "In this paper we explore the possibility of creating a metric for evaluating on-page SEO of a website.",
+        "A novel „k-rank“ metric is proposed which takes into account not only the presence of certain tags in HTML of a page, but how those tags are used with selected keywords in selected domain.",
+        "The „k-rank“ is tested in domain of education by ranking and comparing university websites from Croatia and UK.",
+        "The overview of results showed that „k-rank“ can be used for rank and comparison of how websites utilize on-page SEO."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Google Search",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12431",
+      "retrieved_at": "2026-10-18T14:53:10.708Z",
+      "sha256": "f758bdf3e4540f9f53e4c9a27d3dddcda976c6654729702952386e45b49b5991",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Google (officially known as Google Search) is a search engine operated by Google LLC.",
+        "It allows users to search or ask for information by entering keywords or phrases using its website or application; the websites it lists are ranked and analyzed by its proprietary algorithms and also uses generative AI (also includes a dedicated AI Mode) to respond to queries.",
+        "Google is the most-visited website in the world; as of 2025, it has a 90% share of the global search engine market.",
+        "At the top of search engine result pages is often a sponsored result section reflecting results sponsored by advertising revenue.",
+        "Many result pages are also prefixed by an AI overview summarizing the top results.",
+        "The order of search results returned by Google is based, in part, on a priority rank system called PageRank which was originally developed in 1996 by Larry Page, Sergey Brin, and Scott Hassan.",
+        "As of mid-2016, Google's search engine has begun to rely on deep neural networks.",
+        "In August 2024, the United States District Court for the District of Columbia ruled that Google held an illegal monopoly over Internet search and search advertising.",
+        "The court found that Google maintained its market dominance by paying large amounts to phone-makers and browser-developers to make Google its default search engine."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Search engine optimization",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=187946",
+      "retrieved_at": "2026-10-18T14:53:10.708Z",
+      "sha256": "0196c049e6c61eac7618e00114ac07c1b5ec1678bb10750df636034046237ad1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Search engine optimization (SEO) is the practice of improving the visibility and overall performance of websites and web pages in search engine results pages (SERPs).",
+        "It focuses on increasing the quantity and quality of traffic from unpaid (organic) search results rather than paid advertising.",
+        "SEO applies to multiple search formats, including web, image, video, news, academic, and vertical search engines, as well as AI-assisted search interfaces.",
+        "SEO is commonly used as part of a broader digital marketing strategy and involves optimizing technical infrastructure, content relevance, and authority signals to improve rankings for user queries.",
+        "The objective of SEO is to attract users who are actively searching for information, products, or services, thereby improving brand visibility, user engagement, and conversions."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Search engine results page",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4555947",
+      "retrieved_at": "2026-10-18T14:53:10.708Z",
+      "sha256": "3d87b45cbe2eb1fff67948f68b2b725b0b8a053d48e786d2f43f3326ec3cbe58",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A search engine results page (SERP) is a web page that is displayed by a search engine in response to a query by a user.",
+        "The main component of a SERP is the listing of results that are returned by the search engine in response to a keyword query.",
+        "The results are of two general types:\n\norganic search: retrieved by the search engine's algorithm;\nsponsored search: advertisements.",
+        "Each result displayed on the SERP normally includes a title, a link that points to the actual page on the Web, and a short description, known as a snippet, showing where the keywords have matched content within the page for organic results.",
+        "For sponsored results, the advertiser chooses what to display.",
+        "However, in order to avoid overwhelming users, search engines and personal preferences often limit the number of results displayed per page.",
+        "As a result, subsequent pages may not be as relevant or ranked as highly as the first."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Search engine indexing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=7602386",
+      "retrieved_at": "2026-10-18T14:53:10.708Z",
+      "sha256": "bb2b60bccc62671261ab574d6b01aa31edeaa3e88e15c6f361c802dc8d934607",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Search engine indexing is the collecting, parsing, and storing of data to facilitate fast and accurate information retrieval.",
+        "Index design incorporates interdisciplinary concepts from linguistics, cognitive psychology, mathematics, informatics, and computer science.",
+        "An alternate name for the process, in the context of search engines designed to find web pages on the Internet, is web indexing.",
+        "Popular search engines focus on the full-text indexing of online, natural language documents.",
+        "Media types such as pictures, video, audio, and graphics are also searchable.",
+        "Meta search engines reuse the indices of other services and do not store a local index whereas cache-based search engines permanently store the index along with the corpus.",
+        "Unlike full-text indices, partial-text services restrict the depth indexed to reduce index size.",
+        "Larger services typically perform indexing at a predetermined time interval due to the required time and processing costs, while agent-based search engines index in real time."
+      ]
+    }
+  ]
+}

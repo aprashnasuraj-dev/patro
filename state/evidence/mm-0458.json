@@ -1,0 +1,180 @@
+{
+  "id": "mm-0458",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Are private conversations truly private? A cybersecurity expert explains how end-to-end encryption protects you",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Chataut, Robin",
+      "published_at": "2024-03-11",
+      "url": "https://theconversation.com/are-private-conversations-truly-private-a-cybersecurity-expert-explains-how-end-to-end-encryption-protects-you-224477",
+      "retrieved_at": "2026-10-18T15:06:44.447Z",
+      "sha256": "d9e6564c29dc16a67ebd4a2acffc4622194c84b97660e805bd15f6486935cb67",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "A cybersecurity expert explains how end-to-end encryption protects you Skip to content Academic rigor, journalistic flair Several popular messaging apps, including Messenger, Signal, Telegram and WhatsApp, use end-to-end encryption.",
+        "Open Rights Group/Flickr , CC BY-SA Are private conversations truly private?",
+        "Yet, in the digital realm, people inadvertently leave doors ajar, potentially allowing hackers, tech companies, service providers and security agencies to peek into their private communications.",
+        "Much depends on the applications you use and the encryption standards the apps uphold.",
+        "End-to-end encryption is a digital safeguard for online interactions.",
+        "Understanding end-to-end encryption is crucial for maintaining privacy in people’s increasingly digital lives.",
+        "While end-to-end encryption effectively secures messages, it is not foolproof against all cyberthreats and requires users to actively manage their privacy settings.",
+        "As a cybersecurity researcher , I believe that continuous advancements in encryption are necessary to safeguard private communications as the digital privacy landscape evolves.",
+        "How end-to-end encryption works When you send a message via an app using end-to-end encryption, your app acts as a cryptographer and encodes your message with a cryptographic key .",
+        "This process transforms your message into a cipher – a jumble of seemingly random characters that conceal the true essence of your message.",
+        "This ensures that the message remains a private exchange between you and your recipient, safeguarded against unauthorized access, whether from hackers, service providers or surveillance agencies.",
+        "Should any eavesdroppers intercept it, they would see only gibberish and would not be able to decipher the message without the decryption key ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Using RSA Algorithms with CBOR Object Signing and Encryption (COSE) Messages",
+      "publisher": "RFC Editor",
+      "author": "Jones, M.",
+      "published_at": "2017-09",
+      "url": "https://www.rfc-editor.org/info/rfc8230/",
+      "retrieved_at": "2026-10-18T15:06:45.040Z",
+      "sha256": "48916fd1822d70927af74877b004d6a14fc129aa59bfbd4e0a1ff0eb079ca870",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "RFC 8230: Using RSA Algorithms with CBOR Object Signing and Encryption (COSE) Messages | RFC Editor Your browser has JavaScript disabled.",
+        "Most of this site works without JS, but some features require it.",
+        "If something seems broken please try enabling JavaScript and reloading the page.",
+        "The JavaScript used by this site is served directly from IETF infrastructure and does not include any code that links to a third party service.",
+        "This specification defines algorithm encodings and representations enabling RSA algorithms to be used for COSE messages.",
+        "Encodings are specified for the use of RSA Probabilistic Signature Scheme (RSASSA-PSS) signatures, RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES- OAEP) encryption, and RSA keys.",
+        "Status of This Memo This is an Internet Standards Track document.",
+        "This document is a product of the Internet Engineering Task Force (IETF).",
+        "It has received public review and has been approved for publication by the Internet Engineering Steering Group (IESG).",
+        "Further information on Internet Standards is available in Section 2 of RFC 7841 .",
+        "Information about the current status of this document, any errata, and how to provide feedback on it may be obtained at http://www.rfc-editor.org/info/rfc8230 .",
+        "Copyright Notice Copyright (c) 2017 IETF Trust and the persons identified as the document authors."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How to Offer Challenging Messages",
+      "publisher": "1517 Media",
+      "author": null,
+      "published_at": "2020-05-05",
+      "url": "https://doi.org/10.2307/j.ctvp7d4r5.10",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Talkout : Protecting mental health application with a lightweight message encryption",
+      "publisher": "UMS Institutional Repository (Universiti Malaysia Sabah)",
+      "author": "Gavin Teo Juen",
+      "published_at": "2022-01-01",
+      "url": "https://openalex.org/W7198937389",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "416fbcc61177068d7b2786cf2ce72408a22ff3905bce7ee7efa875ac123b1db8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The rise of technology and the Internet has changed how people communicate in society and virtual counselling development since the 1970s.",
+        "It offers an effective way to seek psychotherapy and consultation services without physically presented by exploiting accessibility, ease of use, comfort and convenience of Internet features.",
+        "However, the increased security breaches of recent mental health applications that leaked the patient's profile.",
+        "This project proposed a virtual mental health mobile application, called TalkOut, with a lightweight message encryption algorithm to protect patient's profile, conversation messages and treatment history.",
+        "Questionnaire and interview methods is used to gather user's requirement from campus students and campus counsellors.",
+        "The investigation of lightweight message encryption algorithms is conducted with systematic quantitative literature and experiment implementation in Java and Android running environment.",
+        "The outcome of this project provides an alternative for campus students to seek psychotherapy and consultation services and sharing platform, especially during distance online learning and covid-19 pandemic."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Encryption",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10294",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "262874691ab60dfca232ca4e8738832496b01daf4918662d8bbe7cc09acfb966",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In cryptography, encryption is the process of transforming information in a way that, ideally, only authorized parties can decode.",
+        "This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext.",
+        "Encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor.",
+        "For technical reasons, an encryption scheme usually uses a pseudo-random encryption key generated by an algorithm.",
+        "For a well-designed modern encryption scheme, decrypting ciphertext without the appropriate key should be computationally infeasible.",
+        "An authorized recipient can easily decrypt the message with the key provided by the originator to recipients but not to unauthorized users.",
+        "Historically, various forms of encryption have been used to aid in cryptography.",
+        "Early encryption techniques were often used in military messaging.",
+        "Since then, new techniques have emerged and become commonplace in all areas of modern computing.",
+        "Modern encryption schemes use the concepts of public-key and symmetric-key."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Public-key cryptography",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24222",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "ef4529dca804c9aa44ec3077420c0ef20968e1c70c8d5f5213fed3869cf37dbc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Public-key cryptography, or asymmetric cryptography, is the field of cryptographic systems that use pairs of related keys.",
+        "Each key pair consists of a public key and a corresponding private key.",
+        "Key pairs are generated with algorithms based on mathematical problems termed one-way functions.",
+        "Security of public-key cryptography depends on keeping the private key secret; the public key can be openly distributed without compromising security.",
+        "There are many kinds of public-key cryptosystems, with different security goals, including digital signature, Diffie–Hellman key exchange, public-key key encapsulation, and public-key encryption.",
+        "Public key algorithms are fundamental security primitives in modern cryptosystems, including applications and protocols that offer assurance of the confidentiality and authenticity of electronic communications and data storage.",
+        "They underpin numerous Internet standards, such as Transport Layer Security (TLS), SSH, S/MIME, and PGP.",
+        "Compared to symmetric cryptography, public-key cryptography can be too slow for many purposes, so these protocols often combine symmetric cryptography with public-key cryptography in hybrid cryptosystems."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Instant messaging",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=55951",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "6526df21b7943f63b73e3b738c1536cc1a1fdde4204b3f2970275e9fb46e512c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Instant messaging (IM) technology is a type of synchronous computer-mediated communication involving the immediate (real-time) transmission of messages between two or more parties over the Internet or another computer network.",
+        "Instant messaging was pioneered in the early Internet era; the IRC protocol was the earliest to achieve wide adoption.",
+        "Later in the 1990s, ICQ was among the first closed and commercialized instant messengers, and several rival services appeared afterwards as it became a popular use of the Internet.",
+        "Beginning with its first introduction in 2005, BlackBerry Messenger became the first popular example of mobile-based IM, combining features of traditional IM and mobile SMS.",
+        "Instant messaging remains very popular today; IM apps are the most widely used smartphone apps: in 2018 for instance there were 980 million monthly active users of WeChat and 1.3 billion monthly users of WhatsApp, the largest IM network."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Deniable encryption",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1055437",
+      "retrieved_at": "2026-10-18T15:06:45.373Z",
+      "sha256": "a41f5f91776a432672b99a9eb022e073ea70bc5b443313755741c86d2eda2267",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In cryptography and steganography, plausibly deniable encryption describes encryption techniques in which the existence of an encrypted file or message is deniable in the sense that an adversary cannot prove that the plaintext data exists.",
+        "The users may convincingly deny that a given piece of data is encrypted, or that they are able to decrypt a given piece of encrypted data, or that some specific encrypted data exists.",
+        "For example, it may be impossible to prove that the data is encrypted without the cooperation of the users.",
+        "If the data is encrypted, the users genuinely may not be able to decrypt it.",
+        "Deniable encryption serves to undermine an attacker's confidence either that data is encrypted, or that the person in possession of it can decrypt it and provide the associated plaintext.",
+        "Ran Canetti, Cynthia Dwork, Moni Naor, and Rafail Ostrovsky introduced the concept of deniable encryption in a paper in 1996.",
+        "The notion of deniable encryption was used by Julian Assange and Ralf Weinmann in the Rubberhose file system."
+      ]
+    }
+  ]
+}

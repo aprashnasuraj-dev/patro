@@ -1,0 +1,117 @@
+{
+  "id": "mm-1100",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How AI helps conservationists better understand and protect giraffes",
+      "publisher": "Mongabay",
+      "author": "Kidangoor, Abhishyant",
+      "published_at": "2025-09-16",
+      "url": "https://news.mongabay.com/2025/09/how-ai-helps-conservationists-better-understand-and-protect-giraffes/",
+      "retrieved_at": "2026-10-18T15:36:16.279Z",
+      "sha256": "4d055715a98b3c825b2e39357f848564fb97ca7f182b92a6960ee677c7298cc4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Facebook Linkedin Threads Whatsapp Reddit Email Page link Cite article Scientists have deployed artificial intelligence models to identify and re-identify endangered giraffes in Tanzania.",
+        "The Wild Nature Institute partnered with Microsoft’s AI For Good Lab to launch Project GIRAFFE which uses open-source AI tools to identify and re-identify individual giraffes based on spot patterns on their bodies.",
+        "The data has helped scientists come up with estimates on survival and reproduction rates, movements, and behavior of the animals.",
+        "See All Key Ideas Monica Bond and Derek Lee’s “love and obsession” for giraffes started during a trip to Uganda in 2005.",
+        "Since then, they said, their mission was clear: return to Africa and lead the “world’s greatest giraffe study.” Five years later, the duo co-founded the nonprofit Wild Nature Institute, based in Tanzania, where the Masai giraffe ( Giraffa tippelskirchi ) is the national animal.",
+        "Here, their team has focused on identifying individual giraffes based on the unique patterns on their bodies.",
+        "For years, the team did the work manually, after which they experimented with different iterations of technology.",
+        "Neither approach yielded the results they were looking for, however.",
+        "Now, artificial intelligence models — developed in collaboration with Microsoft’s AI For Good Lab — are helping the team speed up their work.",
+        "Project GIRAFFE (Generalized Image-based Re-identification using AI for Fauna Feature Extraction) is an AI-based, open-source tool that’s helping Bond and Lee efficiently identify and re-identify individual giraffes.",
+        "“It can now be done in minutes, and we can have the output the same day we collect the data,” Lee told Mongabay in a video interview.",
+        "Identifying individual giraffes, and being able to subsequently re-identify them, is crucial to understanding the areas that are important for their survival."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Selina Wamucii",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57032780",
+      "retrieved_at": "2026-10-18T15:36:17.936Z",
+      "sha256": "d5f2d171b16e3a3e6960eda7595282511b85297067e3ac58a539ccba1a582a11",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It uses technology to manage the produce grown by smallholder farmers.",
+        "The company's headquarters are located in Nairobi and is best known as Kenya's largest exporter of avocado."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Artificial intelligence in India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60669244",
+      "retrieved_at": "2026-10-18T15:36:17.936Z",
+      "sha256": "12fc2e66915f087b91c1e68e20ca9adcdd9885efde2c8fdae9cc81da4a67787d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The artificial intelligence (AI) market in India is projected to reach $8 billion by 2025, growing at 40% CAGR from 2020 to 2025.",
+        "India has many AI Hardware startups, AI Datacenter, Supercomputing and HPC companies such as Netweb Technologies.",
+        "In India, the development of AI has been similarly transformative, with applications in healthcare, finance, and education, bolstered by government initiatives like NITI Aayog's 2018 National Strategy for Artificial Intelligence.",
+        "Institutions such as the Indian Statistical Institute and the Indian Institute of Science published breakthrough AI research papers and patents.",
+        "India's transformation to AI is primarily being driven by startups and government initiatives & policies like Digital India.",
+        "By fostering technological trust through digital public infrastructure, India is tackling socioeconomic issues by taking a bottom-up approach to AI.",
+        "NASSCOM and Boston Consulting Group estimate that by 2027, India's AI services might be valued at $17 billion.",
+        "According to 2025 Technology and Innovation Report, by UN Trade and Development, India ranks 10th globally for private sector investments in AI.",
+        "According to Mary Meeker, India has emerged as a key market for AI platforms, accounting for the largest share of ChatGPT's mobile app users and having the third-largest user base for DeepSeek in 2025.",
+        "While AI presents significant opportunities for economic growth and social development in India, challenges such as data privacy concerns, skill shortages, and ethical considerations need to be addressed for responsible AI deployment.",
+        "The growth of AI in India has also led to an increase in the number of cyberattacks that use AI to target organizations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Farmers Business Network",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61875259",
+      "retrieved_at": "2026-10-18T15:36:17.936Z",
+      "sha256": "d07b0fb64eb8bebab190e2426d7c13a2139093a939c1ab5fab7cd2c82999c50e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Farmers Business Network (FBN) is a North American farmer-to-farmer network, e-commerce and fintech  platform based in San Carlos, California.",
+        "In July 2025, the company said its network had grown to more than 117,000 member farms across about 187 million acres.",
+        "In 2016, FBN launched an online input buying system called FBN Direct.",
+        "The platform aggregates data on seed prices and performances to assist farmers in agronomic resource management.",
+        "The company introduced their first non-GMO corn and soybean seed offerings with F2F Genetics Network in August 2018.",
+        "Some farmer members have reported saving thousands of dollars through the purchase of FBN seeds.",
+        "FBN also sells seed from third-party brands; Seitec Genetics seed is available to growers in selected U.S."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Grok (chatbot)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75223933",
+      "retrieved_at": "2026-10-18T15:36:17.936Z",
+      "sha256": "723a0f8cbacb80e98545d5cc42e96f3ee8b23f51cb0322a6cebd666b8b281613",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Grok is a series of generative AI large language models developed by SpaceXSI.",
+        "It was launched in November 2023 by Elon Musk as an initiative based on the large language model (LLM) of the same name.",
+        "Grok has apps for iOS and Android and is integrated with the X social network and Tesla's Optimus robot where it has chatbot functionality.",
+        "Grok is named after the verb to grok, created by the American science fiction author Robert A.",
+        "Grok-1 was open-sourced in 2024, followed by Grok-2, Grok 3, and Grok 4 model families, with Grok 4.5 released in 2026.",
+        "Different versions added capabilities including image generation, web search, \"Think\" mode to simulate reasoning,, agentic coding tool called Grok Build, and AI teammates called Grok Bot.",
+        "Musk admitted in 2026 that Grok was partially distilled from OpenAI's GPT models.",
+        "Starting with Grok 4.5, the models are co-developed with incoming SpaceXSI subsidiary Cursor.",
+        "The bot has received criticism for promoting conspiracy theories, praising Adolf Hitler, using antisemitic tropes, and creating nonconsensual, sexualized images of undressed women and children.",
+        "Grok generates articles for the encyclopedia website Grokipedia, launched in October 2025 by Musk as an alternative to Wikipedia, which he described as \"woke\" and politically biased."
+      ]
+    }
+  ]
+}

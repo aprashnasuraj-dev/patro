@@ -1,0 +1,47 @@
+{
+  "id": "mt-0623",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T16:46:17.793Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T16:46:18.654Z",
+      "sha256": "8c719da2ad2a985a9d52a0835442f50cb9d8cc15647e1af1d0b498aa315338d8",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    }
+  ]
+}

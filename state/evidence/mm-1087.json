@@ -1,0 +1,134 @@
+{
+  "id": "mm-1087",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How satellites are helping Africa improve weather forecasts",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Coning, Estelle",
+      "published_at": "2015-08-05",
+      "url": "https://theconversation.com/how-satellites-are-helping-africa-improve-weather-forecasts-45548",
+      "retrieved_at": "2026-10-18T15:35:54.443Z",
+      "sha256": "94374b1ad092cafb1fdf8358b39b746a39ecd670dc519a8ac024954600af1fac",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Based on information from weather prediction models, an advisory warning can be sent a few days before a possible severe weather event such as heavy rainfall or strong winds.",
+        "Closer to the time, further warnings are issued when forecasters have more certainty.",
+        "This forecasting relies heavily on remote-sensing tools such as satellite or radar systems.",
+        "In countries where radar systems are available and well maintained the data gathered form a crucial part of real-time forecasting systems.",
+        "But in developing countries radar systems are too expensive to obtain and maintain.",
+        "Real time warning In many African countries, basic ground-based observation systems are not adequate to provide a real-time feed of the weather.",
+        "This lack of data means that the public cannot be warned of severe weather events that could lead to loss of life and property.",
+        "But satellite data can provide very useful information in regions where there is no or limited access to expensive observation systems.",
+        "Numerical weather prediction data, together with geostationary satellite data, can help nowcasting.",
+        "This is why the World Meteorological Organisation has thrown its weight behind providing nowcasting in countries where advanced observation data is unavailable.",
+        "It has launched severe weather forecasting demonstration projects to improve nowcasting in data sparse regions around the world.",
+        "Blanket satellite coverage The Meteosat Second Generation satellite was launched in 2002 by the European Space Agency and the European Organisation for the Exploitation of Meteorological Satellites ."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Weather Forecasts Are Made",
+      "publisher": "Iowa State University Digital Repository (Iowa State University)",
+      "author": "C. R. Elford; Robert H. Shaw",
+      "published_at": "1958-01-01",
+      "url": "https://openalex.org/W3119807976",
+      "retrieved_at": "2026-10-18T15:35:54.802Z",
+      "sha256": "4be72928baf935af7cf13856d83831cfde9718f9606d2715daa75c924898a464",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We've been looking in previous articles in this series some of the factors that cause weather to behave as it does.",
+        "We'll \"look in\" briefly on the operations of the United States Weather Bureau - the government's official weather agency."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Weather forecasting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73231",
+      "retrieved_at": "2026-10-18T15:35:54.802Z",
+      "sha256": "1a304048a337a333ee447e40a04dc8078ef17a1adf7e7df72579ef17e94a88c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Weather forecasting or weather prediction is the application of science and technology to predict the conditions of the atmosphere for a given location and time.",
+        "People have attempted to predict the weather informally for thousands of years and formally since the 19th century.",
+        "Weather forecasts are made by collecting quantitative data about the current state of the atmosphere, land, and ocean and using meteorology to project how the atmosphere will change at a given place.",
+        "Once calculated manually based mainly upon changes in barometric pressure, current weather conditions, and sky conditions or cloud cover, weather forecasting now relies on computer-based models that take many atmospheric factors into account.",
+        "Human input is still required to pick the best possible model to base the forecast upon, which involves pattern recognition skills, teleconnections, knowledge of model performance, and knowledge of model biases.",
+        "Hence, forecasts become less accurate as the difference between the current time and the time for which the forecast is being made (the range of the forecast) increases.",
+        "The use of ensembles and model consensus helps narrow the error and provide confidence in the forecast.",
+        "Weather warnings are important because they are used to protect lives and property.",
+        "Forecasts based on temperature and precipitation are important to agriculture, and therefore to traders within commodity markets.",
+        "Temperature forecasts are used by utility companies to estimate demand over the coming days.",
+        "On an everyday basis, many people use weather forecasts to determine what to wear on a given day.",
+        "Since outdoor activities are severely curtailed by heavy rain, snow and wind chill, forecasts can be used to plan activities around these events, and to plan ahead and survive them."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Shipping Forecast",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=159894",
+      "retrieved_at": "2026-10-18T15:35:54.802Z",
+      "sha256": "c9d14e34512cfe4e2ac631581e63f1d26a16c544b00f1e0ad2b336850bf03548",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Shipping Forecast is a BBC Radio broadcast of weather reports and forecasts for the seas around the British Isles.",
+        "It is produced by the Met Office and broadcast by BBC Radio 4 on behalf of the Maritime and Coastguard Agency.",
+        "There are currently two or three broadcasts per day, at 00:48, 05:34, and 17:54 (weekends only) UK local time.",
+        "In the forecast, the waters around the British Isles are divided into 31 sea areas, also known as weather areas.",
+        "The forecast begins by listing areas with gale warnings, followed by a general synopsis of pressure areas, then a forecast for each individual sea area covering wind speed and direction, precipitation, and visibility.",
+        "Extended forecasts at 00:48 and 05:34 include information from coastal weather stations and an inshore waters forecast.",
+        "The unique and distinctive presentation style of these broadcasts has led to their attracting an audience much wider than that directly interested in maritime weather conditions.",
+        "It is frequently referred to and parodied in British popular culture."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Forecasting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=246074",
+      "retrieved_at": "2026-10-18T15:35:54.802Z",
+      "sha256": "528822d8d85d8c7c3a30ccf4045cfea39ebf59c9eb073b74172e6d16887a99d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Forecasting is the process of making predictions based on past and present data.",
+        "For example, a company might estimate their revenue in the next year, then compare it against the actual results creating a variance actual analysis.",
+        "Forecasting might refer to specific formal statistical methods employing time series, cross-sectional or longitudinal data, or alternatively to less formal judgmental methods or the process of prediction and assessment of its accuracy.",
+        "Risk and uncertainty are central to forecasting and prediction; it is generally considered a good practice to indicate the degree of uncertainty attaching to forecasts.",
+        "In any case, the data must be up to date in order for the forecast to be as accurate as possible.",
+        "In some cases the data used to predict the variable of interest is itself forecast.",
+        "A forecast is not to be confused with a Budget; budgets are more specific, fixed-term financial plans used for resource allocation and control, while forecasts provide estimates of future financial performance, allowing for flexibility and adaptability to changing circumstances.",
+        "Both tools are valuable in financial planning and decision-making, but they serve different functions."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Weather rock",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1401197",
+      "retrieved_at": "2026-10-18T15:35:54.802Z",
+      "sha256": "483259e6691c3f8f3002e9fa6fa66620b7911ec3aaf2526d0b3ddd0f2fc3bd12",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The weather rock or weather stone is a humorous display that pokes fun at the intricate technology used in modern weather forecasts, as well as the fact that their accuracy is less than perfect.",
+        "A rock is typically hung from a tripod and accompanied by a sign indicating how to read it.",
+        "A portable example of such a display, \"the famous Maine Weather Stone\" of Audubon Camp, Hog Island, was described in late 1981."
+      ]
+    }
+  ]
+}

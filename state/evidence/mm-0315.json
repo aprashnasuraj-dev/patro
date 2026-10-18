@@ -1,0 +1,129 @@
+{
+  "id": "mm-0315",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Meadows, Grass, Bicycle",
+      "publisher": "The Cupola: Scholarship at Gettysburg College (Gettysburg College)",
+      "author": "Nazli I. Inal",
+      "published_at": "2008-01-01",
+      "url": "https://openalex.org/works/W634601992",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "b5fa89e71032abe2bcb0c134f563ab290a0d0d9a653f593613566c9bbc13de8b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Meadows, Grass, Bicycle | OpenAlex Log in Get started Work Add to collection Meadows, Grass, Bicycle HTML PDF Details Locations Year: 2008 Type: other Source: The Cupola: Scholarship at Gettysburg College (Gettysburg College) Author: Nazli I.",
+        "Inal Institution: Gettysburg College Language: English Topic: Artistic and Creative Research Subfield: Visual Arts and Performing Arts Field: Arts and Humanities Domain: Social Sciences Open Access status: green OpenAlex ID: W634601992 Cites: Cited by: Related to: 1"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Inventory of bicycle motion for the design of a bicycle simulator",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "author": "J.H. Van den Ouden",
+      "published_at": "2011-07-05",
+      "url": "https://openalex.org/W123220426",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "a719b5ae7d8a3b04acc6e2995913abeb97d2e975856607fe6fe62e71045b7528",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the Netherlands most people have mastered riding a bicycle.",
+        "A bicycle is a dynamic system that is more complex than one would expect.",
+        "For example in order to go through a left curve on a bicycle one first has to steer right for a short period of time in order to make the bicycle lean to the left.",
+        "While going through the left curve one needs to apply torque to the handlebars but not in the direction of the curve.",
+        "The torque that is applied to the handlebars is to the right and it prevents the handlebars from rotating even further.",
+        "The bicycle as a dynamical system is described in the article \"Linearized dynamics equations for the balance and steer of a bicycle: a benchmark and review\" [1] written by J."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bicycle Parking in Copenhagen",
+      "publisher": "Digital WPI",
+      "author": "Christian John Banker; Christine Keches; Megan J. Murphy",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W2185093218",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "6071166bfac641d18b2e96c246ae0f05f37aba3711b581ff8bbeef8e2761f010",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This project, sponsored by the Danish Cyclist Federation, deals with enhancing the bicycle infrastructure in Copenhagen and specifically focuses on improving bicycle parking facilities at Norreport Railway and Metro Station.",
+        "The current parking situation, the opinions and behaviors of cyclists, and potential parking solutions are analyzed through field studies at Norreport Station, interviews and a survey.",
+        "Recommendations for the best improvements are made so that the city of Copenhagen can continue to promote cycling as an alternative mode of transportation."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Recumbent bicycle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=167248",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "4ef14d637f463360a9dbc56f91b9f9d91870cf48c7e1279b88b28399c9053013",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A recumbent bicycle is a bicycle that places the rider in a laid-back reclining position, and often called a human-powered vehicle or HPV, especially if it has an aerodynamic fairing.",
+        "Recumbents are available in a wide range of configurations, including: long to short wheelbase; large, small, or a mix of wheel sizes; overseat, underseat, or no-hands steering; and rear wheel or front wheel drive.",
+        "A variant with three wheels is a recumbent tricycle, with four wheels a quadracycle.",
+        "Speed recumbents are generally faster than upright bicycles, but they were banned by the Union Cycliste Internationale (UCI) in 1934.",
+        "Recumbent races and records are now overseen by the World Human Powered Vehicle Association (WHPVA), International Human Powered Vehicle Association (IHPVA) and World Recumbent Racing Association (WRRA).",
+        "Some recumbent riders may choose this type of design for ergonomic reasons: the rider's weight is distributed comfortably over a larger area, supported by back and buttocks.",
+        "On a traditional upright bicycle, the body weight rests entirely on a small portion of the sitting bones, the feet, and the hands.",
+        "Others may choose a recumbent because some models also have an aerodynamic advantage; the reclined, legs-forward position of the rider's body presents a smaller frontal profile."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Mountain biking",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188773",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "9519b122ce0da3c41846a28f7822b661cf6a1b5146c386031b72f39c0fc3ed7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "MTB) is a sport of riding bicycles off-road, often over rough terrain, usually using specially designed mountain bikes.",
+        "Mountain biking can generally be broken down into distinct categories: cross country, trail, all mountain, enduro, downhill and freeride."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bicycle frame",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=195134",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "d3c5e48139fa94a5cb739cc6030aec2d0cfed8c4f0c01627b5ec867a4c1fa5c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A bicycle frame is the main component of a bicycle, onto which wheels and other components are fitted.",
+        "The modern and most common frame design for an upright bicycle is based on the safety bicycle, and consists of two triangles: a main triangle and a paired rear triangle.",
+        "Frames are required to be strong, stiff and light, which they do by combining different materials and shapes."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Bicycle chain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=276592",
+      "retrieved_at": "2026-10-18T14:55:40.453Z",
+      "sha256": "e5bdd2c2bd612ba5c6563595d3c7ee24d9c85b147a25e6a338b2191c1029a71b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A bicycle chain is a roller chain that transfers power from the pedals to the drive-wheel of a bicycle, thus propelling it.",
+        "Most bicycle chains are made from plain carbon or alloy steel, but some are nickel-plated to prevent rust, or simply for aesthetics."
+      ]
+    }
+  ]
+}

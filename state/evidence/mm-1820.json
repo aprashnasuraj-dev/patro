@@ -1,0 +1,146 @@
+{
+  "id": "mm-1820",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Ultralightweight sonar plus AI lets tiny drones navigate like bats",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Sanket, Nitin",
+      "published_at": "2026-03-27",
+      "url": "https://theconversation.com/ultralightweight-sonar-plus-ai-lets-tiny-drones-navigate-like-bats-279287",
+      "retrieved_at": "2026-10-18T16:05:53.052Z",
+      "sha256": "08e4a751342874145946b1b4f845ccfe7a3a26c5c1baea63e793bbfd87213a5b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Ultralightweight sonar plus AI lets tiny drones navigate like bats Skip to content Academic rigor, journalistic flair This small drone is using sonar, similar to bats’ echolocation, to navigate through a grove of trees.",
+        "Current robots rely heavily on cameras or light detection and ranging , known as lidar, or both.",
+        "But these sensors fail in visually challenging conditions, such as smoke, fog, dust, snow or complete darkness.",
+        "I’m a scientific engineer who develops bio-inspired microrobots.",
+        "To solve this challenge, my research team looked at nature’s experts at navigating in poor visibility: bats.",
+        "They thrive in dark, damp and dusty caves and can detect obstacles as thin as a human hair using echolocation while weighing as little as two paper clips.",
+        "They emit sound waves and listen to weak echoes reflected from objects.",
+        "However, enabling this sensing on aerial robots is extremely challenging because propellers generate a lot of noise.",
+        "It is a bit like trying to listen to your friend while a jet engine is taking off next to you.",
+        "First, a physical acoustic shield inspired by bat’s ear cartilage reduces propeller noise around the acoustic sensors, which act like the robot’s ears.",
+        "Second, a neural network called Saranga recovers weak echo signals from very noisy measurements by learning patterns over time, inspired by how bats process sound.",
+        "Together, these enable the robot to estimate obstacle locations in 3D and navigate safely using milliwatt-level sensing power."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "UAV Obstacle Avoidance Algorithm to Navigate in Dynamic Building Environments",
+      "publisher": "MDPI AG",
+      "author": "Aldao, Enrique; González-deSantos, Luis; Michinel, Humberto",
+      "published_at": "2022-01-10",
+      "url": "https://doi.org/10.3390/drones6010016",
+      "retrieved_at": "2026-10-18T16:05:53.053Z",
+      "sha256": "3eb2788c7cf84da4cb35a0bdafd7bbe3f8f3e1f390e457215bd0a38e7f2ac391",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this work, a real-time collision avoidance algorithm was presented for autonomous navigation in the presence of fixed and moving obstacles in building environments.",
+        "The current implementation is designed for autonomous navigation between waypoints of a predefined flight trajectory that would be performed by an UAV during tasks such as inspections or construction progress monitoring.",
+        "It uses a simplified geometry generated from a point cloud of the scenario.",
+        "In addition, it also employs information from 3D sensors to detect and position obstacles such as people or other UAVs, which are not registered in the original cloud.",
+        "If an obstacle is detected, the algorithm estimates its motion and computes an evasion path considering the geometry of the environment.",
+        "The method has been successfully tested in different scenarios, offering robust results in all avoidance maneuvers.",
+        "Execution times were measured, demonstrating that the algorithm is computationally feasible to be implemented onboard an UAV."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How Do Start-ups Navigate Regulatory Constraints for Innovation: An In-depth Study of the Strategies Start-ups use to Navigate the Nascent Market for Drone Technology",
+      "publisher": "Academy of Management global proceedings",
+      "author": "Anders Dahl Krabbe; Kristina Vaarst Andersen; Marianne Harbo Frederiksen",
+      "published_at": "2019-01-28",
+      "url": "https://openalex.org/W2943489519",
+      "retrieved_at": "2026-10-18T16:05:53.307Z",
+      "sha256": "11471118b63c5ee93d38c9894c0e0f1bb3c60b3f988c662352cf8f8a3f5dddaf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper explores how start-ups navigate under policy regulations, which constrain their opportunities for profitable innovation.",
+        "Based on longitudinal in-depth data on 13 cases, we identify perc..."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Unmanned aerial vehicle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58900",
+      "retrieved_at": "2026-10-18T16:05:53.545Z",
+      "sha256": "84abe5151afff9cbfdc8a8705c0aa01e75fc00073eba0b5715fc0466cc78dcaa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An unmanned aerial vehicle (UAV), or unmanned aircraft system (UAS), commonly known as an aerial drone or simply drone, is an aircraft with no human pilot, crew, or passengers on board, which instead is either autonomous or controlled remotely.",
+        "UAVs were originally developed through the twentieth century for military missions too \"dull, dirty or dangerous\" for humans, and by the twenty-first had become essential assets to most militaries.",
+        "As control technologies improved and costs fell, their use expanded to many non-military applications.",
+        "These include aerial photography, area coverage, precision agriculture, forest fire monitoring, river monitoring, environmental monitoring, weather observation, policing and surveillance, infrastructure inspections, smuggling, product deliveries, entertainment, and drone racing."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Drone racing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47096759",
+      "retrieved_at": "2026-10-18T16:05:53.545Z",
+      "sha256": "b623a25a7a8ae5773a0af322f393f101fdec4ef1b3743cdc490fadf9768f8c61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Drone racing is a motorsport in which participants operate radio-controlled aircraft (typically small  quadcopter drones) equipped with onboard digital video cameras.",
+        "The operator views a compact flat panel display (typically mounted to the handheld controller) or, more often, wearing a head-mounted display (also called a \"FPV goggle\") that shows a live-streamed image feed from the aircraft.",
+        "As with full-size air racing, the goal of the sport is to complete an obstacle course as quickly as possible.",
+        "Drone racing began in 2011 in Germany with a number of amateur drone controllers getting together for semi-organized races in Karlsruhe."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Zipline (drone delivery company)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58254093",
+      "retrieved_at": "2026-10-18T16:05:53.545Z",
+      "sha256": "5697a7e2bf9537a4dbabec2a6c011c64fc9dd80fbbfd7815716fd9e207fe102e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an American company that designs, manufactures, and operates delivery drones, with distribution centers in the United States, Rwanda, Ghana, Japan, Nigeria, Côte d'Ivoire, and Kenya.",
+        "As of January 2026, Zipline's drones have completed more than two million commercial deliveries and flown over 120 million miles.",
+        "Zipline has two different drone platforms, P1 is used for deliveries to rural areas and P2 in urban and suburban areas.",
+        "All Zipline drones navigate and avoid obstacles autonomously using custom software the company developed, which run on Nvidia chips.",
+        "The Zipline fleet is one of the world’s largest commercial deployments of autonomous robots."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Low-cost Uncrewed Combat Attack System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=65989411",
+      "retrieved_at": "2026-10-18T16:05:53.545Z",
+      "sha256": "e1e1e5b2c9fc41bf2fbe070bc3e9a6df9d41ed8224a48146d560f455dca2d283",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Low-cost Uncrewed Combat Attack System (LUCAS) is a one-way attack drone, also referred to as a kamikaze drone or suicide drone, developed for the United States Armed Forces by U.S.",
+        "Its core design is based on reverse engineering of the Iranian-designed HESA Shahed 136.",
+        "LUCAS is similar in appearance to the Shahed 136, albeit slightly smaller at about ten feet (3.0 m) long and with a wingspan of about eight feet (2.4 m).",
+        "LUCAS is designed to be mass-producible at scale for low cost compared to more expensive conventional munitions; U.S.",
+        "CENTCOM claimed the cost of the drone to be $35,000 per unit.",
+        "LUCAS was first revealed in July 2025, and the first operational squadron was deployed in the Middle East in December 2025.",
+        "According to OSINT researchers, LUCAS was first used on January 3, 2026 as part of Operation Absolute Resolve.",
+        "LUCAS's first officially confirmed use was in February 2026, against the Islamic Republic of Iran Armed Forces during the 2026 Iran War.",
+        "LUCAS has been positioned as a counter to low-cost drone swarms used by adversaries such as Iran and its proxies, as well as Russia in the ongoing conflict in Ukraine."
+      ]
+    }
+  ]
+}

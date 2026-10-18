@@ -1,0 +1,87 @@
+{
+  "id": "mm-1903",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Fusion cuisine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11304",
+      "retrieved_at": "2026-10-18T16:18:05.985Z",
+      "sha256": "76cac356440cdc52307a0128ee709c30afdddb0d541173b04d5c24534cdd8842",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Fusion cuisine is a cuisine that combines elements of different culinary traditions that originate from different countries, regions, or cultures.",
+        "Cuisines of this type are not categorized according to any one particular cuisine style and have played a part in many contemporary restaurant cuisines since the 1970s.",
+        "The term fusion cuisine, added to the Oxford English Dictionary in 2002, is defined as \"a style of cookery which blends ingredients and methods of preparation from different countries, regions, or ethnic groups; food cooked in this style.\""
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Malaysian cuisine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=314132",
+      "retrieved_at": "2026-10-18T16:18:05.985Z",
+      "sha256": "e9a75a646cc537c8a29016aaf618949a08445a993f9599aee79e19b0a5922e25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Malaysian cuisine (Malay: Masakan Malaysia; Jawi: ماسقن مليسيا) consists of cooking traditions and practices found in Malaysia, and reflects the multi-ethnic makeup of its population.",
+        "The vast majority of Malaysia's population can roughly be divided among three major ethnic groups: Malays, Chinese and Indians.",
+        "The remainder consists of the indigenous peoples of Sabah and Sarawak in East Malaysia, the Orang Asli of Peninsular Malaysia, the Peranakan and Eurasian creole communities, as well as a significant number of foreign workers and expatriates.",
+        "Because Peninsular Malaysia shares a common history with Singapore, it is common to find versions of the same dish across both sides of the border regardless of the place of origin, such as laksa and chicken rice.",
+        "The same thing can be said with Malaysian Borneo and Brunei, such as ambuyat.",
+        "Also because of their proximity, historic migration and close ethnic and cultural kinship, Malaysia shares culinary ties with Indonesia, Thailand and the Philippines, as these nations share dishes such as satay and rendang.",
+        "Because the vast majority of Chinese Malaysians are descendants of immigrants from southern China, Malaysian Chinese cuisine is predominantly based on dishes with roots from Fujian, Teochew, Cantonese, Hakka and Hainanese cuisines.",
+        "However, although the vast majority of Indian Malaysians are descendants of immigrants from southern India, Malaysian Indian cuisine has a mixture of north-south Indian and Sri Lankan diversity that can be differentiated by drier or wetter curry dish preparation."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Malaysian Chinese",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=692999",
+      "retrieved_at": "2026-10-18T16:18:05.985Z",
+      "sha256": "ce43f7e539e828e7f74e15d9da955e73a67be3037c5d7d6dfa7e115e6a759392",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Malaysian Chinese or Chinese Malaysians are Malaysian citizens of Chinese ethnicity.",
+        "They form the second-largest ethnic group in Malaysia, after the Malay-majority, and as of 2020, constituted 23.2% of the country's citizens or close to 7 million.",
+        "In addition, Malaysian Chinese make up the second-largest community of overseas Chinese in the world, following the Thai Chinese in neighbouring Thailand.",
+        "Prior to 1963, the ethnic Chinese community were often referred to as the Malayan Chinese.",
+        "As with most Chinese communities in Southeast Asia, they have maintained a significant and substantial presence in the economy of the modern-day country for at least two centuries since the era of British Malaya.",
+        "Most Malaysian Chinese are descendants of Southern Chinese immigrants who arrived in Malaysia between the early 19th and the mid-20th centuries before the country attained independence from British colonial rule.",
+        "The majority originate from Fujian or the Lingnan region (modern-day Guangdong, Guangxi and Hainan).",
+        "They belong to diverse linguistic subgroups speaking Chinese such as the Hokkien and Fuzhou from Fujian, the Teochew, Cantonese, Hakka from Guangdong, the Hainanese from Hainan and Kwongsai from Guangxi.",
+        "An earlier wave of Chinese migrants, arriving between the 13th and 17th centuries, assimilated significant aspects of indigenous Malay culture and customs to forge distinct identities.",
+        "These groups include the Peranakans (or Baba–Nyonya) of Kelantan, Malacca, Penang and Terengganu and the Sino-Natives of Sabah.",
+        "Characterised by a high degree of intermarriage with native populations, these communities has preserved unique culture and traditions that distinguish them from the broader Malaysian Chinese population.",
+        "Most Malaysian Chinese have maintained their Chinese heritage, identity, culture and language."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Portmanteau",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4063117",
+      "retrieved_at": "2026-10-18T16:18:05.985Z",
+      "sha256": "4c9913f647d8299f1787373522f9911ff39cd0481aeffd6a887f5dd5598a8f7c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In literary studies, a portmanteau, also known in linguistics and lexicography as a blend word, a lexical blend, or simply a blend, is a word formed by combining the meanings and parts of the sounds of two or more words.",
+        "English examples include smog, coined by blending smoke and fog, and motel, blending motor (or motorist) and hotel.",
+        "The term \"portmanteau\", derived from the French porte-manteau, literally is a two-part piece of luggage that was first applied metaphorically in Lewis Carroll's Through the Looking-Glass (1871) to describe the combination of words."
+      ]
+    }
+  ]
+}

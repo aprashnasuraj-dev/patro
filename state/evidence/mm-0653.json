@@ -1,0 +1,84 @@
+{
+  "id": "mm-0653",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "This, My Breath",
+      "publisher": "scholarworks - UTEP (The University of Texas at El Paso)",
+      "author": "Suzette Louise Mack",
+      "published_at": "2020-01-01",
+      "url": "https://openalex.org/W7139325408",
+      "retrieved_at": "2026-10-18T15:14:46.381Z",
+      "sha256": "68199f046bf430d142876a70453c91ef60d8d4cb67cd2dc229e8271a15a999ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This, My Breath, is a creative collection of memories gathered along the seasons in my life-mostly from my formative years.",
+        "The stories highlight the patient, unconditional love my parents shared, and the way it has influenced me throughout my life.",
+        "The stories are about life, love, loss, a yearning to belong, and a longing to be both interdependent and independent.",
+        "In my family of origin, it was the simple rhythms established through daily life and the honoring of traditions that inspired the deepest meaning, purpose, and hope.",
+        "The seasons of the year brought my family alive with a flow of passion, purpose and meaning that have left an imprinted tempo that guides me still today.",
+        "Through this, it is my ancestors who remind me to return \"home\" when I falter, stray, or feel lost and rejected.",
+        "The yearning to share my memoirs had the unexpected effect of opening wide a multiplicity of grief.",
+        "Processing the stories-memorializing the people I've adored, baring open some of the private issues I've endured, digging into history to clarify the cultural climate during my life and sorting through photos to help me remember-also connected me to a broader world.",
+        "Writing this has helped me better understand how we interconnect as humans, while also maintain our boundaries as individuals.",
+        "As I work to complete my MFA in Creative Writing at the University of Texas El Paso, I write my final piece with the hope of culminating my education into something that inspires others along their own seasons in life.",
+        "It is my desire to further pursue work in the arena of creative memoir-writing as a way to process grief collectively and individually.",
+        "I envision opening up such a project to anyone interested, where stories can be told in creative writing clusters, as grief and love dance into the light of life."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The man who took a breath",
+      "publisher": "DigitalCommons@UTEP (The University of Texas at El Paso)",
+      "author": "Robert Allen Crowl",
+      "published_at": "2016-01-01",
+      "url": "https://openalex.org/W2589118373",
+      "retrieved_at": "2026-10-18T15:14:46.381Z",
+      "sha256": "6b705478524bcbb62834d09a883f81feffb6675385cfa73d58ea361d3a241129",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Man Who Took A Breath confronts the ongoing battle of good and evil and its connection to humanity's search for and defense of personal truth, mainly as it's revealed within and through human relationships.",
+        "Blurring the line between right and wrong can force readers to take a breath before condemning someone else's brand of truth.",
+        "People from all walks of life endure familial relationships, which estrange and comfort, tear down and build up.",
+        "These stories are a series of snapshots into a variety of relationships and spiritual crusades meant to depict humanities' deep well for compassion, empathy, and love while simultaneously horrifying us with its depth of pride, depravity, and narcissism."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Chinese alchemical elixir poisoning",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52875786",
+      "retrieved_at": "2026-10-18T15:14:46.381Z",
+      "sha256": "b40ebdaffe7a737f9caf092f2c6ff9d56fbe6cb3a400fe709a97094e0d2c278e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In Chinese alchemy, elixir poisoning refers to the toxic effects from elixirs of immortality that contained metals and minerals such as mercury and arsenic.",
+        "The official Twenty-Four Histories record numerous Chinese emperors, nobles, and officials who died from taking elixirs to prolong their lifespans.",
+        "The first emperor to die from elixir poisoning was likely Qin Shi Huang (d.",
+        "Despite common knowledge that immortality potions could be deadly, fangshi and Daoist alchemists continued the elixir-making practice for two millennia."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Carmy Berzatto",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=80947631",
+      "retrieved_at": "2026-10-18T15:14:46.381Z",
+      "sha256": "9f08fe73ad907b442369a259ded1d42aef37aaf3c644f98c882f26dd3fb89dda",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carmen Anthony Berzatto, typically called Carmy, Carm, or Bear, is a fictional character on the FX Network television series The Bear.",
+        "Created by Christopher Storer and played by Jeremy Allen White, Carmy is a internationally acclaimed chef who returns home to Chicago to run his family's failing Italian beef sandwich restaurant after the death of his older brother.",
+        "White has received multiple Emmy and Golden Globe awards for his performance."
+      ]
+    }
+  ]
+}

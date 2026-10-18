@@ -1,0 +1,171 @@
+{
+  "id": "mm-1035",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Western Roman Empire",
+      "publisher": "Archaeopress Publishing Ltd",
+      "author": null,
+      "published_at": "2019-09-05",
+      "url": "https://doi.org/10.2307/j.ctv1zckxpr.10",
+      "retrieved_at": "2026-10-18T15:31:47.336Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "ROMAN CONCRETE: THE ASCENT, SUMMIT, AND DECLINE OF AN ART",
+      "publisher": "Lincoln (University of Nebraska)",
+      "author": "Thomas Winter",
+      "published_at": "1979-01-01",
+      "url": "https://openalex.org/W2142895768",
+      "retrieved_at": "2026-10-18T15:31:47.336Z",
+      "sha256": "0ef0de6d402e7969af6dc9d8ac5bc9ffabe8ac84a50a893325d835febde214d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Th e evidence of the surviving literature and structure provides this chronology for the development of concrete: Fronto dates for us, by naming consuls, two aqueducts utterly devoid of concrete at 312 and 272 B.C.",
+        "From Cato, who died in 149 B.C., we can discern that (a) concrete has now become the normal foundation for building, (b) limeburning is now an established trade, and (c) his recipe for cement is primi-tive—even medieval—and non-hydraulic.",
+        "Th e year 140 saw the opening of the Marcian Aqueduct, its water-channel lined in non-hydraulic cement.",
+        "25 B.C., describes diff erent cement formulations for diff erent purposes, even giving, knowingly, a recipe for hydraulic cement.",
+        "Th e years 38–52, nonetheless, included the building of two aqueducts in the non-hydraulic variety.",
+        "Th e harbor at Ostia, built with hydraulic concrete, is fi nished by 62 A.D."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "A GLIMPSE INTO THE ORIGINS OF ROMAN CONCRETE DOMES",
+      "publisher": "DergiPark (Istanbul University)",
+      "author": "Uygar Ozan Usanmaz",
+      "published_at": "2021-11-18",
+      "url": "https://openalex.org/W4372401735",
+      "retrieved_at": "2026-10-18T15:31:47.336Z",
+      "sha256": "9680a69196d4aea054bbe3c64443ba78d8248991c8e0dc043cfb4e8de5e9f315",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Beton kubbeler yapı mimarisinde asırlardır kullanılagelmiştir.",
+        "Bunun yanı sıra beton kubbe inşalarından önce bindirme tekniği Roma İmparatorluk Dönemi’nde kademeli olarak gelişmiştir.",
+        "Kemer ve tonoz mimarileri sayesinde ise beton olmayan kubbeler inşa edilebilmiştir.",
+        "Ancak bindirme tekniği ile inşa edilmiş bu tip kubbelerde kiriş açıları oldukça sınırlı kalmıştır.",
+        "Ayrıca beton olmayan kubbelerde kullanılmış kireç harcı, kerpiç gibi malzemeler de neme karşı dayanıksızdır.",
+        "Kereste kullanımından dolayı geniş kirişleri olan ahşap kubbeler ise yangın ve mantara karşı savunmasızdır.",
+        "Bu tip problemler Romalılar tarafından geliştirilen beton kubbeler sayesinde çözülmüştür.",
+        "Puzolan, beton kubbe inşasında kullanılan bir hammadde olarak önemli gelişmelere neden olmuştur.",
+        "Sonrasında beton kubbelerdeki tipolojik ve teknik gelişimler antik toplumların ihtiyaçlarını karşılayacak şekilde kısa sürede tüm Akdeniz Havzası’na yayılmıştır.",
+        "Bahsi geçen beton kubbeler MÖ birinci yüzyıl ile MS ikinci yüzyılın ilk yarısı sonları arasında oldukça yaygın olarak kullanılmıştır.",
+        "Kubbeler üzerine çeşitli çalışmaların olmasına rağmen beton kubbelerin kökeni ve gelişimleri üzerine güncel bir araştırma mevcut değildir.",
+        "Bu makalede beton kubbelerin ortaya çıkış sürecine dair bir değerlendirme yapılacaktır."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Concrete",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5371",
+      "retrieved_at": "2026-10-18T15:31:47.337Z",
+      "sha256": "b2d9160ba0d346e0a68cf7b24003752563e66c4a522127a1a5a3568daf1d4721",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Concrete is a composite material composed of aggregate bound together with a fluid cement that cures to a solid.",
+        "It is the second-most-used substance (after water), the most widely used building material, and the most-manufactured material in the world.",
+        "Cement-bound concrete differs from the less rigid, less durable asphaltic concrete, which has a bituminous binder.",
+        "When aggregate is mixed with dry Portland cement and water, the mixture forms a fluid slurry that can be poured and molded into shape.",
+        "The cement reacts with the water through a process called hydration, which hardens it after several hours to form a solid matrix that binds the materials together into a durable stone-like material with various uses.",
+        "This time allows concrete to not only be cast in forms, but also to have a variety of tooled processes performed.",
+        "The hydration process is exothermic, which means that ambient temperature plays a significant role in how long it takes concrete to set.",
+        "Often, additives (such as pozzolans or superplasticizers) are included in the mixture to improve the physical properties of the wet mix, delay or accelerate the curing time, or otherwise modify the finished material.",
+        "Most structural concrete is poured with reinforcing materials (such as steel rebar) embedded to provide tensile strength, yielding reinforced concrete.",
+        "Before the invention of Portland cement in the early 1800s, lime-based cement binders, such as lime putty, were often used.",
+        "The overwhelming majority of concretes are produced using Portland cement, but sometimes with other hydraulic cements, such as calcium aluminate cement.",
+        "Many other non-cementitious types of concrete exist with other methods of binding aggregate together, including asphalt concrete with a bitumen binder, which is frequently used for road surfaces, and polymer concretes that use polymers as a binder."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Religion in ancient Rome",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=214954",
+      "retrieved_at": "2026-10-18T15:31:47.337Z",
+      "sha256": "56de64c3b8f37650c17be9285e91362e6ffc877b075c8526e39a3b0580a78a5d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Religion in ancient Rome was polytheistic, consisted of varying imperial and provincial religious practices, which were followed both by the Roman people as well as those who were brought under its rule.",
+        "The Romans thought of themselves as highly religious, and attributed their success as a world power to their collective piety (pietas) in maintaining good relations with the gods.",
+        "Their polytheistic religion is known for having honoured many deities.",
+        "The presence of Greeks on the Italian Peninsula from the beginning of the historical period influenced Roman culture, introducing some religious practices that became fundamental, such as the cultus of Apollo.",
+        "The Romans looked for common ground between their major gods and those of the Greeks (interpretatio graeca), adapting Greek myths and iconography for Latin literature and Roman art, as the Etruscans had.",
+        "Etruscan religion was also a major influence, particularly on the practice of augury, used by the state to seek the will of the gods.",
+        "According to legends, most of Rome's religious institutions could be traced to its founders, particularly Numa Pompilius, the Sabine second king of Rome, who negotiated directly with the gods.",
+        "This archaic religion was the foundation of the mos maiorum, \"the way of the ancestors\" or simply \"tradition\", viewed as central to Roman identity.",
+        "Roman religion was practical and contractual, based on the principle of do ut des, \"I give that you might give\".",
+        "Religion depended on knowledge and the correct practice of prayer, rite, and sacrifice, not on faith or dogma, although Latin literature preserves learned speculation on the nature of the divine and its relation to human affairs.",
+        "Even the most skeptical among Rome's intellectual elite such as Cicero, who was an augur, saw religion as a source of social order.",
+        "As the Roman Empire expanded, migrants to the capital brought their local cults, many of which became popular among Romans."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Roman economy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1965658",
+      "retrieved_at": "2026-10-18T15:31:47.337Z",
+      "sha256": "73ed3f144cac7b59b6db0bdf6c47a7408ce7218235d4c4ea77738709dbfb01e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The study of the economies of the ancient city-state of Rome and its empire during the Republican and Imperial periods remains highly speculative.",
+        "There are no surviving records of business and government accounts, such as detailed reports of tax revenues, and few literary sources regarding economic activity.",
+        "Instead, the study of this ancient economy is today mainly based on the surviving archeological and literary evidence that allow researchers to form conjectures based on comparisons with other more recent pre-industrial economies.",
+        "During the early centuries of the Roman Republic, it is conjectured that the economy was largely agrarian and centered on the trading of commodities such as grain and wine.",
+        "Financial markets were established through such trade, and financial institutions, which extended credit for personal use and public infrastructure, were established primarily by interfamily wealth.",
+        "In times of agricultural and cash shortfall, Roman officials and moneyers tended to respond by coining money, which happened during the prolonged crisis of the First Punic War and created economic distortion and difficulties.",
+        "Following the Punic Wars, during the late Republic and the early Roman Empire, the economy became more monetized and a more sophisticated financial system emerged.",
+        "Emperors issued coinage stamped with their portraits to disseminate propaganda, to create public goodwill, and to symbolize their wealth and power.",
+        "The Roman Imperial monetary economy often suffered bouts of inflation in part by emperors who issued money to fund high-profile imperial projects such as public building works or costly wars that offered opportunities for propaganda but little or no material gain.",
+        "Recent archaeological and quantitative research has used coin-hoard evidence to study the spatial integration of the Roman economy.",
+        "One study of georeferenced Republican coin hoards dated to 155 BCE–2 CE applied spatial interaction modelling and social accounting methods to examine monetary circulation across Roman territories.",
+        "Emperors of the Antonine and the Severan dynasties overall debased the currency, particularly the denarius, under the pressures of meeting military payrolls."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Sexuality in ancient Rome",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3952114",
+      "retrieved_at": "2026-10-18T15:31:47.337Z",
+      "sha256": "4810558fc5791011b9b3657f658e74b92b432bdac64d147cc6c4e01e50697cfb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sexual attitudes and behaviors in ancient Rome are indicated by art, literature, and inscriptions, and to a lesser extent by archaeological remains such as erotic artifacts and architecture.",
+        "It has sometimes been assumed that \"unlimited sexual license\" was characteristic of ancient Rome, but sexuality was not excluded as a concern of the mos maiorum, the traditional social norms that affected public, private, and military life.",
+        "Pudor, \"shame, modesty\", was a regulating factor in behavior, as were legal strictures on certain sexual transgressions in both the Republican and Imperial periods.",
+        "The censors—public officials who determined the social rank of individuals—had the power to remove citizens from the senatorial or equestrian order for sexual misconduct, and on occasion did so.",
+        "Roman society was patriarchal (see paterfamilias), and masculinity was premised on a capacity for governing oneself and others of lower status, not only in war and politics, but also in sexual relations.",
+        "Virtus, \"virtue\", was an active masculine ideal of self-discipline, related to the Latin word for \"man\", vir.",
+        "The corresponding ideal for a woman was pudicitia, often translated as chastity or modesty, but it was a more positive and even competitive personal quality that displayed both her attractiveness and self-control.",
+        "Roman women of the upper classes were expected to be well educated, strong of character, and active in maintaining their family's standing in society.",
+        "With extremely few exceptions, surviving Latin literature preserves the voices of educated male Romans on sexuality.",
+        "Visual art was created by those of lower social status and of a greater range of ethnicity, but was tailored to the taste and inclinations of those wealthy enough to afford it, including, in the Imperial era, former slaves.",
+        "Some sexual attitudes and behaviors in ancient Roman culture differ markedly from those in later Western societies.",
+        "Roman religion promoted sexuality as an aspect of prosperity for the state, and individuals might turn to private religious practice or \"magic\" for improving their erotic lives or reproductive health."
+      ]
+    }
+  ]
+}

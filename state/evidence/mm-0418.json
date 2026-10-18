@@ -1,0 +1,87 @@
+{
+  "id": "mm-0418",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Ask?",
+      "publisher": "Oxford University Press",
+      "author": null,
+      "published_at": "2024-08-01",
+      "url": "https://doi.org/10.1093/hebz/9780198943372.003.0063",
+      "retrieved_at": "2026-10-18T14:57:53.294Z",
+      "sha256": "aaee2cb3f5cab6feb083db783c3a20cc2e900df3651f10f0af0e01eeb44511e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cases in Marketing provides a bridge between course textbooks and key real-world examples.",
+        "case study summarizes and examines the scenario and includes supporting commentary from Paul Baines, Chris Fill, Sara Rosengren, and Paolo Antonetti."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "HTTPS",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13586",
+      "retrieved_at": "2026-10-18T14:57:54.471Z",
+      "sha256": "1f0885fdf83442480005071d5c231fc045cd03f07b9a5b5e869fc9ab13c49b32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP).",
+        "It uses encryption for secure communication over a computer network, and is widely used on the Internet.",
+        "In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).",
+        "The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL.",
+        "The principal motivations for HTTPS are authentication of the accessed website and protection of the privacy and integrity of the exchanged data while it is in transit.",
+        "It protects against man-in-the-middle attacks, and the bidirectional block cipher encryption of communications between a client and server protects the communications against eavesdropping and tampering.",
+        "The authentication aspect of HTTPS requires a trusted third party to sign server-side digital certificates.",
+        "This was historically an expensive operation, which meant fully authenticated HTTPS connections were usually found only on secured payment transaction services and other secured corporate information systems on the World Wide Web.",
+        "In 2016, a campaign by the Electronic Frontier Foundation with the support of web browser developers led to the protocol becoming more prevalent.",
+        "HTTPS has since 2018 been used more often by web users than non-secure HTTP, primarily to protect page authenticity on all types of websites, secure accounts, and keep user communications, identity, and web browsing private."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "World Wide Web",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33139",
+      "retrieved_at": "2026-10-18T14:57:54.471Z",
+      "sha256": "e9e44e242f458287d9b51a0480a211a54f340fbe3728d4fafad085b05614e235",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The World Wide Web (also known as WWW, W3, or simply the Web) is a global interconnected information system that enables content sharing over the Internet.",
+        "It facilitates access to documents and other web resources according to specific rules of the Hypertext Transfer Protocol (HTTP).",
+        "The Web was invented by English computer scientist Tim Berners-Lee while at CERN in 1989 and opened to the public in 1993.",
+        "It was conceived as a \"universal linked information system\".",
+        "Documents and other media content are made available to the network through web servers and can be accessed by programs such as web browsers.",
+        "Servers and resources on the World Wide Web are identified and located through a character string called a uniform resource locator (URL).",
+        "The original and still very common document type is a web page formatted in Hypertext Markup Language (HTML).",
+        "This markup language supports plain text, images, embedded video and audio contents, and scripts (short programs) that implement complex user interaction.",
+        "The HTML language also supports hyperlinks (embedded URLs), which provide immediate access to other web resources.",
+        "Web navigation, or web surfing, is the common practice of following such hyperlinks across multiple websites.",
+        "Web applications are web pages that function as application software.",
+        "The information on the Web is transferred across the Internet using HTTP."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Girl Scout Cookies",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=329180",
+      "retrieved_at": "2026-10-18T14:57:54.471Z",
+      "sha256": "ca0e39c0de623aea43e9969f1bde03cf67da8bfafaa4b3c1834cdfacc84a8a53",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The program is intended to both raise money and improve the financial literacy of girls.",
+        "The bakery is paid about 25 to 35 percent of the profits; 45 to 65 percent is used by the regional council to cover programming costs; and 10 to 20 percent is kept by the local troop whose members decide how to spend their portion of the funds."
+      ]
+    }
+  ]
+}

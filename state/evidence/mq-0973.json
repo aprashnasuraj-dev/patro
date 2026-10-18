@@ -1,0 +1,67 @@
+{
+  "id": "mq-0973",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Ozone Trends Determined from the Dobson Ozone Network",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Angell, JK",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36603s",
+      "retrieved_at": "2026-10-18T18:07:32.980Z",
+      "sha256": "765a8768bcad54fb5d05c8a7ab0ad1faca4bd6257ec2df5c5fa8483eb4146c2e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the southern hemisphere the total O3 increased slightly prior to 1968 and has decreased slightly since, but neither change approaches significance.",
+        "It is shown that for the past 12 years the trend in total O3 amount in north temperate latitudes has been closely related to the trend in stratospheric water vapor in Washington, D.",
+        "and equatorial tropopause temperature, but inversely related to the trend in stratospheric temperature in north temperate latitudes."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Detection and Interpretation of Trends in Oxidant Air Quality",
+      "publisher": "ASTM International100 Barr Harbor Drive, PO Box C700, West Conshohocken, PA 19428-2959",
+      "author": "Wayne, LG; Wilson, KW; Boyd, CL",
+      "published_at": "1978-01-01",
+      "url": "https://doi.org/10.1520/stp36606s",
+      "retrieved_at": "2026-10-18T18:07:33.669Z",
+      "sha256": "959505fa9c2164b2dbd1a0a5483967e4d1c865954f5b65d939094cfe279cfdd5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ambient air concentrations of photochemical oxidants, monitored over a five-year period in Philadelphia, Denver, and five regions in California, were examined for evidence of trends in air quality.",
+        "Statistically significant trends were identified in the cases of Denver and the San Francisco Bay area.",
+        "The oxidant air quality in the San Francisco Bay area was found to be significantly related to the rates of emission of oxidant precursors.",
+        "The relation is positive in the case of hydrocarbons, but negative for oxides of nitrogen.",
+        "Geographical and meteorological factors are also important in determining the distribution of oxidant levels, and various indexes of oxidant air quality show different statistical behavior in regard to the detection of trends."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "PM10 and Its Chemical Composition: A Case Study in Chiang Mai, Thailand",
+      "publisher": "InTech",
+      "author": "Chantara, Somporn",
+      "published_at": "2012-02-29",
+      "url": "https://www.intechopen.com/chapters/30054",
+      "retrieved_at": "2026-10-18T18:07:34.020Z",
+      "sha256": "c1d270727e8dfeafed73b431e7e9132ead9cd948e382f7bfb06232ff5c740ffc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "PM10 and Its Chemical Composition: A Case Study in Chiang Mai, Thailand | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "mt-0252",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Enhancing Visual Legibility of Digitized Historical Botanical Manuscripts for Digital Preservation and Archival Analysis",
+      "publisher": "Universitas Airlangga",
+      "author": "Nazikhah, Nisak Ummi; Nisa', Khoirun",
+      "published_at": "2025-12-12",
+      "url": "https://doi.org/10.20473/pjil.v16i2.81769",
+      "retrieved_at": "2026-10-18T16:34:30.013Z",
+      "sha256": "ee0ac400e6ea04c4a2356357995d2fa91cb6d37d6d3db249da4d2bbe9165b57f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Latar belakang: Manuskrip kuno bersejarah terkait ilmu botani, seperti Buku Catatan Botani Linnaeus, sering mengalami degradasi visual yang mengurangi keterbacaan, dan digitalisasi resolusi tinggi saja tidak dapat sepenuhnya memulihkan kejelasannya.",
+        "Tujuan: Penelitian ini bertujuan untuk meningkatkan kualitas visual naskah-naskah ini menggunakan alur kerja pemrosesan citra berbasis plugin Fuzzy di Fiji (ImageJ).",
+        "Metode: Metode yang digunakan meliputi persiapan gambar, peningkatan, binarisasi, dan evaluasi.",
+        "berdasarkan hasil eksperimen, proses peningkatan menunjukkan peningkatan substansial dalam semua metrik.",
+        "Hasil: Nilai entropi menurun dari rata-rata 10,78 (asli) menjadi 5,65 (penyempurnaan), menunjukkan penurunan keacakan visual sebesar 48–50%, sementara filter morfologi mempertahankan struktur esensial dengan entropi dalam rentang 6,32–7,48.",
+        "Kepadatan tepi menurun tajam pada tahap deteksi tepi dari 0,99 menjadi 0,28 hingga 0,35 hanya dengan mengekstraksi kontur dominan, sementara proses morfologi mempertahankan struktur karakter dengan stabilitas tinggi (0,98–0,99).",
+        "Kontras juga meningkat dari 0,89–0,98 (awal) menjadi 0,97–1,00 di seluruh proses peningkatan, morfologi, dan binerisasi, menunjukkan pemisahan latar depan-latar belakang yang jauh lebih baik.",
+        "Kesimpulan: Studi ini menunjukkan bahwa pendekatan yang diusulkan, khususnya operasi morfologi, cukup meningkatkan kejelasan sekaligus mempertahankan fitur tekstual dan ilustrasi dalam naskah.",
+        "Untuk lebih memaksimalkan restorasi dan preservasi teks ilmiah tambahan, studi mendatang disarankan untuk menggunakan algoritma peningkatan adaptif berbasis pembelajaran mesin dan penilaian kualitas persepsi.",
+        "Background: Historical botanical manuscripts, such as Linnaeus's Botanical Notebooks, often suffer from visual degradation that reduces legibility, and high-resolution digitization alone cannot fully restore their clarity.",
+        "Purpose: This study aimed to improve the visual quality of these manuscripts using a Fuzzy plugin-based image processing workflow in Fiji (ImageJ).",
+        "Methods: The research methods include image preparation, enhancement, binarization, and evaluation."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Digital (In)Humanities: Re-reading Digital Archives as a Form of Cultural Expression",
+      "publisher": "University Libraries (University of Maryland)",
+      "author": "Aaron Dinin",
+      "published_at": "2009-01-01",
+      "url": "https://openalex.org/W1898289367",
+      "retrieved_at": "2026-10-18T16:34:30.434Z",
+      "sha256": "9b7a902528b89841971c2780f702f06647529bb41cba702bf4a4ad95ce0ed194",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A 2007 PMLA article discussing the Walt Whitman Archive juxtaposed narrative and database as competing forms of cultural expression.",
+        "This article incited a flurry of responses which continued to use the database and narrative comparison.",
+        "Dinin, in his article \"Digital (In)Humanities,\" reassesses the terms of the digital archive debate, arguing that the terms \"narrative\" and \"database\" are both constricting and misleading.",
+        "The juxtaposition shouldn't be database versus narrative to see which one becomes the dominant form of cultural expression because narrative, he argues, is a form of database.",
+        "The more proper juxtaposition, as presented by the paper, is one that places \"digital archive\" alongside \"narrative\" because both are products of database and both are forms of cultural expression.",
+        "Dinin, in his article, then goes on to explore the potential of digital archives as a form of cultural expression."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Of Monks, Medieval Scribes, and Middlemen",
+      "publisher": "eYLS (Yale Law School)",
+      "author": "Peter K. Yu",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W2262204951",
+      "retrieved_at": "2026-10-18T16:34:30.434Z",
+      "sha256": "cf30c6b90a33dbca422801a650caaa7360943077dc8d39f0af66b753cca02388",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Today's copyright debate has generally focused on the digital dilemma created by Internet and new media technologies.",
+        "Threats created by emerging communications technologies, however, are not new.",
+        "Throughout history, there have been remarkable similarities between the threats created by new technologies and those posed by older ones.",
+        "During the oral argument in Metro-Goldwyn-Mayer Studios, Inc.",
+        "Grokster, Ltd., Justice Stephen Breyer questioned whether the petitioners' counsel would apply the test proposed for the new technology to some once-new technologies, such as the photocopying machine, the videocassette recorder, the iPod, and the printing press.",
+        "Many legal scholars have described copyright as a response to the emergence of the printing press.",
+        "However, very few have examined the press's impact on a group of contemporary middlemen - the medieval scribes.",
+        "This Essay undertakes this inquiry and explores the impact of the then-new technology on the now-obsolete scribal industry.",
+        "It begins by tracing the emergence of medieval scribes and the printing press and concludes with observations on the policy responses to the challenge created by the Internet and new communications technologies."
+      ]
+    }
+  ]
+}

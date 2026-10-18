@@ -1,0 +1,31 @@
+{
+  "id": "mt-0420",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Enhancing Visual Legibility of Digitized Historical Botanical Manuscripts for Digital Preservation and Archival Analysis",
+      "publisher": "Universitas Airlangga",
+      "author": "Nazikhah, Nisak Ummi; Nisa', Khoirun",
+      "published_at": "2025-12-12",
+      "url": "https://doi.org/10.20473/pjil.v16i2.81769",
+      "retrieved_at": "2026-10-18T16:37:11.158Z",
+      "sha256": "ee0ac400e6ea04c4a2356357995d2fa91cb6d37d6d3db249da4d2bbe9165b57f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Latar belakang: Manuskrip kuno bersejarah terkait ilmu botani, seperti Buku Catatan Botani Linnaeus, sering mengalami degradasi visual yang mengurangi keterbacaan, dan digitalisasi resolusi tinggi saja tidak dapat sepenuhnya memulihkan kejelasannya.",
+        "Tujuan: Penelitian ini bertujuan untuk meningkatkan kualitas visual naskah-naskah ini menggunakan alur kerja pemrosesan citra berbasis plugin Fuzzy di Fiji (ImageJ).",
+        "Metode: Metode yang digunakan meliputi persiapan gambar, peningkatan, binarisasi, dan evaluasi.",
+        "berdasarkan hasil eksperimen, proses peningkatan menunjukkan peningkatan substansial dalam semua metrik.",
+        "Hasil: Nilai entropi menurun dari rata-rata 10,78 (asli) menjadi 5,65 (penyempurnaan), menunjukkan penurunan keacakan visual sebesar 48–50%, sementara filter morfologi mempertahankan struktur esensial dengan entropi dalam rentang 6,32–7,48.",
+        "Kepadatan tepi menurun tajam pada tahap deteksi tepi dari 0,99 menjadi 0,28 hingga 0,35 hanya dengan mengekstraksi kontur dominan, sementara proses morfologi mempertahankan struktur karakter dengan stabilitas tinggi (0,98–0,99).",
+        "Kontras juga meningkat dari 0,89–0,98 (awal) menjadi 0,97–1,00 di seluruh proses peningkatan, morfologi, dan binerisasi, menunjukkan pemisahan latar depan-latar belakang yang jauh lebih baik.",
+        "Kesimpulan: Studi ini menunjukkan bahwa pendekatan yang diusulkan, khususnya operasi morfologi, cukup meningkatkan kejelasan sekaligus mempertahankan fitur tekstual dan ilustrasi dalam naskah.",
+        "Untuk lebih memaksimalkan restorasi dan preservasi teks ilmiah tambahan, studi mendatang disarankan untuk menggunakan algoritma peningkatan adaptif berbasis pembelajaran mesin dan penilaian kualitas persepsi.",
+        "Background: Historical botanical manuscripts, such as Linnaeus's Botanical Notebooks, often suffer from visual degradation that reduces legibility, and high-resolution digitization alone cannot fully restore their clarity.",
+        "Purpose: This study aimed to improve the visual quality of these manuscripts using a Fuzzy plugin-based image processing workflow in Fiji (ImageJ).",
+        "Methods: The research methods include image preparation, enhancement, binarization, and evaluation."
+      ]
+    }
+  ]
+}
