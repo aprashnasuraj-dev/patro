@@ -2,9 +2,9 @@
   "source_run_id": "39137761297",
   "resume_run_id": "",
   "workers": 1,
-  "deadline_minutes": 10,
+  "deadline_minutes": 15,
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Final bounded two-topic rerun after interleaving OpenAlex, expanded search, exact-question search, and Wikipedia-derived candidates so one source provider cannot crowd out the others. Fail closed on source independence, topic relevance, claim grounding, length and editorial quality; no production publish."
+  "note": "Two-article smoke test after P2/P3 updates: validate full test glob, then generate at most two topics. No production publish."
 }
