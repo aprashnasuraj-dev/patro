@@ -6,5 +6,5 @@
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Final bounded two-article smoke after P2/P3 changes, general-route cached-evidence exemption, 300-word floors, inline citation checks, accurate verification metadata, and a claim-count buffer. No production publish."
+  "note": "Two-article smoke after adding a targeted rewrite retry for residual voice-gate failures. Retain P2/P3 fixes, general cached-evidence policy, 300-word floors, and strict grounding/citations. No production publish."
 }
