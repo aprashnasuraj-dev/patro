@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "editorial-smoke-test",
-  "note": "Bounded smoke test: one worker, maximum two topics, no production publish. Generated outputs remain on missionmangal-content-v2 pending review."
+  "mode": "research-grounding-smoke-test",
+  "note": "Second bounded smoke test after research/grounding fixes: exact-question writer, retry underlength drafts, require three independent publisher domains (aggregators excluded), hard minimum word count, fail-closed gate. Two topics max, no production publish."
 }
