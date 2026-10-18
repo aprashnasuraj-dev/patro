@@ -1,0 +1,185 @@
+{
+  "id": "mm-1088",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "\"When the Emerald wood dove calls, the earth prepares to drink\": Community elders lived experiences of indigenous weather forecasting in eastern Mount Kenya region.",
+      "publisher": "Europe PMC",
+      "author": "Warue BN, Mucheke SK, Muita R, Lusambili AM.",
+      "published_at": "2026-09-08",
+      "url": "https://doi.org/10.1371/journal.pone.0355610",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "0417cc2b68c9a6d7df33b760753dd94c13b49b48c378844dcf8a55ebb51f5d2d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Background Indigenous weather forecasting plays a critical role in supporting climate-sensitive livelihoods in Eastern Mount Kenya, yet there is limited empirical understanding of the methods, perceived accuracy, and social mechanisms sustaining their use.",
+        "This study examines these practices and their contribution to community resilience under increasing climate variability.",
+        "Methods We conducted 81 in-depth interviews with elders aged 65 years and above across the region.",
+        "Thematic analysis was applied to coded data to identify patterns, indicator types, and perceptions of reliability and resilience, while comparing insights across communities.",
+        "Results The study makes three original contributions to ethno-meteorological knowledge which include atmospheric, biological and celestial indicators.",
+        "In addition, it identifies somatic forecasting as a dominant and systematic knowledge domain, conceptualizing the human body as an environmental sensor within indigenous climate knowledge systems.",
+        "It also demonstrates that declining reliability of indigenous indicators arises from ecological disruptions, highlighting the vulnerability of indigenous knowledge systems to environmental change.",
+        "Further, the findings reveal a scale mismatch between scientific forecasts and community-level decision needs, showing that hybrid approaches integrating indigenous and scientific knowledge are more trusted and actionable at the local level.",
+        "Additional insights include the role of elders as informal climate governance actors and the emergence of intergenerational knowledge loss as a key dimension of climate vulnerability.",
+        "Conclusion By conceptualizing indigenous weather forecasting as a dynamic, socially embedded, and ecologically grounded system, this study provides empirical evidence that can inform the development of a framework for locally responsive hybrid climate approaches.",
+        "The results indicate the value of systematic documentation and cultural preservation and point to the potential benefits of integrating such knowledge into policy and climate-service design to enhance adaptive capacity and sustain community-based climate resilience."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The perfect storm: human influence on the loss potential of Eunice-like cyclones.",
+      "publisher": "Europe PMC",
+      "author": "Leach NJ, Ermis S, Brocklehurst A, Kumar D, Georgios A, Braun L, Dixon M, Murphy J, Shaffrey L.",
+      "published_at": "2026-07-20",
+      "url": "https://doi.org/10.1088/1748-9326/ae886a",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "21657205c93092d8de227d08974ea6aa2d3cb50da98fb2ef3db0d96fd37452d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Storm Eunice was a severe windstorm that impacted Central Europe in February 2022.",
+        "The meteorology and synoptic dynamics of Eunice have been studied in depth in several studies examining features of the storm such as its sting jet.",
+        "The contribution of climate change to the storm dynamics and severity was examined in previous work, which found that in counterfactual weather forecasts-given an identical initial synoptic setup-climate change had measurably increased the severity of the storm.",
+        "Here we move beyond meteorological attribution and quantify the role of climate change in the insured losses incurred during Eunice in, to the best of our knowledge, the first impact attribution of its kind for a European windstorm event.",
+        "We combine the same counterfactual weather forecasts with three loss models, including two state-of-the-art commercial models, finding that the increases in meteorological severity do translate through to significant increases in estimated loss.",
+        "We estimate a conditional increase in insured loss of nearly €2 bn between pre-industrial and present-day climates.",
+        "Of particular note is the existence of several members within the forecast ensembles whose losses are far greater than what unfolded in reality.",
+        "This includes one realisation, simulated in a warmer 'future' climate, in which the estimated loss could reach over 10x the realised loss during Eunice.",
+        "The plausible existence of such a catastrophic loss is of considerable relevance to a wide variety of stakeholders across adaptation planning and the financial sector.",
+        "We suggest that our results practically demonstrate not only the utility of counterfactual weather forecasts in quantifying impacts attributable to climate change, but also the value of academic-private partnerships in which the two sectors are able to bring different areas of expertise."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "From Forecast to Action: Public Employees' Emergency Management Decision-Making Under Probabilistic Weather Information.",
+      "publisher": "Europe PMC",
+      "author": "Lin X, Yeo J.",
+      "published_at": "2026-08-01",
+      "url": "https://doi.org/10.1111/risa.70328",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "94e24183b7e230866c9ad57cd6bd5008af9bc2f8bf23c51b0406cced34eb9895",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Disaster emergency management practice has long relied on deterministic warnings, yet how public employees respond to probabilistic forecasts for high-impact weather remains understudied.",
+        "This study assesses how communicating low-probability high-impact (LPHI) weather information compared to high-probability low-impact (HPLI) warnings influence public employees' response measures.",
+        "These effects were robust among public employees but differed for the general public, highlighting the role of institutional context such as hierarchical accountability and asymmetric error costs (unprepared disasters penalized more than overreactions).",
+        "However, the communication strategy did not significantly affect perceived trustworthiness of meteorological authorities.",
+        "The research shows that communicating probabilistic, high-impact weather information from ensemble forecasts can enhance operational vigilance and resilience in emergency management.",
+        "Practical implications for disaster risk communication in early warnings are discussed for the integration of early warning and emergency response."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Associations of Emotional Divergence in Risk Communication With Forecast Error Type During Typhoon Khanun.",
+      "publisher": "Europe PMC",
+      "author": "Kim K, Kam J.",
+      "published_at": "2026-06-07",
+      "url": "https://doi.org/10.1029/2026gh001837",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "6315e89b7d62e94b7b83f3910ff6fedda7159e42fb73ed790d53694ce644714c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Forecast errors of severe weather events aggravate economic damage and degrade public mental health.",
+        "Whether forecast errors are underestimated or overestimated can shape public emotional responses differently, which remains unknown.",
+        "In this study, we investigate the socio-psychological impacts of forecast errors during the landfall of Typhoon Khanun over the Korean Peninsula.",
+        "We evaluate the predictive performance of multiple lead-hour precipitation forecasts against observational data and conduct a sentimental analysis of over 43,000 online discourses from the NAVER Weather Report Talk platform.",
+        "Multiple lead-hour precipitation forecasts demonstrate underestimation in the eastern and southeastern regions of the Korean Peninsula and overestimation in the western and southwestern regions.",
+        "The spatial discrepancies of precipitation forecasts are associated with distinct emotional responses: overestimation (underestimation) makes anxiety and worry (stress and confusion) the dominant emotion types in the discourses from the NAVER Report Talk platform.",
+        "The findings of this study suggest that expectation-reality mismatch is a key mechanism in risk communication, and the direction of this mismatch differentiates public response.",
+        "This study provides insights into the potential value of improved forecast accuracy on reducing emotional distress and strengthening public resilience during extreme weather events."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Weather forecasting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73231",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "1a304048a337a333ee447e40a04dc8078ef17a1adf7e7df72579ef17e94a88c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Weather forecasting or weather prediction is the application of science and technology to predict the conditions of the atmosphere for a given location and time.",
+        "People have attempted to predict the weather informally for thousands of years and formally since the 19th century.",
+        "Weather forecasts are made by collecting quantitative data about the current state of the atmosphere, land, and ocean and using meteorology to project how the atmosphere will change at a given place.",
+        "Once calculated manually based mainly upon changes in barometric pressure, current weather conditions, and sky conditions or cloud cover, weather forecasting now relies on computer-based models that take many atmospheric factors into account.",
+        "Human input is still required to pick the best possible model to base the forecast upon, which involves pattern recognition skills, teleconnections, knowledge of model performance, and knowledge of model biases.",
+        "Hence, forecasts become less accurate as the difference between the current time and the time for which the forecast is being made (the range of the forecast) increases.",
+        "The use of ensembles and model consensus helps narrow the error and provide confidence in the forecast.",
+        "Weather warnings are important because they are used to protect lives and property.",
+        "Forecasts based on temperature and precipitation are important to agriculture, and therefore to traders within commodity markets.",
+        "Temperature forecasts are used by utility companies to estimate demand over the coming days.",
+        "On an everyday basis, many people use weather forecasts to determine what to wear on a given day.",
+        "Since outdoor activities are severely curtailed by heavy rain, snow and wind chill, forecasts can be used to plan activities around these events, and to plan ahead and survive them."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Shipping Forecast",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=159894",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "c9d14e34512cfe4e2ac631581e63f1d26a16c544b00f1e0ad2b336850bf03548",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Shipping Forecast is a BBC Radio broadcast of weather reports and forecasts for the seas around the British Isles.",
+        "It is produced by the Met Office and broadcast by BBC Radio 4 on behalf of the Maritime and Coastguard Agency.",
+        "There are currently two or three broadcasts per day, at 00:48, 05:34, and 17:54 (weekends only) UK local time.",
+        "In the forecast, the waters around the British Isles are divided into 31 sea areas, also known as weather areas.",
+        "The forecast begins by listing areas with gale warnings, followed by a general synopsis of pressure areas, then a forecast for each individual sea area covering wind speed and direction, precipitation, and visibility.",
+        "Extended forecasts at 00:48 and 05:34 include information from coastal weather stations and an inshore waters forecast.",
+        "The unique and distinctive presentation style of these broadcasts has led to their attracting an audience much wider than that directly interested in maritime weather conditions.",
+        "It is frequently referred to and parodied in British popular culture."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Forecasting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=246074",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "528822d8d85d8c7c3a30ccf4045cfea39ebf59c9eb073b74172e6d16887a99d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Forecasting is the process of making predictions based on past and present data.",
+        "For example, a company might estimate their revenue in the next year, then compare it against the actual results creating a variance actual analysis.",
+        "Forecasting might refer to specific formal statistical methods employing time series, cross-sectional or longitudinal data, or alternatively to less formal judgmental methods or the process of prediction and assessment of its accuracy.",
+        "Risk and uncertainty are central to forecasting and prediction; it is generally considered a good practice to indicate the degree of uncertainty attaching to forecasts.",
+        "In any case, the data must be up to date in order for the forecast to be as accurate as possible.",
+        "In some cases the data used to predict the variable of interest is itself forecast.",
+        "A forecast is not to be confused with a Budget; budgets are more specific, fixed-term financial plans used for resource allocation and control, while forecasts provide estimates of future financial performance, allowing for flexibility and adaptability to changing circumstances.",
+        "Both tools are valuable in financial planning and decision-making, but they serve different functions."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Ensemble forecasting",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2451045",
+      "retrieved_at": "2026-10-18T17:46:23.363Z",
+      "sha256": "00626a4a5ef83219ac5c6a374b120db3069f7af43a8d878015d47d215cd7fbbb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Ensemble forecasting is a method used in or within numerical weather prediction.",
+        "Instead of making a single forecast of the most likely weather, a set (or ensemble) of forecasts is produced.",
+        "This set of forecasts aims to give an indication of the range of possible future states of the atmosphere.",
+        "Ideally, the verified future atmospheric state should fall within the predicted ensemble spread, and the amount of spread should be related to the uncertainty (error) of the forecast.",
+        "In general, this approach can be used to make probabilistic forecasts of any dynamical system, and not just for weather prediction."
+      ]
+    }
+  ]
+}

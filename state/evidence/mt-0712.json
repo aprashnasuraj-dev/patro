@@ -1,0 +1,74 @@
+{
+  "id": "mt-0712",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Chapter 6 Gut Microbiota in Neurological Disorders – Parkinson’s and Alzheimer’s Disease",
+      "publisher": "Pinkpetals publication",
+      "author": "Ranjan, Dr. Rajesh; Mishra, Dr. Rohit; Singh, Dr. Aishwarya",
+      "published_at": "2026",
+      "url": "https://doi.org/10.70034/ppp/bk/2026gcm.9",
+      "retrieved_at": "2026-10-18T18:15:29.580Z",
+      "sha256": "999550d99beb3c3d2dcf6e6a0b7f9b2ae7b1ec72d49adc0c6ae448e38fc23f79",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Kriti Chauhan MBBS (LHMC), MD- CHA, Resident Doctor, NIHFW Dr.",
+        "Prasoon Lata Assistant professor, Dept of dentistry, Saraswathi institute of medical sciences Hapur Pilkhuwa UP Published 18-06-2026 How to Cite Chauhan, D.",
+        "Chapter 6 Gut Microbiota in Neurological Disorders – Parkinson’s and Alzheimer’s Disease."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Marine life",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2056572",
+      "retrieved_at": "2026-10-18T18:15:29.580Z",
+      "sha256": "38ae0b0bae623f5f7fc5895595284133672cdc1dc7eb1180e61ae2f947fa4bf4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As of 2023, more than 242,000 marine species have been documented, and perhaps two million marine species are yet to be documented.",
+        "On average, researchers describe about 2,300 new marine species each year.",
+        "The study of marine life spans multiple fields, primarily marine biology, as well as biological oceanography.",
+        "By volume, oceans provide about 90% of the living space on Earth, and served as the cradle of life and vital biotic sanctuaries throughout Earth's geological history.",
+        "The earliest known life forms evolved as anaerobic prokaryotes (archaea and bacteria) in the Archean oceans around the deep sea hydrothermal vents, before photoautotrophs appeared and allowed the microbial mats to expand into shallow water marine environments.",
+        "The Great Oxygenation Event of the early Proterozoic significantly altered the marine chemistry, which likely caused a widespread anaerobe extinction event but also led to the evolution of eukaryotes through symbiogenesis between surviving anaerobes and aerobes.",
+        "Complex life eventually arose out of marine eukaryotes during the Neoproterozoic, and which culminated in a large evolutionary radiation event of mostly sessile macrofaunae known as the Avalon Explosion.",
+        "This was followed in the early Phanerozoic by a more prominent radiation event known as the Cambrian Explosion, where actively moving eumetazoan became prevalent.",
+        "These marine life also expanded into fresh waters, where fungi and green algae that were washed ashore onto riparian areas started to take hold later during the Ordovician before rapidly expanding inland during the Silurian and Devonian, paving the way for terrestrial ecosystems to develop.",
+        "Today, marine species range in size from the microscopic phytoplankton, which can be as small as 0.02–micrometers; to huge cetaceans like the blue whale, which can reach 33 m (108 ft) in length.",
+        "Marine microorganisms have been variously estimated as constituting about 70% or about 90% of the total marine biomass.",
+        "Marine primary producers, mainly cyanobacteria and chloroplastic algae, produce oxygen and sequester carbon via photosynthesis, which generate enormous biomass and significantly influence the atmospheric chemistry."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T18:15:29.580Z",
+      "sha256": "f4282c7a698b0eb76288cc8e03a2f6d67c86e236658f0e9ec22261e01830feea",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    }
+  ]
+}

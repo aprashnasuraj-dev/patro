@@ -1,0 +1,134 @@
+{
+  "id": "mm-0855",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "“How Many Lightbulbs Does It Take to Screw in a Blues Singer?”",
+      "publisher": "University Press of Mississippi",
+      "author": "Tracy, Steven C.",
+      "published_at": "2016-06-20",
+      "url": "https://doi.org/10.14325/mississippi/9781496806796.003.0014",
+      "retrieved_at": "2026-10-18T17:42:17.247Z",
+      "sha256": "411bf7643a6e2ee1e3feec5c817cb47a86848fd0fe912a20100dac2620b3e988",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In “‘How many light bulbs does it take to screw in a blues singer?’: The French Revolution, King Louis Armstrong, and the Futuristic Jungleism of Jazz,” Steven C.",
+        "Tracy argues that Invisible Man reveals a futuristic mode beneath seemingly primitive elements.",
+        "The “jungleism” of the novel, whether represented by the narrator’s basement apartment or jazz music, operates ironically to show how black Americans exercised agency and worked towards liberation despite their oppressive environment.",
+        "Through the artistry of Louis Armstrong, Tracy examines his adaptation of the Andy Razaf song “(What Did I Do To Be So) Black and Blue?” to show the genius of blackness and blues-ness.",
+        "Armstrong uses a lyrical black lament over life in a white-supremacist society to show off the heights of musical artistry.",
+        "Ultimately, Tracy explores how Ellison presents purity as “illusory and oppressive” and counters with its opposite—hybridity and heterogeneity, emblematic of the post-modern world."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Purchasing behavior of led lightbulbs of Thai consumers",
+      "publisher": "Office of Academic Resources, Chulalongkorn University",
+      "author": "; Apipuchayakul, Nuttakrij",
+      "published_at": null,
+      "url": "https://doi.org/10.58837/chula.the.2019.221",
+      "retrieved_at": "2026-10-18T17:42:17.392Z",
+      "sha256": "965261d5fa4fb38cc68dc0e8cc7f85e14d5df33c2d3c6644367aad61d411aaa4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Electricity use in residential sectors has become one of major demands for global energy production and consumption.One of today’s most energy-efficient lighting products is a Light-Emitting Diode (LED) lighting technology.",
+        "The efficiency of LED lighting technology has already surpassed all other forms of lighting products such as traditional incandescent and Compact Fluorescent Lamp (CFL).",
+        "Replacement with highly efficient lighting appliances like LED products could generate more than 10-15 billion USD of national energy-savings a year, or save up to 801 Mt of CO2 emissions annually.",
+        "Even though LED technology have been introduced in the lighting market since 2014 coupled with its substantial price drop; the total LED adoption rate in Thailand accounted for fewer than 20% of the 4-5 billion light bulbs in use.",
+        "A study to understand attitudes and behaviors of household consumers is therefore very important for governments and relevant authorities to determine effective incentive measures and promote changes in Thai consumers’ attitudes and norms towards the use of LED lighting.",
+        "This underlines the necessity for Thailand to achieve the United Nations Sustainable Development (Goal 7: Ensure Access to Affordable, Reliable, Sustainable, and Modern Energy for All).",
+        "This thesis analyzed three major dimensions; psychological theory dimension, behavioral economics dimension, and perception of price dimension.",
+        "First, this study aims to examine the determinants of household consumers’ behaviors in purchasing energy-saving lighting products LED (Light-Emitting Diode by applying the Theory of Planned Behavior (TPB) as the main theoretical framework.",
+        "Secondly, research in psychology and behavioral economics show that there are certain “behavioral anomalies” influenced and impeded consumers in making optimal decisions to maximize their utilities.",
+        "In this regard, this study aimed to empirically investigate the “behavioral anomalies” within the context of LED product purchase behavior, particularly through the lens of behavioral economics.",
+        "Third, in order to catch up with recent substantial decline in LED products; this study aims to present the Price Sensitivity Measurement (PSM) to determine the optimal price of energy-efficient LED bulbs.",
+        "First, the results suggested that attitude has the largest direct effect, while subjective norm was the weakest predictor of purchase intention towards LED products."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Electric light",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9656",
+      "retrieved_at": "2026-10-18T17:42:17.547Z",
+      "sha256": "f9f539143ba80e14afd8e137e91744ef9d4cb8e467aa929b2e9695a2dd452bab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electric light, lamp, or light bulb is an electrical device that produces light from electricity.",
+        "Lamps usually have a base made of ceramic, metal, glass, or plastic that secures them in the socket of a light fixture.",
+        "The electrical connection to the socket may be made with a screw-thread base, two metal pins, two metal caps or a bayonet mount.",
+        "The energy efficiency of electric lighting has significantly improved since the first demonstrations of arc lamps and incandescent light bulbs in the 19th century.",
+        "Modern electric light sources come in a profusion of types and sizes adapted to many applications.",
+        "Most modern electric lighting is powered by centrally generated electric power, but lighting may also be powered by mobile or standby electric generators or battery systems.",
+        "Battery-powered light is often reserved for when and where stationary lights fail, often in the form of flashlights or electric lanterns, as well as in vehicles."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Incandescent light bulb",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47139",
+      "retrieved_at": "2026-10-18T17:42:17.547Z",
+      "sha256": "77c2052b6ff9a857b5a1f9d962dcad70aea199ff8c8f78a58933874fbd6405be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An incandescent light bulb, also known as an incandescent lamp or incandescent light globe, is an electric light that produces illumination by Joule heating a filament until it glows.",
+        "The filament is enclosed in a glass bulb that is either evacuated or filled with inert gas to protect the filament from oxidation.",
+        "Electric current is supplied to the filament by terminals or wires embedded in the glass.",
+        "A bulb socket provides mechanical support and electrical connections.",
+        "Incandescent bulbs are manufactured in a wide range of sizes, light output, and voltage ratings, from 1.5 volts to about 300 volts.",
+        "They require no external regulating equipment, have low manufacturing costs, and work equally well on either alternating current or direct current.",
+        "As a result, the incandescent bulb became widely used in household and commercial lighting, for portable lighting such as table lamps, car headlamps, and flashlights, and for decorative and advertising lighting.",
+        "Incandescent bulbs are much less efficient than other types of electric lighting.",
+        "Less than 5% of the energy they consume is converted into visible light; the rest is released as heat.",
+        "The luminous efficacy of a typical incandescent bulb is 16 lumens per watt (lm/W) for a 120 V bulb or 13 lm/W for a 230 V bulb, compared with 60 lm/W for a compact fluorescent bulb or 100 lm/W for typical white LED lamps.",
+        "As a result, incandescent bulbs have declined in market share compared to LED bulbs.",
+        "This has been accelerated by government bans aimed at reducing energy consumption."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Glow stick",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=291437",
+      "retrieved_at": "2026-10-18T17:42:17.547Z",
+      "sha256": "76296b62da6f87b3f9c146ea1835e493b1090bce5142d8a83e7fe3e905e4f3d5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A glow stick, also known as a light stick, chem light, light wand, light rod, and rave light, is a self-contained, short-term light source.",
+        "It consists of a translucent plastic tube containing isolated substances that, when combined, produce light through chemiluminescence.",
+        "Glow sticks are often used for recreation, such as for events, camping, outdoor exploration, and concerts.",
+        "Glow sticks are also used for light in power outage, military and emergency services applications."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "845 (vacuum tube)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8998943",
+      "retrieved_at": "2026-10-18T17:42:17.547Z",
+      "sha256": "6673ded82a34105e9b330a448c67a07262349a1af31e556af8fbabc4b72e25a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The 845 power triode is a radio transmitting vacuum tube which can also be used as an audio amplifier and modulation tube.",
+        "Typically, the plate is machined from solid graphite in order to accommodate high power dissipation (up to 100 watts) and voltage.",
+        "The 845 tube has a bayonet mount and thoriated filaments which glow like lightbulbs when powered up.",
+        "The glass envelope is about 2-5/16\" in diameter and 6 inches tall, with the a total tube height of about 7-7/8 inches."
+      ]
+    }
+  ]
+}

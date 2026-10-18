@@ -1,0 +1,113 @@
+{
+  "id": "mm-1137",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Government Websites Must Enable AI-Mediated Access",
+      "publisher": "Elsevier BV",
+      "author": "Jessee, Ryan",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6321738",
+      "retrieved_at": "2026-10-18T17:46:29.007Z",
+      "sha256": "e5838c4840531530ced41cac050c9c4e82b19db9175d98b68c77b98a24361fed",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "AI-mediated search has become a primary channel through which citizens access government information, yet most federal agencies block AI crawlers by default.",
+        "This paper argues that the failure to enable structured AI access carries measurable costs: degraded information quality for citizens, increased contact center demand, and lost return on existing digital investment.",
+        "The Government Publishing Office's Model Context Protocol server provides a federal precedent; what is missing is the policy framework to extend it government-wide."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "HTTPS",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13586",
+      "retrieved_at": "2026-10-18T17:46:29.958Z",
+      "sha256": "1f0885fdf83442480005071d5c231fc045cd03f07b9a5b5e869fc9ab13c49b32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hypertext Transfer Protocol Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP).",
+        "It uses encryption for secure communication over a computer network, and is widely used on the Internet.",
+        "In HTTPS, the communication protocol is encrypted using Transport Layer Security (TLS) or, formerly, Secure Sockets Layer (SSL).",
+        "The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL.",
+        "The principal motivations for HTTPS are authentication of the accessed website and protection of the privacy and integrity of the exchanged data while it is in transit.",
+        "It protects against man-in-the-middle attacks, and the bidirectional block cipher encryption of communications between a client and server protects the communications against eavesdropping and tampering.",
+        "The authentication aspect of HTTPS requires a trusted third party to sign server-side digital certificates.",
+        "This was historically an expensive operation, which meant fully authenticated HTTPS connections were usually found only on secured payment transaction services and other secured corporate information systems on the World Wide Web.",
+        "In 2016, a campaign by the Electronic Frontier Foundation with the support of web browser developers led to the protocol becoming more prevalent.",
+        "HTTPS has since 2018 been used more often by web users than non-secure HTTP, primarily to protect page authenticity on all types of websites, secure accounts, and keep user communications, identity, and web browsing private."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "World Wide Web",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33139",
+      "retrieved_at": "2026-10-18T17:46:29.958Z",
+      "sha256": "e9e44e242f458287d9b51a0480a211a54f340fbe3728d4fafad085b05614e235",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The World Wide Web (also known as WWW, W3, or simply the Web) is a global interconnected information system that enables content sharing over the Internet.",
+        "It facilitates access to documents and other web resources according to specific rules of the Hypertext Transfer Protocol (HTTP).",
+        "The Web was invented by English computer scientist Tim Berners-Lee while at CERN in 1989 and opened to the public in 1993.",
+        "It was conceived as a \"universal linked information system\".",
+        "Documents and other media content are made available to the network through web servers and can be accessed by programs such as web browsers.",
+        "Servers and resources on the World Wide Web are identified and located through a character string called a uniform resource locator (URL).",
+        "The original and still very common document type is a web page formatted in Hypertext Markup Language (HTML).",
+        "This markup language supports plain text, images, embedded video and audio contents, and scripts (short programs) that implement complex user interaction.",
+        "The HTML language also supports hyperlinks (embedded URLs), which provide immediate access to other web resources.",
+        "Web navigation, or web surfing, is the common practice of following such hyperlinks across multiple websites.",
+        "Web applications are web pages that function as application software.",
+        "The information on the Web is transferred across the Internet using HTTP."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Web browser",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33173",
+      "retrieved_at": "2026-10-18T17:46:29.958Z",
+      "sha256": "809bd8b7b5e3eff36c8f7eb98dea85ed5f64592218fc393de958a29dd498033a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A web browser, often abbreviated as browser, is an application for accessing websites.",
+        "When a user requests a web page from a particular website, the browser retrieves its files from a web server and then displays the page on the user's screen.",
+        "Browsers can also display content stored locally on the user's device.",
+        "Browsers are used on a range of devices, including desktops, laptops, tablets, smartphones, smartwatches, smart televisions and consoles.",
+        "As of 2026, the most used browsers worldwide are Google Chrome (~69% market share), Safari (~16%), Edge (~5%), Firefox (~2%), Samsung Browser (~2%), and Opera (~2%).",
+        "As of 2023, an estimated 5.4 billion people had used a browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "HTTP 404",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=35507",
+      "retrieved_at": "2026-10-18T17:46:29.958Z",
+      "sha256": "376a7586c13e2b0dbbb28878933d84ee713a4dd3efde7d614bb03bff5a79e83b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In HTTP, the 404 HTTP status code indicates that a web client (i.e.",
+        "browser) was able to communicate with a server, but the server could not provide the requested resource.",
+        "The server may not have the resource or it may not wish to disclose whether it has the resource.",
+        "The code is often associated with response reason Not Found and is often referred to as page not found or file not found.",
+        "Often, the server generates a web page for the condition and the client displays it, and often the content indicates the error code.",
+        "Since the condition is relatively commonly-encountered (i.e.",
+        "due to broken or dead links), this code is one of the most recognizable on the World Wide Web."
+      ]
+    }
+  ]
+}

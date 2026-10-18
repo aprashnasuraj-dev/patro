@@ -1,0 +1,217 @@
+{"id":"mm-0055","status":"blocked","attempt":1,"at":"2026-10-18T16:56:49.503Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-0078","status":"retry_later","attempt":1,"at":"2026-10-18T17:00:49.666Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0106","status":"retry_later","attempt":1,"at":"2026-10-18T17:00:51.982Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0152","status":"retry_later","attempt":1,"at":"2026-10-18T17:00:53.651Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0158","status":"retry_later","attempt":1,"at":"2026-10-18T17:00:55.802Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0182","status":"retry_later","attempt":1,"at":"2026-10-18T17:01:32.637Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0193","status":"blocked","attempt":1,"at":"2026-10-18T17:01:35.313Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-0218","status":"retry_later","attempt":1,"at":"2026-10-18T17:06:20.371Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0225","status":"blocked","attempt":1,"at":"2026-10-18T17:06:22.673Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-0233","status":"retry_later","attempt":1,"at":"2026-10-18T17:09:52.531Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0262","status":"blocked","attempt":1,"at":"2026-10-18T17:15:00.164Z","reason":"NEEDS_RESEARCH: 4 usable sources (<5)"}
+{"id":"mm-0277","status":"retry_later","attempt":1,"at":"2026-10-18T17:18:32.180Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0317","status":"blocked","attempt":1,"at":"2026-10-18T17:18:37.941Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-0347","status":"blocked","attempt":1,"at":"2026-10-18T17:18:53.155Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-0356","status":"retry_later","attempt":1,"at":"2026-10-18T17:19:24.872Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0385","status":"blocked","attempt":1,"at":"2026-10-18T17:19:26.134Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mm-0477","status":"blocked","attempt":1,"at":"2026-10-18T17:19:28.280Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-0486","status":"retry_later","attempt":1,"at":"2026-10-18T17:23:06.013Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0488","status":"retry_later","attempt":1,"at":"2026-10-18T17:24:16.810Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0568","status":"blocked","attempt":1,"at":"2026-10-18T17:24:18.812Z","reason":"NEEDS_RESEARCH: 4 usable sources (<5)"}
+{"id":"mm-0581","status":"retry_later","attempt":1,"at":"2026-10-18T17:27:52.319Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0612","status":"retry_later","attempt":1,"at":"2026-10-18T17:27:54.172Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0646","status":"retry_later","attempt":1,"at":"2026-10-18T17:27:58.519Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0673","status":"retry_later","attempt":1,"at":"2026-10-18T17:28:00.093Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0708","status":"blocked","attempt":1,"at":"2026-10-18T17:28:04.578Z","reason":"NEEDS_RESEARCH: 4 usable sources (<5)"}
+{"id":"mm-0723","status":"blocked","attempt":1,"at":"2026-10-18T17:28:08.967Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-0740","status":"retry_later","attempt":1,"at":"2026-10-18T17:28:31.013Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0744","status":"retry_later","attempt":1,"at":"2026-10-18T17:33:40.695Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0776","status":"retry_later","attempt":1,"at":"2026-10-18T17:38:37.918Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0785","status":"blocked","attempt":1,"at":"2026-10-18T17:38:40.249Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-0788","status":"retry_later","attempt":1,"at":"2026-10-18T17:42:08.774Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0789","status":"blocked","attempt":1,"at":"2026-10-18T17:42:10.799Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-0801","status":"blocked","attempt":1,"at":"2026-10-18T17:42:12.367Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-0848","status":"retry_later","attempt":1,"at":"2026-10-18T17:42:14.549Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0850","status":"retry_later","attempt":1,"at":"2026-10-18T17:42:16.731Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0855","status":"blocked","attempt":1,"at":"2026-10-18T17:42:17.548Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-0856","status":"retry_later","attempt":1,"at":"2026-10-18T17:42:19.188Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-0938","status":"retry_later","attempt":1,"at":"2026-10-18T17:42:47.862Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0945","status":"retry_later","attempt":1,"at":"2026-10-18T17:46:17.946Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-0995","status":"blocked","attempt":1,"at":"2026-10-18T17:46:19.870Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1013","status":"blocked","attempt":1,"at":"2026-10-18T17:46:21.738Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1079","status":"blocked","attempt":1,"at":"2026-10-18T17:46:22.569Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1088","status":"retry_later","attempt":1,"at":"2026-10-18T17:46:23.829Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1106","status":"retry_later","attempt":1,"at":"2026-10-18T17:46:27.007Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1137","status":"blocked","attempt":1,"at":"2026-10-18T17:46:29.958Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1146","status":"retry_later","attempt":1,"at":"2026-10-18T17:46:51.960Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1188","status":"retry_later","attempt":1,"at":"2026-10-18T17:50:19.621Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1198","status":"blocked","attempt":1,"at":"2026-10-18T17:50:22.265Z","reason":"NEEDS_RESEARCH: 4 usable sources (<5)"}
+{"id":"mm-1201","status":"blocked","attempt":1,"at":"2026-10-18T17:50:24.076Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1225","status":"blocked","attempt":1,"at":"2026-10-18T17:50:25.219Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1253","status":"blocked","attempt":1,"at":"2026-10-18T17:50:26.580Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1309","status":"blocked","attempt":1,"at":"2026-10-18T17:50:29.994Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1315","status":"blocked","attempt":1,"at":"2026-10-18T17:50:32.040Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1345","status":"blocked","attempt":1,"at":"2026-10-18T17:50:34.450Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1365","status":"blocked","attempt":1,"at":"2026-10-18T17:50:38.101Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1369","status":"blocked","attempt":1,"at":"2026-10-18T17:50:39.844Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1397","status":"blocked","attempt":1,"at":"2026-10-18T17:50:42.249Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1406","status":"retry_later","attempt":1,"at":"2026-10-18T17:51:03.144Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1441","status":"blocked","attempt":1,"at":"2026-10-18T17:51:05.401Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mm-1484","status":"retry_later","attempt":1,"at":"2026-10-18T17:54:33.425Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1493","status":"blocked","attempt":1,"at":"2026-10-18T17:54:37.155Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1520","status":"retry_later","attempt":1,"at":"2026-10-18T17:54:39.513Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1570","status":"retry_later","attempt":1,"at":"2026-10-18T17:54:41.673Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1575","status":"blocked","attempt":1,"at":"2026-10-18T17:54:46.440Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1604","status":"retry_later","attempt":1,"at":"2026-10-18T17:55:14.200Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1614","status":"retry_later","attempt":1,"at":"2026-10-18T17:59:01.699Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1619","status":"blocked","attempt":1,"at":"2026-10-18T17:59:05.387Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1623","status":"blocked","attempt":1,"at":"2026-10-18T17:59:06.608Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1634","status":"retry_later","attempt":1,"at":"2026-10-18T17:59:24.397Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1641","status":"blocked","attempt":1,"at":"2026-10-18T17:59:28.041Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1642","status":"retry_later","attempt":1,"at":"2026-10-18T18:02:57.118Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1650","status":"retry_later","attempt":1,"at":"2026-10-18T18:03:01.314Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1710","status":"retry_later","attempt":1,"at":"2026-10-18T18:03:05.378Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mm-1739","status":"blocked","attempt":1,"at":"2026-10-18T18:03:09.225Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mm-1799","status":"blocked","attempt":1,"at":"2026-10-18T18:03:10.253Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mm-1819","status":"blocked","attempt":1,"at":"2026-10-18T18:03:11.941Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mm-1864","status":"retry_later","attempt":1,"at":"2026-10-18T18:03:31.887Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1880","status":"retry_later","attempt":1,"at":"2026-10-18T18:07:07.882Z","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | openrouter: HTTP 429 | siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1927","status":"blocked","attempt":1,"at":"2026-10-18T18:07:09.675Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mm-1986","status":"retry_later","attempt":1,"at":"2026-10-18T18:07:38.409Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: non-JSON output"}
+{"id":"mm-1987","status":"blocked","attempt":1,"at":"2026-10-18T18:07:42.105Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-0079","status":"blocked","attempt":1,"at":"2026-10-18T18:10:53.294Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-0142","status":"blocked","attempt":1,"at":"2026-10-18T18:10:55.263Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0196","status":"retry_later","attempt":1,"at":"2026-10-18T18:11:09.464Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mt-0206","status":"blocked","attempt":1,"at":"2026-10-18T18:11:11.425Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-0208","status":"blocked","attempt":1,"at":"2026-10-18T18:11:13.912Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0219","status":"blocked","attempt":1,"at":"2026-10-18T18:11:18.252Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0245","status":"blocked","attempt":1,"at":"2026-10-18T18:11:19.491Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-0249","status":"blocked","attempt":1,"at":"2026-10-18T18:11:24.051Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-0256","status":"blocked","attempt":1,"at":"2026-10-18T18:11:26.561Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-0270","status":"blocked","attempt":1,"at":"2026-10-18T18:11:30.088Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0303","status":"blocked","attempt":1,"at":"2026-10-18T18:11:41.288Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0357","status":"blocked","attempt":1,"at":"2026-10-18T18:11:43.351Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0372","status":"blocked","attempt":1,"at":"2026-10-18T18:11:44.308Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0423","status":"blocked","attempt":1,"at":"2026-10-18T18:14:52.020Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0430","status":"blocked","attempt":1,"at":"2026-10-18T18:14:55.187Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0438","status":"blocked","attempt":1,"at":"2026-10-18T18:14:58.469Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0460","status":"blocked","attempt":1,"at":"2026-10-18T18:15:00.409Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0526","status":"blocked","attempt":1,"at":"2026-10-18T18:15:02.592Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-0547","status":"blocked","attempt":1,"at":"2026-10-18T18:15:04.833Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-0549","status":"blocked","attempt":1,"at":"2026-10-18T18:15:08.141Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0550","status":"blocked","attempt":1,"at":"2026-10-18T18:15:10.246Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0552","status":"blocked","attempt":1,"at":"2026-10-18T18:15:11.499Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0578","status":"blocked","attempt":1,"at":"2026-10-18T18:15:22.660Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0598","status":"blocked","attempt":1,"at":"2026-10-18T18:15:24.271Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-0636","status":"blocked","attempt":1,"at":"2026-10-18T18:15:25.405Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0709","status":"blocked","attempt":1,"at":"2026-10-18T18:15:27.593Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0712","status":"blocked","attempt":1,"at":"2026-10-18T18:15:29.580Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-0726","status":"blocked","attempt":1,"at":"2026-10-18T18:18:41.539Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-0758","status":"blocked","attempt":1,"at":"2026-10-18T18:19:04.380Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-0782","status":"blocked","attempt":1,"at":"2026-10-18T18:19:05.681Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-0797","status":"blocked","attempt":1,"at":"2026-10-18T18:19:06.407Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0800","status":"blocked","attempt":1,"at":"2026-10-18T18:19:08.069Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-0801","status":"blocked","attempt":1,"at":"2026-10-18T18:19:09.520Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0816","status":"blocked","attempt":1,"at":"2026-10-18T18:19:10.514Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0819","status":"blocked","attempt":1,"at":"2026-10-18T18:19:14.949Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0837","status":"blocked","attempt":1,"at":"2026-10-18T18:19:25.176Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-0840","status":"blocked","attempt":1,"at":"2026-10-18T18:19:25.849Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0843","status":"blocked","attempt":1,"at":"2026-10-18T18:19:29.761Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0845","status":"blocked","attempt":1,"at":"2026-10-18T18:19:31.051Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-0855","status":"blocked","attempt":1,"at":"2026-10-18T18:21:46.477Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0866","status":"blocked","attempt":1,"at":"2026-10-18T18:25:06.083Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-0900","status":"blocked","attempt":1,"at":"2026-10-18T18:25:06.865Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-0920","status":"blocked","attempt":1,"at":"2026-10-18T18:25:08.445Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-0990","status":"blocked","attempt":1,"at":"2026-10-18T18:25:12.593Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1005","status":"blocked","attempt":1,"at":"2026-10-18T18:25:18.764Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1059","status":"blocked","attempt":1,"at":"2026-10-18T18:25:23.904Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1080","status":"blocked","attempt":1,"at":"2026-10-18T18:25:25.566Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1200","status":"blocked","attempt":1,"at":"2026-10-18T18:25:26.341Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1203","status":"blocked","attempt":1,"at":"2026-10-18T18:25:43.750Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1215","status":"blocked","attempt":1,"at":"2026-10-18T18:25:48.350Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1239","status":"blocked","attempt":1,"at":"2026-10-18T18:29:15.219Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1248","status":"blocked","attempt":1,"at":"2026-10-18T18:29:16.240Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1256","status":"blocked","attempt":1,"at":"2026-10-18T18:29:17.553Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-1296","status":"blocked","attempt":1,"at":"2026-10-18T18:29:18.008Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1297","status":"blocked","attempt":1,"at":"2026-10-18T18:29:21.003Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1341","status":"blocked","attempt":1,"at":"2026-10-18T18:29:24.228Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1356","status":"blocked","attempt":1,"at":"2026-10-18T18:29:24.905Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1417","status":"blocked","attempt":1,"at":"2026-10-18T18:29:27.052Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1450","status":"blocked","attempt":1,"at":"2026-10-18T18:29:29.126Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1499","status":"blocked","attempt":1,"at":"2026-10-18T18:29:44.339Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-1507","status":"blocked","attempt":1,"at":"2026-10-18T18:29:45.710Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-1553","status":"blocked","attempt":1,"at":"2026-10-18T18:29:47.628Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1571","status":"blocked","attempt":1,"at":"2026-10-18T18:29:50.236Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mt-1580","status":"blocked","attempt":1,"at":"2026-10-18T18:29:51.546Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-1582","status":"blocked","attempt":1,"at":"2026-10-18T18:29:53.565Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1590","status":"blocked","attempt":1,"at":"2026-10-18T18:32:32.425Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1599","status":"blocked","attempt":1,"at":"2026-10-18T18:32:59.306Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1601","status":"blocked","attempt":1,"at":"2026-10-18T18:33:01.526Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1606","status":"blocked","attempt":1,"at":"2026-10-18T18:33:03.378Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-1608","status":"blocked","attempt":1,"at":"2026-10-18T18:33:04.436Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1637","status":"blocked","attempt":1,"at":"2026-10-18T18:33:05.831Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1661","status":"blocked","attempt":1,"at":"2026-10-18T18:33:07.810Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1697","status":"blocked","attempt":1,"at":"2026-10-18T18:33:09.686Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1741","status":"blocked","attempt":1,"at":"2026-10-18T18:33:20.379Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1745","status":"blocked","attempt":1,"at":"2026-10-18T18:33:22.024Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mt-1761","status":"blocked","attempt":1,"at":"2026-10-18T18:36:25.724Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1790","status":"blocked","attempt":1,"at":"2026-10-18T18:36:27.656Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-1792","status":"blocked","attempt":1,"at":"2026-10-18T18:36:29.772Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mt-1801","status":"blocked","attempt":1,"at":"2026-10-18T18:36:32.290Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1809","status":"blocked","attempt":1,"at":"2026-10-18T18:36:35.494Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1814","status":"blocked","attempt":1,"at":"2026-10-18T18:36:36.599Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mt-1855","status":"blocked","attempt":1,"at":"2026-10-18T18:36:38.676Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mt-1909","status":"blocked","attempt":1,"at":"2026-10-18T18:36:40.528Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1917","status":"blocked","attempt":1,"at":"2026-10-18T18:36:41.967Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mt-1918","status":"blocked","attempt":1,"at":"2026-10-18T18:36:50.567Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1921","status":"blocked","attempt":1,"at":"2026-10-18T18:37:03.723Z","reason":"NEEDS_RESEARCH: 5 usable sources (<8)"}
+{"id":"mt-1924","status":"blocked","attempt":1,"at":"2026-10-18T18:37:05.381Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mt-1981","status":"blocked","attempt":1,"at":"2026-10-18T18:37:07.406Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0022","status":"blocked","attempt":1,"at":"2026-10-18T18:40:28.256Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0035","status":"blocked","attempt":1,"at":"2026-10-18T18:40:29.436Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0053","status":"blocked","attempt":1,"at":"2026-10-18T18:40:32.378Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0118","status":"blocked","attempt":1,"at":"2026-10-18T18:40:34.747Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0134","status":"blocked","attempt":1,"at":"2026-10-18T18:40:35.861Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0135","status":"blocked","attempt":1,"at":"2026-10-18T18:40:38.707Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0161","status":"blocked","attempt":1,"at":"2026-10-18T18:40:40.437Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0168","status":"blocked","attempt":1,"at":"2026-10-18T18:40:41.457Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0169","status":"blocked","attempt":1,"at":"2026-10-18T18:40:42.787Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0171","status":"blocked","attempt":1,"at":"2026-10-18T18:40:43.814Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mq-0205","status":"blocked","attempt":1,"at":"2026-10-18T18:40:46.435Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0215","status":"retry_later","attempt":1,"at":"2026-10-18T18:41:02.729Z","reason":"NO_PROVIDER: No provider produced a result: siliconflow: HTTP 402 | gemini: HTTP 404 | pollinations: HTTP 402"}
+{"id":"mq-0226","status":"blocked","attempt":1,"at":"2026-10-18T18:46:08.472Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0231","status":"blocked","attempt":1,"at":"2026-10-18T18:46:10.053Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0263","status":"blocked","attempt":1,"at":"2026-10-18T18:49:23.546Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0292","status":"blocked","attempt":1,"at":"2026-10-18T18:49:39.591Z","reason":"NEEDS_RESEARCH: 7 usable sources (<8)"}
+{"id":"mq-0303","status":"blocked","attempt":1,"at":"2026-10-18T18:49:43.818Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0304","status":"blocked","attempt":1,"at":"2026-10-18T18:49:46.603Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0310","status":"blocked","attempt":1,"at":"2026-10-18T18:49:49.376Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0360","status":"blocked","attempt":1,"at":"2026-10-18T18:49:50.670Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0384","status":"blocked","attempt":1,"at":"2026-10-18T18:49:53.428Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mq-0394","status":"blocked","attempt":1,"at":"2026-10-18T18:49:56.148Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0402","status":"blocked","attempt":1,"at":"2026-10-18T18:49:59.689Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0435","status":"blocked","attempt":1,"at":"2026-10-18T18:50:14.747Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0446","status":"blocked","attempt":1,"at":"2026-10-18T18:52:43.302Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mq-0508","status":"blocked","attempt":1,"at":"2026-10-18T18:52:46.063Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0517","status":"blocked","attempt":1,"at":"2026-10-18T18:52:48.464Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mq-0534","status":"blocked","attempt":1,"at":"2026-10-18T18:52:50.909Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0561","status":"blocked","attempt":1,"at":"2026-10-18T18:52:52.065Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0626","status":"blocked","attempt":1,"at":"2026-10-18T18:52:53.666Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0641","status":"blocked","attempt":1,"at":"2026-10-18T18:52:55.952Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0651","status":"blocked","attempt":1,"at":"2026-10-18T18:52:57.513Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0662","status":"blocked","attempt":1,"at":"2026-10-18T18:52:59.501Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0667","status":"blocked","attempt":1,"at":"2026-10-18T18:53:02.807Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0672","status":"blocked","attempt":1,"at":"2026-10-18T18:53:04.108Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0712","status":"blocked","attempt":1,"at":"2026-10-18T18:53:16.601Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0716","status":"blocked","attempt":1,"at":"2026-10-18T18:53:19.926Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0733","status":"blocked","attempt":1,"at":"2026-10-18T18:53:24.146Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mq-0779","status":"blocked","attempt":1,"at":"2026-10-18T18:56:42.285Z","reason":"NEEDS_RESEARCH: 4 usable sources (<8)"}
+{"id":"mq-0815","status":"blocked","attempt":1,"at":"2026-10-18T18:56:43.628Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0835","status":"blocked","attempt":1,"at":"2026-10-18T18:56:45.254Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0847","status":"blocked","attempt":1,"at":"2026-10-18T18:56:46.581Z","reason":"NEEDS_RESEARCH: 2 usable sources (<8)"}
+{"id":"mq-0848","status":"blocked","attempt":1,"at":"2026-10-18T18:56:47.331Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}
+{"id":"mq-0897","status":"blocked","attempt":1,"at":"2026-10-18T18:56:47.904Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mq-0982","status":"blocked","attempt":1,"at":"2026-10-18T18:56:50.285Z","reason":"NEEDS_RESEARCH: 3 usable sources (<8)"}
+{"id":"mq-0985","status":"blocked","attempt":1,"at":"2026-10-18T18:56:54.230Z","reason":"NEEDS_RESEARCH: 6 usable sources (<8)"}
+{"id":"mq-0993","status":"blocked","attempt":1,"at":"2026-10-18T18:56:56.881Z","reason":"NEEDS_RESEARCH: 0 usable sources (<8)"}
+{"id":"mq-0995","status":"blocked","attempt":1,"at":"2026-10-18T18:56:57.598Z","reason":"NEEDS_RESEARCH: 1 usable sources (<8)"}

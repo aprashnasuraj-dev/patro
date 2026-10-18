@@ -1,0 +1,91 @@
+{
+  "id": "mm-1799",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mask",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=247083",
+      "retrieved_at": "2026-10-18T18:03:10.252Z",
+      "sha256": "8fa226a58385b81e724949b5348e12352718423d80d03c7464c2faaf4131873e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A mask is an object normally worn on the face, typically for protection, disguise, performance, or entertainment, and often employed for rituals and rites.",
+        "Masks have been used since antiquity for both ceremonial and practical purposes, as well as in the performing arts and for entertainment.",
+        "They are usually worn on the face, though they may also be positioned elsewhere on the wearer's body for effect.",
+        "In art history, especially sculpture, \"mask\" is the term for a face without a body that is not modelled in the round (which would make it a \"head\"), but, for example, appears in low relief."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Batman: Mask of the Phantasm",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=311765",
+      "retrieved_at": "2026-10-18T18:03:10.252Z",
+      "sha256": "b2412dded8dd8b44e7c30c7a1e4fd7954cfd75fd30789068c2783f5159e11528",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Batman: Mask of the Phantasm is a 1993 American animated romantic superhero film featuring the DC Comics character Batman.",
+        "It was directed by Eric Radomski and Bruce Timm, and written by Alan Burnett, Paul Dini, Martin Pasko, and Michael Reaves.",
+        "The film is based on Batman: The Animated Series (1992–1995), and is the first film of the DC Animated Universe and the only one to receive a theatrical release.",
+        "Kevin Conroy, Mark Hamill, Efrem Zimbalist Jr., Bob Hastings and Robert Costanzo reprise their voice roles from Batman: The Animated Series, joined by Dana Delany, Hart Bochner, Stacy Keach, Abe Vigoda, Dick Miller and John P.",
+        "Produced between the first and second seasons of the series, the film follows Batman as he reconciles with a former lover, Andrea Beaumont, and faces a mysterious vigilante, the titular Phantasm, who is murdering Gotham City's crime bosses.",
+        "Barr's \"Batman: Year Two\" comic book story arc, with the Reaper from it loosely inspiring the Phantasm character made for the film, while also borrowing elements from the \"Batman: Year One\" arc, recounting how Bruce Wayne became Batman and his first attempts to fight crime.",
+        "Originally planned for a direct-to-video release, Warner Bros.",
+        "Pictures ultimately gave Mask of the Phantasm a theatrical release, condensing its production into a strenuous eight-month schedule.",
+        "The film was the first theatrical feature film produced by Warner Bros.",
+        "Animation, and was released through the studio's Family Entertainment label on December 25, 1993, to generally positive reviews from critics, who praised the stylized animation, voice performances, story, and music.",
+        "Due to the decision to release it in theaters on short notice, Mask of the Phantasm failed at the box office.",
+        "After its release on home media, it became financially successful."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of Mystery Science Theater 3000 episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=859458",
+      "retrieved_at": "2026-10-18T18:03:10.252Z",
+      "sha256": "98cfd112c40e8d8d4f5b83b9bdd7515def94c0cff1bd6f59f70a0ccb3b1bf413",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mystery Science Theater 3000 (MST3K) is an American television comedy series created by Joel Hodgson and originally produced by Best Brains, Inc.",
+        "The show premiered on KTMA (now WUCW) in Minneapolis, Minnesota, on November 24, 1988.",
+        "The next year, in 1989, the show began its national run on The Comedy Channel, running for two seasons.",
+        "It continued for five more seasons on Comedy Central following The Comedy Channel's merger with Ha!: TV Comedy Network.",
+        "It was cancelled in 1996, but the following year was picked up by The Sci-Fi Channel and aired for three more seasons there until another cancellation in August 1999 (although repeats continued until 2004).",
+        "A sixty-episode syndication package titled The Mystery Science Theater Hour was produced in 1995.",
+        "In 2015, Hodgson led a crowdfunded revival of the series with 14 episodes in its eleventh season which was released on Netflix.",
+        "A feature film, titled Mystery Science Theater 3000: The Movie, was also released on April 19, 1996.",
+        "In 2026, it was announced that Joel Hodgson had sold Mystery Science Theater 3000 to Radial Entertainment.",
+        "Later that year, four new episodes, dubbed The RiffTrax Experiments, and starring the show's Sci-Fi Channel-era cast, were announced and began to see release with a theatrical screening of the first episode in September 2026.",
+        "As of October 9, 2026, 231 episodes of Mystery Science Theater 3000 have been released."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Bread and Puppet Theater",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=873642",
+      "retrieved_at": "2026-10-18T18:03:10.252Z",
+      "sha256": "debc7a76e9ab8bb3ad378902c792d470726814c7aacee96b0e7225be6634a44d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Bread and Puppet Theater (often known simply as Bread & Puppet) is a politically radical puppet theater, active since the 1960s, based in Glover, Vermont.",
+        "The name Bread & Puppet is derived from the theater's practice of sharing its own fresh bread, served for free with aïoli, with the audience of each performance to create community, and from its central principle art should be as basic as bread to life.",
+        "The Bread and Puppet Theater participates in parades including Independence Day celebrations, notably in Cabot, Vermont, with many effigies including a satirical Uncle Sam on stilts."
+      ]
+    }
+  ]
+}

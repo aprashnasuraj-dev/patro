@@ -1,0 +1,142 @@
+{
+  "id": "mm-1619",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why does some rain fall harder than other rain?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Halverson, Jeffrey",
+      "published_at": "2020-08-13",
+      "url": "https://theconversation.com/why-does-some-rain-fall-harder-than-other-rain-143402",
+      "retrieved_at": "2026-10-18T17:59:04.911Z",
+      "sha256": "bfe93c4e8cd7f29a2febe4312b3b37034bc87380ef328f92182ebaf326972808",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Skip to content Academic rigor, journalistic flair A downpour or a drizzle: What causes the difference?",
+        "David Pinzer Photography/Moment via Getty Images Why does some rain fall harder than other rain?",
+        "If you have a question you’d like an expert to answer, send it to curiouskidsus@theconversation.com .",
+        "– Naomi B., age 9, San Fancisco, California There are some days when the rain falls peacefully and gently, nourishing the Earth.",
+        "But on some other days the rain comes down in a torrential downpour that meteorologists like me call a cloudburst.",
+        "Standing outside in one of these intense rainstorms can feel like being smothered in a heavy, wet towel.",
+        "These storms can flood the lands below them and lead to great destruction.",
+        "All rain comes from a combination of two things: moisture in the air – usually in the form of clouds – and currents of air moving upwards.",
+        "As moist air rises up through a cloud, the air cools and the water in it turns into tiny raindrops.",
+        "This is the same thing that happens when you can see your breath on a cold evening .",
+        "The temperature change from warm to cool causes water droplets to form in your breath.",
+        "In a cloud, these tiny raindrops are very light and float as the rising air pushes them up."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why it’s harder than ever to make money on YouTube",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Bishop, Sophie",
+      "published_at": "2018-02-07",
+      "url": "https://theconversation.com/why-its-harder-than-ever-to-make-money-on-youtube-90715",
+      "retrieved_at": "2026-10-18T17:59:05.386Z",
+      "sha256": "daf96bdc437820c13749f2a96529213b23388745829836cdfac0dc6fec243a94",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Why it’s harder than ever to make money on YouTube Skip to content Academic rigor, journalistic flair Why it’s harder than ever to make money on YouTube Published: February 7, 2018 5:36am EST YouTuber Logan Paul and his Mum.",
+        "This means that for creators to make money from YouTube – and have ads attached to videos – they must have clocked up over 4,000 hours of watch time on their channel within the past 12 months.",
+        "Channels that don’t have these numbers will simply no longer be able to make income from ads.",
+        "This change will effectively make it harder for new, smaller channels and hobbyists to be able to make money on YouTube.",
+        "It’s not surprising then that these tighter ad rules have been met with dismay by many YouTubers – who feel the changes are an unfair reaction to a small number of high profile events.",
+        "Bad actors The main reasons for the changes are the widespread concerns about YouTube’s ability to regulate its content.",
+        "And more specifically, monitor what content is inappropriate for adverts to appear on.",
+        "Brands such as Lidl and Mars left the platform in 2017, due to their ads appearing next to videos with predatory comments.",
+        "Earlier in the year, Pepsi and Walmart left because of concerns about hate speech.",
+        "Smaller YouTubers are concerned about how the changes will affect their channels.",
+        "Shutterstock Take the popular gaming vlogger PewDiePie, for example, who sparked outrage after he was caught uttering racist slurs back in 2017.",
+        "Then there was prank vlogger Logan Paul’s video showing the body of a suicide victim in Aokigahara, Japan’s “suicide forest”, while he laughed uncomfortably."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T17:59:05.387Z",
+      "sha256": "9d6236e0e8163d381682ed2d1b8332956721b6c0ab8dedd071c6504c739e27ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T17:59:05.387Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Tay (chatbot)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=49933350",
+      "retrieved_at": "2026-10-18T17:59:05.387Z",
+      "sha256": "c10baf91254eebd2a80fca46621d817884a88c44dbd3cefa3e5e998d937059de",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tay was a chatbot that was originally released by Microsoft Corporation as a Twitter bot on March 23, 2016.",
+        "It caused controversy when the bot began to post inflammatory and offensive tweets through its Twitter account, causing Microsoft to shut down the service only 16 hours after its launch.",
+        "According to Microsoft, this was caused by trolls who \"attacked\" the service as the bot made replies based on its interactions with people on Twitter."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Hallucination (artificial intelligence)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72607666",
+      "retrieved_at": "2026-10-18T17:59:05.387Z",
+      "sha256": "fc253fa70034b2d109363a6bf492703eb10162b7550ab66012447e0a4ae105d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the field of artificial intelligence (AI), a hallucination or artificial hallucination (also called bullshitting, confabulation, delusion, or mirage) is a response generated by AI that contains false or misleading information presented as fact.",
+        "These terms draw a loose analogy with human psychology, where a hallucination typically involves false percepts.",
+        "Chatbots powered by large language models (LLMs), like ChatGPT, may embed plausible-sounding random falsehoods within their generated content, such as fabricated citations.",
+        "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+        "Some software engineers and statisticians have criticized the specific term \"AI hallucination\" for unreasonably anthropomorphizing computers.",
+        "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models."
+      ]
+    }
+  ]
+}

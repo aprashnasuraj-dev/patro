@@ -1,0 +1,111 @@
+{
+  "id": "mm-0225",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Power of Compound Interest: How Time, Reinvestment, and Day-Count Conventions Shape Terminal Wealth",
+      "publisher": "Elsevier BV",
+      "author": "Rupprechter, Roland",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7338178",
+      "retrieved_at": "2026-10-18T17:06:21.943Z",
+      "sha256": "4a9ab7109a92b96115d0bf1c8b32241b864ff0f11427554c400c8faa739c8ffd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This paper examines the economic mechanics of compound interest from the perspective of the averagely sophisticated retail investor.",
+        "For a ten-year coupon bond, up to one quarter of total interest income is attributable to interest on interest, depending on the reinvestment rate.",
+        "Under uncertainty, volatility dampens capital growth according to g ≈ μ − σ²/2 (volatility drag), while the wealth multiplier (1+g)T grows convexly in the horizon.",
+        "Behavioural economics explains why the effect nevertheless remains unexploited: households systematically underestimate exponential growth, and moving from full bias to accurate perception is associated with 55 to 90 percent&amp;nbsp;higher accumulated assets (Levy and Tasoff, 2016).",
+        "The findings imply that time in the market, consistent reinvestment, cost control, and knowledge of day-count conventions are the essential levers by which retail investors can harness the power of compound interest.",
+        "The paper is intended as a didactic synthesis of the literature, not as investment advice."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Osama bin Laden",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22468",
+      "retrieved_at": "2026-10-18T17:06:22.673Z",
+      "sha256": "953a72dd54b63142d286930df3ff921a40b3107fa74fcb1ade2fd46a3463e820",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "1957/1958 – 2 May 2011) was the founder and first general emir of al-Qaeda, a Salafi jihadist militant organization, from 1988 until his killing in 2011.",
+        "He was one of the most significant supporters of Islamic terrorism and jihadist militant movements around the world, aiming to found a pan-Islamic caliphate and end Western nations' interventionism in the Middle East.",
+        "Most notably, he helped orchestrate al-Qaeda's terrorist attacks against the United States on 11 September 2001, which directly killed 2,977 victims and caused the U.S.-led global war on terror.",
+        "He also led al-Qaeda and its allies in numerous wars, including the Second Afghan Civil War (1992–1996), Bosnian War (1992–1995), and Algerian Civil War (1992–2002), the latter of which he helped instigate.",
+        "Born into the wealthy bin Laden family in Saudi Arabia, bin Laden used his personal fortune to build a network that trained militants in Europe, West Asia, and Africa.",
+        "He moved from Saudi Arabia to Afghanistan during the Soviet–Afghan War (1979–1989) to help Afghan Muslims resist the Soviet Union's occupation of the country.",
+        "In 1984, he co-founded Maktab al-Khidamat to recruit foreigners into the Afghan mujahideen resistance.",
+        "Following the Soviet withdrawal, he commanded a mujahideen force during the First Afghan Civil War (1989–1992).",
+        "Upon returning to Saudi Arabia, bin Laden publicly promoted anti-Western causes and opposed the Saudi royal family, leading to his expulsion from the country in 1991.",
+        "He went back to Afghanistan, then moved to Sudan later that year.",
+        "In 1993, al-Qaeda bombed the World Trade Center complex in New York City.",
+        "In 1996, bin Laden returned to Afghanistan after being expelled from Sudan; Afghanistan came under Taliban control later that year."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Michael Corleone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=550067",
+      "retrieved_at": "2026-10-18T17:06:22.673Z",
+      "sha256": "fd75e42ec1a18897d45fecad593a2a499b8a88f1e99a7b9837d870c7649e7030",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Michael Corleone is a fictional character and the protagonist of Mario Puzo's 1969 novel The Godfather, as well as the villain protagonist of the movie trilogy it launched.",
+        "In the three Godfather films, directed by Francis Ford Coppola, Michael was portrayed by Al Pacino, for which he was twice nominated for Academy Awards.",
+        "Michael is the youngest son of Vito Corleone, a Sicilian immigrant who builds a Mafia empire.",
+        "Upon his father's death, Michael succeeds him as the don of the Corleone crime family.",
+        "In June 2003, Michael Corleone was recognized as the 11th most iconic villain in film history by the American Film Institute, although some critics consider him to be a tragic hero.",
+        "The British film magazine Empire selected Michael Corleone as the 11th greatest movie character, with Pacino's performance as Michael Corleone widely regarded as one of the greatest performances in cinematic history."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Carlos Slim",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=629851",
+      "retrieved_at": "2026-10-18T17:06:22.673Z",
+      "sha256": "e3f25ac53ee23bea0787f4dc0f8c756f4d15e174ec34885450300a96613868f9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carlos Slim Helú (Spanish: [ˈkaɾlos esˈlin eˈlu, - esˈlim -]; born 28 January 1940) is a Mexican business oligarch, investor, and philanthropist.",
+        "From 2010 to 2013, Slim was ranked as the richest person in the world by Forbes business magazine.",
+        "He derived his fortune from his extensive holdings in a considerable number of Mexican companies through his conglomerate, Grupo Carso.",
+        "As of September 2026, the Bloomberg Billionaires Index ranked him as the 16th-richest person in the world, with a net worth of US$123 billion, making him the richest person in Latin America.",
+        "Slim's corporate conglomerate spans numerous industries across the Mexican economy, including education, health care, industrial manufacturing, transportation, real estate, mass media, mining, energy, entertainment, technology, retail, sports and financial services.",
+        "He accounts for 40 per cent of the listings on the Mexican Stock Exchange.",
+        "As of 2016, he was the largest single shareholder of non-voting shares of the New York Times Company."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Mortgage acceleration",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13258031",
+      "retrieved_at": "2026-10-18T17:06:22.673Z",
+      "sha256": "db732d3864780f2457161800ae435e55395af6351856ec72f688dd0c2075fbfe",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mortgage acceleration is the practice of paying off a mortgage loan faster than required by terms of the mortgage agreement.",
+        "As interest on mortgages is compounded, early payments diminish the period needed to pay off the mortgage, and avoid a quotient of compounded interest.",
+        "A commonplace method of mortgage acceleration is a so-called bi-weekly payment plan, in which half of the normal calendar monthly payment is made every two weeks, so that 13/12 of the yearly amount due is paid per annum.",
+        "Commonplace too, is the practice of making ad hoc additional payments.",
+        "The agreements associated with certain mortgages preclude or penalize early payments."
+      ]
+    }
+  ]
+}

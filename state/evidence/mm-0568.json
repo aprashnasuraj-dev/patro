@@ -1,0 +1,90 @@
+{
+  "id": "mm-0568",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dead Man",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=113651",
+      "retrieved_at": "2026-10-18T17:24:18.811Z",
+      "sha256": "71707effd5a828c2e613601b7d4194d8b0f869c97e75d9a2598bd1fce30ff0fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Dead Man is a 1995 acid Western film written and directed by Jim Jarmusch.",
+        "It stars Johnny Depp, Gary Farmer, Billy Bob Thornton, Iggy Pop, Crispin Glover, John Hurt, Michael Wincott, Lance Henriksen, Gabriel Byrne, Mili Avital, and Robert Mitchum in one of his final film performances.",
+        "Set in the late 19th century, the story follows William Blake (Depp), a meek accountant on the run after killing a man.",
+        "He has a chance encounter with enigmatic Native American spirit-guide \"Nobody\" (Farmer), who believes Blake is the reincarnation of the visionary English poet William Blake.",
+        "Described by Jarmusch as a \"Psychedelic western\", the film is shot entirely in monochrome.",
+        "Neil Young composed the guitar-dominated soundtrack with portions he improvised while watching the movie footage.",
+        "Dead Man premiered at the 1995 Cannes Film Festival, where it competed for the Palme d'Or."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Sargasso Sea",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=578585",
+      "retrieved_at": "2026-10-18T17:24:18.812Z",
+      "sha256": "58bdbbf1d28f5256a8c3b987e4a07e1faea202494f18fea76e034954b2e3b606",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sargasso Sea () is a region of the Atlantic Ocean bounded by four currents forming an ocean gyre.",
+        "It is distinguished from other parts of the Atlantic Ocean by its characteristic brown Sargassum seaweed and  calm blue waters.",
+        "The sea is bounded on the west by the Gulf Stream, on the north by the North Atlantic Current, on the east by the Canary Current, and on the south by the North Atlantic Equatorial Current, the four together forming a clockwise-circulating system of ocean currents termed the North Atlantic Gyre.",
+        "It lies between 20° and 35° north and 40° and 70° west and is approximately 1,100 kilometres (600 nautical miles) wide by 3,200 km (1,750 nmi) long.",
+        "While all of the above currents deposit marine plants and refuse into the sea, ocean water in the Sargasso Sea is distinctive for its deep blue color and exceptional clarity, with underwater visibility of up to 60 m (200 ft)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mary Jane's Last Dance",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3025145",
+      "retrieved_at": "2026-10-18T17:24:18.812Z",
+      "sha256": "6af2305c763ea78108f50d8e34f10c194c391bb7f917d4d3c5c051536c4c6e36",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Mary Jane's Last Dance\" is a song written by Tom Petty and recorded by American rock band Tom Petty and the Heartbreakers.",
+        "It was recorded while Petty was recording his Wildflowers album and was produced by Rick Rubin, guitarist Mike Campbell, and Petty.",
+        "The sessions would prove to be the last to include drummer Stan Lynch before his eventual departure in 1994.",
+        "This song was first released as part of the Greatest Hits album in 1993.",
+        "14 on the US Billboard Hot 100, becoming Petty's first Billboard top-20 hit of the 1990s, and also topped the Billboard Album Rock Tracks chart for two weeks."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sea",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18842323",
+      "retrieved_at": "2026-10-18T17:24:18.812Z",
+      "sha256": "6c602d5f32a3f24c811544ac81a1a1e9c687bacda589ce1842b19ea19bbc0817",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The first is the interconnected body of seawater that spans most of Earth, known as the sea or the ocean.",
+        "The second is a named body of water: usually either a marginal sea (a second-order section of the oceanic sea such as the Mediterranean Sea), or a large, nearly landlocked body of water.",
+        "The salinity of water bodies varies widely, being lower near the surface and the mouths of large rivers and higher in the depths of the ocean; however, the relative proportions of dissolved salts vary little across the oceans.",
+        "The most abundant solid dissolved in seawater is sodium chloride.",
+        "The water also contains salts of magnesium, calcium, potassium, and mercury, among other elements, some in minute concentrations.",
+        "A wide variety of organisms, including bacteria, protists, algae, plants, fungi, and animals live in various marine habitats and ecosystems throughout the seas.",
+        "These range vertically from the sunlit surface and shoreline to the great depths and pressures of the cold, dark abyssal zone, and in latitude from the cold waters under polar ice caps to the warm waters of coral reefs in tropical regions.",
+        "Many of the major groups of organisms evolved in the sea and life may have started there.",
+        "The ocean moderates Earth's climate and has important roles in the water, carbon, and nitrogen cycles.",
+        "The surface of the water interacts with the atmosphere, exchanging properties such as particles and temperature, as well as currents.",
+        "Surface currents are the water currents that are produced by the atmosphere's currents and its winds blowing over the surface of the water, producing wind waves, setting up through drag slow but stable circulations of water, as in the case of the ocean sustaining deep-sea ocean currents.",
+        "Deep-sea currents, known together as the global conveyor belt, carry cold water from near the poles to every ocean and significantly influence Earth's climate."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "mm-0218",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Back Matter",
+      "publisher": "Duke University Press",
+      "author": null,
+      "published_at": "2007-09-03",
+      "url": "https://doi.org/10.2307/j.ctv12102r3.19",
+      "retrieved_at": "2026-10-18T17:01:36.637Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Front Matter",
+      "publisher": "Duke University Press",
+      "author": null,
+      "published_at": "2007-09-03",
+      "url": "https://doi.org/10.2307/j.ctv12102r3.1",
+      "retrieved_at": "2026-10-18T17:01:38.260Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Where the Hell is Matt?",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5751087",
+      "retrieved_at": "2026-10-18T17:01:38.447Z",
+      "sha256": "3c14a88dff104c3b3ef3c4bccc2c3e5721ab69570e6f1cb605de109aff6dff48",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an internet phenomenon that features a video of Dancing Matt (Matt Harding) doing a dance \"jig\" in many different places around the world in 2005.",
+        "The video garnered popularity on the video sharing site YouTube.",
+        "There are now five major videos plus two outtakes and several background videos on YouTube.",
+        "In 2008 others join with him doing the dance \"jig\"; in 2010 he does the Diski Dance in South Africa.",
+        "In 2012 he works with other dancers, sometimes using a local dance or another dance step."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "BLUF (communication)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14343191",
+      "retrieved_at": "2026-10-18T17:01:38.447Z",
+      "sha256": "10aef6702b57b800b70451758961a5dd4e91927ac4677c546b237591af500c0c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bottom Line Up Front, or BLUF, is the practice of beginning a message with its key information (the \"bottom line\").",
+        "This provides the reader with the most important information first.",
+        "military communication whose aim is to make military messages precise and lucid.",
+        "It differs from an older, more-traditional style in which conclusions and recommendations are included at the end, following the arguments and considerations of facts.",
+        "The BLUF concept is not exclusive to writing since it can also be used in conversations and interviews."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Generation Alpha",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=58852261",
+      "retrieved_at": "2026-10-18T17:01:38.447Z",
+      "sha256": "cc00ff383cc2c17056e3e4f76f1b3c8b602fdbbef63e17c068126d63ba2c2339",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generation Alpha, often shortened to Gen Alpha, is the demographic cohort succeeding Generation Z and preceding the proposed Generation Beta.",
+        "While researchers and popular media loosely identify the early 2010s as the starting birth years and the mid 2020s as the ending birth years, these ranges are not precisely defined and may vary depending on the source.",
+        "Named after alpha, the first letter of the Greek alphabet, Generation Alpha is the first to be born entirely in the 21st century and the third millennium.",
+        "The majority of Generation Alpha are the children of younger Generation X, Millennials and older Generation Z.",
+        "Generation Alpha is the first full generation not to have known a world without smartphones and social media.",
+        "They were born at a time of falling fertility rates across much of the world, and experienced the effects of the COVID-19 pandemic as young children.",
+        "In the 2020s, children's entertainment has been increasingly dominated by portable digital technology, social networks, and streaming services, with interest in traditional television concurrently falling.",
+        "Changes in the use of technology in classrooms and other aspects of life have had a significant effect on how this generation has experienced early learning compared to previous generations.",
+        "Studies have suggested that health problems related to screen time, allergies, and obesity became increasingly prevalent in the late 2010s."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "How To with John Wilson",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61506928",
+      "retrieved_at": "2026-10-18T17:01:38.447Z",
+      "sha256": "a53b90695ef3fc516682feffc25c6aa2c71c8217127aa1eecbf4cc72481403d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How To with John Wilson is an American television comedy docuseries created by filmmaker John Wilson.",
+        "The series, executive produced by Nathan Fielder, Michael Koman and Clark Reinking, was ordered by HBO.",
+        "On December 9, 2020, HBO renewed the series for a second season, which premiered on November 26, 2021.",
+        "In February 2022, the series was renewed for a third season.",
+        "In May 2023, HBO announced it would premiere on July 28 and be the final season."
+      ]
+    }
+  ]
+}

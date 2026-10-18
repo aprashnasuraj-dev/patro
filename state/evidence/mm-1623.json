@@ -1,0 +1,148 @@
+{
+  "id": "mm-1623",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Geneva",
+      "publisher": "Vanderbilt University Press",
+      "author": null,
+      "published_at": "2010-08-16",
+      "url": "https://doi.org/10.2307/j.ctv1622mtp.15",
+      "retrieved_at": "2026-10-18T17:59:06.365Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Acknowledgments",
+      "publisher": "Vanderbilt University Press",
+      "author": null,
+      "published_at": "2010-08-16",
+      "url": "https://doi.org/10.2307/j.ctv1622mtp.4",
+      "retrieved_at": "2026-10-18T17:59:06.516Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Conclusion",
+      "publisher": "Vanderbilt University Press",
+      "author": null,
+      "published_at": "2010-08-16",
+      "url": "https://doi.org/10.2307/j.ctv1622mtp.17",
+      "retrieved_at": "2026-10-18T17:59:06.607Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Pakistan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23235",
+      "retrieved_at": "2026-10-18T17:59:06.607Z",
+      "sha256": "a3c960d07b62b4b0804b6dca332b32c6b5a9c50728e73291f6cbe46b089874a3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Pakistan, officially the Islamic Republic of Pakistan, is a country in South Asia.",
+        "It is the fifth-most populous country, with a population of over 241.5 million, having the second-largest Muslim population in the world as of 2023.",
+        "Islamabad is the nation's capital, while Karachi is its largest city and financial centre.",
+        "Bounded by the Arabian Sea on the south, the Gulf of Oman on the southwest, and the Sir Creek on the southeast, it shares land borders with India to the east; Afghanistan to the west; Iran to the southwest; and China to the northeast.",
+        "It shares a maritime border with Oman in the Gulf of Oman, and is separated from Tajikistan in the northwest by Afghanistan's narrow Wakhan Corridor.",
+        "Pakistan is the site of several ancient cultures, including the 8,500-year-old Neolithic site of Mehrgarh in Balochistan, the Indus Valley Civilisation of the Bronze Age, and the ancient Gandhara civilisation.",
+        "Initially a dominion of the British Commonwealth, Pakistan adopted a republican constitution in 1956 and became an Islamic republic with two geographically separate provinces, East Pakistan and West Pakistan.",
+        "East Pakistan seceded as the new country of Bangladesh in 1971 after a nine-month-long civil war.",
+        "In the following four decades, Pakistan has been ruled by governments that alternated between civilian and military, democratic and authoritarian, relatively secular and Islamist.",
+        "Pakistan is considered a middle power and is a declared nuclear-weapon state, with the world's seventh-largest standing armed forces.",
+        "The Pakistani economy is ranked amongst the world's emerging and growth-leading economies, with a large and rapidly growing middle class.",
+        "Pakistan's political history since independence has been characterised by periods of significant economic and military growth as well as those of political and economic instability."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Salman Khan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=302167",
+      "retrieved_at": "2026-10-18T17:59:06.607Z",
+      "sha256": "462fa7fd1b5d9a003bcd69122d1c01cbf8a8c8b2e061e4805cd2128b0eab2adf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Salman Khan (pronounced [səlˈmaːn xaːn] ; born 27 December 1965) is an Indian actor, film producer, and television personality who works primarily in Hindi cinema.",
+        "In a career spanning over three decades, his awards include two National Film Awards as a film producer, and two Filmfare Awards as an actor.",
+        "He has been cited as one of the most popular and commercially successful actors of Indian cinema, and was included in Forbes lists of the world's highest-paid celebrities in 2015 and 2018.",
+        "Khan has a large following in India and among the Indian diaspora worldwide.",
+        "His popularity has been particularly associated with commercially successful Hindi-language films, with his work spanning genres including action, comedy, romance and drama.",
+        "Khan began his acting career with a supporting role in Biwi Ho To Aisi (1988), followed by his breakthrough with a leading role in Sooraj Barjatya's romantic drama Maine Pyar Kiya (1989), for which he was awarded the Filmfare Award for Best Male Debut.",
+        "He established himself with other commercially successful films, including Lawrence D'Souza's romantic drama Saajan (1991), Barjatya's family dramas Hum Aapke Hain Koun..!",
+        "(1994) and Hum Saath-Saath Hain (1999), the action film Karan Arjun (1995) and the comedy Biwi No.1 (1999).",
+        "This followed a period of decline in romantic comedy, musicals and tragedy drama in the 2000s.",
+        "This was followed by a series of poorly received films which failed critically and commercially, with the exception of Bharat (2019) and Tiger 3 (2023).",
+        "Khan has starred in the annual highest-grossing Hindi films of 10 individual years, the highest for any actor.",
+        "In addition to his acting career, Khan is a television presenter and promotes humanitarian causes through his charity, Being Human Foundation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of highest-grossing Pakistani films",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=44550571",
+      "retrieved_at": "2026-10-18T17:59:06.607Z",
+      "sha256": "bc844b59c39f657a094fcf272fe0cfb166f621ee66aa2ffb44be21847ba311b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This list charts the most successful Pakistani films screened at cinemas in Pakistan and overseas.",
+        "Pakistani films generate income from several revenue streams including box office sales (admissions), theatrical exhibitions, television broadcast rights and merchandising.",
+        "See List of highest-grossing films in Pakistan for domestic gross figures."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "British Pakistanis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47432559",
+      "retrieved_at": "2026-10-18T17:59:06.607Z",
+      "sha256": "4a23dec56c98eba0292f113c9d0d0e481a9b10a38ebb4e8e21977687cb1e388c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "British Pakistanis or Pakistani Britons are Britons or residents of the United Kingdom with ancestral roots in Pakistan.",
+        "This includes people born in the UK who are of Pakistani descent, Pakistani-born people who have migrated to the UK and those of Pakistani origin from overseas who migrated to the UK.",
+        "The UK hosts the largest Pakistani community in Europe, with over 1.6 million people recorded in the 2021 Census.",
+        "British Pakistanis are the second-largest ethnic minority group in the United Kingdom and the second-largest subgroup of British Asians.",
+        "They also form one of the largest populations within the global Pakistani diaspora, comparable in size to the Pakistani community in the UAE.",
+        "Migration from regions that now form Pakistan began in small numbers during the 1950s and 1960s, facilitated by Pakistan’s membership of the Commonwealth.",
+        "Many migrants were recruited to address labour shortages in industries such as textiles, steel, engineering, manufacturing, while others, including doctors, contributed to the development of the National Health Service.",
+        "The British Pakistani population has grown from around 10,000 in 1951 to over 1.6 million in 2021.",
+        "The majority reside in England, with significant communities in Scotland and smaller populations in Wales and Northern Ireland.",
+        "In 2021, there were 1,587,819 Pakistanis in England and Wales (2.7% of the population).",
+        "Scotland recorded 72,871 (1.3%) in 2022, while Northern Ireland recorded 1,596 people (less than 0.1%).",
+        "The community is predominantly Muslim; around 93% of Pakistanis in England and Wales identified as Muslim in the 2021 Census."
+      ]
+    }
+  ]
+}

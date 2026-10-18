@@ -1,0 +1,111 @@
+{
+  "id": "mm-0347",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "zipcodeR: Data &amp; Functions for Working with US ZIP Codes",
+      "publisher": "The R Foundation",
+      "author": "Rozzi, Gavin",
+      "published_at": "2020-09-17",
+      "url": "https://CRAN.R-project.org/package=zipcodeR",
+      "retrieved_at": "2026-10-18T17:18:50.913Z",
+      "sha256": "0888ebfc2a19bac440016ef7d9b5ea0f313f1e0045bb856d7199a73fb8a8b2e5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "CRAN: Package zipcodeR zipcodeR: Data & Functions for Working with US ZIP Codes Make working with ZIP codes in R painless with an integrated dataset of U.S.",
+        "Search ZIP codes by multiple geographies, including state, county, city & across time zones.",
+        "Also included are functions for relating ZIP codes to Census data, geocoding & distance calculations.",
+        "New analyses can select an immutable modern data bundle through the next-generation API, while the historical interface remains compatible with version 0.3.5 for reproducible research."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Code",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5225",
+      "retrieved_at": "2026-10-18T17:18:53.154Z",
+      "sha256": "a5c2cab115441abdccd8533e4db3d53529b1f2ca2a2eba69cae44450c9495cb5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In communications and information processing, a code is a system of rules to convert information—such as a letter, word, sound, image, or gesture—into another form, sometimes shortened or secret, for communication through a communication channel or storage in a storage medium.",
+        "An early example of a code is language, which enables a person, through speech, to communicate what they think, see, hear, or feel to others.",
+        "But speech limits the range of communication to the distance a voice can carry and limits the audience to those present when the speech is uttered.",
+        "The invention of writing, which converted spoken language into visual symbols, extended the range of communication across space and time.",
+        "The process of encoding converts information from a source into symbols for communication or storage.",
+        "Decoding is the reverse process, converting code symbols back into a form that the recipient understands.",
+        "One role of coding is to enable communication in places where ordinary plain language, spoken or written, is difficult or impossible.",
+        "For example, semaphore, where the configuration of flags held by a signaler or the arms of a semaphore tower encodes parts of the message, typically individual letters and numbers.",
+        "Another person standing a great distance away can interpret the flags and reproduce the words sent."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "ZIP (file format)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188488",
+      "retrieved_at": "2026-10-18T17:18:53.154Z",
+      "sha256": "26eee2841409f59f6f91a4efe55648e02fe6968a27a2d7230d8064ec47250374",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "ZIP is an archive file format that supports lossless data compression.",
+        "A ZIP file may contain one or more files or directories that may have been compressed.",
+        "The ZIP file format permits a number of compression algorithms, though DEFLATE is the most common.",
+        "This format was originally created in 1989 and was first implemented in PKWARE, Inc.'s PKZIP utility, as a replacement for the previous ARC compression format by Thom Henderson.",
+        "The ZIP format was then quickly supported by many software utilities other than PKZIP.",
+        "The ZIP format is natively supported on major operating systems (e.g.",
+        "It is typically built into an operating system's file management application.",
+        "ZIP files generally use the file extensions .zip or .ZIP and the MIME media type application/zip.",
+        "ZIP is used as a base file format by many programs, usually under a different name.",
+        "When navigating a file system via a user interface, graphical icons representing ZIP files often appear as a document or other object prominently featuring a zipper."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Midtown Manhattan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=302201",
+      "retrieved_at": "2026-10-18T17:18:53.154Z",
+      "sha256": "48f9d3882311e19dd18e078834e4c0b4c1bb120abb9cbd3f4c5d8803900d45b6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Midtown Manhattan is the central portion of the New York City borough of Manhattan, which serves as the city's primary central business district.",
+        "Penn Station in Midtown Manhattan is the busiest transportation hub in the Western Hemisphere.",
+        "Midtown Manhattan is the country's largest commercial, entertainment, and media center, and is also a growing financial and fintech center.",
+        "Many of New York City's skyscrapers, including its tallest hotels and apartment towers, are located in Midtown Manhattan.",
+        "The neighborhood hosts commuters and residents working in its offices, hotels, and retail establishments, as well as tourists and students.",
+        "Times Square, the brightly illuminated hub of the Broadway Theater District, is a major center of the world's entertainment industry.",
+        "Sixth Avenue also has the headquarters of three of the four major U.S.",
+        "It is patrolled by the 14th and 18th precincts of the New York City Police Department."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Turkey in the Straw",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=855144",
+      "retrieved_at": "2026-10-18T17:18:53.154Z",
+      "sha256": "8e64e005fdc664371950be63ac788f22c89a020d110f660a7c1863083ff444ae",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Turkey in the Straw\" is an American folk song that first gained popularity in the 19th century.",
+        "Early versions of the tune were titled \"Zip Coon\", which were first published around 1834 and performed in minstrel shows, with different people claiming authorship of the song.",
+        "The song is related to a number of tunes of the 19th century and the origin of these songs has been widely debated.",
+        "Links to older Irish/Scottish/English ballads have been proposed, such as \"The Old Rose Tree\".",
+        "The song became highly popular and many variations of the song exist."
+      ]
+    }
+  ]
+}

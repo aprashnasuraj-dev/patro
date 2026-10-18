@@ -1,0 +1,139 @@
+{
+  "id": "mm-0995",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When GPS lies at sea: How electronic warfare is threatening ships and their crews",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Raymaker, Anna",
+      "published_at": "2026-03-12",
+      "url": "https://theconversation.com/when-gps-lies-at-sea-how-electronic-warfare-is-threatening-ships-and-their-crews-278181",
+      "retrieved_at": "2026-10-18T17:46:19.667Z",
+      "sha256": "d7198ed01910e421295ead55bd5bf1d67e8a336c8d4405563fd19207b55ec689",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "When GPS lies at sea: How electronic warfare is threatening ships and their crews Skip to content Academic rigor, journalistic flair Cyberattacks like GPS spoofing threaten oil supertankers and cargo ships at sea.",
+        "But beyond the immediate devastation, the conflict has also illuminated a quieter and rapidly growing danger : the vulnerability of ships, and the people who operate them, to disruption of their navigation systems .",
+        "Modern shipping depends heavily on GPS satellite navigation.",
+        "When those signals are disrupted or manipulated, ships can suddenly appear to their navigators and to other ships to be somewhere they are not .",
+        "In some cases, vessels have been shown jumping across maps, drifting miles inland or appearing to circle in impossible patterns.",
+        "The risk is even higher in war zones, where ships could be misdirected into harm’s way.",
+        "As a cybersecurity researcher studying critical infrastructure and maritime systems, I investigate how digital threats affect ships and the people who operate them.",
+        "To understand the threat from GPS disruptions, it helps to first understand how GPS works .",
+        "GPS systems determine location using signals from satellites orbiting Earth.",
+        "A receiver calculates its position by measuring how long those signals take to arrive.",
+        "Because those signals are extremely weak by the time they reach Earth, they are relatively easy to disrupt.",
+        "GPS jamming and spoofing In GPS jamming, an attacker blocks the real satellite signals by overwhelming them with electromagnetic noise so receivers cannot detect them."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Physico-Mechanical Wear Processes of Cell Guides in Container Ships - Phenomenology",
+      "publisher": "Trans Tech Publications, Ltd.",
+      "author": "Szyszko, Małgorzata",
+      "published_at": "2014-12",
+      "url": "https://doi.org/10.4028/www.scientific.net/ssp.225.145",
+      "retrieved_at": "2026-10-18T17:46:19.768Z",
+      "sha256": "fe20edc8b9d87aaec8c0efa7455771510e7ed2850bfd15d89c3eac3ec22e1a09",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The article presents the phenomenology of problems of cell guides container ships wear processes.",
+        "In the paper the issues of tribological and nontribological types of wear processes.",
+        "Presented problems regard to the analysis of exposures that cause wear in the carriage by sea and in the process of containers handling at the maritime port."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Global Positioning System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11866",
+      "retrieved_at": "2026-10-18T17:46:19.869Z",
+      "sha256": "88cbbfbfe880b983ecb22ef1ae89635b56338e332add3f4b376cc24a10644257",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Global Positioning System (GPS) is a satellite-based hyperbolic navigation system owned by the United States Space Force and operated by Mission Delta 31.",
+        "It is one of the global navigation satellite systems (GNSS) that provide geolocation and time information to a GPS receiver anywhere on or near the Earth where signal quality permits.",
+        "It does not require the user to transmit any data, and operates independently of any telephone or Internet reception, though these technologies can enhance the usefulness of the GPS positioning information.",
+        "It provides critical positioning capabilities to military, civil, and commercial users around the world.",
+        "Although the United States government created, controls, and maintains GPS, it is freely accessible to anyone with a GPS receiver.",
+        "The prototype spacecraft was launched in 1978 and the ultimate constellation of 24 satellites became operational in 1993.",
+        "After Korean Air Lines Flight 007 was shot down when it mistakenly entered Soviet airspace, President Ronald Reagan made the GPS system available for civilian use as of 1988.",
+        "Initially civilian use was limited to an average accuracy of 100 meters (330 ft) by use of Selective Availability (SA), a deliberate error introduced into the GPS data that military receivers could correct.",
+        "As civilian GPS usage grew, pressure grew to remove this limitation.",
+        "The SA system was temporarily disabled during the Gulf War, as a shortage of military GPS units meant that many US soldiers were using civilian GPS units.",
+        "In the 1990s, differential GPS systems from the US Coast Guard, Federal Aviation Administration, and similar agencies in other countries began to broadcast local GPS corrections, reducing the effect of both SA degradation and atmospheric effects (that military receivers also corrected).",
+        "The military also developed methods to perform local GPS jamming, eliminating the need to globally degrade the system."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Joint Direct Attack Munition",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=201690",
+      "retrieved_at": "2026-10-18T17:46:19.869Z",
+      "sha256": "2e46b6b9ada743c355a066acd80ace0fa520fa295bd939f808f81f1fe2b2b313",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Joint Direct Attack Munition (JDAM) is a guidance kit that converts unguided bombs, or \"dumb bombs\", into all-weather precision-guided munitions (PGMs).",
+        "JDAM-equipped bombs are guided by an integrated inertial guidance system coupled to a Global Positioning System (GPS) receiver, giving them a published range of up to 15 nautical miles (28 km).",
+        "JDAM-equipped bombs range from 500 to 2,000 pounds (230 to 910 kg).",
+        "The JDAM's guidance system was jointly developed by the United States Air Force and United States Navy, hence the \"joint\" in JDAM.",
+        "When installed on a bomb, the JDAM kit is given a GBU (Guided Bomb Unit) identifier, superseding the Mark 80 or BLU (Bomb, Live Unit) nomenclature of the bomb to which it is attached.",
+        "The JDAM is not a stand-alone weapon; rather it is a \"bolt-on\" guidance package that converts unguided gravity bombs into PGMs.",
+        "The key components of the system are a tail section with aerodynamic control surfaces, a (body) strake kit, and a combined inertial guidance system and GPS guidance control unit.",
+        "The JDAM was meant to improve upon laser-guided bomb and imaging infrared technology, which can be hindered by bad ground and weather conditions.",
+        "From 1998 to November 2016, Boeing completed more than 300,000 JDAM guidance kits."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Guided bomb",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3587974",
+      "retrieved_at": "2026-10-18T17:46:19.869Z",
+      "sha256": "150176d5d2208286c2e2525271bb67bd35a094da8c2d110204bf02d003710c59",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A guided bomb (also known as a smart bomb, guided bomb unit, or GBU) is a precision-guided munition designed to achieve a smaller circular error probable (CEP).",
+        "The creation of precision-guided munitions resulted in the retroactive renaming of older bombs as unguided bombs or \"dumb bombs\"."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Satellite navigation device",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17800413",
+      "retrieved_at": "2026-10-18T17:46:19.869Z",
+      "sha256": "450c9691f1d392d480ec7bff78ac4a279bd04fdecbed6243ff99c04fe88b19ff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A satellite navigation device, also called a satnav device or GPS/GNSS device, uses satellites of the Global Positioning System (GPS) or other global navigation satellite systems (GNSS) to determine the user's geographic coordinates.",
+        "It may also display the user's position on a map and offer routing directions (as in turn-by-turn navigation).",
+        "There are four global navigation satellite systems (GNSS): the United States' Global Positioning System (GPS), the European Union's Galileo, Russia's GLONASS, and China's BeiDou Navigation Satellite System.",
+        "These systems are often used together to improve positioning accuracy and availability.",
+        "In addition, regional systems such as India's NavIC and Japan's Quasi-Zenith Satellite System (QZSS), augment the accuracy of a number of GNSS over their respective regions.",
+        "A satellite navigation device can retrieve location and time information from one or more GNSS systems in all weather conditions, anywhere on or near the Earth's surface.",
+        "Satnav reception requires an unobstructed line of sight to four or more GNSS satellites, and is subject to poor satellite signal conditions.",
+        "In exceptionally poor signal conditions, for example in urban areas, satellite signals may exhibit multipath propagation where signals bounce off structures, or are weakened by meteorological conditions.",
+        "Obstructed lines of sight may arise from a tree canopy or inside a structure, such as in a building, garage or tunnel.",
+        "Today, most standalone satnav receivers are used in automobiles.",
+        "The satnav capability of smartphones may use assisted GNSS (A-GNSS) technology, which can use the base station or cell towers to provide a faster Time to First Fix (TTFF), especially when satellite signals are poor or unavailable.",
+        "However, the mobile network part of the A-GNSS technology would not be available when the smartphone is outside the range of the mobile reception network, while the satnav aspect would otherwise continue to be available."
+      ]
+    }
+  ]
+}

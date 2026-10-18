@@ -1,0 +1,122 @@
+{
+  "id": "mm-1315",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bridges Badly Built",
+      "publisher": "Oxford University Press",
+      "author": "Hutchings, David",
+      "published_at": "2021-11-18",
+      "url": "https://doi.org/10.1093/oso/9780190053093.003.0007",
+      "retrieved_at": "2026-10-18T17:50:30.847Z",
+      "sha256": "0f7b7923a0a136fccf14b7529d1467d2d3cb967ed5a25a0ae86f8c869a9dc421",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter unpicks the strange fact that John William Draper and Andrew Dickson White both claimed to be writing to reconcile science and religion, and yet managed to do the precise opposite—they significantly boosted the conflict thesis.",
+        "What exactly were the motivations of the two men; how did they get it so wrong?",
+        "By looking at their respective influences and analyzing their progressive and liberal theology, this chapter unravels the apparent contradiction.",
+        "It concludes that the looseness of their pseudo-Christianity actually led to agnostics and atheists appropriating their manuscripts in a way that neither of them could have previously imagined.",
+        "By attacking what they saw as backward and naïve theology, both Draper and White undermined the historical faith altogether, and made it possible for their own conflict thesis narrative to be turned against them.",
+        "Their liberal Protestantism turned out to be far closer to full-blown atheism than they had ever realized."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Suspension bridge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=47607",
+      "retrieved_at": "2026-10-18T17:50:32.039Z",
+      "sha256": "560de4abfd17d8874b5ec598b16b4d9bb8186bb49a5a82cb2218a8017c8c538a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A suspension bridge is a type of bridge in which the deck is hung below suspension cables on vertical suspenders.",
+        "The first modern examples of this type of bridge were built in the early 19th century.",
+        "Simple suspension bridges, which lack vertical suspenders, have a long history in many mountainous regions worldwide.",
+        "Besides the bridge type most commonly called suspension bridges, covered in this article, there are other types of suspension bridges.",
+        "The type covered here has cables suspended between towers, with vertical suspender cables that transfer the live and dead loads of the deck below, upon which traffic crosses.",
+        "This arrangement allows the deck to be level or to arc upward for additional clearance.",
+        "Like other suspension bridge types, this type often is constructed without the use of falsework.",
+        "The suspension cables must be anchored at each end of the bridge, since any load applied to the bridge is transformed into tension in these main cables.",
+        "The main cables continue beyond the pillars to deck-level supports, and further continue to connections with anchors in the ground.",
+        "The roadway is supported by vertical suspender cables or rods, called hangers.",
+        "In some circumstances, the towers may sit on a bluff or canyon edge where the road may proceed directly to the main span.",
+        "Otherwise, the bridge will typically have two smaller spans, running between either pair of pillars and the highway, which may be supported by suspender cables or their own trusswork."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Clifton Suspension Bridge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=92324",
+      "retrieved_at": "2026-10-18T17:50:32.039Z",
+      "sha256": "a09e104d4b5c925b9d27f3e6758395e2be03727d274a901d8c34e60ec94ad51c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Clifton Suspension Bridge is a suspension bridge spanning the Avon Gorge and the River Avon, linking Clifton in Bristol to Leigh Woods in North Somerset.",
+        "Since opening in 1864, it has been a toll bridge, the income from which provides funds for its maintenance.",
+        "The bridge is built to a design by William Henry Barlow and John Hawkshaw, based on an earlier design by Isambard Kingdom Brunel.",
+        "It is a Grade I listed building and forms part of the B3129 road.",
+        "The idea of building a bridge across the Avon Gorge originated in 1753.",
+        "Original plans were for a stone bridge and later iterations were for a wrought iron structure.",
+        "In 1831, an attempt to build Brunel's design was halted by the 1831 Bristol riots, and the revised version of his designs was built after his death and completed in 1864.",
+        "Although similar in size and design, the bridge towers are not identical, the Clifton tower having side cut-outs, the Leigh tower more pointed arches atop a 110-foot (34 m) red sandstone-clad abutment.",
+        "Roller-mounted \"saddles\" at the top of each tower allow movement of the three independent wrought iron eyebar chains on each side when loads pass over the bridge.",
+        "The bridge deck is suspended by 162 vertical wrought-iron rods in 81 matching pairs.",
+        "The Clifton Bridge Company initially managed the bridge under licence from a charitable trust.",
+        "The trust subsequently purchased the company shares, completing this in 1949 and took over the running of the bridge using the income from tolls to pay for maintenance."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Cable-stayed bridge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=160668",
+      "retrieved_at": "2026-10-18T17:50:32.039Z",
+      "sha256": "6d5725c2ddcb9facf1c5d5d6c56b96c5cee73b2b9003c937d0df86255d006c30",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A cable-stayed bridge is a type of bridge that has one or more towers (or pylons), from which cables support the bridge deck.",
+        "A distinctive feature is the presence of cables or stays, which run directly from the tower to the deck, normally forming a fan-like pattern or a series of parallel lines.",
+        "This is in contrast to the modern suspension bridge, where the cables supporting the deck are suspended vertically from the main cables, which run between the towers and are anchored at both ends of the bridge.",
+        "The cable-stayed bridge is optimal for spans longer than cantilever bridges and shorter than suspension bridges.",
+        "This is the range within which cantilever bridges would rapidly grow heavier, and suspension bridge cabling would be more costly.",
+        "Cable-stayed bridges found wide use in the late 19th century.",
+        "Early examples, including the Brooklyn Bridge, often combined features from both the cable-stayed and suspension designs.",
+        "Cable-stayed designs fell from favor in the early 20th century as larger gaps were bridged using pure suspension designs, and shorter ones using various systems built of reinforced concrete.",
+        "It returned to prominence in the later 20th century when the combination of new materials, larger construction machinery, and the need to replace older bridges all lowered the relative price of these designs."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of longest suspension bridge spans",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1604842",
+      "retrieved_at": "2026-10-18T17:50:32.039Z",
+      "sha256": "ad18a98ee10b5811cb1fdd61778b8bbeaeeb475e4e23819f92d3e2d397870e01",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The world's longest suspension bridges are listed according to the length of their main span (i.e., the length of suspended roadway between the bridge's towers).",
+        "The length of the main span is the most common method of comparing the sizes of suspension bridges, often correlating with the height of the towers and the engineering complexity involved in designing and constructing the bridge.",
+        "If one bridge has a longer span than another, it does not necessarily mean that the bridge is longer from shore to shore (or from abutment to abutment).",
+        "Suspension bridges have the longest spans of any type of bridge.",
+        "Cable-stayed bridges, the next longest design, are practical for spans up to just over one kilometre (the longest cable-stayed bridge in the world has a 1,176 m span).",
+        "Therefore, as of October 2025, the 28 longest bridges on this list are the 28 longest spans of all types of vehicular bridges.",
+        "The 1915 Çanakkale Bridge in Turkey holds the record since opening to traffic in March 2022, with a span of 2,023 metres (6,637 ft).",
+        "Since 1998, the Akashi Kaikyo Bridge in Japan previously held the record with a span of 1,991 metres (6,532 feet), the Zhangjinggao Yangtze River Bridge in China will break the record in 2028 while the Strait of Messina Bridge in Italy will go to the top of the list in 2032."
+      ]
+    }
+  ]
+}

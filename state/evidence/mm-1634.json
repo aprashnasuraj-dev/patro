@@ -1,0 +1,149 @@
+{
+  "id": "mm-1634",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The missing link: why Australia needs energy storage",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Williams, Richard",
+      "published_at": "2013-03-04",
+      "url": "https://theconversation.com/the-missing-link-why-australia-needs-energy-storage-10846",
+      "retrieved_at": "2026-10-18T17:59:07.495Z",
+      "sha256": "ca1e56f38bf2783f1fe2c10d023b61acbb8e0b371ffa7ddc3b3b7f32c7c63b06",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The missing link: why Australia needs energy storage Skip to content Academic rigor, journalistic flair Australia’s hydro energy storage systems are getting long in the tooth: maybe it’s time to look at liquid air.",
+        "Perhaps it is because Australia thinks there is a vital missing link: the ability to store energy.",
+        "With renewable sources such as wind, wave and solar, energy is often created in the wrong place at the wrong time, making it difficult to utilise.",
+        "Australians aspire to use renewable resources but are thwarted by the practicalities of renewables’ use in future energy generation and supply systems.",
+        "In Australia, climate change legislation is driving decarbonisation.",
+        "This will shift the energy provision and create new markets.",
+        "The public mind however is on cost, accessibility and security of supply.",
+        "In the UK, the electricity generation mix and the opportunities are very different.",
+        "In November the UK Chancellor announced that energy storage technology was critical to the future UK economy and will be worth £10B a year by 2050.",
+        "This value comes from understanding where the different energy storage technologies fit into the grid at generation, transmission and distribution.",
+        "Governments have to determine how to configure a robust energy system to suit the changing energy mix and minimise the cost of transmission investment as the demand for electrical power grows.",
+        "Different applications demand appropriate storage characteristics and a range of technologies are needed to suit the specific needs."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why Some Technologies Are Not Included",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2020-07-31",
+      "url": "https://www.cambridge.org/highereducation/books/100-clean-renewable-energy-and-storage-for-everything/26E962411A4A4E1402479C5AEE680B08",
+      "retrieved_at": "2026-10-18T17:59:08.268Z",
+      "sha256": "63a073076899f4354f6f30e320eb07563d363175c656fc3e3cba2c26589a43dc",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "100% Clean, Renewable Energy and Storage for Everything | Cambridge Aspire website Skip to main content Accessibility help t d Internet Explorer 11 is being discontinued by Microsoft in August 2021.",
+        "If you have difficulties viewing the site on Internet Explorer 11 we recommend using a different browser such as Microsoft Edge, Google Chrome, Apple Safari or Mozilla Firefox.",
+        "Jacobson Online publication date: 17 February 2026 Paperback publication date: Textbook Undergraduate Library eCollections Authors Mark Z.",
+        "This textbook lays out the science, technology, economics, policy, and social aspects of such transitions.",
+        "It discusses the renewable electricity and heat generating technologies needed; the electricity, heat, cold, and hydrogen storage technologies required; how to keep the electric power… Read more &gt; Resources available Unlock the full potential of this textbook with additional resources.",
+        "There are free resources and Instructor restricted resources available for this textbook.",
+        "Explore resources Get access Share Export citation Add to bookmarks Download flyer Add bookmark Export citation Share Resources available Unlock the full potential of this textbook with additional resources.",
+        "There are free resources and Instructor restricted resources available for this textbook.",
+        "Explore resources Overview Contents Resources Authors Reviews Metrics Accessibility Overview Key features The first textbook to explain how 100% clean, renewable energy can be achieved, in a short time, using technologies that are currently available.",
+        "Includes energy generation, storage, and transmission technologies for how to transition from fossil fuels.",
+        "Research presented in the book serves as the scientific basis for the Green New Deal and many laws by towns, cities, states, and countries to go to 100% clean, renewable energy.",
+        "Derived from a groundbreaking course taught by the author, over 30 Transition Highlights show real-world examples of successful transition to 100% renewables."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Energy storage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24130",
+      "retrieved_at": "2026-10-18T17:59:08.605Z",
+      "sha256": "0ff1db5e3d25cb3947080cf5335251a388a8af2735b20be8bb3089b12c877bc9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy storage is the capture of energy produced at one time for use at a later time to reduce imbalances between energy demand and energy production.",
+        "A device that stores energy is generally called an accumulator or battery.",
+        "Energy comes in multiple forms including radiation, chemical, gravitational potential, electrical potential, electricity, elevated temperature, latent heat, potential and kinetic.",
+        "Energy storage involves converting energy from forms that are difficult to store to more conveniently or economically storable forms.",
+        "Some technologies provide short-term energy storage, while others can endure for much longer.",
+        "Bulk energy storage is currently dominated by hydroelectric dams, both conventional as well as pumped.",
+        "Grid energy storage is a collection of methods used for energy storage on a large scale within an electrical power grid.",
+        "Fossil fuels such as coal and gasoline store ancient energy derived from sunlight by organisms that later died, became buried and over time were then converted into these fuels.",
+        "Food (which is made by the same process as fossil fuels) is a form of energy stored in chemical form."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Renewable energy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25784",
+      "retrieved_at": "2026-10-18T17:59:08.605Z",
+      "sha256": "3995cd2d6c2cf81c0aee04a4507d8bbda011664296d196053842f3b208587933",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Renewable energy (also called green energy) is energy made from renewable natural resources that are replenished on a human timescale.",
+        "The most widely used renewable energy types are solar energy, wind power, bioenergy/biomass, and hydropower.",
+        "Bioenergy and geothermal power are also significant in some countries.",
+        "Renewable energy installations can be large or small and are suited for both urban and rural areas.",
+        "Renewable energy is often deployed together with further electrification.",
+        "This has several benefits: electricity can move heat and vehicles efficiently and is clean at the point of consumption.",
+        "Variable renewable energy sources are those that have a fluctuating nature, such as wind power and solar power.",
+        "In contrast, controllable renewable energy sources include dammed hydroelectricity, bioenergy, or geothermal power.",
+        "For an energy to be renewable, it must be an endless source.",
+        "Nuclear power is therefore not considered renewable, due to its reliance on non-renewable fuel.",
+        "Renewable energy systems have rapidly become more efficient and cheaper over the past 40 years.",
+        "A large majority of newly installed worldwide electricity capacity is now renewable."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Sustainable energy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1055890",
+      "retrieved_at": "2026-10-18T17:59:08.605Z",
+      "sha256": "f5f0d904f0e2cc10af44189ad527de0e8d2c2724c626913c1f99a0f416292e93",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Energy is sustainable if it \"meets the needs of the present without compromising the ability of future generations to meet their own needs.\" Definitions of sustainable energy usually look at its effects on the environment, the economy, and society.",
+        "These impacts range from greenhouse gas emissions and air pollution to energy poverty and toxic waste.",
+        "Renewable energy sources such as wind, hydro, solar, and geothermal energy can cause environmental damage but are generally far more sustainable than fossil fuel sources.",
+        "The role of non-renewable energy sources in sustainable energy is controversial.",
+        "Nuclear power does not produce carbon pollution or air pollution, but has drawbacks that include radioactive waste, the risk of nuclear proliferation, and the risk of accidents.",
+        "Switching from coal to natural gas has environmental benefits, including a lower climate impact, but may lead to a delay in switching to more sustainable options, being an example of carbon lock-in.",
+        "Carbon capture and storage could be built into power plants to reduce their carbon dioxide (CO2) emissions, but this technology is expensive and has rarely been implemented.",
+        "Fossil fuels provide 85% of the world's energy consumption, and the energy system is responsible for 76% of global greenhouse gas emissions.",
+        "Around 790 million people in developing countries lack access to electricity, and 2.6 billion rely on polluting fuels such as wood or charcoal to cook.",
+        "Cooking with biomass plus fossil fuel pollution causes an estimated 7 million deaths each year.",
+        "Limiting global warming to 2 °C (3.6 °F) will require transforming energy production, distribution, storage, and consumption.",
+        "Universal access to clean electricity can have major benefits to the climate, human health, and the economies of developing countries."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Energy return on investment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1228320",
+      "retrieved_at": "2026-10-18T17:59:08.605Z",
+      "sha256": "822573dad45727b165b432a58f917e27b441274dfe364cb4c78a245cc4b48f15",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "When the EROI of a source of energy is less than or equal to one, that energy source becomes a net \"energy sink\" and can no longer be used as a source of energy.",
+        "A related measure, called energy stored on energy invested (ESOEI), is used to analyse storage systems.",
+        "To be considered viable as a prominent fuel or energy source, a fuel or energy must have an EROI ratio of at least 3:1."
+      ]
+    }
+  ]
+}

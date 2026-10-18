@@ -1,0 +1,115 @@
+{
+  "id": "mm-0723",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Camels on American Deserts",
+      "publisher": "The University of Iowa",
+      "author": null,
+      "published_at": "1944-04",
+      "url": "https://doi.org/10.17077/0003-4827.6270",
+      "retrieved_at": "2026-10-18T17:28:07.413Z",
+      "sha256": "66a7570e47920650f8775df950504c3ea3c3642306eab43626f82c33ee643a76",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "doi: https://doi.org/10.17077/0003-4827.6270 Rights: No known copyright restrictions.",
+        "doi: 10.17077/0003-4827.6270 Show: Vancouver Citation Style | APA Citation Style &times; Vancouver-style Citation Camels on American Deserts.",
+        "doi: 10.17077/0003-4827.6270 Show: Harvard Citation Style | APA Citation Style &times; APA-style Citation (1944).",
+        "https://doi.org/10.17077/0003-4827.6270 Show: Harvard Citation Style | Vancouver Citation Style &times; Non Specialist Summary This article has no summary &times;"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "HOW TO SURVIVE THE APOCALYPSE",
+      "publisher": "University of Georgia Press",
+      "author": null,
+      "published_at": "2022-08-15",
+      "url": "https://doi.org/10.2307/j.ctv2r4kx2m.48",
+      "retrieved_at": "2026-10-18T17:28:08.967Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Camel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6598",
+      "retrieved_at": "2026-10-18T17:28:08.967Z",
+      "sha256": "88a8b20d47c7560099d759c2ce9b86b0ec669e71f4e20f743102292cd60d87b6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A camel (from Latin: camelus and Ancient Greek: κάμηλος (kamēlos) from Ancient Semitic: gāmāl) is an even-toed ungulate in the genus Camelus that bears distinctive fatty deposits known as \"humps\" on its back.",
+        "Camels have long been domesticated and, as livestock, they provide food (camel milk and meat) and textiles (fiber and felt from camel hair).",
+        "Camels are working animals especially suited to their desert habitat and are a vital means of transport for passengers and cargo.",
+        "The one-humped dromedary makes up 94% of the world's camel population, and the two-humped Bactrian camel makes up 6%.",
+        "The wild Bactrian camel is a distinct species that is not ancestral to the domestic Bactrian camel, and is now endangered, with around 1,000 individuals and a continuing decline.",
+        "Camelids originated in North America during the Eocene, with the ancestor of modern camels, Paracamelus, migrating across the Bering land bridge into Asia during the late Miocene, around 6 million years ago."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Nearctic realm",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45393",
+      "retrieved_at": "2026-10-18T17:28:08.967Z",
+      "sha256": "9d6893dfc50283236dbc90e1782834b48761a44ea139c2ebb23fd9dda72be4c3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Nearctic realm is one of the eight biogeographic realms constituting Earth's land surface.",
+        "The Nearctic realm covers most of North America, including Greenland, Central Florida, and the highlands of Mexico.",
+        "The parts of North America that are not in the Nearctic realm include most of coastal Mexico, southern Mexico, southern Florida, coastal central Florida, Central America, Bermuda and the Caribbean islands.",
+        "Together with South America, these regions are part of the Neotropical realm."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Robyn Davidson",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=406578",
+      "retrieved_at": "2026-10-18T17:28:08.967Z",
+      "sha256": "56dae146bd8d6cb9f2d4e00ef61ebfba1910f272357ef92bdce8eb749d4563a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Robyn Davidson OAM is an Australian writer best known for her 1980 book Tracks, about her 2,700 km (1,700 miles) trek across the deserts of Western Australia using camels.",
+        "Her career of travelling and writing about her travels has spanned 40 years."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Afghan cameleers in Australia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15589320",
+      "retrieved_at": "2026-10-18T17:28:08.967Z",
+      "sha256": "cecb57535cd08fca70cb2ceb6993108e958c4a1d25d7509b70972e9d177dbd80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Afghan cameleers in Australia, also known as \"Afghans\" (Pashto: افغانان) or \"Ghans\" (Pashto: غانز), were camel drivers who worked in Outback Australia from the 1860s to the 1930s.",
+        "Small groups of cameleers were shipped in and out of Australia at three-year intervals, to service the Australian inland  industry by carting goods and transporting wool bales by camel trains.",
+        "They were commonly referred to as \"Afghans\", even though the majority of them originated from the western parts of British India like Balochistan, Punjab, Sindh, the North-West Frontier Province (inhabited by ethnic Pashtuns who were historically known as Afghans), and other nearby regions.",
+        "However, some of the cameleers were indeed from Afghanistan.",
+        "In addition, there were also some with origins in Egypt and Turkey.",
+        "They provided vital support to exploration, communications and settlement in the arid interior of the country where the climate was too harsh for horses.",
+        "They also played a major role in establishing Islam in Australia, building the country's first mosque at Marree in South Australia in 1861, the Central Adelaide Mosque (the first permanent mosque in Adelaide, still in use today), and several mosques in Western Australia.",
+        "Many of the cameleers and their families later returned to their homelands, but some remained and turned to other trades and ways of making a living."
+      ]
+    }
+  ]
+}

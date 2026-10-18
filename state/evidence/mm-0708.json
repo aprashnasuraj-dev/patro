@@ -1,0 +1,90 @@
+{
+  "id": "mm-0708",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Thermostat",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=265822",
+      "retrieved_at": "2026-10-18T17:28:04.577Z",
+      "sha256": "6e83fd5e275f37e2b07cb00ad18ddfec211bab582f4a2625a51c3be73c3d7f17",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A thermostat is a regulating device component which senses the temperature of a physical system and performs actions so that the system's temperature is maintained near a desired  setpoint.",
+        "Thermostats are used in any device or system that heats or cools to a setpoint temperature.",
+        "Examples include building heating, central heating, air conditioners, HVAC systems, water heaters, as well as kitchen equipment including ovens and refrigerators and medical and scientific incubators.",
+        "In scientific literature, these devices are often broadly classified as thermostatically controlled loads (TCLs).",
+        "Thermostatically controlled loads comprise roughly 50% of the overall electricity demand in the United States.",
+        "A thermostat operates as a \"closed loop\" control device, as it seeks to reduce the error between the desired and measured temperatures.",
+        "Sometimes a thermostat combines both the sensing and control action elements of a controlled system, such as in an automotive thermostat.",
+        "The word thermostat is derived from the Greek words θερμός thermos, \"hot\" and στατός statos, \"standing, stationary\"."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Programmable thermostat",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=6910727",
+      "retrieved_at": "2026-10-18T17:28:04.577Z",
+      "sha256": "c73ab655e25e8cf36d0fce8e8a95f5927c434d566930b326f46c233474fcbb74",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A programmable thermostat is a thermostat which is designed to adjust the temperature according to a series of programmed settings that take effect at different times of the day.",
+        "Programmable thermostats are also known as setback thermostats or clock thermostats."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Smart thermostat",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29640242",
+      "retrieved_at": "2026-10-18T17:28:04.577Z",
+      "sha256": "cecd9445b88df0007028f4be1569489976c0ceefc9d480eb4369386e8e701eff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Smart thermostats are Wi-Fi thermostats that can be used with home automation and are responsible for controlling a home's heating, ventilation, and air conditioning.",
+        "They perform similar functions as a programmable thermostat as they allow the user to control the temperature of their home throughout the day using a schedule, but also contain additional features, such as Wi-Fi connectivity, that improve upon the issues with programming.",
+        "Like other Wi-Fi thermostats, they are connected to the Internet via a Wi-Fi network.",
+        "They allow users to adjust heating settings from other internet-connected devices, such as a laptop or smartphones.",
+        "This ease of use is essential for ensuring energy savings: studies have shown that households with programmable thermostats actually have higher energy consumption than those with simple thermostats because residents program them incorrectly or disable them completely.",
+        "Smart thermostats also record internal/external temperatures, the time the HVAC system has been running and can notify the user if the system's air filter needs to be replaced.",
+        "This information is typically displayed later on an internet-connected device such as a smartphone."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Google Nest",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=34113322",
+      "retrieved_at": "2026-10-18T17:28:04.577Z",
+      "sha256": "05355b0211ec06a7d3cc00f5fed34799aae6162bb31299b6445174d44c31e6c3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Google Nest, formerly branded Google Home, is a line of smart home products including smart speakers, smart displays, streaming devices, thermostats, smoke detectors, routers and security systems including smart doorbells, cameras and smart locks.",
+        "The Nest brand name was originally owned by Nest Labs, co-founded by former Apple engineers Tony Fadell and Matt Rogers in 2010.",
+        "Its flagship product, which was the company's first offering, is the Nest Learning Thermostat, introduced in 2011.",
+        "The product is programmable, self-learning, sensor-driven, and Wi-Fi-enabled: features that are often found in other Nest products.",
+        "It was followed by the Nest Protect smoke and carbon monoxide detectors in October 2013.",
+        "After its acquisition of Dropcam in 2014, the company introduced its Nest Cam branding of security cameras beginning in June 2015.",
+        "The company quickly expanded to more than 130 employees by the end of 2012.",
+        "Google acquired Nest Labs for US$3.2 billion in January 2014, when the company employed 280.",
+        "As of late 2015, Nest employs more than 1,100 and added a primary engineering center in Seattle.",
+        "After Google reorganized itself under the holding company Alphabet Inc., Nest operated independently of Google from 2015 to 2018.",
+        "However, in 2018, Nest was merged into Google's home-devices unit led by Rishi Chandra, effectively ceasing to exist as a separate business.",
+        "In July 2018, it was announced that all Google Home electronics products will henceforth be marketed under the brand Google Nest."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "mq-0292",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Present-day stellar constraints leave multiple high-energy histories for TOI-700 and LHS 1140",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Zhang, Yuzhan",
+      "published_at": "2026-08-18",
+      "url": "https://doi.org/10.21203/rs.3.rs-10726883/v1",
+      "retrieved_at": "2026-10-18T18:49:35.452Z",
+      "sha256": "33da35f4d50a47e567846af1c59cda639499898a9eace212b9b704af7aad53a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Atmospheric evolution on temperate planets records integrated X-ray, extreme-ultraviolet (EUV) and stellar-wind forcing, whereas host stars are usually characterized from present-day measurements.",
+        "Rotation and activity histories can converge at late ages, leaving different cumulative exposures compatible with similar current states.",
+        "We quantify this inverse problem for TOI-700 and LHS 1140 without treating either planet as a calibrated atmospheric chronometer.",
+        "Among rotation-conditioned tracks, 194 histories matching TOI-700 span only a factor 1.077 in current EUV but factors 2.65 and 2.73 in cumulative EUV and wind exposure.",
+        "For LHS 1140, 97 rotation-matched histories span 1.0085 in current EUV but 1.567 and 1.543 cumulatively.",
+        "An independent X-ray measurement tests the present-activity mapping yet provides little ranking of these histories because their native current X-ray luminosities differ by only 0.0038 dex.",
+        "The results separate present-state admissibility, forward-model adequacy and historical identification, and show why an additional present observable need not reduce uncertainty in the historical forcing relevant to planetary evolution."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T18:49:38.144Z",
+      "sha256": "f5487d15823c751a67c0d33cf6fc26299a2023b01099e1e398f6ccab90f44a50",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Use the Transit and Radial Velocity Methods to Detect Exoplanet LHS 1140 b",
+      "publisher": "EWA Publishing",
+      "author": "Wang, Kecheng",
+      "published_at": "2025-11-05",
+      "url": "https://doi.org/10.54254/2753-8818/2026.hz28999",
+      "retrieved_at": "2026-10-18T18:49:38.145Z",
+      "sha256": "b7f44728f47dcb0f44b8926872a3bcabdde054a21ade592cf9d01252dc677b44",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With the trend of technology advancement and environmental resource depletion, scientists make a hard effort to explore exoplanets that have ideal conditions for new colonization.",
+        "Although the telescope becomes innovative, it is capable of detecting longer expansion of space.",
+        "However, farther planets need to use some methods, typically, the transit method and the radial velocity method.",
+        "By using the radial velocity method, this research applies the data of radial velocity and the mass of the star to calculate the mass of the planet using a formula.",
+        "Thus, the topic of this essay is to use both methods to show how they can detect exoplanets’ mass and the location of revolving orbits.",
+        "After that, the difference between the two methods needs to be determined because of the differences.",
+        "Also, the implications of the radial velocity method are significant.",
+        "Specifically, by using the data including the mass of the host star LSH 1140, the orbiting period of LHS 1140 b, also the radial velocity of LHS 1140 b, to deduce the mass of this exoplanet."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "82260",
+      "publisher": "European Space Agency",
+      "author": null,
+      "published_at": null,
+      "url": "https://doi.org/10.5270/esa-8q1yeks",
+      "retrieved_at": "2026-10-18T18:49:39.591Z",
+      "sha256": "ed97ded00770e929e3ea1a288ae8eb42671ff3c1bcacf30cdcfb8b3f8226cde5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "The MEarth Project has discovered a rocky planet with aperiod of 24.73 days residing in the habitable zone of the nearby, spun- downstar LHS 1140.",
+        "We seek to detect the high energy emission from LHS 1140 in orderto constrain atmospheric escape and aid future studies of LHS 1140bsatmosphere, which are already planned in the JWST GTO program.",
+        "In addition, LHS1140 is representative of the low mass, slowly rotating population of M dwarfsin the Milky Way.",
+        "A deep X-ray exposure on this extremum of the stellarpopulation will shed insight into the magnetic dynamo and high energy processes ongoing in these stars.",
+        "Publications Planetary Parameters XUV Environments and Mass-loss Rates for Nearby Gaseous Planets with X-Ray-detected Host Stars |Spinelli Riccardo Gallo Elena et al.",
+        "| AJ | 165-200 | 2023 | 2023AJ....165..200S | http://ui.adsabs.harvard.edu/#abs/2023AJ....165..200S From Active Stars to Black Holes: A Discovery Tool for Galactic X-Ray Sources |Rodriguez Antonio C.",
+        "| PASP | 136-054201 | 2024 | 2024PASP..136e4201R | http://ui.adsabs.harvard.edu/#abs/2024PASP..136e4201R Exoplanet Aeronomy: A Case Study of WASP-69 bs Variable Thermosphere |Levine W.",
+        "XMM-Newton is ESAs second cornerstone of the Horizon 2000 Science Programme.",
+        "It carries 3 high throughput X-ray telescopes with an unprecedented effective area, and an optical monitor, the first flown on a X-ray observatory.",
+        "The large collecting area and ability to make long uninterrupted exposures provide highly sensitive observations.",
+        "Since Earths atmosphere blocks out all X-rays, only a telescope in space can detect and study celestial X-ray sources.",
+        "The XMM-Newton mission is helping scientists to solve a number of cosmic mysteries, ranging from the enigmatic black holes to the origins of the Universe itself."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Gliese 876",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1198225",
+      "retrieved_at": "2026-10-18T18:49:39.591Z",
+      "sha256": "a75ad28d0b960e953a375d2b1b67f3fe48a0367894ef861985debd425dd379c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gliese 876 is a red dwarf star 15.2 light-years (4.7 parsecs) away from Earth in the constellation of Aquarius.",
+        "It is one of the closest known stars to the Sun confirmed to possess a planetary system with more than three planets, the closest of which is Barnard's Star which is 6 ly away; as of 2018, four extrasolar planets have been found to orbit the star.",
+        "The planetary system is also notable for the orbital properties of its planets.",
+        "It is the only known system of orbital companions to exhibit a near-triple conjunction in the rare phenomenon of Laplace resonance (a type of resonance first noted in Jupiter's inner three Galilean moons).",
+        "It is also the first extrasolar system around a normal star with measured coplanarity.",
+        "While planets b and c are located in the system's habitable zone, they are giant planets believed to be analogous to Jupiter."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of smallest known stars",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40260097",
+      "retrieved_at": "2026-10-18T18:49:39.591Z",
+      "sha256": "3df837fa16897d09ee1c644c6edd7086f7afec255e0a3a661441383c947cd55f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of the smallest known stars, brown dwarfs and stellar remnants, sorted by increasing size.",
+        "The list is divided into sublists, and contain notable objects up to 350,000 km in radius, or 0.50 R☉, as well as all red dwarfs smaller than 0.1 R☉ and all neutron stars with accurately measured radii."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "TRAPPIST-1",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50402274",
+      "retrieved_at": "2026-10-18T18:49:39.591Z",
+      "sha256": "93043a0f174d7fe687cff7cfc3fbea3035e657f40dfaa7c7f1aa51c53c65d497",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "TRAPPIST-1 (also known as 2MASS J23062928−0502285 or SPECULOOS-1) is a red dwarf star with seven known exoplanets.",
+        "It lies in the constellation Aquarius approximately 40.66 light-years (12.47 pc) away from Earth.",
+        "An ultra-cool dwarf, it has a surface temperature of about 2,566 K (2,290 °C; 4,160 °F).",
+        "Its radius is slightly larger than Jupiter's and it has a mass of about 9% of the Sun.",
+        "It is estimated to be 7.6 billion years old, making it older than the Solar System.",
+        "Observations in 2016 from TRAPPIST–South (Transiting Planets and Planetesimals Small Telescope project) at La Silla Observatory in Chile and other telescopes led to the discovery of two terrestrial planets in orbit around TRAPPIST-1.",
+        "In 2017, further analysis of the original observations identified five more terrestrial planets.",
+        "The seven planets take between 1.5 and 19 days to orbit the star in circular orbits.",
+        "They are all likely tidally locked to TRAPPIST-1, and it is therefore believed that each planet is in permanent day on one side and permanent night on the other.",
+        "Their masses are comparable to that of Earth and they all lie in the same plane; seen from Earth, they pass in front of the star.",
+        "This placement allowed the planets to be detected: when they pass in front of the star, its apparent magnitude dims.",
+        "Up to four of the planets—designated d, e, f, and g—orbit at distances where temperatures are likely suitable for the existence of liquid water, and are thus potentially hospitable to life."
+      ]
+    }
+  ]
+}
