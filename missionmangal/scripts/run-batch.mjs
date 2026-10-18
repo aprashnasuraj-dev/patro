@@ -9,7 +9,7 @@ import {candidatesFrom,dedupeByHost} from '../research/candidates.mjs';
 import {snapshot,cloudflareRenderer,excerptsFrom} from '../research/scraper.mjs';
 import {makeLlm} from '../research/llm.mjs';
 import {loadAdapters} from '../core/provider-router.mjs';
-import {decide} from '../core/auto-approve.mjs';
+import {decide,YMYL} from '../core/auto-approve.mjs';
 import {findImages,providerOrder} from '../research/images.mjs';
 import {adapterFor,planParams,fetchEvidence} from '../research/data-apis.mjs';
 import {writeArticle} from '../research/writer.mjs';
@@ -40,7 +40,7 @@ export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,d
     if(c.abstract){add(c,excerptsFrom(c.abstract),createHash('sha256').update(c.abstract).digest('hex'),c.url,now().toISOString());continue;}
     try{const s=await snapshot(c.url,{fetchImpl,renderer:render,now});add(c,s.excerpts,s.sha256,s.canonical||s.url,s.retrieved_at,s.rendered,true);}catch{}}
    await writeFile(join(out,'evidence',r.id+'.json'),JSON.stringify({id:r.id,evidence},null,2));
-   const need=Math.min(20,Math.max(5,Math.ceil((meta.min_citations||5)*0.6)));
+   const normalNeed=Math.min(20,Math.max(5,Math.ceil((meta.min_citations||5)*0.6)));\n   const lowRiskRescue=attempt>1&&isLowRiskGeneralQuestion(meta,question);\n   const need=lowRiskRescue?5:normalNeed;
    if(evidence.length<need){await note(r,'blocked',{reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources (<'+need+')'});continue;}
    if(!llm.available()){await note(r,'retry_later',{reason:'NO_PROVIDER'});continue;}
    const w=await writeArticle({llm,meta,title,evidence,need,attempt});
@@ -54,7 +54,7 @@ export async function runBatch({root=resolve('missionmangal'),shard=0,shards=1,d
     media:img.media,provenance:{sources_n:usedEv.length,first_retrieved:when[0],last_retrieved:when[when.length-1],hosts:[...new Set(usedEv.map(e=>new URL(e.url).host))],scraped:usedEv.some(e=>e.scraped),apis:[...new Set(apis)]},voice:{residual:w.voice_problems_after},generation:{attempt,at:now().toISOString()}};
    img.media.forEach(m=>usedImages.add(m.url));
    let status='review',extra={};
-   if(autoApprove){const v=decide(article,meta,{allowYmyl,seen,minImages:attempt>1?1:Math.min(3,want),minWordsRatio:attempt>1?0.2:0.4});if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else extra={held:v.why};}
+   if(autoApprove){const approvalMeta=lowRiskRescue?{...meta,min_citations:5}:meta;const v=decide(article,approvalMeta,{allowYmyl,seen,minImages:attempt>1?1:Math.min(3,want),minWordsRatio:attempt>1?0.2:0.4});if(v.ok){Object.assign(article,v.article);status='approved';seen.push({id:r.id,body:article.body_md});}else extra={held:v.why};}
    await writeFile(join(out,'content',r.id+'.json'),JSON.stringify(article,null,2));
    await note(r,status,{images:img.media.length,...extra});
   }catch(e){const msg=(e.code||'ERROR')+': '+e.message.slice(0,200);await note(r,TRANSIENT.test(msg)||TRANSIENT.test(e.message)?'retry_later':'blocked',{reason:msg});}
