@@ -86,7 +86,8 @@ test('gate: approves a grounded article with independent sources and zero images
  const policy={min_sources:3,min_words:400};
  assert.equal(decideV2(base(),{route:'general',policy}).ok,true);
  const aggregatorOnly=base();aggregatorOnly.sources.forEach((s,i)=>s.url=['https://en.wikipedia.org/wiki/A','https://openalex.org/W1','https://doi.org/10.1234/x'][i]);
- assert.ok(decideV2(aggregatorOnly,{route:'general',policy}).why.some(x=>x.startsWith('SOURCE_INDEPENDENCE')),'aggregators must not count as independent publishers');
+ assert.equal(decideV2(aggregatorOnly,{route:'general',policy}).ok,true,'general route uses grounded cached evidence without an independent-domain research floor');
+ assert.ok(decideV2(aggregatorOnly,{route:'research',policy}).why.some(x=>x.startsWith('SOURCE_INDEPENDENCE')),'research route still requires independent publisher domains');
  assert.deepEqual(decideV2(base(),{route:'ymyl',policy}).why,['HELD_YMYL']);
  assert.ok(decideV2({...base(),body_md:'short'},{route:'general',policy}).why[0].startsWith('TOO_SHORT'));
  assert.ok(decideV2(base(),{route:'general',policy,seen:[{id:'z',body}]}).why[0].startsWith('NEAR_DUPLICATE'));
