@@ -20,6 +20,6 @@ export function decideV2(article,{route,policy,allowYmyl=false,seen=[],maxSimila
  if(why.length)return {ok:false,why};
  const a={...article,status:'approved',ai_assisted:true,quality_policy:{route,min_sources:policy.min_sources,require_media:false},
   disclaimer:route==='ymyl'?'This is general educational information, not professional advice.':undefined,
-  sources:article.sources.map(s=>({...s,verified:true,verification:'retrieved-passage-match; independent-domain gate passed'})),review:{mode:'automated',policy:'v2-grounding+route-gate',route,at:now().toISOString()}};
+  sources:article.sources.map(s=>({...s,verified:true,verification:route==='general'?'retrieved-passage-match; general route cached-evidence policy':'retrieved-passage-match; independent-domain gate passed'})),review:{mode:'automated',policy:'v2-grounding+route-gate',route,at:now().toISOString()}};
  const problems=auditArticle(a);return problems.length?{ok:false,why:problems}:{ok:true,article:a};
 }
