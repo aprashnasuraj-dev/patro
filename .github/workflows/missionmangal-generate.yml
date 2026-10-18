@@ -1,4 +1,4 @@
-name: Mission Mangal generate (manual, sharded, no auto-publish)
+name: Mission Mangal generate (manual, sharded, automated approval; merge to main stays manual)
 
 on:
   workflow_dispatch:
@@ -9,6 +9,12 @@ on:
       deadline_minutes:
         description: "Stop starting new topics after this many minutes (must leave time to upload)"
         default: "335"
+      auto_approve:
+        description: "Auto-approve drafts that pass automated gates (grounding, image+credit, uniqueness, length)"
+        default: "true"
+      allow_ymyl:
+        description: "Also auto-approve health/money topics (adds a not-professional-advice note)"
+        default: "false"
       limit_per_shard:
         description: "Optional cap on topics per shard (blank = all reserved)"
         default: ""
@@ -73,6 +79,8 @@ jobs:
           node missionmangal/scripts/run-batch.mjs
           --shard ${{ matrix.shard }} --shards ${{ inputs.shards }}
           --deadline-minutes ${{ inputs.deadline_minutes }}
+          ${{ inputs.auto_approve == 'true' && '--auto-approve' || '' }}
+          ${{ inputs.allow_ymyl == 'true' && '--allow-ymyl' || '' }}
           ${{ inputs.limit_per_shard != '' && format('--limit {0}', inputs.limit_per_shard) || '' }}
       - uses: actions/upload-artifact@v4
         if: always()

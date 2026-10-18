@@ -19,7 +19,7 @@ export function robotsAllows(robotsTxt,path,agent='aafnaipatroresearchbot'){
  return !best||best[0]==='allow';
 }
 const strip=h=>h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<nav[\s\S]*?<\/nav>|<footer[\s\S]*?<\/footer>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
-export function excerptsFrom(text,{max=8,min=60,cap=300}={}){return text.split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>=min&&s.length<=cap&&/[a-z]/i.test(s)&&!/cookie|subscribe|sign up|privacy policy/i.test(s)).slice(0,max);}
+export function excerptsFrom(text,{max=12,min=60,cap=300}={}){return text.split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>=min&&s.length<=cap&&/[a-z]/i.test(s)&&!/cookie|subscribe|sign up|privacy policy/i.test(s)).slice(0,max);}
 // Optional JS-rendering tier (Cloudflare Browser Rendering REST) used ONLY when a plain fetch yields too little text.
 export function cloudflareRenderer({accountId,token,fetchImpl=fetch}){return async url=>{const r=await fetchImpl('https://api.cloudflare.com/client/v4/accounts/'+accountId+'/browser-rendering/content',{method:'POST',headers:{authorization:'Bearer '+token,'content-type':'application/json'},body:JSON.stringify({url})});if(!r.ok)throw Error('render HTTP '+r.status);const j=await r.json();return j.result||'';};}
 export async function snapshot(urlStr,{fetchImpl=fetch,now=()=>new Date(),maxBytes=3_000_000,passages=[],renderer=null,minChars=800}={}){

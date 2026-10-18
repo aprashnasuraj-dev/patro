@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Research-DATA sources for evidence discovery. Every entry ships approved:false; a human flips it only after reading the provider's terms. A search result or API answer is a lead, never a citation by itself.",
+  "note": "Research-DATA sources. Entries with approved:true feed the pipeline (owner-attested). Others are catalog leads until a normalizer is written. A search result or API answer is a lead, never a citation by itself.",
   "apis": [
     {
       "id": "wikipedia",
@@ -27,7 +27,8 @@
       "auth": "none",
       "license_note": "Metadata is facts; send a mailto in the User-Agent",
       "rps": 5,
-      "approved": false
+      "approved": true,
+      "owner_attested": "Enabled by owner instruction 2026-10-18 (open/permissive public data; attribution kept in citations)"
     },
     {
       "id": "openalex",
@@ -36,16 +37,18 @@
       "auth": "none",
       "license_note": "CC0",
       "rps": 5,
-      "approved": false
+      "approved": true,
+      "owner_attested": "Enabled by owner instruction 2026-10-18 (open/permissive public data; attribution kept in citations)"
     },
     {
       "id": "europepmc",
       "name": "Europe PMC",
-      "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&format=json&pageSize=10",
+      "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&format=json&resultType=core&pageSize=10",
       "auth": "none",
       "license_note": "Check per-article licence",
       "rps": 3,
-      "approved": false
+      "approved": true,
+      "owner_attested": "Enabled by owner instruction 2026-10-18 (open/permissive public data; attribution kept in citations)"
     },
     {
       "id": "arxiv",
@@ -81,7 +84,8 @@
       "auth": "none",
       "license_note": "CC BY 4.0; non-commercial free tier only, commercial needs a plan",
       "rps": 3,
-      "approved": false
+      "approved": false,
+      "note": "NOT enabled: free tier is non-commercial and the site shows ads."
     },
     {
       "id": "usgs-quakes",
@@ -136,7 +140,18 @@
       "auth": "none",
       "license_note": "CC0",
       "rps": 5,
-      "approved": false
+      "approved": true,
+      "owner_attested": "Enabled by owner instruction 2026-10-18 (open/permissive public data; attribution kept in citations)"
+    },
+    {
+      "id": "wikipedia-search",
+      "name": "Wikipedia search + intro extracts",
+      "endpoint": "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search&gsrlimit=6&gsrsearch={q}&prop=extracts&exintro=1&explaintext=1&exlimit=max",
+      "auth": "none",
+      "license_note": "CC BY-SA; facts are cited and paraphrased, never copied",
+      "rps": 5,
+      "approved": true,
+      "owner_attested": "Enabled by owner instruction 2026-10-18 (open/permissive public data; attribution kept in citations)"
     }
   ]
 }
