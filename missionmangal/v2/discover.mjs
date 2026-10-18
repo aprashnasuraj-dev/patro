@@ -110,7 +110,8 @@ export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fe
  const rows=await extract(pick,{script:scriptPath,delayMs:disc.domain_delay_ms});const ok=new Set(),policyBlocked=new Set();
  for(const r of rows){if(r.ok&&r.text){ok.add(r.url);add(r.url,r.title,r.text,r.published,'scrapling');}
   else if(/robots|redirect|non-public|local host|DNS resolution|opt-out|policy unknown/i.test(r.error||''))policyBlocked.add(r.url);}
- for(const u of pick){if(found.length+evidence.length>=need+2)break;if(ok.has(u)||policyBlocked.has(u))continue;
+ let fallbackAttempts=0;
+ for(const u of pick){if(found.length+evidence.length>=need+2)break;if(ok.has(u)||policyBlocked.has(u))continue;if(fallbackAttempts>=4)break;fallbackAttempts++;
   try{const s=await snapshot(u,{fetchImpl,renderer:render,now});if(s.excerpts.length>=2&&isRelevantEvidence(topic,{title:s.title||hostOf(u),url:s.canonical||s.url,excerpts:s.excerpts}))found.push({title:s.title||hostOf(u),publisher:hostOf(u),author:null,published_at:s.published?String(s.published).slice(0,10):null,url:s.canonical||s.url,retrieved_at:s.retrieved_at,sha256:s.sha256,rendered:s.rendered,scraped:true,method:'snapshot',excerpts:s.excerpts});}catch(e){log('  snapshot '+hostOf(u)+': '+e.message);}}
  return found;
 }
