@@ -77,7 +77,7 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1500,time
 // Raw text stays transient. Persist excerpts, retrieval metadata, and a hash only.
 export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
  const have=new Set(evidence.map(e=>e.url));
- const searchLinks=await searchWebLinks(topic,{fetchImpl,max:disc.max_links_per_topic});
+ const searchLinks=await searchWebLinks(topic+' scientific evidence',{fetchImpl,max:disc.max_links_per_topic});
  let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});
  const wikiLinks=titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];
  const links=[...new Set([...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
