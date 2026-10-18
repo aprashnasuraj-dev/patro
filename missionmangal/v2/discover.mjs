@@ -98,7 +98,11 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1500,time
 // Raw text stays transient. Persist excerpts, retrieval metadata, and a hash only.
 export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
  const have=new Set(evidence.map(e=>e.url));
- const [wikiLinks,openAlexLinks,searchLinks]=await Promise.all([\n  (async()=>{let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});return titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];})(),\n  openAlexSearchLinks(topic,{fetchImpl,max:disc.max_links_per_topic,disc}),\n  searchWebLinks(topic+' scientific evidence',{fetchImpl,max:disc.max_links_per_topic})\n ]);
+ const [wikiLinks,openAlexLinks,searchLinks]=await Promise.all([
+  (async()=>{let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});return titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];})(),
+  openAlexSearchLinks(topic,{fetchImpl,max:disc.max_links_per_topic,disc}),
+  searchWebLinks(topic+' scientific evidence',{fetchImpl,max:disc.max_links_per_topic})
+ ]);
  const links=[...new Set([...wikiLinks,...openAlexLinks,...searchLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];
  for(const u of links){const h=hostOf(u);if((perHost.get(h)||0)>=2)continue;perHost.set(h,(perHost.get(h)||0)+1);pick.push(u);if(pick.length>=disc.max_fetches_per_topic)break;}
