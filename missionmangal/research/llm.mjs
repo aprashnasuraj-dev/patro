@@ -18,7 +18,7 @@ export function makeLlm({adapters,fetchImpl=fetch,env=process.env,sleep=ms=>new 
     for(let n=0;n<=maxRetries;n++){
      let res;try{res=await fetchImpl(a.endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},body:JSON.stringify({model,temperature:0.2,response_format:{type:'json_object'},messages:[{role:'system',content:system},{role:'user',content:user}]})});}catch(e){errors.push(a.id+': '+e.message);break;}
      if(res.status===429||res.status>=500){const ra=Number(res.headers?.get?.('retry-after'))||2**n;if(n===maxRetries){state.set(a.id,now()+60_000);errors.push(a.id+': HTTP '+res.status);break;}await sleep(Math.min(ra,60)*1000);continue;}
-     if(!res.ok){errors.push(a.id+': HTTP '+res.status);break;}
+     if(!res.ok){errors.push(a.id+': HTTP '+res.status);if([401,402,403,404].includes(res.status))state.set(a.id,now()+60*60_000);break;}
      const body=await res.json();const text=body.choices?.[0]?.message?.content||'';
      try{return {provider:a.id,model,value:JSON.parse(text.replace(/^```json|```$/g,'').trim())};}catch{errors.push(a.id+': non-JSON output');break;}
     }
