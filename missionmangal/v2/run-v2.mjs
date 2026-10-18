@@ -34,7 +34,7 @@ export async function runV2({root=resolve('missionmangal'),worker=0,workers=1,de
     try{const params=await planParams(llm,key,{title,question,angle:meta.angle,format:meta.format});for(const c of await fetchEvidence(key,params,{fetchImpl,now})){const ex=excerptsFrom(c.abstract,{min:30,max:30});if(ex.length>=2)addAll([{title:c.title,publisher:c.publisher,author:c.author,published_at:c.published_at,url:c.url,retrieved_at:c.retrieved_at,sha256:createHash('sha256').update(c.abstract).digest('hex'),rendered:false,scraped:false,dataset:key,excerpts:ex}]);}}
     catch(e){if(e.code==='NO_BUDGET')throw e;log('  dataset '+key+': '+e.message);}
    }
-   if(evidence.length<need||independentEvidenceHosts(evidence).size<Math.min(3,need)){addAll(await discoverEvidence({evidence,topic:question,disc:config.discovery,need,fetchImpl,extract,scriptPath,render,now,log}));}
+   if(row.route!=='general'&&(evidence.length<need||independentEvidenceHosts(evidence).size<Math.min(3,need))){addAll(await discoverEvidence({evidence,topic:question,disc:config.discovery,need,fetchImpl,extract,scriptPath,render,now,log}));}
    if(changed)await writeFile(join(out,'evidence',r.id+'.json'),JSON.stringify({id:r.id,evidence},null,2));
    if(evidence.length<need||independentEvidenceHosts(evidence).size<Math.min(3,need)){await note(r.id,'blocked',{route:row.route,reason:'NEEDS_RESEARCH: '+evidence.length+' usable sources; '+independentEvidenceHosts(evidence).size+' independent publisher domains (need '+need+' sources and '+Math.min(3,need)+' domains) after cache + discovery'});continue;}
    if(!llm.available()){await note(r.id,'retry_later',{route:row.route,reason:'NO_PROVIDER: no healthy LLM at preflight; evidence_sources='+evidence.length});continue;}
