@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {mkdtemp,readFile,mkdir,writeFile} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {classify} from '../v2/classify.mjs';import {makeLlmV2} from '../v2/llm.mjs';import {decideV2} from '../v2/gate.mjs';
-import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks} from '../v2/discover.mjs';
+import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks,isRelevantEvidence} from '../v2/discover.mjs';
 import {lint,fix} from '../core/voice.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
 import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';
 const config=JSON.parse(await readFile(new URL('../v2/config.json',import.meta.url),'utf8'));
@@ -19,6 +19,10 @@ test('discover: trusted-domain filter blocks social/doi/wikipedia and extracts w
  const d=config.discovery;assert.ok(isTrusted('https://www.nasa.gov/a',d));assert.ok(isTrusted('https://data.cdc.gov/x',d));
  for(const u of ['https://twitter.com/x','https://doi.org/10.1/x','https://en.wikipedia.org/wiki/A','http://nasa.gov/a','http://random-blog.example/x'])assert.equal(isTrusted(u,d),false,u);
  assert.deepEqual(wikiTitles([{url:'https://en.wikipedia.org/wiki/Grass_green',publisher:'Wikipedia',title:'Grass green'}]),['Grass green']);
+});
+test('research relevance rejects topical keyword collisions and requires question-specific evidence',()=>{
+ assert.equal(isRelevantEvidence('Why the Himalayas are still rising',{title:'China',url:'https://example.org/china',excerpts:['Nepal is mainly situated in the Himalayas.']}),false);
+ assert.equal(isRelevantEvidence('Why the Himalayas are still rising',{title:'Himalayan tectonic uplift',url:'https://example.org/geology',excerpts:['The Indian plate collides with the Eurasian plate, driving continued uplift of the Himalayas.']}),true);
 });
 test('search fallback extracts independent HTTPS results even when href precedes class',async()=>{
  const html='<a href="https://www.nasa.gov/himalayas" class="result__a">NASA</a><a class="result__a" href="https://www.usgs.gov/tectonics">USGS</a>';
