@@ -6,7 +6,7 @@ import {snapshot,excerptsFrom} from '../research/scraper.mjs';
 const UA='AafnaiPatroResearchBot/1.0 (+https://aafnaipatro.com/editorial-guidelines/)';
 export const hostOf=u=>{try{return new URL(u).hostname.toLowerCase().replace(/^www\./,'');}catch{return '';}};
 const STOPWORDS=new Set('a an and are as at be because been but by can could did do does for from had has have how i in into is it its of on or our should still that the their them then there these they this those to was were what when where which who why will with would'.split(' '));
-const SYNONYMS={rise:['rise','rises','rose','rising','uplift','uplifts','uplifted','uplifting','elevation','elevate','elevated','upward','grow','grows','growing','growth','increase','increases','increasing'],change:['change','changes','changing','changed','shift','shifts','shifting','evolve','evolves','evolving','evolution','vary','varies','variation'],himalaya:['himalaya','himalayas','himalayan','himalayans'],baby:['baby','babies','infant','infants','newborn','newborns'],cry:['cry','cries','crying','cried','wail','wailing'],hardwired:['hardwired','innate','instinct','instinctive','instinctively','evolved','evolutionary'],pick:['pick','picks','picking','respond','responds','responding','react','reacts','reacting','attend','attention']};
+const SYNONYMS={rise:['rise','rises','rose','rising','uplift','uplifts','uplifted','uplifting','elevation','elevate','elevated','upward','grow','grows','growing','growth','increase','increases','increasing','tectonic','tectonics','collision','colliding','convergence','converging','plate','plates','orogeny','mountain','mountains','crust','deformation','subduction','geologic','geological'],change:['change','changes','changing','changed','shift','shifts','shifting','evolve','evolves','evolving','evolution','vary','varies','variation'],himalaya:['himalaya','himalayas','himalayan','himalayans'],baby:['baby','babies','infant','infants','newborn','newborns'],cry:['cry','cries','crying','cried','wail','wailing'],hardwired:['hardwired','innate','instinct','instinctive','instinctively','evolved','evolutionary'],accent:['accent','accents','accented','dialect','dialects','pronunciation','speech','sociolinguistic','sociolinguistics','regional'],pick:['pick','picks','picking','respond','responds','responding','react','reacts','reacting','attend','attention']};
 const stem=w=>w.replace(/ies$/,'y').replace(/(ing|ed|es|s)$/,'');
 export function isRelevantEvidence(topic,evidence){
  const terms=[...new Set(String(topic||'').toLowerCase().match(/[a-z0-9]+/g)||[])].filter(w=>w.length>=4&&!STOPWORDS.has(w));
@@ -98,10 +98,11 @@ export function scraplingExtract(urls,{python='python3',script,delayMs=1500,time
 // Raw text stays transient. Persist excerpts, retrieval metadata, and a hash only.
 export async function discoverEvidence({evidence,topic='',disc,need,fetchImpl=fetch,extract=scraplingExtract,scriptPath,render=null,now=()=>new Date(),log=()=>{}}){
  const have=new Set(evidence.map(e=>e.url));
+ const expandedQuery=/himalay/i.test(topic)?topic+' Indian Eurasian plate collision tectonic uplift':/accent|dialect/i.test(topic)?topic+' regional language change sociolinguistics':/baby|babies|infant|crying/i.test(topic)?topic+' infant crying caregiver response developmental psychology':topic+' scientific evidence';
  const [wikiLinks,openAlexLinks,searchLinks]=await Promise.all([
   (async()=>{let titles=wikiTitles(evidence);if(!titles.length)titles=await wikipediaSearchTitles(topic,{fetchImpl});return titles.length?await wikipediaLinks(titles,{fetchImpl,max:disc.max_links_per_topic}):[];})(),
-  openAlexSearchLinks(topic,{fetchImpl,max:disc.max_links_per_topic,disc}),
-  searchWebLinks(topic+' scientific evidence',{fetchImpl,max:disc.max_links_per_topic})
+  openAlexSearchLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic,disc}),
+  searchWebLinks(expandedQuery,{fetchImpl,max:disc.max_links_per_topic})
  ]);
  const links=[...new Set([...openAlexLinks,...searchLinks,...wikiLinks])].filter(u=>isTrusted(u,disc)&&!have.has(u));
  const perHost=new Map(),pick=[];
