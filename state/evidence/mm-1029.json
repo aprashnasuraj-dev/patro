@@ -1,0 +1,140 @@
+{
+  "id": "mm-1029",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Unsupervised Machine Translation: How Machines Learn to Understand Across Languages",
+      "publisher": "Karolinum Press",
+      "author": "Kvapilíková, Ivana",
+      "published_at": "2025-04",
+      "url": "https://doi.org/10.14712/9788024660844",
+      "retrieved_at": "2026-10-18T17:22:05.643Z",
+      "sha256": "1240df84146e6e7a605e3cde58a3b9231f861b6271cc6d147f472f6918f9cc95",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "For decades, machine translation between natural languages fundamentally relied on human-translated documents known as parallel texts, which provide direct correspondences between source and target sentences.",
+        "The notion that translation systems could be trained on non-parallel texts, independently written in different languages, was long considered unrealistic.",
+        "Fast forward to the era of large language models (LLMs), and we now know that given their sufficient computational resources, LLMs exploit incidental parallelism in their vast training data, i.e., they identify parallel messages across languages and learn to translate without explicit supervision.",
+        "LLMs have since demonstrated the ability to perform translation tasks with impressive quality, rivaling systems specifically trained for translation.",
+        "This monograph explores the fascinating journey that led to this point, focusing on the development of unsupervised machine translation.",
+        "Long before the rise of LLMs, researchers were exploring the idea that translation could be achieved without parallel data.",
+        "Their efforts centered on motivating models to discover cross-lingual correspondences through various techniques, such as the mapping of word embedding spaces, back-translation, or parallel sentence mining.",
+        "Although much of the research described in this monograph predates the mainstream adoption of LLMs, the insights gained remain highly relevant.",
+        "They offer a foundation for understanding how and why LLMs are able to translate."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Lost in translation: how to use automatic translation machines for understanding “otherness”",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2014-02-06",
+      "url": "https://www.cambridge.org/core/books/introduction-to-computational-cultural-psychology/lost-in-translation-how-to-use-automatic-translation-machines-for-understanding-otherness/C6EA39FC6065342BAE906BB85B98F5D1",
+      "retrieved_at": "2026-10-18T17:22:06.408Z",
+      "sha256": "80e92fce8608133162e19456e79144016444d279a55ea9366d31254b3bfe0797",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Lost in translation: how to use automatic translation machines for understanding “otherness” (Chapter 4) - Introduction to Computational Cultural Psychology Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "2 The digital psychologist: information technology and cultural psychology 3 Why don’t primates have God?",
+        "2 The digital psychologist: information technology and cultural psychology 3 Why don’t primates have God?",
+        "As a Jew raised in a religious family he couldn’t attend school on Saturday and therefore was homeschooled by his parents.",
+        "This homeschooling was extremely successful as Wald graduated from the University of Vienna with a Ph.D.",
+        "Wald was forced to flee to the USA when the Nazis came into power and developed his academic career in that welcoming country.",
+        "In retrospect, the Nazis’ “thesis” of the Aryan race’s superiority over the Jews was powerfully refuted when Jewish scientists, such as those who led the Manhattan Project, became the cutting edge of the war efforts.",
+        "We could not imagine the war efforts of the USA without Robert Oppenheimer, Edward Teller, John von Neumann, and many others.",
+        "During the Second World War, Wald made his own personal contributionto the war efforts (Mangel and Samaniego 1984 ).",
+        "The American airplanes that returned from the front were, naturally, damaged by antiaircrat artillery.",
+        "However, covering the whole airplane’s belly and wings with armor would necessarily result in a weight increase that would have fatal consequences."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "$pringfield (or, How I Learned to Stop Worrying and Love Legalized Gambling)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1831030",
+      "retrieved_at": "2026-10-18T17:22:06.794Z",
+      "sha256": "ed185c5f9f808c319ee03032ba53af97eb44e339668d3d06c537a510d3a0c14d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"$pringfield (or, How I Learned to Stop Worrying and Love Legalized Gambling)\", simply known as \"$pringfield\", is the tenth episode of the fifth season of the American animated television series The Simpsons, and the 91st episode overall.",
+        "It originally aired on the Fox network in the United States on December 16, 1993.",
+        "In the episode, Springfield legalizes gambling to revitalize its economy.",
+        "Burns opens a casino where Homer is hired as a blackjack dealer.",
+        "Marge develops a gambling addiction, Bart opens a rival casino in his tree house, and Burns's appearance and mental state deteriorate à la Howard Hughes.",
+        "The episode was written by Bill Oakley and Josh Weinstein, and directed by Wes Archer.",
+        "Strangelove or: How I Learned to Stop Worrying and Love the Bomb, The Wizard of Oz, Rain Man and 2001: A Space Odyssey.",
+        "Since airing, the episode has received mostly positive reviews from television critics.",
+        "It acquired a Nielsen rating of 11.7, and was the highest-rated show on the Fox network the week it aired.",
+        "The Rich Texan makes his debut in this episode, referred to as \"Senator\" by Homer."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Interlingual machine translation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4137589",
+      "retrieved_at": "2026-10-18T17:22:06.794Z",
+      "sha256": "9cf1c52a1680eb508c383d22aeb23bf293aae41b4557d0beb29a9ea6c49ff30b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Interlingual machine translation is one of the classic approaches to machine translation.",
+        "the text to be translated is transformed into an interlingua, i.e., an abstract language-independent representation.",
+        "Within the rule-based machine translation paradigm, the interlingual approach is an alternative to the direct approach and the transfer approach.",
+        "In the direct approach, words are translated directly without passing through an additional representation.",
+        "In the transfer approach the source language is transformed into an abstract, less language-specific representation.",
+        "Linguistic rules which are specific to the language pair then transform the source language representation into an abstract target language representation and from this the target sentence is generated.",
+        "The interlingual approach to machine translation has advantages and disadvantages.",
+        "The obvious disadvantage is that the definition of an interlingua is difficult and maybe even impossible for a wider domain.",
+        "The ideal context for interlingual machine translation is thus multilingual machine translation in a very specific domain.",
+        "For example, Interlingua has been used as a pivot language in international conferences and has been proposed as a pivot language for the European Union."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Translation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18630637",
+      "retrieved_at": "2026-10-18T17:22:06.794Z",
+      "sha256": "709f71660ab094517209e81fe60b868404a6f97ec070b2c92d6114882ed21acf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Translation, in reference to language, is the communication of the meaning of a source-language text by means of an equivalent target-language text.",
+        "The English language draws a terminological distinction (which does not exist in all languages) between translating written texts and interpreting oral or signed communications between languages.",
+        "A translator always risks inadvertently introducing source-language words, grammar, or syntax into the target-language rendering.",
+        "Such \"spill-overs\", however, have sometimes imported useful source-language calques and loanwords that have enriched target languages.",
+        "Since the 1940s, efforts have been made, with varying degrees of success, to automate translation or to mechanically aid the human translator.",
+        "More recently, the rise of the Internet has fostered a world-wide market for translation services and has facilitated \"language localisation\"."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Learning to rank",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25050663",
+      "retrieved_at": "2026-10-18T17:22:06.794Z",
+      "sha256": "fe1130a5c3b28afd2cd739a28c0bda76741f43c30470804ad4eac985e9a937f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Learning to rank (LTR) or machine-learned ranking (MLR) is the application of machine learning, often supervised, semi-supervised or reinforcement learning, in the construction of ranking models for information retrieval and recommender systems.",
+        "Training data may, for example, consist of lists of items with some partial order specified between items in each list.",
+        "This order is typically induced by giving a numerical or ordinal score or a binary judgment (e.g.",
+        "The goal of constructing the ranking model is to rank new, unseen lists in a similar way to rankings in the training data."
+      ]
+    }
+  ]
+}

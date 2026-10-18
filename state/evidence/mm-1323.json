@@ -1,0 +1,127 @@
+{
+  "id": "mm-1323",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why does giraffes have long necks?",
+      "publisher": "Front Matter",
+      "author": "Frey, Erzsebet",
+      "published_at": "2022-04-19",
+      "url": "https://doi.org/10.59350/arb9g-0f451",
+      "retrieved_at": "2026-10-18T17:31:39.827Z",
+      "sha256": "4a9974ec75e01f41e2bf2411b7bb09b824432d1502f84c2e791d002e73972494",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Some of the theories why giraffes have long necks are protection from predation, increased vigilance and strength, increased surface area for thermoregulatory heat loss, males sexual dominance, and access to food.",
+        "At giraffe height evolved in response to benefits conferred by foraging, height stratification was only true for the adult."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why does giraffes have long necks?",
+      "publisher": "Front Matter",
+      "author": "Frey, Erzsebet",
+      "published_at": "2022-04-19",
+      "url": "https://doi.org/10.59350/j09m3-ssm52",
+      "retrieved_at": "2026-10-18T17:31:39.827Z",
+      "sha256": "4a9974ec75e01f41e2bf2411b7bb09b824432d1502f84c2e791d002e73972494",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Some of the theories why giraffes have long necks are protection from predation, increased vigilance and strength, increased surface area for thermoregulatory heat loss, males sexual dominance, and access to food.",
+        "At giraffe height evolved in response to benefits conferred by foraging, height stratification was only true for the adult."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Giraffe",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12717",
+      "retrieved_at": "2026-10-18T17:31:40.012Z",
+      "sha256": "b14ed14540f2b93ee23e56cc26fbf7fa865cf6f231801c6f9cb14b6ef53d9f9e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "They are the tallest living terrestrial animals and the largest ruminants on Earth.",
+        "They are classified under the family Giraffidae, along with their closest extant relative, the okapi.",
+        "Traditionally, giraffes have been thought of as one species, Giraffa camelopardalis, with nine subspecies.",
+        "Most recently, researchers proposed dividing them into four extant species, with seven subspecies, which can be distinguished morphologically by their fur coat patterns.",
+        "Six valid extinct species of Giraffa are known from the fossil record.",
+        "The distinguishing characteristics of giraffes are their extremely long neck and legs, horn-like ossicones, and spotted coat patterns.",
+        "Their scattered range extends from Chad in the north to South Africa in the south and from Niger in the west to Somalia in the east.",
+        "Their food source is leaves, fruits, and flowers of woody plants, primarily acacia species, which they browse at heights most other ground-based herbivores cannot reach.",
+        "Lions, leopards, spotted hyenas, and African wild dogs may prey upon giraffes.",
+        "Giraffes live in herds of related females and their offspring or bachelor herds of unrelated adult males but are gregarious and may gather in large groups.",
+        "Males establish social hierarchies through \"necking\", combat bouts in which they use the neck as a weapon.",
+        "Dominant males gain mating access to females, which bear sole responsibility for rearing the young."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Okapi",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22709",
+      "retrieved_at": "2026-10-18T17:31:40.012Z",
+      "sha256": "a892a619c4a8b1262281a1b4c5d58c4c08e4138c8c3d0a82939c05188c2643ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The okapi (; Okapia johnstoni), also known as forest giraffe and zebra giraffe, is an artiodactyl mammal that is endemic to the northeast Democratic Republic of the Congo.",
+        "Although the okapi has striped markings reminiscent of zebras, it is most closely related to the giraffe.",
+        "The okapi and the giraffe are the only living members of the family Giraffidae.",
+        "The okapi stands about 1.5 m (4 ft 11 in) tall at the shoulder and has a typical body length around 2.5 m (8 ft 2 in).",
+        "Its coat is a chocolate to reddish brown, much in contrast with the white horizontal stripes and rings on the legs, and white ankles.",
+        "Male okapis have short, distinct horn-like protuberances on their heads called ossicones, less than 15 cm (5.9 in) in length.",
+        "Okapis are primarily diurnal, but may be active for a few hours in darkness.",
+        "They are essentially solitary, coming together only to breed.",
+        "Okapis are herbivores, feeding on tree leaves and buds, grasses, ferns, fruits, and fungi.",
+        "Rut in males and estrus in females does not depend on the season.",
+        "The gestational period is around 440 to 450 days long, following which usually a single calf is born.",
+        "The juveniles are kept in hiding, and nursing takes place infrequently."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Giraffidae",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=318200",
+      "retrieved_at": "2026-10-18T17:31:40.012Z",
+      "sha256": "cf31d94fdcdaff28ffd5d334af5ee2b62cd9cee0b13e6b69d8bb38934ffd185f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Giraffidae are a family of ruminant artiodactyl mammals that share a recent common ancestor with deer and bovids.",
+        "This family, once a diverse group spread throughout Eurasia and Africa, presently comprises only two extant genera, the giraffe (between one and eight, usually four, species of Giraffa, depending on taxonomic interpretation) and the okapi (the only known species of Okapia).",
+        "Both are confined to sub-Saharan Africa: the giraffe to the open savannas, and the okapi to the dense rainforest of the Congo.",
+        "The two genera look very different on first sight, but share a number of common features, including a long, dark-coloured tongue, lobed canine teeth, and horns covered in skin, called ossicones."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Tinga Tinga Tales",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=20052886",
+      "retrieved_at": "2026-10-18T17:31:40.012Z",
+      "sha256": "f05f3d2fb04fb37ca28b4b2858d3825785a1853e00500739fc1e8320c2bffaff",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tinga Tinga Tales is an animated children's television series based on African folk tales and aimed generally at 4 to 6-year-olds that ran for two seasons (2011–2012).",
+        "Named after Tingatinga art from Tanzania, Tinga Tinga Tales was produced in Nairobi, Kenya, by Homeboyz Animation and its music produced by Kenyan singer-songwriter Eric Wainaina.",
+        "The series was first conceived by Claudia Lloyd, head of the animation division at the London-based Tiger Aspect Productions, while travelling through Africa.",
+        "The first three episodes premiered on the BBC website in February 2010.",
+        "The distribution rights were bought by Entertainment Rights, which in 2009 merged with Classic Media.",
+        "In 2012 Classic Media was acquired by DreamWorks Animation and renamed DreamWorks Classics)."
+      ]
+    }
+  ]
+}

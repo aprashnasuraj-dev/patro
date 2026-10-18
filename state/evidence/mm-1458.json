@@ -1,0 +1,105 @@
+{
+  "id": "mm-1458",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "I’ve always wondered: why do our computing devices seem to slow down?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Merkel, Robert",
+      "published_at": "2017-10-22",
+      "url": "https://theconversation.com/ive-always-wondered-why-do-our-computing-devices-seem-to-slow-down-85390",
+      "retrieved_at": "2026-10-18T17:35:46.782Z",
+      "sha256": "74fb59172644021888534cbbf9926877d5628dba6af76e7077aaf228f6842993",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "I’ve always wondered: why do our computing devices seem to slow down?",
+        "Skip to content Academic rigour, journalistic flair Your gadgets might slow down if they’re bloated with apps.",
+        "Neirfy/Shutterstock I’ve always wondered: why do our computing devices seem to slow down?",
+        "Internet searches for “iPhone slow” spike after the release of a new-generation model, but there’s no evidence to suggest that manufacturers deliberately degrade the performance of older devices with software updates.",
+        "Computer hardware does not typically slow down over its useful life.",
+        "Instead, there are several other reasons why smartphones, tablets and PCs start to seem less snappy.",
+        "The good news is that you can often take steps to improve your existing device’s performance.",
+        "Memory bloat Each time they update, apps typically become larger and more full of features.",
+        "Visual pizzazz is also a major attraction, and so desktop and mobile operating systems periodically receive significant redesigns.",
+        "All that extra functionality and glitz requires your device to do more computation than it did when it arrived home from the store.",
+        "Given that it doesn’t magically speed up to compensate, it has less spare capacity available to respond to you quickly.",
+        "Newer apps not only tend to do more computation, they also usually take up more space in your device’s storage."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Smartphone",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=167079",
+      "retrieved_at": "2026-10-18T17:35:47.410Z",
+      "sha256": "ce0bc3baa631374751ac7bb637496a8505139bee742b1f15c71481e313ab2a85",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A smartphone is a mobile device that combines the functionality of a traditional mobile phone (feature phone) with advanced computing capabilities.",
+        "It typically has a touchscreen interface, allowing users to access a wide range of applications and services, such as web browsing, email, and social media, as well as multimedia playback and streaming.",
+        "Smartphones have built-in cameras, GPS navigation, and support for various communication methods, including voice calls, text messaging, and internet-based messaging apps.",
+        "Smartphones are distinguished from older-design feature phones by their more advanced hardware capabilities and extensive mobile operating systems, access to the internet, business applications, mobile payments, and multimedia functionality, including music, video, gaming, radio, and television.",
+        "Smartphones typically feature metal–oxide–semiconductor (MOS) integrated circuit (IC) chips, various sensors, and support for multiple Wireless communication protocols.",
+        "Examples of smartphone sensors include accelerometers, barometers, gyroscopes, and magnetometers; they can be used by both pre-installed and third-party software to enhance functionality.",
+        "Wireless communication standards supported by smartphones include LTE, 5G NR, Wi-Fi, Bluetooth, and satellite navigation.",
+        "By the mid-2020s, manufacturers began integrating satellite messaging and emergency services, expanding their utility in remote areas without reliable cellular coverage.",
+        "Smartphones have largely replaced personal digital assistant (PDA) devices, handheld/palm-sized PCs, portable media players (PMP), point-and-shoot cameras, camcorders, and, to a lesser extent, handheld video game consoles, e-reader devices, pocket calculators, and GPS tracking units.",
+        "Following the rising popularity of the iPhone in the late 2000s, the majority of smartphones have featured thin, slate-like form factors with large, capacitive touch screens with support for multi-touch gestures rather than physical keyboards.",
+        "Most modern smartphones have the ability for users to download or purchase additional applications from a centralized app store.",
+        "They often have support for cloud storage and cloud synchronization, and virtual assistants."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Android (operating system)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12610483",
+      "retrieved_at": "2026-10-18T17:35:47.411Z",
+      "sha256": "070b964af55ca9409b3dd43d7f910f2495cb8ee58cd2d93a1e2864b4dea747b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Android is an operating system developed by Google, designed primarily for smartphones and tablets (touchscreen-based mobile devices originally; later for other devices, such as TVs), based on a modified version of the Linux kernel and other open-source software.",
+        "First released in 2008, Android is the world's most widely used operating system with 3.9 billion users, and the most used operating system for smartphones.",
+        "The latest version, released on June 16, 2026, is Android 17.",
+        "At its core, the operating system is known as the Android Open Source Project (AOSP), that was originally only made for a smartphone, and is free and open-source software (FOSS) primarily licensed under the Apache License.",
+        "Other Google services including Firebase Cloud Messaging, used for push notifications, are recommended for applications.",
+        "While AOSP is free, the \"Android\" name and logo are trademarks of Google, who restrict the use of Android branding on \"uncertified\" products.",
+        "The majority of smartphones and other devices based on AOSP run Google's ecosystem—which is known simply as Android—some with vendor-customized user interfaces and software suites, for example One UI.",
+        "Commercial products like micro consoles have also used Android.",
+        "Since 2011 Android has been the most used operating system worldwide on smartphones.",
+        "It has the largest installed base of any operating system in the world with over three billion monthly active users and accounting for 45% of the global operating system market."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "IPhone 7",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=51539250",
+      "retrieved_at": "2026-10-18T17:35:47.411Z",
+      "sha256": "77e69abc7ef11fa0ad532375158fa9697e64bb33c38768a8f2b34e979455c73e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The iPhone 7 and iPhone 7 Plus are smartphones that were developed and marketed by Apple.",
+        "They were announced on September 7, 2016, at the Bill Graham Civic Auditorium in San Francisco by Apple CEO Tim Cook, and were released on September 16, 2016, succeeding the iPhone 6, iPhone 6 Plus, iPhone 6S and iPhone 6S Plus as the flagship devices in the iPhone series.",
+        "Apple also released the iPhone 7 and iPhone 7 Plus in numerous countries worldwide throughout September and October 2016.",
+        "They were succeeded as flagship devices by the iPhone 8 and iPhone 8 Plus on September 12, 2017, and were discontinued with the announcement of the iPhone 11 and iPhone 11 Pro on September 10, 2019.",
+        "The iPhone 7's overall design is similar to the iPhone 6 and iPhone 6S.",
+        "Changes introduced included new color options (Matte Black and Jet Black), water and dust resistance, a new capacitive, static home button, revised antenna bands, larger back camera, and the controversial removal of the 3.5 mm headphone jack.",
+        "The front camera is the first in the series with 1080p (Full HD) video resolution.",
+        "The iPhone 7 and 7 Plus were supported from iOS 10 to iOS 15, and they are the third to support six versions of iOS before support was terminated, after the iPhone 5s.",
+        "The iPhone 7 and 7 Plus were the last iPhones using a quad-core CPU, as well as an aluminum unibody design without wireless charging and a base model starting at 32 GB of internal storage.",
+        "The iPhone 7 and 7 Plus were the only iPhones to have a jet black color finish."
+      ]
+    }
+  ]
+}

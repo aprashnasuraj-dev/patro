@@ -1,0 +1,165 @@
+{
+  "id": "mm-0299",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How Chatbots Could Understand Language",
+      "publisher": "Philosophy Documentation Center",
+      "author": "Green, Mitchell; ",
+      "published_at": "2026",
+      "url": "https://doi.org/10.5840/bjp20261811",
+      "retrieved_at": "2026-10-18T16:48:14.660Z",
+      "sha256": "802d381625013803d33d66fba414a6c277ff38f2f3bc82bb629b35e1219a788a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With the recent rise of LLM technology, many researchers as well as the general public have been puzzled by the question whether the chatbots that run on that technology understand the language they produce and receive from users.",
+        "Is imputing an understanding of language to chatbots legitimate, intelligible, a convenient metaphor, or just a useful fiction?",
+        "Understanding is a cognitive notion, whence assessing whether something understands language turns on what kinds of psychological states we can justifiably ascribe to it.",
+        "Accordingly, we here start with a delineation of the main kinds of mental state found in our own species – namely the cognitive, conative, affective, and experiential – and then argue that these four kinds need not come bundled together.",
+        "That raises the question whether we might be justified in literally ascribing some such states (like cognitive and conative) to sufficiently sophisticated machines while refraining from ascribing others to them.",
+        "We then provide reasons for an affirmative answer to that question, supporting the thesis that chatbots understand some of the language they produce and receive.",
+        "We close by considering challenges to attitude ascription in this arena coming from (i) what we call the “attitude of one’s own” objection and (ii) the embodied cognition tradition, and show they may be neutralized."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "‘Sorry, I don’t understand that’ – the trouble with chatbots and how to use them better",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Waizenegger, Lena; Techatassanasoontorn, Angsana",
+      "published_at": "2021-12-14",
+      "url": "https://theconversation.com/sorry-i-dont-understand-that-the-trouble-with-chatbots-and-how-to-use-them-better-171665",
+      "retrieved_at": "2026-10-18T16:48:15.092Z",
+      "sha256": "ed3c730cbd4cd988f3fd8c99ae307a1e82932029fb1477f094f2d2cf49cda4a5",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Those automated “helpers” – supposedly designed to make customer service smarter, faster and more efficient – can certainly be a source of frustration for sentient beings.",
+        "Interactions with chatbots have become increasingly common in our daily lives.",
+        "But when asking for information or trying to solve a problem, we’re often annoyed when the chatbot either can’t understand or misinterprets our inquiry.",
+        "Even worse is when it advises us to contact the call centre or visit a web page, which defeats the purpose of using chatbots in the first place.",
+        "First, organisations often present the chatbot as too “human”, leading to unrealistic expectations about the chatbot’s ability to understand human language, including nuanced questions and commands.",
+        "Second, many chatbots are rule-based and have a narrow knowledge base , which means grammatical and syntactical errors can throw them off and complex questions often can’t be answered, disappointing customers .",
+        "Chatbots are not human and many can’t understand nuanced natural language.",
+        "Shutterstock A two-way street Although it’s easy to blame the chatbot for a miserable experience, we need to realise that, just as it takes two hands to clap, it takes both chatbot and customer to create a satisfactory interaction.",
+        "While previous studies have focused mainly on the chatbot, including why companies implement them and the design cues that characterise them, there hasn’t been much consideration of the customer’s role in these interactions.",
+        "Read more: AI shop assistants: get ready for a world where you can’t tell humans and chatbots apart In our latest research , we put the spotlight on how customers deal with chatbots and suggest ways to improve the experience.",
+        "We find that to create constructive, meaningful engagement with a chatbot, the actions and reactions of the customer and a willingness to make it work are as important as the chatbot’s own functionality.",
+        "Understanding chatbots We identified six distinct types of human-chatbot interactions: socialising, collaborating, challenging, accommodating, committing, and redirecting."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Language and community",
+      "publisher": "Acumen Publishing Limited",
+      "author": null,
+      "published_at": "2009-12-31",
+      "url": "https://www.cambridge.org/core/books/how-to-understand-language/language-and-community/BDB58B23D478E02C64BE9E090EBC1E6B",
+      "retrieved_at": "2026-10-18T16:48:17.166Z",
+      "sha256": "4bd6623fc9f7bd8e5338bd8d49f2d68d8966dc90767b396903805ab438820a1b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Language and community (Chapter 11) - How to Understand Language Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "11 Language and community 12 Rules and privacy: the problem 13 Rules and privacy: the solution?",
+        "11 Language and community 12 Rules and privacy: the problem 13 Rules and privacy: the solution?",
+        "14 Truth-conditions versus use-conditions Notes Bibliography Index Get access Share Cite Summary There are a daunting number of deep and difficult questions lurking in the area of the relations between language use and its communal setting.",
+        "Some we shall need to look at; others will take us too far afield into issues lying at the intersection of epistemology and the philosophies of language and mind.",
+        "Some questions concern natural language: in what sense is natural language a communal phenomenon?",
+        "Must it be understood in terms of private acts of conferring meanings on signs?",
+        "Other questions concern hypothetical languages: could there be a private language, a language that can be understood only by a solitary user?",
+        "Can there be a language that incorporates some signs only understood by a solitary user?",
+        "The questions are, of course, interrelated and bring us to further questions about the nature of self-knowledge, of avowals, of ascriptions of capacities, of sensations and private objects.",
+        "The issues are inherently interesting and important, so we shall be tackling them for their own sake, but we are also trying to find an approach to the philosophy of language and so our aim will be to motivate a certain conception of publicity."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "ELIZA",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10235",
+      "retrieved_at": "2026-10-18T16:48:17.168Z",
+      "sha256": "06ab8db0f15bb3eaf827e68a7376e56ecc56369eee28b9f28f56fc69877d00ad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "ELIZA is an early natural language processing computer program developed from 1964 to 1967 at MIT by Joseph Weizenbaum.",
+        "Whereas the ELIZA program itself was written (originally) in MAD-SLIP, the pattern matching directives that contained most of its language capability were provided in separate \"scripts\", represented in a Lisp-like expression.",
+        "The most famous script, DOCTOR, simulated a psychotherapist of the Rogerian school (in which the therapist often reflects back the patient's words to the patient), and used rules, dictated in the script, to respond with non-directional questions to user inputs.",
+        "As such, ELIZA was one of the first chatbots (originally \"chatterbots\") and one of the first programs capable of attempting the Turing test.",
+        "Weizenbaum intended the program as a method to explore communication between humans and machines.",
+        "He was surprised that some people, including his secretary, attributed human-like feelings to the computer program, a phenomenon that came to be called the ELIZA effect.",
+        "Many academics believed that the program would be able to positively influence the lives of many people, particularly those with psychological issues, and that it could aid doctors working on such patients' treatment.",
+        "While ELIZA was capable of engaging in discourse, it could not converse with true understanding.",
+        "However, many early users were convinced of ELIZA's intelligence and understanding, despite Weizenbaum's insistence to the contrary.",
+        "The original ELIZA source code had been missing since its creation in the 1960s, as it was not common to publish articles that included source code at that time.",
+        "However, in 2021 the MAD-SLIP source code was discovered in the MIT archives and published on various platforms, such as the Internet Archive.",
+        "The source code is of high historical interest since it demonstrates not only the specificity of programming languages and techniques at that time, but also the beginning of software layering and abstraction as a means of achieving sophisticated software programming."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Language creation in artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=56391079",
+      "retrieved_at": "2026-10-18T16:48:17.168Z",
+      "sha256": "7d87c0f5f4469faaeee58932783d69fd0860e69f8b7b64a220bb72ad86656b7f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In artificial intelligence, researchers teach AI systems to develop their own ways of communicating by having them work together on tasks and use symbols as parts of a new language.",
+        "These languages might grow out of human languages or be built completely from scratch.",
+        "When AI is used for translating between languages, it can even create a new shared language to make the process easier.",
+        "Natural Language Processing (NLP) helps these systems understand and generate human-like language, making it possible for AI to interact and communicate more naturally with people."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Hallucination (artificial intelligence)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72607666",
+      "retrieved_at": "2026-10-18T16:48:17.168Z",
+      "sha256": "fc253fa70034b2d109363a6bf492703eb10162b7550ab66012447e0a4ae105d2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In the field of artificial intelligence (AI), a hallucination or artificial hallucination (also called bullshitting, confabulation, delusion, or mirage) is a response generated by AI that contains false or misleading information presented as fact.",
+        "These terms draw a loose analogy with human psychology, where a hallucination typically involves false percepts.",
+        "Chatbots powered by large language models (LLMs), like ChatGPT, may embed plausible-sounding random falsehoods within their generated content, such as fabricated citations.",
+        "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+        "Some software engineers and statisticians have criticized the specific term \"AI hallucination\" for unreasonably anthropomorphizing computers.",
+        "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T16:48:17.168Z",
+      "sha256": "7f114c82f04affa9033e6fdad8d9584f4d7cb102b3aa63d30f47b686fd583997",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    }
+  ]
+}

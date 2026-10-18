@@ -1,0 +1,98 @@
+{
+  "id": "mm-0259",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Command-line interface",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28338635",
+      "retrieved_at": "2026-10-18T16:48:13.813Z",
+      "sha256": "515a5d2dd8b5b1edf0e1d96780f33c87d6ac9a21dbc2a8da74828fe88ace4e6f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A command-line interface (CLI), also known as a command-line shell, is a means of interacting with software via commands – each formatted as a line of text.",
+        "The concept of interacting with a computer via text evolved over two decades, transitioning from physical hardware to sophisticated software.",
+        "Before the CLI, computers were programmed using physical switches or punched cards.",
+        "The shift toward a \"command\" style interaction began with the use of teleprinters/teletypes.",
+        "Early systems like the Whirlwind I (1951) at MIT began utilizing typewriter-like inputs for direct control, moving away from batch processing where you'd hand a stack of cards to an operator and wait hours for a result.",
+        "Devices like the Teletype Model 33, introduced in 1963, allowed operators to type a command and receive a printed response from the computer.",
+        "The command-line interpreter emerged when computers became powerful enough to handle multiple users at once, known as time-sharing.",
+        "The Compatible Time-Sharing System (CTSS), developed in 1961 at MIT, introduced the first true command-line interpreter.",
+        "For the first time, a user could type a command like LOGIN or PRINT, and a dedicated program (the supervisor) would parse that text and execute the corresponding function.",
+        "In 1964, Louis Pouzin introduced the software we now recognize as a \"shell\" for the Multics operating system, providing a programmable environment for executing scripts.",
+        "Many utilities for operating system management and software development provide CLIs.",
+        "Many CLIs enable software automation, since commands can be stored in a script file that can be used repeatedly."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "WhatsApp",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32058867",
+      "retrieved_at": "2026-10-18T16:48:13.814Z",
+      "sha256": "fc786e75cda105ba3b2dca470a90736d2990593f94fb7dcfacb4a4d2b97c2909",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "WhatsApp Messenger, commonly known simply as WhatsApp, is an American social media, instant messaging (IM), and Voice over IP (VoIP) service accessible via desktop and mobile app.",
+        "Owned by Meta Platforms, the service allows users to send text messages, voice messages, and video messages, make voice and video calls, and share images, documents, user locations, and other content.",
+        "The service requires a cellular mobile telephone number to register.",
+        "In January 2018, WhatsApp released a standalone business app called WhatsApp Business which can communicate with the standard WhatsApp client.",
+        "As of May 2025, the service had 3 billion monthly active users, making it the most popular messenger app.",
+        "of Mountain View, California, which was acquired by Facebook in February 2014 for approximately US$19.3 billion.",
+        "It became the world's most popular messaging application in 2015, with 900 million users, and had more than 2 billion active users worldwide in February 2020.",
+        "WhatsApp Business had approximately 200 million monthly users in 2023.",
+        "By 2016, it had become the primary means of Internet communication in regions including the Americas, the Indian subcontinent, and large parts of Europe and Africa."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Prompt engineering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=69071767",
+      "retrieved_at": "2026-10-18T16:48:13.814Z",
+      "sha256": "02b193da146cb1fc12f6f5e57d2d5604cce49dd0120e8ba8a8c7664c24935d2d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Prompt engineering is the process of structuring natural language inputs (known as prompts) to produce specified outputs from a generative AI model.",
+        "Context engineering is the related area of software engineering that focuses on the management of non-prompt and prompt contexts supplied to the GenAI model, such as system instructions, metadata, API tools and tokens.",
+        "It can also be defined as the practice of designing and refining input instructions given to a generative AI model to produce more accurate, relevant, or useful outputs.",
+        "Effective prompt engineering involves understanding how a model interprets language, and may include techniques such as few-shot prompting, chain-of-thought prompting, and role assignment.",
+        "During the 2020s AI boom, prompt engineering became regarded as a business capability across corporations and industries.",
+        "Employees with the title prompt engineer were hired to create prompts that would increase productivity and efficacy, although the individual title has since become less common amid AI models that produce better prompts than humans and corporate training in prompting for general employees.",
+        "Common prompting techniques include multi-shot, chain-of-thought, and tree-of-thought prompting, as well as assigning roles to the model.",
+        "Automated prompt generation methods, such as retrieval-augmented generation (RAG), provide for greater accuracy and a wider scope of functions for prompt engineers.",
+        "Prompt injection is a type of cybersecurity attack that targets machine learning models through malicious prompts."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Prompt injection",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=71850350",
+      "retrieved_at": "2026-10-18T16:48:13.814Z",
+      "sha256": "025d7756a687b28af25549f219772cd22548e7841ba8f56cd64ba776ad27e666",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Prompt injection is a cybersecurity exploit and an attack vector in which innocuous-looking inputs (i.e.",
+        "prompts) are designed to cause unintended behavior in machine learning models, particularly large language models (LLMs).",
+        "The attack takes advantage of the model's inability to distinguish between developer-defined prompts and user inputs to bypass safeguards and influence model behaviour.",
+        "While LLMs are designed to follow trusted instructions, they can be manipulated into carrying out unintended responses through carefully crafted inputs.",
+        "With capabilities such as web browsing and file upload, an LLM not only needs to differentiate developer instructions from user input, but also to differentiate user input from content not directly authored by the user.",
+        "LLMs with web browsing capabilities can be targeted by indirect prompt injection, where adversarial prompts are embedded within website content.",
+        "If the LLM retrieves and processes the webpage, it may interpret and execute the embedded instructions as legitimate commands."
+      ]
+    }
+  ]
+}

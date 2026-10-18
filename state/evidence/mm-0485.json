@@ -1,0 +1,146 @@
+{
+  "id": "mm-0485",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A ‘ring of fire’ eclipse is taking place in South America and the Pacific. Here’s how eclipses happen",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Creaner, Oisin",
+      "published_at": "2024-10-02",
+      "url": "https://theconversation.com/a-ring-of-fire-eclipse-is-taking-place-in-south-america-and-the-pacific-heres-how-eclipses-happen-240279",
+      "retrieved_at": "2026-10-18T16:52:38.266Z",
+      "sha256": "7f70bc80690fad2c01886ce706d8ef4959e0cfdac5146ff1455e04043e315617",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "A ‘ring of fire’ eclipse is taking place in South America and the Pacific.",
+        "Here’s how eclipses happen Skip to content Academic rigour, journalistic flair PEDRO SARMENTO COSTA / EPA Images A ‘ring of fire’ eclipse is taking place in South America and the Pacific.",
+        "It will be visible from Argentina and Chile, while a partial eclipse will be seen in parts of the Pacific, other parts of South America and from Antarctica.",
+        "People around the world have wondered about their significance and what causes them.",
+        "Unsurprisingly, given their impressive nature, various mystical causes and effects have been attributed to eclipses over the centuries.",
+        "I’m going to provide more grounded answers to these questions.",
+        "But as you’ll see, the answers often demand another question.",
+        "The Moon goes around the Earth once per month in a smaller orbit.",
+        "The Moon passes between us and the Sun, blocking out sunlight and casting a shadow on the Earth.",
+        "Oisin Creaner , Author provided (no reuse) Why don’t eclipses happen every month?",
+        "The Moon’s path around the Earth is tilted with respect to the Earth’s path around the Sun.",
+        "This means that, most of the time, the Moon passes either above or below the Sun from our perspective, so it doesn’t block out any sunlight."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Did This Happen?",
+      "publisher": "Oxford University Press",
+      "author": "Campbell, John L.",
+      "published_at": "2018-05-24",
+      "url": "https://doi.org/10.1093/oso/9780190872434.003.0001",
+      "retrieved_at": "2026-10-18T16:52:38.385Z",
+      "sha256": "21608f47168bf2c13359931df39b3b5e04279af61153af7353908141d15c2346",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Chapter 1 summarizes the book’s core argument—that Donald Trump’s rise to the presidency did not occur so much from the contingencies of the election per se (e.g.",
+        "his campaign strategy, Russian meddling, Hillary Clinton’s emails, FBI director James Comey’s investigation, Trump’s media experience as a TV celebrity, etc.) but from deep and long-standing trends in American Society that stretched back decades.",
+        "These economic, racial, ideological, and political trends were triggered by the demise of America’s Golden Age of prosperity immediately following World War II.",
+        "They reached a tipping point by the time Barack Obama was elected president.",
+        "Obama’s election and administration pushed dissatisfaction over the edge."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Eclipse",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9770",
+      "retrieved_at": "2026-10-18T16:52:38.616Z",
+      "sha256": "734076c01133d9b8b8fc6a6a70762f61435eee1a8a5fd72846ff2919a08a85b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An eclipse is an astronomical event which occurs when an astronomical object or spacecraft is temporarily obscured, by passing into the shadow of another body or by having another body pass between it and the viewer.",
+        "This alignment of three celestial objects is known as a syzygy.",
+        "An eclipse is the result of either an occultation (completely hidden) or a transit (partially hidden).",
+        "A \"deep eclipse\" (or \"deep occultation\") is when a small astronomical object is behind a bigger one.",
+        "The term eclipse is most often used to describe either a solar eclipse, when the Moon's shadow crosses the Earth's surface, or a lunar eclipse, when the Moon moves into the Earth's shadow.",
+        "However, it can also refer to such events beyond the Earth–Moon system: for example, a planet moving into the shadow cast by one of its moons, a moon passing into the shadow cast by its host planet, or a moon passing into the shadow of another moon.",
+        "A binary star system can also produce eclipses if the plane of the orbit of its constituent stars intersects the observer's position.",
+        "The type of solar eclipse that happens during each season (whether total, annular, hybrid, or partial) depends on apparent sizes of the Sun and Moon.",
+        "If the orbit of the Earth around the Sun and the Moon's orbit around the Earth were both in the same plane with each other, then eclipses would happen every month.",
+        "There would be a lunar eclipse at every full moon, and a solar eclipse at every new moon.",
+        "It is because of the non-planar differences that eclipses are not a common event.",
+        "If both orbits were perfectly circular, then each eclipse would be the same type every month."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Lunar eclipse",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18298",
+      "retrieved_at": "2026-10-18T16:52:38.617Z",
+      "sha256": "98bf6f52017c1201bac04fb3c900680715aa4e4d96ebe1a5adbfefe560a3c2a5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A lunar eclipse, also called a blood moon, is an astronomical event that occurs when the Moon orbits through Earth's shadow.‍‍ Lunar eclipses occur during eclipse season, when the Moon's orbital plane is approximately in line with Earth and the Sun.",
+        "The type and length of a lunar eclipse depend on the Moon's proximity to the lunar node.‍‍\nIn contrast with elusive and short-lasting solar eclipses, lunar eclipses can be observed from anywhere on the night side of Earth and often last for an hour or longer.",
+        "This occurs because when the Moon passes through the Earth's umbra, any sunlight that reaches the Moon must first pass through the Earth's atmosphere.",
+        "The resulting Rayleigh scattering removes short-wavelength colors such as violet and blue from the light before it reflects back off the lunar surface and is observed on Earth."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Solar eclipse",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5024887",
+      "retrieved_at": "2026-10-18T16:52:38.617Z",
+      "sha256": "3eba2d31b14847fd6d996d837b49631a8a023afbd18f41677a6d1cdff5b79049",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A solar eclipse occurs when the Moon passes between Earth and the Sun, thereby obscuring the view of the Sun from a small part of Earth, totally or partially.",
+        "Such an alignment occurs approximately every six months, during the eclipse season in its new moon phase, when the Moon's orbital plane is closest to the plane of Earth's orbit.",
+        "In a total eclipse, the disk of the Sun is fully obscured by the Moon.",
+        "In partial and annular eclipses, only part of the Sun is obscured.",
+        "Unlike a lunar eclipse, which may be viewed from anywhere on the night side of Earth, a solar eclipse can only be viewed from a relatively small area of the world.",
+        "As such, although total solar eclipses occur somewhere on Earth every 18 months on average, they recur at any given place only once every 360 to 410 years.",
+        "If the Moon were in a perfectly circular orbit and in the same orbital plane as Earth, there would be total solar eclipses at every new moon.",
+        "Instead, because the Moon's orbit is tilted at about 5 degrees to Earth's orbit, its shadow usually misses Earth.",
+        "Solar (and lunar) eclipses therefore happen only during eclipse seasons, resulting in at least two, and up to five, solar eclipses each year, no more than two of which can be total.",
+        "Total eclipses are rarer because they require a more precise alignment between the centers of the Sun and Moon, and because the Moon's apparent size in the sky is sometimes too small for it to fully cover the Sun.",
+        "In some ancient and modern cultures, solar eclipses were attributed to supernatural causes or regarded as bad omens.",
+        "Astronomers' predictions of eclipses began in China as early as the 4th century BC; eclipses hundreds of years into the future may now be predicted with high accuracy."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Solar eclipse of August 12, 2026",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25208100",
+      "retrieved_at": "2026-10-18T16:52:38.617Z",
+      "sha256": "f0d49696ec234a0bb43e6441dac18e3271efb776ad9f14db1ea5c8c2ad86251c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A total solar eclipse occurred at the Moon's descending node of orbit on Wednesday, 12 August 2026, with a magnitude of 1.0386.",
+        "Totality occurred in a narrow path across Earth's surface, with the partial solar eclipse visible over a surrounding region thousands of kilometres wide.",
+        "Occurring about 2.3 days after perigee (on 10 August 2026, at 11:18 UTC), the Moon's apparent diameter was larger.",
+        "The total eclipse passed over northernmost Siberia, the Arctic, Greenland, Iceland, the Atlantic Ocean, northern Spain, a small part of northeastern Portugal, the Mediterranean Sea, and the Balearic Islands.",
+        "The points of greatest duration and greatest eclipse were just 45 km (28 mi) off the western coast of Iceland around 65°30' N and 25°25' W, where the totality lasted 2 minutes and 18.2 seconds.",
+        "The first part of the total eclipse path unusually passed from east to west from Russia to Greenland, passing about 100 km south of the North Pole.",
+        "A partial eclipse covered more than 90% of the Sun in Ireland, Great Britain, and northern Italy, and to a lesser extent across much of the rest of Europe, North Africa, and northern North America.",
+        "The total eclipse passed over northern Spain from the Atlantic coast to the Mediterranean coast, as well as the Balearic Islands.",
+        "The total eclipse was visible from the cities of A Coruña, Valencia, Zaragoza, Palma, and Bilbao, but both Madrid and Barcelona were just outside the path of totality.",
+        "This was the first total eclipse to be visible in Europe since 20 March 2015, and the first one to cross over Mainland Europe since 11 August 1999.",
+        "It was the first total solar eclipse visible in Iceland since 30 June 1954, also solar saros series 126 (descending node), and the only one to occur in the 21st century; the next one visible over Iceland will be in 2196.",
+        "It was also the first total solar eclipse visible from the territory of present-day Spain since 2 October 1959 in the Canary Islands, and the first from the Spanish mainland since 30 August 1905."
+      ]
+    }
+  ]
+}

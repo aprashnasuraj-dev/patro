@@ -1,0 +1,99 @@
+{
+  "id": "mm-1644",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Peafowl",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63610",
+      "retrieved_at": "2026-10-18T17:40:33.289Z",
+      "sha256": "64ceb10486f4b6ddb2adb089c3566406387b21b7ae4ed26b266c83a2fd30fa13",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Peafowl is a common name for two bird species of the genus Pavo and one species of the closely related genus Afropavo within the tribe Pavonini of the family Phasianidae (the pheasants and their allies).",
+        "Male peafowl are referred to as peacocks, and female peafowl are referred to as peahens.",
+        "Despite this, peacock is usually used to refer to both sexes, in common language.",
+        "The two Asiatic species are the blue or Indian peafowl originally from the Indian subcontinent, and the green peafowl from Southeast Asia.",
+        "The third peafowl species, the Congo peafowl, is native only to the Congo Basin.",
+        "Male peafowl are known for their piercing calls and their extravagant plumage.",
+        "The latter is especially prominent in the Asiatic species, which have an eye-spotted \"tail\" or \"train\" of covert feathers, which they display as part of a courtship ritual.",
+        "The functions of the elaborate iridescent coloration and large \"train\" of peacocks have been the subject of extensive scientific debate.",
+        "Charles Darwin suggested that they served to attract females, and the showy features of the males had evolved by sexual selection.",
+        "More recently, Amotz Zahavi proposed in his handicap principle that these features acted as honest signals of the males' fitness, since less-fit males would be disadvantaged by the difficulty of surviving with such large and conspicuous structures."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Signalling theory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1318175",
+      "retrieved_at": "2026-10-18T17:40:33.289Z",
+      "sha256": "846e6bebc66533800e626a93a310ba1fbb3138a1593c6f5db34bf0d57ac4c4ba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Within evolutionary biology, signalling theory is a body of theoretical work examining communication between individuals, both within species and across species.",
+        "Mathematical models describe how signalling can contribute to an evolutionarily stable strategy.",
+        "Signals are given in contexts such as mate selection by females, which subjects the advertising males' signals to selective pressure.",
+        "Signals thus evolve because they modify the behaviour of the receiver to benefit the signaller.",
+        "Signals may be honest, conveying information which usefully increases the fitness of the receiver, or dishonest.",
+        "An individual can cheat by giving a dishonest signal, which might briefly benefit that signaller, at the risk of undermining the signalling system for the whole population.",
+        "The question of whether the selection of signals works at the level of the individual organism or gene, or at the level of the group, has been debated by biologists such as Richard Dawkins, arguing that individuals evolve to signal and to receive signals better, including resisting manipulation.",
+        "Amotz Zahavi suggested that cheating could be controlled by the handicap principle, where the best horse in a handicap race is the one carrying the largest handicap weight.",
+        "According to Zahavi's theory, signallers such as male peacocks have \"tails\" that are genuinely handicaps, being costly to produce.",
+        "The system is evolutionarily stable as the large showy tails are honest signals.",
+        "Biologists have attempted to verify the handicap principle, but with inconsistent results.",
+        "The mathematical biologist Ronald Fisher analysed the contribution that having two copies of each gene (diploidy) would make to honest signalling, demonstrating that a runaway effect could occur in sexual selection."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Darwinian puzzle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3207752",
+      "retrieved_at": "2026-10-18T17:40:33.289Z",
+      "sha256": "3a48267b67d89d4d1869fd6e5ca69fa7f2451f01d3a354a96da07c035c044908",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A Darwinian puzzle is a trait that appears to reduce the fitness of individuals that possess it.",
+        "Such traits attract the attention of evolutionary biologists.",
+        "Several human traits pose challenges to evolutionary thinking, as they are relatively prevalent but are associated with lower reproductive success through reduced fertility and/or longevity.",
+        "Some of the classic examples include: left handedness, menopause, and mental disorders.",
+        "These traits are also found in animals, a peacock shows an example of a trait that may reduce its fitness.",
+        "The bigger the tail, the easier it is seen by predators and it also may hinder the movement of the peacock.",
+        "Darwin, in fact, solved this \"puzzle\" by explaining the peacock's tail as evidence of sexual selection; a bigger tail confers evolutionary fitness on the male by allowing it to attract more females than other males with shorter tails.",
+        "The phrase \"Darwinian puzzle\" itself is rare and of unclear origin; it's typically talked about in the context of animal behavior."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Biological ornament",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30966218",
+      "retrieved_at": "2026-10-18T17:40:33.289Z",
+      "sha256": "09b619ceea1d94e7a682abf092577a49527ed8e051a73cc7d7541d61a28a310c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A biological ornament is a characteristic of an animal that appears to serve a decorative function rather than a utilitarian function.",
+        "Many are secondary sexual characteristics, and others appear on young birds during the period when they are dependent on being fed by their parents.",
+        "Ornaments are used in displays to attract mates, which may lead to the evolutionary process known as sexual selection.",
+        "An animal may shake, lengthen, or spread out its ornament in order to get the attention of the opposite sex, which will in turn choose the most attractive one with which to mate.",
+        "Ornaments are most often observed in males, and choosing an extravagantly ornamented male benefits females as the genes that produce the ornament will be passed on to her offspring, increasing their own reproductive fitness.",
+        "As Ronald Fisher noted, the male offspring will inherit the ornament while the female offspring will inherit the preference for said ornament, which can lead to a positive feedback loop known as a Fisherian runaway.",
+        "These structures serve as cues to animal sexual behavior, that is, they are sensory signals that affect mating responses.",
+        "Therefore, ornamental traits are often selected by mate choice."
+      ]
+    }
+  ]
+}

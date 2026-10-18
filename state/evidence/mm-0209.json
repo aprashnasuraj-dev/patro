@@ -1,0 +1,131 @@
+{
+  "id": "mm-0209",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Vaccines: A Triumph of Man’s Manipulation of the Immune System",
+      "publisher": "Bloomsbury Sigma",
+      "author": null,
+      "published_at": "2017",
+      "url": "https://doi.org/10.5040/9781472956699.0013",
+      "retrieved_at": "2026-10-18T16:48:09.460Z",
+      "sha256": "d62ac5aa4603187a66de6180df433117befed843401586aaa8557e25e614db23",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Immune --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Vaccine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32653",
+      "retrieved_at": "2026-10-18T16:48:09.461Z",
+      "sha256": "94116d13a88cc854fb7bc21818422e298f725c6e11c35dd72e7a3b8fa4a49bf3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A vaccine is a biological preparation that provides active acquired immunity to a particular infectious or malignant disease.",
+        "The safety and effectiveness of vaccines has been widely studied and verified.",
+        "A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.",
+        "The agent stimulates the immune system to recognize the agent as a threat, destroy it, and recognize further and destroy any of the microorganisms associated with that agent that it may encounter in the future.",
+        "Vaccines can be prophylactic (to prevent or alleviate the effects of a future infection by a natural or \"wild\" pathogen), or therapeutic (to fight a disease that has already occurred, such as cancer).",
+        "Some vaccines offer full sterilizing immunity, in which infection is prevented.",
+        "Vaccination is the most effective method of preventing infectious diseases; widespread immunity due to vaccination is largely responsible for the worldwide eradication of smallpox and the restriction of diseases such as polio, measles, and tetanus from much of the world.",
+        "The World Health Organization (WHO) reports that licensed vaccines are available for twenty-five different preventable infections.",
+        "The first recorded use of inoculation to prevent smallpox (see variolation) occurred in the 16th century in China, with the earliest hints of the practice in China coming during the 10th century.",
+        "It was also the first disease for which a vaccine was produced.",
+        "The folk practice of inoculation against smallpox was brought from Turkey to Britain in 1721 by Lady Mary Wortley Montagu.",
+        "The terms vaccine and vaccination are derived from Variolae vaccinae (smallpox of the cow), the term devised by Edward Jenner (who both developed the concept of vaccines and created the first vaccine) to denote cowpox."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Non-specific effect of vaccines",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46559303",
+      "retrieved_at": "2026-10-18T16:48:09.461Z",
+      "sha256": "607bf3cbb7700ec61f0cfdeca94ffc74ca9c5bab1338e5968346c649c9b07708",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Non-specific effects of vaccines (also called \"heterologous effects\" or \"off-target effects\") are effects which go beyond the specific protective effects against the targeted diseases.",
+        "Non-specific effects from live vaccines can be strongly beneficial by increasing protection against non-targeted infections.",
+        "This has been shown with childhood mortality in two live attenuated vaccines, BCG vaccine and measles vaccine, through multiple randomized controlled trials.",
+        "Non-specific effects of non-live vaccination may be detrimental, increasing overall mortality at least 30% by some estimates, despite providing protection against the target disease.",
+        "Ongoing research suggests that non-specific effects of vaccines may depend on the vaccine, the vaccination sequence, and the sex of the infant.",
+        "For example, one hypothesis suggests that all live attenuated vaccines reduce mortality more than explained by prevention of target infections, while all inactivated vaccines may increase overall mortality despite providing protection against the target disease.",
+        "These effects may be long-lasting, at least up to the time point where a new type of vaccine is given.",
+        "The non-specific effects can be very pronounced, with significant effects on overall mortality and morbidity.",
+        "In a situation with herd immunity to the target disease, the non-specific effects can be more important for overall health than the specific vaccine effects.",
+        "The non-specific effects should not be confused with the side effects of vaccines (such as local reactions at the site of vaccination or general reactions such as fever, head ache or rash, which usually resolve within days to weeks – or in rare cases anaphylaxis).",
+        "Rather, non-specific effects represent a form of general immunomodulation, with important consequences for the immune system's ability to handle subsequent challenges.",
+        "It is estimated that millions of child deaths in low income countries could be prevented every year if the non-specific effects of vaccines were taken into consideration in immunization programs."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Immunological memory",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=55059510",
+      "retrieved_at": "2026-10-18T16:48:09.461Z",
+      "sha256": "dd6f42341c4fdce3a9c5cbd12f8cb98505301e60b811a1e7dd53d78673ba8e78",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Immunological memory is the ability of the immune system to quickly and specifically recognize an antigen that the body has previously encountered and initiate a corresponding immune response.",
+        "Generally, they are secondary, tertiary and other subsequent immune responses to the same antigen.",
+        "The adaptive immune system and antigen-specific receptor (e.g., T-cell receptors) generation are responsible for adaptive immune memory.",
+        "After the inflammatory immune response to danger-associated antigen, some of the antigen-specific T cells and B cells persist in the body and become long-living memory T and B cells.",
+        "After a second encounter with the same antigen, they recognize the antigen and mount a faster and more robust response.",
+        "Emerging resources show that even the innate immune system can initiate a more efficient immune response and pathogen elimination after the previous stimulation with a pathogen, respectively with pathogen-associated molecular patterns (PAMPs) or damage-associated molecular patterns (DAMPs).",
+        "Innate immune memory (also called trained immunity) is neither antigen-specific nor dependent on gene rearrangement; the different response is caused by changes in epigenetic programming and shifts in immunometabolism.",
+        "Innate immune memory has been observed in invertebrates and vertebrates.",
+        "Immune memory can be lost if the corresponding memory cells die out (\"immune amnesia\").",
+        "For example, previously acquired immune memory can be depleted by measles in unvaccinated children, leaving them at risk of infection by other pathogens in the years after infection.",
+        "This weakening of the immune system increases the risk of death from other diseases."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Trained immunity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=61986578",
+      "retrieved_at": "2026-10-18T16:48:09.461Z",
+      "sha256": "8d8b5983bafa0eb06c509a9c228eac3feda89c7d8bacabd85cb57a62851b738d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Trained immunity is a long-term functional modification of chromatin in cells of the innate immune system which leads to an altered response to a second, possibly unrelated, challenge.",
+        "For example, the BCG vaccine leads to a reduction in childhood mortality caused by unrelated infectious agents.",
+        "The term \"innate immune memory\" is sometimes used as a synonym for the term trained immunity which was first coined by Mihai Netea in 2011.",
+        "The term \"trained immunity\" is relatively new – immunological memory has previously been considered only as a part of adaptive immunity – and refers only to changes in innate immune memory of vertebrates.",
+        "This type of immunity is thought to be largely mediated by epigenetic modifications.",
+        "The changes to the innate immune response may last up to several months, in contrast to the classical immunological memory (which may last up to a lifetime), and is usually unspecific because there is no production of specific antibodies/receptors.",
+        "Furthermore, trained immunity has been suggested to possess a transgenerational effect, for example the children of mothers who had also received vaccination against BCG had a lower mortality rate than children of unvaccinated mothers.",
+        "The BRACE trial is currently assessing if BCG vaccination can reduce the impact of COVID-19 in healthcare workers.",
+        "Other vaccines are also thought to induce immune training such as the DTPw vaccine."
+      ]
+    }
+  ]
+}

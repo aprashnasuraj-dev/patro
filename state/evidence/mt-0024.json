@@ -1,0 +1,31 @@
+{
+  "id": "mt-0024",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Correcting Whitespace Errors in Digitized Historical Texts",
+      "publisher": "Association for Computational Linguistics",
+      "author": "Soni, Sandeep; Klein, Lauren; Eisenstein, Jacob",
+      "published_at": "2019",
+      "url": "https://doi.org/10.18653/v1/w19-2513",
+      "retrieved_at": "2026-10-18T17:52:38.477Z",
+      "sha256": "67ae1c4d7ed4de897c0955af31d65e40bccb187968e5bd71c27d388c472fd011",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Correcting Whitespace Errors in Digitized Historical Texts - ACL Anthology Correcting Whitespace Errors in Digitized Historical Texts Sandeep Soni , Lauren Klein , Jacob Eisenstein Correct Metadata for Use this form to create a GitHub issue with structured data describing the correction.",
+        "Once you create that issue, the correction will be reviewed by a staff member.",
+        "⚠️ Mobile Users: Submitting this form to create a new issue will only work with github.com, not the GitHub Mobile app.",
+        "Please use this form only to correct data that is out of line with the PDF.",
+        "See our corrections guidelines if you need to change the PDF.",
+        "You may use &lt;b>...&lt;/b> for bold , &lt;i>...&lt;/i> for italic , &lt;u>...&lt;/u> for underline , &lt;sc>...&lt;/sc> for small-caps , &lt;tt>...&lt;tt> for typewriter text , &lt;url>...&lt;/url> for URLs, &lt;a href=...> for hyperlinks, and &lt;par/> for paragraph breaks.",
+        "Verification against PDF Ensure that the new title/authors match the snapshot below.",
+        "(If there is no snapshot or it is too small, consult the PDF .) Authors concatenated from the text boxes above: ALL author names match the snapshot above—including middle initials, hyphens, and accents.",
+        "Create GitHub issue for staff review Abstract Whitespace errors are common to digitized archives.",
+        "This paper describes a lightweight unsupervised technique for recovering the original whitespace.",
+        "Our approach is based on count statistics from Google n-grams, which are converted into a likelihood ratio test computed from interpolated trigram and bigram probabilities.",
+        "To evaluate this approach, we annotate a small corpus of whitespace errors in a digitized corpus of newspapers from the 19th century United States."
+      ]
+    }
+  ]
+}

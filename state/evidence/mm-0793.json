@@ -1,0 +1,119 @@
+{
+  "id": "mm-0793",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Introduction: how language works in politics",
+      "publisher": "Policy Press",
+      "author": "Williams, Matthew",
+      "published_at": "2018-06-26",
+      "url": "https://doi.org/10.1332/policypress/9781529200201.003.0001",
+      "retrieved_at": "2026-10-18T17:13:48.292Z",
+      "sha256": "63d306c7b887fc2f4f4ec5a8264647c52b30714b32019209181bfc28b0dcae4b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This book examines how language works in democratic politics and how it impacts the effectiveness of policy.",
+        "Using evidence from the first computer-assisted analysis of all 41.5 million words of legislation enacted from 1900 to 2015, it tracks the major changes in form and function that Parliament's use of language has undergone over time and the reasons for such changes.",
+        "More importantly, it explores the policy and social implications of changes in legislative language as well as the issue of legislative indeterminacy.",
+        "This introductory chapter discusses the questions, arguments and aims of the book and reviews the literature on the operation of language in British politics, along with the impact of legislative language on policy effectiveness.",
+        "It also explains what specifically the book contributes to the existing literature, describes the research design, and provides an overview of the chapters that follow."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Desalination",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=156787",
+      "retrieved_at": "2026-10-18T17:13:48.292Z",
+      "sha256": "ca4a426190776aa5f73089ac3bb9c26222c6e90d6bfa18401fe8ca6eef6cfcad",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Desalination is the artificial process by which salt water (generally sea water) is converted to fresh water.",
+        "More generally, desalination is the removal of salts and minerals from a substance.",
+        "It is possible to desalinate saltwater, especially sea water, to produce water for human consumption or irrigation, producing brine as a by-product.",
+        "Interest in desalination mostly focuses on cost-effective provision of fresh water for human use.",
+        "Along with recycled wastewater, it is one of the few water resources independent of rainfall.",
+        "As stress on the need for freshwater intensifies globally, desalination has become a key part of strategies for global water security.",
+        "According to a 2019 review in Science of the Total Environment, around 95 million cubic meters per day of desalinated water is produced worldwide, and the demand for desalinated water is expected to grow significantly to help close the global water supply gap.",
+        "Due to its energy consumption, desalinating sea water is generally more costly than fresh water from surface water or groundwater, water recycling and water conservation.",
+        "However, these alternatives are not always available and depletion of reserves is a critical problem worldwide.",
+        "Desalination processes use either thermal methods (in the case of distillation) or membrane-based methods (e.g.",
+        "As of 2020, global desalination capacity stood at roughly 97 million m3/day from over 16,800 operating plants, with contracted projects pushing total potential capacity beyond 114 million m3 /day worldwide.",
+        "In 2018, the global energy intensity of desalination was about 3 kWh/m3 (in 2018), improved by a factor of 10 from 20–30 kWh/m3 in 1970."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Thames Gateway Water Treatment Works",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12316745",
+      "retrieved_at": "2026-10-18T17:13:48.292Z",
+      "sha256": "7b2b94e07f637b60c6a527fb9c885eb5e060c9ea0cad1b52026c36d7c57503c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Thames Gateway Water Treatment Works or Beckton Desalination Plant is a desalination plant in Beckton, London, adjacent to Beckton Sewage Treatment Works.",
+        "The plant takes brackish water from the River Thames and converts it into drinkable water through a reverse osmosis process.",
+        "The first of its kind in the UK, it was built for Thames Water by a consortium of Interserve, Atkins Water and Acciona Agua.",
+        "It was opened by Prince Philip, Duke of Edinburgh, on 2 June 2010.",
+        "It was planned to provide up to 150 million litres of drinking water each day – enough for 900,000 Londoners.",
+        "– but by 2025 had only operated on five occasions, and at two-thirds of its planned capacity."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Reverse osmosis",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18589212",
+      "retrieved_at": "2026-10-18T17:13:48.292Z",
+      "sha256": "8a176a18450f844019b6c00e67744755f74222962736a2dfc5308b3c5986a0c2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Reverse osmosis (RO) is a water purification process that uses a semi-permeable membrane to separate water molecules from other substances.",
+        "RO applies pressure to overcome osmotic pressure that favors even distributions.",
+        "RO can remove dissolved or suspended chemical species as well as biological substances (principally bacteria), and is used in industrial processes and the production of potable water.",
+        "In developing nations like Pakistan, industrial reverse osmosis plants are widely adopted across textile, pharmaceutical, and manufacturing sectors to overcome groundwater contamination and ensure compliant process water.",
+        "RO retains the solute on the pressurized side of the membrane and the purified solvent passes to the other side.",
+        "The relative sizes of the various molecules determines what passes through.",
+        "\"Selective\" membranes reject large molecules, while accepting smaller molecules (such as solvent molecules, e.g., water).",
+        "Reverse osmosis is most commonly known for its use in drinking water purification from seawater, removing the salt and other effluent materials from the water molecules.",
+        "As of 2013 the world's largest RO desalination plant was in Sorek, Israel, outputting 624 thousand cubic metres per day (165 million US gallons per day).",
+        "RO systems for private use are also available for purifying municipal tap water or pre-treated well water."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Adelaide Desalination Plant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22830656",
+      "retrieved_at": "2026-10-18T17:13:48.292Z",
+      "sha256": "c3954be0b4aaa5111a28b066ba5f940fb11965aeb94b247fdf0e2c937a013e08",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Adelaide Desalination Plant (ADP), formerly known as the Port Stanvac Desalination Plant, is a sea water reverse osmosis desalination plant located in Lonsdale, South Australia which has the capacity to provide the city of Adelaide with up to 50% of its drinking water needs.",
+        "In September 2007, South Australian Premier Mike Rann announced that the State Government would fund and build a desalination plant to ensure Adelaide's water supply against drought.",
+        "The plant was financed and built by SA Water, a state-owned corporation.",
+        "The plant was initially planned to have a capacity of 50 gigalitres (GL) of water per year but was later doubled in capacity to 100 GL/year with the assistance of funding from the Australian Government.",
+        "The expanded capacity represents around 50% of Adelaide's domestic water supply.",
+        "The project has engaged professional political lobbyists, including Michael O'Reilly.",
+        "The plant was completed on time and within the original budget ($1.83 billion).",
+        "Stage one of the plant commenced operations in October 2011, and stage two commenced in July 2012.",
+        "The Adelaide Desalination Project is the largest infrastructure project that the State of South Australia has funded, owns, and has completed successfully.",
+        "Since 2012, the plant has operated at 10% of its capacity for much of the time, to keep it functioning.",
+        "Due to low rainfall in 2024, in January 2025 the plant's production increased to its full capacity of 300 megalitres (ML) of water per day."
+      ]
+    }
+  ]
+}

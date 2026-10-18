@@ -1,0 +1,86 @@
+{
+  "id": "mm-1426",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Gross domestic product",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12594",
+      "retrieved_at": "2026-10-18T17:35:39.268Z",
+      "sha256": "49c56ec1c78186fc5a3c30dd85e1206dcbe2945d211aa495fd73a58b228f98fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gross domestic product (GDP) is a monetary measure of the total market value of all of the final goods and services which are produced and rendered during a specific period of time (usually a year) by a country or countries.",
+        "GDP is often used to measure the economic activity of a country or region.",
+        "The major components of GDP are consumption, government spending, net exports (exports minus imports), and investment.",
+        "Changing any of these factors can increase the size of the economy.",
+        "For example, population growth through mass immigration can raise consumption and demand for public services, thereby contributing to GDP growth.",
+        "However, GDP is not a measure of overall standard of living or well-being, as it does not account for how income is distributed among the population.",
+        "A country may rank high in GDP but still experience jobless growth depending on its planned economic structure and strategies.",
+        "Dividing total GDP by the population gives an idealized rough measure of GDP per capita.",
+        "Several national and international economic organizations, such as the OECD and the International Monetary Fund, maintain their own definitions of GDP.",
+        "GDP is often used as a metric for international comparisons as well as a broad measure of economic progress.",
+        "It serves as a statistical indicator of national development and progress.",
+        "Total GDP can also be broken down into the contribution of each industry or sector of the economy."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Purchasing power parity",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=64489",
+      "retrieved_at": "2026-10-18T17:35:39.268Z",
+      "sha256": "b3f5acc303a5fb75e273aa5291e45e2cb27476f07e45f5d1e235d5eceeaece1f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Purchasing power parity (PPP) is a measure of the price of specific goods in different countries and is used to compare the absolute purchasing power of the countries' currencies.",
+        "PPP is effectively the ratio of the price of a market basket at one location divided by the price of the basket of goods at a different location.",
+        "The PPP inflation and exchange rate may differ from the market exchange rate because of tariffs and other transaction costs.",
+        "The purchasing power parity indicator can be used to compare economies regarding their gross domestic product (GDP), labour productivity and actual individual consumption, and in some cases to analyse price convergence and to compare the cost of living between places.",
+        "The calculation of the PPP, according to the OECD, is made through a basket of goods that contains a \"final product list [that] covers around 3,000 consumer goods and services, 30 occupations in government, 200 types of equipment goods and about 15 construction projects\".",
+        "Estimation of purchasing power parity is complicated by issues such as the fact that countries do not simply differ in a uniform price level.",
+        "People in different countries typically consume different quantities of goods so it is necessary to compare the cost of quantities of goods and services using a price index."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "List of sovereign states in Europe by GDP (nominal)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1163791",
+      "retrieved_at": "2026-10-18T17:35:39.268Z",
+      "sha256": "fc99dae527652257e7e2bad95ac5036b636c97059261d256bbb3a6e614a7eca1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gross domestic product (GDP) is the market value of all final goods and services from a nation in a given year.",
+        "Countries are sorted by nominal GDP estimates from financial and statistical institutions, which are calculated at market or government official exchange rates.",
+        "Nominal GDP does not take into account differences in the cost of living in different countries, and the results can vary greatly from one year to another based on fluctuations in the exchange rates of the country's currency.",
+        "Such fluctuations may change a country's ranking from one year to the next, even though they often make little or no difference in the standard of living of its population."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gross metropolitan product",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5287735",
+      "retrieved_at": "2026-10-18T17:35:39.268Z",
+      "sha256": "5f655854542aeff7a2c6037a99ebc24f1f631082d8da06636df61de6eddadca2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Gross metropolitan product (GMP) is a monetary measure that calculates the total economic output of a statistical metropolitan unit during a specific time period.",
+        "It represents the market value of all final goods and services produced within the unit, similar to how GDP measures national economic output."
+      ]
+    }
+  ]
+}

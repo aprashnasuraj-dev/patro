@@ -1,0 +1,122 @@
+{
+  "id": "mm-0136",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "New Soapless Soap Kills Germs without Excess Suds",
+      "publisher": "JSTOR",
+      "author": null,
+      "published_at": "1947-08-30",
+      "url": "https://doi.org/10.2307/3923998",
+      "retrieved_at": "2026-10-18T16:47:17.572Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Humidity Kills Germs",
+      "publisher": "JSTOR",
+      "author": null,
+      "published_at": "1948-02-28",
+      "url": "https://doi.org/10.2307/3924922",
+      "retrieved_at": "2026-10-18T16:47:18.198Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Soap",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57875",
+      "retrieved_at": "2026-10-18T16:47:18.198Z",
+      "sha256": "e689ce06a3c994ec94485f50378d820db4f205268bb6d5abc23acacf7737d3a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Soap is a salt of a fatty acid (sometimes other carboxylic acids) used for cleaning and lubricating products as well as other applications.",
+        "In a domestic setting, soaps, specifically \"toilet soaps\", are surfactants typically used for washing, bathing, and other types of housekeeping.",
+        "In industrial settings, soaps are used as thickeners, components of some lubricants, emulsifiers, and catalysts.",
+        "Soaps are often produced by mixing fats and oils with a base.",
+        "Humans have used soap for millennia, and evidence exists for the production of soap-like materials in ancient Babylon around 2800 BC."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hygiene",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=147020",
+      "retrieved_at": "2026-10-18T16:47:18.198Z",
+      "sha256": "d293b12a388fae1b4f19a5891232e89260d5543170d380fd9db60bcc3d14b928",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "According to the World Health Organization (WHO), \"Hygiene refers to conditions and practices that help to maintain health and prevent the spread of diseases.\" Personal hygiene refers to maintaining the body's cleanliness.",
+        "Hygiene activities can be grouped into the following: home and everyday hygiene, personal hygiene, medical hygiene, sleep hygiene, and food hygiene.",
+        "Home and every day hygiene includes hand washing, respiratory hygiene, food hygiene at home, hygiene in the kitchen, hygiene in the bathroom, laundry hygiene, and medical hygiene at home.",
+        "While often equated with cleanliness in common usage, hygiene is a term encompassing the personal practices and environmental conditions that maintain health and prevent disease."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Hand washing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=428502",
+      "retrieved_at": "2026-10-18T16:47:18.198Z",
+      "sha256": "75af0264456f3c8f1ef864e9795277c45435c1e879ef21f048c2e23c39cc9a61",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hand washing (or handwashing), also called hand hygiene, is the process of cleaning the hands with soap or handwash and water to eliminate bacteria, viruses, dirt, microorganisms, and other potentially harmful substances.",
+        "Drying of the washed hands is part of the process as wet and moist hands are more easily recontaminated.",
+        "If soap and water are unavailable, hand sanitizer that is at least 60% (v/v) alcohol in water can be used as long as hands are not visibly excessively dirty or greasy.",
+        "Hand hygiene is central to preventing the spread of infectious diseases in home and everyday life settings.",
+        "Meta-analyses have shown that regular hand washing in community settings can significantly reduce respiratory and gastrointestinal infections.",
+        "The World Health Organization (WHO) recommends washing hands for at least 20 seconds before and after certain activities.",
+        "When neither hand washing nor using hand sanitizer is possible, hands can be cleaned with uncontaminated ash and clean water, although the benefits and risks are uncertain for reducing the spread of viral or bacterial infections.",
+        "However, frequent hand washing can lead to skin damage due to drying of the skin.",
+        "Moisturizing lotion is often recommended to keep the hands from drying out; dry skin can lead to skin damage, which can increase the risk for the transmission of infection."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Disinfectant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=478185",
+      "retrieved_at": "2026-10-18T16:47:18.199Z",
+      "sha256": "44103caa11750d0ef13301312c8970708be76ac42b64e1eaabec492105bbc281",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A disinfectant is a chemical substance or compound used to inactivate or destroy microorganisms on inert surfaces.",
+        "Disinfection does not necessarily kill all microorganisms, especially resistant bacterial spores; it is less effective than sterilization, which is an extreme physical or chemical process that kills all types of life.",
+        "Disinfectants are generally distinguished from other antimicrobial agents such as antibiotics, which destroy microorganisms within the body, and antiseptics, which destroy microorganisms on living tissue.",
+        "Biocides are intended to destroy all forms of life, not just microorganisms, whereas disinfectants work by destroying the cell wall of microbes or interfering with their metabolism.",
+        "It is also a form of decontamination, and can be defined as the process whereby physical or chemical methods are used to reduce the amount of pathogenic microorganisms on a surface.",
+        "Disinfectants can also be used to destroy microorganisms on the skin and mucous membrane, as in the medical dictionary historically the word simply meant that it destroys microbes.",
+        "Sanitizers are substances that simultaneously clean and disinfect.",
+        "Disinfectants are frequently used in hospitals, dental surgeries, kitchens, and bathrooms to kill infectious organisms.",
+        "Sanitizers are mild compared to disinfectants and are used primarily to clean things that are in human contact, whereas disinfectants are concentrated and are used to clean surfaces like floors and building premises.",
+        "Bacterial endospores are most resistant to disinfectants, but some fungi, viruses and bacteria also possess some resistance.",
+        "An alternative term used in the sanitation sector for disinfection of waste streams, sewage sludge or fecal sludge is sanitisation or sanitization."
+      ]
+    }
+  ]
+}

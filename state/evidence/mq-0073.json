@@ -1,0 +1,107 @@
+{
+  "id": "mq-0073",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "History of Romania",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25636",
+      "retrieved_at": "2026-10-18T18:39:39.064Z",
+      "sha256": "b10d259ee68c0ff21a51cc0e87e0077ec0fd189499d6191bb97eafef71f39e40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "During antiquity, the main population that lived in the area corresponding to modern-day Romania were the Dacians.",
+        "Dacian civilisation prospered from the second century BC to the second century AD, resulting in the establishment of a Dacian kingdom as a regional power.",
+        "Following several wars with the Roman Empire, Dacia was conquered in 106 AD, and the kingdom's core was turned into a Roman province.",
+        "The province was abandoned by 276 AD following several invasions from various barbarian peoples.",
+        "Many Romanian historians believe that the origin of the Romanians can be traced back to the Dacians and Romans intermixing, which in turn formed the basis of the Romanian ethnicity.",
+        "During the early Middle Ages, numerous migratory peoples moved across and settled the territory of Romania.",
+        "A prominent Turkic population also settled Romanian territory, particularly the Cumans.",
+        "Early Romanian culture was martially influenced by these peoples.",
+        "Vlachs – Romance-language speakers in the Balkans – were first clearly attested in the 10th century, inhabiting areas on both sides of the Danube.",
+        "By the 13th century, numerous small Vlach political entities abounded in areas such as Muntenia, Oltenia and Transylvania.",
+        "These political entities gradually unified, and by the mid-14th century, the two major historical Romanian principalities had emerged, Wallachia and Moldavia.",
+        "The principalities partook in many conflicts against their often stronger neighbours, such as the Ottoman Empire."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Metropolitan Museum of Art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37535",
+      "retrieved_at": "2026-10-18T18:39:39.064Z",
+      "sha256": "1cbe4ee7da7782e35d88aa5281e10fa6f57c7cd94d57635dba76d0bc5c96115f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Metropolitan Museum of Art, colloquially referred to as the Met, is an encyclopedic art museum in New York City.",
+        "By floor area, it is the fourth-largest museum in the world and the largest art museum in the Americas.",
+        "With 5,727,258 visitors in fiscal year 2025, it was the most-visited museum in the United States and the fifth-most visited art museum in the world.",
+        "In 2000, its permanent collection had over two million works; it currently lists a total of 1.5 million works.",
+        "The main building at 1000 Fifth Avenue, along the Museum Mile on the eastern edge of Central Park on Manhattan's Upper East Side, is by area one of the world's largest art museums.",
+        "The first portion of the approximately 2-million-square-foot (190,000 m2) building was built in 1880.",
+        "A much smaller second location, The Cloisters at Fort Tryon Park in Upper Manhattan, contains an extensive collection of art, architecture, and artifacts from medieval Europe.",
+        "A third site, currently the Neue Galerie New York, is set to become the museum's newest location in 2028 when the museum merges with and absorbs the smaller Neue Galerie and its collection of early 20th century Austrian and German art.",
+        "The museum was established by a group of Americans, including philanthropists, artists, and businessmen, with the goal of creating a national institution that would inspire and educate the public.",
+        "The museum's permanent collection consists of works of art ranging from the ancient Near East and ancient Egypt, through classical antiquity to the contemporary world.",
+        "It includes paintings, sculptures, and graphic works from many European Old Masters, as well as an extensive collection of American, modern, and contemporary art.",
+        "The Met also maintains extensive holdings of African, Asian, Oceanian, Byzantine, and Islamic art."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Indian art",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1789504",
+      "retrieved_at": "2026-10-18T18:39:39.064Z",
+      "sha256": "c5b36405fc77bda5eeee64d28ca678e3273c0ddd73a420f1fc25b55f5f2562c7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Indian art consists of a variety of art forms, including painting, sculpture, pottery, and textile arts such as woven silk.",
+        "Geographically, it spans South Asia, including what is now India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, and at times Afghanistan, the Maldives, and Tibet, amongst a few other places.",
+        "A strong sense of design is characteristic of Indian art and can be observed in its modern and traditional forms.",
+        "The earliest Indian art originated during the prehistoric settlements of the 3rd millennium BCE, such as the rock shelters of Bhimbetka, which contain some of the world's oldest known cave paintings.",
+        "On its way to modern times, Indian art has had cultural influences, as well as religious influences such as Hinduism, Buddhism, Jainism, Sikhism and Islam.",
+        "In spite of this complex mixture of religious traditions, generally, the prevailing artistic style at any time and place has been shared by the major religious groups.",
+        "In historic art, sculpture in stone and metal, mainly religious, has survived the Indian climate better than other media and provides most of the best remains.",
+        "Many of the most important ancient finds that are not in carved stone come from the surrounding, drier regions rather than India itself.",
+        "Indian funeral and philosophic traditions exclude grave goods, which is the main source of ancient art in other cultures.",
+        "Indian artist styles historically followed Indian religions out of the subcontinent, having an especially large influence in Tibet, Southeast Asia and China.",
+        "Indian art has itself received influences at times, especially from Central Asia, Iran, and Europe."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Art Institute of Chicago",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=8758450",
+      "retrieved_at": "2026-10-18T18:39:39.064Z",
+      "sha256": "9bd46214d1cf19af6aaab9871e76a6850726213833001edf262234d20788d5e0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Art Institute of Chicago is a private, nonprofit art museum in Grant Park, Chicago, Illinois, United States.",
+        "Founded in 1879, it is one of the oldest and largest art museums in the United States.",
+        "The museum is based in the Art Institute of Chicago Building in Chicago's Grant Park.",
+        "Its collection, stewarded by 11 curatorial departments, includes works such as Georges Seurat's A Sunday on La Grande Jatte, Pablo Picasso's The Old Guitarist, Edward Hopper's Nighthawks, and Grant Wood's American Gothic.",
+        "Its permanent collection of nearly 300,000 works of art is augmented by more than 30 special exhibitions mounted yearly that present curatorial and scientific research.",
+        "The land of the institute is publicly owned by the city of Chicago and administered by the Chicago Park District.",
+        "As a research institution, the Art Institute also has a conservation and conservation science department, five conservation laboratories, and Ryerson and Burnham Libraries, one of the nation's largest art history and architecture libraries.",
+        "The museum's building was constructed for the 1893 World's Columbian Exposition and, due to the growth of the collection, several additions have occurred since.",
+        "The Modern Wing, designed by Renzo Piano, is the most recent expansion, and when it opened in 2009 it increased the museum's footprint to nearly one million square feet.",
+        "This made it the second largest art museum in the United States, after the Metropolitan Museum of Art in New York City.",
+        "The School of the Art Institute of Chicago is legally part of the Art Institute of Chicago, making it one of the few remaining unified arts institutions in the United States."
+      ]
+    }
+  ]
+}

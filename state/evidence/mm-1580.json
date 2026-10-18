@@ -1,0 +1,168 @@
+{
+  "id": "mm-1580",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Smart Homes as Living Laboratories",
+      "publisher": "University of Alabama Press",
+      "author": null,
+      "published_at": "2024-05-15",
+      "url": "https://doi.org/10.2307/jj.30297462.8",
+      "retrieved_at": "2026-10-18T17:39:58.813Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What Smart Homes Can Be",
+      "publisher": "University of Alabama Press",
+      "author": null,
+      "published_at": "2024-05-15",
+      "url": "https://doi.org/10.2307/jj.30297462.10",
+      "retrieved_at": "2026-10-18T17:39:58.932Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Luxury Smart Homes and the Stranger Other",
+      "publisher": "University of Alabama Press",
+      "author": null,
+      "published_at": "2024-05-15",
+      "url": "https://doi.org/10.2307/jj.30297462.7",
+      "retrieved_at": "2026-10-18T17:39:59.138Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "From Smart Homes to Smart Cities",
+      "publisher": "IGI Global",
+      "author": "Emekci, Seyda",
+      "published_at": "2022",
+      "url": "https://doi.org/10.4018/978-1-7998-7785-1.ch018",
+      "retrieved_at": "2026-10-18T17:39:59.139Z",
+      "sha256": "700350e49d853ca10a089799432ed0dc3a9ce9b0e3afe67a57d02e1d3fde89ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The United Nations has set the Sustainable Development Goals that guide a wide variety of programs to build a better and more sustainable future for all.",
+        "The goals are not only universal but also connected with each other and indivisible.",
+        "Since cities are hosting more than half of the world's population and held responsible for three-quarters of global energy consumption and GHG emissions, the Agenda 2030 includes city-related goals.",
+        "Many countries have taken steps towards reducing greenhouse gases and increasing energy efficiency in cities.",
+        "To achieve that, smart technology solutions have been developed and adapted to cities.",
+        "Making cities smart should start from the home level because they have the biggest share in cities' energy consumption and GHG emissions.",
+        "This chapter reveals the potential contribution of smart homes to smart city concepts in terms of energy efficiency and GHG emissions with the help of the bottom-up approach.",
+        "In addition to presenting an extensive literature review to the reader, it also discusses how smart technologies contribute to citizen welfare."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Automation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=173354",
+      "retrieved_at": "2026-10-18T17:39:59.139Z",
+      "sha256": "7a292c89a5eb648188db5043e3be7c3ee34aead4adb5513f0cf272b98a5b9731",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Automation describes a wide range of technologies that reduce human intervention in processes, mainly by predetermining decision criteria, subprocess relationships, and related actions, as well as embodying those predeterminations in machines.",
+        "Automation has been achieved by various means including mechanical, hydraulic, pneumatic, electrical, electronic devices, and computers, usually in combination.",
+        "Complicated systems, such as modern factories, airplanes, and ships typically use combinations of all of these techniques.",
+        "The benefits of automation includes labor savings, reducing waste, savings in electricity costs, savings in material costs, and improvements to quality, accuracy, and precision.",
+        "Automation includes the use of various equipment and control systems such as machinery, processes in factories, boilers, and heat-treating ovens, switching on telephone networks, steering, stabilization of ships, aircraft and other applications and vehicles with reduced human intervention.",
+        "Examples range from a household thermostat controlling a boiler to a large industrial control system with tens of thousands of input measurements and output control signals.",
+        "In the simplest type of an automatic control loop, a controller compares a measured value of a process with a desired set value and processes the resulting error signal to change some input to the process, in such a way that the process stays at its set point despite disturbances.",
+        "This closed-loop control is an application of negative feedback to a system.",
+        "The mathematical basis of control theory began in the 18th century and advanced rapidly in the 20th.",
+        "The term automation, inspired by the earlier word automatic (coming from automaton), was not widely used before 1947, when Ford established an automation department.",
+        "It was during this time that the industry was rapidly adopting feedback controllers, technological advancements introduced in the 1930s revolutionized various industries significantly.",
+        "The World Bank's World Development Report of 2019 shows evidence that the new industries and jobs in the technology sector outweigh the economic effects of workers being displaced by automation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Smart meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3895745",
+      "retrieved_at": "2026-10-18T17:39:59.139Z",
+      "sha256": "68e141f085e2681180f1d812074092805b7c56c43d0a3491776d89ea22bb11e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A smart meter is an electronic device that records information—such as consumption of electric energy, voltage levels, current, and power factor—and communicates the information to the consumer and electricity suppliers.",
+        "Advanced metering infrastructure (AMI) differs from automatic meter reading (AMR) in that it enables two-way communication between the meter and the supplier."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Internet of things",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12057519",
+      "retrieved_at": "2026-10-18T17:39:59.139Z",
+      "sha256": "bf3f08773742d50c9ed27a53aa07cf77de69338a18146dc1e2932ba16faabf99",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Internet of things (IoT) describes physical objects that are embedded with sensors, processing ability, software, and other technologies that connect and exchange data with other devices and systems over the Internet or other communication networks.",
+        "The field of IoT encompasses electronics, communication, and computer science engineering.",
+        "\"Internet of things\" has been considered a misnomer because most devices do not need to be connected to the public Internet; they only need to be connected to a network and be individually addressable.",
+        "The field has evolved due to the convergence of multiple technologies, including ubiquitous computing, sensors, embedded systems, and machine learning.",
+        "Traditional fields of embedded systems, wireless sensor networks, control systems, and automation independently and collectively enable the Internet of things.",
+        "While in the consumer market, IoT technology is most commonly known as smart home products—including devices and appliances like thermostats and smart speakers—the technology's largest applications are in the business and industrial sectors.",
+        "Commercial asset tracking and fleet management represent the largest single application of IoT, accounting for 22% of the total market, driven by the need to monitor mobile assets like vehicles and shipping containers.",
+        "The largest asset tracking sub-segments in transport & logistics are trailer and intermodal container tracking, reaching 5.8 million and 5.3 million active devices globally at the end of 2024 respectively.",
+        "Other major applications include industrial monitoring, smart metering in utilities, and connected healthcare.",
+        "Due to their interconnected nature, IoT devices are vulnerable to security breaches and privacy concerns.",
+        "At the same time, the way these devices communicate wirelessly creates regulatory ambiguities, complicating jurisdictional boundaries of the data transfer."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Smart grid",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13201685",
+      "retrieved_at": "2026-10-18T17:39:59.139Z",
+      "sha256": "a267478442d470ceebd26a1194fc8fece36cb5cf7ad1720834d32a456f8dc53b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The smart grid is an enhancement of the 20th century electrical grid, using two-way communications and distributed so-called intelligent devices.",
+        "Two-way flows of electricity and information could improve the delivery network.",
+        "Research is mainly focused on three systems of a smart grid: the infrastructure system, the management system, and the protection system.",
+        "Electronic power conditioning and control of the production and distribution of electricity are important aspects of the smart grid.",
+        "The smart grid represents the full suite of current and proposed responses to the challenges of electricity supply.",
+        "Numerous contributions to the overall improvement of energy infrastructure efficiency are anticipated from the deployment of smart grid technology, in particular including demand-side management.",
+        "The improved flexibility of the smart grid permits greater penetration of highly variable renewable energy sources, such as solar power and wind power, even without the addition of energy storage.",
+        "Smart grids could also monitor/control residential devices that are noncritical during periods of peak power consumption, and return their function during nonpeak hours.",
+        "Energy efficient resources\nElectric surplus distribution by power lines and auto-smart switch\nSufficient utility grade fiber broadband to connect and monitor the above, with wireless as a backup.",
+        "Sufficient spare \"dark\" capacity to ensure failover, often leased for revenue.",
+        "Concerns with smart grid technology mostly focus on smart meters, items enabled by them, and general security issues.",
+        "Roll-out of smart grid technology also implies a fundamental re-engineering of the electricity services industry, although typical usage of the term is focused on the technical infrastructure."
+      ]
+    }
+  ]
+}

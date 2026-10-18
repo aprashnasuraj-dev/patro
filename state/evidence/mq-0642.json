@@ -1,0 +1,158 @@
+{
+  "id": "mq-0642",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T18:50:59.596Z",
+      "sha256": "6882d87d9970be58030c6ead4924b022d875a4b4ccfaa64f397f03370dd7f510",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Present-day stellar constraints leave multiple high-energy histories for TOI-700 and LHS 1140",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Zhang, Yuzhan",
+      "published_at": "2026-08-18",
+      "url": "https://doi.org/10.21203/rs.3.rs-10726883/v1",
+      "retrieved_at": "2026-10-18T18:50:59.597Z",
+      "sha256": "33da35f4d50a47e567846af1c59cda639499898a9eace212b9b704af7aad53a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Atmospheric evolution on temperate planets records integrated X-ray, extreme-ultraviolet (EUV) and stellar-wind forcing, whereas host stars are usually characterized from present-day measurements.",
+        "Rotation and activity histories can converge at late ages, leaving different cumulative exposures compatible with similar current states.",
+        "We quantify this inverse problem for TOI-700 and LHS 1140 without treating either planet as a calibrated atmospheric chronometer.",
+        "Among rotation-conditioned tracks, 194 histories matching TOI-700 span only a factor 1.077 in current EUV but factors 2.65 and 2.73 in cumulative EUV and wind exposure.",
+        "For LHS 1140, 97 rotation-matched histories span 1.0085 in current EUV but 1.567 and 1.543 cumulatively.",
+        "An independent X-ray measurement tests the present-activity mapping yet provides little ranking of these histories because their native current X-ray luminosities differ by only 0.0038 dex.",
+        "The results separate present-state admissibility, forward-model adequacy and historical identification, and show why an additional present observable need not reduce uncertainty in the historical forcing relevant to planetary evolution."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Explainable Machine Learning Prediction of Unknown Exoplanet Masses from Stellar and Orbital Parameters",
+      "publisher": "Elsevier BV",
+      "author": "Das, Swapan; Bhardwaj, Vinod  Kumar; Chakraborty, Janajit",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.7292112",
+      "retrieved_at": "2026-10-18T18:50:59.597Z",
+      "sha256": "45d20c18ccaccc03544e6da48c010d113d15a54f1381547aa2f26ab0bf135ea7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This study presents an explainable machine learning framework for predicting unknown exoplanet masses using stellar and orbital parameters obtained from the NASA Exoplanet Archive.",
+        "Following data preprocessing and feature selection, five ensemble regression algorithms—Random Forest, Gradient Boosting, XGBoost, LightGBM, and CatBoost—were developed and evaluated using an 80:20 train-test split and five-fold cross-validation.",
+        "Model performance was assessed using the coefficient of determination (R²), Root Mean Square Error (RMSE) and Mean Absolute Error (MAE).",
+        "Statistical differences among the models were examined using Friedman, Wilcoxon signed rank, and Nemenyi post-hoc tests.",
+        "Although XGBoost achieved the highest predictive accuracy on the independent test dataset (R² = 0.1281), Gradient Boosting demonstrated the strongest overall generalisation during cross-validation (R² = 0.2852) and was selected as the final prediction model.",
+        "To improve model interpretability, SHapley Additive exPlanations (SHAP) were employed to quantify feature contributions, identifying the orbital period, planetary radius, stellar mass, system distance, and stellar surface gravity as the most influential predictors of planetary mass.",
+        "Furthermore, 95\\% prediction intervals were generated to quantify the uncertainty for each estimated planetary mass.",
+        "The proposed framework provides an interpretable and statistically validated approach for estimating unknown exoplanet masses, together with prediction uncertainty estimates, to support future exoplanet characterisation and observational planning."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Vega",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32712",
+      "retrieved_at": "2026-10-18T18:50:59.789Z",
+      "sha256": "068448399244df46e1b6eee80fcaff7e1916e8311051618d6a411be7707979df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Vega is the brightest star in the northern constellation of Lyra.",
+        "It has the Bayer designation α Lyrae, which is Latinised to Alpha Lyrae and abbreviated Alpha Lyr or α Lyr.",
+        "This star is relatively close to the Solar System, at only 25 light-years (7.7 parsecs) from the Sun, and one of the most luminous stars in the Sun's neighborhood, being intrinsically brighter than any star nearer to the Sun.",
+        "It is the fifth-brightest star in the night sky, and the second-brightest star in the northern celestial hemisphere, after Arcturus.",
+        "Vega has been extensively studied by astronomers, leading it to be termed \"arguably the next most important star in the sky after the Sun\".",
+        "Vega was the northern pole star around 12000 BCE and will be so again around the year 13724, when its declination will be +84° 14′, less than six degrees from the Pole.",
+        "Vega was the first star other than the Sun to have its image and spectrum photographed.",
+        "It was one of the first stars whose distance was estimated through parallax measurements.",
+        "Vega has functioned as the baseline for calibrating the photometric brightness scale and was one of the stars used to define the zero point for the UBV photometric system.",
+        "Vega is only about a tenth of the age of the Sun, but since it is 2.1 times as massive, its expected lifetime is also one tenth of that of the Sun; both stars are at present approaching the midpoint of their main sequence lifetimes.",
+        "Compared with the Sun, Vega has a lower abundance of elements heavier than helium.",
+        "Vega is also a variable star—that is, a star whose brightness fluctuates."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "List of exoplanet extremes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5036959",
+      "retrieved_at": "2026-10-18T18:50:59.789Z",
+      "sha256": "a4ad34418c0dc803b513414f892341b8b9bb0d154c51aeaf17323529fda30595",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The following are lists of extremes among the known exoplanets.",
+        "The properties listed here are those for which values are known reliably.",
+        "The study of exoplanets is one of the most dynamic emerging fields of science, thus these values may change as new discoveries are made."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "TRAPPIST-1",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50402274",
+      "retrieved_at": "2026-10-18T18:50:59.789Z",
+      "sha256": "93043a0f174d7fe687cff7cfc3fbea3035e657f40dfaa7c7f1aa51c53c65d497",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "TRAPPIST-1 (also known as 2MASS J23062928−0502285 or SPECULOOS-1) is a red dwarf star with seven known exoplanets.",
+        "It lies in the constellation Aquarius approximately 40.66 light-years (12.47 pc) away from Earth.",
+        "An ultra-cool dwarf, it has a surface temperature of about 2,566 K (2,290 °C; 4,160 °F).",
+        "Its radius is slightly larger than Jupiter's and it has a mass of about 9% of the Sun.",
+        "It is estimated to be 7.6 billion years old, making it older than the Solar System.",
+        "Observations in 2016 from TRAPPIST–South (Transiting Planets and Planetesimals Small Telescope project) at La Silla Observatory in Chile and other telescopes led to the discovery of two terrestrial planets in orbit around TRAPPIST-1.",
+        "In 2017, further analysis of the original observations identified five more terrestrial planets.",
+        "The seven planets take between 1.5 and 19 days to orbit the star in circular orbits.",
+        "They are all likely tidally locked to TRAPPIST-1, and it is therefore believed that each planet is in permanent day on one side and permanent night on the other.",
+        "Their masses are comparable to that of Earth and they all lie in the same plane; seen from Earth, they pass in front of the star.",
+        "This placement allowed the planets to be detected: when they pass in front of the star, its apparent magnitude dims.",
+        "Up to four of the planets—designated d, e, f, and g—orbit at distances where temperatures are likely suitable for the existence of liquid water, and are thus potentially hospitable to life."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "List of exoplanets discovered in 2023",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72667478",
+      "retrieved_at": "2026-10-18T18:50:59.789Z",
+      "sha256": "0662109a881823c8d286f28c321dc578ca98d59d73faeef7162e91e1f9427391",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This list of exoplanets discovered in 2023 is a list of confirmed exoplanets that were first reported in 2023.",
+        "For exoplanets detected only by radial velocity, the listed value for mass is a lower limit."
+      ]
+    }
+  ]
+}

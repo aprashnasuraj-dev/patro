@@ -1,0 +1,101 @@
+{
+  "id": "mm-0145",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "China's Informal Stock Market: How it Developed, How it Works and How it Might Grow",
+      "publisher": "Elsevier BV",
+      "author": "Liu, Ti; Green, Stephen Paul",
+      "published_at": "2004",
+      "url": "https://doi.org/10.2139/ssrn.504043",
+      "retrieved_at": "2026-10-18T16:47:19.534Z",
+      "sha256": "44ea1c42595e582fcc532ef86f5fdcc214eba58404a3aabcbb5e54e82f8a66b7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The shares of over 1,000 companies are traded and some 3m investors take part in a market in corporate equities organised in various locales outside the two stock exchanges in Shanghai and Shenzhen.",
+        "China's informal share market has appeared in a number of different guises since the establishment of the stock market in the late 1980s, partly as a result of the government's restrictions as to which type and what number of firms can publicly issue shares.",
+        "While the central government has at various times attempted to close down these informal markets, they continue to flourish as shareholding firms seek to raise capital and owners of firms seek to transfer their ownership rights outside the bounds of the formal financial sector.",
+        "This suggests that the government should move to formalise these markets, a move that would recognise the incipient demand for shares and allow the government to introduce a basic regulatory framework for a market which evidently can not be easily suppressed.",
+        "The first provides a brief historical overview of the development of informal share markets in reform China, from the kerb markets of the mid-1980s to the Internet-based brokers of 2003.",
+        "The second section looks in detail at the organisation of the market today; how shares are issued, traded and settled.",
+        "Third, and last, the paper identifies the problems inherent in the market at present and outlines the possibilities for its future."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How the Market Returns to Fair Value",
+      "publisher": "Oxford University Press",
+      "author": "Smithers, Andrew",
+      "published_at": "2022-03-10",
+      "url": "https://doi.org/10.1093/oso/9780192847096.003.0021",
+      "retrieved_at": "2026-10-18T16:47:19.969Z",
+      "sha256": "eb26ac7e90fcca323eeecf6df911458ff2f8ce8b35c8cec412198b1efaf3549e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The stock market rotates around fair value, which is when corporate net worth and the market valuation of corporate equity are, when correctly valued, equal—the q ratio is mean reverting.",
+        "This could occur through changes in net worth or in value or in some combination of both.",
+        "To fit the assumptions of the neoclassical synthesis the adjustment must come from rises in net worth in response to changes in investment.",
+        "It doesn’t and attempts to explain the incompatibility of the data on q with the neoclassical synthesis by allowing for tax effects have not succeeded.",
+        "The mean reversion of equity q must therefore come from that of share prices and this is the natural effect of the stationarity of equity returns.",
+        "When the market is cheap the returns from it are high and when overpriced low, so the risk of loss increases as share prices rise and declines as they fall.",
+        "The rewards from holding equities thus rise and fall in a way that serves to restrict their swings."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Market maker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=447844",
+      "retrieved_at": "2026-10-18T16:47:39.537Z",
+      "sha256": "1c9eb5c3e47124199bdda93e6741f88fef158010f4b41874540500a8c5ac695b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A market maker or liquidity provider is a company or individual that quotes both a buy and a sell price in a tradable asset held in inventory, hoping to make a profit on the difference, which is called the bid–ask spread or turn.",
+        "This stabilizes the market, reducing price variation (volatility) by setting a trading price range for the asset.",
+        "Securities and Exchange Commission defines a \"market maker\" as a firm that stands ready to buy and sell stock on a regular and continuous basis at a publicly quoted price.",
+        "A Designated Primary Market Maker (DPM) is a specialized market maker approved by an exchange to guarantee a buy or sell position in a particular assigned security, option, or option index."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Dave Frishberg",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2213095",
+      "retrieved_at": "2026-10-18T16:47:39.537Z",
+      "sha256": "630336e3e81bd1c6c212a08af9fee28f6d2dabc2fd533afb6e0ba3a91137bcf1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "David Lee Frishberg (March 23, 1933 – November 17, 2021) was an American jazz pianist, vocalist, composer, and lyricist.",
+        "His songs have been performed by Blossom Dearie, Rosemary Clooney, Shirley Horn, Anita O'Day, Michael Feinstein, Irene Kral, Diana Krall, Rebecca Kilgore, Stacey Kent, Bette Midler, John Pizzarelli, Jessica Molaskey, Bob Dorough, Judy Roberts and Mel Tormé.",
+        "Frishberg wrote the music and lyrics for \"I'm Just a Bill\", the song about the forlorn legislative writ in the ABC Schoolhouse Rock!",
+        "series, which was later transformed into the revue Schoolhouse Rock Live.",
+        "he also wrote and performed \"Walkin' on Wall Street\", a song describing how the stock market works, and \"$7.50 Once a Week\", a song about saving money and balancing a budget."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Jack D. Schwager",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3141412",
+      "retrieved_at": "2026-10-18T16:47:39.537Z",
+      "sha256": "f217f2a9abf7ff8eca2dcb4d1f7245ed44046ba5c0ced52d72233f20f43bf44c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jack Schwager (born 1948) is an American financial trader and author.",
+        "His books include Market Wizards (1989), The New Market Wizards (1992), Stock Market Wizards (2001) and Unknown Market Wizards: The Best Traders You’ve Never Heard Of (2020).",
+        "He is a well-known author, fund manager and an industry expert in futures and hedge funds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "mm-1959",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Bedtime Stories",
+      "publisher": "Oxford University PressNew York",
+      "author": "Vyse, Stuart",
+      "published_at": "2022-08-01",
+      "url": "https://doi.org/10.1093/oso/9780190079857.003.0007",
+      "retrieved_at": "2026-10-18T17:49:11.728Z",
+      "sha256": "b2cf6619e26c997262551c7382bb43ef5af7eee7d86b652d0805934544fd84f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract The role of sleep in daily life is still something of a mystery, and, if possible, dreams are even less well understood.",
+        "In the ancient world, dreams were thought to be prophetic, and later Freud and Jung promoted dream interpretation as a therapeutic tool.",
+        "Early scientific theories of dreams suggested that they were a meaningless side effect of the process of consolidating learning during sleep and that human brains knit together the strange images of dreams to make a story.",
+        "But there is an emerging recognition that the confusing stories people experience at night have value in their own right.",
+        "Research on nightmares suggests that dreams are an important method of adapting to fears and regulating moods, and the amount and quality of REM sleep is associated with improved mood.",
+        "So, nighttime delusions help people function better during the day."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Eight bedtime stories to read to children of all ages",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Radulescu, Raluca; Blower, Lisa",
+      "published_at": "2018-06-15",
+      "url": "https://theconversation.com/eight-bedtime-stories-to-read-to-children-of-all-ages-97801",
+      "retrieved_at": "2026-10-18T17:49:12.344Z",
+      "sha256": "5444a4902d955d8f09d8ac3ff3d0df87e7dbff118f0de669273c18752ed67194",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Besides helping sleepyheads absorb language through the familiar voices that nurture them, understand the complexities of their world, and the reasons behind their feelings, bedtime stories show how childhood can be the greatest adventure of all.",
+        "Toddle Waddle by Julia Donaldson Age range : two to five years Toddle Waddle, by Julia Donaldson.",
+        "Macmillan Children's Books Even the youngest child can engage with sound, colour and fun, and this book (illustrated by Nick Sharratt) is filled with bright joy and wonderful onomatopoeia.",
+        "From the sound of flip-flops to the excitement of slurping a drink at the beach and the music made by different instruments, the sounds, then words, are a wonderful introduction to the intricacies of language.",
+        "Mr Men & Little Miss books by Roger Hargreaves Age range: three years+ Hargreaves’ colourful 2D characters behaving to type are a wonderful way to identify with basic emotions by interpreting colour as a feeling.",
+        "As journalist and author Lucy Mangan puts it in her memoir Bookworm: “Of course uppitiness is purple.",
+        "Of course happiness is yellow.” These are no fuss, easy to follow collectables – and bitesize too, so you can gobble through second helpings before turning out the light.",
+        "The Lorax by Dr Seuss Age range : three to eight years The Lorax, by Dr Seuss.",
+        "They’ll never be the same when they’ve learned about the Swannee-swans, Humming fish, and Bar-ba-loots bears, their Truffula trees being cut by the mysterious and scruple-free Once-ler.",
+        "While the environmental message of the book is even more urgent now than it was when The Lorax was first published in 1971, the story is just as entrancing, instructive – without preaching – and, above all, as hopeful as ever.",
+        "A wonderful wise Lorax speaks for the trees, and for all the world’s children, who want to keep the future green.",
+        "My Big Shouting Day, by Rebecca Patterson Age range : two to eight years A funny picture book for younger readers that will resonate with many parents for its keen perspective on patience."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hans Christian Andersen",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13550",
+      "retrieved_at": "2026-10-18T17:49:12.508Z",
+      "sha256": "94c863219282d31b4e4acf479379cc3eb87e76b85ac07765594cefa8cfd44051",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hans Christian Andersen ( AN-dər-sən; Danish: [ˈhænˀs ˈkʰʁestjæn ˈɑnɐsn̩, - ˈkʰʁæs-] ; 2 April 1805 – 4 August 1875) was a Danish writer.",
+        "A prolific writer of plays, travelogues, novels, and poems, he is also best remembered for his literary fairy tales.",
+        "Andersen's fairy tales, consisting of 156 stories across nine volumes, have been translated into more than 125 languages.",
+        "They have become embedded in Western collective consciousness, accessible to children as well as presenting lessons known for their virtue."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Goodnight Moon",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188341",
+      "retrieved_at": "2026-10-18T17:49:12.508Z",
+      "sha256": "26fb4b88d95d99a63d002bb13843adb21b0c731e331bfcbe9d228a9c2c3c498d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Goodnight Moon is an American children's book written by Margaret Wise Brown and illustrated by Clement Hurd.",
+        "It was published on September 3, 1947, and is a highly acclaimed bedtime story.",
+        "This book is the second in Brown and Hurd's \"classic series,\" which also includes The Runaway Bunny and My World.",
+        "The three books have been published together as a collection titled Over the Moon."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Bedtime Stories (album)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=24022085",
+      "retrieved_at": "2026-10-18T17:49:12.508Z",
+      "sha256": "c4cec0ba8aff9ad1a136e2f8e633097402822591273b7a26b2ca3b92c82b575a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bedtime Stories is the sixth studio album by American singer and songwriter Madonna.",
+        "It was released on October 24, 1994, by Maverick and Sire Records.",
+        "After criticism ensued following multiple sexually explicit releases in 1992 and 1993—including her album Erotica, her book Sex, and her film appearances in Body of Evidence and Dangerous Game—Madonna sought to tone these themes down for Bedtime Stories.",
+        "Attempting to venture into R&B, Madonna turned to some of the genre's most successful producers at the time: Dallas Austin, Babyface, and Dave Hall.",
+        "She also recruited Nellee Hooper due to her interest in the British club scene, where genres like dub had become increasingly popular.",
+        "Bedtime Stories is an R&B and pop album with influences from soul, electronic, and hip-hop music.",
+        "In contrast to the lustful nature of Erotica, most songs on Bedtime Stories explore themes of romance, heartache, desire, and regret.",
+        "Guitars, keyboards, programmed drums, strings, and synthesizers characterize their compositions.",
+        "Madonna promoted Bedtime Stories through television and award-show appearances, including at the American Music and Brit Awards.",
+        "She canceled a concert tour due to her preparation for the film Evita (1996).",
+        "Its lead single, \"Secret\", peaked at number three on the US Billboard Hot 100, where its second single, \"Take a Bow\", peaked atop for seven weeks and remains her longest-running number-one.",
+        "\"Bedtime Story\" and \"Human Nature\" became Madonna's worst-performing singles on the Billboard Hot 100 but peaked within the top ten of the UK singles chart."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of Super Why! episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=48104413",
+      "retrieved_at": "2026-10-18T17:49:12.508Z",
+      "sha256": "b7164d6195775a70cf7c951e0db166da1f1453b37fc1f192b4feab9c8492da07",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an animated superhero preschool television series created by Angela C.",
+        "Santomero  for PBS Kids and aimed for preschoolers ages 3 to 6."
+      ]
+    }
+  ]
+}

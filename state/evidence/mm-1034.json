@@ -1,0 +1,126 @@
+{
+  "id": "mm-1034",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Google plans to power a new data center with fossil fuels, yet release almost no emissions – here’s how its carbon capture tech works",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Agarwal, Ramesh",
+      "published_at": "2025-12-02",
+      "url": "https://theconversation.com/google-plans-to-power-a-new-data-center-with-fossil-fuels-yet-release-almost-no-emissions-heres-how-its-carbon-capture-tech-works-270425",
+      "retrieved_at": "2026-10-18T17:22:10.350Z",
+      "sha256": "10e6f316899e2515b5376fd66380487a1654ceb75077f642e7af4094967a6aa4",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "With servers and energy-intensive cooling systems constantly running, these buildings can use anywhere from a few megawatts of power for a small data center to more than 100 megawatts for a hyperscale data center.",
+        "To put that in perspective, the average large natural gas power plant built in the U.S.",
+        "When the power for these data centers comes from fossil fuels, they can become major sources of climate-warming emissions in the atmosphere – unless the power plants capture their greenhouse gases first and then lock them away.",
+        "Google recently entered into a unique corporate power purchase agreement to support the construction of a natural gas power plant in Illinois designed to do exactly that through carbon capture and storage.",
+        "So how does carbon capture and storage, or CCS, work for a project like this?",
+        "I am an engineer who wrote a 2024 book about various types of carbon storage .",
+        "How CCS works When fossil fuels are burned to generate electricity, they release carbon dioxide , a powerful greenhouse gas that remains in the atmosphere for centuries.",
+        "As these gases accumulate in the atmosphere, they act like a blanket , holding heat close to the Earth’s surface.",
+        "Too high of a concentration heats up the Earth too much, setting off climate changes , including worsening heat waves, rising sea levels and intensifying storms.",
+        "Carbon capture and storage involves capturing carbon dioxide from power plants, industrial processes or even directly from the air and then transporting it, often through pipelines, to sites where it can be safely injected underground for permanent storage.",
+        "A snapshot of some of the ways carbon capture and storage works.",
+        "The pipelines into the oil layer, in black, and the oil well illustrate enhanced oil recovery."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Carbon offsets and credits",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2322153",
+      "retrieved_at": "2026-10-18T17:22:12.393Z",
+      "sha256": "2aef4cab298f4ddd95846d8146e69a070782abacef246dae95250dbedbb3b00a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A carbon credit is a tradable instrument (typically a virtual certificate) that conveys a claim to have avoided greenhouse gas (GHG) emissions or to have enhanced removal of GHG from the atmosphere.",
+        "One carbon credit represents the avoided or enhanced removal of one metric ton of carbon dioxide or its carbon dioxide-equivalent (CO2e).",
+        "Carbon offsetting is the practice of using carbon credits to offset or counter an entity's greenhouse gas inventory emissions in line with reporting programs or institutional emissions targets/goals.",
+        "Carbon credit trading mechanisms (i.e., crediting programs), enable project developers to implement projects that mitigate GHGs and receive carbon credits which can be sold to interested buyers who may use the credits to claim they have offset their inventory GHG emissions.",
+        "Aside from \"offsetting\", carbon credits can also be used to make contributions toward global net zero GHG-level targets.",
+        "It is an individual buyer's choice how to use, or \"retire\", the carbon credit.",
+        "Projects entail mitigation actions that avoid or enhance the removal of GHG emissions.",
+        "Projects are implemented in line with the standards of crediting programs, including their methodologies, rules, and requirements.",
+        "Methodologies are approved for each specific project type (e.g., tree planting, mangrove restoration, early retirement of coal powerplants).",
+        "Provided a project fulfills all of the requirements and provisions of a crediting program, it will be issued credits that can be sold to buyers.",
+        "Hundreds of GHG mitigation project types exist and have approved methodologies with established crediting programs.",
+        "But each crediting program has its own list of approved methodologies, for example unless explicitly stated, an ACR approved methodology could not be used by someone trying to work through Verra's Verified Carbon Standard."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Carbon capture and storage in Australia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17602633",
+      "retrieved_at": "2026-10-18T17:22:12.393Z",
+      "sha256": "b9e4a468d3321fb2ebcea3cbbee9bcb93857d1e04c9029bbe194d65ca294cb77",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carbon capture and storage (CCS) is a technology that can capture carbon dioxide CO2 emissions produced from fossil fuels in electricity, industrial processes which prevents CO2 from entering the atmosphere.",
+        "Carbon capture and storage is also used to sequester CO2 filtered out of natural gas from certain natural gas fields.",
+        "While typically the CO2 has no value after being stored, Enhanced Oil Recovery uses CO2 to increase yield from declining oil fields.",
+        "There are no currently-operating large-scale CCS projects in Australia, although the Gorgon gas project will qualify when it is fully operational.",
+        "Despite multiple CCS demonstration projects at Australian coal-fired power stations, none of Australia's coal plants are currently capturing CO2 or have a time frame for doing so.",
+        "Australian Treasury modelling finds that CCS is not expected to be commercially viable until the 2030s.",
+        "The Intergovernmental Panel on Climate Change (IPCC) estimates that the economic potential of CCS could be between 10% and 55% of the total carbon mitigation effort until 2100.",
+        "In the 2017 budget, the Turnbull government announced the cessation of the Low Emissions Technology Demonstration Fund in the 2017 financial year and the cessation of business case funding for the Carbon Capture and Storage Flagships program in financial year 2019.",
+        "This is on top of the 2015 budget, where the Abbott government cut $460m from CCS research projects leaving $191.7m to continue existing projects for the next seven years.",
+        "The program had already been cut by the previous Labor government and much of the funding remained unallocated."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Altered Carbon (TV series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=49168800",
+      "retrieved_at": "2026-10-18T17:22:12.393Z",
+      "sha256": "e23338ae5c479157819186bd55819fc4eca29c4e112a57189a4e042d2e79d8f7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Altered Carbon is an American cyberpunk television series created by Laeta Kalogridis and based on the 2002 novel of the same title by English author Richard K.",
+        "In a world where consciousness can be transferred to different bodies, Takeshi Kovacs, a former soldier turned investigator, is released from prison in order to solve a murder.",
+        "The first season consists of ten episodes and premiered on Netflix on February 2, 2018.",
+        "On July 27, 2018, the series was renewed for a second season of eight episodes, which was released on February 27, 2020, with an anime film set before the first season released on March 19, 2020.",
+        "Though the series received generally positive reviews, it was canceled after two seasons."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Carbon farming",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57257793",
+      "retrieved_at": "2026-10-18T17:22:12.393Z",
+      "sha256": "63cc5a70dd696e93bba8207ec92728c1d275f344cb850569d89cb60d049f15f2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carbon farming is a set of agricultural methods that aim to store carbon in the soil and biomass.",
+        "The overall goal of carbon farming is to create a net loss of carbon from the atmosphere.",
+        "This is done by increasing the rate at which carbon is sequestered into soil and plant material.",
+        "The increase of biomass from roots and the soil's microbiome leads to an increase in the organic matter content of the soil.",
+        "Increasing organic matter content in soils aids plant growth, improves soil water retention capacity and reduces fertilizer use.",
+        "Sustainable forest management is another tool that is used in carbon farming.",
+        "Carbon farming is one component of climate-smart agriculture.",
+        "It is also one way to remove carbon dioxide from the atmosphere.",
+        "Agricultural methods for carbon farming include adjusting how tillage and livestock grazing is done, using organic mulch or compost, working with biochar and terra preta, and changing the crop types.",
+        "Methods used in forestry include reforestation and bamboo farming.",
+        "As of 2016, variants of carbon farming reached hundreds of millions of hectares globally, of the nearly 5 billion hectares (1.2×1010 acres) of world farmland.",
+        "Carbon farming tends to be more expensive than conventional agricultural practices."
+      ]
+    }
+  ]
+}

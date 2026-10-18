@@ -1,0 +1,94 @@
+{
+  "id": "mm-0339",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T16:51:58.810Z",
+      "sha256": "9d6236e0e8163d381682ed2d1b8332956721b6c0ab8dedd071c6504c739e27ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T16:51:58.810Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ethics of artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13659583",
+      "retrieved_at": "2026-10-18T16:51:58.810Z",
+      "sha256": "5c6bc8a1ba6e54fcfb580376cec25922cf317d7736cb6e5de6424fa27122a2be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The ethics of artificial intelligence covers a broad range of topics within AI that are considered to have particular ethical stakes.",
+        "This includes algorithmic biases, fairness, accountability, transparency, privacy, and regulation, particularly where systems influence or automate human decision-making.",
+        "Some application areas may also have particularly important ethical implications, like healthcare, education, criminal justice, or the military."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "ChatGPT",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72417803",
+      "retrieved_at": "2026-10-18T16:51:58.810Z",
+      "sha256": "d1ce092d52f20eb84386458ee08c1e6b6c6a53038246472a81cb905b12fd1084",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Originally released on November 30, 2022, the product uses large language models—specifically generative pre-trained transformers (GPTs)—to generate text, speech, and images in response to user prompts.",
+        "ChatGPT accelerated the AI boom, an ongoing period marked by rapid investment and public attention toward the field of artificial intelligence (AI).",
+        "Users can interact with ChatGPT through text, audio, and image prompts.",
+        "ChatGPT was quickly adopted, reaching 100 million monthly active users two months after its release and 900 million weekly active users in February 2026.",
+        "Proponents say that it has the potential to transform numerous professional fields, and it has instigated public debate about the nature of creativity and the future of knowledge work.",
+        "The chatbot has also been criticized for its limitations and potential for unethical use.",
+        "It may generate incorrect or nonsensical answers that sound plausible, known as hallucinations.",
+        "Biases in its training data have been reflected in its responses.",
+        "The chatbot can facilitate academic dishonesty, generate misinformation, and create malicious code.",
+        "The ethics of its development, particularly the use of copyrighted content as training data, have also drawn controversy."
+      ]
+    }
+  ]
+}

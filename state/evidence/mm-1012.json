@@ -1,0 +1,97 @@
+{
+  "id": "mm-1012",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mindfulness",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1165522",
+      "retrieved_at": "2026-10-18T17:22:02.556Z",
+      "sha256": "fabbea39ae1818efbcd992554cbc562c7150801af261c75928b86840f52193c1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term mindfulness derives from the Pali word sati, a significant element of Buddhist traditions, and it incorporates elements from Theravada, Chan, and Tibetan Buddhist meditation techniques.",
+        "Mindfulness is a secularized form of meditation, the product of a mutual syncretism between eastern spiritual traditions influenced by western esotericism and religion, and western traditions and psychology influenced by these syncretized eastern traditions.",
+        "In 1975 it was introduced in western medicine by Herbert Benson, and integrated in the 1970s and 1980s into health-programs and psychotherapy by Jon Kabat-Zinn, Zindel Segal, and Mark Williams.",
+        "They and others in clinical psychology and psychiatry have developed a number of therapeutic applications based on mindfulness interventions for helping people experiencing a variety of psychological conditions.",
+        "Since the 1990s, secular mindfulness meditation has gained a broad popular acceptance in the West.",
+        "Clinical studies have documented mental health benefits of mindfulness as well as physical health benefits in different patient categories and in healthy adults and children.",
+        "Mindfulness research has also long attracted criticism, particularly in its early decades, due to concerns about limited methodological rigor.",
+        "More recent research, however, has become substantially more rigorous, employing randomized controlled trials, active control groups, and stronger methodological standards.",
+        "Some critics have also argued that mindfulness is over-commercialized and over-marketed, and that \"McMindfulness\" strips it of its Buddhist ethical and wisdom roots in favor of a productivity-focused self-help product."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mindfulness-based cognitive therapy",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5731748",
+      "retrieved_at": "2026-10-18T17:22:02.556Z",
+      "sha256": "8751945720748489648b446db7451e11328dda154acbe3bfbaed551e7967af5f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mindfulness-based cognitive therapy (MBCT) is a form of psychotherapy that uses mindfulness techniques in combination with cognitive behavioral therapy (CBT) to prevent depression-relapse.",
+        "Teasdale, and Zindel Segal, building on Jon Kabat-Zinn's mindfulness-based stress reduction (MBSR).",
+        "CBT-inspired methods are used in MBCT, such as psycho-education, educating the participant about depression and the role that cognition plays within it.",
+        "Like CBT, MBCT is built on the etiological theory that depression-relapse may occur when individuals, who have had a depression, become distressed, and return to automatic cognitive processes that can trigger a depressive episode.",
+        "The goal of MBCT is to interrupt these automatic processes, and teach the participants to focus less on reacting to incoming stimuli, and instead accepting and observing them without judgment.",
+        "Like MBSR, the mindfulness practice encourages the participant to notice when automatic processes are occurring, and to respond less reactive and more reflective.",
+        "MBCT encourages \"decentering,\" becoming aware of all incoming thoughts and feelings and accepting them, but not attaching or reacting to them.",
+        "This process aims to aid an individual in disengaging from self-criticism, rumination, and dysphoric moods that can arise when reacting to negative thinking patterns."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Effects of meditation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9578417",
+      "retrieved_at": "2026-10-18T17:22:02.556Z",
+      "sha256": "c81030f8d57452ba66e44a60ef9490f6fb8b6e53f7be8ab4b8ea684d8f0c2c49",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The psychological and physiological effects of meditation have been studied.",
+        "Correlations can thus be established between meditative practices and brain structure or function.",
+        "Since the 1950s, hundreds of studies on meditation have been conducted, but many of the early studies were flawed and thus yielded unreliable results.",
+        "Another major review article also cautioned about possible misinformation and misinterpretation of data related to the subject.",
+        "An extensive review of 44 meta-analyses, encompassing 336 randomized controlled trials and over 30,000 participants, systematically evaluated the empirical status of mindfulness-based interventions.",
+        "The authors concluded that these interventions demonstrate substantial transdiagnostic potential, while also identifying ways in which the evidence base could be further strengthened.",
+        "Further, recent (2026) meta-analyses indicate that second-generation mindfulness-based interventions that incorporate compassion-based practices may be especially beneficial for clinical populations.",
+        "Some researchers have questioned the validity of self-reported mindfulness, suggesting that increases observed during interventions may be an artefact rather than an intervention effect, as similar increases have also been found in control groups.",
+        "Others have stated that individual differences may exist in terms of who could benefit from mindfulness."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mindfulness-based stress reduction",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27987730",
+      "retrieved_at": "2026-10-18T17:22:02.556Z",
+      "sha256": "83de13d51a2e0a4486a9656abc44d9f198ddfe4faae977de9d0741071b0cedc0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mindfulness-based stress reduction (MBSR) is an educational program designed for learning mindfulness and discovering skillful ways to manage stress.",
+        "MBSR was developed in the late 1970s by Jon Kabat-Zinn at the University of Massachusetts Medical School.",
+        "The eight-week course combines mindfulness meditation, body awareness, and yoga to help individuals manage stress, pain, and illness.",
+        "Although widely applied in clinical settings and researched for its benefits on well-being, MBSR is classified as an educational intervention rather than a form of psychotherapy.",
+        "MBSR incorporates a blend of mindfulness meditation, body awareness, yoga, and the exploration of patterns of behavior, thinking, feeling, and action.",
+        "Mindfulness can be understood as the non-judgmental acceptance and investigation of present experience, including body sensations, internal mental states, thoughts, emotions, impulses and memories, in order to reduce suffering or distress and to increase well-being.",
+        "Mindfulness meditation is a method by which attention skills are cultivated, emotional regulation is developed, and rumination and worry are significantly reduced.",
+        "During the past decades, mindfulness meditation has been the subject of more controlled clinical research, which suggests its potential beneficial effects for mental health, athletic performance, as well as physical health.",
+        "While MBSR has its roots in wisdom teachings of Zen Buddhism, Hatha yoga, Samatha-vipassanā and Advaita Vedanta, the program itself is secular.",
+        "The MBSR program is described in detail in Kabat-Zinn's 1990 book Full Catastrophe Living."
+      ]
+    }
+  ]
+}

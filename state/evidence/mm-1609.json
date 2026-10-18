@@ -1,0 +1,97 @@
+{
+  "id": "mm-1609",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Tooth enamel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=314628",
+      "retrieved_at": "2026-10-18T17:40:00.933Z",
+      "sha256": "27c6de791e5c2b403dfd7a45ced62dcc7c4519330e2eafa0276df88259ba3e91",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tooth enamel is one of the four major tissues that make up the tooth in humans and many animals, including some species of fish.",
+        "It makes up the normally visible part of the tooth, covering the crown.",
+        "The other major tissues are dentin, cementum, and dental pulp.",
+        "It is a very hard, white to off-white, highly mineralised substance that acts as a barrier to protect the tooth but can become susceptible to degradation, especially by acids from food and drink.",
+        "In rare circumstances enamel fails to form, leaving the underlying dentin exposed on the surface."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Tooth decay",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=414350",
+      "retrieved_at": "2026-10-18T17:40:00.933Z",
+      "sha256": "9cec41dfbe304afb552adb52f48e42185a656fa643bd4833a50b82a4ee917f02",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "'rottenness', from Latin), is the breakdown of teeth due to acids produced by bacteria.",
+        "The resulting dental cavities may be many different colors, from yellow to black.",
+        "Complications may include periodontal disease (i.e., inflammation of the tissue around the tooth), tooth loss, infection, or dental abscess formation.",
+        "Tooth regeneration is a field of ongoing stem cell-based study that aims to find methods to reverse the effects of decay; current treatments are limited to symptom management.",
+        "The cause of cavities is acid from bacteria dissolving the hard tissues of the teeth (enamel, dentin, and cementum).",
+        "The acid is produced by the bacteria when they break down food debris or sugar on the tooth surface.",
+        "Simple sugars in food are these bacteria's primary energy source, and thus a diet high in simple sugar is a risk factor.",
+        "If tooth demineralization is greater than tooth remineralization from sources such as saliva, caries results.",
+        "Risk factors include conditions that result in less saliva, such as diabetes mellitus, Sjögren syndrome, and some medications, including psychostimulants, antihistamines, and antidepressants.",
+        "Dental caries is also associated with poverty, poor oral hygiene, and receding gums, resulting in gingival recession (i.e., exposure of the roots of the teeth).",
+        "Prevention of dental caries includes regular teeth cleanings, a low-sugar diet, and small amounts of regular fluoride exposure.",
+        "Brushing one's teeth twice daily and flossing between the teeth once daily is recommended."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Toothache",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1092939",
+      "retrieved_at": "2026-10-18T17:40:00.933Z",
+      "sha256": "346d7a174582fe1bf5d4f8b5450513ecb5daf658e8f52cf3326b82339193c6df",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Toothaches, also known as dental pain or tooth pain, is pain in the teeth or their supporting structures, caused by dental diseases or pain referred to the teeth by non-dental diseases.",
+        "When severe it may impact sleep, eating, and other daily activities.",
+        "Pulpitis is reversible when the pain is mild to moderate and lasts for a short time after a stimulus (for instance cold); or irreversible when the pain is severe, spontaneous, and lasts a long time after a stimulus.",
+        "Left untreated, pulpitis may become irreversible, then progress to pulp necrosis (death of the pulp) and apical periodontitis.",
+        "The apical abscess usually occurs after pulp necrosis, the pericoronal abscess is usually associated with acute pericoronitis of a lower wisdom tooth, and periodontal abscesses usually represent a complication of chronic periodontitis (gum disease).",
+        "Less commonly, non-dental conditions can cause toothache, such as maxillary sinusitis, which can cause pain in the upper back teeth, or angina pectoris, which can cause pain in the lower teeth.",
+        "Proper oral hygiene helps to prevent toothache by preventing dental disease.",
+        "The treatment of a toothache depends upon the exact cause, and may involve a filling, root canal treatment, extraction, drainage of pus, or other remedial action.",
+        "The relief of toothache is considered one of the main responsibilities of dentists.",
+        "Toothache is the most common type of pain in the mouth or face.",
+        "It is one of the most common reasons for emergency dental appointments.",
+        "In 2013, 223 million cases of toothache occurred as a result of dental caries in permanent teeth and 53 million cases occurred in baby teeth."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "African elephant",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1416251",
+      "retrieved_at": "2026-10-18T17:40:00.933Z",
+      "sha256": "1df9538f31b6b27c6d4b7af5046e928dd73954a1dbd0144bb86036abc546c83e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "African elephants are members of the genus Loxodonta comprising two living elephant species, the African bush elephant (L.",
+        "However, they differ in the size and colour of their tusks as well as the shape and size of their ears and skulls.",
+        "Both species are at risk of extinction according to the IUCN Red List; as of 2021, the bush elephant is considered endangered while the forest elephant is considered critically endangered.",
+        "They are threatened by habitat loss and fragmentation, along with poaching for the illegal ivory trade in several range countries.",
+        "Loxodonta is one of two extant genera in the family Elephantidae.",
+        "The name refers to the lozenge-shaped enamel of their molar teeth.",
+        "Fossil remains of Loxodonta species have been found in Africa, spanning from the Late Miocene (from around 7–6 million years ago) onwards."
+      ]
+    }
+  ]
+}

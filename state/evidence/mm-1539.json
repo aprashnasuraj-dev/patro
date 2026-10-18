@@ -1,0 +1,139 @@
+{
+  "id": "mm-1539",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Chapter III",
+      "publisher": "Oxford University Press",
+      "author": "Braddon, Mary Elizabeth",
+      "published_at": "2008-12-11",
+      "url": "https://doi.org/10.1093/owc/9780199555161.003.0004",
+      "retrieved_at": "2026-10-18T17:39:56.614Z",
+      "sha256": "052bdcdbf91c5925a3076534f0870290175d0eadc36796790f41d9598a33e7ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Aurora’s relatives were not slow to exclaim upon the change for the worse which a twelvemonth in Paris had made in their young kinswoman.",
+        "I fear that the Demoiselles Lespard suffered considerably in reputation amongst the circle round Felden Woods from Miss Floyd’s impaired..."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "What Became of Horse Y?",
+      "publisher": "Medwin Publishers",
+      "author": "Seun Ayoade, Mister",
+      "published_at": "2023",
+      "url": "https://doi.org/10.23880/oajvsr-16000244",
+      "retrieved_at": "2026-10-18T17:39:56.614Z",
+      "sha256": "fb7789adc4925f570c0596b6aa3b93f58e07fdbcc4bcf82300e85b072771c2c3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "As recently as 200 years ago, The Yorubas rode a pygmy breed of horse that now appears to be extinct.",
+        "“For the accommodation of me and my wife, the missionary of the American Baptist Mission, Mr.",
+        "Priest, had kindly provided two horses of pure African breed.",
+        "Mine was so small that my feet nearly touched the ground and it was with great difficulty, when I went down a steep place that I could keep from falling over his head on to mine.",
+        "But this equine pigmy carried me seven miles with so much ease that at times he was even unruly."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "What is the Metaverse?",
+      "publisher": "Elsevier BV",
+      "author": "Momani, Alaa M.",
+      "published_at": "2025",
+      "url": "https://doi.org/10.2139/ssrn.5125289",
+      "retrieved_at": "2026-10-18T17:39:57.673Z",
+      "sha256": "5a23f95cc1e73cd6f7d851b30210b01e97452472aedcdce564031d74b5602297",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "&lt;p&gt;Here's an experiment to illustrate how ambiguous and complex a term \"the metaverse\" might be: Replace the phrase \"the metaverse\" with \"cyberspace\" in your mind.",
+        "Ninety percent of the time, the meaning will not vary significantly.&lt;/p&gt;"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Matrix",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=30007",
+      "retrieved_at": "2026-10-18T17:39:57.673Z",
+      "sha256": "4847c8f0fe0a902307c869ee062539b0369cea8a3486a82861cde276f376f45e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Matrix is a 1999 science fiction–action film written and directed by the Wachowskis.",
+        "The first installment in the Matrix film series, it stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano.",
+        "The film follows a disillusioned computer hacker Neo (Reeves) who discovers that the life he knows is an elaborate deception created by intelligent machines.",
+        "He is recruited by underground insurgents Morpheus (Fishburne) and Trinity (Moss), to join the rebellion against the machines.",
+        "Following the success of the Wachowskis' 1996 film Bound, Warner Bros.",
+        "The film's action scenes were influenced by anime and martial arts films, particularly fight choreography and wire fu techniques from Hong Kong action cinema.",
+        "Other influences include Plato's cave, 1990's Telnet hacker communities, and William Gibson's cyberpunk novel Neuromancer.",
+        "The Matrix popularized terms such as the red pill, as well as a novel visual effect known as \"bullet time\" in which a character's heightened perception is represented by allowing the action within a shot to progress in slow motion while the camera appears to move through the scene at normal speed.",
+        "The Matrix was released in theaters in the United States on March 31, 1999, to widespread critical acclaim.",
+        "Critics praised its innovative visual effects, action sequences, cinematography, and entertainment value.",
+        "The film was a box office success, grossing over $460 million on a $63 million budget.",
+        "film of 1999 and the fourth-highest-grossing film of that year."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Snow Crash",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=75290",
+      "retrieved_at": "2026-10-18T17:39:57.673Z",
+      "sha256": "d35d8da52800c9f1a2128e26219be32b828b5af057c4ed0858c8bf3e61000f32",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Snow Crash is a 1992 science fiction novel by Neal Stephenson.",
+        "Like many of Stephenson's novels, its themes include history, linguistics, anthropology, archaeology, religion, computer science, politics, cryptography, memetics, and philosophy.",
+        "Snow Crash was nominated for the British Science Fiction Award in 1993 and the Arthur C."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Metaverse",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1482898",
+      "retrieved_at": "2026-10-18T17:39:57.673Z",
+      "sha256": "b7885524b7d8dce86c8fb4cd12bdcd21ea861b7355e75830ddc94cc490a677ec",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A metaverse is a virtual world in which users interact while represented by avatars, typically in a 3D display, with the experience focused on social and economic connection.",
+        "The term metaverse originated in the 1992 science fiction novel Snow Crash as a portmanteau of \"meta\" and \"universe\".",
+        "In Snow Crash, the metaverse is envisioned as a version of the Internet that is a single, universal, and immersive virtual world, facilitated by the use of virtual reality (VR) and augmented reality (AR) headsets.",
+        "The term \"metaverse\" is often linked to virtual reality technology, and beginning in the early 2020s, with Web3.",
+        "The term has been used as a buzzword by companies to exaggerate the development progress of various related technologies and projects for public relations purposes.",
+        "Information privacy, user addiction, and user safety are concerns within the metaverse, stemming from challenges facing the social media and video game industries as a whole."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Philipp Plein",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22802842",
+      "retrieved_at": "2026-10-18T17:39:57.673Z",
+      "sha256": "acbc0657d7a043d1ea1b36002cc44b6beb6be4a6fc8e40525b8aaae67034917f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Philipp Patrick Hannes Plein (born 16 February 1978) is a German fashion designer, entrepreneur, and the founder of the Philipp Plein International Group, which includes the Philipp Plein, Plein Sport, and Billionaire brands.",
+        "He is the founder and CEO of the Plein Group and of Plein Holding headquartered in Lugano, Switzerland, which specializes in the creation, manufacture and distribution of luxury goods.",
+        "He is also the head designer of the brands Philipp Plein, Billionaire, Plein Sport and Plein Golf.",
+        "Plein has an estimated net worth of Euro 800 million as of May 2023, according to Forbes magazine.",
+        "Plein has been consistently listed as one of the 300 richest individuals in Switzerland in the annual reports published by Bilanz.",
+        "In 1998, Plein registered the trademark Philipp Plein and founded his enterprise specializing in luxury goods."
+      ]
+    }
+  ]
+}

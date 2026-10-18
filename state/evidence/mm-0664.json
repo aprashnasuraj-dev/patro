@@ -1,0 +1,104 @@
+{
+  "id": "mm-0664",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mongolia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19271",
+      "retrieved_at": "2026-10-18T17:00:51.088Z",
+      "sha256": "795f81c3ae718f47a0e35c43d98d26784ad416027b83040fbe210b4af88e8aa5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "With a population of 3.5 million, Mongolia is the world's most sparsely populated sovereign state.",
+        "The country constitutes a significant portion of the Mongolian Plateau, and its natural environment is characterized by grassy steppe, mountains to the north and west, and the Gobi Desert to the south.",
+        "Ulaanbaatar, the capital and largest city, is home to roughly half of the country's population.",
+        "The territory of modern-day Mongolia has been ruled by various nomadic empires, including the Xiongnu, the Xianbei, the Rouran, the First Turkic Khaganate, the Second Turkic Khaganate, the Uyghur Khaganate and others.",
+        "In 1206, Genghis Khan founded the Mongol Empire, which became the largest contiguous land empire in history.",
+        "His grandson Kublai Khan conquered China proper and established the Yuan dynasty.",
+        "After the collapse of the Yuan, the Mongols retreated to Mongolia and resumed their earlier pattern of factional conflict, except during the era of Dayan Khan and Tumen Zasagt Khan.",
+        "By the early 20th century, almost one-third of the adult male population were Buddhist monks.",
+        "After the collapse of the Qing dynasty in 1911, Mongolia declared independence and achieved actual independence from the Republic of China in 1921.",
+        "Shortly thereafter, the country became a satellite state of the Soviet Union.",
+        "In 1924, the Mongolian People's Republic was founded as a socialist state.",
+        "After the anti-communist revolutions of 1989, Mongolia conducted its own peaceful democratic revolution in 1990."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Geography of China",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=23237",
+      "retrieved_at": "2026-10-18T17:00:51.088Z",
+      "sha256": "6e39c3e9c8e53141cf1348585938e4f72720ddf335739f72a2068006b3c42ed6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The eastern plain and southern coasts of the country consist of fertile lowlands and foothills.",
+        "They are the location of most of China's agricultural output and human population.",
+        "The southern areas of the country (south of the Yangtze River) consist of hilly and mountainous terrain.",
+        "The west and north of the country are dominated by sunken basins (such as the Gobi and the Taklamakan), rolling plateaus, and towering massifs.",
+        "It contains part of the highest tableland on earth, the Tibetan Plateau, and has much lower agricultural potential and population.",
+        "Traditionally, the Chinese population centered on the country whose center lay in the middle and lower reaches of the Yellow River on the northern plains.",
+        "More recently, the 18,000 km (11,000 mi) coastline has been used extensively for export-oriented trade, causing the coastal provinces to become the leading economic center.",
+        "The People's Republic of China has an area of about 9,600,000 km2 (3,700,000 sq mi).",
+        "The exact land area is sometimes challenged by border disputes, most notably about Taiwan, Aksai Chin, the Trans-Karakoram Tract, and South Tibet.",
+        "The area of the People's Republic of China is 9,596,960 km2 (3,705,410 sq mi) according to the CIA's The World Factbook.",
+        "The People's Republic of China is either the third or fourth-largest country in the world, being either slightly larger or slightly smaller than the United States, depending on how the area of the United States is measured.",
+        "Both countries are smaller than Russia and Canada and larger than Brazil."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Siberia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29639",
+      "retrieved_at": "2026-10-18T17:00:51.088Z",
+      "sha256": "3ce9036b3dca7a94fbec23395813500f9964b85e3805c6bc0e7c573d5a1035d3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It has formed a part of the sovereign territory of Russia since the lengthy conquest of Siberia, which began with the fall of the Khanate of Sibir in 1582 and concluded with the annexation of Chukotka in 1778.",
+        "Siberia is vast and sparsely populated, covering an area of over 13.1 million square kilometres (5,100,000 mi2) – about three-quarters of Russia's total area, but home to roughly a quarter of Russia's population.",
+        "Because Siberia is a geographic and historic concept and not a political entity, there is no single precise definition of its territorial borders.",
+        "It is further defined as stretching from the territories within the Arctic Circle in the north to the northern borders of Kazakhstan, Mongolia, and China in the south, although the hills of north-central Kazakhstan are also commonly included.",
+        "Siberia is known for its long, harsh winters, with a January average of −25 °C (−13 °F).",
+        "Although it is geographically located in Asia, Russian sovereignty and colonization since the 16th century has led to perceptions of the region as culturally and ethnically European.",
+        "Over 85% of its population are of European descent, chiefly Russian (comprising the Siberian sub-ethnic group), and Eastern Slavic cultural influences predominate throughout the region."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mongol invasion of Kievan Rus'",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45028",
+      "retrieved_at": "2026-10-18T17:00:51.088Z",
+      "sha256": "b1273e9ace5f15eefaa881b1939bd3b181bce6e6ba07253f964d721e571ccfc2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Mongol Empire invaded and conquered much of the Kievan Rus' in the mid-13th century, sacking numerous cities such as Ryazan, Yaroslavl, Pereyaslavl and Vladimir, including the largest: Kiev (50,000 inhabitants) and Chernigov (30,000 inhabitants).",
+        "The siege of Kiev in 1240 by the Mongols is generally held to mark the end of the state of Kievan Rus', which had already been undergoing fragmentation.",
+        "Many other principalities and urban centres in the northwest and southwest escaped complete destruction or suffered little to no damage from the Mongol invasion, including Galicia–Volhynia,  Pskov, Smolensk, Polotsk, Vitebsk, and probably Rostov and Uglich.",
+        "The Mongol campaign was heralded by the Battle of the Kalka River on 31 May 1223, which resulted in a Mongol victory over the forces of several principalities as well as the remnants of the Cumans under Köten.",
+        "The Mongols retreated, having gathered their intelligence, which was the purpose of the reconnaissance-in-force.",
+        "A full-scale invasion by Batu Khan followed, with most of Kievan Rus' overrun in 1236–1238.",
+        "The Mongols captured Kiev in 1240 and moved west into Hungary and Poland.",
+        "The heavy losses suffered by the Mongols during the invasion period significantly weakened subsequent campaigns, preventing the ruin of the Holy Roman Empire and more western countries.",
+        "The invasion was ended by the Mongol succession process upon the death of Ögedei Khan.",
+        "Even those principalities who avoided physical conquest were eventually forced to accept Mongol supremacy in the form of tribute – as in the case of Galicia–Volhynia, Polotsk and Novgorod – if not outright vassalage, of the Golden Horde, until well into the 14th century.",
+        "Although a Russian army defeated the Mongols at the Battle of Kulikovo in 1380, the Mongolian demands of tribute from Russian princes continued until about 1480.",
+        "The Mongol invasion caused significant destruction in the major cities of the Rus'."
+      ]
+    }
+  ]
+}

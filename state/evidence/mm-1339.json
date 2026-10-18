@@ -1,0 +1,127 @@
+{
+  "id": "mm-1339",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mangroves keep waves at bay. A new study helps scientists predict how",
+      "publisher": "Mongabay",
+      "author": "Gil, Isabel",
+      "published_at": "2026-10-01",
+      "url": "https://news.mongabay.com/2026/10/mangroves-keep-waves-at-bay-a-new-study-helps-scientists-predict-how/",
+      "retrieved_at": "2026-10-18T17:32:03.558Z",
+      "sha256": "b9e32a44129599a8e97abac8d16fc5440d72f603e309b15350f2d686b11e4177",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "A new study helps scientists predict how Isabel Gil 1 Oct 2026 Global Comments Share article Share this article If you liked this story, share it with other people.",
+        "Facebook Linkedin Threads Whatsapp Reddit Email Page link Cite article Mangrove forests can help protect tropical coastal areas from rising sea levels and storm surges.",
+        "New research presents a model by which to predict how much mangroves can reduce — or attenuate — large waves associated with severe storms such as typhoons.",
+        "The researchers also created an online tool that can be used by practitioners to estimate the attenuation impact of mangroves anywhere around the world.",
+        "Now, new research has found a way to predict just how much mangroves can diminish waves associated with severe storms.",
+        "When a wave hits an outcrop of mangroves, its energy is absorbed by the plants’ dense network of twisted roots.",
+        "When the wave comes out on the other side, its intensity is often decreased, acting as a natural buffer for shorelines — sometimes even shielding shoreside communities from water damage or severe floods.",
+        "This ability for mangroves to curb wave intensity — a property called attenuation — is well known among scientists .",
+        "However, much of the data supporting this was collected by measuring mangrove attenuation during mild, calm periods of weather.",
+        "Quantifying mangrove attenuation during storms or typhoons is trickier — it’s harder to gather data, and there are more factors dominating wave motion, like turbulence.",
+        "Because of this, “existing models do not always perform so well to predict the wave attenuation by mangroves during storms,” Stijn Temmerman, a professor at the University of Antwerp, Belgium, told Mongabay by video call.",
+        "This is especially important, researchers told Mongabay , as climate change is linked to severe weather systems."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1164",
+      "retrieved_at": "2026-10-18T17:32:04.241Z",
+      "sha256": "9d6236e0e8163d381682ed2d1b8332956721b6c0ab8dedd071c6504c739e27ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.",
+        "It is a field of research in engineering, mathematics, and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximise their chances of achieving defined goals.",
+        "High-profile applications of AI include advanced web search engines, chatbots, virtual assistants, autonomous vehicles, play and analysis in strategy games (e.g., chess and Go), and content generation (e.g., text, images, audio, and videos).",
+        "The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, and perception, as well as support for robotics.",
+        "To reach these goals, AI researchers use techniques including state space search and mathematical optimisation, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics.",
+        "AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields.",
+        "Some companies, such as OpenAI, Google DeepMind, and Meta, aim to create artificial general intelligence (AGI)—AI that can complete nearly any cognitive task at least as well as a human.",
+        "Artificial intelligence was founded as an academic discipline in 1956.",
+        "The field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.",
+        "Funding and interest increased substantially after 2012, when graphics processing units (GPUs) started being used to accelerate neural networks, and deep learning outperformed previous AI techniques.",
+        "This growth accelerated further after 2017 with the transformer architecture.",
+        "The 2020s AI boom was spurred on largely by advances in generative AI, which can create and modify media."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Artificial general intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=586357",
+      "retrieved_at": "2026-10-18T17:32:04.241Z",
+      "sha256": "fe946b2d20736bd06c2c70105d43425156ae19e44f6897134854114e04315fdc",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Artificial general intelligence (AGI) is a hypothetical type of artificial intelligence that matches or surpasses human capabilities across virtually all cognitive tasks.",
+        "Unlike artificial narrow intelligence (ANI), whose competence is confined to well‑defined tasks, an AGI system can generalise knowledge, transfer skills between domains, and solve novel problems without task‑specific reprogramming.",
+        "Creating AGI is a stated goal of technology companies such as OpenAI, Google, SpaceXAI, and Meta.",
+        "A 2020 survey identified 72 active AGI research and development projects across 37 countries.",
+        "AGI is a common topic in science fiction and futures studies.",
+        "Contention exists over whether AGI represents an existential risk.",
+        "Some AI experts and industry figures have stated that mitigating the risk of human extinction posed by AGI should be a global priority.",
+        "Others find the development of AGI to be in too remote a stage to present such a risk."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T17:32:04.241Z",
+      "sha256": "d3aa5b37afd542977ef56f75604a3b343d4ea50b4d284cc4f01a8e505cc3758e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Open-source artificial intelligence",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=74399351",
+      "retrieved_at": "2026-10-18T17:32:04.241Z",
+      "sha256": "c4ff79b7297c9c72c42db0d01549af21a9d958fbed5d51cfaff9b9d1b0ad1ba7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Open-source artificial intelligence, as defined by the Open Source Initiative, is an AI system that is freely available to use, study, modify, and share.",
+        "This includes datasets used to train the model, its code, and its model parameters, promoting a collaborative and transparent approach to AI development so someone could create a substantially similar result.",
+        "The debate over what should count as 'open-source' given a range of openness among AI projects has been significant.",
+        "Some large language models touted as open-sourced that are merely open weights and do not release training data and code have been criticized as \"openwashing\" systems that are mostly closed.",
+        "For example, Artificial Analysis gives an \"Openness Index\" of 83% to Nvidia's Nemotron family, for its greater transparency in methodology, pre-training data, and post-training data, while China's frontier open weights models broadly score under 50%.",
+        "Open-source AI is a major issue in geopolitics and artificial intelligence controversies, sometimes characterized as an AI arms race or AI Cold War between the US and China.",
+        "Broadly, models released by Chinese companies, such as DeepSeek, Alibaba Cloud, Moonshot AI and Z.ai, use an open weights framework, under more permissive software licenses like Apache or MIT.",
+        "United States AI companies, including OpenAI, Anthropic, SpaceXAI, Google DeepMind largely favor a proprietary software framework, especially for larger models.",
+        "These are in part national government policy decisions, because public access to AI technology has many consequences.",
+        "Some US politicians have called to restrict US public access to Chinese AI tools.",
+        "Popular open-source artificial intelligence project categories include large language models (LLM), machine translation tools, and chatbots.",
+        "Debate over the benefits and risks of open-sourced AI involve a range of factors like security, privacy and technological advancement."
+      ]
+    }
+  ]
+}

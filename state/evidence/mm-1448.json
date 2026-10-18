@@ -1,0 +1,85 @@
+{
+  "id": "mm-1448",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "DJ Clark Kent",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1938185",
+      "retrieved_at": "2026-10-18T17:35:45.659Z",
+      "sha256": "d7746da15dadfde3e8757133912dd539b9f4ae5f0657b341a6265483c00ac885",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Rodolfo Antonio Franklin II (September 28, 1966 – October 24, 2024), known professionally as DJ Clark Kent, was an American hip hop DJ and record producer.",
+        "His crew of DJs was called \"The Supermen\", and his DJ moniker was derived from the name of Superman's alter ego."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Canada",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5042916",
+      "retrieved_at": "2026-10-18T17:35:45.659Z",
+      "sha256": "14f526729481c761c32d95f727324c00b0c19a7a04cedd489b47c85834a53db6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, making it the second-largest country by total area, with the longest coastline of any country.",
+        "Its border with the United States is the longest international land border.",
+        "The country is characterized by a wide range of both meteorologic and geological regions.",
+        "With a population of over 41 million, it has widely varying population densities, with the majority residing in its urban areas and large areas being sparsely populated.",
+        "Its capital is Ottawa and its three largest metropolitan areas are Toronto, Montreal, and Vancouver.",
+        "Indigenous peoples have continuously inhabited what is now Canada for thousands of years.",
+        "Beginning in the 16th century, British and French expeditions explored and later settled along the Atlantic coast.",
+        "As a consequence of various armed conflicts, France ceded nearly all of its colonies in North America in 1763.",
+        "In 1867, with the union of three British North American colonies through Confederation, Canada was formed as a federal dominion of four provinces.",
+        "This began an accretion of provinces and territories resulting in the displacement of Indigenous populations, and a process of increasing autonomy from the United Kingdom.",
+        "This increased sovereignty was highlighted by the Statute of Westminster, 1931, and culminated in the Canada Act 1982, which severed the vestiges of legal dependence on the Parliament of the United Kingdom.",
+        "Canada is a parliamentary democracy and a constitutional monarchy in the Westminster tradition."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Daddyz Girl",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46260796",
+      "retrieved_at": "2026-10-18T17:35:45.659Z",
+      "sha256": "46ae7b2e3516ea2806ae0b5f3de0a9ef5f317288c73fb57f019c4849afffa7a1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"Daddyz Girl\" is the eleventh episode of the first season of the American television comedy drama Shameless, an adaptation of the British series of the same name.",
+        "The series is set on the South Side of Chicago, Illinois, and depicts the poor, dysfunctional family of Frank Gallagher, a neglectful single father of six: Fiona, Phillip, Ian, Debbie, Carl, and Liam.",
+        "He spends his days drunk, high, or in search of money, while his children need to learn to take care of themselves.",
+        "In the episode, Fiona meets a new friend, while Lip and Ian look for the latter's father.",
+        "According to Nielsen Media Research, the episode was seen by an estimated 1.10 million household viewers and gained a 0.5/1 ratings share among adults aged 18–49.",
+        "The episode received generally positive reviews from critics, although the different subplots attracted mixed reactions."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The Rain (TV series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=56449078",
+      "retrieved_at": "2026-10-18T17:35:45.659Z",
+      "sha256": "3a208aab3775f444f949ef7aab84b7aaab0ad244eb43911992b814cc425e31ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Rain is a Danish post-apocalyptic television series created by Jannik Tai Mosholt, Esben Toft Jacobsen and Christian Potalivo.",
+        "The show stars Alba August, Lucas Lynggaard Tønnesen, Mikkel Boe Følsgaard, Lukas Løkken, Jessica Dinnage, Sonny Lindberg, and Angela Bundalovic, with Lars Simonsen, Bertil De Lorenhmad, Evin Ahmad, and Johannes Bah Kuhnke in recurring roles.",
+        "On 30 May 2018, Netflix renewed The Rain for a second season, which was released on 17 May 2019, with 6 episodes.",
+        "In June 2019, it was confirmed that the series was renewed for a third and final season, which was released on 6 August 2020."
+      ]
+    }
+  ]
+}
