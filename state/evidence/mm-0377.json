@@ -1,0 +1,141 @@
+{
+  "id": "mm-0377",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How QR codes work and what makes them dangerous – a computer scientist explains",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Ruoti, Scott",
+      "published_at": "2022-04-07",
+      "url": "https://theconversation.com/how-qr-codes-work-and-what-makes-them-dangerous-a-computer-scientist-explains-177217",
+      "retrieved_at": "2026-10-18T17:04:21.339Z",
+      "sha256": "b98df2445c6c3df993a1683993de1993717e1857b08d0ee99715d7f8b790dcb8",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How QR codes work and what makes them dangerous – a computer scientist explains Skip to content Academic rigor, journalistic flair QR codes are visual patterns that store data smartphones can read.",
+        "The Federal Trade Commission warned again in December 2023 about the danger of scanning a code from an unknown source.",
+        "QR codes have a wide range of uses that help people avoid contact with objects and close interactions with other people, including for sharing restaurant menus , email list sign-ups, car and home sales information, and checking in and out of medical and professional appointments.",
+        "QR codes are a close cousin of the bar codes on product packaging that cashiers scan with infrared scanners to let the checkout computer know what products are being purchased.",
+        "QR codes store information in both vertical and horizontal axes, which allows them to hold significantly more data.",
+        "That extra amount of data is what makes QR codes so versatile.",
+        "Anatomy of a QR code While it is easy for people to read Arabic numerals, it is hard for a computer.",
+        "Bar codes encode alphanumeric data as a series of black and white lines of various widths.",
+        "At the store, bar codes record the set of numbers that specify a product’s ID.",
+        "Even if part of the bar code is destroyed or obscured, it is still possible for a device to read the product ID.",
+        "QR codes are designed to be scanned using a camera, such as those found on your smartphone.",
+        "QR code scanning is built into many camera apps for Android and iOS."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Practical Application: Putting QR Codes to Work",
+      "publisher": "ABC-CLIO, LLC",
+      "author": null,
+      "published_at": "2012",
+      "url": "https://doi.org/10.5040/9798400620416.ch-015",
+      "retrieved_at": "2026-10-18T17:04:22.701Z",
+      "sha256": "f94937f89295a9280454c6d1730978448f4aada7edb262149281227d7006294d",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Bookmarking --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Barcode",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=60600",
+      "retrieved_at": "2026-10-18T17:04:22.852Z",
+      "sha256": "4346a6fc870970e742ff8856097c5a584e28d44f8dc05a69697b8c083c4483fb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A barcode or bar code is a method of representing data in a visual, machine-readable symbolic form.",
+        "Initially, barcodes represented data by varying the widths, spacings and sizes of parallel lines.",
+        "These barcodes, commonly referred to as linear or one-dimensional (1D), can be scanned by optical scanners known as barcode readers.",
+        "Later, two-dimensional (2D) variants were developed, using rectangles, dots, hexagons and other patterns, called matrix codes or 2D barcodes.",
+        "Despite being often included as barcodes, these do not use bars as linear barcodes do.",
+        "Both matrix codes and linear barcodes can also be read by a digital camera connected to a computer.",
+        "After a photograph of the barcode is taken, software is used to analyze the image to deconstruct and decode the code.",
+        "A mobile device with a built-in camera, such as a smartphone, can function as this type of barcode reader using specialized application software.",
+        "The barcode was invented by Norman Joseph Woodland and Bernard Silver and patented in the US in 1952.",
+        "The invention was based on Morse code that was extended to thin and thick bars.",
+        "However, it took over twenty years before this invention became commercially successful.",
+        "UK magazine Modern Railways December 1962 pages 387–389 record how British Railways had already perfected a barcode-reading system capable of correctly reading rolling stock travelling at 100 mph (160 km/h) with no mistakes."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "VCard",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=285478",
+      "retrieved_at": "2026-10-18T17:04:22.852Z",
+      "sha256": "ca9c9790ea8538febd10425b47e3bda8010eee87adeba5fc18eeafeca8dedf3c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "vCard, also known as VCF (\"Virtual Contact File\"), is a file format standard for electronic business cards.",
+        "vCards can be attached to e-mail messages, sent via Multimedia Messaging Service (MMS), on the World Wide Web, instant messaging, NFC or through QR code.",
+        "They can contain name and address information, phone numbers, e-mail addresses, URLs, logos, photographs, and audio clips.",
+        "vCard is used as a data interchange format in smartphone contacts, personal digital assistants (PDAs), personal information managers (PIMs) and customer relationship management systems (CRMs).",
+        "To accomplish these data interchange applications, other \"vCard variants\" have been used and proposed as \"variant standards\", each for its specific niche: XML representation, JSON representation, or web pages."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "QR code",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=828436",
+      "retrieved_at": "2026-10-18T17:04:22.852Z",
+      "sha256": "a501032a6da8dc9fdeabcd40ed2b9d5fd354c950de9bd3478d4d27feb40e3533",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A QR code, short for quick-response code, is a type of two-dimensional matrix barcode invented in 1994 by Masahiro Hara of the Japanese company Denso Wave for labelling automobile parts.",
+        "It features white (\"0\") and black (\"1\") squares within a square grid featuring fiducial markers on the corners, readable by imaging devices like cameras, and processed using Reed–Solomon error correction until the image can be appropriately interpreted.",
+        "The required data is then extracted from patterns that are present in both the horizontal and the vertical components of the QR image.",
+        "Whereas a barcode is a machine-readable optical image that contains information specific to the labeled item, the QR code contains the data for a locator, an identifier, and web tracking.",
+        "To store data efficiently, QR codes use four standardized modes of encoding: numeric, alphanumeric, byte or binary, and kanji.",
+        "As of 2026, QR codes are used in a broad context, including both commercial tracking applications and convenience-oriented applications aimed at mobile phone users (termed mobile tagging).",
+        "QR codes may be used to display text to the user, to open a webpage on the user's device, to add a vCard contact to the user's device, to open a Uniform Resource Identifier (URI), to connect to a wireless network, to compose an email or text message, or as a method of payment."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "QR code payment",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=57588118",
+      "retrieved_at": "2026-10-18T17:04:22.852Z",
+      "sha256": "3b25ecc79a31f82ca7c6c3f765db2213262745022e9c41dcce544c447aa373d6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A QR code payment is a mobile payment method where payment is performed by scanning a QR code from a mobile app.",
+        "This is an alternative to doing electronic funds transfer at point of sale using a payment terminal.",
+        "This avoids a lot of the infrastructure traditionally associated with electronic payments such as payment cards, payment networks, payment terminal and merchant accounts.",
+        "To make a QR code payment, the consumer scans the QR code displayed by the merchant with their smartphone to pay for their goods."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "mm-0773",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Cooking",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5355",
+      "retrieved_at": "2026-10-18T17:24:47.727Z",
+      "sha256": "c50224a770cd0c3a31d7991848f1c43fe25f70b5f46c607c918d6677b774c07d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe.",
+        "Cooking techniques and ingredients vary widely, from grilling food over an open fire, to using electric stoves, to baking in various types of ovens, to boiling and blanching in water, reflecting local conditions, techniques and traditions.",
+        "Cooking is an aspect of all human societies and a cultural universal.",
+        "Types of cooking also depend on the skill levels and training of the cooks.",
+        "Cooking is done both by people in their own dwellings and by professional cooks and chefs in restaurants and other food establishments.",
+        "The term \"culinary arts\" usually refers to cooking that primarily focuses on the aesthetic presentation and taste of food.",
+        "Preparing food with heat or fire is an activity unique to humans.",
+        "Archaeological evidence of cooking fires dates to at least 300,000 years ago, but some estimate that humans started cooking as early as 2 million years ago.",
+        "The expansion of agriculture, commerce, trade, and transportation between civilizations in different regions offered cooks many new ingredients.",
+        "New inventions and technologies, such as the invention of pottery for holding and boiling of water, expanded cooking techniques.",
+        "Some modern cooks apply advanced scientific techniques to food preparation to further enhance the flavor of the dish served."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Pressure cooker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52991",
+      "retrieved_at": "2026-10-18T17:24:47.727Z",
+      "sha256": "a00c8d9c2952289e0644afabf5e5f95f4c24e8d9b629c23ea31673b87a78833d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A pressure cooker is a sealed vessel used for cooking food with the use of high pressure steam and water or a water-based liquid, in a process called pressure cooking.",
+        "The high pressure limits boiling and permits cooking at higher temperatures, allowing food to be cooked faster than at normal pressure.",
+        "The prototype of the modern pressure cooker was the steam digester invented in the seventeenth century by the physicist Denis Papin.",
+        "It works by expelling air from the vessel and trapping steam produced from the boiling liquid.",
+        "This is used to raise the internal pressure to one atmosphere above ambient and gives higher cooking temperatures between 100–121 °C (212–250 °F).",
+        "Together with high thermal heat transfer from steam it permits cooking in between a half and a quarter the time of conventional boiling as well as saving considerable energy.",
+        "Almost any food that can be cooked in steam or water-based liquids can be cooked in a pressure cooker.",
+        "Modern pressure cookers have many safety features to prevent the pressure cooker from reaching a pressure that could cause an explosion or other dangerous situations.",
+        "After cooking, the steam pressure is lowered back to ambient atmospheric pressure so that the vessel can be opened.",
+        "On all modern devices, a safety lock prevents opening while under pressure.",
+        "Part of the decline has been attributed to fear of explosion (although this is extremely rare with modern pressure cookers) along with competition from other fast cooking devices such as the microwave oven.",
+        "However, third-generation pressure cookers have many more safety features and digital temperature control, do not vent steam during cooking, and are quieter and more efficient, and these conveniences have helped make pressure cooking more popular."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Kitchen stove",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=584469",
+      "retrieved_at": "2026-10-18T17:24:47.727Z",
+      "sha256": "f34f9344636ad698248c0fee7c74cffe01545fcb50da592df21e1bbd5cb0a60b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A kitchen stove, often called simply a stove or a cooker, is a kitchen appliance designed for the purpose of cooking food.",
+        "Kitchen stoves rely on the application of direct heat for the cooking process and may also contain an oven, used for baking.",
+        "Cookstoves (also called \"cooking stoves\" or \"wood stoves\") are heated by burning wood or charcoal; gas stoves are heated by gas; and electric stoves by electricity.",
+        "In the industrialized world, as stoves replaced open fires and braziers as a source of more efficient and reliable heating, models were developed that could also be used for cooking, and these came to be known as kitchen stoves.",
+        "When homes began to be heated with central heating systems, there was less need for an appliance that served as both heat source and cooker and stand-alone cookers replaced them.",
+        "The fuel-burning stove is the most basic design of a kitchen stove.",
+        "Natural gas and electric stoves are the most common in developed countries.",
+        "Electricity may reduce environmental impact if generated from non-fossil sources.",
+        "The choice between the two is mostly a matter of personal preference and availability of utilities.",
+        "Bottled gas ranges are used where utilities are unavailable.",
+        "Modern kitchen stoves have an oven, and often have a \"stovetop\" or \"cooktop\" in Simplified English; known as the \"hob\" in English, from Hob (hearth).",
+        "A \"drop-in range\" is a combination stovetop-and-oven unit that installs in a kitchen's lower cabinets flush with the countertop."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Convection oven",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=636035",
+      "retrieved_at": "2026-10-18T17:24:47.727Z",
+      "sha256": "d755648c8fc49c7e8148af5525a94187e628bd21330dae3343e80a3ab16752bf",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A convection oven (also known as a fan-assisted oven, turbo broiler or simply a fan oven or turbo) is an oven that has fans to circulate air around food to create an evenly heated environment.",
+        "In an oven without a fan, natural convection circulates hot air unevenly, so that it will be cooler at the bottom and hotter at the top than in the middle.",
+        "Fan ovens cook food faster, and are also used in non-food, industrial applications.",
+        "Small countertop convection ovens for household use are often marketed as air fryers.",
+        "When cooking using a fan-assisted oven, the temperature is usually set lower than for a non-fan oven, often by 20 °C (36 °F), to avoid overcooking the outside of the food."
+      ]
+    }
+  ]
+}

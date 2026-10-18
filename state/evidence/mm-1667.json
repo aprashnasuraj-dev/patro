@@ -1,0 +1,149 @@
+{
+  "id": "mm-1667",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Coffee and Modernity",
+      "publisher": "University of Arkansas Press",
+      "author": null,
+      "published_at": "2019-03-04",
+      "url": "https://doi.org/10.2307/j.ctv8bt35g.12",
+      "retrieved_at": "2026-10-18T17:46:48.226Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Anxieties about Coffee",
+      "publisher": "University of Arkansas Press",
+      "author": null,
+      "published_at": "2019-03-04",
+      "url": "https://doi.org/10.2307/j.ctv8bt35g.10",
+      "retrieved_at": "2026-10-18T17:46:48.453Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Coffee Crosses the Mediterranean",
+      "publisher": "University of Arkansas Press",
+      "author": null,
+      "published_at": "2019-03-04",
+      "url": "https://doi.org/10.2307/j.ctv8bt35g.8",
+      "retrieved_at": "2026-10-18T17:46:48.670Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "PREFACE:",
+      "publisher": "University of Arkansas Press",
+      "author": null,
+      "published_at": "2019-03-04",
+      "url": "https://doi.org/10.2307/j.ctv8bt35g.4",
+      "retrieved_at": "2026-10-18T17:46:48.888Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Espresso machine",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=321546",
+      "retrieved_at": "2026-10-18T17:46:48.888Z",
+      "sha256": "88f8a3f35c5b69d25abf4827497c19489dab1a26c406de5fdac5df8f27d10d0a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An espresso machine is a device that brews coffee by rapidly forcing heated, pressurized water through a small, compressed cake (commonly called a puck) of finely ground coffee and a coffee filter to produce a thick, concentrated coffee called espresso.",
+        "Espresso machines vary significantly in design and operation.",
+        "They may be steam-driven, piston-driven, pump-driven or air-pump-driven, and may be manual, semi-automatic, or fully automatic in operation.",
+        "An espresso machine may even incorporate a built-in coffee grinder, and, in the case of a superautomatic machine, mechanisms for automating the entire process, such that a shot of espresso may be produced by a single touch from the user.",
+        "They range in size and application from small appliances to much larger commercial appliances and coffee vending machines, including 'prosumer' machines which combine commercial or professional features in consumer machines.",
+        "An espresso machine may also have an auxiliary steam wand (or wands) used to steam and froth milk or non-dairy milks for coffee drinks such as cappuccino and caffè latte, including microfoam which may be used for latte art."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Coffee preparation",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4604645",
+      "retrieved_at": "2026-10-18T17:46:48.888Z",
+      "sha256": "3897d6c7d3017e88b1fe4ac43d8251010877855cf55ac4a1ae69c9869ea196f1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Coffee preparation is the process of making liquid coffee using coffee beans.",
+        "Key variables in coffee preparation include grind size, water temperature, brew time, and the ratio of coffee to water, all of which influence extraction and flavour.",
+        "Coffee is usually brewed hot, at close to the boiling point of water, immediately before drinking; if not consumed promptly, coffee is often sealed into a vacuum flask or insulated bottle to maintain its temperature.",
+        "In most areas, coffee may be purchased unprocessed, or already roasted, or already roasted and ground.",
+        "Whole roast coffee or ground coffee is often vacuum-packed to prevent oxidation and lengthen its shelf life.",
+        "Especially in hot climates, some find cold or iced coffee more refreshing.",
+        "This can be prepared well in advance as it maintains its character when stored cold better than as a hot beverage.",
+        "Preferred brew ratios of water to coffee often fall into the range of 15–18:1 by mass; even within this fairly small range, differences are easily perceived by an experienced coffee drinker.",
+        "hand grinding with manual pour-over in steady increments) to totally automated by a single appliance with a reservoir of roast beans which it automatically measures and grinds, and water, which it automatically heats and doses.",
+        "Another common style of automated coffee maker is fed a single-serving \"pod\" of pre-measured coffee grounds for each beverage.",
+        "almond milk) also changes the perceived character of the brewed coffee.",
+        "Principally, dairy products mute delicate aromas and thicken mouthfeel (particularly when frothed), while sweeteners mask astringency and bitterness."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Vacuum coffee maker",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5212064",
+      "retrieved_at": "2026-10-18T17:46:48.888Z",
+      "sha256": "c10370163a8cff0ea97f285adf1e95bd559da46669e1974b8bdd0bb1c56cb12e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A vacuum coffee maker brews coffee using two chambers where vapor pressure and gravity produce coffee.",
+        "This type of coffee maker is also known as vac pot, siphon or syphon coffee maker, and was invented by Johann Nörrenberg in 1827."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "E-61",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5239178",
+      "retrieved_at": "2026-10-18T17:46:48.888Z",
+      "sha256": "988b9d47951936240f932863d0a0aaacad767c7e24009c4411610676f665b5e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "E-61 (commonly E61) is a type of espresso machine brew group, invented and patented by Ernesto Valente and introduced by Faema in 1961.",
+        "The term E61 comes from the Faema espresso machine of the same name, which introduced the technology, and was in turn named for the solar eclipse in its year of introduction.",
+        "It is also used as a genericized trademark for machines using brew groups of this type.",
+        "The E61 is regarded as \"revolutionary\" in espresso, and one of \"the most influential coffee machines of history.\""
+      ]
+    }
+  ]
+}

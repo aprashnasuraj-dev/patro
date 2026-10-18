@@ -1,0 +1,109 @@
+{
+  "id": "mm-0800",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "3D Printing Case for LED Controller v1",
+      "publisher": "Springer Science and Business Media LLC",
+      "author": "Nedbal, Jakub",
+      "published_at": "2020-02-11",
+      "url": "https://doi.org/10.17504/protocols.io.bcfmitk6",
+      "retrieved_at": "2026-10-18T17:24:59.467Z",
+      "sha256": "0b72338cbe496bb6b33ccde5b8937912c3505624caf5953468ce79efb9b2f653",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The electronics control circuit for the illuminated orbital shaker should be housed in a case to protect it from damage by short-circuit, but also to minimize injury by electrical current and fire hazard.",
+        "This document is part of the Illuminated Orbital Shaker for Microalgae Culture project: Procuring Parts for Algal Shaker 3D Printing Case for LED Controller (this document) Assembling Cooled LED Illuminator Cutting and Drilling Clear Acrylic Sheet Assembling Algal Shaker"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Light-emitting diode",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18290",
+      "retrieved_at": "2026-10-18T17:24:59.907Z",
+      "sha256": "f16f96cdace0e69f9498684a4ae9c9233f8e078ee7f6cb373d76ad947ed860aa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A light-emitting diode (LED) is an electronic component that uses a semiconductor to emit light when current flows through it.",
+        "Electrons in the semiconductor recombine with electron holes, thereby releasing energy in the form of photons.",
+        "The color of the light (corresponding to the energy of the photons) is determined by the energy required for electrons to cross the band gap of the semiconductor.",
+        "White light is obtained by using multiple semiconductors or a layer of light-emitting phosphor on the semiconductor device.",
+        "Appearing as practical electronic components in 1962, the earliest LEDs emitted low-intensity infrared (IR) light.",
+        "Infrared LEDs are used in remote-control circuits, such as those used with a wide variety of consumer electronics.",
+        "The first visible-light LEDs were of low intensity and limited to red.",
+        "Early LEDs were often used as indicator lamps, replacing small incandescent bulbs, and in seven-segment displays.",
+        "Later developments produced LEDs available in visible, ultraviolet (UV), and infrared wavelengths with high, low, or intermediate light output; for instance, white LEDs suitable for room and outdoor lighting.",
+        "LEDs have also given rise to new types of displays and sensors, while their high switching rates have uses in advanced communications technology.",
+        "LEDs have been used in diverse applications such as aviation lighting, fairy lights, strip lights, automotive headlamps, advertising, stage lighting, general lighting, traffic signals, camera flashes, lighted wallpaper, horticultural grow lights, and medical devices.",
+        "LEDs have many advantages over incandescent light sources, including lower power consumption, reduced waste heat, a longer lifetime, improved physical robustness, smaller sizes, and faster switching."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Lenticular printing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=878311",
+      "retrieved_at": "2026-10-18T17:24:59.907Z",
+      "sha256": "59a982c0445c12f1fcdf11bdc8babedfc71e28ff90871e7ca08f3e80ffad6d66",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lenticular printing is a technology in which lenticular lenses (a technology also used for 3D displays) are used to produce printed images with an illusion of depth, or the ability to change or move as they are viewed from different angles.",
+        "Examples include flip and animation effects such as winking eyes, and modern advertising graphics whose messages change depending on the viewing angle.",
+        "It can be used to create frames of animation, for a motion effect; offsetting the various layers at different increments, for a 3D effect; or simply to show sets of alternative images that appear to transform into each other.",
+        "Colloquial terms for lenticular prints include \"flickers\", \"winkies\", \"wiggle pictures\", and \"tilt cards\".",
+        "The trademarks Vari-Vue and Magic Motion are often used for lenticular pictures, without regard to the actual manufacturer."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "3D printing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1305947",
+      "retrieved_at": "2026-10-18T17:24:59.907Z",
+      "sha256": "636a852ca760877eabf8ce87afe14d5d60f2e5c2121ce984561e7b8504aef810",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "3D printing, also called additive manufacturing, is the construction of a three-dimensional object from a CAD model or a digital 3D model.",
+        "It can be done in a variety of processes in which material is deposited, joined or solidified under computer control, with the material being added together (e.g.",
+        "plastics, liquids, or powder grains being fused), typically layer by layer.",
+        "In the 1980s, 3D printing techniques were considered suitable only for the production of functional or aesthetic prototypes, and a more appropriate term for it at the time was rapid prototyping.",
+        "As of 2019, the precision, repeatability, and material range of 3D printing have increased to the point that some 3D printing processes are considered viable as an industrial-production technology; in this context, the term additive manufacturing can be used synonymously with 3D printing.",
+        "One of the key advantages of 3D printing is the ability to produce very complex shapes or geometries that would be otherwise infeasible to construct by hand, including hollow parts or parts with internal truss structures to reduce weight while creating less material waste.",
+        "Fused deposition modeling (FDM), which uses a continuous filament of a thermoplastic material, is the most common 3D printing process in use as of 2020."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Classic Chinese Novels",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1662653",
+      "retrieved_at": "2026-10-18T17:24:59.907Z",
+      "sha256": "8d1939f6441e67db377dd8a6f9095b5acdd74a3e906945effffb5a87e2f45e91",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Classic Chinese Novels (traditional Chinese: 古典小說; simplified Chinese: 古典小说; pinyin: gǔdiǎn xiǎoshuō) are the best-known works of literary fiction across pre-modern Chinese literature.",
+        "The group usually includes the following works: Ming dynasty novels Romance of the Three Kingdoms, Water Margin, Journey to the West, and The Plum in the Golden Vase; and Qing dynasty novels Dream of the Red Chamber and The Scholars.",
+        "These works are among the world's longest and oldest novels.",
+        "They represented a new complexity in structure and sophistication in language that helped to establish the novel as a respected form among later popular audiences and erudite critics.",
+        "Hsia wrote in 1968 that these six works \"remain the most beloved novels among the Chinese.\"\nDuring the Ming and Qing dynasties, Chinese novels inspired sequels, rebuttals, and reinventions with new settings, sometimes in different genres.",
+        "Far more than in the European tradition, every level of society was familiar with the plots, characters, key incidents, and quotations.",
+        "Those who could not read knew them through tea-house story-tellers, Chinese opera, card games, and new year pictures.",
+        "In modern times they live on through popular literature, graphic novels, cartoons and films, television drama, video games, and theme parks."
+      ]
+    }
+  ]
+}

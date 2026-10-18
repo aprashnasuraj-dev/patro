@@ -1,0 +1,168 @@
+{
+  "id": "mm-0266",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why chemical reactions happen",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.001.0001",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "c2599bd458a674391f3a0479bd7c89bcd568ac6e67571c95cf06b543a6d43b6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Why Chemical Reactions Happen provides all the tools and concepts needed to think like a chemist.",
+        "The text takes a unified approach to the subject, aiming to help with the development of a real overview of chemical processes, by avoiding the traditional divisions of physical, inorganic, and organic chemistry.",
+        "To understand how chemical reactions happen we need to know about the bonding in molecules, how molecules interact, what determines whether an interaction is favourable or not, and what the outcome will be.",
+        "Answering these questions requires an understanding of topics from quantum mechanics, through thermodynamics, to ‘curly arrows’."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Reactions",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0007",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "da108db36b47d5032a7ea57220bc7ed6839ce80b93228115c810391999d253d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter explains the relationship between molecular orbital and chemical reactions.",
+        "It shows how energies of the orbitals help us understand why the reaction occurs.",
+        "Knowing the shapes is vital in understanding how the reaction takes place.",
+        "Moreover, the chapter uses the formation of lithium borohydride to showcase chemical reactions.",
+        "It notes the nucleophilic addition to a carbonyl group as one of the most significant reactions in organic chemistry.",
+        "The chapter also analyses nucleophilic attack on carbonyl, carbon–carbon double bond, and acyl chlorides.",
+        "Finally, the chapter hints at the possibility of a reversible reaction between carboxylic acid and alcohol."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Equilibrium",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0008",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "bd9909139143c8edfc7efb7124e76e8572e3331fbea4bef9f26c9cf41ceb8014",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It starts with the concept of the Second Law of Thermodynamics and Gibbs energy impacting entropy.",
+        "It notes the general chemical equilibrium in terms of gas, solid, liquid, and solution.",
+        "The chapter uses diagrams and equations to show how equilibrium is achieved in relation to Gibbs energy and equilibrium constants.",
+        "It investigates how temperature, dimerization, extraction of metals, concentration, the Haber process, and coupling reactions influence the position of equilibrium.",
+        "Additionally the chapter explores the rates of reaction in terms of equilibrium."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Leaving groups",
+      "publisher": "Oxford University Press",
+      "author": "Keeler, James; Wothers, Peter",
+      "published_at": "2003-03-27",
+      "url": "https://doi.org/10.1093/hesc/9780199249732.003.0013",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "628f393c09fb82cb129bbb7aef49c8bea1e5ac992dd0bc12051fee35dcf27df5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "It discusses the energy profile in line with leaving groups by using a diagram to emphasize its points.",
+        "The chapter notes bond strength and stability as factors which are important for a good leaving group.",
+        "Leaving group ability is a good guide to working out which reactions will go and which will not.",
+        "The chapter highlights how some reactions do not occur despite their predicted mechanisms.",
+        "It shares how relative energies of the species are vital in predicting whether reactions will go readily or not.",
+        "The chapter also shows how to reverse reactions that do not take place by using ketone reacting to acyl chlorides as an example."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Recession",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25382",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "0df7a8384bedae5279697d810055fc9e92789f7993e9309a356315c6db0295fd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In economics, a recession is a business cycle contraction that occurs when there is a period of broad decline in economic activity.",
+        "Recessions generally occur when there is a widespread drop in spending (an adverse demand shock).",
+        "This may be triggered by various events, such as a financial crisis, an external trade shock, an adverse supply shock, the bursting of an economic bubble, or a large-scale anthropogenic or natural disaster (e.g.",
+        "There is no official definition of a recession, according to the International Monetary Fund.",
+        "In the United States, a recession is defined as \"a significant decline in economic activity spread across the market, lasting more than a few months, normally visible in real gross domestic product (GDP), real income, employment, industrial production, and wholesale-retail sales\".",
+        "In the United Kingdom and Canada, a recession is defined as negative economic growth in GDP for two consecutive quarters.",
+        "Governments usually respond to recessions by adopting expansionary macroeconomic policies, such as increasing money supply and decreasing interest rates or increasing government spending and decreasing taxation."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Business cycle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=168918",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "6e2d5c1950e94d3afef8bf6a94e35e6b26b50e0b4bc42690f92514327d491797",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Business cycles are intervals of general expansion followed by recession in economic performance.",
+        "The changes in economic activity that characterize business cycles have important implications for the welfare of the general population, government institutions, and private sector firms.",
+        "The simplest defines recessions as two consecutive quarters of negative GDP growth.",
+        "More satisfactory classifications are provided first by including more economic indicators and second by looking for more data patterns than the two quarter definition.",
+        "They are less related to long-term trends that arise from slowly changing factors, such as technological advances.",
+        "Furthermore, a one-period change that is unusual over the course of one or two years is often regarded as noise; examples include a worker strike or an isolated period of severe weather.",
+        "The individual episodes of expansion and recession occur with varying duration and intensity over time.",
+        "Typically, their periodicity ranges from about 2 to 10 years.",
+        "There are many sources of business cycle movements such as rapid and significant changes in the price of oil or variation in consumer sentiment that affects overall spending in the macroeconomy and thus investment and firms' profits.",
+        "Usually such sources are unpredictable in advance and can be viewed as random shocks to the cyclical pattern, as happened during the 2008 financial crisis or the COVID-19 pandemic."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Great Recession",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19337279",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "099c81a8ceef952bf4c8237df8497adf90ccab761ffbe38c870aeb2721c3c62b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Great Recession was a period of contraction in economies around the world (particularly in the western world and associated countries) that occurred from late 2007 to mid-2009, overlapping with the closely related 2008 financial crisis.",
+        "The scale and timing of the recession varied from country to country (see map).",
+        "At the time, the International Monetary Fund (IMF) concluded that it was the most severe economic and financial meltdown since the Great Depression of the 1930s.",
+        "The Great Recession was caused by many weaknesses that slowly developed in the global financial system, along with a series of concurrent and triggering events that began with the bursting of the United States housing bubble, which had formed in 2005 and lasted until 2012.",
+        "When housing prices fell and homeowners began to abandon their mortgages, the value of mortgage-backed securities held by investment banks declined sharply in 2007–2008, causing several banks to collapse or be bailed out in September 2008.",
+        "This 2007–2008 phase became known as the subprime mortgage crisis, referring to borrowers of lesser payment capacity as subprime debtors.",
+        "The combination of banks being unable to provide funds to businesses (also known as the credit crunch) and homeowners forsaking or paying down their debts (rather than borrowing and spending) resulted in the Great Recession.",
+        "In the U.S., the recession officially began in December 2007 and lasted until June 2009, thus extending over 19 months.",
+        "As with most other recessions, it appears that no known formal theoretical or empirical model succeeded in accurately predicting the onset of this recession, except for minor signals in the sudden rise of forecast probabilities, which were still well under 50%.",
+        "Similarly, Oceania suffered minimal impact, in part due to its proximity to Asian markets."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "List of recessions in the United Kingdom",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=19980937",
+      "retrieved_at": "2026-10-18T16:59:29.016Z",
+      "sha256": "df7e715969f9fbbeb5e41c1e2d4b5c21505d84f3b133743c1fb17841ff565c9a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This is a list of recessions (and depressions) that have affected the economy of the United Kingdom and its predecessor states.",
+        "In the United Kingdom a recession is generally defined as two successive quarters of negative economic growth, as measured by the seasonally adjusted quarter-on-quarter figures for real GDP."
+      ]
+    }
+  ]
+}

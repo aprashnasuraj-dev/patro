@@ -1,0 +1,126 @@
+{
+  "id": "mm-1330",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How the Ear Works",
+      "publisher": "Gallaudet University Press",
+      "author": null,
+      "published_at": "2009-10-31",
+      "url": "https://doi.org/10.2307/j.ctv2rr3dbp.10",
+      "retrieved_at": "2026-10-18T17:37:38.557Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wordless Sounds",
+      "publisher": "Oxford University PressNew York",
+      "author": "Winner, Ellen",
+      "published_at": "2018-11-29",
+      "url": "https://doi.org/10.1093/oso/9780190863357.003.0003",
+      "retrieved_at": "2026-10-18T17:37:40.732Z",
+      "sha256": "2b5f0c18777d6c19c7d5633dba4c9dbdde3f7fdce5a2a25158bfccde5aeb7db0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Philosophers have worried that music cannot be sad or happy.",
+        "However, empirical studies show that people do perceive emotions in music, including music from unfamiliar traditions.",
+        "Research shows that structural features in music mirror how emotions are conveyed by prosodic features of speech.",
+        "When we are sad we speak slowly, softly, and in a low register; and when music is slow and soft and low, we perceive it as sad.",
+        "Other emotional properties (like the link between the minor mode and sadness, the major mode and happiness) may be learned, but this matter remains in dispute.",
+        "The research provides no support for the claim that music does not express emotions.",
+        "The conventional wisdom that music is the language of the emotions holds up very well."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hearing aid",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=520289",
+      "retrieved_at": "2026-10-18T17:37:40.732Z",
+      "sha256": "73dd0d5469278ab0e0d00195bdb0d6406b0fb7a156a6923e01999468c8e32dd7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A hearing aid is a device designed to improve hearing by making sound audible to a person with hearing loss.",
+        "Hearing aids are classified as medical devices in most countries, and regulated by the respective regulations.",
+        "Small audio amplifiers such as personal sound amplification products (PSAPs) or other plain sound reinforcing systems cannot be sold as \"hearing aids\".",
+        "Early devices, such as ear trumpets or ear horns, were passive amplification cones designed to gather sound energy and direct it into the ear canal.",
+        "Modern devices are computerised electroacoustic systems that transform environmental sound to make it audible, according to audiometrical and cognitive rules.",
+        "Modern devices also utilize sophisticated digital signal processing, aiming to improve speech intelligibility and comfort for the user.",
+        "Such signal processing includes feedback management, wide dynamic range compression, directionality, frequency lowering, and noise reduction.",
+        "Modern hearing aids require calibration and configuration to match the hearing loss, physical features, and lifestyle of the wearer.",
+        "The hearing aid is fitted to the most recent audiogram and is programmed by frequency.",
+        "This process, called \"fitting\", can be performed by the user in simple cases, by a Doctor of Audiology (an AuD) - also called an audiologist, or by a Hearing Instrument Specialist (HIS) or audioprosthologist.",
+        "The amount of benefits a hearing aid delivers depends in large part on the quality of its fitting.",
+        "Almost all hearing aids in use in the United States are digital hearing aids, as analog aids are phased out."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Hearing range",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3246329",
+      "retrieved_at": "2026-10-18T17:37:40.732Z",
+      "sha256": "d5ab7066b802512dbaef19c96a270f347b983e53ebf146b0df3304718b99f17d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hearing range describes the frequency range that can be heard by humans or other animals, though it can also refer to the range of levels.",
+        "The human range is commonly given as 20 to 20,000 Hz, although there is considerable variation between individuals, especially at high frequencies, and a gradual loss of sensitivity to higher frequencies with age is considered normal.",
+        "Sensitivity also varies with frequency, as shown by equal-loudness contours.",
+        "Routine investigation for hearing loss usually involves an audiogram which shows threshold levels relative to a normal.",
+        "Several animal species can hear frequencies well beyond the human hearing range.",
+        "Some dolphins and bats, for example, can hear frequencies over 100 kHz.",
+        "Elephants can hear sounds at 16 Hz–12 kHz, while some whales can hear infrasonic sounds as low as 7 Hz."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Hearing conservation program",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12319714",
+      "retrieved_at": "2026-10-18T17:37:40.732Z",
+      "sha256": "0ae30771041ab44059179ead9076afbf38af3c0722b46de85fa5415d7543008f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Hearing conservation programs are programs implemented to reduce the risk of hearing loss due to hazardous noise exposure, if implemented correctly.",
+        "Hearing conservation programs require knowledge about risk factors such as noise and ototoxicity, hearing, hearing loss, protective measures to prevent hearing loss at home, in school, at work, in the military and, and at social/recreational events, and legislative requirements.",
+        "While the Mine Safety and Health Administration (MSHA) also requires a hearing conservation program, MSHA does not require a written hearing conservation program.",
+        "MSHA's hearing conservation program requirement can be found in 30 CFR § 62.150, and is very similar to the OSHA hearing conservation program requirements.",
+        "Therefore, only the OSHA standard 29 CFR 1910.95 will be discussed in detail.",
+        "According to Alice Sater, employers are not implementing these programs effectively, personal protective equipment does not protect workers well, and the risk of hearing loss is not reduced."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Diagnosis of hearing loss",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=64773210",
+      "retrieved_at": "2026-10-18T17:37:40.732Z",
+      "sha256": "bf1cc2c01ed1b9e47711596a9328ad245f1f886209f0ae7d671ef932f49865ca",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Diagnosis of hearing loss means determining if and why someone has limited or no ability to perceive and interpret sounds.",
+        "Identification of a hearing loss is usually conducted by a general practitioner medical doctor, otolaryngologist, certified and licensed audiologist, school or industrial audiometrist, or other audiometric technician.",
+        "Diagnosis of the cause of a hearing loss is carried out by a specialist physician (audiovestibular physician) or otorhinolaryngologist."
+      ]
+    }
+  ]
+}

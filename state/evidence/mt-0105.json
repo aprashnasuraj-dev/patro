@@ -1,0 +1,54 @@
+{
+  "id": "mt-0105",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Seismic hazard assessment in active tectonic basins using a AHP-LR model: The case of Tokat (North Anatolian Fault Zone, Türkiye)",
+      "publisher": "Turkish Geograpical Review",
+      "author": "Toprak, Ahmet; Yaşarul, Sevilay",
+      "published_at": "2026-06-30",
+      "url": "https://doi.org/10.17211/tcd.1870383",
+      "retrieved_at": "2026-10-18T18:08:49.069Z",
+      "sha256": "e0657f6cf61f3cc63f3908e598a795c8b3a064ae19862d9f89a6d5f884fd4787",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tokat Province, situated along the North Anatolian Fault Zone (NAFZ), represents an active tectonic region that has historically been subjected to destructive earthquakes.",
+        "In this study, the seismic hazard potential of Tokat Province was spatially modeled by integrating the expert-based Analytic Hierarchy Process (AHP) and the data-driven Logistic Regression (LR) methods.",
+        "Eleven distinct conditioning parameters, including lithology, distance to faults, soil liquefaction, Vs30, slope, and settlement development, were utilized in the analysis.",
+        "To mitigate overfitting in the LR model, the number of parameters was statistically reduced to seven key factors.",
+        "The model training was executed using data derived from the very high risk zones identified by the AHP method.",
+        "The analysis yielded an Area Under the Curve (AUC) value of 0.952 for the LR model, indicating excellent predictive performance.",
+        "While the AHP model classified 30.5% of the province as \"Very Low Risk,\" the LR model expanded the risk zones, specifically categorizing the Erbaa, Niksar, and Tokat basins within the high risk class.",
+        "Field observations conducted across the province confirmed that the identified surface ruptures correspond precisely with the high-risk predictions of the LR model.",
+        "The resulting hybrid model provides a reliable framework for regional disaster management and urban planning strategies."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Wave Propagation from a Line Source Embedded in a Fault Zone",
+      "publisher": "InTech",
+      "author": "Murai, Yoshio",
+      "published_at": "2012-01-25",
+      "url": "https://www.intechopen.com/chapters/26252",
+      "retrieved_at": "2026-10-18T18:08:50.071Z",
+      "sha256": "cf3316404dfdbf411cae53967918ac4e492b62514e7ff0b3a469e12552fa3607",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Wave Propagation from a Line Source Embedded in a Fault Zone | IntechOpen Author Panel Login Submit What is Open Access?",
+        "Open Access is an initiative that aims to make scientific research freely available to all.",
+        "It’s based on principles of collaboration, unobstructed discovery, and, most importantly, scientific progression.",
+        "As PhD students, we found it difficult to access the research we needed, so we decided to create a new Open Access publisher that levels the playing field for scientists across the world.",
+        "By making research easy to access, and puts the academic needs of the researchers before the business interests of publishers.",
+        "Authors, Editors and Institutions We are a community of more than 103,000 authors and editors from 3,291 institutions spanning 160 countries, including Nobel Prize winners and some of the world’s most-cited researchers.",
+        "Publishing on IntechOpen allows authors to earn citations and find new collaborators, meaning more people see your work not only from your own field of study, but from other related fields too.",
+        "Content Alerts Brief introduction to this section that descibes Open Access especially from an IntechOpen perspective How it Works Manage preferences Contact Want to get in touch?",
+        "Contact our London head office or media team here Careers Our team is growing all the time, so we’re always on the lookout for smart people who want to help us reshape the world of scientific publishing.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2.",
+        "Choose citation style Select style Vancouver APA Harvard IEEE MLA Chicago Copy to clipboard Get citation 2."
+      ]
+    }
+  ]
+}

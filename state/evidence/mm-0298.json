@@ -1,0 +1,162 @@
+{
+  "id": "mm-0298",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dominic Cummings: how the internet knows when you’ve updated your blog",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Yasseri, Taha",
+      "published_at": "2020-05-28",
+      "url": "https://theconversation.com/dominic-cummings-how-the-internet-knows-when-youve-updated-your-blog-139517",
+      "retrieved_at": "2026-10-18T16:59:56.952Z",
+      "sha256": "4e17d74a887169c2c5d8a9d7c1111f58b29dcc610f1fe189a82352950c5697ff",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Last year I wrote about the possible threat of coronaviruses and the urgent need for planning.",
+        "It was, ultimately, beside the point but Cummings seemed to be reminding the public of his value.",
+        "We are to believe that he is too vital a cog in the machine to be forced out of his job.",
+        "However, unfortunately for Cummings, it didn’t take the internet nerds long to find out his claim is not exactly true.",
+        "In fact, a quick search and check on the Wayback Machine shows only one mention of coronavirus on Cummings’ blog or any other media attached to his name.",
+        "That mention is in a paragraph that was added to a blog post some time between April 11 and April 15 2020 – several months into the current crisis, when anyone could see coronaviruses were a problem, with or without an eye test .",
+        "A comparison between two versions of Cummings’ blog captured on April 11 and April 15 2020 respectively.",
+        "Wayback Machine In the last years of the 1980s, Tim Berners-Lee invented the World Wide Web (WWW) as he was frustrated with how hard it was to find different documents on different computers.",
+        "His original proposal was a protocol which connects documents regardless of which computer they are stored on and allows readers to navigate between those “hypertext” documents.",
+        "The first phase of development of the web was supposed to be “read-only”.",
+        "However, the very first web browser that Berners-Lee released was already a web editor too.",
+        "Considering the digital nature of the web documents, it would have been stupid to deal with them as “static” objects such those printed on paper."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "YOUR SUNGLASSES ARE IN THE MILKY WAY",
+      "publisher": "Harvard University Press",
+      "author": null,
+      "published_at": "2014-11-05",
+      "url": "https://doi.org/10.2307/j.ctt9qdt4n.10",
+      "retrieved_at": "2026-10-18T16:59:57.567Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How your body knows to shout ‘ouch’",
+      "publisher": "The Science Breaker",
+      "author": "Beaulieu-Laroche, Lou",
+      "published_at": "2021",
+      "url": "https://doi.org/10.25250/thescbr.brk487",
+      "retrieved_at": "2026-10-18T16:59:59.987Z",
+      "sha256": "ca63143c0bd1b377443fb261e1e5bba0906de5b04e1d202394c0029f9c226593",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Our body judges whether a physical force is “dangerous” depending on its intensity to decide if it is worth feeling painful to protect itself against additional damage.",
+        "Here, we discover a long-awaited novel pain sensor in the skin.",
+        "— we often can't help shouting when stubbing a toe or getting a finger squashed in a door.",
+        "But how do we actually recognize those experiences as painful?",
+        "Pain sensing begins with specialized nerve cells, called nociceptors , that sense painful stimuli through our skin.",
+        "These cells only sense mechanical forces that are too strong and therefore would cause unwanted tissue damage.",
+        "In other words, they remain inactive when you shake hands, as it is \"undangerous\".",
+        "Nociceptors contain sensors that convert mechanical forces into electrical signals to relay information to the brain.",
+        "However, molecules working as pain sensors have not yet been identified.",
+        "This missing information has limited our understanding of this painful experience and the development of therapies for pathological conditions, which cause unnecessary pain such as arthritis .",
+        "To identify the pain sensor, we selected a list of candidate molecules based on an ability to convert mechanical forces into electrical impulses and investigated them.",
+        "We cultured \"plain\" cells — which have limited ability to sense mechanical forces — in the laboratory, and genetically engineered them to include one of these candidates."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Global Positioning System",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=11866",
+      "retrieved_at": "2026-10-18T16:59:59.988Z",
+      "sha256": "88cbbfbfe880b983ecb22ef1ae89635b56338e332add3f4b376cc24a10644257",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Global Positioning System (GPS) is a satellite-based hyperbolic navigation system owned by the United States Space Force and operated by Mission Delta 31.",
+        "It is one of the global navigation satellite systems (GNSS) that provide geolocation and time information to a GPS receiver anywhere on or near the Earth where signal quality permits.",
+        "It does not require the user to transmit any data, and operates independently of any telephone or Internet reception, though these technologies can enhance the usefulness of the GPS positioning information.",
+        "It provides critical positioning capabilities to military, civil, and commercial users around the world.",
+        "Although the United States government created, controls, and maintains GPS, it is freely accessible to anyone with a GPS receiver.",
+        "The prototype spacecraft was launched in 1978 and the ultimate constellation of 24 satellites became operational in 1993.",
+        "After Korean Air Lines Flight 007 was shot down when it mistakenly entered Soviet airspace, President Ronald Reagan made the GPS system available for civilian use as of 1988.",
+        "Initially civilian use was limited to an average accuracy of 100 meters (330 ft) by use of Selective Availability (SA), a deliberate error introduced into the GPS data that military receivers could correct.",
+        "As civilian GPS usage grew, pressure grew to remove this limitation.",
+        "The SA system was temporarily disabled during the Gulf War, as a shortage of military GPS units meant that many US soldiers were using civilian GPS units.",
+        "In the 1990s, differential GPS systems from the US Coast Guard, Federal Aviation Administration, and similar agencies in other countries began to broadcast local GPS corrections, reducing the effect of both SA degradation and atmospheric effects (that military receivers also corrected).",
+        "The military also developed methods to perform local GPS jamming, eliminating the need to globally degrade the system."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Location-based service",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62392",
+      "retrieved_at": "2026-10-18T16:59:59.988Z",
+      "sha256": "964074010bd7d1f74a423c2487205b61325e46bb3c3073bb6b06cc64a097380b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A location-based service (LBS) is a software service which uses geographic data and information to search systems, in turn providing services or information to users.",
+        "LBS can be used in a variety of contexts, such as health, indoor object search, entertainment, work, personal life, etc.",
+        "Commonly used examples of location-based services include navigation software, social networking services, location-based advertising, and a tracking system.",
+        "LBS can also include mobile commerce when taking the form of coupons or advertising directed at customers based on their current location.",
+        "LBS also includes personalized weather services and even location-based games.",
+        "LBS is critical to many businesses as well as government organizations to drive real insight from data tied to a specific location where activities take place.",
+        "With the user's geolocation patterns, a service can better understand user behavior and relationships.",
+        "Banking, surveillance, online commerce, and many weapon systems are dependent on LBS.",
+        "Access policies are controlled by location data or time-of-day constraints, or a combination thereof.",
+        "As such, an LBS is an information service and has a number of uses in social networking today as information, in entertainment or security, which is accessible with mobile devices through the mobile network and which uses information on the geographical position of the mobile device.",
+        "This concept of location-based systems is not compliant with the standardized concept of real-time locating systems (RTLS) and related local services, as noted in ISO/IEC 19762-5 and ISO/IEC 24730-1.",
+        "While networked computing devices generally do very well to inform consumers of days old data, the computing devices themselves can also be tracked, even in real-time."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Life360",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40912831",
+      "retrieved_at": "2026-10-18T16:59:59.988Z",
+      "sha256": "4ccc1dfa572f70289e2100b698000a962771d2cb2012694d13f6105185690d76",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is an American information technology company that provides GPS tracking and other location-based services, including sharing and notifications, to consumers globally.",
+        "Its main service is called Life360, a family social networking app released in 2008.",
+        "It is a location-based service designed primarily to enable friends and family members to share their location with each other."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Google Traffic",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=41931035",
+      "retrieved_at": "2026-10-18T16:59:59.988Z",
+      "sha256": "a219f8e3927b6f67c2c081a9d4f08cf7af82375a110d9c4edc5b9867697a9f09",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Google Traffic is a feature on Google Maps that displays traffic conditions in real time on major roads and highways.",
+        "Google Traffic can be viewed at the Google Maps website, or by using the Google Maps application on a handheld device.",
+        "Google Traffic works by analyzing the GPS-determined locations transmitted to Google by a large number of mobile phone users.",
+        "By calculating the speed of users along a length of road, Google is able to generate a live traffic map.",
+        "Google processes the incoming raw data about mobile phone device locations, and then excludes anomalies such as postal vehicles which make frequent stops.",
+        "When a threshold of users in a particular area is noted, the overlay along roads and highways on the Google map changes color."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "mm-1291",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why Being Social and Active Boosts Psychological Wellbeing: A Mediating Role of Momentary Positive Emotions",
+      "publisher": "Center for Open Science",
+      "author": "Sun, Rui; Teulings, Irene Johanna Elisabeth; Sauter, Disa",
+      "published_at": "2023-04-25",
+      "url": "https://doi.org/10.31219/osf.io/7v8aq",
+      "retrieved_at": "2026-10-18T17:37:36.137Z",
+      "sha256": "7af5348326ba0784811cccdb6097ff321dcebef5c1ab9124d21980d51cf7fcb6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Social interactions and active activities are key to psychological wellbeing, but how do these activities improve wellbeing?",
+        "Building on work showing that positive emotional experiences help build psychological resources, we test the prediction that momentary positive emotional experiences mediate the relationships between social interactions, active activities, and wellbeing.",
+        "In a pre-registered experience sampling study, 106 participants reported their activities, momentary emotional experiences, and wellbeing five times per day for 15 days (7,110 observations).",
+        "Participants reported experiencing more intense positive emotions when interacting with others (especially face-to-face), and when engaged in active (versus passive) activities.",
+        "As predicted, the intensity of positive emotional experiences partially mediated the positive relationships between social interactions and wellbeing (explaining 25% of variance) and between active activities and wellbeing (explaining 12% of variance).",
+        "These findings show that momentary emotional experiences can be elicited by social and active activities, helping explain how these activities aid our psychological wellbeing."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "CAUSAL EFFECTS OF PERCEIVED EMPLOYER GRATITUDE ON MULTIDIMENSIONAL WELLBEING: LONGITUDINAL EVIDENCE",
+      "publisher": "Victoria University of Wellington Library",
+      "author": "Wiseley, Zahle",
+      "published_at": null,
+      "url": "https://doi.org/10.26686/d71m-ppy7",
+      "retrieved_at": "2026-10-18T17:37:36.137Z",
+      "sha256": "62a9d72e02ed7fd6627c5e72ddf260399386bc7a0b8ce5d13573f89d3f5f603f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Employer gratitude may influence employee wellbeing across multiple dimensions, but estimating causal effects remains challenging because large scale randomised experiments are typically infeasible and because association in data may be biased.",
+        "This thesis addresses this challenge by combining national scale longitudinal data from The New Zealand Attitudes and Values Study (NZAVS), a nationally diverse sample of New Zealanders, with recently developed tools for causal inference using machine learning.",
+        "Participants were selected from the baseline wave of the New Zealand Attitudes and Values Study (NZAVS) (2020-2021).",
+        "The treatment was defined as high perceived employer gratitude (≥ 5 on a 1-7 Likert Scale), contrasted with lower perceived employer gratitude (&amp;lt; 5 on a 1-7 Likert Scale).",
+        "To address attrition, inverse probability of censoring weights were applied.",
+        "Although the New Zealand Attitudes and Values Study (NZAVS) is close to representative of the adult population, census weights were applied to the population distribution of age, ethnicity, and gender, thus improving external validity.",
+        "Expected mean outcomes for the population in each treatment condition were estimated using causal forests.",
+        "Under standard causal assumptions of consistency, no unmeasured confounder, and positivity, the contrast of these mean outcomes provides an unbiased estimate of the Average Treatment Effect (ATE) for the population.",
+        "Results demonstrated that higher perceived employer gratitude leads to improvements across multiple domains of wellbeing including health, psychological wellbeing, life-reflective wellbeing, present-focused wellbeing, and social wellbeing.",
+        "Importantly, magnitudes of causal effect are quantitatively estimated."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Count your blessings: expressing gratitude can influence wellbeing",
+      "publisher": "Mark Allen Group",
+      "author": "Carson, Jerome",
+      "published_at": "2010-08",
+      "url": "https://doi.org/10.12968/bjow.2010.1.5.77983",
+      "retrieved_at": "2026-10-18T17:37:36.137Z",
+      "sha256": "1eff3bd179bc5000d65bda193e84ef426e774540bddc01a292d7ed540ce9d819",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Common sense might indicate that being grateful for your lot is good for your mental health.",
+        "But, as Jerome Carson explains, mounting empirical evidence shows that the link between gratitude and wellbeing offers a fruitful avenue for researchers and practitioners to explore"
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Why Gratitude?",
+      "publisher": "State University of New York Press",
+      "author": null,
+      "published_at": "2025-03-01",
+      "url": "https://doi.org/10.2307/jj.26047386.9",
+      "retrieved_at": "2026-10-18T17:37:37.087Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Queen Camilla",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=160811",
+      "retrieved_at": "2026-10-18T17:37:37.087Z",
+      "sha256": "21b78949a93e743625883237c97743a93235eeb363b37a5d7737d33404535d27",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Camilla (née Camilla Rosemary Shand, later Parker Bowles; born 17 July 1947) is Queen of the United Kingdom and the 14 other Commonwealth realms as the wife of King Charles III.",
+        "Camilla was raised in East Sussex and South Kensington in England and educated in England, Switzerland and France.",
+        "In 1973, she married British Army officer Andrew Parker Bowles; they divorced in 1995.",
+        "Camilla and Charles were romantically involved periodically, both before and during each of their first marriages.",
+        "Their relationship was highly publicised in the media and attracted worldwide scrutiny.",
+        "In 2005, Camilla married Charles in the Windsor Guildhall, which was followed by a televised Anglican blessing at St George's Chapel in Windsor Castle.",
+        "From their marriage until Charles's accession, she was known as the Duchess of Cornwall.",
+        "On 8 September 2022, Charles became king upon the death of his mother, Queen Elizabeth II, with Camilla as queen consort.",
+        "Charles and Camilla's coronation took place at Westminster Abbey on 6 May 2023.",
+        "Camilla carries out public engagements representing the monarch and is the patron of numerous charities and organisations.",
+        "Since 1994, she has campaigned to raise awareness of osteoporosis, which has earned her several honours and awards.",
+        "She has also campaigned to raise awareness of issues such as rape, sexual abuse, illiteracy, animal welfare and poverty."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Happiness",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=169409",
+      "retrieved_at": "2026-10-18T17:37:37.087Z",
+      "sha256": "fd3b8d3afc2f4b9cad86ace0c4cf5b5f8dcc949d4551938a1a19cf85b85d3125",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Happiness is a complex and multifaceted mental state that encompasses a range of positive feelings, from contentment to intense joy.",
+        "It is often associated with positive life experiences, such as achieving goals, spending time with loved ones, or engaging in enjoyable activities.",
+        "However, happiness can also arise spontaneously, without any apparent external cause.",
+        "Happiness is closely linked to well-being and overall life satisfaction.",
+        "Studies have shown that individuals who experience higher levels of happiness tend to have better physical and mental health, stronger social relationships, and greater resilience in the face of adversity.",
+        "The pursuit of happiness has been a central theme in philosophy and psychology for centuries.",
+        "While there is no single, universally accepted definition of happiness, it is generally understood to be a state of mind characterized by positive emotions, a sense of purpose, and a feeling of fulfillment."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Positive psychology",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=179948",
+      "retrieved_at": "2026-10-18T17:37:37.087Z",
+      "sha256": "260c247492befc31806f7db3fea19f96435b0b7c2d7043af78eb36c9b94b03b5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Positive psychology is the scientific study of conditions and processes that contribute to positive psychological states (e.g., contentment, joy), well-being, positive relationships, and positive institutions.",
+        "Positive psychology began as a new domain of psychology in 1998 when Martin Seligman chose it as the theme for his term as president of the American Psychological Association.",
+        "It is a reaction against past practices that tended to focus on mental illness and emphasized maladaptive behavior and negative thinking.",
+        "It builds on the humanistic movement of Abraham Maslow and Carl Rogers, which encourages an emphasis on happiness, well-being, and purpose.",
+        "Positive psychology largely relies on concepts from the Western philosophical tradition, such as the Aristotelian concept of eudaimonia, which is typically rendered in English with the terms \"flourishing\", \"the good life,\" or \"happiness\".",
+        "Positive psychologists study empirically the conditions and processes that contribute to flourishing, subjective well-being, and happiness, often using these terms interchangeably.",
+        "Positive psychologists suggest several factors that may contribute to happiness and subjective well-being.",
+        "These include strong social ties such asː family, friends, colleagues, and wider networks, involvement in clubs or social organization, regular physical exercise, and practices like meditation.",
+        "Spiritual practice and religious commitment is another possible source for increased well-being.",
+        "Its key principles focus on the positive aspects of human experience, a strengths-based approach that identifies individual strengths, like optimism, resilience and gratitude.",
+        "It emphasizes one's overall well-being and promotes engagement and relationships.",
+        "It also differentiates hedonic (pleasure-seeking) and eudaemonic (purpose and fulfillment) happiness."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Catherine, Princess of Wales",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1677192",
+      "retrieved_at": "2026-10-18T17:37:37.087Z",
+      "sha256": "ba0fb731071e9a0f26c0a465afbb2e80e0b8e1952187fd2fb4d05cc930a1e331",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Catherine, Princess of Wales (born Catherine Elizabeth Middleton; 9 January 1982) is a member of the British royal family.",
+        "She is married to William, Prince of Wales, the heir apparent to the British throne.",
+        "Born in Reading, Catherine grew up in Bucklebury, Berkshire.",
+        "She was educated at St Andrew's School and Marlborough College before earning a degree in art history at the University of St Andrews in Scotland, where she met Prince William in 2001 and graduated in 2005.",
+        "She held several jobs and undertook charity work before their engagement was announced in November 2010.",
+        "She became Duchess of Cambridge on their marriage at Westminster Abbey on 29 April 2011.",
+        "The couple have three children: George, Charlotte, and Louis.",
+        "She became Princess of Wales on 9 September 2022, when William was created Prince of Wales by his father, King Charles III.",
+        "In early 2024, she was diagnosed with cancer, underwent chemotherapy, and resumed duties later that year.",
+        "Following her marriage, Catherine has undertaken royal duties and engagements in support of the monarch and has represented the royal family on official overseas tours.",
+        "Her charitable work, largely through the Royal Foundation, focuses on early childhood, addiction, and the arts.",
+        "She is patron of several charitable and military organisations, including the Anna Freud Centre, Action for Children, SportsAid, and the National Portrait Gallery."
+      ]
+    }
+  ]
+}

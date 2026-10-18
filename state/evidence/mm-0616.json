@@ -1,0 +1,151 @@
+{
+  "id": "mm-0616",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Keeping Cool",
+      "publisher": "Oxford University Press",
+      "author": "Mitchell, Graham",
+      "published_at": "2021-08-05",
+      "url": "https://doi.org/10.1093/oso/9780197571194.003.0014",
+      "retrieved_at": "2026-10-18T17:16:36.094Z",
+      "sha256": "be785cfd42cec42841e55f6ebf0e52855993fb12d0fe75e1a8e595b680326f73",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Measurement of giraffe body temperature has shown that it is ~38.5 o C but it can vary by ~5 o C over the course of a day.",
+        "Body heat is derived from fermentation of browse, other metabolic processes and radiant heat.",
+        "Despite their unusual shape the body surface area of giraffes is similar to that in other equivalent body mass mammals: a shorter trunk is offset by a longer neck and legs.",
+        "Heat loss by radiation is constant, by conduction rare and minimal.",
+        "Their long, slender legs and neck are an advantage for convective and evaporative heat loss from the skin: heat transfer is inversely proportional to the square root of diameter.",
+        "Evaporation from the respiratory system occurs through the nasal mucosa, the surface area of which in giraffes is large.",
+        "Cooling of the nasal mucosa and blood follows and cool blood drains in to the jugular vein and contributes to whole body cooling and cooling of the blood supplying the brain by heat exchange in the carotid rete.",
+        "Similar heat exchange may occur across the surface of the ossicones.",
+        "Behavior changes when ambient temperature exceeds skin temperature.",
+        "Giraffes re-orientate their bodies to minimize radiant heat gain and seek shade.",
+        "A unique arrangement of blood vessels supplying blood to skin patches allows patches to act as thermal windows through which heat can be lost an arrangement enhanced by evaporation: sweat gland density in the skin of patches is greater than it is elsewhere."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Ways to use refrigerators that use heat to cool vehicles.",
+      "publisher": "ECO-Vector LLC",
+      "author": "Mazyakin, Maxym; Kolesnikov, Aтвкун Sergeevych; Krotov, Alexander Sergeevych",
+      "published_at": "2023-07-04",
+      "url": "https://doi.org/10.17816/rf490860",
+      "retrieved_at": "2026-10-18T17:16:36.094Z",
+      "sha256": "4963e645f1096f9cb6a72b39550d81fb7436ab1f9d8a310fe384c0fc02fd2f9c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "BACKGROUND: Today, most of the heat that is released during the combustion of fuel in internal combustion engines goes into the environment along with exhaust gases.",
+        "However, additional energy can be used for refrigeration and air conditioning.",
+        "Previously, there were only two ways to use exhaust heat for cooling: absorption machines and ejector chillers.",
+        "But now, thanks to the development of organic Rankine cycles, there are new possibilities for cooling vehicles.",
+        "AIMS: Conduct a theoretical analysis of the possibility of introducing mobile air conditioning and refrigeration systems in transport using various types of refrigeration machines that operate on the basis of heat.",
+        "MATERIALS AND METHODS: Modeling of typical cooling cycles was carried out in the ASPEN HYSYS software environment.",
+        "The most effective substances were selected from the absence of supercritical conditions.",
+        "RESULTS: Depending on the selected cycle type, simulation results were obtained that corresponded to the calculated parameters.",
+        "The coefficients of performance were determined under various ambient conditions and generator temperatures.",
+        "CONCLUSIONS: A theoretical analysis of various cooling cycles for use in transport has been carried out.",
+        "The results of the calculations show that the task of ensuring the cooling of the cabin or cargo is carried out even in the harsh operating conditions of the refrigeration system."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "De Ira / How to Keep Your Cool",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2019-02-19",
+      "url": "https://doi.org/10.2307/j.ctvc7740c.4",
+      "retrieved_at": "2026-10-18T17:16:36.289Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Einstein refrigerator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=599941",
+      "retrieved_at": "2026-10-18T17:16:36.289Z",
+      "sha256": "f9cd416266fd7f413a1a5104a1435c0b58dfc8e3a7918257c9751cb680ad55e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Einstein–Szilard or Einstein refrigerator is an absorption refrigerator which has no moving parts, operates at constant pressure, and requires only a heat source to operate.",
+        "It was jointly invented in 1926 by Albert Einstein and his former student Leó Szilárd, who patented it in the U.S.",
+        "The three working fluids in this design are water, ammonia, and butane.",
+        "The Einstein refrigerator (co-invented with Leó Szilárd) was actually a modification of an earlier three-fluid absorption design created by Swedish engineers Baltzar von Platen and Carl Munters, which was later commercialized by Electrolux."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Refrigerator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1036259",
+      "retrieved_at": "2026-10-18T17:16:36.289Z",
+      "sha256": "0ddb52792a14121c8ede0ef6b4472f1ad49955f5ebd68b4bd5d41bcaecd2ed9c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Refrigeration is an essential food storage technique around the world.",
+        "The low temperature reduces the reproduction rate of bacteria, so the refrigerator lowers the rate of spoilage.",
+        "A refrigerator maintains a temperature a few degrees above the freezing point of water.",
+        "The optimal temperature range for perishable food storage is 3 to 5 °C (37 to 41 °F).",
+        "A freezer is a specialized refrigerator, or portion of a refrigerator, that maintains its contents' temperature below the freezing point of water.",
+        "The refrigerator replaced the icebox, which had been a common household appliance for almost a century and a half.",
+        "The United States Food and Drug Administration recommends that the refrigerator be kept at or below 4 °C (40 °F) and that the freezer be regulated at −18 °C (0 °F).",
+        "Artificial refrigeration began in the mid-1750s, and developed in the early 1800s.",
+        "In 1834, the first working vapor-compression refrigeration system, using the same technology seen in air conditioners, was built.",
+        "The first commercial ice-making machine was invented in 1854.",
+        "In 1923 Frigidaire introduced the first self-contained unit.",
+        "The introduction of Freon in the 1920s expanded the refrigerator market during the 1930s."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Refrigerator car",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1135781",
+      "retrieved_at": "2026-10-18T17:16:36.289Z",
+      "sha256": "48f927eb75e02b94594298e76ef11a111badc7be7839310151de12bc2285c654",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A refrigerator car (or \"reefer\") is a refrigerated boxcar (US), a piece of railroad rolling stock designed to carry perishable freight at specific temperatures.",
+        "Refrigerator cars differ from simple insulated boxcars and ventilated boxcars (commonly used for transporting fruit), neither of which are fitted with cooling apparatus.",
+        "Reefers can be ice-cooled, come equipped with any one of a variety of mechanical refrigeration systems, or use carbon dioxide (as dry ice) or liquid nitrogen as a cooling agent.",
+        "Milk cars (and other types of \"express\" reefers) may or may not include a cooling system, but are equipped with high-speed trucks and other modifications that allow them to travel with passenger trains."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Pot-in-pot refrigerator",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4168346",
+      "retrieved_at": "2026-10-18T17:16:36.289Z",
+      "sha256": "829d49bd0c705d0d194e45e6fcf63f0706d15f187e3fee294286cdbdf42a0331",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A pot-in-pot refrigerator, clay pot cooler or zeer (Arabic: زير) is a non-electric evaporative cooling refrigeration device.",
+        "It uses a porous outer clay pot (lined with wet sand) containing an inner pot (which can be glazed to prevent penetration by the liquid) within which the food is placed.",
+        "The evaporation of the outer liquid draws heat from the inner pot.",
+        "The device can cool any substance, and requires only a flow of relatively dry air and a source of water."
+      ]
+    }
+  ]
+}

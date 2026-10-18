@@ -1,0 +1,87 @@
+{
+  "id": "mq-0873",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Evolução Orbital dos Exoplanetas (TRAPPIST-1e e TRAPPIST-1g) que estão na Zona Habitável da Estrela TRAPPIST-1",
+      "publisher": "Universidade Estadual de Feira de Santana",
+      "author": "Maciel, Samara Rebeka Pita; Carvalho, Jean Paulo dos Santos",
+      "published_at": "2020-12-30",
+      "url": "https://doi.org/10.13102/sscf.v16i.6010",
+      "retrieved_at": "2026-10-18T18:54:11.907Z",
+      "sha256": "bdb358ee8f322e9f14e8e0775f75406a194bd06fdf1269182548f392d05d39a2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Apresentamos uma análise da evolução orbital dos exoplanetas que estão na zona habitável da estrela.",
+        "O software Maple é usado para fazer as integrações numéricas, outro software também utilizado é o Universe Sandbox para comparar o resultado obtido das integrações das equações analíticas devido a perturbação do terceiro corpo.",
+        "Mostramos que os exoplanetas (TRAPPIST-1e e TRAPPIST-1g) que estão na zona habitável da estrela TRAPPIST-1 permanecem dentro da zonal habitável ao longo do tempo."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Nonlinear dynamics of the Trappist-1-Trappist-1e exoplanetary system",
+      "publisher": "Research Square Platform LLC",
+      "author": "Hysa, Azem",
+      "published_at": "2023-05-09",
+      "url": "https://doi.org/10.21203/rs.3.rs-2890633/v1",
+      "retrieved_at": "2026-10-18T18:54:11.907Z",
+      "sha256": "c7779fe69141e9cb337d81928345d565fa417659c10fb3181cc65002baed70e6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In this paper we will first present some general information on the Trappist-1 exoplanetary system.",
+        "Then we will determine the position of the Lagrange points for the Trappist-1-Trappist-1e system as well as the values of the Jacoby constant for each positions of the Lagrange points.",
+        "We will than construct trajectories for zero velocity, studying the motion of a particle in this system.",
+        "So, for this we will perform some numerical experiments in MATLAB® 2020.",
+        "Finaly, we will also study the possibility of the existence of an exomoon in this very impressive exoplanetary system."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Monitoring Stellar Activity of Exoplanet Hosts with the Van Vleck Observatory 24-inch Telescope",
+      "publisher": "Wesleyan University",
+      "author": "Tian, Qiushi (Chris)",
+      "published_at": null,
+      "url": "https://doi.org/10.14418/wes01.1.2867",
+      "retrieved_at": "2026-10-18T18:54:14.368Z",
+      "sha256": "44bf0c233e133c8e86fb836951c2115e9e8eb367716acfd0428b2358aab4ad03",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Monitoring stellar activity of exoplanet hosts with the Van Vleck Observatory 24-inch telescope - Digital Collections - Wesleyan University You are logged in as a CMS user.",
+        "Return to Site Manager X Keyboard Shortcuts Back Skip to main content Keyboard Shortcuts Skip to main content Keyboard shortcuts can be used to navigate aspects of this site without a mouse or cursor.",
+        "When viewing a document, select or tab into the image viewer and use the following controls to manipulate the image.",
+        "Please enter the email address you use for your personal Quartex account.",
+        "A link to reset your password will be emailed to this address.",
+        "Email Address If you haven't received an email within 24 hours, please contact support@quartexcollections.com Back to Login Close Close Skip to main content Search Search...",
+        "If choosing to download an image, please select the file format you wish to download.",
+        "The Original File option allows download of the source file (including any features or enhancements included in the original file) and may take several minutes.",
+        "Certain download types may have been restricted by the site administrator.",
+        "0 --> Current Image Current Image Original File Current Transcript Current Transcript Document Metadata Document Metadata Close Download Close Download Skip to main content Close Skip to main content Embed Skip to main content Select the document elements you would like to include in the embed code.",
+        "All images Current image Summary metadata Transcript(s) Close Copy Close Copy Skip to main content This is from the quartex-front-end repo."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Investigation of the Influence of Stellar Particle Events and Galactic Cosmic Rays on the Atmosphere of TRAPPIST-1e",
+      "publisher": "Copernicus GmbH",
+      "author": "Bartenschlager, Andreas; Grenfell, John Lee; Herbst, Konstantin",
+      "published_at": "2023-05-15",
+      "url": "https://doi.org/10.5194/egusphere-egu23-11789",
+      "retrieved_at": "2026-10-18T18:54:14.368Z",
+      "sha256": "607d17649d2fcbd87a3bbfe814894b68a9b47a74eb54adb11a3ea5808d6f7625",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The launch of the James Webb Space Telescope (JWST) in December 2021 opens up the possibility of studying the composition of exoplanetary atmospheres in habitable zones, such as TRAPPIST-1e, in the near future.",
+        "With the help of numerical models of the exoplanetary atmospheres, the observations and the processes behind them can be better understood and interpreted (Herbst et al., 2022).",
+        "We investigate the influence of stellar energetic particles (SEPs) and galactic cosmic rays (GCRs) on the atmospheric chemistry of exoplanets around a very active M-star using the ion chemistry model ExoTIC.",
+        "A further specification regarding the scenarios results from the distinction between dead and alive atmospheres, whose atmospheric composition is characterized by a lower or higher oxygen fraction in the initial conditions.",
+        "Within ExoTIC we can calculate the impact of the ionization events on these atmospheres both as a single and as a series of events with different strengths.",
+        "Preliminary results show a significant impact of SEP events on the chemical composition of the atmosphere, including biosignatures such as O3 .",
+        "The strength and structure of these impacts depend on the composition of the starting atmosphere, in particular on the availability of oxygen as well as nitrogen and water vapour."
+      ]
+    }
+  ]
+}

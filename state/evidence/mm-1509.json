@@ -1,0 +1,109 @@
+{
+  "id": "mm-1509",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Folk Music Business",
+      "publisher": "Bloomsbury Academic",
+      "author": null,
+      "published_at": "2020",
+      "url": "https://doi.org/10.5040/9781501344183.ch-016",
+      "retrieved_at": "2026-10-18T17:37:53.921Z",
+      "sha256": "6de3f73c52b9bfc031646fd3e4a53e19722a0c1d509a056f330352607e8ec42d",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - A New History of American and Canadian Folk Music --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Folk music",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=10623",
+      "retrieved_at": "2026-10-18T17:37:55.595Z",
+      "sha256": "445805417af3659099751c79af457cf785d1890392bc10caf8efbd7fe2b4a878",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Folk music is a music genre that includes traditional folk music and the contemporary genre that evolved from the former during the 20th-century folk revival.",
+        "It has been contrasted with commercial and classical styles.",
+        "The term originated in the 19th century, but folk music extends beyond that.",
+        "Starting in the mid-20th century, a new form of popular folk music evolved from traditional folk music.",
+        "This process and period is sometimes called the second folk revival and reached a zenith in the 1960s.",
+        "This form of music is also called contemporary folk music or folk revival music to distinguish it from earlier folk forms.",
+        "Smaller similar revivals have occurred elsewhere in the world at other times, but the term folk music has typically not been applied to the new music created during those revivals.",
+        "This type of folk music also includes fusion genres such as folk rock, folk metal, and others.",
+        "While contemporary folk music is a genre generally distinct from traditional folk music, in U.S.",
+        "English it shares the same name, and it often shares the same performers and venues as traditional folk music."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "American folk music",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=246497",
+      "retrieved_at": "2026-10-18T17:37:55.595Z",
+      "sha256": "929dbcb67290bacb9ca5c4986509ff0df10abb390c5bf3da22aaccce99249e6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term American folk music encompasses numerous music genres, variously known as traditional music, traditional folk music, contemporary folk music, vernacular music, or roots music.",
+        "Many traditional songs have been sung within the same family or folk group for generations, and sometimes trace back to such origins as the British Isles, Mainland Europe, or Africa.",
+        "This music is considered American either because it is native to the United States or because it developed in the United States, out of foreign origins, becoming culturally significant.",
+        "It is considered \"roots music\" because it served as the basis of music later developed in the United States, including rock and roll, rhythm and blues, and jazz.",
+        "Much of this music was created to embody the experiences of working class people during times of hardship."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Traditional music of Korea",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=313401",
+      "retrieved_at": "2026-10-18T17:37:55.595Z",
+      "sha256": "5bd1b46208a5e167c595fe92a31d7c7790ffd47341c9d6c9449498139793e3f8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Korea has produced music (Korean: 음악; Hanja: 音樂; RR: eumak; MR: ŭmak) for thousands of years, into the modern day.",
+        "After the division of Korea in 1945, both North and South Korea have produced their own styles of music.",
+        "'national music') produced by Korea includes court music, folk music, poetic songs, and religious music used in shamanistic and Buddhist traditions.",
+        "Modern music includes K-pop (케이팝; keipap), the popular music of South Korea.",
+        "North Korea also produces its own popular music, as well as music that's inspired by traditional music."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Russian folk music",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1391510",
+      "retrieved_at": "2026-10-18T17:37:55.595Z",
+      "sha256": "ee1413b2f96cceeb8ef5569b2a840d1db1f2d60408bcbc8c06a294f0888c8340",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Russian folk music specifically deals with the folk music traditions of the ethnic Russian people.",
+        "Russian folk music is used as the basic foundation for the creation of all Russian professional music."
+      ]
+    }
+  ]
+}

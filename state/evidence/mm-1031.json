@@ -1,0 +1,174 @@
+{
+  "id": "mm-1031",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "YangHuiMagic: A Generalization of Yang Hui's Magic Squares",
+      "publisher": "The R Foundation",
+      "author": "Nie, Chun-Xiao",
+      "published_at": "2026-03-23",
+      "url": "https://CRAN.R-project.org/package=YangHuiMagic",
+      "retrieved_at": "2026-10-18T17:33:36.407Z",
+      "sha256": "bc8986aa9d9e24056cdb5e640da36f85fa8aaade3759c988006f14bd9612c361",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "CRAN: Package YangHuiMagic YangHuiMagic: A Generalization of Yang Hui's Magic Squares The generalized construction methods for magic squares, inspired by the ancient Chinese mathematician Yang Hui's classical work \"Xu Gu Zhai Qi Suan Fa\".",
+        "These methods can construct 4n-order magic squares and 2(2n+1)-order magic squares."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How drugs work",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "1998-09-28",
+      "url": "https://www.cambridge.org/core/books/magic-molecules/how-drugs-work/3505091BED4A5DB380B48178087D1E4C",
+      "retrieved_at": "2026-10-18T17:33:37.381Z",
+      "sha256": "da393a28c38e549d75392e40df0a94e37c3f2f629d5b6f84c9ed96a19fd3f6b7",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "How drugs work (Chapter 1) - Magic Molecules Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "None of it life-threatening, but enough to start up your body's favourite stress response – a tension headache.",
+        "Muscles in your neck and scalp tighten, perhaps constricting nearby blood vessels.",
+        "The affected tissue starts to produce chemicals called prostaglandins.",
+        "These act on nearby nerve endings which, in turn, send messages to the brain producing the sensation of pain.",
+        "It may not be the best long-term solution (maybe you should give up that stressful job or take up yoga) but a couple of soluble aspirin tablets will kill that headache in about half an hour, by turning off prostaglandin production.",
+        "The same goes for other everyday irritations such as toothache, menstrual cramps and rheumatic aches and pains.",
+        "Swallowing a dose of aspirin releases about two thousand million million million (2 X 10 21 ) pain-relieving molecules into the body.",
+        "They won't all reach their target (the site of prostaglandin production), but experience of the drug over nearly 100 years has shown that this dose – around 600 milligrams – is enough to take care of most tension headaches.",
+        "The aspirin molecules first have to negotiate the digestive system to get into the bloodstream, which will carry them to the site of the pain (Fig.",
+        "The digestive system is basically a tube going from the mouth to the anus."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Vector Spaces of New Special Magic Squares: Reflective Magic Squares, Corner Magic Squares, and Skew-Regular Magic Squares",
+      "publisher": "Wiley",
+      "author": "Rungratgasame, Thitarie; Amornpornthum, Pattharapham; Boonmee, Phuwanat",
+      "published_at": "2016",
+      "url": "https://doi.org/10.1155/2016/9721725",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "55ed9d607a42930e12a189bc98530c189c339a32e979634d64bc6777194e73a1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The definition of a regular magic square motivates us to introduce the new special magic squares, which are reflective magic squares, corner magic squares, and skew-regular magic squares.",
+        "Combining the concepts of magic squares and linear algebra, we consider a magic square as a matrix and find the dimensions of the vector spaces of these magic squares under the standard addition and scalar multiplication of matrices by using the rank-nullity theorem."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Magic Squares Terminology",
+      "publisher": "Oxford University PressNew York, NY",
+      "author": "Block, Seymour S; Tavares, Santiago A",
+      "published_at": "2009-02-24",
+      "url": "https://doi.org/10.1093/oso/9780195367904.003.0015",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "5dbdf5925f711532f99b8342d8df109d1654fc023e49e56373d9db18a447a5ef",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Antimagic squares A particular case of heterosquares, where the addition of each number on each row, column, and two diagonals gives numbers that form a consecutive sequence of 2(n + 1) integers, where n is the order of the square.",
+        "Associated magic square A magic square where all pairs of cells diametrically equidistant from the center of the square equal the sum of the first and last terms of the sequence, or n2 + 1 (Heinz [97]).",
+        "Bent column A line that starts at the top middle to right of the square, goes down at an angle of 45◦ until the middle of the left side of the square, then it bends back at an angle of 90◦ until it reaches the bottom of the square.",
+        "If the lines are bent left, they have the shape of a less than sign (&amp;lt;) as shown in Figure 10.29.",
+        "The shape of a greater than (&amp;gt;) sign results if the lines start top middle to right, then are bent to the right, as shown in Figure 10.31."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Magic square",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=52202",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "9a7e2aff4ad17e87141ab80481fd06eb68db6372f8eee619146a5840d7146d56",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, especially historical and recreational mathematics, a magic square is a square array of numbers, usually positive integers, where the sums of the numbers in each row, each column, and both main diagonals are the same.",
+        "The order of a magic square is the number of integers along one side (n), and the constant sum is called the magic constant or magic sum.",
+        "If the array includes just the positive integers \n  \n    \n      \n        1\n        ,\n        2\n        ,\n        .",
+        ",\n        \n          n\n          \n            2\n          \n        \n      \n    \n    {\\displaystyle 1,2,...,n^{2}}\n  \n, the magic square is said to be normal.",
+        "Magic squares that include repeated entries do not fall under this definition and are referred to as trivial.",
+        "Some well-known examples, including the Sagrada Família magic square are trivial in this sense.",
+        "When all the rows and columns but not both diagonals sum to the magic constant, this gives a semimagic square (sometimes called orthomagic square).",
+        "The mathematical study of magic squares typically deals with its construction, classification, and enumeration.",
+        "Although completely general methods for producing all the magic squares of all orders do not exist, historically three general techniques have been discovered: by bordering, by making composite magic squares, and by adding two preliminary squares.",
+        "There are also more specific strategies like the continuous enumeration method that reproduces specific patterns.",
+        "Magic squares are generally classified according to their order n as: odd if n is odd, evenly even (also referred to as \"doubly even\") if n is a multiple of 4, oddly even (also known as \"singly even\") if n is any other even number.",
+        "This classification is based on different techniques required to construct odd, evenly even, and oddly even squares."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Sator Square",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=988765",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "879a6bcd13ba0569819c129d6ebcceff6e12d68ea128b6cb81abd9f0f9ba8e25",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sator Square (also called the Rotas-Sator Square or the Templar Magic Square) is a two-dimensional acrostic class of word square containing a five-word Latin palindrome.",
+        "The earliest squares were found at Roman-era sites and were all in ROTAS form (i.e.",
+        "where the top line is \"ROTAS\" and not \"SATOR\"), with the earliest discovery at Pompeii (and dating from before the earthquake of AD 62).",
+        "The earliest square with Christian-associated imagery dates from the sixth century.",
+        "By the Middle Ages, Sator squares were to be found in Europe, Asia Minor, and in North Africa.",
+        "In 2022, the Encyclopedia Britannica called it \"the most familiar lettered square in the Western world\".",
+        "A significant volume of academic research has been published on the square, but after more than a century, there is no consensus on its origin and meaning.",
+        "This origin theory, however, fails to explain how a Roman word puzzle became such a powerful religious and magical medieval symbol.",
+        "It has instead been argued that the square was created in its ROTAS form as a Jewish symbol, embedded with cryptic religious symbolism, which was later adopted in its SATOR form by Christians.",
+        "Other less-supported academic origin theories include a Pythagorean or Stoic puzzle, a Gnostic or Orphic or Italian pagan amulet, a cryptic Mithraic or Semitic numerology charm, or that it was a device for assessing wind direction.",
+        "The square has long associations with magical powers throughout its history (and even up to the 19th century in North and South America), including a perceived ability to extinguish fires, particularly in Germany.",
+        "The square appears in early and late medieval medical textbooks such as the Trotula, and was employed as a medieval cure for many ailments, particularly for dog bites and rabies, as well as for insanity, and relief during childbirth."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "The Book of Abramelin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1027043",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "9cfcb8b91217bae403c1eb82cb808e1926913c4522fd0bad61e45ec81f55c1d4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Book of Abramelin tells the story of an Egyptian mage named Abraham, or Abra-Melin, who taught a system of magic to Abraham of Worms, a Jew from Worms, Germany, presumed to have lived from c.",
+        "The system of magic from this book regained popularity in the 19th and 20th centuries, partly due to Samuel Liddell MacGregor Mathers's translation, The Book of the Sacred Magic of Abramelin the Mage.",
+        "The book presents an autobiography written in the form of an epistolary novel.",
+        "The character of Abraham of Worms narrates his travel to the Egyptian desert and to a town bordering the Nile.",
+        "An elderly Egyptian mage offers him two manuscripts containing knowledge of Kabbalistic magic, but extracts an oath that bounds Abraham in the service of God and the divine law.",
+        "MacGregor Mathers and more recently in 1995 by Georg Dehn and Steven Guth.",
+        "Dehn attributed authorship of The Book of Abramelin to Rabbi Yaakov Moelin (Maharil) (Hebrew יעקב בן משה מולין; c."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Freudenthal magic square",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13796065",
+      "retrieved_at": "2026-10-18T17:33:37.382Z",
+      "sha256": "a131d0d58941e97ef86d59a6ae7b802a3c580743de0e0cdaa771c270c8cac252",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In mathematics, the Freudenthal magic square (or Freudenthal–Tits magic square) is a construction relating several Lie algebras (and their associated Lie groups).",
+        "It is named after Hans Freudenthal and Jacques Tits, who developed the idea independently.",
+        "It associates a Lie algebra to a pair of division algebras A, B.",
+        "The resulting Lie algebras have Dynkin diagrams according to the table at the right.",
+        "The \"magic\" of the Freudenthal magic square is that the constructed Lie algebra is symmetric in A and B, despite the original construction not being symmetric, though Vinberg's symmetric method gives a symmetric construction."
+      ]
+    }
+  ]
+}

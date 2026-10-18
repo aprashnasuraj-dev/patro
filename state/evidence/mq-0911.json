@@ -1,0 +1,72 @@
+{
+  "id": "mq-0911",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Timing and magnitude of shortening within the inner fore arc of the Japan Trench",
+      "publisher": "American Geophysical Union (AGU)",
+      "author": "Regalla, Christine; Fisher, Donald; Kirby, Eric",
+      "published_at": "2010-03",
+      "url": "https://doi.org/10.1029/2009jb006603",
+      "retrieved_at": "2026-10-18T18:54:24.674Z",
+      "sha256": "58b4c42506066952d18b79a64cd04b7e32b88490d678f511ef6f42becaef6b6c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "New structural data and kinematic modeling provide evidence for Plio‐Quaternary, inner fore‐arc shortening inboard of the Japan Trench, northeastern Honshu, accommodated by the Futaba fault, a high‐angle, basement‐involved fault that bounds the Abukuma massif on the east.",
+        "Significant throw along the Futaba fault associated with exhumation of the massif is implied by a regionally extensive footwall syncline, the absence of Neogene sediments in the hanging wall, and high relief in the hanging wall adjacent to the fault.",
+        "Kinematic fault‐related fold modeling best reproduces fold geometry with 2.0–3.1 km of dip slip along a 40°–55° west dipping reverse fault.",
+        "At the southern tip of the fault, tephra horizons of known age within units that predate and postdate deformation bracket the onset of deformation to 3.95–5.6 Ma and are used to calculate an average slip rate of 0.5–0.7 mm/yr, a throw rate of 0.3–0.5 mm/yr, and a shortening rate of 0.3–0.5 mm/yr.",
+        "The northeastern Japan subduction zone is viewed as a classic example of an erosive margin, where offshore subsidence records have been used to argue for Neogene basal erosion of the upper plate.",
+        "Tectonic erosion rates have been estimated from reconstructions of the paleomargin that assume no upper plate deformation and temporally constant fore‐arc taper.",
+        "Evidence presented here for Neogene fore‐arc shortening, however, suggests that the upper plate is deformable and implies that that offshore subsidence records may reflect a combination of tectonic erosion and upper plate shortening."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Nonlinearity of the magnitude‐frequency relation in the Hellenic Arc‐Trench System and the characteristic earthquake model",
+      "publisher": "American Geophysical Union (AGU)",
+      "author": "Papadopoulos, Gerassimos A.; Skafida, Helen G.; Vassiliou, Ioanna T.",
+      "published_at": "1993-10-10",
+      "url": "https://doi.org/10.1029/93jb00559",
+      "retrieved_at": "2026-10-18T18:54:25.017Z",
+      "sha256": "f4960031afa3c276bc550b60b22738cb59393d4b59c39e26cd4b0918fafda056",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Magnitude‐frequency (G‐R) relations of shallow mainshocks have been examined in five separate segments of the Hellenic Arc‐Trench (HA‐T) system, in its western and eastern megasegments as well as in the HA‐T system considered as an entity.",
+        "Data sets of M s ≥ 4.5 and M s ≥ 6.0 covering the 22‐year and 85‐year intervals of 1964–1985 and 1901–1985, respectively, have been used.",
+        "Frequencies of the 22‐year interval have been normalized to the 85‐year interval so that to obtain frequencies N compatible with the real frequencies, N r , of the 85‐year interval for magnitudes of M s ≥ 6.0.",
+        "Straight G‐R lines determined for N of small and moderate shocks as a rule do not fit, when extrapolated, the larger magnitude frequencies N and N r .",
+        "Magnitude gaps, bulge effects, and trends toward the vertical are the geometrical expressions of the nonlinear structure of G‐R in the large magnitude range.",
+        "The Ionian Islands segment constitutes an obvious exception.",
+        "No magnitude gap in N r appears and the G‐R linearity is well shaped.",
+        "When two or more segments are examined together as megasegments, the magnitude gap disappears because of overlapping of separate gaps.",
+        "The nonlinear structure of G‐R shows the general need for properly designed models of seismic hazard determination."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Analysis of Depth and Magnitude Heterogeneity in Cluster-Based Segmentation of Andaman and Nicobar Earthquake Data",
+      "publisher": "India Meteorological Department",
+      "author": "Samanta, Debasri; Dolai, Rajib",
+      "published_at": "2026-09-28",
+      "url": "https://doi.org/10.54302/mausam.v77i4.6595",
+      "retrieved_at": "2026-10-18T18:54:25.017Z",
+      "sha256": "665feaa175603448fc380b2305f26bef857461237e39856e124616e5de47845e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The dimension of space (depth from ground) and magnitude of each earthquake play a crucial role in explaining its characteristics.",
+        "Our study examines seismic characteristics in the Andaman and Nicobar region using power spectral density (PSD) analysis and probability density function (PDF).",
+        "The dataset is segmented into clusters using the K-means clustering algorithm, determined through the silhouette score method.",
+        "Analysis of depth shows dominant frequencies concentrated in low-frequency ranges across clusters 1, 2, and 4, indicative of interactions at plate boundaries or subduction zones.",
+        "Clusters 3 and 5 show heterogeneity in dominant frequencies, likely linked to diverse geological structures and seismic sources.",
+        "Conversely, analysis of magnitude demonstrates a concentration of seismic energy at lower magnitudes in Clusters 1 and 2, with wider magnitude ranges observed in Clusters 3 to 5.",
+        "PDF analysis identifies higher probabilities of seismic occurrences, particularly at depths of 29 to 30 km across Clusters 2 to 5.",
+        "Additionally, Cluster 1 displays localized seismic activity around 12 km depth, potentially associated with unique geological features.",
+        "Furthermore, the clusters show varying probabilities of earthquake occurrence, indicating distinct seismic hazards across the region."
+      ]
+    }
+  ]
+}

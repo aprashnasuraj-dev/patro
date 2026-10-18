@@ -1,0 +1,106 @@
+{
+  "id": "mm-1966",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Near-Earth object",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=21626",
+      "retrieved_at": "2026-10-18T18:05:13.090Z",
+      "sha256": "7ad92900de1251fd3623910aa9c0d13d8ed1c25da39f82f6f1eaafc443aa9074",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A near-Earth object (NEO) is by definition any small Solar System body orbiting the Sun whose closest approach to the Sun (perihelion) is less than 1.3 times the Earth–Sun distance (astronomical unit, AU).",
+        "This definition applies to the object's orbit around the Sun, rather than its current position, thus an object with such an orbit is considered a NEO even at times when it is far from making a close approach of Earth.",
+        "If a NEO's orbit crosses the Earth's orbit, and the object is larger than 140 meters (460 ft) across, it is, by definition, considered a potentially hazardous object (PHO).",
+        "Most known PHOs and NEOs are asteroids, but about a third of a percent are comets.",
+        "There are over 37,000 known near-Earth asteroids (NEAs) and over 120 known short-period near-Earth comets (NECs).",
+        "A number of solar-orbiting meteoroids were large enough to be tracked in space before striking Earth.",
+        "It is now widely accepted that collisions in the past have had a significant role in shaping the geological and biological history of Earth.",
+        "Asteroids as small as 20 metres (66 ft) in diameter can cause significant damage to the local environment and human populations around the position of their impact.",
+        "Larger asteroids penetrate the atmosphere to the surface of the Earth, producing craters if they impact a continent or tsunamis if they impact the sea.",
+        "Interest in NEOs has increased since the 1980s because of greater awareness of this risk.",
+        "Asteroid impact avoidance by deflection is possible in principle, and methods of mitigation are being researched.",
+        "Two scales, the simple Torino scale and the more complex Palermo scale, rate the risk presented by an identified NEO based on the probability of it impacting the Earth and on how severe the consequences of such an impact would be."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Venus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32745",
+      "retrieved_at": "2026-10-18T18:05:13.090Z",
+      "sha256": "c42b54823b01180389a6267d217aff7b0ae5b0755d7081e56c1db7389ec129c0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Similar in size and mass to Earth, Venus has no liquid water, and its atmosphere is far thicker and denser than that of any other rocky body in the Solar System.",
+        "The atmosphere is composed mostly of carbon dioxide and has a thick cloud layer of sulfuric acid that spans the whole planet.",
+        "At the mean surface level, the atmosphere reaches a temperature of 737 K (464 °C; 867 °F), making it the hottest planet in the solar system and also a pressure 92 times greater than Earth's at sea level, turning the lowest layer of the atmosphere into a supercritical fluid.",
+        "From Earth, Venus is visible as a star-like point of light, appearing brighter than any other natural point of light in the sky, as either the brightest \"morning star\" or \"evening star\".",
+        "It was also given the poetic name Ēarendel in Old English, meaning \"ray of light\" along with the two previous epithets.",
+        "The orbits of Venus and Earth make the two planets approach each other in synodic periods of 1.6 years.",
+        "In the course of this, Venus comes closer to Earth than any other planet.",
+        "In interplanetary spaceflight from Earth, Venus is frequently used as a waypoint for gravity assists, offering a more economical route allowing spacecraft to save fuel.",
+        "Venus has no moons and a very slow retrograde rotation about its axis, a result of competing forces of solar tidal locking and differential heating of Venus's massive atmosphere.",
+        "As a result, a Venusian day is 116.75 Earth days long, about half a Venusian solar year, which is 224.7 Earth days long.",
+        "Venus has a weak magnetosphere; lacking an internal dynamo, it is induced by the solar wind interacting with the atmosphere.",
+        "Internal heat escapes through active volcanism, resulting in resurfacing, instead of plate tectonics."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Halley's Comet",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46083",
+      "retrieved_at": "2026-10-18T18:05:13.090Z",
+      "sha256": "6a5eecf4d25efac15e523b00c9ce22cba7a51b3990579a3a34729d5b0751481b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Halley's Comet is the only known short-period comet that is consistently visible to the naked eye from Earth, appearing roughly every 74–79 years.",
+        "It last appeared in the inner parts of the Solar System in 1986 and will next appear in mid-2061.",
+        "Officially designated 1P/Halley, it is also commonly called Comet Halley, or sometimes simply Halley.",
+        "Halley's periodic returns to the inner Solar System have been observed and recorded by astronomers around the world since at least 240 BC, but it was not until 1705 that the English astronomer Edmond Halley understood that these appearances were re-appearances of the same comet.",
+        "As a result of this discovery, the comet is named after Halley.",
+        "These observations supported several longstanding hypotheses about comet construction, particularly Fred Whipple's \"dirty snowball\" model, which correctly predicted that Halley would be composed of a mixture of volatile ices—such as water, carbon dioxide, ammonia—and dust.",
+        "The missions also provided data that substantially reformed and reconfigured these ideas; for instance, it is now understood that the surface of Halley is largely composed of dusty, non-volatile materials, and that only a small portion of it is icy.",
+        "It was also visited by the two spacecraft of the Vega program, Vega 1 & 2, on 6 and 9 March, respectively.",
+        "They went as close as 8,890 km (5,520 mi), and 8,030 km (4,990 mi), providing data on Halley's dimensions, shape, temperature, and surface properties."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "SN 1054",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1782897",
+      "retrieved_at": "2026-10-18T18:05:13.090Z",
+      "sha256": "72cf8d3f4f581fa6245329e04b764d2861bcf73095389f8c6b6a4d233895ebf8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "SN 1054, the Crab Supernova, is a supernova that was first observed on c.",
+        "6 April] 1056.α\nThe event was recorded in contemporary Chinese astronomy, and references to it are also found in a later (13th-century) Japanese document and in a document from the Islamic world.",
+        "Furthermore, there are a number of proposed references from European sources recorded in the 15th century, as well as a pictograph associated with the Ancestral Puebloan culture found near the Peñasco Blanco site in New Mexico, United States.",
+        "The pyramids at Cahokia in the midwestern United States may have been built in response to the supernova's appearance in the sky.",
+        "The remnant of SN 1054, which consists of debris ejected during the explosion, is known as the Crab Nebula.",
+        "It is located in the sky near the star Zeta Tauri (ζ Tauri).",
+        "The core of the exploding star formed a pulsar, called the Crab Pulsar (or PSR B0531+21).",
+        "The nebula and the pulsar that it contains are some of the most studied astronomical objects outside the Solar System.",
+        "It is one of the few Galactic supernovae where the date of the explosion is well known.",
+        "The two objects are the most luminous in their respective categories.",
+        "For these reasons, and because of the important role it has repeatedly played in the modern era, SN 1054 is one of the best-known supernovae in the history of astronomy.",
+        "The Crab Nebula is easily observed by amateur astronomers thanks to its brightness, and was also catalogued early on by professional astronomers, long before its true nature was understood and identified."
+      ]
+    }
+  ]
+}

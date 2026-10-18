@@ -1,0 +1,31 @@
+{
+  "id": "mt-1696",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Microplastics",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27265528",
+      "retrieved_at": "2026-10-18T18:33:00.935Z",
+      "sha256": "97494dbdbf222545369d34a6f525867539086ece4c18e0ccc1fb2dacc1eabe38",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "However, there are different microplastic remediation strategies that can help mitigate the effects of plastic pollution.",
+        "The term microplastics is used to differentiate them from larger, non-microscopic plastic waste.",
+        "Two classifications of microplastics are currently recognized.",
+        "Primary microplastics include any plastic fragments or particles that are already 5 mm in size or less before entering the environment.",
+        "These include microfibers from clothing, microbeads, plastic glitter and plastic pellets (also known as nurdles).",
+        "Secondary microplastics arise from the degradation (breakdown) of larger plastic products through natural weathering processes after entering the environment.",
+        "Such sources of secondary microplastics include water and soda bottles, fishing nets, plastic bags, microwave containers, tea bags and tire wear.",
+        "Both types are recognized to persist in the environment at high levels, particularly in aquatic and marine ecosystems, where they are considered water pollution.",
+        "It is estimated that by 2050, the weight of microplastics in the sea will exceed that of the fish.",
+        "Microplastics also accumulate in the air and terrestrial ecosystems.",
+        "Airborne microplastics have been detected in the atmosphere, as well as indoors and outdoors.",
+        "Because some plastics degrade slowly (often over hundreds to thousands of years), microplastics have a high probability of ingestion, incorporation into, and accumulation in the bodies and tissues of many organisms."
+      ]
+    }
+  ]
+}

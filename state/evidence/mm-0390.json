@@ -1,0 +1,132 @@
+{
+  "id": "mm-0390",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Chosen Few",
+      "publisher": "Princeton University Press",
+      "author": "Botticini, Maristella; Eckstein, Zvi",
+      "published_at": "2012-08-05",
+      "url": "https://doi.org/10.23943/princeton/9780691144870.001.0001",
+      "retrieved_at": "2026-10-18T17:04:37.522Z",
+      "sha256": "d657191678a573179b536eed5268bf178f3a46badfcfbda7c0dd18366fbde43e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 70 CE, the Jews were an agrarian and illiterate people living mostly in the Land of Israel and Mesopotamia.",
+        "By 1492, the Jewish people had become a small group of literate urbanites specializing in crafts, trade, moneylending, and medicine in hundreds of places across the Old World, from Seville to Mangalore.",
+        "This book presents a new answer to this question by applying the lens of economic analysis to the key facts of fifteen formative centuries of Jewish history.",
+        "The book offers a powerful new explanation of one of the most significant transformations in Jewish history while also providing fresh insights into the growing debate about the social and economic impact of religion."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How The “Chosen Few” Are Chosen",
+      "publisher": "United States of America by Rowman & Littlefield Publishers, Inc.",
+      "author": null,
+      "published_at": "2008",
+      "url": "https://doi.org/10.5040/9798216385127.ch-003",
+      "retrieved_at": "2026-10-18T17:04:38.712Z",
+      "sha256": "9b798a10fe294f3643641ea5e969ba5cf850531d77cdc5633e1effac7afb437b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Members Only --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Chosen-plaintext attack",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=63852",
+      "retrieved_at": "2026-10-18T17:04:39.886Z",
+      "sha256": "a938694fad67ee440ef822103575d871b897c235b4372ca7c2c2a458fbdb74b2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A chosen-plaintext attack (CPA) is an attack model for cryptanalysis which presumes that the attacker can obtain the ciphertexts for arbitrary plaintexts.",
+        "The goal of the attack is to gain information that reduces the security of the encryption scheme.",
+        "Immunity to a chosen-plaintext attack is called ciphertext indistinguishability under chosen-plaintext attack (IND-CPA).",
+        "With an IND-CPA property, the cryptographic scheme is resistant to an attacker that has access to the encryption oracle (e.g., the encryption device) itself.",
+        "This property is equivalent to the semantic security under CPA (inability of the adversary to gain even partial information about the plaintext from observing the ciphertext)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How to Train Your Dragon (novel series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5829721",
+      "retrieved_at": "2026-10-18T17:04:39.886Z",
+      "sha256": "53cc8ba41b274ac6fc47f71518240a78c0693bb76fbdbd76ff056a2c7a206b33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "How to Train Your Dragon is a series of children's books written by the British author Cressida Cowell.",
+        "The books are set in a fictional Fantasy Viking world, and focus on the experiences of protagonist Hiccup Horrendous Haddock the Third, as he overcomes obstacles on his journey of \"becoming a hero, the hard way\".",
+        "The books were published by Hodder Children's Books in the UK and by Little, Brown and Company in the United States.",
+        "The first book was published in 2003 and the 12th and final one in 2015.",
+        "By 2015, the series had sold more than seven million copies around the world.",
+        "The books have subsequently been adapted into a media franchise consisting of three animated feature films, several television series, a live-action remake, and other media, all produced by DreamWorks Animation."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "The Chosen (TV series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=59588212",
+      "retrieved_at": "2026-10-18T17:04:39.886Z",
+      "sha256": "266c2818f4808813eea0a8760ed388ec08d2ae48a293f959f85a9e24f80fe76a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Chosen is an American Christian religious-historical drama television series, created, directed, and co-written by filmmaker Dallas Jenkins.",
+        "It is the first multi-season series about the life and ministry of Jesus of Nazareth, primarily set in Judaea and Galilee in the first century.",
+        "The series depicts Jesus's life through the eyes of the people who interacted with him, including the apostles and disciples of Jesus, Jewish religious leaders, Roman government and military officials, and ordinary people.",
+        "The series stars Jonathan Roumie as Jesus alongside Shahar Isaac, Elizabeth Tabish, Paras Patel, Noah James, and George H.",
+        "Five seasons have been released, with the sixth season to be released on November 15, 2026, and the seventh (final) season scheduled to be released in 2028.",
+        "The series is free to watch and has used a variety of different business models and distribution methods.",
+        "The first season was financed through crowdfunding, becoming the most successful crowd-funded TV series in history.",
+        "Season 1 was released in 2019 on the VidAngel platform with a subscription required, but the producers temporarily made it free to watch in response to the early days of the COVID-19 pandemic when millions of people were staying home—and revenue actually went up.",
+        "They eventually decided to make all seasons free to watch, though there would be exclusivity windows.",
+        "Seasons 3 and 4 premiered in movie theaters before being released to various streaming platforms, including Amazon Prime Video, Netflix, Facebook, and YouTube.",
+        "In 2025, Jenkins announced a deal with Amazon MGM Studios to premiere episodes of Seasons 5, 6, and 7 in theaters, followed by a 90-day exclusivity window on Amazon Prime Video, before being made available for free.",
+        "As of May 2025, The Chosen grossed over US$120 million in its theatrical releases."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of The Chosen episodes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72765340",
+      "retrieved_at": "2026-10-18T17:04:39.886Z",
+      "sha256": "85ca7d0ce285cc9ea87e7a7cdf0019ef1ba2f4ef38ce8e0516269d171e196791",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Chosen is an American historical drama television series created, directed and co-written by American filmmaker Dallas Jenkins.",
+        "It is the first multiseason series about the life and ministry of Jesus of Nazareth.",
+        "Primarily set in Judaea and Galilee in the 1st century, the series centers on Jesus and the different people who met and followed or otherwise interacted with him.",
+        "The series stars Jonathan Roumie as Jesus, alongside Shahar Isaac, Elizabeth Tabish, Paras Patel, Noah James, and George H."
+      ]
+    }
+  ]
+}

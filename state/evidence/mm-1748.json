@@ -1,0 +1,107 @@
+{
+  "id": "mm-1748",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Dynamic Salience with Intermittent Billing: Evidence from Smart Electricity Meters",
+      "publisher": "National Bureau of Economic Research",
+      "author": "Gilbert, Ben; Graff Zivin, Joshua",
+      "published_at": "2013-10",
+      "url": "https://doi.org/10.3386/w19510",
+      "retrieved_at": "2026-10-18T17:51:20.673Z",
+      "sha256": "2c97903923398ed72166f4c64aee1e98e2f122139c361196476e7f8014357363",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "��A�\u0000�(\u0002�\u0015S;�\u0000�X?� �\u0000�\u0014y����\u0007�\u0004\u001f�\"�-�U ��A�\u0000�(\u0002�\u0015S;�\u0000�X?� �\u0000�\u0014y����\u0007�\u0004\u001f�\"�-�U ��A�\u0000�(\u0002�\u0015JK���w6����\u0004��\u0002���5�sç�\u0012\u0011�p�g� SQlM�j�3\u0005R�@\u0003�Oj�'U�Xq\u001d��.",
+        "��-��5[���\u000f\u0017}\u0011�\u001b\u001c�H����q��DެĔ�hv�6�A6�B�X�Δ��d��X��N�\u001fqF�\u0014d)|\u0003r�5D\u000f�\u0001ğ�Vͺ�P- � ����+����w�a�G-�\u0006T�G}�b��� �t���\u000f�\u0005듛�\u0016_��os��&�۹���k˨iW)3�E��n֘퓹(�:F�ϴՇ��\u0019�L\u00125\u0016~��r�}�.���Rv�\u00166)�Ā�0U������K�|#�طc��qiaD���Ev x���r���k�$èFF�,7��F��\u0003���U��Kޒ z.",
+        "�\u0019\u0010\u0007��0�^D��,��F�\\�/��fFB.\u0000kh} ��:6�\u000eG\u0016��IQ\u0013Xa����Sb/��ț5\u0014 ��\u0007�\u0016�\u0002�*�\u0017ޡ�\u0013��w䂩��}��Dȕ�u>z��Q>�j����&9nc\u0002 ���c�2e.0�w���/|FJ>�k\u001dV|1{JD�d���n?�?��{i�;��8�f\u0014\u0011\u0000/�\u001b��4�S�Ez.�\u001c�Y k\u0019L �?",
+        "\u0003�\u000e�_��,ݿ��_2���8|,�\u001f��* ��\u000f\u0003�@濠�\u001f���\u001f���\u0017t�Gƿ�V\u000e��\b�ab�\u000f�\u0011��OC\u001fS4v�6����X|������2��\u000fz�Y�\u0007?\u0016�(���?�X>\\-?��\u001f����d�p��\u001f�G���\u001f��?�:��@�?",
+        "�~�8;\u0017/\u0007��/;�E\u000e�\u0001�Ԁ\",l�Rҿ�⡇=\u0014\u0006р�@r\u001e�����=�����g�����r�]\u001ev\u0010��rc�Ö��9da\u0016p���� �\u0003�����\u0018\u000f�x@ �7���ZB \u0000'�?�C��\u001f�_�puv~\u0018�\u001fY?",
+        "General Economics and Teaching - General - Behavioral Economics; Underlying Principles 2."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Net metering",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=843050",
+      "retrieved_at": "2026-10-18T17:51:20.675Z",
+      "sha256": "080b8cfabce59dbef536ad39a2eca55fc76e7895525bb1901a9fbaca8acfe056",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Net metering (or net energy metering, NEM) is an electricity billing mechanism that allows consumers who generate some or all of their own electricity to use that electricity anytime, instead of when it is generated.",
+        "This is particularly important with renewable energy sources like wind and solar, which are non-dispatchable (when not coupled to storage).",
+        "Monthly net metering allows consumers to use solar power generated during the day at night, or wind from a windy day later in the month.",
+        "Annual net metering rolls over a net kilowatt-hour (kWh) credit to the following month, allowing solar power that was generated in July to be used in December, or wind power from March in August.",
+        "Net metering policies can vary significantly by country and by state or province: if net metering is available, if and how long banked credits can be retained, and how much the credits are worth (retail/wholesale).",
+        "Most net metering laws involve monthly rollover of kWh credits, a small monthly connection fee, require a monthly payment of deficits (i.e.",
+        "normal electric bill), and annual settlement of any residual credit.",
+        "Net metering uses a single, bi-directional meter and can measure the current flowing in two directions.",
+        "Net metering can be implemented solely as an accounting procedure, and requires no special metering, or even any prior arrangement or notification.",
+        "Net metering is an enabling policy designed to foster private investment in renewable energy."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Electricity meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1138590",
+      "retrieved_at": "2026-10-18T17:51:20.675Z",
+      "sha256": "f02788cafad6213510e0c95170148229bd211ff9b91cc14f6c53e04f81186e33",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An electricity meter, electric meter, electrical meter, energy meter, kilowatt-hour meter, or power meter is a device that measures the amount of electric energy consumed by a residence, a business, or an electrically powered device over a time interval.",
+        "Electric utilities use electric meters installed at customers' premises for billing and monitoring purposes.",
+        "They are typically calibrated in billing units, the most common one being the kilowatt hour (kWh).",
+        "When energy savings during certain periods are desired, some meters may measure demand, the maximum use of power in some interval.",
+        "\"Time of day\" metering allows electric rates to be changed during a day, to record usage during peak high-cost periods and off-peak, lower-cost, periods.",
+        "Also, in some areas meters have relays for demand response load shedding during peak load periods."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Gas meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1420809",
+      "retrieved_at": "2026-10-18T17:51:20.675Z",
+      "sha256": "c065dbb35feb6fa9577c22bf810bcc0f5afd7647f1b996c0ba9165aeab098434",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A gas meter is a specialized flow meter, used to measure the volume of fuel gases such as natural gas and liquefied petroleum gas.",
+        "Gas meters are used at residential, commercial, and industrial buildings that consume fuel gas supplied by a gas utility.",
+        "Gases are more difficult to measure than liquids, because measured volumes are highly affected by temperature and pressure.",
+        "Gas meters measure a defined volume, regardless of the pressurized quantity or quality of the gas flowing through the meter.",
+        "Temperature, pressure, and heating value compensation must be made to measure actual amount and value of gas moving through a meter.",
+        "Several different designs of gas meters are in common use, depending on the volumetric flow rate of gas to be measured, the range of flows anticipated, the type of gas being measured, and other factors.",
+        "Gas meters that exist in colder climates in buildings built prior to the 1970s were typically located inside the home, typically in the basement or garage.",
+        "Since then, the vast majority are now placed outside though there are a few exceptions especially in older cities."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Smart meter",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3895745",
+      "retrieved_at": "2026-10-18T17:51:20.675Z",
+      "sha256": "68e141f085e2681180f1d812074092805b7c56c43d0a3491776d89ea22bb11e5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A smart meter is an electronic device that records information—such as consumption of electric energy, voltage levels, current, and power factor—and communicates the information to the consumer and electricity suppliers.",
+        "Advanced metering infrastructure (AMI) differs from automatic meter reading (AMR) in that it enables two-way communication between the meter and the supplier."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "mm-0575",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Oil and water do not mix—hydrophobic hydration",
+      "publisher": "Oxford University Press",
+      "author": "Aveyard, Bob",
+      "published_at": "2019-10-09",
+      "url": "https://doi.org/10.1093/oso/9780198828600.003.0002",
+      "retrieved_at": "2026-10-18T17:16:33.630Z",
+      "sha256": "2590b4356acf296c6dc0783d7c8dd6351ad9205387d45449ea961a6802109336",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Many surfactants contain hydrocarbon moieties that are removed from their aqueous environment (‘dehydrated’) in, for example, adsorption and micelle formation.",
+        "Hydrophobic hydration relates to the interactions between individual nonpolar solute molecules and water, and can be probed using thermodynamic quantities for the dissolution of dilute hydrocarbon vapours to form dilute aqueous solutions.",
+        "Contrary to the simple expectation that the entropy of hydration of a nonpolar moiety should be positive (due to disruption of water structure), it is large and negative, giving a large positive contribution to the free energy of hydration.",
+        "The hydration of nonpolar molecules in water leads to an attraction between the molecules in close proximity, which is termed hydrophobic bonding.",
+        "Although the free energy of hydration of nonpolar groups in bulk aqueous solution is positive, the interaction free energy of nonpolar molecules/groups with interfacial water at an air/water interface is negative."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Water and Oil—Do They Mix?",
+      "publisher": "Jason Aronson, Inc.",
+      "author": "Malca, Diana",
+      "published_at": "2002",
+      "url": "https://doi.org/10.5040/9798216449522.ch15",
+      "retrieved_at": "2026-10-18T17:16:34.598Z",
+      "sha256": "953c3f65f160a8f9c07acc184f0f046333d6d9e78122c2bf2f126640d2a2fb56",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - 101 Favorite Play Therapy Techniques --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Acrylic paint",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2838",
+      "retrieved_at": "2026-10-18T17:16:34.806Z",
+      "sha256": "f2f2d3ede7277db847b71e2c6a49ab851e5718abecc28ef3fdc72d50247ce8eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Acrylic paint is a fast-drying paint made of pigment suspended in acrylic polymer emulsion and plasticizers, silicone oils, defoamers, stabilizers, or metal soaps.",
+        "Most acrylic paints are water-based, but become water-resistant when dry.",
+        "Depending on how much the paint is diluted with water, or modified with acrylic gels, mediums, or pastes, the finished acrylic painting can resemble a watercolor, a gouache, or an oil painting, or it may have its own unique characteristics not attainable with other media.",
+        "Water-based acrylic paints are used as latex house paints, as latex is the technical term for a suspension of polymer microparticles in water.",
+        "Interior latex house paints tend to be a combination of binder (sometimes acrylic, vinyl, PVA, and others), filler, pigment, and water.",
+        "Exterior latex house paints may also be a co-polymer blend, but the best exterior water-based paints are 100% acrylic, because of its elasticity and other factors.",
+        "Vinyl, however, costs half of what 100% acrylic resins cost, and polyvinyl acetate (PVA) is even cheaper, so paint companies make many different combinations of them to match the market."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Water",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33306",
+      "retrieved_at": "2026-10-18T17:16:34.806Z",
+      "sha256": "1ba46a127a1eef52f17dbf2da0c9166c8f5a21469224ceffebb48b1f57608c58",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Water is an inorganic compound with the chemical formula H2O.",
+        "It is a transparent, tasteless, odorless, and nearly colorless chemical substance.",
+        "It is the main constituent of Earth's streams, lakes, and oceans.",
+        "Water is also the fluid of all known living organisms, in which it acts as a solvent.",
+        "Water, being a polar molecule, undergoes strong intermolecular hydrogen bonding which is a large contributor to its physical and chemical properties.",
+        "It is vital for all known forms of life, despite not providing food energy or being an organic micronutrient.",
+        "Due to its presence in all organisms, its chemical stability, its worldwide abundance, and its strong polarity relative to its small molecular size, water is often referred to as the \"universal solvent\".",
+        "Because Earth's surface temperature and pressure is relatively close to water's triple point, water exists on Earth as a solid, a liquid, and a gas.",
+        "It forms precipitation in the form of rain and aerosols in the form of fog.",
+        "Clouds consist of suspended droplets of water and ice, its solid state.",
+        "When finely divided, crystalline ice may precipitate in the form of snow.",
+        "Water covers about 71% of the Earth's surface, with seas and oceans making up most of the water volume (about 96.5%)."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Diesel fuel",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=81761",
+      "retrieved_at": "2026-10-18T17:16:34.806Z",
+      "sha256": "7223e3c47259118460d15537ec285acc4fe48f9f57a0db917bedba1a689811cd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Therefore, diesel fuel needs good compression ignition characteristics.",
+        "The most common type of diesel fuel is a specific fractional distillate of petroleum fuel oil, but alternatives that are not derived from petroleum, such as biodiesel, biomass to liquid (BTL) or gas to liquid (GTL) diesel are increasingly being developed and adopted.",
+        "To distinguish these types, petroleum-derived diesel is sometimes called petrodiesel in some academic circles.",
+        "For example, in the European Union, the standard for diesel fuel is EN 590.",
+        "Ultra-low-sulfur diesel (ULSD) is a diesel fuel with substantially lowered sulfur contents.",
+        "As of 2016, almost all of the petroleum-based diesel fuel available in the United Kingdom, mainland Europe, and North America is of a ULSD type.",
+        "Before diesel fuel had been standardized, the majority of diesel engines typically ran on cheap fuel oils.",
+        "These fuel oils are still used in watercraft diesel engines.",
+        "Despite being specifically designed for diesel engines, diesel fuel can also be used as fuel for several non-diesel engines, for example the Akroyd engine, the Stirling engine, or boilers for steam engines.",
+        "However, diesel exhaust, especially from older engines, can cause health damage."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Synthetic oil",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=522468",
+      "retrieved_at": "2026-10-18T17:16:34.806Z",
+      "sha256": "ec3da438363c9f2a4a5af755f2a836e503420caf76b8d52064c4105b41e6ba80",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Synthetic oil is a lubricant consisting of chemical compounds that are artificially modified or synthesised.",
+        "Synthetic oil is used as a substitute for petroleum-refined oils when operating in extreme temperature, in metal stamping to provide environmental and other benefits, and to lubricate pendulum clocks."
+      ]
+    }
+  ]
+}

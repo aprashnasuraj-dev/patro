@@ -1,0 +1,124 @@
+{
+  "id": "mm-0325",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Near-Earth Orbit",
+      "publisher": "Harvard University Press",
+      "author": null,
+      "published_at": "2022-04-19",
+      "url": "https://doi.org/10.2307/j.ctv2cw0srb.6",
+      "retrieved_at": "2026-10-18T17:03:34.847Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Apollo 11",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=662",
+      "retrieved_at": "2026-10-18T17:03:35.230Z",
+      "sha256": "1d6e8ce8e1ce7022e80dca4ab1c78d8c541f24fa7a840d27d947a7ed6dffb4c6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Apollo 11 (July 16–24, 1969) was the American spaceflight that first landed humans on the Moon, and the fifth crewed mission of NASA's Apollo program.",
+        "The mission was crewed by Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Edwin \"Buzz\" Aldrin, all of whom were on their second and final spaceflight.",
+        "After a three-day transit, Armstrong and Aldrin descended to the surface aboard the LM Eagle, landing in the Sea of Tranquility (Mare Tranquillitatis) on July 20 at 20:17 UTC while Collins remained in lunar orbit aboard the CM Columbia.",
+        "Armstrong became the first human to walk on the Moon approximately six hours after landing, followed by Aldrin nineteen minutes later.",
+        "Together they spent around two and a half hours walking on the surface, planting an American flag, speaking with President Richard Nixon who was in the White House, deploying scientific instruments, and collecting 21.5 kg (47.5 lb) of lunar material.",
+        "After more than 21 hours on the surface, they rejoined Collins in lunar orbit, and the crew returned safely to Earth on July 24, splashing down in the Pacific Ocean.",
+        "Apollo 11 was the culmination of the Space Race, a geopolitical competition between the United States and the Soviet Union rooted in Cold War rivalry.",
+        "Kennedy in May 1961, who had challenged the United States to land a man on the Moon and return him safely before the end of the decade.",
+        "The program overcame a severe setback with the fatal Apollo 1 launchpad fire in January 1967 and drew on technologies developed through the preceding Mercury and Gemini programs.",
+        "The Soviet Union, despite early leads in spaceflight, was unable to match the Saturn V rocket, and its uncrewed lunar probe Luna 15 crashed on the Moon on July 21, while Neil Armstrong and Buzz Aldrin were still on the lunar surface.",
+        "Armstrong's moonwalk was broadcast live to an estimated 600 million viewers, roughly one-fifth of the world's population, making it among the most-watched television events in history.",
+        "The crew were honoured with ticker-tape parades, a world goodwill tour, and the Presidential Medal of Freedom."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Astronaut",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=664",
+      "retrieved_at": "2026-10-18T17:03:35.230Z",
+      "sha256": "69a729bd9df87116b84411f7e30cc23e947baf1b19cae1e3215fe16ec6396d50",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An astronaut (from the Ancient Greek ἄστρον (astron), meaning 'star', and ναύτης (nautes), meaning 'sailor') is a person trained, equipped, and deployed by a human spaceflight program to serve as a commander or crew member of a spacecraft.",
+        "Although generally reserved for professional space travelers, the term is sometimes applied to anyone who travels into space, including scientists, politicians, journalists, and space tourists.",
+        "In the United States, it is a designated term used by three agencies: NASA, the FAA, and the military.",
+        "The term is also used for people who are trained to fly in a spacecraft after passing certain training courses, regardless of their experience of space travel.",
+        "\"Astronaut\" technically applies to all human space travelers regardless of nationality.",
+        "However, astronauts fielded by Russia or the Soviet Union are typically known instead as cosmonauts (from the Russian \"kosmos\" (космос), meaning \"space\", also borrowed from Greek κόσμος).",
+        "The Canadian Space Agency, European Space Agency, and JAXA refer to their crew as astronauts regardless of launch vehicle; historically other nationalities launched by the Soviet Interkosmos adopted the cosmonaut term.",
+        "As of April 2026, 781 humans have flown in space, many of these to space stations.",
+        "Over 290 individuals have visited the International Space Station; 105 individuals visited the Mir station.",
+        "Until 2002, astronauts were sponsored and trained exclusively by governments, either by the military or by civilian space agencies.",
+        "With the suborbital flight of the privately funded SpaceShipOne in 2004, a new category of astronaut was created: the commercial astronaut."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "International Space Station",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=15043",
+      "retrieved_at": "2026-10-18T17:03:35.230Z",
+      "sha256": "414942779899ee44a8962262d88242f1ddfb019ae841a20f9039c40b79ab4337",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The International Space Station (ISS) is a space station in low Earth orbit (LEO).",
+        "It is the product of the International Space Station program and is operated by five partner space agencies: NASA (United States), Roscosmos (Russia), ESA (Europe), JAXA (Japan), and CSA (Canada).",
+        "It is the first space station built, maintained and crewed through international cooperation and the largest human spacecraft ever constructed.",
+        "It is an orbital research station, where scientific experiments in microgravity are conducted and the space environment is studied.",
+        "Since 2 November 2000, it has hosted the longest continuous human presence in space.",
+        "Alongside China's Tiangong, it is one of two currently operational space stations.",
+        "The station orbits between 51.64° north and south, at about 400 kilometres (250 miles) above Earth, below the Van Allen radiation belts and most space debris.",
+        "Its orbit takes it at 7.67 km/s (27,600 km/h; 17,200 mph) roughly every 93 minutes around Earth, 15.5 times a day.",
+        "Measuring 109 m (358 ft) (with solar arrays) by 73 m (239 ft), it is as large as a full-sized football or soccer field, and has a pressurised internal volume of 1,005 m3 (35,491 ft3), comparable to a Boeing 747 airliner.",
+        "The station is a modular space station divided into two main sections: the Russian Orbital Segment (ROS), developed by Roscosmos, and the US Orbital Segment (USOS), built by NASA, ESA, JAXA, and CSA.",
+        "The Integrated Truss Structure connects the station's vast system of solar panels and radiators to its 16 major pressurized modules.",
+        "These modules support scientific research, crew habitation, storage, spacecraft control, and airlock operations."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Space Shuttle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28189",
+      "retrieved_at": "2026-10-18T17:03:35.230Z",
+      "sha256": "812d47c843c1d8422c0ee2baf904033b3c099455afe01bde614381c2b6925493",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Space Shuttle is a retired, partially reusable low Earth orbital spacecraft system that went to the ISS and performed other orbital missions.",
+        "National Aeronautics and Space Administration (NASA) as part of the Space Shuttle program.",
+        "Its official program name was the Space Transportation System (STS), taken from the 1969 plan led by U.S.",
+        "vice president Spiro Agnew for a system of reusable spacecraft where it was the only item funded for development.",
+        "The first (STS-1) of four orbital test flights occurred in 1981, leading to operational flights (STS-5) beginning in 1982.",
+        "Five complete Space Shuttle orbiter vehicles were built and flown on a total of 135 missions from 1981 to 2011.",
+        "They launched from the Kennedy Space Center (KSC) in Florida.",
+        "Operational missions launched numerous satellites, interplanetary probes, and the Hubble Space Telescope (HST), conducted science experiments in orbit, participated in the Shuttle-Mir program with Russia, and participated in the construction and servicing of the International Space Station (ISS).",
+        "The Space Shuttle fleet's total mission time was 1,323 days.",
+        "Space Shuttle components include the Orbiter Vehicle (OV) with three clustered Rocketdyne RS-25 main engines, a pair of recoverable solid rocket boosters (SRBs), and the expendable external tank (ET) containing liquid hydrogen and liquid oxygen.",
+        "The Space Shuttle was launched vertically, like a conventional rocket, with the two SRBs operating in parallel with the orbiter's three RS-25 main engines, which were fueled from the ET.",
+        "The SRBs were jettisoned before the vehicle reached orbit, while the main engines continued to operate, and the ET was jettisoned after main engine cutoff and just before orbit insertion, which used the orbiter's two Orbital Maneuvering System (OMS) engines."
+      ]
+    }
+  ]
+}

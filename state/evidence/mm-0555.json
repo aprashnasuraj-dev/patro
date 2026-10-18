@@ -1,0 +1,131 @@
+{
+  "id": "mm-0555",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "A Hover Driven Approach to eVTOL Aircraft Design",
+      "publisher": "The Vertical Flight Society",
+      "author": "; ; ",
+      "published_at": "2025-05-20",
+      "url": "https://doi.org/10.4050/f-0081-2025-288",
+      "retrieved_at": "2026-10-18T17:16:29.651Z",
+      "sha256": "e024d6258912a84a0ab1d5e5abe02b3aeb4113baff322672afaa777bc548a7fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "eVTOL aircraft are a stable part of nowadays rotorcraft industry, gathering attention and investments throughout all geographies.",
+        "The challenge of designing such a vehicle is the necessity to combine transformative flight and distributed lifting systems."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Helicopters in the Desert",
+      "publisher": "The Brookings Institution",
+      "author": null,
+      "published_at": "2016",
+      "url": "https://doi.org/10.5040/9780815752240.ch-002",
+      "retrieved_at": "2026-10-18T17:16:30.875Z",
+      "sha256": "d831476718d20755b764e47df4da0f96143d54caf23a9f4c411c8d7d707a511e",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "collections-62 --> Bloomsbury Collections - Why Presidents Fail And How They Can Succeed Again --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Collections Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?",
+        "Subscription Required This item is only available to the members of institutions that have purchased access."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Boeing CH-47 Chinook",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38005",
+      "retrieved_at": "2026-10-18T17:16:31.095Z",
+      "sha256": "ba8eba4d8fce1d0870d01ab12356ed298fb42dbe92ec7a91a8fd5d70938dc744",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Boeing CH-47 Chinook is a tandem-rotor helicopter originally developed by American rotorcraft company Vertol and now manufactured by Boeing Defense, Space & Security.",
+        "The Chinook is the second-heaviest-lifting Western heavy-lift helicopter, behind the Sikorsky CH-53.",
+        "Its name comes from the Chinook people, who are indigenous to the Pacific Northwest of the United States.",
+        "The Chinook was designed by Vertol, which had begun work in 1957 on a new tandem-rotor helicopter, designated as the Vertol Model 107 or V-107.",
+        "Around the same time, the United States Department of the Army announced its intention to replace the piston-engine–powered Sikorsky CH-37 Mojave with a new, gas turbine–powered helicopter.",
+        "Army ordered a small number of V-107s from Vertol under the YHC-1A designation; following testing, some Army officials considered it to be too heavy for the assault missions and too light for transport purposes.",
+        "Marine Corps as the CH-46 Sea Knight, the Army sought a heavier transport helicopter and ordered an enlarged derivative of the V-107 with the Vertol designation Model 114.",
+        "Initially designated as the YHC-1B, on 21 September 1961, the preproduction rotorcraft performed its maiden flight.",
+        "In 1962, the HC-1B was redesignated CH-47A under the 1962 United States Tri-Service aircraft designation system.",
+        "Boeing had purchased Vertol in 1960, forming the Vertol division of Boeing, leading to some early production variants being produced as Boeing Vertol CH-47 Chinook.",
+        "The Chinook possesses several means of loading various cargoes, including multiple doors across the fuselage, a wide loading ramp located at the rear of the fuselage, and three external ventral cargo hooks to carry underslung loads.",
+        "Capable of a top speed of 170 knots (200 mph; 310 km/h), upon its introduction to service in 1962, the helicopter was considerably faster than contemporary 1960s utility helicopters and attack helicopters, and is still one of the fastest helicopters in the US inventory."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Sikorsky SH-60 Seahawk",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=202031",
+      "retrieved_at": "2026-10-18T17:16:31.095Z",
+      "sha256": "75ece59d75cee1e345417d535ec4a657085e251aa52f1aed21ab3b8b7c57fed5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sikorsky SH-60/MH-60 Seahawk (or Sea Hawk) is a twin turboshaft engine, multi-mission United States Navy helicopter based on the United States Army UH-60 Black Hawk and a member of the Sikorsky S-70 family.",
+        "The most significant modifications are the folding main rotor blades and a hinged tail to reduce its footprint aboard ships.",
+        "Navy acquired H-60 helicopters under the model designations SH-60B, SH-60F, HH-60H, MH-60R, and MH-60S.",
+        "When entering service, the SH-60B was too large to operate from some of the smaller vessels in service, so it served along with the Kaman SH-2F and SH-2G models until 2001.",
+        "Early model Seahawks began to be retired in the 2010s and 2020s, with the last B model leaving U.S.",
+        "Navy service in 2015, after over three decades, then the F and H models followed in 2016."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Mil Mi-24",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=384591",
+      "retrieved_at": "2026-10-18T17:16:31.095Z",
+      "sha256": "22b8181c130602bd413a2bc2b24b09fedbc6eb63048aee01053901208f15538b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Mil Mi-24 (Russian: Миль Ми-24; NATO reporting name: Hind) is a large helicopter gunship, attack helicopter and low-capacity troop transport with room for eight passengers.",
+        "It is produced by Mil Moscow Helicopter Plant and was introduced by the Soviet Air Force in 1972.",
+        "As of 2026, the helicopter is used worldwide by 52 countries.",
+        "In NATO circles, the export versions, Mi-25 and Mi-35, are denoted with a letter suffix as \"Hind D\" and \"Hind E\".",
+        "Soviet pilots called the Mi-24 the \"flying tank\" (Russian: летающий танк, romanized: letayushchiy tank), a term used historically with the famous World War II Soviet Il-2 Shturmovik armored ground attack aircraft.",
+        "Other common unofficial nicknames were \"Galina\" (or \"Galya\"), \"Crocodile\" (Russian: Крокодил, romanized: Krokodil), due to the helicopter's camouflage scheme, and \"Drinking Glass\" (Russian: Стакан, romanized: Stakan), because of the flat glass plates that surround earlier Mi-24 variants' cockpits."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Helicopter parent",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2546164",
+      "retrieved_at": "2026-10-18T17:16:31.095Z",
+      "sha256": "4d4e846237c0b55a0f4be082eea597ac4a53f3cb9807cdaa70409a528f979eeb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A helicopter parent (also called a cosseting parent or simply a cosseter) is a parent considered overattentive and overly fearful for their child, particularly outside the home and at educational institutions.",
+        "Helicopter parents are so named because, like helicopters, they \"hover overhead\", overseeing every aspect of their child's life.",
+        "A helicopter parent is also known to strictly supervise their children in all aspects of their lives, including in social interactions.",
+        "The term originally gained popularity regarding the behaviour of parents towards their adult children; however, in recent years, the use of term has expanded to cover parenting practices at increasingly lower ages."
+      ]
+    }
+  ]
+}

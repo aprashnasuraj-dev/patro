@@ -1,0 +1,141 @@
+{
+  "id": "mm-1660",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "When AI summarizes the community: how generative AI summaries shape users’ intention to engage with original content",
+      "publisher": "Emerald",
+      "author": "Liu, Qian; Wu, Shuang; Xu, Lin",
+      "published_at": "2026-09-21",
+      "url": "https://doi.org/10.1108/intr-10-2025-1763",
+      "retrieved_at": "2026-10-18T17:46:44.915Z",
+      "sha256": "4a8d98e1e21e942e02c75245e85c713f228aeec089a2a2a1f8b2087852c1453a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Purpose The integration of Generative Artificial Intelligence (GenAI) into user-generated content (UGC) communities has fundamentally reshaped how users seek and consume information.",
+        "Many UGC platforms, such as RedNote and Zhihu, now incorporate GenAI summaries that provide concise, AI-generated answers at the top of search results.",
+        "While these summaries improve efficiency, they may also reduce user attention to original community posts, thereby threatening engagement and participation within UGC ecosystems.",
+        "This study aims to examine how GenAI summary design influences users’ intention to engage with community content and the underlying psychological mechanisms.",
+        "Design/methodology/approach Drawing on Socio-Technical Systems Theory (STS), this research develops a socio-cognitive model linking AI summary design (source localness and source transparency) to engagement intentions through collective psychological ownership and interest-type curiosity.",
+        "Two online experiments were conducted: Experiment 1 tested the main and mediating effects, and Experiment 2 introduced query type (subjective-experiential vs objective-analytic) as a contextual moderator.",
+        "Findings Results reveal two socio-cognitive pathways linking GenAI summary design to user engagement.",
+        "Community-focused and aggregate-list summaries enhance engagement via collective ownership, whereas web-wide and item-level citation summaries foster curiosity-driven engagement.",
+        "These effects are contingent on query type: subjective-experiential queries strengthen the ownership pathway, while objective-analytic queries amplify the curiosity pathway.",
+        "Originality/value This study extends STS to AI-mediated content ecosystems by conceptualizing GenAI summaries as socio-technical interfaces.",
+        "It advances our understanding of how interface-level design transforms technological affordances into social and cognitive motivations that sustain participation in digital communities."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "The Narrative Cost of Efficiency: What Gets Lost when AI Summarizes Legal Briefs?",
+      "publisher": "Elsevier BV",
+      "author": "Patthoff, Abigail",
+      "published_at": "2026",
+      "url": "https://doi.org/10.2139/ssrn.6675400",
+      "retrieved_at": "2026-10-18T17:46:45.598Z",
+      "sha256": "a1c7973d402cb16540384e49f011fa5573fa380150c8f0549bb310d78503e70b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Judicial policies and advisory bodies are now authorizing courts to use AI tools for summarizing legal briefs, with guidelines endorsing the use of generative AI to help judges manage overwhelming caseloads.",
+        "This technological shift threatens to fundamentally alter legal advocacy: AI processing often strips away narrative techniques—character development, theme, strategic organization, and vivid description—that empirical research shows persuade human judges.",
+        "This Article undertakes the first exploratory study of how AI summarization transforms legal storytelling, examining what happens when an algorithmic intermediary stands between advocate and judge.",
+        "&lt;br&gt;&lt;br&gt;Prior scholarship examines AI as a &lt;i&gt;producer&lt;/i&gt; of legal work, yet researchers have largely ignored how AI summarization &lt;i&gt;mediates&lt;/i&gt; human advocacy during judicial review.",
+        "Through a case study of how ChatGPT processed competing legal narratives, this Article demonstrates that AI summarization can strip significant narrative architecture from advocacy in ways that existing judicial AI frameworks, which regulate for accuracy and bias, do not address.",
+        "The narrative cost is not limited to judges who might rely entirely on AI summaries.",
+        "Psychological research on anchoring suggests that even judges who read both a summary and the original briefs may find their understanding shaped by which aspects the AI preserved or discarded."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Automatic summarization",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=637199",
+      "retrieved_at": "2026-10-18T17:46:46.994Z",
+      "sha256": "333bd88404d92fa161b3b16ae4099ac67a85af1ed50e1e11a7130f6c040e2b82",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Automatic summarization is the process of shortening a set of data computationally, to create a subset (a summary) that represents the most important or relevant information within the original content.",
+        "Artificial intelligence (AI) algorithms are commonly developed and employed to achieve this, specialized for different types of data.",
+        "Text summarization is usually implemented by natural language processing methods, designed to locate the most informative sentences in a given document.",
+        "On the other hand, visual content can be summarized using computer vision algorithms.",
+        "Image summarization is the subject of ongoing research; existing approaches typically attempt to display the most representative images from a given image collection, or generate a video that only includes the most important content from the entire collection.",
+        "Video summarization algorithms identify and extract from the original video content the most important frames (key-frames), and/or the most important video segments (key-shots), normally in a temporally ordered fashion.",
+        "Video summaries simply retain a carefully selected subset of the original video frames and, therefore, are not identical to the output of video synopsis algorithms, where new video frames are being synthesized based on the original video content."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "ChatGPT",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=72417803",
+      "retrieved_at": "2026-10-18T17:46:46.994Z",
+      "sha256": "d1ce092d52f20eb84386458ee08c1e6b6c6a53038246472a81cb905b12fd1084",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Originally released on November 30, 2022, the product uses large language models—specifically generative pre-trained transformers (GPTs)—to generate text, speech, and images in response to user prompts.",
+        "ChatGPT accelerated the AI boom, an ongoing period marked by rapid investment and public attention toward the field of artificial intelligence (AI).",
+        "Users can interact with ChatGPT through text, audio, and image prompts.",
+        "ChatGPT was quickly adopted, reaching 100 million monthly active users two months after its release and 900 million weekly active users in February 2026.",
+        "Proponents say that it has the potential to transform numerous professional fields, and it has instigated public debate about the nature of creativity and the future of knowledge work.",
+        "The chatbot has also been criticized for its limitations and potential for unethical use.",
+        "It may generate incorrect or nonsensical answers that sound plausible, known as hallucinations.",
+        "Biases in its training data have been reflected in its responses.",
+        "The chatbot can facilitate academic dishonesty, generate misinformation, and create malicious code.",
+        "The ethics of its development, particularly the use of copyrighted content as training data, have also drawn controversy."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Large language model",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73248112",
+      "retrieved_at": "2026-10-18T17:46:46.994Z",
+      "sha256": "6b443323923df348d75161f4eab413c7f47bbbe91eb8233989a6ca3d27b54b5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A large language model (LLM) is an AI model (typically a neural network) trained on a vast amount of text for natural language processing tasks, especially language generation.",
+        "LLMs can typically generate, summarize, translate, and analyze text in many contexts.",
+        "They are the basis for many modern chatbots, such as ChatGPT, Claude, Gemini, Grok, Qwen and DeepSeek.",
+        "LLMs are typically based on the transformer neural network architecture.",
+        "Generative pre-trained transformers (GPTs) are a type of LLM that is pre-trained to predict the next word.",
+        "GPTs are then often fine-tuned to follow instructions and to behave as assistants.",
+        "Biased or inaccurate training data can make an LLM's output less reliable.",
+        "A software harness can provide LLMs with memory and access to tools such as web search.",
+        "Benchmark evaluations for LLMs attempt to measure model reasoning, factual accuracy, alignment, and safety."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Generative AI",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73291755",
+      "retrieved_at": "2026-10-18T17:46:46.994Z",
+      "sha256": "e4531256855586c54c18b8f69b54f624dac41a4654c857e6565c0dfca2593138",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Generative artificial intelligence (GenAI) is a subfield of artificial intelligence (AI) that uses generative models to generate text, images, videos, audio, computer code or other forms of digital data.",
+        "These models learn the underlying patterns and structures of their training data, and use them to generate new data in response to input, which often takes the form of natural language prompts.",
+        "The prevalence of generative AI tools has increased significantly since the AI boom of the early 2020s.",
+        "This boom was made possible by improvements in deep neural networks, particularly large language models (LLMs), which are based on the transformer architecture.",
+        "Companies in a variety of sectors have used or proposed the use of generative AI, including those in software development, healthcare, finance, entertainment, sales and marketing, screenwriting, and product design.",
+        "Generative AI has been used for cybercrime, and to deceive and manipulate people through fake news and deepfakes.",
+        "Generative AI models have been trained on copyrighted works without the rightholders' permission.",
+        "Many generative AI systems are reliant on large-scale data centers, whose environmental impacts include electronic waste, consumption of fresh water for cooling, and high energy consumption that is estimated to be growing steadily."
+      ]
+    }
+  ]
+}

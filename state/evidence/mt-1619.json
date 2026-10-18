@@ -1,0 +1,163 @@
+{
+  "id": "mt-1619",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Epilogue:",
+      "publisher": "Broadleaf Books",
+      "author": null,
+      "published_at": "2021-04-20",
+      "url": "https://doi.org/10.2307/j.ctv1b0fx28.14",
+      "retrieved_at": "2026-10-18T18:29:28.400Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Can Free Provision Reduce Demand for Public Services?",
+      "publisher": "Policy Research Working Paper",
+      "author": null,
+      "published_at": "2013",
+      "url": "https://doi.org/10.5040/9781474209793.0002",
+      "retrieved_at": "2026-10-18T18:29:29.525Z",
+      "sha256": "509ad2154d4bce7c01f13b0e4de8cad1b6615dbc17b3a03a4bdb1bd0dbe46b8a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "becscol-40 --> Bloomsbury Education and Childhood Studies Platform - Can Free Provision Reduce Demand for Public Services?",
+        "--> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or password.",
+        "Email Address Invalid Email Address Password Invalid Password --> Forgot Password?",
+        "With a personal account, you can save books, chapters, images or other items to view later.",
+        "Success Your mail has been sent successfully Alert Me Are you sure you want to remove the alert?",
+        "Log In Toggle navigation Alert Your session is about to expire!",
+        "You will be logged out in 10:00 Do you wish to stay logged in?",
+        "Please visit our Home page or try using the Search, Explore or Browse links above to find what you are looking for.",
+        "Log in to Bloomsbury Education and Childhood Studies Platform Incorrect username or password.",
+        "Login via your institution Shibboleth / Open Athens Log in here if you have a username and password Username provided by your institution Password provided by your institution Login Or log in with your library card Library card number not recognised.",
+        "Library Card Number Login Save Download Print Citation Success Your mail has been sent successfully Delete This?",
+        "Are you sure you want to remove the page from \"My Saved Items\"?"
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Embargo period",
+      "publisher": "Qeios",
+      "author": null,
+      "published_at": "2019-11-08",
+      "url": "https://doi.org/10.32388/996576",
+      "retrieved_at": "2026-10-18T18:29:31.273Z",
+      "sha256": "708f1b92fe5e6a29f2e16d05332a38080dbb13859bb05cd4e5dd51ec095da111",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Embargo period - Definition (v1) by Public Domain | Qeios There is a newer version available for this {{ publicationType }}.",
+        "This is an open access publication distributed under the terms of the CC BY 4.0 License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+        "Info Check the {{ publicationType | capitalize }} Source for copyright and license information.",
+        "{{ publication.doi_url }} {{ publication.title }} Declarations Abstract Source Listen on Compose your Definition Related Definitions ({{ publication.ranked_siblings.length }}) # {{ sibling.position_in_ranking }} Thank you for your contribution to the community."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "India",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14533",
+      "retrieved_at": "2026-10-18T18:29:31.274Z",
+      "sha256": "b21b1882350c559f874f09167a4264076ae5833e147a8722ad4e3f856eec703e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "India, officially the Republic of India, is a country in South Asia.",
+        "It is the world's seventh-largest country by area and its most populous.",
+        "Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the east.",
+        "In the Indian Ocean, India is near Sri Lanka and the Maldives.",
+        "Modern humans arrived on the Indian subcontinent from Africa by 55,000 years ago.",
+        "Settled life emerged in the western margins of the Indus river basin 9,000 years ago, evolving into the Indus Valley Civilisation of the third millennium BCE.",
+        "By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, diffused into India from the northwest, its earliest hymns containing elements of what would become Hinduism.",
+        "The pre-existing Dravidian and other languages were gradually superseded in India's northern plains.",
+        "Across the central stretch of these plains, rapid urbanisation took place, and after 500 BCE a caste-based, hereditary form of social stratification began to solidify as Hinduism took fuller shape.",
+        "During this period, Buddhism and Jainism arose, proclaiming social orders unlinked to heredity.",
+        "The subsequent emergence of the loose-knit Maurya and Gupta Empires gave rise to wide-ranging cultural and scientific creativity.",
+        "However, these eras saw a steady decline in women's status, alongside the eventual institutionalisation of untouchability."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Wolfgang Amadeus Mozart",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33163",
+      "retrieved_at": "2026-10-18T18:29:31.274Z",
+      "sha256": "289c0398d9b9320b253f76a3ede5c4611c224716765535fd72be7a54015e7431",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Wolfgang Amadeus Mozart (27 January 1756 – 5 December 1791) was a Classical composer and musician.",
+        "He completed more than 800 works in his life—including outstanding examples of most of the genres of his time: symphonies, concertos, chamber music, opera and choral music.",
+        "He is regarded as one of the greatest composers in the history of Western music.",
+        "Born in Salzburg, Mozart quickly emerged as a child prodigy under the training of his father Leopold, a skilled pedagogue.",
+        "At the age of five he was already competent on keyboard and violin, had begun to compose, and had performed before European royalty.",
+        "His father took him on a grand tour of Europe and then three trips to Italy.",
+        "At 17 he was a musician at the Salzburg court but grew restless and travelled in search of a better position.",
+        "A fruitless journey in search of employment (1777–1779) led him to Paris, Mannheim, Munich and eventually back to Salzburg.",
+        "During this time he wrote his five violin concertos, the Sinfonia Concertante, various masses and the opera Idomeneo.",
+        "While he was visiting Vienna in 1781, Mozart's quarrels with his Salzburg employers came to a head and he was dismissed.",
+        "He chose to remain in Vienna, where he stayed for the rest of his life, achieving fame and some financial success, but no long-term security.",
+        "During Mozart's early years in Vienna he produced several notable works, such as the opera Die Entführung aus dem Serail, the Great Mass in C minor, the \"Haydn\" Quartets and a number of symphonies."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Demosthenes",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=46605",
+      "retrieved_at": "2026-10-18T18:29:31.274Z",
+      "sha256": "881d7ab4c17deaba8ce9fde195085be48c2106284b773f28cf7a84a06db7bddb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Demosthenes (; Greek: Δημοσθένης, romanized: Dēmosthénēs; Attic Greek: [dɛːmostʰénɛːs]; 384 – 12 October 322 BC) was a Greek statesman and orator in ancient Athens.",
+        "His orations constitute a significant expression of contemporary Athenian intellectual prowess and provide insight into the politics and culture of ancient Greece during the 4th century BC.",
+        "Demosthenes learned rhetoric by studying the speeches of previous great orators.",
+        "He delivered his first judicial speeches at the age of 20, in which he successfully argued that he should gain from his guardians what was left of his inheritance.",
+        "For a time, Demosthenes made his living as a professional speechwriter (logographer) and a lawyer, writing speeches for use in private legal suits.",
+        "Demosthenes grew interested in politics during his time as a logographer, and in 354 BC he gave his first public political speeches.",
+        "He went on to devote his most productive years to opposing Macedon's expansion.",
+        "He idealized his city and strove throughout his life to restore Athens's supremacy and motivate his compatriots against Philip II of Macedon.",
+        "He sought to preserve his city's freedom and to establish an alliance against Macedon, in an unsuccessful attempt to impede Philip's plans to expand his influence southward, conquering the Greek states.",
+        "After Philip's death, Demosthenes played a leading part in his city's uprising against the new king of Macedonia, Alexander the Great.",
+        "However, his efforts failed, and the revolt was met with a harsh Macedonian reaction.",
+        "To prevent a similar revolt against his own rule, Alexander's successor in this region, Antipater, sent his men to track Demosthenes down."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Luís de Camões",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=77382",
+      "retrieved_at": "2026-10-18T18:29:31.274Z",
+      "sha256": "136d04391b61f978ffe7ca317c794e809addf137d3bf2512c6cba8f4ee0bd30b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Luís Vaz de Camões (European Portuguese: [luˈiʒ ˈvaʒ ðɨ kaˈmõjʃ]; c.",
+        "1524 or 1525 – 10 June 1580), sometimes rendered in English as Camoens or Camoëns ( KAM-oh-ənz), was a Portuguese poet, considered Portugal's and the Portuguese language's greatest poet.",
+        "His mastery of verse has been compared to that of Shakespeare, Milton, Vondel, Homer, Virgil and Dante.",
+        "He wrote a considerable amount of lyrical poetry and drama but is best remembered for his epic work Os Lusíadas (The Lusiads).",
+        "His collection of poetry The Parnasum of Luís de Camões was lost during his life.",
+        "The influence of his masterpiece Os Lusíadas is so profound that Portuguese is sometimes called the \"language of Camões\"."
+      ]
+    }
+  ]
+}

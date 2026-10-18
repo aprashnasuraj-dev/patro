@@ -1,0 +1,163 @@
+{
+  "id": "mm-0686",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Why We Have Leap Year",
+      "publisher": "JSTOR",
+      "author": null,
+      "published_at": "1944-02-26",
+      "url": "https://doi.org/10.2307/3921111",
+      "retrieved_at": "2026-10-18T17:21:07.037Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Why we can be resilient: We have technology and open standards to thank",
+      "publisher": "Wiley",
+      "author": "Kasdorf, Bill",
+      "published_at": "2021-01",
+      "url": "https://doi.org/10.1002/leap.1356",
+      "retrieved_at": "2026-10-18T17:21:07.310Z",
+      "sha256": "10f661c9493324e2f00bb55829b4651aa805b3e18c1c72c1a911b4c6412817a0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Key points Many in the information industry are able to work from home thanks to technologies that did not exist not long ago.",
+        "The technologies we rely on, even proprietary ones, are built on a foundation of internet and web standards that we take for granted and may not even be aware of.",
+        "The progress of technology over the past few decades is a story of ever‐increasing interoperability.",
+        "The web standards from the W3C are open; free of cost; free of intellectual property claims; and have been developed to take accessibility, internationalization, security, privacy, and alignment with the W3C Web Technical Architecture into account.",
+        "Our pivot to the demands of the post‐COVID era will be enabled by free, open standards and the new tools and technologies that will be based on them."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "HIV/AIDS vaccine: Why don’t we have one after 37 years, when we have several for COVID-19 after a few months?",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Desrosiers, Ronald",
+      "published_at": "2021-05-17",
+      "url": "https://theconversation.com/hiv-aids-vaccine-why-dont-we-have-one-after-37-years-when-we-have-several-for-covid-19-after-a-few-months-160690",
+      "retrieved_at": "2026-10-18T17:21:07.769Z",
+      "sha256": "f2227d6dfadb41dee21cd750b4aec73f6046d76243f4eb01aca7a3c66a2cbd76",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "HIV/AIDS vaccine: Why don’t we have one after 37 years, when we have several for COVID-19 after a few months?",
+        "Skip to content Academic rigor, journalistic flair HIV/AIDS vaccine: Why don’t we have one after 37 years, when we have several for COVID&#8209;19 after a few months?",
+        "Published: May 17, 2021 3:22pm EDT A lab worker extracts DNA from samples for further tests at the AIDS Vaccine Design and Development Laboratory Dec.",
+        "because of development and use of effective vaccines against the poliovirus.",
+        "In current times, millions of lives have been saved because of rapid deployment of effective vaccines against COVID-19.",
+        "And yet, it has been 37 years since HIV was discovered as the cause of AIDS, and there is no vaccine.",
+        "Here I will describe the difficulties facing development of an effective vaccine against HIV/AIDS.",
+        "I am a professor of pathology at the University of Miami Miller School of Medicine.",
+        "My laboratory is credited with the discovery of the monkey virus called SIV, or simian immunodeficiency virus .",
+        "SIV is the close monkey relative of the virus that causes AIDS in humans – HIV, or human immunodeficiency virus.",
+        "My research has contributed importantly to the understanding of the mechanisms by which HIV causes disease and to vaccine development efforts.",
+        "Anthony Fauci discusses the difficulty of finding a vaccine for HIV/AIDS in 2017."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Leap year",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17895",
+      "retrieved_at": "2026-10-18T17:21:07.769Z",
+      "sha256": "2ea526436486e455ce68a00b1ac1ef3acbba5f7116296a5562e73ba956b924f0",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A leap year (also known as an intercalary year or bissextile year) is a calendar year that contains an additional day (or, in the case of a lunisolar calendar, a month) compared to a common year.",
+        "The 366th day (or 13th month) is added to keep the calendar year synchronised with the astronomical year or seasonal year.",
+        "Since astronomical events and seasons do not repeat in a whole number of days, calendars that have a constant number of days each year will unavoidably drift over time with respect to the seasons.",
+        "By inserting an additional day—a leap day—or an additional month—a leap month—into some years but not others, the drift between a civilisation's dating system and the physical properties of the Solar System can be avoided.",
+        "The historic Julian calendar has three common years of 365 days followed by a leap year of 366 days, by extending February to 29 days rather than the common 28.",
+        "The Gregorian calendar, the world's most widely used civil calendar, makes a further adjustment for the small error in the Julian algorithm; this extra leap day occurs in each year that is a multiple of 4, except for years evenly divisible by 100 but not by 400.",
+        "Thus 1600, 2000 and 2400 are leap years, but  1700, 1800, 1900, 2100, 2200, and 2300 are not.",
+        "In the Solar Hijri and Bahá'í calendars, a leap day is added whenever needed to ensure that the following year begins on the March equinox.",
+        "A lunar year of 12 lunar months is about 11 days shorter than an astronomical year.",
+        "Lunisolar calendars, such as are traditional in most of Asia, each has its own rule to decide when to add a leap (lunar) month, so as to keep its calendar year from drifting through the seasons.",
+        "Pure lunar calendars, such as the lunar Hijri calendar used in most of Islam, do not employ any such arrangement and accept the seasonal drift.",
+        "For example, since 1 March was a Friday in 2024, a Saturday in 2025, and a Sunday in 2026, and will be a Monday in 2027, the date will then \"leap\" over Tuesday to fall on a Wednesday in 2028."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Leap second",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18472",
+      "retrieved_at": "2026-10-18T17:21:07.769Z",
+      "sha256": "3efc87a67c3b26f3d101640c84d40456002c5173c968e2a7e3460eba34e7bbd3",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The UTC time standard, widely used for international timekeeping and as the reference for civil time in most countries, uses TAI and consequently runs ahead of observed solar time unless it is reset to UT1 as needed: the standard set a maximum permitted variance of ±0.9 seconds.",
+        "The leap-second facility existed to provide this adjustment when the variance threshold was reached.",
+        "At that time, UTC already lagged behind TAI by 10 seconds because of earlier methods of managing the difference.",
+        "In total, 27 leap seconds were added to UTC, with the final occurring on 31 December 2016; thus the difference between UTC and TAI has been, since January 2017, 37 seconds.",
+        "All were positive leap seconds, adding a second to a UTC day; while a negative leap second was theoretically possible, none ever occurred.",
+        "Because the Earth's rotational speed varies in response to climatic and geological events, UTC leap seconds were irregularly spaced and not precisely predictable.",
+        "The decision to insert a leap second was made by the International Earth Rotation and Reference Systems Service (IERS), typically about six months in advance, to ensure that the difference between UTC and UT1 did not exceed the ±0.9 seconds variance threshold.",
+        "This practice was disruptive, particularly in modern digital systems that require continuous and precise timestamping.",
+        "Since not all systems implemented leap-second adjustments uniformly, some computational, networking, and satellite-based systems encountered anomalies.",
+        "On 15 October 2026, the General Conference on Weights and Measures (CGPM) voted to discontinue the addition or subtraction of future leap seconds with effect from 20 May 2027, and to increase the limit on maximum permitted variance to one hour."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Common year",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=311400",
+      "retrieved_at": "2026-10-18T17:21:07.769Z",
+      "sha256": "326be7adb9b8e72fca1668cd8b783995fbd15f94ca21600db24b0a61a85e893a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A common year is a calendar year with 365 days, as distinguished from a leap year, which has 366 days.",
+        "The Gregorian calendar,  used by the majority of the world, employs both common years and leap years.",
+        "This is to keep the calendar aligned with the tropical year, which does not contain an exact number of days.",
+        "A common year is approximately a quarter day (six hours) shorter than a tropical year, which has 365.24 days.",
+        "If the Gregorian calendar only used common years and omitted leap years, the calendar would be out of sync with the tropical year by approximately 24 days in 100 years.",
+        "In the Gregorian calendar, 303 out of every 400 years are common years.",
+        "Leap years are any years that are divisible by 4, unless they are also divisible by 100 and not 400, in which case it is a common year.",
+        "The extra common years are added to account for the fact that common years are 5 hours, 48 minutes, and 46 seconds shorter than a tropical year, rather than six hours exactly.",
+        "By comparison, in the Julian calendar, 300 out of every 400 years are common years, with every fourth year being a leap year without exception.",
+        "The common year has 52 weeks and one day, hence a common year always begins and ends on the same day of the week (for instance, January 1 and December 31 both fall on a Thursday in 2026) and the year following a common year will start on the subsequent day of the week.",
+        "As a result, if the following year is a common year as well, each date will advance by one day of the week.",
+        "For instance, March 1, 2025, fell on a Saturday, then it falls on a Sunday in 2026 and Monday in 2027."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Doomsday rule",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=626579",
+      "retrieved_at": "2026-10-18T17:21:07.769Z",
+      "sha256": "52588a42435269bd330b8bfa478aa8b8247cf29938156e1ace15c5c68ec9a21c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Doomsday rule, Doomsday algorithm or Doomsday method is an algorithm of determination of the day of the week for a given date.",
+        "It provides a perpetual calendar because the Gregorian calendar moves in cycles of 400 years.",
+        "The algorithm for mental calculation was devised by John Conway in 1973, drawing inspiration from Lewis Carroll's perpetual calendar algorithm.",
+        "The technique applies to both the Gregorian calendar and the Julian calendar, although their doomsdays are usually different days of the week.",
+        "The algorithm is simple enough that it can be computed mentally.",
+        "Conway could usually give the correct answer in under two seconds.",
+        "To improve his speed, he practiced his calendrical calculations on his computer, which was programmed to quiz him with random dates every time he logged on."
+      ]
+    }
+  ]
+}
