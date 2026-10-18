@@ -18,7 +18,7 @@ export function buildPlan(registry,{latest,evidence},{allowYmyl=false,config}){
  const rows=[];const tally={};
  for(const r of registry){
   if(r.status!=='reserved')continue;
-  const prior=latest.get(r.id);if(prior&&(prior.status==='approved'||prior.status==='review'))continue;
+  const prior=latest.get(r.id);if(prior?.status==='approved')continue; // Review is unfinished and must remain recoverable.
   const {route}=classify(r),floor=config.routes[route].min_sources,ev=(evidence.get(r.id)||[]).length;
   if(route==='ymyl'&&!allowYmyl){tally.ymyl_held=(tally.ymyl_held||0)+1;continue;}
   const stage=ev>=floor?'write_from_cache':'research_then_write';
