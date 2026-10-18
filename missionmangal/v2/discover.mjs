@@ -42,6 +42,14 @@ export async function searchWebLinks(topic,{fetchImpl=fetch,env=process.env,max=
   const r=await fetchImpl('https://api.tavily.com/search',{method:'POST',headers:{'content-type':'application/json','user-agent':UA},body:JSON.stringify({api_key:env.TAVILY_API_KEY,query:topic,search_depth:'basic',max_results:Math.min(max-out.length,10),include_answer:false})});
   if(r.ok){const j=await r.json();for(const x of j.results||[])if(x.url)out.push(x.url);}
  }catch{}}
+ // Public search fallback when no paid search credentials are configured. No CAPTCHA or anti-bot bypass.
+ if(out.length===0){try{
+  const u='https://html.duckduckgo.com/html/?'+new URLSearchParams({q:topic});
+  const r=await fetchImpl(u,{headers:{'user-agent':UA,'accept':'text/html'}});
+  if(r.ok){const html=await r.text();for(const m of html.matchAll(/class=["'][^"']*result__a[^"']*["'][^>]*href=["']([^"']+)["']/gi)){
+   try{const href=m[1].replace(/&amp;/g,'&');const parsed=new URL(href,'https://html.duckduckgo.com');const target=parsed.searchParams.get('uddg');out.push(target?decodeURIComponent(target):parsed.href);}catch{}
+  }}
+ }catch{}}
  return [...new Set(out)].filter(u=>isTrusted(u,{blocked_suffixes:[]})).slice(0,max);
 }
 export function scraplingExtract(urls,{python='python3',script,delayMs=1500,timeoutMs=120_000}={}){
