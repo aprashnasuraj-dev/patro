@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-scholarly-final",
-  "note": "Bounded rerun with OpenAlex scholarly search resolving to actual publisher landing pages, citation-first ordering, and exact-topic relevance. Two topics max; require three independent publisher domains, grounded claims, word count and release gate; production untouched."
+  "mode": "research-grounding-publisher-priority-final",
+  "note": "Final bounded two-topic rerun with scholarly publisher landing pages prioritized ahead of broad web results and Wikipedia external links. Exact-topic evidence filter, three independent publisher domains, claim grounding, minimum length and editorial release gate are mandatory; production untouched."
 }
