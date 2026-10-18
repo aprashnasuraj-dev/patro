@@ -5,6 +5,6 @@
   "deadline_minutes": 10,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "research-grounding-synonym-final",
-  "note": "Bounded final two-topic rerun after improving relevance matching for Himalayan/Himalaya and related research terminology. Keep three independent publisher domains, exact-question grounding, minimum word count and editorial release gate; no production publish."
+  "mode": "research-grounding-domain-query-final",
+  "note": "Bounded final rerun after adding domain-aware query expansion for Himalayan tectonic uplift, regional accents, and infant crying. Require exact-topic relevance, three independent publisher domains, source-grounded claims, minimum word count and editorial release gate; no production publish."
 }
