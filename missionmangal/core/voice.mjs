@@ -18,7 +18,7 @@ const SWAPS=[[/\bdelve into\b/gi,'look at'],[/\bin today'?s fast-paced world,?\s
 export function fix(body){
  let t=String(body||'');for(const [r,w] of SWAPS)t=t.replace(r,w);
  // Em dashes are never allowed in published copy. Use punctuation that does not change the claim.
- t=t.replace(/\s*—\s*/g,', ').replace(/ ,/g,',').replace(/,{2,}/g,',');
+ t=t.replace(/(\d)\s*—\s*(\d)/g,'$1-$2').replace(/\s*—\s*/g,', ').replace(/ ,/g,',').replace(/,{2,}/g,',');
  const kept=new Set();
  t=sentences(t).filter(s=>{const f=fingerprint(s);if(f.split(' ').length<7)return true;if(kept.has(f))return false;kept.add(f);return true;}).join(' ');
  return t.replace(/^\s*[a-z]/gm,c=>c.toUpperCase()).replace(/\s+([,.!?;:])/g,'$1');
