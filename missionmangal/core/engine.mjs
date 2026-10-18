@@ -1,9 +1,9 @@
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
-import {reserve,assertRegistry,canonical,BYLINE,ROUTES} from './portfolio.mjs';
+import {reserve,assertRegistry,canonical,BYLINE,ROUTES,folderFor} from './portfolio.mjs';
 import {assertPublishable} from './quality.mjs';
 import {sitemapXml,assertSitemap,SITEMAP_NAME} from './sitemap.mjs';
-import {structuredData,relatedHtml,editorialPage} from './seo-enhancements.mjs';
+import {structuredData,relatedHtml,editorialPage,metaTags} from './seo-enhancements.mjs';
 const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 export async function loadRegistry(path){try{return JSON.parse(await readFile(path,'utf8'));}catch(e){if(e.code==='ENOENT')return [];throw e;}}
 export async function saveRegistry(path,registry){assertRegistry(registry);await mkdir(dirname(path),{recursive:true});await writeFile(path,JSON.stringify(registry,null,2)+'\n');}
@@ -21,7 +21,7 @@ export function renderApproved(article,record){
  const body=esc(article.body_md).split(/\n\s*\n/).map(p=>'<p>'+p.replace(/\n/g,' ')+'</p>').join('');
  const media=article.media.map(m=>{const label='<figcaption>'+esc(m.credit)+' · '+esc(m.license)+'</figcaption>';if(['image','chart','diagram'].includes(m.type))return '<figure><img loading="lazy" decoding="async" src="'+esc(m.url)+'" alt="'+esc(m.alt)+'">'+label+'</figure>';if(m.type==='video')return '<figure><video controls preload="none" aria-label="'+esc(m.alt)+'" src="'+esc(m.url)+'"></video>'+label+'</figure>';if(m.type==='audio')return '<figure><audio controls preload="none" aria-label="'+esc(m.alt)+'" src="'+esc(m.url)+'"></audio>'+label+'</figure>';return '';}).join('');
  const json=JSON.stringify(structuredData(article,record)).replace(/</g,'\\u003c');
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(article.title)+' | Aafnai Patro</title><link rel="canonical" href="'+esc(record.url)+'"><meta name="description" content="'+esc(article.description||article.intent)+'"><script type="application/ld+json">'+json+'</script></head><body><main><article><header><h1>'+esc(article.title)+'</h1><p>By '+BYLINE+'</p><p>Article ID: '+esc(article.id)+'</p></header>'+media+body+claimLedger+'<section><h2>References (APA style)</h2><ol>'+refs+'</ol></section>'+relatedHtml(article.related_links)+'</article></main></body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(article.title)+' | Aafnai Patro</title><link rel="canonical" href="'+esc(record.url)+'"><meta name="description" content="'+esc((article.description||article.intent).slice(0,160))+'">'+metaTags(article,record)+'<script type="application/ld+json">'+json+'</script></head><body><main><article><header><h1>'+esc(article.title)+'</h1><p>By '+BYLINE+'</p><p>Article ID: '+esc(article.id)+'</p></header>'+media+body+claimLedger+'<section><h2>References (APA style)</h2><ol>'+refs+'</ol></section>'+relatedHtml(article.related_links)+'</article></main></body></html>';
 }
 export async function buildApproved({registry,articles,outDir,expectedCount}){
  assertRegistry(registry);if(expectedCount!==undefined&&registry.length!==expectedCount)throw Error('Unexpected registry total');
@@ -32,7 +32,7 @@ export async function buildApproved({registry,articles,outDir,expectedCount}){
   prepared.push({record,html:renderApproved(a,record)});
  }
  await mkdir(outDir,{recursive:true});
- for(const {record,html} of prepared){const folder=ROUTES[record.type||'blog'];const dir=join(outDir,folder,record.slug);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);rendered.add((record.type||'blog')+'/'+record.slug);record.status='published';}
+ for(const {record,html} of prepared){const folder=folderFor(record.type||'blog');const dir=join(outDir,folder,record.slug);await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);rendered.add((record.type||'blog')+'/'+record.slug);record.status='published';}
  const xml=sitemapXml(updated,rendered);assertSitemap(xml,updated,rendered);await writeFile(join(outDir,SITEMAP_NAME),xml);
  if(prepared.length){const editorial=join(outDir,'editorial-guidelines');await mkdir(editorial,{recursive:true});await writeFile(join(editorial,'index.html'),editorialPage());}
  return {registry:updated,rendered:rendered.size,sitemap:SITEMAP_NAME};
