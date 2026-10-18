@@ -8,10 +8,10 @@ Improve evidence quality, editorial usefulness, source transparency, and reader-
 ## P0 — release and quality gates
 
 1. Keep v2 isolated from `main`, the live Worker, D1 bootstrap, existing calendar routes, and existing SEO routes. Generated content is staged on `missionmangal-content-v2`; publication requires a reviewed PR and release-gate pass.
-2. Add a per-article machine-readable audit report: topic intent, route, evidence IDs, claim-to-source mapping, source diversity, extraction method, retrieval date, content hashes, freshness risk, checks run, failures, and disposition.
-3. Fail closed on unsupported material claims, fabricated quotes, broken/mismatched URLs, duplicate sources/domains, missing references, unlicensed media, title/intent collisions, and route-specific quality floors. A provider response of “success” is not a quality result.
-4. Distinguish errors from warnings. A missing optional image is a warning when the route permits no media; ungrounded claims, robots denials, secret exposure, and route collisions are hard failures.
-5. Add regression fixtures for every previous failure mode and a deterministic test command for the entire Mission Mangal suite.
+2. Do not require a bulky per-article audit report or manual review queue for all 5,000 articles. Run compact, deterministic automated gates on every candidate before release and emit aggregate counts plus concise failure codes. Keep detailed diagnostics only for failed candidates, sampled tests, and debugging.
+3. Fail closed on unsupported material claims, fabricated quotes, broken/mismatched URLs, inadequate independent evidence, missing references, rights problems, title/intent collisions, and route-specific quality floors. A provider response of “success” is not a quality result.
+4. Distinguish hard failures from warnings. A missing optional image is a warning when the route permits no media; ungrounded claims, unsafe fetches, policy denials, and route collisions are hard failures. Do not release an article just because its prose reads smoothly.
+5. Run regression fixtures and deterministic tests before batch release. Use stratified sampling to validate the automated gates, not to manually audit every article. Any sampled systemic failure blocks the batch until fixed.
 
 ## P1 — writer: human editorial quality
 
@@ -20,8 +20,10 @@ Improve evidence quality, editorial usefulness, source transparency, and reader-
 - Build an evidence ledger before drafting. Each factual claim has a stable claim ID, one or more source IDs, exact supporting excerpt(s), and a support type: direct, calculated, contextual, contested, or inference.
 - Keep facts, interpretation, and uncertainty separate. Calculations must expose formula, inputs, units, period, and rounding. Conflicting sources must be represented as a disagreement, not silently averaged.
 - Generate a short brief first: intended reader, exact question, answer in one paragraph, what is known, what remains uncertain, why the page adds value, and planned sections. Do not pad to a word count.
-- Use concrete examples, explanations of mechanisms, comparisons, useful caveats, and reader-relevant implications where evidence supports them. Avoid generic intros, repeated summaries, empty transitions, canned “in today's world” language, and forced FAQs.
-- Vary structure according to intent: concise answer, explainer, timeline, comparison, dataset interpretation, field guide, or evidence review. Do not force every topic into the same 5-heading article template.
+- Enforce a strict punctuation rule: do not use em dashes (—). Prefer commas, periods, colons, or parentheses where appropriate.
+- Detect and revise repeated or near-duplicate sentences within an article, repeated opening patterns across a batch, duplicated facts, and conclusions that simply restate the introduction. Compare normalized sentence fingerprints and semantic similarity; do not delete repetition when it is necessary for clarity or a defined term.
+- Use concrete examples, explanations of mechanisms, comparisons, useful caveats, and reader-relevant implications where evidence supports them. Avoid generic intros, repeated summaries, empty transitions, canned “in today's world” language, filler transitions, formulaic “delve into” language, and forced FAQs.
+- Vary sentence length, paragraph rhythm, openings, transitions, and structure according to topic and intent. Use concise answer, explainer, timeline, comparison, dataset interpretation, field guide, or evidence review as appropriate. Do not force every topic into the same template, and do not add stylistic variety at the expense of accuracy.
 - Preserve named entities, dates, quantities, units, and technical qualifiers. Run a post-write claim audit against the ledger; any new factual statement must map to evidence or be removed.
 - Prefer original synthesis and information gain over synonym rewriting. Never copy long passages, imitate a living writer, invent first-hand testing, or claim an editor visited/used something without evidence.
 - Disclose automation honestly in site-level editorial policy. Human review status must be real metadata, not a generated claim.
@@ -34,14 +36,16 @@ Keep configurable route floors in `config.json`, but enforce these principles:
 - Research pages: broader source diversity, competing explanations, methods and limitations, primary-source priority.
 - YMYL: default hold for qualified human review; sources appropriate to jurisdiction/date; no personalized diagnosis, legal determination, or financial recommendation. Disclaimers do not repair unsupported claims.
 
-## P2 — web scraper and evidence scope
+## P2 — broaden discovery across the open web
 
 ### Discovery and source ranking
 
-1. Use a tiered discovery ladder: cached verified evidence; authoritative primary APIs/datasets; primary institutional pages/papers; high-quality secondary explainers; broader discovery only when needed.
-2. Score sources on authority, directness, recency, topical fit, methodology transparency, and independence. A domain allowlist is a starting filter, not proof of trustworthiness. Do not treat multiple pages from one publisher as independent corroboration.
-3. Capture metadata where available: canonical URL, title, author, publisher, publication/update date, retrieval time, HTTP status, content type, robots decision, declared license, and content hash.
-4. Use bounded per-topic fetch counts, per-host delays, explicit timeouts, response-size caps, concurrency limits, retry budgets, and a shared host cooldown. Do not retry permanent 4xx, robots denials, or opt-outs.
+1. Remove Wikipedia as the default discovery bottleneck. Use a multi-source discovery ladder: cached verified evidence; official APIs and open datasets; search-engine/web-index discovery; scholarly indexes and repositories; government, university, standards-body, NGO, museum, archive, and reputable publisher sites; then additional relevant websites discovered from citations and topic-specific directories.
+2. Support discovery across thousands of distinct domains over time, but do not attempt to crawl the whole web indiscriminately. Discover per topic, rank candidates, and fetch only the most useful pages within configured budgets. Expand beyond an initial domain allowlist through source scoring and policy checks, not by trusting every domain.
+3. Keep domain diversity as a discovery goal, not a quality shortcut. A source from a new domain must still pass authority, relevance, evidence, access, and safety checks.
+4. Score sources on authority, directness, recency, topical fit, methodology transparency, and independence. A domain allowlist is a starting filter, not proof of trustworthiness. Do not treat multiple pages from one publisher as independent corroboration.
+5. Capture metadata where available: canonical URL, title, author, publisher, publication/update date, retrieval time, HTTP status, content type, robots decision, declared license, and content hash.
+6. Use bounded per-topic fetch counts, per-host delays, explicit timeouts, response-size caps, concurrency limits, retry budgets, and a shared host cooldown. Do not retry permanent 4xx, robots denials, or opt-outs.
 5. Enforce HTTPS and validate every redirect target. Reject loopback, private, link-local, reserved, and cloud metadata IP ranges after DNS resolution; revalidate redirects to prevent SSRF. Limit response types to expected HTML/text/PDF routes and avoid fetching arbitrary binaries.
 6. Parse robots.txt and opt-out metadata conservatively. If robots cannot be fetched or interpreted, mark policy status unknown and skip or use a documented conservative rule; do not silently assume permission. Respect site terms, copyright, rate limits, and provider commercial-use restrictions. No stealth mode, CAPTCHA bypass, paywall bypass, or anti-bot evasion.
 7. Keep raw page text transient. Persist only the minimum short excerpts needed for claim verification, metadata, and hashes; restrict artifact retention and avoid logging full extracted text or secrets.
@@ -98,7 +102,7 @@ Do not break the current article contract: introduce fields as optional, version
 
 Before scaling:
 - Run unit tests, article schema validation, grounding tests, route/slug collision audit, and a renderer smoke test.
-- Human-review a stratified sample: at least 10 per route initially, including failures and borderline cases. Score factuality, source fit, readability, originality, usefulness, accessibility, and duplication separately.
+- Validate a stratified sample across routes and topic families, including failures and borderline cases. This is quality-system validation, not a requirement to manually review all 5,000 articles. Score factuality, source fit, readability, originality, usefulness, accessibility, and duplication separately.
 - Compare v1/v2 on accepted-page rate, unsupported-claim rate, source independence, extraction success, cost per accepted article, time-to-review, and reader engagement when available. Do not optimize raw article count alone.
 - Start with a small canary, then 25, 100, and larger batches only after the prior gate passes. Preserve resumability and idempotence.
 - Keep merge and production release manual until the release gate passes and a reviewer checks the generated sample.
@@ -106,8 +110,9 @@ Before scaling:
 ## Definition of done
 
 - No production route, Worker, D1 schema, or existing page changes from this scope alone.
-- Writer outputs a claim ledger and a natural, intent-specific article without unsupported additions.
-- Scraper enforces safe URL/redirect handling, robots/opt-out policy, host budgets, and transient raw text.
+- Every candidate passes automated pre-release gates; compact aggregate metrics and failure codes are available without producing 5,000 bulky reports.
+- Writer produces natural, intent-specific prose with no em dashes, repeated sentences, or unsupported additions.
+- Scraper discovers relevant sources beyond Wikipedia across a broad, dynamically expanding set of websites, while enforcing safe URL/redirect handling, robots/opt-out policy, host budgets, and transient raw text.
 - References are readable, accessible, directly tied to claims, and never fabricated.
 - Frontend additions are schema-versioned, backward-compatible, responsive, and tested.
 - Quality is measured by accepted, useful, supportable pages—not output volume or an “AI-human” score.
