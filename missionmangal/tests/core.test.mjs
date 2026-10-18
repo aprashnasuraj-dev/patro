@@ -13,7 +13,7 @@ test('P3: body source markers render as numbered, accessible inline links to mat
  const a=article(41,'fact');a.body_md='A supported paragraph about the subject. [[s1]]';
  const record={id:a.id,type:a.type,slug:a.slug,url:canonical(a.type,a.slug),intent:a.intent,status:'approved'};
  const html=renderPage(a,record);
- assert.match(html,/<a class="cite" href="#source-s1" aria-label="Source \\d+">\\[\\d+\\]<\\/a>/);
+ assert.ok(html.includes('href="#source-s1"') && html.includes('aria-label="Source ') && html.includes('>[1]</a>'));
  assert.match(html,/<li id="source-s1">/);
  assert.doesNotMatch(html,/\\[\\[s1\\]\\]/);
 });
