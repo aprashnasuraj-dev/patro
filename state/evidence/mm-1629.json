@@ -1,0 +1,89 @@
+{
+  "id": "mm-1629",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Grammatical aspect",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=12948",
+      "retrieved_at": "2026-10-18T15:58:46.780Z",
+      "sha256": "97ee037b27cc06b4c2e64d3031c6154d38b75b80ab6b063a37c999b93609aeaa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In linguistics, aspect is a grammatical category that expresses how a verbal action, event, or state, extends over time.",
+        "For instance, perfective aspect is used in referring to an event conceived as bounded and only once occurring, without reference to any flow of time during the event (\"I helped him\").",
+        "Imperfective aspect is used for situations conceived as existing continuously or habitually as time flows (\"I was helping him\"; \"I used to help people\").",
+        "Further distinctions can be made, for example, to distinguish states and ongoing actions (continuous and progressive aspects) from repetitive actions (habitual aspect).",
+        "Certain aspectual distinctions express a relation between the time of the event and the time of reference.",
+        "This is the case with the perfect aspect, which indicates that an event occurred prior to but has continuing relevance at the time of reference: \"I have eaten\"; \"I had eaten\"; \"I will have eaten\".",
+        "Different languages make different grammatical aspectual distinctions; some (such as Standard German; see below) do not make any.",
+        "The marking of aspect is often conflated with the marking of tense and mood (see tense–aspect–mood).",
+        "Aspectual distinctions may be restricted to certain tenses: in Latin and the Romance languages, for example, the perfective–imperfective distinction is marked in the past tense, by the division between preterites and imperfects.",
+        "Explicit consideration of aspect as a category first arose out of study of the Slavic languages; here verbs often occur in pairs, with two related verbs being used respectively for imperfective and perfective meanings.",
+        "The concept of grammatical aspect (or verbal aspect) should not be confused with perfect and imperfect verb forms; the meanings of the latter terms are somewhat different, and in some languages, the common names used for verb forms may not follow the actual aspects precisely.",
+        "For example, English and German have perfect tenses that are wholly parallel in form but do not always have equivalent meaning because the aspect is not always identical."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Subjunctive mood",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=287913",
+      "retrieved_at": "2026-10-18T15:58:46.780Z",
+      "sha256": "2beda4eff4900ca417f00ea46cd25e0a6ec292eec19fc7b600d83387eada0256",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The subjunctive (also known as the conjunctive in some languages) is a grammatical mood—a feature of an utterance that indicates the speaker's attitude toward it.",
+        "Subjunctive forms of verbs are typically used to express various states of unreality, such as wish, emotion, possibility, judgment, opinion, obligation, or action that has not yet occurred.",
+        "The precise situations in which they are used vary from language to language.",
+        "The subjunctive is one of the irrealis moods, which refer to what is not necessarily real.",
+        "It is often contrasted with the indicative, a realis mood which principally indicates that something is a statement of fact.",
+        "In Modern English, subjunctive forms usually employ the bare form of the verb in the present subjunctive (with the third person singular lacking the -s ending), or the use of were instead of was in past subjunctive constructions.",
+        "Subjunctives occur most often, although not exclusively, in subordinate clauses—particularly that-clauses.",
+        "Examples of the subjunctive in English are found in the sentences \"I suggest that you be careful\" and \"It is important that she stay by your side.\""
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bajan language",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=997991",
+      "retrieved_at": "2026-10-18T15:58:46.780Z",
+      "sha256": "4893117b289f97d5a34d74cc27dbba510a88394207af16ec3db93f987ac4a36b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bajan, also known as Bajan Creole (, BAY-jən), is a Caribbean English-based creole language with West/Central African and British influences spoken on the Caribbean island of Barbados.",
+        "Bajan is primarily a spoken language, meaning that in general, standard English is used in print, in the media, in the judicial system, in government, and in day-to-day business, while Bajan is reserved for less formal situations, in music, or in social commentary.",
+        "Ethnologue reports that, as of 2018, 260,000 Barbadians natively spoke Bajan, while 30,000 were native English speakers."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Mixtec languages",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5331946",
+      "retrieved_at": "2026-10-18T15:58:46.780Z",
+      "sha256": "7487878148ca8525a7fcfad745fa5fe45285d95e9be1fa81097bac87bfe22043",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Mixtec () languages belong to the Mixtecan group of the Oto-Manguean language family.",
+        "Mixtec is spoken in Mexico and is closely related to Trique and Cuicatec.",
+        "The varieties of Mixtec are spoken by over half a million people.",
+        "Identifying how many Mixtec languages there are in this complex dialect continuum poses challenges at the level of linguistic theory.",
+        "Depending on the criteria for distinguishing dialects from languages, there may be as few as a dozen or as many as fifty-three Mixtec languages."
+      ]
+    }
+  ]
+}

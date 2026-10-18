@@ -1,0 +1,143 @@
+{
+  "id": "mm-1446",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Orbital transfer rocket engine technology 7.5K-LB thrust rocket engine preliminary design",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "author": "Timothy Harmon; E. Roschak",
+      "published_at": "1993-10-15",
+      "url": "https://openalex.org/W1612889834",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "8038d79a0c599d9e8382ded9e5de3b89f6e52def2ccd743c1418f4b4dc259c35",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A preliminary design of an advanced LOX/LH2 expander cycle rocket engine producing 7,500 lbf thrust for Orbital Transfer vehicle missions was completed.",
+        "Engine system, component and turbomachinery analysis at both on design and off design conditions were completed.",
+        "The preliminary design analysis results showed engine requirements and performance goals were met.",
+        "Computer models are described and model outputs are presented.",
+        "Engine system assembly layouts, component layouts and valve and control system analysis are presented.",
+        "Major design technologies were identified and remaining issues and concerns were listed."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Orbital transfer rocket engine technology: Advanced engine study",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "author": "Warren R. Hayden",
+      "published_at": "1992-06-01",
+      "url": "https://openalex.org/W1617639890",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "d42184ef1017d56129bda64d7e3c719d1e1375480d885a112a71c58051e6747f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An advanced LOX/LH2 engine study for the use of NASA and vehicle prime contractors in developing concepts for manned missions to the Moon, Mars, and Phobos is documented.",
+        "Parametric design data was obtained at five engine thrusts from 7.5K lbf to 50K lbf.",
+        "Also, a separate task evaluated engine throttling over a 20:1 range and operation at a mixture ratio of 12 plus or minus 1 versus the 6 plus or minus 1 nominal.",
+        "Cost data was also generated for DDT&E, first unit production, and factors in other life cycle costs.",
+        "The major limitation of the study was lack of contact with vehicle prime contractors to resolve the issues in vehicle/engine interfaces.",
+        "The baseline Aerojet dual propellant expander cycle was shown capable of meeting all performance requirements with an expected long operational life due to the high thermal margins.",
+        "The basic engine design readily accommodated the 20:1 throttling requirement and operation up to a mixture ratio of 10 without change.",
+        "By using platinum for baffled injector construction the increased thermal margin allowed operation up to mixture ratio 13.",
+        "An initial engine modeling with an Aerojet transient simulation code (named MLETS) indicates stable engine operation with the baseline control system.",
+        "A throttle ratio of 4 to 5 seconds from 10 percent to 100 percent thrust is also predicted.",
+        "Performance predictions are 483.1 sec at 7.5K lbf, 487.3 sec at 20K lbf, and 485.2 sec at 50K lbf with a mixture ratio of 6 and an area ratio of 1200.",
+        "Continued work is recommended to include more vehicle prime contractor/engine contractor joint assessment of the interface issues."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Rocket",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=26301",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "d8e1b058f5d9fc53d205b7ce01cc8c7e2b01b32d68ecf0ea5489e11338941a0e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "''bobbin/spool'', and so named for its shape) is an elongated flying vehicle that uses a rocket engine to accelerate without using any surrounding air.",
+        "A rocket engine produces thrust by reaction to exhaust expelled at high speed.",
+        "Unlike jet engines, rockets are fuelled entirely by propellant which they carry, without the need for oxygen from air; consequently a rocket can fly in the vacuum of space, and indeed rocket engines operate more efficiently outside the atmosphere.",
+        "Multistage rockets are capable of attaining escape velocity from Earth and therefore can achieve unlimited maximum altitude.",
+        "Compared with airbreathing engines, rockets are lightweight and powerful and capable of generating large accelerations.",
+        "To control their flight, rockets may use momentum, airfoils, auxiliary reaction engines, gimballed thrust, momentum wheels, deflection of the exhaust stream, propellant flow, and spin, or may simply fly in a ballistic trajectory under the influence of gravity.",
+        "Rockets for military and recreational uses date back to at least 13th-century China.",
+        "Significant scientific, interplanetary and industrial use did not occur until the 20th century, when rocketry was the enabling technology for the Space Age, including setting foot on the Moon.",
+        "Rockets are now used for fireworks, missiles and other weaponry, ejection seats, launch vehicles for artificial satellites, human spaceflight, and space exploration.",
+        "Chemical rockets are the most common type of high-power rocket, typically creating a high-speed exhaust by the combustion of fuel with an oxidizer.",
+        "Chemical rockets store a large amount of energy in an easily released form, and the consequences of accidents can be severe.",
+        "The term \"rocket\" is also used for small fireworks, which are the subject of article rocket (firework)."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Single-stage-to-orbit",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=29398",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "b0a4fa5662f84fafabffe7c6dce9e2babec3fb1af0575122757c91592e00faaa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A single-stage-to-orbit (SSTO) vehicle reaches orbit from the surface of a body using only propellants and fluids and without expending tanks, engines, or other major hardware.",
+        "The term usually, but not exclusively, refers to reusable vehicles.",
+        "To date, no Earth-launched SSTO launch vehicles have ever been flown; orbital launches from Earth have been performed by multi-stage rockets, either fully or partially expendable.",
+        "The main projected advantage of the SSTO concept is elimination of the hardware replacement inherent in expendable launch systems.",
+        "However, the non-recurring costs associated with design, development, research and engineering (DDR&E) of reusable SSTO systems are much higher than expendable systems due to the substantial technical challenges of SSTO, assuming that those technical issues can in fact be solved.",
+        "SSTO vehicles may also require a significantly higher degree of regular maintenance.",
+        "It is considered to be marginally possible to launch a single-stage-to-orbit chemically fueled spacecraft from Earth.",
+        "Advances in rocketry in the 21st century have resulted in a substantial fall in the cost to launch a kilogram of payload to either low Earth orbit or the International Space Station, reducing the main projected advantage of the SSTO concept.",
+        "However, despite showing some promise, none of them have come close to achieving orbit yet due to problems with finding a sufficiently efficient propulsion system and discontinued development."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Multistage rocket",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=402018",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "8343b76da6c91b0bbf0a50b554969fad1c0745c503045a09fed4aa02638964e7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A multistage rocket or step rocket is a launch vehicle that uses two or more rocket stages, each of which contains its own engines and propellant.",
+        "A tandem or serial stage is mounted on top of another stage; a parallel stage is attached alongside another stage.",
+        "The result is effectively two or more rockets stacked on top of or attached next to each other.",
+        "Two-stage rockets are common, but rockets with as many as five separate stages have been successfully launched.",
+        "By jettisoning stages when they run out of propellant, the mass of the remaining rocket is decreased.",
+        "Each successive stage can also be optimized for its specific operating conditions, such as decreased atmospheric pressure at higher altitudes.",
+        "This staging allows the thrust of the remaining stages to more easily accelerate the rocket to its final velocity and height by Newton's First Law.",
+        "In serial or tandem staging schemes, the first stage is at the bottom and is usually the largest, the second stage and subsequent upper stages are above it, usually decreasing in size.",
+        "In parallel staging schemes solid or liquid rocket boosters are used to assist with launch.",
+        "In the typical case, the first-stage and booster engines fire to propel the entire rocket upwards.",
+        "When the boosters run out of fuel, they are detached from the rest of the rocket (usually with some kind of small explosive charge or explosive bolts) and fall away.",
+        "This leaves a smaller rocket, with the second stage on the bottom, which then fires."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Space launch",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1348254",
+      "retrieved_at": "2026-10-18T15:53:11.045Z",
+      "sha256": "bec54cf90b5574606d68b0239d68c3ee92b00d648f334043fd86159fa702f7e6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A space launch is the phase of a spaceflight mission during which a launch vehicle reaches space.",
+        "The launch may be sub-orbital or the launch may continue until the vehicle reaches orbit.",
+        "A space launch begins at a launch pad, which may be on land or at sea, or when the launch vehicle is released mid-air from an aircraft."
+      ]
+    }
+  ]
+}

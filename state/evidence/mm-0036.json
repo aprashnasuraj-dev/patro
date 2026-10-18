@@ -1,0 +1,158 @@
+{
+  "id": "mm-0036",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "How do airplanes fly? An aerospace engineer explains the physics of flight",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Merrett, Craig",
+      "published_at": "2024-03-18",
+      "url": "https://theconversation.com/how-do-airplanes-fly-an-aerospace-engineer-explains-the-physics-of-flight-222847",
+      "retrieved_at": "2026-10-18T14:52:08.097Z",
+      "sha256": "31e1ad38ead32fa5ba966bee2ea6250076c7dd4f0bdd0805850b8d6eddd4597a",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "An aerospace engineer explains the physics of flight Skip to content Academic rigor, journalistic flair U.S.",
+        "Lasha Kilasonia/iStock via Getty Images Plus How do airplanes fly?",
+        "If you have a question you’d like an expert to answer, send it to curiouskidsus@theconversation.com .",
+        "– Benson, age 10, Rockford, Michigan Airplane flight is one of the most significant technological achievements of the 20th century.",
+        "The invention of the airplane allows people to travel from one side of the planet to the other in less than a day, compared with weeks of travel by boat and train.",
+        "Understanding precisely why airplanes fly is an ongoing challenge for aerospace engineers, like me , who study and design airplanes, rockets, satellites, helicopters and space capsules.",
+        "Our job is to make sure that flying through the air or in space is safe and reliable, by using tools and ideas from science and mathematics, like computer simulations and experiments.",
+        "Because of that work, flying in an airplane is the safest way to travel – safer than cars, buses, trains or boats.",
+        "But although aerospace engineers design aircraft that are stunningly sophisticated, you might be surprised to learn there are still some details about the physics of flight that we don’t fully understand.",
+        "The forces of weight, thrust, drag and lift act on a plane to keep it aloft and moving.",
+        "NASA May the force(s) be with you There are four forces that aerospace engineers consider when designing an airplane: weight, thrust, drag and lift.",
+        "Engineers use these forces to help design the shape of the airplane, the size of the wings, and figure out how many passengers the airplane can carry."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "How Airplanes Fly: A Physical Description of Lift",
+      "publisher": "The Physics Video Demonstration Database (Cornell University)",
+      "author": "<ns0:vcard>BEGIN:vCardVERSION:3.0FN:David AndersonTITLE:ORG:Fermi National Accelerator LaboratoryADR;TYPE=WORK,POSTAL,PARCEL:;;;;;Other;;USTEL;TYPE=:+TEL;TYPE=:+TEL;TYPE=FAX:+EMAIL;TYPE=INTERNET,Personal:dfa180@aol.comEMAIL;TYPE=INTERNET,:END:vCard</ns0:vcard>; <ns0:vcard>BEGIN:vCardVERSION:3.0FN:Scott EberhardtORG:Boeing Aircraft CompanyADR;TYPE=WORK,POSTAL,PARCEL:;;;;Seattle;WA;91895-2400;USEMAIL;TYPE=INTERNET,Personal:clipper-108@comcast.netEND:vCard</ns0:vcard>",
+      "published_at": null,
+      "url": "https://openalex.org/W7113193912",
+      "retrieved_at": "2026-10-18T14:52:08.851Z",
+      "sha256": "44ac578e40603284ddde4dfa04579a6851a77640221caea6e1c73db2ba834772",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article by a physicist and an aeronautical engineer explains the physics of how aircraft wings produce lift.",
+        "It shows how several popular explanations are clearly wrong, and then accounts for lift in terms of Newton's first and third laws without using calculus.",
+        "The article also discusses power, drag, angle of attack, and wing vortices."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "How does an airplane fly",
+      "publisher": "elib (German Aerospace Center)",
+      "author": "Tony Arts; Patricia Corieri; Cem Asma",
+      "published_at": "2010-01-01",
+      "url": "https://openalex.org/W334048985",
+      "retrieved_at": "2026-10-18T14:52:08.851Z",
+      "sha256": "7c2a3113b3a146378398b7456e9a8bc6a47b34f33ebeec796ac01cac402e9bba",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Raising European Students Awareness in Aeronautical Research Through School-Labs’ is the main objective of the project REStARTS.",
+        "The objective of the project is to contribute in reversing the current trend of disinterest of young people towards aeronautics.",
+        "This demonstrates the direct link between research and society.",
+        "The scientists work in cooperation with a pedagogic team and teachers of local schools to compile understandable teaching material, which also includes simple experiments to demonstrate the physical phenomena being investigated.",
+        "The school lessons based on this material give a first impression of the challenges of the modern aeronautical research.",
+        "The school-labs established at the research institutes provide more sophisticated experiments and enable school classes to get a hands-on experience inscientific work.",
+        "Additional visits of the laboratories of the project partners and their industrial partners complete the program.",
+        "This will build bridges between school theory and applied research by delivering an insight to the work of research organisations.",
+        "The ambition is to stimulate young people’s interests in a R&D career in aeronautics and to create a European network of Aeronautical School-Labs."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Lift (force)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18009",
+      "retrieved_at": "2026-10-18T14:52:09.524Z",
+      "sha256": "3123c81ad1d697dc59f3488e713fe1478e4e86af5592245ff9ecfa102d85220d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "When a fluid flows around an object, the fluid exerts a force on the object.",
+        "Lift is the component of this force that is perpendicular to the oncoming flow direction.",
+        "It contrasts with the drag force, which is the component of the force parallel to the flow direction.",
+        "Lift conventionally acts in an upward direction in order to counter the force of gravity, but it may act in any direction perpendicular to the flow.",
+        "If the surrounding fluid is air, the force is called an aerodynamic force.",
+        "In water or any other liquid, it is called a hydrodynamic force.",
+        "Dynamic lift is distinguished from other kinds of lift in fluids.",
+        "Aerostatic lift or buoyancy, in which an internal fluid is lighter than the surrounding fluid, does not require movement and is used by balloons, blimps, dirigibles, boats, and submarines.",
+        "Planing lift, in which only the lower portion of the body is immersed in a liquid flow, is used by motorboats, surfboards, windsurfers, sailboats, and water-skis."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Wing",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=33537",
+      "retrieved_at": "2026-10-18T14:52:09.524Z",
+      "sha256": "7133bc386f656b3b18325f63313a094ca88f7404895f58d326a0001248e3d393",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A wing is a structure which produces both lift and drag while moving through air.",
+        "Wings are defined by two shape characteristics, an airfoil section and a planform.",
+        "Wing efficiency is expressed as lift-to-drag ratio, which compares the benefit of lift with the air resistance of a given wing shape, as it flies.",
+        "Equivalent foils that move through water are found on hydrofoil power vessels and foiling sailboats that lift out of the water at speed and on submarines that use diving planes to point the boat upwards or downwards, while running submerged.",
+        "The study of foil performance in water is a subfield of Hydrodynamics."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Bernoulli's principle",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=64219",
+      "retrieved_at": "2026-10-18T14:52:09.524Z",
+      "sha256": "4adb574a3e505c0a2c5ca5ff885602e9b413dbb7cc10473839a9ef757e4948b8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Bernoulli's principle is a  concept in fluid dynamics that relates pressure, speed and height.",
+        "For example, for a fluid flowing horizontally, Bernoulli's principle states that an increase in the speed  occurs simultaneously with a decrease in pressure.",
+        "The principle is named after the Swiss mathematician and physicist Daniel Bernoulli, who published it in his book Hydrodynamica in 1738.",
+        "Although Bernoulli deduced that pressure decreases when the flow speed increases, it was Leonhard Euler in 1752 who derived Bernoulli's equation in its usual form.",
+        "Bernoulli's principle can be derived directly from Isaac Newton's second law of motion.",
+        "When a small volume of fluid is flowing horizontally from a region of high pressure to a region of low pressure, there is more pressure from behind than in front.",
+        "This gives a net force on the volume, accelerating it along the streamline.",
+        "If the pressure is decreasing along the streamline, the fluid is accelerated and the speed increases.",
+        "Thus the decrease of pressure is the cause of a higher speed.",
+        "Similarly, if the pressure is increasing, the speed decreases.",
+        "Bernoulli's principle can also be derived from the principle of conservation of energy.",
+        "In a steady fluid flow the total of all forms of energy is conserved."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Tailplane",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=74235",
+      "retrieved_at": "2026-10-18T14:52:09.524Z",
+      "sha256": "3c6f1c186a65acd23f2951ada3d8ad68f643f06ebf3583c29791b508df018e1b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A tailplane, also known as a horizontal stabiliser, is a small lifting surface located on the tail (empennage) behind the main lifting surfaces of a fixed-wing aircraft.",
+        "Gyroplanes and some helicopters also feature horizontal stabilisers as part of their tail assembly.",
+        "Canards, tailless and flying wing aircraft have no separate tailplane, while in V-tail aircraft the vertical stabiliser, rudder, and the tail-plane and elevator are combined to form two diagonal surfaces in a V layout.",
+        "The function of the tailplane is to provide stability and control.",
+        "In particular, the tailplane helps adjust for changes in position of the centre of pressure or centre of gravity caused by changes in speed and attitude, fuel consumption, or dropping cargo or payload."
+      ]
+    }
+  ]
+}

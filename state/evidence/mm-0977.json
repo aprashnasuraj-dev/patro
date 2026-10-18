@@ -1,0 +1,82 @@
+{
+  "id": "mm-0977",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Binary prefix",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4077",
+      "retrieved_at": "2026-10-18T15:27:49.288Z",
+      "sha256": "20fff61751451880a56d8d80bbfc23328a28eb691a212bc936cc4fed311e7777",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A binary prefix is a unit prefix that indicates a multiple of a unit of measurement by an integer power of two.",
+        "The most commonly used binary prefixes are kibi (symbol Ki, meaning 210 = 1024), mebi (Mi, 220 = 1048576), and gibi (Gi, 230 = 1073741824).",
+        "They are most often used in information technology as multipliers of bit and byte, when expressing the capacity of storage devices or the size of computer files.",
+        "were defined in 1999 by the International Electrotechnical Commission (IEC), in the IEC 60027-2 standard (Amendment 2).",
+        "They were meant to replace the metric (SI) decimal power prefixes, such as \"kilo\" (k, 103 = 1000), \"mega\" (M, 106 = 1000000) and \"giga\" (G, 109 = 1000000000), that were commonly used in the computer industry to indicate the nearest powers of two.",
+        "For example, a memory module whose capacity was specified by the manufacturer as \"2 megabytes\" or \"2 MB\" would hold 2 × 220 = 2097152 bytes, instead of 2 × 106 = 2000000.",
+        "This kind of ambiguity is often confusing to computer system users and has resulted in lawsuits.",
+        "Prior to the 1999 IEC standard, some industry organizations, such as the Joint Electron Device Engineering Council (JEDEC), noted the common use of the terms kilobyte, megabyte, and gigabyte, and the corresponding symbols KB, MB, and GB in the binary sense, for use in storage capacity measurements.",
+        "However, other computer industry sectors (such as magnetic storage) continued using those same terms and symbols with the decimal meaning.",
+        "Since then, the major standards organizations have expressly disapproved the use of SI prefixes to denote binary multiples, and recommended or mandated the use of the IEC prefixes for that purpose, but the use of SI prefixes in this sense has persisted in some fields."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Integer (computer science)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14794",
+      "retrieved_at": "2026-10-18T15:27:49.288Z",
+      "sha256": "c924dd3e2095c46472f0f64bc00007532729f0f50fc8fa3de7aade88d7a7c23d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In computer science, an integer is a datum of integral data type, a data type that represents some range of mathematical integers.",
+        "Integral data types may be of different sizes and may or may not be allowed to contain negative values.",
+        "Integers are commonly represented in a computer as a group of binary digits (bits).",
+        "The size of the grouping varies so the set of integer sizes available varies between different types of computers.",
+        "Computer hardware nearly always provides a way to represent a processor register or memory address as an integer."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Ternary numeral system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=62950",
+      "retrieved_at": "2026-10-18T15:27:49.288Z",
+      "sha256": "b01481eb72d0f93ed0c41160301545f435d560bdf3a0eca4b96cfbc2fe7397cd",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A ternary  numeral system (also called base 3 or trinary) has three as its base.",
+        "Although ternary most often refers to a system in which the three digits are all non-negative numbers (specifically 0, 1, and 2), the adjective also lends its name to the balanced ternary system.",
+        "Comprising the digits −1, 0 and +1, balanced ternary is widely used in comparison logic and ternary computers."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Binary number",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=238686",
+      "retrieved_at": "2026-10-18T15:27:49.288Z",
+      "sha256": "7cf5f65b072233b34b7e7d742a49d24d48828b52001f8533e4c4f47751c829ce",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method for representing numbers that uses only two symbols for the natural numbers: typically 0 (zero) and 1 (one).",
+        "A binary number may also refer to a rational number that has a finite representation in the binary numeral system, that is, the quotient of an integer by a power of two.",
+        "The base-2 numeral system is a positional notation with a radix of 2."
+      ]
+    }
+  ]
+}

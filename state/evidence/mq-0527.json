@@ -1,0 +1,70 @@
+{
+  "id": "mq-0527",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "PubChem compound record",
+      "publisher": "National Center for Biotechnology Information",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/443385/property/MolecularFormula,MolecularWeight,IUPACName,CanonicalSMILES/JSON",
+      "retrieved_at": "2026-10-18T17:15:12.138Z",
+      "sha256": "a6213db19922cf349efe12074796159cb316d9b5f0ccd3f1e2ce6e44ffe9c34f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "PubChem compound 443385 has the molecular formula C18H34ClN2O8PS and a molecular weight of 505.0.",
+        "The IUPAC name of PubChem compound 443385 is [(2R,3R,4S,5R,6R)-6-[(1S,2S)-2-chloro-1-[[(2S,4R)-1-methyl-4-propylpyrrolidine-2-carbonyl]amino]propyl]-4,5-dihydroxy-2-methylsulfanyloxan-3-yl] dihydrogen phosphate."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/265hs-8fj68",
+      "retrieved_at": "2026-10-18T17:15:13.707Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Hacking PubChem: Query by SMILES",
+      "publisher": "Front Matter",
+      "author": "Apodaca, Richard",
+      "published_at": "2006-09-21",
+      "url": "https://doi.org/10.59350/0b253-ma907",
+      "retrieved_at": "2026-10-18T17:15:13.707Z",
+      "sha256": "248ab5b1681d1ffa9a134163340f0309ea291907ee8680c175928a4fc2e97a06",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Recently, I showed how a simple PubChem API could be built from a few lines of Ruby code.",
+        "The API we created could retrieve a molfile and a 2-D molecular rendering given a PubChem compound ID (CID).",
+        "In this tutorial, we'll see how a SMILES query mechanism can be added to the API, enabling CIDs to be retrieved from any valid SMILES string."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Positional Regularities in Canonical SMILES: Implications for Molecular Machine Learning",
+      "publisher": "Budapest University of Technology and Economics, Department of Artificial Intelligence and Systems Engineering",
+      "author": "Marosi, Márk; Antal, Péter",
+      "published_at": "2026",
+      "url": "https://doi.org/10.3311/minisy2026-005",
+      "retrieved_at": "2026-10-18T17:15:16.859Z",
+      "sha256": "0c1e0abb279783e00689f788fc52f7a751dbcf2cf81d643837d1543f8690ef04",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "These findings suggest that models trained exclusively on canonical SMILES may learn positional shortcuts rather than genuine chemical representations, with implications for generalization and robustness.",
+        "We propose random SMILES augmentation and representation-invariant evaluation as standard practice for molecular ML.",
+        "Description Keywords Collections BME MIT PhD Minisymposium, 2026, 33rd Full item page"
+      ]
+    }
+  ]
+}

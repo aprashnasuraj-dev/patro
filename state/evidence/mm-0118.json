@@ -1,0 +1,97 @@
+{
+  "id": "mm-0118",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "K2",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=17359",
+      "retrieved_at": "2026-10-18T14:55:12.888Z",
+      "sha256": "74bfaeb1ea25e2fdcf46e32f9d0452eda08b892771757f610182dbdfcce73945",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "K2, also known as Mount Godwin-Austen, at 8,611 metres (28,251 ft) above sea level, is the second-highest mountain on Earth, after Mount Everest at 8,849 metres (29,032 ft).",
+        "It lies in the Karakoram range, partially in the Gilgit-Baltistan region of Pakistan-administered Kashmir and partially in the China-administered Trans-Karakoram Tract in the Taxkorgan Tajik Autonomous County of Xinjiang.",
+        "After an increase in successful attempts, as of August 2023, an estimated 800 people have summited K2, with 96 deaths during attempted climbs.",
+        "K2 is nicknamed \"The King of Mountains\" and \"The Mountaineers' Mountain\", as well as \"The Mountain of Mountains\", a phrase popularised by Italian climber Reinhold Messner in his book on K2.",
+        "Although the summit of Everest is at a higher altitude, K2 is a more difficult and dangerous climb.",
+        "This is in part due to its more northern location, where inclement weather is more common, as well as its steep and exposed faces.",
+        "The summit was reached for the first time by the Italian climbers Lino Lacedelli and Achille Compagnoni on a 1954 Italian expedition led by Ardito Desio.",
+        "Most ascents are made during July and August, typically the warmest times of the year.",
+        "In January 2021 K2 became the final eight-thousander to be summited in the winter by a team of ten Nepalese climbers led by Nirmal Purja and Mingma Gyalje Sherpa.",
+        "K2's eastern face remains un-climbed, partly because of the hazards associated with the instability of its ice and snow formations."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Porter (carrier)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=140936",
+      "retrieved_at": "2026-10-18T14:55:12.888Z",
+      "sha256": "cf36b7359a0187a9a5fa592df2047c9486e31ea3a45e99b8a6d8152e5c140322",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A porter, also called a bearer, is a person who carries objects or cargo for others.",
+        "The range of services conducted by porters is extensive, from shuttling luggage aboard a train (a railroad porter) to bearing heavy burdens at altitude in inclement weather on multi-month mountaineering expeditions.",
+        "They can carry items on their backs (backpack) or on their heads.",
+        "The word \"porter\" derives from the Latin portare (to carry).",
+        "The use of humans to transport cargo dates to the ancient world, prior to domesticating animals and the development of the wheel.",
+        "Historically it remained prevalent in areas where slavery was permitted, and exists today where modern forms of mechanical conveyance are impractical or impossible, such as in mountainous terrain, or thick jungle or forest cover.",
+        "Over time, slavery diminished and technology advanced, but the role of porter for specialized transporting services remains strong in the 21st century.",
+        "Examples include bellhops at hotels, redcaps at railway stations, skycaps at airports, and bearers on adventure trips engaged by foreign travelers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Sherpa people",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=224737",
+      "retrieved_at": "2026-10-18T14:55:12.888Z",
+      "sha256": "a6fe1909160a27605fcdba656bda54c7b83ad933bee986974ee4da2a40e15c9f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Sherpa people (Standard Tibetan: ཤར་པ།, romanized: shar pa) are a Tibetan ethnic group native to the mountainous regions of Nepal, India, and the Tibetan Autonomous Region of China.",
+        "Most Sherpas live in eastern Nepal: the provinces of Bagmati (mainly in the districts of Dolakha, Sindhupalchok and Rasuwa) and Koshi (mainly in the districts of Solukhumbu, Sankhuwasabha and Taplejung).",
+        "Some live north of Kathmandu, in the Bigu and Helambu regions.",
+        "They can also be found in Tingri County, Bhutan, and the Indian states of Sikkim and northern West Bengal (the Darjeeling and Kalimpong districts).",
+        "Sherpas establish monasteries known as gompas in these regions, where they follow their local traditions.",
+        "The Sherpa language is part of the southern branch of the Tibeto-Burman languages, mixed with eastern (Khams Tibetan) and central Tibetan dialects.",
+        "This language is separate from Lhasa Tibetan, and is unintelligible to Lhasa speakers.",
+        "The Sherpa people are associated with mountaineering, and many work as mountaineering and climbing guides in the Himalayas region.",
+        "They have been instrumental in the first ascents of a number of Himalayan peaks, most notably in 1953 when Sherpa mountaineer Tenzing Norgay became one of the first two people to reach the summit of Mount Everest."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Tibetans",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=249458",
+      "retrieved_at": "2026-10-18T14:55:12.888Z",
+      "sha256": "8982edc398e83deb3214f304e6a6ae20b9d0bdcf89ab79d8a3580bd87574cf35",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Tibetans (Tibetan: བོད་པ་, Wylie: bod pa, THL: bö pa) are an East Asian ethnic group native to Tibet.",
+        "Their current population is estimated to be around 7.7 million.",
+        "In addition to the majority living in the Tibet Autonomous Region of China, significant numbers of Tibetans live in the Chinese provinces of Gansu, Qinghai, Sichuan, and Yunnan, as well as in India, Nepal, and Bhutan.",
+        "The Tibetic languages are a branch of the Tibeto-Burman language family.",
+        "The traditional or mythological explanation of the Tibetan people's origin is that they are the descendants of the human Pha Trelgen Changchup Sempa and rock ogress Ma Drag Sinmo.",
+        "Most Tibeto-Burman speakers in southwest China, including Tibetans, are thought to be direct descendants of the ancient Qiang people.",
+        "Most Tibetans practice Tibetan Buddhism, although a significant minority observe the Indigenous Bon religion.",
+        "Smaller communities of Tibetan Muslims and Christians also exist.",
+        "Tibetan Buddhism influences Tibetan art, drama, and architecture, while Tibet's harsh geography has produced an adaptive culture of Tibetan medicine and cuisine."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "mm-1395",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "POSSIBILITIES OF INCREASING THE EFFICIENCY OF LUGGAGE TRANSPORTATION AT THE AIRPORT",
+      "publisher": "Transport & Logistics the International Journal",
+      "author": "Peter Koščák; Edina Jenčová; Martina Koščáková",
+      "published_at": "2022-12-31",
+      "url": "https://openalex.org/W7217632170",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "b3619bf1d916157daa95abdbcb561834867c968f3a5b9e0b919439f3e3aa3e31",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Following the relaxation of measures in the post-Covid era, air travel came to a point where the sudden rise in traffic made it difficult to react quickly, particularly in the handling process of passengers and their luggage.",
+        "The article discusses ways to improve the effectiveness of the baggage handling system in order to reduce critical situations during the check-in procedure after a sudden reduction in staff.",
+        "Modernization and improvement of baggage sorting with the suggestion of technological choices for improvements, clear criteria for the allocation of individual technical devices in the check-in system, and logical management of activities are only a few of the options."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Luggage Security Scanning Optimization to Enhance Efficiency and Safety at Airports Using Deep Learning",
+      "publisher": "International Journal of Engineering Research and Science & Technology",
+      "author": "Kavita Bhogayata",
+      "published_at": "2026-08-18",
+      "url": "https://openalex.org/W7218002288",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "0f45d6ef16f104ea37b3ead474f4db13fd8dea66734517a0e522918ba54fb42d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "One of the most difficult and important challenges in aviation security is detecting concealed threats in the luggage at airports.",
+        "Manual inspection is slow, operator dependent and is becoming impractical due to the volumes of passengers at modern airports.",
+        "Detecting liquid threats is particularly challenging because their X-ray appearance varies significantly with content, container shape, and overlap with surrounding items.",
+        "A class-aware oversampling scheme and lightweight Albumentations augmentation pipeline specifically address the imbalance between liquid and sharp-object classes.",
+        "On the held-out test split of the CLCXray dataset, the proposed YOLOv8n model achieves a mean average precision at IoU 0.5 (mAP@0.5) of 0.835, a precision of 0.856, a recall of 0.770, an F1-score of 0.811, and a mAP@0.5:0.95 of 0.654.",
+        "These results represent an improvement of approximately 9.6% in mAP@0.5 and 20.9% in mAP@0.5:0.95 over the best published baseline.",
+        "A comparative evaluation against YOLOv10n confirms that YOLOv8n delivers superior accuracy for this safety-critical domain, making it the recommended architecture for real-world airport deployment."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "The search of people's luggage",
+      "publisher": "Eximia",
+      "author": "George Florin Staicu",
+      "published_at": "2023-11-08",
+      "url": "https://openalex.org/W7217198272",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "3f5511ea724a57853cc1a6d07918060989e821dfe8ea05d5462b65e1bd92bf47",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The police as a public institution is the link between the rule of law and citizens, contributing to building a cooperation with the population, local authorities, the business environment, non-governmental organizations, etc., in order to create a climate of public security.",
+        "In order to fulfill the constitutional role of the lawyer and public order in Romania, the police as a public institution needs the support of the citizens in whose service it is, and for a good relationship with the community, a good collaboration with it and trust on both sides is necessary.",
+        "Research on police activity in the field of social control has shown, as a rule of law, that the activity of the police as a state institution has a modest impact on reducing the level of crime and the security of individuals.",
+        "An increase in the number of police officers does not always lead to a reduction in the crime rate or an increase in the number of cases solved.",
+        "Factors from the social environment, such as income, unemployment, population structure and education, are the most important elements of the problem that must be taken into account when cataloging the criminal phenomenon.",
+        "Some analysts believe that police patrols and patrol activities, even double or triple, have a major impact on crime, victimization and public opinion of the police service and how it is applied in everyday life.",
+        "The idea behind this concept is due to the fact that the means of police action as a public institution that helps citizens, become ineffective in dissolving crime and social unrest, which has a negative impact on the institution meant to serve communities."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Heathrow Airport",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=13595",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "f9b411cc6185ea06c6d084442a2237434520c25e80e2632ec1e03cd6e2dd60e9",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "London Heathrow Airport (IATA: LHR, ICAO: EGLL) – named London Airport until 1966 – is the primary and largest international airport serving London, the capital of England and the United Kingdom.",
+        "It is the largest of the six international airports in the London airport system (the others being Gatwick, Stansted, Luton, City, and Southend).",
+        "The airport is owned and operated by Heathrow Airport Holdings.",
+        "In 2025, Heathrow was the busiest airport in Europe, the fifth-busiest airport in the world by passenger traffic and the second-busiest airport in the world by international passenger traffic.",
+        "Heathrow was the airport with the most international connections in the world in 2024.",
+        "Heathrow was founded as a small airfield in 1930 but was developed into a much larger airport after World War II.",
+        "It lies 14 miles (23 km) west of Central London on a site that covers 4.74 square miles (12.3 km2).",
+        "It was gradually expanded over 75 years and now has two parallel east–west runways, four operational passenger terminals and one cargo terminal.",
+        "The airport is the primary hub for British Airways and Virgin Atlantic."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lost luggage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=712088",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "77332712c6fc634a8658b1313fae7c42ce79adbe90f315fba4370b87e18841e4",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Lost luggage, known in the air transport industry as mishandled baggage, is luggage conveyed by a public carrier such as an airline, seafaring cruise ship, shipping company, or railway which fails to arrive at the correct destination with the passenger.",
+        "Most mishandled baggage is delayed rather than permanently lost.",
+        "Delayed and misrouted bags accounted for more than 75 per cent of cases, damaged bags for 21 per cent and permanently lost bags for about 4 per cent.",
+        "Mishandling rates vary widely between world regions and are several times higher on international services than on domestic ones, and the metrics used by industry bodies and by national regulators are not directly comparable.",
+        "Rates fell by roughly three-quarters between 2007 and 2025, a decline the industry attributes largely to automated baggage tracking.",
+        "The trend was interrupted by the COVID-19 pandemic: as air travel resumed in 2022 the global rate rose by 75 per cent in a single year, with airports and airlines in Europe and in Australia among the worst affected.",
+        "Carrier liability for baggage on international journeys is governed by the Montreal Convention and, on routes between states that have not ratified it, by its predecessor the Warsaw Convention."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "International airport",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1519705",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "6f52bd8b8d55488f6d875e59cfb44c16f7de4ae600c5a047513f66b22feb3373",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An international airport may be a marketing term and can be an airport with customs and border control facilities, enabling passengers to travel between countries around the world.",
+        "International airports are usually larger than domestic airports, and feature longer runways and have facilities to accommodate heavier aircraft such as the Boeing 747, Boeing 777, and the Airbus A380 commonly used for international and intercontinental travel.",
+        "International airports often host domestic flights, which helps feed both passengers and cargo into international ones (and vice versa).",
+        "Buildings, operations, and management have become increasingly sophisticated since the mid-20th century, when international airports began to provide infrastructure for international civilian flights.",
+        "Detailed technical standards have been developed to ensure safety and common coding systems have been implemented to provide global consistency.",
+        "The physical structures that serve millions of individual passengers and flights are among the most complex and interconnected in the world.",
+        "By the second decade of the 21st century, over 1,200 international airports existed with around 3.8 billion international passengers as of January 2023 along with 50 million metric tonnes of cargo passing through them annually."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Hand luggage",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2451025",
+      "retrieved_at": "2026-10-18T15:48:56.186Z",
+      "sha256": "b7d2747c67a610c354235455a095725d57f4743c16631d7eb457176788d7a971",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The term hand luggage or cabin baggage (normally called carry-on in North America) refers to the type of luggage that passengers are allowed to carry along in the passenger compartment of a vehicle instead of a separate cargo compartment.",
+        "Passengers are allowed to carry a limited number of smaller bags with them in the vehicle, which typically contain valuables and items needed during the journey.",
+        "There is normally storage space provided for hand luggage, either under seating, or in overhead lockers."
+      ]
+    }
+  ]
+}

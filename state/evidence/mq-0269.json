@@ -1,0 +1,125 @@
+{
+  "id": "mq-0269",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Comment I.",
+      "publisher": "Oxbow Books",
+      "author": "Sharples, Niall",
+      "published_at": "2008-10-01",
+      "url": "https://doi.org/10.2307/j.ctvh1dmpg.14",
+      "retrieved_at": "2026-10-18T17:10:46.715Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "History of Romania",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=25636",
+      "retrieved_at": "2026-10-18T17:10:46.715Z",
+      "sha256": "b10d259ee68c0ff21a51cc0e87e0077ec0fd189499d6191bb97eafef71f39e40",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "During antiquity, the main population that lived in the area corresponding to modern-day Romania were the Dacians.",
+        "Dacian civilisation prospered from the second century BC to the second century AD, resulting in the establishment of a Dacian kingdom as a regional power.",
+        "Following several wars with the Roman Empire, Dacia was conquered in 106 AD, and the kingdom's core was turned into a Roman province.",
+        "The province was abandoned by 276 AD following several invasions from various barbarian peoples.",
+        "Many Romanian historians believe that the origin of the Romanians can be traced back to the Dacians and Romans intermixing, which in turn formed the basis of the Romanian ethnicity.",
+        "During the early Middle Ages, numerous migratory peoples moved across and settled the territory of Romania.",
+        "A prominent Turkic population also settled Romanian territory, particularly the Cumans.",
+        "Early Romanian culture was martially influenced by these peoples.",
+        "Vlachs – Romance-language speakers in the Balkans – were first clearly attested in the 10th century, inhabiting areas on both sides of the Danube.",
+        "By the 13th century, numerous small Vlach political entities abounded in areas such as Muntenia, Oltenia and Transylvania.",
+        "These political entities gradually unified, and by the mid-14th century, the two major historical Romanian principalities had emerged, Wallachia and Moldavia.",
+        "The principalities partook in many conflicts against their often stronger neighbours, such as the Ottoman Empire."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Stonehenge",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=27633",
+      "retrieved_at": "2026-10-18T17:10:46.715Z",
+      "sha256": "6660bcc2aacdbebbcc64d414d4c7bf0341c65e1afda918a1c06e27e9115685fa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stonehenge is a prehistoric megalithic structure on Salisbury Plain in Wiltshire, England, two miles (3 km) west of Amesbury.",
+        "It consists of an outer ring of vertical sarsen standing stones, each around 13 feet (4.0 m) high, seven feet (2.1 m) wide, and weighing around 25 tons, topped by connecting horizontal lintel stones which are held in place with mortise and tenon joints—a feature unique among contemporary monuments.",
+        "Inside these are free-standing trilithons: two bulkier vertical sarsens joined by a single lintel.",
+        "The whole monument, now in ruins, is aligned towards the sunrise on the summer solstice and sunset on the winter solstice.",
+        "The stones are set within earthworks in the middle of the densest complex of Neolithic and Bronze Age monuments in England, including several hundred tumuli (burial mounds).",
+        "Stonehenge was constructed in several phases, beginning about 3100 BC and continuing until about 1600 BC.",
+        "The famous circle of large sarsen stones was placed between 2600 BC and 2400 BC.",
+        "The surrounding circular earth bank and ditch, which constitute the earliest phase of the monument, have been dated to about 3100 BC.",
+        "Radiocarbon dating suggests that the bluestones were given their current positions between 2400 and 2200 BC, although they may have been at the site as early as 3000 BC.",
+        "One of the most famous landmarks in the United Kingdom, Stonehenge is regarded as a British cultural icon.",
+        "It has been a legally protected scheduled monument since the Ancient Monuments Protection Act 1882 was passed.",
+        "The site and its surroundings were added to UNESCO's list of World Heritage Sites in 1986."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Swastika",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=45943",
+      "retrieved_at": "2026-10-18T17:10:46.715Z",
+      "sha256": "a087fac94cf209df7bcc1ed5d604d90257e47202c4d9489e57405d75c7336152",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The swastika ( SWOS-tih-kə, Sanskrit: [ˈsʋɐstikɐ], Sanskrit Devanagari: स्वस्तिक ; 卐 or 卍) is an ancient cross-cultural geometrical symbol that has been used in many cultures and religions of Eurasia, as well as a few in Africa and the Americas, for thousands of years.",
+        "The swastika was and continues to be used as a symbol of divinity and spirituality in several religions, including Hinduism, Buddhism, and Jainism.",
+        "In the Western world, it is predominantly associated with Nazism, being appropriated and widely displayed in Nazi symbolism.",
+        "This appropriation continues with the symbol's popularity among neo-Nazis around the world.",
+        "The English word swastika is originally of the Sanskrit language (स्वस्तिक, lit.",
+        "In Hinduism, the right-facing symbol (卐) is called swastika, symbolizing surya, prosperity, and good luck; while the left-facing symbol (卍) is sometimes called sauvastika, symbolising night or tantric aspects of Kali.",
+        "In Jain symbolism, it is a part of the Jain flag, and represents Suparshvanatha—the seventh of 24 Tirthankaras (spiritual teachers and saviours).",
+        "In Buddhist symbolism, it represents the auspicious footprints of the Buddha.",
+        "In different Indo-European traditions, the swastika symbolises fire, lightning bolts and the Sun.",
+        "The symbol is found in the archaeological remains of the Indus Valley Civilization and the Neolithic-era Samarra culture of Mesopotamia.",
+        "It has also been recorded in early Byzantine and Christian artwork.",
+        "The swastika was seen as a symbol of auspiciousness and good luck for most of the Western world until the 1930s."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Astorga, Spain",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=73523",
+      "retrieved_at": "2026-10-18T17:10:46.715Z",
+      "sha256": "77e43d06d91d9b6f7fea3bfa44a2c7df9853b906a5d10b59337f0fc27a99b36d",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Astorga (Spanish: [asˈtoɾɣa] , Estorga in the Leonese dialect of Maragatería) is a municipality and city in Spain, located in the Province of León, within the autonomous community of Castile and León.",
+        "Situated at the transition between the Páramo Leonés and the Montes de León, it serves as a central hub for the regions of Maragatería, La Cepeda, and the Ribera del Órbigo.",
+        "The city is the seat of one of Spain's oldest and most extensive dioceses, with jurisdiction over half of the province of León and parts of the provinces of Ourense and Zamora.",
+        "It is also the head of the judicial district number 5 of the province of León.",
+        "Founded as a Roman military camp for the Legio X Gemina in the late 1st century BC, it soon transitioned into a civilian settlement known as Asturica Augusta and became the capital of the Conventus Asturum.",
+        "It developed as a key communication hub in northwestern Iberia and enjoyed prosperity during the first two centuries of the Common Era due to gold mining, earning the description vrbs magnifica from Pliny the Elder.",
+        "By the mid-3rd century, it likely became an episcopal see, with Basílides as its first bishop.",
+        "Following the barbarian invasions, it was part of the Kingdom of the Suebi and was captured by Muslim forces under Tariq in 714, though it was reconquered by the Asturian monarchy later that century.",
+        "In the late 10th century, it faced repeated Muslim assaults led by Almanzor.",
+        "James, the city experienced gradual development, with the Church playing a prominent role.",
+        "In 1465, Henry IV of Castile granted Álvaro Pérez Osorio, Count of Trastámara, Lord of Villalobos, and Castroverde, the title of Marquis of Astorga, transitioning the city from a free status to a feudal condition.",
+        "In the early 19th century, Astorga suffered the consequences of the French occupation and was among the first cities to rise against the French, with a revolt of peasants and laborers on May 2, 1808."
+      ]
+    }
+  ]
+}

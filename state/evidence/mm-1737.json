@@ -1,0 +1,135 @@
+{
+  "id": "mm-1737",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "IMHBCO (In My humble But Correct Opinion) -- Vendors: How To Get Past My Spam Filters",
+      "publisher": "Purdue University (bepress)",
+      "author": "Anderson, Rick",
+      "published_at": "2004-12-01",
+      "url": "https://doi.org/10.7771/2380-176x.4461",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "9fe5f4a23e5bace68fefaadcf4c2e2d86042644eda289d73be4b097570a63b98",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "\"IMHBCO (In My humble But Correct Opinion) -- Vendors: How To Get Past \" by Rick Anderson --> Skip to main content Against the Grain My Account FAQ About the Journal Home Home &gt; Libraries &gt; The Press &gt; PUPOAJ &gt; ATG &gt; Vol.",
+        "1 Search Enter search terms: Select context to search: in this journal in this repository across all repositories Advanced Search ISSN: 2380-176X Elsevier - Digital Commons Home | About | FAQ | My Account | Accessibility Statement Privacy Copyright"
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Ending Spam: Bayesian Content Filtering and the Art of Statistical Language Classification",
+      "publisher": "OpenAlex",
+      "author": "Jonathan Zdziarski",
+      "published_at": "2005-01-01",
+      "url": "https://openalex.org/W1603063705",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "a3ab96f765569e0c11244398834d699ce69a865f62e85667e4733c3cbc2d2366",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Join author John Zdziarski for a look inside the brilliant minds that have conceived clever new ways to fight spam in all its nefarious forms.",
+        "This landmark title describes, in-depth, how statistical filtering is being used by next-generation spam filters to identify and filter unwanted messages, how spam filtering works and how language classification and machine learning combine to produce remarkably accurate spam filters.",
+        "After reading Ending Spam, you'll have a complete understanding of the mathematical approaches used by today's spam filters as well as decoding, tokenization, various algorithms (including Bayesian analysis and Markovian discrimination) and the benefits of using open-source solutions to end spam.",
+        "Zdziarski interviewed creators of many of the best spam filters and has included their insights in this revealing examination of the anti-spam crusade.",
+        "If you're a programmer designing a new spam filter, a network admin implementing a spam-filtering solution, or just someone who's curious about how spam filters work and the tactics spammers use to evade them, Ending Spam will serve as an informative analysis of the war against spammers."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Exploiting machine learning to subvert your spam filter",
+      "publisher": "OpenAlex",
+      "author": "Blaine A. Nelson; Marco Barreno; Fuching Jack Chi",
+      "published_at": "2008-04-15",
+      "url": "https://openalex.org/W2162552722",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "2166ca798127cc9b505855600278508b7697876190088f7d2350fc8967e5a16b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Using statistical machine learning for making security decisions introduces new vulnerabilities in large scale systems.",
+        "This paper shows how an adversary can exploit statistical machine learning, as used in the SpamBayes spam filter, to render it useless—even if the adversary’s access is limited to only 1% of the training messages.",
+        "We further demonstrate a new class of focused attacks that successfully prevent victims from receiving specific email messages.",
+        "Finally, we introduce two new types of defenses against these attacks."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Spamming",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28368",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "dfdf6a271979b87f241e0b7ac0f8e0a588c45356c37c9c8ab682dcf5bef5e045",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Spamming is the use of messaging systems to send multiple unsolicited messages (spam) to large numbers of recipients for the purpose of commercial advertising, non-commercial proselytizing, or any prohibited purpose (especially phishing).",
+        "It can also be repeatedly sending the same message to the same user.",
+        "Similar abuses also occur in other media: instant messaging, Usenet newsgroup, Web search engines, blogs, wiki, online classified ads, mobile phone messaging, Internet forum,  fax transmissions, social spam, mobile apps, television advertising, and file sharing.",
+        "It is named after Spam, a luncheon meat, by way of a Monty Python sketch about a restaurant that has Spam in almost every dish, in which Vikings annoyingly sing \"Spam\" repeatedly.",
+        "Spamming remains economically viable because advertisers have no operating costs beyond the management of their mailing lists, servers, infrastructures, IP ranges, and domain names, and it is difficult to hold senders accountable for their mass mailings.",
+        "The costs, such as lost productivity and fraud, are borne by the public and by Internet service providers, which have added extra capacity to cope with the volume.",
+        "Spamming has been the subject of legislation in many jurisdictions."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Apache SpamAssassin",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=274137",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "f757b28f1f097bc5dada14ae0fb0b171cb36f9308b4859a40f14e58489ae112f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Apache SpamAssassin is a computer program used for e-mail spam filtering.",
+        "It uses a variety of spam-detection techniques, including DNS and fuzzy checksum techniques, Bayesian filtering, external programs, blacklists and online databases.",
+        "It is released under the Apache License 2.0 and is a part of the Apache Foundation since 2004.",
+        "The program can be integrated with the mail server to automatically filter all mail for a site.",
+        "It can also be run by individual users on their own mailbox and integrates with several mail programs.",
+        "Apache SpamAssassin is highly configurable; if used as a system-wide filter it can still be configured to support per-user preferences."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Anti-spam techniques",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=313737",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "5b6a77cf66b0c5eb958c127b03f66304a8c4c16053c49b8c7652c31b1da5dd3c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Various anti-spam techniques are used to prevent email spam (unsolicited bulk email).",
+        "No technique is a complete solution to the spam problem, and each has trade-offs between incorrectly rejecting legitimate email (false positives) as opposed to not rejecting all spam email (false negatives) – and the associated costs in time, effort, and cost of wrongfully obstructing good mail.",
+        "This leads to combinations of the many techniques to achieve the best protection against spam and the potential harms that may come with it, while keeping the emails that should be seen intact.",
+        "Anti-spam techniques can be broken into four broad categories: those that require actions by individuals (end-user techniques), those that can be automated by email administrators, those that can be automated by email senders and those employed by researchers and law enforcement officials."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "CAN-SPAM Act of 2003",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=394063",
+      "retrieved_at": "2026-10-18T15:59:02.371Z",
+      "sha256": "26ae71dfba770d5792c1db8603779465b2c00d477d9fca3276d72f508d3a4394",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Controlling the Assault of Non-Solicited Pornography And Marketing (CAN-SPAM) Act of 2003 is a law passed in 2003 establishing the United States' first national standards for the sending of commercial e-mail.",
+        "The law requires the Federal Trade Commission (FTC) to enforce its provisions.",
+        "Introduced by Republican Conrad Burns, the act passed both the House and Senate during the 108th United States Congress and was signed into law by President George W.",
+        "Bush on December 16, 2003, and was enacted on January 1, 2004."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "mm-1487",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "British Virgin Islands",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3469",
+      "retrieved_at": "2026-10-18T15:54:07.312Z",
+      "sha256": "662ccb7b5cc0ad74df67a735bc4d4f6b09807adecbcd4d67f3095103de3b111e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The British Virgin Islands (BVI), officially the Virgin Islands, is a British Overseas Territory in the Caribbean, to the east of Puerto Rico and the US Virgin Islands and north-west of Anguilla.",
+        "The islands are geographically part of the Virgin Islands archipelago and are located in the Leeward Islands of the Lesser Antilles and part of the West Indies.",
+        "The British Virgin Islands consist of the main islands of Tortola, Virgin Gorda, Anegada and Jost Van Dyke, along with more than 50 other smaller islands and cays.",
+        "The capital, Road Town, is on Tortola, the largest island, which is about 20 km (12 mi) long and 5 km (3 mi) wide.",
+        "The islands had a population of 28,054 at the 2010 Census, of whom 23,491 lived on Tortola; current estimates put the population at 35,802 (July 2018).",
+        "The economy of the territory is overwhelmingly dominated by tourism and financial services, with the territory using the United States dollar.",
+        "In terms of financial services, the territory is known as a leading hub for tax evasion and concealment of assets.",
+        "British Virgin Islanders are British Overseas Territories citizens and, since 2002, also British citizens."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Cayman Islands",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5468",
+      "retrieved_at": "2026-10-18T15:54:07.312Z",
+      "sha256": "a395fd0d5cbf7123096b0f597811efe3acf7d0918b1ca7c0a1bdc0ca4c7f838c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Cayman Islands () is a self-governing British Overseas Territory in the western Caribbean.",
+        "With a population of over 90,000, it is the most populated of all the British Overseas Territories.",
+        "The 264-square-kilometre (102-square-mile) territory comprises the three islands of Grand Cayman, Cayman Brac and Little Cayman, which are located south of Cuba and north-east of Honduras, between Jamaica and Mexico's Yucatán Peninsula.",
+        "The capital city is George Town on Grand Cayman, which is the most populous of the three islands.",
+        "The Cayman Islands is considered to be part of the geographic Western Caribbean zone as well as the Greater Antilles.",
+        "The territory is a major tax haven mainly due to the state charging no tax on income earned or stored.",
+        "With a GDP per capita of $97,750 in 2023, the Cayman Islands has the highest standard of living in the Caribbean, and one of the highest in the world.",
+        "Despite its population of almost 90,000, immigrants from over 140 countries and territories reside in the Cayman Islands."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Canary Islands",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5717",
+      "retrieved_at": "2026-10-18T15:54:07.312Z",
+      "sha256": "1dd6bf146da17a2db6132fabc5806be0fcc64e939bfb1dca8e3f62d6628b43ab",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Canary Islands ( ; Spanish: Canarias [kaˈnaɾjas] ) or Canaries are an archipelago in the Atlantic Ocean and the southernmost autonomous community of Spain, located about 100 kilometres (60 mi) off the northwest coast of Africa.",
+        "The archipelago has a population of approximately 2.27 million inhabitants, making it the most populous overseas special territory of the European Union.",
+        "The seven main islands, listed from largest to smallest by area, are Tenerife, Fuerteventura, Gran Canaria, Lanzarote, La Palma, La Gomera, and El Hierro.",
+        "The only other inhabited island is La Graciosa, which is administratively dependent on Lanzarote.",
+        "The archipelago also includes numerous smaller islands and islets, such as Alegranza, Isla de Lobos, Montaña Clara, Roque del Oeste, and Roque del Este, as well as various rocks, including Garachico and Anaga.",
+        "Historically, the island chain was referred to as \"the Fortunate Isles\".",
+        "The Canary Islands are the southernmost and westernmost region of Spain as well as the largest and most populous archipelago of Macaronesia.",
+        "They are also the largest and most populated archipelago in Spain.",
+        "Owing to their strategic location, the Canary Islands have long been considered a link between Africa, Europe, and the Americas.",
+        "In October 2025, the Canary Islands had a population of 2,268,035, with a density of 305 inhabitants per km2, making them the seventh most populous autonomous community in Spain and the third-highest in population density, behind only Madrid and the Basque Country.",
+        "The population is mostly concentrated on the two capital islands, with around 43% on Tenerife and 39% on Gran Canaria.",
+        "In 2026, the Canary Islands are expected to have a nominal GDP of €64.123 billion, resulting in a GDP per capita of €28,272."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "United States Virgin Islands",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=32135",
+      "retrieved_at": "2026-10-18T15:54:07.312Z",
+      "sha256": "61e8d2df3c3b0cef33357906fd70a8521800e3d10dea6cd777d47d88eb895f14",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The United States Virgin Islands, officially the Virgin Islands of the United States, is a Caribbean unincorporated territory of the United States.",
+        "The islands are geographically part of the Virgin Islands archipelago and are located in the Leeward Islands of the Lesser Antilles.",
+        "Virgin Islands consist of the main islands of Saint Croix, Saint John, and Saint Thomas and 50 other surrounding minor islands and cays.",
+        "The total land area of the territory is 133.73 square miles (346.36 km2).",
+        "The territory's capital is Charlotte Amalie on the island of St.",
+        "Virgin Islands are organized under the 1954 Revised Organic Act of the Virgin Islands and have held five constitutional conventions.",
+        "Virgin Islands elects a delegate who can participate in debates in the House of Representatives but cannot vote.",
+        "The primary economic activities on the islands are tourism and services."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "mm-1424",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Digital Closet",
+      "publisher": "The MIT Press",
+      "author": "Monea, Alexander",
+      "published_at": "2022-04-12",
+      "url": "https://doi.org/10.7551/mitpress/12551.001.0001",
+      "retrieved_at": "2026-10-18T15:49:32.568Z",
+      "sha256": "0a60c357fc3a7fe2b4b9eb609ebe65b30e856a6c165977eafcdf7672b49cf854",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An exploration of how heteronormative bias is deeply embedded in the internet, hidden in algorithms, keywords, content moderation, and more.",
+        "Monea explains how the United States' thirty-year “war on porn” has brought about the over-regulation of sexual content, which, in turn, has resulted in the censorship of much nonpornographic content—including material on sex education and LGBTQ+ activism.",
+        "In this wide-ranging, enlightening account, Monea examines the cultural, technological, and political conditions that put LGBTQ+ content into the closet.",
+        "Finally, he examines the internet architectures responsible for the heteronormalization of porn: Google Safe Search and the data structures of tube sites and other porn platforms.",
+        "Monea reveals the porn industry's deepest, darkest secret: porn is boring.",
+        "Mainstream porn is stuck in a heteronormative filter bubble, limited to the same heteronormative tropes, tagged by the same heteronormative keywords.",
+        "This heteronormativity is mirrored by the algorithms meant to filter pornographic content, increasingly filtering out all LGBTQIA+ content.",
+        "Everyone suffers from this forced heteronormativity of the internet—suffering, Monea suggests, that could be alleviated by queering straightness and introducing feminism to dissipate the misogyny."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Telecommunications in Estonia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9392",
+      "retrieved_at": "2026-10-18T15:49:32.887Z",
+      "sha256": "8f7c9b72b3d8d34b4c4c53165dc66c173143df51e8a44595f96d379640ba985c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Telecommunications in Estonia describes the infrastructure, market, and regulatory environment for telecommunication services in the country.",
+        "Since regaining independence in 1991, Estonia has developed from a poorly connected Soviet republic into one of the world's most advanced digital nations."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Tallinn",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=31577",
+      "retrieved_at": "2026-10-18T15:49:32.887Z",
+      "sha256": "9555a5afff06ec8c803c042269b0ab1fc406b4d87abc6e47c8a59f9f9bf37012",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Located on a bay in northern Estonia, on the shore of the Gulf of Finland of the Baltic Sea, it has a population of 452,563 as of 2026, making it the third most-populous city in the Baltics.",
+        "As of 2024, the population of the Tallinn metropolitan area is estimated at 646,315.",
+        "Tallinn is the main governmental, financial, industrial, and cultural centre of Estonia.",
+        "It is located 187 kilometres (116 mi) northwest of the country's second largest city, Tartu, however, only 80 kilometres (50 mi) south of Helsinki, the capital city of Finland.",
+        "It is also 320 kilometres (200 mi) west of Saint Petersburg, Russia, 300 kilometres (190 mi) north of Riga, Latvia, and 380 kilometres (240 mi) east of Stockholm, Sweden.",
+        "From the 13th century until the first half of the 20th century, Tallinn was known in most of the world by variants of its other historical name, Reval.",
+        "Reval (Tallinn) received Lübeck city rights in 1248; however, the earliest evidence of human settlement in the area dates back almost 5,000 years.",
+        "The medieval indigenous inhabitants of present-day Tallinn and northern Estonia were among the last \"pagan\" peoples in Europe to be Christianised during the papal-sanctioned Northern Crusades in the 13th century.",
+        "The first recorded claim to the area was made by Denmark after a successful raid in 1219 led by King Valdemar II, followed by a period of alternating Scandinavian and Teutonic rulers.",
+        "Due to the strategic location by the sea, its port became a significant trade hub, especially in the 14th to 16th centuries, when Tallinn grew in importance as the northernmost member city of the Hanseatic League.",
+        "Tallinn Old Town is one of the best-preserved medieval cities in Europe and is listed as a UNESCO World Heritage Site.",
+        "In 2012, Tallinn had the highest number of startup companies (per capita) among all capitals and larger cities in Europe."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Electronic voting in Estonia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5048642",
+      "retrieved_at": "2026-10-18T15:49:32.887Z",
+      "sha256": "92a5df5cd86ad4053caf4a8c67fb09c9996d0ba9d9152c40048cb6e12436e3a1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Electronic voting in Estonia gained popularity in 2001 with the \"e-minded\" coalition government.",
+        "In 2005, it became the first nation to hold legally binding general elections over the Internet with their pilot project for municipal elections.",
+        "Estonian election officials declared the electronic voting system a success and found that it withstood the test of real-world use.",
+        "Internet voting was also used in the 2007 Estonian parliamentary election, another world first.",
+        "In 2023 parliamentary elections for the first time more than half of the total votes were cast over the internet."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Estonia",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=28222445",
+      "retrieved_at": "2026-10-18T15:49:32.887Z",
+      "sha256": "1aa47006c046558533323970666dd6ed71a376126c8be995cf24ae41b9219b22",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Estonia, officially the Republic of Estonia, is a country in the Baltic region of Northern Europe.",
+        "It is bordered to the north by the Gulf of Finland across from Finland, to the west by the Baltic Sea across from Sweden, to the south by Latvia, and to the east by Russia.",
+        "The territory of Estonia consists of the mainland, the larger islands of Saaremaa and Hiiumaa, and over 2,300 other islands and islets on the east coast of the Baltic Sea.",
+        "Its capital city of Tallinn, along with the city of Tartu, are the country's two largest urban areas.",
+        "The Estonian language, of the Finnic family, is the official language and the first language of the majority of nearly 1.4 million people.",
+        "Estonia is one of the least populous member states of the European Union.",
+        "Present-day Estonia has been inhabited since at least 9,000 BC.",
+        "The medieval indigenous population of Estonia was one of the last pagan civilisations in Europe to adopt Christianity following the Northern Crusades in the 13th century.",
+        "After centuries of foreign rule by the Teutonic Order, Denmark, Poland, Sweden, and the Russian Empire, a distinct Estonian national identity gained new momentum with the Age of Awakening in the mid-19th century.",
+        "This culminated in the 1918 Estonian Declaration of Independence.",
+        "Democratic throughout most of the interwar period, Estonia declared neutrality at the outbreak of World War II, but the country was repeatedly invaded and occupied, and ultimately annexed into the USSR.",
+        "Throughout the de facto Soviet occupation, from World War II until 1991, Estonia's de jure state continuity was preserved by diplomatic representatives and the government-in-exile."
+      ]
+    }
+  ]
+}

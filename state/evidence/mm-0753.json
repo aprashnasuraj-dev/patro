@@ -1,0 +1,132 @@
+{
+  "id": "mm-0753",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Biden announces a sweeping methane plan – here’s why cutting the greenhouse gas is crucial for protecting climate and health",
+      "publisher": "The Conversation Media Group Ltd",
+      "author": "Shindell, Drew",
+      "published_at": "2021-09-17",
+      "url": "https://theconversation.com/biden-announces-a-sweeping-methane-plan-heres-why-cutting-the-greenhouse-gas-is-crucial-for-protecting-climate-and-health-168220",
+      "retrieved_at": "2026-10-18T15:14:43.031Z",
+      "sha256": "2fbfa8d875c176784bc2dcd764800633763754098cd2ce3a101ddadd9a670f82",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Biden announces a sweeping methane plan – here’s why cutting the greenhouse gas is crucial for protecting climate and health Skip to content Academic rigor, journalistic flair Methane is the world’s second most abundant greenhouse gas, and it’s many times more potent than carbon dioxide.",
+        "plan for reducing emissions of methane, a potent greenhouse gas, at the UN climate summit on Nov.",
+        "He also urged countries to join a global pledge to cut methane emissions 30% this decade.",
+        "The moves are a big deal for efforts to slow climate change – and also for health.",
+        "While methane isn’t as abundant as carbon dioxide, it’s a far more potent greenhouse gas at warming the planet and also a source of unhealthy air pollution.",
+        "plan includes rules being proposed by the Environmental Protection Agency to limit methane emissions from new and existing oil and gas sources, and proposes rules for monitoring methane leaks and expanding pipeline safety standards.",
+        "Other initiatives target methane from agriculture and landfills.",
+        "Drew Shindell , a climate scientist and physicist who led a recent U.N.",
+        "report on methane , explains the urgency and how the benefits of reducing methane emissions far outweigh the costs.",
+        "Methane emissions have been going up very quickly , and research shows they need to drop by nearly half by 2030 to meet the Paris climate agreement goal of keeping global warming under 1.5 degrees Celsius (2.7 F) on the lowest-cost path.",
+        "The new global pledge, if taken up widely and implemented, would dramatically change the world’s methane trajectory.",
+        "It’s an ambitious minimum target, and ideally the 30% will have to be substantially exceeded to increase the chances of methane following a 1.5 C path."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Natural gas",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=22131",
+      "retrieved_at": "2026-10-18T15:14:44.204Z",
+      "sha256": "623b2eb93e2f7de4c46ef3badb55ed552fb126d7310b1123371c2975be34d934",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Natural gas (also gas, methane gas or fossil gas) is a fossil fuel, naturally occurring in geological formations.",
+        "Typically, the gas is a mix of gaseous hydrocarbons, primarily methane (95%), small amounts of higher alkanes, and traces of carbon dioxide and nitrogen, hydrogen sulfide and helium.",
+        "Methane is a colorless and odorless gas, and, after carbon dioxide, is the second-greatest greenhouse gas that contributes to global climate change.",
+        "Because natural gas is odorless, a commercial odorizer, such as methanethiol, that smells of hydrogen sulfide (rotten eggs) is added to the gas for the ready detection of gas leaks.",
+        "Natural gas is a fossil fuel that is formed when layers of organic matter (primarily marine microorganisms) are thermally decomposed under oxygen-free conditions, subjected to intense heat and pressure underground over millions of years.",
+        "The energy that the decayed organisms originally obtained from the sun via photosynthesis is stored as chemical energy within the molecules of methane and other hydrocarbons.",
+        "Most natural gas is collected from underground geological formations, often alongside other fossil fuels like coal and oil (petroleum).",
+        "Natural gas is often a byproduct of petroleum production, where it can either be vented without burning, flared (burned off) or collected.",
+        "The extraction and consumption of natural gas is a major industry.",
+        "According to a 2025 IEA report, demand has increased in recent years.",
+        "When burned for heat or electricity, natural gas emits fewer toxic air pollutants, less carbon dioxide, and almost no particulate matter compared to other fossil fuels.",
+        "However, the natural gas industry is one of the largest drivers of climate change: gas venting and unintended fugitive emissions throughout the supply chain can result in natural gas having a similar or greater carbon footprint to other fossil fuels overall."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Climate change",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=5042951",
+      "retrieved_at": "2026-10-18T15:14:44.204Z",
+      "sha256": "804ac887913cc33bd1a27506e8b9cc17cb7e6eda62986265963205d9d8bd7186",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Present-day climate change includes both global warming—the ongoing increase in global average temperature—and its wider effects on Earth's climate system.",
+        "In a broader sense, climate change also includes previous long-term changes to Earth's climate.",
+        "The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution.",
+        "Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
+        "These gases absorb some of the heat that the Earth radiates after it warms from sunlight, warming the lower atmosphere.",
+        "Earth's atmosphere now has roughly 50% more carbon dioxide, the main gas driving global warming, than it did at the end of the pre-industrial era, reaching levels not seen for millions of years.",
+        "Climate change has an increasingly large impact on the environment.",
+        "Amplified warming in the Arctic has contributed to thawing permafrost, retreat of glaciers and sea ice decline.",
+        "Higher temperatures are also causing more intense storms, droughts, and other weather extremes.",
+        "Rapid environmental change in mountains, coral reefs, and the Arctic is forcing many species to relocate or become extinct.",
+        "Even if efforts to minimize future warming are successful, some effects will continue for centuries.",
+        "These include ocean heating, ocean acidification and sea level rise."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Greenhouse gas emissions",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9528025",
+      "retrieved_at": "2026-10-18T15:14:44.204Z",
+      "sha256": "56b5a72ebf5ac187d1e24794a0ca12f309e9c0e9d985821ff884183b6c821425",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Greenhouse gas emissions (GHG emissions) from human activities intensify the greenhouse effect which contributes to climate change.",
+        "Carbon dioxide (CO2) from burning fossil fuels (such as coal, oil, and natural gas) is the main cause of climate change.",
+        "The largest annual emissions are from China followed by the United States, which has higher emissions per capita.",
+        "The main producers fueling the emissions globally are large oil and gas companies.",
+        "Emissions from human activities have increased atmospheric carbon dioxide by about 50% over pre-industrial levels.",
+        "The growing levels of emissions have varied, but have been consistent among all greenhouse gases.",
+        "Over 60 billion tons were emitted in 2025, higher than any year before.",
+        "Total cumulative emissions from 1870 to 2022 were 703 GtC (2575 GtCO2), of which 484±20 GtC (1773±73 GtCO2) from fossil fuels and industry, and 219±60 GtC (802±220 GtCO2) from land use change.",
+        "Land-use change, such as  deforestation, caused about 31% of cumulative emissions over 1870–2022, coal 32%, oil 24%, and gas 10%.",
+        "Carbon dioxide is the main greenhouse gas resulting from human activities.",
+        "Methane (CH4) emissions have almost the same short-term impact.",
+        "Nitrous oxide (N2O) and fluorinated gases (F-gases) play a lesser role in comparison."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Methane",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=18582230",
+      "retrieved_at": "2026-10-18T15:14:44.204Z",
+      "sha256": "3ae9825133b378c36c135905ea7c84d4a4da04605f05e63b7e529c4453a2897b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Methane (US:  METH-ayn, UK:  MEE-thayn) is a chemical compound that has the chemical formula CH4 (one carbon atom bonded to four hydrogen atoms).",
+        "It is a group-14 hydride, the simplest alkane, and the main constituent of natural gas.",
+        "The abundance of methane on Earth makes it an economically attractive fuel, although capturing and storing it is difficult because it is a gas at standard temperature and pressure.",
+        "In the Earth's atmosphere methane is transparent to visible light but absorbs infrared radiation, acting as a greenhouse gas.",
+        "Methane is an organic hydrocarbon, and among the simplest of organic compounds.",
+        "Naturally occurring methane is found both below ground and under the seafloor and is formed by both geological and biological processes.",
+        "The largest reservoir of methane is under the seafloor in the form of methane clathrates.",
+        "When methane reaches the surface and the atmosphere, it is known as atmospheric methane.",
+        "Methane has also been detected on other planets, including Mars, which has implications for astrobiology research."
+      ]
+    }
+  ]
+}

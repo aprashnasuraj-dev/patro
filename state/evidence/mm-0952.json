@@ -1,0 +1,202 @@
+{
+  "id": "mm-0952",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "The Life and Works of Luca Pacioli (1446/7–1517), Humanist Educator",
+      "publisher": "Wiley",
+      "author": "Sangster, Alan",
+      "published_at": "2021-02-24",
+      "url": "https://doi.org/10.1111/abac.12218",
+      "retrieved_at": "2026-10-18T15:23:27.826Z",
+      "sha256": "358e66d244f00d8e46dd4dc635f625830e0d30e950edb82aa6f240c2fb9f5ad5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Accounting has few heroes, but one that most acknowledge as worthy of that accolade is Luca Pacioli, the man who published the first printed exposition of double entry bookkeeping in 1494.",
+        "This was the publication that led to the development of the accounting systems we use today.",
+        "However, if we consider our literature on Pacioli, it is found to be not just confusing and contradictory, but undecided as to who he was and what he did, or did not do.",
+        "This paper addresses this ambiguity and uncertainty by adopting a critical hermeneutic analysis of the literature in order to present a more authentic perception of the life and works of Luca Pacioli.",
+        "Archival discoveries of the past 20 years are embraced with Pacioli's own writings, and those of others who have sought to identify the man and his ambition.",
+        "The view it reveals shows Pacioli as far more than the peripatetic friar and journeyman teacher of mathematics described in our literature; and it fills a much larger gap than the contradictions and confusion implied in our knowledge of the man who many consider to be the ‘father of accounting’."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Proximity Matters: How External Auditing Impacts Shadow Banking Activities of Chinese Commercial Banks",
+      "publisher": "Wiley",
+      "author": "Li, Wentao; Li, Xue",
+      "published_at": "2025-10-16",
+      "url": "https://doi.org/10.1111/abac.70016",
+      "retrieved_at": "2026-10-18T15:23:27.982Z",
+      "sha256": "25e9d0f148ced1f21fb827d960f53741cf48df243a6871abee20b175193962d6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We explore whether and how external auditing influences bank clients’ shadow banking activities by focusing on the impact of auditor–client geographic proximity.",
+        "Using data from Chinese banks between 2000 to 2020, our findings indicate that the shadow banking activities of commercial banks decrease as auditor–client distance decreases, supporting the professional competence‐enhancement effect.",
+        "Mechanism analyses indicate that nearby auditors have a higher perception of risk and thus charge more audit fees and disclose more key audit matters and suppress shadow banking activities more for bank clients with higher risk.",
+        "Analyses of heterogeneity show that the reduction effect is more pronounced for auditors with lower capabilities, banks facing higher competition, and banks located further from regulators.",
+        "The path analysis demonstrates that geographic proximity between auditors and bank clients can reduce systemic risk by decreasing shadow banking activities.",
+        "Finally, we provide further evidence that the reduction in on‐balance‐sheet shadow banking driven by nearby auditors leads to a partial shift toward off‐balance‐sheet shadow banking activities.",
+        "These findings offer valuable insights for regulators seeking to control shadow banking systems and reduce systemic risks."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Follow the Crowd: How Social Information and Social Identity Influence Investing Decisions",
+      "publisher": "Wiley",
+      "author": "Kuselias, Stephen",
+      "published_at": "2020-05-12",
+      "url": "https://doi.org/10.1111/abac.12188",
+      "retrieved_at": "2026-10-18T15:23:27.982Z",
+      "sha256": "aa55fbfc9cb1aa2b29113e81e8f1bf26a99b88ac526caa558a75a89afded406a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Increasingly, jurisdictions around the world have been enacting standards that formally allow organizations to offer equity using the crowdfunding model.",
+        "Using the Internet, the crowdfunding model raises capital by soliciting from a large number of people (i.e., the crowd).",
+        "A key feature of crowdfunding that has been embraced by regulators is the use of social information to inform investors as a safeguard for this type of investing.",
+        "However, research has not yet explored how investors utilize this information.",
+        "In this study, I investigate whether social information can shift investors away from financial maximization goals.",
+        "Social identity theory predicts that people can be provoked to act as representatives of their group, setting aside individual interests.",
+        "I predict, and find, that positive social information focused on an equity crowdfunding organization can activate the social identity of investors who share an identity with that organization, causing them to invest more in a relatively weak organization.",
+        "In a moderated mediation analysis, I find that positive social information provokes investors who share an identity with an organization to feel a stronger connection to that organization, leading them to increase investment.",
+        "In addition, I explore whether investors’ perceptions of negative social information are moderated by their social identity.",
+        "I find that investors who are deeply committed to an identity shared with an organization experiencing negative social information will defensively invest in that organization.",
+        "The findings of this study will be of interest to investors, regulators, and crowdfunding organizations."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "The History of the Abacus",
+      "publisher": "The Knowledge Bank (The Ohio State University)",
+      "author": "Kevin Samoly",
+      "published_at": "2012-01-01",
+      "url": "https://openalex.org/W2663929039",
+      "retrieved_at": "2026-10-18T15:23:28.991Z",
+      "sha256": "49804ee5f68c457d013388e6ca4e22ed63a5d6b420d9fa71636a7df6423592fb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The abacus is a counting tool that has been used for thousands of years.",
+        "Throughout history, calculating larger numbers has been problematic, especially for the common uneducated merchant.",
+        "Solving problems on an abacus is a quick mechanical process rivaling that of modern-day four-function calculators.",
+        "After first addressing basic counting procedures and memorizing a few simple rules, students can use the abacus to solve a variety of problems.",
+        "The abacus is a timeless computing tool that is still applicable in today’s classrooms."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "From abacus to microchip -- how a computer functions -- a workshop for a German children's museum.",
+      "publisher": "Digital WPI",
+      "author": "Malcolm Henry Beaulieu; Nila Elizabeth Almstrom",
+      "published_at": "1999-01-01",
+      "url": "https://openalex.org/W2963707402",
+      "retrieved_at": "2026-10-18T15:23:29.399Z",
+      "sha256": "c51a5740bde356d7152982704f5a947b85384e8c8252a8646cc0632eb04dae82",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The Kinder-Akademie Fulda, a children's museum in Germany, invited the project team to teach a workshop on computers for 9 to 13-year-olds.",
+        "We entitled the workshop \"From Abacus to Microchip, How a Computer Functions.\" The topics covered were historical number systems and computing machines, binary numbers, the history of computer programming and data storage, how a printer operates, flowcharts, and how to write a simple program in C++.",
+        "The workshop was entirely planned and taught in German by the project team."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Abacus",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=655",
+      "retrieved_at": "2026-10-18T15:23:29.399Z",
+      "sha256": "923fe03e8273b9f7d372ffc9b34a512fc2bf0ae501340bf092dde59787e721be",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "abaci or abacuses), also called a counting frame, is a hand-operated calculating tool which was used from ancient times, in the ancient Near East, Europe, China, and Russia, until largely replaced by handheld electronic calculators, during the 1980s, with some ongoing attempts to revive their use.",
+        "An abacus consists of a two-dimensional array of slidable beads (or similar objects).",
+        "In their earliest designs, the beads could be loose on a flat surface or sliding in grooves.",
+        "Later the beads were made to slide on rods and built into a frame, allowing faster manipulation.",
+        "Each rod typically represents one digit of a multi-digit number laid out using a positional numeral system such as base ten (though some cultures used different numerical bases).",
+        "Roman and East Asian abacuses use a system resembling bi-quinary coded decimal, with a top deck (containing one or two beads) representing fives and a bottom deck (containing four or five beads) representing ones.",
+        "Natural numbers are normally used, but some allow simple fractional components (e.g.",
+        "1⁄2, 1⁄4, and 1⁄12 in Roman abacus), and a decimal point can be imagined for fixed-point arithmetic.",
+        "Any particular abacus design supports multiple methods to perform calculations, including addition, subtraction, multiplication, division, and square roots and cube roots.",
+        "The beads are first arranged to represent a number, then are manipulated to perform a mathematical operation with another number, and their final position can be read as the result (or can be used as the starting number for subsequent operations).",
+        "In the ancient world, abacuses were a practical calculating tool.",
+        "They were widely used in Europe as late as the 17th century, but fell out of use with the rise of decimal notation and algorismic methods."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Anne Brontë",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2029",
+      "retrieved_at": "2026-10-18T15:23:29.399Z",
+      "sha256": "990eca960d5f87b78cda42ffc18070e1ea40557a102e39fa55c31082dbbc96a8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Anne Brontë (, commonly ; 17 January 1820 – 28 May 1849) was an English novelist and poet.",
+        "A member of the Brontë literary family, she was the younger sister of Charlotte, Emily, and Branwell.",
+        "Anne is known for her 1847 novel Agnes Grey and for her 1848 novel The Tenant of Wildfell Hall, which is considered to be one of the first feminist novels.",
+        "Anne was the last of six children born to Patrick Brontë, an Irish clergyman, and Maria Brontë (née Branwell), the daughter of a Cornish merchant.",
+        "Her mother died when Anne was one year old, and her two eldest sisters, Maria and Elizabeth, died when she was four.",
+        "She lived most of her life with her father and three surviving siblings in Haworth, Yorkshire, where her father served as perpetual curate, leaving to attend boarding school in Mirfield between 1836 and 1837 and to work as a governess for a number of families between 1839 and 1845.",
+        "In 1846, she and her sisters, Charlotte and Emily, published a book of poetry, writing under the pseudonyms Acton, Currer, and Ellis Bell.",
+        "Anne's first novel, Agnes Grey, was published as one of a three-volume set which also included Wuthering Heights by her sister Emily.",
+        "After her death, her sister Charlotte wrote a preface and explanatory notice to the new edition of Agnes Grey, but prevented republication of The Tenant of Wildfell Hall, believing it to be \"a mistake.\" This decision harmed Anne's popularity as a writer.",
+        "Nonetheless, both of her novels are now considered classics of English literature."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Emily Brontë",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=9810",
+      "retrieved_at": "2026-10-18T15:23:29.399Z",
+      "sha256": "9a116fa91612274b627d3259211b197b2d5ca8d53dcf21c977fa8acb1b93842a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Emily Jane Brontë (, commonly ; 30 July 1818 – 19 December 1848) was an English writer best known for her 1847 novel Wuthering Heights.",
+        "She also co-authored a book of poetry with her sisters Charlotte and Anne entitled Poems by Currer, Ellis, and Acton Bell.",
+        "Emily was the fifth of six Brontë siblings, four of whom survived into adulthood.",
+        "Her mother, Maria Branwell, died when she was three, leaving the children in the care of their aunt, Elizabeth Branwell.",
+        "Apart from brief intervals at school, Emily was mostly taught at home by her father, Patrick Brontë, who was the curate of Haworth.",
+        "She was very close to her siblings, especially her younger sister Anne, and together they wrote books and journals depicting imaginary worlds named Glass Town, Angria and Gondal.",
+        "She was described by her sister Charlotte as solitary, strong-willed and nonconforming, with a keen love of nature and animals.",
+        "Apart from a brief period at school, and another as a student and teacher in Brussels with her sister Charlotte, Emily spent most of her life at home in Haworth, helping the family servant with chores, playing the piano and teaching herself from books.",
+        "Her work was originally published under the pen name Ellis Bell.",
+        "It was not generally admired at the time, and many critics felt that the characters in Wuthering Heights were coarse and immoral.",
+        "In spite of this, the novel is considered a classic of English literature.",
+        "Emily Brontë died in 1848, aged 30, a year after the novel's publication."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Goldman Sachs",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=335244",
+      "retrieved_at": "2026-10-18T15:23:29.399Z",
+      "sha256": "2113d62d822bc366013de443fd0d42ba9557c849053a2d27211bc84a7ec2acd2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "( SAKS) is an American multinational investment bank and financial services company.",
+        "It was founded in 1869 and is headquartered in the Battery Park City neighborhood of Manhattan in New York City, with offices in many financial centers worldwide.",
+        "Goldman Sachs is one of the largest investment banks by revenue.",
+        "It is ranked 32nd on the Fortune 500 and 19th on the Forbes Global 2000.",
+        "It is considered a systemically important financial institution by the Financial Stability Board."
+      ]
+    }
+  ]
+}

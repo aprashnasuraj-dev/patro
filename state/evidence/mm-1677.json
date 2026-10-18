@@ -1,0 +1,123 @@
+{
+  "id": "mm-1677",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "ICICLE PEOPLE, OR THE LAKE EFFECT SNOW QUEEN",
+      "publisher": "Indiana University Press",
+      "author": "SAWERS, JASMINE",
+      "published_at": "2023-07-04",
+      "url": "https://doi.org/10.2307/jj.2458931.64",
+      "retrieved_at": "2026-10-18T15:58:52.921Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "This may be due to a browser extension, network issues, or browser settings.",
+        "Please check your connection, disable any ad blockers, or try using a different browser."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mackenzie Heritage Printery: a printing museum",
+      "publisher": "RIT Scholar Works (Rochester Institute of Technology)",
+      "author": "Shauna Bream",
+      "published_at": "1999-01-01",
+      "url": "https://openalex.org/W826994026",
+      "retrieved_at": "2026-10-18T15:58:54.403Z",
+      "sha256": "453cbad3e2bfad0394d8365b210da9e622049669f6f1d7004bfd333ddd7541a6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Museums, in their broadest sense, are institutions which hold their possessions in trust for human kind and for the future welfare of the human race.",
+        "They are a valuable asset to society in that they render the emotional and intellectual life of people.",
+        "In simpler terms, it is an institution devoted to the procurement, care, and display of objects of lasting interest and value.",
+        "Also the following information is presented: What are museums i.e.",
+        "Another issue presented that relates to the Mackenzie Heritage Printery Museum is how it can play a role in the lives of students who are in the process of identifying a career; and young adults doing the same.",
+        "The efforts of all involved in this worthy endeavor support the facts against those people who have prophesied the demise of printing and its replacement by video, computer software, or other types of electronic media."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Carnival",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=38483",
+      "retrieved_at": "2026-10-18T15:58:54.403Z",
+      "sha256": "6146782777412852200dff7800b52b7e6338279612a3503f93b2770c2ff9ba49",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Carnival (known as Shrovetide in certain localities) is a festive season at the close of the Christian pre-Lenten period, consisting of Quinquagesima or Shrove Sunday, Shrove Monday, and Shrove Tuesday or Mardi Gras.",
+        "Carnival typically involves public celebrations, including events such as parades, public street parties and other entertainments, combining some elements of a circus.",
+        "Elaborate costumes and masks allow people to set aside their everyday individuality and experience a heightened sense of social unity.",
+        "Participants often indulge in excessive consumption of alcohol, meat, and other foods that will be forgone during upcoming Lent.",
+        "Traditionally, butter, milk, and other animal products were not consumed \"excessively\", rather, their stock was fully consumed during Shrovetide as to reduce waste.",
+        "This festival is known for being a time of great indulgence before Lent (which is a time stressing the opposite), with drinking, overeating, and various other activities of indulgence being performed.",
+        "For example, pancakes, donuts, and other desserts are prepared and eaten for a final time.",
+        "During Lent, dairy and animal products are eaten less, if at all, and individuals make a Lenten sacrifice, thus giving up a certain object of desire (e.g.",
+        "sweets), with the money that would go to purchase what was sacrificed being donated at the church as alms for the poor.",
+        "As such, during the season of Shrovetide, it is customary for Christians to ponder what Lenten sacrifices they will make for the coming Lent.",
+        "The traditions of carrying Shrovetide rods and consuming Shrovetide buns after attending church are celebrated.",
+        "On Shrove Tuesday (the final day of Shrovetide), churches burn these palms to make the ashes used during the services held on the very next day, Ash Wednesday."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Swan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=50952",
+      "retrieved_at": "2026-10-18T15:58:54.403Z",
+      "sha256": "6d92fa6b0f0c2b47f1eeb90aa50211f20169b2fea0ecac40cdbb47bf9c20f0eb",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Swans are birds of the genus Cygnus within the family Anatidae.",
+        "Swans are grouped with the closely related geese in the subfamily Anserinae, forming the tribe Cygnini.",
+        "Sometimes, they are considered a distinct subfamily, Cygninae.",
+        "They are the largest waterfowl and are often among the largest flighted birds in their range.",
+        "There are six living and many extinct species of swan; in addition, there is a species known as the coscoroba swan, which is no longer considered one of the true swans.",
+        "Swans usually mate for life, although separation sometimes occurs, particularly following nesting failure, and if a mate dies, the remaining swan will take up with another.",
+        "The number of eggs in each clutch ranges from three to eight."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Prambanan",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=579539",
+      "retrieved_at": "2026-10-18T15:58:54.403Z",
+      "sha256": "7bd44f8ce4677c045baf30e6f44de96918494fd8a2bed628291f58798cc07d20",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The temple compound is located approximately 17 kilometres (11 mi) northeast of Yogyakarta on the boundary between Central Java and Yogyakarta provinces.",
+        "The temple compound, a UNESCO World Heritage Site, is the largest Hindu temple site in Indonesia and the second-largest in Southeast Asia after Angkor Wat.",
+        "It is characterized by its tall pointed architecture, typical of Hindu architecture, and by the towering 47-metre-high (154 ft) central building inside a large complex of individual temples.",
+        "The compounds originally consisted of 240 temple structures, which represented the grandeur of ancient Java's Hindu art and architecture, and it is also considered a masterpiece of the classical period in Indonesia."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "List of Latin phrases (full)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=4205653",
+      "retrieved_at": "2026-10-18T15:58:54.403Z",
+      "sha256": "9476029a7089880534fedd2ea88db9524a69d26685c8ca29820dd85dfed208f1",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This article lists direct English translations of common Latin phrases.",
+        "Some of the phrases are themselves translations of Greek phrases.",
+        "This list is an automatically updated combination of the twenty lists of Latin phrases starting by a given letter."
+      ]
+    }
+  ]
+}

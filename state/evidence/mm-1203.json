@@ -1,0 +1,186 @@
+{
+  "id": "mm-1203",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Memory",
+      "publisher": "Oxford University PressNew York, NY",
+      "author": "Edelman, Shimon",
+      "published_at": "2008-09-08",
+      "url": "https://doi.org/10.1093/oso/9780195320671.003.0006",
+      "retrieved_at": "2026-10-18T15:40:25.686Z",
+      "sha256": "b356dbcd271e3d0d492e38cb76bf984d07c25d00666f0beab1b7e7b670b2df0a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Abstract Unlike patterns of dry ink on paper, of cuneiform indentations on a clay tablet, or of magnetic flux frozen into the surface of a computer disk, memories that reside in a living brain have a life of their own.",
+        "Some will hover sombrely in the shadows, waiting to snap back at the slightest provocation; some will wander off when set free, never to be heard of again; some will come and go at your bidding; and some will lie low and ignore attempted recall, only to emerge triumphantly when least expected.",
+        "Shedding light on the secret life of memories is central to the understanding of cognition because memory occupies such a prominent place in the theory of computation.",
+        "Strip a Turing Machine of its tape, and you are left with a memory-less automaton, which knows what state it is in, but not, for example, how it got there.",
+        "Behaviorally, such a system is clump of hard-wired slavish reflexes, a circuit that is doomed for all eternity to retrace the same set of tracks through the space of input-state-output combinations."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Money Talks",
+      "publisher": "Princeton University Press",
+      "author": null,
+      "published_at": "2017-04-25",
+      "url": "https://doi.org/10.23943/princeton/9780691168685.001.0001",
+      "retrieved_at": "2026-10-18T15:40:25.686Z",
+      "sha256": "9514b15ff2c57092070c7ae45c1c171db2d74ddb1e68be4929c1f76405240dfa",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The world of money is being transformed as households and organizations face changing economies, and new currencies and payment systems like Bitcoin and Apple Pay gain ground.",
+        "This is the first book to offer a wide range of alternative and unexpected explanations of how social relations, emotions, moral concerns, and institutions shape how we create, mark, and use money.",
+        "The book proposes fresh explanations for money's origins, uses, effects, and future.",
+        "It explores five key questions: How do social relationships, emotions, and morals shape how people account for and use their money?",
+        "How do corporations infuse social meaning into their financing and investment practices?",
+        "What are the historical, political, and social foundations of currencies?",
+        "When does money become contested, and are there things money shouldn't buy?",
+        "What is the impact of the new twenty-first-century currencies on our social relations?",
+        "At a time of growing concern over financial inequality, this book overturns conventional views about money by revealing its profound social potential."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Putting It All Together to Describe “What Science Is and How It Really Works”",
+      "publisher": "Cambridge University Press",
+      "author": null,
+      "published_at": "2019-07-18",
+      "url": "https://www.cambridge.org/core/books/what-science-is-and-how-it-really-works/putting-it-all-together-to-describe-what-science-is-and-how-it-really-works/D5212A55980EDD5B590F1B71CED8C0BF",
+      "retrieved_at": "2026-10-18T15:40:27.077Z",
+      "sha256": "6acd79149d8758cdf2c2ec50d2b79822e3445a84e757859eb9bd529640413647",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Putting It All Together to Describe “What Science Is and How It Really Works” (Chapter 13) - What Science Is and How It Really Works Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge University Press.",
+        "Search Logo for Cambridge Core from Cambridge University Press.",
+        "First and foremost, science is an outgrowth of normal human observation, reasoning, conclusion, and prediction.",
+        "Scientists and nonscientists both depend upon induction and the assumptions it entails – assumptions that are imperfect and don’t always hold.",
+        "They assume that the future will resemble the past to a greater extent than by guessing alone, and they also assume that what one has encountered today is more representative of things not yet encountered than can be arrived at by random guessing.",
+        "Both scientists and nonscientists retroduce causes for the effects they observe, a form of reasoning that suffers from the fallacy of affirming the consequent.",
+        "One needs ongoing observation, and if possible experimentation, to further assess which retroduced causes one should hold onto (at least for now) and which should be rejected (at least for now).",
+        "Scientists and nonscientists both use deduction (or at least a form of reasoning that resembles deduction but may not adhere to strict standards of formal logic) to make further predictions based on their retroduced hypotheses.",
+        "Scientists and nonscientists both have fallacies in their hypothetico-deductive (HD) thinking, make mistaken observations, have cognitive biases, and fall in love with their hypotheses, noticing observations that confirm and ignoring observations that refute.",
+        "Scientists and nonscientists are both susceptible to social pressures, social biases, and manipulation (intentional and unintentional) by the groups and societies in which they find themselves.",
+        "Information Type Chapter Information What Science Is and How It Really Works , pp.",
+        "353 - 380 DOI: https://doi.org/10.1017/9781108569149.014 [Opens in a new window] Publisher: Cambridge University Press Print publication year: 2019 Access options Get access to the full version of this content by using one of the access options below."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How Memory Works",
+      "publisher": "Oxford University Press",
+      "author": "Chun, Marvin M.; Most, Steven B.",
+      "published_at": "2026-03-24",
+      "url": "https://doi.org/10.1093/hesc/9780197771563.003.0006",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "4af32bbacfb2c227574cce3ee7c7c976fecc5df025c181464638ad3677d3ff5a",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "This chapter explains memory as a constructive process, defining it as a set of processes that encode, store, and retrieve information, while distinguishing between short-term memory and long-term memory systems and highlighting how these stages shape experience and behaviour.",
+        "It explains encoding and storage by emphasizing attention, the hippocampal system, amnesia, consolidation, distributed cortical representation, and neural mechanisms such as long-term potentiation that strengthen synaptic connections.",
+        "The chapter describes retrieval and reactivation as processes that reinstate activity across modality-specific brain regions, outlines the complementary roles of the hippocampus and neocortex, and examines interference, familiarity, recollection, and attentional control in successful remembering.",
+        "It evaluates how emotion influences memory by examining flashbulb memories, confidence and distortion, stress effects, and retrograde enhancement, and it applies these principles to studying through strategies such as spacing, attention, and desirable difficulties.",
+        "Finally, the chapter presents evidence-based strategies that improve learning and memory performance."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Can the goldfish see the water? A critical analysis of ‘good intentions’ in cross-cultural practice",
+      "publisher": "Research Commons (University of Waikato)",
+      "author": "Bruce W. Ferguson; Pip Bruce Ferguson",
+      "published_at": "2010-01-01",
+      "url": "https://openalex.org/W1448321",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "1fb2dd593f57a544c3109857eafd4f12f66d36f16daa27a549d5a48d59f7874e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We claim to hold values that our students are responsible and autonomous adults whose success in our courses is best facilitated by our understanding of and respect for their specific backgrounds.",
+        "We wish to be judged on these values by feedback provided by our students and those with whom we work.",
+        "However, how well, if ever, are we able to ‘see the water,’ the cultural conditioning that leads us to act in ways that seem supportive of our students to us, but may be perceived differently by them?",
+        "In this paper, we present conflicting evidence around perceptions of our practice.",
+        "We discuss where things have gone well, and where interventions have possibly been traumatic for the recipients.",
+        "We question whether, and how, our practice cross-culturally can be safe.",
+        "We challenge ourselves and others to think carefully about our responsibilities to our students, whether our privileged positioning obliges us to share and if so, how that sharing can occur in ways that validate and equally respect the values of those with whom we work."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Sandy Skoglund",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=915750",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "6c97247f8b9e71de6f628cef0427d4abaf8436fa17824743b8138fce788e7ad8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Sandy Skoglund (born September 11, 1946) is an American photographer and installation artist.",
+        "Her contributions to photography have advanced the medium as a form of conceptual art.",
+        "She is well known for her intricately designed environments, which utilize painterly and sculptural techniques within staged and performative scenes.",
+        "Her contributions to photography have advanced the medium as a form of conceptual art, and she is considered to be one of the most influential artists working in staged photography.",
+        "Skoglund's art has been the subject of numerous one person exhibitions and retrospectives, and is in the collections of major museums and arts institutions."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "The Dead Past",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=1368999",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "cdb19dfd532b54c27775873f09911c67ab54ad4cd4dcabf71356a865c5bf038e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "\"The Dead Past\" is a science fiction short story by American writer Isaac Asimov, first published in the April 1956 issue of Astounding Science Fiction.",
+        "It was later collected in Earth Is Room Enough (1957) and The Best of Isaac Asimov (1973), and adapted into an episode of the science-fiction television series Out of the Unknown.",
+        "Its pattern is that of dystopian fiction, but of a subtly nuanced flavor."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "My Life in Film",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2994312",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "1f7fdfe5a7e3381c5fcb970966177e0fc2244af176432eec812f731d85ed694e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "My Life in Film is a British television situation-comedy series written by Mark Chappell and originally aired on BBC Three.",
+        "It was directed by first-time television director Toby MacDonald.",
+        "Some of the show's humour is derived from the deliberate adaptation of these films to everyday settings, leading to preposterous results."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Stanley (2001 TV series)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=3319696",
+      "retrieved_at": "2026-10-18T15:40:27.079Z",
+      "sha256": "6300ac7b671eb9ee6b2d8f6c6081de175d279f3d9eb9475eb5d86f8be853e4f7",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Stanley is an American animated children's television series that aired on Playhouse Disney based on the Strange Relations series of children's books created by \"Griff\" (as indicated on the cover of the original book), also known as Andrew Griffin.",
+        "It was produced by Cartoon Pizza and was developed for television by Jim Jinkins (the creator of Doug, PB&J Otter, Allegra's Window, JoJo's Circus, and Pinky Dinky Doo) and David Campbell.",
+        "Stone, and teaches a wide variety of issues young children face, including change, growth, rules, and dealing with others.",
+        "Each episode centers on an animal that deals with or helps explain the issue Stanley is grappling with.",
+        "Bahamian Junkanoo and reggae fusion group Baha Men, who are best known for their hit song \"Who Let the Dogs Out\", sang the series' main theme song, \"My Man Stanley\".",
+        "The series was nominated for Outstanding Achievement in an Animated Television Production Produced for Children by the Annie Awards in 2003."
+      ]
+    }
+  ]
+}

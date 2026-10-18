@@ -1,0 +1,28 @@
+{
+  "id": "mt-0108",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Of Monks, Medieval Scribes, and Middlemen",
+      "publisher": "eYLS (Yale Law School)",
+      "author": "Peter K. Yu",
+      "published_at": "2006-01-01",
+      "url": "https://openalex.org/W2262204951",
+      "retrieved_at": "2026-10-18T16:12:10.410Z",
+      "sha256": "cf30c6b90a33dbca422801a650caaa7360943077dc8d39f0af66b753cca02388",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Today's copyright debate has generally focused on the digital dilemma created by Internet and new media technologies.",
+        "Threats created by emerging communications technologies, however, are not new.",
+        "Throughout history, there have been remarkable similarities between the threats created by new technologies and those posed by older ones.",
+        "During the oral argument in Metro-Goldwyn-Mayer Studios, Inc.",
+        "Grokster, Ltd., Justice Stephen Breyer questioned whether the petitioners' counsel would apply the test proposed for the new technology to some once-new technologies, such as the photocopying machine, the videocassette recorder, the iPod, and the printing press.",
+        "Many legal scholars have described copyright as a response to the emergence of the printing press.",
+        "However, very few have examined the press's impact on a group of contemporary middlemen - the medieval scribes.",
+        "This Essay undertakes this inquiry and explores the impact of the then-new technology on the now-obsolete scribal industry.",
+        "It begins by tracing the emergence of medieval scribes and the printing press and concludes with observations on the policy responses to the challenge created by the Internet and new communications technologies."
+      ]
+    }
+  ]
+}

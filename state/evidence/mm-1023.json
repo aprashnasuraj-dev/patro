@@ -1,0 +1,199 @@
+{
+  "id": "mm-1023",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Mobile Money",
+      "publisher": "Oxford University Press",
+      "author": "Suri, Tavneet",
+      "published_at": "2021-04-01",
+      "url": "https://doi.org/10.1093/oso/9780198851820.003.0010",
+      "retrieved_at": "2026-10-18T15:31:52.334Z",
+      "sha256": "71cc0b1cb7d314f20e25f5417bc057743bdadfd5d5fb3ba018b27c45ea96dfe8",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The chapter focuses on mobile money—one of the most celebrated innovations in the developing economies, that adds service over the mobile phone.",
+        "The chapter highlights the economics behind the product, what may have driven to the wide adoption of mobile money in developing countries and the impacts it has had on the users of the financial product.",
+        "The focus is mainly on the Kenya-based M-PESA given its success, but also discusses more recent innovations that build on mobile money systems to deliver additional financial services and value.",
+        "It is noted that although these innovations exist, they have not given rise to a thriving Fintech sector.",
+        "The chapter therefore also discusses the constraints to the growth of mobile money and what this implies for the future of mobile money in developing economies, and where the most exciting opportunities for research may be."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Mobile Money and Economic Activity: Evidence from Kenya",
+      "publisher": "Published by Oxford University Press on behalf of the World Bank",
+      "author": "Fabregas, Raissa; Yokossi, Tite",
+      "published_at": "2022-05-17",
+      "url": "https://doi.org/10.1596/dspace/60453",
+      "retrieved_at": "2026-10-18T15:31:59.539Z",
+      "sha256": "cec5b4e7e7695eced07cb67f2ba429805e12ad5e38deacbdfdd234dbd94f926f",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "Open Knowledge Repository Maigret Publication: Mobile Money and Economic Activity: Evidence from Kenya Post Like Share Loading...",
+        "The analysis combines data from the early expansion of the mobile agent network in Kenya with a local-level measure of economic performance proxied by the intensity of nighttime lights.",
+        "Leveraging the variation in areas that gained access to mobile money services at different times and the high resolution of the data, the paper shows that access to mobile money services increased local economic activity and that these effects increased over time.",
+        "The positive effects are more pronounced for areas that were initially more affluent, urban, and better connected to infrastructure.",
+        "These results suggest that mobile money can complement, rather than just substitute for, other alternatives that enable people to connect, trade, and allocate investments within their networks.",
+        "Link to Data Set Citation “ Fabregas, Raissa ; Yokossi, Tite .",
+        "Users also downloaded Showing related downloaded files Publication Unlocking the Power of Healthy Longevity ( Washington, DC: World Bank , 2024-09-12 ) World Bank Show more Noncommunicable diseases (NCDs) are among the major health and development challenges of our time.",
+        "This makes up about 74 percent of all deaths globally, the majority of which are in low- and middle-income countries (LMICs).",
+        "The risk of developing NCDs and deaths from them can both be lowered with appropriate attention to prevention and treatment.",
+        "However, weak health systems and limited access to affordable care and information, especially in LMICs, contribute to lapses in seeking and receiving appropriate and timely care.",
+        "This compendium is a compilation of 18 chapters, each exploring a different but related topic in the nexus of NCDs, human capital, and productivity.",
+        "The HLI presents one of a growing set of efforts to increase the urgency of policy response to NCDs across the world."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Mobile Money Regulation: Kenya, Ecuador and Brazil Compared",
+      "publisher": "Elsevier BV",
+      "author": "Groppa, Octavio; Curi, Fernando",
+      "published_at": "2016",
+      "url": "https://doi.org/10.2139/ssrn.2298781",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "9fadae35b03f6dce56762da689c0a1c137620b8fd65ea6163217e3fefedec34e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Regulations concerning digital payment systems, including mobile money, are being discussed in Latin American countries at the moment.",
+        "We describe hereby, the main features of mobile payment systems in Ecuador and Brazil, comparing them with the successful experience in Kenya.",
+        "While Kenya opted for a light regulation which helps to promote the expansion of m-payments in a non-banking framework, Ecuador chose a State-controlled framework, while Brazil is defining its mobile money system within the banking system.",
+        "Finally, we show some hints for debate, with a comparison between cash, e-money and m-money."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "How did the introduction of a mobile money tax in Kenya influence the usage of mobile money",
+      "publisher": "Lund University Publications Student Papers (Lund University)",
+      "author": "Jonas Fehling",
+      "published_at": "2019-01-01",
+      "url": "https://openalex.org/W2971739992",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "7c405b1e59fc32b2e9723047d411c87d37d387831f16ec97825b0c553eaaf139",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The global spread of mobile phones provides developing countries with new opportunities to spark economic growth and to improve the quality of life of their people.",
+        "One specific service that emerged in this context is mobile money.",
+        "Widely recognized as the most successful example is the service M-PESA in Kenya.",
+        "In 2013 Kenya introduced a 10% excise fee on all financial transaction fees, including mobile money.",
+        "This tax was criticized by public media and the mobile money providers for hindering the financial inclusion of the poor.",
+        "This thesis uses a Difference-in-Differences model to estimate the effect of the introduction of the mobile money tax on the usage of mobile money.",
+        "The results show that the observed decline of mobile money transactions in the first quarter of 2013 are part of regional trend rather than caused by the tax.",
+        "The paper cannot explain the cause for this regional phenomenon and therefore calls for further research about macroeconomic factors influencing mobile money usage.",
+        "Finally, a negative effect of taxation on mobile in the case of Kenya in 2013 was not found."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Lead Market Potential of Developing Countries: The Succes of Mobile Money in Kenya",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "author": "Kay Potters",
+      "published_at": "2017-01-01",
+      "url": "https://openalex.org/W2775495260",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "013ca64ccc543f39437e3f256133d01039af14fe9c8e2b97e2cb09f9a222629f",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Mobile money has just started to emerge in Western countries; however Kenyans have already been using phones for transactions for 10 years mainly through the mobile money system MPesa.",
+        "This hints towards a largely ignored innovation potential residing in developing countries that can even allow them to lead the path of innovation for specific sectors.",
+        "To assess the potential for developing countries to become lead markets a framework was created based on the literature of lead markets and frugal innovation, a case study on MPesa and interviews on mobile money.",
+        "The framework can be used for policy makers to assess whether their domestic market is suitable for the market introduction and further development of an innovation, thereby contributing to the effectiveness of innovation policy.",
+        "The lead market potential of developing countries resides mainly in their capability of redefining the fulfilment of basic needs."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Alberto Fujimori",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=148483",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "c2e29f62325fe4541ae4b55ec60b10c8468bf648ec8b108547c89360e747596c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Alberto Kenya Fujimori Inomoto (26 July 1938 – 11 September 2024) was a Peruvian politician, professor, agriculture engineer, and dictator who served as the president of Peru from 1990 to 2000.",
+        "During Fujimori's tenure, the Peruvian Armed Forces repressed the far-left guerrilla group Shining Path, halting the group's actions while also killing thousands of civilians.",
+        "Fujimori became known for his neoliberal political and economic ideology of Fujimorism, which pushed a free market economy and social conservatism.",
+        "He also collaborated with the head of the National Intelligence Service (SIN), Vladimiro Montesinos, to consolidate power and eliminate political opponents.",
+        "Fujimori's presidency was marked by authoritarian measures, excessive use of propaganda, entrenched political corruption, multiple cases of extrajudicial killings, and human rights violations.",
+        "Born in Lima, Fujimori was the country's first president of Japanese descent, and was an agronomist and university rector prior to entering politics.",
+        "Fujimori emerged as a politician during the midst of the internal conflict in Peru, the Peruvian Lost Decade, and the ensuing violence caused by the Shining Path.",
+        "In 1992, during his first presidential term, Fujimori, with the support of SIN and the Peruvian Armed Forces, adopted the military's Plan Verde, targeting members of Peru's indigenous community and subjecting them to forced sterilizations.",
+        "As part of the plan, he also carried out a self-coup against the Peruvian legislature and judiciary.",
+        "Fujimori dissolved the Peruvian Congress and Supreme Court, effectively making him a dictator of Peru.",
+        "The coup was criticized by Peruvian politicians, international governments, intellectuals and journalists, but was well received by the country's private business sector and a substantial part of the public.",
+        "Following the coup d'état, Fujimori drafted a new constitution in 1993, which was approved in a referendum, and was elected as president for a second term in 1995 and controversially for a third term in 2000."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Kenya",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=188171",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "d68f992a2ca21826747e5b9f28ca68639b9e9081902face2aa02093a66c51088",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Kenya, officially the Republic of Kenya, is a country located in East Africa.",
+        "With an estimated population of more than 54.2 million as of mid-2026, it is the 26th-most populous country in the world and the seventh-most populous in Africa.",
+        "The second-largest and oldest city is Mombasa, a port city located on Mombasa Island.",
+        "Other major cities within the country include Kisumu, Nakuru and Eldoret.",
+        "Going clockwise, Kenya is bordered by South Sudan to the northwest, Ethiopia to the north, Somalia to the east, the Indian Ocean to the southeast, Tanzania to the southwest, and Lake Victoria and Uganda to the west.",
+        "In western Rift Valley counties, the landscape includes cold, snow-capped mountaintops (such as Batian, Nelion, and Point Lenana on Mount Kenya) with surrounding forests, wildlife, and fertile agricultural regions in temperate climates.",
+        "In other areas there are dry, arid, and semi-arid climates, as well as absolute deserts (such as the Chalbi Desert and Nyiri Desert).",
+        "Kenya's earliest inhabitants included some of the first humans to evolve from ancestral members of the genus Homo.",
+        "Ample fossil evidence for this evolutionary history has been found at Koobi Fora.",
+        "Later, Kenya was inhabited by hunter-gatherers similar to the present-day Hadza people.",
+        "According to archaeological dating of associated artefacts and skeletal material, Cushitic speakers first settled in the region's lowlands between 3,200 and 1,300 BC, a phase known as the Lowland Savanna Pastoral Neolithic.",
+        "Nilotic-speaking pastoralists (ancestral to Kenya's Nilotic speakers) began migrating from present-day South Sudan into Kenya around 500 BC."
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "Public bank",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=37801828",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "1c2b4f64471f4c49b02717811b1a44baf4ab75a1bea59e69d66a8fbab6a6da62",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A public bank is a bank, a financial institution, in which a state, municipality, or public actors are the owners.",
+        "Prominent among current public banking models are the Bank of North Dakota, the Sparkassen-Finanzgruppe in Germany, and many nations' postal bank systems.",
+        "Public or 'state-owned' banks proliferated globally in the late 19th and early 20th centuries as vital agents of industrialisation in capitalist and socialist countries alike; as late as 2012, state banks still owned and controlled up to 25 per cent of total global banking assets.",
+        "The 2015 Addis Ababa Financing for Development Action Agenda noted that public banks should have an important role in achieving the new Sustainable Development Goals.",
+        "Increasingly, major international financial institutions are recognising the positive and catalytic role public banks can serve in the coming low carbon climate resilient transition.",
+        "Further, international NGOs and critical scholars argue that public banks can play a significant role in financing a just and equitable energy transition."
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "Isis Nyong'o",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=40309727",
+      "retrieved_at": "2026-10-18T15:31:59.544Z",
+      "sha256": "1f3f7816c605b7d8f8f389e9ea8a8a025e29f592859c65259351deb0fa465bde",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Isis Nyong’o Madison is a Kenyan–American media and technology entrepreneur.",
+        "Currently the principal at strategic advisory firm Asphalt & Ink, she has also previously worked with InMobi, Google and MTV Africa.",
+        "is also the founder of Mum's Village, an online platform transforming the mother-child experience in Kenya."
+      ]
+    }
+  ]
+}

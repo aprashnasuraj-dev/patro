@@ -1,0 +1,45 @@
+{
+  "id": "mq-0106",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Geophysical properties within the San Andreas Fault Zone at the San Andreas Fault Observatory at Depth and their relationships to rock properties and fault zone structure",
+      "publisher": "American Geophysical Union (AGU)",
+      "author": "Jeppson, Tamara N.; Bradbury, Kelly K.; Evans, James P.",
+      "published_at": "2010-12",
+      "url": "https://doi.org/10.1029/2010jb007563",
+      "retrieved_at": "2026-10-18T17:02:51.915Z",
+      "sha256": "38b13e7601081d704eeec81709fc465d21ff6626069a778d6ac0a4e7b65b2c2e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "We examine the relationships between borehole geophysical data and physical properties of fault‐related rocks within the San Andreas Fault as determined from data from the San Andreas Fault Observatory at Depth borehole.",
+        "Geophysical logs, cuttings data, and drilling data from the region 3‐ to 4‐km measured depth of the borehole encompass the active part of the San Andreas Fault.",
+        "The fault zone lies in a sequence of deformed sandstones, siltstone, shale, serpentinite‐bearing block‐in‐matrix rocks, and sheared phyllitic siltstone.",
+        "The borehole geophysical logs reveal the presence of a low‐velocity zone from 3190 to 3410 m measured depth with V p and V s values 10–30% lower than the surrounding rocks and a 1–2 m thick zone of active shearing at 3301–3303 m measured depth.",
+        "Seven low‐velocity excursions with increased porosity, decreased density, and mud‐gas kick signatures are present in the fault zone.",
+        "Geologic data on grain‐scale deformation and alteration are compared to borehole data and reveal weak correlations and inverse relationships to the geophysical data.",
+        "In places, V p and V s increase with grain‐scale deformation and alteration and decrease with porosity in the fault zone.",
+        "The low‐velocity zone is associated with a significant lithologic and structural transition to low‐velocity rocks, dominated by phyllosilicates and penetratively foliated, sheared rocks.",
+        "The zone of active shearing and the regions of low sonic velocity appear to be associated with clay‐rich rocks that exhibit fine‐scale foliation and higher porosities that may be a consequence of the fault‐related shearing of foliated and fine‐grained sedimentary rocks."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "San Andreas Fault Zone, California: M &gt;=5.5 Earthquake History",
+      "publisher": "Seismological Society of America (SSA)",
+      "author": "Toppozada, T. R.",
+      "published_at": "2002-10-01",
+      "url": "https://doi.org/10.1785/0120000614",
+      "retrieved_at": "2026-10-18T17:02:53.265Z",
+      "sha256": "ff0ee7d538f8ebad057e600d372163571df4c931d4acd63d1551f105fd5d518b",
+      "rendered": false,
+      "scraped": true,
+      "excerpts": [
+        "San Andreas Fault Zone, California: M &gt;=5.5 Earthquake History San Andreas Fault Zone, California: M &gt;=5.5 Earthquake History Publication Bulletin of the Seismological Society of America Record type Journal article Published 1 October 2002 Authors T.",
+        "Toppozada DOI https://doi.org/10.1785/0120000614 The publisher of this work supports multiple resolution .",
+        "Toppozada&#39;, &#39;chairs&#39;: None, &#39;supplementary_ids&#39;: None} https://doi.org/10.1785/0120000614 JSON XML"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "mm-0112",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Luck",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=192727",
+      "retrieved_at": "2026-10-18T14:55:08.959Z",
+      "sha256": "ea6cd10cc474762a070c3416a3535c0885a8d9eaeab9fbe57a27ee8e45870ac5",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Luck is a phenomenon or belief that humans may associate with experiencing improbable events, especially improbably positive or negative events.",
+        "Philosophical naturalism, eschewing any supernatural explanations, might suggest that positive or negative events may happen at any time (due to both random and non-random natural and artificial processes), and that even improbable events can happen by random chance.",
+        "In this view, the epithet \"lucky\" or \"unlucky\" is a descriptive label that refers to an event's positivity, negativity, or improbability.",
+        "Supernatural interpretations of luck consider it to be an attribute of a person\nor of an object, or the result of a favorable (or unfavorable) view manifested by a deity\ntowards the lucky (or unlucky) person.",
+        "These interpretations often prescribe how luckiness or unluckiness can be obtained, such as by carrying a lucky charm or offering sacrifices or prayers to a deity.",
+        "Many superstitions are associated with luck,\nSuch superstitions are often specific to a given culture\nor set of related cultures.",
+        "For example, lucky symbols include the number 7 in Christian-influenced cultures and the number 8 in Chinese-influenced cultures.",
+        "Unlucky symbols and events include entering and leaving a house by different doors or breaking a mirror in Greek culture, throwing rocks into a whirlwind in Navajo culture, and ravens in Western culture.",
+        "Some of these associations may derive from related facts or desires.",
+        "For example, in Western culture opening an umbrella indoors might be considered unlucky partly because it could poke someone in the eye, whereas shaking hands with a chimney sweep might be considered lucky partly because it is a kind but unpleasant thing to do given the dirty nature of their work.",
+        "In Chinese  and Japanese culture, the association of the number 4 as a homophone with the word for death may explain why it is considered unlucky.",
+        "Extremely complicated and sometimes contradictory systems for prescribing auspicious and inauspicious times and arrangements of things have been devised, for example feng shui in Chinese culture and systems of astrology in various cultures around the world."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "O Lucky Man!",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=317828",
+      "retrieved_at": "2026-10-18T14:55:08.959Z",
+      "sha256": "25a894a7172827e63db459869d87d1aeed19da9923c27aaada340578a1672ef2",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "is a 1973 British surrealist comedy-drama fantasy film directed by Lindsay Anderson and starring Malcolm McDowell as Mick Travis, whom McDowell had first played as a disaffected public schoolboy in his first film performance in Anderson's if....",
+        "is the second film in the Mick Travis Trilogy, all starring McDowell, concluding with Britannia Hospital (1982)."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why the lucky stiff",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=2648440",
+      "retrieved_at": "2026-10-18T14:55:08.959Z",
+      "sha256": "f9d077887dde732d9eed8218998f20a68f18738c5a837a4da5f89e30f246ef62",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Jonathan Gillette, known by the pseudonym  why the lucky stiff (often abbreviated as _why), is a writer, cartoonist, artist, and programmer notable for his work with the Ruby programming language.",
+        "Annie Lowrey described him as \"one of the most unusual, and beloved, computer programmers\" in the world.",
+        "Along with Yukihiro Matsumoto and David Heinemeier Hansson, he was seen as one of the key figures in the Ruby community.",
+        "Lowrey has speculated that _why's pseudonym might be an allusion to the exclamation \"Why, the lucky stiff!\" from The Fountainhead.",
+        "_why made a presentation enigmatically titled \"A Starry Afternoon, a Sinking Symphony, and the Polo Champ Who Gave It All Up for No Reason Whatsoever\" at the 2005 O'Reilly Open Source Convention.",
+        "It explored how to teach programming and make the subject more appealing to adolescents.",
+        "_why gave a presentation and performed with his band, the Thirsty Cups, at RailsConf in 2006.",
+        "On 19 August 2009, _why's accounts on Twitter and GitHub and his personally maintained websites went offline.",
+        "Shortly before he disappeared, _why tweeted, \"programming is rather thankless.",
+        "u see your works become replaced by superior ones in a year.",
+        "unable to run at all in a few more.\"\n_why's colleagues have assembled collections of his writings and projects.",
+        "In 2012, his website briefly went back online with a detailed explanation of his plans for the future."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Happy-Go-Lucky (2008 film)",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=14286254",
+      "retrieved_at": "2026-10-18T14:55:08.959Z",
+      "sha256": "12858b5bae55f3781e2ab27821a6a9c7f811acadbd9df7a8060febebd2d6085e",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Happy-Go-Lucky is a 2008 British comedy-drama film, written and directed by Mike Leigh.",
+        "It stars Sally Hawkins as a cheerful and optimistic London primary school teacher, with Eddie Marsan and Alexis Zegerman in supporting roles.",
+        "Happy-Go-Lucky premiered on 12 February 2008 at the 58th Berlin International Film Festival, where Hawkins won the Silver Bear for Best Actress.",
+        "Upon its wide release in April, the film went on to gross $18.7 million at the worldwide box office.",
+        "Happy-Go-Lucky was well received by critics, who praised Leigh's direction and screenplay, as well as the performances of Hawkins and Marsan.",
+        "At the 66th Golden Globe Awards, Hawkins won Best Actress in a Motion Picture – Musical or Comedy.",
+        "At the 81st Academy Awards, Leigh was nominated for Best Original Screenplay."
+      ]
+    }
+  ]
+}

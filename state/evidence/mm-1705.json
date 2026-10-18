@@ -1,0 +1,146 @@
+{
+  "id": "mm-1705",
+  "evidence": [
+    {
+      "id": "s1",
+      "title": "Interest Rate Risk of Savings Accounts",
+      "publisher": "Elsevier BV",
+      "author": "Witzany, Jiri; Diviš, Martin",
+      "published_at": "2021",
+      "url": "https://doi.org/10.2139/ssrn.3859429",
+      "retrieved_at": "2026-10-18T15:58:56.730Z",
+      "sha256": "3e7947fd1615a2b11c1c836176fc62ee5d00a6c9a023a24718a6cd3d337a5257",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Interest rate risk measurement and management of non-maturity deposit balances presents a challenge for practitioners and academic researchers as well.",
+        "The paper provides a review of several methodological approaches focusing on the area of savings accounts rate sensitivity modeling and estimation.",
+        "The proposed models are tested on a Czech banking sector dataset providing mixed results regarding the cointegration type models generally recommended in the literature.",
+        "On the other hand, the analysis shows that simpler regression models may provide more robust results if the cointegration tests between the saving accounts rate and the market rate series fail."
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "From Severance Pay to Self-Insurance: Effects of Severance Payments Savings Accounts in Colombia",
+      "publisher": "Elsevier BV",
+      "author": "Kugler, Adriana Debora",
+      "published_at": "2002",
+      "url": "https://doi.org/10.2139/ssrn.300651",
+      "retrieved_at": "2026-10-18T15:58:56.730Z",
+      "sha256": "6c81894d002dd498b2534f842eac53799c21ca26f62861918ef6b525f828f874",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "In 1990 Colombia replaced its traditional system of severance payments with a new systemof severance payments savings accounts (SPSAs).",
+        "Although severance payments often arejustified on the grounds that they provide insurance against earnings loss, they also increasecosts for employers and distort employment decisions.",
+        "The impact of severance paymentsdepends largely on how much of the costs to employers can be shifted to workers.",
+        "Thetheoretical analysis in this paper shows that, in contrast to a traditional system of severancepayments, the system of SPSAs facilitates the shifting of severance payments costs toworkers in the form of lower wages."
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Why foreign savings fail to cause growth",
+      "publisher": "LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas)",
+      "author": "Paulo Gala; Luiz Carlos Bresser‐Pereira",
+      "published_at": "2008-10-16",
+      "url": "https://openalex.org/W3021818884",
+      "retrieved_at": "2026-10-18T15:58:58.232Z",
+      "sha256": "60a87b2ff44e12f286007675f4d79e336586a05a098f051aef1f242ca5dac533",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "The present paper is a formalization of the critique of the growth with foreign savings strategy that one of its authors has been doing in recent years.",
+        "In consequence, the rate of substitution of foreign savings for domestic savings will be relatively high, and the country gets indebted not to invest and grow but to consume.",
+        "In this special case, the rate of substitution of foreign for domestic savings tend to be small and foreign savings will contribute positively to growth."
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Interest rate",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=163115",
+      "retrieved_at": "2026-10-18T15:58:58.232Z",
+      "sha256": "395fa93d21b7f87625f126f759eb4e1fd0a6a77b3d87183806cddd03ca13783c",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "An interest rate is the amount of interest due per period, as a proportion of the amount lent, deposited, or borrowed.",
+        "Interest rate periods are ordinarily a year and are often annualized when not.",
+        "Alongside interest rates, three other variables determine total interest: principal sum, compounding frequency, and length of time.",
+        "Interest rates reflect a borrower's willingness to pay for money now over money in the future.",
+        "In debt financing, companies borrow capital from a bank, in the expectation that the borrowed capital may be used to generate a return on investment greater than the interest rates.",
+        "Failure of a borrower to continue paying interest is an example of default, which may be followed by bankruptcy proceedings.",
+        "In monetary policy and macroeconomics, the term \"interest rate\" is often used as shorthand for a central bank's policy rate, such as the United States Federal Reserve's federal funds rate.",
+        "\"Interest rate\" is also sometimes used synonymously with overnight rate, bank rate, base rate, discount rate, coupon rate, repo rate, prime rate, yield to maturity, and internal rate of return."
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "Transaction account",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=455062",
+      "retrieved_at": "2026-10-18T15:58:58.232Z",
+      "sha256": "d455dc19f522c7b4c26eb8afe3920ca64934aca2431b4ba6185c26d9e861c093",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A transaction account (also called a checking account, cheque account, chequing account, current account, demand deposit account, or share account at credit unions) is a deposit account or bank account held at a bank or other financial institution.",
+        "It is available to the account owner \"on demand\" and is available for frequent and immediate access by the account owner or to others as the account owner may direct.",
+        "Access may be in a variety of ways, such as cash withdrawals, use of debit cards, cheques and electronic transfer.",
+        "In economic terms, the funds held in a transaction account are regarded as liquid funds.",
+        "Transaction accounts are known by a variety of descriptions, including a current account (British English), chequing account or checking account when held by a bank, share draft account when held by a credit union in North America.",
+        "In the Commonwealth of Nations, United Kingdom, Hong Kong, India, Ireland, Australia, New Zealand, Singapore, Malaysia, South Africa and a number of other countries they are commonly called current or, before the demise of cheques, cheque accounts.",
+        "Because money is available on demand they are also sometimes known as demand accounts or demand deposit accounts.",
+        "In the United States, NOW accounts operate as transaction accounts.",
+        "Transaction accounts are operated by both businesses and personal users.",
+        "Depending on the country and local demand economics earning from interest rates varies.",
+        "Again depending on the country the financial institution that maintains the account may charge the account holder maintenance or transaction fees or offer the service free to the holder and charge only if the holder uses an add-on service such as an overdraft."
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Health savings account",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=797776",
+      "retrieved_at": "2026-10-18T15:58:58.232Z",
+      "sha256": "e0763f458f70a41d79e888f559f1c22a4de8bee02f7ce4284345f9eca2793cc6",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "A health savings account (HSA) is a tax-advantaged medical savings account available to taxpayers in the United States who are enrolled in a high-deductible health plan (HDHP).",
+        "The funds contributed to an account are not subject to federal income tax at the time of deposit.",
+        "Unlike a flexible spending account (FSA), HSA funds roll over and accumulate year to year if they are not spent.",
+        "HSAs are owned by the individual, which differentiates them from company-owned Health Reimbursement Arrangements (HRA) that are an alternate tax-deductible source of funds paired with either high-deductible health plans or standard health plans.",
+        "HSA funds may be used to pay for qualified medical expenses at any time without federal tax liability or penalty.",
+        "Beginning in early 2011 over-the-counter medications could not be paid with an HSA without a doctor's prescription, although that requirement was lifted as of January 1, 2020.",
+        "Withdrawals for non-medical expenses are treated very similarly to those in an individual retirement account (IRA) in that they may provide tax advantages if taken after retirement age, and they incur penalties if taken earlier.",
+        "The accounts are a component of consumer-driven health care.",
+        "Proponents of HSAs believe that they are an important reform that will help reduce the growth of health care costs and increase the efficiency of the health care system.",
+        "Opponents observe that the structure of HSAs complicates the decision of whether to obtain medical treatment, by setting it against tax liability and retirement-saving goals.",
+        "There is also debate about consumer satisfaction with these plans."
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "Postal savings system",
+      "publisher": "Wikipedia",
+      "author": null,
+      "published_at": null,
+      "url": "https://en.wikipedia.org/?curid=969113",
+      "retrieved_at": "2026-10-18T15:58:58.232Z",
+      "sha256": "de8d26cf6f174577c5eed47cd2745cceda2947faf3760fdbb11dd2d42f68ff7b",
+      "rendered": false,
+      "scraped": false,
+      "excerpts": [
+        "Postal savings systems a form of banking offered in conjunction with post office services, often in rural or isolated areas that do not have traditional banking.",
+        "Postal saving systems can provide financial services to unbanked depositors otherwise do not have access to banking."
+      ]
+    }
+  ]
+}
