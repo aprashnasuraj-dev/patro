@@ -1,0 +1,112 @@
+{
+  "id": "mm-0632",
+  "type": "topic",
+  "slug": "how-the-metric-system-was-created-perspectives",
+  "title": "How the Metric System Was Created: 7 Expert Perspectives Compared",
+  "description": "Evidence dossier for research question: How the Metric System Was Created: 7 Expert Perspectives Compared. Not approved for publication.",
+  "intent": "Answer: How the metric system was created",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How the Metric System Was Created: 7 Expert Perspectives Compared\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow the metric system was created\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Helping Soldiers Heal\n\nPublisher: Cornell University Press\n\nURL: https://doi.org/10.7591/cornell/9781501760501.001.0001\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “This book tells the story of the US Army's transformation from a disparate collection of poorly standardized, largely disconnected clinics into one of the nation's…”\n\n## Evidence record 2: Leading a Learning System\n\nPublisher: Cornell University Press\n\nURL: https://doi.org/10.7591/cornell/9781501760501.003.0009\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “This chapter highlights the importance of leaders and leadership in a learning behavioral health system.”\n\n## Evidence record 3: Introduction\n\nPublisher: Cornell University Press\n\nURL: https://doi.org/10.7591/cornell/9781501760501.003.0001\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “This introductory chapter provides a background of how the US Army created a well-defined mental health care system with patient-centered, recovery-oriented care as its foundation,…”\n\n## Evidence record 4: Organizing a Learning Health Care System\n\nPublisher: Cornell University Press\n\nURL: https://doi.org/10.7591/cornell/9781501760501.003.0004\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “This chapter examines the US Army's pursuit of a learning mental health system.”\n\n## Evidence record 5: International System of Units\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26764\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “The International System of Units, internationally known by the abbreviation SI (from its official French name, Système international d'unités), is the modern form of the…”\n\n## Evidence record 6: Metric prefix\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26874\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “A metric prefix is a unit prefix that precedes a basic unit of measure to indicate a multiple or submultiple of the unit.”\n\n## Evidence record 7: Metric system\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=44142\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “A system of measurement is a frame in which physical qualities (such as length, weight, temperature, etc.) can be quantified with numbers.”\n\n## Evidence record 8: Metric time\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=47014\n\nRetrieved: 2026-10-18T21:06:35.617Z\n\n### Stored passages\n\n- “Metric time is the measure of time intervals using the metric system.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.001.0001",
+      "title": "Helping Soldiers Heal",
+      "publisher": "Cornell University Press",
+      "published_at": "2021-12-15",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "3a2f4586d05514e6ae5951af2e60fae92d4caacd0a71db71eea2b0354ed13a3a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0009",
+      "title": "Leading a Learning System",
+      "publisher": "Cornell University Press",
+      "published_at": "2021-12-15",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "a05193df68f3f8440860f8caa644cbd1398ee1ba8ac9bdce6265d8f2d8171bd5",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0001",
+      "title": "Introduction",
+      "publisher": "Cornell University Press",
+      "published_at": "2021-12-15",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "a3a835a21876a44aad6188cc688b3d8601faec5af0fbbb1e09bd3694ef8d74c4",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.7591/cornell/9781501760501.003.0004",
+      "title": "Organizing a Learning Health Care System",
+      "publisher": "Cornell University Press",
+      "published_at": "2021-12-15",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "fe2c3379a9aab9c9ccc8a4e114d22c8fba10a4486034357fcec924f7af42a7fd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=26764",
+      "title": "International System of Units",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "db5a76d8e4cf8adf030abb0f859d4c368da19027da5c486ee156bd8e15c86ab3",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=26874",
+      "title": "Metric prefix",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "57f6752da756f159b02acd7fbc1f5e9142537f2d8f85cc54fce8999f18dd9d3f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=44142",
+      "title": "Metric system",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "d50b3a44301afcd58c0e42bc814c7ad96a9acd4e22c6fb1d8e0687d54a024200",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=47014",
+      "title": "Metric time",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:06:35.617Z",
+      "sha256": "3c90b9e12c6133dc6cffcdcffb0b53925d3ca5b0985b5bee412ac22a706cd0eb",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:58:03.042Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
