@@ -8,6 +8,10 @@ on:
       - "missionmangal/tests/**"
   workflow_dispatch:
     inputs:
+      batch_index:
+        description: "Zero-based batch index (50 topics each)"
+        default: "0"
+        required: true
       workers:
         description: "Parallel v2 workers"
         default: "20"
@@ -80,6 +84,10 @@ jobs:
           find missionmangal/state -mindepth 1 -maxdepth 1 -type d | sort
       - name: Reconcile every reserved topic and cached evidence
         run: node missionmangal/v2/plan.mjs
+      - name: Select stable 50-topic batch after v1 reconciliation
+        env:
+          BATCH_INDEX: ${{ inputs.batch_index }}
+        run: node missionmangal/v2/batch.mjs --index "${BATCH_INDEX:-0}"
       - name: Provider preflight (fail over without burning topic attempts)
         run: node missionmangal/v2/preflight.mjs
       - id: cfg
@@ -101,6 +109,8 @@ jobs:
           path: |
             missionmangal/state
             missionmangal/v2-work/plan.json
+            missionmangal/v2-work/full-plan.json
+            missionmangal/v2-work/batch-manifest.json
             missionmangal/v2-work/health.json
           retention-days: 14
           if-no-files-found: warn
