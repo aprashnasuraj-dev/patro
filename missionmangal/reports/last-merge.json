@@ -1,0 +1,12 @@
+{
+  "approved": 1,
+  "review": 1,
+  "dupImages": 0,
+  "blocked": {
+    "GROUNDING_FAILED": 82,
+    "NEEDS_RESEARCH": 3635,
+    "NO_PROVIDER": 1234,
+    "INLINE_CITATION_FAILED": 1
+  },
+  "at": "2026-10-19T00:05:58.280Z"
+}

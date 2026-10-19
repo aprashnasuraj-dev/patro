@@ -2248,7 +2248,7 @@
     "url": "https://aafnaipatro.com/why-we-forget-names-data/",
     "intent": "Answer: Why we forget names",
     "author": "Suraj Dahal",
-    "status": "reserved",
+    "status": "review",
     "meta": {
       "category": "Mind & Psychology",
       "format": "Data Story",
@@ -2263,7 +2263,8 @@
         "Our World in Data",
         "Wikidata"
       ]
-    }
+    },
+    "updated_at": "2026-10-19T00:05:58.196Z"
   },
   {
     "id": "mm-0093",
@@ -13512,7 +13513,7 @@
     "url": "https://aafnaipatro.com/how-babies-pick-up-accents/",
     "intent": "Answer: How babies pick up accents",
     "author": "Suraj Dahal",
-    "status": "reserved",
+    "status": "approved",
     "meta": {
       "category": "Language, Words & Culture",
       "format": "Deep-Dive Article",
@@ -13528,7 +13529,9 @@
         "REST Countries",
         "OpenAlex/CrossRef"
       ]
-    }
+    },
+    "updated_at": "2026-10-19T00:05:40.493Z",
+    "published_at": "2026-10-19T00:05:40.493Z"
   },
   {
     "id": "mm-0550",

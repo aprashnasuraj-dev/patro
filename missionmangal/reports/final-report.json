@@ -1,0 +1,11 @@
+{
+  "total": 5000,
+  "by_status": {
+    "reserved": 4998,
+    "review": 1,
+    "approved": 1
+  },
+  "render_ok": 1,
+  "demoted": [],
+  "at": "2026-10-19T00:05:58.442Z"
+}

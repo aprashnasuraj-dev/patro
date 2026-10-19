@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-19T00:05:58.499Z",
+  "totals": {
+    "queued": 2,
+    "approved": 1,
+    "review": 0,
+    "blocked": 1,
+    "retry_later": 0,
+    "stopped_for_budget": 0,
+    "stopped_for_deadline": 0,
+    "discovered_sources": 0
+  },
+  "outcomes_by_route": {
+    "general/blocked": 1,
+    "general/approved": 1
+  },
+  "providers": {
+    "groq": {
+      "used": 2,
+      "dead": false
+    },
+    "openrouter": {
+      "used": 2,
+      "dead": false
+    },
+    "gemini": {
+      "used": 2,
+      "dead": false
+    },
+    "pollinations": {
+      "used": 1,
+      "dead": false
+    }
+  }
+}
