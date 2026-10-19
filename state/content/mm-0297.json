@@ -1,0 +1,114 @@
+{
+  "id": "mm-0297",
+  "type": "topic",
+  "slug": "how-gps-knows-your-location",
+  "title": "How GPS Knows Your Location: The Answer May Surprise You",
+  "description": "Evidence dossier for research question: How GPS Knows Your Location: The Answer May Surprise You. Not approved for publication.",
+  "intent": "Answer: How GPS knows your location",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How GPS Knows Your Location: The Answer May Surprise You\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow GPS knows your location\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Dominic Cummings: how the internet knows when you’ve updated your blog\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/dominic-cummings-how-the-internet-knows-when-youve-updated-your-blog-139517\n\nRetrieved: 2026-10-18T14:54:06.815Z\n\n### Stored passages\n\n- “Last year I wrote about the possible threat of coronaviruses and the urgent need for planning.”\n\n## Evidence record 2: YOUR SUNGLASSES ARE IN THE MILKY WAY\n\nPublisher: Harvard University Press\n\nURL: https://doi.org/10.2307/j.ctt9qdt4n.10\n\nRetrieved: 2026-10-18T14:54:07.101Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 3: How your body knows to shout ‘ouch’\n\nPublisher: The Science Breaker\n\nURL: https://doi.org/10.25250/thescbr.brk487\n\nRetrieved: 2026-10-18T14:54:10.061Z\n\n### Stored passages\n\n- “Our body judges whether a physical force is “dangerous” depending on its intensity to decide if it is worth feeling painful to protect itself against…”\n\n## Evidence record 4: Intelligent Transportation System(Apps):GPS Based Tracking\n\nPublisher: OpenAlex\n\nURL: https://openalex.org/W2790471033\n\nRetrieved: 2026-10-18T14:54:10.062Z\n\n### Stored passages\n\n- “A vehicle tracking system (VTS) can determine the location of a Vehicle using smartphone and displays the point on a map.”\n\n## Evidence record 5: How to Choose a GPS Fleet Management System: What Features Are Right for You?\n\nPublisher: Management Quarterly\n\nURL: https://openalex.org/W12969590\n\nRetrieved: 2026-10-18T14:54:10.062Z\n\n### Stored passages\n\n- “Operating an efficient business is a priority for every business.”\n\n## Evidence record 6: Intelligent positioning : GIS-GPS unification\n\nPublisher: OpenAlex\n\nURL: https://openalex.org/W433465391\n\nRetrieved: 2026-10-18T14:54:10.062Z\n\n### Stored passages\n\n- “6 Intelligent Map Matching Using 'Mapping Dilution of Precision' (MDOP).”\n\n## Evidence record 7: Global Positioning System\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=11866\n\nRetrieved: 2026-10-18T14:54:10.062Z\n\n### Stored passages\n\n- “The Global Positioning System (GPS) is a satellite-based hyperbolic navigation system owned by the United States Space Force and operated by Mission Delta 31.”\n\n## Evidence record 8: Location-based service\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=62392\n\nRetrieved: 2026-10-18T14:54:10.062Z\n\n### Stored passages\n\n- “A location-based service (LBS) is a software service which uses geographic data and information to search systems, in turn providing services or information to users.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/dominic-cummings-how-the-internet-knows-when-youve-updated-your-blog-139517",
+      "title": "Dominic Cummings: how the internet knows when you’ve updated your blog",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2020-05-28",
+      "retrieved_at": "2026-10-18T14:54:06.815Z",
+      "sha256": "4e17d74a887169c2c5d8a9d7c1111f58b29dcc610f1fe189a82352950c5697ff",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.2307/j.ctt9qdt4n.10",
+      "title": "YOUR SUNGLASSES ARE IN THE MILKY WAY",
+      "publisher": "Harvard University Press",
+      "published_at": "2014-11-05",
+      "retrieved_at": "2026-10-18T14:54:07.101Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.25250/thescbr.brk487",
+      "title": "How your body knows to shout ‘ouch’",
+      "publisher": "The Science Breaker",
+      "published_at": "2021",
+      "retrieved_at": "2026-10-18T14:54:10.061Z",
+      "sha256": "595ab21357cb018d676fa5be6a1c97f69bc4c0bf4920db29744f7e2503811f78",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W2790471033",
+      "title": "Intelligent Transportation System(Apps):GPS Based Tracking",
+      "publisher": "OpenAlex",
+      "published_at": "2016-01-31",
+      "retrieved_at": "2026-10-18T14:54:10.062Z",
+      "sha256": "be63d66f4ce945698f9b2976cf4fcab488887a28dfebf52bc57bccd346c3365b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W12969590",
+      "title": "How to Choose a GPS Fleet Management System: What Features Are Right for You?",
+      "publisher": "Management Quarterly",
+      "published_at": "2004-06-22",
+      "retrieved_at": "2026-10-18T14:54:10.062Z",
+      "sha256": "176abad64141912301c4279d63020a16aaa698625671fae5bb6ca613662792aa",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W433465391",
+      "title": "Intelligent positioning : GIS-GPS unification",
+      "publisher": "OpenAlex",
+      "published_at": "2006-01-01",
+      "retrieved_at": "2026-10-18T14:54:10.062Z",
+      "sha256": "fb3a5b9d046ff4a90f19178246a3d8adb831dfb8f766afbba2774b2219560af6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=11866",
+      "title": "Global Positioning System",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:54:10.062Z",
+      "sha256": "88cbbfbfe880b983ecb22ef1ae89635b56338e332add3f4b376cc24a10644257",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=62392",
+      "title": "Location-based service",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:54:10.062Z",
+      "sha256": "964074010bd7d1f74a423c2487205b61325e46bb3c3073bb6b06cc64a097380b",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:14.133Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

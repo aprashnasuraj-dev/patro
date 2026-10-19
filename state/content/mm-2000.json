@@ -1,0 +1,112 @@
+{
+  "id": "mm-2000",
+  "type": "topic",
+  "slug": "how-libraries-preserve-culture-facts",
+  "title": "How Libraries Preserve Culture: 10 Facts Backed by Sources",
+  "description": "Evidence dossier for research question: How Libraries Preserve Culture: 10 Facts Backed by Sources. Not approved for publication.",
+  "intent": "Answer: How libraries preserve culture",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Libraries Preserve Culture: 10 Facts Backed by Sources\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow libraries preserve culture\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: How the Metaverse will be used to preserve the culture of Tuvalu? v1\n\nPublisher: ZappyLab, Inc.\n\nURL: https://doi.org/10.17504/protocols.io.e6nvwjyddlmk/v1\n\nRetrieved: 2026-10-18T23:19:18.172Z\n\n### Stored passages\n\n- “To research the preservation of culture and sovereignty into a digital space I will be taking a social science approach.”\n\n## Evidence record 2: The Changing Culture of Libraries: How We Know Ourselves through Our Libraries (review)\n\nPublisher: Project MUSE\n\nURL: https://doi.org/10.1353/lac.2002.0083\n\nRetrieved: 2026-10-18T23:19:18.883Z\n\n### Stored passages\n\n- “In order to better serve you and keep this site secure, please complete this challenge.”\n\n## Evidence record 3: Truth, political culture and alternative descriptions of science\n\nPublisher: Bloomsbury Publishing Inc\n\nURL: https://doi.org/10.5040/9798216198840.ch-1\n\nRetrieved: 2026-10-18T23:19:20.048Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Veritocracy --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or…”\n\n## Evidence record 4: Is there a chance of changing the culture?\n\nPublisher: Bloomsbury Publishing Inc\n\nURL: https://doi.org/10.5040/9798216198840.ch-7\n\nRetrieved: 2026-10-18T23:19:20.656Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Veritocracy --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address or…”\n\n## Evidence record 5: Library\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17727\n\nRetrieved: 2026-10-18T23:19:20.657Z\n\n### Stored passages\n\n- “A library is a collection of books, and possibly other materials and media, that is accessible for use by its members and members of allied…”\n\n## Evidence record 6: National Library of India\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=422524\n\nRetrieved: 2026-10-18T23:19:20.657Z\n\n### Stored passages\n\n- “The National Library of India is a library located in the Belvedere Estate, Alipore, Kolkata, India.”\n\n## Evidence record 7: Library and information science\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=18933569\n\nRetrieved: 2026-10-18T23:19:20.657Z\n\n### Stored passages\n\n- “Library and Information Science (LIS) are two academic disciplines that study all aspects of the creation, organization, documentation, management, communication, and use of recorded information.”\n\n## Evidence record 8: Library of Congress\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=18944081\n\nRetrieved: 2026-10-18T23:19:20.657Z\n\n### Stored passages\n\n- “The Library of Congress (LOC) is a research library in Washington, D.C., serving as the library and research service for the United States Congress and…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.17504/protocols.io.e6nvwjyddlmk/v1",
+      "title": "How the Metaverse will be used to preserve the culture of Tuvalu? v1",
+      "publisher": "ZappyLab, Inc.",
+      "published_at": "2023-04-09",
+      "retrieved_at": "2026-10-18T23:19:18.172Z",
+      "sha256": "c9bf850b25b3e6919d028d468e454c77d80f4db96080a088fb1a25488db1dabd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1353/lac.2002.0083",
+      "title": "The Changing Culture of Libraries: How We Know Ourselves through Our Libraries (review)",
+      "publisher": "Project MUSE",
+      "published_at": "2002-09",
+      "retrieved_at": "2026-10-18T23:19:18.883Z",
+      "sha256": "3b97cbeed02b784574b3c9ce2aa3924de36298b116c3e396686bea77cc03b80e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.5040/9798216198840.ch-1",
+      "title": "Truth, political culture and alternative descriptions of science",
+      "publisher": "Bloomsbury Publishing Inc",
+      "published_at": "2026",
+      "retrieved_at": "2026-10-18T23:19:20.048Z",
+      "sha256": "29e8e34b6a0262a7eebd7aef169a590798f11f49beaa7de69d7fcdb505a20a8d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.5040/9798216198840.ch-7",
+      "title": "Is there a chance of changing the culture?",
+      "publisher": "Bloomsbury Publishing Inc",
+      "published_at": "2026",
+      "retrieved_at": "2026-10-18T23:19:20.656Z",
+      "sha256": "314de4406c82bc051af2bc5efe949094302a01795c1079a2d2799df3057b0637",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=17727",
+      "title": "Library",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:20.657Z",
+      "sha256": "ffe3f694d4dec44740f574f1b96274c47ef08c08c7efdb538cbc16a11c43ae11",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=422524",
+      "title": "National Library of India",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:20.657Z",
+      "sha256": "7b20f6112da271af82aacdc975771858bec9cb81da9405a1e88cbc3790f64141",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=18933569",
+      "title": "Library and information science",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:20.657Z",
+      "sha256": "10a93d6c30cdadf75bd16bb4bc2cb9db79165a19c2df4696f62c97b85a7ff05a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=18944081",
+      "title": "Library of Congress",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:20.657Z",
+      "sha256": "249169d1c037d1a467b97fd44a5e32910456586adf281c5d9fae6fb1215e6b3f",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:14.131Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
