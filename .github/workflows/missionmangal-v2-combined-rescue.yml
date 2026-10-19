@@ -101,9 +101,15 @@ jobs:
             gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" --pattern "missionmangal-v2-worker-*" --dir /tmp/mm-previous
             for d in /tmp/mm-previous/missionmangal-v2-worker-*; do
               [ -d "$d" ] || continue
-              for s in "$d"/v2-*; do
-                [ -d "$s" ] && cp -a "$s" missionmangal/state/
-              done
+              name="${d##*/missionmangal-v2-worker-}"
+              if [ -f "$d/ledger.jsonl" ] || [ -d "$d/content" ] || [ -d "$d/evidence" ]; then
+                mkdir -p "missionmangal/state/v2-$name"
+                cp -a "$d/." "missionmangal/state/v2-$name/"
+              else
+                for s in "$d"/v2-*; do
+                  [ -d "$s" ] && cp -a "$s" missionmangal/state/
+                done
+              fi
             done
           fi
       - name: Reconcile every reserved topic and cached evidence
