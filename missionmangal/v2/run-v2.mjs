@@ -61,6 +61,7 @@ if(process.argv[1]?.endsWith('run-v2.mjs')){
  const health=JSON.parse(await readFile(arg('health',join(root,'v2-work','health.json')),'utf8').catch(()=>'{"providers":[]}'));
  const adapters=await loadAdapters(join(root,'config','adapter-allowlist.json'));
  const workers=+arg('workers',1),state=await loadState(join(root,'state'));
+ if(!state.latest.size&&!state.evidence.size)throw Error('SAFETY_STOP: no imported v1 shard/rescue state found; refusing to spend provider quota on an empty cache.');
  const llm=makeLlmV2({adapters,health,config,workers});
  const render=process.env.CF_ACCOUNT_ID&&process.env.CF_BROWSER_TOKEN?cloudflareRenderer({accountId:process.env.CF_ACCOUNT_ID,token:process.env.CF_BROWSER_TOKEN}):null;
  const stats=await runV2({root,worker:+arg('worker',0),workers,deadlineMs:Date.now()+(+arg('deadline-minutes',335))*60_000,limit:+arg('limit',Infinity),llm,config,plan,evidenceByTopic:state.evidence,registry,allowYmyl:process.argv.includes('--allow-ymyl'),render});
