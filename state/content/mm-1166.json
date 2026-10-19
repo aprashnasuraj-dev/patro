@@ -1,0 +1,112 @@
+{
+  "id": "mm-1166",
+  "type": "topic",
+  "slug": "why-space-is-cold-but-the-sun-is-hot-data",
+  "title": "Why Space Is Cold but the Sun Is Hot? What the Numbers Show",
+  "description": "Evidence dossier for research question: Why Space Is Cold but the Sun Is Hot? What the Numbers Show. Not approved for publication.",
+  "intent": "Answer: Why space is cold but the sun is hot",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Space Is Cold but the Sun Is Hot? What the Numbers Show\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy space is cold but the sun is hot\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Why the Solar Wind Blows Hot and Cold\n\nPublisher: American Physical Society (APS)\n\nURL: https://doi.org/10.1103/physics.6.s32\n\nRetrieved: 2026-10-18T23:01:38.969Z\n\n### Stored passages\n\n- “Miloslav Druckmüller/Brno University of Technology, Peter Aniol, Vojtech Rusin Miloslav Druckmüller/Brno University of Technology, Peter Aniol, Vojtech Rusin &#215; One of the biggest puzzles of…”\n\n## Evidence record 2: Why hot water freezes faster than cold water\n\nPublisher: AIP Publishing\n\nURL: https://physicstoday.aip.org/news/why-hot-water-freezes-faster-than-cold-water\n\nRetrieved: 2026-10-18T23:01:39.085Z\n\n### Stored passages\n\n- “Now, Sun Changqing and Xi Zhang of Nanyang Technological University in Singapore propose that the explanation may have to do with the hydrogen bonds that…”\n\n## Evidence record 3: Curious Kids: Why does cold air go down and hot air go up?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/curious-kids-why-does-cold-air-go-down-and-hot-air-go-up-171408\n\nRetrieved: 2026-10-18T23:01:39.319Z\n\n### Stored passages\n\n- “Skip to content Academic rigor, journalistic flair Curious Kids: Why does cold air go down and hot air go up?”\n\n## Evidence record 4: Why taking a cold shower on a hot day might be a bad idea\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-taking-a-cold-shower-on-a-hot-day-might-be-a-bad-idea-259074\n\nRetrieved: 2026-10-18T23:01:39.455Z\n\n### Stored passages\n\n- “Why taking a cold shower on a hot day might be a bad idea Skip to content Academic rigor, journalistic flair Why taking a cold…”\n\n## Evidence record 5: Classical Kuiper belt object\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=7561\n\nRetrieved: 2026-10-18T23:01:39.456Z\n\n### Stored passages\n\n- “A classical Kuiper belt object, also called a cubewano ( \"QB1-o\"), is a low-eccentricity Kuiper belt object (KBO) that orbits beyond Neptune and is not…”\n\n## Evidence record 6: Sun\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26751\n\nRetrieved: 2026-10-18T23:01:39.456Z\n\n### Stored passages\n\n- “The Sun is the star located at the centre of the Solar System.”\n\n## Evidence record 7: Outer space\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=177602\n\nRetrieved: 2026-10-18T23:01:39.456Z\n\n### Stored passages\n\n- “Outer space, or simply space, is the expanse that exists beyond Earth's atmosphere and between celestial bodies.”\n\n## Evidence record 8: Naraka in Buddhism\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=5317976\n\nRetrieved: 2026-10-18T23:01:39.456Z\n\n### Stored passages\n\n- “Naraka (Sanskrit: नरक; Chinese: 地獄／奈落; pinyin: Dìyù/Nàiluò; Japanese: 地獄／奈落, romanized: Jigoku/Naraku) is a term in Buddhist cosmology usually referred to in English as \"hell\" (or…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1103/physics.6.s32",
+      "title": "Why the Solar Wind Blows Hot and Cold",
+      "publisher": "American Physical Society (APS)",
+      "published_at": "2013-02-28",
+      "retrieved_at": "2026-10-18T23:01:38.969Z",
+      "sha256": "3a91b68aa482a07bf513ad16f7ad743237c6ed02540a068ec9cf86f79e21ac4b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://physicstoday.aip.org/news/why-hot-water-freezes-faster-than-cold-water",
+      "title": "Why hot water freezes faster than cold water",
+      "publisher": "AIP Publishing",
+      "published_at": "2013-11-04",
+      "retrieved_at": "2026-10-18T23:01:39.085Z",
+      "sha256": "580da5a95b59835fd1329a630648a46eb3404c1ae14b8a99c7fbc259958cee5f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/curious-kids-why-does-cold-air-go-down-and-hot-air-go-up-171408",
+      "title": "Curious Kids: Why does cold air go down and hot air go up?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2021-11-11",
+      "retrieved_at": "2026-10-18T23:01:39.319Z",
+      "sha256": "4477e264800f038e63b07fdc945c6348bb15f5031690b1f3a17cffc83560d637",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://theconversation.com/why-taking-a-cold-shower-on-a-hot-day-might-be-a-bad-idea-259074",
+      "title": "Why taking a cold shower on a hot day might be a bad idea",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2025-06-20",
+      "retrieved_at": "2026-10-18T23:01:39.455Z",
+      "sha256": "0cdac88fa320f0b7de6d45ed32f9f5143c43bea04d1c75a064f4aee9f6ad75cb",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=7561",
+      "title": "Classical Kuiper belt object",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:01:39.456Z",
+      "sha256": "f18aac59511ed239db6518b22713e80919ea2b1f7c63e6d5bf29b1279cd6ed66",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=26751",
+      "title": "Sun",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:01:39.456Z",
+      "sha256": "8dd87fe21dd2311c24a395e8c316e3146af716273485b9f059c54a5d72a4d70c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=177602",
+      "title": "Outer space",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:01:39.456Z",
+      "sha256": "028ddfc4d400074c55d8816b98832531af063d24c816e6eb1db04eaff1b540c2",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=5317976",
+      "title": "Naraka in Buddhism",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:01:39.456Z",
+      "sha256": "334bca56456c5cfa9abb3d0395108a05a5f1d9e5e8c27074dd533bcbb2503426",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:15.381Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

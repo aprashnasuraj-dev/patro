@@ -1,0 +1,112 @@
+{
+  "id": "mm-1172",
+  "type": "topic",
+  "slug": "how-bias-shapes-opinions-perspectives",
+  "title": "How Bias Shapes Opinions: 7 Expert Perspectives Compared",
+  "description": "Evidence dossier for research question: How Bias Shapes Opinions: 7 Expert Perspectives Compared. Not approved for publication.",
+  "intent": "Answer: How bias shapes opinions",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Bias Shapes Opinions: 7 Expert Perspectives Compared\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow bias shapes opinions\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: How Cross-Cue Inconsistency Weakens the Adoption of AI-Generated Review Summaries: The Roles of Diagnosticity, Authenticity, and Review Dispersion.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.3390/bs16091516\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “As AI-generated review summaries are increasingly embedded in e-commerce review systems, consumers are no longer exposed to a single type of user review information.”\n\n## Evidence record 2: Ableism, ageism, and other biases in healthcare: The impact on young adult patients.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1016/j.hctj.2026.100136\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “Objectives Young adult patients, particularly those with chronic and rare conditions, face unique challenges related to bias and discrimination when navigating the healthcare system.”\n\n## Evidence record 3: What Drives Indonesian People to Purchase Modest Fashion? The Moderating Role of Religiosity.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.12688/f1000research.173033.4\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “Purpose This study aims to examine how religiosity moderates the influence of attitude and electronic word of mouth (E-WOM) on purchase decisions in Indonesia's modest…”\n\n## Evidence record 4: Negative emotions concentrate while positive emotions diffuse in football fan rivalries.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1371/journal.pone.0356757\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “Background Research on negativity bias demonstrates that negative information receives disproportionate cognitive attention at the individual level, but how this psychological mechanism shapes collective emotional…”\n\n## Evidence record 5: Media bias\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=18932\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “Media bias occurs when journalists and news producers present factual bias in how they report and convey news, current events, dialogue, or opinions.”\n\n## Evidence record 6: Cognitive bias\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=47278\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “A cognitive bias is a systematic pattern of deviation from the norm or rationality in judgment.”\n\n## Evidence record 7: Hindsight bias\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=410804\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “Hindsight bias, also known as the knew-it-all-along phenomenon or creeping determinism, is the common tendency for people to perceive past events as having been more…”\n\n## Evidence record 8: Echo chamber (media)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=16143262\n\nRetrieved: 2026-10-18T21:44:26.515Z\n\n### Stored passages\n\n- “In the context of news media and social media, an echo chamber is defined as an environment or ecosystem in which participants encounter beliefs that…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.3390/bs16091516",
+      "title": "How Cross-Cue Inconsistency Weakens the Adoption of AI-Generated Review Summaries: The Roles of Diagnosticity, Authenticity, and Review Dispersion.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-08-28",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "68cd48c33ed581088c4107adfcdd11653c695b652734aaa03c16d5083ac41fc3",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1016/j.hctj.2026.100136",
+      "title": "Ableism, ageism, and other biases in healthcare: The impact on young adult patients.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-04-19",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "5bbfeb9f59ed650cfdd4781de4a27c1d7e77d77a7c7362fcae13434fc8888a51",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.12688/f1000research.173033.4",
+      "title": "What Drives Indonesian People to Purchase Modest Fashion? The Moderating Role of Religiosity.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-09-15",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "06f610076a9d0211ccd687cf850f39271d2515fb1849cd34c4dccfd18952082c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.1371/journal.pone.0356757",
+      "title": "Negative emotions concentrate while positive emotions diffuse in football fan rivalries.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-09-24",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "6744e25bafb3f1dddbc5d2620908a5b64d05442976f2639b9c11d215eadd53be",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=18932",
+      "title": "Media bias",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "dbba0b272e342d447821a6e7a06cf6968a7a5be179ac852e07d615e4f48df137",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=47278",
+      "title": "Cognitive bias",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "938dd2035e8ffa841b483b1c6b61d3a7931b55c99c57e78b35e543f5fd8862a4",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=410804",
+      "title": "Hindsight bias",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "0dfb811ae5d64fb406a8246900dcc6c4b505af1f35d89f385680e01a2e5dd3ba",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=16143262",
+      "title": "Echo chamber (media)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:44:26.515Z",
+      "sha256": "20e7f23a003208547855b40e04abb4a2fc9081118e850529d1dd55f46386c70b",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:15.378Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
