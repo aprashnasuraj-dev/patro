@@ -1,0 +1,112 @@
+{
+  "id": "mm-1293",
+  "type": "topic",
+  "slug": "why-watermelon-is-mostly-water",
+  "title": "Why Watermelon Is Mostly Water? The Answer May Surprise You",
+  "description": "Evidence dossier for research question: Why Watermelon Is Mostly Water? The Answer May Surprise You. Not approved for publication.",
+  "intent": "Answer: Why watermelon is mostly water",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Watermelon Is Mostly Water? The Answer May Surprise You\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy watermelon is mostly water\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: So Why Write Screenplays?\n\nPublisher: Bloomsbury House\n\nURL: https://doi.org/10.5040/9780571343461.ch-001\n\nRetrieved: 2026-10-18T23:19:30.057Z\n\n### Stored passages\n\n- “screenall-144 --> Screen Studies - So Why Write Screenplays?”\n\n## Evidence record 2: Why are α-helices in proteins mostly right handed?\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/bcvw0-pca05\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Understanding why and how proteins fold continues to be a &lt;em&gt; grand challenge &lt;/em&gt; in science.”\n\n## Evidence record 3: Why are α-helices in proteins mostly right handed?\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/9edvc-e6m31\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Understanding why and how proteins fold continues to be a &lt;em&gt; grand challenge &lt;/em&gt; in science.”\n\n## Evidence record 4: Why Stock Prices are Mostly Right Most of the Time\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.3698285\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Seven financial and macroeconomic ratios explain 85% to 90% of the variation in the level of stock prices in relation to fundamental values.”\n\n## Evidence record 5: Iran\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=14653\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Iran, officially the Islamic Republic of Iran, and historically known as Persia, is a country in West Asia.”\n\n## Evidence record 6: Vodka\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32787\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Vodka (Polish: wódka [ˈvutka]; Russian: водка [ˈvotkə]) is a clear distilled alcoholic beverage.”\n\n## Evidence record 7: Stereotypes of African Americans\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=5966695\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “Stereotypes of African Americans are beliefs about the culture of people with partial or total ancestry from any black racial groups of Africa whose ancestors…”\n\n## Evidence record 8: Watermelon\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=20596557\n\nRetrieved: 2026-10-18T23:19:30.058Z\n\n### Stored passages\n\n- “The watermelon (Citrullus lanatus) is a species of flowering plant in the family Cucurbitaceae.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.5040/9780571343461.ch-001",
+      "title": "So Why Write Screenplays?",
+      "publisher": "Bloomsbury House",
+      "published_at": "2012",
+      "retrieved_at": "2026-10-18T23:19:30.057Z",
+      "sha256": "55c3fa1e0bb24b54537d5132710768e4a53606d91a42970c81fd903ef40bf09d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.59350/bcvw0-pca05",
+      "title": "Why are α-helices in proteins mostly right handed?",
+      "publisher": "Front Matter",
+      "published_at": "2011-04-09",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "83e3062885df6c5d317a3e7e137cad5eac804e4450707d7e734fb9a69ccd1558",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.59350/9edvc-e6m31",
+      "title": "Why are α-helices in proteins mostly right handed?",
+      "publisher": "Front Matter",
+      "published_at": "2011-04-09",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "83e3062885df6c5d317a3e7e137cad5eac804e4450707d7e734fb9a69ccd1558",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.2139/ssrn.3698285",
+      "title": "Why Stock Prices are Mostly Right Most of the Time",
+      "publisher": "Elsevier BV",
+      "published_at": "2020",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "0e74ddafa21b2569fca4825a3ec98def3795dcc4c0bbe936dedf06ef18a15792",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=14653",
+      "title": "Iran",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "16ace6b6055f2b58ea74eb03ab4ba2011f516b8594f605c9f48dd8da8f7a05ff",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=32787",
+      "title": "Vodka",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "9b63744ff5fa4f608f000eb4f5c216557a3a16eb7191365fe24070fa270b4b6c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=5966695",
+      "title": "Stereotypes of African Americans",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "7a71a69ce0b3fc1723f0be8ce640a14a28ddf0a79f69a2e53fa87acdcbd18c1a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=20596557",
+      "title": "Watermelon",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:30.058Z",
+      "sha256": "2207dca11c627e8e85ba8dae5a91e16602f288764da814062b58a3ac96af3fb0",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:16.350Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "id": "mm-0470",
+  "type": "topic",
+  "slug": "how-slang-spreads-myths-vs-reality",
+  "title": "How Slang Spreads: Myths vs Reality",
+  "description": "Evidence dossier for research question: How Slang Spreads: Myths vs Reality. Not approved for publication.",
+  "intent": "Answer: How slang spreads",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Slang Spreads: Myths vs Reality\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow slang spreads\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: The Gendered Slang of Century’s End\n\nPublisher: Princeton University Press\n\nURL: https://doi.org/10.23943/princeton/9780691169026.003.0005\n\nRetrieved: 2026-10-18T15:02:10.802Z\n\n### Stored passages\n\n- “This chapter considers the use of cant in burlesque writing.”\n\n## Evidence record 2: How a Lingua Franca Spreads\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780190657543.003.0010\n\nRetrieved: 2026-10-18T15:02:10.802Z\n\n### Stored passages\n\n- “This chapter considers how Wolof, an Atlantic language spoken in Senegal, has become an important lingua franca, and how French has contributed to the ascent…”\n\n## Evidence record 3: The Role of Slang in Digital Communication\n\nPublisher: The Peerian Journal\n\nURL: https://openalex.org/W7219286823\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “In this paper, in the era of rapid digitalization, slang has become a cornerstone of modern communication.”\n\n## Evidence record 4: The Influence OF Social MEDIA Platforms on the Formation AND Spread OF Youth Slang\n\nPublisher: Neliti\n\nURL: https://openalex.org/W7161666703\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “This article examines how social media platforms shape the development, usage, and spread of youth slang.”\n\n## Evidence record 5: Slang, Accents, and Dialects: The Ever-Changing Landscape of English\n\nPublisher: Periodica Journal of Modern Philosophy, Social Sciences and Humanities\n\nURL: https://openalex.org/W7220778206\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “The English language is constantly evolving, shaped by cultural shifts, technological advancements, and gloabal influences.”\n\n## Evidence record 6: Slang lexicography and the problem of defining slang\n\nPublisher: OpenAlex\n\nURL: https://openalex.org/W2908553429\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “Slang items often tend to confound the category labels of lexicographers.”\n\n## Evidence record 7: Internet slang\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=15172\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “Internet slang (also known as Internet shorthand, cyber-slang, netspeak, or digispeak) is a non-standard or unofficial form of language used by people on the Internet…”\n\n## Evidence record 8: Slang\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=27181\n\nRetrieved: 2026-10-18T15:02:10.922Z\n\n### Stored passages\n\n- “Slang is a vocabulary (words, phrases, and linguistic usage) of an informal register, common in everyday conversation but avoided in formal writing and speech.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.23943/princeton/9780691169026.003.0005",
+      "title": "The Gendered Slang of Century’s End",
+      "publisher": "Princeton University Press",
+      "published_at": "2017-06-06",
+      "retrieved_at": "2026-10-18T15:02:10.802Z",
+      "sha256": "140a6bff779a047a6014192a8cc552eab380dca022a15d2b6ac67673ca700908",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1093/oso/9780190657543.003.0010",
+      "title": "How a Lingua Franca Spreads",
+      "publisher": "Oxford University Press",
+      "published_at": "2018-02-15",
+      "retrieved_at": "2026-10-18T15:02:10.802Z",
+      "sha256": "2c8027d5dbdf1e6fa3a7c9a9f6ab256522a6e19beba607db6ccc1fad85f44a19",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://openalex.org/W7219286823",
+      "title": "The Role of Slang in Digital Communication",
+      "publisher": "The Peerian Journal",
+      "published_at": "2025-04-15",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "c728573410f4ed6ad812c0ecc63c5864f9dd66fd54470f25a61b59f04f99114e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W7161666703",
+      "title": "The Influence OF Social MEDIA Platforms on the Formation AND Spread OF Youth Slang",
+      "publisher": "Neliti",
+      "published_at": "2026-04-09",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "3882eed1705f0edf66d548e251d72ebcd4346bc27eb8772deaa5337322b8ec47",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W7220778206",
+      "title": "Slang, Accents, and Dialects: The Ever-Changing Landscape of English",
+      "publisher": "Periodica Journal of Modern Philosophy, Social Sciences and Humanities",
+      "published_at": "2025-02-26",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "108ec9f5a40a2333ba7d0b012ae841c72dbf44a1006116fe9df5c55079c88a2b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W2908553429",
+      "title": "Slang lexicography and the problem of defining slang",
+      "publisher": "OpenAlex",
+      "published_at": "2010-01-01",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "b3f8b43f5aa76ad3230ff4feb3f7b326384a52dd90cb9448b5d29fc5a0e2ad8b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=15172",
+      "title": "Internet slang",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "49941bce148483e19c389cc411d497434715b933a6509e57bae00f4b7d0b0b66",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=27181",
+      "title": "Slang",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:02:10.922Z",
+      "sha256": "ce74320ecb849545443205b7c714e3fb88b25034cd8113320f352c28346940ac",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:16.349Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
