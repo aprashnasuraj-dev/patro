@@ -19,7 +19,11 @@ export function buildEvidenceDossier({ topic, row, registryItem, evidence, now =
   if (!unique.length) return null;
   const title = esc(registryItem?.meta?.title || registryItem?.intent?.replace(/^Answer:\s*/, '') || topic);
   const sections = unique.map((e, i) => {
-    const passages = e.excerpts.map(esc).filter(x => x.length >= 35).slice(0, 3);
+    // Keep stored quotation material short: at most 25 words per source in the dossier.
+    const passages = e.excerpts.map(esc).filter(x => x.length >= 35).slice(0, 1).map(x => {
+      const words = x.split(/\\s+/);
+      return words.length > 25 ? words.slice(0, 25).join(' ') + '…' : x;
+    });
     if (!passages.length) return '';
     return `## Evidence record ${i + 1}: ${esc(e.title || 'Untitled source')}\n\nPublisher: ${esc(e.publisher || 'Not recorded')}\n\nURL: ${e.url}\n\nRetrieved: ${esc(e.retrieved_at || 'date not recorded')}\n\n### Stored passages\n\n${passages.map((p, j) => `- “${p}”`).join('\n\n')}`;
   }).filter(Boolean);
