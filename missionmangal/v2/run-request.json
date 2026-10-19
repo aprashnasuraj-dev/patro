@@ -6,5 +6,5 @@
   "allow_ymyl": false,
   "limit_per_worker": 2,
   "mode": "research-grounding-interleaved-final",
-  "note": "Two-article smoke after adding a targeted rewrite retry for residual voice-gate failures. Retain P2/P3 fixes, general cached-evidence policy, 300-word floors, and strict grounding/citations. No production publish."
+  "note": "Final two-article smoke after strict paragraph-end citation enforcement and one citation-placement repair pass. Keep all P2/P3, general cached-evidence, 300-word, grounding, and voice checks. No production publish."
 }
