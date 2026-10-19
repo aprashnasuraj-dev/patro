@@ -1,0 +1,112 @@
+{
+  "id": "mm-1064",
+  "type": "topic",
+  "slug": "why-morocco-has-blue-cities-myths-vs-reality",
+  "title": "Why Morocco Has Blue Cities? Myths vs Reality",
+  "description": "Evidence dossier for research question: Why Morocco Has Blue Cities? Myths vs Reality. Not approved for publication.",
+  "intent": "Answer: Why Morocco has blue cities",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Morocco Has Blue Cities? Myths vs Reality\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Morocco has blue cities\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Research Insights: Why Has COVID-19 Affected Some Cities More than Others?\n\nPublisher: Inter-American Development Bank\n\nURL: https://doi.org/10.18235/0003933\n\nRetrieved: 2026-10-18T22:04:59.513Z\n\n### Stored passages\n\n- “Algunas de las variables relacionadas con el impacto de la COVID-19 a nivel de las ciudades son similares en contextos muy diferentes.”\n\n## Evidence record 2: Why men overwhelmingly wear the UN’s blue helmets – a former US ambassador explains why decades of recruiting women peacekeepers has had little effect\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-men-overwhelmingly-wear-the-uns-blue-helmets-a-former-us-ambassador-explains-why-decades-of-recruiting-women-peacekeepers-has-had-little-effect-186683\n\nRetrieved: 2026-10-18T22:04:59.596Z\n\n### Stored passages\n\n- “Why men overwhelmingly wear the UN’s blue helmets – a former US ambassador explains why decades of recruiting women peacekeepers has had little effect Skip…”\n\n## Evidence record 3: Blue\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=4543\n\nRetrieved: 2026-10-18T22:04:59.871Z\n\n### Stored passages\n\n- “Blue is one of the three primary colours in the RGB (additive) colour model, as well as in the RYB colour model (traditional colour theory).”\n\n## Evidence record 4: Tangier\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=288204\n\nRetrieved: 2026-10-18T22:04:59.871Z\n\n### Stored passages\n\n- “Tangier, also called Tangiers, is a city in northwestern Morocco, on the coasts of the Mediterranean Sea and the Atlantic Ocean.”\n\n## Evidence record 5: Tétouan\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=359385\n\nRetrieved: 2026-10-18T22:04:59.871Z\n\n### Stored passages\n\n- “It lies along the Martil Valley and is one of the two major ports of Morocco on the Mediterranean Sea, a few miles south of…”\n\n## Evidence record 6: Chefchaouen\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2014809\n\nRetrieved: 2026-10-18T22:04:59.871Z\n\n### Stored passages\n\n- “It is the chief town of the province of the same name and is noted for its buildings in shades of blue, for which it…”\n\n## Evidence record 7: Why Children, Adults and the Elderly are living on the streets in Moroccan cities and what Morocco is doing about it.\n\nPublisher: School for International Training Digital Collections (School for International Training)\n\nURL: https://openalex.org/W2614565195\n\nRetrieved: 2026-10-18T15:32:21.731Z\n\n### Stored passages\n\n- “The aim of this independent study project is to explore the determinants of homelessness in the cities of Morocco, more specifically in Rabat,Casablanca and Salé,…”\n\n## Evidence record 8: Somos Melillense - Borders and boundaries in a Spanish city in Morocco\n\nPublisher: NORA - Norwegian Open Research Archives\n\nURL: https://openalex.org/W2528205931\n\nRetrieved: 2026-10-18T15:32:21.731Z\n\n### Stored passages\n\n- “This dissertation is based on a 5,5 month fieldwork in Melilla, a Spanish city in northeastern Morocco.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.18235/0003933",
+      "title": "Research Insights: Why Has COVID-19 Affected Some Cities More than Others?",
+      "publisher": "Inter-American Development Bank",
+      "published_at": "2021-12-31",
+      "retrieved_at": "2026-10-18T22:04:59.513Z",
+      "sha256": "1e2c91d634a2ce3e3bb6b279f6479b7923ee2384f2ceb5e346e9d0611a4d16fa",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/why-men-overwhelmingly-wear-the-uns-blue-helmets-a-former-us-ambassador-explains-why-decades-of-recruiting-women-peacekeepers-has-had-little-effect-186683",
+      "title": "Why men overwhelmingly wear the UN’s blue helmets – a former US ambassador explains why decades of recruiting women peacekeepers has had little effect",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2022-07-29",
+      "retrieved_at": "2026-10-18T22:04:59.596Z",
+      "sha256": "18a06a06dfd188a1d4b9b6ecb97f07e86ac94e3cf889e89579ace0737358f878",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://en.wikipedia.org/?curid=4543",
+      "title": "Blue",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:04:59.871Z",
+      "sha256": "db5b0815a66a8ab380552da3d635d7d51a77be4cd277b27904abb9422fe7a6f7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=288204",
+      "title": "Tangier",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:04:59.871Z",
+      "sha256": "8e8b394112c38b3db1410032029d6202e740ac914fcce05255c87b76d5848291",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=359385",
+      "title": "Tétouan",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:04:59.871Z",
+      "sha256": "1b107bdf35e34d949a5ece168a53f4658be50a2a8a4259060a9d991f3da00fc9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=2014809",
+      "title": "Chefchaouen",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:04:59.871Z",
+      "sha256": "8306e704953f2a8a2485c36c30abd36242d646dc729f97854bec5b028435e936",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W2614565195",
+      "title": "Why Children, Adults and the Elderly are living on the streets in Moroccan cities and what Morocco is doing about it.",
+      "publisher": "School for International Training Digital Collections (School for International Training)",
+      "published_at": "2016-01-01",
+      "retrieved_at": "2026-10-18T15:32:21.731Z",
+      "sha256": "5dc7a1d621319b4575895d5986210b53e284fbabb1efd5fc9b115e8dfa83e0bb",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2528205931",
+      "title": "Somos Melillense - Borders and boundaries in a Spanish city in Morocco",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "published_at": "2016-01-01",
+      "retrieved_at": "2026-10-18T15:32:21.731Z",
+      "sha256": "552985652c8534cb68568cf6f356e13ba1af9b192b2ab1ab085e582550e973d2",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:20.197Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

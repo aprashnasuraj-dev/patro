@@ -1,0 +1,112 @@
+{
+  "id": "mm-1863",
+  "type": "topic",
+  "slug": "why-tibet-is-called-the-roof-of-the-world",
+  "title": "Why Tibet Is Called the Roof of the World? What Experts Say",
+  "description": "Evidence dossier for research question: Why Tibet Is Called the Roof of the World? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why Tibet is called the roof of the world",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Tibet Is Called the Roof of the World? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Tibet is called the roof of the world\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Roof of the World: Tibet, Pamirs\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780199653003.003.0016\n\nRetrieved: 2026-10-18T23:06:32.393Z\n\n### Stored passages\n\n- “The Tibetan Plateau is by far the largest region of high elevation, averaging just above 5,000 metres above sea level, and the thickest crust, between…”\n\n## Evidence record 2: Gold rush in Tibet\n\nPublisher: Zed Books\n\nURL: https://doi.org/10.5040/9781350222762.ch-002\n\nRetrieved: 2026-10-18T23:06:33.555Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Spoiling Tibet --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address…”\n\n## Evidence record 3: Further reading on Tibet\n\nPublisher: Zed Books\n\nURL: https://doi.org/10.5040/9781350222762.0008\n\nRetrieved: 2026-10-18T23:06:34.169Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Spoiling Tibet --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address…”\n\n## Evidence record 4: Tibet in its own right\n\nPublisher: Zed Books\n\nURL: https://doi.org/10.5040/9781350222762.ch-001\n\nRetrieved: 2026-10-18T23:06:34.694Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Spoiling Tibet --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email Address…”\n\n## Evidence record 5: History of Tibet\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=429581\n\nRetrieved: 2026-10-18T23:06:34.695Z\n\n### Stored passages\n\n- “While the Tibetan Plateau has been inhabited since pre-historic times, most of Tibet's history went unrecorded until the creation of Tibetan script in the 7th…”\n\n## Evidence record 6: Qinghai–Tibet railway\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=711553\n\nRetrieved: 2026-10-18T23:06:34.695Z\n\n### Stored passages\n\n- “The Qinghai–Tibet railway or Qingzang railway (Standard Tibetan: མཚོ་བོད་ལྕགས་ལམ།, mtsho bod lcags lam; simplified Chinese: 青藏铁路; traditional Chinese: 青藏鐵路; pinyin: Qīngzàng Tiělù) is a high-elevation…”\n\n## Evidence record 7: Tibetan independence movement\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=819497\n\nRetrieved: 2026-10-18T23:06:34.695Z\n\n### Stored passages\n\n- “It is principally led by the Tibetan diaspora in countries like India and the United States, and by celebrities and Tibetan Buddhists in the United…”\n\n## Evidence record 8: Tibetan culture\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2224021\n\nRetrieved: 2026-10-18T23:06:34.695Z\n\n### Stored passages\n\n- “Tibet developed a distinct culture due to its geographic and climatic conditions.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1093/oso/9780199653003.003.0016",
+      "title": "Roof of the World: Tibet, Pamirs",
+      "publisher": "Oxford University Press",
+      "published_at": "2013-03-28",
+      "retrieved_at": "2026-10-18T23:06:32.393Z",
+      "sha256": "1d5af4869e09dcda81252889e1b12a92bd45def38429d2c14f8450040f38a0f7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.5040/9781350222762.ch-002",
+      "title": "Gold rush in Tibet",
+      "publisher": "Zed Books",
+      "published_at": "2013",
+      "retrieved_at": "2026-10-18T23:06:33.555Z",
+      "sha256": "cb2b6ce43e6a01f0a35d960b40777e37e066210b3dfe752faf9279f95c0421c6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.5040/9781350222762.0008",
+      "title": "Further reading on Tibet",
+      "publisher": "Zed Books",
+      "published_at": "2013",
+      "retrieved_at": "2026-10-18T23:06:34.169Z",
+      "sha256": "f58aa24ad7dd71609d6996daf5e632012ec9cfa14463d6604ed93e517443034a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.5040/9781350222762.ch-001",
+      "title": "Tibet in its own right",
+      "publisher": "Zed Books",
+      "published_at": "2013",
+      "retrieved_at": "2026-10-18T23:06:34.694Z",
+      "sha256": "8952df7e765b1b6365cf27bccb5a2c69f5683e8bdd3b39957bad51587e6e6d06",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=429581",
+      "title": "History of Tibet",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:06:34.695Z",
+      "sha256": "00d96ca999dd8c43d61c56b758efb22f9e3f843fc2ebb0cd4267599036c75471",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=711553",
+      "title": "Qinghai–Tibet railway",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:06:34.695Z",
+      "sha256": "ca34374b4a209eaec521ecc70be75e16d120e4d4d041ef3c87689d28f1c9c7f1",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=819497",
+      "title": "Tibetan independence movement",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:06:34.695Z",
+      "sha256": "49f56deee2459927ba520ed1d27492a8a2a7b54019a5c52c339c785e9a3e3ef1",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=2224021",
+      "title": "Tibetan culture",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:06:34.695Z",
+      "sha256": "74a4d5a621ab503369bc4a051a7e16b12fd4bf33b64bb88abaa428be4e837fe7",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:20.196Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
