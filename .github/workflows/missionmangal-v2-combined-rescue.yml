@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: missionmangal-v2-combined-rescue
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   GROQ_API_KEY: ${{ secrets.GROQ_API }}
@@ -90,6 +90,7 @@ jobs:
         with:
           name: missionmangal-v2-plan-and-preflight
           path: |
+            missionmangal/state
             missionmangal/v2-work/plan.json
             missionmangal/v2-work/health.json
           retention-days: 14
@@ -120,7 +121,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: missionmangal-v2-plan-and-preflight
-          path: missionmangal/v2-work
+          path: missionmangal
       - name: Checkpoint loop (maximum 15-minute work loss)
         env:
           GITHUB_TOKEN: ${{ github.token }}
