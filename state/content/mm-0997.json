@@ -1,0 +1,115 @@
+{
+  "id": "mm-0997",
+  "type": "topic",
+  "slug": "how-nepali-tea-grows-in-ilam",
+  "title": "How Nepali Tea Grows in Ilam: A Simple Guide",
+  "description": "Evidence dossier for research question: How Nepali Tea Grows in Ilam: A Simple Guide. Not approved for publication.",
+  "intent": "Answer: How Nepali tea grows in Ilam",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Nepali Tea Grows in Ilam: A Simple Guide\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow Nepali tea grows in Ilam\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Application of Training Skills in Nepali Classrooms\n\nPublisher: Nepal Journals Online (JOL)\n\nURL: https://doi.org/10.3126/ilam.v19i1.58598\n\nRetrieved: 2026-10-18T15:28:14.947Z\n\n### Stored passages\n\n- “This study aims to explore the application of training skills in Nepali classrooms.”\n\n## Evidence record 2: The Threat of the Deep State in the Nepali Context\n\nPublisher: Nepal Journals Online (JOL)\n\nURL: https://doi.org/10.3126/ilam.v22i1.94032\n\nRetrieved: 2026-10-18T15:28:14.947Z\n\n### Stored passages\n\n- “This study examines the evolution, structure, and persistence of Nepal’s deep state—a network of entrenched, unelected actors that continues to undermine democracy and governance.”\n\n## Evidence record 3: Saving Behavior of the Workers in Ilam Tea-Estate, Ilam Municipality\n\nPublisher: Nepal Journals Online (JOL)\n\nURL: https://doi.org/10.3126/rj.v9i1.74423\n\nRetrieved: 2026-10-18T15:28:14.947Z\n\n### Stored passages\n\n- “The issue selected for research is found very interesting and essential for future perspective of the workers of the Tea estate of Ilam.”\n\n## Evidence record 4: Agro-Tourism in Nepal: An Analysis of Ilam District\n\nPublisher: Educational Administration Theory and Practice journal\n\nURL: https://openalex.org/W7218226399\n\nRetrieved: 2026-10-18T15:28:15.236Z\n\n### Stored passages\n\n- “Visiting a working farm or other agricultural, horticultural, or agro-business operations for fun, education, or to participate in farm activities is known as agro-tourism.”\n\n## Evidence record 5: Factors influencing a conversion to organic farming in Nepalese tea farms\n\nPublisher: Der Tropenlandwirt\n\nURL: https://openalex.org/W2112642040\n\nRetrieved: 2026-10-18T15:28:15.236Z\n\n### Stored passages\n\n- “Organic agriculture in developing countries has increased in past decades especially due to the high demand of organic products in developed countries.”\n\n## Evidence record 6: Household fuel and energy use for rural development in Nepal : a case study in Ilam District\n\nPublisher: NORA - Norwegian Open Research Archives\n\nURL: https://openalex.org/W2474249816\n\nRetrieved: 2026-10-18T15:28:15.236Z\n\n### Stored passages\n\n- “In the past, the energy ladder was the main model for understanding changes in energy use.”\n\n## Evidence record 7: Reflections on My Nepali Language Learning Experience While in the American Peace Corps In Nepal, 2001 - 2003\n\nPublisher: School for International Training Digital Collections (School for International Training)\n\nURL: https://openalex.org/W1532222619\n\nRetrieved: 2026-10-18T15:28:15.236Z\n\n### Stored passages\n\n- “This paper examines my experience during my two years as a Peace Corps volunteer in Nepal (2001-2003) learning the Nepali language.”\n\n## Evidence record 8: Red panda\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26441\n\nRetrieved: 2026-10-18T15:28:15.236Z\n\n### Stored passages\n\n- “The red panda (Ailurus fulgens), also known as the lesser panda, is a small mammal native to the eastern Himalayas and southwestern China.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.3126/ilam.v19i1.58598",
+      "title": "Application of Training Skills in Nepali Classrooms",
+      "publisher": "Nepal Journals Online (JOL)",
+      "published_at": "2023-09-26",
+      "retrieved_at": "2026-10-18T15:28:14.947Z",
+      "sha256": "ebc5820eb68eff3d889cd8a437da12a83ce20d03e1bf1345676a63f4355f8bf6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.3126/ilam.v22i1.94032",
+      "title": "The Threat of the Deep State in the Nepali Context",
+      "publisher": "Nepal Journals Online (JOL)",
+      "published_at": "2026-04-03",
+      "retrieved_at": "2026-10-18T15:28:14.947Z",
+      "sha256": "ec0c69f5f1b1125f035fdbd56c63727dcb5eba06a675a560bbfd3e23123d2d56",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.3126/rj.v9i1.74423",
+      "title": "Saving Behavior of the Workers in Ilam Tea-Estate, Ilam Municipality",
+      "publisher": "Nepal Journals Online (JOL)",
+      "published_at": "2024-12-31",
+      "retrieved_at": "2026-10-18T15:28:14.947Z",
+      "sha256": "b4509586b6aca512980dac5782c0bae5a64914f7b9fe5e8d34b1ed44a1644abf",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W7218226399",
+      "title": "Agro-Tourism in Nepal: An Analysis of Ilam District",
+      "publisher": "Educational Administration Theory and Practice journal",
+      "published_at": "2024-10-18",
+      "retrieved_at": "2026-10-18T15:28:15.236Z",
+      "sha256": "26948e273c923b2bb53ecd9bc746061f785c04a02ace05333ce74372c8f95856",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W2112642040",
+      "title": "Factors influencing a conversion to organic farming in Nepalese tea farms",
+      "publisher": "Der Tropenlandwirt",
+      "published_at": "2011-01-01",
+      "retrieved_at": "2026-10-18T15:28:15.236Z",
+      "sha256": "54eec83c22bfe7199753721363b0894951c675a5f0b6cc9902f1d2f634fd6d48",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W2474249816",
+      "title": "Household fuel and energy use for rural development in Nepal : a case study in Ilam District",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "published_at": "2014-05-21",
+      "retrieved_at": "2026-10-18T15:28:15.236Z",
+      "sha256": "74a9a2d5452122f4d57bf837fadb20aa53a0b9ad338f6d60d95efe4462ed57b8",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W1532222619",
+      "title": "Reflections on My Nepali Language Learning Experience While in the American Peace Corps In Nepal, 2001 - 2003",
+      "publisher": "School for International Training Digital Collections (School for International Training)",
+      "published_at": "2004-01-01",
+      "retrieved_at": "2026-10-18T15:28:15.236Z",
+      "sha256": "1eef6b22f6a81c3fe561233a0d0ffb1b9ba0ec6478eb78ded910fe5fee5ea9e2",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=26441",
+      "title": "Red panda",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:28:15.236Z",
+      "sha256": "965d51f778ca614717ca9b237365a852c88ffb037245b2deb31d5667047e6c79",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:19.425Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

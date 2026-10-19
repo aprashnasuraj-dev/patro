@@ -1,0 +1,112 @@
+{
+  "id": "mm-1807",
+  "type": "topic",
+  "slug": "how-wind-is-created",
+  "title": "How Wind Is Created: The Full Story",
+  "description": "Evidence dossier for research question: How Wind Is Created: The Full Story. Not approved for publication.",
+  "intent": "Answer: How wind is created",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Wind Is Created: The Full Story\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow wind is created\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: INDEX\n\nPublisher: UNP - Bison Books\n\nURL: https://doi.org/10.2307/j.ctvd1cb4q.21\n\nRetrieved: 2026-10-18T23:26:22.708Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 2: Introduction\n\nPublisher: UNP - Bison Books\n\nURL: https://doi.org/10.2307/j.ctvd1cb4q.6\n\nRetrieved: 2026-10-18T23:26:22.842Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 3: Epilogue\n\nPublisher: UNP - Bison Books\n\nURL: https://doi.org/10.2307/j.ctvd1cb4q.18\n\nRetrieved: 2026-10-18T23:26:23.070Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 4: PREFACE\n\nPublisher: UNP - Bison Books\n\nURL: https://doi.org/10.2307/j.ctvd1cb4q.4\n\nRetrieved: 2026-10-18T23:26:23.206Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 5: Wind chill\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=154910\n\nRetrieved: 2026-10-18T23:26:23.206Z\n\n### Stored passages\n\n- “Wind chill is the sensation of cold produced by the wind for a given ambient air temperature on exposed skin as the air motion accelerates…”\n\n## Evidence record 6: Gone with the Wind (film)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2804704\n\nRetrieved: 2026-10-18T23:26:23.206Z\n\n### Stored passages\n\n- “Gone with the Wind is a 1939 American epic historical romance film adapted from the 1936 novel by Margaret Mitchell.”\n\n## Evidence record 7: Salvation is Created\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17057117\n\nRetrieved: 2026-10-18T23:26:23.206Z\n\n### Stored passages\n\n- “\"Thou Hast Wrought Salvation\" is a choral work composed by Pavel Chesnokov in 1912 as the fifth in his Ten Communion Hymns (Op.”\n\n## Evidence record 8: Wind lens\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32918795\n\nRetrieved: 2026-10-18T23:26:23.206Z\n\n### Stored passages\n\n- “The wind lens is a modification on the wind turbine created by Professor Ohya from Kyushu University, as an attempt to be more efficient in…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.21",
+      "title": "INDEX",
+      "publisher": "UNP - Bison Books",
+      "published_at": "2019-05-01",
+      "retrieved_at": "2026-10-18T23:26:22.708Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.6",
+      "title": "Introduction",
+      "publisher": "UNP - Bison Books",
+      "published_at": "2019-05-01",
+      "retrieved_at": "2026-10-18T23:26:22.842Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.18",
+      "title": "Epilogue",
+      "publisher": "UNP - Bison Books",
+      "published_at": "2019-05-01",
+      "retrieved_at": "2026-10-18T23:26:23.070Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.2307/j.ctvd1cb4q.4",
+      "title": "PREFACE",
+      "publisher": "UNP - Bison Books",
+      "published_at": "2019-05-01",
+      "retrieved_at": "2026-10-18T23:26:23.206Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=154910",
+      "title": "Wind chill",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:26:23.206Z",
+      "sha256": "4d36a750951b6efb5c0810b9674b0a77d215b46879f6e68228df7df7c98d7148",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=2804704",
+      "title": "Gone with the Wind (film)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:26:23.206Z",
+      "sha256": "786555738f24e572e14ca89a3ad7acfd019cf2e2177f3c9dec6eddefe726deee",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=17057117",
+      "title": "Salvation is Created",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:26:23.206Z",
+      "sha256": "f09a10e10a7ff5d7ceb8279c8f19b72dddbedacea9e13bdba0dae8d10dbe13ec",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=32918795",
+      "title": "Wind lens",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:26:23.206Z",
+      "sha256": "5af6a6a2c33bea18e168d650aeb8c4a8b1d42436f8bcc068c3d51f3920981e67",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:19.423Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
