@@ -1,0 +1,112 @@
+{
+  "id": "mm-1898",
+  "type": "topic",
+  "slug": "how-electric-cars-charge-data",
+  "title": "How Electric Cars Charge: What the Numbers Show",
+  "description": "Evidence dossier for research question: How Electric Cars Charge: What the Numbers Show. Not approved for publication.",
+  "intent": "Answer: How electric cars charge",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Electric Cars Charge: What the Numbers Show\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow electric cars charge\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Negative charge: why is Australia so slow at adopting electric cars?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/negative-charge-why-is-australia-so-slow-at-adopting-electric-cars-86478\n\nRetrieved: 2026-10-18T23:10:48.151Z\n\n### Stored passages\n\n- “Negative charge: why is Australia so slow at adopting electric cars?”\n\n## Evidence record 2: Roads that charge electric cars are part of a brave new automotive world\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/roads-that-charge-electric-cars-are-part-of-a-brave-new-automotive-world-47945\n\nRetrieved: 2026-10-18T23:10:48.227Z\n\n### Stored passages\n\n- “Roads that charge electric cars are part of a brave new automotive world Skip to content Academic rigor, journalistic flair Roads that charge electric cars…”\n\n## Evidence record 3: How to spread Norway’s success with electric cars\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/how-to-spread-norways-success-with-electric-cars-21452\n\nRetrieved: 2026-10-18T23:10:48.380Z\n\n### Stored passages\n\n- “How to spread Norway’s success with electric cars Skip to content Academic rigor, journalistic flair How to spread Norway’s success with electric cars Published: December…”\n\n## Evidence record 4: Electric vehicle\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=279350\n\nRetrieved: 2026-10-18T23:10:48.380Z\n\n### Stored passages\n\n- “An electric vehicle (EV) is a vehicle propelled mostly by electric power.”\n\n## Evidence record 5: Tesla, Inc.\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=5533631\n\nRetrieved: 2026-10-18T23:10:48.380Z\n\n### Stored passages\n\n- “( TEZ-lə or TESS-lə) is an American multinational automotive and clean energy company.”\n\n## Evidence record 6: Charging station\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=10592503\n\nRetrieved: 2026-10-18T23:10:48.380Z\n\n### Stored passages\n\n- “Charging stations can theoretically be installed anywhere accessible by the electrical grid, including dedicated public charging facilities, multistorey car parks, private garages and carports, and…”\n\n## Evidence record 7: Electric car\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=16105186\n\nRetrieved: 2026-10-18T23:10:48.380Z\n\n### Stored passages\n\n- “An electric car is an automobile that uses electrical energy as the primary source of propulsion.”\n\n## Evidence record 8: The influence of characteristics of EV niches on charging behavior: How to steer the charging behavior of electric small passenger service vehicles and shared cars into a societally desirable direction\n\nPublisher: Utrecht University Repository (Utrecht University)\n\nURL: https://openalex.org/W2899222009\n\nRetrieved: 2026-10-18T16:01:51.587Z\n\n### Stored passages\n\n- “The expected increased adoption ofelectric vehicles (EVs) in the coming years could present problems for the gridif the electricity demand of EVs occurs mostly during…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/negative-charge-why-is-australia-so-slow-at-adopting-electric-cars-86478",
+      "title": "Negative charge: why is Australia so slow at adopting electric cars?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2017-11-09",
+      "retrieved_at": "2026-10-18T23:10:48.151Z",
+      "sha256": "08beffe8ec9418c92a0da20d78c3822787bbbac1709f46b8e99e35b6576d37a2",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/roads-that-charge-electric-cars-are-part-of-a-brave-new-automotive-world-47945",
+      "title": "Roads that charge electric cars are part of a brave new automotive world",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2015-11-17",
+      "retrieved_at": "2026-10-18T23:10:48.227Z",
+      "sha256": "06b8082f6ae1e39c7719788dbe6f12d6d291798bc65d59471e031bf9a56468e3",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/how-to-spread-norways-success-with-electric-cars-21452",
+      "title": "How to spread Norway’s success with electric cars",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2013-12-13",
+      "retrieved_at": "2026-10-18T23:10:48.380Z",
+      "sha256": "6113302465b35dbb307f868e9c49ef11bd403f2ee9bd119b86c8ffb85c1e28b8",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=279350",
+      "title": "Electric vehicle",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:10:48.380Z",
+      "sha256": "0e72acf56650ff2c124fcaefd3d5ca1ee524dbf045efead3317325ba3e1d99e1",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=5533631",
+      "title": "Tesla, Inc.",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:10:48.380Z",
+      "sha256": "04a7b9ce429e9e36e33dd3fcf1c62ae6aed538a509b58a92cf1b666540b324ca",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=10592503",
+      "title": "Charging station",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:10:48.380Z",
+      "sha256": "16ec40aab1f10e6ec605b58844658d9ce9b4f0c69e4d8a4a3e426fc741dfc232",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=16105186",
+      "title": "Electric car",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:10:48.380Z",
+      "sha256": "726b268286332189b58903717c90b2829301cf5feef17ff1655cce65cf5dc4c5",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2899222009",
+      "title": "The influence of characteristics of EV niches on charging behavior: How to steer the charging behavior of electric small passenger service vehicles and shared cars into a societally desirable direction",
+      "publisher": "Utrecht University Repository (Utrecht University)",
+      "published_at": "2018-01-01",
+      "retrieved_at": "2026-10-18T16:01:51.587Z",
+      "sha256": "68a3f8bf54e19cae3fae5ca8b0c11b9e4f49ae1c870373c1247ef4ec8925f0af",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:12.022Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "mm-0549",
+  "type": "topic",
+  "slug": "how-babies-pick-up-accents",
+  "title": "How Babies Pick Up Accents: Explained With Real Data",
+  "description": "Evidence dossier for research question: How Babies Pick Up Accents: Explained With Real Data. Not approved for publication.",
+  "intent": "Answer: How babies pick up accents",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Babies Pick Up Accents: Explained With Real Data\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow babies pick up accents\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Are we hardwired to pick up crying babies?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/are-we-hardwired-to-pick-up-crying-babies-86162\n\nRetrieved: 2026-10-18T21:19:46.004Z\n\n### Stored passages\n\n- “Skip to content Academic rigor, journalistic flair shutterstock.”\n\n## Evidence record 2: Quiz: can you pick a Victorian from a Queenslander? How our accents change from state to state\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/quiz-can-you-pick-a-victorian-from-a-queenslander-how-our-accents-change-from-state-to-state-250908\n\nRetrieved: 2026-10-18T21:19:46.063Z\n\n### Stored passages\n\n- “How our accents change from state to state Skip to content Academic rigor, journalistic flair AustralianCamera/shutterstock Quiz: can you pick a Victorian from a Queenslander?”\n\n## Evidence record 3: Bringing Up Babies I\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/babies-made-us-modern/bringing-up-babies-i/EC05244B7547232E9205017CC4CAF5AF\n\nRetrieved: 2026-10-18T21:19:46.744Z\n\n### Stored passages\n\n- “Bringing Up Babies I (Chapter 4) - Babies Made Us Modern Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo…”\n\n## Evidence record 4: Bringing Up Babies II\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/babies-made-us-modern/bringing-up-babies-ii/A9AC52CD9CC5D91611D7A3FA58FFFDAC\n\nRetrieved: 2026-10-18T21:19:47.584Z\n\n### Stored passages\n\n- “Bringing Up Babies II (Chapter 5) - Babies Made Us Modern Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo…”\n\n## Evidence record 5: Accent (sociolinguistics)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=256791\n\nRetrieved: 2026-10-18T21:19:47.586Z\n\n### Stored passages\n\n- “In sociolinguistics, an accent is a way of pronouncing a language that is distinctive to a country, area, social class, or individual.”\n\n## Evidence record 6: Boston accent\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=730207\n\nRetrieved: 2026-10-18T21:19:47.586Z\n\n### Stored passages\n\n- “A Boston accent is a local accent of Eastern New England English, native specifically to the city of Boston and its suburbs.”\n\n## Evidence record 7: How the García Girls Lost Their Accents\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=8002757\n\nRetrieved: 2026-10-18T21:19:47.586Z\n\n### Stored passages\n\n- “How the García Girls Lost Their Accents is a 1991 novel written by Dominican-American poet, novelist, and essayist Julia Alvarez.”\n\n## Evidence record 8: The Magic of Ordinary Days\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=10633440\n\nRetrieved: 2026-10-18T21:19:47.587Z\n\n### Stored passages\n\n- “The Magic of Ordinary Days is a Hallmark Hall of Fame production based on a novel of the same name by Ann Howard Creel and…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/are-we-hardwired-to-pick-up-crying-babies-86162",
+      "title": "Are we hardwired to pick up crying babies?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2017-10-24",
+      "retrieved_at": "2026-10-18T21:19:46.004Z",
+      "sha256": "399ad6d53cce779e70a4d93728cd1e5568e8af5c9538193e276bc9c809e64f17",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/quiz-can-you-pick-a-victorian-from-a-queenslander-how-our-accents-change-from-state-to-state-250908",
+      "title": "Quiz: can you pick a Victorian from a Queenslander? How our accents change from state to state",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2025-08-17",
+      "retrieved_at": "2026-10-18T21:19:46.063Z",
+      "sha256": "25706981c2d0011b6c1512fca0ea1a51c9a9bd578fdfaab4b4b0ff44615ec18c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://www.cambridge.org/core/books/babies-made-us-modern/bringing-up-babies-i/EC05244B7547232E9205017CC4CAF5AF",
+      "title": "Bringing Up Babies I",
+      "publisher": "Cambridge University Press",
+      "retrieved_at": "2026-10-18T21:19:46.744Z",
+      "sha256": "f12ddcd8bd966b06b169099b8844bb83ed0f14d1ec1f0fa432020f335a9fd09a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://www.cambridge.org/core/books/babies-made-us-modern/bringing-up-babies-ii/A9AC52CD9CC5D91611D7A3FA58FFFDAC",
+      "title": "Bringing Up Babies II",
+      "publisher": "Cambridge University Press",
+      "retrieved_at": "2026-10-18T21:19:47.584Z",
+      "sha256": "a378f94b83dbf0bf58a23b6dac22fe2973ee1e14d9008ee5337ca7976db92145",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=256791",
+      "title": "Accent (sociolinguistics)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:19:47.586Z",
+      "sha256": "0bf5b56856b7dc116f8eec80af2f0bc2a7ba82fd6ceb45adba43f83a87027ec0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=730207",
+      "title": "Boston accent",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:19:47.586Z",
+      "sha256": "dcc1743c293a2eeed0575565aa489c6ad8033e46d045b032c3df19340e66b91c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=8002757",
+      "title": "How the García Girls Lost Their Accents",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:19:47.586Z",
+      "sha256": "41ac7a4a2d2eda80524aacffdab1355ed2a7739ef80a60309f8e984be32b2c81",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=10633440",
+      "title": "The Magic of Ordinary Days",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:19:47.587Z",
+      "sha256": "a6232ca4f3620e72aa6e6cd21cebc82d6df3676c13ae6d4fc6694dce3bef71f4",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:12.021Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
