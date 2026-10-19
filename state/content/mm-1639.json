@@ -1,0 +1,112 @@
+{
+  "id": "mm-1639",
+  "type": "topic",
+  "slug": "why-street-art-is-rising",
+  "title": "Why Street Art Is Rising? The Full Story",
+  "description": "Evidence dossier for research question: Why Street Art Is Rising? The Full Story. Not approved for publication.",
+  "intent": "Answer: Why street art is rising",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Street Art Is Rising? The Full Story\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy street art is rising\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Why Can´t Banksy Be a Woman?\n\nPublisher: Global Edge Printers and Publishers\n\nURL: https://doi.org/10.25765/sauc.v6i2.234\n\nRetrieved: 2026-10-18T22:33:59.471Z\n\n### Stored passages\n\n- “To this aim, I summon feminist contributions on the invisibility of women in the established art world, namely from art historians Linda Nochlin and Griselda…”\n\n## Evidence record 2: Why can’t our wall paintings last forever?\n\nPublisher: Global Edge Printers and Publishers\n\nURL: https://doi.org/10.25765/sauc.v3i1.58\n\nRetrieved: 2026-10-18T22:33:59.471Z\n\n### Stored passages\n\n- “The concept of ephemerality has been used in the last decades as the opposite of memory preservation.”\n\n## Evidence record 3: Why street art doesn’t always make a city better\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-street-art-doesnt-always-make-a-city-better-284693\n\nRetrieved: 2026-10-18T22:34:00.019Z\n\n### Stored passages\n\n- “Why street art doesn’t always make a city better Skip to content Academic rigor, journalistic flair ‘We dreamt an orchard this way’ is a mural…”\n\n## Evidence record 4: Why Greenland’s villages need street art just as much as new airports\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-greenlands-villages-need-street-art-just-as-much-as-new-airports-283312\n\nRetrieved: 2026-10-18T22:34:00.084Z\n\n### Stored passages\n\n- “Why Greenland’s villages need street art just as much as new airports Skip to content Academic rigor, journalistic flair Arferup Pania by Hollie Kielsen Olsen,…”\n\n## Evidence record 5: Easter Rising\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=10350\n\nRetrieved: 2026-10-18T22:34:00.085Z\n\n### Stored passages\n\n- “The Easter Rising (Irish: Éirí Amach na Cásca), also known as the Easter Rebellion, was an armed insurrection in Ireland during Easter Week in April…”\n\n## Evidence record 6: Street Fighter (video game)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2829113\n\nRetrieved: 2026-10-18T22:34:00.085Z\n\n### Stored passages\n\n- “Street Fighter is a 1987 fighting game developed and published by Capcom for arcades.”\n\n## Evidence record 7: Rising Sun Flag\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=11535807\n\nRetrieved: 2026-10-18T22:34:00.085Z\n\n### Stored passages\n\n- “The Rising Sun Flag (Japanese: 旭日旗, Hepburn: Kyokujitsu-ki) is a Japanese flag that consists of a red disc and sixteen red rays emanating from the…”\n\n## Evidence record 8: William Penn (Calder)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=34217024\n\nRetrieved: 2026-10-18T22:34:00.085Z\n\n### Stored passages\n\n- “William Penn is a bronze statue of William Penn, the founder of the Commonwealth of Pennsylvania, by Alexander Milne Calder.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.25765/sauc.v6i2.234",
+      "title": "Why Can´t Banksy Be a Woman?",
+      "publisher": "Global Edge Printers and Publishers",
+      "published_at": "2020-12-30",
+      "retrieved_at": "2026-10-18T22:33:59.471Z",
+      "sha256": "051be4ab75324ee02a43bca0a43c792dd58d5a1945e530d8683a5e74ae776582",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.25765/sauc.v3i1.58",
+      "title": "Why can’t our wall paintings last forever?",
+      "publisher": "Global Edge Printers and Publishers",
+      "published_at": "2017-11-20",
+      "retrieved_at": "2026-10-18T22:33:59.471Z",
+      "sha256": "dcc4d1133f020fe5c403e9e30bc46e267141b556963f6307d315ae76dff6474f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/why-street-art-doesnt-always-make-a-city-better-284693",
+      "title": "Why street art doesn’t always make a city better",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2026-06-10",
+      "retrieved_at": "2026-10-18T22:34:00.019Z",
+      "sha256": "25177185e5cfe7b31847aacbde7d29aee5d4fa01fdf4bdf8c7c3b4e6aa9bbb92",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://theconversation.com/why-greenlands-villages-need-street-art-just-as-much-as-new-airports-283312",
+      "title": "Why Greenland’s villages need street art just as much as new airports",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2026-05-28",
+      "retrieved_at": "2026-10-18T22:34:00.084Z",
+      "sha256": "9a110d1bb981089c8e8ca4644fcc803fb653a86da9187d1f8c0a2eb688e03589",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=10350",
+      "title": "Easter Rising",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:34:00.085Z",
+      "sha256": "a3ab4921a5994ca011e94784b5227e6d81e233d311736873c5d503c7b18454a9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=2829113",
+      "title": "Street Fighter (video game)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:34:00.085Z",
+      "sha256": "199ee19067737bbbb5a7ba1371f73416b77b53e539700025d9a962b34bd5f860",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=11535807",
+      "title": "Rising Sun Flag",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:34:00.085Z",
+      "sha256": "cb74d220ab72373ddefc2a2517147be5bbf29e2d03e812fcb68f0b63ba55319c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=34217024",
+      "title": "William Penn (Calder)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:34:00.085Z",
+      "sha256": "bfefaba694c5e3eee2a7291802d587ee100ca03da666257ab74b28bb98d535a1",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.727Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

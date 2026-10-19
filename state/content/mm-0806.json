@@ -1,0 +1,112 @@
+{
+  "id": "mm-0806",
+  "type": "topic",
+  "slug": "how-to-spot-the-international-space-station-perspectives",
+  "title": "How to Spot the International Space Station: 7 Expert Perspectives Compared",
+  "description": "Evidence dossier for research question: How to Spot the International Space Station: 7 Expert Perspectives Compared. Not approved for publication.",
+  "intent": "Answer: How to spot the International Space Station",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How to Spot the International Space Station: 7 Expert Perspectives Compared\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow to spot the International Space Station\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Curious Kids: How big is the International Space Station?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/curious-kids-how-big-is-the-international-space-station-121442\n\nRetrieved: 2026-10-18T21:26:12.846Z\n\n### Stored passages\n\n- “Skip to content Academic rigor, journalistic flair The ISS is a collaboration between the space agencies of Canada, Russia, Japan, Europe and the United States.”\n\n## Evidence record 2: How does the International Space Station orbit Earth without burning up?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/how-does-the-international-space-station-orbit-earth-without-burning-up-240412\n\nRetrieved: 2026-10-18T21:26:13.049Z\n\n### Stored passages\n\n- “How does the International Space Station orbit Earth without burning up?”\n\n## Evidence record 3: How to live in space: what we’ve learned from 20 years of the International Space Station\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/how-to-live-in-space-what-weve-learned-from-20-years-of-the-international-space-station-144851\n\nRetrieved: 2026-10-18T21:26:13.124Z\n\n### Stored passages\n\n- “The orbiting habitat has been continuously occupied ever since.”\n\n## Evidence record 4: International Space Station\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=15043\n\nRetrieved: 2026-10-18T21:26:13.125Z\n\n### Stored passages\n\n- “The International Space Station (ISS) is a space station in low Earth orbit (LEO).”\n\n## Evidence record 5: Space exploration\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=28431\n\nRetrieved: 2026-10-18T21:26:13.125Z\n\n### Stored passages\n\n- “Space exploration is the physical investigation of outer space by uncrewed robotic space probes and through human spaceflight.”\n\n## Evidence record 6: Control moment gyroscope\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2419303\n\nRetrieved: 2026-10-18T21:26:13.125Z\n\n### Stored passages\n\n- “A control moment gyroscope (CMG) is an attitude control device generally used in spacecraft attitude control systems.”\n\n## Evidence record 7: Spot Goes to Hollywood\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=6093071\n\nRetrieved: 2026-10-18T21:26:13.125Z\n\n### Stored passages\n\n- “Spot Goes to Hollywood is a 1995 platform game developed by Eurocom and published by Acclaim Entertainment in North America and Virgin Interactive Entertainment in…”\n\n## Evidence record 8: Radiation Protection Studies of International Space Station Extravehicular Activity Space Suits\n\nPublisher: NASA Technical Reports Server (NASA)\n\nURL: https://openalex.org/W847248070\n\nRetrieved: 2026-10-18T15:51:15.336Z\n\n### Stored passages\n\n- “This publication describes recent investigations that evaluate radiation shielding characteristics of NASA's and the Russian Space Agency's space suits.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/curious-kids-how-big-is-the-international-space-station-121442",
+      "title": "Curious Kids: How big is the International Space Station?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2019-09-18",
+      "retrieved_at": "2026-10-18T21:26:12.846Z",
+      "sha256": "f71cd10f996f3e8839f03f08cd06a2064eb7ebd51ac99398f2f4e59d173c52e1",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/how-does-the-international-space-station-orbit-earth-without-burning-up-240412",
+      "title": "How does the International Space Station orbit Earth without burning up?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2024-12-16",
+      "retrieved_at": "2026-10-18T21:26:13.049Z",
+      "sha256": "e21317f62af1a20dbcd8efbd93e9fd200dfbfa8b8eed37f51b28941c563e1fb0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/how-to-live-in-space-what-weve-learned-from-20-years-of-the-international-space-station-144851",
+      "title": "How to live in space: what we’ve learned from 20 years of the International Space Station",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2020-11-01",
+      "retrieved_at": "2026-10-18T21:26:13.124Z",
+      "sha256": "722d653a12933ae6b0ff5bd7139945c307dc0a281466522f0b6655f8122ac4e7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=15043",
+      "title": "International Space Station",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:26:13.125Z",
+      "sha256": "989866a72a9dcb528e9d6ccb638fcda7acef5184ad45367c42b53c8523e7ff52",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=28431",
+      "title": "Space exploration",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:26:13.125Z",
+      "sha256": "099653a89aab4f20f004f6e761eaf8ecd9a686714f5cd5012fe59ab37090df74",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=2419303",
+      "title": "Control moment gyroscope",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:26:13.125Z",
+      "sha256": "cc6d5f8d5caa72d618afd4a5dd8fa3939c86eaec81129da5cf0d6afeeca32286",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=6093071",
+      "title": "Spot Goes to Hollywood",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:26:13.125Z",
+      "sha256": "573b028dbe3ae4d6b987e40b37f8fecfff19a0ed1b129ee527b7c22d6463dada",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W847248070",
+      "title": "Radiation Protection Studies of International Space Station Extravehicular Activity Space Suits",
+      "publisher": "NASA Technical Reports Server (NASA)",
+      "published_at": "2003-12-01",
+      "retrieved_at": "2026-10-18T15:51:15.336Z",
+      "sha256": "b8f4a1e33ebb95260781b49ddb153aa0a5042bd41cf8965afb251428af4ad0bd",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.728Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
