@@ -3,7 +3,7 @@ import {mkdtemp,readFile,mkdir,writeFile} from 'node:fs/promises';import {tmpdir
 import {classify} from '../v2/classify.mjs';import {makeLlmV2} from '../v2/llm.mjs';import {decideV2} from '../v2/gate.mjs';
 import {isTrusted,wikiTitles,wikipediaSearchTitles,discoverEvidence,searchWebLinks,isRelevantEvidence,openAlexSearchLinks,rankCandidateLinks} from '../v2/discover.mjs';
 import {lint,fix} from '../core/voice.mjs';import {buildPlan,loadState} from '../v2/plan.mjs';import {candidateModels,preflight} from '../v2/preflight.mjs';
-import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';
+import {runV2} from '../v2/run-v2.mjs';import {auditArticle} from '../core/quality.mjs';import {validateInlineCitations} from '../v2/write-compact.mjs';
 const config=JSON.parse(await readFile(new URL('../v2/config.json',import.meta.url),'utf8'));
 const rec=(category,question,primary_api)=>({id:'t',status:'reserved',intent:'Answer: '+question,meta:{category,question,title:question,primary_api}});
 
@@ -38,6 +38,14 @@ test('discovery ladder: wikipedia extlinks -> scrapling extraction (injected), t
  const text='Chlorophyll absorbs red and blue light most strongly, which is why leaves look green to us. Plants reflect green wavelengths instead of absorbing them. ';
  const got=await discoverEvidence({evidence:[{url:'https://en.wikipedia.org/wiki/Grass',publisher:'Wikipedia',title:'Grass'}],disc:config.discovery,need:3,fetchImpl,extract:async urls=>urls.map(u=>({url:u,ok:true,title:'T',text:text.repeat(3)}))});
  assert.equal(got.length,2);assert.ok(got.every(e=>e.method==='scrapling'&&e.sha256.length===64&&e.excerpts.length>=2&&!('text' in e)));
+});
+test('P3: inline source markers must end each paragraph and each list item',()=>{
+ const allowed=new Set(['s1','s2']);
+ assert.deepEqual(validateInlineCitations('A supported paragraph. [[s1]]',allowed),[]);
+ assert.ok(validateInlineCitations('A supported paragraph [[s1]]. More facts after the marker.',allowed).some(x=>x.includes('must end')));
+ assert.deepEqual(validateInlineCitations('- First supported item [[s1]]\n- Second supported item [[s2]]',allowed),[]);
+ assert.ok(validateInlineCitations('- First supported item [[s1]]\n- Second unsupported item',allowed).some(x=>x.includes('missing inline source marker')));
+ assert.ok(validateInlineCitations('Supported claim [[s9]]',allowed).some(x=>x.includes('Unknown inline source marker')));
 });
 test('P2: candidate ranking prefers authoritative domains while preserving topic relevance and stable ties',()=>{
  const ranked=rankCandidateLinks(['https://random.example/himalayas','https://www.nasa.gov/himalayas','https://www.nature.com/articles/tectonic-uplift'],'Himalayas tectonic uplift');
