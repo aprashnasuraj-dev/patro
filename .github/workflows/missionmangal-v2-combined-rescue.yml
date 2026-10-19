@@ -1,4 +1,5 @@
 name: Mission Mangal v2 combined v1 rescue
+run-name: batch-${{ inputs.batch_number || '001' }}
 on:
   push:
     branches: [missionmangal-v2-rescue-combined]
@@ -8,6 +9,10 @@ on:
       - "missionmangal/tests/**"
   workflow_dispatch:
     inputs:
+      batch_number:
+        description: "One-based three-digit batch identifier"
+        default: "001"
+        required: true
       previous_run:
         description: "Prior completed combined run ID for durable state restoration (0 for initial run)"
         default: "0"
