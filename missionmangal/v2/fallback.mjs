@@ -21,7 +21,7 @@ export function buildEvidenceDossier({ topic, row, registryItem, evidence, now =
   const sections = unique.map((e, i) => {
     // Keep stored quotation material short: at most 25 words per source in the dossier.
     const passages = e.excerpts.map(esc).filter(x => x.length >= 35).slice(0, 1).map(x => {
-      const words = x.split(/\\s+/);
+      const words = x.split(/\s+/);
       return words.length > 25 ? words.slice(0, 25).join(' ') + '…' : x;
     });
     if (!passages.length) return '';
