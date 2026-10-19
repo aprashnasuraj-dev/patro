@@ -1,0 +1,112 @@
+{
+  "id": "mm-0577",
+  "type": "topic",
+  "slug": "why-5g-is-faster",
+  "title": "Why 5G Is Faster? A Simple Guide",
+  "description": "Evidence dossier for research question: Why 5G Is Faster? A Simple Guide. Not approved for publication.",
+  "intent": "Answer: Why 5G is faster",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why 5G Is Faster? A Simple Guide\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy 5G is faster\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Why is Productivity Growing Faster?\n\nPublisher: National Bureau of Economic Research\n\nURL: https://doi.org/10.3386/w9530\n\nRetrieved: 2026-10-18T15:10:05.438Z\n\n### Stored passages\n\n- “ųP�: �*\u001bb&ѥ�u�����.�⫰\u0010Dc\u0010Z�u�|,��$0C��\b:�>�\u0001\u000e͒!Z\u0007�3\b�!5��G���Y��\u0014�h�#�\u001e�\u0012\u0016�$�%l�9�wx ����d���p�!”\n\n## Evidence record 2: Three wireless technologies that could make 5G even faster\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/three-wireless-technologies-that-could-make-5g-even-faster-39140\n\nRetrieved: 2026-10-18T15:10:05.782Z\n\n### Stored passages\n\n- “Three wireless technologies that could make 5G even faster Skip to content Academic rigor, journalistic flair Three wireless technologies that could make 5G even faster…”\n\n## Evidence record 3: Verizon (wireless service)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=468631\n\nRetrieved: 2026-10-18T15:10:05.783Z\n\n### Stored passages\n\n- “Cellco Partnership, trading as Verizon and formerly Verizon Wireless, is an American wireless network operator.”\n\n## Evidence record 4: Rivada Networks\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=22874969\n\nRetrieved: 2026-10-18T15:10:05.783Z\n\n### Stored passages\n\n- “Rivada Networks is a US-based communications technology business with offices in the US and Ireland.”\n\n## Evidence record 5: 5G\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=23475353\n\nRetrieved: 2026-10-18T15:10:05.783Z\n\n### Stored passages\n\n- “5G refers to the fifth and current generation of cellular network technology and the successor to 4G.”\n\n## Evidence record 6: Samsung Galaxy S21\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=66351666\n\nRetrieved: 2026-10-18T15:10:05.783Z\n\n### Stored passages\n\n- “The Samsung Galaxy S21 is a series of high-end Android-based smartphones developed, marketed, and manufactured by Samsung Electronics as part of its flagship Galaxy S…”\n\n## Evidence record 7: A Ten-Country Study on Public Perceptions of 5G EMF Emissions: Who Feels Exposed, and Why?\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1002/bem.70058\n\nRetrieved: 2026-10-18T21:10:02.764Z\n\n### Stored passages\n\n- “Formal risk assessment considers characteristics such as proximity, dose, and vulnerability.”\n\n## Evidence record 8: A flower-shaped dual-band four port MIMO antenna with novel DGS for 5G mmWave applications.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1371/journal.pone.0358640\n\nRetrieved: 2026-10-18T21:10:02.764Z\n\n### Stored passages\n\n- “A novel quad-port multiple-input multiple-output (MIMO) antenna with enhanced isolation is proposed by incorporating a specifically designed hybrid defected ground structure (DGS) for dual band…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.3386/w9530",
+      "title": "Why is Productivity Growing Faster?",
+      "publisher": "National Bureau of Economic Research",
+      "published_at": "2003-03",
+      "retrieved_at": "2026-10-18T15:10:05.438Z",
+      "sha256": "02f247151db63e9c03904d8853bcee17aed92102ebc5286e31b83604b4cf3679",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/three-wireless-technologies-that-could-make-5g-even-faster-39140",
+      "title": "Three wireless technologies that could make 5G even faster",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2015-03-23",
+      "retrieved_at": "2026-10-18T15:10:05.782Z",
+      "sha256": "38f0469e71db722c09b827620bc9582f787302cbb0eacb6133dd7066a4da2d37",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://en.wikipedia.org/?curid=468631",
+      "title": "Verizon (wireless service)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "9db6b3633d2d27ede7875baeaf161a4a1646ca53bb77f6d9e67d80da0d8440dd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=22874969",
+      "title": "Rivada Networks",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "b1096eba890faf8d0879ff24ba81078978ddc3952511fc7df9f1b784365a0860",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=23475353",
+      "title": "5G",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "5eb5b3849fa7f9bcd3b297cafaa894bcedcd5a13ce7cfa72f942f4a75d8895ee",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=66351666",
+      "title": "Samsung Galaxy S21",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:05.783Z",
+      "sha256": "0a4254659d800bede7f2855c4f8bb32d3c19ae1b735c2e6409507febf79e5af0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://doi.org/10.1002/bem.70058",
+      "title": "A Ten-Country Study on Public Perceptions of 5G EMF Emissions: Who Feels Exposed, and Why?",
+      "publisher": "Europe PMC",
+      "published_at": "2026-07-01",
+      "retrieved_at": "2026-10-18T21:10:02.764Z",
+      "sha256": "6f2af1eb19ca918ca633997dd2794641be10681688565e8ea8e437d64fafe07d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://doi.org/10.1371/journal.pone.0358640",
+      "title": "A flower-shaped dual-band four port MIMO antenna with novel DGS for 5G mmWave applications.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-09-28",
+      "retrieved_at": "2026-10-18T21:10:02.764Z",
+      "sha256": "3c8460850bcb7d0434d40dbcc90b5be2dd02d2dea7cd93d7bca6d4560f08510c",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:55:29.731Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
