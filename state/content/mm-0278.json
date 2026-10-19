@@ -1,0 +1,112 @@
+{
+  "id": "mm-0278",
+  "type": "topic",
+  "slug": "how-monsoon-shapes-nepali-farming-facts",
+  "title": "How Monsoon Shapes Nepali Farming: 10 Facts Backed by Sources",
+  "description": "Evidence dossier for research question: How Monsoon Shapes Nepali Farming: 10 Facts Backed by Sources. Not approved for publication.",
+  "intent": "Answer: How monsoon shapes Nepali farming",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Monsoon Shapes Nepali Farming: 10 Facts Backed by Sources\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow monsoon shapes Nepali farming\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Farming the Storm: How In-Situ Adaptation shapes Migration decision in Tanzania\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.6297778\n\nRetrieved: 2026-10-18T21:02:17.903Z\n\n### Stored passages\n\n- “This paper investigates whether in-situ agricultural adaptation influences household migration decisions, using nationally representative panel data from Tanzania (LSMS-ISA).”\n\n## Evidence record 2: Origins of a Uniquely Adaptive Farming System:\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/origins-of-a-uniquely-adaptive-farming-system/A6ED840E5A394A2B67107252EC61058B\n\nRetrieved: 2026-10-18T21:02:19.538Z\n\n### Stored passages\n\n- “Origins of a Uniquely Adaptive Farming System: (Chapter 4) - Monsoon Rains, Great Rivers and the Development of Farming Civilisations in Asia Skip to main…”\n\n## Evidence record 3: Dryland Farming in the Northern Monsoon Frontier\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/dryland-farming-in-the-northern-monsoon-frontier/914E6948C13D7A0EA0EFE8D27B93F42C\n\nRetrieved: 2026-10-18T21:02:20.326Z\n\n### Stored passages\n\n- “Dryland Farming in the Northern Monsoon Frontier (Chapter 5) - Monsoon Rains, Great Rivers and the Development of Farming Civilisations in Asia Skip to main…”\n\n## Evidence record 4: Future Monsoon Predictions\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/future-monsoon-predictions/DECCC36BAD4D1E11DAC883725839D6E6\n\nRetrieved: 2026-10-18T21:02:21.234Z\n\n### Stored passages\n\n- “Future Monsoon Predictions (Chapter 7) - Monsoon Rains, Great Rivers and the Development of Farming Civilisations in Asia Skip to main content Accessibility help Login…”\n\n## Evidence record 5: Kathmandu\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17168\n\nRetrieved: 2026-10-18T21:02:21.235Z\n\n### Stored passages\n\n- “Kathmandu is the capital and largest city of Nepal, situated in the central part of the country within the Kathmandu Valley.”\n\n## Evidence record 6: Sikkim\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=140372\n\nRetrieved: 2026-10-18T21:02:21.235Z\n\n### Stored passages\n\n- “Sikkim ( SIK-im; Nepali: [ˈsikːim]) is a state in northeast India.”\n\n## Evidence record 7: Darjeeling\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=186729\n\nRetrieved: 2026-10-18T21:02:21.235Z\n\n### Stored passages\n\n- “Darjeeling (, Nepali: [ˈdard͡ziliŋ], Bengali: [ˈdarˌdʒiliŋ]) is a city in the northernmost region of the Indian state of West Bengal.”\n\n## Evidence record 8: Paddy field\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=541808\n\nRetrieved: 2026-10-18T21:02:21.235Z\n\n### Stored passages\n\n- “A paddy field (or paddy) is a flooded field of arable land used for growing semiaquatic crops, most notably rice and taro.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2139/ssrn.6297778",
+      "title": "Farming the Storm: How In-Situ Adaptation shapes Migration decision in Tanzania",
+      "publisher": "Elsevier BV",
+      "published_at": "2026",
+      "retrieved_at": "2026-10-18T21:02:17.903Z",
+      "sha256": "248bb4b69fc702b5949cd80e8fb707bf224103dfcc33f9ca8a5dfa8aad96a3ad",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/origins-of-a-uniquely-adaptive-farming-system/A6ED840E5A394A2B67107252EC61058B",
+      "title": "Origins of a Uniquely Adaptive Farming System:",
+      "publisher": "Cambridge University Press",
+      "published_at": "2021-01-07",
+      "retrieved_at": "2026-10-18T21:02:19.538Z",
+      "sha256": "d65602584c6b9cb2ad1c817a7d75e61ade43c43c0c4d686b5b6cbbb237e49cc0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/dryland-farming-in-the-northern-monsoon-frontier/914E6948C13D7A0EA0EFE8D27B93F42C",
+      "title": "Dryland Farming in the Northern Monsoon Frontier",
+      "publisher": "Cambridge University Press",
+      "published_at": "2021-01-07",
+      "retrieved_at": "2026-10-18T21:02:20.326Z",
+      "sha256": "b055d6079c044e1494aefbe47185a01346dc18b6538830b3d74491fd0cf2b931",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://www.cambridge.org/core/books/monsoon-rains-great-rivers-and-the-development-of-farming-civilisations-in-asia/future-monsoon-predictions/DECCC36BAD4D1E11DAC883725839D6E6",
+      "title": "Future Monsoon Predictions",
+      "publisher": "Cambridge University Press",
+      "published_at": "2021-01-07",
+      "retrieved_at": "2026-10-18T21:02:21.234Z",
+      "sha256": "075545082a2ea69b07a2708959f5036742b10f15cdeddd93921ac42c3a7cf299",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=17168",
+      "title": "Kathmandu",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:02:21.235Z",
+      "sha256": "f9fa71ea40cbcd33389b754c85f096f1ea3b48ed8047d10ce3f8277dd7d488d7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=140372",
+      "title": "Sikkim",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:02:21.235Z",
+      "sha256": "34be9706fa0aa9ef6d0a731735e155961a2a09c3086d82964a13424809845669",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=186729",
+      "title": "Darjeeling",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:02:21.235Z",
+      "sha256": "89d652f2bca7bac3cda6339cc72a27347f51e4a3f9e2550b8d399827833bc768",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=541808",
+      "title": "Paddy field",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:02:21.235Z",
+      "sha256": "99dd9a05548a2b271119e1889d7bbdb93d89c4e258729536c0e42f0c1776505f",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:12.424Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

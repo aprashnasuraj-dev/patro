@@ -1,0 +1,112 @@
+{
+  "id": "mm-0767",
+  "type": "topic",
+  "slug": "how-el-nino-changes-global-weather",
+  "title": "How El Nino Changes Global Weather: A Simple Guide",
+  "description": "Evidence dossier for research question: How El Nino Changes Global Weather: A Simple Guide. Not approved for publication.",
+  "intent": "Answer: How El Nino changes global weather",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How El Nino Changes Global Weather: A Simple Guide\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow El Nino changes global weather\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: How Global Warming Changes the Difficulty of Synoptic Weather Forecasting\n\nPublisher: Copernicus GmbH\n\nURL: https://doi.org/10.5194/egusphere-egu2020-20184\n\nRetrieved: 2026-10-18T21:52:32.541Z\n\n### Stored passages\n\n- “&amp;lt;p&amp;gt;Little is known on whether and how global warming may affect the atmosphere's predictability and thus our ability to produce accurate weather forecasts.”\n\n## Evidence record 2: The Impacts of El Nino and La Nina on the Global Weather Condition and Possible Remedial Measures\n\nPublisher: Humanity Only - HO\n\nURL: https://doi.org/10.31703/gssr.2022(vii-i).30\n\nRetrieved: 2026-10-18T21:52:32.541Z\n\n### Stored passages\n\n- “This research aims to investigate the socio-economic and political\"impacts of El Nino and La Nina on\" global weather conditions.”\n\n## Evidence record 3: El Niño combined with global warming means big changes for New Zealand’s weather\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/el-nino-combined-with-global-warming-means-big-changes-for-new-zealands-weather-207493\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “In particular, a switch from prevailing northeasterlies to southwesterlies means New Zealand is one of the few countries where cooler conditions are felt during El…”\n\n## Evidence record 4: How Do Futures Contracts on Agricultural Commodities Respond to El Nino Weather Events?\n\nPublisher: Institute for Promoting Research and Policy Development\n\nURL: https://doi.org/10.56734/ijbms.v5n6a2\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “This study examines how futures contracts on wheat, soybeans, corn and sugarcane respond to El Nino weather events over the period March 2010 to April…”\n\n## Evidence record 5: El Niño–Southern Oscillation\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=317311\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “El Niño–Southern Oscillation (ENSO) is a global climate phenomenon that emerges from variation in winds and sea surface temperatures over the tropical Pacific Ocean.”\n\n## Evidence record 6: Climate change\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=5042951\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “Present-day climate change includes both global warming—the ongoing increase in global average temperature—and its wider effects on Earth's climate system.”\n\n## Evidence record 7: 2023–2024 El Niño event\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=76105696\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “The 2023–2024 El Niño was regarded as the fifth-most powerful El Niño–Southern Oscillation event in recorded history, resulting in widespread droughts, flooding and other natural…”\n\n## Evidence record 8: Super El Niño events\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=83281507\n\nRetrieved: 2026-10-18T21:52:33.003Z\n\n### Stored passages\n\n- “Super El Niño events, officially called very strong El Niño events, are climatic phenomena resulting from the average sea surface temperatures in parts of the…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.5194/egusphere-egu2020-20184",
+      "title": "How Global Warming Changes the Difficulty of Synoptic Weather Forecasting",
+      "publisher": "Copernicus GmbH",
+      "published_at": "2020-03-23",
+      "retrieved_at": "2026-10-18T21:52:32.541Z",
+      "sha256": "b7485551626d9da5c81d03d48b5c7fce5c517423e1206f2f52961f407ba43c8d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.31703/gssr.2022(vii-i).30",
+      "title": "The Impacts of El Nino and La Nina on the Global Weather Condition and Possible Remedial Measures",
+      "publisher": "Humanity Only - HO",
+      "published_at": "2022-03-30",
+      "retrieved_at": "2026-10-18T21:52:32.541Z",
+      "sha256": "62be10da0e0b3fc0366b66a5f7b0f6cf2abd413f4ebaf605ae0b1f7fb0f33872",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/el-nino-combined-with-global-warming-means-big-changes-for-new-zealands-weather-207493",
+      "title": "El Niño combined with global warming means big changes for New Zealand’s weather",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2023-06-12",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "94505c0a29a162f09579c74e8f2f135cc331ea41b4ba26e56713fc0d5550d7ca",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.56734/ijbms.v5n6a2",
+      "title": "How Do Futures Contracts on Agricultural Commodities Respond to El Nino Weather Events?",
+      "publisher": "Institute for Promoting Research and Policy Development",
+      "published_at": "2024-06-25",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "c6ac4a52bacdc9ae9bbb1c89645bae4e346bafdfba680c6b34dd70631e2efc06",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=317311",
+      "title": "El Niño–Southern Oscillation",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "d1e34868c92391c2986d42854a1d3e270da09bba67589208d8cb41b74fcc7676",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=5042951",
+      "title": "Climate change",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "804ac887913cc33bd1a27506e8b9cc17cb7e6eda62986265963205d9d8bd7186",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=76105696",
+      "title": "2023–2024 El Niño event",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "7238052dafc7d46ea42862e12241c7ae2500f1a7f19dd915589bcaa6895fe45b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=83281507",
+      "title": "Super El Niño events",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:52:33.003Z",
+      "sha256": "2407478b7fb9283f8387d04277197102ac5eba1c89a3425c01d1647c130f9229",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:12.423Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

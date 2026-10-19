@@ -1,0 +1,32 @@
+{
+  "worker": 3,
+  "workers": 20,
+  "engine": "v2",
+  "queued": 3,
+  "approved": 0,
+  "review": 0,
+  "blocked": 0,
+  "retry_later": 3,
+  "stopped_for_budget": 0,
+  "stopped_for_deadline": 0,
+  "discovered_sources": 0,
+  "providers": [
+    {
+      "id": "groq",
+      "used": 4,
+      "budget": 42,
+      "dead": false
+    },
+    {
+      "id": "pollinations",
+      "used": 8,
+      "budget": 42,
+      "dead": false
+    }
+  ],
+  "finished_at": "2026-10-19T03:00:10.256Z",
+  "fallback_dossiers": 3,
+  "fallback_no_evidence": 0,
+  "fallback_already_done": 0,
+  "fallback_finished_at": "2026-10-19T03:00:12.425Z"
+}
