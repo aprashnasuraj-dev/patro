@@ -67,6 +67,14 @@ test('gate: approves a grounded article with zero images; holds ymyl, short and 
  assert.ok(decideV2(base(),{route:'general',policy,seen:[{id:'z',body}]}).why[0].startsWith('NEAR_DUPLICATE'));
  assert.equal(decideV2(base(),{route:'ymyl',policy,allowYmyl:true}).article.disclaimer.includes('not professional advice'),true);
 });
+test('gate: thin-evidence release candidates are never approved and require mapped passages',()=>{
+ const body=Array.from({length:60},(_,i)=>'Sentence number '+i+' explains a separate detail about leaves and light.').join(' ');
+ const article={id:'abc',title:'A long enough title',intent:'Answer: something',original_contribution:'x'.repeat(40),sources:[{id:'s1',url:'https://x.gov/1',title:'T1',publisher:'P',retrieved_at:'2026-10-19T00:00:00Z',verified:false,claim_ids:['c1']}],claims:[{id:'c1',text:'A grounded claim about green leaves',source_ids:['s1'],passage:'Chlorophyll absorbs red and blue light and reflects green wavelengths.'}],media:[],body_md:body};
+ const result=decideV2(article,{route:'general',policy:{min_sources:3,candidate_sources:1,min_words:300}});
+ assert.equal(result.ok,false);assert.equal(result.candidate,true);assert.match(result.why[0],/RELEASE_CANDIDATE/);
+ const incomplete={...article,claims:[{...article.claims[0],passage:'p'}]};
+ assert.equal(decideV2(incomplete,{route:'general',policy:{min_sources:3,candidate_sources:1,min_words:300}}).candidate,undefined);
+});
 test('runner e2e: writes from cached evidence with 2 LLM calls and approves with zero images; stops on NO_BUDGET without burning topics',async()=>{
  const root=await mkdtemp(join(tmpdir(),'mmv2-'));
  const excerpt=(k,n)=>'Chlorophyll in leaf '+k+' reflects green light while absorbing red and blue wavelengths, number '+n+'.';
