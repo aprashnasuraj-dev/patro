@@ -2,7 +2,7 @@
 import {checkGrounding} from './grounding.mjs';
 import {lint,fix} from '../core/voice.mjs';
 const FORMAT_HINT={'Deep-Dive Article':'a deep-dive explainer with a fresh, specific angle','Search-Gap Answer':'a precise answer page for a question search engines answer poorly, built on exact data','Quick Facts':'numbered facts','Myth-Buster':'a myth-buster with verdicts','Perspectives Roundup':'a fair comparison of viewpoints','Data Story':'a data story explaining what numbers show and do not show'};
-export const VOICE='Voice: plain, specific, confident; vary sentence length; use concrete nouns and active verbs; at most one short paragraph per 300 words; avoid clichés like "delve", "tapestry", "in conclusion"; use contractions naturally; no more than a few em-dashes.';
+export const VOICE='Voice: plain, specific, confident; vary sentence length and paragraph rhythm; use concrete nouns and active verbs; avoid clichés, filler, repeated explanations, formulaic openings, and redundant conclusions; use contractions naturally; never use em dashes.';
 export async function writeArticle({llm,meta,title,evidence,need,attempt=1}){
  const nSections=Math.max(3,Math.min(9,Math.round((meta.target_words||1500)/(attempt>1?500:420))));
  const evTxt=evidence.map(e=>'['+e.id+'] '+e.title+' ('+e.publisher+')\n'+e.excerpts.map(x=>'- '+x).join('\n')).join('\n\n');

@@ -1,10 +1,10 @@
 {
   "source_run_id": "39137761297",
   "resume_run_id": "",
-  "workers": 2,
-  "deadline_minutes": 45,
+  "workers": 1,
+  "deadline_minutes": 15,
   "allow_ymyl": false,
   "limit_per_worker": 2,
-  "mode": "recovery-canary",
-  "note": "Verify all 25 v1 shard restorations and cached-evidence recovery before scaling. Do not publish to main."
+  "mode": "research-grounding-interleaved-final",
+  "note": "Final two-article smoke after strict paragraph-end citation enforcement and one citation-placement repair pass. Keep all P2/P3, general cached-evidence, 300-word, grounding, and voice checks. No production publish."
 }

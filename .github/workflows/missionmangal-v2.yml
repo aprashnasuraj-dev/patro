@@ -1,10 +1,10 @@
 name: Mission Mangal v2 (adaptive, cache-first, budget-aware; merge to main stays manual)
 
-# v2 shares LLM quotas with the v1 rescue run, so pushing this branch does NOT start it.
-# Start a run by (a) committing missionmangal/v2/run-request.json on this branch (works without touching main), or (b) "Run workflow" once this file is on the default branch.
+# v2 shares LLM quotas with the v1 rescue run. Production/development runs remain explicitly configured; the editorial branch trigger is for bounded smoke runs via missionmangal/v2/run-request.json only.
+# Normal missionmangal-v2 branch runs are started by updating run-request.json; manual workflow_dispatch remains available once this workflow is on the default branch.
 on:
   push:
-    branches: [missionmangal-v2]
+    branches: [missionmangal-v2, missionmangal-v2-editorial-strengthening]
     paths: ["missionmangal/v2/run-request.json"]
   workflow_dispatch:
     inputs:
@@ -29,6 +29,8 @@ env:
   SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API }}
   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
   POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_HEALTHY_CRAB }}
+  BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+  TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
   CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
   CF_BROWSER_TOKEN: ${{ secrets.CF_BROWSER_RENDERING_TOKEN }}
 
@@ -67,7 +69,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - name: v2 unit tests
-        run: node --test missionmangal/tests/v2.test.mjs
+        run: node --test missionmangal/tests/*.test.mjs
       - name: Provider health (1 tiny call per provider, tries candidate models)
         run: node missionmangal/v2/preflight.mjs missionmangal/v2-work/health.json
       - uses: actions/upload-artifact@v4
@@ -170,9 +172,10 @@ jobs:
           bash missionmangal/v2/gather.sh 25
           node missionmangal/scripts/merge-shards.mjs
           node missionmangal/scripts/validate-approved.mjs
+          node missionmangal/v2/release-gate.mjs
           node missionmangal/v2/report.mjs
       - name: Tests
-        run: node --test missionmangal/tests/v2.test.mjs
+        run: node --test missionmangal/tests/*.test.mjs
       - name: Commit for merge (branch missionmangal-content-v2; main and missionmangal-content untouched)
         run: |
           git config user.name mission-mangal-bot; git config user.email bot@users.noreply.github.com
