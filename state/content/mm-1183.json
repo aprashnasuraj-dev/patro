@@ -1,0 +1,110 @@
+{
+  "id": "mm-1183",
+  "type": "topic",
+  "slug": "how-costa-rica-runs-on-renewable-power",
+  "title": "How Costa Rica Runs on Renewable Power: A Simple Guide",
+  "description": "Evidence dossier for research question: How Costa Rica Runs on Renewable Power: A Simple Guide. Not approved for publication.",
+  "intent": "Answer: How Costa Rica runs on renewable power",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Costa Rica Runs on Renewable Power: A Simple Guide\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow Costa Rica runs on renewable power\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: (Power sector efficiency analysis in Costa Rica). [Power Sector Efficiency Analysis in Costa Rica]\n\nPublisher: Office of Scientific and Technical Information (OSTI)\n\nURL: https://doi.org/10.2172/6958306\n\nRetrieved: 2026-10-18T22:36:58.289Z\n\n### Stored passages\n\n- “�0MA\u0006D�\u0010d�\\�!��\u0001\u000e��\u0002`�0A�\u0006P�#\u0003L�!#8gAH�5\u0011 gaB�\u0006w[��\u0011]�-0�;T�\u0016�UU;N,!”\n\n## Evidence record 2: Analysis: Hydro-Project Boruca, Costa Rica\n\nPublisher: Continuum\n\nURL: https://doi.org/10.5040/9781501300912.ch-003\n\nRetrieved: 2026-10-18T22:36:59.150Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Conflict Resolution of the Boruca Hydro-Energy Project --> Skip to main content Sign in to Your Personal Account Sign in…”\n\n## Evidence record 3: Regional Development Implications in the South of Costa Rica\n\nPublisher: Continuum\n\nURL: https://doi.org/10.5040/9781501300912.ch-005\n\nRetrieved: 2026-10-18T22:36:59.616Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Conflict Resolution of the Boruca Hydro-Energy Project --> Skip to main content Sign in to Your Personal Account Sign in…”\n\n## Evidence record 4: Solar energy\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=27743\n\nRetrieved: 2026-10-18T22:36:59.934Z\n\n### Stored passages\n\n- “Solar energy is the radiant energy from the Sun's light and heat, which can be harnessed using a range of technologies such as solar electricity,…”\n\n## Evidence record 5: Conservation movement\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=45441\n\nRetrieved: 2026-10-18T22:36:59.934Z\n\n### Stored passages\n\n- “The conservation movement, also known as nature conservation, is an environmental, social, and political movement, that seeks to manage and protect natural resources, including animal,…”\n\n## Evidence record 6: Solar car racing\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=14846664\n\nRetrieved: 2026-10-18T22:36:59.934Z\n\n### Stored passages\n\n- “Solar car racing refers to competitive races of electric vehicles which are powered by solar energy obtained from solar panels on the surface of the…”\n\n## Evidence record 7: Tourism in Costa Rica\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17781704\n\nRetrieved: 2026-10-18T22:36:59.934Z\n\n### Stored passages\n\n- “Tourism in Costa Rica has been one of the fastest growing economic sectors of the country and by 1995 became the largest foreign exchange earner.”\n\n## Evidence record 8: Green Job Preparation in Costa Rica\n\nPublisher: Digital WPI\n\nURL: https://openalex.org/W2943890524\n\nRetrieved: 2026-10-18T15:32:21.348Z\n\n### Stored passages\n\n- “The goal of this project done in conjunction with the Camara de Industrias de Costa Rica (CICR) was to recommend strategies for the advancement of…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2172/6958306",
+      "title": "(Power sector efficiency analysis in Costa Rica). [Power Sector Efficiency Analysis in Costa Rica]",
+      "publisher": "Office of Scientific and Technical Information (OSTI)",
+      "published_at": "1990-04-10",
+      "retrieved_at": "2026-10-18T22:36:58.289Z",
+      "sha256": "7812294122f3963b46a37a17d6ab7f98d7d9aa69617364c568e6448a14eaf064",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.5040/9781501300912.ch-003",
+      "title": "Analysis: Hydro-Project Boruca, Costa Rica",
+      "publisher": "Continuum",
+      "retrieved_at": "2026-10-18T22:36:59.150Z",
+      "sha256": "7464ba1ddec93d1f0517e793e4fca6cbcb5a54344bd562294d00bc0e53d0583c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.5040/9781501300912.ch-005",
+      "title": "Regional Development Implications in the South of Costa Rica",
+      "publisher": "Continuum",
+      "retrieved_at": "2026-10-18T22:36:59.616Z",
+      "sha256": "f36a8eeb20c80c1d961aa33305b55d3f21066d198826ae37b89897bdd8596033",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=27743",
+      "title": "Solar energy",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:36:59.934Z",
+      "sha256": "f1fdf30b6599a2a5843368672ee6a2e232f7ad5b7704ac6b1006000f403984e0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=45441",
+      "title": "Conservation movement",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:36:59.934Z",
+      "sha256": "eff93d31523ff4186235dba136ca1adddc380809e2b54a8ccbef00ad9dea6fd7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=14846664",
+      "title": "Solar car racing",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:36:59.934Z",
+      "sha256": "cdab0a917a5bb03d436fd5656ff40f4562131363b358548b4b7925e4bde0cf3f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=17781704",
+      "title": "Tourism in Costa Rica",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:36:59.934Z",
+      "sha256": "fbcb0c14944e70cf2e21dfeeaf375c05ca9f9263825809a45b42ace3309aa546",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2943890524",
+      "title": "Green Job Preparation in Costa Rica",
+      "publisher": "Digital WPI",
+      "published_at": "2012-12-12",
+      "retrieved_at": "2026-10-18T15:32:21.348Z",
+      "sha256": "60b034a57ccacabfc82211c78fca40473059ab27f82ad3b67522b37d38ec7a36",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:15.975Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

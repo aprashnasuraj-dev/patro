@@ -1,0 +1,112 @@
+{
+  "id": "mm-0280",
+  "type": "topic",
+  "slug": "why-shakespeare-still-matters-myths-vs-reality",
+  "title": "Why Shakespeare Still Matters? Myths vs Reality",
+  "description": "Evidence dossier for research question: Why Shakespeare Still Matters? Myths vs Reality. Not approved for publication.",
+  "intent": "Answer: Why Shakespeare still matters",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Shakespeare Still Matters? Myths vs Reality\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Shakespeare still matters\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Richard II by William Shakespeare: why ‘the divine right of kings’ (still) matters\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/richard-ii-by-william-shakespeare-why-the-divine-right-of-kings-still-matters-186648\n\nRetrieved: 2026-10-18T20:44:59.625Z\n\n### Stored passages\n\n- “Richard II by William Shakespeare: why ‘the divine right of kings’ (still) matters Skip to content Academic rigor, journalistic flair Portrait of Richard II –…”\n\n## Evidence record 2: Why Sovereignty (Still) Matters\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780190202903.003.0010\n\nRetrieved: 2026-10-18T20:44:59.626Z\n\n### Stored passages\n\n- “To adequately strike a balance between internal and external threats, we must recognize both that intervention can help mitigate threats that come from within society…”\n\n## Evidence record 3: Why Marriage Still Matters\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/acprof:oso/9780190296650.003.0003\n\nRetrieved: 2026-10-18T20:45:00.487Z\n\n### Stored passages\n\n- “This chapter provides an overview of Marital Paradigm Theory, which serves as the backbone for the remainder of the book.”\n\n## Evidence record 4: Hamlet\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=13554\n\nRetrieved: 2026-10-18T20:45:00.487Z\n\n### Stored passages\n\n- “The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet (), is a tragedy written by William Shakespeare sometime between 1599 and 1601.”\n\n## Evidence record 5: William Shakespeare\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32897\n\nRetrieved: 2026-10-18T20:45:00.487Z\n\n### Stored passages\n\n- “23 April 1564 – 23 April 1616) was an English playwright, poet and actor.”\n\n## Evidence record 6: Henry VI, Part 3\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=184847\n\nRetrieved: 2026-10-18T20:45:00.487Z\n\n### Stored passages\n\n- “Henry VI, Part 3 (often written as 3 Henry VI) is a history play by William Shakespeare believed to have been written in 1591 and…”\n\n## Evidence record 7: Harold Bloom\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26255613\n\nRetrieved: 2026-10-18T20:45:00.487Z\n\n### Stored passages\n\n- “Harold Bloom (July 11, 1930 – October 14, 2019) was an American literary critic and the Sterling Professor of humanities at Yale University.”\n\n## Evidence record 8: Teaching Shakespeare: Why Shakespeare Still Matters in School\n\nPublisher: Teacher: The National Education Magazine\n\nURL: https://openalex.org/W2247388322\n\nRetrieved: 2026-10-18T14:59:38.576Z\n\n### Stored passages\n\n- “Shakespeare is worth studying because his work has contemporary relevance, which explores the human condition in all its baffling and shifting complexity.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/richard-ii-by-william-shakespeare-why-the-divine-right-of-kings-still-matters-186648",
+      "title": "Richard II by William Shakespeare: why ‘the divine right of kings’ (still) matters",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2023-05-05",
+      "retrieved_at": "2026-10-18T20:44:59.625Z",
+      "sha256": "c5577a2575ee3fa9c5bbad6cc6c9a8c8e6b3056485c9eb2af3ca839391bf2cfb",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1093/oso/9780190202903.003.0010",
+      "title": "Why Sovereignty (Still) Matters",
+      "publisher": "Oxford University Press",
+      "published_at": "2017-10-19",
+      "retrieved_at": "2026-10-18T20:44:59.626Z",
+      "sha256": "d2ff4554968366035d5cfcb02bedb60f65a302c8a3a4cce2c55e7023badc74dd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.1093/acprof:oso/9780190296650.003.0003",
+      "title": "Why Marriage Still Matters",
+      "publisher": "Oxford University Press",
+      "published_at": "2017-06-22",
+      "retrieved_at": "2026-10-18T20:45:00.487Z",
+      "sha256": "0af58dd7951f275d515f74fe20bc6d0c79dbe1c7a7d32f4d4989fbd9a707b612",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=13554",
+      "title": "Hamlet",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:45:00.487Z",
+      "sha256": "faf199b9e33e6d575110359fe65d04fc4cf039ebcc14c599075da048539b237d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=32897",
+      "title": "William Shakespeare",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:45:00.487Z",
+      "sha256": "4e60d7f9437ffd4c9b5b158b4a59262bf5974f25e4fd8e9d6a3be260776ac72f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=184847",
+      "title": "Henry VI, Part 3",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:45:00.487Z",
+      "sha256": "d2f247131fe09db84519de8f80b3c4cd63fdba85af6443bc9ede0eaae553705e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=26255613",
+      "title": "Harold Bloom",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:45:00.487Z",
+      "sha256": "e8f8e80876e9655527bf3b197ec303636db4052b7c8a70ecd6a20321d9e18686",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2247388322",
+      "title": "Teaching Shakespeare: Why Shakespeare Still Matters in School",
+      "publisher": "Teacher: The National Education Magazine",
+      "published_at": "2007-10-01",
+      "retrieved_at": "2026-10-18T14:59:38.576Z",
+      "sha256": "530cc1f8ef5c5331a812f0adb829bb0616d643713352026063be4389bf951e52",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:15.974Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

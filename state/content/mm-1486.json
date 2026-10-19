@@ -1,0 +1,112 @@
+{
+  "id": "mm-1486",
+  "type": "topic",
+  "slug": "why-asteroids-are-not-a-movie-style-threat-data",
+  "title": "Why Asteroids Are Not a Movie-style Threat? What the Numbers Show",
+  "description": "Evidence dossier for research question: Why Asteroids Are Not a Movie-style Threat? What the Numbers Show. Not approved for publication.",
+  "intent": "Answer: Why asteroids are not a movie-style threat",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Asteroids Are Not a Movie-style Threat? What the Numbers Show\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy asteroids are not a movie-style threat\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Dodging the Asteroids?\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780195101058.003.0020\n\nRetrieved: 2026-10-18T22:55:00.826Z\n\n### Stored passages\n\n- “Finding asteroids and comets that may someday slam into our planet is the first step.”\n\n## Evidence record 2: Impact!\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780195101058.001.0001\n\nRetrieved: 2026-10-18T22:55:00.826Z\n\n### Stored passages\n\n- “Most scientists now agree that some sixty-five million years ago, an immense comet slammed into the Yucatan, detonating a blast twenty million times more powerful…”\n\n## Evidence record 3: The Search\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780195101058.003.0019\n\nRetrieved: 2026-10-18T22:55:00.826Z\n\n### Stored passages\n\n- “The earth orbits the sun in a veritable swarm of asteroids that have the nasty habit of occasionally slamming into the planet.”\n\n## Evidence record 4: Near-Earth Asteroids and the Impact Threat\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/asteroids/nearearth-asteroids-and-the-impact-threat/CE1288AD4B4C4146BC80E962A6881AE6\n\nRetrieved: 2026-10-18T22:55:01.537Z\n\n### Stored passages\n\n- “Near-Earth Asteroids and the Impact Threat (Chapter 7) - Asteroids Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for…”\n\n## Evidence record 5: The Little Prince\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=63425\n\nRetrieved: 2026-10-18T22:55:01.539Z\n\n### Stored passages\n\n- “The Little Prince (French: Le Petit Prince, pronounced [lə p(ə)ti pʁãs]) is a novella written and illustrated by French writer and aviator Antoine de Saint-Exupéry.”\n\n## Evidence record 6: Impact event\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=63794\n\nRetrieved: 2026-10-18T22:55:01.539Z\n\n### Stored passages\n\n- “An impact event is a collision between astronomical objects causing measurable effects.”\n\n## Evidence record 7: Macross Frontier\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=14199592\n\nRetrieved: 2026-10-18T22:55:01.539Z\n\n### Stored passages\n\n- “Macross Frontier (マクロスF(フロンティア), Makurosu Furontia) is a Japanese anime television series and the third Japanese anime television series set in the Macross universe.”\n\n## Evidence record 8: Don't Look Up\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=62387071\n\nRetrieved: 2026-10-18T22:55:01.539Z\n\n### Stored passages\n\n- “Don't Look Up is a 2021 American political satire black comedy film written, co-produced, and directed by Adam McKay from a story he co-wrote with…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1093/oso/9780195101058.003.0020",
+      "title": "Dodging the Asteroids?",
+      "publisher": "Oxford University Press",
+      "published_at": "1996-10-24",
+      "retrieved_at": "2026-10-18T22:55:00.826Z",
+      "sha256": "ce7af573bd447518acb0e5b2b5c2b9d14b3207ffec8649908ad75fd8791daa59",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1093/oso/9780195101058.001.0001",
+      "title": "Impact!",
+      "publisher": "Oxford University Press",
+      "published_at": "1996-10-24",
+      "retrieved_at": "2026-10-18T22:55:00.826Z",
+      "sha256": "e09e6c0402670d33e138a923878b0b26bf38eaacd81fa8c19b0cdb3b0d0cd102",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.1093/oso/9780195101058.003.0019",
+      "title": "The Search",
+      "publisher": "Oxford University Press",
+      "published_at": "1996-10-24",
+      "retrieved_at": "2026-10-18T22:55:00.826Z",
+      "sha256": "c49c5d9069a684c9350ea5900deb683bdeddaa86bf05ef5ee4b09b51862fa9e9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://www.cambridge.org/core/books/asteroids/nearearth-asteroids-and-the-impact-threat/CE1288AD4B4C4146BC80E962A6881AE6",
+      "title": "Near-Earth Asteroids and the Impact Threat",
+      "publisher": "Cambridge University Press",
+      "published_at": "2016-12-15",
+      "retrieved_at": "2026-10-18T22:55:01.537Z",
+      "sha256": "561611a6f96dfaa2bced4c5bcbfb09845481bfcc0a8b41fd0dca94cb7ad72713",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=63425",
+      "title": "The Little Prince",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:55:01.539Z",
+      "sha256": "992a8123400036694a353e3156bbdab6ac90d0095e41316f2cf8940cb2f1378a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=63794",
+      "title": "Impact event",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:55:01.539Z",
+      "sha256": "3e806f9bfb356457126e6568292921f386f9eb6e1be61805f4cf1897d4128967",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=14199592",
+      "title": "Macross Frontier",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:55:01.539Z",
+      "sha256": "4a89f92782e6dd67b343acbbfe94f40004cf6532ab0daee674e18c6bf7cb0989",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=62387071",
+      "title": "Don't Look Up",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:55:01.539Z",
+      "sha256": "7821107a519e38a9a8a94e58b8c4475475ca533c3755270b895460beeb349d69",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:15.973Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
