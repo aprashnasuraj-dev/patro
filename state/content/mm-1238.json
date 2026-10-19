@@ -1,0 +1,112 @@
+{
+  "id": "mm-1238",
+  "type": "topic",
+  "slug": "how-kathmandus-air-quality-changes-by-season-facts",
+  "title": "How Kathmandu's Air Quality Changes by Season: 10 Facts Backed by Sources",
+  "description": "Evidence dossier for research question: How Kathmandu's Air Quality Changes by Season: 10 Facts Backed by Sources. Not approved for publication.",
+  "intent": "Answer: How Kathmandu's air quality changes by season",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Kathmandu's Air Quality Changes by Season: 10 Facts Backed by Sources\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow Kathmandu's air quality changes by season\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Melamchi water supply project: potential to replenish Kathmandu's groundwater status for dry season access\n\nPublisher: IWA Publishing\n\nURL: https://doi.org/10.2166/wp.2019.080\n\nRetrieved: 2026-10-18T21:54:23.700Z\n\n### Stored passages\n\n- “Abstract Kathmandu Upatyaka Khanepani Limited (KUKL) currently uses 35 surface and 57 groundwater sources to supply water for Nepal's capital, Kathmandu.”\n\n## Evidence record 2: Influences of Season and Geography on Urban Air Quality Monitoring Stations (AQMS) Representativeness Areas by High Resolution Air Quality Monitoring\n\nPublisher: Copernicus GmbH\n\nURL: https://doi.org/10.5194/egusphere-egu2020-13652\n\nRetrieved: 2026-10-18T21:54:23.700Z\n\n### Stored passages\n\n- “&amp;lt;p&amp;gt;Urban air pollution remains a key pressure on public health.”\n\n## Evidence record 3: Air quality in the U.S. during the 2023 wildfire season\n\nPublisher: Springer Science and Business Media LLC\n\nURL: https://doi.org/10.21203/rs.3.rs-4987035/v1\n\nRetrieved: 2026-10-18T21:54:23.700Z\n\n### Stored passages\n\n- “Abstract During the summer of 2023, Canada was devastated by a series of large and uncontrolled wildfires that set the unprecedented record of over 40…”\n\n## Evidence record 4: Study of Bird Diversity during Monsoon Season Related to Air Quality at Asansol, West Bengal\n\nPublisher: International Journal of Science and Research\n\nURL: https://doi.org/10.21275/sr231025141740\n\nRetrieved: 2026-10-18T21:54:25.781Z\n\n### Stored passages\n\n- “��Oa�b,�4\u001f.f*٫� �\u001a�Z�\u001fr�%a*Ѧ/ �&׼�Є����b'�a��'=����{�� ?���)t* Y�����ޫ\u000f'�Ogs3�\\�Z\\����oi\u001a��X��\u0014[���\u0015~���4jp\u001a U\u0019��Ǐ�g\u001f��j�����5N��·jC��~y�o\u0003���w�_������p�#|������� :�������z�n��^�N��Pb ���_���:4FT\\N`~�ZNX�'׋{���޿�� |�)�|�?”\n\n## Evidence record 5: Bolivia\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=3462\n\nRetrieved: 2026-10-18T21:54:25.785Z\n\n### Stored passages\n\n- “Bolivia, officially the Plurinational State of Bolivia, is a landlocked country located in central South America.”\n\n## Evidence record 6: Kathmandu\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17168\n\nRetrieved: 2026-10-18T21:54:25.785Z\n\n### Stored passages\n\n- “Kathmandu is the capital and largest city of Nepal, situated in the central part of the country within the Kathmandu Valley.”\n\n## Evidence record 7: Nepal\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=171166\n\nRetrieved: 2026-10-18T21:54:25.785Z\n\n### Stored passages\n\n- “Nepal, officially Federal Democratic of Republic Nepal is a landlocked country in South Asia.”\n\n## Evidence record 8: Thai Airways International\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=303449\n\nRetrieved: 2026-10-18T21:54:25.785Z\n\n### Stored passages\n\n- “Thai Airways International plc is the flag carrier of Thailand.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2166/wp.2019.080",
+      "title": "Melamchi water supply project: potential to replenish Kathmandu's groundwater status for dry season access",
+      "publisher": "IWA Publishing",
+      "published_at": "2019-10-21",
+      "retrieved_at": "2026-10-18T21:54:23.700Z",
+      "sha256": "94ba8597aa5f531dc77f07657511de5eb05f19c83210ada8151cdb242e842c8c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.5194/egusphere-egu2020-13652",
+      "title": "Influences of Season and Geography on Urban Air Quality Monitoring Stations (AQMS) Representativeness Areas by High Resolution Air Quality Monitoring",
+      "publisher": "Copernicus GmbH",
+      "published_at": "2020-03-23",
+      "retrieved_at": "2026-10-18T21:54:23.700Z",
+      "sha256": "2756ae05ba0bf8f484963360a46781ada5d69c402cc448fef66d5aa174baa33e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.21203/rs.3.rs-4987035/v1",
+      "title": "Air quality in the U.S. during the 2023 wildfire season",
+      "publisher": "Springer Science and Business Media LLC",
+      "published_at": "2024-09-27",
+      "retrieved_at": "2026-10-18T21:54:23.700Z",
+      "sha256": "d4d01ba0ed5044bc08c59072e953f6c4381abd5bf712bb95fe3e61c94688ba34",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.21275/sr231025141740",
+      "title": "Study of Bird Diversity during Monsoon Season Related to Air Quality at Asansol, West Bengal",
+      "publisher": "International Journal of Science and Research",
+      "published_at": "2023-10-05",
+      "retrieved_at": "2026-10-18T21:54:25.781Z",
+      "sha256": "feba3ead16bcbe80bac9537776c7c1f5ad5d1d714c5c2d55cc6216d25abc1774",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=3462",
+      "title": "Bolivia",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:54:25.785Z",
+      "sha256": "fcb4e2ad4863313d27893c868e613c280e335709405e800a1dfc948c0cd89d3d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=17168",
+      "title": "Kathmandu",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:54:25.785Z",
+      "sha256": "f9fa71ea40cbcd33389b754c85f096f1ea3b48ed8047d10ce3f8277dd7d488d7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=171166",
+      "title": "Nepal",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:54:25.785Z",
+      "sha256": "ba9943414a8b6f903e603b15a0e3912238c0bbf174b22b8043b287b31986a956",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=303449",
+      "title": "Thai Airways International",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:54:25.785Z",
+      "sha256": "c675f4be03b80a3b5b3ee7b01f2f3c52384d461b9989259e4d909b5045ed9e3a",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:13.109Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

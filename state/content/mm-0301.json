@@ -1,0 +1,112 @@
+{
+  "id": "mm-0301",
+  "type": "topic",
+  "slug": "why-the-black-death-spread-so-fast",
+  "title": "Why the Black Death Spread So Fast? The Answer May Surprise You",
+  "description": "Evidence dossier for research question: Why the Black Death Spread So Fast? The Answer May Surprise You. Not approved for publication.",
+  "intent": "Answer: Why the Black Death spread so fast",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why the Black Death Spread So Fast? The Answer May Surprise You\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy the Black Death spread so fast\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Why Financial Crises Spread so Fast - Lessons From History &amp;amp; Today\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.7512720\n\nRetrieved: 2026-10-18T21:07:17.807Z\n\n### Stored passages\n\n- “Financial crises always spread for the same underlying reason.”\n\n## Evidence record 2: Why anti-vaccine beliefs and ideas spread so fast on the internet\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-anti-vaccine-beliefs-and-ideas-spread-so-fast-on-the-internet-111431\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “Why anti-vaccine beliefs and ideas spread so fast on the internet Skip to content Academic rigor, journalistic flair Why anti&#8209;vaccine beliefs and ideas spread so…”\n\n## Evidence record 3: Why Do Rumors Spread So Fast on Twitter?\n\nPublisher: EWA Publishing\n\nURL: https://doi.org/10.54254/2755-2721/2/20220621\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “This research aims to find out why rumors spread so fast on Twitter.”\n\n## Evidence record 4: Why Is China Growing So Fast?\n\nPublisher: International Monetary Fund\n\nURL: https://doi.org/10.5089/9781557756411.051.ch001\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “Since 1978 the Chinese economy has grown on average more than 9 percenta year.”\n\n## Evidence record 5: Black Death\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=4501\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “The Black Death was a plague pandemic that occurred in Europe from 1346 to 1353.”\n\n## Evidence record 6: Pneumonic plague\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=71064\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “Pneumonic plague is a severe lung infection caused by the bacterium Yersinia pestis.”\n\n## Evidence record 7: The Dark Knight\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=4276475\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “The Dark Knight is a 2008 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan.”\n\n## Evidence record 8: Theories of the Black Death\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=20155412\n\nRetrieved: 2026-10-18T21:07:18.112Z\n\n### Stored passages\n\n- “Theories of the Black Death are a variety of explanations that have been advanced to explain the nature and transmission of the Black Death (1347–51).”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2139/ssrn.7512720",
+      "title": "Why Financial Crises Spread so Fast - Lessons From History &amp;amp; Today",
+      "publisher": "Elsevier BV",
+      "published_at": "2026",
+      "retrieved_at": "2026-10-18T21:07:17.807Z",
+      "sha256": "7bd9e53b8083ec06892ea676f59c1401abe114693602a973a95def45b5ccf8d0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/why-anti-vaccine-beliefs-and-ideas-spread-so-fast-on-the-internet-111431",
+      "title": "Why anti-vaccine beliefs and ideas spread so fast on the internet",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2019-02-13",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "6d67c9c96076868d24c96d9ec9ff3ffb40b663145e7a04b998696ddb0ff58230",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.54254/2755-2721/2/20220621",
+      "title": "Why Do Rumors Spread So Fast on Twitter?",
+      "publisher": "EWA Publishing",
+      "published_at": "2023-03-22",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "135fccc694d6202ede3d0764c7729a22b16719ace6c4ab8173d38b96bdbbe11b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.5089/9781557756411.051.ch001",
+      "title": "Why Is China Growing So Fast?",
+      "publisher": "International Monetary Fund",
+      "published_at": "1997-06",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "fb19a4a5c7ee88d9e2157fa06a44967b595b10e568e75a60c26695ebccfed865",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=4501",
+      "title": "Black Death",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "b85ebbb485a41bb2425b34f12bb77db84e1f782de5c51f15b065658bc35e0ff7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=71064",
+      "title": "Pneumonic plague",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "9e55f3e93437721ae62548e334d87804f719fa37b1337352ded03c0fd9aca4f0",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=4276475",
+      "title": "The Dark Knight",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "809b92c9b1b5fb43249d51838ff07d0946970de89a6429ecdddc7d7a30a66ef5",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=20155412",
+      "title": "Theories of the Black Death",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:07:18.112Z",
+      "sha256": "40b549ae9fdfc77ce6e8edd03fba0b91127bb212195150cb52fd46ccac068db6",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:13.109Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
