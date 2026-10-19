@@ -37,7 +37,7 @@ def run():
   if not prev:print("STOP: prior run artifact not found");return
   previous=prev[0]["databaseId"]
  number=next_index+1
- gh("workflow","run",WORKFLOW,"--ref",BASE,"-f","batch_index="+str(next_index),"-f","previous_run="+str(previous),"-f","workers=20","-f","deadline_minutes=330")
+ gh("workflow","run",WORKFLOW,"--ref",BASE,"-f","batch_index="+str(next_index),"-f","batch_number="+f"{number:03d}","-f","previous_run="+str(previous),"-f","workers=20","-f","deadline_minutes=330")
  print("DISPATCHED batch",number,"restoring",previous)
 def publish(run_id,number):
  with tempfile.TemporaryDirectory() as tmp:
