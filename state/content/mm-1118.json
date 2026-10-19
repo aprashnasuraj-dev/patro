@@ -1,0 +1,112 @@
+{
+  "id": "mm-1118",
+  "type": "topic",
+  "slug": "why-nepals-currency-is-the-rupee-myths-vs-reality",
+  "title": "Why Nepal's Currency Is the Rupee? Myths vs Reality",
+  "description": "Evidence dossier for research question: Why Nepal's Currency Is the Rupee? Myths vs Reality. Not approved for publication.",
+  "intent": "Answer: Why Nepal's currency is the rupee",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Nepal's Currency Is the Rupee? Myths vs Reality\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Nepal's currency is the rupee\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: E-Rupee: The Digital Currency Evolution in India\n\nPublisher: Science Research Society\n\nURL: https://doi.org/10.52783/eel.v13i3.632\n\nRetrieved: 2026-10-18T21:49:37.427Z\n\n### Stored passages\n\n- “It analyses the function of the e-rupee, envisioned as a digital alternative to the traditional rupee, in transforming financial transactions and redefining economic connections.”\n\n## Evidence record 2: Impact of Fluctuation on Major Foreign Currency Pairs to Indian Rupee Involved Currency Pairs\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.2479354\n\nRetrieved: 2026-10-18T21:49:37.428Z\n\n### Stored passages\n\n- “The study is a comprehensive analysis of the cause and effect of fluctuations in the major currency pairs and the effect on the Indian rupee.”\n\n## Evidence record 3: The Regulatory Sandbox for the Pilot Project of Retail E-rupee Currency: Consideration for Reserve Bank of India\n\nPublisher: Passagens\n\nURL: https://doi.org/10.15175/1984-2503-202416202\n\nRetrieved: 2026-10-18T21:49:37.428Z\n\n### Stored passages\n\n- “Recent advancements in technology-based payment methods have prompted central banks all over the world to consider the possible advantages and hazards of issuing Central Bank…”\n\n## Evidence record 4: Nepal\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=171166\n\nRetrieved: 2026-10-18T21:49:37.780Z\n\n### Stored passages\n\n- “Nepal, officially Federal Democratic of Republic Nepal is a landlocked country in South Asia.”\n\n## Evidence record 5: Indian rupee\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=490783\n\nRetrieved: 2026-10-18T21:49:37.780Z\n\n### Stored passages\n\n- “The Indian rupee (symbol: ₹; code: INR) is the official currency of India and the erstwhile Dominion of India and British Raj.”\n\n## Evidence record 6: List of countries by foreign exchange reserves\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=1569780\n\nRetrieved: 2026-10-18T21:49:37.780Z\n\n### Stored passages\n\n- “Foreign exchange reserves, also called Forex reserves, in a strict sense, are foreign-currency deposits held by nationals and monetary authorities.”\n\n## Evidence record 7: History of the rupee\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=3082583\n\nRetrieved: 2026-10-18T21:49:37.780Z\n\n### Stored passages\n\n- “The history of the rupee traces back to ancient times in the Indian subcontinent.”\n\n## Evidence record 8: Pulling the Cash From Cashmere: Reviving Nepal's Pashmina\n\nPublisher: School for International Training Digital Collections (School for International Training)\n\nURL: https://openalex.org/W13681148\n\nRetrieved: 2026-10-18T16:34:39.692Z\n\n### Stored passages\n\n- “This study is an in depth examination of the dynamics behind the Nepali Pashmina industry.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.52783/eel.v13i3.632",
+      "title": "E-Rupee: The Digital Currency Evolution in India",
+      "publisher": "Science Research Society",
+      "published_at": "2023",
+      "retrieved_at": "2026-10-18T21:49:37.427Z",
+      "sha256": "f4ecf015b3f16382ff814ef78a59c90695c4e738007fa59212e895be5e926e8a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.2139/ssrn.2479354",
+      "title": "Impact of Fluctuation on Major Foreign Currency Pairs to Indian Rupee Involved Currency Pairs",
+      "publisher": "Elsevier BV",
+      "published_at": "2014",
+      "retrieved_at": "2026-10-18T21:49:37.428Z",
+      "sha256": "0c9f1fc0502284467ed5bffc704b1864c0efd43b8461787dcbb7ce8d8538179b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.15175/1984-2503-202416202",
+      "title": "The Regulatory Sandbox for the Pilot Project of Retail E-rupee Currency: Consideration for Reserve Bank of India",
+      "publisher": "Passagens",
+      "published_at": "2024-06-12",
+      "retrieved_at": "2026-10-18T21:49:37.428Z",
+      "sha256": "4c2200a2a59a7310c3859fc65c936118f7c2b78aee8118074624b20ce9c77584",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=171166",
+      "title": "Nepal",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:49:37.780Z",
+      "sha256": "ba9943414a8b6f903e603b15a0e3912238c0bbf174b22b8043b287b31986a956",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=490783",
+      "title": "Indian rupee",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:49:37.780Z",
+      "sha256": "073c1d7b18425a48e366357b8e45e4500e7d706f26592f296d8a45edfe13e14e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=1569780",
+      "title": "List of countries by foreign exchange reserves",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:49:37.780Z",
+      "sha256": "195e1b32bd815c5f2644e65afdc92cb2b85d2da11a509e0718df49b438c6fa48",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=3082583",
+      "title": "History of the rupee",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:49:37.780Z",
+      "sha256": "1feba8d3adc247f5659017c3e5bb3b2fa6611d583d6e485d33c35b11d2be1584",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W13681148",
+      "title": "Pulling the Cash From Cashmere: Reviving Nepal's Pashmina",
+      "publisher": "School for International Training Digital Collections (School for International Training)",
+      "published_at": "2011-01-01",
+      "retrieved_at": "2026-10-18T16:34:39.692Z",
+      "sha256": "754b06c2907c705df9cf40517ebba2d4eb8398af65e9a04c0b7cecb09266ec6a",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:13.050Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

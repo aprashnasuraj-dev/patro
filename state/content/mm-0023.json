@@ -1,0 +1,113 @@
+{
+  "id": "mm-0023",
+  "type": "topic",
+  "slug": "why-russia-spans-eleven-time-zones",
+  "title": "Why Russia Spans Eleven Time Zones? The Full Story",
+  "description": "Evidence dossier for research question: Why Russia Spans Eleven Time Zones? The Full Story. Not approved for publication.",
+  "intent": "Answer: Why Russia spans eleven time zones",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Russia Spans Eleven Time Zones? The Full Story\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Russia spans eleven time zones\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Introduction: Why Time and Home?\n\nPublisher: Bloomsbury Academic\n\nURL: https://doi.org/10.5040/9781350112469.ch-00i\n\nRetrieved: 2026-10-18T14:52:25.922Z\n\n### Stored passages\n\n- “collections-62 --> Bloomsbury Collections - Modernity, Domesticity and Temporality in Russia --> Skip to main content Sign in to Your Personal Account Sign in with:…”\n\n## Evidence record 2: Ethereal, evocative, and inventive: why the music of Kate Bush spans generations\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/ethereal-evocative-and-inventive-why-the-music-of-kate-bush-spans-generations-184571\n\nRetrieved: 2026-10-18T14:52:27.711Z\n\n### Stored passages\n\n- “As a result of this inclusion, Kate Bush’s classic song was catapulted (again) into the mainstream musical scene, experiencing a true resurgence in popularity and…”\n\n## Evidence record 3: Why class discrimination is invisible\n\nPublisher: SAGE Publications\n\nURL: https://doi.org/10.1177/07255136261432223\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “The article analyzes the reasons behind the persistent invisibility of class discrimination in social life and social science.”\n\n## Evidence record 4: The Politics of Unfree Labour in Russia: Human Trafficking and Labour Migration\n\nPublisher: OpenAlex\n\nURL: https://openalex.org/W2780759753\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “How, and why, did human trafficking out of Russia escalate at the beginning of the twenty-first century?”\n\n## Evidence record 5: Market asymmetries, arbitrage and transition: the case of Russia\n\nPublisher: University of Hertfordshire Research Archive (University of Hertfordshire)\n\nURL: https://openalex.org/W259214704\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “Copyright and all rights therein are retained by the authors.”\n\n## Evidence record 6: Garry Kasparov\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=12810\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “Garry Kimovich Kasparov (born Garik Kimovich Weinstein on 13 April 1963) is a Russian chess grandmaster, political activist and writer, who was the World Chess…”\n\n## Evidence record 7: Russia\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=25391\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “Russia, or the Russian Federation, is a country in Eastern Europe and North Asia.”\n\n## Evidence record 8: Russian Empire\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=20611504\n\nRetrieved: 2026-10-18T14:52:27.712Z\n\n### Stored passages\n\n- “The Russian Empire was an empire that extended across northern Eurasia from 1721 until the proclamation of the Russian Republic in 1917, forming the final…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.5040/9781350112469.ch-00i",
+      "title": "Introduction: Why Time and Home?",
+      "publisher": "Bloomsbury Academic",
+      "published_at": "2020",
+      "retrieved_at": "2026-10-18T14:52:25.922Z",
+      "sha256": "c747395a6bb07068b64886749b20f0cec45eade140eca81c4b5a5e7c2becec86",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/ethereal-evocative-and-inventive-why-the-music-of-kate-bush-spans-generations-184571",
+      "title": "Ethereal, evocative, and inventive: why the music of Kate Bush spans generations",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2022-06-14",
+      "retrieved_at": "2026-10-18T14:52:27.711Z",
+      "sha256": "82467f159078284b53eaff9dd76c5209ff3d7490a4fe48f42aecaa50f3a45339",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.1177/07255136261432223",
+      "title": "Why class discrimination is invisible",
+      "publisher": "SAGE Publications",
+      "published_at": "2026-04",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "111de71a626db15422bffda69d25bbf127f33d15ac0c07eb1783e87ded8393f4",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W2780759753",
+      "title": "The Politics of Unfree Labour in Russia: Human Trafficking and Labour Migration",
+      "publisher": "OpenAlex",
+      "published_at": "2018-01-11",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "94e3e5c1f40fb5668dc688b52e80b50186580b421885fcb187f3034ed98a80b7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W259214704",
+      "title": "Market asymmetries, arbitrage and transition: the case of Russia",
+      "publisher": "University of Hertfordshire Research Archive (University of Hertfordshire)",
+      "published_at": "2010-01-01",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "dbef8325fdf46462a292ee10a00610d4651c903423c1ece3515b06ed8b15ed6f",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=12810",
+      "title": "Garry Kasparov",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "d847b0a50702c37ab0a9e391b219b855d2d3de3987e0a0c084ce3f6392d535a6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=25391",
+      "title": "Russia",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "efd9aa066ffbbb4c47a152dd33ebab5407e559da19a02862b7771710602ce48a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=20611504",
+      "title": "Russian Empire",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:52:27.712Z",
+      "sha256": "3dc4df01b569ffd1a80401094ed6dd0276802ab9db44e278c4408ab89f600217",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:13.049Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

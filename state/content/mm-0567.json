@@ -1,0 +1,112 @@
+{
+  "id": "mm-0567",
+  "type": "topic",
+  "slug": "why-the-dead-sea-floats-you",
+  "title": "Why the Dead Sea Floats You? A Simple Guide",
+  "description": "Evidence dossier for research question: Why the Dead Sea Floats You? A Simple Guide. Not approved for publication.",
+  "intent": "Answer: Why the Dead Sea floats you",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why the Dead Sea Floats You? A Simple Guide\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy the Dead Sea floats you\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Rising Seas are Coming for the Dead\n\nPublisher: CUNY Academic Works (City University of New York)\n\nURL: https://openalex.org/W3042650064\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “When people think of preparing for a disaster, they focus on how to safeguard homes, prevent damage to roads, and create efficient flood drainage.”\n\n## Evidence record 2: The Dead Sea Scrolls and the Nag Hammadi Codices\n\nPublisher: Directory of Open access Books (OAPEN Foundation)\n\nURL: https://openalex.org/W7137420132\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “The discoveries of Coptic books containing “Gnostic” scriptures in Upper Egypt in 1945 and of the Dead Sea Scrolls near Khirbet Qumran in 1946 are…”\n\n## Evidence record 3: Dead Fish in the Desert: A Brief Photo-History of The Salton Sea\n\nPublisher: CSUSB ScholarWorks (California State University, San Bernardino)\n\nURL: https://openalex.org/W3091947225\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “Located around 150 miles to the east and south of Los Angeles lies an unburied treasure and an ecological hotbed of debate.”\n\n## Evidence record 4: Waste Disposal in the Waters of the New York Bight: The Genesis of a Dead Sea\n\nPublisher: Journal of Media Literacy Education\n\nURL: https://openalex.org/W68361321\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “Chapter I will seek to delineate the scope of the paper and acquaint the reader with recent activity concerning pollution in the Bight.”\n\n## Evidence record 5: Dead Man\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=113651\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “Dead Man is a 1995 acid Western film written and directed by Jim Jarmusch.”\n\n## Evidence record 6: Sargasso Sea\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=578585\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “The Sargasso Sea () is a region of the Atlantic Ocean bounded by four currents forming an ocean gyre.”\n\n## Evidence record 7: Mary Jane's Last Dance\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=3025145\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “\"Mary Jane's Last Dance\" is a song written by Tom Petty and recorded by American rock band Tom Petty and the Heartbreakers.”\n\n## Evidence record 8: Dead Pigs\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=63040663\n\nRetrieved: 2026-10-18T15:10:00.801Z\n\n### Stored passages\n\n- “Dead Pigs (Chinese: 海上浮城; literally \"floating city on the sea\") is a 2018 comedy drama film written and directed by Cathy Yan in her directorial…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://openalex.org/W3042650064",
+      "title": "Rising Seas are Coming for the Dead",
+      "publisher": "CUNY Academic Works (City University of New York)",
+      "published_at": "2019-01-01",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "c5ecec0863f25ed8c64956663ed3495cd267f90534562fa6a3b6acbef8eba14a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://openalex.org/W7137420132",
+      "title": "The Dead Sea Scrolls and the Nag Hammadi Codices",
+      "publisher": "Directory of Open access Books (OAPEN Foundation)",
+      "published_at": "2022-01-01",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "223c47bce9df8b3357885f48366f3875dda6af5babd5437e616e1270e5bc6489",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://openalex.org/W3091947225",
+      "title": "Dead Fish in the Desert: A Brief Photo-History of The Salton Sea",
+      "publisher": "CSUSB ScholarWorks (California State University, San Bernardino)",
+      "published_at": "2009-01-01",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "5ef74b46f123e922f5e52fd16f9b56c16c597df3d0eea3c06344e2ec93a6ce7b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W68361321",
+      "title": "Waste Disposal in the Waters of the New York Bight: The Genesis of a Dead Sea",
+      "publisher": "Journal of Media Literacy Education",
+      "published_at": "1974-01-01",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "704669d079cde6464806a96ec1daf942d35c38644e18a56e44eb65e8c45346fa",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=113651",
+      "title": "Dead Man",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "71707effd5a828c2e613601b7d4194d8b0f869c97e75d9a2598bd1fce30ff0fd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=578585",
+      "title": "Sargasso Sea",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "58bdbbf1d28f5256a8c3b987e4a07e1faea202494f18fea76e034954b2e3b606",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=3025145",
+      "title": "Mary Jane's Last Dance",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "1f6eb30556ab8781c5eae2f355627c94332228215afb827562cd5c6962345ae7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=63040663",
+      "title": "Dead Pigs",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:10:00.801Z",
+      "sha256": "9a072b3caa74925e634d3dc7ebc5ed16602919bf6d9e31864acc103b49587fdb",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:13.048Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
