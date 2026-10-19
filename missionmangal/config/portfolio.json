@@ -2248,7 +2248,7 @@
     "url": "https://aafnaipatro.com/why-we-forget-names-data/",
     "intent": "Answer: Why we forget names",
     "author": "Suraj Dahal",
-    "status": "reserved",
+    "status": "review",
     "meta": {
       "category": "Mind & Psychology",
       "format": "Data Story",
@@ -2263,7 +2263,8 @@
         "Our World in Data",
         "Wikidata"
       ]
-    }
+    },
+    "updated_at": "2026-10-19T02:30:24.463Z"
   },
   {
     "id": "mm-0093",

@@ -1,0 +1,11 @@
+{
+  "approved": 0,
+  "review": 1,
+  "dupImages": 0,
+  "blocked": {
+    "GROUNDING_FAILED": 92,
+    "NEEDS_RESEARCH": 3950,
+    "NO_PROVIDER": 939
+  },
+  "at": "2026-10-19T02:30:24.505Z"
+}
