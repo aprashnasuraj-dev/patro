@@ -97,7 +97,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [[ "${PREVIOUS_RUN:-0}" =~ ^[0-9]+$ ]] && [ "${PREVIOUS_RUN:-0}" -gt 0 ]; then
-            mkdir -p /tmp/mm-previous
+            mkdir -p /tmp/mm-previous /tmp/mm-prior-plan
+            gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" --pattern "missionmangal-v2-plan-and-preflight" --dir /tmp/mm-prior-plan
+            if [ -d /tmp/mm-prior-plan/missionmangal-v2-plan-and-preflight/state ]; then
+              cp -a /tmp/mm-prior-plan/missionmangal-v2-plan-and-preflight/state/. missionmangal/state/
+            fi
             gh run download "$PREVIOUS_RUN" --repo "$GITHUB_REPOSITORY" --pattern "missionmangal-v2-worker-*" --dir /tmp/mm-previous
             for d in /tmp/mm-previous/missionmangal-v2-worker-*; do
               [ -d "$d" ] || continue
