@@ -1,0 +1,112 @@
+{
+  "id": "mm-0077",
+  "type": "topic",
+  "slug": "why-the-himalayas-are-still-rising",
+  "title": "Why the Himalayas Are Still Rising? What Experts Say",
+  "description": "Evidence dossier for research question: Why the Himalayas Are Still Rising? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why the Himalayas are still rising",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why the Himalayas Are Still Rising? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy the Himalayas are still rising\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Serious incidents in childcare centres are still rising. Why?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/serious-incidents-in-childcare-centres-are-still-rising-why-275434\n\nRetrieved: 2026-10-18T20:36:14.358Z\n\n### Stored passages\n\n- “Skip to content Academic rigor, journalistic flair Joel Carrett/ AAP Serious incidents in childcare centres are still rising.”\n\n## Evidence record 2: Food prices are rising but farmers’ profits are still small – here’s why\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/food-prices-are-rising-but-farmers-profits-are-still-small-heres-why-205870\n\nRetrieved: 2026-10-18T20:36:14.545Z\n\n### Stored passages\n\n- “Food prices are rising but farmers’ profits are still small – here’s why Skip to content Academic rigor, journalistic flair Farmers need a fair deal.”\n\n## Evidence record 3: Paraguay expanded a reserve in the Gran Chaco. Why is deforestation still rising there?\n\nPublisher: Mongabay\n\nURL: https://news.mongabay.com/2026/05/paraguay-expanded-a-reserve-in-the-gran-chaco-why-is-deforestation-still-rising-there/\n\nRetrieved: 2026-10-18T20:36:14.896Z\n\n### Stored passages\n\n- “Maxwell Radwin 8 May 2026 Latin America Comments Share article Share this article If you liked this story, share it with other people.”\n\n## Evidence record 4: Government spending on Indigenous people is rising, so why do so many still live in poverty?\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/government-spending-on-indigenous-people-is-rising-so-why-do-so-many-still-live-in-poverty-86210\n\nRetrieved: 2026-10-18T20:36:15.025Z\n\n### Stored passages\n\n- “Government spending on Indigenous people is rising, so why do so many still live in poverty?”\n\n## Evidence record 5: China\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=5405\n\nRetrieved: 2026-10-18T20:36:15.026Z\n\n### Stored passages\n\n- “China, officially the People's Republic of China (PRC), is a country in East Asia.”\n\n## Evidence record 6: Monsoon\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=57630\n\nRetrieved: 2026-10-18T20:36:15.026Z\n\n### Stored passages\n\n- “Usually, the term monsoon is used to refer to the rainy phase of a seasonally changing pattern, although technically there is a dry phase.”\n\n## Evidence record 7: Uttarakhand\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=1429154\n\nRetrieved: 2026-10-18T20:36:15.026Z\n\n### Stored passages\n\n- “Uttarakhand (Hindi: Uttarākhaṇḍ, pronounced [ˈʊt̪ːəɾaːkʰəɳɖ], lit.”\n\n## Evidence record 8: The Dark Knight\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=4276475\n\nRetrieved: 2026-10-18T20:36:15.026Z\n\n### Stored passages\n\n- “The Dark Knight is a 2008 superhero film directed by Christopher Nolan, who co-wrote the screenplay with his brother Jonathan.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/serious-incidents-in-childcare-centres-are-still-rising-why-275434",
+      "title": "Serious incidents in childcare centres are still rising. Why?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2026-02-10",
+      "retrieved_at": "2026-10-18T20:36:14.358Z",
+      "sha256": "b9c7eee7e0d9cd3ebe178c05371542e0f274e8a9ead63b493c2c5672337fd1a7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/food-prices-are-rising-but-farmers-profits-are-still-small-heres-why-205870",
+      "title": "Food prices are rising but farmers’ profits are still small – here’s why",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2023-05-19",
+      "retrieved_at": "2026-10-18T20:36:14.545Z",
+      "sha256": "64268dec34803f57fff3fab5b972fde02aae3ba01fece65da3eb89df26d1fb60",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://news.mongabay.com/2026/05/paraguay-expanded-a-reserve-in-the-gran-chaco-why-is-deforestation-still-rising-there/",
+      "title": "Paraguay expanded a reserve in the Gran Chaco. Why is deforestation still rising there?",
+      "publisher": "Mongabay",
+      "published_at": "2026-05-08",
+      "retrieved_at": "2026-10-18T20:36:14.896Z",
+      "sha256": "77e09b81efcdb5509ae3decc6d61cfd1d0d727700c1f04da55b4036663501d22",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://theconversation.com/government-spending-on-indigenous-people-is-rising-so-why-do-so-many-still-live-in-poverty-86210",
+      "title": "Government spending on Indigenous people is rising, so why do so many still live in poverty?",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2017-10-26",
+      "retrieved_at": "2026-10-18T20:36:15.025Z",
+      "sha256": "1a0fe329fcc15d06f0aa8a5ff26173625d0a7c658a697c527b5c768c0116c3bd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=5405",
+      "title": "China",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:36:15.026Z",
+      "sha256": "068ec024579cd80b259a141c19dc23937d576f9abb5d2b13fdccac710e16b3bf",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=57630",
+      "title": "Monsoon",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:36:15.026Z",
+      "sha256": "bad14fd26122c1f1b26b1543afe3747733c524e0f7b08e9adf1d94c8e1c7da4e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=1429154",
+      "title": "Uttarakhand",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:36:15.026Z",
+      "sha256": "52c37a62cf5f90e67e2be0d40fde469a58c4c74fe1707808663cb4e1dc18e569",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=4276475",
+      "title": "The Dark Knight",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T20:36:15.026Z",
+      "sha256": "809b92c9b1b5fb43249d51838ff07d0946970de89a6429ecdddc7d7a30a66ef5",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:01:22.730Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "mm-1879",
+  "type": "topic",
+  "slug": "why-wood-carving-thrives-in-nepal",
+  "title": "Why Wood Carving Thrives in Nepal? What Experts Say",
+  "description": "Evidence dossier for research question: Why Wood Carving Thrives in Nepal? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why wood carving thrives in Nepal",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Wood Carving Thrives in Nepal? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy wood carving thrives in Nepal\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Corruption and why it thrives\n\nPublisher: Policy Press\n\nURL: https://doi.org/10.2307/jj.25941157.9\n\nRetrieved: 2026-10-18T22:42:24.455Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 2: Why money laundering thrives on Canada’s West Coast\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/why-money-laundering-thrives-on-canadas-west-coast-130735\n\nRetrieved: 2026-10-18T22:42:24.749Z\n\n### Stored passages\n\n- “Why money laundering thrives on Canada’s West Coast Skip to content Academic rigor, journalistic flair Vancouver has become a money-laundering haven.”\n\n## Evidence record 3: wood carving, n.\n\nPublisher: Oxford University Press\n\nURL: https://www.oed.com/\n\nRetrieved: 2026-10-18T22:42:26.659Z\n\n### Stored passages\n\n- “cod) in lye, then cooking the fish to a gelatinous consistency.”\n\n## Evidence record 4: Shanghai\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=27643\n\nRetrieved: 2026-10-18T22:42:26.823Z\n\n### Stored passages\n\n- “Shanghai is a provincial-level direct-administered municipality in China.”\n\n## Evidence record 5: Vermont\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32578\n\nRetrieved: 2026-10-18T22:42:26.823Z\n\n### Stored passages\n\n- “Vermont ( ) is a landlocked state in the New England region of the Northeastern United States.”\n\n## Evidence record 6: Tibetans\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=249458\n\nRetrieved: 2026-10-18T22:42:26.823Z\n\n### Stored passages\n\n- “Tibetans (Tibetan: བོད་པ་, Wylie: bod pa, THL: bö pa) are an East Asian ethnic group native to Tibet.”\n\n## Evidence record 7: Anglo-Nepalese War\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=562348\n\nRetrieved: 2026-10-18T22:42:26.823Z\n\n### Stored passages\n\n- “The Anglo-Nepalese War (1 November 1814 – 4 March 1816), also known as the Anglo-Gorkha War, was a major military conflict fought between the Kingdom…”\n\n## Evidence record 8: Tourism Service Marketing and Development Efforts in Nepal : A Case Study : Alfresco Adventure Private Limited Nepal\n\nPublisher: Theseus (Ammattikorkeakoulujen)\n\nURL: https://openalex.org/W2410169216\n\nRetrieved: 2026-10-18T16:14:29.565Z\n\n### Stored passages\n\n- “Services determine the level of industry and its future at large.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2307/jj.25941157.9",
+      "title": "Corruption and why it thrives",
+      "publisher": "Policy Press",
+      "published_at": "2025-10-28",
+      "retrieved_at": "2026-10-18T22:42:24.455Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/why-money-laundering-thrives-on-canadas-west-coast-130735",
+      "title": "Why money laundering thrives on Canada’s West Coast",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2020-01-30",
+      "retrieved_at": "2026-10-18T22:42:24.749Z",
+      "sha256": "30dd6e2673ab0210b7c3d42a56d3c1e7cc33d198edca5b47b64e6119b9eb157c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://www.oed.com/",
+      "title": "wood carving, n.",
+      "publisher": "Oxford University Press",
+      "published_at": "2025-07-10",
+      "retrieved_at": "2026-10-18T22:42:26.659Z",
+      "sha256": "0a7244d4f022fe61dab1af3f4a812e01a6eed3786af6f4fb9862f8bfe9c8b969",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=27643",
+      "title": "Shanghai",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:42:26.823Z",
+      "sha256": "f1d5aff99765c567fc9edec69fd3175c6fc80bfe8f5c639f6241d85d12c0d6f7",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=32578",
+      "title": "Vermont",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:42:26.823Z",
+      "sha256": "be6aa87f24c377c745394714386d9f8a118c7ef8404300b325e923691e7ff359",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=249458",
+      "title": "Tibetans",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:42:26.823Z",
+      "sha256": "8982edc398e83deb3214f304e6a6ae20b9d0bdcf89ab79d8a3580bd87574cf35",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=562348",
+      "title": "Anglo-Nepalese War",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T22:42:26.823Z",
+      "sha256": "05a1826fe08104ebfccc34a042eed366c0211de332ff55753ea97a6f948234fd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2410169216",
+      "title": "Tourism Service Marketing and Development Efforts in Nepal : A Case Study : Alfresco Adventure Private Limited Nepal",
+      "publisher": "Theseus (Ammattikorkeakoulujen)",
+      "published_at": "2013-01-01",
+      "retrieved_at": "2026-10-18T16:14:29.565Z",
+      "sha256": "cd35e9037e2e98c247263785d00a01d1eddea6a3366cd837d579487d2a5dbb35",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:01:22.731Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
