@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: missionmangal-v2-combined-rescue
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   GROQ_API_KEY: ${{ secrets.GROQ_API }}
@@ -93,8 +93,6 @@ jobs:
           [[ "$deadline" =~ ^[0-9]+$ ]] && [ "$deadline" -ge 10 ] && [ "$deadline" -le 330 ]
           echo "workers=$workers" >> "$GITHUB_OUTPUT"
           echo "deadline=$deadline" >> "$GITHUB_OUTPUT"
-          node -e "const n=+$process.env.INPUT_WORKERS" 2>/dev/null || true
-          node -e "const n=+$workers; console.log(Array.from({length:n},(_,i)=>i))"
           echo "list=$(node -e 'console.log(JSON.stringify(Array.from({length:Number(process.argv[1])},(_,i)=>i)))' "$workers")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         if: always()
@@ -139,12 +137,20 @@ jobs:
         run: |
           ( while true; do sleep 900; bash missionmangal/v2/checkpoint.sh ${{ matrix.worker }} || true; done ) &
       - name: Research and write v1 unfinished topics with v2
+        id: v2_writer
         continue-on-error: true
         run: >
           node missionmangal/v2/run-v2.mjs
           --worker ${{ matrix.worker }}
           --workers ${{ needs.prepare.outputs.workers }}
           --deadline-minutes ${{ needs.prepare.outputs.deadline }}
+      - name: Deterministic no-LLM evidence fallback
+        if: always()
+        continue-on-error: true
+        run: >
+          node missionmangal/v2/fallback.mjs
+          --worker ${{ matrix.worker }}
+          --workers ${{ needs.prepare.outputs.workers }}
       - name: Final checkpoint
         if: always()
         env:
