@@ -1,0 +1,113 @@
+{
+  "id": "mm-0937",
+  "type": "topic",
+  "slug": "how-usb-became-universal",
+  "title": "How USB Became Universal: Explained With Real Data",
+  "description": "Evidence dossier for research question: How USB Became Universal: Explained With Real Data. Not approved for publication.",
+  "intent": "Answer: How USB became universal",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How USB Became Universal: Explained With Real Data\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow USB became universal\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Universal Serial Bus USB\n\nPublisher: Editions Techniques de l Ingenieur\n\nURL: https://www.techniques-ingenieur.fr/ressources-documentaires/automatique-robotique-th16/automatique-et-ingenierie-systeme-ti660/universal-serial-bus-usb-s8150\n\nRetrieved: 2026-10-18T15:46:02.861Z\n\n### Stored passages\n\n- “En savoir plus Analyse du cycle de vie (ACV) Décarbonation Gestion des déchets Magazine d'Actualité Magazine d'Actualité Découvrez gratuitement toute l'actualité, la veille technologique, les…”\n\n## Evidence record 2: Introduction\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/how-india-became-democratic/introduction/A77781B9A1EA6D8222E070317A4E0AEB\n\nRetrieved: 2026-10-18T15:46:03.661Z\n\n### Stored passages\n\n- “Introduction - How India Became Democratic Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from Cambridge…”\n\n## Evidence record 3: Select Bibliography\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/how-india-became-democratic/select-bibliography/3B1CE1E847FD4B8A394067EDE9A5F1EC\n\nRetrieved: 2026-10-18T15:46:04.664Z\n\n### Stored passages\n\n- “Select Bibliography - How India Became Democratic Skip to main content Accessibility help Login Alert Cancel Log in × &#215; Logo for Cambridge Core from…”\n\n## Evidence record 4: Conclusion\n\nPublisher: Yale University Press\n\nURL: https://doi.org/10.5040/9780300287912.0006\n\nRetrieved: 2026-10-18T15:46:05.820Z\n\n### Stored passages\n\n- “tarocol-84 --> Theology and Religion Online - Conclusion --> Skip to main content Sign in to Your Personal Account Sign in with: Or Incorrect Email…”\n\n## Evidence record 5: Modular RT-Motion USB\n\nPublisher: Research Repository (Delft University of Technology)\n\nURL: https://openalex.org/W605267812\n\nRetrieved: 2026-10-18T15:46:05.822Z\n\n### Stored passages\n\n- “During the course of this thesis, RTM-USB (Real Time Motion on Universal Serial Bus) has grown from a single board motor controller to a motion…”\n\n## Evidence record 6: Unifed USB-C Cable Integration for Simultaneous Transmission of Network, USB Data, and Power\n\nPublisher: Tampere University Institutional Repository (Tampere University)\n\nURL: https://openalex.org/W7132981198\n\nRetrieved: 2026-10-18T15:46:05.822Z\n\n### Stored passages\n\n- “This project describes the design, development and realisation of a modular PCB system for an IoT-based smart vending machine.”\n\n## Evidence record 7: USB camera pedestrian counting\n\nPublisher: University of Southern Queensland ePrints (University of Southern Queensland)\n\nURL: https://openalex.org/W1501274603\n\nRetrieved: 2026-10-18T15:46:05.822Z\n\n### Stored passages\n\n- “[Abstract]: The aim of this project was to implement a pedestrian counting system using a PC and USB Camera as the primary hardware.”\n\n## Evidence record 8: USB\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32073\n\nRetrieved: 2026-10-18T15:46:05.822Z\n\n### Stored passages\n\n- “Universal Serial Bus (USB) is an industry standard, developed by USB Implementers Forum (USB-IF), for digital data transmission and power delivery between many types of…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.techniques-ingenieur.fr/ressources-documentaires/automatique-robotique-th16/automatique-et-ingenierie-systeme-ti660/universal-serial-bus-usb-s8150",
+      "title": "Universal Serial Bus USB",
+      "publisher": "Editions Techniques de l Ingenieur",
+      "published_at": "2005-03",
+      "retrieved_at": "2026-10-18T15:46:02.861Z",
+      "sha256": "4d8b2ce34add32a1a63e53c70fc4b4092c4d2346034590b73e5a5081c4dff9c3",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://www.cambridge.org/core/books/how-india-became-democratic/introduction/A77781B9A1EA6D8222E070317A4E0AEB",
+      "title": "Introduction",
+      "publisher": "Cambridge University Press",
+      "retrieved_at": "2026-10-18T15:46:03.661Z",
+      "sha256": "13ea43a2265d945cf74ec93eebb278117a529e31311e6752dfe663c711ad8394",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://www.cambridge.org/core/books/how-india-became-democratic/select-bibliography/3B1CE1E847FD4B8A394067EDE9A5F1EC",
+      "title": "Select Bibliography",
+      "publisher": "Cambridge University Press",
+      "retrieved_at": "2026-10-18T15:46:04.664Z",
+      "sha256": "091db2ff7a5d4dfa9e596fae0ffdf45cd6d6de94fa16c9e0e38dc1aedfe74a22",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.5040/9780300287912.0006",
+      "title": "Conclusion",
+      "publisher": "Yale University Press",
+      "published_at": "2010",
+      "retrieved_at": "2026-10-18T15:46:05.820Z",
+      "sha256": "3a5e5088fbe30d132440e275a16cf98183c3aecc24161a064bd78768f7189f74",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W605267812",
+      "title": "Modular RT-Motion USB",
+      "publisher": "Research Repository (Delft University of Technology)",
+      "published_at": "2011-02-08",
+      "retrieved_at": "2026-10-18T15:46:05.822Z",
+      "sha256": "10adaee967fba47267852882f1cbbb1db1965651bdfb9306e3494bb16c144351",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W7132981198",
+      "title": "Unifed USB-C Cable Integration for Simultaneous Transmission of Network, USB Data, and Power",
+      "publisher": "Tampere University Institutional Repository (Tampere University)",
+      "published_at": "2024-01-01",
+      "retrieved_at": "2026-10-18T15:46:05.822Z",
+      "sha256": "8e8daccc4a7a842451edac6e972207bf1ed8c34be1932988392288ab22c02b41",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W1501274603",
+      "title": "USB camera pedestrian counting",
+      "publisher": "University of Southern Queensland ePrints (University of Southern Queensland)",
+      "published_at": "2010-10-01",
+      "retrieved_at": "2026-10-18T15:46:05.822Z",
+      "sha256": "e4a6b09640ca54648d3f7ec5d1061c297bf5cdfeec2d48199a2b1b82288a8003",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=32073",
+      "title": "USB",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:46:05.822Z",
+      "sha256": "30534d006e5eeaa85661ca1c14cb48e214cbd722afc0e10348acce21c83b0a44",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:15.041Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

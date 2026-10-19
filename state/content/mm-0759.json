@@ -1,0 +1,112 @@
+{
+  "id": "mm-0759",
+  "type": "topic",
+  "slug": "why-we-sing-in-the-shower",
+  "title": "Why We Sing in the Shower? Explained With Real Data",
+  "description": "Evidence dossier for research question: Why We Sing in the Shower? Explained With Real Data. Not approved for publication.",
+  "intent": "Answer: Why we sing in the shower",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why We Sing in the Shower? Explained With Real Data\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy we sing in the shower\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Songs of worship: Why we sing to the Lord\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/songs-of-worship-why-we-sing-to-the-lord-72642\n\nRetrieved: 2026-10-18T21:51:00.475Z\n\n### Stored passages\n\n- “Songs of worship: Why we sing to the Lord Skip to content Academic rigor, journalistic flair The Mormon Tabernacle Choir.”\n\n## Evidence record 2: Auto-Tune, and why we shouldn’t be surprised Britney can’t sing\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/auto-tune-and-why-we-shouldnt-be-surprised-britney-cant-sing-29167\n\nRetrieved: 2026-10-18T21:51:00.607Z\n\n### Stored passages\n\n- “Auto-Tune has become the music industry equivalent of doping in the Tour de France circa 2005; we know everyone’s doing it, but we still have…”\n\n## Evidence record 3: ‘Sing, sing! Why shouldn’t we sing?’ Popular music in the age of the music hall\n\nPublisher: University of Huddersfield Press\n\nURL: https://doi.org/10.5920/mummers.07\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “Why shouldn’t we sing?’ Popular music in the age of the music hall David Taylor This chapter is part of: Taylor D.”\n\n## Evidence record 4: Inflation versus filling-in: why we feel we see more than we actually do in peripheral vision\n\nPublisher: openRxiv\n\nURL: https://doi.org/10.1101/263244\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “Abstract Do we perceive fine details in the visual periphery?”\n\n## Evidence record 5: Carrie (novel)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=67003\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “Carrie is the debut horror novel by American author Stephen King, released in 1974.”\n\n## Evidence record 6: Zooey Deschanel\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=936829\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “Zooey Claire Deschanel ( ZOH-ee day-shə-NEL; born January 17, 1980) is an American actress and singer.”\n\n## Evidence record 7: Jesus Loves Me\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=3169033\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “\"Jesus Loves Me\" is a Christian hymn written by Anna Bartlett Warner (1827–1915).”\n\n## Evidence record 8: The Heart Won't Lie\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=16316480\n\nRetrieved: 2026-10-18T21:51:01.861Z\n\n### Stored passages\n\n- “\"The Heart Won't Lie\" is a song written by Kim Carnes and Donna Weiss, and recorded as a duet between American country music artists Reba…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/songs-of-worship-why-we-sing-to-the-lord-72642",
+      "title": "Songs of worship: Why we sing to the Lord",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2017-02-10",
+      "retrieved_at": "2026-10-18T21:51:00.475Z",
+      "sha256": "bec2eda302494f0c2cfaf321ce251d6b2b2028ce8bd2fd60b68b85988b0b9e1d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/auto-tune-and-why-we-shouldnt-be-surprised-britney-cant-sing-29167",
+      "title": "Auto-Tune, and why we shouldn’t be surprised Britney can’t sing",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2014-07-17",
+      "retrieved_at": "2026-10-18T21:51:00.607Z",
+      "sha256": "5e57bba3c553a3914905f0996f649177c618588f84be6cb7ba2dab836982a49c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.5920/mummers.07",
+      "title": "‘Sing, sing! Why shouldn’t we sing?’ Popular music in the age of the music hall",
+      "publisher": "University of Huddersfield Press",
+      "published_at": "2021-08-31",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "f7863f0109cefe7f70e3b240699cc45f3e9f34d449d15da93081bb75c853f2fe",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.1101/263244",
+      "title": "Inflation versus filling-in: why we feel we see more than we actually do in peripheral vision",
+      "publisher": "openRxiv",
+      "published_at": "2018-02-12",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "349e4d5a57c901907866d387756da2b16b82ce55d68fc76ef404eb15b285adc6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=67003",
+      "title": "Carrie (novel)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "b0495700745f112dae6952bb1a9cff72538534f16b1cecd5a0ef7e07c1b55534",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=936829",
+      "title": "Zooey Deschanel",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "ed8260e919fabdfd33d3a145a3b18e8b40a3f3d9048ed845371e6c73e554cd07",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=3169033",
+      "title": "Jesus Loves Me",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "ca998963b5c71d281f93d131061416162b022c321388a58ed6decb4e942a7217",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=16316480",
+      "title": "The Heart Won't Lie",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:51:01.861Z",
+      "sha256": "d625b4de6948732d23deb7fcb17a36978898cf961a9aef3967c4801d2db8199a",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:15.043Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
