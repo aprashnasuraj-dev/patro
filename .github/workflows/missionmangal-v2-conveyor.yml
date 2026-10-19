@@ -1,0 +1,30 @@
+name: Mission Mangal batch conveyor
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+permissions:
+  contents: write
+  actions: write
+  pull-requests: write
+concurrency:
+  group: missionmangal-batch-conveyor
+  cancel-in-progress: false
+jobs:
+  advance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: missionmangal-v2-rescue-combined
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Single-flight batch dispatch or PR materialization
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MM_BASE: missionmangal-v2-rescue-combined
+        run: python missionmangal/v2/conveyor.py
