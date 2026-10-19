@@ -1,0 +1,112 @@
+{
+  "id": "mm-0782",
+  "type": "topic",
+  "slug": "why-the-titanic-sank-myths-vs-reality",
+  "title": "Why the Titanic Sank? Myths vs Reality",
+  "description": "Evidence dossier for research question: Why the Titanic Sank? Myths vs Reality. Not approved for publication.",
+  "intent": "Answer: Why the Titanic sank",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why the Titanic Sank? Myths vs Reality\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy the Titanic sank\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Sleep, circadian rhythm, and maritime safety: The Titanic disaster revisited.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1016/j.amjms.2026.02.012\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “The question of why the iceberg was detected too late to avoid collision has been debated ever since.”\n\n## Evidence record 2: 'We Often Forget It Was a Disaster': Cross-Curricular Teacher Collaboration to Develop a Curriculum Unit on the Titanic Disaster.\n\nPublisher: Europe PMC\n\nURL: https://doi.org/10.1007/s11191-024-00540-0\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “There is a growing emphasis on integrating school subjects and cross disciplinary boundaries to address local and global challenges, particularly when teaching about complex and…”\n\n## Evidence record 3: Titanic (1997 film)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=52371\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “Titanic is a 1997 American epic historical romance film written and directed by James Cameron.”\n\n## Evidence record 4: Titanic conspiracy theories\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=2144400\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “On April 14, 1912, the Titanic collided with an iceberg, damaging the hull's plates below the waterline on the starboard side, causing the front compartments…”\n\n## Evidence record 5: Sinking of the Titanic\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=10185776\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “RMS Titanic sank in the North Atlantic Ocean on 15 April 1912.”\n\n## Evidence record 6: Wreck of the Titanic\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=32968259\n\nRetrieved: 2026-10-18T21:25:42.837Z\n\n### Stored passages\n\n- “The wreck of the British ocean liner RMS Titanic lies at a depth of about 12,500 feet (2,100 fathoms; 3,800 metres), about 325 nautical miles…”\n\n## Evidence record 7: Down with the Old Canoe: A Cultural History of the Titanic Disaster\n\nPublisher: Medical Entomology and Zoology\n\nURL: https://openalex.org/W2069133261\n\nRetrieved: 2026-10-18T15:48:52.291Z\n\n### Stored passages\n\n- “An exploration of the Titanic as a cultural icon, this book recalls the moment, in April 1912, when the Titanic struck an iceberg and sank.”\n\n## Evidence record 8: RMS Titanic: creating an American obsession\n\nPublisher: UTC Scholar (University of Tennessee at Chattanooga)\n\nURL: https://openalex.org/W2609316802\n\nRetrieved: 2026-10-18T15:48:52.291Z\n\n### Stored passages\n\n- “The RMS Titanic is perhaps one of the most famous disasters in United States history.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1016/j.amjms.2026.02.012",
+      "title": "Sleep, circadian rhythm, and maritime safety: The Titanic disaster revisited.",
+      "publisher": "Europe PMC",
+      "published_at": "2026-02-19",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "290cf84a2b25fd10da042bc1f6f65ae7e27bb83c9703c9a1637a28aebe7f8761",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.1007/s11191-024-00540-0",
+      "title": "'We Often Forget It Was a Disaster': Cross-Curricular Teacher Collaboration to Develop a Curriculum Unit on the Titanic Disaster.",
+      "publisher": "Europe PMC",
+      "published_at": "2024-07-19",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "5e81bdd018cabce95c55bd100aea2952407dd7c92d735c0538917dc2b3fa06e9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://en.wikipedia.org/?curid=52371",
+      "title": "Titanic (1997 film)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "596270419b32819e0a04d0bc02af6d07fac699446df9766b6296e676cf867889",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=2144400",
+      "title": "Titanic conspiracy theories",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "d927080f124bb7cde5f44f2df8f0a6c0a4de26f2cbfd23f4c29fe4baddf0dcef",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=10185776",
+      "title": "Sinking of the Titanic",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "eb5f59ace03bfbb80c50bbd24fe43c445710fd1da966fb1d92e50f08ad2c386b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=32968259",
+      "title": "Wreck of the Titanic",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:25:42.837Z",
+      "sha256": "8b6c2973d1bffd09befb208697ea76a2016b39172a0c5f90172e12f15cc4caec",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W2069133261",
+      "title": "Down with the Old Canoe: A Cultural History of the Titanic Disaster",
+      "publisher": "Medical Entomology and Zoology",
+      "published_at": "1996-01-01",
+      "retrieved_at": "2026-10-18T15:48:52.291Z",
+      "sha256": "72967dd37834a77d0b112175f212a8741f92b70141fa9470a54f8e88da6a8c77",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W2609316802",
+      "title": "RMS Titanic: creating an American obsession",
+      "publisher": "UTC Scholar (University of Tennessee at Chattanooga)",
+      "published_at": "2017-01-01",
+      "retrieved_at": "2026-10-18T15:48:52.291Z",
+      "sha256": "c901503864cc29c2997612c8e70b7732fd4ca209c2c88597693c6171f75bcbaa",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.862Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

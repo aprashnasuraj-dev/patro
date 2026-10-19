@@ -1,0 +1,112 @@
+{
+  "id": "mm-0655",
+  "type": "topic",
+  "slug": "why-rust-forms",
+  "title": "Why Rust Forms? What Experts Say",
+  "description": "Evidence dossier for research question: Why Rust Forms? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why rust forms",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Rust Forms? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy rust forms\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Why oh why oh why….? Digital uncuration\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/bmqtk-2m619\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “var imagebase='file://C:/Program Files/FeedReader30/'; My colleague Nico Adams has written at great and useful length (Why oh why oh why….?”\n\n## Evidence record 2: Why oh why oh why….? Digital uncuration\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/gfat1-hdb87\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “var imagebase='file://C:/Program Files/FeedReader30/'; My colleague Nico Adams has written at great and useful length (Why oh why oh why….?”\n\n## Evidence record 3: Why can't we teach Peter Murray-Rust about DRM?\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/kww5z-y2v04\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “&lt;em&gt; Typed/scraped into Arcturus while waiting for Eclipse job to complete &lt;/em&gt; &lt;em&gt; I have been doodling round the DRM + BL theme and suddenly…”\n\n## Evidence record 4: Why can't we teach Peter Murray-Rust about DRM?\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/55a6h-q6b86\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “&lt;em&gt; Typed/scraped into Arcturus while waiting for Eclipse job to complete &lt;/em&gt; &lt;em&gt; I have been doodling round the DRM + BL theme and suddenly…”\n\n## Evidence record 5: Patina\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=407847\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “Additionally, the term is used to describe the aging of high-quality leather.”\n\n## Evidence record 6: Rust Belt\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=980865\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “The Rust Belt, formerly the Steel Belt or Factory Belt, is an area of the United States that underwent substantial industrial decline in the late…”\n\n## Evidence record 7: Bluing (steel)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=3140419\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “Bluing, sometimes spelled as blueing, is a passivation process in which steel is partially protected against rust using a black oxide coating.”\n\n## Evidence record 8: Rust (programming language)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=29414838\n\nRetrieved: 2026-10-18T21:34:59.430Z\n\n### Stored passages\n\n- “Rust is a general-purpose programming language that emphasizes performance, type safety, concurrency, and memory safety.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.59350/bmqtk-2m619",
+      "title": "Why oh why oh why….? Digital uncuration",
+      "publisher": "Front Matter",
+      "published_at": "2007-12-15",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "8d6a339523caf0a24a2c6a2344e2b2fb986d32ecce220714aff769876a282660",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.59350/gfat1-hdb87",
+      "title": "Why oh why oh why….? Digital uncuration",
+      "publisher": "Front Matter",
+      "published_at": "2007-12-15",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "8d6a339523caf0a24a2c6a2344e2b2fb986d32ecce220714aff769876a282660",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.59350/kww5z-y2v04",
+      "title": "Why can't we teach Peter Murray-Rust about DRM?",
+      "publisher": "Front Matter",
+      "published_at": "2010-05-25",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "4e2ceb809a43b7fbcacfc232799c691859119b826106682224d8ef43387ad24e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://doi.org/10.59350/55a6h-q6b86",
+      "title": "Why can't we teach Peter Murray-Rust about DRM?",
+      "publisher": "Front Matter",
+      "published_at": "2010-05-25",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "4e2ceb809a43b7fbcacfc232799c691859119b826106682224d8ef43387ad24e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=407847",
+      "title": "Patina",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "a69759ab4c60b3c37fa491d645a77e068201e9abed8d4823fa086e28c8df3a29",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=980865",
+      "title": "Rust Belt",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "88cb701bb1120a292d72547abb0a6cbb9039147983ce068f61a532ddc336e4a9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=3140419",
+      "title": "Bluing (steel)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "dd1c0e40e5e46fae8b2e93dc1f39e8794e645b15f68cd5d2697d3e2f45284252",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=29414838",
+      "title": "Rust (programming language)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:34:59.430Z",
+      "sha256": "138529579a2a67d1445e6ca63e2e2d7c6ee997fbd7f0c4d9eb769c3cc5e05576",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.863Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
