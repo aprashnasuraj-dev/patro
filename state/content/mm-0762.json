@@ -1,0 +1,114 @@
+{
+  "id": "mm-0762",
+  "type": "topic",
+  "slug": "how-lichens-survive-anywhere-data",
+  "title": "How Lichens Survive Anywhere: What the Numbers Show",
+  "description": "Evidence dossier for research question: How Lichens Survive Anywhere: What the Numbers Show. Not approved for publication.",
+  "intent": "Answer: How lichens survive anywhere",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Lichens Survive Anywhere: What the Numbers Show\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow lichens survive anywhere\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Life on Mars? Lichens survive Martian simulation\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/s3z7b-9tv58\n\nRetrieved: 2026-10-18T15:18:56.368Z\n\n### Stored passages\n\n- “Tweet A thin atmosphere, freezing temperatures, and a barrage of radiation: the surface of Mars is hardly a prime holiday destination.”\n\n## Evidence record 2: Life on Mars? Lichens survive Martian simulation\n\nPublisher: Front Matter\n\nURL: https://doi.org/10.59350/r2b3t-e9916\n\nRetrieved: 2026-10-18T15:18:56.368Z\n\n### Stored passages\n\n- “Tweet A thin atmosphere, freezing temperatures, and a barrage of radiation: the surface of Mars is hardly a prime holiday destination.”\n\n## Evidence record 3: HOW TO SURVIVE THE APOCALYPSE\n\nPublisher: University of Georgia Press\n\nURL: https://doi.org/10.2307/j.ctv2r4kx2m.48\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 4: Preliminary Lichen Flora for Portage County, Wisconsin\n\nPublisher: Minds at UW (University of Wisconsin)\n\nURL: https://openalex.org/W3164596974\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “Many studies, both vegetation and floristic, have been conducted throughout Wisconsin and have contributed to our knowledge of lichens in this state (Culberson 1955, Hale…”\n\n## Evidence record 5: Analysis of lichens under environmental stress using Pyrolysis-GC-MS and Pyrolysis-GC-FID\n\nPublisher: Memorial University Research Repository (Memorial University)\n\nURL: https://openalex.org/W2199582405\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “Plants often react to various kinds of stress by changes in their organic composition as the result of defense or stress induced metabolism.”\n\n## Evidence record 6: Patrons de diversité et de distribution des lichens et des bryophytes le long d'un gradient d'altitude tempéré à boréal\n\nPublisher: Knowledge UdeS (Institutional Deposit of the University of Sherbrooke)\n\nURL: https://openalex.org/W7198597359\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “L'écologie des communautés cherche à expliquer les patrons de diversité et de distribution des organismes en relation avec leur environnement et leurs interactions les uns…”\n\n## Evidence record 7: Lithuania\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=17675\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “Lithuania, officially the Republic of Lithuania, is a country in the Baltic region of Europe.”\n\n## Evidence record 8: Vitiligo\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=65847\n\nRetrieved: 2026-10-18T15:18:56.755Z\n\n### Stored passages\n\n- “Vitiligo ( VIT-ih-LY-goh) is a chronic autoimmune disorder that causes skin to lose pigment (specifically melanin, which gives the skin color) in patches that vary…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.59350/s3z7b-9tv58",
+      "title": "Life on Mars? Lichens survive Martian simulation",
+      "publisher": "Front Matter",
+      "published_at": "2025-04-02",
+      "retrieved_at": "2026-10-18T15:18:56.368Z",
+      "sha256": "887e51f5bb53b1df32a15cc2de13e3c1496c2de4d0940891d72b0ed7bad73359",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.59350/r2b3t-e9916",
+      "title": "Life on Mars? Lichens survive Martian simulation",
+      "publisher": "Front Matter",
+      "published_at": "2025-04-02",
+      "retrieved_at": "2026-10-18T15:18:56.368Z",
+      "sha256": "887e51f5bb53b1df32a15cc2de13e3c1496c2de4d0940891d72b0ed7bad73359",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.2307/j.ctv2r4kx2m.48",
+      "title": "HOW TO SURVIVE THE APOCALYPSE",
+      "publisher": "University of Georgia Press",
+      "published_at": "2022-08-15",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W3164596974",
+      "title": "Preliminary Lichen Flora for Portage County, Wisconsin",
+      "publisher": "Minds at UW (University of Wisconsin)",
+      "published_at": "2013-05-01",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "178c8e499997fb8f1c400f4d03d2eed7b8927f3097eda76e05884dbae8c70f43",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W2199582405",
+      "title": "Analysis of lichens under environmental stress using Pyrolysis-GC-MS and Pyrolysis-GC-FID",
+      "publisher": "Memorial University Research Repository (Memorial University)",
+      "published_at": "1999-01-01",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "fb407dea460a1962267ed5321399ca4c13689166948b0d169b4d6eb4070f7fdc",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W7198597359",
+      "title": "Patrons de diversité et de distribution des lichens et des bryophytes le long d'un gradient d'altitude tempéré à boréal",
+      "publisher": "Knowledge UdeS (Institutional Deposit of the University of Sherbrooke)",
+      "published_at": "2022-01-01",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "a5e626eb8012cf7abc7aaa3e23fbd8aa14c7491754579887a2757cd6e62806aa",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=17675",
+      "title": "Lithuania",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "809193b84cf51cd1c740f81c0d8b0f06d8c226aa614902b4290a054411e53fa3",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=65847",
+      "title": "Vitiligo",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:18:56.755Z",
+      "sha256": "31c274149c746945c5fdeeee73e9aeb822039bb31a7b5bac2e76fdae6d9c1d2d",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.939Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

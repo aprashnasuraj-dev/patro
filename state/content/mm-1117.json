@@ -1,0 +1,114 @@
+{
+  "id": "mm-1117",
+  "type": "topic",
+  "slug": "why-nepals-currency-is-the-rupee",
+  "title": "Why Nepal's Currency Is the Rupee? The Answer May Surprise You",
+  "description": "Evidence dossier for research question: Why Nepal's Currency Is the Rupee? The Answer May Surprise You. Not approved for publication.",
+  "intent": "Answer: Why Nepal's currency is the rupee",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Nepal's Currency Is the Rupee? The Answer May Surprise You\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Nepal's currency is the rupee\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Impact of Fluctuation on Major Foreign Currency Pairs to Indian Rupee Involved Currency Pairs\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.2479354\n\nRetrieved: 2026-10-18T15:27:58.469Z\n\n### Stored passages\n\n- “The study is a comprehensive analysis of the cause and effect of fluctuations in the major currency pairs and the effect on the Indian rupee.”\n\n## Evidence record 2: The Regulatory Sandbox for the Pilot Project of Retail E-rupee Currency: Consideration for Reserve Bank of India\n\nPublisher: Passagens\n\nURL: https://doi.org/10.15175/1984-2503-202416202\n\nRetrieved: 2026-10-18T15:27:59.512Z\n\n### Stored passages\n\n- “Recent advancements in technology-based payment methods have prompted central banks all over the world to consider the possible advantages and hazards of issuing Central Bank…”\n\n## Evidence record 3: Pulling the Cash From Cashmere: Reviving Nepal's Pashmina\n\nPublisher: School for International Training Digital Collections (School for International Training)\n\nURL: https://openalex.org/W13681148\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “This study is an in depth examination of the dynamics behind the Nepali Pashmina industry.”\n\n## Evidence record 4: Nepal's Investment Climate : Leveraging the Private Sector for Job Creation and Growth\n\nPublisher: OpenAlex\n\nURL: https://openalex.org/W3150413383\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “The objective of the Nepal Investment Climate Assessment (ICA) is to evaluate the investment climate in Nepal in all its dimensions and promote policies to…”\n\n## Evidence record 5: Some aspects of landlocked Nepal's trade relations with India, 1960/61-1969/70\n\nPublisher: ScholarSpace (University of Hawaii at Manoa)\n\nURL: https://openalex.org/W2232756503\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “The present study is an econometric investigation into Nepal's foreign sector.”\n\n## Evidence record 6: Pristine places and passive people? Responses to neoliberal development and Maoist conflict in Nepal's northwest Himalayas\n\nPublisher: The Mathematics Enthusiast\n\nURL: https://openalex.org/W646000865\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “In Humla District, Nepal, agro-pastoralists' confrontations with forces of change in the last generation have altered villagers' abilities to gain access to scarce resources.”\n\n## Evidence record 7: Indian rupee\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=490783\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “The Indian rupee (symbol: ₹; code: INR) is the official currency of India and the erstwhile Dominion of India and British Raj.”\n\n## Evidence record 8: List of countries by foreign exchange reserves\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=1569780\n\nRetrieved: 2026-10-18T15:27:59.760Z\n\n### Stored passages\n\n- “Foreign exchange reserves, also called Forex reserves, in a strict sense, are foreign-currency deposits held by nationals and monetary authorities.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.2139/ssrn.2479354",
+      "title": "Impact of Fluctuation on Major Foreign Currency Pairs to Indian Rupee Involved Currency Pairs",
+      "publisher": "Elsevier BV",
+      "published_at": "2014",
+      "retrieved_at": "2026-10-18T15:27:58.469Z",
+      "sha256": "0c9f1fc0502284467ed5bffc704b1864c0efd43b8461787dcbb7ce8d8538179b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.15175/1984-2503-202416202",
+      "title": "The Regulatory Sandbox for the Pilot Project of Retail E-rupee Currency: Consideration for Reserve Bank of India",
+      "publisher": "Passagens",
+      "published_at": "2024-06-12",
+      "retrieved_at": "2026-10-18T15:27:59.512Z",
+      "sha256": "4c2200a2a59a7310c3859fc65c936118f7c2b78aee8118074624b20ce9c77584",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://openalex.org/W13681148",
+      "title": "Pulling the Cash From Cashmere: Reviving Nepal's Pashmina",
+      "publisher": "School for International Training Digital Collections (School for International Training)",
+      "published_at": "2011-01-01",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "754b06c2907c705df9cf40517ebba2d4eb8398af65e9a04c0b7cecb09266ec6a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W3150413383",
+      "title": "Nepal's Investment Climate : Leveraging the Private Sector for Job Creation and Growth",
+      "publisher": "OpenAlex",
+      "published_at": "2012-01-01",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "554eecd7b9437879f7ff16a7196e682b9ad79261ba610252b68f32e4a02d2d94",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W2232756503",
+      "title": "Some aspects of landlocked Nepal's trade relations with India, 1960/61-1969/70",
+      "publisher": "ScholarSpace (University of Hawaii at Manoa)",
+      "published_at": "1975-01-01",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "80f16fb10cc7c1c99d50c2131010a46653e5144c48670b5e5b75ea60928aee99",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W646000865",
+      "title": "Pristine places and passive people? Responses to neoliberal development and Maoist conflict in Nepal's northwest Himalayas",
+      "publisher": "The Mathematics Enthusiast",
+      "published_at": "2012-01-01",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "2dc0692af0f4317b46e3201ca08983f5e196375dc55813c92372f9a2751bcce4",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=490783",
+      "title": "Indian rupee",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "073c1d7b18425a48e366357b8e45e4500e7d706f26592f296d8a45edfe13e14e",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=1569780",
+      "title": "List of countries by foreign exchange reserves",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:27:59.760Z",
+      "sha256": "195e1b32bd815c5f2644e65afdc92cb2b85d2da11a509e0718df49b438c6fa48",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:12.938Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

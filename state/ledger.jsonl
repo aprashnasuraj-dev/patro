@@ -1,0 +1,4 @@
+{"id":"mm-1117","status":"retry_later","attempt":3,"engine":"v2","at":"2026-10-19T02:55:10.208Z","route":"general","reason":"NO_PROVIDER: No provider produced a result: groq: HTTP 429 | pollinations: non-JSON | pollinations: non-JSON | groq: HTTP 429"}
+{"id":"mm-0762","status":"retry_later","attempt":3,"engine":"v2","at":"2026-10-19T02:57:10.535Z","route":"general","reason":"NO_PROVIDER: No provider produced a result: pollinations: non-JSON | pollinations: non-JSON | groq: HTTP 429 | pollinations: non-JSON"}
+{"id":"mm-1117","status":"release_candidate","engine":"deterministic-evidence-dossier","at":"2026-10-19T02:57:12.938Z","reason":"No LLM synthesis; manual editorial review required","sources":8}
+{"id":"mm-0762","status":"release_candidate","engine":"deterministic-evidence-dossier","at":"2026-10-19T02:57:12.939Z","reason":"No LLM synthesis; manual editorial review required","sources":8}
