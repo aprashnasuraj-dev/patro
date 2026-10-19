@@ -1,0 +1,112 @@
+{
+  "id": "mm-0648",
+  "type": "topic",
+  "slug": "why-lightning-never-strikes-the-same-place-twice-is-false-data",
+  "title": "Why Lightning Never Strikes the Same Place Twice Is False? What the Numbers Show",
+  "description": "Evidence dossier for research question: Why Lightning Never Strikes the Same Place Twice Is False? What the Numbers Show. Not approved for publication.",
+  "intent": "Answer: Why lightning never strikes the same place twice is false",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Lightning Never Strikes the Same Place Twice Is False? What the Numbers Show\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy lightning never strikes the same place twice is false\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Is it true that lightning never strikes the same place twice?\n\nPublisher: Cambridge University Press\n\nURL: https://www.cambridge.org/core/books/fundamentals-of-lightning/is-it-true-that-lightning-never-strikes-the-same-place-twice/4A7060F55C37E1465EC837BD5C6C9F84\n\nRetrieved: 2026-10-18T21:33:13.846Z\n\n### Stored passages\n\n- “Is it true that lightning never strikes the same place twice?”\n\n## Evidence record 2: LIGHTNING NEVER STRIKES TWICE\n\nPublisher: Princeton University Press\n\nURL: https://doi.org/10.2307/jj.14284456.61\n\nRetrieved: 2026-10-18T21:33:14.271Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 3: X (social network)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=9988187\n\nRetrieved: 2026-10-18T21:33:14.669Z\n\n### Stored passages\n\n- “X, formerly known as Twitter, is an American microblogging and social networking service owned by SpaceX's artificial intelligence subsidiary SpaceXAI.”\n\n## Evidence record 4: List of proverbial phrases\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=26396168\n\nRetrieved: 2026-10-18T21:33:14.669Z\n\n### Stored passages\n\n- “Below is an alphabetical list of widely used and repeated proverbial phrases.”\n\n## Evidence record 5: Characters of the Final Fantasy XIII series\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=29877519\n\nRetrieved: 2026-10-18T21:33:14.669Z\n\n### Stored passages\n\n- “Final Fantasy XIII is a 2009 role-playing game released by Square Enix that revolves around the struggles of a group of humans over a predestined…”\n\n## Evidence record 6: Lockheed Martin F-35 Lightning II Canadian procurement\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=31314240\n\nRetrieved: 2026-10-18T21:33:14.669Z\n\n### Stored passages\n\n- “The Lockheed Martin F-35 Lightning II Canadian procurement is a defence procurement project of the Canadian government to purchase Lockheed Martin F-35 Lightning II Joint…”\n\n## Evidence record 7: When Lightning Strikes Twice: E‐Cigarette's Use of Traditional Cigarette Marketing Practices\n\nPublisher: Seton Hall University eRepository (Seton Hall University)\n\nURL: https://openalex.org/W3179580250\n\nRetrieved: 2026-10-18T15:31:54.530Z\n\n### Stored passages\n\n- “IntroductionIn 2018, the National Youth Tobacco Survey reported more than three million youths, individuals under the age of eighteen, actively used electronic cigarettes (\"e-cigarettes\").”\n\n## Evidence record 8: Lightning Flowers\n\nPublisher: Journal of International Crisis and Risk Communication Research\n\nURL: https://openalex.org/W7134628313\n\nRetrieved: 2026-10-18T15:31:54.530Z\n\n### Stored passages\n\n- “Lightning Flowers traces the psychological collapse of Waylan Dranger, an East Texas construction worker / folk artist.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.cambridge.org/core/books/fundamentals-of-lightning/is-it-true-that-lightning-never-strikes-the-same-place-twice/4A7060F55C37E1465EC837BD5C6C9F84",
+      "title": "Is it true that lightning never strikes the same place twice?",
+      "publisher": "Cambridge University Press",
+      "published_at": "2016-04-07",
+      "retrieved_at": "2026-10-18T21:33:13.846Z",
+      "sha256": "a72b5811a76f7e016dabf358b593e670d9b35499d4dc6acc34331578095e2748",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.2307/jj.14284456.61",
+      "title": "LIGHTNING NEVER STRIKES TWICE",
+      "publisher": "Princeton University Press",
+      "published_at": "2024-10-22",
+      "retrieved_at": "2026-10-18T21:33:14.271Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://en.wikipedia.org/?curid=9988187",
+      "title": "X (social network)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:33:14.669Z",
+      "sha256": "d58679c0b9fd35a5287727751b30fa10f38e45d6b64257ae4b2c8d65286b18ee",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=26396168",
+      "title": "List of proverbial phrases",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:33:14.669Z",
+      "sha256": "ff117027d0163c439805bcf9bddb683e1881ad3dca436eb5172af5d837706324",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=29877519",
+      "title": "Characters of the Final Fantasy XIII series",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:33:14.669Z",
+      "sha256": "af8c840c5e813213eb88cde30042a882815389de20e176b266338208065ad622",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=31314240",
+      "title": "Lockheed Martin F-35 Lightning II Canadian procurement",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T21:33:14.669Z",
+      "sha256": "19bcd5df3a3a1703085bc1de8a012f448cb245840fcb798dacca03ea05555fc6",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W3179580250",
+      "title": "When Lightning Strikes Twice: E‐Cigarette's Use of Traditional Cigarette Marketing Practices",
+      "publisher": "Seton Hall University eRepository (Seton Hall University)",
+      "published_at": "2021-01-01",
+      "retrieved_at": "2026-10-18T15:31:54.530Z",
+      "sha256": "8ec01871f6dc6e86af1ba2fa1b5a6c0248321d16ad6064aaf2329e1c89729dc4",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W7134628313",
+      "title": "Lightning Flowers",
+      "publisher": "Journal of International Crisis and Risk Communication Research",
+      "published_at": "2015-01-01",
+      "retrieved_at": "2026-10-18T15:31:54.530Z",
+      "sha256": "5654ded914c0dfa5ba5197ba6266f0f5c942f6535a0696dbec44e09e1db3159c",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T02:57:20.584Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
