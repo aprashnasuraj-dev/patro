@@ -1,0 +1,115 @@
+{
+  "id": "mm-0461",
+  "type": "topic",
+  "slug": "why-pompeii-was-preserved",
+  "title": "Why Pompeii Was Preserved? What Experts Say",
+  "description": "Evidence dossier for research question: Why Pompeii Was Preserved? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why Pompeii was preserved",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Pompeii Was Preserved? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Pompeii was preserved\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: A ‘trilobite Pompeii’: perfectly preserved fossils of ancient sea critters found buried in volcanic ash\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/a-trilobite-pompeii-perfectly-preserved-fossils-of-ancient-sea-critters-found-buried-in-volcanic-ash-233230\n\nRetrieved: 2026-10-18T15:00:20.544Z\n\n### Stored passages\n\n- “These ancient marine arthropods lived in the world’s oceans from 521 million to 252 million years ago.”\n\n## Evidence record 2: ʻBombing Pompeii!!! Why not the Pyramids?ʼ Myths and memories of the Allied bombing of Pompeii, August–September 1943\n\nPublisher: UCL Press\n\nURL: https://doi.org/10.2307/j.ctv13xpsfp.20\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “This may be due to a browser extension, network issues, or browser settings.”\n\n## Evidence record 3: Why New York Times v. Sullivan Must Be Preserved\n\nPublisher: Elsevier BV\n\nURL: https://doi.org/10.2139/ssrn.6873898\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “Supreme Court justices and eminent members of the legal academy argue that its core holding – that public figures must prove actual malice by clear…”\n\n## Evidence record 4: The Origins of Concrete in Rome and Pompeii.\n\nPublisher: Deep Blue (University of Michigan)\n\nURL: https://openalex.org/W204309039\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “This dissertation presents an analysis of early concrete architecture in Rome and Pompeii.”\n\n## Evidence record 5: Venus in Pompeii : iconography and context\n\nPublisher: Leicester Research Archive (University of Leicester)\n\nURL: https://openalex.org/W2888863809\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “This thesis investigates the significance of representations of Venus and their spatial contexts in Pompeii.”\n\n## Evidence record 6: The Roman Street: Urban Life and Society in Pompeii, Herculaneum, and Rome\n\nPublisher: Thammasat University Digital Collections\n\nURL: https://openalex.org/W2608785494\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “Every day Roman urbanites took to the street for myriad tasks, from hawking vegetables and worshipping local deities to simply loitering and socializing.”\n\n## Evidence record 7: Pompeii: A study of Roman tombs and the freedmen\n\nPublisher: NORA - Norwegian Open Research Archives\n\nURL: https://openalex.org/W2514471505\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “Pompeii offers archaeologist that are interested in classical archaeology something unique No other ruin is as well maintained or complete as this city and it…”\n\n## Evidence record 8: Ship of Theseus\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=268524\n\nRetrieved: 2026-10-18T15:00:20.825Z\n\n### Stored passages\n\n- “Greek biographer Plutarch described the paradox in his Life of Theseus, recounting how the Athenians preserved the ship on which the mythical king Theseus had…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/a-trilobite-pompeii-perfectly-preserved-fossils-of-ancient-sea-critters-found-buried-in-volcanic-ash-233230",
+      "title": "A ‘trilobite Pompeii’: perfectly preserved fossils of ancient sea critters found buried in volcanic ash",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2024-06-27",
+      "retrieved_at": "2026-10-18T15:00:20.544Z",
+      "sha256": "ea08de0f9a8f65bc8b88ada04d3a08a29f53f6026ee3c8c1d7d6ca306ed89438",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://doi.org/10.2307/j.ctv13xpsfp.20",
+      "title": "ʻBombing Pompeii!!! Why not the Pyramids?ʼ Myths and memories of the Allied bombing of Pompeii, August–September 1943",
+      "publisher": "UCL Press",
+      "published_at": "2020-02-18",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://doi.org/10.2139/ssrn.6873898",
+      "title": "Why New York Times v. Sullivan Must Be Preserved",
+      "publisher": "Elsevier BV",
+      "published_at": "2026",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "5a43b7d01c7bfaf8f3b695d750077cda852b0647dc0996c83dd0f28d6810b9a2",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W204309039",
+      "title": "The Origins of Concrete in Rome and Pompeii.",
+      "publisher": "Deep Blue (University of Michigan)",
+      "published_at": "2013-01-01",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "2021475afa1dc76fe84f81717bfa60bb1811dab6aa032f7ccb9aa03762c98e57",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W2888863809",
+      "title": "Venus in Pompeii : iconography and context",
+      "publisher": "Leicester Research Archive (University of Leicester)",
+      "published_at": "2018-06-29",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "ec74cf154873cc711cb3453fa234b4719d83afcfaac3d772b1907c0b7e8e9e0a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W2608785494",
+      "title": "The Roman Street: Urban Life and Society in Pompeii, Herculaneum, and Rome",
+      "publisher": "Thammasat University Digital Collections",
+      "published_at": "2017-05-09",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "9c2eafb5f4e4b9b81a158ac4de10ae10885e975f113ff17cfd17616a0198ea14",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://openalex.org/W2514471505",
+      "title": "Pompeii: A study of Roman tombs and the freedmen",
+      "publisher": "NORA - Norwegian Open Research Archives",
+      "published_at": "2016-05-18",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "dd9774d15cb0d77317a33bbaad307ec33e58f1666bd758715f5ff53abbde54f9",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=268524",
+      "title": "Ship of Theseus",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T15:00:20.825Z",
+      "sha256": "668427f10e4a4b0d538694eefa02a10be072625bf6834d04e7b2a4cd8bd0d13a",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:28.013Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

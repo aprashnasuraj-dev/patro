@@ -1,0 +1,114 @@
+{
+  "id": "mm-0307",
+  "type": "topic",
+  "slug": "how-refrigerators-changed-diets",
+  "title": "How Refrigerators Changed Diets: The Answer May Surprise You",
+  "description": "Evidence dossier for research question: How Refrigerators Changed Diets: The Answer May Surprise You. Not approved for publication.",
+  "intent": "Answer: How refrigerators changed diets",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# How Refrigerators Changed Diets: The Answer May Surprise You\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nHow refrigerators changed diets\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: Coming Home\n\nPublisher: Oxford University Press\n\nURL: https://doi.org/10.1093/oso/9780190232511.001.0001\n\nRetrieved: 2026-10-18T14:58:32.127Z\n\n### Stored passages\n\n- “By the mid-twentieth century, two things appeared destined for extinction in the United States: the practice of home birth and the profession of midwifery.”\n\n## Evidence record 2: Role of Free Off Products in Food Industry how Nutrition has Changed from Paleolithic Nutrition to Western Diets and Analysing Coexistence of Food Poverty and Obesity with a Focus on the Irish Case\n\nPublisher: International Journal of Science and Research\n\nURL: https://www.ijsr.net/getabstract.php?paperid=SR21510202845\n\nRetrieved: 2026-10-18T14:58:33.156Z\n\n### Stored passages\n\n- “Diets have changed from paleolithic to western with the early subjugation of plants and animal's unique nutrient features of food transformed, slightly initially but quickly…”\n\n## Evidence record 3: Food Packaging Trends for the Refrigerator\n\nPublisher: Lund University Publications Student Papers (Lund University)\n\nURL: https://openalex.org/W1799140791\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “Issue of study: Consumers interact with primary food packaging and the refrigerator on a daily basis, although the interaction and impact food packaging has on…”\n\n## Evidence record 4: Terra: The Earthen Refrigerator\n\nPublisher: RIT Scholar Works (Rochester Institute of Technology)\n\nURL: https://openalex.org/W2920152713\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “These gadgets were designed for convenient cooking and effective kitchen time usage.\\nOne such appliance which has gained tremendous appreciation is the refrigerator.”\n\n## Evidence record 5: Diet and health.\n\nPublisher: PubMed\n\nURL: https://openalex.org/W32404744\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “The role of diet in personal health maintenance is important whether a person is trying to stay healthy or to treat diet-related diseases such as…”\n\n## Evidence record 6: The Effects of Processing Diets for Companion Animals\n\nPublisher: The Atrium (University of Guelph)\n\nURL: https://openalex.org/W2944463112\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “An alternative to seeking new diets and ingredients for the animals we feed, is to investigate ways to improve existing diets.”\n\n## Evidence record 7: Refrigeration\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=46238\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “Refrigeration is the artificial cooling of a space, substance, or system to lower and/or maintain its temperature below the ambient temperature.”\n\n## Evidence record 8: Poi (Hawaiian food)\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=206993\n\nRetrieved: 2026-10-18T14:58:33.157Z\n\n### Stored passages\n\n- “Poi or popoi is a traditional staple food in the Polynesian diet, made from taro.”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://doi.org/10.1093/oso/9780190232511.001.0001",
+      "title": "Coming Home",
+      "publisher": "Oxford University Press",
+      "published_at": "2019-02-21",
+      "retrieved_at": "2026-10-18T14:58:32.127Z",
+      "sha256": "a4ffc1e520bfa7f59e5a9aa8e2cf3161c9214926647050166998745ef72ce240",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://www.ijsr.net/getabstract.php?paperid=SR21510202845",
+      "title": "Role of Free Off Products in Food Industry how Nutrition has Changed from Paleolithic Nutrition to Western Diets and Analysing Coexistence of Food Poverty and Obesity with a Focus on the Irish Case",
+      "publisher": "International Journal of Science and Research",
+      "published_at": "2021-05-27",
+      "retrieved_at": "2026-10-18T14:58:33.156Z",
+      "sha256": "f8e1d0f7c90ecaff497e451a4519ed9e5c0833ddf2236a41b86bc4ab7855eafa",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://openalex.org/W1799140791",
+      "title": "Food Packaging Trends for the Refrigerator",
+      "publisher": "Lund University Publications Student Papers (Lund University)",
+      "published_at": "2015-01-01",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "8647e55a8749784b3f83dcfcefd6cb3c5849f75e5b6b7b315e4138c7bf9c088d",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://openalex.org/W2920152713",
+      "title": "Terra: The Earthen Refrigerator",
+      "publisher": "RIT Scholar Works (Rochester Institute of Technology)",
+      "published_at": "2018-01-01",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "a721e2a29911b84c1c5c229374d18694e58bfb7afe5905ffba9c4d876f987ed1",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://openalex.org/W32404744",
+      "title": "Diet and health.",
+      "publisher": "PubMed",
+      "published_at": "1984-12-01",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "e5f3dc003750060b93954b9279902e3a9878da016973b9e94bbfa69bab581423",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://openalex.org/W2944463112",
+      "title": "The Effects of Processing Diets for Companion Animals",
+      "publisher": "The Atrium (University of Guelph)",
+      "published_at": "2019-01-01",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "86fa10846c520b8c15e6cb2c3a289a7795607ea41e47174a9f8648caa69479a2",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=46238",
+      "title": "Refrigeration",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "2caa27b25865cb8ef146bef6733cf4f4f18dc655d12243fb33c3d7205fdd1b50",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://en.wikipedia.org/?curid=206993",
+      "title": "Poi (Hawaiian food)",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T14:58:33.157Z",
+      "sha256": "f5eb2d0301c3dab61013645f0e40187c1010aaa8d8a85976d0daecf1e1a397ed",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:28.014Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}

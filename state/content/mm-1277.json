@@ -1,0 +1,112 @@
+{
+  "id": "mm-1277",
+  "type": "topic",
+  "slug": "why-dashain-is-the-biggest-festival",
+  "title": "Why Dashain Is the Biggest Festival? What Experts Say",
+  "description": "Evidence dossier for research question: Why Dashain Is the Biggest Festival? What Experts Say. Not approved for publication.",
+  "intent": "Answer: Why Dashain is the biggest festival",
+  "author": "Mission Mangal research pipeline",
+  "status": "release_candidate",
+  "original_contribution": "Deterministic evidence inventory; no original synthesis is claimed.",
+  "body_md": "# Why Dashain Is the Biggest Festival? What Experts Say\n\n> Deterministic evidence dossier generated without an LLM. This is research material, not an approved article. Quoted passages remain attributed to their original sources; editorial synthesis and independent claim verification are still required.\n\n## Research question\n\nWhy Dashain is the biggest festival\n\n## Source coverage\n\nThis dossier contains 8 distinct source URL(s). The count indicates retrieval coverage only; it does not establish source independence, authority, correctness, or sufficiency.\n\n## Evidence record 1: South Africa’s biggest arts festival turns 50 – we assess its impact\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/south-africas-biggest-arts-festival-turns-50-we-assess-its-impact-231085\n\nRetrieved: 2026-10-18T23:19:27.465Z\n\n### Stored passages\n\n- “South Africa’s biggest arts festival turns 50 – we assess its impact Skip to content Academic rigor, journalistic flair Ultra by Darkroom Contemporary is a…”\n\n## Evidence record 2: Edinburgh Fringe 2023: how to immerse yourself in the world’s biggest arts festival\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/edinburgh-fringe-2023-how-to-immerse-yourself-in-the-worlds-biggest-arts-festival-209753\n\nRetrieved: 2026-10-18T23:19:27.582Z\n\n### Stored passages\n\n- “Beginning with just eight companies of performers in five venues, the Edinburgh Festival Fringe (known as “the Fringe”) is now the biggest arts festival in…”\n\n## Evidence record 3: Unravelling why geography is Australia’s biggest silent killer\n\nPublisher: The Conversation Media Group Ltd\n\nURL: https://theconversation.com/unravelling-why-geography-is-australias-biggest-silent-killer-23238\n\nRetrieved: 2026-10-18T23:19:27.774Z\n\n### Stored passages\n\n- “Far more important is the distribution of health risk factors and how they interact with the nature of rural and remote places, which results in…”\n\n## Evidence record 4: Hinduism\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=13543\n\nRetrieved: 2026-10-18T23:19:27.774Z\n\n### Stored passages\n\n- “Hinduism () is an umbrella term for a range of Indian religious and spiritual traditions (sampradayas) that are unified by adherence to Dharma, a cosmic…”\n\n## Evidence record 5: Sikkim\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=140372\n\nRetrieved: 2026-10-18T23:19:27.774Z\n\n### Stored passages\n\n- “Sikkim ( SIK-im; Nepali: [ˈsikːim]) is a state in northeast India.”\n\n## Evidence record 6: Nepal\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=171166\n\nRetrieved: 2026-10-18T23:19:27.774Z\n\n### Stored passages\n\n- “Nepal, officially Federal Democratic of Republic Nepal is a landlocked country in South Asia.”\n\n## Evidence record 7: Khokana\n\nPublisher: Wikipedia\n\nURL: https://en.wikipedia.org/?curid=19362849\n\nRetrieved: 2026-10-18T23:19:27.774Z\n\n### Stored passages\n\n- “Khokana is a former Village Development Committee (VDC) which has been merged with the neighbouring VDCs of Bungamati, Chhampi, Dukuchhap, Sainbu and 38 other VDCs…”\n\n## Evidence record 8: The importance of Cultural Heritage in Nepal's Tourism Industry\n\nPublisher: Theseus (Ammattikorkeakoulujen)\n\nURL: https://openalex.org/W7117084610\n\nRetrieved: 2026-10-18T15:33:22.399Z\n\n### Stored passages\n\n- “Nepal's rich cultural and natural inheritance, which includes UNESCO World Heritage Sites, ancient structures, festivals, and living traditions, has been recognized as an essential component…”\n\n## Editorial work still required\n\n- Independently verify each factual claim against the cited source.\n\n- Resolve conflicting, stale, or incomplete evidence.\n\n- Write original synthesis without copying source phrasing.\n\n- Apply the route-specific quality gate before approval or publication.",
+  "faq": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://theconversation.com/south-africas-biggest-arts-festival-turns-50-we-assess-its-impact-231085",
+      "title": "South Africa’s biggest arts festival turns 50 – we assess its impact",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2024-06-12",
+      "retrieved_at": "2026-10-18T23:19:27.465Z",
+      "sha256": "df5438464a883659946b4080914a52db341244778da7fa594539fca26d54da9b",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s2",
+      "url": "https://theconversation.com/edinburgh-fringe-2023-how-to-immerse-yourself-in-the-worlds-biggest-arts-festival-209753",
+      "title": "Edinburgh Fringe 2023: how to immerse yourself in the world’s biggest arts festival",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2023-08-04",
+      "retrieved_at": "2026-10-18T23:19:27.582Z",
+      "sha256": "f299a21758fd38ac753e58869f4bf78e3e01a2d1f78f741c1379470d61acaf5c",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s3",
+      "url": "https://theconversation.com/unravelling-why-geography-is-australias-biggest-silent-killer-23238",
+      "title": "Unravelling why geography is Australia’s biggest silent killer",
+      "publisher": "The Conversation Media Group Ltd",
+      "published_at": "2014-03-12",
+      "retrieved_at": "2026-10-18T23:19:27.774Z",
+      "sha256": "7c2f75563aa342102ce75d03796a312a7c5b7a22384984312c7fe7179ae84c3a",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/?curid=13543",
+      "title": "Hinduism",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:27.774Z",
+      "sha256": "5d79ca6ea9eaa4a92e759ee736a1589a9e790f8be280ce402847a4c02753d303",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s5",
+      "url": "https://en.wikipedia.org/?curid=140372",
+      "title": "Sikkim",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:27.774Z",
+      "sha256": "34be9706fa0aa9ef6d0a731735e155961a2a09c3086d82964a13424809845669",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s6",
+      "url": "https://en.wikipedia.org/?curid=171166",
+      "title": "Nepal",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:27.774Z",
+      "sha256": "ba9943414a8b6f903e603b15a0e3912238c0bbf174b22b8043b287b31986a956",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s7",
+      "url": "https://en.wikipedia.org/?curid=19362849",
+      "title": "Khokana",
+      "publisher": "Wikipedia",
+      "retrieved_at": "2026-10-18T23:19:27.774Z",
+      "sha256": "59901a453310558b9069a7ba137425822463161334743c001da10b107209c9fd",
+      "verified": false,
+      "claim_ids": []
+    },
+    {
+      "id": "s8",
+      "url": "https://openalex.org/W7117084610",
+      "title": "The importance of Cultural Heritage in Nepal's Tourism Industry",
+      "publisher": "Theseus (Ammattikorkeakoulujen)",
+      "published_at": "2025-01-01",
+      "retrieved_at": "2026-10-18T15:33:22.399Z",
+      "sha256": "3ee23f8b9bbf976fd3b6919f8879600c510de3cbf8143e0a956dc89b2b3ba0d2",
+      "verified": false,
+      "claim_ids": []
+    }
+  ],
+  "media": [],
+  "provenance": {
+    "route": "general",
+    "engine": "deterministic-evidence-dossier",
+    "source_count": 8,
+    "generated_at": "2026-10-19T03:00:28.015Z"
+  },
+  "review": {
+    "mode": "manual-required",
+    "policy": "never-auto-approve-fallback",
+    "reason": "No healthy LLM or no successful LLM draft; dossier is not an article."
+  }
+}
