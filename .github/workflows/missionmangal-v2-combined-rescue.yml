@@ -59,13 +59,24 @@ jobs:
           github-token: ${{ github.token }}
           pattern: shard-*
           path: missionmangal/state-in
-      - name: Restore shards without mutating v1 artifacts
+      - name: Import completed v1 rescue artifacts when available
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          run-id: 39137761297
+          github-token: ${{ github.token }}
+          pattern: rescue-*
+          path: missionmangal/rescue-in
+      - name: Restore shards and rescue artifacts without mutating v1
         run: |
           mkdir -p missionmangal/state
           for d in missionmangal/state-in/shard-*; do
             [ -d "$d" ] && cp -r "$d" "missionmangal/state/$(basename "$d")"
           done
-          echo "Imported shard directories:"
+          for d in missionmangal/rescue-in/rescue-*; do
+            [ -d "$d" ] && cp -r "$d" "missionmangal/state/$(basename "$d")"
+          done
+          echo "Imported state directories:"
           find missionmangal/state -mindepth 1 -maxdepth 1 -type d | sort
       - name: Reconcile every reserved topic and cached evidence
         run: node missionmangal/v2/plan.mjs
