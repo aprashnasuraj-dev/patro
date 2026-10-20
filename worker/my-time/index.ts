@@ -85,10 +85,10 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const evaluatedAt = localDateTimeToUtc(date, timezone, 12);
   const location = { lat, lon: lng, tz: timezone, height: 0, name: "My Time" };
   let daily: ReturnType<typeof placeTiming> | null = null;
-  try { daily = placeTiming(date, location); } catch { daily = null; }
+  try { const timing = placeTiming(date, location); daily = timing.polarFallback ? null : timing; } catch { daily = null; }
   const panchang = daily || panchangAt(evaluatedAt);
   let nextDay: ReturnType<typeof placeTiming> | null = null;
-  if (daily) { try { nextDay = placeTiming(addIsoDays(date, 1), location); } catch { nextDay = null; } }
+  if (daily) { try { const timing = placeTiming(addIsoDays(date, 1), location); nextDay = timing.polarFallback ? null : timing; } catch { nextDay = null; } }
   const sunLongitude = normalizeLongitude(Astronomy.SunPosition(evaluatedAt).elon);
   const moonLongitude = normalizeLongitude(Astronomy.EclipticGeoMoon(evaluatedAt).lon);
   const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
