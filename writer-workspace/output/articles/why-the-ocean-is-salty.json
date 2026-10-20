@@ -132,5 +132,14 @@
   ],
   "word_count": 2842,
   "reading_minutes": 13,
-  "image": null
+  "image": {
+    "file": "why-the-ocean-is-salty-hero.jpg",
+    "alt": "Why the Ocean Is Salty — editorial hero image illustrating the article's main subject",
+    "caption": "The salt of the sea for me (NYPL Hades-609611-1994645).jpg",
+    "credit": "Wikimedia Commons: Scan by NYPL",
+    "license": "Public domain — see Wikimedia Commons file page",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_salt_of_the_sea_for_me_(NYPL_Hades-609611-1994645).jpg",
+    "width": 1200,
+    "height": 630
+  }
 }

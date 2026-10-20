@@ -132,5 +132,14 @@
   ],
   "word_count": 2928,
   "reading_minutes": 14,
-  "image": null
+  "image": {
+    "file": "how-black-holes-form-hero.jpg",
+    "alt": "How Black Holes Form: The Science Explained — editorial hero image illustrating the article's main subject",
+    "caption": "Illustration of Wind from Accretion Disk Around a Black Hole (2004-h1413-more-3 - accretion reddisk diamond).tiff",
+    "credit": "Wikimedia Commons: (Credit: NASA/CXC/M.Weiss)",
+    "license": "Public domain — see Wikimedia Commons file page",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Illustration_of_Wind_from_Accretion_Disk_Around_a_Black_Hole_(2004-h1413-more-3_-_accretion_reddisk_diamond).tiff",
+    "width": 1200,
+    "height": 630
+  }
 }

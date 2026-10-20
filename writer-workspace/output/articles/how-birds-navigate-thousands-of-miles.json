@@ -132,5 +132,14 @@
   ],
   "word_count": 2728,
   "reading_minutes": 13,
-  "image": null
+  "image": {
+    "file": "how-birds-navigate-thousands-of-miles-hero.jpg",
+    "alt": "How Birds Navigate Thousands of Miles — editorial hero image illustrating the article's main subject",
+    "caption": "Migratory birds at Motemajra Village pond 03.jpg",
+    "credit": "Wikimedia Commons: Harvinder Chandigarh",
+    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0) — see file page for attribution and terms",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Migratory_birds_at_Motemajra_Village_pond_03.jpg",
+    "width": 1200,
+    "height": 630
+  }
 }
