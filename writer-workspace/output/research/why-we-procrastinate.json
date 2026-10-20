@@ -1,0 +1,61 @@
+{
+  "slug": "why-we-procrastinate",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.apa.org/news/podcasts/speaking-of-psychology/procrastinate",
+      "title": "Why we procrastinate and what to do about it, with Fuschia Sirois, PhD",
+      "publisher": "American Psychological Association",
+      "reliability": "Psychology or university educational source",
+      "notes": [
+        "Identified for claims about procrastination, emotion regulation and task planning; final source-by-source verification remains required."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.apa.org/gradpsych/2010/01/procrastination",
+      "title": "Procrastination or 'intentional delay'?",
+      "publisher": "American Psychological Association",
+      "reliability": "Psychology or university educational source",
+      "notes": [
+        "Identified for claims about procrastination, emotion regulation and task planning; final source-by-source verification remains required."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://slc.berkeley.edu/academic-support/time-management",
+      "title": "Time management and task planning",
+      "publisher": "University of California, Berkeley Learning Center",
+      "reliability": "Psychology or university educational source",
+      "notes": [
+        "Identified for claims about procrastination, emotion regulation and task planning; final source-by-source verification remains required."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.durham.ac.uk/research/current/thought-leadership/",
+      "title": "Self-regulation and emotion regulation",
+      "publisher": "Durham University",
+      "reliability": "Psychology or university educational source",
+      "notes": [
+        "Identified for claims about procrastination, emotion regulation and task planning; final source-by-source verification remains required."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://extension.umn.edu/health-and-stress/procrastination",
+      "title": "Procrastination and task planning",
+      "publisher": "University of Minnesota Extension",
+      "reliability": "Psychology or university educational source",
+      "notes": [
+        "Identified for claims about procrastination, emotion regulation and task planning; final source-by-source verification remains required."
+      ]
+    }
+  ],
+  "notes": [
+    "Article draft committed; hero image pending.",
+    "The APA podcast source was opened; other listed sources require final direct URL verification before the batch is marked complete."
+  ]
+}
