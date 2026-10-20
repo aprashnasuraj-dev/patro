@@ -5,7 +5,7 @@ import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
 import { apparentSolarTime } from "../../patro-tools/core/apparent-solar-time";
 import { abhijitMuhurta, nepalStandardTime, scorePersonalizedMuhurta, timeScaleCounters } from "../../patro-tools/core/my-time-extended";
-import { choghadiyaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
+import { choghadiyaWindows, horaWindows, inauspiciousDayWindows } from "../../patro-tools/core/temporal-windows";
 import { deviceZone, readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
@@ -85,7 +85,8 @@ function arcPaths(start: number, end: number, radius: number) {
   };
   return end >= start ? [segment(start,end)].filter(Boolean) : [segment(start,1440),segment(0,end)].filter(Boolean);
 }
-function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaal }: { timezone: string; now: Date; language: "ne" | "en"; snapshot: Snapshot | null; showChoghadiya: boolean; showKaal: boolean }) {
+function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaal, showHora, showTwilight }: { timezone: string; now: Date; language: "ne" | "en"; snapshot: Snapshot | null; showChoghadiya: boolean; showKaal: boolean; showHora: boolean; showTwilight: boolean }) {
+  const [selectedEvent, setSelectedEvent] = useState("");
   const safeTimezoneValue = safeTimeZone(timezone);
   const hours = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, hour: "2-digit", hourCycle: "h23" }).format(now));
   const minutes = Number(new Intl.DateTimeFormat("en-GB", { timeZone: safeTimezoneValue, minute: "2-digit" }).format(now));
@@ -97,17 +98,30 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
   const solarReady = Boolean(snapshot?.panchang.sunrise_utc && snapshot.panchang.sunset_utc && snapshot.panchang.next_sunrise_utc);
   const choghadiya = solarReady ? choghadiyaWindows(snapshot!.weekday,snapshot!.panchang.sunrise_utc,snapshot!.panchang.sunset_utc,snapshot!.panchang.next_sunrise_utc) : {day:[],night:[]};
   const inauspicious = solarReady ? inauspiciousDayWindows(snapshot!.weekday,snapshot!.panchang.sunrise_utc,snapshot!.panchang.sunset_utc) : [];
+  const hora = solarReady ? horaWindows(snapshot!.weekday,snapshot!.panchang.sunrise_utc,snapshot!.panchang.sunset_utc,snapshot!.panchang.next_sunrise_utc) : {day:[],night:[]};
+  const twilightWindows = snapshot ? [
+    {key:"astronomical-dawn",label:l(language,"खगोलीय बिहानी","Astronomical dawn"),start:snapshot.twilight.astronomical_dawn_utc,end:snapshot.panchang.sunrise_utc},
+    {key:"nautical-dawn",label:l(language,"नौचालन बिहानी","Nautical dawn"),start:snapshot.twilight.nautical_dawn_utc,end:snapshot.panchang.sunrise_utc},
+    {key:"civil-dawn",label:l(language,"नागरिक बिहानी","Civil dawn"),start:snapshot.twilight.civil_dawn_utc,end:snapshot.panchang.sunrise_utc},
+    {key:"civil-dusk",label:l(language,"नागरिक साँझ","Civil dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.civil_dusk_utc},
+    {key:"nautical-dusk",label:l(language,"नौचालन साँझ","Nautical dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.nautical_dusk_utc},
+    {key:"astronomical-dusk",label:l(language,"खगोलीय साँझ","Astronomical dusk"),start:snapshot.panchang.sunset_utc,end:snapshot.twilight.astronomical_dusk_utc}
+  ].filter((window): window is {key:string;label:string;start:string;end:string} => Boolean(window.start && window.end && Date.parse(window.end)>Date.parse(window.start))) : [];
   const pathsFor = (start: string,end: string,radius: number) => arcPaths(localMinute(start,safeTimezoneValue),localMinute(end,safeTimezoneValue),radius);
+  const selectEvent = (label: string,start: string,end: string) => setSelectedEvent(label+" · "+localClock(safeTimezoneValue,new Date(start))+"–"+localClock(safeTimezoneValue,new Date(end)));
+  const selectablePath = (key: string,d: string,label: string,start: string,end: string,stroke: string,width: number,opacity: number) => <path key={key} d={d} fill="none" stroke={stroke} strokeWidth={width} strokeLinecap="round" opacity={opacity} role="button" tabIndex={0} aria-label={label} onClick={()=>selectEvent(label,start,end)} onKeyDown={event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();selectEvent(label,start,end);}}}><title>{label}: {localClock(safeTimezoneValue,new Date(start))}–{localClock(safeTimezoneValue,new Date(end))}</title></path>;
   return <div className="mt-polar-wrap">
-    <svg className="mt-polar" viewBox="0 0 300 300" role="img" aria-label={l(language, "तपाईंको स्थानीय दिनको २४ घण्टे घडी", "24-hour clock for your selected timezone")}>
+    <svg className="mt-polar" viewBox="0 0 300 300" role="img" aria-label={l(language, "तपाईंको स्थानीय दिनको २४ घण्टे घडी; घेरा छानेर समय विवरण हेर्नुहोस्", "24-hour clock; select a ring segment to inspect its time")}>
       <defs><linearGradient id="mt-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#e8bd70"/><stop offset="100%" stopColor="#4d9d8b"/></linearGradient></defs>
       <circle className="mt-polar-orbit" cx="150" cy="150" r="126" fill="none" stroke="var(--mt-accent)" strokeWidth="1" strokeDasharray="1 9" strokeLinecap="round"/><circle cx="150" cy="150" r="118" fill="none" stroke="var(--mt-line)" strokeWidth="1"/>
       <circle cx="150" cy="150" r="100" fill="none" stroke="var(--mt-line)" strokeWidth="10" opacity=".55"/>
       <circle className="mt-polar-progress" cx="150" cy="150" r="100" fill="none" stroke="url(#mt-ring)" strokeWidth="10" strokeDasharray={`${progressLength} 628.32`} transform="rotate(-90 150 150)" strokeLinecap="round"/>
       <circle cx="150" cy="150" r="78" fill="none" stroke="var(--mt-line)" strokeDasharray="2 6"/>
-      <g className="mt-temporal-orbits" aria-label={l(language,"चयन गरिएको दिनका परम्परागत समय खण्ड","Traditional timing layers for the selected date")}>
-        {showChoghadiya && [...choghadiya.day,...choghadiya.night].map(window=>pathsFor(window.start_utc,window.end_utc,69).map((d,index)=><path key={window.key+"-"+index} d={d} fill="none" stroke={window.favorable?"#69a988":window.key.startsWith("night")?"#8986c5":"#c6a4a0"} strokeWidth="4" strokeLinecap="round" opacity={window.favorable?0.88:0.62}/>))}
-        {showKaal && inauspicious.map((window,index)=>pathsFor(window.start_utc,window.end_utc,84+index*5).map((d,part)=><path key={window.key+"-"+part} d={d} fill="none" stroke={["#c58b37","#b96e7b","#8377bb"][index]} strokeWidth="3.5" strokeLinecap="round" opacity=".9"/>))}
+      <g className="mt-temporal-orbits" aria-label={l(language,"चयन गरिएको दिनका परम्परागत र खगोलीय समय खण्ड","Traditional and astronomical timing layers")}>
+        {showChoghadiya && [...choghadiya.day,...choghadiya.night].map(window=>pathsFor(window.start_utc,window.end_utc,69).map((d,index)=>selectablePath(window.key+"-"+index,d,window.name_en,window.start_utc,window.end_utc,window.favorable?"#69a988":window.key.startsWith("night")?"#8986c5":"#c6a4a0",4,window.favorable?0.88:0.62)))}
+        {showKaal && inauspicious.map((window,index)=>pathsFor(window.start_utc,window.end_utc,84+index*5).map((d,part)=>selectablePath(window.key+"-"+part,d,window.name_en,window.start_utc,window.end_utc,["#c58b37","#b96e7b","#8377bb"][index],3.5,0.9)))}
+        {showHora && [...hora.day,...hora.night].map(window=>pathsFor(window.start_utc,window.end_utc,57).map((d,index)=>selectablePath(window.key+"-"+index,d,window.name_en,window.start_utc,window.end_utc,"#5795b0",2.3,0.82)))}
+        {showTwilight && twilightWindows.map(window=>pathsFor(window.start,window.end,48).map((d,index)=>selectablePath(window.key+"-"+index,d,window.label,window.start,window.end,"#d4a653",2.2,0.8)))}
       </g>
       {Array.from({ length: 24 }, (_, hour) => {
         const a = (hour / 24) * Math.PI * 2 - Math.PI / 2;
@@ -120,7 +134,8 @@ function PolarClock({ timezone, now, language, snapshot, showChoghadiya, showKaa
       <text x="150" y="145" textAnchor="middle" fontSize="23" fontWeight="700" fill="var(--mt-ink)">{localClock(timezone, now).slice(0,5)}</text>
       <text x="150" y="164" textAnchor="middle" fontSize="10" fill="var(--mt-muted)">LOCAL TIME</text>
     </svg>
-    <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span>{solarReady&&<>{showChoghadiya&&<span><i className="mt-legend-choghadiya"/> {l(language,"चौघडिया","Choghadiya")}</span>}{showKaal&&<span><i className="mt-legend-kaal"/> {l(language,"राहु / यमगण्ड / गुलिक","Rahu / Yamaganda / Gulika")}</span>}<span className="mt-legend-note">{l(language,"सुई = अहिले · रङ्गीन घेरा = चयन गरिएको मिति","Hand = now · colored rings = selected date")}</span></>}</div>
+    <div className="mt-polar-legend"><span><i className="mt-legend-time"/> {l(language,"स्थानीय समय","Local time")}</span><span><i className="mt-legend-day"/> {l(language,"२४ घण्टे चक्र","24-hour cycle")}</span>{solarReady&&<>{showChoghadiya&&<span><i className="mt-legend-choghadiya"/> {l(language,"चौघडिया","Choghadiya")}</span>}{showKaal&&<span><i className="mt-legend-kaal"/> {l(language,"राहु / यमगण्ड / गुलिक","Rahu / Yamaganda / Gulika")}</span>}{showHora&&<span><i className="mt-legend-hora"/> {l(language,"होरा","Hora")}</span>}{showTwilight&&<span><i className="mt-legend-twilight"/> {l(language,"सन्ध्याकाल","Twilight")}</span>}<span className="mt-legend-note">{l(language,"घेरा छान्नुहोस् · सुई = अहिले · घेरा = चयन गरिएको मिति","Select a ring · hand = now · rings = selected date")}</span></>}</div>
+    {selectedEvent && <div className="mt-selected-event" role="status" aria-live="polite"><span>{l(language,"चयन गरिएको समय","Selected time")}</span><strong>{selectedEvent}</strong><button type="button" onClick={()=>setSelectedEvent("")}>{l(language,"बन्द","Clear")}</button></div>}
   </div>;
 }
 
@@ -148,9 +163,9 @@ export default function MyTimePage() {
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean }>(() => {
-    try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false, choghadiya: saved?.choghadiya !== false, kaal: saved?.kaal !== false }; }
-    catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true }; }
+  const [observatoryLayers, setObservatoryLayers] = useState<{ clocks: boolean; scales: boolean; muhurta: boolean; choghadiya: boolean; kaal: boolean; hora: boolean; twilight: boolean }>(() => {
+    try { const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v1") || "null"); return { clocks: saved?.clocks !== false, scales: saved?.scales !== false, muhurta: saved?.muhurta !== false, choghadiya: saved?.choghadiya !== false, kaal: saved?.kaal !== false, hora: saved?.hora !== false, twilight: saved?.twilight !== false }; }
+    catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true }; }
   });
   const ne = language === "ne";
   const timeScales = useMemo(() => timeScaleCounters(now), [now]);
@@ -311,6 +326,8 @@ export default function MyTimePage() {
       <label><input type="checkbox" checked={observatoryLayers.muhurta} onChange={event=>setObservatoryLayers(old=>({...old,muhurta:event.target.checked}))}/>{l(language,"शुभ समय तह","Muhurta layer")}</label>
       <label><input type="checkbox" checked={observatoryLayers.choghadiya} onChange={event=>setObservatoryLayers(old=>({...old,choghadiya:event.target.checked}))}/>{l(language,"चौघडिया घेरा","Choghadiya ring")}</label>
       <label><input type="checkbox" checked={observatoryLayers.kaal} onChange={event=>setObservatoryLayers(old=>({...old,kaal:event.target.checked}))}/>{l(language,"काल घेरा","Inauspicious-time rings")}</label>
+      <label><input type="checkbox" checked={observatoryLayers.hora} onChange={event=>setObservatoryLayers(old=>({...old,hora:event.target.checked}))}/>{l(language,"होरा घेरा","Hora ring")}</label>
+      <label><input type="checkbox" checked={observatoryLayers.twilight} onChange={event=>setObservatoryLayers(old=>({...old,twilight:event.target.checked}))}/>{l(language,"सन्ध्याकाल घेरा","Twilight ring")}</label>
     </section>
     {observatoryLayers.clocks && <section className="mt-extra-grid" aria-label={l(language,"नेपाल र स्थानीय समय","Nepal and local time")}>
       <article className="mt-extra-card"><small>{l(language,"नेपाल मानक समय · UTC+05:45","Nepal Standard Time · UTC+05:45")}</small><strong>{nepalTime.time}</strong><span>{nepalTime.date} · NPT</span></article>
@@ -332,7 +349,7 @@ export default function MyTimePage() {
     <div className="mt-dashboard-grid">
       <section className="mt-panel mt-polar-panel">
         <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"बहुआयामिक समय","MULTIDIMENSIONAL TIME")}</span><h2>{l(language,"२४ घण्टे समय चक्र","24-hour temporal dial")}</h2></div><span className="mt-live"><i/> LIVE</span></div>
-        <PolarClock timezone={preferences.timezone} now={now} language={language} snapshot={snapshot} showChoghadiya={observatoryLayers.choghadiya} showKaal={observatoryLayers.kaal}/>
+        <PolarClock timezone={preferences.timezone} now={now} language={language} snapshot={snapshot} showChoghadiya={observatoryLayers.choghadiya} showKaal={observatoryLayers.kaal} showHora={observatoryLayers.hora} showTwilight={observatoryLayers.twilight}/>
         <div className="mt-polar-foot"><Globe2 size={16}/><span>{preferences.timezone}</span><span className="mt-dot-sep">·</span><span>{fmt(preferences.lat,4)}, {fmt(preferences.lng,4)}</span></div>
       </section>
 
