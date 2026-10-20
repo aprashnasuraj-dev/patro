@@ -1,0 +1,96 @@
+{
+  "id": "mm-0139",
+  "slug": "what-machine-learning-really-is",
+  "question": "What machine learning really is",
+  "category": "AI & Future Tech",
+  "canonical_url": "https://aafnaipatro.com/what-machine-learning-really-is/",
+  "keywords": [
+    "machine",
+    "learning",
+    "really",
+    "ai-future-tech"
+  ],
+  "h1": "What Machine Learning Really Is?",
+  "title_suggestion": "What Machine Learning Really Is? The Real Answer, Explained",
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.ibm.com/think/topics/machine-learning",
+      "title": "What is machine learning?",
+      "publisher": "IBM",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Definition; pattern-based learned parameters; supervised versus unsupervised and reinforcement learning."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "title": "Machine Learning Crash Course",
+      "publisher": "Google for Developers",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Data, objective, model training, evaluation, deployment and limitations."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://developers.google.com/machine-learning/crash-course/overfitting/overfitting",
+      "title": "Overfitting",
+      "publisher": "Google for Developers",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Memorizing a narrow training set is not the same as generalization to new observations."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets",
+      "title": "Datasets: Dividing the original dataset",
+      "publisher": "Google for Developers",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Training, validation and held-out test sets serve different roles in assessing performance."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://scikit-learn.org/1.0/common_pitfalls.html",
+      "title": "Common pitfalls and recommended practices",
+      "publisher": "Scikit-learn project",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Data leakage can make held-out evaluation falsely optimistic."
+      ]
+    },
+    {
+      "n": 6,
+      "url": "https://www.ibm.com/think/topics/machine-learning-types",
+      "title": "Machine learning types",
+      "publisher": "IBM",
+      "reliability": "primary technical or vendor documentation",
+      "notes": [
+        "Supervised, unsupervised, semi-supervised, self-supervised and reinforcement approaches have distinct training objectives."
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "Learning parameters from examples is not human understanding",
+    "Different training signals imply different useful forms of learning",
+    "Generalization and leakage make evaluation central",
+    "Deployment requires monitoring changing data and consequences",
+    "Generative output and confident phrasing are not guarantees of truth"
+  ],
+  "image_research": {
+    "concepts": [
+      "Original stylized training-data-to-model hero",
+      "Data split diagram",
+      "Underfit versus overfit curves",
+      "Supervised and unsupervised training comparison"
+    ],
+    "license": "Original illustrations intended"
+  }
+}
