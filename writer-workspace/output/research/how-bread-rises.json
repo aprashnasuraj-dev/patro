@@ -1,0 +1,54 @@
+{
+  "slug": "how-bread-rises",
+  "research_question": "What established scientific or technical principles explain how bread rises?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Yeast",
+      "publisher": "King Arthur Baking",
+      "url": "https://www.kingarthurbaking.com/pro/reference/yeast",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The comprehensive guide to baking with yeast",
+      "publisher": "King Arthur Baking",
+      "url": "https://www.kingarthurbaking.com/blog/2023/05/10/guide-to-baking-with-yeast",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Bulk fermentation, explained",
+      "publisher": "King Arthur Baking",
+      "url": "https://www.kingarthurbaking.sbs/blog/2019/07/22/bread-dough-bulk-fermentation",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Sourdough Baking FAQ",
+      "publisher": "King Arthur Baking",
+      "url": "https://www.kingarthurbaking.com/learn/guides/sourdough/faq",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    }
+  ]
+}
