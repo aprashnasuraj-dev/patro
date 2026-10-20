@@ -1,0 +1,64 @@
+{
+  "slug": "how-trees-talk-through-fungi",
+  "research_question": "How do mycorrhizal fungi connect with plant roots, and what evidence supports claims about resource transfer or communication between trees?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nature.com/articles/d41586-018-07595-0",
+      "title": "The Wood Wide Web: myth or reality?",
+      "publisher": "Nature",
+      "reliability": "Scientific journal commentary",
+      "notes": [
+        "Popular 'wood wide web' claims have been debated for overstatement.",
+        "Evidence of a network or transfer does not by itself prove intentional cooperation.",
+        "Field significance and prevalence require careful evaluation."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.fs.usda.gov/",
+      "title": "Mycorrhizal fungi and plant nutrition",
+      "publisher": "U.S. Forest Service",
+      "reliability": "Government forest research agency",
+      "notes": [
+        "Mycorrhizal fungi can help plants acquire nutrients and water.",
+        "Plant-fungus outcomes depend on species and environmental conditions."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://nph.onlinelibrary.wiley.com/",
+      "title": "Common mycorrhizal networks: a review",
+      "publisher": "New Phytologist",
+      "reliability": "Peer-reviewed plant science journal platform",
+      "notes": [
+        "Mycorrhizal associations can connect plant roots via fungal hyphae.",
+        "Research examines transfer pathways, network prevalence, and ecological outcomes.",
+        "Laboratory results require careful interpretation before generalization to forests."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.kew.org/read-and-watch",
+      "title": "The hidden world of the soil",
+      "publisher": "Royal Botanic Gardens, Kew",
+      "reliability": "Botanical institution educational resource",
+      "notes": [
+        "Soil contains diverse fungi and organisms involved in plant ecology.",
+        "Below-ground biodiversity contributes to forest function."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.smithsonianmag.com/science-nature/",
+      "title": "Do trees communicate through fungal networks?",
+      "publisher": "Smithsonian Magazine",
+      "reliability": "Science magazine",
+      "notes": [
+        "The 'wood wide web' phrase popularizes underground fungal connections.",
+        "Popular descriptions should be separated from the limits of scientific evidence."
+      ]
+    }
+  ]
+}
