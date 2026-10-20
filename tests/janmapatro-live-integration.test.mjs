@@ -5,6 +5,8 @@ import { readFileSync } from "node:fs";
 const router=readFileSync("src/PatroRouter.tsx","utf8");
 const ui=readFileSync("src/jyotish/JanmaPatroSuite.tsx","utf8");
 const css=readFileSync("src/jyotish/janmapatro.css","utf8");
+const reports=readFileSync("src/jyotish/JanmaPatroDetailedReports.tsx","utf8");
+const reportCss=readFileSync("src/jyotish/janmapatro-detailed.css","utf8");
 const connected=readFileSync("worker/connected-entry.ts","utf8");
 const seo=readFileSync("worker/connected-seo.ts","utf8");
 const seoConfig=readFileSync("scripts/seo-config.mjs","utf8");
@@ -44,4 +46,16 @@ test("Janma share implementation stays browser-local and the UI has no server sa
  assert.doesNotMatch(ui,/\/janmapatro\/api\//);
  assert.doesNotMatch(ui,/JP_STORE/);
  assert.doesNotMatch(ui,/env\.(?:DB|ARCHIVE|CACHE)/);
+});
+
+
+test("birth and Guna reports use the detailed twelve-page report layer",()=>{
+ assert.match(ui,/DetailedBirthChartReport/);
+ assert.match(ui,/DetailedGunaMilanReport/);
+ assert.match(reports,/BIRTH_REPORT_PAGE_COUNT = 12/);
+ assert.match(reports,/GUNA_REPORT_PAGE_COUNT = 12/);
+ assert.match(reports,/विंशोत्तरी महादशा/);
+ assert.match(reports,/नाडी कूट/);
+ assert.match(reportCss,/break-after:page/);
+  assert.match(ui, /querySelector\("\.jpr-page--cover"\)/);
 });
