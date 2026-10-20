@@ -101,7 +101,8 @@
       "publisher": "NASA Space Place",
       "url": "https://spaceplace.nasa.gov/blue-sky/en/",
       "published_at": "2022-08-29",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Space Place. (2022, August 29). Why Is the Sky Blue?. https://spaceplace.nasa.gov/blue-sky/en/"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "NASA Science",
       "url": "https://science.nasa.gov/resource/rayleigh-scattering-in-exoplanet-atmospheres/",
       "published_at": "2013-09-02",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Science. (2013, September 2). Rayleigh scattering in exoplanet atmospheres. https://science.nasa.gov/resource/rayleigh-scattering-in-exoplanet-atmospheres/"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "NOAA SciJinks",
       "url": "https://scijinks.gov/blue-sky/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "NASA Space Place",
       "url": "https://spaceplace.nasa.gov/blue-sky/en/",
       "published_at": "2022-08-29",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NASA Space Place. (2022, August 29). Mars atmosphere and sky colour. https://spaceplace.nasa.gov/blue-sky/en/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "NOAA SciJinks",
       "url": "https://scijinks.gov/blue-sky/",
       "published_at": null,
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "NOAA SciJinks. (n.d.). Why Is the Sky Blue?. https://scijinks.gov/blue-sky/"
     }
   ],
   "word_count": 1127,
