@@ -93,6 +93,7 @@ function PolarClock({ timezone, now, language }: { timezone: string; now: Date; 
 
 const UPCOMING = [
   ["☼","सूर्योदय र सूर्यास्त","Sunrise & sunset","स्थानअनुसार सौर घटना गणना","Location-specific solar events","solar"],
+  ["◐","सन्ध्याकाल","Twilight","नागरिक, नौचालन र खगोलीय सन्ध्या","Civil, nautical and astronomical twilight","ready"],
   ["◌","नक्षत्र, पाद र योग","Nakshatra, Pada & Yoga","साइडेरियल चन्द्र र सूर्य गणना","Sidereal lunar and solar combinations","ready"],
   ["◷","चौघडिया, राहुकाल र होरा","Choghadiya, Rahu Kaal & Hora","स्थानीय सूर्योदय/सूर्यास्तमा आधारित समय","Local sunrise/sunset-based timing","solar"],
   ["✦","शुभ मुहूर्त","Smart Muhurta","व्याख्या गर्न मिल्ने व्यक्तिगत समय सिफारिस","Explainable personal timing windows","pending"],
