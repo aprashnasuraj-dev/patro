@@ -737,15 +737,6 @@ export default function MyTimePage() {
       <div className="mt-layer-grid">{UPCOMING.map(([icon,titleNe,titleEn,descNe,descEn,status])=>{const ready=status==="ready"||(status==="solar"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc&&snapshot.panchang.next_sunrise_utc))||(status==="abhijit"&&Boolean(snapshot?.panchang.sunrise_utc&&snapshot.panchang.sunset_utc))||(status==="muhurta"&&Boolean(snapshot))||(status==="personal"&&Boolean(snapshot&&personalContext.birthChart))||(status==="sky"&&Boolean(snapshot));const waiting=status==="personal"&&!personalContext.birthChart?l(language,"जन्मपत्रो जोड्नुहोस्","Connect birth chart"):status==="muhurta"&&!snapshot?l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first"):(status==="solar"||status==="abhijit")&&snapshot&&!snapshot.panchang.sunrise_utc?l(language,"यस दिन सौर घटना उपलब्ध छैन","Solar events unavailable for this day"):l(language,"समय गणना उपलब्ध भएपछि देखाइनेछ","Available when a time calculation is ready");return <article className="mt-layer-card" key={titleEn}><span className="mt-layer-icon">{icon}</span><div><h3>{l(language,titleNe,titleEn)}</h3><p>{l(language,descNe,descEn)}</p></div><span className={"mt-layer-status "+(ready?"is-ready":"")}>{ready?l(language,"गणना उपलब्ध","Calculation available"):waiting}</span></article>})}</div>
     </section>
 
-    <PersonalAstrologyObservatory language={language} timezone={preferences.timezone} selectedDate={snapshot?.date || date} now={now}
-      birth={personalContext.birthChart} nakshatra={personalContext.birthChart?.nakshatra || ""} pada={personalContext.birthChart?.pada ?? null}
-      tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
-      chandraHouse={chandraHouse} luckyNumber={personalLuckyNumber} dashaLord={activeDashaLord}
-      tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
-      windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
-        reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
-      onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />
-
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
       <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट व्यक्तिगत समय अनुभव मिलाउनुहोस्","Personalize your time experience with birth details")}</h2></div><Moon size={21}/></div>
       <p>{l(language,"तपाईंको जन्म मिति, समय र स्थानबाट विद्यमान ज्योतिष इन्जिनले व्यक्तिगत समय सिफारिसका लागि आवश्यक जन्म-सन्दर्भ निकाल्छ। यहाँ जन्मकुण्डली देखाइँदैन। समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्।","Your birth date, time and place feed the existing astrology engine to personalize time recommendations. This section does not display a birth chart. Enter time in Nepal Standard Time (UTC+05:45).")}</p>
@@ -772,7 +763,15 @@ export default function MyTimePage() {
         <button className="mt-primary" type="submit">{l(language,"व्यक्तिगत समय मिलाउनुहोस्","Personalize my time")}</button>
       </form>
       {birthError && <p role="alert">{birthError}</p>}
-      {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>}
+      {birthSuccess && <p role="status">{l(language,"जन्म विवरणबाट व्यक्तिगत समय सिफारिस अद्यावधिक भयो।","Birth details saved; personalized time recommendations updated.")}</p>
+      <PersonalAstrologyObservatory language={language} timezone={preferences.timezone} selectedDate={snapshot?.date || date} now={now}
+        birth={personalContext.birthChart} nakshatra={personalContext.birthChart?.nakshatra || ""} pada={personalContext.birthChart?.pada ?? null}
+        tara={tara} taraName={taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}
+        chandraHouse={chandraHouse} luckyNumber={personalLuckyNumber} dashaLord={activeDashaLord}
+        tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
+        windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
+          reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
+        onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />}
     </section>
     <section className="mt-personal">
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
