@@ -75,3 +75,5 @@
 .mt-tantra-unavailable{padding:13px 15px;margin-bottom:16px;border:1px solid var(--mt-line);border-radius:13px;color:var(--mt-muted);font-size:12px}
 @media(max-width:520px){.mt-tantra-panel{padding:16px}.mt-tantra-devi{padding:12px;gap:10px}.mt-tantra-om{width:38px;height:38px;font-size:21px}.mt-tantra-name strong{font-size:17px}.mt-tantra-details{grid-template-columns:minmax(0,1fr)}.mt-tantra-active{font-size:10px;padding:4px 6px}}
 @media(prefers-reduced-motion:reduce){.mt-tatwa-track span{transition:none}}
+
+.mt-tantra-sources{margin-top:12px;padding-top:10px;border-top:1px solid var(--mt-line);font-size:11px;color:var(--mt-muted)}.mt-tantra-sources summary{cursor:pointer;font-weight:700;color:var(--mt-accent)}.mt-tantra-sources ul{display:grid;gap:6px;padding-left:18px;margin:10px 0}.mt-tantra-sources a{color:var(--mt-accent);text-underline-offset:3px}.mt-tantra-sources small{display:block;line-height:1.6}
