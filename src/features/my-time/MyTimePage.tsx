@@ -449,11 +449,13 @@ export default function MyTimePage() {
   }, [snapshot, minuteNow, preferences.timezone, taraIndex, chandraHouse]);
 
 
-  const selectedInterest = personalSettings.interests.find(item => item !== "general") || "general";
+  const selectedInterestKey = personalSettings.interests.filter(item => item !== "general").join("|") || "general";
+  const selectedInterests = selectedInterestKey.split("|");
+  const selectedInterest = selectedInterests[0] || "general";
   const combinedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const preferredTatwas: Record<string, string[]> = { general: [], work: ["Prithvi", "Tejas / Agni", "Vayu"], study: ["Vayu", "Akash"], travel: ["Vayu", "Aap / Jala"], prayer: ["Akash", "Vayu"], meditation: ["Akash", "Aap / Jala"], family: ["Aap / Jala", "Prithvi"] };
-    const preferred = preferredTatwas[selectedInterest] || [];
+    const preferred = [...new Set(selectedInterests.flatMap(item => preferredTatwas[item] || []))];
     const solar = snapshot.panchang;
     if (!solar.sunrise_utc || !solar.sunset_utc || !solar.next_sunrise_utc) return [];
     return recommendedMuhurtaWindows.map(window => {
@@ -461,12 +463,13 @@ export default function MyTimePage() {
       const midpoint = new Date(start + (end - start) / 2);
       let tatwaName = "", nityaName = "";
       try { const atMidpoint = panchangAt(midpoint); const tantra = computeTantraTime(atMidpoint?.tithi ?? solar.tithi_index, midpoint, new Date(solar.sunrise_utc!), new Date(solar.sunset_utc!), new Date(solar.next_sunrise_utc!)); tatwaName = tantra.activeTatwa.name; nityaName = tantra.nityaDevi.name; } catch { /* Keep Panchang scoring available without Tantra overlay. */ }
-      const tantraFit = !tatwaName ? 50 : selectedInterest === "general" ? 75 : preferred.includes(tatwaName) ? 100 : 55;
+      const tantraFit = !tatwaName ? 50 : selectedInterestKey === "general" ? 75 : preferred.includes(tatwaName) ? 100 : 55;
       return { ...window, tatwaName, nityaName, tantraFit, combinedScore: Math.round(window.score * 0.7 + tantraFit * 0.3) };
     }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
-  }, [snapshot, recommendedMuhurtaWindows, selectedInterest]);
+  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
-  const interestLabel = ({ general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") } as Record<string,string>)[selectedInterest] || l(language,"सामान्य दिनचर्या","general day");
+  const interestNames: Record<string,string> = { general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") };
+  const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
 
   return <main className="mt-page">
     <header className="mt-heading">
@@ -555,7 +558,7 @@ export default function MyTimePage() {
     </section>}
     {observatoryLayers.muhurta && <section className="mt-extra-grid" aria-label={l(language,"मुहूर्त र व्यक्तिगत समय","Muhurta and personalized timing")}>
       <article className="mt-extra-card"><small>{l(language,"अभिजित मुहूर्त","Abhijit Muhurta")}</small><strong>{abhijit ? formatInstant(abhijit.start_utc,preferences.timezone,language)+" – "+formatInstant(abhijit.end_utc,preferences.timezone,language) : "—"}</strong><span>{abhijit ? l(language,"स्थानीय दिनको उज्यालो अवधि र मध्यबिन्दुबाट परम्परागत रूपमा निकालिएको।","Derived traditionally from the daylight span and its midpoint.") : l(language,"सूर्योदय र सूर्यास्त उपलब्ध भएपछि देखाइन्छ।","Shown when sunrise and sunset are available.")}</span></article>
-      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first")}</strong><span>{personalizedMuhurta ? l(language,"समय सङ्केत स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Timing guidance score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
+      <article className="mt-extra-card"><small>{l(language,"व्यक्तिगत समय सङ्केत · अर्को ६० मिनेट","Personalized timing · next 60 minutes")}</small><strong>{personalizedMuhurta ? l(language,personalizedMuhurta.label==="supportive"?"अनुकूल सङ्केत":personalizedMuhurta.label==="mixed"?"मिश्रित सङ्केत":"सावधानी सङ्केत",personalizedMuhurta.label==="supportive"?"Supportive indications":personalizedMuhurta.label==="mixed"?"Mixed indications":"Caution indicated") : l(language,"पहिले समय गणना लोड गर्नुहोस्","Load a time snapshot first")}</strong><span>{personalizedMuhurta ? l(language,"समय सङ्केत स्कोर: "+personalizedMuhurta.score+"/100 · ग्यारेन्टी होइन","Timing guidance score: "+personalizedMuhurta.score+"/100 · not a guarantee") : l(language,"जन्म नक्षत्र/राशि उपलब्ध भएमा ताराबल र चन्द्रबल जोडिन्छ।","Tarabalam and Chandrabalam are included when natal Nakshatra/sign are available.")}</span>{recommendedMuhurtaWindows.length>0 && <div className="mt-recommended-windows"><b>{l(language,"अर्को सुझाइएका समय","Next suggested windows")}</b>{recommendedMuhurtaWindows.slice(0,3).map(window=><div key={window.key}><span>{ne ? window.name_ne : window.name_en} · {formatInstant(window.start_utc,preferences.timezone,language)}–{formatInstant(window.end_utc,preferences.timezone,language)}</span><strong>{window.score}/100</strong></div>)}</div>}</article>
     </section>}
 
     {error && <div className="mt-notice" role="status"><CircleAlert size={19}/><div><strong>{l(language,"गणना सेवा","Calculation service")}</strong><p>{error}</p>{error.includes("not enabled") || error.includes("सक्रिय") ? <small>{l(language,"यो पृष्ठ र API feature flag सक्रिय भएपछि परिणाम देखिनेछ।","Results appear when the page and API rollout are enabled.")}</small> : null}</div></div>}
