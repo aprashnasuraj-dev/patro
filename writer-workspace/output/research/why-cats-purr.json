@@ -1,7 +1,7 @@
 {
   "slug": "why-cats-purr",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -12,7 +12,7 @@
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
       ],
-      "apa": "Cats Protection. (n.d.). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr"
+      "apa": "Cats Protection. (2023, February 22). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr"
     },
     {
       "n": 2,
@@ -23,7 +23,7 @@
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
       ],
-      "apa": "Current Biology via PubMed. (n.d.). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/"
+      "apa": "Current Biology via PubMed. (2023, October 3). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/"
     },
     {
       "n": 3,
@@ -34,7 +34,7 @@
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
       ],
-      "apa": "Current Biology via PubMed. (n.d.). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/"
+      "apa": "Current Biology via PubMed. (2023, December 4). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/"
     },
     {
       "n": 4,
@@ -45,7 +45,7 @@
       "notes": [
         "Reviewed source page and used for the cited explanation of feline purring, vocal communication or body language."
       ],
-      "apa": "Journal of Veterinary Science via PubMed. (n.d.). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/"
+      "apa": "Journal of Veterinary Science via PubMed. (2020, February 1). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/"
     },
     {
       "n": 5,
@@ -62,13 +62,19 @@
   "notes": [
     "Article draft committed; hero image remains pending because image upload is unavailable through the current text-file workflow.",
     "Validate word count and schema again before batch completion.",
-    "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata."
+    "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
   ],
   "apa_references": [
-    "Cats Protection. (n.d.). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
-    "Current Biology via PubMed. (n.d.). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/",
-    "Current Biology via PubMed. (n.d.). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/",
-    "Journal of Veterinary Science via PubMed. (n.d.). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/",
+    "Cats Protection. (2023, February 22). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
+    "Current Biology via PubMed. (2023, October 3). Domestic cat larynges can produce purring frequencies without neural input. https://pubmed.ncbi.nlm.nih.gov/37794583/",
+    "Current Biology via PubMed. (2023, December 4). Vocal communication: The enigmatic production of low-frequency purrs in cats. https://pubmed.ncbi.nlm.nih.gov/38052174/",
+    "Journal of Veterinary Science via PubMed. (2020, February 1). Feline vocal communication. https://pubmed.ncbi.nlm.nih.gov/32017479/",
     "Cats Protection. (n.d.). Cat Body Language. https://www.cats.org.uk/help-and-advice/cat-behaviour/cat-body-language"
-  ]
+  ],
+  "image_file": "why-cats-purr-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
