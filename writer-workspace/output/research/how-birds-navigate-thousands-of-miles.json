@@ -1,0 +1,39 @@
+{
+  "slug": "how-birds-navigate-thousands-of-miles",
+  "research_question": "How do migratory birds navigate over long distances?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.allaboutbirds.org/news/the-basics-migration-navigation/",
+      "title": "Navigation: How Birds Find Their Way When They Migrate",
+      "publisher": "Cornell Lab of Ornithology, All About Birds",
+      "reliability": "University ornithology research and education organization",
+      "notes": [
+        "Birds can use sun position, stars, polarized light, landmarks and magnetic cues; the mix differs by species and context."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.allaboutbirds.org/news/category/bird-migration/",
+      "title": "Migration",
+      "publisher": "Cornell Lab of Ornithology, All About Birds",
+      "reliability": "University ornithology research and education organization",
+      "notes": [
+        "Migration is shaped by seasonal food, breeding opportunities and inherited or learned orientation; routes and strategies vary widely."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://www.nature.com/scitable/knowledge/library/animal-navigation-13260838/",
+      "title": "Animal navigation",
+      "publisher": "Nature Education / Scitable",
+      "reliability": "Scientific education resource from a scientific publisher",
+      "notes": [
+        "Navigation combines compass orientation with map-like positional information; the mechanisms of magnetic sensing remain an active research area."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
