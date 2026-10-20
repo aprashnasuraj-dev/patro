@@ -173,16 +173,23 @@ export default function MyTimePage() {
     catch { return { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: false }; }
   });
   const ne = language === "ne";
-  const tantraTime = useMemo(() => {
+  const tantraEvaluation = useMemo(() => {
     if (!snapshot) return null;
+    return localDate(preferences.timezone, now) === snapshot.date ? now : new Date(snapshot.evaluated_at_utc);
+  }, [snapshot, now, preferences.timezone]);
+  const evaluationPanchang = useMemo(() => {
+    if (!snapshot || !tantraEvaluation) return null;
+    try { return panchangAt(tantraEvaluation); } catch { return null; }
+  }, [snapshot, tantraEvaluation]);
+  const tantraTime = useMemo(() => {
+    if (!snapshot || !tantraEvaluation) return null;
     const { sunrise_utc, sunset_utc, next_sunrise_utc } = snapshot.panchang;
     if (!sunrise_utc || !sunset_utc || !next_sunrise_utc) return null;
-    const evaluation = localDate(preferences.timezone, now) === snapshot.date ? now : new Date(snapshot.evaluated_at_utc);
     try {
-      const liveTithi = localDate(preferences.timezone, now) === snapshot.date ? panchangAt(evaluation).tithi : snapshot.panchang.tithi_index;
-      return computeTantraTime(liveTithi, evaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc));
+      const evaluatedTithi = evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index;
+      return computeTantraTime(evaluatedTithi, tantraEvaluation, new Date(sunrise_utc), new Date(sunset_utc), new Date(next_sunrise_utc));
     } catch { return snapshot.tantraVidya ?? null; }
-  }, [snapshot, now, preferences.timezone]);
+  }, [snapshot, tantraEvaluation, evaluationPanchang]);
   const timeScales = useMemo(() => timeScaleCounters(now), [now]);
   const nepalTime = useMemo(() => nepalStandardTime(now), [now]);
   const abhijit = useMemo(() => snapshot ? abhijitMuhurta(snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc) : null, [snapshot]);
@@ -372,7 +379,7 @@ export default function MyTimePage() {
       <section className="mt-panel mt-panchang-panel">
         <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"आजको खगोलीय आधार","ASTRONOMICAL SNAPSHOT")}</span><h2>{l(language,"पञ्चाङ्ग र चन्द्र अवस्था","Panchang & lunar phase")}</h2></div><Moon size={21}/></div>
         {snapshot ? <>
-          <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {snapshot.panchang.tithi_index}/30</small><strong>{tithiName}</strong><span>{snapshot.panchang.paksha === "Shukla Paksha" ? l(language,"शुक्ल पक्ष","Shukla Paksha") : l(language,"कृष्ण पक्ष","Krishna Paksha")}</span></div><div className="mt-tithi-progress"><b>{fmt(snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
+          <div className="mt-tithi-hero"><div className="mt-moon-mark"><Moon size={28}/></div><div><small>{l(language,"तिथि","Tithi")} {(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)}/30</small><strong>{ne ? (TITHI_NE[(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)-1] || tithiName) : (TITHI_EN[(evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index)-1] || tithiName)}</strong><span>{((evaluationPanchang?.tithi ?? snapshot.panchang.tithi_index) <= 15) ? l(language,"शुक्ल पक्ष","Shukla Paksha") : l(language,"कृष्ण पक्ष","Krishna Paksha")}</span></div><div className="mt-tithi-progress"><b>{fmt(evaluationPanchang ? ((evaluationPanchang.moonPhaseAngle % 12) / 12) * 100 : snapshot.panchang.tithi_progress_percent,0)}%</b><span>{l(language,"प्रगति","progress")}</span></div></div>
           <div className="mt-progress-track"><span style={{width:`${snapshot.panchang.tithi_progress_percent}%`}}/></div>
           <div className="mt-panchang-details">
             <div><small>{l(language,"नक्षत्र / पाद","Nakshatra / Pada")}</small><strong>{snapshot.panchang.nakshatra_name_ne} · {snapshot.panchang.nakshatra_pada}</strong></div>
