@@ -208,15 +208,15 @@ export default function MyTimePage() {
       scientific: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
       panchang: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
       jyotish: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
-      tantra: { clocks: true, scales: false, muhurta: false, choghadiya: false, kaal: false, hora: false, twilight: false, tantra: true },
+      tantra: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true },
       combined: { clocks: true, scales: true, muhurta: true, choghadiya: true, kaal: true, hora: true, twilight: true, tantra: true }
     };
     try {
-      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || localStorage.getItem("aafnaipatro.mytime.layers.v2") || "null");
+      const saved = JSON.parse(localStorage.getItem("aafnaipatro.mytime.layers.v3") || "null");
       const optedOut = localStorage.getItem("aafnaipatro.mytime.tantra-optout.v1") === "true";
       if (saved && typeof saved === "object") return { clocks: saved.clocks !== false, scales: saved.scales !== false, muhurta: saved.muhurta !== false, choghadiya: saved.choghadiya !== false, kaal: saved.kaal !== false, hora: saved.hora !== false, twilight: saved.twilight !== false, tantra: !optedOut };
       const lens = readMyTimePersonalSettings().lens;
-      return presets[lens] || defaults;
+      return { ...(presets[lens] || defaults), tantra: !optedOut };
     } catch { return defaults; }
   });
   const ne = language === "ne";
@@ -248,19 +248,19 @@ export default function MyTimePage() {
   const currentChoghadiya = useMemo(() => {
     if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
-    return [...windows.day, ...windows.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  }, [snapshot, now, preferences.timezone]);
+    return [...windows.day, ...windows.night].find(window => minuteNow.getTime() >= Date.parse(window.start_utc) && minuteNow.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, minuteNow, preferences.timezone]);
   const currentKaal = useMemo(() => {
-    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
-    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  }, [snapshot, now, preferences.timezone]);
-  const selectedDateIsToday = Boolean(snapshot) && localDate(preferences.timezone, now) === snapshot?.date;
+    if (!snapshot || localDate(preferences.timezone, minuteNow) !== snapshot.date) return undefined;
+    return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => minuteNow.getTime() >= Date.parse(window.start_utc) && minuteNow.getTime() < Date.parse(window.end_utc));
+  }, [snapshot, minuteNow, preferences.timezone]);
+  const selectedDateIsToday = Boolean(snapshot) && localDate(preferences.timezone, minuteNow) === snapshot?.date;
   const nextKaal = useMemo(() => {
     if (!snapshot) return undefined;
     return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc)
-      .filter(window => !selectedDateIsToday || Date.parse(window.start_utc) > now.getTime())
+      .filter(window => !selectedDateIsToday || Date.parse(window.start_utc) > minuteNow.getTime())
       .sort((a,b) => Date.parse(a.start_utc)-Date.parse(b.start_utc))[0];
-  }, [snapshot, selectedDateIsToday, now]);
+  }, [snapshot, selectedDateIsToday, minuteNow]);
   const heroWindowTitle = currentKaal
     ? l(language, currentKaal.name_ne, currentKaal.name_en)
     : selectedDateIsToday && currentChoghadiya
@@ -431,9 +431,9 @@ export default function MyTimePage() {
     if (!snapshot) return [];
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
     const kaal = inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc);
-    const todaySelected = localDate(preferences.timezone, now) === snapshot.date;
+    const todaySelected = localDate(preferences.timezone, minuteNow) === snapshot.date;
     return [...windows.day, ...windows.night]
-      .filter(window => !todaySelected || Date.parse(window.end_utc) > now.getTime())
+      .filter(window => !todaySelected || Date.parse(window.end_utc) > minuteNow.getTime())
       .map(window => {
         const overlaps = kaal.filter(period => Date.parse(window.start_utc) < Date.parse(period.end_utc) && Date.parse(window.end_utc) > Date.parse(period.start_utc));
         const result = scorePersonalizedMuhurta({
@@ -446,7 +446,7 @@ export default function MyTimePage() {
         return { ...window, score: result.score, label: result.label, cautions: result.cautions };
       })
       .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc));
-  }, [snapshot, now, preferences.timezone, taraIndex, chandraHouse]);
+  }, [snapshot, minuteNow, preferences.timezone, taraIndex, chandraHouse]);
 
 
   const selectedInterest = personalSettings.interests.find(item => item !== "general") || "general";
