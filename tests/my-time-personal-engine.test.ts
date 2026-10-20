@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { evaluatePersonalTime } from "../src/features/my-time/personal-time-engine";
+import { evaluatePersonalTime, normalizeJanmaPatroContext } from "../src/features/my-time/personal-time-engine";
 
 const base = {
   startUtc: "2026-10-20T08:00:00Z",
@@ -41,6 +41,31 @@ describe("personal-time recommendation engine", () => {
     const result = evaluatePersonalTime({ ...base, horaLord: "Venus" });
     expect(result.components.find(item => item.key === "activity-hora")?.score).toBe(50);
     expect(result.components.find(item => item.key === "activity-hora")?.explanation).toContain("treated as neutral");
+  });
+
+  it("normalizes the real JanmaPatroSuite saved context and rejects invalid periods", () => {
+    const context = normalizeJanmaPatroContext({
+      time_known: true,
+      rashi: { name: "वृष" }, lagna: { name: "कन्या" }, nakshatra: { name: "रोहिणी", pada: 2 },
+      birth: { date: "1995-04-10", time: "08:30", location: "Kathmandu" },
+      planets: [
+        { planet_en: "Moon", rashi: { name: "वृष" }, house: 9, degree: 42.5 },
+        { planet_en: "Mars", rashi: { name: "मिथुन" }, house: 13, degree: 80 }
+      ],
+      dasha: { periods: [
+        { lord: "Venus", start: "2020-01-01T00:00:00.000Z", end: "2030-01-01T00:00:00.000Z" },
+        { lord: "Mars", start: "bad", end: "also bad" },
+        { lord: "Sun", start: "2030-01-01T00:00:00.000Z", end: "2029-01-01T00:00:00.000Z" }
+      ] }
+    });
+    expect(context).toMatchObject({
+      rashi: "वृष", lagna: "कन्या", nakshatra: "रोहिणी", pada: 2,
+      birth: { date: "1995-04-10", time: "08:30", location: "Kathmandu" },
+      planets: [{ key: "Moon", name: "Moon", sign: "वृष", house: 9 }, { key: "Mars", house: null }],
+      dashas: [{ lord: "Venus", start: "2020-01-01T00:00:00.000Z", end: "2030-01-01T00:00:00.000Z" }]
+    });
+    expect(normalizeJanmaPatroContext(null)).toBeNull();
+    expect(normalizeJanmaPatroContext({ birth: {} })).toBeNull();
   });
   it("rejects invalid windows and scores", () => {
     expect(() => evaluatePersonalTime({ ...base, startUtc: "bad" })).toThrow("invalid_window");
