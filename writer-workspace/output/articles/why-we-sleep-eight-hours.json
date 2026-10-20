@@ -145,5 +145,14 @@
   ],
   "word_count": 1700,
   "reading_minutes": 8,
-  "image": null
+  "image": {
+    "file": "why-we-sleep-eight-hours-hero.png",
+    "alt": "A crescent moon and stars illustrate the nightly rhythm of human sleep.",
+    "caption": "Sleep is an active biological process, not simply time away from waking life.",
+    "credit": "Original project-created illustration; no third-party image assets used.",
+    "license": "Original AI-assisted artwork created for this project; use subject to applicable rights and repository terms.",
+    "source_url": "",
+    "width": 1200,
+    "height": 630
+  }
 }
