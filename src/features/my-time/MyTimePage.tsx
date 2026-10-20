@@ -481,14 +481,28 @@ export default function MyTimePage() {
         rashifal: rashifalSignal, dashaLord: activeDashaLord,
         hasNatalChart: Boolean(personalContext.birthChart)
       }));
-      const personalEvaluation = evaluations[0];
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
+      const personalizationLevel = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
+      const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
+      const aggregateComponents = componentKeys.map(key => {
+        const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
+        return { ...present[0], score: Math.round(present.reduce((sum, item) => sum + item.score, 0) / present.length) };
+      });
+      const personalEvaluation = {
+        ...evaluations[0], score: combinedScore,
+        label: (combinedScore >= 75 ? "supportive" : combinedScore >= 45 ? "mixed" : "caution") as "supportive" | "mixed" | "caution",
+        confidence: personalizationLevel === "personalized" ? "personalized" as const : personalizationLevel === "partial" ? "partially-personalized" as const : "general" as const,
+        components: aggregateComponents,
+        reasons: [...new Set(evaluations.flatMap(item => item.reasons))],
+        cautions: [...new Set(evaluations.flatMap(item => item.cautions))],
+        missing: [...new Set(evaluations.flatMap(item => item.missing))]
+      };
       return {
         ...window, tatwaName, nityaName, horaName,
-        tantraFit: personalEvaluation.components.find(item => item.key === "activity-tatwa")?.score ?? null,
-        horaFit: personalEvaluation.components.find(item => item.key === "activity-hora")?.score ?? null,
-        combinedScore, personalEvaluation,
-        personalizationLevel: evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general"
+        label: personalEvaluation.label,
+        tantraFit: aggregateComponents.find(item => item.key === "activity-tatwa")?.score ?? null,
+        horaFit: aggregateComponents.find(item => item.key === "activity-hora")?.score ?? null,
+        combinedScore, personalEvaluation, personalizationLevel
       };
     }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
