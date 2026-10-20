@@ -5,59 +5,64 @@
   "sources": [
     {
       "n": 1,
-      "url": "https://www.loc.gov/everyday-mysteries/browse-all-questions/item/why-does-chopping-an-onion-make-you-cry/",
-      "title": "Why does chopping an onion make you cry?",
-      "publisher": "Library of Congress",
-      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "url": "https://pubs.acs.org/doi/10.1021/acschembio.7b00336",
+      "title": "Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa",
+      "publisher": "American Chemical Society",
+      "reliability": "Peer-reviewed chemistry journal",
+      "apa": "Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa. (2017). ACS Chemical Biology, 12(9), 2296–2304. https://doi.org/10.1021/acschembio.7b00336",
       "notes": [
-        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+        "Used to support the chemistry of the onion lachrymatory factor, the eye's reflex response, or practical cutting guidance."
       ]
     },
     {
       "n": 2,
-      "url": "https://www.nature.com/articles/419685a",
-      "title": "Plant biochemistry: an onion enzyme that makes the eyes water",
-      "publisher": "Nature",
-      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "url": "https://www.mcgill.ca/oss/article/general-science-you-asked/why-do-onions-make-you-cry-when-you-cut-them-and-why-are-they-sweet-when-you-fry-them",
+      "title": "Why do onions make you cry when you cut them? And why are they sweet when you fry them?",
+      "publisher": "McGill University, Office for Science and Society",
+      "reliability": "University science communication",
+      "apa": "Schwarcz, J. (2017, February 20). Why do onions make you cry when you cut them? And why are they sweet when you fry them? McGill University, Office for Science and Society. https://www.mcgill.ca/oss/article/general-science-you-asked/why-do-onions-make-you-cry-when-you-cut-them-and-why-are-they-sweet-when-you-fry-them",
       "notes": [
-        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+        "Used to support the chemistry of the onion lachrymatory factor, the eye's reflex response, or practical cutting guidance."
       ]
     },
     {
       "n": 3,
-      "url": "https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html",
-      "title": "Why Do Onions Make You Cry?",
-      "publisher": "American Chemical Society",
-      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "url": "https://www.livescience.com/why-slicing-onions-makes-you-cry",
+      "title": "Why does slicing onions make you cry?",
+      "publisher": "Live Science",
+      "reliability": "Established science publisher",
+      "apa": "Coffey, D. (2025, October 17). Why does slicing onions make you cry? Live Science. https://www.livescience.com/why-slicing-onions-makes-you-cry",
       "notes": [
-        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+        "Updated October 17, 2025; discusses the chemical pathway and reports refrigerated onions produced more tear-triggering droplets in the described experiment."
       ]
     },
     {
       "n": 4,
-      "url": "https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
-      "title": "No More Tears: Here's How to Chop Onions Without Crying",
-      "publisher": "American Academy of Ophthalmology",
-      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "url": "https://news.cornell.edu/stories/2025/10/mist-opportunity-reveals-how-onions-make-cooks-cry",
+      "title": "‘Mist opportunity’ reveals how onions make cooks cry",
+      "publisher": "Cornell Chronicle",
+      "reliability": "University research news",
+      "apa": "Ramanujan, K. (2025, October 7). ‘Mist opportunity’ reveals how onions make cooks cry. Cornell Chronicle. https://news.cornell.edu/stories/2025/10/mist-opportunity-reveals-how-onions-make-cooks-cry",
       "notes": [
-        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+        "Cornell's report on 2025 cutting experiments describes high-speed mist release and recommends a sharpened blade and slower cuts."
       ]
     },
     {
       "n": 5,
-      "url": "https://www.onions-usa.org/all-about-onions/",
-      "title": "All About Onions",
-      "publisher": "National Onion Association",
-      "reliability": "Government reference library or established chemistry/eye-health organisation",
+      "url": "https://askdruniverse.wsu.edu/2016/08/22/onions-make-us-cry/",
+      "title": "Why do onions make us cry?",
+      "publisher": "Washington State University, Ask Dr. Universe",
+      "reliability": "University science education",
+      "apa": "Washington State University. (2016, August 22). Why do onions make us cry? Ask Dr. Universe. https://askdruniverse.wsu.edu/2016/08/22/onions-make-us-cry/",
       "notes": [
-        "Used to support the chemistry of the onion lachrymatory factor, reflex tearing or practical ways to reduce exposure."
+        "Used to support the chemistry of the onion lachrymatory factor, the eye's reflex response, or practical cutting guidance."
       ]
     }
   ],
   "notes": [
-    "Directly opened and used the Library of Congress article and American Chemical Society Reactions page, and reviewed the ACS Chemical Biology article record and abstract.",
-    "The American Academy of Ophthalmology URL remains listed for practical eye-safety advice but was not directly retrieved in this pass; replace or verify before final batch validation.",
-    "APA 7 reference list added for human-readable research documentation. Article source records retain numbered inline citation mapping."
+    "APA-style references added to all five source records. Opened McGill, Live Science and Cornell pages; ACS content was available in the search result but direct page access returned 403, and WSU source text was available in search results. Treat the ACS/WSU direct-page access limitation as retrieval limitation, not as an unverified factual claim.",
+    "Corrected earlier advice that chilling onions reduces tears: a 2025 report states chilled onions released more tear-triggering droplets in the reported tests. Recommend a sharp blade and slower cutting instead.",
+    "Original hero image asset remains pending; do not mark the batch complete until required 1200×630 PNG is committed and image metadata is added."
   ],
   "apa_references": [
     "American Academy of Ophthalmology. (n.d.). No more tears: Here's how to chop onions without crying. https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
