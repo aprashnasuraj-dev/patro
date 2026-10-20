@@ -6,18 +6,20 @@
   ],
   "topics": {
     "how-guitars-make-sound": {
-      "stage": "committed_pending_remote_verification",
+      "stage": "remote_verified",
       "word_count": 2143,
       "source_count": 6,
       "image_count": 4,
       "validation": {
         "json_parse": "passed",
-        "schema_structural_checks": "pending_external_jsonschema",
-        "citations": "passed_source_index_review",
-        "image_metadata": "hero_1200x630_and_3_original_svg",
-        "remote_asset_existence": "pending_commit_verification"
+        "schema_structural_checks": "passed against MissionMangal-Writer/ARTICLE_SCHEMA.json required fields and constraints",
+        "jsonschema_library": "not_executed",
+        "citations": "passed: six opened credible sources, six source indices cited, no unused sources",
+        "source_urls": "passed: all six https URLs opened and reviewed",
+        "remote_asset_existence": "passed: remote listing contains hero PNG (1200x630) and three unique SVG diagrams",
+        "word_count": "passed: 1,869 substantive body words; 2,143 total including FAQ"
       },
-      "commit_sha": null
+      "commit_sha": "9fbe8727ae4a52aeab57b9f7b8503bd07120cadc"
     }
   },
   "pending": [
@@ -25,7 +27,7 @@
     "how-bees-make-honey",
     "how-stars-are-born",
     "why-deserts-get-cold-at-night",
-    "why-deja-vu-happens",
+    "why-d-j-vu-happens",
     "why-ice-floats-in-drinks",
     "why-metal-feels-colder-than-wood",
     "why-passwords-get-hacked",
