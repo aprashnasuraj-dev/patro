@@ -16,6 +16,7 @@ import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
+import { evaluatePersonalTime, type PersonalTimeActivity, type RashifalSignal } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -196,6 +197,7 @@ export default function MyTimePage() {
   const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
   const [rashifalSummary, setRashifalSummary] = useState("");
+  const [rashifalSignal, setRashifalSignal] = useState<RashifalSignal | null>(null);
   const [rashifalLoading, setRashifalLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [personalSettings, setPersonalSettings] = useState(readMyTimePersonalSettings);
@@ -299,13 +301,13 @@ export default function MyTimePage() {
   }, [nepalTime.date]);
   useEffect(() => {
     const sign = personalContext.effectiveSign;
-    if (!sign) { setRashifalSummary(""); setRashifalLoading(false); return; }
+    if (!sign) { setRashifalSummary(""); setRashifalSignal(null); setRashifalLoading(false); return; }
     const controller = new AbortController(); setRashifalLoading(true);
     const query = new URLSearchParams({ period: "daily", system: "vedic", calendar: "gregorian", date, sign });
     fetch(`/api/v1/rashifal/universal?${query}`, { signal: controller.signal, credentials: "same-origin", headers: { accept: "application/json" } })
       .then(response => response.ok ? response.json() : Promise.reject(new Error("rashifal_unavailable")))
-      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); })
-      .catch(() => { if (!controller.signal.aborted) setRashifalSummary(""); })
+      .then((body: any) => { const reading = body?.reading || body?.readings?.find((row: any) => row?.id === sign || row?.sign?.id === sign) || body?.readings?.[0]; const summary = reading?.narrative?.[language]?.summary || (language === "ne" ? reading?.summary_ne : reading?.summary_en) || reading?.summary_ne || reading?.summary_en || ""; setRashifalSummary(String(summary)); const domains = reading?.scores?.domains && typeof reading.scores.domains === "object" ? Object.fromEntries(Object.entries(reading.scores.domains).filter(([key,value]) => ["work","resources","relationships","wellbeing","learning"].includes(key) && typeof value === "number" && Number.isFinite(value)).map(([key,value]) => [key,Math.max(0,Math.min(100,Number(value)))])) : {}; const sections = Array.isArray(reading?.narrative?.[language]?.sections) ? reading.narrative[language].sections.filter((item: any) => item && typeof item.domain === "string" && typeof item.score === "number" && Number.isFinite(item.score)).map((item: any) => ({ domain: item.domain, score: Math.max(0,Math.min(100,item.score)), band: typeof item.band === "string" ? item.band : undefined, text: typeof item.text === "string" ? item.text : undefined })) : []; setRashifalSignal({ ...(typeof reading?.scores?.overall === "number" && Number.isFinite(reading.scores.overall) ? { overall: Math.max(0,Math.min(100,reading.scores.overall)) } : {}), domains, sections }); })
+      .catch(() => { if (!controller.signal.aborted) { setRashifalSummary(""); setRashifalSignal(null); } })
       .finally(() => { if (!controller.signal.aborted) setRashifalLoading(false); });
     return () => controller.abort();
   }, [personalContext.effectiveSign, date, language]);
@@ -451,13 +453,10 @@ export default function MyTimePage() {
 
 
   const selectedInterestKey = personalSettings.interests.filter(item => item !== "general").join("|") || "general";
-  const selectedInterests = selectedInterestKey.split("|");
+  const selectedInterests = selectedInterestKey.split("|") as PersonalTimeActivity[];
+  const activeDashaLord = useMemo(() => { const selectedDay = (snapshot?.date || date) + "T12:00:00Z"; return personalContext.birthChart?.dashas.find(period => Date.parse(period.start) <= Date.parse(selectedDay) && Date.parse(period.end) > Date.parse(selectedDay))?.lord || null; }, [personalContext.birthChart, snapshot?.date, date]);
   const combinedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
-    const preferredTatwas: Record<string, string[]> = { general: [], work: ["Prithvi", "Tejas / Agni", "Vayu"], study: ["Vayu", "Akash"], travel: ["Vayu", "Aap / Jala"], prayer: ["Akash", "Vayu"], meditation: ["Akash", "Aap / Jala"], family: ["Aap / Jala", "Prithvi"] };
-    const preferredHoras: Record<string, string[]> = { general: [], work: ["Mercury", "Jupiter", "Sun", "Saturn"], study: ["Mercury", "Jupiter", "Moon"], travel: ["Mercury", "Moon", "Venus"], prayer: ["Jupiter", "Sun", "Moon"], meditation: ["Moon", "Jupiter", "Saturn"], family: ["Venus", "Moon", "Jupiter"] };
-    const preferred = [...new Set(selectedInterests.flatMap(item => preferredTatwas[item] || []))];
-    const preferredPlanets = [...new Set(selectedInterests.flatMap(item => preferredHoras[item] || []))];
     const solar = snapshot.panchang;
     if (!solar.sunrise_utc || !solar.sunset_utc || !solar.next_sunrise_utc) return [];
     const horas = horaWindows(snapshot.weekday, solar.sunrise_utc, solar.sunset_utc, solar.next_sunrise_utc);
@@ -466,14 +465,33 @@ export default function MyTimePage() {
       const start = Date.parse(window.start_utc), end = Date.parse(window.end_utc);
       const midpoint = new Date(start + (end - start) / 2);
       let tatwaName = "", nityaName = "";
-      try { const atMidpoint = panchangAt(midpoint); const tantra = computeTantraTime(atMidpoint?.tithi ?? solar.tithi_index, midpoint, new Date(solar.sunrise_utc!), new Date(solar.sunset_utc!), new Date(solar.next_sunrise_utc!)); tatwaName = tantra.activeTatwa.name; nityaName = tantra.nityaDevi.name; } catch { /* Keep Panchang scoring available without Tantra overlay. */ }
+      try {
+        const atMidpoint = panchangAt(midpoint);
+        const tantra = computeTantraTime(atMidpoint?.tithi ?? solar.tithi_index, midpoint, new Date(solar.sunrise_utc!), new Date(solar.sunset_utc!), new Date(solar.next_sunrise_utc!));
+        tatwaName = tantra.activeTatwa.name; nityaName = tantra.nityaDevi.name;
+      } catch { /* Keep the Panchang recommendation available without the Tantra overlay. */ }
       const hora = horaPeriods.find(period => midpoint.getTime() >= Date.parse(period.start_utc) && midpoint.getTime() < Date.parse(period.end_utc));
       const horaName = hora?.name_en || "";
-      const tantraFit = !tatwaName ? 50 : selectedInterestKey === "general" ? 75 : preferred.includes(tatwaName) ? 100 : 55;
-      const horaFit = !horaName ? 50 : selectedInterestKey === "general" ? 70 : preferredPlanets.includes(horaName) ? 100 : 50;
-      return { ...window, tatwaName, nityaName, horaName, tantraFit, horaFit, combinedScore: Math.round(window.score * 0.6 + tantraFit * 0.2 + horaFit * 0.2) };
+      const activities = selectedInterests.length ? selectedInterests : ["general" as PersonalTimeActivity];
+      const evaluations = activities.map(activity => evaluatePersonalTime({
+        startUtc: window.start_utc, endUtc: window.end_utc, panchangScore: window.score,
+        panchangReasons: window.score >= 75 ? ["supportive_panchang_indications"] : [],
+        panchangCautions: window.cautions,
+        activity, horaLord: horaName || null, tatwa: tatwaName || null,
+        rashifal: rashifalSignal, dashaLord: activeDashaLord,
+        hasNatalChart: Boolean(personalContext.birthChart)
+      }));
+      const personalEvaluation = evaluations[0];
+      const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
+      return {
+        ...window, tatwaName, nityaName, horaName,
+        tantraFit: personalEvaluation.components.find(item => item.key === "activity-tatwa")?.score ?? null,
+        horaFit: personalEvaluation.components.find(item => item.key === "activity-hora")?.score ?? null,
+        combinedScore, personalEvaluation,
+        personalizationLevel: evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general"
+      };
     }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
-  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey]);
+  }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
   const interestNames: Record<string,string> = { general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") };
   const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
