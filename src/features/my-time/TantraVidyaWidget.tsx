@@ -16,6 +16,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
   const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yogini, mahanishaKaal } = data;
   const progress = Math.min(100, Math.max(0, (tatwaElapsedMinutes / 24) * 100));
   const nityaNamesNe: Record<string, string> = { Kameshvari: "कामेश्वरी", Bhagamalini: "भगमालिनी", Nityaklinna: "नित्यक्लिन्ना", Bherunda: "भेरुण्डा", Vahnivasini: "वह्निवासिनी", Mahavajreshvari: "महावज्रेश्वरी", Shivaduti: "शिवदूती", Tvarita: "त्वरिता", Kulasundari: "कुलसुन्दरी", Nitya: "नित्या", Nilapataka: "नीलपताका", Vijaya: "विजया", Sarvamangala: "सर्वमङ्गला", Jwalamalini: "ज्वालामालिनी", Chitra: "चित्रा" };
+  const mantrasNe: Record<string, string> = { Kameshvari: "ॐ कामेश्वर्यै नमः", Bhagamalini: "ॐ भगमालिन्यै नमः", Nityaklinna: "ॐ नित्यक्लिन्नायै नमः", Bherunda: "ॐ भेरुण्डायै नमः", Vahnivasini: "ॐ वह्निवासिन्यै नमः", Mahavajreshvari: "ॐ महावज्रेश्वर्यै नमः", Shivaduti: "ॐ शिवदूत्यै नमः", Tvarita: "ॐ त्वरितायै नमः", Kulasundari: "ॐ कुलसुन्दर्यै नमः", Nitya: "ॐ नित्यायै नमः", Nilapataka: "ॐ नीलपताकायै नमः", Vijaya: "ॐ विजयायै नमः", Sarvamangala: "ॐ सर्वमङ्गलायै नमः", Jwalamalini: "ॐ ज्वालामालिन्यै नमः", Chitra: "ॐ चित्रायै नमः" };
   const tatwaNamesNe: Record<string, string> = { Prithvi: "पृथ्वी", "Aap / Jala": "आप / जल", "Tejas / Agni": "तेज / अग्नि", Vayu: "वायु", Akash: "आकाश" };
   const elementNamesNe: Record<string, string> = { Earth: "पृथ्वी", Water: "जल", Fire: "अग्नि", Air: "वायु", "Ether / Space": "आकाश" };
   const yoginiNamesNe: Record<string, string> = { Mangala: "मङ्गला", Pingala: "पिङ्गला", Dhanya: "धन्या", Bhramari: "भ्रामरी", Bhadrika: "भद्रिका", Ulka: "उल्का", Siddha: "सिद्धा", Sankata: "सङ्कटा" };
@@ -39,7 +40,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
       <div className="mt-tantra-devi-copy">
         <div className="mt-tantra-name"><strong>{language === "ne" ? (nityaNamesNe[nityaDevi.name] || nityaDevi.sanskritName) : nityaDevi.name}</strong>{language === "en" && <span>{nityaDevi.sanskritName}</span>}</div>
         <small>{l(language, "पक्ष", "Paksha")}: {data.paksha === "Shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")} · {l(language, "नित्यादेवी", "Nitya Devi")} {nityaDevi.id}/15</small>
-        <small>{l(language, "सरल नाम-मन्त्र; रूपान्तर हुन सक्छ", "Simple nama mantra; variants exist")}</small><p className="mt-tantra-mantra">{nityaDevi.mantra}</p>
+        <small>{l(language, "सरल नाम-मन्त्र; रूपान्तर हुन सक्छ", "Simple nama mantra; variants exist")}</small><p className="mt-tantra-mantra">{language === "ne" ? (mantrasNe[nityaDevi.name] || nityaDevi.mantra) : nityaDevi.mantra}</p>
         <p>{l(language, attributesNe[nityaDevi.attribute] || nityaDevi.attribute, nityaDevi.attribute)}</p>
       </div>
     </div>
