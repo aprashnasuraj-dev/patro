@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateMyTimeSnapshot, localDateTimeToUtc, normalizeLongitude } from "../worker/my-time";
+import { calculateMyTimeSnapshot, localDateTimeToUtc, myTimeResponse, normalizeLongitude } from "../worker/my-time";
 
 describe("My Time astronomical core", () => {
   it("normalizes negative and over-revolution longitudes", () => {
@@ -26,6 +26,18 @@ describe("My Time astronomical core", () => {
     expect(snapshot.panchang.tithi_name_ne).toBeTruthy();
     expect(snapshot.sky.moon_illumination_percent).toBeGreaterThanOrEqual(0);
     expect(snapshot.sky.moon_illumination_percent).toBeLessThanOrEqual(100);
+  });
+
+  it("serves only through the feature flag and validates API inputs", async () => {
+    const request = new Request("https://aafnaipatro.com/api/v1/mytime/today?date=2026-10-20&timezone=Asia%2FKathmandu");
+    const disabled = await myTimeResponse(request, {});
+    expect(disabled?.status).toBe(404);
+    const enabled = await myTimeResponse(request, { MY_TIME_ENABLED: "true" });
+    expect(enabled?.status).toBe(200);
+    const payload = await enabled!.json();
+    expect(payload).toMatchObject({ ok: true, data: { date: "2026-10-20", timezone: "Asia/Kathmandu" } });
+    const invalid = await myTimeResponse(new Request("https://aafnaipatro.com/api/v1/mytime/today?lat=91"), { MY_TIME_ENABLED: true });
+    expect(invalid?.status).toBe(400);
   });
 
   it("rejects invalid dates, timezones, and coordinates", () => {
