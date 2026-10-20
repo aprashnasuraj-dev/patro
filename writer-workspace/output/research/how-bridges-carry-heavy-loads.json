@@ -1,0 +1,137 @@
+{
+  "slug": "how-bridges-carry-heavy-loads",
+  "researched_at": "2026-10-20",
+  "topic": {
+    "id": "mm-0115",
+    "slug": "how-bridges-carry-heavy-loads",
+    "question": "How bridges carry heavy loads",
+    "category": "Transport & Engineering",
+    "canonical_url": "https://aafnaipatro.com/how-bridges-carry-heavy-loads/",
+    "title_suggestion": "How Bridges Carry Heavy Loads? Facts, Myths and Evidence",
+    "h1": "How Bridges Carry Heavy Loads?",
+    "keywords": [
+      "bridges",
+      "carry",
+      "heavy",
+      "loads",
+      "transport-engineering"
+    ],
+    "ymyl": false,
+    "target_words": 1200
+  },
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.fhwa.dot.gov/bridge/loadrating/",
+      "title": "Load Rating",
+      "publisher": "Federal Highway Administration",
+      "reliability": "government",
+      "notes": [
+        "Federal Highway Administration resources describe bridge load rating as a structured engineering evaluation using defined methods and vehicle loads.",
+        "Specific span examples are illustrative rather than universal design limits."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.teachengineering.org/activities/cub_brid_lesson01_activity1",
+      "title": "Bridge Types: Tensile & Compressive Forces",
+      "publisher": "TeachEngineering, University of Colorado Boulder",
+      "reliability": "university or professional educational institution",
+      "notes": [
+        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
+        "Tension and compression are different internal actions; bridge type and geometry determine which members carry them."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.centerforarchitecture.org/k-12/resources/building-bridges-activity-beam-truss-arch-and-suspension/",
+      "title": "Building Bridges Activity: Beam, Truss, Arch, and Suspension",
+      "publisher": "Center for Architecture, AIA New York",
+      "reliability": "university or professional educational institution",
+      "notes": [
+        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
+        "Specific span examples are illustrative rather than universal design limits."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://teachersinstitute.yale.edu/curriculum/units/2006/4/06.04.06/7",
+      "title": "The Types of Bridges",
+      "publisher": "Yale-New Haven Teachers Institute",
+      "reliability": "university or professional educational institution",
+      "notes": [
+        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
+        "Specific span examples are illustrative rather than universal design limits."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://teachersinstitute.yale.edu/curriculum/units/2001/5/01.05.04/2",
+      "title": "Introduction to the Different Types of Bridges",
+      "publisher": "Yale-New Haven Teachers Institute",
+      "reliability": "university or professional educational institution",
+      "notes": [
+        "The source explains bridge form, force transfer, or the role of structural members in distributing loads.",
+        "Specific span examples are illustrative rather than universal design limits."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "file": "how-bridges-carry-heavy-loads-hero.png",
+      "title": "Bridge and load-path hero illustration",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; no external attribution required; public reuse permitted.",
+      "relevance": "Introduces the bridge as a connected load path."
+    },
+    {
+      "file": "how-bridges-carry-heavy-loads-diagram-01.png",
+      "title": "Load path from deck to foundation",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; no external attribution required; public reuse permitted.",
+      "relevance": "Illustrates transfer of loads from the road deck into soil."
+    },
+    {
+      "file": "how-bridges-carry-heavy-loads-diagram-02.png",
+      "title": "Tension and compression in a beam",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; no external attribution required; public reuse permitted.",
+      "relevance": "Contrasts compressive and tensile zones under bending."
+    },
+    {
+      "file": "how-bridges-carry-heavy-loads-diagram-03.png",
+      "title": "Comparison of bridge forms",
+      "creator": "Mission Mangal Writer",
+      "original_asset_page": null,
+      "direct_asset_url": null,
+      "host": "Original programmatic illustration",
+      "license": "CC0 1.0 Universal",
+      "attribution": "Original illustration by Mission Mangal Writer; CC0 1.0",
+      "verified_at": "2026-10-20",
+      "restrictions": "No third-party assets; no external attribution required; public reuse permitted.",
+      "relevance": "Shows how bridge geometries route forces in different ways."
+    }
+  ],
+  "image_research": {
+    "method": "Original diagrammatic illustrations",
+    "notes": "Four distinct engineering illustrations were generated using geometric primitives and a limited palette. No documentary photography, third-party artwork, logos, or copied diagrams were used."
+  }
+}
