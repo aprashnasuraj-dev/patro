@@ -3,6 +3,7 @@ import { ArrowUpRight, CircleAlert, Globe2, Moon, RefreshCw, Sun, TimerReset } f
 import { setPageTitle } from "../../title";
 import { homeToday } from "../../home-calendar-client";
 import { NAKSHATRAS, RASHIS } from "../../patro-tools/core/names";
+import { apparentSolarTime } from "../../patro-tools/core/apparent-solar-time";
 import { deviceZone, readPlace } from "../../place/place";
 import { calculateMyTimeSnapshot, type MyTimeSnapshot } from "../../patro-tools/core/my-time-snapshot";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
@@ -186,6 +187,7 @@ export default function MyTimePage() {
   useEffect(() => { void loadSnapshot(date, preferences); }, []); // Initial load only; edits apply on submit.
   const dateLabel = useMemo(() => localDateLabel(date, preferences.timezone, language), [date, preferences.timezone, language]);
   const localTime = localClock(preferences.timezone, now);
+  const solarTime = apparentSolarTime(now, preferences.lng);
   const tithiName = snapshot ? (ne ? TITHI_NE[snapshot.panchang.tithi_index - 1] : TITHI_EN[snapshot.panchang.tithi_index - 1]) : "—";
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
@@ -199,7 +201,7 @@ export default function MyTimePage() {
   return <main className="mt-page">
     <header className="mt-heading">
       <div className="mt-eyebrow"><span className="mt-pulse"/> {l(language,"समयलाई आफ्नै दृष्टिले अनुभव गर्नुहोस्","Experience time through your own lens")}</div>
-      <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small></div></div>
+      <div className="mt-heading-row"><div><h1>{l(language,"मेरो समय","My Time")}</h1><p>{l(language,"पात्रो, आकाश, स्थानीय समय र व्यक्तिगत सन्दर्भलाई एउटै जीवित ड्यासबोर्डमा।","A living dashboard for calendars, sky, local time and personal context.")}</p></div><div className="mt-now"><span>{l(language,"तपाईंको स्थानीय समय","Your local time")}</span><strong>{localTime}</strong><small>{dateLabel}</small><div className="mt-apparent-time"><span>{l(language,"स्थानीय सौर समय · अनुमानित","Apparent solar time · approximate")}</span><strong>{solarTime.time}</strong><small>{l(language,"समय समीकरण","Equation of time")}: {solarTime.equationOfTimeMinutes >= 0 ? "+" : ""}{solarTime.equationOfTimeMinutes.toFixed(1)} min</small></div></div></div>
     </header>
 
     <section className="mt-control-bar" aria-label={l(language,"समय र स्थान सेटिङ","Time and location settings")}>
