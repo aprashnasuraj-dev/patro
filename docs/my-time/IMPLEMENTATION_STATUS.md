@@ -26,6 +26,14 @@
 - `/time-machine` is an existing historical archive route and will remain unchanged. My Time is planned for the new `/mytime` route.
 - The repository has existing type-check, test, build, release, and Cloudflare validation scripts.
 
+## Tantra Vidya Chronometry | तन्त्रविद्या कालगणना
+
+- Added opt-in bilingual `/mytime` widget and a color-coded outer Tatwa segment on the existing polar dial; no new route or Worker.
+- `src/patro-tools/core/tantra/constants.ts` contains the supplied Nitya Devi, Pancha Tatwa and Yogini direction maps; `engine.ts` validates tithi and solar-event ordering before computing the traditional sequence.
+- The snapshot/API now includes `tantraVidya` when sunrise, sunset and next sunrise are available. The browser recomputes the active Tatwa and Mahanisha state against the live clock for today; historical/future selected dates use the snapshot evaluation instant.
+- Existing IndexedDB stores the expanded snapshot object without a schema migration; the cache key is versioned to `v2` to avoid reusing old entries. The service worker still uses the existing `/mytime` shell route.
+- Method note: Tatwa timing is a rule-based 24-minute sequence anchored to sunrise; Mahanisha is approximated as ±24 minutes around the midpoint between sunset and next sunrise. These are traditional interpretations, not scientifically validated energy measurements. CI and integration verification are pending.
+
 ## Next milestones | आगामी चरण
 
 1. Confirm the exact three-phase roadmap, formulas, and cache key against the supplied architecture document.
