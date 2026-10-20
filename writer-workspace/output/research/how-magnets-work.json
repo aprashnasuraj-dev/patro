@@ -1,0 +1,54 @@
+{
+  "slug": "how-magnets-work",
+  "research_question": "What established scientific or technical principles explain how magnets work?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Magnetism",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/science/magnetism",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "University Physics Volume 2: Magnetism",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/11-introduction",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Earth's Magnetosphere",
+      "publisher": "NASA Science",
+      "url": "https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "College Physics: Electromagnetism",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/books/college-physics/pages/22-introduction",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    }
+  ]
+}
