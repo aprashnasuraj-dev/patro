@@ -12,6 +12,7 @@ import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { calculateChart } from "../../jyotish/jyotishEngine";
+import { calculateTara } from "./tarabalam";
 import { JANMAPATRO_BIRTH_PLACES, createJanmaPatroContext, findJanmaPatroBirthPlace, saveJanmaPatroContext } from "../../jyotish/my-time-bridge";
 
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
@@ -503,8 +504,10 @@ export default function MyTimePage() {
   const natalStarIndex = personalContext.birthChart ? NAKSHATRAS.indexOf(personalContext.birthChart.nakshatra as typeof NAKSHATRAS[number]) : -1;
   const natalMoonSignIndex = personalContext.birthChart ? RASHIS.indexOf(personalContext.birthChart.rashi as typeof RASHIS[number]) : -1;
   const transitStarIndex = snapshot ? snapshot.panchang.nakshatra_index - 1 : -1;
-  const taraCount = natalStarIndex >= 0 && transitStarIndex >= 0 ? ((transitStarIndex - natalStarIndex + 27) % 27) + 1 : null;
-  const taraIndex = taraCount ? (taraCount - 1) % 9 : -1;
+  const tara = natalStarIndex >= 0 && transitStarIndex >= 0 ? calculateTara(natalStarIndex + 1, transitStarIndex + 1) : null;
+  const taraCount = tara?.distance ?? null;
+  // The existing scoring and display arrays intentionally use zero-based indexes.
+  const taraIndex = tara ? tara.taraIndex - 1 : -1;
   const chandraHouse = snapshot && natalMoonSignIndex >= 0 ? ((snapshot.panchang.moon_rashi_index - natalMoonSignIndex + 12) % 12) + 1 : null;
   const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
   const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
