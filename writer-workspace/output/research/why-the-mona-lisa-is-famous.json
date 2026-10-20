@@ -1,0 +1,101 @@
+{
+  "id": "mm-0119",
+  "slug": "why-the-mona-lisa-is-famous",
+  "question": "Why the Mona Lisa is famous",
+  "category": "Arts, Music & Literature",
+  "canonical_url": "https://aafnaipatro.com/why-the-mona-lisa-is-famous/",
+  "title_suggestion": "Why The Mona Lisa Is Famous? Facts, Myths and Evidence",
+  "h1": "Why The Mona Lisa Is Famous?",
+  "keywords": [
+    "mona",
+    "lisa",
+    "famous",
+    "arts-music-literature"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://collections.louvre.fr/ark:/53355/cl010062370",
+      "title": "Portrait de Lisa Gherardini, épouse de Francesco del Giocondo, dit La Joconde ou Monna Lisa",
+      "publisher": "Musée du Louvre, Collections",
+      "reliability": "primary museum collection catalogue",
+      "notes": [
+        "Catalogue identifies sitter as Lisa Gherardini, wife of Francesco del Giocondo, and dates the painting to 1503–1519.",
+        "Oil painting on poplar wood rather than canvas; the board has warped and cracked.",
+        "Leonardo retained the painting and likely it passed to Francis I around 1518.",
+        "The catalogue describes infrared examinations, later yellowed varnish and the fragility of the support."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana",
+      "title": "From the 'Mona Lisa' to 'The Wedding Feast at Cana' - The Salle des États",
+      "publisher": "Musée du Louvre",
+      "reliability": "primary museum interpretation",
+      "notes": [
+        "Louvre explains subtle glazing and sfumato, enigmatic smile and sitter's turning pose.",
+        "Painting has occupied Salle des États since 1966; climate-controlled protective display responds to safety and poplar-panel conservation.",
+        "The painting's celebrity determines visitor experience and exhibition setting."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.smithsonianmag.com/arts-culture/stolen-how-the-mona-lisa-became-the-worlds-most-famous-painting-16406234/",
+      "title": "Stolen: How the Mona Lisa Became the World’s Most Famous Painting",
+      "publisher": "Smithsonian Magazine",
+      "author": "James Zug",
+      "published_at": "2011-06-15",
+      "reliability": "established specialist historical reporting",
+      "notes": [
+        "The painting was stolen from the Louvre on 21 August 1911, leading to exceptional press coverage.",
+        "Historical reputation among critics preceded the theft, but mass public recognition was much less widespread.",
+        "The theft and recovery illustrate amplification of an established artistic reputation, not the creation of artistic merit."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.louvre.fr/en/explore/visitor-trails/the-louvre-s-masterpieces/a-superstar-and-a-wedding-crowd",
+      "title": "A superstar… and a wedding crowd!",
+      "publisher": "Musée du Louvre",
+      "reliability": "primary museum visitor interpretation",
+      "notes": [
+        "Museum identifies artistic execution, expression, landscape and sfumato as sources of the painting's appeal.",
+        "Louvre connects incidents including the 1911 theft with additional celebrity and gives context for prominent Salle des États display."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.louvre.fr/en/explore/life-at-the-museum/the-mona-lisa-in-virtual-reality-in-your-own-home",
+      "title": "The Mona Lisa in virtual reality in your own home",
+      "publisher": "Musée du Louvre",
+      "published_at": "2021-02-23",
+      "reliability": "primary museum curatorial explanation",
+      "notes": [
+        "Louvre's Beyond the Glass VR project contextualizes Lisa Gherardini and Leonardo's techniques.",
+        "The Louvre distinguishes historical curatorial reconstruction from the actual present-day exhibition and reflects the difficulty of face-to-face viewing."
+      ]
+    }
+  ],
+  "verified_findings": [
+    "The painterly technique and extraordinary later celebrity are different explanatory questions.",
+    "The 1911 theft magnified public attention to a painting already esteemed by specialists.",
+    "The identity of the sitter is firmly supported by the Louvre catalogue, despite persistent popular alternatives.",
+    "Conservation constraints are caused in part by the poplar panel, not merely by the painting's commercial or cultural value."
+  ],
+  "uncertainties": [
+    "The relative contribution of critical reputation, theft, popular reproduction and tourism cannot be assigned a defensible percentage.",
+    "Museum display photographs and collection scans are not automatically licensed for reuse; individual asset rights still require checking."
+  ],
+  "image_research": {
+    "status": "discovery_pending",
+    "plan": [
+      "Dedicated original editorial hero contrasting painterly portrait detail with modern museum attention, without copying a protected photograph",
+      "Original diagram explaining the sfumato transition without representing it as an authentic Leonardo fragment",
+      "Timeline of critical esteem, 1911 theft, recovery and modern exhibition",
+      "Original explanatory panel on the poplar support and conservation constraints"
+    ],
+    "third_party_assets_approved": []
+  }
+}
