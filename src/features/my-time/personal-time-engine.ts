@@ -44,7 +44,6 @@ const TATWA_PREFERENCES: Record<PersonalTimeActivity, string[]> = {
   travel: ["Vayu", "Aap / Jala"], prayer: ["Akash", "Vayu"],
   meditation: ["Akash", "Aap / Jala"], family: ["Aap / Jala", "Prithvi"]
 };
-function clamp(value: number) { return Math.max(0, Math.min(100, value)); }
 function validScore(value: unknown): value is number { return typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 100; }
 function domainScore(rashifal: RashifalSignal | null | undefined, domain: string): number | null {
   if (!rashifal) return null;
