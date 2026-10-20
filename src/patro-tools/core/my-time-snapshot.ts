@@ -3,6 +3,7 @@ import { placeTiming } from "../../place/timing";
 import { civilBounds } from "../../place/civil";
 import { panchangAt } from "./astro";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "./names";
+import { computeTantraTime } from "./tantra/engine";
 
 const DEG = Math.PI / 180;
 const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];
@@ -95,6 +96,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
   const phaseAngle = normalizeLongitude(panchang.moonPhaseAngle);
   const skyPhaseAngle = normalizeLongitude(Astronomy.MoonPhase(evaluatedAt));
   const tithiIndex = panchang.tithi;
+  const tantraVidya = daily && nextDay ? computeTantraTime(tithiIndex, evaluatedAt, daily.sunrise, daily.sunset, nextDay.sunrise) : null;
   const tithiProgress = ((phaseAngle % 12) / 12) * 100;
   const illumination = ((1 - Math.cos(skyPhaseAngle * DEG)) / 2) * 100;
   const observer = new Astronomy.Observer(lat, lng, 0);
@@ -123,6 +125,7 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
     panchang_evaluated_at_utc: panchang.instant.toISOString(),
     location: { lat, lng },
     weekday: new Date(date + "T00:00:00Z").getUTCDay(),
+    tantraVidya,
     panchang: {
       tithi_index: tithiIndex,
       tithi_name: TITHI_EN[tithiIndex - 1],
@@ -164,7 +167,8 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
         "The shared Panchang provider calculates Tithi, Nakshatra/Pada, Yoga, Karana, sidereal Sun/Moon signs and local sunrise/sunset where available.",
         "If sunrise or sunset is unavailable for the selected civil day, the Panchang snapshot falls back to local noon and solar event fields are null.",
         "Choghadiya, Rahu Kaal, Hora, eclipse contacts, Tarabalam/Chandrabalam, and personalized Muhurta are not included in this API slice.",
-        "Moon illumination is a simplified phase-angle estimate, not a high-precision illuminated fraction."
+        "Moon illumination is a simplified phase-angle estimate, not a high-precision illuminated fraction.",
+        "Tantra Vidya fields are traditional rule-based interpretations; Tatwa uses a sunrise-anchored 24-minute cycle and Mahanisha is approximated from sunset to next sunrise, not measured as a scientific energy or exact apparent-solar-midnight event."
       ]
     }
   };
