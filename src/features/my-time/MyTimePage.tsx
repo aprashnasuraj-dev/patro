@@ -309,7 +309,7 @@ export default function MyTimePage() {
   const briefingUsesCurrentDate = !!snapshot && snapshot.date === localDate(preferences.timezone, now);
   const nextBriefingWindow = briefingUsesCurrentDate ? ([...recommendedMuhurtaWindows].sort((a, b) => Date.parse(a.start_utc) - Date.parse(b.start_utc))[0] || null) : null;
   const briefingTithiIndex = currentPanchang?.tithi ?? null;
-  const briefingNakshatraIndex = currentPanchang?.nakshatra ?? null;
+  const briefingNakshatraIndex = currentPanchang ? currentPanchang.nakshatra + 1 : null;
   const briefingTithiName = briefingTithiIndex ? (ne ? TITHI_NE[briefingTithiIndex - 1] : TITHI_EN[briefingTithiIndex - 1]) : "—";
   const briefingNakshatraName = briefingNakshatraIndex ? String(NAKSHATRAS[briefingNakshatraIndex - 1] || "—") : "—";
   const applyPersonalLocation = useCallback((place: { timezone: string; lat: number; lng: number; label: string }) => {
