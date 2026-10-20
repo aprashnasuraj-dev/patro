@@ -25,7 +25,7 @@ function isMyTimeSnapshot(value: unknown): value is Snapshot {
   const sky = data.sky;
   const twilight = data.twilight;
   const instantOrNull = (value: unknown) => value === null || (typeof value === "string" && Number.isFinite(Date.parse(value)));
-  return data.schema_version === 1 && typeof data.date === "string" && /^\\d{4}-\\d{2}-\\d{2}$/.test(data.date) && typeof data.timezone === "string"
+  return data.schema_version === 1 && typeof data.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(data.date) && typeof data.timezone === "string"
     && !!data.location && Number.isFinite(data.location.lat) && Number.isFinite(data.location.lng)
     && !!p && Number.isInteger(p.tithi_index) && p.tithi_index >= 1 && p.tithi_index <= 30
     && Number.isInteger(p.nakshatra_index) && p.nakshatra_index >= 1 && p.nakshatra_index <= 27
