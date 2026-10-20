@@ -1,0 +1,54 @@
+{
+  "slug": "how-washing-machines-clean-clothes",
+  "research_question": "What authoritative evidence explains how washing machines clean clothes?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Laundry and Fabric Care",
+      "publisher": "American Cleaning Institute",
+      "url": "https://www.cleaninginstitute.org/cleaning-tips/clothes/laundry",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "How Detergents Work",
+      "publisher": "American Cleaning Institute",
+      "url": "https://www.cleaninginstitute.org/understanding-products/why-cleaning-matters/how-detergents-work",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Laundry basics",
+      "publisher": "Energy Saver, U.S. Department of Energy",
+      "url": "https://www.energy.gov/energysaver/laundry",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Textile care and washing",
+      "publisher": "International Association for Soaps, Detergents and Maintenance Products",
+      "url": "https://www.aise.eu/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    }
+  ]
+}
