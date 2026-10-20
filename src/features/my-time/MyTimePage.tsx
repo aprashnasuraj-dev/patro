@@ -245,10 +245,10 @@ export default function MyTimePage() {
   const nepalTime = useMemo(() => nepalStandardTime(now), [now]);
   const abhijit = useMemo(() => snapshot ? abhijitMuhurta(snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc) : null, [snapshot]);
   const currentChoghadiya = useMemo(() => {
-    if (!snapshot) return undefined;
+    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
     return [...windows.day, ...windows.night].find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
-  }, [snapshot, now]);
+  }, [snapshot, now, preferences.timezone]);
   const currentKaal = useMemo(() => {
     if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return undefined;
     return inauspiciousDayWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc).find(window => now.getTime() >= Date.parse(window.start_utc) && now.getTime() < Date.parse(window.end_utc));
@@ -421,10 +421,10 @@ export default function MyTimePage() {
   const chandraScore = chandraHouse === null ? null : [1,3,6,7,10,11].includes(chandraHouse) ? 100 : [4,8,12].includes(chandraHouse) ? 0 : 50;
   const declaredSign = SIGNS.find(sign => sign.id === personalContext.effectiveSign);
   const personalizedMuhurta = useMemo(() => {
-    if (!snapshot) return null;
+    if (!snapshot || localDate(preferences.timezone, now) !== snapshot.date) return null;
     try { return scorePersonalizedMuhurta({ startUtc: now.toISOString(), endUtc: new Date(now.getTime()+60*60*1000).toISOString(), favorableChoghadiya: currentChoghadiya?.favorable, rahuKaal: currentKaal?.key === "rahu", yamaganda: currentKaal?.key === "yamaganda", gulika: currentKaal?.key === "gulika", taraIndex: taraIndex >= 0 ? taraIndex : null, chandraHouse }); }
     catch { return null; }
-  }, [snapshot, now, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
+  }, [snapshot, now, preferences.timezone, currentChoghadiya, currentKaal, personalContext.birthChart, taraIndex, chandraHouse]);
   const recommendedMuhurtaWindows = useMemo(() => {
     if (!snapshot) return [];
     const windows = choghadiyaWindows(snapshot.weekday, snapshot.panchang.sunrise_utc, snapshot.panchang.sunset_utc, snapshot.panchang.next_sunrise_utc);
@@ -443,8 +443,7 @@ export default function MyTimePage() {
         });
         return { ...window, score: result.score, label: result.label, cautions: result.cautions };
       })
-      .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc))
-      .slice(0, 8);
+      .sort((a, b) => b.score - a.score || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, now, preferences.timezone, taraIndex, chandraHouse]);
 
 
@@ -491,7 +490,7 @@ export default function MyTimePage() {
           <a href="#mt-tantra">{l(language,"तन्त्रविद्या","Tantra Vidya")} <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
-      <div className="mt-immersive-art" aria-label={l(language,"२४ घण्टे समय चक्र","24-hour time cycle")}>
+      <div id="mt-orbit" className="mt-immersive-art" aria-label={l(language,"२४ घण्टे समय चक्र","24-hour time cycle")}>
         <PolarClock timezone={preferences.timezone} now={now} language={language} snapshot={snapshot} showChoghadiya={observatoryLayers.choghadiya} showKaal={observatoryLayers.kaal} showHora={observatoryLayers.hora} showTwilight={observatoryLayers.twilight} showTantra={true} tantraTime={tantraTime}/>
       </div>
     </section>
