@@ -1,0 +1,39 @@
+{
+  "slug": "why-the-himalayas-are-still-rising",
+  "research_question": "Why does tectonic activity continue to raise the Himalayas?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://pubs.usgs.gov/gip/dynamic/himalaya.html",
+      "title": "The Himalayas",
+      "publisher": "U.S. Geological Survey",
+      "reliability": "U.S. federal geological survey",
+      "notes": [
+        "India collided with Eurasia roughly 40–50 million years ago; convergence continues to deform and thicken the crust."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://pubs.usgs.gov/gip/dynamic/dynamic.html",
+      "title": "This Dynamic Earth: The Story of Plate Tectonics",
+      "publisher": "U.S. Geological Survey",
+      "reliability": "U.S. federal geological survey",
+      "notes": [
+        "Plate motion, faulting and crustal deformation drive mountain building; uplift and erosion operate at the same time."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://www.usgs.gov/programs/earthquake-hazards",
+      "title": "Himalayan tectonics and earthquakes",
+      "publisher": "U.S. Geological Survey Earthquake Hazards Program",
+      "reliability": "U.S. federal earthquake science program",
+      "notes": [
+        "The plate boundary remains active and produces earthquakes; local vertical motion varies and should not be described as uniform uplift everywhere."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
