@@ -1,0 +1,54 @@
+{
+  "slug": "how-wi-fi-works",
+  "research_question": "What established scientific or technical principles explain how wi fi works?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "What Is Wi-Fi?",
+      "publisher": "Wi-Fi Alliance",
+      "url": "https://www.wi-fi.org/discover-wi-fi",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "IEEE 802.11 Wireless LANs",
+      "publisher": "IEEE Standards Association",
+      "url": "https://standards.ieee.org/ieee/802.11/7028/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Wireless Telecommunications",
+      "publisher": "Federal Communications Commission",
+      "url": "https://www.fcc.gov/general/wireless-telecommunications-bureau",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Wi-Fi 6",
+      "publisher": "Wi-Fi Alliance",
+      "url": "https://www.wi-fi.org/discover-wi-fi/wi-fi-6",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Secondary/official educational source; verify details against source before publication",
+      "notes": [
+        "Used to support the specific explanation and practical limitations cited in the article."
+      ]
+    }
+  ]
+}
