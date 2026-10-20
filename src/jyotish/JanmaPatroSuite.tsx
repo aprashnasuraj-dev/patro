@@ -132,7 +132,7 @@ export function JanmaPatroSuite(){
  const[error,setError]=useState<string|null>(null),[notice,setNotice]=useState(""),[shareUrl,setShareUrl]=useState(""),[pdfBusy,setPdfBusy]=useState(false),[jpgBusy,setJpgBusy]=useState(false);
  const reportRef=useRef<HTMLDivElement|null>(null);
  const canMatch=useMemo(()=>matchMode==="name"?Boolean(nameA.trim()&&nameB.trim()):Boolean(a.date&&a.time&&b.date&&b.time),[a,b,matchMode,nameA,nameB]);
- const hasEditedBirthDetails=a.date!==DEFAULT.date||a.time!==DEFAULT.time||a.location!==DEFAULT.location||a.lat!==DEFAULT.lat||a.lng!==DEFAULT.lng;
+ const hasEditedBirthDetails=a.name!==DEFAULT.name||a.date!==DEFAULT.date||a.time!==DEFAULT.time||a.location!==DEFAULT.location||a.lat!==DEFAULT.lat||a.lng!==DEFAULT.lng;
 
  const calculate=(state?:Partial<SharedState>)=>{
   const activeTab=state?.tab??tab,activeMode=state?.matchMode??matchMode,aa=state?.a??a,bb=state?.b??b,nA=state?.nameA??nameA,nB=state?.nameB??nameB;
