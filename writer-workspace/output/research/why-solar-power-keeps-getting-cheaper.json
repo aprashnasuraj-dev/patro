@@ -1,0 +1,64 @@
+{
+  "slug": "why-solar-power-keeps-getting-cheaper",
+  "research_question": "Why has solar power become cheaper, and which cost components and uncertainties affect the trend?",
+  "retrieved_at": "2026-10-20",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nrel.gov/news/program/2021/documenting-a-decade-of-cost-declines-for-pv-systems.html",
+      "title": "Documenting a Decade of Cost Declines for PV Systems",
+      "publisher": "National Renewable Energy Laboratory",
+      "reliability": "U.S. national laboratory specializing in renewable energy",
+      "notes": [
+        "NREL reported declines in residential, commercial-rooftop, and utility-scale PV system costs between 2010 and 2020.",
+        "Module efficiency and hardware and inverter costs contributed to lower system costs.",
+        "Soft costs remain a substantial part of residential and commercial installations."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.energy.gov/cmei/solar/articles/learning-better-way-forecast-wind-and-solar-energy-costs",
+      "title": "Learning a Better Way To Forecast Wind and Solar Energy Costs",
+      "publisher": "U.S. Department of Energy, Solar Energy Technologies Office",
+      "reliability": "Government energy agency summarizing Lawrence Berkeley National Laboratory research",
+      "notes": [
+        "Learning curves relate cost changes to cumulative deployment.",
+        "Levelized electricity cost depends on installed cost, financing, operations, and annual generation.",
+        "Historical learning rates vary over time; future projections carry uncertainty."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://atb.nrel.gov/electricity/2024/utility-scale_pv",
+      "title": "Utility-Scale PV: 2024 Annual Technology Baseline",
+      "publisher": "National Renewable Energy Laboratory",
+      "reliability": "National laboratory technology and cost benchmark",
+      "notes": [
+        "PV cost scenarios depend on modules, inverters, installation, efficiency, and energy yield.",
+        "Projected cost reductions depend on assumptions and are not guaranteed outcomes."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://www.energy.gov/cmei/systems/soft-costs",
+      "title": "Soft Costs",
+      "publisher": "U.S. Department of Energy",
+      "reliability": "Government energy agency overview",
+      "notes": [
+        "Soft costs include design, siting, permits, installation, interconnection, finance, customer acquisition, training, and overhead.",
+        "As hardware gets cheaper, non-hardware expenses make up a larger share of total installed cost."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.energy.gov/cmei/systems/solar-energy-evolution-and-diffusion-studies-seeds",
+      "title": "Solar Energy Evolution and Diffusion Studies",
+      "publisher": "U.S. Department of Energy",
+      "reliability": "Government research programme overview",
+      "notes": [
+        "PV costs have historically declined alongside cumulative production and deployment.",
+        "Technology progress combines manufacturing experience, research, and deployment."
+      ]
+    }
+  ]
+}
