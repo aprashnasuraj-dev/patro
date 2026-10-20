@@ -12,13 +12,14 @@ import { panchangAt } from "../../patro-tools/core/astro";
 import { myTimeCacheKey, readMyTimeSnapshot, writeMyTimeSnapshot } from "./my-time-cache";
 import { useUiLanguage, l } from "../../useUiLanguage";
 import { calculateChart } from "../../jyotish/jyotishEngine";
-import { RASHIS as NE_SIGNS, NAKSHATRAS as NE_NAKSHATRAS } from "../../patro-tools/core/names";
+import { JANMAPATRO_BIRTH_PLACES, createJanmaPatroContext, findJanmaPatroBirthPlace, saveJanmaPatroContext } from "../../jyotish/my-time-bridge";
+
 import MyTimeTemporalLayers from "./MyTimeTemporalLayers";
 import TantraVidyaWidget from "./TantraVidyaWidget";
 import MyTimePersonalization from "./MyTimePersonalization";
 import { computeTantraTime } from "../../patro-tools/core/tantra/engine";
 import { readMyTimePersonalSettings } from "./my-time-personal-settings";
-import { evaluatePersonalTime, normalizeJanmaPatroContext, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
+import { calculatePersonalLuckyNumber, evaluatePersonalTime, normalizeJanmaPatroContext, type PersonalTimeActivity, type RashifalSignal, type SavedJanmaPatroContext } from "./personal-time-engine";
 import "./my-time.css";
 
 type Snapshot = MyTimeSnapshot;
@@ -46,10 +47,47 @@ type Preferences = { timezone: string; lat: number; lng: number; label?: string 
 type CalendarReference = { date: string; bs: string; ns: string; tithi: string; sunrise: string; sunset: string; source: string };
 type LoadedRashifalSignal = { date: string; sign: string; signal: RashifalSignal };
 type PersonalContext = { birthChart: SavedJanmaPatroContext | null; rashifalSign: string | null; effectiveSign: string | null };
+type BirthInputDraft = { name: string; date: string; time: string; location: string; lat: string; lng: string };
+function birthInputFromContext(chart: SavedJanmaPatroContext | null): BirthInputDraft {
+  const birth = chart?.birth;
+  const place = findJanmaPatroBirthPlace(birth?.location || "");
+  return {
+    name: birth?.name || "", date: birth?.date || "", time: birth?.time || "", location: birth?.location || "",
+    lat: birth?.lat != null ? String(birth.lat) : place ? String(place.lat) : "",
+    lng: birth?.lng != null ? String(birth.lng) : place ? String(place.lng) : ""
+  };
+}
+function isValidBirthDate(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(value + "T00:00:00.000Z");
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
 const SIGNS = [{id:"aries",ne:"मेष",en:"Aries"},{id:"taurus",ne:"वृष",en:"Taurus"},{id:"gemini",ne:"मिथुन",en:"Gemini"},{id:"cancer",ne:"कर्कट",en:"Cancer"},{id:"leo",ne:"सिंह",en:"Leo"},{id:"virgo",ne:"कन्या",en:"Virgo"},{id:"libra",ne:"तुला",en:"Libra"},{id:"scorpio",ne:"वृश्चिक",en:"Scorpio"},{id:"sagittarius",ne:"धनु",en:"Sagittarius"},{id:"capricorn",ne:"मकर",en:"Capricorn"},{id:"aquarius",ne:"कुम्भ",en:"Aquarius"},{id:"pisces",ne:"मीन",en:"Pisces"}];
 const TARA_NE = ["जन्म","सम्पत्","विपत्","क्षेम","प्रत्यरि","साधक","नैधन","मित्र","परम मित्र"];
 const TARA_EN = ["Janma","Sampat","Vipat","Kshema","Pratyari","Sadhaka","Naidhana","Mitra","Parama Mitra"];
 const TARA_SCORES = [50,87.5,12.5,75,25,100,0,87.5,100];
+const TARA_GUIDANCE_NE = [
+  "दिनचर्या, स्वास्थ्य र आत्महेरचाहमा ध्यान दिनुहोस्।",
+  "धन, कामकाजी प्रस्ताव र वार्ताका लागि परम्परागत रूपमा अनुकूल सङ्केत।",
+  "सम्भावित अवरोधका कारण हतारमा निर्णय नगरी जोखिम पुनः जाँच्नुहोस्।",
+  "यात्रा, परिवार र नयाँ कामका लागि परम्परागत रूपमा सहयोगी सङ्केत।",
+  "कागजात र विवरण दोहोरो जाँच्नुहोस्; ढिलाइ हुन सक्छ।",
+  "एकाग्र अध्ययन, जटिल काम र साधनाका लागि परम्परागत रूपमा अनुकूल सङ्केत।",
+  "ठूला जोखिममा थप सावधानी अपनाउनुहोस्; यो निश्चित भविष्यवाणी होइन।",
+  "सम्बन्ध, सहकार्य र समूह छलफलका लागि सहयोगी सङ्केत।",
+  "महत्त्वपूर्ण कामका लागि परम्परागत रूपमा अत्यन्त सहयोगी सङ्केत।"
+];
+const TARA_GUIDANCE_EN = [
+  "Prioritize routine, wellbeing and self-care.",
+  "A traditionally supportive indication for work, proposals and negotiations.",
+  "Re-check risk and avoid rushed decisions when obstacles are possible.",
+  "A traditionally supportive indication for travel, family and new work.",
+  "Double-check documents and details; delays may occur.",
+  "A traditionally supportive indication for focused study, complex work and practice.",
+  "Use extra care with major risks; this is not a prediction.",
+  "A supportive traditional indication for cooperation and team conversations.",
+  "A traditionally strong indication for important milestones."
+];
 function readPersonalContext(): PersonalContext {
   try {
     const raw = JSON.parse(localStorage.getItem("aafnai.jyotish.china.context.v1") || "null");
@@ -197,24 +235,37 @@ export default function MyTimePage() {
   const [calendarReference, setCalendarReference] = useState<CalendarReference | null>(null);
   const [nepalCalendarReference, setNepalCalendarReference] = useState<CalendarReference | null>(null);
   const [personalContext, setPersonalContext] = useState<PersonalContext>(readPersonalContext);
-  const [birthInput,setBirthInput]=useState({date:"",time:"",location:"",lat:"",lng:""});
+  const [birthInput,setBirthInput]=useState<BirthInputDraft>(()=>birthInputFromContext(readPersonalContext().birthChart));
   const [birthError,setBirthError]=useState("");
   const [birthSuccess,setBirthSuccess]=useState(false);
   const saveBirthChart=(event: React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();setBirthError("");setBirthSuccess(false);
-    const lat=Number(birthInput.lat),lng=Number(birthInput.lng);
-    if(!birthInput.date||!birthInput.time||!birthInput.location.trim()||!birthInput.lat.trim()||!birthInput.lng.trim()||!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180){
-      setBirthError(l(language,"सही जन्म विवरण र निर्देशाङ्क भर्नुहोस्।","Enter valid birth details and coordinates."));return;
+    const date=birthInput.date.trim(), time=birthInput.time.trim(), location=birthInput.location.trim();
+    const matchedPlace=findJanmaPatroBirthPlace(location);
+    const latText=birthInput.lat.trim()||(matchedPlace?String(matchedPlace.lat):"");
+    const lngText=birthInput.lng.trim()||(matchedPlace?String(matchedPlace.lng):"");
+    const lat=Number(latText),lng=Number(lngText);
+    if(!isValidBirthDate(date)){setBirthError(l(language,"जन्म मिति YYYY-MM-DD ढाँचामा भर्नुहोस् वा पात्रोबाट छान्नुहोस्।","Enter a valid YYYY-MM-DD birth date or choose it from the calendar."));return;}
+    if(!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){setBirthError(l(language,"जन्म समय छान्नुहोस्। समय नेपाल मानक समय (UTC+05:45) मा हुनुपर्छ।","Enter a valid birth time in Nepal Standard Time (UTC+05:45)."));return;}
+    if(!location||!latText||!lngText||!Number.isFinite(lat)||!Number.isFinite(lng)||Math.abs(lat)>66.5||Math.abs(lng)>180){
+      setBirthError(l(language,"जन्मस्थान छान्नुहोस् वा निर्देशाङ्कमा अक्षांश −६६.५° देखि ६६.५° र देशान्तर −१८०° देखि १८०° भित्र भर्नुहोस्।","Choose a birthplace or enter coordinates within latitude −66.5° to 66.5° and longitude −180° to 180°."));return;
     }
     try{
-      const chart=calculateChart({name:"",date:birthInput.date,time:birthInput.time,location:birthInput.location.trim(),lat,lng});
-      const moon=chart.planets.find(p=>p.key==="moon");
-      if(!moon)throw new Error("Moon unavailable");
-      const context={time_known:true,lagna:{name:NE_SIGNS[chart.ascSignIndex],degree:chart.ascendant},rashi:{name:NE_SIGNS[moon.signIndex]},nakshatra:{name:NE_NAKSHATRAS[chart.moonNakshatraIndex],pada:chart.moonPada},birth:{...chart.input},planets:chart.planets.map(p=>({planet_en:p.name,rashi:{name:NE_SIGNS[p.signIndex]},house:p.house,degree:p.longitude})),dasha:{periods:chart.dashas.map(d=>({...d,start:d.start.toISOString(),end:d.end.toISOString()}))},other_important_points:{manglik:chart.manglik},data_quality:{source:"janmapatro-engine",methodology:chart.methodology}};
-      localStorage.setItem("aafnai.jyotish.china.context.v1",JSON.stringify(context));
-      setPersonalContext(readPersonalContext());setBirthSuccess(true);
-      window.dispatchEvent(new CustomEvent("patro:china-updated",{detail:context}));
-    }catch{setBirthError(l(language,"व्यक्तिगत समय गणना हुन सकेन। जन्म विवरण जाँच्नुहोस्।","Could not calculate personalized timing. Check your birth details."));}
+      const chart=calculateChart({name:birthInput.name.trim().slice(0,100),date,time,location,lat,lng});
+      const context=createJanmaPatroContext(chart);
+      if(!saveJanmaPatroContext(context))throw new Error("birth_profile_storage_unavailable");
+      const refreshed=readPersonalContext();
+      setPersonalContext(refreshed);setBirthInput(birthInputFromContext(refreshed.birthChart));setBirthSuccess(true);
+    }catch(error){
+      setBirthError(error instanceof Error&&error.message==="birth_profile_storage_unavailable"
+        ? l(language,"जन्म विवरण यस ब्राउजरमा सुरक्षित हुन सकेन। स्थानीय भण्डारण अनुमति जाँच्नुहोस्।","Birth details could not be saved in this browser. Check local storage permissions.")
+        : l(language,"व्यक्तिगत समय गणना हुन सकेन। जन्म विवरण र स्थानका निर्देशाङ्क जाँच्नुहोस्।","Could not calculate personalized timing. Check the birth details and coordinates."));
+    }
+  };
+  const changeBirthLocation=(location:string)=>{
+    const place=findJanmaPatroBirthPlace(location);
+    setBirthInput(old=>({...old,location,lat:place?String(place.lat):old.location===location?old.lat:"",lng:place?String(place.lng):old.location===location?old.lng:""}));
+    setBirthSuccess(false);
   };
 
   const [rashifalSummary, setRashifalSummary] = useState("");
@@ -304,7 +355,18 @@ export default function MyTimePage() {
   useEffect(() => { setPageTitle(ne ? "मेरो समय · आफ्नै पात्रो" : "My Time · Aafnai Patro"); }, [ne]);
   useEffect(() => { try { localStorage.setItem("aafnaipatro.mytime.layers.v3", JSON.stringify(observatoryLayers)); } catch {} }, [observatoryLayers]);
   useEffect(() => { const id = window.setInterval(() => setNow(new Date()), 1000); return () => window.clearInterval(id); }, []);
-  useEffect(() => { const sync = () => setPersonalContext(readPersonalContext()); window.addEventListener("storage", sync); window.addEventListener("patro:china-updated", sync as EventListener); return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); }; }, []);
+  useEffect(() => {
+    const sync = () => {
+      const next = readPersonalContext();
+      setPersonalContext(next);
+      setBirthInput(birthInputFromContext(next.birthChart));
+      setBirthError("");
+      setBirthSuccess(false);
+    };
+    window.addEventListener("storage", sync);
+    window.addEventListener("patro:china-updated", sync as EventListener);
+    return () => { window.removeEventListener("storage", sync); window.removeEventListener("patro:china-updated", sync as EventListener); };
+  }, []);
   useEffect(() => { const syncSettings = (event: Event) => { const detail = (event as CustomEvent).detail; setPersonalSettings(detail && typeof detail === "object" ? detail : readMyTimePersonalSettings()); }; window.addEventListener("patro:mytime-settings-updated", syncSettings); window.addEventListener("storage", syncSettings); return () => { window.removeEventListener("patro:mytime-settings-updated", syncSettings); window.removeEventListener("storage", syncSettings); }; }, []);
   useEffect(() => {
     const controller = new AbortController();
@@ -529,6 +591,8 @@ export default function MyTimePage() {
     }).sort((a, b) => b.combinedScore - a.combinedScore || Date.parse(a.start_utc) - Date.parse(b.start_utc));
   }, [snapshot, recommendedMuhurtaWindows, selectedInterestKey, rashifalSignal, activeDashaLord, personalContext.birthChart]);
   const bestTimeWindow = combinedMuhurtaWindows[0] || null;
+  const nextCautionWindow = combinedMuhurtaWindows.filter(window => window.label === "caution" && Date.parse(window.end_utc) > now.getTime()).sort((a,b)=>Date.parse(a.start_utc)-Date.parse(b.start_utc))[0] || null;
+  const personalLuckyNumber = snapshot && personalContext.birthChart?.birth?.date ? calculatePersonalLuckyNumber(personalContext.birthChart.birth.date, snapshot.panchang.tithi_index) : null;
   const interestNames: Record<string,string> = { general: l(language,"सामान्य दिनचर्या","general day"), work: l(language,"काम / व्यवसाय","work / business"), study: l(language,"अध्ययन","study"), travel: l(language,"यात्रा","travel"), prayer: l(language,"पूजा / पर्व","prayer / observances"), meditation: l(language,"ध्यान","meditation"), family: l(language,"परिवार / व्यक्तिगत काम","family / personal plans") };
   const interestLabel = selectedInterests.map(item => interestNames[item] || interestNames.general).join(" · ");
 
@@ -672,12 +736,26 @@ export default function MyTimePage() {
     <section className="mt-panel mt-birth-entry" aria-labelledby="mt-birth-title">
       <div className="mt-panel-head"><div><span className="mt-section-kicker">{l(language,"व्यक्तिगत ज्योतिष","PERSONAL ASTROLOGY")}</span><h2 id="mt-birth-title">{l(language,"जन्म विवरणबाट व्यक्तिगत समय अनुभव मिलाउनुहोस्","Personalize your time experience with birth details")}</h2></div><Moon size={21}/></div>
       <p>{l(language,"तपाईंको जन्म मिति, समय र स्थानबाट विद्यमान ज्योतिष इन्जिनले व्यक्तिगत समय सिफारिसका लागि आवश्यक जन्म-सन्दर्भ निकाल्छ। यहाँ जन्मकुण्डली देखाइँदैन। समय नेपाल मानक समय (UTC+05:45) मा भर्नुहोस्।","Your birth date, time and place feed the existing astrology engine to personalize time recommendations. This section does not display a birth chart. Enter time in Nepal Standard Time (UTC+05:45).")}</p>
+      <div className="mt-birth-connect-row">
+        <span>{l(language,"जन्मपत्रोमा विवरण भरिसक्नुभएको छ?","Already entered your birth details in Janmapatro?")}</span>
+        <a href="/jyotish/china"><Sun size={15}/>{l(language,"जन्मपत्रो जोड्नुहोस्","Connect Janmapatro")}<ArrowUpRight size={14}/></a>
+        {personalContext.birthChart&&<small>{l(language,"सुरक्षित जन्म विवरण स्वतः भरिएको छ।","Saved birth details have been filled automatically.")}</small>}
+      </div>
       <form className="mt-birth-form" onSubmit={saveBirthChart}>
-        <label>{l(language,"जन्म मिति (ईस्वी)","Birth date (AD)")}<input type="date" required value={birthInput.date} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/></label>
-        <label>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}<input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
-        <label>{l(language,"जन्म स्थान","Birthplace")}<input required value={birthInput.location} onChange={e=>setBirthInput(v=>({...v,location:e.target.value}))}/></label>
-        <label>{l(language,"अक्षांश","Latitude")}<input type="number" required min="-90" max="90" step="any" value={birthInput.lat} onChange={e=>setBirthInput(v=>({...v,lat:e.target.value}))}/></label>
-        <label>{l(language,"देशान्तर","Longitude")}<input type="number" required min="-180" max="180" step="any" value={birthInput.lng} onChange={e=>setBirthInput(v=>({...v,lng:e.target.value}))}/></label>
+        <label className="mt-birth-date-field"><span>{l(language,"जन्म मिति (ईस्वी)","Birth date (AD)")}</span><div className="mt-birth-date-controls">
+          <input type="text" required inputMode="numeric" autoComplete="bday" value={birthInput.date} placeholder="YYYY-MM-DD" aria-label={l(language,"जन्म मिति टाइप गर्नुहोस्","Type birth date")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
+          <input type="date" value={isValidBirthDate(birthInput.date)?birthInput.date:""} aria-label={l(language,"पात्रोबाट जन्म मिति छान्नुहोस्","Choose birth date from calendar")} onChange={e=>setBirthInput(v=>({...v,date:e.target.value}))}/>
+        </div><small>{l(language,"YYYY-MM-DD टाइप गर्नुहोस् वा पात्रोबाट छान्नुहोस्।","Type YYYY-MM-DD or choose from the calendar.")}</small></label>
+        <label><span>{l(language,"जन्म समय (नेपाल समय)","Birth time (Nepal time)")}</span><input type="time" required value={birthInput.time} onChange={e=>setBirthInput(v=>({...v,time:e.target.value}))}/></label>
+        <label><span>{l(language,"नाम (ऐच्छिक)","Name (optional)")}</span><input maxLength={100} autoComplete="name" value={birthInput.name} placeholder={l(language,"तपाईंको नाम","Your name")} onChange={e=>setBirthInput(v=>({...v,name:e.target.value}))}/></label>
+        <label><span>{l(language,"जन्मस्थान / सहर","Birthplace / city")}</span><input list="mt-birthplace-options" required maxLength={120} autoComplete="address-level2" value={birthInput.location} placeholder={l(language,"सहर खोज्नुहोस् वा टाइप गर्नुहोस्","Search or type a city")} onChange={e=>changeBirthLocation(e.target.value)}/><datalist id="mt-birthplace-options">{JANMAPATRO_BIRTH_PLACES.map(([name])=><option key={name} value={name}/>)}</datalist></label>
+        <details className="mt-birth-manual-coordinates"><summary>{l(language,"स्थान सूचीमा छैन? निर्देशाङ्क भर्नुहोस्","Location not listed? Enter coordinates manually")}</summary>
+          <div className="mt-birth-coordinate-grid">
+            <label><span>{l(language,"अक्षांश (−६६.५° देखि ६६.५°)","Latitude (−66.5° to 66.5°)")}</span><input type="number" min="-66.5" max="66.5" step="any" value={birthInput.lat} aria-label={l(language,"अक्षांश","Latitude")} onChange={e=>setBirthInput(v=>({...v,lat:e.target.value}))}/></label>
+            <label><span>{l(language,"देशान्तर (−१८०° देखि १८०°)","Longitude (−180° to 180°)")}</span><input type="number" min="-180" max="180" step="any" value={birthInput.lng} aria-label={l(language,"देशान्तर","Longitude")} onChange={e=>setBirthInput(v=>({...v,lng:e.target.value}))}/></label>
+          </div>
+          <small>{l(language,"सूचीबाट स्थान छान्दा निर्देशाङ्क स्वतः भरिन्छ। अन्य स्थानका लागि मात्र निर्देशाङ्क आवश्यक हुन्छ।","Choosing a listed place fills coordinates automatically. Coordinates are only needed for an unlisted place.")}</small>
+        </details>
         <button className="mt-primary" type="submit">{l(language,"व्यक्तिगत समय मिलाउनुहोस्","Personalize my time")}</button>
       </form>
       {birthError && <p role="alert">{birthError}</p>}
@@ -687,10 +765,47 @@ export default function MyTimePage() {
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
       {personalContext.birthChart ? <div className="mt-personal-data"><div><small>{l(language,"जन्म राशि","Natal Moon sign")}</small><strong>{personalContext.birthChart.rashi || "—"}</strong></div><div><small>{l(language,"लग्न","Ascendant")}</small><strong>{personalContext.birthChart.lagna || "—"}</strong></div><div><small>{l(language,"जन्म नक्षत्र","Natal Nakshatra")}</small><strong>{personalContext.birthChart.nakshatra || "—"}{personalContext.birthChart.pada ? ` · ${personalContext.birthChart.pada}` : ""}</strong></div></div> : <p className="mt-personal-muted">{l(language,"अहिलेसम्म यस ब्राउजरमा जन्मपत्रो सन्दर्भ भेटिएन।","No birth-chart context was found in this browser yet.")}</p>}
       {personalContext.birthChart && (personalContext.birthChart.birth || personalContext.birthChart.planets.length > 0 || personalContext.birthChart.dashas.length > 0) && <div className="mt-personal-chart-details">
+        {personalContext.birthChart.birth?.name&&<p><strong>{l(language,"नाम","Name")}:</strong> {personalContext.birthChart.birth.name}</p>}
         {personalContext.birthChart.birth && <p><strong>{l(language,"जन्म विवरण","Birth details")}:</strong> {personalContext.birthChart.birth.date} · {personalContext.birthChart.birth.time || "—"} · {personalContext.birthChart.birth.location || "—"}</p>}
         {personalContext.birthChart.dashas.length > 0 && <p><strong>{l(language,"छानिएको मितिको विम्शोत्तरी महादशा","Vimshottari period for selected date")}:</strong> {personalContext.birthChart.dashas.find(period => Date.parse(period.start) <= Date.parse((snapshot?.date || localDate(preferences.timezone, now)) + "T12:00:00Z") && Date.parse(period.end) > Date.parse((snapshot?.date || localDate(preferences.timezone, now)) + "T12:00:00Z"))?.lord || l(language,"अवधि उपलब्ध छैन","Period unavailable")}</p>}
         {personalContext.birthChart.planets.length > 0 && <div><strong>{l(language,"जन्मकुण्डलीका ग्रहस्थिति","Natal planetary placements")}</strong><div className="mt-personal-planet-list">{personalContext.birthChart.planets.map(planet => <span key={planet.key}>{planet.name}: {planet.sign || "—"}{planet.house ? " · " + l(language,"भाव","House") + " " + planet.house : ""}</span>)}</div></div>}
       </div>}
+      {snapshot && personalContext.birthChart && <section className="mt-personal-guidance" aria-labelledby="mt-personal-guidance-title">
+        <div className="mt-personal-guidance-heading"><div><small>{l(language,"आजको व्यक्तिगत समय म्याट्रिक्स","DAILY PERSONAL TIMING MATRIX")}</small><h3 id="mt-personal-guidance-title">{l(language,"ताराबलम्, चन्द्रबलम् र समयका झ्याल","Tarabalam, Chandrabalam and timing windows")}</h3></div><span>{l(language,"परम्परागत सङ्केत","Traditional indications")}</span></div>
+        <div className="mt-personal-guidance-grid">
+          <article>
+            <small>{l(language,"व्यक्तिगत उत्तम समय","BEST PERSONAL WINDOW")}</small>
+            <strong>{bestTimeWindow?bestTimeWindow.combinedScore+"/100":"—"}</strong>
+            <span>{bestTimeWindow?formatInstant(bestTimeWindow.start_utc,preferences.timezone,language)+"–"+formatInstant(bestTimeWindow.end_utc,preferences.timezone,language):l(language,"सौर घटना उपलब्ध भएपछि देखिनेछ","Available when solar events are available")}</span>
+            <p>{bestTimeWindow?l(language,"चयन गरिएको रुचि: "+interestLabel,"Selected interests: "+interestLabel):l(language,"यस मितिका लागि पर्याप्त समय-सन्दर्भ उपलब्ध छैन।","There is not enough timing context for this date.")}</p>
+            {bestTimeWindow&&<em>{bestTimeWindow.personalizationLevel==="personalized"?l(language,"जन्मपत्रो र मिल्ने व्यक्तिगत सङ्केत जोडिएका छन्।","Birth-chart and matching personal signals are applied."):bestTimeWindow.personalizationLevel==="partial"?l(language,"केही व्यक्तिगत सङ्केत मात्र उपलब्ध छन्।","Only some personal signals are available."):l(language,"यो सामान्य समय-सङ्केत हो।","This is a general timing indication.")}</em>}
+          </article>
+          <article>
+            <small>{l(language,"ताराबलम् · दैनिक सङ्केत","TARABALAM · DAILY SIGNAL")}</small>
+            <strong>{taraIndex>=0?(ne?TARA_NE[taraIndex]:TARA_EN[taraIndex]):"—"}</strong>
+            <p>{taraIndex>=0?(ne?TARA_GUIDANCE_NE[taraIndex]:TARA_GUIDANCE_EN[taraIndex]):l(language,"जन्म नक्षत्र उपलब्ध भएपछि देखाइनेछ।","Available when the natal Nakshatra is known.")}</p>
+            <span>{taraCount!==null?l(language,"जन्म नक्षत्रबाट "+taraCount+"औँ तारा","Tara "+taraCount+" from natal Nakshatra"):l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the natal Nakshatra")}</span>
+          </article>
+          <article className={chandraHouse===8?"is-caution":""}>
+            <small>{l(language,"चन्द्रबलम् · गोचर","CHANDRABALAM · TRANSIT")}</small>
+            <strong>{chandraHouse===8?l(language,"अष्टम चन्द्र","Ashtama Chandra"):chandraHouse!==null?l(language,"चन्द्रमा "+chandraHouse+"औँ भावमा","Moon in house "+chandraHouse):"—"}</strong>
+            <p>{chandraHouse===8?l(language,"परम्परागत ज्योतिषमा थप सावधानीको सङ्केत मानिन्छ; हतारमा निष्कर्ष ननिकाल्नुहोस्।","Traditionally treated as a caution signal; avoid jumping to conclusions."):chandraScore===100?l(language,"परम्परागत रूपमा सहयोगी चन्द्रबल।","Traditionally supportive Chandrabalam."):chandraScore===0?l(language,"परम्परागत चन्द्रबल सावधानी।","Traditional Chandrabalam caution."):l(language,"गोचर र जन्म राशिबाट निकालिएको सन्दर्भ।","Context derived from transit and natal Moon signs.")}</p>
+            {chandraHouse===8&&<span className="mt-personal-warning" role="status">{l(language,"अष्टम चन्द्र सक्रिय · सचेत रहनुहोस्","Ashtama Chandra active · use care")}</span>}
+          </article>
+          <article>
+            <small>{l(language,"आजको शुभ अङ्क","DAILY LUCKY NUMBER")}</small>
+            <strong>{personalLuckyNumber??"—"}</strong>
+            <p>{l(language,"जन्ममितिको अङ्क-मूल र आजको तिथिबाट निकालिएको परम्परागत सूचक।","Traditional reference derived from birth-date digit root and today's Tithi.")}</p>
+            <span>{l(language,"यो वास्तविक परिणामको ग्यारेन्टी होइन।","This is not a guarantee of real-world outcomes.")}</span>
+          </article>
+          {nextCautionWindow&&<article className="is-caution">
+            <small>{l(language,"अर्को सचेत रहने समय","NEXT CAUTION WINDOW")}</small>
+            <strong>{formatInstant(nextCautionWindow.start_utc,preferences.timezone,language)+"–"+formatInstant(nextCautionWindow.end_utc,preferences.timezone,language)}</strong>
+            <p>{l(language,"उपलब्ध पञ्चाङ्ग, होरा र व्यक्तिगत सङ्केतको संयोजनमा सावधानी स्कोर आएको समय।","A caution-scored interval from available Panchang, Hora and personal signals.")}</p>
+            <span>{nextCautionWindow.combinedScore+"/100 · "+l(language,"परम्परागत सन्दर्भ","traditional reference")}</span>
+          </article>}
+        </div>
+      </section>}
       {snapshot && personalContext.birthChart && <div className="mt-balance-grid"><div><small>{l(language,"ताराबल","Tarabalam")}</small><strong>{taraIndex >= 0 ? (ne ? TARA_NE[taraIndex] : TARA_EN[taraIndex]) : "—"}</strong><span>{taraCount !== null ? l(language,`जन्म नक्षत्रबाट ${taraCount}औँ ताराको गणना`,`Tara count ${taraCount} from natal Nakshatra`) : l(language,"नक्षत्र नाम मिलाउन सकिएन","Could not match the saved Nakshatra name")}</span><b>{taraIndex >= 0 ? `${TARA_SCORES[taraIndex]} / 100` : ""}</b></div><div><small>{l(language,"चन्द्रबल","Chandrabalam")}</small><strong>{chandraHouse !== null ? l(language,`चन्द्रमा ${chandraHouse}औँ भावमा`,`Moon is in house ${chandraHouse}`) : "—"}</strong><span>{chandraScore === 100 ? l(language,"परम्परागत रूपमा अनुकूल","Traditionally supportive") : chandraScore === 0 ? l(language,"परम्परागत सावधानी","Traditional caution") : chandraScore === 50 ? l(language,"मिश्रित संकेत","Mixed indication") : l(language,"जन्म राशि आवश्यक","Natal Moon sign needed")}</span><b>{chandraScore !== null ? `${chandraScore} / 100` : ""}</b></div></div>}
       {personalContext.effectiveSign && <div className="mt-rashifal-context"><div><small>{l(language,"जोडिएको राशिफल","Connected Rashifal")}</small><strong>{declaredSign ? l(language,declaredSign.ne,declaredSign.en) : personalContext.effectiveSign}</strong></div>{rashifalLoading ? <span>{l(language,"राशिफल लोड हुँदैछ…","Loading Rashifal…")}</span> : rashifalSummary ? <p>{rashifalSummary}</p> : <span>{l(language,"आजको राशिफल सारांश अहिले उपलब्ध छैन।","Today's Rashifal summary is not available right now.")}</span>}</div>}
       </div>
