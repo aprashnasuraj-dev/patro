@@ -55,7 +55,15 @@
     }
   ],
   "notes": [
-    "Draft committed; hero image pending.",
-    "Library of Congress source was opened; other source URLs need final direct verification before the batch is marked complete."
+    "Directly opened and used the Library of Congress article and American Chemical Society Reactions page, and reviewed the ACS Chemical Biology article record and abstract.",
+    "The American Academy of Ophthalmology URL remains listed for practical eye-safety advice but was not directly retrieved in this pass; replace or verify before final batch validation.",
+    "APA 7 reference list added for human-readable research documentation. Article source records retain numbered inline citation mapping."
+  ],
+  "apa_references": [
+    "American Academy of Ophthalmology. (n.d.). No more tears: Here's how to chop onions without crying. https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
+    "American Chemical Society. (2016, June 7). Why do onions make you cry? Reactions. https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html",
+    "Library of Congress. (2025, May 27). Why does chopping an onion make you cry? Everyday Mysteries. https://www.loc.gov/everyday-mysteries/categories/food-and-nutrition/item/why-does-chopping-an-onion-make-you-cry/",
+    "Silvaroli, J. A., Pleshinger, M. J., Banerjee, S., Kiser, P. D., & Golczak, M. (2017). Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa. ACS Chemical Biology, 12(9), 2296–2304. https://doi.org/10.1021/acschembio.7b00336",
+    "Imai, S., Tsuge, N., Tomotake, M., Nagatome, Y., Sawada, H., Nagata, T., & Kumagai, H. (2002). Plant biochemistry: An onion enzyme that makes the eyes water. Nature, 419, 685. https://doi.org/10.1038/419685a"
   ]
 }
