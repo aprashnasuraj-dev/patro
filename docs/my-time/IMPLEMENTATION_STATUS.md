@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-10-20  
 **Overall:** Foundation exploration in progress | आधारभूत अध्ययन जारी  
-**Feature branch:** `feature/my-time-v1`  
+**Feature branch:** `feature/mytime-v1`  
 **Rollout:** Not enabled; no production behavior changed.
 
 ## At a glance | संक्षिप्त स्थिति
@@ -10,7 +10,7 @@
 | Workstream / काम | Status / अवस्था | Notes / टिप्पणी |
 |---|---|---|
 | Repository exploration / कोडबेस अध्ययन | In progress / जारी | React + TypeScript + Vite; Cloudflare Worker; existing astronomical Tithi utility found |
-| Isolated branch / अलग शाखा | Complete / पूरा | `feature/my-time-v1` created from `main` |
+| Isolated branch / अलग शाखा | Complete / पूरा | `feature/mytime-v1` created from `main` |
 | Foundation documentation / आधारभूत दस्तावेज | In review / समीक्षामा | This status page and architecture guardrails are proposed |
 | Panchang formula verification / पञ्चाङ्ग सूत्र प्रमाणीकरण | Not started / सुरु नभएको | Must reconcile exact source formulas and reference fixtures |
 | Edge API and cache / एज API तथा क्यास | Not started / सुरु नभएको | No Worker route or binding changes yet |
@@ -23,7 +23,7 @@
 - The existing application is React 19 + TypeScript + Vite, with a custom SPA router.
 - Cloudflare Worker deployment already uses `nodejs_compat`, static assets, and D1.
 - `astronomy-engine` is already installed and used by `worker/tithi.ts`.
-- `/time-machine` is an existing historical archive route and will remain unchanged. My Time is planned for the new `/my-time` route.
+- `/time-machine` is an existing historical archive route and will remain unchanged. My Time is planned for the new `/mytime` route.
 - The repository has existing type-check, test, build, release, and Cloudflare validation scripts.
 
 ## Next milestones | आगामी चरण
@@ -60,3 +60,11 @@ The requirements include Panchang essentials, Choghadiya, Rahu Kaal/Yamaganda/Gu
 **New release blocker:** upstream Swiss Ephemeris has an AGPL/professional dual-license model. The selected WASM package must be reviewed for both upstream and wrapper licenses before use in production. See [official licensing details](https://www.astro.com/swisseph/swephinfo_e.htm). Cloudflare supports precompiled WebAssembly modules, but bundle/startup/CPU characteristics must be measured; see [Cloudflare Workers Wasm docs](https://developers.cloudflare.com/workers/runtime-apis/webassembly/).
 
 No functional code has been merged or deployed yet. Next work is formula/reference-fixture design and licensing/package verification before Phase 1 implementation.
+
+
+## Product-owner scope confirmation (2026-10-20)
+
+- Architecture is one integrated feature and one canonical page at `/mytime`; not a separate tool service or Worker.
+- Phase 1 must dispatch through `worker/optimized-entry.ts` and reuse current astronomy, Tithi, D1/static datasets, and existing profile-related sources where contracts support it. No KV binding is assumed present.
+- Phase 2 navigation order is explicit: tools list; mobile home menu immediately after JanmaPatro; desktop bottom section immediately after “आजको नेपाली मिति”. Preserve `/time-machine`.
+- Phase 3 must connect declared birth-chart/Rashifal context and the rest of the PDF personalization signals with clear consent, transparent rules, and privacy-safe cache boundaries.
