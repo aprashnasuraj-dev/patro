@@ -1,0 +1,153 @@
+{
+  "id": "mm-0163",
+  "slug": "how-bees-make-honey",
+  "question": "How bees make honey",
+  "category": "Animals & Pets",
+  "canonical_url": "https://aafnaipatro.com/how-bees-make-honey/",
+  "title_suggestion": "How Bees Make Honey? Explained With Sources",
+  "h1": "How Bees Make Honey?",
+  "keywords": [
+    "bees",
+    "honey",
+    "animals-pets"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "title": "How Do Bees Make Honey? (It’s Not Just Bee Barf)",
+      "publisher": "NC State News",
+      "url": "https://news.ncsu.edu/2013/06/how-do-bees-make-honey/",
+      "published_at": "2013-06-04",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened university extension, government research or institutional educational source"
+    },
+    {
+      "n": 2,
+      "title": "The Complex Life of the Honey Bee",
+      "publisher": "Purdue University Extension",
+      "url": "https://ag.purdue.edu/department/extension/ppp/resources/ppp-publications/mobile/ppp-116-pol-91.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened university extension, government research or institutional educational source"
+    },
+    {
+      "n": 3,
+      "title": "All About Honey",
+      "publisher": "Clemson Cooperative Extension, Home & Garden Information Center",
+      "url": "https://ucfoodsafety.ucdavis.edu/sites/g/files/dgvnsk7366/files/inline-files/279185.pdf",
+      "published_at": "2017-09",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened university extension, government research or institutional educational source"
+    },
+    {
+      "n": 4,
+      "title": "Learning About Beekeeping, 4-H-1057-W",
+      "publisher": "Purdue University Extension",
+      "url": "https://www.extension.purdue.edu/extmedia/4H/4-H-1057-W.pdf",
+      "published_at": "2022",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened university extension, government research or institutional educational source"
+    },
+    {
+      "n": 5,
+      "title": "How honey is processed",
+      "publisher": "USDA Agricultural Research Service — McHugh, Food Technology 71(6)",
+      "url": "https://www.ars.usda.gov/research/publications/publication/?seqNo115=346562",
+      "published_at": "2017-06-01",
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened university extension, government research or institutional educational source"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Starting material",
+      "evidence": "Honey bees collect floral nectar, which varies by plant and generally contains far more water than ripe honey.",
+      "sources": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "claim": "Enzymatic changes",
+      "evidence": "Invertase breaks sucrose into glucose and fructose; glucose oxidase also contributes to honey's transformation chemistry.",
+      "sources": [
+        1,
+        2
+      ]
+    },
+    {
+      "claim": "Water removal",
+      "evidence": "Workers deposit nectar into wax cells and fan air through the hive; evaporation substantially concentrates the sugars.",
+      "sources": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "claim": "Ripe honey storage",
+      "evidence": "Mature honey has low available water and is often sealed with a wax cap; moisture thresholds vary across definitions and standards.",
+      "sources": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "claim": "Harvesting is separate",
+      "evidence": "Commercial extraction and later handling are beekeeper steps after bees have stored and capped ripe honey.",
+      "sources": [
+        3,
+        5
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "Show the colony as a coordinated processing system, not a lone bee performing every step.",
+    "Explain the difference between the bee's honey stomach (transport crop) and its digestive stomach.",
+    "Separate enzymatic sugar changes from physical evaporation; both matter.",
+    "Treat moisture percentages as ranges affected by nectar and conditions, not one magic number.",
+    "Distinguish natural ripening from beekeeper extraction and later food processing."
+  ],
+  "image_research": {
+    "license": "Original programmatic hero and three original SVG diagrams; no third-party assets used.",
+    "images": [
+      {
+        "file": "how-bees-make-honey-hero.png",
+        "role": "hero",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original programmatic illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-bees-make-honey-diagram-01.svg",
+        "role": "process flow",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-bees-make-honey-diagram-02.svg",
+        "role": "enzyme and moisture diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-bees-make-honey-diagram-03.svg",
+        "role": "honeycomb ripening and capping diagram",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      }
+    ]
+  }
+}
