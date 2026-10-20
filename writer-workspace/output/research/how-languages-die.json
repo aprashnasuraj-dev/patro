@@ -1,0 +1,54 @@
+{
+  "slug": "how-languages-die",
+  "research_question": "What authoritative evidence explains how languages die?",
+  "sources": [
+    {
+      "n": 1,
+      "title": "Towards World Atlas of Languages",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/articles/towards-world-atlas-languages",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "International Decade of Indigenous Languages 2022–2032",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/decades/indigenous-languages",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Endangered Languages Project",
+      "publisher": "Endangered Languages Project",
+      "url": "https://www.endangeredlanguages.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Language Vitality and Endangerment",
+      "publisher": "UNESCO",
+      "url": "https://unesdoc.unesco.org/ark:/48223/pf0000183699",
+      "published_at": null,
+      "retrieved_at": "2026-10-20",
+      "reliability": "Official or reference source; confirm exact details against original publication",
+      "notes": [
+        "Supports background and claims cited in the article."
+      ]
+    }
+  ]
+}
