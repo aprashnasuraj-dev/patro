@@ -101,7 +101,8 @@
       "publisher": "Smithsonian Institution",
       "url": "https://www.si.edu/spotlight/ancient-egypt/pyramid",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Smithsonian Institution. (n.d.). The Egyptian Pyramid. https://www.si.edu/spotlight/ancient-egypt/pyramid"
     },
     {
       "n": 2,
@@ -109,7 +110,8 @@
       "publisher": "Ancient Egypt Research Associates",
       "url": "https://aeraweb.org/",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Ancient Egypt Research Associates. (n.d.). Who Built the Pyramids?. https://aeraweb.org/"
     },
     {
       "n": 3,
@@ -117,7 +119,8 @@
       "publisher": "Smithsonian Magazine",
       "url": "https://www.smithsonianmag.com/science-nature/monumental-shift-160227897/",
       "published_at": "2007-01-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Smithsonian Magazine. (n.d.). Monumental Shift. https://www.smithsonianmag.com/science-nature/monumental-shift-160227897/"
     },
     {
       "n": 4,
@@ -125,7 +128,8 @@
       "publisher": "Smithsonian Magazine",
       "url": "https://www.smithsonianmag.com/travel/ponder-the-pyramids-of-giza-11138893/",
       "published_at": "2008-01-01",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Smithsonian Magazine. (n.d.). Ponder the Pyramids of Giza. https://www.smithsonianmag.com/travel/ponder-the-pyramids-of-giza-11138893/"
     },
     {
       "n": 5,
@@ -133,7 +137,8 @@
       "publisher": "Smithsonian Institution",
       "url": "https://www.si.edu/spotlight/ancient-egypt/pyramid",
       "published_at": "2026-10-20",
-      "retrieved_at": "2026-10-20"
+      "retrieved_at": "2026-10-20",
+      "apa": "Smithsonian Institution. (n.d.). The Egyptian Pyramid. https://www.si.edu/spotlight/ancient-egypt/pyramid"
     }
   ],
   "word_count": 1253,
