@@ -133,9 +133,10 @@ function json(body: unknown, status = 200): Response {
 }
 
 /** Scoped handler imported by the existing main Worker; it is not a separate Worker entry point. */
-export async function myTimeResponse(request: Request): Promise<Response | null> {
+export async function myTimeResponse(request: Request, env: Record<string, unknown> = {}): Promise<Response | null> {
   const url = new URL(request.url);
   if (url.pathname !== "/api/v1/mytime/today") return null;
+  if (env.MY_TIME_ENABLED !== true && env.MY_TIME_ENABLED !== "true") return json({ ok: false, error: "feature_disabled" }, 404);
   if (request.method !== "GET" && request.method !== "HEAD") {
     return json({ ok: false, error: "method_not_allowed" }, 405);
   }
