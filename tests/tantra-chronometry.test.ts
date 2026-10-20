@@ -19,7 +19,7 @@ describe("Tantra Vidya chronometry", () => {
     expect(yoginiForTithi(9).name).toBe("Mangala");
     expect(yoginiForTithi(15).name).toBe("Siddha");
     expect(computeTantraTime(16, at(0), at(0), at(720), at(1440)).yogini.name).toBe("Mangala");
-    expect(computeTantraTime(24, at(0), at(0), at(720), at(1440)).yogini.name).toBe("Sankata");
+    expect(computeTantraTime(23, at(0), at(0), at(720), at(1440)).yogini.name).toBe("Sankata");
     expect(() => yoginiForTithi(16)).toThrow("invalid_tithi_within_paksha");
   });
 
