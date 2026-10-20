@@ -1,0 +1,69 @@
+{
+  "slug": "how-habits-form",
+  "research_question": "How do repetition, context cues and automaticity contribute to habit formation, and what limits apply to popular claims about habit timelines?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/ejsp.674",
+      "title": "How Are Habits Formed: Modelling Habit Formation in the Real World",
+      "publisher": "European Journal of Social Psychology / Wiley",
+      "reliability": "High: peer-reviewed journal article",
+      "notes": [
+        "A 12-week study followed 96 volunteers repeating a chosen daily behaviour in the same context.",
+        "Automaticity generally increased over time but varied across behaviours and participants.",
+        "The results do not support a universal timeline for every habit."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20658824/",
+      "title": "The Automatic Component of Habit in Health Behavior: Habit as Cue-Contingent Automaticity",
+      "publisher": "Health Psychology / PubMed",
+      "reliability": "High: peer-reviewed article indexed in PubMed",
+      "notes": [
+        "Three studies investigated cues and automaticity in health-related habits.",
+        "The research treats habits as learned cue-response relationships, not just high frequency.",
+        "A specified situational cue helped increase automaticity in a flossing behaviour."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26361052/",
+      "title": "Psychology of Habit",
+      "publisher": "Annual Review of Psychology / PubMed",
+      "reliability": "High: peer-reviewed review in Annual Review of Psychology",
+      "notes": [
+        "The review describes cognitive, motivational and neurobiological aspects of habits.",
+        "Habits and goal-directed decision-making can guide actions together.",
+        "Repeated responses in recurring contexts are central to habit development."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 4,
+      "url": "https://www.nia.nih.gov/research/dbsr/workshops/expert-meeting-healthy-habits-habit-formation-and-habit-change",
+      "title": "Expert Meeting on Healthy Habits: Habit Formation and Habit Change",
+      "publisher": "National Institute on Aging",
+      "reliability": "High: U.S. federal research institute meeting resource",
+      "notes": [
+        "The expert meeting considered affect, reinforcement learning, motivation, memory, goals and context.",
+        "Habit formation and habit change are multidimensional, rather than explained by a single motivational formula."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 5,
+      "url": "https://repository.essex.ac.uk/1672/",
+      "title": "The Automatic Component of Habit in Health Behavior",
+      "publisher": "University of Essex Research Repository",
+      "reliability": "High: university research repository hosting peer-reviewed article metadata",
+      "notes": [
+        "The repository confirms bibliographic information for Orbell and Verplanken's 2010 study.",
+        "The study frames habit as cue-contingent automaticity and reports three demonstrations of cue importance."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
