@@ -570,7 +570,7 @@ export default function MyTimePage() {
         hasNatalChart: Boolean(personalContext.birthChart)
       }));
       const combinedScore = Math.round(evaluations.reduce((sum, item) => sum + item.score, 0) / evaluations.length);
-      const personalizationLevel = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
+      const personalizationLevel: "personalized" | "partial" | "general" = evaluations.every(item => item.confidence === "personalized") ? "personalized" : evaluations.some(item => item.confidence !== "general") ? "partial" : "general";
       const componentKeys = [...new Set(evaluations.flatMap(item => item.components.map(component => component.key)))];
       const aggregateComponents = componentKeys.map(key => {
         const present = evaluations.map(item => item.components.find(component => component.key === key)).filter((item): item is NonNullable<typeof item> => Boolean(item));
