@@ -771,7 +771,7 @@ export default function MyTimePage() {
         tatwa={tantraTime?.activeTatwa?.name ?? null} nitya={tantraTime?.nityaDevi?.name ?? null}
         windows={combinedMuhurtaWindows.map(w => ({ key:w.key, start:w.start_utc, end:w.end_utc, score:w.combinedScore, label:w.label,
           reasons:w.personalEvaluation.reasons, cautions:w.personalEvaluation.cautions, confidence:w.personalEvaluation.confidence }))}
-        onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />}
+        onEdit={() => document.getElementById("mt-birth-title")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" })} />
     </section>
     <section className="mt-personal">
       <div><span className="mt-section-kicker">{l(language,"व्यक्तिगत सन्दर्भ","PERSONAL CONTEXT")}</span><h2>{l(language,"तपाईंको राशिफल र जन्मपत्रोसँग जोडिएको समय","Time connected to your horoscope and birth chart")}</h2><p>{l(language,"My Time ले यस ब्राउजरमा तपाईंले पहिले नै सुरक्षित गर्नुभएको जन्मपत्रो र राशिफल प्राथमिकता पढ्छ। जन्म विवरण यो गणनाका लागि अर्को सर्भरमा पठाइँदैन।","My Time reads the birth-chart context and Rashifal preference already saved in this browser. Birth details are not sent to another server for these calculations.")}</p>
