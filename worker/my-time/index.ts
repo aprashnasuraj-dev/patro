@@ -4,7 +4,7 @@ import { panchangAt } from "../../src/patro-tools/core/astro";
 import { KARANA_NAMES, NAKSHATRAS, RASHIS, YOGAS, tithiName } from "../../src/patro-tools/core/names";
 
 const DEG = Math.PI / 180;
-const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya"];;
+const TITHI_EN = ["Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Purnima","Pratipada","Dwitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dwadashi","Trayodashi","Chaturdashi","Amavasya";
 
 export interface MyTimeInput {
   date?: string;
@@ -112,7 +112,9 @@ export function calculateMyTimeSnapshot(input: MyTimeInput, now = new Date()) {
       yoga_name_ne: YOGAS[panchang.yoga],
       karana_index: panchang.karana,
       karana_name_ne: KARANA_NAMES[panchang.karana],
+      moon_rashi_index: panchang.moonRashi,
       moon_rashi_ne: RASHIS[panchang.moonRashi],
+      sun_rashi_index: panchang.sunRashi,
       sun_rashi_ne: RASHIS[panchang.sunRashi],
       sunrise_utc: daily?.sunrise.toISOString() ?? null,
       sunset_utc: daily?.sunset.toISOString() ?? null,
