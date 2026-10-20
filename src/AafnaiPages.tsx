@@ -86,7 +86,8 @@ const toolGroups:{name:string;items:Tool[]}[]=[
   {icon:"त",title:"तिथि रिमाइन्डर",desc:"तिथि, श्राद्ध र जन्मदिनका आगामी मिति",href:"/tools/tithi-reminder"},
   {icon:"⏳",title:"समययन्त्र",desc:"नेपालको ऐतिहासिक समयरेखा अन्वेषण",href:"/time-machine"},
   {icon:"इत",title:"आज इतिहासमा",desc:"चयन गरिएको मितिका ऐतिहासिक घटना",href:"/on-this-day"},
-  {icon:"घ",title:"विश्व घडी",desc:"नेपालसहित विश्वका शहरहरूको समय",href:"/tools/clock"}
+  {icon:"घ",title:"विश्व घडी",desc:"नेपालसहित विश्वका शहरहरूको समय",href:"/tools/clock"},
+  {icon:"◉",title:"मेरो समय · My Time",desc:"स्थानीय समय, पञ्चाङ्ग, आकाश र व्यक्तिगत समय सन्दर्भ",href:"/mytime",badge:"नयाँ"}
  ]},
  {name:"भाषा र लेखन",items:[
   {icon:"क",title:"नेपाली टाइपिङ",desc:"रोमन अक्षरबाट नेपाली युनिकोड टाइपिङ",href:"/tools/nepali-typing"},

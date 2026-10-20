@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { CalendarDays, CloudSun, Compass, Home, Languages, Menu, Moon, Radio, Search, Settings, Star, Sun, Tv, X } from "lucide-react";
+import { CalendarDays, CloudSun, Compass, Globe2, Home, Languages, Menu, Moon, Radio, Search, Settings, Star, Sun, Tv, X } from "lucide-react";
 import { GoogleAuthButton } from "../auth/GoogleAuthButton";
 
 const LINKS = [
@@ -8,6 +8,7 @@ const LINKS = [
   ["/convert", "मिति रूपान्तरण", "Date converter", Compass],
   ["/tools", "सबै उपकरण", "All tools", Menu],
   ["/jyotish/china", "जन्मपत्रो / ज्योतिष", "Birth chart", Sun],
+  ["/mytime", "मेरो समय", "My Time", Globe2],
   ["/tools/astro", "खगोलीय पात्रो", "Astronomy calendar", Moon],
   ["/samudaya", "समुदाय पात्रो", "Community calendars", CalendarDays],
   ["/on-this-day", "आज इतिहासमा", "On this day", Compass],

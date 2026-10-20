@@ -11,6 +11,7 @@ export const ITEMS:LaunchItem[]=[
  {href:"/on-this-day",ne:"आज इतिहासमा",en:"On This Day",group:"इतिहास · History",keywords:"on this day events history आज इतिहास",mark:"◉"},
  {href:"/rashifal",ne:"राशिफल",en:"Horoscope",group:"ज्योतिष · Astrology",keywords:"rashifal horoscope rashi राशिफल",mark:"☾"},
  {href:"/janmapatro",ne:"जन्मपत्रो",en:"Birth chart",group:"ज्योतिष · Astrology",keywords:"kundali janma patro birth chart ज्योतिष जन्मपत्रो",mark:"✦"},
+ {href:"/mytime",ne:"मेरो समय",en:"My Time",group:"समय · Time",keywords:"my time temporal dashboard time zone local solar time panchang muhurta मेरो समय समय क्षेत्र पञ्चाङ्ग",mark:"◉"},
  {href:"/janmapatro/milan.html",ne:"गुण मिलान",en:"Matchmaking",group:"ज्योतिष · Astrology",keywords:"matchmaking guna विवाह मिलान",mark:"♡"},
  {href:"/tools/astro",ne:"खगोलीय पात्रो",en:"Astronomy calendar",group:"खगोल · Astronomy",keywords:"astronomy moon nasa tithi ग्रह चन्द्र खगोल",mark:"◐"},
  {href:"/samachar",ne:"समाचार",en:"Samachar · News",group:"मिडिया · Media",keywords:"news samachar समाचार headlines",mark:"न्यू"},

@@ -47,6 +47,7 @@ const EXACT:Record<string,SeoMeta>={
  "/fm":{title:"नेपाली FM / रेडियो",description:"नेपाल र विश्वका उपलब्ध FM तथा internet radio stations खोज्नुहोस् र चलाउनुहोस्।"},
  "/tv":{title:"Live TV Explorer",description:"देश, भाषा र category अनुसार playable public live TV channels खोज्नुहोस् र हेर्नुहोस्।"},
  "/time-machine":{title:"नेपाल Time Machine",description:"वर्ष अनुसार नेपाल र विश्व इतिहासका उल्लेखनीय क्षणहरू immersive timeline मा अन्वेषण गर्नुहोस्।"},
+ "/mytime":{title:"मेरो समय · My Time",description:"स्थानीय समय, पञ्चाङ्ग, आकाशीय घटना र व्यक्तिगत समय सन्दर्भ एउटै ड्यासबोर्डमा।"},
  "/on-this-day":{title:"आज इतिहासमा · On This Day",description:"चयन गरिएको calendar day सँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू अन्वेषण गर्नुहोस्।"},
  "/samudaya":{title:"समुदाय पात्रो · Community Calendars",description:"नेपाल संवत्, ल्होसार, थारु, मिथिला, किरात, हिजरी र समुदाय चक्र एउटै suite मा।"},
  "/nepal-sambat/mandala":{title:"नेपाल संवत् मण्डल · Nepal Sambat",description:"नेपाल संवत् मिति, तिथि, observances र festival context अन्वेषण गर्नुहोस्।"},

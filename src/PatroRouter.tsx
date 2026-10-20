@@ -32,6 +32,7 @@ const CorrectionsPage=lazy(()=>import("./SeoAuthorityPages").then(m=>({default:m
 const PatroToolsShell=lazy(()=>import("./patro-tools-integration/PatroToolsShell").then(m=>({default:m.PatroToolsShell})));
 const CommunityHub=lazy(()=>import("./community/CommunityHub").then(m=>({default:m.CommunityHub})));
 const CommunityPreferences=lazy(()=>import("./community/CommunityPreferences").then(m=>({default:m.CommunityPreferences})));
+const MyTimePage=lazy(()=>import("./features/my-time/MyTimePage"));
 const RashifalExperience=lazy(()=>import("./rashifal/RashifalExperience").then(m=>({default:m.RashifalExperience})));
 
 
@@ -92,7 +93,7 @@ const LEGACY_REDIRECTS:Record<string,string>={
  "/jyotish/janma-patro":"/jyotish/china",
  "/nepal-sambat":"/nepal-sambat/mandala"
 };
-const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
+const EXACT=new Set(["/janmadin","/","/today","/methodology","/corrections","/samudaya","/samudaya/chakra","/nepal-sambat/mandala","/settings/community","/tools","/tools/astro","/mytime","/me","/convert","/rashifal","/samachar","/fm","/tv","/time-machine","/on-this-day","/janmapatro","/janmapatro/milan.html","/jyotish/china","/jyotish/matchmaking","/privacy","/terms","/about","/sources","/contact","/developers","/offline",...Object.keys(LEGACY_REDIRECTS)]);
 function clean(path:string){return path.replace(/\/+$/,"")||"/"}
 function isAppPath(path:string){const p=clean(path);if(STANDALONE_COMMUNITY_ROUTES.has(p))return false;return p==="/guides"||p.startsWith("/guides/")||EXACT.has(p)||CALENDAR_MONTH_ROUTE.test(p)||HISTORY_DAY_ROUTE.test(p)||COMMUNITY_SUITE_ROUTE.test(p)||p.startsWith(DATE_ROUTE_PREFIX)||p.startsWith("/me/")||p.startsWith("/tools/")||p.startsWith("/jyotish/")||p.startsWith("/janmapatro")||p.startsWith("/samudaya/")||p.startsWith("/nepal-sambat/")||p===DICTIONARY_ROUTE||p.startsWith(DICTIONARY_ROUTE+"/")}
 function currentPath(){return clean(window.location.pathname)}
@@ -115,6 +116,7 @@ export function PatroRouter(){
    if(path==="/settings/community")return <CommunityPreferences/>;
    const cal=path.match(/^\/calendar\/(\d{4})\/(\d{1,2})$/);if(cal){const year=Number(cal[1]),month=Number(cal[2]);if(year>=1883&&year<=2093&&month>=1&&month<=12)return <ReferenceHomePage calendarYear={year} calendarMonth={month}/>;return <NotFoundPage/>;}
    const date=path.startsWith(DATE_ROUTE_PREFIX)?path.match(/^\/date\/(\d{4}-\d{2}-\d{2})$/):null;if(date)return <DateDetailPage date={date[1]}/>;
+   if(path==="/mytime")return <MyTimePage/>;
    if(path==="/tools")return <ToolsPage/>;
    if(path==="/janmadin")return <BirthdayPage/>;
    if(path==="/tools/janmadin-akhbar"&&new URLSearchParams(location.search).get("birthday")==="1")return <><PatroToolsShell slug="janmadin-akhbar"/><BirthdayPage/></>;

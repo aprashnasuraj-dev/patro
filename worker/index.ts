@@ -64,6 +64,7 @@ const EDGE_SEO_EXACT: Record<string, EdgeSeoMeta> = {
   "/tv": { title: "Live TV · Aafnai Patro", description: "देश, भाषा र विषय अनुसार उपलब्ध free live TV channels।" },
   "/samachar": { title: "समाचार · Samachar · Aafnai Patro", description: "प्रमुख नेपाली स्रोतहरूबाट वर्गीकृत समाचार र source links।" },
   "/time-machine": { title: "नेपाल Time Machine · Aafnai Patro", description: "नेपालको इतिहास, समयरेखा र मिति-आधारित घटनाहरू अन्वेषण गर्नुहोस्।" },
+  "/mytime": { title: "मेरो समय · My Time · Aafnai Patro", description: "स्थानीय समय, पञ्चाङ्ग, आकाशीय घटनाहरू र व्यक्तिगत समय सन्दर्भ एउटै ड्यासबोर्डमा।" },
   "/on-this-day": { title: "आज इतिहासमा · On This Day · Aafnai Patro", description: "आजको मितिसँग सम्बन्धित ऐतिहासिक घटनाहरू र स्रोतहरू।" },
   "/tools": { title: "नेपाली Utility Tools · Aafnai Patro", description: "मिति रूपान्तरण, नेपाली typing, Preeti/Unicode, तिथि, QR, कर र अन्य utilities।" },
   "/convert": { title: "AD ↔ BS Date Converter · Aafnai Patro", description: "Gregorian AD र Bikram Sambat BS मिति रूपान्तरण।" },
