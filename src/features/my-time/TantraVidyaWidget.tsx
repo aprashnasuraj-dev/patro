@@ -4,9 +4,9 @@ import "./my-time.css";
 
 type Props = { data: TantraTimeResult; language: "ne" | "en"; timezone: string };
 
-function time(value: string, timezone: string) {
+function time(value: string, timezone: string, language: "ne" | "en") {
   try {
-    return new Intl.DateTimeFormat(undefined, { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value));
+    return new Intl.DateTimeFormat(language === "ne" ? "ne-NP" : "en", { timeZone: timezone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(value));
   } catch {
     return new Date(value).toISOString().slice(11, 16) + " UTC";
   }
@@ -15,6 +15,10 @@ function time(value: string, timezone: string) {
 export default function TantraVidyaWidget({ data, language, timezone }: Props) {
   const { nityaDevi, activeTatwa, tatwaRemainingMinutes, tatwaElapsedMinutes, tatwaWindow, yogini, mahanishaKaal } = data;
   const progress = Math.min(100, Math.max(0, (tatwaElapsedMinutes / 24) * 100));
+  const nityaNamesNe: Record<string, string> = { Kameshvari: "कामेश्वरी", Bhagamalini: "भगमालिनी", Nityaklinna: "नित्यक्लिन्ना", Bherunda: "भेरुण्डा", Vahnivasini: "वह्निवासिनी", Mahavajreshvari: "महावज्रेश्वरी", Shivaduti: "शिवदूती", Tvarita: "त्वरिता", Kulasundari: "कुलसुन्दरी", Nitya: "नित्या", Nilapataka: "नीलपताका", Vijaya: "विजया", Sarvamangala: "सर्वमङ्गला", Jwalamalini: "ज्वालामालिनी", Chitra: "चित्रा" };
+  const tatwaNamesNe: Record<string, string> = { Prithvi: "पृथ्वी", "Aap / Jala": "आप / जल", "Tejas / Agni": "तेज / अग्नि", Vayu: "वायु", Akash: "आकाश" };
+  const elementNamesNe: Record<string, string> = { Earth: "पृथ्वी", Water: "जल", Fire: "अग्नि", Air: "वायु", "Ether / Space": "आकाश" };
+  const yoginiNamesNe: Record<string, string> = { Mangala: "मङ्गला", Pingala: "पिङ्गला", Dhanya: "धन्या", Bhramari: "भ्रामरी", Bhadrika: "भद्रिका", Ulka: "उल्का", Siddha: "सिद्धा", Sankata: "सङ्कटा" };
   const attributesNe: Record<string, string> = {
     "Fulfillment of desires & creative impulse": "इच्छापूर्ति र सिर्जनात्मक प्रेरणा", "Attraction & solar radiance": "आकर्षण र सौर तेज", "Compassion & fluidity": "करुणा र सहज प्रवाह", "Protection & inner strength": "संरक्षण र आन्तरिक शक्ति", "Transformative fire energy": "रूपान्तरणकारी अग्नि ऊर्जा", "Indestructible clarity": "अविनाशी स्पष्टता", "Integration of Shiva/Shakti forces": "शिव–शक्ति तत्त्वको समन्वय", "Swift spiritual realization": "शीघ्र आध्यात्मिक अनुभूति", "Harmony in relationships & family": "सम्बन्ध र परिवारमा सामञ्जस्य", "Perpetual movement & rhythm": "निरन्तर गति र लय", "Victory over internal blockages": "आन्तरिक अवरोधमाथि विजय", "Success in Sadhana and work": "साधना र कर्ममा सफलता", "All-pervading auspiciousness": "सर्वव्यापी मङ्गल", "Purification through light": "प्रकाशद्वारा शुद्धीकरण", "Multidimensional expression & art": "बहुआयामिक अभिव्यक्ति र कला"
   };
@@ -33,7 +37,7 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
     <div className="mt-tantra-devi">
       <span className="mt-tantra-om" aria-hidden="true">ॐ</span>
       <div className="mt-tantra-devi-copy">
-        <div className="mt-tantra-name"><strong>{nityaDevi.name}</strong><span>{nityaDevi.sanskritName}</span></div>
+        <div className="mt-tantra-name"><strong>{language === "ne" ? (nityaNamesNe[nityaDevi.name] || nityaDevi.sanskritName) : nityaDevi.name}</strong>{language === "en" && <span>{nityaDevi.sanskritName}</span>}</div>
         <small>{l(language, "पक्ष", "Paksha")}: {data.paksha === "Shukla" ? l(language, "शुक्ल पक्ष", "Shukla Paksha") : l(language, "कृष्ण पक्ष", "Krishna Paksha")} · {l(language, "नित्यादेवी", "Nitya Devi")} {nityaDevi.id}/15</small>
         <small>{l(language, "सरल नाम-मन्त्र; रूपान्तर हुन सक्छ", "Simple nama mantra; variants exist")}</small><p className="mt-tantra-mantra">{nityaDevi.mantra}</p>
         <p>{l(language, attributesNe[nityaDevi.attribute] || nityaDevi.attribute, nityaDevi.attribute)}</p>
@@ -41,23 +45,23 @@ export default function TantraVidyaWidget({ data, language, timezone }: Props) {
     </div>
     <div className="mt-tatwa-card">
       <div className="mt-tatwa-top"><span>{l(language, "सक्रिय पञ्चतत्त्व तरङ्ग", "Active Pancha Tatwa wave")}</span><strong>{tatwaRemainingMinutes}{l(language, " मिनेट बाँकी", "m remaining")}</strong></div>
-      <div className="mt-tatwa-name"><i style={{ backgroundColor: activeTatwa.color }} /><strong>{activeTatwa.name}</strong><span>{activeTatwa.element}</span></div>
+      <div className="mt-tatwa-name"><i style={{ backgroundColor: activeTatwa.color }} /><strong>{language === "ne" ? (tatwaNamesNe[activeTatwa.name] || activeTatwa.name) : activeTatwa.name}</strong><span>{language === "ne" ? (elementNamesNe[activeTatwa.element] || activeTatwa.element) : activeTatwa.element}</span></div>
       <div className="mt-tatwa-track" role="progressbar" aria-label={l(language, "तत्त्व चक्रको प्रगति", "Tatwa cycle progress")} aria-valuemin={0} aria-valuemax={24} aria-valuenow={tatwaElapsedMinutes}><span style={{ width: progress + "%", backgroundColor: activeTatwa.color }} /></div>
       <p>{l(language, recommendationsNe[activeTatwa.recommended] || activeTatwa.recommended, activeTatwa.recommended)}</p>
-      <small>{time(tatwaWindow.start, timezone)}–{time(tatwaWindow.end, timezone)} · {l(language, "२४ मिनेटको परम्परागत चक्र", "traditional 24-minute segment")}</small>
+      <small>{time(tatwaWindow.start, timezone, language)}–{time(tatwaWindow.end, timezone, language)} · {l(language, "२४ मिनेटको परम्परागत चक्र", "traditional 24-minute segment")}</small>
     </div>
     <div className="mt-tantra-details">
-      <div><small>{l(language, "योगिनी निवास", "Yogini Nivas")}</small><strong>{yogini.name} · {direction(yogini.direction)}</strong><span>{l(language, "यात्रामा परम्परागत रूपमा टारिने दिशा", "Traditionally avoided travel direction")}: {direction(yogini.blockedDirection)}</span><span>{l(language, "परम्परागत वर्ग", "Traditional classification")}: {l(language, yogini.nature === "Benign" ? "शुभ" : yogini.nature === "Mixed" ? "मिश्रित" : "उग्र", yogini.nature)}</span></div>
-      <div><small>{l(language, "महानिशा काल", "Mahanisha window")}</small><strong>{time(mahanishaKaal.start, timezone)}–{time(mahanishaKaal.end, timezone)}</strong><span>{mahanishaKaal.isActive ? l(language, "यो समय खण्ड सक्रिय छ", "This window is active") : l(language, "रातको मध्यबिन्दु वरिपरि ±२४ मिनेट", "±24 minutes around the night midpoint")}</span></div>
+      <div><small>{l(language, "योगिनी निवास", "Yogini Nivas")}</small><strong>{language === "ne" ? (yoginiNamesNe[yogini.name] || yogini.name) : yogini.name} · {direction(yogini.direction)}</strong><span>{l(language, "यात्रामा परम्परागत रूपमा टारिने दिशा", "Traditionally avoided travel direction")}: {direction(yogini.blockedDirection)}</span><span>{l(language, "परम्परागत वर्ग", "Traditional classification")}: {l(language, yogini.nature === "Benign" ? "शुभ" : yogini.nature === "Mixed" ? "मिश्रित" : "उग्र", yogini.nature)}</span></div>
+      <div><small>{l(language, "महानिशा काल", "Mahanisha window")}</small><strong>{time(mahanishaKaal.start, timezone, language)}–{time(mahanishaKaal.end, timezone, language)}</strong><span>{mahanishaKaal.isActive ? l(language, "यो समय खण्ड सक्रिय छ", "This window is active") : l(language, "रातको मध्यबिन्दु वरिपरि ±२४ मिनेट", "±24 minutes around the night midpoint")}</span></div>
     </div>
     <p className="mt-tantra-note">{l(language, "यो परम्परागत समयगणनाको व्याख्यात्मक मोडेल हो। नित्या नक्साङ्कन परम्पराअनुसार फरक हुन सक्छ; योगिनी दिशा एउटा सार्वजनिक परम्पराको हो। २४-मिनेट तत्त्व चक्र AafnaiPatro को सरलीकृत मोडेल हो, श्वासको मापन होइन।", "This is an interpretive model of traditional timing. Nitya mappings vary by convention; the Yogini direction table is one public tradition. The 24-minute Tatwa cycle is a simplified AafnaiPatro model, not a measured breath cycle.")}</p>
     <details className="mt-tantra-sources">
       <summary>{l(language, "खुला सन्दर्भ र परम्परागत भिन्नता", "Open references & tradition differences")}</summary>
       <ul>
-        <li><a href="https://www.sanatanarahasya.com/lineages/sri-vidya/the-sacred-knowing/sv2-c4-the-court/" target="_blank" rel="noreferrer">Nitya names and Sri Vidya sequence</a></li>
-        <li><a href="https://shrifreedom.org/vedic-astrology/tithi/" target="_blank" rel="noreferrer">Alternative Nitya–tithi pairings</a></li>
-        <li><a href="https://swarayoga.org/indian-time" target="_blank" rel="noreferrer">Eight-Yogini Disha and tithi mapping</a></li>
-        <li><a href="https://www.swarodaya.org/svara-tattva/" target="_blank" rel="noreferrer">Svarodaya tattva practice and durations</a></li>
+        <li><a href="https://www.sanatanarahasya.com/lineages/sri-vidya/the-sacred-knowing/sv2-c4-the-court/" target="_blank" rel="noreferrer">{l(language, "नित्या नाम र श्रीविद्या क्रम", "Nitya names and Sri Vidya sequence")}</a></li>
+        <li><a href="https://shrifreedom.org/vedic-astrology/tithi/" target="_blank" rel="noreferrer">{l(language, "वैकल्पिक नित्या–तिथि मिलान", "Alternative Nitya–Tithi pairings")}</a></li>
+        <li><a href="https://swarayoga.org/indian-time" target="_blank" rel="noreferrer">{l(language, "अष्टयोगिनी दिशा र तिथि मिलान", "Eight-Yogini direction and Tithi mapping")}</a></li>
+        <li><a href="https://www.swarodaya.org/svara-tattva/" target="_blank" rel="noreferrer">{l(language, "स्वरोदय तत्त्व अभ्यास र अवधि", "Svarodaya Tatwa practice and durations")}</a></li>
       </ul>
       <small>{l(language, "यी खुला वेब सन्दर्भहरू तुलना गर्नका लागि हुन्; कुनै एकलाई सबै परम्पराको अन्तिम निर्णय मानिएको छैन।", "These open references are for comparison; none is treated as the final authority for every lineage.")}</small>
     </details>
