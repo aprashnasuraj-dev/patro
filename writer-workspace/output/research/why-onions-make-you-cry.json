@@ -1,7 +1,7 @@
 {
   "slug": "why-onions-make-you-cry",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -62,13 +62,19 @@
   "notes": [
     "APA-style references added to all five source records. Opened McGill, Live Science and Cornell pages; ACS content was available in the search result but direct page access returned 403, and WSU source text was available in search results. Treat the ACS/WSU direct-page access limitation as retrieval limitation, not as an unverified factual claim.",
     "Corrected earlier advice that chilling onions reduces tears: a 2025 report states chilled onions released more tear-triggering droplets in the reported tests. Recommend a sharp blade and slower cutting instead.",
-    "Original hero image asset remains pending; do not mark the batch complete until required 1200×630 PNG is committed and image metadata is added."
+    "Original hero image asset remains pending; do not mark the batch complete until required 1200×630 PNG is committed and image metadata is added.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
   ],
   "apa_references": [
-    "American Academy of Ophthalmology. (n.d.). No more tears: Here's how to chop onions without crying. https://www.aao.org/eye-health/tips-prevention/no-more-tears-how-to-chop-onions-without-crying",
-    "American Chemical Society. (2016, June 7). Why do onions make you cry? Reactions. https://www.acs.org/pressroom/reactions/library/why-do-onions-make-you-cry.html",
-    "Library of Congress. (2025, May 27). Why does chopping an onion make you cry? Everyday Mysteries. https://www.loc.gov/everyday-mysteries/categories/food-and-nutrition/item/why-does-chopping-an-onion-make-you-cry/",
-    "Silvaroli, J. A., Pleshinger, M. J., Banerjee, S., Kiser, P. D., & Golczak, M. (2017). Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa. ACS Chemical Biology, 12(9), 2296–2304. https://doi.org/10.1021/acschembio.7b00336",
-    "Imai, S., Tsuge, N., Tomotake, M., Nagatome, Y., Sawada, H., Nagata, T., & Kumagai, H. (2002). Plant biochemistry: An onion enzyme that makes the eyes water. Nature, 419, 685. https://doi.org/10.1038/419685a"
-  ]
+    "Enzyme that makes you cry—Crystal structure of lachrymatory factor synthase from Allium cepa. (2017). ACS Chemical Biology, 12(9), 2296–2304. https://doi.org/10.1021/acschembio.7b00336",
+    "Schwarcz, J. (2017, February 20). Why do onions make you cry when you cut them? And why are they sweet when you fry them? McGill University, Office for Science and Society. https://www.mcgill.ca/oss/article/general-science-you-asked/why-do-onions-make-you-cry-when-you-cut-them-and-why-are-they-sweet-when-you-fry-them",
+    "Coffey, D. (2025, October 17). Why does slicing onions make you cry? Live Science. https://www.livescience.com/why-slicing-onions-makes-you-cry",
+    "Ramanujan, K. (2025, October 7). ‘Mist opportunity’ reveals how onions make cooks cry. Cornell Chronicle. https://news.cornell.edu/stories/2025/10/mist-opportunity-reveals-how-onions-make-cooks-cry",
+    "Washington State University. (2016, August 22). Why do onions make us cry? Ask Dr. Universe. https://askdruniverse.wsu.edu/2016/08/22/onions-make-us-cry/"
+  ],
+  "image_file": "why-onions-make-you-cry-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
