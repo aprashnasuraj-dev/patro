@@ -1,0 +1,39 @@
+{
+  "slug": "why-the-ocean-is-salty",
+  "research_question": "Why is ocean water salty?",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://oceanservice.noaa.gov/facts/whysalty.html",
+      "title": "Why is the ocean salty?",
+      "publisher": "NOAA National Ocean Service",
+      "reliability": "U.S. federal ocean science agency",
+      "notes": [
+        "Weathering of rocks delivers dissolved ions through rivers; hydrothermal systems and underwater volcanism also affect seawater chemistry."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 2,
+      "url": "https://www.usgs.gov/water-science-school/science/why-ocean-salty",
+      "title": "Why Is the Ocean Salty?",
+      "publisher": "U.S. Geological Survey",
+      "reliability": "U.S. federal geological survey",
+      "notes": [
+        "Sodium and chloride are dominant dissolved ions; average salinity is roughly 35 parts per thousand, varying by region."
+      ],
+      "accessed": "2026-10-20"
+    },
+    {
+      "n": 3,
+      "url": "https://oceanservice.noaa.gov/facts/riversnotsalty.html",
+      "title": "Why is the ocean salty, but rivers flowing into it are not?",
+      "publisher": "NOAA National Ocean Service",
+      "reliability": "U.S. federal ocean science agency",
+      "notes": [
+        "Freshwater continually replenishes rivers while oceans integrate dissolved inputs over time; ocean salinity reflects both sources and removal processes."
+      ],
+      "accessed": "2026-10-20"
+    }
+  ]
+}
