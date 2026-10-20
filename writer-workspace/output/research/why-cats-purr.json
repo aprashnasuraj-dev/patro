@@ -60,10 +60,10 @@
     }
   ],
   "notes": [
-    "Article draft committed; hero image remains pending because image upload is unavailable through the current text-file workflow.",
     "Validate word count and schema again before batch completion.",
     "APA-style reference strings added using the publisher/title/URL metadata currently recorded. Where author or publication date was not recorded, the corporate publisher is used as author and (n.d.) is used rather than inventing metadata.",
-    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending.",
+    "Hero PNG verified at 1200×630 and image metadata matches. APA references included; final citation-to-claim and schema validation remains."
   ],
   "apa_references": [
     "Cats Protection. (2023, February 22). Why does my cat purr?. https://www.cats.org.uk/cats-blog/why-does-my-cat-purr",
