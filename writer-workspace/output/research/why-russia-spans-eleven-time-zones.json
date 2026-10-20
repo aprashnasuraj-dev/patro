@@ -1,7 +1,7 @@
 {
   "slug": "why-russia-spans-eleven-time-zones",
   "retrieved_at": "2026-10-20",
-  "status": "article_draft_written_image_pending",
+  "status": "assets_created_validation_pending",
   "sources": [
     {
       "n": 1,
@@ -11,7 +11,8 @@
       "reliability": "Established historical institution, research association or reference publisher",
       "notes": [
         "Used for factual context about pyramid construction or Russia’s current time-zone arrangements; confirm each source during final review."
-      ]
+      ],
+      "apa": "timeanddate.com. (n.d.). Time Zones in Russia. https://www.timeanddate.com/time/zone/russia"
     },
     {
       "n": 2,
@@ -21,7 +22,8 @@
       "reliability": "Established historical institution, research association or reference publisher",
       "notes": [
         "Used for factual context about pyramid construction or Russia’s current time-zone arrangements; confirm each source during final review."
-      ]
+      ],
+      "apa": "timeanddate.com. (n.d.). Time in Russia. https://www.timeanddate.com/worldclock/russia"
     },
     {
       "n": 3,
@@ -31,7 +33,8 @@
       "reliability": "Established historical institution, research association or reference publisher",
       "notes": [
         "Used for factual context about pyramid construction or Russia’s current time-zone arrangements; confirm each source during final review."
-      ]
+      ],
+      "apa": "CIA World Factbook. (n.d.). Time Zones. https://www.cia.gov/the-world-factbook/field/time-difference/"
     },
     {
       "n": 4,
@@ -41,7 +44,8 @@
       "reliability": "Established historical institution, research association or reference publisher",
       "notes": [
         "Used for factual context about pyramid construction or Russia’s current time-zone arrangements; confirm each source during final review."
-      ]
+      ],
+      "apa": "Encyclopaedia Britannica. (n.d.). Time zone. https://www.britannica.com/science/time-zone"
     },
     {
       "n": 5,
@@ -51,11 +55,25 @@
       "reliability": "Established historical institution, research association or reference publisher",
       "notes": [
         "Used for factual context about pyramid construction or Russia’s current time-zone arrangements; confirm each source during final review."
-      ]
+      ],
+      "apa": "Internet Assigned Numbers Authority (IANA). (n.d.). Time Zone Database. https://www.iana.org/time-zones"
     }
   ],
   "notes": [
     "Article draft committed; hero image pending.",
-    "Final direct-source and schema validation still required before batch completion."
-  ]
+    "Final direct-source and schema validation still required before batch completion.",
+    "Hero PNG exists in output/images, verified PNG signature and 1200×630 IHDR dimensions; article image metadata matches the file. APA-style references are included. Final batch-wide source/schema validation remains pending."
+  ],
+  "apa_references": [
+    "timeanddate.com. (n.d.). Time Zones in Russia. https://www.timeanddate.com/time/zone/russia",
+    "timeanddate.com. (n.d.). Time in Russia. https://www.timeanddate.com/worldclock/russia",
+    "CIA World Factbook. (n.d.). Time Zones. https://www.cia.gov/the-world-factbook/field/time-difference/",
+    "Encyclopaedia Britannica. (n.d.). Time zone. https://www.britannica.com/science/time-zone",
+    "Internet Assigned Numbers Authority (IANA). (n.d.). Time Zone Database. https://www.iana.org/time-zones"
+  ],
+  "image_file": "why-russia-spans-eleven-time-zones-hero.png",
+  "image_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
 }
