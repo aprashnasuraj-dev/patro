@@ -1,0 +1,61 @@
+{
+  "slug": "why-it-rains-more-in-some-places",
+  "retrieved_at": "2026-10-20",
+  "status": "article_draft_written_image_pending",
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.noaa.gov/jetstream/atmosphere/precipitation",
+      "title": "Precipitation",
+      "publisher": "NOAA JetStream",
+      "reliability": "Government science agency",
+      "notes": [
+        "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
+      ]
+    },
+    {
+      "n": 2,
+      "url": "https://www.noaa.gov/explainers/what-s-difference-between-climate-and-weather",
+      "title": "What’s the difference between climate and weather?",
+      "publisher": "NOAA",
+      "reliability": "Government science agency",
+      "notes": [
+        "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
+      ]
+    },
+    {
+      "n": 3,
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
+      "title": "The Water Cycle",
+      "publisher": "USGS Water Science School",
+      "reliability": "Government science agency",
+      "notes": [
+        "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
+      ]
+    },
+    {
+      "n": 4,
+      "url": "https://weather.metoffice.gov.uk/learn-about/weather/how-weather-works",
+      "title": "How weather works",
+      "publisher": "UK Met Office",
+      "reliability": "National meteorological service",
+      "notes": [
+        "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
+      ]
+    },
+    {
+      "n": 5,
+      "url": "https://www.noaa.gov/jetstream/atmosphere/precipitation",
+      "title": "Precipitation and atmospheric circulation",
+      "publisher": "NOAA JetStream",
+      "reliability": "Government science agency",
+      "notes": [
+        "Used for explanations of precipitation formation, moisture transport, climate variation or atmospheric circulation."
+      ]
+    }
+  ],
+  "notes": [
+    "Draft committed; hero image remains pending.",
+    "The USGS water-cycle URL timed out during retrieval; verify that source before final approval. NOAA precipitation and Met Office weather pages were opened."
+  ]
+}
