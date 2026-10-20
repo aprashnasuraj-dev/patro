@@ -1,0 +1,154 @@
+{
+  "id": "mm-0165",
+  "slug": "how-stars-are-born",
+  "question": "How stars are born",
+  "category": "Space & Astronomy",
+  "canonical_url": "https://aafnaipatro.com/how-stars-are-born/",
+  "title_suggestion": "How Stars Are Born? The Real Answer, Explained",
+  "h1": "How Stars Are Born?",
+  "keywords": [
+    "stars",
+    "born",
+    "space-astronomy"
+  ],
+  "ymyl": false,
+  "researched_at": "2026-10-21",
+  "status": "research_complete",
+  "sources": [
+    {
+      "n": 1,
+      "title": "21.3 The Evolution from Protostar to Main Sequence",
+      "publisher": "OpenStax, Astronomy 2e",
+      "url": "https://openstax.org/books/astronomy-2e/pages/21-3-the-evolution-from-protostar-to-main-sequence",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened NASA/ESA/ESO institution or university-level astronomy reference"
+    },
+    {
+      "n": 2,
+      "title": "Stars",
+      "publisher": "NASA Science",
+      "url": "https://science.nasa.gov/universe/stars/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened NASA/ESA/ESO institution or university-level astronomy reference"
+    },
+    {
+      "n": 3,
+      "title": "Star Formation",
+      "publisher": "Chandra X-ray Observatory, Harvard-Smithsonian Center for Astrophysics",
+      "url": "https://chandra.harvard.edu/xray_sources/starform.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened NASA/ESA/ESO institution or university-level astronomy reference"
+    },
+    {
+      "n": 4,
+      "title": "Star Formation",
+      "publisher": "European Southern Observatory",
+      "url": "https://www.eso.org/public/science/starformation/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened NASA/ESA/ESO institution or university-level astronomy reference"
+    },
+    {
+      "n": 5,
+      "title": "Star formation",
+      "publisher": "European Space Agency",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Star_formation",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "reliability": "Opened NASA/ESA/ESO institution or university-level astronomy reference"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Birth environment",
+      "evidence": "Stars form in dense regions of cold interstellar gas and dust clouds when gravity overcomes support from pressure, turbulence and magnetic fields.",
+      "sources": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "claim": "Protostar stage",
+      "evidence": "A collapsing core heats and accretes gas, often through a disk; outflows and jets remove some material and angular momentum.",
+      "sources": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "claim": "Fusion and main sequence",
+      "evidence": "A star reaches the main sequence after its core becomes hot and dense enough for sustained hydrogen fusion to balance inward gravity.",
+      "sources": [
+        1,
+        2
+      ]
+    },
+    {
+      "claim": "Observational caveat",
+      "evidence": "Dust can obscure young stars in visible light; infrared and radio observations reveal embedded protostars, gas and disks.",
+      "sources": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "claim": "Not all cloud becomes one star",
+      "evidence": "Clouds fragment into multiple dense cores, and feedback from young stars can disperse or reshape remaining gas.",
+      "sources": [
+        1,
+        3,
+        4
+      ]
+    }
+  ],
+  "editorial_angles": [
+    "Separate the cloud, dense core, protostar and main-sequence star stages.",
+    "Explain collapse as a competition between gravity and support, not a guaranteed event for every cloud.",
+    "Describe accretion disks and outflows as a way to move mass and angular momentum.",
+    "Clarify that hydrogen fusion marks a major transition but star formation is not instantaneous.",
+    "Explain why observations combine visible, infrared, radio and X-ray data."
+  ],
+  "image_research": {
+    "license": "Original programmatic hero and original SVG illustrations; no third-party imagery used.",
+    "images": [
+      {
+        "file": "how-stars-are-born-hero.png",
+        "role": "hero",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original programmatic illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-stars-are-born-diagram-01.svg",
+        "role": "formation stages",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-stars-are-born-diagram-02.svg",
+        "role": "cloud collapse and fragmentation",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      },
+      {
+        "file": "how-stars-are-born-diagram-03.svg",
+        "role": "accretion disk and outflow",
+        "width": 1200,
+        "height": 630,
+        "credit": "Original SVG illustration",
+        "license": "Original artwork"
+      }
+    ]
+  }
+}
